@@ -142,9 +142,8 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 Let's create a cURL handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
-* In the same directory, create [the interface](#mtf_handler_interface) for the cURL handler, and call the file `WidgetInterface.php`.
-Our new interface extends `HandlerInterface` class.
+*  Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+*  In the same directory, create [the interface](#mtf_handler_interface) for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
   ```php
   <?php
@@ -162,8 +161,7 @@ Our new interface extends `HandlerInterface` class.
   }
   ```
 
-* Create `Curl.php` in the same directory.
-This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
+*  Create `Curl.php` in the same directory. This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
 
   The following code includes detailed comments for better understanding.
   {: #mtf_curl_script}
@@ -251,7 +249,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
   }
   ```
 
-* Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
+*  Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
 
 ```xml
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
@@ -293,9 +291,8 @@ $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 
 Let's create a UI handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
-* In the same directory, create [interface](#mtf_handler_interface) for the UI handler, and call the file `WidgetInterface.php`.
-Our new interface extends `HandlerInterface` class.
+*  Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+*  In the same directory, create [interface](#mtf_handler_interface) for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
   ```php
   <?php
@@ -313,8 +310,7 @@ Our new interface extends `HandlerInterface` class.
   }
   ```
 
-* Create `Ui.php` in the same directory.
-This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
+*  Create `Ui.php` in the same directory. This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
 
   The code has detailed comments for better understanding.
 
@@ -401,7 +397,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
   }
   ```
 
-* Create [`di.xml`](#mtf_handler_di) in the `etc/ui` directory of the Magento_Widget [module](https://glossary.magento.com/module).
+*  Create [`di.xml`](#mtf_handler_di) in the `etc/ui` directory of the Magento_Widget [module](https://glossary.magento.com/module).
 
   ```xml
   <?xml version="1.0" ?>
@@ -417,9 +413,8 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
 
 Let's create a WebAPI handler that creates a new [tax rule](https://glossary.magento.com/tax-rule).
 
-* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
-* In the same directory, create [interface](#mtf_handler_interface) for the WebAPI handler, and call the file `TaxRuleInterface.php`.
-Our new interface extends `HandlerInterface` class.
+*  Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
+*  In the same directory, create [interface](#mtf_handler_interface) for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
   ```php
 
@@ -435,9 +430,8 @@ Our new interface extends `HandlerInterface` class.
       //
   }
   ```
-* Create `Webapi.php` in the same directory.
-The file contains a [handler class](#mtf_handler_conf_hand).
-In the following example WebAPI handler uses some cURL handler methods to prepare data.
+
+*  Create `Webapi.php` in the same directory. The file contains a [handler class](#mtf_handler_conf_hand). In the following example WebAPI handler uses some cURL handler methods to prepare data.
 
   ```php
   <?php
@@ -524,7 +518,7 @@ In the following example WebAPI handler uses some cURL handler methods to prepar
   }
   ```
 
-* Create [`di.xml`](#mtf_handler_di) in the `etc/webapi` directory of the Magento_Tax module.
+*  Create [`di.xml`](#mtf_handler_di) in the `etc/webapi` directory of the Magento_Tax module.
 
   ```xml
   <?xml version="1.0" ?>

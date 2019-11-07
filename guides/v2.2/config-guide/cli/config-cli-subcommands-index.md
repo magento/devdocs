@@ -19,7 +19,7 @@ bin/magento indexer:info
 
 The list displays as follows:
 
-```
+```terminal
 design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
@@ -58,7 +58,7 @@ bin/magento indexer:status
 
 Sample result:
 
-```
+```terminal
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
@@ -104,7 +104,7 @@ bin/magento indexer:reindex
 
 Sample result:
 
-```
+```terminal
 Category Products index has been rebuilt successfully in <time>
 Product Categories index has been rebuilt successfully in <time>
 Product Price index has been rebuilt successfully in <time>
@@ -158,7 +158,7 @@ MAGE_INDEXER_THREADS_COUNT=3 php -f bin/magento indexer:reindex catalogsearch_fu
 Use this command to set the following indexer options:
 
 *  **Update on save (`realtime`)** - Indexed data is updated as soon as a change is made in the [Admin](https://glossary.magento.com/admin). (For example, the [category](https://glossary.magento.com/category) products index is reindex after products are added to a category in the Admin.) This is the default.
-* **Update by schedule (`schedule`)** - Data is indexed according to the schedule set by your Magento cron job.
+*  **Update by schedule (`schedule`)** - Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html).
 
@@ -178,7 +178,7 @@ bin/magento indexer:show-mode
 
 Sample result:
 
-```
+```terminal
 Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
@@ -217,7 +217,7 @@ bin/magento indexer:set-mode schedule catalog_category_product catalog_product_c
 
 Sample result:
 
-```
+```terminal
 Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 ```

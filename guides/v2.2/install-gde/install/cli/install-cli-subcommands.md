@@ -16,12 +16,12 @@ functional_areas:
 
 The installer is designed to be run multiple times if necessary so you can:
 
-*	Provide different values
+*  Provide different values
 
-	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
+   For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
 
-*	Correct mistakes in previous installations
-*	Install Magento in a different database instance
+*  Correct mistakes in previous installations
+*  Install Magento in a different database instance
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.md %}

@@ -11,7 +11,7 @@ Rather than copy extensive page layout or page configuration code and then modif
 
 To add an extending [page configuration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf) or [generic layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen) file:
 
-1.	Put the layout file in the following location:
+1. Put the layout file in the following location:
     ```tree
     <theme_dir>
      |__/<Namespace>_<Module>
@@ -24,7 +24,7 @@ For example, to customize the layout defined in `<Magento_Catalog_module_dir>/vi
 
 To add an extending [page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page) file:
 
-1.	Put the file in the following location:
+1. Put the file in the following location:
     ```tree
     <theme_dir>
      |__/<Namespace>_<Module>
@@ -38,8 +38,8 @@ To add an extending [page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/
 Magento merges layout files as follows:
 
 1. For each layout file in the list:
-	1. Loads layout handle declaration and layout instructions.
-	2. Appends to the result in the following format:
+   1. Loads layout handle declaration and layout instructions.
+   1. Appends to the result in the following format:
 
 ```xml
 <layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -55,12 +55,12 @@ Magento merges layout files as follows:
 
 Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
 
-2. Replaces the base URL placeholders in the result.
+1. Replaces the base URL placeholders in the result.
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-*	[Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"}
-*	[XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}
-*	[Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html){:target="_blank"}
-*	[Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html){:target="_blank"}
-
+*  [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html){:target="_blank"}
+*  [XML instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html){:target="_blank"}
+*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html){:target="_blank"}
+*  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html){:target="_blank"}

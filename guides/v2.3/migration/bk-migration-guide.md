@@ -2,16 +2,13 @@
 group: migration-guide
 subgroup: A_Overview
 title: Migration overview
-menu_title: Overview
-menu_node: parent
-menu_order: 1
 functional_areas:
   - Tools
 ---
 
 ## Welcome! {#migrate-overview}
 
-We're pleased you're considering moving from the world's #1 commerce platform --- Magento 1.x --- to the platform for the future, Magento 2. We're also excited to share the details about this process, which we refer to as migration.
+We are pleased you are considering moving from the world's #1 commerce platform --- Magento 1.x --- to the platform of the future, Magento 2. We are excited to share the details about this process, which we refer to as migration.
 
 ## Migration components
 
@@ -19,10 +16,10 @@ Magento 2 migration involves four components: data, extensions and custom code, 
 
 ### Data {#migrate-data}
 
-We've developed the **Magento 2 Data Migration Tool** to help you efficiently move all of your products, customers, and order data, store configurations, promotions and more to Magento 2. This guide provides information on the tool and best practices for using it to migrate your data.
+We have developed the **Magento 2 Data Migration Tool** to help you efficiently move all of your products, customers, and order data, store configurations, promotions and more to Magento 2. This guide provides information on the tool and best practices for using it to migrate your data.
 
 ### Extensions and custom code {#migrate-extensions-code}
-We've been working hard with the development community to help you use your Magento 1 extensions in Magento 2. Now we're proud to present the [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}, where you can download or purchase the latest versions of your favorite extensions.
+We have been working hard with the development community to help you use your Magento 1 extensions in Magento 2. Now we are proud to present the [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}, where you can download or purchase the latest versions of your favorite extensions.
 
 Also, we have developed the [Code Migration Toolkit](https://github.com/magento/code-migration){:target="_blank"}, which will help to port your extensions and custom code to Magento 2, significantly reducing your efforts.
 
@@ -36,4 +33,3 @@ Magento 2 uses new approaches and technologies that give merchants an unmatched 
 
 Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.
 However, we are constantly improving the Data Migration Tool (see the [Changelog](https://github.com/magento/data-migration-tool/blob/2.3/CHANGELOG.md){:target="_blank"} for more details); so the migration efforts are continuously decreasing.
-

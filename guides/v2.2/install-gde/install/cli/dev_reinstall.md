@@ -15,31 +15,42 @@ A contributing developer reinstalls Magento by updating `composer.json` to speci
 
 To reinstall the Magento software as a contributing developer:
 
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-3.	Make a backup copy of `composer.json` in your Magento installation directory:
+1. Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Make a backup copy of `composer.json` in your Magento installation directory:
 
-		cd <magento_root>
-		cp composer.json composer.json.bak
+   ```bash
+   cd <magento_root>
+   ```
 
-4.	Open `composer.json` in a text editor.
-5.	Locate the following line:
+   ```bash
+   cp composer.json composer.json.bak
+   ```
 
-		 "require": {
-        	"magento/product-community-edition": "<version>"
-    	},
+1. Open `composer.json` in a text editor.
+1. Locate the following line:
 
-5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the product version to use.
+   ```json
+   "require": {
+         "magento/product-community-edition": "<version>"
+   },
+   ```
 
-	(The product version is in the format `2.0.x`)
+1. Replace `<version>` with the version to which you want to upgrade, where `<version>` is the product version to use.
+
+   (The product version is in the format `2.0.x`)
+
 <!-- is the `magento/product-community-edition` version from -->.
-5.	Save your changes to `composer.json` and exit the text editor.
-6.	Enter the following command:
 
-		composer update
+1. Save your changes to `composer.json` and exit the text editor.
+1. Enter the following command:
 
-	Wait for dependencies to update.
+   ```bash
+   composer update
+   ```
 
-4. [Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
+   Wait for dependencies to update.
+
+1. [Install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

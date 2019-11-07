@@ -4,12 +4,12 @@ In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contri
 
 ## General expectations
 
-- Self assign issues/pull requests (mostly pull requests)
-  - Review and approve or request changes
-  - Enforce the use of the issue/pull requests template
-  - Ask contributors to link to the code base to validate documentation updates when applicable
-  - Ask contributors not to contribute to v2.0 docs
-- If a maintainer creates a pull request, it should be reviewed by another maintainer or DevDocs staff member
+-  Self assign issues/pull requests (mostly pull requests)
+   -  Review and approve or request changes
+   -  Enforce the use of the issue/pull requests template
+   -  Ask contributors to link to the code base to validate documentation updates when applicable
+   -  Ask contributors not to contribute to v2.0 docs
+-  If a maintainer creates a pull request, it should be reviewed by another maintainer or DevDocs staff member
 
 ## Labels
 
@@ -17,11 +17,11 @@ Labels are important because they help us identify pull requests and ensure that
 
 Here is a brief summary of the most important labels:
 
-- `New Topic`: Entirely new documents
-- `Major Update`: Significant new info: new section in existing topic, etc.
-- `Technical`: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- `Editorial`: Typos, grammatical inconsistencies, or minor rewrites
-- `small changes`: See [Small changes workflow](#small-changes-workflow)
+-  `New Topic`: Entirely new documents
+-  `Major Update`: Significant new info: new section in existing topic, etc.
+-  `Technical`: Changes to technical content/code/processes/naming conventions (any change to technical content)
+-  `Editorial`: Typos, grammatical inconsistencies, or minor rewrites
+-  `small changes`: See [Small changes workflow](#small-changes-workflow)
 
 We also use version labels when appropriate.
 
@@ -51,8 +51,8 @@ We prefer Markdown over HTML (in most cases). You can use [kramdown](https://kra
 
 Before merging a pull request to the `master` branch, it must pass automated testing. Testing takes about 30 minutes to complete for each pull request, so we created a workflow to save time for small changes.
 
-- **Individual pull requests to `master`**—15 individual pull requests to `master` x 30 minutes per pull request = 7.5 hrs of testing time
-- **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 30 minutes = 30 minutes of testing time
+-  **Individual pull requests to `master`**—15 individual pull requests to `master` x 30 minutes per pull request = 7.5 hrs of testing time
+-  **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 30 minutes = 30 minutes of testing time
 
 This workflow is for typos, formatting issues, and minor text additions or deletions. It is not for substantial new content, changes to tables, new files, or files that have been moved.
 
@@ -63,7 +63,7 @@ Periodically, we will create a pull request from `small_changes` to `master` and
 1. Review the pull request and either approve it or request changes.
 1. Apply the `Small changes` label if one of the following labels should also be applied:
 
-   - `Editorial`
-   - `Technical`
+   -  `Editorial`
+   -  `Technical`
 
 1. That's it! A devdocs-admin will run tests and merge.

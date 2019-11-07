@@ -205,6 +205,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 "password": "Password1"
 }
 ```
+
 **Response**
 
 Magento returns the customer's access token. Your integration must specify a customer token in the authorization header of every call customers make on their own behalf.
@@ -214,5 +215,5 @@ Magento returns the customer's access token. Your integration must specify a cus
 ## Verify this step {#verify-step}
 
 1. Log in to the Test website using the email `jdoe@example.com` and password `Password1`.
-2. Click the account name (Jane) in the upper right corner and select **My Account**.
-3. Click **Address Book** to view the default billing and shipping addresses.
+1. Click the account name (Jane) in the upper right corner and select **My Account**.
+1. Click **Address Book** to view the default billing and shipping addresses.

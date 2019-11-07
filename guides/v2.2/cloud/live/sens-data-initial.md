@@ -10,25 +10,25 @@ Configuration management exports your configurations to a file for pushing acros
 
 This example shows how to use the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for managing the configuration:
 
-1.	Enter your configurations in your Integration environment Admin panel.
-2.	Create `config.php` and transfer it to your local system.
-3.	Push `config.php` to the branch and Integration environment.
-4.	Verify your settings are not editable in the Admin panel. Any configurations exported to `config.php` make those fields in the Admin panel read-only and disabled for edits.
-5.	Update and modify configurations again in Integration, update the file, and check it into Git:
+1. Enter your configurations in your Integration environment Admin panel.
+1. Create `config.php` and transfer it to your local system.
+1. Push `config.php` to the branch and Integration environment.
+1. Verify your settings are not editable in the Admin panel. Any configurations exported to `config.php` make those fields in the Admin panel read-only and disabled for edits.
+1. Update and modify configurations again in Integration, update the file, and check it into Git:
 
-	*	Change configuration settings on the Integration environment.
-	*	To add new configurations, run the command to create `config.php` again. New configurations are appended to the file.
-	* To remove or edit existing configurations, manually edit the file.
-	* Commit and push to Git.
+   *  Change configuration settings on the Integration environment.
+   *  To add new configurations, run the command to create `config.php` again. New configurations are appended to the file.
+   *  To remove or edit existing configurations, manually edit the file.
+   *  Commit and push to Git.
 
 <!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 For example, you may want to set the following settings:
 
-* Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
-* Enable static file optimization in Staging and Production environments
-* Configure Fastly in Staging and Production with specific credentials for each
+*  Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
+*  Enable static file optimization in Staging and Production environments
+*  Configure Fastly in Staging and Production with specific credentials for each
 
 _Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/javascript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/html) templates.
 
@@ -36,12 +36,12 @@ _Static file optimization_ means merging and minifying [JavaScript](https://glos
 
 To complete these configuration management tasks, you need the following:
 
-* Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
-* Magento Admin panel URL and credentials for Integration, Staging, and Production environments
-* Push all updated code to your Integration environment:
+*  Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
+*  Magento Admin panel URL and credentials for Integration, Staging, and Production environments
+*  Push all updated code to your Integration environment:
 
-	* For Starter: To an Integration branch and environment
-	* For Pro: To the Integration `master` branch and environment
+   *  For Starter: To an Integration branch and environment
+   *  For Pro: To the Integration `master` branch and environment
 
 ## Configure Magento through the Integration Admin panel {#configure}
 
@@ -49,25 +49,27 @@ Log into the Magento Admin panel in Integration to modify configurations. For a 
 
 To change locale and static file optimization settings:
 
-1.	Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.
-2.	Navigate to **Stores** > Settings > **Configuration** > General > **General**.
-2.	In the right pane, expand **Locale Options**.
-3.	From the **Locale** list, change the locale. You can change it back later.
+1. Log in to the Integration environment Admin panel. You can access this URL through the Project Web Console.
+1. Navigate to **Stores** > Settings > **Configuration** > General > **General**.
+1. In the right pane, expand **Locale Options**.
+1. From the **Locale** list, change the locale. You can change it back later.
 
-	![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
-4.	Click **Save Config**.
-5.	In the left navigation pane, click **Advanced** > **Developer**.
-5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
-7.	From the **Minify Html** list, click **No**.
-5.	In the right pane, expand **CSS Settings**.
-6.	From the **Merge CSS Files** list, click **No**.
-7.	From the **Minify CSS Files** list, click **No**.
+   ![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
 
-	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
-8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-10.	Log out of the Magento Admin.
+1. Click **Save Config**.
+1. In the left navigation pane, click **Advanced** > **Developer**.
+1. In the right pane, expand **Template Settings**.
+1. Clear the **Use default value** checkbox next to the **Minify Html** list.
+1. From the **Minify Html** list, click **No**.
+1. In the right pane, expand **CSS Settings**.
+1. From the **Merge CSS Files** list, click **No**.
+1. From the **Minify CSS Files** list, click **No**.
+
+   ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
+
+1. Click **Save Config**.
+1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}
 
@@ -77,20 +79,30 @@ This procedure corresponds to step 2 in the [recommended procedure]({{ page.base
 
 To create and transfer `config.php`:
 
-1.	On your local system, find the integration server's SSH URL.
+1. On your local system, find the integration server's SSH URL.
 
-		magento-cloud environment:ssh --pipe
-2.	Create `config.php` on the integration server.
+   ```bash
+   magento-cloud environment:ssh --pipe
+   ```
 
-		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+1. Create `config.php` on the integration server.
 
-	For example,
+   ```bash
+   ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+   ```
 
-		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-5.	If you haven't done so already, change to the project root directory.
-6.	Transfer `config.php` to your local system.
+   For example,
 
-		rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```bash
+   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ```
+
+1. If you haven't done so already, change to the project root directory.
+1. Transfer `config.php` to your local system.
+
+   ```bash
+   rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```
 
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
@@ -142,21 +154,23 @@ After you push `config.php` to your environments, any values you changed should 
 
 To verify your configuration changes:
 
-1.	If you haven't done so already, log out of the Magento Admin in one of the environments.
-2.	Log back in to the Magento Admin.
-3.	Click **Stores** > Settings > **Configuration** > General > **General**.
-4.	In the right pane, expand **Locale Options**.
+1. If you haven't done so already, log out of the Magento Admin in one of the environments.
+1. Log back in to the Magento Admin.
+1. Click **Stores** > Settings > **Configuration** > General > **General**.
+1. In the right pane, expand **Locale Options**.
 
-	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
+   Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
 
-	![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
-5.	In the left navigation pane, click Advanced > **Developer**.
-6.	In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
+   ![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
 
-	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
+1. In the left navigation pane, click Advanced > **Developer**.
+1. In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
-	![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
-7.	Log out of the Magento Admin.
+   Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
+
+   ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+
+1. Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
 
@@ -172,33 +186,43 @@ For this example, we'll modify static file optimization settings and add a new s
 
 To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.
 
-1.	If you haven't done so already, log out of the Integration Admin.
-2.	Log in to the Integration Admin.
-3.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-4.	In the right pane, expand **JavaScript Settings**.
-5.	From the **Merge JavaScript Files** list, click **Yes**.
-6.	Click **Save Config**.
-7.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-8.	Log out of the Magento Admin.
+1. If you haven't done so already, log out of the Integration Admin.
+1. Log in to the Integration Admin.
+1. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+1. In the right pane, expand **JavaScript Settings**.
+1. From the **Merge JavaScript Files** list, click **Yes**.
+1. Click **Save Config**.
+1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}
 
 By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
 
-1.	On your local system, find the integration server's SSH URL.
+1. On your local system, find the integration server's SSH URL.
 
-		magento-cloud environment:ssh --pipe
-2.	Run the `config.php` creation command again on the Integration server.
+   ```bash
+   magento-cloud environment:ssh --pipe
+   ```
 
-		ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+1. Run the `config.php` creation command again on the Integration server.
 
-	For example,
+   ```bash
+   ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+   ```
 
-		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-3.	If you haven't done so already, change to the project root directory.
-4.	Transfer `config.php` to your local system.
+   For example,
 
-		rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```bash
+   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ```
+
+1. If you haven't done so already, change to the project root directory.
+1. Transfer `config.php` to your local system.
+
+   ```bash
+   rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+   ```
 
 ### Edit config.php with new settings {#change-config}
 

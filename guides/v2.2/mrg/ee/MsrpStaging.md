@@ -14,8 +14,8 @@ The Magento_MsrpStaging [module](https://glossary.magento.com/module) is a part 
 
 The Magento_MsrpStaging module extends the Magento_Msrp module to be used in staging. It adds the following fields in the Advice Pricing form:
 
-- Manufacturer's Suggested Retail Price
-- Display Actual Price
+-  Manufacturer's Suggested Retail Price
+-  Display Actual Price
 
 ## Dependencies
 

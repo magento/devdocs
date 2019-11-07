@@ -10,4 +10,4 @@ This chapter describes how to install and use additional tools that can make you
 
 **Chapter Contents**
 
-- [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
+-  [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)

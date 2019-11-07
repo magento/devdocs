@@ -14,9 +14,9 @@ The `Magento_GiftCardSharedCatalog` module enables gift cards to be added to a s
 
 The `Magento_GiftCardSharedCatalog` module provides the following features:
 
-* Display and manage prices for gift cards within a shared catalog.
+*  Display and manage prices for gift cards within a shared catalog.
 
-* Control the visibility of gift cards in quotes and orders. Only those gift card products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
+*  Control the visibility of gift cards in quotes and orders. Only those gift card products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
 
 ## Installation details
 
@@ -42,7 +42,7 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directory contains extensible UI components:
 
-* `Magento\GiftCardSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
+*  `Magento\GiftCardSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 

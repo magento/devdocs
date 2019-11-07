@@ -23,10 +23,10 @@ An application programming interface (API) is a set of interfaces and their impl
 
 The following items are considered types of APIs:
 
-- Directory structure
-- Configuration files structure
-- Events
-- Client API
-- Provider [API](https://glossary.magento.com/api) (SPI)
+-  Directory structure
+-  Configuration files structure
+-  Events
+-  Client API
+-  Provider [API](https://glossary.magento.com/api) (SPI)
 
 Directory structure and configuration file structure are types of APIs because [extension](https://glossary.magento.com/extension) developers use them. Developers write configurations, and place their [static files](https://glossary.magento.com/static-files) in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.

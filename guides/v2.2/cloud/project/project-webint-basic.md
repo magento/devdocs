@@ -12,12 +12,12 @@ functional_areas:
 
 The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud) enables you to do the following for all Starter and Pro environments:
 
-- [Access projects](#project-access)
-- Create and manage projects
-- Access active environments and branches using SSH, CLI, and URLs
-- Configure environment settings, environment variables, and routes
-- [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
-- [Manage Git branches]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
+-  [Access projects](#project-access)
+-  Create and manage projects
+-  Access active environments and branches using SSH, CLI, and URLs
+-  Configure environment settings, environment variables, and routes
+-  [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
+-  [Manage Git branches]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
 
 As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
 
@@ -25,9 +25,9 @@ As you make changes to these settings, the branch redeploys to the environment. 
 
 The Project Web Interface provides several ways to access your project and environments:
 
-- Storefront URL for each active environment
-- Secure Shell (SSH) link for SSH access via terminal application
-- Clone the project using the Magento Cloud CLI or Git
+-  Storefront URL for each active environment
+-  Secure Shell (SSH) link for SSH access via terminal application
+-  Clone the project using the Magento Cloud CLI or Git
 
 To access projects and environments through the Project Web Interface:
 
@@ -49,23 +49,22 @@ Click either **CLI** or **Git** to display the appropriate clone command. Use th
 You can set the following configuration options for each environment:
 
 <table>
-	<tbody>
-		<tr>
-			<th style="width= 300px;">Option</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td>Environment status</td>
-		<td>An environment can be either <em>active</em> or <em>inactive</em>. You'll do most of your work in an active environment. After merging an environment with its parent, you can optionally delete the environment, making it inactive. To delete an environment, click <strong>Delete</strong>. You can active an inactive environment later.</td>
-	</tr>
-	<tr>
-		<td>Outgoing emails</td>
-		<td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>mail()</code> function. </td>
-	</tr>
-	<tr><td>HTTP access control</td>
-	<td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
-	</tr>
-</tbody>
+   <tr>
+      <th style="width= 300px;">Option</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>Environment status</td>
+      <td>An environment can be either <em>active</em> or <em>inactive</em>. You'll do most of your work in an active environment. After merging an environment with its parent, you can optionally delete the environment, making it inactive. To delete an environment, click <strong>Delete</strong>. You can active an inactive environment later.</td>
+   </tr>
+   <tr>
+      <td>Outgoing emails</td>
+      <td>Setting to <strong>On</strong> means that code in your environment can send and receive e-mails (for example, using PHP <code>mail()</code> function. </td>
+   </tr>
+   <tr>
+      <td>HTTP access control</td>
+      <td>Setting to <strong>On</strong> enables you to configure security for the project's Web Interface using a login and also IP address access control.</td>
+   </tr>
 </table>
 
 ### Configure emails for testing {#email}
@@ -100,11 +99,12 @@ To set environment specific variables in the Project Web Interface:
 1. In the **Name** field, enter a variable name. For example, to set the Magento Admin default account password, enter `ADMIN_PASSWORD`.
 1. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set environment variables]({{ site.baseurl }}/common/images/cloud_env-var.png)
+   ![Set environment variables]({{ site.baseurl }}/common/images/cloud_env-var.png)
+
 1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 If you are attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 
@@ -118,7 +118,7 @@ To set project variables in the Project Web Interface:
 1. In the **Name** field, enter a variable name. For example, to set the Magento Admin email for the default account, enter `ADMIN_EMAIL`.
 1. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-  ![Set project variables]({{ site.baseurl }}/common/images/cloud_project_variable.png)
+   ![Set project variables]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 
 1. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 1. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
@@ -149,10 +149,10 @@ Routes allow you to set redirects or upstream settings for applications for your
 
 An environment's history includes:
 
-- Initial creation
-- Snapshots
-- Syncs and merges
-- Code pushes
+-  Initial creation
+-  Snapshots
+-  Syncs and merges
+-  Code pushes
 
 To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [Log locations]({{page.baseurl}}/cloud/project/log-locations.html).
 
@@ -162,11 +162,11 @@ The following figure shows a sample history.
 
 The history shows, from oldest to newest:
 
-- Environment branched from `FeatureX`
-- Environment synced with the parent
-- Environment snapshot created
+-  Environment branched from `FeatureX`
+-  Environment synced with the parent
+-  Environment snapshot created
 
 We recommend [creating a snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) before you make any code changes.
 
-- Environment variable added
-- Environment snapshot created
+-  Environment variable added
+-  Environment snapshot created

@@ -14,20 +14,20 @@ This topic describes how to implement a custom shipping address renderer.
 
 Out of the box, Magento [checkout](https://glossary.magento.com/checkout) consists of two steps:
 
-- Shipping Information
-- Review and Payment Information
+-  Shipping Information
+-  Review and Payment Information
 
 On the Shipping Information checkout step Magento renders all addresses previously saved by a shopper. The shopper can then select the one to be used for shipping by clicking it. The default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
 To implement shipping address rendering in checkout, you need to take the following steps:
 
 1. [Create the JS renderer component (shipping address renderer)](#create).
-2. [Create a template for the shipping address renderer.](#template)
-3. [Create the JS model for the shipping rate processor](#rate_processor).
-4. [Create the JS model for the shipping address saving processor](#save).
-5. [Create the JS component registering the processors](#register).
-6. [Declare the new components in the checkout page layout.](#layout).
-7. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
+1. [Create a template for the shipping address renderer.](#template)
+1. [Create the JS model for the shipping rate processor](#rate_processor).
+1. [Create the JS model for the shipping address saving processor](#save).
+1. [Create the JS component registering the processors](#register).
+1. [Declare the new components in the checkout page layout.](#layout).
+1. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 

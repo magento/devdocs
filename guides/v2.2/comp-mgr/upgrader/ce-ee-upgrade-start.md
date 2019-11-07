@@ -23,23 +23,24 @@ Make sure you are authorized for {{site.data.var.ee}} access before you continue
 
 To run System Upgrade:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
-2.	Click **System** > **Web Setup Wizard**.
-	The following page displays.
+1. Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
+1. Click **System** > **Web Setup Wizard**.
 
-    ![Specify whether to manage components or upgrade Magento]
+   The following page displays.
 
-3.	Click **System Upgrade**.
+   ![Specify whether to manage components or upgrade Magento]
 
-    Magento begins searching for core module updates immediately. To also search for component updates, click **Yes**. A sample follows:
+1. Click **System Upgrade**.
 
-    ![Magento begins searching for upgrades right away]
+   Magento begins searching for core module updates immediately. To also search for component updates, click **Yes**. A sample follows:
 
-    The page displays similar to the following when we find components to upgrade.
+   ![Magento begins searching for upgrades right away]
 
-    ![Magento finds software to upgrade]
+   The page displays similar to the following when we find components to upgrade.
 
-       From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
+   ![Magento finds software to upgrade]
+
+      From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
 
 After the upgrade completes:
 
@@ -49,26 +50,28 @@ After the upgrade completes:
    bin/magento cache:clean
    ```
 
-2. Restart Varnish if you use it for page caching.
+1. Restart Varnish if you use it for page caching.
 
    ```bash
    service varnish restart
    ```
 
-#### Errors
+### Errors
 
-*	The following error can indicate one of several issues, including that you haven't entered your [authentication keys] in the Magento Admin:
+*  The following error can indicate one of several issues, including that you haven't entered your [authentication keys] in the Magento Admin:
 
-	![Sorry we can't take that action right now]
+   ![Sorry we can't take that action right now]
 
-    For suggested solutions to other causes indicated by this message, see [troubleshooting].
+   For suggested solutions to other causes indicated by this message, see [troubleshooting].
 
-*	The following error might display:
+*  The following error might display:
 
-		[2016-01-19 23:33:24 UTC] An error occurred while executing job
-		"setup:upgrade {"command":"setup:upgrade"}": Could not complete
-		setup:upgrade {"command":"setup:upgrade"} successfully: Source
-		class "\Cybersource" for "CybersourceLogger" generation does not exist.
+   ```terminal
+   [2016-01-19 23:33:24 UTC] An error occurred while executing job
+   "setup:upgrade {"command":"setup:upgrade"}": Could not complete
+   setup:upgrade {"command":"setup:upgrade"} successfully: Source
+   class "\Cybersource" for "CybersourceLogger" generation does not exist.
+   ```
 
 ## Continue your upgrade {#ce-ee-continue}
 

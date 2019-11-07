@@ -29,10 +29,10 @@ Processor name | Class | URL pattern | Description
 
 To create a custom processor, you must perform the following tasks:
 
-* Define the custom processor in `webapi_rest/di.xml`.
-* Create a processor class and implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
-* Define the processing rules in the `canProcess` method.
-* Create the processor logic in the `process` method.
+*  Define the custom processor in `webapi_rest/di.xml`.
+*  Create a processor class and implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
+*  Define the processing rules in the `canProcess` method.
+*  Create the processor logic in the `process` method.
 
 ### Define the custom processor
 

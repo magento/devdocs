@@ -7,9 +7,9 @@ This page shows the status of each component for the Magento 2.3.x release and i
 
 Each status color indicates the severity and amount of 2.3-related issues for a particular component.
 
-- <span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.
-- <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
-- <span class="status green">Green</span> - The module has no significant or outstanding issues.
+-  <span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.
+-  <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
+-  <span class="status green">Green</span> - The module has no significant or outstanding issues.
 
 The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.3.
 Issues that are not related to the 2.3 release are not part of this report.

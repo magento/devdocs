@@ -1,0 +1,1 @@
+../../../v2.2/reference/cli/magento-cloud.md

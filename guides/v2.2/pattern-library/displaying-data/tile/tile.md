@@ -6,13 +6,13 @@ This topic contains examples of the Tile pattern used in the [Admin](https://glo
 
 ## Functional Behavior
 
-* Drag and Drop
-* Remove
-* Hero Product checkbox and link
-* Advance position left and right
-* Numerical input box
-* Multi selection
-* Hero Product Section
+*  Drag and Drop
+*  Remove
+*  Hero Product checkbox and link
+*  Advance position left and right
+*  Numerical input box
+*  Multi selection
+*  Hero Product Section
 
 ## Use of Tiles
 

@@ -51,14 +51,14 @@ http://{default}/path/more/:
 
 The preceding example caches the following routes:
 
-- `http://{default}/`
-- `http://{default}/path/more/`
-- `http://{default}/path/more/etc/`
+-  `http://{default}/`
+-  `http://{default}/path/more/`
+-  `http://{default}/path/more/etc/`
 
 And the following routes are **not** cached:
 
-- `http://{default}/path/`
-- `http://{default}/path/etc/`
+-  `http://{default}/path/`
+-  `http://{default}/path/etc/`
 
 {:.bs-callout-info}
 Regular expressions in routes are **not** supported.
@@ -87,10 +87,10 @@ cache:
 
 We support the following attributes:
 
-- [`enabled`](#cloud-cache-attrib-en)
-- [`headers`](#cloud-cache-attrib-head)
-- [`cookies`](#cloud-cache-attrib-cook)
-- [`default_ttl`](#cloud-cache-attrib-ttl)
+-  [`enabled`](#cloud-cache-attrib-en)
+-  [`headers`](#cloud-cache-attrib-head)
+-  [`cookies`](#cloud-cache-attrib-cook)
+-  [`default_ttl`](#cloud-cache-attrib-ttl)
 
 ### `enabled` {#cloud-cache-attrib-en}
 
@@ -131,8 +131,8 @@ You can't use wildcards in the cookie name. You must either use a precise cookie
 
 Magento cookies have the following restrictions:
 
-- You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
-- A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
+-  You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
+-  A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
 

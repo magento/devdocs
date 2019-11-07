@@ -69,15 +69,15 @@ All components options are separate nodes, and a node's purpose is defined by it
 When editing XML configuration files in an IDE, the autocomplete feature prompts the correct spelling and the possible options.
 {% collapsible Illustration %}
 
-* Node declaration autocomplete:
+*  Node declaration autocomplete:
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/ui_comps/autocomplete1.png){:width="610px"}
 
-* Attribute declaration autocomplete:
+*  Attribute declaration autocomplete:
 
 ![Attribute declaration autocomplete]({{ site.baseurl }}/common/images/ui_comps/autocomplete1.png){:width="630px"}
 
-* Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type:
+*  Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type:
 
 ![no defined interface]({{ site.baseurl }}/common/images/ui_comps/no_type.png){:width="410px"}
 
@@ -88,19 +88,20 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
 
 {% collapsible Illustration %}
-* If the node name is misspelled:
+
+*  If the node name is misspelled:
 
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation1.png){:width="410px"}
 
-* If the required attribute is missing:
+*  If the required attribute is missing:
 
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation2.png){:width="410px"}
 
-* The tooltip displayed if you move the pointer over the underlined element:
+*  The tooltip displayed if you move the pointer over the underlined element:
 
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation3.png){:width="410px"}
 
-* Validating the complete file:
+*  Validating the complete file:
 
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation_file.png){:width="520px"}
 ![first_way_ui_components_declaration]({{ site.baseurl }}/common/images/ui_comps/validation_messages.png)

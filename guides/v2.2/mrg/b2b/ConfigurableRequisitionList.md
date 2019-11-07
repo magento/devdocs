@@ -14,9 +14,9 @@ The `Magento_ConfigurableRequisitionList` module enables configurable products t
 
 The `Magento_ConfigurableRequisitionList` module provides the following features:
 
-* Display configurable products in a requisition list.
+*  Display configurable products in a requisition list.
 
-* Add configurable products to cart from a requisition list.
+*  Add configurable products to cart from a requisition list.
 
 ## Installation details
 

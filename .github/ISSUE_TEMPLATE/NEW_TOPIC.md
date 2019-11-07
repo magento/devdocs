@@ -15,10 +15,10 @@ about: Create a request to add missing information to devdocs
 
 <!-- Use the following checklist template as a starting point -->
 
-- [ ] The topic provides an explanation of how ____ works.
-- [ ] The topic provides steps for ____.
-- [ ] The topic contains code samples that shows ____.
-- [ ] Other (please specify)
+-  [ ] The topic provides an explanation of how ____ works.
+-  [ ] The topic provides steps for ____.
+-  [ ] The topic contains code samples that shows ____.
+-  [ ] Other (please specify)
 
 ## Additional information/resources
 

@@ -13,21 +13,21 @@ Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#ge
 
 The following components can be used in the scope of the Form component:
 
-* ActionDelete
-* Checkbox
-* Checkboxset
-* DataSource
-* FieldSet
-* FileUploader
-* Hidden
-* Input
-* Multiline
-* Multiselect
-* Radioset
-* Select
-* Text
-* Textarea
-* [Wysiwyg](https://glossary.magento.com/wysiwyg)
+*  ActionDelete
+*  Checkbox
+*  Checkboxset
+*  DataSource
+*  FieldSet
+*  FileUploader
+*  Hidden
+*  Input
+*  Multiline
+*  Multiselect
+*  Radioset
+*  Select
+*  Text
+*  Textarea
+*  [Wysiwyg](https://glossary.magento.com/wysiwyg)
 
 ## Configuration options
 
@@ -213,9 +213,10 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
 To create an instance of the Form component, you need to do the following:
 
 1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
-2. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
-3. Create the DataProvider class for the entity that implements DataProviderInterface
-* Add a component in Magento [layout](https://glossary.magento.com/layout) as a node: `<uiComponent name="customer_form"/>`
+1. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
+1. Create the DataProvider class for the entity that implements DataProviderInterface
+
+   *  Add a component in Magento [layout](https://glossary.magento.com/layout) as a node: `<uiComponent name="customer_form"/>`
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -232,8 +233,8 @@ To create an instance of the Form component, you need to do the following:
 
 Component could be configured in two ways:
 
-* globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
-* locally: using concrete component instance configuration, such as `<your module root dir>view/base/ui_component/customer_form`
+*  globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
+*  locally: using concrete component instance configuration, such as `<your module root dir>view/base/ui_component/customer_form`
 
 Create configuration file: `<your module root dir>view/base/ui_component/customer_form.xml`
 
@@ -270,11 +271,11 @@ Create configuration file: `<your module root dir>view/base/ui_component/custome
 
 Nodes are optional and contain parameters required for component:
 
-* settings -> deps - sets the dependency on component initialization
+*  settings -> deps - sets the dependency on component initialization
 
-* js_config -> provider - specifies the name of the component data
+*  js_config -> provider - specifies the name of the component data
 
-* settings -> layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
+*  settings -> layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 
@@ -355,9 +356,9 @@ An example of the configuration of the DataSource object:
 
 Component configuration:
 
-* argument `"dataProvider"` - contains configuration, class name, and arguments
+*  argument `"dataProvider"` - contains configuration, class name, and arguments
 
-* `"js_config"` -> `"component"` -> JavaScript indication of a responsible component
+*  `"js_config"` -> `"component"` -> JavaScript indication of a responsible component
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
@@ -404,4 +405,4 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js)
+*  [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js)

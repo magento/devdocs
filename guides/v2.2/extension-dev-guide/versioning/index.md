@@ -18,9 +18,9 @@ The `version` field in a modules [`composer.json`][composer-json] file specifies
 
 The format follows [Semantic Versioning][semantic-versioning] rules:
 
-* The MAJOR version increments when incompatible API changes are made.
-* The MINOR version increments when backward-compatible functionality has been added.
-* The PATCH version increments when backward-compatible bug fixes occur.
+*  The MAJOR version increments when incompatible API changes are made.
+*  The MINOR version increments when backward-compatible functionality has been added.
+*  The PATCH version increments when backward-compatible bug fixes occur.
 
 ### Pre-release versions
 
@@ -35,9 +35,9 @@ For pre-release versions, the format is:
 
 Magento's module versioning policy complies with the following specifications:
 
-* [Semantic Versioning][semantic-versioning]{:target="_blank"}
-* [Composer version specification][composer-versioning]{:target="_blank"}
-* [PHP `version_compare()` specification][php-version-compare]{:target="_blank"}
+*  [Semantic Versioning][semantic-versioning]{:target="_blank"}
+*  [Composer version specification][composer-versioning]{:target="_blank"}
+*  [PHP `version_compare()` specification][php-version-compare]{:target="_blank"}
 
 ## Where versioning is used
 

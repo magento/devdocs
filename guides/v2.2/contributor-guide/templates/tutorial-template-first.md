@@ -11,9 +11,9 @@ return_to:
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:
 
-* A tutorial replaces the navigation with a table of contents that is specific to the tutorial.
-* The bottom of the index page contains a **Begin Tutorial** button.
-* **Next** and **Previous** buttons are displayed at the bottom of each topic.
+*  A tutorial replaces the navigation with a table of contents that is specific to the tutorial.
+*  The bottom of the index page contains a **Begin Tutorial** button.
+*  **Next** and **Previous** buttons are displayed at the bottom of each topic.
 
 ## Metadata parameters
 
@@ -33,7 +33,7 @@ Parameter | Description
 
 The following example shows the completed frontmatter section for an index page:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Order processing tutorial
@@ -56,6 +56,6 @@ This summary should be very brief (about 3 lines).
 
 ## Complete these prerequisites
 
-* List any skills required (PHP, database, admin, etc.)
-* List any assumptions or requirements before starting.
-* List any steps, bulleted and in order, necessary before starting the tutorial.
+*  List any skills required (PHP, database, admin, etc.)
+*  List any assumptions or requirements before starting.
+*  List any steps, bulleted and in order, necessary before starting the tutorial.

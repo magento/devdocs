@@ -4,8 +4,445 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Sep 9 16:43:06 2019
+updated: Mon Nov 4 13:09:57 2019
 entries:
+- description: Updated the [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
+    documentation for the Early Access Program.
+  versions: ''
+  type: New topic
+  date: November 4, 2019
+  link: https://github.com/magento/devdocs/pull/5918
+- description: Added the [RequireJS in Magento](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/requirejs.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 31, 2019
+  link: https://github.com/magento/devdocs/pull/5840
+- description: Added an example for retrieving the IP address of a particular Cloud
+    instance to the [Integration environment IP address](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress)
+    section in the  _Cloud Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 31, 2019
+  link: https://github.com/magento/devdocs/pull/5883
+- description: Added the [Password Hashing](https://devdocs.magento.com/guides/v2.3/config-guide/secy/hashing.html)
+    topic to the _Configuration Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 29, 2019
+  link: https://github.com/magento/devdocs/pull/5874
+- description: Added the following information to the [Set up Elasticsearch](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)<br/>topic
+    in the _Cloud Guide_–<br/>- Recommendation to always set up<br/>Elasticsearch
+    as a fallback option if using a third-party search tool<br/>- Instructions for
+    checking Elasticsearch software compatibility<br/>- "Additional Search Configuration"<br/>section
+    with details about customizing search options and testing Elasticsearch
+  versions: 2.x
+  type: Major update
+  date: October 26, 2019
+  link: https://github.com/magento/devdocs/pull/5823
+- description: Updated the  [Multiline component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-multiline.html)
+    documentation in the _UI Components Guide_<br/>- Adjusted the markup for the options
+    table<br/>- Fixed the wrong default values for some options<br/>- Added the "Source
+    files", "Example", and "Results" sections
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 24, 2019
+  link: https://github.com/magento/devdocs/pull/5636
+- description: Updated the [Deployment best practices](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+    topic in the _Cloud Guide_:<br/>- Added additional validation and tasks to address
+    common Support issues<br/>- Added additional links to supporting information and
+    instructions<br/>- Added a new "Upgrade best practices" subsection to provide
+    specific upgrade steps
+  versions: 2.x
+  type: Major update
+  date: October 22, 2019
+  link: https://github.com/magento/devdocs/pull/5703
+- description: Updated the [Cloud launch modes](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)  documentation
+    to configure Varnish as a http-cache-host so that Varnish purges with a Magento
+    cache clean.
+  versions: 2.x
+  type: Technical changes
+  date: October 22, 2019
+  link: https://github.com/magento/devdocs/pull/5721
+- description: Added the documentation for the [DynamicRowsRecord](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-record.html)
+    UI component to the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 21, 2019
+  link: https://github.com/magento/devdocs/pull/5634
+- description: Updated the [Plugins (Interceptors)](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html)
+    topic in the _Frontend Developer Guide_ to clarify that these plugins are for
+    updating layouts. Also, removed incorrect information and clarified descriptions
+    and examples.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 21, 2019
+  link: https://github.com/magento/devdocs/pull/5547
+- description: Changes to the status of Magento Shipping are now described in the
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)  and
+    the [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html).
+  versions: 2.3.3
+  type: Major update
+  date: October 20, 2019
+  link: https://github.com/magento/devdocs/pull/5807
+- description: Updated the [Magento Commerce Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)
+    to add information about a known issue with method chaining that has been identified
+    in the 2.3.3 code base and the patch that was released on October 18 to address
+    this issue.
+  versions: ''
+  type: Major update
+  date: October 18, 2019
+  link: https://github.com/magento/devdocs/pull/5800
+- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/product/category-interface.html)
+    in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: New topic
+  date: October 16, 2019
+  link: https://github.com/magento/devdocs/pull/5718
+- description: Added an "Errors" section to the [changeCustomerPassword mutation](https://devdocs.magento.com/guides/v2.3/graphql/mutations/change-customer-password.html)
+    topic in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Technical changes
+  date: October 15, 2019
+  link: https://github.com/magento/devdocs/pull/5633
+- description: Added [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html#releases-2_2_9-2_2_10)
+    for the Magento 2.2.10 release.
+  versions: 2.2.10
+  type: Major update
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5640
+- description: Clarified the use of a static content deployment command for [troubleshooting
+    theme deployment](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html#trouble).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5565
+- description: Added [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    for the Magento 2.3.3 release.
+  versions: 2.3.3
+  type: Major update
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5686
+- description: Added a warning to ensure that the [CRYPT_KEY](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#crypt_key)  deploy
+    variable for Magento Commerce Cloud environments is set in the Project Web UI
+    to avoid exposing sensitive data.
+  versions: 2.x
+  type: Technical changes
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5663
+- description: Added documentation for the [Folder tree widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-folder-tree.html)
+    to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5503
+- description: Added the "Execute data-mage-init and x-magento-init in dynamic content"
+    section to the [Calling and initializing JavaScript](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_init.html)
+    topic in the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5481
+- description: Added the [Manage disk space topic](https://devdocs.magento.com/guides/v2.3/cloud/project/manage-disk-space.html)
+    to the _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: October 10, 2019
+  link: https://github.com/magento/devdocs/pull/5641
+- description: Updated the _Command-line tools reference_:<br/>- Regenerated [bin/magento
+    (Open Source)](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html)<br/>-
+    Added [bin/magento (Commerce)](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-commerce.html)<br/>-
+    Added [magento-cloud]( https://devdocs.magento.com/guides/v2.3/reference/cli/magento-cloud.html)
+  versions: 2.2.10, 2.3.3
+  type: New topic
+  date: October 10, 2019
+  link: https://github.com/magento/devdocs/pull/5642
+- description: Added Amazon Sales Channel version 3.0.0 [Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/).
+  versions: 3.0.0 Amazon Sales Channel
+  type: Major update
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5612
+- description: Added the [Custom widget](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-widget.html)
+    tutorial to the _Extensions Best Practices Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5424
+- description: Added the following new topics to the _Magento Functional Testing Framework Guide_<br/>- [Selectors](https://devdocs.magento.com/mftf/docs/guides/selectors.html)<br/>-
+    [Using Suites](https://devdocs.magento.com/mftf/docs/guides/using-suites.html)<br/>-
+    [Test Modularity](https://devdocs.magento.com/mftf/docs/guides/test-modularity.html)<br/>-
+    [Test Isolation](https://devdocs.magento.com/mftf/docs/guides/test-isolation.html).
+  versions: ''
+  type: New topic
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5637
+- description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
+    to the _Frontend Developer Guide_.
+  versions: 2.2.10, 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5586
+- description: Added [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
+    for Google Shopping ads Channel v3.0.1 to the _Extension Developer Guide_.
+  versions: 2.3.3, 3.0.1 GSa
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5568
+- description: Updated the REST schema for [2.3.3](https://devdocs.magento.com/redoc/2.3/)
+    and [2.2.10](https://devdocs.magento.com/swagger/index_22.html).
+  versions: 2.2.10, 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5389
+- description: Added the [sendEmailToFriend mutation](https://devdocs.magento.com/guides/v2.3/graphql/mutations/send-email-to-friend.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5368
+- description: Added examples of downloading Composer metapackages for Magento Commerce
+    minor releases, quality patches, and security patches to the [Install](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html)
+    and [CLI Upgrade](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html)
+    topics.
+  versions: 2.3.x
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5189
+- description: Updated the option descriptions for the `queue:consumers:start` Magento
+    CLI command:<br/>- Deprecated the `--pid-file-path` option which caused issues
+    with database deadlock on  some Magento Commerce projects deployed on the Cloud
+    platform.<br/>- Added the `--single-thread` option which prevents running multiple
+    copies of a consumer simultaneously
+  versions: 2.2.10, 2.3.3
+  type: Technical changes
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5257
+- description: Updated the [GraphQL checkout tutorial](https://devdocs.magento.com/guides/v2.3/graphql/tutorials/checkout/index.html)
+    to include the `setPaymentMethodAndPlaceOrder` mutation.
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4950
+- description: Added the [Braintree](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/braintree.html)
+    and [Braintree Vault](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/braintree-vault.html)
+    payment methods to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4915
+- description: Added information about [configuring RabbitMQ before and after installation](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/install-rabbitmq.html)
+    to the _Installation Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5063
+- description: Added the [Express Checkout for other PayPal solutions](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/payflow-express.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5158
+- description: Added the [PayPal Website Payments Pro Hosted Solution payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/hosted-pro.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5139
+- description: Added the [CardinalCommerce 3-D Secure](https://devdocs.magento.com/guides/v2.2/payments-integrations/cardinal/cardinal.html)
+    topic to the _Payment Integration Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5011
+- description: Added the [PayPal Express Checkout payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/paypal-express-checkout.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5099
+- description: Added `MediaGalleryInterface` as an output object for [`products`](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+    queries in the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5048
+- description: Added a description of the `@magentoConfigFixture` annotation to the
+    [GraphQL functional testing](https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
+    topic.
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5086
+- description: Related items, up-sell, and cross-sell products are now supported in
+    the [products query](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4986
+- description: Added catalog attributes to the [storeConfig query](https://devdocs.magento.com/guides/v2.3/graphql/reference/store-config.html)
+    in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4920
+- description: Added the [PayPal Payments Advanced payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/payments-advanced.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5035
+- description: Added the [checkoutAgreements query](https://devdocs.magento.com/guides/v2.3/graphql/queries/checkout-agreements.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4943
+- description: Updated the [customer query](https://devdocs.magento.com/guides/v2.3/graphql/reference/customer.html)
+    topic in the _GraphQL Developer Guide_ to include store credit information.
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4993
+- description: Added the [Message queues and stores](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/message-queues-stores.html)
+    topic to the _PHP Developer Guide_.
+  versions: 2.3.2
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4882
+- description: Added documentation for the [applyStoreCreditToCart](https://devdocs.magento.com/guides/v2.3/graphql/mutations/apply-store-credit.html)
+    and [removeStoreCreditFromCart](https://devdocs.magento.com/guides/v2.3/graphql/mutations/remove-store-credit.html) to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4960
+- description: Added information about applying store codes to [asynchronous](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html)
+    and [bulk](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) REST
+    endpoints in the _REST API Reference_.
+  versions: 2.3.3
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4868
+- description: Added the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) topic
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4930
+- description: Added the [Payflow Pro payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/payflow-pro.html) topic
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.2
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4873
+- description: Added the [PayPal Payflow Link](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/payflow-link.html)
+    and [getPayflowLinkToken query](https://devdocs.magento.com/guides/v2.3/graphql/queries/get-payflow-link-token.html) topics to
+    the _GraphQL Developer Guide_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/4861
+- description: Published all documentation updates related to the Q3 Commerce and
+    Open Source release.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5609
+- description: Regenerated the _[Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)_.
+  versions: 2.3.3
+  type: New topic
+  date: October 8, 2019
+  link: https://github.com/magento/devdocs/pull/5621
+- description: Added the [Example - logging to a custom log file](https://devdocs.magento.com/guides/v2.2/config-guide/log/custom-logger-handler.html) topic to the _Configuration Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 7, 2019
+  link: https://github.com/magento/devdocs/pull/5416
+- description: Added Inventory Management (MSI) modules to the _[Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)_.
+  versions: 2.3.x
+  type: New topic
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5522
+- description: Added instructions to [change the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials)
+    to the _Cloud Guide_.
+  versions: 2.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5501
+- description: Added instructions for getting connection credentials
+    to the [Set up RabbitMQ](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html)
+    topic in the _Cloud Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5422
+- description: Added the "Disabling an Observer" section to the [Events and Observers](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/events-and-observers.html) 
+    topic in the _PHP Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 1, 2019
+  link: https://github.com/magento/devdocs/pull/5489
+- description: Added the [RemainingCharacters widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-remaining-characters.html)
+    topic to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 24, 2019
+  link: https://github.com/magento/devdocs/pull/5452
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: September 20, 2019
+  link: https://github.com/magento/devdocs/pull/5438
+- description: Added options and methods to the [Multiselect Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-multiselect.html)
+    topic in the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 19, 2019
+  link: https://github.com/magento/devdocs/pull/5354
+- description: Updated the [Add site map and search engine robots](https://devdocs.magento.com/guides/v2.3/cloud/trouble/robots-sitemap.html)
+    topic in the _Cloud Guide_ with a VCL snippet example to create a typical domain redirect for `robots.txt`
+    and `sitemap.xml` files.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 19, 2019
+  link: https://github.com/magento/devdocs/pull/5330
+- description: Added the [Sortable Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-sortable.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 18, 2019
+  link: https://github.com/magento/devdocs/pull/5358
+- description: Added a [Symbolic links](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md#symbolic-links) section to the _Contribution Guide_.
+  versions: ''
+  type: Major update
+  date: September 18, 2019
+  link: https://github.com/magento/devdocs/pull/5357
+- description: Added the [Sticky widget](http://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_sticky.html)
+    topic to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 17, 2019
+  link: https://github.com/magento/devdocs/pull/5371
+- description: Added the [Media Uploader widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-media-uploader.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: September 17, 2019
+  link: https://github.com/magento/devdocs/pull/5360
+- description: Added the [Log locations topic](https://devdocs.magento.com/guides/v2.3/cloud/project/log-locations.html)
+    to the _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: September 13, 2019
+  link: https://github.com/magento/devdocs/pull/5351
+- description: Updated information about using LESS with Grunt in the [Compile LESS using
+    Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
+    and [Using Grunt for Magento tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/tools/using_grunt.html)
+    topics.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: September 10, 2019
+  link: https://github.com/magento/devdocs/pull/5343
 - description: Added an example of the `escapeCss` function to the [Templates XSS
     security](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html)
     topic.
@@ -219,12 +656,6 @@ entries:
   type: Technical changes
   date: July 30, 2019
   link: https://github.com/magento/devdocs/pull/5039
-- description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
-    to the Frontend Developer Guide.
-  versions: 2.2.x, 2.3.x
-  type: New topic
-  date: July 30, 2019
-  link: https://github.com/magento/devdocs/pull/4726
 - description: Added steps for [creating a patch from a git commit](https://devdocs.magento.com/guides/v2.2/comp-mgr/patching.html#custom-patches).
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -567,8 +998,8 @@ entries:
   type: Major update
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4556
-- description: The [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
-    adds numerous mutations for 2.3.2. Each mutation is documented separately. The
+- description: The [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
+    now has numerous related mutations for 2.3.2. Each mutation is documented separately. The
     [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
     lists these new mutations.
   versions: 2.3.2
@@ -590,7 +1021,7 @@ entries:
   date: June 22, 2019
   link: https://github.com/magento/devdocs/pull/4402
 - description: Added the `only_x_left_in_stock` and `stock_status` attributes to the
-    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+    [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
     These attributes were added to support Inventory Management orders.
   versions: 2.3.2
   type: Technical changes
@@ -1148,26 +1579,26 @@ entries:
   type: Technical changes
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3882
-- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/reference/configurable-product.html)
-    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/reference/downloadable-product.html)
+- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html)
+    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/product/downloadable-product.html)
     endpoints
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3867
 - description: The "Searches and Pagination" topic  has been expanded to include more
-    information about queries and renamed to ["Queries"](https://devdocs.magento.com/guides/v2.3/graphql/queries.html).
+    information about queries and renamed to ["Using queries"](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html).
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
-- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3859
-- description: Added queries and mutations to the [quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [`cart` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html) and several mutations.
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
@@ -1177,12 +1608,12 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3855
-- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/reference/customizable-option-interface.html)
+- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/customizable-option-interface.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3851
-- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations.html)
+- description: Added a topic on [GraphQL mutations](https://devdocs.magento.com/guides/v2.3/graphql/mutations/index.html)
   versions: 2.3.1
   type: New topic
   date: March 26, 2019
@@ -1673,7 +2104,7 @@ entries:
 - description: "- Updated the Magento Commerce Cloud instructions for [customizing
     response pages](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly-custom-response.html)<br/>for
     Fastly CDN and WAF services--adding additional screen captures and explanation.<br/>-
-    Edited the [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
+    Edited the Fastly [Web Application Firewall](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
     documentation to clarify information about features and benefits"
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -1725,7 +2156,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: November 21 2018
-- description: Added the [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+- description: Added the [GraphQL cart query](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html)
     topic
   versions: 2.3.x
   type: New topic
@@ -1735,7 +2166,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: November 20 2018
-- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html).
   versions: 2.3.x
   type: Technical changes
   date: November 16 2018
@@ -1831,7 +2262,7 @@ entries:
   type: Technical changes
   date: October 25 2018
 - description: Updated the Magento Commerce Cloud Fastly documentation with information
-    about the Magento Managed Cloud WAF solution. See [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
+    about the Fastly Web Application Firewall service. See [Web Application Firewall](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: October 22 2018
@@ -2001,7 +2432,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
-- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: Sep 5 2018
@@ -2015,7 +2446,7 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Sep 5 2018
-- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html)
+- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/custom-attribute-metadata.html)
     to include the new `attribute_options` object.
   versions: 2.3.x
   type: Technical changes
@@ -2073,7 +2504,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Aug 21 2018
-- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/reference/categories.html)
+- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/queries/category.html)
     topic.
   versions: 2.3.x
   type: Major update
@@ -2334,7 +2765,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 29 2018
-- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     to include functionality contributed by community members.
   versions: 2.3.x
   type: Technical changes
@@ -2367,7 +2798,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 15 2018
-- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+- description: Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
   versions: 2.3.x
   type: Technical changes
   date: May 10 2018
@@ -2479,7 +2910,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New
   date: Apr 24 2018
-- description: Added [Marketplace EQP API](https://devdocs.magento.com/guides/v2.2/marketplace/eqp/api.html)
+- description: Added [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
     reference documentation.
   versions: 2.x
   type: New topic

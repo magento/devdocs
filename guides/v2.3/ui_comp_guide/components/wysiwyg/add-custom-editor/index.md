@@ -62,29 +62,35 @@ This adapter should implement the extensions points called by `wysiwygInstance` 
 
 At minimum your adapter should implement the following methods:
 
-* `getAdapterPrototype()`
-* `setup( mode )`
-* `openFileBrowser( o )`
-* `toggle()`
-* `onFormValidation()`
-* `encodeContent(content)`
+*  `getAdapterPrototype()`
+*  `setup( mode )`
+*  `openFileBrowser( o )`
+*  `toggle()`
+*  `onFormValidation()`
+*  `encodeContent(content)`
 
 If you are integrating Magento entities such as variable and widget as plugins, your adapter must also implement the following methods:
 
-* `get( id )` - returns the editor by it element id
-* `getContent()` - returns the content stored in the WYSIWYG field
-* `setContent(content)` - replaces the entire contents of the WYSIWYG with the string content parameter
-* `insertContent( content )` - inserts content into the editor
-* `setCaretOnElement( targetElement )` - sets the caret location in the editor
-* `activeEditor()` - returns the active editor as an object with a `selection` property.
-  The `selection` property returns an instance of the editor with the following additional methods defined:
-  * `getBookmark( type:Number, normalized:Boolean ):Object` - returns a bookmark object that has the location for the current selection.
-    This is used to restore the selection after content modification in the document.
-  * `moveToBookmark( bookmark:Object ):Boolean` - restores the selection of the specified bookmark.
-  * `getNode():Element` - returns the currently selected element or common ancestor element for both start and end of the selection.
-  * `select( targetElement )` - selects the specified element.
-    This places the start and end of the selection range around the element.
-  * `collapse( to_start:Boolean ):void` - collapse the selection to start or end of range.
+*  `get( id )` - returns the editor by it element id
+*  `getContent()` - returns the content stored in the WYSIWYG field
+*  `setContent(content)` - replaces the entire contents of the WYSIWYG with the string content parameter
+*  `insertContent( content )` - inserts content into the editor
+*  `setCaretOnElement( targetElement )` - sets the caret location in the editor
+*  `activeEditor()` - returns the active editor as an object with a `selection` property.
+
+   The `selection` property returns an instance of the editor with the following additional methods defined:
+
+   *  `getBookmark( type:Number, normalized:Boolean ):Object` - returns a bookmark object that has the location for the current selection.
+
+      This is used to restore the selection after content modification in the document.
+
+   *  `moveToBookmark( bookmark:Object ):Boolean` - restores the selection of the specified bookmark.
+   *  `getNode():Element` - returns the currently selected element or common ancestor element for both start and end of the selection.
+   *  `select( targetElement )` - selects the specified element.
+
+      This places the start and end of the selection range around the element.
+
+   *  `collapse( to_start:Boolean ):void` - collapse the selection to start or end of range.
 
 **Example:** CKEditor/CKEditor4/view/base/web/ckeditor4Adapter.js
 

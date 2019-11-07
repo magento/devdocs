@@ -15,9 +15,9 @@ The following error might display at the start of your upgrade:
 
 See one of the following sections for possible solutions:
 
-*	[Problem: you're not authenticated](#not-auth)
-*	[Problem: the updater application isn't initialized](#updater)
-*	[Problem: you cloned the Magento GitHub repository](#git-clone)
+*  [Problem: you're not authenticated](#not-auth)
+*  [Problem: the updater application isn't initialized](#updater)
+*  [Problem: you cloned the Magento GitHub repository](#git-clone)
 
 ### Problem: you're not authenticated {#not-auth}
 
@@ -39,35 +39,44 @@ The updater application uses a cron job to run the upgrade; if it's not initiali
 
 Modify Magento's `composer.json` to reference the `https://repo.magento.com` repository and run `composer install` in the updater's root directory to resolve dependencies and initialize it as follows:
 
-1.	Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
-2.	Change to your Magento installation directory.
-3.	Back up your existing `composer.json`:
+1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Change to your Magento installation directory.
+1. Back up your existing `composer.json`:
 
-		cp composer.json composer.json.bak
+   ```bash
+   cp composer.json composer.json.bak
+   ```
 
-4.	Open `composer.json` in a text editor.
-5.	To the `repositories` section, add the following:
+1. Open `composer.json` in a text editor.
+1. To the `repositories` section, add the following:
 
-			{
-				"type": "composer",
-				"url": "https://repo.magento.com/"
-			}
+   ```json
+   {
+       "type": "composer",
+       "url": "https://repo.magento.com/",
+   }
+   ```
 
-    Example:
+   Example:
 
-		"repositories": [
-				{
-					"type": "composer",
-					"url": "https://repo.magento.com/"
-				}
-			]
+   ```json
+   "repositories": [
+        {
+          "type": "composer",
+          "url": "https://repo.magento.com/"
+        }
+   ]
+   ```
 
-6.	Save your changes to `composer.json` and exit the text editor.
-7.	Change to the `update` subdirectory, where the updater is located.
-8.	Enter the following command:
+1. Save your changes to `composer.json` and exit the text editor.
+1. Change to the `update` subdirectory, where the updater is located.
+1. Enter the following command:
 
-		composer install
-9.	After the command completes, try the upgrade again.
+   ```bash
+   composer install
+   ```
+
+1. After the command completes, try the upgrade again.
 
 ### You cloned the Magento GitHub repository {#git-clone}
 

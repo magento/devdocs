@@ -57,23 +57,23 @@ Lists are useful for organizing and displaying related items. Below are examples
 
 *Output:*
 
-* List Item 1
-* List Item 2
-* List Item 3
+*  List Item 1
+*  List Item 2
+*  List Item 3
 
 **Ordered List:**
 
 ```markdown
 1. First Step
-2. Second Step
-3. Third Step
+1. Second Step
+1. Third Step
 ```
 
 *Output:*
 
 1. First Step
-2. Second Step
-3. Third Step
+1. Second Step
+1. Third Step
 
 ### Images {#images}
 
@@ -128,19 +128,17 @@ Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/
 
 For inline code, surround the content with single backticks: `` `example` ``.
 
-For blocks of code, surround content with 3 backticks and an optional [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
+For blocks of code, surround content with 3 backticks and a [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
 
 *Example:*
 
-```markdown
-```html
+```text
 <div class="container">
   <h4 class="title">Title</h4>
   <div class="content">
     <p>Paragraph content.</p>
   </div>
 </div>
-```
 ```
 
 *Output:*

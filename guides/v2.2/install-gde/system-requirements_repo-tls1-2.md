@@ -13,9 +13,9 @@ functional_areas:
 
 The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:
 
-*	[Ubuntu](#solution-ubuntu)
-*	[CentOS](#solution-centos)
-*	[Mac OS](#solution-macos)
+*  [Ubuntu](#solution-ubuntu)
+*  [CentOS](#solution-centos)
+*  [Mac OS](#solution-macos)
 
 #### Ubuntu {#solution-ubuntu}
 

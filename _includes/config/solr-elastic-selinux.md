@@ -6,7 +6,7 @@ Please take into account that security-related software (iptables, SELinux, AppA
 
 To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:
 
-*	[iptables how-to](https://help.ubuntu.com/community/IptablesHowTo)
-*	[How to edit iptables rules (fedora project)](https://fedoraproject.org/wiki/How_to_edit_iptables_rules)
-*	[Introduction to SELinux (CentOS.org)](https://www.centos.org)
-*	[SELinux How-To Wiki (CentOS.org)](https://wiki.centos.org/HowTos/SELinux)
+*  [iptables how-to](https://help.ubuntu.com/community/IptablesHowTo)
+*  [How to edit iptables rules (fedora project)](https://fedoraproject.org/wiki/How_to_edit_iptables_rules)
+*  [Introduction to SELinux (CentOS.org)](https://www.centos.org)
+*  [SELinux How-To Wiki (CentOS.org)](https://wiki.centos.org/HowTos/SELinux)

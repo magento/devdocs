@@ -64,12 +64,14 @@ You can specify frontend and [backend](https://glossary.magento.com/backend) cac
 
 where
 
-*   `<frontend_type>` is the low-level frontend [cache type](https://glossary.magento.com/cache-type). Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="_blank"}.
+*  `<frontend_type>` is the low-level frontend [cache type](https://glossary.magento.com/cache-type). Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="_blank"}.
 
     If you omit `<frontend_type>`, [Magento\Framework\Cache\Core]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Core.php){:target="_blank"} is used.
-*   `<frontend_option>`, `<frontend_option_value>` are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.
-*   `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with [Zend_Cache_Backend](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html){:target="_blank"} and that implements [Zend_Cache_Backend_Interface](http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html){:target="_blank"}.
-*   `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
+*  `<frontend_option>`, `<frontend_option_value>` are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.
+*  `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with [Zend_Cache_Backend](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html){:target="_blank"} and that implements [Zend_Cache_Backend_Interface](http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html){:target="_blank"}.
+*  `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
 
-#### Next step
+{:.ref-header}
+Related topics
+
 [Low-level cache options]({{ page.baseurl }}/config-guide/cache/cache-options.html)

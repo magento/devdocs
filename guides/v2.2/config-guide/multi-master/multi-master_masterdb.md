@@ -12,9 +12,9 @@ functional_areas:
 
 This topic discusses how to get started with the split database solution by:
 
-1.	Installing {{site.data.var.ee}} with a single master database (named `magento`)
-2.	Creating two additional master databases for [checkout](https://glossary.magento.com/checkout) and OMS (named `magento_quote` and `magento_sales`)
-2.	Configuring {{site.data.var.ee}} to use the checkout and sales databases
+1. Installing {{site.data.var.ee}} with a single master database (named `magento`)
+1. Creating two additional master databases for [checkout](https://glossary.magento.com/checkout) and OMS (named `magento_quote` and `magento_sales`)
+1. Configuring {{site.data.var.ee}} to use the checkout and sales databases
 
 {:.bs-callout .bs-callout-info}
 This guide assumes all three databases are on the same host as the Magento application and that they're named `magento`, `magento_quote`, and `magento_sales`. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.
@@ -25,6 +25,7 @@ You can enable split databases at any time after you install the {{site.data.var
 
 {% include config/split-db.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

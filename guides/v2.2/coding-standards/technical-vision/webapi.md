@@ -64,7 +64,7 @@ To extend an interface, use [extension attributes]({{ page.baseurl }}/extension-
 
 1. Add a `schema.graphqls` file to the `<ModuleName>GraphQl` module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.
 
-2. Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in `schema.graphqls`
+1. Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in `schema.graphqls`
 
 ### Model Consistency Constraints
 
@@ -77,8 +77,8 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Authentication must be done via `\Magento\Authorization\Model\UserContextInterface`.
 1. Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.
 1. All new web API endpoints must be covered with web API functional tests.
-    * For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is `\Magento\TestFramework\TestCase\WebapiAbstract`
-    * The base class for GraphQL tests is: `\Magento\TestFramework\TestCase\GraphQlAbstract`
+    *  For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is `\Magento\TestFramework\TestCase\WebapiAbstract`
+    *  The base class for GraphQL tests is: `\Magento\TestFramework\TestCase\GraphQlAbstract`
 1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and storefront areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
 1. Authentication parameters must be passed via headers.

@@ -11,8 +11,8 @@ Block as a class represents a set of methods to manipulate with Magento UI block
 
 A block can have the following features:
 
-- A block can contain other blocks.
-- A block can be used in several pages and blocks.
+-  A block can contain other blocks.
+-  A block can be used in several pages and blocks.
 
 This topic shows how to create a new block and explore its structure. It discusses how to use mapping for forms in blocks and forms in tabs.
 
@@ -189,12 +189,12 @@ class Messages extends Block
 
 Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-* [`Magento\Mtf\Block\Block`]{:target="_blank"}
-* [`Magento\Mtf\Block\Form`]{:target="_blank"}
-* [`Magento\Backend\Test\Block\Widget\Tab`]{:target="_blank"}
-* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target="_blank"}
-* [`Magento\Backend\Test\Block\Widget\Grid`]{:target="_blank"}
-* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target="_blank"}
+-  [`Magento\Mtf\Block\Block`]{:target="_blank"}
+-  [`Magento\Mtf\Block\Form`]{:target="_blank"}
+-  [`Magento\Backend\Test\Block\Widget\Tab`]{:target="_blank"}
+-  [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target="_blank"}
+-  [`Magento\Backend\Test\Block\Widget\Grid`]{:target="_blank"}
+-  [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target="_blank"}
 
 ## Block identifier {#mtf_block_identifier}
 
@@ -381,9 +381,9 @@ Renders help to unify a polymorphic behavior of the block. If you want to test t
 A basic flow is the following:
 
 1. Get name and path of the block you want to test
-2. Create block class with logic you need for the tests
-3. Add block to the page
-4. Run the page generator
+1. Create block class with logic you need for the tests
+1. Add block to the page
+1. Run the page generator
 
 #### How to determine a block name and a path {#mtf_block_path}
 
@@ -418,9 +418,9 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 If you want to change the representation of block details, you can change a [`Template.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Template.php):
 
-* Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
+-  Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
-* Find the method
+-  Find the method
 
 ```php5
 <?php
@@ -433,7 +433,7 @@ protected function _toHtml()
 }
 ```
 
-* Change the code to the following
+-  Change the code to the following
 
 ```php
 <?php
@@ -451,7 +451,7 @@ protected function _toHtml()
 }
 ```
 
-* Save the file
+-  Save the file
 
 Now you can inspect any element in a browser, and find which block contains it.
 
@@ -552,8 +552,8 @@ Let's create render for the bundle product.
 
 Details:
 
-* The [PHP](https://glossary.magento.com/php) class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the `page` node
-* In the `block`, we indicate `name` attribute only
+-  The [PHP](https://glossary.magento.com/php) class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the `page` node
+-  In the `block`, we indicate `name` attribute only
 
 **Step 4**. Run the page generator
 
@@ -579,17 +579,17 @@ public function getOptions(FixtureInterface $product)
 
 It contains the `getOptions()` method that:
 
-* Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
+-  Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
 
-* Calls the `hasRender()` method to check if there is a render with the name `bundle`
+-  Calls the `hasRender()` method to check if there is a render with the name `bundle`
 
-* Calls the render if there is a render with the name `bundle`
+-  Calls the render if there is a render with the name `bundle`
 
 ```php
 $this->callRender($typeId, 'getOptions', ['product' => $product])
 ```
 
-* Calls a default method if the render is absent
+-  Calls a default method if the render is absent
 
 ```php
 $this->getCustomOptionsBlock()->getOptions($product);
@@ -600,12 +600,12 @@ $this->getCustomOptionsBlock()->getOptions($product);
 There are some rules that should be followed to define a selector:
 
 1. Use [CSS](https://glossary.magento.com/css) and XPath strategies.
-2. To work with forms, use the `name` attribute as a selector.
-3. If an attribute is static (not auto-generated), use the `id` attribute.
-4. If you cannot use `id`, use `data-*` attributes.
-5. We recommend not to use the `class` attribute, because it can be changed and not unique very often.
-6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
-7. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
+1. To work with forms, use the `name` attribute as a selector.
+1. If an attribute is static (not auto-generated), use the `id` attribute.
+1. If you cannot use `id`, use `data-*` attributes.
+1. We recommend not to use the `class` attribute, because it can be changed and not unique very often.
+1. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
+1. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
 
 <!-- LINK DEFINITIONS -->
 [page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html

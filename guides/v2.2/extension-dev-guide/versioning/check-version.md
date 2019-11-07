@@ -7,10 +7,10 @@ contributor_link: https://www.atwix.com/
 
 Use any of the following ways to determine which version of Magento is installed:
 
-- From the command line
-- With an HTTP GET request
-- From within the Magento Admin
-- By viewing the `composer.lock` file
+-  From the command line
+-  With an HTTP GET request
+-  From within the Magento Admin
+-  By viewing the `composer.lock` file
 
 ## Command line
 

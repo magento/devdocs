@@ -11,5 +11,5 @@ Free shipping | `freeshipping` | No
 To change which offline shipping methods are available:
 
 1. Select **Stores** > **Settings** > **Configuration** > **Sales** > **Shipping Methods** in Admin.
-2. Enable or disable the shipping methods as desired.
-3. Click **Save Config**.
+1. Enable or disable the shipping methods as desired.
+1. Click **Save Config**.

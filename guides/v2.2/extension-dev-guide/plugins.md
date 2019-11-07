@@ -20,13 +20,13 @@ This [interception](https://glossary.magento.com/interception) approach reduces 
 
 Plugins can not be used on following:
 
-* Final methods
-* Final classes
-* Non-public methods
-* Class methods (such as static methods)
-* `__construct`
-* Virtual types
-* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+*  Final methods
+*  Final classes
+*  Non-public methods
+*  Class methods (such as static methods)
+*  `__construct`
+*  Virtual types
+*  Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
 ### Declaring a plugin
 
@@ -42,14 +42,14 @@ The <code>di.xml</code> file in your [module](https://glossary.magento.com/modul
 
 You must specify these elements:
 
-* `type name`. A class or interface which the plugin observes.
-* `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
-* `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ClassName>`.
+*  `type name`. A class or interface which the plugin observes.
+*  `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
+*  `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ClassName>`.
 
 The following elements are optional:
 
-* `plugin sortOrder`. Plugins that call the same method run them using this order.
-* `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
+*  `plugin sortOrder`. Plugins that call the same method run them using this order.
+*  `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
 
 ### Defining a plugin
 
@@ -73,9 +73,10 @@ For example, to create a plugin for the `setName` method of some class:
 ```
 
 In the plugin class, the `setName` method may have one of the following names:
-- `beforeSetName`
-- `aroundSetName`
-- `afterSetName`
+
+*  `beforeSetName`
+*  `aroundSetName`
+*  `afterSetName`
 
 If the first letter in the name of the class method name for which you want to create a plugin is the `underscore` character, then you do not need to capitalize it in the plugin class.
 
@@ -91,9 +92,10 @@ For example, to create a plugin for the `_construct` method of some class:
 ```
 
 Use the following method names for the `_construct` method in the plugin class:
-- `before_construct`
-- `around_construct`
-- `after_construct`
+
+*  `before_construct`
+*  `around_construct`
+*  `after_construct`
 
 #### Before methods
 
@@ -292,15 +294,15 @@ The `sortOrder` property for plugins determines when to call the before, around,
 
 The prioritization rules for ordering plugins:
 
-* Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
+*  Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
 
-  * During each plugin execution, Magento executes the current plugin's before method.
-  * After the before method completes execution, the current plugin's around method wraps and initiates the next plugin or observed method.
+   *  During each plugin execution, Magento executes the current plugin's before method.
+   *  After the before method completes execution, the current plugin's around method wraps and initiates the next plugin or observed method.
 
-* Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
+*  Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
 
-  * During each plugin execution, the current plugin will first finish executing its around method.
-  * When the around method completes, the plugin executes its after method before moving on to the next plugin.
+   *  During each plugin execution, the current plugin will first finish executing its around method.
+   *  When the around method completes, the plugin executes its after method before moving on to the next plugin.
 
 **Example**
 
@@ -318,21 +320,21 @@ The table shows the plugins observing the same method with the following propert
 
 The execution flows in the following order:
 
-  * `PluginA::beforeDispatch()`
-  * `PluginB::beforeDispatch()`
-  * `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
+*  `PluginA::beforeDispatch()`
+*  `PluginB::beforeDispatch()`
+*  `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
 
-    * `PluginC::beforeDispatch()`
-    * `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
+   *  `PluginC::beforeDispatch()`
+   *  `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
 
-      * `Action::dispatch()`
+      *  `Action::dispatch()`
 
-    * `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
-    * `PluginC::afterDispatch()`
+   *  `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
+   *  `PluginC::afterDispatch()`
 
-  * `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
-  * `PluginB::afterDispatch()`
-  * `PluginA::afterDispatch()`
+*  `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
+*  `PluginB::afterDispatch()`
+*  `PluginA::afterDispatch()`
 
 ### Configuration inheritance
 
@@ -342,12 +344,10 @@ Magento uses plugins defined in the global scope when the system is in a specifi
 
 For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
-### Related topics
+{:.ref-header}
+Related topics
 
 *  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 *  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-
-### Related information
-
-* [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
-* [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
+*  [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
+*  [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}

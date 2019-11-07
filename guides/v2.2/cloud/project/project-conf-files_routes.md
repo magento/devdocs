@@ -23,7 +23,7 @@ The default `routes.yaml` file specifies the route templates for processing HTTP
 
 If you do not create a custom `routes.yaml` file, the automated deployment uses the default file.
 
-#### To list the configured routes:
+Use the `magento-cloud` CLI to view a list of the configured routes:
 
 ```bash
 magento-cloud environment:routes
@@ -40,33 +40,33 @@ magento-cloud environment:routes
 
 The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in route templates:
 
-- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
+-  `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
-  ```text
-  http://www.example.com/
+   ```text
+   http://www.example.com/
 
-  https://www.example.com/blog
-  ```
-  {: .no-copy}
+   https://www.example.com/blog
+   ```
+   {: .no-copy}
 
-  In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
+   In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
-- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+-  `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
-  ```text
-  http://www.example.com/
+   ```text
+   http://www.example.com/
 
-  http://www.example.com/blog
+   http://www.example.com/blog
 
-  https://www.example1.com/
+   https://www.example1.com/
 
-  https://www.example1.com/blog
-  ```
-  {: .no-copy}
+   https://www.example1.com/blog
+   ```
+   {: .no-copy}
 
-  The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
+   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
-  If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+   If a project does not have any domains configured, which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
 {{site.data.var.ee}} also generates routes for every active Integration environment. For Integration environments, `{default}` is replaced with the following domain name:
 
@@ -131,10 +131,10 @@ In the first sample, the server responds directly to a request of the form `http
 
 {{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for redirect and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
-- `*.example.com`
-- `www.example.com`
-- `blog.example.com`
-- `us.example.com`
+-  `*.example.com`
+-  `www.example.com`
+-  `blog.example.com`
+-  `us.example.com`
 
 This functions as a catch-all domain in a live environment.
 
@@ -146,8 +146,8 @@ If you define a `http://www.{default}/` route, the route becomes `http://www.add
 
 You can put any subdomain before the dot and the route resolves. In this example, the route is defined as `http://*.{default}/`, so both of the following URLs work:
 
-- `http://foo.add-theme-projectID.us.magentosite.cloud/`
-- `http://bar.add-theme-projectID.us.magentosite.cloud/`
+-  `http://foo.add-theme-projectID.us.magentosite.cloud/`
+-  `http://bar.add-theme-projectID.us.magentosite.cloud/`
 
 If you examine the routes of this sample application, you see:
 

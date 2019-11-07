@@ -24,10 +24,10 @@ _Promotions_ provide discounts, one time offers, coupons, first time buyer incen
 
 The following are tips to help create, update, and manage promotions and campaigns:
 
-* A promotion can be part of a campaign. A campaign cannot be a part of a promotion. You can have lists of promotions as price rules to use multiples times, with multiple campaigns.
-* When you create a promotion, it will always create an initial campaign that is inactive. It will have a start date but not an end date. You can ignore this initial campaign. You can Schedule a New Update with the correct campaign schedule and make it active.
-* A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion’s configuration page.
-* You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you do not an end date for a campaign, you must edit the original and push to update.
+*  A promotion can be part of a campaign. A campaign cannot be a part of a promotion. You can have lists of promotions as price rules to use multiples times, with multiple campaigns.
+*  When you create a promotion, it will always create an initial campaign that is inactive. It will have a start date but not an end date. You can ignore this initial campaign. You can Schedule a New Update with the correct campaign schedule and make it active.
+*  A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion’s configuration page.
+*  You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you do not an end date for a campaign, you must edit the original and push to update.
 
 ## Advanced Pricing and Staged Content {#adv-pricing}
 
@@ -38,13 +38,13 @@ Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_gui
 To edit Advanced Pricing and update Content Staging:
 
 1. Log into the Magento Admin.
-2. Navigate to **Products** > **Catalog** and select a product and edit.
-3. In the Pricing tab, select **Advanced Pricing**. Edit the price and Save changes.
-4. At the top of the page, click **Schedule New Update**.
-5. Create a new promotion for the product.
-6. Complete the promotion information. For the Scheduler, enter a begin and end date and time.
-6. Save the promotion. An inactive initial campaign is created.
-7. You can Preview to review the special price, promotion name, regular price, and the scheduled date range for the campaign.
+1. Navigate to **Products** > **Catalog** and select a product and edit.
+1. In the Pricing tab, select **Advanced Pricing**. Edit the price and Save changes.
+1. At the top of the page, click **Schedule New Update**.
+1. Create a new promotion for the product.
+1. Complete the promotion information. For the Scheduler, enter a begin and end date and time.
+1. Save the promotion. An inactive initial campaign is created.
+1. You can Preview to review the special price, promotion name, regular price, and the scheduled date range for the campaign.
 
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html). Click **Next** to walk through the steps.
 
@@ -56,9 +56,9 @@ To create a Price Rule, see our [Magento 2 User Guide](https://docs.magento.com/
 
 The following provides an example of creating a Price Rule for a First Order Only discount. For this discount, you would want to:
 
-* Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html) with a condition: Total Number of Orders less than 1
-* Add this customer segment as a condition to the cart rule
-* Optional - Add conditions and rules to apply the discounts to specific SKUs or categories of products for focused purchases
+*  Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html) with a condition: Total Number of Orders less than 1
+*  Add this customer segment as a condition to the cart rule
+*  Optional - Add conditions and rules to apply the discounts to specific SKUs or categories of products for focused purchases
 
 This ensures net-new customers or existing customers who have not made a purchase receive the discount only on their very first order. You could create banners and send email promotions for the first time purchase discount.
 
@@ -73,12 +73,15 @@ Each website can include one or more _stores_ with different categories and arti
 You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
-* Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
-  ![Store example 1]({{ site.baseurl }}/common/images/cloud_example-store1.png)
-* Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
+*  Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
-  ![Store example 2]({{ site.baseurl }}/common/images/cloud_example-store2.png)
-* Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
+   ![Store example 1]({{ site.baseurl }}/common/images/cloud_example-store1.png)
 
-  ![Store example 3]({{ site.baseurl }}/common/images/cloud_example-store3.png)
+*  Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
+
+   ![Store example 2]({{ site.baseurl }}/common/images/cloud_example-store2.png)
+
+*  Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
+
+   ![Store example 3]({{ site.baseurl }}/common/images/cloud_example-store3.png)

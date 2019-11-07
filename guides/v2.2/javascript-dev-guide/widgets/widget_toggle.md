@@ -22,7 +22,8 @@ $("#element").toggleAdvanced();
 ```
 
 Where:
--   `#element` is the selector of the element for which ToggleAdvanced is initialized.
+
+-  `#element` is the selector of the element for which ToggleAdvanced is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -43,12 +44,12 @@ The following example shows a PHTML file using the script:
 
 The ToggleAdvanced widget has the following options:
 
-- [baseToggleClass](#basetoggleclass)
-- [selectorsToggleClass](#selectorstoggleclass)
-- [toggleContainers](#togglecontainers)
-- [newLabel](#newlabel)
-- [curLabel](#curlabel)
-- [currentLabelElement](#currentlabelelement)
+-  [baseToggleClass](#basetoggleclass)
+-  [selectorsToggleClass](#selectorstoggleclass)
+-  [toggleContainers](#togglecontainers)
+-  [newLabel](#newlabel)
+-  [curLabel](#curlabel)
+-  [currentLabelElement](#currentlabelelement)
 
 ### `baseToggleClass`
 
@@ -102,8 +103,8 @@ Container element of the current label.
 
 The ToggleAdvanced widget has the following methods:
 
-- [beforeCreate](#beforecreate)
-- [afterCreate](#aftercreate)
+-  [beforeCreate](#beforecreate)
+-  [afterCreate](#aftercreate)
 
 ### `beforeCreate`
 

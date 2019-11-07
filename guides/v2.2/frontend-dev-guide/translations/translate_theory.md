@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
- This topic describes how to add theme strings so that the i18n tool can collect and add the strings to the dictionary.
+This topic describes how to add theme strings so that the i18n tool can collect and add the strings to the dictionary.
 
 Your custom theme may contain new strings that are not present in out-of-the-box Magento themes.
 To ensure your theme displays correctly with any language applied on a store view, verify the unique strings of your theme are added to the translation [i18n tool] when [generating the dictionary].
@@ -18,13 +18,13 @@ To ensure that your new string is added to the dictionary and translated, use th
 For example:
 
 ```php
-### <?php echo __('Create Backup') ?>
+<?php echo __('Create Backup') ?>
 ```
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 ```php
-### <?php echo __('Hello %1', $yourVariable) ?>
+<?php echo __('Hello %1', $yourVariable) ?>
 ```
 
 In this example, the _'Hello %1'_ string is added to the dictionary when the i18n tool is run.
@@ -32,22 +32,22 @@ In this example, the _'Hello %1'_ string is added to the dictionary when the i18
 ## Strings added in email templates {#add_strings_email}
 
 If your theme contains [custom email templates], their strings can be added to the dictionary as well.
-To add the email template strings to the dictionary, use the `{{trans}}` [directive].
+To add the email template strings to the dictionary, use the {% raw %} `{{trans}}` {% endraw %} [directive].
 
 Custom email templates [added using the Admin panel] are not stored in the file system, and their strings are not added to the dictionary.
 
-To ensure that your new string is added to the dictionary and translated, use the `trans` method when outputting a string in an [email template]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html).
+To ensure that your new string is added to the dictionary and translated, use the {% raw %} `{{trans}}` {% endraw %} [directive] when outputting a string in an [email template]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html).
 
 For example:
 
-- When only a string is added in the email template:
+-  When only a string is added in the email template:
     {% raw %}
     ```html
     {{trans "Lorem Ipsum is simply dummy text of the printing"}}
     ```
     {% endraw %}
 
-- When only a string is added with a variable value in the email template:
+-  When only a string is added with a variable value in the email template:
     {% raw %}
     ```html
     {{trans "%items items" items="numItems"}}
@@ -58,19 +58,19 @@ For example:
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how to use custom bindings:
 
-- When a string is added in the scope of an HTML element:
+-  When a string is added in the scope of an HTML element:
 
     ```html
     <span data-bind="i18n: 'Sign In'"></span>
     ```
 
-- When a string is added with no binding to an HTML element:
+-  When a string is added with no binding to an HTML element:
 
     ```html
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
     ```
 
-- When a string is added as an attribute of an HTML element:
+-  When a string is added as an attribute of an HTML element:
 
     ```html
     <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
@@ -86,8 +86,7 @@ In this example, the *Delete* string is added to the dictionary when the i18n to
 <item name="label" xsi:type="string" translate="true">Delete</item>
 ```
 
-Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method.
-In this example, you would use a call similar to the following to display the translated *Delete* string.
+Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method in `.php` files. In this example, you would use a call similar to the following to display the translated *Delete* string.
 
 ```php
 __($this->config->getData('label'))
@@ -99,21 +98,21 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
 
 1. Link the `mage/translate` library:
 
-    ```javascript
-    define (['jquery', 'mage/translate'], function ($) {...});
-    ```
+   ```javascript
+   define (['jquery', 'mage/translate'], function ($) {...});
+   ```
 
-2. Use the `$.mage.__('')` function when adding a string:
+1. Use the `$.mage.__('')` function when adding a string:
 
-    ```javascript
-    $.mage.__('<string>');
-    ```
+   ```javascript
+   $.mage.__('<string>');
+   ```
 
-    If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
+   If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
 
-    ```javascript
-    $.mage.__('Hello %1').replace('%1', yourVariable);
-    ```
+   ```javascript
+   $.mage.__('Hello %1').replace('%1', yourVariable);
+   ```
 
 In this example, the `'Hello %1'` string is added to the dictionary when the i18n tool is run.
 

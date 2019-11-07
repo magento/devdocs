@@ -141,7 +141,9 @@ Any change not listed below is considered a PATCH level change.
 | | Obligatory node/attribute added| MAJOR|
 | | Node/attribute removed | MAJOR|
 | | New optional node/attribute added| MINOR|
-| **Structure of System Configuration fields used by module** | Config path removed/renamed| MAJOR|
+| **Structure of System Configuration fields used by module**
+| | Config path added| MINOR|
+| | Config path removed/renamed| MAJOR|
 | **Database structure**| Table removed| MAJOR|
 | | Table added| MINOR|
 | | Column removed | MAJOR|
@@ -161,15 +163,16 @@ Any change not listed below is considered a PATCH level change.
 ### PHP Classes Intended for Extension
 
 Though inheritance is discouraged in Magento, the following classes are still acceptable for extension at the moment:
-* \Magento\Framework\Model\AbstractExtensibleModel
-* \Magento\Framework\Api\AbstractExtensibleObject
-* \Magento\Framework\Api\AbstractSimpleObject
-* \Magento\Framework\Model\AbstractModel
-* \Magento\Framework\App\Action\Action
-* \Magento\Backend\App\Action
-* \Magento\Backend\App\AbstractAction
-* \Magento\Framework\App\Action\AbstractAction
-* \Magento\Framework\View\Element\AbstractBlock
-* \Magento\Framework\View\Element\Template
+
+*  \Magento\Framework\Model\AbstractExtensibleModel
+*  \Magento\Framework\Api\AbstractExtensibleObject
+*  \Magento\Framework\Api\AbstractSimpleObject
+*  \Magento\Framework\Model\AbstractModel
+*  \Magento\Framework\App\Action\Action
+*  \Magento\Backend\App\Action
+*  \Magento\Backend\App\AbstractAction
+*  \Magento\Framework\App\Action\AbstractAction
+*  \Magento\Framework\View\Element\AbstractBlock
+*  \Magento\Framework\View\Element\Template
 
 As Magento framework improves, this list should be reduced and, eventually, eliminated.

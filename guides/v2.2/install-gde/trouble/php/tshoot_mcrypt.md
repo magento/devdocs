@@ -16,15 +16,16 @@ functional_areas:
 Errors can include the following:
 
 ```terminal
-exception 'Exception' with message 'PHP Warning: [PHP](https://glossary.magento.com/php) Startup: Unable to load dynamic [library](https://glossary.magento.com/library) '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory
+exception 'Exception' with message 'PHP Warning: PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory
 ```
 
 ```terminal
 Installing data fixtures:
 /usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2>&1
-[ERROR] [exception](https://glossary.magento.com/exception) 'Exception' with message '
-Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP [extension](https://glossary.magento.com/extension) that is not loaded.'
+[ERROR] exception 'Exception' with message '
+Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP extension that is not loaded.'
 ```
+
 ```terminal
 ======================================================================
    The application has thrown an exception!
@@ -44,17 +45,17 @@ As a result, the Magento installer cannot locate the extension and the installat
 
 Determine if the mcrypt extension is loaded in any of the following ways:
 
-*	Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
-*	Run the following command:
+*  Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
+*  Run the following command:
 
-  ```bash
-  php -r "phpinfo();" | grep mcrypt
-  ```
+    ```bash
+    php -r "phpinfo();" | grep mcrypt
+    ```
 
-	If mycrypt is *not* installed, messages similar to the following display:
+    If mycrypt is *not* installed, messages similar to the following display:
 
-  ```terminal
-  PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0
-  ```
+    ```terminal
+    PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0
+    ```
 
 In some cases, you might need to install the Magento software from the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) and specify the full path to the LAMP stack that has mcrypt installed.

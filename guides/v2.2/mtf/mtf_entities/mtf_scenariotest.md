@@ -7,17 +7,17 @@ A scenario test is a case of separate test steps where each step is a distinct c
 
 A scenario test has the following advantages:
 
-- Each step in the scenario is a separate [PHP](https://glossary.magento.com/php) class that is placed in the [module](https://glossary.magento.com/module) to which it belongs.
-- A scenario test reduces code duplication because each step can be used multiple times.
-- Scenario tests are flexible and support Magento modularity.
-- New tests can be easily created using existing steps.
+-  Each step in the scenario is a separate [PHP](https://glossary.magento.com/php) class that is placed in the [module](https://glossary.magento.com/module) to which it belongs.
+-  A scenario test reduces code duplication because each step can be used multiple times.
+-  Scenario tests are flexible and support Magento modularity.
+-  New tests can be easily created using existing steps.
 
 A scenario test is split into four logical components:
 
-- [test case], which executes tests steps in the order defined in a tests scenario.
-- [data set], which contains variations of data and constraints for test steps.
-- [test scenario], which defines order of test steps.
-- [test step], which contains a test flow.
+-  [test case], which executes tests steps in the order defined in a tests scenario.
+-  [data set], which contains variations of data and constraints for test steps.
+-  [test scenario], which defines order of test steps.
+-  [test step], which contains a test flow.
 
 ## Test case class   {#test-case}
 
@@ -107,8 +107,8 @@ Example:
 
 The example defines the following test steps:
 
-* `Config/Test/TestStep/SetupConfigurationStep.php`
-* `Catalog/Test/TestStep/CreateProductsStep.php`
+-  `Config/Test/TestStep/SetupConfigurationStep.php`
+-  `Catalog/Test/TestStep/CreateProductsStep.php`
 
 #### `next` and `prev` attributes   {#next-prev-attributes}
 
@@ -130,8 +130,8 @@ Using `next` and `prev` attributes, you can specify a previous or next test step
 
 Both examples define the following test steps and their sequence:
 
-* `Config/Test/TestStep/SetupConfigurationStep.php`.
-* `Catalog/Test/TestStep/CreateProductsStep.php`.
+-  `Config/Test/TestStep/SetupConfigurationStep.php`.
+-  `Catalog/Test/TestStep/CreateProductsStep.php`.
 
 #### `alias` attribute  {#alias-attribute}
 
@@ -152,9 +152,9 @@ Example:
 
 This example defines the following test steps and their sequence:
 
-* `Config/Test/TestStep/SetupConfigurationStep.php`
-* `Catalog/Test/TestStep/CreateProductsStep.php`
-* `Config/Test/TestStep/SetupConfigurationStep.php`
+-  `Config/Test/TestStep/SetupConfigurationStep.php`
+-  `Catalog/Test/TestStep/CreateProductsStep.php`
+-  `Config/Test/TestStep/SetupConfigurationStep.php`
 
 ## Test step class  {#test-step}
 
@@ -191,9 +191,9 @@ class YourTestStep implements TestStepInterface
 
 A tests step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
 
- - constructor (optional)
- - public method `run()` (required)
- - public method `cleanup()` (optional)
+-  constructor (optional)
+-  public method `run()` (required)
+-  public method `cleanup()` (optional)
 
 An example of `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
 
@@ -209,10 +209,10 @@ Optionally, you may use the `constructor()` method, which injects data to be use
 
 In the previous example the `constructor()`:
 
-- injects the `CmsIndex` and `CustomerAccountLogin` pages.
-- injects the `LogoutCustomerOnFrontendStep` step.
-- injects the `Customer` fixture data.
-- assigns arguments to corresponding class properties.
+-  injects the `CmsIndex` and `CustomerAccountLogin` pages.
+-  injects the `LogoutCustomerOnFrontendStep` step.
+-  injects the `Customer` fixture data.
+-  assigns arguments to corresponding class properties.
 
 ### `run()` method  {#run-method}
 
@@ -220,11 +220,11 @@ The `run()` method is required to perform a test step and contains logic of the 
 
 In the previous example the `run()` method:
 
-- logs out if the customer was logged in.
-- clicks 'Sign In' on the `LinksBlock` of the `cmsIndex` page.
-- waits for requested page loading.
-- logs in the customer on the `customerAccountLogin` page.
-- waits for logging in the customer.
+-  logs out if the customer was logged in.
+-  clicks 'Sign In' on the `LinksBlock` of the `cmsIndex` page.
+-  waits for requested page loading.
+-  logs in the customer on the `customerAccountLogin` page.
+-  waits for logging in the customer.
 
 ### `cleanup()` method  {#cleanup-method}
 
@@ -232,7 +232,7 @@ The `cleanup()` method is optional. It resets Magento to an initial state or exe
 
 In the previous example the `clean()` method:
 
-- logs out the customer.
+-  logs out the customer.
 
 <!-- LINKS DEFINITIONS -->
 

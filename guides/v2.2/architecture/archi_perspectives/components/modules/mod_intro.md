@@ -24,9 +24,9 @@ A module is a directory that contains the PHP and [XML](https://glossary.magento
 
 Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
 
-- **`module`** - for modules (`module-customer-import-export`)
-- **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
-- **`language`** - for language packs (`language-de_de`)
+-  **`module`** - for modules (`module-customer-import-export`)
+-  **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
+-  **`language`** - for language packs (`language-de_de`)
 
 For example, the Customer Import/Export module of Magento can be found at `vendor/magento/module-customer-import-export`.
 
@@ -57,7 +57,8 @@ See [PHP Developer Guide][] for specific instructions on extending modules.
 
 See [Frontend Developer Guide][] for information on implementing themes and other components.
 
-## Related topics {#arch-modules-related}
+{:.ref-header}
+Related topics
 
 [Module dependencies][]
 

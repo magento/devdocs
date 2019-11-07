@@ -17,13 +17,13 @@ Have suggestions? Open [an issue](https://github.com/magento/devdocs/issues) or 
 
 Current topics:
 
-*	Install components, upgrade, update
+*  Install components, upgrade, update
 
-	*	[Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
-	*	[Test a Magento patch before deploying it]({{ page.baseurl }}/cloud/project/project-upgrade.html)
+   *  [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
+   *  [Test a Magento patch before deploying it]({{ page.baseurl }}/cloud/project/project-upgrade.html)
 
-*	Environments
+*  Environments
 
-	*	[Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)
+   *  [Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)
 
-*	[Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)
+*  [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)

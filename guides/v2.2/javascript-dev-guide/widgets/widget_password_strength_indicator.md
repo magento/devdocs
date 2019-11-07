@@ -13,9 +13,9 @@ The password strength indicator widget source is [`<Magento_Customer_module_dir>
 
 The widget is being used in the following templates:
 
-- [`<Magento_Customer_module_dir>/view/frontend/templates/form/register.phtml`] customer register template.
-- [`<Magento_Customer_module_dir>/view/frontend/templates/form/forgotpassword.phtml`] customer forgot password template.
-- [`<Magento_Customer_module_dir>/view/frontend/templates/form/edit.phtml`] customer account edit template.
+-  [`<Magento_Customer_module_dir>/view/frontend/templates/form/register.phtml`] customer register template.
+-  [`<Magento_Customer_module_dir>/view/frontend/templates/form/forgotpassword.phtml`] customer forgot password template.
+-  [`<Magento_Customer_module_dir>/view/frontend/templates/form/edit.phtml`] customer account edit template.
 
 ## Initialize the password_strength_indicator widget {#password_strength_indicator_initialize}
 
@@ -31,7 +31,7 @@ $('#password-input').passwordStrengthIndicator({
 
 Where:
 
-- `#password-input` is the selector of the element for which PasswordStrengthIndicator is initialized.
+-  `#password-input` is the selector of the element for which PasswordStrengthIndicator is initialized.
 
 The following example shows a PHTML file using the script:
 
@@ -56,11 +56,12 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 ## Options {#password_strength_indicator_options}
 
 The password strength indicator widget has the following options:
--   [passwordSelector](#password_strength_indicator_password_selector)
--   [passwordStrengthMeterSelector](#password_strength_indicator_password_strength_meter_selector)
--   [passwordStrengthMeterLabelSelector](#password_strength_indicator_password_strength_meter_label_selector)
--   [formSelector](#password_strength_indicator_form_selector)
--   [emailSelector](#password_strength_indicator_email_selector)
+
+-  [passwordSelector](#password_strength_indicator_password_selector)
+-  [passwordStrengthMeterSelector](#password_strength_indicator_password_strength_meter_selector)
+-  [passwordStrengthMeterLabelSelector](#password_strength_indicator_password_strength_meter_label_selector)
+-  [formSelector](#password_strength_indicator_form_selector)
+-  [emailSelector](#password_strength_indicator_email_selector)
 
 ### passwordSelector {#password_strength_indicator_password_selector}
 

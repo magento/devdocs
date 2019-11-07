@@ -120,11 +120,11 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
     </td>
     <td>
       Object
-		<ul>
+    <ul>
       <li>String</li>
       <li>String</li>
       <li>Boolean</li>
-		</ul>
+    </ul>
     </td>
     <td>
       <ul>

@@ -6,15 +6,16 @@ functional_areas:
   - Deploy
 ---
 
-#### Previous step:
+{:.ref-header}
+Previous step
 
 [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
 
-- [Deploy code](#code)
-- [Migrate static files](#cloud-live-migrate-static)
-- [Migrate the database](#cloud-live-migrate-db)
+-  [Deploy code](#code)
+-  [Migrate static files](#cloud-live-migrate-static)
+-  [Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to change project configuration, complete the required updates in your local environment. Then, push the code changes to the Integration environment to deploy and test before pushing to Staging and Production environments.
 
@@ -50,8 +51,8 @@ You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/
 
 **Prerequisites**
 
-- [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
-- [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+-  [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
+-  [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 #### Step 1:  Deploy and test the Integration environment:
 
@@ -137,22 +138,21 @@ rsync -azvP <source> <destination>
 
 This command uses the following options:
 
-- `a`–archive
-- `z`–compress
-- `v`–verbose
-- `P`–partial progress
+-  `a`–archive
+-  `z`–compress
+-  `v`–verbose
+-  `P`–partial progress
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync).
 
-#### To migrate static files from your local machine:
-
-Use the rsync command to copy the `pub/media` directory from your local Magento server to staging or production:
+To migrate static files from your local machine, use the `rsync` command to copy the `pub/media` directory from your local Magento server to staging or production:
 
 ```bash
 rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/
 ```
 
-#### To migrate static files from remote-to-remote environments directly (fast approach):
+{:.procedure}
+To migrate static files from remote-to-remote environments directly (fast approach):
 
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
@@ -184,6 +184,7 @@ We **do recommend** migrating data from Production into Staging to fully test yo
 {:.bs-callout-info }
 To transfer media from remote-to-remote environments directly you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
+{:.procedure}
 To migrate a database:
 
 1. SSH into the environment you want to create a database dump from:
@@ -260,6 +261,7 @@ Use the database dump file to [migrate the database](#cloud-live-migrate-db).
 {:.bs-callout-info}
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
 
-#### Next step
+{:.ref-header}
+Related topics
 
 [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)

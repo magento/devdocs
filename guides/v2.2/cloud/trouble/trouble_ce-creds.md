@@ -18,14 +18,16 @@ This topic discusses how to resolve issues with incorrect credentials in your `a
 
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
-	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+   ```text
+   The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+   ```
 
 To see the error log:
 
-1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
-2.	Click **Failure** to view the log as the following figure shows.
+1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. Click **Failure** to view the log as the following figure shows.
 
-	![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud_deploy-failure-creds.png){:width="600px"}
+   ![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
 
@@ -37,45 +39,64 @@ Verify that you are using your own keys, and *not* [shared account keys](http://
 
 To get started:
 
-1.	Log in to the machine on which your SSH keys are located.
-2.	Log in to your project:
+1. Log in to the machine on which your SSH keys are located.
+1. Log in to your project:
 
-		magento-cloud login
-3.	List your projects:
+   ```bash
+   magento-cloud login
+   ```
 
-		magento-cloud project:list
-4.	If necessary, clone a project.
+1. List your projects:
 
-		magento-cloud project:get <project ID>
-4.	Change to a project directory.
+   ```bash
+   magento-cloud project:list
+   ```
 
-	For example if your project is named Magento 2, `cd magento-2`
+1. If necessary, clone a project.
+
+   ```bash
+   magento-cloud project:get <project ID>
+   ```
+
+1. Change to a project directory.
+
+   For example if your project is named Magento 2, `cd magento-2`
 
 #### Update `auth.json` and redeploy the environment
 
 To resolve the issue with credentials:
 
-1.	If you haven't done so already, change to the project root directory.
-2.	Open `auth.json` in a text editor.
-3.	Change the value of `username` to your {{site.data.var.ee}} public key.
-4.	Change the value of `password` to your {{site.data.var.ee}} private key.
-5.	Save your changes to `auth.json` and exit the text editor.
-6.	Update project dependencies:
+1. If you haven't done so already, change to the project root directory.
+1. Open `auth.json` in a text editor.
+1. Change the value of `username` to your {{site.data.var.ee}} public key.
+1. Change the value of `password` to your {{site.data.var.ee}} private key.
+1. Save your changes to `auth.json` and exit the text editor.
+1. Update project dependencies:
 
-		composer update
-6.	Add, commit, and push your changes:
+   ```bash
+   composer update
+   ```
 
-		git add -A
-		git commit -m "<message>"
-		git push origin master
-7.	Wait for the project to deploy.
+1. Add, commit, and push your changes:
 
-	A snippet of messages for a successful deployment follows:
+   ```bash
+   git add -A
+   ```
 
-{% collapsible Click to show/hide snippet %}
+   ```bash
+   git commit -m "<message>"
+   ```
 
-```xml
- Building application 'mymagento' (runtime type: php:7.0, tree: e8450f9)
+   ```bash
+   git push origin master
+   ```
+
+1. Wait for the project to deploy.
+
+   A snippet of messages for a successful deployment follows:
+
+   ```terminal
+   Building application 'mymagento' (runtime type: php:7.0, tree: e8450f9)
       Generating runtime configuration.
 
       Moving the application to the output directory
@@ -91,9 +112,9 @@ To resolve the issue with credentials:
         [2016-05-31 14:36:59] Status:0
         [2016-05-31 14:36:59] Output:array (
 
-... more ...
+   ... more ...
 
-[2016-05-31 14:36:59] Command:cd bin/; /usr/bin/php ./magento setup:di:compile
+   [2016-05-31 14:36:59] Command:cd bin/; /usr/bin/php ./magento setup:di:compile
         [2016-05-31 14:38:27] Status:0
         [2016-05-31 14:38:27] Output:array (
           0 => 'Compilation was started.',
@@ -118,14 +139,14 @@ To resolve the issue with credentials:
         [2016-05-31 14:38:27] Status:0
         [2016-05-31 14:38:27] Output:array (
 
-... more ...
+   ... more ...
 
       Executing pre-flight checks...
 
       Compressing application.
       Beaming package to its final destination.
 
-    Creating environment aqf7hrijhl52o-master.
+   Creating environment aqf7hrijhl52o-master.
       Environment configuration:
         mymagento (type: php:7.0, size: S, disk: 2048)
         mysql (type: mysql:10.0, size: S, disk: 2048)
@@ -136,15 +157,13 @@ To resolve the issue with credentials:
         http://master-aqf7hrijhl52o.us.magentosite.cloud/ is served by application `mymagento`
         https://master-aqf7hrijhl52o.us.magentosite.cloud/ is served by application `mymagento`
 
-To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
-   34afd91..98c2166  master -> master
-```
-
-{% endcollapsible %}
+   To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
+      34afd91..98c2166  master -> master
+   ```
 
 #### Verify the deployment
 
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
-{: .bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).

@@ -19,14 +19,13 @@ To achieve this, all third-party modules must obey the following rules:
 
 A PHP Interface in Magento can be used in several ways by the core product and extension developers.
 
-* **As an API**. An interface is called by PHP code.
-* **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
-* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
-APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
+*  **As an API**. An interface is called by PHP code.
+*  **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
+*  **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI). APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
 
 However, the dependency rules are different:
 
-* If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
+*  If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
   **API dependency example**
 
@@ -40,7 +39,7 @@ However, the dependency rules are different:
     }
     ```
 
-* If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+*  If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
 
    **SPI dependency example**
 

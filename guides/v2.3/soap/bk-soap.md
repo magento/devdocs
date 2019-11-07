@@ -14,9 +14,10 @@ functional_areas:
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`
 
 The value of `store_code` can be one of the following:
-* `default`
-* The assigned store code
-* `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all the merchant's stores.
+
+*  `default`
+*  The assigned store code
+*  `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all the merchant's stores.
 
 ## List of Service Names per Module
 

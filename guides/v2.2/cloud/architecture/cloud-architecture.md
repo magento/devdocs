@@ -41,7 +41,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>
         <ul>
           <li>Continuous cloud integration tools with unlimited users</li>
-          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances</li>
+          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
@@ -54,7 +54,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>
         <ul>
           <li>Continuous cloud integration tools with unlimited users</li>
-          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances</li>
+          <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production
           </li>
@@ -112,7 +112,7 @@ The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/start
 
 The [Pro plan architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
-- **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
-  - _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
-- **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, services, environment variables, configurations, and services, such as Fastly.
-- **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.
+-  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
+   -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.
+-  **Staging**—The Staging environment is for pre-Production testing and includes a database, web server, caching, services, environment variables, configurations, and services, such as Fastly.
+-  **Production**—The Production environment includes a three-node, high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and third-party services.

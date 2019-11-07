@@ -42,9 +42,9 @@ Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumber
 Perform the following actions:
 
 1. Define the queue name associated with current consumer using `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getQueueName`.
-2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
-3. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
-4. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
+1. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers.
+1. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
+1. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
 ## Override topic configuration
 
@@ -60,11 +60,11 @@ The following sample introduces a runtime configuration that allows you to redef
 ),
 ```
 
-#### Related Topics
+### Related Topics
 
-* [Message Queues Overview]
-* [Configure message queues]
-* [Install RabbitMQ]
+*  [Message Queues Overview]
+*  [Configure message queues]
+*  [Install RabbitMQ]
 
 <!-- Link definitions -->
 [RabbitMQ]: http://www.rabbitmq.com

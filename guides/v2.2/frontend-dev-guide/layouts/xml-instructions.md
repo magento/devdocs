@@ -9,8 +9,8 @@ functional_areas:
 
 There are two possible ways to customize page layout in Magento:
 
-* Changing [layout](https://glossary.magento.com/layout) files.
-* Altering templates.
+*  Changing [layout](https://glossary.magento.com/layout) files.
+*  Altering templates.
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files.
 
@@ -34,16 +34,16 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-* [`<block>`](#fedg_layout_xml-instruc_ex_block)
-* [`<container>`](#fedg_layout_xml-instruc_ex_cont)
-* [`before` and `after` attributes](#fedg_xml-instrux_before-after)
-* [`<action>`](#fedg_layout_xml-instruc_ex_act)
-* [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
-* [`<move>`](#fedg_layout_xml-instruc_ex_mv)
-* [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
-* [`<update>`](#fedg_layout_xml-instruc_ex_upd)
-* [`<argument>`](#argument)
-* [`<block> vs <container>`](#block_vs_container)
+*  [`<block>`](#fedg_layout_xml-instruc_ex_block)
+*  [`<container>`](#fedg_layout_xml-instruc_ex_cont)
+*  [`before` and `after` attributes](#fedg_xml-instrux_before-after)
+*  [`<action>`](#fedg_layout_xml-instruc_ex_act)
+*  [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref)
+*  [`<move>`](#fedg_layout_xml-instruc_ex_mv)
+*  [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
+*  [`<update>`](#fedg_layout_xml-instruc_ex_upd)
+*  [`<argument>`](#argument)
+*  [`<block> vs <container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -70,6 +70,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+| `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
@@ -114,9 +115,9 @@ Use this feature to make temporary changes to a store, such as disabling a secti
 
 ### block vs. container {#block_vs_container}
 
-* Blocks represents the end of the chain in rendering HTML for Magento.
-* Containers contain blocks and can wrap them in an HTML tag.
-* Containers do not render any output if there are no children assigned to them.
+*  Blocks represents the end of the chain in rendering HTML for Magento.
+*  Containers contain blocks and can wrap them in an HTML tag.
+*  Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
@@ -139,7 +140,7 @@ The following tables give a detailed description of the results you can get usin
 | Situation | Result |
 |:------- |:------ |
 | Both `before` and `after` attributes are present | `after` takes precedence. |
-| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
+| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The non-positioned element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
 
@@ -184,22 +185,21 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
 | `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
 
-- The `remove` attribute is optional and its default value is `false`.
+*  The `remove` attribute is optional and its default value is `false`.
 
-    This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
+   This implementation allows you to remove a block or container in your layout by setting the remove attribute value to `true`, or to cancel the removal of a block or container by setting the value to `false`.
 
-    ```xml
-    <referenceBlock name="block.name" remove="true" />
-    ```
+   ```xml
+   <referenceBlock name="block.name" remove="true" />
+   ```
 
-- The `display` attribute is optional and its default value is true.-
+*  The `display` attribute is optional and its default value is true.-
 
-    You are always able to overwrite this value in your layout.
-    In situation when remove value is true, the display attribute is ignored.
+   You are always able to overwrite this value in your layout. In situation when remove value is true, the display attribute is ignored.
 
-    ```xml
-    <referenceContainer name="container.name" display="false" />
-    ```
+   ```xml
+   <referenceContainer name="container.name" display="false" />
+   ```
 
 ### move {#fedg_layout_xml-instruc_ex_mv}
 
@@ -209,9 +209,9 @@ Sets the declared block or container element as a child of another element in th
 <move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/>
 ```
 
-- `<move>` is skipped if the element to be moved is not defined.
-- If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
-- During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
+*  `<move>` is skipped if the element to be moved is not defined.
+*  If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
+*  During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
@@ -295,100 +295,109 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 As was described above the argument attribute can be added with different types.
 There are examples of all argument types.
 
-- The *string* type:
+*  The *string* type:
 
-```xml
-<argument name="some_string" xsi:type="string" >Some String</argument>
-```
+   ```xml
+   <argument name="some_string" xsi:type="string" >Some String</argument>
+   ```
 
-- The *boolean* type:
+*  The *boolean* type:
 
-```xml
-<argument name="is_active" xsi:type="boolean" >true</argument>
-```
+   ```xml
+   <argument name="is_active" xsi:type="boolean" >true</argument>
+   ```
 
-- The *object* type:
+*  The *object* type:
 
-```xml
-<argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
-```
+   ```xml
+   <argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
+   ```
 
-The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
+   The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
 
-- The *number* type:
+*  The *number* type:
 
-```xml
-<argument name="some_number" xsi:type="number" >100</argument>
-```
+   ```xml
+   <argument name="some_number" xsi:type="number" >100</argument>
+   ```
 
-- The *null* type:
+*  The *null* type:
 
-```xml
-<argument name="null_value" xsi:type="null" />
-```
+   ```xml
+   <argument name="null_value" xsi:type="null" />
+   ```
 
-- The *array* type:
+*  The *array* type:
 
-```xml
-<argument name="custom_array" xsi:type="array">
-   <item name="array_key_one" xsi:type="string">First Item</item>
-   <item name="array_key_two" xsi:type="string">Second Item</item>
+   ```xml
+   <argument name="custom_array" xsi:type="array">
+      <item name="array_key_one" xsi:type="string">First Item</item>
+      <item name="array_key_two" xsi:type="string">Second Item</item>
    ...
-</argument>
-```
+   </argument>
+   ```
 
-- The *options* type:
+*  The *options* type:
 
-```xml
-<argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
-```
+   ```xml
+   <argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
+   ```
 
-The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
+   The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
 
-- The *url* type:
+*  The *url* type:
 
-```xml
-<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
-```
+   ```xml
+   <argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
+   ```
 
-- The *helper* type:
+*  The *helper* type:
 
-```xml
-<argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
-  <param name="paramName">paramName</param>
+   ```xml
+   <argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
+     <param name="firstParam">firstValue</param>
+     <param name="secondParam">secondValue</param>
     ...
-</argument>
-```
+   </argument>
+   ```
 
-The *helper* can use only public methods. In this example the `someMethod()` method should be public.
+The *helper* can only use public methods. In this example the `someMethod()` method should be public.
 The argument with *helper* type can contain `param` items which can be passed as a helper method parameters.
 
-#### Obtain arguments examples in template
+#### Obtain arguments in template examples
 
-These argument examples can be taken in the template like in the following example:
+These argument examples are taken in the template by the `getData` method. Another way to take these arguments is using the magic method `get` followed by the name of argument in CamelCase format. Here is an example to retrieve the arguments from above example:
 
 ```php
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 
 /** @var string $someString */
-$someString = $block->getData('some_string');
+$someString = $block->getData('some_string'); //or $block->getSomeString()
+
 /** @var bool $isActive */
-$isActive = $block->getData('is_active');
+$isActive = $block->getData('is_active'); //or $block->getIsActive()
+
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
-$viewModel = $block->getData('viewModel');
+$viewModel = $block->getData('viewModel'); //or $block->getViewModel()
+
 /** @var string|int|float $someNumber */
-$someNumber = $block->getData('some_number');
+$someNumber = $block->getData('some_number'); //or $block->getSomeNumber()
+
 /** @var null $nullValue */
-$nullValue = $block->getData('null_value');
+$nullValue = $block->getData('null_value'); //or $block->getNullValue()
+
 /** @var array $customArray */
-$customArray = $block->getData('custom_array');
+$customArray = $block->getData('custom_array'); //or $block->getCustomArray()
+
 /** @var array $options */
-$options = $block->getData('options');
+$options = $block->getData('options'); //or $block->getoptions()
+
 /** @var string $shoppingCartUrl */
-$shoppingCartUrl = $block->getData('shopping_cart_url');
+$shoppingCartUrl = $block->getData('shopping_cart_url'); //or $block->getShoppingCartUrl()
+
 /** @var mixed $helperMethodResult */
-$helperMethodResult = $block->getData('helper_method_result');
+$helperMethodResult = $block->getData('helper_method_result'); // or $block->getHelperMethodResult()
 ```
 
 ### arguments {#arguments}
@@ -405,33 +414,33 @@ $helperMethodResult = $block->getData('helper_method_result');
 
 The following are common arguments for block instructions:
 
-- `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+*  `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
-- `template`: sets the template for the block.
+*  `template`: sets the template for the block.
 
-    ```xml
-    <referenceBlock name="page.main.title">
-     <arguments>
-       <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
-     </arguments>
+   ```xml
+   <referenceBlock name="page.main.title">
+      <arguments>
+         <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+      </arguments>
    </referenceBlock>
    ```
 
-- `translate_inline`: `true' = enable translation for this block.
+*  `translate_inline`: `true' = enable translation for this block.
 
    ```xml
    <argument xsi:type="string" translate="true">{strValue}</argument>
    ```
 
-- `module_name`: sets the module for the block. Usually this is determined automatically.
+*  `module_name`: sets the module for the block. Usually this is determined automatically.
 
-    ```xml
-    <block class="Namespace_Module_Block_Type" name="block.example">
+   ```xml
+   <block class="Namespace_Module_Block_Type" name="block.example">
       <arguments>
-        <argument name="label" xsi:type="string">Block Label</argument>
+         <argument name="label" xsi:type="string">Block Label</argument>
       </arguments>
-    </block>
-    ```
+   </block>
+   ```
 
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf

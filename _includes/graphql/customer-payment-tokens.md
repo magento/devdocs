@@ -1,10 +1,12 @@
+### CustomerPaymentTokens attributes
+
 The `CustomerPaymentTokens` output object contains an array of `items`.
 
 Attribute | Data Type | Description
 --- | --- | ---
 `items` | [PaymentToken] | Contains an array of customer payment tokens
 
-#### PaymentToken attributes
+### PaymentToken attributes
 
 The `PaymentToken` object defines characteristics of a token stored in the payment vault.
 

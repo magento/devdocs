@@ -27,8 +27,8 @@ Your observer should not contain logic other than what is needed for it to run. 
 
 Make your observer as specific as it needs to be. Declare your observer in the appropriate scope:
 
-* For frontend events, declare observers in `<module-dir>/etc/frontend/events.xml`
-* For backend events, declare observers in `<module-dir>/etc/adminhtml/events.xml`
+*  For frontend events, declare observers in `<module-dir>/etc/frontend/events.xml`
+*  For backend events, declare observers in `<module-dir>/etc/adminhtml/events.xml`
 
 Use the global `<module-dir>/etc/events.xml` file only when an event can occur on both the frontend and the backend.
 
@@ -42,4 +42,4 @@ Your observer should not make assumptions about the order in which it will be in
 
 ### Recommended Reading
 
-* [Events and Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
+*  [Events and Observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)

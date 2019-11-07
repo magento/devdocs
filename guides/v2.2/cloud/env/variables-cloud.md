@@ -43,7 +43,7 @@ Since values can change over time, it is best to inspect the variable at runtime
     }
 ```
 
-#### To view environment variables:
+## Viewing environment variables
 
 You can use the `env:config:show` command from [the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/reference/ece-tools-reference.html) to show a list of variables for the current environment.
 

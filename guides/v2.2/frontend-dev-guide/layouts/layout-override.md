@@ -17,36 +17,36 @@ Layout files with instructions that override the default or parent theme files a
 
 Examples of customizations that involve overriding layouts:
 
-*	Suppressing method invocation.
+*  Suppressing method invocation.
 
-	{:.bs-callout .bs-callout-info}
-	Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.
+   {: .bs-callout-info }
+   Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.
 
-*	Modifying method arguments.
-*	Canceling block/container removal using the `remove` attribute.
-*	Setting XML attributes of blocks and containers.
+*  Modifying method arguments.
+*  Canceling block/container removal using the `remove` attribute.
+*  Setting XML attributes of blocks and containers.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info}
 Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be changed in [extending layouts].
 
-*	Removing block arguments.
-*	Modifying and suppressing [handles] inclusion.
-*	Removing all handle instructions by declaring an overriding layout file with an empty handle.
+*  Removing block arguments.
+*  Modifying and suppressing [handles] inclusion.
+*  Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
 ## How to override a layout {#fedg_layout_override_howto}
 
 This section discusses how to override:
 
-*	[Base layout]
-*	[Theme layout]
+*  [Base layout]
+*  [Theme layout]
 
 ### Override base layouts {#fedg_layout_override_default}
 
 To add an overriding base layout file (to override a base layout provided by the module):
 
-1.	Put a layout file with the same name in the following location:
+1. Put a layout file with the same name in the following location:
 
-    ```tree
+   ```tree
     <theme_dir>
       |__/<Namespace_Module>
         |__/layout
@@ -54,18 +54,20 @@ To add an overriding base layout file (to override a base layout provided by the
              |__/base
                |--<layout1>.xml
                |--<layout2>.xml
-    ```
+   ```
 
 These files override the following layouts:
 
-- `<module_dir>/view/frontend/layout/<layout1>.xml`
-- `<module_dir>/view/frontend/layout/<layout2>.xml`
+*  `<module_dir>/view/frontend/layout/<layout1>.xml`
+*  `<module_dir>/view/frontend/layout/<layout2>.xml`
+
+For example, `<theme_dir>/Magento_Checkout/layout/override/base/checkout_cart_index.xml` will override `Magento_Checkout/view/frontend/layout/checkout_cart_index.xml`.
 
 ### Override theme layouts {#fedg_layout_override_theme}
 
 To add an overriding theme file (to override a parent theme layout):
 
-1.	Put a layout file with the same name in the following location:
+1. Put a layout file with the same name in the following location:
 
 ```tree
 <theme_dir>
@@ -81,8 +83,10 @@ To add an overriding theme file (to override a parent theme layout):
 
 These files override the following layouts:
 
-- `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout1>.xml`
-- `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout2>.xml`
+*  `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout1>.xml`
+*  `<parent_theme_dir>/<Namespace>_<Module>/layout/<layout2>.xml`
+
+For example, `<theme_dir>/Magento_Checkout/layout/override/theme/Magento/luma/checkout_cart_index.xml` will override `app/design/frontend/Magento/luma/Magento_Checkout/layout/checkout_cart_index.xml`.
 
 {:.bs-callout .bs-callout-info}
 To override page layout files, use the `page_layout` directory name instead of `layout`.
@@ -91,14 +95,15 @@ To override page layout files, use the `page_layout` directory name instead of `
 
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
-*	Changing block name or alias. The name of a block should not be changed, and neither should the alias of a block remaining in the same parent element.
-*	Changing handle inheritance. For example, you should not change the page type parent handle.
+*  Changing block name or alias. The name of a block should not be changed, and neither should the alias of a block remaining in the same parent element.
+*  Changing handle inheritance. For example, you should not change the page type parent handle.
 
-#### Related topics:
+{:.ref-header}
+Related topics
 
-*	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
-*	[Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
-*	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+*  [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
+*  [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html)
+*  [Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
 
 [extending layouts]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
 [theme]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-loc

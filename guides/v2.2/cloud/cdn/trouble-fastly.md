@@ -25,6 +25,7 @@ Developers and advanced VCL users can use custom VCL to retrieve the service ID 
 ```json
 log {"syslog"} req.service_id {" my_logging_endpoint_name :: "}
 ```
+
 You can use the same VCL for Production and Staging environments. See [How to configure vcl_log](https://support.fastly.com/hc/en-us/community/posts/360040447172-How-to-configure-vcl-log).
 
 ## Troubleshoot site performance, purge, and cache issues
@@ -41,16 +42,16 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
    This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or Magento extension blocking or removing the Magento headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
 
-- **Purge requests are failing**—Fastly returns the following error when you submit a purge request:
+-  **Purge requests are failing**—Fastly returns the following error when you submit a purge request:
 
-  ```The purge request was not processed successfully.```
+   ```The purge request was not processed successfully.```
 
-  This issue can be caused by either of the following issues:
+   This issue can be caused by either of the following issues:
 
-  -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
-  -  Invalid code in a custom VCL snippet
+   -  Invalid Fastly credentials in the Fastly service configuration for the {{ site.data.var.ece }} project environment
+   -  Invalid code in a custom VCL snippet
 
-  To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the Magento Help Center.
+   To resolve the issue, see [Error purging Fastly cache on Cloud](https://support.magento.com/hc/en-us/articles/115001853194-Error-purging-Fastly-cache-on-Cloud-The-purge-request-was-not-processed-successfully-) in the Magento Help Center.
 
 ## 503 errors from Fastly {#errors}
 
@@ -59,57 +60,61 @@ If Fastly returns 503 timeout errors, check the error logs and the 503 error pag
 {:.bs-callout .bs-callout-info}
 If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
-#### To check the error logs: {#timeouts}
-
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
-- [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
+{:.procedure}
+To check the error logs:
 
-   ```
+-  [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
+
+   ```text
    /var/log/platform/<project_ID>/error.log
    ```
+
    This log includes any errors from the application or PHP engine, for example `memory_limit` or `max_execution_time exceeded` errors. If you do not find any Fastly-related errors, check the PHP access log.
 
 -  PHP access log
 
-   ```
+   ```text
    /var/log/platform/<project_ID>/php.access.log
    ```
-  Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
-#### To check the Fastly 503 error page:
+   Search the log for HTTP 200 responses for the URL that returned the 503 error. If you find the 200 response, it means that Magento returned the page without errors. That indicates the issue might have occurred after the interval that exceeds the `first_byte_timeout` value set in the Fastly service configuration.
 
 When a 503 error occurs, Fastly returns the reason on the error and maintenance page. You might not be able to see the reason if you added code for a custom response page. To view the reason code on the default error page, you can remove the HTML code for the custom error page.
 
+{:.procedure}
+To check the Fastly 503 error page:
+
 {% include cloud/admin-ui-login-step.md %}
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.	In the right pane, expand **Full Page Cache**.
+1. In the right pane, expand **Full Page Cache**.
 
-1.	In the **Fastly Configuration** section, expand **Custom Synthetic Pages** as the following figure shows.
+1. In the **Fastly Configuration** section, expand **Custom Synthetic Pages** as the following figure shows.
 
-	![Custom 503 error page]
+   ![Custom 503 error page]
 
-1.	Click **Set HTML**.
+1. Click **Set HTML**.
 
-1.	Remove the custom code. You can save it in a text program to add back later.
+1. Remove the custom code. You can save it in a text program to add back later.
 
-1.	Click **Upload** to send your updates to Fastly.
+1. Click **Upload** to send your updates to Fastly.
 
-1.	Click **Save Config** at the top of the page.
+1. Click **Save Config** at the top of the page.
 
-1.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason as shown in the following example.
+1. Reopen the URL that caused the 503 error. Fastly returns an error page with the reason as shown in the following example.
 
-	![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
+   ![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
 
 ## Apex and subdomains already associated with a Fastly account {#domains}
 
 If the apex domain and subdomains for your {{ site.data.var.ece }} project are already associated with an existing Fastly account with an assigned Service ID, you cannot launch until you update your Fastly configuration:
 
-* Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
+-  Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
 
-* [Enable and configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ page.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
+-  [Enable and configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ page.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
 
 ## Verify or debug Fastly services
 
@@ -121,26 +126,27 @@ Use the Fastly API to check the following response headers returned from your li
 
 Fastly API requests are passed through the Fastly extension to get a response from your origin servers. If the response returns incorrect headers, test the [origin servers directly](#cloud-test-stage).
 
-#### To check the response headers:
+{:.procedure}
+To check the response headers:
 
-1.  In a terminal, use the following `curl` command to test your live site URL:
+1. In a terminal, use the following `curl` command to test your live site URL:
 
-    ```bash
-    curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
-    ```
+   ```bash
+   curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
+   ```
 
-	  If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
+   If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
 
-    ```bash
-    curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
-    ```
+   ```bash
+   curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
+   ```
 
-1.  In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
+1. In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
 
-    ```
-< Fastly-Magento-VCL-Uploaded: yes
-< X-Cache: HIT, MISS
-    ```
+   ```http
+   < Fastly-Magento-VCL-Uploaded: yes
+   < X-Cache: HIT, MISS
+   ```
 
 If the headers do not have the correct values, see the following information:
 
@@ -152,17 +158,18 @@ If the headers do not have the correct values, see the following information:
 
 If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.
 
-#### To check the response headers:
+{:.procedure}
+To check the response headers:
 
-1.  To get the response data, submit an API request the origin server:
+1. To get the response data, submit an API request the origin server:
 
-    -  **Staging**
+   -  **Staging**
 
-       ```bash
-       curl http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-       ```
+      ```bash
+      curl http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
+      ```
 
-    - **Production**
+   -  **Production**
 
       Submit the following request to test the load balancer:
 
@@ -176,19 +183,19 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
       curl http[s]:<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
       ```
 
-    For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
+      For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
 
-    ```bash
-    curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
-    ```
+      ```bash
+      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
+      ```
 
-    If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:
+      If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:
 
-    ```bash
-    curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
-    ```
+      ```bash
+      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
+      ```
 
- 2. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).
+1. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).
 
 ### Check cache HIT and MISS response headers {#response-headers}
 
@@ -204,40 +211,40 @@ Verify that the returned response contains the following information:
 
 The following excerpt from the cURL command output shows the correct values for the `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled` headers:
 
-```json
+```terminal
 * STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 * Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 * Added connection 0. The cache now contains 1 members
 * Trying 192.0.2.31...
 * STATE: CONNECT => WAITCONNECT handle 0x600057800; line 1455 (connection #0)
-	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-	0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
+0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
 * STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x600057800; line 1562 (connection #0)
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* ALPN, offering h2
 
-	... portion omitted for brevity ...
+... portion omitted for brevity ...
 
-	< Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
-	< Pragma: cache
-	< Expires: Wed, 23 Nov 2016 17:39:56 GMT
-	< Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
-	< X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
-	< Fastly-Module-Enabled: yes
-	< Strict-Transport-Security: max-age=31536000
-		< Content-Security-Policy: upgrade-insecure-requests
-	< X-Content-Type-Options: nosniff
-	< X-XSS-Protection: 1; mode=block
-	< X-Frame-Options: SAMEORIGIN
-	< X-Platform-Server: i-dff64b52
-	<
-	* STATE: PERFORM => DONE handle 0x600057800; line 1955 (connection #0)
-	* multi_done
-	  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
-	* Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
+< Set-Cookie: mage-messages=%5B%5D; expires=Wed, 22-Nov-2017 17:39:58 GMT; Max-Age=31536000; path=/
+< Pragma: cache
+< Expires: Wed, 23 Nov 2016 17:39:56 GMT
+< Cache-Control: max-age=86400, public, s-maxage=86400, stale-if-error=5, stale-while-revalidate=5
+< X-Magento-Tags: cb_welcome_popup store cb cb_store_info_mobile cb_header_promotional_bar cb_store_info cb_discount-promo-bar cpg_2 cb_83 cb_81 cb_84 cb_85 cb_86 cb_87 cb_88 cb_89 p5646 catalog_product p5915 p6040 p6197 p6227 p7095 p6109 p6122 p6331 p7592 p7651 p7690
+< Fastly-Module-Enabled: yes
+< Strict-Transport-Security: max-age=31536000
+    < Content-Security-Policy: upgrade-insecure-requests
+    < X-Content-Type-Options: nosniff
+    < X-XSS-Protection: 1; mode=block
+    < X-Frame-Options: SAMEORIGIN
+    < X-Platform-Server: i-dff64b52
+    <
+    * STATE: PERFORM => DONE handle 0x600057800; line 1955 (connection #0)
+    * multi_done
+      0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+    * Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 For detailed information on hits and misses, see [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services) in the Fastly documentation.
 
 ### Resolve errors found in response headers {#curl}
@@ -278,31 +285,31 @@ If the `X-Cache` header is `MISS, MISS` and does not contain `HIT`, run the `cur
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
 
-*	`Pragma` is `cache`
-*	`X-Magento-Tags` exists
-*	`Cache-Control: max-age` is greater than 0
+-  `Pragma` is `cache`
+-  `X-Magento-Tags` exists
+-  `Cache-Control: max-age` is greater than 0
 
 If the issue persists, another extension is likely resetting these headers. Repeat the following procedure in the Staging environment, disabling all extensions and re-enabling each one to determine which extension is resetting the headers. After you identify the extension causing the problem, you must disable it in the Production environment.
 
 {% include cloud/admin-ui-login-step.md %}
 
-1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
+1. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
 
-1.  In the *Disable Modules Output* section in the right pane, locate and disable all of your extensions.
+1. In the *Disable Modules Output* section in the right pane, locate and disable all of your extensions.
 
-1.  Click **Save Config**.
+1. Click **Save Config**.
 
-1.  Click **System** > **Tools** > **Cache Management**.
+1. Click **System** > **Tools** > **Cache Management**.
 
-1.  Click **Flush Magento Cache**.
+1. Click **Flush Magento Cache**.
 
-1.  Complete the following steps for each extension potentially causing issues with Fastly headers:
+1. Complete the following steps for each extension potentially causing issues with Fastly headers:
 
-    - Enable one extension at a time, save the configuration, and flush the Magento cache.
+   -  Enable one extension at a time, save the configuration, and flush the Magento cache.
 
-    - Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
+   -  Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
 
-    Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
+   Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
 After you identify the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates to make third-party extensions work with Fastly caching.
 
@@ -310,23 +317,24 @@ After you identify the extension that is resetting Fastly headers, contact the e
 
 If custom VCL snippet updates or other Fastly configuration changes cause a {{ site.data.var.ece }} site to break or return errors, use the Fastly API [activate](https://docs.fastly.com/api/config#version_0b79ae1ba6aee61d64cc4d43fed1e0d5) command to rollback to an earlier VCL version. You cannot rollback the VCL version from the Magento Admin UI.
 
-#### To rollback the VCL version:
+{:.procedure}
+To rollback the VCL version:
 
-1.  To get a list of the available VCL versions for a service, run the following command
+1. To get a list of the available VCL versions for a service, run the following command
 
-    ```bash
-curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
-    ```
+   ```bash
+   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
+   ```
 
-1.  Run the following command to change the active VCL version to a specified version.
+1. Run the following command to change the active VCL version to a specified version.
 
-    ```bash
-    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
-    ```
+   ```bash
+   curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
+   ```
 
 For details about using the Fastly API to review and manage VCL, see [Manage VCL using the API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
 
 <!-- Link definitions -->
 
-  [Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
-  {: width="650px"}
+[Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
+{: width="650px"}

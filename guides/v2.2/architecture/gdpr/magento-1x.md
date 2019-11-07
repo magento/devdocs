@@ -8,8 +8,8 @@ The European Union (EU) enacted [General Data Protection Regulation](https://www
 
 We are publishing this compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
 
-* A shopper asks for a copy of the data the merchant has stored about her
-* A shopper requests that all information about him be deleted
+*  A shopper asks for a copy of the data the merchant has stored about her
+*  A shopper requests that all information about him be deleted
 
 See the corporate [Magento website](https://magento.com/gdpr) for more information about how Magento helps merchants comply with GDPR.
 
@@ -274,26 +274,26 @@ Table | Column | Data type
 
 Other tables that reference Customer:
 
-* `catalog_compare_item`
-* `downloadable_link_purchased`
-* `enterprise_customerbalance`
-* `enterprise_customersegment_customer`
-* `enterprise_giftregistry_entity`
-* `enterprise_reminder_rule_log`
-* `enterprise_reward`
-* `log_customer`
-* `log_visitor_online`
-* `oauth_token`
-* `product_alert_price`
-* `product_alert_stock`
-* `report_compared_product_index`
-* `report_viewed_product_index`
-* `review_detail`
-* `sales_billing_agreement`
-* `sales_flat_shipment`
-* `sales_recurring_profile`
-* `salesrule_coupon_usage`
-* `salesrule_customer`
-* `tag`
-* `tag_relation`
-* `wishlist`
+*  `catalog_compare_item`
+*  `downloadable_link_purchased`
+*  `enterprise_customerbalance`
+*  `enterprise_customersegment_customer`
+*  `enterprise_giftregistry_entity`
+*  `enterprise_reminder_rule_log`
+*  `enterprise_reward`
+*  `log_customer`
+*  `log_visitor_online`
+*  `oauth_token`
+*  `product_alert_price`
+*  `product_alert_stock`
+*  `report_compared_product_index`
+*  `report_viewed_product_index`
+*  `review_detail`
+*  `sales_billing_agreement`
+*  `sales_flat_shipment`
+*  `sales_recurring_profile`
+*  `salesrule_coupon_usage`
+*  `salesrule_customer`
+*  `tag`
+*  `tag_relation`
+*  `wishlist`

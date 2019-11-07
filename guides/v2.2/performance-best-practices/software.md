@@ -9,16 +9,16 @@ functional_areas:
 
 We recommend using the following software for production instances of Magento:
 
-* [PHP]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
-* Nginx and [PHP-FPM](https://php-fpm.org/)
-* [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
-* [Varnish cache]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
-* ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
+*  [PHP]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
+*  Nginx and [PHP-FPM](https://php-fpm.org/)
+*  [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*  [Varnish cache]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
+*  ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 
-* [Redis]({{ page.baseurl }}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
-* A separate Redis instance as your [default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
+*  [Redis]({{ page.baseurl }}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
+*  A separate Redis instance as your [default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
 See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
 
@@ -26,14 +26,16 @@ See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde
 
 Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`:
 
-```
+```conf
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
 The kernel parameter `net.core.somaxconn` controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in `/etc/sysctl.conf`:
 
-`net.core.somaxconn = 1024`
+```conf
+net.core.somaxconn = 1024
+```
 
 ## PHP
 
@@ -43,21 +45,21 @@ Magento 2.2 fully supports 7.0.13 and higher as well as 7.1.x. There are several
 
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
-* `php-bcmath`
-* `php-cli`
-* `php-common`
-* `php-curl`
-* `php-gd`
-* `php-intl`
-* `php-mbstring`
-* `php-mcrypt`
-* `php-opcache`
-* `php-openssl`
-* `php-pdo`
-* `php-soap`
-* `php-xml`
-* `php-xsl`
-* `php-zip`
+*  `php-bcmath`
+*  `php-cli`
+*  `php-common`
+*  `php-curl`
+*  `php-gd`
+*  `php-intl`
+*  `php-mbstring`
+*  `php-mcrypt`
+*  `php-opcache`
+*  `php-openssl`
+*  `php-pdo`
+*  `php-soap`
+*  `php-xml`
+*  `php-xsl`
+*  `php-zip`
 
 Adding more extensions increases library load times.
 
@@ -68,7 +70,9 @@ The presence of any profiling and debugging extensions can negatively impact the
 
 To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:
 
-`memory_limit=768MB`
+```conf
+memory_limit=768MB
+```
 
 #### ByteCode
 
@@ -86,7 +90,7 @@ When you fine-tune the memory allocation for opcache, take into account the size
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```bash
+```conf
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
@@ -95,9 +99,9 @@ opcache.max_accelerated_files=60000
 
 Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  `<magento_home>/nginx.conf.sample` (Nginx) and  `<magento_home>.htaccess.sample` (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:
 
-* Settings for caching static content in a browser
-* Memory and execution time settings for PHP
-* Content compression settings
+*  Settings for caching static content in a browser
+*  Memory and execution time settings for PHP
+*  Content compression settings
 
 You should also configure the number of threads for input request processing, as listed below:
 
@@ -128,9 +132,9 @@ Install Varnish on a separate server in front of the web tier. It should accept 
 
 Magento distributes a sample configuration file for Varnish (versions 4 and 5) that contains all recommended settings for performance. Among them the most critical in terms of performance are:
 
-* **Backend health check** polls the Magento server to determine whether it is responding in a timely manner.
-* **Grace mode** allows you to instruct Varnish to keep an object in cache beyond its Time to Live (TTL) period and serve this stale content if Magento is not healthy or if fresh content hasn’t been fetched yet.
-* **Saint mode** blacklists unhealthy Magento servers for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer.
+*  **Backend health check** polls the Magento server to determine whether it is responding in a timely manner.
+*  **Grace mode** allows you to instruct Varnish to keep an object in cache beyond its Time to Live (TTL) period and serve this stale content if Magento is not healthy or if fresh content hasn’t been fetched yet.
+*  **Saint mode** blacklists unhealthy Magento servers for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer.
 
 See [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html) for more information about implementing these features.
 

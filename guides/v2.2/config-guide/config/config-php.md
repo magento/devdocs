@@ -11,7 +11,7 @@ functional_areas:
 
 Magento's deployment configuration consists of the shared and system-specific configuration for your installation. Magento's deployment configuration is divided between [`app/etc/config.php`][config-php] and [`app/etc/env.php`][env-php].
 
-* `app/etc/config.php` is the _shared_ configuration file.
+*  `app/etc/config.php` is the _shared_ configuration file.
   This file contains the list of installed modules, themes, and language packages; and shared configuration settings.
 
   Check this file in to source control and use it in your development, staging, and production systems.
@@ -19,7 +19,7 @@ Magento's deployment configuration consists of the shared and system-specific co
   As of the 2.2 release, the `app/etc/config.php` file is no longer an entry in the `.gitignore` file.
   This was done to facilitate [pipeline deployment][pipeline-deployment].
 
-* `app/etc/env.php` contains settings that are specific to the installation environment.
+*  `app/etc/env.php` contains settings that are specific to the installation environment.
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
@@ -39,18 +39,18 @@ On the next hierarchy level, items in each segment are ordered according to the 
 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
-* [Manage installed modules](#config-php-contents-config-php)
-* [System-specific configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#app-etc-env-php)
+*  [Manage installed modules](#config-php-contents-config-php)
+*  [System-specific configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#app-etc-env-php)
 
 ## Manage installed modules {#config-php-contents-config-php}
 `config.php` lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 
-* Uninstall components: [`bin/magento setup:uninstall`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html)
-* Enable or disable components: [`bin/magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), [`bin/magento module:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
-* [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-* [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+*  Uninstall components: [`bin/magento setup:uninstall`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html)
+*  Enable or disable components: [`bin/magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), [`bin/magento module:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
+*  [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
+*  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
 
 `config.php` snippet:
 

@@ -11,14 +11,13 @@ This is implemented using *service contracts*, which are defined using [PHP](htt
 
 In general, the service layer:
 
-* Resides below the presentation layer and above the domain layer.
+*  Resides below the presentation layer and above the domain layer.
 
-* Contains service contracts, which define how the implementation will behave.
+*  Contains service contracts, which define how the implementation will behave.
 
-* Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/api) framework code (which also resides above the service contracts).
-You can bind service contracts to web service APIs in configuration files --- no coding required.
+*  Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/api) framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files --- no coding required.
 
-* Provides a stable API for other modules to call into.
+*  Provides a stable API for other modules to call into.
 
 ## Who accesses the service layer?
 
@@ -31,11 +30,11 @@ Once implemented, a web service can make a single API call and return an informa
 
 [Service contract](https://glossary.magento.com/service-contract) clients include:
 
-* Controllers (initiated by actions of users of the storefront)
+*  Controllers (initiated by actions of users of the storefront)
 
-* Web services (SOAP and REST API calls)
+*  Web services (SOAP and REST API calls)
 
-* Other Magento modules through service contracts
+*  Other Magento modules through service contracts
 
 ## Service contract anatomy
 
@@ -43,20 +42,20 @@ The service contract of a [module](https://glossary.magento.com/module) is defin
 
 This directory contains:
 
-* Service interfaces in the `/Api` [namespace](https://glossary.magento.com/namespace) of the module ([Catalog API][catalog-api]).
+*  Service interfaces in the `/Api` [namespace](https://glossary.magento.com/namespace) of the module ([Catalog API][catalog-api]).
 
-* Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data][]).
-  Data entities* are data structures passed to and returned from service interfaces.
+*  Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data][]).
+   Data entities* are data structures passed to and returned from service interfaces.
 
-  Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
+   Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
 
 Typically, service contracts provide three distinct types of interfaces:
 
-* Repository interfaces
+*  Repository interfaces
 
-* Management interfaces
+*  Management interfaces
 
-* [Metadata](https://glossary.magento.com/metadata) interfaces
+*  [Metadata](https://glossary.magento.com/metadata) interfaces
 
 However, there is no requirement that service contracts conform to all three patterns.
 
@@ -71,9 +70,11 @@ The `di.xml` file specifies which PHP class to use for the interface `Magento\Cu
 Another module can change this interface file by specifying a different class name.
 However, if the client code uses the interface definition only, no class change is necessary.
 
-## Related topics {#related}
+{:.ref-header}
+Related topics
 
-[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
-[Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
+*  [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
+*  [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
+
 [catalog-api]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api
 [catalog-api-data]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/Data

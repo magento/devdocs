@@ -24,13 +24,13 @@ The following example shows how to add functionality to a core template with cus
 <body>
   <referenceBlock name="checkout.cart.item.renderers.default">
     <arguments>
-      <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\MyClass</argument>
+      <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\MyClass</argument>
     </arguments>
   </referenceBlock>
 </body>
 ```
 
-You must implement the right interface in your `viewModel` class (for example `ArgumentInterface`):
+You must implement the right interface in your `view_model` class (for example `ArgumentInterface`):
 
 ```php
 namespace Vendor\CustomModule\ViewModel;
@@ -39,8 +39,8 @@ class MyClass implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
   public function getTitle()
   {
-    return 'Hello World'
-  {
+    return 'Hello World';
+  }
 }
 ```
 
@@ -60,5 +60,4 @@ $viewModel = $block->getViewModel();
 
 ## Examples of View models in Magento
 
-- [Magento_Catalog]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml#L34){:target="_blank"}
-This `viewModel` is used to inject breadcrumb JSON with HTML-escaped names into the template file.
+-  [Magento Theme](https://github.com/magento/magento2/blob/2.2.9/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.

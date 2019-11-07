@@ -69,11 +69,11 @@ You can enhance your storefront by adding unique attributes to the default produ
 
 Attribute types fall into three general categories:
 
-* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
+*  **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
-* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
+*  **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 
-* **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
+*  **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
 See [PHP Developer Guide][] for information about using attributes.
 
@@ -95,7 +95,8 @@ Plug-ins are also called *interceptors*. Applications use the [plug-in](https://
 
 See [Plug-ins][] in [PHP Developer Guide][] for information on declaring and prioritizing plug-ins.
 
-## Related topics {#m2arch-related}
+{:.ref-header}
+Related topics
 
 [Architectural basics]({{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html)
 

@@ -29,7 +29,7 @@ Parameter | Description
 
 Example:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Step 1. Configure the store

@@ -44,4 +44,4 @@ The Toolbar component implements a container for the listing-related elements li
 
 Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)
+-  [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)

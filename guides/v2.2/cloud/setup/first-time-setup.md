@@ -38,12 +38,12 @@ You can use the Docker environment to emulate the {{site.data.var.ece}} Integrat
 
 You can manually add a virtual machine (VM) and install {{site.data.var.ee}}. The environment closely matches the cloud environments. The following steps walk-through manually preparing your local environment, installing Magento, and starting development:
 
-1.  [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
-1.  [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
-1.  [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
-1.  [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
-1.  [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
-1.  [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
-1.  [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html)
+1. [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
+1. [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+1. [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
+1. [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) (optional)
+1. [Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
+1. [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
+1. [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html)
 
 You can import existing Magento custom code. See [First steps for importing {{site.data.var.ee}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html).

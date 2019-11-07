@@ -9,15 +9,15 @@ functional_areas:
 
 This topic lists configuration paths for system-specific and sensitive settings:
 
-*	The [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control. It also writes shared configuration for all Magento instances to `app/etc/config.php`, this file _should_ be in source control.
-*	The [`magento config:sensitive:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) writes sensitive settings to `app/etc/env.php`.
+*  The [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control. It also writes shared configuration for all Magento instances to `app/etc/config.php`, this file _should_ be in source control.
+*  The [`magento config:sensitive:set` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) writes sensitive settings to `app/etc/env.php`.
 
-	You can also set sensitive values using configuration variables as discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
+   You can also set sensitive values using configuration variables as discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 For a list of other configuration paths, see:
 
-*	[All configuration paths except payments]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html).
+*  [All configuration paths except payments]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*  [Payment configuration paths]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html).
 
 {:.bs-callout .bs-callout-info}
 All configuration paths listed in this topic are sensitive. The `System-specific?` column shows which values are also system-specific.
@@ -104,9 +104,9 @@ This section lists variable names and config paths available for options in the 
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|--------------|
-Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+|Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ## Catalog category
 

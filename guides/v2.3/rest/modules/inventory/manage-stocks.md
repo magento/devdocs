@@ -17,7 +17,7 @@ Any sales channels that are not explicitly assigned to a custom stock are assign
 
 **REST endpoints**
 
-```
+```http
 POST /V1/inventory/stocks
 PUT /V1/inventory/stocks/:stockId
 GET /V1/inventory/stocks/:stockId

@@ -55,9 +55,7 @@ $('.sticky-element').sticky({
 Element selector, who's height will be used to restrict the maximum offsetTop
 position of the sticky element. Default uses document `body`.
 
-**Type**:
-
--  String
+**Type**: String
 
 **Default value**: `''`
 
@@ -87,9 +85,7 @@ Allows the postponing of sticking, until element goes off the screen for the num
 
 CSS class for active sticky state.
 
-**Type**:
-
--  String
+**Type**: String
 
 **Default value**: `_sticky`
 

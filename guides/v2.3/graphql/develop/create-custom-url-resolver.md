@@ -37,7 +37,7 @@ See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-obs
 
 Update the `graphql.xml` and `events.xml` file in your module's `etc` directory to configure your custom GraphQL `urlResolver` service:
 
-* Add lines similar to the following in your module's `graphql.xml` file to define the enumeration. The `UrlRewriteGraphQl` module defines `UrlRewriteEntityTypeEnum`.
+*  Add lines similar to the following in your module's `graphql.xml` file to define the enumeration. The `UrlRewriteGraphQl` module defines `UrlRewriteEntityTypeEnum`.
 
  ```xml
   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_GraphQl:etc/graphql.xsd">
@@ -47,7 +47,7 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
   </config>
  ```
 
-* Define two events similar to the following in your module's `events.xml` file.
+*  Define two events similar to the following in your module's `events.xml` file.
 
  ```xml
   <event name="mymodule_page_save_after">
@@ -60,5 +60,5 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
 
 ## Related Topics
 
-* [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-* [urlResolver endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html)
+*  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
+*  [urlResolver endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html)

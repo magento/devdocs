@@ -29,7 +29,7 @@ Parameter | Description
 
 Example:
 
-```
+```yaml
 layout: tutorial
 level3_subgroup: order-tutorial
 title: Step 9. Create a shipment
@@ -47,7 +47,8 @@ Use a Head2 (`## Heading`) as the highest-level heading in this topic.
 ## Congratulations! You've finished.
 {:.no_toc}
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Title of linked topic](http://example.com/index.html)
-* [Link and open new tab](http://example.com/index.html){:target="_blank"}
+*  [Title of linked topic](http://example.com/index.html)
+*  [Link and open new tab](http://example.com/index.html){:target="_blank"}

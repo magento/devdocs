@@ -18,8 +18,8 @@ For less technical users, i.e. business users, we recommend using the [System Up
 
 ## Assumptions
 
-* You installed Magento using [Composer][8] or a [compressed archive][7].
-* You are directly applying updates to the server.
+*  You installed Magento using [Composer][8] or a [compressed archive][7].
+*  You are directly applying updates to the server.
 
 {:.bs-callout .bs-callout-warning}
 This guide does not apply if you used `git clone` to install Magento.
@@ -29,64 +29,81 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
-2. Change directory to the Magento base directory:
+1. Change directory to the Magento base directory:
 
-        cd <Magento base directory>
+   ```bash
+   cd <Magento base directory>
+   ```
 
-3. Enable maintenance mode using the command:
+1. Enable maintenance mode using the command:
 
-        bin/magento maintenance:enable
+   ```bash
+   bin/magento maintenance:enable
+   ```
 
-4. Apply updates to Magento or its components using the following command pattern:
+1. Apply updates to Magento or its components using the following command pattern:
 
-        composer require <package> <version> --no-update
+   ```bash
+   composer require <package> <version> --no-update
+   ```
 
    **package**: The name of the package you want to update.
 
    For example:
 
-   * `magento/product-community-edition`
-   * `magento/product-enterprise-edition`
+   *  `magento/product-community-edition`
+   *  `magento/product-enterprise-edition`
 
    **version**: The target version of the package you want to update.
 
-5. Update Magento's components with Composer:
+1. Update Magento's components with Composer:
 
-        composer update
+   ```bash
+   composer update
+   ```
 
-6. Update the database schema and data:
+1. Update the database schema and data:
 
-        bin/magento setup:upgrade
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-7. Compile the code:
+1. Compile the code:
 
-        bin/magento setup:di:compile
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-8. Deploy static content:
+1. Deploy static content:
 
-        bin/magento setup:static-content:deploy
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
 
-9. Clean the cache:
+1. Clean the cache:
 
-        bin/magento cache:clean
+   ```bash
+   bin/magento cache:clean
+   ```
 
-9. Exit maintenance mode:
+1. Exit maintenance mode:
 
-        bin/magento maintenance:disable
+   ```bash
+   bin/magento maintenance:disable
+   ```
 
 ## Alternative deployment strategies
 
-For deployment strategies developed by the Magento community, see the blog posts listed under the [Install/deploy][11] section in our Community Resources page.
-
 In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including {{site.data.var.ece}}.
 
-## Related topics
+{:.ref-header}
+Related topics
 
-* [Enable or disable maintenance mode][4]
-* [Command line upgrade][1]
-* [Update the Magento application][2]
-* [User Guide: Web Setup Wizard][3]
-* [Running the System Upgrade][9]
+*  [Enable or disable maintenance mode][4]
+*  [Command line upgrade][1]
+*  [Update the Magento application][2]
+*  [User Guide: Web Setup Wizard][3]
+*  [Running the System Upgrade][9]
 
 [0]: {{ page.baseurl }}/
 [1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
@@ -99,4 +116,3 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
-[11]: {{ site.baseurl }}/community/resources/resources.html#installdeploy

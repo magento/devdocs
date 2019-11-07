@@ -11,9 +11,9 @@ In the [Magento Admin](https://glossary.magento.com/magento-admin), a grid is us
 ## Page Grid {#page}
 
 <ul>
-	<li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
-	<li>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</li>
-	<li>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</li>
+   <li>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</li>
+   <li>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</li>
+   <li>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</li>
 </ul>
 
 ![](img/PageGrid.png)
@@ -24,9 +24,9 @@ A Slide-out panel, similar to a modal window, breaks apart and simplifies a comp
 
 For example:
 <ul>
-	<li>On a product details form page, a user clicks "Add Attribute".</li>
-	<li>A panel slides over the parent page and shows "Add Attribute" functionality.</li>
-	<li>When the user finishes adding attributes, the panel disappears, and the user returns the 		product details form page.</li>
+   <li>On a product details form page, a user clicks "Add Attribute".</li>
+   <li>A panel slides over the parent page and shows "Add Attribute" functionality.</li>
+   <li>When the user finishes adding attributes, the panel disappears, and the user returns the product details form page.</li>
 </ul>
 
 <b>Layout and behavior:</b> When a panel spawns, it slides from right to left atop and almost completely over the parent page. A narrow gutter of space remains at left, showing the left navigation and a small sliver of the parent page.
@@ -46,4 +46,3 @@ Standard [layout](https://glossary.magento.com/layout) within the edges of a bro
 <b>Nested Slide-outs:</b> For multiple panels displayed, additional gutter space is used at left to show a small sliver of a Slide-out below another Slide-out.
 
 ![](img/slideout-panel9.png)
-

@@ -14,9 +14,9 @@ The `Magento_ConfigurableSharedCatalog` module enables configurable products to 
 
 The `Magento_ConfigurableSharedCatalog` module provides the following features:
 
-* Display base and custom prices for configurable products within a shared catalog. There is no ability to edit the price of a configurable product.
+*  Display base and custom prices for configurable products within a shared catalog. There is no ability to edit the price of a configurable product.
 
-* Control the visibility of configurable products in quotes and orders. Only those configurable products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
+*  Control the visibility of configurable products in quotes and orders. Only those configurable products that have been added to a shared catalog will be available for searches via the "Add by SKU" feature in quotes and orders.
 
 ## Installation details
 
@@ -42,7 +42,7 @@ For more information about layouts, see the [Layout documentation]({{ page.baseu
 
 The following directory contains extensible UI components:
 
-* `Magento\ConfigurableSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
+*  `Magento\ConfigurableSharedCatalog\view\adminhtml\ui_component` - renderer for pricing and structure listings
 
 For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 

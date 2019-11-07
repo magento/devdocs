@@ -77,13 +77,13 @@ Every Javascript component should extend the core Element class in some way (map
 
 The properties Magento will parse are:
 
-- `imports`
-- `exports`
+-  `imports`
+-  `exports`
 -  `links`
 
 The `links` property is the same as duplicating a value in both `imports` and `exports`. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the `defaults` property like this:
 
-```
+```js
 imports: {
     totalRecords: '${ $.provider }:data.totalRecords'
 }
@@ -91,7 +91,7 @@ imports: {
 
 When the Element class initializes, it will process the link that was declared in `imports`. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where `example` is the UI Component Name for clarity):
 
-```
+```js
 imports: {
     totalRecords: 'example.example_data_source:data.totalRecords'
 }

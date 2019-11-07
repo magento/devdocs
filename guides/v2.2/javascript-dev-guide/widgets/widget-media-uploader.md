@@ -23,7 +23,7 @@ $("#uploader").mediaUploader({});
 
 Where:
 
-- `#uploader` is the selector of the select element for which MediaUploader is initialized.
+-  `#uploader` is the selector of the select element for which MediaUploader is initialized.
 
 Phtml template file examples using script:
 
@@ -44,11 +44,11 @@ Phtml template file examples using script:
 
 The MediaUploader widget has the following options:
 
-- [disabled](#disabled)
-- [isResizeEnabled](#isresizeenabled)
-- [maxFileSize](#maxfilesize)
-- [maxHeight](#maxheight)
-- [maxWidth](#maxwidth)
+-  [disabled](#disabled)
+-  [isResizeEnabled](#isresizeenabled)
+-  [maxFileSize](#maxfilesize)
+-  [maxHeight](#maxheight)
+-  [maxWidth](#maxwidth)
 
 ### `disabled`
 

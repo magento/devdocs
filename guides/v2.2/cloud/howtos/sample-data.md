@@ -24,30 +24,30 @@ We recommend working in a branch to add the sample data. The following informati
 
 To install sample data:
 
-1.	If you have not done so already, check out the environment in which to install sample data.
-2.	In a terminal, enter the following commands:
+1. If you have not done so already, check out the environment in which to install sample data.
+1. In a terminal, enter the following commands:
 
-    ```bash
-    <magento_root>/bin/magento sampledata:deploy
-    ```
+   ```bash
+   <magento_root>/bin/magento sampledata:deploy
+   ```
 
-3.	Wait for components to update.
-4.	Commit and push the changes:
+1. Wait for components to update.
+1. Commit and push the changes:
 
-    ```bash
-    git add -A && git commit -m "Install sample data"
-    ```
+   ```bash
+   git add -A && git commit -m "Install sample data"
+   ```
 
-    ```bash
-    git push origin <branch name>
-    ```
+   ```bash
+   git push origin <branch name>
+   ```
 
-5.	Wait for the project to deploy.
-6.	Verify the installation was successful by going to your storefront main page in the Integration environment. You can locate the URL link to the storefront through the Project Web Interface.
-7.	Take a snapshot of your environment:
+1. Wait for the project to deploy.
+1. Verify the installation was successful by going to your storefront main page in the Integration environment. You can locate the URL link to the storefront through the Project Web Interface.
+1. Take a snapshot of your environment:
 
-    ```bash
-    magento-cloud snapshot:create -e <environment ID>
-    ```
+   ```bash
+   magento-cloud snapshot:create -e <environment ID>
+   ```
 
 You can start testing your development with live data!

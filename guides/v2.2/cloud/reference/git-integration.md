@@ -8,15 +8,15 @@ redirect_from:
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:
 
-* Git supports branch development that merges upstream (or to a parent branch) before deploying across your environments. Multiple developers can work together on small to large code updates through Git branch management.
-* When you push Git branches, we automatically kick off build and deploy scripts to completely build and verify your code, generate and update a virtual environment, and deploy to the environment for ease of testing.
-* Every active Git branch has an associated environment. We use specific .yaml files in {{site.data.var.ece}} code with your customizations to define environment configurations, services, database, and more.
+*  Git supports branch development that merges upstream (or to a parent branch) before deploying across your environments. Multiple developers can work together on small to large code updates through Git branch management.
+*  When you push Git branches, we automatically kick off build and deploy scripts to completely build and verify your code, generate and update a virtual environment, and deploy to the environment for ease of testing.
+*  Every active Git branch has an associated environment. We use specific .yaml files in {{site.data.var.ece}} code with your customizations to define environment configurations, services, database, and more.
 
 If you need help understand Git, you can review the following resources:
 
-*	[Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
-*	[Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
-*	[Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
+*  [Git documentation](https://git-scm.com/documentation) and [videos](https://git-scm.com/videos) from the makers of Git
+*  [Git cheatsheet](http://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) and [quick guide](http://rogerdudler.github.io/git-guide/) from Roger Dudler
+*  [Git video](https://www.youtube.com/watch?v=8KCQe9Pm1kg) with DevForge to understand how people use the repo and commands with a fun story
 
 ## Git CLI and clients {#clients}
 You can interact with Git using [CLI commands](https://git-scm.com/documentation) or using a Git client. Git provides a [Git client](https://git-scm.com/downloads) option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.
@@ -27,15 +27,15 @@ Not everyone remembers [Git](https://git-scm.com/docs) commands with ease. If yo
 
 In addition to Git's requirements for [valid branch names](https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html), {{site.data.var.ece}} adds two additional requirements:
 
-* The `/` character isn't allowed in a branch name.
-* Branch names must be case-insensitively unique. In other words, the names must be entirely unique regardless of the case you use. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`. A branch name of `Sprint2` and `sprint2` are just fine.
+*  The `/` character isn't allowed in a branch name.
+*  Branch names must be case-insensitively unique. In other words, the names must be entirely unique regardless of the case you use. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`. A branch name of `Sprint2` and `sprint2` are just fine.
 
 ## Git branching {#branching}
 
 For specifics on creating Git branches, see the following topics:
 
-* [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
-* [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html)
+*  [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
+*  [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html)
 
 ## .gitignore file {#gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
@@ -52,5 +52,5 @@ When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseu
 
 We support using either [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).

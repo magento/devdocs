@@ -32,10 +32,10 @@ In Magento 2.3 Alpha, the `--convert-old-scripts` parameter was named `--convert
 
 The Schema Listener Tool cannot convert everything that can appear in a pre-Magento 2.3 migration script.
 
-* The tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. As a result, the tool ignores all custom DDL operations.
-* The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
-* Any DDL statements in a `Recurring` file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.
-* See [Configure declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) if you need to make manual modifications to your schema.
+*  The tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. As a result, the tool ignores all custom DDL operations.
+*  The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
+*  Any DDL statements in a `Recurring` file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.
+*  See [Configure declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) if you need to make manual modifications to your schema.
 
 ## Convert install/upgrade data scripts to the data patch format
 
@@ -43,17 +43,17 @@ Old data scripts cannot be converted automatically. The following steps help mak
 
 1. Generate a patch stub.
 
-    ```bash
-    bin/magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>
-    ```
-    where `[options]` can be any of the following:
+   ```bash
+   bin/magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>
+   ```
 
-    `--revertable[=true | false]` - Determines whether the patch is revertable. The default value is `false`.
+   where `[options]` can be any of the following:
 
-    `--type[=<type>]` - Specifies what type of patch to generate. The default is `data`.
+   `--revertable[=true | false]` - Determines whether the patch is revertable. The default value is `false`.
 
-2. All released modules that previously used upgrade scripts must support backward compatibility by implementing
-`\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
+   `--type[=<type>]` - Specifies what type of patch to generate. The default is `data`.
+
+1. All released modules that previously used upgrade scripts must support backward compatibility by implementing `\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
 
 ## Dry run mode
 
@@ -64,6 +64,7 @@ To enable dry run mode, run one of the following commands:
 ```bash
 bin/magento setup:install --dry-run=1
 ```
+
 ```bash
 bin/magento setup:upgrade --dry-run=1
 ```
@@ -84,20 +85,20 @@ Magento provides options to the `setup:install` and `setup:upgrade` commands tha
 
 Several types of operations have an effect on data dumps and rollbacks.
 
-* *Destructive operations (DO)* - SQL DDL operations that cause data deletion or data corruption. The following operations are destructive:
+*  *Destructive operations (DO)* - SQL DDL operations that cause data deletion or data corruption. The following operations are destructive:
 
-  - Deleting a table
-  - Deleting a column
-  - Reducing column length
-  - Changing column precision
-  - Changing the column type
+   *  Deleting a table
+   *  Deleting a column
+   *  Reducing column length
+   *  Changing column precision
+   *  Changing the column type
 
-* *Opposite to destructive operations (ODO)* - In the case of a failed Magento installation, SQL DDL operations that are the opposite of  destructive operations can be used for rollback. For example, changing the column type from CHAR to INT is a destructive operation. The rollback operation changes the type from INT to CHAR.
+*  *Opposite to destructive operations (ODO)* - In the case of a failed Magento installation, SQL DDL operations that are the opposite of  destructive operations can be used for rollback. For example, changing the column type from CHAR to INT is a destructive operation. The rollback operation changes the type from INT to CHAR.
 
 When safe mode is enabled, Magento creates a CSV file each time a destructive operation for a table or column occurs. You can find these files at the following locations:
 
-* `Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
-* `Magento_root/var/declarative_dumps_csv/{table_name}.csv`
+*  `Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv`
+*  `Magento_root/var/declarative_dumps_csv/{table_name}.csv`
 
 Each CSV file contains a row that defines the column (or other database entity) names as well as rows of values, as shown in the following image:
 
@@ -106,6 +107,9 @@ Each CSV file contains a row that defines the column (or other database entity) 
 ## Create a schema whitelist {#create-whitelist}
 
 Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
+
+{: .bs-callout-warning }
+Whitelists cannot be generated on Magento instances that use a database prefix. The presence of a prefix impacts the names of some DB entities, such as the names of keys, and these names cannot be used in generated whitelists. The whitelist should be generated by the extension developer on a development environment with no prefixes.
 
 The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, and keys added with declarative schema. It is required to allow drop operations. It can be generated manually or created automatically with the following command:
 

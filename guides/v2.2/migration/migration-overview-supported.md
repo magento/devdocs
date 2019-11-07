@@ -13,35 +13,35 @@ functional_areas:
 
 The Data Migration Tool supports migration from the following versions:
 
-* {{site.data.var.ee}}:
+*  {{site.data.var.ee}}:
 
-    * 1.11.x
+   *  1.11.x
 
-    * 1.12.x
+   *  1.12.x
 
-    * 1.13.x
+   *  1.13.x
 
-    * 1.14.x
+   *  1.14.x
 
-* {{site.data.var.ce}}:
+*  {{site.data.var.ce}}:
 
-    * 1.6.x
+   *  1.6.x
 
-    * 1.7.x
+   *  1.7.x
 
-    * 1.8.x
+   *  1.8.x
 
-    * 1.9.x
+   *  1.9.x
 
 If you migrate from {{site.data.var.ce}} to {{site.data.var.ee}}, the following versions are supported:
 
-* 1.6.x
+*  1.6.x
 
-* 1.7.x
+*  1.7.x
 
-* 1.8.x
+*  1.8.x
 
-* 1.9.x
+*  1.9.x
 
 ## Migration to version
 

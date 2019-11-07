@@ -15,14 +15,14 @@ It extends the [checkout](https://glossary.magento.com/checkout) functionality a
 
 The Magento_CheckoutStaging module extends the following Magento_Checkout module functionality to be used in the staging preview mode:
 
-- Disables an order creation
-- Creates a demo [quote](https://glossary.magento.com/quote)
-- Deletes the demo quote using cron
+-  Disables an order creation
+-  Creates a demo [quote](https://glossary.magento.com/quote)
+-  Deletes the demo quote using cron
 
 Configuration options:
 
-- The `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
-- The `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
+-  The `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
+-  The `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
 
 ### Installation details
 

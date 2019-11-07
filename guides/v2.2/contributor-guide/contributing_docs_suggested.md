@@ -9,8 +9,8 @@ If you are interested in working on one of these projects, open a [pull request 
 
 The following GitHub issues are a great place to start:
 
-* [Help Wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22){:target="_blank"}
-* [Good First Issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22){:target="_blank"}
+*  [Help Wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22){:target="_blank"}
+*  [Good First Issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22){:target="_blank"}
 
 If you take the issue and provide a PR to resolve it, make sure to add the link to the issue in the description. You can earn Contribution Points for every submitted to and merged into DevDocs.
 

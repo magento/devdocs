@@ -16,5 +16,5 @@ _Performance Best Practices_ provides recommendations and instructions for optim
 
 ### Assumptions
 
-*	You installed Magento using [Composer]({{ page.baseurl }}/install-gde/composer.html) or a [compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html).
-*	You will be using this installation to run your live production instance of Magento 2.
+*  You installed Magento using [Composer]({{ page.baseurl }}/install-gde/composer.html) or a [compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html).
+*  You will be using this installation to run your live production instance of Magento 2.

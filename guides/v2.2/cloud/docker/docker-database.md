@@ -26,63 +26,65 @@ return [
 ```
 {: .no-copy}
 
-#### To connect to the database using Docker commands:
+{:.procedure}
+To connect to the database using Docker commands:
 
-1.  Connect to the CLI container.
+1. Connect to the CLI container.
 
     ```bash
     docker-compose run deploy bash
     ```
 
-1.  Connect to the database with a username and password.
+1. Connect to the database with a username and password.
 
-    ```bash
-    mysql --host=db --user=magento2 --password=magento2
-    ```
+   ```bash
+   mysql --host=db --user=magento2 --password=magento2
+   ```
 
-1.  Verify the version of the database service.
+1. Verify the version of the database service.
 
-    ```mysql
-    SELECT VERSION();
-    +--------------------------+
-    | VERSION()                |
-    +--------------------------+
-    | 10.0.38-MariaDB-1~xenial |
-    +--------------------------+
-    ```
-    {: .no-copy}
+   ```mysql
+   SELECT VERSION();
+   +--------------------------+
+   | VERSION()                |
+   +--------------------------+
+   | 10.0.38-MariaDB-1~xenial |
+   +--------------------------+
+   ```
+   {: .no-copy}
 
-#### To connect to the database:
+{:.procedure}
+To connect to the database:
 
-1.  Find the port used by the database. The port may change each time you restart Docker.
+1. Find the port used by the database. The port may change each time you restart Docker.
 
-    ```bash
-    docker-compose ps
-    ```
+   ```bash
+   docker-compose ps
+   ```
 
-    Sample response:
+   Sample response:
 
-    ```terminal
-              Name                         Command               State               Ports
-    --------------------------------------------------------------------------------------------------
-    mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
-    ```
-    {: .no-copy}
+   ```terminal
+             Name                         Command               State               Ports
+   --------------------------------------------------------------------------------------------------
+   mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
+   ```
+   {: .no-copy}
 
-1.  Connect to the database with port information from the previous step.
+1. Connect to the database with port information from the previous step.
 
-    ```bash
-    mysql -h127.0.0.1 -p32769 -umagento2 -pmagento2
-    ```
+   ```bash
+   mysql -h127.0.0.1 -p32769 -umagento2 -pmagento2
+   ```
 
-1.  Verify the version of the database service.
+1. Verify the version of the database service.
 
-    ```mysql
-    SELECT VERSION();
-    +--------------------------+
-    | VERSION()                |
-    +--------------------------+
-    | 10.0.38-MariaDB-1~xenial |
-    +--------------------------+
-    ```
-    {: .no-copy}
+   ```mysql
+   SELECT VERSION();
+   +--------------------------+
+   | VERSION()                |
+   +--------------------------+
+   | 10.0.38-MariaDB-1~xenial |
+   +--------------------------+
+   ```
+   {: .no-copy}

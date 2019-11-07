@@ -13,46 +13,45 @@ Magento platform clients need notifications about breaking changes for their ins
 To achieve this, all third-party modules must obey the following rules:
 
 1. You must specify the dependency on all modules listed in the `require` section of your module's `composer.json` file.
-2. Do not specify a dependency on meta packages (e.g. `product-community-edition`).
-3. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
-4. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
+1. Do not specify a dependency on meta packages (e.g. `product-community-edition`).
+1. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
+1. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
 
 ## Service Provider Interfaces
 
 A PHP Interface in Magento can be used several ways by the core product and extension developers.
 
-* **As an API**. An interface is called by PHP code.
-* **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
-* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
-APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
+*  **As an API**. An interface is called by PHP code.
+*  **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
+*  **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI). APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
 
 However, the dependency rules are different:
 
-* If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
+*  If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
-  **API dependency example**
+   **API dependency example**
 
-    ```json
-    {
-      "require": {
-      "magento/customer": "~2.0",
-      },
-    }
-    ```
+   ```json
+   {
+     "require": {
+     "magento/customer": "~2.0",
+     },
+   }
+   ```
 
-* If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+*  If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+
    **SPI dependency example**
 
-    ```json
-    {
-      ...
-      "require": {
-      "magento/customer": "~2.0.0",
-      },
-      ...
-    }
-
-    ```
+   ```json
+   {
+     ...
+     "require": {
+     "magento/customer": "~2.0.0",
+     },
+     ...
+   }
+   ```
 
 ## Determine module dependency
 

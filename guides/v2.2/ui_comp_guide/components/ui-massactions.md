@@ -11,9 +11,9 @@ See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-
 
 The MassActions component has dependencies on the following components:
 
-* Collapsible: `app\code\Magento\Ui\view\base\web\js\lib\collapsible.js`
-* Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
-* Modal window with alert: `app\code\Magento\Ui\view\base\web\js\modal\alert.js`
+*  Collapsible: `app\code\Magento\Ui\view\base\web\js\lib\collapsible.js`
+*  Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
+*  Modal window with alert: `app\code\Magento\Ui\view\base\web\js\modal\alert.js`
 
 ## Configuration options
 
@@ -170,14 +170,14 @@ Redefine link to constructor:
 
 Extends `Collapsible`:
 
-- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+*  [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+*  [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 
 ### Methods and events
 
 The following [API](https://glossary.magento.com/api) methods are available:
 
-* `getAction` - returns the action instance found by the provided identifier
-* `addAction` - adds a new action to the actions
-* `applyAction` - applies the specified action as identifier action
-* `getSelections` - returns the object with current selections
+*  `getAction` - returns the action instance found by the provided identifier
+*  `addAction` - adds a new action to the actions
+*  `applyAction` - applies the specified action as identifier action
+*  `getSelections` - returns the object with current selections

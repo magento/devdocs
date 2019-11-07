@@ -16,9 +16,9 @@ We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8
 
 ### Fixed issues
 
--   <!--  MAGECLOUD-1567  -->We fixed an issue preventing you from exporting the configuration files using `app:config:dump` more than once.
+-  <!--  MAGECLOUD-1567  -->We fixed an issue preventing you from exporting the configuration files using `app:config:dump` more than once.
 
--   <!--  MAGECLOUD-1582  -->We fixed a Redis session _locking_ issue that caused an _Admin_ login delay.
+-  <!--  MAGECLOUD-1582  -->We fixed a Redis session _locking_ issue that caused an _Admin_ login delay.
 
 ## v102.0.3
 
@@ -44,7 +44,8 @@ Implemented version-based patching. Now the package is compatible with {{site.da
 
 ### Fixed issues
 
-<!--MAGECLOUD-1033-->* Removed patch; fixing bug in `colinmollenhour/credis` v1.6 to enable support for {{site.data.var.ece}} 2.2.1.
+<!--MAGECLOUD-1033-->
+-  Removed patch; fixing bug in `colinmollenhour/credis` v1.6 to enable support for {{site.data.var.ece}} 2.2.1.
 
 ## v102.0.0
 {:.bs-callout .bs-callout-warning}

@@ -37,18 +37,25 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
 type="tip"
 content="**For CentOS and Ubuntu users**<br/>
 If the command fails with the error message:
+
 ```terminal
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
-install [fontconfig library]:<br/>
-* CentOS:
-  ```bash
-  yum install fontconfig
-  ```
-* Ubuntu:
-  ```bash
-  apt-get install fontconfig
-  ```
+
+Install [fontconfig library]:<br/>
+
+*  CentOS:
+
+   ```bash
+   yum install fontconfig
+   ```
+
+*  Ubuntu:
+
+   ```bash
+   apt-get install fontconfig
+   ```
+
 "
 %}
 
@@ -117,13 +124,13 @@ define([
 
 A Jasmine test consists of main two parts:
 
-- `describe` blocks
-- `it` blocks
+*  `describe` blocks
+*  `it` blocks
 
 Both the `describe` and `it` functions contains two parameters:
 
- - a text string with description of what is going to be done
- - a function with block of code implementing described action
+*  a text string with description of what is going to be done
+*  a function with block of code implementing described action
 
 In `describe` you can use `beforeEach` and `afterEach` functions performing a preparation of what must be done before and after every `it` test followed.
 
@@ -238,10 +245,10 @@ Warning: Task "spec" not found. Use --force to continue.
 #### Solution:
 
 1. Make sure your Node.js version is up-to-date.
-2. Remove `package.json`, `Gruntfile.js`.
-3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
-4. Delete the `node_modules` directory.
-5. Run `npm install` in your terminal.
+1. Remove `package.json`, `Gruntfile.js`.
+1. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
+1. Delete the `node_modules` directory.
+1. Run `npm install` in your terminal.
 
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
@@ -262,6 +269,7 @@ Run in your terminal:
 ```bash
 cd <magento_root>/node_modules/grunt-contrib-jasmine
 ```
+
 ```bash
 npm install
 ```

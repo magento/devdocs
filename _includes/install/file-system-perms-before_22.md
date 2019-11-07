@@ -27,8 +27,8 @@ This section discusses how to set ownership and permissions for your own server 
 
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
 
-* Ubuntu: `su <username>`
-* CentOS: `su - <username>`
+*  Ubuntu: `su <username>`
+*  CentOS: `su - <username>`
 
 For example,
 

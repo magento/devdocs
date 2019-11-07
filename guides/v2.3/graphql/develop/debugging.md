@@ -14,13 +14,13 @@ You can use Xdebug for debugging the PHP execution of a GraphQL query just as yo
 To start debugging, add the `?XDEBUG_SESSION_START=PHPSTORM` parameter to the endpoint URL.
 The following example shows how to establish a connection between Xdebug and PHPStorm IDE.
 
-```
+```http
 http://<magento2-3-server>/graphql?XDEBUG_SESSION_START=PHPSTORM
 ```
 
 You can also enable an Xdebug connection for a particular request by setting the corresponding header parameter.
 
-```
+```text
 Cookie: XDEBUG_SESSION=PHPSTORM
 ```
 
@@ -28,5 +28,5 @@ As a result, Xdebug within the PHP execution attempts to make a connection to an
 
 ## Related Topics
 
-* [GraphQL request headers]({{ page.baseurl }}/graphql/send-request.html)
-* [Exception handling]({{ page.baseurl }}/graphql/develop/exceptions.html)
+*  [GraphQL request headers]({{ page.baseurl }}/graphql/send-request.html)
+*  [Exception handling]({{ page.baseurl }}/graphql/develop/exceptions.html)

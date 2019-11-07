@@ -170,7 +170,7 @@ pages:
             - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
-        - label: Managed Cloud WAF
+        - label: Web Application Firewall
           url: /cloud/cdn/fastly-waf-service.html
           exclude_versions: ["2.0"]
 
@@ -182,7 +182,7 @@ pages:
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
           children:
-            - label: Set up redirects to WordPress
+            - label: Reroute requests to a CMS backend
               url: /cloud/cdn/fastly-vcl-wordpress.html
 
             - label: Block referral spam
@@ -309,6 +309,9 @@ pages:
 
         - label: Profile database queries
           url: /cloud/project/profile-database-queries.html
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html

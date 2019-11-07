@@ -40,11 +40,11 @@ A parent and a child theme can belong to different vendors. For example, your cu
 
 ## Differences between parent and child themes
 
-* A child theme inherits view configuration, templates, layouts, and static file from its parents.
+*  A child theme inherits view configuration, templates, layouts, and static file from its parents.
 
-* A child theme is used first, whereas the parent theme is only indirectly active; its static file, layout, templates will be used if not overridden by the child theme.
+*  A child theme is used first, whereas the parent theme is only indirectly active; its static file, layout, templates will be used if not overridden by the child theme.
 
-* Any theme can be chosen to display, whether or not it specifies a parent theme in `theme.xml`.
+*  Any theme can be chosen to display, whether or not it specifies a parent theme in `theme.xml`.
 
 ## Override view.xml file
 
@@ -61,21 +61,25 @@ The particular directories, where the system searches in the course of the fallb
 If module context is not defined for a file:
 
 1. Current theme [static files](https://glossary.magento.com/static-files) for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
-2. Current theme static files: `<theme_dir>/web/`
-2. Ancestor's static files, recursively, until a theme with no parent is reached:
-- `<parent_theme_dir>/web/i18n/<locale>`
-- `<parent_theme_dir>/web/`
-3. Library static view files: `lib/web/`
+1. Current theme static files: `<theme_dir>/web/`
+1. Ancestor's static files, recursively, until a theme with no parent is reached:
+
+   *  `<parent_theme_dir>/web/i18n/<locale>`
+   *  `<parent_theme_dir>/web/`
+
+1. Library static view files: `lib/web/`
 
 If module context is defined for a file:
 
-1. Current theme and current locale module static files:`<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
-2. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
-3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-- `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
-- `<parent_theme_dir>/<Namespace>_<Module>/web/`
-3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
-4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
+1. Current theme and current locale module static files: `<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+1. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
+
+   *  `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+   *  `<parent_theme_dir>/<Namespace>_<Module>/web/`
+
+1. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
+1. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
 **Example**
 
@@ -99,8 +103,8 @@ Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/
 The fallback scheme for templates is the following (module context is always known for them):
 
 1. Current theme templates: `<theme_dir>/<Namespace>_<Module>/templates`
-2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `<parent_theme_dir>/<Namespace>_<Module>/templates`
-3. Module templates: `<module_dir>/view/frontend/templates`
+1. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `<parent_theme_dir>/<Namespace>_<Module>/templates`
+1. Module templates: `<module_dir>/view/frontend/templates`
 
 So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where `<path_to_template>` is the path to the original template.
 
@@ -127,16 +131,18 @@ You can find out what exactly code changes are required to perform this and othe
 The layouts processing mechanism does not involve fallback. The system collects [layout](https://glossary.magento.com/layout) files in the following order:
 
 1. All modules layout files in sequence defined in `app/etc/config.php` respecting the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html). For each module:
-- Layout files for the `base` area: `<module_dir>/view/base/layout/`
-- Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
-1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no parent is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
-2. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
+
+   *  Layout files for the `base` area: `<module_dir>/view/base/layout/`
+   *  Layout files for the `frontend` area: `<module_dir>/view/frontend/layout/`
+
+1. Ancestor theme layouts, starting from the most distant ancestor, recursively until a theme with no child is reached: `<parent_theme_dir>/<Vendor>_<Module>/layout/`
+1. Current theme layouts: `<theme_dir>/<Vendor>_<Module>/layout/`
 
 Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
 To add an extending layout file:
 
-* Put your custom layout file in the `<theme_dir>/<Vendor>_<Module>/layout/` directory.
+*  Put your custom layout file in the `<theme_dir>/<Vendor>_<Module>/layout/` directory.
 
 **Example**
 
@@ -158,9 +164,8 @@ For more information about extending layout refer to the [Extend a layout]({{ pa
 Though overriding layouts is not recommended, it is still possible, and might be a solution for certain customization tasks.
 To override the instructions from an ancestor theme layout file:
 
-* Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
+*  Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
 To override module [layout instructions](https://glossary.magento.com/layout-instructions) (base layout):
 
-* Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
-
+*  Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.

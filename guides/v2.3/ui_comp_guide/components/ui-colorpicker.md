@@ -17,12 +17,12 @@ The ColorPicker component must be a child of the [Listing]({{ page.baseurl }}/ui
 
 ## Sources files
 
-- [app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd)
-- [app/code/Magento/Ui/view/base/web/js/form/element/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/form/element/color-picker.js)
-- [app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
-- [app/code/Magento/Ui/view/base/web/templates/form/element/colorPicker.html]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/templates/form/element/color-picker.html)
-- [lib/web/jquery/spectrum/spectrum.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/spectrum.js)
-- [lib/web/jquery/spectrum/tinycolor.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/tinycolor.js)
+-  [app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/ui_component/etc/definition/colorPicker.xsd)
+-  [app/code/Magento/Ui/view/base/web/js/form/element/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/form/element/color-picker.js)
+-  [app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/colorPicker.js]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
+-  [app/code/Magento/Ui/view/base/web/templates/form/element/colorPicker.html]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/templates/form/element/color-picker.html)
+-  [lib/web/jquery/spectrum/spectrum.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/spectrum.js)
+-  [lib/web/jquery/spectrum/tinycolor.js]({{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/spectrum/tinycolor.js)
 
 ## Examples
 

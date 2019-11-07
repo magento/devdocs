@@ -7,11 +7,11 @@ This section covers a broad scope of Community contributed best and leading prac
 
 Topics and areas include:
 
-* Project setup
-* Theme development
-* Composer use and repos
-* Local environment options
-* And much more
+*  Project setup
+*  Theme development
+*  Composer use and repos
+*  Local environment options
+*  And much more
 
 {:.bs-callout .bs-callout-info}
 Magento does not officially endorse these best practices.
@@ -21,16 +21,17 @@ They are available in DevDocs because the content has been well received within 
 
 The DevDocs and Magento teams verified and provide the following best practices and recommendations:
 
-- [Best Practices and Benchmarking]({{ site.baseurl }}/guides/v2.3/migration/migration-overview-practices.html) for Migration
-- [Best Practices for Extension Development]({{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html)
+*  [Best Practices and Benchmarking]({{ site.baseurl }}/guides/v2.3/migration/migration-overview-practices.html) for Migration
+*  [Best Practices for Extension Development]({{ site.baseurl }}/guides/v2.3/ext-best-practices/bk-ext-best-practices.html)
 
-    We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
-- [Programming Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/common-programming-bp.html)
-- [Observers Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html)
-- [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
-- [Performance Best Practices]({{ site.baseurl }}/guides/v2.3/performance-best-practices/)
-- [Best Practices for Store Configuration]({{ site.baseurl }}/guides/v2.3/cloud/configure/configure-best-practices.html) for Commerce Cloud
-- [Deployment Process]({{ site.baseurl }}/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
+   We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
+
+*  [Programming Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/common-programming-bp.html)
+*  [Observers Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html)
+*  [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
+*  [Performance Best Practices]({{ site.baseurl }}/guides/v2.3/performance-best-practices/)
+*  [Best Practices for Store Configuration]({{ site.baseurl }}/guides/v2.3/cloud/configure/configure-best-practices.html) for Commerce Cloud
+*  [Deployment Process]({{ site.baseurl }}/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
 
 ## Want to contribute?
 

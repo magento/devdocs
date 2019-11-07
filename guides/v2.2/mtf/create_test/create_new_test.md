@@ -11,61 +11,61 @@ To make the documentation more consistent, we created a completely new test spec
 
 Create a synonym group (synonyms are a way to expand the scope of eligible matching products) with:
 
-- Scope:
-    - All Websites
-    - All Store Views
-    - Default Store View
-- Synonyms: shoes, foot wear, men shoes, women shoes.
+-  Scope:
+   -  All Websites
+   -  All Store Views
+   -  Default Store View
+-  Synonyms: shoes, foot wear, men shoes, women shoes.
 
 ### Manual testing scenario {#manual-test}
 
 **Variation 1:**
 
 1. Log in to [Admin](https://glossary.magento.com/admin).
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
-3. Click the "New Synonyms Group" button.
-4. Enter data in the "Synonyms" field.
-5. Click the "Save Synonym Group" button.
-6. Verify the synonym group saved successfully
+1. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+1. Click the "New Synonyms Group" button.
+1. Enter data in the "Synonyms" field.
+1. Click the "Save Synonym Group" button.
+1. Verify the synonym group saved successfully
 
 **Variation 2:**
 
 1. Log in to Admin.
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
-3. Click the "New Synonyms Group" button.
-4. Select "All Store Views" in a "Scope" field.
-5. Enter data in the "Synonyms" field.
-6. Click the "Save Synonym Group" button.
-7. Verify the synonym group saved successfully
+1. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+1. Click the "New Synonyms Group" button.
+1. Select "All Store Views" in a "Scope" field.
+1. Enter data in the "Synonyms" field.
+1. Click the "Save Synonym Group" button.
+1. Verify the synonym group saved successfully
 
 **Variation 3:**
 
 1. Log in to Admin.
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
-3. Click the "New Synonyms Group" button.
-4. Select "Default Store View" in a "Scope" field.
-5. Enter data in the "Synonyms" field.
-6. Click the "Save Synonym Group" button.
-7. Verify the synonym group saved successfully
+1. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+1. Click the "New Synonyms Group" button.
+1. Select "Default Store View" in a "Scope" field.
+1. Enter data in the "Synonyms" field.
+1. Click the "Save Synonym Group" button.
+1. Verify the synonym group saved successfully
 
 ### Automated testing scenario {#auto-test}
 
 1. Log in to Admin.
-2. Open the Search Synonym page.
-3. Click the "New Synonym Group" button.
-4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
-5. Click the "Save Synonym Group" button.
-6. Verify the synonym group saved successfully
+1. Open the Search Synonym page.
+1. Click the "New Synonym Group" button.
+1. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
+1. Click the "Save Synonym Group" button.
+1. Verify the synonym group saved successfully
 
 ### Test creation {#test-creation}
 
 #### Step 1. Check the FTF configuration and environment {#check-mtf}
 
-* Adjust configuration. Learn how to [adjust a configuration][].
+-  Adjust configuration. Learn how to [adjust a configuration][].
 
-* Prepare Magento application. Learn how to [prepare Magento application][].
+-  Prepare Magento application. Learn how to [prepare Magento application][].
 
-* Prepare environment for test run. Learn how to [prepare environment for test run][].
+-  Prepare environment for test run. Learn how to [prepare environment for test run][].
 
 #### Step 2. Create the testing object - a fixture {#create-test-object}
 
@@ -249,10 +249,10 @@ class ScopeId extends DataSource
 
 This data source:
 
- 1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
- 2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
- 3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
- 4. Returns a Store `name` value.
+1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
+1. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
+1. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
+1. Returns a Store `name` value.
 
 We should save it as `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
@@ -367,11 +367,11 @@ use Magento\Search\Test\Fixture\Synonym;
 /**
  * Steps:
  * 1. Log in to Admin.
- * 2. Open the Search Synonym page.
- * 3. Click the "New Synonym Group" button.
- * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
- * 5. Click the "Save Synonym Group" button.
- * 6. Verify the synonym group saved successfully.
+ * 1. Open the Search Synonym page.
+ * 1. Click the "New Synonym Group" button.
+ * 1. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
+ * 1. Click the "Save Synonym Group" button.
+ * 1. Verify the synonym group saved successfully.
  */
 class CreateSynonymEntityTest extends Injectable
 {
@@ -444,8 +444,8 @@ The following code contains a data set, but doesn't have data yet:
 
 According to a New Synonym Group form we need to enter data in the `synonyms` and `scope_id` fields.
 
-- `synonyms` field. We need to [set data to a fixture field][]. The name of the field should be `<name of a fixture>/data/<name of the field>`. It is `name = "synonym/data/synonyms"`. To make data unique in each variation, we can use the [`%isolation%` placeholder][].
-- `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a `dataset` value, we should specify a name of the Store repository `dataset name` from `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
+-  `synonyms` field. We need to [set data to a fixture field][]. The name of the field should be `<name of a fixture>/data/<name of the field>`. It is `name = "synonym/data/synonyms"`. To make data unique in each variation, we can use the [`%isolation%` placeholder][].
+-  `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a `dataset` value, we should specify a name of the Store repository `dataset name` from `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
 
 | Variation #  |`synonyms`|`scope_id`
 |---
@@ -520,8 +520,8 @@ In the next step we will create [blocks][] that implements logic in these pages.
 Let's see in the [test description][] what actions must be performed:
 
 1. Click the "New Synonym Group" button.
-2. Enter data according to a data set.
-3. Click the "Save Synonym Group" button.
+1. Enter data according to a data set.
+1. Click the "Save Synonym Group" button.
 
 **How to code 'Click the "New Synonym Group" button'**
 
@@ -701,10 +701,10 @@ All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 
 Remember our test flow:
 
 1. Log in to Admin
-2. Open the Search Synonym page
-3. Click the "New Synonym Group" button
-4. Enter data according to a data set
-5. Click the "Save Synonym Group" button
+1. Open the Search Synonym page
+1. Click the "New Synonym Group" button
+1. Enter data according to a data set
+1. Click the "Save Synonym Group" button
 
 Let's code it!
 
@@ -780,11 +780,11 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 /**
  * Steps:
  * 1. Log in to Admin.
- * 2. Open the Search Synonym page.
- * 3. Click the "New Synonym Group" button.
- * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
- * 5. Click the "Save Synonym Group" button.
- * 6. Verify the synonym group saved successfully
+ * 1. Open the Search Synonym page.
+ * 1. Click the "New Synonym Group" button.
+ * 1. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
+ * 1. Click the "Save Synonym Group" button.
+ * 1. Verify the synonym group saved successfully
  */
 class CreateSynonymEntityTest extends Injectable
 {
@@ -839,6 +839,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 ```
@@ -1002,6 +1003,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be [up 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter CreateSynonymEntityTest
 ```
@@ -1064,6 +1066,6 @@ That's it!
 <!-- ABBREVIATIONS -->
 
 *[FTF]: Functional Testing Framework
-*[CRUD]: Create Read Update Delete
-*[IDE]: Integrated Development Environment
-*[CLI]: Command Line Interface
+[CRUD]: Create Read Update Delete
+[IDE]: Integrated Development Environment
+[CLI]: Command Line Interface

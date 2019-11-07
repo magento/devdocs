@@ -11,8 +11,8 @@ A fixture is represented as an [XML](https://glossary.magento.com/xml) file loca
 
 You will need fixture:
 
-- as test data for particular set
-- as precondition for the test
+-  as test data for particular set
+-  as precondition for the test
 
 In this chapter, we will create a new fixture and modify it, considering different use cases.
 
@@ -106,10 +106,10 @@ For a detailed description of XML structure, see next section.
 
 Let's look closer at fixture structure.
 
-  - `<config>` is a root node that defines path to `fixture.xsd` schema.
-  - `<fixture>` defines fixture configuration.
-  - `<data_config>` defines additional fixture configuration for the fixture.
-  - `<field>` defines field in fixture.
+-  `<config>` is a root node that defines path to `fixture.xsd` schema.
+-  `<fixture>` defines fixture configuration.
+-  `<data_config>` defines additional fixture configuration for the fixture.
+-  `<field>` defines field in fixture.
 
 Following table describes `<fixture>` attributes.
 

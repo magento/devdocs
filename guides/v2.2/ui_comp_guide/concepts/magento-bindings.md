@@ -9,6 +9,7 @@ title: Magento binding syntax
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
 ### Knockout syntax
+
 ```html
 <!-- ko if: isVisible-->
     <div class="someClass">
@@ -17,7 +18,9 @@ Within HTML templates, Magento gives you the option of using a binding syntax th
     </div>
 <!-- /ko -->
 ```
+
 ### Magento syntax
+
 ```html
 <if args="isVisible">
     <div class="someClass">
@@ -26,7 +29,9 @@ Within HTML templates, Magento gives you the option of using a binding syntax th
     </div>
 </if>
 ```
+
 or
+
 ```html
 <div class="someClass" if="isVisible">
     <span translate="'Some translatable message!'"></span>
@@ -50,6 +55,8 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |               |`<!-- ko ifnot: getCartParam('summary_count') -->`                                        | `<ifnot args="getCartParam('summary_count')">`                                       |
 |text           |`<!-- ko text: 'Some text' --><!-- /ko -->`                                    | `<text args="'Some text'">`                                           |
 |               |`<div data-bind="text: 'Some text'"></div>`                                    | `<div text="'Some text'"></div>`                                      |
+|i18n           |`<!-- ko i18n: 'Sign In' --><!-- /ko -->`                                    | `<translate args="'Sign In'"/>`                                  |
+|               |`<span data-bind="i18n: 'Sign In'"></span>`                                        | `<span translate="'Sign In'"></span>`                                      |
 |with           |`<!-- ko with: element --><!-- /ko -->`                                        | `<with args="element">`                                               |
 |               |`<div data-bind="with: element"></div>`                                        | `<div with="element"></div>`                                          |
 |foreach        |`<!-- ko foreach: elements --><!-- /ko -->`                                    | `<each args="elements">`                                              |
@@ -76,4 +83,3 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |checked        |`<input type="checkbox" data-bind="checked: isChecked"/>`                      | `<input type="checkbox" ko-checked="isChecked"/>`                     |
 |                |`<input type="radio" data-bind="value: value,checked: isSelected" />`                      | `<input type="radio" ko-checked="element.isSelected" ko-value="value" />`                     |
 |checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" checked="isChecked"/>`   |
-

@@ -30,8 +30,8 @@ Static content deployment in the build phase also reduces downtime. The deploy p
 
 ### Symptoms
 
-- Your site is not functioning at all. HTTP requests result in 50x errors.
-- Your site is functioning normally, but fails to refresh static assets.
+-  Your site is not functioning at all. HTTP requests result in 50x errors.
+-  Your site is functioning normally, but fails to refresh static assets.
 
 ### Solution
 

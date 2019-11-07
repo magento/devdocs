@@ -17,9 +17,9 @@ During the migration process, **do not:**
 
 1. Make any changes in the Magento 1 [Admin](https://glossary.magento.com/admin) except for order management (shipping, creating invoice, credit memos, etc.)
 
-2. Alter any code
+1. Alter any code
 
-3. Make changes in the Magento 2 Admin and [storefront](https://glossary.magento.com/storefront)
+1. Make changes in the Magento 2 Admin and [storefront](https://glossary.magento.com/storefront)
 
 {: .bs-callout .bs-callout-tip }
 All operations in Magento 1 storefront are allowed at this time.
@@ -46,9 +46,9 @@ where:
 
 1. `<mode>` may be: [`settings`]({{ page.baseurl }}/migration/migration-migrate-settings.html), [`data`]({{ page.baseurl }}/migration/migration-migrate-data.html), or [`delta`]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
-2. `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
+1. `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
-3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
+1. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
 {: .bs-callout-info }
 Logs are written to the `<magento_root>/var/` directory.
@@ -58,7 +58,7 @@ Logs are written to the `<magento_root>/var/` directory.
 When we created the Data Migration Tool, we assumed the following data transfer sequence:
 
 1. [Settings]({{ page.baseurl }}/migration/migration-migrate-settings.html)
-2. [Data]({{ page.baseurl }}/migration/migration-migrate-data.html)
-3. [Changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
+1. [Data]({{ page.baseurl }}/migration/migration-migrate-data.html)
+1. [Changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 That's why we strongly recommend to keep this order to migrate quickly and with no issues.

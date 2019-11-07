@@ -12,14 +12,14 @@ We strongly recommend that test all patches in a staging/development environment
 
 There are two types of patches:
 
-- **Official patches**—patches that Magento publishes on the [Magento Security Center][].
-- **Custom patches**—unofficial patches that you can create from a git commit.
+-  **Official patches**—patches that Magento publishes on the [Magento Security Center][].
+-  **Custom patches**—unofficial patches that you can create from a git commit.
 
 Patch (or diff) files are text files that note:
 
-- The file(s) to be changed.
-- The line number to begin the change and the number of lines to be changed.
-- The new code to swap in.
+-  The file(s) to be changed.
+-  The line number to begin the change and the number of lines to be changed.
+-  The new code to swap in.
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
@@ -64,8 +64,8 @@ index c8a6fef58d31..7d01c195791e 100644
 
 There are two ways to apply patches:
 
-- Using the command line
-- Using Composer
+-  Using the command line
+-  Using Composer
 
 ### Command line
 
@@ -101,9 +101,9 @@ To apply a custom patch using Composer:
    ```
 
 1. Edit the `composer.json` file and add the following section to specify:
-    - **Module:** *\"magento/module-payment\"*
-    - **Title:** *\"MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card\"*
-    - **Path to patch:** *\"patches/composer/github-issue-6474.diff\"*
+   -  **Module:** *\"magento/module-payment\"*
+   -  **Title:** *\"MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card\"*
+   -  **Path to patch:** *\"patches/composer/github-issue-6474.diff\"*
 
    For example:
 

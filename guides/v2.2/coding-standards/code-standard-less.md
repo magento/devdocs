@@ -21,17 +21,19 @@ This coding standard is optional for third-party Magento developers.
 
 Use only spaces for indentation:
 
-* Tab size: 4 spaces
-* Indent size: 4 spaces
-* Continuation indent: 4 spaces
+*  Tab size: 4 spaces
+*  Indent size: 4 spaces
+*  Continuation indent: 4 spaces
 
 **Correct**:
 
-    .nav {
-        .nav-item {
-            ...
-        }
+```css
+.nav {
+    .nav-item {
+        ...
     }
+}
+```
 
 ### Formatting
 
@@ -41,13 +43,17 @@ Add one space before opening braces and a line break after. Add a line break bef
 
 **Correct**:
 
-    .nav {
-        color: @nav__color;
-    }
+```css
+.nav {
+    color: @nav__color;
+}
+```
 
 **Incorrect**:
 
-    .nav{color: @nav__color;}
+```css
+.nav{color: @nav__color;}
+```
 
 #### Selector delimiters
 
@@ -55,16 +61,20 @@ Add a line break after each selector delimiter. Do not add spaces before or afte
 
 **Correct**:
 
-    .nav,
-    .bar {
-        color: @color__base;
-    }
+```css
+.nav,
+.bar {
+    color: @color__base;
+}
+```
 
 **Incorrect**:
 
-    .nav, .bar {
-        color: @color__base;
-    }
+```css
+.nav, .bar {
+    color: @color__base;
+}
+```
 
 #### Quotes
 
@@ -72,15 +82,19 @@ Use single quotes.
 
 **Correct**:
 
-    .nav {
-        content: 'lorem ipsum';
-    }
+```css
+.nav {
+    content: 'lorem ipsum';
+}
+```
 
 **Incorrect**:
 
-    .nav {
-        content: "lorem ipsum";
-    }
+```css
+.nav {
+    content: "lorem ipsum";
+}
+```
 
 #### Combinator indents
 
@@ -88,23 +102,27 @@ Add spaces before and after combinators.
 
 **Correct**:
 
-    .nav + .bar {
-        color: @bar__color;
-    }
+```css
+.nav + .bar {
+    color: @bar__color;
+}
+```
 
 **Incorrect**:
 
-    .nav+.bar {
-        color: @bar__color;
-    }
+```css
+.nav+.bar {
+    color: @bar__color;
+}
 
-    .nav +.bar {
-        color: @bar__color;
-    }
+.nav +.bar {
+    color: @bar__color;
+}
 
-    .nav+ .bar {
-        color: @bar__color;
-    }
+.nav+ .bar {
+    color: @bar__color;
+}
+```
 
 #### Properties line break
 
@@ -112,16 +130,20 @@ Start each property declaration in a new line.
 
 **Correct**:
 
-    .nav {
-        background-color: @nav__background-color;
-        color: @nav__color;
-    }
+```css
+.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+}
+```
 
 **Incorrect**:
 
-    .nav {
-        color: @nav__color; background-color: @nav__background-color;
-    }
+```css
+.nav {
+    color: @nav__color; background-color: @nav__background-color;
+}
+```
 
 #### Properties colon indents
 
@@ -129,23 +151,27 @@ Add space after but not before the colon that separates property names from valu
 
 **Correct**:
 
-    .nav {
-        color: @nav__color;
-    }
+```css
+.nav {
+    color: @nav__color;
+}
+```
 
 **Incorrect**:
 
-    .nav {
-        color : @nav__color;
-    }
+```css
+.nav {
+    color : @nav__color;
+}
 
-    .bar {
-        color:@bar__color;
-    }
+.bar {
+    color:@bar__color;
+}
 
-    .item {
-        color :@item__color;
-    }
+.item {
+    color :@item__color;
+}
+```
 
 #### End of file
 
@@ -157,24 +183,26 @@ Add a blank line after a selector.
 
 **Correct**:
 
-    css
-        .nav {
-            background-color: @nav__background-color;
-        }
+```css
+.nav {
+    background-color: @nav__background-color;
+}
 
-        .bar {
-            background-color: @bar__background-color;
-        }
+.bar {
+    background-color: @bar__background-color;
+}
+```
 
 **Incorrect**:
 
-    css
-        .nav {
-            background-color: @nav__background-color;
-        }
-        .bar {
-            background-color: @bar__background-color;
-        }
+```css
+.nav {
+    background-color: @nav__background-color;
+}
+.bar {
+    background-color: @bar__background-color;
+}
+```
 
 #### End of the property line
 
@@ -182,15 +210,19 @@ Add a semicolon after property.
 
 **Correct**:
 
-    .nav {
-        background-color: @nav__background-color;
-    }
+```css
+.nav {
+    background-color: @nav__background-color;
+}
+```
 
 **Incorrect**:
 
-    .nav {
-        background-color: @nav__background-color
-    }
+```css
+.nav {
+    background-color: @nav__background-color
+}
+```
 
 #### !important property
 
@@ -198,16 +230,18 @@ Avoid using the `!important` property if possible. If it is required, add a spac
 
 **Correct**
 
-    .jquery-ui-calendar-item {
-        background-color: @nav__background-color !important;
-    }
+```css
+.jquery-ui-calendar-item {
+    background-color: @nav__background-color !important;
+}
+```
 
 **Incorrect**:
 
-```
-    .jquery-ui-calendar-item {
-        background-color: @nav__background-color!important;
-    }
+```css
+.jquery-ui-calendar-item {
+    background-color: @nav__background-color!important;
+}
 ```
 
 ### Comments
@@ -217,28 +251,30 @@ First, second and third level comments should have two spaces after "//". Inline
 
 **Correct**
 
-    //
-    //  First level comment
-    //  _____________________________________________
+```css
+//
+//  First level comment
+//  _____________________________________________
 
-    .nav {
-        background-color: @nav__background-color;
-    }
+.nav {
+    background-color: @nav__background-color;
+}
 
-    //
-    //  Second level comment
-    //  ---------------------------------------------
+//
+//  Second level comment
+//  ---------------------------------------------
 
-    .nav {
-        background-color: @nav__background-color;
-    }
+.nav {
+    background-color: @nav__background-color;
+}
 
-    //  Comment
-    .nav {
-        //  New line comment
-        background-color: @nav__background-color; // ToDo UI: todo inline comment
-        color: @nav__color; // inline comment
-    }
+//  Comment
+.nav {
+    //  New line comment
+    background-color: @nav__background-color; // ToDo UI: todo inline comment
+    color: @nav__color; // inline comment
+}
+```
 
 ### Selectors
 
@@ -252,23 +288,27 @@ Exception: Avoid the `id` selector.
 
 **Correct**:
 
-    .nav {
-        ...
-    }
+```css
+.nav {
+    ...
+}
 
-    .nav + bar {
-        ...
-    }
+.nav + bar {
+    ...
+}
 
-    .nav:not(.bar) {
-        ...
-    }
+.nav:not(.bar) {
+    ...
+}
+```
 
 **Incorrect**:
 
-    #foo {
-        ...
-    }
+```css
+#foo {
+    ...
+}
+```
 
 ### Classes Naming
 
@@ -278,21 +318,27 @@ Class names should be lowercase, start with a letter (except helper classes), wo
 
 **Correct**:
 
-    .nav-bar {
-        ...
-    }
+```css
+.nav-bar {
+    ...
+}
+```
 
 **Incorrect**:
 
-    .navBar {
-       ...
-    }
+```css
+.navBar {
+    ...
+}
+```
 
 **Incorrect**: underscore separation
 
-    .nav_bar {
-       ...
-    }
+```css
+.nav_bar {
+    ...
+}
+```
 
 #### Helper classes
 
@@ -302,9 +348,11 @@ Some parts of Magento code might not comply with this standard yet. You might st
 
 **Example**:
 
-    ._active {
-        ...
-    }
+```css
+._active {
+    ...
+}
+```
 
 #### Size
 
@@ -313,21 +361,27 @@ Try to convey what class is about while being as brief as possible.
 
 **Correct**:
 
-    .nav-bar {
-        ...
-    }
+```css
+.nav-bar {
+    ...
+}
+```
 
 **Incorrect**: too long
 
-    .navigation-panel-in-footer {
-       ...
-    }
+```css
+.navigation-panel-in-footer {
+    ...
+}
+```
 
 **Incorrect**: too short
 
-    .nvpf {
-       ...
-    }
+```css
+.nvpf {
+    ...
+}
+```
 
 #### Meaning
 
@@ -335,28 +389,34 @@ Use meaningful, specific class names that reflect the purpose of the element. Cl
 
 **Correct**: specific
 
-    .category {
-        ...
-    }
-    .category-title {
-        ...
-    }
+```css
+.category {
+    ...
+}
+.category-title {
+    ...
+}
+```
 
 **Incorrect**: cryptic
 
-    .foo-1901 {
-        ...
-    }
+```css
+.foo-1901 {
+    ...
+}
+```
 
 **Incorrect**: presentational
 
-    .button-green {
-       ...
-    }
+```css
+.button-green {
+    ...
+}
 
-    .clear {
-       ...
-    }
+.clear {
+    ...
+}
+```
 
 ### Selectors naming
 
@@ -368,29 +428,37 @@ Unless necessary (for example with helper classes), do not use element names in 
 
 **Correct**:
 
-    .error {
-        ...
-    }
+```css
+.error {
+    ...
+}
+```
 
 **Incorrect**:
 
-    div.error {
-       ...
-    }
+```css
+div.error {
+    ...
+}
+```
 
 Type selectors must be lowercase.
 
 **Correct**:
 
-    .nav > li {
-        ...
-    }
+```css
+.nav > li {
+    ...
+}
+```
 
 **Incorrect**:
 
-    .nav > LI {
-       ...
-    }
+```css
+.nav > LI {
+    ...
+}
+```
 
 #### Formatting
 
@@ -398,21 +466,25 @@ Write selector in one line, do not use concatenation.
 
 **Correct**:
 
-    .product-list-item {
-        ...
-    }
+```css
+.product-list-item {
+    ...
+}
+```
 
 **Incorrect**:
 
-    .product {
+```css
+.product {
+    ...
+    &-list {
         ...
-        &-list {
+        &-item {
             ...
-            &-item {
-                ...
-            }
         }
     }
+}
+```
 
 #### Nesting
 
@@ -422,11 +494,28 @@ Exceptions are pseudo elements and states.
 
 **Correct**:
 
-    .footer {
+```css
+.footer {
+    ...
+    .nav {
         ...
-        .nav {
+    }
+    .nav-list {
+        ...
+        .nav-list-item {
             ...
         }
+    }
+}
+```
+
+**Incorrect**:
+
+```css
+.footer {
+    ...
+    .nav {
+        ...
         .nav-list {
             ...
             .nav-list-item {
@@ -434,21 +523,8 @@ Exceptions are pseudo elements and states.
             }
         }
     }
-
-**Incorrect**:
-
-    .footer {
-        ...
-        .nav {
-            ...
-            .nav-list {
-                ...
-                .nav-list-item {
-                    ...
-                }
-            }
-        }
-    }
+}
+```
 
 ## Properties
 
@@ -458,19 +534,23 @@ Sort all properties in the alphabetical order. Mixins, variables, and so on shou
 
 **Correct**:
 
-    .nav {
-        background-color: @nav__background-color;
-        color: @nav__color;
-        text-align: center;
-    }
+```css
+.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+    text-align: center;
+}
+```
 
 **Incorrect**:
 
-    .nav {
-        color: @nav__color;
-        text-align: center;
-        background-color: @nav__background-color;
-    }
+```css
+.nav {
+    color: @nav__color;
+    text-align: center;
+    background-color: @nav__background-color;
+}
+```
 
 ### Shorthand
 
@@ -480,16 +560,20 @@ CSS offers a variety of shorthand properties that should be used whenever possib
 
 **Correct**:
 
-    border-top: 0;
-    padding: 0 1em 2em;
+```css
+border-top: 0;
+padding: 0 1em 2em;
+```
 
 **Incorrect**:
 
-    border-top-style: none;
-    padding-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0;
+```css
+border-top-style: none;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0;
+```
 
 ### 0 and units
 
@@ -497,13 +581,17 @@ Do not specify units "0" value.
 
 **Correct**:
 
-    border-width: 0;
-    margin: 0;
+```css
+border-width: 0;
+margin: 0;
+```
 
 **Incorrect**:
 
-    border-width: 0px;
-    margin: 0rem;
+```css
+border-width: 0px;
+margin: 0rem;
+```
 
 ### Floating values
 
@@ -511,30 +599,38 @@ Omit leading "0"s in values, use dot instead.
 
 **Correct**:
 
-     margin-left: .5rem;
+```css
+margin-left: .5rem;
+```
 
 **Incorrect**:
 
-    margin-left: 0.5rem;
+```css
+margin-left: 0.5rem;
+```
 
 ### Hexadecimal notation
 
-* Use lowercase only.
-* Use three-character hexadecimal notation where possible.
-* Avoid using hexadecimal values for color in properties, use only variables instead.
+*  Use lowercase only.
+*  Use three-character hexadecimal notation where possible.
+*  Avoid using hexadecimal values for color in properties, use only variables instead.
 
 **Correct**:
 
-    @nav__color: #fafafa;
-    @nav-item__color: #f00;
-    ...
-    color: @nav-item__color;
+```css
+@nav__color: #fafafa;
+@nav-item__color: #f00;
+...
+color: @nav-item__color;
+```
 
 **Incorrect**:
 
-    color: #ff0000;
-    @nav__color: #FAFAFA;
-    @nav-item__color: red;
+```css
+color: #ff0000;
+@nav__color: #FAFAFA;
+@nav-item__color: red;
+```
 
 ## Variables
 
@@ -546,17 +642,19 @@ If variables are local and used only in a [module](https://glossary.magento.com/
 
 **Example** `_module.less`:
 
-    ...
+```css
+...
 
-    //
-    //  Variables
-    //  _____________________________________________
+//
+//  Variables
+//  _____________________________________________
 
-        //  Colors
-    @btn__color: @color-brownie;
-    @btn-primary__color: @color-white;
-    @btn-secondary__color: @color-white;
-    ...
+    //  Colors
+@btn__color: @color-brownie;
+@btn-primary__color: @color-white;
+@btn-secondary__color: @color-white;
+...
+```
 
 #### Theme variables
 
@@ -570,19 +668,25 @@ All variable names must be lowercase.
 
 General model is the following:
 
-    @property-name
+```css
+@property-name
+```
 
 **Examples**:
 
-    @primary__color: @color-phoenix;
-    @indent__base: 2rem;
-    @border-radius-round: 100%;
+```css
+@primary__color: @color-phoenix;
+@indent__base: 2rem;
+@border-radius-round: 100%;
+```
 
 #### Parameter variables
 
 General model is the following:
 
-    @component-element__state__property__modifier
+```css
+@component-element__state__property__modifier
+```
 
 Component name must meaningful. It can contain the `primary`, `secondary`, `tertiary` names.
 
@@ -590,25 +694,27 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 **Examples**:
 
-    @color-orange: '';
+```css
+@color-orange: '';
 
-    @link__hover__color: '';
+@link__hover__color: '';
 
-    @nav-element__background-color: '';
+@nav-element__background-color: '';
 
-    @secondary__color: '';
+@secondary__color: '';
 
-    @side-nav__indent__s: '';
+@side-nav__indent__s: '';
 
-    @side-nav-el__background-color: '';
+@side-nav-el__background-color: '';
 
-    @side-nav-el__active__background-color: '';
+@side-nav-el__active__background-color: '';
 
-    @side-nav-el__active-focus__background-color: '';
+@side-nav-el__active-focus__background-color: '';
 
-    @side-nav-el__active-focus__font-size__xl: '';
+@side-nav-el__active-focus__font-size__xl: '';
 
-    @text__color__base: '';
+@text__color__base: '';
+```
 
 ## Mixins
 
@@ -624,13 +730,15 @@ For mixins grouping use the double underscore "__" prefix.
 
 **Example**:
 
-    .extend__clearfix (...) {
-        ...
-    }
+```css
+.extend__clearfix (...) {
+    ...
+}
 
-    .vendor-prefix__flex-direction (...) {
-        ...
-    }
+.vendor-prefix__flex-direction (...) {
+    ...
+}
+```
 
 ## Extends
 
@@ -649,20 +757,28 @@ Always add the file [extension](https://glossary.magento.com/extension) of the i
 
 **Correct**:
 
-    @import 'source/lib/_lib.less';
-    @import (css) 'styles.css';
+```css
+@import 'source/lib/_lib.less';
+@import (css) 'styles.css';
+```
 
 **Incorrect**:
 
-    @import 'source/lib/_lib';
-    @import (css) 'styles';
+```css
+@import 'source/lib/_lib';
+@import (css) 'styles';
+```
 
 Use single quotes.
 
 **Correct**:
 
-    @import 'source/lib/_lib.less';
+```css
+@import 'source/lib/_lib.less';
+```
 
 **Incorrect**:
 
-    @import "source/lib/_lib.less";
+```css
+@import "source/lib/_lib.less";
+```

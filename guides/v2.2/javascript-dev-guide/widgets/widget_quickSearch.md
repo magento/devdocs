@@ -16,18 +16,18 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 
 ## Options {#quicksearch_options}
 
--   [autocomplete](#q_autocomplete)
--   [destinationSelector](#q_destinationSelector)
--   [isExpandable](#q_isExpandable)
--   [formSelector](#q_formSelector)
--   [minSearchLength](#q_minSearchLength)
--   [responseFieldElements](#q_responseFieldElements)
--   [searchLabel](#q_searchLabel)
--   [selectClass](#q_selectClass)
--   [submitBtn](#q_submitBtn)
--   [suggestionDelay](#q_suggestionDelay)
--   [template](#q_template)
--   [url](#q_url)
+-  [autocomplete](#q_autocomplete)
+-  [destinationSelector](#q_destinationSelector)
+-  [isExpandable](#q_isExpandable)
+-  [formSelector](#q_formSelector)
+-  [minSearchLength](#q_minSearchLength)
+-  [responseFieldElements](#q_responseFieldElements)
+-  [searchLabel](#q_searchLabel)
+-  [selectClass](#q_selectClass)
+-  [submitBtn](#q_submitBtn)
+-  [suggestionDelay](#q_suggestionDelay)
+-  [template](#q_template)
+-  [url](#q_url)
 
 ### `autocomplete` {#q_autocomplete}
 

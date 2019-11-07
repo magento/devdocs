@@ -23,51 +23,61 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 
 To transfer the Magento software archive to your server:
 
-1.	Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.
+1. Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.
 
-	There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
+   There are many ways to configure FTP and SCP. Following are a few packages you can use. Magento does not recommend particular software.
 
-	*	Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
-	*	Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
+   *  Windows: [WinSCP](https://winscp.net/eng/download.php) or [Filezilla](https://filezilla-project.org/download.php)
+   *  Mac OS: [CyberDuck](https://cyberduck.io/?l=en) or [Filezilla](https://filezilla-project.org/download.php)
 
-2.	Create a connection to your Magento server.
+1. Create a connection to your Magento server.
 
-	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
+   Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
+1. After you log in to your server, browse to locate the {{site.data.var.ce}} or {{site.data.var.ee}} archive on your local system.
 
-	On the remote system, browse to locate the web server docroot directory.
+   On the remote system, browse to locate the web server docroot directory.
 
-	The following figure shows an example.
+   The following figure shows an example.
 
-	![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
+   ![]({{ site.baseurl }}/common/images/install-merch_ftp-transfer.png)
 
-4.	Transfer the archive from your local system to the web server docroot directory.
+1. Transfer the archive from your local system to the web server docroot directory.
 
-	On some FTP client software, you do this by dragging and dropping.
-5.	Wait while the transfer completes.
-6.	Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
-7.	Change to the web server docroot or the virtual host directory.
-7.	Create a subdirectory for the Magento software.
+   On some FTP client software, you do this by dragging and dropping.
 
-	If you set up a virtual host, the subdirectory name must match the name in your virtual host.
+1. Wait while the transfer completes.
+1. Log in to your Magento server, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+1. Change to the web server docroot or the virtual host directory.
+1. Create a subdirectory for the Magento software.
 
-	For example,
+   If you set up a virtual host, the subdirectory name must match the name in your virtual host.
 
-		mkdir magento2ce
-		mkdir magento2ee
+   For example,
 
-	You can also use a generic directory name
+   ```bash
+   mkdir magento2ce
+   ```
 
-		mkdir magento2
+   ```bash
+   mkdir magento2ee
+   ```
 
-7.	Copy the Magento archive to that directory.
+   You can also use a generic directory name
 
-	For example,
+   ```bash
+   mkdir magento2
+   ```
 
-		cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
+1. Copy the Magento archive to that directory.
 
-8.	Continue with the next section.
+   For example,
+
+   ```bash
+   cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
+   ```
+
+1. Continue with the next section.
 
 ## Extract the software on your server {#zip-extract}
 
@@ -83,9 +93,10 @@ The Magento software extracts to the directory you created. After the file has e
 
 {% include install/file-system-perms-before_22.md %}
 
-## Next step {#next-step-section}
+{:.ref-header}
+Related topics
 
 Install the Magento software:
 
-*	[Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*	[Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

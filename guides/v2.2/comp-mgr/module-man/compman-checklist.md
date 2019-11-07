@@ -20,5 +20,7 @@ Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseu
 ## Module Manager checklist
 {% include comp-man/checklist_2.2.md %}
 
-#### Next step
+{:.ref-header}
+Related topics
+
 [Run the Module Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)

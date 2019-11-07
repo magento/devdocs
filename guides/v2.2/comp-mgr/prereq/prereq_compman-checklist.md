@@ -7,10 +7,10 @@ functional_areas:
 
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
-*	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
-*	Your [cron jobs](#magento-cron) are set up and running
-*	[Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
-*	[File system permissions](#perms) are set properly
+*  You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
+*  Your [cron jobs](#magento-cron) are set up and running
+*  [Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
+*  [File system permissions](#perms) are set properly
 
 {: .bs-callout .bs-callout-warning  }
 Do not continue without performing these checks. Failure to do so could result in errors.
@@ -22,30 +22,33 @@ This conversion occurs during the upgrade and it can take a long time, depending
 
 The following tables are affected the most:
 
-* `catalogrule`
-* `core_config_data`
-* `magento_reward_history`
-* `quote_payment`
-* `quote`
-* `sales_order_payment`
-* `sales_order`
-* `salesrule`
-* `url_rewrite`
+*  `catalogrule`
+*  `core_config_data`
+*  `magento_reward_history`
+*  `quote_payment`
+*  `quote`
+*  `sales_order_payment`
+*  `sales_order`
+*  `salesrule`
+*  `url_rewrite`
 
 If you have a large amount of data, you can improve performance by setting the value of an environment variable, `DATA_CONVERTER_BATCH_SIZE`.
 By default, it's set to a value of 50,000.
 
 To set the variable, enter the following command as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) in a bash shell prompt:
+
 ```bash
 export DATA_CONVERTER_BATCH_SIZE <value>
 ```
 
 For example,
+
 ```bash
 export DATA_CONVERTER_BATCH_SIZE 100000
 ```
 
 After your upgrade completes, you can unset the variable as follows:
+
 ```bash
 unset DATA_CONVERTER_BATCH_SIZE
 ```
@@ -62,6 +65,7 @@ The [Magento file system owner](https://glossary.magento.com/magento-file-system
 Magento requires three cron jobs, all running as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
 To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:
+
 ```bash
 crontab -l
 ```
@@ -94,6 +98,7 @@ Directories in the Magento file system must be writable by the [Magento file sys
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 
 For example, enter the following command if the Magento application is installed in `/var/www/html/magento2`:
+
 ```bash
 ls -al /var/www/html/magento2
 ```
@@ -136,12 +141,14 @@ drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 ```
 
 Here,
-- most of the files are `-rw-rw----`, which is 660
-- `drwxrwx---` = 770
-- `-rw-rw-rw-` = 666
-- the Magento file system owner is `magento_user`.
+
+*  most of the files are `-rw-rw----`, which is 660
+*  `drwxrwx---` = 770
+*  `-rw-rw-rw-` = 666
+*  the Magento file system owner is `magento_user`.
 
 To get more detailed information, you can optionally enter the following command:
+
 ```bash
 ls -al /var/www/html/magento2/pub
 ```
@@ -149,4 +156,3 @@ ls -al /var/www/html/magento2/pub
 Because Magento deploys static file assets to subdirectories of `pub`, it's a good idea to verify permissions and ownership there as well.
 
 For more information, see [File system permissions and ownership]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-

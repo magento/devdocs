@@ -18,11 +18,12 @@ Layered software is a popular, widely discussed principle in software developmen
 
 Layered application design offers many advantages, but users of Magento will appreciate:
 
-* Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the [backend](https://glossary.magento.com/backend) business logic.
+*  Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the [backend](https://glossary.magento.com/backend) business logic.
 
-* Clear organization of code predictably points [extension](https://glossary.magento.com/extension) developers to code location.
+*  Clear organization of code predictably points [extension](https://glossary.magento.com/extension) developers to code location.
 
-## Related topics
+{:.ref-header}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 

@@ -17,7 +17,7 @@ Integrations are useful for leveraging the functionality of external services—
    -  [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html)
    <!-- -  [GitLab]({{ page.baseurl }}/cloud/integrations/gitlab-integration.html) -->
 
-#### To list the configured integrations:
+Use the `magento-cloud` CLI to list the integrations configured for your project:
 
 ```bash
 magento-cloud integration:list

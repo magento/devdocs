@@ -1,0 +1,9 @@
+---
+title: Magento_Authorization
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/Authorization/README.md
+last_modified_at: '2014-12-12 12:14:06 -0800'
+content: |
+  **Authorization** enables management of access control list roles and
+  rules in the application.

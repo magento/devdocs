@@ -13,11 +13,11 @@ The presentation layer contains both view elements **(layouts, blocks, templates
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Three types of Magento users interact with presentation layer code:
 
-* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
+*  **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
 
-* **System administrators** customizing a [storefront](https://glossary.magento.com/storefront) can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
+*  **System administrators** customizing a [storefront](https://glossary.magento.com/storefront) can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
-* **Web [API](https://glossary.magento.com/api) calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
+*  **Web [API](https://glossary.magento.com/api) calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
 
 ## Presentation layer components
 
@@ -50,10 +50,9 @@ Magento generates the [HTML](https://glossary.magento.com/html) for a page to di
 
 View elements fall into two main categories: blocks and containers.
 
-* **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in.
-(The `as` attribute holds the child view element names for the parent block to reference them)
+*  **Blocks** can generate [dynamic content](https://glossary.magento.com/dynamic-content) and can contain named child view elements that are similar to arguments being passed in. (The `as` attribute holds the child view element names for the parent block to reference them)
 
-* **Containers** collect an ordered group of children view elements.
+*  **Containers** collect an ordered group of children view elements.
 
 The browser forms a product web page by asking the view element tree to render itself into HTML.
 Containers and blocks emit HTML that encloses their children appropriately.
@@ -72,7 +71,8 @@ The View layer calls code from the Model to get information about the state of t
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
 Presentation layer components make calls to the service layer, which in turn sends requests to the [domain](https://glossary.magento.com/domain) layer.
 
-## Related topics {#related}
+{:.ref-header}
+Related topics
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 

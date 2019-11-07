@@ -7,17 +7,16 @@ redirect_from:
   - /guides/v2.3/cloud/reference/discover-arch.html
   - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
   - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
-
 functional_areas:
   - Cloud
 ---
 
 Your {{site.data.var.ece}} Pro architecture supports a maximum of **eight** environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:
 
-- **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
-- **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
-- **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
-- **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
+-  **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
+-  **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+-  **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
+-  **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
 
 The following table summarizes the differences between environments:
 
@@ -82,10 +81,10 @@ Your project is a single Git repository with three, main environment branches fo
 
 Developers use the Integration environment to develop, deploy, and test:
 
--   Magento application code
--   Custom code
--   Extensions
--   Services
+-  Magento application code
+-  Custom code
+-  Extensions
+-  Services
 
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
@@ -121,10 +120,10 @@ Because of our unique, redundant hardware, we can provide you with three gateway
 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
--   DNS
--   Content Delivery Network (CDN)
--   Elastic load balancer (ELB)
--   Three-server cluster comprising all Magento services, including the database and web server
+-  DNS
+-  Content Delivery Network (CDN)
+-  Elastic load balancer (ELB)
+-  Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
 
@@ -144,50 +143,52 @@ Weeks 12 to 22 | One backup per month
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
--   **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
--   **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
+-  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
+-  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 ### Production technology stack
 
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
 
--   **Fastly CDN**—HTTP caching and CDN
--   **NGINX**—web server using PHP-FPM, one instance with multiple workers
--   **GlusterFS**—file server for managing all static file deployments and synchronization with four directory mounts:
-    -   `var`
-    -   `pub/media`
-    -   `pub/static`
-    -   `app/etc`
--   **Redis**—one server per VM with only one active and the other two as replicas
--   **Elasticsearch**—search for {{site.data.var.ece}} 2.1 and later
--   **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
+-  **Fastly CDN**—HTTP caching and CDN
+-  **NGINX**—web server using PHP-FPM, one instance with multiple workers
+-  **GlusterFS**—file server for managing all static file deployments and synchronization with four directory mounts:
+   -  `var`
+   -  `pub/media`
+   -  `pub/static`
+   -  `app/etc`
+-  **Redis**—one server per VM with only one active and the other two as replicas
+-  **Elasticsearch**—search for {{site.data.var.ece}} 2.1 and later
+-  **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
--   Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
--   Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
+
+-  Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
+-  Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
 <!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
 
 ## Software versions {#cloud-arch-software}
+
 {{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
 
--   [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--   [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--   [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--   [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
--   [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+-  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+-  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
 For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
--   [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
--   [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
--   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later
+-  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
+-  [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
+-  [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
+-  [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later

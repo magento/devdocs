@@ -96,8 +96,8 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
-- From the root (`/`) path, only web and media can be accessed
-- From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
+-  From the root (`/`) path, only web and media can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
@@ -139,7 +139,7 @@ web:
 ```
 
 {:.bs-callout-info}
-This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]{{ page.baseurl }}/cloud/project-multi-sites.html#locations).
+This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html#locations).
 
 ### `disk`
 
@@ -244,7 +244,8 @@ hooks:
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile Sass files using grunt:
+{:.procedure}
+To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -333,8 +334,6 @@ runtime:
         - exif
 ```
 
-#### To view the current list of PHP extensions:
-
 Use SSH to log in to an environment and list the PHP extensions.
 
 ```bash
@@ -404,6 +403,7 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
    -  `imagick`
    -  `imap`
    -  `intl`
+   -  `ioncube`
    -  `ldap`
    -  `mailparse`
    -  `mcrypt`

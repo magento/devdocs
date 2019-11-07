@@ -1,11 +1,11 @@
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
-*	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
-*	Your [cron jobs](#magento-cron) are set up and running
-*	[Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
-*	[File system permissions](#perms) are set properly
+*  You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
+*  Your [cron jobs](#magento-cron) are set up and running
+*  [Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
+*  [File system permissions](#perms) are set properly
 
-{:.bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
@@ -20,21 +20,24 @@ If you have a large amount of data, you can improve performance by setting the v
 By default, it's set to a value of 50,000.
 
 To set the variable, before the upgrade starts enter the following command as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) in a bash shell prompt:
+
 ```bash
 export DATA_CONVERTER_BATCH_SIZE <value>
 ```
 
 For example,
+
 ```bash
 export DATA_CONVERTER_BATCH_SIZE 100000
 ```
 
 After your upgrade completes, you can unset the variable as follows:
+
 ```bash
 unset DATA_CONVERTER_BATCH_SIZE
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 `DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
 ### Magento file system owner and group {#magento-owner-group}
@@ -46,6 +49,7 @@ The [Magento file system owner](https://glossary.magento.com/magento-file-system
 Magento requires three cron jobs, all running as the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
 To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:
+
 ```bash
 crontab -l
 ```
@@ -78,6 +82,7 @@ Directories in the Magento file system must be writable by the [Magento file sys
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 
 For example, enter the following commands on a Linux system if the Magento application is installed in `/var/www/html/magento2`:
+
 ```bash
 ls -al /var/www/html/magento2
 ```
@@ -123,6 +128,7 @@ In the preceding example, the Magento file system owner is `magento_user`.
 Directories in the Magento file system have `drwxrwx---` permissions (775) and files have `-rw-rw-rw-` permissions (664).
 
 To get more detailed information, you can optionally enter the following command:
+
 ```bash
 ls -al /var/www/html/magento2/pub
 ```

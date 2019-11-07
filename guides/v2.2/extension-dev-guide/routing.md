@@ -42,17 +42,17 @@ The following tables show the core routers that come with Magento:
 
 A Magento [URL](https://glossary.magento.com/url) that uses the standard router has the following format:
 
-```
+```text
 <store-url>/<store-code>/<front-name>/<controller-name>/<action-name>
 ```
 
 Where:
 
-* `<store-url>` - specifies the base URL for the Magento instance
-* `<store-code>` - specifies the store context
-* `<front-name>` - specifies the `frontName` of the [FrontController] to use
-* `<controller-name>` - specifies the name of the controller
-* `<action-name>` - specifies the [action class] to execute on the controller class
+*  `<store-url>` - specifies the base URL for the Magento instance
+*  `<store-code>` - specifies the store context
+*  `<front-name>` - specifies the `frontName` of the [FrontController] to use
+*  `<controller-name>` - specifies the name of the controller
+*  `<action-name>` - specifies the [action class] to execute on the controller class
 
 The standard router parses this URL format and matches it to the correct controller and action.
 
@@ -89,10 +89,10 @@ To add your custom router to the list of routers for the `FrontController`, add 
 
 Where:
 
-* `%name%` - The unique name of your router in Magento.
-* `%classpath%` - The path to your router class.
+*  `%name%` - The unique name of your router in Magento.
+*  `%classpath%` - The path to your router class.
     Example: [`Magento\Robots\Controller\Router`]
-* `%sortorder%` - The sort order of this entry in the router list.
+*  `%sortorder%` - The sort order of this entry in the router list.
 
 ## `routes.xml`
 
@@ -113,11 +113,11 @@ The content of this file uses the following format:
 
 Where:
 
-* `%routerId` - specifies the name of the router in Magento.
+*  `%routerId` - specifies the name of the router in Magento.
     See the reference tables in the [Router class section].
-* `%routeId%` - specifies the unique node id for this route in Magento.
-* `%frontName%` - specifies the first segment after the base URL of a request.
-* `%moduleName%` - specifies the name of your module.
+*  `%routeId%` - specifies the unique node id for this route in Magento, is also the first segment of its associated layout handle XML filename (routeId_controller_action.xml).
+*  `%frontName%` - specifies the first segment after the base URL of a request.
+*  `%moduleName%` - specifies the name of your module.
 
 For more details, see [`routes.xsd`].
 
@@ -188,6 +188,7 @@ Declaring a new route:
 ```
 
 Declaring the layout handler for our new route:
+
 ```xml
 <?xml version="1.0"?>
 
@@ -219,7 +220,7 @@ Defining a new custom router:
 </type>
 ```
 
-Creating the controller that will handle the `routing` route.
+Creating the controller that will handle the `routing` route and will get the parameters passed by our router.
 
 ```php
 <?php
@@ -262,6 +263,10 @@ class Index extends Action
      */
     public function execute()
     {
+        // Get the params that were passed from our Router
+        $firstParam = $this->getRequest()->getParam('first_param', null);
+        $secondParam = $this->getRequest()->getParam('second_param', null);
+
         return $this->pageFactory->create();
     }
 }
@@ -323,6 +328,10 @@ class Router implements RouterInterface
             $request->setModuleName('routing');
             $request->setControllerName('index');
             $request->setActionName('index');
+            $request->setParams([
+                'first_param' => 'first_value',
+                'second_param' => 'second_value'
+            ]);
 
             return $this->actionFactory->create(Forward::class, ['request' => $request]);
         }

@@ -6,33 +6,28 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from version 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
-
-Prepare your environment with the following tasks:
-
-- Upgrade your PHP version to 7.1 or later
-- Create a new `config.php` file
-- Update the `.magento.app.yaml` file with new settings for hooks and environment variables
-- Upgrade to the latest supported version of Fastly
-- Add the new generated directory to the `.gitignore` file
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{page.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{page.baseurl}}/cloud/project/project-upgrade-parent.html) for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
 {% include cloud/note-ece-tools-package.md %}
 
-### Upgrade PHP version
+## Upgrading from older versions of the Magento application
 
-{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. You can upgrade the version of PHP on your local development workspace.
+If you are upgrading from 2.1.4 or later to 2.2.X, review the [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html). Your upgrade tasks may include the following:
 
-- [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
-- [Migrating PHP](http://php.net/manual/en/migration71.php)
-- [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
+-  Upgrade your PHP version
+-  Convert an older configuration management file
+-  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
+-  Upgrade to the latest supported version of Fastly
+-  Update the `.gitignore` file
 
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate the `config.local.php` file. Previous versions with Configuration Management used a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) uses the `config.php` file.
+If you are upgrading from 2.1.4 or later to 2.2.X and use [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html), you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
 
-#### To create a temporary `config.php` file:
+{:.procedure}
+To create a temporary `config.php` file:
 
 1. Create a copy of `config.local.php` file and name it `config.php`.
 
@@ -44,126 +39,146 @@ If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Manageme
 
 1. Continue with the upgrade process.
 
-After you finish upgrading, you can remove the `config.php` file and create a new, complete file. This file works exactly as `config.local.php`, with additional settings including a list of your enabled modules, additional configurations, and a different name.
+{: .bs-callout-warning}
+After upgrading, you can remove the `config.php` file and generate a new, complete file. You can only delete this file to replace it this one time. After generating a new, complete `config.php` file, you cannot delete the file to generate a new one. See [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
 
-{: .bs-callout .bs-callout-warning}
-You can only delete this file to replace it this one time. After generating a correct `config.php` file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
+### Update the configuration file
 
-### Update the .magento.app.yaml file
+If you are upgrading from an older version of Magento to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X and later has new settings in the file.
 
-If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
+{:.procedure}
+To update the `.magento.app.yaml` file:
 
 1. Update the PHP options.
 
    ```yaml
-   type: php:7.2
+   type: php:<version>
    ```
 
 1. Modify the hook commands in the `magento.app.yaml` file.
 
    ```yaml
    hooks:
-      We run build hooks before your application has been packaged.
-    build: |
-      php ./vendor/bin/ece-tools build
-      # We run deploy hook after your application has been deployed and started.
-    deploy: |
-      php ./vendor/bin/ece-tools deploy
-      # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
-    post_deploy: |
-      php ./vendor/bin/ece-tools post-deploy
+       # We run build hooks before your application has been packaged.
+       build: |
+           set -e
+           php ./vendor/bin/ece-tools build:generate
+           php ./vendor/bin/ece-tools build:transfer
+       # We run deploy hook after your application has been deployed and started.
+       deploy: |
+           php ./vendor/bin/ece-tools deploy
+       # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+       post_deploy: |
+           php ./vendor/bin/ece-tools post-deploy
    ```
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
-    ```yaml
-    variables:
-      env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+   ```yaml
+   variables:
+       env:
+           CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+           CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+           CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
 
 1. Save the file. Do not commit or push changes to your branch yet.
 
-## Back up the database
+1. Continue with the upgrade process.
+
+## Upgrading the Magento application
+
+Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your Magento application.
+
+### Back up the database
 
 {% include cloud/backup-db.md %}
 
-## Complete the upgrade
+### Complete the upgrade
 
-1. Change to your Magento root directory and set the upgrade version.
+If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
-    ```bash
-    composer require magento/magento-cloud-metapackage <requiredversion> --no-update
-    ```
+{: .bs-callout-info}
+When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
+
+{:.procedure}
+To upgrade the Magento version:
+
+1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
+
+   ```bash
+   composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
+   ```
+
+   {: .bs-callout-info }
+   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
 
 1. Update the project.
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
 1. Add, commit, and push code changes.
 
-    ```bash
-    git add -A && git commit -m "Upgrade" && git push origin <branch name>
-    ```
+   ```bash
+   git add -A && git commit -m "Upgrade" && git push magento <branch-name>
+   ```
 
-    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (`magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
+   `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (`magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
 
-    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.
+   The files that Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
 
 1. Wait for deployment to complete.
 
 1. Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
-    ```bash
-    php bin/magento --version
-    ```
+   ```bash
+   php bin/magento --version
+   ```
 
-## Create a new config.php file
+### Create a new config.php file
 
-After upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
+As mentioned in [Configuration management](#configuration-management), after upgrading, you need to create an updated `config.php` file. Complete any additional configuration changes through the Magento Admin in your Integration environment.
+
+{:.procedure}
+To create a system-specific configuration file:
 
 1. From the terminal, use an SSH command to generate the `/app/etc/config.php` file for the environment.
 
-    ```bash
-    ssh <SSH URL> "<Command>"
-    ```
+   ```bash
+   ssh <SSH-URL> "<Command>"
+   ```
 
-    For example for Pro, to run the `scd-dump` on the `integration` branch:
+   For example for Pro, to run the `scd-dump` on the `integration` branch:
 
-    ```bash
-    ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-    ```
+   ```bash
+   ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ```
 
 1. Transfer the `config.php` file to your local workstations using `rsync` or `scp`. You can only add this file to the branch locally.
 
-    ```bash
-    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
-    ```
+   ```bash
+   rsync <SSH-URL>:app/etc/config.php ./app/etc/config.php
+   ```
 
 1. Add, commit, and push code changes.
 
    ```bash
-   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+   git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push magento master
    ```
 
-    This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
+   This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
 
 {: .bs-callout-warning}
-For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
+For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should **not** delete it. If you need to remove or edit settings, you must edit the file manually.
 
-## Verify and upgrade your extensions {#extensions}
+### Upgrading extensions
 
-{%
-include note.html
-type='info'
-content='Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud version 2.2.
+Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}}. If you need to upgrade any third-party extensions and modules, we recommend working in a new Integration branch with your extensions disabled.
 
-If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled.'
-%}
+{:.procedure}
+To verify and upgrade your extensions:
 
 1. Create a new branch on your local workstation.
 
@@ -191,11 +206,11 @@ If the upgrade failed, you receive an error message in the browser indicating th
 ```terminal
 There has been an error processing your request
 Exception printing is disabled by default for security reasons.
-  Error log record number: <error number>
+  Error log record number: <error-number>
 ```
-{: .no-copy}
 
-#### To resolve the error:
+{:.procedure}
+To resolve the error:
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
@@ -203,6 +218,6 @@ Exception printing is disabled by default for security reasons.
 
 1. Add, commit, and push code changes.
 
-    ```bash
-    git add -A && git commit -m "Fixed deployment failure" && git push origin <branch name>
-    ```
+   ```bash
+   git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
+   ```

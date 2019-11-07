@@ -84,7 +84,7 @@ Current implementation:
 
 Example configuration modifications:
 
-* Redefining the link to the template
+*  Redefining the link to the template
 
 ```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
@@ -97,7 +97,7 @@ Example configuration modifications:
 </column>
 ```
 
-* Redefining the name of the property which represents record identifier
+*  Redefining the name of the property which represents record identifier
 
 ```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
@@ -110,7 +110,7 @@ Example configuration modifications:
 </column>
 ```
 
-* Redefining a property data source
+*  Redefining a property data source
 
 ```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
@@ -129,7 +129,7 @@ Example configuration modifications:
 
 Instance Replacement: One Instance of a Component
 
-* Redefine the link to constructor:
+*  Redefine the link to constructor:
 
 ```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
@@ -145,9 +145,9 @@ Instance Replacement: One Instance of a Component
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
-- [app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/multiselect.html) - defines each field in the grid; provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
-- [app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/columns/multiselect.html) - defines the grid header with dropdown lists and Select All, Deselect All, and other options.
+*  [app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
+*  [app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/multiselect.html) - defines each field in the grid; provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
+*  [app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/columns/multiselect.html) - defines the grid header with dropdown lists and Select All, Deselect All, and other options.
 
 ### Methods and Events
 

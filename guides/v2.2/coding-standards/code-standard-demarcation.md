@@ -105,21 +105,21 @@ The following list will help you make a distinction between the actual meaning o
 
 **Content (Semantics)** includes:
 
-- logic
-- information
-- data
-- model
-- outline
-- message
+-  logic
+-  information
+-  data
+-  model
+-  outline
+-  message
 
 **Presentation** includes:
 
-- aesthetic
-- graphics
-- design
-- style
-- visualization
-- view
+-  aesthetic
+-  graphics
+-  design
+-  style
+-  visualization
+-  view
 
 ### You must use semantic HTML markup only, and must not use presentation markup.
 
@@ -175,11 +175,16 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-{: .bs-callout-info }
--  Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+{%
+include note.html
+type='info'
+content='Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
+
 -  Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
 -  Improves style extensibility.
--  Reduces long-term maintenance efforts by containing CSS styles in a single place.
+-  Reduces long-term maintenance efforts by containing CSS styles in a single place.'
+
+%}
 
 **Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
@@ -357,7 +362,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ### You must not hard-code inline JavaScript in PHP classes
 
 -  Reduces long term maintenance by having frontend business logic stored in one place.
-- Reduces the number of files to be modified.
+-  Reduces the number of files to be modified.
 
 **Acceptable PHP file**
 
@@ -464,10 +469,10 @@ public function getCheckbox($elementName){
 
 ```php
 <span class="attribute-change-checkbox">
-	<label>
-		<?php echo $this->getCheckbox($element)?>
-		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
-	</label>
+   <label>
+      <?php echo $this->getCheckbox($element)?>
+      <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+   </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 ```

@@ -9,35 +9,37 @@ Sometimes we provide a custom patch to address a specific issue. Also, third-par
 
 {% include cloud/note-upgrade.md %}
 
-#### To apply and test a custom patch:
+{:.procedure}
+To apply and test a custom patch:
 
 You can only apply patches during the build phase of redeployment.
 
-1.  On your local workstation, create a branch based on the `integration` branch.
+1. On your local workstation, create a branch based on the `integration` branch.
 
     ```bash
     magento-cloud environment:branch <branch-name>
     ```
 
-1.  Copy the patch file to the `/m2-hotfixes` directory.
+1. Copy the patch file to the `/m2-hotfixes` directory.
 
-1.  Add, commit, and push your code changes.
+1. Add, commit, and push your code changes.
 
     ```bash
     git add -A && git commit -m "Apply patch" && git push origin <branch name>
     ```
 
-1.  After test validation, merge this branch with the `integration` branch.
+1. After test validation, merge this branch with the `integration` branch.
 
-#### To test if a patch can be applied using your local workstation:
+{:.procedure}
+To test if a patch can be applied using your local workstation:
 
-1.  From the project root, apply the patch.
+1. From the project root, apply the patch.
 
     ```bash
     git apply ./m2-hotfixes/<patch-file-name>
     ```
 
-1.  Clear the Magento cache.
+1. Clear the Magento cache.
 
     ```bash
     php ./bin/magento cache:clean
@@ -45,4 +47,4 @@ You can only apply patches during the build phase of redeployment.
 
     You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-1.  Test the patch, make any necessary changes.
+1. Test the patch, make any necessary changes.

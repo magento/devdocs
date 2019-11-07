@@ -111,6 +111,7 @@ The Schema for configuration file `config.xsd` is placed under `etc/directory`. 
 Default configuration file can be replaced by custom one (see [command syntax]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-syntax)).
 
 Configuration file has the following structure:
+
 ```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
@@ -152,13 +153,13 @@ Configuration file has the following structure:
 </config>
 ```
 
-* steps - describes all steps that are processed during migration
+*  steps - describes all steps that are processed during migration
 
-* source - configuration for data source. Available source types: database
+*  source - configuration for data source. Available source types: database
 
-* destination - configuration for data destination. Available destination types: database
+*  destination - configuration for data destination. Available destination types: database
 
-* options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters
+*  options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters
 
 Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the "source_prefix" and "dest_prefix" configuration options accordingly.
 
@@ -168,9 +169,9 @@ Configuration data is accessible via \Migration\Config class.
 
 You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
 
--   `ssl_ca`
--   `ssl_cert`
--   `ssl_key`
+*  `ssl_ca`
+*  `ssl_cert`
+*  `ssl_key`
 
 For example:
 
@@ -260,8 +261,8 @@ Delta functionality is responsible for delivering the rest of data that was adde
 The tool should be run in three different modes in particular order:
 
 1. settings - migration of system settings
-2. data - main migration of data
-3. delta - migration of the rest of data that was added after main migration
+1. data - main migration of data
+1. delta - migration of the rest of data that was added after main migration
 
 Each mode has its own list of steps to be executed. See config.xml
 
@@ -270,7 +271,7 @@ Each mode has its own list of steps to be executed. See config.xml
 Settings migration mode of this tool is used to transfer following entities:
 
 1. Websites, stores, store views.
-2. Store configuration (mainly Stores->Configuration in M2 or System->Configuration in M1)
+1. Store configuration (mainly Stores->Configuration in M2 or System->Configuration in M1)
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 
@@ -363,21 +364,21 @@ Map file has the next format:
 
 Areas:
 
-* *source* - contains rules of source database
+*  *source* - contains rules of source database
 
-* *destination* - contains rules of destination database
+*  *destination* - contains rules of destination database
 
 Options:
 
-* *ignore* - document, field or datatype marked with this option will be ignored
+*  *ignore* - document, field or datatype marked with this option will be ignored
 
-* *rename* - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name
+*  *rename* - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name
 
-* *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field
+*  *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field
 
-* *transform* - is an option that allows user to migrate fields according to behavior described in handlers
+*  *transform* - is an option that allows user to migrate fields according to behavior described in handlers
 
-* *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
+*  *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
 
 **Source** available operations:
 
@@ -405,14 +406,14 @@ This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 
 
 Some of the tables that are processed in the step:
 
-* eav_attribute
-* eav_attribute_group
-* eav_attribute_set
-* eav_entity_attribute
-* catalog_eav_attribute
-* customer_eav_attribute
-* eav_entity_type
-* ...
+*  eav_attribute
+*  eav_attribute_group
+*  eav_attribute_set
+*  eav_entity_attribute
+*  catalog_eav_attribute
+*  customer_eav_attribute
+*  eav_entity_type
+*  ...
 
 ### Delta migration mode
 
@@ -455,9 +456,9 @@ $this->logger->warning("Some warning message");
 
 There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:
 
-* ConsoleHandler: writes messages to console
+*  ConsoleHandler: writes messages to console
 
-* FileHandler: writes messages to log file that has been set in "log_file" config option
+*  FileHandler: writes messages to log file that has been set in "log_file" config option
 
 Also it is possible to implement any additional handler. There is a set of handlers in Magento framework. Example of adding handlers to logger:
 

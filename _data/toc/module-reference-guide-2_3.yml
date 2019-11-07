@@ -1,10 +1,14 @@
-label: Magento Reference Guide
+label: Module Reference Guide
 pages:
   - label: Introduction
     url: /mrg/intro.html
+  
   - label: Open Source
     include_versions: ["2.3"]
     children:
+    
+      - label: AdminAnalytics
+        url: /mrg/ce/AdminAnalytics.html
     
       - label: AdminNotification
         url: /mrg/ce/AdminNotification.html
@@ -17,6 +21,9 @@ pages:
     
       - label: Amqp
         url: /mrg/ce/Amqp.html
+    
+      - label: AmqpStore
+        url: /mrg/ce/AmqpStore.html
     
       - label: Analytics
         url: /mrg/ce/Analytics.html
@@ -33,6 +40,12 @@ pages:
       - label: AuthorizenetAcceptjs
         url: /mrg/ce/AuthorizenetAcceptjs.html
     
+      - label: AuthorizenetCardinal
+        url: /mrg/ce/AuthorizenetCardinal.html
+    
+      - label: AuthorizenetGraphQl
+        url: /mrg/ce/AuthorizenetGraphQl.html
+    
       - label: Backend
         url: /mrg/ce/Backend.html
     
@@ -41,6 +54,9 @@ pages:
     
       - label: Braintree
         url: /mrg/ce/Braintree.html
+    
+      - label: BraintreeGraphQl
+        url: /mrg/ce/BraintreeGraphQl.html
     
       - label: Bundle
         url: /mrg/ce/Bundle.html
@@ -56,6 +72,9 @@ pages:
     
       - label: Captcha
         url: /mrg/ce/Captcha.html
+    
+      - label: CardinalCommerce
+        url: /mrg/ce/CardinalCommerce.html
     
       - label: Catalog
         url: /mrg/ce/Catalog.html
@@ -92,6 +111,9 @@ pages:
     
       - label: CheckoutAgreements
         url: /mrg/ce/CheckoutAgreements.html
+    
+      - label: CheckoutAgreementsGraphQl
+        url: /mrg/ce/CheckoutAgreementsGraphQl.html
     
       - label: Cms
         url: /mrg/ce/Cms.html
@@ -273,6 +295,9 @@ pages:
       - label: PaypalCaptcha
         url: /mrg/ce/PaypalCaptcha.html
     
+      - label: PaypalGraphQl
+        url: /mrg/ce/PaypalGraphQl.html
+    
       - label: Persistent
         url: /mrg/ce/Persistent.html
     
@@ -290,6 +315,9 @@ pages:
     
       - label: QuoteGraphQl
         url: /mrg/ce/QuoteGraphQl.html
+    
+      - label: RelatedProductGraphQl
+        url: /mrg/ce/RelatedProductGraphQl.html
     
       - label: ReleaseNotification
         url: /mrg/ce/ReleaseNotification.html
@@ -455,6 +483,8 @@ pages:
     
       - label: WishlistGraphQl
         url: /mrg/ce/WishlistGraphQl.html
+    
+  
   - label: Commerce
     include_versions: ["2.3"]
     children:
@@ -528,6 +558,9 @@ pages:
       - label: CustomerBalance
         url: /mrg/ee/CustomerBalance.html
     
+      - label: CustomerBalanceGraphQl
+        url: /mrg/ee/CustomerBalanceGraphQl.html
+    
       - label: CustomerCustomAttributes
         url: /mrg/ee/CustomerCustomAttributes.html
     
@@ -557,6 +590,9 @@ pages:
     
       - label: GiftCardAccount
         url: /mrg/ee/GiftCardAccount.html
+    
+      - label: GiftCardAccountGraphQl
+        url: /mrg/ee/GiftCardAccountGraphQl.html
     
       - label: GiftCardGraphQl
         url: /mrg/ee/GiftCardGraphQl.html
@@ -692,7 +728,10 @@ pages:
     
       - label: Worldpay
         url: /mrg/ee/Worldpay.html
+    
+  
   - label: B2B
+    include_versions: ["2.3"]
     children:
     
       - label: B2b
@@ -760,3 +799,151 @@ pages:
     
       - label: SharedCatalog
         url: /mrg/b2b/SharedCatalog.html
+    
+  
+  - label: Inventory Management
+    include_versions: ["2.3"]
+    children:
+    
+      - label: Inventory
+        url: /mrg/msi/Inventory.html
+    
+      - label: InventoryAdminUi
+        url: /mrg/msi/InventoryAdminUi.html
+    
+      - label: InventoryAdvancedCheckout
+        url: /mrg/msi/InventoryAdvancedCheckout.html
+    
+      - label: InventoryApi
+        url: /mrg/msi/InventoryApi.html
+    
+      - label: InventoryBundleProduct
+        url: /mrg/msi/InventoryBundleProduct.html
+    
+      - label: InventoryBundleProductAdminUi
+        url: /mrg/msi/InventoryBundleProductAdminUi.html
+    
+      - label: InventoryCache
+        url: /mrg/msi/InventoryCache.html
+    
+      - label: InventoryCatalog
+        url: /mrg/msi/InventoryCatalog.html
+    
+      - label: InventoryCatalogAdminUi
+        url: /mrg/msi/InventoryCatalogAdminUi.html
+    
+      - label: InventoryCatalogApi
+        url: /mrg/msi/InventoryCatalogApi.html
+    
+      - label: InventoryCatalogSearch
+        url: /mrg/msi/InventoryCatalogSearch.html
+    
+      - label: InventoryConfigurableProduct
+        url: /mrg/msi/InventoryConfigurableProduct.html
+    
+      - label: InventoryConfigurableProductAdminUi
+        url: /mrg/msi/InventoryConfigurableProductAdminUi.html
+    
+      - label: InventoryConfigurableProductIndexer
+        url: /mrg/msi/InventoryConfigurableProductIndexer.html
+    
+      - label: InventoryConfiguration
+        url: /mrg/msi/InventoryConfiguration.html
+    
+      - label: InventoryConfigurationApi
+        url: /mrg/msi/InventoryConfigurationApi.html
+    
+      - label: InventoryDistanceBasedSourceSelection
+        url: /mrg/msi/InventoryDistanceBasedSourceSelection.html
+    
+      - label: InventoryDistanceBasedSourceSelectionAdminUi
+        url: /mrg/msi/InventoryDistanceBasedSourceSelectionAdminUi.html
+    
+      - label: InventoryDistanceBasedSourceSelectionApi
+        url: /mrg/msi/InventoryDistanceBasedSourceSelectionApi.html
+    
+      - label: InventoryElasticsearch
+        url: /mrg/msi/InventoryElasticsearch.html
+    
+      - label: InventoryExportStock
+        url: /mrg/msi/InventoryExportStock.html
+    
+      - label: InventoryExportStockApi
+        url: /mrg/msi/InventoryExportStockApi.html
+    
+      - label: InventoryGraphQl
+        url: /mrg/msi/InventoryGraphQl.html
+    
+      - label: InventoryGroupedProduct
+        url: /mrg/msi/InventoryGroupedProduct.html
+    
+      - label: InventoryGroupedProductAdminUi
+        url: /mrg/msi/InventoryGroupedProductAdminUi.html
+    
+      - label: InventoryGroupedProductIndexer
+        url: /mrg/msi/InventoryGroupedProductIndexer.html
+    
+      - label: InventoryImportExport
+        url: /mrg/msi/InventoryImportExport.html
+    
+      - label: InventoryIndexer
+        url: /mrg/msi/InventoryIndexer.html
+    
+      - label: InventoryLowQuantityNotification
+        url: /mrg/msi/InventoryLowQuantityNotification.html
+    
+      - label: InventoryLowQuantityNotificationAdminUi
+        url: /mrg/msi/InventoryLowQuantityNotificationAdminUi.html
+    
+      - label: InventoryLowQuantityNotificationApi
+        url: /mrg/msi/InventoryLowQuantityNotificationApi.html
+    
+      - label: InventoryMultiDimensionalIndexerApi
+        url: /mrg/msi/InventoryMultiDimensionalIndexerApi.html
+    
+      - label: InventoryProductAlert
+        url: /mrg/msi/InventoryProductAlert.html
+    
+      - label: InventoryRequisitionList
+        url: /mrg/msi/InventoryRequisitionList.html
+    
+      - label: InventoryReservationCli
+        url: /mrg/msi/InventoryReservationCli.html
+    
+      - label: InventoryReservations
+        url: /mrg/msi/InventoryReservations.html
+    
+      - label: InventoryReservationsApi
+        url: /mrg/msi/InventoryReservationsApi.html
+    
+      - label: InventorySales
+        url: /mrg/msi/InventorySales.html
+    
+      - label: InventorySalesAdminUi
+        url: /mrg/msi/InventorySalesAdminUi.html
+    
+      - label: InventorySalesApi
+        url: /mrg/msi/InventorySalesApi.html
+    
+      - label: InventorySalesFrontendUi
+        url: /mrg/msi/InventorySalesFrontendUi.html
+    
+      - label: InventorySetupFixtureGenerator
+        url: /mrg/msi/InventorySetupFixtureGenerator.html
+    
+      - label: InventoryShipping
+        url: /mrg/msi/InventoryShipping.html
+    
+      - label: InventoryShippingAdminUi
+        url: /mrg/msi/InventoryShippingAdminUi.html
+    
+      - label: InventorySourceDeductionApi
+        url: /mrg/msi/InventorySourceDeductionApi.html
+    
+      - label: InventorySourceSelection
+        url: /mrg/msi/InventorySourceSelection.html
+    
+      - label: InventorySourceSelectionApi
+        url: /mrg/msi/InventorySourceSelectionApi.html
+    
+  

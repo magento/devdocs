@@ -23,21 +23,22 @@ $("#element").accordion();
 ```
 
 Where:
-- `#element` is the selector of the element for accordion is initialized.
-- `#element` has children with the following attributes specified:
 
-    - `data-role="title"`
-    - `data-role="content"`
+-  `#element` is the selector of the element for accordion is initialized.
+-  `#element` has children with the following attributes specified:
+
+   -  `data-role="title"`
+   -  `data-role="content"`
 
 Optionally, you can specify the following:
 
-- If you want the trigger to be different from the title, add the `data-role="content"` attribute for the element
-- To have the content updated using Ajax, add the `data-ajax="true"` attribute for the element containing the URL for request.
+-  If you want the trigger to be different from the title, add the `data-role="content"` attribute for the element
+-  To have the content updated using Ajax, add the `data-ajax="true"` attribute for the element containing the URL for request.
 
 Accordions support arbitrary markup, but the following requirements should be kept:
 
-1.  Titles and contents are specified in the same order in DOM: first title, then contents.
-2.  The header, trigger and content are specified, either by adding the `data-*` attributes for the corresponding children elements or by specifying these elements with selectors as options.
+1. Titles and contents are specified in the same order in DOM: first title, then contents.
+1. The header, trigger and content are specified, either by adding the `data-*` attributes for the corresponding children elements or by specifying these elements with selectors as options.
 
 Mark-up examples:
 
@@ -96,9 +97,9 @@ The accordion widget can be initialized using the `data-mage-init` attribute or 
 
 Accordion options coincide with [Magento Tabs options], plus the following custom ones:
 
-- [active]
-- [multipleCollapsible]
-- [openOnFocus]
+-  [active]
+-  [multipleCollapsible]
+-  [openOnFocus]
 
 ### `active` {#collaps_active}
 
@@ -153,8 +154,8 @@ Accordion widget options and keyboard interaction mostly coincide with the Magen
 
 The custom accordion methods are the following:
 
-- [activate()]
-- [deactivate()]
+-  [activate()]
+-  [deactivate()]
 
 ### `activate(index)` {#meth_act}
 
@@ -192,8 +193,8 @@ $( "#element" ).accordion( "deactivate", [0,1]);
 
 The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
 
-- [beforeOpen callback](#beforeopen-callback)
-- [dimensionsChanged](#dimensionschanged)
+-  [beforeOpen callback](#beforeopen-callback)
+-  [dimensionsChanged](#dimensionschanged)
 
 ### `beforeOpen callback`
 

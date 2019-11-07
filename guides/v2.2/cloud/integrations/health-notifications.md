@@ -14,9 +14,7 @@ functional_areas:
 
 ## Email notifications
 
-The health email integration requires an origination address and at least one recipient address. You can use the same email address for the `from-address` and the `recipients` address. The following example registers a health email integration with two recipients.
-
-#### To register health notifications for email:
+The health email integration requires an origination address and at least one recipient address. You can use the same email address for the `from-address` and the `recipients` address. The following example registers a health email integration with two recipients:
 
 ```bash
 magento-cloud integration:add --type health.email --from-address you@example.com --recipients them@example.com --recipients others@example.com
@@ -24,9 +22,7 @@ magento-cloud integration:add --type health.email --from-address you@example.com
 
 ## Slack channel notifications
 
-Slack is an external service that uses interactive apps called bots to post messages in a chat room. Before you can receive health notifications in Slack, you must create a new, custom [bot user](https://api.slack.com/bot-users) for your Slack group. After you configure the bot user for your channel, or channels, save the [bot token](https://api.slack.com/docs/token-types#bot) provided by Slack to register your integration.
-
-#### To register health notifications in a Slack channel:
+Slack is an external service that uses interactive apps called bots to post messages in a chat room. Before you can receive health notifications in Slack, you must create a new, custom [bot user](https://api.slack.com/bot-users) for your Slack group. After you configure the bot user for your channel, or channels, save the [bot token](https://api.slack.com/docs/token-types#bot) provided by Slack to register your integration. The following example registers health notifications in a Slack channel:
 
 ```bash
 magento-cloud integration:add --type health.slack --token SLACK_BOT_TOKEN --channel '#slack-channel-name'
@@ -34,9 +30,7 @@ magento-cloud integration:add --type health.slack --token SLACK_BOT_TOKEN --chan
 
 ## PagerDuty notifications
 
-PagerDuty is an external service that can notify on-call team members of important issues. Before you can receive health notifications in PagerDuty, you must create a [PagerDuty integration](https://v2.developer.pagerduty.com/v2/docs/integrating) that uses the Events API version 2. Use the Integration Key, or _routing key_, to register your integration.
-
-#### To register health notifications for PagerDuty:
+PagerDuty is an external service that can notify on-call team members of important issues. Before you can receive health notifications in PagerDuty, you must create a [PagerDuty integration](https://v2.developer.pagerduty.com/v2/docs/integrating) that uses the Events API version 2. Use the Integration Key, or _routing key_, to register your integration. The following example registers notifications for PagerDuty using a routing key:
 
 ```bash
 magento-cloud integration:add --type health.pagerduty --routing-key PAGERDUTY_ROUTING_KEY

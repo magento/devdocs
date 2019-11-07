@@ -16,7 +16,7 @@ A shared catalog must be assigned to one or more companies before it can be acce
 
 **REST endpoints**
 
-```
+```terminal
 POST /V1/sharedCatalog/:sharedCatalogId/assignCompanies
 POST /V1/sharedCatalog/:sharedCatalogId/unassignCompanies
 GET  /V1/sharedCatalog/:sharedCatalogId/companies
@@ -102,6 +102,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
-* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
-* [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
+*  [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+*  [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+*  [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)

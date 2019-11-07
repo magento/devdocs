@@ -7,18 +7,18 @@ This topic provides a high-level overview of how data is migrated from Magento 1
 
 ## Terminology
 
-* **Modes** - an ordered set of operations for migrating data from Magento 1.x to Magento 2.x.
-* **Steps** - the tasks in a mode that define the kinds of data to migrate.
-* **Stages** - the tasks in step that validate, transfer, and verify the data.
-* **Map files** - XML files that define the rules and connections between Magento 1.x and Magento 2.x data structures for completing the stages.
+*  **Modes** - an ordered set of operations for migrating data from Magento 1.x to Magento 2.x.
+*  **Steps** - the tasks in a mode that define the kinds of data to migrate.
+*  **Stages** - the tasks in step that validate, transfer, and verify the data.
+*  **Map files** - XML files that define the rules and connections between Magento 1.x and Magento 2.x data structures for completing the stages.
 
 ## Modes
 
 The Data Migration Tool splits the migration process into three phases or *modes* in order to transfer and adapt data from Magento 1.x to Magento 2.x. The three modes are listed here and must be run in this order:
 
 1. **Settings Mode**: migrates the system configuration and website-related settings.
-2. **Data Mode**: migrates database assets in bulk.
-3. **Delta Mode**: migrates incremental changes (changes since the last run), such as new customers and orders.
+1. **Data Mode**: migrates database assets in bulk.
+1. **Delta Mode**: migrates incremental changes (changes since the last run), such as new customers and orders.
 
 ![Migration Modes]
 
@@ -32,9 +32,9 @@ The Data Migration Tool uses a list of *steps* within each mode to migrate a par
 
 Within each step are three *stages* that are always executed in this order to ensure the data gets properly migrated:
 
-1. **Integrity Check**: Compares the table field names, types,  and other info to verify compatibility between Magento 1 and 2 data structures.
-2. **Data Transfer**: Transfers the data table by table from Magento 1 and 2.
-3. **Volume Check**: Compares the number of records  between tables to verify that the transfer was successful.
+1. **Integrity Check**: Compares the table field names, types, and other info to verify compatibility between Magento 1 and 2 data structures.
+1. **Data Transfer**: Transfers the data table by table from Magento 1 and 2.
+1. **Volume Check**: Compares the number of records between tables to verify that the transfer was successful.
 
 ![Migration Steps]
 

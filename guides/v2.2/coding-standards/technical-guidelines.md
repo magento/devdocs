@@ -20,19 +20,19 @@ These guidelines came from many years of hard work, experience, and discussions.
 
 Use [RFC2119] to interpret keywords like:
 
-* MUST and MUST NOT
+*  MUST and MUST NOT
 
-* REQUIRED
+*  REQUIRED
 
-* SHALL and SHALL NOT
+*  SHALL and SHALL NOT
 
-* SHOULD and SHOULD NOT
+*  SHOULD and SHOULD NOT
 
-* RECOMMENDED
+*  RECOMMENDED
 
-* MAY
+*  MAY
 
-* OPTIONAL
+*  OPTIONAL
 
 ## 1. Basic programming principles
 
@@ -439,11 +439,11 @@ You need to read configuration from different sources (like database or filesyst
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
-* Symptom
+*  Symptom
 
-* Details
+*  Details
 
-* Solution or workaround
+*  Solution or workaround
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
@@ -500,9 +500,9 @@ You need to read configuration from different sources (like database or filesyst
 
 6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:
 
-* **Command** for Actions
+*  **Command** for Actions
 
-* **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
+*  **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -544,15 +544,15 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.1. Strict typing is enforced for Service and Data interfaces located under `MyCompany/MyModuleApi/Api`. Only the following types are allowed:
 
-* Scalar types: `string` (including Date and DateTime); `int`; `float`; `boolean`
+*  Scalar types: `string` (including Date and DateTime); `int`; `float`; `boolean`
 
-* Data interfaces
+*  Data interfaces
 
-* One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
+*  One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
 
-* Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
+*  Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
 
-* `void`
+*  `void`
 
 6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively.
 
@@ -560,11 +560,11 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.3.4. Batch operations that modify state MUST accept an array of entities and return a response object that contains:
 
-* An array of successfully processed items
+*  An array of successfully processed items
 
-* An array of items with retriable errors
+*  An array of items with retriable errors
 
-* An array of items with non-retriable errors
+*  An array of items with non-retriable errors
 
 6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response.
 
@@ -573,6 +573,8 @@ You need to read configuration from different sources (like database or filesyst
 6.4.3.7. Operation UUID MAY be provided by the client during service invocation. UUID MUST allow the client to get the operation status information.
 
 6.4.3.8. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.
+
+6.4.3.9. Service contracts SHOULD allow client side generated IDs. A service SHOULD accept an ID instead of generating it. See [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) as an example of client side generated ID.
 
 6.4.4. Service Implementation
 
@@ -584,7 +586,7 @@ You need to read configuration from different sources (like database or filesyst
 
 6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links.
 
-6.4.4.5. During update operations, web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
+6.4.4.5. During update operations, web APIs using the `PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
 
 6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead.
 
@@ -608,27 +610,27 @@ You need to read configuration from different sources (like database or filesyst
 
 7.1. An Application Instance consists of:
 
-* Code
+*  Code
 
-* Environment Configuration
+*  Environment Configuration
 
-* Data
+*  Data
 
 7.2. Code includes:
 
-* application codebase
+*  application codebase
 
-* [XML](https://glossary.magento.com/xml) configuration
+*  [XML](https://glossary.magento.com/xml) configuration
 
-* generated code and [static files](https://glossary.magento.com/static-files)
+*  generated code and [static files](https://glossary.magento.com/static-files)
 
-* database structure
+*  database structure
 
-* system configuration values
+*  system configuration values
 
-* configuration scopes (stores/store groups/websites)
+*  configuration scopes (stores/store groups/websites)
 
-* [CMS](https://glossary.magento.com/cms) entities
+*  [CMS](https://glossary.magento.com/cms) entities
 
 7.3. Environment Configuration includes information about application services connection.
 
@@ -730,16 +732,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.1. Page file names MUST follow this pattern:
 
-* `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: `AdminProductAttributeGridPage.xml`
+*  `{Admin or Storefront}{Description}Page.xml`, where `{Description}` briefly describes the page under test.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Example: `AdminProductAttributeGridPage.xml`
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
 
 11.3.1.3. Page `module` attribute MUST follow this pattern:
 
-* `{VendorName}_{ModuleName}`
-* Example: `Magento_Backend`
+*  `{VendorName}_{ModuleName}`
+*  Example: `Magento_Backend`
 
 11.3.1.4. There MUST be only one `<page>` entity per file.
 
@@ -747,9 +749,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.1. Section file names MUST follow this pattern:
 
-* `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Example: `StorefrontCheckoutCartSummarySection.xml`
+*  `{Admin or Storefront}{Description}Section.xml`, where `{Description}` briefly describes the section under test.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Example: `StorefrontCheckoutCartSummarySection.xml`
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
 
@@ -771,9 +773,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.1. Data entity file names MUST follow this pattern:
 
-* `{Type}Data.xml`, where `{Type}` describes the type of entities.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Examples: `ProductData.xml` or `CustomerData.xml`
+*  `{Type}Data.xml`, where `{Type}` describes the type of entities.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Examples: `ProductData.xml` or `CustomerData.xml`
 
 11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedly ran against the same environment.
 
@@ -783,9 +785,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.5.1. Action group file names MUST follow this pattern:
 
-- If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
-- Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
-- Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
+*  If the action group is making an assertion, then use the following format: `Assert{Admin or Storefront}{Functionality}ActionGroup.xml` where `{Functionality}` briefly describes what the action group is doing.
+*  Otherwise use this format: `{Admin or Storefront}{Functionality}ActionGroup.xml`
+*  Example: `AssertStorefrontMinicartContainsProductActionGroup.xml`
 
 11.3.5.2. Action group arguments MUST specify the `type` attribute.
 

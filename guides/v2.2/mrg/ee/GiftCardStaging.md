@@ -14,9 +14,9 @@ The Magento_GiftCardStaging [module](https://glossary.magento.com/module) is a p
 
 The Magento_GiftCardStaging module changes the GiftCard Product creation page to make them compatible with the Magento Staging Framework:
 
-- Adds the Amount field set to the Schedule Update form
-- Provides functionality of the field set
-- Returns Amounts values to the initial state after campaign is finished
+-  Adds the Amount field set to the Schedule Update form
+-  Provides functionality of the field set
+-  Returns Amounts values to the initial state after campaign is finished
 
 ## Dependencies
 

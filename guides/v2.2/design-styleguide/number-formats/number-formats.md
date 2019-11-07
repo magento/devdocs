@@ -86,49 +86,49 @@ This is how we write about money:
 
 ### Dates
 
-* Do not abbreviate months of the year when they appear by themselves or with a year. ... *Correct example:* "September 2015"."
+*  Do not abbreviate months of the year when they appear by themselves or with a year. ... *Correct example:* "September 2015"."
 
-* Months:
+*  Months:
 
-  - March, April, May, June, and July are never abbreviated in text.
+   *  March, April, May, June, and July are never abbreviated in text.
 
-  - The remaining months are only abbreviated when followed by a date (Jan. 27).
+   *  The remaining months are only abbreviated when followed by a date (Jan. 27).
 
-  - *Abbreviations to use:* Jan., Feb., Aug., Sept., Oct., Nov., Dec.
+   *  *Abbreviations to use:* Jan., Feb., Aug., Sept., Oct., Nov., Dec.
 
-* Never abbreviate ...
+*  Never abbreviate ...
 
-  - Days of the week ... *Correct example:* Use "Wednesday", not "Weds.".
+   *  Days of the week ... *Correct example:* Use "Wednesday", not "Weds.".
 
-  - Years ... *Correct example:* Use "2017", not "'17".
+   *  Years ... *Correct example:* Use "2017", not "'17".
 
 **Correct Examples**
 
-* The conference begins ...
+*  The conference begins ...
 
-  - In September
+   *  In September
 
-  - In September 2017
+   *  In September 2017
 
-  - Sept. 8
+   *  Sept. 8
 
-  - Friday, Sept. 8
+   *  Friday, Sept. 8
 
-  - Friday, Sept. 8, 2017
+   *  Friday, Sept. 8, 2017
 
-* *Date-range format, in a sentence:* The conference runs Sept. 8-12, 2017.
+*  *Date-range format, in a sentence:* The conference runs Sept. 8-12, 2017.
 
 ### Times
 
 **General Usage**
 
-* Formatting. Use numerals and "am" or "pm" without a space. Example: 10am.
+*  Formatting. Use numerals and "am" or "pm" without a space. Example: 10am.
 
-* Omit ":00". Don’t use minutes for on-the-hour time.
+*  Omit ":00". Don’t use minutes for on-the-hour time.
 
-* Example: Exclude minutes for "7am"; include minutes for "10:30pm".
+*  Example: Exclude minutes for "7am"; include minutes for "10:30pm".
 
-* Use "noon" and "midnight". Do not use 12pm and 12am.
+*  Use "noon" and "midnight". Do not use 12pm and 12am.
 
 **Time Ranges**
 
@@ -152,8 +152,8 @@ This is how we write about money:
 
 **Time Zones**
 
-* Formatting. When a time is not adjusted by the system to reflect the current time zone, append the time zone after the time. ... *Correct examples:* "7:30am CT", "7-10:30am CT"
+*  Formatting. When a time is not adjusted by the system to reflect the current time zone, append the time zone after the time. ... *Correct examples:* "7:30am CT", "7-10:30am CT"
 
-* Do not indicate standard or daylight time. ... *Correct example:* Central Time is written as "CT", not "CST" or "CDT".
+*  Do not indicate standard or daylight time. ... *Correct example:* Central Time is written as "CT", not "CST" or "CDT".
 
-* Do not use military time. ... *Incorrect example:* Using 19:40, instead of 7:40pm.
+*  Do not use military time. ... *Incorrect example:* Using 19:40, instead of 7:40pm.

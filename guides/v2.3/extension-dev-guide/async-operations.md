@@ -31,8 +31,8 @@ When the client code needs the result, the `get()` method will be called to retr
 
 There are 2 types of asynchronous operations where `DeferredInterface` can be used to describe the result:
 
-* With asynchronous operations in progress, calling `get()` would wait for them to finish and return their result.
-* With deferred operations, `get()` would actually start the operation, wait for it to finish, and then return the result.
+*  With asynchronous operations in progress, calling `get()` would wait for them to finish and return their result.
+*  With deferred operations, `get()` would actually start the operation, wait for it to finish, and then return the result.
 
 Sometimes developers require more control over long asynchronous operations.
 That is why there is an extended deferred variant - `Magento\Framework\Async\CancelableDeferredInterface`:

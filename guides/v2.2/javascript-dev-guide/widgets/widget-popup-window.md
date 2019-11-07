@@ -31,7 +31,7 @@ $("#element").popupWindow({
 
 Where:
 
-- `#element` is the selector of the element which will be the PopupWindow.
+-  `#element` is the selector of the element which will be the PopupWindow.
 
 The following example shows a PHTML file using the script:
 

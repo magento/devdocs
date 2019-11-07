@@ -12,20 +12,23 @@ functional_areas:
 
 ## First steps {#config-cli-before}
 
-1.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2.  Change to the following directory:
+1. Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Change to the following directory:
 
-        cd <magento_root>/bin
+   ```bash
+   cd <magento_root>/bin
+   ```
 
-    Examples:
+   Examples:
 
-      - Ubuntu: `cd /var/www/magento2/bin`
-      - CentOS: `cd /var/www/html/magento2/bin`
+   -  Ubuntu: `cd /var/www/magento2/bin`
+   -  CentOS: `cd /var/www/html/magento2/bin`
 
 You can run the commands in any of the following ways:
--   `php magento <command>`
--   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
+
+-  `php magento <command>`
+-  `./magento <command>`
+-  `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
 
 ## Command summary {#config-cli-summary}
 
@@ -53,7 +56,9 @@ Before you run any of these commands, you must either [install the Magento appli
 |[`bin/magento dev:template-hints:{enable/disable`}]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)|Enables/disables developer template hints.|
 
 ## Help commands {#config-cli-help}
+
 {% include install/cli_help-commands.md %}
 
 ## Common arguments {#config-cli-subcommands-common}
+
 {% include install/cli_common-commands.md %}

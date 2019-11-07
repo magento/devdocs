@@ -67,4 +67,4 @@ The Button component appears below a Listing component on the page, as follows:
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`Magento/Ui/view/base/web/js/form/components/button.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/button.js)
+-  [`Magento/Ui/view/base/web/js/form/components/button.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/button.js)

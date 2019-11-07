@@ -15,8 +15,8 @@ This pattern should be used specifically to upload images, and not to upload doc
 ## Variations
 
 1. Upload Single Image
-2. Upload Multiple Images
-3. Upload Video Content
+1. Upload Multiple Images
+1. Upload Video Content
 
 ## Behavior
 

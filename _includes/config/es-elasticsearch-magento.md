@@ -1,7 +1,7 @@
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2.
 For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html).
 
-{: .bs-callout .bs-callout-warning}
+{: .bs-callout-warning }
 Magento 2.3.1 adds support for Elasticsearch 6.x, and it is enabled by default.
 Magento still provides modules for Elasticsearch 2.x and 5.x, but these must be enabled in order to use these versions.
 Elasticsearch 2.x is still available but strongly discouraged. Versions 2.x and 5.x are [End of Life](https://www.elastic.co/support/eol).
@@ -30,6 +30,7 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 
 {:start="4"}
+
 1. Click **Test Connection**.
 
 You will see either:
@@ -38,8 +39,8 @@ You will see either:
 
 Continue with:
 
-* [Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
-* [Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*  [Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*  [Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
 
 or you will see:
 
@@ -47,13 +48,13 @@ or you will see:
 
 If so, try the following:
 
-* Make sure the Elasticsearch server is running.
-* If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.
-* Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.
-In particular, make sure you started Elasticsearch as a user with `root` privileges.
-* Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
-* Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
-* Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
+*  Make sure the Elasticsearch server is running.
+*  If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.
+*  Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue. In particular, make sure you started Elasticsearch as a user with `root` privileges.
+*  Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
+*  Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
+*  Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
+
   For example, to see if Elasticsearch is running on its default port, use the following command:
 
   ```bash
@@ -96,5 +97,5 @@ bin/magento indexer:reindex
 
 1. Wait until reindexing completes.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.

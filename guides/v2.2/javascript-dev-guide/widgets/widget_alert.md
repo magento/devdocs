@@ -50,14 +50,14 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 The alert widget has the following options:
 
-- [actions]
-- [autoOpen]
-- [clickableOverlay]
-- [content]
-- [focus]
-- [title]
-- [modalClass]
-- [buttons]
+-  [actions]
+-  [autoOpen]
+-  [clickableOverlay]
+-  [content]
+-  [focus]
+-  [title]
+-  [modalClass]
+-  [buttons]
 
 ### `actions` {#alert_actions}
 

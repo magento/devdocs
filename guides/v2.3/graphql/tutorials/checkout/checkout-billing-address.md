@@ -17,11 +17,11 @@ contributor_link: https://www.atwix.com/
 {:.bs-callout .bs-callout-tip}
 You must always set the billing address to place an order.
 
-Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote-set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
+Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
 
-* Add a new billing address
-* Add a new billing address and set it as the shipping addresses
-* Use an address from the logged-in customer's address book
+*  Add a new billing address
+*  Add a new billing address and set it as the shipping addresses
+*  Use an address from the logged-in customer's address book
 
 ## Add a new billing address
 
@@ -311,6 +311,6 @@ mutation {
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to Checkout.
+1. Go to Checkout.
 
-3. Go to the Review & Payments step. The Billing Address form is populated with the address details you entered.
+1. Go to the Review & Payments step. The Billing Address form is populated with the address details you entered.

@@ -17,9 +17,9 @@ functional_areas:
 
 To upgrade the message queues from Magento 2.1, you must create the following files in the `<module>/etc` directory for each [module](https://glossary.magento.com/module) that will use the message queue framework.
 
-* `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
-* `queue_topology.xml`- Defines the message routing rules and declares queues and exchanges.
-* `queue_publisher.xml` -   Defines the exchange where a topic is published.
+*  `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
+*  `queue_topology.xml`- Defines the message routing rules and declares queues and exchanges.
+*  `queue_publisher.xml` -   Defines the exchange where a topic is published.
 
 The existing `queue.xml` file is deprecated.
 
@@ -76,9 +76,9 @@ The first column in the following table lists the all the parameters in the `que
 
 To upgrade from Magento 2.0, you must create the following files in the `<module>/etc` directory for each module that will use the message queue framework.
 
-* `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
-* `queue_topology.xml`- Defines the message routing rules.
-* `queue_publisher.xml` - Defines the relationship between a topic and its [publisher](https://glossary.magento.com/publisher-subscriber-pattern).
+*  `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
+*  `queue_topology.xml`- Defines the message routing rules.
+*  `queue_publisher.xml` - Defines the relationship between a topic and its [publisher](https://glossary.magento.com/publisher-subscriber-pattern).
 
 The existing `queue.xml` file is deprecated.
 
@@ -128,7 +128,8 @@ The first column in the following table lists the all the parameters in the `que
 `<publisher>/<connection>/exchange` | `<publisher>/exchange`
 `<publisher>/<connection>/disabled` | Not present in 2.0. Omit this parameter to accept the default value.
 
-#### Related topics
+{:.ref-header}
+Related topics
 
-*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-*	[Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
+*  [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*  [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

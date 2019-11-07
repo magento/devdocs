@@ -21,11 +21,11 @@ If you don't use GoDaddy, you might need to contact your hosting provider's tech
 
 Magento requires the following software to run:
 
-*	Web server: Apache 2.2 or 2.4
-*	Programming language: [PHP](https://glossary.magento.com/php) 5.6.x or 5.5.x
-*	Database: MySQL 5.6.x
+*  Web server: Apache 2.2 or 2.4
+*  Programming language: [PHP](https://glossary.magento.com/php) 5.6.x or 5.5.x
+*  Database: MySQL 5.6.x
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 We recommend you contact GoDaddy support to verify all of the preceding are installed and get their assistance if any of the software is not installed.
 
 For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
@@ -34,9 +34,9 @@ For complete details, see [System requirements]({{ page.baseurl }}/install-gde/s
 
 To start configuring your hosted system:
 
-1.	Log in with your provided credentials.
-2.	On the first page, in the Web Hosting row, click **Manage**.
-3.	If necessary, log in to cPanel.
+1. Log in with your provided credentials.
+1. On the first page, in the Web Hosting row, click **Manage**.
+1. If necessary, log in to cPanel.
 
 ## Step 3: Configure a database and a database user {#newbie-db}
 

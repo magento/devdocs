@@ -6,9 +6,9 @@ title: Modal widget
 
 The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
--   Configuring as popup or slide
--   Controlling stack of modal widgets
--   Setting buttons for action bar
+-  Configuring as popup or slide
+-  Controlling stack of modal widgets
+-  Setting buttons for action bar
 
 The modal widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`].
 
@@ -36,23 +36,24 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 ## Options {#modal_options}
 
 The modal widget has the following options:
--   [autoOpen](#modal_autoopen)
--   [buttons](#modal_buttons)
--   [closeText](#modal_closeText)
--   [clickableOverlay](#modal_clickableOverlay)
--   [focus](#modal_focus)
--   [innerScroll](#modal_innerScroll)
--   [modalAction](#modal_modalAction)
--   [modalClass](#modal_modalClass)
--   [modalCloseBtn](#modal_modalCloseBtn)
--   [modalContent](#modal_modalContent)
--   [modalLeftMargin](#modal_modalLeftMargin)
--   [responsive](#modal_responsive)
--   [title](#modal_title)
--   [trigger](#modal_trigger)
--   [type](#modal_type)
 
-### autoOpen {#modal_autoopen}
+-  [autoOpen](#modal_autoopen)
+-  [buttons](#modal_buttons)
+-  [closeText](#modal_closeText)
+-  [clickableOverlay](#modal_clickableOverlay)
+-  [focus](#modal_focus)
+-  [innerScroll](#modal_innerScroll)
+-  [modalAction](#modal_modalAction)
+-  [modalClass](#modal_modalClass)
+-  [modalCloseBtn](#modal_modalCloseBtn)
+-  [modalContent](#modal_modalContent)
+-  [modalLeftMargin](#modal_modalLeftMargin)
+-  [responsive](#modal_responsive)
+-  [title](#modal_title)
+-  [trigger](#modal_trigger)
+-  [type](#modal_type)
+
+### `autoOpen` {#modal_autoopen}
 
 Automatically open the modal window when the widget is initialized.
 
@@ -71,7 +72,7 @@ Array of buttons for action pane.
 buttons: [{
     text: '',
     class: '',
-    click: function() {} //handler on button click
+    click: function () {} //handler on button click
 }]
 ```
 
@@ -79,15 +80,15 @@ buttons: [{
 
 ```javascript
 buttons: [{
-    text: 'Ok',
+    text: $.mage.__('Ok'),
     class: '',
-    click: function() {
+    click: function () {
         this.closeModal();
     }
 }]
 ```
 
-### clickableOverlay {#modal_clickableOverlay}
+### `clickableOverlay` {#modal_clickableOverlay}
 
 Close the modal window when a user clicks on the overlay.
 
@@ -184,10 +185,11 @@ The type of window: 'popup' or 'slide'.
 ## Methods {#modal_methods}
 
 The modal widget has the following methods:
--   [closeModal()](#modal_close)
--   [keyEventSwitcher()](#modal_keyEventSwitcher)
--   [openModal()](#modal_open)
--   [toggleModal()](#modal_toggleModal)
+
+-  [closeModal()](#modal_close)
+-  [keyEventSwitcher()](#modal_keyEventSwitcher)
+-  [openModal()](#modal_open)
+-  [toggleModal()](#modal_toggleModal)
 
 ### `openModal()` {#modal_open}
 Open the modal window.
@@ -204,16 +206,17 @@ Toggles the modal window.
 ## Events {#modal_events}
 
 The modal widget is subscribed to the following events:
--   [closed](#modal_closed)
--   [opened](#modal_opened)
+
+-  [closed](#modal_closed)
+-  [opened](#modal_opened)
 
 You can listen to these events in two ways:
 
 Use jQuery's [`on`](http://api.jquery.com/on/) function:
 
 ```javascript
-var modal = $( "#modal_content").modal({...});
-modal.on( "modalclosed", function() {
+var modal = $('#modal_content').modal({...});
+modal.on('modalclosed', function () {
     // Do some action when modal closed
 });
 ```
@@ -223,7 +226,7 @@ Or assign a callback as a property when creating a modal instance:
 ```javascript
 $('#modal_content').modal({
     ...
-    closed: function(){
+    closed: function (){
        // Do some action when modal closed
     }
 });
@@ -256,7 +259,7 @@ The following example shows how to initialize the modal widget and pass options 
             'trigger': '[data-trigger=trigger]',
             'responsive': true,
             'buttons': [{
-                text: 'Submit',
+                text: $.mage.__('Submit'),
                 class: 'action'
             }]
         }}">

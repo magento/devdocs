@@ -24,8 +24,8 @@ The fewer dependencies a class has and the more obvious they are, the easier it 
 
 We strongly recommend you do *not*:
 
-* Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.
-* Use the `ObjectManager` directly in production code.
+*  Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.
+*  Use the `ObjectManager` directly in production code.
 
 There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.
 
@@ -46,19 +46,19 @@ Whenever your code requires access to some part of the environment, try to use a
 
 For example, if you need...
 
-* file system access?
+*  file system access?
 
   Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
 
-* the current time?
+*  the current time?
 
    Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
 
-* the remote IP?
+*  the remote IP?
 
   Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
 
-* access to `$_SERVER`?
+*  access to `$_SERVER`?
 
   Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
 
@@ -139,8 +139,8 @@ If `getParams()` had been called, the class `MyClass` would have instantly depen
 
 If cannot avoid using `getParams()`, you can do any of the following:
 
-* Add the `getParams()` method to `RequestInterface`
-* Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
+*  Add the `getParams()` method to `RequestInterface`
+*  Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
 
 The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes will not cause your code to fail unless the interface is changed too.
 
@@ -251,9 +251,9 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 
 The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Do not talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
-* Objects received as constructor arguments
-* Objects received as arguments to the current method
-* Objects instantiated in the current method
+*  Objects received as constructor arguments
+*  Objects received as arguments to the current method
+*  Objects instantiated in the current method
 
 The principle explicitly states that no method can be called on objects that are the return value of another method call. Calling method calls on returned objects introduces a hidden dependency on the returned object type.
 
@@ -281,10 +281,10 @@ Almost as a side effect, those classes are very easy to test.
 
 ## For more information
 
-* [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
-* [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
-* [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
-* [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
+*  [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
+*  [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
+*  [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
+*  [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
 
 <!-- Link definitions -->
 [single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle

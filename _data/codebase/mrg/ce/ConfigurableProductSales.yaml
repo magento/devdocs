@@ -1,0 +1,8 @@
+---
+title: Magento_ConfigurableProductSales
+source_repo: magento2ce
+release: 2.3.3
+github_path: app/code/Magento/ConfigurableProductSales/README.md
+last_modified_at: '2017-07-14 16:51:00 +0300'
+content: 'Catalog. Returns true if the previously ordered item configuration is still
+  available. '

@@ -9,10 +9,10 @@ functional_areas:
 
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file.
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont).
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
-Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) and containers.
+Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block) and [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont).
 
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the `<body>` section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
@@ -24,10 +24,10 @@ Page layout declares the wireframe of a page inside the `<body>` section, for ex
 
 Allowed layout instructions:
 
-* [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
-* [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
-* [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
-* [`<update>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd)
+*  [`<container>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont)
+*  [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref)
+*  [`<move>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv)
+*  [`<update>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd)
 
 Sample page layout:
 
@@ -51,8 +51,8 @@ Sample page layout:
 
 Conventionally page layouts must be located as follows:
 
-* Module page layouts: `<module_dir>/view/frontend/page_layout`
-* Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
+*  Module page layouts: `<module_dir>/view/frontend/page_layout`
+*  Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 ### Page layouts declaration {#layout-types-page-dec}
 
@@ -60,12 +60,13 @@ To be able to use a layout for actual page rendering, you need to declare it in 
 
 Conventionally layout declaration file can be located in one of the following locations:
 
-- Module layout declarations: `<module_dir>/view/frontend/layouts.xml`
-- Theme layout declaration: `<theme_dir>/<Namespace>_<Module>/layouts.xml`
+*  Module layout declarations: `<module_dir>/view/frontend/layouts.xml`
+*  Theme layout declaration: `<theme_dir>/<Namespace>_<Module>/layouts.xml`
 
 Declare a layout file using the `<layout></layout>` instruction, for which specify the following:
-- `<layout id="layout_file_name">`. For example, the `2columns-left.xml` page layout is declared like following: `<layout id="2columns-left"/>`
-- `<label translate="true|false">{Label_used_in_Admin}</label>`
+
+*  `<layout id="layout_file_name">`. For example, the `2columns-left.xml` page layout is declared like following: `<layout id="2columns-left"/>`
+*  `<label translate="true|false">{Label_used_in_Admin}</label>`
 
 Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/layouts.xml`
 
@@ -86,7 +87,7 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
 </page_layouts>
 ```
 
-Use the `layout` attribute in the `page` section to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+Use the `layout` attribute in the `page` node of a page configuration file to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
 
 ```xml
 <?xml version="1.0"?>
@@ -119,8 +120,8 @@ The page configuration adds content to the wireframe defined in a page layout fi
 
 Conventionally page configuration files must be located as follows:
 
-- Module page configurations: `<module_dir>/view/frontend/layout`
-- Theme page configurations: `<theme_dir>/<Namespace>_<Module>/layout`
+*  Module page configurations: `<module_dir>/view/frontend/layout`
+*  Theme page configurations: `<theme_dir>/<Namespace>_<Module>/layout`
 
 ### Page configuration structure and allowed layout instructions
 
@@ -396,8 +397,8 @@ Generic layouts define the contents and detailed structure inside the `<body>` s
 
 Conventionally generic layout files must be located as follows:
 
-- Module generic layouts: `<module_dir>/view/frontend/layout`
-- Theme generic layouts: `<theme_dir>/<Namespace>_<Module>/layout`
+*  Module generic layouts: `<module_dir>/view/frontend/layout`
+*  Theme generic layouts: `<theme_dir>/<Namespace>_<Module>/layout`
 
 ### Generic layout structure and allowed layout instructions
 
@@ -466,7 +467,7 @@ none
 
         </ul>
       </td>
-      <td colspan="1"> Mandatory element</td>
+      <td colspan="1">Mandatory element</td>
     </tr>
   </tbody>
 </table>
@@ -482,4 +483,3 @@ Sample generic layout:
     </container>
 </layout>
 ```
-

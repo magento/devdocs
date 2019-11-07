@@ -15,19 +15,19 @@ For testing the Magento application, see the [Magento Functional Testing Framewo
 
 Before you run functional tests, you must prepare your environment with the following steps.
 
-1.  Clone the {{site.data.var.ct}} GitHub repository.
+1. Clone the {{site.data.var.ct}} GitHub repository.
 
     ```bash
     git clone git@github.com:magento/ece-tools.git
     ```
 
-1.  Stop all services that use the following ports:
+1. Stop all services that use the following ports:
 
     -  `80`—varnish or web server (apache, nginx)
     -  `443`—web server (apache, nginx), tls
     -  `3306`—mysql
 
-1.  Update the hosts file.
+1. Update the hosts file.
 
     Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
@@ -41,15 +41,15 @@ Before you run functional tests, you must prepare your environment with the foll
     echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
     ```
 
-1.  Switch to the preferred PHP version for running tests.
+1. Switch to the preferred PHP version for running tests.
 
-1.  Update the project dependencies.
+1. Update the project dependencies.
 
     ```bash
     composer update
     ```
 
-1.  Add credentials to the Docker environment.
+1. Add credentials to the Docker environment.
 
     ```bash
     echo "COMPOSER_MAGENTO_USERNAME=your_public_key" >> ./.docker/composer.env

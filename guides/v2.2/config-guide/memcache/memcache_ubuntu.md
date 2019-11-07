@@ -20,26 +20,33 @@ To install and configure memcached on Ubuntu:
 
 1. As a user with `root` privileges, enter the following command:
 
-        apt-get -y update
-        apt-get -y install php5-memcached memcached
+   ```bash
+   apt-get -y update
+   ```
 
-2. Change the memcached configuration setting for `CACHESIZE` and `-l`:
+   ```bash
+   apt-get -y install php5-memcached memcached
+   ```
 
-    1. Open `/etc/memcached.conf` in a text editor.
-    2. Locate the `-m` parameter.
-    3. Change its value to at least `1GB`
-    4. Locate the `-l` parameter.
-    5. Change its value to `127.0.0.1` or `localhost`
-    6. Save your changes to `memcached.conf` and exit the text editor.
-    7. Restart memcached.
+1. Change the memcached configuration setting for `CACHESIZE` and `-l`:
 
-           service memcached restart
+   1. Open `/etc/memcached.conf` in a text editor.
+   1. Locate the `-m` parameter.
+   1. Change its value to at least `1GB`
+   1. Locate the `-l` parameter.
+   1. Change its value to `127.0.0.1` or `localhost`
+   1. Save your changes to `memcached.conf` and exit the text editor.
+   1. Restart memcached.
 
-3. Restart your web server.
+      ```bash
+      service memcached restart
+      ```
 
-       For Apache, `service apache2 restart`
+1. Restart your web server.
 
-4. Continue with the next section.
+   For Apache, `service apache2 restart`
+
+1. Continue with the next section.
 
 ## Verify memcached works before installing Magento {#config-memcache-verify-its-ub}
 
@@ -51,23 +58,25 @@ To verify memcached is recognized by the web server:
 
 1. Create a `phpinfo.php` file in the web server's docroot:
 
-    ```php
-    <?php
-    // Show all information, defaults to INFO_ALL
-    phpinfo();
-    ```
+   ```php
+   <?php
+   // Show all information, defaults to INFO_ALL
+   phpinfo();
+   ```
 
-2. Go to that page in your web browser. For example:
+1. Go to that page in your web browser. For example:
 
-   `http://192.0.2.1/phpinfo.php`
+   ```http
+   http://192.0.2.1/phpinfo.php
+   ```
 
-3. Make sure memcached displays as follows:
+1. Make sure memcached displays as follows:
 
-    ![Confirm memcached is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache-ubuntu.png)
+   ![Confirm memcached is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache-ubuntu.png)
 
-    Verify you are using memcached version 3.0.5 or later.
+   Verify you are using memcached version 3.0.5 or later.
 
-    If memcached does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcached` extension.
+   If memcached does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcached` extension.
 
 ### Verify memcached can cache data
 
@@ -78,7 +87,6 @@ For more information about this test, see [this digitalocean tutorial](https://w
 Create `cache-test.php` in the web server's docroot with the following contents:
 
 ```php
-
 $meminstance = new Memcached();
 
 $meminstance->addServer("<memcached hostname or ip>", <memcached port>);
@@ -97,7 +105,9 @@ where `<memcached hostname or ip>` is either `localhost`, `127.0.0.1`, or the me
 
 Go to that page in a web browser. For example
 
-   `http://192.0.2.1/cache-test.php`
+```http
+http://192.0.2.1/cache-test.php
+```
 
 The first time you go to the page, the following displays: `No matching key found. Refresh the browser to add it!`
 
@@ -105,32 +115,44 @@ Refresh the browser. The message changes to `Successfully retrieved the data!`
 
 Finally, you can view the memcache keys using Telnet:
 
-    telnet localhost <memcache port>
+```bash
+telnet localhost <memcache port>
+```
 
 At the prompt, enter
 
-    stats items
+```shell
+stats items
+```
 
 The result is similar to the following:
 
-    STAT items:2:number 1
-    STAT items:2:age 106
-    STAT items:2:evicted 0
-    STAT items:2:evicted_nonzero 0
-    STAT items:2:evicted_time 0
-    STAT items:2:outofmemory 0
-    STAT items:2:tailrepairs 0
-    STAT items:2:reclaimed 0
-    STAT items:2:expired_unfetched 0
-    STAT items:2:evicted_unfetched 0
+```terminal
+STAT items:2:number 1
+STAT items:2:age 106
+STAT items:2:evicted 0
+STAT items:2:evicted_nonzero 0
+STAT items:2:evicted_time 0
+STAT items:2:outofmemory 0
+STAT items:2:tailrepairs 0
+STAT items:2:reclaimed 0
+STAT items:2:expired_unfetched 0
+STAT items:2:evicted_unfetched 0
+```
 
 Flush memcached storage and quit Telnet:
 
-    flush_all
-    quit
+```shell
+flush_all
+```
+
+```shell
+quit
+```
 
 [Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
 
-## Next step
+{:.ref-header}
+Related topics
 
 [Configure Magento to use memcached]({{ page.baseurl }}/config-guide/memcache/memcache_magento.html)

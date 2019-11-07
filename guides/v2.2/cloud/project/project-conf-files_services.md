@@ -101,51 +101,59 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 ## Service relationships
 
-{{site.data.var.ece}} uses the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable to retrieve environment-related relationships. For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in the `.magento.app.yaml` file.
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
 
-#### To verify relationships in local environment:
+You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
+
+{:.procedure}
+To verify relationships in local environment:
 
 1. In your local environment, show the relationships for the active environment.
 
-    ```bash
-    magento-cloud relationships
-    ```
+   ```bash
+   magento-cloud relationships
+   ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
 
-    **Abbreviated sample response**:
+   **Abbreviated sample response**:
 
-    ```terminal
-    redis:
-        -
-    ...
-            type: 'redis:3.2'
-            port: 6379
-    elasticsearch:
-        -
-    ...
-            type: 'elasticsearch:6.5'
-            port: 9200
-    database:
-        -
-    ...
-            type: 'mysql:10.0'
-            port: 3306
+   ```terminal
+   redis:
+       -
+   ...
+           type: 'redis:3.2'
+           port: 6379
+   elasticsearch:
+       -
+   ...
+           type: 'elasticsearch:6.5'
+           port: 9200
+   database:
+       -
+   ...
+           type: 'mysql:10.0'
+           port: 3306
+   ```
 
-    ```
-    {:.no-copy}
-
-#### To verify relationships in remote environments:
+{:.procedure}
+To verify relationships in remote environments:
 
 1. Use SSH to log in to the remote environment.
 
-1. Create `pretty-print` to show all relationships for services and configuration data for that environment.
+1. List the relationships configuration data for all services configured in the environment.
 
-    ```bash
-    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-    ```
+   ```bash
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
 
-1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number.
+   or
+
+   ```bash
+   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   ```
+
+1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number and any required username and password credentials.
 
 ## Service versions
 
@@ -161,3 +169,6 @@ Service   |  Magento 2.3  | Magento 2.2
 `rabbitmq`| 3.5, 3.7      | 3.5
 `redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
 `varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
+
+{:.bs-callout-info}
+When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).

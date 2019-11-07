@@ -6,11 +6,12 @@ title: Resolvers
 A resolver performs GraphQL request processing. In general, it is responsible for constructing a query, fetching data and performing any calculations, then transforming the fetched and calculated data into a GraphQL array format. Finally, it returns the results wrapped by a callable function.
 
 A resolver requires the following arguments:
-- $field
-- $context
-- $info
-- $value
-- $args
+
+-  $field
+-  $context
+-  $info
+-  $value
+-  $args
 
 ```php
     /**
@@ -205,7 +206,7 @@ mutation {
             lastname: "Doe"
             email: "j.doe@example.com"
             password: "1w2E3R456"
-          	is_subscribed: true
+            is_subscribed: true
         }
     ) {
         customer {

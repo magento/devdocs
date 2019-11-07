@@ -15,13 +15,13 @@ The Magento_SalesRuleStaging [module](https://glossary.magento.com/module) is a 
 The Magento_SalesRuleStaging module changes the Cart Price Rules page and the sales rule related database tables to make them compatible with the Magento Staging Framework.
 The Magento_SalesRuleStaging module enables you to stage the following sales rule attributes:
 
-- Rule Name
-- Description
-- Websites
-- Customer Groups
-- Priority
-- Condition
-- Action
+-  Rule Name
+-  Description
+-  Websites
+-  Customer Groups
+-  Priority
+-  Condition
+-  Action
 
 This module depends on the Magento_SalesRule module and extends its functionality. It changes the database structure of the Magento_SalesRule module and the way in which sales rules are managed.
 

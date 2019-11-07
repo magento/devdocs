@@ -156,10 +156,6 @@ pages:
     
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
-      children:
-
-        - label: Updater application
-          url: /comp-mgr/updater/updater.html
 
     - label: Troubleshooting suggestions
       url: /comp-mgr/trouble/tshoot.html

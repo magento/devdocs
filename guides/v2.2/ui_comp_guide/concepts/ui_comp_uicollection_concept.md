@@ -13,21 +13,21 @@ The `uiCollection` library class should be used as a base class by any component
 
 The `uiCollection` class implements the following methods:
 
-* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child [UI component](https://glossary.magento.com/ui-component) instance as a parameter.
+*  The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child [UI component](https://glossary.magento.com/ui-component) instance as a parameter.
 
-  Example:
+   Example:
 
-  ```javascript
-  initElement: function (childInstance) {
-      childInstance.%customProperty% = 21;
-      this.%currentComponentProperty% = 42;
-  }
- ```
+   ```javascript
+   initElement: function (childInstance) {
+       childInstance.%customProperty% = 21;
+       this.%currentComponentProperty% = 42;
+   }
+   ```
 
-* The `destroy()` method removes the following for the child components and itself:
-	* link to the component in `uiRegistry`
-	* link to the component in the parent component
-	* event listeners
+*  The `destroy()` method removes the following for the child components and itself:
+   *  link to the component in `uiRegistry`
+   *  link to the component in the parent component
+   *  event listeners
 
   Example:
 
@@ -35,33 +35,34 @@ The `uiCollection` class implements the following methods:
     this.destroy();
 ```
 
-* The `getChild()` method returns an element from the collection of child UI components.
+*  The `getChild()` method returns an element from the collection of child UI components.
 
   Example:
-```javascript
-    this.getChild(childIndex)
-```
 
-  where `childIndex` is the value of the child element's `index` property.
+   ```javascript
+   this.getChild(childIndex)
+   ```
+
+   where `childIndex` is the value of the child element's `index` property.
 
 ## Commonly used `uiCollection` properties
 
-* `elems` is the observable property that contains the collection of child UI components.
+*  `elems` is the observable property that contains the collection of child UI components.
 
-  Example:
+   Example:
 
-```javascript
-console.log(this.elems());
+   ```javascript
+   console.log(this.elems());
 
-// [
-//   %uiComponentInstance 1 %,
-//   %uiComponentInstance 2 %,
-//   %uiComponentInstance 3 %,
-//   %uiComponentInstance 4 %
-// ]
-```
+   // [
+   //   %uiComponentInstance 1 %,
+   //   %uiComponentInstance 2 %,
+   //   %uiComponentInstance 3 %,
+   //   %uiComponentInstance 4 %
+   // ]
+   ```
 
-* `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
+*  `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
 
 ## uiCollection template {#uicollection_template}
 
