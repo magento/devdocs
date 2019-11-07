@@ -15,7 +15,7 @@ $info | [`Magento\Framework\GraphQl\Schema\Type\ResolveInfo`]({{ site.mage2blobu
 $value | array | Contains additional query parameters. `Null` in most cases.
 $args | array | Contains input arguments of query.
 
-A GraphQL resolver must implement either [`\Magento\Framework\GraphQl\Query\Resolver\BatchResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchResolverInterface.php) interface or 
+A GraphQL resolver must implement either [`\Magento\Framework\GraphQl\Query\Resolver\BatchResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchResolverInterface.php) interface or
 [`\Magento\Framework\GraphQl\Query\Resolver\BatchServiceContractResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchServiceContractResolverInterface.php) interface or
 [`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php) interface. First 2 interfaces provide a way to resolve multiple branches/leaves at once known as batching while the last one is meant to resolve 1 request at a time. It is recommened to use batch resolvers for queries in order to improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
 
@@ -76,7 +76,7 @@ class RelatedProducts implements BatchResolverInterface
 Each GraphQL request object must be assigned a result of type [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) or any type of data (mixed). This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.
 
 You can examine an existing example of batch resolver implementation at [`\Magento\RelatedProductGraphQl\Model\Resolver\Batch\AbstractLinkedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/RelatedProductGraphQl/Model/Resolver/Batch/AbstractLikedProducts.php)
- 
+
 ### BatchServiceContractResolverInterface
 
 Requests for this interface to resolve are being gathered into batches in the same way as for _BatchResolverInterface_ with the difference that the resolving itself is delegated to a batch service contract. The job of _BatchServiceContractResolverInterface_ resolver is only to convert GraphQL requests into DTOs acceptable by the service contract and then convert results returned by the contract into GraphQL response.
@@ -131,7 +131,7 @@ class RelatedProductsResolver implements BatchServiceContractResolverInterface
 _getServiceContract()_ method's responsiblity is to point to a service contract to be used.
 _convertToServiceArgument()_ method's responsiblity is to convert GraphQL request to a criteria item to be passed in a list as the argument to the contract. Remember that batch service contract methods have to follow a certain convention - they accept a single argument - a list (array) of criteria objects.
 _convertFromServiceResult()_ method's responsibility is to convert one of the result items into a GraphQL response (a [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) instance or an array). Remember that batch service contracts have to return result items in the same order as were the criteria items passed as the method's list argument i.e. if the 1st root product had ID#555 then the 1st result item will contain the list of related products to product #555.
- 
+
 The batch service contract used in the example would look something like this:
 
 ```php
