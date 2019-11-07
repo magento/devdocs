@@ -25,7 +25,7 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ### Integrate Search component with Listing component
 
-This is an example of how Search component integrates with [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This is an example of how the Search component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
