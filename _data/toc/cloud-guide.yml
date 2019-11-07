@@ -387,12 +387,12 @@ pages:
         - label: Theme troubleshooting
           url: /cloud/trouble/theme-troubleshooting.html
 
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html
+
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Release notes for ece-tools
-          url: /cloud/release-notes/cloud-tools.html
-
         - label: Upgrade to use ece-tools
           url: /cloud/project/ece-tools-upgrade-project.html
 
