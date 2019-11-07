@@ -47,7 +47,7 @@ The following query lists the products in the logged-in customer's cart:
 {
   "data": {
     "customerCart": {
-      "cart_id": "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43",
+      "id": "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43",
       "items": [
         {
           "id": "11",
