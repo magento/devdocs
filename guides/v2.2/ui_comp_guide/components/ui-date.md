@@ -7,71 +7,55 @@ The Date component implements a custom date input field. It uses a date picker i
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/date</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the <code>.html</code> template of the particular field type component (date).</td>
-    <td>String</td>
-    <td><code>ui/form/element/date</code></td>
-  </tr>
-  <tr>
-    <td><code>options</code></td>
-    <td>The configuration object that is passed to the calendar widget.</td>
-    <td>Object</td>
-    <td><code>{}</code></td>
-  </tr>
-  <tr>
-    <td><code>inputDateFormat</code></td>
-    <td>Format of the date received from the server (ICU Date Format). Used only in date picker mode (<code>this.options.showsTime == false</code>).</td>
-    <td>String</td>
-    <td><code>y-MM-dd</code></td>
-  </tr>
-  <tr>
-    <td><code>outputDateFormat</code></td>
-    <td>Format of the date sent to the server (ICU Date Format). Used only in date picker mode (<code>this.options.showsTime == false</code>)</td>
-    <td>String</td>
-    <td><code>MM/dd/y</code></td>
-  </tr>
-  <tr>
-    <td><code>pickerDateTimeFormat</code></td>
-    <td>Date/time format that is used to display date in the input field.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>shiftedValue</code></td>
-    <td>Date/time value shifted to corresponding time zone, according to <code>this.storeTimeZone</code> property. This value is sent to the server.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>storeTimeZone</code></td>
-    <td>The timezone used.</td>
-    <td>String</td>
-    <td><code>'UTC'</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the general field <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-  <tr>
-    <td><code>timezoneFormat</code></td>
-    <td>Timezone format, required for the <a href="https://momentjs.com/">moment.js library</a> for conversion.</td>
-    <td>String</td>
-    <td><code>YYYY-MM-DD HH:mm</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `'Magento_Ui/js/form/element/date'` |
+| `elementTmpl` | The path to the `.html` template of the particular field type component (date). | String | `'ui/form/element/date'` |
+| `options` | The configuration object that is passed to the calendar widget. | Object | `{}` |
+| `inputDateFormat` | Format of the date received from the server (ICU Date Format). Used only in date picker mode (`this.options.showsTime == false`). | String | `'y-MM-dd'` |
+| `outputDateFormat` | Format of the date sent to the server (ICU Date Format). Used only in date picker mode (`this.options.showsTime == false`) | String | `'MM/dd/y'` |
+| `pickerDateTimeFormat` | Date/time format that is used to display date in the input field. | String | `''` |
+| `shiftedValue` | Date/time value shifted to corresponding time zone, according to `this.storeTimeZone` property. This value is sent to the server. | String | `''` |
+| `storeTimeZone` | The timezone used. | String | `'UTC'` |
+| `template` | The path to the general field `.html` template. | String | `'ui/form/field'` |
+| `timezoneFormat` | Timezone format, required for the [moment.js library](https://momentjs.com/) for conversion. | String | `YYYY-MM-DD HH:mm` |
+
+## Source files
+
+Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)::
+
+-  [`app/code/Magento/Ui/view/base/web/js/form/element/date.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/date.js)
+
+## Example
+
+```xml
+<form>
+    ...
+    <fieldset>
+        ...
+        <field name="date_example" formElement="date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">some_source</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="validate-date" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Date Example</label>
+                <visible>true</visible>
+                <dataScope>some_scope</dataScope>
+            </settings>
+        </field>
+        ...
+    </fieldset>
+    ...
+</form>
+```
+
+## Result
+
+![Date Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-date-result.png)
+![Date Component Expanded Example]({{ site.baseurl }}/common/images/ui_comps/ui-date-expanded-result.png)
