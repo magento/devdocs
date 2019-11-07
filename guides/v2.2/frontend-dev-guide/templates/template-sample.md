@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-This topic contains a step-by-step guide on solving a typical design customization task using templates.
+This topic contains a step-by-step guide to solving a typical design customization task using templates.
 
 ## Sample template customization: changing a layout of the mini shopping cart
 
