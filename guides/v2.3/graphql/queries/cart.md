@@ -704,7 +704,7 @@ Attribute |  Data Type | Description
 
 ### CartItemQuantity object {#CartItemQuantity}
 
-The `CartItemQuantity` object has been deprecated. Use the `cart_items_v2` attribute instead of the `cart_items` attribute.
+The `CartItemQuantity` data type has been deprecated. Use the `cart_items_v2` attribute with the `CartItemInterface` instead.
 
 Attribute |  Data Type | Description
 --- | --- | ---
