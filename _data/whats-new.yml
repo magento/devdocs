@@ -4,8 +4,178 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Oct 8 10:14:57 2019
+updated: Mon Nov 4 13:09:57 2019
 entries:
+- description: Updated the [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
+    documentation for the Early Access Program.
+  versions: ''
+  type: New topic
+  date: November 4, 2019
+  link: https://github.com/magento/devdocs/pull/5918
+- description: Added the [RequireJS in Magento](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/requirejs.html)
+    topic to the _JavaScript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 31, 2019
+  link: https://github.com/magento/devdocs/pull/5840
+- description: Added an example for retrieving the IP address of a particular Cloud
+    instance to the [Integration environment IP address](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress)
+    section in the  _Cloud Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 31, 2019
+  link: https://github.com/magento/devdocs/pull/5883
+- description: Added the [Password Hashing](https://devdocs.magento.com/guides/v2.3/config-guide/secy/hashing.html)
+    topic to the _Configuration Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 29, 2019
+  link: https://github.com/magento/devdocs/pull/5874
+- description: Added the following information to the [Set up Elasticsearch](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)<br/>topic
+    in the _Cloud Guide_–<br/>- Recommendation to always set up<br/>Elasticsearch
+    as a fallback option if using a third-party search tool<br/>- Instructions for
+    checking Elasticsearch software compatibility<br/>- "Additional Search Configuration"<br/>section
+    with details about customizing search options and testing Elasticsearch
+  versions: 2.x
+  type: Major update
+  date: October 26, 2019
+  link: https://github.com/magento/devdocs/pull/5823
+- description: Updated the  [Multiline component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-multiline.html)
+    documentation in the _UI Components Guide_<br/>- Adjusted the markup for the options
+    table<br/>- Fixed the wrong default values for some options<br/>- Added the "Source
+    files", "Example", and "Results" sections
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 24, 2019
+  link: https://github.com/magento/devdocs/pull/5636
+- description: Updated the [Deployment best practices](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+    topic in the _Cloud Guide_:<br/>- Added additional validation and tasks to address
+    common Support issues<br/>- Added additional links to supporting information and
+    instructions<br/>- Added a new "Upgrade best practices" subsection to provide
+    specific upgrade steps
+  versions: 2.x
+  type: Major update
+  date: October 22, 2019
+  link: https://github.com/magento/devdocs/pull/5703
+- description: Updated the [Cloud launch modes](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)  documentation
+    to configure Varnish as a http-cache-host so that Varnish purges with a Magento
+    cache clean.
+  versions: 2.x
+  type: Technical changes
+  date: October 22, 2019
+  link: https://github.com/magento/devdocs/pull/5721
+- description: Added the documentation for the [DynamicRowsRecord](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-record.html)
+    UI component to the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 21, 2019
+  link: https://github.com/magento/devdocs/pull/5634
+- description: Updated the [Plugins (Interceptors)](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html)
+    topic in the _Frontend Developer Guide_ to clarify that these plugins are for
+    updating layouts. Also, removed incorrect information and clarified descriptions
+    and examples.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 21, 2019
+  link: https://github.com/magento/devdocs/pull/5547
+- description: Changes to the status of Magento Shipping are now described in the
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)  and
+    the [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html).
+  versions: 2.3.3
+  type: Major update
+  date: October 20, 2019
+  link: https://github.com/magento/devdocs/pull/5807
+- description: Updated the [Magento Commerce Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)
+    to add information about a known issue with method chaining that has been identified
+    in the 2.3.3 code base and the patch that was released on October 18 to address
+    this issue.
+  versions: ''
+  type: Major update
+  date: October 18, 2019
+  link: https://github.com/magento/devdocs/pull/5800
+- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/product/category-interface.html)
+    in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: New topic
+  date: October 16, 2019
+  link: https://github.com/magento/devdocs/pull/5718
+- description: Added an "Errors" section to the [changeCustomerPassword mutation](https://devdocs.magento.com/guides/v2.3/graphql/mutations/change-customer-password.html)
+    topic in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Technical changes
+  date: October 15, 2019
+  link: https://github.com/magento/devdocs/pull/5633
+- description: Added [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html#releases-2_2_9-2_2_10)
+    for the Magento 2.2.10 release.
+  versions: 2.2.10
+  type: Major update
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5640
+- description: Clarified the use of a static content deployment command for [troubleshooting
+    theme deployment](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html#trouble).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5565
+- description: Added [Backward incompatible changes reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    for the Magento 2.3.3 release.
+  versions: 2.3.3
+  type: Major update
+  date: October 14, 2019
+  link: https://github.com/magento/devdocs/pull/5686
+- description: Added a warning to ensure that the [CRYPT_KEY](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#crypt_key)  deploy
+    variable for Magento Commerce Cloud environments is set in the Project Web UI
+    to avoid exposing sensitive data.
+  versions: 2.x
+  type: Technical changes
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5663
+- description: Added documentation for the [Folder tree widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget-folder-tree.html)
+    to the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5503
+- description: Added the "Execute data-mage-init and x-magento-init in dynamic content"
+    section to the [Calling and initializing JavaScript](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/javascript/js_init.html)
+    topic in the _Javascript Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: October 11, 2019
+  link: https://github.com/magento/devdocs/pull/5481
+- description: Added the [Manage disk space topic](https://devdocs.magento.com/guides/v2.3/cloud/project/manage-disk-space.html)
+    to the _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: October 10, 2019
+  link: https://github.com/magento/devdocs/pull/5641
+- description: Updated the _Command-line tools reference_:<br/>- Regenerated [bin/magento
+    (Open Source)](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html)<br/>-
+    Added [bin/magento (Commerce)](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-commerce.html)<br/>-
+    Added [magento-cloud]( https://devdocs.magento.com/guides/v2.3/reference/cli/magento-cloud.html)
+  versions: 2.2.10, 2.3.3
+  type: New topic
+  date: October 10, 2019
+  link: https://github.com/magento/devdocs/pull/5642
+- description: Added Amazon Sales Channel version 3.0.0 [Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/).
+  versions: 3.0.0 Amazon Sales Channel
+  type: Major update
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5612
+- description: Added the [Custom widget](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-widget.html)
+    tutorial to the _Extensions Best Practices Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5424
+- description: Added the following new topics to the _Magento Functional Testing Framework Guide_<br/>- [Selectors](https://devdocs.magento.com/mftf/docs/guides/selectors.html)<br/>-
+    [Using Suites](https://devdocs.magento.com/mftf/docs/guides/using-suites.html)<br/>-
+    [Test Modularity](https://devdocs.magento.com/mftf/docs/guides/test-modularity.html)<br/>-
+    [Test Isolation](https://devdocs.magento.com/mftf/docs/guides/test-isolation.html).
+  versions: ''
+  type: New topic
+  date: October 9, 2019
+  link: https://github.com/magento/devdocs/pull/5637
 - description: Added the new topic [CSS Critical Path](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-critical-path.html)
     to the _Frontend Developer Guide_.
   versions: 2.2.10, 2.3.3
@@ -2740,7 +2910,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New
   date: Apr 24 2018
-- description: Added [Marketplace EQP API](https://devdocs.magento.com/guides/v2.2/marketplace/eqp/api.html)
+- description: Added [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
     reference documentation.
   versions: 2.x
   type: New topic
