@@ -135,6 +135,17 @@ Attribute |  Data Type | Description
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
 
+## Errors
+
+Error | Description
+--- | ---
+`Could not add the product with SKU configurable to the shopping cart: The product that was requested doesn't exist. Verify the product and try again.` | The simple product with the SKU specified in the `data`.`sku` attribute does not exist.
+`Could not find a product with SKU "XXX"` | The configurable product with SKU specified in the `parent_sku` attribute does not exist.
+`Could not find specified product.` | The simple product specified in the `data`.`sku` attribute is not assigned to the configurable product provided in the `parent_sku` attribute.
+`Required parameter "cart_id" is missing` | The `cart_id` attribute was omitted or contains an empty value.
+`Required parameter "email" is missing` | The `email` attribute was omitted or contains an empty value.
+`The requested qty is not available` | The requested quantity specified `data`.`quantity` is not available.
+
 ## Related topics
 
 -  [Configurable product data types]({{page.baseurl}}/graphql/product/configurable-product.html)
