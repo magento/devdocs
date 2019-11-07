@@ -22,10 +22,11 @@ A GraphQL resolver must implement either [`\Magento\Framework\GraphQl\Query\Reso
 ## Query resolvers
 
 ### BatchResolverInterface
+
 Batch resolvers gather GraphQL requests for the same field until there is no way to process the tree further without resolving previous requests.
- 
+
 Consider the following example:
- 
+
 ```text
 query ($filter: ProductAttributeFilterInput!) {
   products (filter: $filter) {
@@ -43,42 +44,45 @@ query ($filter: ProductAttributeFilterInput!) {
   }
 }
 ```
- 
+
 Here we try to load a list of products, their related product SKUs and then related to related product SKUs. Loading related products list for each product at a time would be expensive performance-wise but with batch resolvers we can load linked products for all of products that we initially found and then group them by root products. After `items` branch is resolved a batch resolver for `related_products` will be called for the 1st product found but instead of resolving the list right away it will just add the 1st product to the list of products that require related ones loaded. After we line all the products from `items` branch as products that we need to load related products for we can see that we cannot proceed further without loading the lists. Then `BatchResolverInterface::resolve()` will be executed with gathered list of previous requests to `related_products` branches. At this point the resolver is able to extract product DTOs from each GraphQL request, load all product links, sort them by root products and generate GraphQL values for each branch. After this is done the same batching will take place when resolving child `related_products` branches.
- 
+
 Pseudo-code of such related-products branch resolver will look like this:
+
 ```php
 class RelatedProducts implements BatchResolverInterface
 {
     ...
-    
+
     public function resolve(ContextInterface $context, Field $field, array $requests): BatchResponse
     {
         //Get the list of products we need to load related products for
         $rootProductIds = array_map(function ($request) { return $request->getValue()['model']->getId(); }, $requests);
-        
+
         //Load the links
         $productLinks = $this->service->getRelatedProductLinks($rootProductIds);
-        
+
         //Sort the links
         $response = new BatchResponse();
         foreach ($requests as $request) {
             $response->addResponse($request, $productLinks[$request->getValue()['model']->getId()]);
         }
-        
+
         return $response;
     }
 }
 ```
- 
+
 Each GraphQL request object must be assigned a result of type [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) or any type of data (mixed). This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.
- 
+
 You can examine an existing example of batch resolver implementation at [`\Magento\RelatedProductGraphQl\Model\Resolver\Batch\AbstractLinkedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/RelatedProductGraphQl/Model/Resolver/Batch/AbstractLikedProducts.php)
  
 ### BatchServiceContractResolverInterface
+
 Requests for this interface to resolve are being gathered into batches in the same way as for _BatchResolverInterface_ with the difference that the resolving itself is delegated to a batch service contract. The job of _BatchServiceContractResolverInterface_ resolver is only to convert GraphQL requests into DTOs acceptable by the service contract and then convert results returned by the contract into GraphQL response.
- 
+
 Consider the same example query:
+
 ```text
 query ($filter: ProductAttributeFilterInput!) {
   products (filter: $filter) {
@@ -96,43 +100,45 @@ query ($filter: ProductAttributeFilterInput!) {
   }
 }
 ```
- 
+
 Here we will delegate loading of all related products to our service that accepts a list of root product IDs and then returns individual
 lists for each.
- 
+
 Pseudo-code for a GraphQL resolver delegating the work to a service contract may look like this:
+
 ```php
 class RelatedProductsResolver implements BatchServiceContractResolverInterface
 {
     ...
-    
+
     public function getServiceContract(): array
     {
         return [ProductLinksRetriever::class, 'getRelatedProducts'];
     }
-    
+
     public function convertToServiceArgument(ResolveRequestInterface $request)
     {
         return new RootProductCriteria($request->getValue()['model']->getId());
     }
-    
+
     public function convertFromServiceResult($result, ResolveRequestInterface $request)
     {
         return $result->getLinkedProducts();
     }
 }
 ```
- 
+
 _getServiceContract()_ method's responsiblity is to point to a service contract to be used.
 _convertToServiceArgument()_ method's responsiblity is to convert GraphQL request to a criteria item to be passed in a list as the argument to the contract. Remember that batch service contract methods have to follow a certain convention - they accept a single argument - a list (array) of criteria objects.
 _convertFromServiceResult()_ method's responsibility is to convert one of the result items into a GraphQL response (a [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) instance or an array). Remember that batch service contracts have to return result items in the same order as were the criteria items passed as the method's list argument i.e. if the 1st root product had ID#555 then the 1st result item will contain the list of related products to product #555.
  
 The batch service contract used in the example would look something like this:
+
 ```php
 class ProductLinksRetriever
 {
     ...
-    
+
     /**
      * @param RootProductCriteria[] $criteriaList
      * @return RelatedProductsFound[]
@@ -146,12 +152,12 @@ class ProductLinksRetriever
 class RootProductCriteria
 {
     ....
-    
+
     public function __construct(int $rootProductId)
     {
         $this->productId = $rootProductId;
     }
-    
+
     public function getRootProductId(): int
     {
         return $this->productId;
@@ -161,22 +167,23 @@ class RootProductCriteria
 class RelatedProductsFound
 {
     ....
-    
+
     public function getLinkedProducts(): array
     {
         ....
     }
-    
+
     public function getRootProductId(): int
     {
         ....
     }
 }
 ```
- 
+
 A real example can be found at [\Magento\CatalogGraphQl\Model\Resolver\Product\BatchProductLinks]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogGraphQl/Model/Resolver/Product/BatchProductLinks.php)
- 
+
 ### ResolverInterface
+
 This resolver resolves one branch/leaf at a time. The interface returns [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) or any type of data (mixed). This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.
 
 You can view an example inside the [`\Magento\BundleGraphQl\Model\Resolver\BundleItemLinks`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/BundleGraphQl/Model/Resolver/BundleItemLinks.php) resolver. This resolver takes each bundle option ID and its corresponding parent product ID and stores them in a collection's filter buffer (in this case, using the [`\Magento\BundleGraphQl\Model\Resolver\Links\Collection::addIdFilters()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/BundleGraphQl/Model/Resolver/Links/Collection.php#L62-L70) function). Each resolver then returns a callable that invokes this collection. The collection caches the result of all link entities it fetched for all the option_id/parent_id combinations. This fetch only needs to occur once for the whole `BundleItemLink` list, and each resulting callable that is invoked for every link in the list returns an item from the collections cached result.
@@ -232,6 +239,7 @@ type InputParamsType {
 ```
 
 ### Resolver class
+
 Use the following sample code as a template for the GraphQl resolver mutation class
 
 ```php
