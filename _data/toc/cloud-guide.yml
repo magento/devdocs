@@ -25,7 +25,6 @@ pages:
 
         - label: Scaled architecture
           url: /cloud/architecture/scaled-architecture.html
-          exclude_versions: ["2.3"]
 
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
