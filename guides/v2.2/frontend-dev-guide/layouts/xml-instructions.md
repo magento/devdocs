@@ -361,12 +361,12 @@ There are examples of all argument types.
    </argument>
    ```
 
-The *helper* can use only public methods. In this example the `someMethod()` method should be public.
+The *helper* can only use public methods. In this example the `someMethod()` method should be public.
 The argument with *helper* type can contain `param` items which can be passed as a helper method parameters.
 
-#### Obtain arguments examples in template
+#### Obtain arguments in template examples
 
-These argument examples can be taken in the template by *getData* method. Another way to take these arguments is using the magic method *get* followed by the name of argument in CamelCase format. Here is an example to retrieve the arguments from above example:
+These argument examples are taken in the template by the `getData` method. Another way to take these arguments is using the magic method `get` followed by the name of argument in CamelCase format. Here is an example to retrieve the arguments from above example:
 
 ```php
 <?php
