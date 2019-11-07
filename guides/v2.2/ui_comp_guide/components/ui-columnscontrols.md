@@ -10,35 +10,40 @@ The ColumnsControls component is a collection of columns. It provides an interfa
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>minVisible</code></td>
-    <td>Minimum number of columns that must be visible.</td>
-    <td>Number</td>
-    <td><code>1</code></td>
-  </tr>
-  <tr>
-    <td><code>maxVisible</code></td>
-    <td>Maximum number of columns that can be visible.</td>
-    <td>Number</td>
-    <td><code>30</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/controls/columns</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `minVisible` | Minimum number of columns that must be visible. | Number | `1` |
+| `maxVisible` | Maximum number of columns that can be visible. | Number | `30` |
+| `template` | The path to the component’s `.html` template. | String | `ui/grid/controls/columns` |
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
 *  [`app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
+*  [`app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/columns.html)
+
+## Examples
+
+### Add ColumnsControls component to Listing basic component
+
+```xml
+<listing>
+    ...
+    <listingToolbar>
+        ...
+         <columnsControls name="columns_controls">
+            <setting>
+                <minVisible>1</minVisible>
+                <maxVisible>3</maxVisible>
+            </setting>
+         </columnsControls>
+    </listingToolbar>
+    ...
+</listing>
+```
+
+#### Result
+
+![ColumnsControls component example]({{ site.baseurl }}/common/images/ui_comps/columns-controls-result.png)
+
