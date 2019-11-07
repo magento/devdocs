@@ -42,7 +42,7 @@ MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result
 
 Optionally, you can set up multiple databases as well as multiple users with different permissions.
 
-An _endpoint_ is a set of credentials (or users) with specific privileges. By default, there is one endpoint named `mysql` that has administrator access to all defined databases. To set up multiple databases and users, you must define multiple endpoints in the services.yaml file and declare the relationships in the .magento.app.yaml file.
+An _endpoint_ is a set of credentials (or users) with specific privileges. By default, there is one endpoint named `mysql` that has administrator access to all defined databases. To set up multiple database users, you must define multiple endpoints in the services.yaml file and declare the relationships in the .magento.app.yaml file.
 
 {: .bs-callout-warning}
 You cannot use multiple _databases_ with {{site.data.var.ee}} at this time, but you **can** create multiple endpoints to restrict access to the `main` database.

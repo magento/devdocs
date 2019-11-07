@@ -497,25 +497,25 @@ api.%method_name%();
 
 All available methods are listed in the following paragraph.
 
-### Methods {#gallery_methods}
+## Methods {#gallery_methods}
 
-*  [first](#gallery_first)
-*  [last](#gallery_last)
-*  [next](#gallery_next)
-*  [prev](#gallery_prev)
-*  [seek](#gallery_seek)
-*  [updateData](#gallery_updateData)
-*  [updateOptions](#gallery_updateData)
+*  [first()](#gallery_first)
+*  [last()](#gallery_last)
+*  [next()](#gallery_next)
+*  [prev()](#gallery_prev)
+*  [seek()](#gallery_seek)
+*  [updateData()](#gallery_updateData)
+*  [updateOptions()](#gallery_updateData)
 
-#### `first()` {#gallery_first}
+### `first()` {#gallery_first}
 
 Displays the first preview image.
 
-#### `last()` {#gallery_last}
+### `last()` {#gallery_last}
 
 Displays the last preview image.
 
-#### `next()` {#gallery_next}
+### `next()` {#gallery_next}
 
 Image ID is passed as an argument. Displays the next preview image.
 
@@ -524,7 +524,7 @@ If the last image ID is passed, the behavior depends on whether [loop](#gallery_
 *  if loop is enabled, the first image is displayed.
 *  if loop is disabled, does not change the displayed image.
 
-#### `prev()` {#gallery_prev}
+### `prev()` {#gallery_prev}
 
 Displays the previous preview image.
 
@@ -533,7 +533,7 @@ If the first image ID is passed, the behavior depends on whether [loop](#gallery
 *  if loop is enabled, the last image is displayed.
 *  if loop is disabled, does not change the displayed image.
 
-#### `seek()` {#gallery_seek}
+### `seek()` {#gallery_seek}
 
 Displays the image with the specified `index`.
 
@@ -546,7 +546,7 @@ Behavior:
 *  `seek(-1)` displays the last image.
 *  If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.
 
-#### `updateData()` {#gallery_updateData}
+### `updateData()` {#gallery_updateData}
 
 Add new items to the gallery.
 
@@ -560,7 +560,7 @@ api.updateData([{
 }]);
 ```
 
-#### `updateOptions()` {#gallery_updateOptions}
+### `updateOptions()` {#gallery_updateOptions}
 Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
 
 Example:

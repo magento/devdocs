@@ -53,7 +53,7 @@ The modal widget has the following options:
 -  [trigger](#modal_trigger)
 -  [type](#modal_type)
 
-### autoOpen {#modal_autoopen}
+### `autoOpen` {#modal_autoopen}
 
 Automatically open the modal window when the widget is initialized.
 
@@ -72,7 +72,7 @@ Array of buttons for action pane.
 buttons: [{
     text: '',
     class: '',
-    click: function() {} //handler on button click
+    click: function () {} //handler on button click
 }]
 ```
 
@@ -82,13 +82,13 @@ buttons: [{
 buttons: [{
     text: $.mage.__('Ok'),
     class: '',
-    click: function() {
+    click: function () {
         this.closeModal();
     }
 }]
 ```
 
-### clickableOverlay {#modal_clickableOverlay}
+### `clickableOverlay` {#modal_clickableOverlay}
 
 Close the modal window when a user clicks on the overlay.
 
@@ -215,8 +215,8 @@ You can listen to these events in two ways:
 Use jQuery's [`on`](http://api.jquery.com/on/) function:
 
 ```javascript
-var modal = $( "#modal_content").modal({...});
-modal.on( "modalclosed", function() {
+var modal = $('#modal_content').modal({...});
+modal.on('modalclosed', function () {
     // Do some action when modal closed
 });
 ```
@@ -226,7 +226,7 @@ Or assign a callback as a property when creating a modal instance:
 ```javascript
 $('#modal_content').modal({
     ...
-    closed: function(){
+    closed: function (){
        // Do some action when modal closed
     }
 });

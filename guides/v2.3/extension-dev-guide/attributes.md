@@ -238,6 +238,7 @@ The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttri
 |--- |--- |--- |
 |apply_to|Catalog EAV Attribute apply_to||
 |attribute_model|EAV Attribute attribute_model||
+|attribute_set|Name of the attribute set the new attribute will be assigned to. Works in combination with **group** or empty **user_defined**||
 |backend|EAV Attribute backend_model||
 |comparable|Catalog EAV Attribute is_comparable|0|
 |default|EAV Attribute default_value||
