@@ -30,6 +30,8 @@ Magento releases security and functional patches for each supported release line
 | 2.3.6   | July 14     | July 28    |
 | 2.3.7   | October 1   | October 15 |
 
+_These dates are subject to change._
+
 ## Compatibility
 
 Magento modules that have been built to be decoupled from the {{site.data.var.ee}} core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.
