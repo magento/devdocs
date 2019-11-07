@@ -1,0 +1,1 @@
+guides/v2.2/rest/search-endpoint.md
