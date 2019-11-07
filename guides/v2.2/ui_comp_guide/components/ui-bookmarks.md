@@ -27,7 +27,7 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ### Integrate Bookmarks component with Listing component
 
-Here is an example of how Bookmarks component integrates with [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This is an example of how the Bookmarks component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
