@@ -87,16 +87,16 @@ pages:
       url: /frontend-dev-guide/templates/template-overview.html
       children:
 
-        - label: Templates customization walkthrough
-          url: /frontend-dev-guide/templates/template-walkthrough.html
-
         - label: Templates basic concepts
           url: /frontend-dev-guide/templates/template-override.html
 
-        - label: Illustration of customizing templates
+        - label: Templates customization walkthrough
+          url: /frontend-dev-guide/templates/template-walkthrough.html
+
+        - label: Templates customization sample
           url: /frontend-dev-guide/templates/template-sample.html
 
-        - label: Customize email templates
+        - label: Email templates
           url: /frontend-dev-guide/templates/template-email.html
 
     - label: Cascading style sheets (CSS)
