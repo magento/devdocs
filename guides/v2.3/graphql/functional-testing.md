@@ -209,9 +209,10 @@ Use the `@magentoConfigFixture` annotation to set a custom config value. It supp
 ```
 
 where
-- `<store_code>` - Store code. See the `store`.`code` database field value.
-- `<config_key>` - Config key. See `core_config_data`.`path`
-- `<config_value>` - Config value. See `core_config_data`.`value`
+
+*  `<store_code>` - Store code. See the `store`.`code` database field value.
+*  `<config_key>` - Config key. See `core_config_data`.`path`
+*  `<config_value>` - Config value. See `core_config_data`.`value`
 
 {: .bs-callout-info }
 `@magentoConfigFixture` does not require a roll-back.
