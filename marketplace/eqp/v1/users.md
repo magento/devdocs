@@ -32,7 +32,7 @@ The following example shows the request/response body for retrieving all profile
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
 
 **Response**
@@ -137,7 +137,7 @@ The following example shows the request/response body for retrieving a subset of
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789?style=summary
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789?style=summary
 ```
 
 **Response**
@@ -191,7 +191,7 @@ curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
      -d '{ "action" : "publish", "personal_profile" : { "bio" : "My extensions have won Nobel Prizes in both literature and physics." } }' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
 
 A 200 OK HTTP response code indicates a successful update.
@@ -229,7 +229,7 @@ The following example shows the request/response body for retrieving keys withou
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
 **Response**
@@ -301,7 +301,7 @@ curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
      -d '{ "m2": [ { "label" : "key_for_alice" }, { "label" : "key_for_charlie" } ] }' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
 **Response**
@@ -349,7 +349,7 @@ curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
      -d '{ "m2" : [ { "is_enabled" :  true } ] }' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
 ```
 
 **Response**
@@ -382,7 +382,7 @@ The following curl example illustrates the call to be made:
 ```bash
 curl -X DELETE \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_charlie
 ```
 
 A 204 No Content HTTP response code indicates a successful update.

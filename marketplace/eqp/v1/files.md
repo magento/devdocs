@@ -54,7 +54,7 @@ If it is omitted, then a batch response will be returned: an array of records fo
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
+     https://developer-stg-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
 ```
 
 **Response**
@@ -150,7 +150,7 @@ curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
      --data-binary  @/tmp/files-payload \
-     https://developer-api.magento.com/rest/v1/files/uploads
+     https://developer-stg-api.magento.com/rest/v1/files/uploads
 ```
 
 **Response**
