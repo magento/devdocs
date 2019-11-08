@@ -105,5 +105,5 @@ For example, to access a user profile with a User Session Token:
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/users/MAG123456789
+     https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
