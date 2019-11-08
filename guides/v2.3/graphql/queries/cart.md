@@ -26,17 +26,16 @@ The following query shows the status of a cart that is ready to be converted int
 **Request**
 
 ```graphql
-query {
-  cart(cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG")
-  {
+{
+  cart(cart_id: "CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43") {
     email
     billing_address {
-     city
-     country {
-      code
-      label
+      city
+      country {
+        code
+        label
       }
-     firstname
+      firstname
       lastname
       postcode
       region {
@@ -66,10 +65,6 @@ query {
           value
         }
         available
-        base_amount {
-          value
-          currency
-        }
         carrier_code
         carrier_title
         error_message
@@ -89,25 +84,20 @@ query {
           value
           currency
         }
-        base_amount {
-          value
-          currency
-        }
         carrier_code
         carrier_title
         method_code
         method_title
       }
-
     }
     items {
-        id
-        product {
-          name
-          sku
-        }
-        quantity
+      id
+      product {
+        name
+        sku
       }
+      quantity
+    }
     available_payment_methods {
       code
       title
@@ -116,15 +106,15 @@ query {
       code
       title
     }
-    applied_coupon {
+    applied_coupons {
       code
     }
-      prices {
-        grand_total{
-          value
-          currency
-        }
+    prices {
+      grand_total {
+        value
+        currency
       }
+    }
   }
 }
 ```
@@ -135,221 +125,87 @@ query {
 {
   "data": {
     "cart": {
-      "email": "mshaw@example.com",
+      "email": "roni_cost@example.com",
       "billing_address": {
         "city": "Calder",
         "country": {
           "code": "US",
           "label": "US"
         },
-        "firstname": "Bob",
-        "lastname": "Roll",
-        "postcode": "49628",
+        "firstname": "Veronica",
+        "lastname": "Costello",
+        "postcode": "49628-7978",
         "region": {
           "code": "MI",
           "label": "Michigan"
         },
         "street": [
-          "Magento Pkwy",
-          "Main Street"
+          "6146 Honey Bluff Parkway"
         ],
-        "telephone": "8675309"
+        "telephone": "(555) 229-3326"
       },
       "shipping_addresses": [
         {
-          "firstname": "Bob",
-          "lastname": "Roll",
+          "firstname": "Veronica",
+          "lastname": "Costello",
           "street": [
-            "Magento Pkwy",
-            "Main Street"
+            "6146 Honey Bluff Parkway"
           ],
-          "city": "Austin",
+          "city": "Calder",
           "region": {
-            "code": "TX",
-            "label": "Texas"
+            "code": "MI",
+            "label": "Michigan"
           },
           "country": {
             "code": "US",
             "label": "US"
           },
-          "telephone": "8675309",
+          "telephone": "(555) 229-3326",
           "available_shipping_methods": [
             {
               "amount": {
                 "currency": "USD",
-                "value": 20
+                "value": 10
               },
               "available": true,
-              "base_amount": {
-                "value": 20,
-                "currency": "USD"
-              },
-              "carrier_code": "flatrate",
-              "carrier_title": "Flat Rate",
-              "error_message": "",
-              "method_code": "flatrate",
-              "method_title": "Fixed",
-              "price_excl_tax": {
-                "value": 20,
-                "currency": "USD"
-              },
-              "price_incl_tax": {
-                "value": 20,
-                "currency": "USD"
-              }
-            },
-            {
-              "amount": {
-                "currency": "USD",
-                "value": 5
-              },
-              "available": true,
-              "base_amount": {
-                "value": 5,
-                "currency": "USD"
-              },
               "carrier_code": "tablerate",
               "carrier_title": "Best Way",
               "error_message": "",
               "method_code": "bestway",
               "method_title": "Table Rate",
               "price_excl_tax": {
-                "value": 5,
+                "value": 10,
                 "currency": "USD"
               },
               "price_incl_tax": {
-                "value": 5,
+                "value": 10,
                 "currency": "USD"
               }
             },
             {
               "amount": {
                 "currency": "USD",
-                "value": 11.41
+                "value": 15
               },
               "available": true,
-              "base_amount": {
-                "value": 11.41,
-                "currency": "USD"
-              },
-              "carrier_code": "ups",
-              "carrier_title": "United Parcel Service",
+              "carrier_code": "flatrate",
+              "carrier_title": "Flat Rate",
               "error_message": "",
-              "method_code": "03",
-              "method_title": "UPS Ground",
+              "method_code": "flatrate",
+              "method_title": "Fixed",
               "price_excl_tax": {
-                "value": 11.41,
+                "value": 15,
                 "currency": "USD"
               },
               "price_incl_tax": {
-                "value": 11.41,
-                "currency": "USD"
-              }
-            },
-            {
-              "amount": {
-                "currency": "USD",
-                "value": 26.81
-              },
-              "available": true,
-              "base_amount": {
-                "value": 26.81,
-                "currency": "USD"
-              },
-              "carrier_code": "ups",
-              "carrier_title": "United Parcel Service",
-              "error_message": "",
-              "method_code": "12",
-              "method_title": "UPS Three-Day Select",
-              "price_excl_tax": {
-                "value": 26.81,
-                "currency": "USD"
-              },
-              "price_incl_tax": {
-                "value": 26.81,
-                "currency": "USD"
-              }
-            },
-            {
-              "amount": {
-                "currency": "USD",
-                "value": 34.27
-              },
-              "available": true,
-              "base_amount": {
-                "value": 34.27,
-                "currency": "USD"
-              },
-              "carrier_code": "ups",
-              "carrier_title": "United Parcel Service",
-              "error_message": "",
-              "method_code": "02",
-              "method_title": "UPS Second Day Air",
-              "price_excl_tax": {
-                "value": 34.27,
-                "currency": "USD"
-              },
-              "price_incl_tax": {
-                "value": 34.27,
-                "currency": "USD"
-              }
-            },
-            {
-              "amount": {
-                "currency": "USD",
-                "value": 76.12
-              },
-              "available": true,
-              "base_amount": {
-                "value": 76.12,
-                "currency": "USD"
-              },
-              "carrier_code": "ups",
-              "carrier_title": "United Parcel Service",
-              "error_message": "",
-              "method_code": "01",
-              "method_title": "UPS Next Day Air",
-              "price_excl_tax": {
-                "value": 76.12,
-                "currency": "USD"
-              },
-              "price_incl_tax": {
-                "value": 76.12,
-                "currency": "USD"
-              }
-            },
-            {
-              "amount": {
-                "currency": "USD",
-                "value": 108.52
-              },
-              "available": true,
-              "base_amount": {
-                "value": 108.52,
-                "currency": "USD"
-              },
-              "carrier_code": "ups",
-              "carrier_title": "United Parcel Service",
-              "error_message": "",
-              "method_code": "14",
-              "method_title": "UPS Next Day Air Early A.M.",
-              "price_excl_tax": {
-                "value": 108.52,
-                "currency": "USD"
-              },
-              "price_incl_tax": {
-                "value": 108.52,
+                "value": 15,
                 "currency": "USD"
               }
             }
           ],
           "selected_shipping_method": {
             "amount": {
-              "value": 5,
-              "currency": "USD"
-            },
-            "base_amount": {
-              "value": 5,
+              "value": 10,
               "currency": "USD"
             },
             "carrier_code": "tablerate",
@@ -361,26 +217,30 @@ query {
       ],
       "items": [
         {
-          "id": "13",
+          "id": "14",
           "product": {
             "name": "Strive Shoulder Pack",
             "sku": "24-MB04"
           },
-          "quantity": 4
+          "quantity": 2
+        },
+        {
+          "id": "17",
+          "product": {
+            "name": "Savvy Shoulder Tote",
+            "sku": "24-WB05"
+          },
+          "quantity": 1
         }
       ],
       "available_payment_methods": [
         {
-          "code": "cashondelivery",
-          "title": "Cash On Delivery"
+          "code": "braintree_cc_vault",
+          "title": "Stored Cards (Braintree)"
         },
         {
-          "code": "banktransfer",
-          "title": "Bank Transfer Payment"
-        },
-        {
-          "code": "purchaseorder",
-          "title": "Purchase Order"
+          "code": "braintree",
+          "title": "Credit Card (Braintree)"
         },
         {
           "code": "checkmo",
@@ -388,13 +248,13 @@ query {
         }
       ],
       "selected_payment_method": {
-        "code": "banktransfer",
-        "title": "Bank Transfer Payment"
+        "code": "checkmo",
+        "title": "Check / Money order"
       },
-      "applied_coupon": null,
+      "applied_coupons": null,
       "prices": {
         "grand_total": {
-          "value": 133,
+          "value": 105.26,
           "currency": "USD"
         }
       }
@@ -826,6 +686,7 @@ The `CartItemInterface` can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
+`prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
@@ -843,12 +704,12 @@ Attribute |  Data Type | Description
 
 ### CartItemQuantity object {#CartItemQuantity}
 
-The `CartItemQuantity` object must contain the following attributes.
+The `CartItemQuantity` data type has been deprecated. Use the `cart_items_v2` attribute with the `CartItemInterface` instead.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
-`quantity` | Float! | The quantity of this item selected
+`cart_item_id` | Int! | Deprecated. Use `CartItemInterface.id` instead
+`quantity` | Float! | Deprecated. Use `CartItemInterface.quantity` instead
 
 ### CartPrices object {#CartPrices}
 
@@ -916,8 +777,9 @@ The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddres
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
-`cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
-`items_weight` | Float | The weight of all items in the cart
+`cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
+`cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
+`items_weight` | Float | Deprecated. This attribute should not be displayed
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
 ## Related topics

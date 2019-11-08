@@ -17,5 +17,6 @@ Attribute |  Data Type | Description
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
+`wishlist` | Wishlist! | Contains the contents of the customer's wish lists
 
 {% include graphql/customer-address-output.md %}
