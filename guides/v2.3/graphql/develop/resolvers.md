@@ -15,9 +15,15 @@ $info | [`Magento\Framework\GraphQl\Schema\Type\ResolveInfo`]({{ site.mage2blobu
 $value | array | Contains additional query parameters. `Null` in most cases.
 $args | array | Contains input arguments of query.
 
-A GraphQL resolver must implement either [`\Magento\Framework\GraphQl\Query\Resolver\BatchResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchResolverInterface.php) interface or
-[`\Magento\Framework\GraphQl\Query\Resolver\BatchServiceContractResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchServiceContractResolverInterface.php) interface or
-[`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php) interface. First 2 interfaces provide a way to resolve multiple branches/leaves at once known as batching while the last one is meant to resolve 1 request at a time. It is recommened to use batch resolvers for queries in order to improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
+A GraphQL resolver must implement one of the following interfaces:
+
+-  [`\Magento\Framework\GraphQl\Query\Resolver\BatchResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchResolverInterface.php)
+
+-  [`\Magento\Framework\GraphQl\Query\Resolver\BatchServiceContractResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/BatchServiceContractResolverInterface.php)
+
+-  [`\Magento\Framework\GraphQl\Query\ResolverInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/ResolverInterface.php) 
+
+The first two interfaces provide a way to resolve multiple branches/leaves at once (known as batching), while the last one resolves one request at a time. Magento recommends using batch resolvers for queries because they improve performance by fetching information required to resolve multiple GraphQL requests with a single operation.
 
 ## Query resolvers
 
@@ -27,7 +33,7 @@ Batch resolvers gather GraphQL requests for the same field until there is no way
 
 Consider the following example:
 
-```text
+```graphql
 query ($filter: ProductAttributeFilterInput!) {
   products (filter: $filter) {
     items {
@@ -45,9 +51,9 @@ query ($filter: ProductAttributeFilterInput!) {
 }
 ```
 
-Here we try to load a list of products, their related product SKUs and then related to related product SKUs. Loading related products list for each product at a time would be expensive performance-wise but with batch resolvers we can load linked products for all of products that we initially found and then group them by root products. After `items` branch is resolved a batch resolver for `related_products` will be called for the 1st product found but instead of resolving the list right away it will just add the 1st product to the list of products that require related ones loaded. After we line all the products from `items` branch as products that we need to load related products for we can see that we cannot proceed further without loading the lists. Then `BatchResolverInterface::resolve()` will be executed with gathered list of previous requests to `related_products` branches. At this point the resolver is able to extract product DTOs from each GraphQL request, load all product links, sort them by root products and generate GraphQL values for each branch. After this is done the same batching will take place when resolving child `related_products` branches.
+The query loads a list of products, their related product SKUs, and then secondary related product SKUs. Loading a list of related products individually for each product would be expensive performance-wise. With batch resolvers, we can load linked products for all of products that we initially found, and then group them by root products. After the `items` branch is resolved, a batch resolver for `related_products` will be called for the first product found. But instead of resolving the list right away, it will just add the first product to the list of products that require loading additional related products. After we line all the products from the `items` branch as products for which we need to load related products, we can see that we cannot proceed further without loading the lists. Then `BatchResolverInterface::resolve()` will be executed with a gathered list of previous requests to `related_products` branches. At this point, the resolver is able to extract product DTOs from each GraphQL request, load all the product links, sort them by root products, and generate GraphQL values for each branch. After this is done, the same batching will take place when resolving child `related_products` branches.
 
-Pseudo-code of such related-products branch resolver will look like this:
+The following pseudo-code shows a related-products branch resolver:
 
 ```php
 class RelatedProducts implements BatchResolverInterface
@@ -75,7 +81,7 @@ class RelatedProducts implements BatchResolverInterface
 
 Each GraphQL request object must be assigned a result of type [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) or any type of data (mixed). This value takes in a callable function to its constructor that will be invoked at the latest possible time for the resolver to require its data. As a result, a list of items being resolved can be retrieved all at once by establishing a buffer that contains all relevant parent data to filter and fetch for the children list data.
 
-You can examine an existing example of batch resolver implementation at [`\Magento\RelatedProductGraphQl\Model\Resolver\Batch\AbstractLinkedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/RelatedProductGraphQl/Model/Resolver/Batch/AbstractLikedProducts.php)
+[`\Magento\RelatedProductGraphQl\Model\Resolver\Batch\AbstractLinkedProducts`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/RelatedProductGraphQl/Model/Resolver/Batch/AbstractLikedProducts.php) contains an example of batch resolver implementation.
 
 ### BatchServiceContractResolverInterface
 
