@@ -580,7 +580,7 @@ For CMS Pages:
 where:
 
 -  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_"
--  _Layout Update Name_ is what is shown as the option for __Custom layout update__ field of __Design__
+-  _Layout Update Name_ is shown as the option for the __Custom layout update__ field of the __Design__
   section on _CMS Page Edit_ page
 
 These files must be placed in the appropriate folders for layout XML files. They will be available as __Custom Layout Update__ options for Merchants after flushing the cache.
