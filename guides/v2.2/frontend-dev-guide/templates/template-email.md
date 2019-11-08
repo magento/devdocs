@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Customize email templates
+title: Email templates
 functional_areas:
   - Frontend
 ---
