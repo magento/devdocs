@@ -571,7 +571,7 @@ where:
 
 -  _Product SKU_ is the desired product's SKU encoded as a URI.
   _example_: "My Product SKU" -> "My%20Product%20SKU"
--  _Layout Update Name_ is what is shown as the option for __Custom layout update__ field of __Design__ section on _Product Edit_ page
+-  _Layout Update Name_ is shown as the option for the __Custom layout update__ field of the __Design__ section on the _Product Edit_ page.
 
 For CMS Pages:
 
