@@ -58,18 +58,23 @@ For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 
 This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
 
 <!--RFC-125-->
+
 *  We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
 
 <!-- MAGECLOUD-1355 -->
+
 *  You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!-- 57167 -->
+
 *  You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
 <!-- MAGECLOUD-894 -->
+
 *  Newly provisioned {{site.data.var.ece}} receive an email to change the Magento Admin password. For enhanced security, we generate a random password for the username "admin" and send an email to the Project Owner to properly set up Admin access for Starter `master` Production environment and the Pro Integration `master` environment.
 
 <!-- MAGECLOUD-1025 MAGECLOUD-930 -->
+
 *  We added additional environment variables and updated build and deploy hooks to [`.magento.app.yaml`]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html).
 
 *  When upgrading to {{site.data.var.ece}} 2.2.0, you will need to update your `.magento.app.yaml` file and Configuration Management `config.local.php` file. See [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
@@ -79,12 +84,15 @@ This release contains numerous fixes and enhancements. This section includes onl
 *  We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.2/cloud/trouble/redis-troubleshooting.html).
 
 <!--- 55462/52448-->
+
 *  Magento now correctly displays customer address during account creation. Previously, when you selected a default billing address during creation of a new customer account, Magento would not display the address.
 
 <!---61104 -->
+
 *  When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`).
 
 <!--- 68833 -->
+
 *  We’ve fixed errors in processing valid orders using a PayPal account that had been previously used to pay for a valid order that had problems during checkout.
 
 ## Changes in Deployment {#deploy}
