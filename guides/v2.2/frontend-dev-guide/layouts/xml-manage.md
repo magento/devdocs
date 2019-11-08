@@ -560,7 +560,7 @@ For Categories:
 
 where:
 
--  _Category ID_ is desired category ID
+-  _Category ID_ is the desired category ID.
 -  _Layout Update Name_ is what is shown as the option for __Custom layout update__ field of __Design__ section on _Category Edit_ page.
 
 For Products:
