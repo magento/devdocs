@@ -69,6 +69,16 @@ The `createCustomer` mutation returns the `CustomerOutput` object.
 
 {% include graphql/customer-output.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`A customer with the same email address already exists in an associated website.` | The email provided in the `input`.`email` attribute belongs to an existing customer.
+`"Email" is not a valid email address.` | The value provided in the `input`.`email` attribute has an invalid format.
+`Field CustomerInput.email of required type String! was not provided` | The `input`.`email` attribute was omitted.
+`Field "xxx" is not defined by type CustomerInput.` | The `input`.`xxx` is an undefined attribute.
+`Required parameters are missing: First Name` | The `input`.`firstname` attribute was omitted or contains an empty value.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
