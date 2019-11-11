@@ -100,7 +100,7 @@ The `createCustomerAddress` mutation returns the following attributes:
 Error | Description
 --- | ---
 `Expected type CustomerAddressInput!, found "".` | The `input` attribute contains an empty value.
-`"input" value should be specified` | The `input` attribute is set but contains an empty data.
+`"input" value should be specified` | The `input` attribute is specified but is empty.
 `Required parameters are missing: firstname` | The `input.firstname` attribute was omitted or contains an empty value.
 `"Street Address" cannot contain more than 2 lines.` | The `input.street` attribute contains array with more than two elements.
 `Syntax Error: Expected Name, found )` | The `input` attribute was omitted.
