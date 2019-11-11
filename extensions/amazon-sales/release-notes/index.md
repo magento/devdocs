@@ -17,6 +17,16 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v3.0.1
+
+Amazon Sales Channel 3.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.fix}**Numerical Field Settings**: <!--CHAN-3779-->Fields that require a numeric-based value have been updated to only accept numeric characters. Example: Pricing Rule Settings > Adjustment Amount field
+
+-  {:.fix}**User Guide Links**: <!--CHAN-3778-->Incorrect _User Guide_ links have been corrected.
+
+-  {:.fix}**Duplicate Amazon Listings**: <!--CHAN-3593-->A previously reported issue causing duplicate Amazon listings has been corrected. Prior to this release, the extension added the Country Code for the Amazon region to SKU values when importing listings. The listing matched with the catalog item, but the extension created a new, duplicate listing with the appended SKU. With this release, the extension does not modify the SKU for imported listings, and no changes are made to existing listings. You can use the [End Listing(s) on Amazon](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/end-listings-manually.html) option to remove duplicate listings.
+
 ### v3.0.0
 
 Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
