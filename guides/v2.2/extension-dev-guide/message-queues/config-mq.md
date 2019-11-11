@@ -105,20 +105,19 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | connection       | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
 | maxMessages     | Specifies the maximum number of messages to consume.|
 
-#### Consumers handlers
+#### Consumer handlers
 
-Handler is a class and method that processes the message. Magento has two ways to define handler for messages.
+A handler is a class and method that processes a message. Magento has two ways to define a handler for messages.
 
-1) Define handler in `communication.xml` file, in `<handler>` element
-2) Define handler in `queue_consumer.xml` file in `handler` attribute
+*  In the `<handler>` element of the module's `communication.xml` file
+*  In the `handler` attribute of the module's `queue_consumer.xml` file 
 
-Multiple ways exists how those handlers will be processed: 
+The following conditions determine these handlers are processed:
 
-1) If consumer in `queue_consumer.xml` does not have `consumerInstance` defined, then system will use default consumer: `Magento\Framework\MessageQueue\Consumer`.
-In this case, if `<consumer>` element has `handler` attribute, then it will be used, and `<handler>` element in `communication.xml` will be ignored. 
-2) If consumer in `queue_consumer.xml` has `consumerInstance` defined, then implementation of `handler` usage is defined by particular consumer implementation.
+*  If the consumer in `queue_consumer.xml` does not have a `consumerInstance` defined, then the system uses the default consumer: `Magento\Framework\MessageQueue\Consumer`. In this case, if the `<consumer>` element contains the `handler` attribute, then it will be used, and the `<handler>` element in `communication.xml` will be ignored.
+*  If the consumer in `queue_consumer.xml` has a `consumerInstance` defined, then the specific consumer implmentation defines how the `handler` is used.
 
-Magento out-of-box has three consumers available:
+Magento provides these consumers out-of-the-box:
 
 | Class name        | Handler in `communication.xml` will be executed? | Handler in `queue_consumer.xml` will be executed? |
 | ---------------- | ----------- | ---------- |
