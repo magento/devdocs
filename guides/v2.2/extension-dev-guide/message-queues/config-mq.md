@@ -110,7 +110,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 A handler is a class and method that processes a message. Magento has two ways to define a handler for messages.
 
 *  In the `<handler>` element of the module's `communication.xml` file
-*  In the `handler` attribute of the module's `queue_consumer.xml` file 
+*  In the `handler` attribute of the module's `queue_consumer.xml` file
 
 The following conditions determine these handlers are processed:
 
