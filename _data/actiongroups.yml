@@ -3216,7 +3216,7 @@
   module: "Checkout"
   actiongroups:
      - name: "AdminCheckoutSelectCheckMoneyOrderBillingMethodActionGroup"
-       description: "Selects the Billing Method "Check / Money order" on the Admin 'Create New Order for' page."
+       description: "Selects the Billing Method 'Check / Money order' on the Admin 'Create New Order for' page."
  
 - filename: "VerifyCheckoutPaymentOrderSummaryActionGroup.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/ActionGroup/VerifyCheckoutPaymentOrderSummaryActionGroup.xml"
