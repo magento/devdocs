@@ -45,9 +45,11 @@ Implemented version-based patching. Now the package is compatible with {{site.da
 ### Fixed issues
 
 <!--MAGECLOUD-1033-->
+
 -  Removed patch; fixing bug in `colinmollenhour/credis` v1.6 to enable support for {{site.data.var.ece}} 2.2.1.
 
 ## v102.0.0
+
 {:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 

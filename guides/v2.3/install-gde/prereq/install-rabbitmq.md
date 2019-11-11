@@ -21,7 +21,7 @@ The message queue system must be established before you install Magento. The bas
 1. Connect RabbitMQ and Magento.
 
 {:.bs-callout .bs-callout-info"}
-A basic message queue system can be implemented using cron instead of RabbitMQ. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
+You can use MySQL or RabbitMQ for message queue processing. For details on setting up the message queue system, see [Message queues overview]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html). If you are using the Bulk API with {{ site.data.var.ee }}, the message queue system configuration defaults to using RabbitMQ as the message broker.  See [Start message queue consumers]({{page.baseurl}}/config-guide/mq/manage-message-queues.html#start-message-queue-consumers) for more information.
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
@@ -63,15 +63,16 @@ rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
+
 1. Run the following commands as a user with root permissions:
 
-    ```bash
-    rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
-    ```
+   ```bash
+   rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+   ```
 
-    ```bash
-    yum install rabbitmq-server-3.5.6-1.noarch.rpm
-    ```
+   ```bash
+   yum install rabbitmq-server-3.5.6-1.noarch.rpm
+   ```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
@@ -148,7 +149,7 @@ To configure support for SSL, edit the `ssl` and `ssl_options` parameters in the
 
 ## Start the message queue consumers
 
-After you have connected Magento and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for details.
+After you have connected {{site.data.var.ee}} and RabbitMQ, you must start the message queue consumers. See [Configure message queues]({{page.baseurl}}/config-guide/mq/manage-message-queues.html#start-message-queue-consumers) for details.
 
 {:.ref-header}
 Related topics
