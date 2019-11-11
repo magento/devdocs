@@ -142,28 +142,26 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | connection       | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
 | maxMessages     | Specifies the maximum number of messages to consume.|
 
-
 #### Consumers handlers
 
-Handler is a class and method that processes the message. Magento has two ways to define handler for messages. 
+Handler is a class and method that processes the message. Magento has two ways to define handler for messages.
 
 1) Define handler in `communication.xml` file, in `<handler>` element
 2) Define handler in `queue_consumer.xml` file in `handler` attribute
 
-Multiple ways exists how those handlers will be processed: 
+Multiple ways exists how those handlers will be processed:
 
-1) If consumer in `queue_consumer.xml` does not have `consumerInstance` defined, then system will use default consumer: `Magento\Framework\MessageQueue\Consumer`. 
-In this case, if `<consumer>` element has `handler` attribute, then it will be used, and `<handler>` element in `communication.xml` will be ignored. 
+1) If consumer in `queue_consumer.xml` does not have `consumerInstance` defined, then system will use default consumer: `Magento\Framework\MessageQueue\Consumer`.
+In this case, if `<consumer>` element has `handler` attribute, then it will be used, and `<handler>` element in `communication.xml` will be ignored.
 2) If consumer in `queue_consumer.xml` has `consumerInstance` defined, then implementation of `handler` usage is defined by particular consumer implementation.
 
-Magento out-of-box has three consumers available
+Magento out-of-box has three consumers available:
 
 | Class name        | Handler in `communication.xml` will be executed? | Handler in `queue_consumer.xml` will be executed? |
-| ---------------- | ----------- | ---------- | 
+| ---------------- | ----------- | ---------- |
 | `Magento\Framework\MessageQueue\Consumer` | Only if not defined in `queue_consumer.xml` | Yes, if exists |
 | `Magento\Framework\MessageQueue\BatchConsumer` | Only if not defined in `queue_consumer.xml` | Yes, if exists |
 | `Magento\AsynchronousOperations\Model\MassConsumer`  | Yes, if exists | Yes, if exists |
-
 
 ### `queue_topology.xml` {#queuetopologyxml}
 
