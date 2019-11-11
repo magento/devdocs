@@ -9,7 +9,8 @@ functional_areas:
 
 ## Enhanced password management
 
-Magento has strengthened the hashing algorithms (SHA-256) used in password management.
+Magento has strengthened the hashing algorithms used in password management.
+Read more about [Password Hashing][].
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
@@ -51,3 +52,4 @@ Related topics
 [umask]: http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
 [Security measures against XSS attacks]: {{page.baseurl}}/extension-dev-guide/xss-protection.html
 [Configuration Guide]: {{page.baseurl}}/config-guide/bk-config-guide.html
+[Password Hashing]: ./hashing.html

@@ -61,9 +61,21 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 ## Getting argument values from layout {#getter}
 
-Arguments values set in a layout file are accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods.
+Arguments values set in a layout file are accessed in templates using the block's `get{ArgumentName}()` and `has{ArgumentName}()` methods.
 
-See [Layout instructions]
+For example, set an argument in the block: `<argument name="store_name" xsi:type="string">OrangeCompany</argument>`.
+
+*  Get the argument value, in the template:
+
+   *  `$block->getData('store_name')`
+   *  `$block->getStoreName()`
+
+*  Check if the argument exists:
+
+   *  `$block->hasData('store_name')`
+   *  `$block->hasStoreName()`
+
+See [Block arguments] for more information.
 
 ## Using PHP short tags in template PHTML files {#short-tags}
 
@@ -88,4 +100,4 @@ is the same as writing
 [`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml
 [Child theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [Theme inheritance]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates
-[Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html
+[Block arguments]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#argument

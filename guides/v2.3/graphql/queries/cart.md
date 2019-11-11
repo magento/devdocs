@@ -409,7 +409,7 @@ Attribute |  Data Type | Description
 
 ## Output attributes {#cart-output}
 
-The top-level `Cart` object is listed first. All child objects are listed in alphabetical order.
+The top-level `Cart` object is listed first. All interfaces and child objects are listed in alphabetical order.
 
 ### Cart object
 
@@ -474,7 +474,20 @@ Attribute |  Data Type | Description
 
 ### BillingCartAddress object {#BillingCartAddress}
 
-The `BillingCartAddress` object can contain the following attributes.
+The `BillingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It does not define any additional attributes.
+
+### CartAddressCountry object {#CartAddressCountry}
+
+The `CartAddressCountry` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The country code
+`label` | String | The display label for the country
+
+### CartAddressInterface {#CartAddressInterface}
+
+The `CartAddressInterface` contains the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -488,15 +501,6 @@ Attribute |  Data Type | Description
 `region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `street` | [String] | The street for the billing address
 `telephone` | String | The telephone number for the billing address
-
-### CartAddressCountry object {#CartAddressCountry}
-
-The `CartAddressCountry` object can contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`code` | String | The country code
-`label` | String | The display label for the country
 
 ### CartAddressRegion object {#CartAddressRegion}
 
@@ -516,9 +520,9 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of all discounts applied to the cart
 `label` | [String!]! | A concatenated list of strings that describe each applied discount
 
-### CartItemInterface object {#CartItemInterface}
+### CartItemInterface {#CartItemInterface}
 
-The `CartItemInterface` object can contain the following attributes.
+The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -582,24 +586,14 @@ Attribute |  Data Type | Description
 
 ### ShippingCartAddress object {#ShippingCartAddress}
 
-The `ShippingCartAddress` object can contain the following attributes.
+The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It can also contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | An array that lists the items in the cart
-`city` | String | The city specified for the shipping address
-`company` | String | The company specified for the shipping address
-`country` | [CartAddressCountry](#CartAddressCountry) | The country code and label for the shipping address
-`customer_notes` | String | Comments made to the customer that will accompany the order
-`firstname` | String | The recipient's first name
 `items_weight` | Float | The weight of all items in the cart
-`lastname` | String | The recipient's last name
-`postcode` | String | The postal code for the shipping address
-`region` | [CartAddressRegion](#CartAddressRegion) | An object containing the region label and code
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
-`street` | [String] | The street for the shipping address
-`telephone` | String | The telephone number for the shipping address
 
 ## Related topics
 

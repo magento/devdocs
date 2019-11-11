@@ -20,7 +20,7 @@ Magento is organized into these main areas:
 
 *  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-*  **Cron** (`crontab`): In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 

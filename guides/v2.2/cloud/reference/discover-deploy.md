@@ -23,7 +23,7 @@ You can track build and deploy actions in real-time using the terminal or the Pr
 If you are using external GitHub repositories, the log of operations does not display in the GitHub session. However, you can still follow activity in the interface for the external repository and the Project Web Interface. See [Integrations]({{ page.baseurl }}/cloud/integrations/cloud-integrations.html).
 
 {:.bs-callout-info}
-In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ page.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs).
+In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ page.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs) logs.
 
 ## Project configuration {#cloud-deploy-conf}
 
@@ -72,7 +72,7 @@ We highly recommend the following best practices and considerations for your dep
 
    -  Use the `magento-cloud local:build` command to test the build in your local environment. Identify and fix any issues related to composer dependencies and environment and application configuration before deploying to a remote environment. See [Test build your code locally before deployment]({{ page.baseurl }}/cloud/live/live-sanity-check.html#test-build).
 
-   -  Run the {{ site.data.var.ece }} smart wizard to ensure that your Cloud project configuration follows best practices for build and deployment. See [Smart wizard]({{ page.baseurl }}/cloud/deploy/smart-wizards.html).
+   -  Run the {{ site.data.var.ece }} smart wizard to ensure that your Cloud project configuration follows best practices for build and deployment including static content deployment (SCD) strategy. See [Smart wizard]({{ page.baseurl }}/cloud/deploy/smart-wizards.html).
 
 -  **After completing testing in local and Integration environments, deploy and test in the Staging environment**–See [Deploy code to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#code).
 
@@ -105,6 +105,8 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
    -  Test your database to address any issues introduced by the updates to the Magento version and extensions.
 
    -  Make any required updates to environment-specific settings before deploying to the remote environment.
+
+   -  Ensure that the Elasticsearch service version is compatible with the Elasticsearch PHP client version. See [Set up Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
 
 -  **Check database connectivity and available storage in remote environments**–
 

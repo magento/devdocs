@@ -45,6 +45,7 @@ The following interfaces (marked with the `@api` annotation) extend the Signifyd
 -  send a request through the Signifyd API to create a new case guarantee
 
 `Magento\Signifyd\Api\GuaranteeCancelingServiceInterface`:
+
 -  send a request through the Signifyd API to cancel the Signifyd case guarantee
 
 `Magento\Signifyd\Api\Data\CaseSearchResultsInterface`:
