@@ -83,6 +83,9 @@ To launch the Docker environment in developer mode:
    bash ./mutagen.sh
    ```
 
+   {:.bs-callout-info}
+   If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
+
 1. Deploy Magento in the Docker container.
 
    ```bash

@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker repository][docker-repo]contains build information for the following Docker containers.
+The [Magento Cloud Docker repository][docker-repo] contains build information for the following Docker containers.
 
 ## Sharing data between host machine and container
 

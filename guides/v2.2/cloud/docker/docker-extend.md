@@ -6,6 +6,9 @@ functional_areas:
   - Docker
   - Configuration
 ---
+
+## Specify multiple compose files
+
 You can use the built-in extension mechanism of Docker to specify [multiple compose files]. The following example replaces the default value of the `ENABLE_SENDMAIL` environment variable.
 
 1. Create a `docker-compose-dev.yml` file inside your project root directory and add the following content:
