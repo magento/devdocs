@@ -105,6 +105,9 @@ Sample result:
 {:.bs-callout .bs-callout-info}
 Enabling a [cache type](https://glossary.magento.com/cache-type) automatically clears that cache type.
 
+{:.bs-callout .bs-callout-info}
+Starting in version 2.3.4, you can cache user defined EAV attributes while retrieving them. By default getting all system EAV attributes is cached now. But developers can also cache user defined attributes by setting `Cache User Defined Attributes` to `Yes` in Admin Configuration or by the following CLI command: `bin/magento dev/caching/cache_user_defined_attributes 1`. Caching EAV attributes while retrieving improves performance as it decreases the amount of insert/select requests to the DB. But it increases cache network size as well.
+
 ## Clean and flush cache types {#config-cli-subcommands-cache-clean}
 
 To purge out-of-date items from the cache, you can *clean* or *flush* cache types:
