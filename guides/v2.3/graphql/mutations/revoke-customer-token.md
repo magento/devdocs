@@ -43,6 +43,12 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `result` | Boolean! | Returns `true` if the token was successfully revoked
 
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)

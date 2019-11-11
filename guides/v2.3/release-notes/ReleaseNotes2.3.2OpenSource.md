@@ -917,6 +917,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 ### Page cache
 
 <!--- MAGETWO-91607-->
+
 *  Page cache is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintennce mode.
 
 ### Payment methods

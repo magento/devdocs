@@ -9,16 +9,27 @@ Magento continually strives to find the right balance between making product upg
 
 The following table describes the status of Magento software availability and where to get it, particularly for software that is available outside the conventional {{site.data.var.ee}} Composer package.
 
-| Product                                           | Availability                                                                                                                           | How to get it                                                                                     |
-|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **{{site.data.var.ee}} 2.3.3**                    | Available now                                                                                                                          | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
-| **{{site.data.var.ee}} 2.3.2-p1** (security only) | Available now                                                                                                                          | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
-| **{{site.data.var.ece}} Tools (aka ECE-Tools)**   | Available now                                                                                                                          | [Composer]({{ site.baseurl }}/guides/v2.3/cloud/project/ece-tools-update.html)                    |
-| **PWA Studio**                                    | Available now (including support for {{site.data.var.ece}})                                                                            | [Documentation](http://pwastudio.io) and [GitHub](https://github.com/magento-research/pwa-studio) |
-| **Magento Shipping**                              | Available now                                                                                                                          | <https://magento.com/products/shipping>                                                           |
-| **Page Builder**                                  | Available now                                                                                                                          | Bundled with {{site.data.var.ee}} 2.3.x                                                           |
-| **Amazon Sales Channel 3.0.0**                    | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x (US, Canada, Mexico, UK)| [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
-| **Google Shopping ads Channel 3.0.1**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                                                                               | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
+| Product                                           | Availability                                                                      | How to get it                                                                                     |
+|---------------------------------------------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **{{site.data.var.ee}} 2.3.4**                    | January 2020                                                                      | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
+| **{{site.data.var.ee}} 2.3.3-p1** (security only) | January 2020                                                                      | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
+| **{{site.data.var.ece}} Tools (aka ECE-Tools)**   | Available now                                                                     | [Composer]({{ site.baseurl }}/guides/v2.3/cloud/project/ece-tools-update.html)                    |
+| **PWA Studio**                                    | Available now                                                                     | [Documentation](http://pwastudio.io) and [GitHub](https://github.com/magento-research/pwa-studio) |
+| **Amazon Sales Channel 3.0.0**                    | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x (US, Canada, Mexico, UK) | [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
+| **Google Shopping ads Channel 3.0.1**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                          | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
+
+## Patch schedule
+
+Magento releases security and functional patches for each supported release line of {{site.data.var.ee}} every quarter. The following table provides the dates for each patch scheduled for release in 2020.
+
+| Version | Pre-release | GA         |
+|---------|-------------|------------|
+| 2.3.4   | January 14  | January 28 |
+| 2.3.5   | April 14    | April 28   |
+| 2.3.6   | July 14     | July 28    |
+| 2.3.7   | October 1   | October 15 |
+
+_These dates are subject to change._
 
 ## Compatibility
 

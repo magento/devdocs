@@ -171,6 +171,7 @@ thumbnail
 thumbnail_label
 tier_price
 updated_at
+url_key
 url_path
 weight
 ```

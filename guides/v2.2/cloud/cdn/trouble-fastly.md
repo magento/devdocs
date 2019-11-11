@@ -212,14 +212,17 @@ Verify that the returned response contains the following information:
 The following excerpt from the cURL command output shows the correct values for the `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled` headers:
 
 ```terminal
+
 * STATE: INIT => CONNECT handle 0x600057800; line 1402 (connection #-5000)
 * Rebuilt URL to: https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud/
 * Added connection 0. The cache now contains 1 members
 * Trying 192.0.2.31...
 * STATE: CONNECT => WAITCONNECT handle 0x600057800; line 1455 (connection #0)
+
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud (54.229.163.31) port 443 (#0)
+
 * STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x600057800; line 1562 (connection #0)
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* ALPN, offering h2
 
@@ -242,6 +245,7 @@ The following excerpt from the cURL command output shows the correct values for 
     * multi_done
       0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
     * Connection #0 to host www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud left intact
+
 ```
 
 {: .bs-callout-info }
