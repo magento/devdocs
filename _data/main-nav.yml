@@ -138,7 +138,8 @@
           include_versions: ['2.3']
 
         - label: Marketplace EQP API Reference
-          url: /marketplace/eqp/api.html
+          url: /marketplace/eqp/v1/api.html
+          versionless: true
           exclude_versions: ['2.0']
 
         - label: Business Intelligence Import API

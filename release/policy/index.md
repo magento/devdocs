@@ -8,6 +8,7 @@ group: release
 -  **MAJOR**—2
 -  **MINOR**—2.3
 -  **PATCH**—2.3.1
+-  **SECURITY**—2.3.2-p1
 
 ## MINOR release
 
@@ -31,6 +32,12 @@ The following guidelines apply to patch releases:
 -  Changes that could break extensions or code compatibility are avoided. For example, code written for 2.2.0 should still work on 2.2.7.
 -  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
 -  Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, such as Page Builder.
+
+## SECURITY release
+
+Security releases provide fixes for vulnerabilities that have been identified in previous quarterly patch releases. You can install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly patch release contains.
+
+For general information about security releases, see [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security patches, see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html).
 
 ### Related topics
 
