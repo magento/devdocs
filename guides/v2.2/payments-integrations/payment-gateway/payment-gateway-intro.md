@@ -75,7 +75,7 @@ Data used for a transaction. Might include the following:
 <li> shipping, billing addresses </li>
 <li> customer details </li>
 <li> taxes </li>
-<li> merchant's payment provider [API](https://glossary.magento.com/api) credentials </li>
+<li> merchant's payment provider <a href="https://glossary.magento.com/api" target="_blank">API</a> credentials </li>
 </ul>
 </td>
 </tr>

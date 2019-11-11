@@ -58,16 +58,24 @@ For example:
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how to use custom bindings:
 
--  When a string is added in the scope of an HTML element:
+-  When a string is added in the scope of an HTML element, both of the following examples result in the same output:
 
     ```html
     <span data-bind="i18n: 'Sign In'"></span>
     ```
 
--  When a string is added with no binding to an HTML element:
+    ```html
+    <span translate="'Sign In'"></span>
+    ```
+
+-  When a string is added with no binding to an HTML element, both of the following examples result in the same output:
 
     ```html
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+    ```
+
+    ```html
+    <translate args="'You have no items in your shopping cart.'"/>
     ```
 
 -  When a string is added as an attribute of an HTML element:
