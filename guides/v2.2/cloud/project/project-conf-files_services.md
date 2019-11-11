@@ -135,7 +135,6 @@ To verify relationships in local environment:
            type: 'mysql:10.0'
            port: 3306
    ```
-   {:.no-copy}
 
 {:.procedure}
 To verify relationships in remote environments:
@@ -170,3 +169,6 @@ Service   |  Magento 2.3  | Magento 2.2
 `rabbitmq`| 3.5, 3.7      | 3.5
 `redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
 `varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
+
+{:.bs-callout-info}
+When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).

@@ -226,6 +226,25 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </tr>
 </table>
 
+### Get IP address of Cloud instance
+
+Use `ping` command for retrieving IP address for particular Cloud instance.
+
+Example of usage:
+
+```bash
+ping integration-abcd123-abcd78910.us-3.magentosite.cloud
+```
+
+Sample response:
+
+```console
+PING integration-abcd123-abcd78910.us-3.magentosite.cloud (34.210.133.187): 56 data bytes
+Request timeout for icmp_seq 0
+Request timeout for icmp_seq 1
+Request timeout for icmp_seq 2
+```
+
 ## Interact with environments via the Magento Cloud CLI {#commands}
 
 After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.

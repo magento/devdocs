@@ -8,9 +8,7 @@ The Magento application should be accessible for all people, whatever their hard
 
 -  **Be mindful of text length**—Don't make textual content too long or too short.
 
--  **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
-[http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target="_blank"}
-or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target="_blank"}
+-  **Provide adequate contrast**—Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: [http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target="_blank"} or here: [http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target="_blank"}
 
    **Acceptable**
 

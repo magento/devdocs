@@ -114,6 +114,7 @@ In addition to security enhancements, this release contains the following functi
 *  Dates in the Admin are now formatted correctly for French locales (dd/mm/yyyy).
 
 <!-- MAGETWO-74081  -->
+
 *  You can now use the term _configurable_ as a group name in attribute sets. Previously, Magento threw an error when you used this term as a group name and subsequently tried to add or edit a product. [GitHub-6123](https://github.com/magento/magento2/issues/6123)
 
 <!-- MAGETWO-98626 -->
@@ -157,6 +158,7 @@ In addition to security enhancements, this release contains the following functi
 *  Magento no longer permits you to change an attribute set if the new set does not have equivalent attributes as the original set. Previously, Magento sometimes threw this exception when you tried to change attribute sets: `Attempt to load value of nonexistent EAV attribute.`
 
 <!-- MAGETWO-97380  -->
+
 *  You can now add grouped products to the shopping cart as expected when category permissions are enabled.
 
 <!-- MAGETWO-97425 -->
@@ -180,6 +182,7 @@ In addition to security enhancements, this release contains the following functi
 *  Fixed misalignment of **Schedule Update From** field on the Admin category page when displayed in a browser set to 768 x 1147 resolution. *Fix submitted by Amol Chaudhari in pull request [20404](https://github.com/magento/magento2/pull/20404)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
 <!-- ENGCOM-4030  -->
+
 *  Fixed misalignment of product page tab content in mobile view. *Fix submitted by Amol Chaudhari in pull request [20476](https://github.com/magento/magento2/pull/20476)*. [GitHub-20468](https://github.com/magento/magento2/issues/20468)
 
 <!-- ENGCOM-4254 -->
@@ -281,6 +284,7 @@ In addition to security enhancements, this release contains the following functi
 *  Magento now displays an error message as expected when a customer clicks on **Add to cart**  without selecting at least one product from the recently ordered  product list. *Fix submitted by Prince Patel in pull request [21538](https://github.com/magento/magento2/pull/21538)*. [GitHub-21398](https://github.com/magento/magento2/issues/21398)
 
 <!-- ENGCOM-4436  -->
+
 *  The **Cancel** button on the checkout page now works as expected. *Fix submitted by Pratik Oza in pull request [21569](https://github.com/magento/magento2/pull/21569)*. [GitHub-21327](https://github.com/magento/magento2/issues/21327)
 
 <!-- ENGCOM-4479 -->
@@ -424,6 +428,7 @@ In addition to security enhancements, this release contains the following functi
 *  Magento now uses the value of the  default billing address attribute as expected during checkout. [GitHub-8777](https://github.com/magento/magento2/issues/8777)
 
 <!-- MAGETWO-93521  -->
+
 *  Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless configured for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
 
 <!-- ENGCOM-4132 -->
@@ -881,6 +886,7 @@ In addition to security enhancements, this release contains the following functi
 *  The default design of the **Edit** and **Remove items** buttons on the wishlist page now match. *Fix submitted by Amol Chaudhari in pull request [21118](https://github.com/magento/magento2/pull/21118)*. [GitHub-20790](https://github.com/magento/magento2/issues/20790)
 
 <!-- ENGCOM-4088  -->
+
 *  Magento no longer throws a console error during a guest checkout when the list of allowed countries is changed from the Admin. *Fix submitted by Amol Chaudhari in pull request [20885](https://github.com/magento/magento2/pull/20885)*. [GitHub-20631](https://github.com/magento/magento2/issues/20631)
 
 <!-- ENGCOM-4011 -->
@@ -960,9 +966,11 @@ In addition to security enhancements, this release contains the following functi
 ### Wishlist
 
 <!-- MAGETWO-73613  -->
+
 *  The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
 
 <!-- ENGCOM-4513  -->
+
 *  Customer wishlists now include review summaries for included products. *Fix submitted by Amol Chaudhari in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
 
 ## Known issue
