@@ -150,7 +150,7 @@ Handler is a class and method that processes the message. Magento has two ways t
 1) Define handler in `communication.xml` file, in `<handler>` element
 2) Define handler in `queue_consumer.xml` file in `handler` attribute
 
-There are existing multiple ways how those handlers will be processed: 
+Multiple ways exists how those handlers will be processed: 
 
 1) If consumer in `queue_consumer.xml` does not have `consumerInstance` defined, then system will use default consumer: `Magento\Framework\MessageQueue\Consumer`. 
 In this case, if `<consumer>` element has `handler` attribute, then it will be used, and `<handler>` element in `communication.xml` will be ignored. 
