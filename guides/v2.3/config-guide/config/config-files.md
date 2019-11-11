@@ -127,6 +127,39 @@ That is, the file system, database, other storage merges the configuration files
 *  [Framework\Config\ScopeListInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ScopeListInterface.php), which returns a list of scopes.
 *  [Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php), which retrieves the validation state.
 
+### Examples of use
+The following example shows how to use the classes previously described in this section to create a configuration object. We are going to use the Sales_Module to illustrate this example.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <type name="Magento\Sales\Model\Order\Pdf\Config\Reader">
+        <arguments>
+            <argument name="fileName" xsi:type="string">pdf.xml</argument>
+            <argument name="converter" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\Converter</argument>
+            <argument name="schemaLocator" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\SchemaLocator</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="pdfConfigDataStorage" type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="reader" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\Reader</argument>
+            <argument name="cacheId" xsi:type="string">sales_pdf_config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Config">
+        <arguments>
+            <argument name="dataStorage" xsi:type="object">pdfConfigDataStorage</argument>
+        </arguments>
+    </type>
+</config>
+
+```
+As you can see, the first type node sets the Reader's filename, associated Converter and SchemaLocator classes. 
+
+Then, The pdfConfigDataStorage virtual type attaches that reader class to an instance of Magento\Framework\Config\Data. And finally, the last type attaches that config data virtual type to the Magento\Sales\Model\Order\Pdf\Config class, which is used for actually reading values in from those pdf.xml files.
+
 #### Related topics
 
  *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
