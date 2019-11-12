@@ -105,9 +105,6 @@ pages:
             - label: PHP container
               url: /cloud/docker/docker-php.html
 
-            - label: Service containers
-              url: /cloud/docker/docker-services.html
-
         - label: Configure Docker
           url: /cloud/docker/docker-config.html
           children:

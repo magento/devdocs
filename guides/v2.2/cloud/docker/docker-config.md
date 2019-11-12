@@ -15,11 +15,11 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
    -  PHP version 7.1 or later
       -  [php@7.1][php71]
       -  [php@7.2][php72]
-   -  [Composer](https://getcomposer.org)
-   -  [Docker](https://www.docker.com/get-started)
+   -  [Composer]
+   -  [Docker]
    -  File synchronization required for developer mode—use one of the following:
-      -  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
-      -  [mutagen](https://mutagen.io/documentation/introduction/installation)
+      -  [docker-sync]
+      -  [mutagen]
 
 1. Update the hosts file.
 
@@ -40,7 +40,7 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
 
 1. Stop the default Apache instance on macOS.
 
-   Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
+   Because macOS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
 
    ```bash
    sudo apachectl stop
@@ -95,6 +95,10 @@ ENABLE_SENDMAIL=true
 
 [php71]: https://formulae.brew.sh/formula/php@7.1
 [php72]: https://formulae.brew.sh/formula/php@7.2
+[Composer]: https://getcomposer.org
+[Docker]: https://www.docker.com/get-started
+[docker-sync]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
+[mutagen]: https://mutagen.io/documentation/introduction/installation
 [prod-mode]: {{page.baseurl}}/cloud/docker/docker-mode-production.html
 [dev-mode]: {{page.baseurl}}/cloud/docker/docker-mode-developer.html
-[enable-xdebug]: {{page.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug
+[enable Xdebug]: {{page.baseurl}}/cloud/docker/docker-development-debug.html

@@ -27,7 +27,7 @@ The web container works with the [PHP-FPM] to serve PHP code, the **DB** image f
 
 ### Varnish container
 
-The Varnish container is based on the [magento/magento-cloud-docker-varnish][varnish] image. Varnish works on port 80.
+The Varnish container, based on the [magento/magento-cloud-docker-varnish][varnish] image, simulates Fastly and is useful for testing VCL snippets. Varnish works on port 80.
 
 ### TLS container
 
