@@ -50,9 +50,9 @@ namespace :test do
   desc 'Test Markdown style with mdl'
   task :md do
     puts 'Testing Markdown style with mdl ...'.magenta
-    output = `mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
+    output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
     puts output.yellow
-    abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
+    abort "The Markdown linter detected #{output.lines.count - 2} issue(s)".red unless output.empty?
     puts 'No issues found'.magenta
   end
 end
