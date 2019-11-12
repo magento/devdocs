@@ -1,3 +1,4 @@
+
    ---
    group: frontend-developer-guide
    title: Configure images properties for a theme
@@ -5,33 +6,33 @@
      - Frontend
      - Theme
    ---
-   
+      
    ## What's in this topic
-   
+      
    The properties of product images used on the [storefront](https://glossary.magento.com/storefront) are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
-   
+      
    The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the [theme](https://glossary.magento.com/theme) `view.xml` as well. For more details, view the [Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) topic.
-   
+      
    ## Configure image properties in view.xml {#view_xml_structure}
-   
+      
    The conventional location of `view.xml` for a theme is:
-   
+      
    ```text
    <theme_dir>/etc/view.xml
    ```
-   
+
    For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml).
-   
+      
    In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
-   
+     
    ```xml
    <images module="Magento_Catalog">
    ...
    <images/>
    ```
-   
+
    Image properties are configured for each image type defined by the `id` and `type` attributes of the `<image>` element:
-   
+      
    ```xml
    <images module="Magento_Catalog">
       <image id="unique_image_id" type="image_type">
@@ -39,7 +40,7 @@
       </image>
    <images/>
    ```
-   
+
    The following table describes the attributes in detail:
    <table>
      <tbody>
