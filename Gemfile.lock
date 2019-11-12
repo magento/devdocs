@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 7628949ce6d16a6232a0582b32465757a6e446a9
+  revision: 5e99a84dd5692d3ee4c1985b9f48824eeede8cfd
   specs:
-    devdocs (7)
-      jekyll (>= 4.0)
+    devdocs (5)
+      jekyll (>= 3.3)
 
 GEM
   remote: https://rubygems.org/
@@ -27,7 +27,7 @@ GEM
     exifr (1.3.6)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.11.2)
+    ffi (1.11.1)
     filesize (0.2.0)
     forwardable-extended (2.6.0)
     fspath (3.1.2)
@@ -114,7 +114,7 @@ GEM
       tomlrb
     multipart-post (2.1.1)
     netrc (0.11.0)
-    nokogiri (1.10.5)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
