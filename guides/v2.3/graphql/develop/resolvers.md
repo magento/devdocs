@@ -249,7 +249,7 @@ type InputParamsType {
 
 ### Resolver class
 
-Use the following sample code as a template for the GraphQl resolver mutation class:
+Use the following sample code as a template for the GraphQL resolver mutation class:
 
 ```php
 <?php
