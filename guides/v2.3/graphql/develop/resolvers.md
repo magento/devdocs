@@ -55,7 +55,7 @@ The query loads a list of products, the SKUs of their related products, and then
 
 Loading a list of related products individually for each product would be expensive performance-wise. With batch resolvers, you can load linked products for all products that were initially found, then group them by root products. After the `items` branch is resolved, a batch resolver for `related_products` will be called for the first product found. Instead of resolving the list right away, it will just add the first product to the list of products that require loading additional related products. After all the products from the `items` branch have been loaded, the lists of related products must be loaded. Then, `BatchResolverInterface::resolve()` executes with a gathered list of previous requests to `related_products` branches. At this point, the resolver is able to extract product DTOs from each GraphQL request, load all the product links, sort them by root products, and generate GraphQL values for each branch. After this is done, the same batching will take place when resolving child `related_products` branches.
 
-The following pseudo-code shows a related-products branch resolver:
+The following pseudo-code shows a `related_products` branch resolver:
 
 ```php
 class RelatedProducts implements BatchResolverInterface
