@@ -1,18 +1,15 @@
 ---
 group: javascript-developer-guide
-subgroup: 1_Javascript
 title: RequireJS in Magento
+contributor_name: Adarsh Manickam
+contributor_link: https://github.com/drpayyne
 ---
 
 This topic describes general concepts of how the [RequireJS library](http://requirejs.org){: target="_blank"} is used in Magento, with examples. Please refer to official RequireJS documentation for in-depth explanation.
 
-## RequireJS introduction {#requirejs-intro}
-
 RequireJS is a JavaScript file and module loader. It improves perceived page load times because it allows JavaScript to load in the background. In particular, it enables asynchronous JavaScript loading.
 
-## RequireJS in Magento {#requirejs-in-magento}
-
-### Configuration {#requirejs-config}
+## RequireJS configuration in Magento {#requirejs-config}
 
 All configuration is done in the `requirejs-config.js` file. It has a single root object `config` which contains the configuration options described below. All the configuration settings are optional and are used only when required. The following snippet is a sample `requirejs-config.js` describing the structure of the file. Example [`requirejs-config.js` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/base/requirejs-config.js)
 
@@ -27,7 +24,7 @@ var config = {
 }
 ```
 
-#### map {#requirejs-config-map}
+### map {#requirejs-config-map}
 
 The `map` configuration maps (connects) any real AMD modules that calls `define()`, to the specified alias. In the snippet below, `*` means all loaded RequireJS modules can use the specified alias.
 
@@ -49,7 +46,7 @@ map: {
 }
 ```
 
-#### paths {#requirejs-config-paths}
+### paths {#requirejs-config-paths}
 
 The `paths` configuration, similar to `map`, is used for aliasing not just any real AMD module that calls `define()`, but also any JS file (event from a URL), HTML templates, etc. Magento uses this to alias URLs and third party libraries.
 
@@ -60,7 +57,7 @@ paths: {
 }
 ```
 
-#### deps {#requirejs-config-deps}
+### deps {#requirejs-config-deps}
 
 The `deps` configuration is used to add a dependency. It can either be used directly under `var config = {}` or under a [shim configuration](#requirejs-config-shim). Adding modules under an independent `deps` configuration will load the specified modules in all pages.
 
@@ -70,7 +67,7 @@ In this snippet, the custom `Vendor_Module/js/module` will be loaded in all page
 deps: ['Vendor_Module/js/module']
 ```
 
-#### shim {#requirejs-config-shim}
+### shim {#requirejs-config-shim}
 
 The `shim` configuration is used to build a dependency on a third party library, since we cannot modify it.
 
@@ -92,7 +89,7 @@ shim: {
 }
 ```
 
-#### mixins {#requirejs-config-mixin}
+### mixins {#requirejs-config-mixin}
 
 The `mixins` configuration is used to overwrite component methods of an AMD module which returns either a UI component,a jQuery widget, or a JS object. Unlike the above configuration properties, the `mixins` property is under the `config` property, apart from the parent object called **config**.
 
