@@ -139,7 +139,7 @@ The `getServiceContract()` method points to the service contract to be used.
 
 The `convertToServiceArgument()` method converts GraphQL requests to a criteria item to be passed in a list as the argument to the contract. Remember that batch service contract methods must accept a single argument: a list (array) of criteria objects.
 
-The `convertFromServiceResult()` method converts one of the result items into a GraphQL response (a [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) instance or an array). Remember that batch service contracts must return result items in the same order as were the criteria items passed as the method's list argument. For example, if the first root product had the ID #555, then the first result item will contain the list of related products to product #555.
+The `convertFromServiceResult()` method converts one of the result items into a GraphQL response (a [`\Magento\Framework\GraphQl\Query\Resolver\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/GraphQl/Query/Resolver/Value.php) instance or an array). Remember that batch service contracts must return result items in the same order as were the criteria items passed as the method's list argument.
 
 The batch service contract used in the example would look something like this:
 
