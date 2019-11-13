@@ -5,9 +5,9 @@ contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 ---
 
-Category attributes were automatically displayed in the [admin](https://glossary.magento.com/admin) panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a [UI Component](https://glossary.magento.com/ui-component). This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.
+Category attributes were automatically displayed in the [admin](https://glossary.magento.com/admin) panel of Magento 1. In Magento 2, it is necessary to explicitly render them with a [UI Component](https://glossary.magento.com/ui-component). This is easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.
 
-## Step #1: Create the Attribute
+## Step #1: Create the attribute
 
 The following is a full example of an install script that creates a [category](https://glossary.magento.com/category) attribute. If you already have a category attribute, it is not necessary.
 
@@ -53,11 +53,12 @@ class InstallData implements InstallDataInterface
 }
 ```
 
-## Step #2: Display the Attribute
+## Step #2: Display the attribute
 
 The category UI Component is rendered with configuration from the `category_form.xml` file. All files with that name are merged together. As a result, you can add a field by creating a `category_form.xml` file in the `view/adminhtml/ui_component` directory in your [module](https://glossary.magento.com/module).
 
-Here is a full example of adding a field under the "Display Settings" group. It is important to note that `attribute_id` should match the ID of the attribute that you created in the install script.
+Here is an example of adding a field under the "Display Settings" group.
+It is important to note that `attribute_id` should match the ID of the attribute that you created in the install script.
 
 ```xml
 <!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml -->
@@ -83,15 +84,15 @@ Here is a full example of adding a field under the "Display Settings" group. It 
 </form>
 ```
 
-## Step #3: Upgrade and Run
+## Step #3: Upgrade and run
 
 [Upgrade the database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to install the attribute [and clear your cache]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html#howdoi-clear-how).
 
 ## How it works
 
-UI Component configuration is merged. When you add a new file, Magento will merge that with the base UI Component configuration file. In the example above, that is `category_form.xml`. The nodes inside of that reflect the structure of the base file. There are only two nodes necessary in this case before the custom field is added: `<form>` and `<fieldset>`. Inside of that, the `<field>` node is used to add a field with a name that matches the id of the attribute you want to render.
+The UI Component configuration is merged. When you add a new file, Magento will merge that with the base UI Component configuration file. In the example above, that is `category_form.xml`. The nodes inside of that reflect the structure of the base file. There are only two nodes necessary in this case before the custom field is added: `<form>` and `<fieldset>`. Inside of that, the `<field>` node is used to add a field with a name that matches the id of the attribute you want to render.
 
-The `<field>` node is declared originally in `vendor/magento/module-ui/view/base/ui_component/etc/definition.xml`. If you open that file and look for `<field>`, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the `config` elements in the example above come in important. Notice the value of `<item name="formElement">` (`checkbox`)? Now, if you look in `definition.xml`, you will find a `<checkbox>` node that has some configuration values. In the PHP class that the `<field>` element references, it looks up the `formElement` to use and loads that. As a result, `<checkbox>` is the node. In this case, that has the information that we are looking for.
+The `<field>` node is declared originally in `vendor/magento/module-ui/view/base/ui_component/etc/definition.xml`. If you open that file and look for `<field>`, you will notice that there is only a PHP class referenced - nothing particularly helpful. This is where the `config` elements in the example above come in. Notice the value of `<item name="formElement">` (`checkbox`)? If you look in `definition.xml`, you  find a `<checkbox>` node that has some configuration values. In the PHP class that the `<field>` element references, it looks up the `formElement` to use and loads that. As a result, `<checkbox>` is the node. In this case, that has the information that we are looking for.
 
 One of those elements is particularly useful when determining what XML you need to provide for your field: `<item name="component">`. That is a Javascript file that handles the functionality of the field. In our case, it is located in `vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js`. If you open that file, there is a `defaults` object which contains values that can be modified through the XML above. For example, notice: `defaults.prefer: 'checkbox'`. In the XML above, we declared `<item name="prefer">toggle</item>`. As a result, the [XML](https://glossary.magento.com/xml) value overrides the default value, and the [Javascript](https://glossary.magento.com/javascript) renders a toggle instead of a plain checkbox.
 
