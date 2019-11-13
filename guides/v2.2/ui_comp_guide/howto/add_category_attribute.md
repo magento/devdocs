@@ -33,6 +33,8 @@ class InstallData implements InstallDataInterface
 
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
+        $setup->startSetup();
+
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
         $eavSetup->addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'attribute_id', [
             'type'     => 'int',
@@ -45,6 +47,8 @@ class InstallData implements InstallDataInterface
             'global'   => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
             'group'    => 'Display Settings',
         ]);
+
+        $setup->endSetup();
     }
 }
 ```
