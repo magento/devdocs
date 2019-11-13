@@ -80,4 +80,28 @@ searchCriteria[filter_groups][0][filters][0][value][0]=4&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 ```
 
-Both `quick_search_container` and `catalog_view_container` return aggregations, specifying the particular buckets of results. This is not true for `advanced_search_container`.
+## Some differences between the search types
+
+* Only the `quick_search_container` san use `search_term` as field
+* Both `quick_search_container` and `catalog_view_container` are equipped by default to return aggregations, specifying the particular buckets of results. This is not true for `advanced_search_container`.
+* The `catalog_view_container` can query for product visibility, the `advanced_search_container` cannot
+* The `advanced_search_container` can query for product sku (and use any condition, e.g. `eq`, `like`, `finset` etc.), the `catalog_view_container` cannot
+
+
+## Some differences between GET V1/search and GET V1/products
+
+Property | Products | Search
+--- | --- | ---
+Needs authorization token| Yes | No
+Direct access to product data | Yes | No (the Search engine acts as proxy)
+Can specify any product attribute | Yes | No
+Has product data in the response | Yes | No
+Usage feels like | Admin panel product grid search | Frontend catalog search
+Results sorted by search relevance | No | Yes
+Has aggregations/buckets in the response | No | `quick_search_container` and `catalog_view_container`
+
+##Summary
+
+The `V1/search` endpoint is likely more useful assuming you have only human (or human like) search terms at hand, targeted to isolate only one, or a really limited set of products. The added benefit is that the results are pre-sorted by their applicable search relevance.
+
+In all other cases, for example when building and filtering product collections, and especially when other non-human backend data is available, e.g. attribute's options ids, the `V1/products` endpoint is always a good choice.
