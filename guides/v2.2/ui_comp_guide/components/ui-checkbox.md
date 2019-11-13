@@ -63,3 +63,39 @@ The Checkbox component implements a form field that is an [HTML](https://glossar
     <td><code>ui/form/field</code></td>
   </tr>
 </table>
+
+## Examples
+
+### Checkbox configuration
+
+The following example, adds a new configured checkbox input.
+
+```xml
+<form>
+    <fieldset>
+        <field name="myCheckbox" formElement="checkbox">
+            <settings>
+                <label translate="true">Enabled</label>
+                <tooltip>
+                    <description translate="true">This is my checkbox's description</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>toggle</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/checkbox-component-result.png)
