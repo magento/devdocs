@@ -8,8 +8,8 @@ The Range component implements the range for filtering rows in a grid. Visually,
 ## Configuration options
 
 | Option | Description | Type | Default Value |
-| -------- | --------------------- | | --------------------- | | --------------------- |
-| <code>rangeType</code> | Defines what kind of input elements the range contains. For example, if the value is <code>date</code>, then range includes two date fields. | String | - |
+| -------- | --------------------- | --------------------- | --------------------- |
+| <code>rangeType</code> | Defines what kind of input elements the range contains.<br/>For example, if the value is <code>date</code>, then range includes two date fields. | String | - |
 | <code>template</code> | Path to the component’s <code>.html</code> template. | String | <code>ui/grid/filters/elements/group</code> |
 
 ## Source files
