@@ -108,7 +108,7 @@ pages:
         - label: Configure Docker
           url: /cloud/docker/docker-config.html
           children:
-            - label: Configure Xdebug for Docker
+            - label: Xdebug for Docker
               url: /cloud/docker/docker-development-debug.html
 
             - label: Developer mode
