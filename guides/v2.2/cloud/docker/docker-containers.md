@@ -13,6 +13,14 @@ The [Magento Cloud Docker repository][docker-repo] contains build information fo
 -  **[CLI containers]**—List of containers that support CLI tools for build, deploy, and cron management.
 -  **[Web containers]**—List of containers that facilitate file management and deployment of your store, such as TLS, Varnish and Web.
 
+![Docker architecture]
+
+This is a placeholder graphic!!!!
+
+## Sharing data between host machine and container
+
+You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
+
 ## Service versions
 
 {{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator (the `docker:build` command), you can override a default service version with the following optional parameters:
@@ -35,10 +43,7 @@ For example, the following command starts the Docker configuration generator for
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
 ```
 
-## Sharing data between host machine and container
-
-You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
-
+[Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
 [Database container]: {{page.baseurl}}/cloud/docker/docker-database.html
 [CLI containers]: {{page.baseurl}}/cloud/docker/docker-cli.html
 [Web containers]: {{page.baseurl}}/cloud/docker/docker-php.html
