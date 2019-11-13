@@ -18,6 +18,15 @@ Here are the widgets that are available by default:
 -  Recently Compared Products
 -  Recently Viewed Products
 
+## Configuration options
+
+| Option | Description | Type | Required |
+| -------- | --------------------- | --------------------- | ---- |
+| `label` | The name of the widget | String | `Yes` |
+| `description` | Contains a concise explanation of the widget's purpose | String | `Yes` |
+| `parameters` | A list of widget's options | Object | `No` |
+| `containers` | A list of layout containers, where the widget may be injected | Object | `No` |
+
 This tutorial shows you how to create and insert your own widget on the frontend.
 
 ## Step 1. Declaring the widget
@@ -33,6 +42,9 @@ This tutorial shows you how to create and insert your own widget on the frontend
         <parameters>
             ...
         </parameters>
+        <containers>
+            ...
+        </containers>
     </widget>
 </widgets>
 ```
@@ -127,7 +139,7 @@ And finally, create the template that will be used for showing the widget's data
 
 ```php
 <?php
-/** \Learning\GreetingMessage\Block\Widget\Tests $block */
+/** \OrangeCompany\Learning\Block\Widget\Test $block */
 ?>
 <h3><?= $block->escapeHtml($block->getData('label')) ?></h3>
 <h3><?= $block->escapeHtml(__('Size:')) ?> <?= $block->escapeHtml($block->getData('size')) ?></h3>
