@@ -68,7 +68,7 @@ The Checkbox component implements a form field that is an [HTML](https://glossar
 
 ### Checkbox configuration
 
-The following example, adds a new configured checkbox input.
+The following example adds a new configured checkbox input.
 
 ```xml
 <form>
