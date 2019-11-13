@@ -61,6 +61,19 @@ The `updateCustomerAddress` mutation returns the `CustomerAddress` object.
 
 {% include graphql/customer-address-output.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`Address "id" value should be specified` | The `id` attribute equals to a zero.
+`Could not find a address with ID "XXX"` | Customer's address with specified entity ID in the `id` attribute does not exist.
+`Current customer does not have permission to address with ID "XXX"` | Customer tries to update address of another customer.
+`Field "updateCustomerAddress" argument "id" of type "Int!" is required but not provided.` | The `id` attribute was omitted.
+`Field "updateCustomerAddress" argument "id" requires type Int!, found "XXX".` | The specified `id` attribute value has a wrong type.
+`"input" value must be specified` | The `input` attribute is omitted or specified but is empty.
+`Syntax Error: Expected Name, found )` | The `id` and `input` attributes are omitted.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
