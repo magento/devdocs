@@ -28,7 +28,7 @@ The release notes include:
 
 -  {:.new}**Magento Cloud Patches package**–Initial release of the Magento Cloud Patches module which delivers Magento-provided patches and critical fixes in a separate composer package. Module source files are available in the [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) GitHub repository.
 
-   Magento Cloud Patches, version 1.0 adds the following patches for {{ site.data.var.ee }} applications hosted on the Cloud platform.
+   Magento Cloud Patches, version 1.0.0 adds the following patches for {{ site.data.var.ee }} applications hosted on the Cloud platform.
 
    -  {:.new}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder, such as Page Builder Beta with {{ site.data.var.ee }} versions 2.3.1 and v2.3.2.
 
