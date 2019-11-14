@@ -6,6 +6,7 @@ pages:
       children:
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
+          exclude_versions: ["2.0"]
 
     - label: Architecture
       url: /cloud/architecture/cloud-architecture.html
@@ -37,12 +38,6 @@ pages:
         - label: Git
           url: /cloud/reference/git-integration.html
 
-        - label: Bitbucket integration
-          url: /cloud/project/bitbucket-integration.html
-
-        - label: GitHub integration
-          url: /cloud/project/project-integrate-github.html
-
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
@@ -54,6 +49,7 @@ pages:
 
         - label: SendGrid
           url: /cloud/project/sendgrid.html
+          exclude_versions: ["2.0"]
 
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
@@ -87,6 +83,7 @@ pages:
 
     - label: Docker development
       url: /cloud/docker/docker-development.html
+      exclude_versions: ["2.0"]
       children:
         - label: Launch Docker
           url: /cloud/docker/docker-config.html
@@ -171,6 +168,7 @@ pages:
 
         - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
+          exclude_versions: ["2.0"]
 
           children:
             - label: Reroute requests to a CMS backend
@@ -252,9 +250,6 @@ pages:
 
             - label: Set up Redis service
               url: /cloud/project/project-conf-files_services-redis.html
-
-            - label: Set up Solr service
-              url: /cloud/project/project-conf-files_services-solr.html
 
             - label: Set up Elasticsearch service
               url: /cloud/project/project-conf-files_services-elastic.html
@@ -404,5 +399,3 @@ pages:
 
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
-
-
