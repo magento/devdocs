@@ -387,9 +387,6 @@ pages:
         - label: Theme troubleshooting
           url: /cloud/trouble/theme-troubleshooting.html
 
-    - label: Release notes
-      url: /cloud/release-notes/cloud-tools.html
-
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
@@ -405,7 +402,7 @@ pages:
         - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
-        - label: Upgrade from 2.0.4 (Cloud)
-
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html
 
 
