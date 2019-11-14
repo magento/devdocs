@@ -31,7 +31,7 @@ This tutorial shows you how to add a new dynamic rows system configuration in th
 </config>
 ```
 
-This code adds a new system config in **STORES** > Settings > **Configuration** > GENERAL > **General** > **Quantity Ranges**.
+This code adds a new system configuration in **STORES** > Settings > **Configuration** > GENERAL > **General** > **Quantity Ranges**.
 
 ## Step 2: Create the block class to describe custom field columns
 
@@ -108,7 +108,7 @@ class Ranges extends AbstractFieldArray
 }
 ```
 
-This block prepares the desired columns for inclusion in the new config.
+This block prepares the desired columns for inclusion in the new configuration.
 
 ## Step 3: Create the block class to describe a column with drop-down input
 
