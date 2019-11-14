@@ -18,28 +18,23 @@ The release notes include:
 
 ## v2002.0.22
 
--  {:.new}**Changes to the ece-tools composer package**
+The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ site.data.var.ct }}` package to decouple the release of `{{ site.data.var.ece }}` patches from the {{ site.data.var.ct }} release. Starting with this release, patches and critical fixes will be delivered using the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package. We made these changes to reduce complexity for scheduling release updates and working with community contributions.
 
-   We changed the structure of the {{ site.data.var.ct }} package to reduce complexity for scheduling updates and working with community contributions.
+-  **Changes to the ece-tools package**
 
-   -  {:.new}{{ site.data.var.ece }} patches are no longer included in the {{ site.data.var.ct }} package to allow Magento to manage and deliver patches independently without requiring an {{ site.data.var.ct }} package release. These patches are now delivered in a separate Magento Cloud Patches package that is a required dependency for the {{ site.data.var.ct }} package.
+   -  {:.new}Moved the {{ site.data.var.ee }} patches from the `{{ site.data.var.ct }}` package to a new [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer package.
 
-   -  {:.new}Updated the composer requirements for the {{ site.data.var.ct }} package to add a dependency for the `magento/magento-cloud-patches` package.
+   -  {:.new}Updated the `composer.json` file for the `{{ site.data.var.ct }}` package to add a dependency for the `magento/magento-cloud-patches` v1.0.0 package.
 
--  {:.new}**Magento Cloud Patches package**–Initial release of the Magento Cloud Patches module which delivers Magento-provided patches and critical fixes in a separate composer package. Module source files are available in the [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) GitHub repository.
+-  **Patches and critical fixes**–Update your Cloud environments with `{{ site.data.var.ct }}` version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the `magento/magento-cloud-patches` v1.0.0 package.
 
-   Magento Cloud Patches, version 1.0.0 adds the following patches for {{ site.data.var.ee }} applications hosted on the Cloud platform.
+   -  {:.fix}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
 
-   -  {:.new}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
+   -  {:.fix}<!--MAGECLOUD-4428-->**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.
 
-   -  {:.new}<!--MAGECLOUD-4428-->**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.
+   -  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
 
-   -  {:.new}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the new `Magento\Framework\Mail\EmailMessageInterface` introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
-
-   -  {:.new}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
-
-  {:.bs-callout-warning}
-  You must update to {{ site.data.var.ct }} version 2002.0.22 or later to apply the patches included in Magento Cloud Patches, version 1.0.0.
+   -  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
 
 ## v2002.0.21
 
