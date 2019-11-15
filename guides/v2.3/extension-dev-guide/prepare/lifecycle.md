@@ -34,7 +34,7 @@ If the `schema_version` for your module is found in the `setup_module` table, Ma
 **Example:** InstallSchema.php
 
 ```php
-class \VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
+class VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
     /**
      * {@inheritdoc}
