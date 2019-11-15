@@ -20,13 +20,13 @@ The release notes include:
 
 The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ site.data.var.ct }}` package to decouple the release of `{{ site.data.var.ece }}` patches from the {{ site.data.var.ct }} release. Starting with this release, patches and critical fixes will be delivered using the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package. We made these changes to reduce complexity for scheduling release updates and working with community contributions.
 
--  **Changes to the ece-tools package**
+-  {:.new}**Changes to the ece-tools package**
 
    -  {:.new}Moved the {{ site.data.var.ee }} patches from the `{{ site.data.var.ct }}` package to a new [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer package.
 
    -  {:.new}Updated the `composer.json` file for the `{{ site.data.var.ct }}` package to add a dependency for the `magento/magento-cloud-patches` v1.0.0 package.
 
--  **Patches and critical fixes**–Update your Cloud environments with `{{ site.data.var.ct }}` version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the `magento/magento-cloud-patches` v1.0.0 package.
+-  {:.fix}**Patches and critical fixes**–Update your Cloud environments with `{{ site.data.var.ct }}` version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the `magento/magento-cloud-patches` v1.0.0 package.
 
    -  {:.fix}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
 
