@@ -235,11 +235,11 @@ By simply defining a set of key requests for Blackfire to profile— `/home`, `/
 
 ### Writing your first automated tests and scenarios
 
-You can easily write tests and scenarios for Blackfire to execute. Create a `.blackfire.yml` file and store it at your project root directory.
+You can easily write tests and scenarios for Blackfire to execute. Create a `.blackfire.yaml` file and store it at your project root directory.
 
 Try adding the following scenarios in the file:
 
-> .blackfire.yml
+> .blackfire.yaml
 
 ```yaml
 scenarios:
@@ -257,7 +257,7 @@ See the Blackfire documentation on [Writing tests](https://blackfire.io/docs/coo
 
 ### Running your tests automatically {#automation}
 
-Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire to run your tests automatically in various ways:
+Once you create and deploy your `.blackfire.yaml` file, you can enable Blackfire to run your tests automatically in various ways:
 
 -  **Automated builds on Integration**—Whenever you push code on an Integration, Staging, or Production branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See Blackfire notifications.
 
