@@ -3,18 +3,15 @@
 namespace :multirepo do
   desc 'Create a file tree for devdocs website and get all required content'
   task :init do
-    ssh = 'git@github.com:'
-    https = 'https://${token}@github.com/'
-    protocol =
-      if ENV['token']
-        https
-      else
-        ssh
-      end
-
+    protocol = ENV['token'] ? "https://#{ENV['token']}@github.com/" : 'git@github.com:'
     content_map = DocConfig.new.content_map
     content_map.each do |subrepo|
-      sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
+      sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}" do |ok,res|
+        if !ok
+          puts "Couldn't checkout files for the #{subrepo['repository']} project".red
+          exit 1
+        end
+      end
     end
   end
 
