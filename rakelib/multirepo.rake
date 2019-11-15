@@ -8,8 +8,7 @@ namespace :multirepo do
     content_map.each do |subrepo|
       sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}" do |ok,res|
         if !ok
-          puts "Couldn't checkout files for the #{subrepo['repository']} project".red
-          exit 1
+          abort "Couldn't checkout files for the #{subrepo['repository']} project".red
         end
       end
     end
