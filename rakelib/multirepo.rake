@@ -11,7 +11,7 @@ namespace :multirepo do
     end
   end
 
-  desc 'Reinitialize subrepositories'
+  desc 'Reinitialize subrepositories. CAUTION: This will remove directories and associated git repositories listed in Docfile'
   task reinit: %w[clean] do
     content_map = DocConfig.new.content_map
     content_map.each do |subrepo|
