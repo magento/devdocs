@@ -9,8 +9,6 @@ namespace :multirepo do
       repo_url = protocol + subrepo['repository'] + '.git'
       add_subrepo(subrepo['directory'], repo_url , subrepo['branch'], subrepo['filter'])
     end
-
-    
   end
 
   desc 'Reinitialize subrepositories'
@@ -24,7 +22,6 @@ namespace :multirepo do
     end
     Rake::Task['init'].invoke
   end
-
 
   desc 'Add multirepo docs providing shell arguments "dir=<directory where to init a repo>", "repo=<SSH URL>", "branch=<branch to checkout>", "filter=<true/false>" ("true" by default) to 1) filter content if "true" or 2) add content from the entire repository if "false".'
   task :add do
