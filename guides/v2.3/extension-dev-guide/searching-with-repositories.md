@@ -120,9 +120,8 @@ Search Result objects hold the Search Criteria object and the retrieved entities
 
 The search engine determines the maximum number of results that a query can return. For SQL searches, the maximum is the value  of the `PHP_INT_MAX` environment variable. For Elasticsearch, the value is defined in the `Elasticsearch/etc/di.xml` file. The default is 10000.
 
-The example below defines a **getList** usage with the [`ProductRepositoryInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/ProductRepositoryInterface.php).
-
-In this example we use the [`FilterBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/FilterBuilder.php) and the [`SearchCriteriaBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteriaBuilder.php) to avoid shared instances.
+The example below uses **getList** with the [`ProductRepositoryInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/ProductRepositoryInterface.php).
+We use the [`FilterBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/FilterBuilder.php) and the [`SearchCriteriaBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteriaBuilder.php) to avoid shared instances.
 
 ```php
 $filter = $this->filterBuilder
