@@ -28,6 +28,7 @@ There are 3 nodes for the web servers. In addition to vertical scaling by increa
 This complements the vertical scaling provided by the database tier. Consider the following when scaling the web tier:
 
 You must use the same instance type and size for each node. Examples include:
+
 -  all `M4 xlarge` for WEB
 -  all `C4 xlarge` for DB
 
