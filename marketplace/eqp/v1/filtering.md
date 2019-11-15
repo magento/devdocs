@@ -59,7 +59,7 @@ The following request filters all `themes` sorted by `platform` in ascending ord
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
+     https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 
 **Response**

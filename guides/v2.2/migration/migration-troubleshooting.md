@@ -46,12 +46,14 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
             <ignore>
                 <document>sales_flat_invoice_grid</document>
             </ignore>
+        </document_rules>
+        <field_rules>
             <!-- Ignore `address_id` field of `sales_flat_order_address` table -->
             <ignore>
                 <field>sales_flat_order_address.address_id</field>
             </ignore>
             ...
-        </document_rules>
+        </field_rules>
     </source>
     ...
 ```

@@ -37,12 +37,6 @@ pages:
         - label: Git
           url: /cloud/reference/git-integration.html
 
-        - label: Bitbucket integration
-          url: /cloud/project/bitbucket-integration.html
-
-        - label: GitHub integration
-          url: /cloud/project/project-integrate-github.html
-
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
@@ -105,7 +99,6 @@ pages:
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
-      exclude_versions: ["2.0"]
       children:
         - label: Bitbucket integration
           url: /cloud/integrations/bitbucket-integration.html
@@ -179,7 +172,7 @@ pages:
             - label: Block referral spam
               url: /cloud/cdn/fastly-vcl-badreferer.html
 
-            - label: Secure access to the Magento Admin UI
+              - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
             - label: Custom blacklist VCL
@@ -252,9 +245,6 @@ pages:
 
             - label: Set up Redis service
               url: /cloud/project/project-conf-files_services-redis.html
-
-            - label: Set up Solr service
-              url: /cloud/project/project-conf-files_services-solr.html
 
             - label: Set up Elasticsearch service
               url: /cloud/project/project-conf-files_services-elastic.html
@@ -405,7 +395,5 @@ pages:
         - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
-        - label: Upgrade from 2.0.4 (Cloud)
-
-
-
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html

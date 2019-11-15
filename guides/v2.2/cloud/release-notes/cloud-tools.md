@@ -18,6 +18,23 @@ The release notes include:
 
 ## v2002.0.22
 
+The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ site.data.var.ct }}` package to decouple the release of `{{ site.data.var.ece }}` patches from the {{ site.data.var.ct }} release. Starting with this release, patches and critical fixes will be delivered using the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package. We made these changes to reduce complexity for scheduling release updates and working with community contributions.
+
+-  {:.new}**Changes to the ece-tools package**
+
+   -  {:.new}Moved the {{ site.data.var.ee }} patches from the `{{ site.data.var.ct }}` package to a new [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer package.
+
+   -  {:.new}Updated the `composer.json` file for the `{{ site.data.var.ct }}` package to add a dependency for the `magento/magento-cloud-patches` v1.0.0 package.
+
+-  {:.fix}**Patches and critical fixes**–Update your Cloud environments with `{{ site.data.var.ct }}` version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the `magento/magento-cloud-patches` v1.0.0 package.
+
+   -  {:.fix}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
+
+   -  {:.fix}<!--MAGECLOUD-4428-->**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.
+
+   -  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
+
+   -  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
 
 ## v2002.0.21
 
@@ -65,7 +82,11 @@ The release notes include:
 
 -  {:.new}**Docker Updates**—
 
+<<<<<<< HEAD
    -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See[Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
+=======
+   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
+>>>>>>> master
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 

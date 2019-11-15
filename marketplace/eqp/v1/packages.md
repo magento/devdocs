@@ -580,7 +580,7 @@ curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
      --data-binary  @/tmp/one-click-submission-1.0.0.json \
-     https://developer-api.magento.com/rest/v1/products/packages
+     https://developer-stg-api.magento.com/rest/v1/products/packages
 ```
 
 **Response**
@@ -640,7 +640,7 @@ curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
      -d '{ "action" : { "overall" : "publish"} }' \
-     https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be
+     https://developer-stg-api.magento.com/rest/v1/products/packages/f4eacd72be
 ```
 
 The HTTP response code will indicate success or failure.
@@ -735,7 +735,7 @@ This sample call lists all packages belonging to a user:
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages
+     https://developer-stg-api.magento.com/rest/v1/products/packages
 ```
 
 **Response**
@@ -894,7 +894,7 @@ In the previous example, submission `f4eacd72be` failed. Specify the submission_
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages/f4eacd72be/status
+     https://developer-stg-api.magento.com/rest/v1/products/packages/f4eacd72be/status
 ```
 
 **Response**
@@ -981,7 +981,7 @@ A sample cURL request filtering all `themes` sorted by `platform` in ascending o
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
+     https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 
 **Response**
