@@ -73,3 +73,11 @@ task :whatsnew do
     puts 'The "since" argument must be a string/ Example: "jul 4"'
   end
 end
+
+desc 'Generate index for Algolia'
+task index: %w[init] do
+  sh 'bin/jekyll',
+      'algolia',
+      '--config=_config.yml,_config.index.yml',
+      '--dry-run'
+end
