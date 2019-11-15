@@ -38,14 +38,6 @@ pages:
         - label: Git
           url: /cloud/reference/git-integration.html
 
-        - label: Bitbucket integration
-          url: /cloud/project/bitbucket-integration.html
-          include_versions: ["2.0"]
-
-        - label: GitHub integration
-          url: /cloud/project/project-integrate-github.html
-          include_versions: ["2.0"]
-
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
@@ -138,7 +130,6 @@ pages:
 
         - label: Set up PayPal
           url: /cloud/live/paypal-onboarding.html
-          exclude_versions: ["2.0"]
 
         - label: Set up Magento B2B
           url: /cloud/configure/setup-b2b.html
@@ -165,22 +156,20 @@ pages:
       children:
         - label: Set up Fastly
           url: /cloud/cdn/configure-fastly.html
-          exclude_versions: ["2.0"]
           children:
             - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
         - label: Web Application Firewall
           url: /cloud/cdn/fastly-waf-service.html
-          exclude_versions: ["2.0"]
 
         - label: Image Optimization
           url: /cloud/cdn/fastly-image-optimization.html
-          exclude_versions: ["2.0"]
 
         - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
+
           children:
             - label: Reroute requests to a CMS backend
               url: /cloud/cdn/fastly-vcl-wordpress.html
@@ -208,7 +197,7 @@ pages:
 
         - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
-          exclude_versions: ["2.0"]
+
           children:
             - label: Set up notifications
               url: /cloud/env/setup-notifications.html
@@ -224,28 +213,23 @@ pages:
 
             - label: Global variables
               url: /cloud/env/variables-global.html
-              exclude_versions: ["2.0"]
-
+    
             - label: Build variables
               url: /cloud/env/variables-build.html
-              exclude_versions: ["2.0"]
-
+    
             - label: Cloud variables
               url: /cloud/env/variables-cloud.html
               include_versions: ["2.1","2.2","2.3"]
 
             - label: Deploy variables
               url: /cloud/env/variables-deploy.html
-              exclude_versions: ["2.0"]
 
             - label: Post-deploy variables
               url: /cloud/env/variables-post-deploy.html
-              exclude_versions: ["2.0"]
-
+    
             - label: Working with variables
               url: /cloud/env/working-with-variables.html
-              exclude_versions: ["2.0"]
-
+    
         - label: Routes
           url: /cloud/project/project-conf-files_routes.html
           children:
@@ -267,20 +251,15 @@ pages:
             - label: Set up Redis service
               url: /cloud/project/project-conf-files_services-redis.html
 
-            - label: Set up Solr service
-              url: /cloud/project/project-conf-files_services-solr.html
-              include_versions: ["2.0"]
-
             - label: Set up Elasticsearch service
               url: /cloud/project/project-conf-files_services-elastic.html
-              exclude_versions: ["2.0"]
-
+    
             - label: Set up RabbitMQ service
               url: /cloud/project/project-conf-files_services-rabbit.html
 
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
-      include_versions: ["2.1","2.2","2.3"]
+      include_versions: [2.2","2.3"]
       children:
         - label: Example of managing system-specific settings
           url: /cloud/live/sens-data-initial.html
@@ -381,7 +360,6 @@ pages:
 
         - label: Reset cron jobs
           url: /cloud/trouble/reset-cron-jobs.html
-          exclude_versions: ["2.0"]
 
         - label: Resolve issues with encryption key
           url: /cloud/trouble/trouble-crypt-key-variable.html
@@ -394,7 +372,6 @@ pages:
 
         - label: Restore configuration files
           url: /cloud/trouble/restore-configuration-files.html
-          exclude_versions: ["2.0"]
 
         - label: Site availability
           url: /cloud/trouble/site-availability.html
@@ -408,17 +385,11 @@ pages:
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Release notes for ece-tools
-          url: /cloud/release-notes/cloud-tools.html
-          exclude_versions: ["2.0"]
-
         - label: Upgrade to use ece-tools
           url: /cloud/project/ece-tools-upgrade-project.html
-          exclude_versions: ["2.0"]
 
         - label: Update ece-tools version
           url: /cloud/project/ece-tools-update.html
-          exclude_versions: ["2.0"]
 
         - label: Apply custom patches
           url: /cloud/project/project-patch.html
@@ -426,6 +397,5 @@ pages:
         - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
-        - label: Upgrade from 2.0.4 (Cloud)
-          include_versions: ["2.0"]
-
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html
