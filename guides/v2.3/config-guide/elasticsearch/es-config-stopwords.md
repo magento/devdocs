@@ -143,5 +143,4 @@ Save your changes to `di.xml` and exit the text editor.
     ```
 
 1. In your module, create the directory `etc/stopwords`, with the corresponding `.csv`.
-[files inside.]({{ page.mage2blobtree }}/{{ page.guide_version }}/app/code/Magento/Elasticsearch/etc/stopwords){:target="_blank"}
 Save your changes to `di.xml` and exit the text editor.
