@@ -54,7 +54,12 @@ To enable or disable the profiler:
 1. Log in to your Magento server.
 1. Change to your Magento installation directory.
 1. As the Magento file system owner, enter the following command to configure the profiler:
-
+   Please ensure you are running the Magento application in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
+   You can enable this mode with the command:
+       
+   ```bash
+   bin/magento deploy:mode:set developer
+   ```
    To enable the profiler using type `html` and create a flagfile:
 
    ```bash
