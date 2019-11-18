@@ -139,7 +139,7 @@ The user you add receives an email inviting them to join the {{site.data.var.ece
 After you add a new user to an environment, you must rebuild and deploy the environment. Rebuilds are triggered when you push a new commit to an environment. To trigger a rebuild without changing any code, use the the following command to to create an empty commit and "force" rebuilding the environment:
 
 ```bash
-`git commit --allow-empty -m "redeploy" && git push <branch name>`
+git commit --allow-empty -m "redeploy" && git push <branch name>
 ```
 
 The new user cannot access the environment until it is successfully built and deployed.
