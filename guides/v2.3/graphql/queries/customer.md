@@ -192,7 +192,7 @@ query {
 
 The following query returns the customer's wish list:
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -219,7 +219,7 @@ The following query returns the customer's wish list:
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -17,7 +17,7 @@ Use the [`customerCart` query]({{page.baseurl}}/graphql/queries/customer-cart.ht
 
 In the following example, the customer had one Overnight Duffle in the cart (`CYmiiQRjPVc2gJUc5r7IsBmwegVIFO43`) before a guest cart (`mPKE05OOtcxErbk1Toej6gw6tcuxvT9O`) containing a Radiant Tee and another Overnight Duffle was merged. The cart now includes three items, including two Overnight Duffles.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -34,7 +34,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

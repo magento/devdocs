@@ -346,7 +346,7 @@ This section illustrates some of the many ways that you can use the `products` q
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -372,7 +372,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 }
 ```
 
-**Response**
+**Response:**
 
 The search returns 45 items, but only the first two items are returned on the current page.
 
@@ -426,7 +426,7 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -456,7 +456,7 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -517,7 +517,7 @@ The following query returns aggregations for a query that filters on items with 
 -  In the price range of $30 - $39.99
 -  Comes in black (color `49`)
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -551,7 +551,7 @@ The following query returns aggregations for a query that filters on items with 
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show sample response %}
 
@@ -931,7 +931,7 @@ The following query returns aggregations for a query that filters on items with 
 
 In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected options that cause the price to vary. If you choose to query a product that is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -974,7 +974,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -1025,7 +1025,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
 
 The following query shows how to get related products, up-sells, and cross-sells for a product:
 
-**Request**
+**Request:**
 
 ```graphql
 {

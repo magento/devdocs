@@ -34,7 +34,7 @@ categoryList (
 
 The following query returns information about category IDs `11` and `20` and two levels of subcategories. In the sample data, category IDs `11` and `20` are assigned to the `Men` and `Women` categories, respectively.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -60,7 +60,7 @@ The following query returns information about category IDs `11` and `20` and two
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -221,7 +221,7 @@ The following query returns information about category IDs `11` and `20` and two
 
 The following query returns breadcrumb information about categories that have the name `Tops`.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -239,7 +239,7 @@ The following query returns breadcrumb information about categories that have th
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
