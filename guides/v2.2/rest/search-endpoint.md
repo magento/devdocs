@@ -79,7 +79,7 @@ searchCriteria[filter_groups][0][filters][0][value]=digital watch
 
 ### Advanced searches
 
-The `advanced_search_container` request performs more complex searches, like those possible on the Advanced Search page. 
+The `advanced_search_container` request performs more complex searches, like those possible on the Advanced Search page.
 
 The default filters for advanced searches can use the following [field] value:
 
