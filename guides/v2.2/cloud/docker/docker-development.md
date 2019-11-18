@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Docker development
+title: Local development using Docker
 functional_areas:
   - Cloud
   - Docker
