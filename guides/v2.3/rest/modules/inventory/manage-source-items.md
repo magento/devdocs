@@ -6,7 +6,7 @@ title: Manage source items
 
 If Magento is configured to manage inventory, when you upgrade to version 2.3, Magento assigns all existing products to the default source. Currently, Magento also assigns newly-created products to the default source. Single Source merchants do not need to manage source items, but Multi Source merchants may need to move products from the default source to a custom source, or move products from one custom source to another.
 
-**Service names**
+**Service names:**
 
 ```http
 inventoryApiSourceItemsDeleteV1
@@ -14,7 +14,7 @@ inventoryApiSourceItemsSaveV1
 inventoryApiSourceItemRepositoryV1
 ```
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 POST V1/inventory/source-items-delete
@@ -22,7 +22,7 @@ POST V1/inventory/source-items
 GET V1/inventory/source-items
 ```
 
-**sourceItems parameters**
+**sourceItems parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
@@ -38,11 +38,11 @@ Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more
 {:.bs-callout .bs-callout-warning}
 Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation](https://github.com/magento-engcom/msi/wiki/Overview) for more details.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/source-items-delete`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -57,7 +57,7 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -69,11 +69,11 @@ Magento returns an empty array.
 
 The following example assigns `1000` units of product `new_product1` to the `central` source and `2000` units to the `east` source. It also assigns `500` units of product `new_product2` to the `central` source and `250` units to the `east` source.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/source-items`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -104,7 +104,7 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -116,15 +116,15 @@ The following call returns all source items for `sku` = `new_product2`.
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/source-items?searchCriteria[filter_groups][0][filters][0][field]=sku&searchCriteria[filter_groups][0][filters][0][value]=new_product2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 

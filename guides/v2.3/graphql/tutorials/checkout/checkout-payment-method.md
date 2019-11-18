@@ -21,7 +21,7 @@ Use the following `cart` query to determine which payment methods which are avai
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -37,7 +37,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -65,7 +65,7 @@ There are two mutation queries in GraphQl which can be use to set the payment me
 
 Use the `setPaymentMethodOnCart` mutation to set the payment method for your order. The value `checkmo` ("Check / Money order" payment method code) was returned in the query.
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -87,7 +87,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 If the operation is successful, the response contains the code of the selected payment method.
 
@@ -109,7 +109,7 @@ If the operation is successful, the response contains the code of the selected p
 
 Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -126,7 +126,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 If the operation is successful, the response contains the order ID.
 

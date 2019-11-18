@@ -81,7 +81,7 @@ If module context is defined for a file:
 1. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
 1. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
-**Example**
+**Example:**
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
@@ -110,7 +110,7 @@ So if you need to customize a certain template, you need to create an overriding
 
 For example, if you must override the `<Magento_Catalog_module_dir>/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
 
-**Example**
+**Example:**
 By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping-cart) products are listed under the Go to [Checkout](https://glossary.magento.com/checkout) button:
 
 ![In the minishopping cart products are listed under the Go to Checkout button]({{ site.baseurl }}/common/images/inherit_mini1.png)
@@ -144,7 +144,7 @@ To add an extending layout file:
 
 *  Put your custom layout file in the `<theme_dir>/<Vendor>_<Module>/layout/` directory.
 
-**Example**
+**Example:**
 
 OrangeCo decided they should remove the "Report bugs" link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` :

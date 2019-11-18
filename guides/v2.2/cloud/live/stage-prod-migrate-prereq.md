@@ -26,7 +26,7 @@ For Starter, merge all code into a "staging" branch for testing prior to deployi
 
 You can deploy to Starter environments from the Project Web Interface or using CLI commands.
 
-**Prerequisites**
+**Prerequisites:**
 
 1. Get your [access URLs and SSH](#starter-urls) information.
 1. [Add your public SSH key](#add-public-ssh-key) to your project.

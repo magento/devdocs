@@ -15,7 +15,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call updates the first name and email address for a specific customer.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -33,7 +33,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

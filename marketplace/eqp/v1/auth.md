@@ -44,7 +44,7 @@ The following endpoint grants an application session token:
 POST /rest/v1/app/session/token
 ```
 
-**Parameters**
+**Parameters:**
 
 You must specify the grant type in the request body:
 
@@ -62,7 +62,7 @@ Field details:
 
 Other parameters are accepted but ignored.
 
-**Request**
+**Request:**
 
 The following example shows a request to the sandbox, using the application ID and secret from above:
 
@@ -74,7 +74,7 @@ curl -X POST \
      https://developer-stg-api.magento.com/rest/v1/app/session/token
 ```
 
-**Response**
+**Response:**
 
 A successful HTTP 200 OK response will be sent for a valid application ID and secret:
 

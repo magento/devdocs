@@ -29,7 +29,7 @@ When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payflow Pro payment method.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -56,7 +56,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

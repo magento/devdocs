@@ -17,7 +17,7 @@ In this tutorial, you will learn to copy custom data from a [quote](https://glos
 
 The following code defines a simple [extension attribute][1] named `demo` for the Cart and Order objects.
 
-**etc/extension_attributes.xml**
+**etc/extension_attributes.xml:**
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Api/etc/extension_attributes.xsd">
@@ -36,7 +36,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 The following code adds the `demo` field to the `sales_convert_quote` fieldset with the `to_order` aspect.
 The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.
 
-**etc/fieldset.xml**
+**etc/fieldset.xml:**
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataObject/etc/fieldset.xsd">

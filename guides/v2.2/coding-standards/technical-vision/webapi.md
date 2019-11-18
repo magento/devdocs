@@ -70,7 +70,7 @@ To extend an interface, use [extension attributes]({{ page.baseurl }}/extension-
 
 Any new design related to Web API must satisfy the following constraints to keep the model consistency.
 
-**General**
+**General:**
 
 1. REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for storefront scenarios.
 1. Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.
@@ -86,7 +86,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.
 
-**GraphQL**
+**GraphQL:**
 
 1. Unlimited nesting should be supported during requests for related entities. (For example, get Order => Order Items => Products => Related Products)
 1. Field filtration must be performed with SQL queries. Do not filter on the application layer after you've fetched all possible fields.
@@ -96,7 +96,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.
 1. The Store code should be passed via headers.
 
-**REST**
+**REST:**
 
 1. The resource URL should be versioned (for example: V1). The version must be specified in the following format: `V\d.+`
 1. Resource names in a URL should be in plural form (for example: products, carts)
@@ -108,7 +108,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. Responses must return responses with standard [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
 1. The store code must be passed via URL. For example `GET /rest/frenchStoreView/V1/products`. Persistence operations that should be performed for all stores at once, should have 'all' store code in the URL.
 
-**SOAP**
+**SOAP:**
 
 1. SOAP is designed for systems integration. It supports token authentication for customers and admins, as well as no authentication for anonymous service methods. Cookie authentication and OAuth 1.0 are not supported.
 1. The schema is available in the form of a WSDL for all exposed services.

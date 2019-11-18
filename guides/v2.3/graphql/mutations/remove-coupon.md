@@ -15,7 +15,7 @@ The `removeCouponFromCart` mutation removes a previously-applied coupon from the
 
 The following example removes a coupon from the cart.
 
-**Request**
+**Request:**
 
 ``` text
 mutation {
@@ -44,7 +44,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -21,7 +21,7 @@ Cart functionality is defined in the `Quote` module. A Quote represents the cont
 
 The following query shows the status of a cart that is ready to be converted into an order.
 
-**Request**
+**Request:**
 
 ```text
 query {
@@ -127,7 +127,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

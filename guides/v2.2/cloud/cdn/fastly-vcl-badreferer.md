@@ -14,7 +14,7 @@ The following example shows how to configure [Fastly Edge Dictionary](https://do
 {: .bs-callout-info }
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running them against the Production environment.
 
-**Prerequisites**
+**Prerequisites:**
 
 -  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 

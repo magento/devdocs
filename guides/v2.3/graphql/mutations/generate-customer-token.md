@@ -15,7 +15,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call creates a new customer token.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -28,7 +28,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

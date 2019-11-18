@@ -61,7 +61,7 @@ Attribute |  Data Type | Description
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Braintree payment method.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -83,7 +83,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -20,7 +20,7 @@ You must specify the customer's authorization token in the header of the call.
 
 The following example returns all the current customer's payment tokens. The `public_hash` output values will be unique to your application.
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -35,7 +35,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

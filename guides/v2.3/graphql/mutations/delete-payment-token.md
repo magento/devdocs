@@ -16,7 +16,7 @@ You must specify the customer's authorization token in the header of the call.
 
 The following example deletes the Discover Card listed in the results of the `customerPaymentTokens` query. The `public_hash` you specify will be unique to your application.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -37,7 +37,7 @@ mutation {
 
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
