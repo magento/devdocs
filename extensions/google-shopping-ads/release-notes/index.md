@@ -33,9 +33,7 @@ Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3
 
 -  {:.fix}**Add to Cart**: <!--CHAN-3861-->Corrected an issue causing an error when hovering over an item on the store landing page and clicking **Add to Cart**. With this release, if all item required item options (size, color, etc) are not complete when attempting to **Add to Cart**, a message appears stating that you must choose options for your item.
 
--  {:.fix}**Verify and Claim Site**: <!--CHAN-3822-->Corrected an issue causing your site to become [Unclaimed](https://docs.magento.com/m2/ee/user_guide/sales-channels/google-ads/manually-verify-claim-site.html) in your [Google Merchant Center account](https://docs.magento.com/m2/ee/user_guide/sales-channels/google-ads/google-account-managment.html) when attempting to create a new Google ads campaign. This issue also prevented the site from being reclaimed.
-
--  {:.fix}**Onboarding FAQ**: <!--CHAN-3822-->Corrected the _Read FAQ_ link on the initial _Welcome to Google Shopping ads Channel in Magento_ screen.
+-  {:.fix}**Onboarding FAQ**: <!--CHAN-3829-->Corrected the _Read FAQ_ link on the initial _Welcome to Google Shopping ads Channel in Magento_ screen.
 
 ### v3.0.1
 
