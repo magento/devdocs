@@ -6,7 +6,6 @@ pages:
       children:
         - label: Onboarding tasks
           url: /cloud/onboarding/onboarding-tasks.html
-          exclude_versions: ["2.0"]
 
     - label: Architecture
       url: /cloud/architecture/cloud-architecture.html
@@ -49,7 +48,6 @@ pages:
 
         - label: SendGrid
           url: /cloud/project/sendgrid.html
-          exclude_versions: ["2.0"]
 
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
@@ -83,16 +81,33 @@ pages:
 
     - label: Docker development
       url: /cloud/docker/docker-development.html
-      exclude_versions: ["2.0"]
       children:
-        - label: Launch Docker
+        - label: Docker container architecture
+          url: /cloud/docker/docker-containers.html
+          children:
+            - label: Database container
+              url: /cloud/docker/docker-database.html
+
+            - label: CLI containers
+              url: /cloud/docker/docker-cli.html
+
+            - label: PHP container
+              url: /cloud/docker/docker-php.html
+
+        - label: Configure Docker
           url: /cloud/docker/docker-config.html
+          children:
+            - label: Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
 
-        - label: Configure Xdebug for Docker
-          url: /cloud/docker/docker-development-debug.html
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
 
-        - label: Connect to the database
-          url: /cloud/docker/docker-database.html
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
+
+            - label: Extend Docker
+              url: /cloud/docker/docker-extend.html
 
         - label: Functional testing in Docker
           url: /cloud/docker/docker-development-testing.html
@@ -102,7 +117,6 @@ pages:
 
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
-      exclude_versions: ["2.0"]
       children:
         - label: Bitbucket integration
           url: /cloud/integrations/bitbucket-integration.html
@@ -133,7 +147,6 @@ pages:
 
         - label: Set up Magento B2B
           url: /cloud/configure/setup-b2b.html
-          include_versions: ["2.2","2.3"]
 
         - label: Set up cron jobs
           url: /cloud/configure/setup-cron-jobs.html
@@ -168,7 +181,6 @@ pages:
 
         - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
-          exclude_versions: ["2.0"]
 
           children:
             - label: Reroute requests to a CMS backend
@@ -219,7 +231,6 @@ pages:
     
             - label: Cloud variables
               url: /cloud/env/variables-cloud.html
-              include_versions: ["2.1","2.2","2.3"]
 
             - label: Deploy variables
               url: /cloud/env/variables-deploy.html
@@ -259,7 +270,6 @@ pages:
 
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
-      include_versions: [2.2","2.3"]
       children:
         - label: Example of managing system-specific settings
           url: /cloud/live/sens-data-initial.html
