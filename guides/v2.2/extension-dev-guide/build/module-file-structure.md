@@ -102,6 +102,6 @@ For more details on the theme folder structure, see [Magento theme structure]({{
 
 {% include php-dev/lang-pack-file-struct.md %}
 
-**Next**
+**Next:**
 
 [Register your component]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html)

@@ -16,7 +16,7 @@ Use any of the following ways to determine which version of Magento is installed
 
 The following command returns the Magento version.
 
-**Command**
+**Command:**
 
 ```bash
 bin/magento --version

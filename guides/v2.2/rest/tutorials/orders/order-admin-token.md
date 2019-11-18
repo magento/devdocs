@@ -33,7 +33,7 @@ Element | Description
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Identifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
 
-**HTTP headers**
+**HTTP headers:**
 
 This section indicates which key/value pairs you must specify in the HTTP headers. All calls require one or more HTTP headers.
 

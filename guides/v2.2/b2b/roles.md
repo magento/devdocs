@@ -71,7 +71,7 @@ DELETE /V1/company/role/:roleId
 GET /V1/company/role/
 ```
 
-**RoleInterface Parameters**
+**RoleInterface Parameters:**
 
 The following table lists the parameters defined in `RoleInterface`.
 
@@ -82,7 +82,7 @@ Name | Description | Format | Requirements
 `permissions` | A list of resources and permissions granted to the role. See the Permissions array table below for details. | Array[string] |  Required to create a role
 `company_id` | The company associated with this role  | integer | Required to create a role
 
-**Permissions array**
+**Permissions array:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

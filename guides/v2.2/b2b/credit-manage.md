@@ -222,7 +222,7 @@ POST /V1/companyCredits/:creditId/decreaseBalance
 POST /V1/companyCredits/:creditId/increaseBalance
 ```
 
-**Balance Parameters**
+**Balance Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

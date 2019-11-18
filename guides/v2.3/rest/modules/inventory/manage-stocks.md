@@ -25,7 +25,7 @@ DELETE /V1/inventory/stocks/:stockId
 GET /V1/inventory/stocks
 ```
 
-**StockInterface parameters**
+**StockInterface parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---

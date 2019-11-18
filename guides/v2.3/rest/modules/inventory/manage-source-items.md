@@ -22,7 +22,7 @@ POST V1/inventory/source-items
 GET V1/inventory/source-items
 ```
 
-**sourceItems parameters**
+**sourceItems parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---

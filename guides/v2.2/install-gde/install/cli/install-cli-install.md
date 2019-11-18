@@ -71,7 +71,7 @@ The following tables describe the installation option names and values. For exam
 {: .bs-callout-info }
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
-**Admin credentials**
+**Admin credentials:**
 
 The following options specify the user information and credentials for the Magento admin user.
 

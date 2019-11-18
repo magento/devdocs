@@ -31,7 +31,7 @@ PUT /V1/inventory/sources/:sourceCode
 GET /V1/inventory/sources
 ```
 
-**SourceInterface parameters**
+**SourceInterface parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---

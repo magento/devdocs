@@ -554,7 +554,7 @@ The SynonymsIndex.xml page must contain the following block to be able to run th
 
 Now you can run `generate.php` as we did before to re-generate page classes.
 
-**How to code 'Enter data according to a data set'**
+**How to code 'Enter data according to a data set':**
 
 We need to enter data from a data set into the form fields.
 
@@ -570,7 +570,7 @@ The `Search/Test` directory in functional tests should be constructed in a simil
 
 We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
-**Form mapping**
+**Form mapping:**
 
 [Learn about form mapping.][].
 
@@ -631,7 +631,7 @@ In previous step, we created blocks with methods that enable us to perform the r
 
 To associate methods with [pages][], blocks must be added to pages.
 
-**Search Synonym page**
+**Search Synonym page:**
 
 A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
 
@@ -646,7 +646,7 @@ The page with a block:
 </config>
 ```
 
-**New Synonym Group page**
+**New Synonym Group page:**
 
 A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsNew.xml`
 
@@ -708,7 +708,7 @@ Remember our test flow:
 
 Let's code it!
 
-**Log in to Admin and open the Search Synonym page**
+**Log in to Admin and open the Search Synonym page:**
 
 In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 

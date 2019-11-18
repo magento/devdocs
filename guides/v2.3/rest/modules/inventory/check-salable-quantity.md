@@ -23,7 +23,7 @@ GET /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQ
 GET /V1/inventory/stock-resolver/:type/:code
 ```
 
-**Path parameters**
+**Path parameters:**
 
 Name | Description | Type
 --- | --- | ---

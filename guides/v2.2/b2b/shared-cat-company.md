@@ -22,7 +22,7 @@ POST /V1/sharedCatalog/:sharedCatalogId/unassignCompanies
 GET  /V1/sharedCatalog/:sharedCatalogId/companies
 ```
 
-**Company parameters**
+**Company parameters:**
 
 {: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.

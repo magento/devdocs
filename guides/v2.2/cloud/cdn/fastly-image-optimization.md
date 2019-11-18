@@ -22,7 +22,7 @@ Based on your configuration settings, the Fastly Image Optimization (Fastly IO) 
 
 You can enable Fastly image optimization (Fastly IO) from the Admin panel by uploading the Fastly IO VCL snippet. When you upload the VCL snippet, it provides the Fastly service with configuration instructions to process all images through image optimizers, using default configurations.
 
-**Prerequisites**
+**Prerequisites:**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
 -  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)

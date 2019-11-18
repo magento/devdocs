@@ -33,7 +33,7 @@ POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
 ```
 
-**Category parameters**
+**Category parameters:**
 
 {: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
@@ -144,7 +144,7 @@ POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
 ```
 
-**Category parameters**
+**Category parameters:**
 
 {: .bs-callout-info }
 Although you can specify other parameters defined within a `products` object, the `sku` is the only one used to assign or unassign a product to a shared catalog.

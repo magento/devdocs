@@ -58,7 +58,7 @@ Element | Description
 
 The **Scope:** section is included when the tutorial requires that you send requests to different stores.
 
-**HTTP headers**
+**HTTP headers:**
 
 This section indicates which key/value pairs you must specify in the HTTP headers. All calls require one or more HTTP headers.
 

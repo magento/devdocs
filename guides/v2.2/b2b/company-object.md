@@ -30,7 +30,7 @@ DELETE /V1/company/:companyId
 GET /V1/company/
 ```
 
-**CompanyInterface Parameters**
+**CompanyInterface Parameters:**
 
 The following table lists the parameters defined in `CompanyInterface`.
 

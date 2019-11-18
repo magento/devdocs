@@ -54,7 +54,7 @@ Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload 1**
+**Payload 1:**
 
 ```json
 {
@@ -66,7 +66,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response 1**
+**Response 1:**
 
 ```json
 {
@@ -80,7 +80,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Payload 2**
+**Payload 2:**
 
 ```json
 {
@@ -92,7 +92,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response 2**
+**Response 2:**
 
 ```json
 {

@@ -76,7 +76,7 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 `POST <host>/rest/<store_code>/V1/inventory/source-selection-algorithm-result`
 
-**inventoryRequest parameters**
+**inventoryRequest parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
@@ -247,7 +247,7 @@ None
 
 The `GET /V1/inventory/get-distance` endpoint calculates the distance between two points, given the longitude and latitude of the source and distance.
 
-**URL parameters**
+**URL parameters:**
 
 Name | Description
 --- | ---
@@ -272,7 +272,7 @@ The distance, in kilometers
 
 The `GET /V1/inventory/get-latlng-from-address` endpoint calculates the latitude and longitude of the shipping address.
 
-**URL parameters**
+**URL parameters:**
 
 Name | Description
 --- | ---

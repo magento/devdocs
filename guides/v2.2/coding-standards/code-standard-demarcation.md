@@ -28,7 +28,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
 
-**Acceptable**
+**Acceptable:**
 
 ```html
 <section id="information-dialog-tree">
@@ -38,7 +38,7 @@ Helps simplify and unify naming conventions that are used to apply visual styles
 <a href="#information-dialog-tree">Scroll to text</a></a>
 ```
 
-**Unacceptable**
+**Unacceptable:**
 
 ```html
 <section id="some_id">
@@ -57,7 +57,7 @@ Helps simplify and unify naming conventions that are used to apply visual styles
 -  Forces engineers to think about reusable page components instead of unique singleton components.
 -  Reduces long-term maintenance efforts.
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.
 
@@ -74,7 +74,7 @@ The following acceptable example is terse and uses an Accessible Rich Internet A
 <a href="#some-id">Scroll to text</a>
 ```
 
-**Unacceptable combination of PHTML, JavaScript, and CSS files**
+**Unacceptable combination of PHTML, JavaScript, and CSS files:**
 
 The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.
 
@@ -86,13 +86,13 @@ The following unacceptable example replaces a single PHTML file with a combinati
 </ul>
 ```
 
-**JavaScript file**
+**JavaScript file:**
 
 ```js
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 ```
 
-**CSS file**
+**CSS file:**
 
 ```css
 #my-special-menu { ... }
@@ -283,7 +283,7 @@ $('[role="menu"]').navigation();
 
 HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at the beginning and must be written in lowercase.
 
-**Acceptable**
+**Acceptable:**
 
 ```html
 <div class="tab-element _active">Content</div>
@@ -292,7 +292,7 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report _hidden">Content</div>
 ```
 
-**Unacceptable**
+**Unacceptable:**
 
 ```html
 <div class="tab-element active">Content</div>

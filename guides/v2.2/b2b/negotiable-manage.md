@@ -29,7 +29,7 @@ GET /V1/negotiableQuote/attachmentContent
 PUT /V1/negotiableQuote/:quoteId/shippingMethod
 ```
 
-**NegotiableQuoteManagementInterface Parameters**
+**NegotiableQuoteManagementInterface Parameters:**
 
 The following table lists the parameters defined in `CompanyInterface`.
 

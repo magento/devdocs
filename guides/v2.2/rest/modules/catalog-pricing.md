@@ -32,7 +32,7 @@ POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
 ```
 
-**SpecialPriceStorageInterface Parameters**
+**SpecialPriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -206,7 +206,7 @@ POST /V1/products/tier-prices-information
 POST /V1/products/tier-prices-delete
 ```
 
-**TierPriceStorageInterface Parameters**
+**TierPriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -404,7 +404,7 @@ POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 ```
 
-**BasePriceStorageInterface Parameters**
+**BasePriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -498,7 +498,7 @@ POST /V1/products/cost-information
 POST /V1/products/cost-delete
 ```
 
-**CostStorageInterface Parameters**
+**CostStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

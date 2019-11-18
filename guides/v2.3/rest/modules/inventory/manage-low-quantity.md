@@ -29,7 +29,7 @@ GET /V1/inventory/low-quantity-notification/:sourceCode/:sku
 POST /V1/inventory/low-quantity-notifications-delete
 ```
 
-**sourceItemConfigurations parameters**
+**sourceItemConfigurations parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---

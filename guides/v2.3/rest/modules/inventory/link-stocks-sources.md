@@ -25,7 +25,7 @@ POST /V1/inventory/stock-source-links-delete
 GET /V1/inventory/stock-source-links
 ```
 
-**StockSourceLink parameters**
+**StockSourceLink parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---

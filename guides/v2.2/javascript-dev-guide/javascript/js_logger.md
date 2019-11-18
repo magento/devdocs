@@ -106,7 +106,7 @@ Returns all available log entries. It can additionally filter out the entries th
 -  `level: number`: Entry's level.
 -  `data?: Object`: Additional data associated with the entry.
 
-**Properties**
+**Properties:**
 
 -  `message: string`: Entry's message.
 
