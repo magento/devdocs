@@ -45,7 +45,7 @@ The `require` section of `app/code/<Vendor>/<Module>/composer.json` file contain
     "magento/module-variable": "100.3.*",
     "magento/module-widget": "101.1.*",
     "magento/module-authorization": "100.3.*"
-   },
+   }
    ...
 ```
 
@@ -57,15 +57,27 @@ A module with a *soft dependency* on another module can function properly withou
 *  Extend another module's configuration.
 *  Extend another module's [layout](https://glossary.magento.com/layout).
 
-The `<sequence>` section of `app/code/<Vendor>/<Module>/etc/module.xml` file contains soft dependency definitions for the module. For example:
+The `suggest` section of `app/code/<Vendor>/<Module>/composer.json` file contains soft dependency definitions for the module. For example:
+
+```json
+  ...
+  "suggest": {
+    "magento/module-graph-ql": "*",
+    "magento/module-graph-ql-cache": "*",
+    "magento/module-store-graph-ql": "*"
+  }
+   ...
+```
+
+The `<sequence>` node of `app/code/<Vendor>/<Module>/etc/module.xml` file also contains soft dependency definitions for the module. For example:
 
 ```xml
   <module name="Magento_Cms">
-     <sequence>
-        <module name="Magento_Store"/>
-        <module name="Magento_Theme"/>
-        <module name="Magento_Variable"/>
-     </sequence>
+    <sequence>
+      <module name="Magento_Store"/>
+      <module name="Magento_Theme"/>
+      <module name="Magento_Variable"/>
+    </sequence>
   </module>
 ```
 
