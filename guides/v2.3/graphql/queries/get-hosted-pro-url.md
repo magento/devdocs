@@ -13,7 +13,7 @@ The `getHostedProUrl` query is required to complete a transaction when the [PayP
 
 The following query returns the customer's wish list:
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -23,7 +23,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

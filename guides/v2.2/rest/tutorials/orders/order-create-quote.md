@@ -38,21 +38,21 @@ Magento identifies three types of users that can create a shopping cart:
 
 This tutorial manages the cart of a logged-in customer. Unless otherwise noted, all calls must specify customer's token `q0u66k8h42yaevtchv09uyy3y9gaj2ap` in the header.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 The response is the `quoteId`: `4`
 

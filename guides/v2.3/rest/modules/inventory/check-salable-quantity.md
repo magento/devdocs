@@ -5,7 +5,7 @@ title: Check salable quantities
 
 Magento provides several endpoints that allow you to check whether a product from a specified stock is salable and the available quantity.
 
-**Service names**
+**Service names:**
 
 ```http
 inventorySalesApiGetProductSalabilityV1
@@ -14,7 +14,7 @@ inventorySalesApiIsProductSalableForRequestedQtyV1
 inventorySalesApiStockResolverV1
 ```
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 GET /V1/inventory/get-product-salable-quantity/:sku/:stockId
@@ -23,7 +23,7 @@ GET /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQ
 GET /V1/inventory/stock-resolver/:type/:code
 ```
 
-**Path parameters**
+**Path parameters:**
 
 Name | Description | Type
 --- | --- | ---
@@ -37,7 +37,7 @@ Name | Description | Type
 
 This call returns the available quantity of a product assigned to the specified stock ID.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/get-product-salable-quantity/sp2/2`
 
@@ -46,11 +46,11 @@ Name | Description | Type
 `sku` | The SKU of the product | String
 `stock_id` | The ID of the stock the product is assigned to | Integer
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 An integer indicating the salable quantity of the product, such as `75`.
 
@@ -58,15 +58,15 @@ An integer indicating the salable quantity of the product, such as `75`.
 
 This call returns a boolean value that indicates whether the product from the specified stock is salable.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/is-product-salable/sp2/2`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 `true` or `false`
 
@@ -74,15 +74,15 @@ None
 
 This call indicates whether a product is salable for the specified quantity and stock ID.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/is-product-salable-for-requested-qty/sp2/2/30`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -95,15 +95,15 @@ None
 
 This call returns the stock ID associated with the specified sales channel type and name.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/stock-resolver/website/na_site`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {

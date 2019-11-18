@@ -16,7 +16,7 @@ The `giftCardAccount` query returns information for a specific gift card.
 
 The following example returns information about the `01PNC9L76H4H` gift card code.
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -31,7 +31,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

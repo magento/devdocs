@@ -17,7 +17,7 @@ The `addVirtualProductsToCart` mutation allows you to add multiple virtual produ
 
 The Luma sample data does not include any virtual products. The following example requires that you create a virtual product with the `sku` value of `Membership-Gold` with a price of $49.99.
 
-**Request**
+**Request:**
 
 ```text
 
@@ -53,7 +53,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

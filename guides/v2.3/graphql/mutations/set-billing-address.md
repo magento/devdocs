@@ -15,7 +15,7 @@ The `setBillingAddressOnCart` mutation sets the billing address for a specific c
 
 The following example creates a new billing address for a specific cart.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -54,7 +54,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

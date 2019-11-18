@@ -13,7 +13,7 @@ The `isEmailAvailable` query checks whether the specified email has already been
 
 The following example checks whether the email address `customer@example.com` is available to create a customer account.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -23,7 +23,7 @@ The following example checks whether the email address `customer@example.com` is
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

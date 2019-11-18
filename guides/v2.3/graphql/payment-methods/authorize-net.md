@@ -41,7 +41,7 @@ Attribute |  Data Type | Description
 
 The following example assigns the `authorizenet_acceptjs` payment method to the specified cart.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -66,7 +66,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -14,7 +14,7 @@ Store credit must be enabled on the store to run this mutation.
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -45,7 +45,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

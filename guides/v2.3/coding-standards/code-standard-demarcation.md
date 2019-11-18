@@ -30,7 +30,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 
 -  Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
 
-**Acceptable**
+**Acceptable:**
 
 ```html
 <section id="information-dialog-tree">
@@ -40,7 +40,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 <a href="#information-dialog-tree">Scroll to text</a></a>
 ```
 
-**Unacceptable**
+**Unacceptable:**
 
 ```html
 <section id="some_id">
@@ -59,7 +59,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 -  Forces engineers to think about reusable page components instead of unique singleton components.
 -  Reduces long-term maintenance efforts.
 
-**Acceptable [PHTML](https://glossary.magento.com/phtml) template**
+**Acceptable [PHTML](https://glossary.magento.com/phtml) template:**
 
 The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.
 
@@ -76,11 +76,11 @@ The following acceptable example is terse and uses an Accessible Rich Internet A
 <a href="#some-id">Scroll to text</a>
 ```
 
-**Unacceptable combination of PHTML, JavaScript, and CSS files**
+**Unacceptable combination of PHTML, JavaScript, and CSS files:**
 
 The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.
 
-**PHTML file**
+**PHTML file:**
 
 ```php
 <ul id="my-special-menu">
@@ -90,13 +90,13 @@ The following unacceptable example replaces a single PHTML file with a combinati
 </ul>
 ```
 
-**JavaScript file**
+**JavaScript file:**
 
 ```js
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 ```
 
-**CSS file**
+**CSS file:**
 
 ```css
 #my-special-menu { ... }
@@ -127,14 +127,14 @@ The following list will help you make a distinction between the actual meaning o
 
 ### You must use semantic HTML markup only, and must not use presentation markup
 
-**Acceptable**:
+**Acceptable:**
 
 ```html
 <p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
 ```
 
-**Unacceptable**:
+**Unacceptable:**
 
 ```html
 <p>HTML has been created to <b>semantically</b> represent documents.</p>
@@ -152,7 +152,7 @@ As the first option, you are required to use [HTML](https://glossary.magento.com
 -  Allows changing look and feel without affecting business functionality, and vice versa.
 -  Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
-**Acceptable CSS selectors**
+**Acceptable CSS selectors:**
 
 ```css
 .notices-wrapper { ... }
@@ -166,7 +166,7 @@ a:hover { ... }
 nav li._active { ... }
 ```
 
-**Unacceptable CSS selectors**
+**Unacceptable CSS selectors:**
 
 ```css
 #header { ... }
@@ -190,7 +190,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 
 %}
 
-**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
+**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file:**
 
 ```js
 ...
@@ -207,7 +207,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 ...
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 this.element.on('click', function() {
@@ -225,13 +225,13 @@ this.element.on('click', function() {
 -  Enforces clean, strict separation between visual presentation and markup.
 -  Enables frontend teams quickly and easily clean up old styles.
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 <div class="no-display"> ... </div>
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <div style="display: none;"> ... </div>
@@ -245,14 +245,14 @@ this.element.on('click', function() {
 -  Allows frontend and backend teams to work independently.
 -  Allows changing business logic without affecting styling and vice versa.
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 <div data-action="delete" data-mage-init="{myWidget: [option1: 'string']}"></div>
 <div data-role="tooltip">More details</div>
 ```
 
-**Acceptable JavaScript file**
+**Acceptable JavaScript file:**
 
 ```js
 options {
@@ -268,13 +268,13 @@ $( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 ...
 ```
 
-**Unacceptable PHTML file**
+**Unacceptable PHTML file:**
 
 ```html
 <div id="my-widget"></div>
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 $('#my-widget').doSomething();
@@ -287,7 +287,7 @@ $('[role="menu"]').navigation();
 
 HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at the beginning and must be written in lowercase.
 
-**Acceptable**
+**Acceptable:**
 
 ```html
 <div class="tab-element _active">Content</div>
@@ -296,7 +296,7 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report _hidden">Content</div>
 ```
 
-**Unacceptable**
+**Unacceptable:**
 
 ```html
 <div class="tab-element active">Content</div>
@@ -309,14 +309,14 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 
 -  Allows frontend teams to modify markup and themes without affecting business logic.
 
-**Acceptable JavaScript file**
+**Acceptable JavaScript file:**
 
 ```js
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 this.element.children().children().html('hello world');
@@ -337,7 +337,7 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 -  Simplifies debugging and reduces number of files to be modified.
 -  Makes styles more extensible and easier to override when needed.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...
@@ -350,7 +350,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ...
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -368,7 +368,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 -  Reduces long term maintenance by having frontend business logic stored in one place.
 -  Reduces the number of files to be modified.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...
@@ -379,7 +379,7 @@ public function getSelectorOptions()
 ...
 ```
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 ...
@@ -389,7 +389,7 @@ public function getSelectorOptions()
 
 or
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 ...
@@ -404,7 +404,7 @@ or
 ...
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -417,7 +417,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ...
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <?php echo $this->getAfterElementHtml(); ?>
@@ -428,7 +428,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 -  Reduces long-term maintenance efforts by having markup stored in one place.
 -  Reduces the number of files to be modified.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...
@@ -444,7 +444,7 @@ public function getAttributeId($element)
 ...
 ```
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 <span class="attribute-change-checkbox">
@@ -458,7 +458,7 @@ public function getAttributeId($element)
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -470,7 +470,7 @@ public function getCheckbox($elementName){
 ...
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <span class="attribute-change-checkbox">

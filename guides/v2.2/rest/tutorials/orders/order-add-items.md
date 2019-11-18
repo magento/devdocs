@@ -24,17 +24,17 @@ To add a [simple product](https://glossary.magento.com/simple-product) to a cart
 
 The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/items`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -46,7 +46,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -65,17 +65,17 @@ The requirements for adding a [downloadable product](https://glossary.magento.co
 
 The following example adds the downloadable product Advanced Pilates & Yoga (`sku`: 240-LV08)
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/items`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -87,7 +87,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -135,17 +135,17 @@ The `GET /V1/configurable-products/:sku/children` call returns information about
 
 We now know the values for `option_value` for `size` and `color` are `168` and `52`, so we're ready to add the product to the cart.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/items`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -172,7 +172,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -317,17 +317,17 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 *  8 ft Sprite Yoga strap (`id`: `6`)
 *  Sprite Foam Roller (`id`: `8`)
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/items`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 {% collapsible Show code sample %}
 
@@ -369,7 +369,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 {% endcollapsible %}
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 

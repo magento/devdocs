@@ -15,7 +15,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call updates the customer's password.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -29,7 +29,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -21,7 +21,7 @@ If you place an order as a guest user, you must set a quote email address. Use t
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -36,7 +36,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
