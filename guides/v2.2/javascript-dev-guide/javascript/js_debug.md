@@ -24,7 +24,8 @@ To locate scripts used for a certain element:
       Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/<Vendor>/<theme>/<locale>/requirejs-config.js`
 
    1. In the `var config = {...}` section of `requirejs-config.js`, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains [module](https://glossary.magento.com/module) reference:
-      -  If the module context is not specified, the path is relative to `<theme_dir>/web` (current theme). If the file is not found there, according to the [assets fallback], it is searched for in parent theme `web` directory, and then `lib/web`(library) directory. For example, `knockoutjs/knockout` [script name]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/base/requirejs-config.js#L10) resolves to `lib/web/knockoutjs/knockout.js`.
+   
+      -  If the module context is not specified, the path is relative to `<theme_dir>/web` (current theme). If the file is not found there, according to the assets fallback, it is searched for in the parent theme `web` directory, and then the `lib/web`(library) directory. For example, `knockoutjs/knockout` [script name]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/base/requirejs-config.js#L10) resolves to `lib/web/knockoutjs/knockout.js`.
       -  If the module context is specified, the path is relative to `<theme_dir>/<Namespace>_<Module>/web` (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the `<module_dir>` (module) directory. For example, `Magento_Catalog/js/list` [script name]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/requirejs-config.js#L9) resolves to `Magento_Catalog_module_dir/view/frontend/web/js/list.js`.
 
 ## Locate JS component: example
@@ -50,7 +51,7 @@ According to the JS components initialization notation, this means that this cod
 To find the source file of `menu.js`, open `requirejs-config.js` by clicking the link to it in the section of the page source. The path to `menu.js` is specified there as follows:
 
 ```js
-    "menu":                   "mage/menu",
+"menu": "mage/menu",
 ```
 
 This means we should check for `mage/menu.js` the following locations, in the following priority order (according to the [assets fallback rules]):
