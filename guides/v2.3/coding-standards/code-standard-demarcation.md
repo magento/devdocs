@@ -59,7 +59,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
 -  Forces engineers to think about reusable page components instead of unique singleton components.
 -  Reduces long-term maintenance efforts.
 
-**Acceptable [PHTML](https://glossary.magento.com/phtml) template**
+**Acceptable [PHTML](https://glossary.magento.com/phtml) template:**
 
 The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.
 
@@ -76,7 +76,7 @@ The following acceptable example is terse and uses an Accessible Rich Internet A
 <a href="#some-id">Scroll to text</a>
 ```
 
-**Unacceptable combination of PHTML, JavaScript, and CSS files**
+**Unacceptable combination of PHTML, JavaScript, and CSS files:**
 
 The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.
 
@@ -127,14 +127,14 @@ The following list will help you make a distinction between the actual meaning o
 
 ### You must use semantic HTML markup only, and must not use presentation markup
 
-**Acceptable**:
+**Acceptable:**
 
 ```html
 <p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
 ```
 
-**Unacceptable**:
+**Unacceptable:**
 
 ```html
 <p>HTML has been created to <b>semantically</b> represent documents.</p>
@@ -152,7 +152,7 @@ As the first option, you are required to use [HTML](https://glossary.magento.com
 -  Allows changing look and feel without affecting business functionality, and vice versa.
 -  Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
-**Acceptable CSS selectors**
+**Acceptable CSS selectors:**
 
 ```css
 .notices-wrapper { ... }
@@ -166,7 +166,7 @@ a:hover { ... }
 nav li._active { ... }
 ```
 
-**Unacceptable CSS selectors**
+**Unacceptable CSS selectors:**
 
 ```css
 #header { ... }
@@ -190,7 +190,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 
 %}
 
-**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
+**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file:**
 
 ```js
 ...
@@ -207,7 +207,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 ...
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 this.element.on('click', function() {
@@ -268,13 +268,13 @@ $( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 ...
 ```
 
-**Unacceptable PHTML file**
+**Unacceptable PHTML file:**
 
 ```html
 <div id="my-widget"></div>
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 $('#my-widget').doSomething();
@@ -428,7 +428,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 -  Reduces long-term maintenance efforts by having markup stored in one place.
 -  Reduces the number of files to be modified.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...

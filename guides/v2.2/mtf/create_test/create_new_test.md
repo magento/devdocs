@@ -480,7 +480,7 @@ Let's see the data set with data.
 
 In [Step 3][], we added two [pages][] to the test case class. Because both pages are in the Admin area, we should create them in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory.
 
-**SynonymsIndex.xml**
+**SynonymsIndex.xml:**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -491,7 +491,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 </config>
 ```
 
-**SynonymsNew.xml**
+**SynonymsNew.xml:**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -523,7 +523,7 @@ Let's see in the [test description][] what actions must be performed:
 1. Enter data according to a data set.
 1. Click the "Save Synonym Group" button.
 
-**How to code 'Click the "New Synonym Group" button'**
+**How to code 'Click the "New Synonym Group" button':**
 
 Fortunately, you already have a [block][] that contains a method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
 
@@ -615,7 +615,7 @@ Then we should add the block class to the `SynonymsNew.xml` page object. To iden
 <block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
 ```
 
-**How to code 'Click the "Save Synonym Group" button'**
+**How to code 'Click the "Save Synonym Group" button':**
 
 The `save()` method from the [`\Magento\Backend\Test\Block\FormPageActions`][] block class allows you to click the "Save Synonym Group" button.
 
@@ -716,7 +716,7 @@ In the FTF, the process of logging in doesn't require a special method and is pe
 $this->synonymsIndex->open();
 ```
 
-**Click the "New Synonym Group" button**
+**Click the "New Synonym Group" button:**
 
 To Click the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
@@ -726,7 +726,7 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
  This action opens the New Synonym Group page.
 
-**Enter data according to a data set**
+**Enter data according to a data set:**
 
 To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
@@ -734,7 +734,7 @@ To enter data in the form, we use the `fill()` method from the `synonymForm` blo
 $this->synonymsNew->getSynonymForm()->fill($synonym);
 ```
 
-**Click the "Save Synonym Group" button**
+**Click the "Save Synonym Group" button:**
 
 A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
 
@@ -742,7 +742,7 @@ A `save()` method with parameters defined in a `formPageActions` block. Paramete
 $this->synonymsNew->getFormPageActions()->save();
 ```
 
-**Full `test()` definition**
+**Full `test()` definition:**
 
 ```php
 /**

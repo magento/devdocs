@@ -28,7 +28,7 @@ GET /V1/companyCredits/company/:companyId
 GET /V1/companyCredits/
 ```
 
-**Company credit parameters**
+**Company credit parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -232,7 +232,7 @@ Name | Description | Format | Requirements
 `comment` | Describers the operation | String | Optional
 `options` | An object that provides additional information for increasing or decreasing the credit balance | Object | Optional
 
-**`options` parameters**
+**`options` parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

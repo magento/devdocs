@@ -26,7 +26,7 @@ DELETE  /V1/sharedCatalog/:sharedCatalogId
 GET  /V1/sharedCatalog/
 ```
 
-**Shared catalog parameters**
+**Shared catalog parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

@@ -85,7 +85,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--admin-user`|Magento administrator username.|Yes|
 |`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
 
-**Site, database, and RabbitMQ configuration options**
+**Site, database, and RabbitMQ configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
@@ -116,7 +116,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-virtualhost`|{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 
-**Lock configuration options**
+**Lock configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |

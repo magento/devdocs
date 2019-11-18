@@ -148,7 +148,7 @@ As the first option, you are required to use [HTML](https://glossary.magento.com
 -  Allows changing look and feel without affecting business functionality, and vice versa.
 -  Enables frontend teams to clean up old styles quickly and easily when refactoring.
 
-**Acceptable CSS selectors**
+**Acceptable CSS selectors:**
 
 ```css
 .notices-wrapper { ... }
@@ -162,7 +162,7 @@ a:hover { ... }
 nav li._active { ... }
 ```
 
-**Unacceptable CSS selectors**
+**Unacceptable CSS selectors:**
 
 ```css
 #header { ... }
@@ -186,7 +186,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 
 %}
 
-**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
+**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file:**
 
 ```js
 ...
@@ -203,7 +203,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
 ...
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 this.element.on('click', function() {
@@ -221,13 +221,13 @@ this.element.on('click', function() {
 -  Enforces clean, strict separation between visual presentation and markup.
 -  Enables frontend teams quickly and easily clean up old styles.
 
-**Acceptable PHTML template**
+**Acceptable PHTML template;**
 
 ```php
 <div class="no-display"> ... </div>
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <div style="display: none;"> ... </div>
@@ -241,14 +241,14 @@ this.element.on('click', function() {
 -  Allows frontend and backend teams to work independently.
 -  Allows changing business logic without affecting styling and vice versa.
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 <div data-action="delete" data-mage-init="{myWidget: [option1: 'string']}"></div>
 <div data-role="tooltip">More details</div>
 ```
 
-**Acceptable JavaScript file**
+**Acceptable JavaScript file:**
 
 ```js
 options {
@@ -264,13 +264,13 @@ $( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 ...
 ```
 
-**Unacceptable PHTML file**
+**Unacceptable PHTML file:**
 
 ```php
 <div id="my-widget"></div>
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 $('#my-widget').doSomething();
@@ -305,14 +305,14 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 
 Allows frontend teams to modify markup and themes without affecting business logic.
 
-**Acceptable JavaScript file**
+**Acceptable JavaScript file:**
 
 ```js
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
 ```
 
-**Unacceptable JavaScript file**
+**Unacceptable JavaScript file:**
 
 ```js
 this.element.children().children().html('hello world');
@@ -333,7 +333,7 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 -  Simplifies debugging and reduces number of files to be modified.
 -  Makes styles more extensible and easier to override when needed.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...
@@ -346,7 +346,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ...
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -364,7 +364,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 -  Reduces long term maintenance by having frontend business logic stored in one place.
 -  Reduces the number of files to be modified.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 ...
@@ -375,7 +375,7 @@ public function getSelectorOptions()
 ...
 ```
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 ...
@@ -385,7 +385,7 @@ public function getSelectorOptions()
 
 or
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 ...
@@ -400,7 +400,7 @@ or
 ...
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -413,7 +413,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ...
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <?php echo $this->getAfterElementHtml(); ?>
@@ -424,7 +424,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 -  Reduces long-term maintenance efforts by having markup stored in one place.
 -  Reduces the number of files to be modified.
 
-**Acceptable PHP file**
+**Acceptable PHP file:**
 
 ```php
 public function getAttributeName($element)
@@ -439,7 +439,7 @@ public function getAttributeId($element)
 ...
 ```
 
-**Acceptable PHTML template**
+**Acceptable PHTML template:**
 
 ```php
 <span class="attribute-change-checkbox">
@@ -453,7 +453,7 @@ public function getAttributeId($element)
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 ```
 
-**Unacceptable PHP file**
+**Unacceptable PHP file:**
 
 ```php
 ...
@@ -465,7 +465,7 @@ public function getCheckbox($elementName){
 ...
 ```
 
-**Unacceptable PHTML template**
+**Unacceptable PHTML template:**
 
 ```php
 <span class="attribute-change-checkbox">

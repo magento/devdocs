@@ -27,7 +27,7 @@ POST /V1/customers/
 PUT /V1/customers/:customerId
 ```
 
-**Company user parameters**
+**Company user parameters:**
 
 The following table lists the parameters that can be used to create a company user.
 
