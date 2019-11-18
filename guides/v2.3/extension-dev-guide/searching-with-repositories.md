@@ -120,6 +120,23 @@ Search Result objects hold the Search Criteria object and the retrieved entities
 
 The search engine determines the maximum number of results that a query can return. For SQL searches, the maximum is the value  of the `PHP_INT_MAX` environment variable. For Elasticsearch, the value is defined in the `Elasticsearch/etc/di.xml` file. The default is 10000.
 
+The example below uses **getList** with the [`ProductRepositoryInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/ProductRepositoryInterface.php).
+We use the [`FilterBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/FilterBuilder.php) and the [`SearchCriteriaBuilder`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteriaBuilder.php) to avoid shared instances.
+
+```php
+$filter = $this->filterBuilder
+    ->setField(ProductInterface::NAME)
+    ->setConditionType('like')
+    ->setValue('%hoodie%')
+    ->create();
+
+$this->searchCriteriaBuilder->addFilters([$filter]);
+$this->searchCriteriaBuilder->setPageSize(20);
+
+$searchCriteria = $this->searchCriteriaBuilder->create();
+$productsItems  = $this->productRepository->getList($searchCriteria)->getItems();
+```
+
 ### Search Criteria Unify Processing {#m2devgde-searchcriteria-unify-processing}
 
 A Collection Processor is an implementation of the [`CollectionProcessorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php) interface that unifies the application of custom filters, sorting, and paginating.
