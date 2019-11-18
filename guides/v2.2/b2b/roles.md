@@ -57,11 +57,11 @@ Magento_Company::credit_history | view | 3
 
 The Company Admin controls the possible actions for each customer within the company by creating common roles with embedded permissions and then assigning them to company users. In most cases, a few roles will be sufficient to cover all the different possible combinations of permissions needed for a company.
 
-**Service Name**
+**Service Name:**
 
 `companyRoleRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/company/role/
@@ -97,11 +97,11 @@ This example creates a role named "Junior Buyer". It allows the assignee to acce
 
 All resources that are not explicitly allowed are denied. You must specify the `Magento_Company::index` resource in all calls.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/company/role`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -120,7 +120,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json
@@ -291,11 +291,11 @@ Each update call must include all resources the assignee will have access to.
 
 This example call adds access to all Negotiable Quote resources except "View quotes of subordinate users" to the Junior Buyer role.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/company/role/6`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -319,7 +319,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json
@@ -488,15 +488,15 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 This call returns the `id`, role name, and set of permissions defined within the specified `role_id`.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/company/role/6`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json
@@ -665,15 +665,15 @@ None
 
 You cannot delete a role if it is the only role defined within the company.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/company/role/5`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -683,15 +683,15 @@ The following call returns all roles that have been created for a company  (`com
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json

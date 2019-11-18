@@ -19,7 +19,7 @@ The credit limit is allocated by seller, while available credit and outstanding 
 
 When you create a company, the credit limit is set to 0. Use the `PUT /V1/companyCredits/:id` call to change this value and perform other updates to the company's credit settings.
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 PUT /V1/companyCredits/:id
@@ -45,15 +45,15 @@ Name | Description | Format | Requirements
 
 This call changes the company's credit limit to $1000. The `available_limit` parameter is calculated, so you cannot specify the value.
 
-**Service Name**
+**Service Name:**
 
 `companyCreditCreditLimitRepositoryV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/companyCredits/2`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -66,7 +66,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -84,19 +84,19 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 
 This call returns data on the credit limit for the specified credit ID.
 
-**Service Name**
+**Service Name:**
 
 `companyCreditCreditLimitRepositoryV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/companyCredits/2`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -114,19 +114,19 @@ Not applicable
 
 This call returns information about the credit limit for a specified company.
 
-**Service Name**
+**Service Name:**
 
 `companyCreditCreditLimitManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/companyCredits/company/2`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -146,15 +146,15 @@ The following call returns information for all companies whose credit balance is
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/companyCredits?searchCriteria[filter_groups][0][filters][0][field]=balance&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -211,11 +211,11 @@ Not applicable
 
 The company's outstanding balance can be updated as the buyer makes payments, purchases, and other transactions.
 
-**Service Name**
+**Service Name:**
 
 `companyCreditCreditBalanceManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 POST /V1/companyCredits/:creditId/decreaseBalance
@@ -245,11 +245,11 @@ Name | Description | Format | Requirements
 
 This call increases the company credit with an Allocate, Update, Refund, Revert, or Reimburse transaction. (You cannot specify the Purchased (3) operation type.) This call also decreases the company's outstanding balance.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/companyCredits/2/increaseBalance`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -260,7 +260,7 @@ This call increases the company credit with an Allocate, Update, Refund, Revert,
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the increase to the company credit balance succeeded
 
@@ -268,11 +268,11 @@ This call increases the company credit with an Allocate, Update, Refund, Revert,
 
 This call decreases the company credit with an Update (operation type = 2), Purchased (3), or Reimbursed (4) transaction. (You cannot specify the other operation types.) This call also increases company's outstanding balance.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/companyCredits/2/decreaseBalance`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -283,7 +283,7 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the decrease to the company credit balance succeeded
 
@@ -291,10 +291,10 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 
 A Reimburse transaction can be updated to include a purchase order and comment.
 
-**Service Name**
+**Service Name:**
 `companyCreditCreditHistoryManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 ```
 GET /V1/companyCredits/history
 PUT /V1/companyCredits/history/:historyId
@@ -304,11 +304,11 @@ PUT /V1/companyCredits/history/:historyId
 
 This call updates the credit history to specify a purchase order number.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/companyCredits/history/6`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -317,7 +317,7 @@ This call updates the credit history to specify a purchase order number.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the call was successful
 
@@ -327,15 +327,15 @@ The following call returns a list instances in which the credit limit was set to
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&searchCriteria[filter_groups][0][filters][0][value]=500&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {

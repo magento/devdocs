@@ -19,11 +19,11 @@ Let's add a text box to the product page that allows the customer to add his nam
 
 The `product_sku` is the `sku` of the configurable product. The `sku` specified in the payload is a string that is appended to the `product_sku` when a customer selects to purchase this item. Likewise, the `price` supplied in the payload is added to the configurable product price.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/default/async/bulk/V1/products/options`
 
-**Payload**
+**Payload:**
 
 ```json
 [{
@@ -41,7 +41,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 }]
  ```
 
- **Response**
+ **Response:**
 
  ```json
 {

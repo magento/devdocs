@@ -16,7 +16,7 @@ The `Logger` class provides logging functionality for an application. It can be 
 
 ### `new Logger(outputHandler, entryFactory)`
 
-**Parameters**
+**Parameters:**
 
 -  `outputHandler: LogOutputHandler`: An instance of `LogOutputHandler` used to display log entries.
 -  `entryFactory: LogEntryFactory`: A factory of the `LogEntry` instances.
@@ -24,26 +24,26 @@ The `Logger` class provides logging functionality for an application. It can be 
 ### `setDisplayLevel(level)`
 Sets the boundary entry level. The entries whose level is lower, than the specified one, are not passed to the output.
 
-**Parameters**
+**Parameters:**
 `level: number`: Minimum display level for an entry.
 
 ### `addDisplayCriteria(criteria)`
 Adds a function that is used to define whether newly created entries should be passed to the output.
 
-**Parameters**
+**Parameters:**
 `criteria: Function`: A function that accepts instance of the `LogEntry` and returns a Boolean value.
 
 ### removeDisplayCriteria(criteria)
 
 Removes the previously added display criteria.
 
-**Parameters**
+**Parameters:**
 `criteria: Function`: The display criteria to be removed.
 
 ### `error(message, [messageData])`
 Creates a `LogEntry` with the `ERROR` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**
+**Parameters:**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -53,7 +53,7 @@ Creates a `LogEntry` with the `ERROR` level and passes it to the output, if it m
 ### `warn(message, [messageData])`
 Creates a `LogEntry` with the `WARN` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**
+**Parameters:**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -63,7 +63,7 @@ Creates a `LogEntry` with the `WARN` level and passes it to the output, if it ma
 ### `info(message, [messageData])`
 Creates a `LogEntry` with the `INFO` level and passes it to the output if it matches all current display criteria.
 
-**Parameters**
+**Parameters:**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -73,7 +73,7 @@ Creates a `LogEntry` with the `INFO` level and passes it to the output if it mat
 ### `debug(message, [messageData])`
 Creates a `LogEntry` with the `DEBUG` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**
+**Parameters:**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -83,14 +83,14 @@ Creates a `LogEntry` with the `DEBUG` level and passes it to the output, if it m
 ### `getEntries([criteria])`
 Returns all available log entries. It can additionally filter out the entries that don't match the provided criteria.
 
-**Parameters**
+**Parameters:**
 `criteria?: Function`: Optional function that accepts an instance of `LogEntry` and implements the filter criteria by which the entries are added to the resulting array.
 
 **Returns:** `Array<LogEntry>`: An array of `LogEntry`.
 
 ### `dump(criteria)`
 
-**Parameters**
+**Parameters:**
 `criteria?: Function`: Optional function that accepts an instance of `LogEntry` and implements the filter criteria by which entries are passed to the output handler.
 
 ## `LogEntry`
@@ -100,7 +100,7 @@ Returns all available log entries. It can additionally filter out the entries th
 
 ### new LogEntry(message, level, [data])
 
-**Parameters**
+**Parameters:**
 
 -  `message: string`: Entry's message.
 -  `level: number`: Entry's level.
@@ -126,21 +126,21 @@ The `LogOutputHandler` class responsible for the output of entries passed by `Lo
 
 ### new LogOutputHandler(formatter)
 
-**Parameters**
+**Parameters:**
 `formatter: LogFormatter`: An instance of `LogFormatter` that will be used to create a display message for the  provided entries.
 
 ### show(entry)
 
 Displays the provided entry.
 
-**Parameters**
+**Parameters:**
 `entry: LogEntry`: The entry to be displayed.
 
 ### dump(entries)
 
 Displays multiple entries at once.
 
-**Parameters**
+**Parameters:**
 `entries: Array<LogEntry>`: An array of the `LogEntry` instances to be displayed.
 
 ## LogFormatter
@@ -160,7 +160,7 @@ The `LogFormatter` class is responsible for processing the message of the provid
 
 ### new LogFormatter([dateFormat], [template])
 
-**Parameters**
+**Parameters:**
 
 -  `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
 -  `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
@@ -168,7 +168,7 @@ The `LogFormatter` class is responsible for processing the message of the provid
 ### `process(entry)`
 Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: `[2017-04-07 01:36:24] [DEBUG] Log message`.
 
-**Parameters**
+**Parameters:**
 `entry: LogEntry`: An instance of `LogEntry` to be processed.
 
 **Returns:** String
@@ -194,7 +194,7 @@ Returns a list of available log levels.
 
 ### `getNameByCode(code)`
 
-**Parameters**
+**Parameters:**
 `code: string`: Level's identifier.
 
 **Returns:** Number
@@ -208,7 +208,7 @@ Implements a collection of predefined messages used by `consoleLogger`.
 ### `getMessage(code)`
 Returns message that matches the provided code.
 
-**Parameters**
+**Parameters:**
 `code: string`: Message's identifier.
 
 **Returns:** String
@@ -216,7 +216,7 @@ Returns message that matches the provided code.
 ### `addMessage(code, message)`
 Adds a new message to the pool.
 
-**Parameters**
+**Parameters:**
 `code: string`: Message's identifier.
 
 `message: string`: Text of the message.
@@ -224,7 +224,7 @@ Adds a new message to the pool.
 ### `hasMessage(code)`
 Checks whether a message with the provided code exists in the pool.
 
-**Parameters**
+**Parameters:**
 `code: string`: Message's identifier.
 
 **Returns:** Boolean

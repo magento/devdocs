@@ -17,7 +17,7 @@ Magento recommends you use customer tokens in the header of your GraphQL calls. 
 
 The following query returns the order history of the logged in customer.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -33,7 +33,7 @@ The following query returns the order history of the logged in customer.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -16,11 +16,11 @@ This topic discusses only the features of the `customerCustomerRepositoryV1` ser
 
 This section describes the REST endpoints used to manage company users.
 
-**Service Name**
+**Service Name:**
 
 `customerCustomerRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 POST /V1/customers/
@@ -43,11 +43,11 @@ Name | Description | Format | Requirements
 
 The `POST /V1/customers` call creates a Magento customer. B2B extends the `customerAccountManagementV1` service so that you can create a company user.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/customers`
 
-**Payload**
+**Payload:**
 
 Add the `company_attributes` code block to the payload that is required to create a standard customer.
 
@@ -82,7 +82,7 @@ Full example:
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -116,11 +116,11 @@ The following example changes the status of a company user to inactive.
 
 If you change the `status` to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/customers/13`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -140,7 +140,7 @@ If you change the `status` to inactive, the account is locked. If the company us
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -172,15 +172,15 @@ If the specified company user has child users, the system re-assigns the child u
 
 Magento locks the deleted user's quotes and changes their status to Closed. The system does not allow to make changes on such quotes.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/customers/13`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 

@@ -35,7 +35,7 @@ You will need
 
 Although some steps require that you configure Magento in some way, you perform most steps by sending one or more REST calls to Magento. Each step that makes a REST call provides the following information:
 
-**Endpoint**
+**Endpoint:**
 
 This section lists the HTTP verb and full path to the endpoint. The basic structure of a REST call in Magento is
 
@@ -54,10 +54,10 @@ Element | Description
 
 This section indicates which key/value pairs you must specify in the HTTP headers. All calls require one or more HTTP headers.
 
-**Payload**
+**Payload:**
 
 This section lists the information that is sent to Magento. All payload samples are valid and can be copied and pasted into your calls, but you might need to change the `id` values that Magento returns.
 
-**Response**
+**Response:**
 
 This section lists the information that Magento sends to the REST client. These values are often referenced in other steps in the tutorial. The values Magento returns might be different than the values listed in the examples provided in this tutorial.

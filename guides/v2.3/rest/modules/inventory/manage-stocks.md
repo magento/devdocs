@@ -11,11 +11,11 @@ The `stock_id` of the default stock is `1`.  You cannot delete or add sources to
 
 Any sales channels that are not explicitly assigned to a custom stock are assigned to the Default Stock.
 
-**Service name**
+**Service name:**
 
 `inventoryApiStockRepositoryV1`
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 POST /V1/inventory/stocks
@@ -39,11 +39,11 @@ Name | Description | Type | Requirements
 
 Only one stock can be mapped to each sales channel. If you assign a sales channel that is already mapped to another stock, the sales channel will be removed from the original stock.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/stocks`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -61,7 +61,7 @@ Only one stock can be mapped to each sales channel. If you assign a sales channe
 }
 ```
 
-**Response**
+**Response:**
 
 A `stock_id`, such as `4`.
 
@@ -71,11 +71,11 @@ You can change the name of a custom stock and its associated sales channels. Eac
 
 If you change a sales channel between stocks, we recommend that you first complete any open orders and shipments that may need access to the assigned sources.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/inventory/stocks/4`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -93,7 +93,7 @@ If you change a sales channel between stocks, we recommend that you first comple
 }
 ```
 
-**Response**
+**Response:**
 
 A `stock_id`, such as `4`.
 
@@ -101,15 +101,15 @@ A `stock_id`, such as `4`.
 
 This call returns detailed information about the specified stock.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/stocks/4`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -131,15 +131,15 @@ None
 
 You cannot delete a stock if it is assigned to a sales channel. You can unassign a stock's sales channels by omitting the `sales_channels` array in a `PUT /V1/inventory/stocks/:stockId` call.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/inventory/stocks/4`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -151,15 +151,15 @@ The following call returns all stocks whose name contains the string `Stock`.
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/stocks?searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%25Stock%25&searchCriteria[filter_groups][0][filters][0][condition_type]=like`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json

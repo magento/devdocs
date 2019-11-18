@@ -22,7 +22,7 @@ The following command returns the Magento version.
 bin/magento --version
 ```
 
-**Response**
+**Response:**
 
 ```terminal
 Magento CLI version 2.3.0
@@ -32,13 +32,13 @@ Magento CLI version 2.3.0
 
 An HTTP request returns less detailed information about the Magento version.
 
-**Request**
+**Request:**
 
 ```text
 http://<magento2-store>/magento_version
 ```
 
-**Response**
+**Response:**
 
 ```text
 Magento/2.3 (Community)

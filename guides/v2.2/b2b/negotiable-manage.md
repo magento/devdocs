@@ -17,7 +17,7 @@ This topic describes the calls required to initiate a negotiable quote and to pr
 {: .bs-callout-info }
 All negotiable quote calls require an admin authorization token.
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/negotiableQuote/request
@@ -62,15 +62,15 @@ If the negotiable quote requires a shipping address (for negotiation or tax calc
 {:.bs-callout .bs-callout-info}
 Requesting a negotiable quote requires an admin authorization token.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteNegotiableQuoteManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiableQuote/request`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -86,7 +86,7 @@ Requesting a negotiable quote requires an admin authorization token.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -108,15 +108,15 @@ When the quote is submitted to the buyer:
 *  Items that are no longer active or available for this buyer are removed from quote and prices are recalculated.
 *  The quote state is changed to Submitted by admin.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteNegotiableQuoteManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiableQuote/submitToCustomer`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -125,7 +125,7 @@ When the quote is submitted to the buyer:
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -139,11 +139,11 @@ The process of completing a negotiable quote can take days, or even longer. Duri
 
 The request can be applied to one or more quotes at the same time.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiableQuote/pricesUpdated`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -151,7 +151,7 @@ The request can be applied to one or more quotes at the same time.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -159,11 +159,11 @@ The request can be applied to one or more quotes at the same time.
 
 To set the shipping method, the quote must be in the `created`, `processing_by_admin` or `submitted_by_customer`. In addition, the quote must have a shipping address but no shipping method or shipping price.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/negotiableQuote/3/shippingMethod`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -171,7 +171,7 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 }
 ```
 
-**Response**
+**Response:**
 
 ### Decline a quote
 
@@ -183,15 +183,15 @@ The seller can send a request to decline the quote. The request can be submitted
 
 When you decline a quote, all custom pricing will be removed from the quote. The buyer will be able to place an order using their standard catalog prices and discounts.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteNegotiableQuoteManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiableQuote/decline`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -200,7 +200,7 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -212,15 +212,15 @@ These tasks are not essential for completing a negotiable quote, but might be us
 
 Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A `creator_type` value of `3` indicates the buyer made the comment. If the value is `2`, the seller commented.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/negotiableQuote/87/comments`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -307,15 +307,15 @@ Use the `attachmentContent` call to retrieve the files (in base64 format) attach
 
 `negotiableQuoteAttachmentContentManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/negotiableQuote/attachmentContent`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {

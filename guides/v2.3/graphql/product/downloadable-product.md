@@ -62,7 +62,7 @@ Add the following inline fragment to the output section of your `products` query
 
 The following query returns information about downloadable product `240-LV04`, which is defined in the sample data.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -103,7 +103,7 @@ The following query returns information about downloadable product `240-LV04`, w
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

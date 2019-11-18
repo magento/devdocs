@@ -19,7 +19,7 @@ These examples show the minimal payload and a payload that includes customizable
 
 The following example adds a simple product to a cart. The response contains the entire contents of the customer's cart.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -50,7 +50,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -77,7 +77,7 @@ mutation {
 
 If a product has a customizable option, you can specify the option's value in the `addSimpleProductsToCart` request.
 
-**Request**
+**Request:**
 
 ``` text
 mutation {
@@ -116,7 +116,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```text
 {

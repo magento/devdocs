@@ -8,7 +8,7 @@ In Admin, you can assign (link) sources to a stock when you create the stock. In
 
 To link a source to a stock, you must specify the `source_code`, `stock_id`, and `priority` attributes. The `priority` value indicates where the source ranks in descending order. The Source Selection Algorithm uses this priority order when recommending order fulfillment. All sources linked to a stock are displayed in prioritized order in the Admin.
 
-**Service names**
+**Service names:**
 
 ```http
 inventoryApiStockSourceLinksSaveV1
@@ -17,7 +17,7 @@ InventoryApiGetStockSourceLinksV1
 inventoryApiGetSourcesAssignedToStockOrderedByPriorityV1
 ```
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 POST /V1/inventory/stock-source-links
@@ -37,11 +37,11 @@ Name | Description | Type | Requirements
 
 If you specify a sales channel that is already assigned to another stock, Magento reassigns the sales channel from the previous stock to the current stock.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/stock-source-links`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -60,7 +60,7 @@ If you specify a sales channel that is already assigned to another stock, Magent
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns empty array.
 
@@ -70,11 +70,11 @@ Magento returns empty array.
 
 The `POST /V1/inventory/stock-source-links-delete` endpoint breaks the link between a stock and one or more sources. Magento does not recalculate priority of sources after you delete links.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/stock-source-links-delete`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -87,7 +87,7 @@ The `POST /V1/inventory/stock-source-links-delete` endpoint breaks the link betw
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns empty array.
 
@@ -99,15 +99,15 @@ The following call returns the link information for `stock_id = 4`.
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/stock-source-links?searchCriteria[filter_groups][0][filters][0][field]=stock_id&searchCriteria[filter_groups][0][filters][0][value]=4&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -148,15 +148,15 @@ None
 
 The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_id` endpoint returns details about each source that is assigned to the specified stock. [Manage sources]({{ page.baseurl }}/rest/modules/inventory/manage-sources.html) provides definitions for each attribute returned.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/4`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
