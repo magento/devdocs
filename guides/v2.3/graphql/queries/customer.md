@@ -19,7 +19,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call returns information about the logged-in customer. Provide the customer's token in the header section of the query.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -47,7 +47,7 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -85,7 +85,7 @@ The following call returns information about the logged-in customer. Provide the
 
 The following example returns the store credit history for the logged-in user.
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -123,7 +123,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

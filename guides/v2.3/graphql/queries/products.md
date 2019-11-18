@@ -1050,7 +1050,7 @@ The following query shows how to get related products, up-sells, and cross-sells
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -1128,7 +1128,7 @@ The following query shows how to get related products, up-sells, and cross-sells
 
 The following query returns media gallery information about the product with the `sku` of `24-MB01`.
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -1170,7 +1170,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -1207,7 +1207,7 @@ query {
 
 The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) can include information about the `Website` object.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -1227,7 +1227,7 @@ The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -1256,7 +1256,7 @@ The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html
 
 The following product query returns URL rewrite information about the Joust Duffle Bag.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -1276,7 +1276,7 @@ The following product query returns URL rewrite information about the Joust Duff
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

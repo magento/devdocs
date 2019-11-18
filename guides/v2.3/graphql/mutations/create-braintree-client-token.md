@@ -13,7 +13,7 @@ The `createBraintreeClientToken` mutation creates the client token for Braintree
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -21,7 +21,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

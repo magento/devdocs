@@ -27,7 +27,7 @@ You can limit the amount of data that the request returns by using the `style=su
 
 The following example shows the request/response body for retrieving all profile data:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -35,7 +35,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -132,7 +132,7 @@ curl -X GET \
 
 The following example shows the request/response body for retrieving a subset of profile data:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -140,7 +140,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789?style=summary
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -184,7 +184,7 @@ The `action` field specifies which update operation to perform:
    [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
 *  `draft` &mdash; The update is saved on the Developer Portal, but not published.
 
-**Request**
+**Request:**
 
 ```bash
 curl -X PUT \
@@ -224,7 +224,7 @@ The following table lists available query parameters, all of which are optional:
 
 The following example shows the request/response body for retrieving keys without any query parameters:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -232,7 +232,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -294,7 +294,7 @@ POST /rest/v1/users/:mage_id/keys
 }
 ```
 
-**Request**
+**Request:**
 
 ```bash
 curl -X POST \
@@ -304,7 +304,7 @@ curl -X POST \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -342,7 +342,7 @@ You must specify the key-pair in the request using a URL-encoded string.
 PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-**Request**
+**Request:**
 
 ```bash
 curl -X PUT \
@@ -352,7 +352,7 @@ curl -X PUT \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789/keys/key_for_bob
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -377,7 +377,7 @@ DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 The following curl example illustrates the call to be made:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X DELETE \

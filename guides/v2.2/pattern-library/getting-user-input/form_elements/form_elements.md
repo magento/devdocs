@@ -16,11 +16,11 @@ _* "best" is a relative term, but there are User Experience principles and best 
 
 In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form [layout](https://glossary.magento.com/layout) – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
 
-**Example of label-top**
+**Example of label-top:**
 
 ![](img/form_sample_horiz.png)
 
-**Example of label-left**
+**Example of label-left:**
 
 ![](img/form_sample_vert.png)
 
@@ -41,11 +41,11 @@ otherwise selecting outside the form element that has focus.
 
 For *label-left* form elements the amount of horizontal real estate allowed for the labels should only span a maximum of 3 columns of the page grid. While the element itself should typically span no more than 4 columns. For *label-top* form elements, the label and the form element overall should typically not exceed 5 columns of the page grid, however page layout and/or the amount of information to be collected will influence this.
 
-**Grid and label-left form**
+**Grid and label-left form:**
 
 ![](img/grid_horiz.png)
 
-**Grid and label-top form**
+**Grid and label-top form:**
 
 ![](img/grid_vert.png)
 
@@ -183,7 +183,7 @@ Akin to progressive disclosure is "contextual help". This may be used whenever i
 
 For specific details concerning styling including fonts, colors and effects and spacing and padding, please refer to the source PSD files and exports located on Box or contact the Magento Product Design and User Experience team.
 
-**Sample of specs**
+**Sample of specs:**
 
 ![](img/spec_sample.png)
 

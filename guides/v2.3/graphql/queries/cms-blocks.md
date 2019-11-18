@@ -15,7 +15,7 @@ Return the contents of one or more CMS blocks:
 
 The following query returns information about the `login-data` block:
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -29,7 +29,7 @@ The following query returns information about the `login-data` block:
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

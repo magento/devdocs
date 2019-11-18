@@ -174,7 +174,7 @@ For example:
 *  Scan for all XML-files of certain type and validate them using appropriate XML-schema.
 *  Scan for declarations of templates and invoke "fallback" mechanism to ensure they resolve.
 
-**Static Code Analysis**
+**Static Code Analysis:**
 
 Code to cover:
 
@@ -182,7 +182,7 @@ Code to cover:
 
 Expected code coverage: must cover all applicable files in entire code base.
 
-**Legacy Tests**
+**Legacy Tests:**
 
 Code to cover:
 

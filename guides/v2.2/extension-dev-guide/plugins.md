@@ -304,7 +304,7 @@ The prioritization rules for ordering plugins:
    *  During each plugin execution, the current plugin will first finish executing its around method.
    *  When the around method completes, the plugin executes its after method before moving on to the next plugin.
 
-**Example**
+**Example:**
 
 The table shows the plugins observing the same method with the following properties:
 

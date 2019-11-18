@@ -16,7 +16,7 @@ The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the s
 
 The following example adds a gift card with the code `0330CEIVTLB4` to the cart. The gift card has a value of $20.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -44,7 +44,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

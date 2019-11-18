@@ -23,11 +23,11 @@ contributor_link: http://comwrap.com/
 
  The value assigned to the `value_index` must be unique within the system.
 
- **Endpoint**
+ **Endpoint:**
 
  `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/options`
 
- **Payload**
+ **Payload:**
 
  ```json
 [{
@@ -46,7 +46,7 @@ contributor_link: http://comwrap.com/
 }]
 ```
 
- **Response**
+ **Response:**
 
  ```json
 {
@@ -66,14 +66,14 @@ contributor_link: http://comwrap.com/
 
 Now that you have set the configurable attribute to be `sku`, you can link all simple products to the configurable product and execute a single call with a payload that contains an array of simple products. To do this, specify the `sku` of the configurable product, and the `childSku` of each simple product.
 
- **Endpoint**
+ **Endpoint:**
 
  {:.bs-callout .bs-callout-info}
 Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
 
  `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/child`
 
- **Payload**
+ **Payload:**
 
  ```json
 [
@@ -93,7 +93,7 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
 ]
 ```
 
- **Response**
+ **Response:**
 
  ```json
 {

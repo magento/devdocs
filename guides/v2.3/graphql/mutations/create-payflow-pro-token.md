@@ -15,7 +15,7 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 The following example requests a token in a Payflow Pro transaction.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -38,7 +38,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

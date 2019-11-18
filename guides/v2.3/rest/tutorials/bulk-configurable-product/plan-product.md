@@ -57,7 +57,7 @@ Description | The Champ Tee keeps you cool and dry while you do your thing. Let 
 
  Use the following call to search for the attribute set named `Top`.
 
- **Endpoint**
+ **Endpoint:**
 
  ```html
 GET <host>/rest/<store_code>/V1/eav/attribute-sets/list?
@@ -66,7 +66,7 @@ searchCriteria[filter_groups][0][filters][0][value]=Top&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 ```
 
- **Response**
+ **Response:**
 
  The `attribute_set_id` for the Top attribute set is `9`.
 
@@ -101,11 +101,11 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
  Use the `GET V1/products/attribute-sets/:attributeSetId/attributes` call to return information about the attributes defined in the Top attribute set.
 
- **Endpoint**
+ **Endpoint:**
 
  `GET <host>/rest/default/V1/products/attribute-sets/9/attributes`
 
- **Response**
+ **Response:**
 
  The response contains almost 3,000 lines. The following table provides a summary of the attributes that are relevant in this tutorial.
 
