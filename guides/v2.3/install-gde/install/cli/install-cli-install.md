@@ -96,9 +96,9 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|Yes|
 |`--db-password`|Magento database instance owner's password.|Yes|
 |`--db-prefix`|Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.<br><br>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.<br><br>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.<br><br>This option enables those customers to share the database server with more than one Magento installation.|No|
-|`--db-ssl-key`|Path for client key.|No|
-|`--db-ssl-cert`|Path for client certificate.|No|
-|`--db-ssl-ca`|Path for server certificate.|No|
+|`--db-ssl-key`|Path to the client key.|No|
+|`--db-ssl-cert`|Path to the client certificate.|No|
+|`--db-ssl-ca`|Path to the server certificate.|No|
 |`--language`|Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering magento info:language:list from the bin directory.)|No|
 |`--currency`|Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering magento info:currency:list from the bin directory.)|No|
 |`--timezone`|Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering magento info:timezone:list from the bin directory.)|No|
