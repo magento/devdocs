@@ -8,7 +8,6 @@ functional_areas:
 redirect_from:
    - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
-<!-- 2.2 release notes -->
 
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
@@ -16,6 +15,28 @@ The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
+
+## v2002.0.22
+
+The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ site.data.var.ct }}` package to decouple the release of `{{ site.data.var.ece }}` patches from the {{ site.data.var.ct }} release. Starting with this release, patches and critical fixes will be delivered using the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package. We made these changes to reduce complexity for scheduling release updates and working with community contributions.
+
+-  {:.new}**Changes to the ece-tools package**
+
+   -  {:.new}Moved the {{ site.data.var.ee }} patches from the `{{ site.data.var.ct }}` package to a new [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) composer package.
+
+   -  {:.new}Updated the `composer.json` file for the `{{ site.data.var.ct }}` package to add a dependency for the `magento/magento-cloud-patches` v1.0.0 package.
+
+   -  {:.fix}<!--MAGECLOUD-4661-->Fixed an issue that caused the `{{ site.data.var.ct }}` patching process to break when applying patch sets on top of security-only releases, starting with Magento version 2.3.2-p2 and later. This issue was introduced by the new versioning scheme adopted for [security-only patches]({{ site.baseurl }}/guides/v2.3/release-notes/bk-release-notes.html#security-only-patches).
+
+-  {:.fix}**Patches and critical fixes**–Update your Cloud environments with `{{ site.data.var.ct }}` version 2002.0.22 to apply the following patches and critical fixes. These patches are included in the `magento/magento-cloud-patches` v1.0.0 package.
+
+   -  {:.fix}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
+
+   -  {:.fix}<!--MAGECLOUD-4428-->**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.
+
+   -  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
+
+   -  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
 
 ## v2002.0.21
 
@@ -63,9 +84,7 @@ The release notes include:
 
 -  {:.new}**Docker Updates**—
 
-   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the
-  `{{site.data.var.ct}}` package in the Docker environment.
-  See[Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
+   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
@@ -77,8 +96,8 @@ The release notes include:
 
    -  {:.fix}<!-- MAGECLOUD-3832 -->Updated the Sodium library from version 1.0.11 to version 1.0.18, and updated the Sodium PHP extension.
 
-   {:.bs-callout-warning}
-   {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
+      {:.bs-callout-warning}
+      {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
 
    -  {:.fix}<!-- MAGECLOUD-3446 -->Added the `analysis-icu` and the `analysis-phonetic` Elasticsearch plugins to all Docker images.
 
@@ -124,9 +143,9 @@ The release notes include:
 
    -  {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
 
-      -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
+   -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
-      -  {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
+   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
 
    -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
@@ -134,7 +153,7 @@ The release notes include:
 
    -  {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 
--  {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
+   -  {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
 -  {:.new}**Environment variable updates**—
 
@@ -142,9 +161,9 @@ The release notes include:
 
    -  {:.new}<!-- MAGECLOUD-2822 -->Added the **SCD_MAX_EXECUTION_TIMEOUT** environment variable so you can increase the time to complete the static content deployment from the `.magento.env.yaml` file. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_max_execution_time), the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_max_execution_time), and the [global variables]({{ page.baseurl }}/cloud/env/variables-global.html#scd_max_execution_time).
 
-   -  {:.new}<!-- MAGECLOUD-3135 -->Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later and automatically configured. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
+      -  {:.new}<!-- MAGECLOUD-3135 -->Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later and automatically configured. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
-   -  {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREADS** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
+      -  {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREADS** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
 -  {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with a patch for DB Isolation Mechanism that caused an error when upgrading to {{site.data.var.ece}} version 2002.0.16.
 
@@ -161,7 +180,7 @@ The release notes include:
 {:.bs-callout .bs-callout-info}
 The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
 
--  {:.new}**Service updates**—Supported by Magento versions 2.2.8 and later 2.2.x versions.
+-  {:.new}**Service updates**—Supported by the following Magento versions: 2.2.8 and later 2.2.x, 2.3.1 and later 2.3.x
 
    -  <!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
 
@@ -247,13 +266,13 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
-      -  Added the following services to the Docker build:
+   -  Added the following services to the Docker build:
 
-         -  <!-- MAGECLOUD-2567 & 2889-->RabbitMQ 3.5 and 3.7
+      -  <!-- MAGECLOUD-2567 & 2889-->RabbitMQ 3.5 and 3.7
 
-         -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7, 2.4, and 5.2
+      -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7, 2.4, and 5.2
 
-         -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
+      -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
@@ -287,9 +306,9 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!--MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.
 
-   -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
+      -  Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
-   -  Environment configuration contains incorrect values for deploy or cloud variables.
+      -  Environment configuration contains incorrect values for deploy or cloud variables.
 
    -  <!--MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{ site.data.var.ece }}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
 
@@ -333,13 +352,13 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with {{site.data.var.ee}}. Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.
 
-   You can resolve the incompatibility by [submitting a Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to upgrade Elasticsearch to a compatible version, or change the {{site.data.var.ee}} configuration to specify a compatible version of the Elasticsearch PHP client.
+      You can resolve the incompatibility by [submitting a Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to upgrade Elasticsearch to a compatible version, or change the {{site.data.var.ee}} configuration to specify a compatible version of the Elasticsearch PHP client.
 
-       -  For {{site.data.var.ee}} version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.
+      -  For {{site.data.var.ee}} version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.
 
-       -  For {{site.data.var.ee}} version 2.2.3 and later, upgrade Elasticsearch to version 5.2.
+      -  For {{site.data.var.ee}} version 2.2.3 and later, upgrade Elasticsearch to version 5.2.
 
-       -  If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the {{site.data.var.ee}} Elasticsearch PHP client version requirement in composer.json to `"elasticsearch/elasticsearch": "~2.0"`.
+      -  If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the {{site.data.var.ee}} Elasticsearch PHP client version requirement in composer.json to `"elasticsearch/elasticsearch": "~2.0"`.
 
    -  <!--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.
 
@@ -485,7 +504,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 ## v2002.0.9
 
-{:.bs-callout .bs-callout-info}
+{.bs-callout-info}
 You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade-parent.html) to get this and all future updates.
 
 -  {:.new}<!-- MAGECLOUD-1086 -->**ece-tools**—The `{{site.data.var.ct}}` package now supports Magento 2.1.x.
@@ -497,6 +516,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 -  {:.fix}**Environment variables**—
 
    -  <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads) instead.
+
    -  <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
 
 -  {:.fix}<!-- MAGECLOUD-1674 -->**Logging**—We simplified logging around built-in patching operations.
