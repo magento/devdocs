@@ -54,7 +54,7 @@ GET /rest/v1/products/packages/?submission_id=12345
 The difference is that the first returns a single object or an error, while the second returns a list containing zero or one elements.
 The following request filters all `themes` sorted by `platform` in ascending order and `created_time` in descending order:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -62,6 +62,6 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 
-**Response**
+**Response:**
 
 A list of theme packages can be returned in the same way as described in [Get package details](packages.html#get-package-details).

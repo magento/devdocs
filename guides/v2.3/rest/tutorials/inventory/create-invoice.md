@@ -20,23 +20,23 @@ After you submit the invoice, Magento adjusts the Quantity per Source value for 
 
 This example creates a full invoice.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/order/3/invoice`
 
 where `3` is the `orderid`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -45,7 +45,7 @@ where `3` is the `orderid`
 }
 ```
 
-**Response**
+**Response:**
 
 An invoice `id`, such as `3`.
 

@@ -35,7 +35,7 @@ We recommend specifying JavaScript resources in the templates rather than in the
 
 JS resources are accessed using relative paths.
 
-**Example 1**
+**Example 1:**
 
 *  File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
 *  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance [theme](https://glossary.magento.com/theme) and [locale](https://glossary.magento.com/locale).
@@ -46,7 +46,7 @@ JS resources are accessed using relative paths.
     });
     ```
 
-**Example 2**
+**Example 2:**
 
 *  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
 *  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
@@ -57,7 +57,7 @@ JS resources are accessed using relative paths.
    });
    ```
 
-**Example 3**
+**Example 3:**
 
 *  File actual location: `lib/web/jquery.js`
 *  File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`

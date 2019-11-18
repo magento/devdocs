@@ -13,11 +13,11 @@ functional_areas:
 
 Company teams allow you to group company users by location, job responsibilities, or any criteria you choose. You can assign individual company users to a team with the company hierarchy endpoints.
 
-**Service name**
+**Service name:**
 
 `companyTeamRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 POST /V1/team/:companyId
@@ -27,7 +27,7 @@ DELETE /V1/team/:teamId
 GET /V1/team/
 ```
 
-**Company team parameters**
+**Company team parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -39,11 +39,11 @@ description | An optional description of the team. | string | Optional
 
 A newly-created team is placed under Company Admin in the company hierarchy.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/team/2`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -54,7 +54,7 @@ A newly-created team is placed under Company Admin in the company hierarchy.
 }
 ```
 
-**Response**
+**Response:**
 
 The team ID, such as `4`.
 
@@ -62,11 +62,11 @@ The team ID, such as `4`.
 
 You can only change the name or description of a team.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/team/4`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -77,7 +77,7 @@ You can only change the name or description of a team.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -85,15 +85,15 @@ You can only change the name or description of a team.
 
 The `GET` call returns the team `id`, `name`, and `description`.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/team/4`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -107,15 +107,15 @@ Not applicable
 
 You cannot delete a team if members are assigned to it.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/team/4`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 An empty array
 
@@ -125,15 +125,15 @@ The following query returns information about all teams (`team_id` &ge; `0`)
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 {% collapsible Show code sample %}
 
 ```json
@@ -175,11 +175,11 @@ In the B2B storefront, a buyer can view the company structure represented as a h
 
 You can use REST endpoints to retrieve the current structure and move teams and buyers within the hierarchy. You cannot delete teams or buyers.
 
-**Service name**
+**Service name:**
 
 `companyHierarchyV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 GET /V1/hierarchy/:id
@@ -201,15 +201,15 @@ Admin (structure_id = 2)
 |   |-- Teresa Gomez (customer, structure_id = 5)
 ```
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/hierarchy/2`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -265,11 +265,11 @@ Not applicable
 
 The following example moves Bryce Martin (`structure_id = 4`) to the West team (`structure_id = 7`)
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/hierarchy/move/5`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -277,7 +277,7 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 

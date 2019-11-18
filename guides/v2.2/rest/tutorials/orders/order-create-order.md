@@ -23,17 +23,17 @@ The [shopping cart](https://glossary.magento.com/shopping-cart) contains three i
 
 When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment-method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/payment-information`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 {% collapsible Show code sample %}
 
@@ -60,7 +60,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 {% endcollapsible %}
 
-**Response**
+**Response:**
 
 An `orderID`, such as `3`.
 
@@ -68,23 +68,23 @@ An `orderID`, such as `3`.
 
 When you request an order object, the response contains full details about the order, including customer information, payment details, as well as totals and subtotals for the order and each individual item.
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/<store_code>/V1/orders/3`
 
 where `3` is the `orderid`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <administrator token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 

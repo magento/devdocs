@@ -440,7 +440,7 @@ It is possible to drop a foreign key only if it exists in the `db_schema_whiteli
 In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column.
 Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
-**Module A declaration**
+**Module A declaration:**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -454,7 +454,7 @@ Module B disables the original primary key and sets a new primary key with a `re
 </schema>
 ```
 
-**Module B declaration**
+**Module B declaration:**
 
 ```xml
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

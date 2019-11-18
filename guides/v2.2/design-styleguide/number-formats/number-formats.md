@@ -102,7 +102,7 @@ This is how we write about money:
 
    *  Years ... *Correct example:* Use "2017", not "'17".
 
-**Correct Examples**
+**Correct Examples:**
 
 *  The conference begins ...
 
@@ -120,7 +120,7 @@ This is how we write about money:
 
 ### Times
 
-**General Usage**
+**General Usage:**
 
 *  Formatting. Use numerals and "am" or "pm" without a space. Example: 10am.
 
@@ -130,7 +130,7 @@ This is how we write about money:
 
 *  Use "noon" and "midnight". Do not use 12pm and 12am.
 
-**Time Ranges**
+**Time Ranges:**
 
 <ul>
   <li>Use a hyphen between times to indicate a time period. <em>Example:</em> 7am-10:30pm.</li>
@@ -150,7 +150,7 @@ This is how we write about money:
   </li>
 </ul>
 
-**Time Zones**
+**Time Zones:**
 
 *  Formatting. When a time is not adjusted by the system to reflect the current time zone, append the time zone after the time. ... *Correct examples:* "7:30am CT", "7-10:30am CT"
 

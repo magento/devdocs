@@ -20,11 +20,11 @@ The `POST /V1/products/special-price` call sets special prices for the following
 *  Virtual
 *  Downloadable
 
-**Service Name**
+**Service Name:**
 
 `SpecialPriceStorageInterface`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```http
 POST /V1/products/special-price
@@ -32,7 +32,7 @@ POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
 ```
 
-**SpecialPriceStorageInterface Parameters**
+**SpecialPriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -51,11 +51,11 @@ For bundled products, the value of the `price` parameter must be expressed as a 
 
 You can set multiple special prices in a single call, as shown in the example below. The call sets special prices for a simple product, downloadable product, and bundle product for two days.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/special-price`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -86,7 +86,7 @@ You can set multiple special prices in a single call, as shown in the example be
 
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -94,11 +94,11 @@ You can set multiple special prices in a single call, as shown in the example be
 
 The following call returns the special price information for three SKU values.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/special-price-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -110,7 +110,7 @@ The following call returns the special price information for three SKU values.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -142,11 +142,11 @@ The following call returns the special price information for three SKU values.
 
 If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/special-price-delete`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -176,7 +176,7 @@ If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Mag
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -193,11 +193,11 @@ Bundle | discount
 Virtual | fixed, discount
 Downloadable | fixed, discount
 
-**Service Name**
+**Service Name:**
 
 `TierPriceStorageInterface`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```http
 POST /V1/products/tier-prices
@@ -206,7 +206,7 @@ POST /V1/products/tier-prices-information
 POST /V1/products/tier-prices-delete
 ```
 
-**TierPriceStorageInterface Parameters**
+**TierPriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -222,11 +222,11 @@ Name | Description | Format | Requirements
 
 The `POST /V1/products/tier-prices` call adds new tier prices or updates existing prices. You can specify tier prices for multiple products in the same call.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/tier-prices`
 
-**Payload**
+**Payload:**
 
 ```json
 
@@ -260,7 +260,7 @@ The `POST /V1/products/tier-prices` call adds new tier prices or updates existin
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -270,11 +270,11 @@ The replace request removes all existing tier prices for a specified product and
 
 The following example removes the $10 tier price for `sku` 24-UG04 and changes the customer group for the `sku`'s other tier prices.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/products/tier-prices`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -299,7 +299,7 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -307,11 +307,11 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
 
 Magento returns all active tier prices for the specified list of `skus`.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/tier-prices-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -322,7 +322,7 @@ Magento returns all active tier prices for the specified list of `skus`.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -365,11 +365,11 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 You must specify each tier price that is to be deleted. You can delete multiple tier prices in a single call.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/tier-prices-delete`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -386,7 +386,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -397,14 +397,14 @@ A base price is the price of a product, before any discounts or extra costs (suc
 {:.bs-callout .bs-callout-info}
 You cannot delete a base price. It can only be changed to another value (0 or greater).
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```http
 POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 ```
 
-**BasePriceStorageInterface Parameters**
+**BasePriceStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -424,11 +424,11 @@ The `POST /V1/products/base-price` call can set base prices for the following ty
 
 The following example sets the base price for a simple and a downloadable product.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/base-prices`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -447,7 +447,7 @@ The following example sets the base price for a simple and a downloadable produc
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -455,11 +455,11 @@ The following example sets the base price for a simple and a downloadable produc
 
 The following example returns the base prices for a simple and a downloadable product.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/base-prices-information`
 
-**Payload**
+**Payload:**
 ```json
 {
   "skus": [
@@ -469,7 +469,7 @@ The following example returns the base prices for a simple and a downloadable pr
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -490,7 +490,7 @@ The following example returns the base prices for a simple and a downloadable pr
 
 The cost is the actual cost of a product. Tracking costs is optional, but having this information available can be helpful when you are setting discounts.
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```http
 POST /V1/products/cost
@@ -498,7 +498,7 @@ POST /V1/products/cost-information
 POST /V1/products/cost-delete
 ```
 
-**CostStorageInterface Parameters**
+**CostStorageInterface Parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -517,11 +517,11 @@ The `POST /V1/products/cost` call can set the cost values for the following type
 
 The following example sets the cost value for a simple and a downloadable product.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/cost`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -540,7 +540,7 @@ The following example sets the cost value for a simple and a downloadable produc
 }
 ```
 
-**Response**
+**Response:**
 
 `[]` (an empty array)
 
@@ -548,11 +548,11 @@ The following example sets the cost value for a simple and a downloadable produc
 
 The following example returns the cost values for a simple and a downloadable product.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/cost-information`
 
-**Payload**
+**Payload:**
 ```json
 {
   "skus": [
@@ -562,7 +562,7 @@ The following example returns the cost values for a simple and a downloadable pr
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -583,11 +583,11 @@ The following example returns the cost values for a simple and a downloadable pr
 
 The following example deletes the previously-defined cost values for a simple and a downloadable product.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/products/cost-delete`
 
-**Payload**
+**Payload:**
 ```json
 {
   "skus": [
@@ -597,6 +597,6 @@ The following example deletes the previously-defined cost values for a simple an
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the cost values were deleted

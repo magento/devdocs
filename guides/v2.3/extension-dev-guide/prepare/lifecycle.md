@@ -34,7 +34,7 @@ If the `schema_version` for your module is found in the `setup_module` table, Ma
 **Example:** InstallSchema.php
 
 ```php
-class \VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
+class VendorName\ModuleName\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
     /**
      * {@inheritdoc}
@@ -296,7 +296,7 @@ However, module-specific configurations such as its dependency injection and eve
 
 Avoid this situation by not including dependencies in your uninstall event class
 
-**Related Topics**
+**Related Topics:**
 
 *  Magento's [versioning policy]
 

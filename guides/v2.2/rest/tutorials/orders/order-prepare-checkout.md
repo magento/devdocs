@@ -25,17 +25,17 @@ Now that all the items have been added to the cart, we can prepare the order for
 
 Magento calculates shipping costs for each shipping method that can be applied to the order. In this tutorial, the `flatrate` ($5 per item) and `tablerate` shipping methods are active.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/estimate-shipping-methods`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 The payload contains the shipping address.
 
@@ -62,7 +62,7 @@ The payload contains the shipping address.
 ```
 {% endcollapsible %}
 
-**Response**
+**Response:**
 
 Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates & Yoga item does not have a shipping charge because the customer downloads this item.
 
@@ -104,17 +104,17 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 
 Magento returns a list of payment options and calculates the order totals.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/shipping-information`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 {% collapsible Show code sample %}
 
@@ -159,7 +159,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 {% endcollapsible %}
 
-**Response**
+**Response:**
 
 The subtotal of the order is $160, and shipping charges are $5. The grand total is $165.
 

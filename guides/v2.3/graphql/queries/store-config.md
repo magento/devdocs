@@ -17,7 +17,7 @@ The `storeConfig` query defines information about a store's configuration. You c
 
 The following call returns all details of a store's configuration.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -42,7 +42,7 @@ The following call returns all details of a store's configuration.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -73,7 +73,7 @@ The following call returns all details of a store's configuration.
 
 The following query returns information about the store's default title, keywords, and welcome text.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -85,7 +85,7 @@ The following query returns information about the store's default title, keyword
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -103,7 +103,7 @@ The following query returns information about the store's default title, keyword
 
 The following query returns information about the store's content pages.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -118,7 +118,7 @@ The following query returns information about the store's content pages.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -139,7 +139,7 @@ The following query returns information about the store's content pages.
 
 The following query returns information about the store's catalog configuration.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -157,7 +157,7 @@ The following query returns information about the store's catalog configuration.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

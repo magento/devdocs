@@ -145,7 +145,7 @@ For Magento, introspection queries MUST have the operation name `IntrospectionQu
 
 The following query returns a list of Magento queries. The results are truncated.
 
-**Request**
+**Request:**
 
 ```graphql
 query IntrospectionQuery {
@@ -160,7 +160,7 @@ query IntrospectionQuery {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -187,7 +187,7 @@ query IntrospectionQuery {
 
 The following introspection query returns details about the `ProductAttributeFilterInput` data type.
 
-**Request**
+**Request:**
 
 ```graphql
 query IntrospectionQuery {
@@ -219,7 +219,7 @@ query IntrospectionQuery {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

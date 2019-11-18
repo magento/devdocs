@@ -7,7 +7,7 @@ functional_areas:
 ---
 
 Continue From:
-**Install Magento**
+**Install Magento:**
 
 ### Enable development mode
 

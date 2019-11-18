@@ -13,7 +13,7 @@ Use the `currency` query to return information about the store's currency config
 
 The following query returns the currency for the current instance of Magento:
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -31,7 +31,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

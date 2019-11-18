@@ -2,7 +2,8 @@
 group: admin-pattern-library
 title: Expandable sections
 ---
-_(AKA Expand-Collapse, Collapsible panels)_
+
+(AKA Expand-Collapse, Collapsible panels)
 
 Expandable sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space, thereby reducing clutter and allowing you focus on the primary task. Typically the information to be accommodated can be separated into various sections and/or sub-sections, or topics.
 
