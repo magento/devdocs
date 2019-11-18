@@ -8,7 +8,7 @@ redirect from:
 The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on a specific cart. The shipping address does not need to be specified in the following circumstances:
 
 *  The cart contains only virtual items
-*  When you defined the billing address, you set the `use_for_shipping` attribute to `true`. Magento assigns the same address as the shipping address.
+*  When you defined the billing address, you set the `same_for_shipping` attribute to `true`. Magento assigns the same address as the shipping address.
 
 ## Syntax
 
@@ -92,7 +92,7 @@ The top-level `SetShippingAddressesOnCartInput` object is listed first. All chil
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
-`billing_address` | [ShippingAddressInput!](#ShippingAddressInput) | The billing address for a specific cart
+`shipping_addresses` | [ShippingAddressInput!](#ShippingAddressInput) | The shipping address for a specific cart
 
 ### CartAddressInput object {#CartAddressInputShip}
 
@@ -104,6 +104,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `address` | [CartAddressInput](#CartAddressInputShip) | The shipping address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
+`customer_notes` | String | Text provided by the customer
 
 ## Output attributes
 

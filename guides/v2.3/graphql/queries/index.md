@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: Queries
+title: Using queries
 redirect_from:
   - /guides/v2.3/graphql/search-pagination.html
   - /guides/v2.3/graphql/queries.html
@@ -13,7 +13,7 @@ A GraphQL query retrieves data from the Magento server in a similar manner as a 
 *  Shopping cart contents. GraphQL supports both guest and logged-in customer carts.
 *  Store configuration values, including theme and CMS settings, the currency code, and supported countries.
 
-The Magento REST GET endpoints retrieve a wide variety of information on behalf of the merchant. Many of these endpoints are for retrieving backend information. For example, the `GET /V1/customers/search` endpoint can be used to find a subset of customers that meet certain criteria, such as those that live in a particular state or have a birthday this month.  Likewise, the `GET /V1/invoices` endpoint can return all the recently-generated invoices. This type of functionality is not required for the frontend, so it is not available in GraphQL queries. The queries are designed to improve the customer's user experience by quickly retrieving the data needed to render pages.
+The Magento REST GET endpoints retrieve a wide variety of information on behalf of the merchant. Many of these endpoints are for retrieving backend information. For example, the `GET /V1/customers/search` endpoint can be used to find a subset of customers that meet certain criteria, such as those that live in a particular state or have a birthday this month. Likewise, the `GET /V1/invoices` endpoint can return all the recently-generated invoices. This type of functionality is not required for the frontend, so it is not available in GraphQL queries. The queries are designed to improve the customer's user experience by quickly retrieving the data needed to render pages.
 
 Over time, the Magento GraphQL queries will duplicate the functionality of all storefront-facing GET calls, while making it possible to query more data in one request. The main difference will be that GraphQL will support storefront use cases, while REST will support admin use cases.
 
@@ -35,7 +35,7 @@ query myCartQuery{
 }
 ```
 
-In the preceding example, `myCartQuery` identifies your implementation of the `cart` query.  `cart_id` is a non-nullable string that defines the cart to query. (The exclamation point indicates the value is non-nullable.) The `Cart` output object defines which fields to return.
+In the preceding example, `myCartQuery` identifies your implementation of the `cart` query. `cart_id` is a non-nullable string that defines the cart to query. (The exclamation point indicates the value is non-nullable.) The `Cart` output object defines which fields to return.
 
 Now let's fully define a query:
 
@@ -137,7 +137,7 @@ Variables are defined separately in JSON:
 
 Introspection queries allow you to return information about the schema. For example, you might want a list of Magento GraphQL queries or details about a specific data type. The GraphQL specification determines the structure of introspection queries. See [Introspection](https://graphql.org/learn/introspection/) for more information.
 
-For Magento, introspection queries MUST have the operation name `IntrospectionQuery`. If you omit the operation name, or use a different name, the query returns incomplete results.
+A Magento introspection query returns the same result whether or not you assign it an operation name, such as `IntrospectionQuery`.
 
 ### Example introspection queries
 

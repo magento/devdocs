@@ -13,7 +13,7 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ## Syntax
 
-`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressToken}}`
+`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressTokenOutput}}`
 
 ## Example usage
 
@@ -85,7 +85,10 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-### PaypalExpressToken {#PaypalExpressToken}
+{:.bs-callout-info}
+The `createPaypalExpressToken` mutation previously returned a `PaypalExpressToken` object, which has been deprecated. The mutation now returns a `PaypalExpressTokenOutput` object. The contents of these objects are identical.
+
+### PaypalExpressTokenOutput {#PaypalExpressTokenOutput}
 
 The `PaypalExpressToken` object contains a token returned by PayPal and a set of URLs that allow the buyer to authorize payment and adjust checkout details.
 

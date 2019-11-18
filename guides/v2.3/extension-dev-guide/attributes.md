@@ -36,6 +36,9 @@ In this case, when `getCustomAttributes()` is called, the system returns only cu
 
 The `Customer` module does not treat its EAV attributes in a special manner. As a result, the `getCustomAttributes()` method returns all EAV attributes.
 
+{:.bs-callout .bs-callout-info}
+As of version 2.3.4, Magento caches all system EAV attributes as they are retrieved. This behavior is defined in each affected module's `di.xml` file as the `attributesForPreload` argument for `<type name="Magento\Eav\Model\Config">`. Developers can cache custom EAV attributes by running the `bin/magento config:set dev/caching/cache_user_defined_attributes 1` command. This can also be done from the Admin while in Develop mode by setting **Stores** > Settings **Configuration** > **Advanced** > **Developer** > **Caching Settings** > **Cache User Defined Attributes** to **Yes**. Caching EAV attributes while retrieving improves performance as it decreases the amount of insert/select requests to the DB, but it increases the cache network size.
+
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
 Customer EAV attributes are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).

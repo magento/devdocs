@@ -38,14 +38,14 @@ The following example returns the list of purchased downloadable products for th
       "items": [
         {
           "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
+          "download_url": "https://<M2_INSTANCE>/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
           "order_increment_id": "000000004",
           "remaining_downloads": "Unlimited",
           "status": "pending"
         },
         {
           "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
+          "download_url": "https://<M2_INSTANCE>/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
           "order_increment_id": "000000004",
           "remaining_downloads": "Unlimited",
           "status": "pending"
@@ -75,3 +75,9 @@ Attribute | Type | Description
 `order_increment_id` | String | The purchase order ID
 `remaining_downloads` | String | Determines the number of times the customer can download the product
 `status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
+
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The customer's token does not exist in the `oauth_token` table.
