@@ -3594,53 +3594,69 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 ### Web API
 
 <!--- MAGETWO-82315  -->
+
 *  When you use REST to update an existing product, Magento assigns the update only to the websites that they were assigned to before the update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by adrian-martinez-interactiv4 in pull request [11443](https://github.com/magento/magento2/pull/11443)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 <!--- MAGETWO-90147  -->
+
 *  When you create a credit memo comment with `POST /V1/creditmemo/:id/comments`, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.
 
 <!--- MAGETWO-84319  -->
+
 *  Magento no longer creates duplicate shipments for orders created via API. Previously, Magento created duplicate shipments when a merchant created a shipment via the API under certain conditions (mainly with bundled products).
 
 <!--- MAGETWO-91540  -->
+
 *  Product searches using `GET V1/products` return `extension_attributes` for configurable products as expected.
 
 <!--- MAGETWO-91568  -->
+
 *  You can now include custom attributes when filtering the responses of REST calls.
 
 <!--- MAGETWO-94207  -->
+
 *  Magento now returns a 404 error and includes a descriptive error message when a  REST search is performed on a non-existent cart.
 
 <!--- MAGETWO-81910  -->
+
 *  Magento now includes the filter groups and the sort order of the `$searchCriteria` parameter in the `searchCriteria` object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
 <!--- MAGETWO-82315  -->
+
 *  Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 <!--- ENGCOM-2066  -->
+
 *  A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 
 <!-- MAGETWO-87057  -->
+
 *  Magento now checks for the uniqueness of attribute option values for attributes created via REST. [GitHub-8846](https://github.com/magento/magento2/issues/8846)
 
 <!--- MAGETWO-87152  -->
+
 *  `salesRefundInvoiceV1` now saves the invoice ID as expected for a credit memo. [GitHub-11669](https://github.com/magento/magento2/issues/11669)
 
 ### Wishlist
 
 <!--- MAGETWO-85627  -->
+
 *  Magento now displays an error message if you try to add products to a wishlist without first logging in. *Fix submitted by Pieter Cappelle in pull request [12681](https://github.com/magento/magento2/pull/12681)*.
 
 <!--- MAGETWO-86101  -->
+
 *  Magento now stores product IDs and SKUs to locally stored customer data for wishlists. *Fix submitted by James Halsall in pull request [12896](https://github.com/magento/magento2/pull/12896)*.
 
 <!--- MAGETWO-90297  -->
+
 *  `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built the wrong criteria (`ORDER BY part`). *Fix submitted by Nickolas Malyovanets*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
 
 <!--- MAGETWO-91615  -->
+
 *  Registered users can now create new wishlists as expected when multiple wishlists are enabled. Previously, Magento displayed an error.
 
 <!--- MAGETWO-91433  -->
+
 *  Magento no longer changes the grid view to list view on the product list page when a customer adds a product from the wishlist section to the cart, and now displays the appropriate success message.
 
 ## Known issues

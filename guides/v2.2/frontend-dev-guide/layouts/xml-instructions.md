@@ -355,40 +355,49 @@ There are examples of all argument types.
 
    ```xml
    <argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
-     <param name="paramName">paramName</param>
+     <param name="firstParam">firstValue</param>
+     <param name="secondParam">secondValue</param>
     ...
    </argument>
    ```
 
-The *helper* can use only public methods. In this example the `someMethod()` method should be public.
+The *helper* can only use public methods. In this example the `someMethod()` method should be public.
 The argument with *helper* type can contain `param` items which can be passed as a helper method parameters.
 
-#### Obtain arguments examples in template
+#### Obtain arguments in template examples
 
-These argument examples can be taken in the template like in the following example:
+These argument examples are taken in the template by the `getData` method. Another way to take these arguments is using the magic method `get` followed by the name of argument in CamelCase format. Here is an example to retrieve the arguments from above example:
 
 ```php
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 
 /** @var string $someString */
-$someString = $block->getData('some_string');
+$someString = $block->getData('some_string'); //or $block->getSomeString()
+
 /** @var bool $isActive */
-$isActive = $block->getData('is_active');
+$isActive = $block->getData('is_active'); //or $block->getIsActive()
+
 /** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
-$viewModel = $block->getData('viewModel');
+$viewModel = $block->getData('viewModel'); //or $block->getViewModel()
+
 /** @var string|int|float $someNumber */
-$someNumber = $block->getData('some_number');
+$someNumber = $block->getData('some_number'); //or $block->getSomeNumber()
+
 /** @var null $nullValue */
-$nullValue = $block->getData('null_value');
+$nullValue = $block->getData('null_value'); //or $block->getNullValue()
+
 /** @var array $customArray */
-$customArray = $block->getData('custom_array');
+$customArray = $block->getData('custom_array'); //or $block->getCustomArray()
+
 /** @var array $options */
-$options = $block->getData('options');
+$options = $block->getData('options'); //or $block->getoptions()
+
 /** @var string $shoppingCartUrl */
-$shoppingCartUrl = $block->getData('shopping_cart_url');
+$shoppingCartUrl = $block->getData('shopping_cart_url'); //or $block->getShoppingCartUrl()
+
 /** @var mixed $helperMethodResult */
-$helperMethodResult = $block->getData('helper_method_result');
+$helperMethodResult = $block->getData('helper_method_result'); // or $block->getHelperMethodResult()
 ```
 
 ### arguments {#arguments}

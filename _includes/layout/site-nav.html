@@ -7,11 +7,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <nav class="site-nav">
 
-  <div class="menu-btn">
-    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
-  </div>
-
   <div class="nav-container">
+
+    <div class="menu-btn">
+      <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
+    </div>
 
     <a class="logo" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}/">
       <img src="{{ site.baseurl }}/assets/i/m-logo.svg" alt=""><img src="{{ site.baseurl }}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
@@ -23,14 +23,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {% include layout/navigation.html %}
     </div>
 
-    <div class="search-btn">
-      <button class="search-trigger search-icon" aria-label="Search"></button>
-    </div>
+    <div class="nav-actions">
+      {% include layout/app-switcher.html %}
 
-    <form class="quick-search" action="{{ page.baseurl }}/search.html" method="get" novalidate="novalidate">
-      <input type="search" name="query" placeholder="Search" />
-      <button class="quick-search-close" aria-label="Close Search">&times;</button>
-    </form>
+      <div class="search-btn">
+        <button class="search-trigger search-icon" aria-label="Search"></button>
+      </div>
+
+      <form class="quick-search" action="{{ page.baseurl }}/search.html" method="get" novalidate="novalidate">
+        <input type="search" name="query" placeholder="Search" />
+        <button class="quick-search-close" aria-label="Close Search">&times;</button>
+      </form>
+
+    </div>
 
   </div>
 

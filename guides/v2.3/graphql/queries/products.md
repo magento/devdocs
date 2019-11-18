@@ -90,10 +90,13 @@ small_image_label
 special_from_date
 special_price
 special_to_date
+swatch_image
 thumbnail
 thumbnail_label
 tier_price
 updated_at
+url_key
+url_path
 weight
 ```
 

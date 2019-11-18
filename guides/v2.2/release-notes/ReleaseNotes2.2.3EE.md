@@ -18,6 +18,7 @@ Look for the following highlights in this release:
 *  **Enhancements that help close cross-site request forgery (CSRF), unauthorized data leaks, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 <!--- MAGETWO-84775  -->
+
 *  **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by community member <a href="https://github.com/afoucret" target="_blank">Aurélien Foucret</a>.*
 
 *  **Change to Magento Admin to support recent USPS shipping changes**. On February 23, 2018, USPS removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace.
