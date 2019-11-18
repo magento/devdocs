@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
-title: Masonry component
+title: Masonry (grid) component
+contributor_name: Shankar Konar
+contributor_link: https://github.com/konarshankar07
 ---
 
 The Masonry component is a collection of columns. It renders the masonry grid layout in the Ui component
@@ -14,68 +16,17 @@ The Masonry component has dependencies on the following components:
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>containerId</code></td>
-    <td>Images container id.</td>
-    <td>string</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><code>minRatio</code></td>
-    <td>Minimum aspect ratio for each image.</td>
-    <td>int</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <td><code>containerWidth</code></td>
-    <td>Width of the container.</td>
-    <td>int</td>
-    <td><code>window.innerWidth</code></td>
-  </tr>
-  <tr>
-    <td><code>imageMargin</code></td>
-    <td>Margin between images.</td>
-    <td>int</td>
-    <td><code>20</code></td>
-  </tr>
-  <tr>
-    <td><code>maxImageHeight</code></td>
-    <td>Maximum height of the image.</td>
-    <td>int</td>
-    <td><code>240</code></td>
-  </tr>
-  <tr>
-    <td><code>containerWidthToMinRatio</code></td>
-    <td>Minimum width and height ratio when the container width is less than default key.</td>
-    <td>Object</td>
-    <td><code>{640: 3, 1280: 5, 1920: 8}</code></td>
-  </tr>
-  <tr>
-    <td><code>defaultMinRatio</code></td>
-    <td>Default minimal image width to height ratio.</td>
-    <td>int</td>
-    <td><code>10</code></td>
-  </tr>
-  <tr>
-    <td><code>refreshFPS</code></td>
-    <td>Layout update FPS during window resizing.</td>
-    <td>int</td>
-    <td><code>60</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/masonry</code></td>
-  </tr>
-</table>
+|      Option              |   Description                                                                    |      Type      |  Default Value             |
+|--------------------------|----------------------------------------------------------------------------------|----------------| ---------------------------| 
+| containerId              | Images container id.                                                             |  String        | -                          |
+| minRatio                 | Minimum aspect ratio for each image.                                             |  Int           | -                          |
+| containerWidth           | Width of the container.                                                          |  Int           | window.innerWidth          |
+| imageMargin              | Margin between images.                                                           |  Int           | 20                         |
+| maxImageHeight           | Maximum height of the image.                                                     |  Int           | 240                        |
+| containerWidthToMinRatio | Minimum width and height ratio when the container width is less than default key.|  Object        | {640: 3, 1280: 5, 1920: 8} |
+| defaultMinRatio          | Default minimal image width to height ratio.                                     |  Int           | 10                         |
+| refreshFPS               | Layout update FPS during window resizing.                                        |  Int           | 60                         |
+| template                 | Path to the component’s <code>.html</code> template.                             |  String        | ui/grid/masonry            |
 
 ## Examples
 
