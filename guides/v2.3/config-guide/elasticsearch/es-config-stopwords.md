@@ -143,4 +143,5 @@ Save your changes to `di.xml` and exit the text editor.
     ```
 
 1. In your module, create the directory `etc/stopwords`, with the corresponding `.csv`.
+
 Save your changes to `di.xml` and exit the text editor.
