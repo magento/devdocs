@@ -27,4 +27,8 @@ Use the following environment variable to secure access to your Magento Admin UI
 
 `ADMIN_URL`—The relative URL to access the Magento Admin UI. The default URL is `/admin`. For security reasons, Magento recommends that you change the default to a unique, custom Admin URL that is not easy to guess.
 
-If you need to change the Admin URL after installation, use the [`magento-cloud variable:set`]({{ page.baseurl }}/cloud/env/set-variables.html) command-line tool to change the URL.
+If you need to change the Admin URL after installation, use the `magento-cloud variable:set` command-line tool to change the URL. For example, to set the Admin URL to `magento_A8v10`, use:
+
+```bash
+magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
+```
