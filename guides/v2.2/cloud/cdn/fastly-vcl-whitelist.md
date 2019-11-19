@@ -11,7 +11,7 @@ functional_areas:
 
 The following example shows how to use a custom VCL snippet with a [Fastly Access Control List (ACL)](https://docs.fastly.com/guides/access-control-lists/about-acls) to secure access to the Magento Admin UI for a {{ site.data.var.ece }} project environment by client IP address. When you add the custom VCL snippet, Fastly allows only requests from IP addresses included in the ACL.
 
-**Prerequisites**
+**Prerequisites:**
 
 -  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 

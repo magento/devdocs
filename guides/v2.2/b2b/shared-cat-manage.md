@@ -12,11 +12,11 @@ functional_areas:
 
 {{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users. The seller assigns a custom shared catalog to specific companies as configured by admin. There can only be one public catalog, and it cannot be deleted.
 
-**Service name**
+**Service name:**
 
 `sharedCatalogSharedCatalogRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 POST /V1/sharedCatalog
@@ -26,7 +26,7 @@ DELETE  /V1/sharedCatalog/:sharedCatalogId
 GET  /V1/sharedCatalog/
 ```
 
-**Shared catalog parameters**
+**Shared catalog parameters:**
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -43,11 +43,11 @@ Name | Description | Format | Requirements
 
 When B2B is enabled, the system creates a public shared catalog named `Default (General)`. Magento allows only one public shared catalog at a time. You can create an unlimited number of custom shared catalogs.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/sharedCatalog`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -60,7 +60,7 @@ When B2B is enabled, the system creates a public shared catalog named `Default (
 }
 ```
 
-**Response**
+**Response:**
 
 The shared catalog `id`, such as `2`.
 
@@ -68,7 +68,7 @@ The shared catalog `id`, such as `2`.
 
 You cannot change the `type` from public (`1`) to custom (`0`). If you need to replace the public shared catalog, create a custom catalog and change its type to public.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/sharedCatalog/2`
 
@@ -85,7 +85,7 @@ You cannot change the `type` from public (`1`) to custom (`0`). If you need to r
 }
 ```
 
-**Response**
+**Response:**
 
 The shared catalog `id`, such as `2`.
 
@@ -93,15 +93,15 @@ The shared catalog `id`, such as `2`.
 
 This call returns information about the specified shared catalog.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/sharedCatalog/2`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -121,15 +121,15 @@ Not applicable
 
 Only custom shared catalogs can be deleted. When a custom catalog is deleted, the assigned companies are re-assigned to the default public catalog.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/sharedCatalog/2`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -139,15 +139,15 @@ The following search returns all the custom shared catalogs (`type = 0`) in the 
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {

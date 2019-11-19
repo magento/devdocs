@@ -14,7 +14,7 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
  The following example removes a gift card from the cart.
 
-**Request**
+**Request:**
 
  ``` text
 mutation {
@@ -33,7 +33,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
  ```json
 {

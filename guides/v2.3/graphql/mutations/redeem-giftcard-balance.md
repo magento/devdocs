@@ -17,7 +17,7 @@ Run this mutation on behalf of logged-in customers only. [Get customer authoriza
 
 The following example redeems the gift card with code `“056MHP57TJ5C”`.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -34,7 +34,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

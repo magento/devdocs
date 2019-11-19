@@ -21,7 +21,7 @@ If the amount of available store credit equals or exceeds the grand total of the
 
 In the following example, the customer starts with $10 of store credit. The subtotal of the items in the cart before applying the store credit plus shipping and tax is $34.64. The grand total on the cart after applying the store credit is $24.64.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -52,7 +52,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

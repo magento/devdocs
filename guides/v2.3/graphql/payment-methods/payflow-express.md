@@ -34,7 +34,7 @@ When you set the payment method to one of the Express Checkout payment solutions
 
 The following example shows the `setPaymentMethodOnCart` mutation with the `code` set to `payflow_express`.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -57,7 +57,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

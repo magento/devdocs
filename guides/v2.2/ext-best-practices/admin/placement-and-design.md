@@ -42,13 +42,13 @@ From the list of extension types below, determine the type of extension you have
 
 These extensions provide additional [API](https://glossary.magento.com/api) over Magento's existing API and is responsible for providing settings between Magento and another system.
 
-**Placement**
+**Placement:**
 
 All required settings for this connector type should appear in the **Stores** > **Settings** > **Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
 
 ![Connector settings placement]({{ site.baseurl }}/common/images/ext-best-practices/connector-settings-placement.png)
 
-**Style**
+**Style:**
 
 *  The style of the listing for your settings should match the look of Magento's listed settings.
 *  Icons or images should not be used in the navigation listing for your settings.
@@ -60,7 +60,7 @@ All required settings for this connector type should appear in the **Stores** > 
 These extensions are responsible for integrating with different systems and need additional
 settings displayed under specific entries in the **Store** > **Settings** > **Configuration** section.
 
-**Placement**
+**Placement:**
 
 The settings for these extensions should be displayed under its respective parent section under the **Store** > **Settings > **Configuration** section.
 
@@ -74,7 +74,7 @@ For example, if the extension is for Shipping, then you can place it under **Sto
 
 These extensions are responsible for integrating with different systems and need additional settings and configurations for synchronizing with these systems.
 
-**Placement**
+**Placement:**
 
 If all the settings for an extension can be consolidated into one section, then the extension can be added to one of the primary navigation's submenu as links under the appropriate parent item. Avoid placing extension settings in multiple sections, such as the Configuration section and another related section.
 
@@ -82,7 +82,7 @@ For example, if your extension is related to the "Reports" functionality then it
 
 ![Connector with additional features placement]({{ site.baseurl }}/common/images/ext-best-practices/additional-feature-placement.png)
 
-**Style**
+**Style:**
 
 *  The styles of the links in the admin should follow the same styles of the default Magento Navigation Links.
 *  Do not introduce custom icons in the navigation submenus.
@@ -93,7 +93,7 @@ For example, if your extension is related to the "Reports" functionality then it
 
 These are extensions which provide additional functionality to Magento that do not already exist as a feature. These extensions usually demand an additional primary navigation item.
 
-**Placement**
+**Placement:**
 
 There will be a new, dedicated section designed for such exclusive extensions. When feature-level extensions are installed, those extensions will live under this section. The exact final name of this new section has not been decided (we welcome your feedback), but in the image below it is named Extensions.
 
@@ -111,7 +111,7 @@ Since this section is not yet available, you should place your extension in one 
 
 These are add-ons to existing Magento feature and might appear as a nested feature.
 
-**Placement**
+**Placement:**
 
 As these are integrated features no direct/indirect accessible links are available from the admin.
 
@@ -121,6 +121,6 @@ As these are integrated features no direct/indirect accessible links are availab
 
 These extensions are created as a code and do not need to have a representation in the admin panel.
 
-**Placement**
+**Placement:**
 
 As these extensions do not have additional settings no direct/indirect accessible links are available from the admin.

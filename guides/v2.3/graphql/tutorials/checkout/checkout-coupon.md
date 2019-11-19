@@ -20,7 +20,7 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 `{ COUPON_CODE }` is an existing Magento coupon code. It cannot be generated with GraphQL.
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -42,7 +42,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -60,7 +60,7 @@ mutation {
 
 Use [removeCouponFromCart]({{ page.baseurl }}/graphql/mutations/remove-coupon.html) to remove a discount coupon from the shopping cart.
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -77,7 +77,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

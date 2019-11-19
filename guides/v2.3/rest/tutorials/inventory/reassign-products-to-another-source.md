@@ -30,21 +30,21 @@ Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more
 {:.bs-callout .bs-callout-warning}
 When you unassign a source from a product, all source data including inventory amounts is removed from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders. In a production environment, Magento strongly recommends completing all orders and shipments for those products prior to removing the source.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/source-items-delete`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -63,7 +63,7 @@ When you unassign a source from a product, all source data including inventory a
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -73,20 +73,20 @@ Magento returns an empty array.
 
 Now we can assign each product to one or more sources. The `POST V1/inventory/source-items` endpoint allows you to specify the quantity of each product that is available at each source.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/source-items`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 `Authorization`: `Bearer <admin_token>``
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -159,7 +159,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 

@@ -39,7 +39,7 @@ Spinner is a gif image.
 
 In general, it is not recommended to use the progress bar if the process can be completed under 3 seconds. To avoid flickering, the minimum time displayed of progress bar should be 3 seconds.
 
-**States Diagram**
+**States Diagram:**
 
 ![](img/progressbar-behavior-diagram.png)
 

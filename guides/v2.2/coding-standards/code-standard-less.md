@@ -228,7 +228,7 @@ Add a semicolon after property.
 
 Avoid using the `!important` property if possible. If it is required, add a space before the property.
 
-**Correct**
+**Correct:**
 
 ```css
 .jquery-ui-calendar-item {
@@ -249,7 +249,7 @@ Avoid using the `!important` property if possible. If it is required, add a spac
 First and second level comments must be surrounded by empty lines.
 First, second and third level comments should have two spaces after "//". Inline comments should have one space after "//".
 
-**Correct**
+**Correct:**
 
 ```css
 //
@@ -346,7 +346,7 @@ Helper class names should be lowercase and start with underscore ("_").
 
 Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.
 
-**Example**:
+**Example:**:
 
 ```css
 ._active {
@@ -640,7 +640,7 @@ color: #ff0000;
 
 If variables are local and used only in a [module](https://glossary.magento.com/module) scope, they should be located in the module file, in the beginning of the general comment.
 
-**Example** `_module.less`:
+**Example:** `_module.less`:
 
 ```css
 ...
@@ -728,7 +728,7 @@ For [mixin](https://glossary.magento.com/mixin) naming apply the class naming ru
 
 For mixins grouping use the double underscore "__" prefix.
 
-**Example**:
+**Example:**:
 
 ```css
 .extend__clearfix (...) {

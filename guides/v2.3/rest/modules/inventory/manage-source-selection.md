@@ -20,7 +20,7 @@ The SSA also manages shipments by providing recommendations for the best sources
 
 Third parties can also extend SSA to create customized algorithms for recommending cost-effective shipments.
 
-**Service names**
+**Service names:**
 
 ```http
 inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
@@ -30,7 +30,7 @@ inventoryDistanceBasedSourceSelectionApiGetDistanceV1
 inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
 ```
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 GET /V1/inventory/source-selection-algorithm-list
@@ -41,15 +41,15 @@ POST /V1/inventory/source-selection-algorithm-result
 
 Currently, Inventory Management supports only the default SSA for priority. Third-party developers and future releases may add support for additional algorithms.
 
-**Sample usage**
+**Sample usage:**
 
 `GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 An array containing a list of SSA codes, titles, and descriptions.
 
@@ -72,11 +72,11 @@ An array containing a list of SSA codes, titles, and descriptions.
 
 The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the items array.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/source-selection-algorithm-result`
 
-**inventoryRequest parameters**
+**inventoryRequest parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
@@ -94,7 +94,7 @@ Name | Description | Type | Requirements
 
 ### Source Priority Algorithm
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -113,7 +113,7 @@ Name | Description | Type | Requirements
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -155,7 +155,7 @@ Name | Description | Type | Requirements
 
 ### Distance Priority algorithm
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -183,7 +183,7 @@ Name | Description | Type | Requirements
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -231,15 +231,15 @@ Magento provides several endpoints to help determine GPS coordinates.
 
 The `GET /V1/inventory/get-distance-provider-code` endpoint returns the configured distance provider for the Distance Priority algorithm. The value can be `google` or `offline`.
 
-**Sample usage**
+**Sample usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/get-distance-provider-code`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 `offline`
 
@@ -247,7 +247,7 @@ None
 
 The `GET /V1/inventory/get-distance` endpoint calculates the distance between two points, given the longitude and latitude of the source and distance.
 
-**URL parameters**
+**URL parameters:**
 
 Name | Description
 --- | ---
@@ -256,15 +256,15 @@ Name | Description
 `destination[lat]` | The latitude of the destination
 `destination[lng]` | The longitude of the destination
 
-**Sample usage**
+**Sample usage:**
 
 `GET /V1/inventory/get-distance?source[lat]=30.271129&source[lng]=-97.7437&destination[lat]=39.290882&destination[lng]=-76.610759`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 The distance, in kilometers
 
@@ -272,7 +272,7 @@ The distance, in kilometers
 
 The `GET /V1/inventory/get-latlng-from-address` endpoint calculates the latitude and longitude of the shipping address.
 
-**URL parameters**
+**URL parameters:**
 
 Name | Description
 --- | ---
@@ -282,15 +282,15 @@ address[street] | The street of the shipping address
 address[region] | The region code of the shipping address
 address[city] | The city of the shipping address
 
-**Sample usage**
+**Sample usage:**
 
 `GET /V1/inventory/get-latlng-from-address?address[country]=US&address[postcode]=10577&address[street]=123%20Oak&address[region]=NY&address[city]=Purchase`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {

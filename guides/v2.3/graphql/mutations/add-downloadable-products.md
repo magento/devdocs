@@ -27,7 +27,7 @@ The following examples show how to add a downloadable product to a shopping cart
 
 The following example shows how to add a downloadable product in which the **Links can be purchased separately** option is enabled. The payload includes custom downloadable links `Episode 2` and `Episode 3`.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -72,7 +72,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```text
 {
@@ -121,7 +121,7 @@ mutation {
 
 The following example shows how to add a downloadable product in which the **Links can be purchased separately** option is disabled. All downloadable links are added to the cart automatically.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -158,7 +158,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```text
 {

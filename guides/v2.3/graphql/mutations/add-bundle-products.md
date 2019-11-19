@@ -25,7 +25,7 @@ This example adds one bundle product with following children to the specified sh
 
 The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/mutations/create-empty-cart.html) by creating an empty cart.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -97,7 +97,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -28,7 +28,7 @@ If you add a product to the shopping cart as a registered customer, be sure to s
 
 The following mutation adds a **simple product** into shopping cart.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -59,7 +59,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -86,7 +86,7 @@ mutation {
 
 The following mutation adds a **virtual product** into shopping cart.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -117,7 +117,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

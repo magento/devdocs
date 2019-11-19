@@ -31,7 +31,7 @@ If you know a unique property value of a component that you need to find, you ca
 var component = registry.get('%property% = %propertyValue%');
 ```
 
-**Examples**
+**Examples:**
 
 The following code shows how to get a component by a full component name:
 

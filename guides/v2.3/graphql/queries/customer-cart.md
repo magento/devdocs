@@ -23,7 +23,7 @@ If you know the value of the logged-in customer's cart ID, you can allow the cus
 
 The following query lists the products in the logged-in customer's cart:
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -41,7 +41,7 @@ The following query lists the products in the logged-in customer's cart:
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

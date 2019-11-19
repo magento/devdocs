@@ -296,7 +296,7 @@ However, module-specific configurations such as its dependency injection and eve
 
 Avoid this situation by not including dependencies in your uninstall event class
 
-**Related Topics**
+**Related Topics:**
 
 *  Magento's [versioning policy]
 

@@ -16,7 +16,7 @@ The `checkoutAgreements` query retrieves checkout agreements. The query will alw
 
 The following query returns enabled checkout agreements.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -32,7 +32,7 @@ The following query returns enabled checkout agreements.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

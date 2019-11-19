@@ -82,7 +82,7 @@ Add the following inline fragment to the output section of your `products` query
 
 The following `products` query returns `ConfigurableProduct` information about the `WH01` configurable product, which is defined in the sample data.
 
-**Request**
+**Request:**
 
 ```text
 {

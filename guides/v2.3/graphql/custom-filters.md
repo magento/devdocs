@@ -36,7 +36,7 @@ In this example, the custom attribute `volume` was assigned to the `bags` attrib
 
 In this scenario, a `products` search filtered to return items where the `volume` attribute is set to `Large` would be similar to the following:
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -50,7 +50,7 @@ In this scenario, a `products` search filtered to return items where the `volume
 }
 ```
 
-**Response**
+**Response:**
 
 The response might be similar to the following:
 

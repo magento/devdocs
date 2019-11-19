@@ -23,7 +23,7 @@ Perform the following actions before using the `placeOrder` mutation:
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ``` text
 mutation {
@@ -39,7 +39,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

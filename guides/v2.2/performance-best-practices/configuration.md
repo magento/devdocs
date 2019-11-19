@@ -50,7 +50,7 @@ This option is available only if **Backorder with any mode** is activated.
 
 To improve the storefront responsiveness of your Magento instance, go to the Admin in Default or Developer mode and change the following settings:
 
-**Stores -> Configuration -> Advanced -> Developer**
+**Stores -> Configuration -> Advanced -> Developer:**
 
 | Settings Group      | Setting                    | Value  |
 | ------------------- | -------------------------- | ------ |
