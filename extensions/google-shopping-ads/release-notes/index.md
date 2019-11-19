@@ -25,7 +25,7 @@ The release notes include:
 
 ### v3.0.2
 
-Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Admin Panel Access**: <!--CHAN-3815-->Improved the onboarding process to allow access to the side _Admin_ panel when the initial _Welcome to Google Shopping ads Channel in Magento_ screen displays.
 
@@ -37,7 +37,7 @@ Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3
 
 ### v3.0.1
 
-Google Shopping ads Channel 3.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 3.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Resolved Index Management Issues**:
 
@@ -55,7 +55,7 @@ Google Shopping ads Channel 3.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3
 
 ### v3.0.0
 
-Google Shopping ads Channel 3.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 3.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Magento Log Exceptions**: <!--CHAN-3439-->Implemented **Enable Services Logs** feature to help with troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
 
@@ -81,31 +81,31 @@ Google Shopping ads Channel 3.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3
 
 ### v2.0.2
 
-Google Shopping ads Channel 2.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 2.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Resolved Startup Issue**: Corrected an issue that prevented Google Shopping ads Channel from starting up correctly after installing v2.0.1.
 
 ### v2.0.1
 
-Google Shopping ads Channel 2.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 2.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Resolved Update/Install Issue**: Corrected a problem with the update package that prevented Google Shopping ads Channel v2.0.0 from installing correctly.
 
 ### v2.0.0
 
-Google Shopping ads Channel 2.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 2.0.0 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Resolved Database Issue**: Corrected a database issue that caused some users to experience delayed processing times.
 
 ### v1.1.2
 
-Google Shopping ads Channel 1.1.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 1.1.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.fix}**Intermittent Load Error**: Resolved an intermittent error preventing Google Shopping ads Channel from loading after install.
 
 ### v1.1.1
 
-Google Shopping ads Channel 1.1.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, and 2.3.2 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 1.1.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Simplified Onboarding and Maintenance**: Add GMC accounts with ease through a step-by-step process with detailed instructions available through the Magento Admin.
 
