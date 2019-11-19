@@ -80,7 +80,17 @@ sub process_graphql_headers {
 
 [Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) further describes how to configure the `default.vcl` file.
 
+## Caching with Fastly
+
+{{site.data.var.ece}} uses Fastly for caching. To enable GraphQL caching on Fastly:
+
+1.  Upgrade the Fastly CDN Module for Magento 2.x to version 1.2.118 or higher.
+1.  Upload the VCL file to Fastly.
+
+[Set up Fastly]({{page.baseurl}}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
+
 ## X-Magento-Vary
+
 The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
 
 ## Response headers
