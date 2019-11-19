@@ -487,11 +487,11 @@ require.config({
 ```
 
 {: .bs-callout-info }
-When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, because the calls are executed in the sequential order they appear.
+When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, as the calls are executed in the order they appear.
 
 #### 6. Test the results
 
-After the page loads, you should notice the browser loading different dependencies and bundles. For example, here are the results for 'Slow 3G' profile:
+After the page loads, notice the browser loading different dependencies and bundles. For example, here are the results for 'Slow 3G' profile:
 
 ![TwiceAsFast](images/TwiceAsFast.png)
 
