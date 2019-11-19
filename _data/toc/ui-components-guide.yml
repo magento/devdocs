@@ -107,6 +107,10 @@ pages:
         - label: Listing (grid) component
           url: /ui_comp_guide/components/ui-listing-grid.html
 
+        - label: Masonry (grid) component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-masonry.html
+
         - label: MassActions component
           url: /ui_comp_guide/components/ui-massactions.html
 
