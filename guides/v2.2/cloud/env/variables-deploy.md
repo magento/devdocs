@@ -379,7 +379,7 @@ The following example merges new values to an existing configuration:
 stage:
   deploy:
     RESOURCE_CONFIGURATION:
-      _merge: false
+      _merge: true
       default_setup:
         connection: default
 ```

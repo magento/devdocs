@@ -264,7 +264,7 @@ After you make the change in the Admin, run `bin/magento app:config:dump` on you
 
 {% endcollapsible %}
 
-**env.php**
+**env.php:**
 
 The default email domain system-specific configuration setting is written to `app/etc/env.php`.
 

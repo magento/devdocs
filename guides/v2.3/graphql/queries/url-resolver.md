@@ -19,7 +19,7 @@ The `urlResolver` query returns the canonical URL for a specified product, categ
 
 The following query returns information about the URL containing `joust-duffle-bag.html`.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -31,7 +31,7 @@ The following query returns information about the URL containing `joust-duffle-b
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

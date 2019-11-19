@@ -9,7 +9,7 @@ To successfully retrieve information about a specific customer using GraphQL, yo
 
 The following example shows how to retrieve a customer's authorization token:
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -19,7 +19,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
  {

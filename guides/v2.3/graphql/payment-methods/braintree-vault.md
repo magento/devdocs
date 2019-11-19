@@ -50,7 +50,7 @@ Attribute |  Data Type | Description
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Braintree Vault payment method.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -71,7 +71,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

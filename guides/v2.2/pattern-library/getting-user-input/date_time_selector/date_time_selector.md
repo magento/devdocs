@@ -116,27 +116,27 @@ Field selection works the same as a typical text field with
 
 ## Style
 
-**Single Date Picker**
+**Single Date Picker:**
 
 ![](img/datepicker.png)
 
-**Date Range Picker**
+**Date Range Picker:**
 
 ![](img/rangedatepicker.png)
 
-**Single Time Picker**
+**Single Time Picker:**
 
 ![](img/timepicker.png)
 
-**Time Range Picker**
+**Time Range Picker:**
 
 ![](img/timerangepicker.png)
 
-**Single Date and Time Picker**
+**Single Date and Time Picker:**
 
 ![](img/date&timepicker.png)
 
-**Date and Time Range Picker**
+**Date and Time Range Picker:**
 
 ![](img/rangedate&timepicker.png)
 

@@ -36,7 +36,7 @@ Use the upload ID to retrieve details about a file upload.
 GET /rest/v1/files/uploads/:file_upload_id
 ```
 
-**Parameters**
+**Parameters:**
 
 |Field|Type|Description|
 |-----|----|-----------|
@@ -49,7 +49,7 @@ Sorting and filtering parameters are currently not available for this endpoint.
 If the `file_upload_id` parameter is specified, a single file record will be returned.
 If it is omitted, then a batch response will be returned: an array of records for all files uploaded by the current user.
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -57,7 +57,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -140,7 +140,7 @@ Content-Type: application/pdf
 |filename|string|Should be the original name of the file.|
 |Content-Type|string|Should be the correct mime-type for the file.|
 
-**Request**
+**Request:**
 
 If the request body given above was saved into a temporary file at `/tmp/files-payload`,
 you may use it in your POST request to upload the files:
@@ -153,7 +153,7 @@ curl -X POST \
      https://developer-stg-api.magento.com/rest/v1/files/uploads
 ```
 
-**Response**
+**Response:**
 
 The above request gives an output similar to:
 

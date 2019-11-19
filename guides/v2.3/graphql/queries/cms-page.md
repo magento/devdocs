@@ -17,7 +17,7 @@ Return the contents of a CMS page:
 
 The following query returns information about the "404 Not Found" CMS page:
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -34,7 +34,7 @@ The following query returns information about the "404 Not Found" CMS page:
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

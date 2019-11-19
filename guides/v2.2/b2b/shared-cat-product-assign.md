@@ -21,11 +21,11 @@ The `sharedCatalogCategoryManagementV1` service is based on `catalogCategoryMana
 {: .bs-callout-info }
 Products that are defined within a category are not included when you assign a category to a shared catalog. You must add products separately.
 
-**Service name**
+**Service name:**
 
 `sharedCatalogCategoryManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```terminal
 POST /V1/sharedCatalog/:id/assignCategories
@@ -33,7 +33,7 @@ POST /V1/sharedCatalog/:id/unassignCategories
 GET  /V1/sharedCatalog/:id/categories
 ```
 
-**Category parameters**
+**Category parameters:**
 
 {: .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
@@ -46,11 +46,11 @@ Name | Description | Format | Requirements
 
 The following example adds the Luma Gear category (`id=3`) as well as its subcategories (`id=4,5,6`) to a custom shared catalog.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignCategories`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -71,7 +71,7 @@ The following example adds the Luma Gear category (`id=3`) as well as its subcat
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the operation was successful
 
@@ -81,11 +81,11 @@ When you unassign a category from a shared catalog, Magento also removes its pro
 
 The following example removes two categories from the shared catalog.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignCategories`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -101,7 +101,7 @@ The following example removes two categories from the shared catalog.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the operation was successful
 
@@ -109,15 +109,15 @@ The following example removes two categories from the shared catalog.
 
 The `GET` call returns an array of catalog IDs.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/sharedCatalog/2/categories`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -132,11 +132,11 @@ Not applicable
 
 The `sharedCatalogProductManagementV1` service is based on `catalogProductManagementV1`. To return a list of products defined within a category, call `GET /V1/categories/:categoryId/products`.
 
-**Service name**
+**Service name:**
 
 `sharedCatalogProductManagementV1`
 
-**REST endpoints**
+**REST endpoints:**
 
 ```terminal
 POST  /V1/sharedCatalog/:id/assignProducts
@@ -144,7 +144,7 @@ POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
 ```
 
-**Category parameters**
+**Category parameters:**
 
 {: .bs-callout-info }
 Although you can specify other parameters defined within a `products` object, the `sku` is the only one used to assign or unassign a product to a shared catalog.
@@ -157,11 +157,11 @@ Name | Description | Format | Requirements
 
 The following example adds two products each in the Bags, Fitness Equipment, and Watches categories to a custom shared catalog. The specified products do not have to be in the same category.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignProducts`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -188,7 +188,7 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the operation was successful
 
@@ -196,11 +196,11 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 Unassigning a product does not remove it from its category or categories.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignProducts`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -212,7 +212,7 @@ Unassigning a product does not remove it from its category or categories.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the operation was successful
 
@@ -220,15 +220,15 @@ Unassigning a product does not remove it from its category or categories.
 
 The `GET` call returns an array of SKUs.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/sharedCatalog/2/products`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 [

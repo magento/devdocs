@@ -15,7 +15,7 @@ The `removeItemFromCart` mutation deletes the entire quantity of a specified ite
 
 The following example removes cart item 14 from the cart.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -43,7 +43,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -15,7 +15,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call updates the customer's city and postcode.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -30,7 +30,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -60,6 +60,19 @@ Attribute |  Data Type | Description
 The `updateCustomerAddress` mutation returns the `CustomerAddress` object.
 
 {% include graphql/customer-address-output.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`Address "id" value should be specified` | The `id` attribute is zero.
+`Could not find a address with ID "XXX"` | The customer address specified in the `id` attribute does not exist.
+`Current customer does not have permission to address with ID "XXX"` | The customer tries to update the address of another customer.
+`Field "updateCustomerAddress" argument "id" of type "Int!" is required but not provided.` | The `id` attribute was omitted.
+`Field "updateCustomerAddress" argument "id" requires type Int!, found "XXX".` | The specified `id` attribute value has the wrong type.
+`"input" value must be specified` | The `input` attribute was omitted or was specified but is empty.
+`Syntax Error: Expected Name, found )` | The `id` and `input` attributes are omitted.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
 
 ## Related topics
 

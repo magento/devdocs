@@ -323,7 +323,7 @@ You can also use a predefined directive such as `@expectedExceptionMessage` as a
 
 In the following query, a customer provides an incorrect cart ID while trying to retrieve information about his own cart.
 
-**Query**
+**Query:**
 
 ```text
 {
@@ -337,7 +337,7 @@ In the following query, a customer provides an incorrect cart ID while trying to
 }
 ```
 
-**Result**
+**Result:**
 
 ```json
 {
@@ -411,13 +411,13 @@ Use the following functions to cover expected exceptions:
 
 ### Run all tests in a API functional test suite
 
-**Syntax**
+**Syntax:**
 
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
 
-**Example**
+**Example:**
 
 To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
 
@@ -427,13 +427,13 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 
 ### Run a single test in a API functional test suite
 
-**Syntax**
+**Syntax:**
 
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter <testFunctionName> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
 
-**Example**
+**Example:**
 
 To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
 
@@ -445,13 +445,13 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter test
 
 Use the `@group` directive in the test annotation to add the ability to run a group tests.
 
-**Syntax**
+**Syntax:**
 
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group <TEST_GROUP_ALIAS> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
 ```
 
-**Example**
+**Example:**
 
 The `testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
 

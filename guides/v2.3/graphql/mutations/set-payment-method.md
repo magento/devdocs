@@ -38,7 +38,7 @@ Supported online payment methods include:
 
 The following example assigns the `banktransfer` payment method to the specified cart.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -58,7 +58,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
