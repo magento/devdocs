@@ -15,7 +15,7 @@ See [Paypal Payflow Link payment method]({{page.baseurl}}/graphql/payment-method
 
 The following example requests a token in a Payflow Link transaction.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -28,7 +28,7 @@ The following example requests a token in a Payflow Link transaction.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -10,7 +10,7 @@ functional_areas:
 {:.bs-callout .bs-callout-info}
 We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 
-**New features**
+**New features:**
 
 -  <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->**Improved logging**
    -  We improved log messaging to provide better explanations when the build or deploy process overrides an environment variable.
@@ -32,7 +32,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -  <!--MAGECLOUD-1090-->We implemented smart patching. Now the package applies patches based not on {{site.data.var.ece}} version, but on patched package version.
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-1162 -->We fixed a logging issue that was causing build errors.
 
@@ -56,13 +56,13 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 ## v2002.0.7
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-1454-->We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
 
 ## v2002.0.6
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-1413 -->We fixed an issue that was causing `gzip` errors when a file or directory name contains spaces.
 
@@ -70,7 +70,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 ## v2002.0.5
 
-**New features**
+**New features:**
 
 -  **Configure a cron consumer with an environment variable**—You can now configure cron consumers using the new `CRON_CONSUMERS_RUNNER` environment variable.
 
@@ -90,7 +90,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -  **Cron interval limitations lifted**—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in `.magento.app.yaml` or create a support ticket for Production/Staging environments. Refer to [Set up cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html) for more information.
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-1327 -->We fixed an issue that was causing long deploy times due to the deploy process invoking the `cache-clean` operation before static content deployment.
 
@@ -110,31 +110,31 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 ## v2002.0.4
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.
 
 ## v2002.0.3
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!--MAGECLOUD-1311-->We fixed an issue that was causing pages to time out because Redis was taking too long to read/write. You can now use the `disable_locking` parameter in Redis configurations to prevent this issue.
 
 ## v2002.0.2
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!--MAGECLOUD-1246-->The RabbitMQ configuration process now obtains all required parameters automatically.
 
 ## v2002.0.1
 
-**New features**
+**New features:**
 
 -  <!--- MAGECLOUD-1057 -->{{site.data.var.ece}} now supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of `quick` for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html) to customize and use these strategies with your build and deploy actions. This variable supports the options `standard`, `quick`, or `compact`. If you select `compact`, we override the `STATIC_CONTENT_THREADS` value with `1`, which can slow deployment, especially in production environments. Not available in 2.1.
 
 -  <!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->We have created a log file on environments to capture and compile build and deploy actions. The file is located in the `var/log/cloud.log` file inside the Magento root application directory.
 
-**Resolved issues**
+**Resolved issues:**
 
 -  <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `{{site.data.var.ct}}` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
 

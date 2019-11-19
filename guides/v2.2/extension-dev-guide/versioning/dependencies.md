@@ -27,7 +27,7 @@ However, the dependency rules are different:
 
 *  If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
-  **API dependency example**
+  **API dependency example:**
 
     ```json
     {

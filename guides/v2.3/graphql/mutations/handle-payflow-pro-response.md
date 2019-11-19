@@ -28,7 +28,7 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 The following example sends the Payflow Pro payload to Magento:
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -47,7 +47,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

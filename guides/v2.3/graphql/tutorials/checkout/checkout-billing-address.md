@@ -27,7 +27,7 @@ Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billi
 
 The following mutation adds a new billing address. `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -72,7 +72,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -105,7 +105,7 @@ mutation {
 
 The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used for billing and shipping.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -161,7 +161,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -212,7 +212,7 @@ mutation {
 
 First, query the customer to return the list of address IDs.
 
-**Request**
+**Request:**
 
 ```text
 query {
@@ -226,7 +226,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```text
   "data": {
@@ -247,7 +247,7 @@ Set `{ CUSTOMER_ADDRESS_ID }` to an `id` returned in the query.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -278,7 +278,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -30,27 +30,27 @@ The whole structure must be responsive and fluid.
 
 ![](img/structure-wizard.jpg)
 
-**1. Wizard Title**
+**1. Wizard Title:**
 
 This would be the page/modal title
 
-**2. Wizard Progress**
+**2. Wizard Progress:**
 
 Placement is always on the most left. The width is fluid, depending on the screen size. Must be in one line. The width can go as long to reach the buttons. But if there is not enough room, see **Variation 4** at the bottom of this document.
 
-**3. Action Buttons and Links**
+**3. Action Buttons and Links:**
 
 The additional links and buttons needed must be between the Wizard Progress and Next & Back buttons.
 
-**4. Next & Back buttons**
+**4. Next & Back buttons:**
 
 These buttons must be present at all time and in every step of the wizard. If the button is not needed, it can be disabled. Placement is fixed at the most right of the whole container.
 
-**5. Step Labels**
+**5. Step Labels:**
 
 These labels are optional. Although long labels are not recommended, it is possible. The labels can flow to the next line but only two lines permitted. Any extra text are not shown but the '...' will be use to indicate that the label has extra text.
 
-**6. Current Step Title**
+**6. Current Step Title:**
 
 This should always be in the format "Step #: Step Label".
 
@@ -62,26 +62,26 @@ Refer to below for basic styling. The special cases of styling can be found unde
 
 ## Interaction and Behavior
 
-**Content Behavior**
+**Content Behavior:**
 
 User navigate between steps of the wizard by clicking 'Back' or 'Next' button.
 The 'Back' or 'Next' buttons should only change/refreshes the content area, not the whole page.
 
-**Fillings Animation**
+**Fillings Animation:**
 
 No animation
 
-**Back Buttons behavior**
+**Back Buttons behavior:**
 
 In every first step, back button is disabled. In all other steps, back button becomes enabled.
 
-**Next Buttons behavior**
+**Next Buttons behavior:**
 
 If next button exist in the very last step, it should always be disabled. (Note: refer to variations section of this document, some cases may not have next button in last step.
 
 If a step required that the user complete the steps before proceeding, next button maybe disabled for that step.
 
-**Visited States behavior**
+**Visited States behavior:**
 
 If the user is creating a new flow using wizard, the future steps can be disabled. But if a user is EDITING an existing flow using wizard, all steps in the progress-bar will be accessible. The visited states does NOT behave like a visited link. The system should remember if the flow have been visited before even though the visitation is not from the same browser session.
 

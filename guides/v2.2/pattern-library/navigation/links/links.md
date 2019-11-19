@@ -51,7 +51,7 @@ Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http:/
 
 ### Breadcrumbs
 
-**Guideline**
+**Guideline:**
 
 1. Must always locate above the title as shown.
 1. Not be used if all the pages are on the same level. Breadcrumbs are intended to show hierarchy.
@@ -62,7 +62,7 @@ Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http:/
 1. Include the full navigational path from the homepage to last level of current page. Not displaying certain levels will confuse users.
 1. Never replace primary navigation. They have been devised as a secondary navigation aid and should always be used as such.
 
-**Example**
+**Example:**
 
 ![](img/example5.png)
 

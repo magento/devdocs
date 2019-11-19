@@ -50,15 +50,15 @@ The `negotiated_price_type` can have one of the following values:
 
 `3` - Set a proposed price for the entire quote. The `negotiated_price_value`parameter specifies the proposed price.
 
-**Service Name**
+**Service Name:**
 
 `quoteCartRepositoryV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/negotiableQuote/6`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -81,18 +81,18 @@ The buyer can add, update, or delete items from the quote under the following co
 *  The quote is in one of the following system states: `created`, `processing_by_admin`, or `submitted_by_customer`.
 *  The quote doesn't have a negotiated price.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/items`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -104,7 +104,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -128,11 +128,11 @@ Authorization Bearer <customer token>
 
 ### Change the quote expiration date
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/negotiableQuote/6`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -147,7 +147,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response**
+**Response:**
 
 `[]`
 
