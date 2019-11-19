@@ -7,11 +7,11 @@ title: Magento Open Source 2.3.4 Release Notes
 
 Magento Open Source 2.3.4 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
-This release includes over 170 functional fixes to the core product and  over 75 security enhancements. It includes over 200 contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.3) provides. Patch 2.3.2.1 (Composer package 2.3.2-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.2.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3.  For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
 
 ## Other release information
 
@@ -25,80 +25,96 @@ Look for the following highlights in this release:
 
 This release includes the following security enhancements:
 
+#### Over 30 security enhancements that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities
+
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Adobe Security Bulletin for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.4) have been ported to 2.2.11, 1.14.4.4, and 1.9.4.4, as appropriate.
+
 #### Security enhancements and fixes to core code
 
-*  **75 security enhancements** that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.3-2.2.10-security-update) for a comprehensive discussion of these issues. All known exploitable security issues fixed in this release (2.3.3) have been ported to 2.2.10, 1.14.4.3, and 1.9.4.3, as appropriate.
+Additional security enhancements include:
+
+* **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**.  The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that  contains the layout updates and select it for use. The name of the file containing an update must follow the  conventions described here. <!--- MC-16129-->
+
+* **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects.
 
 {:.bs-callout-info}
-Starting with the release of Magento Open Source 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Open Source to more easily identify unaddressed vulnerabilities in their deployment.
+Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
 
-The following upgrades to core platform components boost platform security and support PCI compliance:
+The following platform upgrades help enhance website security and PCI compliance.
 
+* **Enhancements to the message queue framework**. Magento now supports the latest release of RabbitMQ v3.8, which is the third-party technology that underlies the Magento message queue framework. <!--- MC-14871-->
+  
+* **Improved page caching and session storage**. This release has been tested on the latest stable release of Redis v5.0.6. <!--- MC-14877-->
+
+* **Enhanced support for Maria DB 10.2**. This release introduces a new abstraction layer that permits retrieval of information about tables and columns in deployments that implement declarative schema and MariaDB 10.2. Previously, when you ran `setup:upgrade` in a deployment with those features,  Magento threw an error indicating that the the schema was out-of-date. <!--- MC-16319 MC-17633-->
+
+* The core integration of the Authorize.net payment method has been deprecated. Please use the official payment integration that is available on Marketplace.
+  
+**Note**: Magento 2.3.4 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.3 technology stack requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html) for information about supported versions.
 
 ### Performance boosts
 
+Merchants and customers will see performance improvements as a result of these enhancements:
 
+* Redundant non-cached requests to the server on catalog pages have been eliminated by refactoring the customer section invalidation mechanism and improving banner cache logic. <!--- MC-19107 MC-19249-->
+
+* PHTML files have been refactored to better support parsing by the bundling mechanism. Our new bundling mechanism now identifies all dependencies on JavaScript. <!--- MC-19242-->
+
+* Added the ability to disable statistic collecting for Reports module by default. A new configuration setting (**System Configuration** > **General** > **Reports** > **General Options**)  allows merchants to completely or partially disable Magento Reports. (Statistics collection for the Reports module is disabled by default. Magento recommends disabling Reports functionality for performance reasons when this capability is not required.)  <!--- MC-20322-->
 
 ### Infrastructure improvements
 
-This release contains  enhancements to core quality, which improve the quality of the Framework and these modules:  Here are some additional core enhancements:
-
+This release contains 250 enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
 
 ### Merchant tool enhancements
 
+* **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content.
 
-### Inventory Management enhancements
+### Page Builder
 
-*  Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+Page Builder enhancements for this release include:
+
+* Improved product sorting. Merchants can now sort by product position in category or list of product SKUs, and sort by defined parameters such as name or stock status.
+
+* Improved product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in Page Builder Products content type.
+
+* The content that merchants create in Page Builder is optimized for rendering on the storefront using the Venia Theme (PWA Studio). Unstructured content (HTML) that Page Builder generates and saves into a data base is converted into structured data that works in React and PWA Studio.
+
+### Inventory Management
+
+Inventory Management enhancements for this release include:
+
+* New in-store pickup feature
+* Support for bundle products on non-default stocks
+* Performance optimizations
+
+See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### GraphQL
 
-Expanded GraphQL functionality and improved coverage for PayPal payment integrations, gift cards, and store credit features. Added mutations and queries that support these tasks:
+Expanded GraphQL functionality and improvements include the following:
 
-
-
+* StoreFront API coverage for Catalog and Checkout
+* Pricing schema
+* Performance
+  
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
- For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
+
+For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
 
 ### Google Shopping ads Channel
- [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
-### Magento Shipping
-
-
+[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
 ### Vendor-developed extension enhancements
 
-This release of Magento includes extensions developed by third-party vendors. 
-
-#### Amazon Pay
-
-
-#### dotdigital
-
-
-
-#### Klarna
-
-
-
-See [Klarna](https://docs.magento.com/m2/ee/user_guide/payment/klarna.html).
-
-#### Vertex
-
-
-
-#### Yotpo
-
-The [Yotpo](https://www.yotpo.com) user-generated content management platform is now integrated with the Magento Admin. Yotpo provides tools for merchants to gather, curate, and manage user-generated content such as product reviews. For more information on configuring and launching Yotpo from the Admin, see Yotpo Product Reviews.
+This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
 
 ## Backward-incompatible Changes
-
-This release introduces a new, immutable `EmailMessageInterface` that supports the sending of multi-part MIME-type content in email. The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to use this new `EmailMessageInterface` instead of `MessageInterface`, which was previously used. If you are a Magento extension developer and rely on `\Magento\Email\Model\Transport::getMessage()` or `\Magento\Framework\Mail\TransportInterface::getMessage()`, those methods will now return the new `EmailMessageInterface`.
 
 ## Fixed issues
 
