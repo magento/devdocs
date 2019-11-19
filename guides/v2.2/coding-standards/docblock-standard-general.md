@@ -87,7 +87,7 @@ Both short and long descriptions (for file headers and herein) must be separated
 
 If description or short description happens to be the first one after DocBlock opening tag (`/**`) or last one before closing tag (`*/`), it should not be separated with an empty line.
 
-**DocBlock Header in a PHP-file**
+**DocBlock Header in a PHP-file:**
 
 ```php
 /**
@@ -100,7 +100,7 @@ If description or short description happens to be the first one after DocBlock o
  */
 ```
 
-**DocBlock Header in an XML-file**
+**DocBlock Header in an XML-file:**
 
 ```xml
 <!--
@@ -128,7 +128,7 @@ If the file contains a structural element (for example, a class), description fo
 
 Use the following templates for the license notice and copyright blocks:
 
-**Template for [PHP](https://glossary.magento.com/php) Files**
+**Template for [PHP](https://glossary.magento.com/php) Files:**
 
 ```php
 <?php
@@ -150,7 +150,7 @@ interface MetadataObjectInterface
 }
 ```
 
-**Template for [XML](https://glossary.magento.com/xml) Files**
+**Template for [XML](https://glossary.magento.com/xml) Files:**
 
 ```xml
 
@@ -163,7 +163,7 @@ interface MetadataObjectInterface
 -->
 ```
 
-**Template for JS Files**
+**Template for JS Files:**
 
 ```javascript
 
@@ -183,7 +183,7 @@ If the source code file has one and only one standalone structural element (clas
 
 So classes that are declared in dedicated files, must have either no DocBlock or exactly one DocBlock, which refers to the class and file at the same time.
 
-**DocBlock for a Class**
+**DocBlock for a Class:**
 
 ```php
 
@@ -202,7 +202,7 @@ So there are two solutions possible:
 *  Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.
 *  Or include after declaring the element (it is possible in PHP and won't cause issues before execution).
 
-**DocBlock with Included Script File**
+**DocBlock with Included Script File:**
 
 ```php
 
@@ -223,7 +223,7 @@ class Bootstrap
 {
 ```
 
-**DocBlock with Included Class File**
+**DocBlock with Included Class File:**
 
 ```php
 namespace Magento\Framework\Profiler\Adapter;
@@ -273,7 +273,7 @@ If possible, add use cases where developers can or cannot use the class.
 It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
 The only [exception](https://glossary.magento.com/exception) is in the `Service/DTO` classes due to tooling requirements.
 
-**Example of a Method DocBlock**
+**Example of a Method DocBlock:**
 
 ```php
 use Magento\Logger;
@@ -303,7 +303,7 @@ private function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $numb
 
 Class attributes must have type declaration using `@var` tag.
 
-**Example of Class Attribute**
+**Example of Class Attribute:**
 
 ```php
 // ...
@@ -375,7 +375,7 @@ Functions and methods should have:
 
 *  Information that is out of date or has the potential to become out of date.
 
-**Example of a Method DocBlock**
+**Example of a Method DocBlock:**
 
 ```php
 
@@ -412,7 +412,8 @@ protected function merge($configFiles)
 
 In general, use the `@throws` tag when the code uses *throw*:
 
-**Example of Throwing Exception Explicitly**
+**Example of Throwing Exception Explicitly:**
+
 ```php
 /**
  * Set an arbitrary value to specified element
@@ -445,7 +446,7 @@ In this general case, if an exception is thrown in a sub-routine, then `@throws`
 However, if the only purpose of the referred sub-routine is to throw a specific exception – then `@throws` must be used in the parent method.
 For example:
 
-**Throwing Exception Implicitly**
+**Throwing Exception Implicitly:**
 
 ```php
 /**
@@ -558,7 +559,7 @@ The `@inheritdoc` tag SHOULD NOT be used.
 If a child class method requires a long description to explain its purpose, it may use `@inheritdoc` to indicate the new description is intended as an addition to the parent method description.
 In general such method overrides are a code smell and should be used as an incentive to make the code more self-documenting if possible.
 
-**DocBlock for the Interface**
+**DocBlock for the Interface:**
 
 ```php
 /**
@@ -580,7 +581,8 @@ interface MutableInterface
 }
 ```
 
-**DocBlock for the implementation**
+**DocBlock for the implementation:**
+
 ```php
 /**
  * Limited mutable value object for integer values
@@ -669,7 +671,7 @@ public function setScopedPrice($price, $scopeType, $scopeId)
 For purpose of automatic type hinting in an IDE, an inline notation of `@var` tag can be used wherever the IDE is unable to resolve variable type.
 This tag declares variables that will emerge in next lines of code as follows:
 
-**Inline Type Hinting**
+**Inline Type Hinting:**
 
 ```php
 /** @var libXMLError $error */
@@ -679,7 +681,7 @@ foreach ($errors as $error) {
 Some IDEs understand a different notation, where type is specified after variable name.
 This notation is also valid:
 
-**Inline Type Hinting Variation**
+**Inline Type Hinting Variation:**
 
 ```php
 /** @var $error libXMLError */

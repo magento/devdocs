@@ -17,7 +17,7 @@ If you are creating a cart for a logged in customer, you must include the custom
 
 ### Create a cart with a randomly-generated cart ID
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -25,7 +25,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 The response is the cart ID, which is sometimes called the quote ID. The remaining examples in this topic will use this cart ID.
 
@@ -41,7 +41,7 @@ The response is the cart ID, which is sometimes called the quote ID. The remaini
 
 You can also create an empty cart with a specified `cart_id`.
 
-**Request**
+**Request:**
 
 ``` text
 mutation {
@@ -50,7 +50,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 The mutation returns the same `cart_id`.
 

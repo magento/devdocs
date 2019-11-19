@@ -20,22 +20,22 @@ The steps in this section are similar to those in the [Order processing tutorial
 
 In this example, the customer is a company user (buyer).
 
-**Endpoint**
+**Endpoint:**
 
 `POST /V1/carts/mine`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 The response is the `quoteId`: `5`
 
@@ -43,18 +43,18 @@ The response is the `quoteId`: `5`
 
 This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strength Band Kits to the cart. You must make two calls to add these products.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/default/V1/carts/mine`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload 1**
+**Payload 1:**
 
 ```json
 {
@@ -66,7 +66,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response 1**
+**Response 1:**
 
 ```json
 {
@@ -80,7 +80,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Payload 2**
+**Payload 2:**
 
 ```json
 {
@@ -92,7 +92,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response 2**
+**Response 2:**
 
 ```json
 {
@@ -110,18 +110,18 @@ Authorization Bearer <customer token>
 
 You can determine shipping costs after initiating a negotiable quote, but doing it now provides a more detailed picture of the final costs to the buyer. If you want to defer setting the shipping address until after the negotiable quote has been created, use the `/V1/negotiable-carts/:cartId/estimate-shipping-methods` call.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload**
+**Payload:**
 
 ```json
 {  "address": {
@@ -144,7 +144,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -179,18 +179,18 @@ Authorization Bearer <customer token>
 
 You can also set shipping and billing information after initiating a negotiable quote by calling  `POST /V1/negotiable-carts/:cartId/shipping-information`.
 
-**Endpoint**
+**Endpoint:**
 
 `POST /V1/carts/mine/shipping-information`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -231,7 +231,7 @@ Authorization Bearer <customer token>
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -389,22 +389,22 @@ Authorization Bearer <customer token>
 
 This is an optional step to show the status of the cart before you begin the negotiable quote process.
 
-**Endpoint**
+**Endpoint:**
 
 `GET /V1/carts/mine`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <customer token>
 ```
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -603,18 +603,18 @@ In this example, the buyer initiates a negotiable quote, asking for a 2.5% disco
 
 Initiating a negotiable quote places it in the `processing_by_admin` state.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/default/V1/negotiableQuote/request`
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -624,7 +624,7 @@ Authorization Bearer <admin token>
 }
 ```
 
-**Response**
+**Response:**
 
 `true`
 
@@ -632,18 +632,18 @@ Authorization Bearer <admin token>
 
 The seller accepts the buyer's request for a 2.5% discount. The `negotiated_price_type` value of `1` indicates a percentage discount.
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Endpoint**
+**Endpoint:**
 
 `PUT /V1/negotiableQuote/5`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -659,7 +659,7 @@ Authorization Bearer <admin token>
 }
 ```
 
-**Response**
+**Response:**
 
 `[]`
 
@@ -669,18 +669,18 @@ Now that the seller has updated the quote, it must be returned to the buyer. The
 
 This call places the quote in the `submitted_by_admin` state.
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Endpoint**
+**Endpoint:**
 
 `POST /V1/negotiableQuote/submitToCustomer`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -689,7 +689,7 @@ Authorization Bearer <admin token>
 }
 ```
 
-**Response**
+**Response:**
 
 `true`
 
@@ -697,22 +697,22 @@ Authorization Bearer <admin token>
 
 The price of each item has been reduced by 2.5 percent. In addition, the `negotiable_quote` section of the response has been updated.
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Endpoint**
+**Endpoint:**
 
 `GET` /V1/carts/5
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -938,18 +938,18 @@ None
 
 The buyer is now ready to complete the purchase. Since the buyer has already specified the billing address, only the `paymentMethod` information must be included.
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Endpoint**
+**Endpoint:**
 
 `/V1/negotiable-carts/3/payment-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {  "paymentMethod": {
@@ -959,7 +959,7 @@ Authorization Bearer <admin token>
 }
 ```
 
-**Response**
+**Response:**
 
 The response is the order `id`: `4`
 
@@ -969,18 +969,18 @@ Now that the negotiable quote has been converted into an order, you can issue an
 
 In this example, the `companyId` is `1`.
 
-**Headers**
+**Headers:**
 
 ```terminal
 Content-Type application/json
 Authorization Bearer <admin token>
 ```
 
-**Endpoint**
+**Endpoint:**
 
 `POST /V1/companyCredits/1/increaseBalance`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -991,7 +991,7 @@ Authorization Bearer <admin token>
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the reimbursement was successfully applied. Magento sends an email to the buyer.
 

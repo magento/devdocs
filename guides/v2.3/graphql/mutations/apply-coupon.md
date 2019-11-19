@@ -15,7 +15,7 @@ The `applyCouponToCart` mutation applies a pre-defined coupon code to the specif
 
 The following example applies the coupon code `H2O` to the cart. For this coupon to be valid, the Affirm Water Bottle (`sku`: 24-UG06) must be in the cart.
 
-**Request**
+**Request:**
 
 ``` text
 mutation {
@@ -46,7 +46,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

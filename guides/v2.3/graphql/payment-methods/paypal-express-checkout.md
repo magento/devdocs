@@ -30,7 +30,7 @@ When you set the payment method to Express Checkout, you must set the `code` att
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the PayPal Express payment method.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -54,7 +54,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

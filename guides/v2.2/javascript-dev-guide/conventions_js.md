@@ -9,7 +9,7 @@ Magento application components, including modules, themes, and language packages
 
 The following relative paths are used for modules and themes:
 
-**- `<theme_dir>`**
+**- `<theme_dir>`:**
 
 [Theme](https://glossary.magento.com/theme) directory. Usually used when talking about custom themes, or any theme in general.
 
@@ -18,7 +18,7 @@ For Magento out of the box [frontend](https://glossary.magento.com/frontend) the
 -  `app/design/frontend/<Vendor>/<theme>`
 -  `vendor/magento/theme-frontend-<theme>`
 
-**- `<module_dir>`**
+**- `<module_dir>`:**
 
 Module directory. When talking about a particular Magento module, also notation similar to the following is used: `<Magento_Checkout_module_dir>`
 

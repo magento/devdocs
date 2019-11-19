@@ -28,23 +28,23 @@ Although you can use the `POST V1/shipment` endpoint to create a shipment, the `
 
 We'll ship 20 `24-WB01` items and 19 `24-WB03` items from the Baltimore warehouse. The `order_item_id` value for `24-WB01` is 3, and the value for `24-WB03` is 4.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/order/3/ship`
 
 where `3` is the `orderid`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -70,7 +70,7 @@ where `3` is the `orderid`
 }
 ```
 
-**Response**
+**Response:**
 
 The shipment ID, such as `3`.
 
@@ -78,7 +78,7 @@ The shipment ID, such as `3`.
 
 Use the same endpoint to ship the remaining 31 `24-WB03` items from the Reno warehouse.
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -100,7 +100,7 @@ Use the same endpoint to ship the remaining 31 `24-WB03` items from the Reno war
 }
 ```
 
-**Response**
+**Response:**
 
 The shipment ID, such as `4`.
 
@@ -110,21 +110,21 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 ### Ship from the Baltimore warehouse
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/shipment`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -159,7 +159,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -205,7 +205,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehouse.
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -230,7 +230,7 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

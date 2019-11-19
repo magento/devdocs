@@ -49,7 +49,7 @@ For Starter, deploy the development branch you created to Staging and Production
 
 You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments. You need SSH and Git access to your project. See [prepare for deployment]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html).
 
-**Prerequisites**
+**Prerequisites:**
 
 -  [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 -  [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)

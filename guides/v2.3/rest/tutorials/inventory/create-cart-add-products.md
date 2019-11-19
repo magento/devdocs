@@ -18,25 +18,25 @@ Next, we'll create a cart and add the items that we modified in [Step 5. Reassig
 
 The call to create a cart and add items must contain the customer’s authorization token in the authorization header.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/carts/mine`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <customer_token>`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 The response is the `quoteId`: 3
 
@@ -55,25 +55,25 @@ Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We ca
 
 The `get-product-salable-quantity` endpoint indicates how many items are available for sale for the specified product (24-WB01) and source (2).
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `70`
 
@@ -81,25 +81,25 @@ Not applicable
 
 Use the same endpoint to check the quantity available for product `24-WB03`.
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `61`
 
@@ -111,21 +111,21 @@ We have ensured that we have enough physical products in stock to fulfill the po
 
 In this call, we'll add 20 `24-WB01` items. This portion of the order can be fulfilled from the Baltimore or Reno warehouse.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/carts/mine/items`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <customer_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -137,7 +137,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 }
 ```
 
-**Response**
+**Response:**
 
 Note the `item_id` for use in subsequent steps.
 
@@ -156,7 +156,7 @@ Note the `item_id` for use in subsequent steps.
 
 Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources will be required to fulfill this potential order.
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -167,7 +167,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
   }
 }
 ```
-**Response**
+**Response:**
 
 Note the `item_id` for use in subsequent steps.
 
@@ -187,7 +187,7 @@ Note the `item_id` for use in subsequent steps.
 
 Finally, we'll add a single instance of a downloadable product to the cart.
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -199,7 +199,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -21,25 +21,25 @@ For more information about shipping and SSAs, see [About Source Selection Algori
 
 Currently, Magento supports SSAs based on priority and on distance. Third-party developers and future releases may add support for additional algorithms.
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -62,21 +62,21 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `24-WB01` and 50 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/inventory/source-selection-algorithm-result`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -95,7 +95,7 @@ This tutorial does not consider complications such selling out of products or ba
 }
 ```
 
-**Response**
+**Response:**
 
 The SSA recommends shipping from the following sources:
 

@@ -16,7 +16,7 @@ The **Stores** > **Configuration** > **Catalog** > **Email to a friend** > **Ena
 
 The following example sends a message to two friends.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -46,7 +46,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
