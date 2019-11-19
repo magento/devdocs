@@ -278,11 +278,22 @@ For details on this TXT record, see the Fastly [DNS TXT record validation](https
 
 ## Upgrade the Fastly module {#upgrade}
 
-Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and provide new features. You can find information about the latest release in the Fastly [Fastly release notes](https://github.com/fastly/fastly-magento2/releases) on GitHub.
+Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and provide new features. 
+We recommend that you update the Fastly module in your Staging and Production environments to the latest version. See the [Fastly release notes](https://github.com/fastly/fastly-magento2/releases).
 
-We recommend that you upgrade to the latest version of the Fastly module. See [Upgrade an extension]({{ page.baseurl }}/cloud/howtos/install-components.html):
+When you update the Fastly module, you get the latest default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. After you update the module, you must upload the VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
 
-When you upgrade the Fastly module, you get a new version of the default Fastly VCL code that enables the integration with {{ site.data.var.ece }}. You must upload the new VCL code to apply the changes to the Fastly service configuration for your Staging and Production environments.
+{:.procedure}
+To check the installed version Fastly CDN module for Magento 2:
+
+1. Change to the root directory of your Cloud environment.
+
+2. Use Composer to check the installed version.
+
+   ```bash
+   composer show *fastly*
+   ```
+3. If you do not have the [latest release]((https://github.com/fastly/fastly-magento2/releases), complete the steps to upgrade the Fastly module.
 
 {:.procedure}
 To upgrade the Fastly module:
