@@ -449,21 +449,21 @@ To get RequireJS to use your bundles, add a `onModuleBundleComplete` callback af
        ],
    },
 ],
-onModuleBundleComplete: function (data) {
-   function onBundleComplete (config, data) {
-       const fileName = `${config.dir}/requirejs-config.js`;
-       const bundleConfig = {};
-       bundleConfig[data.name] = data.included;
-       bundleConfig[data.name] = bundleConfig[data.name].map(bundle => bundle.replace(/\.js$/, ''));
-       const contents = `require.config({
-           bundles: ${JSON.stringify(bundleConfig)},
-       });`;
-       fs.appendFile(fileName, contents, function (err) {
-           if (err) throw err;
-           console.log('Saved!');
-       });
-   }
-   onBundleComplete(config, data);
+bundlesConfigOutFile: `${config.dir}/requirejs-config.js`,
+onModuleBundleComplete: function(data) {
+    if (this.bundleConfigAppended) {
+        return;
+    }
+    this.bundleConfigAppended = true;
+
+    // bundlesConfigOutFile requires a simple require.config call in order to modify the configuration
+    const bundleConfigPlaceholder = `
+(function (require) {
+require.config({});
+})(require);
+    `;
+
+    fs.appendFileSync(this.bundlesConfigOutFile, bundleConfigPlaceholder);
 }
 ```
 
@@ -479,11 +479,11 @@ Open `requirejs-config.js` in the `pub/static/frontend/Magento/luma/en_US` direc
 
 ```javascript
 require.config({
-    bundles: { "bundles/default": ["mage/template","mage/apply/scripts","mage/apply/main","mage/mage","mage/translate","mage/loader"] }
-});
-require.config({
-    bundles: { "bundles/cart": ["Magento_Ui/js/lib/validation/utils","Magento_Ui/js/lib/validation/rules","Magento_Ui/js/lib/validation/validation"] }
-});
+    bundles: {
+        "bundles/default": ["mage/template", "mage/apply/scripts", "mage/apply/main", "mage/mage", "mage/translate", "mage/loader"],
+        "bundles/cart": ["Magento_Ui/js/lib/validation/utils", "Magento_Ui/js/lib/validation/rules", "Magento_Ui/js/lib/validation/validation"]
+    }
+}
 ```
 
 {: .bs-callout-info }
