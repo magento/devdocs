@@ -286,14 +286,15 @@ When you update the Fastly module, you get the latest default Fastly VCL code th
 {:.procedure}
 To check the installed version Fastly CDN module for Magento 2:
 
-1. Change to the root directory of your Cloud environment.
+1.  Change to the root directory of your Cloud environment.
 
-2. Use Composer to check the installed version.
+1. Use Composer to check the installed version.
 
    ```bash
    composer show *fastly*
    ```
-3. If you do not have the [latest release]((https://github.com/fastly/fastly-magento2/releases), complete the steps to upgrade the Fastly module.
+
+1. If you do not have the [latest release]((https://github.com/fastly/fastly-magento2/releases), complete the steps to upgrade the Fastly module.
 
 {:.procedure}
 To upgrade the Fastly module:
