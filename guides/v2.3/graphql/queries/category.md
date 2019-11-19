@@ -19,7 +19,7 @@ category (
 
 The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -60,7 +60,7 @@ The following query returns information about category ID `20` and four levels o
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -140,7 +140,7 @@ The following query returns information about category ID `20` and four levels o
 
 The following query returns breadcrumb information about the women's tops category (`id` = 25).
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -160,7 +160,7 @@ The following query returns breadcrumb information about the women's tops catego
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

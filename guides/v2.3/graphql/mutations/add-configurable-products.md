@@ -13,7 +13,7 @@ Use the `addConfigurableProductsToCart` mutation to add configurable products to
 
 The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/mutations/create-empty-cart.html) by creating an empty cart.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -50,7 +50,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

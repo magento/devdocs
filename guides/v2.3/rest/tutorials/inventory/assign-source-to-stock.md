@@ -28,21 +28,21 @@ The `POST V1/inventory/stock-source-links` endpoint accepts an array of links, s
 
 In this example, we configure the Baltimore warehouse to be the primary source for North America orders. Austin and Reno are the second- and third-choice sources. In Europe, Berlin is preferred, followed by Frankfurt. HQ is the last choice for both stocks.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/stock-source-links`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -86,7 +86,7 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns empty array.
 []

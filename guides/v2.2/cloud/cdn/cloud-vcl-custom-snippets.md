@@ -96,7 +96,7 @@ See the following examples that show how to create and manage custom VCL snippet
 
 The following walk-through shows you how to create regular VCL snippet files and add them to your Fastly service configuration using the Fastly API. You can create and manage the snippets from the _terminal_ application. You do not need an SSH connection into a specific environment.
 
-**Prerequisites**
+**Prerequisites:**
 
 -  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 

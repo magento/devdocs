@@ -15,7 +15,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The following call creates an address for the specified customer.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -53,7 +53,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -94,6 +94,17 @@ Attribute |  Data Type | Description
 The `createCustomerAddress` mutation returns the following attributes:
 
 {% include graphql/customer-address-output.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`Expected type CustomerAddressInput!, found "".` | The `input` attribute contains an empty value.
+`"input" value should be specified` | The `input` attribute is specified but is empty.
+`Required parameters are missing: firstname` | The `input.firstname` attribute was omitted or contains an empty value.
+`"Street Address" cannot contain more than 2 lines.` | The `input.street` attribute contains array with more than two elements.
+`Syntax Error: Expected Name, found )` | The `input` attribute was omitted.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
 
 ## Related topics
 

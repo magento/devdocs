@@ -21,21 +21,21 @@ In this scenario, there are no pending orders that contain the product, nor is t
 
 The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to specify an array of SKUs to bulk transfer from one source to another, but this example includes only one SKU. If you set the `unassignFromOrigin` attribute to `true`, the origin source is no longer associated with the specified products. If the attribute is `false`, Magento designates the products as being out of stock at the origin source with a quantity of 0.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/bulk-product-source-transfer`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -48,7 +48,7 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 }
 ```
 
-**Response**
+**Response:**
 
 `true`
 
@@ -56,7 +56,7 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 
 Use the same endpoint to bulk transfer the product to Austin.
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -69,7 +69,7 @@ Use the same endpoint to bulk transfer the product to Austin.
 }
 ```
 
-**Response**
+**Response:**
 
 `true`
 

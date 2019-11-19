@@ -13,7 +13,7 @@ Use the `customerDownloadableProducts` query to retrieve the list of purchased d
 
 The following example returns the list of purchased downloadable products for the logged-in customer.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -29,7 +29,7 @@ The following example returns the list of purchased downloadable products for th
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

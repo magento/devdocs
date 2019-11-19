@@ -47,24 +47,24 @@ To modify `di.xml`:
 1. Open `di.xml` in a text editor and locate the following block:
 
    ```xml
-   <type name="Magento\Framework\App\Cache\Frontend\Pool">
-          <arguments>
-             <argument name="frontendSettings" xsi:type="array">
-                 <item name="page_cache" xsi:type="array">
-                     <item name="backend_options" xsi:type="array">
-                       <item name="cache_dir" xsi:type="string">page_cache</item>
-                     </item>
-                 </item>
-             </argument>
-          </arguments>
-       </type>
-       <type name="Magento\Framework\App\Cache\Type\FrontendPool">
-          <arguments>
-             <argument name="typeFrontendMap" xsi:type="array">
-               <item name="full_page" xsi:type="string">page_cache</item>
-             </argument>
-          </arguments>
-       </type>
+    <type name="Magento\Framework\App\Cache\Frontend\Pool">
+        <arguments>
+            <argument name="frontendSettings" xsi:type="array">
+                <item name="page_cache" xsi:type="array">
+                    <item name="backend_options" xsi:type="array">
+                    <item name="cache_dir" xsi:type="string">page_cache</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
+        <arguments>
+            <argument name="typeFrontendMap" xsi:type="array">
+            <item name="full_page" xsi:type="string">page_cache</item>
+            </argument>
+        </arguments>
+    </type>
    ```
 
    The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.

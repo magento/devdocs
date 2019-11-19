@@ -43,11 +43,11 @@ Before you use this code sample, verify that the attribute values are the same i
  {:.bs-callout .bs-callout-info}
 The payload contains both the configurable product and the simple products.
 
- **Endpoint**
+ **Endpoint:**
 
  `POST <host>/rest/default/async/bulk/V1/products`
 
- **Payload**
+ **Payload:**
 
 {% collapsible Show code sample %}
 
@@ -280,7 +280,7 @@ The payload contains both the configurable product and the simple products.
 
 {% endcollapsible %}
 
- **Response**
+ **Response:**
 
 ```json
 {

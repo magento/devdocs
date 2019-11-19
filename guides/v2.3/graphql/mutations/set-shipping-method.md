@@ -25,7 +25,7 @@ United States Postal Service | usps | Varies
 
 The following example sets the shipping method to Best Way.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -58,7 +58,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

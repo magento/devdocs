@@ -16,11 +16,11 @@ functional_areas:
 
 This section describes the REST endpoints used to manage `Company` objects.
 
-**Service Name**
+**Service Name:**
 
 `companyCompanyRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/company/
@@ -30,7 +30,7 @@ DELETE /V1/company/:companyId
 GET /V1/company/
 ```
 
-**CompanyInterface Parameters**
+**CompanyInterface Parameters:**
 
 The following table lists the parameters defined in `CompanyInterface`.
 
@@ -61,11 +61,11 @@ Name | Description | Format | Requirements
 
 The following example creates a company and assigns the default shared catalog (`customer_group_id`). The company admin (`super_user_id`) must be a previously-defined `customer_id`.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/company/`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -87,7 +87,7 @@ The following example creates a company and assigns the default shared catalog (
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -121,11 +121,11 @@ The following example creates a company and assigns the default shared catalog (
 
 The following call changes the company status to Rejected (`2`) and explains why.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/company/2`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -150,7 +150,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -183,15 +183,15 @@ The following call changes the company status to Rejected (`2`) and explains why
 ### Return all information about a company
 
 This call returns detailed information about the specified company.
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/company/2`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -226,15 +226,15 @@ None
 
 When you delete a company, Magento assigns the "Inactive" status to all company members. The system also removes company ID from the customer profile of all company members.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/company/2`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -244,15 +244,15 @@ The following call returns all companies that are located in California (`region
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/company?searchCriteria[filter_groups][0][filters][0][field]=region_id&searchCriteria[filter_groups][0][filters][0][value]=12&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json

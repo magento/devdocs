@@ -30,7 +30,7 @@ Field name | Data type | Description
 `user_id` | Integer | The user ID that executed the request.
 `operation_count` | Integer | The number of operations processed in the request.
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -75,7 +75,7 @@ Field name | Data type | Description
 `user_id` | Integer | The user ID that executed the request.
 `operation_count` | Integer | The number of operations processed in the request.
 
-**Response**
+**Response:**
 
 ```json
 {
