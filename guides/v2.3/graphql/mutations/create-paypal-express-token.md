@@ -17,7 +17,7 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -42,7 +42,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -17,7 +17,7 @@ So in runtime, the component structure set in the modifier is merged with the co
 
 To add a PHP modifier for a UI component, take the following steps:
 
-**Step 1**
+**Step 1:**
 
 In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Modifier\ModifierInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php) with the following methods:
 
@@ -80,7 +80,7 @@ class Example extends AbstractModifier
 }
 ```
 
-**Step 2**
+**Step 2:**
 
 Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following:
 
@@ -101,7 +101,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 
 (If you want to use this sample in your `di.xml`, replace the sample values with the real names of your entities.)
 
-**Step 3**
+**Step 3:**
 
 To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 

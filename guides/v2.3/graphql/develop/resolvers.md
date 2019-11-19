@@ -226,7 +226,7 @@ It is a good practice to define separate types for input and output data. This p
 
 #### Example
 
-**Wrong approach**
+**Wrong approach:**
 
 ```text
 type Mutation {
@@ -234,7 +234,7 @@ type Mutation {
 }
 ```
 
-**Correct approach**
+**Correct approach:**
 
 ```text
 type Mutation {

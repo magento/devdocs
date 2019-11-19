@@ -71,7 +71,7 @@ The following tables describe the installation option names and values. For exam
 {:.bs-callout .bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
-**Admin credentials**
+**Admin credentials:**
 
 The following options specify the user information and credentials for the Magento admin user.
 
@@ -85,7 +85,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--admin-user`|Magento administrator username.|Yes|
 |`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
 
-**Site, database, and RabbitMQ configuration options**
+**Site, database, and RabbitMQ configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
@@ -96,6 +96,9 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|Yes|
 |`--db-password`|Magento database instance owner's password.|Yes|
 |`--db-prefix`|Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.<br><br>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.<br><br>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.<br><br>This option enables those customers to share the database server with more than one Magento installation.|No|
+|`--db-ssl-key`|Path to the client key.|No|
+|`--db-ssl-cert`|Path to the client certificate.|No|
+|`--db-ssl-ca`|Path to the server certificate.|No|
 |`--language`|Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering magento info:language:list from the bin directory.)|No|
 |`--currency`|Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering magento info:currency:list from the bin directory.)|No|
 |`--timezone`|Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering magento info:timezone:list from the bin directory.)|No|
@@ -117,7 +120,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 |`--consumers-wait-for-messages`|Should consumers wait for a message from the queue? 1 - Yes, 0 - No|No|
 
-**Lock configuration options**
+**Lock configuration options:**
 
 |Name|Value|Required?|
 |--- |--- |--- |
@@ -128,7 +131,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--lock-file-path`|The path where file locks will be saved.|Yes, if you set `--lock-provider=file`|
 {:style="table-layout:auto;"}
 
-**Consumers configuration options**
+**Consumers configuration options:**
 
 {% include config/consumers.md %}
 

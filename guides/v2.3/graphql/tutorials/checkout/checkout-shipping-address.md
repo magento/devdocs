@@ -26,7 +26,7 @@ The following mutation adds a shipping address to the quote.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -74,7 +74,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 `setShippingAddressesOnCart` returns the new address details.
 
@@ -119,7 +119,7 @@ mutation {
 
 First, query the customer to return a list of address IDs.
 
-**Request**
+**Request:**
 
 ```text
 query {
@@ -133,7 +133,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```text
 {
@@ -165,7 +165,7 @@ Set `{ CUSTOMER_ADDRESS_ID }` to an `id` returned in the query.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -201,7 +201,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -13,7 +13,7 @@ Use the `countries` query to return all countries in which the entity can do bus
 
 The following query returns all countries listed for the current instance of Magento:
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -32,7 +32,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 In this example, the response is intentionally truncated.
 

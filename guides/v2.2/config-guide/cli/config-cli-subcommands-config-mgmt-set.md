@@ -227,7 +227,7 @@ The `bin/magento config:show` command displays the values of any [encrypted valu
 
 ### Examples
 
-**Show all saved configurations**
+**Show all saved configurations:**
 
 ```bash
 bin/magento config:show
@@ -241,7 +241,7 @@ general/region/state_required - AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US
 catalog/category/root_id - 2
 analytics/subscription/enabled - 1</pre>
 
-**Show all saved configurations for the `base` website**
+**Show all saved configurations for the `base` website:**
 
 ```bash
 bin/magento config:show --scope=websites --scope-code=base
@@ -252,7 +252,7 @@ Result:
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/
 general/region/state_required - AT,BR,CA</pre>
 
-**Show the base URL for the default scope**
+**Show the base URL for the default scope:**
 
 ```bash
 bin/magento config:show web/unsecure/base_url
@@ -262,7 +262,7 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example.com/</pre>
 
-**Show the base URL for the `base` website**
+**Show the base URL for the `base` website:**
 
 ```bash
 bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
@@ -272,7 +272,7 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/</pre>
 
-**Show the base URL for the `default` store**
+**Show the base URL for the `default` store:**
 
 ```bash
 bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url

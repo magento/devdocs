@@ -19,7 +19,7 @@ The `createEmptyCart` mutation creates an empty shopping cart and generates a ca
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the Authorization parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
-**Request**
+**Request:**
 
 The following mutation creates an empty cart:
 
@@ -29,7 +29,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

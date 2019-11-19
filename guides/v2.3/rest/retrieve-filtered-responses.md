@@ -117,7 +117,7 @@ The following POST operation and payload creates a [catalog](https://glossary.ma
 
 `POST <host>/rest/<store_code>/V1/categories?fields=id,parent_id,name`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -128,7 +128,7 @@ The following POST operation and payload creates a [catalog](https://glossary.ma
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

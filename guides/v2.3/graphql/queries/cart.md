@@ -23,7 +23,7 @@ Cart functionality is defined in the `Quote` module. A Quote represents the cont
 
 The following query shows the status of a cart that is ready to be converted into an order.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -119,7 +119,7 @@ The following query shows the status of a cart that is ready to be converted int
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -269,7 +269,7 @@ In this query, the **Buy 3 tee shirts and get the 4th free** cart price rule fro
 
 The `3T1free` rule is applied first, and Magento returns the price of a single shirt, $29, as the discount. Magento then applies a 10% discount to the remaining total of the products in the cart.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -315,7 +315,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -397,7 +397,7 @@ Product | Quantity | Fixed/Discount | Amount
 
 The cart in the example contains 12 units of `24-UG05` and 8 units of `24-UG-01`, so the price of `24-UG05` is $11, and the price of `24-UG01` is $18.05 (5% off).
 
-**Request**
+**Request:**
 
 ```graphql
 query {
@@ -446,7 +446,7 @@ query {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

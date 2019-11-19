@@ -20,21 +20,21 @@ When you create an order, Magento enters reservations for the total amount of pr
 
 When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment-method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/carts/mine/payment-information`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -57,7 +57,7 @@ When you submit payment information, Magento creates an order and sends an order
 }
 ```
 
-**Response**
+**Response:**
 
 An `orderID`, such as `3`
 

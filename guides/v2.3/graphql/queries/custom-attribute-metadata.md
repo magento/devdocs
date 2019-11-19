@@ -15,7 +15,7 @@ The `customAttributeMetadata` query returns the attribute type, given an attribu
 
 The following query returns the attribute type for various custom and EAV attributes.
 
-**Request**
+**Request:**
 
 ```graphql
 {
@@ -38,7 +38,7 @@ The following query returns the attribute type for various custom and EAV attrib
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -19,25 +19,25 @@ In this step, we will create a customer account that is tied to the `us` web vie
 
 The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, along with the corresponding website and store group IDs. When you create a customer, change the `id` parameter to the `store_id` parameter
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/all/V1/store/storeViews`
 
-**Scope**
+**Scope:**
 
 `all` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
@@ -82,21 +82,21 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/customers`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -131,7 +131,7 @@ We can use the same customer definition presented in [Step 3. Create a customer]
 }
 ```
 
-**Response**
+**Response:**
 
 The customer `id` is `3`.
 
@@ -185,19 +185,19 @@ To generate a customer's access token, you must specify the customer's username 
 
 By default, a customer token is valid for 1 hour. To change this value, click **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/integration/customer/token`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -206,7 +206,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns the customer's access token. Your integration must specify a customer token in the authorization header of every call customers make on their own behalf.
 
