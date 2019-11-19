@@ -82,7 +82,10 @@ sub process_graphql_headers {
 
 ## Caching with Fastly
 
-{{site.data.var.ece}} uses Fastly for caching. To enable GraphQL caching on Fastly:
+To cache GraphQL query results on {{ site.data.var.ece }}, the Cloud project must be running Fastly CDN module for Magento 2 version 1.2.118 or later.
+
+{:procedure}
+To enable GraphQL caching on Fastly:
 
 1. Upgrade the Fastly CDN Module for Magento 2.x to version 1.2.118 or higher.
 1. Upload the updated VCL code to the Fastly servers.

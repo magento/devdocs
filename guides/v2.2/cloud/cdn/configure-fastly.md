@@ -284,7 +284,7 @@ We recommend that you update the Fastly module in your Staging and Production en
 After you update the module, you must upload the VCL code to apply the changes to the Fastly service configuration.
 
 {:.procedure}
-To check the installed version Fastly CDN module for Magento 2:
+To check the version of Fastly CDN module for Magento 2:
 
 1. Change to the root directory of your Cloud environment.
 
