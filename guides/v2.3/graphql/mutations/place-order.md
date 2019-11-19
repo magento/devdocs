@@ -73,5 +73,5 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`order_id` | String | Deprecated. Use `order_number` instead. The unique ID that identifies the order
+`order_id` | String | Deprecated. Use `order_number` instead
 `order_number` String | The unique ID that identifies the order
