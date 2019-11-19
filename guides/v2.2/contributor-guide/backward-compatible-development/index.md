@@ -122,6 +122,8 @@ Add a new optional parameter to the constructor at the end of the arguments list
 
 In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectManager::getInstance()`.
 
+Prefix the type name with a question mark when declaring a parameter with a `null` default value.
+
 {% collapsible Example Code %}
 
 ```php
@@ -134,7 +136,7 @@ class ExistingClass
         \Old\Dependency\Interface $oldDependency,
         $oldRequiredConstructorParameter,
         $oldOptionalConstructorParameter = null,
-        \New\Dependency\Interface $newDependency = null
+        ?\New\Dependency\Interface $newDependency = null
     ) {
         ...
         $this->newDependency = $newDependency ?: \Magento\Framework\App\ObjectManager::getInstance()->get(\New\Dependency\Interface::class);
