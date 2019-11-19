@@ -38,7 +38,7 @@ entries:
   type: Major update
   date: November 14, 2019
   link: https://github.com/magento/devdocs/pull/5992
-- description: Added a section about consumer handlers to the [Configure message queues](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/config-mq.html<br/>)
+- description: Added a section about consumer handlers to the [Configure message queues](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/config-mq.html)
     topic in the  _PHP Developer Guide_.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -81,7 +81,7 @@ entries:
   type: Technical changes
   date: November 6, 2019
   link: https://github.com/magento/devdocs/pull/5865
-- description: Added source files, example, and results information to the [Date Component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-date.htm)
+- description: Added source files, example, and results information to the [Date Component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-date.html)
     topic in the _UI Components Guide_.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -654,7 +654,7 @@ entries:
   date: August 15, 2019
   link: https://github.com/magento/devdocs/pull/5123
 - description: Added the [Change increment ID for a database entity on particular
-    store](http://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
+    store](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
     topic to the Configuration Guide.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -2667,7 +2667,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Aug 04 2018
-- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html)
+- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
     documentation to include instructions for deploying to a read-only file system.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2817,7 +2817,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jun 13 2018
-- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration.
+- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html) configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
   date: Jun 09 2018
@@ -4578,7 +4578,7 @@ entries:
   versions: 2.x
   type: New
   date: Oct 21 2016
-- description: "[How to apply the SUPEE-8788 security patch](https://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788)"
+- description: "[How to apply the SUPEE-8788 security patch](https://devdocs.magento.com/guides/m1x/other/ht_install-patches.html)"
   versions: 1.x
   type: Updated
   date: Oct 21 2016
