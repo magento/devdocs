@@ -278,7 +278,7 @@ For details on this TXT record, see the Fastly [DNS TXT record validation](https
 
 ## Upgrade the Fastly module {#upgrade}
 
-Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and provide new features. 
+Fastly updates the Fastly CDN for Magento 2 module to resolve issues, increase performance, and provide new features.
 We recommend that you update the Fastly module in your Staging and Production environments to the [latest version](https://github.com/fastly/fastly-magento2/releases).
 
 After you update the module, you must upload the VCL code to apply the changes to the Fastly service configuration.
