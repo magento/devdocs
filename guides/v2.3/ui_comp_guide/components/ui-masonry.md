@@ -5,7 +5,7 @@ contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
 ---
 
-The Masonry component is a collection of columns. It renders the masonry grid layout in the Ui component
+The Masonry component is a collection of columns. It renders the masonry grid layout in the Ui component.
 
 ## Dependencies
 
@@ -48,6 +48,6 @@ Extends `Listing`:
 *  [app\code\Magento\Ui\view\base\web\js\grid\masonry.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/masonry.js)
 *  [app\code\Magento\Ui\view\base\web\templates\grid\masonry.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/masonry.html)
 
-#### Result
+## Result
 
 ![Masonry Grid]({{ site.baseurl }}/common/images/ui_comps/masonry-grid-result.png)
