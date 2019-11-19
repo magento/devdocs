@@ -87,6 +87,10 @@ pages:
         - label: HtmlContent component
           url: /ui_comp_guide/components/ui-htmlcontent.html
 
+        - label: ImagePreview component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-image-preview.html
+
         - label: ImageUploader component
           include_versions: ["2.3"]
           url: /ui_comp_guide/components/image-uploader/
