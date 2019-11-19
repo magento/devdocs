@@ -17,7 +17,7 @@ The Masonry component has dependencies on the following components:
 ## Configuration options
 
 |      Option              |   Description                                                                    |      Type      |  Default Value             |
-|--------------------------|----------------------------------------------------------------------------------|----------------| ---------------------------| 
+|--------------------------|----------------------------------------------------------------------------------|----------------| ---------------------------|
 | containerId              | Images container id.                                                             |  String        | -                          |
 | minRatio                 | Minimum aspect ratio for each image.                                             |  Int           | -                          |
 | containerWidth           | Width of the container.                                                          |  Int           | window.innerWidth          |
