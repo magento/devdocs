@@ -9,7 +9,7 @@ The DragAndDrop component is an [extension](https://glossary.magento.com/extensi
 
 | Option | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| `enabled `| Whether the component is allowed to change the position of columns. | Boolean | `true` |
+| `enabled`| Whether the component is allowed to change the position of columns. | Boolean | `true` |
 | `fixedX` | Whether the column has a fixed position on the X-axis. That is, whether it can be moved horizontally. | Boolean | `false` |
 | `fixedY` | Whether the column has a fixed position on the Y-axis. That is, whether it can be moved vertically. | Boolean | `true` |
 | `noSelectClass` | CSS class applied to the table when one of its columns is being dragged. | String | `'_no-select'` |
