@@ -59,7 +59,7 @@ Attribute | Data type | Description
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | Deprecated. Use `price_tiers` instead
 `tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
-`type_id` | String | Deprecated. Use the GraphQL `__typname` meta attribute instead
+`type_id` | String | Deprecated. Use the GraphQL `__typename` meta attribute instead
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
