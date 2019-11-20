@@ -29,7 +29,7 @@ When you set the payment method to PayPal Payments Advanced, you must set the `c
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Payments Advanced payment method.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -54,7 +54,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

@@ -22,11 +22,11 @@ The `visibility` attribute is set to 4, meaning the product can be found by brow
 {:.bs-callout .bs-callout-info}
 Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/default/V1/products`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -80,7 +80,7 @@ Before you using this code sample, verify that the attribute values are the same
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 ```json

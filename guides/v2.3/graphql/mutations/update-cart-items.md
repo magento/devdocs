@@ -18,7 +18,7 @@ Setting the quantity to `0` removes an item from the cart.
 
 The following example changes the quantity of cart item `13`. The new quantity is `3`.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -51,7 +51,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

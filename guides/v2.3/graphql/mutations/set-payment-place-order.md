@@ -29,7 +29,7 @@ Perform the following actions before using the `setPaymentMethodAndPlaceOrder` m
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -48,7 +48,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

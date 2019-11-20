@@ -32,17 +32,17 @@ Creating a customer account requires [admin](https://glossary.magento.com/admin)
 {:.bs-callout .bs-callout-info}
 This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/customers`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <admin token>`
 
-**Payload**
+**Payload:**
 
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
@@ -77,7 +77,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 
 {% endcollapsible %}
 
-**Response**
+**Response:**
 
 Magento assigned this user `id` value of `2`.
 
@@ -134,15 +134,15 @@ To get a customer's access token, you must specify the customer's username and p
 
 By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/integration/customer/token`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -151,7 +151,7 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns the customer's access token. This token must be specified in the authorization header of every call the customer makes on his or her own behalf.
 

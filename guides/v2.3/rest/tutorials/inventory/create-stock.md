@@ -24,21 +24,21 @@ For more information about stock, see [Inventory Management overview]({{ page.ba
 
 The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code` attributes are required. The `code` value cannot be changed.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/stocks`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 The `name` attribute is required.
 
@@ -59,7 +59,7 @@ The `name` attribute is required.
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps.
 

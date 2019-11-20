@@ -129,10 +129,10 @@ A particular instance of a UI component is defined primarily by the following:
 
 ## Things to remember when working with UI components
 
-**UI components have different settings**
+**UI components have different settings:**
 
 Configuration settings (their list and names) are different among UI components; these settings contain constants, optional and required settings. Developers need to treat every UI component separately.
 
-**Beware of mistakes in XML config**
+**Beware of mistakes in XML config:**
 
 Surprisingly, most issues occur because of the typos and other mistakes in the UI component's XML configuration. Naming is critical because UI components are heavily cross-referenced.

@@ -12,15 +12,15 @@ By default, an admin token is valid for 4 hours. To change this value, log in to
 
 See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/integration/admin/token`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -29,7 +29,7 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 }
 ```
 
-**Response**
+**Response:**
 
 Magento generates the admin's access token
 

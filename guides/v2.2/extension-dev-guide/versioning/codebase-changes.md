@@ -38,7 +38,7 @@ Marking public code with `@deprecated` indicates that Magento plans to remove th
 
 When Magento deprecates the API or a customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
 
-**Deprecated Code Example**
+**Deprecated Code Example:**
 
 ```php
 

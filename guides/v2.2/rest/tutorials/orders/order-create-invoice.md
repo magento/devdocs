@@ -23,19 +23,19 @@ You create an [invoice](https://glossary.magento.com/invoice) after you receive 
 
 This example creates a full invoice. You can create a partial invoice by adding to the payload an array of items to be invoiced.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/order/3/invoice`
 
 where `3` is the `orderid`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <administrator token>`
 
-**Payload**
+**Payload:**
 ```json
 {
   "capture": true,
@@ -43,7 +43,7 @@ where `3` is the `orderid`
 }
 ```
 
-**Response**
+**Response:**
 
 An invoice `id`, such as `3`.
 
@@ -51,21 +51,21 @@ An invoice `id`, such as `3`.
 
 An invoice is structurally similar to an order, but an order contains more details.
 
-**Endpoint**
+**Endpoint:**
 
 `GET <host>/rest/<store_code>/V1/invoices/3`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <administrator token>`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 You will use the `order_item_id` values to create a [shipment](https://glossary.magento.com/shipment) in the next step.
 

@@ -20,7 +20,7 @@ Magento extension and module developers use the `composer.json` file to manage p
 
 The `composer.lock` file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
-**Common commands**
+**Common commands:**
 
 Command | Description
 --- | ---
