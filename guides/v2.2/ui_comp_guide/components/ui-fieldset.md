@@ -20,7 +20,43 @@ The Fieldset component implements a container for visually-grouped form elements
 | Title         | Type    | Default | Description                                                                       |
 | ------------- | ------- | ------- | --------------------------------------------------------------------------------- |
 | `collapsible` | Boolean | `false` | Enables/disables the collapsible functionality.                                   |
+| `label`       | String  |         | Caption for the fieldset.                                                         |
 | `opened`      | Boolean | `false` | Initial collapsible state. Applied when the collapsible functionality is enabled. |
+
+## Examples
+
+The following example adds a new main fieldset, that contains a collapsible fieldset.
+
+```xml
+<fieldset name="main_fieldset">
+    <settings>
+        <label translate="true">Other Settings</label>
+    </settings>
+    <fieldset name="fieldset_group">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Information</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="my_field">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">My Field</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</fieldset>
+```
+
+#### Result
+
+![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/fieldset-component-result.png)
 
 ## Source files
 
