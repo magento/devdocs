@@ -36,14 +36,6 @@ extension:
     name: Google Shopping ads Channel
     versions:
       -
-        name: 3.0.2
-        support:
-          2.2.4+: general availability
-          2.3.0: general availability
-          2.3.1: general availability
-          2.3.2: general availability
-          2.3.3: general availability
-      -
         name: 3.0.1
         support:
           2.2.4+: general availability
