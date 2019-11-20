@@ -25,9 +25,9 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ## Examples
 
-### Integrate Paging component with Listing component
+### Integrate the Paging component with the Listing component
 
-This is an example of how the Paging component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This example integrates the Paging component with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
