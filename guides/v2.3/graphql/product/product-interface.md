@@ -59,14 +59,14 @@ Attribute | Data type | Description
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | Deprecated. Use `price_tiers` instead
 `tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
-`type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
+`type_id` | String | Deprecated. Use the GraphQL `__typname` meta attribute instead
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
 `url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
-`websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
+`websites` | [[Website]](#websiteObject) | Deprecated. This attribute is not applicable for GraphQL
 
 ### ProductPrices object {#ProductPrices}
 
@@ -251,6 +251,9 @@ Attribute | Type | Description
 `quantity` | Float | The minimum number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
+
+{:.bs-callout-info}
+The `Website` object has been deprecated because it is not applicable for GraphQL.
 
 Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID. The `Website` object is defined in the StoreGraphQl module.
 
