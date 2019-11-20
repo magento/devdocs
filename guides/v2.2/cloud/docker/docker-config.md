@@ -10,46 +10,7 @@ functional_areas:
 The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 {: .bs-callout-warning }
-Please save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file as executing the `docker:build` command will overwrite the existing `docker-compose.yml` file. More info at [Docker quick reference]({{page.baseurl}}/cloud/docker/docker-quick-reference.md).
-
-## Launch modes
-
-_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
-
-You can launch your Docker environment in one of the following modes:
-
--  **production**—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
--  **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
-
-For example, the following command starts the Docker configuration generator for the developer mode:
-
-```bash
-./vendor/bin/ece-tools docker:build --mode="developer"
-```
-
-To skip the interactive mode, use the `-n, --no-interaction` option.
-
-## Service versions
-
-{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator (the `docker:build` command), you can overwrite a service version with the following optional parameters:
-
-| Service       | Key        | Available versions
-| ------------- | ---------- | ------------------
-| Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
-| MariaDB       | `--db`     | 10.0, 10.1, 10.2
-| NGINX         | `--nginx`  | 1.9, latest
-| Node          | `--node`   | 6, 8, 10, 11
-| PHP           | `--php`    | 7.0, 7.1, 7.2
-| RabbitMQ      | `--rmq`    | 3.5, 3.7
-| Redis         | `--redis`  | 3.2, 4.0, 5.0
-
-The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
-
-For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
-
-```bash
-./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
-```
+The `docker:build` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference]({{page.baseurl}}/cloud/docker/docker-quick-reference.md).
 
 ## Prerequisites
 
