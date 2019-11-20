@@ -467,7 +467,7 @@ entries:
     Added [Docker images](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html)
     to support PHP 7.3 and Varnish Cache 6.2.<br/>- Updated the Docker PHP images
     to add Node.js to support node, npm, and the grunt-cli capabilities inside the
-    [PHP container](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#php-fpm-container).'
+    [PHP container](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-php.html).'
   versions: 2.x
   type: Major update
   date: September 5, 2019
@@ -1756,7 +1756,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/3833
 - description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
     Updated the Cloud Docker content with information about using the [`sendmail`
-    service](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
+    service](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html#sendmail-service).<br/>- Updated
     the Cloud Docker content to explain how to [configure Xdebug](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
     Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
     and [X_FRAME_CONFIGURATION global variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-
@@ -2180,12 +2180,12 @@ entries:
   type: New topic
   date: November 16 2018
 - description: Release notes for Cloud ece-tools version [2002.0.15](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002015)<br/>Added
-    a new [Cron container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#cron-container)
+    a new [Cron container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-cli.html#cron-container)
     to the Cloud Docker architecture.<br/>Added a [services table](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
     to clarify the service key and version values available for the Cloud Docker environment
     setup.<br/>There are several other Cloud Docker updates, such as a new a PHP 7.2
-    image and various services, the ability to [share data between host and container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container),  and
-    information on [importing a database dump](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#database-container).<br/>Added
+    image and various services, the ability to [share data between host and container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container),  and
+    information on [importing a database dump](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-database.html).<br/>Added
     a [Quick Reference](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-quick-reference.html)
     for the Docker environment.<br/>Added the ENABLE_GOOGLE_ANALYTICS environment
     variable.<br/>Moved
@@ -2586,7 +2586,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Aug 04 2018
-- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html)
+- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
     documentation to include instructions for deploying to a read-only file system.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2736,7 +2736,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jun 13 2018
-- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration.
+- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html) configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
   date: Jun 09 2018

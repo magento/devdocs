@@ -9,6 +9,9 @@
         - label: Cloud Architecture
           url: /cloud/architecture/cloud-architecture.html
 
+        - label: Project Structure
+          url: /cloud/project/project-start.html
+
         - label: Upgrades and Patches
           url: /cloud/project/project-upgrade-parent.html
 
@@ -18,15 +21,16 @@
     - label: Cloud development
       children:
         - label: Local development
-          url: /cloud/setup/first-time-setup.html
+          url: /cloud/docker/docker-development.html
 
         - label: Launch Docker
           url: /cloud/docker/docker-config.html
-          exclude_versions: ["2.0"]
 
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
-          exclude_versions: ["2.0"]
+
+        - label: Configure Application
+          url: /cloud/project/project-conf-files_magento-app.html
 
         - label: Configure Environments
           url: /cloud/env/environments.html
