@@ -22,9 +22,9 @@ Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ## Examples
 
-### Integrate DragAndDrop component with Listing component
+### Integrate the DragAndDrop component with the Listing component
 
-This is an example of how to configure the DragAndDrop component for the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component and integrate it with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This example configures the DragAndDrop component for the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component and integrates it with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
@@ -47,9 +47,9 @@ This is an example of how to configure the DragAndDrop component for the [Column
 
 ![DateColumn Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-draganddrop-columns-result.png)
 
-### Disable DragAndDrop component for Columns component
+### Disable the DragAndDrop component for the Columns component
 
-This is an example of how to disable the DragAndDrop component for the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component and integrate it with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This example disables the DragAndDrop component for the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component and integrates it with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
