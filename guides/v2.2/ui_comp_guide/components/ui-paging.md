@@ -7,44 +7,38 @@ The Paging component implements pagination in grids implemented using [Listing](
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>totalTmpl</code></td>
-    <td>Path to the <code>.html</code> template for rendering the total amount of found records.</td>
-    <td>String</td>
-    <td><code>ui/grid/paging-total</code></td>
-  </tr>
-  <tr>
-    <td><code>sizesConfig</code>
-<ul>
-<li><code>minSize</code></li>
-<li><code>maxSize</code></li>
-</ul>
-
-</td>
-    <td>Configuration that is passed to the <code>Sizes</code> component: minimum and maximum number of elements on a page.</td>
-    <td>Object</td>
-    <td><ul>
-<li>1</li>
-<li>999</li>
-</ul></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/paging/paging</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `current` | The number of current page. | String | `1` |
+| `sizesConfig`.`maxSize` | The maximum number of elements on a page configuration that is passed to the `Sizes` component. | Object | `999` |
+| `sizesConfig`.`minSize` | The minimum number of elements on a page configuration that is passed to the `Sizes` component. | Object | `1` |
+| `template` | The path to the component’s `.html` template. | String | `ui/grid/paging/paging` |
+| `totalTmpl` | Path to the `.html` template for rendering the total amount of found records. | String | `ui/grid/paging-total` |
 
 ## Source files
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
 -  [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/paging/paging.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/paging/paging.html)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/paging-total.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/paging-total.html)
+
+## Examples
+
+### Integrate Paging component with Listing component
+
+This is an example of how the Paging component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
+```xml
+<listing>
+    ...
+    <listingToolbar>
+        ...
+        <paging name="listing_paging"/>
+    </listingToolbar>
+</listing>
+```
+
+#### Result
+
+![Paging Component example]({{ site.baseurl }}/common/images/ui_comps/ui-paging-result.png)
