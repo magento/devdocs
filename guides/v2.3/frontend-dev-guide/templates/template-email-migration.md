@@ -21,8 +21,6 @@ Notice in the incorrect example, the `getConfirmationLink()` method is called di
 -  Incorrect: `{{var subscriber.getConfirmationLink()}}`
 -  Correct: `{{var subscriber_data.confirmation_link}}`
 
-In the correct version, this method call has been abstracted out to the model and the value is sent from it.
-
 We refer to this as 'strict mode' for email templates.
 All default templates have been converted to this strict mode.
 
@@ -30,28 +28,6 @@ All existing custom email templates will continue to work after upgrading to 2.3
 Any new email templates that are created after installing 2.3.4 must be written in strict mode.
 
 With the new change, methods are now called in the email template model and passed to the template as a key/value pair in a data object.
-
-## Template structure
-
-An email template is comprised of a few parts.
-
-### HTML template
-
-Templates contain the raw HTML structure of the email. It is HTML markup interspersed with `{{vars}}` that will be poplated with actual data. Templates can generally be found in `<Magento module>/view/<area>/email/template_name.html`.
-Here is the [New Order email template][].
-
-At the top of the file, there is a `@vars` comment block with a list of variables. This block is only used to populate the variables availabe in the [Insert Variable][] dialog. We can ignore that comment block for this discussion.
-
-{: .bs-callout-warning }
-Any templates that are installed via extensions should be rewritten to be compatible with strict mode.
-Any custom email templates created from non-strict templates will not work properly.
-
-### Template model
-
-The model file does the work of gathering the data to pass to the template. It is in these file that the method call is made and sent to the view.
-Here is the [model][] for the New Order email template above.
-
-Some variables are more general, such as store name and logo. These are defined in [/app/code/Magento/Email/Model/AbstractTemplate.php][1]
 
 ## Abstraction example
 
@@ -116,9 +92,9 @@ In this example, we will create and pass a `customer_email` custom value.
     }
    ```
 
-   and save the file to XXXXXXX.
+   and save the file to <Vendor>/<module>/model.
 
-1. Add the new directive to the pool by adding this block to XXXXXXX.
+1. Add the new directive to the pool by adding this block to `di.xml`.
 
    ```xml
     <type name="Magento\Framework\Filter\SimpleDirective\ProcessorPool">
@@ -145,13 +121,13 @@ For example, if we have;
 $template->setVariables(['customer_data'=>new DataObject('mykey' => 'foo')]);
 ```
 
-and in the template where we have 
+and in the template where we have
 
 ```php
 {{somedir mydir mydir=$customer_data.getMyKey()}}
 ```
 
-the directive will resolve to “foo”. 
+the directive will resolve to “foo”.
 
 The same is true for `{{somedir blah blah=$customer_data.my_key()}}`.
 But note that in both cases the DataObject will not have `getMyKey` invoked but rather `getData(‘my_key’)` is invoked instead.
