@@ -258,15 +258,23 @@ To enable Fastly caching on your Staging and Production sites, you need make the
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
-After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
+After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service:
+
+```conf
+prod.magentocloud.map.fastly.net
+```
+
+If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
 CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
 `A` records map a domain name to the following Fastly IP addresses:
 
--  `151.101.1.124`
--  `151.101.65.124`
--  `151.101.129.124`
--  `151.101.193.124`
+```conf
+151.101.1.124
+151.101.65.124
+151.101.129.124
+151.101.193.124
+```
 
 Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) for more information.
 
