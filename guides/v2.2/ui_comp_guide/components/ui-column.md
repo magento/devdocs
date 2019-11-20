@@ -20,7 +20,7 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 | `headerTmpl` | Path to the `.html` template for the column's header. | String | `ui/grid/columns/text` |
 | `label` | The column label displayed in the header. | String | `''` |
 | `sortable` | Whether column's fields can be used to sort records in a table. | Boolean | `true` |
-| `sorting` | Column's sorting order. Can be ascending `asc`), descending (`desc`) or none (`false`). Setting `sorting` to `false` does not disable sorting, which is defined by the `sortable` option. | `asc` \| `desc` \| Boolean | `false` |
+| `sorting` | Column's sorting order. Can be ascending (`asc`), descending (`desc`) or none (`false`). Setting `sorting` to `false` does not disable sorting, which is defined by the `sortable` option. | String \| Boolean | `false` |
 | `statefull` | Defined in the parent [uiElement class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html). | Object | `{visible: true, sorting: true}` |
 | `templates.fieldAction` | The action performed on the column's field click. | [ColumnAction](#column_action) | `-` |
 | `visible` | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
