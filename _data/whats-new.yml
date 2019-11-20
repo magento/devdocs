@@ -19,7 +19,7 @@ entries:
   date: November 19, 2019
   link: https://github.com/magento/devdocs/pull/6027
 - description: Added the "To change the directory from your module" section to the
-    [Configure Elasticsearch Stopwords](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-config-stopwords.html)
+    [Configure Elasticsearch Stopwords](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-config-stopwords.html) topic
     in the _Configuration Guide_.
   versions: 2.3.x
   type: Major update
