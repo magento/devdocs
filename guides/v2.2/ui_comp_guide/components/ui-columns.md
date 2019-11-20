@@ -37,7 +37,7 @@ Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicol
 
 ## Examples
 
-### Integrate Columns component as grid (default) with Listing component
+### Integrate the Columns component as a grid (default) with the Listing component
 
 This is an example of how the Columns component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
@@ -86,7 +86,7 @@ This is an example of how the Columns component integrates with the [Listing]({{
 
 ![Columns Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-result.png)
 
-### Integrate Columns component as list with Listing component
+### Integrate the Columns component as a list with the Listing component
 
 This is an example of how the Columns component with the list display mode integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
