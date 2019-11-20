@@ -18,11 +18,11 @@ Disabling a custom source has the following effects:
 {:.bs-callout .bs-callout-info}
 Bundle and grouped products currently do not support multi-sourcing and must be assigned to the default source and default stock.
 
-**Service name**
+**Service name:**
 
 `inventoryApiSourceRepositoryV1`
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 POST /V1/inventory/sources
@@ -31,7 +31,7 @@ PUT /V1/inventory/sources/:sourceCode
 GET /V1/inventory/sources
 ```
 
-**SourceInterface parameters**
+**SourceInterface parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
@@ -59,11 +59,11 @@ Name | Description | Type | Requirements
 
 The value of the `source_code` parameter can contain upper and lower case letters, numbers, dashes, and underscores. You use this ID when assigning stock to sources and when exporting or importing data.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/sources`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -86,7 +86,7 @@ The value of the `source_code` parameter can contain upper and lower case letter
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -98,11 +98,11 @@ All PUT requests must contain the `name`, `country_id`, and `postcode` parameter
 
 This example updates the contact information (`contact_name`, `email`, and `phone` parameters) of the source.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/inventory/sources/central`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -117,7 +117,7 @@ This example updates the contact information (`contact_name`, `email`, and `phon
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 
@@ -127,15 +127,15 @@ Magento returns an empty array.
 
 This call returns detailed information about the specified source.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/sources/central`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -164,15 +164,15 @@ The following call returns all sources that are located in the United States (`c
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/sources?searchCriteria[filter_groups][0][filters][0][field]=country_id&searchCriteria[filter_groups][0][filters][0][value]=US&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 

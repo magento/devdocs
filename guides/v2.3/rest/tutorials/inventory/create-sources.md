@@ -30,21 +30,21 @@ The `POST V1/inventory/sources` endpoint creates the Baltimore Warehouse (`balti
 
 The `source_code` values will be used in subsequent steps.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/all/V1/inventory/sources`
 
-**Scope**
+**Scope:**
 
 `all` store views
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <admin_token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -64,7 +64,7 @@ The `source_code` values will be used in subsequent steps.
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 

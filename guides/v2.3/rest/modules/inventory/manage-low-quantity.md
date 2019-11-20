@@ -13,7 +13,7 @@ Magento deducts either the global or the overriding quantity from the total sala
 
 The REST low-quantity notification endpoints manage the values that merchants set from the **Notify Quantity** fields.
 
-**Service names**
+**Service names:**
 
 ```http
 inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
@@ -21,7 +21,7 @@ inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
 inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
 ```
 
-**REST endpoints**
+**REST endpoints:**
 
 ```http
 POST /V1/inventory/low-quantity-notification
@@ -29,7 +29,7 @@ GET /V1/inventory/low-quantity-notification/:sourceCode/:sku
 POST /V1/inventory/low-quantity-notifications-delete
 ```
 
-**sourceItemConfigurations parameters**
+**sourceItemConfigurations parameters:**
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
@@ -41,11 +41,11 @@ Name | Description | Type | Requirements
 
 The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of values that map a SKU to a source and specify when to notify the merchant of a low stock quantity.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/low-quantity-notification`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -69,7 +69,7 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 }
 ```
 
-**Response**
+**Response:**
 
 An empty array `[]`
 
@@ -77,15 +77,15 @@ An empty array `[]`
 
 This call returns the `notify_stock_qty` for the specified source and SKU.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/low-quantity-notification/reno_wh/sp1`
 
-**Payload**
+**Payload:**
 
 None
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -99,11 +99,11 @@ None
 
 The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the notification threshold for an array of sourceItem objects. Each object specified a SKU amd source.
 
-**Sample usage**
+**Sample usage:**
 
 `POST <host>/rest/<store_code>/V1/inventory/low-quantity-notifications-delete`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -116,7 +116,7 @@ The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the 
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an empty array.
 

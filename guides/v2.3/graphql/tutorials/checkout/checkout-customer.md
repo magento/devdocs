@@ -24,7 +24,7 @@ To place order as a new customer, use the `createCustomer` mutation to register 
 {:.bs-callout .bs-callout-info}
 Skip this step if you want to place order as a guest user.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -48,7 +48,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -70,7 +70,7 @@ mutation {
 
 To place an order as a new customer, you must get the customer's authorization token. Use the `generateCustomerToken` mutation for that.
 
-**Request**
+**Request:**
 
 ```text
 mutation {
@@ -80,7 +80,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

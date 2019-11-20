@@ -15,7 +15,7 @@ A logged-in customer specifies an email address when they create an account. The
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -32,7 +32,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

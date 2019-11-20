@@ -33,17 +33,17 @@ If the customer had selected the `flatrate` shipping method ($5 per item), we wo
 
 The `return_to_stock_items` array specifies which `order_item_id`s can be returned to stock and be resold.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/order/5/refund`
 
-**Headers**
+**Headers:**
 
 `Content-Type` `application/json`
 
 `Authorization` `Bearer <administrator token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -67,7 +67,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 }
 ```
 
-**Response**
+**Response:**
 
 A [credit memo](https://glossary.magento.com/credit-memo) id, such as `3`.
 

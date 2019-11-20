@@ -21,21 +21,21 @@ Now that all the items have been added to the cart, we can prepare the quote for
 
 Magento calculates shipping costs for each shipping method that can be applied to the order. In this tutorial, the `flatrate` ($5 per item) shipping method is active.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/carts/mine/estimate-shipping-methods`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 The payload contains the shipping address.
 
@@ -60,7 +60,7 @@ The payload contains the shipping address.
 }
 ```
 
-**Response**
+**Response:**
 
 The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
 
@@ -87,21 +87,21 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 
 Magento returns a list of payment options and calculates the order totals.
 
-**Endpoint**
+**Endpoint:**
 
 `POST <host>/rest/us/V1/carts/mine/shipping-information`
 
-**Scope**
+**Scope:**
 
 `us` store view
 
-**Headers**
+**Headers:**
 
 `Content-Type`: `application/json`
 
 `Authorization`: `Bearer <customer token>`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -142,7 +142,7 @@ Magento returns a list of payment options and calculates the order totals.
 }
 ```
 
-**Response**
+**Response:**
 
 The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
 
