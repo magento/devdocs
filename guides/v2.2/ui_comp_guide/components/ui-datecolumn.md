@@ -19,7 +19,7 @@ Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
 ## Examples
 
-### Integrate DateColumn component with Listing component
+### Integrate the DateColumn component with the Listing component
 
 This is an example of how the DateColumn component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
