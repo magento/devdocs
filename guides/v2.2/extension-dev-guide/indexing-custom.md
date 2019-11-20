@@ -23,16 +23,57 @@ Your custom indexer class should implement [\Magento\Framework\Indexer\ActionInt
 
 ### Indexer configuration
 
-In the `etc` directory of your module, add `indexer.xml` with the following:
+Declare a new indexer process in the `etc/indexer.xml` file with the attributes:
 
-*  indexer ID
-*  indexer class name
-*  indexer title
-*  indexer description
-*  indexer view ID
-*  shared indexes, if any
+| Attribute | Required | Description |
+| --- | --- | --- |
+| `id` | Yes | Unique indexer ID. |
+| `class` | No | Class which process indexer methods (`executeFull`, `executeList`, `executeRow`). |
+| `primary` | No | Source provider. |
+| `shared_index` | No | Use it to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/etc/indexer.xml){:target="_blank"}, if [catalog](https://glossary.magento.com/catalog) rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed. |
+| `view_id` | No | The id of view element which is defined in `mview.xml` configuration file. |
 
-Use the optional `shared_index=` parameter to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/etc/indexer.xml){:target="_blank"}, if [catalog](https://glossary.magento.com/catalog) rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.
+For example,
+ 
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="design_config_grid" view_id="design_config_dummy" class="Magento\Theme\Model\Indexer\Design\Config" primary="design_config">
+        ...
+    </indexer>
+</config>
+```
+
+An indexer process may also have the next non required parameters:
+
+| Parameter | Description |
+| --- | --- |
+| `description` | The description of indexer. Will be displayed in `System` > `Tools` > `Index Management`. |
+| `fieldset` | Describes fields, source and data provider of particular flat index table. |
+| `saveHandler` | An extension point. Class for processing (delete, save, etc) items within indexation. |
+| `structure` | Class which processes (creates, removes) flat index table(s). |
+| `title` | The title of indexer. Will be displayed in `System` > `Tools` > `Index Management`. |
+
+For example,
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer ...>
+        <title translate="true">Design Config Grid</title>
+        <description translate="true">Rebuild design config grid index</description>
+
+        <fieldset name="design_config" source="Magento\Theme\Model\ResourceModel\Design\Config\Scope\Collection"
+                  provider="Magento\Theme\Model\Indexer\Design\Config\FieldsProvider">
+            <field name="store_website_id" xsi:type="filterable" dataType="int"/>
+            <field name="store_group_id" xsi:type="filterable" dataType="int"/>
+            <field name="store_id" xsi:type="filterable" dataType="int"/>
+        </fieldset>
+        <saveHandler class="Magento\Framework\Indexer\SaveHandler\Grid"/>
+        <structure class="Magento\Framework\Indexer\GridStructure"/>
+    </indexer>
+</config>
+```
 
 All indexers related to a [module](https://glossary.magento.com/module) should be declared in one file.
 
