@@ -12,12 +12,6 @@ entries:
   type: New topic
   date: November 19, 2019
   link: https://github.com/magento/devdocs/pull/5929
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for the Google Shopping ads Channel v3.0.2 release.
-  versions: 3.0.2 Google Shopping ads
-  type: Major update
-  date: November 19, 2019
-  link: https://github.com/magento/devdocs/pull/6027
 - description: Added the "To change the directory from your module" section to the
     [Configure Elasticsearch Stopwords](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-config-stopwords.html) topic
     in the _Configuration Guide_.
