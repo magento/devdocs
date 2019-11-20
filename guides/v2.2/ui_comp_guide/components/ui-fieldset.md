@@ -28,30 +28,32 @@ The Fieldset component implements a container for visually-grouped form elements
 The following example adds a new main fieldset, that contains a collapsible fieldset.
 
 ```xml
-<fieldset name="main_fieldset">
-    <settings>
-        <label translate="true">Other Settings</label>
-    </settings>
-    <fieldset name="fieldset_group">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string" translate="true">Information</item>
-                <item name="collapsible" xsi:type="boolean">true</item>
-                <item name="opened" xsi:type="boolean">true</item>
-            </item>
-        </argument>
-        <field name="my_field">
+<form>
+    <fieldset name="main_fieldset">
+        <settings>
+            <label translate="true">Other Settings</label>
+        </settings>
+        <fieldset name="fieldset_group">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">My Field</item>
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="label" xsi:type="string" translate="true">Information</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <item name="opened" xsi:type="boolean">true</item>
                 </item>
             </argument>
-        </field>
+            <field name="my_field">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">My Field</item>
+                        <item name="visible" xsi:type="boolean">true</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
     </fieldset>
-</fieldset>
+</form>
 ```
 
 #### Result
