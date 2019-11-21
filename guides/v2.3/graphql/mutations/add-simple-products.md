@@ -164,7 +164,7 @@ Attribute |  Data Type | Description
 
 The `CartItemInput` object must contain the following attributes:
 
-{% include graphql/customizable-option-input.md %}
+{% include graphql/cart-item-input.md %}
 
 ### CustomizableOptionInput object {#CustomizableOptionInputSimple}
 
