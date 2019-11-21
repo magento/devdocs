@@ -27,7 +27,7 @@ The Fieldset component implements a container for visually-grouped form elements
 
 ### Integrate the Fieldset component with the Form component
 
-The following example adds a new main fieldset that contains a collapsible fieldset into [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+The following example adds a new main fieldset that contains a collapsible fieldset into the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
