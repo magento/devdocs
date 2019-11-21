@@ -4,8 +4,83 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Nov 4 13:09:57 2019
+updated: Tue Nov 19 11:49:12 2019
 entries:
+- description: Added the [Search for products with the /search endpoint](https://devdocs.magento.com/guides/v2.2/rest/search-endpoint.html)
+    topic to the _REST API Reference_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: November 19, 2019
+  link: https://github.com/magento/devdocs/pull/5929
+- description: Added the "To change the directory from your module" section to the
+    [Configure Elasticsearch Stopwords](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-config-stopwords.html) topic
+    in the _Configuration Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: November 18, 2019
+  link: https://github.com/magento/devdocs/pull/5917
+- description: Published the release notes for [Magento Commerce Cloud v2002.0.22](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
+    .
+  versions: 2.x
+  type: Major update
+  date: November 15, 2019
+  link: https://github.com/magento/devdocs/pull/5997
+- description: Added additional steps and code to the [Creating a dynamic row system
+    config](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/dynamic-row-system-config.html)
+    section in the _Extensions Best Practices Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 14, 2019
+  link: https://github.com/magento/devdocs/pull/5992
+- description: Added a section about consumer handlers to the [Configure message queues](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/config-mq.html)
+    topic in the  _PHP Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 11, 2019
+  link: https://github.com/magento/devdocs/pull/5964
+- description: Added the [Amazon Sales Channel Release Notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/)
+    for version 3.0.1.
+  versions: 3.0.1-asc
+  type: Major update
+  date: November 11, 2019
+  link: https://github.com/magento/devdocs/pull/5969
+- description: Added the Examples section to the [ColumnsControls component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columnscontrols.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: November 6, 2019
+  link: https://github.com/magento/devdocs/pull/5944
+- description: Added example and results information to the [ActionsColumn component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-actionscolumn.html)
+    topic in the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 6, 2019
+  link: https://github.com/magento/devdocs/pull/5940
+- description: Added "Examples" section to the [ActionDeleteComponent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-actiondelete.html)
+    topic.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: November 6, 2019
+  link: https://github.com/magento/devdocs/pull/5937
+- description: Added example and results information to the [ActionsColumn component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-actionscolumn.html)
+    topic in the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 6, 2019
+  link: https://github.com/magento/devdocs/pull/5940
+- description: Updated procedure to use Fastly Edge Modules to create and upload the
+    custom VCL<br/>for rerouting specified URL requests to a WordPress backend. See
+    [Reroute requests to WordPress or another backend](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-wordpress.html).
+  versions: 2.x
+  type: Technical changes
+  date: November 6, 2019
+  link: https://github.com/magento/devdocs/pull/5865
+- description: Added source files, example, and results information to the [Date Component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-date.html)
+    topic in the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 5, 2019
+  link: https://github.com/magento/devdocs/pull/5831
 - description: Updated the [Marketplace EQP API](https://devdocs.magento.com/marketplace/eqp/v1/api.html)
     documentation for the Early Access Program.
   versions: ''
@@ -573,7 +648,7 @@ entries:
   date: August 15, 2019
   link: https://github.com/magento/devdocs/pull/5123
 - description: Added the [Change increment ID for a database entity on particular
-    store](http://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
+    store](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/change-increment-id.html)
     topic to the Configuration Guide.
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -2586,7 +2661,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Aug 04 2018
-- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html)
+- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
     documentation to include instructions for deploying to a read-only file system.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2736,7 +2811,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jun 13 2018
-- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration.
+- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html) configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
   date: Jun 09 2018
@@ -4497,7 +4572,7 @@ entries:
   versions: 2.x
   type: New
   date: Oct 21 2016
-- description: "[How to apply the SUPEE-8788 security patch](https://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788)"
+- description: "[How to apply the SUPEE-8788 security patch](https://devdocs.magento.com/guides/m1x/other/ht_install-patches.html)"
   versions: 1.x
   type: Updated
   date: Oct 21 2016
