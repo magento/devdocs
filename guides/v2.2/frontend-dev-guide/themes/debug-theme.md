@@ -18,7 +18,7 @@ To enable template hints:
 
 1. Click **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 
-1. In the **Scope** dropdown in the upper-left corner select the view for which you want the template hints.
+1. In the **Scope:** dropdown in the upper-left corner select the view for which you want the template hints.
 
 1. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for [Admin](https://glossary.magento.com/admin) set **Template Path Hints for Admin** to **Yes**.
 1. To save the changes, click **Save Config** in the upper-right corner.

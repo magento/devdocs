@@ -21,7 +21,7 @@ The following diagram illustrates the workflow for {{site.data.var.b2b}} negotia
 
 A negotiated quote can be initiated without a shipping address. However, before the order can be placed, the shipping address must be provided.
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/negotiable-carts/:cartId/estimate-shipping-methods
@@ -33,15 +33,15 @@ POST /V1/negotiable-carts/:cartId/shipping-information
 
 This call takes a full shipping address as input and estimates shipping fees. It returns a list of available shipping methods.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteShipmentEstimationV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/estimate-shipping-methods`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -61,7 +61,7 @@ This call takes a full shipping address as input and estimates shipping fees. It
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -84,15 +84,15 @@ This call takes a full shipping address as input and estimates shipping fees. It
 
 This call takes an address ID as input and estimates shipping fees. It returns a list of available shipping methods.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteShippingMethodManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/estimate-shipping-methods-by-address-id`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -100,7 +100,7 @@ This call takes an address ID as input and estimates shipping fees. It returns a
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -123,15 +123,15 @@ This call takes an address ID as input and estimates shipping fees. It returns a
 
 In this call, you specify the shipping and billing addresses, as well as the selected `shipping_carrier_code` and `shipping_method_code`. Magento returns a list of payment options and calculates the order totals.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteShippingMethodManagementV1`
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/shipping-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -170,7 +170,7 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 }
 ```
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -341,11 +341,11 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 
 If the billing address isn't provided through another call, use the `POST /V1/negotiable-carts/:cartId/billing-address` to specify it.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteBillingAddressManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/negotiable-carts/:cartId/billing-address
@@ -356,11 +356,11 @@ GET /V1/negotiable-carts/:cartId/billing-address
 
 This call assigns a billing address to the specified negotiable quote.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/billing-address`
 
-**Payload**
+**Payload:**
 
 ```json
 {  "address": {
@@ -383,7 +383,7 @@ This call assigns a billing address to the specified negotiable quote.
 }
 ```
 
-**Response**
+**Response:**
 
 []
 
@@ -391,15 +391,15 @@ This call assigns a billing address to the specified negotiable quote.
 
 This call returns the billing address for the specified negotiable quote.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/negotiable-carts/86/billing-address`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -427,11 +427,11 @@ Not applicable
 
 B2B allows coupons to be used toward payment.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteCouponManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 PUT /V1/negotiable-carts/:cartId/coupons/:couponCode
@@ -442,15 +442,15 @@ DELETE /V1/negotiable-carts/:cartId/coupons
 
 If the initial quote applies a coupon to the totals, Magento ignores the coupon when it converts the quote to a negotiable quote. However, you can apply a coupon at checkout.
 
-**Sample Usage**
+**Sample Usage:**
 
 `PUT <host>/rest/<store_code>/V1/negotiable-carts/6/coupons/SAVE5`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `true`, indicting the request was successful
 
@@ -458,11 +458,11 @@ Not applicable
 
 B2B allows gift cards to be used as payment.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteGiftCardAccountManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/negotiable-carts/:cartId/giftCards
@@ -473,11 +473,11 @@ DELETE /V1/negotiable-carts/:cartId/giftCards/:giftCardCode
 
 If the initial quote applies a gift card to the totals, Magento ignores the gift card when it converts the quote to a negotiable quote. However, you can apply a gift card at checkout.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/6/giftCards`
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -489,7 +489,7 @@ If the initial quote applies a gift card to the totals, Magento ignores the gift
 }
 ```
 
-**Response**
+**Response:**
 
 `true`
 
@@ -497,15 +497,15 @@ If the initial quote applies a gift card to the totals, Magento ignores the gift
 
 This call removes a gift card that has been applied to a negotiable quote.
 
-**Sample Usage**
+**Sample Usage:**
 
 `DELETE <host>/rest/<store_code>/V1/negotiable-carts/6/giftCards/00HELHQED6RV`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 `true`, indicating the request was successful
 
@@ -513,11 +513,11 @@ Not applicable
 
 When you submit payment information, Magento creates an order and sends an order confirmation to the buyer.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuotePaymentInformationManagementV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 POST /V1/negotiable-carts/:cartId/payment-information
@@ -529,11 +529,11 @@ POST /V1/negotiable-carts/:cartId/set-payment-information
 
 This call sets payment information and the billing address for the negotiable quote. However, Magento does not create an order afterward.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/set-payment-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {  "paymentMethod": {
@@ -558,7 +558,7 @@ This call sets payment information and the billing address for the negotiable qu
 }
 ```
 
-**Response**
+**Response:**
 
 `true`, indicating the payment information was set
 
@@ -566,11 +566,11 @@ This call sets payment information and the billing address for the negotiable qu
 
 This call sets payment information and the billing address for the negotiable quote, then creates an order.
 
-**Sample Usage**
+**Sample Usage:**
 
 `POST <host>/rest/<store_code>/V1/negotiable-carts/86/payment-information`
 
-**Payload**
+**Payload:**
 
 ```json
 {  "paymentMethod": {
@@ -595,7 +595,7 @@ This call sets payment information and the billing address for the negotiable qu
 }
 ```
 
-**Response**
+**Response:**
 
 An order ID, such as `83`
 
@@ -603,15 +603,15 @@ An order ID, such as `83`
 
 This call returns returns payment information and all information from the `totals` object.
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/negotiable-carts/86/payment-information`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 
@@ -782,25 +782,25 @@ Not applicable
 
 This call is similar to `GET /V1/negotiable-carts/:cartId/payment-information`, except it does not return payment information.
 
-**Service Name**
+**Service Name:**
 
 `negotiableQuoteCartTotalRepositoryV1`
 
-**REST Endpoints**
+**REST Endpoints:**
 
 ```json
 GET /V1/negotiable-carts/:cartId/totals
 ```
 
-**Sample Usage**
+**Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/negotiable-carts/86/totals`
 
-**Payload**
+**Payload:**
 
 Not applicable
 
-**Response**
+**Response:**
 
 {% collapsible Show code sample %}
 

@@ -28,7 +28,7 @@ When you set the payment method for a Website Payments Pro Hosted Solution, you 
 
 The following example shows the `setPaymentMethodOnCart` mutation constructed for the Website Payments Pro Hosted Solution payment method.
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -52,7 +52,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

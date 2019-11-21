@@ -126,7 +126,7 @@ For more details, see [`routes.xsd`].
 
 You can add a `before` or `after` parameter in the `module` entry to override or extend routes in existing modules.
 
-**Example: `routes.xml`**
+**Example: `routes.xml`:**
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">

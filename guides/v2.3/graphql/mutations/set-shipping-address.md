@@ -16,7 +16,7 @@ The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on
 
 ## Example usage
 
-**Request**
+**Request:**
 
 ```graphql
 mutation {
@@ -56,7 +56,7 @@ mutation {
 }
 ```
 
-**Response**
+**Response:**
 
 ```json
 {

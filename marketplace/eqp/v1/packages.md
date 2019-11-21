@@ -573,7 +573,7 @@ single submissions must be sent as an array containing one item.
 If you save the request body to a file, for example, `/tmp/one-click-submission-1.0.0.json`,
 the following example shows the package submission process:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X POST \
@@ -583,7 +583,7 @@ curl -X POST \
      https://developer-stg-api.magento.com/rest/v1/products/packages
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -633,7 +633,7 @@ The only difference is to supply `submission_id` for each item obtained from the
 
 The PUT method also allows for updating a single package with `submission_id` as shown in the following example:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X PUT \
@@ -730,7 +730,7 @@ GET /rest/v1/products/packages/item/:item_id/status
 
 This sample call lists all packages belonging to a user:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -738,7 +738,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/products/packages
 ```
 
-**Response**
+**Response:**
 
 ```json
 [
@@ -889,7 +889,7 @@ curl -X GET \
 
 In the previous example, submission `f4eacd72be` failed. Specify the submission_id query parameter to get a more detailed report:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -897,7 +897,7 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/products/packages/f4eacd72be/status
 ```
 
-**Response**
+**Response:**
 
 ```json
 {
@@ -976,7 +976,7 @@ The following fields enable both sorting and filtering support. Refer to the [Pa
 
 A sample cURL request filtering all `themes` sorted by `platform` in ascending order and `created_time` in descending order:
 
-**Request**
+**Request:**
 
 ```bash
 curl -X GET \
@@ -984,6 +984,6 @@ curl -X GET \
      https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
 ```
 
-**Response**
+**Response:**
 
 A list of theme packages can be returned in the same way as described in [Get package details](#get-package-details).

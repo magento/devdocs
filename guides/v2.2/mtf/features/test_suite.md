@@ -225,7 +225,7 @@ You can use a variation `name` or assign a `tag` node to a [data set][] variatio
 
 You can filter tests by variation name using the `<name value="{name_of_variation}">` rule.
 
-**Example of a variation**
+**Example of a variation:**
 
 ```xml
 
@@ -240,7 +240,7 @@ You can filter tests by variation name using the `<name value="{name_of_variatio
 </variation>
 ```
 
-**Example of the `<allow>` rule**
+**Example of the `<allow>` rule:**
 
 Allow a variation `ExampleTestCaseVariation1` only:
 
@@ -252,7 +252,7 @@ Allow a variation `ExampleTestCaseVariation1` only:
 </rule>
 ```
 
-**Example of the `<deny>` rule**
+**Example of the `<deny>` rule:**
 
 Allow all variations except the `ExampleTestCaseVariation1`:
 
