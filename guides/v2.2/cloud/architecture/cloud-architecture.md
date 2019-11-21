@@ -83,7 +83,7 @@ For comparison, each plan includes the following infrastructure features and sup
     </tr>
     <tr>
       <td>Dedicated Technical Account Manager</td>
-      <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
+      <td class="blank"></td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
     <tr>
