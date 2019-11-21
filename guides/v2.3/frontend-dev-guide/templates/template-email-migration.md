@@ -13,21 +13,20 @@ This topic describes the changes and provides instructions on how to convert you
 
 In Magento 2.3.4, custom email templates are only allowed to use scalar values for variable data.
 Direct calls to methods are no longer allowed.
-To be more specific, methods can no longer be called from variables from either the `var` directive or when used as parameters. For example `{{var order.getEmailCustomerNote()}}` or `{{something myVar=$obj.method()}}` will fail to resolve.
+To be more specific, methods can no longer be called from variables from either the `var` directive or when used as parameters.
+For example `{{var order.getEmailCustomerNote()}}` or `{{something myVar=$obj.method()}}` will fail to resolve.
 
 A 'custom email template' is any template created in the Magento admin **Marketing** > Communications > **Email Templates** > **Add New Template** area.
 Notice in the incorrect example, the `getConfirmationLink()` method is called directly.
 
--  Incorrect: `{{var subscriber.getConfirmationLink()}}`
--  Correct: `{{var subscriber_data.confirmation_link}}`
+-  Old way: `{{var subscriber.getConfirmationLink()}}`
+-  New way: `{{var subscriber_data.confirmation_link}}`
 
 We refer to this as 'strict mode' for email templates.
 All default templates have been converted to this strict mode.
 
 All existing custom email templates will continue to work after upgrading to 2.3.4.
-Any new email templates that are created after installing 2.3.4 must be written in strict mode.
-
-With the new change, methods are now called in the email template model and passed to the template as a key/value pair in a data object.
+Any new email template created after installing 2.3.4 must be written in strict mode.
 
 ## Abstraction example
 
@@ -43,7 +42,6 @@ As of 2.3.4, with the method call removed:
 <p class="greeting">{{trans "%customer_name," customer_name=$order_data.customer_name}}</p>
 ```
 
-The `customer.name` is now being computed within the [model][] file.
 Below, within the `$transport` block, we see `customer_name` defined in the `order_data` object and the method call place there.
 This `order_data` object is passed to the view page as a `DataObject` and is referenced in the variable as above.
 
@@ -73,10 +71,13 @@ public function send(Invoice $invoice, $forceSyncMode = false)
         $transportObject = new DataObject($transport);
 ```
 
-## Create a custom abstraction
+In this example, the `customer.name` is being computed within the [model][] file.
+Depending on the particular instance of Magento, this data point can be appended within a custom module, directive or any manner of ways.
+
+## Create a custom directive
 
 The above examples show changes to default Magento files. We do not recommend editing core files as changes may be lost when upgrading.
-Instead, if you need to call a method for a custom email template variable, you can create your own files.
+Instead, if you need to call a method for a custom email template variable, create a custom directive.
 In this example, we will create and pass a `customer_email` custom value.
 
 1. Create a class that implements `Magento\Framework\Filter\SimpleDirective\ProcessorInterface`:
@@ -92,7 +93,7 @@ In this example, we will create and pass a `customer_email` custom value.
     }
    ```
 
-   and save the file to <Vendor>/<module>/model.
+   and save the file to <Vendor>/<module>/Model.
 
 1. Add the new directive to the pool by adding this block to `di.xml`.
 
@@ -137,7 +138,7 @@ Directives that use the format `{{var this.getUrl(params, go, here)}}` will stil
 
 ## Advanced filtering
 
-As of 2.3.4, we have removed the limit of processing 2 filters per directive.
+As part of this change, we have removed the limit of processing 2 filters per directive.
 Now `{{var order_data.shipping_description|filter1|filter2|filter3}}` will work.
 
 ## Nested arrays
@@ -151,7 +152,7 @@ $template->setVariables(['customer_data'=> ['name' => ['first_name' => 'John']]]
 and in the template:
 
 ```php
-{{somedir blah blah=$customer_data.name.first_name}}
+{{mydir test fname=$customer_data.name.first_name}}
 ```
 it will resolve to “John”.
 
@@ -164,7 +165,7 @@ $template->setVariables(['customer_data'=> ['name' => new DataObject('first_name
 and in the template we have:
 
 ```php
-{{somedir blah blah=$customer_data.name.first_name}}
+{{mydir dir fname=$customer_data.name.first_name}}
 ```
 
 it will resolve to “John”.
