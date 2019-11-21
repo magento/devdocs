@@ -46,7 +46,7 @@ In general - do not trust any dynamic values.
 
 An 'Escaper' class is provided for .phtml templates and PHP classes responsible for generating HTML. It contains HTML sanitization methods for a variety of contexts.
 
-The `$block` local variable available inside .phtml templates duplicates these methods.
+Starting from Magento v2.4 all .phtml templates have access to `$escaper` variable. For earlier versions `$block` local variable available inside .phtml templates duplicates these methods.
 
 See [Template guide](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-overview.html) to read more about templates in Magento.
 
@@ -64,11 +64,13 @@ When using the Escaper:
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
 <?php echo $block->escapeHtml($block->getTitle()) ?>
+<?php echo $escaper->escapeHtml($block->getTitle()) /*For v2.4+*/ ?>
 <?php echo (int)$block->getId() ?>
 <?php echo count($var); ?>
 <?php echo 'some text' ?>
 <?php echo "some text" ?>
 <a href="<?php echo $block->escapeUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?></a>
+<a href="<?php echo $escaper->escapeUrl($block->getUrl()) /*For v2.4+*/ ?>"><?php echo $block->getAnchorTextHtml() ?></a>
 ```
 
 **When to use Escaper methods:**
@@ -78,6 +80,7 @@ When using the Escaper:
 
 ```php
 <div data-bind='settings: <?= $block->escapeHtmlAttribute($myJson) ?>'></div>
+<div data-bind='settings: <?= $escaper->escapeHtmlAttribute($myJson) /*For v2.4+*/ ?>'></div>
 ```
 
 **Case**: JSON inside script tag
@@ -104,6 +107,9 @@ If a tag is allowed, the following attributes will not be escaped: `id`, `class`
   <div id='my-element'>
       <?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?>
   </div>
+  <div id='my-element'>
+      <?php echo $escaper->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) /*For v2.4+*/ ?>
+  </div>
 ```
 
 **Case**: URL inside certain HTML attributes
@@ -114,6 +120,9 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 ```php
 <a href="<?= $block->escapeUrl($myUrl) ?>">Click me</a>
 <div attr-js-extracts="<?= $block->escapeHtmlAttribute($myOtherUrl) ?>"></div>
+<!-- For v2.4+ -->
+<a href="<?= $escaper->escapeUrl($myUrl) ?>">Click me</a>
+<div attr-js-extracts="<?= $escaper->escapeHtmlAttribute($myOtherUrl) ?>"></div>
 ```
 
 **Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:
@@ -122,6 +131,11 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 ```php
 <div
     onclick="<?= $block->escapeHtmlAttr('handler("' .$block->escapeJs($aString) .'", ' .$block->escapeJs($aVar) .')') ?>">
+    My DIV
+</div>
+<!-- For v2.4+ -->
+<div
+    onclick="<?= $escaper->escapeHtmlAttr('handler("' .$escaper->escapeJs($aString) .'", ' .$escaper->escapeJs($aVar) .')') ?>">
     My DIV
 </div>
 ```
@@ -136,6 +150,14 @@ let phrase = "Hi, my name is <?= $block->escapeJs($myName) ?>";
 let redirectUrl = "<?= $block->escapeJs($myUrl) ?>";
 location.href = redirectUrl;
 </script>
+
+<!-- For v2.4+ -->
+<script>
+let phrase = "Hi, my name is <?= $escaper->escapeJs($myName) ?>";
+//Do not use HTMl context methods like escapeUrl
+let redirectUrl = "<?= $escaper->escapeJs($myUrl) ?>";
+location.href = redirectUrl;
+</script>
 ```
 
 **Case**: JavaScript variable that must not contain JS/HTML
@@ -145,6 +167,11 @@ location.href = redirectUrl;
 <script>
 let <?= $block->escapeJs($dynamicVariable) ?> = <?= $myJson ?>;
 settings.<?= $block->escapeJs($myProperty) ?> = true;
+</script>
+<!-- For v2.4+ -->
+<script>
+let <?= $escaper->escapeJs($dynamicVariable) ?> = <?= $myJson ?>;
+settings.<?= $escaper->escapeJs($myProperty) ?> = true;
 </script>
 ```
 
@@ -197,7 +224,7 @@ It covers the following cases:
 
 -  Methods which contain "html" in their names (for example echo $object->{suffix}Html{postfix}()). Data is ready for the HTML output. Test is green.
 
--  AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
+-  AbstractBlock/Escaper methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.
 
 -  Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.
 
