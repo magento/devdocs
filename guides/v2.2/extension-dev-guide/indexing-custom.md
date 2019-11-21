@@ -23,18 +23,18 @@ Your custom indexer class should implement [\Magento\Framework\Indexer\ActionInt
 
 ### Indexer configuration
 
-Declare a new indexer process in the `etc/indexer.xml` file with the attributes:
+Declare a new indexer process in the `etc/indexer.xml` file with the following attributes:
 
-| Attribute | Required | Description |
+| Attribute | Required? | Description |
 | --- | --- | --- |
-| `id` | Yes | Unique indexer ID. |
-| `class` | No | Class which process indexer methods (`executeFull`, `executeList`, `executeRow`). |
-| `primary` | No | Source provider. |
-| `shared_index` | No | Use it to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/etc/indexer.xml){:target="_blank"}, if [catalog](https://glossary.magento.com/catalog) rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed. |
-| `view_id` | No | The id of view element which is defined in `mview.xml` configuration file. |
+| `id` | Yes | A unique indexer ID |
+| `class` | No | The class that processes indexer methods (`executeFull`, `executeList`, `executeRow`) |
+| `primary` | No | The source provider |
+| `shared_index` | No | Use this option to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/etc/indexer.xml), if the Catalog Product Rule index needs to be reindexed, but other catalog product rule indexes are up-to-date, then only the Catalog Product Rule is reindexed. |
+| `view_id` | No | The ID of the view element that is defined in the `mview.xml` configuration file. |
 
 For example,
- 
+
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
@@ -44,17 +44,17 @@ For example,
 </config>
 ```
 
-An indexer process may also have the next non required parameters:
+An indexer process can also have the following optional parameters:
 
 | Parameter | Description |
 | --- | --- |
-| `description` | The description of indexer. Will be displayed in `System` > `Tools` > `Index Management`. |
-| `fieldset` | Describes fields, source and data provider of particular flat index table. |
-| `saveHandler` | An extension point. Class for processing (delete, save, etc) items within indexation. |
-| `structure` | Class which processes (creates, removes) flat index table(s). |
-| `title` | The title of indexer. Will be displayed in `System` > `Tools` > `Index Management`. |
+| `description` | The description of indexer to be displayed on the `System` > `Tools` > `Index Management` page. |
+| `fieldset` | Describes the fields, source, and data provider of the flat index table. |
+| `saveHandler` | An extension point. The class for processing (deleting, saving, updating) items when indexing. |
+| `structure` | The class that processes (creates, removes) flat index tables. |
+| `title` | The title of indexer to be displayed on the `System` > `Tools` > `Index Management` page. |
 
-For example,
+For example:
 
 ```xml
 <?xml version="1.0"?>
