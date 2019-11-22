@@ -12,9 +12,9 @@ If you encounter issues in your environment, but you do not have a [valid snapsh
 
 If you have not created a snapshot but you can access the environment using SSH, follow these steps to restore your environment:
 
--  Disable configuration management
--  Uninstall Magento
--  Reset the git branch
+1. Disable configuration management
+1. Uninstall Magento
+1. Reset the git branch
 
 Performing these steps:
 
@@ -27,6 +27,7 @@ You must disable [configuration management]({{ page.baseurl }}/cloud/live/sens-d
 
 To disable configuration management, make sure that your `app/etc/` directory does not contain the `config.php` file.
 
+{:.procedure}
 To remove the configuration file:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
@@ -45,8 +46,9 @@ To remove the configuration file:
 
 ### Uninstall Magento
 
-Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var/`.
+Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears `var/` subdirectories.
 
+{:.procedure}
 To uninstall the Magento software:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
@@ -68,6 +70,7 @@ To uninstall the Magento software:
 
 Resetting your branch reverts the code to a stable state in the past.
 
+{:.procedure}
 To reset your branch:
 
 1. Clone the project to your local development environment. You can find the command in your Project Web Interface:
