@@ -274,14 +274,17 @@ After checking with your registrar about where to change your DNS settings, you 
 The usual subdomain naming convention is:
 
 ```text
-<environemnt>.<your_domain_name>.com
+<environment>.<your_domain_name>.com
 ```
 
-The subdomain you use to update DNE settings must match the subdomains specified in your *Onboarding Spreadsheet* document.
+The subdomain you use to update DNS settings must match the subdomains specified in your *Onboarding Spreadsheet* document.
+
+{:.bs-callout-info}
+We highly recommend requesting that the Production subdomain you are using for pre-launch testing (`prod.<your_domain_name>.com`) is added to Fastly, so that you can to test your store on the Production environment with Fastly enabled before going live. This is especially useful if you are migrating and do not want to use the current (live) domain name for testing purposes on Production.
 
 #### Fastly CNAME hostname
 
-```cotextnf
+```text
 prod.magentocloud.map.fastly.net
 ```
 
@@ -300,6 +303,21 @@ CNAME records cannot be set for apex domains, also referred to as a naked or bas
 ```
 
 Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) for more information.
+
+#### Using Staging subdomain with your existing Staging domain
+
+If you are already using the same subdomain for Staging in your previous Magento development site, create a separate DNS record for your Staging subdomain as a CNAME that points to the `prod.magentocloud.map.fastly.net` hostname.
+
+To create a hostname that allows you to connect directly to the cluster and bypass Fastly, point your CNAME record to the `c.<project_ID>.ent.magento.cloud` hostname. Make sure to mention this in your Onboarding Spreadsheet.
+
+#### Domain names in your onboarding spreadsheet
+
+You can find DNS information in your Onboarding Spreadsheet on the _DNSSSLCDN_ tab. The tab includes the following info:
+
+-  Your requested domain names, Fastly and origin (with `*.c.<your_client_id>.ent.magento.cloud`)
+-  All Fastly Anycast IP addresses and the CNAME alias
+
+If you do not have access to your Onboarding Spreadsheet, ask your {{site.data.var.ece}} account owner to grant you access to the spreadsheet.
 
 ### TLS and Fastly {#fastly-tls}
 
