@@ -3,14 +3,14 @@ title: Restore an environment
 group: cloud-guide
 ---
 
-If you encounter issues in your environment, but you do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:
+If you encounter issues in your environment and do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:
 
 -  SSH
 -  Git
 
 ## SSH
 
-If you have not created a snapshot but you can access the environment using SSH, follow these steps to restore your environment:
+If you have not created a snapshot, but you can access the environment using SSH, follow these steps to restore your environment:
 
 1. Disable configuration management
 1. Uninstall Magento
@@ -83,7 +83,7 @@ To reset your branch:
    git log --reverse
    ```
 
-1. Choose a commit hash that represents that last known stable state of your code.
+1. Choose a commit hash that represents the last known stable state of your code.
 
    To reset your branch to its original initialized state, find the very first commit that created your branch.
 
@@ -103,7 +103,7 @@ To reset your branch:
 
 ## Git
 
-If you have not created a snapshot, cannot access your environment using SSH, and your deployment keeps failing, you must follow all the steps in the [previous section](#ssh) and then force a redployment:
+If you have not created a snapshot, cannot access your environment using SSH, and your deployment keeps failing, you must complete the steps in the [previous section](#ssh), and then force a redeployment.
 
 ### Force a redeployment
 
@@ -115,7 +115,7 @@ git commit --allow-empty -m "<message>" && git push <origin> <branch>
 
 ## Uninstall failed
 
-If executing the `setup:uninstall` command fails and cannot be completed, you may need to manually reset the database:
+If executing the `setup:uninstall` command fails and cannot be completed, you might need to manually reset the database:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. Connect to the database.
