@@ -13,7 +13,7 @@ If you encounter issues in your environment, but you do not have a [valid snapsh
 If you have not created a snapshot but you can access the environment using SSH, follow these steps to restore your environment:
 
 -  Disable configuration management
--  Uninstall Magento  
+-  Uninstall Magento
 -  Reset the git branch
 
 Performing these steps:
@@ -70,7 +70,7 @@ Resetting your branch reverts the code to a stable state in the past.
 
 To reset your branch:
 
-1. Clone the project to your local development environment. You can find the command in your Project Web Interface:  
+1. Clone the project to your local development environment. You can find the command in your Project Web Interface:
 
    ![Click to copy the git clone command]({{ site.baseurl }}/common/images/copy-git-clone.png)
 
