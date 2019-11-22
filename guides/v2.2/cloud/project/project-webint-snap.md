@@ -10,7 +10,7 @@ You can back up and restore specific environments at any time using a snapshot. 
 A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
 {: .bs-callout-warning }
-If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you need to restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ page.baseurl }}/cloud/env/restore-environment.md).
+If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you need to restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ page.baseurl }}/cloud/env/restore-environment.html).
 
 You have up to **7 days** to _restore_ a snapshot.
 
