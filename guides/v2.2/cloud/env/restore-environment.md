@@ -18,7 +18,7 @@ If you have not created a snapshot but you can access the environment using SSH,
 
 Performing these steps:
 
--  Returns your Magento installation to its original state by restoring the database, removing the deployment configuration, and clearing all directories under `var/`.
+-  Returns your Magento installation to its original state by restoring the database, removing the deployment configuration, and clearing `var/` subdirectories.
 -  Resets your git branch to a stable state in the past.
 
 ### Disable configuration management
