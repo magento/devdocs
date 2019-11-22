@@ -143,6 +143,61 @@ To edit the WAF error page:
 
    -  On the Cache Management page, click **Flush Magento Cache**.
 
+## Display Magento error report number
+
+By default, Fastly hides all Magento errors behind the _503 Service Unavailable_ error. To display the Magento error log report number so that you can find and review the error details in the logs, open the website omitting Fastly using these steps:
+
+1. Retrieve the IP address of your store:
+
+   -  Pro plan users, Staging and Production environments:
+
+      ```bash
+      nslookup {your_project_id}.ent.magento.cloud
+      ```
+
+   -  Pro plan users, Integration environment; Starter plan users, all environments:
+
+      ```bash
+      nslookup gw.{your_region}.magentosite.cloud
+      ```
+
+1. Add your application domain and IP address to the hosts file on your local machine:
+
+   ```text
+   {server_IP} {store_domain}
+   ```
+
+1. Clear the browser cache and cookies (or switch to incognito mode).
+
+1. Open your store website again to view the Magento error code.
+
+1. Use the Magento error code to find the details in the error report file:
+
+   -  [Connect to the affected environment using SSH](https://devdocs.magento.com/guides/v2.3/cloud/env/environments-ssh.html#ssh).
+
+   -  Locate the `./var/report/{error_number}` file.
+
+<!-- Link definitions -->
+
+[Edit 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
+{: width="650px"}
+
+[Update 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-customize-503-response.png
+{: width="650px"}
+
+[Edit WAF error page option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
+{: width="650px"}
+
+[Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-503-example.png
+
+[Fastly custom error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-new-error-page.png
+{: width="650px"}
+
+[WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
+
+[Update WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
+{: width="650px"}
+
 <!-- Link definitions -->
 
 [Edit 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
