@@ -250,26 +250,49 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 
 ## DNS configuration {#dns}
 
-To enable Fastly caching on your Staging and Production sites, you need make the following changes to the DNS configuration for your site:
+To enable Fastly caching on your Staging and Production sites, you must make the following changes to your site's DNS configuration:
 
+-  Point your subdomains to Fastly's CNAME hostname or Anycast IP addresses
+-  Submit a support ticket to request validation of your SSL certificate
+-  Change the Magento base URLs
 -  Set all necessary redirects, especially if you are migrating from an existing site
 -  Set the zone’s root resource record to address the hostname
--  Lower the value for the Time-to-Live (TTL) to refresh DNS information to point customers to the correct Production store
+-  Lower the Time-to-Live (TTL) value to refresh DNS information to point customers to the correct Production store
+
+{:.bs-callout-info}
+Subdomains are not available on Staging for Starter plans. You can test your Staging site using the origin URL only.
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
-After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service:
+### Change DNS settings
 
-```conf
+After checking with your registrar about where to change your DNS settings, you must create and point the corresponding CNAME aliases or domain names to one of the following:
+
+-  Fastly CNAME hostname
+-  All four Fastly Anycast IP addresses using A records
+
+The usual subdomain naming convention is:
+
+```text
+<environemnt>.<your_domain_name>.com
+```
+
+The subdomain you use to update DNE settings must match the subdomains specified in your *Onboarding Spreadsheet* document.
+
+#### Fastly CNAME hostname
+
+```cotextnf
 prod.magentocloud.map.fastly.net
 ```
 
 If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
-CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
-`A` records map a domain name to the following Fastly IP addresses:
+#### Fastly Anycast IP addresses
 
-```conf
+CNAME records cannot be set for apex domains, also referred to as a naked or base domains. You must use `A` records for this.
+`A` records map a domain name to the following Fastly Anycast IP addresses:
+
+```text
 151.101.1.124
 151.101.65.124
 151.101.129.124
@@ -280,9 +303,23 @@ Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.htm
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. If you cannot find the DNS TXT record, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) requesting it. In the ticket, specify the production domain name URL.
+
+When entering your support ticket for DNS information and going live, let us know that you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
+
+We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. The corresponding SSL certificate will cover all first-level subdomains. For example:
+
+```text
+staging.<your_domain_name>.com
+prod.<your_domain_name>.com
+```
+
+You must submit a support ticket requesting validation of your SSL certificate once you add the TXT record to your DNS settings.
+
+{:.bs-callout-tip}
+If you have successfully validated the SSL certificate for your Staging domain, you can use the same certificate for your Production domain.
 
 ## Upgrade the Fastly module {#upgrade}
 
