@@ -7,9 +7,9 @@ This article shows different scenarios of rolling back an environment on Magento
 
 Choose the most appropriate for your case:
 
-* If you have a valid snapshot - [Scenario 1: Restore a snapshot (easiest and recommended)](#scen1){: target="_self"}.
-* If you have a stable build, but no valid snapshot - [Scenario 2: No snapshot, build stable (SSH connection available)](scen2){: target="_self"}.
-* If the build is broken and you have no valid snapshot - [Scenario 3: No snapshot; build broken (no SSH connection)](scen3){: target="_self"}.
+*  If you have a valid snapshot - [Scenario 1: Restore a snapshot (easiest and recommended)](#scen1){: target="_self"}.
+*  If you have a stable build, but no valid snapshot - [Scenario 2: No snapshot, build stable (SSH connection available)](scen2){: target="_self"}.
+*  If the build is broken and you have no valid snapshot - [Scenario 3: No snapshot; build broken (no SSH connection)](scen3){: target="_self"}.
 
 ## <span class="wysiwyg-color-green120">Scenario 1: Restore a snapshot (easiest and recommended)</span>   {#scen1}
 
@@ -32,8 +32,8 @@ The steps are:
 
 After performing these steps:
 
-* your Magento installation returns to its Vanilla state (database restored; deployment configuration removed; directories under \`var\` cleared)
-* your git branch is reset to the desired state in the past
+*  your Magento installation returns to its Vanilla state (database restored; deployment configuration removed; directories under \`var\` cleared)
+*  your git branch is reset to the desired state in the past
 
 Read the detailed steps below.
 
@@ -87,13 +87,13 @@ This means we have reverted our Magento installation (including DB) to its authe
 With git reset, we revert the code to the desired state in the past.
 
 1.  Clone the environment to your local development environment. You may copy the command in your Project Web Interface:  
-     ![copy\_git\_clone.png](images/copy_git_clone.png)
+     ![Click to copy the git clone command]({{ site.baseurl }}/common/images/copy-git-clone.png)
 2.  Access the commits history. Use `--reverse` to display history in reverse order for more convenience:
         git log --reverse
     {: .language-git}
 
 3.  Select the commit hash on which you\'ve been good. To reset code to its authentic state (Vanilla), find the very first commit that created your branch (environment).  
-     ![Selecting a commit hash in git console](images/select_commit_hash.png)
+     ![Select a commit hash in the git console]({{ site.baseurl }}/common/images/select-commit-hash.png)
 4.  Apply hard git reset:
         git reset --h <commit_hash>
     {: .language-git}
