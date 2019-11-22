@@ -149,19 +149,19 @@ By default, Fastly hides all Magento errors behind the _503 Service Unavailable_
 
 1. Retrieve the IP address of your store:
 
-   -  Pro plan users, Staging and Production environments:
+   -  For Pro Staging and Production environments:
 
       ```bash
       nslookup {your_project_id}.ent.magento.cloud
       ```
 
-   -  Pro plan users, Integration environment; Starter plan users, all environments:
+   -  For Pro Integration environments and Starter environments:
 
       ```bash
       nslookup gw.{your_region}.magentosite.cloud
       ```
 
-1. Add your application domain and IP address to the hosts file on your local machine:
+1. Add your application domain and IP address to the hosts file on your local workstation:
 
    ```text
    {server_IP} {store_domain}
