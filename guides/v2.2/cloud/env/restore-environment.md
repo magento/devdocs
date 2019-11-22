@@ -3,7 +3,7 @@ title: Restore an environment
 group: cloud-guide
 ---
 
-If you encounter issues in your environment, but you do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in on of the following ways:
+If you encounter issues in your environment, but you do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:
 
 -  SSH
 -  Git
@@ -50,7 +50,7 @@ Uninstalling the Magento software drops and restores the database, removes the d
 To uninstall the Magento software:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
-1. Run the uninstall command:
+1. Uninstall the Magento application.
 
    ```bash
    php bin/magento setup:uninstall
@@ -86,13 +86,13 @@ To reset your branch:
 
    ![Select a commit hash in the git console]({{ site.baseurl }}/common/images/select-commit-hash.png)
 
-1. Reset your branch:
+1. Use the hard reset option to reset your branch.
 
    ```bash
    git reset --h <commit_hash>
    ```
 
-1. Push your changes to trigger a redeploy, which reinstalls Magento:
+1. Push your changes to trigger a redeploy, which reinstalls Magento.
 
    ```bash
    git push --force <origin> <branch>
@@ -115,25 +115,25 @@ git commit --allow-empty -m "<message>" && git push <origin> <branch>
 If executing the `setup:uninstall` command fails and cannot be completed, you may need to manually reset the database:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
-1. Connect to the database:
+1. Connect to the database.
 
    ```bash
    mysql -h database.internal
    ```
 
-1. Drop the `main` database:
+1. Drop the `main` database.
 
    ```shell
    drop database main;
    ```
 
-1. Create an empty `main` database:
+1. Create an empty `main` database.
 
    ```shell
    create database main;
    ```
 
-1. Delete the following configuration files:
+1. Delete the following configuration files.
 
    -  `config.php`
    -  `config.php.bak`
