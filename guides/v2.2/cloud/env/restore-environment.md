@@ -3,16 +3,16 @@ title: Restore an environment
 group: cloud-guide
 ---
 
-If you encounter issues in your environment, but you do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.md) that you can use to restore it, you can try restoring your environment in on of the following ways:
+If you encounter issues in your environment, but you do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in on of the following ways:
 
--  [SSH](#ssh)
--  [Git](#git)
+-  SSH
+-  Git
 
-## SSH}
+## SSH
 
 If you have not created a snapshot but you can access the environment using SSH, follow these steps to restore your environment:
 
--  Disable configuration management  
+-  Disable configuration management
 -  Uninstall Magento  
 -  Reset the git branch
 
@@ -23,7 +23,7 @@ Performing these steps:
 
 ### Disable configuration management
 
-You must disable [configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.md) so that it does not automatically apply the previous configuration settings during deployment.
+You must disable [configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html) so that it does not automatically apply the previous configuration settings during deployment.
 
 To disable configuration management, make sure that your `app/etc/` directory does not contain the `config.php` file.
 
@@ -100,7 +100,7 @@ To reset your branch:
 
 ## Git
 
-If you have not created a snapshot, cannot access your environment using SSH, and your deployment keeps failing, you must follow all the steps in the [previous section](#ssh) plus forcing a redployment:
+If you have not created a snapshot, cannot access your environment using SSH, and your deployment keeps failing, you must follow all the steps in the [previous section](#ssh) and then force a redployment:
 
 ### Force a redeployment
 
