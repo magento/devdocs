@@ -604,6 +604,9 @@ stage:
     STATIC_CONTENT_SYMLINK: false
 ```
 
+{: .bs-callout .bs-callout-warning }
+The `STATIC_CONTENT_SYMLINK` environment variable is removed in ece-tools version 2002.0.22. Ece-tools will always generate symlinks for static content.
+
 ### `UPDATE_URLS`
 
 -  **Default**—`true`
