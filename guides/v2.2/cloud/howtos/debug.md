@@ -75,7 +75,7 @@ To enable Xdebug:
    ```
 
    ```bash
-   git push origin <environment ID>
+   git push origin <environment-ID>
    ```
 
 When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see [Configure PhpStorm](#phpstorm).
@@ -119,12 +119,12 @@ To configure PhpStorm to work with Xdebug:
 
 ### Set up port forwarding {#port}
 
-You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and xdebug locally can track along with it
+You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and Xdebug locally can track along with it
 
 To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
 
-*  [Port forwarding on Mac or UNIX](#portmac)
-*  [Port forwarding on Windows](#portwindows)
+-  [Port forwarding on Mac or UNIX](#portmac)
+-  [Port forwarding on Windows](#portwindows)
 
 #### Port forwarding on Mac or UNIX {#portmac}
 
