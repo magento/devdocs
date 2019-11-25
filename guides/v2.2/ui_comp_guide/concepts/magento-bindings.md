@@ -81,5 +81,5 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |textInput      |`<input data-bind="textInput: value"/>`                                        | `<input textInput="value"/>`                                          |
 |value          |`<input data-bind="value: value"/>`                                            | `<input ko-value="value"/>`                                           |
 |checked        |`<input type="checkbox" data-bind="checked: isChecked"/>`                      | `<input type="checkbox" ko-checked="isChecked"/>`                     |
-|                |`<input type="radio" data-bind="value: value,checked: isSelected" />`                      | `<input type="radio" ko-checked="element.isSelected" ko-value="value" />`                     |
-|checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" checked="isChecked"/>`   |
+|                |`<input type="radio" data-bind="value: value, checked: isSelected" />`                      | `<input type="radio" ko-checked="element.isSelected" ko-value="value" />`                     |
+|checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" ko-checked="isChecked"/>`   |

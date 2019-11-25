@@ -75,3 +75,9 @@ Attribute | Type | Description
 `order_increment_id` | String | The purchase order ID
 `remaining_downloads` | String | Determines the number of times the customer can download the product
 `status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
+
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.

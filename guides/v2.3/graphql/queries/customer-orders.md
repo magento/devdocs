@@ -79,3 +79,9 @@ Attribute | Data type | Description
 `id` | Int | The ID assigned to the customer's order
 `increment_id` | String | An ID that indicates the sequence of the order in the customer's order history
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
+
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
