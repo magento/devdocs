@@ -39,8 +39,8 @@ This section discusses how to specify who can access the [nginx](https://glossar
    ```conf
    server {
       listen 8080;
-      location / {
-         proxy_pass http://localhost:9200;
+      location /_cluster/health {
+         proxy_pass http://localhost:9200/_cluster/health;
       }
    }
    ```
