@@ -44,9 +44,9 @@ In general - do not trust any dynamic values.
 
 #### PHTML templates
 
-An 'Escaper' class is provided for .phtml templates and PHP classes responsible for generating HTML. It contains HTML sanitization methods for a variety of contexts.
+An `Escaper` class is provided for `.phtml` templates and PHP classes responsible for generating HTML. It contains HTML sanitization methods for a variety of contexts.
 
-Starting from Magento v2.4 all .phtml templates have access to `$escaper` variable. For earlier versions `$block` local variable available inside .phtml templates duplicates these methods.
+As of Magento 2.4, all `.phtml` templates have access to the `$escaper` variable. For earlier versions, the `$block` local variable available inside the `.phtml` templates duplicates these methods.
 
 See [Template guide](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-overview.html) to read more about templates in Magento.
 
@@ -154,7 +154,7 @@ location.href = redirectUrl;
 <!-- For v2.4+ -->
 <script>
 let phrase = "Hi, my name is <?= $escaper->escapeJs($myName) ?>";
-//Do not use HTMl context methods like escapeUrl
+//Do not use HTML context methods like escapeUrl
 let redirectUrl = "<?= $escaper->escapeJs($myUrl) ?>";
 location.href = redirectUrl;
 </script>
