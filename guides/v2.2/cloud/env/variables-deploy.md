@@ -605,7 +605,7 @@ stage:
 ```
 
 {: .bs-callout .bs-callout-warning }
-The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and will be removed in future releases. Ece-tools will always generate symlinks for static content.
+The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and will be removed in future releases. It's not recommended to use it in your deployment configuration. Ece-tools will always generate symlinks for static content.
 
 ### `UPDATE_URLS`
 
