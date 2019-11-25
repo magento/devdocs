@@ -43,11 +43,7 @@ To enable RabbitMQ:
 
 For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
-**Cloud Supported RabbitMQ Versions**
-
-* 3.5
-* 3.6
-* 3.7
+[Supported service versions]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-versions)
 
 ## Connect to RabbitMQ for debugging {#connect}
 
