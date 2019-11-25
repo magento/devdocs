@@ -51,13 +51,24 @@ Following is a summary of the process:
         */
        class SomeCommand extends Command
        {
+           const NAME = 'name';
+
            /**
             * @inheritDoc
             */
            protected function configure()
            {
+               $options = [
+                    new InputOption(
+                        self::NAME,
+                        null,
+                        InputOption::VALUE_REQUIRED,
+                        'Name'
+                    )
+               ];
                $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
+               $this->setDefinition($options);
 
                parent::configure();
            }
@@ -70,6 +81,10 @@ Following is a summary of the process:
             */
            protected function execute(InputInterface $input, OutputInterface $output)
            {
+               if ($name = $input->getOption(self::NAME)) {
+                   $output->writeln('<info>Provided name is `' . $name . '`</info>');
+               }
+
                $output->writeln('<info>Success Message.</info>');
                $output->writeln('<error>An error encountered.</error>');
            }
@@ -98,12 +113,16 @@ Following is a summary of the process:
 1. Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
 
    ```bash
-   cd <magento_root>/var
+   rm -rf var/cache/* var/page_cache/* generated/*
    ```
 
-   ```bash
-   rm -rf cache/* page_cache/* di/* generation/*
-   ```
+### Result
+
+As result, our new command `my:first:command` that accepts a `--name` parameter should be available and ready for use.
+
+```bash
+bin/magento my:first:command --name 'John'
+```
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}
 
