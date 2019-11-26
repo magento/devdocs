@@ -44,6 +44,6 @@ Extends `Column`:
 *  [app\code\Magento\Ui\view\base\web\js\grid\columns\image-preview.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/image-preview.js)
 *  [app\code\Magento\Ui\view\base\web\templates\grid\columns\image-preview.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/columns/image-preview.html)
 
-#### Result
+### Result
 
 ![ImagePreview Component]({{ site.baseurl }}/common/images/ui_comps/image-preview-result.png)
