@@ -95,6 +95,15 @@ opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
 
+#### APCU
+
+We recommend enabling the [PHP APCu extension](https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache) and [configuring `composer` to support it]({{ page.baseurl }}/performance-best-practices/deployment-flow.html#preprocess-dependency-injection-instructions) for maximum performance. This extension caches file locations for opened files, increasing performance for Magento server calls (including pages, ajax calls, and endpoints).
+Edit your `apcu.ini` file to include the following:
+
+	extension=apcu.so
+	[apcu]
+	acp.enabled = 1
+
 ## Web server
 
 Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  `<magento_home>/nginx.conf.sample` (Nginx) and  `<magento_home>.htaccess.sample` (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:
