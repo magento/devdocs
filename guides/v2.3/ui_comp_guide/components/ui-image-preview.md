@@ -5,7 +5,7 @@ contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
 ---
 
-The ImagePreview component implements a detailed view image column. User can preview next or previous image by clicking next or previous arrow
+The ImagePreview component implements an inline detailed preview of an image, which is typically used in conjunction with a grid of image search results. Users can expand a more detailed preview of an image in-line with other image search results and also have the ability to click on "next" or "previous" arrows to navigate to the next or previous image's detailed preview.
 
 ## Dependencies
 
