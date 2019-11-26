@@ -22,10 +22,6 @@ Before you begin, make sure you understand the following:
 *  All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
 *  All CLI commands should be implemented in the scope of your [module](https://glossary.magento.com/module) and should depend on the module's status.
 *  Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
-*  You must register your commands as discussed in any of the following sections:
-
-   *  [Add CLI commands using dependency injection](#cli-sample)
-   *  [Add CLI commands using the Composer autoloader](#cli-autoload)
 
 ## Add CLI commands using dependency injection {#cli-sample}
 
@@ -51,13 +47,24 @@ Following is a summary of the process:
         */
        class SomeCommand extends Command
        {
+           const NAME = 'name';
+
            /**
             * @inheritDoc
             */
            protected function configure()
            {
+               $options = [
+                    new InputOption(
+                        self::NAME,
+                        null,
+                        InputOption::VALUE_REQUIRED,
+                        'Name'
+                    )
+               ];
                $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
+               $this->setDefinition($options);
 
                parent::configure();
            }
@@ -70,6 +77,10 @@ Following is a summary of the process:
             */
            protected function execute(InputInterface $input, OutputInterface $output)
            {
+               if ($name = $input->getOption(self::NAME)) {
+                   $output->writeln('<info>Provided name is `' . $name . '`</info>');
+               }
+
                $output->writeln('<info>Success Message.</info>');
                $output->writeln('<error>An error encountered.</error>');
            }
@@ -98,16 +109,16 @@ Following is a summary of the process:
 1. Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
 
    ```bash
-   cd <magento_root>/var
+   rm -rf var/cache/* var/page_cache/* generated/*
    ```
 
-   ```bash
-   rm -rf cache/* page_cache/* di/* generation/*
-   ```
+### Result
 
-## Add CLI commands using the Composer autoloader {#cli-autoload}
+As a result, the new command `my:first:command` that accepts a `--name` parameter is ready to use.
 
-To be added at a later time.
+```bash
+bin/magento my:first:command --name 'John'
+```
 
 {:.ref-header}
 Related topic

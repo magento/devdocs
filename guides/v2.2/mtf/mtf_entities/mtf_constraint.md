@@ -125,11 +125,7 @@ To assign severity tags do the following:
 </type>
 ```
 
-For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`:
-
-```xml
-{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
-```
+For example, [`dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`][].
 
 ## How to create constraint {#mtf_constraint_create}
 
@@ -262,3 +258,4 @@ in the order that it must be performed.
 [data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
 [test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[`dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml
