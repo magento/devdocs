@@ -245,7 +245,7 @@ Let's create a cURL handler that creates a new widget.
   }
   ```
 
-*  Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module ([`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`][]).
+*  Create a [`di.xml`](#mtf_handler_di) file in the `etc/curl` directory of the Magento_Widget module ([`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`][]).
 
 ### cURL authentication classes {#mtf_handler_decor}
 
