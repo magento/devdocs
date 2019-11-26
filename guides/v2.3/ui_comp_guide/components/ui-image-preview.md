@@ -5,13 +5,13 @@ contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
 ---
 
-The ImagePreview component implements an inline preview of an image, which is typically used in conjunction with a grid of image search results. Users can expand a more detailed preview of an image in-line with other image search results and have the ability to click on "next" or "previous" arrows to navigate to the next or previous image's detailed preview.
+The ImagePreview component implements an inline preview of an image, which is typically used in conjunction with a grid of image search results. Users can expand a more detailed preview of an image in-line with other image search results, and they have the ability to click on "next" or "previous" arrows to navigate to another image's detailed preview.
 
 ## Dependencies
 
 The ImagePreview component has dependencies on the following components:
 
-*  Column: `app/code/Magento/Ui/view/base/web/js/grid/columns/column.js`
+*  [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html): `app/code/Magento/Ui/view/base/web/js/grid/columns/column.js`
 
 ## Configuration options
 
