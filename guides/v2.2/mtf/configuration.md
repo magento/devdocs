@@ -41,7 +41,7 @@ Figure 1. - XML Schema for the `<magento2_root_dir>/dev/tests/functional/vendor/
 
 **In Magento functional tests:**
 
-The file is located in `<magento2_root_dir>/dev/tests/functional/`. Default configuration is in [`dev/tests/functional/etc/config.xml.dist`][].
+The file is located in `<magento2_root_dir>/dev/tests/functional/`. The default configuration is in [`dev/tests/functional/etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_config-xsd-dia.svg)
 
