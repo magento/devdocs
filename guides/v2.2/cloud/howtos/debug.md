@@ -10,15 +10,15 @@ functional_areas:
   - Setup
 ---
 
-Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use any IDE of your choice. See the vendor documentation for those applications for further configuration information.
+Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
 To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE PhpStorm, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
-Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You need to pull code to your local development environment to perform debugging. For Pro Staging and Production environments, we include [additional instructions](#pro-debug) for Xdebug.
+Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), and [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You need to pull code to your local development environment to perform debugging. For Pro Staging and Production environments, we include [additional instructions](#pro-debug) for Xdebug.
 
 ## Requirements {#usexdebug}
 
-To run and use Xdebug, you need the SSH URL for the environment. You can locate the information through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) or your spreadsheet.
+To run and use Xdebug, you need the SSH URL for the environment. You can locate the information through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) or your Cloud Onboarding UI.
 
 ## Configure Xdebug
 
@@ -41,7 +41,7 @@ To add Xdebug, we recommend creating a branch to work in and add the files.
 
 To enable Xdebug for your project, add `xdebug` to the `runtime:extensions` section of the `.magento.app.yaml` file.
 
-You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to have it enabled. We enable Xdebug onto those environments for you.
+You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to have it enabled. We enable Xdebug on those environments for you.
 
 {:.procedure}
 To enable Xdebug:
@@ -192,7 +192,7 @@ To set up an SSH tunnel on Windows using Putty:
 
 1. Enter the following information:
 
-   -  **Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+   -  **Hostname (or IP address)** field: Enter the [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html) for your Cloud server
    -  **Port** field: Enter `22`
 
    ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
@@ -228,7 +228,7 @@ To set up an SSH tunnel on Windows using Putty:
 
 To complete configuration for Pro plan Staging and Production environments, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to have Xdebug enabled and configured in Staging and Production environments.
 
-We enable Xdebug in the environment. Be aware, this requires a redeployment of Staging and Production.
+We enable Xdebug in the environment. Be aware that this is a configuration change that requires us to redeploy your Staging and Production environments.
 
 ## SSH access to Xdebug environments {#ssh}
 
@@ -258,11 +258,11 @@ To use Xdebug specifically on Pro plan Staging and Production environment, you c
 
 You need the following:
 
--  SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) and your project spreadsheet.
+-  SSH commands for accessing the environments. You can get this information, through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) or your Cloud Onboarding UI.
 -  The `xdebug_key` value we set when configuring the Staging and Pro environments
 
 {:.procedure}
-To set up an SSH tunnel to Staging or Production environment:
+To set up an SSH tunnel to a Staging or Production environment:
 
 1. Open a terminal.
 
