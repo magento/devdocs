@@ -10,7 +10,7 @@ The Functional Testing Framework configuration settings are located in two [XML]
 
 ## `phpunit.xml` {#phpunit_xml}
 
-The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table. See the default phpunit.xml code at [`dev/tests/functional/phpunit.xml.dist`][].
+The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in the [PHPUnit documentation], except `<php>`, which contains parameters described in the following table. See the default phpunit.xml code at [`dev/tests/functional/phpunit.xml.dist`][].
 
 | Parameter | Description | `value` | Usage |
 |----------
