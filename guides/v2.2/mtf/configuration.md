@@ -33,7 +33,7 @@ The FTF configuration settings are declared and specified in two places:
 
 **In the Framework:**
 
-The file is located in `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc`. See default configuration at [`etc/config.xml.dist`][].
+The file is located in `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc`. See the default configuration at [`etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
