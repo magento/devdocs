@@ -22,10 +22,6 @@ Before you begin, make sure you understand the following:
 *  All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
 *  All CLI commands should be implemented in the scope of your [module](https://glossary.magento.com/module) and should depend on the module's status.
 *  Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
-*  You must register your commands as discussed in any of the following sections:
-
-   *  [Add CLI commands using dependency injection](#cli-sample)
-   *  [Add CLI commands using the Composer autoloader](#cli-autoload)
 
 ## Add CLI commands using dependency injection {#cli-sample}
 
@@ -118,15 +114,11 @@ Following is a summary of the process:
 
 ### Result
 
-As result, our new command `my:first:command` that accepts a `--name` parameter should be available and ready for use.
+As a result, the new command `my:first:command` that accepts a `--name` parameter is ready to use.
 
 ```bash
 bin/magento my:first:command --name 'John'
 ```
-
-## Add CLI commands using the Composer autoloader {#cli-autoload}
-
-To be added at a later time.
 
 {:.ref-header}
 Related topic
