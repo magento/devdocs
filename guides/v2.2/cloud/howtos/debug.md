@@ -12,7 +12,7 @@ functional_areas:
 
 Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
-To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE PhpStorm, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
+To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
 Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), and [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You need to pull code to your local development environment to perform debugging. For Pro Staging and Production environments, we include [additional instructions](#pro-debug) for Xdebug.
 
@@ -119,9 +119,7 @@ To configure PhpStorm to work with Xdebug:
 
 ### Set up port forwarding {#port}
 
-You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and Xdebug locally can track along with it
-
-To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
+You must map the XDEBUG connection from the server to your local system. To do any type of debugging, you must forward port 9000 from your {{site.data.var.ece}} server to your local machine. See one of the following sections:
 
 -  [Port forwarding on Mac or UNIX](#portmac)
 -  [Port forwarding on Windows](#portwindows)
