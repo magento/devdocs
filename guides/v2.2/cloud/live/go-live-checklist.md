@@ -85,6 +85,10 @@ You can also test using the following 3rd party options:
 *  [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 *  [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
+## Performance monitoring
+
+You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+
 {:.ref-header}
 Next step
 

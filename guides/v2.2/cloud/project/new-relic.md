@@ -8,28 +8,30 @@ functional_areas:
   - Services
 ---
 
-[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
+[[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
 
 -  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
--  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
--  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
+-  **App Map**—View all application dependencies within your Magento site, extensions, and external services
+-  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score]((https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction).
+- **Adobe-generated alert policies**–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See [Monitor performance using alerts](#monitor-performance].
 
-For {{site.data.var.ece}} Pro accounts, the Production environment includes the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
-{:.bs-callout .bs-callout-info}
-Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software. For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
+On {{site.data.var.ece}} Pro accounts, the Production environment also includes the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
-## New Relic account credentials
+{:.bs-callout-info}
+For Pro plan accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
-When Magento provisions your {{site.data.var.ece}} project, the Project Owner should receive an email from New Relic with the credentials and instructions for accessing the account. If you did not receive the email, you can use the Project Owner email address to [reset the password](https://rpm.newrelic.com/forgot_password).
+## Manage your New Relic account
 
-Also, we recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and usage of the tool. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
+When Magento provisions your {{site.data.var.ece}} project, the Project Owner receives an email from New Relic with credentials and instructions for accessing the account. If you did not receive the email, use the Project Owner email address to [reset the New Relic password](https://rpm.newrelic.com/forgot_password).
 
-{:.procedure}
-To add a user:
+We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
-1. Using your Project Owner New Relic credentials, log in to [New Relic](https://login.newrelic.com/login).
+### Add a user
+
+1. Using your Project Owner New Relic credentials, [log in to New Relic](https://login.newrelic.com/login).
 
 1. From the [account dropdown](https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown) menu, select **Account settings** > **Account** > **Users and roles**.
 
@@ -43,11 +45,20 @@ To add a user:
 
 1. Ask the new user to check their email for a New Relic notification with account information.
 
-See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Relic documentation for information about user roles, managing user accounts, and changing account ownership.
+### Change the account owner
 
-## Configure New Relic
+An account can have only one person assigned the Owner role. To change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user.
 
-Pro accounts are preconfigured to use the New Relic service. If you have a Starter account, you need to verify that the New Relic service is configured properly. Check if the `.magento.app.yaml` file includes the New Relic extension in the `runtime` list. If not, then add the following:
+For detailed instructions, see [Update the account owner](https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner) in the New Relic documentation.
+
+{:.bs-callout-tip}
+Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account][3] for New Relic can add users on behalf of the customer.
+
+## Set up the New Relic service
+
+Pro plan environments are preconfigured to use New Relic services.
+
+For Starter plan accounts, you must check the `.magento.app.yaml` file to verify that the `runtime` section includes the New Relic extension. If the extension has not been configured, add the following:
 
 > .magento.app.yaml
 
@@ -57,11 +68,13 @@ runtime:
         - newrelic
 ```
 
-## Manage license keys
+## Connect to New Relic
 
-For Pro accounts, there is no need to apply the license key to any environments. This has already been done. You can log in to your New Relic account and verify connectivity.
+To connect a Cloud environment to New Relic, you must add the New Relic license key to the environment.
 
-The {{site.data.var.ece}} Starter plan supports up to three instances of a New Relic license across all environments. For Starter projects, we recommend adding a New Relic license key to the Staging and Production (master) environments, and you can add the license key to one other environment of your choice. If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
+-  For Pro plan accounts, Magento adds the license key to your Cloud environments during the provisioning process. You can verify the connection by logging into your New Relic account.
+
+-  For Starter plan accounts, you get a New Relic license key that supports up to three environments. You must add the New Relic license key to your Starter Project environments.  We recommend adding the key to the Staging and Production (master) environments, and one other environment of your choice.  If you have more than three active environments using the same New Relic license key, you must remove the license variable from an existing environment.
 
 {:.procedure}
 To find your New Relic license key:
@@ -74,6 +87,8 @@ To find your New Relic license key:
 
 1. Expand the **NewRelic Service** section to view the license key.
 
+   ![Cloud project details page]({{ site.baseurl }}/common/images/cloud/cloud-project-details-new-relic.png){:width="600px"}
+
 1. Copy the license key.
 
 {:.procedure}
@@ -83,52 +98,56 @@ To add a license key to an environment:
 
 1. Set the variable.
 
-    ```bash
-    magento-cloud variable:set php:newrelic.license <newrelic-license-key>
-    ```
+   ```bash
+   magento-cloud variable:set php:newrelic.license <newrelic-license-key>
+   ```
 
-    {:.bs-callout .bs-callout-info}
-    Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
+   {:.bs-callout-info}
+   Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
-1. Log in to your New Relic account and verify it is receiving data.
+1. [Log in to New Relic](https://login.newrelic.com/login) to verify that it is receiving data.
 
 {:.procedure}
 To remove a license key from an environment:
 
 1. List environment variables.
 
-    ```bash
-    magento-cloud vget
-    ```
+   ```bash
+   magento-cloud vget
+   ```
 
-    Response:
+   Response:
 
-    ```terminal
-    +----------------------+-------------+------------------------+
-    | Name                 | Level       | Value                  |
-    +----------------------+-------------+------------------------+
-    | php:newrelic.license | environment | <newrelic-license-key> |
-    +----------------------+-------------+------------------------+
-    ```
-    {: .no-copy}
+   ```terminal
+   +----------------------+------------   +------------------------+
+   | Name                 | Level       | Value                    |
+   +----------------------+------------   +------------------------+
+   | php:newrelic.license | environment |   <newrelic-license-key> |
+   +----------------------+------------   +------------------------+
+   ```
+   {: .no-copy}
 
-    {:.bs-callout .bs-callout-warning}
-    If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`
+   {:.bs-callout-warning}
+   If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`
 
 1. Delete a variable.
 
-    ```bash
-    magento-cloud variable:delete php:newrelic.license
-    ```
+   ```bash
+   magento-cloud variable:delete php:newrelic.license
+   ```
 
-    {:.bs-callout .bs-callout-info}
-    Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
+   {:.bs-callout-info}
+   Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
 ## Investigate performance
 
-New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the [New Relic dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
+New Relic connects and monitors your infrastructure and application using PHP agents. After a Cloud environment [connects to New Relic](#connect-to-new-relic), you can review the data collected by the agent by logging into your New Relic account.
 
-Using the New Relic dashboard, you can immediately track and find:
+On the APM Applications page, use the [New Relic APM Overview](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data) to get information about your application.
+
+ ![Cloud project New Relic overview page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-basic.png){:width="600px"}
+
+From this view, you can track and find the following types of information:
 
 -  Applications and transactions encountering slow responses or bottlenecks
 -  Customer comments about issues with your site
@@ -137,26 +156,102 @@ Using the New Relic dashboard, you can immediately track and find:
 
 We recommend reviewing tracked data:
 
--  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, there may be a call or query dragging performance.
+-  **Most time consuming**—Determine time consumption by tracking requests in parallel. For example, you may have the highest transaction time spent in product and category views. If a customer account page suddenly ranks very high in time consumption, your application might be affected by a call or query dragging performance.
+
 -  **Highest throughput**—Identify pages hit the most based on the size and frequency of bytes transmitted.
 
 All collected data details the time spent on an action transmitting data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to it.
 
-To learn more about using and customizing New Relic services for your project, see [New Relic Infrastructure documentation](https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/getting-started/introduction-new-relic-infrastructure)
+{:.bs-callout-info}
+You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the [New Relic APM](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) and [New Relic Infrastructure](https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/getting-started/introduction-new-relic-infrastructure) documentation.
 
-### New Relic and Blackfire
+## Monitor performance with alert policies
+
+The New Relic service for {{ site.data.var.ece }} Pro Production environments includes a set of Adobe-generated alert policies to track the following performance metrics:
+
+-  [Apdex score](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction)
+-  error rate
+-  disk space on your Production environment
+
+These policies set thresholds for warning and critical conditions that affect performance based on industry best practices. When your site experiences infrastructure or application issues that trigger an alert threshold, New Relic sends alert notifications so you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
+
+{:.bs-callout-info}
+For Pro Staging and Integration environments and Starter environments, use [Health notifications]({{ page.baseurl }}/cloud/integrations/health-notifications.html) to monitor disk space.
+
+**Prerequisites:**
+
+-  Credentials to log in to the [New Relic account](#manage-your-new-relic-account) for your Cloud project.
+-  Verify that your Cloud environment is [connected to New Relic](#connect-to-new-relic).
+
+### Review Adobe-generated alert policies
+
+1. Use your Project Owner New Relic credentials to [log in to New Relic](https://login.newrelic.com/login).
+
+1. From the navigation menu, select **Alerts** > **Alert Policies**.
+
+1. In the Search Policies field, search for _Adobe Generated Policy_.
+
+1. You should see a set of policies like the ones below:
+
+   ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-alert-policies.png){:width="600px"}
+
+   {:.bs-callout-info}
+   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available only on the Pro Production environment.
+
+1. Click an alert policy name to review the conditions that specify the conditions that trigger alerts.
+
+### Configure notification channels
+
+To use the Adobe-generated alert policies to monitor your Production site, you must configure notification channels and map them to alert policies. Notifications about performance issues go out to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
+
+New Relic provides templates for configuring different types of notification channels including email, Slack, PagerDuty, webhooks, and more. See the [Instructions for specific notification channels](https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types) in the New Relic documentation to review the prerequisites for using each type.
+
+The following instructions describe the high level steps to configure a Slack channel to receive New Relic alerts when the available disk space on your {{ site.data.var.ee }} Production server exceeds the low disk space threshold specified in the _Adobe Generated Disk Space Policy_ alert policy.
+
+{:.procedure}
+To configure a notification channel:
+
+1. Choose a notification channel type, and complete any prerequisite steps required to integrate the channel with the New Relic service.
+
+1. [Log in to your New Relic account](https://login.newrelic.com/login).
+
+1. Navigate to the New Relic APM page.
+
+1. On the New Relic APM Applications page, open the application for your Cloud environment.
+
+1. On the **Alerts** page, click **New notification channel**.
+
+   ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="600px"}
+
+1. Send a test notification to verify that the channel works.
+
+1. Map the notification to the Adobe-generated policies as needed.
+
+For detailed configuration instructions, see the following topics in the New Relic documentation:
+
+-  [Configure notification channels using the New Relic Alerts user interface](https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts)
+
+-  [Configure notification channels using the New Relic API](https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels) Notification channels: Control where to send alerts)
+
+{:.bs-callout-warning}
+The Adobe-generated policies have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove them from the Adobe-generated alert policies.
+
+### Create Alert Policies
+
+Do not modify the Adobe-generated alert policies, as they might be automatically regenerated or improved over time.
+
+If you want to modify the thresholds of an alert condition, create a new alert policy, and then copy the alert condition to the new policy. See [Update policies or conditions](https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions) in the New Relic documentation.
+
+{:.bs-callout-tip}
+See [Alerts concepts and workflow](https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow) in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
+
+## New Relic and Blackfire
 
 You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. Combine that with the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to get a comprehensive view of your Magento store performance.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.
 -  Background processes, like Cron job, can cause issues. These background processes are not monitored by New Relic, but you can watch them using Blackfire.
-
-## Change account owner
-
-See [New Relic's documentation][1].
-
-Before assigning the Owner role to a user, verify the user exists on your {{site.data.var.ece}} account. See [Add a new user][2]. If you need to add the user, but an existing account Owner or Admin cannot help, any Magento user with access to New Relic's [Magento Partnership Owner Account][3] can add users on the behalf of the customer.
 
 [1]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [2]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/add-update-users#adding_users
