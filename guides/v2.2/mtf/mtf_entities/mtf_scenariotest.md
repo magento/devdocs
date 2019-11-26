@@ -195,13 +195,7 @@ A tests step must implement `Magento\Mtf\TestStep\TestStepInterface` and define:
 -  public method `run()` (required)
 -  public method `cleanup()` (optional)
 
-An example of `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
-
-{% collapsible Show/hide example %}
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/tests/app/Magento/Customer/Test/TestStep/LoginCustomerOnFrontendStep.php %}
-```
-{% endcollapsible %}
+See [`Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`][].
 
 ### `constructor()` method  {#constructor-method}
 
@@ -241,3 +235,4 @@ In the previous example the `clean()` method:
 [data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [test scenario]: #test-scenario
 [test step]: #test-step
+[`Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Customer/Test/TestStep/LoginCustomerOnFrontendStep.php
