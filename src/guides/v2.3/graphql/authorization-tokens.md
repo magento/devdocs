@@ -38,3 +38,8 @@ mutation {
 ```
 
 ## Admin tokens
+
+In Magento GraphQL, you specify an admin token only if you need to query products, categories, price rules, or other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only. See [Staging queries]({{page.baseurl}}/graphql/queries/index.html#staging) for more information.
+
+Magento does not provide a GraphQL mutation that generates an admin token. You must use the `GET 
+/V1/integration/admin/token` REST endpoint instead. [Generate the admin token]({{page.baseurl}}/rest/tutorials/prerequisite-tasks/create-admin-token.html) shows how to use this endpoint.

@@ -133,6 +133,9 @@ Variables are defined separately in JSON:
 }
 ```
 
+## Staging queries {#staging}
+
+
 ## Introspection queries
 
 Introspection queries allow you to return information about the schema. For example, you might want a list of Magento GraphQL queries or details about a specific data type. The GraphQL specification determines the structure of introspection queries. See [Introspection](https://graphql.org/learn/introspection/) for more information.
