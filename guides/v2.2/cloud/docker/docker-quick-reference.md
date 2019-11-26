@@ -22,16 +22,17 @@ Resume Docker environment | `docker-compose start`
 List images | `docker-compose images`
 List containers and ports | `docker-compose ps` or `docker ps`
 
-Any `docker-compose` command will auto pick up the `docker-compose.override.yml` override configuration by default and merge it into the `docker-compose.yml` base configuration. As the `docker:build` command in the `{{site.data.var.ct}}` package will overwrite the base configuration, save your customizations in the override configuration and not in the base configuration itself. Alternatively, if you wish to merge multiple custom configurations, specify each configuration using the `-f` argument for the `docker-compose` command, including and starting with the base configuration. For more detailed information regarding multiple Docker Compose configurations, refer to the official [Docker Docs: Multiple Compose files](https://docs.docker.com/compose/extends/#multiple-compose-files).
+### Override configuration
 
-{: .bs-callout-info }
-Note that, when specifying the configurations manually using the `-f` argument, the override configuration is not auto picked up and must also be specified using the `-f`, if necessary.
+Because the `docker:build` command in the `{{site.data.var.ct}}` package overwrites the base configuration, we recommend saving your customizations in an override configuration file. You can use this method to merge multiple custom configurations. See [Docker Docs: Multiple Compose files](https://docs.docker.com/compose/extends/#multiple-compose-files).
 
-#### Examples
+The `docker-compose up` command considers the base `docker-compose.yml` configuration by default. If the `docker-compose-override.yml` file is present, then the override configuration merges with the base configuration.
 
--  `docker-compose up` command will consider the base configuration by default, and also auto pick up the override configuration and merge it into the base configuration, if present.
--  `docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custom-docker-compose.yml] up` command will consider the `docker-compose.yml` first, and sequentially merge every custom configuration specified, into the base configuration. This does not merge the override configuration automatically.
--  `docker-compose -f docker-compose.yml -f docker-compose.override.yml [-f more-custom-docker-compose.yml] up` command will consider the `docker-compose.yml` first, followed by the override configuration, and then sequentially merge every custom configuration specified, into the base configuration. This merges the override configuration manually.
+Use the `-f` argument to specify an alternate configuration file. The following example uses the default configuration and merges each custom configuration sequentially:
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custom-docker-compose.yml] up
+```
 
 ### Build options
 
