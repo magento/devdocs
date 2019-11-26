@@ -21,13 +21,14 @@ The following example shows how to add functionality to a core template with cus
 ```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-<body>
-  <referenceBlock name="checkout.cart.item.renderers.default">
-    <arguments>
-      <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\MyClass</argument>
-    </arguments>
-  </referenceBlock>
-</body>
+    <body>
+        <referenceBlock name="checkout.cart.item.renderers.default">
+        <arguments>
+            <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\MyClass</argument>
+          </arguments>
+        </referenceBlock>
+    </body>
+</page>
 ```
 
 You must implement the right interface in your `view_model` class (for example `ArgumentInterface`):
