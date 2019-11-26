@@ -162,27 +162,11 @@ The service returns an identifier of the created Invoice.
 
 ### PHP interface
 
-`\Magento\Sales\Api\InvoiceOrderInterface`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Api\InvoiceOrderInterface`][]
 
 ### PHP implementation
 
-`\Magento\Sales\Model\InvoiceOrder`
-
-{% collapsible Click to show/hide included code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/InvoiceOrder.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Model\InvoiceOrder`][]
 
 #### Exceptions
 
@@ -470,27 +454,11 @@ The service returns an identifier of a created Credit Memo.
 
 ### PHP interface
 
-`\Magento\Sales\Api\RefundInvoiceInterface`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Api\RefundInvoiceInterface`][]
 
 ### PHP implementation
 
-`\Magento\Sales\Model\RefundInvoice`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundInvoice.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Model\RefundInvoice`][]
 
 #### Exceptions
 
@@ -750,27 +718,11 @@ The service returns an identifier of a created Credit Memo.
 
 ### PHP interface
 
-`\Magento\Sales\Api\RefundOrderInterface`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
-```
-
-{% endcollapsible %}
+[\Magento\Sales\Api\RefundOrderInterface][]
 
 ### PHP implementation
 
-`\Magento\Sales\Model\RefundOrder`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundOrder.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Model\RefundOrder`][]
 
 #### Exceptions
 
@@ -978,27 +930,11 @@ The service returns the identifier of a created shipment.
 
 ### PHP interface
 
-`\Magento\Sales\Api\ShipOrderInterface`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Api\ShipOrderInterface`][]
 
 ### PHP implementation
 
-`\Magento\Sales\Model\ShipOrder`
-
-{% collapsible Click to show/hide a code %}
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/ShipOrder.php %}
-```
-
-{% endcollapsible %}
+[`\Magento\Sales\Model\ShipOrder`][]
 
 #### Exceptions
 
@@ -1044,3 +980,11 @@ The service contains extension points marked with `@api` annotation. Extension d
 [`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
 [`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
 [`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
+[`\Magento\Sales\Api\RefundOrderInterface`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Api/RefundOrderInterface.php
+[`\Magento\Sales\Model\RefundOrder`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Model/RefundOrder.php
+[`\Magento\Sales\Api\ShipOrderInterface`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Api/ShipOrderInterface.php
+[`\Magento\Sales\Model\ShipOrder`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Model/ShipOrder.php
+[`\Magento\Sales\Api\InvoiceOrderInterface`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Api/InvoiceOrderInterface.php
+[`\Magento\Sales\Model\InvoiceOrder`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Model/InvoiceOrder.php
+[`\Magento\Sales\Api\RefundInvoiceInterface`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Api/RefundInvoiceInterface.php
+[`\Magento\Sales\Model\RefundInvoice`]: {{ site.mage2bloburl }}/2.2/app/code/Magento/Sales/Model/RefundInvoice.php
