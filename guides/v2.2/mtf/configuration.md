@@ -10,7 +10,7 @@ The Functional Testing Framework configuration settings are located in two [XML]
 
 ## `phpunit.xml` {#phpunit_xml}
 
-The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table. See the default phpunit.xml code at [`dev/tests/functional/phpunit.xml.dist`][].
+The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in the [PHPUnit documentation], except `<php>`, which contains parameters described in the following table. See the default phpunit.xml code at [`dev/tests/functional/phpunit.xml.dist`][].
 
 | Parameter | Description | `value` | Usage |
 |----------
@@ -33,7 +33,7 @@ The FTF configuration settings are declared and specified in two places:
 
 **In the Framework:**
 
-The file is located in `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc`. See default configuration at [`etc/config.xml.dist`][].
+The file is located in `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc`. See the default configuration at [`etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
@@ -41,7 +41,7 @@ Figure 1. - XML Schema for the `<magento2_root_dir>/dev/tests/functional/vendor/
 
 **In Magento functional tests:**
 
-The file is located in `<magento2_root_dir>/dev/tests/functional/`. Default configuration is in [`dev/tests/functional/etc/config.xml.dist`][].
+The file is located in `<magento2_root_dir>/dev/tests/functional/`. The default configuration is in [`dev/tests/functional/etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_config-xsd-dia.svg)
 
