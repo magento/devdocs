@@ -9,6 +9,9 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
+{: .bs-callout-warning }
+The `docker:build` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference]({{page.baseurl}}/cloud/docker/docker-quick-reference.md).
+
 ## Prerequisites
 
 1. You must have the following software installed on your local workstation:
