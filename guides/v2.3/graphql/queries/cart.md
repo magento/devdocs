@@ -704,7 +704,7 @@ Attribute |  Data Type | Description
 
 ### CartItemQuantity object {#CartItemQuantity}
 
-The `CartItemQuantity` data type has been deprecated. Use the `cart_items_v2` attribute with the `CartItemInterface` instead.
+The `CartItemQuantity` data type has been deprecated. Use the `cart_items_v2` attribute with the [`CartItemInterface`](#CartItemInterface) instead.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -764,7 +764,7 @@ The `SelectedShippingMethod` object can contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The cost of shipping using this shipping method
-`base_amount` | Money | Deprecated. This attribute is not applicable for GraphQL. The base shipping cost, not including taxes or other cost adjustment
+`base_amount` | Money | Deprecated. This attribute is not applicable for GraphQL
 `carrier_code` | String! | A string that identifies a commercial carrier or an offline shipping method
 `carrier_title` | String! | The label for the carrier code
 `method_code` | String! | A shipping method code associated with a carrier
@@ -779,7 +779,7 @@ Attribute |  Data Type | Description
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
-`items_weight` | Float | Deprecated. This attribute should not be displayed
+`items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
 ## Related topics

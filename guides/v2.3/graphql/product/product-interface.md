@@ -42,7 +42,7 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`price` | ProductPrices | Deprecated. Use `price_range` instead.<br/>The price of an item. A `ProductPrice` object is returned
+`price` | ProductPrices | Deprecated. Use `price_range` instead
 `price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
 `price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
@@ -57,29 +57,29 @@ Attribute | Data type | Description
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
-`tier_price` | Float | Deprecated. Use `price_tiers` instead. The price when tier pricing is in effect and the items purchased threshold has been reached
-`tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead. An array of [ProductTierPrices](#ProductTier) objects
-`type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
+`tier_price` | Float | Deprecated. Use `price_tiers` instead
+`tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
+`type_id` | String | Deprecated. Use the GraphQL `__typename` meta attribute instead
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
 `url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
-`websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
+`websites` | [[Website]](#websiteObject) | Deprecated. This attribute is not applicable for GraphQL
 
 ### ProductPrices object {#ProductPrices}
 
 {:.bs-callout-info}
-The `ProductPrices` object has been deprecated. Use the `PriceRange` object instead.
+The `ProductPrices` object has been deprecated. Use the [`PriceRange`](#PriceRange) object instead.
 
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value
-`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead. Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value
-`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead. The base price of a product
+`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead
+`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead
+`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead
 
 ### PriceRange object {#PriceRange}
 
@@ -122,7 +122,7 @@ Attribute |  Data Type | Description
 ### Price object {#Price}
 
 {:.bs-callout-info}
-The `Price` object has been deprecated. Use the `ProductPrice` object instead.
+The `Price` object has been deprecated. Use the [`ProductPrice`](#ProductPrice) object instead.
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -228,17 +228,17 @@ Attribute | Type | Description
 ### ProductTierPrices object {#ProductTier}
 
 {:.bs-callout-info}
-The `ProductTierPrices` object and all of its attributes have been deprecated. Use `TierPrice` instead.
+The `ProductTierPrices` object and all of its attributes have been deprecated. Use [`TierPrice`](#TierPrice) instead.
 
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
 Attribute | Type | Description
 --- | --- | ---
-`customer_group_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID of the customer group
-`percentage_value` | Float | Deprecated. Use `TierPrice.discount` instead. The percentage discount of the item
-`qty` | Float | Deprecated. Use `TierPrice.quantity` instead. The number of items that must be purchased to qualify for tier pricing
-`value` | Float | Deprecated. Use `TierPrice.final_price` instead. The price of the fixed price item
-`website_id` | Int | Deprecated. There is no replacement because this value is not relevant for the storefront. The ID assigned to the website
+`customer_group_id` | Int | Deprecated. This attribute is not applicable for GraphQL
+`percentage_value` | Float | Deprecated. Use `TierPrice.discount` instead
+`qty` | Float | Deprecated. Use `TierPrice.quantity` instead
+`value` | Float | Deprecated. Use `TierPrice.final_price` instead
+`website_id` | Int | Deprecated. This attribute is not applicable for GraphQL
 
 ### TierPrice object {#TierPrice}
 
@@ -251,6 +251,9 @@ Attribute | Type | Description
 `quantity` | Float | The minimum number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
+
+{:.bs-callout-info}
+The `Website` object has been deprecated because it is not applicable for GraphQL.
 
 Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID. The `Website` object is defined in the StoreGraphQl module.
 

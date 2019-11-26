@@ -1203,55 +1203,6 @@ query {
 }
 ```
 
-### Include website information with `products` query results {#inclWebsiteInfoExample}
-
-The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) can include information about the `Website` object.
-
-**Request:**
-
-```graphql
-{
-    products(filter: {sku: {eq: "24-WB04"}})
-    {
-        items{
-            websites {
-              id
-              name
-              code
-              sort_order
-              default_group_id
-              is_default
-            }
-        }
-    }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "products": {
-      "items": [
-        {
-          "websites": [
-            {
-              "id": 1,
-              "name": "Main Website",
-              "code": "base",
-              "sort_order": 0,
-              "default_group_id": "1",
-              "is_default": true
-            }
-          ]
-        }
-      ]
-    }
-  }
-}
-```
-
 ### Query a URL's rewrite information {#urlRewriteExample}
 
 The following product query returns URL rewrite information about the Joust Duffle Bag.
