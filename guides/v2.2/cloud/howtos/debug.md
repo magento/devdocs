@@ -146,7 +146,7 @@ To set up port forwarding on a Mac or in a Unix environment:
 {:.procedure}
 To troubleshoot the connection:
 
-1. [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html) to the integration, staging, or production server.
+1. Use SSH to log in to the remote Integration, Staging, or Production environment.
 
 1. Enter `who` to view a list of SSH sessions.
 
@@ -156,22 +156,22 @@ To troubleshoot the connection:
    -  Staging: usernames are similar to `dd2q5ct7mhgus_stg`
    -  Production: usernames are similar to `dd2q5ct7mhgus`
 
-1. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
+1. For a user session that is older than yours, find the pseudo-terminal (PTS) value, such as `pts/0`.
 
-1. Kill the process ID (PID) corresponding to the PTS value using the following commands:
+1. Kill the process ID (PID) corresponding to the PTS value.
 
    ```bash
    ps aux | grep ssh
    kill <PID>
    ```
 
-   For example, suppose `ps aux | grep ssh` returned the following:
+   Sample response:
 
-   ```bash
+   ```terminal
    dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
    ```
 
-   To terminate the connection, you can enter a kill command with the process ID (PID). For example:
+   To terminate the connection, enter a kill command with the process ID (PID).
 
    ```bash
    kill 3664
@@ -425,7 +425,7 @@ If you you suspend your laptop (like closing your lid on a Mac), then your SSH s
 
 Due to not having access to manually restart the NGINX server, you need to locate and terminate SSH processes that have not timed out yet.
 
-1. Use SSH to log in to the Integration, Staging, or Production environment.
+1. Use SSH to log in to the remote Integration, Staging, or Production environment.
 
 1. Enter `who` to view a list of SSH sessions.
 
@@ -435,22 +435,22 @@ Due to not having access to manually restart the NGINX server, you need to locat
    -  Staging: usernames are similar to `dd2q5ct7mhgus_stg`
    -  Production: usernames are similar to `dd2q5ct7mhgus`
 
-1. For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
+1. For a user session that is older than yours, find the pseudo-terminal (PTS) value, such as `pts/0`.
 
-1. Kill the process ID (PID) corresponding to the PTS value using the following commands:
+1. Kill the process ID (PID) corresponding to the PTS value.
 
    ```bash
    ps aux | grep ssh
    kill <PID>
    ```
 
-   For example, suppose `ps aux | grep ssh` returned the following:
+   Sample response:
 
    ```terminal
    dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
    ```
 
-   To terminate the connection, you enter a kill command with the process ID (PID). For example:
+   To terminate the connection, enter a kill command with the process ID (PID). For example:
 
    ```bash
    kill 3664
