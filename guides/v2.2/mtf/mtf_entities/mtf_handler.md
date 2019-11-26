@@ -522,7 +522,6 @@ Let's create a WebAPI handler that creates a new [tax rule](https://glossary.mag
   </config>
   ```
 
-
 <!-- Link definitions -->
 
 [`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml
