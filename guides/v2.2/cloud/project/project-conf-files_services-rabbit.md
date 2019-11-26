@@ -107,7 +107,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
-   The example below could be used for accessing the RabbitMQ management web interface at `http://localhost:15672`.
+   An example for accessing the RabbitMQ management web interface at `http://localhost:15672` is:
 
    ```bash
    ssh -L 15672:localhost:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
