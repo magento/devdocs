@@ -47,7 +47,7 @@ As of Magento 2.3.1, you can no longer use the `bin/magento config:set dev/debug
 
 ## Database logging
 
-By default, Magento writes database activity logs to the `var/debug/db.log` file inside the Magento application directory.
+By default, Magento writes database activity logs to the `var/debug/db.log` file inside the Magento application directory. Datase logging is disabled by default.
 
 ### To enable database logging
 
