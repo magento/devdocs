@@ -54,25 +54,13 @@ The ITF includes the declared PHP script to your test and executes it during tes
 
 The following example demonstrates a simple implementation of a Cms module page test from the Magento codebase.
 
-Data fixture to test a Cms module page (`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`):
+Data fixture to test a Cms module page: [`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`][].
 
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/integration/testsuite/Magento/Cms/_files/pages.php %}
-```
-
-Test case that uses the above data fixture (`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`):
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php %}
-```
+Test case that uses the above data fixture [`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`][].
 
 ### Fixture as a method
 
-The following is an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
-
-```php
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php %}
-```
+[`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`][] contains an example of the `testCreatePageWithSameModuleName()` test method that uses data from the `cmsPageWithSystemRouteFixture()` data fixture.
 
 ### Test case and test method scopes
 
@@ -112,3 +100,6 @@ Do not rely on and do not modify an application state from within a fixture, bec
 <!-- Link definitions -->
 
 [magentoAppIsolation]: magento-app-isolation.html
+[`dev/tests/integration/testsuite/Magento/Cms/_files/pages.php`]: {{ site.mage2bloburl }}/2.2/dev/tests/integration/testsuite/Magento/Cms/_files/pages.php
+[`dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php`]: {{ site.mage2bloburl }}/2.2/dev/tests/integration/testsuite/Magento/Cms/Block/PageTest.php
+[`dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php`]: {{ site.mage2bloburl }}/2.2/dev/tests/integration/testsuite/Magento/Cms/Controller/PageTest.php
