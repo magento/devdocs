@@ -121,6 +121,10 @@ To increase disk space for a service:
 
    The changes take effect after you push the updated YAML file to the remote environment.
 
+## Monitoring disk space
+
+On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+
 ## No space left
 
 The build cache can grow over time. If you receive a warning that states `No space left on device`, try clearing the build cache and redeploying:
