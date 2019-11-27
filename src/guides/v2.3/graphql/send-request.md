@@ -32,7 +32,7 @@ Header name | Value | Description
 `Authorization` | `Bearer <authorization_token>` | A customer or admin token. [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes how to generate tokens.
 `Content-Currency` | A valid currency code, such as `USD` | This header is required only if the currency is not the store view's default currency.
 `Content-Type` | `application/json` | Required for all requests.
-`Preview-Version` | A timestamp (milliseconds since January 1, 1970). Use this header to query products, categories, price rules, and other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only.
+`Preview-Version` | A timestamp (seconds since January 1, 1970). Use this header to query products, categories, price rules, and other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only.
 `Store` | `<store_view_code>` | The store view code on which to perform the request. The value can be `default` or the code that is defined when a store view is created.
 
 ### Specify request headers in a GraphQL browser
