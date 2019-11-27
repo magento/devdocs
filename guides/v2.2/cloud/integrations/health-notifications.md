@@ -12,6 +12,9 @@ functional_areas:
 -  **Critical**—available disk space drops below 10%
 -  **All-clear**—available disk space returns above 20%, after a low-disk event
 
+{:.bs-callout-info}
+On Pro Production environments, you can use an Adobe-generated alert policy for New Relic to monitor disk space. See [Monitor performance with alert policies]({{ page.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-alert-policies).
+
 ## Email notifications
 
 The health email integration requires an origination address and at least one recipient address. You can use the same email address for the `from-address` and the `recipients` address. The following example registers a health email integration with two recipients:
