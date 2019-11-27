@@ -49,7 +49,7 @@ pages:
         - label: Adding custom favicons
           url: /frontend-dev-guide/themes/favicon.html
 
-        - label: Configure theme's properties
+        - label: Configure theme properties
           url: /frontend-dev-guide/themes/theme-images.html
 
         - label: Configure product video
