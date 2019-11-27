@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyzed and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
+[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
 
 -  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
@@ -188,7 +188,7 @@ Prerequisites
 
 1. Use your Project Owner New Relic credentials to [log in to New Relic](https://login.newrelic.com/login).
 
-1. From the navigation menu, select **Alerts** > **Alert Policies**.
+1. From the navigation menu, select  **Alerts**  >  **Alert Policies**.
 
 1. In the Search Policies field, search for _Adobe Generated Policy_.
 
@@ -216,11 +216,11 @@ To configure a notification channel:
 
 1. [Log in to your New Relic account](https://login.newrelic.com/login).
 
-1. Navigate to the New Relic APM page.
+1. Navigate to the _New Relic APM_ page.
 
-1. On the New Relic APM Applications page, open the application for your Cloud environment.
+1. On the _New Relic APM Applications_ page, open the application for your Cloud environment.
 
-1. On the **Alerts** page, click **New notification channel**.
+1. On the _Alerts_ page, click **New notification channel**.
 
    ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="650px"}
 
@@ -239,7 +239,7 @@ The Adobe-generated policies have default notification channels configured to no
 
 ### Create Alert Policies
 
-Do not modify the Adobe-generated alert policies, as they might be automatically regenerated or improved over time.
+Do not modify the Adobe-generated alert policies. We will automatically regenerate and improve them over time, which will overwrite any customizations you make.
 
 If you want to modify the thresholds of an alert condition, create a new alert policy. Then, copy the alert condition to the new policy. See [Update policies or conditions](https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions) in the New Relic documentation.
 
