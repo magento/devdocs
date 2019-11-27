@@ -257,6 +257,9 @@ pages:
             - label: Set up RabbitMQ service
               url: /cloud/project/project-conf-files_services-rabbit.html
 
+        - label: Restore an environment
+          url: /cloud/env/restore-environment.html
+
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
       include_versions: [2.2","2.3"]
@@ -291,6 +294,9 @@ pages:
 
         - label: Manage disk space
           url: /cloud/project/manage-disk-space.html
+
+        - label: Monitor performance
+          url: /cloud/project/monitor-performance.html
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
