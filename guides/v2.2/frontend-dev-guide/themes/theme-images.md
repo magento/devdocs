@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Configure images properties for a theme
+title: Configure theme's properties
 functional_areas:
   - Frontend
   - Theme
@@ -25,9 +25,11 @@ For example, here is the `view.xml` of the Magento Blank theme: [`app/design/fro
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
 ```xml
-<images module="Magento_Catalog">
-...
-<images/>
+<media>
+    <images module="Magento_Catalog">
+    ...
+    </images>
+</media>
 ```
 
 Image properties are configured for each image type defined by the `id` and `type` attributes of the `<image>` element:
@@ -37,7 +39,7 @@ Image properties are configured for each image type defined by the `id` and `typ
    <image id="unique_image_id" type="image_type">
    ...
    </image>
-<images/>
+</images>
 ```
 
 The following table describes the attributes in detail:
@@ -130,3 +132,49 @@ php <magento install dir>/bin/magento catalog:images:resize
 This command has no arguments or options. A progress indicator displays while the command runs.
 
 The message `Product images resized successfully` displays to confirm the command succeeded.
+
+## Configure variables in view.xml {#view_xml_vars}
+
+The variable properties `vars` are configured for each module individually, defined by `module` name.
+
+```xml
+<vars module="Magento_Catalog">
+    <var name="breakpoints">
+        <var name="mobile">
+            <var name="conditions">
+                <var name="max-width">767px</var>
+            </var>
+            ...
+        </var>
+    </var>
+    ...
+</vars>
+```
+
+Any block that extends [`AbstractBlock`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/AbstractBlock.php), can fetch the variable values by using the `getVar` method:
+
+```php
+$block->getVar($name, $module = null)
+```
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `name` | `Yes` | The first level variable name |
+| `module` | `No` | The module name where the variable is added. If not passed, it will be determined automatically based on the current module. |
+
+Lets check the following example used for getting the breakpoints variable by [`Gallery`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Block/Product/View/Gallery.php) block:
+
+```php
+/**
+ * Return breakpoints options
+ *
+ * @return string
+ */
+public function getBreakpoints()
+{
+    return $this->jsonEncoder->encode($this->getVar('breakpoints'));
+}
+```
+
+{: .bs-callout-info }
+The variables can even be used in scope of other modules than the defined one.
