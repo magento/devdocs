@@ -15,6 +15,10 @@ theme: devdocs
 # Base url that forms 
 baseurl: ""
 
+source: src
+
+plugins_dir: ./_plugins
+
 # Parameters for the version switcher. Numeric values must be wrapped in quotes.
 #
 version: "2.3"
