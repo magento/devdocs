@@ -9,14 +9,14 @@ The ThumbnailColumn component implements a column containing images associated w
 
 | Option       | Description    | Type | Default |
 | ------------ | -------------- | ---- | ------- |
-| `bodyTmpl`   | Path to the template used for rendering a column's fields in the table's body. | `String` | `ui/grid/cells/thumbnail` |
-| `fieldClass` | Additional CSS classes added to the column's field elements. | `{[name: string]: boolean}` | `{'data-grid-thumbnail-cell': true}` |
+| `bodyTmpl`   | Path to the template used for rendering a column's fields in the table body. | `String` | `ui/grid/cells/thumbnail` |
+| `fieldClass` | Additional CSS classes appended to the column's field elements. | `{[name: string]: boolean}` | `{'data-grid-thumbnail-cell': true}` |
 
 ## Examples
 
 ### Integrate the ThumbnailColumn component with the Listing component
 
-The following sample shows how the thumbnail column is added into the Product [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+This sample shows how the thumbnail column is added into the Product [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <columns>
