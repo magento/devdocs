@@ -27,6 +27,11 @@ For Pro accounts, if New Relic APM is not installed on the Staging and Productio
 
 When Magento provisions your {{site.data.var.ece}} project, the Project Owner receives an email from New Relic with credentials and instructions for accessing the account. If you did not receive the email, use the Project Owner email address to [reset the New Relic password](https://rpm.newrelic.com/forgot_password).
 
+An account can have only one person assigned the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner](https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner) in the New Relic documentation for instructions.
+
+{:.bs-callout-tip}
+Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account][3] for New Relic can add users on behalf of the customer.
+
 We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
 {:.procedure}
@@ -45,14 +50,6 @@ To add a user:
 1. Click **Add user**.
 
 1. Ask the new user to check their email for a New Relic notification with account information.
-
-{:.procedure}
-To change the account owner:
-
-An account can have only one person assigned the Owner role. To change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner](https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner) in the New Relic documentation for instructions.
-
-{:.bs-callout-tip}
-Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account][3] for New Relic can add users on behalf of the customer.
 
 ## Set up the New Relic service
 
@@ -184,7 +181,8 @@ Prerequisites
 -  Credentials to log in to the [New Relic account](#manage-your-new-relic-account) for your Cloud project.
 -  Verify that your Cloud environment is [connected to New Relic](#connect-to-new-relic).
 
-### Review Adobe-generated alert policies
+{:.procedure}
+To review Adobe-generated alert policies:
 
 1. Use your Project Owner New Relic credentials to [log in to New Relic](https://login.newrelic.com/login).
 
