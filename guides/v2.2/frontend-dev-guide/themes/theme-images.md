@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Configure theme's properties
+title: Configure theme properties
 functional_areas:
   - Frontend
   - Theme
