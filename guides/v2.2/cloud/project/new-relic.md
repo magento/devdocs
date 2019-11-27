@@ -164,7 +164,7 @@ You can learn more about using the New Relic APM and Infrastructure agents to co
 
 ## Monitor performance with alert policies
 
-Adobe provides a generated a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
+Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
 
 -  [Apdex score](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction)
 -  error rate
