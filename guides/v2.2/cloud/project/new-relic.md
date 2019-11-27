@@ -195,7 +195,7 @@ To review Adobe-generated alert policies:
    ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-alert-policies.png){:width="650px"}
 
    {:.bs-callout-info}
-   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available only on Pro and Starter Production environments.
+   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available on Pro and Starter Production environments only.
 
 1. Click an alert policy name to review the threshold conditions that trigger alerts.
 
@@ -210,7 +210,7 @@ The following instructions describe the high level steps to configure a notifica
 {:.procedure}
 To configure a notification channel:
 
-1. Choose a notification channel type, and complete any prerequisite steps required to connect the channel with the New Relic service.
+1. Choose a notification channel type, and complete any [prerequisite steps](https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types) required to connect the channel with the New Relic service.
 
 1. [Log in to your New Relic account](https://login.newrelic.com/login).
 
