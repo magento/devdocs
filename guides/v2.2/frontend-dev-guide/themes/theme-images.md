@@ -151,7 +151,7 @@ The variable properties `vars` are configured for each module individually, defi
 </vars>
 ```
 
-Any block that extends [`AbstractBlock`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/AbstractBlock.php), can fetch the variable values by using the `getVar` method:
+Any block that extends [`AbstractBlock`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/AbstractBlock.php), can fetch variable values with the `getVar` method:
 
 ```php
 $block->getVar($name, $module = null)
@@ -162,7 +162,7 @@ $block->getVar($name, $module = null)
 | `name` | `Yes` | The first level variable name |
 | `module` | `No` | The module name where the variable is added. If not passed, it will be determined automatically based on the current module. |
 
-Lets check the following example used for getting the breakpoints variable by [`Gallery`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Block/Product/View/Gallery.php) block:
+Check the following example on getting the breakpoints variable by the [`Gallery`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Block/Product/View/Gallery.php) block:
 
 ```php
 /**
@@ -177,4 +177,4 @@ public function getBreakpoints()
 ```
 
 {: .bs-callout-info }
-The variables can even be used in scope of other modules than the defined one.
+Variables may be used within the scope of modules than the defined one.
