@@ -65,7 +65,7 @@ The following are recommended changes and checks:
 
 -  Test and verify that Fastly caching is working correctly on the Production site. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 -  [Ensure that the latest version of the Fastly CDN Module for Magento 2 is installed in your Production environment]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upgrade)
--  [Ensure that you have uploaded the most current version of the Fastly VCL code]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
+-  [Ensure that the most current version of the Fastly VCL code has been uploaded]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
 
 ## Performance testing {#performance}
 
