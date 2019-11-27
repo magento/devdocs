@@ -161,7 +161,7 @@ pages:
         - label: ThumbnailColumn component
           url: /ui_comp_guide/components/ui-thumbnailcolumn.html
 
-        - label: Toolbar component
+        - label: ListingToolbar component
           url: /ui_comp_guide/components/ui-toolbar.html
 
         - label: TreeMassActions component
