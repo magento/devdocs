@@ -186,7 +186,7 @@ To review Adobe-generated alert policies:
 
 1. Use your Project Owner New Relic credentials to [log in to your New Relic account](https://login.newrelic.com/login).
 
-1. From the navigation  menu, select  **Alerts**  >  **Alert Policies**.
+1. From the navigation menu, select  **Alerts**  > **Alert Policies**.
 
 1. In the Search Policies field, search for _Adobe Generated Policy_.
 
