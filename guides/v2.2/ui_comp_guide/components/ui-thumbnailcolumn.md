@@ -7,28 +7,37 @@ The ThumbnailColumn component implements a column containing images associated w
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>bodyTmpl</code></td>
-    <td>Path to the template used for rendering a column's fields in the table's body.</td>
-    <td>String</td>
-    <td><code>ui/grid/cells/thumbnail</code></td>
-  </tr>
-  <tr>
-    <td><code>fieldClass</code></td>
-    <td>Additional CSS classes added to the column's field elements.</td>
-    <td><code>{[name: string]: boolean}</code></td>
-    <td><code>{'data-grid-thumbnail-cell': true}</code></td>
-  </tr>
-</table>
+| Option       | Description    | Type | Default |
+| ------------ | -------------- | ---- | ------- |
+| `bodyTmpl`   | Path to the template used for rendering a column's fields in the table's body. | `String` | `ui/grid/cells/thumbnail` |
+| `fieldClass` | Additional CSS classes added to the column's field elements. | `{[name: string]: boolean}` | `{'data-grid-thumbnail-cell': true}` |
+
+## Examples
+
+### Integrate the ThumbnailColumn component with the Listing component
+
+The following sample shows how the thumbnail column is added into the Product [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
+```xml
+<columns>
+    <column name="thumbnail" component="Magento_Ui/js/grid/columns/thumbnail" class="Magento\Catalog\Ui\Component\Listing\Columns\Thumbnail">
+        <settings>
+            <hasPreview>1</hasPreview>
+            <addField>true</addField>
+            <label translate="true">Thumbnail</label>
+            <sortable>false</sortable>
+        </settings>
+    </column>
+</columns>
+```
+
+#### Result
+
+![Thumbnail UiComponent]({{ site.baseurl }}/common/images/ui_comps/thumbnail-component-result.png)
 
 ## Source files
+
+-  [Magento/Catalog/Ui/Component/Listing/Columns/Thumbnail]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/Component/Listing/Columns/Thumbnail.php)
 
 Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
