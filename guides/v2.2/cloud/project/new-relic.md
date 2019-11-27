@@ -164,13 +164,13 @@ You can learn more about using the New Relic APM and Infrastructure agents to co
 
 ## Monitor performance with alert policies
 
-The New Relic service for {{ site.data.var.ece }} Pro Production environments includes a set of Adobe-generated alert policies to track the following performance metrics:
+Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
 
 -  [Apdex score](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction)
 -  error rate
--  disk space
+-  disk space (available on Pro Production environments only)
 
-These policies set thresholds for warning and critical conditions that affect performance based on industry best practices. When your site experiences infrastructure or application issues that trigger an alert threshold, New Relic sends alert notifications so you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
+Based on industry best practices, these policies set thresholds for warning and critical conditions that affect performance. When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
 
 {:.bs-callout-info}
 For Pro Staging and Integration environments and Starter environments, use [Health notifications]({{ page.baseurl }}/cloud/integrations/health-notifications.html) to monitor disk space.
@@ -184,9 +184,9 @@ Prerequisites
 {:.procedure}
 To review Adobe-generated alert policies:
 
-1. Use your Project Owner New Relic credentials to [log in to New Relic](https://login.newrelic.com/login).
+1. Use your Project Owner New Relic credentials to [log in to your New Relic account](https://login.newrelic.com/login).
 
-1. From the navigation menu, select  **Alerts**  >  **Alert Policies**.
+1. From the navigation menu, select  **Alerts**  > **Alert Policies**.
 
 1. In the Search Policies field, search for _Adobe Generated Policy_.
 
@@ -195,22 +195,22 @@ To review Adobe-generated alert policies:
    ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-alert-policies.png){:width="650px"}
 
    {:.bs-callout-info}
-   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available only on the Pro Production environment.
+   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available on Pro and Starter Production environments only.
 
 1. Click an alert policy name to review the threshold conditions that trigger alerts.
 
 ### Configure notification channels
 
-To use the Adobe-generated alert policies to monitor your Production site, you must configure notification channels and map them to alert policies. Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
+To use the Adobe-generated alert policies to monitor your Production sites, you must configure notification channels and map them to alert policies. Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
 
 New Relic provides templates for configuring different types of notification channels including email, Slack, PagerDuty, webhooks, and more. See the [Instructions for specific notification channels](https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types) in the New Relic documentation to review the prerequisites for using each type.
 
-The following instructions describe the high level steps to configure a Slack channel to receive New Relic alerts when the available disk space on your {{ site.data.var.ee }} Production server exceeds the low disk space threshold specified in the _Adobe Generated Disk Space Policy_ alert policy.
+The following instructions describe the high level steps to configure a notification channel to receive alert messages triggered by an alert policy.
 
 {:.procedure}
 To configure a notification channel:
 
-1. Choose a notification channel type, and complete any prerequisite steps required to integrate the channel with the New Relic service.
+1. Choose a notification channel type, and complete any [prerequisite steps](https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types) required to connect the channel with the New Relic service.
 
 1. [Log in to your New Relic account](https://login.newrelic.com/login).
 
@@ -222,9 +222,15 @@ To configure a notification channel:
 
    ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="650px"}
 
-1. Send a test notification to verify that the channel works.
+1. On the _Create a new notification channel_ page, choose the channel type from the **Select a channel type** dropdown menu.
 
-1. Map the notification to the Adobe-generated policies as needed.
+1. Configure the settings for the channel, and then click **Create channel**.
+
+1. On the _Channel details_ page, click **Send a test notification** to verify that the channel works.
+
+1. To specify the alerts to send to the channel, click the **Alert policies** tab.
+
+1. On the _Alert policies_ page, click **Add alert** to select and add an alert policy.
 
 See the following New Relic documentation topics for additional information:
 
@@ -233,7 +239,7 @@ See the following New Relic documentation topics for additional information:
 -  [Configure notification channels using the New Relic API](https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels)
 
 {:.bs-callout-warning}
-The Adobe-generated policies have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove them from the Adobe-generated alert policies.
+The Adobe-generated policies have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
 
 ### Create Alert Policies
 
