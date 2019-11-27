@@ -3,7 +3,7 @@ group: ui-components-guide
 title: ListingToolbar component
 ---
 
-The ListingToolbar component implements a container for the listing-related elements like paging, mass actions, filters, bookmarks. That is, it aggregates all elements that serve as tools and renders them at the top of the main table.
+The ListingToolbar component implements a container for the listing-related elements such as paging, mass actions, filters, and bookmarks. It aggregates all elements that serve as tools and renders them at the top of the main table.
 
 ## Configuration options
 
@@ -18,7 +18,7 @@ The ListingToolbar component implements a container for the listing-related elem
 
 ### Integrate the ListingToolbar component with the Listing component
 
-In the following example, we'll group the following components:
+In the following example, we group the following components:
 
 -  Bookmark
 -  ColumnsControls
