@@ -146,7 +146,7 @@ To include a 3rd party library and use it within the entire website (using the [
 
 1. Copy `slick.less` and `slick-theme.less` to the `<theme_path>/web/css/source` folder. Also add both files to `<theme_path>/web/css/source/_extend.less`.
 
-   ```less
+   ```scss
    @import "slick.less";
    @import "slick-theme.less";
    ```

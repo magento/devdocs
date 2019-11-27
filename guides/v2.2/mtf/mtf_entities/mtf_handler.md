@@ -126,11 +126,7 @@ Create the handler in the same directory where the interface is stored: `<magent
 The `di.xml` file declares relationship between the [interface](#mtf_handler_interface) and the [handler](#mtf_handler_conf_hand) class.
 The file must be placed in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
-See an example for the Widget cURL handler (`<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-```
+See an example for the Widget cURL handler [`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`][].
 
 In this example, the `di.xml` file causes the `Curl` class to replace the `WidgetInterface`.
 
@@ -249,11 +245,7 @@ Let's create a cURL handler that creates a new widget.
   }
   ```
 
-*  Create [`di.xml`](#mtf_handler_di) in the `etc/curl` directory of the Magento_Widget module.
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
-```
+*  Create a [`di.xml`](#mtf_handler_di) file in the `etc/curl` directory of the Magento_Widget module ([`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`][]).
 
 ### cURL authentication classes {#mtf_handler_decor}
 
@@ -529,3 +521,8 @@ Let's create a WebAPI handler that creates a new [tax rule](https://glossary.mag
                   type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
   </config>
   ```
+
+<!-- Link definitions -->
+
+[`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml
+[`dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml

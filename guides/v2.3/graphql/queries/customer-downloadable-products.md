@@ -80,4 +80,4 @@ Attribute | Type | Description
 
 Error | Description
 --- | ---
-`The current customer isn't authorized.` | The customer's token does not exist in the `oauth_token` table.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.

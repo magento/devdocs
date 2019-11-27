@@ -10,14 +10,7 @@ The Functional Testing Framework configuration settings are located in two [XML]
 
 ## `phpunit.xml` {#phpunit_xml}
 
-The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in [PHPUnit documentation], except `<php>` that contains parameters described in the following table.
-
-{% collapsible Show/hide the default phpunit.xml code %}
-
-```xml
-{% remote_markdown  https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/phpunit.xml.dist %}
-```
-{% endcollapsible %}
+The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit configuration settings. Blocks of settings are described in the [PHPUnit documentation], except `<php>`, which contains parameters described in the following table. See the default phpunit.xml code at [`dev/tests/functional/phpunit.xml.dist`][].
 
 | Parameter | Description | `value` | Usage |
 |----------
@@ -38,33 +31,21 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
 
 The FTF configuration settings are declared and specified in two places:
 
-{% collapsible in the Framework %}
+**In the Framework:**
 
-The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc`
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/mtf/develop/etc/config.xml.dist%}
-```
+The file is located in `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc`. See the default configuration at [`etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
-Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
+Figure 1. - XML Schema for the `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 
-{%endcollapsible%}
+**In Magento functional tests:**
 
-{% collapsible in Magento functional tests %}
-
-The file is located in `<magento2_root_dir>dev/tests/functional/`
-
-```xml
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/etc/config.xml.dist %}
-```
+The file is located in `<magento2_root_dir>/dev/tests/functional/`. The default configuration is in [`dev/tests/functional/etc/config.xml.dist`][].
 
 ![image]({{ site.baseurl }}/common/images/ftf/ftf_config-xsd-dia.svg)
 
-Figure 2. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
-
-{% endcollapsible %}
+Figure 2. - XML Schema for the `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 
 The FTF merges settings from both files with the following priority:
 
@@ -170,6 +151,9 @@ Set of parameters to be used for [installation test case].
 [isolation management]: {{ page.baseurl }}/mtf/features/isolation.html
 [test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 [test suite]: {{ page.baseurl }}/mtf/features/test_suite.html#configure
+[`dev/tests/functional/phpunit.xml.dist`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/phpunit.xml.dist
+[`etc/config.xml.dist`]: https://github.com/magento/mtf/blob/develop/etc/config.xml.dist
+[`dev/tests/functional/etc/config.xml.dist`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/etc/config.xml.dist
 
 ["app_frontend_url"]: #app_frontend_url
 ["app_backend_url"]: #app_backend_url

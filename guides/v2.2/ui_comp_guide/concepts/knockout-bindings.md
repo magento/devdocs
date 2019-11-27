@@ -225,7 +225,9 @@ The `i18n` binding is used to translate a string according to the currently enab
 **Usage example**:
 
 ```html
-<div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
+<!-- ko i18n: 'Translate using the virtual element' --><!-- /ko -->
+
+<div data-bind="i18n: 'Translate using the standard knockout binding'"></div>
 
 <div translate="'Translate using the attribute'"></div>
 
@@ -327,7 +329,7 @@ Callback that is invoked when user clicks outside of the element.
 
 ```html
 <div id="target" outerClick="function () {
-    console.log('Clicked outside of the "target" node.');
+    console.log('Clicked outside of the \"target\" node.');
 }">
 </div>
 ```

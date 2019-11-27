@@ -43,6 +43,8 @@ To enable RabbitMQ:
 
 For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
+[Supported service versions]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-versions)
+
 ## Connect to RabbitMQ for debugging {#connect}
 
 For debugging purposes, it is useful to directly connect to a service instance in one of the following ways:
@@ -105,6 +107,12 @@ For debugging purposes, it is useful to directly connect to a service instance i
 
    ```bash
    ssh -L <port-number>:mq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
+   ```
+
+   An example for accessing the RabbitMQ management web interface at `http://localhost:15672` is:
+
+   ```bash
+   ssh -L 15672:localhost:15672 <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
    ```
 
 1. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber>` using the port number, username, and password information from the MAGENTO_CLOUD_RELATIONSHIP variable.

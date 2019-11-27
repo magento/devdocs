@@ -357,17 +357,7 @@ Variations `DeleteVideoFromPCFTestVariation1` and `DeleteVideoFromPCFTestVariati
 
 If you want to extend variation in another module using [merging], you should use a [test case] name that you want to merge with and a variation name that you want to extend.
 
-For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
-
- ```xml
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
- ```
-
- the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
-
- ```xml
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
-  ```
+For example, see how in [`Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`][] the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module in [`Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml`][].
 
 ### Replace a variation {#replace_variation}
 
@@ -394,6 +384,8 @@ After a merge of a data set with the variation that is mentioned, a test will us
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
 [repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
 [test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[`Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml
+`Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml`]: {{ site.mage2bloburl }}/2.2/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml
 
 <!-- ABBREVIATIONS -->
 

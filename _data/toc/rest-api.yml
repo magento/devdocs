@@ -54,6 +54,9 @@ pages:
         - label: Search using REST
           url: /rest/performing-searches.html
 
+        - label: Search with the /search endpoint
+          url: /rest/search-endpoint.html
+
         - label: Retrieve filtered search responses
           url: /rest/retrieve-filtered-responses.html
 
