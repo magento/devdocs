@@ -6,7 +6,7 @@ functional_areas:
   - Testing
 ---
 
-Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf) and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 
@@ -17,8 +17,8 @@ See [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) for te
 You need to complete configurations for your DNS including:
 
 -  Set all necessary redirects, especially if you are migrating from an existing site
--  Set the zone’s root resource record to address the hostname
--  Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
+-  Set the zone root resource record to the hostname address
+-  Lower the value for the Time-to-Live (TTL) setting to refresh DNS information so customers are directed to the correct Production store more quickly
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
 
@@ -63,9 +63,9 @@ The following are recommended changes and checks:
 
 ## Verify Fastly caching {#verifyfastly}
 
--  Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
--  [Ensure that you the latest version of the Fastly CDN Module for Magento 2 is installed in your Production environment](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html#upgrade)
--  [Ensure that you have uploaded the most current version of the Fastly VCL code](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
+-  Test and verify that Fastly caching is working correctly on the Production site. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
+-  [Ensure that the latest version of the Fastly CDN Module for Magento 2 is installed in your Production environment]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upgrade)
+-  [Ensure that you have uploaded the most current version of the Fastly VCL code]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
 
 ## Performance testing {#performance}
 
@@ -81,11 +81,11 @@ You can also test using the following 3rd party options:
 
 ## Security configuration
 
--  [Setup your Magento Security Scan](https://devdocs.magento.com/guides/v2.3/cloud/live/live.html#security-scan)
+-  [Setup your Magento Security Scan]({{ page.baseurl }}/cloud/live/live.html#security-scan)
 -  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
 -  [Secure configuration for Base Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ page.baseurl}}/cloud/project/user-admin.html)
--  [Configure two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html)
+-  [Configure two-factor authentication]({{ page.baseurl }}/security/two-factor-authentication.html)
 
 ## Performance monitoring
 
