@@ -221,12 +221,12 @@ To configure a notification channel:
 1. On the _Alerts_ page, click **New notification channel**.
 
    ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="650px"}
-   
+
 1. On the _Create a new notification channel_ page, choose the channel type from the **Select a channel type** dropdown menu.
 
 1. Configure the settings for the channel, and then click **Create channel**.
 
-1. On the _Channel details page, click **Send a test notification** to verify that the channel works.
+1. On the _Channel details_ page, click **Send a test notification** to verify that the channel works.
 
 1. To specify the alerts to send to the channel, click the **Alert policies** tab.
 

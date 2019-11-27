@@ -123,7 +123,7 @@ To increase disk space for a service:
 
 ## Monitoring disk space
 
-On Pro plan Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
 
 ## No space left
 

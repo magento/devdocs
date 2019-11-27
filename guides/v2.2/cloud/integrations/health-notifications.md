@@ -13,7 +13,7 @@ functional_areas:
 -  **All-clear**—available disk space returns above 20%, after a low-disk event
 
 {:.bs-callout-info}
-On Pro Production and Staging environments, you can use New Relic services to monitor disk space. See [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+On Pro Production environments, you can use an Adobe-generated alert policy for New Relic to monitor disk space. See [Monitor performance with alert policies]({{ page.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-alert-policies).
 
 ## Email notifications
 
