@@ -16,7 +16,7 @@ For the jQuery widget coding standard, see [jQuery widget coding standard][jquer
 
 ## Eslint and JSCS tools
 
-Use [ESLint][eslint] and [JSCS][jscs] to ensure the quality of your JavaScript code.
+Use [ESLint][eslint] and `JSCS` to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
 It can use custom rules to enforce specific coding standards.
@@ -359,6 +359,5 @@ var foo = 'bar',
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
-[jscs]: http://jscs.info/
 [eslint-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [jscs-rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

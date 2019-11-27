@@ -10,10 +10,6 @@ pages:
   url: /mbi/docs/import-api.html
   versionless: true
 
-- label: Cloud onboarding API
-  url: /mbi/docs/cloud-api.html
-  versionless: true
-
 - label: Libraries
   url: /mbi/docs/libraries.html
   versionless: true

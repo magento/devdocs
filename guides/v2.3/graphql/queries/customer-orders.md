@@ -80,3 +80,9 @@ Attribute | Data type | Description
 `increment_id` | String | Deprecated. Use `order_number` instead. An ID that indicates the sequence of the order in the customer's order history
 `order_number` | String! | The order number assigned to the order
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
+
+## Errors
+
+Error | Description
+--- | ---
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.

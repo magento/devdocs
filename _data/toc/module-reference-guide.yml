@@ -1,6 +1,6 @@
 label: Module Reference Guide
 pages:
-  - label: INTRODUCTION
+  - label: Introduction
     url: /mrg/intro.html
 
   - label: Sales
@@ -11,45 +11,13 @@ pages:
     exclude_versions: ["2.0"]
     children:
 
-      - label: Analytics
-        url: /mrg/ce/Analytics.html
-        exclude_versions: ["2.1"]
-
-      - label: CatalogAnalytics
-        url: /mrg/ce/CatalogAnalytics.html
-        exclude_versions: ["2.1"]
-
-      - label: CustomerAnalytics
-        url: /mrg/ce/CustomerAnalytics.html
-        exclude_versions: ["2.1"]
-
-      - label: Instant Purchase
-        url: /mrg/ce/instant-purchase/
-        exclude_versions: ["2.1"]
-
-      - label: QuoteAnalytics
-        url: /mrg/ce/QuoteAnalytics.html
-        exclude_versions: ["2.1"]
-
-      - label: ReviewAnalytics
-        url: /mrg/ce/ReviewAnalytics.html
-        exclude_versions: ["2.1"]
-
       - label: Sales
         url: /mrg/ce/Sales.html
         include_versions: ["2.1", "2.2"]
 
-      - label: SalesAnalytics
-        url: /mrg/ce/SalesAnalytics.html
-        exclude_versions: ["2.1"]
-
       - label: Signifyd
         url: /mrg/ce/Signifyd.html
         include_versions: ["2.2"]
-
-      - label: WishlistAnalytics
-        url: /mrg/ce/WishlistAnalytics.html
-        exclude_versions: ["2.1"]
 
   - label: Commerce
     include_versions: ["2.1","2.2"]

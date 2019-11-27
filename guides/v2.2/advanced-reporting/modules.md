@@ -33,13 +33,13 @@ Advanced reporting functionality is implemented in the following Magento modules
 
 <!-- LINK DEFINITIONS -->
 
-[Analytics]: {{ page.baseurl }}/mrg/ce/Analytics.html
-[CatalogAnalytics]: {{ page.baseurl }}/mrg/ce/CatalogAnalytics.html
-[CustomerAnalytics]: {{ page.baseurl }}/mrg/ce/CustomerAnalytics.html
-[QuoteAnalytics]: {{ page.baseurl }}/mrg/ce/QuoteAnalytics.html
-[ReviewAnalytics]: {{ page.baseurl }}/mrg/ce/ReviewAnalytics.html
-[SalesAnalytics]: {{ page.baseurl }}/mrg/ce/SalesAnalytics.html
-[WishlistAnalytics]: {{ page.baseurl }}/mrg/ce/WishlistAnalytics.html
+[Analytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Analytics/README.md
+[CatalogAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogAnalytics/README.md
+[CustomerAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CustomerAnalytics/README.md
+[QuoteAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/QuoteAnalytics/README.md
+[ReviewAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ReviewAnalytics/README.md
+[SalesAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/SalesAnalytics/README.md
+[WishlistAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/WishlistAnalytics/README.md
 
 [report data collection]: ./data-collection.html
 
