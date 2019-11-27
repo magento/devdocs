@@ -81,7 +81,7 @@ You can also test using the following 3rd party options:
 
 ## Security configuration
 
--  [Setup your Magento Security Scan]({{ page.baseurl }}/cloud/live/live.html#security-scan)
+-  [Set up your Magento Security Scan]({{ page.baseurl }}/cloud/live/live.html#security-scan)
 -  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
 -  [Secure configuration for Base Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ page.baseurl}}/cloud/project/user-admin.html)
