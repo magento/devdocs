@@ -14,7 +14,7 @@ To set the Magento configuration values for individual tests and revert them aft
 ```
 
 -  `<store_code>` is a code of the store to be configured.
-  By default, the configuration option is applied globally.
+  When global scope is required, this needs to be omited and the config path needs to be prefixed with `default/`, see below for an example.
   To specify the current store, use `current`.
 -  `<config_path>` is an XPath to the configuration option.
   See [configuration reference][] for available options.
@@ -128,6 +128,44 @@ class ConfigFixtureTest extends \PHPUnit\Framework\TestCase
      * @magentoConfigFixture admin_store dev/restrict/allow_ips 192.168.0.2
      */
     public function testSpecificStoreConfig()
+    {
+        $this->_object->expects(
+            $this->at(0)
+        )->method(
+            '_getConfigValue'
+        )->with(
+            'dev/restrict/allow_ips',
+            'admin'
+        )->will(
+            $this->returnValue('192.168.0.1')
+        );
+        $this->_object->expects(
+            $this->at(1)
+        )->method(
+            '_setConfigValue'
+        )->with(
+            'dev/restrict/allow_ips',
+            '192.168.0.2',
+            'admin'
+        );
+        $this->_object->startTest($this);
+
+        $this->_object->expects(
+            $this->once()
+        )->method(
+            '_setConfigValue'
+        )->with(
+            'dev/restrict/allow_ips',
+            '192.168.0.1',
+            'admin'
+        );
+        $this->_object->endTest($this);
+    }
+
+     /**
+     * @magentoConfigFixture default/dev/restrict/allow_ips 192.168.0.2
+     */
+    public function testGlobalStoreConfig()
     {
         $this->_object->expects(
             $this->at(0)
