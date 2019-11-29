@@ -16,7 +16,7 @@ functional_areas:
 
 This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
 
-All calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
+This calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
 
 ### Add a simple product to a cart {#add-simple}
 
@@ -420,6 +420,47 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 ```
 
 {% endcollapsible %}
+
+This calls are performed on behalf of a guest-customer, and there is no need of token.
+
+### Add a simple product to a cart {#add-simple}
+
+**Endpoint:**
+
+`POST <host>/rest/<store_code>/guest-carts/<cartId>/items`
+
+Cart Id is the quoteId recieved on quote creation.
+
+**Headers:**
+
+`Content-Type` `application/json`
+
+**Payload:**
+
+```json
+{
+  "cartItem": {
+    "sku": "WS12-M-Orange",
+    "qty": 1,
+    "quote_id": "5JfSLCdQUP4gwmM4z8u74iuPa0kfkZ5l"
+  }
+}
+```
+**Response:**
+
+```json
+{
+  "item_id": 7,
+  "sku": "WS12-M-Orange",
+  "qty": 1,
+  "name": "Radiant Tee-M-Orange",
+  "product_type": "simple",
+  "quote_id": "27"
+}
+```
+
+Note: The payload and response is same for all products apart from quote id in the payload (Need to give the masked ID)
+
 
 ### Verify this step {#verify-step}
 
