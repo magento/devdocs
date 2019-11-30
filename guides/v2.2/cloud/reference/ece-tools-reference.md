@@ -96,7 +96,7 @@ php ./vendor/bin/ece-tools wizard:ideal-state
 ```
 
 {: .bs-callout-info }
-Run `wizard:ideal-state` on the Cloud environment only. Command execution on the local environment always returns `The configured state is not ideal` error.
+You must run the `wizard:ideal-state` command in the Cloud environment. The command always returns the `The configured state is not ideal` error when run in the local development environment.
 
 Sample output:
 
