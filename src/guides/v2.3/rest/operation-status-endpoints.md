@@ -51,6 +51,17 @@ Field name | Data type | Description
 }
 ```
 
+## Get operations count by bulk uuid and status.
+
+The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/status/:status` endpoint returns amount of operations from the bulk batch in particular status.
+
+**Response:**
+
+```json
+0
+```
+
+
 ## Get the detailed status
 
 The `GET /V1/bulk/:bulkUuid/detailed-status` endpoint returns detailed information about status of a specified operation. It is similar to the `GET /V1/bulk/:bulkUuid/status` endpoint, except that the `operations_list` array also contains the message queue topic name and serialized data for each operation.
