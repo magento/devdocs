@@ -160,10 +160,9 @@ $(mage.apply);
 ```
 
 {:.ref-header}
-Related topic
+Related topics
 
 -  [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 -  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-
-[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-v2.3/performance-best-practices/advanced-js-bundling.html
+-  [JavaScript initialization]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html)
+-  [Advanced JavaScript bundling]({{page.baseurl}}/v2.3/performance-best-practices/advanced-js-bundling.html)
