@@ -59,7 +59,8 @@ The response is the `quoteId`: `4`
 {:.bs-callout .bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
 
-### Create a cart for a guest customer {#create-cart}
+### Create a cart for a guest customer {#create-guest-cart}
+
 To create guest cart there is no need to pass the token in the header.
 
 **Endpoint:**

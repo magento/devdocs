@@ -98,7 +98,7 @@ Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Co
 ```
 {% endcollapsible %}
 
-### Estimate shipping costs for guest customer {#estimate-shipping}
+### Estimate shipping costs for guest customer {#estimate-guest-shipping}
 
 **Endpoint:**
 
@@ -350,7 +350,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 {% endcollapsible %}
 
-### Set shipping and billing information for guest customer{#set-addresses}
+### Set shipping and billing information for guest customer{#set-guest-addresses}
 
 **Endpoint:**
 

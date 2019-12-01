@@ -64,6 +64,19 @@ When you submit payment information, Magento creates an order and sends an order
 
 An `orderID`, such as `3`.
 
+### Send payment information for guest customer{#send-guest-payment}
+
+**Endpoint:**
+
+`POST <host>/rest/<store_code>/V1/guest-carts/<cartId>/payment-information`
+
+**Headers:**
+
+`Content-Type` `application/json`
+
+Note: The payload and response is same as the logged-in customer for sending payment information.
+
+
 ### Review the order as an admin {#review-order}
 
 When you request an order object, the response contains full details about the order, including customer information, payment details, as well as totals and subtotals for the order and each individual item.
@@ -1573,17 +1586,6 @@ Not applicable
 
 {% endcollapsible %}
 
-### Send payment information for guest customer{#send-payment}
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/guest-carts/<cartId>/payment-information`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-`Authorization` `Bearer <customer token>`
 
 
 ### Verify this step {#verify-step}
