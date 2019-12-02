@@ -23,6 +23,9 @@ pages:
         - label: Pro develop and deploy workflow
           url: /cloud/architecture/pro-develop-deploy-workflow.html
 
+        - label: Scaled architecture
+          url: /cloud/architecture/scaled-architecture.html
+
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       children:
