@@ -24,8 +24,8 @@ _algolia_api_key
 # Docs from different repositories #
 ###################################
 
-/mbi/
-/page-builder/
-/page-builder-migration/
-/guides/m1x/
-/mftf/
+/src/mbi/
+/src/page-builder/
+/src/page-builder-migration/
+/src/guides/m1x/
+/src/mftf/
