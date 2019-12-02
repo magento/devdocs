@@ -50,6 +50,28 @@ Create an `blocklist.json` file with the following JSON content:
 }
 ```
 
+## Sample Block By Country Code
+```json
+{
+  "name": "blockbycountrycode",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "5",
+  "content": "if ( geoip.country_code != "US" ) { error 405 "Not allowed";}"
+}
+```
+
+## Sample Block By http.User-Agent
+```json
+{
+  "name": "blockbyuseragent",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "5",
+  "content": "if ( req.http.User-Agent ~ "(UCBrowser|MQQBrowser|LieBaoFast|Mb2345Browser)" ) {error 405 "Not allowed";}"
+}
+```
+
 Review the following values for the code to determine if you need to make changes:
 
 *  `name`: Name for the VCL snippet. For this example, we used the name `blocklist`.
