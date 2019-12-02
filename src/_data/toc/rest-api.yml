@@ -1,0 +1,166 @@
+label: REST API Reference
+pages:
+    - label: Overview
+      url: /rest/bk-rest.html
+
+    - label: Quick reference
+      children:
+
+        - label: REST Endpoints (Swagger)
+          include_versions: ["2.2"]
+          url: https://devdocs.magento.com/swagger/index_22.html
+
+        - label: REST Endpoints (ReDoc)
+          include_versions: ["2.3"]
+          url: /redoc/2.3/
+          versionless: true
+          children:
+
+            - label: Admin REST endpoints
+              url: /redoc/2.3/admin-rest-api.html
+              versionless: true
+
+            - label: Customer REST endpoints
+              url: /redoc/2.3/customer-rest-api.html
+              versionless: true
+
+            - label: Guest REST endpoints
+              url: /redoc/2.3/guest-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Admin REST endpoints
+              url: /redoc/2.3/async-admin-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Customer REST endpoints
+              url: /redoc/2.3/async-customer-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Guest REST endpoints
+              url: /redoc/2.3/async-guest-rest-api.html
+              versionless: true
+
+        - label: List of REST endpoints by module
+          url: /rest/list.html
+
+        - label: List of service names per module
+          url: /rest/rest_endpoints.html
+
+        - label: Generate a local API reference
+          url: /rest/generate-local.html
+
+    - label: Use REST endpoints
+      children:
+        - label: Search using REST
+          url: /rest/performing-searches.html
+
+        - label: Search with the /search endpoint
+          url: /rest/search-endpoint.html
+
+        - label: Retrieve filtered search responses
+          url: /rest/retrieve-filtered-responses.html
+
+        - label: Restricting access to anonymous web APIs
+          url: /rest/anonymous-api-security.html
+
+        - label: Asynchronous web endpoints
+          include_versions: ["2.2", "2.3"]
+          url: /rest/asynchronous-web-endpoints.html
+
+        - label: Bulk endpoints
+          include_versions: ["2.2", "2.3"]
+          url: /rest/bulk-endpoints.html
+
+        - label: Bulk operation status endpoints
+          include_versions: ["2.2", "2.3"]
+          url: /rest/operation-status-endpoints.html
+
+        - label: Search for the status of a bulk operation
+          include_versions: ["2.2", "2.3"]
+          url: /rest/operation-status-search.html
+
+        - label: Parameters in URLs
+          url: /rest/notes.html
+
+    - label: Tutorials
+      url: /rest/tutorials/index.html
+      include_versions: ["2.1", "2.2", "2.3"]
+      children:
+
+      - label: Prerequisite tasks
+        include_versions: ["2.2", "2.3"]
+        children:
+
+          - label: Generate an admin token
+            url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
+
+      - label: Order processing
+        class: tutorial
+        url: /rest/tutorials/orders/order-intro.html
+        include_versions: ["2.1", "2.2", "2.3"]
+
+      - label: Order processing with Inventory Management
+        class: tutorial
+        url: /rest/tutorials/inventory/index.html
+        include_versions: ["2.3"]
+
+      - label: Create configurable products
+        class: tutorial
+        url: /rest/tutorials/configurable-product/config-product-intro.html
+        include_versions: ["2.2", "2.3"]
+
+      - label: Create a configurable product using bulk APIs
+        class: tutorial
+        url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
+        include_versions: ["2.3"]
+
+      - label: Create and manage grouped products
+        class: tutorial
+        url: /rest/tutorials/grouped-product/create-and-manage-grouped-products.html
+
+    - label: Modules
+      children:
+
+        - label: Catalog
+          children:
+
+            - label: General notes
+              url: /rest/modules/catalog.html
+
+            - label: Manage prices for multiple products
+              url: /rest/modules/catalog-pricing.html
+              include_versions: ["2.2", "2.3"]
+        
+        - label: Sales
+          children:
+
+            - label: Refunds
+              url: /rest/modules/sales/refunds.html
+
+        - label: Inventory
+          include_versions: ["2.3"]
+          children:
+
+            - label: Manage sources
+              url: /rest/modules/inventory/manage-sources.html
+
+            - label: Manage stocks
+              url: /rest/modules/inventory/manage-stocks.html
+
+            - label: Link and unlink stocks and sources
+              url: /rest/modules/inventory/link-stocks-sources.html
+
+            - label: Manage source items
+              url: /rest/modules/inventory/manage-source-items.html
+
+            - label: Perform bulk actions
+              url: /rest/modules/inventory/bulk-inventory.html
+
+            - label: Manage low-quantity notifications
+              url: /rest/modules/inventory/manage-low-quantity.html
+
+            - label: Check salable quantities
+              url: /rest/modules/inventory/check-salable-quantity.html
+
+            - label: Manage source selection algorithms
+              url: /rest/modules/inventory/manage-source-selection.html

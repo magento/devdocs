@@ -24,6 +24,6 @@ if $sparse; then
 fi
 
 echo "Checkouting a branch: $branch"
-git checkout "$branch"
+git checkout "$branch" || exit
 
 cd ..
