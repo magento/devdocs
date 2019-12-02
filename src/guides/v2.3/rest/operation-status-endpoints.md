@@ -10,6 +10,7 @@ functional_areas:
 Magento generates a `bulk_uuid` each time it executes an [asynchronous API request]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html). You can track the status of an asynchronous operation with the following endpoints:
 
 *  `GET /V1/bulk/:bulkUuid/status`
+*  `GET /V1/bulk/:bulkUuid/operation-status/:status`
 *  `GET /V1/bulk/:bulkUuid/detailed-status`
 
 ## Get the status summary
@@ -53,7 +54,7 @@ Field name | Data type | Description
 
 ## Get operations count by bulk uuid and status.
 
-The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/status/:status` endpoint returns amount of operations from the bulk batch in particular status.
+The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/operation-status/:status` endpoint returns amount of operations from the bulk batch in particular status.
 
 **Response:**
 
