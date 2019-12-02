@@ -10,7 +10,7 @@ functional_areas:
 The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 {: .bs-callout-warning }
-The `docker:build` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference]({{page.baseurl}}/cloud/docker/docker-quick-reference.md).
+The `docker:build` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
 
 ## Prerequisites
 
@@ -101,6 +101,7 @@ ENABLE_SENDMAIL=true
 [php72]: https://formulae.brew.sh/formula/php@7.2
 [Composer]: https://getcomposer.org
 [Docker]: https://www.docker.com/get-started
+[docker-reference]: {{page.baseurl}}/cloud/docker/docker-quick-reference.html
 [docker-sync]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen]: https://mutagen.io/documentation/introduction/installation
 [prod-mode]: {{page.baseurl}}/cloud/docker/docker-mode-production.html
