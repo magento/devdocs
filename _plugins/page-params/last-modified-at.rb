@@ -24,10 +24,14 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   # Skip pages created by custom generators like 'mrg_pages'
   next if page.kind_of? Jekyll::PageWithoutAFile
 
-  # Read real path of the page. If this is a symlink read it to get path of the real file with content.
-  real_filepath = File.realpath page.path
+  # Add site.source to the page path
+  file_path = File.join(page.site.source, page.path)
+  
+  # Get real path of the page. If this is a symlink read it to get path of the real file with content.
+  real_filepath = File.realpath(file_path)
 
-  dir = File.dirname real_filepath
+  # Get a full path of the directory where the page is stored
+  dir = File.dirname(real_filepath)
 
   # Change directory to the parent directory of the page to read from the corresponding git history.
   Dir.chdir(dir) do
