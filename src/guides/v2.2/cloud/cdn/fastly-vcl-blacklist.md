@@ -50,14 +50,14 @@ Create an `blocklist.json` file with the following JSON content:
 }
 ```
 
-## Sample Block By Country Code
+## Sample Block By Country Code (A two-character ISO 3166-1 country code for the country associated with the IP address.)
 ```json
 {
   "name": "blockbycountrycode",
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( geoip.country_code != "US" ) { error 405 "Not allowed";}"
+  "content": "if ( geoip.country_code != 'US' ) { error 405 'Not allowed';}"
 }
 ```
 
@@ -68,7 +68,7 @@ Create an `blocklist.json` file with the following JSON content:
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( req.http.User-Agent ~ "(UCBrowser|MQQBrowser|LieBaoFast|Mb2345Browser)" ) {error 405 "Not allowed";}"
+  "content": "if ( req.http.User-Agent ~ '(UCBrowser|MQQBrowser|LieBaoFast|Mb2345Browser)' ) {error 405 'Not allowed';}"
 }
 ```
 
