@@ -36,7 +36,7 @@ You will reference the Edge ACL by name in your VCL snippet code.
 ## Create blocklist.json {#vcl}
 
 {:.bs-callout-info}
-This example shows advanced users how to create custom VCL code snippet to configure blocking rules that can be uploaded to the Fastly service using the Fastly API. You can also configure blocking rules from the {{ site.data.var.ee }} Admin UI. See [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) in the Fastly CDN for Magento 2 module documentation.
+This example shows advanced users how to create custom VCL code snippet to configure blocking rules that can be uploaded to the Fastly service using the Fastly API. You can also configure a blocklist or allowlist from the {{ site.data.var.ee }} Admin UI. See [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) in the Fastly CDN for Magento 2 module documentation.
 
 After you define the Edge ACL, you can use it to create the VCL snippet to block access to the IP addresses specified in the ACL. You can use the same VCL snippet in both Staging and Production environments, but you must upload the snippet to each environment separately.
 
