@@ -13,7 +13,7 @@ namespace :update do
   task :mbi do
     puts 'Updating MBI docs:'.magenta
     abort 'Cannot find the "mbi/" directory' unless Dir.exist? 'mbi'
-    Dir.chdir 'mbi' do
+    Dir.chdir 'src/mbi' do
       sh 'git remote -v'
       sh 'git pull'
       sh 'git status -sb'
@@ -24,7 +24,7 @@ namespace :update do
   task :m1 do
     puts 'Updating Magento 1 docs:'.magenta
     abort 'Cannot find the "mbi/" directory' unless Dir.exist? 'guides/m1x'
-    Dir.chdir 'guides/m1x' do
+    Dir.chdir 'src/guides/m1x' do
       sh 'git remote -v'
       sh 'git pull'
       sh 'git status -sb'
@@ -35,7 +35,7 @@ namespace :update do
   task :pb do
     puts 'Updating Page Builder docs:'.magenta
     abort 'Cannot find the "page-builder" directory' unless Dir.exist? 'page-builder'
-    Dir.chdir 'page-builder' do
+    Dir.chdir 'src/page-builder' do
       sh 'git remote -v'
       sh 'git pull'
       sh 'git status -sb'
@@ -46,7 +46,7 @@ namespace :update do
   task :pbm do
     puts 'Updating Page Builder Migration docs'.magenta
     abort 'Cannot find the "page-builder-migration" directory' unless Dir.exist? 'page-builder-migration'
-    Dir.chdir 'page-builder-migration' do
+    Dir.chdir 'src/page-builder-migration' do
       sh 'git remote -v'
       sh 'git pull'
       sh 'git status -sb'
@@ -57,7 +57,7 @@ namespace :update do
   task :mftf do
     puts 'Updating MFTF docs:'.magenta
     abort 'Cannot find the "mftf" directory' unless Dir.exist? 'mftf'
-    Dir.chdir 'mftf' do
+    Dir.chdir 'src/mftf' do
       sh 'git remote -v'
       sh 'git pull'
       sh 'git status -sb'
