@@ -3,32 +3,32 @@ group: testing
 title: Configuration fixture annotation
 ---
 
-To set the Magento configuration values for individual tests and revert them after the test execution, use the `@magentoConfigFixture` annotation.
+To set Magento configuration values for individual tests and revert them after the test execution, use the `@magentoConfigFixture` annotation.
 
 ## Format
 
-```php?start_inline=1
+```php
 /**
  * @magentoConfigFixture [<store_code>_store] <config_path> <config_value>
  */
 ```
 
--  `<store_code>` is a code of the store to be configured.
-  When global scope is required, this needs to be omited and the config path needs to be prefixed with `default/`, see below for an example.
-  To specify the current store, use `current`.
--  `<config_path>` is an XPath to the configuration option.
-  See [configuration reference][] for available options.
+-  `<store_code>` is the code of the store to be configured.
+   When a global scope is required, this should be omitted and the `config path` is prefixed with `default/`. See below for an example.
+   To specify the current store, use `current`.
+-  `<config_path>` is the XPath to the configuration option.
+   See [configuration reference][] for available options.
 -  `<config_value>` is a fixture value for the configuration option.
 
 ## Principles
 
-1. The `@magentoConfigFixture` is available at a test method level only.
-   It is not available on a test case level.
-1. A test can contain several configuration options.
+1. The `@magentoConfigFixture` is available at the test method level only.
+   It is not available on the test case level.
+1. A test may contain several configuration options.
 
 ## Example
 
-```php?start_inline=1
+```php
 <?php
 
 /**
