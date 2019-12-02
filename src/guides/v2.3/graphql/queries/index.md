@@ -135,6 +135,29 @@ Variables are defined separately in JSON:
 
 ## Staging queries {#staging}
 
+Magento GraphQL allows you to use certain queries to return preview information for [staged content](https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html). Staging, a {{site.data.var.ee}} feature, allows merchants to schedule a set of changes to the storefront that run for a prescribed time. These changes, also known as a _campaign_ are defined within the Admin.
+
+A staging query requires two specialized headers to return information about a campaign:
+
+Header name | Description
+--- | ---
+`Authorization Bearer: <authorization_token>` | An admin token.
+`Preview-Version` | A timestamp (seconds since January 1, 1970) that is inside the range of dates of the campaign you are querying.
+
+Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in an active campaign, Magento returns value based on the current storefront settings.
+
+The following queries support staging:
+
+*  `categoryList`
+*  `products`
+
+### Example scenario
+
+Suppose you have created a campaign named **Black Friday Sale 2019** with the following properties using the Luma sample data:
+
+*  You created a subcategory of **Sale** named **Black Friday Sale** in which **Enable Category** field is set to **No**.
+*  You added several products to the **Black Friday Sale** subcategory.
+*  You created a catalog sales rule 
 
 ## Introspection queries
 
