@@ -250,9 +250,9 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 
 ## DNS configuration {#dns}
 
-To enable Fastly caching on your Staging and Production sites, you must make the following changes to your site's DNS configuration:
+To enable Fastly caching on your Staging and Production sites, you must make the following changes to your site DNS configuration:
 
--  Point your subdomains to Fastly's CNAME hostname or Anycast IP addresses
+-  Point your subdomains to the Fastly CNAME hostname or Anycast IP addresses
 -  Submit a support ticket to request validation of your SSL certificate
 -  Change the Magento base URLs
 -  Set all necessary redirects, especially if you are migrating from an existing site
@@ -260,7 +260,7 @@ To enable Fastly caching on your Staging and Production sites, you must make the
 -  Lower the Time-to-Live (TTL) value to refresh DNS information to point customers to the correct Production store
 
 {:.bs-callout-info}
-Subdomains are not available on Staging for Starter plans. You can test your Staging site using the origin URL only.
+On Starter plans, subdomains are not available for Staging sites. You can use only the origin URL to test Staging sites.
 
 We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, you can change the TTL value from 3 days to 10 minutes when you are testing your site. Be advised that shortening the TTL value  adds load to the web server.
 
@@ -277,10 +277,10 @@ The usual subdomain naming convention is:
 <environment>.<your_domain_name>.com
 ```
 
-The subdomain you use to update DNS settings must match the subdomains specified in your *Onboarding Spreadsheet* document.
+The subdomain you use to update DNS settings must match the subdomains specified in the Cloud *Onboarding UI*.
 
 {:.bs-callout-info}
-We highly recommend requesting that the Production subdomain you are using for pre-launch testing (`prod.<your_domain_name>.com`) is added to Fastly, so that you can to test your store on the Production environment with Fastly enabled before going live. This is especially useful if you are migrating and do not want to use the current (live) domain name for testing purposes on Production.
+We highly recommend submitting a request to add the Production subdomain you are using for pre-launch testing (`prod.<your_domain_name>.com`) to Fastly.  After it is added, you can use this domain to test your store on the Production environment with Fastly enabled before going live. This is especially useful if you are migrating and do not want to test on Production using the current (live) domain name.
 
 #### Fastly CNAME hostname
 
@@ -306,18 +306,16 @@ Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.htm
 
 #### Using Staging subdomain with your existing Staging domain
 
-If you are already using the same subdomain for Staging in your previous Magento development site, create a separate DNS record for your Staging subdomain as a CNAME that points to the `prod.magentocloud.map.fastly.net` hostname.
+If you are already using the same subdomain for the Staging site on your previous Magento development site, create a separate DNS record for your Staging subdomain as a CNAME that points to the `prod.magentocloud.map.fastly.net` hostname.
 
-To create a hostname that allows you to connect directly to the cluster and bypass Fastly, point your CNAME record to the `c.<project_ID>.ent.magento.cloud` hostname. Make sure to mention this in your Onboarding Spreadsheet.
+To create a hostname that allows you to connect directly to the cluster and bypass Fastly, point your CNAME record to the `c.<project_ID>.ent.magento.cloud` hostname.
 
-#### Domain names in your onboarding spreadsheet
+#### Domain names in the Cloud Onboarding UI
 
-You can find DNS information in your Onboarding Spreadsheet on the _DNSSSLCDN_ tab. The tab includes the following info:
+You can find domain provisioning and host information in your Onboarding UI on the Project Details page. Work with your Technical Account Manager to ensure that this information is correct, and to add or remove any required domains:
 
--  Your requested domain names, Fastly and origin (with `*.c.<your_client_id>.ent.magento.cloud`)
--  All Fastly Anycast IP addresses and the CNAME alias
 
-If you do not have access to your Onboarding Spreadsheet, ask your {{site.data.var.ece}} account owner to grant you access to the spreadsheet.
+If you do not have access to the Onboarding UI, ask your {{site.data.var.ece}} account owner to grant access.
 
 ### TLS and Fastly {#fastly-tls}
 
@@ -337,7 +335,7 @@ prod.<your_domain_name>.com
 You must submit a support ticket requesting validation of your SSL certificate once you add the TXT record to your DNS settings.
 
 {:.bs-callout-tip}
-If you have successfully validated the SSL certificate for your Staging domain, you can use the same certificate for your Production domain.
+If you have successfully validated the SSL certificate for your Staging site domain, you can use the same certificate for your Production site domain.
 
 ## Upgrade the Fastly module {#upgrade}
 
