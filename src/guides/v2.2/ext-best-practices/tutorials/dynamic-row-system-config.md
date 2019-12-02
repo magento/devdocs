@@ -171,6 +171,18 @@ class TaxColumn extends Select
 
 This block sets values for the drop-down option.
 
+## Step 4: Clean cache
+
+Clean the Magento cache by running the below command.
+
+```bash
+php bin/magento cache:clean
+```
+Or,by keeping performance in mind we can use the below command also.
+
+```bash
+php bin/magento cache:clean config
+```
 ## Result
 
 The result is a new dynamic system row field in the Admin panel.
