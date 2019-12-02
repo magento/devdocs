@@ -49,35 +49,12 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 **Payload**
 
-Add the `company_attributes` code block to the payload that is required to create a standard customer.
-
-```json
-"extension_attributes": {
-   "company_attributes": {
-   "company_id": 2,
-   "status": 1,
-   "job_title": "Sales Rep",
-   "telephone": "512-555-3322"
-   }
-}
-```
-
-Full example:
-
 ```json
 {
   "customer": {
     "email": "mshaw@example.com",
     "firstname": "Melanie",
-    "lastname": "Shaw",
-    "extension_attributes": {
-      "company_attributes": {
-        "company_id": 2,
-        "status": 1,
-        "job_title": "Sales Rep",
-        "telephone": "512-555-3322"
-      }
-    }
+    "lastname": "Shaw"
   }
 }
 ```
@@ -101,10 +78,7 @@ Full example:
   "extension_attributes": {
     "company_attributes": {
       "customer_id": 13,
-      "company_id": 2,
-      "job_title": "Sales Rep",
-      "status": 1,
-      "telephone": "512-555-3322"
+      "company_id": 0
     }
   }
 }
@@ -131,11 +105,13 @@ If you change the `status` to inactive, the account is locked. If the company us
     "lastname": "Shaw",
     "website_id": 1,
     "extension_attributes": {
-      "company_attributes": {
-        "company_id": 2,
-        "status": 0
-        }
-      }
+       "company_attributes": {
+       "company_id": 2,
+       "status": 1,
+       "job_title": "Sales Rep",
+       "telephone": "512-555-3322"
+       }
+    }
   }
 }
 ```
@@ -160,8 +136,11 @@ If you change the `status` to inactive, the account is locked. If the company us
     "company_attributes": {
       "customer_id": 13,
       "company_id": 2,
-      "status": 0
-    }
+      "status": 0,
+      "job_title": "Sales Rep",
+      "telephone": "512-555-3322"
+    },
+    "is_subscribed": false
   }
 }
 ```
