@@ -153,10 +153,10 @@ The following queries support staging:
 
 ### Example scenario
 
-Suppose you have created a campaign named **Black Friday Sale 2019** with the following properties using the Luma sample data:
+Suppose you have created a campaign named **End of Year Sale** with the following properties using the Luma sample data:
 
-*  You created a subcategory of **Sale** named **Black Friday Sale** in which **Enable Category** field is set to **No**.
-*  You added several products to the **Black Friday Sale** subcategory.
+*  You created a subcategory of **Sale** named **End of Year Sale** in which **Enable Category** field is set to **No**.
+*  You added several products to the **End of Year Sale** subcategory.
 *  You created a catalog sales rule 
 
 ## Introspection queries
