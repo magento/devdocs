@@ -178,11 +178,13 @@ Clean the Magento cache by running the below command.
 ```bash
 php bin/magento cache:clean
 ```
+
 Or,by keeping performance in mind we can use the below command also.
 
 ```bash
 php bin/magento cache:clean config
 ```
+
 ## Result
 
 The result is a new dynamic system row field in the Admin panel.
