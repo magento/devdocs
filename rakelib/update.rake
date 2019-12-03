@@ -12,56 +12,31 @@ namespace :update do
   desc 'Update MBI docs'
   task :mbi do
     puts 'Updating MBI docs:'.magenta
-    abort 'Cannot find the "mbi/" directory' unless Dir.exist? 'mbi'
-    Dir.chdir 'src/mbi' do
-      sh 'git remote -v'
-      sh 'git pull'
-      sh 'git status -sb'
-    end
+    update_dir 'src/mbi'
   end
 
   desc 'Update Magento 1 docs'
   task :m1 do
     puts 'Updating Magento 1 docs:'.magenta
-    abort 'Cannot find the "mbi/" directory' unless Dir.exist? 'guides/m1x'
-    Dir.chdir 'src/guides/m1x' do
-      sh 'git remote -v'
-      sh 'git pull'
-      sh 'git status -sb'
-    end
+    update_dir 'src/guides/m1x'
   end
 
   desc 'Update Page Builder docs'
   task :pb do
     puts 'Updating Page Builder docs:'.magenta
-    abort 'Cannot find the "page-builder" directory' unless Dir.exist? 'page-builder'
-    Dir.chdir 'src/page-builder' do
-      sh 'git remote -v'
-      sh 'git pull'
-      sh 'git status -sb'
-    end
+    update_dir 'src/page-builder'
   end
 
   desc 'Update Page Builder Migration docs'
   task :pbm do
     puts 'Updating Page Builder Migration docs'.magenta
-    abort 'Cannot find the "page-builder-migration" directory' unless Dir.exist? 'page-builder-migration'
-    Dir.chdir 'src/page-builder-migration' do
-      sh 'git remote -v'
-      sh 'git pull'
-      sh 'git status -sb'
-    end
+    update_dir 'src/page-builder-migration'
   end
 
   desc 'Update MFTF docs'
   task :mftf do
     puts 'Updating MFTF docs:'.magenta
-    abort 'Cannot find the "mftf" directory' unless Dir.exist? 'mftf'
-    Dir.chdir 'src/mftf' do
-      sh 'git remote -v'
-      sh 'git pull'
-      sh 'git status -sb'
-    end
+    update_dir 'src/mftf'
   end
 
   desc 'Update devdocs master'
@@ -78,4 +53,13 @@ namespace :update do
 
   desc 'Update subrepositories only'
   task subrepos: %w[m1 mbi pb pbm mftf]
+end
+
+def update_dir(dir)
+  abort "Cannot find the #{dir} directory. You can run 'rake init' to create it and rerun 'rake update:all' again.".red unless Dir.exist? dir
+  Dir.chdir dir do
+    sh 'git remote -v'
+    sh 'git pull'
+    sh 'git status -sb'
+  end
 end
