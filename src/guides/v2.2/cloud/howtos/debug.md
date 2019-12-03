@@ -70,7 +70,7 @@ You can enable Xdebug directly to all Starter environments and Pro Integration e
                /usr/sbin/php-fpm7.2 -y /tmp/php-fpm.conf
    ```
 
-    {: .bs-callout-info}
+     {:.bs-callout-info}
     The actual path to the `php-fpm` configuration file can be different than the one in the example. For the correct path, open an SSH connection to the Cloud environment,  and check the value of the `/etc/alternatives/php` symlink.
 
 1. Save your changes to `.magento.app.yaml` and exit the text editor.
@@ -281,7 +281,7 @@ To start debugging, use the following commands with the environment URL:
    ?XDEBUG_SESSION_STOP=KEY
    ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The `XDEBUG_SESSION_START` passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}

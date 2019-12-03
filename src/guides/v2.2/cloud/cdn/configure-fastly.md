@@ -50,7 +50,7 @@ To view your Fastly credentials:
 
    -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
@@ -90,7 +90,7 @@ To enable Fastly CDN caching in Staging and Production:
 
    ![Fastly credentials Admin UI]({{ site.baseurl }}/common/images/cloud/cloud-fastly-credentials-admin-ui.png){:width="650px"}
 
-   {: .bs-callout-info}
+    {:.bs-callout-info}
    Ignore the link to create a Fastly API token. Use the [Fastly credentials (Service ID and API token) that Magento](#cloud-fastly-creds) provided.
 
 1. Click **Test credentials**.
@@ -101,14 +101,14 @@ To enable Fastly CDN caching in Staging and Production:
 
    If the test fails again, submit a support ticket or contact your Technical Account Manager. For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ page.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
 
 ### Upload VCL to Fastly {#upload-vcl-snippets}
 
 After you enable the Fastly module, upload the default [VCL code](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets) to the Fastly servers.  This code provides a series of VCL snippets that specify the configuration settings to enable caching and other Fastly CDN services for your {{ site.data.var.ece }}.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Fastly caching services do not work until you complete the initial upload of the Fastly VCL code for the {{ site.var.data.ee }} Staging and Production sites.
 
 {:.procedure}
@@ -122,7 +122,7 @@ To upload the Fastly VCL:
 
 ## Custom configuration
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Before adding [custom](#custom-configuration) or advanced configuration settings like [updating purge settings](#purge) and configuring [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html)(Fastly IO), [verify]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html) that the Fastly caching service works with the default configuration.
 
 Configure the following features as needed:
@@ -139,7 +139,7 @@ _Origin shielding_ routes all requests for your store to a specific Point of Pre
 
 The default Fastly VCL code specifies default values for Origin shielding and timeouts for your {{ site.data.var.ece }} sites. We recommend using the default values. In some case, you might need to modify the default values. For example, if you are getting a lot of time to first byte (TTFB) errors, you might need to adjust the _first byte timeout_ value.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you need to integrate additional backends into your site such as a backend to serve blog content from a [Wordpress]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html) site, you must customize your Fastly service configuration to add the backend and handle the redirects from your {{ site.data.var.ee }} store to the Wordpress backend. For details, see [Fastly Edge Modules - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in the Fastly module documentation.
 
 {:.procedure}
@@ -314,5 +314,5 @@ To upgrade the Fastly module:
 
 After you verify Fastly services on the Staging site, repeat the upgrade process in the Production environment.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 If you have added a custom VCL snippet that has the same name as a default snippet, you may need to verify and update those snippets after you upgrade the Fastly module. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).

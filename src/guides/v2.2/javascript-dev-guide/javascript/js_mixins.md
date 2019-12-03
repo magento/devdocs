@@ -22,7 +22,7 @@ The following table maps a directory location to the [application area] a mixin 
 | `view/frontend`  | Storefront                                                           |
 | `view/adminhtml` | Admin panel                                                          |
 | `view/base`      | All areas (unless a specific `frontend` or `adminhtml` entry exists) |
-{:.style="table-layout: auto;"}
+{:style="table-layout:auto"}
 
 ## Mixin files
 

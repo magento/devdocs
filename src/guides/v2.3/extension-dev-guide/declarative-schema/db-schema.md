@@ -52,7 +52,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
@@ -192,7 +192,7 @@ Attribute | Description
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To keep entity identifiers as immutable values, the declarative schema does not support `ON UPDATE` action for `constraint`.
 
 Example:
@@ -335,7 +335,7 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
-{: .bs-callout-info }
+ {:.bs-callout-info}
 It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
 ### Change the column type
@@ -432,7 +432,7 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
 </schema>
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
 ### Recreate a foreign key

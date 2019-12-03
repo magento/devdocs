@@ -98,7 +98,7 @@ bin/magento setup:static-content:deploy
 
 The tool pre-processes (including compilation) and publishes the static view files.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`. Read more about the command in the [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) section.
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
@@ -136,7 +136,7 @@ The client-side compilation flow is similar to [server-side](#server-side). The 
 -  [symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
 -  symlinks to all other \`.less\` files imported recursively by the `@magento_import` and `@import` directives
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the `@import` directive without file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}

@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-{::options syntax_highlighter="rouge" /}
+
 
 You can have one production system. All of the following must be true:
 

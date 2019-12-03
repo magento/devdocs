@@ -221,7 +221,7 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The `{%raw%}{% collapsible %}{%endraw%}` tag must be preceded by a blank line.
 
 *Example:*

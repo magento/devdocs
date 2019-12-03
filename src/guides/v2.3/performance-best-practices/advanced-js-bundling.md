@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento's **[`baler`][]** module is now open for _Alpha testing_.
 This is a custom AMD module bundler and preloader for Magento 2.
 It is designed to provide optimal bundles and be less error-prone than the built-in Magento bundler.
@@ -486,7 +486,7 @@ require.config({
 }
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, as the calls are executed in the order they appear.
 
 #### 6. Test the results

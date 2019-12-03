@@ -33,7 +33,7 @@ To transfer the database dump and files to {{site.data.var.ece}}, you must know 
 magento-cloud environment:ssh --pipe
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) and [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 
 ### Database credentials {#db-creds}
@@ -71,7 +71,7 @@ To find {{site.data.var.ece}} database access information:
       }
    ]
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 

@@ -4,7 +4,7 @@ This topic discusses an example of securing communication between your web serve
 
 (An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to *TLS*.)
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 Unless otherwise noted, all commands in this topic must be entered as a user with `root` privileges.
 
 ### Recommendations

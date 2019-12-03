@@ -13,7 +13,7 @@ Topics and areas include:
 *  Local environment options
 *  And much more
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Magento does not officially endorse these best practices.
 They are available in DevDocs because the content has been well received within the Magento community.
 
