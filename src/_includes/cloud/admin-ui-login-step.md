@@ -1,0 +1,1 @@
+1. [Log in]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) to the Magento Admin UI.
