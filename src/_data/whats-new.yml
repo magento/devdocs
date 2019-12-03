@@ -3414,7 +3414,7 @@ entries:
 - description: Revised and added new content for Magento Commerce (Cloud) for custom
     Fastly VCLs including [Custom Fastly VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
     [Custom whitelist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-whitelist.html),
-    [Custom blacklist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html),
+    [Custom VCL for blocking](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blocking.html),
     [Custom extend Admin timeout VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
     [Custom redirect to Wordpress VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
     and Custom block bad referrer VCL.

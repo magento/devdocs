@@ -65,7 +65,10 @@ Checking database service mysql...
 
 ## Allocating disk space
 
-Two configuration files control the allocation of disk space in the Integration environment: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
+Two configuration files control the allocation of disk space in the Cloud environments: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
+
+{:.bs-callout-info}
+You can change disk space allocation on Pro Integration and Starter enviroments only. You must submit a Magento support ticket to change disk space allocation on Pro Production and Staging environments.
 
 ### Application disk space
 
