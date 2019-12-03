@@ -1,0 +1,407 @@
+label: Magento Commerce Cloud
+project-webint-basiclabel: Magento Commerce Cloud Guide
+pages:
+    - label: Overview
+      url: /cloud/bk-cloud.html
+      children:
+        - label: Onboarding tasks
+          url: /cloud/onboarding/onboarding-tasks.html
+          exclude_versions: ["2.0"]
+
+    - label: Architecture
+      url: /cloud/architecture/cloud-architecture.html
+      children:
+        - label: Starter architecture
+          url: /cloud/basic-information/starter-architecture.html
+
+        - label: Starter develop and deploy workflow
+          url: /cloud/basic-information/starter-develop-deploy-workflow.html
+
+        - label: Pro architecture
+          url: /cloud/architecture/pro-architecture.html
+
+        - label: Pro develop and deploy workflow
+          url: /cloud/architecture/pro-develop-deploy-workflow.html
+
+    - label: Technologies and requirements
+      url: /cloud/requirements/cloud-requirements.html
+      children:
+        - label: Composer
+          url: /cloud/reference/cloud-composer.html
+
+        - label: Magento Cloud CLI
+          url: /cloud/reference/cli-ref-topic.html
+
+        -  label: ece-tools package
+           url: /cloud/reference/ece-tools-reference.html
+
+        - label: Git
+          url: /cloud/reference/git-integration.html
+
+        - label: SSH and sFTP
+          url: /cloud/env/environments-ssh.html
+
+        - label: New Relic
+          url: /cloud/project/new-relic.html
+
+        - label: Blackfire.io
+          url: /cloud/project/project-integrate-blackfire.html
+
+        - label: SendGrid
+          url: /cloud/project/sendgrid.html
+          exclude_versions: ["2.0"]
+
+    - label: Local development setup
+      url: /cloud/setup/first-time-setup.html
+      children:
+        - label: Prepare for manual setup
+          url: /cloud/before/before-workspace.html
+          children:
+            - label: Install Magento prerequisites
+              url: /cloud/before/before-workspace-magento-prereqs.html
+
+            - label: Enable SSH keys
+              url: /cloud/before/before-workspace-ssh.html
+
+            - label: Set up the Magento file system owner
+              url: /cloud/before/before-workspace-file-sys-owner.html
+
+            - label: Clone and branch the project
+              url: /cloud/before/before-setup-env-2_clone.html
+
+            - label: Install Magento
+              url: /cloud/before/before-setup-env-install.html
+
+            - label: First time deployment
+              url: /cloud/setup/first-time-deploy.html
+
+        - label: Optional - Configure Xdebug
+          url: /cloud/howtos/debug.html
+
+        - label: Optional - Install sample data
+          url: /cloud/howtos/sample-data.html
+
+    - label: Docker development
+      url: /cloud/docker/docker-development.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Launch Docker
+          url: /cloud/docker/docker-config.html
+
+        - label: Configure Xdebug for Docker
+          url: /cloud/docker/docker-development-debug.html
+
+        - label: Connect to the database
+          url: /cloud/docker/docker-database.html
+
+        - label: Functional testing in Docker
+          url: /cloud/docker/docker-development-testing.html
+
+        - label: Docker quick reference
+          url: /cloud/docker/docker-quick-reference.html
+
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
+
+        - label: Health notifications
+          url: /cloud/integrations/health-notifications.html
+
+    - label: Import existing code into a project
+      url: /cloud/setup/first-time-setup-import-first-steps.html
+      children:
+        - label: Prepare your existing Magento Commerce system
+          url: /cloud/setup/first-time-setup-import-prepare.html
+
+        - label: Import Magento Commerce code
+          url: /cloud/setup/first-time-setup-import-import.html
+
+    - label: Configure your store
+      url: /cloud/configure/configuration-overview.html
+      children:
+        - label: Best practices for store configuration
+          url: /cloud/configure/configure-best-practices.html
+
+        - label: Set up PayPal
+          url: /cloud/live/paypal-onboarding.html
+
+        - label: Set up Magento B2B
+          url: /cloud/configure/setup-b2b.html
+          include_versions: ["2.2","2.3"]
+
+        - label: Set up cron jobs
+          url: /cloud/configure/setup-cron-jobs.html
+
+        - label: Set up multiple Cloud websites or stores
+          url: /cloud/project/project-multi-sites.html
+
+        - label: Install, manage, and upgrade modules
+          url: /cloud/howtos/install-components.html
+
+        - label: Install a theme
+          url: /cloud/howtos/custom-theme.html
+
+        - label: Import URL Rewrites
+          url: /cloud/configure/import-url-rewrites.html
+          include_versions: ["2.2"]
+
+    - label: Configure Fastly services
+      url: /cloud/cdn/cloud-fastly.html
+      children:
+        - label: Set up Fastly
+          url: /cloud/cdn/configure-fastly.html
+          children:
+            - label: Customize error pages
+              url: /cloud/cdn/cloud-fastly-custom-response.html
+
+        - label: Web Application Firewall
+          url: /cloud/cdn/fastly-waf-service.html
+
+        - label: Image Optimization
+          url: /cloud/cdn/fastly-image-optimization.html
+
+        - label: Custom VCL snippets
+          url: /cloud/cdn/cloud-vcl-custom-snippets.html
+          exclude_versions: ["2.0"]
+
+          children:
+            - label: Reroute requests to a CMS backend
+              url: /cloud/cdn/fastly-vcl-wordpress.html
+
+            - label: Block referral spam
+              url: /cloud/cdn/fastly-vcl-badreferer.html
+
+            - label: Secure access to the Magento Admin UI
+              url: /cloud/cdn/fastly-vcl-whitelist.html
+
+            - label: Custom VCL for blocking
+              url: /cloud/cdn/fastly-vcl-blocking.html
+
+        - label: Fastly troubleshooting
+          url: /cloud/cdn/trouble-fastly.html
+
+    - label: Configure environments
+      url: /cloud/env/environments.html
+      children:
+        - label: Application
+          url: /cloud/project/project-conf-files_magento-app.html
+          children:
+            - label: Set cache for static files
+              url: /cloud/project/set-cache.html
+
+        - label: Build and deploy
+          url: /cloud/project/magento-env-yaml.html
+
+          children:
+            - label: Set up notifications
+              url: /cloud/env/setup-notifications.html
+
+            - label: Logging handlers
+              url: /cloud/env/log-handlers.html
+
+        - label: Environment variables
+          url: /cloud/env/variables-intro.html
+          children:
+            - label: ADMIN variables
+              url: /cloud/env/environment-vars_magento.html
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+    
+            - label: Build variables
+              url: /cloud/env/variables-build.html
+    
+            - label: Cloud variables
+              url: /cloud/env/variables-cloud.html
+              include_versions: ["2.1","2.2","2.3"]
+
+            - label: Deploy variables
+              url: /cloud/env/variables-deploy.html
+
+            - label: Post-deploy variables
+              url: /cloud/env/variables-post-deploy.html
+    
+            - label: Working with variables
+              url: /cloud/env/working-with-variables.html
+    
+        - label: Routes
+          url: /cloud/project/project-conf-files_routes.html
+          children:
+            - label: Caching
+              url: /cloud/project/project-routes-more-cache.html
+
+            - label: Redirects
+              url: /cloud/project/project-routes-more-redir.html
+
+            - label: Server side includes
+              url: /cloud/project/project-routes-more-ssi.html
+
+        - label: Services
+          url: /cloud/project/project-conf-files_services.html
+          children:
+            - label: Set up MySQL service
+              url: /cloud/project/project-conf-files_services-mysql.html
+
+            - label: Set up Redis service
+              url: /cloud/project/project-conf-files_services-redis.html
+
+            - label: Set up Elasticsearch service
+              url: /cloud/project/project-conf-files_services-elastic.html
+    
+            - label: Set up RabbitMQ service
+              url: /cloud/project/project-conf-files_services-rabbit.html
+
+        - label: Restore an environment
+          url: /cloud/env/restore-environment.html
+
+    - label: Configuration management for store settings
+      url: /cloud/live/sens-data-over.html
+      include_versions: [2.2","2.3"]
+      children:
+        - label: Example of managing system-specific settings
+          url: /cloud/live/sens-data-initial.html
+
+    - label: Manage your project
+      url: /cloud/project/projects.html
+      children:
+
+        - label: Configure your project
+          url: /cloud/project/project-webint-basic.html
+
+        - label: Project structure
+          url: /cloud/project/project-start.html
+
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+
+        - label: Create and manage users
+          url: /cloud/project/user-admin.html
+
+        - label: Manage branches with the Interface
+          url: /cloud/project/project-webint-branch.html
+
+        - label: Manage branches with the CLI
+          url: /cloud/env/environments-start.html
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
+
+        - label: Monitor performance
+          url: /cloud/project/monitor-performance.html
+
+        - label: Snapshots and backup management
+          url: /cloud/project/project-webint-snap.html
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Zero downtime deployment
+          url: /cloud/deploy/reduce-downtime.html
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
+
+    - label: Deploy your store
+      url: /cloud/live/stage-prod-live.html
+      children:
+        - label: Deployment process
+          url: /cloud/reference/discover-deploy.html
+
+        - label: Continuous deployment
+          url: /cloud/deploy/continuous-deployment.html
+
+        - label: Protective block
+          url: /cloud/live/live-prot.html
+
+        - label: Build and deploy on local
+          url: /cloud/live/live-sanity-check.html
+
+        - label: Prepare to deploy to Staging and Production
+          url: /cloud/live/stage-prod-migrate-prereq.html
+
+        - label: Deploy code and migrate static files and data
+          url: /cloud/live/stage-prod-migrate.html
+
+        - label: Test deployment
+          url: /cloud/live/stage-prod-test.html
+
+    - label: Go live and launch
+      url: /cloud/live/live.html
+      children:
+        - label: Go live checklist
+          url: /cloud/live/go-live-checklist.html
+
+        - label: Launch steps
+          url: /cloud/live/launch-steps.html
+
+    - label: Troubleshooting
+      url: /cloud/trouble/trouble.html
+      children:
+        - label: Troubleshoot deployment
+          url: /cloud/trouble/troubleshoot-deployment.html
+
+        - label: Incorrect credentials
+          url: /cloud/trouble/trouble_ce-creds.html
+
+        - label: Resolve issues with a new project
+          url: /cloud/trouble/trouble_proj-startover.html
+
+        - label: Component deployment failure
+          url: /cloud/trouble/trouble_comp-deploy-fail.html
+
+        - label: Reset cron jobs
+          url: /cloud/trouble/reset-cron-jobs.html
+
+        - label: Resolve issues with encryption key
+          url: /cloud/trouble/trouble-crypt-key-variable.html
+
+        - label: Resolve issues with HTML minification
+          url: /cloud/trouble/trouble-error-html-minification.html
+
+        - label: Resolve issues with Google Analytics during deployment
+          url: /cloud/trouble/trouble-google-analytics-deploy.html
+
+        - label: Restore configuration files
+          url: /cloud/trouble/restore-configuration-files.html
+
+        - label: Site availability
+          url: /cloud/trouble/site-availability.html
+
+        - label: Add site map and search engine robots
+          url: /cloud/trouble/robots-sitemap.html
+
+        - label: Theme troubleshooting
+          url: /cloud/trouble/theme-troubleshooting.html
+
+    - label: Upgrades and patches
+      url: /cloud/project/project-upgrade-parent.html
+      children:
+        - label: Upgrade to use ece-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+
+        - label: Update ece-tools version
+          url: /cloud/project/ece-tools-update.html
+
+        - label: Apply custom patches
+          url: /cloud/project/project-patch.html
+
+        - label: Upgrade Magento version
+          url: /cloud/project/project-upgrade.html
+
+    - label: Release notes
+      url: /cloud/release-notes/cloud-tools.html

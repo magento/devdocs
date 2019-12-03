@@ -1,7 +1,7 @@
 namespace :build do
 
   desc 'Build the site for production'
-  task :prod do
+  task prod: %w[init] do
     print 'Building the site for production: $ '.magenta
     sh 'bin/jekyll',
           'build',
@@ -16,7 +16,7 @@ namespace :build do
     print 'Building the site for staging: $ '.magenta
     sh 'bin/jekyll',
           'build',
-            '--baseurl=/${BUILD_NUMBER}',
+            "--baseurl=/#{ENV['BUILD_NUMBER']}",
             '--config=_config.yml,_config.stage.yml',
             '--verbose',
             '--trace',
