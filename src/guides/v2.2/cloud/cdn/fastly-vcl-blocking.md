@@ -55,12 +55,12 @@ Create a `blocklist.json` file with the following VCL code in JSON format:
 Review the following parameter values and update your code snippet if necessary:
 
 -  `name`: Name for the VCL snippet. For this example, we used the name `blocklist`.
--  `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for blocked IP addresses. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
--  `type`: For this VCL, we use `recv`, which places it in the `vcl_recv` subroutine, below the boilerplate VCL and above any objects.
+-  `priority`: Determines the VCL snippet call order. Set the priority to 5 to immediately run and check for blocked IP addresses. This priority runs before any of the uploaded and default Magento VCL snippets (`magentomodule_`) that have a priority of 50.
+-  `type`: Specifies the type of VCL snippet that determines the location of the snippet in the generated VCL code. In this example,  we use `recv`, which inserts the VCL code in the `vcl_recv` subroutine, below the boilerplate VCL and above any objects. See the [Fastly VCL snippet reference](https://docs.fastly.com/api/config#api-section-snippet) for the list of snippet types.
 -  `content`: The snippet of VCL code to run, which checks the client IP address. If the IP is in the Edge ACL, it is blocked from access with a `403 Forbidden` error for the entire website. All other client IP addresses are allowed access.
 
 {:.bs-callout .bs-callout-info}
-The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+The default VCL snippets include a prepended name of `magentomodule_` with a priority of 50.  **Do not use the `magentomodule_` name** for your custom VCL Snippets. You must also set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Lower priority numbers execute first.
 
 ## Finish adding the VCL {#complete}
 
@@ -68,9 +68,9 @@ After saving the VCL snippet, add the VCL snippet to the Fastly service configur
 
 ## Additional VCL examples for blocking requests
 
-The following additional examples show the VCL code to block requests without using an ACL list.
+The following examples show how to block requests using inline condition statements instead of an ACL list.
 
-**VCL code sample: Block by Country Code:**
+### VCL code sample: Block by country code
 
 This example uses the two-character ISO 3166-1 country code for the country associated with the IP address.
 
@@ -85,9 +85,9 @@ This example uses the two-character ISO 3166-1 country code for the country asso
 ```
 
 {:.bs-callout-info}
-You can also configure blocking by country code or a list of country codes from the {{ site.data.var.ece }} Admin UI. See [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md).
+Instead of using a custom VCL snippet, you can use the Fastly [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) feature in the {{ site.data.var.ece }} Admin UI to configure blocking by country code or a list of country codes.
 
-**VCL code sample: block by HTTP User-Agent request header:**
+### VCL code sample: Block by HTTP User-Agent request header
 
 ```json
 {
