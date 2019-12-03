@@ -2164,7 +2164,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Shipping
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+<div class="bs-callout-info" id="info" markdown="1">
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
