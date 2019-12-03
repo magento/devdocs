@@ -30,7 +30,7 @@ namespace :multirepo do
     branch = ENV['branch']
     filter = ENV['filter']
 
-    abort 'Provide a directory name for the multirepo docs. Example: dir=mftf' unless dir
+    abort 'Provide a directory name for the multirepo docs. Example: dir=src/mftf' unless dir
     abort "'#{dir}' directory already exists" if Dir.exist? dir
     abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git' unless repo
     abort 'Provide a branch name for the multirepo docs. Example: branch=master' unless branch
