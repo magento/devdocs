@@ -52,16 +52,16 @@ Field name | Data type | Description
 }
 ```
 
-## Get operations count by bulk uuid and status.
+## Get operations count by bulk uuid and status
 
 The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/operation-status/:status` endpoint returns the number of operations from the bulk batch that have the specified status.
 
 Status | Description
 --- | ---
-`1` | Complete <br/>
-`2` | The operation failed, but you can try to perform it again<br/>
-`3` | The operation failed. You must change something to retry it.<br/>
-`4` | Open<br/>
+`1` | Complete
+`2` | The operation failed, but you can try to perform it again.
+`3` | The operation failed. You must change something to retry it.
+`4` | Open
 `5` | Rejected
 
 **Response:**
@@ -69,7 +69,6 @@ Status | Description
 ```json
 0
 ```
-
 
 ## Get the detailed status
 
