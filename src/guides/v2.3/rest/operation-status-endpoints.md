@@ -54,7 +54,7 @@ Field name | Data type | Description
 
 ## Get operations count by bulk uuid and status.
 
-The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/operation-status/:status` endpoint returns amount of operations from the bulk batch in particular status.
+The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/operation-status/:status` endpoint returns the number of operations from the bulk batch that have the specified status.
 
 **Response:**
 
