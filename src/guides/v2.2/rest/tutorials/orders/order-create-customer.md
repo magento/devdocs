@@ -27,8 +27,6 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 ### Create a customer account
 
-Creating a customer account requires [admin](https://glossary.magento.com/admin) permissions.
-
 {:.bs-callout .bs-callout-info}
 This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
 
@@ -39,8 +37,6 @@ This example shows a simplified way of creating a customer account. Typically, y
 **Headers:**
 
 `Content-Type` `application/json`
-
-`Authorization` `Bearer <admin token>`
 
 **Payload:**
 
@@ -160,5 +156,5 @@ Magento returns the customer's access token. This token must be specified in the
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma [website](https://glossary.magento.com/website) using the email `jdoe@example.com` and password `Password1`.
-1. Click the account name (Jane) in the upper right corner and select **My Account**.
-1. Click **Address Book** to view the default billing and shipping addresses.
+2. Click the account name (Jane) in the upper right corner and select **My Account**.
+3. Click **Address Book** to view the default billing and shipping addresses.
