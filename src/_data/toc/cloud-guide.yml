@@ -301,6 +301,9 @@ pages:
         - label: Cloud deployment process
           url: /cloud/deploy/cloud-deployment-process.html
 
+        - label: Scenario based deployment
+          url: /cloud/deploy/scenario-based-deployment.html
+
         - label: Zero downtime deployment
           url: /cloud/deploy/reduce-downtime.html
 
@@ -309,7 +312,6 @@ pages:
 
         - label: Smart wizards
           url: /cloud/deploy/smart-wizards.html
-
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
       children:
