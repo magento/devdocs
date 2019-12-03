@@ -13,7 +13,7 @@ namespace :check do
     system "bin/image_optim --no-pngout --no-svgo --recursive #{path}"
   end
 
-  desc 'Check Markdown syntax in modified files or in a particular file or directory by path (e.g. path=mftf)'
+  desc 'Check Markdown syntax in modified files or in a particular file or directory by path (e.g. path=src/mftf)'
   task :mdl do
     puts 'Running Markdown linter ...'.magenta
 
