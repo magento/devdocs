@@ -15,11 +15,16 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   # Skip redirects
   next if page.name == 'redirect.html'
 
-  dir = File.dirname page.path
+  dir = File.join(
+    page.site.source,
+    File.dirname(page.path)
+  )
+  
   filename = File.basename page.path
 
   # Change to the parent directory of the page and read full file path
   # from git index.
-  page.data['github_path'] =
-    `cd #{dir} && git ls-files --full-name #{filename}`.strip
+  Dir.chdir(dir) do
+    page.data['github_path'] = `git ls-files --full-name #{filename}`.strip
+  end
 end
