@@ -9,7 +9,7 @@ functional_areas:
 
 {:.bs-callout-warning}
 Magento 2.3.4 restricts the way that custom variables can be used within email templates.
-See [Migrating custom email templates](template-email-migration.md) for more information.
+See [Migrating custom email templates](template-email-migration.html) for more information.
 
 Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html).
 
@@ -66,7 +66,7 @@ You can customize header and footer templates using either the [theme](#customiz
 
 {:.bs-callout-warning}
 Custom variables used within email templates in Magento 2.3.4+ must be written in 'strict mode'.
-See [Migrating custom email templates](template-email-migration.md) for more information.
+See [Migrating custom email templates](template-email-migration.html) for more information.
 
 To add the store and sales related information to a template, use system variables.
 
