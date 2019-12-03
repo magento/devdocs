@@ -56,6 +56,14 @@ Field name | Data type | Description
 
 The `GET <host>/rest/<store_code>/V1/bulk/:bulkUuid/operation-status/:status` endpoint returns the number of operations from the bulk batch that have the specified status.
 
+Status | Description
+--- | ---
+`1` | Complete <br/>
+`2` | The operation failed, but you can try to perform it again<br/>
+`3` | The operation failed. You must change something to retry it.<br/>
+`4` | Open<br/>
+`5` | Rejected
+
 **Response:**
 
 ```json
