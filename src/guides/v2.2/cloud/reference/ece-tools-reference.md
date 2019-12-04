@@ -95,6 +95,9 @@ There is a set of verification commands available to help evaluate the configura
 php ./vendor/bin/ece-tools wizard:ideal-state
 ```
 
+{: .bs-callout-info }
+You must run the `wizard:ideal-state` command in the Cloud environment. The command always returns the `The configured state is not ideal` error when run in the local development environment.
+
 Sample output:
 
 ```terminal
