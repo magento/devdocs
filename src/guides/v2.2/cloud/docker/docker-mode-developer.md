@@ -35,7 +35,7 @@ To launch the Docker environment in developer mode:
 1. Install the selected file synchronization tool if required:
 
    -  [Docker-sync Installation instructions][dsync-install]
-   -  [Mutagen.io Installation instructions][mutagen-install].
+   -  [Mutagen.io Installation instructions][mutagen-install]
 
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].
 
