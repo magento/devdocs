@@ -59,27 +59,8 @@ The response is the `quoteId`: `4`
 {:.bs-callout .bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
 
-### Create a cart for a guest customer {#create-guest-cart}
-
-To create guest cart there is no need to pass the token in the header.
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/guest-carts`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-**Payload:**
-
-None
-
-**Response:**
-
-The response is the `quoteId`: `5JfSLCdQUP4gwmM4z8u74iuPa0kfkZ5l`
-
-The quoteId for guest customer quote will be masked.
+{:.bs-callout-info}
+Use the `V1/guest-carts` endpoint to create cart on behalf of a guest. Do not include an authorization token. The quoteId for guest customer quote will be masked.
 
 ### Verify this step {#verify-step}
 

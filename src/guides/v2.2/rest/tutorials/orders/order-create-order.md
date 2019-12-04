@@ -64,18 +64,8 @@ When you submit payment information, Magento creates an order and sends an order
 
 An `orderID`, such as `3`.
 
-### Send payment information for guest customer{#send-guest-payment}
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/guest-carts/<cartId>/payment-information`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-Note: The payload and response is same as the logged-in customer for sending payment information.
-
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the payment information on behalf of a guest. Do not include an authorization token.
 
 ### Review the order as an admin {#review-order}
 

@@ -421,21 +421,8 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 {% endcollapsible %}
 
-These calls are performed on behalf of a guest-customer, and there is no need for a token.
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/guest-carts/<cartId>/items`
-
-Cart Id is the quoteId recieved on [quote creation](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-create-quote.html#create-guest-cart).
-
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-Note: The payload and response is same as the logged-in customer for all product types apart from quote id in the payload (Need to give the masked ID)
-
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/items` endpoint to add items to the cart on behalf of a guest. Do not include an authorization token. The payload and response is same as the logged-in customer for all product types apart from quote id in the payload (Need to give the masked ID)
 
 ### Verify this step {#verify-step}
 

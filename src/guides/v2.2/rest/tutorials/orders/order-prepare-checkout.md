@@ -98,6 +98,9 @@ Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Co
 ```
 {% endcollapsible %}
 
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/estimate-shipping-methods` endpoint to estimate shipping costs on behalf of a guest. Do not include an authorization token.
+
 ### Estimate shipping costs for guest customer {#estimate-guest-shipping}
 
 **Endpoint:**
@@ -350,19 +353,8 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 {% endcollapsible %}
 
-### Set shipping and billing information for guest customer{#set-guest-addresses}
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/guest-carts/<cartId>/shipping-information`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-The payload and response is same as for logged in customer.
-
-
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/shipping-information` endpoint to set the billing and shipping information on behalf of a guest. Do not include an authorization token.
 
 {:.bs-callout .bs-callout-info}
 If you tried this call on your own, and the value of the `shipping_amount` parameter is `0`, then you did not deactivate the "Spend $50 or more - shipping is free!" cart price rule. See [Deactivate a cart price rule](order-config-store.html#price-rule) for details.
