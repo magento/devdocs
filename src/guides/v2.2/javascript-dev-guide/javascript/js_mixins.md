@@ -130,7 +130,7 @@ define([
 
 #### Extend JS Function
 
-The following is an example of a mixin that adds additional functionality to the [proceed to checkout function][]. 
+The following is an example of a mixin that adds additional functionality to the [proceed to checkout function][].
 
 **File:** `OrangeCompany/Sample/view/frontend/web/js/proceed-to-checkout-mixin.js`
 
