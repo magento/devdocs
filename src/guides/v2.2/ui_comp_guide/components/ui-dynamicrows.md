@@ -21,7 +21,7 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
 | `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/dynamic-rows/dynamic-rows` |
 | `currentPage` | The number of current page. | Number | `1` |
 | `deleteValue` |  Adds the `deleteProperty` property in the data object for the deleted record. | Boolean | `false` |
-| `disabled` | Initial component's state. When set to `true`, users can't take action on the element. | Boolean | `false` |
+| `disabled` | Initial component's state. When set to `true`, users cannot take action on the element. | Boolean | `false` |
 | `fallbackResetTpl` | The path to the fallback reset (restore to default button) `.html` template. | String | `ui/form/element/helper/fallback-reset-link` |
 | `identificationProperty` | The identification property added to the record data object. | String | `record_id` |
 | `pageSize` | The number of records on one page. | Number | `20` |
