@@ -101,17 +101,6 @@ Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Co
 {:.bs-callout-info}
 Use the `V1/guest-carts/<cartId>/estimate-shipping-methods` endpoint to estimate shipping costs on behalf of a guest. Do not include an authorization token.
 
-### Estimate shipping costs for guest customer {#estimate-guest-shipping}
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/guest-carts/<cartId>/estimate-shipping-methods`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-The payload and response is same as for logged in customer.
 
 ### Set shipping and billing information {#set-addresses}
 
