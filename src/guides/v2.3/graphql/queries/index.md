@@ -137,6 +137,15 @@ Variables are defined separately in JSON:
 
 Magento GraphQL allows you to use certain queries to return preview information for [staged content](https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html). Staging, a {{site.data.var.ee}} feature, allows merchants to schedule a set of changes to the storefront that run for a prescribed time. These changes, also known as a _campaign_ are defined within the Admin.
 
+[Content Staging](https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html) in the _Merchant User Guide_ describes how to create a campaign.
+
+You can use the following queries to return staged preview information:
+
+*  `categoryList`
+*  `products`
+
+{:.bs-callout-info}
+
 A staging query requires two specialized headers to return information about a campaign:
 
 Header name | Description
@@ -146,18 +155,278 @@ Header name | Description
 
 Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in an active campaign, Magento returns value based on the current storefront settings.
 
-The following queries support staging:
 
-*  `categoryList`
-*  `products`
 
-### Example scenario
+### Example campaign
 
-Suppose you have created a campaign named **End of Year Sale** with the following properties using the Luma sample data:
+The example staging queries are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled while the campaign takes effect.
 
-*  You created a subcategory of **Sale** named **End of Year Sale** in which **Enable Category** field is set to **No**.
-*  You added several products to the **End of Year Sale** subcategory.
-*  You created a catalog sales rule 
+The following steps describe how to create this example campaign.
+
+1. Create a subcategory of **Sale** named **End of Year Sale**. Set the **Enable Category** field to **No**.
+1. Add several products to the subcategory.
+1. Schedule an update named **End of Year Sale Update** for the subcategory that takes effect at a later date. Configure the update so that the **Enable Category** field is set to **Yes**.
+1. Create a catalog sales rule with the following properties:
+   *  Set the **Active** switch to **No**.
+   *  In the **Conditions** section, define the condition as **Category is <Subcategory_ID>**.
+   *  In the **Actions** section, set the **Apply** field to **Apply a percentage of original** and the **Discount Amount** field to **25**.
+1. Schedule an update for the catalog sales rule and assign it to the **End of Year Sale Update**. In this update, set the **Active** switch to **Yes**.
+
+
+#### Staging `products` query
+
+The following query returns information about a product in the **End of Year Sale**. The `Preview-Version` header contains the timestamp for a date that is within the campaign.
+
+**Headers:**
+
+```text
+Authorization: Bearer hoyz7k697ubv5hcpq92yrtx39i7x10um
+Preview-Version: 1576389600
+```
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "24-UG05"}}) {
+    items {
+      name
+      sku
+      price_range {
+        minimum_price {
+          discount {
+            percent_off
+            amount_off
+          }
+          final_price {
+            value
+            currency
+          }
+          regular_price {
+            value
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response with headers:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Go-Get'r Pushup Grips",
+          "sku": "24-UG05",
+          "price_range": {
+            "minimum_price": {
+              "discount": {
+                "percent_off": 25,
+                "amount_off": 4.75
+              },
+              "final_price": {
+                "value": 14.25,
+                "currency": "USD"
+              },
+              "regular_price": {
+                "value": 19
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+**Response without headers:**
+
+Bearer t18zqdl9sz7fupg6xxntwt2ihes3bvrh
+1576389600
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Go-Get'r Pushup Grips",
+          "sku": "24-UG05",
+          "price_range": {
+            "minimum_price": {
+              "discount": {
+                "percent_off": 0,
+                "amount_off": 0
+              },
+              "final_price": {
+                "value": 19,
+                "currency": "USD"
+              },
+              "regular_price": {
+                "value": 19
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+#### Staging `categoryList` query
+
+In this example campaign,  
+
+**Headers:**
+
+```text
+Authorization: Bearer hoyz7k697ubv5hcpq92yrtx39i7x10um
+Preview-Version: 1576389600
+```
+
+**Request:**
+
+```graphql
+{
+  categoryList(filters: {ids: {eq: "43"}}) {
+    name
+    level
+    products(
+      sort: {
+        price: ASC
+      }
+      pageSize: 20
+      currentPage: 1
+    ) {
+      total_count
+      items {
+        name
+        sku
+        price_range {
+          minimum_price {
+            discount {
+              amount_off
+              percent_off
+            }
+            final_price {
+              value
+            }
+            regular_price {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response with headers:**
+
+```json
+{
+  "data": {
+    "categoryList": [
+      {
+        "name": "End of Year Sale",
+        "level": 3,
+        "products": {
+          "total_count": 4,
+          "items": [
+            {
+              "name": "Solo Power Circuit",
+              "sku": "240-LV07",
+              "price_range": {
+                "minimum_price": {
+                  "discount": {
+                    "amount_off": 3.5,
+                    "percent_off": 25
+                  },
+                  "final_price": {
+                    "value": 10.5
+                  },
+                  "regular_price": {
+                    "value": 14
+                  }
+                }
+              }
+            },
+            {
+              "name": "Quest Lumaflex&trade; Band",
+              "sku": "24-UG01",
+              "price_range": {
+                "minimum_price": {
+                  "discount": {
+                    "amount_off": 4.75,
+                    "percent_off": 25
+                  },
+                  "final_price": {
+                    "value": 14.25
+                  },
+                  "regular_price": {
+                    "value": 19
+                  }
+                }
+              }
+            },
+            {
+              "name": "Go-Get'r Pushup Grips",
+              "sku": "24-UG05",
+              "price_range": {
+                "minimum_price": {
+                  "discount": {
+                    "amount_off": 4.75,
+                    "percent_off": 25
+                  },
+                  "final_price": {
+                    "value": 14.25
+                  },
+                  "regular_price": {
+                    "value": 19
+                  }
+                }
+              }
+            },
+            {
+              "name": "Gabrielle Micro Sleeve Top",
+              "sku": "WS02",
+              "price_range": {
+                "minimum_price": {
+                  "discount": {
+                    "amount_off": 0,
+                    "percent_off": 0
+                  },
+                  "final_price": {
+                    "value": 28
+                  },
+                  "regular_price": {
+                    "value": 28
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+**Response without headers:**
+
+```json
+{
+  "data": {
+    "categoryList": []
+  }
+}
+```
 
 ## Introspection queries
 
