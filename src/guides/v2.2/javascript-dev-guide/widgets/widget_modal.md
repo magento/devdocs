@@ -37,9 +37,11 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 
 The modal widget has the following options:
 
+-  [appendTo](#modal_appendTo)
 -  [autoOpen](#modal_autoopen)
 -  [buttons](#modal_buttons)
 -  [closeText](#modal_closeText)
+-  [customTpl](#modal_customTpl)
 -  [clickableOverlay](#modal_clickableOverlay)
 -  [focus](#modal_focus)
 -  [innerScroll](#modal_innerScroll)
@@ -48,10 +50,25 @@ The modal widget has the following options:
 -  [modalCloseBtn](#modal_modalCloseBtn)
 -  [modalContent](#modal_modalContent)
 -  [modalLeftMargin](#modal_modalLeftMargin)
+-  [modalSubTitle](#modal_modalSubTitle)
+-  [modalTitle](#modal_modalTitle)
+-  [modalVisibleClass](#modal_modalVisibleClass)
+-  [parentModalClass](#modal_parentModalClass)
+-  [popupTpl](#modal_popupTpl)
 -  [responsive](#modal_responsive)
+-  [slideTpl](#modal_slideTpl)
+-  [subTitle](#modal_subTitle)
 -  [title](#modal_title)
 -  [trigger](#modal_trigger)
 -  [type](#modal_type)
+
+### `appendTo` {#modal_appendTo}
+
+The element where the modal should be added.
+
+**Type**: String
+
+**Default value**: `body`
 
 ### `autoOpen` {#modal_autoopen}
 
@@ -103,12 +120,19 @@ The close button text.
 
 **Default value**: `$.mage.__('Close')`
 
+### `customTpl` {#modal_customTpl}
+The template file that is used as content for the `custom` modal type.
+
+**Type**: String
+
+**Default value**: `ui/template/modal/modal-custom.html`
+
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
 **Type**: String
 
-**Default value**: `''`
+**Default value**: `[data-role="closeBtn"]`
 
 ### `innerScroll` {#modal_innerScroll}
 Modal scroll position.
@@ -152,6 +176,41 @@ Sets a margin between slide modal windows.
 
 **Default value**: 45
 
+### `modalSubTitle` {#modal_modalSubTitle}
+The modal subtitle element selector.
+
+**Type**: String
+
+**Default value**: `[data-role="subTitle"]`
+
+### `modalTitle` {#modal_modalTitle}
+The modal title element selector.
+
+**Type**: String
+
+**Default value**: `[data-role="title"]`
+
+### `modalVisibleClass` {#modal_modalVisibleClass}
+The class that is assigned to an opened modal.
+
+**Type**: String
+
+**Default value**: `_show`
+
+### `parentModalClass` {#modal_parentModalClass}
+The class that is assigned to parent when the modal is opened.
+
+**Type**: String
+
+**Default value**: `_has-modal`
+
+### `popupTpl` {#modal_popupTpl}
+The template file that is used as content for the `popup` modal type.
+
+**Type**: String
+
+**Default value**: `ui/template/modal/modal-popup.html`
+
 ### `responsive` {#modal_responsive}
 Turn popup modal window to slide panel on small screens.
 Available if the type option is set to 'popup'.
@@ -159,6 +218,20 @@ Available if the type option is set to 'popup'.
 **Type**: Boolean
 
 **Default value**: `false`
+
+### `slideTpl` {#modal_slideTpl}
+The template file that is used as content for the `slide` modal type.
+
+**Type**: String
+
+**Default value**: `ui/template/modal/modal-slide.html`
+
+### `subTitle` {#modal_subTitle}
+Translated subTitle for popup window that will be appended to the title.
+
+**Type**: String
+
+**Default value**: empty
 
 ### `title` {#modal_title}
 Translated title for popup window.
