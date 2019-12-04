@@ -130,7 +130,7 @@ define([
 
 #### Extend JS Function
 
-The use-case for the JavaScript mixin when the base JavaScript file returns a function. One more example where a wrapper is necessary. The following is an example of a mixin that adds additional functionality to the [proceed to checkout function][]. 
+The following is an example of a mixin that adds additional functionality to the [proceed to checkout function][]. 
 
 **File:** `OrangeCompany/Sample/view/frontend/web/js/proceed-to-checkout-mixin.js`
 
