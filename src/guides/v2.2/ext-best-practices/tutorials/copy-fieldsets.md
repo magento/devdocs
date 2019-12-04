@@ -111,7 +111,21 @@ class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
 ```
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].
-The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects..
+The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects.
+
+## Step 4: Compile and cache clean
+
+Compile the code with this command:
+
+```bash
+bin/magento setup:di:compile
+```
+
+and clean the cache with this command:
+
+```bash
+bin/magento cache:clean
+```
 
 [0]:{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/Copy.php
 [1]:{{ page.baseurl }}/extension-dev-guide/attributes.html
