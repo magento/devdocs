@@ -50,6 +50,9 @@ pages:
         - label: DynamicRows component
           url: /ui_comp_guide/components/ui-dynamicrows.html
 
+        - label: DynamicRowsDragAndDrop component
+          url: /ui_comp_guide/components/ui-dynamicrows-dnd.html
+
         - label: DynamicRowsRecord component
           url: /ui_comp_guide/components/ui-dynamicrows-record.html
 
