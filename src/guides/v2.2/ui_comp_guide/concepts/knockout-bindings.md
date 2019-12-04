@@ -329,8 +329,8 @@ Callback that is invoked when user clicks outside of the element.
 
 ```html
 <div id="target" outerClick="function () {
-    console.log('Clicked outside of the \"target\" node.');
-}">
+    console.log('Clicked outside of the "target" node.');
+    }">
 </div>
 ```
 

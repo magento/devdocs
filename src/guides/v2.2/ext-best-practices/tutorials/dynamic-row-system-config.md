@@ -173,16 +173,15 @@ This block sets values for the drop-down option.
 
 ## Step 4: Clean cache
 
-Clean the Magento cache by running the below command.
+Clean the Magento cache with the following command:
 
 ```bash
-php bin/magento cache:clean
+bin/magento cache:clean
 ```
-
-Or,by keeping performance in mind we can use the below command also.
+and clean the config with this command:
 
 ```bash
-php bin/magento cache:clean config
+bin/magento cache:clean config
 ```
 
 ## Result
