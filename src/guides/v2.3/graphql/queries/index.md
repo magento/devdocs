@@ -135,7 +135,7 @@ Variables are defined separately in JSON:
 
 ## Staging queries {#staging}
 
-Magento GraphQL allows you to use certain queries to return preview information for [staged content](https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html). Staging, a {{site.data.var.ee}} feature, allows merchants to schedule a set of changes to the storefront that run for a prescribed time. These changes, also known as a _campaign_ are defined within the Admin.
+Magento GraphQL allows you to use certain queries to return preview information for staged content. Staging, a {{site.data.var.ee}} feature, allows merchants to schedule a set of changes to the storefront that run for a prescribed time in the future. These changes, also known as a _campaign_, are defined within the Admin. Customers do not have access to staged content, and as a result, staging queries have requirements that do not apply to traditional queries and mutations.
 
 [Content Staging](https://docs.magento.com/m2/ee/user_guide/cms/content-staging.html) in the _Merchant User Guide_ describes how to create a campaign.
 
@@ -145,22 +145,22 @@ You can use the following queries to return staged preview information.
 *  `products`
 
 {:.bs-callout-info}
-The `products` query does not support full text search in the context of staging. As a result, do not include the `search` input attribute in your staging `products` queries.
+The `products` query does not support full text search in the context of staging, because staged content is not indexed. Therefore, omit the `search` input attribute in your staging `products` queries.
 
-A staging query requires two specialized headers to return information about a campaign:
+A staging query requires two specialized headers:
 
-Header name | Description t
+Header name | Description
 --- | ---
 `Authorization Bearer: <authorization_token>` | An admin token. Use the `GET /V1/integration/admin/token` REST endpoint to generate this token.
 `Preview-Version` | A timestamp (seconds since January 1, 1970) that is inside the range of dates of the campaign you are querying.
 
-Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in an active campaign, Magento returns value based on the current storefront settings.
+Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in a scheduled campaign, Magento returns value based on the current storefront settings.
 
 Magento also returns an error if you specify these headers with any other query or any mutation.
 
 ### Example campaign
 
-The example staging queries are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled while the campaign takes effect.
+The example staging queries in this section are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled while the campaign takes effect.
 
 The following steps describe how to create this example campaign.
 
@@ -175,7 +175,7 @@ The following steps describe how to create this example campaign.
 
 #### Staging `products` query
 
-The following query returns information about a product in the **End of Year Sale**. The `Preview-Version` header contains the timestamp for a date that is within the campaign. With the header, the query returns prices with applied discounts. Without the header, the query returns only default prices.
+The following query returns information about a product (`24-UG05`) in the **End of Year Sale** campaign. The `Preview-Version` header contains the timestamp for a date that is within the duration of the campaign. When you include the proper headers, the query returns prices with applied discounts. Without the headers, the query returns only default prices.
 
 **Headers:**
 
@@ -278,7 +278,7 @@ Preview-Version: 1576389600
 
 #### Staging `categoryList` query
 
-In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled outside of the campaign. When you specify a valid `Preview-Version` header, the `categoryList`query returns full details about the custom category. Without this header, the query returns an empty array.
+In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify a valid headers, the `categoryList`query returns full details about the custom category. Otherwise, the query returns an empty array.
 
 **Headers:**
 
