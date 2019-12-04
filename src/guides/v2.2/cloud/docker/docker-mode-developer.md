@@ -14,7 +14,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 When you launch the Docker environment in developer mode, you must select a file synchronization option:
 
--  On Windows or MacOS, use [docker-sync][dsync-install] or [mutagen][mutagen-install], `docker-sync` is the default value
+-  On Windows or MacOS, use [docker-sync][dsync-install] or [mutagen][mutagen-install], `docker-sync` is the default option
 -  On Linux, use the `native` option to disable file synchronization, which is not required for local Docker development
 
 Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `docker-sync.yml` and `mutagen.sh` files.
