@@ -90,11 +90,11 @@ Once the image is added, you can use it in your documentation:
 
 You can even scale the image if it is too large:
 
-*Example:* `![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}`
+*Example:* `![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446"}`
 
 *Output:*
 
-![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}
+![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446"}
 
 ### Tables {#tables}
 

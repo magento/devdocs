@@ -113,7 +113,7 @@ The `menu.xml` file provided below adds two items in the Content section of the 
 1. A new separate section with the title **Greetings** under Content.
 1. A link with the label **Hello World** that leads to a page request for `exampleadminnewpage/helloworld/index` underneath that new section.
 
-![Hello World menu item]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-menu-item.png){:width="322px" height="400px"}
+![Hello World menu item]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-menu-item.png){:width="322px"}
 
 The following parts make up the generated page request link to the **Hello World** page:
 
