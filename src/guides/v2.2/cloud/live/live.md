@@ -42,6 +42,8 @@ For detailed instructions to set up and perform scans, see the [Magento User Gui
 
 Each site you scan must be registered through the Magento Security Scan tab. The registration process requires you to accept Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is complete. You can schedule scans for a specific, recurring date and time or on demand as required.
 
+## Scan your site
+
 {.:procedure}
 To scan your site:
 
