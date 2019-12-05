@@ -87,7 +87,7 @@ To update `composer.json`:
 
 If there are errors, see [extension deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
 
 ### Step 3: Verify the extension {#verify}

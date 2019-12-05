@@ -52,7 +52,7 @@ Sample response:
  - Your application does not have the "post_deploy" hook enabled.
 The configured state is not ideal
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### Cron container
 
@@ -103,7 +103,7 @@ Service | Image
 **RabbitMQ**      | [rabbitmq](https://hub.docker.com/_/rabbitmq)
 **Redis**         | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 See the [service version values available]({{page.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
 
 ## Sharing data between host machine and container

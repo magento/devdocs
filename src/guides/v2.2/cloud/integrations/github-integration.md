@@ -68,7 +68,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
     origin git@github.com:<user-name>/<repo-name>.git (fetch)
     origin git@github.com:<user-name>/<repo-name>.git (push)
     ```
-    {: .no-copy}
+    {:.no-copy}
 
 1. Push the project files to your new GitHub repository. Remember to keep all branch names the same.
 
@@ -84,7 +84,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
 The following enables the GitHub integration and provides a Payload URL to use when creating a webhook.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your GitHub repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitHub repository **before** adding the GitHub integration.
 
 {:.procedure}
@@ -126,7 +126,7 @@ To enable the GitHub integration:
    Fetch branches: yes
    Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 ## Add the webhook in GitHub
 

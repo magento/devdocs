@@ -26,7 +26,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To create a language package, the `.csv` file requires additional columns that specify the themes or modules in which the translations were found. For more information, see [Generate a translation dictionary].
 
 ## Benefits of Translations
@@ -70,7 +70,7 @@ To translate names, titles, and phrases used in Magento
 1. Translate the terms.
 1. If desired, package your translations in a [language package].
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.
 
 Anyone can submit inline translations on the [storefront](https://glossary.magento.com/storefront) using the Text Editor. These inline translations overwrite a dictionary and save to your database (not in an instance's dictionary). Inline translations are theme-specific and do not apply if another theme is assigned.
@@ -89,7 +89,7 @@ The Magento application automatically assembles translation dictionaries located
 *  `<Magento_Checkout_module_dir>/i18n/pt_BR.csv`
 *  `<Magento_Checkout_module_dir>/<theme>/i18n/pt_BR.csv`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 `<Magento_Checkout_module_dir>` stands for the `Magento_Checkout` module directory. The location of this directory depends on the way Magento was installed. See [Conventional notations for paths to modules and themes] for details.
 
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).

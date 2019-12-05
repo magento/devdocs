@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Skip this step if you placed the order as a registered customer.
 
 If you place an order as a guest user, you must set a quote email address. Use the `setGuestEmailOnCart` mutation query for that.

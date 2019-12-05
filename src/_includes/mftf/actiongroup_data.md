@@ -11,7 +11,7 @@
 {% for test in file.actiongroups %}
 {{test.name}}
   : {% if test.description == '' %}No description.{% else %}{{test.description}}{% endif %}
-{: .ref-list-dt}
+{:.ref-list-dt}
 {% endfor %}
 {% endfor %}
 {% endfor %}

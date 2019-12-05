@@ -394,7 +394,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 
 A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  `BasePriceStorageInterface` service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You cannot delete a base price. It can only be changed to another value (0 or greater).
 
 **REST Endpoints:**

@@ -37,12 +37,12 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
 
 ## PHP
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 All 3rd party libraries now support PHP 7.2.
  If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board][] for a full list of outstanding issues.
 
@@ -54,7 +54,7 @@ Magento 2.3.3 adds support for PHP 7.3.
 
 ### Required PHP extensions
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
 
 <!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
@@ -112,7 +112,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
       Magento 2.3 uses [Elasticsearch PHP client][]{:target="_blank"} version 6.1.
 
-      {: .bs-callout .bs-callout-warning}
+      {:.bs-callout-warning}
       Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x][].
 
       If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
@@ -133,7 +133,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *  [php_xdebug 2.5.x][]{:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
 *  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)

@@ -130,7 +130,7 @@ The variable names follow:
 | Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
 | Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
 
 #### Set the variables using environment variables
@@ -175,7 +175,7 @@ To verify the configuration settings:
 
    ![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of **VAT Number** is not editable in website scope.
 
 1. If you haven't already done so, switch to Default Config scope.

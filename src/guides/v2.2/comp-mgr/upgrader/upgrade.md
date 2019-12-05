@@ -11,17 +11,17 @@ functional_areas:
 
 The components you're upgrading are displayed. The following figure shows an example.
 
-![Click upgrade to complete the task]({{ site.baseurl }}/common/images/upgr_upgrade.png){: width="550px"}
+![Click upgrade to complete the task]({{ site.baseurl }}/common/images/upgr_upgrade.png){:width="550px"}
 
 To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
-![Your upgrade was successful]({{ site.baseurl }}/common/images/upgr_success.png){: width="350px"}
+![Your upgrade was successful]({{ site.baseurl }}/common/images/upgr_success.png){:width="350px"}
 
 Messages similar to the following are displayed in the Console Log:
 
 {% collapsible Click to view the Console Log %}
 
-![]({{ site.baseurl }}/common/images/upgrade-success-consolelog.png){: width="650px"}
+![]({{ site.baseurl }}/common/images/upgrade-success-consolelog.png){:width="650px"}
 
 {% endcollapsible %}
 

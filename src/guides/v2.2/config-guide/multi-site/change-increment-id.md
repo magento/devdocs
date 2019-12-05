@@ -22,7 +22,7 @@ You might need to change the increment ID for new DB entities in these cases:
 -  After a hard backup restore on a Live site
 -  Some order records have been lost, but their IDs are already being used by payment gateways (like PayPal) for your current Merchant account. Such being the case, the payment  gateways stop processing new orders that have the same IDs, returning the "Duplicate invoice id" error
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 You may also fix the payment gateway issue for PayPal by allowing multiple payments per invoice ID in PayPal's Payment Receiving Preferences. See [PayPal gateway rejected request - duplicate invoice issue][] in the _Knowledge Base_.
 
 ## Prerequisite steps
@@ -48,7 +48,7 @@ Update the entity using the following query:
 ALTER TABLE sequence_{entity_type}_{store_id} AUTO_INCREMENT = {new_increment_value};
 ```
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 Important: The new increment value must be greater than the current one.
 
 After executing the following query:

@@ -95,7 +95,7 @@ A fixture consists of two files:
 *  The fixture file, which defines the test
 *  A rollback file, which reverts the system to the state before the test was run
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Each fixture should have a corresponding rollback file.
 
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
@@ -214,7 +214,7 @@ where
 *  `<config_key>` - Config key. See `core_config_data`.`path`
 *  `<config_value>` - Config value. See `core_config_data`.`value`
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 `@magentoConfigFixture` does not require a roll-back.
 
 #### Example usage
@@ -248,7 +248,7 @@ Your functional tests should include events that cause exceptions. Since your te
 *  The body of the test
 *  The test function annotation
 
-{: .bs-callout .bs-callout-tip }
+{:.bs-callout-tip}
 We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annotations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
 
 ### Exception messages in the body of a test
@@ -280,7 +280,7 @@ public function testMyExceptionTest()
 }
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Define the exception message before invoking logic that generates the exception.
 
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:

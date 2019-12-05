@@ -50,7 +50,7 @@ where
 
 `--ip=<ip address>` is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Using `--ip=<ip address>` with `magento maintenance:disable` means only that you're saving the list of IPs for later use. To clear the list of exempt IPs, you can use `magento maintenance:enable --ip=none` or see [Maintain the list of exempt IP addresses](#instgde-cli-maint-exempt).
 
 `magento maintenance:status` displays the current status of maintenance mode.
@@ -67,7 +67,7 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
   After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumer:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
 
 ## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}

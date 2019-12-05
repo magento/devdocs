@@ -233,7 +233,7 @@ The following example shows how to edit the `base` preset.
    -  `click_after`
    -  `set_value`
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 The `base` preset is stored in the FTF `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/events.xml`.
 To add or change any setting, edit `<magento2>/dev/tests/functional/etc/events.xml`, which is merged with the one in the FTF.
 
