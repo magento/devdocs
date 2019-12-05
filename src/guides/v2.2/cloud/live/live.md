@@ -44,7 +44,7 @@ content='The security scan tool uses the following public IP addresses:
 52.87.98.44
 ```
 
-You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site.'
+You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site. the tool posts requests to ports 80 and 443 only.'
 %}
 
 The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out-of-date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
@@ -55,6 +55,15 @@ The Magento Security Scan Tool enables you to regularly monitor your store websi
 See the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
 
 Each site you scan must be registered through the Magento Security Scan tab. During the registration process, you must accept the Magento disclaimer before you can begin scanning.  You control both the schedule and authorizing the user to receive notifications when each scan is complete.  You can schedule scans for a specific, recurring date and time, or run a scan on demand as needed.
+
+The Magento Security Scan Tool uses several user agent strings to simulate real-life malware activity. You might see the following user agents in your analytics or access logs:
+
+```text
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0
+GuzzleHttp/6.3.3 curl/7.29.0 PHP/7.1.18
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
+Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
+```
 
 ## Scan your site
 
