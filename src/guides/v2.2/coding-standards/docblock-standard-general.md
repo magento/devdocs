@@ -17,8 +17,7 @@ Following these standard is optional for third-party Magento developers, but doi
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
 
-## Scope of the standard
-{:#scope}
+## Scope of the standard {#scope}
 
 The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language.
 
@@ -78,7 +77,6 @@ Below are ways of improving code to help simplify documentation:
 1. Add any remaining information that a developer may need to the DocBlock.
 
 ## Files
-{:#files}
 
 Each Magento source code file must have a DocBlock header with short description of the file.
 After the short description, there can be a long description.
@@ -117,7 +115,7 @@ If description or short description happens to be the first one after DocBlock o
 
 ### License Notice and Copyright
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
 
 Any file in Magento source should have a header with license and copyright notice.
@@ -173,8 +171,7 @@ interface MetadataObjectInterface
  */
 ```
 
-## Code structural elements
-{:#code-elements}
+## Code structural elements {#code-elements}
 
 A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of imperative source code, such as PHP or JavaScript, or procedural SQL.
 For example: namespace, class, interface, function, property, method, and so on.
@@ -248,8 +245,7 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 require_once __DIR__ . '/../../functions.php';
 ```
 
-### Classes and interfaces
-{:#classes-interfaces}
+### Classes and interfaces {#classes-interfaces}
 
 Classes and interfaces should have a short description that is a human-understandable intention of the class.
 If the short description adds no additional information beyond what the type name already supplies, the
@@ -268,7 +264,6 @@ short description must be omitted.
 If possible, add use cases where developers can or cannot use the class.
 
 ### Short name form
-{:#short-name-form}
 
 It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
 The only [exception](https://glossary.magento.com/exception) is in the `Service/DTO` classes due to tooling requirements.
@@ -299,7 +294,6 @@ private function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $numb
 ```
 
 ### Class attributes
-{:#class-attributes}
 
 Class attributes must have type declaration using `@var` tag.
 
@@ -317,8 +311,7 @@ class Profiler
     protected static $instance = null;
 ```
 
-### Functions and methods
-{:#functions-methods}
+### Functions and methods {#functions-methods}
 
 In general, typed method signature must be preferred over PHPDoc annotations whenever possible.
 
@@ -407,8 +400,7 @@ protected function merge($configFiles)
 }
 ```
 
-#### Divergence in @throws tag
-{:#throws}
+#### Divergence in @throws tag {#throws}
 
 In general, use the `@throws` tag when the code uses *throw*:
 
@@ -481,8 +473,7 @@ public function deleteDirectory($path)
 }
 ```
 
-#### @return tag
-{:#return}
+#### @return tag {#return}
 
 In general method return type signatures should be prefered over `@return` type annotations.
 If that is not possible due to ambiguous return types or because of backward compatibility constraints, the `@return` type annotation must be used.
@@ -509,7 +500,6 @@ function withField(string $fieldName): self
 If for backward compatibility reasons no return type can be added to the method signature, a `@return $this` annotation must be used.
 
 ### Constants
-{:#constants}
 
 Constants may have a short description.
 If the short description adds no additional information beyond what the constant name already supplies, the
@@ -536,24 +526,20 @@ class Profiler
 ```
 
 ### DocBlock templates
-{:#DocBlock-templates}
 
 DocBlock template is a DocBlock that starts from `/**#@+*/` and ends with `/**#@-*/`.
 Templates are not supported by PHPDocumentor anymore. Therefore, they MUST NOT be used.
 
 It's encouraged to replace existing DocBlock templates with regular DocBlock comments when the file is being modified.
 
-## Structure of documentation space
-{:#documentation-space}
+## Structure of documentation space {#documentation-space}
 
 `@author` ,`@category`, `@package`, and `@subpackage` MUST NOT be used.
 Documentation is organized with the use of namespaces.
 
 ## Other DocBlock tags
-{:#other-DocBlock-tags}
 
-### @inheritdoc tag
-{:#inheritdoc}
+### @inheritdoc tag {#inheritdoc}
 
 The `@inheritdoc` tag SHOULD NOT be used.
 If a child class method requires a long description to explain its purpose, it may use `@inheritdoc` to indicate the new description is intended as an addition to the parent method description.
@@ -604,8 +590,7 @@ class LimitedMutableClass implements MutableInterface
 }
 ```
 
-### @api tag
-{:#api}
+### @api tag {#api}
 
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
@@ -615,8 +600,7 @@ You do not need to annotate each method individually.
 
 See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
 
-### @deprecated tag
-{:#deprecated}
+### @deprecated tag {#deprecated}
 
 A deprecated class or method is one that has been superseded and may cease to exist in the future.
  It will be retained to provide backward compatibility until next major component release.
@@ -665,8 +649,7 @@ public function setScopedPrice($price, $scopeType, $scopeId)
 }
 ```
 
-### @var inline tag
-{:#var}
+### @var inline tag {#var}
 
 For purpose of automatic type hinting in an IDE, an inline notation of `@var` tag can be used wherever the IDE is unable to resolve variable type.
 This tag declares variables that will emerge in next lines of code as follows:
@@ -688,8 +671,7 @@ This notation is also valid:
 foreach ($errors as $error) {
 ```
 
-### @see tag
-{:#see}
+### @see tag {#see}
 
 Besides the normal way of using `@see` tag as [recommended by phpDocumentor](http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html), it may be used as an addition to `@var`, when the `@var` is already used in this comment.
 
@@ -704,15 +686,12 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
 ```
 
 ### Other tags
-{:#other-tags}
 
 Any other valid DocBlock tags may be specified, if author deems necessary, but only if they bring any valuable not obvious information.
 
-## Formatting conventions
-{:#format-conventions}
+## Formatting conventions {#format-conventions}
 
 ### Padding tags
-{:#padding-tags}
 
 If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.
 
@@ -726,8 +705,7 @@ If there are two or more tags together in one DocBlock, their values may be padd
  */
 ```
 
-### Formatting consistency
-{:#format-consistency}
+### Formatting consistency {#format-consistency}
 
 In a given DocBlock, style of formatting must be consistent.
 

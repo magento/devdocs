@@ -85,7 +85,7 @@ After migrating data, you must incrementally capture data updates that have been
 
 *  Test your Magento 2 site during this time to catch any issues as soon as possible. In case of such issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.
 
 ## Step 7: Go live

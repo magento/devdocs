@@ -7,10 +7,10 @@ If you installed Magento in Apache's default docroot `/var/www/html`, the Magent
 
 Serving files from the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 If you're accustomed to using the Web Setup Wizard during development, be aware that you won't be able to access it when serving files from the `pub/` directory.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+<div class="bs-callout-tip" markdown="1">
 If you're using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample){:target="_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
 
 The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
@@ -40,7 +40,7 @@ To complete this tutorial, you'll need access to a working Magento installation 
 -  PHP (5.6 or 7.0)
 -  Magento (2.0+)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.
 
 ## 1. Edit your server configuration
@@ -79,7 +79,7 @@ The name and location of your virtual host file depends on which version of Apac
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Replace `192.168.33.10` with your server's hostname.
 
 1. Log in to the Magento database:
@@ -137,7 +137,7 @@ Go to the [storefront](https://glossary.magento.com/storefront) in a web browser
 
    The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-   ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:.width="450px"}
+   ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:width="450px"}
 
    Refer to the [troubleshooting section]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 

@@ -11,10 +11,10 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you chose to enable SELinux, see [SELinux and iptables]({{ page.baseurl }}/install-gde/prereq/security.html).
 
 {% include install/web/install-web.md %}

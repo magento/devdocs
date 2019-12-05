@@ -11,7 +11,7 @@ functional_areas:
 
 Use the following instructions to import your {{site.data.var.ee}} code into your current {{ site.data.var.ece }} project code.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master` which removes all data, sites, stores, and other development work you have done on the project. If you want to keep any files or directories, copy them to a directory outside of your project.
 
 ## Required information
@@ -122,7 +122,7 @@ You need the following information to complete this task:
 -  [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment
 -  The database name, username, and password for the [Cloud database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
 
 When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the database.
@@ -201,7 +201,7 @@ To update the unsecure base URL:
     UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
     ```
 
-    {:.bs-callout .bs-callout-warning}
+    {:.bs-callout-warning}
     The base URL _must_ end with a `/` character.
 
 1. Confirm the change by entering the following command:
@@ -213,7 +213,7 @@ To update the unsecure base URL:
 1. If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 1. Continue with the next section.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 
 ## Add the Magento encryption key {#encryption-key}
@@ -244,7 +244,7 @@ To add your {{site.data.var.ee}} encryption key:
 
 1. Save your changes to `env.php` and exit the text editor.
 
-    {:.bs-callout .bs-callout-info}
+    {:.bs-callout-info}
     You must add this key to the `env.php` file for all environments: Integration, Staging, and Production.
 
 ## Import media {#media}

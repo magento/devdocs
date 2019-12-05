@@ -19,7 +19,6 @@ In this tutorial, we will create a gray t-shirt that comes in three sizes (small
 This **5-step tutorial** generally takes **45 minutes**.
 
 ### Before you begin
-{:.tutorial-before}
 
 *  Install a Magento 2.2 (or later) instance with sample data. The sample data defines a functional store, called Luma, that sells fitness clothing and accessories.
 

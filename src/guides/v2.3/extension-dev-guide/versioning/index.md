@@ -59,7 +59,7 @@ Or it can be used to declare a dependency on a particular version of a component
 }
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
 
 ## Related Topics

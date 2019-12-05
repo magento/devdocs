@@ -68,7 +68,7 @@ Now that you have set the configurable attribute to be `sku`, you can link all s
 
  **Endpoint:**
 
- {:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  You must replace input parameters with a string that begins with `by` and ends with the input parameter name, such as `bySku`. See [`bulk endpoints`]({{ page.baseurl }}/rest/bulk-endpoints.html) for more information.
 
  `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/child`

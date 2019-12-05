@@ -14,7 +14,7 @@ You can then optionally delete the environment.
 
 This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-comm) to create one.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You _cannot_ merge environment variables because they are not code. You must set the value of environment variables in an environment.
 
 ### Get started
@@ -64,7 +64,7 @@ To merge an environment:
 
 You need to verify that you do not need an environment before you delete it. You cannot recover a deleted environment later.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [account owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
@@ -131,5 +131,5 @@ To delete a environment:
 
 Wait for the environment to delete.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To activate the environment later, use the `magento-cloud environment:activate` command.
