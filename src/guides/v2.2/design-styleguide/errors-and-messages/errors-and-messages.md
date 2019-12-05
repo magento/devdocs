@@ -11,7 +11,7 @@ Magento uses different types of dynamic messaging to alert users when:
 
 ## Types of errors and messages
 
-*  **Informational**: This messaging is not an error. It is used when a person can continue with the task but needs to be alerted regarding information critical to completing the task.
+*  **Informational**: This messaging is not an error. It is used when a person can continue with the task but needs to be alerted about information necessary to complete the task.
 
 *  **Recoverable error**: This is used when a person is blocked and can only continue by taking an action to fix the problem.
 
@@ -35,4 +35,3 @@ Do not blame the user or indicate that the user made a mistake.
 
 *  No – “You did not enter your email address. Enter your email address and click 'Continue'."
 *  Yes – “An email address is required. Enter your email address and click 'Continue'.”
-
