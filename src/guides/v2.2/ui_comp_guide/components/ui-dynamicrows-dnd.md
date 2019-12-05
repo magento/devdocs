@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The DynamicRowsDragAndDrop component is an [extension](https://glossary.magento.com/extension) for [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html), allowing users to change columns position in the table.
+The DynamicRowsDragAndDrop component is an [extension](https://glossary.magento.com/extension) for [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html), allowing users to change column position in the table.
 
 ## Configuration options
 
@@ -75,9 +75,9 @@ This is an example of how the DynamicRowsDragAndDrop component integrates with t
 
 ![DynamicRowsDragAndDrop Component example]({{ site.baseurl }}/common/images/ui_comps/dynamicrows-dnd-result.png)
 
-### Disable the DynamicRowsDragAndDrop component for the DynamicRows component
+### Disable the DynamicRowsDragAndDrop component on the DynamicRows component
 
-This is an example of how the DynamicRowsDragAndDrop component disables for the [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component:
+This is an example of how the DynamicRowsDragAndDrop component disables the [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component:
 
 ```xml
 <dynamicRows name="dynamic_rows">
