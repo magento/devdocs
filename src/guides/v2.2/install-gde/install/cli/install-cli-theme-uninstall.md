@@ -102,5 +102,5 @@ Failure to clear static view files might cause display issues in the Admin and s
 Disabling maintenance mode
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To uninstall a Magento [Admin](https://glossary.magento.com/admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration, `<component root directory>/etc/di.xml`.

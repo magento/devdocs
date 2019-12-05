@@ -10,10 +10,10 @@ redirect_from:
 ---
 Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook].
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 Magento-specific logs are in the `<magento-root-dir>/var/` directory. See [Magento Logging][configlog] in the _Configuration guide_.
 
-{: .bs-callout-tip}
+{:.bs-callout-tip}
 You can [set up log-based Slack and email notifications][slacklog] when configuring your Cloud environment.
 
 ## Viewing logs

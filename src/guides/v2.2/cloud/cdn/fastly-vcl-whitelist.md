@@ -117,5 +117,5 @@ Fastly validates the updated version of the VCL code during the upload process. 
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically when you click *upload VCL to Fastly* in the Magento Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN for Magento 2 module documentation.

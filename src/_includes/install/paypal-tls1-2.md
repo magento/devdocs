@@ -70,5 +70,5 @@ You have the following options:
 
    One possible solution is to use the information on [serverfault](http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos).
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade `libcurl` in a development environment and *thoroughly test* all payment processors you use as well as any other critical software before putting this into production.

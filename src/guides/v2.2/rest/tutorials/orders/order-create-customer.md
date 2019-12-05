@@ -27,7 +27,7 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 ### Create a customer account
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This example shows a simplified way of creating a customer account. Typically, you would not define a customer password using plain text. Instead, you would specify the payload without the `password` parameter. By default if the call is successful, Magento sends a "Welcome" email to the customer that includes a request to set the password. You could also initiate a password reset email by calling `PUT /V1/customers/password`.
 
 **Endpoint:**

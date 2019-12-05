@@ -18,7 +18,7 @@ Customizable options for a product provide a way to offer customers a selection 
 *  Multiple select box
 *  Radio buttons
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento has not implemented all possible customizable product options for GraphQL.
 
 `CustomizableOptionInterface` can contain the following attributes:

@@ -9,7 +9,7 @@ Expandable sections are expandable content areas which are useful in cases where
 
 ![General example](img/example_general.png)
 
-{:.bs-callout .bs-callout-note}
+{:.bs-callout-info}
 **Note:** Expandable sections should not be confused with the 'Progressive Disclosure checkbox' control.
 
 ## Appearance and behavior

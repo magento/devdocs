@@ -33,7 +33,7 @@ To run the Magento application, the following actions are implemented in [index.
 
 1. Sends the response provided by the application object.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the `\Magento\Framework\App\Bootstrap` class. You can modify it using an entry point script when creating the bootstrap object.
 
 Sample entry point script that modifies the bootstrap object:
@@ -91,7 +91,7 @@ We have the following entry point applications (that is, applications defined by
 
 [\Magento\Framework\App\StaticResource]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php){:target="_blank"} is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The entry point for static view files is not used in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the `<your Magento install dir>/pub/static` directory.
 
 In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate `.htaccess`.

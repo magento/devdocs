@@ -24,7 +24,7 @@ return [
             ],
         ],
 ```
-{: .no-copy}
+{:.no-copy}
 
 {:.procedure}
 To connect to the database using Docker commands:
@@ -51,7 +51,7 @@ To connect to the database using Docker commands:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 {:.procedure}
 To connect to the database:
@@ -69,7 +69,7 @@ To connect to the database:
    --------------------------------------------------------------------------------------------------
    mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 1. Connect to the database with port information from the previous step.
 
@@ -87,4 +87,4 @@ To connect to the database:
    | 10.0.38-MariaDB-1~xenial |
    +--------------------------+
    ```
-   {: .no-copy}
+   {:.no-copy}

@@ -9,7 +9,7 @@ redirect_from:
   - /guides/v2.2/release-notes/2.3.0-install.html
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 With Magento 2.2.5, we are moving to a quarterly release cycle for  minor releases. Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
 
 Quarterly patch releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major and minor releases that occur outside this quarterly cadence.
@@ -61,7 +61,7 @@ The ece-tools package is a scalable deployment tool that simplifies the {{ sit
 
 See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about {{site.data.var.ece}} upgrades and patches.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 ## Contact information for third-party extensions

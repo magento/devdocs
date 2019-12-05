@@ -293,7 +293,7 @@ File permissions and ownership must be consistent across development, build, and
    *  Development and build: [Set pre-installation ownership and permissions (two users)]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#perms-private)
    *  Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
 
 {:.ref-header}

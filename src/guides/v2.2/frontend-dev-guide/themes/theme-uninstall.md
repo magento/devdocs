@@ -75,7 +75,7 @@ Take the following steps:
 
 1. Use the `magento theme:uninstall` CLI command as described in the [Uninstall themes Composer package]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html) topic.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You can use the Composer remove command to remove the dependency, but in that case, you must delete the theme record from the database manually.
 
 ## Uninstall a theme extension

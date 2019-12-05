@@ -107,7 +107,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 [`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Use `phpinfo.php` in a development system _only_. It can be a security issue in production.
 
 Add the following code anywhere in your web server's docroot:
@@ -143,7 +143,7 @@ For more information about `phpmyadmin`, see the [phpmyadmin home page](http://w
 
 For more detailed information about installation, see the [phpmyadmin installation documentation](http://docs.phpmyadmin.net/en/latest/setup.html#quick-install){:target="_blank"}.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Use phpmyadmin in a development system _only_. It can be a security issue in production.
 
 ## Install phpmyadmin on Ubuntu {#install-optional-phpmyadmin-ubuntu}
