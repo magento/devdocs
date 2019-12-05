@@ -42,7 +42,7 @@ To add content to the `robots.txt` file:
 1. Click **Save Configuration**.
 1. Verify the `<domain.your.project>/robots.txt` file in your browser.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If the `<domain.your.project>/robots.txt` file generates a `404 error`, [submit a Support ticket](https://support.magento.com/hc/en-us/articles/360019088251-Submit-a-support-ticket) to remove the redirect from `/robots.txt` to `/media/robots.txt`.
 
 ## Rewrite using Fastly VCL snippet

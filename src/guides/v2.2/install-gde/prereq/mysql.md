@@ -16,7 +16,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x. Magento is also compatible with MySQL NDB Cluster 7.4.\*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
@@ -25,10 +25,10 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *  Familiarize yourself with [these potential MySQL trigger limitations](http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html){:target="_blank"} before you continue.
 *  If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ [row-based replication](http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html){:target="_blank"}.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions, which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database implementations utilizing GTID-based replication, such as [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
 ## Installing MySQL on Ubuntu {#instgde-prereq-mysql-ubuntu}
@@ -43,7 +43,7 @@ See one of the following sections for more information:
 
 This section discusses how to install MySQL 5.7 on Ubuntu 16.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 To install MySQL 5.7 on Ubuntu 16:
@@ -216,7 +216,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 ### Get MySQL 5.7 for CentOS 7
@@ -407,7 +407,7 @@ To configure a MySQL database instance:
 
 1. If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend you configure your database instance as appropriate for your business. When configuring your database, remember that indexers require higher `tmp_table_size` and `max_heap_table_size` values, for example, 64M. If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  [Performance Best Practices]({{ page.baseurl }}/performance-best-practices/index.html) for more information. sure all MySQL and Magento index tables can be kept in memory, for example, configure `innodb_buffer_pool_size`.
 
 {:.ref-header}

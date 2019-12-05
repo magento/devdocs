@@ -122,7 +122,7 @@ To remove a license key from an environment:
    | php:newrelic.license | environment| <newrelic-license-key> |
    +----------------------+------------+------------------------+
    ```
-   {: .no-copy}
+   {:.no-copy}
 
    {:.bs-callout-warning}
    If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`

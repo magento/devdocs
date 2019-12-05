@@ -20,7 +20,7 @@ ulimit -s 65536
 
 You can change this to a larger value if needed.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The syntax for `ulimit` depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is `ulimit -S 65532`. Consult a man page or operating system reference for more information.
 
 To optionally set the value in the user's Bash shell:
@@ -35,5 +35,5 @@ To optionally set the value in the user's Bash shell:
 
 1. Save your changes to `.bashrc` and exit the text editor.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 We recommend you avoid setting a value for [`pcre.recursion_limit`](http://php.net/manual/en/pcre.configuration.php) in `php.ini` because it can result in incomplete rollbacks with no failure notice.

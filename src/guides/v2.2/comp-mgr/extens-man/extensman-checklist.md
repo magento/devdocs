@@ -17,7 +17,7 @@ The [Extension](https://glossary.magento.com/extension) Manager enables you to i
 *  Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
 *  Language packages (localize the storefront and Admin)
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 If you installed the Magento application by [cloning the GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html), you *cannot* use the Extension Manager to update components. Instead, you must [update them manually]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 ## Prerequisites

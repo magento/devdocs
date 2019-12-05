@@ -27,7 +27,7 @@ Static view files deployment is affected by Magento modes as follows:
 
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 *Developer mode only*: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module. You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for more information.
 
 ## Deploy static view files {#config-cli-subcommands-staticview}
@@ -38,7 +38,7 @@ To deploy static view files:
 1. Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 1. Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
 
 Command options:
@@ -264,7 +264,7 @@ The following table explains this command's parameters and values.
     </tbody>
 </table>
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you specify values for both `<languages>` and `--language`, `<languages>` takes precedence.
 
 ### Examples

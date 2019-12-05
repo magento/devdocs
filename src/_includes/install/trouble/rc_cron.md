@@ -56,5 +56,5 @@ For more information about PHP settings, see [Required PHP settings]({{ page.bas
 
 Try running each command manually because the command might display helpful error messages. See [Set up cron jobs]({{ page.baseurl }}/install-gde/install/post-install-config.html#post-install-cron).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must run cron at least *twice* for the job to execute; the first time to queue jobs, the second time to execute the jobs.

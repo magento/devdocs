@@ -10,12 +10,12 @@ Follow this guide to [create Magento authentication keys]({{ page.baseurl }}/ins
 
 ### Create a GitHub personal access token
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The Composer auth file requires the `github-oauth` property, but do not create a GitHub OAuth App. Create a personal access token instead.
 
 Follow this guide to [create a GitHub personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 When choosing token permissions, select all checkboxes in the `repo` scope. Composer auth does not require other permissions.
 
 ### Create `auth.json` file

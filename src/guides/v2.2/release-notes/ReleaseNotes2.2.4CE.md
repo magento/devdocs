@@ -1248,7 +1248,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 ### Shipping
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
 <!--- MAGETWO-86306,  MAGETWO-87934 -->

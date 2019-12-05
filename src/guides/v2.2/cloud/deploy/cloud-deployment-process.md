@@ -35,10 +35,10 @@ The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.
 You can test the optimal configuration for the state of your project by running the [Smart wizards]({{page.baseurl}}/cloud/deploy/smart-wizards.html).
 
 [Build phase]: {{site.baseurl}}/common/images/cloud/status-build.png
-{: width="80px"}
+{:width="80px"}
 [Deploy phase]: {{site.baseurl}}/common/images/cloud/status-deploy.png
-{: width="80px"}
+{:width="80px"}
 [Post-deploy phase]: {{site.baseurl}}/common/images/cloud/status-post-deploy.png
-{: width="80px"}
+{:width="80px"}
 [Verify state]: {{site.baseurl}}/common/images/cloud/status-verify.png
-{: width="80px"}
+{:width="80px"}

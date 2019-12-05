@@ -9,7 +9,7 @@ redirect_from: /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.ht
 
 This topic describes general concepts of how [JavaScript](https://glossary.magento.com/javascript) (JS) components are organized in Magento.
 
-To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
+To address the problem of slow page loads, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){:target="_blank"}.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, it enables asynchronous JavaScript loading.
 
@@ -24,7 +24,7 @@ In Magento, you can find Javascript components on the following levels:
 *  Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
 *  Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
 
 ### Specifying JS

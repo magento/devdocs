@@ -411,7 +411,7 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 [![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)
 
-{: .bs-callout .bs-callout-tip }
+{:.bs-callout-tip}
    If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}

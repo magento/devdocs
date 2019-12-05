@@ -13,7 +13,7 @@ To enable the web server to write files and directories in the Magento file syst
 
 This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Skip to [step 2](#install-update-depend-user-findgroup) if you plan on using an existing user account.
 
 ### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
@@ -34,7 +34,7 @@ passwd <username>
 
 Follow the prompts on your screen to create a password for the user.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you don't have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
@@ -47,7 +47,7 @@ sudo adduser magento_user
 sudo passwd magento_user
 ```
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Because the point of creating this user is to provide added security, make sure you create a [strong password](https://en.wikipedia.org/wiki/Password_strength).
 
 ### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
@@ -79,7 +79,7 @@ To put the Magento file system owner in the web server's primary group (assuming
 *  CentOS: `usermod -a -G apache <username>`
 *  Ubuntu: `usermod -a -G www-data <username>`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `-a -G` options are important because they add `apache` or `www-data` as a _secondary_ group to the user account, which preserves the user's _primary_ group. Adding a secondary group to a user account helps [restrict file ownership and permissions](#perms-set-two-users) to ensure members of a shared group only have access to certain files.
 
 For example, to add the user `magento_user` to the `apache` primary group on CentOS:
@@ -100,7 +100,7 @@ The following sample result shows the user's primary (`magento`) and secondary (
 magento_user : magento_user apache
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Typically, the username and primary group name are the same.
 
 To complete the task, restart the web server:

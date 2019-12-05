@@ -7,7 +7,7 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-set-payment-place-order.html
 ---
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The `setPaymentMethodAndPlaceOrder` mutation will be deprecated in the next patch release. Use the `setPaymentMethodOnCart` and `placeOrder` mutations instead. You can run the two methods in the same call if your use case allows it.
 
 The `setPaymentMethodAndPlaceOrder` mutation sets the cart payment method and converts the cart into an order. The

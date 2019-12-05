@@ -7,14 +7,14 @@ functional_areas:
 
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento [theme](https://glossary.magento.com/theme).
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 If you are new to Magento theme development, see [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html) to get familiar with the basics.
 
 To ensure the stability of your customizations and prevent upgrades from overwriting your customizations, do not change the default Magento theme files. You must include custom fonts in the your theme's stylesheet.
 
 1. Add font files to your local theme directory. For example, `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/fonts`.
 
-    {:.bs-callout .bs-callout-info}
+    {:.bs-callout-info}
     To add _external_ fonts, add font references to the page configuration file as described in [Include static resources (JavaScript, CSS, fonts)]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css).
 
 1. If you build a theme using the Magento UI library, declare the font by adding the `.lib-font-face` [mixin](https://glossary.magento.com/mixin) to the `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/source/_typography.less` file:
@@ -65,5 +65,5 @@ By calling the `lib-icon-font` mixin, you can apply the icon font and character 
 
 To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.

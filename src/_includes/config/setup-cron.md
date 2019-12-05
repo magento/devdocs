@@ -10,7 +10,7 @@ Magento uses cron for two sets of tasks, and for each, cron can run with a diffe
 
  You can find the web server plug-in configuration using [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo).
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 
 *  To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 *  In a multi-node system, crontab can run on only one node. This applies to you only if you set up more than one webnode for reasons related to performance or scalability.
@@ -59,7 +59,7 @@ where
 
 The first command (`magento cron:run`) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you're a contributing developer (that is, you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)), only the first line applies to you. See the examples that follow for details.
 
 **Example 1:** Everyone except contributing developers

@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Quick start with the Functional Testing Framework
 ---
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
 While the MTF is still functional, all MTF tests are being ported over to the MFTF. We recommend using the MFTF for testing.
 

@@ -36,7 +36,7 @@ Sample response:
 |          |              | To: them@example.com                                                      |
 +----------+--------------+---------------------------------------------------------------------------+
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Generic webhooks
 
@@ -60,7 +60,7 @@ Default: *
 Enter comma-separated values (or leave this blank)
 >
 ```
-{: .no-copy}
+{:.no-copy}
 
 You can choose to report events in a `pending`, `in_progress`, or `complete` state:
 
@@ -71,7 +71,7 @@ Default: complete
 Enter comma-separated values (or leave this blank)
 >
 ```
-{: .no-copy}
+{:.no-copy}
 
 And you can _include_ or _exclude_ messages for specific environments:
 
@@ -87,7 +87,7 @@ The environment IDs to exclude
 Enter comma-separated values (or leave this blank)
 >
 ```
-{: .no-copy}
+{:.no-copy}
 
 When the integration is complete, you receive a summary of the values:
 
@@ -105,7 +105,7 @@ Created integration integration-ID (type: webhook)
 | url                   | https://hook-url.example.com |
 +-----------------------+------------------------------+
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### Update existing integration
 
@@ -131,7 +131,7 @@ Integration integration-ID (webhook) updated
 | url                   | https://hook-url.example.com |
 +-----------------------+------------------------------+
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### Events to report
 

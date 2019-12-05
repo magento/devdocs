@@ -5,7 +5,7 @@ title: Retrieve filtered responses for REST endpoints
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST requests that return partial responses.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 This feature is not available for SOAP, because SOAP does not allow partial responses.
 
 You can append `?fields=<field_or_object1>,<field_or_object2>,...` to any GET, POST, or PUT operation to filter unimportant information from the response. `<field_or_object>` can be any of the following:
