@@ -42,9 +42,23 @@ For detailed instructions to set up and perform scans, see the [Magento User Gui
 
 Each site you scan must be registered through the Magento Security Scan tab. The registration process requires you to accept Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is complete. You can schedule scans for a specific, recurring date and time or on demand as required.
 
+{%
+include note.html
+type='info'
+content='The security scan tool uses the following public IP addresses:
+
+```text
+52.72.230.169
+52.86.204.1
+52.87.98.44
+```
+  
+You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site.'
+%}
+
 ## Scan your site
 
-{.:procedure}
+{:.procedure}
 To scan your site:
 
 1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
