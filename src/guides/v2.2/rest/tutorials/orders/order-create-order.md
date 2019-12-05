@@ -1576,8 +1576,6 @@ Not applicable
 
 {% endcollapsible %}
 
-
-
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
