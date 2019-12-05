@@ -102,7 +102,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported value is 2.4-develop branch.
+For `version`, the currently supported values are latest [version tags](https://github.com/magento/magento2/tags) and 2.4-develop branch.
 
 **Actions:** The following actions complete for the command:
 
