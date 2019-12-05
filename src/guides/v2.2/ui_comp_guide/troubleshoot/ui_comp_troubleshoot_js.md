@@ -91,7 +91,7 @@ To set a breakpoint, right click on the code line number (as shown in the next i
 
 You can always find a list of breakpoints in the right panel, which is useful when you have many breakpoints in various files.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Right-clicking on the line number allows you to create a conditional breakpoint, which triggers only when the given expression is truthy. That’s helpful when you need to stop only for certain function parameters.
 
 ### Execution trace

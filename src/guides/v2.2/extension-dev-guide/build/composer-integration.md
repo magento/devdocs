@@ -16,7 +16,7 @@ The [Component Manager][1] uses the `composer.json` file in an extension's root 
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento does not support the [`path`][3] repository.
 
 ## Composer binary location {#composer-binary}

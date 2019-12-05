@@ -92,7 +92,7 @@ Where the following notation is used:
 -  `<your_namespace>.<your_widget_name>` - the name of your custom [widget](https://glossary.magento.com/widget). According to the jQuery widgets naming convention, this value must contain a [namespace](https://glossary.magento.com/namespace) and name.
 -  `mage.<widget.name>` - the name of the Magento widget that you extend.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 All jQuery UI components for frontend and base areas are located in `lib/web/jquery/ui-modules` dir. They can be used in JS widgets by `jquery-ui-modules` path mapping like `jquery-ui-modules/widget` and `jquery-ui-modules/slider`.
 Using individual jQuery UI components instead of the monolithic jQuery UI library improves storefront performance.
 
@@ -160,10 +160,9 @@ $(mage.apply);
 ```
 
 {:.ref-header}
-Related topic
+Related topics
 
 -  [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 -  [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-
-[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-v2.3/performance-best-practices/advanced-js-bundling.html
+-  [JavaScript initialization]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html)
+-  [Advanced JavaScript bundling]({{page.baseurl}}/performance-best-practices/advanced-js-bundling.html)

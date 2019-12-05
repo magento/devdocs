@@ -75,7 +75,7 @@ If you want to add your own icons, each icon will need to be in its own SVG file
 
 1. Specify the desired font names and the Unicode characters to map the icons.
 
-   {: .bs-callout-tip }
+   {:.bs-callout-tip}
    Setting the icons to [Private Use Area](https://en.wikipedia.org/wiki/Private_Use_Areas#Private_Use_Areas) (PUA) will disable screen-readers and other accessibility tools. Disabling prevents the devices from mistakenly translating your icon's characters as words that users won't understand.
 
 1. From the app, click "Download" to generate the icon font and [CSS](https://glossary.magento.com/css) style sheet.

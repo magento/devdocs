@@ -12,8 +12,7 @@ functional_areas:
 
 In this tutorial, you will learn to copy custom data from a [quote](https://glossary.magento.com/quote) object to an order object using the [Magento/Framework/DataObject/Copy][0]{:target="_blank"} class.
 
-## Step 1: Define your attributes
-{:#step-1}
+## Step 1: Define your attributes {#step-1}
 
 The following code defines a simple [extension attribute][1] named `demo` for the Cart and Order objects.
 
@@ -30,8 +29,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 </config>
 ```
 
-## Step 2: Configure the fieldset
-{:#step-2}
+## Step 2: Configure the fieldset {#step-2}
 
 The following code adds the `demo` field to the `sales_convert_quote` fieldset with the `to_order` aspect.
 The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.
@@ -50,8 +48,7 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 </config>
 ```
 
-## Step 3: Copy the fieldset
-{:#step-3}
+## Step 3: Copy the fieldset {#step-3}
 
 For copying the fieldset, we'll observe the `sales_model_service_quote_submit_before` event by using the following code in our `etc/events.xml`:
 
@@ -114,7 +111,21 @@ class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
 ```
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].
-The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects..
+The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects.
+
+## Step 4: Compile and cache clean
+
+Compile the code with this command:
+
+```bash
+bin/magento setup:di:compile
+```
+
+and clean the cache with this command:
+
+```bash
+bin/magento cache:clean
+```
 
 [0]:{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/Copy.php
 [1]:{{ page.baseurl }}/extension-dev-guide/attributes.html

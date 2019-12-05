@@ -126,4 +126,4 @@ magento-cloud update
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```
-{: .no-copy}
+{:.no-copy}

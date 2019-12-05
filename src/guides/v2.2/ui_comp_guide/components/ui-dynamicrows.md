@@ -7,327 +7,93 @@ The DynamicRows component is a dynamic collection of records. The user can edit 
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>
-      Option
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Default
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>addButton</code>
-    </td>
-    <td>
-      Renders button for adding a new row.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td />
-  </tr>
-  <tr>
-    <td>
-      <code>addButtonLabel</code>
-    </td>
-    <td>
-      Label for the adding a new row button.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>'Add'</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>additionalClasses</code>
-    </td>
-    <td>
-      Sets custom classes to the component's DOM block.
-    </td>
-    <td>
-      Object
-    </td>
-    <td>
-      <code>{}</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>defaultRecord</code>
-    </td>
-    <td>
-      Renders the default (first) row when the component is
-      initialized without data.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>deleteProperty</code>
-    </td>
-    <td>
-      The property added to a record data object when the record is
-      deleted. Applied if the <code>deleteValue</code> option is
-      enabled.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>'delete'</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>dndConfig</code>
-      <ul>
-        <li><code>component</code>
-        </li>
-        <li><code>template</code>
-        </li>
-        <li><code>enabled</code>
-        </li>
-      </ul>
-    </td>
-    <td>
-      Configuration of the drag and drop (DND) plugin for
-      dynamicRows:
-      <ul>
-        <li>Link to the DND plugin <code>.js</code> file.
-        </li>
-        <li>Link to the DND plugin <code>.html</code> template
-        file.
-        </li>
-        <li>Enables or disables DND for dynamicRows
-        </li>
-      </ul>
-    </td>
-    <td>
-      Object
-    <ul>
-      <li>String</li>
-      <li>String</li>
-      <li>Boolean</li>
-    </ul>
-    </td>
-    <td>
-      <ul>
-        <li>
-          <code>Magento_Ui/js/dynamic-rows/dnd</code>
-        </li>
-        <li>
-          <code>ui/dynamic-rows/cells/dnd</code>
-        </li>
-        <li><code>true</code>
-        </li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>collapsibleHeader</code>
-    </td>
-    <td>
-      Enables or disables the collapsible functionality for the
-      header (if columns header is enabled).
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnsHeader</code>
-    </td>
-    <td>
-      Hides or shows columns header.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>columnsHeaderClasses</code>
-    </td>
-    <td>
-      Adds custom class to columns header (if the column header is
-      enabled).
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      ''
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>component</code>
-    </td>
-    <td>
-      The path to the component’s JS constructor in terms of
-      RequireJS.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>Magento_Ui/js/dynamic-rows/dynamic-rows</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>currentPage</code>
-    </td>
-    <td>
-      Current page.
-    </td>
-    <td>
-      Number
-    </td>
-    <td>
-      <code>1</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-     <code> deleteValue</code>
-    </td>
-    <td>
-      Adds the <code>deleteProperty</code> property in the data
-      object for the deleted record.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>disabled</code>
-    </td>
-    <td>
-      Initial component's state. When set to <code>true</code>, users can't
-      take action on the element.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>fallbackResetTpl</code>
-    </td>
-    <td>
-      The path to the fallback reset (restore to default button)
-      <code>.html</code> template.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/form/element/helper/fallback-reset-link</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>identificationProperty</code>
-    </td>
-    <td>
-      The identification property added to the record data object.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>record_id</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>pageSize</code>
-    </td>
-    <td>
-      The number of records on one page.
-    </td>
-    <td>
-      Number
-    </td>
-    <td>
-      <code>20</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>recordTemplate</code>
-    </td>
-    <td>
-      The path to the <code>.html</code> template of a records(row). The list of templates is declared in the <code>templates</code>
-      property.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>record</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>template</code>
-    </td>
-    <td>
-      The path to the component’s <code>.html</code> template.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/dynamic-rows/templates/default</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>visible</code>
-    </td>
-    <td>
-      Initial component's visibility. When set to <code>false</code>, the
-      <code>display: none</code> CSS style is added to the
-      component's DOM block.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
-    </td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `addButton` | Renders button for adding a new row. | Boolean | `-` |
+| `addButtonLabel` | Label for the adding a new row button. | String | `'Add'` |
+| `additionalClasses` | Sets custom classes to the component's DOM block. | Object | `{}` |
+| `defaultRecord` | Renders the default (first) row when the component is initialized without data. | Boolean | `false` |
+| `deleteProperty` | The property added to a record data object when the record is deleted. Applied if the `deleteValue` option is enabled. | String | `'delete'` |
+| `dndConfig` | Configuration of the drag and drop (DND) plugin for dynamicRows. | Object | `{name: '${ $.name }_dnd', component: 'Magento_Ui/js/dynamic-rows/dnd', template: 'ui/dynamic-rows/cells/dnd', recordsProvider: '${ $.name }', enabled: true }` |
+| `collapsibleHeader` | Enables or disables the collapsible functionality for the header (if columns header is enabled). | Boolean | `false` |
+| `columnsHeader` | Hides or shows columns header. | Boolean | `true` |
+| `columnsHeaderClasses` | Adds custom class to columns header (if the column header is enabled). | String | `''` |
+| `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/dynamic-rows/dynamic-rows` |
+| `currentPage` | The number of current page. | Number | `1` |
+| `deleteValue` |  Adds the `deleteProperty` property in the data object for the deleted record. | Boolean | `false` |
+| `disabled` | Initial component's state. When set to `true`, users cannot take action on the element. | Boolean | `false` |
+| `fallbackResetTpl` | The path to the fallback reset (restore to default button) `.html` template. | String | `ui/form/element/helper/fallback-reset-link` |
+| `identificationProperty` | The identification property added to the record data object. | String | `record_id` |
+| `pageSize` | The number of records on one page. | Number | `20` |
+| `recordTemplate` | The path to the `.html` template of a records(row). The list of templates is declared in the `templates` property. | String | `record` |
+| `template` | The path to the component’s `.html` template. | String | `ui/dynamic-rows/templates/default` |
+| `visible` | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
+
+## Source files
+
+Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
+-  [`app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js)
+-  [`app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/default.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/default.html)
+
+## Examples
+
+### Integrate the DynamicRows component with the Form component
+
+This is an example of how the DynamicRows component integrates with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+
+```xml
+<form>
+    ...
+    <dynamicRows name="dynamic_rows">
+        <settings>
+            <addButtonLabel translate="true">Add Record</addButtonLabel>
+            <additionalClasses>
+                <class name="admin__field-wide">true</class>
+            </additionalClasses>
+            <componentType>dynamicRows</componentType>
+        </settings>
+        <container name="record" component="Magento_Ui/js/dynamic-rows/record">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="isTemplate" xsi:type="boolean">true</item>
+                    <item name="is_collection" xsi:type="boolean">true</item>
+                    <item name="componentType" xsi:type="string">container</item>
+                </item>
+            </argument>
+            <field name="field_1" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="fit" xsi:type="boolean">false</item>
+                    </item>
+                </argument>
+                <settings>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">true</rule>
+                    </validation>
+                    <dataType>text</dataType>
+                    <label>Field #1</label>
+                </settings>
+            </field>
+            <field name="field_2" formElement="input">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="fit" xsi:type="boolean">false</item>
+                    </item>
+                </argument>
+                <settings>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">true</rule>
+                    </validation>
+                    <dataType>text</dataType>
+                    <label>Field #2</label>
+                </settings>
+            </field>
+        </container>
+    </dynamicRows>
+</form>
+```
+
+#### Result
+
+![DynamicRows Component example]({{ site.baseurl }}/common/images/ui_comps/dynamicrows-result.png)

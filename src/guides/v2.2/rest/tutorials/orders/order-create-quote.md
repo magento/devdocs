@@ -59,7 +59,7 @@ None
 
 The response is the `quoteId`: `4`
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
 
 ### Verify this step {#verify-step}

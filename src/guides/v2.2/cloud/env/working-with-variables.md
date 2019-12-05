@@ -12,7 +12,7 @@ The following demonstrates a specific case for preventing a variable from being 
 -  **Project-specific variables**—To set the same value for all environments in your project, use the `magento-cloud project:variable:set` command. These variables are available at build and runtime in all environments.
 -  **Environment-specific variables**—To set a unique value for a specific environment, use the `magento-cloud variable:set` command. These variables are available at runtime and are inherited by child environments. You should specify the environment in your command using the `-e` option.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 After setting project-specific variables, you must manually redeploy the remote environment for the change to take effect. Push the new commits to trigger a redeploy. Setting environment-specific variables in the Project Web Interface automatically redeploys the environment.
 
 Use the following options to prevent a variable from being seen or inherited:

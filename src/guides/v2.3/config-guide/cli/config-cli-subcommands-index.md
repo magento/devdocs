@@ -81,7 +81,7 @@ Sample result:
 
 Use this command to reindex all or selected indexers one time only.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 Command options:
@@ -120,7 +120,7 @@ Product Price index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
 
 ## Configure indexers

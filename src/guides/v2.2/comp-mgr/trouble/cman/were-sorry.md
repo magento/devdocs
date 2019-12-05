@@ -11,7 +11,7 @@ functional_areas:
 
 The following error might display at the start of your upgrade:
 
-![]({{ site.baseurl }}/common/images/upgr-sorry.png){: width="600px"}
+![]({{ site.baseurl }}/common/images/upgr-sorry.png){:width="600px"}
 
 See one of the following sections for possible solutions:
 
@@ -31,7 +31,7 @@ If that doesn't work, try generating [new authentication keys]({{ page.baseurl }
 
 ### Problem: the updater application isn't initialized {#updater}
 
-In some cases (especially if you downloaded the Magento software from [packagist](https://packagist.org/){: target="_blank"}), the updater application might not be initialized. (A common way for this to happen is to not specify our `https://repo.magento.com` repository in the `composer create-project` command.)
+In some cases (especially if you downloaded the Magento software from [packagist](https://packagist.org/){:target="_blank"}), the updater application might not be initialized. (A common way for this to happen is to not specify our `https://repo.magento.com` repository in the `composer create-project` command.)
 
 The updater application uses a cron job to run the upgrade; if it's not initialized, your update fails.
 

@@ -13,7 +13,7 @@ The deployment process creates a backup file for each configuration file:
 
 If you encounter problems resulting from a missing or altered configuration file, you can restore them using the ECE tools `backup:restore` command.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The BAK files are a product of the deployment process. If you manually change a configuration file after the deployment, your changes are not reflected in the existing BAK files.
 
 To restore the configuration files:

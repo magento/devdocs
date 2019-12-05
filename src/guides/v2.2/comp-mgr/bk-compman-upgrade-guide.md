@@ -38,11 +38,11 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 
 *  To upgrade from {{ce}} to {{ee}}, see [Upgrade from Open Source to Commerce].
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 __System upgrade__ refers to updating the Magento 2.x core modules and other installed modules.
 To migrate from Magento 1.x to Magento 2, see the [Migration Guide].
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 For upgrade or update, you must use the same authentication keys you used to install the Magento software.
 
 For example, you *cannot* use {{ce}} authentication keys to update or upgrade {{ee}} or vice versa.

@@ -45,7 +45,7 @@ cd /var/www/html/magento2 && find var generated vendor pub/static pub/media app/
    *  [Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
    *  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To further restrict permissions after installing the Magento software, you [configure a Magento umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase

@@ -13,7 +13,7 @@ The `@depends` annotation helps you to define some dependencies between methods.
  */
 ```
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Please note that dependencies don't define the order in which the test methods are executed, so you still have to keep to proper order for your methods.
 
 ### Example 1
@@ -45,7 +45,7 @@ public function testNumber($number)
 
 ### Example 2
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If using multiple dependencies, arguments are passed in the annotations' defined order.
 
 ```php

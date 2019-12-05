@@ -25,5 +25,5 @@ In general, the Magento application works with any backend cache that [Zend_Cach
 
 [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level [cache backend](https://glossary.magento.com/cache-backend).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We'll periodically add more low-level cache types so watch this space.

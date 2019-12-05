@@ -19,7 +19,7 @@ Magento collects data and sends this information to the MBI for analytics.
 
 The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.
 
 ## Recommendations

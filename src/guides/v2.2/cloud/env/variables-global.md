@@ -53,7 +53,7 @@ return array(
    ...
 );
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### `SCD_MAX_EXECUTION_TIME`
 

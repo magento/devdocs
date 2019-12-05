@@ -21,7 +21,7 @@ File                      | Description
 `composer.lock`           | Stores version dependencies for every package.
 `magento-vars.php`        | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
 
 ## Magento application root directory
@@ -43,7 +43,7 @@ In Integration, Staging, and Production, *only* the following directories are wr
 -  `app/etc`
 -  `/tmp`
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
 
 ## Ignoring files

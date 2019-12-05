@@ -195,21 +195,21 @@ class WebsitesLogger
 
 In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The after method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 If an argument is optional in the observed method, then the after method should also declare it as optional.
 
 #### Around methods
 
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. around methods must have the same name as the observed method with 'around' as the prefix.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Avoid using around method plugins when they are not required because they increase stack traces and affect performance.
 The only use case for around method plugins is when the execution of all further plugins and original methods need termination.
 Use after method plugins if you require arguments for replacing or altering function results.
 
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 If the around method does not call the `callable`, it will prevent the execution of all the plugins next in the chain and the original method call.
 
 Below is an example of an around method adding behavior before and after an observed method:
