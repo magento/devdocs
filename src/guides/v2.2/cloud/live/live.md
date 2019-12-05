@@ -38,9 +38,9 @@ The Magento Security Scan Tool enables you to regularly monitor your store websi
 *  Monitor your sites security status and applied security updates
 *  Receive security updates and site-specific notifications
 
-For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html). Typically, you want to start using this tool as you enter user acceptance testing (UAT).
+See the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html) for information about setting up and using the security scan tool. Typically, you start using this tool when you begin user acceptance testing (UAT).
 
-Each site you scan must be registered through the Magento Security Scan tab. The registration process requires you to accept Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is complete. You can schedule scans for a specific, recurring date and time or on demand as required.
+Each site you scan must be registered through the Magento Security Scan tab. During the registration process, you must accept the Magento disclaimer before you can begin scanning.  You control both the schedule and authorizing the user to receive notifications when each scan is complete.  You can schedule scans for a specific, recurring date and time, or run a scan on demand as needed.
 
 {%
 include note.html
@@ -73,7 +73,11 @@ To review the report:
 
 The report lists issues including Failed Scans, Unidentified Results, and Successful Scans. Each entry provides detailed information for the scan, a list of issues to investigate, and actions to take. Some of these actions may require downloading and installing security patches. You can add those to a development branch on your local workstation.
 
-Scan results include a general label that describes whether a site passed or failed, plus detailed information about the checks performed. "Failed" indicates that the website contains a serious vulnerability, while "Unidentified" suggests that a deeper review is required by your team or hosting provider to determine if further action is required. We also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user. Only users designated in the site registration process receive scan completion notifications.
+Scan results include a label that describes scan pass or fail status with detailed information about the checks performed:
+-  "Failed" indicates that the website contains a serious vulnerability
+-  "Unidentified" suggests that a deeper review is required by your team or hosting provider to determine if further action is required.
+
+The scan results also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user. Only users designated in the site registration process receive scan completion notifications.
 
 ## Ready to go live {#ready}
 
