@@ -9,7 +9,7 @@ If the data format and structure created by [Magento extensions](https://marketp
 
 During migration, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Read the [Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html) for general information about using the tool.
 
 ## Minor data format and structure changes
@@ -118,7 +118,7 @@ Steps can include four types of classes:
 -  Volume checking
 -  Delta delivering
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#configuration), [Step internals]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-internals), [Stages]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-stages) and [Running modes]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#running-modes) for more information.
 
 Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.

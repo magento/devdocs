@@ -71,7 +71,7 @@ use Magento\Framework\Component\ComponentRegistrar;
 );
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 A theme must be registered in the database.
 Each time you register a theme, reset the entire application.
 Use the [`@magentoDbIsolation`][] annotation to keep the database integrity safe.

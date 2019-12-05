@@ -165,7 +165,7 @@ To verify the configuration settings:
 
    ![Check settings in the production system]({{ site.baseurl }}/common/images/config_split-deploy_verify_storeinfo.png){:width="650px"}
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The **Store Name** field is editable in the website scope but if you switch to the Default Config scope, it is not editable. This is the result of how you set the options in the development system. The value of **VAT Number** is not editable in website scope.
 
 1. If you haven't already done so, switch to Default Config scope.

@@ -68,7 +68,7 @@ Try any of the following:
    git config --system core.eol LF
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    Magento does <em>not</em> recommend or endorse any particular GitHub configuration settings. The preceding are suggestions only. For more information, consult the [GitHub help](https://help.github.com/).
 
    Continue where you left off with your Magento 2 update.

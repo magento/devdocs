@@ -12,7 +12,7 @@ In the Magento application, CSS files are included in [layout files].
 
 Technically there is an option to include them in template files, but we strongly recommend avoiding this.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The CSS class names can be assigned in both templates and layouts.
 
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
@@ -101,7 +101,7 @@ To include an external CSS file, add `<css src="URL to External Source" src_type
 </page>
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
 
 [layout files]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html

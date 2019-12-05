@@ -32,7 +32,7 @@ Using [Elasticsearch][] as your [catalog](https://glossary.magento.com/catalog) 
 
 ### Supported versions {#es-spt-versions}
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Magento 2.3.1 adds support for Elasticsearch 6.x and it is enabled by default.
 Magento still provides connectivity for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
 Elasticsearch 2.x is still supported but strongly discouraged.
@@ -129,7 +129,7 @@ Refer to [Upgrading Elasticsearch][] for full instructions on backing up your da
 Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 See [Upgrading Elasticsearch][] for details.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Elasticsearch 6.x requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
 
 ## Additional resources {#es-resources}

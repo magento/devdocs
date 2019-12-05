@@ -10,7 +10,7 @@ The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
 {% include cloud/service-config-integration-starter.md %}
@@ -101,7 +101,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
       ]
    }
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 1. Enable local port forwarding to RabbitMQ.
 

@@ -109,7 +109,7 @@ You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fas
 <p>"} req.http.x-request-id {"</p>
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
 
 {:.procedure}
@@ -180,41 +180,41 @@ By default, Fastly hides all Magento errors behind the _503 Service Unavailable_
 <!-- Link definitions -->
 
 [Edit 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
-{: width="650px"}
+{:width="650px"}
 
 [Update 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-customize-503-response.png
-{: width="650px"}
+{:width="650px"}
 
 [Edit WAF error page option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
-{: width="650px"}
+{:width="650px"}
 
 [Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-503-example.png
 
 [Fastly custom error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-new-error-page.png
-{: width="650px"}
+{:width="650px"}
 
 [WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 
 [Update WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
-{: width="650px"}
+{:width="650px"}
 
 <!-- Link definitions -->
 
 [Edit 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
-{: width="650px"}
+{:width="650px"}
 
 [Update 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-customize-503-response.png
-{: width="650px"}
+{:width="650px"}
 
 [Edit WAF error page option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
-{: width="650px"}
+{:width="650px"}
 
 [Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-503-example.png
 
 [Fastly custom error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-new-error-page.png
-{: width="650px"}
+{:width="650px"}
 
 [WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 
 [Update WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
-{: width="650px"}
+{:width="650px"}

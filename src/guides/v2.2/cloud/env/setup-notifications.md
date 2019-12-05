@@ -21,7 +21,7 @@ Before you configure notifications, consider the following:
 
 For example, during initial development you may prefer email notifications that show detailed logs about your Integration environment to help you debug issues before deploying to the Staging environment. When you are ready to deploy to the Staging or Production environment, you may prefer a Slack message that contains less detailed information.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment.
 
 ## Configure notifications
@@ -47,7 +47,7 @@ To configure notifications:
         min_level: "notice"
     ```
 
-    {:.bs-callout .bs-callout-info}
+    {:.bs-callout-info}
     {{site.data.var.ece}} only sends emails during the deployment phase.
 
 1. Commit and push your changes to the remote server.
@@ -82,7 +82,7 @@ log:
 
 The following example shows an email-only configuration:
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 {{site.data.var.ece}} only sends emails during the deployment phase.
 
 ```yaml

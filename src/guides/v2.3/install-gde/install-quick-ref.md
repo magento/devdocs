@@ -64,7 +64,7 @@ composer create-project --repository=https://repo.magento.com/ magento/project-c
 
 You are required to authenticate; see [Get your authentication keys][] for details. This downloads Magento code only; it does not install the software for you.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Alternatively, you can also download a [Magento software archive][].
 
 {% include install/file-system-perms-before_22.md %}

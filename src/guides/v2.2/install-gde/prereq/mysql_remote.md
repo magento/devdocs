@@ -14,7 +14,7 @@ functional_areas:
 
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have `root` access to the file system and you must be able to log in to MySQL as `root`.
 
 ### Prerequisites
@@ -57,7 +57,7 @@ To create a remote connection:
    /etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
 
 1. Search the configuration file for `bind-address`.
@@ -78,7 +78,7 @@ To create a remote connection:
    *  CentOS: `service mysqld restart`
    *  Ubuntu: `service mysql restart`
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
 
 ## Grant access to a database user {#instgde-prereq-mysql-remote-access}
@@ -103,7 +103,7 @@ To grant access to a database user:
    GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.
 
 ## Verify database access {#instgde-prereq-mysql-remote-verify}

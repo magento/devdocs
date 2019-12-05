@@ -16,7 +16,7 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 All third-party libraries now support PHP 7.2.
 If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
@@ -68,7 +68,7 @@ Magento requires a set of extensions to be installed:
 In the command line, type `php -m` to see the list of installed modules. Verify that the listed extensions are installed.
 If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.2 modules can be added with:
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 ```bash
@@ -112,7 +112,7 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
 
    Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
@@ -132,7 +132,7 @@ php --ini
 
 Use the value of Loaded Configuration file.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you have only one `php.ini` file, make the changes in that file. If you have two `php.ini` files, make the changes in *all* files. Failure to do so might cause unpredictable performance.
 
 {% endcollapsible %}

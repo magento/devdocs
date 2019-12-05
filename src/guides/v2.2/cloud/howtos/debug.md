@@ -295,7 +295,7 @@ To start debugging using the environment URL:
    ?XDEBUG_SESSION_STOP=KEY
    ```
 
-   {: .bs-callout-info }
+   {:.bs-callout-info}
    The `XDEBUG_SESSION_START` passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}

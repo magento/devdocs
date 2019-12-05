@@ -13,7 +13,7 @@ The following procedure describes how to reroute incoming requests from a {{ sit
 
 Edge modules help you create and upload custom VCL code from the Magento Admin UI instead of manually writing the VCL code and uploading it using the Fastly API.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend adding custom VCL configurations to a Staging environment where you can test them before updating the Fastly service configuration in the Production environment.
 
 {:.procedure}

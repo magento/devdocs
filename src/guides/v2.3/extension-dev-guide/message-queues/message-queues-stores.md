@@ -9,7 +9,7 @@ functional_areas:
 
 The `Magento_AmqpStore` module provides the ability for message queues to process asynchronous requests for specific stores.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 You must install the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) to enable asynchronous requests on specific stores. Without this patch, asynchronous requests apply to the default store only.
 
 ### Processing messages

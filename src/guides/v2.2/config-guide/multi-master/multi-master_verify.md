@@ -35,7 +35,7 @@ To verify your split databases are working properly, perform the following tasks
   </tbody>
 </table>
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You must back up the two additional database instances manually. Magento backs up only the main database instance. The [`magento setup:backup --db`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
 
 {:.ref-header}

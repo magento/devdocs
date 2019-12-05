@@ -18,10 +18,10 @@ Examples:
 
 If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 It's possible that module A's `composer.json` declares a conflict with module B but not vice versa.
 
 *Command line [module enable or disable subcommand]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) only:* To force a module to be enabled or disabled regardless of its dependencies, use the optional`--force` argument.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Using `--force` can disable your Magento store and cause problems accessing the Magento Admin.

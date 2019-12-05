@@ -21,7 +21,7 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
    *  To remove or edit existing configurations, manually edit the file.
    *  Commit and push to Git.
 
-<!-- {:.bs-callout .bs-callout-info}
+<!-- {:.bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 For example, you may want to set the following settings:
@@ -132,7 +132,7 @@ The following snippet from `config.php` shows an example of changing the default
 
      ... more ...
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Push and deploy config.php to environments {#deploy}
 
@@ -247,7 +247,7 @@ On your local, use a text editor to edit the updated `app/etc/config.php` file. 
          'minify_files' => '0',
      ],
 ```
-{: .no-copy}
+{:.no-copy}
 
 To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
 
@@ -270,7 +270,7 @@ To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'
          'minify_files' => '1',
      ],
 ```
-{: .no-copy}
+{:.no-copy}
 
 Save the changes to the file.
 

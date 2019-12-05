@@ -9,7 +9,7 @@ functional_areas:
 
 This topic lists configuration paths for Magento Enterprise B2B Extension. The [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This reference lists _only_ configuration paths unique to Magento Enterprise B2B Extension. Magento Enterprise B2B Extension includes all configuration paths for {{site.data.var.ce}} and {{site.data.var.ee}} as well.
 
 For those configuration paths, see:
