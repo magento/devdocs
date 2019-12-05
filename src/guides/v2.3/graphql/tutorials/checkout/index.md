@@ -25,7 +25,6 @@ The checkout process in GraphQl consists of 10 steps. Magento GraphQL is designe
 
 ### Before you begin
 
-
 Complete the following prerequisites:
 
 *  Install a Magento 2.3.2 instance with sample data.

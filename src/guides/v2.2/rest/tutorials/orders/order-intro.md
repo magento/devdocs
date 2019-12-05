@@ -22,7 +22,6 @@ The **10-step tutorial** generally takes **30 minutes**.
 
 ### Before you begin
 
-
 Complete the following prerequisites:
 
 *  Install a Magento 2.1.3 (or later) instance with sample data.

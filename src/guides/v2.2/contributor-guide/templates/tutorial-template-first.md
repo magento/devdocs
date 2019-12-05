@@ -46,7 +46,6 @@ menu_order: 0
 
 ## Before you begin...
 
-
 _This tutorial will show a \<audience/skill level> how to \<perform the task addressed in this topic>._
 
 Summarize the goals of the tutorial and the benefit that the reader will receive upon completion.

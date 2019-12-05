@@ -5,7 +5,6 @@ title: Add Custom Editor
 
 ## Before you begin...
 
-
 This tutorial goes through the process of adding [CKEditor4] as an editor that can be used by the WYSIWYG UI component.
 
 As a developer, use this tutorial as a guide for adding your own custom JavaScript editor to Magento.
