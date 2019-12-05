@@ -27,4 +27,4 @@ The release notes include:
 
 -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
 
--  {:.new}Added the `--sync-engine=native` option to the `docker-build` command to disable file synchronization when launching the Docker generator in developer mode. Use this option when developing on  Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
+-  {:.new}Added the `--sync-engine=native` option to the `docker-build` command to disable file synchronization when launching the Docker generator in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
