@@ -36,7 +36,10 @@ Magento identifies three types of users that can create a shopping cart:
 
 ### Create a cart for a logged-in customer {#create-cart}
 
-All calls for logged in customer must specify customer's token `q0u66k8h42yaevtchv09uyy3y9gaj2ap` in the header.
+All calls for a logged in customer must specify customer's token `q0u66k8h42yaevtchv09uyy3y9gaj2ap` in the header.
+
+{:.bs-callout-info}
+Use the `V1/guest-carts` endpoint to create a cart on behalf of a guest. Do not include an authorization token. The `quoteId` for the guest customer quote will be masked.
 
 **Endpoint:**
 
@@ -58,9 +61,6 @@ The response is the `quoteId`: `4`
 
 {:.bs-callout .bs-callout-tip}
 Some calls refer to this parameter as the `cartId`.
-
-{:.bs-callout-info}
-Use the `V1/guest-carts` endpoint to create cart on behalf of a guest. Do not include an authorization token. The quoteId for guest customer quote will be masked.
 
 ### Verify this step {#verify-step}
 
