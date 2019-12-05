@@ -40,7 +40,7 @@ This example integrates the OnOffColumn component with the [Listing]({{ page.bas
         </column>
     </columns>
 </listing>
-``` 
+```
 
 #### Result
 
