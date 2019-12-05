@@ -10,7 +10,7 @@ In the programming community, a _design pattern_ is a recommended way of writing
 
 Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those interfaces.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}

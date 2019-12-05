@@ -56,7 +56,7 @@ You can run Magento in any of the following *modes*:
 </tbody>
 </table>
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports only the production and maintenance modes.
 
 ## Default mode

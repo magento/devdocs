@@ -59,7 +59,7 @@ The following components are involved in the indexing process:
     </tbody>
 </table>
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 `Magento_Indexer` replaces the Magento 1.x `Magento_Index` module. Use `Magento_Indexer` for all new development.
 
 ### Indexing types
@@ -97,7 +97,7 @@ Reindexing can be performed in two modes:
 *  Update on Save - index tables are updated immediately after the dictionary data is changed.
 *  Update by Schedule - index tables are updated by cron job according to the configured schedule.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 **Update by Schedule** does not support the `customer_grid` indexer. You must either use **Update on Save** or reindex the customer grid manually (`bin/magento indexer:reindex customer_grid`). See the [Help Center article](https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV).
 
 To set these options:

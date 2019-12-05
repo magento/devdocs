@@ -15,7 +15,7 @@ Redis features include:
 
 *  Redis supports on-disk save and master/slave replication.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Starting in Magento 2.0.6, you can use either Redis or [memcached]({{ page.baseurl }}/config-guide/memcache/memcache.html) for session storage. Earlier issues with the Redis session handler and session locking have been resolved.
 
 ## Install Redis {#config-redis-install}

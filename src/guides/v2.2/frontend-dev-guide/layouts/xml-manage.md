@@ -26,7 +26,7 @@ This article describes the following typical [layout](https://glossary.magento.c
 -  [Add functionality to existing elements](#layout_markup_add_to_elements)
 -  [Modify functionality with plugins (interceptors)](#layout_markup_modify_with_plugins)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento [module](https://glossary.magento.com/module) and [theme](https://glossary.magento.com/theme) layouts. To customize your layout, create extending and overriding layout files in your custom theme.
 
 ## Set the page layout {#layout_markup_columns}
@@ -277,7 +277,7 @@ In both examples, the template is specified according to the following:
 -  `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
 -  `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Template values specified as attributes have higher priority during layout generation, than the ones specified using `<argument>`. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in `<argument>` for the same block.
 
 ## Modify block arguments {#layout_markup_modify-block}
@@ -331,7 +331,7 @@ Extending layout:
 
 **Example 2:** Set a page title using `<action>`.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Do not use `<action>` if the method implementation allows calling it using `<argument>` for `<block>` or `<referenceBlock>`.
 
 Extending layout:
@@ -374,7 +374,7 @@ This would make the product page look like following:
 
 ![]({{site.baseurl}}/common/images/layout_image2.png)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To learn how to locate the layout file you need to customize, see [Locate templates, layouts, and styles].
 
 ## Add functionality to existing elements {#layout_markup_add_to_elements}

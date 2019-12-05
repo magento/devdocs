@@ -365,7 +365,7 @@ Data Source is another [UI Component](https://glossary.magento.com/ui-component)
 
 ### Replace instances of component
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Replacing principles are the same for all UI Components.
 
 #### Global replacement

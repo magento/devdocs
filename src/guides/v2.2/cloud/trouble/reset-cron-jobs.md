@@ -20,7 +20,7 @@ Symptoms of cron jobs that must be reset include:
 
 To resolve this issue, you must reset the cron job(s) using the `cron:unlock` command. This command changes the status of the cron job in the database, ending the job forcefully to allow other scheduled jobs to continue.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Running this command without the `--job-code` option resets _all_ cron jobs, including those currently running, so we recommend using it only in exceptional cases, such as after you have verified that all cron jobs must be reset. Re-deployment runs this command by default to reset cron jobs, so they recover appropriately after the environment is back up. Avoid using this solution when indexers are running.
 
 1. Open a terminal and use your [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh) keys to connect to the affected environment.

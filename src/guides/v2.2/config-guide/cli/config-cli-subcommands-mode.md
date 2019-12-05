@@ -15,7 +15,7 @@ To improve security and ease-of-use, we added a command that switches [Magento m
 
 Production mode also has better performance because static view files are populated in the `pub/static` directory and because of code compilation.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
 Unlike other Magento modes, developer and production modes are set in `env.php`. [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
 Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html) for more information.
@@ -35,7 +35,7 @@ Exceptions:
 -  `.htaccess` files are not removed
 -  `pub/static` contains a file that specifies the version of static content; this file is not removed
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 By default, Magento uses the `var` directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be `var`.
 
 ## Display the current mode {#config-mode-show}

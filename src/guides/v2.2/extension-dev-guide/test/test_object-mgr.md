@@ -10,7 +10,7 @@ menu_order: 3
 <p>To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects. If the number of dependencies is ten or greater, this task is time-consuming.</p>
 <p>Use the <code>\Magento\TestFramework\Helper\ObjectManager</code> helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.</p>
 <p>You can still create your custom mocks, if needed.</p>
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Do not use the ObjectManager helper class for classes with a small number of dependencies.
 
 ## ObjectManager methods {#help}

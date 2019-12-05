@@ -10,7 +10,7 @@ You must request and include a security token to gain access to the Customer and
 
 See [Token-based authentication][] for instructions on requesting and using security tokens.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The list of Admin REST API endpoints contains a large number of endpoints and takes longer to load.
 
 ## Synchronous endpoints

@@ -43,7 +43,7 @@ Basic components are declared in the [page layout files]({{ page.baseurl }}/fron
 
 All components can be configured both for [Admin](https://glossary.magento.com/admin) and [storefront](https://glossary.magento.com/storefront).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You need to configure styles manually for components on the storefront.
 
 ## When to use UI components?

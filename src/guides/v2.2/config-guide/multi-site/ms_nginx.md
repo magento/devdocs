@@ -30,7 +30,7 @@ We assume that:
    *  `german.mysite.mg` with website code `german` and store view code `de`
    *  `mysite.mg` is the default website and default store view
 
-{: .bs-callout-tip }
+ {:.bs-callout-tip}
 Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
 
 ### Roadmap for setting up multiple websites with nginx

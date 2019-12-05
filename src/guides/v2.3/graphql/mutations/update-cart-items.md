@@ -7,7 +7,7 @@ redirect from:
 
 The `updateCartItems` mutation allows you to replace the current quantity of one or more cart items with the specified quantities. It does not perform calculations to determine the quantity of cart items.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Setting the quantity to `0` removes an item from the cart.
 
 ## Syntax

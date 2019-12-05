@@ -38,7 +38,7 @@ Condition | Notes
 `null` | Null
 `to` | The end of a range. Must be used with `from`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 `condition_type` is optional if the operator is `eq`.
 
 The `filter_groups` array defines one or more `filters`. Each filter defines a search term, and the `field`, `value`, and `condition_type` of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.

@@ -4,7 +4,7 @@ Magento sample data provides a storefront based on the Luma theme outfitted with
 
 You can install sample data either before or after installing the Magento software. When you're done with the sample data, you can either remove it or you can install it fresh as discussed in [Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/sample-data-other-cmds.html).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 There is currently no way to uninstall sample data. We recommend you use sample data only to learn about how Magento works. Avoid doing any development in a system in which you installed sample data.
 
 You can install optional sample data in any of the following ways:
