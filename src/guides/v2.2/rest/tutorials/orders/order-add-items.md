@@ -21,7 +21,6 @@ These calls are performed on behalf of a customer, and the customer's token is s
 {:.bs-callout-info}
 Use the `V1/guest-carts/<cartId>/items` endpoint to add items to the cart on behalf of a guest. Do not include an authorization token. The payload and response is same as the logged-in customer for all product types, except for from quote ID in the payload.
 
-
 ### Add a simple product to a cart {#add-simple}
 
 To add a [simple product](https://glossary.magento.com/simple-product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
