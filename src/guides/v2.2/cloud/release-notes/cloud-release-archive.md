@@ -7,7 +7,7 @@ functional_areas:
 
 ## v2002.0.8
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 
 **New features:**
@@ -148,7 +148,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 ## v2002.0.0
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 
 ### Initial release

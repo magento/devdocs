@@ -18,7 +18,7 @@ The following topics are included in this guide:
 -  [Labels applied by the Community Engineering team](#labels)
 -  [Contribution awards and points](#points)
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
 
 ## Contribute to Magento 2 code {#contribute}
@@ -31,7 +31,7 @@ The Community Engineering Team reviews all issues and contributions submitted by
 
 When the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. See [Labels](#labels) to learn more.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
 ## GitHub and Two-Factor authentication {#two-factor}

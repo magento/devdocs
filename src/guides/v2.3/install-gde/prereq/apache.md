@@ -34,7 +34,7 @@ Magento uses server rewrites and `.htaccess` to provide directory-level instruct
 {% include install/allowoverrides22.md %}
 {% endcollapsible %}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
 ## Verify the Apache version {#install-prereq-apache-verify}
@@ -135,7 +135,7 @@ To upgrade to Apache 2.4:
    apt-get install -y apache2
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 1. Verify the installation.
@@ -195,7 +195,7 @@ Installing and configuring Apache is basically a three-step process: install the
 
 1. Continue with the next section.
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
 
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
@@ -234,7 +234,7 @@ For example:
 </Directory>
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
 
 ### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
@@ -252,7 +252,7 @@ For example:
 </Directory>
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 

@@ -20,7 +20,7 @@ The message queue system must be established before you install Magento. The bas
 1. Install RabbitMQ and any prerequisites.
 1. Connect RabbitMQ and Magento.
 
-{:.bs-callout .bs-callout-info"}
+{:.bs-callout-info}
 You can use MySQL or RabbitMQ for message queue processing. For details on setting up the message queue system, see [Message queues overview]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html). If you are using the Bulk API with {{ site.data.var.ee }}, the message queue system configuration defaults to using RabbitMQ as the message broker.  See [Start message queue consumers]({{page.baseurl}}/config-guide/mq/manage-message-queues.html#start-message-queue-consumers) for more information.
 
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}

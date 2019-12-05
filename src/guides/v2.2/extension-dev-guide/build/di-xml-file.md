@@ -236,7 +236,7 @@ Node Format:
 </config>
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 **Merging and Arguments**
 <br/>
 During merging, arguments replace other arguments with the same name if their type is different.

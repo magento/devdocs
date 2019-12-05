@@ -12,7 +12,7 @@ Before you continue, to avoid errors during your installation or update, make su
 *  [Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
 *  [File system permissions](#perms) are set properly
 
-{: .bs-callout .bs-callout-warning  }
+{:.bs-callout-warning}
 Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
@@ -53,7 +53,7 @@ After your upgrade completes, you can unset the variable as follows:
 unset DATA_CONVERTER_BATCH_SIZE
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 `DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
 ### Magento file system owner and group {#magento-owner-group}

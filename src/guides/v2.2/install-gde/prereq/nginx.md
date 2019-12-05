@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank}). You must also install the latest version of `php-fpm`.
+Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank"}). You must also install the latest version of `php-fpm`.
 
 Installation instructions vary based on which operating system you're using:
 
@@ -50,7 +50,7 @@ To install and configure `php-fpm`:
    apt-get -y install php7.2-fpm php7.2-cli
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    This command installs the latest available version of PHP 7.2.X. See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
@@ -71,7 +71,7 @@ To install and configure `php-fpm`:
    zlib.output_compression = On
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
 
 1. Save and exit the editor.
@@ -96,7 +96,7 @@ There are several ways to download the Magento software, including:
 
 For this example, we will install using Composer and the command line.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
 1. As the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html), log in to your Magento server.
@@ -210,7 +210,7 @@ These instructions assume you're using the Ubuntu default location for the nginx
    }
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
 
 1. Replace `www.magento-dev.com` with your domain name. This must match the base URL you specified when installing Magento.
@@ -287,7 +287,7 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
    zlib.output_compression = On
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
 
 1. Uncomment the session path directory and set the path:
@@ -449,7 +449,7 @@ For this example, we'll download and extract an archive.
 
    Replace `http://www.magento-dev.com` with your domain name.
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
 1. Switch Magento to developer mode:
@@ -490,7 +490,7 @@ These instructions assume you're using the CentOS default location for the nginx
    }
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
 
 1. Replace `www.magento-dev.com` with your domain name.

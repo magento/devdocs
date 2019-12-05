@@ -77,7 +77,7 @@ Following are some examples of various types and what they would look like in th
 
    -  @return \Magento\Customer\Api\Data\CustomerInterface[]
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If a service method argument is called `item`, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an `item` element.
 
 ## webapi.xml configuration options {#configuration-options}

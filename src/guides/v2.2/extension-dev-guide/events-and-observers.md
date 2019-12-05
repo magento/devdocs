@@ -8,7 +8,7 @@ menu_order: 6
 
 ## Overview
 
-Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){:target="_self"}. Using events and observers, you can run your custom code in response to a specific Magento [event](https://glossary.magento.com/event) or even a custom event.
+Working with events and observers is one of the main ways to extend Magento functionality. The events and observers implementation in Magento 2 is based on the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern). Using events and observers, you can run your custom code in response to a specific Magento [event](https://glossary.magento.com/event) or even a custom event.
 
 ## Events
 
@@ -16,7 +16,7 @@ Events are dispatched by modules when certain actions are triggered. In addition
 
 ### Dispatching events
 
-Events can be dispatched using the [`Magento\Framework\Event\ManagerInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event/ManagerInterface.php){:target="_self"} class. This class can be obtained through [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
+Events can be dispatched using the [`Magento\Framework\Event\ManagerInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event/ManagerInterface.php) class. This class can be obtained through [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
 
 To dispatch an event, call the `dispatch` function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.
 

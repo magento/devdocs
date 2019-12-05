@@ -55,7 +55,7 @@ Blocks are a foundational building unit for layouts in Magento. They are the lin
 
 Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
 
 | Attribute | Description | Values | Required? |
@@ -78,7 +78,7 @@ A structure without content that holds other layout elements such as blocks and 
 **Details:**
 A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
 
 | Attribute | Description | Values | Required? |
@@ -143,7 +143,7 @@ The following tables give a detailed description of the results you can get usin
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The `<action>` instruction is deprecated. If the method implementation allows, use the [`<argument>`](#argument) for [`<block>`](#fedg_layout_xml-instruc_ex_block) or [`<referenceBlock>`](#fedg_layout_xml-instruc_ex_ref) to access the block public API.
 
 Calls public methods on the block API.
@@ -251,7 +251,7 @@ The specified [handle] is "included" and executed recursively.
 
 ### argument {#argument}
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento 2.3.2 added the `shared` attribute. Now, instances of the view models are shared by default. If a view model is required to be a new instance each time, you must add the attribute `shared="false"` on the argument node in the layout xml file.
 
 Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).

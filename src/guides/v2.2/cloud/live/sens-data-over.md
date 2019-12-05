@@ -16,7 +16,7 @@ These methods are optional, but strongly recommended. The process ensures faster
 
 To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For extended technical information, see [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
 
 ## How it works {#cloud-confman-over}
@@ -28,7 +28,7 @@ To generate the file, use one of the following:
 *  `php vendor/bin/m2-ece-scd-dump`—**Recommended** Exports only modified configuration settings
 *  `php ./vendor/bin/ece-tools config:dump`—Exports every configuration setting, including modified and default settings
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 For {{site.data.var.ece}}, we **do not recommend** using the `app:config:dump` command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.
@@ -53,7 +53,7 @@ This file can include all system configuration settings for stores, sites, exten
 
 Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configurations should export to `app/etc/config.php` during the `scd-dump` process. You can also create environment variables using CLI commands or the Project Web Interface.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 
 For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
@@ -64,7 +64,7 @@ Depending on the size of your store, you may have a large amount of static conte
 
 If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 ## Configuration selection flow
@@ -172,7 +172,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
 
 When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
 
 ### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
@@ -189,7 +189,7 @@ If you need to modify or remove any existing configuration settings in the `conf
 
 To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 
 ## Migrate configurations
@@ -212,7 +212,7 @@ You can change your store locales without following a complex configuration impo
 
 You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
 
 1. From your Integration environment, enable the `SCD_ON_DEMAND` variable.
@@ -231,5 +231,5 @@ This process **overwrites** the store configuration; only do the following if th
 
 1. Push code changes to the remote.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.

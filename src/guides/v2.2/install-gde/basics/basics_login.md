@@ -40,7 +40,7 @@ Here is what it looks like when you are logged in to a server as the `root` user
 
 ![Logging in with Cygwin on Windows]({{ site.baseurl }}/common/images/install_cygwin.png)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 [Secure Shell (ssh)][] is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.
 
 <!-- Link definitions -->

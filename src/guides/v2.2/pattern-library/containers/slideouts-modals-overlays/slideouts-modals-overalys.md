@@ -119,7 +119,6 @@ This method of nesting a 12-column page-grid inside the slideout panel is repeat
 ![](img/slideout-panel9.png)
 
 ## Modals
-{: #modals}
 
 ### Behavior and Animation
 
