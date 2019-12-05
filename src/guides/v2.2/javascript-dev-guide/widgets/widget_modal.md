@@ -245,7 +245,7 @@ The template file that is used as content for the `slide` modal type.
 
 ### `subTitle` {#modal_subTitle}
 
-Translated subTitle for popup window that will be appended to the title.
+Translated subTitle for the popup window that will be appended to the title.
 
 **Type**: String
 
