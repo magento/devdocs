@@ -19,7 +19,7 @@ open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur. For more information about configuration options for Redis, see [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html). For more information about specifying Redis using the command-line installer, see the [installation topic]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or the [deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp) topic.
 
 ### Solution:

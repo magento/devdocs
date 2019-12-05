@@ -4,7 +4,6 @@ title: Add Custom Editor
 ---
 
 ## Before you begin...
-{:.tutorial-before}
 
 This tutorial goes through the process of adding [CKEditor4] as an editor that can be used by the WYSIWYG UI component.
 

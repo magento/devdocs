@@ -35,7 +35,7 @@ passwd <username>
 
 Follow the prompts on your screen to create a password for the user.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 If you do not have `root` privileges on your Magento server, you can use another local user account. Confirm that the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
@@ -48,7 +48,7 @@ sudo adduser magento_user
 sudo passwd magento_user
 ```
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 Because the point of creating this user is to provide added security, it is essential that you create a strong password.
 
 ## Find the web server user's group {#install-update-depend-user-findgroup}

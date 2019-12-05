@@ -19,14 +19,14 @@ Examples of customizations that involve overriding layouts:
 
 *  Suppressing method invocation.
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.
 
 *  Modifying method arguments.
 *  Canceling block/container removal using the `remove` attribute.
 *  Setting XML attributes of blocks and containers.
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be changed in [extending layouts].
 
 *  Removing block arguments.
@@ -88,7 +88,7 @@ These files override the following layouts:
 
 For example, `<theme_dir>/Magento_Checkout/layout/override/theme/Magento/luma/checkout_cart_index.xml` will override `app/design/frontend/Magento/luma/Magento_Checkout/layout/checkout_cart_index.xml`.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To override page layout files, use the `page_layout` directory name instead of `layout`.
 
 ## Customization mistakes {#override-mistake}

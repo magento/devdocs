@@ -338,7 +338,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 {% endcollapsible %}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you tried this call on your own, and the value of the `shipping_amount` parameter is `0`, then you did not deactivate the "Spend $50 or more - shipping is free!" cart price rule. See [Deactivate a cart price rule](order-config-store.html#price-rule) for details.
 
 ### Verify this step {#verify-step}

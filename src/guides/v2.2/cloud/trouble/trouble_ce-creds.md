@@ -165,5 +165,5 @@ To resolve the issue with credentials:
 
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).

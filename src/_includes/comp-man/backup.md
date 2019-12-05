@@ -6,7 +6,7 @@ After you pass all readiness checks, you can back up:
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [`magento setup:rollback`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) or using the Magento Admin.
 
-{:.bs-callout .bs-callout-note}
+{:.bs-callout-info}
 Magento backup features must be enabled. For more information and commands, see [Enable backups]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#enable-backups).
 
 To back up:
@@ -19,7 +19,7 @@ To back up:
 
    (If you choose not to back up, clear all checkboxes and click **Next**.)
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    We strongly recommend you <em>do</em> back up in the event of issues.
 
 1. Wait while backups are created and continue with any of the following:

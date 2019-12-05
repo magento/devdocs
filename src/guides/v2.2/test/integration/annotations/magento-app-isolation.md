@@ -8,7 +8,7 @@ Such changes can cause a false test failure.
 The integration testing framework keeps the tests isolated and provides optimal performance by default.
 Isolation is managed using the `@magentoAppIsolation` annotation.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Test execution order can vary depending on a PHPUnit version.
 
 ## Format
@@ -27,7 +27,7 @@ The application and related objects are reinitialized after each test case execu
 This behavior helps to isolate application objects in different test cases.
 The test case isolation is mandatory and cannot be disabled.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Do not share and do not rely on sharing the application objects between test cases.
 
 ## Test annotation
@@ -49,7 +49,7 @@ public function testGetAddressById()
 }
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 In most cases, controller tests depend on the application state and require reinitialization in each test.
 Thus, the test cases inherited from the `\Magento\TestFramework\TestCase\AbstractController` behave as if `@magentoAppIsolation` is enabled for each test.
 
@@ -69,5 +69,5 @@ You can use non-isolated tests unless they do not modify or utilize the same app
 -  same attributes of an application object.
 -  same paths in a current configuration or current scope (for example "store").
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Set up application isolation if any application objects were intentionally modified within the test case.

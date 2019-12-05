@@ -9,7 +9,7 @@ functional_areas:
 
 A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html) for an example of creating a standard customer.
 
 ## Manage company users

@@ -78,7 +78,7 @@ For example, for the `sales_flat_order` the Data Migration Tool creates:
    ;;
    ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Data Migration Tool saves its current progress as it runs. If errors or a user intervention stops it from running, the Tool resumes progress at the last known good state. To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.
 
 ## Possible consistency errors {#migrate-command-data}

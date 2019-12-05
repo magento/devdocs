@@ -45,7 +45,7 @@ Prerequisites for the test environment include the following:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-{:.bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Do not use the same database as the real Magento instance. Any data, such as products, customers, orders, and everything else, will be lost!
 
 For safety reasons, it is recommended to use a dedicated database user for running the tests. That database user should not have access to any other databases.
@@ -93,7 +93,7 @@ return [
 ];
 ```
 
-{:.bs-callout .bs-callout-info }
+{:.bs-callout-info}
 Leave all the settings that do not start with `db-` and `amqp-` at their default values.
 
 You can include additional setup options—available to the `setup:install` command—in the test configuration file. A
@@ -323,7 +323,7 @@ Then, configure the integration test to use the configuration file.
 
 The only difference in the run configuration is that the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the `dev/tests/integration` directory must be selected.
 
-![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
+![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){:width="600px"}
 
 ## Integration tests file structure
 

@@ -15,7 +15,7 @@ functional_areas:
 
 This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure server block configuration.
 
 See one of the following sections for more information:
@@ -130,7 +130,7 @@ To create a password:
    htpasswd -c /etc/nginx/passwd/.<filename> <username>
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    For security reasons, `<filename>` should be hidden; that is, it must start with a period. An example follows.
 
    Example:
@@ -157,7 +157,7 @@ To create a password:
 
 This section discusses how to specify who can access the nginx server.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 The example shown is for an _unsecure_ proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.
 
 Use a text editor to modify either `/etc/nginx/conf.d/magento_es_auth.conf` (unsecure) or your secure server block with the following contents:
@@ -191,7 +191,7 @@ server {
 }
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.
 
 ### Step 4: Set up a restricted context for Elasticsearch {#es-ws-secure-nginx-context}

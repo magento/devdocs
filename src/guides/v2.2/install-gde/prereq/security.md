@@ -13,7 +13,7 @@ functional_areas:
 ## SELinux {#install-prereq-selinux}
 [Security Enhanced Linux (SELinux)](http://selinuxproject.org/page/Main_Page){:target="_blank"} enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux _and_ Apache to initiate a connection to another host, you must run the commands discussed in this section.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
   Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like [the CentOS wiki](http://wiki.centos.org/HowTos/SELinux){:target="_blank"} to set up rules to enable communication.
 
 ### Suggestion for installing the Magento software with Apache

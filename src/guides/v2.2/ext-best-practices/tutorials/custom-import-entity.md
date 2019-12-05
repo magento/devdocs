@@ -436,7 +436,7 @@ entity_id,name,duration
 ,"Second Course",120
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 When updating the table's data, you must provide the `entity_id` value for each row.
 
 Next, register the sample file for our entity.

@@ -5,6 +5,8 @@ redirect_from:
    - /guides/v2.2/cloud/configure/fastly-vcl-blacklist.html
    - /guides/v2.3/cloud/configure/fastly-vcl-blacklist.html
    - /guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html
+   - /guides/v2.3/cloud/cdn/fastly-vcl-blacklist.html
+
 functional_areas:
   - Cloud
   - Setup
@@ -59,7 +61,7 @@ Review the following parameter values and update your code snippet if necessary:
 -  `type`: Specifies the type of VCL snippet that determines the location of the snippet in the generated VCL code. In this example,  we use `recv`, which inserts the VCL code in the `vcl_recv` subroutine, below the boilerplate VCL and above any objects. See the [Fastly VCL snippet reference](https://docs.fastly.com/api/config#api-section-snippet) for the list of snippet types.
 -  `content`: The snippet of VCL code to run, which checks the client IP address. If the IP is in the Edge ACL, it is blocked from access with a `403 Forbidden` error for the entire website. All other client IP addresses are allowed access.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The default VCL snippets include a prepended name of `magentomodule_` with a priority of 50.  **Do not use the `magentomodule_` name** for your custom VCL Snippets. You must also set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Lower priority numbers execute first.
 
 ## Finish adding the VCL {#complete}
