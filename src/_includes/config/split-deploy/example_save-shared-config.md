@@ -30,7 +30,7 @@
           modified:   app/etc/config.php
    ```
 
-   {: .bs-callout-warning }
+   {:.bs-callout-warning}
    Do _not_ submit changes to the `generated`, `pub/media`, or `pub/static` directories to source control. You'll generate those files on your build system. The development system likely has code, themes, and so on that are not ready for use on the production system.
 
 1. Check in your changes to `app/etc/config.php` only to source control.

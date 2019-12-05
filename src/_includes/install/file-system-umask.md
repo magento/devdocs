@@ -2,7 +2,7 @@ The web server group must have write permissions to certain directories in the M
 
 Our solution is to enable you to optionally create a file named `magento_umask` in your Magento root directory that restricts permissions for the web server group and everyone else.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We recommend changing the umask on a one-user or shared hosting system only. If you have a private Magento server, the group must have write access to the Magento file system; the umask removes write access from the group.
 
 The default umask (with no `magento_umask` specified) is `002`, which means:

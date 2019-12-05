@@ -8,5 +8,5 @@ where
    *  `theme-`: Theme.
    *  `language-`: Language package.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Currently, themes are located under `<magento_root>/app/design/frontend` or `<magento_root>/app/design/adminhtml`.

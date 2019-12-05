@@ -8,14 +8,14 @@ This section discusses how to install sample data if you got the Magento softwar
 
 You can use this method of getting sample data for both {{site.data.var.ce}} or {{site.data.var.ee}}, but you must use the same [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) you used to install Magento.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you encounter errors, such as `Could not find package...` or `...no matching package found...`, make sure there aren’t any typos in your command. If you still encounter errors, you may not have access to the right Composer repositories, especially if your using {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
 You can use Composer to install sample data either before or after installing Magento; however, there might be [additional tasks]({{ page.baseurl }}/install-gde/install/sample-data.html).
 
 If you're a contributing developer, refer to [Install by cloning repositories]({{ page.baseurl }}/install-gde/install/sample-data-after-clone.html).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Do not install sample data if your Magento application is set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). Switch to [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode) first. Installing sample data in production mode [fails]({{ page.baseurl }}/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod).
 
 To install sample data using the command line, enter the following command as the Magento file system owner  in the `<magento_root>` folder:
@@ -24,7 +24,7 @@ To install sample data using the command line, enter the following command as th
 bin/magento sampledata:deploy
 ```
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema in the `<magento_root>` folder:
 
 ```bash

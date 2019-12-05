@@ -29,7 +29,7 @@ To add a new template in a theme:
 
 1. Assign your template to a block in the [corresponding layout file]({{ page.baseurl }}/frontend-dev-guide/templates/template-override.html#template-layout).
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 If you add a new `.html` template, and then edit it, the changes will not apply until you delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories and reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 ## Walkthrough illustration: adding a message to the customer review form

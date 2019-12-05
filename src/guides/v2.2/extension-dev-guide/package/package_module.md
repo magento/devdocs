@@ -36,7 +36,7 @@ Element | Description
 
 Metapackages allow you to group an [extension](https://glossary.magento.com/extension) that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a [metapackage](https://glossary.magento.com/metapackage) as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.
 
 #### Metapackage example
@@ -126,7 +126,7 @@ Magento can retrieve your extension package from any valid GitHub [URL](https://
 
 <!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Third party repositories are supported.
 
 ### Hosting on GitHub and Packagist {#hosting}
@@ -142,7 +142,7 @@ Prerequisite: Git must be set up on your machine.
 
 ### Hosting on a private repository {#private_repos}
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you use the Setup Wizard, you must use the Magento Marketplace repository. A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).

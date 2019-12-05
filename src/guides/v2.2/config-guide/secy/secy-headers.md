@@ -16,7 +16,7 @@ This solution applies to the following Magento versions:
 *  2.0.10 and later
 *  2.1.2 and later
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This topic is intended for experienced IIS administrators.
 
 ### Description
@@ -38,5 +38,5 @@ We provide the option to remove the values of all of the preceding headers based
 *  If `Enable_IIS_Rewrites` is set to `0`,  the values of the headers are removed.
 *  If `Enable_IIS_Rewrites` is set to `1`, the values of the headers are left intact.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you set `Enable_IIS_Rewrites` to `1`, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.

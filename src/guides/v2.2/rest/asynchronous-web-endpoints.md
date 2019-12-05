@@ -10,7 +10,7 @@ functional_areas:
 
 An asynchronous web endpoint intercepts messages to a Web API and writes them to the message queue. Each time the system accepts such an API request, it generates a UUID identifier. Magento includes this UUID when it adds the message to the queue. Then, a consumer reads the messages from the queue and executes them one-by-one.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Use the `bin/magento queue:consumers:start async.operations.all` command to start the consumer that handles asynchronous and bulk API messages.
 
 Magento supports the following types of asynchronous requests:
@@ -19,7 +19,7 @@ Magento supports the following types of asynchronous requests:
 *  PUT
 *  PATCH
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 GET and DELETE requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
 
 The route to all asynchronous calls contains the prefix `/async`, added before `/V1` of a standard synchronous endpoint. For example:

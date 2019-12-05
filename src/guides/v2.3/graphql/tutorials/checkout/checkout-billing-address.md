@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 You must always set the billing address to place an order.
 
 Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
@@ -29,7 +29,7 @@ The following mutation adds a new billing address. `{ CART_ID }` is the unique s
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text

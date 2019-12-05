@@ -7,8 +7,6 @@ redirect_from:
   - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
 
-{::options syntax_highlighter="rouge" /}
-
 Since private content is specific to individual users, it's reasonable to handle it on the client (i.e., web browser).
 
 Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="_blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
@@ -39,7 +37,7 @@ Add the following to your component's [dependency injection](https://glossary.ma
 
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/ui-component).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.
 
 Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your [layout](https://glossary.magento.com/layout).
@@ -96,7 +94,7 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
 </config>
 ```
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="_blank"}
 
 Other examples:
