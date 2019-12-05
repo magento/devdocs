@@ -104,7 +104,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 ...
 ✔ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"} (210.41s)
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### Run all tests
 

@@ -88,7 +88,7 @@ Magento adds lines similar to the following to `<magento_root>app/etc/env.php`:
     ),
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}

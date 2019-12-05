@@ -12,7 +12,7 @@ Static content deployment (SCD) has a significant impact on the store deployment
 
 You can improve the SCD load time during the deployment process if you skip copying the static view files in the `var/view_preprocessed` directory and generate _minified_ HTML when requested. You can activate this by setting the [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) global environment variable to `true` in the `.magento.env.yaml` file.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Beginning with the `{{site.data.var.ct}}` package version 2002.0.13, the default value for the SKIP_HTML_MINIFICATION variable is set to `true`.
 
 You can save **more** deployment time and disk space by reducing the amount of unnecessary theme files. For example, you can deploy the `magento/backend` theme in English and a custom theme in other languages. You can configure these theme settings with the [SCD_MATRIX]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix) environment variable.
@@ -56,7 +56,7 @@ Generating SCD on demand is optimal for a development workflow in the Integratio
 
 When using the SCD on-demand strategy, it helps to preload the cache with pages you expect to request, such as the home page. Add your list of expected pages in the [WARM_UP_PAGES]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable in the post-deploy stage of the `.magento.env.yaml` file.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Do not use the SCD on-demand strategy in the Production environment.
 
 ### Skipping SCD
@@ -64,4 +64,4 @@ Do not use the SCD on-demand strategy in the Production environment.
 In some cases you could choose to skip generating static content completely. You can set the [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) environment variable in the global stage to ignore other configurations related to SCD. This does not affect existing content in the `~/pub/static` directory.
 
 [SCD Load Comparison]: {{site.baseurl}}/common/images/cloud/scd-load-times.png
-{: width="700px"}
+{:width="700px"}

@@ -96,7 +96,7 @@ For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`][] contains v
 
 To change the default library variables values, specify the new values for the required variables in the `<theme_dir>/web/css/source/_theme.less` file.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Please mind, that your `<theme_dir>/web/css/source/_theme.less` file overrides `_theme.less` of the parent theme (if your theme has a parent).
 So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s `_theme.less` to your file as well.
 

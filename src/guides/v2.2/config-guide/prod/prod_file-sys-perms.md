@@ -107,7 +107,7 @@ If you use your own server (including a hosting provider's private server setup)
 
    Magento uses this user to run Magento CLI commands and cron.
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    The command-line user is also referred to as the _Magento file system owner_.
 
 Because these users require access to the same files, we recommend you create a [shared group]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
@@ -129,7 +129,7 @@ Files in the following directories must be writable by both users in developer a
 
 Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/) bit on directories so permissions always inherit from the parent directory.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 `setgid` applies to directories only, _not_ to files.
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.

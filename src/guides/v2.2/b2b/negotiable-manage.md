@@ -14,7 +14,7 @@ functional_areas:
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints:**
@@ -59,7 +59,7 @@ Before negotiable quote can begin, the following conditions must be met:
 
 If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (`POST /V1/carts/:cartId/shipping-information`)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Requesting a negotiable quote requires an admin authorization token.
 
 **Service Name:**

@@ -137,7 +137,7 @@ Both examples define the following test steps and their sequence:
 
 Sometimes you will want to use the same test step more then once in your scenario. In this case, you can use the `alias` attribute to define a distinct name for a step that has been already listed as `<step>`.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 A `<step>` name should only be used once within a scenario.
 
 Example:

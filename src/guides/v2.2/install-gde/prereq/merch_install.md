@@ -25,7 +25,7 @@ Magento requires the following software to run:
 *  Programming language: [PHP](https://glossary.magento.com/php) 5.6.x or 5.5.x
 *  Database: MySQL 5.6.x
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend you contact GoDaddy support to verify all of the preceding are installed and get their assistance if any of the software is not installed.
 
 For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).

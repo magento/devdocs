@@ -5,7 +5,7 @@ title: Users
 
 The `users` resource accesses and updates your user profile. You can also access reports you own.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You cannot use this resource to create a new
 profile. You must create a new profile on the [Developer Portal](https://developer.magento.com).
 
@@ -399,5 +399,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The Reports API specification is under design review. More details will be announced in the future.

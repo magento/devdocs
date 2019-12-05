@@ -27,7 +27,7 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-*  Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
+*  Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
@@ -58,7 +58,7 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
     ...
 ```
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Before ignoring entities by map file or using the `-a` option, make sure you do not need the affected data in your Magento 2 store.
 
 ### Class does not exist but mentioned

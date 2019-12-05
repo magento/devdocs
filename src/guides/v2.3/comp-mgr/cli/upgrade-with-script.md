@@ -7,7 +7,7 @@ functional_areas:
 
 Upgrading your Magento installation with our script, which makes the upgrade process semi-automated, is the preferred method.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Use [the manual process] if you previously made updates to the same values that the upgrade script affects, because the script will override those values.
 
 The upgrade script:
@@ -64,7 +64,7 @@ rm -rf <Magento install dir>/var/page_cache/*
 rm -rf <Magento install dir>/generated/code/*
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you use cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 ### Update the database schema and data

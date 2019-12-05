@@ -34,7 +34,7 @@ If there is a failure, you can iteratively fix issues until they are resolved.
 The following table describes all package object properties.
 Unknown and readonly properties will be ignored in submissions.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Both `POST` and `PUT` requests support a batch model where multiple packages can be created or updated.
 
 |Field/Parameter|Type|HTTP Commands|Review Type|Filter|Description|Valid values|
@@ -478,7 +478,7 @@ When the `action` field is set to `publish`, the API validates fields to ensure 
 required parameters are available on the Developer Portal to initiate the EQP process,
 and that parameters which depend upon each other match up correctly.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 All `action` fields are optional. If not specified, `draft` is the default value.
 
 The following example shows a POST request with all required parameters set for both technical and marketing submissions:

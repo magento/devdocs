@@ -15,7 +15,7 @@ This topic discusses how Varnish caching works with Magento using:
 *  `.htaccess` distributed configuration file for Apache provided with Magento
 *  `default.vcl` configuration for Varnish generated using the [Magento Admin]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.
 
 On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.
@@ -37,7 +37,7 @@ The following figure shows an example using a browser inspector.
 
 The preceding example shows a request for the [storefront](https://glossary.magento.com/storefront) main page (`m2_ce_my`). [CSS](https://glossary.magento.com/css) and [JavaScript](https://glossary.magento.com/javascript) assets are cached on the client browser.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.
 
 ### Second browser request {#config-varnish-cache-browser-second}

@@ -189,7 +189,7 @@ The above request gives an output similar to:
 ]
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The response is the list of files in the same order sent during the upload request.
 
 Each record in the list has the following fields:

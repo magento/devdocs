@@ -6,5 +6,5 @@ We use [Composer](https://getcomposer.org/){:target="_blank"} to manage Magento 
 -  Repackage Magento Open Source with other components
 -  Use the Magento software in a production environment
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You must create a Composer project from our metapackage if you want to use the Magento Web Setup Wizard to upgrade the Magento software and third-party extensions.

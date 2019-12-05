@@ -16,7 +16,7 @@ functional_areas:
 {% capture intro %}
 Use the ["Add CLI commands"]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html) guide to add a custom Magento CLI command.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You can call Magento CLI commands using shortcuts instead of the full command name. For example, you can call `{{ tool }} setup:upgrade` using `{{ tool }} s:up`, `{{ tool }} s:upg`. See [shortcut syntax](https://symfony.com/doc/current/components/console/usage.html#shortcut-syntax) to understand how to use shortcuts with any Magento CLI command.
 {% endcapture %}
 

@@ -12,7 +12,7 @@ functional_areas:
 
 Magento 2 supports Varnish 4.x and 5.x
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 We _strongly recommend_ you use Varnish in production. The built-in full-page caching (to either the file system or [database]) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.
 
 For more information about Varnish, see:
@@ -47,7 +47,7 @@ The process can be summarized as follows:
 
    If there is nothing in your `<magento_root>/var/page_cache` directory, you've successfully configured Varnish with Magento!
 
-{:.bs-callout .bs-callout-info }
+{:.bs-callout-info}
 
 *  Except where noted, you must enter all commands discussed in this topic as a user with `root` privileges.
 *  This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.
