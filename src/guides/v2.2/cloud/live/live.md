@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 165_live
 title: Go live and launch
-menu_title: Go live and launch
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Cloud
 ---
