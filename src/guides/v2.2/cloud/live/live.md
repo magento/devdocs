@@ -44,7 +44,7 @@ content='The security scan tool uses the following public IP addresses:
 52.87.98.44
 ```
 
-You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site. the tool posts requests to ports 80 and 443 only.'
+You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site. The tool posts requests to ports 80 and 443 only.'
 %}
 
 The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out-of-date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login).
