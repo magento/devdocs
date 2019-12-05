@@ -11,7 +11,7 @@ Thus we can significantly improve the time to first render of our pages.
 
 ## Enable CSS critical path
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 CSS critical path configuration is located on the **Stores** > Settings > **Configuration** > **ADVANCED** > **Developer** tab. However, the **Developer** tab is hidden in [production mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). Once in production mode, CSS critical path can only be enabled using the CLI.
 
 To enable the CSS critical path:
@@ -58,5 +58,5 @@ Introducing a critical path CSS to Magento leads to performance improvements:
 
 As a result, the Google PageSpeed Insights score improved by **5** points.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 These are results for mobile devices with slow connection from [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).

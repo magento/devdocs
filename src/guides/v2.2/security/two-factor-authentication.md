@@ -15,7 +15,7 @@ Two-Factor Authentication gives you the ability to:
 
 At this time, Two-Factor Authentication can be installed only from the command line.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 **Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/id/129) for contributing these features as part of the Magento Community Engineering program.
 
 ## Install 2FA
@@ -86,7 +86,7 @@ bin/magento msp:security:tfa:reset <username> <provider>
 
 ### Advanced emergency steps
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 These advanced steps require a full understanding of database management and modifications. We advise caution when making any changes directly to your database.
 
 In your database, you can modify the following tables and values to affect and override 2FA.

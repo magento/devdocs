@@ -99,7 +99,7 @@ There will be a new, dedicated section designed for such exclusive extensions. W
 
 ![Feature Placement]({{ site.baseurl }}/common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
   The name and icon for this section is still TBD.
   This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.
 

@@ -18,7 +18,7 @@ This topic discusses how to use the Project Web Interface to:
 -  Sync (`git pull`) from the environment's parent
 -  Merge (`git push`) to the environment's parent
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You cannot create branches from Pro plan Staging and Production `master`. These environments include `master` branches that you deploy updated Git code to from Integration `master`.
 
 ## Add or delete an environment {#project-branch-add}
@@ -143,7 +143,7 @@ be used by a human, it's referred to as a [*machine user*](https://developer.git
 machine account as collaborator or add the machine user to a team with
 access to the repositories it needs to manipulate.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
 
 ### Find your deploy key {#ssh}
@@ -172,7 +172,7 @@ To enter your project's public key as a GitHub deploy key:
 
    ![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
 
-    {:.bs-callout .bs-callout-info}
+    {:.bs-callout-info}
     If you do not see this option, you are not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.
 
 1. On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.

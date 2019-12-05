@@ -34,7 +34,7 @@ magento-cloud environment:routes
 | http://{default}/ | upstream | mymagento:php |
 +-------------------+----------+---------------+
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Route templates
 
@@ -47,7 +47,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
    https://www.example.com/blog
    ```
-   {: .no-copy}
+   {:.no-copy}
 
    In a non-production branch, the project ID and environment ID replace the `{default}` placeholder when the project is deployed.
 
@@ -62,7 +62,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
    https://www.example1.com/blog
    ```
-   {: .no-copy}
+   {:.no-copy}
 
    The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
@@ -73,7 +73,7 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 ```text
 [branch]-[project-id].[region].magentosite.cloud
 ```
-{: .no-copy}
+{:.no-copy}
 
 For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains:
 
@@ -82,7 +82,7 @@ http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
 
 https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
 ```
-  {: .no-copy}
+  {:.no-copy}
 
 {:.bs-callout-info}
 {{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
@@ -154,12 +154,12 @@ If you examine the routes of this sample application, you see:
 ```bash
 echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 ```
-{: .no-copy}
+{:.no-copy}
 
 ```terminal
 https://*.add-theme-projectID.us.magentosite.cloud/
 ```
-{: .no-copy}
+{:.no-copy}
 
 See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 

@@ -21,7 +21,7 @@ During the migration process, **do not:**
 
 1. Make changes in the Magento 2 Admin and [storefront](https://glossary.magento.com/storefront)
 
-{: .bs-callout .bs-callout-tip }
+{:.bs-callout-tip}
 All operations in Magento 1 storefront are allowed at this time.
 
 ## Run Data Migration Tool {#migration-command-run}
@@ -50,7 +50,7 @@ where:
 
 1. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Logs are written to the `<magento_root>/var/` directory.
 
 ## Migration order {#migration_order}

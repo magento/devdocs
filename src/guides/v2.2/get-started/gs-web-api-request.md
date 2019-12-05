@@ -39,7 +39,7 @@ A store code can have one of the following values.
 
 ### HTTP headers {#http-headers}
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To specify an HTTP header in a cURL command, use the `-H` option.
 
 Specify one or more of the following HTTP headers in your web API calls:

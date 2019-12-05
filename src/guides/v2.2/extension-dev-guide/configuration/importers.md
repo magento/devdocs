@@ -61,7 +61,7 @@ The sample code in the preceding example registers the importer `Vendor\Module\M
 
 The `i18n` array has a queue order of 110, which means this importer runs after importers that have value of sort order less than 110 has and if values in the section `i18n` were changed.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 An array cannot be imported by more than one importer.
 
 ## More information

@@ -116,7 +116,7 @@ Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.
 
 ### Get the list of category values

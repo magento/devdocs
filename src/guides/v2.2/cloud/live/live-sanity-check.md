@@ -16,7 +16,7 @@ These tasks walk through:
 
 For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
 
 ## Update composer if you add extensions {#composer}

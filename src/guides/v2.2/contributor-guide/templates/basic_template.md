@@ -90,11 +90,11 @@ Once the image is added, you can use it in your documentation:
 
 You can even scale the image if it is too large:
 
-*Example:* `![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}`
+*Example:* `![Scaled Image]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446"}`
 
 *Output:*
 
-![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446" height="246"}
+![Scaled Image Example]({{ site.baseurl }}/common/images/install_cygwin.png){:width="446"}
 
 ### Tables {#tables}
 
@@ -221,7 +221,7 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 
 You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The `{%raw%}{% collapsible %}{%endraw%}` tag must be preceded by a blank line.
 
 *Example:*

@@ -19,11 +19,11 @@ To configure a MySQL database and database user:
 
 1. In the **New Database** field, enter a unique name for your database and click **Create Database**.
 
-   ![Create a database]({{ site.baseurl }}/common/images/install-merch_create-db.png){:width="550px"
+   ![Create a database]({{ site.baseurl }}/common/images/install-merch_create-db.png){:width="550px"}
 
 1. In the MySQL Users section, enter information in the provided fields and click **Create User**.
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    Give the database user a strong password and <em>write down</em> the username and password you choose. You can optionally click **Password Generator** to create a strong password for you.
 
    ![Create a database user]({{ site.baseurl }}/common/images/install-merch_create-db-user.png){:width="550px"}
