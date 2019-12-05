@@ -16,5 +16,5 @@ Use this section to learn about updates to the following Composer packages:
 -  [`vendor/magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-tools.html)
 -  `vendor/magento/product-enterprise-edition`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must [update these packages]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get new features and fixes.

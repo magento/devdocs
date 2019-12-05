@@ -21,7 +21,7 @@ Manually splitting databases involves:
    *  Back up sales and quote database tables
    *  Move tables from your main Magento database to the sales and quote databases
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If any custom code uses JOINs with tables in the sales and quote databases, you _cannot_ use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.
 
 This topic uses the following naming conventions:
@@ -35,7 +35,7 @@ This topic uses the following naming conventions:
 
    The sales database is also referred to as the order management system (*OMS*) database.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.
 
 ## Back up the Magento system {#config-ee-multidb-backup}
@@ -127,7 +127,7 @@ Sales database table names start with:
 *  `magento_sales_`
 *  The `magento_customercustomattributes_sales_flat_order` table is also affected
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
 
 For more information, see:
@@ -312,7 +312,7 @@ where
 
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
 
 Quote database table names start with `quote`. The `magento_customercustomattributes_sales_flat_quote` and `magento_customercustomattributes_sales_flat_quote_address` tables are also affected

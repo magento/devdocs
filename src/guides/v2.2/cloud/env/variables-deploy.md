@@ -115,7 +115,7 @@ Configure how consumers process messages from the message queue by choosing one 
 
 -  `true`—Consumers continue to process messages from the message queue until reaching the maximum number of messages (`max_messages`) specified in the `CRON_CONSUMERS_RUNNER` deploy variable before closing the TCP connection and terminating the consumer process. If the queue empties before reaching `max_messages`, the consumer waits for more messages to arrive.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 If you use workers to run consumers instead of using a cron job, set this variable to true.
 
 ```yaml
@@ -162,7 +162,7 @@ stage:
 
 Also, you can configure a table prefix.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
 
 The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
@@ -199,7 +199,7 @@ MariaDB [main]> SHOW TABLES;
 | ece_captcha_log                     |
 ...
 ```
-{: .no-copy}
+{:.no-copy}
 
 ### `ELASTICSUITE_CONFIGURATION`
 
@@ -238,7 +238,7 @@ stage:
 -  Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
 -  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Magento does not support the ElasticSuite third-party plugin.
 
 ### `ENABLE_GOOGLE_ANALYTICS`
@@ -259,7 +259,7 @@ stage:
     ENABLE_GOOGLE_ANALYTICS: true
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
 
 ### `FORCE_UPDATE_URLS`
@@ -412,7 +412,7 @@ stage:
 
 ### `SCD_EXCLUDE_THEMES`
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
@@ -604,7 +604,7 @@ stage:
     STATIC_CONTENT_SYMLINK: false
 ```
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and will be removed in future releases. It's not recommended to use it in your deployment configuration. Ece-tools will always generate symlinks for static content.
 
 ### `UPDATE_URLS`

@@ -8,7 +8,7 @@ menu_order: 20
 
 Third-party developers cannot change the [API](https://glossary.magento.com/api) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attribute).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We will demonstrate how to add extension attributes to a Product entity, Product Repository and [Web Api](https://glossary.magento.com/web-api) example.
 
 In order to retrieve a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).
@@ -98,7 +98,7 @@ public function afterGetList(
 }
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To add extension attributes to an entity without plugins, use the `extensionActions` argument of `\Magento\Framework\EntityManager\Operation\ExtensionPool`. See [\Magento\Catalog\Model\ProductRepository::getList()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/ProductRepository.php) as an example of an implementation.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:

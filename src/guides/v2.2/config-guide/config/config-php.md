@@ -23,7 +23,7 @@ Magento's deployment configuration consists of the shared and system-specific co
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)

@@ -23,6 +23,9 @@ The [shopping cart](https://glossary.magento.com/shopping-cart) contains three i
 
 When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment-method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the payment information on behalf of a guest. Do not include an authorization token.
+
 **Endpoint:**
 
 `POST <host>/rest/<store_code>/V1/carts/mine/payment-information`

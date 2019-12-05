@@ -55,7 +55,7 @@ The following table explains this command's parameters and values:
 |`-m --magento`|Required to create a language package from this translation dictionary. If used, searches the directories that contain bin/magento. This option adds themes or modules to each line in the dictionary.<br><br>A sample follows:<br><br>"No Items Found","No Items Found",module,Magento_Wishlist|No|
 |`-o --output="<path>"`|Specifies the absolute file system path and file name of the translation dictionary .csv file to create. The value you enter is case-sensitive. The name of the .csv file must exactly match the locale name, including the characters' case.<br><br>If you omit this parameter, the output is directed to stdout.|No|
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To create a language pack from a translation dictionary, you *must* use the `-m|--magento` option.
 
 ### Translation guidelines {#config-cli-subcommands-xlate-dict-trans}
@@ -127,7 +127,7 @@ Language packages are located in a directory under `app/i18n/<VendorName>` in th
 -  `registration.php` that [registers] the language package
 -  [`language.xml`](#config-cli-subcommands-xlate-pack-meta-xml) meta-information file
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must lowercase the entire path. For example, see [`de_de`].
 
 To create these files:
@@ -226,7 +226,7 @@ To add a German translation to a module or theme that you want to distribute to 
    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The .csv file name must _exactly match_ the locale, including the characters' case.
 
 1. Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
@@ -242,7 +242,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The `.csv` file name must _exactly match_ the locale, including the characters' case.
 
 1. Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).

@@ -39,7 +39,7 @@ To create a temporary `config.php` file:
 
 1. Continue with the upgrade process.
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 After upgrading, you can remove the `config.php` file and generate a new, complete file. You can only delete this file to replace it this one time. After generating a new, complete `config.php` file, you cannot delete the file to generate a new one. See [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
 
 ### Update the configuration file
@@ -98,7 +98,7 @@ Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/
 
 If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
@@ -110,7 +110,7 @@ To upgrade the Magento version:
    composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
 
 1. Update the project.
@@ -170,7 +170,7 @@ To create a system-specific configuration file:
 
    This generates an updated `/app/etc/config.php` file with a module list and configuration settings.
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should **not** delete it. If you need to remove or edit settings, you must edit the file manually.
 
 ### Upgrading extensions

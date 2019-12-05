@@ -64,7 +64,7 @@ To add a permanent theme-independent logo:
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview, then click the "Save Configuration button".
 
 ## Clear the cache {#theme-apply-clear}

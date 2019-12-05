@@ -9,7 +9,7 @@ Large applications, such as the Magento application, use an object manager to av
 
 In the Magento framework, the implementation of the [`ObjectManagerInterface`][] performs the duties of an object manager.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Magento prohibits the direct use of the `ObjectManager` in your code because it hides the real dependencies of a class.
 See [usage rules][].
 
@@ -40,7 +40,7 @@ Direct use of the `create` function prevents type validation and type hinting th
 Object creation is also a separate responsibility that should be moved to a dedicated class such as a [factory][] or [proxy][].
 In most cases, the framework generates these classes automatically during code compilation.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You may notice in the Magento 2 codebase that some core classes still call the `ObjectManager` directly.
 This code needs porting or exist for backward compatibility purposes.
 They are not tacit endorsements of using the `ObjectManager` directly.

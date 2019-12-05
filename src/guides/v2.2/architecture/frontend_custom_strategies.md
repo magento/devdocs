@@ -79,7 +79,7 @@ In addition to replacing CSS files, you might need to replace small amounts of H
 
 Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
  Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/phtml) files; keep all JavaScript in JavaScript files.
 
 {:.ref-header}

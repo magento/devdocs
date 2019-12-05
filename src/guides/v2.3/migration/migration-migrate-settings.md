@@ -20,7 +20,7 @@ According to our data migration [order]({{ page.baseurl }}/migration/migration-m
 
 1. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Ensure Magento is deployed in default mode. Developer mode can cause validation errors in the migration tool.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
@@ -39,7 +39,7 @@ where:
 
 *  `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This command does not migrate all configuration settings. Verify all settings in the Magento 2 [Admin](https://glossary.magento.com/admin) before proceeding.
 
 The `Migration completed` message is displayed after the settings are transferred successfully.

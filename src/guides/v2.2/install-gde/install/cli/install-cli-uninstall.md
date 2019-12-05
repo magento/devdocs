@@ -60,7 +60,7 @@ However, in some situations (particularly, deploying Magento to production), you
 bin/magento setup:upgrade --keep-generated
 ```
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The optional `--keep-generated` option should be used _only_ in limited circumstances by experienced system integrators. This option should _never_ be used in a development environment. Improper use of this optional parameter can cause errors during code execution.
 
 ## Install the Magento software
