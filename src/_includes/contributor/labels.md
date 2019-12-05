@@ -1,7 +1,7 @@
 ### Release Lines
 {:.no_toc}
 
-Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.4.1 you would apply the Release Line: 2.4. This effectively includes all releases in this line.
+Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.4.0 you would apply the Release Line: 2.4. This effectively includes all releases in this line.
 
 *  `Release Line: 2.3`
 *  `Release Line: 2.4`
