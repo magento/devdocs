@@ -63,7 +63,7 @@ To scan your site:
 
 1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 1. Click the Security Scan tab and select **Go to Security Scan**.
-1. In the **Actions** column for the site, select **Run Scan**. A notification status displays the scheduled scan.
+1. In the _Actions_ column for the site, select **Run Scan**. A notification status displays the scheduled scan.
 
 {:.procedure}
 To review the report:
