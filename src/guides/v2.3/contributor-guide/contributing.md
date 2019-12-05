@@ -1,1 +1,1 @@
-/Users/oorobei/Documents/Work/devdocs/src/guides/v2.2/contributor-guide/contributing.md
+../../../guides/v2.2/contributor-guide/contributing.md
