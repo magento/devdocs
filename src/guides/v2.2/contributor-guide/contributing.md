@@ -66,7 +66,7 @@ Review the following supported and accepted pull request rules. We defined these
    -  Follow the [Magento DevDocs contribution work flow and guidelines](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) to submit proposed documentation updates to the [Magento DevDocs Github repository](https://github.com/magento/devdocs).
 1. For large features or changes, [open an issue](https://github.com/magento/magento2/issues) to discuss your proposal first.  Notifying us in advance can prevent duplicate or unnecessary effort, and also offers an opportunity to get additional background information and help from other contributors.
 1. To report a bug, [open an issue](https://github.com/magento/magento2/issues) and follow the [Issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines).
-1. Verify that all automated tests on your pull request pass successfully–all builds on [Travis CI](https://travis-ci.org/magento/magento2) must be green.
+1. Verify that all automated tests on your pull request pass successfully.
 
 ## Forks and pull requests
 
@@ -102,7 +102,7 @@ When you need to verify an issue or pull request, enter a command to generate an
 @magento give me {$version} instance
 ```
 
-For `version`, the currently supported values are [version tags](https://github.com/magento/magento2/tags) and 2.4-develop branch.
+For `version`, the currently supported value is 2.4-develop branch.
 
 **Actions:** The following actions complete for the command:
 
@@ -112,7 +112,7 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Admin access:**
 
--  https://pr-{$id_pr}.instances.magento-community.engineering/admin
+-  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin
 -  Admin Credentials:
    -  Username: admin
    -  Password: 123123q
