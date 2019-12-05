@@ -9,7 +9,7 @@ The Email component implements the [HTML](https://glossary.magento.com/html) `<i
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
-| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/form/element/abstract` |
+| `component` | The path to the component’s `.js` file. | String | `Magento_Ui/js/form/element/abstract` |
 | `elementTmpl` | The path to the `.html` template of the particular field type. | String | `ui/form/element/email` |
 | `template` | The path to the general field `.html` template. | String | `ui/form/field` |
 
