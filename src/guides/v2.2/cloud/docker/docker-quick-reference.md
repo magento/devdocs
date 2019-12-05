@@ -26,7 +26,7 @@ List containers and ports | `docker-compose ps` or `docker ps`
 
 Because the `docker:build` command in the `{{site.data.var.ct}}` package overwrites the base configuration, we recommend saving your customizations in an override configuration file. You can use this method to merge multiple custom configurations. See [Docker Docs: Multiple Compose files](https://docs.docker.com/compose/extends/#multiple-compose-files).
 
-The `docker-compose up` command considers the base `docker-compose.yml` configuration by default. If the `docker-compose-override.yml` file is present, then the override configuration merges with the base configuration.
+The `docker-compose up` command considers the base `docker-compose.yml` configuration by default. If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration.
 
 Use the `-f` argument to specify an alternate configuration file. The following example uses the default configuration and merges each custom configuration sequentially:
 
