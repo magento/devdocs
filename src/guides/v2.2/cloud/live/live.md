@@ -52,7 +52,7 @@ content='The security scan tool uses the following public IP addresses:
 52.86.204.1
 52.87.98.44
 ```
-  
+
 You must whitelist these IP addresses in your network firewall rules to allow the tool to scan your site.'
 %}
 
