@@ -4,7 +4,7 @@
 
 {% if app.version %}
 **Version**: {{ app.version }}
-{: style="color:gray; font-size: 120%"}
+{:style="color:gray; font-size: 120%"}
 {% endif %}
 
 This reference contains {{ commands | size }} commands available through the `{{ tool }}` command-line tool.
@@ -14,7 +14,7 @@ The initial list is auto generated using the `{{ tool }} list` command at the {{
 
 ## Reference
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This reference is generated from the Magento codebase. To change the content, you can update the source code for the corresponding command implementation in [Magento codebase](https://github.com/magento) repository and submit your changes for review. Another way is to _Give us feedback_ (find the link at the upper right). For contribution guidelines, see [Magento Code Contributions]({{ page.baseurl] }}/contributor-guide/contributing.html).
 
 {% for command in commands %}

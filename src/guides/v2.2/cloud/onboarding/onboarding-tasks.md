@@ -83,5 +83,5 @@ You can submit a password change request using either of the following methods:
 
 After you submit the password change request, check your email for the password reset notification. If you do not get the email, check your spam folder.
 
-{: .bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 If the password reset fails or you cannot sign in to the Admin panel, a user with admin access can connect to the project using ssh and add a new admin user using the Magento CLI [admin:user:create command]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator).

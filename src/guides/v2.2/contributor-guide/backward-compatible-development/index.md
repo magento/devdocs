@@ -15,14 +15,14 @@ The core Magento team and contributing developers work in two release types
 1. New patch release (product's PATCH release)
    -  PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
 The following modifications are forbidden for `@api` code without the approval of the **Magento architect**, **Product Manager** and **Engineering Manager** assigned to the component.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
 ### Composer

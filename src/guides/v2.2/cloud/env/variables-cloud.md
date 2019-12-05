@@ -25,7 +25,7 @@ Variable | Description
 `MAGENTO_CLOUD_VARIABLES` | A base64-encoded JSON object with key-value pairs, such as `"key":"value"`.
 `MAGENTO_CLOUD_LOCKS_DIR` | Provides the path to the mount point for the lock provider on the Cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups.
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 To [add environment variables to override configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 
@@ -62,4 +62,4 @@ Magento Cloud Environment Variables:
 | ADMIN_PASSWORD                    | 123123q                          |
 +-----------------------------------+----------------------------------+
 ```
-{: .no-copy}
+{:.no-copy}

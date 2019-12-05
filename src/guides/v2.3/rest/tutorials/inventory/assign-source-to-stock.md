@@ -17,7 +17,7 @@ This step links the sources we created in [Step 2. Create sources]({{page.baseur
 
 Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 You must reindex and flush cache after performing this step.
 
 ## Assign the source

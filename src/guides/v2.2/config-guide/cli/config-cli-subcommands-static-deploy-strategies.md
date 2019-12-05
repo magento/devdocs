@@ -34,7 +34,7 @@ The quick strategy performs the following actions:
    1. Files that override the deployed locale are defined and deployed.
    1. All other files are considered similar for all locales, and are copied from the deployed locale.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 By _similar_, we mean files that are independent of the locale, theme, or area. These files might include CSS, images, and fonts.
 
 This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.

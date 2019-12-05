@@ -8,7 +8,7 @@ functional_areas:
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure is described in the [Apply and configure a theme in Admin]({{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html) topic.
 
 ## Prerequisites
@@ -187,7 +187,7 @@ In the `.../<theme>/web/images` directory, you store the general theme-related s
 
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../<theme>/<Namespace_Module>/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this guide.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 When you change files stored here during theme development, you need to clear the `pub/static` and `var/view_preprocessed` directories, and then reload the pages. Otherwise, the old versions of files are displayed on the storefront.
 
 ### To clear the `pub/static` directory:
@@ -262,7 +262,7 @@ To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}
 
 When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Running this command with the `-f` argument can fix issues regarding deployment of static content, but it removes **all** symlinks and deploys the actual static content files.
 
 ## What's next {#next}

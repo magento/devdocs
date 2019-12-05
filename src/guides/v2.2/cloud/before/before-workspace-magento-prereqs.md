@@ -21,7 +21,7 @@ To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-
 
 When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 
 ## Virtual machine or container (host) {#vm}
@@ -96,7 +96,7 @@ You have multiple options for databases to use for your local. One database opti
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 For **Pro plans**, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 
 {:.procedure}
@@ -155,7 +155,7 @@ To set `auto_increment_increment` to 3:
 
 1. As a user with `root` privileges, open `/etc/my.cnf` in a text editor.
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
 
 1. Add or edit the following line in the `[mysqld]` section:

@@ -4,7 +4,7 @@ Before you continue, to avoid errors during your installation or update, make su
 *  Your [cron jobs](#magento-cron) are set up and running
 *  [File system permissions](#perms) are set properly
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Magento file system owner and group {#magento-owner-group}

@@ -37,7 +37,7 @@ A new checkout step must be implemented as UI component. That is, its [JavaScrip
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 `<your_module_dir>` notation stands for the path to your module directory from the root directory. Usually it will be one of the following: `app/code/<YourVendor>/<YourModule>` or `vendor/<yourvendor>/module-<module>-<name>`. For more details see [Conventional notations for paths to modules and themes]({{ page.baseurl }}/frontend-dev-guide/conventions.html)
 
 A sample `my-step-view.js` with comments follows:
@@ -242,5 +242,5 @@ Create a mixin as follows:
     );
     ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins, see [JS Mixins]({{ page.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).

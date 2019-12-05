@@ -72,7 +72,7 @@ The basic rules for fixture annotation at different levels are:
 -  `@magentoDataFixture` for a particular test signals the framework to revert the fixtures declared on a test case level and applies the fixtures declared at a test method level instead.
   When the test is complete, the ITF reverts the applied fixtures.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The integration testing framework interacts with a database to revert the applied fixtures.
 
 ### Fixture rollback
