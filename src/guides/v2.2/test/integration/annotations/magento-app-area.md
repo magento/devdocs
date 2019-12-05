@@ -23,7 +23,7 @@ Configure a test environment in scope of the particular [application area][] wit
 
 A test case annotation enables the specified application area for all tests in the test case.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Test annotations override test case annotations.
 
 Example:

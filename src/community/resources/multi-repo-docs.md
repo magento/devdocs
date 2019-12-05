@@ -7,7 +7,7 @@ To further expand documentation options for DevDocs, we offer a new opportunity 
 
 **Multi-Repo Docs** is a new process that collects docs from multiple sources (repos) and publishes all them on a single website: devdocs.magento.com. The DevDocs team helps review your content and add it to the publication process.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This is the first of many new options for expanding documentation for developers. We will add more information and examples soon.
 
 ## Multi-Repo Docs benefits
@@ -46,7 +46,7 @@ The DevDocs team will help get your content ready for publication:
 
 All you need to do is write and respond to PRs, just like code contributions!
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To ensure quality documentation, your content must pass a quality review and acceptance by the Magento DevDocs team. We work with you through the process.
 
 ## What tech do you need?

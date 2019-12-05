@@ -2,7 +2,7 @@ Use this section to enable Apache 2.4 rewrites and specify a setting for the [di
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
 1. Enable the Apache rewrite module:
@@ -23,7 +23,7 @@ Failure to enable these settings typically results in no styles displaying on yo
    </Directory>
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    In some cases, additional parameters might be required. For more information, see the [Apache 2.4 documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order).
 
 1. If you changed Apache settings, restart Apache:
@@ -32,6 +32,6 @@ Failure to enable these settings typically results in no styles displaying on yo
    service apache2 restart
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    -  If you upgraded from an earlier Apache version, first look for `<Directory "/var/www/html">` or `<Directory "/var/www">` in `000-default.conf`.
    -  You must change the value of `AllowOverride` in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in `<Directory /var/www>`.

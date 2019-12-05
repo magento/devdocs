@@ -32,7 +32,7 @@ The latest sample of the `.magento.env.yaml` file contains a detailed definition
 
 ## PHP constants
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2.
 
 You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_ options` using a PHP constant:

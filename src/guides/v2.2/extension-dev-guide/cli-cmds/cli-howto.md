@@ -87,7 +87,7 @@ Following is a summary of the process:
        }
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    You can style the output text by using `<error>This is an error message</error>` or `<info>This is a success message</info>`.
 
 1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):

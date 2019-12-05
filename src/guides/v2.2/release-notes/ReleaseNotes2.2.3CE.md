@@ -8,8 +8,8 @@ title: Magento Open Source 2.2.3 Release Notes
 
 We are pleased to present Magento Commerce 2.2.3. This release includes 35 enhancements to product security, a change to the Magento Admin to support recent USPS shipping changes, and a copyright update. And thanks to our community members, it also includes enhancements to ACL control for cache management through Magento Admin.
 
-{: .bs-callout-info }
-For security reasons, this release limits the ability to use symlinks for `/media` and other folders. If you are using symlinks for deployment, or if your `/media` is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929){: target="_blank"} for more information.
+ {:.bs-callout-info}
+For security reasons, this release limits the ability to use symlinks for `/media` and other folders. If you are using symlinks for deployment, or if your `/media` is using symlinks, you may experience problems uploading or removing images. Magento will announce a fix for this issue when available. See [GitHub-13929](https://github.com/magento/magento2/issues/13929){:target="_blank"} for more information.
 
 ## Highlights
 

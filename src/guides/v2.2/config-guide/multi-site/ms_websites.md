@@ -14,7 +14,7 @@ This task requires you to create a root [category](https://glossary.magento.com/
 *  [Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html)
 *  [Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html) and [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
@@ -120,7 +120,7 @@ To access a website using a unique URL like `http://french.magento.mg`, you must
 
 1. Repeat the previous step in the _Base URLs (Secure)_ section.
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**. If you're setting up a base URL for local testing, use a period.
 
 1. Click **Save Config**.
@@ -173,7 +173,7 @@ You must perform this step last because you will lose access to the Magento Admi
 
 1. Repeat the previous step in the **Base URLs (Secure)** section.
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    If you're setting up a base URL for {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is `french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud`, enter **http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud**.
 
 1. Click **Save Config**.

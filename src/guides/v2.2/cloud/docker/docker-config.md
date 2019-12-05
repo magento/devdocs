@@ -77,7 +77,7 @@ For example, the following command starts the Docker configuration generator for
    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
    ```
 
-   {: .bs-callout-tip }
+   {:.bs-callout-tip}
    To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
 
 1. Stop the default Apache instance on Mac OS.
@@ -142,7 +142,7 @@ Continue launching your Docker environment in the default _production_ mode.
       docker-compose run deploy cloud-deploy
       ```
 
-   {:.bs-callout-info }
+   {:.bs-callout-info}
    For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
 1. Configure and connect Varnish.
@@ -171,7 +171,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
 Continue launching your Docker environment in the _developer_ mode. The developer mode supports active development on your local environment.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1. Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html).
@@ -212,7 +212,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
    If it is the first installation you should wait a few minutes for synchronization files
 
-   {: .bs-callout-info}
+    {:.bs-callout-info}
     If you use `mutagen.io` for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
 
 1. Build files to containers and run in the background.
@@ -237,7 +237,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
    docker-compose run deploy magento-command deploy:mode:set developer
    ```
 
-    {: .bs-callout-info }
+     {:.bs-callout-info}
     Developer mode does not require the `build` operation.
 
 1. Configure and connect Varnish.
@@ -280,7 +280,7 @@ Use the following command to stop and remove the Docker configuration:
    docker-compose down -v
    ```
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 This removes all components of your local Docker instance including containers, networks, volumes, and images.
 
 ## Advanced usage

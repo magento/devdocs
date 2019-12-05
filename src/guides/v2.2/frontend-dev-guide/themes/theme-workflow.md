@@ -22,7 +22,7 @@ See:
 *  [About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
 *  [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 To check the current mode of your Magento instance, in the root directory, run: `bin/magento deploy:mode:show`.
 
 ### Create basic theme files

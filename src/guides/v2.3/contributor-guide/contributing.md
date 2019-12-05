@@ -17,7 +17,7 @@ The following topics are included in this guide:
 -  [Labels applied by the Community Engineering team](#labels)
 -  [Contribution awards and points](#points)
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack). For a list of channels, see [Slack Channels](https://github.com/magento/magento2/wiki/Slack-Channels).
 
 ## Contribute to Magento 2 code {#contribute}
@@ -30,7 +30,7 @@ The Community Engineering Team reviews all issues and contributions submitted by
 
 When the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. See [Labels](#labels) to learn more.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
 ## GitHub and Two-Factor Authentication {#two-factor}
@@ -178,7 +178,7 @@ We provide two options to create back-ports and up-ports for your code contribut
 -  [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 -  [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are up-ports and back-ports?

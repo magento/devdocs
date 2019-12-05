@@ -21,7 +21,7 @@ Processor name | Class | URL pattern | Description
 `asyncBulk` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkRequestProcessor` | `/^\\/async\/bulk(\\/V.+)/` | Performs a bulk API request by executing `Magento\AsynchronousOperations\Model\MassSchedule::publishMass`, which places multiple messages in the queue.
 `asyncBulkSchema` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkSchemaRequestProcessor` | `async/bulk/schema` | Currently not used. Reserved for future use.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 `async` and `asyncBulk` share the same processor but have different URL patterns.
 
 ## Create a new processor

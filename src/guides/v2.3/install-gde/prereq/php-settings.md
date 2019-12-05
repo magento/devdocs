@@ -11,7 +11,7 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 All 3rd party libraries now support PHP 7.2.
 If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
@@ -72,7 +72,7 @@ If any modules are missing, they are added using the same workflow used for inst
  yum -y install php72u-pdo php72u-mysqlnd php72u-opcache php72u-xml php72u-gd php72u-devel php72u-mysql php72u-intl php72u-mbstring php72u-bcmath php72u-json php72u-iconv php72u-soap
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 ## Check PHP settings
@@ -100,7 +100,7 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
 
    Magento 2.1 and later use PHP code comments for code generation.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
@@ -121,7 +121,7 @@ php --ini
 
 Use the value of Loaded Configuration file.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you have only one `php.ini` file, make the changes in that file. If you have two `php.ini` files, make the changes in *all* files. Failure to do so might cause unpredictable performance.
 
 ### Find OPcache configuration settings

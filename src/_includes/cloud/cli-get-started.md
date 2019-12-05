@@ -26,7 +26,7 @@
     magento-cloud environment:list
     ```
 
-    {: .bs-callout .bs-callout-info}
+     {:.bs-callout-info}
     `magento-cloud environment:list`—displays environment hierarchies whereas the `git branch` command does not.
 
 1. Fetch origin branches to get the latest code:

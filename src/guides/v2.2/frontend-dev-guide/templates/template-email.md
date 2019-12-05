@@ -103,7 +103,7 @@ Here is a list of the most commonly used email template variables that are avail
 *  Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
 *  Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
 
 To add a variable to your template content:
@@ -117,7 +117,7 @@ To add a variable to your template content:
 
 1. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
 
 ## Styles for email templates {#email-styles}
@@ -419,7 +419,7 @@ Incorrect:
 {% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}

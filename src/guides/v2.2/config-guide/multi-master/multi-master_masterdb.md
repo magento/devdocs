@@ -16,7 +16,7 @@ This topic discusses how to get started with the split database solution by:
 1. Creating two additional master databases for [checkout](https://glossary.magento.com/checkout) and OMS (named `magento_quote` and `magento_sales`)
 1. Configuring {{site.data.var.ee}} to use the checkout and sales databases
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This guide assumes all three databases are on the same host as the Magento application and that they're named `magento`, `magento_quote`, and `magento_sales`. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.
 
 ## Install the {{site.data.var.ee}} software {#config-ee-multidb-master-install}

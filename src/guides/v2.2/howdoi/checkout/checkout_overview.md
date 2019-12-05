@@ -21,7 +21,7 @@ The checkout totals and the corresponding side-bar are only displayed after the 
 
 The only [exception](https://glossary.magento.com/exception) is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a custom [module](https://glossary.magento.com/module).
 
 ## List of available customizations

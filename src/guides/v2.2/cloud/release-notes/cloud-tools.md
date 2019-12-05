@@ -177,7 +177,7 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 ## v2002.0.17
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
 
 -  {:.new}**Service updates**—Supported by the following Magento versions: 2.2.8 and later 2.2.x, 2.3.1 and later 2.3.x
@@ -434,7 +434,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 ## v2002.0.11
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 -  {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ page.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ page.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).

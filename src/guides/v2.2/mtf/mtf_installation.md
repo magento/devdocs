@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Installation of the Functional Testing Framework Entities
 ---
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
 While the MTF is still functional, all MTF tests are ported over to the MFTF. We recommend using the MFTF for testing.
 
@@ -21,7 +21,7 @@ To install the Magento application, see [Magento Installation Guide][].
 
 For more details about PHP verification, installation and configuration see [PHP Settings][].
 
-{: .bs-callout .bs-callout-warning }
+  {:.bs-callout-warning}
 In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out.
 
 #### Check if the Functional Testing Framework has been already installed {#mtf_install_pre_mtf-check}
@@ -33,7 +33,7 @@ In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out.
 
 The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2_root_dir>/dev/tests/functional/composer.json`.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you're not sure that Composer is installed, see [Install Composer][].
 
 1. [Open a command prompt][].
@@ -47,7 +47,7 @@ cd <magento2_root_dir>/dev/tests/functional/
 composer install
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If the command execution failed, check if [Composer][] is installed [globally][].
 
 ## Check the installation {#mtf_install_check}
