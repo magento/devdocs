@@ -80,7 +80,7 @@ First, create the standard customer. Their `company_id` will initially be set to
   "extension_attributes": {
     "company_attributes": {
       "customer_id": 13,
-      "company_id": 0,
+      "company_id": 0
     }
   }
 }
