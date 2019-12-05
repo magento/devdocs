@@ -66,9 +66,8 @@ To enable or disable the profiler:
    ```bash
    bin/magento dev:profiler:enable csvfile
    ```
-   
-   {:.bs-callout-info}
-   The output will be saved in `<project_root>/var/log/profiler.csv`. The `profiler.csv` will be overridden on each page refresh.
+
+   The output will be saved to `<project_root>/var/log/profiler.csv`. The `profiler.csv` will be overridden on each page refresh.
 
    To disable the profiler and remove the flagfile:
 
