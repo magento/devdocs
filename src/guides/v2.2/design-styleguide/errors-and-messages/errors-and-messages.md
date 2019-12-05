@@ -21,11 +21,11 @@ Magento uses different types of dynamic messaging to alert users when:
 
 Use complete sentences and brief, exact, but conversational language.
 
-1. Avoid pleading or personal pronouns. For example: "you, "please", or "sorry".
+*  Avoid pleading or personal pronouns. For example: "you, "please", or "sorry".
 
-1. Specify what went wrong.
+*  Specify what went wrong.
 
-1. Tell users how to fix the problem and continue the current task. If the problem cannot be resolved online, give users appropriate options to contact us or try again at a later time.
+*  Tell users how to fix the problem and continue the current task. If the problem cannot be resolved online, give users appropriate workaround options or support information.
 
 ### Tone and language
 
