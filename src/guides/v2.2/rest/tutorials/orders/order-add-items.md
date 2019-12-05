@@ -14,9 +14,13 @@ functional_areas:
   - Catalog
 ---
 
-This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
+This step shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
 
 These calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
+
+{:.bs-callout-info}
+Use the `V1/guest-carts/<cartId>/items` endpoint to add items to the cart on behalf of a guest. Do not include an authorization token. The payload and response is same as the logged-in customer for all product types, except for from quote ID in the payload.
+
 
 ### Add a simple product to a cart {#add-simple}
 
@@ -420,9 +424,6 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 ```
 
 {% endcollapsible %}
-
-{:.bs-callout-info}
-Use the `V1/guest-carts/<cartId>/items` endpoint to add items to the cart on behalf of a guest. Do not include an authorization token. The payload and response is same as the logged-in customer for all product types apart from quote id in the payload (Need to give the masked ID)
 
 ### Verify this step {#verify-step}
 
