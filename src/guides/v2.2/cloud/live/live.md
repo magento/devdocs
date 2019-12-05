@@ -42,12 +42,14 @@ For detailed instructions to set up and perform scans, see the [Magento User Gui
 
 Each site you scan must be registered through the Magento Security Scan tab. The registration process requires you to accept Magento’s disclaimer prior to scanning. You control both scan scheduling and the authorization of personnel to be notified when each scan is complete. You can schedule scans for a specific, recurring date and time or on demand as required.
 
+{.:procedure}
 To scan your site:
 
 1. Access your [Magento Marketplace account](https://account.magento.com/customer/account/login).
 1. Click the Security Scan tab and select **Go to Security Scan**.
 1. In the **Actions** column for the site, select **Run Scan**. A notification status displays the scheduled scan.
 
+{:.procedure}
 To review the report:
 
 1. When the report completes, a notification displays.
@@ -59,7 +61,7 @@ Scan results include a general label that describes whether a site passed or fai
 
 ## Ready to go live {#ready}
 
-When you are ready to begin the go-live process, see the following steps:
+When you are ready to begin the go-live process, see the following:
 
 *  [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
 *  [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)
