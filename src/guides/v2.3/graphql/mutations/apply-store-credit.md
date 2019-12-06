@@ -10,7 +10,7 @@ Store credit is an amount that the merchant applies to a customer account as a r
 
 The amount returned in the `current_balance` indicates how much store credit at the time you run the `applyStoreCreditToCart` mutation. This amount is not decreased until you place the order.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If the amount of available store credit equals or exceeds the grand total of the quote, set the payment method to `free` in the `setPaymentMethodOnCart` mutation.
 
 ## Syntax

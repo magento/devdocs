@@ -21,7 +21,7 @@ Following is a sample failure message:
  - magento/sample-data version 0.74.0-beta15. Please try to update it to one of the following package versions: 0.74.0-beta16, 0.74.0-beta14, 0.74.0-beta13, 0.74.0-beta12, 0.74.0-beta11, 0.74.0-beta10, 0.74.0-beta9, 0.74.0-beta8, 0.74.0-beta7
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The message you see will likely be different.
 
 Typically, component dependency conflicts result from someone manually editing the Magento 2 `composer.json` file. It can also be caused by third-party modules that depend on earlier Magento components than the ones you have installed.

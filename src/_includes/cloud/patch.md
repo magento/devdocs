@@ -2,7 +2,7 @@ This topic discusses how to test patches to your {{site.data.var.ece}} system lo
 
 When you perform a {{site.data.var.ee}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full {{site.data.var.ee}} application, see [Upgrade a {{site.data.var.ee}} patch](#upgrade-patch). To upgrade and test a full {{site.data.var.ee}} version (including patches and hotfixes), see [Upgrade and test {{site.data.var.ee}}]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend installing full {{site.data.var.ee}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 There are two types of patches:
@@ -19,7 +19,7 @@ There are two types of patches:
 
    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).

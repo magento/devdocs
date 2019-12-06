@@ -55,10 +55,10 @@ Blocks are a foundational building unit for layouts in Magento. They are the lin
 
 Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required**.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
 
 | Attribute | Description | Values | Required? |
@@ -81,7 +81,7 @@ A structure without content that holds other layout elements such as blocks and 
 **Details:**
 A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
 
 | Attribute | Description | Values | Required? |
@@ -146,7 +146,7 @@ The following tables give a detailed description of the results you can get usin
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The `<action>` instruction is deprecated. If the method implementation allows, use the [`<argument>`](#argument) for [`<block>`](#fedg_layout_xml-instruc_ex_block) or [`<referenceBlock>`](#fedg_layout_xml-instruc_ex_ref) to access the block public API.
 
 Calls public methods on the block API.

@@ -9,7 +9,7 @@ When the [vault]({{page.baseurl}}/payments-integrations/vault/vault-intro.html) 
 
 The `customerPaymentTokens` query returns an array of stored payment methods. Use the [deletePaymentToken mutation]({{page.baseurl}}/graphql/mutations/delete-payment-token.html) to delete a payment token from the system.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must specify the customer's authorization token in the header of the call.
 
 ## Syntax

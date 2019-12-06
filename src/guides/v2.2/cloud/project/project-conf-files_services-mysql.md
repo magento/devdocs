@@ -35,7 +35,7 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
 
 1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
 
 ## Set up multiple database users
@@ -44,7 +44,7 @@ Optionally, you can set up multiple databases as well as multiple users with dif
 
 An _endpoint_ is a set of credentials (or users) with specific privileges. By default, there is one endpoint named `mysql` that has administrator access to all defined databases. To set up multiple database users, you must define multiple endpoints in the services.yaml file and declare the relationships in the .magento.app.yaml file.
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 You cannot use multiple _databases_ with {{site.data.var.ee}} at this time, but you **can** create multiple endpoints to restrict access to the `main` database.
 
 Use a nested array to define the endpoints for specific user access. Each endpoint can designate access to one or more schemas (databases) and different levels of permission on each.
@@ -92,7 +92,7 @@ relationships:
     databaseimporter: "mysql:importer"
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.
 
 ## Connect to the database

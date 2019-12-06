@@ -17,7 +17,7 @@ Magento enables you to configure alternatives to the default file system caching
 
 *  Set up the [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) without modifying the Magento configuration.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We'll periodically add more cache alternatives so watch this space.
 
 Magento uses the following caching terminology:
@@ -34,5 +34,5 @@ This topic discusses the following options for configuring caching:
 *  Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global [dependency injection](https://glossary.magento.com/dependency-injection) configuration)
 *  Configuring your own custom cache frontend, which means you modify only `<magento_root>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Varnish requires no changes to the Magento configuration. For more information, see [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html).

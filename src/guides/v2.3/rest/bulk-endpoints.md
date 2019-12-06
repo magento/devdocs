@@ -30,7 +30,7 @@ Synchronous route | Bulk route
 `PUT /V1/products/:sku/media/:entryId` | `PUT async/bulk/V1/products/bySku/media/byEntryId`
 `POST /V1/carts/:quoteId/items` | `POST async/bulk/V1/carts/byQuoteId/items`
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 GET and DELETE requests are not supported.
 
 ### Payloads
@@ -73,7 +73,7 @@ The payload of a bulk request contains an array of request bodies. For example, 
 ]
 ```
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 The second and third requests are duplicates.
 
 ### Responses

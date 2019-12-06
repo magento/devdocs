@@ -28,7 +28,7 @@ To extend the parent theme's styles in your theme:
 
 Extending a theme using `_extend.less` is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The rules and variables declared in `_extend.less` always have precedence over ones declared in `_theme.less`.
 
 ## Simplest way to override parent styles {#simple_override}

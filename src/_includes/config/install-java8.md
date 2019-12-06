@@ -23,7 +23,7 @@ Be sure to install the JDK and *not* the JRE.
 yum -y install java-1.8.0-openjdk
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Java version 8 might not be available for all operating systems. For example, you can [search the list of available packages for Ubuntu](http://packages.ubuntu.com/).
 
 #### Install the JDK on Ubuntu   {#install-prereq-java-ubuntu}
