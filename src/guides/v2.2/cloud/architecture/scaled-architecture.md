@@ -62,6 +62,18 @@ project-id@server-id:~$
 ```
 {:.no-copy}
 
+The role includes the project ID and either `unified` for core nodes and `web` for web nodes.
+
+### Log locations
+
+The log locations vary slightly depending on the node. For example, database logs are not on web nodes.
+
+Log file            | Core node                        | Web node
+------------------- | -------------------------------- | --------
+**MySQL error log** | `/var/log/mysql/mysql-error.log` | Not available
+
+
+
 [Core tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-core.png
 [Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
 [SSH access list]: {{ site.baseurl }}/common/images/cloud/scaling-sshaccess.png
