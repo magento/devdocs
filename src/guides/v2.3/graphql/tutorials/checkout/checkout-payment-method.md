@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 You must always set a payment method.
 
 Use the following `cart` query to determine which payment methods which are available for your order.
@@ -23,7 +23,7 @@ Use the following `cart` query to determine which payment methods which are avai
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
@@ -67,7 +67,7 @@ Use the `setPaymentMethodOnCart` mutation to set the payment method for your ord
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text

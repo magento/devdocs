@@ -26,5 +26,5 @@ The full list of software is listed in [System Requirements]({{ page.baseurl }}/
 
    For more information, see the [PHP manual](http://php.net/manual/en/intro-whatis.php){:target="_blank"} or the [PHP Wikipedia page](http://en.wikipedia.org/wiki/PHP){:target="_blank"}.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you use a hosting provider, they might already have installed this software. Contact them if you are not sure.

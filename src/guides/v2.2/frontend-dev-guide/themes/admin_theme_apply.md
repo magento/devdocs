@@ -25,7 +25,7 @@ This topic describes how to apply your custom [theme](https://glossary.magento.c
    </module>
    ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you choose to create a separate dedicated module, you can use the [Magento_SampleMinimal module from the Magento 2 sample modules repository](https://github.com/magento/magento2-samples/tree/master/sample-module-minimal) as example of a minimal module you need. If you will copy and use Magento_SampleMinimal, do not forget to enter your vendor and module naming, instead the ones used in the sample, in the `<your_module_dir>/etc/module.xml`, `<your_module_dir>/registration.php`, `and <your_module_dir>/composer.json` files.
 
 If you decide to use the existing module, keep in mind, that theme declaring might be affected when the module is changed.

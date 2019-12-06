@@ -33,7 +33,7 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
 
 ### PHP
@@ -47,7 +47,7 @@ PHP 7.0 is no longer supported.
 
 #### Required PHP extensions
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The [PHP]({{ page.baseurl }}/install-gde/prereq/php-settings.html) installation instructions include a step for installing these extensions.
 
 <!--{% assign platform-req = site.data.codebase.v2_2.open-source.composer_lock.platform %}-->
@@ -91,7 +91,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
    *  Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1)
 
-      {: .bs-callout .bs-callout-warning}
+      {:.bs-callout-warning}
       Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
 
       If you must run Elasticsearch 2.x or 5.x with Magento 2.2.8, you must change the Elasticsearch client version.
@@ -110,7 +110,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *  [php_xdebug2.2.0](http://xdebug.org/download.php)> or later (development environments only; can have an adverse effect on performance)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation.
 
 For details, see [Known issues that affect installation]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).

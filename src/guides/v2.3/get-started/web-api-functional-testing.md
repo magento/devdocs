@@ -13,7 +13,7 @@ The Web API functional testing framework depends on the integration testing fram
 
 In the Web API functional tests only, the custom annotation  `@magentoApiDataFixture` is available for declaring fixtures. The difference of this annotation from `@magentoDataFixture` is that the fixture will be committed and accessible during HTTP requests made within the test body. The usage rules of `@magentoApiDataFixture` are the same as `@magentoDataFixture` usage rules.
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 If data was added to the DB using `@magentoApiDataFixture`, it will not be automatically cleared after test execution. The data is cleared when `@magentoDataFixture` is used.
 
 Do not define fixtures in `dev/tests/api-functional`. Instead, they must be taken from `dev/tests/integration`. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under `dev/tests/integration`. The fixtures will then be available for both testing frameworks.

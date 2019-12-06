@@ -40,7 +40,7 @@ The ece-tools package is a scalable deployment tool that simplifies the {{ sit
 
 See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about {{site.data.var.ece}} upgrades and patches.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 ## Third-party license agreements

@@ -16,7 +16,7 @@ The Magento cron job runs a number of scheduled tasks and is a vital part of you
 -  Generating newsletters
 -  Generating sitemaps
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Refer to [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.
 
 You can run a Magento cron job in the following ways:
@@ -24,7 +24,7 @@ You can run a Magento cron job in the following ways:
 -  Using the [`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command either from the command line or in a crontab
 -  Accessing `pub/cron.php?[group=<name>]` in a web browser
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You don't need to do anything if you use the [`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) command to run cron because it uses a different process that is already secure.
 
 ## Secure cron with Apache
@@ -166,7 +166,7 @@ Magento provides an optimized sample nginx configuration file out of the box. We
 
 The easiest way to verify that `pub/cron.php` is secure is to verify that it's creating rows in the `cron_schedule` Magento database table after you set up password authentication. This example uses SQL commands to check the database, but you can use whatever tool you like.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `default` cron you're running in this example runs according to the schedule defined in `crontab.xml`. Some cron job runs only once a day. The first time you run cron from the browser, the `cron_schedule` table is updated, but subsequent `pub/cron.php` requests run at the configured schedule.
 
 To verify cron is secure:
@@ -244,7 +244,7 @@ To verify cron is secure:
 
 You can run cron anytime using a web browser (e.g., during development).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Do _not_ run cron in a browser without securing it first.
 
 If you're using an Apache web server, you must remove the restriction from the `.htaccess` file before you can run cron in a browser:
@@ -300,5 +300,5 @@ For example,
 http://magento.example.com/magento2/pub/cron.php?group=index
 ```
 
-{: .bs-callout-info}
+ {:.bs-callout-info}
 You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run) for more information about cron groups.

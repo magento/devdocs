@@ -52,7 +52,7 @@ The structure of a Magento theme directory typically would be like following:
 
 Let's have a closer look at each particular sub-directory.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The directories and files structure described below is the most extended one. It may not coincide with the structure of your store.
 
 <table>
@@ -281,7 +281,7 @@ The key difference between static files and other theme files is that static fil
 
 Static view files that can be accessed by a direct link from the storefront, are distinguished as public theme files.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
   To be actually accessible for browsers public static files are [published]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) to the `/pub/static/frontend/<Vendor>/<theme>/<language>/css/` directory.
 
 ### Dynamic view files
