@@ -145,7 +145,7 @@ If you change the `status` to inactive, the account is locked. If the company us
       "telephone": "512-555-3322"
     },
     "is_subscribed": false
-  }  
+  }
 }
 ```
 
