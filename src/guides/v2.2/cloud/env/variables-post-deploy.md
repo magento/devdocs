@@ -99,7 +99,7 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
             - "category:|tires_.*|:store_gb"
       ```
 
-   Product warm-up examples:
+   The following example caches for the `product` entity type based on these criteria:
    - all products for all store (programmatically limited to 100 per store to avoid performance issues) 
    - all products for store `store1`
    - products with `sku1` for all stores
