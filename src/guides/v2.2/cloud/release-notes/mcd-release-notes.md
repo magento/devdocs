@@ -23,7 +23,6 @@ The release notes include:
 
 -  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
 
--  {:.new}Docker for Linux does not require a third party utility to support file syncing because binding a host directory to a container does not cause the same performance issues. Added the `--sync-enggine=native` option.<!--MAGECLOUD4351-->
 
 -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
 
