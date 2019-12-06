@@ -29,7 +29,7 @@ We strongly recommend you do *not*:
 
 There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This rule applies only to production code. When writing [integration tests]({{ page.baseurl }}/test/integration/integration_test_execution.html), this is not true. In fact, the object manager is recommended for integration tests.
 
 ### Collaborator classes

@@ -8,12 +8,12 @@ title: Quick start. Prepare environment for test run
 The Selenium Server drives a browser to execute your tests.
 You can download the Selenium Server from [Selenium project website].
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Server.
 
 Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium server version.](http://docs.seleniumhq.org/about/platforms.jsp)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
 
 Enter in terminal:

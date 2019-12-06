@@ -109,6 +109,9 @@ If the operation is successful, the response contains the code of the selected p
 
 Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
 
+{:.bs-callout-warning}
+The `setPaymentMethodAndPlaceOrder` mutation has been deprecated.
+
 **Request:**
 
 ```text

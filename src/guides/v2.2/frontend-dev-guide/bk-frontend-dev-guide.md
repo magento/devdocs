@@ -42,7 +42,7 @@ You can apply these levels of customization to your site, where the levels requi
 
     This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a [WYSIWYG](https://glossary.magento.com/wysiwyg) mode. We'd like to clarify that to meet higher priority objectives, the VDE will _not_ be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.
 
 ## Frontend development prerequisites {#fedg-prereqs}

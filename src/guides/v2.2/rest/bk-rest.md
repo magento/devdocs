@@ -16,5 +16,5 @@ This documentation is generated from the code base using [Swagger](http://swagge
 
 You can also create a dynamic REST API documentation set on your server with live data. On your server, Swagger displays REST APIs for all installed products and allows you to try out the APIs. For more information, see [Generate local REST API reference](generate-local.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The REST API documentation on the Magento Developers website (devdocs.magento.com) is static. It is not running an instance of Magento, and therefore it does not have live data.

@@ -18,7 +18,7 @@ Unless you have DNS set up for your stores' URLs, you must add a static route to
 
 You're done!
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 
 *  Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 *  Additional tasks are required to set up {{site.data.var.ece}}; for more information, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)

@@ -21,7 +21,6 @@ This tutorial shows a system integrator how REST APIs are used in the lifecycle 
 The **10-step tutorial** generally takes **30 minutes**.
 
 ### Before you begin
-{:.tutorial-before}
 
 Complete the following prerequisites:
 

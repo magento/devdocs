@@ -9,14 +9,14 @@ functional_areas:
 
 This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee}}.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must be authorized for {{site.data.var.ee}} to perform the tasks discussed in this topic.
 
 ## Prerequisites {#compman-prereq}
 
 Before continuing, complete all tasks discussed in [Prerequisites].
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com) if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}

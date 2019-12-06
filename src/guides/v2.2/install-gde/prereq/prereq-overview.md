@@ -19,12 +19,12 @@ Before you install Magento, you must do all of the following:
 *  If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We assume you're installing the Magento 2 software in a _development environment_, which means you have [root user](http://www.linfo.org/root.html){:target="_blank"} access to the machine _and_ that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Don't know what any of this means? Check out our [installation overview page]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 Enter the following commands as a user with `root` privileges:

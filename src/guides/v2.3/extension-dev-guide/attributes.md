@@ -43,7 +43,7 @@ As of version 2.3.4, Magento caches all system EAV attributes as they are retrie
 
 Customer EAV attributes are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
 ```php

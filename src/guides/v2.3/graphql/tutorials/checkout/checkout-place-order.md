@@ -20,7 +20,7 @@ The `placeOrder` mutation places an order.
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text

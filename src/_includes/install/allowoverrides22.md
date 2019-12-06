@@ -2,7 +2,7 @@ Use this section to enable Apache 2.2 rewrites and specify a setting for the [di
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
 1. Open the following file for editing.
@@ -28,7 +28,7 @@ Failure to enable these settings typically results in no styles displaying on yo
    <Directory>
    ```
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    The preceding values for `Order` might not work in all cases. For more information, see the Apache documentation ([2.2](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order)), [2.4](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order)).
 
 1. Save the file and exit the text editor.

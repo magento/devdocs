@@ -35,7 +35,7 @@ To remove the Magento crontab:
    bin/magento cron:remove
    ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
 
 ## Run cron from the command line {#config-cli-cron-group-run}
@@ -62,7 +62,7 @@ bin/magento cron:run --group default
 
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the `scheduled_at` time for every task.
 
 ## Logging

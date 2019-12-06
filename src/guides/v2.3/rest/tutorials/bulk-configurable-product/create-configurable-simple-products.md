@@ -37,10 +37,10 @@ Some notes about the configurable product payload example:
 
  Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
- {:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
- {:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 The payload contains both the configurable product and the simple products.
 
  **Endpoint:**
@@ -306,7 +306,7 @@ The payload contains both the configurable product and the simple products.
 }
 ```
 
- {:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 For information about response fields, see the [Bulk API]({{ page.baseurl }}/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html).
 
 ## Verify this step

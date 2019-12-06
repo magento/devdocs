@@ -165,7 +165,7 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 ### Run the data generator {#config-cli-perf-run}
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 
 Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
