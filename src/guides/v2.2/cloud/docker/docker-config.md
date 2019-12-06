@@ -20,7 +20,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
       -  [php@7.2][php72]
    -  [Composer]
    -  [Docker]
-   -  File synchronization required for developer mode—use one of the following:
+   -  On MacOS and Windows, file synchronization is required for developer mode—use one of the following:
       -  [docker-sync]
       -  [mutagen]
 
