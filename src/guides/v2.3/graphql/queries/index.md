@@ -160,7 +160,7 @@ Magento also returns an error if you specify these headers with any other query 
 
 ### Example campaign
 
-The example staging queries in this section are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled while the campaign takes effect.
+The example staging queries in this section are based on a simple campaign that creates a custom category and catalog sales rule using the Luma sample data. By default, the custom category and sales rule are disabled but become enabled when the campaign takes effect.
 
 The following steps describe how to create this example campaign.
 
@@ -278,7 +278,7 @@ Preview-Version: 1576389600
 
 #### Staging `categoryList` query
 
-In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify a valid headers, the `categoryList`query returns full details about the custom category. Otherwise, the query returns an empty array.
+In this example campaign, the **End of Year Sale** subcategory and a catalog price rule are disabled when the campaign is not in effect. When you specify valid headers, the `categoryList`query returns full details about the custom category. Otherwise, the query returns an empty array.
 
 **Headers:**
 
