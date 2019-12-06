@@ -154,7 +154,7 @@ Header name | Description
 `Authorization Bearer: <authorization_token>` | An admin token. Use the `GET /V1/integration/admin/token` REST endpoint to generate this token.
 `Preview-Version` | A timestamp (seconds since January 1, 1970) that is inside the range of dates of the campaign you are querying.
 
-Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in a scheduled campaign, Magento returns value based on the current storefront settings.
+Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in a scheduled campaign, the query results reflect the current storefront settings.
 
 Magento also returns an error if you specify these headers with any other query or any mutation.
 
