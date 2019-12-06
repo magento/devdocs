@@ -37,24 +37,24 @@ To launch the Docker environment in developer mode:
    -  [Docker-sync Installation instructions][dsync-install]
    -  [Mutagen.io Installation instructions][mutagen-install]
 
-1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].
+1. In your local environment, generate the Docker Compose configuration file. You can use the service keys, such as `--php`, to [specify a version][services].
 
    ```bash
    ./vendor/bin/ece-tools docker:build --mode="developer"
    ```
 
-   By default, the docker-compose configuration uses 'docker-sync' for file synchronization. To use 'mutagen.io' for file synchronization on Windows or MacOS, you must run the command with the `--sync-engine=mutagen` option.
+   By default, the `docker-build` command generates the Docker Compose configuration file using 'docker-sync' for file synchronization. To use 'mutagen.io' for file synchronization on Windows or MacOS, you must run the command with the `--sync-engine="mutagen"` option.
 
    For example:
 
    ```bash
-   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine=mutagen
+   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine="mutagen"
    ```
 
-   On Linux, use the `native` option when starting the Docker configuration generator:
+   On Linux, use the `native` option to generate the Docker Compose configuration file:
 
    ```bash
-   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine=native
+   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine="native"
    ```
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
@@ -76,7 +76,7 @@ To launch the Docker environment in developer mode:
    If this is the first installation, expect to wait a few minutes for file synchronization.
 
    {: .bs-callout-info}
-   If you use the `mutagen.io` or `native` option for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
+   If you use the `mutagen.io` or `native` option for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the Docker containers.
 
 1. Build files to containers and run in the background.
 
@@ -84,7 +84,7 @@ To launch the Docker environment in developer mode:
    docker-compose up -d
    ```
 
-1. Start the file synchronization with `mutagen.io`. If you use the `docker-sync` or `native` options when you started the Docker generator, skip this step.
+1. Start the file synchronization with `mutagen.io`. If you use the `docker-sync` or `native` options to generate the Docker Compose configuration file, skip this step.
 
    ```bash
    bash ./mutagen.sh
