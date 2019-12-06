@@ -117,7 +117,7 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
             - "product:sku1|sku2|sku3:store1|store2"
       ```
       
-   Store-page warm-up examples:   
+   The following example caches for the `store-page` entity type based on these criteria: 
    - page `/contact-us` for all stores
    - page `/contact-us` for store with ID `1`
    - page `/contact-us` for stores with code `code1` and `code2`
