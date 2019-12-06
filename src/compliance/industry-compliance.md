@@ -4,9 +4,11 @@ title: Industry Compliance
 ---
 # Industry Compliance
 
-Merchants are responsible to meet industry guidelines for maintaining a secure environment, legal requirements, and best practices for online commerce in their jurisdiction. For a high-level overview, see the [Industry Compliance]{https://docs.magento.com/m2/ee/user_guide/stores/compliance-industry.html) section in the Magento User Guide. The topics in this section provide the technical information necessary to help merchants comply with the requirements of specific legislation.
+Merchants are obligated to meet industry guidelines for maintaining a secure environment, legal requirements in their jurisdiction, and best practices for online commerce. To learn more, see the [Industry Compliance]{https://docs.magento.com/m2/ee/user_guide/stores/compliance-industry.html) section in the Magento User Guide.
 
 ## Privacy Legislation
 
-- [California Consumer Privacy Act (CCPA)]({{ site.baseurl }}{% link privacy/ccpa.md %})
-- [General Data Protection Regulation (GDPR)]({{ site.baseurl }}{% link privacy/gdpr.md %})
+The topics in this section provide the technical information necessary to help merchants comply with the requirements of specific privacy legistlation. Some of the recent privacy regulations require additional development effort on the part of the merchant. See the following topics for the technical information you need to support your clients who have Magento installations.
+
+- [California Consumer Privacy Act (CCPA)]({% link privacy/ccpa.md %})
+- [General Data Protection Regulation (GDPR)]({% link privacy/gdpr.md %})
