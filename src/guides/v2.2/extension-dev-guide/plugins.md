@@ -294,6 +294,8 @@ The `sortOrder` property from the <code>plugin</code> node declared in <code>di.
 
 The [`Magento\Framework\Interception\PluginListInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginListInterface.php){:target="_blank"} which is implemented by [`Magento\Framework\Interception\PluginList\PluginList`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginList\PluginList.php){:target="_blank"} is responsible to define when to call the before, around, or after methods respecting this prioritization.
 
+If two or more plugins have the same `sortOrder` value or not specify it, the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html) declared in `sequence` node from `module.xml` and [area]({{ page.baseurl}}/extension-dev-guide/build/di-xml-file.html#areas-and-application-entry-points) will define the prioritization due to merge sequence. You can check the component load order in `app/etc/config.php` file.
+
 Magento will execute plugins using these rules during each plugin execution in two main flows: 
 
 * Before the execution of the observed method, starting from lowest to greatest <code>sortOrder</code>.
