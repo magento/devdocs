@@ -400,6 +400,9 @@ Component's name by which to perform a lookup in the registry.
 
 <!-- without an extra container node -->
 <scope args="'name.of.component'"></scope>
+
+<!-- as a virtual element -->
+<!-- ko scope: name.of.component --><!-- /ko -->
 ```
 
 ### `staticChecked`
