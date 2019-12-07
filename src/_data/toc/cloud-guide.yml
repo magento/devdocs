@@ -180,8 +180,8 @@ pages:
             - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
-            - label: Custom blacklist VCL
-              url: /cloud/cdn/fastly-vcl-blacklist.html
+            - label: Custom VCL for blocking
+              url: /cloud/cdn/fastly-vcl-blocking.html
 
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html

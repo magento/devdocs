@@ -46,7 +46,7 @@ Sample response:
   docker:build              Build docker configuration
   docker:config:convert     Convert raw config to .env files configuration
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Services, routes, and variables
 
@@ -85,7 +85,7 @@ Magento Cloud Services:
 | port                              | 9200                             |
 ...
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Verify environment configuration
 
@@ -94,6 +94,9 @@ There is a set of verification commands available to help evaluate the configura
 ```bash
 php ./vendor/bin/ece-tools wizard:ideal-state
 ```
+
+ {:.bs-callout-info}
+You must run the `wizard:ideal-state` command in the Cloud environment. The command always returns the `The configured state is not ideal` error when run in the local development environment.
 
 Sample output:
 

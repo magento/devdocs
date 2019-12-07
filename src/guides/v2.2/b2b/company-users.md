@@ -7,9 +7,9 @@ functional_areas:
   - Integration
 ---
 
-A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
+A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, to create the user. After the user is created, you can use the `PUT /V1/customers/:customer_id` call to set their company data with the `company_attributes` extended attributes.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html) for an example of creating a standard customer.
 
 ## Manage company users
@@ -29,7 +29,7 @@ PUT /V1/customers/:customerId
 
 **Company user parameters:**
 
-The following table lists the parameters that can be used to create a company user.
+The following table lists the parameters that can be used to set company data for a user.
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -49,35 +49,14 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 **Payload:**
 
-Add the `company_attributes` code block to the payload that is required to create a standard customer.
-
-```json
-"extension_attributes": {
-   "company_attributes": {
-   "company_id": 2,
-   "status": 1,
-   "job_title": "Sales Rep",
-   "telephone": "512-555-3322"
-   }
-}
-```
-
-Full example:
+First, create the standard customer. Their `company_id` will initially be set to `0`.
 
 ```json
 {
   "customer": {
     "email": "mshaw@example.com",
     "firstname": "Melanie",
-    "lastname": "Shaw",
-    "extension_attributes": {
-      "company_attributes": {
-        "company_id": 2,
-        "status": 1,
-        "job_title": "Sales Rep",
-        "telephone": "512-555-3322"
-      }
-    }
+    "lastname": "Shaw"
   }
 }
 ```
@@ -101,18 +80,17 @@ Full example:
   "extension_attributes": {
     "company_attributes": {
       "customer_id": 13,
-      "company_id": 2,
-      "job_title": "Sales Rep",
-      "status": 1,
-      "telephone": "512-555-3322"
+      "company_id": 0
     }
   }
 }
 ```
 
+If you create a user from the admin dashboard, you can also set their company data at the same time.
+
 ### Modify a company user
 
-The following example changes the status of a company user to inactive.
+The following example assigns the user to a company, sets their status to inactive and also sets their `job_title` and `telephone`.
 
 If you change the `status` to inactive, the account is locked. If the company user has child users, the system re-assigns the child users to the parent of the deactivated user.
 
@@ -133,7 +111,9 @@ If you change the `status` to inactive, the account is locked. If the company us
     "extension_attributes": {
       "company_attributes": {
         "company_id": 2,
-        "status": 0
+        "status": 0,
+        "job_title": "Sales Rep",
+        "telephone": "512-555-3322"
         }
       }
   }
@@ -160,8 +140,11 @@ If you change the `status` to inactive, the account is locked. If the company us
     "company_attributes": {
       "customer_id": 13,
       "company_id": 2,
-      "status": 0
-    }
+      "status": 0,
+      "job_title": "Sales Rep",
+      "telephone": "512-555-3322"
+    },
+    "is_subscribed": false
   }
 }
 ```

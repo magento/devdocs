@@ -49,5 +49,5 @@ Click **Show details** to display details about the dependency error. You can th
 *  Select the **Skip dependency check for individual modules** to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click **Next**.)
 *  Resolve the issue by taking the action indicated by the message.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html). Editing the deployment configuration is not recommended because future Magento software updates can undo your changes.

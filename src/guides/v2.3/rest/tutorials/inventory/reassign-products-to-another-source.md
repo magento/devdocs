@@ -27,7 +27,7 @@ Yoga Adventure | Downloadable | 240-LV06 | Not applicable
 
 Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more products from the specified source. The `sku` and `source_code` attributes are required for each product.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 When you unassign a source from a product, all source data including inventory amounts is removed from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders. In a production environment, Magento strongly recommends completing all orders and shipments for those products prior to removing the source.
 
 **Endpoint:**

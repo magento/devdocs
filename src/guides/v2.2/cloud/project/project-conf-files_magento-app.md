@@ -20,7 +20,7 @@ Use the following properties to build your application configuration file. The `
 
 The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Do not change the name of an application after it has been deployed.
 
 ### `type` and `build`
@@ -174,7 +174,7 @@ The format for adding your mount to this list is as follows:
 -  `shared`—Shares a volume between your applications inside an environment.
 -  `disk`—Defines the size available for the shared volume.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
 
 You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
@@ -260,7 +260,7 @@ hooks:
         npm install
         grunt
         cd
-        php ./vendor/bin/ece-tools
+        php ./vendor/bin/ece-tools build
 ```
 
 You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
@@ -433,7 +433,7 @@ For details about a specific PHP extension, see the [PHP Extension List](https:/
    -  `zip`
    -  `pcntl`
 
-{: .bs-callout-warning}
+{:.bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
 
 ### Customize `php.ini` settings
@@ -442,7 +442,7 @@ You can also create and push a `php.ini` file that is appended to the configurat
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
 
 For example, if you need to increase the PHP memory limit:

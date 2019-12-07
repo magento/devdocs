@@ -13,7 +13,7 @@ This topic discusses how to recover if you deployed the Magento application with
 
 If you used the incorrect keys, deployment fails. To recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 In this section, we assume that your project has a `master` branch only (`master` is the default branch when you first create a project).
 
 To redeploy with the correct authentication keys:

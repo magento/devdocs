@@ -46,7 +46,7 @@ Starting project_elasticsearch_1 ... done
 [ ok ] Starting enhanced syslogd: rsyslogd.
 root@deploy:/app#
 ```
-{: .no-copy}
+{:.no-copy}
 
 Action | Command
 :----- | :------

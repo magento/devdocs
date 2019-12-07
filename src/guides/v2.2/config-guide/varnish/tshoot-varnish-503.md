@@ -18,7 +18,7 @@ Backend fetch failed
 
 To resolve this issue, increase the default value of the `http_resp_hdr_len` parameter in your Varnish configuration file. The `http_resp_hdr_len` parameter specifies the max header length _within_ the total default response size of 323768 bytes.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.
 
 1. As a user with `root` privileges, open your Vanish configuration file in a text editor:

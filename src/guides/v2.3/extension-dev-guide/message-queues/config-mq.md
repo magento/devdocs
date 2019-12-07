@@ -292,7 +292,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 | exchange             | The name of the exchange to publish to. The default system exchange name is `magento`. |
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 You cannot enable more than one `publisher` for each `topic`.
 
 ### Updating `queue.xml` {#updatequeuexml}

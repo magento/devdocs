@@ -594,7 +594,7 @@ None
 
 In this example, the buyer requests a negotiable quote. The seller applies a discount to the quote and returns the quote to the buyer. The buyer accepts the discount and completes the order.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 All negotiable quote calls require an admin authorization token.
 
 ### Initiate a negotiable quote

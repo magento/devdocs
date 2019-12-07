@@ -14,7 +14,7 @@ These settings include configuration paths and values, websites, stores, store v
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `bin/magento app:config:import` command does not process configuration stored in environment variables.
 
 ## Import configuration data
@@ -79,7 +79,7 @@ The preceding configurations can be imported in the following modes:
 *  `update`: `config.php` contains entities (`websites`, `groups`, `stores`) that are different from the production environment
 *  `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 We don't import the root [category](https://glossary.magento.com/category) associated with stores. You must associate a root category with a store using the Magento [Admin](https://glossary.magento.com/admin).
 
 ### Theme configuration
@@ -111,7 +111,7 @@ Full example:
 ),
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 
 *  _Theme registration_. If a theme data is defined in `config.php` but the theme's source code is  not present in the file system, the theme is ignored (that is, not registered).
 *  _Theme removal_. If a theme is not present in `config.php` but the source code is present on the file system, the theme is not removed.

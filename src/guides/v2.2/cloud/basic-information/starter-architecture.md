@@ -31,7 +31,7 @@ Additional sections in this guide provide instructions and walk-throughs for fin
 
 We walk you through [deploying to Staging]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [testing your store(s)]({{ page.baseurl }}/cloud/live/stage-prod-test.html) requirements and processes.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Integration environment {#cloud-arch-int}
@@ -47,7 +47,7 @@ You can have up to **two** active Integration environments on a grid for **two**
 
 You can have an unlimited number of inactive branches to store code. To access, view, and test inactive branches, you must activate them.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The Integration environment does not support all services. For example, Fastly CDN is not accessible in an Integration environment.
 
 The process for developing in Integration requires the following process:

@@ -80,7 +80,7 @@ We recommend using a branching strategy with your development work. Using one br
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Do not complete any configurations in your local workstation yet.
 
 ![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
@@ -161,10 +161,10 @@ As you develop features, add extensions, and design themes, having real data to 
 
 ![Pull and sanitize production data]({{ site.baseurl }}/common/images/cloud_workflow-data-code-process.png)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Before pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 We do not recommend pushing a database from an Integration or Staging environment to a Production environment. If you do, the data from the Integration or Staging environment overwrites your live Production data including sales, orders, new and updated customers, and much more.
 
 ## Deployment workflow {#deploy}
