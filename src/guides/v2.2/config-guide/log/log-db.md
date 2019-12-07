@@ -39,3 +39,15 @@ After that, provide the file path for `Magento\Framework\DB\Logger\File`:
     </arguments>
 </type>
 ```
+
+Finally,Compile the code with this command:
+
+```bash
+bin/magento setup:di:compile
+```
+
+and clean the cache with this command:
+
+```bash
+bin/magento cache:clean
+```
