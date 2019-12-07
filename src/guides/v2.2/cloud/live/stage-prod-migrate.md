@@ -181,7 +181,7 @@ For continuous integration deployments, we **do not recommend** migrating data f
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
-{:.bs-callout-info }
+{:.bs-callout-info}
 To transfer media from remote-to-remote environments directly you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
 
 {:.procedure}
@@ -246,7 +246,7 @@ If you encounter the following error, you can try to create a database dump with
 ```terminal
 ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 ```
-{: .no-copy}
+{:.no-copy}
 
 This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.
 

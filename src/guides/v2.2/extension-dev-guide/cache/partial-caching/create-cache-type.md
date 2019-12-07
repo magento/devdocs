@@ -35,7 +35,7 @@ We suggest you locate classes that extend [Magento\Framework\Cache\Frontend\Deco
 
 For example, look at [Magento\Eav\Model\Cache\Type][type] to understand more about the EAV cache type.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Please help us improve this topic by suggesting details using the **Edit this page in GitHub** link at the top of the page.
 
 [tagscope]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php

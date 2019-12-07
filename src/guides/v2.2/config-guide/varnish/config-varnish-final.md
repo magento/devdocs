@@ -29,7 +29,7 @@ Age: 0
 X-Magento-Cache-Debug: MISS
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This value is also acceptable: `X-Magento-Cache-Debug: HIT`.
 
 ### Check page load times {#config-varnish-final-response}
@@ -74,7 +74,7 @@ Make sure the `<magento_root>/var/page_cache` directory is empty:
 
 1. If you cleared the `var/page_cache/` directory, restart Varnish.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).
 
 {:.ref-header}

@@ -28,7 +28,7 @@ The build system does _not_ need any of the following:
 -  Magento database connection
 -  Magento software installed (only the code must be present)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
 
 ## Configure the build machine

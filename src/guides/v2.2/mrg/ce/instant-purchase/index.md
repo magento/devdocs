@@ -59,7 +59,7 @@ This data is updated when the relevant customer data changes, such as adding or 
 
   Since the final price of the shipment is calculated after product and quantity are specified in the final confirmation, "Cheapest price" is displayed in the confirmation pop-up for the customer.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 The Instant Purchase capability logic is the most customizable part of the module.
 For more customization details, see the [Customization Points] section.
 
@@ -174,7 +174,7 @@ The minimal configuration for Instant Purchase integration development is as fol
 </config>
 ```
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 This minimal configuration is to help you get started with Instant Purchase integration development and is not recommended for production sites.
 
 The following is an example of a full configuration meant for production:

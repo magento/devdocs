@@ -11,7 +11,7 @@ functional_areas:
 
 Use the following information to troubleshoot and manage the Fastly CDN module for Magento 2 in your {{ site.data.var.ece }} project environments. For example, you can investigate response header values and caching behavior to resolve Fastly service and performance issues.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For information about setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 ## Locate Fastly service ID {#service-id}
@@ -57,7 +57,7 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
 If Fastly returns 503 timeout errors, check the error logs and the 503 error page to identify the root cause.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
@@ -248,7 +248,7 @@ The following excerpt from the cURL command output shows the correct values for 
 
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 For detailed information on hits and misses, see [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services) in the Fastly documentation.
 
 ### Resolve errors found in response headers {#curl}
@@ -341,4 +341,4 @@ For details about using the Fastly API to review and manage VCL, see [Manage VCL
 <!-- Link definitions -->
 
 [Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
-{: width="650px"}
+{:width="650px"}

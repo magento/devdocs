@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-release-archive.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
 
 {% include cloud/ece-patches.md %}
@@ -50,7 +50,7 @@ Implemented version-based patching. Now the package is compatible with {{site.da
 
 ## v102.0.0
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 
 ### Initial release

@@ -10,7 +10,7 @@ functional_areas:
 {% capture ee %}{{site.data.var.ee}}{% endcapture %}
 -->
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 This upgrading scenario is still under development and is published here to make it available for the Community to test.
 Do not use it on production.
 
@@ -56,11 +56,11 @@ composer remove magento/product-community-edition --no-update
 
 Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.2`), that you want to upgrade to.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
 To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 Use `composer require --help` to learn more about available options.
 To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
 
@@ -112,7 +112,7 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
 
 1. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
@@ -131,7 +131,7 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
 
 ## Update metadata
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Updating the metadata in the `composer.json` file is entirely superficial, not functional.
 
 Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.
@@ -166,7 +166,7 @@ rm -rf var/page_cache/*
 rm -rf generated/code/*
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you use cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 ## Update the database schema and data

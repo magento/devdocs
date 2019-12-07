@@ -91,7 +91,7 @@ CSS class for active sticky state.
 
 ## Styles
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The Sticky widget will not work without basic CSS Styles.
 
 The sticky page element has to have a position relative to the

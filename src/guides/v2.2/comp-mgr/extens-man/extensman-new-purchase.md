@@ -9,7 +9,7 @@ functional_areas:
 
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
-![]({{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png){: width="500px"}
+![]({{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png){:width="500px"}
 
 ### Install the purchase
 
@@ -90,7 +90,7 @@ Installing data...
 
 When the installation is complete, a page similar to the following displays:
 
-![]({{ site.baseurl }}/common/images/extensman_new-purchases_finish.png){: width="200px"}
+![]({{ site.baseurl }}/common/images/extensman_new-purchases_finish.png){:width="200px"}
 
 Click **Back to Setup Tool**.
 

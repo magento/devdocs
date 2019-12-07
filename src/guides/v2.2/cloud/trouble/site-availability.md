@@ -25,7 +25,7 @@ During static content deployment in the deploy phase, the default number of proc
 
 You can also move static content deployment from the deploy phase to the build phase, which does not have access to Redis. Refer to [Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html) for more information.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Static content deployment in the build phase also reduces downtime. The deploy phase puts your application in maintenance mode, which takes your site offline until static content deployment is complete. If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime.
 
 ### Symptoms

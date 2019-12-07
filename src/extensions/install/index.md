@@ -15,7 +15,7 @@ Extensions include:
 -  Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
 -  Language packages (localize the storefront and Admin)
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 Prior to installation, you may want to:
@@ -55,7 +55,7 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
     ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
 
 ## Update your `composer.json` file {#update-composer-json}
@@ -85,7 +85,7 @@ Add the extension's name and version to your `composer.json` file:
     Writing lock file
     Generating autoload files
     ```
-    {: .no-copy}
+    {:.no-copy}
 
 ## Verify the extension
 
@@ -102,7 +102,7 @@ By default, the extension is probably disabled:
   J2t_Payplug
   ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
 
 ## Enable the extension
@@ -163,7 +163,7 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 1. Configure the extension in Admin as needed.
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 If you encounter errors when loading the storefront in a browser, use the following command to clear the cache:
 <br/>
 `bin/magento cache:flush`

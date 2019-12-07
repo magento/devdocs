@@ -160,7 +160,7 @@ Let's create a cURL handler that creates a new widget.
 *  Create `Curl.php` in the same directory. This file contains a [handler class](#mtf_handler_conf_hand), which defines preparation of a data to create a new widget.
 
   The following code includes detailed comments for better understanding.
-  {: #mtf_curl_script}
+  {:#mtf_curl_script}
 
   ```php
   <?php

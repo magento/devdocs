@@ -36,14 +36,14 @@ Enabling the “Asynchronous email notifications” setting moves processes that
 
 There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from **Stores > Settings > Configuration > Advanced > Developer > Grid Settings > Asynchronous indexing**. See [Scheduled Grid Updates](http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html) in the _{{site.data.var.ce}} User Guide_ for more information.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Deferred stock update
 
 In times of intensive sales,  Magento can defer stock updates related to orders. This minimizes the number of operations and speeds up the order placement process. However, this option is risky and can only be used when Backorders are activated in the store, because this option can lead to negative stock quantities. This option can bring significant performance improvement on Checkout flows for stores that can easily re-fill their stock on demand. To activate deferred stock updates, go to **Stores > Settings > Configuration > Catalog > Inventory > Product Stock Options > Use Deferred Stock Update**. See [Managing Inventory](http://docs.magento.com/m2/ee/user_guide/catalog/inventory.html) in the _{{site.data.var.ee}}User Guide_ for more information.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This option is available only if **Backorder with any mode** is activated.
 
 ## Client side optimization settings
@@ -60,7 +60,7 @@ To improve the storefront responsiveness of your Magento instance, go to the Adm
 | JavaScript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 When you activate the **Enable JavaScript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.

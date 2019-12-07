@@ -21,7 +21,7 @@ This step guides you through the process of creating sources for your inventory,
 
 For more information about sources, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 This step requires an admin token. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
 
 ## Create the first source
