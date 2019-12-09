@@ -20,7 +20,7 @@ Magento is organized into these main areas:
 
 *  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php){:target="_blank"} class always loads the 'crontab' area.
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 
@@ -48,11 +48,27 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 ### Note about Magento request processing
 
-Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.
+Magento processes admin and storefront URLs requests by a routing system that identifies the right controller for each request.
 
-After the area name, the URI segment specifies the *frontname*. When an HTTP request arrives, Magento extracts the handle from the URL and interprets it as follows: `[frontName]/[controller folder]/[controller class]` where `frontName` is a value defined in the module. For example, in `catalog/product/view`, `catalog` is the (frontName defined in the module area's `routes.xml`)[{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/routes.xml#L10], `product` is the (controller folder)[{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Controller/Product], and `view` is the (controller class)[{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Controller/Product/View.php]. For deeper directory structures, the controller folders are separated with `_` (for example, `catalog/product_compare/add` for `Magento/Catalog/Controller/Product/Compare/Add.php`).
+For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store){:target="_blank"} module, the `etc/di.xml` file contains the following entry:
 
-Note that only the **execute()** method of any given controller is executed.
+```xml
+<type name="Magento\Framework\App\AreaList">
+    <arguments>
+        <argument name="areas" xsi:type="array">
+            <item name="frontend" xsi:type="array">
+                <item name="frontName" xsi:type="null" />
+                <item name="router" xsi:type="string">standard</item>
+            </item>
+        </argument>
+        <argument name="default" xsi:type="string">frontend</argument>
+    </arguments>
+</type>
+```
+
+It instructs Magento to use the `standard` router for frontend requests.
+
+Please see the [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html) for details about how routes works and can be customized.
 
 {:.ref-header}
 Related topics
