@@ -30,6 +30,9 @@ You can also send requests to Magento using the GraphQL, SOAP and REST APIs. The
 
 *  **Web API SOAP** (`webapi_soap`): The [`Magento\Webapi\Controller\Soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Soap.php){:target="_blank"} class is the front controller that responds to SOAP-based [URLs](https://glossary.magento.com/url).
 
+{:.bs-callout-info}
+The GraphQL API was released in Magento 2.3.0. Please see [GraphQL]({{ page.baseurl }}/graphql/) documentation for more information.
+
 ## How areas work with modules {#m2arch-module-using}
 
 Modules define which resources are visible and accessible in an area, as well as an area's behavior. The same [module](https://glossary.magento.com/module) can influence several areas. For instance, the RMA module is represented partly in the `adminhtml` area and partly in the `frontend` area.
