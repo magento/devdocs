@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Release notes for ece-tools
+title: Release notes for Cloud Suite
 functional_areas:
   - Cloud
   - Setup
@@ -9,12 +9,26 @@ redirect_from:
    - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
-The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
+These release notes provide information about the latest improvements to the {{site.data.var.csuite}} which is designed to deploy and manage {{ site.data.var.ee }} installations and upgrades on the Cloud platform. The suite includes the following packages:
 
-The release notes include:
+-  **The ece-tools package**–A set of scripts and tools designed to manage and deploy Cloud projects
+-  **Magento Cloud Components package**–Extended Magento Commerce core functionality for sites deployed on the Cloud platform
+-  **Magento Cloud Docker package**–Functionality and Docker images to deploy Magento Commerce to a local Cloud environment
+-  **Magento Cloud Patches package**–A set of patches which improve the integration of all Magento versions with Cloud environments
 
--  {:.new}New features
--  {:.fix}Fixes and improvements
+See the following topics to get the latest release information for each component:
+
+-  [ece-tools]({{ page.baseurl }}/cloud/release-notes/ece-release-notes.html)
+-  [{{site.data.var.mcd}}]({{ page.baseurl }}/cloud/release-notes/mcd-release-notes.html)
+-  [{{site.data.var.mcp}}]({{ page.baseurl }}/cloud/release-notes/mcp-release-notes.html)
+
+## What else do we want to include on this page?
+
+Maybe this page could provide information about service operations type changes, or other updates that affect Cloud that might not be tied to a specific Magento release-- for example, news about changes to the Fastly extension, New Relic, or Blackfire or service operations changes.
+
+The information would be more a summary of updates with links to relevant documentation that provide more information.
+
+## Previous release notes to archive (Please disregard for now):
 
 ## v2002.0.22
 
@@ -84,11 +98,7 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.new}**Docker Updates**—
 
-<<<<<<< HEAD
-   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See[Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
-=======
    -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{page.baseurl}}/cloud/docker/docker-development-testing.html).
->>>>>>> master
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
