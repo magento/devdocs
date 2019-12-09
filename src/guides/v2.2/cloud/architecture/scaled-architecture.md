@@ -48,17 +48,17 @@ ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
 Example response from a core node:
 
 ```terminal
- __  __                   _          ___ _             _ 
+ __  __                   _          ___ _             _
 |  \/  |__ _ __ _ ___ _ _| |_ ___   / __| |___ _  _ __| |
 | |\/| / _` / _` / -_) ' \  _/ _ \ | (__| / _ \ || / _` |
 |_|  |_\__,_\__, \___|_||_\__\___/  \___|_\___/\_,_\__,_|
-            |___/                                        
+            |___/
 
  Welcome to Magento Cloud.
 
  This is server unique-server-id, role project-id:unified.
 
-project-id@server-id:~$ 
+project-id@server-id:~$
 ```
 {:.no-copy}
 
@@ -71,8 +71,6 @@ The log locations vary slightly depending on the node. For example, database log
 Log file            | Core node                        | Web node
 ------------------- | -------------------------------- | --------
 **MySQL error log** | `/var/log/mysql/mysql-error.log` | Not available
-
-
 
 [Core tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-core.png
 [Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
