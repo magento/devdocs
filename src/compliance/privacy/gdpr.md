@@ -1,5 +1,5 @@
 ---
-group: functional-areas
+group: conpliance
 title: General Data Protection Regulation
 ---
 
@@ -12,12 +12,12 @@ System integrators can use the data flow diagrams and database information in th
 *  A shopper asks for a copy of the data the merchant has stored about her
 *  A shopper requests that all information about him be deleted
 
-## Personal Information Reference
+## Personal Information References
 
 The following topics contain data flow diagrams and database information for Magento version 2.x and Magento version 1.x.
 
-- [Personal Information Reference for Magento 2.x]({{ site.baseurl }}{% link compliance/privacy-regulations/pi-reference-m2.md %})
-- [Personal Information Reference for Magento 1.x]({{ site.baseurl }}{% link compliance/privacy-regulations/pi-reference-m1.md %})
+- [PI Data Reference for Magento 2.x]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m2.md %})
+- [PI Data Reference for Magento 1.x]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m1.md %})
 
 For more information about how Magento helps merchants comply with GDPR, see the following:
 

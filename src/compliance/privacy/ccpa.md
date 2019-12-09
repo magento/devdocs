@@ -1,5 +1,5 @@
 ---
-group: functional-areas
+group: compliance
 title: California Consumer Privacy Act
 ---
 
@@ -44,5 +44,5 @@ As a software developer, you might be asked to participate as a stakeholder on a
 
 Become familiar with the data flow diagrams and database entity mappings in the Personal Information Reference that applies to the version(s) of Magento that you support. 
 
-- [Personal Information Reference (Magento 2.x)]({% link compliance/privacy/pi-reference-m2.md -%})
-- [Personal Information Reference Magento 1.x)]({% link compliance/privacy/pi-reference-m1.md -%})
+- [PI Data Reference (Magento 2.x)]({% link compliance/privacy/pi-data-reference-m2.md -%})
+- [PI Data Reference Magento 1.x)]({% link compliance/privacy/pi-data-reference-m1.md -%})
