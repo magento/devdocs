@@ -1,9 +1,9 @@
 ---
-group: functional-areas
-title: Personal Information Reference (Magento 2.x) 
+group: compliance
+title: Personal Information Data Reference (Magento 2.x) 
 ---
 
-# Personal Information Reference (Magento 2.x) 
+# Personal Information Data Reference (Magento 2.x) 
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
