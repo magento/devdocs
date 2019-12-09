@@ -23,6 +23,7 @@ Following are some common module directories:
 *  `etc`: contains configuration files; in particular, `module.xml`, which is required.
 *  `Model`: contains PHP model classes as part of MVC vertical implementation of module logic.
 *  `Setup`: contains classes for module database structure and data setup which are invoked when installing or upgrading.
+*  `ViewModel`: contains PHP model clasees as part of a model-view-viewmodel (MVVM) implementation. It allows developers to offload features and business logic from block classes into separate classes that are easier to maintain, test, and reuse.
 
 #### Additional directories
 {:.no_toc}

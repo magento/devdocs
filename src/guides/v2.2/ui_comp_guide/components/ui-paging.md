@@ -42,3 +42,33 @@ This example integrates the Paging component with the [Listing]({{ page.baseurl 
 #### Result
 
 ![Paging Component example]({{ site.baseurl }}/common/images/ui_comps/ui-paging-result.png)
+
+### Configure page size and options for Paging component
+
+This example configures the Paging component with the page size and options:
+
+```xml
+<paging name="listing_paging">
+    <settings>
+        <options>
+            <option name="32" xsi:type="array">
+                <item name="value" xsi:type="number">32</item>
+                <item name="label" xsi:type="string">32</item>
+            </option>
+            <option name="48" xsi:type="array">
+                <item name="value" xsi:type="number">48</item>
+                <item name="label" xsi:type="string">48</item>
+            </option>
+            <option name="64" xsi:type="array">
+                <item name="value" xsi:type="number">64</item>
+                <item name="label" xsi:type="string">64</item>
+            </option>
+        </options>
+        <pageSize>32</pageSize>
+    </settings>
+</paging>
+```
+
+### Result
+
+![Configured Paging Component example]({{ site.baseurl }}/common/images/ui_comps/ui-paging-configured-result.png)
