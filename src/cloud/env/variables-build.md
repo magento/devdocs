@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -53,7 +53,7 @@ stage:
 ### `SCD_EXCLUDE_THEMES`
 
 {:.bs-callout-warning}
-The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -142,7 +142,7 @@ stage:
     SCD_THREADS: 2
 ```
 
-To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
+To further reduce deployment time, we recommend using [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
 ### `SKIP_SCD`
 
@@ -151,7 +151,7 @@ To further reduce deployment time, we recommend using [Configuration Management]
 
 Set to `true` to skip static content deployment during the build phase.
 
-If you already deploy static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
+If you already deploy static content during the build phase with [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
 We do not recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 

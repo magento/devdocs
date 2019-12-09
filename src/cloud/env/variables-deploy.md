@@ -7,7 +7,7 @@ functional_areas:
 redirect_from: guides/v2.2/cloud/trouble/message-queues.html
 ---
 
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -58,7 +58,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
+Enables or disables cleaning [static content files]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
 
 -  **`true`**—Removes all existing static content before deploying the updated static content.
 -  **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
@@ -72,7 +72,7 @@ stage:
 ```
 
 Failure to clean static view files before deploying can cause problems if you
-deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
+deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ site.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRON_CONSUMERS_RUNNER`
 
@@ -96,7 +96,7 @@ stage:
         - consumer2
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 The following command returns a list of message queue consumers:
 
@@ -130,7 +130,7 @@ stage:
 -  **Version**—Magento 2.1.4 and later
 
 {:.bs-callout-warning}
-You must set the `CRYPT_KEY` value through the Project Web UI instead of the `.magento.env.yaml` file to avoid exposing the key in the source code repository for your environment. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+You must set the `CRYPT_KEY` value through the Project Web UI instead of the `.magento.env.yaml` file to avoid exposing the key in the source code repository for your environment. See [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
 
@@ -267,7 +267,7 @@ The {{ site.data.var.ece }} deploy process always enables Google Analytics on Pr
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
+On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{site.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
 
 ```yaml
 stage:
@@ -280,7 +280,7 @@ stage:
 -  **Default**—`file`
 -  **Version**—Magento 2.2.5 and later
 
-The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{page.baseurl}}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
+The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{site.baseurl}}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
 
 ```yaml
 stage:
@@ -288,7 +288,7 @@ stage:
     LOCK_PROVIDER: "db"
 ```
 
-See [Configure the lock]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-lock.html) in the _Install guide_.
+See [Configure the lock]({{site.baseurl}}/install-gde/install/cli/install-cli-subcommands-lock.html) in the _Install guide_.
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -360,7 +360,7 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
-[ece-tools version 2002.0.18]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
@@ -413,7 +413,7 @@ stage:
 ### `SCD_EXCLUDE_THEMES`
 
 {:.bs-callout-warning}
-The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -502,7 +502,7 @@ stage:
     SCD_THREADS: 2
 ```
 
-To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
+To further reduce deployment time, we recommend using [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
 ### `SEARCH_CONFIGURATION`
 
@@ -592,7 +592,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{site.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
 
 If you generate static content during the build phase, it creates a symlink to the content folder.
 If you generate static content during the deploy phase, it writes directly to the content folder.
@@ -612,7 +612,7 @@ The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and wi
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{site.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
 If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable.
 

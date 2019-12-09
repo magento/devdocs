@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{page.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{page.baseurl}}/cloud/project/project-upgrade-parent.html) for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{site.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{site.baseurl}}/cloud/project/project-upgrade-parent.html) for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
@@ -88,7 +88,7 @@ To update the `.magento.app.yaml` file:
 
 ## Upgrading the Magento application
 
-Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your Magento application.
+Review the [Magento technology stack requirements]({{site.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your Magento application.
 
 ### Back up the database
 
@@ -96,7 +96,7 @@ Review the [Magento technology stack requirements]({{page.baseurl}}/install-gde/
 
 ### Complete the upgrade
 
-If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
+If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
  {:.bs-callout-info}
 When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
@@ -104,7 +104,7 @@ When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file co
 {:.procedure}
 To upgrade the Magento version:
 
-1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
+1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
@@ -214,7 +214,7 @@ To resolve the error:
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
-1. [Examine the logs]({{page.baseurl}}/cloud/project/log-locations.html) to determine the source of the issue.
+1. [Examine the logs]({{site.baseurl}}/cloud/project/log-locations.html) to determine the source of the issue.
 
 1. Add, commit, and push code changes.
 

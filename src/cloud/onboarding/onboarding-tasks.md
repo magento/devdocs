@@ -47,17 +47,17 @@ branches, enter tickets, and support environments. These user accounts can inclu
 
 Typically, the only user the License Owner must create is the _Technical Admin_. The Technical Admin needs a user account with admin access to create user accounts for developers, set environment permissions, and manage all branches and environments. The Technical Admin can be a developer, a consultant, a [Magento Solution Partner](https://magento.com/find-a-partner), or yourself.
 
-You can create a Technical Admin through the Project portal, from the Project Web interface, or from the command line using the Magento Cloud CLI. For details on using the web interface and command line, see [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html).
+You can create a Technical Admin through the Project portal, from the Project Web interface, or from the command line using the Magento Cloud CLI. For details on using the web interface and command line, see [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html).
 
 ## Get started with the Project Web Interface {#project-setup}
 
-When you sign up for a Pro or Starter subscription plan, we provision your initial project environment with a template {{site.data.var.ece}} repository to build and manage your site. For information about what is included in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
+When you sign up for a Pro or Starter subscription plan, we provision your initial project environment with a template {{site.data.var.ece}} repository to build and manage your site. For information about what is included in Pro and Starter plans, see [Starter Architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
 You can use the Project Web Interface to manage your project, add user accounts, and begin developing your store(s). The License Owner, Technical Admin users, and developers can use this interface to manage all environments and branches, environment variables, environment settings, and routes.
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud_project-access.png)
 
-For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
+For details, see [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html).
 
 ## Sign up for Magento status {#status}
 
@@ -79,9 +79,9 @@ You can submit a password change request using either of the following methods:
 
 -  Locate the welcome email sent to the License Owner email address and follow the link to change your password.
 
--  Copy the store URL from the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) into a browser. Then, append `/admin` to the end of the URL to open the sign in page. Click the **Forgot password?** link to send a password change request to the License Owner email address.
+-  Copy the store URL from the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html) into a browser. Then, append `/admin` to the end of the URL to open the sign in page. Click the **Forgot password?** link to send a password change request to the License Owner email address.
 
 After you submit the password change request, check your email for the password reset notification. If you do not get the email, check your spam folder.
 
 {:.bs-callout-tip}
-If the password reset fails or you cannot sign in to the Admin panel, a user with admin access can connect to the project using ssh and add a new admin user using the Magento CLI [admin:user:create command]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator).
+If the password reset fails or you cannot sign in to the Admin panel, a user with admin access can connect to the project using ssh and add a new admin user using the Magento CLI [admin:user:create command]({{ site.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator).

@@ -13,7 +13,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ site.baseurl }}/cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
@@ -37,16 +37,16 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Development tools {#devtools}
 
-*  [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host. For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
-*  [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
+*  [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host. For more information, see [How Cloud uses Git]({{ site.baseurl }}/cloud/reference/git-integration.html).
+*  [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM. For more information, see [How Cloud uses Composer]({{ site.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
 
-We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
+We strongly recommend installing [Nginx]({{ site.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ site.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -174,14 +174,14 @@ To set `auto_increment_increment` to 3:
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
 
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
+The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/) or Git Bash.
 
 {:.procedure}
 To install the Magento Cloud CLI:
 
-1. Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local development machine or switch to the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
 1. Change to a directory to which the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has write access, such as the home directory.
 
@@ -219,14 +219,14 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-*  [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
-*  [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
+*  [{{site.data.var.ee}} requirements]({{ site.baseurl }}/install-gde/system-requirements.html)
+*  [(Integrator) Integrator installation]({{ site.baseurl }}/install-gde/composer.html)
 
 ## Additional options
 
-You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
+You can also install additional [optional software]({{ site.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 {:.ref-header}
 Next step
 
-[Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
+[Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)

@@ -53,8 +53,8 @@ We recommend enabling Blackfire in all of your active environments, including th
 
 ### Prerequisites
 
--  You must be an [account owner]({{ page.baseurl }}/cloud/project/user-admin.html) or have super user access.
--  Set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html). (`magento-cloud` CLI v1.23 or later)
+-  You must be an [account owner]({{ site.baseurl }}/cloud/project/user-admin.html) or have super user access.
+-  Set up your [local workspace]({{ site.baseurl }}/cloud/before/before-workspace.html). (`magento-cloud` CLI v1.23 or later)
 -  Set the `MAGENTO_CLOUD_APPLICATION` environment variable in Staging or Production environment.
 
 Use the following code to verify the settings:

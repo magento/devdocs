@@ -28,7 +28,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -  <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
--  <!-- MAGECLOUD-1410 -->**New environment variables**—You can now use environment variables to connect custom [search]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) and [AMQP-based]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) services to your site.
+-  <!-- MAGECLOUD-1410 -->**New environment variables**—You can now use environment variables to connect custom [search]({{ site.baseurl }}/cloud/env/variables-deploy.html#search_configuration) and [AMQP-based]({{ site.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) services to your site.
 
 -  <!--MAGECLOUD-1090-->We implemented smart patching. Now the package applies patches based not on {{site.data.var.ece}} version, but on patched package version.
 

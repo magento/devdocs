@@ -9,8 +9,8 @@ The Magento Cloud CLI is the utility for managing Magento Cloud projects and env
 
 You can install the Magento Cloud CLI when setting up your local environment for development:
 
-*  [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
-*  [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
+*  [Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+*  [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)
 
 ## Common commands
 

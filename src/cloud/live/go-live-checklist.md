@@ -6,11 +6,11 @@ functional_areas:
   - Testing
 ---
 
-Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Go live checklist]({{ site.baseurl }}/common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 
-See [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.
+See [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.
 
 ## DNS configurations {#dns}
 
@@ -56,16 +56,16 @@ Make a final pass for any Production configurations in the store(s). If you need
 
 The following are recommended changes and checks:
 
--  [Completed Outgoing email testing]({{ page.baseurl }}/cloud/project/sendgrid.html)
+-  [Completed Outgoing email testing]({{ site.baseurl }}/cloud/project/sendgrid.html)
 -  [Secure configuration for Admin credentials and Base Admin URL](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
--  [Optimize all images for the web]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html)
--  [Check minification settings for HTML, Javascript, and CSS]({{ page.baseurl }}/cloud/deploy/static-content-deployment.html)
+-  [Optimize all images for the web]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html)
+-  [Check minification settings for HTML, Javascript, and CSS]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html)
 
 ## Verify Fastly caching {#verifyfastly}
 
--  Test and verify that Fastly caching is working correctly on the Production site. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
--  [Ensure that the latest version of the Fastly CDN Module for Magento 2 is installed in your Production environment]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upgrade)
--  [Ensure that the most current version of the Fastly VCL code has been uploaded]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
+-  Test and verify that Fastly caching is working correctly on the Production site. For detailed tests and checks, see [Fastly testing]({{ site.baseurl }}/cloud/live/stage-prod-test.html#fastly).
+-  [Ensure that the latest version of the Fastly CDN Module for Magento 2 is installed in your Production environment]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upgrade)
+-  [Ensure that the most current version of the Fastly VCL code has been uploaded]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets)
 
 ## Performance testing {#performance}
 
@@ -76,22 +76,22 @@ You can also test using the following 3rd party options:
 -  [Siege](https://www.joedog.org/siege-home/): Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 -  [Jmeter](http://jmeter.apache.org/): Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 -  [New Relic](https://support.newrelic.com/) (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
--  [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
+-  [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 -  [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/): Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 ## Security configuration
 
--  [Set up your Magento Security Scan]({{ page.baseurl }}/cloud/live/live.html#security-scan)
+-  [Set up your Magento Security Scan]({{ site.baseurl }}/cloud/live/live.html#security-scan)
 -  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
 -  [Secure configuration for Base Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
--  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ page.baseurl}}/cloud/project/user-admin.html)
--  [Configure two-factor authentication]({{ page.baseurl }}/security/two-factor-authentication.html)
+-  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ site.baseurl}}/cloud/project/user-admin.html)
+-  [Configure two-factor authentication]({{ site.baseurl }}/security/two-factor-authentication.html)
 
 ## Performance monitoring
 
-You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
 
 {:.ref-header}
 Next step
 
-[Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)
+[Launch steps]({{ site.baseurl }}/cloud/live/launch-steps.html)

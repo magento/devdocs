@@ -13,7 +13,7 @@ You can configure your Bitbucket repository to automatically build and deploy an
 ## Prerequisites
 
 -  Administrator access to the {{site.data.var.ece}} project
--  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
+-  [`magento-cloud` CLI]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
 -  A Bitbucket account
 -  Administrator access to the Bitbucket repository
 -  An SSH access key for the Bitbucket repository
@@ -192,7 +192,7 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
    git add . && git commit -m "Testing Bitbucket integration" && git push
    ```
 
-1. Log in to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
+1. Log in to the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
 
    ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 

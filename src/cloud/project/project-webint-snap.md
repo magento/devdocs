@@ -10,7 +10,7 @@ You can back up and restore specific environments at any time using a snapshot. 
 A _snapshot_ is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.
 
 {:.bs-callout-warning}
-If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you need to restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ page.baseurl }}/cloud/env/restore-environment.html).
+If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code). If you need to restore an unstable environment that does not have a snapshot, see [Restore an environment]({{ site.baseurl }}/cloud/env/restore-environment.html).
 
 You have up to **7 days** to _restore_ a snapshot.
 
@@ -121,7 +121,7 @@ You can create a copy of your database using [`magento/ece-tools`]({{ site.baseu
 {:.procedure}
 To create a database dump:
 
-1. [SSH into the environment]({{ page.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
+1. [SSH into the environment]({{ site.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
 
    -  **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
    -  **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
@@ -145,7 +145,7 @@ To create a database dump:
 -  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
 {:.bs-callout-tip}
-If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
+If you want to push this data into an environment, see [Migrate data and static files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Rollbacks to remove code {#rollback-code}
 
@@ -153,4 +153,4 @@ We recommend creating a snapshot of the environment and a backup of the database
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
 
-Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).

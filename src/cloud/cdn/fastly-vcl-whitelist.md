@@ -13,7 +13,7 @@ The following example shows how to use a custom VCL snippet with a [Fastly Acces
 
 **Prerequisites:**
 
--  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+-  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 -  Get Magento Admin UI credentials for your {{ site.data.var.ece }} environment.
 
@@ -81,7 +81,7 @@ Review the following values for the code to determine if you need to make change
 
 In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding. Do not remove or edit this code.
 
-Add the custom VCL snippet to your Fastly service configuration from the Magento Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Magento Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
+Add the custom VCL snippet to your Fastly service configuration from the Magento Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Magento Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
 
 ## Add the custom VCL snippet {#add-whitelist-vcl}
 

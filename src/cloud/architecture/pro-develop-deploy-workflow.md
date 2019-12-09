@@ -11,7 +11,7 @@ functional_areas:
   - Cloud
 ---
 
-The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
+The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
 
 The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment.
 
@@ -55,7 +55,7 @@ Deploy script actions:
 -  Install or update {{site.data.var.ece}}
 -  Configure routing for traffic
 
-After the build and deploy process, your store comes back online with your latest code changes and configurations. See [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+After the build and deploy process, your store comes back online with your latest code changes and configurations. See [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
 
 ### Merge to Integration
 
@@ -63,16 +63,16 @@ Combine all verified code changes by merging your Active development branch into
 
 ### Merge to Staging
 
-Staging is a pre-production environment that provides all services and settings as close to the Production environment as possible. You should always push your code changes in iterations to your Staging environment for full testing that includes all services. The first time you use the Staging environment, you must configure services, such as [Fastly CDN]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html). Also, we recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+Staging is a pre-production environment that provides all services and settings as close to the Production environment as possible. You should always push your code changes in iterations to your Staging environment for full testing that includes all services. The first time you use the Staging environment, you must configure services, such as [Fastly CDN]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). Also, we recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
-It is best to thoroughly test every service, verify your performance testing tools, and perform UAT testing as an administrator and as a customer, until you feel that your store is ready for the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+It is best to thoroughly test every service, verify your performance testing tools, and perform UAT testing as an administrator and as a customer, until you feel that your store is ready for the Production environment. See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
 ### Merge to Production
 
 After thorough testing in the Staging environment, merge to the Production environment and thoroughly test using live credentials. The moment you go live, customers must be able to complete purchases and administrators must be able to manage the live store. We provide a detailed, clear walk-through for deploying your store and going live:
 
--  See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html)
--  See [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)
+-  See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html)
+-  See [Go live and launch]({{ site.baseurl }}/cloud/live/live.html)
 
 ### Merge to Global Master
 

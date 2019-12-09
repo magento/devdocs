@@ -3,7 +3,7 @@ group: cloud-guide
 title: Onboarding Portal management
 ---
 
-The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html).
 
 {:.bs-callout-info}
 The Onboarding Portal is available for new accounts and projects for Starter and Pro. Existing projects cannot access the portal at this time.
@@ -29,7 +29,7 @@ Currently, access to the Onboarding Portal is available through your Magento acc
 1. On the Magento tab, click the Projects (Cloud) option. A list of projects associated to your account display.
 1. Select your project to open the Onboarding Portal.
 
-For more technical users and developers, you can direct them to the Project Web Interface after inviting them to your project. For information on inviting and adding new users, see [Manage users with the Web Interface]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface).
+For more technical users and developers, you can direct them to the Project Web Interface after inviting them to your project. For information on inviting and adding new users, see [Manage users with the Web Interface]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface).
 
 <!-- for future use: http://cloud.magento.com -->
 
@@ -37,7 +37,7 @@ For more technical users and developers, you can direct them to the Project Web 
 
 The main page is Getting Started. It lists a series of suggested tasks from start to launch for your project. The left side navigation includes the links from the Getting Started page. If you need to enter a support ticket or manage your account, use the top navigation links.
 
-The focus of this portal is for business users who may need a bit more planning and high level information to get started. For developers and the Technical Admin, deeper technical information and settings are available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
+The focus of this portal is for business users who may need a bit more planning and high level information to get started. For developers and the Technical Admin, deeper technical information and settings are available through the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html).
 
 ![Onboarding Portal getting started]({{ site.baseurl }}/common/images/cloud_portal-getstarted1.png)
 
@@ -71,15 +71,15 @@ Your Technical Admin can immediately start development planning and tasks withou
 
 You may have a number of different people help create, launch, and maintain your Magento stores and sites. These include developers, designers, DBAs, and more. To better understand the process and access environments, we provide a Development section of checklists and information:
 
-*  **Development Workflow**: A high-level checklist for preparing your local development environment, cloning code, creating branches, and developing your store. It provides a quick walk-through for the [First-time development setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html) information according to your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) plan.
-*  **Environments**: Provides links and information for your Pro and Starter account environments. Every active branch of code has a complete environment to fully test new features, extensions, and integrations. This page includes direct URL links, SSH link, CLI command access, and a link into the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login). You may want to provide the following helpful information for the development and deploy process for [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) and [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) to your developers.
-*  **Services**: Learn more about available and integrated services for your project. These services include [Blackfire.io Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html). You can review and set credentials for these services through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login).
+*  **Development Workflow**: A high-level checklist for preparing your local development environment, cloning code, creating branches, and developing your store. It provides a quick walk-through for the [First-time development setup]({{ site.baseurl }}/cloud/setup/first-time-setup.html) information according to your [Starter]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) plan.
+*  **Environments**: Provides links and information for your Pro and Starter account environments. Every active branch of code has a complete environment to fully test new features, extensions, and integrations. This page includes direct URL links, SSH link, CLI command access, and a link into the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html#login). You may want to provide the following helpful information for the development and deploy process for [Starter]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) and [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) to your developers.
+*  **Services**: Learn more about available and integrated services for your project. These services include [Blackfire.io Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html), [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html), and [Fastly]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html). You can review and set credentials for these services through the [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html#login).
 
-The technical admin, technical users, developers, and others can directly access the [Project Web Interface]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) to manage code, variables, and settings. These options are also configurable using [Magento Cloud CLI]({{ page.baseurl }}/cloud/project/project-webint-basic.html) commands.
+The technical admin, technical users, developers, and others can directly access the [Project Web Interface]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html) to manage code, variables, and settings. These options are also configurable using [Magento Cloud CLI]({{ site.baseurl }}/cloud/project/project-webint-basic.html) commands.
 
 ## Prepare to go live {#launch}
 
 When you are ready to launch your sites and stores, work through Launch options:
 
-*  **UAT Checklist**: A high-level checklist for verifying Magento features and your configured settings, extensions, products, and more. You can follow this checklist along with the [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) information.
-*  **Site Launch**: A high-level checklist for your initial "go live". After completing the checklist, you can enter Live Site Configuration information to enter a Submit a Support ticket. You can follow this checklist along with the [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) information.
+*  **UAT Checklist**: A high-level checklist for verifying Magento features and your configured settings, extensions, products, and more. You can follow this checklist along with the [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) information.
+*  **Site Launch**: A high-level checklist for your initial "go live". After completing the checklist, you can enter Live Site Configuration information to enter a Submit a Support ticket. You can follow this checklist along with the [Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) information.

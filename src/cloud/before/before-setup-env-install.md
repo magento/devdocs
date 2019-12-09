@@ -13,7 +13,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Clone and branch the project]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html)
+[Clone and branch the project]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
 
@@ -47,7 +47,7 @@ magento-cloud variable:get -e <environment-ID>
 
 ### Get Magento authentication keys
 
-You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html).
+You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{site.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html).
 
 {:.procedure}
 To create authentication keys through the Magento Marketplace:
@@ -76,7 +76,7 @@ For the Production environment, set the `docroot` to `/magento/pub`, which helps
 
 After you have installed Magento, you need to set the file system permissions and ownership.
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
 1. Enter the following commands in the order shown:
 
@@ -101,12 +101,12 @@ After you have installed Magento, you need to set the file system permissions an
 
 ## Install Magento
 
-Prior to installing, you should [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
+Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
 Be ready to install Magento using one of the following options:
 
-*  [Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
+*  [Install the Magento software using the command line]({{ site.baseurl }}/install-gde/install/cli/install-cli.html)
+*  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/install-gde/install/web/install-web.html)
 
 {:.procedure}
 To install Magento using the command line:
@@ -123,7 +123,7 @@ To install Magento using the command line:
     cd /app/bin
     ```
 
-1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
+1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
     ```bash
     php magento setup:install \
@@ -145,7 +145,7 @@ To install Magento using the command line:
 
 ## Post-install configurations
 
-After installing Magento, run the commands for [compile]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
+After installing Magento, run the commands for [compile]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. Switch to the correct user.
 
@@ -179,12 +179,12 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 ## Additional software and services
 
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
 
-*  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
-*  [ElasticSearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
-*  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
-*  [Additional software]({{ page.baseurl }}/install-gde/prereq/optional.html) for Magento
+*  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+*  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+*  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+*  [Additional software]({{ site.baseurl }}/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
 
@@ -215,6 +215,6 @@ With these steps completed, you should have:
 {:.ref-header}
 Next step
 
-For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html).
 
 For **Starter projects**, you are ready to start developing.

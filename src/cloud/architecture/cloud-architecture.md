@@ -43,10 +43,10 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+            <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
           <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
         </ul>
@@ -56,10 +56,10 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. <a href="{{ page.baseurl }}/cloud/project/new-relic.html">Adobe-generated alert policies</a> implement monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
+            <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. <a href="{{ site.baseurl }}/cloud/project/new-relic.html">Adobe-generated alert policies</a> implement monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
           </li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
           <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>
@@ -101,7 +101,7 @@ For comparison, each plan includes the following infrastructure features and sup
 
 ## Starter projects
 
-The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) has four environments:
+The [Starter plan architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) has four environments:
 
 -  **Integration**—The Integration environment provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
 -  **Staging**—As code and extensions pass your tests, you can merge your Integration branch to a Staging environment, which becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and services, such as Fastly and New Relic.
@@ -110,7 +110,7 @@ The [Starter plan architecture]({{ page.baseurl }}/cloud/basic-information/start
 
 ## Pro projects
 
-The [Pro plan architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
+The [Pro plan architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) has a global master with three environments:
 
 -  **Integration**—The Integration environment provides a testable environment that includes a database, web server, caching, some services, environment variables, and configurations. You can develop, deploy, and test your code before merging to the Staging environment.
    -  _Inactive_—You can have an unlimited number of inactive branches based on the Integration environment.

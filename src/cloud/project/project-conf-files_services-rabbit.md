@@ -6,12 +6,12 @@ functional_areas:
   - Setup
 ---
 
-The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
+The [Message Queue Framework (MQF)]({{ site.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
 {:.bs-callout-warning}
-If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
+If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
 
 {% include cloud/service-config-integration-starter.md %}
 
@@ -39,11 +39,11 @@ To enable RabbitMQ:
    git add -A && git commit -m "Enable RabbitMQ service" && git push origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{site.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
-For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+For information on how these changes affect your environments, see [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
 
-[Supported service versions]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-versions)
+[Supported service versions]({{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions)
 
 ## Connect to RabbitMQ for debugging {#connect}
 
@@ -73,7 +73,7 @@ For debugging purposes, it is useful to directly connect to a service instance i
    magento-cloud ssh
    ```
 
-1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
+1. Retrieve the RabbitMQ connection details and login credentials from the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable:
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp

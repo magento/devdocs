@@ -21,7 +21,7 @@ Your {{site.data.var.ece}} account includes the software for the New Relic APM s
 On {{site.data.var.ece}} Pro accounts, the Production environment also includes the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 {:.bs-callout-info}
-For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
+For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
 ## Manage your New Relic account
 
@@ -100,7 +100,7 @@ To add a license key to an environment:
    ```
 
    {:.bs-callout-info}
-   Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
+   Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{site.baseurl}}/cloud/env/working-with-variables.html).
 
 1. [Log in to New Relic](https://login.newrelic.com/login) to verify that it is receiving data.
 
@@ -134,7 +134,7 @@ To remove a license key from an environment:
    ```
 
    {:.bs-callout-info}
-   Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
+   Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{site.baseurl}}/cloud/env/working-with-variables.html).
 
 ## Investigate performance
 
@@ -173,7 +173,7 @@ Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro
 Based on industry best practices, these policies set thresholds for warning and critical conditions that affect performance. When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
 
 {:.bs-callout-info}
-For Pro Staging and Integration environments and Starter environments, use [Health notifications]({{ page.baseurl }}/cloud/integrations/health-notifications.html) to monitor disk space.
+For Pro Staging and Integration environments and Starter environments, use [Health notifications]({{ site.baseurl }}/cloud/integrations/health-notifications.html) to monitor disk space.
 
 {:.procedure}
 Prerequisites
@@ -252,7 +252,7 @@ See [Alerts concepts and workflow](https://docs.newrelic.com/docs/alerts/new-rel
 
 ## New Relic and Blackfire
 
-You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. Combine that with the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to get a comprehensive view of your Magento store performance.
+You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. Combine that with the code-level data captured by the [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) to get a comprehensive view of your Magento store performance.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.

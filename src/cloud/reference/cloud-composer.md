@@ -16,7 +16,7 @@ Composer manages required libraries and dependencies for your project and instal
 
 For {{site.data.var.ece}}, we use the `composer.json` and `composer.lock` files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.
 
-Magento extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ page.baseurl }}/cloud/howtos/install-components.html).
+Magento extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
 The `composer.lock` file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
@@ -34,7 +34,7 @@ The workflow is as follows:
 1. Add `composer.lock` to or update it in your Cloud Git repository.
 1. Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
 
-During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
+During the [build phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 
@@ -71,6 +71,6 @@ When upgrading to a new {{site.data.var.ece}} version or adding, removing, or ch
 1. Add and commit these updated files to your Cloud Git repository.
 1. Push the changes to your Cloud Integration environment.
 
-See [Patch {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-patch.html).
+See [Patch {{site.data.var.ece}}]({{ site.baseurl }}/cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check is whether all of the base package files were added to source control.

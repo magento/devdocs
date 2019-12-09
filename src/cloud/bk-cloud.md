@@ -17,12 +17,12 @@ Think of the {{site.data.var.ece}} as five functional layers, as shown here:
 
 ![Cloud Stack]
 
-Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for {{site.data.var.ece}}. Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{page.baseurl}}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. [Fastly]({{page.baseurl}}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. The [Fastly Image Optimization]({{page.baseurl}}/cloud/cdn/fastly-image-optimization.html) (IO) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
+Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for {{site.data.var.ece}}. Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{site.baseurl}}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. Performance tools provide granular visibility into the site performance and PHP profiling. [Fastly]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. The [Fastly Image Optimization]({{site.baseurl}}/cloud/cdn/fastly-image-optimization.html) (IO) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
 <!-- Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site. -->
 
 ## {{site.data.var.ct}} package
 
-The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration.
+The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that simplifies the Cloud upgrade process. In 2018, we deprecated the `magento-cloud-configuration` and `ece-patches` packages in favor of providing a single package. We encourage all customers to [upgrade to use `{{site.data.var.ct}}`]({{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html) as soon as possible to benefit from the package features, such as commands to create a backup of the database, apply custom patches, and verify environment configuration.
 
 <!-- Link definitions -->
 
@@ -32,4 +32,4 @@ The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that sim
 [Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
 {:width="804px"}
 
-[ece]: {{page.baseurl}}/cloud/reference/ece-tools-reference.html
+[ece]: {{site.baseurl}}/cloud/reference/ece-tools-reference.html

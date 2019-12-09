@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
+The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global variables]({{ site.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -95,6 +95,6 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
             - "category:|tires_.*|:store_gb"
       ```
 
-[hooks section]: {{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [CMS]: https://glossary.magento.com/cms/
 [Content elements]: https://docs.magento.com/m2/ce/user_guide/cms/content-elements.html

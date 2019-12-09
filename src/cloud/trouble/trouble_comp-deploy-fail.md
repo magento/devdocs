@@ -14,7 +14,7 @@ This topic discusses how to recover from a failed component deployment. Typical 
 
 You can recover from a failed deployment in any of the following ways:
 
-*  [Restore a snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) if you have one
+*  [Restore a snapshot]({{ site.baseurl }}/cloud/project/project-webint-snap.html) if you have one
 *  Remove the component from your environment's `composer.json` and redeploy the environment
 
 ## Remove the component from `composer.json` and redeploy

@@ -34,8 +34,8 @@ In addition to Git's requirements for [valid branch names](https://www.kernel.or
 
 For specifics on creating Git branches, see the following topics:
 
-*  [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
-*  [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html)
+*  [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
+*  [Manage branches with the CLI]({{ site.baseurl }}/cloud/env/environments-start.html)
 
 ## .gitignore file {#gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
@@ -46,11 +46,11 @@ We include a base `.gitignore` file with the project repository. For a review of
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. For more information, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key).
 
-When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+When setting up your SSH, review our information at [SSH and sFTP]({{ site.baseurl }}/cloud/env/environments-ssh.html).
 
 ## Git integrations {#integrations}
 
-We support using either [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
  {:.bs-callout-info}
-To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
+To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ site.baseurl }}/cloud/project/project-webint-branch.html#private).

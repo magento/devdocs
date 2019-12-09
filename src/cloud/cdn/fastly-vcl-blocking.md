@@ -66,7 +66,7 @@ The default VCL snippets include a prepended name of `magentomodule_` with a pri
 
 ## Finish adding the VCL {#complete}
 
-After saving the VCL snippet, add the VCL snippet to the Fastly service configuration. See [Add VCL snippets using the Fastly API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#add-vcl-snippets-using-the-fastly-api).
+After saving the VCL snippet, add the VCL snippet to the Fastly service configuration. See [Add VCL snippets using the Fastly API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#add-vcl-snippets-using-the-fastly-api).
 
 ## Additional VCL examples for blocking requests
 

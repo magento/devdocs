@@ -26,7 +26,7 @@ You can activate or deactivate SSI on a per-route basis in your
             enabled: true
 ```
 
-SSI enables you to include in your HTML response directives that cause the server fill in parts of the HTML, respecting the your [caching configuration]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+SSI enables you to include in your HTML response directives that cause the server fill in parts of the HTML, respecting the your [caching configuration]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 The following example shows how to insert a dynamic date control at the top of a page and another date control at the bottom that updates every 600 seconds:
 

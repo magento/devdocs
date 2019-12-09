@@ -104,7 +104,7 @@ The Staging environment provides a near-production environment to test your site
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
 {:.bs-callout-warning}
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Production environment {#cloud-arch-prod}
 
@@ -178,17 +178,17 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 
 {{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
 
--  [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--  [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
--  [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
--  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
--  [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
--  [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--  [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
+-  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
+-  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
+-  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later

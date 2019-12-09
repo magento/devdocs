@@ -8,7 +8,7 @@ functional_areas:
   - Stores
 ---
 
-You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ page.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores depends on whether you choose to use unique domains or share the same domain.
+You can configure {{site.data.var.ee}} to have multiple websites or stores, such as an English store, a French store, and a German store. See [Understanding websites, stores, and store views]({{ site.baseurl }}/cloud/configure/configure-best-practices.html#sites). The process to set up multiple stores depends on whether you choose to use unique domains or share the same domain.
 
 Multiple stores with unique domains:
 
@@ -27,11 +27,11 @@ https://store.com/second/
 {:.no-copy}
 
 {:.bs-callout-tip}
-To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{page.baseurl}}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
+To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
 
 ## Configure local installation
 
-To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
+To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}/config-guide/multi-site/ms_over.html).
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
@@ -47,7 +47,7 @@ After successfully creating and testing the local installation to use multiple s
 Routes define how to process incoming URLs. Multiple stores with unique domains requires you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
 
 {:.bs-callout-info}
-For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
+For Pro, you must create a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
 {:.procedure}
 To configure routes in an integration environment:
@@ -173,7 +173,7 @@ To configure a location with a different directory:
 
 ### Set up websites, stores, and store views {#set-stores}
 
-In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, and **Store Views**. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
+In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, and **Store Views**. See [Set up multiple websites, stores, and store views in the Admin]({{ site.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 It is important to use the same name and Code of your websites, stores, and store views from your Admin when you set up your local installation. You need these values when you update the `magento-vars.php` file.
 
@@ -317,6 +317,6 @@ Push your changes to your {{site.data.var.ece}} Integration environment and test
 
 ## Deploy to Staging and Production
 
-Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments.
+Follow the deployment process for [deploying to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments.
 
 We recommend fully testing in the Staging environment prior to pushing to the Production environment. If you need to change code, make the changes in the Integration environment and begin the process to deploy across environments again.

@@ -64,7 +64,7 @@ This ensures net-new customers or existing customers who have not made a purchas
 
 ## Understanding websites, stores, and store views {#sites}
 
-Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
 You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
 

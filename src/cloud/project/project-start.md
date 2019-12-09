@@ -9,17 +9,17 @@ All {{site.data.var.ece}} projects include essential files for credentials and a
 
 File                      | Description
 ------------------------- | -----------
-`/.magento/routes.yaml`   | Configuration file that redirects `www` to the naked domain and `php` application to serve HTTP. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
-`/.magento/services.yaml` | Configuration file that defines a MySQL instance, Redis, and ElasticSearch. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
-`/app`                    | The `code` folder is used for custom modules. The `design` folder is used for custom themes. See [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html). The `etc` folder contains configuration files for Magento.
+`/.magento/routes.yaml`   | Configuration file that redirects `www` to the naked domain and `php` application to serve HTTP. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
+`/.magento/services.yaml` | Configuration file that defines a MySQL instance, Redis, and ElasticSearch. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
+`/app`                    | The `code` folder is used for custom modules. The `design` folder is used for custom themes. See [Install a theme]({{ site.baseurl }}/cloud/howtos/custom-theme.html). The `etc` folder contains configuration files for Magento.
 `/m2-hotfixes`            | Used for custom patches.
 `/update`                 | A service folder used by the support module.
 `.gitignore`              | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring-files).
-`.magento.app.yaml`       | Configuration file that defines the properties to build your application. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
-`.magento.env.yaml`       | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
-`composer.json`           | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
+`.magento.app.yaml`       | Configuration file that defines the properties to build your application. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
+`.magento.env.yaml`       | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
+`composer.json`           | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 `composer.lock`           | Stores version dependencies for every package.
-`magento-vars.php`        | A file used to define [multiple stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html).
+`magento-vars.php`        | A file used to define [multiple stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ site.baseurl }}/config-guide/multi-site/ms_over.html).
 
  {:.bs-callout-info}
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.

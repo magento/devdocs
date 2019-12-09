@@ -33,10 +33,10 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
    git add -A && git commit -m "Enable mysql service" && git push   origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{page.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{site.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
 
 {:.bs-callout-tip}
-MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
+MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
 
 ## Set up multiple database users
 
@@ -101,7 +101,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 1. Log in to the remote server using SSH.
 
-1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable.
+1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp

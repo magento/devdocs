@@ -142,6 +142,6 @@ Because each service runs in a separate container, the service logs are not avai
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
 -  **RabbitMQ log**: `/var/log/rabbitmq/rabbit@host1.log`
 
-[hook]: {{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
-[configlog]: {{page.baseurl}}/config-guide/cli/logging.html
-[slacklog]: {{page.baseurl}}/cloud/env/setup-notifications.html
+[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[configlog]: {{site.baseurl}}/config-guide/cli/logging.html
+[slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html

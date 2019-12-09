@@ -18,7 +18,7 @@ The BAK files are a product of the deployment process. If you manually change a 
 
 To restore the configuration files:
 
-1. Log in to your remote repository using  [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1. Log in to your remote repository using  [SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. List the available backup files.
 
    ```bash

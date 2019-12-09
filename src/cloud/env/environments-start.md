@@ -8,9 +8,9 @@ functional_areas:
   - Cloud
 ---
 
-After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
+After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
-To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
+To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
 ## Common Magento Cloud CLI commands {#env-start-comm}
 
@@ -32,7 +32,7 @@ Command | Description
 `magento-cloud variable:list` | List variables in this environment.
 `magento-cloud variable:set <name> <value>` | Set a value for an environment variable.
 
-For a full list of commands, see the [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
+For a full list of commands, see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 {:.bs-callout-info}
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
@@ -68,7 +68,7 @@ Only delete an environment if you are certain that you no longer need it. You ca
 {:.bs-callout-warning}
 You cannot delete the `master` environment of any project.
 
-You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
 When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
@@ -130,7 +130,7 @@ To activate an inactive environment, use the `magento-cloud environment:activate
 
 ## Integration environment IP addresses {#ipaddress}
 
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
@@ -247,7 +247,7 @@ Request timeout for icmp_seq 2
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 
-After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
+After you [setup SSH keys]({{ site.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 

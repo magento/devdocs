@@ -6,18 +6,18 @@ functional_areas:
   - Deploy
 ---
 
-Configuration management, or [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
+Configuration management, or [Pipeline Deployment]({{ site.baseurl }}/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
 
 *  Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-*  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+*  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
 *  Sensitive data is automatically added into an environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
 
 These methods are optional, but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
 
-To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
+To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 {:.bs-callout-info}
-For extended technical information, see [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
+For extended technical information, see [Pipeline Deployment]({{ site.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
 
 ## How it works {#cloud-confman-over}
 
@@ -56,11 +56,11 @@ Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configu
 {:.bs-callout-info}
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ site.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
 
-Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
+Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
@@ -128,7 +128,7 @@ Managing store configuration is a complex task mostly up to you. What locales do
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
+To fully understand the process, see [our extensive example]({{ site.baseurl }}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
@@ -208,7 +208,7 @@ You only need to complete this migration once. When you need to update the file,
 
 ## Change locales
 
-You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-global.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ site.baseurl }}/cloud/env/variables-global.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
 You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment.
 

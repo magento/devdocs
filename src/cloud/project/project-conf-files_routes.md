@@ -85,7 +85,7 @@ https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
   {:.no-copy}
 
 {:.bs-callout-info}
-{{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
+{{site.data.var.ece}} also supports [multiple applications]({{ site.baseurl }}/cloud/project/project-multi-sites.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application.
 
 ## Route options
 
@@ -95,9 +95,9 @@ Property         | Description
 ---------------- | -----------
 `type: upstream` | Serves an application. Also, it has an `upstream` property that specifies the name of the application (as defined in `.magento.app.yaml`) followed by the `:http` endpoint.
 `type: redirect` | Redirects to another route. It is followed by the `to` property, which is an HTTP redirection to another route identified by its template.
-`cache:`         | Controls [caching for the route]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
-`redirects:`     | Controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
-`ssi:`           | Controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
+`cache:`         | Controls [caching for the route]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html).
+`redirects:`     | Controls [redirect rules]({{ site.baseurl }}/cloud/project/project-routes-more-redir.html).
+`ssi:`           | Controls enabling of [Server Side Includes]({{ site.baseurl }}/cloud/project/project-routes-more-ssi.html).
 
 ## Simple routes
 
@@ -161,11 +161,11 @@ https://*.add-theme-projectID.us.magentosite.cloud/
 ```
 {:.no-copy}
 
-See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+See more information about [caching]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 ## Redirects and caching
 
-As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html):
+As discussed in more detail in [Redirects]({{ site.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*, and specify rules for route-based [caching]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html):
 
 ```yaml
 http://www.{default}/:

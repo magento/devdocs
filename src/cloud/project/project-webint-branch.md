@@ -10,7 +10,7 @@ functional_areas:
 
 Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).
 
-For more information about managing environments using the CLI, see [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html).
+For more information about managing environments using the CLI, see [Manage branches with the CLI]({{ site.baseurl }}/cloud/env/environments-start.html).
 
 This topic discusses how to use the Project Web Interface to:
 
@@ -28,17 +28,17 @@ Complete development of code and added extensions in a branch and, when complete
 -  For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
 -  For Pro, create a development branch from the Integration environment.
 
-For branching strategies, review [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
+For branching strategies, review [Starter]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
 
-Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ page.baseurl }}/cloud/env/environments-start.html#env-delete) using the CLI.
+Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#env-delete) using the CLI.
 
-If you need additional environments for development, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) for more information.
+If you need additional environments for development, enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for more information.
 
 ## Add a branch {#add}
 
 To add a branch:
 
-1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left navigation bar, click the name of the parent environment.
 
    Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
@@ -63,14 +63,14 @@ To add a branch:
 
 1. Continue with one of the following:
 
-   -  [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
-   -  [How tos and tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)
+   -  [Get started with an environment]({{ site.baseurl }}/cloud/env/environments-start.html)
+   -  [How tos and tutorials]({{ site.baseurl }}/cloud/howtos/how-to.html)
 
 ## Delete to make a branch inactive {#inactive}
 
 To delete an environment and make it inactive:
 
-1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click the name of the branch to delete.
 1. Click **Configure environment** as the following figure shows.
 
@@ -89,11 +89,11 @@ To delete an environment and make it inactive:
 
 Syncing an environment (or branch) is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.
 
-For Pro plan, you can also sync from Staging and Production to your Integration `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
+For Pro plan, you can also sync from Staging and Production to your Integration `master` branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment's database. For more information, see [Migrate and deploy static files and data]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 To sync an environment with its parent:
 
-1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click the name of the branch you want to sync.
 1. Click ![Sync an environment]({{ site.baseurl }}/common/images/cloud_environment-sync.png){:width="30px"} (sync).
 
@@ -109,7 +109,7 @@ Merging an environment is the same as `git push origin`. You merge to push updat
 
 To merge an environment with its parent:
 
-1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click the name of the branch you want to merge.
 1. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
 1. Click **Merge** to confirm the action.
@@ -126,7 +126,7 @@ For **Pro** environments, you can review the following logs per environment:
 -  Staging–Build logs and deployment history. You need to SSH into the server to view deploy logs.
 -  Production–Build logs and deployment history. You need to SSH into the server to view deploy logs.
 
-1. [Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
+1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click an environment to review logs for.
 1. The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.
 1. To view the build log, select the Success or Failure link per deployment record on the account.

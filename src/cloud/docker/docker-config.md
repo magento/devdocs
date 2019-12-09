@@ -88,13 +88,13 @@ For example, the following command starts the Docker configuration generator for
    sudo apachectl stop
    ```
 
-1. Optionally, [enable Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug).
+1. Optionally, [enable Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug).
 
 ## Launch the Docker environment
 
 1. Download a Magento application template from the [Magento Cloud repository](https://github.com/magento/magento-cloud). Be careful to select the branch that corresponds with the Magento version.
 
-1. Add your [Magento access credentials]({{page.baseurl}}/install-gde/prereq/connect-auth.html) to the `auth.json` file.
+1. Add your [Magento access credentials]({{site.baseurl}}/install-gde/prereq/connect-auth.html) to the `auth.json` file.
 
 1. Install the template dependencies.
 
@@ -120,7 +120,7 @@ Continue launching your Docker environment in the default _production_ mode.
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
+1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
 
 1. Build files to containers and run in the background.
 
@@ -200,7 +200,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1. Start the file synchronization.
 

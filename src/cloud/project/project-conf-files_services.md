@@ -16,16 +16,16 @@ This affects the following environments:
 -  Pro Integration environments
 
 {:.bs-callout-tip}
-For Pro, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+For Pro, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
 ## Default and supported services
 
 We support and deploy the following services:
 
--  [`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--  [`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
--  [`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [`mysql`]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+-  [`redis`]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+-  [`elasticsearch`]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [`rabbitmq`]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 
 You can view default versions and disk values in the the current, [default `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml). The following sample shows the `mysql`, `redis`, and `elasticsearch` services defined in the `services.yaml` configuration file:
 
@@ -76,7 +76,7 @@ redis2:
 Renaming a service in the `services.yaml` file **permanently removes** the following:
 
 -  The existing service before creating a new service with the new name you specify.
--  All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{ page.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
+-  All existing data for the service is removed. We strongly recommend you [snapshot your environment]({{ site.baseurl }}/cloud/project/project-webint-snap.html) before you change the name of an existing service.
 
 ### `type`
 
@@ -101,9 +101,9 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 ## Service relationships
 
-In {{ site.data.var.ece }} projects, service [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
 
-You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
+You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{site.baseurl}}/cloud/env/environment-vars_cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
 
 {:.procedure}
 To verify relationships in local environment:
@@ -171,4 +171,4 @@ Service   |  Magento 2.3  | Magento 2.2
 `varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
 
 {:.bs-callout-info}
-When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
+When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).

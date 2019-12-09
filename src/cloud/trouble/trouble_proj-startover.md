@@ -20,4 +20,4 @@ If you didn't push code to the project because, for example, you didn't complete
 
 ![If the project has no code]({{ site.baseurl }}/common/images/cloud_trouble_no-code.png)
 
-Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
+Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ site.baseurl }}/cloud/setup/first-time-setup.html).

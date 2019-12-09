@@ -7,7 +7,7 @@ title: Set up an account and project
 {:.ref-header}
 Previous step
 
-[Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ site.baseurl }}/cloud/before/before-workspace.html)
 
 To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Enterprise Cloud Edition account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
 
@@ -23,4 +23,4 @@ We recommend always starting with the blank site from a template as your initial
 {:.ref-header}
 Next step
 
-[Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+[Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)

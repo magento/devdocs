@@ -25,7 +25,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package provides all the commands necessary to [launch a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html).
+The `{{site.data.var.ct}}` package provides all the commands necessary to [launch a Docker development environment]({{site.baseurl}}/cloud/docker/docker-config.html).
 
 Command | Action
 :------ | :------
@@ -108,7 +108,7 @@ Ideal state is configured
 {% include cloud/note-ece-tools-release-info.md %}
 
 <!-- link definitions -->
-[mode]: {{page.baseurl}}/cloud/docker/docker-config.html#launch-modes
-[hooks]: {{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
-[cloudvar]: {{page.baseurl}}/cloud/env/variables-cloud.html
-[wizard]: {{page.baseurl}}/cloud/deploy/smart-wizards.html
+[mode]: {{site.baseurl}}/cloud/docker/docker-config.html#launch-modes
+[hooks]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[cloudvar]: {{site.baseurl}}/cloud/env/variables-cloud.html
+[wizard]: {{site.baseurl}}/cloud/deploy/smart-wizards.html

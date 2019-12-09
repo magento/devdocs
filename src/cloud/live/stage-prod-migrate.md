@@ -9,7 +9,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+[Prepare to deploy to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
 
@@ -47,12 +47,12 @@ For Starter, deploy the development branch you created to Staging and Production
 
 ### Deploy code with SSH and CLI {#ssh}
 
-You can use the [Magento Cloud CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments. You need SSH and Git access to your project. See [prepare for deployment]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html).
+You can use the [Magento Cloud CLI commands]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) to deploy code to Starter and Pro environments. You need SSH and Git access to your project. See [prepare for deployment]({{ site.baseurl}}/cloud/live/stage-prod-migrate-prereq.html).
 
 **Prerequisites:**
 
--  [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
--  [Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+-  [Build and deploy on local]({{ site.baseurl }}/cloud/live/live-sanity-check.html)
+-  [Prepare to deploy to Staging and Production]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 #### Step 1:  Deploy and test the Integration environment:
 
@@ -157,7 +157,7 @@ To migrate static files from remote-to-remote environments directly (fast approa
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
-1. [Open an SSH connection]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment.
+1. [Open an SSH connection]({{site.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
    To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**:
 
@@ -177,7 +177,7 @@ To transfer media from remote-to-remote environments directly, you must enable s
 
 **Important:** The Integration environment database is strictly for development testing and can include data that you do not want to migrate into Staging and Production.
 
-For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ page.baseurl }}/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
+For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ site.baseurl }}/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
@@ -264,4 +264,4 @@ After migrating the database, you can set up your stored procedures or views in 
 {:.ref-header}
 Related topics
 
-[Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)
+[Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html)

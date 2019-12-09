@@ -18,7 +18,7 @@ Use the following properties to build your application configuration file. The `
 
 {{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
-The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The name is used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
 {:.bs-callout-info}
 Do not change the name of an application after it has been deployed.
@@ -75,7 +75,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 ```
 
-See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{site.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 
@@ -139,7 +139,7 @@ web:
 ```
 
 {:.bs-callout-info}
-This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html#locations).
+This example shows the default web configuration for a Cloud project configured to support a single domain. For a project that requires support for multiple websites or stores, the `web` configuration must be set up to support shared domains. See [Configure locations for shared domains]({{ site.baseurl }}/cloud/project/project-multi-sites.html#locations).
 
 ### `disk`
 
@@ -209,7 +209,7 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -  **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
--  **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ page.baseurl }}/cloud/env/variables-post-deploy.html). Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-  **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ site.baseurl }}/cloud/env/variables-post-deploy.html). Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_ the `ece-tools` command:
 
@@ -267,11 +267,11 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 ### `crons`
 
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{site.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
--  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
+-  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
 A cron job is well suited for the following tasks:
@@ -292,7 +292,7 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
+If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 
@@ -451,9 +451,9 @@ For example, if you need to increase the PHP memory limit:
 memory_limit = 756M
 ```
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 ```bash
 cat /etc/php5/fpm/php.ini

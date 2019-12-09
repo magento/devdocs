@@ -11,7 +11,7 @@ functional_areas:
   - Configuration
 ---
 
-SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
+SSH, or Secure Shell, is a common protocol used to securely log into remote servers and systems. You will typically use SSH to access your environments directly to enter [CLI commands]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) for managing your branching, creating variables, and much more. We also support [sFTP](#sftp) (Secure FTP) using your SSH public key.
 
 To use SSH, you need to:
 
@@ -111,12 +111,12 @@ For example, to log in to the Staging environment, use the following command: `s
 
 ## sFTP to environments {#sftp}
 
-Typically, you want to use SSH for secure access to your environments and [migrate files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
+Typically, you want to use SSH for secure access to your environments and [migrate files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html) with `rsync` commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.
 
 You need the following requirements to sFTP into cloud environments:
 
 *  You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.
-*  Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
+*  Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) with your public key attached. **Never provide your private SSH key.**
 
 When configuring sFTP, use your SSH public key and the following information for access:
 
@@ -135,6 +135,6 @@ To add your SSH public key information to your client:
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
-For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{ page.baseurl }}/cloud/project/project-start.html). This mount point will only work in those environments.
+For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{ site.baseurl }}/cloud/project/project-start.html). This mount point will only work in those environments.
 
-For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.
+For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.

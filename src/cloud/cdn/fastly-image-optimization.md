@@ -25,12 +25,12 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 **Prerequisites:**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
--  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
+-  [Configure Fastly Origin shield and backend]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#backend)
 
 {:.procedure}
 To enable Fastly IO:
 
-1. Log in to your local [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
+1. Log in to your local [Magento Admin]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin) panel as an administrator.
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 

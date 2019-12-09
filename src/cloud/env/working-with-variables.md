@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-Environment variables apply to a specific environment or branch. An environment _inherits_ variable definitions from the parent environment. You can override an inherited value by defining the variable specifically for the environment. For example, to set variables for development, define the variable values in the `.magento.env.yaml` file in the Integration environment. All environments branching from the Integration environment inherit those values. Refer to [Build and deploy]({{ page.baseurl }}/cloud/project/magento-env-yaml.html) for details about configuring your environment using the `.magento.env.yaml` file.
+Environment variables apply to a specific environment or branch. An environment _inherits_ variable definitions from the parent environment. You can override an inherited value by defining the variable specifically for the environment. For example, to set variables for development, define the variable values in the `.magento.env.yaml` file in the Integration environment. All environments branching from the Integration environment inherit those values. Refer to [Build and deploy]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) for details about configuring your environment using the `.magento.env.yaml` file.
 
 The following demonstrates a specific case for preventing a variable from being seen or inherited. You can only specify these options in the CLI. This case does not pertain to all available environment variables. When using the CLI, you must set variables using one of the following methods:
 

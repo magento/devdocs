@@ -19,7 +19,7 @@ The Production environment is your live store(s) and site(s). The environment in
 
 The Production environment runs your public-facing Magento single and multi-site storefronts. This system is read-only, requiring deployment across the architecture from the Integration environment to the Staging environment, and finally to the Production environment.
 
-We walk you through [deploying to Production]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Go Live]({{ page.baseurl }}/cloud/live/live.html) requirements and processes.
+We walk you through [deploying to Production]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Go Live]({{ site.baseurl }}/cloud/live/live.html) requirements and processes.
 
 We highly recommend fully testing in your Staging environment and branch before pushing to the `master` branch which deploys to the Production environment.
 
@@ -29,10 +29,10 @@ We recommend creating a branch called `staging` from `master`. The Staging envir
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.
 
-We walk you through [deploying to Staging]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [testing your store(s)]({{ page.baseurl }}/cloud/live/stage-prod-test.html) requirements and processes.
+We walk you through [deploying to Staging]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [testing your store(s)]({{ site.baseurl }}/cloud/live/stage-prod-test.html) requirements and processes.
 
 {:.bs-callout-warning}
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Integration environment {#cloud-arch-int}
 
@@ -57,11 +57,11 @@ The process for developing in Integration requires the following process:
 -  Push code to Git to build and deploy on an Integration environment for testing
 -  As work is completed, merge to the `staging` branch
 
-Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html), working with branches, and [deploying code]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
+Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ site.baseurl }}/cloud/before/before-workspace.html), working with branches, and [deploying code]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Production and Staging technology stack {#technology}
 
-The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html).
+The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [.magento.app.yaml file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html).
 
 -  Fastly for HTTP caching and CDN
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
@@ -90,23 +90,23 @@ You can even have multiple applications running in the same project. Building a 
 
 You cannot upgrade the operating system and web server software to a new version, but you can configure versions for the following software:
 
--  [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--  [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--  [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
--  [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+-  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
+In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 You use the following files to configure the software versions that you want to use in your implementation.
 
--  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
--  [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
--  [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+-  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)
+-  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)
 
 ### Backup and disaster recovery {#backup}
 
-You can create a snapshot of your database and file system using the Project Web Interface or the CLI. The snapshot includes your deployed code, installed software and services, and data. See [Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html).
+You can create a snapshot of your database and file system using the Project Web Interface or the CLI. The snapshot includes your deployed code, installed software and services, and data. See [Snapshots and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html).
 
 ## Prepare for development {#develop}
 
@@ -119,4 +119,4 @@ To branch and develop your Magento store:
 -  Create branches for development from `staging`
 -  Push code to Git that builds and deploys to an environment for testing
 
-Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html), working with branches, [deploying code]({{ page.baseurl }}/cloud/live/stage-prod-live.html), and [going live]({{ page.baseurl }}/cloud/live/live.html).
+Additional sections in this guide provide instructions and walk-throughs for setting up your [local workspace]({{ site.baseurl }}/cloud/before/before-workspace.html), working with branches, [deploying code]({{ site.baseurl }}/cloud/live/stage-prod-live.html), and [going live]({{ site.baseurl }}/cloud/live/live.html).

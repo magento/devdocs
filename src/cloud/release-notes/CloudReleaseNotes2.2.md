@@ -21,13 +21,13 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 *  **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface.
 
-*  **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We auto provision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
+*  **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We auto provision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/cloud/bk-cloud.html).
 
 *  **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
 *  **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/packages-cloud.html) have been upgraded to the latest stable version.
 
-*  **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/).
+*  **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ site.baseurl }}/config-guide/deployment/pipeline/).
 
 *  **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
@@ -127,13 +127,13 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/install-gde/system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ site.baseurl }}/cloud/setup/first-time-setup.html).
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
+To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
 
 You can directly upgrade to {{site.data.var.ece}} 2.2 from the following versions:
 

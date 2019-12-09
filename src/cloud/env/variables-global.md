@@ -21,7 +21,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Log levels]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
+Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Log levels]({{ site.baseurl }}/cloud/env/log-handlers.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
 
 ```yaml
 stage:
@@ -36,7 +36,7 @@ stage:
 
 Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.
 
-Pre-loading the cache using the [`post_deploy` hook]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Pre-loading the cache using the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -94,7 +94,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) header configuration for your {{ site.data.var.ee }} site. This configuration controls how the browser renders a page in a `<frame>`, `<iframe>`, or `<object>`. Use one of the following options:
+Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ site.baseurl }}/config-guide/secy/secy-xframe.html) header configuration for your {{ site.data.var.ee }} site. This configuration controls how the browser renders a page in a `<frame>`, `<iframe>`, or `<object>`. Use one of the following options:
 
 -  `DENY`—Page cannot be displayed in a frame.
 -  `SAMEORIGIN`—(The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.

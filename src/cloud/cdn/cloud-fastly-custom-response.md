@@ -57,7 +57,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 {:.procedure}
 To add the custom response page to the Fastly configuration:
 
-1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Magento Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
@@ -83,7 +83,7 @@ To add the custom response page to the Fastly configuration:
 
 ## Customize the WAF error page
 
-Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error caused by a [WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
+Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error caused by a [WAF]({{ site.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
 
 ![WAF error page]
 
@@ -115,7 +115,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 {:.procedure}
 To edit the WAF error page:
 
-1. [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+1. [Log in to the Magento Admin UI]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
 1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 

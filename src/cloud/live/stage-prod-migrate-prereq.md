@@ -14,7 +14,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
+[Build and deploy on local]({{ site.baseurl }}/cloud/live/live-sanity-check.html)
 
 When you are ready to deploy your store, you must complete deployment and testing on the Staging environment before deploying to Production. The Staging environment provides a near-production environment that includes a database, web server, and all services including Fastly, New Relic, and Blackfire.
 
@@ -56,7 +56,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 1. [Add your public SSH key](#add-public-ssh-key) to your {{ site.data.var.ece }} project environments.
 
-If you have not done so already, set up [Fastly CDN services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) on your Staging and Production environments. See [Fastly set up]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+If you have not done so already, set up [Fastly CDN services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) on your Staging and Production environments. See [Fastly set up]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 
@@ -113,9 +113,9 @@ To add an SSH key using the Project Web Interface:
 
 1. Follow the prompts on your screen to complete the task.
 
-You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH key using the CLI]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html#add-key-cli).
+You can also add an SSH key using the {{site.data.var.ece}} CLI. See [Add an SSH key using the CLI]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html#add-key-cli).
 
 {:.ref-header}
 Next step
 
-[Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
+[Migrate and deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html)

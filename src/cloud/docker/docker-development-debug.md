@@ -33,7 +33,7 @@ runtime:
 
 ## Configure Xdebug
 
-1. Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment]({{ page.baseurl }}/cloud/docker/docker-config.html). The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
+1. Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment]({{ site.baseurl }}/cloud/docker/docker-config.html). The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
 
    ```yaml
    generic:

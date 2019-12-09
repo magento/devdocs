@@ -18,7 +18,7 @@ When you force push code from an existing Git branch to your {{site.data.var.ece
 
 You need the following information to import code into your project:
 
--  [Encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system
+-  [Encryption key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system
 
 -  SSH or HTTPS [URL](https://glossary.magento.com/url) for your {{site.data.var.ee}} installation Git repository.
 
@@ -26,7 +26,7 @@ You need the following information to import code into your project:
 
 Create a remote Git reference from your Cloud Git repository to the repository containing your {{site.data.var.ee}} installation so you can pull the {{site.data.var.ee}} code into your project.
 
-1. Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
 1. Copy `composer.json` to a _non-tracked directory_ so it does not get overwritten.
 
@@ -119,13 +119,13 @@ Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ec
 
 You need the following information to complete this task:
 
--  [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment
--  The database name, username, and password for the [Cloud database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
+-  [SSH URL]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment
+-  The database name, username, and password for the [Cloud database]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
 
 {:.bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
 
-When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the database.
+When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the database.
 
 To drop and re-create the Cloud database:
 
@@ -220,7 +220,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 
 The {{site.data.var.ee}} encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
-You copied the key in a [previous step]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
+You copied the key in a [previous step]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
 To add your {{site.data.var.ee}} encryption key:
 
@@ -231,7 +231,7 @@ To add your {{site.data.var.ee}} encryption key:
     ```
 
 1. Open `app/etc/env.php` in a text editor.
-1. Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
+1. Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
     ```php
     return array (

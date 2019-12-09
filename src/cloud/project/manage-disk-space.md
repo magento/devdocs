@@ -72,7 +72,7 @@ You can change disk space allocation on Pro Integration and Starter enviroments 
 
 ### Application disk space
 
-The `.magento.app.yaml` file controls the [persistent disk space]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#disk) available to the Magento application.
+The `.magento.app.yaml` file controls the [persistent disk space]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#disk) available to the Magento application.
 
 {:.procedure}
 To increase disk space for your application:
@@ -104,7 +104,7 @@ To increase disk space for a service:
 
 1. In your local development environment, open the `.magento/service.yaml` configuration file.
 
-1. Add or find a service in the file. See [more about configuring services]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
+1. Add or find a service in the file. See [more about configuring services]({{site.baseurl}}/cloud/project/project-conf-files_services.html).
 
 1. Set a new value for the disk property (in MB).
 
@@ -126,7 +126,7 @@ To increase disk space for a service:
 
 ## Monitoring disk space
 
-On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
+On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
 
 ## No space left
 

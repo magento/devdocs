@@ -3,7 +3,7 @@ title: Restore an environment
 group: cloud-guide
 ---
 
-If you encounter issues in your environment and do not have a [valid snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:
+If you encounter issues in your environment and do not have a [valid snapshot]({{ site.baseurl }}/cloud/project/project-webint-snap.html), you can try restoring your environment in one of the following ways:
 
 -  SSH
 -  Git
@@ -23,14 +23,14 @@ Performing these steps:
 
 ### Disable configuration management
 
-You must disable [configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html) so that it does not automatically apply the previous configuration settings during deployment.
+You must disable [configuration management]({{ site.baseurl }}/cloud/live/sens-data-over.html) so that it does not automatically apply the previous configuration settings during deployment.
 
 To disable configuration management, make sure that your `app/etc/` directory does not contain the `config.php` file.
 
 {:.procedure}
 To remove the configuration file:
 
-1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1. [SSH to your environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. Remove the configuration file:
    -  For Magento 2.2:
 
@@ -51,7 +51,7 @@ Uninstalling the Magento software drops and restores the database, removes the d
 {:.procedure}
 To uninstall the Magento software:
 
-1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1. [SSH to your environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. Uninstall the Magento application.
 
    ```bash
@@ -117,7 +117,7 @@ git commit --allow-empty -m "<message>" && git push <origin> <branch>
 
 If executing the `setup:uninstall` command fails and cannot be completed, you might need to manually reset the database:
 
-1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1. [SSH to your environment]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1. Connect to the database.
 
    ```bash
@@ -143,4 +143,4 @@ If executing the `setup:uninstall` command fails and cannot be completed, you mi
    -  `env.php`
    -  `env.php.bak`
 
-After resetting the database, [push your changes to trigger a redeploy]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database Or [run the redeploy command]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).
+After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).

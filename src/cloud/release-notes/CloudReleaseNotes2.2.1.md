@@ -86,13 +86,13 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/install-gde/system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ site.baseurl }}/cloud/setup/first-time-setup.html).
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.
+To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.
 
 You can directly upgrade to {{site.data.var.ece}} 2.2 from the following versions:
 

@@ -12,13 +12,13 @@ functional_areas:
 Use the following information to troubleshoot and manage the Fastly CDN module for Magento 2 in your {{ site.data.var.ece }} project environments. For example, you can investigate response header values and caching behavior to resolve Fastly service and performance issues.
 
 {:.bs-callout-info}
-For information about setting up and configuring Fastly, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
+For information about setting up and configuring Fastly, see [Set up Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 ## Locate Fastly service ID {#service-id}
 
 You need the Fastly service ID to configure Fastly from the Magento Admin UI or to submit Fastly API requests for advanced Fastly configuration and troubleshooting.
 
-If Fastly is enabled in your project environment, you can get the service ID from the Magento Admin UI. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+If Fastly is enabled in your project environment, you can get the service ID from the Magento Admin UI. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
 Developers and advanced VCL users can use custom VCL to retrieve the service ID using the Fastly variable `req.service_id`. For example, you can add the `req.service_id` to the custom logging directive in your VCL to capture the service ID value:
 
@@ -34,11 +34,11 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 
 -  **Store menu does not display or work**—You might be using a link or temp link directly to the origin server instead of using the live site URL, or you used `-H "host:URL"` in a [cURL command](#curl). If you bypass Fastly to the origin server, the main menu does not work and incorrect headers display that allow caching on the browser side.
 
--  **Top level navigation does not work**—The top level navigation relies on Edge Side Includes (ESI) processing which is enabled when you upload the default Magento Fastly VCL snippets. If the navigation is not working, [upload the Fastly VCL]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
+-  **Top level navigation does not work**—The top level navigation relies on Edge Side Includes (ESI) processing which is enabled when you upload the default Magento Fastly VCL snippets. If the navigation is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
--  **Geo-location/GeoIP does not work**— The default Magento Fastly VCL snippets append the country code to the URL. If the country code is not working, [upload the Fastly VCL]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
+-  **Geo-location/GeoIP does not work**— The default Magento Fastly VCL snippets append the country code to the URL. If the country code is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
--  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. Magento sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
+-  **Pages are not caching**—By default, Fastly does not cache pages with the `Set-Cookies` header. Magento sets cookies even on cacheable pages (TTL > 0). The default Magento Fastly VCL strips those cookies on cacheable pages. If pages are not caching, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
    This issue can also occur if a page block in a template is marked uncacheable. In that case, the problem is most likely caused by a third-party module or Magento extension blocking or removing the Magento headers. To resolve the issue, see [X-Cache contains only MISS, no HIT](#xcache-miss).
 
@@ -58,14 +58,14 @@ Use the following list to identify and troubleshoot issues related to the Fastly
 If Fastly returns 503 timeout errors, check the error logs and the 503 error page to identify the root cause.
 
 {:.bs-callout-info}
-If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
+If the timeout occurs when running bulk operations, you can [extend the Fastly timeout for the Magento Admin UI]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#bulkaction).
 
 If you receive a 503 error, check the Production or Staging environment error log and php access log to troubleshoot the issue.
 
 {:.procedure}
 To check the error logs:
 
--  [Error log]({{page.baseurl}}/cloud/project/log-locations.html#application-logs)
+-  [Error log]({{site.baseurl}}/cloud/project/log-locations.html#application-logs)
 
    ```text
    /var/log/platform/<project_ID>/error.log
@@ -112,9 +112,9 @@ To check the Fastly 503 error page:
 
 If the apex domain and subdomains for your {{ site.data.var.ece }} project are already associated with an existing Fastly account with an assigned Service ID, you cannot launch until you update your Fastly configuration:
 
--  Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
+-  Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
 
--  [Enable and configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ page.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
+-  [Enable and configure Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ site.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
 
 ## Verify or debug Fastly services
 
@@ -257,7 +257,7 @@ This section provides suggestions for resolving errors returned when checking re
 
 #### Fastly module is not enabled {#no-module}
 
-If the Fastly module is not enabled (`Fastly-Module-Enabled: no`) or if the header is missing, [use SSH to log in]({{ page.baseurl }}/cloud/env/environments-ssh.html#magento-cli) to the project. Then, run the following command to check the module status.
+If the Fastly module is not enabled (`Fastly-Module-Enabled: no`) or if the header is missing, [use SSH to log in]({{ site.baseurl }}/cloud/env/environments-ssh.html#magento-cli) to the project. Then, run the following command to check the module status.
 
 ```bash
 php bin/magento module:status Fastly_Cdn
@@ -265,11 +265,11 @@ php bin/magento module:status Fastly_Cdn
 
 Based on the status returned, use the following instructions to update the Fastly configuration.
 
--  `Module does not exist`—If the module does not exist [install and configure](https://github.com/fastly/fastly-magento2/blob/master/Documentation/INSTALLATION.md) the Fastly CDN Module for Magento 2 in an Integration branch. After installation completes, enable and configure the module. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
+-  `Module does not exist`—If the module does not exist [install and configure](https://github.com/fastly/fastly-magento2/blob/master/Documentation/INSTALLATION.md) the Fastly CDN Module for Magento 2 in an Integration branch. After installation completes, enable and configure the module. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
--  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ page.baseurl }}/cloud/howtos/install-components.html#manage).
+-  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ site.baseurl }}/cloud/howtos/install-components.html#manage).
 
-   If you use [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
+   If you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
 
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 
@@ -279,7 +279,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 #### Fastly VCL has not been uploaded {#no-VCL}
 
-If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Magento Admin UI to upload it. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+If the Fastly VCL has not been uploaded (`Fastly-Magento-VCL-Uploaded`: `false`), use the *Upload VCL* option in the Magento Admin UI to upload it. See [Upload Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 #### X-Cache contains only MISS, no HIT {#xcache-miss}
 
@@ -336,7 +336,7 @@ To rollback the VCL version:
    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
    ```
 
-For details about using the Fastly API to review and manage VCL, see [Manage VCL using the API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
+For details about using the Fastly API to review and manage VCL, see [Manage VCL using the API]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
 
 <!-- Link definitions -->
 

@@ -8,8 +8,8 @@ functional_areas:
 
 The troubleshooting topics help to resolve specific issues with your {{site.data.var.ece}} project. Before submitting a Support ticket, check the following:
 
--  Verify your [credentials]({{ page.baseurl }}/cloud/trouble/trouble_ce-creds.html)
--  Review the [log files]({{ page.baseurl }}/cloud/live/stage-prod-test.html)
+-  Verify your [credentials]({{ site.baseurl }}/cloud/trouble/trouble_ce-creds.html)
+-  Review the [log files]({{ site.baseurl }}/cloud/live/stage-prod-test.html)
 -  Search for relevant content in the {{site.data.var.ece}} documentation
 -  Search the [Magento Help Center](https://support.magento.com/hc/en-us) troubleshooting articles, FAQ, and Tech resources
 

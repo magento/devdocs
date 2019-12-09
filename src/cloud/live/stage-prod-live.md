@@ -10,7 +10,7 @@ functional_areas:
 
 The process for deploying and going live begins with development, continues to Staging, and ends with going live in Production. To provide the best experience for developing, testing, and deploying your store with consistent configurations we provide an end-to-end environment solution. Every environment supports direct URL access to the store and Admin console and SSH access for CLI commands.
 
-You can fully push, merge, and deploy through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or CLI commands through a terminal application.
+You can fully push, merge, and deploy through the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html) or CLI commands through a terminal application.
 
 This section provides indepth instructions and information on the build and deploy process, migrating data and content, and testing.
 
@@ -27,7 +27,7 @@ Now you are ready to develop and deploy:
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
 1. Finally, deploy to the Production `master` to complete testing, go live steps, and start selling.
 
-For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html).
+For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html).
 
 ## Pro plan deployment {#pro}
 
@@ -41,7 +41,7 @@ Pro comes with a large Integration environment with eight active branches and en
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
 1. Finally, deploy to the Production environment to complete testing, go live steps, and start selling.
 
-For detailed information of the process, see [Pro Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html).
+For detailed information of the process, see [Pro Develop and Deploy Workflow]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html).
 
 ### Enter a ticket for deploying hooks {#hooks}
 {% include cloud/hooks.md %}
@@ -56,7 +56,7 @@ After you know these URLs, you can access those environments without further int
 *  Use the URL /admin to access the Admin panel.
 *  (Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
 
-For more information, see [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+For more information, see [SSH and sFTP]({{ site.baseurl }}/cloud/env/environments-ssh.html).
 
 ## Read-only environments {#read-only}
 
@@ -73,11 +73,11 @@ Related topics
 
 To learn more, check the following:
 
-*  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-*  [Continuous integration]({{ page.baseurl }}/cloud/deploy/continuous-deployment.html)
-*  [Protective block]({{ page.baseurl }}/cloud/live/live-prot.html)
-*  [Build and deploy to your local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
-*  [Prepare to deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
-*  [Migrate and deploy]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
-*  [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)
-*  [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)
+*  [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html)
+*  [Continuous integration]({{ site.baseurl }}/cloud/deploy/continuous-deployment.html)
+*  [Protective block]({{ site.baseurl }}/cloud/live/live-prot.html)
+*  [Build and deploy to your local]({{ site.baseurl }}/cloud/live/live-sanity-check.html)
+*  [Prepare to deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
+*  [Migrate and deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html)
+*  [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html)
+*  [Go live and launch]({{ site.baseurl }}/cloud/live/live.html)

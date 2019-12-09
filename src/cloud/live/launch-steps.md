@@ -13,7 +13,7 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
+[Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html)
 
 After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.
 
@@ -25,7 +25,7 @@ Contact Magento support and update any go live tickets with the intended date an
 
 ## Switch DNS to the new site {#dns}
 
-The Time-to-Live changed value is important for checking your changed domain. When you modify the A and CNAME records, the update will take the TTL configured time to update correctly. For details on DNS settings, see [DNS configurations]({{ page.baseurl }}/cloud/live/go-live-checklist.html#dns).
+The Time-to-Live changed value is important for checking your changed domain. When you modify the A and CNAME records, the update will take the TTL configured time to update correctly. For details on DNS settings, see [DNS configurations]({{ site.baseurl }}/cloud/live/go-live-checklist.html#dns).
 
 {:.procedure}
 To cut over to the new site:
@@ -37,7 +37,7 @@ To cut over to the new site:
 
 ## Test the live store {#test}
 
-Complete a few UAT tests in your live store to confirm everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+Complete a few UAT tests in your live store to confirm everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Post-Launch {#postlaunch}
 

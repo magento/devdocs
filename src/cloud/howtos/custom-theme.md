@@ -78,7 +78,7 @@ To install a theme manually:
 
 ## Install a theme using Composer {#composer}
 
-Installing a theme using Composer is the same as installing any other extension using Composer. See [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) for details.
+Installing a theme using Composer is the same as installing any other extension using Composer. See [Install, manage, and upgrade modules]({{ site.baseurl }}/cloud/howtos/install-components.html) for details.
 
 To summarize the procedure:
 
