@@ -102,7 +102,19 @@ Add a text and a select field:
 
 ### Step 3. Check the widget
 
-After clearing the cache, the new widget `My New Widget` should now be available.
+Run the following commands to apply the module dependency declared in `module.xml`.
+
+```bash
+bin/magento module:disable Vendor_Module
+```
+
+```bash
+bin/magento module:enable Vendor_Module
+```
+
+where `Vendor_Module` is replaced with the module name.
+
+After clearing the cache, the new widget `My New Widget` should be available.
 
 ![Custom Widget]({{ site.baseurl }}/common/images/ext-best-practices/custom-widget.png)
 
