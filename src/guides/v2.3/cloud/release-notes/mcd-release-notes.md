@@ -1,0 +1,1 @@
+../../../v2.2/cloud/release-notes/mcd-release-notes.md
