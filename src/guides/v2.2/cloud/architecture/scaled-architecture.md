@@ -22,7 +22,7 @@ There are 3 nodes (core nodes) for the database and included services, such as E
 
 ![Core tier scaling]
 
-Consider an example that the core node instance type is _m5.2xlarge_ with 32GB RAM. A service, such as the database, uses a considerable amount of memory (30GB). Scaling to the next available instance size _m5.4xlarge_ provides 64GB RAM, double the memory, and accommodates the growing needs of the database.
+Consider an example that the core node instance type is _m5.2xlarge_ with 32Gb RAM. A service, such as the database, uses a considerable amount of memory (30Gb). Scaling to the next available instance size _m5.4xlarge_ provides 64Gb RAM, double the memory, and accommodates the growing needs of the database.
 
 Further optimizing performance includes routing traffic. You can route traffic based on the node type. For example, you can serve web traffic on the db node or you can isolate the db node from the web traffic.
 
@@ -34,7 +34,7 @@ There are 3 nodes for php-fpm and manages web traffic. In addition to vertical s
 
 This complements the vertical scaling provided by the database tier.
 
-Consider an example that the web node instance type is _C5.2xlarge with 8 CPU and 16GB RAM_. The number of requests to the site increased greatly. You can add an additional C5.2xlarge node to handle the increase in php-fpm processes or you can change each instance type to _C5.4xlarge with 16 CPU and 32GB RAM_. Adding an additional node is less expensive than changing all web node instances to a larger type.
+Consider an example that the web node instance type is _C5.2xlarge with 8 CPU and 16Gb RAM_. The number of requests to the site increased greatly. You can add an additional C5.2xlarge node to handle the increase in php-fpm processes or you can change each instance type to _C5.4xlarge with 16 CPU and 32Gb RAM_. Adding an additional node is less expensive than changing all web node instances to a larger type.
 
 ## Project structure
 
