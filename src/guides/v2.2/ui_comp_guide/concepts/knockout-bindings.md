@@ -449,6 +449,12 @@ Configuration for the `template` binding. If the provided value is a string, it 
 
 ```html
 <div data-bind="template: 'path/to/the/template'"></div>
+
+<!-- ko template: getTemplate() --><!-- /ko -->
+
+<render args="template" />
+
+<div each="getRegion('displayArea')" render=""/>
 ```
 
 ### `tooltip`
