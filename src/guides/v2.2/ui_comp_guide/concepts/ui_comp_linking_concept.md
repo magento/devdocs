@@ -101,7 +101,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 105]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L105)
 
 ## `links` property
 
