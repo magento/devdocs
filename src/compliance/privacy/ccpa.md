@@ -14,7 +14,7 @@ The CCPA grants the following new rights to consumers:
 
 ## CCPA Compliance Guide
 
-A coordinated effort is required to develop and implement a plan to address CCPA compliance. Merchants are encouraged to assemble a cross-functional team and follow the roadmap outlined in [CCPA Compliance Guide][2]{: target="_blank"} to bring their company into compliance with the regulation. As a software developer, you might be asked to participate as a stakeholder on a cross-functional compliance team with particular emphasis on steps 2 - 5.
+A coordinated effort is required to develop and implement a plan to address CCPA compliance. Merchants are encouraged to assemble a cross-functional team, and follow the roadmap outlined in [CCPA Compliance Guide][2]{: target="_blank"} to bring their company into compliance with the regulation. As a developer, you might be invited to participate as a stakeholder with an emphasis on steps 2 - 5 of the process. See the CCPA Compliance Guide for more information.
 
 1. Assemble a cross-functional team to address CCPA compliance.
 
@@ -32,9 +32,9 @@ A coordinated effort is required to develop and implement a plan to address CCPA
 
 1. Document all CCPA-related procedures and maintain records.
 
-## Personal Information Data Reference
+## Personal Information Reference
 
-For technical information, see the data flow diagrams and database entity mappings in the PI Data Reference that applies to the version(s) of Magento that you support. 
+For technical information, see the data flow diagrams and database entity mappings in the Personal Information Reference that applies to the version(s) of Magento that you support. 
 
 - [Personal Information Reference (Magento 2.x)]({% link compliance/privacy/pi-data-reference-m2.md -%})
 - [Personal Information Reference Magento 1.x)]({% link compliance/privacy/pi-data-reference-m1.md -%})
