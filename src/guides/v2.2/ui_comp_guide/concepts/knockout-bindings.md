@@ -399,7 +399,7 @@ Component's name by which to perform a lookup in the registry.
 <div data-bind="scope: 'name.of.component'"></div>
 
 <!-- without an extra container node -->
-<scope args="'name.of.component'"></scope>
+<!-- ko scope: 'name.of.component' --><!-- /ko -->
 ```
 
 ### `staticChecked`
