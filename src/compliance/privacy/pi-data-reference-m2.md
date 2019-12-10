@@ -3,12 +3,10 @@ group: compliance
 title: Personal Information Data Reference (Magento 2.x) 
 ---
 
-# Personal Information Data Reference (Magento 2.x) 
-
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
 - [GDPR]({{ site.baseurl }}{% link compliance/privacy/gdpr.md %})
-- [CCPA]({{ site.baseurl }}{% link compliance/orivacy/ccpa.md %})
+- [CCPA]({{ site.baseurl }}{% link compliance/privacy/ccpa.md %})
 
 ## Data flow diagrams
 

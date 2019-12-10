@@ -3,8 +3,6 @@ group: compliance
 title: Personal Information Data Reference (Magento 1.x) 
 ---
 
-# Personal Information Data Reference (Magento 1.x) 
-
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
 - [GDPR]({{ site.baseurl }}{% link compliance/privacy/gdpr.md %})
