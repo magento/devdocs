@@ -48,7 +48,7 @@ To review cron configuration on Pro plan environments:
 
 1. List the scheduled cron processes.
 
-   ```bash
+   ```shell
    crontab -l
    ```
 
@@ -154,13 +154,36 @@ To add custom crons:
 
 1. Add, commit, and push code changes.
 
-    ```bash
-    git add -A && git commit -m "cron config updates" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+   ```
 
 ## Update custom cron jobs {#update}
 
 To add, remove, or update a custom cron job, change the configuration in the `crons` section of the `.magento.app.yaml` file for the Integration environment. Then, test the updates in the Integration environment before pushing the changes to the Production and Staging environments.
+
+## Disable cron jobs
+
+In some cases you might want to manually disable cron jobs before you complete maintenance tasks like reindexing or cleaning the cache to prevent performance issues. You can use the ece-tools CLI command `cron:disable` to disable all Magento cron jobs and stop any active cron processes.
+
+{:.procedure}
+To disable cron jobs when completing maintenance tasks:
+
+1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+
+1. Disable cron processes.
+
+   ```shell
+   ./vendor/bin/ece-tools cron:disable
+   ```
+
+1. Complete the required task.
+
+1. Restart the cron processes.
+
+   ```shell
+   ./vendor/bin/ece-tools cron:enable
+   ```
 
 ## Troubleshooting cron jobs
 
