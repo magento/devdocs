@@ -3,9 +3,7 @@ group: conpliance
 title: General Data Protection Regulation
 ---
 
-# General Data Protection Regulation
-
-The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
+The European Union (EU) enacted [General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
 
 System integrators can use the data flow diagrams and database information in the Personal Information Reference to build scripts to resolve use cases similar to the following:
 
@@ -21,5 +19,5 @@ The following topics contain data flow diagrams and database information for Mag
 
 For more information about how Magento helps merchants comply with GDPR, see the following:
 
-- [GDPR Compliance]{https://docs.magento.com/m2/ee/user_guide/stores/compliance-gdpr.html}
+- [GDPR Compliance](https://docs.magento.com/m2/ee/user_guide/stores/compliance-gdpr.html)
 - [Magento is Ready for GDPR](https://magento.com/gdpr)

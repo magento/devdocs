@@ -3,8 +3,6 @@ group: compliance
 title: California Consumer Privacy Act
 ---
 
-# California Consumer Privacy Act
-
 The [California Consumer Protection Act][1]{: target="_blank"} (CCPA) expands the rights of consumers in California to determine how their personal information is collected, stored, and used, with an emphasis on protecting consumers from the unauthorized sale or exchange or their personal information. The CCPA was enacted in 2018 and is effective as of January 1, 2020. 
 
 The CCPA grants the following new rights to consumers:
@@ -14,11 +12,9 @@ The CCPA grants the following new rights to consumers:
 - **Right to opt out** of the sale of their personal information.
 - **Right to non-discrimination** in terms of price or service for having exercised a privacy right under CCPA.
 
-## Read the CCPA Compliance Guide
+## CCPA Compliance Guide
 
-A coordinated effort is required to develop and implement a plan to address CCPA compliance. Merchants are encouraged to use the roadmap in the CCPA Compliance Guide to mobilize resources and prioritize tasks so they can move ahead on multiple fronts.
-
-The CCPA Compliance Guide presents a role-based team approach from the perspective of the merchant's business to:
+A coordinated effort is required to develop and implement a plan to address CCPA compliance. Merchants are encouraged to assemble a cross-functional team and follow the roadmap outlined in [CCPA Compliance Guide][2]{: target="_blank"} to bring their company into compliance with the regulation. As a software developer, you might be asked to participate as a stakeholder on a cross-functional compliance team with particular emphasis on steps 2 - 5.
 
 1. Assemble a cross-functional team to address CCPA compliance.
 
@@ -36,13 +32,12 @@ The CCPA Compliance Guide presents a role-based team approach from the perspecti
 
 1. Document all CCPA-related procedures and maintain records.
 
-As a software developer, you might be asked to participate as a stakeholder on a merchant's cross-functional  compliance team, with emphasis on steps 2 - 5.  
+## Personal Information Data Reference
 
-[1]: https://en.wikipedia.org/wiki/Online_Privacy_Protection_Act 
-
-## Study the Personal Information Reference
-
-Become familiar with the data flow diagrams and database entity mappings in the Personal Information Reference that applies to the version(s) of Magento that you support. 
+For technical information, see the data flow diagrams and database entity mappings in the PI Data Reference that applies to the version(s) of Magento that you support. 
 
 - [PI Data Reference (Magento 2.x)]({% link compliance/privacy/pi-data-reference-m2.md -%})
 - [PI Data Reference Magento 1.x)]({% link compliance/privacy/pi-data-reference-m1.md -%})
+
+[1]: https://en.wikipedia.org/wiki/Online_Privacy_Protection_Act 
+[2]: https://docs.magento.com/m2/ee/user_guide/stores/compliance-ccpa-guide.html
