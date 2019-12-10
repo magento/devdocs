@@ -399,33 +399,8 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}
 
-We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
-
-*  Supported Desktop Clients
-   *  Apple Mail 7 (OS X 10.9)
-   *  Apple Mail 8 (OS X 10.10)
-   *  Outlook 2003 (Windows 7)
-   *  Outlook 2007 (Windows 7)
-   *  Outlook 2010 (Windows 7)
-   *  Outlook 2013 (Windows 7)
-   *  Outlook 2016 (OS X 10.10)
-*  Supported Mobile Clients
-   *  Native email app (Android 2.3)
-   *  Native email app (Android 4.2)
-   *  Gmail app (Android 4.2)
-   *  Native email app (Blackberry 5 OS)
-   *  iOS 7 (iPhone 5s)
-   *  iOS 8 (iPad Retina)
-   *  iOS 8 (iPad Mini)
-   *  iOS 8 (iPhone 6)
-   *  iOS 8 (iPhone 6 Plus)
-   *  Windows Phone 8
-*  Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
-   *  AOL Mail
-   *  Gmail
-   *  Office 365
-   *  Outlook.com
-   *  Yahoo! Mail
+We test responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly.
+We strive to support all current, modern e-mail clients. Let us know about any client-specific issues you might have. 
 
 ## Newsletter templates {#newsletter-templates}
 
