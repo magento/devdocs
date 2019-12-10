@@ -77,7 +77,7 @@ Flag that sets whether the customer’s payment can be captured using an online 
 *Format:* Boolean
 
 *Default:* false
-  
+
 *Presence:* Optional
 
 #### notify
@@ -204,7 +204,6 @@ With this service you can:
 *  notify a customer about performed refund operation
 
 ### Service parameters
-
 
 #### invoiceId
 
@@ -387,7 +386,6 @@ With the RefundOrder service you can:
 
 An identifier of a target Order for operation.
 
-
 *Format:* Integer
 
 *Presence:* Required
@@ -451,7 +449,7 @@ Flag that activates addition of a `comment` argument to the e-mail notification.
 
 A comment to Credit Memo.
 
-*Format:* A format according to the [ `\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php). 
+*Format:* A format according to the [ `\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php).
 
 *Default:* null
 
