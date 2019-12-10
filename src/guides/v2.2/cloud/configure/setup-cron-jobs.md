@@ -171,7 +171,7 @@ To disable cron jobs when completing maintenance tasks:
 
 1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-1. Disable cron processes.
+1. Disable cron jobs and stop active cron processes.
 
    ```shell
    ./vendor/bin/ece-tools cron:disable
@@ -179,7 +179,7 @@ To disable cron jobs when completing maintenance tasks:
 
 1. Complete the required task.
 
-1. Restart the cron processes.
+1. After the task completes, re-enable the cron jobs.
 
    ```shell
    ./vendor/bin/ece-tools cron:enable
