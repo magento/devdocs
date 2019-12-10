@@ -13,8 +13,8 @@ pages:
         - label: GDPR
           url: ../../../compliance/privacy/gdpr.html
 
-        - label: Personal Information Reference (M2)
+        - label: PI Reference (M2.x)
           url: ../../../compliance/privacy/pi-data-reference-m2.html
 
-        - label: Personal Information Reference (M1)
+        - label: PI Reference (M1.x)
           url: ../../../compliance/privacy/pi-data-reference-m1.html
