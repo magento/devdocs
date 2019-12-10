@@ -11,7 +11,7 @@ This topic describes the changes and provides instructions on how to convert you
 
 ## Changes to the custom email template workflow
 
-In Magento 2.3.4, custom email templates are only allowed to use scalar values for variable data.
+As of Magento 2.3.4, custom email templates are only allowed to use scalar values for variable data.
 Direct calls to methods are no longer allowed.
 To be more specific, methods can no longer be called from variables from either the `var` directive or when used as parameters.
 For example `{{var order.getEmailCustomerNote()}}` or `{{something myVar=$obj.method()}}` will fail to resolve.
@@ -25,6 +25,7 @@ Notice in the incorrect example, the `getConfirmationLink()` method is called di
 We refer to this as 'strict mode' for email templates.
 All default templates have been converted to this strict mode.
 
+{: .bs-callout-info}
 All existing custom email templates will continue to work after upgrading to 2.3.4.
 Any new email template created after installing 2.3.4 must be written in strict mode.
 
@@ -157,8 +158,8 @@ In this example, we will create and pass a `lifetime_spend` custom value.
    ```
 
 The new variable is now available within the email template as `{{lifetime_spend}}`.
-Note in the class above, we also defined the filter `shouldBold`. We can use that with `{{lifetime_spend should_bold=1}}`.
-You may also use multiple filters within a var statement: `{{lifetime_spend should_bold=1 |escape}}`.
+Note in the class above, we also defined the parameter `shouldBold`. We can use that with `{{lifetime_spend should_bold=1}}`.
+You may also use multiple filters within a var statement: `{{lifetime_spend should_bold=1 |escape|nl2br}}`.
 
 ## Data objects and getUrl
 
@@ -170,7 +171,7 @@ Even then, we do not actually call the getter method directly, but rather, resol
 For example, if we have:
 
 ```php
-$template->setVariables(['customer_data'=>new DataObject('mykey' => 'foo')]);
+$template->setVariables(['customer_data'=>new DataObject('my_key' => 'foo')]);
 ```
 
 and in the template where we have
