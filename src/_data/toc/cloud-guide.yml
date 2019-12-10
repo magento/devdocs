@@ -402,3 +402,12 @@ pages:
 
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
+      children:
+        - label: ece-tools
+          url: /cloud/release-notes/ece-release-notes.html
+        - label: magento-cloud-docker
+          url: /cloud/release-notes/mcd-release-notes.html
+        - label: magento-cloud-patches
+          url: /cloud/release-notes/mcp-release-notes.html
+
+
