@@ -19,6 +19,8 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 -  [app/code/Magento/Ui/view/base/web/js/form/element/abstract.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)
 -  [app/code/Magento/Ui/view/base/web/templates/form/element/hidden.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/hidden.html)
 
+## Examples
+
 ### Integrate the Hidden component with the Form component
 
 This example integrates the Hidden component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component
