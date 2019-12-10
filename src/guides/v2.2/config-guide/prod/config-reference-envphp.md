@@ -26,3 +26,14 @@ The `env.php` file contains the following sections:
 [x-frame-options]: {{ page.baseurl }}/config-guide/secy/secy-xframe.html
 [magento-mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [message-queues]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
+
+## Backend
+
+You can configure **frontName** for the Magento admin url using backend node in env.php.<br>
+Below is an example to configure frontName for Magento Backend.
+
+```conf
+'backend' => [
+    'frontName' => 'admin'
+]
+```
