@@ -1,12 +1,12 @@
 ---
 group: compliance
-title: Personal Information Reference (Magento 2.x) 
+title: Personal Information Reference (Magento 2.x)
 ---
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
-- [GDPR]({{ site.baseurl }}{% link compliance/privacy/gdpr.md %})
-- [CCPA]({{ site.baseurl }}{% link compliance/privacy/ccpa.md %})
+-[GDPR]({{ site.baseurl }}{% link compliance/privacy/gdpr.md %})
+-[CCPA]({{ site.baseurl }}{% link compliance/privacy/ccpa.md %})
 
 ## Data flow diagrams
 
@@ -44,14 +44,14 @@ Magento 2 primarily stores customer-specific information in customer, address, o
 
 Magento 2 stores the following customer attributes:
 
-- Date of Birth
-- Email
-- First Name
-- Gender
-- Last Name
-- Middle Name/Initial
-- Name Prefix
-- Name Suffix
+-Date of Birth
+-Email
+-First Name
+-Gender
+-Last Name
+-Middle Name/Initial
+-Name Prefix
+-Name Suffix
 
 #### `customer_entity` and reference tables
 
@@ -105,21 +105,21 @@ Column | Data type
 
 Magento 2 stores the following customer attributes:
 
-- City
-- Company
-- Country
-- Fax
-- First Name
-- Last Name
-- Middle Name/Initial
-- Name Prefix
-- Name Suffix
-- Phone Number
-- State/Province
-- State/Province ID
-- Street Address
-- VAT Number
-- Zip/Postal Code
+-City
+-Company
+-Country
+-Fax
+-First Name
+-Last Name
+-Middle Name/Initial
+-Name Prefix
+-Name Suffix
+-Phone Number
+-State/Province
+-State/Province ID
+-Street Address
+-VAT Number
+-Zip/Postal Code
 
 #### `customer_address_entity` and reference tables
 
@@ -304,21 +304,21 @@ Column | Data type
 
 The following tables contain a `customer_id` column:
 
-- `catalog_compare_item`
-- `catalog_product_frontend_action`
-- `downloadable_link_purchased`
-- `magento_customerbalance`
-- `magento_customersegment_customer`
-- `magento_reward`
-- `magento_rma`
-- `oauth_token`
-- `paypal_billing_agreement`
-- `persistent_session`
-- `product_alert_price`
-- `product_stock_alert`
-- `report_compared_product_index`
-- `report_viewed_product_index`
-- `review_detail`
-- `salesrule_coupon_usage`
-- `salesrule_customer`
-- `wishlist`
+-`catalog_compare_item`
+-`catalog_product_frontend_action`
+-`downloadable_link_purchased`
+-`magento_customerbalance`
+-`magento_customersegment_customer`
+-`magento_reward`
+-`magento_rma`
+-`oauth_token`
+-`paypal_billing_agreement`
+-`persistent_session`
+-`product_alert_price`
+-`product_stock_alert`
+-`report_compared_product_index`
+-`report_viewed_product_index`
+-`review_detail`
+-`salesrule_coupon_usage`
+-`salesrule_customer`
+-`wishlist`
