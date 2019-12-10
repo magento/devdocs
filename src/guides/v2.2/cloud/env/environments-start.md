@@ -34,7 +34,7 @@ Command | Description
 
 For a full list of commands, see the [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
 
 ## Get started creating branches {#getstarted}
@@ -65,7 +65,7 @@ After completing development, you can merge this branch to the parent:
 
 Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
@@ -101,7 +101,7 @@ To delete an environment:
     The environment <environment-ID> is currently active: deleting it will delete all associated data.
     Are you sure you want to delete the environment <environment-ID>? [Y/n]
     ```
-    {: .no-copy}
+    {:.no-copy}
 
     Deleting the environment places it in an _inactive_ state.
 
@@ -123,9 +123,9 @@ To delete an environment:
     Deleted remote Git branch <environment-ID>
     Run git fetch --prune to remove deleted branches from your local cache.
     ```
-    {: .no-copy}
+    {:.no-copy}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}

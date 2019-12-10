@@ -363,9 +363,7 @@ The `trans` directive will translate strings into whatever locale is configured 
 The directive supports multiple named parameters, separated by spaces. For example:
 
 ```html
-{% raw %}
-{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
-{% endraw %}
+{% raw %}{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}{% endraw %}
 ```
 
 Please note, that variable assignment must not contain spaces.
@@ -373,20 +371,16 @@ Please note, that variable assignment must not contain spaces.
 Correct:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
 ```
 
 Incorrect:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
 ```
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}

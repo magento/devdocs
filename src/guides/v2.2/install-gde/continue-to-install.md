@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 ## Installation options: command line or Setup Wizard

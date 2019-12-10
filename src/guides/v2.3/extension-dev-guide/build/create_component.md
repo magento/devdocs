@@ -30,7 +30,7 @@ The smallest working `module.xml` file would look something like this:
 
 The `name` parameter defines the name of your component. It is required for all components. If you use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html) to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's [database schema](https://glossary.magento.com/database-schema) version. Omit the `setup_version` parameter if you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Add the component's `composer.json` file {#add-composer-json}
@@ -87,7 +87,7 @@ In this example:
 *  `license` lists applicable licenses that apply to your component.
 *  `autoload` instructs Composer to load the specified files.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path) repository.
 
 #### Next

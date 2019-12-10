@@ -176,5 +176,5 @@ public function getBreakpoints()
 }
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Variables may be used within the scope of modules than the defined one.

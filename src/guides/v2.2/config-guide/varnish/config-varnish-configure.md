@@ -88,7 +88,7 @@ To minimally configure Varnish:
    }
    ```
 
-  {:.bs-callout .bs-callout-info}
+  {:.bs-callout-info}
   If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not `localhost`.
 
 1. Save your changes to `default.vcl` and exit the text editor.

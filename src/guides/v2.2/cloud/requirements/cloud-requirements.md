@@ -40,7 +40,7 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 
 To get started with Git, you should have [Git installed](https://git-scm.com/downloads) on your local.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 In addition to Git requirements for valid branch names, {{site.data.var.ee}} adds two additional requirements:
 The `/` character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named `CaSe`, you cannot create another branch named `case`.
 
@@ -60,7 +60,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 *  [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
@@ -95,7 +95,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 *  Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *  Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 {{ site.data.var.ece }} supports production and maintenance modes only.
 
 ## Development and testing {#cloud-req-devtest}
