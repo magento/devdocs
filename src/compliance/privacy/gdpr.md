@@ -14,8 +14,8 @@ System integrators can use the data flow diagrams and database information in th
 
 The following topics contain data flow diagrams and database information for Magento version 2.x and Magento version 1.x.
 
-- [PI Data Reference for Magento 2.x]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m2.md %})
-- [PI Data Reference for Magento 1.x]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m1.md %})
+- [Personal Information Reference (Magento 2.x)]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m2.md %})
+- [Personal Information Reference (Magento 1.x)]({{ site.baseurl }}{% link compliance/privacy/pi-data-reference-m1.md %})
 
 For more information about how Magento helps merchants comply with GDPR, see the following:
 
