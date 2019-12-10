@@ -12,6 +12,7 @@ The Textarea component implements the `<textarea>` form field.
 | `cols` | The number of columns that will be specified in the `cols` attribute of the textarea DOM element. | Number | `15` |
 | `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `'Magento_Ui/js/form/element/textarea'` |
 | `elementTmpl` | The path to the `.html` template of the particular type of field (textarea). | String | `'ui/form/element/textarea'` |
+| `label` | Label to be displayed in the field. | String | `''` |
 | `rows` | The number of rows that will be specified in the `rows` attribute of the textarea DOM element. | Number | `2` |
 | `template` | The path to the general field `.html` template. | String | `'ui/form/field'` |
 
