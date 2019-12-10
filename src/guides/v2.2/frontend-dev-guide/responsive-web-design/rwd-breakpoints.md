@@ -24,7 +24,7 @@ In your custom theme directory, add a `/web/css/source/variables.less` in one of
 -  if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
 -  if your theme is a standalone one, add a new empty file.
 
-In `variable.less`, add the variable for your new breakpoint.
+In `variables.less`, add the variable for your new breakpoint.
 
 For example:
 
