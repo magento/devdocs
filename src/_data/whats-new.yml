@@ -53,7 +53,7 @@ entries:
   type: Major update
   date: November 18, 2019
   link: https://github.com/magento/devdocs/pull/5917
-- description: Published the release notes for [Magento Commerce Cloud v2002.0.22](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
+- description: Published the release notes for [Magento Commerce Cloud v2002.0.22](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html)
     .
   versions: 2.x
   type: Major update
@@ -565,7 +565,7 @@ entries:
   type: Major update
   date: September 6, 2019
   link: https://github.com/magento/devdocs/pull/5332
-- description: 'Updated the Cloud Release notes for [ece-tools version 2002.0.21](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002021):<br/>-
+- description: 'Updated the Cloud Release notes for [ece-tools version 2002.0.21](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002021):<br/>-
     Added environment variables for Cloud deployment: [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#consumers_wait_for_max_messages)
     and [`LOCK_PROVIDER`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#lock_provider)<br/>-
     Added a [service compatibility table](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)
@@ -991,7 +991,7 @@ entries:
   type: Major update
   date: June 27, 2019
   link: https://github.com/magento/devdocs/pull/4838
-- description: Updated the Cloud Release notes for [ece-tools version 2002.0.20](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002020).<br/>-  New
+- description: Updated the Cloud Release notes for [ece-tools version 2002.0.20](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002020).<br/>-  New
     [`ece-tools` reference](https://devdocs.magento.com/guides/v2.3/cloud/reference/ece-tools-reference.html)
     topic.<br/>-  New [Functional testing in Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-testing.html)
     environment.<br/>-  Updated the [Application configuration PHP extensions](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_magento-app.html#php-extensions)
@@ -1267,7 +1267,7 @@ entries:
   type: Major update
   date: May 24, 2019
   link: https://github.com/magento/devdocs/pull/4576
-- description: Updated the [Cloud Release notes for ece-tools version 2002.0.19](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002019).
+- description: Updated the [Cloud Release notes for ece-tools version 2002.0.19](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002019).
   versions: 2.x
   type: Technical changes
   date: May 24, 2019
@@ -1587,7 +1587,7 @@ entries:
   type: Major update
   date: March 28, 2019
   link: https://github.com/magento/devdocs/pull/3898
-- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002017).<br/>-
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002017).<br/>-
     Updated supported versions for Elasticsearch and Redis<br/>- Added two Docker
     images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial [Docker launch
     steps](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html).<br/>-
@@ -1863,7 +1863,7 @@ entries:
   type: Major update
   date: February 28, 2019
   link: https://github.com/magento/devdocs/pull/3833
-- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002016)<br/>-
     Updated the Cloud Docker content with information about using the [`sendmail`
     service](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
     the Cloud Docker content to explain how to [configure Xdebug](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
@@ -1970,7 +1970,7 @@ entries:
   date: January 31, 2019
   link: https://github.com/magento/devdocs/pull/3667
 - description: Removed incorrect information about changes to deploy phase validation
-    checks in the Magento Commerce Cloud [Release notes for ece-tools, v2002.0.14](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002014).
+    checks in the Magento Commerce Cloud [Release notes for ece-tools, v2002.0.14](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html#v2002014).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: January 31, 2019
@@ -2017,13 +2017,13 @@ entries:
   link: https://github.com/magento/devdocs/pull/3627
 - description: Updated Magento Commerce and Magento Commerce Cloud release information
     to remove obsolete topics and add links to current Magento Commerce Cloud release
-    information in [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html).
+    information in [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html).
   versions: 2.x
   type: Major update
   date: January 24, 2019
   link: https://github.com/magento/devdocs/pull/3595
 - description: Updated the Magento Commerce Cloud Release Information with link to
-    Magento Commerce Cloud release information in the [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
+    Magento Commerce Cloud release information in the [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html)
     topic.
   versions: 2.3.x
   type: Technical changes
@@ -2260,7 +2260,7 @@ entries:
   versions: 2.3.x
   type: New topic
   date: November 26 2018
-- description: Added a fresh, new look to the [Cloud release notes](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
+- description: Added a fresh, new look to the [Cloud release notes](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/ece-release-notes.html)
     format.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2288,7 +2288,7 @@ entries:
   versions: 2.3.x
   type: New topic
   date: November 16 2018
-- description: Release notes for Cloud ece-tools version [2002.0.15](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002015)<br/>Added
+- description: Release notes for Cloud ece-tools version [2002.0.15](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/ece-release-notes.html#v2002015)<br/>Added
     a new [Cron container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#cron-container)
     to the Cloud Docker architecture.<br/>Added a [services table](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
     to clarify the service key and version values available for the Cloud Docker environment
@@ -2461,7 +2461,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: September 27 2018
-- description: Updated the [Release notes for ece-tools version 2002.0.14.](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed
+- description: Updated the [Release notes for ece-tools version 2002.0.14.](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/ece-release-notes.html#v2002014)<br/>Renamed
     Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html)
     architecture.<br/>Added [Reset cron jobs](https://devdocs.magento.com/guides/v2.3/cloud/trouble/reset-cron-jobs.html)
     topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and
@@ -2689,8 +2689,8 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Aug 02 2018
-- description: Added Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
-    and [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
+- description: Added Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/ece-release-notes.html)
+    and [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/ece-release-notes.html)
     release notes for `ece-tools` package v2002.0.13
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2746,8 +2746,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
-- description: Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html)
-    for Commerce 2.3 Alpha.
+- description: Added installation instructions for Commerce 2.3 Alpha.
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
