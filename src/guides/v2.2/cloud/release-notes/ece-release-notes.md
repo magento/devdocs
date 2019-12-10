@@ -15,14 +15,14 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 The release notes include:
 
 -  {:.new}New features
+
 -  {:.fix}Fixes and improvements
 
 ## v2002.1.0
 
--  {:.new}Decoupled the Docker package from the `{{site.data.var.ctl}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.cd}}` are managed from the [`magento-cloud-docker`](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
+-  {:.new}Decoupled the Docker package from the `{{ site.data.var.ct }}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{ site.data.var.cd }}` are managed from the [`magento-cloud-docker`](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
 
--  {:.new}Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the expanded definition in the
-[post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) topic.<!--MAGECLOUD-4444-->
+-  {:.new}Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the expanded definition in the [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) topic.<!--MAGECLOUD-4444-->
 
 ## v2002.0.22
 
