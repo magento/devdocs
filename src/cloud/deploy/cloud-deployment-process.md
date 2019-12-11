@@ -7,7 +7,7 @@ functional_areas:
   - SCD
 ---
 
-The deployment process begins when you perform a merge, push, or synchronization of your environment, or when you trigger a [manual redeployment]({{site.baseurl}}/cloud/reference/cli-ref-topic.html#git-commands). The deployment process takes time, but there are ways to optimize deployment that depend on whether you are developing and testing or working with a live site. Most notably, you can control the [static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
+The deployment process begins when you perform a merge, push, or synchronization of your environment, or when you trigger a [manual redeployment]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands). The deployment process takes time, but there are ways to optimize deployment that depend on whether you are developing and testing or working with a live site. Most notably, you can control the [static content deployment]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html).
 
 There are three, distinct phases of the deployment process: build, deploy, and post-deploy. Each phase performs specific actions with limited resources:
 
@@ -17,7 +17,7 @@ The _build_ phase assembles containers for the services defined in the configura
 
 ## ![Deploy phase] Deploy phase
 
-The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{site.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts) includes the following directories:
+The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{site.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#mounts) includes the following directories:
 
 -  `app/etc`—contains the `env.php` and `config.php` configuration files
 -  `pub/media`—contains all media data, such as Magento products or categories
@@ -28,11 +28,11 @@ All other directories have read-only permissions. The new site becomes active at
 
 ## ![Post-deploy phase] Post-deploy phase
 
-The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.yaml` file. Performing any action on this phase can affect site performance; however, you can use the [WARM_UP_PAGES]({{site.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable to populate the cache.
+The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.yaml` file. Performing any action on this phase can affect site performance; however, you can use the [WARM_UP_PAGES]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable to populate the cache.
 
 ## ![Verify state] Verify configurations
 
-You can test the optimal configuration for the state of your project by running the [Smart wizards]({{site.baseurl}}/cloud/deploy/smart-wizards.html).
+You can test the optimal configuration for the state of your project by running the [Smart wizards]({{ site.baseurl }}/cloud/deploy/smart-wizards.html).
 
 [Build phase]: {{site.baseurl}}/common/images/cloud/status-build.png
 {:width="80px"}

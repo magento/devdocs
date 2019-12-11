@@ -25,7 +25,7 @@ crons:
 ```
 
 {:.bs-callout-info}
-We use only one cron for {{site.data.var.ece}} projects because of the nature of read-only environments. This configuration is different from {{site.data.var.ee}}, which has three default cron jobs. See [Configure and run crons]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) in the {{site.data.var.ee}} documentation.
+We use only one cron for {{site.data.var.ece}} projects because of the nature of read-only environments. This configuration is different from {{site.data.var.ee}}, which has three default cron jobs. See [Configure and run crons]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html) in the {{site.data.var.ee}} documentation.
 
 {:.procedure}
 To verify cron configuration on Starter projects:
@@ -166,7 +166,7 @@ To add, remove, or update a custom cron job, change the configuration in the `cr
 
 Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you are having problems with cron processing, make sure that your project is using the most current version of the ece-tools package. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html).
 
-You can review cron processing information in the application-level log files for each environment. See [Application logs]({{site.baseurl}}/cloud/project/log-locations.html#application-logs).
+You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
 See the following Magento Support articles for help troubleshooting cron-related problems:
 

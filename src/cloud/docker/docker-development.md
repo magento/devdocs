@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package. See the instructions in [Launch Docker]({{site.baseurl}}/cloud/docker/docker-config.html).
+{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package. See the instructions in [Launch Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker) contains build information for the following Docker containers.
 
@@ -56,7 +56,7 @@ The configured state is not ideal
 
 ### Cron container
 
-The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons). To view the cron log:
+The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). To view the cron log:
 
 ```bash
 docker-compose run deploy bash -c "cat /app/var/cron.log"
@@ -104,7 +104,7 @@ Service | Image
 **Redis**         | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)
 
 {:.bs-callout-info}
-See the [service version values available]({{site.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
+See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-config.html) for use when launching Docker.
 
 ## Sharing data between host machine and container
 

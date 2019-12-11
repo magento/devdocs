@@ -80,7 +80,7 @@ To push code to your remote environment:
 
 ## Build phase {#build}
 
-During the [build phase]({{site.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
+During the [build phase]({{ site.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *  Apply patches distributed to all {{site.data.var.ece}} accounts
 *  Apply patches we provided specifically to you
@@ -163,7 +163,7 @@ To build your site:
    Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
    ```
 
-If you receive errors, debug them when possible and open a [support ticket]({{site.baseurl}}/cloud/trouble/trouble.html) for further assistance.
+If you receive errors, debug them when possible and open a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for further assistance.
 
 We strongly recommend you complete your testing in an Integration or Staging environment only, and _not_ in a Production environment.
 
@@ -174,7 +174,7 @@ We highly recommend having Magento already installed prior to deployment. During
 *  Install the Magento application if needed
 *  If the Magento application is installed, upgrade components
 *  Clear the [cache](https://glossary.magento.com/cache)
-*  Set the Magento application for [`production`]({{ site.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
+*  Set the Magento application for [`production`]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 {:.procedure}
 To deploy your site:
@@ -187,7 +187,7 @@ To deploy your site:
    php bin/magento setup:upgrade
    ```
 
-   We highly recommend having Magento already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ site.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+   We highly recommend having Magento already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 
 1. Clean the Magento cache:
 
@@ -195,13 +195,13 @@ To deploy your site:
    php bin/magento cache:clean
    ```
 
-1. Set the Magento application for [production mode]({{ site.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode):
+1. Set the Magento application for [production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode):
 
    ```bash
    php bin/magento deploy:mode:set production
    ```
 
-Debug errors by [reviewing logs]({{site.baseurl}}/cloud/project/log-locations.html). Open a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for additional assistance.
+Debug errors by [reviewing logs]({{ site.baseurl }}/cloud/project/log-locations.html). Open a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for additional assistance.
 
 {:.ref-header}
 Next step

@@ -65,7 +65,7 @@ If you receive a 503 error, check the Production or Staging environment error lo
 {:.procedure}
 To check the error logs:
 
--  [Error log]({{site.baseurl}}/cloud/project/log-locations.html#application-logs)
+-  [Error log]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs)
 
    ```text
    /var/log/platform/<project_ID>/error.log

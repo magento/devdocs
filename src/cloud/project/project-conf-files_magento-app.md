@@ -75,7 +75,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 ```
 
-See [Services]({{site.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 
@@ -267,7 +267,7 @@ You must compile Sass files using `grunt` before static content deployment, whic
 
 ### `crons`
 
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{site.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
@@ -451,7 +451,7 @@ For example, if you need to increase the PHP memory limit:
 memory_limit = 756M
 ```
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 

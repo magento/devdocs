@@ -33,7 +33,7 @@ The `mysql` service provides persistent data storage based on [MariaDB](https://
    git add -A && git commit -m "Enable mysql service" && git push   origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{site.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
 
 {:.bs-callout-tip}
 MySQL errors such as `PDO Exception: MySQL server has gone away` may be a result of exhausting existing disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.

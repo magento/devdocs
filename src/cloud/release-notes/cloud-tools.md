@@ -56,7 +56,7 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.new}**Environment variable updates**–
 
-   -  {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider which prevents the launch of duplicate cron jobs and cron groups. See the variable description in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#lock_provider) topic.
+   -  {:.new}<!-- MAGECLOUD-4052 -->Added the **LOCK_PROVIDER** deploy variable to configure the lock provider which prevents the launch of duplicate cron jobs and cron groups. See the variable description in the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#lock_provider) topic.
 
    -  {:.new}<!-- MAGECLOUD-4071 -->Added the **CONSUMERS_WAIT_FOR_MAX_MESSAGES** environment variable to configure how consumers process messages from the message queue when using the `CRON_CONSUMERS_RUNNER` environment variable to manage cron jobs. See the variable description in the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#consumers_wait_for_max_messages) topic.
 
@@ -84,13 +84,13 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.new}**Docker Updates**—
 
-   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{site.baseurl}}/cloud/docker/docker-development-testing.html).
+   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{ site.baseurl }}/cloud/docker/docker-development-testing.html).
 
-   -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
+   -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
-   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/docker` section of the Docker reference]({{site.baseurl}}/cloud/docker/docker-quick-reference.html#bindocker).
+   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#bindocker).
 
-   -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{site.baseurl}}/cloud/docker/docker-config.html#prerequisites).
+   -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-config.html#prerequisites).
 
    -  {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path when using the Docker environment. Now, when you use SSH to log in to the Docker container, you are at the Magento root in the `/app` directory, as expected.
 
@@ -105,15 +105,15 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.new}**Environment variable updates**—
 
-   -  {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{site.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
+   -  {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#database_configuration).
 
-   -  {:.new}<!-- MAGECLOUD-3602 -->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#force_update_urls) content.
+   -  {:.new}<!-- MAGECLOUD-3602 -->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#force_update_urls) content.
 
    -  {:.new}<!-- MAGECLOUD-3643 -->Added the **TTFB_TESTED_PAGES** post-deploy variable to configure _Time to First Byte_  page tests to check Magento Commerce application performance on sites deployed to Cloud infrastructure. See the variable description in [post-deploy variables]({{ site.baseurl }}/cloud/env/variables-post-deploy.html).
 
    -  {:.fix}<!-- MAGECLOUD-3611 -->Fixed an issue with multi-threaded SCD, which caused random failures in static content deployment. The workaround involved setting the **SCD_THREADS** variable to `1`. You can now increase the count as needed. See the definitions in the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
-   -  {:.fix}<!-- MAGECLOUD-3258 -->You can configure the **WARM_UP_PAGES** environment variable to cache single pages, multiple domains, and multiple pages. See the expanded definition in the [post-deploy variables]({{site.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) content.
+   -  {:.fix}<!-- MAGECLOUD-3258 -->You can configure the **WARM_UP_PAGES** environment variable to cache single pages, multiple domains, and multiple pages. See the expanded definition in the [post-deploy variables]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) content.
 
 -  {:.fix}<!-- MAGECLOUD-3545/Github#455 -->Added the `pub/static/.htaccess` file to the exclude list. [Fix submitted by Björn Kraus of PHOENIX MEDIA GmbH](https://github.com/magento/ece-tools/pull/455).
 
@@ -121,7 +121,7 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.fix}<!-- MAGECLOUD-3075 -->Fixed an issue that caused a deployment failure if the Magento base URL did not exist in the database.
 
--  {:.new}<!-- MAGECLOUD-3451 -->Added a new **`env:config:show` command** to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variables]({{site.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
+-  {:.new}<!-- MAGECLOUD-3451 -->Added a new **`env:config:show` command** to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variables]({{ site.baseurl }}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Feature submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
 -  {:.fix}<!-- MAGECLOUD-3665 -->Fixed an issue that caused a critical error when attempting to install Magento 2.2.6 or earlier with `{{site.data.var.ct}}` develop after shell refactoring.
 
@@ -139,17 +139,17 @@ The `{{ site.data.var.ct }}` 2002.0.22 release changes the structure of the `{{ 
 
 -  {:.new}**Docker Updates**—
 
-   -  {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
+   -  {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons).
 
-   -  {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{site.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
+   -  {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{ site.baseurl }}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
 
    -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
-   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
+   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{ site.baseurl }}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
 
-   -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{site.baseurl}}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
+   -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
-   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{site.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
+   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{ site.baseurl }}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
 
    -  {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 
@@ -192,7 +192,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3223 -->Redis 5.0
 
--  {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the **SCD_COMPRESSION_TIMEOUT** environment variable. See the definitions in the [build variables]({{site.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
+-  {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the **SCD_COMPRESSION_TIMEOUT** environment variable. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
 
 -  {:.fix}<!-- MAGECLOUD-3246 -->Added the `--use-rewrites` option to the Magento install command so that it uses web server rewrites for generated links in the storefront and Admin access to improve security and customer experience.
 
@@ -204,13 +204,13 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
-   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{site.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
+   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-development.html#sendmail-service).
 
-   -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
+   -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
    -  <!-- MAGECLOUD-2883 -->Fixed an issue with web service permissions when generating the `docker-compose.yml` file.
 
--  {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
+-  {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/cloud/project/project-upgrade.html).
 
 -  {:.new}<!-- MAGECLOUD-3104 -->The compression process in deploying static content now includes all assets—natively generated or customized—and occurs during the build phase at the beginning of the [`build:transfer` section]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks). Previously, the compression process occurred before applying custom minification and bundling of static assets. [Fix submitted by Rafael Garcia Lepper from Tryzens Limited](https://github.com/magento/ece-tools/pull/413).
 
@@ -218,7 +218,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.fix}<!-- MAGECLOUD-3003 -->Fixed a validation issue with the database configuration that caused the deploy process to fail.
 
--  {:.fix}<!-- MAGECLOUD-2956 -->Updated the constraint with the appropriate version of the `symfony/yaml` package to use with [PHP constants]({{site.baseurl}}/cloud/project/magento-env-yaml.html#php-constants). Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2. [Fix submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/404).
+-  {:.fix}<!-- MAGECLOUD-2956 -->Updated the constraint with the appropriate version of the `symfony/yaml` package to use with [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants). Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2. [Fix submitted by Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/404).
 
 -  {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
 
@@ -236,7 +236,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}**New environment variables**—
 
-   -  <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{site.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection.
+   -  <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection.
 
    -  <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global variable]({{ site.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
@@ -244,11 +244,11 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES]({{ site.baseurl }}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
 
-   -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{site.baseurl}}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
+   -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
 
-   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration. See the definitions in the [build variables]({{site.baseurl}}/cloud/env/variables-build.html#scd_exclude_themes) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_exclude_themes) content.
+   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_exclude_themes) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_exclude_themes) content.
 
-   -  <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{site.baseurl}}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
+   -  <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
 
    -  <!-- MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
 
@@ -260,11 +260,11 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}**Docker updates**—
 
-   -  <!-- MAGECLOUD-2888 -->Now the Docker generator uses the services specified in the `.magento.app.yaml` and `.magento/services.yaml` configuration files when [building your Docker environment]({{site.baseurl}}/cloud/docker/docker-config.html). You can choose a different service version using build parameters.
+   -  <!-- MAGECLOUD-2888 -->Now the Docker generator uses the services specified in the `.magento.app.yaml` and `.magento/services.yaml` configuration files when [building your Docker environment]({{ site.baseurl }}/cloud/docker/docker-config.html). You can choose a different service version using build parameters.
 
    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ site.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{site.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
    -  Added the following services to the Docker build:
 
@@ -274,11 +274,11 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
       -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{site.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{site.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
+   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
--  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{site.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
+-  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--  {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{site.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
+-  {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#enable_google_analytics).
 
 -  {:.fix}<!-- MAGECLOUD-2923 -->Fixed an issue that removed customized cron configurations from the `env.php` file after a redeployment. Now, custom cron configurations safely remain in the `env.php` file.
 
@@ -286,7 +286,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.fix}<!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when configured. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
 
--  {:.fix}<!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the [MAGENTO_CLOUD_RELATIONSHIP variable]({{site.baseurl}}/cloud/env/variables-cloud.html) even if you designated customized connection information in the [DATABASE_CONFIGURATION environment variable]({{site.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
+-  {:.fix}<!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the [MAGENTO_CLOUD_RELATIONSHIP variable]({{ site.baseurl }}/cloud/env/variables-cloud.html) even if you designated customized connection information in the [DATABASE_CONFIGURATION environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#database_configuration).
 
 -  {:.fix}<!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.php` file.
 
@@ -338,7 +338,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!--MAGECLOUD--2442-->**Redis service support**—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
 
-   -  <!--MAGECLOUD--2358-->**Varnish service support**— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ site.baseurl }}/config-guide/varnish/config-varnish.html).
+   -  <!--MAGECLOUD--2358-->**Varnish service support**— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html).
 
    -  <!--MAGECLOUD--2360-->Secure site access—Added SSL support to access your {{site.data.var.ee}} store and Admin panel.
 
@@ -370,7 +370,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.fix}**Logging**—Made the following changes to improve log messages and reduce log size:
 
-   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{site.baseurl}}/cloud/env/variables-global.html#min_logging_level).
+   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level).
 
    -  <!--MAGECLOUD-2209-->Added logging for deployment failures that occur when generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
 
@@ -386,7 +386,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!--MAGECLOUD-2464-->Fixed an issue with the locking mechanism for scheduling consumers launched by cron jobs in {{site.data.var.ee}} versions 2.2.0 and later to prevent cron jobs from launching duplicate consumers.
 
--  {:.fix}<!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html) (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
+-  {:.fix}<!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}/cloud/env/variables-intro.html) (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
 
 -  {:.fix}<!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `{{site.data.var.ct}}` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ site.baseurl }}/cloud/live/sens-data-over.html).
 
@@ -400,11 +400,11 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
 -  {:.new}<!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ site.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
--  {:.new}<!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{site.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
+-  {:.new}<!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
 -  {:.new}<!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [workflow]({{ site.baseurl }}/cloud/trouble/robots-sitemap.html)to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
--  {:.new}<!-- MAGECLOUD-1910 -->**Wizards**—Added two [wizards]({{ site.baseurl }}/cloud/env/smart-wizards.html) to help you with Cloud configuration:
+-  {:.new}<!-- MAGECLOUD-1910 -->**Wizards**—Added two [wizards]({{ site.baseurl }}/cloud/deploy/smart-wizards.html) to help you with Cloud configuration:
    -  `ideal-state`—configure the ideal state for minimal deployment downtime
    -  `master-slave`—configure load balancing for database and Redis
 
@@ -439,7 +439,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 -  {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ site.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ site.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).
 
--  {:.new}<!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a wizard to help verify your configuration for static content deployment. See [Smart wizards]({{ site.baseurl }}/cloud/env/smart-wizards.html).
+-  {:.new}<!--MAGECLOUD-1910 -->**Configuration Wizard**—Added a wizard to help verify your configuration for static content deployment. See [Smart wizards]({{ site.baseurl }}/cloud/deploy/smart-wizards.html).
 
 -  {:.new}<!-- MAGECLOUD-1966 -->**Symfony Console support**—Added support for Symfony Console 4 with Magento 2.3.
 
@@ -482,7 +482,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 -  {:.new}<!-- MAGECLOUD-1751 -->**Deployment Logging**—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process. See [Logging handlers]({{ site.baseurl }}/cloud/env/log-handlers.html).
 
--  {:.new}Added the following [**Environment variables**]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html):
+-  {:.new}Added the following [**Environment variables**]({{ site.baseurl }}/cloud/env/variables-intro.html):
 
    -  <!-- MAGECLOUD-1556 -->`CRYPT_KEY`—Provide a cryptographic key to another environment when moving a database.
 
@@ -490,7 +490,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
    -  <!-- MAGECLOUD-1738 -->`SCD_ON_DEMAND`—_Global_ environment variable to generate static content when requested.
 
-   -  `WARM_UP_PAGES`—You can list the pages to use to pre-load the cache. Available in the new [Post-deploy variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-post-deploy.html).
+   -  `WARM_UP_PAGES`—You can list the pages to use to pre-load the cache. Available in the new [Post-deploy variables]({{ site.baseurl }}/cloud/env/variables-post-deploy.html).
 
 -  {:.fix}<!-- MAGECLOUD-982 -->Fixed an issue that involved a locally applied patch breaking the deployment on an instance. Now, ece-tools can detect that a patch has been applied.
 
@@ -505,17 +505,17 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 ## v2002.0.9
 
 {.bs-callout-info}
-You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade-parent.html) to get this and all future updates.
+You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) to get this and all future updates.
 
 -  {:.new}<!-- MAGECLOUD-1086 -->**ece-tools**—The `{{site.data.var.ct}}` package now supports Magento 2.1.x.
 
--  {:.new}<!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html#cache_configuration) page and default cache and Redis session storage using an environment variable.
+-  {:.new}<!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/cloud/env/variables-deploy.html#cache_configuration) page and default cache and Redis session storage using an environment variable.
 
 -  {:.new}<!-- MAGECLOUD-1437 -->**Search, AMQP, and Redis service improvements**—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the `env.php` file to configure services is no longer supported. You must use environment variables or the `.magento.env.yaml` file instead.
 
 -  {:.fix}**Environment variables**—
 
-   -  <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{site.baseurl}}/cloud/env/variables-deploy.html#scd_threads) instead.
+   -  <!-- MAGECLOUD-1507 -->The use of `env:STATIC_CONTENT_THREADS` was deprecated and will be removed in a future release. Use the [SCD_THREADS]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_threads) instead.
 
    -  <!-- MAGECLOUD-1640 -->The `STATIC_CONTENT_EXCLUDE_THEMES` environment variable was deprecated. You must use the `SCD_EXCLUDE_THEMES` environment variable instead.
 
@@ -531,4 +531,4 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 
 ## Older releases
 
-See the [release notes archive]({{site.baseurl}}/cloud/release-notes/cloud-release-archive.html) for version 2002.0.8 and earlier.
+See the [release notes archive]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html) for version 2002.0.8 and earlier.

@@ -48,7 +48,7 @@ To enable Elasticsearch:
 
    For information on how these changes affect your environments, see [Services]({{   site.baseurl }}/cloud/project/project-conf-files_services.html).
 
-1. [Verify the service relationships]({{site.baseurl}}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
 1. Reindex the Catalog Search index.
 
@@ -161,7 +161,7 @@ To check Elasticsearch software compatibility:
 
    -  Change the Elasticsearch service version in the `services.yaml` file to a version that is compatible with the Elasticsearch PHP client. On Pro Staging and Production environments, you must submit a support ticket to change the Elasticsearch service version.
 
-   -  [Change the Elasticsearch PHP client]({{ site.baseurl }}/config-guide/elasticsearch/es-downgrade.html) to a version that is compatible with the Elasticsearch service version.
+   -  [Change the Elasticsearch PHP client]({{ site.baseurl }}/guides/v2.3/config-guide/elasticsearch/es-downgrade.html) to a version that is compatible with the Elasticsearch service version.
 
 ## Restart the Elasticsearch service
 
@@ -189,4 +189,4 @@ elasticsearch:
             - lang-python
 ```
 
-If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{site.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.

@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Cloud variables
-redirect_from:
-  - /guides/v2.2/cloud/env/environment-vars_cloud.html
-  - /guides/v2.3/cloud/env/environment-vars_cloud.html
 functional_areas:
   - Cloud
   - Configuration
@@ -45,7 +42,7 @@ Since values can change over time, it is best to inspect the variable at runtime
 
 ## Viewing environment variables
 
-You can use the `env:config:show` command from [the `{{site.data.var.ct}}` package]({{site.baseurl}}/cloud/reference/ece-tools-reference.html) to show a list of variables for the current environment.
+You can use the `env:config:show` command from [the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/reference/ece-tools-reference.html) to show a list of variables for the current environment.
 
 ```bash
 php ./vendor/bin/ece-tools env:config:show variables

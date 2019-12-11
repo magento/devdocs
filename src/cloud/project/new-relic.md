@@ -100,7 +100,7 @@ To add a license key to an environment:
    ```
 
    {:.bs-callout-info}
-   Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{site.baseurl}}/cloud/env/working-with-variables.html).
+   Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{ site.baseurl }}/cloud/env/working-with-variables.html).
 
 1. [Log in to New Relic](https://login.newrelic.com/login) to verify that it is receiving data.
 
@@ -134,7 +134,7 @@ To remove a license key from an environment:
    ```
 
    {:.bs-callout-info}
-   Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{site.baseurl}}/cloud/env/working-with-variables.html).
+   Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{ site.baseurl }}/cloud/env/working-with-variables.html).
 
 ## Investigate performance
 

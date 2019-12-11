@@ -7,7 +7,7 @@ functional_areas:
   - Services
 ---
 
-If you have site availability issues, the first thing you should do is review your [deployment logs]({{site.baseurl}}/cloud/project/log-locations.html) to see if you can identify the problem.
+If you have site availability issues, the first thing you should do is review your [deployment logs]({{ site.baseurl }}/cloud/project/log-locations.html) to see if you can identify the problem.
 
 You may be able to resolve your issue by searching your logs for one of the examples in this topic and trying the associated solution.
 

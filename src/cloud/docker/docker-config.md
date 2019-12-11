@@ -88,7 +88,7 @@ For example, the following command starts the Docker configuration generator for
    sudo apachectl stop
    ```
 
-1. Optionally, [enable Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html#enable-xdebug).
+1. Optionally, [enable Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#enable-xdebug).
 
 ## Launch the Docker environment
 

@@ -157,7 +157,7 @@ To migrate static files from remote-to-remote environments directly (fast approa
 {:.bs-callout-info}
 To transfer media from remote-to-remote environments directly, you must enable ssh agent forwarding, see [GitHub guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/).
 
-1. [Open an SSH connection]({{site.baseurl}}/cloud/env/environments-ssh.html#ssh) to the source environment.
+1. [Open an SSH connection]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
    To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**:
 
