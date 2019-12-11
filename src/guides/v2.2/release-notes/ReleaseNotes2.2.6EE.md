@@ -1282,7 +1282,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-69847  -->
 
-*  Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. See "Redis and static-content deployment" in [Redis troubleshooting]({{ site.baseurl }}/cloud/trouble/redis-troubleshooting.html) for more information. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
+*  Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
 
 <!-- MAGETWO-84109  -->
 
