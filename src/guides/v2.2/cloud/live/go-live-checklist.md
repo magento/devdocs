@@ -24,7 +24,7 @@ We recommend a significantly lower TTL value when switching the DNS record. This
 
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp) (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
@@ -86,6 +86,10 @@ You can also test using the following 3rd party options:
 -  [Secure configuration for Base Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ page.baseurl}}/cloud/project/user-admin.html)
 -  [Configure two-factor authentication]({{ page.baseurl }}/security/two-factor-authentication.html)
+
+## Performance monitoring
+
+You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
 
 ## Performance monitoring
 

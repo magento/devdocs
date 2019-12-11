@@ -81,3 +81,11 @@ task index: %w[init] do
         'algolia',
           '--config=_config.yml,_config.index.yml'
 end
+
+desc 'Convert HTML text to kramdown in your terminal'
+task :convert do
+  puts 'Paste HTML text followed by a new line and press Control-D.'.magenta
+  result = `bin/kramdown --input=html --output=kramdown`
+  puts 'Converted text:'.magenta
+  puts result.bold
+end

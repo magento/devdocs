@@ -27,7 +27,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 mutation {
   placeOrder(input: {cart_id: "{ CART_ID }"}) {
     order {
-      order_id
+      order_number
     }
   }
 }
@@ -40,7 +40,7 @@ mutation {
   "data": {
     "placeOrder": {
       "order": {
-        "order_id": "000000001"
+        "order_number": "000000001"
       }
     }
   }

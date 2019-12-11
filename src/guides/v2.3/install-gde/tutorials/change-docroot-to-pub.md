@@ -16,7 +16,7 @@ Setting the webroot to the `pub/` directory prevents site visitors from accessin
 
 This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
 
 ## A note about nginx
@@ -51,7 +51,7 @@ To complete this tutorial, you will need access to a working Magento installatio
 -  PHP (7.1.3+ or 7.2)
 -  Magento (2.0+)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.
 
 ## 1. Edit your server configuration
@@ -92,7 +92,7 @@ The name and location of your virtual host file depends on which version of Apac
 
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Replace `192.168.33.10` with your server's hostname.
 
 1. Log in to the Magento database:
@@ -150,7 +150,7 @@ Go to the [storefront](https://glossary.magento.com/storefront) in a web browser
 
    The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-   ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:.width="450px"}
+   ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:width="450px"}
 
    Refer to the [troubleshooting section]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 

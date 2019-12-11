@@ -4,8 +4,42 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Nov 19 11:49:12 2019
+updated: Tue Dec 3 09:59:53 2019
 entries:
+- description: Added the [Security configuration](https://devdocs.magento.com/guides/v2.3/cloud/live/go-live-checklist.html#security-configuration)
+    section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
+    current Go live checklist document attachment with the most recent version, which
+    is more comprehensive and up-to-date.
+  versions: 2.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6083
+- description: Added the following sections to the _Cloud Guide_ with information
+    about using Adobe-generated alert policies for New Relic:<br/>- [New Relic > Monitor performance
+    with New Relic alert policies](https://devdocs.magento.com/guides/v2.3/cloud/project/new-relic.html#monitor-performance-with-alert-policies)
+    section to the _Cloud Guide_.<br/>- [Monitor performance](https://devdocs.magento.com/guides/v2.3/cloud/project/monitor-performance.html)
+  versions: 2.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6075
+- description: Added the "Configure variables in view.xml" section to the [Configure images
+    properties for a theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-images.html) topic in the _Frontend Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6080
+- description: Added the [Caching with Fastly](https://devdocs.magento.com/guides/v2.3/graphql/caching.html)
+    section to the "GraphQL Caching" topic in the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: November 21, 2019
+  link: https://github.com/magento/devdocs/pull/6031
+- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
+    for the Google Shopping ads Channel v3.0.2 release.
+  versions: 3.0.2 Google Shopping ads
+  type: Major update
+  date: November 19, 2019
+  link: https://github.com/magento/devdocs/pull/6027
 - description: Added the [Search for products with the /search endpoint](https://devdocs.magento.com/guides/v2.2/rest/search-endpoint.html)
     topic to the _REST API Reference_.
   versions: 2.2.x, 2.3.x
@@ -3414,7 +3448,7 @@ entries:
 - description: Revised and added new content for Magento Commerce (Cloud) for custom
     Fastly VCLs including [Custom Fastly VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
     [Custom whitelist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-whitelist.html),
-    [Custom blacklist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html),
+    [Custom VCL for blocking](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blocking.html),
     [Custom extend Admin timeout VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
     [Custom redirect to Wordpress VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
     and Custom block bad referrer VCL.

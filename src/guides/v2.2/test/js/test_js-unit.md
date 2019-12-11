@@ -6,7 +6,7 @@ functional_areas:
   - test
 ---
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 JsTestDriver was removed in Magento 2.2.4.
 It is recommended that [Jasmine][] be used instead.
 

@@ -24,7 +24,6 @@ The **10-step tutorial** generally takes **30 minutes**.
 The checkout process in GraphQl consists of 10 steps. Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQL does not perform backend tasks, such as manage invoices or shipments.
 
 ### Before you begin
-{:.tutorial-before}
 
 Complete the following prerequisites:
 

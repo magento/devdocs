@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You must install and configure [RabbitMQ](http://rabbitmq.com) _after_ installing {{site.data.var.ce}} or _before_ installing {{site.data.var.ee}}.
 
 ## RabbitMQ Overview {#overview}

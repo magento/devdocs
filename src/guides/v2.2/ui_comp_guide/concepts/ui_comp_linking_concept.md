@@ -52,7 +52,7 @@ Example of setting `exports` directly using the destination component name:
 
 The syntax for the destination component name is determined by the hierarchy in the XML handle. Separate parent names with a `.` (dot) followed by the component name.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To retrieve the full name of the destination component name, open your browser in developer mode, select the element that you want on the **Elements** tab, go to the **Console** tab, and execute the following code: `require('ko').contextFor($0).$data.name`.
 
 Example of setting `exports` in a component's configuration `.xml` file:
@@ -101,7 +101,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 105]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L105)
 
 ## `links` property
 

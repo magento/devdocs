@@ -11,7 +11,8 @@ The definitions for some queries include cache tags. Full page caching uses thes
 
 Magento caches the following queries:
 
-*  `category`
+*  `category` (deprecated)
+*  `categoryList`
 *  `cmsBlocks`
 *  `cmsPage`
 *  `products`
@@ -84,7 +85,7 @@ sub process_graphql_headers {
 
 To cache GraphQL query results on {{ site.data.var.ece }}, the Cloud project must be running Fastly CDN module for Magento 2 version 1.2.118 or later.
 
-{:procedure}
+{:.procedure}
 To enable GraphQL caching on Fastly:
 
 1. Upgrade the Fastly CDN Module for Magento 2.x to version 1.2.118 or later.

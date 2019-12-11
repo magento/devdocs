@@ -20,7 +20,7 @@ Each of the smart wizard commands provides a verification response and, if appli
 
 Command | Description
 ------- | -----------
-`wizard:ideal-state` | Check that SCD is on the _build_ stage, the `SKIP_HTML_MINIFICATION` variable is `true`, and the post_deploy hook configured.
+`wizard:ideal-state` | Check that SCD is on the _build_ stage, the `SKIP_HTML_MINIFICATION` variable is `true`, and the post_deploy hook configured in the Cloud environment. Not for use in the local development environment.
 `wizard:master-slave` | Check that the `REDIS_USE_SLAVE_CONNECTION` variable and the `MYSQL_USE_SLAVE_CONNECTION` variable is `true`.
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
 `wizard:scd-on-build` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
@@ -37,14 +37,14 @@ A successful configuration returns:
 ```terminal
 SCD on-demand is enabled
 ```
-{: .no-copy}
+{:.no-copy}
 
 A failed configuration returns:
 
 ```terminal
 SCD on-demand is disabled
 ```
-{: .no-copy}
+{:.no-copy}
 
 ## Verifying an ideal configuration
 
@@ -57,7 +57,7 @@ The _ideal_ configuration for your Cloud project helps to minimize deployment do
 
 Ideal state is not configured
 ```
-{: .no-copy}
+{:.no-copy}
 
 Based on the output, you need to make the following corrections to your configuration:
 
@@ -85,4 +85,4 @@ Based on the output, you need to make the following corrections to your configur
    ```terminal
    Ideal state is configured
    ```
-   {: .no-copy}
+   {:.no-copy}

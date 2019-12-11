@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 You must always set the billing address to place an order.
 
 Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/mutations/set-billing-address.html) mutation to set a billing address. You can set the billing address in the following ways:
@@ -103,7 +103,7 @@ mutation {
 
 ## Add a new address for billing and shipping
 
-The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used for billing and shipping.
+The following mutation includes the `same_as_shipping` attribute, which allows the same address to be used for billing and shipping.
 
 **Request:**
 
@@ -125,7 +125,7 @@ mutation {
             telephone: "123-456-0000"
             save_in_address_book: false
           }
-          use_for_shipping: true
+          same_as_shipping: true
       }
     }
   ) {

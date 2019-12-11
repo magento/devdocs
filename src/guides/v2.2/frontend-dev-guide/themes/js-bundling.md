@@ -10,7 +10,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 ## Enable JavaScript bundling
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 JavaScript bundling does not work unless Magento is in [production mode][production-mode]. Once in production mode, JavaScript bundling can only be enabled using the CLI. Follow these steps to setup JavaScript bundling from the CLI.
 
 1. From the Magento root directory, switch to production mode:

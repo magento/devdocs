@@ -83,5 +83,5 @@ To verify these settings are not editable in the Magento Admin:
 
    ![Configuration options not editable in the Admin]({{ site.baseurl }}/common/images/config_split-deploy_not-editable.png){:width="650px"}
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 To change a setting that is locked in the Admin, use the [`magento config:set --lock` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).

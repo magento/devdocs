@@ -20,14 +20,14 @@ Before you can use this command, you must do all of the following:
 -  [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 -  Create the Magento [database schema](https://glossary.magento.com/database-schema)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The simplest way to create the database is to use the command `magento setup:upgrade`.
 
 ## Create or edit an administrator
 
 Use this command to create a new administrator or to edit an existing administrator.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 If you're editing an administrator, only the `first name`, `last name`, and `password` can be edited.
 
 Command usage:

@@ -21,7 +21,7 @@ For less technical users, i.e. business users, we recommend using the [System Up
 *  You installed Magento using [Composer][8] or a [compressed archive][7].
 *  You are directly applying updates to the server.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 This guide does not apply if you used `git clone` to install Magento.
 Contributing developers should use [this guide][6] to update their Magento installation.
 

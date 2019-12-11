@@ -25,7 +25,7 @@ The quoting process itself can be a continuous process, with a number of repeati
 *  The buyer reviews the seller's counteroffer
 *  Upon agreement, the buyer begins the checkout process and the system converts the negotiable quote into an order
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You cannot negotiate prices on individual items.
 
 ## Quote statuses

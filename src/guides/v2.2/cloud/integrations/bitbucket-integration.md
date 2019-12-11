@@ -64,7 +64,7 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
    origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
    origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 1. Push the project files to your new Bitbucket repository. Remember to keep all branch names the same.
 
@@ -89,7 +89,7 @@ To create an OAuth consumer in Bitbucket:
 
 1. Click **Add consumer** and configure it as follows:
 
-   ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png){: width="700px"}
+   ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png){:width="700px"}
 
    {:.bs-callout-warning}
    A valid **Callback URL** is not required, but you must enter a value in this field to successfully complete the integration.
@@ -152,7 +152,7 @@ To create an OAuth consumer in Bitbucket:
    |          |           | https://magento-url.cloud/api/projects/<project-id>/integrations/<int-id>/hook |
    +----------+-----------+--------------------------------------------------------------------------------+
    ```
-   {: .no-copy}
+   {:.no-copy}
 
    Make a note of the **Hook URL** to configure a webhook in BitBucket.
 
@@ -215,7 +215,7 @@ To activate a branch created with Bitbucket:
    Parent environment [master]: integration
    --- (Validation and activation messages)
    ```
-   {: .no-copy}
+   {:.no-copy}
 
 1. Verify the environment is active.
 
