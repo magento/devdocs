@@ -10,7 +10,7 @@ The File Uploader component is an [adapter](https://glossary.magento.com/adapter
 | Title | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | `allowedExtensions` | List of allowed file extensions. For example, `'jpg jpeg gif png svg'`. If set to "false" - then no extension is allowed, "true" - any extension is allowed. | Boolean/String | `false` |
-| `component` | The path to the component’s JS constructor in terms of RequireJS. | String | ``Magento_Ui/js/form/element/file-uploader` |
+| `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `'Magento_Ui/js/form/element/file-uploader'` |
 | `dropZone` | CSS selector of a drop zone element. | String | `[data-role=drop-zone]` |
 | `isMultipleFiles` | Defines whether multiple files can be uploaded. | Boolean | `false` |
 | `maxFileSize` | Defines the maximum allowed file size in bytes. | Boolean/Number | `false` |
