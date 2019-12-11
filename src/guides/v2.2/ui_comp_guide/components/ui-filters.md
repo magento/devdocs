@@ -9,58 +9,67 @@ See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-libr
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>chipsConfig</code></td>
-    <td>Configuration passed to the <code>FiltersChips</code> component.</td>
-    <td>Object</td>
-    <td>Configuration that is passed to the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>.</td>
-  </tr>
-  <tr>
-    <td><code>statefull</code></td>
-    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br />[name: string]: boolean<br />}</td>
-    <td />
-  </tr>
-  <tr>
-    <td><code>stickyTmpl</code></td>
-    <td>Additional <code>.html</code> template that displays filters when the Toolbar component gets a fixed position.</td>
-    <td>String</td>
-    <td><code>ui/grid/sticky/filters</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/filters/filters</code></td>
-  </tr>
-  <tr>
-    <td><code>templates.filters</code></td>
-    <td>Describes basic filter types. This definitions are used to dynamically create filter elements based on the <code>filter</code> field specified in the corresponding column. For example, if a column's <code>filter</code> property contains the <code>text</code> value, then a <code>Filter</code> component instance with a definition for the <code>text</code> type will be created.</td>
-    <td>Object</td>
-    <td>Contains definitions of the <code>text</code>, <code>select</code>,<code>dateRange</code> and <code>textRange</code> filter types.</td>
-  </tr>
-</table>
-
-## Examples
-
-### Add a new filterable customer attribute
-
-To add a new customer attribute to the customer grid and make it filterable, you need to follow these steps:
-
-1. Create view/adminhtml/ui_component/customer_listing.xml to add a column component
-1. Create the column component [PHP](https://glossary.magento.com/php) class which extends Magento\Ui\Component\Listing\Columns\Column
-1. Create etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
-1. Set is_used_in_grid to true for the attribute
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `''` |
+| `chipsConfig` | Configuration passed to the [`FiltersChips`]({{ page.baseurl }}/ui_comp_guide/components/ui-filterschips.html) component. | Object | `{ name: '${ $.name }_chips', provider: '${ $.chipsConfig.name }', component: 'Magento_Ui/js/grid/filters/chips'}` |
+| `statefull` |Defines a list of component properties whose values are automatically saved in the configured storage if they change. `key` is the property's name and the `value` defines whether its saved.  | Object | `{applied: true}` |
+| `stickyTmpl` | Additional `.html` template that displays filters when the Toolbar component gets a fixed position. | String | `ui/grid/sticky/filters` |
+| `template` | Path to the component’s `.html` template. | String | `ui/grid/filters/filters` |
+| `templates.filters` |Describes basic filter types. This definitions are used to dynamically create filter elements based on the `filter` field specified in the corresponding column. For example, if a column's `filter` property contains the `text` value, then a `Filter` component instance with a definition for the `text` type will be created.  | Object | Contains definitions of the `text`, `select`,`dateRange` and `textRange` filter types. |
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
 -  [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/filters/filters.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/filters/filters.html)
+
+## Examples
+
+### Add a new filterable customer attribute
+
+To add a new customer attribute to the customer grid and make it filterable, follow these steps:
+
+1. Create `view/adminhtml/ui_component/customer_listing.xml` to add a column component.
+1. Create the column component [PHP](https://glossary.magento.com/php) class which extends `Magento\Ui\Component\Listing\Columns\Column`.
+1. Create `etc/indexer.xml` to add the attribute to the `customer_grid` index and define it as filterable.
+1. Set `is_used_in_grid` to `true` for the attribute.
+
+### Integrate the Filters component with the Listing component
+
+This example integrates the Filters component with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
+```xml
+<listing>
+    ...
+    <listingToolbar>
+        <!-- integrates the Filters component -->
+        <filters name="listing_filters" />
+    </listingToolbar>
+    <!-- add columns -->
+    <columns name="columns_example">
+        <column name="column1" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <dataType>text</dataType>
+                <label translate="true">Column 1</label>
+                <default>1</default>
+            </settings>
+        </column>
+        <column name="column2" sortOrder="13">
+            <settings>
+                <filter>text</filter>
+                <dataType>text</dataType>
+                <label translate="true">Column 2</label>
+                <default>2</default>
+            </settings>
+        </column>
+    </columns>
+</listing>
+```
+
+#### Result
+
+![Filters Component example]({{ site.baseurl }}/common/images/ui_comps/ui-filters-result.png)
