@@ -9,56 +9,16 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
-  </tr>
-  <tr>
-    <td><code>bodyTmpl</code></td>
-    <td>Path to the template that is used to render a column's field in the table's body.</td>
-    <td>String</td>
-    <td><code>ui/grid/cells/multiselect</code></td>
-  </tr>
-  <tr>
-    <td><code>controlVisibility</code></td>
-    <td>Whether a user can control column's visibility handled by the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>.</td>
-    <td>String</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>draggable</code></td>
-    <td>Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>fieldClass</code></td>
-    <td>Additional CSS classes added to the column's field elements.</td>
-    <td>{<br />[name: string]: boolean<br />}</td>
-    <td>{<br /><code>'data-grid-checkbox-cell': true</code><br />}</td>
-  </tr>
-  <tr>
-    <td><code>headerTmpl</code></td>
-    <td>Path to the <code>.html</code> template for the column's header.</td>
-    <td>String</td>
-    <td><code>ui/grid/columns/multiselect</code></td>
-  </tr>
-  <tr>
-    <td><code>preserveSelectionsOnFilter</code></td>
-    <td>Whether to preserve selected items when a new filter value is applied.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>sortable</code></td>
-    <td>Whether a column's fields can be used to sort records in the table.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default Value |
+| --- | --- | --- | --- |
+| `bodyTmpl` | Path to the template that is used to render a column's field in the table's body. | String | `ui/grid/cells/multiselect` |
+| `controlVisibility` | Whether a user can control column's visibility handled by the [ColumnsControls component]({{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html). | String | `false` |
+| `draggable` | Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table. | Boolean | `false` |
+| `fieldClass` | Additional CSS classes added to the column's field elements. | {<br />[name: string]: boolean<br />} | `{'data-grid-checkbox-cell': true}` |
+| `headerTmpl` | Path to the `.html` template for the column's header. | String | `ui/grid/columns/multiselect` |
+| `indexField` | The name of the field that should be associated with the unique value of the listing row. The name of a ID field is commonly used for this option. | String | `-` |
+| `preserveSelectionsOnFilter` | Whether to preserve selected items when a new filter value is applied. | Boolean | `false` |
+| `sortable` | Whether a column's fields can be used to sort records in the table. | Boolean | `false` |
 
 ## Examples
 
@@ -140,6 +100,26 @@ Instance Replacement: One Instance of a Component
     </argument>
 </column>
 ```
+
+### Integrate the MultiselectColumn component with the Listing component
+
+This example integrates the MultiselectColumn component with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
+
+```xml
+<listing>
+    <columns>
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>id</indexField>
+            </settings>
+        </selectionsColumn>
+    </columns>
+</listing>
+```
+
+#### Result
+
+![MultiselectColumn Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-multiselectcolumn-result.png)
 
 ## Source files
 
