@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{site.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
@@ -88,7 +88,7 @@ To update the `.magento.app.yaml` file:
 
 ## Upgrading the Magento application
 
-Review the [Magento technology stack requirements]({{site.baseurl}}/install-gde/system-requirements-tech.html) before upgrading your Magento application.
+Review the [Magento technology stack requirements]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html) before upgrading your Magento application.
 
 ### Back up the database
 

@@ -27,7 +27,7 @@ https://store.com/second/
 {:.no-copy}
 
 {:.bs-callout-tip}
-To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
+To add a store view to the site base URL, you do not have to create multiple directories. See [Add the store code to the base URL]({{site.baseurl}}/guides/v2.3/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl).
 
 ## Configure local installation
 

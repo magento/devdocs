@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Fastly
-redirect_from:
-   - /guides/v2.2/cloud/basic-information/cloud-fastly.html
-   - /guides/v2.3/cloud/basic-information/cloud-fastly.html
 functional_areas:
   - Cloud
   - Setup

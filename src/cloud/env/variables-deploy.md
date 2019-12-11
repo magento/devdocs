@@ -72,7 +72,7 @@ stage:
 ```
 
 Failure to clean static view files before deploying can cause problems if you
-deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ site.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
+deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRON_CONSUMERS_RUNNER`
 
@@ -288,7 +288,7 @@ stage:
     LOCK_PROVIDER: "db"
 ```
 
-See [Configure the lock]({{site.baseurl}}/install-gde/install/cli/install-cli-subcommands-lock.html) in the _Install guide_.
+See [Configure the lock]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-lock.html) in the _Install guide_.
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 

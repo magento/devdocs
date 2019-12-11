@@ -143,5 +143,5 @@ Because each service runs in a separate container, the service logs are not avai
 -  **RabbitMQ log**: `/var/log/rabbitmq/rabbit@host1.log`
 
 [hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
-[configlog]: {{site.baseurl}}/config-guide/cli/logging.html
+[configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html

@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Import Magento Commerce code into a Cloud project
-redirect_from:
-  - /guides/v2.2/cloud/access-acct/first-time-setup_import-import.html
-  - /guides/v2.3/cloud/access-acct/first-time-setup_import-import.html
 functional_areas:
   - Cloud
   - Setup

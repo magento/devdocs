@@ -94,7 +94,7 @@ For example, the following command starts the Docker configuration generator for
 
 1. Download a Magento application template from the [Magento Cloud repository](https://github.com/magento/magento-cloud). Be careful to select the branch that corresponds with the Magento version.
 
-1. Add your [Magento access credentials]({{site.baseurl}}/install-gde/prereq/connect-auth.html) to the `auth.json` file.
+1. Add your [Magento access credentials]({{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html) to the `auth.json` file.
 
 1. Install the template dependencies.
 

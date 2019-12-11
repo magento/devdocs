@@ -173,7 +173,7 @@ By default, Fastly hides all Magento errors behind the _503 Service Unavailable_
 
 1. Use the Magento error code to find the details in the error report file:
 
-   -  [Connect to the affected environment using SSH](https://devdocs.magento.com/guides/v2.3/cloud/env/environments-ssh.html#ssh).
+   -  [Connect to the affected environment using SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
    -  Locate the `./var/report/{error_number}` file.
 

@@ -184,7 +184,7 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 -  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html).
+For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 
