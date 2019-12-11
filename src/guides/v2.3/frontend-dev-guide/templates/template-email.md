@@ -400,7 +400,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 ## Supported email clients and devices {#supported-clients}
 
 We test responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly.
-We strive to support all current, modern e-mail clients. Let us know about any client-specific issues you might have. 
+We strive to support all current, modern e-mail clients. Let us know about any client-specific issues you might have.
 
 ## Newsletter templates {#newsletter-templates}
 
