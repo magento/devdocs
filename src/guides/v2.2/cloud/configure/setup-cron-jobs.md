@@ -169,7 +169,7 @@ In some cases you might want to manually disable cron jobs before you complete m
 {:.procedure}
 To disable cron jobs:
 
-1. [SSH to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1. Use [SSH to log in to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
 1. Disable cron jobs and stop active cron processes.
 
