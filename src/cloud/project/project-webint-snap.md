@@ -116,7 +116,7 @@ To restore a snapshot using the Magento CLI:
 
 ## Dump your database {#db-dump}
 
-You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
+You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools).
 
 {:.procedure}
 To create a database dump:

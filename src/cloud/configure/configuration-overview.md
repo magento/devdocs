@@ -20,7 +20,7 @@ The following options, tools, and features can be set up and configured in your 
 
 *  [Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) for caching and CDN in Staging and Production environments
 *  [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
-*  [Magento B2B module]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-b2b.html) for Business to Business features, Pro plan only
+*  [Magento B2B module]({{ site.baseurl }}/cloud/configure/setup-b2b.html) for Business to Business features, Pro plan only
 *  [cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 *  [Multiple websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 *  [Install, manage, and upgrade modules]({{ site.baseurl }}/cloud/howtos/install-components.html)
@@ -41,9 +41,9 @@ We also provide integrations with:
 
 *  [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) configuration for tracking and investigating issues for bottleneck issues in processes, method calls, queries, loads, and so on
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis
-*  [Fastly]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html) configuration for CDN and caching
+*  [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) configuration for CDN and caching
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) for managing your Git branches and code
 
 ## Configuration management {#config-mgmt}
 
-We strongly recommend configuring settings, services, and integrations then using specific commands to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
+We strongly recommend configuring settings, services, and integrations then using specific commands to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html).

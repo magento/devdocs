@@ -45,7 +45,7 @@ If you already know the extension's Composer name and version, skip this step an
 
 ### Step 2: Update Magento's `composer.json` {#update}
 
-When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ site.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
 
 To update `composer.json`:
 
@@ -112,7 +112,7 @@ To manage your extensions, you can enable and disable or change settings per env
 
 ### Enable and disable extensions {#enable-disable}
 
-To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
+To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
 
 Trying to enable and disable extensions not following this method can lead to permissions and other issues.
 
@@ -147,7 +147,7 @@ Trying to enable and disable extensions not following this method can lead to pe
 
 ### Modify configurations {#configure}
 
-You update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
+You update configurations according to [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
 
 ## Upgrade an extension
 

@@ -23,6 +23,6 @@ Some restrictions in the core {{site.data.var.ee}} code base prevent you from up
 | 2.2.x | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.8]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) and later. |
 
  {:.bs-callout-info}
-We combined the upgrade metapackages for tools and patches with the release of [{{site.data.var.ct}} version 2002.0.8]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-release-archive.html#v200208) to simplify the process for future updates.
+We combined the upgrade metapackages for tools and patches with the release of [{{site.data.var.ct}} version 2002.0.8]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) to simplify the process for future updates.
 
 {% include cloud/note-ece-tools-package.md %}

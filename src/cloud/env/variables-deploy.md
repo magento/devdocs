@@ -58,7 +58,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Enables or disables cleaning [static content files]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
+Enables or disables cleaning [static content files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
 
 -  **`true`**—Removes all existing static content before deploying the updated static content.
 -  **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
@@ -96,7 +96,7 @@ stage:
         - consumer2
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 The following command returns a list of message queue consumers:
 
@@ -139,7 +139,7 @@ When you move the database from one environment to another without an installati
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -267,7 +267,7 @@ The {{ site.data.var.ece }} deploy process always enables Google Analytics on Pr
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{site.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
+On deployment to Pro or Starter Staging and Production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to Staging or Production environments.
 
 ```yaml
 stage:
@@ -280,7 +280,7 @@ stage:
 -  **Default**—`file`
 -  **Version**—Magento 2.2.5 and later
 
-The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{site.baseurl}}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
+The lock provider prevents the launch of duplicate cron jobs and cron groups. You must use the `file` lock provider in the Production environment. Starter environments and the Pro Integration environment do not use the [MAGENTO_CLOUD_LOCKS_DIR]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable, so `{{site.data.var.ct}}` applies the `db` lock provider automatically.
 
 ```yaml
 stage:
@@ -592,7 +592,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{site.baseurl}}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{ site.baseurl }}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
 
 If you generate static content during the build phase, it creates a symlink to the content folder.
 If you generate static content during the deploy phase, it writes directly to the content folder.
@@ -612,7 +612,7 @@ The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and wi
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{site.baseurl}}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ site.baseurl }}/cloud/env/variables-cloud.html) variable. This configuration is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
 If you need to update URLs when deploying to Pro or Starter Staging and Production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable.
 
