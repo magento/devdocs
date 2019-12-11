@@ -180,9 +180,9 @@ The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class
 
 Clean the cache to inform Magento about a new cron.
 
-  ```bash
-  bin/magento cache:clean
-  ```
+```bash
+bin/magento cache:clean
+```
 
 ## Step 6: Verify the cron job {#cron-tut-cronver}
 
