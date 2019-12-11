@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-release-archive.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
 
 {% include cloud/ece-patches.md %}
 
