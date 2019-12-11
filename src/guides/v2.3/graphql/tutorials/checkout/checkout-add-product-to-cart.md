@@ -19,8 +19,8 @@ GraphQL supports [two types of product]({{ page.baseurl }}/graphql/product/produ
 -  simple product
 -  virtual product
 
-{:.bs-callout-info}
-If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
+{:.bs-callout .bs-callout-info}
+If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more details.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
