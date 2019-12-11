@@ -180,7 +180,7 @@ To disable cron jobs:
 After you complete the maintenance task, ensure that you enable the cron jobs again.
 
 ```shell
-./vendor/bin/ece-tools cron:disable
+./vendor/bin/ece-tools cron:enable
 ```
 
 ## Troubleshooting cron jobs
