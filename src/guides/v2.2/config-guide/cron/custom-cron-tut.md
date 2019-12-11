@@ -183,6 +183,7 @@ Compile the code with this command:
 ```bash
 bin/magento setup:di:compile
 ```
+
 and clean the cache with this command:
 
 ```bash
@@ -198,7 +199,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1. Run Magento cron jobs:
 
    ```bash
-   php /var/www/html/magento2/bin/magento cron:run
+   bin/magento cron:run
    ```
 
 1. Enter the `magento cron:run` command two or three times.
