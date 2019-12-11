@@ -23,13 +23,28 @@ The previous example is equivalent to the following query. You could send the qu
 
 Some queries sent as a GET request can be cached. See [GraphQL caching]({{page.baseurl}}/graphql/caching.html) for more information.
 
-## Request headers
+## Request headers {#headers}
 
 Magento accepts the following headers in a GraphQL request:
 
 Header name | Value | Description
 --- | --- | ---
-`Authorization` | `Bearer <authorization_token>` | A customer token. [Get customer authorization token]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes how to generate the token.
+`Authorization` | `Bearer <authorization_token>` | A customer or admin token. [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes how to generate tokens.
 `Content-Currency` | A valid currency code, such as `USD` | This header is required only if the currency is not the store view's default currency.
 `Content-Type` | `application/json` | Required for all requests.
+`Preview-Version` | A timestamp (seconds since January 1, 1970). Use this header to query products, categories, price rules, and other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only.
 `Store` | `<store_view_code>` | The store view code on which to perform the request. The value can be `default` or the code that is defined when a store view is created.
+
+### Specify request headers in a GraphQL browser
+
+GraphQL browsers, such as GraphiQL, allow you to enter a set of header name/value pairs. The following example shows an example customer authorization token and content type headers.
+
+![GraphiQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
+
+### Specify request headers with the `curl` command
+
+Use the curl command with a separate `-H` argument to specify each request header. The following example uses the same request headers as those used in the GraphQL browser.
+
+```bash
+curl 'http://magento.config/graphql' -H 'Authorization: Bearer hoyz7k697ubv5hcpq92yrtx39i7x10um' -H 'Content-Type: application/json'  --data-binary '{"query":"query {\n  customer {\n    firstname\n    lastname\n    email\n  }\n}"}'
+```

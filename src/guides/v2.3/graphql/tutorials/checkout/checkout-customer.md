@@ -92,7 +92,7 @@ mutation {
 }
 ```
 
-["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes the mutation further.
+[Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes the mutation further.
 
 ## Verify this step {#verify-step}
 
