@@ -23,7 +23,7 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ### Integrate the Hidden component with the Form component
 
-This example integrates the Hidden component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component
+This example integrates the Hidden component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component.
 
 ```xml
 <form>
