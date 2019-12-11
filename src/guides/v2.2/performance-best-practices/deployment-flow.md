@@ -44,7 +44,7 @@ Run the following command to preprocess and compile DI:
 bin/magento setup:di:compile
 ```
 
-After compilation completes, we recommend running the following command:
+After compilation completes, confirm that [APCu is enabled]({{ page.baseurl }}/performance-best-practices/software.html#php-settings)), then run the following command:
 
 ```bash
 composer dump-autoload -o --apcu
