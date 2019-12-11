@@ -5,7 +5,7 @@ title: LinkColumn component
 
 ## Overview
 
-The LinkColumn component implements a column that can display the anchor elements instead of plain text.
+The LinkColumn component implements a column that can display anchor elements instead of plain text.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
 
@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{ site
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `link` | The key in a field's record object that contains the link value. | String | `link` |
-| `bodyTmpl` | Path to the template that is used to render a column's field in the table's body. | String | `ui/grid/cells/link` |
+| `bodyTmpl` | Path to the template that is used to render a column's field in the table body. | String | `ui/grid/cells/link` |
 
 ## Source files
 
@@ -68,18 +68,18 @@ class CustomDataProvider extends DataProvider
      */
     public function getData()
     {
-        return [
-            'items' => [
-                [
-                    'id' => 1,
-                    'link' => 'https://magento.local/path/to/controller/id/1'
-                ],
-                [
-                    'id' => 2,
-                    'link' => 'https://magento.local/path/to/controller/id/2'
-                ],
-            ],
-            'totalRecords' => 2
+     return [
+         'items' => [
+           [
+            'id' => 1,
+            'link' => 'https://magento.local/path/to/controller/id/1'
+           ],
+           [
+            'id' => 2,
+            'link' => 'https://magento.local/path/to/controller/id/2'
+          ],
+          ],
+          'totalRecords' => 2
         ];
     }
 }
