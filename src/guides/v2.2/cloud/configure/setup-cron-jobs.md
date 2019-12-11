@@ -185,7 +185,7 @@ After you complete any required maintenance tasks, ensure that you enable the cr
 
 ## Troubleshooting cron jobs
 
-Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you encounter problems with cron processing, make sure that your project is using the most current version of the ece-tools package. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
+Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you encounter problems with cron processing, make sure that your project is using the most current version of the {{ site.data.var.ct }} package. See [Upgrades and patches]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html).
 
 You can review cron processing information in the application-level log files for each environment. See [Application logs]({{page.baseurl}}/cloud/project/log-locations.html#application-logs).
 
