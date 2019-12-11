@@ -12,7 +12,7 @@ The File component implements the [HTML](https://glossary.magento.com/html) `<in
 | `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/form/element/media` |
 | `label` | Label to be displayed in the field. | String | `''` |
 | `links`.`value` | [Links]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) the component's `value` property with provider using the declared in the `dataScope` property of the parent component. | Boolean | `''` |
-| `disabled` | Initial component's state. When set to `true`, users can't take action on the element. | Boolean | `false` |
+| `disabled` | Initial component's state. When set to `true`, users cannot take action on the element. | Boolean | `false` |
 | `visible` | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
 
 ## Source files 
