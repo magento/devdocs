@@ -20,7 +20,7 @@ The following technologies are requirements for developing and deploying your st
 
 Here are some advanced technologies we recommend getting familiar with:
 
-*  [Fastly]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
+*  [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) for CDN and caching (based on Varnish)
 *  [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) for performance testing
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) for performance testing
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
@@ -61,7 +61,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
  {:.bs-callout-info}
-See [Magento technology stack requirements]({{ site.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements.
+See [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.3/config-gde/system-requirements-tech.html) for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
@@ -76,7 +76,7 @@ For information about configuring the software versions to use in your implement
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
 *  Set up a [local development environment]({{ site.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
-*  Get [`repo.magento.com` credentials]({{ site.baseurl }}/install-gde/prereq/connect-auth.html) in your account.
+*  Get [`repo.magento.com` credentials]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) in your account.
 *  Get a [project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Project Owner or a super user.
 
 We walk you through everything you need to do and know.
@@ -86,14 +86,14 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *  For Pro, set the database [`auto_increment_increment` to 3]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
-*  Test with the correct file permissions in [PRODUCTION mode]({{ site.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*  Test with the correct file permissions in [PRODUCTION mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode)
 
    Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 
 *  Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/css) enabled
-*  Test with [Redis enabled for page cache and session cache]({{ site.baseurl }}/config-guide/redis/config-redis.html)
+*  Test with [Redis enabled for page cache and session cache]({{ site.baseurl }}/guides/v2.3/config-guide/redis/config-redis.html)
 *  Install and configure [Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html)
-*  Test using [Varnish]({{ site.baseurl }}/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
+*  Test using [Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
 
  {:.bs-callout-info}
 {{ site.data.var.ece }} supports production and maintenance modes only.
@@ -106,7 +106,7 @@ For development and testing, we recommend the following:
 
    You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
 
-*  Verify [`magento setup:install`]({{ site.baseurl }}/install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ site.baseurl }}/comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ site.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*  Verify [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode)
 
    You can set an environment variable or enter a CLI command for this specific mode.
 
@@ -124,7 +124,7 @@ To work with and deploy stores, you need the following:
 
 *  [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
 *  [Project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
-*  [Magento authentication keys]({{ site.baseurl }}/install-gde/prereq/connect-auth.html) for each user who contributes to the project
+*  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 

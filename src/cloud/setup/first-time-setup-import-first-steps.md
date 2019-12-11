@@ -1,12 +1,6 @@
 ---
 group: cloud-guide
 title: Import existing code into a project
-redirect_from:
-  - /guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.3/cloud/access-acct/first-time-setup_import-prereq.html
-  - /guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html
-  - /guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html
-
 functional_areas:
   - Cloud
   - Setup
@@ -112,7 +106,7 @@ The complete workflow for importing existing code includes the following steps:
 
    ![Create a site using the sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template.png){:width="650px"}
 
-1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ site.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
+1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
    ![Enter your authentication keys]({{ site.baseurl }}/common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 

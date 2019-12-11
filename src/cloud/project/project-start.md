@@ -19,7 +19,7 @@ File                      | Description
 `.magento.env.yaml`       | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ site.baseurl }}/cloud/env/environments.html).
 `composer.json`           | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 `composer.lock`           | Stores version dependencies for every package.
-`magento-vars.php`        | A file used to define [multiple stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ site.baseurl }}/config-guide/multi-site/ms_over.html).
+`magento-vars.php`        | A file used to define [multiple stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html#modify-magento-variables) and sites using [Magento variables]({{ site.baseurl }}/guides/v2.3/config-guide/multi-site/ms_over.html).
 
  {:.bs-callout-info}
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.

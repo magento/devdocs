@@ -25,7 +25,7 @@ We strongly recommend testing in these environments due to the complexity of you
 
 *  Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
 *  Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
-*  Extensions typically are heavily tested in [Developer mode]({{ site.baseurl }}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
+*  Extensions typically are heavily tested in [Developer mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
 *  Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local does not confirm it works perfectly in production.
 *  Integration environments do not have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
 *  [Fully test]({{ site.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets

@@ -31,7 +31,7 @@ To add a store view to the site base URL, you do not have to create multiple dir
 
 ## Configure local installation
 
-To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}/config-guide/multi-site/ms_over.html).
+To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ site.baseurl }}/guides/v2.3/config-guide/multi-site/ms_over.html).
 
 After successfully creating and testing the local installation to use multiple stores, you must prepare your Integration environment:
 
@@ -173,7 +173,7 @@ To configure a location with a different directory:
 
 ### Set up websites, stores, and store views {#set-stores}
 
-In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, and **Store Views**. See [Set up multiple websites, stores, and store views in the Admin]({{ site.baseurl }}/config-guide/multi-site/ms_websites.html).
+In the _Admin UI_, set up your {{site.data.var.ee}} **Websites**, **Stores**, and **Store Views**. See [Set up multiple websites, stores, and store views in the Admin]({{ site.baseurl }}/guides/v2.3/config-guide/multi-site/ms_websites.html).
 
 It is important to use the same name and Code of your websites, stores, and store views from your Admin when you set up your local installation. You need these values when you update the `magento-vars.php` file.
 

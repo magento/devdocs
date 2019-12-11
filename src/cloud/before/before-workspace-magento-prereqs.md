@@ -42,11 +42,11 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Web server (local) {#webserver}
 
-We strongly recommend installing [Nginx]({{ site.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ site.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
+We strongly recommend installing [Nginx]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
 
-Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/install-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/php) on your local workstation. For information on installing PHP, see [PHP Settings]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/php-settings.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -219,12 +219,12 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-*  [{{site.data.var.ee}} requirements]({{ site.baseurl }}/install-gde/system-requirements.html)
-*  [(Integrator) Integrator installation]({{ site.baseurl }}/install-gde/composer.html)
+*  [{{site.data.var.ee}} requirements]({{ site.baseurl }}/guides/v2.3/config-gde/system-requirements.html)
+*  [(Integrator) Integrator installation]({{ site.baseurl }}/guides/v2.3/config-gde/composer.html)
 
 ## Additional options
 
-You can also install additional [optional software]({{ site.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
+You can also install additional [optional software]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 {:.ref-header}
 Next step

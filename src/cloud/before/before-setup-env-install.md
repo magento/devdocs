@@ -47,7 +47,7 @@ magento-cloud variable:get -e <environment-ID>
 
 ### Get Magento authentication keys
 
-You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{site.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html).
+You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository `auth.json` file. See [Add Magento authentication keys]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 
 {:.procedure}
 To create authentication keys through the Magento Marketplace:
@@ -101,12 +101,12 @@ After you have installed Magento, you need to set the file system permissions an
 
 ## Install Magento
 
-Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/install-gde/install/prepare-install.html#install-composer-install) using Composer commands.
+Prior to installing, you should [Update installation dependencies]({{ site.baseurl }}/guides/v2.3/config-gde/install/prepare-install.html#install-composer-install) using Composer commands.
 
 Be ready to install Magento using one of the following options:
 
-*  [Install the Magento software using the command line]({{ site.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/install-gde/install/web/install-web.html)
+*  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli.html)
+*  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/config-gde/install/web/install-web.html)
 
 {:.procedure}
 To install Magento using the command line:
@@ -123,7 +123,7 @@ To install Magento using the command line:
     cd /app/bin
     ```
 
-1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
+1. Enter a CLI command with options for entering the name, email, ADMIN credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
     ```bash
     php magento setup:install \
@@ -145,7 +145,7 @@ To install Magento using the command line:
 
 ## Post-install configurations
 
-After installing Magento, run the commands for [compile]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
+After installing Magento, run the commands for [compile]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
 1. Switch to the correct user.
 
@@ -184,7 +184,7 @@ For development and testing in an environment as close to Integration as possibl
 *  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 *  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 *  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
-*  [Additional software]({{ site.baseurl }}/install-gde/prereq/optional.html) for Magento
+*  [Additional software]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
 

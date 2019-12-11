@@ -162,7 +162,7 @@ As you develop features, add extensions, and design themes, having real data to 
 ![Pull and sanitize production data]({{ site.baseurl }}/common/images/cloud_workflow-data-code-process.png)
 
 {:.bs-callout-info}
-Before pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ site.baseurl }}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
+Before pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
 
 {:.bs-callout-warning}
 We do not recommend pushing a database from an Integration or Staging environment to a Production environment. If you do, the data from the Integration or Staging environment overwrites your live Production data including sales, orders, new and updated customers, and much more.
@@ -195,7 +195,7 @@ To learn more, see [Deployment process]({{ site.baseurl }}/cloud/reference/disco
 
 ### Push to Staging and test {#staging}
 
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ site.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 

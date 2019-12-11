@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Prepare your existing Magento Commerce install
-redirect_from:
-  - /guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html
-  - /guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html
 functional_areas:
   - Cloud
   - Setup
@@ -77,7 +74,7 @@ When you push your code, all services are configured into the associated environ
 
 You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
--  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
+-  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
 -  **environment variable**—Alternatively, you can use an environment variable to set up authentication keys in your {{site.data.var.ece}} project to prevent accidental exposure.
 
 {:.procedure}
@@ -185,7 +182,7 @@ To edit `composer.json`:
 
 ## Back up and transfer media files {#media}
 
-Use the command [`magento setup:backup --media`]({{ site.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
+Use the command [`magento setup:backup --media`]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli-backup.html) to back up media files:
 
 1. Get the integration system's [SSH URL]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh).
 1. To back up media files, enter the following command:

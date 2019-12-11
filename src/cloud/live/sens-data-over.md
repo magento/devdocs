@@ -6,7 +6,7 @@ functional_areas:
   - Deploy
 ---
 
-Configuration management, or [Pipeline Deployment]({{ site.baseurl }}/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
+Configuration management, or [Pipeline Deployment]({{ site.baseurl }}/guides/v2.3/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
 
 *  Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
 *  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
@@ -17,7 +17,7 @@ These methods are optional, but strongly recommended. The process ensures faster
 To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 {:.bs-callout-info}
-For extended technical information, see [Pipeline Deployment]({{ site.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
+For extended technical information, see [Pipeline Deployment]({{ site.baseurl }}/guides/v2.3/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
 
 ## How it works {#cloud-confman-over}
 
@@ -56,7 +56,7 @@ Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configu
 {:.bs-callout-info}
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ site.baseurl }}/config-guide/prod/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ site.baseurl }}/guides/v2.3/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
 
@@ -65,7 +65,7 @@ Depending on the size of your store, you may have a large amount of static conte
 If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
 {:.bs-callout-info}
-Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
+Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 ## Configuration selection flow
 
@@ -170,7 +170,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
    ```
 
-When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
+When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/variables-deploy.html).
 
  {:.bs-callout-info}
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.

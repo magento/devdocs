@@ -31,7 +31,7 @@ To see the error log:
 
 ### Solution
 
-To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ site.baseurl }}/install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
+To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
 Verify that you are using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html).
 
