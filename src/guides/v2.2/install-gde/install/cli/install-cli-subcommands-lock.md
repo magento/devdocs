@@ -18,8 +18,6 @@ Before you run this command, you must do all of the following *or* you must [ins
 *  [Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
 *  [Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
 
-{% include install/fully-secure.md %}
-
 ## Configure the lock {#instgde-cli-lockconfig}
 
 Configure a lock provider to prevent the launch of duplicate cron jobs and cron groups. (Requires Magento 2.2.5 and later 2.2.x versions or version 2.3.2 and later.)
@@ -31,7 +29,7 @@ If you are running Magento Commerce on the cloud infrastructure, you do not need
 > Command usage
 
 ```bash
-magento setup:store-config:set [--<parameter_name>=<value>, ...]
+magento setup:config:set [--<parameter_name>=<value>, ...]
 ```
 
 > Parameter descriptions
