@@ -5,9 +5,8 @@ title: Personal Information Reference (Magento 1.x)
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
--[GDPR]({% link compliance/privacy/gdpr.md -%})
-
--[CCPA]({% link compliance/privacy/ccpa.md -%})
+-  [GDPR]({% link compliance/privacy/gdpr.md -%})
+-  [CCPA]({% link compliance/privacy/ccpa.md -%})
 
 ## Dataflow diagrams
 
@@ -270,26 +269,26 @@ Table | Column | Data type
 
 Other tables that reference Customer:
 
--`catalog_compare_item`
--`downloadable_link_purchased`
--`enterprise_customerbalance`
--`enterprise_customersegment_customer`
--`enterprise_giftregistry_entity`
--`enterprise_reminder_rule_log`
--`enterprise_reward`
--`log_customer`
--`log_visitor_online`
--`oauth_token`
--`product_alert_price`
--`product_alert_stock`
--`report_compared_product_index`
--`report_viewed_product_index`
--`review_detail`
--`sales_billing_agreement`
--`sales_flat_shipment`
--`sales_recurring_profile`
--`salesrule_coupon_usage`
--`salesrule_customer`
--`tag`
--`tag_relation`
--`wishlist`
+-  `catalog_compare_item`
+-  `downloadable_link_purchased`
+-  `enterprise_customerbalance`
+-  `enterprise_customersegment_customer`
+-  `enterprise_giftregistry_entity`
+-  `enterprise_reminder_rule_log`
+-  `enterprise_reward`
+-  `log_customer`
+-  `log_visitor_online`
+-  `oauth_token`
+-  `product_alert_price`
+-  `product_alert_stock`
+-  `report_compared_product_index`
+-  `report_viewed_product_index`
+-  `review_detail`
+-  `sales_billing_agreement`
+-  `sales_flat_shipment`
+-  `sales_recurring_profile`
+-  `salesrule_coupon_usage`
+-  `salesrule_customer`
+-  `tag`
+-  `tag_relation`
+-  `wishlist`
