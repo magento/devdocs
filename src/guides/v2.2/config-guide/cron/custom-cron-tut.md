@@ -176,7 +176,15 @@ The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class
 
 {% endcollapsible %}
 
-## Step 5: Verify the cron job {#cron-tut-cronver}
+## Step 5: Register a new cron job {#cron-clear-cache}
+
+Clean the cache to inform Magento about a new cron.
+
+  ```bash
+  bin/magento cache:clean
+  ```
+
+## Step 6: Verify the cron job {#cron-tut-cronver}
 
 This step shows how to verify the custom cron job successfully using a SQL query on the `cron_schedule` database table.
 
@@ -185,7 +193,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1. Run Magento cron jobs:
 
    ```bash
-   php /var/www/html/magento2/bin/magento cron:run
+   bin/magento cron:run
    ```
 
 1. Enter the `magento cron:run` command two or three times.
