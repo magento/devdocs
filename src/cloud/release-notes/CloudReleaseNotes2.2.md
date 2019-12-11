@@ -127,7 +127,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/guides/v2.2/config-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/guides/v2.2/config-gde/system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 

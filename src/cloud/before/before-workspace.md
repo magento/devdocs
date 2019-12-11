@@ -24,7 +24,7 @@ If your Cloud account has access to multiple projects, you should see a list of 
 
 When working on your local, you will be accessing the [Magento Cloud CLI]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the [Magento Admin](https://glossary.magento.com/magento-admin) for the store UI and configurations.
 
-You need to set up the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/file-sys-perms-over.html).
+You need to set up the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/file-sys-perms-over.html).
 
 ## Recommended tools
 
@@ -39,7 +39,7 @@ Developing code for {{site.data.var.ee}} requires working in Git branches. Not e
 Have the following prepared to complete your initial workspace and project setup:
 
 *  {{site.data.var.ece}} account with an added user account
-*  Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
+*  Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
 
 ## Get started
 

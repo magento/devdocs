@@ -61,7 +61,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
  {:.bs-callout-info}
-See [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.3/config-gde/system-requirements-tech.html) for the latest software version requirements.
+See [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements-tech.html) for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
@@ -76,7 +76,7 @@ For information about configuring the software versions to use in your implement
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
 *  Set up a [local development environment]({{ site.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
-*  Get [`repo.magento.com` credentials]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) in your account.
+*  Get [`repo.magento.com` credentials]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) in your account.
 *  Get a [project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Project Owner or a super user.
 
 We walk you through everything you need to do and know.
@@ -124,7 +124,7 @@ To work with and deploy stores, you need the following:
 
 *  [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
 *  [Project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
-*  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/connect-auth.html) for each user who contributes to the project
+*  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:
 

@@ -187,7 +187,7 @@ To deploy your site:
    php bin/magento setup:upgrade
    ```
 
-   We highly recommend having Magento already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+   We highly recommend having Magento already installed if you followed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 
 1. Clean the Magento cache:
 

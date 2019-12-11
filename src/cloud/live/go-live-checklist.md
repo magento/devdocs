@@ -85,7 +85,7 @@ You can also test using the following 3rd party options:
 -  [Secure configuration for Admin user](http://docs.magento.com/m2/ee/user_guide/stores/security-admin.html)
 -  [Secure configuration for Base Admin URL](https://docs.magento.com/m2/ee/user_guide/stores/store-urls-custom-admin.html)
 -  [Remove any users no longer on the {{ site.data.var.ece}} project]({{ site.baseurl}}/cloud/project/user-admin.html)
--  [Configure two-factor authentication]({{ site.baseurl }}/security/two-factor-authentication.html)
+-  [Configure two-factor authentication]({{ site.baseurl }}/guides/v2.3/security/two-factor-authentication.html)
 
 ## Performance monitoring
 

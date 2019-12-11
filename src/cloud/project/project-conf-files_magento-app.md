@@ -451,7 +451,7 @@ For example, if you need to increase the PHP memory limit:
 memory_limit = 756M
 ```
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.3/config-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 

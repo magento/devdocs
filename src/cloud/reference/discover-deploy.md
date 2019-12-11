@@ -80,7 +80,7 @@ We highly recommend the following best practices and considerations for your dep
 
    -  Ensure that you can connect to all three nodes in the Production environment using [SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-   -  Verify that Indexers are set to _Update on Schedule_. See [Indexing modes]({{ site.baseurl }}/extension-dev-guide/indexing.html) in the _Extension Developer Guide_.
+   -  Verify that Indexers are set to _Update on Schedule_. See [Indexing modes]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/indexing.html) in the _Extension Developer Guide_.
 
    -  Prepare the environment by updating any environment-specific variables in the Production code, verifying service availability and compatibility, and making any other required configuration changes.
 
@@ -227,7 +227,7 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 
 -  If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
 
--  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/config-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
+-  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
