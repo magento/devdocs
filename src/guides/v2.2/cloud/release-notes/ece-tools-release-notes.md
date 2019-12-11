@@ -24,7 +24,7 @@ The release notes include:
 
 -  {:.new}Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the expanded definition in the [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) topic.<!--MAGECLOUD-4444-->
 
--  {:.new}**New cron command**–You can now manually disable and enable cron jobs in your Magento Commerce Cloud environment using the `cron:disable` and `cron:enable` command. See [Disable cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs)
+-  {:.new}**New cron command**–You can now manually manage cron processing in your Magento Commerce Cloud environment using the `cron:disable` and `cron:enable` commands. Use the disable command to stop all active cron processes and disable all Magento cron jobs.  Use the enable command to re-enable cron jobs when you are ready.  See [Disable cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs)
 
 ## v2002.0.22
 
