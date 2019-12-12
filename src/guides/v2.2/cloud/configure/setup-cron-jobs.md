@@ -177,7 +177,7 @@ To disable cron jobs:
    ./vendor/bin/ece-tools cron:disable
    ```
    
-After you complete any required maintenance tasks, ensure that you enable the cron jobs again.
+1. After you complete any required maintenance tasks, ensure that you enable the cron jobs again.
 
 ```shell
 ./vendor/bin/ece-tools cron:enable
