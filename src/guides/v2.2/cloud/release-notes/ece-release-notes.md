@@ -22,7 +22,17 @@ The release notes include:
 
 -  {:.new}Decoupled the Docker package from the `{{ site.data.var.ct }}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{ site.data.var.cd }}` are managed from the [`magento-cloud-docker`](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
 
+-  {:.new}**New cron command**–You can now manually manage cron processing in your Magento Commerce Cloud environment using the `cron:disable` and `cron:enable` commands. Use the disable command to stop all active cron processes and disable all Magento cron jobs.  Use the enable command to re-enable cron jobs when you are ready.  See [Disable cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs)
+
 -  {:.new}Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the expanded definition in the [post-deploy variables]({{ page.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) topic.<!--MAGECLOUD-4444-->
+
+-  {:new}**Improved validation**–
+Added validation to check installed service versions against the EOL date for each service. Now, customers recieve a notification if a service version is within three months of the EOL date, and a warning if the EOL date is in the past.
+<!--MAGECLOUD-4076-->
+
+- {:.fix}Fixed an issue that caused the build process to fail if the `config.php` file is empty.<!--MAGECLOUD-4127>
+
+- {:.fix}Fixed an issue in the Elastic Suite configuration process so that the default configuration is overwritten as expected when you configure the `ELASTICSUITE_CONFIGURATION` deploy variable without the `_merge` option.<!--MAGECLOUD-4388-->
 
 ## v2002.0.22
 
