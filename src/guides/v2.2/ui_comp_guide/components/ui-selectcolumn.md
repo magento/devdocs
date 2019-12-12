@@ -10,7 +10,7 @@ The SelectColumn component receives an array of values and displays the column w
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/columns/select` |
-| `filter` | Reference to one of the available filter types defined in the [Filters component]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html). If the value represents an object containing the `filterType` field, this object is considered as an extension of the referenced filter element. If there's no such field in the value object, it is considered as a definition of a custom filter element. | String \| Object | `-` |
+| `filter` | Reference to one of the available filter types defined in the [Filters component]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html). If the value represents an object containing the `filterType` field, this object is considered as an extension of the referenced filter element. If there is no such field in the value object, it is considered as a definition of a custom filter element. | String \| Object | `-` |
 | `label` | The column label displayed in the header. | String | `''` |
 | `options` | An array of objects used to display a field's content by matching the associated record's value with the value of one of the elements provided in `options`. | Array | `[]` |
 | `visible` | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
