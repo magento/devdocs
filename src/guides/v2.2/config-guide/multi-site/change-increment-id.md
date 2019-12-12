@@ -77,5 +77,5 @@ Before executing the `ALTER TABLE` query on a production environment of {{site.d
 [Set up a remote MySQL database connection]: {{ page.baseurl }}/install-gde/prereq/mysql_remote.html
 [Create a DB backup]: https://support.magento.com/hc/en-us/articles/360003254334
 [Create database dump on Cloud]: https://support.magento.com/hc/en-us/articles/360003254334
-[SSH to your environment]: {{ page.baseurl }}/cloud/env/environments-ssh.html#ssh
+[SSH to your environment]: {{site.baseurl}}/cloud/env/environments-ssh.html#ssh
 [any supported version]: {{ page.baseurl }}/install-gde/prereq/mysql.html

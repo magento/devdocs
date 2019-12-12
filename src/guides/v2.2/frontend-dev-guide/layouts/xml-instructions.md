@@ -414,7 +414,7 @@ $helperMethodResult = $block->getData('helper_method_result'); // or $block->get
 
 The following are common arguments for block instructions:
 
-*  `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+*  `cache_key`: key for saving/retrieving cached information. This is helpful if the block needs to be cached: [example]({{ site.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 *  `template`: sets the template for the block.
 
