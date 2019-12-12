@@ -99,7 +99,7 @@ opcache.max_accelerated_files=60000
 
 We recommend enabling the [PHP APCu extension](https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache) and [configuring `composer` to support it]({{ page.baseurl }}/performance-best-practices/deployment-flow.html#preprocess-dependency-injection-instructions) to optimize for maximum performance. This extension caches file locations for opened files, which increases performance for Magento server calls including pages, Ajax calls, and endpoints.
 
-Edit your `apcu.ini` file to include the following:
+Edit your `apcu.ini` configuration file to add the APCu extension module:
 
 ```text
 extension=apcu.so
