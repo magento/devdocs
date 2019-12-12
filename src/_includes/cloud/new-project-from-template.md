@@ -11,7 +11,7 @@
 
    ![Create a site using the sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template.png){:width="650px"}
 
-1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
+1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
    ![Enter your authentication keys]({{ site.baseurl }}/common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
