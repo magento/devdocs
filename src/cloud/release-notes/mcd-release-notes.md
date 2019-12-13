@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 The [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment
-These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html).
 
 The {{site.data.var.mcd}} package uses the following version sequence: `<major>.<minor>.<patch>`.
 
@@ -23,7 +23,7 @@ The release notes include:
 
 -  {:.fix}The `./bin/docker` file overwrites existing Docker binary files, which caused some Docker environments to break. Renamed the `./bin/docker` file to `./bin/magento-docker` to avoid any conflicts.<!-- MAGECLOUD-4038 -->
 
--  {:.new}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{page.baseurl}}/cloud/docker/docker-database.html).<!--MAGECLOUD-3978-->
+-  {:.new}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{site.baseurl}}/cloud/docker/docker-database.html).<!--MAGECLOUD-3978-->
 
 -  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
 
