@@ -91,7 +91,7 @@ To enable GraphQL caching on Fastly:
 1. Upgrade the Fastly CDN Module for Magento 2.x to version 1.2.118 or later.
 1. Upload the updated VCL code to the Fastly servers.
 
-[Set up Fastly]({{page.baseurl}}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
+[Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) describes how to perform both of these tasks.
 
 ## X-Magento-Vary
 
