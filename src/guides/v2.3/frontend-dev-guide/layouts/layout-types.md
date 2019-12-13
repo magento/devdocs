@@ -109,7 +109,7 @@ Use the `layout` attribute in the `page` node of a page configuration file to de
 
 ![Wish List Sharing. 3 columns layout page type]({{ page.baseurl }}/frontend-dev-guide/images/wish-list-sharing.png)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 By default, Magento provides 5 page layout types for the frontend (`empty`, `1column`, `2columns-left`, `2columns-right`, and `3columns`) and 3 page layout types for the backend (`admin-empty`, `admin-1column`, and `admin-2columns-left`).
 
 ## Page configuration {#layout-types-conf}

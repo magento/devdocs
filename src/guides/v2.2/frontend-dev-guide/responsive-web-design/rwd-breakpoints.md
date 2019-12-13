@@ -47,10 +47,10 @@ To do this, take the following steps:
    -  `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
 1. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Use single quotes when specifying media-targets. Double quotes may cause unexpected issues with the scripts.
 
 Example:

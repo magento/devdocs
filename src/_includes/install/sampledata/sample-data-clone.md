@@ -10,7 +10,7 @@ Contributing developers can use this method of installing sample data *only* if 
 *  You use {{site.data.var.ce}}
 *  You [cloned the Magento 2 repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 You can use sample data with either the `develop` branch (more current) or a released branch (such as `2.2` or `2.2.5` (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the `develop` branch. Regardless of the branch you choose, you must [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the `develop` branch can be used *only* with the Magento 2 `develop` branch.
 
 See the following sections:
@@ -53,7 +53,7 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
 1. Wait for the repository to clone on your server.
 
-   {:.bs-callout .bs-callout-info}
+   {:.bs-callout-info}
    If the following error displays, make sure you [shared your SSH key](https://help.github.com/articles/generating-ssh-keys/) with GitHub:<br>
 
    ```terminal
@@ -142,7 +142,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 1. Wait for the command to complete.
 1. See the next section.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema:
 
 ```bash

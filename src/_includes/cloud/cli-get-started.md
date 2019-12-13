@@ -1,5 +1,5 @@
 
-1. Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Log in to your local development system, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to a directory to which the Magento file system owner has write access.
 1. Enter the following command in a terminal to log in to your project:
 
@@ -26,7 +26,7 @@
     magento-cloud environment:list
     ```
 
-    {: .bs-callout .bs-callout-info}
+     {:.bs-callout-info}
     `magento-cloud environment:list`—displays environment hierarchies whereas the `git branch` command does not.
 
 1. Fetch origin branches to get the latest code:
@@ -49,7 +49,7 @@
     git pull origin <environment ID>
     ```
 
-1. Create a [snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the environment as a backup:
+1. Create a [snapshot]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the environment as a backup:
 
     ```bash
     magento-cloud snapshot:create -e <environment ID>

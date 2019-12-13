@@ -100,7 +100,6 @@ Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is 
 Tests can create real DTOs for stubs.
 Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
-{:start="2.3"}
 2.3. Class constructor can have only dependency assignment operations and/or argument validation operations. No other operations are allowed.
 
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
@@ -137,7 +136,6 @@ class Composite
 
 ---
 
-{:start="3.2"}
 2.3.2. Events MUST NOT be triggered in constructors.
 
 {% collapsible Examples: %}
@@ -187,7 +185,6 @@ class Config
 
 ---
 
-{:start="2.4"}
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
 {% collapsible Examples: %}
@@ -445,7 +442,6 @@ You need to read configuration from different sources (like database or filesyst
 
 *  Solution or workaround
 
-{:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
 
 5.3. If a function A calls function B, and function B might throw an exception, this [exception](https://glossary.magento.com/exception) MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.
@@ -849,7 +845,6 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 ---
 
-{:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
 14.3. Events SHOULD NOT change a state of observable objects.

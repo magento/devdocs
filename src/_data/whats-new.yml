@@ -6,7 +6,7 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Tue Dec 3 09:59:53 2019
 entries:
-- description: Added the [Security configuration](https://devdocs.magento.com/guides/v2.3/cloud/live/go-live-checklist.html#security-configuration)
+- description: Added the Security configuration
     section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
     current Go live checklist document attachment with the most recent version, which
     is more comprehensive and up-to-date.
@@ -15,9 +15,9 @@ entries:
   date: November 27, 2019
   link: https://github.com/magento/devdocs/pull/6083
 - description: Added the following sections to the _Cloud Guide_ with information
-    about using Adobe-generated alert policies for New Relic:<br/>- [New Relic > Monitor performance
-    with New Relic alert policies](https://devdocs.magento.com/guides/v2.3/cloud/project/new-relic.html#monitor-performance-with-alert-policies)
-    section to the _Cloud Guide_.<br/>- [Monitor performance](https://devdocs.magento.com/guides/v2.3/cloud/project/monitor-performance.html)
+    about using Adobe-generated alert policies for New Relic:<br/>- New Relic > Monitor performance
+    with New Relic alert policies
+    section to the _Cloud Guide_.<br/>- Monitor performance
   versions: 2.x
   type: Major update
   date: November 27, 2019
@@ -53,8 +53,7 @@ entries:
   type: Major update
   date: November 18, 2019
   link: https://github.com/magento/devdocs/pull/5917
-- description: Published the release notes for [Magento Commerce Cloud v2002.0.22](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
-    .
+- description: Published the release notes for Magento Commerce Cloud v2002.0.22.
   versions: 2.x
   type: Major update
   date: November 15, 2019
@@ -104,7 +103,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/5940
 - description: Updated procedure to use Fastly Edge Modules to create and upload the
     custom VCL<br/>for rerouting specified URL requests to a WordPress backend. See
-    [Reroute requests to WordPress or another backend](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-wordpress.html).
+    Reroute requests to WordPress or another backend.
   versions: 2.x
   type: Technical changes
   date: November 6, 2019
@@ -128,7 +127,7 @@ entries:
   date: October 31, 2019
   link: https://github.com/magento/devdocs/pull/5840
 - description: Added an example for retrieving the IP address of a particular Cloud
-    instance to the [Integration environment IP address](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress)
+    instance to the Integration environment IP address
     section in the  _Cloud Guide_.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -140,7 +139,7 @@ entries:
   type: New topic
   date: October 29, 2019
   link: https://github.com/magento/devdocs/pull/5874
-- description: Added the following information to the [Set up Elasticsearch](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)<br/>topic
+- description: Added the following information to the Set up Elasticsearch<br/>topic
     in the _Cloud Guide_–<br/>- Recommendation to always set up<br/>Elasticsearch
     as a fallback option if using a third-party search tool<br/>- Instructions for
     checking Elasticsearch software compatibility<br/>- "Additional Search Configuration"<br/>section
@@ -157,7 +156,7 @@ entries:
   type: Major update
   date: October 24, 2019
   link: https://github.com/magento/devdocs/pull/5636
-- description: Updated the [Deployment best practices](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+- description: Updated the Deployment best practices
     topic in the _Cloud Guide_:<br/>- Added additional validation and tasks to address
     common Support issues<br/>- Added additional links to supporting information and
     instructions<br/>- Added a new "Upgrade best practices" subsection to provide
@@ -166,7 +165,7 @@ entries:
   type: Major update
   date: October 22, 2019
   link: https://github.com/magento/devdocs/pull/5703
-- description: Updated the [Cloud launch modes](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)  documentation
+- description: Updated the Cloud launch modes  documentation
     to configure Varnish as a http-cache-host so that Varnish purges with a Magento
     cache clean.
   versions: 2.x
@@ -232,7 +231,7 @@ entries:
   type: Major update
   date: October 14, 2019
   link: https://github.com/magento/devdocs/pull/5686
-- description: Added a warning to ensure that the [CRYPT_KEY](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#crypt_key)  deploy
+- description: Added a warning to ensure that the CRYPT_KEY  deploy
     variable for Magento Commerce Cloud environments is set in the Project Web UI
     to avoid exposing sensitive data.
   versions: 2.x
@@ -252,7 +251,7 @@ entries:
   type: Major update
   date: October 11, 2019
   link: https://github.com/magento/devdocs/pull/5481
-- description: Added the [Manage disk space topic](https://devdocs.magento.com/guides/v2.3/cloud/project/manage-disk-space.html)
+- description: Added the Manage disk space topic
     to the _Cloud Guide_.
   versions: 2.x
   type: New topic
@@ -471,14 +470,14 @@ entries:
   type: New topic
   date: October 1, 2019
   link: https://github.com/magento/devdocs/pull/5522
-- description: Added instructions to [change the Fastly API token credential](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly.html#fastly-service-account-and-credentials)
+- description: Added instructions to change the Fastly API token credential
     to the _Cloud Guide_.
   versions: 2.x
   type: Major update
   date: October 1, 2019
   link: https://github.com/magento/devdocs/pull/5501
 - description: Added instructions for getting connection credentials
-    to the [Set up RabbitMQ](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-rabbit.html)
+    to the Set up RabbitMQ
     topic in the _Cloud Guide_.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -508,7 +507,7 @@ entries:
   type: Major update
   date: September 19, 2019
   link: https://github.com/magento/devdocs/pull/5354
-- description: Updated the [Add site map and search engine robots](https://devdocs.magento.com/guides/v2.3/cloud/trouble/robots-sitemap.html)
+- description: Updated the Add site map and search engine robots
     topic in the _Cloud Guide_ with a VCL snippet example to create a typical domain redirect for `robots.txt`
     and `sitemap.xml` files.
   versions: 2.2.x, 2.3.x
@@ -538,7 +537,7 @@ entries:
   type: New topic
   date: September 17, 2019
   link: https://github.com/magento/devdocs/pull/5360
-- description: Added the [Log locations topic](https://devdocs.magento.com/guides/v2.3/cloud/project/log-locations.html)
+- description: Added the Log locations topic
     to the _Cloud Guide_.
   versions: 2.x
   type: New topic
@@ -565,18 +564,17 @@ entries:
   type: Major update
   date: September 6, 2019
   link: https://github.com/magento/devdocs/pull/5332
-- description: 'Updated the Cloud Release notes for [ece-tools version 2002.0.21](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002021):<br/>-
-    Added environment variables for Cloud deployment: [`CONSUMERS_WAIT_FOR_MAX_MESSAGES`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#consumers_wait_for_max_messages)
-    and [`LOCK_PROVIDER`](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#lock_provider)<br/>-
-    Added a [service compatibility table](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)
+- description: 'Updated the Cloud Release notes for ece-tools version 2002.0.21:<br/>-
+    Added environment variables for Cloud deployment: `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
+    and `LOCK_PROVIDER`<br/>-
+    Added a service compatibility table
     that shows support for installed software and service versions such as Elasticsearch,  RabbitMq,
-    Redis, and DB on each Magento version.<br/>- Updated the [Launch Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+    Redis, and DB on each Magento version.<br/>- Updated the Launch Docker
     procedure to remove references to the deprecated `db:docker:convert` command and
     Docker ENV files which are no longer generated during the Docker build.<br/>-
-    Added [Docker images](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html)
-    to support PHP 7.3 and Varnish Cache 6.2.<br/>- Updated the Docker PHP images
+    Added Docker images to support PHP 7.3 and Varnish Cache 6.2.<br/>- Updated the Docker PHP images
     to add Node.js to support node, npm, and the grunt-cli capabilities inside the
-    [PHP container](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-php.html).'
+    [PHP container]({{ site.baseurl }}/cloud/docker/docker-php.html).'
   versions: 2.x
   type: Major update
   date: September 5, 2019
@@ -660,7 +658,7 @@ entries:
   type: Major update
   date: August 23, 2019
   link: https://github.com/magento/devdocs/pull/5209
-- description: Updated [Magento Commerce Cloud Guide](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html)
+- description: Updated Magento Commerce Cloud Guide
     to remove obsolete instructions for configuring legacy environments and migrating
     legacy Cloud environments to use the Project Web UI. Legacy environments are those
     provisioned prior to October 23, 2017.
@@ -674,7 +672,7 @@ entries:
   type: New topic
   date: August 19, 2019
   link: https://github.com/magento/devdocs/pull/5155
-- description: Updated the [Set up multiple website or stores](https://devdocs.magento.com/guides/v2.3/cloud/project/project-multi-sites.html)
+- description: Updated the Set up multiple website or stores
     topic in the Cloud guide. Now, this topic differentiates between sites with a
     shared domain and sites with unique domains.
   versions: 2.x
@@ -712,7 +710,7 @@ entries:
   type: New topic
   date: August 13, 2019
   link: https://github.com/magento/devdocs/pull/5135
-- description: Added an optional step to the [Cloud Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html)
+- description: Added an optional step to the Cloud Docker
     topic to restart services.
   versions: 2.x
   type: Technical changes
@@ -733,13 +731,13 @@ entries:
   type: Major update
   date: August 5, 2019
   link: https://github.com/magento/devdocs/pull/4551
-- description: Added a new topic about [enabling database query profiling](https://devdocs.magento.com/guides/v2.3/cloud/project/profile-database-queries.html).
+- description: Added a new topic about enabling database query profiling.
   versions: 2.2.x, 2.3.x
   type: New topic
   date: August 2, 2019
   link: https://github.com/magento/devdocs/pull/5111
-- description: Added a new task topic for [setting the cache time-to-live (TTL) for
-    static files](https://devdocs.magento.com/guides/v2.3/cloud/project/set-cache.html)
+- description: Added a new task topic for setting the cache time-to-live (TTL) for
+    static files
     on Magento Commerce (Cloud).
   versions: 2.2.x, 2.3.x
   type: New topic
@@ -757,9 +755,9 @@ entries:
   type: Major update
   date: July 31, 2019
   link: https://github.com/magento/devdocs/pull/4801
-- description: "Updated the [Services topic](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html)
+- description: "Updated the Services topic
     in the Cloud guide.<br/>-  Clarified the disk value requirements.<br/>-  Simplified the
-    [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships)
+    relationships property
     in the application configuration."
   versions: 2.x
   type: Technical changes
@@ -770,13 +768,13 @@ entries:
   type: Major update
   date: July 29, 2019
   link: https://github.com/magento/devdocs/pull/5056
-- description: Added a new section about [changing the Blackfire account owner](https://devdocs.magento.com/guides/v2.3/cloud/project/project-integrate-blackfire.html#change-account-owner)
+- description: Added a new section about changing the Blackfire account owner
     on a Magento Commerce (Cloud) project.
   versions: 2.2.x, 2.3.x
   type: Major update
   date: July 29, 2019
   link: https://github.com/magento/devdocs/pull/5070
-- description: Updated the [Fastly Set up](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html)
+- description: Updated the Fastly Set up
     instructions to remove the requirement to install the Fastly CDN module for Magento
     2 in Magento Commerce Cloud environments. The latest version of the Fastly module
     is installed by default in Pro Staging and Production environments, and in the
@@ -792,7 +790,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/4977
 - description: Added note to clarify that Fastly caching services for Magento Commerce
     Cloud projects are available only after you upload the VCL code that enables the
-    Fastly integration. See [Set up Fastly](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html).
+    Fastly integration. See Set up Fastly.
   versions: 2.x
   type: Technical changes
   date: July 25, 2019
@@ -809,7 +807,7 @@ entries:
   type: Major update
   date: July 22, 2019
   link: https://github.com/magento/devdocs/pull/5006
-- description: Updated the `bin/docker` command list in the [Docker quick reference](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-quick-reference.html#bindocker)
+- description: Updated the `bin/docker` command list in the Docker quick reference
     topic.
   versions: 2.x
   type: Technical changes
@@ -837,13 +835,13 @@ entries:
   type: Major update
   date: July 18, 2019
   link: https://github.com/magento/devdocs/pull/4883
-- description: Added a section in the Cloud [integrations topic](https://devdocs.magento.com/guides/v2.2/cloud/integrations/cloud-integrations.html#generic-webhooks)
+- description: Added a section in the Cloud integrations topic
     about creating generic webhooks.
   versions: 2.x
   type: Major update
   date: July 18, 2019
   link: https://github.com/magento/devdocs/pull/4963
-- description: Updated the [Set up cron jobs](https://devdocs.magento.com/guides/v2.3/cloud/configure/setup-cron-jobs.html)
+- description: Updated the Set up cron jobs
     documentation to reflect availability of self-service cron configuration feature
     on all Starter and Pro plan project environments, including Pro Production and
     Staging. Previously, Magento customers on the Cloud platform had to submit a support
@@ -942,7 +940,7 @@ entries:
   type: Major update
   date: July 8, 2019
   link: https://github.com/magento/devdocs/pull/4630
-- description: Clarified that the [Functional testing in Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-testing.html)
+- description: Clarified that the Functional testing in Docker
     is for ece-tools and not for the Magento application.
   versions: 2.x
   type: Technical changes
@@ -951,7 +949,7 @@ entries:
 - description: Updated the route configuration instructions for Magento Commerce Pro
     and Starter projects using the `routes.yaml` file.<br/>- Documented the `{all}`
     route template option for the `routes.yaml` which simplifies route configuration
-    for projects with multiple domains. See [Configure routes](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_routes.html).<br/>-
+    for projects with multiple domains. See Configure routes.<br/>-
     Updated the route configuration documentation to indicate that customers can update
     route configuration using the `routes.yaml` file on Pro Integration, Staging,
     and Production environments. Previously, customers had to submit a support ticket
@@ -991,12 +989,12 @@ entries:
   type: Major update
   date: June 27, 2019
   link: https://github.com/magento/devdocs/pull/4838
-- description: Updated the Cloud Release notes for [ece-tools version 2002.0.20](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002020).<br/>-  New
-    [`ece-tools` reference](https://devdocs.magento.com/guides/v2.3/cloud/reference/ece-tools-reference.html)
-    topic.<br/>-  New [Functional testing in Docker](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-testing.html)
-    environment.<br/>-  Updated the [Application configuration PHP extensions](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_magento-app.html#php-extensions)
+- description: Updated the Cloud Release notes for ece-tools version 2002.0.20.<br/>-  New
+    `ece-tools` reference
+    topic.<br/>-  New Functional testing in Docker
+    environment.<br/>-  Updated the Application configuration PHP extensions
     section.<br/>-  Multiple updates to the Environment variables, including a new
-    [Post-deploy variable for Time to First Byte](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-post-deploy.html).<br/>-  Credited
+    Post-deploy variable for Time to First Byte.<br/>-  Credited
     community members that contributed to the ece-tools code.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -1215,7 +1213,7 @@ entries:
   type: Major update
   date: June 4, 2019
   link: https://github.com/magento/devdocs/pull/4643
-- description: Updated the [Cloud New Relic topic](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+- description: Updated the Cloud New Relic topic
     to distinguish Pro and Starter account actions and availability of services.
   versions: 2.x
   type: Technical changes
@@ -1267,7 +1265,7 @@ entries:
   type: Major update
   date: May 24, 2019
   link: https://github.com/magento/devdocs/pull/4576
-- description: Updated the [Cloud Release notes for ece-tools version 2002.0.19](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002019).
+- description: Updated the Cloud Release notes for ece-tools version 2002.0.19.
   versions: 2.x
   type: Technical changes
   date: May 24, 2019
@@ -1291,8 +1289,8 @@ entries:
   type: Major update
   date: May 23, 2019
   link: https://github.com/magento/devdocs/pull/4590
-- description: 'Reformatted YAML samples in the [Configure Environments: Services
-    section of the Cloud documentation](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html).'
+- description: 'Reformatted YAML samples in the Configure Environments: Services
+    section of the Cloud documentation.'
   versions: 2.x
   type: Technical changes
   date: May 22, 2019
@@ -1412,15 +1410,15 @@ entries:
   type: New topic
   date: May 9, 2019
   link: https://github.com/magento/devdocs/pull/4458
-- description: Added a row for Add-ons to the [Cloud Architecture table](https://devdocs.magento.com/guides/v2.2/cloud/architecture/cloud-architecture.html).
+- description: Added a row for Add-ons to the Cloud Architecture table.
   versions: 2.x
   type: Technical changes
   date: May 8, 2019
   link: https://github.com/magento/devdocs/pull/4404
 - description: Updated the Cloud Release notes for ece-tools version 2002.0.18.<br/>-
-    Significant update to the [Cloud Docker development](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development.html)
-    section.<br/>- New section explaining the [Docker launch modes](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html#launch-modes).<br/>-
-    New Docker topic for [Connecting to the database](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-database.html).<br/>-
+    Significant update to the Cloud Docker development
+    section.<br/>- New section explaining the Docker launch modes.<br/>-
+    New Docker topic for Connecting to the database.<br/>-
     Changed the top navigation for Cloud by expanding to two columns.<br/>- Added
     new environment variables.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -1502,7 +1500,7 @@ entries:
   type: Major update
   date: April 15, 2019
   link: https://github.com/magento/devdocs/pull/4242
-- description: Updated the [default web accessible locations](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#web)
+- description: Updated the default web accessible locations
     with the latest rules for the `robots.txt` file.
   versions: 2.1.x, 2.2.x
   type: Technical changes
@@ -1587,12 +1585,12 @@ entries:
   type: Major update
   date: March 28, 2019
   link: https://github.com/magento/devdocs/pull/3898
-- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002017).<br/>-
+- description: 'Updated the Cloud Release notes for ece-tools version 2002.0.17.<br/>-
     Updated supported versions for Elasticsearch and Redis<br/>- Added two Docker
-    images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial [Docker launch
-    steps](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html).<br/>-
-    Added the SCD_COMPRESSION_TIMEOUT environment variable for [build](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-build.html#scd_compression_timeout)
-    and [deploy](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#scd_compression_timeout).'
+    images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial Docker launch
+    steps.<br/>-
+    Added the SCD_COMPRESSION_TIMEOUT environment variable for build
+    and deploy.'
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: March 28, 2019
@@ -1602,7 +1600,7 @@ entries:
   type: Major update
   date: March 28, 2019
   link: https://github.com/magento/devdocs/pull/3994
-- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+- description: Added a new topic in Cloud Optimize deployment called Reduce downtime
     to explain the zero downtime concept.
   versions: 2.2.x
   type: New topic
@@ -1727,7 +1725,7 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3825
-- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+- description: Added a new topic in Cloud Optimize deployment called Reduce downtime
     to explain the zero downtime concept.
   versions: 2.2.x
   type: New topic
@@ -1745,7 +1743,7 @@ entries:
   type: New topic
   date: March 22, 2019
   link: https://github.com/magento/devdocs/pull/4002
-- description: Updated the note in the [Cloud Elasticsearch service](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html#elasticsearch-plugins)
+- description: Updated the note in the Cloud Elasticsearch service
     topic to state that Magento does not support ElasticSuite third-party plugin.
   versions: 2.2.x
   type: Technical changes
@@ -1766,8 +1764,7 @@ entries:
   type: Major update
   date: March 15, 2019
   link: https://github.com/magento/devdocs/pull/3871
-- description: Updated the [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.3/cloud/cdn/trouble-fastly.html
-    ) information in the Magento Commerce Cloud Guide:<br/>- Corrected information
+- description: Updated the Fastly troubleshooting information in the Magento Commerce Cloud Guide:<br/>- Corrected information
     about Fastly response headers and values<br/>- Added information about rolling
     back Fastly service configuration changes using the Fastly API<br/>- Re-organized
     troubleshooting sections for easier navigation<br/>- Cleaned up language and formatting
@@ -1775,7 +1772,7 @@ entries:
   type: Major update
   date: March 15, 2019
   link: https://github.com/magento/devdocs/pull/3699
-- description: Updated the [Cloud Architecture comparison chart](https://devdocs.magento.com/guides/v2.3/cloud/architecture/cloud-architecture.html).
+- description: Updated the Cloud Architecture comparison chart.
   versions: 2.x
   type: Technical changes
   date: March 15, 2019
@@ -1833,20 +1830,20 @@ entries:
   type: Major update
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3841
-- description: "-  Updated the [Custom VCL snippets](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-vcl-custom-snippets.html)
+- description: "-  Updated the Custom VCL snippets
     with instructions for using the Magento Admin UI to create and manage VCL snippets.<br/>-
     \ Updated and corrected the following examples for using Fastly Edge Dictionaries
     and custom VCL snippets to manage request routing for Magento Commerce Cloud traffic:
-    [Set up redirects to WordPress backend](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-wordpress.html),
-    [Block referrer spam](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-badreferer.html),
-    and [Secure access to the Admin UI by client IP address](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-whitelist.html).
+    Set up redirects to WordPress backend,
+    Block referrer spam,
+    and Secure access to the Admin UI by client IP address.
     Included prerequisites and instructions for  adding VCL snippets from the Admin
     UI or Fastly API."
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: March  1, 2019
   link: https://github.com/magento/devdocs/pull/3623
-- description: Updated the [GitHub integration topic](https://devdocs.magento.com/guides/v2.2/cloud/integrations/github-integration.html).
+- description: Updated the GitHub integration topic.
   versions: 2.x
   type: Technical changes
   date: March  1, 2019
@@ -1863,18 +1860,18 @@ entries:
   type: Major update
   date: February 28, 2019
   link: https://github.com/magento/devdocs/pull/3833
-- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
-    Updated the Cloud Docker content with information about using the [`sendmail`
-    service](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html#sendmail-service).<br/>- Updated
-    the Cloud Docker content to explain how to [configure Xdebug](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
-    Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
-    and [X_FRAME_CONFIGURATION global variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-
-    Updated the [ADMIN variables](https://devdocs.magento.com/guides/v2.3/cloud/env/environment-vars_magento.html)
-    and clarified the usage of ADMIN variables in the [Access your Magento Admin panel](https://devdocs.magento.com/guides/v2.3/cloud/onboarding/onboarding-tasks.html)
+- description: 'Updated the Cloud Release notes for ece-tools version 2002.0.16.<br/>-
+    Updated the Cloud Docker content with information about using the `sendmail`
+    service.<br/>- Updated
+    the Cloud Docker content to explain how to configure Xdebug.<br/>-
+    Added two new environment variables: RESOURCE_CONFIGURATION deploy variable
+    and X_FRAME_CONFIGURATION global variable<br/>-
+    Updated the ADMIN variables
+    and clarified the usage of ADMIN variables in the Access your Magento Admin panel
     page.<br/>- Added an example for preloading pages from multiple domains in the
     WARM_UP_PAGES post-deploy variable.<br/>-
-    Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the [backup
-    and retention](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery)
+    Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the backup
+    and retention
     statements regarding the most recent 24-hour period.'
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -1970,12 +1967,12 @@ entries:
   date: January 31, 2019
   link: https://github.com/magento/devdocs/pull/3667
 - description: Removed incorrect information about changes to deploy phase validation
-    checks in the Magento Commerce Cloud [Release notes for ece-tools, v2002.0.14](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002014).
+    checks in the Magento Commerce Cloud Release notes for ece-tools, v2002.0.14.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: January 31, 2019
   link: https://github.com/magento/devdocs/pull/3664
-- description: Corrected the command syntax in the [log preparation instructions](https://devdocs.magento.com/guides/v2.3/cloud/project/project-integrate-blackfire.html#blackfire-support)  for
+- description: Corrected the command syntax in the log preparation instructions  for
     troubleshooting Blackfire issues.
   versions: 2.x
   type: Technical changes
@@ -2017,13 +2014,13 @@ entries:
   link: https://github.com/magento/devdocs/pull/3627
 - description: Updated Magento Commerce and Magento Commerce Cloud release information
     to remove obsolete topics and add links to current Magento Commerce Cloud release
-    information in [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html).
+    information in Release Notes for ece-tools.
   versions: 2.x
   type: Major update
   date: January 24, 2019
   link: https://github.com/magento/devdocs/pull/3595
 - description: Updated the Magento Commerce Cloud Release Information with link to
-    Magento Commerce Cloud release information in the [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
+    Magento Commerce Cloud release information in the Release Notes for ece-tools
     topic.
   versions: 2.3.x
   type: Technical changes
@@ -2053,7 +2050,7 @@ entries:
   type: Technical changes
   date: January 16, 2019
   link: https://github.com/magento/devdocs/pull/3583
-- description: Added section to Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)
+- description: Added section to Cloud Project structure
     about how to change the base template.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2066,7 +2063,7 @@ entries:
   type: Major update
   date: January 15, 2019
   link: https://github.com/magento/devdocs/pull/3577
-- description: Refreshed the Cloud topic for [cloning and branching a project](https://devdocs.magento.com/guides/v2.3/cloud/before/before-setup-env-2_clone.html)
+- description: Refreshed the Cloud topic for cloning and branching a project
     for local development.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
@@ -2102,7 +2099,7 @@ entries:
   type: Technical changes
   date: January  3, 2019
   link: https://github.com/magento/devdocs/pull/3513
-- description: Updated the [Blackfire.io integration](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html)
+- description: Updated the Blackfire.io integration
     topic to include the `blackfire:setup` command for Magento Cloud CLI.
   versions: 2.3.x
   type: Technical changes
@@ -2118,8 +2115,8 @@ entries:
   link: https://github.com/magento/devdocs/pull/3431
 - description: Added information about retrieving Fastly credentials from project
     environment variables and updated information about how to manage Magento Commerce
-    Cloud project domains associated with an existing Fastly account. See [Get Fastly
-    credentials](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+    Cloud project domains associated with an existing Fastly account. See Get Fastly
+    credentials.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: December 21, 2018
@@ -2200,8 +2197,8 @@ entries:
   versions: 2.2.x
   type: New topic
   date: December  8 2018
-- description: Updated the Cloud guide instructions for [Upgrading to Magento version](https://devdocs.magento.com/guides/v2.3/cloud/project/project-upgrade.html)
-    2.3.<br/>Updated the [Elasticsearch setup](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)
+- description: Updated the Cloud guide instructions for Upgrading to Magento version
+    2.3.<br/>Updated the Elasticsearch setup
     topic in the Cloud guide.
   versions: 2.3.x
   type: Technical changes
@@ -2210,15 +2207,15 @@ entries:
   versions: 2.x
   type: Major update
   date: December  5 2018
-- description: "- Updated the Magento Commerce Cloud instructions for [customizing
-    response pages](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly-custom-response.html)<br/>for
+- description: "- Updated the Magento Commerce Cloud instructions for customizing
+    response pages<br/>for
     Fastly CDN and WAF services--adding additional screen captures and explanation.<br/>-
-    Edited the Fastly [Web Application Firewall](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
+    Edited the Fastly Web Application Firewall
     documentation to clarify information about features and benefits"
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: December  5 2018
-- description: Added a new section to the Cloud guide called [Optimize cloud deployment](https://devdocs.magento.com/guides/v2.2/cloud/deploy/optimize-cloud-deployment.html).
+- description: Added a new section to the Cloud guide called Optimize cloud deployment.
     This section includes a fresh overview of the Cloud deployment process, SCD strategies,
     and Smart wizards.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2260,7 +2257,7 @@ entries:
   versions: 2.3.x
   type: New topic
   date: November 26 2018
-- description: Added a fresh, new look to the [Cloud release notes](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
+- description: Added a fresh, new look to the Cloud release notes
     format.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2288,17 +2285,17 @@ entries:
   versions: 2.3.x
   type: New topic
   date: November 16 2018
-- description: Release notes for Cloud ece-tools version [2002.0.15](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002015)<br/>Added
-    a new [Cron container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-cli.html#cron-container)
-    to the Cloud Docker architecture.<br/>Added a [services table](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
+- description: Release notes for Cloud ece-tools version 2002.0.15<br/>Added
+    a new Cron container
+    to the Cloud Docker architecture.<br/>Added a services table
     to clarify the service key and version values available for the Cloud Docker environment
     setup.<br/>There are several other Cloud Docker updates, such as a new a PHP 7.2
-    image and various services, the ability to [share data between host and container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container),  and
-    information on [importing a database dump](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-database.html).<br/>Added
-    a [Quick Reference](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-quick-reference.html)
+    image and various services, the ability to share data between host and container,  and
+    information on importing a database dump.<br/>Added
+    a Quick Reference
     for the Docker environment.<br/>Added the ENABLE_GOOGLE_ANALYTICS environment
     variable.<br/>Moved
-    the [Global environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-global.html)
+    the Global environment variables
     to a new, independent topic.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2341,8 +2338,8 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Major update
   date: October 30 2018
-- description: Added [Health notifications](https://devdocs.magento.com/guides/v2.2/cloud/integrations/health-notifications.html)
-    to [Integrations](https://devdocs.magento.com/guides/v2.2/cloud/integrations/cloud-integrations.html)
+- description: Added Health notifications
+    to Integrations
     for Cloud.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2371,7 +2368,7 @@ entries:
   type: Technical changes
   date: October 25 2018
 - description: Updated the Magento Commerce Cloud Fastly documentation with information
-    about the Fastly Web Application Firewall service. See [Web Application Firewall](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
+    about the Fastly Web Application Firewall service. See Web Application Firewall.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: October 22 2018
@@ -2393,7 +2390,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: October 12 2018
-- description: Updated the Cloud set up [Services](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html)
+- description: Updated the Cloud set up Services
     articles to clarify that the instructions apply to the Magento Commerce Pro Integration
     environment and Starter environments only.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2461,9 +2458,9 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: September 27 2018
-- description: Updated the [Release notes for ece-tools version 2002.0.14.](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed
-    Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html)
-    architecture.<br/>Added [Reset cron jobs](https://devdocs.magento.com/guides/v2.3/cloud/trouble/reset-cron-jobs.html)
+- description: Updated the Release notes for ece-tools version 2002.0.14.<br/>Renamed
+    Local environment setup to Local development. Added new Docker development
+    architecture.<br/>Added Reset cron jobs
     topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and
     a bad redirect for the ece-tools update.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2474,8 +2471,8 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: September 21 2018
-- description: Added a step to configure a webhook for the Magento Cloud [BitBucket
-    integration](https://devdocs.magento.com/guides/v2.2/cloud/integrations/bitbucket-integration.html).
+- description: Added a step to configure a webhook for the Magento Cloud BitBucket
+    integration.
   versions: 2.1.x, 2.2.x
   type: Technical changes
   date: September 21 2018
@@ -2522,7 +2519,7 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Sep 12 2018
-- description: Update the Welcome page for the [Magento Commerce Cloud guide](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)
+- description: Update the Welcome page for the Magento Commerce Cloud guide
     and moved the location of the Cloud Guide links to the top navigation bar.
   versions: 2.x
   type: Major update
@@ -2531,7 +2528,7 @@ entries:
   versions: 2.3.x
   type: New topic
   date: Sep 10 2018
-- description: The [SCD_STRATEGY](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-build.html#scd_strategy)
+- description: The SCD_STRATEGY
     build and deploy environment variable for Magento Commerce Cloud now works for
     multiple  threads.
   versions: 2.2.x, 2.3.x
@@ -2565,7 +2562,7 @@ entries:
   type: New topic
   date: Sep 4 2018
 - description: Removed Fastly VCL snippet for extending the Admin timeout. Magento
-    Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).
+    Commerce Cloud Admin users can configure the timeout from the Magento Admin UI.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Sep 4 2018
@@ -2574,13 +2571,13 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Aug 30 2018
-- description: Added instructions for accessing the [New Relic account and managing
-    account users](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)  for
+- description: Added instructions for accessing the New Relic account and managing
+    account users  for
     the New Relic APM service available with Magento Commerce Cloud.
   versions: 2.1.x, 2.2.x
   type: Major update
   date: Aug 29 2018
-- description: Update the magento-cloud [CLI instructions for deleting an environment](https://devdocs.magento.com/guides/v2.3/cloud/env/environments-start.html#env-delete).
+- description: Update the magento-cloud CLI instructions for deleting an environment.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Aug 27 2018
@@ -2600,7 +2597,7 @@ entries:
   type: Technical changes
   date: Aug 22 2018
 - description: Add information about installing the Google reCAPTCHA and Two-Factor
-    Authentication extensions to the [Magento Commerce Cloud Store configuration documentation](https://devdocs.magento.com/guides/v2.2/cloud/configure/configuration-overview.html).
+    Authentication extensions to the Magento Commerce Cloud Store configuration documentation.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Aug 21 2018
@@ -2627,7 +2624,7 @@ entries:
   versions: 2.x
   type: Major update
   date: Aug 16 2018
-- description: Improve instructions for [configuring multi-site URLs](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html)
+- description: Improve instructions for configuring multi-site URLs
     with Magento Commerce Cloud.
   versions: 2.1.x, 2.2.x
   type: Technical changes
@@ -2671,8 +2668,8 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Technical changes
   date: Aug 06 2018
-- description: Updated the Inbound and Outbound [Integration environment IP address
-    tables](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress).
+- description: Updated the Inbound and Outbound Integration environment IP address
+    tables.
   versions: 2.x
   type: Technical changes
   date: Aug 06 2018
@@ -2689,18 +2686,17 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Aug 02 2018
-- description: Added Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
-    and [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
-    release notes for `ece-tools` package v2002.0.13
+- description: Added Magento Cloud v2.1
+    and v2.2 release notes for `ece-tools` package v2002.0.13
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Aug 04 2018
-- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
+- description: Updated the Configure Docker
     documentation to include instructions for deploying to a read-only file system.
   versions: 2.2.x, 2.3.x
   type: Technical changes
   date: Aug 02 2018
-- description: Added the capability to [clean static files](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#clean_static_files)
+- description: Added the capability to clean static files
     generated during the build phase when deploying your site with Magento Commerce
     Cloud.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2715,7 +2711,7 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Jul 30 2018
-- description: Reorganized and refreshed the [Cloud Upgrades and Patches section](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html).
+- description: Reorganized and refreshed the Cloud Upgrades and Patches section.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Jul 26 2018
@@ -2736,8 +2732,8 @@ entries:
   date: Jul 23 2018
 - description: Improved the Docker configuration process to set up a Magento Commerce
     Cloud development environment in your local workstation using ece-tools v2002.0.13
-    or later. Also added support for Redis, Varnish, and SSL services. See the [Magento
-    Commerce (Cloud) v2002.0.13 Release Notes](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html).
+    or later. Also added support for Redis, Varnish, and SSL services. See the Magento
+    Commerce (Cloud) v2002.0.13 Release Notes.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jul 23 2018
@@ -2746,8 +2742,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
-- description: Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html)
-    for Commerce 2.3 Alpha.
+- description: Added installation instructions for Commerce 2.3 Alpha.
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
@@ -2760,12 +2755,12 @@ entries:
   versions: 2.x
   type: Technical changes
   date: Jul 17 2018
-- description: Changed the default value for the [SKIP_HTML_MINIFICATION global variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html#skip_html_minification)
+- description: Changed the default value for the SKIP_HTML_MINIFICATION global variable
     to `true` to minimize downtime during deployment.
   versions: v2.2.1, v2.2.x, v2.2.3
   type: Technical changes
   date: Jul 13 2018
-- description: Enhanced the [hooks property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks)
+- description: Enhanced the hooks property
     so that you can customize the build phase further by using the `generate` and
     `transfer` commands to perform additional actions when specifically building code
     or moving files.
@@ -2781,7 +2776,7 @@ entries:
   versions: 2.2.x
   type: Major update
   date: Jul 09 2018
-- description: The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html)
+- description: The new URL Rewrite module
     helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.
   versions: 2.2.x
   type: Major update
@@ -2790,15 +2785,15 @@ entries:
     use hooks to apply custom changes to the generated static content before packaging
     the application for deployment. The build:generate process generates code, applies
     patches, and generates static content. The build:transfer process deploys the
-    application. See [Application hooks](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html).
+    application. See Application hooks.
   versions: v2.1.4 and later, 2.2.x, 2.3.x
   type: Major update
   date: Jul 5 2018
-- description: Added information to set up and configure [Fastly Image Optimization](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-image-optimization.html).
+- description: Added information to set up and configure Fastly Image Optimization.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Jun 29 2018
-- description: Update the Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)
+- description: Update the Cloud Project structure
     to reflect the recent base template changes for version 2.1 and 2.2.
   versions: 2.1.x, 2.2.x
   type: Technical changes
@@ -2833,19 +2828,19 @@ entries:
   versions: 2.1.x
   type: Major update
   date: Jun 25 2018
-- description: There is a new Cloud workflow to [add a `robots.txt` file and generate
-    a `sitemap.xml` file](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html)
+- description: There is a new Cloud workflow to add a `robots.txt` file and generate
+    a `sitemap.xml` file
     for a single domain configuration without requiring a change to the infrastructure.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jun 13 2018
-- description: Now you can [change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales)
+- description: Now you can change store locales
     when using SCD_ON_DEMAND without using the exporting and importing configuration
     process.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jun 13 2018
-- description: The new ece-tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html) configuration.
+- description: The new ece-tools command—`docker:build`—generates a Docker Compose configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
   date: Jun 09 2018
@@ -2858,8 +2853,8 @@ entries:
   type: New topic
   date: Jun 04 2018
 - description: Updated the storage capacity information for Magento Commerce Cloud
-    Pro architecture information in the [Production Technology Stack](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack)
-    documentation for Magento Cloud v2.1, [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).
+    Pro architecture information in the Production Technology Stack
+    documentation for Magento Cloud v2.1, v2.2, and v2.3.
   versions: 2.x
   type: Technical changes
   date: Jun 04 2018
@@ -2880,8 +2875,8 @@ entries:
   type: Technical changes
   date: May 23 2018
 - description: Added a new Cloud command—module:refresh—to enable missing modules
-    the same way that it is done automatically during a build. See [Build and deploy
-    on local in Build phase](https://devdocs.magento.com/guides/v2.2/cloud/live/live-sanity-check.html#build).
+    the same way that it is done automatically during a build. See Build and deploy
+    on local in Build phase.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 23 2018
@@ -2916,11 +2911,11 @@ entries:
   versions: 2.x
   type: Technical changes
   date: May 10 2018
-- description: Updated the Cloud build and deploy [environment variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-intro.html) descriptions and samples.
+- description: Updated the Cloud build and deploy environment variable descriptions and samples.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: May 08 2018
-- description: You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production
+- description: You must bypass Fastly when profiling with Blackfire in your Cloud Production
     environment.
   versions: 2.1.x, 2.2.x
   type: Technical changes
@@ -2934,12 +2929,12 @@ entries:
   versions: 2.x
   type: Technical changes
   date: May 07 2018
-- description: You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production
+- description: You must bypass Fastly when profiling with Blackfire in your Cloud Production
     environment.
   versions: 2.1.x, 2.2.x
   type: Technical changes
   date: May 07 2018
-- description: You can trigger a [redeploy](https://devdocs.magento.com/guides/v2.2/cloud/reference/cli-ref-topic.html)
+- description: You can trigger a redeploy
     of your Cloud environment.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
@@ -3014,7 +3009,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New
   date: Apr 24 2018
-- description: New [Smart wizards](https://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html)
+- description: New Smart wizards
     help you to verify your Cloud configuration follows best practices.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New
@@ -3034,12 +3029,12 @@ entries:
   versions: 2.3.x
   type: Major updates
   date: Apr 13 2018
-- description: Clarified the [New Relic APM](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+- description: Clarified the New Relic APM
     procedures.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Apr 10 2018
-- description: Updated information about how long we store [snapshots](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html).
+- description: Updated information about how long we store snapshots.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Apr 10 2018
@@ -3065,7 +3060,7 @@ entries:
   versions: 2.2.x, 2.3.x
   type: New
   date: Apr 05 2018
-- description: Removed a confusing and obsolete topic from the [Onboarding tasks](https://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html) section of
+- description: Removed a confusing and obsolete topic from the Onboarding tasks section of
     the Magento Commerce (Cloud) guide.
   versions: 2.x
   type: Updated
@@ -3076,39 +3071,39 @@ entries:
   type: Updated
   date: Apr 03 2018
 - description: Added the `WARM_UP_PAGES` variable for customizing the list of pages
-    to use to pre-load the cache. Available in the new [Post-deploy variables](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-post-deploy.html) topic.
+    to use to pre-load the cache. Available in the new Post-deploy variables topic.
   versions: 2.1.x, 2.2.x
   type: New
   date: Apr 02 2018
 - description: Added an example of pushing logs with syslog using the .magento.env.yaml
-    file. See the new [Logging handlers](https://devdocs.magento.com/guides/v2.2/cloud/env/log-handlers.html)
+    file. See the new Logging handlers
     topic.
   versions: 2.1.x, 2.2.x
   type: New
   date: Apr 02 2018
-- description: Added Elasticsearch 5.2 to the list of supported version in the [Magento
-    Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html)
+- description: Added Elasticsearch 5.2 to the list of supported version in the Magento
+    Commerce (Cloud)
     guide.
   versions: 2.2.x, 2.3.x
   type: Updated
   date: Apr 02 2018
-- description: You can pre-load the cache using the new [`post_deploy` hook](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks).
+- description: You can pre-load the cache using the new `post_deploy` hook.
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Apr 02 2018
 - description: Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud
-    [Environment variables reference](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html)
+    Environment variables reference
     that skips copying the static view files in the `var/view_preprocessed` directory.
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Apr 02 2018
-- description: Added the new CRYPT_KEY environment variable to the [Deploy variables
-    reference](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html) as
+- description: Added the new CRYPT_KEY environment variable to the Deploy variables
+    reference as
     a way to supply cryptographic key to another environment when moving a database.
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Apr 02 2018
-- description: Reorganized the Cloud [Configure environments](https://devdocs.magento.com/guides/v2.2/cloud/env/environments.html)
+- description: Reorganized the Cloud Configure environments
     section of the Cloud documentation. It is easier to distinguish the Application,
     Cloud, Build, and Deploy variables. The variable names also appear in each right-side
     page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment
@@ -3125,8 +3120,8 @@ entries:
   versions: 2.x
   type: Updated
   date: Mar 30 2018
-- description: Updated references to Fastly IP addresses in the [Magento Commerce
-    (Cloud) guide](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html) with the list
+- description: Updated references to Fastly IP addresses in the Magento Commerce
+    (Cloud) guide with the list
     of preferred IP addresses provided by Fastly.
   versions: 2.x
   type: Updated
@@ -3183,7 +3178,7 @@ entries:
   versions: 2.2.x, 2.3 pre-release
   type: Updated
   date: Mar 13 2018
-- description: Added support for PHP 7.1 in the [Magento Commerce (Cloud) Guide](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
+- description: Added support for PHP 7.1 in the Magento Commerce (Cloud) Guide.
   versions: 2.2.x
   type: Updated
   date: Mar 12 2018
@@ -3193,7 +3188,7 @@ entries:
   versions: ''
   type: Updated
   date: Mar 09 2018
-- description: Updated the [Magento Commerce (Cloud) Guide Configure routes](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate
+- description: Updated the Magento Commerce (Cloud) Guide Configure routes topic to deprecate
     the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate
     the subdomain instead of using the triple dash (\-\-\-).
   versions: 2.2.x
@@ -3235,7 +3230,7 @@ entries:
   type: Updated
   date: Feb 23 2018
 - description: Added reference and examples
-    for two, new [environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html)—`CACHE_CONFIGURATION`
+    for two, new environment variables—`CACHE_CONFIGURATION`
     and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default
     caching configuration.
   versions: 2.1.x, 2.2.x
@@ -3255,12 +3250,12 @@ entries:
   versions: 2.3 pre-release
   type: New
   date: Feb 07 2018
-- description: We added a [new troubleshooting topic](https://devdocs.magento.com/guides/v2.2/cloud/trouble/message-queues.html)
+- description: We added a new troubleshooting topic
     to help customers resolve an issue with message queues.
   versions: 2.2.x
   type: New
   date: Feb 07 2018
-- description: We added a [new troubleshooting topic](https://devdocs.magento.com/guides/v2.2/cloud/trouble/site-availability.html)
+- description: We added a new troubleshooting topic
     to help customers identify and resolve site availability issue related to Redis.
   versions: 2.x
   type: New
@@ -3284,20 +3279,20 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Jan 31 2018
-- description: You can now [manage build and deploy actions](https://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html)
+- description: You can now manage build and deploy actions
     across all your environments—including Pro Staging and Production—using a `.magento.env.yaml`
     file.
   versions: 2.2.x
   type: New
   date: Jan 31 2018
 - description: You can now unlock specific stuck cron jobs in Magento Commerce (Cloud)
-    with the [cron:unlock](https://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html)
+    with the cron:unlock
     command instead of stopping and re-launching all of them.
   versions: 2.2.x
   type: Updated
   date: Jan 31 2018
 - description: The deployment process creates backup files for the configuration files.
-    You can restore the configuration files using the [restore](https://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html)
+    You can restore the configuration files using the restore
     command.
   versions: 2.2.x
   type: Updated
@@ -3327,12 +3322,12 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Jan 10 2018
-- description: Created a [new topic](https://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html)
+- description: Created a new topic
     describing different scenarios for working with environment variables to the Magento
     Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based
     service to your Magento site.<br/>Added guidance for using these variables in
-    the [Set up RabbitMQ](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
-    and [Set up Elasticsearch](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html)
+    the Set up RabbitMQ
+    and Set up Elasticsearch
     topics.
   versions: 2.1.x, 2.2.x
   type: New and Updated
@@ -3359,7 +3354,7 @@ entries:
   type: New
   date: Dec 22 2017
 - description: Added a new section in the Magento Commerce (Cloud) guide for release
-    notes related to the [`ece-patches`](https://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html)
+    notes related to the `ece-patches`
     Composer package.
   versions: 2.2.x
   type: New, Updated
@@ -3370,12 +3365,12 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Dec 20 2017
-- description: Added a new topic about setting up the [Bitbucket integration](https://devdocs.magento.com/guides/v2.2/cloud/integrations/bitbucket-integration.html) for Magento Commerce
+- description: Added a new topic about setting up the Bitbucket integration for Magento Commerce
     (Cloud).
   versions: 2.x
   type: New
   date: Dec 18 2017
-- description: You must prepend [environment variables](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables)
+- description: You must prepend environment variables
     with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override
     configuration settings.
   versions: 2.x
@@ -3403,33 +3398,33 @@ entries:
   type: New
   date: Dec 07 2017
 - description: Revised guidance on which environments are limited to 5-minute cron
-    intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings
-    in the Magento Admin](https://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#add-cron)
+    intervals in the Magento Commerce (Cloud) guide. See Configure cron settings
+    in the Magento Admin
     for more information.
   versions: 2.2.x
   type: Updated
   date: Dec 06 2017
-- description: Added a new topic to the Magento Commerce (Cloud) guide about [configuring
-    email and Slack notifications](https://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html)
+- description: Added a new topic to the Magento Commerce (Cloud) guide about configuring
+    email and Slack notifications
     for build/deploy actions in an environment.
   versions: 2.2.x
   type: New
   date: Dec 06 2017
 - description: Updated the following Magento Commerce (Cloud) topics to include details
-    about static content compression during build/deploy phases:<br/>- [Configuration
-    Management](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)<br/>-
-    [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+    about static content compression during build/deploy phases:<br/>- Configuration
+    Management<br/>-
+    Deployment process
   versions: 2.2.x
   type: Updated
   date: Dec 06 2017
 - description: Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php`
     file if it doesn't detect one in your project directory during the build phase.
-    Updated references to configuration management in the [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) topic.
+    Updated references to configuration management in the Deployment process topic.
   versions: 2.2.x
   type: Updated
   date: Dec 06 2017
-- description: Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools
-    db-dump`](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump)
+- description: Replaced references to the `mysqldump` command with the new `vendor/bin/ece-tools
+    db-dump`
     CLI command for Staging and Production environments in the Magento Commerce (Cloud)
     guide
   versions: 2.2.x
@@ -3439,28 +3434,28 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Dec 05 2017
-- description: Added a [new troubleshooting section](https://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html)
+- description: Added a new troubleshooting section
     to the Magento Commerce (Cloud) cron topic describing how to reset Magento cron
     jobs
   versions: 2.2.x
   type: Updated
   date: Nov 30 2017
 - description: Revised and added new content for Magento Commerce (Cloud) for custom
-    Fastly VCLs including [Custom Fastly VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
-    [Custom whitelist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-whitelist.html),
-    [Custom VCL for blocking](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blocking.html),
-    [Custom extend Admin timeout VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
-    [Custom redirect to Wordpress VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
+    Fastly VCLs including Custom Fastly VCL snippets,
+    Custom whitelist VCL,
+    Custom VCL for blocking,
+    Custom extend Admin timeout VCL,
+    Custom redirect to Wordpress VCL,
     and Custom block bad referrer VCL.
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Nov 29 2017
-- description: Update content for Magento Commerce (Cloud) for [Composer](https://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html) commands and files, add new
-    content for [Git](https://devdocs.magento.com/guides/v2.2/cloud/reference/git-integration.html),
-    added Security Scan Tool info to [Go live and launch](https://devdocs.magento.com/guides/v2.2/cloud/live/live.html),
-    add .gitignore info to [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html),
-    add notes to [Patch Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html),
-    update information for upgrading Fastly in [Upgrade Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html), and updated redirects
+- description: Update content for Magento Commerce (Cloud) for Composer commands and files, add new
+    content for Git,
+    added Security Scan Tool info to Go live and launch,
+    add .gitignore info to Project structure,
+    add notes to Patch Magento Commerce (Cloud),
+    update information for upgrading Fastly in Upgrade Magento Commerce (Cloud), and updated redirects
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 29 2017
@@ -3474,13 +3469,13 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 27 2017
-- description: Updated and added content for Magento Commerce (Cloud) including [Theme
-    troubleshooting](https://devdocs.magento.com/guides/v2.2/cloud/trouble/theme-troubleshooting.html),
-    POP locations for [Set up Fastly](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html),
-    notes to [Set up cron jobs](https://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html),
-    security for [Manage branches with the Project Web Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html), worker information for
-    [.magento.app.yaml](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html),
-    and branch information in [Pro architecture](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-arch.html)
+- description: Updated and added content for Magento Commerce (Cloud) including Theme
+    troubleshooting,
+    POP locations for Set up Fastly,
+    notes to Set up cron jobs,
+    security for Manage branches with the Project Web Interface, worker information for
+    .magento.app.yaml,
+    and branch information in Pro architecture
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 27 2017
@@ -3488,9 +3483,9 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 27 2017
-- description: Updated Magento Commerce (Cloud) for [Import existing code into a project](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html),
-    [Prepare your existing Magento Commerce code](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html),
-    [Import code and data to Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html)
+- description: Updated Magento Commerce (Cloud) for Import existing code into a project,
+    Prepare your existing Magento Commerce code,
+    Import code and data to Magento Commerce (Cloud)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 22 2017
@@ -3506,25 +3501,25 @@ entries:
   type: Updated
   date: Nov 17 2017
 - description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
-    Cloud: [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
-    [Technologies and requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html),
+    Cloud: Fastly,
+    Technologies and requirements,
     and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 15 2017
 - description: Updated content for Magento Commerce (Cloud) including Configuration
-    Management for 2.1.X and [2.2.X](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html), Deployment
-    Process 2.1.X, and [2.2.X](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)
+    Management for 2.1.X and 2.2.X, Deployment
+    Process 2.1.X, and 2.2.X
   versions: 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 14 2017
-- description: Updated [Set up Fastly](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html)
-    and [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.2/cloud/cdn/trouble-fastly.html)
+- description: Updated Set up Fastly
+    and Fastly troubleshooting
     for Magento Commerce (Cloud) for handling existing Fastly accounts
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 14 2017
-- description: Updated how to [Configure Xdebug](https://devdocs.magento.com/guides/v2.2/cloud/howtos/debug.html)
+- description: Updated how to Configure Xdebug
     for Magento Commerce (Cloud).
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
@@ -3541,14 +3536,14 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Nov 09 2017
-- description: Updated [Set up Magento B2B](https://devdocs.magento.com/guides/v2.2/cloud/configure/setup-b2b.html)
+- description: Updated Set up Magento B2B
     with additional documentation links and error message updates for Magento Commerce
     (Cloud)
   versions: 2.2.x
   type: Updated
   date: Nov 09 2017
-- description: Updated Magento Commerce (Cloud) information for [Blackfire.io](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) module
-    enablement and environment naming and [New Relic APM](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+- description: Updated Magento Commerce (Cloud) information for Blackfire.io module
+    enablement and environment naming and New Relic APM
     for their university information
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
@@ -3559,30 +3554,30 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 07 2017
-- description: Updated [Magento application environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html) and [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) with scopes
+- description: Updated Magento application environment variables and Deployment process with scopes
     and SCD_STRATEGY variable for Magento Commerce (Cloud) 2.2.1
   versions: 2.2.x
   type: Updated
   date: Nov 07 2017
-- description: Updated [New Relic APM](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+- description: Updated New Relic APM
     license and environment information for Magento Commerce (Cloud)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 06 2017
-- description: Update relationship name for [RabbitMQ](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
+- description: Update relationship name for RabbitMQ
     service for Magento Commerce (Cloud)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 06 2017
-- description: Update Magento Commerce (Cloud) content for deploy commands in [Deploy
-    code and migrate static files and data](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)for
-    new and existing Pro plans and [Magento application environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)
+- description: Update Magento Commerce (Cloud) content for deploy commands in Deploy
+    code and migrate static files and datafor
+    new and existing Pro plans and Magento application environment variables
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 06 2017
 - description: Updated Fastly troubleshooting and supported features for Magento Commerce
-    (Cloud) in [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html)
-    and [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.2/cloud/cdn/trouble-fastly.html)
+    (Cloud) in Fastly
+    and Fastly troubleshooting
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 03 2017
@@ -3590,45 +3585,45 @@ entries:
   versions: 2.0.x, 2.1.x
   type: Updated
   date: Oct 31 2017
-- description: Updated Magento Commerce (Cloud) content for Fastly including [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html), [Set up
-    Fastly](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html), [Custom
-    Fastly VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
-    and [Troubleshoot Fastly](https://devdocs.magento.com/guides/v2.2/cloud/cdn/trouble-fastly.html)
+- description: Updated Magento Commerce (Cloud) content for Fastly including Fastly, Set up
+    Fastly, Custom
+    Fastly VCL snippets,
+    and Troubleshoot Fastly
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 30 2017
-- description: Add [B2B module set up](https://devdocs.magento.com/guides/v2.2/cloud/configure/setup-b2b.html)
+- description: Add B2B module set up
     information for Magento Commerce (Cloud)
   versions: 2.2.x
   type: New
   date: Oct 27 2017
-- description: Update SSH tunneling info to Magento Commerce (Cloud) in [SSH and sFTP](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html) and [Manage branches
-    with the CLI](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html).
+- description: Update SSH tunneling info to Magento Commerce (Cloud) in SSH and sFTP and Manage branches
+    with the CLI.
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 25 2017
 - description: Update database troubleshooting for Magento Commerce (Cloud) in Migrate
-    and deploy static files and data for [2.1](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)
-    and [2.2](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)
+    and deploy static files and data for 2.1
+    and 2.2
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Oct 24 2017
 - description: Add new content for trial Onboarding Portal for Magento Commerce (Cloud)
     including Subscription and plans,
-    [Onboarding tasks](https://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html),
-    [Onboarding Portal management](https://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-portal.html),
-    [Prepare project environments](https://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html),
-    and [Welcome to Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html).
+    Onboarding tasks,
+    Onboarding Portal management,
+    Prepare project environments,
+    and Welcome to Magento Commerce (Cloud).
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Oct 23 2017
 - description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
-    in [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
+    in Manage your project,
     Add Staging and Production to Pro projects,
-    [Deploy your store](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-live.html),
-    [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
-    [Prepare to deploy to Staging and Production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
-    and [Test deployment](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-test.html).
+    Deploy your store,
+    Deployment process,
+    Prepare to deploy to Staging and Production,
+    and Test deployment.
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 20 2017
@@ -3640,31 +3635,31 @@ entries:
   type: Updated, New
   date: Oct 18 2017
 - description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
-    [Manage your project](https://devdocs.magento.com/guides/v2.2/cloud/project/projects.html),
+    Manage your project,
     Add Staging and Production to Pro projects,
-    [Configure your project](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-basic.html),
-    [Create and manage users](https://devdocs.magento.com/guides/v2.2/cloud/project/user-admin.html),
-    [Manage branches with the Interface](https://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-branch.html),
-    [Magento Cloud CLI reference](https://devdocs.magento.com/guides/v2.2/cloud/reference/cli-ref-topic.html),
-    [Welcome to Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html),
-    [Starter architecture](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-architecture.html),
-    and [Pro architecture](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-arch.html)'
+    Configure your project,
+    Create and manage users,
+    Manage branches with the Interface,
+    Magento Cloud CLI reference,
+    Welcome to Magento Commerce (Cloud),
+    Starter architecture,
+    and Pro architecture'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 18 2017
-- description: Update Magento Commerce (Cloud) content for [Starter develop and deploy
-    workflow](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html),
-    [Pro develop and deploy workflow](https://devdocs.magento.com/guides/v2.2/cloud/welcome/discover-workflow.html),
-    [Install Magento](https://devdocs.magento.com/guides/v2.2/cloud/before/before-setup-env-install.html),
-    [Configuration management](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)
-    and [Example of managing system-specific settings](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-initial.html),
-    [Upgrade Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html),
-    and [Welcome to Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)
+- description: Update Magento Commerce (Cloud) content for Starter develop and deploy
+    workflow,
+    Pro develop and deploy workflow,
+    Install Magento,
+    Configuration management
+    and Example of managing system-specific settings,
+    Upgrade Magento Commerce (Cloud),
+    and Welcome to Magento Commerce (Cloud)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 17 2017
-- description: Add [cron](https://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html)
-    and [sFTP](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html#sftp)
+- description: Add cron
+    and sFTP
     content for Magento Commerce (Cloud)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
@@ -3673,23 +3668,23 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x
   type: New
   date: Oct 11 2017
-- description: Update Magento Commerce (Cloud) content for [Prepare project environments](https://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html), [First-time
-    local development setup](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/first-time-setup.html),
-    [Clone and branch the project](https://devdocs.magento.com/guides/v2.2/cloud/before/before-setup-env-2_clone.html),
-    [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html),
-    and [Magento application environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)
+- description: Update Magento Commerce (Cloud) content for Prepare project environments, First-time
+    local development setup,
+    Clone and branch the project,
+    Deployment process,
+    and Magento application environment variables
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 11 2017
-- description: "[Update Magento Commerce (Cloud) 2.2 Release Notes with changes in
-    deployment](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.2.html#deploy)"
+- description: "Update Magento Commerce (Cloud) 2.2 Release Notes with changes in
+    deployment"
   versions: 2.2.x
   type: Updated
   date: Oct 06 2017
-- description: Updated Magento Commerce (Cloud) content for [services.yaml](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html), [Elasticsearch](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-elastic.html),
-    [Redis](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-redis.html),
-    [MySQL](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-mysql.html),
-    and [RabbitMQ](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
+- description: Updated Magento Commerce (Cloud) content for services.yaml, Elasticsearch,
+    Redis,
+    MySQL,
+    and RabbitMQ
   versions: 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Oct 06 2017
@@ -3699,8 +3694,8 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Oct 03 2017
-- description: "[Update Admin account password change on project provision and creation
-    for Magento Commerce (Cloud)](https://devdocs.magento.com/guides/v2.3/cloud/onboarding/onboarding-tasks.html)"
+- description: "Update Admin account password change on project provision and creation
+    for Magento Commerce (Cloud)"
   versions: 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Sep 27 2017
@@ -3719,15 +3714,15 @@ entries:
   versions: 2.2.x
   type: New
   date: Sep 26 2017
-- description: Updated Magento Commerce (Cloud) 2.2 content for [upgrade instructions](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html), [Configuration
-    Management and Pipeline Deployment](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html),
-    [Magento application variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html),
-    [.magento.app.yaml](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html),
-    and [requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html)
+- description: Updated Magento Commerce (Cloud) 2.2 content for upgrade instructions, Configuration
+    Management and Pipeline Deployment,
+    Magento application variables,
+    .magento.app.yaml,
+    and requirements
   versions: 2.2.x
   type: Updated
   date: Sep 26 2017
-- description: "[Updated Fastly snippet examples and process for adding new VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html)"
+- description: "Updated Fastly snippet examples and process for adding new VCL snippets"
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Sep 20 2017
@@ -3744,28 +3739,28 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 13 2017
-- description: "[Added troubleshooting information for Redis.](https://devdocs.magento.com/guides/v2.2/cloud/trouble/redis-troubleshooting.html)"
+- description: "Added troubleshooting information for Redis."
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 11 2017
-- description: Updated database dump commands for [patching](https://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html)
-    and [upgrading](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade.html)
-    Magento Commerce Cloud, and for [Migrate and deploy](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html)
+- description: Updated database dump commands for patching
+    and upgrading
+    Magento Commerce Cloud, and for Migrate and deploy
     content.
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Sep 08 2017
-- description: "[Updated custom Fastly VCL snippet information](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html)"
+- description: "Updated custom Fastly VCL snippet information"
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Sep 08 2017
-- description: "[Added troubleshooting information for generating and adding sitemap.xml
-    and robots.txt.](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html)"
+- description: "Added troubleshooting information for generating and adding sitemap.xml
+    and robots.txt."
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 08 2017
-- description: Updated content for [Configuration Management](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)
-    and [corresponding examples](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-initial.html)
+- description: Updated content for Configuration Management
+    and corresponding examples
     for in Magento Commerce (Cloud).
   versions: 2.2.x
   type: Updated
@@ -3781,14 +3776,14 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 04 2017
-- description: Added information for Magento Commerce (Cloud) Starter [architecture](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-architecture.html)
-    and [development and deploy workflow](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html),
-    and Pro [architecture](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-arch.html)
-    and [development and deploy workflow](https://devdocs.magento.com/guides/v2.2/cloud/welcome/discover-workflow.html)
+- description: Added information for Magento Commerce (Cloud) Starter architecture
+    and development and deploy workflow,
+    and Pro architecture
+    and development and deploy workflow
   versions: 2.0.x, 2.1.x, 2.2.x
   type: Updated
   date: Sep 01 2017
-- description: "[Updated information on Magento encryption keys](https://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html)"
+- description: "Updated information on Magento encryption keys"
   versions: 2.0.x, 2.1.x, 2.2.x
   type: Updated
   date: Sep 01 2017
@@ -3796,9 +3791,9 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Aug 30 2017
-- description: Added information for Fastly [set up](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
-    [custom VCL snippets](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
-    and [troubleshooting](https://devdocs.magento.com/guides/v2.2/cloud/cdn/trouble-fastly.html)
+- description: Added information for Fastly set up,
+    custom VCL snippets,
+    and troubleshooting
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Aug 28 2017
@@ -3865,7 +3860,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Aug 07 2017
-- description: "[Migrating data to Cloud: add triggers to DB dump command](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html#cloud-live-migrate-db)"
+- description: "Migrating data to Cloud: add triggers to DB dump command"
   versions: 2.x
   type: Updated
   date: Aug 03 2017
@@ -4046,23 +4041,23 @@ entries:
   versions: '2.2'
   type: New
   date: June 23 2017
-- description: '[Import Magento EE into Magento Commerce Cloud](https://devdocs.magento.com/guides/v2.2/cloud/setup/first-time-setup-import-import.html)'
+- description: 'Import Magento EE into Magento Commerce Cloud'
   versions: 2.0, 2.1, 2.2
   type: Updated
   date: June 29 2017
-- description: '[Prepare your existing Magento EE system](https://devdocs.magento.com/guides/v2.2/cloud/setup/first-time-setup-import-prepare.html)'
+- description: 'Prepare your existing Magento EE system'
   versions: 2.0, 2.1, 2.2
   type: Updated
   date: June 29 2017
-- description: '[Resolve issues with encryption key](https://devdocs.magento.com/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html)'
+- description: 'Resolve issues with encryption key'
   versions: 2.0, 2.1, 2.2
   type: New
   date: June 29 2017
-- description: '[Go live](https://devdocs.magento.com/guides/v2.2/cloud/live/live.html)'
+- description: 'Go live'
   versions: 2.0, 2.1, 2.2
   type: Updated
   date: June 29 2017
-- description: '[Magento application environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)'
+- description: 'Magento application environment variables'
   versions: 2.0, 2.1, 2.2
   type: Updated
   date: June 27 2017
@@ -4334,7 +4329,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Mar 9 2017
-- description: '[Import a Magento EE project into Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/setup/first-time-setup-import-first-steps.html)'
+- description: 'Import a Magento EE project into Magento Commerce Cloud (MECE)'
   versions: 2.x
   type: New
   date: Mar 1 2017
@@ -4342,11 +4337,11 @@ entries:
   versions: 2.1.x
   type: New
   date: Mar 3 2017
-- description: '[Reorganize and update how to get started with an MECE environment](https://devdocs.magento.com/guides/v2.2/cloud/before/before-setup-env-1_get-start.html)'
+- description: 'Reorganize and update how to get started with an MECE environment'
   versions: 2.x
   type: Updated
   date: Mar 3 2017
-- description: '[Reorganize and correct issues with MECE workspace](https://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace.html)'
+- description: 'Reorganize and correct issues with MECE workspace'
   versions: 2.x
   type: Updated
   date: Mar 2 2017
@@ -4354,15 +4349,15 @@ entries:
   versions: 2.x
   type: New
   date: Mar 3 2017
-- description: '[Magento Commerce Cloud (MECE) deployment](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)'
+- description: 'Magento Commerce Cloud (MECE) deployment'
   versions: 2.x
   type: Updated
   date: Feb 23 2017
-- description: '[How to use logs to troubleshoot MECE](https://devdocs.magento.com/guides/v2.2/cloud/trouble/environments-logs.html)'
+- description: 'How to use logs to troubleshoot MECE'
   versions: 2.x
   type: New
   date: Feb 23 2017
-- description: '[How to SSH in to an MECE integration, staging, or production system](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-ssh.html)'
+- description: 'How to SSH in to an MECE integration, staging, or production system'
   versions: 2.x
   type: Updated
   date: Feb 23 2017
@@ -4382,7 +4377,7 @@ entries:
   versions: 2.1.5
   type: New
   date: Feb 21 2017
-- description: '[How Magento Commerce Cloud uses Composer](https://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html)'
+- description: 'How Magento Commerce Cloud uses Composer'
   versions: 2.x
   type: New
   date: Feb 17 2017
@@ -4390,7 +4385,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Feb 11 2017
-- description: '[How to create a Fastly error or maintenance page](https://devdocs.magento.com/guides/v2.2/cloud/cdn/cloud-fastly-custom-response.html)'
+- description: 'How to create a Fastly error or maintenance page'
   versions: 2.x
   type: Updated
   date: Feb 10 2017
@@ -4410,7 +4405,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Jan 27 2017
-- description: '[Corrected instructions to set up multiple websites or stores on Magento Commerce Cloud](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html)'
+- description: 'Corrected instructions to set up multiple websites or stores on Magento Commerce Cloud'
   versions: 2.x
   type: Updated
   date: Jan 31 2017
@@ -4475,7 +4470,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Dec 2 2016
-- description: '[Set up multiple Magento stores on Magento Commerce Cloud](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html)'
+- description: 'Set up multiple Magento stores on Magento Commerce Cloud'
   versions: 2.x
   type: New
   date: Dec 2 2016
@@ -4503,11 +4498,11 @@ entries:
   versions: 2.x
   type: New
   date: Nov 25 2016
-- description: '[Debug the Fastly extension with Magento Commerce Cloud](https://devdocs.magento.com/guides/v2.2/cloud/cdn/trouble-fastly.html)'
+- description: 'Debug the Fastly extension with Magento Commerce Cloud'
   versions: 2.x
   type: New
   date: Nov 25 2016
-- description: '[Magento Commerce Cloud requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html)'
+- description: 'Magento Commerce Cloud requirements'
   versions: 2.x
   type: Updated
   date: Nov 18 2016
@@ -4523,7 +4518,7 @@ entries:
   versions: 2.x
   type: New
   date: Nov 11 2016
-- description: '[Added detail about Magento Commerce Cloud (MECE) deployment](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)'
+- description: 'Added detail about Magento Commerce Cloud (MECE) deployment'
   versions: 2.x
   type: Updated
   date: Nov 4 2016
@@ -4543,8 +4538,8 @@ entries:
   versions: 2.1.x
   type: New
   date: Nov 4 2016
-- description: 'Magento Commerce Cloud (MECE) [added descriptions of build and deployment
-    scripts and other improvements to deployment](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html)'
+- description: 'Magento Commerce Cloud (MECE) added descriptions of build and deployment
+    scripts and other improvements to deployment'
   versions: 2.x
   type: Updated
   date: Oct 28 2016
@@ -4590,7 +4585,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 21 2016
-- description: '[Magento Commerce Cloud (MECE) Release Notes home page](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/CloudReleaseNotes.html)'
+- description: 'Magento Commerce Cloud (MECE) Release Notes home page'
   versions: 2.x
   type: New
   date: Oct 21 2016
@@ -4655,35 +4650,35 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[Magento 2 documentation resources for Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)'
+- description: 'Magento 2 documentation resources for Magento Commerce Cloud (MECE)'
   versions: 2.x
   type: New
   date: Oct 7 2016
-- description: '[MECE environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html)'
+- description: 'MECE environment variables'
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[MECE add more information about project directory structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)'
+- description: 'MECE add more information about project directory structure'
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[MECE completely revise new environment setup](https://devdocs.magento.com/guides/v2.2/cloud/before/before-setup-env-1_get-start.html)'
+- description: 'MECE completely revise new environment setup'
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[MECE responsibilities of the account owner](https://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html)'
+- description: 'MECE responsibilities of the account owner'
   versions: 2.x
   type: New
   date: Oct 7 2016
-- description: '[MECE Magento file system owner for local development](https://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html)'
+- description: 'MECE Magento file system owner for local development'
   versions: 2.x
   type: New
   date: Oct 7 2016
-- description: '[MECE setting MySQL `auto_increment_increment=3`](https://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-php.html)'
+- description: 'MECE setting MySQL `auto_increment_increment=3`'
   versions: 2.x
   type: New
   date: Oct 7 2016
-- description: '[MECE moving from integration to staging and production](https://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-over.html) (see also associated topics)'
+- description: 'MECE moving from integration to staging and production (see also associated topics)'
   versions: 2.x
   type: New
   date: Oct 7 2016

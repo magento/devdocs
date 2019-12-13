@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 42b6ebb8748ae5a3dc836d6891063dbebf31cbfe
+  revision: e1a4ff6880d5047cb8e14ac44849aca8ffaecf2a
   specs:
     devdocs (7)
       jekyll (>= 4.0)
@@ -25,13 +25,13 @@ GEM
       ffi (>= 1.3.0)
     eventmachine (1.2.7)
     exifr (1.3.6)
-    faraday (0.17.0)
+    faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.11.1)
+    ffi (1.11.3)
     filesize (0.2.0)
     forwardable-extended (2.6.0)
     fspath (3.1.2)
-    html-proofer (3.13.0)
+    html-proofer (3.14.1)
       addressable (~> 2.3)
       mercenary (~> 0.3)
       nokogiri (~> 1.10)
@@ -49,7 +49,7 @@ GEM
       image_size (>= 1.5, < 3)
       in_threads (~> 1.3)
       progress (~> 3.0, >= 3.0.1)
-    image_optim_pack (0.6.0)
+    image_optim_pack (0.6.0.20191208)
       fspath (>= 2.1, < 4)
       image_optim (~> 0.19)
     image_size (2.0.2)
@@ -86,7 +86,7 @@ GEM
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (2.0.1)
       sassc (> 2.0.1, < 3.0)
-    jekyll-sitemap (1.3.1)
+    jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-titles-from-headings (0.5.3)
       jekyll (>= 3.3, < 5.0)
@@ -99,7 +99,7 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     liquid (4.0.3)
-    listen (3.2.0)
+    listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mdl (0.7.0)
@@ -110,25 +110,26 @@ GEM
     mercenary (0.3.6)
     mini_portile2 (2.4.0)
     mixlib-cli (2.1.1)
-    mixlib-config (3.0.1)
+    mixlib-config (3.0.5)
       tomlrb
     multipart-post (2.1.1)
     netrc (0.11.0)
-    nokogiri (1.10.4)
+    nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
-    parallel (1.18.0)
+    parallel (1.19.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     progress (3.5.2)
     progressbar (1.10.1)
     public_suffix (4.0.1)
     rainbow (3.0.0)
+    rake (13.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rouge (3.12.0)
+    rouge (3.13.0)
     safe_yaml (1.0.5)
     sassc (2.2.1)
       ffi (~> 1.9)
@@ -138,7 +139,7 @@ GEM
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.20.3)
-    tomlrb (1.2.8)
+    tomlrb (1.2.9)
     typhoeus (1.3.1)
       ethon (>= 0.9.0)
     unicode-display_width (1.6.0)
@@ -168,6 +169,7 @@ DEPENDENCIES
   jekyll-titles-from-headings
   launchy
   mdl (= 0.7.0)
+  rake
   wdm
   whatsup_github
 

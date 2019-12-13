@@ -22,7 +22,7 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
@@ -62,7 +62,7 @@ Use [removeCouponFromCart]({{ page.baseurl }}/graphql/mutations/remove-coupon.ht
 
 **Request:**
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text

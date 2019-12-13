@@ -64,7 +64,7 @@ The following is an illustration of how the process of making simple changes loo
 
    ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you are using server-side compilation mode, you must [clean generated static view files]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). Continue to the next section to learn how to use Grunt to automate this process.
 
 ## Using server-side compilation mode with Grunt
@@ -146,5 +146,5 @@ If you are using server-side compilation mode, you must [clean generated static 
 
    ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 When your Magento instance is in client-side Less compilation mode, simple changes are applied after saving or refreshing the page. For more sophisticated changes, you may need to manually clean the theme sub-directory in the `pub/static/frontend` directory and generate a new deployment. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).

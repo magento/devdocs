@@ -19,8 +19,13 @@ b2b: Magento Commerce for B2B
 mbi: Magento Business Intelligence
 
 # Cloud product name variables
+
 ece: Magento Commerce Cloud
+csuite: Magento Commerce Cloud Suite
 ct: ece-tools
+mcp: magento-cloud-patches
+mcd: magento-cloud-docker
+mcc: magento-cloud-components
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.

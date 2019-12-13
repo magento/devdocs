@@ -13,7 +13,7 @@ Topics and areas include:
 *  Local environment options
 *  And much more
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Magento does not officially endorse these best practices.
 They are available in DevDocs because the content has been well received within the Magento community.
 
@@ -30,8 +30,8 @@ The DevDocs and Magento teams verified and provide the following best practices 
 *  [Observers Best Practices]({{ site.baseurl }}/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html)
 *  [Theme Development Best Practices]({{ site.baseurl }}/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
 *  [Performance Best Practices]({{ site.baseurl }}/guides/v2.3/performance-best-practices/)
-*  [Best Practices for Store Configuration]({{ site.baseurl }}/guides/v2.3/cloud/configure/configure-best-practices.html) for Commerce Cloud
-*  [Deployment Process]({{ site.baseurl }}/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
+*  [Best Practices for Store Configuration]({{ site.baseurl }}/cloud/configure/configure-best-practices.html) for Commerce Cloud
+*  [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html) for Commerce Cloud
 
 ## Want to contribute?
 

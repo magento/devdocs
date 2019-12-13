@@ -15,7 +15,7 @@ Disabling a custom source has the following effects:
 *  Stocks do not access inventory quantities from the source for aggregated inventory totals
 *  Order shipments cannot be assigned to disabled locations.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Bundle and grouped products currently do not support multi-sourcing and must be assigned to the default source and default stock.
 
 **Service name:**

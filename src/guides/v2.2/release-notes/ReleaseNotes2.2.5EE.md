@@ -210,7 +210,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Shipping
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 
 <!--- MAGETWO-84257  -->

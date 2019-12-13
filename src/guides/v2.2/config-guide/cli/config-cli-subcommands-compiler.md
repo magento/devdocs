@@ -20,7 +20,7 @@ Code compilation includes the following (in no particular order):
 
 You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/src/Magento/Setup/Module/Di/App/Task/Operation) [namespace](https://glossary.magento.com/namespace).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 The Magento software does not support the multi-tenant compiler, which includes the `bin/magento setup:di:compile-multi-tenant` command.
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}

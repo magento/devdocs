@@ -29,7 +29,7 @@ To start the [Extension](https://glossary.magento.com/extension) Manager:
 1. Enter your authentication keys in the provided fields.
 1. Click **Submit**.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 You must use the same authentication keys you used to install the Magento software. For example, you *cannot* use {{site.data.var.ce}} authentication keys to update or upgrade {{site.data.var.ee}} or vice versa. You also *cannot* use another user's authentication keys or [Shared account](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html) authentication keys
 
 See one of the following sections:

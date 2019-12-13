@@ -18,7 +18,7 @@ The shared catalog configuration process includes assigning categories and produ
 
 The `sharedCatalogCategoryManagementV1` service is based on `catalogCategoryManagementV1`. To view a store's category structure, call `GET /V1/categories`.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Products that are defined within a category are not included when you assign a category to a shared catalog. You must add products separately.
 
 **Service name:**
@@ -35,7 +35,7 @@ GET  /V1/sharedCatalog/:id/categories
 
 **Category parameters:**
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
 
 Name | Description | Format | Requirements
@@ -146,7 +146,7 @@ GET  /V1/sharedCatalog/:id/products
 
 **Category parameters:**
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Although you can specify other parameters defined within a `products` object, the `sku` is the only one used to assign or unassign a product to a shared catalog.
 
 Name | Description | Format | Requirements

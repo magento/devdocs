@@ -120,10 +120,10 @@ bin/magento setup:install \
 --use-rewrites=1
 ```
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 You can customize the Admin URI with the `--backend-frontname` option. However, we recommend omitting this option and allowing the installation command to automatically generate a random URI. A random URI is harder for hackers or malicious software to exploit. The URI displays in your console when installation is complete.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
 
 ### Web Setup Wizard

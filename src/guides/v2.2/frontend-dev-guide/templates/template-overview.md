@@ -12,7 +12,7 @@ In most cases, templates do not contain any logic about whether they will or wil
 
 Default Magento templates are [PHTML](https://glossary.magento.com/phtml) files. Also HTML templates are used for [Knockout JS](http://knockoutjs.com/index.html) scripts.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 [The Magento template rendering subsystem]({{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html) supports multiple template engines, including the default PHP-based engine for processing PHTML templates.
 
 This chapter describes how to customize templates in your design theme, and provides both the practice reference and the theoretical background of how templates are applied in a Magento store.

@@ -9,7 +9,7 @@ To back up your Integration environment database and code:
    magento-cloud db:dump
    ```
 
-   {: .bs-callout-info }
+    {:.bs-callout-info}
    The `magento-cloud db:dump` command runs the [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
 
 1. Back up code and media.
@@ -32,4 +32,4 @@ To back up your Staging or Production environment database before deploying:
    ```
 
 -  We recommend setting the application in maintenance mode before doing a database dump in Production environments.
--  This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management]({{ site.baseurl }}/guides/v2.2/cloud/project/project-webint-snap.html#db-dump).
+-  This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html#db-dump).

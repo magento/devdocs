@@ -110,7 +110,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The available paths are determined by your choice of Merchant country.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |

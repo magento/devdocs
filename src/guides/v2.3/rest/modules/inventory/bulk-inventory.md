@@ -149,7 +149,7 @@ An ID that identifies the request, such as `1`.
 
 When unassigning a source from a product, you are indicating the product will no longer be stocked at that location. This process completely clears all inventory data (quantity, stock status, Notify Quantity threshold) for the source currently assigned to the product. If you need to move the existing inventory to a new location, consider using the bulk transfer endpoint (`POST /V1/inventory/bulk-product-source-transfer`).
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 When you unassign a source from a product, Magento deletes all source data, including inventory amounts, from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders.
 
 We strongly recommend completing all orders and shipments for those products prior to removing the source.

@@ -79,7 +79,7 @@ There are two ways to apply patches:
 
    The command assumes the file to be patched is located relative to the patch file.
 
-   {: .bs-callout-info}
+    {:.bs-callout-info}
    If the command line shows: `File to patch:`, it means it cannot locate the intended file, even if the path seems correct. In the box displayed in the command line terminal, the first line shows the file to be patched. Copy the file path and paste it into the `File to patch:` prompt and press `Enter` and the patch should complete.
 
 1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
