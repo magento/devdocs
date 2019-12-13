@@ -20,13 +20,18 @@ Magento is organized into these main areas:
 
 *  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php){:target="_blank"} class always loads the 'crontab' area.
 
-You can also send requests to Magento using the SOAP and REST APIs. These two areas
+You can also send requests to Magento using the GraphQL, SOAP and REST APIs. The entry point for these areas are `index.php` or `pub/index.php`. The areas of these APIs are:
 
-*  **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
+*  **GraphQL** (`graphql`): The [`Magento\GraphQl\Controller\GraphQl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/Controller/GraphQl.php){:target="_blank"} class is the front controller that responds to GraphQL-based [URLs](https://glossary.magento.com/url). 
 
-*  **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`.
+*  **Web API REST** (`webapi_rest`): The [`Magento\Webapi\Controller\Rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Rest.php){:target="_blank"} class is the controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
+
+*  **Web API SOAP** (`webapi_soap`): The [`Magento\Webapi\Controller\Soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Soap.php){:target="_blank"} class is the front controller that responds to SOAP-based [URLs](https://glossary.magento.com/url).
+
+{:.bs-callout-info}
+The GraphQL API was released in Magento 2.3.0. Please see [GraphQL]({{ page.baseurl }}/graphql/) documentation for more information.
 
 ## How areas work with modules {#m2arch-module-using}
 
