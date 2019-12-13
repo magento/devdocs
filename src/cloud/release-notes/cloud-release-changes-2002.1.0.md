@@ -26,8 +26,8 @@ Use `.magento.env.yaml` instead. Build phase will fail if `build_options.ini` fi
 
 ### Patches moved to separate repository
 
-Patches and related functionality were moved to separate package `magento/magento-cloud-patches`.
+Patches and related functionality were moved to the separate package `magento/magento-cloud-patches`.
 
 ### Docker moved to separate repository
 
-Docker functionality was moved to separate package `magento/magento-cloud-docker`.
+Docker functionality was moved to the separate package `magento/magento-cloud-docker`.
