@@ -31,6 +31,7 @@ pages:
 
         - label: Scaled architecture
           url: /cloud/architecture/scaled-architecture.html
+          versionless: true
 
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
