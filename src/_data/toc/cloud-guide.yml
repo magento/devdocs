@@ -504,9 +504,6 @@ pages:
           url: /cloud/trouble/theme-troubleshooting.html
           versionless: true
 
-    - label: Release notes
-      url: /cloud/release-notes/cloud-tools.html
-
     - label: Upgrades and patches
       url: /cloud/project/project-upgrade-parent.html
       versionless: true
@@ -529,10 +526,16 @@ pages:
 
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
+      versionless: true
       children:
         - label: ece-tools
           url: /cloud/release-notes/ece-release-notes.html
+          versionless: true
+
         - label: magento-cloud-docker
           url: /cloud/release-notes/mcd-release-notes.html
+          versionless: true
+
         - label: magento-cloud-patches
           url: /cloud/release-notes/mcp-release-notes.html
+          versionless: true
