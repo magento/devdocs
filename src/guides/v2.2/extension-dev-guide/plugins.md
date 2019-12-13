@@ -342,6 +342,7 @@ Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | :-----------: | :--------------: | :--------------: | :--------------: |
+| **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    |                  |                  |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
@@ -365,6 +366,7 @@ Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | :-----------: | :--------------: | :--------------: | :--------------: |
+| **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
@@ -392,6 +394,7 @@ Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | :-----------: | :--------------: | :--------------: | :--------------: |
+| **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    | aroundDispatch() |                  | aroundDispatch() |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
