@@ -182,7 +182,7 @@ Binding's configuration that may include the following properties:
 
 ### `colorPicker`
 
-The `colorPicker` binding is a part of the [ColorPicker]({{ page.baseurl }}/ui_comp_guide/components/ui-colorpicker.html) component.
+The `colorPicker` binding is a part of the ColorPicker component.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/color-picker.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
 
