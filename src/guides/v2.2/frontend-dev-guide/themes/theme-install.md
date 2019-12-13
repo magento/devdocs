@@ -32,7 +32,7 @@ To install a theme manually:
 
 ## Install a theme as composer package
 
-To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
+To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ site.baseurl }}/cloud/howtos/install-components.html) topic.
 
 -  Manually installed themes are stored in the `app/design/` directory. Themes loaded through Composer are located in the `vendor/` directory and can be stored anywhere in root.
 
