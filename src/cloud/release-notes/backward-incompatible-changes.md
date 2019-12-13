@@ -3,6 +3,9 @@ group: release-notes
 title: Backward Incompatible Changes
 ---
 
+New releases of {{ site.data.var.ct }} sometimes introduce backward incompatible changes that require you to  adjust configuration and processes for existing Cloud projects to take advantage of new features and deprecate outdated functionality and processes.  
+This document lists these changes and provides information about how to adapt your existing code and project to use the new functionality.
+
 ### Minimum php version increased
 
 Php version requirements increased to 7.1.3+
