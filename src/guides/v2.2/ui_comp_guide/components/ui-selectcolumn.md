@@ -32,7 +32,7 @@ Extends [`Column`]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html):
 
 ### Integrate the SelectColumn component with the Listing component
 
-This is an example of how the SelectColumn component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component: 
+This is an example of how the SelectColumn component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component:
 
 ```xml
 <listing>
