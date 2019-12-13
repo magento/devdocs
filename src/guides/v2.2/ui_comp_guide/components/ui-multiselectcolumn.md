@@ -14,7 +14,7 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
 | `bodyTmpl` | Path to the template that is used to render a column's field in the table's body. | String | `ui/grid/cells/multiselect` |
 | `controlVisibility` | Whether a user can control column's visibility handled by the [ColumnsControls component]({{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html). | String | `false` |
 | `draggable` | Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table. | Boolean | `false` |
-| `fieldClass` | Additional CSS classes added to the column's field elements. | {<br />[name: string]: boolean<br />} | `{'data-grid-checkbox-cell': true}` |
+| `fieldClass` | Additional CSS classes added to the column's field elements. | {[name: string]: boolean} | `{'data-grid-checkbox-cell': true}` |
 | `headerTmpl` | Path to the `.html` template for the column's header. | String | `ui/grid/columns/multiselect` |
 | `indexField` | The name of the field that should be associated with the unique value of the listing row. The name of a ID field is commonly used for this option. | String | `-` |
 | `preserveSelectionsOnFilter` | Whether to preserve selected items when a new filter value is applied. | Boolean | `false` |
