@@ -2767,7 +2767,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-91934 -->
 
-*  You can change store locale without the exporting and importing configuration data. While Magento is in production mode and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales).
+*  You can change store locale without the exporting and importing configuration data. While Magento is in production mode and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales).
 
 <!-- MAGETWO-90564 -->
 

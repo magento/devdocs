@@ -83,9 +83,9 @@ If you already have a sample module, you can use it; skip this step and the next
 
 1. Clean the cache:
 
-  ```bash
-  bin/magento cache:clean
-  ```
+   ```bash
+   bin/magento cache:clean
+   ```
 
 {% endcollapsible %}
 
@@ -176,7 +176,21 @@ The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class
 
 {% endcollapsible %}
 
-## Step 5: Verify the cron job {#cron-tut-cronver}
+## Step 5: Compile and cache clean
+
+Compile the code with this command:
+
+```bash
+bin/magento setup:di:compile
+```
+
+and clean the cache with this command:
+
+```bash
+bin/magento cache:clean
+```
+
+## Step 6: Verify the cron job {#cron-tut-cronver}
 
 This step shows how to verify the custom cron job successfully using a SQL query on the `cron_schedule` database table.
 
@@ -185,7 +199,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1. Run Magento cron jobs:
 
    ```bash
-   php /var/www/html/magento2/bin/magento cron:run
+   bin/magento cron:run
    ```
 
 1. Enter the `magento cron:run` command two or three times.
@@ -234,7 +248,7 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 
 {% endcollapsible %}
 
-## Step 6 (optional): Set up a custom cron group
+## Step 7 (optional): Set up a custom cron group
 
  This step shows how to optionally set up a custom cron group. You should set up a custom cron group if you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
 
@@ -264,7 +278,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 {% endcollapsible %}
 
-## Step 7 (optional): Verify your custom cron group
+## Step 8 (optional): Verify your custom cron group
 
 This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/magento-admin).
 

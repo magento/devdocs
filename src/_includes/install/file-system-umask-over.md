@@ -2,7 +2,7 @@
 
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 If you're using an Magento version 2.0.5 or earlier, see [Appendix&mdash;Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
 
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
@@ -14,7 +14,7 @@ This topic provides some basic information about our ownership and permissions g
 
 We refer to the *Magento file system owner* as a user who owns and can write to files in the Magento file system.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The Magento file system owner is sometimes referred to as the *command-line user*.
 
 The Magento file system owner is any of the following:
@@ -43,7 +43,7 @@ Before you install the Magento software, see [Set pre-installation ownership and
 
 To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
-{:.bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.
 
 Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 666 for files and 777 for directories.

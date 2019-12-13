@@ -11,7 +11,7 @@ The Magento Framework controls how application components interact, including re
 This primarily [PHP](https://glossary.magento.com/php) software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a [library](https://glossary.magento.com/library) of code to help implement a resource model.)
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.
 
 You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.
@@ -48,7 +48,7 @@ lib/
 
 *  `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
-{: .bs-callout-tip }
+{:.bs-callout-tip}
 The `vendor/magento/framework` directory maps to the `Magento\Framework` [namespace](https://glossary.magento.com/namespace).
 
 ## Highlights of Magento Framework
@@ -65,7 +65,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
 |`Magento\Framework\View`|Contains code to render pages and layouts.|
 |`Magento\Framework\Data`|Contains additional classes that handle forms.|
 |`Magento\Framework\Url`|Contains code to look up other pages in Magento.|
-{:style="table-layout:auto;"}
+{:style="table-layout:auto"}
 
 Other namespaces under `Magento\Framework` that will interest extension developers:
 
@@ -82,4 +82,4 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 |`Magento\Framework\Exception`|Contains the basic exceptions that are thrown throughout the Magento codebase.|
 |`Magento\Framework\Event`|Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.|
 |`Magento\Framework\Validator`|Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.|
-{:style="table-layout:auto;"}
+{:style="table-layout:auto"}

@@ -63,7 +63,7 @@ We recommend limiting the list of active PHP extensions to those that are requir
 
 Adding more extensions increases library load times.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.
 
 ### PHP Settings
@@ -93,6 +93,18 @@ If you have a low-memory machine and you do not have many extensions or customiz
 ```conf
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
+```
+
+#### APCU
+
+We recommend enabling the [PHP APCu extension](https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache) and [configuring `composer` to support it]({{ page.baseurl }}/performance-best-practices/deployment-flow.html#preprocess-dependency-injection-instructions) to optimize for maximum performance. This extension caches file locations for opened files, which increases performance for Magento server calls including pages, Ajax calls, and endpoints.
+
+Edit your `apcu.ini` configuration file to add the APCu extension module:
+
+```text
+extension=apcu.so
+[apcu]
+acp.enabled = 1
 ```
 
 ## Web server
@@ -189,5 +201,5 @@ If you plan to serve all your traffic with just one web node, it does not make s
 
 For a multiple web nodes setup, Redis is the best option. Because Magento actively caches lots of data for better performance, pay attention to your network channel between the web nodes and the Redis server. You do not want the channel to become a bottleneck for request processing.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider) to your Redis server.

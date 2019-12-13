@@ -9,7 +9,7 @@ redirect_from:
   - /guides/v2.2/release-notes/2.3.0-install.html
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 With Magento 2.2.5, we are moving to a quarterly release cycle for  minor releases. Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
 
 Quarterly patch releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major and minor releases that occur outside this quarterly cadence.
@@ -45,11 +45,11 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 *  [{{site.data.var.ce}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1CE.html)
 *  [{{site.data.var.ee}} 2.2.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.1EE.html)
-*  [{{site.data.var.ece}} 2.2.1 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.1.html)
+*  [{{site.data.var.ece}} 2.2.1 Release Notes]({{ site.baseurl }}/cloud/release-notes/CloudReleaseNotes2.2.1.html)
 
 *  [{{site.data.var.ce}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0CE.html)
 *  [{{site.data.var.ee}} 2.2.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.0EE.html)
-*  [{{site.data.var.ece}} 2.2.0 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.2.html)
+*  [{{site.data.var.ece}} 2.2.0 Release Notes]({{ site.baseurl }}/cloud/release-notes/CloudReleaseNotes2.2.html)
 
 ## Backward-incompatible changes
 
@@ -59,9 +59,9 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 The ece-tools package is a scalable deployment tool that simplifies the {{ site.data.var.ece }} upgrade process by providing commands to backup the database, apply custom patches, verify environment packages, and more. The package also contains scripts and {{site.data.var.ece}} commands to help manage your code and automate the project build and deploy process.
 
-See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about {{site.data.var.ece}} upgrades and patches.
+See [Release Notes for ece-tools]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about {{site.data.var.ece}} upgrades and patches.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 ## Contact information for third-party extensions

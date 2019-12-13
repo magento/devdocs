@@ -1,8 +1,8 @@
 This topic discusses how to test patches to your {{site.data.var.ece}} system locally before you push them to the remote server. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-When you perform a {{site.data.var.ee}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full {{site.data.var.ee}} application, see [Upgrade a {{site.data.var.ee}} patch](#upgrade-patch). To upgrade and test a full {{site.data.var.ee}} version (including patches and hotfixes), see [Upgrade and test {{site.data.var.ee}}]({{ page.baseurl }}/cloud/project/project-upgrade.html).
+When you perform a {{site.data.var.ee}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full {{site.data.var.ee}} application, see [Upgrade a {{site.data.var.ee}} patch](#upgrade-patch). To upgrade and test a full {{site.data.var.ee}} version (including patches and hotfixes), see [Upgrade and test {{site.data.var.ee}}]({{ site.baseurl }}/cloud/project/project-upgrade.html).
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 We recommend installing full {{site.data.var.ee}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 There are two types of patches:
@@ -19,10 +19,10 @@ There are two types of patches:
 
    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
-{: .bs-callout-warning }
+{:.bs-callout-warning}
 Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
 
-For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
+For more information on Composer, see [Composer in Cloud]({{ site.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Upgrade a {{site.data.var.ee}} patch {#upgrade-patch}
 
@@ -48,7 +48,7 @@ Back up your Integration environment database and code:
 
 Back up your Staging or Production environment database before deploying to those environments:
 
-1. [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+1. [SSH to the server]({{ site.baseurl }}/cloud/env/environments-ssh.html).
 1. Find the database login information:
 
    ```bash
@@ -108,7 +108,7 @@ Verify other changes you're going to submit to source control before you start t
 
 *General patches* are provided for all {{site.data.var.ee}} customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
-The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
+The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#gen-getstarted}
 
@@ -120,7 +120,7 @@ We recommend you test a patch in the `master` branch.
 
 To test a general patch on your local system:
 
-1. On your local system, enter the following commands as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
+1. On your local system, enter the following commands as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html):
 
    ```bash
    cd <project root dir>
@@ -207,7 +207,7 @@ After you've successfully tested a patch locally and on your integration environ
 
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
-The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
+The procedure you use is slightly different, depending on the type of environment, see [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).
 
 ### Get started {#custom-getstarted}
 
@@ -219,7 +219,7 @@ We recommend you test a patch locally in the `master` branch.
 
 To test a custom patch on your local system:
 
-1. On your local system, enter the following command as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
+1. On your local system, enter the following command as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) if you haven't done so already:
 
    ```bash
    mkdir <Magento project root dir>/m2-hotfixes

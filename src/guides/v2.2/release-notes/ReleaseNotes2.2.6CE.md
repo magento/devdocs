@@ -81,13 +81,13 @@ Performance-tuning enhancements focus on catalog indexing and include:
 
 ### **Magento Cloud highlights**
 
-*  We've added a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
+*  We've added a [Docker Compose]({{ site.baseurl }}/cloud/docker/docker-config.html) configuration to the Cloud `ece-tools` repository for deploying a local development environment.
 
-*  Merchants can now [change store locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
+*  Merchants can now [change store locales]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process.
 
-*  A new [workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
+*  A new [workflow]({{ site.baseurl }}/cloud/trouble/robots-sitemap.html) lets merchant add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
-*  Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
+*  Merchants can now define multiple locales for each theme using the new [`SCD_MATRIX`]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
 
 *  Zero-downtime deployment has been implemented through a “connection holding” capability, which ensures no lost connections or site unavailability, providing smooth shopper experience even during deployments involving database schema changes.
 
@@ -1234,7 +1234,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-69847  -->
 
-*  Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. See "Redis and static-content deployment" in [Redis troubleshooting]({{ page.baseurl }}/cloud/trouble/redis-troubleshooting.html) for more information. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
+*  Magento no longer throws an exception when deploying static content on a deployment where Redis is used for cache management. [GitHub-9287](https://github.com/magento/magento2/issues/9287)
 
 <!-- MAGETWO-84109  -->
 
@@ -1948,7 +1948,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-92154  -->
 
-*  You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ page.baseurl }}/cloud/live/sens-data-over.html#change-locales).
+*  You can change store locale without the exporting and importing configuration process. While Magento is in Production and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales]({{ site.baseurl }}/cloud/live/sens-data-over.html#change-locales).
 
 <!-- MAGETWO-90572  -->
 
@@ -2164,7 +2164,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Shipping
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+<div class="bs-callout-info" id="info" markdown="1">
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 

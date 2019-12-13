@@ -70,7 +70,7 @@ Syntax option | Description
 `@doc(description)` | Describes the purpose of the mutation
 `@deprecated(reason: "description")` | Use `@deprecated` to mark a query, mutation, or attribute as deprecated
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 It is a good practice to define separate types for input and output data. This practice permits additional extension points, so every input and output type can be extended by adding additional fields to the definition.
 
 #### Example

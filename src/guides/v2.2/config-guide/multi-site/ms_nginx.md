@@ -19,7 +19,7 @@ We assume that:
 
    Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-   Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+   Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
 *  You accept multiple domains in one virtual host file or use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`.
 *  You use the `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial.
@@ -30,7 +30,7 @@ We assume that:
    *  `german.mysite.mg` with website code `german` and store view code `de`
    *  `mysite.mg` is the default website and default store view
 
-{: .bs-callout-tip }
+ {:.bs-callout-tip}
 Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
 
 ### Roadmap for setting up multiple websites with nginx

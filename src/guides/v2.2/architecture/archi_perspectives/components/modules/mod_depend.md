@@ -81,7 +81,7 @@ The `<sequence>` node of `app/code/<Vendor>/<Module>/etc/module.xml` file also c
   </module>
 ```
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 If a module uses code from another module, it should declare the dependency explicitly.
 
 ## Module install order
@@ -101,7 +101,7 @@ Although Magento architecture favors loosely coupled software components, module
 
 *  libraries (either Magento Framework [library](https://glossary.magento.com/library) or third party libraries)
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.
 
 ## Inappropriate dependencies {#m2devgde-moddep-inapp-dep}
@@ -120,7 +120,7 @@ You can build dependencies between the modules belonging to different layers.
 
 A module belonging to the Magento Framework can be used in the application layer by an explicit dependency.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 In this case, using interfaces is preferable to using classes. You can build dependencies between classes in the Magento Framework even if they belong to different modules.
 
 ## Dependencies in the application layer {#m2devgde-moddep-app-layer}

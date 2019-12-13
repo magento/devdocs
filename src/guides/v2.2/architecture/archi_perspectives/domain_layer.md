@@ -12,7 +12,7 @@ The [domain](https://glossary.magento.com/domain) layer holds the business logic
 
 *  (Optionally) Including the implementation of service contracts, although not their definition.
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 **Best practice:** Use service contracts to communicate with the domain layer by passing data types through strongly typed objects. This helps you avoid the need to replace presentation layer code when replacing business layer logic.
 
 ## Models

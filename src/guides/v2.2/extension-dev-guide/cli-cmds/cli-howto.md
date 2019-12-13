@@ -83,12 +83,13 @@ Following is a summary of the process:
 
                $output->writeln('<info>Success Message.</info>');
                $output->writeln('<error>An error encountered.</error>');
+               $output->writeln('<comment>Some Comment.</comment>');
            }
        }
    ```
 
-   {: .bs-callout-info }
-   You can style the output text by using `<error>This is an error message</error>` or `<info>This is a success message</info>`.
+   {:.bs-callout-info}
+   Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} docummentation for more information about styling.
 
 1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
 

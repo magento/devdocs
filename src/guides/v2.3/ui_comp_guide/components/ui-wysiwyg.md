@@ -9,7 +9,7 @@ The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for 
 
 Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor to a page.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="_blank"} for more information.
 
 ## Configuration options
@@ -155,7 +155,7 @@ Last, add your data provider, controller, and routes. Refer to [Creating a Magen
 
 The most common way to configure UI components in Magento is to add a configuration section inside the XMl element when declaring it on a form. If you need to apply dynamic modifications to a UI component, we recommend using PHP modifiers since Magento supports replacing the default WYSIWYG editor with other WYSIWYG libraries.
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 Refer to [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) for more information.
 
 To use PHP modifiers, your data provider must inherit from `ModifierPoolDataProvider`. The following class adds support for modifier pools, which are required when using modifiers. Inheriting from this class allows you to use modifiers.
@@ -358,5 +358,5 @@ Here's an example that connects the data provider and modifier created in the pr
 </config>
 ```
 
-{: .bs-callout-info }
+ {:.bs-callout-info}
 If your form already uses the [ModifierPool]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), you can continue using it to control the configuration of your WYSIWYG components.

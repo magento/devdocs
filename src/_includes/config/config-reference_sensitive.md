@@ -1,4 +1,4 @@
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 All configuration paths listed in this topic are sensitive. The `System-specific?` column shows which values are also system-specific.
 
 ## General category sensitive and system-specific paths
@@ -283,7 +283,7 @@ This section lists variable names and config paths available for options in the 
 |--------------|--------------|--------------|--------------|
 | Merchant Country | `paypal/general/merchant_country` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Your choice for this variable determines which [International paths](#vars-intl-list) you can use.
 
 ### PayPal sensitive and system-specific paths

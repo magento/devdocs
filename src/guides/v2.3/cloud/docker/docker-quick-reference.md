@@ -1,1 +1,0 @@
-../../../../guides/v2.2/cloud/docker/docker-quick-reference.md

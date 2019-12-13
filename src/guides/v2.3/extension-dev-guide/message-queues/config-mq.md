@@ -36,7 +36,7 @@ The `queue.xml` file defines the broker that processes topics. It also specifies
 {:.no_toc}
 
 ```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <broker topic="product_action_attribute.update" exchange="magento-db" type="db">
         <queue name="product_action_attribute.update"
                consumer="product_action_attribute.update"
@@ -292,7 +292,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 | exchange             | The name of the exchange to publish to. The default system exchange name is `magento`. |
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 You cannot enable more than one `publisher` for each `topic`.
 
 ### Updating `queue.xml` {#updatequeuexml}

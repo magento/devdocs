@@ -34,14 +34,14 @@ Add the code to `<magento root dir>/dev/tests/functional/isolation.php`.
 
 It means that during test run the FTF would call `http://magento2ce.com/dev/tests/functional/isolation.php` (`<baseUrl>` is set to `http://magento2ce.com/`) according to selected isolation strategy.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Isolation script is run in a web browser and must be accessible by a web server.
 
 ## Step 2: Set isolation script {#step-2}
 
 You can set isolation script globally, in configuration file, or locally, directly in a test case. The following examples show different options.
 
-{: .bs-callout .bs-callout-warning }
+{:.bs-callout-warning}
 Isolation management for a certain test or test case has higher priority than global.
 
 ### Step 2(a): Globally set isolation script to be run after each test case {#step-2a}

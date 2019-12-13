@@ -19,12 +19,12 @@ To add a custom breakpoint in your theme, you need to do the following:
 
 ## Add a new breakpoint variable
 
-In your custom theme directory, add a `/web/css/source/variables.less` in one of the following ways:
+In your custom theme directory, add a `/web/css/source/_variables.less` in one of the following ways:
 
--  if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
+-  if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `_variables.less`.
 -  if your theme is a standalone one, add a new empty file.
 
-In `variable.less`, add the variable for your new breakpoint.
+In `variables.less`, add the variable for your new breakpoint.
 
 For example:
 
@@ -47,10 +47,10 @@ To do this, take the following steps:
    -  `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
 1. In your `_responsive.less` file, add the `.media-width` [mixin](https://glossary.magento.com/mixin) rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.
 
-{: .bs-callout .bs-callout-warning}
+{:.bs-callout-warning}
 Use single quotes when specifying media-targets. Double quotes may cause unexpected issues with the scripts.
 
 Example:

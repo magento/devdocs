@@ -12,7 +12,7 @@ The following example shows how to log database activity using the [`Magento\Fra
 *  Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Logger/Quiet.php)
 *  Logs to the Magento `var/log` directory: [`Magento\Framework\DB\Logger\File`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Logger/File.php)
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 You can also use the Magento CLI to [enable and disable database logging]({{page.baseurl}}/config-guide/cli/logging.html#database-logging).
 
 To change the default configuration of `\Magento\Framework\DB\Logger\LoggerProxy`, edit your `app/etc/di.xml`.
@@ -38,4 +38,16 @@ After that, provide the file path for `Magento\Framework\DB\Logger\File`:
         <argument name="debugFile" xsi:type="string">log/db.log</argument>
     </arguments>
 </type>
+```
+
+Finally, compile the code with:
+
+```bash
+bin/magento setup:di:compile
+```
+
+and clean the cache with:
+
+```bash
+bin/magento cache:clean
 ```

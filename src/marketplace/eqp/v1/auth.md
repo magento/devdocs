@@ -2,7 +2,7 @@
 group: marketplace-api
 title: Authentication
 ---
-{: .bs-callout-info }
+ {:.bs-callout-info}
 This authentication process is only for those in the Early Adopter Program for this API.
 It **WILL** be changing completely before these APIs are opened to the public, as will the base URLs.
 Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
