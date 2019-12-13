@@ -107,9 +107,11 @@ pages:
 
     - label: Docker development
       url: /cloud/docker/docker-development.html
+      versionless: true
       children:
         - label: Docker container architecture
           url: /cloud/docker/docker-containers.html
+          versionless: true
           children:
             - label: Database container
               url: /cloud/docker/docker-database.html

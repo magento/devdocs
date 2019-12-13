@@ -44,9 +44,9 @@ For example, the following command starts the Docker configuration generator for
 ```
 
 [Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
-[Database container]: {{page.baseurl}}/cloud/docker/docker-database.html
-[CLI containers]: {{page.baseurl}}/cloud/docker/docker-cli.html
-[Web containers]: {{page.baseurl}}/cloud/docker/docker-php.html
+[Database container]: {{site.baseurl}}/cloud/docker/docker-database.html
+[CLI containers]: {{site.baseurl}}/cloud/docker/docker-cli.html
+[Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [docker-repo]: https://github.com/magento/magento-cloud-docker
 [elastic]: https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch
 [mariadb]: https://hub.docker.com/_/mariadb

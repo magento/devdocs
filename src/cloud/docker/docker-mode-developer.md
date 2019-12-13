@@ -126,8 +126,8 @@ To launch the Docker environment in developer mode:
    -  [`https://magento2.docker`](https://magento2.docker)
 
 [cloud-repo]: https://github.com/magento/magento-cloud
-[magento-creds]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
-[services]: {{page.baseurl}}/cloud/docker/docker-containers.html#service-versions
-[xdebug]: {{page.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
+[magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
+[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-versions
+[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/

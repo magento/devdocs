@@ -35,6 +35,6 @@ You can use the Docker environment to emulate the {{site.data.var.ece}} Integrat
 -  [Launch Docker development environment]({{site.baseurl}}/cloud/docker/docker-config.html)
 
 [config docker]: {{site.baseurl}}/cloud/docker/docker-config.html
-[Magento authentication keys]: {{site.baseurl}}/install-gde/prereq/connect-auth.html
+[Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [Set up an account]: {{site.baseurl}}/cloud/before/before-workspace.html#newaccount
 [Resolve issues with encryption key]: {{site.baseurl}}/cloud/trouble/trouble-crypt-key-variable.html

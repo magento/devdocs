@@ -38,8 +38,8 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | docker-sync, mutagen, native
+| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | docker-sync, mutagen, native
 
 ## bin/docker
 

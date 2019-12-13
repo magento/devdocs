@@ -155,5 +155,5 @@ To use Xdebug Helper with Chrome:
 
    ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
 
-[docker-config]: {{page.baseurl}}/cloud/docker/docker-config.html
+[docker-config]: {{site.baseurl}}/cloud/docker/docker-config.html
 [Xdebug Helper extension]: https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en

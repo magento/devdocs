@@ -45,6 +45,6 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 
 The Node container is based on the [official Node Docker image][node-image]. It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
 
-[crons]: {{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons
+[crons]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons
 [php-image]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [node-image]: https://hub.docker.com/_/node/
