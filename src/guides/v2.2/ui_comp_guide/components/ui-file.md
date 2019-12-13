@@ -15,7 +15,7 @@ The File component implements the [HTML](https://glossary.magento.com/html) `<in
 | `disabled` | Initial component's state. When set to `true`, users cannot take action on the element. | Boolean | `false` |
 | `visible` | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
 
-## Source files 
+## Source files
 
 Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
 
