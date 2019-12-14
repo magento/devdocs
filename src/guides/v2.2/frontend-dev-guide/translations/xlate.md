@@ -150,10 +150,10 @@ If you need help understanding the context or meaning of a UI string, or have qu
 
 ## Additional information
 
-*  [Translation dictionaries and packages]
 *  [Use translation dictionary to customize strings]
 *  [Translate theme strings]
 *  [Example theme translation dictionary]
+*  [Translation dictionaries and packages command-line]
 *  [Magento translations GitHub project]
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
@@ -163,7 +163,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [translation dictionary tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language package]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack
 [dictionary generator tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[Translation dictionaries and packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
+[Translation dictionaries and packages command-line]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [Magento CrowdIn project]: https://crowdin.com/project/magento-2
 [CrowdIn account]: https://crowdin.com/join
 [CrowdIn knowledge base]: https://support.crowdin.com/online-editor

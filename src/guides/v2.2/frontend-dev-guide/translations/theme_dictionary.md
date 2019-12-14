@@ -76,11 +76,17 @@ You can translate the same element in different ways for different modules:
 ## Additional information
 
 -  [Translations overview]
+-  [Translate theme strings]
 -  [Example theme translation dictionary]
+-  [Translation dictionaries and packages command-line]
+-  [Magento translations GitHub project]
 
 [translation dictionaries]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html#translate_terms
 [`<Magento_Luma_theme_dir>/i18n/en_US.csv`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/i18n/en_US.csv
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Generate the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html
+[Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html
+[Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
+[Translation dictionaries and packages command-line]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
+[Magento translations GitHub project]: https://github.com/magento-l10n

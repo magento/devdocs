@@ -52,13 +52,17 @@ For example:
 ## Additional information
 
 -  [Translations overview]
--  [Translation dictionaries and language packages]
--  [Usetranslation dictionary to customize strings]
+-  [Use translation dictionary to customize strings]
+-  [Translate theme strings]
+-  [Translation dictionaries and packages command-line]
+-  [Magento translations GitHub project]
 
 [dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms
 [Product page where the Add to Compare string is displayed]: {{site.baseurl}}/common/images/fdg_trans_bag.png
 [i18n (internationalization) tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Product page where the customized Compare string is displayed]: {{site.baseurl}}/common/images/fdg_translations_bag2.png
-[Translation dictionaries and language packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
-[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html
+[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html
+[Translation dictionaries and packages command-line]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
+[Magento translations GitHub project]: https://github.com/magento-l10n

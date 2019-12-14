@@ -316,11 +316,9 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 ## Additional information
 
--  [Translations overview]
--  [Translate theme strings]
+-  [Translations]
 
-[Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
-[Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
+[Translations]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
 [Community Engineering contributions]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translations-project
 [translation dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
 [configures the translations]: http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation

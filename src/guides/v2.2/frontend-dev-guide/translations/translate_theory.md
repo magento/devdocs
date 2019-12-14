@@ -124,9 +124,20 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
 
 In this example, the `'Hello %1'` string is added to the dictionary when the i18n tool is run.
 
+## Additional information
+
+-  [Translations overview]
+-  [Use translation dictionary to customize strings]
+-  [Translation dictionaries and packages command-line]
+-  [Magento translations GitHub project]
+
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [generating the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [.phtml template]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
 [custom email templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-theme
 [directive]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#localization
 [added using the Admin panel]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-admin
+[Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html
+[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Translation dictionaries and packages command-line]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
+[Magento translations GitHub project]: https://github.com/magento-l10n
