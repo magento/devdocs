@@ -3,34 +3,35 @@ group: release-notes
 title: Backward Incompatible Changes
 ---
 
-New releases of {{ site.data.var.ct }} sometimes introduce backward incompatible changes that require you to  adjust configuration and processes for existing Cloud projects to take advantage of new features and deprecate outdated functionality and processes.  
-This document lists these changes and provides information about how to adapt your existing code and project to use the new functionality.
+Use the following information to learn about backward incompatible changes that require you to adjust Cloud configuration and processes for existing Cloud projects when you upgrade to the latest release of the {{site.data.var.ct}} package or other {{site.data.var.csuite}} packages.
 
-### Minimum php version increased
+### Service version requirement changes
 
-Php version requirements increased to 7.1.3+
+**PHP minimum version requirement**–In {{ site.data.var.ct }} v2002.1.0 and later, the minimum php version requirement is 7.1.3+. If your environment configuration specifies an earlier version, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file. 
 
-### Removed cloud variables
+### Environment variable changes
 
-- SCD_EXCLUDE_THEMES - use SCD_MATRIX instead.
-- STATIC_CONTENT_THREADS - use SCD_THREADS instead.
-- DO_DEPLOY_STATIC_CONTENT - use SKIP_SCD instead.
-- STATIC_CONTENT_SYMLINK - now `pub/static` directory will be always symlink if static was generated on the build phase
+The following environment variables have been removed from the `{{site.var.data.ct}}` package:
 
-### Dropped support of old cli commands
+-  `SCD_EXCLUDE_THEMES`–Use the `SCD_MATRIX` variable instead.
+-  `STATIC_CONTENT_THREADS` - use the `SCD_THREADS` variable the instead.
+-  `DO_DEPLOY_STATIC_CONTENT` - use the `SKIP_SCD` variable instead.
+-  `STATIC_CONTENT_SYMLINK` - Now, the `{{site.data.var.ct}}` always generates symlinks for static content in the `pub/static` directory when you generate static content during the build process.
+
+### CLI command changes
+
+The {{site.var.data.ct}} package no longer supports the following CLI commands:
 
 - `m2-ece-build`  - use `vendor/bin/ece-tools build` instead
 - `m2-ece-deploy` - use `vendor/bin/ece-tools deploy` instead
 - `m2-ece-scd-dump` - use `vendor/bin/ece-tools config:dump` instead
 
-### Removed support if build_options.ini file
+### Removed support the `build_options.ini` file
 
-Use `.magento.env.yaml` instead. Build phase will fail if `build_options.ini` file present.
+Use the `.magento.env.yaml` file instead. If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
 
-### Patches moved to separate repository
+### Package changes
 
-Patches and related functionality were moved to the separate package `magento/magento-cloud-patches`.
+-  **Patches now delivered as a separate package**–In {{ site.data.var.ct }} v2002.22.0 and later, we now deliver {{ site.data.var.ece }} patches and related functionality in a separate package,`magento/magento-cloud-patches`. See [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.md).
 
-### Docker moved to separate repository
-
-Docker functionality was moved to the separate package `magento/magento-cloud-docker`.
+- **Docker now delivered as a separate package**–In {{ site.data.var.ct }} v2002.1.0 and later, we now deliver Docker functionality in a separate package, `magento-cloud-docker`. See [Release notes for magento/magento-cloud-docker]({{site.baseurl}}/cloud/release-notes/mcd-release-notes.md).
