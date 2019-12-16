@@ -123,9 +123,9 @@ Catalog Search index has been rebuilt successfully in <time>
 {:.bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
 
-## Reset Indexer
+## Reset indexer
 
-Use this command to reset the indexer status to invalid for all indexers or specific indexers.
+Use this command to invalidate the status of all indexers or specific indexers.
 
 Command options:
 
@@ -133,7 +133,7 @@ Command options:
 bin/magento indexer:reset [indexer]
 ```
 
-Where ```[indexer]``` is a space-separated list of indexers. Omit ```[indexer]``` to reset all indexers.
+Where ```[indexer]``` is a space-separated list of indexers. Omit `[indexer]` to invalidate all indexers.
 
 A sample follows:
 
