@@ -21,9 +21,9 @@ The Expandable Column component can be used in [Admin](https://glossary.magento.
 
 ### Integrate the Expandable component with the Listing component
 
-This is an example of how the Expandable component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component: 
+The following example shows how the Expandable component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component: 
 
-Component's options are set in the configuration `.xml` file as follows:
+The component's options are set in the configuration `.xml` file as follows:
 
 ```xml
 <listing>
