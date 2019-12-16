@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.
+You can manage user access to {{ site.data.var.ece }} projects by assigning users one or more roles. You can add and manage user accounts for the entire project and permissions per available environment.
 
 ## Account owner role {#cloud-role-acct-owner}
 
@@ -16,27 +16,27 @@ The account has super user access and additional capabilities for managing all a
 
 ## Project-level roles {#cloud-role-project}
 
-You can assign users to the following roles per project:
+You can assign the following project-level roles to users:
 
--  Project administrator (also referred to as *super user*) can change settings and execute actions on any environment, including creating and restoring snapshots.
--  Project reader can view all environments in a project but cannot execute any actions on them.
+-  The **Super user** role grants administrator access to all environments. They can change settings and execute actions on any environment, including creating and restoring snapshots.
+-  The **Project reader** role grants view access to all environments in a project. Users with this role cannot execute actions on any environment.
 
 ## Environment-level roles {#cloud-role-env}
 
 A project reader can have one of the following roles per environment:
 
--  Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.
--  Environment contributor can push code to this environment and branch the environment.
--  Environment reader can view this environment only.
+-  The **Admin** role grants access to change settings and execute actions on an environment, including merging with the parent environment.
+-  The **Contributor** role grants access to push code to an environment and branch the environment.
+-  The **Reader** role, also referred to as the _viewer_ role grants view-only access to an environment.
 
 {:.bs-callout-info}
-We recommend you limit the environment administrator role to as few users as possible.
+We recommend that you limit the project Super user role and environment Admin roles to as few users as possible.
 
 ## Role management best practices
 
-When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the `master` environment.
+When a development team works on a project, the team leader can be the project administrator who decides which roles to assign to team members. For example, the team lead might assign one team member as a Contributor to one environment, assign another as an Admin on a different environment, and assign the Reader role to the customer on the `master` environment.`
 
-For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to "Contributor".
+Assign the Contributor role to users who require view access to an environment as well as the capability to commit code and branch the environment.
 
 {:.bs-callout-warning}
 An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in `.magento.app.yaml` by specifying `ssh: contributor`.
@@ -51,10 +51,10 @@ You can use the {{site.data.var.ece}} command line client to manage users and in
 
 Available commands:
 
--  `magento-cloud user:add`–adds a user to the project
--  `magento-cloud user:delete`–deletes a user
--  `magento-cloud user:list [users]`–lists project users
--  `magento-cloud user:role`–views or change the user role
+-  `magento-cloud user:add`–add a user to the project
+-  `magento-cloud user:delete`–delete a user
+-  `magento-cloud user:list [users]`–list project users
+-  `magento-cloud user:role`–view or change the user role
 
 The following examples show how to add a user and configure the project and environment-level role, and how to how to modify project assignments and assigned user roles.
 
@@ -123,7 +123,8 @@ To create user accounts using the Web Interface:
 
    ![Add users]({{ site.baseurl }}/common/images/cloud_project-add-superuser.png){:width="500px"}
 
-1. Enter the user's e-mail address.
+1. Enter the user e-mail address.
+
 1. Select the access for the account:
 
    -  For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
@@ -136,10 +137,7 @@ The user you add receives an email inviting them to join the {{site.data.var.ece
 
 ## Rebuild the environment {#rebuild}
 
-After you add a new user to a Cloud environment using the Project Web UI or the CLI, you must rebuild and deploy the environment. 
-
-{:.bs-callout-info}
-If you add a user to the Magento Commerce application through the Magento Admin UI, you do not have to redeploy. 
+After you add a new user to a Cloud environment using the Project Web UI or the CLI, you must rebuild and deploy the environment.
 
 Rebuilds are triggered when you push a new commit to an environment. To trigger a rebuild without changing any code, use the the following command to to create an empty commit and "force" rebuilding the environment:
 
@@ -148,3 +146,6 @@ git commit --allow-empty -m "redeploy" && git push <branch name>
 ```
 
 The new user cannot access the environment until it is successfully built and deployed.
+
+{:.bs-callout-info}
+If you add an application user to the Magento Commerce application through the Magento Admin UI, you do not have to redeploy the {{ site.data.var.ece }} environment.
