@@ -197,7 +197,8 @@
       url: /howdoi/checkout/checkout_overview.html
 
     - label: Compliance
-      url: ../../../compliance/industry-compliance.html
+      url: /compliance/industry-compliance.html
+      versionless: true
 
     - label: Inventory Management
       url: /inventory/index.html
