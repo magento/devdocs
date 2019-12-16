@@ -95,8 +95,9 @@ Log file            | Core node                        | Web node
 ------------------- | -------------------------------- | --------
 **MySQL error log** | `/var/log/mysql/mysql-error.log` | Not available
 
+<!-- Link definitions -->
 [Core tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-core.png
 [Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
+
 [SSH access list]: {{page.baseurl}}/cloud/env/environments-ssh.html#web-interface
 [nri]: {{page.baseurl}}/cloud/project/new-relic.html
-{: width="400px"}
