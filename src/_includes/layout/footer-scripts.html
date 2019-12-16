@@ -31,3 +31,7 @@
 
 <script type="text/javascript" src="{{ site.baseurl }}/common/js/last-modified-at.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/common/js/glossary-link-enhancer.js"></script>
+
+{% for include in page.includes %}
+<script type="text/javascript" src="{{ site.baseurl }}/common/js/{{ include }}"></script>
+{% endfor %}
