@@ -3,7 +3,7 @@ group: compliance
 title: California Consumer Privacy Act
 ---
 
-The [California Consumer Protection Act][1]{: target="_blank"} (CCPA) expands the rights of consumers in California to determine how their personal information is collected, stored, and used, with an emphasis on protecting consumers from the unauthorized sale or exchange or their personal information. The CCPA was enacted in 2018 and is effective as of January 1, 2020.
+The [California Consumer Privacy Act][1]{: target="_blank"} (CCPA) expands the rights of consumers in California to determine how their personal information is collected, stored, and used, with an emphasis on protecting consumers from the unauthorized sale or exchange or their personal information. The CCPA was enacted in 2018 and is effective as of January 1, 2020.
 
 The CCPA grants the following new rights to consumers:
 
@@ -39,5 +39,5 @@ For technical information, see the data flow diagrams and database entity mappin
 -  [Personal Information Reference (Magento 2.x)]({% link compliance/privacy/pi-data-reference-m2.md %})
 -  [Personal Information Reference (Magento 1.x)]({% link compliance/privacy/pi-data-reference-m1.md %})
 
-[1]: https://en.wikipedia.org/wiki/Online_Privacy_Protection_Act
+[1]: https://oag.ca.gov/privacy/ccpa
 [2]: https://docs.magento.com/m2/ee/user_guide/stores/compliance-ccpa-guide.html
