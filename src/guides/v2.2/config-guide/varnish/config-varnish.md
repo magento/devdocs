@@ -101,7 +101,7 @@ Related topics
 [Troubleshooting 503 (Backend Fetch Failed) errors]: {{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html
 [Varnish Cache]: https://www.varnish-cache.org/
 
-[database]: {{ page.baseurl }}/config-guide/database/database.html
+[database]: {{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html
 [Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
 
 [The Big Varnish Picture]: https://www.varnish-cache.org/docs/trunk/users-guide/intro.html
