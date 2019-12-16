@@ -6,7 +6,6 @@ pages:
       children:
 
       - label: Privacy Regulations
-        versionless: true
       
         children:
 
