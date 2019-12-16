@@ -123,6 +123,40 @@ Catalog Search index has been rebuilt successfully in <time>
 {:.bs-callout-info}
 Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
 
+## Reset Indexer
+
+Use this command to reset the indexer status to invalid for all indexers or specific indexers.
+
+Command options:
+
+```bash
+bin/magento indexer:reset [indexer]
+```
+
+Where ```[indexer]``` is a space-separated list of indexers. Omit ```[indexer]``` to reset all indexers.
+
+A sample follows:
+
+```bash
+bin/magento indexer:reset
+```
+
+Sample result:
+
+```terminal
+Design Config Grid indexer has been invalidated.
+Customer Grid indexer has been invalidated.
+Category Products indexer has been invalidated.
+Product Categories indexer has been invalidated.
+Catalog Rule Product indexer has been invalidated.
+Product EAV indexer has been invalidated.
+Inventory indexer has been invalidated.
+Catalog Product Rule indexer has been invalidated.
+Stock indexer has been invalidated.
+Product Price indexer has been invalidated.
+Catalog Search indexer has been invalidated.
+```
+
 ## Configure indexers
 
 Use this command to set the following indexer options:
