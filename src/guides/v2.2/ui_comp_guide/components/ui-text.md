@@ -33,12 +33,11 @@ The Text component displays text data in the components like [Form]({{ page.base
     <td><code>''</code></td>
   </tr>
   <tr>
-    <td><code>links</code> <li><code>value</code></li></td>
+    <td><p><code>links</code></p><p><code>value</code></p></td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
-    <td>Object<li>String</li></td>
+    <td><p><code>Object</code></p><p><code>String</code></p></td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>
-
   <tr>
     <td><code>visible</code></td>
     <td>Initial component's visibility. When set to <code>false</code>, the "display: none" CSS style is added to the component's DOM block.</td>
