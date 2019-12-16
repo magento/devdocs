@@ -5,8 +5,8 @@ title: Personal Information Reference (Magento 2.x)
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
--  [GDPR]({% link compliance/privacy/gdpr.md -%})
--  [CCPA]({% link compliance/privacy/ccpa.md -%})
+-  [GDPR]({% link compliance/privacy/gdpr.md %})
+-  [CCPA]({% link compliance/privacy/ccpa.md %})
 
 ## Data flow diagrams
 
@@ -53,7 +53,7 @@ Magento 2 stores the following customer attributes:
 -  Name Prefix
 -  Name Suffix
 
-#### `customer_entity` and reference tables
+#### `customer_entity` and 'customer_entity' references
 
 The following columns in the `customer_entity` table contain customer information:
 
@@ -154,7 +154,7 @@ These tables reference `customer_address_entity` and can contain custom customer
 
 ### Order data
 
-The `sales_order` and related tables contain the customer's name, billing and shipping addresses, and related data.
+The `sales_order` and related tables contain the customer name, billing and shipping addresses, and related data.
 
 #### `sales_order` table
 
