@@ -1,1 +1,0 @@
-../../../../guides/v2.2/cloud/cdn/cloud-fastly-custom-response.md

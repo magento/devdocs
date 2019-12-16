@@ -180,6 +180,23 @@ Binding's configuration that may include the following properties:
 </div>
 ```
 
+### `colorPicker`
+
+The `colorPicker` binding is a part of the ColorPicker component.
+
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/color-picker.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/color-picker.js)
+
+**Value type**: Object
+
+**Aliases**: [colorPicker]
+
+**Usage example**:
+```html
+<input type="hidden" data-bind="colorPicker: config">
+
+<input type="hidden" colorPicker="config">
+```
+
 ### `datepicker`
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html) widget.
@@ -400,6 +417,9 @@ Component's name by which to perform a lookup in the registry.
 
 <!-- without an extra container node -->
 <scope args="'name.of.component'"></scope>
+
+<!-- as a virtual element -->
+<!-- ko scope: name.of.component --><!-- /ko -->
 ```
 
 ### `staticChecked`
@@ -432,6 +452,12 @@ Configuration for the `template` binding. If the provided value is a string, it 
 
 ```html
 <div data-bind="template: 'path/to/the/template'"></div>
+
+<!-- ko template: getTemplate() --><!-- /ko -->
+
+<render args="template" />
+
+<div each="getRegion('displayArea')" render=""/>
 ```
 
 ### `tooltip`

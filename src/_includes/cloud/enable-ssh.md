@@ -2,7 +2,7 @@ You must create an SSH key pair on every machine and workspace you and your team
 
 The SSH keys require the following:
 
-*  Set up SSH keys as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+*  Set up SSH keys as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 *  Create the keys using the email address used for the GitHub account.
 
 For more information on SSH keys, see the following:
@@ -120,7 +120,7 @@ You can add SSH keys to your account in any of the following ways:
 To add an SSH key using the CLI:
 
 1. Open a terminal application on your local.
-1. If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+1. If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
 1. Log in to your project:
 
