@@ -117,7 +117,7 @@ Continue launching your Docker environment in the default _production_ mode.
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
    ```bash
-   cp .docker/config.php.dist .docker/config.php
+   cp ./docker/config.php.dist ./docker/config.php
    ```
 
 1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
