@@ -60,7 +60,7 @@ The following example shows the custom VCL snippet that filters traffic by clien
 ```
 
 {: .bs-callout-warning}
-In this example, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. If you submit the VCL code snippet from the Magento Admin UI, or as a JSON string using the Fastly API, you must escape special characters to prevent validation errors. See the example in [Secure the Magento Admin UI]({{ site.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html#vcl) topic.
+In this example, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. If you submit the VCL code snippet from the Magento Admin UI, or as a JSON string using the Fastly API, you must escape special characters to prevent validation errors. See the example in [Secure the Magento Admin UI]({{ site.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html#vcl).
 
 The VCL logic in the `content` field performs the following actions:
 
