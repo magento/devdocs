@@ -7,7 +7,7 @@ Use the following information to learn about backward incompatible changes that 
 
 ### Service version requirement changes
 
-We changed the minimum PHP minimum requirement from 7.1.0 to 7.1.3+ in `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies an earlier version, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
+We changed the minimum PHP version requirement from 7.1.0 to 7.1.3+ for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies an earlier version, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
 
 ### Environment configuration changes
 
