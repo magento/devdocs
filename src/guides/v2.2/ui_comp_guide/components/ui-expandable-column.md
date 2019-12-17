@@ -8,53 +8,62 @@ The Expandable Column [UI component](https://glossary.magento.com/ui-component) 
 The Expandable Column component can be used in [Admin](https://glossary.magento.com/admin) and the [storefront](https://glossary.magento.com/storefront).
 
 ## Configuration options
-<table>
-    <tr>
-        <th>Option</th>
-        <th>Description</th>
-        <th>Type</th>
-        <th>Default</th>
-    </tr>
-    <tr>
-        <td><code>bodyTmpl</code></td>
-        <td>Path to the template used for rendering the column's fields in the table's body.</td>
-        <td>String</td>
-        <td><code>ui/grid/cells/expandable</code></td>
-    </tr>
-    <tr>
-        <td><code>tooltipTmpl</code></td>
-        <td>Path to the template used for rendering the component's tooltip content template.</td>
-        <td>String</td>
-        <td><code>ui/grid/cells/expandable/content</code></td>
-    </tr>
-    <tr>
-        <td><code>visibeItemsLimit</code></td>
-        <td>A number of options to display in a cell.</td>
-        <td>String</td>
-        <td><code>'5'</code></td>
-    </tr>
-    <tr>
-        <td><code>tooltipTitle</code></td>
-        <td>A title for the tooltip.</td>
-        <td>String</td>
-        <td />
-    </tr>
-</table>
 
-Component's options are set in the configuration `.xml` file as follows:
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `bodyTmpl` | Path to the template used for rendering the column's fields in the table's body. | String | `ui/grid/cells/expandable` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/columns/expandable` |
+| `tooltipTitle` | A title for the tooltip. | String | `''` |
+| `tooltipTmpl` | Path to the template used for rendering the component's tooltip content template. | String | `ui/grid/cells/expandable/content` |
+| `visibeItemsLimit` | A number of options to display in a cell. | String | `5` |
+
+## Examples
+
+### Integrate the Expandable component with the Listing component
+
+The following example shows how the Expandable component integrates with the [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) component: 
+
+The component's options are set in the configuration `.xml` file as follows:
 
 ```xml
-<column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
-    <argument name="data" xsi:type="array">
-        <item name="options" xsi:type="object">Magento\Catalog\Model\Product\Attribute\Source\Status</item>
-        <item name="config" xsi:type="array">
-            <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/expandable</item>
-            <item name="tooltipTitle" xsi:type="string">Tooltip Title</item>
-            <item name="visibeItemsLimit" xsi:type="number">5</item>
-        </item>
-    </argument>
-</column>
+<listing>
+    ...
+    <columns>
+        ...
+        <column name="labels" class="Magento\Ui\Component\MassAction\Columns\Column">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/expandable</item>
+                    <item name="tooltipTitle" xsi:type="string">Tooltip Title</item>
+                    <item name="visibeItemsLimit" xsi:type="number">2</item>
+                    <item name="options" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="value" xsi:type="number">1</item>
+                            <item name="label" xsi:type="string" translate="true">Option #1</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="value" xsi:type="number">2</item>
+                            <item name="label" xsi:type="string" translate="true">Option #2</item>
+                        </item>
+                        <item name="2" xsi:type="array">
+                            <item name="value" xsi:type="number">3</item>
+                            <item name="label" xsi:type="string" translate="true">Option #3</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Expandable Column Component Example</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
 ```
+
+#### Result
+
+![Expandable Component example]({{ site.baseurl }}/common/images/ui_comps/ui-expandable-result.png)
+![Expandable Component expanded example]({{ site.baseurl }}/common/images/ui_comps/ui-expandable-expanded-result.png)
 
 ## Dependencies
 
