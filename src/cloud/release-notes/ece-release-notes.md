@@ -265,7 +265,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
 
-   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the [SCD_MATRIX]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) to control theme configuration.
+   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the [SCD_MATRIX]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) jgit git git to control theme configuration.
 
    -  <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
 
