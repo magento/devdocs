@@ -290,7 +290,7 @@ The [`Magento\Framework\Interception\PluginListInterface`]({{ site.mage2bloburl 
 
 If two or more plugins have the same `sortOrder` value or do not specify it, the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html) declared in the `sequence` node from `module.xml` and [area]({{ page.baseurl}}/extension-dev-guide/build/di-xml-file.html#areas-and-application-entry-points) will define the merge sequence. Check the component load order in `app/etc/config.php` file.
 
-Magento executes plugins using these rules during each plugin execution in two main flows: 
+Magento executes plugins using these rules during each plugin execution in two main flows:
 
 *  Before the execution of the observed method, starting from lowest to highest `sortOrder`.
    *  Magento executes the current plugin’s `before` method.
@@ -302,18 +302,17 @@ Magento executes plugins using these rules during each plugin execution in two m
       *  The second part of the `around` method is executed.
    *  Magento moves on to the next plugin.
 
-* Following the execution flow, starting from lowest to highest `sortOrder` in the current sequence plugins loop.
+*  Following the execution flow, starting from lowest to highest `sortOrder` in the current sequence plugins loop.
+   *  The current plugin's `after` method is executed.
+   *  Magento moves on to the next plugin.
 
-    *  The current plugin's `after` method is executed.
-    *  Magento moves on to the next plugin.
-
-As a result of these rules, the execution flow of an observed method is affected not only by the prioritization of the plugins, but also by their implemented methods.  
+As a result of these rules, the execution flow of an observed method is affected not only by the prioritization of the plugins, but also by their implemented methods.
 
 {:.bs-callout-info}
-The `around` plugin's method affects the flow of all plugins that are executed after it. 
+The `around` plugin's method affects the flow of all plugins that are executed after it.
 
 {:.bs-callout-tip}
-When the `before` and `around` plugin sequence is finished, Magento calls the first plugin `after` method in the sequence loop, and not the `after` method of the current plugin that was being executed by the `around` method. 
+When the `before` and `around` plugin sequence is finished, Magento calls the first plugin `after` method in the sequence loop, and not the `after` method of the current plugin that was being executed by the `around` method.
 
 ### Examples
 
@@ -329,11 +328,11 @@ For example, the `di.xml` file of your module attaches three plugins for the cla
 </config>
 ```
 
-The execution will have a different flow, depending on the methods implemented by these classes, as explained in the following scenarios. 
+The execution will have a different flow, depending on the methods implemented by these classes, as explained in the following scenarios.
 
-**Scenario A**
+#### Scenario A
 
-Your plugin classes has this methods: 
+Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 |  ------------ | ---------------- | ---------------- | ---------------- |
@@ -354,9 +353,9 @@ The execution will be in this order:
 *  `PluginB::afterDispatch()`
 *  `PluginC::afterDispatch()`
 
-**Scenario B**
+#### Scenario B
 
-Your plugin classes has this methods: 
+Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | -----------   | --------------   | --------------   | --------------   |
@@ -381,9 +380,9 @@ The execution will be in this order:
 *  `PluginA::afterDispatch()`
 *  `PluginB::afterDispatch()`
 
-**Scenario C**
+#### Scenario C
 
-Your plugin classes has this methods: 
+Your plugin classes has this methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | ------------- | ---------------- | ---------------- | ---------------- |
