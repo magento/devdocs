@@ -20,7 +20,7 @@ This topic discusses how to set required [PHP](https://glossary.magento.com/php)
 All third-party libraries now support PHP 7.2.
 If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
-<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "||" %}-->
+<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
 {% include install/php-versions-template.md %}
 
 Magento 2.2.10 supports PHP 7.1 and 7.2.
