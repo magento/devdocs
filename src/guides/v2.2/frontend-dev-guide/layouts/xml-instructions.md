@@ -74,6 +74,14 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
+Sample of usage in layout:
+
+```xml
+<block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml"/>
+```
+
+This would used in product listing page layout.
+
 ### container {#fedg_layout_xml-instruc_ex_cont}
 
 A structure without content that holds other layout elements such as blocks and containers.
