@@ -2,13 +2,7 @@
 group: php-developer-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
-menu_title: Plugins (Interceptors)
-menu_order: 10
-redirect_from:
-
 ---
-
-### Overview
 
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*.
 
@@ -16,7 +10,7 @@ Extensions that wish to intercept and change the behavior of a *public method* c
 
 This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
 
-#### Limitations
+## Limitations
 
 Plugins can not be used on following:
 
@@ -28,9 +22,9 @@ Plugins can not be used on following:
 *  Virtual types
 *  Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
-### Declaring a plugin
+## Declaring a plugin
 
-The <code>di.xml</code> file in your [module](https://glossary.magento.com/module) declares a plugin for a class object:
+The `di.xml` file in your [module](https://glossary.magento.com/module) declares a plugin for a class object:
 
 ```xml
 <config>
@@ -97,7 +91,7 @@ Use the following method names for the `_construct` method in the plugin class:
 *  `around_construct`
 *  `after_construct`
 
-#### Before methods
+## Before methods
 
 Magento runs all before methods ahead of the call to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
@@ -118,7 +112,7 @@ class ProductAttributesUpdater
 }
 ```
 
-#### After methods
+## After methods
 
 Magento runs all after methods following the completion of the observed method. Magento requires these methods have a return value and they must have the same name as the observed method with 'after' as the prefix.
 
@@ -198,7 +192,7 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 {:.bs-callout-warning}
 If an argument is optional in the observed method, then the after method should also declare it as optional.
 
-#### Around methods
+## Around methods
 
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. around methods must have the same name as the observed method with 'around' as the prefix.
 
@@ -288,55 +282,134 @@ class MyUtilityUpdater
 }
 ```
 
-### Prioritizing plugins
+## Prioritizing plugins
 
-The `sortOrder` property for plugins determines when to call the before, around, or after methods when more than one plugin is observing the same method.
+The `sortOrder` property from the `plugin` node declared in `di.xml` determines the plugin's prioritization when more than one plugin is observing the same method.
 
-The prioritization rules for ordering plugins:
+The [`Magento\Framework\Interception\PluginListInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginListInterface.php) which is implemented by [`Magento\Framework\Interception\PluginList\PluginList`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginList\PluginList.php) is responsible to define when to call the before, around, or after methods respecting this prioritization.
 
-*  Before the execution of the observed method, Magento will execute plugins from lowest to greatest `sortOrder`.
+If two or more plugins have the same `sortOrder` value or do not specify it, the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html) declared in the `sequence` node from `module.xml` and [area]({{ page.baseurl}}/extension-dev-guide/build/di-xml-file.html#areas-and-application-entry-points) will define the merge sequence. Check the component load order in `app/etc/config.php` file.
 
-   *  During each plugin execution, Magento executes the current plugin's before method.
-   *  After the before method completes execution, the current plugin's around method wraps and initiates the next plugin or observed method.
+Magento executes plugins using these rules during each plugin execution in two main flows:
 
-*  Following the execution of the observed method, Magento will execute plugins from greatest to lowest `sortOrder`.
+*  Before the execution of the observed method, starting from lowest to highest `sortOrder`.
+   *  Magento executes the current plugin’s `before` method.
+   *  Then the current plugin's `around` method is called.
+      *  The first part of the plugin's `around` method is executed.
+      *  The `around` method executes the `callable`.
+         *  If there is another plugin in the chain, all subsequent plugins are wrapped in an independent sequence loop and the execution starts another flow.
+         *  If the current plugin is the last in the chain, the observed method is executed.
+      *  The second part of the `around` method is executed.
+   *  Magento moves on to the next plugin.
 
-   *  During each plugin execution, the current plugin will first finish executing its around method.
-   *  When the around method completes, the plugin executes its after method before moving on to the next plugin.
+*  Following the execution flow, starting from lowest to highest `sortOrder` in the current sequence plugins loop.
+   *  The current plugin's `after` method is executed.
+   *  Magento moves on to the next plugin.
 
-**Example:**
+As a result of these rules, the execution flow of an observed method is affected not only by the prioritization of the plugins, but also by their implemented methods.
 
-The table shows the plugins observing the same method with the following properties:
+{:.bs-callout-info}
+The `around` plugin's method affects the flow of all plugins that are executed after it.
 
-|                          | PluginA          | PluginB                        | PluginC                        | Action           |
-| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
-| **sortOrder**            | 10               | 20                             | 30                             |                  |
-| **before**               | beforeDispatch() | beforeDispatch()               | beforeDispatch()               |                  |
-| **around (first half)**  |                  | aroundDispatch() [first half]  | aroundDispatch() [first half]  |                  |
-| **original**             |                  |                                |                                | dispatch()       |
-| **around (second half)** |                  | aroundDispatch() [second half] | aroundDispatch() [second half] |                  |
-| **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
-| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
+{:.bs-callout-tip}
+When the `before` and `around` plugin sequence is finished, Magento calls the first plugin `after` method in the sequence loop, and not the `after` method of the current plugin that was being executed by the `around` method.
 
-The execution flows in the following order:
+### Examples
+
+For example, the `di.xml` file of your module attaches three plugins for the class `Action`:
+
+```xml
+<config>
+    <type name="Magento\Framework\App\Action\Action">
+        <plugin name="vendor_module_plugina" type="Vendor\Module\Plugin\PluginA" sortOrder="10" />
+        <plugin name="vendor_module_pluginb" type="Vendor\Module\Plugin\PluginB" sortOrder="20" />
+        <plugin name="vendor_module_pluginc" type="Vendor\Module\Plugin\PluginC" sortOrder="30" />
+    </type>
+</config>
+```
+
+The execution will have a different flow, depending on the methods implemented by these classes, as explained in the following scenarios.
+
+#### Scenario A
+
+Your plugin classes has this methods:
+
+|               | PluginA          | PluginB          | PluginC          |
+|  ------------ | ---------------- | ---------------- | ---------------- |
+| **sortOrder** | 10               | 20               | 30               |
+| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
+| **around**    |                  |                  |                  |
+| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+
+The execution will be in this order:
+
+*  `PluginA::beforeDispatch()`
+*  `PluginB::beforeDispatch()`
+*  `PluginC::beforeDispatch()`
+
+   *  `Action::dispatch()`
+
+*  `PluginA::afterDispatch()`
+*  `PluginB::afterDispatch()`
+*  `PluginC::afterDispatch()`
+
+#### Scenario B
+
+Your plugin classes has this methods:
+
+|               | PluginA          | PluginB          | PluginC          |
+| -----------   | --------------   | --------------   | --------------   |
+| **sortOrder** | 10               | 20               | 30               |
+| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
+| **around**    |                  | aroundDispatch() |                  |
+| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+
+The execution will be in this order:
 
 *  `PluginA::beforeDispatch()`
 *  `PluginB::beforeDispatch()`
 *  `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
 
    *  `PluginC::beforeDispatch()`
+
+      *  `Action::dispatch()`
+
+   *  `PluginC::afterDispatch()`
+
+*  `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
+*  `PluginA::afterDispatch()`
+*  `PluginB::afterDispatch()`
+
+#### Scenario C
+
+Your plugin classes has this methods:
+
+|               | PluginA          | PluginB          | PluginC          |
+| ------------- | ---------------- | ---------------- | ---------------- |
+| **sortOrder** | 10               | 20               | 30               |
+| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
+| **around**    | aroundDispatch() |                  | aroundDispatch() |
+| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+
+The execution will be in this order:
+
+*  `PluginA::beforeDispatch()`
+*  `PluginA::aroundDispatch()` (Magento calls the first half until `callable`)
+
+   *  `PluginB::beforeDispatch()`
+   *  `PluginC::beforeDispatch()`
    *  `PluginC::aroundDispatch()` (Magento calls the first half until `callable`)
 
       *  `Action::dispatch()`
 
    *  `PluginC::aroundDispatch()` (Magento calls the second half after `callable`)
+   *  `PluginB::afterDispatch()`
    *  `PluginC::afterDispatch()`
 
-*  `PluginB::aroundDispatch()` (Magento calls the second half after `callable`)
-*  `PluginB::afterDispatch()`
+*  `PluginA::aroundDispatch()` (Magento calls the second half after `callable`)
 *  `PluginA::afterDispatch()`
 
-### Configuration inheritance
+## Configuration inheritance
 
 Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
 
