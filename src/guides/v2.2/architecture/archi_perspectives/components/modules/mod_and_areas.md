@@ -20,9 +20,9 @@ Magento is organized into these main areas:
 
 *  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php) class always loads the 'crontab' area.
 
-You can also send requests to Magento using the SOAP and REST APIs. These two areas
+You can also send requests to Magento using the SOAP and REST APIs:
 
 *  **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
 
@@ -48,9 +48,9 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 ### Note about Magento request processing
 
-Magento processes admin and storefront URLs requests by a routing system that identifies the right controller for each request.
+Magento processes admin and storefront URL requests by a routing system that identifies the right controller for each request.
 
-For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store){:target="_blank"} module, the `etc/di.xml` file contains the following entry:
+For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store) module, the `etc/di.xml` file contains the following entry:
 
 ```xml
 <type name="Magento\Framework\App\AreaList">
@@ -68,7 +68,7 @@ For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/a
 
 It instructs Magento to use the `standard` router for frontend requests.
 
-Please see the [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html) for details about how routes works and can be customized.
+See [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html) for details about how routes works and can be customized.
 
 {:.ref-header}
 Related topics
