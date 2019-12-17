@@ -47,7 +47,7 @@ Use below command to enable or disable static content signing
 ```bash
 bin/magento config:set dev/static/sign <value>
 ```
-Where ```<value>``` is 1 or 0
+Where ```<value>``` is 1 (yes) or 0 (no)
 
 #### Version signatures
 
