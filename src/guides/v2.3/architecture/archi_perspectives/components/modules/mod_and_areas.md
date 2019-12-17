@@ -4,13 +4,11 @@ title: Modules and areas
 menu_title: Modules and areas
 ---
 
-## Overview {#m2arch-module-areas-overview}
-
 An *area* is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.
 
 For example, if you are invoking a REST web service call, rather than load all the code related to generating user [HTML](https://glossary.magento.com/html) pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.
 
-### Magento area types
+## Magento area types {#m2arch-module-areas-overview}
 
 Magento is organized into these main areas:
 
@@ -20,18 +18,15 @@ Magento is organized into these main areas:
 
 *  **Basic** (`base`): used as a fallback for files absent in `adminhtml` and `frontend` areas.
 
-*  **Cron** (`crontab`): In `pub/cron.php`, the [`Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php){:target="_blank"} class always loads the 'crontab' area.
+*  **Cron** (`crontab`): In `pub/cron.php`, the [`Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php) class always loads the 'crontab' area.
 
 You can also send requests to Magento using the GraphQL, SOAP and REST APIs. The entry point for these areas are `index.php` or `pub/index.php`. The areas of these APIs are:
 
-*  **GraphQL** (`graphql`): The [`Magento\GraphQl\Controller\GraphQl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/Controller/GraphQl.php){:target="_blank"} class is the front controller that responds to GraphQL-based [URLs](https://glossary.magento.com/url). 
+*  **GraphQL** (`graphql`): The [`Magento\GraphQl\Controller\GraphQl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/Controller/GraphQl.php) class is the front controller that responds to GraphQL-based [URLs](https://glossary.magento.com/url). See the [GraphQL Developer Guide]({{ page.baseurl }}/graphql/) documentation for more information.
 
-*  **Web API REST** (`webapi_rest`): The [`Magento\Webapi\Controller\Rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Rest.php){:target="_blank"} class is the controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
+*  **Web API REST** (`webapi_rest`): The [`Magento\Webapi\Controller\Rest`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Rest.php) class is the controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
 
-*  **Web API SOAP** (`webapi_soap`): The [`Magento\Webapi\Controller\Soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Soap.php){:target="_blank"} class is the front controller that responds to SOAP-based [URLs](https://glossary.magento.com/url).
-
-{:.bs-callout-info}
-The GraphQL API was released in Magento 2.3.0. Please see [GraphQL]({{ page.baseurl }}/graphql/) documentation for more information.
+*  **Web API SOAP** (`webapi_soap`): The [`Magento\Webapi\Controller\Soap`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Webapi/Controller/Soap.php) class is the front controller that responds to SOAP-based [URLs](https://glossary.magento.com/url).
 
 ## How areas work with modules {#m2arch-module-using}
 
@@ -53,9 +48,9 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 ### Note about Magento request processing
 
-Magento processes admin and storefront URLs requests by a routing system that identifies the right controller for each request.
+Magento processes admin and storefront URL requests by a routing system that identifies the right controller for each request.
 
-For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store){:target="_blank"} module, the `etc/di.xml` file contains the following entry:
+For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store) module, the `etc/di.xml` file contains the following entry:
 
 ```xml
 <type name="Magento\Framework\App\AreaList">
@@ -73,7 +68,7 @@ For example, in the [`Store`]({{ site.mage2bloburl }}/{{ page.guide_version }}/a
 
 It instructs Magento to use the `standard` router for frontend requests.
 
-Please see the [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html) for details about how routes works and can be customized.
+See [Routing]({{ page.baseurl }}/extension-dev-guide/routing.html) for details about how routes works and can be customized.
 
 {:.ref-header}
 Related topics
