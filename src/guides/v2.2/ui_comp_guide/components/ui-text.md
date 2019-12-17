@@ -12,10 +12,10 @@ The Text component displays text data in the components like [Form]({{ page.base
 | `class` | The path to the component class. | String | `Magento\Ui\Component\Form\Element\DataType\Text` |
 | `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/form/element/text` |
 | `disabled` | Initial component's state. When set to `true`, users can't take action on the element. | Boolean | `false` |
+| `elementTmpl` | The path to the `.html` template of the particular field type. | String | `ui/form/element/text` |
 | `label` | Label to be displayed in the field. | String | `''` |
 | `links`.`value` | [Links]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) the component's "value" property with provider using the declared in the "dataScope" property of the parent component. | String | `${ $.provider }:${ $.dataScope }` |
 | `visible` | Initial component's visibility. When set to `false`, the "display: none" CSS style is added to the component's DOM block. | Boolean | `true` |
-| `elementTmpl` | The path to the `.html` template of the particular field type. | String | `ui/form/element/text` |
 
 ## Source files
 
@@ -27,7 +27,7 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ### Integrate Text component with Form component
 
-This example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component
+The following example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
