@@ -27,8 +27,6 @@ Deployment strategies differ based on whether you choose to generate static cont
 
 Generating static content during the build phase with minified HTML is the optimal configuration for [**zero-downtime** deployments]({{ site.baseurl }}/cloud/deploy/reduce-downtime.html), also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
 
-By default, the [STATIC_CONTENT_SYMLINK environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#static_content_symlink) is set to `true`. After generating the static content during the build phase, it creates a symlink to the content folder.
-
 Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {{site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
 
 {:.procedure}
