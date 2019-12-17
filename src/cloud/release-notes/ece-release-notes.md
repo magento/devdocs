@@ -33,7 +33,7 @@ The release notes include:
 -  {:.fix}Fixed an issue in the Elastic Suite configuration process so that the default configuration is overwritten as expected when you configure the `ELASTICSUITE_CONFIGURATION` deploy variable without the `_merge` option.<!--MAGECLOUD-4388-->
 
 {:.bs-callout-info}
-Before updating to {{ site.data.var.ct }} version 2002.1.0, review the [backward incompatible changes]({{ site.data.var.ece }}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to update the configuration or processes for your {{ site.data.var.ece }} project.
+Before updating to {{ site.data.var.ct }} version 2002.1.0, review the [backward incompatible changes]({{ site.baseurl }}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to update the configuration or processes for your {{ site.data.var.ece }} project.
 
 ## v2002.0.22
 
