@@ -17,9 +17,9 @@ Before you run functional tests, you must prepare your environment with the foll
 
 1. Clone the {{site.data.var.ct}} GitHub repository.
 
-    ```bash
-    git clone git@github.com:magento/ece-tools.git
-    ```
+   ```bash
+   git clone git@github.com:magento/ece-tools.git
+   ```
 
 1. Stop all services that use the following ports:
 
@@ -29,35 +29,35 @@ Before you run functional tests, you must prepare your environment with the foll
 
 1. Update the hosts file.
 
-    Before you begin, you must add the following hostname to your `/etc/hosts` file:
+   Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
-    ```
-    127.0.0.1 magento2.docker
-    ```
+   ```bash
+   127.0.0.1 magento2.docker
+   ```
 
-    Alternatively, you can run the following command to add it to the file:
+   Alternatively, you can run the following command to add it to the file:
 
-    ```bash
-    echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
-    ```
+   ```bash
+   echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
+   ```
 
 1. Switch to the preferred PHP version for running tests.
 
 1. Update the project dependencies.
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
 1. Add credentials to the Docker environment.
 
-    ```bash
-    echo "COMPOSER_MAGENTO_USERNAME=your_public_key" >> ./.docker/composer.env
-    ```
+   ```bash
+   echo "COMPOSER_MAGENTO_USERNAME=your_public_key" >> ./.docker/composer.env
+   ```
 
-    ```bash
-    echo "COMPOSER_MAGENTO_PASSWORD=your_private_key" >> ./.docker/composer.env
-    ```
+   ```bash
+   echo "COMPOSER_MAGENTO_PASSWORD=your_private_key" >> ./.docker/composer.env
+   ```
 
 ## Run tests
 
@@ -110,32 +110,26 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 
 The following list provides the commands to run all available tests for each version of PHP.
 
--  **PHP 7.0**
-
-    ```bash
-    ./vendor/bin/codecept run -g php70 --steps
-    ```
-
 -  **PHP 7.1**
 
-    ```bash
-    ./vendor/bin/codecept run -g php71 --steps
-    ```
+   ```bash
+   ./vendor/bin/codecept run -g php71 --steps
+   ```
 
 -  **PHP 7.2**
 
-    ```bash
-    ./tests/travis/prepare_functional_parallel.sh
-    ```
+   ```bash
+   ./tests/travis/prepare_functional_parallel.sh
+   ```
 
-    ```bash
-    ./vendor/bin/codecept run -g php72parallel_1 --steps
-    ```
+   ```bash
+   ./vendor/bin/codecept run -g php72parallel_1 --steps
+   ```
 
-    ```bash
-    ./vendor/bin/codecept run -g php72parallel_2 --steps
-    ```
+   ```bash
+   ./vendor/bin/codecept run -g php72parallel_2 --steps
+   ```
 
-    ```bash
-    ./vendor/bin/codecept run -g php72parallel_3 --steps
-    ```
+   ```bash
+   ./vendor/bin/codecept run -g php72parallel_3 --steps
+   ```
