@@ -555,6 +555,8 @@ interface MutableInterface
 {
     /**
      * Returns 0, if no value is available
+     *
+     * @return int
      */
     public function getVal(): int;
 
@@ -562,6 +564,7 @@ interface MutableInterface
      * Sets 0 in case a non-integer value is passed
      *
      * @param int|string|bool|float|null $value
+     * @return void
      */
     public function setVal($value): void;
 }
@@ -575,14 +578,17 @@ interface MutableInterface
  */
 class LimitedMutableClass implements MutableInterface
 {
+    /**
+    * Returns integer value
+    *
+    * @return int
+    */
     public function getVal(): int
     {
     }
 
     /**
-     * Sets 0 in case a non-integer value is passed
-     *
-     * @param int|string|bool|float|null $value
+     * @inheritdoc
      */
     public function setVal($value): void
     {
@@ -683,6 +689,58 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
  * @see ClassTwo
  * @see FooInterface
  */
+```
+
+### @method tag {#method}
+
+The `@method` allows a class to know which ‘magic’ methods are callable.
+
+Syntax:
+
+```bash
+@method [[static] return type] [name]([[type] [parameter]<, ...>]) [<description>]
+```
+
+[See](https://docs.phpdoc.org/references/phpdoc/tags/method.html) more information about `@method` tag.
+
+```php
+/**
+ * Image operations
+ *
+ * @method string getFile()
+ * @method string getLabel()
+ * @method string getPosition()
+ */
+class Image extends \Magento\Framework\Model\AbstractModel
+{
+    //.....
+}
+```
+
+### @link tag {#link}
+
+The `@link` tag indicates a custom relation between associated Structural Elements and a website, which is identified by an absolute URI.
+
+Syntax:
+
+```bash
+@link [URI] [<description>]
+```
+
+### @since tag {#since}
+
+The `@since` tag is used to mention the release version of any element that can be documented (global variable, include, constant, function, define, class, variable, method, page).
+
+```php
+/**
+ * Example Class
+ *
+ * @since Version 100.0.2
+ */
+class Header
+{
+    //....
+}
 ```
 
 ### Other tags
