@@ -286,39 +286,34 @@ class MyUtilityUpdater
 
 The `sortOrder` property from the `plugin` node declared in `di.xml` determines the plugin's prioritization when more than one plugin is observing the same method.
 
-The [`Magento\Framework\Interception\PluginListInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginListInterface.php){:target="_blank"} which is implemented by [`Magento\Framework\Interception\PluginList\PluginList`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginList\PluginList.php){:target="_blank"} is responsible to define when to call the before, around, or after methods respecting this prioritization.
+The [`Magento\Framework\Interception\PluginListInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginListInterface.php) which is implemented by [`Magento\Framework\Interception\PluginList\PluginList`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/PluginList\PluginList.php) is responsible to define when to call the before, around, or after methods respecting this prioritization.
 
 If two or more plugins have the same `sortOrder` value or do not specify it, the [component load order]({{ page.baseurl }}/extension-dev-guide/build/module-load-order.html) declared in the `sequence` node from `module.xml` and [area]({{ page.baseurl}}/extension-dev-guide/build/di-xml-file.html#areas-and-application-entry-points) will define the merge sequence. Check the component load order in `app/etc/config.php` file.
 
 Magento executes plugins using these rules during each plugin execution in two main flows: 
 
-* Before the execution of the observed method, starting from lowest to greatest `sortOrder`.
+*  Before the execution of the observed method, starting from lowest to highest `sortOrder`.
+   *  Magento executes the current plugin’s `before` method.
+   *  Then the current plugin's `around` method is called.
+      *  The first part of the plugin's `around` method is executed.
+      *  The `around` method executes the `callable`.
+         *  If there is another plugin in the chain, all subsequent plugins are wrapped in an independent sequence loop and the execution starts another flow.
+         *  If the current plugin is the last in the chain, the observed method is executed.
+      *  The second part of the `around` method is executed.
+   *  Magento moves on to the next plugin.
 
-    * Magento executes the current plugin’s `before` method.
-    * Then the current plugin's `around` method is called.
+* Following the execution flow, starting from lowest to highest `sortOrder` in the current sequence plugins loop.
 
-        * The first part of the plugin's `around` method is executed.
-        * The `around` method executes the `callable`.
+    *  The current plugin's `after` method is executed.
+    *  Magento moves on to the next plugin.
 
-            * If there is another plugin in the chain, all subsequent plugins are wrapped in an independent sequence loop and the execution starts another flow.
-            * If the current plugin is the last in the chain, the observed method is executed.
+As a result of these rules, the execution flow of an observed method is affected not only by the prioritization of the plugins, but also by their implemented methods.  
 
-        * The second part of the `around` method is executed.
-
-    * Magento moves on to the next plugin.
-
-* Following the execution flow, starting from lowest to greatest `sortOrder` in the current sequence plugins loop.
-
-    * The current plugin's `after` method is executed.
-    * Magento moves on to the next plugin.
-
-As a result of these rules, the execution flow of an observed method is affected not only by the prioritization of the plugins but also by their implemented methods.  
-
-{:.bs-callout-warning}
+{:.bs-callout-info}
 The `around` plugin's method affects the flow of all plugins that are executed after it. 
 
-{:.bs-callout-warning}
-Note that when the `before` and `around` plugin sequence is finished, Magento calls the first plugin `after` method in the sequence loop and not the `after` method of the current plugin that was being executed by the `around` method. 
+{:.bs-callout-tip}
+When the `before` and `around` plugin sequence is finished, Magento calls the first plugin `after` method in the sequence loop, and not the `after` method of the current plugin that was being executed by the `around` method. 
 
 ### Examples
 
@@ -341,12 +336,11 @@ The execution will have a different flow, depending on the methods implemented b
 Your plugin classes has this methods: 
 
 |               | PluginA          | PluginB          | PluginC          |
-| :-----------: | :--------------: | :--------------: | :--------------: |
+|  ------------ | ---------------- | ---------------- | ---------------- |
 | **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    |                  |                  |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
-| :-----------: | :--------------: | :--------------: | :--------------: |
 
 The execution will be in this order:
 
@@ -365,12 +359,11 @@ The execution will be in this order:
 Your plugin classes has this methods: 
 
 |               | PluginA          | PluginB          | PluginC          |
-| :-----------: | :--------------: | :--------------: | :--------------: |
+| -----------   | --------------   | --------------   | --------------   |
 | **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
-| :-----------: | :--------------: | :--------------: | :--------------: |
 
 The execution will be in this order:
 
@@ -393,12 +386,11 @@ The execution will be in this order:
 Your plugin classes has this methods: 
 
 |               | PluginA          | PluginB          | PluginC          |
-| :-----------: | :--------------: | :--------------: | :--------------: |
+| ------------- | ---------------- | ---------------- | ---------------- |
 | **sortOrder** | 10               | 20               | 30               |
 | **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
 | **around**    | aroundDispatch() |                  | aroundDispatch() |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
-| :-----------: | :--------------: | :--------------: | :--------------: |
 
 The execution will be in this order:
 
