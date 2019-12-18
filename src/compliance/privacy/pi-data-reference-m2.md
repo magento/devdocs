@@ -124,7 +124,7 @@ Magento 2 stores the following customer attributes:
 -  VAT Number
 -  Zip/Postal Code
 
-#### `customer_address_entity` and reference tables
+#### `customer_address_entity` and `customer_address_entity` references
 
 The following columns in the `customer_address_entity` table contain customer information:
 
