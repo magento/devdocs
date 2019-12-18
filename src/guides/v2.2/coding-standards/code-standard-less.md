@@ -346,7 +346,7 @@ Helper class names should be lowercase and start with underscore ("_").
 
 Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.
 
-**Example:**:
+**Example:**
 
 ```css
 ._active {
@@ -658,7 +658,7 @@ If variables are local and used only in a [module](https://glossary.magento.com/
 
 #### Theme variables
 
-If variables are common for several modules they should be specified in the `_theme.less` file
+If variables are common for several modules they should be specified in the `_theme.less` file.
 
 ### Naming
 
@@ -728,7 +728,7 @@ For [mixin](https://glossary.magento.com/mixin) naming apply the class naming ru
 
 For mixins grouping use the double underscore "__" prefix.
 
-**Example:**:
+**Example:**
 
 ```css
 .extend__clearfix (...) {

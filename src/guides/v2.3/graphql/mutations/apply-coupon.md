@@ -114,3 +114,14 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`A coupon is already applied to the cart. Please remove it to apply another` | The value specified in the `coupon_code` attribute has already applied to cart. Use [removeCouponFromCart]({{page.baseurl}}/graphql/mutations/remove-coupon.html) to remove the current coupon and to apply another.
+`Cart does not contain products.` | The coupon cannot be applied to an empty cart.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
+`Required parameter "coupon_code" is missing` | The required `coupon_code` attribute contains an empty value.
+`The coupon code isn't valid. Verify the code and try again.` | The entered coupon code is not applicable. Check the existing shopping cart price rules for details.
+`The current user cannot perform operations on cart XXX` | An unauthorized user (guest) tried to add the product into a customer's cart, or an authorized user (customer) tried to add the product into the cart of another customer.
