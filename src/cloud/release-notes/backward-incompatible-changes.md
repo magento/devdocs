@@ -7,27 +7,31 @@ Use the following information to learn about backward incompatible changes that 
 
 ### Service version requirement changes
 
-We changed the minimum PHP version requirement from 7.1.0 to 7.1.3+ for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies an earlier version, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
+We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
 
 ### Environment configuration changes
 
+The folllowing table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
+
    Item | Status | Replacement
    -------- |------- | -------
-   `SCD_EXCLUDE_THEMES` variable | Removed in `{{ site.data.var.ct }}` v2002.1.0 | [`SCD_MATRIX`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_matrix)
-   `STATIC_CONTENT_THREADS` variable| Removed in `{{ site.data.var.ct }}` v2002.1.0 | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
-   `DO_DEPLOY_STATIC_CONTENT` variable | Removed in `{{ site.data.var.ct }}` v2002.1.0 | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
-   `STATIC_CONTENT_SYMLINK` variable | Removed in `{{site.data.var.ct}}` v2002.1.0 | None. Now, the build always creates a symlink to the static content directory `pub/static`.
-   `build_options.ini` file | Removed in `{{site.data.var.ct}}` v2002.1.0 | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
+   `SCD_EXCLUDE_THEMES` variable | [`SCD_MATRIX`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_matrix)
+   `STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
+   `DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
+   `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
+   `build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
 
 ### CLI command changes
 
-The {{site.data.var.ct}} package no longer supports the following CLI commands in version 2002.1.0 and later:
+In {{ site.data.var.ct }} v2002.1.0, we removed support for the following CLI commands.
 
  Command| Replacement
  -------- |-------
 `m2-ece-build` | `vendor/bin/ece-tools build`
 `m2-ece-deploy` | `vendor/bin/ece-tools deploy`
 `m2-ece-scd-dump` | `vendor/bin/ece-tools config:dump`
+
+In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
 ### Package changes
 
