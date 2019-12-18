@@ -35,7 +35,7 @@ class FastLoading
     public function __construct(
         SlowLoading $slowLoading
     ){
-        $this->slowLoading = slowLoading;
+        $this->slowLoading = $slowLoading;
     }
 
     public function getFastValue()

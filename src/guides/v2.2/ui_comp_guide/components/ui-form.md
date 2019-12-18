@@ -13,20 +13,23 @@ Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#ge
 
 The following components can be used in the scope of the Form component:
 
-*  ActionDelete
-*  Checkbox
-*  Checkboxset
+*  [ActionDelete]({{ page.baseurl }}/ui_comp_guide/components/ui-actiondelete.html)
+*  [Checkbox]({{ page.baseurl }}/ui_comp_guide/components/ui-checkbox.html)
+*  [Checkboxset]({{ page.baseurl }}/ui_comp_guide/components/ui-checkboxset.html)
 *  DataSource
-*  FieldSet
-*  FileUploader
-*  Hidden
-*  Input
-*  Multiline
-*  Multiselect
-*  Radioset
-*  Select
-*  Text
-*  Textarea
+*  [Email]({{ page.baseurl }}/ui_comp_guide/components/ui-email.html)
+*  [FieldSet]({{ page.baseurl }}/ui_comp_guide/components/ui-fieldset.html)
+*  [File]({{ page.baseurl }}/ui_comp_guide/components/ui-file.html)
+*  [FileUploader]({{ page.baseurl }}/ui_comp_guide/components/ui-fileuploader.html)
+*  [Hidden]({{ page.baseurl }}/ui_comp_guide/components/ui-hidden.html)
+*  [HtmlContent]({{ page.baseurl }}/ui_comp_guide/components/ui-htmlcontent.html)
+*  [Input]({{ page.baseurl }}/ui_comp_guide/components/ui-input.html)
+*  [Multiline]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html)
+*  [Multiselect]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselect.html)
+*  [Radioset]({{ page.baseurl }}/ui_comp_guide/components/ui-radioset.html)
+*  [Select]({{ page.baseurl }}/ui_comp_guide/components/ui-select.html)
+*  [Text]({{ page.baseurl }}/ui_comp_guide/components/ui-text.html)
+*  [Textarea]({{ page.baseurl }}/ui_comp_guide/components/ui-textarea.html)
 *  [Wysiwyg](https://glossary.magento.com/wysiwyg)
 
 ## Configuration options
@@ -76,6 +79,20 @@ The following components can be used in the scope of the Form component:
       </td>
       <td>
         <code>default</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>buttons</code>
+      </td>
+      <td>
+        A list of buttons that should be added to form.
+      </td>
+      <td>
+        Object
+      </td>
+      <td>
+        <code>{}</code>
       </td>
     </tr>
     <tr>
@@ -130,6 +147,34 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
     </tr>
     <tr>
       <td>
+        <code>listens</code>
+        <ul>
+          <li><code>selectorPrefix</code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        Used for events listening.
+      </td>
+      <td>String</td>
+      <td>
+        <code>'destroyAdapter initAdapter'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>errorClass</code>
+      </td>
+      <td>The CSS class added to the component's DOM block if an error appears.</td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>'.admin__field._error'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <code>imports</code>
         <ul>
           <li><code>reloadUrl</code>
@@ -171,6 +216,16 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
       <td>
         <code>'messages'</code>
       </td>
+    </tr>
+    <tr>
+      <td>
+        <code>namespace</code>
+      </td>
+      <td>Form identifier that is passed to backend when performing actions, e.g. validate or submit.</td>
+      <td>
+        String
+      </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -265,7 +320,9 @@ Create configuration file: `<your module root dir>view/base/ui_component/custome
         <deps>
             <dep>customer_form.customer_form_data_source</dep>
         </deps>
-...
+        ...
+    </settings>
+</form>
 ```
 
 Nodes are optional and contain parameters required for component:
@@ -295,7 +352,8 @@ Add a description of the fields in the form using components and Field Fieldset:
             <visible>false</visible>
         </settings>
     </field>
-…
+    ...
+</fieldset>
 ```
 
 To group components you can use the component container as in example below:
@@ -396,7 +454,7 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         <item name="js_config" xsi:type="array">
             <item name="component" xsi:type="string">Magento_Customer/js/form/customFormConstructor</item>
         </item>
-        </argument>
+    </argument>
 </form>
 ```
 
