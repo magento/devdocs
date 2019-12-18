@@ -16,25 +16,11 @@ Let's consider a case where you need to add a checkbox whose state (selected or 
 
 To implement such a checkbox, take the following steps:
 
-1. [Declare the plugin in your module's `di.xml`](#declare-plugin).
 1. [Create a plugin for the process method](#create-plugin) of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
+1. [Declare the plugin in your module's `di.xml`](#declare-plugin).
 1. [Create a JS component for the checkbox with custom logic](#create-jscomponent).
 
-
-## Step 1: Declare plugin in di.xml {#declare-plugin}
-
-In `<your_module_dir>/etc/frontend/di.xml`, declare the plugin you created on the previous step. The plugin name is arbitrary, in our example it's `ProcessAddressConfiguration`:
-
-```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
-        <plugin name="ProcessAddressConfiguration" type="Magento\Checkout\Block\Checkout\SomeProcessor"/>
-    </type>
-</config>
-```
-
-## Step 2: Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
+## Step 1: Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
 
 In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.
 
@@ -143,6 +129,19 @@ class SomeProcessor
 ```
 
 For more information on creating plugins, see [Plugins (Interceptors)]({{ page.baseurl }}/extension-dev-guide/plugins.html).
+
+## Step 2: Declare plugin in di.xml {#declare-plugin}
+
+In `<your_module_dir>/etc/frontend/di.xml`, declare the plugin you created on the previous step. The plugin name is arbitrary, in our example it's `ProcessAddressConfiguration`:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="ProcessAddressConfiguration" type="Magento\Checkout\Block\Checkout\SomeProcessor"/>
+    </type>
+</config>
+```
 
 ## Step 3: Create a JS component for the checkbox {#create-jscomponent}
 
