@@ -38,9 +38,9 @@ Contains an array of scope configuration values. It has the following subnodes:
 
 | Name       | Description                        |
 | ---------- | -----------------------------------|
-| `websites` | websites related configuration.    |
-| `groups`   | stores related configuration.      |
-| `stores`   | store views related configuration. |
+| `websites` | Website configuration              |
+| `groups`   | Stores configuration               |
+| `stores`   | Store views configuration          |
 
 ```conf
 'scopes' => [
