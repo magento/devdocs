@@ -346,7 +346,7 @@ Helper class names should be lowercase and start with underscore ("_").
 
 Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.
 
-**Example:**:
+**Example:**
 
 ```css
 ._active {
