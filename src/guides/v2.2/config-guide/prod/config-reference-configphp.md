@@ -11,35 +11,36 @@ The `config.php` file contains the following sections:
 
 | Name      | Description                                                                         |
 | --------- | ----------------------------------------------------------------------------------- |
-| `system`  | The system configurations required for static content deployment.                   |
-| `scopes`  | The list of stores, store groups and websites with related information.             |
 | `i18n`    | All inline translation data. Reading from this section is currently not supported.  |
 | `modules` | The list of enabled and disabled modules.                                           |
+| `scopes`  | The list of stores, store groups and websites with related information.             |
+| `system`  | The system configurations required for static content deployment.                   |
 | `themes`  | The configuration of installed themes.                                              |
 
-## system
+## modules
 
-Contains array of system field configuration values.
+Contains an array of modules and their states. If module is enabled, value is 1. Otherwise, the value is 0.
 
 ```conf
-'system'=> [
-    'default' =>[
-        'checkout' => [
-            'cart' => [
-                'delete_quote_after' => 31
-            ]
-        ]
-    ]
+'modules' => [
+    'Magento_Store' => 1,
+    'Magento_Theme' => 0,
+    'Magento_Backend' => 0,
+    'Magento_Eav' => 1
 ]
 ```
 
+Learn more about [Modules](https://devdocs.magento.com/videos/fundamentals/create-a-new-module/)
+
 ## scopes
 
-Contains array of scope configuration values.It has following subnodes.
+Contains an array of scope configuration values. It has the following subnodes:
 
-*  `websites`: websites related configuration
-*  `groups`: stores related configuration
-*  `stores`: store views related configuration
+| Name       | Description                        |
+| ---------- | -----------------------------------|
+| `websites` | websites related configuration.    |
+| `groups`   | stores related configuration.      |
+| `stores`   | store views related configuration. |
 
 ```conf
 'scopes' => [
@@ -77,22 +78,29 @@ Contains array of scope configuration values.It has following subnodes.
 ]
 ```
 
-## modules
+Learn more about [Magento Scopes](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html)
 
-Contains array of modules with their status(enable/disable).If module is enabled, value is 1 otherwise value is 0.
+## system
+
+Contains an array of system field configuration values.
 
 ```conf
-'modules' => [
-    'Magento_Store' => 1,
-    'Magento_Theme' => 0,
-    'Magento_Backend' => 0,
-    'Magento_Eav' => 1
+'system'=> [
+    'default' =>[
+        'checkout' => [
+            'cart' => [
+                'delete_quote_after' => 31
+            ]
+        ]
+    ]
 ]
 ```
 
+Learn more about [System Specific Configuration](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-sens.html)
+
 ## themes
 
-Contains array of values for theme configuration.
+Contains an array of values for theme configuration.
 
 ```conf
 'themes' => [
@@ -107,3 +115,5 @@ Contains array of values for theme configuration.
   ]
 ]
 ```
+
+Learn more about [Themes](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-create.html)
