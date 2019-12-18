@@ -37,7 +37,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
    <p> ... </p>
    <p> ... </p>
 </section>
-<a href="#information-dialog-tree">Scroll to text</a></a>
+<a href="#information-dialog-tree">Scroll to text</a>
 ```
 
 **Unacceptable:**
