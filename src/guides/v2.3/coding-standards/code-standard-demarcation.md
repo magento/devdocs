@@ -203,7 +203,7 @@ content='Exception: CSS attributes where values must be calculated beyond the cs
    this.element.toggleClass(this.options.hiddenClass);
 ...
    this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
-   this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
+   this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'});
 ...
 ```
 
