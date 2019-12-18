@@ -97,7 +97,7 @@ Magento provides the ability to use two link types by default:
 
 ### Integrate the urlInput component with the Form component
 
-This example integrates the urlInput component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component
+This example integrates the urlInput component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component.
 
 ```xml
 <form>
