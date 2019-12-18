@@ -92,8 +92,8 @@ class MyLink implements ConfigInterface
 
 Magento provides the ability to use two link types by default:
 
-*  `Magento\Catalog\Ui\Component\UrlInput\Category` for category
-*  `Magento\Catalog\Ui\Component\UrlInput\Product` for product
+-  `Magento\Catalog\Ui\Component\UrlInput\Category` for category
+-  `Magento\Catalog\Ui\Component\UrlInput\Product` for product
 
 ### Integrate the urlInput component with the Form component
 

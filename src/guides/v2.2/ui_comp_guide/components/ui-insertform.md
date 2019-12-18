@@ -17,7 +17,7 @@ The InsertForm component inserts the [Form component]({{ page.baseurl }}/ui_comp
 | `externalProvider` | DataSource of the inserted Form. | String | `''` |
 | `formSubmitType` | Expect that Form will save data using AJAX. Links responseData and responseStatus with form. Export to form submit type. | Boolean | `false` |
 | `ns` | Namespace of the inserted form. | String | `''` |
-| `realTimeLink` | Enables link between insertForms's externalValue and value. Here 'link' means the two-way [links property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links-property) of UI components, which allows immediate update. | Boolean | `false` |
+| `realTimeLink` | Enables a link between the externalValue and value of insertForms. Here 'link' means the two-way [links property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links-property) of UI components, which allows immediate update. | Boolean | `false` |
 | `render_url` | With default `render_url(mui/index/render)` form will be without form buttons. To get Form with buttons, url must be changed to `mui/index/render_handle` and next GET parameters: <br/> `buttons=1` (flag to get buttons) <br/> `handle=%layout namespace%/` (buttons scope) | String | `mui/index/render` |
 | `showSpinner` | Show spinner while the Form is rendered. | Boolean | `true` |
 | `toolbarContainer` | Path to component that has toolbarSection property with reference to HTML element. Component will insert Form buttons to this section. | String | `''` |
@@ -128,7 +128,7 @@ class CustomDataProvider extends AbstractDataProvider
 {
     /**
      * CustomDataProvider constructor.
-     * 
+     *
      * @param $name
      * @param $primaryFieldName
      * @param $requestFieldName
@@ -157,13 +157,13 @@ class CustomDataProvider extends AbstractDataProvider
 
     /**
      * Get data
-     * 
+     *
      * @return array
      */
     public function getData()
     {
         return [
-            // return the form data here    
+            // return the form data here
         ];
     }
 }
