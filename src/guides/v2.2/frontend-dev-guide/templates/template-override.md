@@ -77,6 +77,17 @@ For example, set an argument in the block: `<argument name="store_name" xsi:type
 
 See [Block arguments] for more information.
 
+## Getting a CMS Block {#cms-block}
+
+To get a cms block in template phtml file use the below code:
+
+```phtml
+echo $this->getLayout()
+          ->createBlock('Magento\Cms\Block\Block')
+          ->setBlockId('your_block_identifier')
+          ->toHtml();
+```
+
 ## Using PHP short tags in template PHTML files {#short-tags}
 
 The `echo` command in PHP can be written using the short tag in Magento templates.
