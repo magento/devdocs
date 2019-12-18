@@ -9,131 +9,24 @@ The urlInput component implements the `<urlInput>` form field.
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>
-      Option
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Default
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>component</code>
-    </td>
-    <td>
-      The path to the component’s .js file in terms of RequireJS.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>Magento_Ui/js/form/element/url-input</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>template</code>
-    </td>
-    <td>
-      The path to the general field <code>.html</code> template.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/form/element/url-input</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>class</code>
-    </td>
-    <td>
-      The path to the component class.
-    </td>
-    <td>
-      Object
-    </td>
-    <td>
-      <code>Magento\Ui\Component\Form\Element\UrlInput</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>settingTemplate</code>
-    </td>
-    <td>
-      The path to the template to display an additional link setting. <em>Example:</em> Display in the new tab.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/form/element/urlInput/setting</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>typeSelectorTemplate</code>
-    </td>
-    <td>
-      The path to the template to display link types.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <code>ui/form/element/urlInput/typeSelector</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>isDisplayAdditionalSettings</code>
-    </td>
-    <td>
-      The setting to define the display of an additional setting.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>urlTypes</code>
-    </td>
-    <td>
-      Contains the required attribute class that specifies the array of configurations for every URL type.
-    </td>
-    <td>
-    </td>
-    <td>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>settingValue</code>
-    </td>
-    <td>
-      The default value for the checkbox. Open in a new tab.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-    </td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `class` | The path to the component class. | Object | `Magento\Ui\Component\Form\Element\UrlInput` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/form/element/url-input` |
+| `isDisplayAdditionalSettings` | The setting to define the display of an additional setting. | Boolean | `true` |
+| `settingTemplate` | The path to the template to display an additional link setting. _Example:_ Display in the new tab. | String | `ui/form/element/urlInput/setting` |
+| `settingValue` | The default value for the checkbox. Open in a new tab. | Boolean | `false` |
+| `template` | The path to the general field `.html` template. | String | `ui/form/element/url-input` |
+| `typeSelectorTemplate` | The path to the template to display link types. | String | `ui/form/element/urlInput/typeSelector` |
+| `urlTypes` | Contains the required attribute class that specifies the array of configurations for every URL type. | Object | `{}` |
+
+## Source files
+
+Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
+
+-  [app/code/Magento/Ui/view/base/web/js/form/element/url-input.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/url-input.js)
+-  [app/code/Magento/Ui/view/base/web/templates/form/element/urlInput/setting.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/urlInput/setting.html)
+-  [app/code/Magento/Ui/view/base/web/templates/form/element/urlInput/typeSelector.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/urlInput/typeSelector.html)
 
 ## Examples
 
@@ -201,3 +94,29 @@ Magento provides the ability to use two link types by default:
 
 *  `Magento\Catalog\Ui\Component\UrlInput\Category` for category
 *  `Magento\Catalog\Ui\Component\UrlInput\Product` for product
+
+### Integrate the urlInput component with the Form component
+
+This example integrates the urlInput component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component.
+
+```xml
+<form>
+    ...
+    <fieldset>
+        ...
+        <urlInput name="url_input_example">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="urlTypes" xsi:type="object">Magento\Ui\Model\UrlInput\LinksConfigProvider</item>
+                </item>
+            </argument>
+        </urlInput>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![urlInput Component default link example]({{ site.baseurl }}/common/images/ui_comps/ui-urlinput-default-link-result.png)
+![urlInput Component category link example]({{ site.baseurl }}/common/images/ui_comps/ui-urlinput-category-link-result.png)
+![urlInput Component product link example]({{ site.baseurl }}/common/images/ui_comps/ui-urlinput-product-link-result.png)
