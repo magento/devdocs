@@ -1,0 +1,44 @@
+label: Customize Checkout
+pages:
+  - label: Initial Tasks
+    url: /howdoi/checkout/checkout_overview.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a new checkout step
+    url: /howdoi/checkout/checkout_new_step.html
+    include_versions: ["2.2", "2.3"]
+  - label: Customize the view of a checkout step
+    url: /howdoi/checkout/checkout_customize.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a custom payment method to checkout
+    url: /howdoi/checkout/checkout_payment.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add custom validations before order placement
+    url: /howdoi/checkout/checkout_order.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add custom shipping carrier
+    url: /howdoi/checkout/checkout-add-custom-carrier.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add custom shipping carrier validations
+    url: /howdoi/checkout/checkout_carrier.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add custom input mask for ZIP code
+    url: /howdoi/checkout/checkout_zip.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a custom template for a form field on Checkout page
+    url: /howdoi/checkout/checkout_edit_form.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a new input form to checkout
+    url: /howdoi/checkout/checkout_form.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a new field in address form
+    url: /howdoi/checkout/checkout_new_field.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add a custom shipping address renderer
+    url: /howdoi/checkout/checkout_address.html
+    include_versions: ["2.2", "2.3"]
+  - label: Add custom fields that influence other Checkout fields
+    url: /howdoi/checkout/checkout_custom_checkbox.html
+    include_versions: ["2.2", "2.3"]
+  - label: Customize the list of shipping methods
+    url: /howdoi/checkout/checkout_shipping_methods.html
+    include_versions: ["2.2", "2.3"]
