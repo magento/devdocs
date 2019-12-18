@@ -658,7 +658,7 @@ If variables are local and used only in a [module](https://glossary.magento.com/
 
 #### Theme variables
 
-If variables are common for several modules they should be specified in the `_theme.less` file
+If variables are common for several modules they should be specified in the `_theme.less` file.
 
 ### Naming
 
@@ -728,7 +728,7 @@ For [mixin](https://glossary.magento.com/mixin) naming apply the class naming ru
 
 For mixins grouping use the double underscore "__" prefix.
 
-**Example:**:
+**Example:**
 
 ```css
 .extend__clearfix (...) {
