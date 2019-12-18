@@ -63,7 +63,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
-| `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | class name | no |
+| `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class`. Defaults to `Magento\Framework\View\Element\Template` in v2.2.1+ | no (v2.2.1+), yes (v2.2.0 and lower) |
 |`name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
 | `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
