@@ -6,10 +6,10 @@ functional_areas:
   - Setup
 ---
 
-Use the following instructions to import your {{site.data.var.ee}} code into your current {{ site.data.var.ece }} project code.
+Use the following instructions to import your {{site.data.var.ee}} code into a current {{ site.data.var.ece }} environment.
 
 {:.bs-callout-warning}
-When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master` which removes all data, sites, stores, and other development work you have done on the project. If you want to keep any files or directories, copy them to a directory outside of your project.
+When you force push code from an existing Git branch to the branch for your {{site.data.var.ece}} environment, you overwrite the project code in the `master` branch which removes all data, sites, stores, and other development work you have done in the Cloud environment. If you want to keep any files or directories, copy them to a directory outside of your project.
 
 ## Required information
 

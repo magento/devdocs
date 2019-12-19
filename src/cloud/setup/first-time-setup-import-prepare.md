@@ -54,19 +54,19 @@ Add these files to your {{site.data.var.ee}} code:
    -  `<Magento Commerce install dir>/.magento/services.yaml`
    -  `<Magento Commerce install dir>/.magento/routes.yaml`
 
-  For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
+For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
 
-    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
-    2.  In the upper right, click **Raw**, as the following figure shows.
+1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
+1.  In the upper right, click **Raw**, as the following figure shows.
 
-        ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
-    3.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
-    4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
-    5.  Save the file using the name: `.magento.app.yaml`
-    6.  Repeat these tasks for the other files.
+    ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
+1.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
+1.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
+1.  Save the file using the name: `.magento.app.yaml`
+1.  Repeat these tasks for the other files.
 
-        * Create `magento-vars.php` in the Magento root directory.
-        * Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+      * Create `magento-vars.php` in the Magento root directory.
+      * Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
@@ -80,9 +80,11 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 {:.procedure}
 To create a new `auth.json` file:
 
-1. Verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{ site.mage2bloburl }}/2.3/auth.json.sample).
+1. If you do not have an `auth.json` file in your Magento root directory, create one.
 
-1. Using a text editor, create an `auth.json` file and save it in your Magento root directory.
+   -  Using a text editor, create an `auth.json` file in your Magento root directory.
+   -  Copy the contents of the [sample `auth.json`]({{ site.mage2bloburl }}/2.3/auth.json.sample) into the new `auth.json` file.
+
 
 1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
 
@@ -97,7 +99,7 @@ To create a new `auth.json` file:
    }
     ```
 
-1. Save your changes to `auth.json` file and exit the text editor.
+1. Save your changes and exit the text editor.
 
 The following method is best to prevent accidental exposure of credentials, such as pushing an `auth.json` file to a public repository.
 
@@ -137,7 +139,7 @@ Before you push code to the {{site.data.var.ece}} Git repository, modify your `c
 
 To edit `composer.json`:
 
-1. Go to the Magento installation directory of the code that you downloaded from github as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Go to the Magento installation directory that contains the code that you downloaded from GitHub as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. In a text editor, open `composer.json` in the project root directory.
 1. Substitute the following value in the `require` section:
 
