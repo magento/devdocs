@@ -117,7 +117,7 @@ The following call asynchronously deletes CMS blocks with IDs `1` and `2`:
 DELETE <host>/rest/async/bulk/V1/cmsPage/byPageId
 ```
 
-### DELETE Request Payload
+### DELETE request payload
 
 ```json
 [
