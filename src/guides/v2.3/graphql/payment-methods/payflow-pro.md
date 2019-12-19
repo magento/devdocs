@@ -19,6 +19,8 @@ The following diagram shows the workflow for placing an order when Payflow Pro i
 
 {% include graphql/payment-methods/payflow-pro-workflow.md %}
 
+To configure Payflow Pro Please Visit [Payflow Configuration](https://registration.paypal.com/).
+
 ## Additional Payment information
 
 When you set the payment method to Payflow Pro in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation, the `payment_method` object must contain a `payflowpro` object and a `CreditCardDetailsInput` object.
