@@ -109,13 +109,34 @@ The response contains an array that indicates whether the call successfully adde
 }
 ```
 
+### Sample usage of DELETE requests
+
+The following call asynchronously delete from Magento CMS blocks with IDs `1` and `2`:
+
+```http
+DELETE <host>/rest/async/bulk/V1/cmsPage/byPageId
+```
+
+### DELETE Request Payload
+
+```json
+[
+    {
+        "page_id": "1"
+    },
+    {
+        "page_id": "2"
+    }
+]
+```
+
 ## Store scopes
 
 You can specify a store code in the route of an asynchronous endpoint so that it operates on a specific store, as shown below:
 
 ```http
 POST /<store_code>/async/bulk/V1/products
-PUT /<store_code>/async/bulk/V1/products/:sku
+PUT /<store_code>/async/bulk/V1/products/bySku
 ```
 
 As a result, the asynchronous calls update the products on the specific store, instead of the default store.
@@ -124,7 +145,7 @@ You can specify the `all` store code to perform operations on all existing store
 
 ```http
 POST /all/async/bulk/V1/products
-PUT /all/async/bulk/V1/products/:sku
+PUT /all/async/bulk/V1/products/bySku
 ```
 
 ### Fallback and creating/updating objects when setting store scopes
