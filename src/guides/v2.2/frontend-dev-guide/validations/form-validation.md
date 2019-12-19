@@ -13,7 +13,7 @@ There are three main validation modules present in Magento: `jquery/validate`, `
 
 #### `jquery/validate`
 
-This is an alias for [`lib/web/jquery/jquery.validate`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery.validate.js). This is the base validation Javascript file provided by jQuery from which Magento builds on top of.
+This is an alias for [`lib/web/jquery/jquery.validate`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery.validate.js). This is the base validation JavaScript file provided by jQuery that Magento extends.
 
 #### `mage/validation`
 
