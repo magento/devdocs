@@ -96,13 +96,25 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
         <settings>
             <label>Wysiwyg Content</label>
         </settings>
-        <field name="wysiwyg_on_custom_page" template="ui/content/content" formElement="wysiwyg">
+        <field name="wysiwyg_example" sortOrder="50" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">100px</item>
+                        <item name="add_variables" xsi:type="boolean">true</item>
+                        <item name="add_widgets" xsi:type="boolean">true</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
             <settings>
                 <label>Content</label>
             </settings>
             <formElements>
                 <wysiwyg>
                     <settings>
+                        <rows>8</rows>
                         <wysiwyg>true</wysiwyg>
                     </settings>
                 </wysiwyg>
