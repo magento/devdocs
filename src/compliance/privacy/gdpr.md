@@ -8,7 +8,7 @@ redirect_from:
   - /guides/v2.2/architecture/gdpr/magento-1x.html
 ---
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 This is one in a series of topics to help Magento merchants and developers understand the implications of the General Data Protection Regulation (GDPR). The information is intended for informational purposes only and should not be construed as legal advice. Please consult with your legal counsel to determine whether and how your business should comply with any legal obligations.
 
 The European Union (EU) enacted [General Data Protection Regulation](https://ec.europa.eu/info/law/law-topic/data-protection_en) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
