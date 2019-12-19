@@ -30,9 +30,9 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 ## Examples
 
-### Integrate the Checkbox component with the Form component
+### Integrate the Checkbox component configured as toggle element with the Form component
 
-This example integrates the Checkbox component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+This example integrates the Checkbox component configured as toggle element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
@@ -62,4 +62,72 @@ This example integrates the Checkbox component with the [Form]({{ page.baseurl }
 
 #### Result
 
-![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/checkbox-component-result.png)
+![Checkbox Toggle UiComponent]({{ site.baseurl }}/common/images/ui_comps/checkbox-component-result.png)
+
+### Integrate the Checkbox component configured as checkbox element with the Form component
+
+This example integrates the Checkbox component configured as checkbox element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+
+```xml
+<form>
+    <fieldset>
+        <field name="myCheckbox" formElement="checkbox">
+            <settings>
+                <label translate="true">Checkbox</label>
+                <tooltip>
+                    <description translate="true">This is my checkbox's description</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/ui-checkbox-result.png)
+
+### Integrate the Checkbox component configured as radio element with the Form component
+
+This example integrates the Checkbox component configured as radio element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+
+```xml
+<form>
+    <fieldset>
+        <field name="myRadio" formElement="checkbox">
+            <settings>
+                <label translate="true">Radio</label>
+                <tooltip>
+                    <description translate="true">This is my radio's description</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>radio</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![Checkbox Radio UiComponent]({{ site.baseurl }}/common/images/ui_comps/ui-radio-result.png)
