@@ -18,52 +18,15 @@ Extends all `abstract` configuration.
 
 Wysiwyg-specific options:
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><code>content</code></td>
-    <td>Initial WYSIWYG content.</td>
-    <td>String</td>
-    <td>''</td>
-  </tr>
-  <tr>
-    <td><code>elementSelector</code></td>
-    <td>The selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
-    <td>String</td>
-    <td><code>textarea</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the template particular field type template, specific for this component.</td>
-    <td>String</td>
-    <td><code>ui/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><div><code>links</code></div>
-        <div><code>value</code></div>
-    </td>
-    <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
-    <td>Object<br />String</td>
-    <td><code>${ $.provider }:${ $.dataScope }</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the general Field template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `class` | The path to the component class. | Object | `Magento\Ui\Component\Form\Element\Wysiwyg` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `'Magento_Ui/js/form/element/wysiwyg'` |
+| `content` | Initial WYSIWYG content. | String | `''` |
+| `elementSelector` | The selector of the HTML element that is wrapped by the WYSIWYG editor. | String | `'textarea'` |
+| `elementTmpl` | The path to the template particular field type template, specific for this component. | String | `'ui/form/element/wysiwyg'` |
+| `links`.`value` | [Links]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) the component's `value` property with the provider, using the path that is declared in the `dataScope` property. | String | `'${ $.provider }:${ $.dataScope }'` |
+| `template` | The path to the general Field template. | String | `'ui/form/field'` |
 
 ## Events
 
@@ -148,6 +111,10 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
     </fieldset>
 </form>
 ```
+
+#### Result
+
+![Wysiwyg Component example]({{ site.baseurl }}/common/images/ui_comps/ui-wysiwyg-result.png)
 
 Last, add your data provider, controller, and routes. Refer to [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) for more information.
 
