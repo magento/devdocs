@@ -2,7 +2,6 @@
 group: architecture-guide
 title: Ease of frontend customization
 redirect_from:
-  - /guides/v2.2/architecture/storefront_customization.html
   - /guides/v2.3/architecture/storefront_customization.html
 ---
 

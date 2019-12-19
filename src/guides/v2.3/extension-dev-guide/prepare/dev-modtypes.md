@@ -1,8 +1,6 @@
 ---
 group: php-developer-guide
 title: Component types
-redirect_from:
-  - /guides/v2.2/mktpl-quickstart/dev-modtypes.html
 ---
 
 Each component type has a different [directory structure][directory-structure] and different contents for [`composer.json`][composer].

@@ -9,7 +9,6 @@ return_to:
 menu_order: 3
 level3_subgroup: order-tutorial
 redirect_from:
-  - /guides/v2.2/get-started/order-tutorial/order-create-customer.html
   - /guides/v2.3/get-started/order-tutorial/order-create-customer.html
 functional_areas:
   - Integration

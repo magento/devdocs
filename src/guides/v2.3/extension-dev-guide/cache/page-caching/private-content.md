@@ -1,10 +1,6 @@
 ---
 group: php-developer-guide
 title: Private content
-redirect_from:
-  - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
 
 Since private content is specific to individual users, it's reasonable to handle it on the client (i.e., web browser).

@@ -1,8 +1,6 @@
 ---
 group: php-developer-guide
 title: Page caching
-redirect_from:
-  - /guides/v2.2/config-guide/cache/cache-priv-over.html
 ---
 
 {% include cache/page-cache-overview.md%}

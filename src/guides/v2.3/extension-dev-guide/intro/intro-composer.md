@@ -1,8 +1,6 @@
 ---
 group: php-developer-guide
 title: Introduction to Composer
-redirect_from:
-  - /guides/v2.2/mktpl-quickstart/intro-composer.html
 ---
 
 {% include install/composer-overview.md %}

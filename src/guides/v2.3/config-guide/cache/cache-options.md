@@ -1,8 +1,6 @@
 ---
 group: configuration-guide
 title: Low-level cache options
-redirect_from:
-  - /guides/v2.2/config-guide/cache/caching_low-level.html
 functional_areas:
   - Configuration
   - System
