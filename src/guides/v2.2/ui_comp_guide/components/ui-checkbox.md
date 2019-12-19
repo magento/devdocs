@@ -32,7 +32,7 @@ Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/M
 
 ### Integrate the Checkbox component configured as toggle element with the Form component
 
-This example integrates the Checkbox component configured as toggle element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+This example integrates the Checkbox component configured as a toggle element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
