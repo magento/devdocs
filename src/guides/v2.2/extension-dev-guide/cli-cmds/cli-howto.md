@@ -70,7 +70,7 @@ Following is a summary of the process:
 
            /**
             * Execute the command
-            * 
+            *
             * @param InputInterface $input
             * @param OutputInterface $output
             *
@@ -92,7 +92,7 @@ Following is a summary of the process:
    {:.bs-callout-info}
    Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} docummentation for more information about styling.
 
-2. Declare your Command class in `Magento\Framework\Console\CommandListInterface` and configure the command name using dependency injection (`<your component root dir>/etc/di.xml`):
+1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` and configure the command name using dependency injection (`<your component root dir>/etc/di.xml`):
 
    ```xml
    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
@@ -114,7 +114,7 @@ Following is a summary of the process:
    </config>
    ```
 
-3. Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
+1. Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
 
    ```bash
    rm -rf var/cache/* var/page_cache/* generated/*
