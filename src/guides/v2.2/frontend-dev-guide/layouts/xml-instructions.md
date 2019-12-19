@@ -74,7 +74,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
 
-Sample of usage in the product listing page layout:
+Sample usage in the product listing page layout:
 
 ```xml
 <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml"/>
