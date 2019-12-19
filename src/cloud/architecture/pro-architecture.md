@@ -176,7 +176,7 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 
 ## Software versions {#cloud-arch-software}
 
-{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
+{{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
 -  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)

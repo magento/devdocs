@@ -102,7 +102,7 @@ Edit your `apcu.ini` file to include the following:
 ```text
 extension=apcu.so
 [apcu]
-acp.enabled = 1
+apc.enabled = 1
 ```
 
 ## Web server
