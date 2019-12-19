@@ -20,7 +20,7 @@ To implement such a checkbox, take the following steps:
 1. [Declare the plugin in your module's `di.xml`](#declare-plugin).
 1. [Create a JS component for the checkbox with custom logic](#create-jscomponent).
 
-## Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
+## Step 1: Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
 
 In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.
 
@@ -205,3 +205,17 @@ define([
     });
 });
 ```
+
+## Step 4: Code compile and Static content deployment
+
+1. Compile the code:
+
+   ```bash
+   bin/magento setup:di:compile
+   ```
+
+1. Deploy static content:
+
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
