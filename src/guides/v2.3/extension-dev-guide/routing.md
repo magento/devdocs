@@ -370,7 +370,7 @@ The `routing_index_index` represents the path for the new route.
 
 ### Result
 
-As result, the new page is available in the `Specified Page` dropdown widget when creating page.
+As result, the new page is available in the `Specified Page` dropdown widget when creating a page.
 
 ![Routing Page Type]({{ site.baseurl }}/common/images/routing-page-type-result.png)
 
