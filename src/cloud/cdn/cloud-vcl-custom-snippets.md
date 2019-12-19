@@ -45,7 +45,7 @@ You can create and manage custom VCL snippets from the Magento Admin UI or by us
 
 ### Example VCL snippet code {#vcl-curl}
 
-The following example shows the JSON code for a custom VCL snippet that filters traffic by client IP address.
+The following example shows the custom VCL snippet that filters traffic by client IP address in JSON format.
 
 ```json
 {
@@ -59,9 +59,16 @@ The following example shows the JSON code for a custom VCL snippet that filters 
 }
 ```
 
+{: .bs-callout-warning}
+In this example, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. If you submit the VCL code snippet from the Magento Admin UI, or as a JSON string using the Fastly API, you must escape special characters to prevent validation errors. See the example in [Secure the Magento Admin UI]({{ site.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html#vcl).
+
 The VCL logic in the `content` field performs the following actions:
 
 -  Checks the incoming IP address, `client.ip` on each request
+
+-  Blocks any request with an IP address included in the *ACLNAME* edge ACL, returning a `403 Forbidden` error
+
+The following table provides details about key data for custom VCL snippets.  For a more detailed reference, see the [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference in the Fastly documentation.
 
 -  Blocks any request with an IP address included in the *ACLNAME* edge ACL, returning a `403 Forbidden` error
 
