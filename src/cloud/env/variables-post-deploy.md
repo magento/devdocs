@@ -98,14 +98,14 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
             - "category:|car_.*?\\.html$|:2"
             - "category:|tires_.*|:store_gb"
       ```
-  
+
    The following example caches for the `product` entity type based on these criteria:
-   - all products for all store (programmatically limited to 100 per store to avoid performance issues) 
-   - all products for store `store1`
-   - products with `sku1` for all stores
-   - products with `sku1` for stores with code `store1` and `store2`
-   - products with `sku1`, `sku2` and `sku3` for stores with code `store1` and `store2`
-   
+   -  all products for all store (programmatically limited to 100 per store to avoid performance issues)
+   -  all products for store `store1`
+   -  products with `sku1` for all stores
+   -  products with `sku1` for stores with code `store1` and `store2`
+   -  products with `sku1`, `sku2` and `sku3` for stores with code `store1` and `store2`
+
       ```yaml
       stage:
         post-deploy:
@@ -116,12 +116,12 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
             - "product:sku1:store1|store2"
             - "product:sku1|sku2|sku3:store1|store2"
       ```
-      
-   The following example caches for the `store-page` entity type based on these criteria: 
-   - page `/contact-us` for all stores
-   - page `/contact-us` for store with ID `1`
-   - page `/contact-us` for stores with code `code1` and `code2`
-   
+
+   The following example caches for the `store-page` entity type based on these criteria:
+   -  page `/contact-us` for all stores
+   -  page `/contact-us` for store with ID `1`
+   -  page `/contact-us` for stores with code `code1` and `code2`
+
    ```yaml
          stage:
            post-deploy:
@@ -129,7 +129,8 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
                - "store-page:/contact-us:*"
                - "store-page:/contact-us:1"
                - "store-page:/contact-us:code1|code2"
-   ```      
+   ```
+
 [hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [CMS]: https://glossary.magento.com/cms/
 [Content elements]: https://docs.magento.com/m2/ce/user_guide/cms/content-elements.html

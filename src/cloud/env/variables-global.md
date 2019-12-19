@@ -47,7 +47,7 @@ stage:
     SCD_ON_DEMAND: true
 ```
 
-The `SCD_ON_DEMAND` variable skips the SCD and the `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
+The `SCD_ON_DEMAND` variable skips the SCD in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
 
 ```php?start_inline=1
 return array(
@@ -66,6 +66,7 @@ return array(
 Allows you to increase the maximum expected execution time for static content deployment.
 
 By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+
 ```yaml
 stage:
   global:

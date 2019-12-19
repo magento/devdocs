@@ -539,3 +539,7 @@ pages:
         - label: magento-cloud-patches
           url: /cloud/release-notes/mcp-release-notes.html
           versionless: true
+
+        - label: Backward incompatible changes
+          url: /cloud/release-notes/backward-incompatible-changes.html
+          versionless: true
