@@ -350,6 +350,30 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
+## Declaring the new route as Page Type
+
+After creating a new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
+
+Defining a new page type:
+
+> `etc/frontend/page_types.xml`
+
+```xml
+<?xml version="1.0"?>
+<page_types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_types.xsd">
+    <type id="routing_index_index" label="Routing Page"/>
+</page_types>
+```
+
+{:.bs-callout-info}
+The `routing_index_index` represents the path for the new route.
+
+### Result
+
+As result, the new page is available in the `Specified Page` dropdown widget when creating a page.
+
+![Routing Page Type]({{ site.baseurl }}/common/images/routing-page-type-result.png)
+
 [`FrontController` class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class
 [Router class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
