@@ -122,7 +122,7 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
    $.mage.__('Hello %1').replace('%1', yourVariable);
    ```
 
-In this example, the `'Hello %1'` string is added to the dictionary when the i18n tool is run.
+In this example, the _'Hello %1'_ string is added to the dictionary when the i18n tool is run.
 
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [generating the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
