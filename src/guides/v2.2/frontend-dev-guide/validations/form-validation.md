@@ -1,6 +1,8 @@
 ---
 group: frontend-developer-guide
 title: Form validation
+contributor_name: Adarsh Manickam
+contributor_link: https://github.com/drpayyne
 functional_areas:
   - Frontend
 ---
