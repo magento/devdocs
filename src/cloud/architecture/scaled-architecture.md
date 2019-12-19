@@ -32,7 +32,7 @@ There are 3 nodes for php-fpm and manages web traffic. In addition to vertical s
 
 ![Web tier scaling]
 
-This complements the vertical scaling provided by the database tier.
+This complements the vertical scaling provided by the core tier. As the core tier scales in size and power to accommodate a growing database and service usage, the web tier scales in size and power, and even instances, to accommodate growing process and traffic requirements.
 
 Consider an example that the web node instance type is _C5.2xlarge with 8 CPU and 16Gb RAM_. The number of requests to the site increased greatly. You can add an additional C5.2xlarge node to handle the increase in php-fpm processes or you can change each instance type to _C5.4xlarge with 16 CPU and 32Gb RAM_. Adding an additional node reduces the risk of insufficient surge capacity.
 
