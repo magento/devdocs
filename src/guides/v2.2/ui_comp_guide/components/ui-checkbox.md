@@ -66,7 +66,7 @@ This example integrates the Checkbox component configured as a toggle element wi
 
 ### Integrate the Checkbox component configured as checkbox element with the Form component
 
-This example integrates the Checkbox component configured as checkbox element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+This example integrates the Checkbox component configured as a checkbox element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
@@ -100,7 +100,7 @@ This example integrates the Checkbox component configured as checkbox element wi
 
 ### Integrate the Checkbox component configured as radio element with the Form component
 
-This example integrates the Checkbox component configured as radio element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+This example integrates the Checkbox component configured as a radio element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
