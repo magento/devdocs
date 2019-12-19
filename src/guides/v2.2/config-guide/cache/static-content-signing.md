@@ -36,6 +36,20 @@ You can find the configuration for this feature in [**Stores** > Settings > Conf
 
 ![Static Files Settings]({{ site.baseurl }}/common/images/static-files-settings.png)
 
+You can also use the CLI command to determine the status:
+
+```bash
+bin/magento config:show dev/static/sign
+```
+
+Use the following command to enable or disable static content signing
+
+```bash
+bin/magento config:set dev/static/sign <value>
+```
+
+Where ```<value>``` is 1 (enabled) or 0 (disabled).
+
 #### Version signatures
 
 Magento appends the version signature as a path component directly after the base URL of static view files to preserve the integrity of relative URLs across static resources.
