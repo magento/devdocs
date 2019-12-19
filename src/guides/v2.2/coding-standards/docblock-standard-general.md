@@ -444,31 +444,28 @@ For example:
 /**
  * Recursively delete directory from storage
  *
- * @param  string $path Target dir
+ * @param string $path Absolute path to target directory
  * @return void
- * @throws Mage_Core_Exception when directories cannot be deleted
+ * @throws \Magento\Framework\Exception\LocalizedException
  */
 public function deleteDirectory($path)
 {
-    // prevent accidental root directory deleting
-    $rootCmp = rtrim($this->getHelper()->getStorageRoot(), DS);
-    $pathCmp = rtrim($path, DS);
-
-    if ($rootCmp == $pathCmp) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')->__('Cannot delete root directory %s.', $path));
+    if ($this->_coreFileStorageDb->checkDbUsage()) {
+        $this->_directoryDatabaseFactory->create()->deleteDirectory($path);
     }
-
-    $io = new Varien_Io_File();
-
-    if (Mage::helper('Mage_Core_Helper_File_Storage_Database')->checkDbUsage()) {
-        Mage::getModel('Mage_Core_Model_File_Storage_Directory_Database')->deleteDirectory($path);
+    if (!$this->isPathAllowed($path, $this->getConditionsForExcludeDirs())) {
+        throw new \Magento\Framework\Exception\LocalizedException(
+            __('We cannot delete directory %1.', $this->_getRelativePathToRoot($path))
+        );
     }
-    if (!$io->rmdir($path, true)) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')->__('Cannot delete directory %s.', $path));
-    }
-
-    if (strpos($pathCmp, $rootCmp) === 0) {
-        $io->rmdir($this->getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
+    try {
+        $this->_deleteByPath($path);
+        $path = $this->getThumbnailRoot() . $this->_getRelativePathToRoot($path);
+        $this->_deleteByPath($path);
+    } catch (\Magento\Framework\Exception\FileSystemException $e) {
+        throw new \Magento\Framework\Exception\LocalizedException(
+            __('We cannot delete directory %1.', $this->_getRelativePathToRoot($path))
+        );
     }
 }
 ```
