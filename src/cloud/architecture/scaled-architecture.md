@@ -9,12 +9,12 @@ The Cloud infrastructure scales according to your resource needs to achieve grea
 
 ## Split architecture
 
-Historically, the Pro architecture consisted of 3 nodes, each containing a full tech stack. Now, there is a  scalable infrastructure that provides a tiered solution with a minimum of 6 nodes: 3 nodes for the web server and 3 nodes for the core database and other services. This split architecture provides the capability to scale tiers independently to achieve an optimal balance of performance. The **core** tier scales vertically (increases in size), and the **web** tier scales horizontally (increases instance count) and vertically (changes instance type and size).
+Historically, the Pro architecture consisted of 3 nodes, each containing a full tech stack. Now, there is a  scalable infrastructure that provides a tiered solution with a minimum of 6 nodes: 3 nodes for the core database and other services and 3 nodes for the web server. This split architecture provides the capability to scale tiers independently to achieve an optimal balance of performance. The **core** tier scales vertically (increases in size), and the **web** tier scales horizontally (increases instance count) and vertically (changes instance type and size).
 
 Scaling must use the same instance type and size for each node:
 
--  `C5 instances` for each WEB node
--  `M5 or M5n instances` for each Core node
+-  `M5 or M5n instances` for each core node
+-  `C5 instances` for each web node
 
 ### Core tier scaling
 
@@ -22,9 +22,9 @@ There are 3 nodes (core nodes) for the database and included services, such as E
 
 ![Core tier scaling]
 
-Consider an example that the core node instance type is _m5.2xlarge_ with 32Gb RAM. A service, such as the database, uses a considerable amount of memory (30Gb). Scaling to the next available instance size _m5.4xlarge_ provides 64Gb RAM, double the memory, and accommodates the growing needs of the database.
+Consider an example that the core node instance type is _m5.2xlarge_ with 32Gb RAM. A service, such as the database, uses a considerable amount of memory (30Gb). Scaling to the next available instance size _m5.4xlarge_ provides 64Gb RAM, which doubles the memory and accommodates the growing needs of the database.
 
-Further optimizing performance includes routing traffic. You can route traffic based on the node type. By default the db node is isolated from the web traffic, so, as an example, you can choose to serve web traffic on the db node.
+You can further optimize the performance of the core tier by routing traffic based on the node type. By default, the database node is isolated from the web traffic. As an example, you can choose to serve web traffic on the database node.
 
 ### Web tier scaling
 
@@ -38,7 +38,7 @@ Consider an example that the web node instance type is _C5.2xlarge with 8 CPU an
 
 ## Project structure
 
-Minimally, Pro projects with the Scaling architecture have 6 nodes available.
+Minimally, Pro projects with the Scaled architecture have 6 nodes available.
 
 -  3 web nodes c5.2xlarge (8 CPU, 16 Gb RAM)
 -  3 core nodes m5.2xlarge (8 CPU, 32 Gb RAM)
@@ -47,13 +47,16 @@ Each project is unique, however, and requires performance monitoring to properly
 
 ### SSH access
 
-Certain files and logs, such as the `/app/<project-id>/var/log` directory, are not shared between nodes. Each node has a unique SSH access. You can not use the Magento Cloud CLI to log in to the core or web nodes, but you can find the [SSH Access list] in the Project Web UI. The SSH Access 1 to 3 are Core nodes and 4 to _n_ are web nodes.
+Certain files and logs, such as the `/app/<project-id>/var/log` directory, are not shared between nodes. Each node has a unique SSH access. You can not use the Magento Cloud CLI to log in to the core or web nodes, but you can find the node addresses in the [SSH Access list] in the Project Web UI.
 
 ```bash
 ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
 ```
 
-Example response as you log into a core node includes the _unified_ role:
+-  `node` 1 to 3—Addresses to access the core nodes
+-  `node` 4 to _n_—Addresses to access the web nodes
+
+Example response as you log in to a **core node** includes the _unified_ role:
 
 ```terminal
  __  __                   _          ___ _             _
@@ -70,7 +73,7 @@ project-id@server-id:~$
 ```
 {:.no-copy}
 
-Example response as you log into a core node includes the _web_ role:
+Example response as you log in to a **web node** includes the _web_ role:
 
 ```terminal
  __  __                   _          ___ _             _
