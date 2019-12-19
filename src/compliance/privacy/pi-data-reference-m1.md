@@ -1,21 +1,19 @@
 ---
-group: architecture-guide
+group: compliance
+title: Personal Information Reference (Magento 1.x)
 ---
 
-# General Data Protection Regulation
+{: .bs-callout-info}
+This is one in a series of topics to help Magento merchants and developers prepare for compliance with privacy regulations. Consult with your legal counsel to determine whether and how your business should comply with any legal obligations.
 
-The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
+Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
-We are publishing this compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
-
-*  A shopper asks for a copy of the data the merchant has stored about her
-*  A shopper requests that all information about him be deleted
-
-See the corporate [Magento website](https://magento.com/gdpr) for more information about how Magento helps merchants comply with GDPR.
+-  [GDPR]({% link compliance/privacy/gdpr.md %})
+-  [CCPA]({% link compliance/privacy/ccpa.md %})
 
 ## Dataflow diagrams
 
-The data flow diagrams show the types of data that customers and administrators can enter and retrieve on the storefront and in Admin.
+The data flow diagrams show the types of data that customers and administrators can enter and retrieve on the storefront and Admin.
 
 ### Frontend data entry points
 
@@ -31,7 +29,7 @@ Magento loads customer information when the customer logs in and views several d
 
 ### Backend data entry points
 
-A merchant can enter customer, address, and payment information when using Admin to create a customer or order.
+A merchant can enter customer, address, and payment information from the Admin to create a customer or order.
 
 ![Backend data entry points](backend-data-entry-points.svg)
 
@@ -274,26 +272,26 @@ Table | Column | Data type
 
 Other tables that reference Customer:
 
-*  `catalog_compare_item`
-*  `downloadable_link_purchased`
-*  `enterprise_customerbalance`
-*  `enterprise_customersegment_customer`
-*  `enterprise_giftregistry_entity`
-*  `enterprise_reminder_rule_log`
-*  `enterprise_reward`
-*  `log_customer`
-*  `log_visitor_online`
-*  `oauth_token`
-*  `product_alert_price`
-*  `product_alert_stock`
-*  `report_compared_product_index`
-*  `report_viewed_product_index`
-*  `review_detail`
-*  `sales_billing_agreement`
-*  `sales_flat_shipment`
-*  `sales_recurring_profile`
-*  `salesrule_coupon_usage`
-*  `salesrule_customer`
-*  `tag`
-*  `tag_relation`
-*  `wishlist`
+-  `catalog_compare_item`
+-  `downloadable_link_purchased`
+-  `enterprise_customerbalance`
+-  `enterprise_customersegment_customer`
+-  `enterprise_giftregistry_entity`
+-  `enterprise_reminder_rule_log`
+-  `enterprise_reward`
+-  `log_customer`
+-  `log_visitor_online`
+-  `oauth_token`
+-  `product_alert_price`
+-  `product_alert_stock`
+-  `report_compared_product_index`
+-  `report_viewed_product_index`
+-  `review_detail`
+-  `sales_billing_agreement`
+-  `sales_flat_shipment`
+-  `sales_recurring_profile`
+-  `salesrule_coupon_usage`
+-  `salesrule_customer`
+-  `tag`
+-  `tag_relation`
+-  `wishlist`
