@@ -13,11 +13,11 @@ The CheckboxToggleNotice component implements the [`Checkbox`]({{ page.baseurl }
 | --- | --- | --- | --- |
 | `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/form/element/single-checkbox-toggle-notice` |
 | `notices` | The array of notices that should be associated by key with selected option value. | Array | `[]` |
-| `tracks`.`notice` | Flags that enable tracking for the `notice` option. By default, the `notice` option is tracked in purpose to allow updating the notice message in the template. | Boolean | `true` |
+| `tracks`.`notice` | Flags that enable tracking for the `notice` option. By default, the `notice` option is tracked to allow updating the notice message in the template. | Boolean | `true` |
 
 ## Source files
 
-Extends [`Checkbox`]({{ page.baseurl }}/ui_comp_guide/components/ui-checkbox.html) component:
+Extends the [`Checkbox`]({{ page.baseurl }}/ui_comp_guide/components/ui-checkbox.html) component:
 
 -  [app/code/Magento/Ui/view/base/web/js/form/element/single-checkbox-toggle-notice.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/single-checkbox-toggle-notice.js)
 
