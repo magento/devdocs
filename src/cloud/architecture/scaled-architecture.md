@@ -28,7 +28,7 @@ You can further optimize the performance of the core tier by routing traffic bas
 
 ### Web tier scaling
 
-There are 3 nodes for php-fpm and manages web traffic. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level.
+There are 3 nodes (web nodes) for php-fpm processing and web traffic. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level.
 
 ![Web tier scaling]
 
