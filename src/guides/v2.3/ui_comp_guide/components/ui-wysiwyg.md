@@ -50,10 +50,10 @@ The following are available events for use in the WYSIWYG component adapter for 
 
 Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
 
--  [app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js)
--  [app/code/Magento/Ui/view/base/web/templates/form/field.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/field.html)
--  [app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html)
--  [app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php)
+*  [app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js)
+*  [app/code/Magento/Ui/view/base/web/templates/form/field.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/field.html)
+*  [app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html)
+*  [app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php)
 
 ## Add a default editor
 
