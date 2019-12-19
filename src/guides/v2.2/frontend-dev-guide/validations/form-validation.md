@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-The Magento application provides you various ways to validate your form inputs. This implementation is based on the [jQuery Validation](https://jqueryvalidation.org/documentation) and builds upon it.
+The Magento application provides various ways to validate your form inputs. This implementation is based, and extends, [jQuery Validation](https://jqueryvalidation.org/documentation).
 
 ## Validation Module Structure
 
