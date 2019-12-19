@@ -74,10 +74,10 @@ When using the Escaper:
 **When to use Escaper methods:**
 
 **Case**: JSON inside an HTML attribute
-**Escaper method**: escapeHtmlAttribute
+**Escaper method**: escapeHtmlAttr
 
 ```php
-<div data-bind='settings: <?= $block->escapeHtmlAttribute($myJson) ?>'></div>
+<div data-bind='settings: <?= $block->escapeHtmlAttr($myJson) ?>'></div>
 ```
 
 **Case**: JSON inside script tag
