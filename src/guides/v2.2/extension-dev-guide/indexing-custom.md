@@ -172,12 +172,12 @@ After this, please refresh the cache and go to **System** > Tools > [**Index Man
 
 Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.
 
-Use the following command to reindex the custom indexer via CLI
+Use the following command to reindex the custom indexer:
 
 ```bash
 bin/magento indexer:reindex merchandizing_popular
 ```
-Use the following command to invalidate the custom indexer via CLI
+Use the following command to invalidate the custom indexer:
 
 ```bash
 bin/magento indexer:reset merchandizing_popular
