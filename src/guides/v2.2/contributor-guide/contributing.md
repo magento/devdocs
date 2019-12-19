@@ -112,14 +112,14 @@ For `version`, the currently supported values are latest [version tags](https://
 
 **Admin access:**
 
--  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin
+-  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin.
 -  Admin Credentials:
    -  Username: admin
    -  Password: 123123q
 
 **Permissions:**
 
--  All permissions granted for all users
+-  All permissions granted for all users.
 
 ### Deploy instance based on PR changes {#deploy-pr}
 
@@ -138,16 +138,16 @@ To verify and test changes completed in a pull request, enter a command to gener
 
 **Admin access:**
 
--  http://pr-xxx.engcom.dev.magento.com/admin
+-  http://pr-xxx.engcom.dev.magento.com/admin.
 -  Admin Credentials:
    -  Username: admin
    -  Password: 123123q
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
--  Contributor
+-  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members).
+-  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members).
+-  Contributor.
 
 ### Combine multiple pull requests {#combine-pr}
 
@@ -163,16 +163,16 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 **actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
--  Current pull request allows changes from maintainers
--  All mentioned pull requests are open
--  All mentioned pull requests have been created by the same contributor (author)
--  All mentioned pull requests have same target (base) branch
--  All mentioned pull requests can be merged with each other
+-  Current pull request allows changes from maintainers.
+-  All mentioned pull requests are open.
+-  All mentioned pull requests have been created by the same contributor (author).
+-  All mentioned pull requests have same target (base) branch.
+-  All mentioned pull requests can be merged with each other.
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+-  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members).
+-  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members).
 
 ## Report an issue {#report}
 
