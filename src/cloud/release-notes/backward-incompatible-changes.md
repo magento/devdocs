@@ -13,8 +13,8 @@ We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud pro
 
 The folllowing table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
 
-   Item | Status | Replacement
-   -------- |------- | -------
+   Item | Replacement
+   -------- | -------
    `SCD_EXCLUDE_THEMES` variable | [`SCD_MATRIX`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_matrix)
    `STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
    `DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
