@@ -33,7 +33,7 @@ Extends [`Insert`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Mag
 
 ### Integrate InsertForm component with Form component
 
-Here is an example of how InsertForm component integrates with [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+Here is an example of how the InsertForm component integrates with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
@@ -175,7 +175,7 @@ class CustomDataProvider extends AbstractDataProvider
 
 ### Integrate InsertForm component with Modal component
 
-Here is an example of how InsertForm component integrates with [Modal]({{ page.baseurl }}/ui_comp_guide/components/ui-modal.html) component:
+Here is an example of how the InsertForm component integrates with the [Modal]({{ page.baseurl }}/ui_comp_guide/components/ui-modal.html) component:
 
 ```xml
 <form>
@@ -231,7 +231,7 @@ Here is an example of how InsertForm component integrates with [Modal]({{ page.b
 
 #### Result
 
-As a result, we see the button which opens the modal pop-up with form.
+As a result, we see the button which opens the modal pop-up with the form:
 
 ![Button that opens the modal pop-up with InsertForm Component]({{ site.baseurl }}/common/images/ui_comps/ui-insertform-open-button-result.png)
 ![InsertForm Component in the Modal Component example]({{ site.baseurl }}/common/images/ui_comps/ui-insertform-modal-result.png)
