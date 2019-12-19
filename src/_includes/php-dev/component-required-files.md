@@ -2,7 +2,7 @@
 
 The following files are required for all components:
 
-*  `registration.php`: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the `<Magento root dir>/vendor` directory. For more information, see [Component registration]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html).
+*  `registration.php`: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, Composer automatically installs components in the `<Magento root dir>/vendor` directory. For more information, see [Component registration]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html).
 *  `composer.json`: Specifies component dependencies and other metadata. For more information, see [Composer integration]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
 
 Each component has an additional component-specific required file:
