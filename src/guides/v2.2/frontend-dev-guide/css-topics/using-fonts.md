@@ -63,6 +63,20 @@ In addition to including custom fonts in your Magento Blank theme, you also can 
 
 By calling the `lib-icon-font` mixin, you can apply the icon font and character variables throughout the theme LESS code.
 
+For Example:
+
+```css
+.icon-calendar {
+    .lib-icon-font(
+        @icon-calendar,
+        @_icon-font-size: 28px
+   );
+}
+```
+
+You can get more information from [magento2-ui-library](https://magento-devdocs.github.io/magento2-ui-library/icons.html)
+about the magento's icon list and implementation.
+
 To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
 
 {:.bs-callout-info}
