@@ -79,7 +79,7 @@ There are several ways to declare a custom configuration file.
 
 To use a custom file for Grunt configuration:
 
-1. Copy the default configuration file to the preferred location in the Magento instance directory. Do not change the file name
+1. Copy the default configuration file to the preferred location in the Magento instance directory. Do not change the file name.
 1. Open the `grunt-config.json` file in the Magento root and set configurations object as follows.
 
    -  key: file alias
