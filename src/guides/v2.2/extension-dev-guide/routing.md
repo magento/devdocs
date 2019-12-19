@@ -347,7 +347,7 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ## Declaring the new route as Page Type
 
-After creating a new route `routing/index/index`, it's a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets. 
+After creating a new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets. 
 
 Defining a new page type:
 
