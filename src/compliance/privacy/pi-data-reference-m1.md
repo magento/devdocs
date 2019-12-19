@@ -3,7 +3,7 @@ group: compliance
 title: Personal Information Reference (Magento 1.x)
 ---
 
-{: .bs-callout .bs-callout-info}
+{: .bs-callout-info}
 This is one in a series of topics to help Magento merchants and developers prepare for compliance with privacy regulations. Please consult with your legal counsel to determine whether and how your business should comply with any legal obligations.
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
