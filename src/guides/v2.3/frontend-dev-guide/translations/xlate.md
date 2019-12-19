@@ -68,7 +68,7 @@ For an example of creating a dictionary for a theme for both cases, see [Example
 
 ## Manually translate words and phrases {#m2devgde-xlate-translating}
 
-To translate names, titles, and phrases used in Magento.
+To translate names, titles, and phrases used in Magento:
 
 1. Generate a dictionary of your instance using the [translation dictionary tool]. Fully review [Translation dictionaries and packages] to understand all steps, commands, and best practices for generating the dictionary.
 1. Translate the terms.

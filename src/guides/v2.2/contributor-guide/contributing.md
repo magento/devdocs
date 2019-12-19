@@ -112,7 +112,7 @@ For `version`, the currently supported values are latest [version tags](https://
 
 **Admin access:**
 
--  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin.
+-  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin
 -  Admin Credentials:
    -  Username: admin
    -  Password: 123123q
@@ -138,16 +138,16 @@ To verify and test changes completed in a pull request, enter a command to gener
 
 **Admin access:**
 
--  http://pr-xxx.engcom.dev.magento.com/admin.
+-  http://pr-xxx.engcom.dev.magento.com/admin
 -  Admin Credentials:
    -  Username: admin
    -  Password: 123123q
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members).
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members).
--  Contributor.
+-  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+-  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+-  Contributor
 
 ### Combine multiple pull requests {#combine-pr}
 
@@ -171,8 +171,8 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members).
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members).
+-  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
+-  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
 
 ## Report an issue {#report}
 
