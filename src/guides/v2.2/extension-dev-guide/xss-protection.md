@@ -113,7 +113,7 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 
 ```php
 <a href="<?= $block->escapeUrl($myUrl) ?>">Click me</a>
-<div attr-js-extracts="<?= $block->escapeHtmlAttribute($myOtherUrl) ?>"></div>
+<div attr-js-extracts="<?= $block->escapeHtmlAttr($myOtherUrl) ?>"></div>
 ```
 
 **Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:
