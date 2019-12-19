@@ -24,7 +24,7 @@ To import a database dump into the Docker environment:
    magento-cloud db:dump
    ```
 
-   {: .bs-callout-info }
+   {: .bs-callout-note }
    The `magento-cloud db:dump` command runs the [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
 
 1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
@@ -32,6 +32,9 @@ To import a database dump into the Docker environment:
    The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
+
+{:.bs-callout-info}
+When you import a database from an existing Magento installation into a new Magento Commerce Cloud environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the Magento encryption key]({{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
 ## Connect to the database
 
