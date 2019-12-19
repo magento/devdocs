@@ -206,7 +206,7 @@ define([
 });
 ```
 
-## Step 4: Code compile and Static content deployment
+## Step 4: Compile and deploy the static content
 
 1. Compile the code:
 
