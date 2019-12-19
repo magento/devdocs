@@ -75,6 +75,10 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
 
+{:.bs-callout-info}
+Before you begin the import process, make sure that you have completed the steps to [prepare your existing Magento Commerce system]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
+
+
 After you have completed the git reference configuration, you can import the {{site.data.var.ee}} code.
 
 1. Fetch the {{site.data.var.ee}} branch.

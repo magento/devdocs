@@ -32,9 +32,9 @@ Add these files to your {{site.data.var.ee}} code:
 
 1. In the [{{site.data.var.ece}} GitHub repository](https://github.com/magento/magento-cloud), select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
-   The following figure shows an example of selecting the `2.1.4` branch.
+   The following figure shows an example of selecting the `2.3.3` branch.
 
-   ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud_cloud-git-214.png){:width="600px"}
+   ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud_cloud-git-233.png){:width="600px"}
 
 1. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to the Magento installation directory and create a `.magento` directory.
@@ -54,9 +54,9 @@ Add these files to your {{site.data.var.ee}} code:
    -  `<Magento Commerce install dir>/.magento/services.yaml`
    -  `<Magento Commerce install dir>/.magento/routes.yaml`
 
-  For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.1.4 branch:
+  For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
 
-    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml).
+    1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
@@ -80,21 +80,21 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 {:.procedure}
 To create a new `auth.json` file:
 
-1. Verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{ site.mage2bloburl }}/2.2/auth.json.sample).
+1. Verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{ site.mage2bloburl }}/2.3/auth.json.sample).
 
 1. Using a text editor, create an `auth.json` file and save it in your Magento root directory.
 
 1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
 
     ```json
-    {
+   {
        "http-basic": {
-          "repo.magento.com": {
-          "username": "<public-key>",
-          "password": "<private-key>"
-        }
-      }
-    }
+           "repo.magento.com": {
+               "username": "<public-key>",
+               "password": "<private-key>"
+           }
+       }
+   }
     ```
 
 1. Save your changes to `auth.json` file and exit the text editor.
@@ -115,14 +115,14 @@ To add authentication keys using an environment variable:
 1. In the _Value_ field, add the following and replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials:
 
     ```json
-    {
+   {
        "http-basic": {
-          "repo.magento.com": {
-          "username": "<public-key>",
-          "password": "<private-key>"
-        }
-      }
-    }
+           "repo.magento.com": {
+               "username": "<public-key>",
+               "password": "<private-key>"
+           }
+       }
+   }
     ```
 
 1. Select **Visible during build** and deselect **Visible at run**.
@@ -137,7 +137,7 @@ Before you push code to the {{site.data.var.ece}} Git repository, modify your `c
 
 To edit `composer.json`:
 
-1. If you haven't done so already, log in to your {{site.data.var.ece}} server as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1. Go to the Magento installation directory of the code that you downloaded from github as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. In a text editor, open `composer.json` in the project root directory.
 1. Substitute the following value in the `require` section:
 
@@ -152,7 +152,7 @@ To edit `composer.json`:
    ```
 
     {:.bs-callout-info}
-    Both `<version>` values _must be the same_. For example, if your current {{site.data.var.ee}} version is 2.1.9, your `magento-cloud-metapackage` version must also be 2.1.9.
+    Both `<version>` values _must be the same_. For example, if your current {{site.data.var.ee}} version is 2.3.3, your `magento-cloud-metapackage` version must also be 2.3.3.
 
 1. Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
 
