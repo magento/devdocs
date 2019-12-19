@@ -19,6 +19,7 @@ These release notes provide information about the latest improvements to the {{s
 See the following topics to get the latest release information for each component:
 
 -  [ece-tools]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html)
+-  [{{ site.data.var.mcc }}]({{ site.baseurl }}/cloud/release-notes/mcc-release-notes.html)
 -  [{{site.data.var.mcd}}]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html)
 -  [{{site.data.var.mcp}}]({{ site.baseurl }}/cloud/release-notes/mcp-release-notes.html)
 
