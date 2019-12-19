@@ -172,3 +172,66 @@ class CustomDataProvider extends AbstractDataProvider
 #### Result
 
 ![InsertForm Component example]({{ site.baseurl }}/common/images/ui_comps/ui-insertform-result.png)
+
+### Integrate InsertForm component with Modal component
+
+Here is an example of how InsertForm component integrates with [Modal]({{ page.baseurl }}/ui_comp_guide/components/ui-modal.html) component:
+
+```xml
+<form>
+    ...
+    <fieldset>
+        ...
+        <button name="insert_form_example_modal_button" component="Magento_Ui/js/form/components/button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="buttonClasses" xsi:type="string">open-insert-form-example-modal-button</item>
+                    <item name="actions" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_form_example_modal.insert_form_example_loader</item>
+                            <item name="actionName" xsi:type="string">destroyInserted</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_form_example_modal</item>
+                            <item name="actionName" xsi:type="string">openModal</item>
+                        </item>
+                        <item name="2" xsi:type="array">
+                            <item name="targetName" xsi:type="string">${ $.parentName}.insert_form_example_modal.insert_form_example_loader</item>
+                            <item name="actionName" xsi:type="string">render</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <title translate="true">Open Insert Form Example</title>
+            </settings>
+        </button>
+        <modal name="insert_form_example_modal">
+            <settings>
+                <options>
+                    <option name="title" xsi:type="string">Insert Form Example Modal</option>
+                </options>
+            </settings>
+            <insertForm name="insert_form_example_loader">
+                <settings>
+                    <formSubmitType>ajax</formSubmitType>
+                    <renderUrl path="mui/index/render">
+                        <param name="handle">insert_form_example</param>
+                        <param name="buttons">1</param>
+                    </renderUrl>
+                    <loading>false</loading>
+                    <toolbarContainer>${ $.parentName }</toolbarContainer>
+                    <ns>insert_form_example</ns>
+                </settings>
+            </insertForm>
+        </modal>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+As a result, we see the button which opens the modal pop-up with form.
+
+![Button that opens the modal pop-up with InsertForm Component]({{ site.baseurl }}/common/images/ui_comps/ui-insertform-open-button-result.png)
+![InsertForm Component in the Modal Component example]({{ site.baseurl }}/common/images/ui_comps/ui-insertform-modal-result.png)
