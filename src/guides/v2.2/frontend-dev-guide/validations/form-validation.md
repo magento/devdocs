@@ -17,7 +17,7 @@ This is an alias for [`lib/web/jquery/jquery.validate`]({{ site.mage2bloburl }}/
 
 #### `mage/validation`
 
-This module is present at [`lib/web/mage/validation.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/validation.js). This module includes `jquery/validate` and adds on various functionalities such as the function `$.validator.addMethod` which can be used by mixins to add custom validation rules, a base set of rules to validate, the `mage.validation` widget, and much more. 
+This module is present at [`lib/web/mage/validation.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/validation.js). This module includes `jquery/validate` and adds various functions, such as `$.validator.addMethod`, which can be used by mixins to add custom validation rules, a base set of rules to validate, the `mage.validation` widget, and more. 
 
 #### `mage/validation/validation`
 
