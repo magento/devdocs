@@ -65,8 +65,8 @@ For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from t
 1.  Save the file using the name: `.magento.app.yaml`
 1.  Repeat these tasks for the other files.
 
-      * Create `magento-vars.php` in the Magento root directory.
-      * Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+      -  Create `magento-vars.php` in the Magento root directory.
+      -  Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
@@ -160,18 +160,18 @@ To edit `composer.json`:
 
    ```json
    "autoload": {
-     "psr-4": {
-         "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-         "Magento\\Setup\\": "setup/src/Magento/Setup/",
-         "Magento\\": "app/code/Magento/"
-      },
-     "psr-0": {
-          "": "app/code/"
-      },
-     "files": [
-          "app/etc/NonComposerComponentRegistration.php"
-      ]
-    }
+       "psr-4": {
+           "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+           "Magento\\Setup\\": "setup/src/Magento/Setup/",
+           "Magento\\": "app/code/Magento/"
+       },
+       "psr-0": {
+            "": "app/code/"
+       },
+       "files": [
+           "app/etc/NonComposerComponentRegistration.php"
+       ]
+   }
    ```
 
 1. Save your changes to `composer.json` and exit the text editor.
