@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout-tip}
 Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
 ## Before you start your installation {#instgde-install-cli-prereq}
@@ -27,7 +27,7 @@ Before you begin, complete the following steps:
 
 *  Review the [Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html) overview.
 
-{:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 You must install Magento from its `bin` subdirectory.
 
 You can run the installer multiple times with different options to complete installation tasks like the following:
@@ -38,7 +38,7 @@ You can run the installer multiple times with different options to complete inst
 
 *  Install Magento in a different database instance.
 
-{:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 By default, the installer does not overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional `cleanup-database` parameter to change this behavior.
 
 See also [Update, reinstall, uninstall]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html).
@@ -55,7 +55,7 @@ You can run the following commands to find values for some required arguments:
 | Currency           | magento info:currency:list      |
 | Time zone          | php  magento info:timezone:list |
 
-{:.bs-callout .bs-callout-info}
+ {:.bs-callout-info}
 If an error displays when you run these commands, verify that you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
 
 ## Install the Magento software from the command line {#instgde-install-cli-magento}
@@ -68,7 +68,7 @@ magento setup:install --<option>=<value> ... --<option>=<value>
 
 The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
 **Admin credentials:**
@@ -135,7 +135,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 
 {% include config/consumers.md %}
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 {% include install/sens-data.md %}
@@ -258,7 +258,8 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 ```
 
-#### Next step
+{:.ref-header}
+Related topics
 
 *  If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 

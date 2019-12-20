@@ -231,7 +231,7 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 
 ### `i18n`
 
-The `i18n` binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it's enabled on the page.
+The `i18n` binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the Translate Inline jQuery widget, if it's enabled on the page.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`. [See on GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js).
 
