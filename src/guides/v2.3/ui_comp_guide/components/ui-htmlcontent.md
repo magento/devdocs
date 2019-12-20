@@ -10,51 +10,20 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>additionalClasses</code></td>
-    <td>Sets custom classes to the component's DOM block.</td>
-    <td>Object</td>
-    <td><code>{}</code></td>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/components/html</code></td>
-  </tr>
-  <tr>
-    <td><code>content</code></td>
-    <td>HTML content to be displayed.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/content/content</code></td>
-  </tr>
-  <tr>
-    <td><code>visible</code></td>
-    <td>Initial component's visibility. When set to "false", the <code>display: none</code> CSS style is added to the component's DOM block.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `additionalClasses` | Sets custom classes to the component's DOM block. | Object | `{}` |
+| `class` | The path to the component class. | String | `Magento\Ui\Component\HtmlContent` |
+| `component` | The path to the component’s JS constructor in terms of RequireJS. | String | `Magento_Ui/js/form/components/html` |
+| `content` | HTML content to be displayed. | String | `''` |
+| `template` | The path to the component’s `.html` template. | String | `ui/content/content` |
+| `visible` | Initial component's visibility. When set to "false", the `display: none` CSS style is added to the component's DOM block. | Boolean | `true` |
 
 ## Examples
 
 ### Render layout
 
 ```xml
-
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="customer_edit_tab_view">
        <block class="Magento\Customer\Block\Adminhtml\Edit\Tab\View" name="customer_edit_tab_view" template="Magento_Customer::tab/view.phtml">
@@ -71,7 +40,6 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 ### Render simple Magento block
 
 ```xml
-
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
@@ -79,9 +47,47 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 </form>
 ```
 
+### Integrate the HtmlContent component with the Form component
+
+This example integrates the HtmlContent component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component.
+
+```xml
+<form>
+    <htmlContent name="html_content">
+        <settings>
+            <additionalClasses>
+                <class name="html-content-class">true</class>
+            </additionalClasses>
+        </settings>
+        <block name="html_content_block" class="Magento\Backend\Block\Template">
+            <arguments>
+                <argument name="template" xsi:type="string">Vendor_Module::template.phtml</argument>
+            </arguments>
+        </block>
+    </htmlContent>
+</form>
+```
+
+Template `Vendor/Module/view/adminhtml/templates/template.phtml`:
+
+```php
+<?php
+/** @var Magento\Backend\Block\Template $block */
+?>
+
+<div>
+    <b><?= $block->escapeHtml(__('Custom template.')); ?></b>
+</div>
+```
+
+#### Result
+
+![HtmlContent Component example]({{ site.baseurl }}/common/images/ui_comps/ui-htmlcontent-result.png)
+
 ## Source files
 
 Extends `uiComponent`:
 
 -  [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
 -  [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/content/content.html)
+-  [app/code/Magento/Ui/Component/HtmlContent.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/HtmlContent.php)
