@@ -26,7 +26,7 @@ View models can be used by passing the view model class as an argument to the de
 </block>
 ```
 
-In the following example, the same view model is used with an existing block from Magento present in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`. This can be used in the block's template: `cart/item/default.phtml`.
+In the following example, the same view model is used with an existing block from Magento present in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
