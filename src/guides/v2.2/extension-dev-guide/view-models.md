@@ -16,7 +16,7 @@ View models are available in Magento 2.2 onwards. If your code must be compatibl
 
 ## How to write view models
 
-View models can be used by passing the view model class as an argument to the desired template's block in the XML layout page configuration file. In the following example snippet, `MyNewViewModel` is the view model class of OrangeCompany_Catalog module passed as an argument to a block. 
+View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the OrangeCompany_Catalog module passed as an argument to a block. 
 
 ```xml
 <block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
@@ -26,7 +26,7 @@ View models can be used by passing the view model class as an argument to the de
 </block>
 ```
 
-In the following example, the same view model is used with an existing block from Magento present in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
+In the following example, the same view model is used with an existing block in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
 
 ```xml
 <referenceBlock name="checkout.cart.item.renderers.default">
@@ -50,7 +50,7 @@ class MyNewViewModel implements \Magento\Framework\View\Element\Block\ArgumentIn
 }
 ```
 
-Finally, in the template, the public methods of the view model class can be accessed in the following way:
+You can access the public methods fo the view model class in the template:
 
 ```html
 <?php
