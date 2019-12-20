@@ -135,3 +135,17 @@ It overrides the `shippingMethodListTemplate` and `shippingMethodItemTemplate` p
     </body>
 </page>
 ```
+
+## Step 4: Clean the cache and deploy static content
+
+1. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
+
+2. Deploy static content:
+
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
