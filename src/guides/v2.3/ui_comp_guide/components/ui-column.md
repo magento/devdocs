@@ -9,8 +9,9 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
-| `component` | The path to the component's `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/columns/column` |
 | `bodyTmpl` | Path to the template used for rendering column's fields in the table's body. | String | `ui/grid/cells/text` |
+| `class` | The path to the component class. | String | `Magento\Ui\Component\Listing\Columns\Column` |
+| `component` | The path to the component's `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/columns/column` |
 | `controlVisibility` | Whether a user can control column's visibility handled by the [ColumnsControls component]({{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html). | Boolean | `true` |
 | `disableAction` | Disables the action set in the `templates.fieldAction` property. | Boolean | `false` |
 | `draggable` | Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table. | Boolean | `true` |
@@ -37,8 +38,10 @@ The Column component implements a basic column in [Listing]({{ page.baseurl }}/u
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
+-  [`Magento/Ui/Component/Listing/Columns/Column.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Listing/Columns/Column.php)
 -  [`Magento/Ui/view/base/web/js/grid/columns/column.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)
 -  [`Magento/Ui/view/base/web/templates/grid/cells/text.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/text.html)
+-  [`Magento/Ui/view/base/web/templates/grid/columns/text.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/columns/text.html)
 
 ## Examples
 
@@ -67,3 +70,29 @@ This is an example of how the Column component integrates with the [Listing]({{ 
 #### Result
 
 ![Column Component Example]({{ site.baseurl }}/common/images/ui_comps/ui-column-result.png)
+
+### Configure Field Action for Column component
+
+This is an example of how the `fieldAction` option can be configured for the Column component.
+
+```xml
+<column name="column_with_action">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="fieldAction" xsi:type="array">
+                <item name="provider" xsi:type="string">TARGET_NAME</item>
+                <item name="target" xsi:type="string">ACTION_NAME</item>
+                <item name="params" xsi:type="array">
+                    <!-- provide record index as a parameter for target method -->
+                    <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+                </item>
+            </item>
+        </item>
+    </argument>
+    <settings>
+        <filter>text</filter>
+        <dataType>text</dataType>
+        <label translate="true">Column</label>
+    </settings>
+</column>
+```
