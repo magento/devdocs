@@ -1,1 +1,8 @@
-../../../v2.2/config-guide/prod/config-reference-parent.md
+---
+group: configuration-guide
+title: Configuration reference
+functional_areas:
+  - Configuration
+  - System
+  - Setup
+---

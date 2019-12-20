@@ -1,1 +1,8 @@
-../../../v2.2/config-guide/cli/config-cli-subcommands-static-view-parent.md
+---
+group: configuration-guide
+title: Static view files deployment
+functional_areas:
+  - Configuration
+  - System
+  - Setup
+---
