@@ -15,7 +15,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Get started
 
-> We no longer accept contributions to files in the `src/guides/v2.2/ directory.
+> We no longer accept contributions to files in the `src/guides/v2.2/` directory.
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
