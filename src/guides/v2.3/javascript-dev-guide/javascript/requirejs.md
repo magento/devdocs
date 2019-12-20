@@ -16,10 +16,11 @@ All configuration is done in the `requirejs-config.js` file. It has a single roo
 ```javascript
 var config = {
     'map': {...},
-    'paths': {...}
+    'paths': {...},
     'shim': {...},
     'config': {
-        'mixins': {...}
+        'mixins': {...},
+        'text': {...}
     }
 }
 ```
@@ -106,3 +107,19 @@ In this snippet, `Vendor_Module/js/module-mixin` will overwrite the existing com
 ```
 
 The concept of Javascript mixins itself is explained in depth in [Using Javascript Mixins]({{ page.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).
+
+### text
+
+The `text` configuration is used to set the security request headers via the following JS file: [`text.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/requirejs/text.js)
+
+Without [Cross Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) it is not possible to add X-Requested-With header to a cross domain XHR request. So having this header set, the server knows that the request was initiated from the same domain.
+
+```javascript
+'config': {
+    'text': {
+        'headers': {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    }
+}
+```
