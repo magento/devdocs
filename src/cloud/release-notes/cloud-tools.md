@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+  - /cloud/release-notes/CloudReleaseNotes.html
 ---
 
 These release notes provide information about the latest improvements to the {{site.data.var.csuite}} which is designed to deploy and manage {{ site.data.var.ee }} installations and upgrades on the Cloud platform. The suite includes the following packages:
