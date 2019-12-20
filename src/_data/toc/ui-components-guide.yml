@@ -22,6 +22,9 @@ pages:
         - label: Checkbox component
           url: /ui_comp_guide/components/ui-checkbox.html
 
+        - label: CheckboxToggleNotice component
+          url: /ui_comp_guide/components/ui-checkbox-toggle-notice.html
+
         - label: Checkboxset component
           url: /ui_comp_guide/components/ui-checkboxset.html
 
