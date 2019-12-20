@@ -9,7 +9,7 @@ The Button component allows user to perform a list of predefined actions by clic
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
-| `actions` | A list of actions that are performed when user clicks on the element. | `ButtonAction[]` | - |
+| `actions` | A list of actions that are performed when a user clicks on the element. | `ButtonAction[]` | - |
 | `additionalClasses` | Sets custom classes to the component's DOM block. | Object | `{}` |
 | `buttonClasses` | Sets custom classes to the [HTML](https://glossary.magento.com/html) `<button>` element. | Object | `{}` |
 | `class` | The path to the component class. | String | `Magento\Ui\Component\Container` |
