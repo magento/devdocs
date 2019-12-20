@@ -27,92 +27,94 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 
 1. Copy `composer.json` to a _non-tracked directory_ so it does not get overwritten.
 
-    ```
-    cp composer.json ../composer.json.cloud
-    ```
+   ```bash
+   cp composer.json ../composer.json.cloud
+   ```
 
 1. Rename your Cloud Git remote from `origin` to `cloud-project` to make it clear which repository is which:
 
-    ```
-    git remote rename origin cloud-project
-    ```
+   ```bash
+   git remote rename origin cloud-project
+   ```
 
 1. Add a remote upstream for your existing {{site.data.var.ee}} installation:
 
-    ```
-    git remote add prev-project <git url>
-    ```
+   ```bash
+   git remote add prev-project <git url>
+   ```
 
 1. Review the remote branch configuration.
 
-    ```
-    git remote -v
-    ```
+   ```bash
+   git remote -v
+   ```
 
-    Verify that the remote branch configuration matches the following sample configuration, with your project name instead of `ikyyrqvlgnrai`.
+   Verify that the remote branch configuration matches the following sample configuration, with your project name instead of `ikyyrqvlgnrai`.
 
-    ```
-    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
-    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
-    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
-    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
-    prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
-    prev-project    git@github.com:mygitusername/myeereponame.git (push)
+   ```terminal
+   cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+   cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+   magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+   magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+   prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
+   prev-project    git@github.com:mygitusername/myeereponame.git (push)
     ```
 
 1. Checkout the Cloud project `master` branch.
 
-    ```
-    magento-cloud environment:checkout master
-    ```
+   ```bash
+   magento-cloud environment:checkout master
+   ```
 
 1. Set the `cloud-project` branch as an upstream tracking branch for `master`.
 
-    ```
-    git fetch cloud-project
-    git branch -u cloud-project/master
-    ```
+   ```bash
+   git fetch cloud-project
+   ```
+
+   ```bash
+   git branch -u cloud-project/master
+   ```
 
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
 
 {:.bs-callout-info}
 Before you begin the import process, make sure that you have completed the steps to [prepare your existing Magento Commerce system]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 
-
 After you have completed the git reference configuration, you can import the {{site.data.var.ee}} code.
 
 1. Fetch the {{site.data.var.ee}} branch.
 
-    ```
-    git fetch prev-project
-    ```
+   ```bash
+   git fetch prev-project
+   ```
 
 1. Reset your Cloud `master` branch to contain the code and the commit history of your {{site.data.var.ee}} branch.
 
-    ```
-    git reset --hard prev-project/<branch name>
-    ```
+   ```bash
+   git reset --hard prev-project/<branch name>
+   ```
 
 1. Push code from your {{site.data.var.ee}} project to your {{site.data.var.ece}} project, overwriting the previous contents and commit history with that of your project.
 
-    ```
-    git push -f cloud-project master
-    ```
+   ```bash
+   git push -f cloud-project master
+   ```
 
-    If the import succeeds, the {{site.data.var.ece}} environment redeploys.
+   If the import succeeds, the {{site.data.var.ece}} environment redeploys.
 
-    ```
-    Re-deploying environment 43biovskhelhy-master-l5ut8gq.
-       Environment configuration:
-         mymagento (type: php:7.0, size: S, disk: 2048)
-         mysql (type: mysql:10.0, size: S, disk: 2048)
-         redis (type: redis:3.0, size: S)
-         solr (type: solr:4.10, size: S, disk: 1024)
+   ```bash
+   Re-deploying environment 43biovskhelhy-master-l5ut8gq.
+      Environment configuration:
+        mymagento (type: php:7.0, size: S, disk: 2048)
+        mysql (type: mysql:10.0, size: S, disk: 2048)
+        redis (type: redis:3.0, size: S)
+        solr (type: solr:4.10, size: S, disk: 1024)
 
-    Environment routes:
-       http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
-       https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
-    ```
+   Environment routes:
+      http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
+      https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
+   ```
 
 ## Import the Magento database {#cloud-import-db}
 
@@ -132,41 +134,41 @@ To drop and re-create the Cloud database:
 
 1. SSH to the Integration environment.
 
-    ```
-    magento-cloud ssh
-    ```
+   ```bash
+   magento-cloud ssh
+   ```
 
 1. Connect to the database.
 
-    ```
-    mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
-    ```
+   ```bash
+   mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+   ```
 
 1. Drop the database. At the `MariaDB [main]>` prompt, enter:
 
-    ```
-    drop database main;
-    ```
+   ```shell
+   drop database main;
+   ```
 
 1. Re-create the database:
 
-    ```
-    create database main;
-    ```
+   ```shell
+   create database main;
+   ```
 
 1. At the `MariaDB [main]>` prompt, enter `exit`.
 
 1. At the shell command prompt, enter the following command to re-create the database.
 
-    ```
-    zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
-    ```
+   ```bash
+   zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+   ```
 
-    For example,
+   For example,
 
-    ```
-    zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
-    ```
+   ```bash
+   zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+   ```
 
 ### Update base URLs {#baseurl}
 
@@ -178,38 +180,38 @@ To update the unsecure base URL:
 
 1. If you haven't already done so, SSH to the Cloud integration server.
 
-    ```
-    magento-cloud ssh
-    ```
+   ```bash
+   magento-cloud ssh
+   ```
 
 1. Connect to the database.
 
-    ```
-    mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
-    ```
+   ```bash
+   mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+   ```
 
 1. Show the contents of the `core_config_data` table.
 
-    ```
-    SELECT * from core_config_data;
-    ```
+   ```shell
+   SELECT * from core_config_data;
+   ```
 
-    Note the `path` of `web/unsecure/base_url`; this is the value you'll change.
+   Note the `path` of `web/unsecure/base_url`; this is the value you'll change.
 
 1. Enter the following command to change the value of `path` to your integration server's unsecure base URL:
 
-    ```
-    UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
-    ```
+   ```shell
+   UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
+   ```
 
-    {:.bs-callout-warning}
-    The base URL _must_ end with a `/` character.
+   {:.bs-callout-warning}
+   The base URL _must_ end with a `/` character.
 
 1. Confirm the change by entering the following command:
 
-    ```
-    SELECT * from core_config_data;
-    ```
+   ```shell
+   SELECT * from core_config_data;
+   ```
 
 1. If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 1. Continue with the next section.
@@ -227,26 +229,26 @@ To add your {{site.data.var.ee}} encryption key:
 
 1. If you haven't done so already, SSH to the Cloud environment.
 
-    ```
-    magento-cloud environment:ssh
-    ```
+   ```bash
+   magento-cloud environment:ssh
+   ```
 
 1. Open `app/etc/env.php` in a text editor.
 1. Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
-    ```php
-    return array (
-      'crypt' =>
-      array (
-        'key' => '<your encryption key>',
-      ),
-    );
-    ```
+   ```php
+   return array (
+     'crypt' =>
+     array (
+       'key' => '<your encryption key>',
+     ),
+   );
+   ```
 
 1. Save your changes to `env.php` and exit the text editor.
 
-    {:.bs-callout-info}
-    You must add this key to the `env.php` file for all environments: Integration, Staging, and Production.
+   {:.bs-callout-info}
+   You must add this key to the `env.php` file for all environments: Integration, Staging, and Production.
 
 ## Import media {#media}
 
@@ -254,21 +256,21 @@ To import media files into your Cloud environment:
 
 1. If you haven't done so already, SSH to the Cloud environment.
 
-    ```
-    magento-cloud ssh -p <project ID> -e <environment ID>
-    ```
+   ```bash
+   magento-cloud ssh -p <project ID> -e <environment ID>
+   ```
 
 1. Enter the following command to clear existing media files:
 
-    ```
-    rm -rf pub/media/*
-    ```
+   ```bash
+   rm -rf pub/media/*
+   ```
 
 1. Enter the following command to extract the media files to the `pub/media` directory:
 
-    ```
-    tar -xzf var/media.tgz pub/media
-    ```
+   ```bash
+   tar -xzf var/media.tgz pub/media
+   ```
 
 ## Clear the cache {#cache}
 
@@ -294,9 +296,9 @@ To verify everything imported properly, perform the following tasks in your loca
 
 1. On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and to view the storefront:
 
-    ```
-    magento-cloud environment:url
-    ```
+   ```bash
+   magento-cloud environment:url
+   ```
 
 1. Log in to the Magento [Admin](https://glossary.magento.com/admin) using the username and password of your {{site.data.var.ee}} system.
 1. Verify that the settings in the Admin are the same as your {{site.data.var.ee}} system.

@@ -56,17 +56,18 @@ Add these files to your {{site.data.var.ee}} code:
 
 For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from the 2.3.3 branch:
 
-1.  In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
-1.  In the upper right, click **Raw**, as the following figure shows.
+1. In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
+1. In the upper right, click **Raw**, as the following figure shows.
 
-    ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
-1.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
-1.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
-1.  Save the file using the name: `.magento.app.yaml`
-1.  Repeat these tasks for the other files.
+   ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
 
-      -  Create `magento-vars.php` in the Magento root directory.
-      -  Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+1. In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
+1. Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
+1. Save the file using the name: `.magento.app.yaml`
+1. Repeat these tasks for the other files.
+
+   -  Create `magento-vars.php` in the Magento root directory.
+   -  Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
@@ -84,7 +85,6 @@ To create a new `auth.json` file:
 
    -  Using a text editor, create an `auth.json` file in your Magento root directory.
    -  Copy the contents of the [sample `auth.json`]({{ site.mage2bloburl }}/2.3/auth.json.sample) into the new `auth.json` file.
-
 
 1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
 

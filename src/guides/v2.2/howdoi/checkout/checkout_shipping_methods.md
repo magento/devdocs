@@ -144,7 +144,7 @@ It overrides the `shippingMethodListTemplate` and `shippingMethodItemTemplate` p
    bin/magento cache:clean
    ```
 
-2. Deploy static content:
+1. Deploy static content:
 
    ```bash
    bin/magento setup:static-content:deploy
