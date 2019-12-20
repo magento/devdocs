@@ -79,7 +79,7 @@ See [Block arguments] for more information.
 
 ## Getting a CMS Block {#cms-block}
 
-To get a cms block in template phtml file use the below code:
+Use the following code to get a CMS block in a .phtml template file:
 
 ```phtml
 echo $this->getLayout()
