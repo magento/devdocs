@@ -13,9 +13,9 @@ OrangeCo created a custom `orange` theme that inherits from the Magento Blank th
 
 Namely, they need the following changes:
 
--  Change **Add to Cart** label to **Purchase**
--  Change **Add to Compare** label to **Compare**
--  Change **Add to Wish List** label to **Wishlist**
+-  Change **Add to Cart** label to **Purchase**.
+-  Change **Add to Compare** label to **Compare**.
+-  Change **Add to Wish List** label to **Wishlist**.
 
 The following image shows a page where the current strings are used:
 

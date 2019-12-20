@@ -102,7 +102,7 @@ Layout files that belong to inactive modules or modules with disabled output are
 
 After layouts are merged, Magento validates them.
 
-Layout validations and error handling depends on the [application mode] in which you Magento instance runs:
+Layout validations and error handling depends on the [application mode] in which your Magento instance runs:
 
 *  developer mode: syntax is validated in `.xml` and `.xsd` files, and `.xml` files are validated according to the xsd schema. If any validation fails, the hard failure with process halt occurs.
 

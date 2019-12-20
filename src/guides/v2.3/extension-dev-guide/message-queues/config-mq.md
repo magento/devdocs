@@ -36,7 +36,7 @@ The `queue.xml` file defines the broker that processes topics. It also specifies
 {:.no_toc}
 
 ```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <broker topic="product_action_attribute.update" exchange="magento-db" type="db">
         <queue name="product_action_attribute.update"
                consumer="product_action_attribute.update"

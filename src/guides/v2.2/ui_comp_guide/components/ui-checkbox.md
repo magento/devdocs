@@ -7,68 +7,32 @@ The Checkbox component implements a form field that is an [HTML](https://glossar
 
 ## Configuration options
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>checked</code></td>
-    <td>Initial checkbox state (selected or cleared). If <code>false</code>, the checkbox is cleared. If <code>true</code>, the checkbox is selected.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>multiple</code></td>
-    <td>Renders multiple elements.</td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>prefer</code></td>
-    <td>The input type of the element to be rendered. Can be either radio button, checkbox, or toggle key. Changing this value also changes the <code>elementTmpl</code>, originally defined in the parent (<code>abstract</code>) component.</td>
-    <td>String</td>
-    <td><code>checkbox</code></td>
-  </tr>
-  <tr>
-    <td><code>valueMap</code></td>
-    <td>Convert the component's value to the expected type. For example, you can set to convert '0' to 'false', this would look like following:<code><br />{<br />'0': false<br />}</code></td>
-    <td>Object</td>
-    <td><code>{}</code></td>
-  </tr>
-  <tr>
-    <td><code>templates</code>
-<ul>
-<li><code>radio</code></li>
-<li><code>checkbox</code></li>
-<li><code>toggle</code></li>
-</ul>
-</td>
-    <td>Paths to templates for all possible types of input elements. The exact template to be used for rendering is defined by the <code>prefer</code> property.</td>
-    <td>Object<ul><li>String</li><li>String</li><li>String</li></ul></td>
-    <td><code>ui/form/components/single/radio<br />ui/form/components/single/checkbox<br />ui/form/components/single/switcher</code></td>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/single-checkbox</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `checked` | Initial checkbox state (selected or cleared). If `false`, the checkbox is cleared. If `true`, the checkbox is selected. | Boolean | `false` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/form/element/single-checkbox` |
+| `label` | Label to be displayed in the field. | String | `''` |
+| `multiple` | Renders multiple elements. | Boolean | `false` |
+| `prefer` | The input type of the element to be rendered. Can be either radio button, checkbox, or toggle key. Changing this value also changes the `elementTmpl`, originally defined in the parent (`abstract`) component. | String (`radio` \| `checkbox` \| `toggle`) | `checkbox` |
+| `template` | The path to the component’s `.html` template. | String | `ui/form/field` |
+| `templates` | Paths to templates for all possible types of input elements. The exact template to be used for rendering is defined by the `prefer` property. | Object | `{radio: 'ui/form/components/single/radio', checkbox: 'ui/form/components/single/checkbox', toggle: 'ui/form/components/single/switcher'}` |
+| `valueMap` | Convert the component's value to the expected type. For example, you can set to convert '0' to 'false', this would look like following: <br />`{'0': false}` | Object | `{}` |
+
+## Source files
+
+Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
+
+-  [app/code/Magento/Ui/view/base/web/js/form/element/single-checkbox.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/single-checkbox.js)
+-  [app/code/Magento/Ui/view/base/web/templates/form/components/single/checkbox.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/components/single/checkbox.html)
+-  [app/code/Magento/Ui/view/base/web/templates/form/components/single/radio.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/components/single/radio.html)
+-  [app/code/Magento/Ui/view/base/web/templates/form/components/single/switcher.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/components/single/switcher.html)
+-  [app/code/Magento/Ui/view/base/web/templates/form/field.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/field.html)
 
 ## Examples
 
-### Checkbox configuration
+### Integrate the Checkbox component configured as toggle element with the Form component
 
-The following example adds a new configured checkbox input.
+This example integrates the Checkbox component configured as a toggle element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
 
 ```xml
 <form>
@@ -98,4 +62,72 @@ The following example adds a new configured checkbox input.
 
 #### Result
 
-![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/checkbox-component-result.png)
+![Checkbox Toggle UiComponent]({{ site.baseurl }}/common/images/ui_comps/checkbox-component-result.png)
+
+### Integrate the Checkbox component configured as checkbox element with the Form component
+
+This example integrates the Checkbox component configured as a checkbox element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+
+```xml
+<form>
+    <fieldset>
+        <field name="myCheckbox" formElement="checkbox">
+            <settings>
+                <label translate="true">Checkbox</label>
+                <tooltip>
+                    <description translate="true">This is my checkbox's description</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![Checkbox UiComponent]({{ site.baseurl }}/common/images/ui_comps/ui-checkbox-result.png)
+
+### Integrate the Checkbox component configured as radio element with the Form component
+
+This example integrates the Checkbox component configured as a radio element with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+
+```xml
+<form>
+    <fieldset>
+        <field name="myRadio" formElement="checkbox">
+            <settings>
+                <label translate="true">Radio</label>
+                <tooltip>
+                    <description translate="true">This is my radio's description</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>radio</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>
+```
+
+#### Result
+
+![Checkbox Radio UiComponent]({{ site.baseurl }}/common/images/ui_comps/ui-radio-result.png)
