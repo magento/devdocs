@@ -50,7 +50,7 @@ class MyNewViewModel implements \Magento\Framework\View\Element\Block\ArgumentIn
 }
 ```
 
-You can access the public methods fo the view model class in the template:
+You can access the public methods for the view model class in the template:
 
 ```html
 <?php
