@@ -19,7 +19,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 **etc/extension_attributes.xml:**
 
 ```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Api/etc/extension_attributes.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
   <extension_attributes for="Magento\Quote\Api\Data\CartInterface">
     <attribute code="demo" type="string" />
   </extension_attributes>
@@ -37,7 +37,8 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 **etc/fieldset.xml:**
 
 ```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataObject/etc/fieldset.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
   <scope id="global">
     <fieldset id="sales_convert_quote">
       <field name="demo">
