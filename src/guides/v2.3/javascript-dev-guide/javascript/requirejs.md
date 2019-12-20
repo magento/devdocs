@@ -110,9 +110,9 @@ The concept of Javascript mixins itself is explained in depth in [Using Javascri
 
 ### text
 
-The `text` configuration is used to set the security request headers via the following JS file: [`text.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/requirejs/text.js)
+The `text` configuration is used to set the security request headers using the [`text.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/requirejs/text.js) file.
 
-Without [Cross Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) it is not possible to add X-Requested-With header to a cross domain XHR request. So having this header set, the server knows that the request was initiated from the same domain.
+Without [Cross Origin Resource Sharing (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) it is not possible to add the `X-Requested-With` header to a cross domain XHR request. Set this header to tell the server that the request was initiated from the same domain.
 
 ```javascript
 'config': {
