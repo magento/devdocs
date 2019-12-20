@@ -188,7 +188,7 @@ To wrap div or block using container see example:
 </container>
 ```
 
-To add few new classes to the container:
+To add new classes to the container:
 
 ```xml
 <referenceContainer name="page.wrapper" htmlClass="my-new-page-wrapper-class second-class"/>
@@ -197,7 +197,7 @@ To add few new classes to the container:
 ![Container Classes]({{ site.baseurl }}/common/images/container-classes-result.png)
 
 {:.bs-callout-warning}
-Using this approach, you will override the existing classes.
+This method overrides existing classes.
 
 ## Create a block {#xml-manage-block}
 
@@ -229,7 +229,7 @@ Example: pass the image to the `logo` block.
 </referenceBlock>
 ```
 
-To add new a new class to the block:
+To add a new class to the block:
 
 ```xml
 <referenceBlock name="page.main.title">
