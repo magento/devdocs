@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Local development
 redirect_from:
-  - /guides/v2.2/cloud/before/before-setup-env-overview.html
-  - /guides/v2.3/cloud/before/before-setup-env-overview.html
+  - /cloud/before/before-setup-env-overview.html
 functional_areas:
   - Cloud
   - Setup

@@ -2,7 +2,7 @@
 group: cloud-guide
 title: Deploy your store
 redirect_from:
-  - /guides/v2.2/cloud/live/stage-prod-over.html
+  - /cloud/live/stage-prod-over.html
 functional_areas:
   - Cloud
   - Deploy
