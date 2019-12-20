@@ -1110,3 +1110,4 @@ Minify CSS Files | `dev/css/minify_files` | <!-- ![Not EE-only]({{ site.baseurl 
 Image Adapter | `dev/image/default_adapter` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Sign Static Files | `dev/static/sign` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Asynchronous indexing | `dev/grid/async_indexing` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Cache User Defined Attributes | `dev/caching/cache_user_defined_attributes` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
