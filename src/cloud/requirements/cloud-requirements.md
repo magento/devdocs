@@ -49,8 +49,8 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 ## Supported software versions {#cloud-arch-software}
 {{site.data.var.ece}} uses:
 
-*  Operating system: Debian GNU/Linux 8 (jessie)
-*  Web server: [nginx](https://glossary.magento.com/nginx) 1.8
+*  Operating system: Debian GNU/Linux
+*  Web server: [nginx](https://glossary.magento.com/nginx)
 
 You cannot upgrade the software, but you can configure the following services:
 
