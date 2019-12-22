@@ -1,1 +1,0 @@
-../../v2.2/rest/anonymous-api-security.md

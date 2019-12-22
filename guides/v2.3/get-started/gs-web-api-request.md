@@ -1,1 +1,0 @@
-../../../guides/v2.2/get-started/gs-web-api-request.md

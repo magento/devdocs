@@ -1,1 +1,0 @@
-../../../../guides/v2.2/mtf/features/isolation.md
