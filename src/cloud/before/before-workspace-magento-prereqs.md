@@ -2,8 +2,8 @@
 group: cloud-guide
 title: Install Magento prerequisites
 redirect_from:
-  - /guides/v2.2/cloud/before/before-workspace-php.html
-  - /guides/v2.2/cloud/before/before-workspace-cli.html
+  - /cloud/before/before-workspace-php.html
+  - /cloud/before/before-workspace-cli.html
 functional_areas:
   - Cloud
   - Setup
