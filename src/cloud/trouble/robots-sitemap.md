@@ -105,3 +105,9 @@ To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, 
 ```
 
 In the `sitemap` admin config, you must specify the location of the file using `pub/media/` rather than `/`.
+
+### Configure Indexing By Search Engine
+
+To get robots.txt customization displayed, you must enable the "Indexing by search engines is On for environment"
+
+![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud_project-robots-indexing-by-search-engine.png)
