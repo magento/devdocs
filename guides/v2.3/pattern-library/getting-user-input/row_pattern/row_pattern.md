@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/pattern-library/getting-user-input/row_pattern/row_pattern.md

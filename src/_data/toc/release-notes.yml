@@ -1,0 +1,325 @@
+label: Release Information
+pages:
+    - label: Introduction
+      url: /release-notes/bk-release-notes.html
+
+    - label: 2.3 Release Notes
+      include_versions: ["2.3"]
+      children:
+
+        - label: Component Status
+          url: /release-notes/component-status.html
+
+        - label: Magento Open Source 2.3.3 Release Notes
+          url: /release-notes/release-notes-2-3-3-open-source.html
+
+        - label: Magento Commerce 2.3.3 Release Notes
+          url: /release-notes/release-notes-2-3-3-commerce.html
+
+        - label: Magento Open Source 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2OpenSource.html
+
+        - label: Magento Commerce 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2Commerce.html
+
+        - label: Magento Open Source 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1OpenSource.html
+
+        - label: Magento Commerce 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1Commerce.html
+
+        - label: Magento Open Source 2.3.0 Release Notes
+          url: /release-notes/ReleaseNotes2.3.0OpenSource.html
+
+        - label: Magento Commerce 2.3.0 Release Notes
+          url: /release-notes/ReleaseNotes2.3.0Commerce.html
+
+    - label: 2.2 Release Notes
+      include_versions: ["2.2"]
+      children:
+
+        - label: Magento Open Source 2.2.10 Release Notes
+          url: /release-notes/release-notes-2-2-10-open-source.html
+
+        - label: Magento Commerce 2.2.10 Release Notes
+          url: /release-notes/release-notes-2-2-10-commerce.html
+
+        - label: Magento Open Source 2.2.9 Release Notes
+          url: /release-notes/ReleaseNotes2.2.9CE.html
+
+        - label: Magento Commerce 2.2.9 Release Notes
+          url: /release-notes/ReleaseNotes2.2.9EE.html
+          
+        - label: Magento Open Source 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8CE.html
+
+        - label: Magento Commerce 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8EE.html
+
+        - label: Magento Open Source 2.2.7 Release Notes
+          url: /release-notes/ReleaseNotes2.2.7CE.html
+
+        - label: Magento Commerce 2.2.7 Release Notes
+          url: /release-notes/ReleaseNotes2.2.7EE.html
+
+        - label: Magento Open Source 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6CE.html
+
+        - label: Magento Commerce 2.2.6 Release Notes
+          url: /release-notes/ReleaseNotes2.2.6EE.html
+
+        - label: Magento Open Source 2.2.5 Release Notes
+          url: /release-notes/ReleaseNotes2.2.5CE.html
+
+        - label: Magento Commerce 2.2.5 Release Notes
+          url: /release-notes/ReleaseNotes2.2.5EE.html
+
+        - label: Magento Open Source 2.2.4 Release Notes
+          url: /release-notes/ReleaseNotes2.2.4CE.html
+
+        - label: Magento Commerce 2.2.4 Release Notes
+          url: /release-notes/ReleaseNotes2.2.4EE.html
+
+        - label: Magento Open Source 2.2.3 Release Notes
+          url: /release-notes/ReleaseNotes2.2.3CE.html
+
+        - label: Magento Commerce 2.2.3 Release Notes
+          url: /release-notes/ReleaseNotes2.2.3EE.html
+
+        - label: Magento Open Source 2.2.2 Release Notes
+          url: /release-notes/ReleaseNotes2.2.2CE.html
+
+        - label: Magento Commerce 2.2.2 Release Notes
+          url: /release-notes/ReleaseNotes2.2.2EE.html
+
+        - label: Magento Open Source 2.2.1 Release Notes
+          url: /release-notes/ReleaseNotes2.2.1CE.html
+
+        - label: Magento Commerce 2.2.1 Release Notes
+          url: /release-notes/ReleaseNotes2.2.1EE.html
+
+        - label: Magento Open Source 2.2.0 Release Notes
+          url: /release-notes/ReleaseNotes2.2.0CE.html
+
+        - label: Magento Commerce 2.2.0 Release Notes
+          url: /release-notes/ReleaseNotes2.2.0EE.html
+
+        - label: Magento Commerce (Cloud) 2.2.0 Release Notes
+          url: /cloud/release-notes/CloudReleaseNotes2.2.html
+          versionless: true
+
+        - label: Component Status
+          url: /release-notes/release-candidate/component-status.html
+
+    - label: Magento 2.1 Release Notes
+      include_versions: ["2.1"]
+      children:
+
+        - label: Magento Open Source 2.1.x Release Notes
+          children:
+
+            - label: Magento Open Source 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18CE.html
+
+            - label: Magento Open Source 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17CE.html
+
+            - label: Magento Open Source 2.1.16 Release Notes
+              url: /release-notes/ReleaseNotes2.1.16CE.html
+
+            - label: Magento Open Source 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15CE.html
+
+            - label: Magento Open Source 2.1.14 Release Notes
+              url: /release-notes/ReleaseNotes2.1.14CE.html
+
+            - label: Magento Open Source 2.1.13 Release Notes
+              url: /release-notes/ReleaseNotes2.1.13CE.html
+
+            - label: Magento Open Source 2.1.12 Release Notes
+              url: /release-notes/ReleaseNotes2.1.12CE.html
+
+            - label: Magento Open Source 2.1.11 Release Notes
+              url: /release-notes/ReleaseNotes2.1.11CE.html
+
+            - label: Magento Open Source 2.1.10 Release Notes
+              url: /release-notes/ReleaseNotes2.1.10CE.html
+
+            - label: Magento Open Source 2.1.9 Release Notes
+              url: /release-notes/ReleaseNotes2.1.9CE.html
+
+            - label: Magento Open Source 2.1.8 Release Notes
+              url: /release-notes/ReleaseNotes2.1.8CE.html
+
+            - label: Magento Open Source 2.1.7 Release Notes
+              url: /release-notes/ReleaseNotes2.1.7CE.html
+
+            - label: Magento Open Source 2.1.6 Release Notes
+              url: /release-notes/ReleaseNotes2.1.6CE.html
+
+            - label: Magento Open Source 2.1.5 Release Notes
+              url: /release-notes/ReleaseNotes2.1.5CE.html
+
+            - label: Magento Open Source 2.1.4 Release Notes
+              url: /release-notes/ReleaseNotes2.1.4CE.html
+
+            - label: Magento Open Source 2.1.3 Release Notes
+              url: /release-notes/ReleaseNotes2.1.3CE.html
+
+            - label: Magento Open Source 2.1.2 Release Notes
+              url: /release-notes/ReleaseNotes2.1.2CE.html
+
+            - label: Magento Open Source 2.1.1 Release Notes
+              url: /release-notes/ReleaseNotes2.1.1CE.html
+
+            - label: Magento Open Source 2.1.0  Release Notes
+              url: /release-notes/ReleaseNotes2.1.0CE.html
+
+        - label: Magento Commerce 2.1.x Release Notes
+          children:
+
+            - label: Magento Commerce 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18EE.html
+
+            - label: Magento Commerce 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17EE.html
+
+            - label: Magento Commerce 2.1.16 Release Notes
+              url: /release-notes/ReleaseNotes2.1.16EE.html
+
+            - label: Magento Commerce 2.1.15 Release Notes
+              url: /release-notes/ReleaseNotes2.1.15EE.html
+
+            - label: Magento Commerce 2.1.14 Release Notes
+              url: /release-notes/ReleaseNotes2.1.14EE.html
+
+            - label: Magento Commerce 2.1.13 Release Notes
+              url: /release-notes/ReleaseNotes2.1.13EE.html
+
+            - label: Magento Commerce 2.1.12 Release Notes
+              url: /release-notes/ReleaseNotes2.1.12EE.html
+
+            - label: Magento Commerce 2.1.11 Release Notes
+              url: /release-notes/ReleaseNotes2.1.11EE.html
+
+            - label: Magento Commerce 2.1.10 Release Notes
+              url: /release-notes/ReleaseNotes2.1.10EE.html
+
+            - label: Magento Commerce 2.1.9 Release Notes
+              url: /release-notes/ReleaseNotes2.1.9EE.html
+
+            - label: Magento Commerce 2.1.8 Release Notes
+              url: /release-notes/ReleaseNotes2.1.8EE.html
+
+            - label: Magento Commerce 2.1.7 Release Notes
+              url: /release-notes/ReleaseNotes2.1.7EE.html
+
+            - label: Magento Commerce 2.1.6 Release Notes
+              url: /release-notes/ReleaseNotes2.1.6EE.html
+
+            - label: Magento Commerce 2.1.5 Release Notes
+              url: /release-notes/ReleaseNotes2.1.5EE.html
+
+            - label: Magento Commerce 2.1.4 Release Notes
+              url: /release-notes/ReleaseNotes2.1.4EE.html
+
+            - label: Magento Commerce 2.1.3 Release Notes
+              url: /release-notes/ReleaseNotes2.1.3EE.html
+
+            - label: Magento Commerce 2.1.2 Release Notes
+              url: /release-notes/ReleaseNotes2.1.2EE.html
+
+            - label: Magento Commerce 2.1.1 Release Notes
+              url: /release-notes/ReleaseNotes2.1.1EE.html
+
+            - label: Magento Commerce 2.1.0 Release Notes
+              url: /release-notes/ReleaseNotes2.1.0EE.html
+
+        - label: Magento Commerce (Cloud) 2.1.x Release Notes
+          children:
+
+            - label: magento-cloud-configuration release 101.9.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.9.html
+
+            - label: magento-cloud-configuration release 101.8.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.8.html
+
+            - label: magento-cloud-configuration release 101.7.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.7.html
+
+            - label: magento-cloud-configuration release 101.6.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.6.html
+
+            - label: magento-cloud-configuration release 101.5.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.5.html
+
+            - label: magento-cloud-configuration release 101.4.x Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes101.4.html
+
+            - label: Magento Commerce (Cloud) versions 2.1.6 through 2.1.11 Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes2.1.6-2.1.11.html
+
+            - label: Magento Commerce (Cloud) version 2.1.5 and 2.0.13 Release Notes
+              url: /cloud/release-notes/CloudReleaseNotes2.1.5.html
+
+            - label: Magento Commerce (Cloud) version 2.1.4 and 2.0.12
+              url: /cloud/release-notes/CloudReleaseNotes2.1.4.html
+
+            - label: Magento Commerce (Cloud) version 2.1.3 and 2.0.11
+              url: /cloud/release-notes/CloudReleaseNotes2.1.3.html
+
+            - label: Magento Commerce (Cloud) version 2.1.2 and 2.0.10
+              url: /cloud/release-notes/CloudReleaseNotes2.1.2.html
+
+        - label: Third-party extension contact information
+          exclude_versions: ["2.0", "2.1"]
+          children:
+
+            - label: Contact Information for Third-Party Extensions
+              url: /release-notes/cbe-support-info.html
+
+    - label: Backward incompatible changes
+      children:
+
+        - label: Highlights
+          url: /release-notes/backward-incompatible-changes/index.html
+
+        - label: Reference
+          url: /release-notes/backward-incompatible-changes/reference.html
+
+    - label: Packages
+      children:
+
+        - label: Magento Open Source packages
+          url: /release-notes/packages-open-source.html
+
+        - label: Magento Commerce packages
+          url: /release-notes/packages-commerce.html
+
+        - label: Magento Commerce Cloud packages
+          url: /release-notes/packages-cloud.html
+
+    - label: GraphQL
+      url: /graphql/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+
+    - label: Inventory Management
+      url: /inventory/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+
+    - label: Page Builder
+      url: /page-builder/docs/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+      versionless: true
+    
+    - label: Sales Channels
+      exclude_versions: ["2.0", "2.1",]  
+      children:
+      
+        - label: Amazon
+          url: /extensions/amazon-sales/release-notes/
+          versionless: true
+
+        - label: Google Shopping ads
+          url: /extensions/google-shopping-ads/release-notes/
+          versionless: true

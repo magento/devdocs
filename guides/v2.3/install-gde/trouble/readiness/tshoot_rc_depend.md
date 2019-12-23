@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/install-gde/trouble/readiness/tshoot_rc_depend.md

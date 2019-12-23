@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/comp-mgr/trouble/cman/out-of-memory.md

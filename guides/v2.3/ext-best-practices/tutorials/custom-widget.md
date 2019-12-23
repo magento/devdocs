@@ -1,1 +1,0 @@
-../../../v2.2/ext-best-practices/tutorials/custom-widget.md

@@ -1,1 +1,0 @@
-../../../../v2.2/rest/tutorials/configurable-product/create-configurable-product.md
