@@ -1,114 +1,71 @@
 ---
 group: cloud-guide
-title: Docker container architecture
+title: Docker Development
 functional_areas:
   - Cloud
   - Docker
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package. See the instructions in [Launch Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
+{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package. 
+
+This docker environment can be used with any Magento Cloud site, the requirements for Cloud have already installed the components. It can also be used with any Magento 2 site, however you will have to include some other components. (detailslink)
+
+Building the docker environment is easy once you have the configuration in place, for details see the instructions in [Launch Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
+
+## Docker Container Architecture
+
+The Magento Cloud Docker builds out docker-compose to the required specifications, using docker-compose you can instance the containers, build, deploy and then use the Magento 2 instance like usual.
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker) contains build information for the following Docker containers.
+  
+### Index of containers
 
-## Database container
+| Name       | Service   | Notes
+| ------------- | ---------- | ------------------
+| [build]({{site.baseurl}}/cloud/docker/docker-containers.html#build-container) | Build Container | PHP Container, runs build process
+| [cron]({{site.baseurl}}/cloud/docker/docker-containers.html#cron-container) | Cron Jobs | PHP Container, runs cron tasks
+| [deploy]({{site.baseurl}}/cloud/docker/docker-containers.html#deploy-container) | Deploy Container | PHP Container, runs the deploy process
+| [db]({{site.baseurl}}/cloud/docker/docker-containers.html#database-container) | MariaDB     | Standard database container
+| [elasticsearch]({{site.baseurl}}/cloud/docker/docker-containers.html#elasticsearch-container) | Elasticsearch | 
+| [fpm]({{site.baseurl}}/cloud/docker/docker-containers.html#fpm-container) | PHP FPM | Used for all incoming requests
+| [node]({{site.baseurl}}/cloud/docker/docker-containers.html#nodecontainer) | Node | Used gulp or other NPM based commands
+| [rabbitmq]({{site.baseurl}}/cloud/docker/docker-containers.html#rabbitmq-container) | RabbitMQ | 
+| [redis]({{site.baseurl}}/cloud/docker/docker-containers.html#redis-container) | Redis     |  Standard redis container
+| [tls]({{site.baseurl}}/cloud/docker/docker-containers.html#tls-container) | SSL Endpoint | Terminates SSL, can be configured to pass to varnish or nginx
+| [varnish]({{site.baseurl}}/cloud/docker/docker-containers.html#varnish-container) | Varnish |
 
-The database container is based on the [mariadb](https://hub.docker.com/_/mariadb) image.
+* Click on the container name to see more about the container and it's usage and configuration.
 
--  Port: 3306
--  Volumes:
-   -  `/var/lib/mysql`
-   -  `./docker/mysql`
+## Request Flow
 
-To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
+Web requests to https://magento2.docker/ are handled via the docker containers. They will go through the following flow:
 
-The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+1. TLS
+2. Varnish *
+3. Nginx
+4. PHP-FPM
 
-Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
+Note that varnish can be removed from the configuration, in which case the traffic will pass from TLS container to Nginx.
 
-## CLI containers
+## Container Logs
 
-The following CLI containers, which are based on a [PHP-CLI version 7 image](https://hub.docker.com/r/magento/magento-cloud-docker-php), provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
+All containers log using Dockers built in logging method. The easiest way to interface with this is to use the docker-compose command and view the logs.
 
--  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
--  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
--  `cron`—extends the CLI container to run cron
-
-   -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
-   -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
-
-For example, you can check the state of the your project using the _ideal-state_ wizard:
-
-Run the `{{site.data.var.ct}}` ideal-state command.
-
-```bash
-docker-compose run deploy ece-command wizard:ideal-state
+The following example will follow the tls container log files, allowing you to see all requests that are passing through, or errors it has had.
+```sh
+docker-composer logs -f tls
 ```
 
-Sample response:
 
-```terminal
-...
- - Your application does not have the "post_deploy" hook enabled.
-The configured state is not ideal
-```
-{:.no-copy}
-
-### Cron container
-
-The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). To view the cron log:
-
-```bash
-docker-compose run deploy bash -c "cat /app/var/cron.log"
-```
-
-### Node container
-
-The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
-
-## PHP-FPM container
-
-The PHP-FPM container is based on the [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php) image.
-
--  Port: 9000
--  Read-only volumes:
-   -  `/app`
-   -  `/app/vendor`
-   -  `/app/generated`
-   -  `/app/setup`
--  Read/Write volumes:
-   -  `/app/var`
-   -  `/app/app/etc`
-   -  `/app/pub/static`
-   -  `/app/pub/media`
-
-### Web container
-
-The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP code, the [**DB** image](#database-container) for the local database, and the **Varnish** image to send requests and cache the results.
-
-### Varnish container
-
-The Varnish container is based on the [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) image. Varnish works on port 80.
-
-### TLS container
-
-The TLS termination proxy container, based on the  [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) image, facilitates the Varnish SSL termination over HTTPS.
-
-## Service containers
-
-Service | Image
-------- | -----
-**ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)
-**NGINX**         | [magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
-**RabbitMQ**      | [rabbitmq](https://hub.docker.com/_/rabbitmq)
-**Redis**         | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)
-
-{:.bs-callout-info}
-See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-config.html) for use when launching Docker.
+## Host Operating Systems
+The Cloud Docker environment supports Linux and Mac, and can be used on Windows Systems as well. The containers should be able to run on any docker host, but some of the set up scripts require PHP and composer. 
 
 ## Sharing data between host machine and container
 
 You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
+
+Additionally you can share data into the containers using Mutagen or Docker Sync. These tools are described in more detail on the Syncing Data page.
 
 ## Sendmail service
 

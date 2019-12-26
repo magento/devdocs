@@ -113,8 +113,16 @@ pages:
           url: /cloud/docker/docker-config.html
           versionless: true
 
+        - label: Docker Containers
+          url: /cloud/docker/docker-containers.html
+          versionless: true
+
         - label: Configure Xdebug for Docker
           url: /cloud/docker/docker-development-debug.html
+          versionless: true
+
+        - label: Syncing Data
+          url: /cloud/docker/docker-syncing-data.html
           versionless: true
 
         - label: Connect to the database
