@@ -7,20 +7,116 @@ functional_areas:
   - Configuration
 ---
 
-## Database container
+## CLI Containers
 
-The database container is based on the [mariadb](https://hub.docker.com/_/mariadb) image.
+The CLI containers provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations and to interact with the application.
 
+For example, you can check the state of the your project using the _ideal-state_ wizard:
+
+Run the `{{site.data.var.ct}}` ideal-state command.
+
+```bash
+docker-compose run deploy ece-command wizard:ideal-state
+```
+
+Sample response:
+
+```terminal
+ - Your application does not have the "post_deploy" hook enabled.
+The configured state is not ideal
+```
+{:.no-copy}
+
+
+### Build Container
+
+#### Container Information
+ - Name: build
+ - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+ - Ports: none
+ - Volumes: none  
+
+This container is used for the build process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
+
+This mounts the filesystem with write permissions.
+
+#### Container Usage
+
+This container is used by the cloud cli tool in the following ways.
+todo
+
+You can also use this container as follows:
+todo
+
+### Cron Container
+
+#### Container Information
+ - Name: cron
+ - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+ - Ports: none
+ - Volumes: none  
+
+This container is used for the cronjob, it runs the scheduled cronjobs and can also be used to do one off cron runs.
+
+#### Container Configuration
+
+This container has no extra configuration, however if performance problems from cron runs are present you can use the following snippet in your docker-compose.override.yml
+
+`
+TODO
+``
+
+### Deploy Container
+
+#### Container Information
+ - Name: deploy
+ - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+ - Ports: none
+ - Volumes: none  
+
+This container is used for the deploy process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
+
+This mounts the filesystem with read-only permissions.
+
+#### Container Usage
+
+This container is used by the cloud cli tool in the following ways.
+todo
+
+You can also use this container as follows:
+todo
+
+## Service Containers
+
+The following containers provide the services required to build, deploy and run Magento 2 sites.
+
+### Database Container
+
+#### Container Information
+ - Name: db
+ - Base Image: [mariadb](https://hub.docker.com/_/mariadb)
 -  Port: 3306
 -  Volumes:
    -  `/var/lib/mysql`
    -  `./docker/mysql`
 
+#### Container Usage
+
 To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
 The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+TODO Above is also wrong, as it pulls in during the instancing of the containers.
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
+
+
+
+
+
+
+___
+
+
 
 ## CLI containers
 
