@@ -31,7 +31,8 @@ $('#init_element').alert({
 ```javascript
 require([
     'Magento_Ui/js/modal/alert'
-], function(alert) { // Variable that represents the `alert` function
+    'jquery'
+], function(alert, $) { // Variable that represents the `alert` function
 
     alert({
         title: $.mage.__('Some title'),
