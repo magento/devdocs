@@ -83,7 +83,7 @@ Apply `css` in _theme.less
 ```css
 //  Fonts
 @icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme\web\fonts
-@icons__font-name: 'theme-Icons';
+@icons__font-name: 'Theme-Icons';
 ```
 
 
