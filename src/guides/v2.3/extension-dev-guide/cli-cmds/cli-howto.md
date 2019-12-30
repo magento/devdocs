@@ -103,7 +103,7 @@ Following is a summary of the process:
                <argument name="name" xsi:type="string">my:first:command</argument>
            </arguments>
        </type>
-       <type name="Magento\Framework\Console\CommandList">
+       <type name="Magento\Framework\Console\CommandListInterface">
            <arguments>
                <argument name="commands" xsi:type="array">
                    <item name="commandexample_somecommand" xsi:type="object">Magento\CommandExample\Console\Command\SomeCommand</item>
