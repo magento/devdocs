@@ -43,4 +43,4 @@ Layout file | Description
 `wishlist_index_configure_type_grouped.xml` | Layout from this file is applied to `grouped` product only
 `wishlist_index_configure_type_simple.xml` | Layout from this file is applied to `simple` product only
 
-You can use custom layout either the design handle for the specific `SKU` or product `ID` or the Layout Update `XM` field in the admin panel for that product.
+For setting a custom layout that depends product id on SKU or ID, check the [following topic]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#create-cms-pageproductcategory-specific-layouts).
