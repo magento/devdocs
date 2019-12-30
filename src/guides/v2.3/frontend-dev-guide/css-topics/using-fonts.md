@@ -76,7 +76,16 @@ For Example:
 
 See the [magento2-ui-library](https://magento-devdocs.github.io/magento2-ui-library/icons.html) for an icon list and implementation.
 
-To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
+To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/). and to define magento luma or Blank theme Icon fonts, override by following way:
+
+Apply `css` in _theme.less
+
+```css
+//  Fonts
+@icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme\web\fonts
+@icons__font-name: 'theme-Icons';
+```
+
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.
