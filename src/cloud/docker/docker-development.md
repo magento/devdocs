@@ -59,7 +59,7 @@ docker-composer logs -f tls
 
 
 ## Host Operating Systems
-The Cloud Docker environment supports Linux and Mac, and can be used on Windows Systems as well. The containers should be able to run on any docker host, but some of the set up scripts require PHP and composer. 
+The Cloud Docker environment supports Linux and Mac, and can be used on Windows as well. The containers should be able to run on any docker host, but some of the set up scripts require PHP and composer. 
 
 ## Sharing data between host machine and container
 
