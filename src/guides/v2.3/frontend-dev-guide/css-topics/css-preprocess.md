@@ -134,7 +134,7 @@ The client-side compilation flow is similar to [server-side](#server-side). The 
 
 -  root source (.less) files with resolved `@magento_import` directive
 -  [symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
--  symlinks to all other \`.less\` files imported recursively by the `@magento_import` and `@import` directives
+-  symlinks to all other `.less` files imported recursively by the `@magento_import` and `@import` directives
 
 {:.bs-callout-info}
 Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the `@import` directive without file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
