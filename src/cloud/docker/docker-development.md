@@ -43,10 +43,10 @@ Web requests to https://magento2.docker/ are handled via the docker containers. 
 
 1. TLS
 2. Varnish *
-3. Nginx
+3. Web (nginx)
 4. PHP-FPM
 
-Note that varnish can be removed from the configuration, in which case the traffic will pass from TLS container to Nginx.
+Note that varnish can be removed from the configuration, in which case the traffic will pass from TLS container to Nginx. 
 
 ## Container Logs
 
