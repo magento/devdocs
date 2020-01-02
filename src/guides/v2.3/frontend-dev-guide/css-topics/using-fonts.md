@@ -76,7 +76,7 @@ For Example:
 
 See the [magento2-ui-library](https://magento-devdocs.github.io/magento2-ui-library/icons.html) for an icon list and implementation.
 
-To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/). To override Luma or Blank theme icons font, change the font path in the following way.
+To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/). To override Luma or Blank theme icon fonts, change the font path in the `_theme.less` file. For example:
 
 Apply the changes in _theme.less
 
