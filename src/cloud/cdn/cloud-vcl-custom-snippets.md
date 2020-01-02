@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Custom Fastly VCL snippets
 redirect_from:
-   - /guides/v2.2/cloud/configure/cloud-vcl-custom-snippets.html
-   - /guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html
+   - /cloud/configure/cloud-vcl-custom-snippets.html
 functional_areas:
   - Cloud
   - Setup
@@ -199,7 +198,9 @@ In the JSON response, the version number is incremented, and the *active* key va
 
 Save the new version number in a bash environment variable for use in subsequent commands:
 
-   ```export FASTLY_EDIT_VERSION=<Version>```
+```bash
+export FASTLY_EDIT_VERSION=<Version>
+```
 
 #### Step 3: Create a custom VCL snippets {#create-snippet}
 

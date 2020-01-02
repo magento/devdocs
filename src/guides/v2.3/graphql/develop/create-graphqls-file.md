@@ -22,16 +22,16 @@ The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` 
 
 A query definition can be one line, or it can be complex. If your module's query implements `searchCriteria`, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition can be simple.
 
-The following example shows the `products` query. The `type` is defined as a `Query`.  The `products` definitions define the keywords that are used to construct a query, as shown in [Queries]({{ page.baseurl }}/graphql/queries/index.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes).
+The following example shows the `products` query. The `type` is defined as a `Query`. The `products` definitions define the keywords that are used to construct a query, as shown in [Using queries]({{ page.baseurl }}/graphql/queries/index.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes).
 
 ```text
 type Query {
     products (
-        search: String,
-        filter: ProductFilterInput,
-        pageSize: Int = 20,
-        currentPage: Int = 1,
-        sort: ProductSortInput
+        search: String
+        filter: ProductAttributeFilterInput
+        pageSize: Int = 20
+        currentPage: Int = 1
+        sort: ProductAttributeSortInput
     ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
 }
 ```
@@ -101,11 +101,7 @@ url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products")
 ```
 
-Use the `@deprecated` directive to mark a query, mutation, or attribute as deprecated:
-
-```text
-@deprecated(reason: "description")
-```
+Use the `@deprecated` directive to deprecate attributes and enum values. The GraphQL specification does not permit deprecating input values or arguments. The `reason` keyword allows you to specify which attribute/field or enum value should be used instead.
 
 For example:
 
