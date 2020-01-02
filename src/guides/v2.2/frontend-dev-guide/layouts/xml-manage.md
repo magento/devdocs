@@ -549,6 +549,41 @@ As result, the `<body>` tag has a new `my-new-body-class` class on all product p
 <referenceBlock name="customer-account-navigation-return-history-link" remove="true"/>
 ```
 
+## Create cms-page/product/category-specific layouts
+
+As of Magento 2.2.11, merchants can select layout updates to be applied to specific Category/Product/CMS Page pages on the frontend. These layout
+updates are made by creating layout XML files following specific naming conventions.
+
+For Categories:
+
+-  `catalog_category_view_selectable_<Category ID>_<Layout Update Name>.xml`
+
+where:
+
+-  _Category ID_ is the desired category ID.
+-  _Layout Update Name_ is shown as the option for the __Custom layout update__ field of the __Design__ section on the _Category Edit_ page.
+
+For Products:
+
+-  `catalog_product_view_selectable_<Product SKU>_<Layout Update Name>.xml`
+
+where:
+
+-  _Product SKU_ is the desired product's SKU encoded as a URI.
+  _example_: "My Product SKU" -> "My%20Product%20SKU"
+-  _Layout Update Name_ is shown as the option for the __Custom layout update__ field of the __Design__ section on the _Product Edit_ page.
+
+For CMS Pages:
+
+-  `cms_page_view_selectable_<CMS Page Identifier>_<Layout Update Name>.xml`
+
+where:
+
+-  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_".
+-  _Layout Update Name_ is shown as the option for the __Custom layout update__ field of the __Design__ section on _CMS Page Edit_ page.
+
+These files must be placed in the appropriate folders for layout XML files. They will be available as __Custom Layout Update__ options for Merchants after flushing the cache.
+
 {:.ref-header}
 Related topics
 

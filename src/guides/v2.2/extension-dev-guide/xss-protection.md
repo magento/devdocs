@@ -74,10 +74,10 @@ When using the Escaper:
 **When to use Escaper methods:**
 
 **Case**: JSON inside an HTML attribute
-**Escaper method**: escapeHtmlAttribute
+**Escaper method**: escapeHtmlAttr
 
 ```php
-<div data-bind='settings: <?= $block->escapeHtmlAttribute($myJson) ?>'></div>
+<div data-bind='settings: <?= $block->escapeHtmlAttr($myJson) ?>'></div>
 ```
 
 **Case**: JSON inside script tag
@@ -113,7 +113,7 @@ Certain attributes like `a.href` accept URIs of various types and must be saniti
 
 ```php
 <a href="<?= $block->escapeUrl($myUrl) ?>">Click me</a>
-<div attr-js-extracts="<?= $block->escapeHtmlAttribute($myOtherUrl) ?>"></div>
+<div attr-js-extracts="<?= $block->escapeHtmlAttr($myOtherUrl) ?>"></div>
 ```
 
 **Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:

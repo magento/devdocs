@@ -1,1 +1,0 @@
-../../../v2.2/cloud/reference/discover-deploy.md

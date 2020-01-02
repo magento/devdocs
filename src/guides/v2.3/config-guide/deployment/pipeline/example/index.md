@@ -1,1 +1,9 @@
-../../../../../v2.2/config-guide/deployment/pipeline/example/index.md
+---
+group: configuration-guide
+title: Examples
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
+---
