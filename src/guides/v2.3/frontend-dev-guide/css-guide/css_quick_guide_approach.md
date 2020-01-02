@@ -141,7 +141,7 @@ To override a Module's styles in your theme:
 
 For example:
 
-To override Magento_Review module's style, the directory path should be <your_theme_dir>/Magento_Review/web/css/source/_module.less
+For example, to override the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_module.less`.
 
 ## Recommended reading
 
