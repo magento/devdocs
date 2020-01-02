@@ -118,7 +118,7 @@ To extend a Module's styles in your theme:
 
 For example, to extend the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_extend.less`.
 
-### Override Module's styles {#module_override}
+### Override module styles
 
 To override a Module's styles in your theme:
 
