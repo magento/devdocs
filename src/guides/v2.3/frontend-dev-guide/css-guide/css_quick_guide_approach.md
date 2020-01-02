@@ -113,7 +113,7 @@ To extend a Module's styles in your theme:
                ├──_extend.less
    ...
    ```
-1. Add your additional styles in the _extend.less.
+1. Add additional styles in the `_extend.less` file.
 
 For example:
 
