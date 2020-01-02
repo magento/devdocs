@@ -102,7 +102,7 @@ To override the parent theme's styles for buttons in your theme:
 To extend a Module's styles in your theme:
 
 1. In your theme directory, create a `Module_Name/web/css/source` directory.
-1. Create a _extend.less file here. The path to it looks like following:
+1. Create an `_extend.less` file in the theme directory. For example:
 
    ```tree
    <theme_dir>/
