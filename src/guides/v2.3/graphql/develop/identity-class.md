@@ -9,7 +9,7 @@ An Identity class implements `Magento\Framework\GraphQl\Query\Resolver\IdentityI
 
 *  Choose a cache tag prefix for the entity.
 
-*  Your implementation of the `getIdentities(array $resolvedData)` method. The method maps the array of enties data to an array of cache tags, one for each entity. Generally, this method takes an array of query results and creates a cache tag for each entity based on the original string and the unique identifier for each item to be cached. For example, the getIdentities method for the `CatalogGraphQl` component appends the product ID to the `cat_p` cache tag prefix, such as `cat_p_1`, `cat_p_2`, and so on. Usually the method also adds the cache tag without an appended ID to the result array, so all cache records can be removed at once, and not only cache records for specific entities.
+*  Your implementation of the `getIdentities(array $resolvedData)` method. The method maps the array of entities data to an array of cache tags, one for each entity. Generally, this method takes an array of query results and creates a cache tag for each entity based on the original string and the unique identifier for each item to be cached. For example, the `getIdentities` method for the `CatalogGraphQl` component appends the product ID to the `cat_p` cache tag prefix, such as `cat_p_1`, `cat_p_2`, and so on. Usually the method also adds the cache tag without an appended ID to the result array, so all cache records can be removed at once, and not only cache records for specific entities.
 
 Use following example as the basis for your custom `Identity` class:
 

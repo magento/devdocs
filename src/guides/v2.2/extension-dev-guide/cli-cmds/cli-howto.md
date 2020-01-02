@@ -62,7 +62,6 @@ Following is a summary of the process:
                         'Name'
                     )
                ];
-               $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
                $this->setDefinition($options);
 
@@ -70,6 +69,8 @@ Following is a summary of the process:
            }
 
            /**
+            * Execute the command
+            *
             * @param InputInterface $input
             * @param OutputInterface $output
             *
@@ -91,11 +92,17 @@ Following is a summary of the process:
    {:.bs-callout-info}
    Style the output text by using `<error>`, `<info>`, or `<comment>` tags. See [Symfony](https://symfony.com/doc/master/console/coloring.html){:target="_blank"} docummentation for more information about styling.
 
-1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
+1. Declare your Command class in `Magento\Framework\Console\CommandListInterface` and configure the command name using dependency injection (`<your component root dir>/etc/di.xml`):
 
    ```xml
    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
        ...
+       <type name=" Magento\CommandExample\Console\Command\SomeCommand">
+           <arguments>
+               <!-- configure the command name via constructor $name argument -->
+               <argument name="name" xsi:type="string">my:first:command</argument>
+           </arguments>
+       </type>
        <type name="Magento\Framework\Console\CommandList">
            <arguments>
                <argument name="commands" xsi:type="array">

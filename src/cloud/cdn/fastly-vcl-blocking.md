@@ -2,10 +2,8 @@
 group: cloud-guide
 title: Custom VCL for blocking requests
 redirect_from:
-   - /guides/v2.2/cloud/configure/fastly-vcl-blacklist.html
-   - /guides/v2.3/cloud/configure/fastly-vcl-blacklist.html
-   - /guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html
-   - /guides/v2.3/cloud/cdn/fastly-vcl-blacklist.html
+   - /cloud/configure/fastly-vcl-blacklist.html
+   - /cloud/cdn/fastly-vcl-blacklist.html
 
 functional_areas:
   - Cloud
