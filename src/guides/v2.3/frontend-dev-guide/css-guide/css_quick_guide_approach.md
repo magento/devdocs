@@ -134,7 +134,7 @@ To override a Module's styles in your theme:
                ├──_module.less
    ...
    ```
-   This file overrides the `_module.less` of the specific module.
+   This file overrides the `_module.less` file of the specific module.
 
 1. Add your styles in the _module.less.
 
