@@ -112,7 +112,7 @@ The password strength indicator widget listens for `change`, `keyup`, and `paste
 The following example shows how to initialize the password strength indicator widget and pass options during the initialization.
 
 ```html
-<form action="BACKEND_ACTION" method="post">
+<form action="BACKEND_ACTION" method="post" data-mage-init='{"validation":{}}'>
     <fieldset class="fieldset">
         <div class="field password required" data-mage-init='{"passwordStrengthIndicator": {
             "passwordStrengthMeterSelector":"[data-role=strength-meter]",
