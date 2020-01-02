@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
-  - /guides/v2.2/cloud/before/integration-ip-addr.html
-  - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
+  - /cloud/before/integration-ip-addr.html
 functional_areas:
   - Cloud
 ---
