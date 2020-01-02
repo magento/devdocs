@@ -259,7 +259,8 @@ mysqldump -u <your database root username> -p <your main magento DB name> magent
 ```bash
 mysqldump -u <your database root username> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
 ```
-{:.bs-callout-info} This guide assumes the magento instance has single store in the frontend. If the Magento instance has multiple stores in front-end, then tables with prefix as `sequence_` in table name and suffix ending with store ID, need to be considered for sequence.sql mysqldump export. 
+{:.bs-callout-info}
+This guide assumes your Magento instance has a single store on the frontend. If your Magento instance has multiple stores, then tables with the prefix `sequence_` in the table name and a suffix ending with `store ID` need to be included in the `sequence.sql` export. 
 
 ### Restore sales data {#sql-sales-restore}
 
