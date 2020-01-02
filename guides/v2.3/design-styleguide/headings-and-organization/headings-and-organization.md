@@ -1,1 +1,0 @@
-../../../../guides/v2.2/design-styleguide/headings-and-organization/headings-and-organization.md
