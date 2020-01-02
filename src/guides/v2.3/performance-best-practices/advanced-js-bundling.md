@@ -486,7 +486,7 @@ require.config({
 }
 ```
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, as the calls are executed in the order they appear.
 
 #### 6. Test the results

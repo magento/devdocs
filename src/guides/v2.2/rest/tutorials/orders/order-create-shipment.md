@@ -10,7 +10,6 @@ menu_order: 9
 level3_subgroup: order-tutorial
 redirect_from:
   - /guides/v2.2/get-started/order-tutorial/order-create-shipment.html
-  - /guides/v2.3/get-started/order-tutorial/order-create-shipment.html
 functional_areas:
   - Integration
   - Orders

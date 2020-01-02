@@ -136,7 +136,7 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws 
 ```
 
 ```bash
-sudo chown -R :<web server group> .
+chown -R :<web server group> .
 ```
 
 ```bash

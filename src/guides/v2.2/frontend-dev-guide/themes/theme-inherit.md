@@ -38,7 +38,7 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 {:.bs-callout-info}
 A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.
 
-## Differences between parent and child themes
+## Relationship between parent and child themes
 
 *  A child theme inherits view configuration, templates, layouts, and static file from its parents.
 
