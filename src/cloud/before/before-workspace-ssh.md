@@ -2,7 +2,7 @@
 group: cloud-guide
 title: Enable SSH keys
 redirect_from:
-  - /guides/v2.2/cloud/before/before-setup-env-1_get-start.html
+  - /cloud/before/before-setup-env-1_get-start.html
 functional_areas:
   - Cloud
   - Setup

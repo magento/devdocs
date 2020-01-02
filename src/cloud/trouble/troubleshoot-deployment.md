@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Troubleshoot deployment
 redirect_from:
-   - /guides/v2.2/cloud/access-acct/trouble.html
-   - /guides/v2.3/cloud/access-acct/trouble.html
+   - /cloud/access-acct/trouble.html
 functional_areas:
   - Cloud
   - Deploy
