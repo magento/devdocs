@@ -39,7 +39,7 @@ Template hints enabled.
 ```
 
 ```bash
-bin/magento cache:clean
+bin/magento cache:clean config full_page
 ```
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.

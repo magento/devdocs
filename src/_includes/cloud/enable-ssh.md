@@ -51,7 +51,7 @@ To create an SSH key pair:
 
    GitHub also uses the key length `-b 4096` in the command. Follow the prompts to complete the key.
 
-1. When prompted to "Enter a file in which to save the key," press **Enter**to save the file to the default location. The prompt displays the location.
+1. When prompted to "Enter a file in which to save the key," press **Enter** to save the file to the default location. The prompt displays the location.
 
 1. When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
 

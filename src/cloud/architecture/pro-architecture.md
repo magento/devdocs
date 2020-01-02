@@ -2,11 +2,9 @@
 group: cloud-guide
 title: Pro architecture
 redirect_from:
-  - /guides/v2.2/cloud/discover-arch.html
-  - /guides/v2.2/cloud/reference/discover-arch.html
-  - /guides/v2.3/cloud/reference/discover-arch.html
-  - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
-  - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
+  - /cloud/discover-arch.html
+  - /cloud/reference/discover-arch.html
+  - /cloud/architecture/pro-architecture-legacy.html
 functional_areas:
   - Cloud
 ---
@@ -176,7 +174,7 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 
 ## Software versions {#cloud-arch-software}
 
-{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
+{{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
 -  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
