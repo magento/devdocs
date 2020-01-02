@@ -9,6 +9,8 @@ In addition, you can choose the component root directory to start development. T
 
 {% include php-dev/component-root.md %}
 
+{% include php-dev/component-required-files.md %}
+
 {:.ref-header}
 Related topic
 
