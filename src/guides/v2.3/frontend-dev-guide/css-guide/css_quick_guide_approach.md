@@ -124,7 +124,7 @@ For example, to extend the Magento_Review module's style, the directory path sho
 To override a Module's styles in your theme:
 
 1. In your theme directory, create Module_Name/web/css/source sub-directory.
-1. Create a _module.less file here. The path to it looks like following:
+1. Create a `_module.less` file in the theme directory. For example:
 
    ```tree
    <theme_dir>/
