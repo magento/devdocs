@@ -97,7 +97,7 @@ To override the parent theme's styles for buttons in your theme:
 1. Add your styles for the button component. If the file is left blank, then no styles are applied for the component.
 
 
-### Extend Module's styles {#module_extend}
+### Extend module styles
 
 To extend a Module's styles in your theme:
 
