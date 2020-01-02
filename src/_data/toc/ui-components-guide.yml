@@ -93,6 +93,10 @@ pages:
         - label: HtmlContent component
           url: /ui_comp_guide/components/ui-htmlcontent.html
 
+        - label: ImagePreview component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-image-preview.html
+
         - label: ImageUploader component
           include_versions: ["2.3"]
           url: /ui_comp_guide/components/image-uploader/
@@ -112,6 +116,10 @@ pages:
 
         - label: Listing (grid) component
           url: /ui_comp_guide/components/ui-listing-grid.html
+
+        - label: Masonry (grid) component
+          include_versions: ["2.3"]
+          url: /ui_comp_guide/components/ui-masonry.html
 
         - label: MassActions component
           url: /ui_comp_guide/components/ui-massactions.html

@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Block referral spam
 redirect_from:
-   - /guides/v2.2/cloud/configure/fastly-vcl-badreferer.html
-   - /guides/v2.3/cloud/configure/fastly-vcl-badreferer.html
+   - /cloud/configure/fastly-vcl-badreferer.html
 functional_areas:
   - Cloud
   - Setup

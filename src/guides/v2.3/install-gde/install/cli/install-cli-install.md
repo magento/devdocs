@@ -68,7 +68,7 @@ magento setup:install --<option>=<value> ... --<option>=<value>
 
 The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
 **Admin credentials:**
@@ -96,6 +96,9 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|Yes|
 |`--db-password`|Magento database instance owner's password.|Yes|
 |`--db-prefix`|Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.<br><br>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.<br><br>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.<br><br>This option enables those customers to share the database server with more than one Magento installation.|No|
+|`--db-ssl-key`|Path to the client key.|No|
+|`--db-ssl-cert`|Path to the client certificate.|No|
+|`--db-ssl-ca`|Path to the server certificate.|No|
 |`--language`|Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering magento info:language:list from the bin directory.)|No|
 |`--currency`|Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering magento info:currency:list from the bin directory.)|No|
 |`--timezone`|Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering magento info:timezone:list from the bin directory.)|No|
@@ -109,12 +112,13 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--cleanup-database`|To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.|No|
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br><br>Default is `SET NAMES utf8;`.|No|
 |`--sales-order-increment-prefix`|Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.|No|
-|`--amqp-host`|{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See RabbitMQ installation for more information about installing and configuring RabbitMQ.<br><br>The hostname where RabbitMQ is installed.|No|
-|`--amqp-port`|{{site.data.var.ee}} only. The port to use to connect to RabbitMQ. The default is 5672.|No|
-|`--amqp-user`|{{site.data.var.ee}} only. The username for connecting to RabbitMQ. Do not use the default user `guest`.|No|
-|`--amqp-password`|{{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password `guest`.|No|
-|`--amqp-virtualhost`|{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is `/`.|No|
-|`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
+|`--amqp-host`|Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See RabbitMQ installation for more information about installing and configuring RabbitMQ.<br><br>The hostname where RabbitMQ is installed.|No|
+|`--amqp-port`|The port to use to connect to RabbitMQ. The default is 5672.|No|
+|`--amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|No|
+|`--amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|No|
+|`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.|No|
+|`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
+|`--consumers-wait-for-messages`|Should consumers wait for a message from the queue? 1 - Yes, 0 - No|No|
 
 **Lock configuration options:**
 
@@ -125,8 +129,13 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--lock-zookeeper-host`|Host and port to connect to Zookeeper cluster when you use `zookeeper` lock provider.<br><br>For example: `127.0.0.1:2181`|Yes, if you set `--lock-provider=zookeeper`|
 |`--lock-zookeeper-path`|The path where Zookeeper will save locks.<br><br>The default path is: `/magento/locks`|No|
 |`--lock-file-path`|The path where file locks will be saved.|Yes, if you set `--lock-provider=file`|
+{:style="table-layout:auto;"}
 
- {:.bs-callout-info}
+**Consumers configuration options:**
+
+{% include config/consumers.md %}
+
+{:.bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 {% include install/sens-data.md %}
@@ -159,13 +168,13 @@ The following example installs Magento with the following options:
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
 
-   ```bash
-   magento setup:install --base-url=http://127.0.0.1/magento2/ \
-    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-    --admin-user=admin --admin-password=admin123 --language=en_US \
-    --currency=USD --timezone=America/Chicago --use-rewrites=1
-   ```
+```bash
+magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-rewrites=1
+```
 
 Messages similar to the following display to indicate a successful installation:
 
@@ -195,7 +204,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
-````
+```
 
 After installation you can create an admin user using the `admin:user:create` command:
 [Create or edit an administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator)
@@ -226,17 +235,17 @@ The following example installs Magento with the following options:
 *  Session data is saved in the database
 *  Uses server rewrites
 
-   ```bash
-    magento setup:install --base-url=http://127.0.0.1/magento2/ \
-    --db-host=localhost --db-name=magento \
-    --db-user=magento --db-password=magento \
-    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-    --admin-user=admin --admin-password=admin123 --language=en_US \
-    --currency=USD --timezone=America/Chicago --cleanup-database \
-    --sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
-   ```
+```bash
+magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--db-host=localhost --db-name=magento \
+--db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin-password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --cleanup-database \
+--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
+```
 
- {:.bs-callout-info}
+{:.bs-callout .bs-callout-info}
 You must enter the command either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 Messages like the following display if the installation is successful:

@@ -5,6 +5,10 @@ functional_areas:
   - Frontend
 ---
 
+{:.bs-callout-warning}
+Magento 2.3.4 restricts the way that custom variables can be used within email templates.
+See [Migrating custom email templates](template-email-migration.html) for more information.
+
 ## Customize email templates {#customize-email-templates}
 
 Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html).
@@ -60,48 +64,13 @@ You can customize header and footer templates using either the [theme](#customiz
 
 ### Customize email content {#customize-content}
 
+{:.bs-callout-warning}
+Custom variables used within email templates in Magento 2.3.4+ must be written in 'strict mode'.
+See [Migrating custom email templates](template-email-migration.html) for more information.
+
 To add the store and sales related information to a template, use system variables.
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
-
-Here is a list of the most commonly used email template variables that are available:
-
-*  Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
-*  Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
-*  Email Logo Image Alt: `{% raw %}{{var logo_alt}}{% endraw %}`
-*  Email Logo Image URL: `{% raw %}{{var logo_url}}{% endraw %}`
-*  Email Logo Image Height: `{% raw %}{{var logo_height}}{% endraw %}`
-*  Email Logo Image Width: `{% raw %}{{var logo_width}}{% endraw %}`
-*  Template CSS: `{% raw %}{{var template_styles|raw}}{% endraw %}`
-*  Base Unsecure URL: `{% raw %}{{config path="web/unsecure/base_url"}}{% endraw %}`
-*  Base Secure URL: `{% raw %}{{config path="web/secure/base_url"}}{% endraw %}`
-*  General Contact Name: `{% raw %}{{config path="trans_email/ident_general/name"}}{% endraw %}`
-*  Sales Representative Contact Name: `{% raw %}{{config path="trans_email/ident_sales/name"}}{% endraw %}`
-*  Sales Representative Contact Email: `{% raw %}{{config path="trans_email/ident_sales/email"}}{% endraw %}`
-*  Custom1 Contact Name: `{% raw %}{{config path="trans_email/ident_custom1/name"}}{% endraw %}`
-*  Custom1 Contact Email: `{% raw %}{{config path="trans_email/ident_custom1/email"}}{% endraw %}`
-*  Custom2 Contact Name: `{% raw %}{{config path="trans_email/ident_custom2/name"}}{% endraw %}`
-*  Custom2 Contact Email: `{% raw %}{{config path="trans_email/ident_custom2/email"}}{% endraw %}`
-*  Store Name: `{% raw %}{{config path="general/store_information/name"}}{% endraw %}`
-*  Store Phone Number: `{% raw %}{{config path="general/store_information/phone"}}{% endraw %}`
-*  Store Hours: `{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`
-*  Country: `{% raw %}{{config path="general/store_information/country_id"}}{% endraw %}`
-*  Region/State: `{% raw %}{{config path="general/store_information/region_id"}}{% endraw %}`
-*  Zip/Postal Code: `{% raw %}{{config path="general/store_information/postcode"}}{% endraw %}`
-*  City: `{% raw %}{{config path="general/store_information/city"}}{% endraw %}`
-*  Street Address 1: `{% raw %}{{config path="general/store_information/street_line1"}}{% endraw %}`
-*  Street Address 2: `{% raw %}{{config path="general/store_information/street_line2"}}{% endraw %}`
-*  Store Contact Address: `{% raw %}{{config path="general/store_information/address"}}{% endraw %}`
-*  Customer Account URL: `{% raw %}{{var this.getUrl($store, 'customer/account/')}}{% endraw %}`
-*  Customer Email: `{% raw %}{{var customer.email}}{% endraw %}`
-*  Customer Name: `{% raw %}{{var customer.name}}{% endraw %}`
-*  Billing Address: `{% raw %}{{var formattedBillingAddress|raw}}{% endraw %}`
-*  Email Order Note: `{% raw %}{{var order.getEmailCustomerNote()}}{% endraw %}`
-*  Order ID: `{% raw %}{{var order.increment_id}}{% endraw %}`
-*  Order Items Grid: `{% raw %}{{layout handle="sales_email_order_items" order=$order area="frontend"}}{% endraw %}`
-*  Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
-*  Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
-*  Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
 
 {:.bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
@@ -111,7 +80,7 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 1. Create a new template or edit an existing template.
 1. Click to place the cursor in the text in which to insert the variable.
-1. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example:
+1. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you are editing and the extensions you may have installed. The following figure shows an example:
 
    ![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable21.png){:width="70%"}{:height="70%"}
 
@@ -402,7 +371,9 @@ The `trans` directive will translate strings into whatever locale is configured 
 The directive supports multiple named parameters, separated by spaces. For example:
 
 ```html
-{% raw %}{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}{% endraw %}
+{% raw %}
+{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
+{% endraw %}
 ```
 
 Please note, that variable assignment must not contain spaces.
@@ -410,47 +381,26 @@ Please note, that variable assignment must not contain spaces.
 Correct:
 
 ```html
-{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{% endraw %}
 ```
 
 Incorrect:
 
 ```html
-{% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+{% endraw %}
 ```
 
-{:.bs-callout-info}
+{:.bs-callout .bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}
 
-We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
-
-*  Supported Desktop Clients
-   *  Apple Mail 7 (OS X 10.9)
-   *  Apple Mail 8 (OS X 10.10)
-   *  Outlook 2003 (Windows 7)
-   *  Outlook 2007 (Windows 7)
-   *  Outlook 2010 (Windows 7)
-   *  Outlook 2013 (Windows 7)
-   *  Outlook 2016 (OS X 10.10)
-*  Supported Mobile Clients
-   *  Native email app (Android 2.3)
-   *  Native email app (Android 4.2)
-   *  Gmail app (Android 4.2)
-   *  Native email app (Blackberry 5 OS)
-   *  iOS 7 (iPhone 5s)
-   *  iOS 8 (iPad Retina)
-   *  iOS 8 (iPad Mini)
-   *  iOS 8 (iPhone 6)
-   *  iOS 8 (iPhone 6 Plus)
-   *  Windows Phone 8
-*  Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
-   *  AOL Mail
-   *  Gmail
-   *  Office 365
-   *  Outlook.com
-   *  Yahoo! Mail
+We test responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly.
+We strive to support all current, modern e-mail clients. Let us know about any client-specific issues you might have.
 
 ## Newsletter templates {#newsletter-templates}
 

@@ -6,8 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_from:
-  - /guides/v2.2/cloud/before/before-project-owner.html
-  - /guides/v2.3/cloud/before/before-project-owner.html
+  - /cloud/before/before-project-owner.html
 ---
 
 After your company purchases a subscription plan for {{site.data.var.ece}}, the only person who initially has access to the project and code is the Project Owner.
