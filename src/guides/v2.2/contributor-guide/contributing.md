@@ -119,7 +119,7 @@ For `version`, the currently supported values are latest [version tags](https://
 
 **Permissions:**
 
--  All permissions granted for all users
+-  All permissions granted for all users.
 
 ### Deploy instance based on PR changes {#deploy-pr}
 
@@ -163,11 +163,11 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 **actions:** When all conditions are passed, all related pull requests will be closed and merged to the current PR:
 
--  Current pull request allows changes from maintainers
--  All mentioned pull requests are open
--  All mentioned pull requests have been created by the same contributor (author)
--  All mentioned pull requests have same target (base) branch
--  All mentioned pull requests can be merged with each other
+-  Current pull request allows changes from maintainers.
+-  All mentioned pull requests are open.
+-  All mentioned pull requests have been created by the same contributor (author).
+-  All mentioned pull requests have same target (base) branch.
+-  All mentioned pull requests can be merged with each other.
 
 **Permissions:**
 

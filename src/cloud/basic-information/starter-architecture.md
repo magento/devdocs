@@ -85,8 +85,8 @@ You can even have multiple applications running in the same project. Building a 
 
 {{site.data.var.ece}} uses:
 
--  Operating system: Debian GNU/Linux 8 (jessie)
--  Web server: [nginx](https://glossary.magento.com/nginx) 1.8
+-  Operating system: Debian GNU/Linux
+-  Web server: [nginx](https://glossary.magento.com/nginx)
 
 You cannot upgrade the operating system and web server software to a new version, but you can configure versions for the following software:
 

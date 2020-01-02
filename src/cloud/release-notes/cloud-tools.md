@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+  - /cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.

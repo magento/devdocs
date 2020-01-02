@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Launch Docker
 redirect_from:
-  - /guides/v2.2/cloud/reference/docker-config.html
-  - /guides/v2.3/cloud/reference/docker-config.html
+  - /cloud/reference/docker-config.html
 functional_areas:
   - Cloud
   - Setup

@@ -1,0 +1,26 @@
+label: Compliance
+pages:
+    - label: Industry Compliance
+      url: /compliance/industry-compliance.html
+      versionless: true
+      children:
+
+      - label: Privacy Regulations
+      
+        children:
+
+        - label: CCPA
+          versionless: true
+          url: /compliance/privacy/ccpa.html
+
+        - label: GDPR
+          versionless: true
+          url: /compliance/privacy/gdpr.html
+
+        - label: PI Reference (M2.x)
+          versionless: true
+          url: /compliance/privacy/pi-data-reference-m2.html
+
+        - label: PI Reference (M1.x)
+          versionless: true
+          url: /compliance/privacy/pi-data-reference-m1.html
