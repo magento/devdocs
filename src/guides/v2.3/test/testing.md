@@ -171,7 +171,7 @@ ignoreErrors:
 
 #### Exclude files and directories from analysis
 
-As needed in some cases, directories and files can be excluded via the PHPStan configuration file:
+As needed in some cases, you can exclude specific directories and files using the `excludes_analyse` section in the PHPStan configuration file:
 `dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/phpstan.neon`.
 
 Example:
