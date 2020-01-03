@@ -89,7 +89,7 @@ See the [`magento dev:tests:run`][] documentation for more information, using th
 
 ### PHPStan
 
-[PHPStan][] is a static analysis tool for PHP. Magento now integrates PHPStan by default.
+[PHPStan][] is a static analysis tool for PHP. Magento integrates PHPStan by default.
 It is available for developers to use in their own work, located at `Magento\Test\Php\LiveCodeTest::testPhpStan()`.
 
 It is run on changed `*.php` files using rule strictness [level 0][] and detects issues such as:
