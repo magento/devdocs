@@ -438,7 +438,7 @@ Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/b
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md`
+`https://github.com/magento/devdocs/blob/master/src/guides/v<version>/release-notes/backward-incompatible-changes/index.md`
 
 Where: `<version>` is the MINOR version of the product (for example, 2.3).
 
