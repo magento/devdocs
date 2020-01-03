@@ -96,7 +96,6 @@ To override the parent theme's styles for buttons in your theme:
 
 1. Add your styles for the button component. If the file is left blank, then no styles are applied for the component.
 
-
 ### Extend module styles
 
 To extend a Module's styles in your theme:
@@ -114,7 +113,6 @@ To extend a Module's styles in your theme:
    ...
    ```
 1. Add additional styles in the `_extend.less` file.
-
 
 For example, to extend the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_extend.less`.
 
@@ -137,7 +135,6 @@ To override module styles in your theme:
    This file overrides the `_module.less` file of the specific module.
 
 1. Add your styles in the `_module.less` file.
-
 
 For example, to override the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_module.less`.
 
