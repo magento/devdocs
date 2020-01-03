@@ -555,8 +555,6 @@ interface MutableInterface
 {
     /**
      * Returns 0, if no value is available
-     *
-     * @return int
      */
     public function getVal(): int;
 
@@ -564,7 +562,6 @@ interface MutableInterface
      * Sets 0 in case a non-integer value is passed
      *
      * @param int|string|bool|float|null $value
-     * @return void
      */
     public function setVal($value): void;
 }
@@ -580,11 +577,10 @@ class LimitedMutableClass implements MutableInterface
 {
     /**
     * Returns integer value
-    *
-    * @return int
     */
     public function getVal(): int
     {
+        ...
     }
 
     /**
@@ -592,6 +588,7 @@ class LimitedMutableClass implements MutableInterface
      */
     public function setVal($value): void
     {
+        ...
     }
 }
 ```
