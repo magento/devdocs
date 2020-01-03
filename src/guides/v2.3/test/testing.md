@@ -144,7 +144,7 @@ class ClassWithIgnoreAnnotation
 }
 ```
 
-#### Adding files/directories to PHPStan blacklist
+#### Adding files and directories to PHPStan blacklist
 
 If some files are broken on purpose, add them to the blacklist to ignore them.
 
