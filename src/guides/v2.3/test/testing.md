@@ -169,7 +169,7 @@ ignoreErrors:
    - '#Constructor of class [a-zA-Z0-9\\_]+ has an unused parameter#'
 ```
 
-#### Exclude directories from analysis using the `excludes_analyse` option
+#### Exclude files and directories from analysis
 
 As needed in some cases, directories and files can be excluded via the PHPStan configuration file:
 `dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/phpstan.neon`.
