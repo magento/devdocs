@@ -16,47 +16,50 @@ View models are available in Magento 2.2 onwards. If your code must be compatibl
 
 ## How to write view models
 
-The following example shows how to add functionality to a core template with custom logic using a view model in the `cart/item/default.phtml` template, which is located in the `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml` file:
+View models can be used by passing the view model class as an argument to a template's block in the page layout configuration file. In the following example snippet, `MyNewViewModel` is the view model class of the OrangeCompany_Catalog module passed as an argument to a block.
 
 ```xml
-<?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceBlock name="checkout.cart.item.renderers.default">
-            <arguments>
-                <argument name="view_model" xsi:type="object">Vendor\CustomModule\ViewModel\MyClass</argument>
-            </arguments>
-        </referenceBlock>
-    </body>
-</page>
+<block name="orangeco.new.viewmodel" template="OrangeCompany_Catalog::example.phtml">
+    <arguments>
+        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+    </arguments>
+</block>
 ```
 
-You must implement the right interface in your `view_model` class (for example `ArgumentInterface`):
+In the following example, the same view model is used with an existing block in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
+
+```xml
+<referenceBlock name="checkout.cart.item.renderers.default">
+    <arguments>
+        <argument name="view_model" xsi:type="object">OrangeCompany\Catalog\ViewModel\MyNewViewModel</argument>
+    </arguments>
+</referenceBlock>
+```
+
+The view model class must always implement the interface `\Magento\Framework\View\Element\Block\ArgumentInterface`. For example:
 
 ```php
-namespace Vendor\CustomModule\ViewModel;
+namespace OrangeCompany\Catalog\ViewModel;
 
-class MyClass implements \Magento\Framework\View\Element\Block\ArgumentInterface
+class MyNewViewModel implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-  public function getTitle()
-  {
-    return 'Hello World';
-  }
+    public function getTitle()
+    {
+      return 'Hello World';
+    }
 }
 ```
 
-Finally, in the `cart/item/default.phtml` template, you can access the public methods of your view model:
+You can access the public methods for the view model class in the template:
 
 ```html
 <?php
 
-/** @var $viewModel \Vendor\CustomModule\ViewModel\MyClass */
-
+/** @var $viewModel \OrangeCompany\Catalog\ViewModel\MyNewViewModel */
 $viewModel = $block->getViewModel();
 
 ?>
 <h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
-
 ```
 
 ## Examples of View models in Magento

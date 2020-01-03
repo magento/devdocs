@@ -58,8 +58,8 @@ There are two mutation queries in GraphQl which can be use to set the payment me
 
 |Mutation|Description|
 |--- |--- |
-|`setPaymentMethodOnCart`|Sets the payment method for your order|
-|`setPaymentMethodAndPlaceOrder`|Sets the payment method and then immediately places your order. In this case ["Step 10. Place the order"]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html) can be skipped|
+|`setPaymentMethodOnCart`|Sets the payment method for your order.|
+|`setPaymentMethodAndPlaceOrder`| **Deprecated** Sets the payment method and then immediately places your order. In this case ["Step 10. Place the order"]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html) can be skipped.|
 
 ### Set payment method on cart {#setPaymentMethodOnCart}
 
@@ -70,7 +70,7 @@ Use the `setPaymentMethodOnCart` mutation to set the payment method for your ord
 {:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
-```text
+```graphql
 mutation {
   setPaymentMethodOnCart(input: {
       cart_id: "{ CART_ID }"
@@ -109,9 +109,12 @@ If the operation is successful, the response contains the code of the selected p
 
 Use the `setPaymentMethodAndPlaceOrder` mutation to set the payment method and place the order.
 
+{:.bs-callout-warning}
+The `setPaymentMethodAndPlaceOrder` mutation has been deprecated.
+
 **Request:**
 
-```text
+```graphql
 mutation {
   setPaymentMethodAndPlaceOrder(input: {
       cart_id: "{ CART_ID }"

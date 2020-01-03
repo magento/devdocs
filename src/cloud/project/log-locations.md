@@ -5,8 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_from:
-  - /guides/v2.2/cloud/trouble/environments-logs.html
-  - /guides/v2.3/cloud/trouble/environments-logs.html
+  - /cloud/trouble/environments-logs.html
 ---
 Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook].
 
