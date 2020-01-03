@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: Alert widget
 ---
 
-The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento modal widget].
+The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the [Magento confirmation widget] which in turn extends the [Magento modal widget].
 
 The alert widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`].
 
@@ -31,7 +31,8 @@ $('#init_element').alert({
 ```javascript
 require([
     'Magento_Ui/js/modal/alert'
-], function(alert) { // Variable that represents the `alert` function
+    'jquery'
+], function(alert, $) { // Variable that represents the `alert` function
 
     alert({
         title: $.mage.__('Some title'),
@@ -249,6 +250,7 @@ require([
 
 ![Alert Widget]({{ site.baseurl }}/common/images/widget/alert-widget-result.png)
 
+[Magento confirmation widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html
 [Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/alert.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
