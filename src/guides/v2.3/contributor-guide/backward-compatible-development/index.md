@@ -438,15 +438,15 @@ Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/b
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md`
+`https://github.com/magento/devdocs/blob/master/src/guides/v<version>/release-notes/backward-incompatible-changes/index.md`
 
-Where: `<version>` is the MINOR version of the product (2.1, 2.2, 2.3, etc).
+Where: `<version>` is the MINOR version of the product (for example, 2.3).
 
-Example: [`https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md`][2.2-bic-page].
+Example: [`https://github.com/magento/devdocs/blob/master/src/guides/v2.3/release-notes/backward-incompatible-changes/index.md`][2.3-bic-page].
 
-Update the page for the *next* MINOR product release when working in the `develop` branch of Magento.
+Update the page for the *next* MINOR product release when working in the `2.x-develop` branch of the DevDocs repository.
 
-For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 2.3 becomes available for editing.
+For example, when 2.3 is released, a new `backward-incompatible-changes.md` for 2.4 becomes available for editing.
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
@@ -459,4 +459,4 @@ In order to update the page, create a PR to the DevDocs repository with your cha
 
 [versioning]: {{ page.baseurl }}/extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
-[2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md
+[2.3-bic-page]: https://github.com/magento/devdocs/blob/master/src/guides/v2.3/release-notes/backward-incompatible-changes/index.md
