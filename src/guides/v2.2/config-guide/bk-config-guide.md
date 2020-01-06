@@ -36,4 +36,4 @@ You can configure the Magento application in any of the following ways:
    *  [Install and configure Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
    *  [Split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master.html)
    *  [Message queues]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
-   *  [Set up Magento B2B]({{ page.baseurl }}/cloud/configure/setup-b2b.html)
+   *  [Set up Magento B2B]({{ site.baseurl }}/cloud/configure/setup-b2b.html)

@@ -112,6 +112,7 @@ pages:
 
         - label: Magento Commerce (Cloud) 2.2.0 Release Notes
           url: /cloud/release-notes/CloudReleaseNotes2.2.html
+          versionless: true
 
         - label: Component Status
           url: /release-notes/release-candidate/component-status.html

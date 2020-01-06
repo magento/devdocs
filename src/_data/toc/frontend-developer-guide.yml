@@ -178,6 +178,9 @@ pages:
         - label: Example theme translation dictionary
           url: /frontend-dev-guide/translations/translate_practice.html
 
+    - label: Form validation
+      url: /frontend-dev-guide/validations/form-validation.html
+
     - label: Tools
       include_versions: ["2.2", "2.3"]
       url: /frontend-dev-guide/tools/tools_overview.html
