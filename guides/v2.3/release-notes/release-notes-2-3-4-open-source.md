@@ -3,8 +3,6 @@ group: release-notes
 title: Magento Open Source 2.3.4 Release Notes
 ---
 
-*Patch code and release notes published on  2020*
-
 Magento Open Source 2.3.4 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
 This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
@@ -122,37 +120,25 @@ We've fixed hundreds of issues in the Magento 2.3.4 core code.
 
 ### Installation, upgrade, deployment
 
-
-
-
 ### Backend
-
-
 
 ### Bundle products
 
-
 ### Cache
 
-
-
 ### Cart and checkout
-
-
 
 ### Cart Price rules
 
 ### Catalog
 
-
-
 ## Community contributions
 
- We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
-*  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
+* If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
-*  The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
+* The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
 ### Partner contributions
 
