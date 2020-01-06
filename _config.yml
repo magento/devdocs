@@ -29,6 +29,9 @@ versions:
    -
       name: "2.3"
       url: /guides/v2.3/
+   -
+      name: "2.4"
+      url: /guides/v2.4/
 
 collections:
   videos:
@@ -202,3 +205,7 @@ githuburl22: https://github.com/magento/devdocs/tree/master/src/guides/v2.2/
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/
+
+# 2.4 variables
+gdeurl24: /guides/v2.4/
+githuburl24: https://github.com/magento/devdocs/tree/master/src/guides/v2.4/
