@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+  - /cloud/release-notes/CloudReleaseNotes.html
 ---
 
 These release notes provide information about the latest improvements to the {{site.data.var.csuite}} which is designed to deploy and manage {{ site.data.var.ee }} installations and upgrades on the Cloud platform. The suite includes the following packages:
@@ -19,6 +19,7 @@ These release notes provide information about the latest improvements to the {{s
 See the following topics to get the latest release information for each component:
 
 -  [ece-tools]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html)
+-  [{{ site.data.var.mcc }}]({{ site.baseurl }}/cloud/release-notes/mcc-release-notes.html)
 -  [{{site.data.var.mcd}}]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html)
 -  [{{site.data.var.mcp}}]({{ site.baseurl }}/cloud/release-notes/mcp-release-notes.html)
 

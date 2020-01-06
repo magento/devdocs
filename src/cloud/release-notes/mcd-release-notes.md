@@ -7,8 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment
-These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
 The {{site.data.var.mcd}} package uses the following version sequence: `<major>.<minor>.<patch>`.
 

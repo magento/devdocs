@@ -1,12 +1,10 @@
 ---
 group: cloud-guide
-title: Release notes for magento-cloud-patches
+title: Magento Cloud Patches release notes
 functional_areas:
   - Cloud
   - Setup
   - Configuration
-redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).

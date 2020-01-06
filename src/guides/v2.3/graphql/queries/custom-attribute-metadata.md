@@ -137,6 +137,7 @@ Attribute |  Data Type | Description
 `attribute_options` | [`AttributeOption`] | An array of attribute options
 `attribute_type` | String | The data type of the attribute
 `entity_type` | String | The type of entity that defines the attribute
+`input_type` | String | The frontend input type of the attribute
 
 ### AttributeOption object
 

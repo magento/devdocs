@@ -6,10 +6,10 @@ functional_areas:
   - Setup
 ---
 
-Use the following instructions to import your {{site.data.var.ee}} code into your current {{ site.data.var.ece }} project code.
+Use the following instructions to import your {{site.data.var.ee}} code into a current {{ site.data.var.ece }} environment.
 
 {:.bs-callout-warning}
-When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master` which removes all data, sites, stores, and other development work you have done on the project. If you want to keep any files or directories, copy them to a directory outside of your project.
+When you force push code from an existing Git branch to the branch for your {{site.data.var.ece}} environment, you overwrite the project code in the `master` branch which removes all data, sites, stores, and other development work you have done in the Cloud environment. If you want to keep any files or directories, copy them to a directory outside of your project.
 
 ## Required information
 
@@ -51,14 +51,14 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 
    Verify that the remote branch configuration matches the following sample configuration, with your project name instead of `ikyyrqvlgnrai`.
 
-   ```bash
+   ```terminal
    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
    prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
    prev-project    git@github.com:mygitusername/myeereponame.git (push)
-   ```
+    ```
 
 1. Checkout the Cloud project `master` branch.
 
@@ -70,10 +70,16 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 
    ```bash
    git fetch cloud-project
+   ```
+
+   ```bash
    git branch -u cloud-project/master
    ```
 
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
+
+{:.bs-callout-info}
+Before you begin the import process, make sure that you have completed the steps to [prepare your existing Magento Commerce system]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html).
 
 After you have completed the git reference configuration, you can import the {{site.data.var.ee}} code.
 
@@ -140,13 +146,13 @@ To drop and re-create the Cloud database:
 
 1. Drop the database. At the `MariaDB [main]>` prompt, enter:
 
-   ```bash
+   ```shell
    drop database main;
    ```
 
 1. Re-create the database:
 
-   ```bash
+   ```shell
    create database main;
    ```
 
@@ -199,8 +205,8 @@ To update the unsecure base URL:
    UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
    ```
 
-    {:.bs-callout-warning}
-    The base URL _must_ end with a `/` character.
+   {:.bs-callout-warning}
+   The base URL _must_ end with a `/` character.
 
 1. Confirm the change by entering the following command:
 

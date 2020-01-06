@@ -1,10 +1,12 @@
 ---
 group: cloud-guide
-title: Release notes for ece-tools
+title: ECE-Tools release notes
 functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The [ece-tools package]({{ site.baseurl }}/cloud/ is a set of scripts and tools designed to manage and deploy Cloud projects. These release notes describe the latest improvements to this package, which is part of the [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
@@ -28,9 +30,12 @@ The release notes include:
 
 -  {:.new}**Improved validation**–Added validation to check installed service versions against the EOL date for each service. Now, customers recieve a notification if a service version is within three months of the EOL date, and a warning if the EOL date is in the past.<!--MAGECLOUD-4076-->
 
-- {:.fix}Fixed an issue that caused the build process to fail if the `config.php` file is empty.<!--MAGECLOUD-4127-->
+-  {:.fix}Fixed an issue that caused the build process to fail if the `config.php` file is empty.<!--MAGECLOUD-4127-->
 
-- {:.fix}Fixed an issue in the Elastic Suite configuration process so that the default configuration is overwritten as expected when you configure the `ELASTICSUITE_CONFIGURATION` deploy variable without the `_merge` option.<!--MAGECLOUD-4388-->
+-  {:.fix}Fixed an issue in the Elastic Suite configuration process so that the default configuration is overwritten as expected when you configure the `ELASTICSUITE_CONFIGURATION` deploy variable without the `_merge` option.<!--MAGECLOUD-4388-->
+
+{:.bs-callout-info}
+Before updating to {{ site.data.var.ct }} version 2002.1.0, review the [backward incompatible changes]({{ site.baseurl }}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to update the configuration or processes for your {{ site.data.var.ece }} project.
 
 ## v2002.0.22
 
@@ -262,7 +267,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
 
-   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_exclude_themes) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_exclude_themes) content.
+   -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the [SCD_MATRIX]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) to control theme configuration.
 
    -  <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{ site.baseurl }}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ site.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
 

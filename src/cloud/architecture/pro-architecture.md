@@ -2,11 +2,9 @@
 group: cloud-guide
 title: Pro architecture
 redirect_from:
-  - /guides/v2.2/cloud/discover-arch.html
-  - /guides/v2.2/cloud/reference/discover-arch.html
-  - /guides/v2.3/cloud/reference/discover-arch.html
-  - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
-  - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
+  - /cloud/discover-arch.html
+  - /cloud/reference/discover-arch.html
+  - /cloud/architecture/pro-architecture-legacy.html
 functional_areas:
   - Cloud
 ---

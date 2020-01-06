@@ -556,10 +556,18 @@ pages:
           url: /cloud/release-notes/ece-release-notes.html
           versionless: true
 
+        - label: magento-cloud-components
+          url: /cloud/release-notes/mcc-release-notes.html
+          versionless: true
+        
         - label: magento-cloud-docker
           url: /cloud/release-notes/mcd-release-notes.html
           versionless: true
 
         - label: magento-cloud-patches
           url: /cloud/release-notes/mcp-release-notes.html
+          versionless: true
+
+        - label: Backward incompatible changes
+          url: /cloud/release-notes/backward-incompatible-changes.html
           versionless: true
