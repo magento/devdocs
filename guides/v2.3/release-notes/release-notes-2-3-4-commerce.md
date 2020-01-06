@@ -145,20 +145,8 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6040-->
 * Magento no longer disables the cache when you run `composer update`. *Fix submitted by adrian-martinez-interactiv4 in pull request [24892](https://github.com/magento/magento2/pull/24892)*. [GitHub-17634](https://github.com/magento/magento2/issues/17634)
 
-<!--- ENGCOM-6198-->
-*Fix submitted by korostii in pull request [24947](https://github.com/magento/magento2/pull/24947)*. [GitHub-24019](https://github.com/magento/magento2/issues/24019)
-
-<!--- ENGCOM-5582-->
-*Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
-
 <!--- ENGCOM-5724-->
 * Vendor names can now contain numbers. Previously, Magento threw an error. *Fix submitted by Jason Sylvester in pull request [24324](https://github.com/magento/magento2/pull/24324)*. [GitHub-8037](https://github.com/magento/magento2/issues/8037)
-
-<!--- ENGCOM-6205-->
-*Fix submitted by Anton Kaplya in pull request [25357](https://github.com/magento/magento2/pull/25357)*. [GitHub-25294](https://github.com/magento/magento2/issues/25294)
-
-<!--- ENGCOM-6218-->
-*Fix submitted by Malyovanets Nickolas in pull request [25398](https://github.com/magento/magento2/pull/25398)*. [GitHub-13561](https://github.com/magento/magento2/issues/13561)
 
 <!--- MC-19642-->
 * Single pipes in `composer.json` files have been changed to double pipes.
@@ -194,12 +182,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5534-->
 * Bundle products now show the correct price when bundle options include only one multiple select option. *Fix submitted by Rani Priya in pull request [23902](https://github.com/magento/magento2/pull/23902)*. [GitHub-23886](https://github.com/magento/magento2/issues/23886)
-
-<!--- ENGCOM-5773-->
-*Fix submitted by Arushi Bansal in pull request [24077](https://github.com/magento/magento2/pull/24077)*. [GitHub-23890](https://github.com/magento/magento2/issues/23890)
-
-<!--- ENGCOM-5953-->
-*Fix submitted by Pieter Hoste in pull request [24703](https://github.com/magento/magento2/pull/24703)*. [GitHub-13126](https://github.com/magento/magento2/issues/13126), [GitHub-14112](https://github.com/magento/magento2/issues/14112)
 
 ### B2B
 
@@ -269,10 +251,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-17417-->
 * You can now export requisition lists into CSV format. B2B buyers can then perform batch modification for subsequent import into the shopping cart or import back into the requisition list.
 
-<!--- MC-19631-->
-
-<!--- MC-17332-->
-
 ### Cache
 
 <!--- MC-19712-->
@@ -288,17 +266,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19053-->
 * Guest users can now checkout after persistent shopping cart has been disabled. Previously, Magento displayed this error: `No cart with such entityId=0`.
-
-<!--- MC-99490-->
-
-gift messaging options are not saved with multi-address checkout
-add 2 random products to the cart
-go to cart
-add separate gift message and gift wrapping for each item
-select multi-address checkout
-gift messaging and gift wrapping is empty
-
-selected gift messaging and wrapping is available on multi address checkout
 
 <!--- MC-19152-->
 * Magento no longer displays custom dropdown customer address attribute option IDs  on the Review & Payment of the checkout workflow when a guest checks out. Previously, Magento displayed the option ID instead of the option label for the selected attribute option.
@@ -325,18 +292,13 @@ selected gift messaging and wrapping is available on multi address checkout
 * You can now use REST to add a  product with customizable options (for example, type checkbox) to the cart. Previously, Magento threw an informative error when you used the POST /V1/guest-carts/{cartId}/items endpoint. *Fix submitted by Denis Kopylov in pull request [23871](https://github.com/magento/magento2/pull/23871)*. [GitHub-23863](https://github.com/magento/magento2/issues/23863)
 
 <!--- ENGCOM-5513-->
-** Validation logic has been added to the **Minimum Qty Allowed in Shopping Cart**  field on **Store** > **Configurations** > **Catalog** > **Inventory**. *Fix submitted by Eden Duong in pull request [23896](https://github.com/magento/magento2/pull/23896)*. [GitHub-23895](https://github.com/magento/magento2/issues/23895)
+* Validation logic has been added to the **Minimum Qty Allowed in Shopping Cart**  field on **Store** > **Configurations** > **Catalog** > **Inventory**. *Fix submitted by Eden Duong in pull request [23896](https://github.com/magento/magento2/pull/23896)*. [GitHub-23895](https://github.com/magento/magento2/issues/23895)
 
 <!--- ENGCOM-5511-->
 * Magento now displays correct product quantities on the Items Ordered  tab of the order page when the price includes a decimal value.  *Fix submitted by Eden Duong in pull request [23943](https://github.com/magento/magento2/pull/23943)*. [GitHub-23940](https://github.com/magento/magento2/issues/23940)
 
 <!--- ENGCOM-5454-->
 * Magento now saves schedule update settings that are set in **Admin** > **Catalog** > **Categories** > **Category** > **Schedule Design Update** as expected when you change store view. *Fix submitted by kcnariya in pull request [23983](https://github.com/magento/magento2/pull/23983)*. [GitHub-23982](https://github.com/magento/magento2/issues/23982)
-
-<!--- ENGCOM-5521-->
-
-Quote Item Prices are NULL in cart related events
-*Fix submitted by Eden Duong in pull request [23839](https://github.com/magento/magento2/pull/23839)*. [GitHub-18685](https://github.com/magento/magento2/issues/18685)
 
 <!--- ENGCOM-5685-->
 * You can now enable the **uploaded file of file type custom** option for a product from the shopping cart. *Fix submitted by Rani Priya in pull request [24240](https://github.com/magento/magento2/pull/24240)*. [GitHub-24239](https://github.com/magento/magento2/issues/24239)
@@ -348,9 +310,6 @@ Quote Item Prices are NULL in cart related events
 <!--- ENGCOM-5649-->
 * Magento now refreshes the shopping cart as expected when you remove a product from the cart side block. Previously, when you deleted a product from the shopping cart side block, Magento did not update the shopping cart. *Fix submitted by Ravi Chandra in pull request [22478](https://github.com/magento/magento2/pull/22478)*. [GitHub-11292](https://github.com/magento/magento2/issues/11292)
 
-<!--- ENGCOM-5732-->
-*Fix submitted by Geeta Modi in pull request [24254](https://github.com/magento/magento2/pull/24254)*. [GitHub-21450](https://github.com/magento/magento2/issues/21450)
-
 <!--- ENGCOM-5779-->
 * Magento now correctly calculates minicart height when child items contain margins. *Fix submitted by Shankar Konar in pull request [24451](https://github.com/magento/magento2/pull/24451)*. [GitHub-24441](https://github.com/magento/magento2/issues/24441)
 
@@ -361,7 +320,7 @@ Quote Item Prices are NULL in cart related events
 * You can now update the quantity of a product measured in decimals from the shopping cart when the **Qty uses decimal** setting is enabled. Previously, Magento did not update the product quantity. *Fix submitted by Rani Priya in pull request [24510](https://github.com/magento/magento2/pull/24510)*. [GitHub-24509](https://github.com/magento/magento2/issues/24509)
 
 <!--- ENGCOM-5752-->
-* The “**Shopping Cart”** label has been changed to **Mini Cart** in the sidebar. *Fix submitted by Sunil in pull request [24411](https://github.com/magento/magento2/pull/24411)*. [GitHub-24409](https://github.com/magento/magento2/issues/24409)
+* The **Shopping Cart** label has been changed to **Mini Cart** in the sidebar. *Fix submitted by Sunil in pull request [24411](https://github.com/magento/magento2/pull/24411)*. [GitHub-24409](https://github.com/magento/magento2/issues/24409)
 
 <!--- ENGCOM-5807-->
 * The **Clear Shopping Cart** button now works as expected when running Magento with Internet Explorer. *Fix submitted by Eden Duong in pull request [24499](https://github.com/magento/magento2/pull/24499)*.  [GitHub-24491](https://github.com/magento/magento2/issues/24491)
@@ -396,30 +355,7 @@ Quote Item Prices are NULL in cart related events
 <!--- ENGCOM-6127-->
 *Fix submitted by skylineop in pull request [24771](https://github.com/magento/magento2/pull/24771)*. [GitHub-15959](https://github.com/magento/magento2/issues/15959)
 
-<!--- MC-21756-->
-
 ### Catalog
-
-<!--- MC-21755-->
-Changing Attributes sets doesn't remove attribute from layered navigation and search
-
-<!--- MC-19737-->
-Date type field saving incorrect value for a store in different timezone
-Expected Results
-The Birthday in the mini cart and cart page should be 30/07/2019.
-
-Actual Results
-The Birthday in the mini cart and cart page is showing 29/07/2019.
-
-4- In Stores > Configuration > Catalog > Catalog > Date & Time Custom Options
-Set Use Javascript Calendar to Yes
-
-5- In Catalog > Products create a new Product then add option to Customizable Option
-The Customizable Option should be required
-Option Type : Date
-Option Title : Birthday
-
-6- in the frontend product detail page chose Birthday as July 30 2019 then add it to the cart
 
 <!--- MC-19398-->
 * Editing the attribute set of a disabled product no longer enables the product on the storefront.
@@ -438,10 +374,6 @@ Option Title : Birthday
 
 <!--- MAGETWO-45666-->
 * Magento now displays the `Refresh Cache` message as expected when you change the layout of the category page.
-
-<!--- MC-17606-->
-inventory
-[GitHub-23319](https://github.com/magento/magento2/issues/23319)
 
 <!--- MC-16650-->
 * Catalog search layered navigation results now include product attributes of type price.
@@ -475,23 +407,12 @@ Ask Misha to clarify whether the price attribute specifically or any attribute t
 * Type declarations for the `$condition` arguments were removed from two private methods that were created during recent refactoring of product collection code.
 Ask Misha
 
-<!--- ENGCOM-6065-->
-*Fix submitted by Mahesh Singh in pull request [24973](https://github.com/magento/magento2/pull/24973)*. [GitHub-24964](https://github.com/magento/magento2/issues/24964)
-
-<!--- MC-18918-->
-
-<!--- MC-15341--> known issue
-
 ### CatalogInventory
 
 <!--- MC-17524-->
 * You can now add a child product to the shopping cart idf it does not have  a default source assigned
 
-<!--- MC-22131--> Ask Misha
-
 ### Catalog rule ee only
-
-<!--- MC-10974-->
 
 <!--- MC-22135-->
 * Magento now correctly applies Catalog Price rules in deployments where the time zone is set to `EEST` (Europe/Helsinki) and `Locale = Finnish (Finland)`.
@@ -600,7 +521,7 @@ ee only
 ### Cron
 
 <!--- ENGCOM-5717-->
-* A new flag has been added to the bin/magento cron:install command that permits you to add only mandatory entries to the crontab file of the server on which Magento is running. The --non-optional flag (or -d for short) adds only one or three possible lines to the crontab file. Without this flag, bin/magento cron:install adds three lines to the crontab of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
+* A new flag has been added to the `bin/magento cron:install` command that permits you to add only mandatory entries to the `crontab` file of the server on which Magento is running. The `--non-optional` flag (or `-d` for short) adds only one or three possible lines to the `crontab` file. Without this flag, `bin/magento cron:install` adds three lines to the `crontab` file of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
 
 <!--- ENGCOM-5934-->
 * The `php bin/magento cron:run` command now creates adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
@@ -653,8 +574,6 @@ ee only
 
 ### Declarative schema
 
-<!--- MC-22807-->
-
 <!--- ENGCOM-6166-->
 * The data/schema patch **getAliases()** method now works as expected. *Fix submitted by korostii in pull request [25265](https://github.com/magento/magento2/pull/25265)*. [GitHub-23031](https://github.com/magento/magento2/issues/23031)
 
@@ -671,16 +590,8 @@ ee only
 <!--- MC-21788-->
 * Dynamic block content is now invalidated as expected when the store view is changed in a multistore deployment.
 
-<!--- MC-19851-->
-
-<!--- MC-19000-->
-
-<!--- MC-22387-->ee only
-
 <!--- MC-13951-->
 * Schema upgrades no longer result in unexpected foreign key re-creation and column modifications.
-
-<!--- MC-19738--> ee only
 
 ### EAV
 
@@ -699,63 +610,17 @@ ee only
 <!--- ENGCOM-5977-->
 * The `eav_attribute_label` table now contains a unique key constraint on the (`store_id`, `attribute_id`) column pair. *Fix submitted by KaushikChavda in pull request [24582](https://github.com/magento/magento2/pull/24582)*. [GitHub-24581](https://github.com/magento/magento2/issues/24581)
 
-<!--- ENGCOM-5367-->
-*Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
-
-<!--- MC-19031-->
-
 ### Email
-
-<!--- ENGCOM-5571-->
-*Fix submitted by Eden Duong in pull request [23684](https://github.com/magento/magento2/pull/23684)*. [GitHub-23646](https://github.com/magento/magento2/issues/23646)
-
-<!--- ENGCOM-5626-->
-*Fix submitted by Eden Duong in pull request [24138](https://github.com/magento/magento2/pull/24138)*. [GitHub-24137](https://github.com/magento/magento2/issues/24137)
-
-<!--- ENGCOM-5710-->
-*Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24312](https://github.com/magento/magento2/issues/24312)
-
-<!--- ENGCOM-5971-->
-*Fix submitted by Roman Kis in pull request [24783](https://github.com/magento/magento2/pull/24783)*. [GitHub-23295](https://github.com/magento/magento2/issues/23295)
 
 <!--- ENGCOM-6034-->
 * The Registration and Contact us pages now correctly handle customer names that contain non-ASCII characters. Previously, if the customer name contained non-ASCII characters, the user did not receive the email. *Fix submitted by elvinristi in pull request [24906](https://github.com/magento/magento2/pull/24906)*. [GitHub-24902](https://github.com/magento/magento2/issues/24902)
 
-### Frameworks
-
-<!--- MC-19686-->
-
-<!--- MC-17633-->
-
-<!--- MC-19701-->
-
-<!--- MAGETWO-99401-->
-
-<!--- MC-19250-->
-
-<!--- MC-18193-->
-
-<!--- MC-21481-->
-
-<!--- MC-22153-->
-
 #### JavaScript framework
-
-<!--- ENGCOM-5815-->
-*Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
 
 <!--- ENGCOM-5994-->
 * Unnecessary define checks have been removed from JavaScript modules that are used by requireJS. *Fix submitted by Bartłomiej Szubert in pull request [24833](https://github.com/magento/magento2/pull/24833)*. [GitHub-22747](https://github.com/magento/magento2/issues/22747)
 
 ### General fixes
-
-<!--- MC-21568-->
-
-<!--- MC-19904-->
-
-<!--- MAGETWO-94919-->
-
-<!--- MC-19791-->
 
 <!--- ENGCOM-5520-->
 * Basic validation steps have been added to fields on the **Store** > **Configuration** > **Catalog** page. *Fix submitted by Eden Duong in pull request [23723](https://github.com/magento/magento2/pull/23723)*. [GitHub-23721](https://github.com/magento/magento2/issues/23721)
@@ -763,166 +628,21 @@ ee only
 <!--- ENGCOM-5468-->
 * Magento now displays an error message when validation fails when you click **Generate** on the Manage Coupon Codes page and the applicable sales rule has the **Use Auto Generation** setting is enabled. *Fix submitted by Eden Duong in pull request [23781](https://github.com/magento/magento2/pull/23781)*. [GitHub-23778](https://github.com/magento/magento2/issues/23778)
 
-<!--- ENGCOM-5468-->
-*Fix submitted by Eden Duong in pull request [23781](https://github.com/magento/magento2/pull/23781)*. [GitHub-23778](https://github.com/magento/magento2/issues/23778)
-
 <!--- ENGCOM-5572-->
 * Magento now correctly redirects you to the customer account page when you click the Back button on the Manage Addresses page. *Fix submitted by Eden Duong in pull request [24079](https://github.com/magento/magento2/pull/24079)*. [GitHub-24058](https://github.com/magento/magento2/issues/24058)
-
-<!--- ENGCOM-5528-->
-*Fix submitted by Eden Duong in pull request [23925](https://github.com/magento/magento2/pull/23925)*. [GitHub-23924](https://github.com/magento/magento2/issues/23924)
-
-<!--- ENGCOM-5538-->
-*Fix submitted by Eden Duong in pull request [23985](https://github.com/magento/magento2/pull/23985)*. [GitHub-23984](https://github.com/magento/magento2/issues/23984)
-
-<!--- ENGCOM-5577-->
-*Fix submitted by Eden Duong in pull request [24000](https://github.com/magento/magento2/pull/24000)*. [GitHub-23999](https://github.com/magento/magento2/issues/23999)
-
-<!--- ENGCOM-5594-->
-*Fix submitted by Pieter Hoste in pull request [24001](https://github.com/magento/magento2/pull/24001)*. [GitHub-23619](https://github.com/magento/magento2/issues/23619)
-
-<!--- ENGCOM-5559-->
-*Fix submitted by Renon Stewart in pull request [24054](https://github.com/magento/magento2/pull/24054)*. [GitHub-22338](https://github.com/magento/magento2/issues/22338)
-
-<!--- ENGCOM-5631-->
-*Fix submitted by Sergey Solo in pull request [23918](https://github.com/magento/magento2/pull/23918)*. [GitHub-5901](https://github.com/magento/magento2/issues/5901)
-
-<!--- ENGCOM-5638-->
-*Fix submitted by Eden Duong in pull request [24083](https://github.com/magento/magento2/pull/24083)*. [GitHub-24082](https://github.com/magento/magento2/issues/24082)
-
-<!--- ENGCOM-5655-->
-*Fix submitted by Eden Duong in pull request [24165](https://github.com/magento/magento2/pull/24165)*. [GitHub-24164](https://github.com/magento/magento2/issues/24164)
-
-<!--- ENGCOM-5661-->
-*Fix submitted by Eden Duong in pull request [24170](https://github.com/magento/magento2/pull/24170)*. [GitHub-24169](https://github.com/magento/magento2/issues/24169)
-
-<!--- ENGCOM-5659-->
-*Fix submitted by Eden Duong in pull request [24173](https://github.com/magento/magento2/pull/24173)*. [GitHub-24172](https://github.com/magento/magento2/issues/24172)
-
-<!--- ENGCOM-5672-->
-*Fix submitted by Eden Duong in pull request [24205](https://github.com/magento/magento2/pull/24205)*. [GitHub-24204](https://github.com/magento/magento2/issues/24204)
-
-<!--- ENGCOM-5592-->
-*Fix submitted by Ihor Sviziev in pull request [23325](https://github.com/magento/magento2/pull/23325)*. [GitHub-23324](https://github.com/magento/magento2/issues/23324)
-
-<!--- ENGCOM-5682-->
-*Fix submitted by Eden Duong in pull request [24249](https://github.com/magento/magento2/pull/24249)*. [GitHub-24248](https://github.com/magento/magento2/issues/24248)
-
-<!--- ENGCOM-5704-->
-*Fix submitted by Eden Duong in pull request [24294](https://github.com/magento/magento2/pull/24294)*. [GitHub-24293](https://github.com/magento/magento2/issues/24293)
-
-<!--- ENGCOM-5733-->
-*Fix submitted by Alexander Taranovsky in pull request [24331](https://github.com/magento/magento2/pull/24331)*. [GitHub-24330](https://github.com/magento/magento2/issues/24330)
-
-<!--- ENGCOM-5739-->
-*Fix submitted by ochnygosch in pull request [24367](https://github.com/magento/magento2/pull/24367)*. [GitHub-24362](https://github.com/magento/magento2/issues/24362)
-
-<!--- ENGCOM-5761-->
-*Fix submitted by Sergey Solo in pull request [24336](https://github.com/magento/magento2/pull/24336)*. [GitHub-2228](https://github.com/magento/magento2/issues/2228)
 
 <!--- ENGCOM-5762-->
 * The New Block form no longer displays a **Store View** field when your deployment is in single-store mode. *Fix submitted by Eden Duong in pull request [24397](https://github.com/magento/magento2/pull/24397)*. [GitHub-24387](https://github.com/magento/magento2/issues/24387)
 
-<!--- ENGCOM-5131-->
-*Fix submitted by Maksym Novik in pull request [21424](https://github.com/magento/magento2/pull/21424)*. [GitHub-16852](https://github.com/magento/magento2/issues/16852)
-
-<!--- ENGCOM-5805-->
-*Fix submitted by Ashutosh Srivastva in pull request [24502](https://github.com/magento/magento2/pull/24502)*. [GitHub-24410](https://github.com/magento/magento2/issues/24410)
-
-<!--- ENGCOM-5746-->
-*Fix submitted by Denis Solovyov in pull request [24392](https://github.com/magento/magento2/pull/24392)*. [GitHub-24329](https://github.com/magento/magento2/issues/24329)
-
-<!--- ENGCOM-5840-->
-*Fix submitted by Alexandre Thurow in pull request [24589](https://github.com/magento/magento2/pull/24589)*. [GitHub-23473](https://github.com/magento/magento2/issues/23473)
-
-<!--- ENGCOM-5863-->
-*Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
-
-<!--- ENGCOM-5909-->
-*Fix submitted by Yurii in pull request [24661](https://github.com/magento/magento2/pull/24661)*. [GitHub-24646](https://github.com/magento/magento2/issues/24646)
-
-<!--- ENGCOM-5640-->
-*Fix submitted by Jamie Saunders in pull request [23827](https://github.com/magento/magento2/pull/23827)*. [GitHub-23824](https://github.com/magento/magento2/issues/23824)
-
-<!--- ENGCOM-6043-->
-*Fix submitted by Bartłomiej Szubert in pull request [24927](https://github.com/magento/magento2/pull/24927)*. [GitHub-24710](https://github.com/magento/magento2/issues/24710)
-
-<!--- ENGCOM-5738-->
-*Fix submitted by Oleksii Lisovyi in pull request [24345](https://github.com/magento/magento2/pull/24345)*. [GitHub-12560](https://github.com/magento/magento2/issues/12560)
-
-<!--- ENGCOM-6158-->
-*Fix submitted by Mateusz Krzeszowiak in pull request [25233](https://github.com/magento/magento2/pull/25233)*. [GitHub-25231](https://github.com/magento/magento2/issues/25231)
-
 <!--- ENGCOM-6158-->
 * Images now change as expected when you swipe over the image when using a touch screen. *Fix submitted by Eden Duong in pull request [25061](https://github.com/magento/magento2/pull/25061)*. [GitHub-25060](https://github.com/magento/magento2/issues/25060)
-
-<!--- ENGCOM-6229-->
-*Fix submitted by Mateusz Krzeszowiak in pull request [25435](https://github.com/magento/magento2/pull/25435)*. [GitHub-9671](https://github.com/magento/magento2/issues/9671)
-
-<!--- MC-19414-->
-
-### Gift card
-
-<!--- MC-16375-->
-
-<!--- MC-17542-->
-ee only
-
-### Gift wrapping
-
-<!--- MC-18005-->
-
-### Google Tag Manager
-
-<!--- ENGCOM-4731-->
-*Fix submitted by Raul E Watson in pull request [14](https://github.com/magento/partners-magento2ee/pull/14)*. [GitHub-20164](https://github.com/magento/magento2/issues/20164)
 
 ### Image
 
 <!--- ENGCOM-5569-->
 * The size of images displayed  in RSS feeds is now determined by the `view.xml` file. *Fix submitted by Sunil in pull request [23533](https://github.com/magento/magento2/pull/23533)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
 
-<!--- ENGCOM-5635-->
-*Fix submitted by Burlacu Vasilii in pull request [21798](https://github.com/magento/magento2/pull/21798)*. [GitHub-5023](https://github.com/magento/magento2/issues/5023)
-
-<!--- ENGCOM-5639-->
-*Fix submitted by Sergey Solo in pull request [23820](https://github.com/magento/magento2/pull/23820)*. [GitHub-3993](https://github.com/magento/magento2/issues/3993)
-
-<!--- MC-15523-->
-
 ### Import/export
-
-<!--- MC-21974-->
-
-<!--- MC-98703-->
-
-<!--- MC-20112-->
-
-<!--- MC-20229-->
-
-<!--- MC-19661-->
-
-<!--- MC-18710-->
-
-<!--- MC-19399-->
-
-<!--- MC-18815-->
-
-<!--- MC-70803-->
-
-<!--- MC-15256-->
-
-<!--- ENGCOM-5574-->
-*Fix submitted by Eden Duong in pull request [24008](https://github.com/magento/magento2/pull/24008)*. [GitHub-24007](https://github.com/magento/magento2/issues/24007)
-
-<!--- ENGCOM-5799 5751-->
-*Fix submitted by Alexander Taranovsky in pull request [24420](https://github.com/magento/magento2/pull/24420)*. [GitHub-5246](https://github.com/magento/magento2/issues/5246)
-
-<!--- ENGCOM-5702-->
-*Fix submitted by kristiancharb in pull request [24053](https://github.com/magento/magento2/pull/24053)*. [GitHub-23042](https://github.com/magento/magento2/issues/23042)
-
-<!--- ENGCOM-5860-->
-*Fix submitted by Eden Duong in pull request [24643](https://github.com/magento/magento2/pull/24643)*. [GitHub-24642](https://github.com/magento/magento2/issues/24642)
 
 <!--- ENGCOM-5992-->
 * Magento now creates an advanced price export file as expected when exporting more than 5000 products. Previously, Magento threw an error and did not create the file. *Fix submitted by Mahesh Singh in pull request [24831](https://github.com/magento/magento2/pull/24831)*. [GitHub-24722](https://github.com/magento/magento2/issues/24722)
@@ -933,87 +653,21 @@ ee only
 <!--- ENGCOM-6079-->
 * Removed redundant quotation marks from the CSV field title of the exported order CSV file. *Fix submitted by Alexander Lukyanov in pull request [24969](https://github.com/magento/magento2/pull/24969)*. [GitHub-23465](https://github.com/magento/magento2/issues/23465)
 
-<!--- MC-22390-->
-
 <!--- ENGCOM-6071-->
 * The Export page now displays exported files in a grid. Previously, Magento did not list files but instead displayed a message indicating that the CDATA section was too large to display when more than 20,000 records were exported. *Fix submitted by Eduard Chitoraga in pull request [24954](https://github.com/magento/magento2/pull/24954)*. [GitHub-24311](https://github.com/magento/magento2/issues/24311)
 
-### Index
-
-<!--- MC-18833-->
-
-<!--- MC-21897-->
-
-<!--- ENGCOM-5624-->
-*Fix submitted by Diego Cabrejas in pull request [23300](https://github.com/magento/magento2/pull/23300)*. [GitHub-22769](https://github.com/magento/magento2/issues/22769)
-
-<!--- ENGCOM-5910-->
-*Fix submitted by Bruce in pull request [24415](https://github.com/magento/magento2/pull/24415)*. [GitHub-24414](https://github.com/magento/magento2/issues/24414)
-
-<!--- MC-22021--> ee only
-
 ### Infrastructure
-
-<!--- MC-18190-->
-
-<!--- ENGCOM-5539-->
-*Fix submitted by Will Palmer in pull request [23988](https://github.com/magento/magento2/pull/23988)*. [GitHub-23987](https://github.com/magento/magento2/issues/23987)
 
 <!--- ENGCOM-5540-->
 * File permissions for non-executable files in GitHub have been changed from 755 to 664 where appropriate. *Fix submitted by Pieter Hoste in pull request [24005](https://github.com/magento/magento2/pull/24005)*. [GitHub-1453](https://github.com/magento/magento2/issues/1453)
 
-<!--- ENGCOM-5634-->
-*Fix submitted by Eden Duong in pull request [23693](https://github.com/magento/magento2/pull/23693)*. [GitHub-23359](https://github.com/magento/magento2/issues/23359)
-
-<!--- ENGCOM-5683-->
-*Fix submitted by semajeg in pull request [23369](https://github.com/magento/magento2/pull/23369)*. [GitHub-16382](https://github.com/magento/magento2/issues/16382)
-
-<!--- ENGCOM-5554-->
-*Fix submitted by David Verholen in pull request [24030](https://github.com/magento/magento2/pull/24030)*. [GitHub-24025](https://github.com/magento/magento2/issues/24025)
-
-<!--- ENGCOM-5757-->
-*Fix submitted by Thomas Klein in pull request [24405](https://github.com/magento/magento2/pull/24405)*. [GitHub-12371](https://github.com/magento/magento2/issues/12371)
-
 <!--- ENGCOM-6044-->
 * An incorrect Bool return type for the `setIsActive()` method in `Salesrule Module RuleInterface.php` has been corrected to RuleInterface. *Fix submitted by Bartłomiej Szubert in pull request [24814](https://github.com/magento/magento2/pull/24814)*. [GitHub-13278](https://github.com/magento/magento2/issues/13278)
-
-<!--- ENGCOM-6119-->
-*Fix submitted by Alexandr Skrashuk in pull request [25055](https://github.com/magento/magento2/pull/25055)*. [GitHub-24726](https://github.com/magento/magento2/issues/24726)
-
-<!--- ENGCOM-6186-->
-*Fix submitted by Cristian Sanclemente in pull request [25317](https://github.com/magento/magento2/pull/25317)*. [GitHub-23920](https://github.com/magento/magento2/issues/23920)
 
 <!--- ENGCOM-6199-->
 * Magento no longer adds a `form_key` field to POST forms that had external action URLs. (*External action URLS* are URLS that do not belonging to shop's base URL.) *Fix submitted by Mateusz Krzeszowiak in pull request [25336](https://github.com/magento/magento2/pull/25336)*. [GitHub-23382](https://github.com/magento/magento2/issues/23382)
 
-<!--- ENGCOM-6171-->
-*Fix submitted by Tjitse in pull request [25289](https://github.com/magento/magento2/pull/25289)*. [GitHub-21904](https://github.com/magento/magento2/issues/21904)
-
-### Layered navigation
-
-<!--- ENGCOM-5802-->
-*Fix submitted by Mahesh Singh in pull request [24497](https://github.com/magento/magento2/pull/24497)*. [GitHub-24031](https://github.com/magento/magento2/issues/24031)
-
-### Logging
-
-<!--- ENGCOM-6185-->
-*Fix submitted by Pieter Hoste in pull request [25307](https://github.com/magento/magento2/pull/25307)*. [GitHub-23411](https://github.com/magento/magento2/issues/23411), [GitHub-23952](https://github.com/magento/magento2/issues/23952)
-
-### Media storage
-
-<!--- MC-19156-->
-
 ### Newsletter
-
-<!--- MC-17948-->
-
-<!--- MC-15237-->
-
-<!--- ENGCOM-5555-->
-*Fix submitted by KrielkipNL in pull request [24028](https://github.com/magento/magento2/pull/24028)*. [GitHub-24027](https://github.com/magento/magento2/issues/24027)
-
-<!--- ENGCOM-5530-->
-*Fix submitted by Eden Duong in pull request [23737](https://github.com/magento/magento2/pull/23737)*. [GitHub-23729](https://github.com/magento/magento2/issues/23729)
 
 <!--- ENGCOM-6144-->
 * Magento now displays empty **Customer First Name** and **Customer Last Name** fields on the Admin **Marketing** > **Newsletter Subscribers** page. Previously, these fields contained the unexpected string `—`. *Fix submitted by Eden Duong in pull request [25058](https://github.com/magento/magento2/pull/25058)*. [GitHub-25057](https://github.com/magento/magento2/issues/25057)
@@ -1021,21 +675,10 @@ ee only
 <!--- ENGCOM-6148-->
 * Corrected alignment of the Newsletter label and associated checkbox on the Admin customer edit page. *Fix submitted by Arvinda Kumar in pull request [25208](https://github.com/magento/magento2/pull/25208)*. [GitHub-25207](https://github.com/magento/magento2/issues/25207)
 
-<!--- MC-17948-->
-
 ### Orders
 
 <!--- ENGCOM-5529-->
 * The Order list now displays order information in the currency in which the order was placed, not the current base currency of the store. *Fix submitted by Eden Duong in pull request [23817](https://github.com/magento/magento2/pull/23817)*. [GitHub-23805](https://github.com/magento/magento2/issues/23805)
-
-<!--- ENGCOM-5591-->
-*Fix submitted by Artem Voloznov in pull request [24049](https://github.com/magento/magento2/pull/24049)*. [GitHub-24012](https://github.com/magento/magento2/issues/24012)
-
-<!--- ENGCOM-5475-->
-*Fix submitted by Pavel Bystritsky in pull request [20577](https://github.com/magento/magento2/pull/20577)*. [GitHub-19230](https://github.com/magento/magento2/issues/19230)
-
-<!--- ENGCOM-5552-->
-*Fix submitted by Eden Duong in pull request [24016](https://github.com/magento/magento2/pull/24016)*. [GitHub-24015](https://github.com/magento/magento2/issues/24015)
 
 <!--- ENGCOM-5995-->
 * You can now open a storefront from **Sales** > **Orders** > **Customer View**. Previously, the Admin froze, and the page never reloaded. *Fix submitted by Adarsh Manickam in pull request [24845](https://github.com/magento/magento2/pull/24845)*. [GitHub-24779](https://github.com/magento/magento2/issues/24779)
@@ -1046,89 +689,12 @@ ee only
 <!--- ENGCOM-6039-->
 * Magento now displays the customer middle name in the customer details on orders and in the new order email sent to customers. *Fix submitted by Sergiy Vasiutynskyi in pull request [24746](https://github.com/magento/magento2/pull/24746)*. [GitHub-23627](https://github.com/magento/magento2/issues/23627)
 
-<!--- ENGCOM-6112-->
-*Fix submitted by Eden Duong in pull request [25085](https://github.com/magento/magento2/pull/25085)*. [GitHub-25072](https://github.com/magento/magento2/issues/25072)
-
-<!--- ENGCOM-6185-->
-*Fix submitted by Pieter Hoste in pull request [25307](https://github.com/magento/magento2/pull/25307)*. [GitHub-24009](https://github.com/magento/magento2/issues/24009)
-
-### Page Builder
-
-<!--- MC-18071-->
-
 ### Payment methods
-
-<!--- MC-19274-->
-
-<!--- MC-19008-->
-
-<!--- MC-18783-->
-
-<!--- MC-19735-->
-
-<!--- MC-19296-->
-
-<!--- MC-19538-->
-
-<!--- MC-18365-->
-
-<!--- MC-18194-->
-
-<!--- MC-19114-->
-
-<!--- MC-15140-->
-
-<!--- MC-19542-->
-
-<!--- MC-19917-->
-
-<!--- MC-21467-->
-
-<!--- ENGCOM-5630-->
-*Fix submitted by Oleksii Lisovyi in pull request [24121](https://github.com/magento/magento2/pull/24121)*. [GitHub-22525](https://github.com/magento/magento2/issues/22525),[GitHub-22528](https://github.com/magento/magento2/issues/22528)
-
-<!--- ENGCOM-5710-->
-*Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24302](https://github.com/magento/magento2/issues/24302), [GitHub-24304](https://github.com/magento/magento2/issues/24304)
-
-<!--- ENGCOM-5804-->
-*Fix submitted by prabhatrawat-webkul in pull request [24501](https://github.com/magento/magento2/pull/24501)*. [GitHub-23205](https://github.com/magento/magento2/issues/23205)
-
-<!--- ENGCOM-5849-->
-*Fix submitted by Anton in pull request [24622](https://github.com/magento/magento2/pull/24622)*. [GitHub-24618](https://github.com/magento/magento2/issues/24618)
-
-<!--- ENGCOM-5925-->
-*Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
-
-<!--- MC-22006-->
-
-<!--- MC-22114-->
 
 <!--- ENGCOM-6124-->
 * Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
 
-<!--- ENGCOM-6153-->
-*Fix submitted by Andrey Legayev in pull request [25223](https://github.com/magento/magento2/pull/25223)*. [GitHub-25343](https://github.com/magento/magento2/issues/25343)
-
-### Performance
-
-<!--- MC-19249-->
-
-<!--- MC-20173-->
-
-<!--- MC-19107-->
-
-<!--- MC-20322-->
-
-<!--- MC-19242-->
-
-<!--- MC-16108-->
-
-<!--- MC-19648-->
-
 ### Reports
-
-<!--- ENGCOM-5590-->
-*Fix submitted by Eden Duong in pull request [24104](https://github.com/magento/magento2/pull/24104)*. [GitHub-24102](https://github.com/magento/magento2/issues/24102)
 
 <!--- ENGCOM-5832-->
 * This newline seems like a cosmetic issue, but it also affects automatic parsing of the log files. *Fix submitted by Mathew Beane in pull request [24559](https://github.com/magento/magento2/pull/24559)*. [GitHub-24588](https://github.com/magento/magento2/issues/24588)
@@ -1138,81 +704,13 @@ ee only
 
 ### Reviews
 
-<!--- MC-17630-->
-
 <!--- ENGCOM-5737-->
 * The **Reset** button now works as expected on the Admin **Marketing** > **All Reviews** > **New Review** page. *Fix submitted by Shankar Konar in pull request [24318](https://github.com/magento/magento2/pull/24318)*. [GitHub-23990](https://github.com/magento/magento2/issues/23990)
 
-<!--- ENGCOM-5774-->
-*Fix submitted by Eden Duong in pull request [24399](https://github.com/magento/magento2/pull/24399)*. [GitHub-24310](https://github.com/magento/magento2/issues/24310)
-
-<!--- ENGCOM-6113-->
-*Fix submitted by Gaurav Agarwal in pull request [25051](https://github.com/magento/magento2/pull/25051)*. [GitHub-25039](https://github.com/magento/magento2/issues/25039)
-
-### Return Merchandise Authorizations (RMA)
-
-<!--- MC-17926-->
-
-<!--- MC-19769-->
-
-<!--- MC-19762-->
-
-<!--- MC-17939-->
-
-<!--- MC-19857-->
-
-<!--- MC-19258-->
-
-<!--- MC-19433-->
-
-<!--- MC-20986-->
-
-### Reward ee only
-
-<!--- MC-19017-->
-
-<!--- MC-19428-->
-
-<!--- MC-19189-->
-
-<!--- MC-19430-->
-
 ### Sales
-
-<!--- MC-17925-->
-
-<!--- MC-19400-->
-
-<!--- MC-19303-->
-
-<!--- MC-19798-->
-
-<!--- MC-21699-->
 
 <!--- ENGCOM-5516-->
 * Validation has been added to **Minimum Order Amount** field  on the **Stores** > **Settings** > **Configuration** > **Sales** page. *Fix submitted by kcnariya in pull request [23898](https://github.com/magento/magento2/pull/23898)*. [GitHub-23897](https://github.com/magento/magento2/issues/23897)
-
-<!--- MC-20193-->
-[GitHub-13466](https://github.com/magento/magento2/issues/13466)
-
-<!--- MC-20387-->
-
-<!--- MAGETWO-72172-->
-
-<!--- MAGETWO-62508-->
-
-### SalesRule
-
-<!--- MAGETWO-96379-->
-
-<!--- MC-19260-->
-
-<!--- MC-19941-->
-[GitHub-24526](https://github.com/magento/magento2/issues/24526)
-
-<!--- MC-19716-->
-
-<!--- MC-19238-->
 
 ### Search
 
@@ -1222,85 +720,16 @@ ee only
 <!--- MC-23218-->
 * Magento no longer requires a full search reindex in order for a new product attribute to be searchable on the storefront.
 
-<!--- MC-21808-->
-
-<!--- MC-20381-->
-
-<!--- MC-19906-->
-
-<!--- MC-17947-->
-
-<!--- MC-19849-->
-
-<!--- MC-19537-->
-
-<!--- MC-19197-->
-
-<!--- MC-19527-->
-
-<!--- MC-20213-->
-
-<!--- MC-17524-->
-
-<!--- MC-20250-->
-
-<!--- MC-21808-->
-
-<!--- MC-21962-->
-
-<!--- MC-15759-->
-
 <!--- MC-21717-->
 * The storefront now displays a newly added product in its assigned category after you run `bin/magento cron:run && bin/magento cron:run`.
-
-<!--- ENGCOM-5587-->
-*Fix submitted by Eden Duong in pull request [24101](https://github.com/magento/magento2/pull/24101)*. [GitHub-24100](https://github.com/magento/magento2/issues/24100)
-
-<!--- ENGCOM-5596-->
-*Fix submitted by Eden Duong in pull request [23687](https://github.com/magento/magento2/pull/23687)*. [GitHub-23557](https://github.com/magento/magento2/issues/23557)
 
 <!--- ENGCOM-5597-->
 * Searching on categories from the New Product page now works as expected when you enter a search string that does not match an existing category. Previously, Magento displayed incorrect results instead of indicating zero search results. *Fix submitted by Eden Duong in pull request [23698](https://github.com/magento/magento2/pull/23698)*. [GitHub-23697](https://github.com/magento/magento2/issues/23697)
 
-<!--- ENGCOM-5662-->
-*Fix submitted by Ronak Parmar in pull request [23059](https://github.com/magento/magento2/pull/23059)*. [GitHub-23055](https://github.com/magento/magento2/issues/23055)
-
-<!--- ENGCOM-6106-->
-*Fix submitted by Pavel Bystritsky in pull request [24974](https://github.com/magento/magento2/pull/24974)*. [GitHub-24781](https://github.com/magento/magento2/issues/24781)
-
-<!--- ENGCOM-5861-->
-*Fix submitted by Ihor Sviziev in pull request [24636](https://github.com/magento/magento2/pull/24636)*. [GitHub-22297](https://github.com/magento/magento2/issues/22297)
-
-<!--- ENGCOM-5834-->
-*Fix submitted by Vladislav Slesarenko in pull request [24552](https://github.com/magento/magento2/pull/24552)*. [GitHub-24550](https://github.com/magento/magento2/issues/24550)
-
 ### Shipping
-
-<!--- MC-21738-->
-
-<!--- MC-18366-->
-
-<!--- MC-16684-->
-
-<!--- MC-19105-->
-
-<!--- MC-18519-->
-
-<!--- MC-18215-->
-
-<!--- MAGETWO-99043-->
 
 <!--- ENGCOM-5215-->
 * The code for offline shipping methods has been optimized to remove redundant carrier codes. *Fix submitted by Alexander Taranovsky in pull request [23144](https://github.com/magento/magento2/pull/23144)*. [GitHub-23143](https://github.com/magento/magento2/issues/23143)
-
-<!--- ENGCOM-5691-->
-*Fix submitted by wbeltranc in pull request [24265](https://github.com/magento/magento2/pull/24265)*. [GitHub-19853](https://github.com/magento/magento2/issues/19853)
-
-<!--- ENGCOM-5674-->
-*Fix submitted by Eden Duong in pull request [24213](https://github.com/magento/magento2/pull/24213)*. [GitHub-24212](https://github.com/magento/magento2/issues/24212)
-
-<!--- ENGCOM-5703-->
-*Fix submitted by Eden Duong in pull request [24296](https://github.com/magento/magento2/pull/24296)*. [GitHub-24295](https://github.com/magento/magento2/issues/24295)
 
 <!--- ENGCOM-5748-->
 * VAT ID is now included on the Shipping page of the checkout workflow as expected. *Fix submitted by Eden Duong in pull request [24403](https://github.com/magento/magento2/pull/24403)*. [GitHub-24402](https://github.com/magento/magento2/issues/24402)
@@ -1308,69 +737,17 @@ ee only
 <!--- ENGCOM-5993-->
 * The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
 
-### Sitemap
-
-<!--- ENGCOM-5801-->
-*Fix submitted by Bartłomiej Szubert in pull request [24482](https://github.com/magento/magento2/pull/24482)*. [GitHub-21610](https://github.com/magento/magento2/issues/21610)
-
-<!--- ENGCOM-5844-->
-*Fix submitted by Krzysztof Daniel in pull request [24605](https://github.com/magento/magento2/pull/24605)*. [GitHub-4511](https://github.com/magento/magento2/issues/4511), [GitHub-4511](https://github.com/magento/magento2/issues/5321), [GitHub-24484](https://github.com/magento/magento2/issues/24484)
-
-<!--- ENGCOM-5917-->
-*Fix submitted by Hailong in pull request [24675](https://github.com/magento/magento2/pull/24675)*. [GitHub-24623](https://github.com/magento/magento2/issues/24623)
-
 ### Staging
-
-<!--- MC-19407-->
-
-<!--- MC-18731-->
-
-<!--- MC-19270-->
-
-<!--- MC-19765-->
-
-<!--- MC-19951-->
-
-<!--- MC-17653-->
-
-<!--- MC-19013-->
-
-<!--- MC-21903-->
 
 <!--- MC-10974-->
 * Merchants can now manage Catalog Rule activity on the  Catalog Rule page using the **Is Active** toggle button.
 
-### Store
-
-<!--- MC-20394-->
-
-<!--- MC-19306-->
-
-<!--- MC-19585-->
-
-### Swagger
-
-<!--- ENGCOM-5853-->
-*Fix submitted by Oleksandr Kravchuk in pull request [24627](https://github.com/magento/magento2/pull/24627)*. [GitHub-24626](https://github.com/magento/magento2/issues/24626)
-
 ### Swatches
-
-<!--- MC-19739-->
-
-<!--- MC-19669-->
-
-<!--- MC-19683-->
 
 <!--- ENGCOM-5716-->
 * Magento now displays selected swatch options for a configurable product when you edit that product from the shopping cart. *Fix submitted by Rani Priya in pull request [24308](https://github.com/magento/magento2/pull/24308)*. [GitHub-24306](https://github.com/magento/magento2/issues/24306)
 
-### Target Rule ee only
-
-<!--- MC-21900-->
-
 ### Tax
-
-<!--- MC-17014-->
 
 <!--- ENGCOM-5545-->
 * Validation for maximum length has been added to **Zip/Post Code** field of the New Tax Rate page. *Fix submitted by Eden Duong in pull request [23968](https://github.com/magento/magento2/pull/23968)*. [GitHub-23967](https://github.com/magento/magento2/issues/23967)
@@ -1381,51 +758,19 @@ ee only
 <!--- ENGCOM-6004-->
 * Magento now correctly calculates VAT for products when you add them to the cart. *Fix submitted by Bruno Roeder in pull request [24737](https://github.com/magento/magento2/pull/24737)*. [GitHub-23116](https://github.com/magento/magento2/issues/23116)
 
-<!--- ENGCOM-5919-->
-*Fix submitted by Mahesh Singh in pull request [24663](https://github.com/magento/magento2/pull/24663)*. [GitHub-24225](https://github.com/magento/magento2/issues/24225)
-
-### Testing
-
-<!--- ENGCOM-5940-->
-*Fix submitted by Yurii in pull request [24291](https://github.com/magento/magento2/pull/24291)*. [GitHub-23279](https://github.com/magento/magento2/issues/23279)
-
-<!--- ENGCOM-6234-->
-*Fix submitted by Tomash Khamlai in pull request [25466](https://github.com/magento/magento2/pull/25466)*. [GitHub-25468](https://github.com/magento/magento2/issues/25468)
-
 ### Translation and locales
-
-<!--- MC-20118-->
-
-<!--- ENGCOM-5663-->
-*Fix submitted by Bartłomiej Szubert in pull request [24179](https://github.com/magento/magento2/pull/24179)*. [GitHub-22956](https://github.com/magento/magento2/issues/22956)
 
 <!--- ENGCOM-5972-->
 * Serbian Latin language support has been added to this release, and merchants can now distinguish between Latin and Cyrillic Serbian locales. Locales are now identified as Serbian (Cyrillic, Serbia) and Serbian (Latin, Serbia). *Fix submitted by Bartłomiej Szubert in pull request [22293](https://github.com/magento/magento2/pull/22293)*. [GitHub-12256](https://github.com/magento/magento2/issues/12256), [GitHub-13263](https://github.com/magento/magento2/issues/13263)
 
 ### UI
 
-<!--- MC-17003-->
-
-<!--- MC-18348-->
-
-<!--- MC-20108-->
-
-<!--- MC-18763-->
-
-<!--- MC-19866-->
-
 <!--- ENGCOM-5536-->
 * Media gallery thumbnails are no longer stretched when images have a horizontal ratio. Previously, these images were pixelated on the product page. *Fix submitted by Nick de Kleijn in pull request [23884](https://github.com/magento/magento2/pull/23884)*. [GitHub-23877](https://github.com/magento/magento2/issues/23877)
 
 <!--- ENGCOM-5533-->
 * The tax amount in  sales order emails is now displayed before the row that displays the order’s grand total. *Fix submitted by Nazar Klovanych in pull request [23406](https://github.com/magento/magento2/pull/23406)*. [GitHub-21768](https://github.com/magento/magento2/issues/21768)
-
-<!--- ENGCOM-5570-->
-*Fix submitted by Arushi Bansal in pull request [24013](https://github.com/magento/magento2/pull/24013)*. [GitHub-23977](https://github.com/magento/magento2/issues/23977)
-
-<!--- ENGCOM-5459-->
-*Fix submitted by Syed Imtiyaz Hasan in pull request [23699](https://github.com/magento/magento2/pull/23699)*. [GitHub-23575](https://github.com/magento/magento2/issues/23575)
-
+  
 <!--- ENGCOM-5535-->
 * The **Billing ZIP Code** field on the Orders and Returns page now works as expected. Previously, it was not consistently visible. *Fix submitted by Eden Duong in pull request [23747](https://github.com/magento/magento2/pull/23747)*. [GitHub-23746](https://github.com/magento/magento2/issues/23746)
 
@@ -1434,45 +779,6 @@ ee only
 
 <!--- ENGCOM-5585-->
 * The **New Key** field is now marked as a required field with an asterisk when changing an encryption key on the Admin **System** > **Manage Encryption Key** page. *Fix submitted by Eden Duong in pull request [24099](https://github.com/magento/magento2/pull/24099)*. [GitHub-24098](https://github.com/magento/magento2/issues/24098)
-
-<!--- ENGCOM-5608-->
-*Fix submitted by Eden Duong in pull request [24078](https://github.com/magento/magento2/pull/24078)*. [GitHub-24068](https://github.com/magento/magento2/issues/24068)
-
-<!--- ENGCOM-5524-->
-*Fix submitted by Andreas Schrammel in pull request [13580](https://github.com/magento/magento2/pull/13580)*. [GitHub-11657](https://github.com/magento/magento2/issues/11657)
-
-<!--- ENGCOM-5643-->
-*Fix submitted by Shankar Konar in pull request [23774](https://github.com/magento/magento2/pull/23774)*. [GitHub-23705](https://github.com/magento/magento2/issues/23705)
-
-<!--- ENGCOM-5589-->
-*Fix submitted by Eden Duong in pull request [24106](https://github.com/magento/magento2/pull/24106)*. [GitHub-24105](https://github.com/magento/magento2/issues/24105)
-
-<!--- ENGCOM-5627-->
-*Fix submitted by Eden Duong in pull request [24140](https://github.com/magento/magento2/pull/24140)*. [GitHub-24139](https://github.com/magento/magento2/issues/24139)
-
-<!--- ENGCOM-5607-->
-*Fix submitted by gwharton in pull request [24114](https://github.com/magento/magento2/pull/24114)*. [GitHub-22867](https://github.com/magento/magento2/issues/22867)
-
-<!--- ENGCOM-5647-->
-*Fix submitted by Eden Duong in pull request [24155](https://github.com/magento/magento2/pull/24155)*. [GitHub-24154](https://github.com/magento/magento2/issues/24154)
-
-<!--- ENGCOM-5647-->
-*Fix submitted by Eden Duong in pull request [24163](https://github.com/magento/magento2/pull/24163)*. [GitHub-24162](https://github.com/magento/magento2/issues/24162)
-
-<!--- ENGCOM-5665-->
-*Fix submitted by Eden Duong in pull request [24163](https://github.com/magento/magento2/pull/24163)*. [GitHub-24162](https://github.com/magento/magento2/issues/24162)
-
-<!--- ENGCOM-5614-->
-*Fix submitted by Burlacu Vasilii in pull request [20765](https://github.com/magento/magento2/pull/20765)*. [GitHub-20764](https://github.com/magento/magento2/issues/20764)
-
-<!--- ENGCOM-5695-->
-*Fix submitted by Sudheer Kumar Gajjala in pull request [24211](https://github.com/magento/magento2/pull/24211)*. [GitHub-24210](https://github.com/magento/magento2/issues/24210)
-
-<!--- ENGCOM-5644-->
-*Fix submitted by Eden Duong in pull request [24148](https://github.com/magento/magento2/pull/24148)*. [GitHub-24147](https://github.com/magento/magento2/issues/24147)
-
-<!--- ENGCOM-5747-->
-*Fix submitted by Rani Priya in pull request [24396](https://github.com/magento/magento2/pull/24396)*. [GitHub-24395](https://github.com/magento/magento2/issues/24395)
 
 <!--- ENGCOM-5782-->
 * Corrected misspelling of “tier” (as in “tier price”) throughout the code base. *Fix submitted by Sunil in pull request [24160](https://github.com/magento/magento2/pull/24160)*. [GitHub-23567](https://github.com/magento/magento2/issues/23567)
@@ -1486,9 +792,6 @@ ee only
 <!--- ENGCOM-6019-->
 * Email previews are now fully responsive. *Fix submitted by Brent Robert in pull request [24881](https://github.com/magento/magento2/pull/24881)*. [GitHub-23754](https://github.com/magento/magento2/issues/23754)
 
-<!--- ENGCOM-6011-->
-*Fix submitted by Bruno Roeder in pull request [24832](https://github.com/magento/magento2/pull/24832)*. [GitHub-22169](https://github.com/magento/magento2/issues/22169), [GitHub-24721](https://github.com/magento/magento2/issues/24721)
-
 <!--- ENGCOM-6012-->
 * You can now confirm changes to the structure of the category tree by either clicking the confirmation dialog **OK** button or using the Enter key on your keyboard. Previously, if you used the Enter key to confirm your changes, the UI reflected your change, but your changes were lost when you refreshed the page. *Fix submitted by MaxRomanov4669 in pull request [24817](https://github.com/magento/magento2/pull/24817)*. [GitHub-24452](https://github.com/magento/magento2/issues/24452)
 
@@ -1497,9 +800,6 @@ ee only
 
 <!--- ENGCOM-6070-->
 * Magento now displays checkout steps in the custom order that is set in `uiComponents SortOrder`. *Fix submitted by Anuj Gupta in pull request [25015](https://github.com/magento/magento2/pull/25015)*. [GitHub-24652](https://github.com/magento/magento2/issues/24652)
-
-<!--- ENGCOM-6136-->
-*Fix submitted by Mahesh Singh in pull request [25176](https://github.com/magento/magento2/pull/25176)*. [GitHub-23170](https://github.com/magento/magento2/issues/23170)
 
 <!--- ENGCOM-6122-->
 * Removed redundant asterix (*) on the  Configure Product page. *Fix submitted by Adarsh Manickam in pull request [25149](https://github.com/magento/magento2/pull/25149)*. [GitHub-25135](https://github.com/magento/magento2/issues/25135)
@@ -1516,98 +816,10 @@ ee only
 <!--- ENGCOM-6152-->
 * The storefront now reflects height settings for conditions being added to Terms and Conditions (**Store** > **Terms and Conditions** > **Add New Condition**). Previously, you could set a value for height when creating a condition, but the storefront did not apply this setting. *Fix submitted by Rahul Mahto in pull request [25168](https://github.com/magento/magento2/pull/25168)*. [GitHub-25167](https://github.com/magento/magento2/issues/25167)
 
-<!--- MC-17149-->
-
-<!--- MC-19783-->
-
-<!--- ENGCOM-6224-->
-*Fix submitted by Gabriel da Gama in pull request [24994](https://github.com/magento/magento2/pull/24994)*. [GitHub-24807](https://github.com/magento/magento2/issues/24807)
-
-<!--- ENGCOM-6209-->
-*Fix submitted by Arvinda Kumar in pull request [25368](https://github.com/magento/magento2/pull/25368)*. [GitHub-25366](https://github.com/magento/magento2/issues/25366)
-
-<!--- ENGCOM-6216-->
-*Fix submitted by Torben Höhn in pull request [25393](https://github.com/magento/magento2/pull/25393)*. [GitHub-25392](https://github.com/magento/magento2/issues/25392)
-
 ### URL rewrites
-
-<!--- MC-22635-->
-
-<!--- MC-18561-->
-
-<!--- MC-19213--> ee only
-
-<!--- MC-18368-->
-
-<!--- MC-21737-->
-
-<!--- MAGETWO-69825-->
 
 <!--- MC-19706-->
 * Magento now populates the `url_rewrite` table with the new product URL rewrite when you create a new product when single-store mode is enabled. Previously, Magento did not generate a user-friendly URL upon the creation of products when single-store mode was enabled.
-  
-<!--- ENGCOM-5446-->
-*Fix submitted by Stanislav Ilnytskyi in pull request [23430](https://github.com/magento/magento2/pull/23430)*. [GitHub-23429](https://github.com/magento/magento2/issues/23429)
-
-<!--- MC-21716-->
-
-### Vertex
-
-### Visual Merchandiser ee only
-
-<!--- MC-20404-->
-
-<!--- MC-18672-->
-
-<!--- MC-21033-->
-
-### Web API framework
-
-<!--- MC-19432-->
-
-<!--- MAGETWO-70885-->
-
-<!--- ENGCOM-5610-->
-*Fix submitted by Oleksandr Kravchuk in pull request [24117](https://github.com/magento/magento2/pull/24117)*. [GitHub-24116](https://github.com/magento/magento2/issues/24116)
-
-<!--- ENGCOM-5821-->
-*Fix submitted by Eden Duong in pull request [24519](https://github.com/magento/magento2/pull/24519)*. [GitHub-24518](https://github.com/magento/magento2/issues/24518)
-
-<!--- ENGCOM-5987-->
-*Fix submitted by Ivan Koliadynskyy in pull request [24769](https://github.com/magento/magento2/pull/24769)*. [GitHub-24716](https://github.com/magento/magento2/issues/24716)
-
-### Widget
-
-<!--- MC-18763-->
-
-### Wishlist
-
-<!--- MC-20139-->
-
-<!--- MC-19950-->
-
-<!--- MC-19060-->
-
-<!--- MC-18196-->
-
-<!--- ENGCOM-5715-->
-*Fix submitted by Rani Priya in pull request [24320](https://github.com/magento/magento2/pull/24320)*. [GitHub-24319](https://github.com/magento/magento2/issues/24319)
-
-<!--- ENGCOM-5760-->
-*Fix submitted by Rus0 in pull request [24300](https://github.com/magento/magento2/pull/24300)*. [GitHub-21519](https://github.com/magento/magento2/issues/21519)
-
-### WYSIWYG
-
-<!--- MC-19602-->
-
-<!--- MC-17574-->
-
-<!--- MC-18709-->
-
-<!--- MC-19062-->
-
-<!--- ENGCOM-5727-->
-*Fix submitted by Pavel Bystritsky in pull request [24333](https://github.com/magento/magento2/pull/24333)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
 
 ## Community contributions
 
