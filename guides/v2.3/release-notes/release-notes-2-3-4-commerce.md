@@ -377,7 +377,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-16650-->
 * Catalog search layered navigation results now include product attributes of type price.
-Ask Misha to clarify whether the price attribute specifically or any attribute that uses a decimal filter
 
 <!--- MAGETWO-98748-->
 * Magento now highlights only the most recently selected category as expected on storefront pages that contain multiple categories. Previously, all selected category menus remained highlighted.
@@ -405,14 +404,13 @@ Ask Misha to clarify whether the price attribute specifically or any attribute t
 
 <!--- MC-21933-->
 * Type declarations for the `$condition` arguments were removed from two private methods that were created during recent refactoring of product collection code.
-Ask Misha
 
 ### CatalogInventory
 
 <!--- MC-17524-->
 * You can now add a child product to the shopping cart idf it does not have  a default source assigned
 
-### Catalog rule ee only
+### Catalog rule
 
 <!--- MC-22135-->
 * Magento now correctly applies Catalog Price rules in deployments where the time zone is set to `EEST` (Europe/Helsinki) and `Locale = Finnish (Finland)`.
@@ -477,7 +475,6 @@ Ask Misha
 
 <!--- MC-18997-->
 * CMS pages now remain assigned to the hierarchy when you create a schedule update for the CMS page.
-ee only
 
 <!--- ENGCOM-5487-->
 * You can now save CMS blocks with no content.  *Fix submitted by Eden Duong in pull request [23801](https://github.com/magento/magento2/pull/23801)*. [GitHub-23800](https://github.com/magento/magento2/issues/23800)
@@ -530,18 +527,15 @@ ee only
 
 <!--- MC-19824-->
 * The condition **Total Number of Orders equals or greater than 0** now affects customer segments as expected. Previously, when a customer segment was created with this condition, only customers with 0 orders applied.
-ee only
 
 <!--- MC-19016-->
 * The **Date of Birth** field on the customer registration form no longer defaults to **1/1/1970** in deployments  that already contain a registered customer with the same email in stores using the `en_AU` locale.
   
 <!--- MC-18935-->
 * Magento now correctly. applies customer segment cart price rules when products are added to cart from different websites in a multi-website deployment. Previously, discounts were not applied correctly for all products in the cart.  
-EE only
 
 <!--- MC-19302-->
 * Magento no longer logs an error in `exception.log` when a customer logs in to a store for which the merchant has created a customer segment defined by the **Up To Date(period)** condition.
-ee only
 
 <!--- MC-19440-->
 * The list of countries accessible from the **Add New Address** field of the checkout workflow now displays only countries that have been defined in **Admin** > **Stores** > **Configuration** > **General**.
@@ -559,7 +553,6 @@ ee only
 
 <!--- MC-19696-->
 * You can now successfully create and implement a plugin for `Magento\CustomAttributeManagement\Helper\Data`.
-ee only
 
 <!--- MAGETWO-99838-->
 * Magento now displays an informative error message when a customer tries to place an order without adding an address for the payment method and the checkbox **My billing and shipping address are the same** is unchecked.
