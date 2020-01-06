@@ -31,6 +31,6 @@ You can run POST and PUT endpoints asynchronously while the `async.operations.al
 
 *  [Customer REST API endpoints]({{site.baseurl}}/redoc/2.4/async-customer-rest-api.html) -  Available using a customer security token
 
-*  [Guest REST API endpoints]({{site.baseurl}}/redoc/2.4r/async-guest-rest-api.html) -  Available for anonymous users
+*  [Guest REST API endpoints]({{site.baseurl}}/redoc/2.4/async-guest-rest-api.html) -  Available for anonymous users
 
 [Token-based authentication]: {{page.baseurl}}/get-started/authentication/gs-authentication-token.html
