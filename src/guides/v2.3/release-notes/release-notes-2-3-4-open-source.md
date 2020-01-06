@@ -258,7 +258,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 * Guest users can now checkout after persistent shopping cart has been disabled. Previously, Magento displayed this error: `No cart with such entityId=0`.
 
 <!--- MC-19152-->
-* Magento no longer displays custom dropdown customer address attribute option IDs  on the Review & Payment of the checkout workflow when a guest checks out. Previously, Magento displayed the option ID instead of the option label for the selected attribute option.
+* Magento no longer displays custom dropdown customer address attribute option IDs  on the Review & Payment section of the checkout workflow when a guest checks out. Previously, Magento displayed the option ID instead of the option label for the selected attribute option.
 
 <!--- MC-19637-->
 * Billing and Shipping information no longer disappear from the Payment section of the checkout workflow when an AJAX POST request fails.
@@ -279,7 +279,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 * Cart Price Rules tables in multi-site deployments now show existing cart price rules as expected. Previously, the Cart Price Rules page displayed the **Search** button, number of records found, and navigation buttons, but did not display the grid of rules.
 
 <!--- ENGCOM-5525-->
-* You can now use REST to add a  product with customizable options (for example, type checkbox) to the cart. Previously, Magento threw an informative error when you used the POST /V1/guest-carts/{cartId}/items endpoint. *Fix submitted by Denis Kopylov in pull request [23871](https://github.com/magento/magento2/pull/23871)*. [GitHub-23863](https://github.com/magento/magento2/issues/23863)
+* You can now use REST to add a  product with customizable options (for example, type checkbox) to the cart. Previously, Magento threw an informative error when you used the POST `/V1/guest-carts/{cartId}/items` endpoint. *Fix submitted by Denis Kopylov in pull request [23871](https://github.com/magento/magento2/pull/23871)*. [GitHub-23863](https://github.com/magento/magento2/issues/23863)
 
 <!--- ENGCOM-5513-->
 * Validation logic has been added to the **Minimum Qty Allowed in Shopping Cart**  field on **Store** > **Configurations** > **Catalog** > **Inventory**. *Fix submitted by Eden Duong in pull request [23896](https://github.com/magento/magento2/pull/23896)*. [GitHub-23895](https://github.com/magento/magento2/issues/23895)
@@ -342,9 +342,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-21706-->
 * You can now add products from a non-default website to a cart from the Admin in a multsite deployment. Previously, when you created a cart from the non-default site and tried to create an order in the Admin by adding  items to the cart, Magento did not add the items, but emptied the cart.
 
-<!--- ENGCOM-6127-->
-*Fix submitted by skylineop in pull request [24771](https://github.com/magento/magento2/pull/24771)*. [GitHub-15959](https://github.com/magento/magento2/issues/15959)
-
 ### Catalog
 
 <!--- MC-19398-->
@@ -398,7 +395,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 ### CatalogInventory
 
 <!--- MC-17524-->
-* You can now add a child product to the shopping cart idf it does not have  a default source assigned.
+* You can now add a child product to the shopping cart if it does not have  a default source assigned.
 
 ### Cleanup and simple code refactoring
 
@@ -406,7 +403,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 * The **Are you sure you want to delete this category?** message is now translatable. *Fix submitted by Eden Duong in pull request [24039](https://github.com/magento/magento2/pull/24039)*. [GitHub-24038](https://github.com/magento/magento2/issues/24038)
 
 <!--- ENGCOM-5609-->
-* The PayPal setting section of the Admin **Stores** >** Configuration** > **Sales** > **Payment Methods** page now has an expand/collapse icon. *Fix submitted by Eden Duong in pull request [24119](https://github.com/magento/magento2/pull/24119)*. [GitHub-24118](https://github.com/magento/magento2/issues/24118)
+* The PayPal setting section of the Admin **Stores** >**Configuration** > **Sales** > **Payment Methods** page now has an expand/collapse icon. *Fix submitted by Eden Duong in pull request [24119](https://github.com/magento/magento2/pull/24119)*. [GitHub-24118](https://github.com/magento/magento2/issues/24118)
 
 <!--- ENGCOM-5632-->
 * Links to a sitemap generated at  **Marketing** > **SEO & Search** > **sitemap** is are now  valid. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
@@ -500,7 +497,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 ### Cron
 
 <!--- ENGCOM-5717-->
-* A new flag has been added to the bin/magento cron:install command that permits you to add only mandatory entries to the crontab file of the server on which Magento is running. The --non-optional flag (or -d for short) adds only one or three possible lines to the crontab file. Without this flag, bin/magento cron:install adds three lines to the crontab of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
+* A new flag has been added to the `bin/magento cron:install` command that permits you to add only mandatory entries to the `crontab` file of the server on which Magento is running. The `--non-optional` flag (or `-d` for short) adds only one or three possible lines to the `crontab` file. Without this flag, `bin/magento cron:install` adds three lines to the `crontab` of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
 
 <!--- ENGCOM-5934-->
 * The `php bin/magento cron:run` command now creates adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
@@ -578,7 +575,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6034-->
 * The Registration and Contact us pages now correctly handle customer names that contain non-ASCII characters. Previously, if the customer name contained non-ASCII characters, the user did not receive the email. *Fix submitted by elvinristi in pull request [24906](https://github.com/magento/magento2/pull/24906)*. [GitHub-24902](https://github.com/magento/magento2/issues/24902)
 
-#### JavaScript framework
+### JavaScript framework
 
 <!--- ENGCOM-5994-->
 * Unnecessary define checks have been removed from JavaScript modules that are used by requireJS. *Fix submitted by Bartłomiej Szubert in pull request [24833](https://github.com/magento/magento2/pull/24833)*. [GitHub-22747](https://github.com/magento/magento2/issues/22747)
@@ -765,13 +762,13 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 * Magento now displays checkout steps in the custom order that is set in `uiComponents SortOrder`. *Fix submitted by Anuj Gupta in pull request [25015](https://github.com/magento/magento2/pull/25015)*. [GitHub-24652](https://github.com/magento/magento2/issues/24652)
 
 <!--- ENGCOM-6122-->
-* Removed redundant asterix (*) on the  Configure Product page. *Fix submitted by Adarsh Manickam in pull request [25149](https://github.com/magento/magento2/pull/25149)*. [GitHub-25135](https://github.com/magento/magento2/issues/25135)
+* Removed redundant asterix on the  Configure Product page. *Fix submitted by Adarsh Manickam in pull request [25149](https://github.com/magento/magento2/pull/25149)*. [GitHub-25135](https://github.com/magento/magento2/issues/25135)
 
 <!--- ENGCOM-6123-->
 * Removed the box shadow that appeared when you clicked on a disabled swatch for a product on the storefront. *Fix submitted by Adarsh Manickam in pull request [25145](https://github.com/magento/magento2/pull/25145)*. [GitHub-25144](https://github.com/magento/magento2/issues/25144)
 
 <!--- ENGCOM-6117-->
-* Magento now displays a pointer icon for the cursor when the cursor hovers over the  **Collapse All | Expand All** button on **Catalog** > **Category** > **Content** Select from Gallery option. *Fix submitted by Eden Duong in pull request [25109](https://github.com/magento/magento2/pull/25109)*. [GitHub-25108](https://github.com/magento/magento2/issues/25108)
+* Magento now displays a pointer icon for the cursor when the cursor hovers over the  **Collapse All/Expand All** button on **Catalog** > **Category** > **Content** Select from Gallery option. *Fix submitted by Eden Duong in pull request [25109](https://github.com/magento/magento2/pull/25109)*. [GitHub-25108](https://github.com/magento/magento2/issues/25108)
 
 <!--- ENGCOM-6134-->
 * The **Get Video Information** button on the **Product** > **Images and Videos** > **Add Video** now responds as expected. *Fix submitted by Eduard Chitoraga in pull request [25090](https://github.com/magento/magento2/pull/25090)*. [GitHub-25088](https://github.com/magento/magento2/issues/25088)
