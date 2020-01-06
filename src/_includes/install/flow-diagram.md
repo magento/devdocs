@@ -4,10 +4,7 @@ The diagram shows the following:
 
 1. Set up your server environment.
 
-   Install the prerequisite software, including PHP, Apache, and MySQL. Consult the system requirements for specific information:
-
-   *  [2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
-   *  [2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)
+   Install the prerequisite software, including PHP, Apache, and MySQL. Consult the [system requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) for specific information.
 
 1. Get the Magento software.
 
