@@ -136,9 +136,9 @@ The value of that variable comes from any of the following:
 *  Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
 
 ```html
-      <!--@styles
-      .example-style { color: green; }
-      @-->
+ <!--@styles
+   .example-style { color: green; }
+ @-->
 ```
 
 *  If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
