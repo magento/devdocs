@@ -52,7 +52,7 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
-The code compiler creates the `generated/metadata/global.php`file, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. The `di.xml` file is the [dependency injection](https://glossary.magento.com/dependency-injection) configuration. There is a global `app/etc/di.xml` file, and there can also be a `di.xml` file for every [module](https://glossary.magento.com/module).
+The code compiler creates the `generated/metadata/global.php` file, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. The `di.xml` file is the [dependency injection](https://glossary.magento.com/dependency-injection) configuration. There is a global `app/etc/di.xml` file, and there can also be a `di.xml` file for every [module](https://glossary.magento.com/module).
 
 <!-- Link Definitions -->
 [Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
