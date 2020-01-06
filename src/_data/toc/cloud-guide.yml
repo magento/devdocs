@@ -532,6 +532,10 @@ pages:
           url: /cloud/release-notes/ece-release-notes.html
           versionless: true
 
+        - label: magento-cloud-components
+          url: /cloud/release-notes/mcc-release-notes.html
+          versionless: true
+        
         - label: magento-cloud-docker
           url: /cloud/release-notes/mcd-release-notes.html
           versionless: true

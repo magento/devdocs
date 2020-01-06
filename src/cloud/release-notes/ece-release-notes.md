@@ -1,10 +1,12 @@
 ---
 group: cloud-guide
-title: Release notes for ece-tools
+title: ECE-Tools release notes
 functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The [ece-tools package]({{ site.baseurl }}/cloud/ is a set of scripts and tools designed to manage and deploy Cloud projects. These release notes describe the latest improvements to this package, which is part of the [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
