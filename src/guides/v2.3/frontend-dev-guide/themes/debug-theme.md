@@ -23,7 +23,7 @@ To enable template hints:
 1. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for [Admin](https://glossary.magento.com/admin) set **Template Path Hints for Admin** to **Yes**.
 1. To save the changes, click **Save Config** in the upper-right corner.
 
-![Enabling template hints]({{ site.baseurl }}/common/images/fdg_debug_theme.png)
+![Enabling template hints]({{ site.baseurl }}/common/images/fdg_debug_theme_23.png)
 
 {:.bs-callout-info}
 You can also use the CLI to enable/disable template hints.
@@ -39,10 +39,10 @@ Template hints enabled.
 ```
 
 ```bash
-bin/magento cache:clean
+bin/magento cache:clean config full_page
 ```
 
-Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
+Now that you have enabled template hints, reload the page that you want to modify, if you enabled hints for storefront with URL Param reload the page with param in the URL `?templatehints=magento` and review the path for the template file or files that template hints show.
 
 For example, here is how a storefront [category](https://glossary.magento.com/category) page looks with enabled template hints:
 
