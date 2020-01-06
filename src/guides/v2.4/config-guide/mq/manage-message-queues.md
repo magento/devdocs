@@ -2,7 +2,7 @@
 group: configuration-guide
 title: Manage message queues
 redirect_from:
-  - /guides/v2.3/config-guide/mq/manage-mysql.html
+  - /guides/v2.4/config-guide/mq/manage-mysql.html
 functional_areas:
   - Configuration
   - System

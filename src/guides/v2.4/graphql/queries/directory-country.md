@@ -2,7 +2,7 @@
 group: graphql
 title: country query
 redirect_from:
-  - /guides/v2.3/graphql/reference/directory.html
+  - /guides/v2.4/graphql/reference/directory.html
 ---
 
 Use the `country` query to retrieve information about a specific country.

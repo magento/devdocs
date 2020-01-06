@@ -2,7 +2,7 @@
 group: graphql
 title: cmsPage query
 redirect_from:
-  - /guides/v2.3/graphql/reference/cms.html
+  - /guides/v2.4/graphql/reference/cms.html
 ---
 
 The `cmsPage` query returns information about content pages that were developed with the Magento Content Management System (CMS).

@@ -2,7 +2,7 @@
 group: graphql
 title: cart query
 redirect_from:
-  - /guides/v2.3/graphql/reference/quote.html
+  - /guides/v2.4/graphql/reference/quote.html
 ---
 
 Use the `cart` query to retrieve information about a particular cart.

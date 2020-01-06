@@ -5,7 +5,7 @@ title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
-  - /guides/v2.3/extension-dev-guide/backward-compatibility.html
+  - /guides/v2.4/extension-dev-guide/backward-compatibility.html
 ---
 
 Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.

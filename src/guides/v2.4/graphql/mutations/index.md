@@ -2,7 +2,7 @@
 group: graphql
 title: Using mutations
 redirect_from:
-  - /guides/v2.3/graphql/mutations.html
+  - /guides/v2.4/graphql/mutations.html
 ---
 
 While GraphQL queries perform read operations, mutations change the data. A mutation can create, update, or delete objects and fields. In REST terminology, queries operate like `GET` requests, while mutations are similar to `POST`, `PUT`, and `DELETE`.

@@ -4,7 +4,7 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
-redirect_from: guides/v2.2/frontend-dev-guide/templates/template-security.html
+redirect_from: guides/v2.4/frontend-dev-guide/templates/template-security.html
 ---
 
 ## Overview

@@ -2,7 +2,7 @@
 group: graphql
 title: category query
 redirect_from:
-  - /guides/v2.3/graphql/reference/categories.html
+  - /guides/v2.4/graphql/reference/categories.html
 ---
 
 {:.bs-callout-warning}

@@ -2,7 +2,7 @@
 group: graphql
 title: customAttributeMetadata query
 redirect_from:
-  - /guides/v2.3/graphql/reference/custom-attribute-metadata.html
+  - /guides/v2.4/graphql/reference/custom-attribute-metadata.html
 ---
 
 The `customAttributeMetadata` query returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field's attribute type.

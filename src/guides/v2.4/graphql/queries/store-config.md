@@ -2,7 +2,7 @@
 group: graphql
 title: storeConfig query
 redirect_from:
-  - /guides/v2.3/graphql/reference/store-config.html
+  - /guides/v2.4/graphql/reference/store-config.html
 ---
 
 The `storeConfig` query defines information about a store's configuration. You can query a non-default store by [changing the header]({{ page.baseurl }}/graphql/send-request.html) in your GraphQL request.

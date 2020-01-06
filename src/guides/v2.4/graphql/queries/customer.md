@@ -2,7 +2,7 @@
 group: graphql
 title: customer query
 redirect_from:
-  - /guides/v2.3/graphql/reference/customer.html
+  - /guides/v2.4/graphql/reference/customer.html
 ---
 
 The `customer` query returns information about the logged-in customer and store credit history.

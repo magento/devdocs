@@ -2,8 +2,8 @@
 group: inventory
 title: Inventory API reference
 redirect_from:
-  - /guides/v2.3/inventory/catalog-inventory-replacements.html
-  - /guides/v2.3/inventory/scalable-inventory-replacements.html
+  - /guides/v2.4/inventory/catalog-inventory-replacements.html
+  - /guides/v2.4/inventory/scalable-inventory-replacements.html
 ---
 
 {{site.data.var.im}} provides new modules, interfaces, and classes to manage inventory quantities, sources, stocks, etc. This reference details deprecated modules and new services available for managing inventory for single and multi source merchants.

@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Magento versioning schema
 redirect_from:
-  - /guides/v2.3/architecture/versioning.html
+  - /guides/v2.4/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.

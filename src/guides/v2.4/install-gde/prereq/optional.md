@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 redirect_from:
-  - guides/v2.3/install-gde/trouble/php/tshoot_phpini.html
+  - guides/v2.4/install-gde/trouble/php/tshoot_phpini.html
 ---
 
 ## Magento optional software {#install-optional-intro}

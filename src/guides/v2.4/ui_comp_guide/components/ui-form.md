@@ -2,7 +2,7 @@
 group: ui-components-guide
 title: Form component
 redirect_from:
-   - /guides/v2.3/ui-components/ui-form.html
+   - /guides/v2.4/ui-components/ui-form.html
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.

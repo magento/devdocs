@@ -2,7 +2,7 @@
 group: graphql
 title: wishlist query
 redirect_from:
-  - /guides/v2.3/graphql/reference/wishlist.html
+  - /guides/v2.4/graphql/reference/wishlist.html
 ---
 
 {:.bs-callout-warning}

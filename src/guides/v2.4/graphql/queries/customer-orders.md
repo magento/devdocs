@@ -2,7 +2,7 @@
 group: graphql
 title: customerOrders query
 redirect_from:
-  - /guides/v2.3/graphql/reference/sales.html
+  - /guides/v2.4/graphql/reference/sales.html
 ---
 
 The Sales module performs a wide variety of functions, including order, invoice, and shipment management. However, most of these functions are performed on the backend, and the customer does not have access to this information. By returning a list of customer orders, the `customerOrders` query allows a customer to retrieve their order histories.

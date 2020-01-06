@@ -7,8 +7,7 @@ functional_areas:
   - System
   - Setup
 redirect_from:
-  - guides/v2.2/config-guide/deployment/pipeline/example/rsync.html
-  - guides/v2.3/config-guide/deployment/pipeline/example/rsync.html
+  - guides/v2.4/config-guide/deployment/pipeline/example/rsync.html
 ---
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then deploy those values to your production system.

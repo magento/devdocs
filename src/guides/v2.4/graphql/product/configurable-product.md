@@ -2,7 +2,7 @@
 group: graphql
 title: Configurable product data types
 redirect_from:
-  - /guides/v2.3/graphql/reference/configurable-product.html
+  - /guides/v2.4/graphql/reference/configurable-product.html
 ---
 
 The `ConfigurableProduct` data type implements the following interfaces:
