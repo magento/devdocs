@@ -5,31 +5,37 @@
       children:
         - label: Cloud Guide
           url: /cloud/bk-cloud.html
+          versionless: true
 
         - label: Cloud Architecture
           url: /cloud/architecture/cloud-architecture.html
+          versionless: true
 
         - label: Upgrades and Patches
           url: /cloud/project/project-upgrade-parent.html
+          versionless: true
 
         - label: Release Notes
           url: /cloud/release-notes/cloud-tools.html
+          versionless: true
 
     - label: Cloud development
       children:
         - label: Local development
           url: /cloud/setup/first-time-setup.html
+          versionless: true
 
         - label: Launch Docker
           url: /cloud/docker/docker-config.html
-          exclude_versions: ["2.0"]
+          versionless: true
 
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
-          exclude_versions: ["2.0"]
+          versionless: true
 
         - label: Configure Environments
           url: /cloud/env/environments.html
+          versionless: true
 
 - label: Setup
   children:
@@ -189,6 +195,10 @@
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
+
+    - label: Compliance
+      url: /compliance/industry-compliance.html
+      versionless: true
 
     - label: Inventory Management
       url: /inventory/index.html

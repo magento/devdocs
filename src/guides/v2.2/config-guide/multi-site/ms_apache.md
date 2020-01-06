@@ -15,7 +15,7 @@ If necessary, copy the existing `index.php` entry point script for your [website
 
    Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-   Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+   Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ site.baseurl }}/cloud/project/project-multi-sites.html).
 
 *  You use one virtual host per website; the virtual host configuration file is `/etc/httpd/httpd.conf`
 
