@@ -96,6 +96,48 @@ To override the parent theme's styles for buttons in your theme:
 
 1. Add your styles for the button component. If the file is left blank, then no styles are applied for the component.
 
+### Extend module styles
+
+To extend a Module's styles in your theme:
+
+1. In your theme directory, create a `Module_Name/web/css/source` directory.
+1. Create an `_extend.less` file in the theme directory. For example:
+
+   ```tree
+   <theme_dir>/
+   ├── <module_dir>/
+   │   ├── web/
+   │   │   ├── css/
+   │   │   │   ├── source/
+               ├──_extend.less
+   ...
+   ```
+1. Add additional styles in the `_extend.less` file.
+
+For example, to extend the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_extend.less`.
+
+### Override module styles
+
+To override module styles in your theme:
+
+1. In your theme directory, create a `Module_Name/web/css/source` directory.
+1. Create a `_module.less` file in the theme directory. For example:
+
+   ```tree
+   <theme_dir>/
+   ├── <module_dir>/
+   │   ├── web/
+   │   │   ├── css/
+   │   │   │   ├── source/
+               ├──_module.less
+   ...
+   ```
+   This file overrides the `_module.less` file of the specific module.
+
+1. Add your styles in the `_module.less` file.
+
+For example, to override the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_module.less`.
+
 ## Recommended reading
 
 -  [Compile Less with Grunt]({{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html)
