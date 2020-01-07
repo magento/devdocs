@@ -115,6 +115,12 @@ defaults:
     values:
       sitemap: false
 
+  -
+    scope:
+      path: guides/v2.4
+    values:
+      sitemap: false   
+
 ##########################
 # Plugins and extensions #
 ##########################
