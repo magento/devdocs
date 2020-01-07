@@ -142,7 +142,7 @@ Because each service runs in a separate container, the service logs are not avai
 -  **RabbitMQ log**: `/var/log/rabbitmq/rabbit@host1.log`
 
 {:.bs-callout-tip}
-Log file locations in the Scaled architecture depend on the node type. See [Log locations in Scaled architecture][scaled].
+Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
 
 [hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
