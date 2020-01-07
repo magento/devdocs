@@ -199,6 +199,12 @@ To add new classes to the container:
 {:.bs-callout-warning}
 This method overrides existing classes.
 
+To add new Id to the container:
+
+```xml
+<referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
+```
+
 ## Create a block {#xml-manage-block}
 
 Blocks are created (declared) using the `<block>` instruction.
