@@ -48,7 +48,7 @@ The following platform upgrades help enhance website security and PCI compliance
 
 *  **Improved page caching and session storage**. This release has been tested on the latest stable release of Redis v5.0.6. <!--- MC-14877-->
 
-*  **Enhanced support for Maria DB 10.2**. This release introduces a new abstraction layer that permits retrieval of information about tables and columns in deployments that implement declarative schema and MariaDB 10.2. Previously, when you ran `setup:upgrade` in a deployment with those features,  Magento threw an error indicating that the the schema was out-of-date. <!--- MC-16319 MC-17633-->
+*  **Enhanced support for MariaDB 10.2**. Before Magento 2.3.4, when using declarative schema with MariaDB 10.2, Magento threw an error indicating that the schema was not up-to-date after running `setup:upgrade`. With this release, we have normalized the values returned by MariaDB, which allows system integrators to use declarative schema with both MySQL and MariaDB. <!--- MC-16319 MC-17633-->
 
 *  The core integration of the Authorize.net payment method has been deprecated. Please use the official payment integration that is available on Marketplace.
 
@@ -86,25 +86,33 @@ Page Builder enhancements for this release include:
 
 Inventory Management enhancements for this release include:
 
-*  New in-store pickup feature
-*  Support for bundle products on non-default stocks
-*  Performance optimizations
+*  Addressed a known performance issue that caused higher than expected loads on the database server in scenarios involving the shopping cart.
+*  Updated the Inventory Reservations CLI command to reduce memory usage when finding and compensating for missing reservations on large catalogs.
+*  Resolved multiple quality issues, including those related to credit memos, grouped products, source and stock mass actions.
 
 See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### GraphQL
 
-Expanded GraphQL functionality and improvements include the following:
+This release includes improved GraphQL coverage for search, layered navigation, cart functionality. The following mutations/queries are available:
 
-*  StoreFront API coverage for Catalog and Checkout
-*  Pricing schema
-*  Performance
+* Ability to link a cart to a customer and retrieve it on different devices.
+* Improved method of returning pricing data to make it easier for GraphQL consumers to render pricing on the storefront.
+* Fixed product tax and product level discount information.
+* Promotion data in cart.
+* Includes line item and cart level discounts.
+* Category filtering - get category data by ID, name, or SLUG.
+* Filter by custom attributes in layered navigation.
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
+
+### dotdigital
+
+Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent, even without being a dotdigital Engagement Cloud customer.
 
 ### Google Shopping ads Channel
 
