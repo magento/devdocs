@@ -84,13 +84,13 @@ See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3
 
 This release includes improved GraphQL coverage for search, layered navigation, cart functionality. The following mutations/queries are available:
 
-* Ability to link a cart to a customer and retrieve it on different devices.
-* Improved method of returning pricing data to make it easier for GraphQL consumers to render pricing on the storefront.
-* Fixed product tax and product level discount information.
-* Promotion data in cart.
-* Includes line item and cart level discounts.
-* Category filtering - get category data by ID, name, or SLUG.
-* Filter by custom attributes in layered navigation.
+*  Ability to link a cart to a customer and retrieve it on different devices.
+*  Improved method of returning pricing data to make it easier for GraphQL consumers to render pricing on the storefront.
+*  Fixed product tax and product level discount information.
+*  Promotion data in cart.
+*  Includes line item and cart level discounts.
+*  Category filtering - get category data by ID, name, or SLUG.
+*  Filter by custom attributes in layered navigation.
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
