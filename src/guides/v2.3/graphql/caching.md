@@ -11,8 +11,7 @@ The definitions for some queries include cache tags. Full page caching uses thes
 
 Magento caches the following queries:
 
-*  `category` (deprecated)
-*  `categoryList`
+*  `category`
 *  `cmsBlocks`
 *  `cmsPage`
 *  `products`
