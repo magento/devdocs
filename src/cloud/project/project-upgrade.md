@@ -201,7 +201,7 @@ We also recommend upgrading to the latest version of the Fastly CDN module for M
 
 ## Troubleshoot upgrade
 
-If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Magento Admin pane:
+If the upgrade failed, you receive an error message in the browser indicating that you cannot access your storefront or the Magento Admin panel:
 
 ```terminal
 There has been an error processing your request
