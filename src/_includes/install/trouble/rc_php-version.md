@@ -29,5 +29,5 @@ To resolve the issue, try the following:
 *  Check the `$PATH` environment variable for multiple paths to PHP
 *  Use the `which php` command to locate the first PHP executable in your path; if it's not correct, remove it or create a symlink to the correct PHP version
 *  Use a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) page to collect more information
-*  Make sure you are running a supported PHP version according to our [System Requirements]({{ page.baseurl }}install-gde/system-requirements.html)
+*  Make sure you are running a supported PHP version according to our [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 *  Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
