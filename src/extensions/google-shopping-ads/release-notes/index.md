@@ -23,6 +23,18 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v3.0.2
+
+Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new}**Admin Panel Access**: <!--CHAN-3815-->Improved the onboarding process to allow access to the side _Admin_ panel when the initial _Welcome to Google Shopping ads Channel in Magento_ screen displays.
+
+-  {:.fix}**Shopping Cart**: <!--CHAN-3654-->Corrected an issue that caused an error when attempting to delete an item from the shopping cart.
+
+-  {:.fix}**Add to Cart**: <!--CHAN-3861-->Corrected an issue that caused an error when hovering over an item on the store landing page and clicking **Add to Cart**. With this release, if all item required item options (size, color, etc.) are not complete when attempting to **Add to Cart**, a message appears stating that you must choose options for your item.
+
+-  {:.fix}**Onboarding FAQ**: <!--CHAN-3829-->Corrected the _Read FAQ_ link on the initial _Welcome to Google Shopping ads Channel in Magento_ screen.
+
 ### v3.0.1
 
 Google Shopping ads Channel 3.0.1 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
