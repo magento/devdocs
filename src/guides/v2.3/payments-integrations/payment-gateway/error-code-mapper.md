@@ -40,10 +40,10 @@ The  [braintree_error_mapping.xml]({{ site.mage2bloburl }}/{{ page.guide_version
 
 The message definitions are based on the [error_mapping.xsd]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/etc/error_mapping.xsd) schema. Messages must comply with the following structure:
 
--  `message_list` &mdash; the root node. It can contain a list of specific messages
--  `message` &mdash; the node, which contains the customized message and two attributes
-   -  `code` &mdash; the error code returned from the payment gateway. The value can be numeric or string
-   -  `translate` &mdash; a boolean attribute that determines whether to collect all message translations
+-  `message_list` --- the root node. It can contain a list of specific messages
+-  `message` --- the node, which contains the customized message and two attributes
+   -  `code` --- the error code returned from the payment gateway. The value can be numeric or string
+   -  `translate` --- a boolean attribute that determines whether to collect all message translations
 
 ### Configure dependency injection
 

@@ -18,7 +18,7 @@ This topic discusses how to set up database caching and how to verify database c
 *  Using a custom [cache](https://glossary.magento.com/cache) frontend, in which case you modify `env.php` only.
 
 {:.bs-callout-warning}
-Database caching&mdash;like file-based caching&mdash; works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
+Database caching---like file-based caching--- works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
 Varnish is designed to accelerate the HTTP protocol.
 
 ## Prerequisites {#mage-cache-db-prereq}

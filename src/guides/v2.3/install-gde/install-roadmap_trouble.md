@@ -46,7 +46,7 @@ Topics include:
 
 *  [Upgrading (or *patching* the Magento application)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
 *  [Updating components (including install, uninstall, update, enable, disable)]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*  *Contributing developers only*: [Contributing developers&mdash;update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
+*  *Contributing developers only*: [Contributing developers---update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html)
 
 ## Deploy to production
 
