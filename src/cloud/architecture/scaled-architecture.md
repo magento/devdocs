@@ -92,11 +92,7 @@ project-id@server-id:~$
 
 ### Log locations
 
-The log locations vary slightly depending on the node. For example, database logs are not written to web nodes.
-
-Log file            | Core node                        | Web node
-------------------- | -------------------------------- | --------
-**MySQL error log** | `/var/log/mysql/mysql-error.log` | Not available
+The log locations vary slightly depending on the node. For example, a database log, such as the **MySQL error log**, is available on a core node (`/var/log/mysql/mysql-error.log`), but it is not available on a web node.
 
 <!-- Link definitions -->
 [Core tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-core.png
