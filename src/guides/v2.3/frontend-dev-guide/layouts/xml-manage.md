@@ -18,6 +18,7 @@ This article describes the following typical [layout](https://glossary.magento.c
 -  [Reference a CMS block](#ref_cms_block)
 -  [Making the block visibility dynamic](#ref_config_block)
 -  [Create a block](#xml-manage-block)
+-  [Set body attributes](#layout_body_attributes)
 -  [Set the template used by a block](#set_template)
 -  [Modify block arguments](#layout_markup_modify-block)
 -  [Reference a block](#xml-manage-ref-block)
@@ -214,6 +215,43 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
   </arguments>
 </block>
 ```
+
+## Set body attributes {#layout_body_attributes}
+
+To set body attributes, use the `<attribute>` instruction.
+
+**Example:** Add a new class to `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="class" value="my-new-body-class"/>
+    </body>
+</page>
+```
+
+**Example:** Add a custom attribute to `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="data-role" value="my-body-role"/>
+    </body>
+</page>
+```
+
+**Example:** Add an id to `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="id" value="my-new-body-id"/>
+    </body>
+</page>
+```
+
+{:.bs-callout-warning}
+It is not recommended to set the `body` id in layout files that have a wider impact (`e.g. default.xml`).
 
 ## Reference a block {#xml-manage-ref-block}
 
