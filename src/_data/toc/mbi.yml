@@ -1,0 +1,19 @@
+label: Business Intelligence
+url: /mbi/docs/
+versionless: true
+pages:
+- label: Getting started
+  url: /mbi/docs/getting-started.html
+  versionless: true
+
+- label: Export API
+  url: /mbi/docs/export-api.html
+  versionless: true
+
+- label: Import API
+  url: /mbi/docs/import-api.html
+  versionless: true
+
+- label: Libraries
+  url: /mbi/docs/libraries.html
+  versionless: true

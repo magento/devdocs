@@ -1,0 +1,2 @@
+ {:.bs-callout-info}
+On Pro projects, we recommend updating YAML configuration files in an Integration environment and testing the changes before pushing the updates to Staging and Production environments. If you discover that configuration changes are not applied to Staging and Production sites after you redeploy and do not see any related error messages in the log, submit a [Support ticket](http://support.magento.com) that describes the attempted configuration changes. Include any updated YAML configuration files in the ticket.

@@ -1,1 +1,0 @@
-../../../v2.2/mtf/features/test_suite.md

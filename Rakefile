@@ -70,6 +70,22 @@ task :whatsnew do
   elsif date.is_a? String
     sh 'bin/whatsup_github', 'since', ENV['since'].to_s
   else
-    puts 'The "since" argument must be a string/ Example: "jul 4"'
+    puts 'The "since" argument must be a string. Example: "jul 4"'
   end
+end
+
+desc 'Generate index for Algolia'
+task index: %w[init] do
+  puts 'Generating index for Algolia ...'
+  sh 'bin/jekyll',
+        'algolia',
+          '--config=_config.yml,_config.index.yml'
+end
+
+desc 'Convert HTML text to kramdown in your terminal'
+task :convert do
+  puts 'Paste HTML text followed by a new line and press Control-D.'.magenta
+  result = `bin/kramdown --input=html --output=kramdown`
+  puts 'Converted text:'.magenta
+  puts result.bold
 end

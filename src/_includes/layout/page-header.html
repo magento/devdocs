@@ -1,0 +1,24 @@
+<!-- page-header -->
+<section class="page-intro">
+{% if page.guide_version != nil and page.guide_version != site.version %}
+  <div class="message-banner version-banner">
+    This is archived documentation for Magento v2.2 and is <a href='https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf'>no longer supported</a>. Go to the <a href='https://devdocs.magento.com'>latest documentation</a>.
+  </div>
+{% endif %}
+
+{% if page.ee_only == true %}
+<span class="ee-only">{{site.data.var.ee}} only</span>
+{% endif %}
+
+{% if page.subtitle %}
+<h1 class="page-subtitle">{{ page.subtitle }}</h1>
+{% endif %}
+
+{% if page.title == "How to Add a New Table to a Database" %}
+  <div class="message-banner">
+    This tutorial applies to Magento 2.2.x only. For Magento 2.3.x, see <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema">Declarative Schema</a>.
+  </div>
+{% endif %}
+
+<h1 class="page-heading">{{ page.title }}</h1>
+</section>
