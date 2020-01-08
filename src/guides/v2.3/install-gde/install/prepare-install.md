@@ -57,7 +57,7 @@ The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0
 
 If so, create [`auth.json`]({{ page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth) in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
-{% include install/file-system-perms-before_22.md %}
+{% include install/file-system-perms-before_23.md %}
 
 {:.ref-header}
 Related topics

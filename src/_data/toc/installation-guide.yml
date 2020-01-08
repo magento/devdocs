@@ -285,6 +285,7 @@ pages:
 
         - label: Appendix—Magento file system ownership and appendix (legacy)
           url: /install-gde/install/legacy-file-system-perms.html
+          include_versions: ["2.2"]
 
         - label: Install sample data after Magento
           url: /install-gde/install/sample-data-after-magento.html

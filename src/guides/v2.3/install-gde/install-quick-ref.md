@@ -67,7 +67,7 @@ You are required to authenticate; see [Get your authentication keys][] for detai
 {:.bs-callout-tip}
 Alternatively, you can also download a [Magento software archive][].
 
-{% include install/file-system-perms-before_22.md %}
+{% include install/file-system-perms-before_23.md %}
 
 ## Installation part 2: Installing the Magento software
 

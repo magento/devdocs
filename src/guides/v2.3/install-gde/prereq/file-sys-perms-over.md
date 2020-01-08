@@ -9,4 +9,4 @@ functional_areas:
   - Setup
 ---
 
-{% include install/file-system-umask-over.md %}
+{% include install/file-system-umask-over23.md %}

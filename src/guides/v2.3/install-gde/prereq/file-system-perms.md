@@ -13,4 +13,4 @@ functional_areas:
   - Setup
 ---
 
-{% include install/file-system-perms-before_22.md %}
+{% include install/file-system-perms-before_23.md %}
