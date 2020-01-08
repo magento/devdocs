@@ -3,16 +3,17 @@ group: release-notes
 title: Component Status
 ---
 
-This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
+This page shows the status of each component for the Magento 2.4.x release and is intended to show you the readiness of different components.
 
-Each status color indicates the severity and amount of 2.3-related issues for a particular component.
+Each status color indicates the severity and amount of 2.4-related issues for a particular component.
 
 -  <span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.
 -  <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
 -  <span class="status green">Green</span> - The module has no significant or outstanding issues.
 
-The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.3.
-Issues that are not related to the 2.3 release are not part of this report.
+The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.4.
+
+Issues that are not related to the 2.4 release are not part of this report.
 
 ## CE Modules
 
@@ -209,4 +210,3 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Sales                     | <span class='status yellow'>Yellow</span> |
 | None                              | <span class='status green'>Green</span> |
 | Tools/ Utilities                  | <span class='status green'>Green</span> |
-
