@@ -5,7 +5,6 @@ functional_areas:
 - Upgrade
 redirect_from:
 - guides/v2.2/install-gde/prereq/prereq_updater.html
-- guides/v2.3/install-gde/prereq/prereq_updater.html
 ---
 
 In some cases, you might need to update the updater application, which is responsible for updating components and the Magento application. You should do this only if instructed to do so.
