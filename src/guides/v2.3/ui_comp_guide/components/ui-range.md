@@ -15,7 +15,6 @@ The Range component implements the range for filtering rows in a grid. Visually,
 | `rangeType` | Defines what kind of input elements the range contains.<br/>For example, if the value is `date`, then range includes two date fields. | String | - |
 | `template` | Path to the component’s `.html` template. | String | `ui/grid/filters/elements/group` |
 
-
 ## Source files
 
 Extends [`Multiline`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html):
