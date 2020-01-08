@@ -34,8 +34,6 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 
 If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
-See the [GraphQL documentation]({{ site.baseurl }}/guides/v2.3/graphql/index.html) for more information.
-
 #### Add a custom authentication mechanism
 
 1. Provide a custom implementation of `\Magento\Authorization\Model\UserContextInterface`, that verifies a user's identity using a  custom authentication mechanism.
