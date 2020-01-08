@@ -14,7 +14,7 @@ The following containers provide the services required to build, deploy and run 
 
 
 {:.bs-callout-info}
-See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-config.html) for use when launching Docker.
+See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-versions) for use when launching Docker.
 
 ### Database Container
 
