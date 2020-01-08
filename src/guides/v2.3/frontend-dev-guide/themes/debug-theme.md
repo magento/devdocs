@@ -42,18 +42,17 @@ Template hints enabled.
 bin/magento cache:clean config full_page
 ```
 
-Now that you have enabled template hints, reload the page that you want to modify, if you enabled hints for storefront with URL Param reload the page with param in the URL `?templatehints=magento` and review the path for the template file or files that template hints show.
-
-For example, here is how a storefront [category](https://glossary.magento.com/category) page looks with enabled template hints:
+Now that you have enabled template hints, reload the page that you want to modify. If you enabled hints for storefront with URL Param, reload the page with the param `?templatehints=magento` in the URL and review the path for the template file or files that the template hints show.
+Here is an example of a storefront [category](https://glossary.magento.com/category) page with template hints enabled:
 
 ![A storefront page with enabled template hints]({{ site.baseurl }}/common/images/theme_debug2.png)
 
-In this example mini [shopping cart](https://glossary.magento.com/shopping-cart) page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
+In this example, the mini [shopping cart](https://glossary.magento.com/shopping-cart) page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
 ![A hint with template name for minishopping cart]({{ site.baseurl }}/common/images/theme_debug3.png)
 (the template name is above the element)
 
-Here is how Customers page looks with enabled template hints in Admin:
+Here is how the Customers page looks with template hints enabled in the Admin:
 
 ![Admin page with enabled template hints]({{ site.baseurl }}/common/images/theme_debug5.png)
 
