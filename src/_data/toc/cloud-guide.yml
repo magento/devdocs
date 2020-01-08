@@ -153,6 +153,10 @@ pages:
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
 
+        - label: Magento Functional Testing
+          url: /cloud/docker/docker-mftf.html
+          versionless: true
+
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
       versionless: true

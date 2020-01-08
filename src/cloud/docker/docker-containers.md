@@ -34,13 +34,16 @@ You can share files easily between your machine and a Docker container by placin
 | PHP           | `--php`    | 7.0, 7.1, 7.2      | [magentp/magento-cloud-docker-php][php-image]
 | RabbitMQ      | `--rmq`    | 3.5, 3.7           | [rabbitmq]
 | Redis         | `--redis`  | 3.2, 4.0, 5.0      | [magento/magento-cloud-docker-redis][redis]
+| Selenium      | `--with-selenium`    | &ndash;  | &ndash;
+| - Version     | `--selenium-version` | Any      | [selenium]
+| - Image       | `--selenium-image`   | Any      | [selenium]
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
 For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
 
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
+./vendor/bin/ece-tools docker:build --mode developer --php 7.2
 ```
 
 [Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
@@ -51,9 +54,10 @@ For example, the following command starts the Docker configuration generator for
 [elastic]: https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch
 [mariadb]: https://hub.docker.com/_/mariadb
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
-[node]: https://hub.docker.com/_/node/]
+[node]: https://hub.docker.com/_/node/
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [php-image]: https://hub.docker.com/r/magento/magento-cloud-docker-php
-[redis]: https://hub.docker.com/r/magento/magento-cloud-docker-redis
+[redis]: https://hub.docker.com/_/redis
 [tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[selenium]: https://hub.docker.com/u/selenium
