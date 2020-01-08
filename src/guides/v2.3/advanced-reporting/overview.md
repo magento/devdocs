@@ -45,4 +45,4 @@ Related topics
 [Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
 [base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
-[Magento crontab]: {{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
+[Magento crontab]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
