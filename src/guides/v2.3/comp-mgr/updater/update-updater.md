@@ -4,7 +4,6 @@ title: Update the updater application
 functional_areas:
 - Upgrade
 redirect_from:
-- guides/v2.2/install-gde/prereq/prereq_updater.html
 - guides/v2.3/install-gde/prereq/prereq_updater.html
 ---
 
