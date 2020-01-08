@@ -11,7 +11,7 @@ We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud pro
 
 ### Environment configuration changes
 
-The folllowing table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
+The following table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
 
    Item | Replacement
    -------- | -------
