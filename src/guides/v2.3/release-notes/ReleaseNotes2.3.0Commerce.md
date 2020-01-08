@@ -3055,7 +3055,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-72142 -->
 
-*  Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by Aurélien Foucret*.
+*  Support for Elasticsearch 5.x has been added. See [Install and configure Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by Aurélien Foucret*.
 
 <!--- ENGCOM-1057 -->
 
