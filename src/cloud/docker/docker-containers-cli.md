@@ -36,6 +36,24 @@ The configured state is not ideal
 ```
 {:.no-copy}
 
+All of the build and deploy processes are defined and configured using the ECE-Tools and Magento Cloud template.
+
+### CLI Container Commands
+
+These commands are available in any of the containers. 
+
+| Command    | Target Containers   |  Notes
+| ------------- |  ------------------ |------------------
+| cloud-build | build | Used to build the application in production mode, configured via build hook in .magento.app.yml
+| cloud-deploy | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
+| cloud-post-deploy | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
+| ece-command | deploy | Used to run other commands from ece-tools CLI Tool
+| magento-command | deploy | Used to run bin/magento commands
+| magento-installer | deploy | Just runs build and then deploy hooks
+| mftf-command | deploy | Used to run MFTF command for testing
+| run-cron | cron | Used to run cron jobs
+
+To explore what any of the commands are doing, take a look at the scripts in the github [Cloud Docker Repository](https://github.com/magento/magento-cloud-docker/tree/develop/images/php/cli/bin)
 
 ### Build Container
 
@@ -43,20 +61,18 @@ The configured state is not ideal
  - Name: build
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php)  
- - Ports Exposed: none
- - Volumes Exposed: none  
+ 
 
 This container is used for the build process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
-This mounts the filesystem with write permissions.
 
 #### Container Usage
 
-This container is used by the cloud cli tool in the following ways.
-todo
+This container can be used to run commands manually recreating steps from the build process.
+```
+docker-compose run build magento-command setup:static-content:deploy
+```
 
-You can also use this container as follows:
-todo
 
 ### Cron Container
 
@@ -64,8 +80,6 @@ todo
  - Name: cron
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php)  
- - Ports Exposed: none
- - Volumes Exposed: none  
 
 This container is used for the cronjob, it runs the scheduled cronjobs and can also be used to do one off cron runs.
 
@@ -100,28 +114,23 @@ docker-compose run cron /usr/local/bin/php bin/magento cron:run
  - Name: deploy
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php)  
- - Ports Exposed: none
- - Volumes Exposed: none  
+
 
 This container is used for the deploy process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
-This mounts the filesystem with read-only permissions.
-
 #### Container Usage
 
-This container is used by the cloud cli tool in the following ways.
-todo
+This container can be used to interact with the application.
+```
+docker-compose run build magento-command index:reindex
+```
 
-You can also use this container as follows:
-todo
 
 ### Node Container
 
 #### Container Information
  - Name: node
  - Base Image: [node](https://hub.docker.com/_/node)
--  Ports Exposed: none
--  Volumes Exposed: none
 
 #### Container Usage
 The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.

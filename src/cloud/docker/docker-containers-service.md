@@ -22,9 +22,7 @@ See the [service version values available]({{ site.baseurl }}/cloud/docker/docke
  - Name: db
  - Base Image: [mariadb](https://hub.docker.com/_/mariadb)
 -  Ports Exposed 3306
--  Volumes Exposed:
-   -  `/var/lib/mysql`  Used as the data volume for mysql. 
-   -  `./docker/mysql/docker-entrypoint-initdb.d` Used at startup for populating database
+
 
 
 #### Container Usage
@@ -60,7 +58,7 @@ Alternatively config values can be set in the environment section of the docker-
  - Base Image: [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)
    - Based On: [elasticsearch](https://hub.docker.com/_/elasticsearch)  
 -  Ports Exposed: 9200,9300
--  Volumes Exposed: none
+
 
 #### Container Usage
 
@@ -74,21 +72,19 @@ Standard Elasticsearch container with required plugins and configurations for Ma
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php) 
 -  Ports Exposed: 9000,9001
--  Volumes Exposed: 
-    -  Read-only volumes:
-       -  `/app`
-       -  `/app/vendor`
-       -  `/app/generated`
-       -  `/app/setup`
-    -  Read/Write volumes:
-       -  `/app/var`
-       -  `/app/app/etc`
-       -  `/app/pub/static`
-       -  `/app/pub/media`
+
 
 #### Container Usage
 
-TODO
+It is possible to load custom extensions in the FPM configuration, these are configured in the generic container in docker-compose.yml, but should be overrode in docker-compose.override.yml.
+```
+  generic:
+    environment:
+     - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
+```
+
+More information about configuring the php environment can be found in the [XDebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html) documentation. 
+
 
 
 ### Rabbitmq Container
@@ -97,11 +93,11 @@ TODO
  - Name: rabbitmq
  - Base Image: [rabbitmq](https://hub.docker.com/_/rabbitmq)
 -  Ports Exposed: 4369,5671,5672,25672
--  Volumes Exposed: none
+
 
 #### Container Usage
 
-TODO
+Standard RabbitMQ Container, with no configuration or changes from Magento Cloud Docker.
 
 
 ### Redis Container
@@ -110,11 +106,15 @@ TODO
  - Name: redis
  - Base Image: [redis](https://hub.docker.com/_/redis)
 -  Ports Exposed: 6379
--  Volumes Exposed: none
+
 
 #### Container Usage
+A standard redis container with no customizations, no persistence or configuration is used. 
 
-TODO
+Connect to and run redis commands via the redis-cli inside the container:
+```
+docker-compose run redis redis-cli -h redis
+```
 
 
 ### TLS Container
@@ -124,13 +124,18 @@ TODO
 - Base Image: [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls)
    - Based On: [debian:jessie](https://hub.docker.com/_/debian)
 -  Ports Exposed: 443
--  Volumes Exposed: none
+
 
 #### Container Usage
 
 The TLS termination proxy container, based on the  [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) image, facilitates the Varnish SSL termination over HTTPS.
 
-
+To increase the timeout on this container use the following in docker-compose.override.yml:
+```
+  tls:
+    environment:
+      - TIMEOUT=600
+```
 
 ### Varnish Container
 
@@ -139,7 +144,7 @@ The TLS termination proxy container, based on the  [magento/magento-cloud-docker
 - Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
    - Based on: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: 80
--  Volumes Exposed: none
+
 
 #### Container Usage
 The Varnish container is based on the [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) image. Varnish works on port 80.
@@ -166,7 +171,7 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 - Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
    - Based on: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: none
--  Volumes Exposed: none
+
 
 #### Container Usage
 The Web container uses nginx to handle web requests after TLS and Varnish. It passes all requests to the fpm container.
