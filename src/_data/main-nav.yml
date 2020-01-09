@@ -45,8 +45,14 @@
           url: /cloud/env/environments.html
           versionless: true
 
-        - label: Magento Functional Testing
+    - label: Functional Testing
+      children:
+        - label: Magento application testing
           url: /cloud/docker/docker-mftf.html
+          versionless: true
+
+        - label: ECE-Tools testing
+          url: /cloud/docker/docker-development-testing.html
           versionless: true
 
 - label: Setup

@@ -145,16 +145,18 @@ pages:
               url: /cloud/docker/docker-extend.html
               versionless: true
 
-        - label: Functional testing in Docker
-          url: /cloud/docker/docker-development-testing.html
-          versionless: true
+        - label: Functional Testing
+          children:
+            - label: Magento application testing
+              url: /cloud/docker/docker-mftf.html
+              versionless: true
+
+            - label: ECE-Tools testing
+              url: /cloud/docker/docker-development-testing.html
+              versionless: true
 
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
-          versionless: true
-
-        - label: Magento Functional Testing
-          url: /cloud/docker/docker-mftf.html
           versionless: true
 
     - label: Integrations
