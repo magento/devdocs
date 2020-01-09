@@ -13,7 +13,7 @@ Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 
 
 1. Prepare environment
 
-    - Add MFTF dependency via Composer tou your project,
+    - Add the MFTF dependency to your project using Composer.
 
     ```bash
     composer require "magento/magento2-functional-testing-framework" --no-update
