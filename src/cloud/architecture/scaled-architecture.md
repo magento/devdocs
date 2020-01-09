@@ -7,6 +7,9 @@ functional_areas:
 
 The Cloud infrastructure scales according to your resource needs to achieve greater efficiency. The {{site.data.var.ece}} monitors your applications and can adjust capacity to maintain steady, predictable performance. Converting to this architecture helps to mitigate problems, such as latency or large spikes in traffic.
 
+{: .bs-callout-info}
+The scaled architecture is available for {{site.data.var.ece}} accounts with the Pro48 cluster or greater.
+
 ## Split architecture
 
 Historically, the Pro architecture consisted of 3 nodes, each containing a full tech stack. Now, there is a  scalable infrastructure that provides a tiered solution with a minimum of 6 nodes: 3 nodes for the core database and other services and 3 nodes for the web server. This split architecture provides the capability to scale tiers independently to achieve an optimal balance of performance. The **core** tier scales vertically (increases in size), and the **web** tier scales horizontally (increases instance count) and vertically (changes instance type and size).
