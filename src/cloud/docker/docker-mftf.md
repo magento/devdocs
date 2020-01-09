@@ -59,7 +59,7 @@ Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 
     docker-compose run deploy bash -c "echo \"$CONFIG\" > /app/dev/tests/acceptance/.env"
    ```
    
-    - Disable Magento settings which conflicts with MFTF
+    - Disable Magento settings that conflict with MFTF functionality.
 
     ```bash
     docker-compose run deploy magento-command config:set admin/security/admin_account_sharing 1
