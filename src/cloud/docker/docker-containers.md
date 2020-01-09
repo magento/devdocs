@@ -41,7 +41,8 @@ The `docker:build` command runs in interactive mode and verifies the configured 
 You may avoid installation of Varnish using `--no-varnish` option.
 
  {:.bs-callout-info}
-If you have Magento less than 2.2.0 you need to configure Magento manually to use Varnish for FPC
+If you have Magento 2.2.0 and higher it will be configured to use Varnish as FPC during the deployment.
+if you have custom configurations for FPC in app/etc/env.php - they won't be overwritten.
 
 For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2 without installation of Varnish:
 
