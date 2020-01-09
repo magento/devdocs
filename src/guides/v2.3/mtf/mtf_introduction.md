@@ -4,7 +4,7 @@ title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 ---
 
- {:.bs-callout-warning}
+{:.bs-callout-warning}
 The Magento Testing Framework (MTF) is deprecated and is superseded by the Magento Functional Testing Framework ([MFTF][]).
 This documentation is no longer updated to reflect changes in Magento functionality. Issues may arise if using MTF with the latest Magento code.
 
