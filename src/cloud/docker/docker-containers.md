@@ -50,8 +50,6 @@ For example, the following command starts the Docker configuration generator for
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2 --no-varnish
 ```
 
-In addition some services are installed by default with latest version
-
 [Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
 [Database container]: {{site.baseurl}}/cloud/docker/docker-database.html
 [CLI containers]: {{site.baseurl}}/cloud/docker/docker-cli.html
