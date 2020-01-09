@@ -37,11 +37,19 @@ You can share files easily between your machine and a Docker container by placin
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
-For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
+**Varnish** service is installed by default and right after the deployment Magento is configured to use Varnish for FPC.
+You may avoid installation of Varnish using `--no-varnish` option.
+
+ {:.bs-callout-info}
+If you have Magento less than 2.2.0 you need to configure Magento manually to use Varnish for FPC
+
+For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2 without installation of Varnish:
 
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
+./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2 --no-varnish
 ```
+
+In addition some services are installed by default with latest version
 
 [Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
 [Database container]: {{site.baseurl}}/cloud/docker/docker-database.html
