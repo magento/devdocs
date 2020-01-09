@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package is a set of patches, previously used within the ece-tools package to improve the integration of all Magento versions with Cloud environments and to deliver critical fixes quickly. This package can be integrated to an existing Magento project as a standalone package. Information about integrating Magento Cloud Patches can be found at [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html). These release notes describe the latest improvements to this package.
 
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
