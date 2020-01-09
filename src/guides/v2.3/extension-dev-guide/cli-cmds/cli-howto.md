@@ -114,16 +114,16 @@ Following is a summary of the process:
    </config>
    ```
 
-1. Clean the [cache](https://glossary.magento.com/cache) using the below command:
+1. Clean the [cache](https://glossary.magento.com/cache) using the command:
 
    ```bash
-   php bin/magento cache:clean
+   bin/magento cache:clean
    ```
 
-1. After clean the cache, Regenerate the code using the below command:
+1. After clean the cache, Regenerate the code using the command:
 
    ```bash
-   php bin/magento setup:di:compile
+   bin/magento setup:di:compile
    ```
 
 ### Result
