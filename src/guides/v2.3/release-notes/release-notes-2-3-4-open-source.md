@@ -75,7 +75,9 @@ This release contains 250 enhancements to core quality, which improve the qualit
 Inventory Management enhancements for this release include:
 
 *  Addressed a known performance issue that caused higher than expected loads on the database server in scenarios involving the shopping cart.
+
 *  Updated the Inventory Reservations CLI command to reduce memory usage when finding and compensating for missing reservations on large catalogs.
+
 *  Resolved multiple quality issues, including those related to credit memos, grouped products, source and stock mass actions.
 
 See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
@@ -84,13 +86,17 @@ See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3
 
 This release includes improved GraphQL coverage for search, layered navigation, cart functionality. The following mutations/queries are available:
 
-*  Ability to link a cart to a customer and retrieve it on different devices.
-*  Improved method of returning pricing data to make it easier for GraphQL consumers to render pricing on the storefront.
-*  Fixed product tax and product level discount information.
-*  Promotion data in cart.
-*  Includes line item and cart level discounts.
-*  Category filtering - get category data by ID, name, or SLUG.
-*  Filter by custom attributes in layered navigation.
+*  **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.
+
+*  **A customer can start an order on one device and complete it on another.** Use the [`customerCart]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
+
+*  **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
+
+*  **You can search categories by ID, name, and/or URL key.** The [`categoryList]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated`category` query.
+
+*  **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
+
+*  **The [`cart`]({{page.baseurl}}/graphql/queries/cart.html) object has been enhanced to include information about promotions and applied discounts at the line and cart levels.**
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
@@ -148,19 +154,19 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6198-->
 
-* Patch dependencies no longer cause a patch to be applied twice. Previously, a patch on which there was a dependency was installed twice and entered twice in the `patch_list` table. *Fix submitted by korostii in pull request [24947](https://github.com/magento/magento2/pull/24947)*. [GitHub-24019](https://github.com/magento/magento2/issues/24019)
+*  Patch dependencies no longer cause a patch to be applied twice. Previously, a patch on which there was a dependency was installed twice and entered twice in the `patch_list` table. *Fix submitted by korostii in pull request [24947](https://github.com/magento/magento2/pull/24947)*. [GitHub-24019](https://github.com/magento/magento2/issues/24019)
 
 <!--- ENGCOM-5582-->
 
-* Static content deployment (`php bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
+*  Static content deployment (`php bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
 
 <!--- ENGCOM-6205-->
 
-* You can now successfully install Magento 2.3.x with MySQL 8.  Previously, installation stopped because  the patch triggered forced indexation. *Fix submitted by Anton Kaplya in pull request [25357](https://github.com/magento/magento2/pull/25357)*. [GitHub-25294](https://github.com/magento/magento2/issues/25294)
+*  You can now successfully install Magento 2.3.x with MySQL 8.  Previously, installation stopped because  the patch triggered forced indexation. *Fix submitted by Anton Kaplya in pull request [25357](https://github.com/magento/magento2/pull/25357)*. [GitHub-25294](https://github.com/magento/magento2/issues/25294)
 
 <!--- ENGCOM-6218-->
 
-* You can now use SSL to connect Magento 2.x to an MySQL server. *Fix submitted by Malyovanets Nickolas in pull request [25398](https://github.com/magento/magento2/pull/25398)*. [GitHub-13561](https://github.com/magento/magento2/issues/13561)
+*  You can now use SSL to connect Magento 2.x to an MySQL server. *Fix submitted by Malyovanets Nickolas in pull request [25398](https://github.com/magento/magento2/pull/25398)*. [GitHub-13561](https://github.com/magento/magento2/issues/13561)
 
 ### AdminGWS
 
@@ -204,11 +210,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5773-->
 
-* The price attribute of a bundle product is now disabled as expected when dynamic prices are enabled. Previously, when the **Allow Alert When Product Comes Back in Stock** setting or the **Allow Alert When Product Price Changes** setting were enabled, prices remained enabled.  *Fix submitted by Arushi Bansal in pull request [24077](https://github.com/magento/magento2/pull/24077)*. [GitHub-23890](https://github.com/magento/magento2/issues/23890)
+*  The price attribute of a bundle product is now disabled as expected when dynamic prices are enabled. Previously, when the **Allow Alert When Product Comes Back in Stock** setting or the **Allow Alert When Product Price Changes** setting were enabled, prices remained enabled.  *Fix submitted by Arushi Bansal in pull request [24077](https://github.com/magento/magento2/pull/24077)*. [GitHub-23890](https://github.com/magento/magento2/issues/23890)
 
 <!--- ENGCOM-5953-->
 
-* Magento no longer strips bundled options from a bundle product when you duplicate it. Previously, when you duplicated a bundle product in the Admin, Magento removed the bundled options from the first product and transferred them to the duplicate product. *Fix submitted by Pieter Hoste in pull request [24703](https://github.com/magento/magento2/pull/24703)*. [GitHub-13126](https://github.com/magento/magento2/issues/13126), [GitHub-14112](https://github.com/magento/magento2/issues/14112)
+*  Magento no longer strips bundled options from a bundle product when you duplicate it. Previously, when you duplicated a bundle product in the Admin, Magento removed the bundled options from the first product and transferred them to the duplicate product. *Fix submitted by Pieter Hoste in pull request [24703](https://github.com/magento/magento2/pull/24703)*. [GitHub-13126](https://github.com/magento/magento2/issues/13126), [GitHub-14112](https://github.com/magento/magento2/issues/14112)
 
 ### Cache
 
@@ -328,7 +334,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6151-->
 
-*  The `QuoteManagement::assignCustomer()` method now allows you to merge a guest cart with an active customer cart. As a result, the PUT /V1/guest-carts/:guest-cart-id call works as expected. *Fix submitted by Ivan Koliadynskyy in pull request [24862](https://github.com/magento/magento2/pull/24862)*. [GitHub-24808](https://github.com/magento/magento2/issues/24808)
+*  The `QuoteManagement::assignCustomer()` method now allows you to merge a guest cart with an active customer cart. As a result, the PUT `/V1/guest-carts/:guest-cart-id` call works as expected. *Fix submitted by Ivan Koliadynskyy in pull request [24862](https://github.com/magento/magento2/pull/24862)*. [GitHub-24808](https://github.com/magento/magento2/issues/24808)
 
 <!--- MC-21906-->
 
@@ -344,12 +350,12 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5732-->
 
-* Magento no longer adds attribute values to URLs when you add a configurable product to a shopping cart from the product details page. *Fix submitted by Geeta Modi in pull request [24254](https://github.com/magento/magento2/pull/24254)*. [GitHub-21450](https://github.com/magento/magento2/issues/21450)
+*  Magento no longer adds attribute values to URLs when you add a configurable product to a shopping cart from the product details page. *Fix submitted by Geeta Modi in pull request [24254](https://github.com/magento/magento2/pull/24254)*. [GitHub-21450](https://github.com/magento/magento2/issues/21450)
 
 <!--- MC-21756-->
 
-* Persistent shopping cart now works as expected. Previously, Magento changed the customer group to NOT_LOGGED_IN before collecting quote totals if the order was placed using persistent shopping cart.
-  
+*  Persistent shopping cart now works as expected. Previously, Magento changed the customer group to `NOT_LOGGED_IN` before collecting quote totals if the order was placed using persistent shopping cart.
+
 ### Catalog
 
 <!--- MC-19398-->
@@ -415,11 +421,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-21933-->
 
 *  Type declarations for the `$condition` arguments were removed from two private methods that were created during recent refactoring of product collection code.
-  
+
 <!--- ENGCOM-6127-->
 
-* Quote model extension attributes are now properly encoded and present on the checkout page as expected. Previously, these attributes were present as empty objects {}.  *Fix submitted by skylineop in pull request [24771](https://github.com/magento/magento2/pull/24771)*. [GitHub-15959](https://github.com/magento/magento2/issues/15959)
-  
+*  Quote model extension attributes are now properly encoded and present on the checkout page as expected. Previously, these attributes were present as empty objects {}.  *Fix submitted by skylineop in pull request [24771](https://github.com/magento/magento2/pull/24771)*. [GitHub-15959](https://github.com/magento/magento2/issues/15959)
+
 ### CatalogInventory
 
 <!--- MC-17524-->
@@ -642,7 +648,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5618-->
 
-*  Magento now correctly saves the values assigned to the sort_order and attribute_group_code  attributes by the POST /V1/products/attribute-sets/groups call. *Fix submitted by Eden Duong in pull request [23690](https://github.com/magento/magento2/pull/23690)*. [GitHub-23634](https://github.com/magento/magento2/issues/23634)
+*  Magento now correctly saves the values assigned to the `sort_order` and `attribute_group_code` attributes by the POST `/V1/products/attribute-sets/groups` call. *Fix submitted by Eden Duong in pull request [23690](https://github.com/magento/magento2/pull/23690)*. [GitHub-23634](https://github.com/magento/magento2/issues/23634)
 
 <!--- ENGCOM-5977-->
 
@@ -650,8 +656,8 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5367-->
 
-* You can now perform mass actions on items in a grid that uses an EAV collection. Previously, grids created with the now-deprecated Magento\Backend\Block\Widget\Grid (as many third-party extensions are) threw an exception when you tried to performa a mass action. *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
-  
+*  You can now perform mass actions on items in a grid that uses an EAV collection. Previously, grids created with the now-deprecated Magento\Backend\Block\Widget\Grid (as many third-party extensions are) threw an exception when you tried to performa a mass action. *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
+
 ### Email
 
 <!--- ENGCOM-6034-->
@@ -660,15 +666,15 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5571-->
 
-* The product page Send Email to Friend email form is now sent from the email address configured as **sender** in the system configuration **General Contact** field. Previously, Magento displayed an error because the value in this field was handled  as a user-defined value, not a static value. *Fix submitted by Eden Duong in pull request [23684](https://github.com/magento/magento2/pull/23684)*. [GitHub-23646](https://github.com/magento/magento2/issues/23646)
-  
+*  The product page Send Email to Friend email form is now sent from the email address configured as **sender** in the system configuration **General Contact** field. Previously, Magento displayed an error because the value in this field was handled  as a user-defined value, not a static value. *Fix submitted by Eden Duong in pull request [23684](https://github.com/magento/magento2/pull/23684)*. [GitHub-23646](https://github.com/magento/magento2/issues/23646)
+
 <!--- ENGCOM-5626-->
 
-* Validation logic has been added to the email fields on the Admin **Stores** > **Configuration** > **Sales** >  **Sales Emails**. *Fix submitted by Eden Duong in pull request [24138](https://github.com/magento/magento2/pull/24138)*. [GitHub-24137](https://github.com/magento/magento2/issues/24137)
+*  Validation logic has been added to the email fields on the Admin **Stores** > **Configuration** > **Sales** >  **Sales Emails**. *Fix submitted by Eden Duong in pull request [24138](https://github.com/magento/magento2/pull/24138)*. [GitHub-24137](https://github.com/magento/magento2/issues/24137)
 
 <!--- ENGCOM-5710-->
 
-* Validation logic has been added to the **Send Payment Failed Email Copy To** field of the Admin **Stores** > **Configuration** > **Sales** >  **Checkout**. *Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24312](https://github.com/magento/magento2/issues/24312)  
+*  Validation logic has been added to the **Send Payment Failed Email Copy To** field of the Admin **Stores** > **Configuration** > **Sales** >  **Checkout**. *Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24312](https://github.com/magento/magento2/issues/24312)
 
 ### JavaScript framework
 
@@ -678,7 +684,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5815-->
 
-* Excluding minified JavaScript files from the generated javascript bundles using the view.xml file inside a theme now works as expected. You no longer need to explicitly provide both the non-minified filename and the minified filename. Only the exact filename as it exists on the filesystem is needed now. The other variant is handled automatically. This reduces the size of the generated JavaScript bundle files in default Magento themes and may also improve the JavaScript bundle filesize in custom themes. *Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
+*  Excluding minified JavaScript files from the generated javascript bundles using the view.xml file inside a theme now works as expected. You no longer need to explicitly provide both the non-minified filename and the minified filename. Only the exact filename as it exists on the filesystem is needed now. The other variant is handled automatically. This reduces the size of the generated JavaScript bundle files in default Magento themes and may also improve the JavaScript bundle filesize in custom themes. *Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
 
 ### General fixes
 
@@ -704,19 +710,19 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5468-->
 
-* Magento now displays an informative error message if validation fails when clicking **Generate** when managing coupon codes from the Admin. *Fix submitted by Eden Duong in pull request [23781](https://github.com/magento/magento2/pull/23781)*. [GitHub-23778](https://github.com/magento/magento2/issues/23778)
+*  Magento now displays an informative error message if validation fails when clicking **Generate** when managing coupon codes from the Admin. *Fix submitted by Eden Duong in pull request [23781](https://github.com/magento/magento2/pull/23781)*. [GitHub-23778](https://github.com/magento/magento2/issues/23778)
 
 <!--- ENGCOM-5528-->
 
-* Access Control Permissions (ACLs) have been improved for the following cart-related tasks: export CSV and Excel file of abandoned cart and abandoned products reports. Previously, administrators with no permission to this information could export these reports. *Fix submitted by Eden Duong in pull request [23925](https://github.com/magento/magento2/pull/23925)*. [GitHub-23924](https://github.com/magento/magento2/issues/23924)
+*  Access Control Permissions (ACLs) have been improved for the following cart-related tasks: export CSV and Excel file of abandoned cart and abandoned products reports. Previously, administrators with no permission to this information could export these reports. *Fix submitted by Eden Duong in pull request [23925](https://github.com/magento/magento2/pull/23925)*. [GitHub-23924](https://github.com/magento/magento2/issues/23924)
 
 <!--- ENGCOM-5538-->
 
-* Validation logic has been added to the **Sort order** field of the New Rating form (**Stores** > **Rating**).  *Fix submitted by Eden Duong in pull request [23985](https://github.com/magento/magento2/pull/23985)*. [GitHub-23984](https://github.com/magento/magento2/issues/23984)
+*  Validation logic has been added to the **Sort order** field of the New Rating form (**Stores** > **Rating**).  *Fix submitted by Eden Duong in pull request [23985](https://github.com/magento/magento2/pull/23985)*. [GitHub-23984](https://github.com/magento/magento2/issues/23984)
 
 <!--- ENGCOM-5577-->
 
-* You can now successfully filter products by multiple attributes in the Step 2: Attribute Values  section of the Admin Create Product Configuration page. Previously, only one of the selected values were retained when you tried to filter. *Fix submitted by Eden Duong in pull request [24000](https://github.com/magento/magento2/pull/24000)*. [GitHub-23999](https://github.com/magento/magento2/issues/23999)
+*  You can now successfully filter products by multiple attributes in the Step 2: Attribute Values  section of the Admin Create Product Configuration page. Previously, only one of the selected values were retained when you tried to filter. *Fix submitted by Eden Duong in pull request [24000](https://github.com/magento/magento2/pull/24000)*. [GitHub-23999](https://github.com/magento/magento2/issues/23999)
 
 <!--- ENGCOM-5594-->
 
@@ -724,40 +730,39 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5559-->
 
-* Mix-ins for `price-box.js` now work in all supported browsers. Previously, only the Chrome browser could call the `updatePrice` function (`Magento_Catalog/js/price-box`).  *Fix submitted by Renon Stewart in pull request [24054](https://github.com/magento/magento2/pull/24054)*. [GitHub-22338](https://github.com/magento/magento2/issues/22338)
+*  Mix-ins for `price-box.js` now work in all supported browsers. Previously, only the Chrome browser could call the `updatePrice` function (`Magento_Catalog/js/price-box`).  *Fix submitted by Renon Stewart in pull request [24054](https://github.com/magento/magento2/pull/24054)*. [GitHub-22338](https://github.com/magento/magento2/issues/22338)
 
 <!--- ENGCOM-5631-->
 
-* Magento now extracts handles from layout updates before merging layouts. *Fix submitted by Sergey Solo in pull request [23918](https://github.com/magento/magento2/pull/23918)*. [GitHub-5901](https://github.com/magento/magento2/issues/5901)
+*  Magento now extracts handles from layout updates before merging layouts. *Fix submitted by Sergey Solo in pull request [23918](https://github.com/magento/magento2/pull/23918)*. [GitHub-5901](https://github.com/magento/magento2/issues/5901)
 
 <!--- ENGCOM-5638-->
 
-* The Convert to Plain Text?  confirmation message that Magento displays when you click **Delete** on the Admin Edit Email Template page now follows Magento design guidelines. *Fix submitted by Eden Duong in pull request [24083](https://github.com/magento/magento2/pull/24083)*. [GitHub-24082](https://github.com/magento/magento2/issues/24082)
+*  The Convert to Plain Text?  confirmation message that Magento displays when you click **Delete** on the Admin Edit Email Template page now follows Magento design guidelines. *Fix submitted by Eden Duong in pull request [24083](https://github.com/magento/magento2/pull/24083)*. [GitHub-24082](https://github.com/magento/magento2/issues/24082)
 
 <!--- ENGCOM-5655-->
 
-* The outdated URL for HTTP Strict Transport Security page (accessed from **Admin** > **Store** > **Configuration** > **General** > **Web**) has been updated to  app/code/Magento/Backend/etc/adminhtml/system.xml. *Fix submitted by Eden Duong in pull request [24165](https://github.com/magento/magento2/pull/24165)*. [GitHub-24164](https://github.com/magento/magento2/issues/24164)
+*  The outdated URL for HTTP Strict Transport Security page (accessed from **Admin** > **Store** > **Configuration** > **General** > **Web**) has been updated to  app/code/Magento/Backend/etc/adminhtml/system.xml. *Fix submitted by Eden Duong in pull request [24165](https://github.com/magento/magento2/pull/24165)*. [GitHub-24164](https://github.com/magento/magento2/issues/24164)
 
 <!--- ENGCOM-5661-->
 
-* Validation logic has been added to the **Layered Navigation Price Step** field of the **Admin** > **Catalog** > **Categories** page. *Fix submitted by Eden Duong in pull request [24170](https://github.com/magento/magento2/pull/24170)*. [GitHub-24169](https://github.com/magento/magento2/issues/24169)
+*  Validation logic has been added to the **Layered Navigation Price Step** field of the **Admin** > **Catalog** > **Categories** page. *Fix submitted by Eden Duong in pull request [24170](https://github.com/magento/magento2/pull/24170)*. [GitHub-24169](https://github.com/magento/magento2/issues/24169)
 
 <!--- ENGCOM-5659-->
 
-* Validation logic has been added to the **Oauth** field of the **Admin** > **Store** > **Configuration** > **Service** page. *Fix submitted by Eden Duong in pull request [24173](https://github.com/magento/magento2/pull/24173)*. [GitHub-24172](https://github.com/magento/magento2/issues/24172)
+*  Validation logic has been added to the **Oauth** field of the **Admin** > **Store** > **Configuration** > **Service** page. *Fix submitted by Eden Duong in pull request [24173](https://github.com/magento/magento2/pull/24173)*. [GitHub-24172](https://github.com/magento/magento2/issues/24172)
 
 <!--- ENGCOM-5672-->
 
-* Validation logic has been added to the **Connection Timeout in Seconds** field of the **Admin** > **Store** > **Configuration** > **General** > **Currency Setup**  page. *Fix submitted by Eden Duong in pull request [24205](https://github.com/magento/magento2/pull/24205)*. [GitHub-24204](https://github.com/magento/magento2/issues/24204)
+*  Validation logic has been added to the **Connection Timeout in Seconds** field of the **Admin** > **Store** > **Configuration** > **General** > **Currency Setup**  page. *Fix submitted by Eden Duong in pull request [24205](https://github.com/magento/magento2/pull/24205)*. [GitHub-24204](https://github.com/magento/magento2/issues/24204)
 
 <!--- ENGCOM-5682-->
 
-* Magento now displays a confirmation message when you choose a mass delete operation on subscribers on the  **Admin** > **Marketing** > **Newsletter Subscribers** page.  *Fix submitted by Eden Duong in pull request [24249](https://github.com/magento/magento2/pull/24249)*. [GitHub-24248](https://github.com/magento/magento2/issues/24248)
+*  Magento now displays a confirmation message when you choose a mass delete operation on subscribers on the  **Admin** > **Marketing** > **Newsletter Subscribers** page.  *Fix submitted by Eden Duong in pull request [24249](https://github.com/magento/magento2/pull/24249)*. [GitHub-24248](https://github.com/magento/magento2/issues/24248)
 
 <!--- ENGCOM-5704-->
 
-* Validation logic has been added to the sort order field on the 
-**Admin** > **Stores** > **All Stores** > **Create Store View or Website**  page. *Fix submitted by Eden Duong in pull request [24294](https://github.com/magento/magento2/pull/24294)*. [GitHub-24293](https://github.com/magento/magento2/issues/24293)
+*  Validation logic has been added to the sort order field on the **Admin** > **Stores** > **All Stores** > **Create Store View or Website**  page. *Fix submitted by Eden Duong in pull request [24294](https://github.com/magento/magento2/pull/24294)*. [GitHub-24293](https://github.com/magento/magento2/issues/24293)
 
 ### Image
 
