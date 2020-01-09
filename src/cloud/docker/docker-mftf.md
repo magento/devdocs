@@ -10,7 +10,7 @@ In a Cloud Docker development environment, you can use the [Magento Functional T
 This means that you're able to run Functional Tests locally and target them on your Cloud Docker or remote instance.
 
 {:.bs-callout-info}
-To be able to run MFTF use [Magento Cloud Docker][cloud-docker-repo] version 1.0 or higher
+Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 or higher.
 
 1. Prepare environment
 
