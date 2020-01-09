@@ -10,7 +10,7 @@ functional_areas:
 
 You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
 
-We have some resources here to help get you started using the eCommerce platform of the future&mdash;Magento 2.
+We have some resources here to help get you started using the eCommerce platform of the future---Magento 2.
 
 It’s what we do.
 
