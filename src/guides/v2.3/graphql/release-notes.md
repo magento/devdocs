@@ -15,6 +15,23 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.4
+
+-  {:.new} **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.
+-  {:.new} **A customer can start an order on one device and complete it on another.** Use the [`customerCart]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
+-  {:.new} **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
+-  {:.new} **You can search categories by ID, name, and/or URL key.** The [`categoryList]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated `category` query.
+-  {:.new} **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
+-  {:.new} **The [`cart`]({{page.baseurl}}/graphql/queries/cart.html) object has been enhanced to include information about promotions and applied discounts at the line and cart levels.
+
+The following queries and mutations have been deprecated:
+
+Deprecated entity | Use this instead
+--- | ---
+`category` query | `categoryList` query
+`setPaymentMethodOnCartAndPlaceOrder` mutation | Run the `setPaymentMethodOnCart` and `placeOrder` mutations in the same request
+`wishlist` query | `customer` query
+
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.3
 
 -  {:.new} **GraphQL supports PayPal, Braintree, and Authorize.Net payment methods.** You can use mutations to set the payment method, retrieve payment method-specific tokens, and place an order. For details, see the following topics:
