@@ -152,7 +152,7 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 
 #### Container Information
  - Name: web
-- Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
+- Base Image: [magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
    - Based on: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: none
 
