@@ -576,15 +576,17 @@ interface MutableInterface
 class LimitedMutableClass implements MutableInterface
 {
     /**
-    * Returns integer value
-    */
+     * Returns integer value
+     */
     public function getVal(): int
     {
         ...
     }
 
     /**
-     * @inheritdoc
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int|string|bool|float|null $value
      */
     public function setVal($value): void
     {
@@ -722,22 +724,6 @@ Syntax:
 
 ```bash
 @link [URI] [<description>]
-```
-
-### @since tag {#since}
-
-The `@since` tag is used to mention the release version of any element that can be documented (global variable, include, constant, function, define, class, variable, method, page).
-
-```php
-/**
- * Example Class
- *
- * @since Version 100.0.2
- */
-class Header
-{
-    //....
-}
 ```
 
 ### Other tags
