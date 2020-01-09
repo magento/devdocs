@@ -218,9 +218,9 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
 
 ## Set body attributes {#layout_body_attributes}
 
-To set attributes for HTML `body` tag use the `<attribute>` instruction.
+To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 
-**Example:** Add a new class to `body` tag.
+**Example:** Add a new class to the `body` tag.
 
 ```xml
 <page>
@@ -230,7 +230,7 @@ To set attributes for HTML `body` tag use the `<attribute>` instruction.
 </page>
 ```
 
-**Example:** Add a custom attribute to `body` tag.
+**Example:** Add a custom attribute to the `body` tag.
 
 ```xml
 <page>
@@ -240,7 +240,7 @@ To set attributes for HTML `body` tag use the `<attribute>` instruction.
 </page>
 ```
 
-**Example:** Add an id to `body` tag.
+**Example:** Add an id to the `body` tag.
 
 ```xml
 <page>
