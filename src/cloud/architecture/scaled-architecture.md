@@ -7,6 +7,7 @@ functional_areas:
 
 The Cloud infrastructure scales according to your resource needs to achieve greater efficiency. The {{site.data.var.ece}} monitors your applications and can adjust capacity to maintain steady, predictable performance. Converting to this architecture helps to mitigate problems, such as latency or large spikes in traffic.
 
+{: .bs-callout-info}
 The scaled architecture is available for {{site.data.var.ece}} accounts with the Pro48 cluster or greater.
 
 ## Split architecture
