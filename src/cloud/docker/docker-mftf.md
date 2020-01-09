@@ -81,7 +81,7 @@ Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 
     docker-compose run test mftf-command generate:tests --debug=none
     ```
 
-1. Run generated tests
+1. Run the generated tests.
 
     ```bash
     docker-compose run test mftf-command run:test AdminLoginTest --debug=none
