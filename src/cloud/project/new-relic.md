@@ -148,7 +148,7 @@ From this view, you can track and find the following types of information:
 
 -  Applications and transactions encountering slow responses or bottlenecks
 -  Customer comments about issues with your site
--  Applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Applications with high transaction time
 -  Traffic to transaction time
 
 We recommend reviewing tracked data:
