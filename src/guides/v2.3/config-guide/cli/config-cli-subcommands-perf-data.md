@@ -532,19 +532,19 @@ Generates tax rates. XML profile node:
 
 Additional configuration information:
 
-*  `<Magento root dir>/setup/performance-toolkit/config/attributeSets.xml`&mdash;Default attribute sets
+*  `<Magento root dir>/setup/performance-toolkit/config/attributeSets.xml`---Default attribute sets
 
-*  `<Magento root dir>/setup/performance-toolkit/config/customerConfig.xml`&mdash;Customer configuration
+*  `<Magento root dir>/setup/performance-toolkit/config/customerConfig.xml`---Customer configuration
 
-*  `<Magento root dir>/setup/performance-toolkit/config/description.xml`&mdash;Product full description configuration
+*  `<Magento root dir>/setup/performance-toolkit/config/description.xml`---Product full description configuration
 
-*  `<Magento root dir>/setup/performance-toolkit/config/shortDescription.xml`&mdash;Product short description configuration
+*  `<Magento root dir>/setup/performance-toolkit/config/shortDescription.xml`---Product short description configuration
 
-*  `<Magento root dir>/setup/performance-toolkit/config/searchConfig.xml`&mdash;Configuration for product short and full description. This older implementation is provided for backward compatibility.
+*  `<Magento root dir>/setup/performance-toolkit/config/searchConfig.xml`---Configuration for product short and full description. This older implementation is provided for backward compatibility.
 
-*  `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`&mdash;Small number of search terms to in short and full descriptions
+*  `<Magento root dir>/setup/performance-toolkit/config/searchTerms.xml`---Small number of search terms to in short and full descriptions
 
-*  `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`&mdash;Larger number of search terms to use in short and full description.
+*  `<Magento root dir>/setup/performance-toolkit/config/searchTermsLarge.xml`---Larger number of search terms to use in short and full description.
 
 {:.ref-header}
 Related topics
