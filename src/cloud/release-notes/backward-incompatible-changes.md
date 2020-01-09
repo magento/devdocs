@@ -30,6 +30,7 @@ In {{ site.data.var.ct }} v2002.1.0, we removed support for the following CLI co
 `m2-ece-build` | `vendor/bin/ece-tools build`
 `m2-ece-deploy` | `vendor/bin/ece-tools deploy`
 `m2-ece-scd-dump` | `vendor/bin/ece-tools config:dump`
+`vendor/bin/ece-tools patch` | `vendor/bin/ece-patches apply`
 
 In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
