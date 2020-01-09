@@ -74,7 +74,7 @@ Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 
     docker-compose run deploy magento-command setup:config:set --http-cache-hosts=varnish
    ```
 
-1. Generate MFTF tests
+1. Generate MFTF tests.
 
    ```bash
     docker-compose run test mftf-command build:project
