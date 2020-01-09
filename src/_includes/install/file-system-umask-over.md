@@ -3,7 +3,7 @@
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
 {:.bs-callout-info}
-If you're using an Magento version 2.0.5 or earlier, see [Appendix&mdash;Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
+If you're using an Magento version 2.0.5 or earlier, see [Appendix---Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
 
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
 
@@ -41,7 +41,7 @@ Before you install the Magento software, see [Set pre-installation ownership and
 
 ### Restrict access with a umask {#restrict}
 
-To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
+To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask---also referred to as a *file system creation mask*---is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 {:.bs-callout-warning}
 File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.
