@@ -67,7 +67,7 @@ Support for MFTF requires [Magento Cloud Docker][cloud-docker-repo] version 1.0 
     docker-compose run deploy magento-command config:set web/secure/use_in_adminhtml 0
    ```
    
-   - Enable Varnish cache for application
+   - Enable the Varnish cache for the Magento application.
 
    ```bash
     docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
