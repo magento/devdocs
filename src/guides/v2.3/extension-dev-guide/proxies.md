@@ -68,7 +68,7 @@ Using the preceding example, a proxy can be passed into the constructor argument
 </type>
 ```
 
-With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not be instantiated&mdash;and therefore, the resource intensive constructor operations not performed&mdash;until the `SlowLoading` object is used (that is, if the `getSlowValue` method is called).
+With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not be instantiated---and therefore, the resource intensive constructor operations not performed---until the `SlowLoading` object is used (that is, if the `getSlowValue` method is called).
 
 Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements _removed_ - without touching application code.
 
