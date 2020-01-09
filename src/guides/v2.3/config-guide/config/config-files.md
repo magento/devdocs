@@ -11,7 +11,7 @@ functional_areas:
 
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various [module](https://glossary.magento.com/module) directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
-You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
+You can use these files---also referred to as *configuration types*---to customize specific aspects of your module's behavior.
 
 Multiple modules can declare configuration files that affect the same configuration type (for example, events), and these multiple configuration files are merged.
 

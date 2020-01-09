@@ -9,7 +9,7 @@ functional_areas:
   - Standards
 ---
 
-In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
+In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base---the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
 
 The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/api).
 It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jquery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
