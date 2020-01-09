@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-Magento CLoud Docker supports Functional Testing with [Magento Functional Testing Framework]({{site.baseurl}}/mftf/docs/introduction.html)
+In a Cloud Docker development environment, you can use the [Magento Functional Testing Framework]({{site.baseurl}}/mftf/docs/introduction.html) for Magento application testing.
 
 This means that you're able to run Functional Tests locally and target them on your Cloud Docker or remote instance.
 
