@@ -7,7 +7,6 @@ functional_areas:
   - Configuration
 ---
 
-
 ## CLI Containers
 
 The CLI containers provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations and to interact with the application.
@@ -18,7 +17,6 @@ The following CLI containers, most of which are based on a [PHP-CLI version 7 im
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 -  `cron`—extends the CLI container to run cron
 -  `node`—based on node image, used for NPM activities
-
 
 For example, you can check the state of the your project using the _ideal-state_ wizard:
 
@@ -62,9 +60,7 @@ To explore what any of the commands are doing, take a look at the scripts in the
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php)  
  
-
 This container is used for the build process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
-
 
 #### Container Usage
 
@@ -72,7 +68,6 @@ This container can be used to run commands manually recreating steps from the bu
 ```
 docker-compose run build magento-command setup:static-content:deploy
 ```
-
 
 ### Cron Container
 

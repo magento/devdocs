@@ -7,11 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-
 ## Service Containers
 
 The following containers provide the services required to build, deploy and run Magento 2 sites.
-
 
 {:.bs-callout-info}
 See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-versions) for use when launching Docker.
@@ -23,8 +21,6 @@ See the [service version values available]({{ site.baseurl }}/cloud/docker/docke
  - Base Image: [mariadb](https://hub.docker.com/_/mariadb)
 -  Ports Exposed 3306
 
-
-
 #### Container Usage
 
 To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
@@ -35,9 +31,9 @@ From: [mariadb docker documentation](https://hub.docker.com/_/mariadb)
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
 
-MySQL configuration can be injected into the container at creation. The following two examples show how this is done, either via an included my.cnf file, or setting the variables correctly. 
+MySQL configuration can be injected into the container at creation. The following two examples show how this is done, either via an included `my.cnf` file, or setting the variables correctly. 
 
-Add a custom my.cnf via the docker-compose.override.yml file:
+Add a custom `my.cnf` via the `docker-compose.override.yml` file:
 ```
   db:
     volumes:       
@@ -59,11 +55,9 @@ Alternatively config values can be set in the environment section of the docker-
    - Based On: [elasticsearch](https://hub.docker.com/_/elasticsearch)  
 -  Ports Exposed: 9200,9300
 
-
 #### Container Usage
 
 Standard Elasticsearch container with required plugins and configurations for Magento 2.
-
 
 ### FPM Container
 
@@ -72,7 +66,6 @@ Standard Elasticsearch container with required plugins and configurations for Ma
  - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
    - Based On: [php](https://hub.docker.com/_/php) 
 -  Ports Exposed: 9000,9001
-
 
 #### Container Usage
 
@@ -85,8 +78,6 @@ It is possible to load custom extensions in the FPM configuration, these are con
 
 More information about configuring the php environment can be found in the [XDebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html) documentation. 
 
-
-
 ### Rabbitmq Container
 
 #### Container Information
@@ -94,11 +85,9 @@ More information about configuring the php environment can be found in the [XDeb
  - Base Image: [rabbitmq](https://hub.docker.com/_/rabbitmq)
 -  Ports Exposed: 4369,5671,5672,25672
 
-
 #### Container Usage
 
 Standard RabbitMQ Container, with no configuration or changes from Magento Cloud Docker.
-
 
 ### Redis Container
 
@@ -106,7 +95,6 @@ Standard RabbitMQ Container, with no configuration or changes from Magento Cloud
  - Name: redis
  - Base Image: [redis](https://hub.docker.com/_/redis)
 -  Ports Exposed: 6379
-
 
 #### Container Usage
 A standard redis container with no customizations, no persistence or configuration is used. 
@@ -116,7 +104,6 @@ Connect to and run redis commands via the redis-cli inside the container:
 docker-compose run redis redis-cli -h redis
 ```
 
-
 ### TLS Container
 
 #### Container Information
@@ -124,7 +111,6 @@ docker-compose run redis redis-cli -h redis
 - Base Image: [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls)
    - Based On: [debian:jessie](https://hub.docker.com/_/debian)
 -  Ports Exposed: 443
-
 
 #### Container Usage
 
@@ -145,7 +131,6 @@ To increase the timeout on this container use the following in docker-compose.ov
    - Based on: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: 80
 
-
 #### Container Usage
 The Varnish container is based on the [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) image. Varnish works on port 80.
 
@@ -163,15 +148,13 @@ You can clear/invalidate the Varnish cache using the following command
 docker-compose exec varnish varnishadm ban req.url '~' '.'
 ```
 
-
 ### Web Container
 
 #### Container Information
  - Name: web
-- Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
+- Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
    - Based on: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: none
-
 
 #### Container Usage
 The Web container uses nginx to handle web requests after TLS and Varnish. It passes all requests to the fpm container.

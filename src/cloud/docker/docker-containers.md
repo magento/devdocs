@@ -80,8 +80,6 @@ Without this volume created you will see the following error message.
 ERROR: Volume magento-sync declared as external, but could not be found. Please create the volume manually using `docker volume create --name=magento-sync` and try again.
 ```
 
-
-
 ## Container Logs
 
 All containers log using Dockers built in logging method. The easiest way to interface with this is to use the docker-compose command and view the logs.
@@ -90,7 +88,6 @@ The following example will follow the tls container log files, allowing you to s
 ```sh
 docker-composer logs -f tls
 ```
-
 
 ## Sendmail service
 
@@ -102,8 +99,6 @@ Sendmail can slow down the instancing of containers, it is best to not use it on
 ENABLE_SENDMAIL=true
 ```
 
-
-
 [Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
 [Database container]: {{site.baseurl}}/cloud/docker/docker-database.html
 [CLI containers]: {{site.baseurl}}/cloud/docker/docker-cli.html
@@ -114,18 +109,9 @@ ENABLE_SENDMAIL=true
 [elastic]: https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch
 [mariadb]: https://hub.docker.com/_/mariadb
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
-[node]: https://hub.docker.com/_/node/]
+[node]: https://hub.docker.com/_/node/
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [php-image]: https://hub.docker.com/r/magento/magento-cloud-docker-php
-[redis]: https://hub.docker.com/r/magento/magento-cloud-docker-redis
+[redis]: https://hub.docker.com/_/redis
 [tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
-
-
-
-
-
-
-
-
-
