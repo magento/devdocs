@@ -199,7 +199,7 @@ To add new classes to the container:
 {:.bs-callout-warning}
 This method overrides existing classes.
 
-To add new Id to the container:
+To add a new id to the container:
 
 ```xml
 <referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
