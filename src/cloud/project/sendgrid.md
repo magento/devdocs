@@ -20,6 +20,7 @@ em.example.com IN CNAME <sendgrid.net>
 s1.example.com IN CNAME <s1.example.sendgrid.net>
 s2.example.com IN CNAME <s2.example.sendgrid.net>
 ```
+The information about your account do you find in https://cloud.magento.com/project/{project-id}/setup/project_details in tab Hosting Info
 
 The CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
 
