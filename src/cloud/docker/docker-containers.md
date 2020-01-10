@@ -37,7 +37,7 @@ You can share files easily between your machine and a Docker container by placin
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
-The **Varnish** service is installed by default, and when deployment completes Magento is configured to use Varnish for full page cacheing (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configurations that you have already configure.
+The **Varnish** service is installed by default, and when deployment completes Magento is configured to use Varnish for full page cacheing (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
 
 You can skip installation of the Varnish container by adding the `--no-varnish` option to the `docker:build` command when you are creating a Cloud Docker environment. For example, the following command starts the Docker configuration generator for developer mode with options to specify PHP version 7.2 and skip the Varnish installation:
 
