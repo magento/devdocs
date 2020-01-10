@@ -39,3 +39,7 @@ In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` 
 -  **New magento/magento-cloud-patches package**–We moved {{ site.data.var.ece }} patches and related functionality to a separate package, `magento/magento-cloud-patches` in {{ site.data.var.ct }} version 2002.1.0. See [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).
 
 -  **New magento/magento-cloud-docker package**–We moved Docker development functionality to a separate package in {{ site.data.var.ct }} v2002.1.0. See [Release notes for magento/magento-cloud-docker]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html).
+
+### Patches changes
+
+- Cloud patches bundled all patches provided by [Magento Technical resources](https://magento.com/tech-resources/download). Patches which were copied from there to your project should be removed to avoid conflicts.
