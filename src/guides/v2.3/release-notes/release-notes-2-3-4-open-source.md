@@ -764,6 +764,30 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Validation logic has been added to the sort order field on the **Admin** > **Stores** > **All Stores** > **Create Store View or Website**  page. *Fix submitted by Eden Duong in pull request [24294](https://github.com/magento/magento2/pull/24294)*. [GitHub-24293](https://github.com/magento/magento2/issues/24293)
 
+<!--- ENGCOM-5761-->
+
+*  XML attributes are now encoded to allow special symbols in tag attributes. *Fix submitted by Sergey Solo in pull request [24336](https://github.com/magento/magento2/pull/24336)*. [GitHub-2228](https:// github.com/magento/magento2/issues/2228)
+
+<!--- ENGCOM-5131-->
+
+*  Validation logic has been added to options for dynamically created product attributes before Magento adds these attribute values to the product database. Magento now checks whether the `oprtionArray` exists in the database before adding it. Previously, Magento created duplicate options for the same store.  *Fix submitted by Maksym Novik in pull request [21424](https://github.com/magento/magento2/pull/21424)*. [GitHub-16852](https://github.com/magento/magento2/issues/16852)
+
+<!--- ENGCOM-5805-->
+
+*  Calls to `catalogProductTierPriceManagementV1GetListGet` now handle requests as expected. Previously, calls failed when querying a configurable product. *Fix submitted by Ashutosh Srivastva in pull request [24502](https://github.com/magento/magento2/pull/24502)*. [GitHub-24410](https://github.com/magento/magento2/issues/24410)
+
+<!--- ENGCOM-5746-->
+
+*  The HTML `br` tag is now an allowed tag. *Fix submitted by Denis Solovyov in pull request [24392](https://github.com/magento/magento2/pull/24392)*. [GitHub-24329](https://github.com/magento/magento2/issues/24329)
+
+<!--- ENGCOM-5840-->
+
+*  The Admin notification counter now correctly handles double-digit values. *Fix submitted by Alexandre Thurow in pull request [24589](https://github.com/magento/magento2/pull/24589)*. [GitHub-23473](https://github.com/magento/magento2/issues/23473)
+
+<!--- ENGCOM-5863-->
+
+*  You can now successfully select an image from the image gallery when you configure a theme ( **Admin** > **Content** > **Configuration**). *Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
+
 ### Image
 
 <!--- ENGCOM-5569-->
@@ -992,11 +1016,73 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The storefront now reflects height settings for conditions being added to Terms and Conditions (**Store** > **Terms and Conditions** > **Add New Condition**). Previously, you could set a value for height when creating a condition, but the storefront did not apply this setting. *Fix submitted by Rahul Mahto in pull request [25168](https://github.com/magento/magento2/pull/25168)*. [GitHub-25167](https://github.com/magento/magento2/issues/25167)
 
+<!--- ENGCOM-5644-->
+
+*  The **Edit Attribute Set Name** label was corrected to **Attribute Set Information** on **Admin** > **Store** > **Attribute Set** > **New Attribute Set**. *Fix submitted by Eden Duong in pull request [24148](https://github.com/magento/magento2/pull/24148)*. [GitHub-24147](https://github.com/magento/magento2/issues/24147)
+
+<!--- ENGCOM-5747-->
+
+*  Corrected issue with highlighting on the storefront sales order page. *Fix submitted by Rani Priya in pull request [24396](https://github.com/magento/magento2/pull/24396)*. [GitHub-24395](https://github.com/magento/magento2/issues/24395)
+
+<!--- ENGCOM-6011-->
+
+*  Corrected multiple misspellings throughout the Admin and corrected a comment in the Admin that was not translatable. *Fix submitted by Bruno Roeder in pull request [24832](https://github.com/magento/magento2/pull/24832)*. [GitHub-22169](https://github.com/magento/magento2/issues/22169), [GitHub-24721](https://github.com/magento/magento2/issues/24721)
+
+<!--- ENGCOM-6136-->
+
+*  You can now  use `@submenu-desktop__padding`  to override the padding in the `.lib-main-navigation-desktop` mixin by using `@submenu-desktop__padding`. *Fix submitted by Mahesh Singh in pull request [25176](https://github.com/magento/magento2/pull/25176)*. [GitHub-23170](https://github.com/magento/magento2/issues/23170)
+
+<!--- ENGCOM-6224-->
+
+*  The performance of the accordion widget has been improved. Previously, when you clicked to open a closed element, the currently open element closed instantaneously without a transition. *Fix submitted by Gabriel da Gama in pull request [24994](https://github.com/magento/magento2/pull/24994)*. [GitHub-24807](https://github.com/magento/magento2/issues/24807)
+
+<!--- ENGCOM-6209-->
+
+*  Corrected misalignment of page elements on the minicart checkout page when the cart contains a configurable product. *Fix submitted by Arvinda Kumar in pull request [25368](https://github.com/magento/magento2/pull/25368)*. [GitHub-25366](https://github.com/magento/magento2/issues/25366)
+
+<!--- ENGCOM-6216-->
+
+*  The tooltip associated with the **Product Additional Options** field for the order on the customer dashboard is now fully visible. *Fix submitted by Torben Höhn in pull request [25393](https://github.com/magento/magento2/pull/25393)*. [GitHub-25392](https://github.com/magento/magento2/issues/25392)
+
 ### URL rewrites
 
 <!--- MC-19706-->
 
 *  Magento now populates the `url_rewrite` table with the new product URL rewrite when you create a new product when single-store mode is enabled. Previously, Magento did not generate a user-friendly URL upon the creation of products when single-store mode was enabled.
+
+<!--- ENGCOM-5446-->
+
+*  URL rewrites are no longer lost if an exception is thrown or a deadlock occurs during URL regeneration. Previously, when exceptions or deadlocks occurred, URLs were not regenerated, and Magento displayed 404 pages. *Fix submitted by Stanislav Ilnytskyi in pull request [23430](https://github.com/magento/magento2/pull/23430)*. [GitHub-23429](https://github.com/magento/magento2/issues/23429)
+
+### Web API framework
+
+<!--- ENGCOM-5610-->
+
+*Fix submitted by Oleksandr Kravchuk in pull request [24117](https://github.com/magento/magento2/pull/24117)*. [GitHub-24116](https://github.com/magento/magento2/issues/24116)
+
+<!--- ENGCOM-5821-->
+
+*Fix submitted by Eden Duong in pull request [24519](https://github.com/magento/magento2/pull/24519)*. [GitHub-24518](https://github.com/magento/magento2/issues/24518)
+
+<!--- ENGCOM-5987-->
+
+*  You can now set expiration times for REST API oAuth tokens in minutes and seconds. Previously, expiration times were defined in hours only. *Fix submitted by Ivan Koliadynskyy in pull request [24769](https://github.com/magento/magento2/pull/24769)*. [GitHub-24716](https://github.com/magento/magento2/issues/24716)
+
+### Wishlist
+
+<!--- ENGCOM-5715-->
+
+*  Wishlists now display values for product custom file types.  *Fix submitted by Rani Priya in pull request [24320](https://github.com/magento/magento2/pull/24320)*. [GitHub-24319](https://github.com/magento/magento2/issues/24319)
+
+<!--- ENGCOM-5760-->
+
+*  Verification logic has been added to the wishlist so that it reflects accurate stock status of listed products. *Fix submitted by Rus0 in pull request [24300](https://github.com/magento/magento2/pull/24300)*. [GitHub-21519](https://github.com/magento/magento2/issues/21519)
+
+### WYSIWYG
+
+<!--- ENGCOM-5727-->
+
+*  The Admin WYSIWYG editor no longer hangs when an image upload dialog opens. Previously, Magento displayed the spinner cursor until you refresh the page. *Fix submitted by Pavel Bystritsky in pull request [24333](https://github.com/magento/magento2/pull/24333)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
 
 ## Community contributions
 
