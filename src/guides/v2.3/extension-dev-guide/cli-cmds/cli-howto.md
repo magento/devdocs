@@ -114,7 +114,7 @@ Following is a summary of the process:
    </config>
    ```
 
-1. Clean the [cache](https://glossary.magento.com/cache) using the command:
+1. Clean the [cache](https://glossary.magento.com/cache):
 
    ```bash
    bin/magento cache:clean
