@@ -253,8 +253,7 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 {:.bs-callout-warning}
 It is not recommended to set the `body` id in layout files that have a wider impact (`e.g. default.xml`).
 
-
-**Example:** Add inline style to the `body` tag.
+**Example:** Add an inline style to the `body` tag.
 
 ```xml
 <page>
@@ -263,10 +262,6 @@ It is not recommended to set the `body` id in layout files that have a wider imp
     </body>
 </page>
 ```
-
-{:.bs-callout-warning}
-It is not recommended to write inline styles as a general styling approach and it will impact on css precedence.
-
 
 ## Reference a block {#xml-manage-ref-block}
 
