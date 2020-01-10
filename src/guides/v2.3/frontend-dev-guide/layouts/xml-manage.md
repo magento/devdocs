@@ -259,6 +259,16 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 {:.bs-callout-warning}
 It is not recommended to set the `body` id in layout files that have a wider impact (`e.g. default.xml`).
 
+**Example:** Add an inline style to the `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="style" value="opacity:0;"/>
+    </body>
+</page>
+```
+
 ## Reference a block {#xml-manage-ref-block}
 
 To update a block use the `<referenceBlock>` instruction.
