@@ -24,7 +24,7 @@ To use {{ site.data.var.mcp }} as a stand-alone package:
     ```
     
 {:.procedure}
-To apply patches for testing:
+To apply {{site.data.var.ece}} patches manually:
 
 1. From the project root, apply the patches.
 
