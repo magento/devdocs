@@ -120,7 +120,7 @@ Following is a summary of the process:
    bin/magento cache:clean
    ```
 
-1. After clean the cache, Regenerate the code using the command:
+1. Regenerate the code:
 
    ```bash
    bin/magento setup:di:compile
