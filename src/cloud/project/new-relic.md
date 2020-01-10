@@ -148,7 +148,7 @@ From this view, you can track and find the following types of information:
 
 -  Applications and transactions encountering slow responses or bottlenecks
 -  Customer comments about issues with your site
--  Applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Applications with high transaction time
 -  Traffic to transaction time
 
 We recommend reviewing tracked data:
@@ -249,14 +249,6 @@ If you want to modify the thresholds of an alert condition, create a new alert p
 
 {:.bs-callout-tip}
 See [Alerts concepts and workflow](https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow) in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
-
-## New Relic and Blackfire
-
-You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. Combine that with the code-level data captured by the [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) to get a comprehensive view of your Magento store performance.
-
--  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
--  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.
--  Background processes, like Cron job, can cause issues. These background processes are not monitored by New Relic, but you can watch them using Blackfire.
 
 [1]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [2]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/add-update-users#adding_users
