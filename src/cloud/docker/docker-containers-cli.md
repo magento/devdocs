@@ -38,7 +38,7 @@ All of the build and deploy processes are defined and configured using the ECE-T
 
 ### CLI Container Commands
 
-These commands are available in any of the containers. 
+These commands are available in any of the containers.
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
@@ -56,10 +56,11 @@ To explore what any of the commands are doing, take a look at the scripts in the
 ### Build Container
 
 #### Container Information
- - Name: build
- - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
-   - Based On: [php](https://hub.docker.com/_/php)  
- 
+
+-  Name: build
+-  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Based On: [php](https://hub.docker.com/_/php)
+
 This container is used for the build process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
 #### Container Usage
@@ -72,9 +73,10 @@ docker-compose run build magento-command setup:static-content:deploy
 ### Cron Container
 
 #### Container Information
- - Name: cron
- - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
-   - Based On: [php](https://hub.docker.com/_/php)  
+
+-  Name: cron
+-  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Based On: [php](https://hub.docker.com/_/php)
 
 This container is used for the cronjob, it runs the scheduled cronjobs and can also be used to do one off cron runs.
 
@@ -91,11 +93,11 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 
 This container has no extra configuration, however if performance problems from cron runs are present you can use the following snippet in your docker-compose.override.yml
 
-```
+```yaml
   cron:
     entrypoint: "bash -c"
 ```
-This disables the cron container from running automatically. 
+This disables the cron container from running automatically.
 
 You can then run the cron manually using the following command.
 
@@ -106,10 +108,10 @@ docker-compose run cron /usr/local/bin/php bin/magento cron:run
 ### Deploy Container
 
 #### Container Information
- - Name: deploy
- - Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
-   - Based On: [php](https://hub.docker.com/_/php)  
 
+-  Name: deploy
+-  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Based On: [php](https://hub.docker.com/_/php)
 
 This container is used for the deploy process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
@@ -120,12 +122,12 @@ This container can be used to interact with the application.
 docker-compose run build magento-command index:reindex
 ```
 
-
 ### Node Container
 
 #### Container Information
- - Name: node
- - Base Image: [node](https://hub.docker.com/_/node)
+
+-  Name: node
+-  Base Image: [node](https://hub.docker.com/_/node)
 
 #### Container Usage
 The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
