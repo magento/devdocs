@@ -187,7 +187,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addSimpleProductsToCart": {
