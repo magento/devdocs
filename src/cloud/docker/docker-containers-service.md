@@ -19,7 +19,7 @@ See the [service version values available]({{ site.baseurl }}/cloud/docker/docke
 #### Container Information
 
 -  Name: db
--  Base Image: [mariadb](https://hub.docker.com/_/mariadb)
+-  Docker Base Image: [mariadb](https://hub.docker.com/_/mariadb)
 -  Ports Exposed 3306
 
 #### Container Usage
@@ -53,8 +53,8 @@ Alternatively config values can be set in the environment section of the docker-
 #### Container Information
 
 -  Name: elasticsearch
--  Base Image: [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)
--  Based On: [elasticsearch](https://hub.docker.com/_/elasticsearch)
+-  Docker Base Image: [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)
+-  Docker Image Based On: [elasticsearch](https://hub.docker.com/_/elasticsearch)
 -  Ports Exposed: 9200,9300
 
 #### Container Usage
@@ -66,8 +66,8 @@ Standard Elasticsearch container with required plugins and configurations for Ma
 #### Container Information
 
 -  Name: fpm
--  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
--  Based On: [php](https://hub.docker.com/_/php)
+-  Docker Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Docker Image Based On: [php](https://hub.docker.com/_/php)
 -  Ports Exposed: 9000,9001
 
 #### Container Usage
@@ -86,7 +86,7 @@ More information about configuring the php environment can be found in the [XDeb
 #### Container Information
 
 -  Name: rabbitmq
--  Base Image: [rabbitmq](https://hub.docker.com/_/rabbitmq)
+-  Docker Base Image: [rabbitmq](https://hub.docker.com/_/rabbitmq)
 -  Ports Exposed: 4369,5671,5672,25672
 
 #### Container Usage
@@ -98,7 +98,7 @@ Standard RabbitMQ Container, with no configuration or changes from Magento Cloud
 #### Container Information
 
 -  Name: redis
--  Base Image: [redis](https://hub.docker.com/_/redis)
+-  Docker Base Image: [redis](https://hub.docker.com/_/redis)
 -  Ports Exposed: 6379
 
 #### Container Usage
@@ -114,8 +114,8 @@ docker-compose run redis redis-cli -h redis
 #### Container Information
 
 -  Name: tls
--  Base Image: [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls)
--  Based On: [debian:jessie](https://hub.docker.com/_/debian)
+-  Docker Base Image: [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls)
+-  Docker Image Based On: [debian:jessie](https://hub.docker.com/_/debian)
 -  Ports Exposed: 443
 
 #### Container Usage
@@ -134,8 +134,8 @@ To increase the timeout on this container use the following in docker-compose.ov
 #### Container Information
 
 -  Name: varnish
--  Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
--  Based on: [centos](https://hub.docker.com/_/centos)
+-  Docker Base Image: [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
+-  Docker Image Based On: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: 80
 
 #### Container Usage
@@ -160,8 +160,8 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 #### Container Information
 
 -  Name: web
--  Base Image: [magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
--  Based on: [centos](https://hub.docker.com/_/centos)
+-  Docker Base Image: [magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
+-  Docker Image Based On: [centos](https://hub.docker.com/_/centos)
 -  Ports Exposed: none
 
 #### Container Usage

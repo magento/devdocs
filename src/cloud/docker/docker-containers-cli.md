@@ -58,8 +58,8 @@ To explore what any of the commands are doing, take a look at the scripts in the
 #### Container Information
 
 -  Name: build
--  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
--  Based On: [php](https://hub.docker.com/_/php)
+-  Docker Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Docker Image Based On: [php](https://hub.docker.com/_/php)
 
 This container is used for the build process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
@@ -75,8 +75,8 @@ docker-compose run build magento-command setup:static-content:deploy
 #### Container Information
 
 -  Name: cron
--  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
--  Based On: [php](https://hub.docker.com/_/php)
+-  Docker Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Docker Image Based On: [php](https://hub.docker.com/_/php)
 
 This container is used for the cronjob, it runs the scheduled cronjobs and can also be used to do one off cron runs.
 
@@ -110,8 +110,8 @@ docker-compose run cron /usr/local/bin/php bin/magento cron:run
 #### Container Information
 
 -  Name: deploy
--  Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
--  Based On: [php](https://hub.docker.com/_/php)
+-  Docker Base Image: [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
+-  Docker Image Based On: [php](https://hub.docker.com/_/php)
 
 This container is used for the deploy process. This mimics Magento Cloud behaviour so testing of the build and deploy process is as close to production as possible.
 
@@ -127,7 +127,7 @@ docker-compose run build magento-command index:reindex
 #### Container Information
 
 -  Name: node
--  Base Image: [node](https://hub.docker.com/_/node)
+-  Docker Base Image: [node](https://hub.docker.com/_/node)
 
 #### Container Usage
 The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
