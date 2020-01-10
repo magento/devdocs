@@ -17,7 +17,7 @@ You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl
 {:.procedure}
 To use {{ site.data.var.mcp }} as a stand-alone package: 
 
-1. Add the Magento Cloud Patches package to your `composer.json`
+1. Add the {{site.data.var.mcp}} package to your `composer.json` file.
 
     ```bash
     composer require magento/magento-cloud-patches
