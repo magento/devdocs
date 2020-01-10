@@ -292,7 +292,7 @@ To check the version of Fastly CDN module for Magento 2:
    composer show *fastly*
    ```
 
-1. If the [latest release]((https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
+1. If the [latest release](https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
 
 {:.procedure}
 To upgrade the Fastly module:
