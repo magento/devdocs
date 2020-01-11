@@ -29,6 +29,10 @@ pages:
           url: /cloud/architecture/pro-develop-deploy-workflow.html
           versionless: true
 
+        - label: Scaled architecture
+          url: /cloud/architecture/scaled-architecture.html
+          versionless: true
+
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       versionless: true

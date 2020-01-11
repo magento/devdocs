@@ -20,6 +20,9 @@ The following lists the available `magento-cloud` CLI commands:
 magento-cloud list
 ```
 
+{:.bs-callout-tip}
+You can also find information about `magento-cloud` CLI commands in the [Magento command-line tools reference](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html).
+
 Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter.
 
 Action | Command

@@ -17,7 +17,7 @@ If you cannot log in directly, you can [log in remotely]({{ page.baseurl }}/inst
 
 ## Exact command or process of elimination?
 
-If you already know you're running Ubuntu or CentOS but don't know the version, see one of the following sections. If you don't know that much, just use the process of elimination&mdash;run both commands until you find the one that works.
+If you already know you're running Ubuntu or CentOS but don't know the version, see one of the following sections. If you don't know that much, just use the process of elimination---run both commands until you find the one that works.
 
 ### CentOS
 
