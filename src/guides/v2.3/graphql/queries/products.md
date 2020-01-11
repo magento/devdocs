@@ -12,10 +12,10 @@ The `products` query allows you to search for catalog items.
 ```graphql
 products(
   search: String
-  filter: ProductAttributeFilterInput
+  filter: ProductFilterInput
   pageSize: Int
   currentPage: Int
-  sort: ProductSortFilterInput
+  sort: ProductSortInput
 ): Products
 ```
 
@@ -23,129 +23,49 @@ products(
 
 Each query attribute is defined below:
 
-Attribute |  Data type | Description
---- | --- | ---
-`search` | String | Performs a full-text search using the specified key words
-`filter` | ProductAttributeFilterInput | Identifies which attributes to search for and return. See [filter attribute](#ProductFilterInput) object for more information
-`pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20
-`currentPage` | Int | Specifies which page of results to return. The default value is 1
-`sort` | ProductAttributeSortInput | Specifies which attribute to sort on, and whether to return the results in ascending or descending order
+Attribute |  Description
+--- | ---
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
+`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries/index.html) for more information.
+`Products` | An output object that contains the results of the query. See [Output attributes](#Response) for details.
 
 ### search attribute
 
-The `search` attribute causes Magento to perform a full text search on the specified keywords. This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.
+The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront.) If multiple keywords are specified, each keyword is evaluated separately.
 
-Each query must contain a `search` or `filter` attribute, or both.
+The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
 ### filter attribute {#ProductFilterInput}
 
-The `ProductAttributeFilterInput` object determines which attributes will be used to narrow the results in a `products` query. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that have a `name` that contains the string `Bag` with a `price` that's less than or equal to `40`.
+The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
 ```graphql
 filter: {
-  name: {
-    match: "Bag"
+  sku: {
+    like: "24-MB%"
   }
   price: {
-    to: "40"
+    lt: "50"
   }
 }
 ```
 
-Magento processes the attribute values specified in a `ProductAttributeFilterInput` as simple data types (strings, integers, Booleans). However, returned attributes can be a different, complex data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
+Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
 
-By default, you can use the following attributes as filters. To define a custom filter, see [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html). Use the `input_type` output attribute of the [`customAttributeMetadata` query]({{page.baseurl}}/graphql/queries/custom-attribute-metadata.html) to determine whether your custom filter should include the `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput` data type.
+Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
-Attribute | Data type | Description
---- | --- | ---
-`category_id` | FilterEqualTypeInput | Filters by category ID
-`description` | FilterMatchTypeInput | Filters on the Description attribute
-`name` | FilterMatchTypeInput | Filters on the Product Name attribute
-`price` | FilterRangeTypeInput | Filters on the Price attribute
-`short_description` | FilterMatchTypeInput | Filters on the Short Description attribute
-`sku` | FilterEqualTypeInput | Filters on the SKU attribute
-`url_key` | FilterEqualTypeInput | The part of the URL that identifies the product
-
-#### FilterEqualTypeInput attributes
-
-The `category_id`, `sku`, and `url_key` filters require a `FilterEqualTypeInput` object as input. You must specify a `FilterEqualTypeInput` object to filter on a custom product attribute of the following types:
-
--  Boolean
--  Select
--  Multiple select
-
-Attribute | Data type | Description
---- | --- | ---
-`eq` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific category ID, specify a value like `5`
-`in` | [String] | Use this attribute to filter on an array of values. For example, to filter on category IDs 4, 5, and 6, specify a value of `["4", "5", "6"]`
-
-#### FilterMatchTypeInput attributes
-
-Use the `FilterMatchTypeInput` object to construct a filter that returns products that exactly match a string or contain the specified pattern.
-
-Attribute | Data type | Description
---- | --- | ---
-`match` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific SKU, specify a value such as `24-MB01`
-
-You must specify a `FilterMatchTypeInput` object to filter on a custom product attribute of the following types:
-
--  Text field
--  Text area
--  Any other type not explicitly listed in `FilterEqualTypeInput`, `FilterMatchTypeInput`, or `FilterRangeTypeInput`
-
-#### FilterRangeTypeInput attributes
-
-Use the `FilterRangeTypeInput` object to construct a filter that returns products that fall within a range of prices or dates.
-
-Attribute | Data type | Description
---- | --- | ---
-`from` | String | Use this attribute to specify the lowest possible value in the range
-`to` | String | Use this attribute to specify the highest possible value in the range
-
-### pageSize attribute {#pageSize}
-
-Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
-
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
-
-### currentPage attribute
-
-The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. Magento returns an error if you specify a value that is greater than the number of available pages.
-
-### sort attribute
-
-The `sort` attribute allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field. The value for each field can be set to either `ASC` or `DESC`.
-
-If you do not specify a `sort` object, Magento sorts as follows:
-
--  If you specify the `search` attribute, the query sorts by relevance, in descending order.
--  If you specify the `filter` attribute without specifying the  `search` attribute, the query sorts by position, in ascending order.
-
-In previous versions, the `sort` attribute required a `ProductSortInput` object as input. The `sort` attribute now requires a `ProductAttributeSortInput` object, which can contain the following attributes:
-
-Attribute | Data type | Description
---- | --- | ---
-`name` | SortEnum | Sorts by Product Name
-`position` | SortEnum | Sorts by the position of products
-`price` | SortEnum | Sorts by Price
-`relevance` | SortEnum | (Default) Sorts by the search relevance score
-
-{:.bs-callout-info}
-If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
-
-## Deprecated input attributes
-
-The `filter` and `sort` attributes require new input objects. The following sections list the deprecated attributes.
-
-### ProductFilterInput attributes
-
-The `filter` attribute previously required a `ProductFilterInput` object as input. This object has been deprecated. The replacement input object, `ProductAttributeFilterInput` is more restrictive about what attributes can be used in a `products` query by default. The following attributes can no longer be used in default filters. See [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) for more information.
+The following attributes can be used to create filters. See the [Output attributes](#Response) section for information about each attribute.
 
 ```text
+category_id
 country_of_manufacture
 created_at
 custom_layout
 custom_layout_update
+description
 gift_message_available
 has_options
 image
@@ -156,11 +76,15 @@ meta_description
 meta_keyword
 meta_title
 min_price
+name
 news_from_date
 news_to_date
 options_container
 or
+price
 required_options
+short_description
+sku
 small_image
 small_image_label
 special_from_date
@@ -176,188 +100,131 @@ url_path
 weight
 ```
 
-{:.bs-callout-info}
-The `or` attribute cannot be used in a `products` query. Logical OR searches are no longer supported.
+The following attributes are not used in responses:
 
--  `or` - The keyword required to perform a logical OR comparison.
--  `news_from_date` - This attribute is transformed to `new_from_date` in a response.
--  `news_to_date` - This attribute is transformed to `new_to_date` in a response.
+*  `or` - The keyword required to perform a logical OR comparison.
+*  `news_from_date` - This attribute is transformed to `new_from_date` in a response.
+*  `news_to_date` - This attribute is transformed to `new_to_date` in a response.
 
-The following condition types have been deprecated:
+{%
+include note.html
+type="info"
+content="GraphQL automatically filters out a product attribute if ALL of the following fields are set to **No** on the attribute's Storefront Properties page in Admin:
 
-```text
-from
-gt
-gteq
-like
-lt
-lteq
-moreq
-neq
-nin
-nlike
-notnull
-null
-to
-```
+*  Comparable on Storefront
+*  Use in Layered Navigation
+*  Use in Search Results Layered Navigation
+*  Visible on Catalog Pages on Storefront
+*  Used in Product Listing
+*  Used for Sorting in Product Listing"
 
--  Comparable on Storefront
--  Use in Layered Navigation
--  Use in Search Results Layered Navigation
--  Visible on Catalog Pages on Storefront
--  Used in Product Listing
--  Used for Sorting in Product Listing"
+%}
 
-{:.bs-callout-info}
-Wildcards are no longer supported in `products` queries.
+#### Condition types and search values
 
-### ProductSortInput attributes
+The following table lists available condition types and provides the SQL statement equivalents.
 
-The following sorting attributes have been deprecated:
+Magento GraphQL clause | SQL equivalent
+--- | ---
+`eq: "value"` | <code><i>field</i> = 'value'</code>
+`neq: "value"` |<code><i>field</i> != 'value'</code>
+`like: "value%"` | <code><i>field</i> LIKE 'value%'</code>
+`nlike: "value%"` |<code><i>field</i> NOT LIKE 'value%'</code>
+`in: [1, 2, 3]` | <code><i>field</i> IN (1, 2, 3)</code>
+`nin: [1, 2, 3]` | <code><i>field</i> NOT IN (1, 2, 3)</code>
+`notnull: true` | <code><i>field</i> IS NOT NULL</code>
+`null: true` | <code><i>field</i> IS NULL</code>
+`lt: "value"` | <code><i>field</i> < 'value'</code>
+`gt: "value"` | <code><i>field</i> > 'value'</code>
+`gteq: "value"` | <code><i>field</i> >= 'value'</code>
+`lteq: "value"` | <code><i>field</i> <= 'value'</code>
+`moreq: "value"` | <code><i>field</i> >= 'value'</code>
+`from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 
-```text
-country_of_manufacture
-created_at
-custom_layout_update
-custom_layout
-description
-gift_message_available
-has_options
-image_label
-image
-manufacturer
-meta_description
-meta_keyword
-meta_title
-news_from_date
-news_to_date
-options_container
-required_options
-short_description
-sku
-small_image_label
-small_image
-special_from_date
-special_price
-special_to_date
-thumbnail_label
-thumbnail
-tier_price
-updated_at
-weight
+`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `quantity: {from: "10" to: "20"}`.
+
+`gt` and `lt` can be used in the same search term. For example, `quantity: {gt: "10" lt: "20"}`.
+
+### pageSize attribute {#pageSize}
+
+Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
+
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
+
+### currentPage attribute
+
+The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. Magento returns an error if you specify a value that is greater than the number of available pages.
+
+### sort attribute
+
+The `sort` object allows you to specify which field or fields to use for sorting the results. If you specify more than one field, Magento sorts by the first field listed. Then, if any items have the same value, those items will be sorted by the secondary field.  The value for each field can be set to either `ASC` or `DESC`.
+
+In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
+
+```graphql
+sort: {
+  price: DESC
+  name:  ASC
+}
 ```
 
 ## Output attributes {#Response}
 
-The query returns a `Products` object containing the following information:
+The system returns a `Products` object containing the following information:
 
-Attribute | Data type | Description
+```json
+items: [ProductInterface]
+page_info: SearchResultPageInfo
+total_count: Int
+filters: [LayerFilter]
+sort_fields: SortFields
+```
+
+Each attribute is described below:
+
+Attribute |  Data type | Description
 --- | --- | ---
-`aggregations` | [[Aggregation]](#Aggregation) | Layered navigation aggregations
-`filters` | LayerFilter | Deprecated. Use `aggregations` instead
-`items` | [[ProductInterface]](#ProductInterface) | An array of products that match the specified search criteria
-`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the `page_info` and `currentPage` values specified in the query
-`sort_fields` |  [SortFields](#SortFields) | An object that includes the default sort field and all available sort fields
+`filters` | [LayerFilter] | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
+`items` | [ProductInterface] | An array of products that match the specified search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
+`page_info` | SearchResultPageInfo | An object that includes the `page_info` and `currentPage` values specified in the query
+`sort_fields` | SortFields | An object that includes the default sort field and all available sort fields
 `total_count` | Int | The number of products returned
 
-### Aggregation attributes {#Aggregation}
+When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
-Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
+```xml
+<type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
+  <arguments>
+    <argument name="additionalAttributes" xsi:type="array">
+      <item name="field_to_sort" xsi:type="string">field</item>
+      <item name="other_field_to_sort" xsi:type="string">other_field</item>
+    </argument>
+  </arguments>
+</type>
+```
 
-Attribute | Data type | Description
---- | --- | ---
-`attribute_code` | String! | Attribute code of the filter item
-`count` | Int | The number of filter items in the filter group
-`label` | String | The filter name displayed in layered navigation
-`options` | [AggregationOption] | Describes each aggregated filter option
-
-#### AggregationOption attributes {#AggregationOption}
-
-The `AggregationOption` array contains a list of possible options for the `attribute_code` defined in the aggregation. For example, if the `attribute_code` is `category_id`, the return options could include tops, bottoms, gear, and so on.
-
-Attribute | Data type | Description
---- | --- | ---
-`count` | Int | The number of items returned by the filter
-`label` | String! | The label of the filter
-`value` | String! | The internal ID representing the value of the option
-
-### ProductInterface attributes {#ProductInterface}
-
-The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
-
-### SearchResultPageInfo attributes {#SearchResultPageInfo}
-
-The `SearchResultPageInfo` object provides navigation for the query response.
-
-Attribute | Data type | Description
---- | --- | ---
-`current_page` | Int | Specifies which page of results to return
-`page_size` | Int | Specifies the maximum number of items to return
-`total_pages` | Int | The total number of pages returned
-
-### SortFields attributes {#SortFields}
-
-The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
-
-Attribute | Type | Description
---- | --- | ---
-`default` | String | The default sort field
-`options` | [SortField] | An array that contains all the fields that can be used for sorting
-
-#### SortField attributes
-
-The `SortField` object contains a list of all the attributes that can be used to sort query results.
-
-Attribute | Type | Description
---- | --- | ---
-`label` | String | The label of a sortable option
-`value` | String | The attribute code of the sort field
-
-## Deprecated output attributes
-
-The `filters` output object has been deprecated in favor of the `aggregations` object. The following sections list the deprecated attributes.
-
-### LayerFilter object
-
-The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
-
-Attribute | Type | Description
---- | --- | ---
-`filter_items` |  [LayerFilterItemInterface] | An array of filter items
-`filter_items_count` | Int | The number of filter items in filter group
-`name` | String | The layered navigation filter name
-`request_var` | String | The request variable name for the filter query
-
-### LayerFilterItemInterface
-
-`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
-
-Attribute | Type | Description
---- | --- | ---
-`items_count` | Int | The number of items the filter returned
-`label` | String | The label applied to a filter
-`value_string` | String | The value for filter request variable to be used in a query
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
 ## Sample queries
-
-This section illustrates some of the many ways that you can use the `products` query.
 
 ### Full text search
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-**Request:**
-
 ```graphql
 {
-  products(search: "Yoga pants", pageSize: 10) {
+  products(
+    search: "Yoga pants"
+    pageSize: 10
+  )
+  {
     total_count
     items {
       name
       sku
-      price_range {
-        minimum_price {
-          regular_price {
+      price {
+        regularPrice {
+          amount {
             value
             currency
           }
@@ -372,76 +239,45 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 }
 ```
 
-**Response:**
+The search returns 45 items.
 
-The search returns 45 items, but only the first two items are returned on the current page.
-
-```json
-{
-  "data": {
-    "products": {
-      "total_count": 45,
-      "items": [
-        {
-          "name": "Josie Yoga Jacket",
-          "sku": "WJ02",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 56.25,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
-          "name": "Selene Yoga Hoodie",
-          "sku": "WH05",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 42,
-                "currency": "USD"
-              }
-            }
-          }
-        }
-      ],
-      "page_info": {
-        "page_size": 2,
-        "current_page": 1
-      }
-    }
-  }
-}
-```
-
-### Full text search with filter
+### Full text search with filters
 
 The following sample query returns a list of products that meets the following criteria:
 
--  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
--  The SKU begins with `24-MB`
--  The price is less than $50.
+*  The product name, product description, or related field contains the string `Messenger` (which causes it to be available for full text searches).
+*  The SKU begins with `24-MB`
+*  The price is less than $50.
 
-The response for each item includes the `name`, `sku`, and `price` only. Up to 25 results are returned at a time, in decreasing order of price.
-
-**Request:**
+The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
 ```graphql
 {
   products(
     search: "Messenger"
-    filter: { price: { to: "50" } }
+    filter: {
+      sku: {
+        like: "24-MB%"
+      }
+      price: {
+        lt: "50"
+      }
+    }
     pageSize: 25
-    sort: { price: DESC }
-  ) {
+    sort: {
+      price: DESC
+    }
+  )
+  {
     items {
       name
       sku
-      price_range {
-        minimum_price {
-          regular_price {
+      description {
+        html
+      }
+      price {
+        regularPrice {
+          amount {
             value
             currency
           }
@@ -456,7 +292,7 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
 }
 ```
 
-**Response:**
+The query returns the following:
 
 ```json
 {
@@ -464,35 +300,29 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
     "products": {
       "items": [
         {
-          "name": "Rival Field Messenger",
-          "sku": "24-MB06",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 45,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
-          "name": "Push It Messenger Bag",
-          "sku": "24-WB04",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 45,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
           "name": "Wayfarer Messenger Bag",
           "sku": "24-MB05",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
+          "description": {
+            "html": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
+          },
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 45,
+                "currency": "USD"
+              }
+            }
+          }
+        },
+        {
+          "name": "Rival Field Messenger",
+          "sku": "24-MB06",
+          "description": {
+            "html": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
+          },
+          "price": {
+            "regularPrice": {
+              "amount": {
                 "value": 45,
                 "currency": "USD"
               }
@@ -500,7 +330,7 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
           }
         }
       ],
-      "total_count": 3,
+      "total_count": 2,
       "page_info": {
         "page_size": 25
       }
@@ -509,35 +339,31 @@ The response for each item includes the `name`, `sku`, and `price` only. Up to 2
 }
 ```
 
-### Query with layered navigation
+### Simple search using a timestamp
 
-The following query returns aggregations for a query that filters on items with these characteristics:
-
--  Women's pants (category ID `27`)
--  In the price range of $30 - $39.99
--  Comes in black (color `49`)
-
-**Request:**
+The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
 ```graphql
 {
-  products(filter: {category_id: {eq: "27"}, price: {from: "30", to: "39.99"}, color: {eq: "49"}}, pageSize: 25, sort: {name: DESC}) {
-    aggregations {
-      attribute_code
-      count
-      label
-      options {
-        label
-        value
-        count
+  products(
+    filter: {
+      created_at: {
+        gt: "2017-11-01 00:00:00"
       }
     }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
     items {
       name
       sku
-      price_range {
-        minimum_price {
-          regular_price {
+      price {
+        regularPrice {
+          amount {
             value
             currency
           }
@@ -546,486 +372,109 @@ The following query returns aggregations for a query that filters on items with 
     }
     page_info {
       page_size
+      current_page
     }
   }
 }
 ```
 
-**Response:**
+### Simple Logical OR search
 
-{% collapsible Show sample response %}
-
-```json
-{
-  "data": {
-    "products": {
-      "aggregations": [
-        {
-          "attribute_code": "price",
-          "count": 1,
-          "label": "Price",
-          "options": [
-            {
-              "label": "30-*",
-              "value": "30_*",
-              "count": 4
-            }
-          ]
-        },
-        {
-          "attribute_code": "category_id",
-          "count": 5,
-          "label": "Category",
-          "options": [
-            {
-              "label": "New Luma Yoga Collection",
-              "value": "8",
-              "count": 1
-            },
-            {
-              "label": "Bottoms",
-              "value": "22",
-              "count": 4
-            },
-            {
-              "label": "Pants",
-              "value": "27",
-              "count": 4
-            },
-            {
-              "label": "Pants",
-              "value": "32",
-              "count": 4
-            },
-            {
-              "label": "Performance Fabrics",
-              "value": "35",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "attribute_code": "color",
-          "count": 8,
-          "label": "Color",
-          "options": [
-            {
-              "label": "Black",
-              "value": "49",
-              "count": 4
-            },
-            {
-              "label": "Blue",
-              "value": "50",
-              "count": 2
-            },
-            {
-              "label": "Gray",
-              "value": "52",
-              "count": 1
-            },
-            {
-              "label": "Green",
-              "value": "53",
-              "count": 1
-            },
-            {
-              "label": "Orange",
-              "value": "56",
-              "count": 1
-            },
-            {
-              "label": "Purple",
-              "value": "57",
-              "count": 1
-            },
-            {
-              "label": "Red",
-              "value": "58",
-              "count": 1
-            },
-            {
-              "label": "White",
-              "value": "59",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "attribute_code": "material",
-          "count": 7,
-          "label": "Material",
-          "options": [
-            {
-              "label": "Nylon",
-              "value": "37",
-              "count": 1
-            },
-            {
-              "label": "Rayon",
-              "value": "39",
-              "count": 1
-            },
-            {
-              "label": "LumaTech&trade;",
-              "value": "148",
-              "count": 1
-            },
-            {
-              "label": "Microfiber",
-              "value": "150",
-              "count": 2
-            },
-            {
-              "label": "Spandex",
-              "value": "151",
-              "count": 2
-            },
-            {
-              "label": "Organic Cotton",
-              "value": "154",
-              "count": 2
-            },
-            {
-              "label": "CoolTech&trade;",
-              "value": "156",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "attribute_code": "size",
-          "count": 2,
-          "label": "Size",
-          "options": [
-            {
-              "label": "28",
-              "value": "172",
-              "count": 4
-            },
-            {
-              "label": "29",
-              "value": "173",
-              "count": 4
-            }
-          ]
-        },
-        {
-          "attribute_code": "eco_collection",
-          "count": 2,
-          "label": "Eco Collection",
-          "options": [
-            {
-              "label": "0",
-              "value": "0",
-              "count": 3
-            },
-            {
-              "label": "1",
-              "value": "1",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "attribute_code": "performance_fabric",
-          "count": 2,
-          "label": "Performance Fabric",
-          "options": [
-            {
-              "label": "0",
-              "value": "0",
-              "count": 2
-            },
-            {
-              "label": "1",
-              "value": "1",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "attribute_code": "erin_recommends",
-          "count": 1,
-          "label": "Erin Recommends",
-          "options": [
-            {
-              "label": "0",
-              "value": "0",
-              "count": 4
-            }
-          ]
-        },
-        {
-          "attribute_code": "new",
-          "count": 2,
-          "label": "New",
-          "options": [
-            {
-              "label": "0",
-              "value": "0",
-              "count": 3
-            },
-            {
-              "label": "1",
-              "value": "1",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "attribute_code": "sale",
-          "count": 1,
-          "label": "Sale",
-          "options": [
-            {
-              "label": "0",
-              "value": "0",
-              "count": 4
-            }
-          ]
-        },
-        {
-          "attribute_code": "style_bottom",
-          "count": 5,
-          "label": "Style Bottom",
-          "options": [
-            {
-              "label": "Capri",
-              "value": "107",
-              "count": 2
-            },
-            {
-              "label": "Leggings",
-              "value": "109",
-              "count": 1
-            },
-            {
-              "label": "Parachute",
-              "value": "110",
-              "count": 1
-            },
-            {
-              "label": "Sweatpants",
-              "value": "113",
-              "count": 1
-            },
-            {
-              "label": "Track Pants",
-              "value": "115",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "attribute_code": "pattern",
-          "count": 2,
-          "label": "Pattern",
-          "options": [
-            {
-              "label": "Color-Blocked",
-              "value": "195",
-              "count": 3
-            },
-            {
-              "label": "Solid",
-              "value": "197",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "attribute_code": "climate",
-          "count": 5,
-          "label": "Climate",
-          "options": [
-            {
-              "label": "Indoor",
-              "value": "205",
-              "count": 4
-            },
-            {
-              "label": "Mild",
-              "value": "206",
-              "count": 4
-            },
-            {
-              "label": "Spring",
-              "value": "208",
-              "count": 1
-            },
-            {
-              "label": "Warm",
-              "value": "209",
-              "count": 2
-            },
-            {
-              "label": "Hot",
-              "value": "212",
-              "count": 3
-            }
-          ]
-        }
-      ],
-      "items": [
-        {
-          "name": "Karmen Yoga Pant",
-          "sku": "WP01",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 39,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
-          "name": "Ida Workout Parachute Pant",
-          "sku": "WP03",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 48,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
-          "name": "Bardot Capri",
-          "sku": "WP08",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 48,
-                "currency": "USD"
-              }
-            }
-          }
-        },
-        {
-          "name": "Aeon Capri",
-          "sku": "WP07",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 48,
-                "currency": "USD"
-              }
-            }
-          }
-        }
-      ],
-      "page_info": {
-        "page_size": 25
-      }
-    }
-  }
-}
-```
-
-{% endcollapsible %}
-
-### Return minimum and maximum prices and discount information
-
-In the following example, a catalog price rule that provides a 10% discount on all fitness equipment is in effect. The product queried, `24-WG080`, is the Sprite Yoga Companion Kit bundle product. This product has two user-selected options that cause the price to vary. If you choose to query a product that is not a composite (bundle, group, or configurable) product, the minimum and maximum prices are the same.
-
-**Request:**
+The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
 ```graphql
 {
-  products(filter: {sku: {eq: "24-WG080"}}, sort: {name: ASC}) {
+  products(
+    filter: {
+      or: {
+        sku: {
+          like: "24-MB%"
+        }
+        name: {
+          like: "%Bag"
+        }
+      }
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
     items {
       name
       sku
-      price_range {
-        minimum_price {
-          regular_price {
+      price {
+        regularPrice {
+          amount {
             value
             currency
-          }
-          final_price {
-            value
-            currency
-          }
-          discount {
-            amount_off
-            percent_off
-          }
-        }
-        maximum_price {
-          regular_price {
-            value
-            currency
-          }
-          final_price {
-            value
-            currency
-          }
-          discount {
-            amount_off
-            percent_off
           }
         }
       }
     }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "products": {
-      "items": [
-        {
-          "name": "Sprite Yoga Companion Kit",
-          "sku": "24-WG080",
-          "price_range": {
-            "minimum_price": {
-              "regular_price": {
-                "value": 61,
-                "currency": "USD"
-              },
-              "final_price": {
-                "value": 61,
-                "currency": "USD"
-              },
-              "discount": {
-                "amount_off": 0,
-                "percent_off": 0
-              }
-            },
-            "maximum_price": {
-              "regular_price": {
-                "value": 77,
-                "currency": "USD"
-              },
-              "final_price": {
-                "value": 77,
-                "currency": "USD"
-              },
-              "discount": {
-                "amount_off": 0,
-                "percent_off": 0
-              }
-            }
-          }
-        }
-      ]
+    page_info {
+      page_size
+      current_page
     }
   }
 }
 ```
 
-### Retrieve related products, up-sells, and cross-sells
+The query returns 8 items.
 
-The following query shows how to get related products, up-sells, and cross-sells for a product:
+### Logical AND and OR search
 
-**Request:**
+This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+
+```graphql
+{
+  products(
+    filter: {
+      price: {
+        from: "40" to: "49.99"
+      }
+      or: {
+        name: {
+          like: "%Short"
+        }
+        sku: {
+          like: "WP%"
+        }
+      }
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
+}
+```
+
+The query returns 14 items.
+
+### Retrieve related products, Up-sells and Cross-sells
+
+The following query shows how to get related products, Up-sells and Cross-sells for the particular product:
 
 ```graphql
 {
@@ -1124,6 +573,35 @@ The following query shows how to get related products, up-sells, and cross-sells
 }
 ```
 
+### Layered navigation
+
+The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
+
+```graphql
+{
+  products(
+    filter: { sku: { like: "24-WB%" } }
+    pageSize: 20
+    currentPage: 1
+    sort: { name: DESC }
+  ) {
+    items {
+      sku
+    }
+    filters {
+      name
+      filter_items_count
+      request_var
+      filter_items {
+        label
+        value_string
+        items_count
+      }
+    }
+  }
+}
+```
+
 ### Media gallery search
 
 The following query returns media gallery information about the product with the `sku` of `24-MB01`.
@@ -1194,6 +672,55 @@ query {
             {
               "url": "http://magento2.vagrant130/pub/media/catalog/product/cache/07660f0f9920886e0f9d3257a9c68f26/m/b/mb01-blue-0.jpg",
               "label": "Image"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+### Include website information with `products` query results {#inclWebsiteInfoExample}
+
+The [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) can include information about the `Website` object.
+
+**Request:**
+
+```graphql
+{
+    products(filter: {sku: {eq: "24-WB04"}})
+    {
+        items{
+            websites {
+              id
+              name
+              code
+              sort_order
+              default_group_id
+              is_default
+            }
+        }
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "websites": [
+            {
+              "id": 1,
+              "name": "Main Website",
+              "code": "base",
+              "sort_order": 0,
+              "default_group_id": "1",
+              "is_default": true
             }
           ]
         }

@@ -163,6 +163,8 @@ The following figure shows the technologies used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
+### Pro cluster scaling
+
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
 
 -  Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
@@ -170,7 +172,7 @@ The following figure shows the technologies used in the Production environment:
 
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
-<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
+For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
 ## Software versions {#cloud-arch-software}
 

@@ -136,9 +136,9 @@ The value of that variable comes from any of the following:
 *  Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
 
 ```html
-      <!--@styles
-      .example-style { color: green; }
-      @-->
+ <!--@styles
+   .example-style { color: green; }
+ @-->
 ```
 
 *  If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
@@ -371,9 +371,7 @@ The `trans` directive will translate strings into whatever locale is configured 
 The directive supports multiple named parameters, separated by spaces. For example:
 
 ```html
-{% raw %}
-{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
-{% endraw %}
+{% raw %}{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}{% endraw %}
 ```
 
 Please note, that variable assignment must not contain spaces.
@@ -381,17 +379,13 @@ Please note, that variable assignment must not contain spaces.
 Correct:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
 ```
 
 Incorrect:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
 ```
 
 {:.bs-callout .bs-callout-info}

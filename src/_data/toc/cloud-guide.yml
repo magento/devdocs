@@ -29,6 +29,10 @@ pages:
           url: /cloud/architecture/pro-develop-deploy-workflow.html
           versionless: true
 
+        - label: Scaled architecture
+          url: /cloud/architecture/scaled-architecture.html
+          versionless: true
+
     - label: Technologies and requirements
       url: /cloud/requirements/cloud-requirements.html
       versionless: true
@@ -544,7 +548,7 @@ pages:
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
-        - label: Apply custom patches
+        - label: Apply patches
           url: /cloud/project/project-patch.html
           versionless: true
 
@@ -555,3 +559,23 @@ pages:
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
       versionless: true
+      children:
+        - label: ece-tools
+          url: /cloud/release-notes/ece-release-notes.html
+          versionless: true
+
+        - label: magento-cloud-components
+          url: /cloud/release-notes/mcc-release-notes.html
+          versionless: true
+        
+        - label: magento-cloud-docker
+          url: /cloud/release-notes/mcd-release-notes.html
+          versionless: true
+
+        - label: magento-cloud-patches
+          url: /cloud/release-notes/mcp-release-notes.html
+          versionless: true
+
+        - label: Backward incompatible changes
+          url: /cloud/release-notes/backward-incompatible-changes.html
+          versionless: true
