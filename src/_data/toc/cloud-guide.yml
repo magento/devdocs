@@ -516,7 +516,7 @@ pages:
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
-        - label: Apply custom patches
+        - label: Apply patches
           url: /cloud/project/project-patch.html
           versionless: true
 
