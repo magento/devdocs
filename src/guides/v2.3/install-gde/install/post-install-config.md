@@ -11,7 +11,7 @@ Now that you've finished installing the Magento application, you need to configu
 
 ## Set up cron {#post-install-cron}
 
-cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
+cron---the UNIX task scheduler---is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
 
 {% include config/setup-cron_2.2_how-to.md %}
 

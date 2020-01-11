@@ -89,7 +89,7 @@ An example of translating a phrase:
 
 ## Create a language package {#config-cli-subcommands-xlate-pack}
 
-As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. You can translate a particular component&mdash;like a module or a theme&mdash;using a translation dictionary. [Learn more about language packages].
+As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. You can translate a particular component---like a module or a theme---using a translation dictionary. [Learn more about language packages].
 
 This section discusses how to create a language package, which writes `.csv` files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:
 
