@@ -110,3 +110,4 @@ ENABLE_SENDMAIL=true
 [dev-mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [enable Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-database.html
+git

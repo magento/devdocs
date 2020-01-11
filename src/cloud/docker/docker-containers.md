@@ -25,7 +25,7 @@ All of the customized docker containers are kept in the [Magento Cloud Docker re
 | [db]({{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container) | MariaDB     | --db | 10.0, 10.1, 10.2 |  Standard database container
 | [elasticsearch]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | Elasticsearch | --es | 1.7, 2.4, 5.2, 6.5 |
 | [fpm]({{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container) | PHP FPM | --php | 7.0, 7.1, 7.2 |  Used for all incoming requests
-| [node]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#nodecontainer) | Node | --node | 6, 8, 10, 11 |  Used gulp or other NPM based commands
+| [node]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#node-container) | Node | --node | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq]({{site.baseurl}}/cloud/docker/docker-containers-service.html#rabbitmq-container) | RabbitMQ | --rmq | 3.5, 3.7 |
 | [redis]({{site.baseurl}}/cloud/docker/docker-containers-service.html#redis-container) | Redis     | --redis | 3.2, 4.0, 5.0 |   Standard redis container
 | [tls]({{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
