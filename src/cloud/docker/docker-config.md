@@ -1,12 +1,12 @@
 ---
 group: cloud-guide
-title: Configure Docker Environment
-redirect_from:
-  - /cloud/reference/docker-config.html
+title: Configure Docker environment
 functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+  - /cloud/reference/docker-config.html
 ---
 
 The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
@@ -110,4 +110,3 @@ ENABLE_SENDMAIL=true
 [dev-mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [enable Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-database.html
-

@@ -11,12 +11,4 @@ A component's root directory matches the component's name and contains all its s
 
 *  `<Magento install directory>/vendor`: You will find this location for installations that use the [`composer create-project`]({{page.baseurl}}/install-gde/composer.html) to install the Magento 2 metapackage (which downloads the CE or EE code). You will also find this location if you install Magento by extracting the [compressed Magento 2 archive]({{page.baseurl}}/install-gde/prereq/zip_install.html).
 
-Magento installs third-party components in the `vendor` directory. But we recommend adding your components to the `app/code` directory. If you put your component in the `vendor` directory, Git will ignore it because Magento adds the `vendor` directory to the `.gitignore` file.
-
-### Required files
-
-All components require these three files:
-
-*  `registration.php`: This file registers your component with Magento. It uses the component's root directory name as the component name. By default, the composer installs components in the `<Magento root dir>/vendor` directory. For more information, see [Component registration]({{page.baseurl}}/extension-dev-guide/build/component-registration.html).
-*  `etc/module.xml`: This file defines basic information about the component, such as component dependencies and version number. Magento uses the version number to determine which schema and data to update when executing `bin/magento setup:upgrade`.
-*  `composer.json`: This file defines the dependencies that the component needs at runtime. For more information, see [Composer integration]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html).
+   Magento installs third-party components in the `<Magento install directory>/vendor` directory. But we recommend adding your components to the `<Magento install directory>/app/code` directory. If you add your component to the `<Magento install directory>/vendor` directory, [Git](https://git-scm.com/docs) will ignore it because Magento adds the `vendor` directory to the `<Magento install directory>/.gitignore` file.
