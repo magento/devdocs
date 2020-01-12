@@ -142,10 +142,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Upgrades no longer fail when deployments contain store information predefined in `app/etc/config.php`. Previously, MySQL locks occurred during the store import phase of upgrade, and Magento threw an error.
 
-<!--- MC-20135-->
-
-*  You can now successfully run `bin/magento setup:static-content:deploy` in developer mode. Previously, attempting to run `bin/magento setup:static-content:deploy` resulted in an error.
-
 <!--- ENGCOM-5619-->
 
 *  The `setup:db-declaration:generate-patch` command now generates a patch file using the `revert()` method as expected when the  `--revertable` option is set to **true**. *Fix submitted by Alexander Taranovsky in pull request [23848](https://github.com/magento/magento2/pull/23848)*. [GitHub-23847](https://github.com/magento/magento2/issues/23847)
@@ -156,7 +152,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6040-->
 
-*  Magento no longer disables the cache when you run `composer update`. *Fix submitted by adrian-martinez-interactiv4 in pull request [24892](https://github.com/magento/magento2/pull/24892)*. [GitHub-17634](https://github.com/magento/magento2/issues/17634)
+*  In rare circumstances, executing `composer update` disabled all Magento caches, this is now resolved. *Fix submitted by adrian-martinez-interactiv4 in pull request [24892](https://github.com/magento/magento2/pull/24892)*. [GitHub-17634](https://github.com/magento/magento2/issues/17634)
 
 <!--- ENGCOM-5724-->
 
@@ -518,7 +514,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5632-->
 
-*  Links to a sitemap generated at  **Marketing** > **SEO & Search** > **sitemap** is are now  valid. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
+*  An incorrect xml namespace url was removed from the generated sitemaps displayed at **Marketing** > **SEO & Search** > **sitemap**. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
 
 <!--- ENGCOM-5684-->
 
@@ -640,11 +636,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5717-->
 
-*  A new flag has been added to the `bin/magento cron:install` command that permits you to add only mandatory entries to the crontab file of the server on which Magento is running. The `--non-optional` flag (or `-d` for short) adds only one or three possible lines to the `crontab` file. Without this flag, `bin/magento cron:install` adds three lines to the `crontab` of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
+*  A new flag has been added to the `bin/magento cron:install` command that permits you to add only mandatory entries to the crontab file of the server on which Magento is running. The `--non-optional` flag (or `-d` for short) adds only one of three possible lines to the `crontab` file. Without this flag, `bin/magento cron:install` adds three lines to the `crontab` of the server on which Magento is running. Only one of those added lines is necessary to run Magento, and many installations are configured such that the two optional lines are not needed. *Fix submitted by Alexander Taranovsky in pull request [24187](https://github.com/magento/magento2/pull/24187)*. [GitHub-10040](https://github.com/magento/magento2/issues/10040), [GitHub-24186](https://github.com/magento/magento2/issues/24186)
 
 <!--- ENGCOM-5934-->
 
-*  The `php bin/magento cron:run` command now creates adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
+*  The `php bin/magento cron:run` command now adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
 
 ### Customer
 
@@ -698,7 +694,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5573-->
 
-*  Enabling **Flush Catalog Images Cache** on **System** > **Cache Management** now clears all cached image files from both the filesystem and database. Previously, Magnto removed images from the filesystem only. *Fix submitted by Wharton in pull request [24088](https://github.com/magento/magento2/pull/24088)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
+*  Enabling **Flush Catalog Images Cache** on **System** > **Cache Management** now clears all cached image files from both the filesystem and database. Previously, Magnto removed images from the filesystem only. *Fix submitted by gwharton in pull request [24088](https://github.com/magento/magento2/pull/24088)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
 
 ### Declarative schema
 
@@ -847,12 +843,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6039-->
 
 *  Magento now displays the customer middle name in the customer details on orders and in the new order email sent to customers. *Fix submitted by Sergiy Vasiutynskyi in pull request [24746](https://github.com/magento/magento2/pull/24746)*. [GitHub-23627](https://github.com/magento/magento2/issues/23627)
-
-### Payment methods
-
-<!--- ENGCOM-6124-->
-
-*  Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
 
 ### Reports
 
@@ -1015,6 +1005,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-19706-->
 
 *  Magento now populates the `url_rewrite` table with the new product URL rewrite when you create a new product when single-store mode is enabled. Previously, Magento did not generate a user-friendly URL upon the creation of products when single-store mode was enabled.
+
+<!--- ENGCOM-6124-->
+
+*  Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
 
 ## Community contributions
 
