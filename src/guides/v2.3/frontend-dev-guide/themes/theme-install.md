@@ -43,7 +43,7 @@ Composer-based themes are loaded from external sources and cannot be modified di
 
 ## Install a theme as an extension
 
-If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see [Install the Extension](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html).
+If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with the **Web Setup Wizard**. See [Install the Extension](https://docs.magento.com/marketplace/user_guide/buyers/install-extension.html).
 
 ## Register a theme
 
