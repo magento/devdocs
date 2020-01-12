@@ -20,7 +20,7 @@ This topic covers only the default options in the preceding list. There are many
 
 On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.
 
-In addition, Varnish uses an [Entity](https://glossary.magento.com/entity) Tag ([ETag](https://en.wikipedia.org/wiki/HTTP_ETag)) for static assets. The ETag provides a way to determine when [static files](https://glossary.magento.com/static-files) change on the server. As a result, static assets are sent to the client when they change on the server&mdash;either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
+In addition, Varnish uses an [Entity](https://glossary.magento.com/entity) Tag ([ETag](https://en.wikipedia.org/wiki/HTTP_ETag)) for static assets. The ETag provides a way to determine when [static files](https://glossary.magento.com/static-files) change on the server. As a result, static assets are sent to the client when they change on the server---either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
 
 More detail is provided in the sections that follow.
 
