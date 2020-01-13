@@ -29,3 +29,15 @@ This release includes the following patches and critical fixes:
 -  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
 
 -  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
+
+## v1.0.1
+
+All Magento Open Source 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) are included in this release. If you copied any patches into your project previously, remove them to avoid conflicts.
+
+This release includes the following patches and critical fixes:
+
+-  {:.fix}<!--MAGECLOUD-4606-->**Review Hotfixes List and Add All Missing for 2.1.4+**–Updated the magento-cloud-patches package to include all Magento Open Source 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download).
+
+-  {:.fix}<!--MAGECLOUD-4847-->**Fixed issues caused by the MC-21696 hot fix from `ece-tools` patches**–Replaced the patch for MC-21696 with a more accurate fix.
+
+-  {:.fix}<!--MAGECLOUD-4884-->**Update PageBuilder Patches for RCE**–Update PageBuilder Patches which were bundled for 2.3.1 and 2.3.2 in MAGECLOUD-4649 before + add few more patches..
