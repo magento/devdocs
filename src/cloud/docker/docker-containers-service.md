@@ -23,15 +23,15 @@ See the [service version values available]({{ site.baseurl }}/cloud/docker/docke
 
 #### Container Usage
 
-To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
+To import a database dump, place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` directory.
 
-> When a container is started for the first time, a new database with the specified name will be created and initialized with the provided configuration variables. Furthermore, it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d. Files will be executed in alphabetical order.
+When a database container is started for the first time, a new database with the specified name is created and initialized using the configuration variables specified in the docker-compose configuration. The initial start up process also executes all files with extensions .sh, .sql and .sql.gz that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order.
 
 From: [mariadb docker documentation](https://hub.docker.com/_/mariadb)
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
 
-MySQL configuration can be injected into the container at creation. The following two examples show how this is done, either via an included `my.cnf` file, or setting the variables correctly.
+MySQL configuration can be injected into the container at creation. The following two examples show how this is done, either using an included `my.cnf` file, or setting the variables correctly.
 
 Add a custom `my.cnf` via the `docker-compose.override.yml` file:
 ```yaml
@@ -40,7 +40,7 @@ Add a custom `my.cnf` via the `docker-compose.override.yml` file:
       - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-Alternatively config values can be set in the environment section of the docker-compose.override.yml:
+Alternatively, you can set configuration values in the environment section of the` docker-compose.override.yml` file:
 ```yaml
   db:
     environment:
@@ -58,7 +58,7 @@ Alternatively config values can be set in the environment section of the docker-
 
 #### Container Usage
 
-Standard Elasticsearch container with required plugins and configurations for Magento 2.
+Standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
 ### FPM Container
 
@@ -71,14 +71,14 @@ Standard Elasticsearch container with required plugins and configurations for Ma
 
 #### Container Usage
 
-It is possible to load custom extensions in the FPM configuration, these are configured in the generic container in docker-compose.yml, but should be overrode in docker-compose.override.yml.
+You can  load custom extensions in the FPM configuration by adding the configuration to the `docker-compose.override.yml` file. This configuration is applied when you build and deploy.
 ```bash
   generic:
     environment:
      - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
 ```
 
-More information about configuring the php environment can be found in the [XDebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html) documentation.
+For additional information about configuring the php environment, see the [XDebug for Docker]({{site.baseurl}}/cloud/docker/docker-development-debug.html) documentation.
 
 ### Rabbitmq Container
 
