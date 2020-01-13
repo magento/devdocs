@@ -64,7 +64,7 @@ Merchants and customers will see performance improvements as a result of these e
 
 ### Infrastructure improvements
 
-This release contains 250 enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
+This release contains 250 enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, and CMS.
 
 ### Merchant tool enhancements
 
@@ -622,16 +622,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento now displays the **Unselect all** button on the shopping cart page when a customer selects a downloadable product with multiple options. *Fix submitted by Adarsh Manickam in pull request [24800](https://github.com/magento/magento2/pull/24800)*. [GitHub-24785](https://github.com/magento/magento2/issues/24785)
 
-### Dynamic block (formerly banner)
-
-<!--- MC-21788-->
-
-*  Dynamic block content is now invalidated as expected when the store view is changed in a multistore deployment.
-
-<!--- MC-13951-->
-
-*  Schema upgrades no longer result in unexpected foreign key re-creation and column modifications.
-
 ### EAV
 
 <!--- MC-19777-->
@@ -685,6 +675,32 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-5815-->
 
 *  Excluding minified JavaScript files from the generated javascript bundles using the view.xml file inside a theme now works as expected. You no longer need to explicitly provide both the non-minified filename and the minified filename. Only the exact filename as it exists on the filesystem is needed now. The other variant is handled automatically. This reduces the size of the generated JavaScript bundle files in default Magento themes and may also improve the JavaScript bundle filesize in custom themes. *Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
+
+### Frameworks
+
+<!--- MC-19686-->
+
+*  Customers no longer have problems logging in to a Magento deployment on which `bin/magento customer:hash:upgrade` has been run and that also runs PHP 7.2.19 and has the sodium extension installed (libsodium  1.0.13 or greater).
+
+<!--- MC-17633-->
+
+*  The `setup:db:status` command now returns successfully after you’ve run `setup:upgrade` on a deployment running Maria DB version 10.2. Previously, the `setup:db:status` command returned this message: `Declarative Schema is not up to date` and that we need to run `setup:upgrade`. [GitHub-19597](https://github.com/magento/magento2/issues/19597)
+
+<!--- MC-19701-->
+
+*  Country lists now provide a translation of Taiwan as Taiwan, Province of China.
+
+<!--- MC-18193-->
+
+*  Magento now sends sales-related email to the correct customer when `sales_emails cron` has an error.
+
+<!--- MC-21481-->
+
+*  The `magento/framework/Mail/Template/TransportBuilder.php` class has been refactored to make sure that `$this->messageData` is updated when `$email` is an `array` and `isset($this->messageData[$addressType])` is set to `**false**.
+
+<!--- MC-22153-->
+
+*  Magento no longer throws an error when you open an image from the product image gallery from the storefront product detail page. Previously, Magento returned this JavaScript error in the console: `TypeError: The expression cannot be converted to return the specified type`.
 
 ### General fixes
 
@@ -812,6 +828,54 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The Export page now displays exported files in a grid. Previously, Magento did not list files but instead displayed a message indicating that the CDATA section was too large to display when more than 20,000 records were exported. *Fix submitted by Eduard Chitoraga in pull request [24954](https://github.com/magento/magento2/pull/24954)*. [GitHub-24311](https://github.com/magento/magento2/issues/24311)
 
+<!--- MC-21974-->
+
+*  Exported CSV are now sorted based on time when you run `bin/magento cron:run`. Previously, exported CSV results were displayed randomly, and you could not filter or sort exported items.
+
+<!--- MC-20112-->
+
+*  You can now import empty values (`__EMPTY__VALUE__`) from a CSV file at the store-view level.
+
+<!--- MC-20229-->
+
+*  Magento now handles URL rewrites correctly when you import data for an existing product.
+
+<!--- MC-19661-->
+
+*  You can now exclude attributes from a CSV file when setting up an export ( **System** > **Data Transfer (Export)**. Previously, the checkboxes not this page did not work.
+
+<!--- MC-18710-->
+
+*  Magento now correctly processes product prices during export when the **All Store Views** scope is set. Previously, the logic for updating the price in custom options in non-default websites was missing when the **Catalog** > **Price** setting is set to **Website**.
+
+<!--- MC-19399-->
+
+*  Magento now respects website scope settings when you export product data in a CSV file.
+
+<!--- MC-18815-->
+
+*  Magento now adds  newly imported images after previously imported ones. Previously, Magento added these most recently imported images randomly.
+
+<!--- MC-15256-->
+
+*  You can now successfully import customer data that has not been modified when generating the CSV file with the **Add/Update Complex Data behavior** option.
+
+<!--- ENGCOM-5799 5751-->
+
+*  Corrected spacing issue in the Magento_Config file. *Fix submitted by Alexander Taranovsky in pull request [24420](https://github.com/magento/magento2/pull/24420)*. [GitHub-5246](https://github.com/magento/magento2/issues/5246)
+
+<!--- ENGCOM-5702-->
+
+*  Magento now correctly imports product quantity from a CSV file. Previously, the quantity field for a product could be **0**, but the status field  would indicate **in stock**. *Fix submitted by kristiancharb in pull request [24053](https://github.com/magento/magento2/pull/24053)*. [GitHub-23042](https://github.com/magento/magento2/issues/23042)
+
+<!--- ENGCOM-5860-->
+
+*  Magento now displays an error messages as expected when you select **Inprot tax Rates** without selecting a file for import on (**Admin** > **Import & Export Tax Rates**).  *Fix submitted by Eden Duong in pull request [24643](https://github.com/magento/magento2/pull/24643)*. [GitHub-24642](https://github.com/magento/magento2/issues/24642)
+
+<!--- MC-22390-->
+
+*  You can now successfully import an image from an external URL.
+
 ### Infrastructure
 
 <!--- ENGCOM-5540-->
@@ -859,6 +923,16 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6124-->
 
 *  Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
+
+### Performance
+
+<!--- MC-16108-->
+
+*  The Cache User Defined Attributes system configuration option was added to **Admin** > **System Config** > **Advanced** > **Developer** section > **Caching Setting**. This option supports the caching of user-defined EAV attributes while they are being retrieved. Caching system EAV attributes during retrieval improves the performance of many tasks by decreasing the number of insert and select requests to the database. With this release, all system EAV attributes are cached by default. However, developers can also cache user-defined attributes by setting **Cache User Defined Attributes** to **yes**. System EAV attributes that should be cached while being retrieved are defined in `di.xml` in the `attributesForPreload` argument of `Magento\Eav\Model\Config`.
+
+<!--- MC-20322-->
+
+*  Statistics collection for the Reports module is now disabled by default.
 
 ### Reports
 
@@ -913,12 +987,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-5993-->
 
 *  The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
-
-### Staging
-
-<!--- MC-10974-->
-
-*  Merchants can now manage Catalog Rule activity on the  Catalog Rule page using the **Is Active** toggle button.
 
 ### Swatches
 
