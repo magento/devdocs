@@ -180,9 +180,9 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `publish` &mdash; The default if not specified. Publishes the profile to the relevant
+*  `publish` --- The default if not specified. Publishes the profile to the relevant
    [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-*  `draft` &mdash; The update is saved on the Developer Portal, but not published.
+*  `draft` --- The update is saved on the Developer Portal, but not published.
 
 **Request:**
 
@@ -219,7 +219,7 @@ The following table lists available query parameters, all of which are optional:
 
 | Parameter |  Type  | Required | Description                            |
 |-----------|--------|----------|----------------------------------------|
-| type      | string |   no     | Type of keys requested:<br>`m1` &mdash; Magento 1 product keys<br>`m2` &mdash; Magento 2 composer repo keys<br>`all` &mdash; Both M1 and M2 keys (default)
+| type      | string |   no     | Type of keys requested:<br>`m1` --- Magento 1 product keys<br>`m2` --- Magento 2 composer repo keys<br>`all` --- Both M1 and M2 keys (default)
 | label     | string |   no     | The url encoded value of the key label; only valid for `m2` type.|
 
 The following example shows the request/response body for retrieving keys without any query parameters:

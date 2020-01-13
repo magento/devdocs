@@ -67,7 +67,7 @@ The following sections discusses how to install or upgrade Apache:
 ### Installing Apache on Ubuntu 16, 14, or 12 {#install-prereq-apache-ubuntu-install}
 
 {% collapsible Click to show/hide content %}
-To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu 12&mdash;Apache 2.2):
+To install the default version of Apache (Ubuntu 14, 16---Apache 2.4, Ubuntu 12---Apache 2.2):
 
 1. Install Apache
 

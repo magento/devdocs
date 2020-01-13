@@ -13,7 +13,7 @@ functional_areas:
 
 To complete almost all of the tasks in this guide, you must remotely log in to your Magento server.
 
-**Prerequisites:**: You must have:
+**Prerequisites:** You must have:
 
 *  A terminal application
 
