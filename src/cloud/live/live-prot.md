@@ -33,7 +33,7 @@ We run two types of blocks:
 
 *  For production websites, we run a "partial block" that allows the site to stay mostly online.
 
-   Depending on the nature of the vulnerability, parts of a request, such as a query string, cookies or any additional headers, might be removed from GET requests. All other requests may be blocked entirely&mdash;this could apply to logging in, form submission, or product [checkout](https://glossary.magento.com/checkout).
+   Depending on the nature of the vulnerability, parts of a request, such as a query string, cookies or any additional headers, might be removed from GET requests. All other requests may be blocked entirely---this could apply to logging in, form submission, or product [checkout](https://glossary.magento.com/checkout).
 
 Unblocking is automated upon resolution of the security risk. The block is removed soon after you apply a security upgrade that removes the vulnerability.
 
