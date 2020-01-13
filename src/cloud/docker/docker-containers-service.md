@@ -101,7 +101,7 @@ Standard RabbitMQ Container, with no configuration or changes from Magento Cloud
 -  Ports Exposed: 6379
 
 #### Container Usage
-A standard redis container with no customizations, no persistence or configuration is used.
+A standard Redis container with no customizations, no persistence or configuration is used.
 
 Connect to and run redis commands via the redis-cli inside the container:
 ```bash
