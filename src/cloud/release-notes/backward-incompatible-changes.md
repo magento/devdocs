@@ -42,4 +42,4 @@ In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` 
 
 ### Patches changes
 
-- Cloud patches bundled all patches provided by [Magento Technical resources](https://magento.com/tech-resources/download). Patches which were copied from there to your project should be removed to avoid conflicts.
+- Cloud patches bundled all patches provided by [Magento Technical resources](https://magento.com/tech-resources/download). If you have copied any Magento-supplied patches downloaded from the Technical Resources page into your Magento project, remove them to prevent conflicts.
