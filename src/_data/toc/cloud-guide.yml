@@ -117,18 +117,22 @@ pages:
           url: /cloud/docker/docker-containers.html
           versionless: true
           children:
-            - label: Database container
+            - label: Service containers
+              url: /cloud/docker/docker-containers-service.html
+              versionless: true
+    
+            - label: CLI containers
+              url: /cloud/docker/docker-containers-cli.html
+              versionless: true
+              
+            - label: Syncing Data
+              url: /cloud/docker/docker-syncing-data.html
+              versionless: true
+              
+            - label: Connect to the database
               url: /cloud/docker/docker-database.html
               versionless: true
-
-            - label: CLI containers
-              url: /cloud/docker/docker-cli.html
-              versionless: true
-
-            - label: PHP container
-              url: /cloud/docker/docker-php.html
-              versionless: true
-
+              
         - label: Configure Docker
           url: /cloud/docker/docker-config.html
           versionless: true
@@ -136,7 +140,7 @@ pages:
             - label: Xdebug for Docker
               url: /cloud/docker/docker-development-debug.html
               versionless: true
-
+  
             - label: Developer mode
               url: /cloud/docker/docker-mode-developer.html
               versionless: true
@@ -144,7 +148,7 @@ pages:
             - label: Production mode
               url: /cloud/docker/docker-mode-production.html
               versionless: true
-
+  
             - label: Extend Docker
               url: /cloud/docker/docker-extend.html
               versionless: true
@@ -156,7 +160,7 @@ pages:
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
-
+          
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
       versionless: true
