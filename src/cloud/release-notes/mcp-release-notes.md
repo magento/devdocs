@@ -29,7 +29,7 @@ This release includes the following patches and critical fixes:
 
 ## v1.0.1
 
-All Magento Open Source 2.x patches form [Magento Technical resources](https://magento.com/tech-resources/download) were included in this release. If any of them were copied to your project before, they should be removed to avoid possible conflicts.
+All Magento Open Source 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) are included in this release. If you copied any patches into your project previously, remove them to avoid conflicts.
 
 This release includes the following patches and critical fixes:
 
