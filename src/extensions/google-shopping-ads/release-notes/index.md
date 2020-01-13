@@ -23,9 +23,9 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
-### v3.0.2
+### v3.0.3
 
-Google Shopping ads Channel 3.0.2 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 3.0.3 is compatible with versions 2.2.4+, 2.3.0, 2.3.1, 2.3.2, and 2.3.3 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 -  {:.new}**Admin Panel Access**: <!--CHAN-3815-->Improved the onboarding process to allow access to the side _Admin_ panel when the initial _Welcome to Google Shopping ads Channel in Magento_ screen displays.
 
