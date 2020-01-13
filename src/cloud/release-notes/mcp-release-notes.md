@@ -7,7 +7,10 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes.
+
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package to apply patches to a {{ site.data.var.ee }} project that is not on the Cloud platform. These release notes describe the latest improvements to this package.
+
 
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
@@ -26,3 +29,15 @@ This release includes the following patches and critical fixes:
 -  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
 
 -  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
+
+## v1.0.1
+
+All Magento Open Source 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) are included in this release. If you copied any patches into your project previously, remove them to avoid conflicts.
+
+This release includes the following patches and critical fixes:
+
+-  {:.fix}<!--MAGECLOUD-4606-->**Review Hotfixes List and Add All Missing for 2.1.4+**–Updated the magento-cloud-patches package to include all Magento Open Source 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download).
+
+-  {:.fix}<!--MAGECLOUD-4847-->**Fixed issues caused by the MC-21696 hot fix from `ece-tools` patches**–Replaced the patch for MC-21696 with a more accurate fix.
+
+-  {:.fix}<!--MAGECLOUD-4884-->**Update PageBuilder Patches for RCE**–Update PageBuilder Patches which were bundled for 2.3.1 and 2.3.2 in MAGECLOUD-4649 before + add few more patches..

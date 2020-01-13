@@ -200,6 +200,12 @@ To add new classes to the container:
 {:.bs-callout-warning}
 This method overrides existing classes.
 
+To add a new ID to the container:
+
+```xml
+<referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
+```
+
 ## Create a block {#xml-manage-block}
 
 Blocks are created (declared) using the `<block>` instruction.
@@ -252,6 +258,16 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 
 {:.bs-callout-warning}
 It is not recommended to set the `body` id in layout files that have a wider impact (`e.g. default.xml`).
+
+**Example:** Add an inline style to the `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="style" value="opacity:0;"/>
+    </body>
+</page>
+```
 
 ## Reference a block {#xml-manage-ref-block}
 

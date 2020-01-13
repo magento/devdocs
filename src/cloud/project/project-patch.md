@@ -1,43 +1,35 @@
 ---
 group: cloud-guide
-title: Apply custom patches
+title: Apply patches
 functional_areas:
   - Cloud
   - Upgrade
 ---
+The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package
+provides Magento Cloud patches which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. You can also add and apply custom patches using {{ site.data.var.mcp }}.
 
-Sometimes we provide a [custom patch]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) to address a specific issue. Also, third-party extension developers can provide a custom patch. Copy the custom patch to the `/m2-hotfixes` directory and test it on your local workstation.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
+
+You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) provided by support or third-party extension developers.  To use this feature,  copy the custom patch to the `/m2-hotfixes` directory in the {{ site.data.var.ee }} project root directory. Then, test the patch on your local workstation.
 
 {% include cloud/note-upgrade.md %}
 
 {:.procedure}
-To apply and test a custom patch:
+To use {{ site.data.var.mcp }} as a stand-alone package: 
 
-You can only apply patches during the build phase of redeployment.
-
-1. On your local workstation, create a branch based on the `integration` branch.
+1. Add the {{site.data.var.mcp}} package to your `composer.json` file.
 
     ```bash
-    magento-cloud environment:branch <branch-name>
+    composer require magento/magento-cloud-patches
     ```
-
-1. Copy the patch file to the `/m2-hotfixes` directory.
-
-1. Add, commit, and push your code changes.
-
-    ```bash
-    git add -A && git commit -m "Apply patch" && git push origin <branch name>
-    ```
-
-1. After test validation, merge this branch with the `integration` branch.
-
+    
 {:.procedure}
-To test if a patch can be applied using your local workstation:
+To apply {{site.data.var.ece}} patches manually:
 
-1. From the project root, apply the patch.
+1. From the project root, apply the patches.
 
     ```bash
-    git apply ./m2-hotfixes/<patch-file-name>
+     php ./vendor/bin/ece-patches apply
     ```
 
 1. Clear the Magento cache.
@@ -48,4 +40,18 @@ To test if a patch can be applied using your local workstation:
 
     You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
-1. Test the patch, make any necessary changes.
+1. Test the patches, make any necessary changes to custom patches.
+
+{:.procedure}
+To apply and test a custom patch:
+
+1. In the project root, create a directory called `m2-hotfixes` if it does not exist
+
+    ```bash
+    mkdir m2-hotfixes
+    ```
+
+1. Copy the patch file to the `/m2-hotfixes` directory.
+
+    {:.bs-callout-info}
+    Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with `magento-cloud environment:branch <branch-name>`

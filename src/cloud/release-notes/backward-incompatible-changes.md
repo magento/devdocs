@@ -11,7 +11,7 @@ We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud pro
 
 ### Environment configuration changes
 
-The folllowing table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
+The following table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
 
    Item | Replacement
    -------- | -------
@@ -30,6 +30,7 @@ In {{ site.data.var.ct }} v2002.1.0, we removed support for the following CLI co
 `m2-ece-build` | `vendor/bin/ece-tools build`
 `m2-ece-deploy` | `vendor/bin/ece-tools deploy`
 `m2-ece-scd-dump` | `vendor/bin/ece-tools config:dump`
+`vendor/bin/ece-tools patch` | `vendor/bin/ece-patches apply`
 
 In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
@@ -38,3 +39,7 @@ In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` 
 -  **New magento/magento-cloud-patches package**–We moved {{ site.data.var.ece }} patches and related functionality to a separate package, `magento/magento-cloud-patches` in {{ site.data.var.ct }} version 2002.1.0. See [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).
 
 -  **New magento/magento-cloud-docker package**–We moved Docker development functionality to a separate package in {{ site.data.var.ct }} v2002.1.0. See [Release notes for magento/magento-cloud-docker]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html).
+
+### Patches changes
+
+- Cloud patches bundled all patches provided by [Magento Technical resources](https://magento.com/tech-resources/download). If you have copied any Magento-supplied patches downloaded from the Technical Resources page into your Magento project, remove them to prevent conflicts.
