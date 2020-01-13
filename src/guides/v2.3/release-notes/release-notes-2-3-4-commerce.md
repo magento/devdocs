@@ -926,7 +926,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5761-->
 
-*  XML attributes are now encoded to allow special symbols in tag attributes. *Fix submitted by Sergey Solo in pull request [24336](https://github.com/magento/magento2/pull/24336)*. [GitHub-2228](https:// github.com/magento/magento2/issues/2228)
+*  XML attributes are now encoded to allow special symbols in tag attributes. *Fix submitted by Sergey Solo in pull request [24336](https://github.com/magento/magento2/pull/24336)*.
 
 <!--- ENGCOM-5131-->
 
