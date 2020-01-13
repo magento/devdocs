@@ -1,15 +1,14 @@
 ---
 group: cloud-guide
-title: Docker Services Containers
+title: Docker services containers
 functional_areas:
   - Cloud
   - Docker
   - Configuration
 ---
 
-## Service Containers
 
-The following containers provide the services required to build, deploy and run Magento 2 sites.
+The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.
 
 {:.bs-callout-info}
 See the [service version values available]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-versions) for use when launching Docker.

@@ -34,7 +34,7 @@ The configured state is not ideal
 ```
 {:.no-copy}
 
-All of the build and deploy processes are defined and configured using the ECE-Tools and Magento Cloud template.
+All build and deploy processes are defined and configured using {{site.data.var.ct}} and the Magento Cloud template.
 
 ### CLI Container Commands
 
@@ -131,4 +131,3 @@ docker-compose run build magento-command index:reindex
 
 #### Container Usage
 The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
-

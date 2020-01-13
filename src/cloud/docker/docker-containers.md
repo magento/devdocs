@@ -1,15 +1,15 @@
 ---
 group: cloud-guide
-title: Docker Containers
+title: Docker container architecture
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
 
-{{ site.data.var.mcd }} builds out the docker-compose file to the required specifications. Then, you use the docker-compose to create the the container instances, build, deploy and then use the {{site.data.var.ee}} instance like usual.
+{{ site.data.var.mcd }} builds out the docker-compose.yml file to the required specifications. Then, you use docker-compose to create the the container instances, build, deploy and then use the {{site.data.var.ee}} instance like usual.
 
-All customized docker containers are stored in the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker). You can customize these containers and add more containers as needed.
+All customized Docker containers are stored in the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker). You can customize these containers and add more containers as needed.
 
 ### Service versions
 
@@ -30,9 +30,9 @@ All customized docker containers are stored in the [Magento Cloud Docker reposit
 | [varnish]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container) | Varnish | --varnish | 4,6 |
 | [web]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container) | Nginx | --nginx | 1.9, latest |
 
-The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
+The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 
-For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
+For example, the following command starts the Docker configuration generator for the developer mode and specifies PHP version 7.2:
 
 ```bash
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
@@ -40,40 +40,40 @@ For example, the following command starts the Docker configuration generator for
 
 ## Request Flow
 
-Web requests to https://magento2.docker/ are handled via the docker containers. They will go through the following flow:
+Web requests to https://magento2.docker/ are handled by the Docker containers using the following request flow:
 
 1. TLS
 1. Varnish *
 1. Web (nginx)
 1. PHP-FPM
 
-Note that varnish can be removed from the configuration, in which case the traffic will pass from TLS container to Nginx.
+Note that Varnish can be removed from the configuration, in which case the traffic passes from the TLS container to Nginx.
 
 ## Sharing data between host machine and container
 
 You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
 
-Additionally you can share data into the containers using a file synchronization such as Mutagen. These tools are described in more detail in the [File Synchronization] and [Developer Mode] documentation.
+Additionally, you can share data into the containers using file synchronization. See the [File Synchronization] and [Developer Mode] documentation.
 
 ## Container Volumes
 
-Docker volumes are used to maintain data throughout the lifecycle of the docker containers.  These volumes can be defined in several ways:
+Docker volumes are used to maintain data throughout the lifecycle of the Docker containers.  These volumes can be defined in several ways:
 
--  in docker-compose.yml or other docker-compose files
+-  in a `docker-compose.yml` or other docker-compose files
 -  in the Dockerfile from the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker)
--  The upstream docker image
+-  in the upstream Docker image
 
-Most of these volumes are not interacted with, they are just used by the containers and will follow the lifecycle of docker-compose. The only exception to this is the magento-sync directory which is used by Mutagen or Docker-Sync to transport data into the containers from the host OS.
+You do not interact with most of these volumes, which are used by the Docker containers and follow the docker-compose lifecycle. The only exception to this is the `magento-sync` directory which is an external volume used by the Mutagen application to transport data into the containers from the host operating system.
 
-You can remove all data, and "start fresh" by using:
+You can remove all data, and rebuild a clean environment using the following command:
 ```
  bin/docker down
  # this triggers a docker-compose command which removes volumes
  # docker-compose down -v
 ```
-This will not remove the magento-sync volume. As mentioned above this is a special volume which requires creating/destroying on it's own.
+If you are using Mutagen for file synchronization, this command does not remove the `magento-sync` volume, which is an external volume that you have to create or delete manually.
 
-Without this volume created you will see the following error message.
+If the `magento-sync` volume does not exist, the following error message displays:
 ```
 ERROR: Volume magento-sync declared as external, but could not be found. Please create the volume manually using `docker volume create --name=magento-sync` and try again.
 ```
@@ -91,7 +91,8 @@ docker-composer logs -f tls
 
 You can send emails from your Docker environment when you enable `sendmail` in the `docker-compose.yml` configuration file:
 
-Sendmail can slow down the instancing of containers, it is best to not use it on the cli containers if possible.
+{:.bs-callout-warning}
+We do not recommend using Sendmail on CLI containers because the service can slow down the instancing of containers.
 
 ```yaml
 ENABLE_SENDMAIL=true
