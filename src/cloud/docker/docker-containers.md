@@ -7,11 +7,9 @@ functional_areas:
   - Configuration
 ---
 
+{{ site.data.var.mcd }} builds out the docker-compose file to the required specifications. Then, you use the docker-compose to create the the container instances, build, deploy and then use the {{site.data.var.ee}} instance like usual.
 
-## Docker Container Architecture
-The Magento Cloud Docker builds out docker-compose to the required specifications, using docker-compose you can instance the containers, build, deploy and then use the Magento 2 instance like usual.
-
-All of the customized docker containers are kept in the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker). All of these are customizable and more containers can be added as needed.
+All customized docker containers are stored in the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker). You can customize these containers and add more containers as needed.
 
 ### Service versions
 

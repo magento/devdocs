@@ -9,10 +9,9 @@ functional_areas:
 
 {{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
-Building the docker environment is easy once you have the configuration in place, for details see the instructions in [Launch Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
-
 ## Host Operating Systems
-The Cloud Docker environment supports Linux and Mac, and can be used on Windows as well. The containers should be able to run on any docker host, but some of the set up scripts require PHP and composer to be installed.
+
+The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should be able to run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
 
 ## Gather credentials
 

@@ -11,6 +11,10 @@
           url: /cloud/architecture/cloud-architecture.html
           versionless: true
 
+        - label: Project Structure
+          url: /cloud/project/project-start.html
+          versionless: true
+
         - label: Upgrades and Patches
           url: /cloud/project/project-upgrade-parent.html
           versionless: true
@@ -22,7 +26,7 @@
     - label: Cloud development
       children:
         - label: Local development
-          url: /cloud/setup/first-time-setup.html
+          url: /cloud/docker/docker-development.html
           versionless: true
 
         - label: Launch Docker
@@ -31,6 +35,10 @@
 
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
+          versionless: true
+
+        - label: Configure Application
+          url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
 
         - label: Configure Environments

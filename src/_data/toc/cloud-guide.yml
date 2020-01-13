@@ -144,7 +144,7 @@ pages:
             - label: Developer mode
               url: /cloud/docker/docker-mode-developer.html
               versionless: true
-  
+
             - label: Production mode
               url: /cloud/docker/docker-mode-production.html
               versionless: true
