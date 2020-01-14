@@ -11,7 +11,6 @@ The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) pa
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package to apply patches to a {{ site.data.var.ee }} project that is not on the Cloud platform. These release notes describe the latest improvements to this package.
 
-
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 ## v1.0.0
@@ -32,12 +31,14 @@ This release includes the following patches and critical fixes:
 
 ## v1.0.1
 
-All Magento Open Source 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) are included in this release. If you copied any patches into your project previously, remove them to avoid conflicts.
+We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
 
-This release includes the following patches and critical fixes:
+This release includes the following updates:
 
--  {:.fix}<!--MAGECLOUD-4606-->**Review Hotfixes List and Add All Missing for 2.1.4+**–Updated the magento-cloud-patches package to include all Magento Open Source 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download).
+-  {:.fix}<!--MAGECLOUD-4606-->**Updated patches to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.
 
--  {:.fix}<!--MAGECLOUD-4847-->**Fixed issues caused by the MC-21696 hot fix from `ece-tools` patches**–Replaced the patch for MC-21696 with a more accurate fix.
+-  {:.fix}<!--MAGECLOUD-4847-->**Updated patch for Elasticsearch catalog pagingation fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp}} v1.0 with a more effective fix.
 
--  {:.fix}<!--MAGECLOUD-4884-->**Update PageBuilder Patches for RCE**–Update PageBuilder Patches which were bundled for 2.3.1 and 2.3.2 in MAGECLOUD-4649 before + add few more patches..
+Catalog pagination does not work on Elasticsearch 6.x
+
+-  {:.fix}<!--MAGECLOUD-4884-->**Updated the Magento Page Builder patches**–Update previously released Page Builder security patches for Magento versions 2.3.1 and 2.3.2 to address an issue in Page Builder preview that allows unauthenticated users to use some templating methods, which can lead to remote code execution (RCE) and global information leak. These patches were initially released in {{site.data.var.mcp}} v1.0.0.
