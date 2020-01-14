@@ -20,9 +20,9 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     ```terminal
     [InvalidArgumentException] Could not find a matching version of package magento/extension-b2b.
     ```
-    
-    Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable). 
-    
+ 
+    Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).
+ 
     If not already denfined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
 
     ```json
