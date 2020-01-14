@@ -34,6 +34,4 @@ The release notes include:
 
 -  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
 
-- {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
-
-
+-  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
