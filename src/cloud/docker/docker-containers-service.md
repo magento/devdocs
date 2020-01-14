@@ -34,13 +34,15 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 MySQL configuration can be injected into the container at creation. The following two examples show how this is done, either using an included `my.cnf` file, or setting the variables correctly.
 
 Add a custom `my.cnf` via the `docker-compose.override.yml` file:
+
 ```yaml
   db:
     volumes:
       - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-Alternatively, you can set configuration values in the environment section of the` docker-compose.override.yml` file:
+Alternatively, you can set configuration values in the environment section of the `docker-compose.override.yml` file:
+
 ```yaml
   db:
     environment:

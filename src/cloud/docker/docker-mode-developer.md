@@ -121,9 +121,9 @@ To launch the Docker environment in developer mode:
 
 1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
 
-   -  [`http://magento2.docker`](http://magento2.docker)
+   -  `http://magento2.docker`
 
-   -  [`https://magento2.docker`](https://magento2.docker)
+   -  `https://magento2.docker`
 
 [cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html

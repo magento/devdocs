@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package
-provides Magento Cloud patches which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. You can also add and apply custom patches using {{ site.data.var.mcp }}.
+provides Magento Cloud patches which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes.
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
 
@@ -15,14 +15,14 @@ You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl
 {% include cloud/note-upgrade.md %}
 
 {:.procedure}
-To use {{ site.data.var.mcp }} as a stand-alone package: 
+To use {{ site.data.var.mcp }} as a stand-alone package:
 
 1. Add the {{site.data.var.mcp}} package to your `composer.json` file.
 
     ```bash
     composer require magento/magento-cloud-patches
     ```
-    
+
 {:.procedure}
 To apply {{site.data.var.ece}} patches manually:
 

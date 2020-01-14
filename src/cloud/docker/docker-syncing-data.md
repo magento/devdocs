@@ -39,4 +39,4 @@ You can configure native file synchronization by specifying the `--sync-engine="
 ```
 
 ## Mutagen
-Mutagen is used to sync the application data into the containers. You must configure Mutagen when you build the Docker environment, and the Mutagen service must be running on your host operating system. 
+Mutagen is used to sync the application data into the containers. You must configure Mutagen when you build the Docker environment, and the Mutagen service must be running on your host operating system.
