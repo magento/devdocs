@@ -227,5 +227,5 @@ it will resolve to “John”.
 <!-- Link Definitions -->
 [Insert Variable]: https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html#customize-content
 [New Order email template]: https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/view/frontend/email/order_new.html
-[model]: https://github.com/magento/magento2ce/blob/2.3/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php
-[1]: https://github.com/magento/magento2ce/blob/2.3/app/code/Magento/Email/Model/AbstractTemplate.php
+[model]: https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php
+[1]: https://github.com/magento/magento2/blob/2.3/app/code/Magento/Email/Model/AbstractTemplate.php

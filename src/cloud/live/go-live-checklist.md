@@ -69,7 +69,7 @@ The following are recommended changes and checks:
 
 ## Performance testing {#performance}
 
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.4-develop/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.3/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 
