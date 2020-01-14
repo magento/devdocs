@@ -26,6 +26,9 @@ All customized Docker containers are stored in the [Magento Cloud Docker reposit
 | [node]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#node-container) | Node | --node | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq]({{site.baseurl}}/cloud/docker/docker-containers-service.html#rabbitmq-container) | RabbitMQ | --rmq | 3.5, 3.7 |
 | [redis]({{site.baseurl}}/cloud/docker/docker-containers-service.html#redis-container) | Redis     | --redis | 3.2, 4.0, 5.0 |   Standard redis container
+| Selenium      | `--with-selenium`    | &ndash;  | &ndash; | 
+| - Version     | `--selenium-version` | Any      | [selenium] |
+| - Image       | `--selenium-image`   | Any      | [selenium] |
 | [tls]({{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
 | [varnish]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container) | Varnish | --varnish | 4,6 |
 | [web]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container) | Nginx | --nginx | 1.9, latest |
@@ -114,3 +117,4 @@ ENABLE_SENDMAIL=true
 [redis]: https://hub.docker.com/_/redis
 [tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[selenium]: https://hub.docker.com/u/selenium
