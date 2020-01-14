@@ -16,7 +16,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     ```
 
     If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
-    
+ 
     ```terminal
     [InvalidArgumentException] Could not find a matching version of package magento/extension-b2b.
     ```
