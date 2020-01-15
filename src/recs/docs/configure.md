@@ -27,7 +27,7 @@ composer require magento/saas-export
 
 1. [Verify and enable the module](https://devdocs.magento.com/extensions/install/#verify-the-extension).
 
-### Configure the Catalog SaaS Export Module
+### Configure the Catalog SaaS Export Module {#apikeys}
 
 1. Log in to your Magento account at `https://account.magento.com`.
 
@@ -35,7 +35,7 @@ composer require magento/saas-export
 
 1. Generate and copy the API key for **Production**.
 
-![]({{ page.baseurl }}/common/images/get-api-key.png)
+![]({{ page.baseurl }}/images/get-api-key.png)
 
 1. In the Magento Admin, click **Stores** on the Admin panel.
 
@@ -45,7 +45,7 @@ composer require magento/saas-export
   
 1. In the **API Keys** section, paste your key value into the **Production Api Key** field regardless of whether you are in a production environment or non-production environment.
 
-![]({{ page.baseurl }}/common/images/cfg-api-key.png)
+![]({{ page.baseurl }}/images/cfg-api-key.png)
 
 ## Configure Your Environment {#configureenv}
 
