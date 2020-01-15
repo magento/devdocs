@@ -62,7 +62,7 @@ settings displayed under specific entries in the **Store** > **Settings** > **Co
 
 **Placement:**
 
-The settings for these extensions should be displayed under its respective parent section under the **Store** > **Settings > **Configuration** section.
+The settings for these extensions should be displayed under its respective parent section under the **Store** > **Settings** > **Configuration** section.
 
 For example, if the extension is for Shipping, then you can place it under **Store** > **Settings** > **Configuration** > **Sales** > **Shipping Settings**.
 
