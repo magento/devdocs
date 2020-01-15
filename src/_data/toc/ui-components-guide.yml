@@ -38,6 +38,9 @@ pages:
         - label: Columns component
           url: /ui_comp_guide/components/ui-columns.html
 
+        - label: ColumnsEditingClient component
+          url: /ui_comp_guide/components/ui-columns-editing-client.html
+
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
 
