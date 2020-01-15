@@ -5,7 +5,7 @@ The Community Engineering team assesses each PR and determines the best awards f
 ### How points are awarded
 {:.no_toc}
 
-Every merged PR receives one [base achievement](#base-achievements) and potentially one, or more, [additional achievements](#additional-achievements). These achievements are applied to PRs during review and assessment. [Contributors](contributors.html#/individual-contributors) and [maintainers](maintainers.html) receive points after the PR is merged.
+Every merged PR receives one [base achievement](#base-achievements) and potentially one, or more, [additional achievements](#additional-achievements). These achievements are applied to PRs during review and assessment. [Contributors](contributors.html) and [maintainers](maintainers.html) receive points after the PR is merged.
 
 Due to the level of work required for developing and reviewing a PR, contributors and maintainers receive the same amount of points.
 
