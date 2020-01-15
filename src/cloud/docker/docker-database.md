@@ -36,6 +36,24 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 {:.bs-callout-info}
 When you import a database from an existing Magento installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the Magento encryption key]({{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key).
 
+{:.procecdure}
+MySQL configuration can be injected into the container at creation by adding the configuration to the `docker-compose-override.yml` file. You can add the custom configuration using an included `my.cnf` file, or by adding the correct variables directly to the override file as shown in the following examples.
+
+Add a custom `my.cnf` to the `docker-compose.override.yml` file:
+
+```yaml
+db:
+  volumes:
+    - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
+```
+
+Alternatively, you can set configuration values in the environment section of the `docker-compose.override.yml` file:
+
+```yaml
+  db:
+    environment:
+      - innodb-buffer-pool-size=134217728
+
 ## Connect to the database
 
 There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:

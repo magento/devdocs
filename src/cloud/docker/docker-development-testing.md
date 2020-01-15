@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Functional testing in Docker
+title: ECE-Tools testing
 functional_areas:
   - Cloud
   - Docker

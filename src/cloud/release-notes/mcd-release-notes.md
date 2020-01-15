@@ -20,9 +20,13 @@ The release notes include:
 
 -  {:.new}Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
 
--  {:.fix}The `./bin/docker` file overwrites existing Docker binary files, which caused some Docker environments to break. Renamed the `./bin/docker` file to `./bin/magento-docker` to avoid any conflicts.<!-- MAGECLOUD-4038 -->
+-  {:.new}**Support for Magento application testing**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
 
--  {:.new}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{site.baseurl}}/cloud/docker/docker-database.html).<!--MAGECLOUD-3978-->
+-  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
+
+-  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
+
+-  {:.fix}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{site.baseurl}}/cloud/docker/docker-database.html).<!--MAGECLOUD-3978-->
 
 -  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
 
@@ -32,6 +36,4 @@ The release notes include:
 
 -  {:.new}Added validation to the deployment process for local Docker development environments to verify that the Cloud environment configuration includes the encryption key required to decrypt the database.  Now, you get an error message in the log if the envirionment configuration does not specify a value for the encryption key.<!--MAGECLOUD-4423-->
 
--  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
-
--  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
+-  {:.fix}The `./bin/docker` file overwrites existing Docker binary files, which caused some Docker environments to break. Renamed the `./bin/docker` file to `./bin/magento-docker` to avoid any conflicts.<!-- MAGECLOUD-4038 -->

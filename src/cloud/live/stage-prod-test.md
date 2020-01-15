@@ -200,7 +200,9 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 </tr>
 </table>
 
-## Complete load and stress tests {#loadtest}
+## Complete testing
+
+### Load and stress testing {#loadtest}
 
 Before launching, we highly recommend performing extensive traffic and performance testing on your Staging and Production environments.  You should consider performance testing for your frontend and backend processes.
 
@@ -214,8 +216,11 @@ For best results, we recommend the following tools:
 -  [Siege](https://www.joedog.org/siege-home/)—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 -  [Jmeter](http://jmeter.apache.org/)—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 -  New Relic (provided)—Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
--  [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided)— Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
 -  [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/)—Real-time analysis of your site pages load time with different origin locations. Pingdom may require a fee. WebPageTest is a free tool.
+
+### Functional testing
+
+You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from a {{site.data.var.mcd}} environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
