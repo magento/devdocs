@@ -55,7 +55,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
 
 ## Launch modes
 
-_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This launch mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
+_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 You can launch your Docker environment in one of the following modes:
 
