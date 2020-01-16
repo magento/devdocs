@@ -50,7 +50,7 @@ These commands are available in any of the containers.
 | mftf-command | deploy | Used to run MFTF command for testing
 | run-cron | cron | Used to run cron jobs
 
-To explore what any of the commands are doing, review the scripts in the [Magento Cloud Docker GitHub repository][scripts].
+To understand the processing for each command, review the scripts in the [Magento Cloud Docker GitHub repository][scripts].
 
 ## Build container
 
@@ -111,7 +111,8 @@ Container name |Docker base image
 deploy | [magento/magento-cloud-docker-php], which is based on the [php] Docker image
 
 This deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
-You can also run build and deploy commands manually from the deploy container. For example, the following commands reindexes the Magento store:
+
+You can also run build and deploy commands manually from the deploy container. For example, the following command reindexes the Magento store:
 
 ```bash
 docker-compose run build magento-command index:reindex
