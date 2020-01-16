@@ -45,8 +45,8 @@ The Masonry component has dependencies on the following components:
 
 Extends `Listing`:
 
-*  [app\code\Magento\Ui\view\base\web\js\grid\masonry.js](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/grid/masonry.js)
-*  [app\code\Magento\Ui\view\base\web\templates\grid\masonry.html](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/templates/grid/masonry.html)
+*  [app\code\Magento\Ui\view\base\web\js\grid\masonry.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/masonry.js)
+*  [app\code\Magento\Ui\view\base\web\templates\grid\masonry.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/masonry.html)
 
 ## Result
 
