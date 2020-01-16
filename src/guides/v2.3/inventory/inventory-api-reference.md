@@ -69,10 +69,11 @@ The following interfaces and classes have been deprecated. They cannot be mapped
 
 ## {{site.data.var.im}} API
 
-The following services reside under the [`Magento/InventoryApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventoryApi/Api) namespace, replacing deprecated services and APIs.
+The following services reside under the [`Magento/InventoryApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventoryApi/Api) namespace, replacing deprecated services and APIs.
 
 Service | Description | Deprecated API
 --- | --- | ---
+
 [`SourceRepositoryInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryApi/Api/SourceRepositoryInterface.php) | Retrieves, saves or finds (`getList` method) Source entities | -
 [`StockRepositoryInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryApi/Api/StockRepositoryInterface.php) | Retrieves, saves, finds (`getList` method) or deletes Stock entities) |  -
 [`StockSourceLinksSaveInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryApi/Api/StockSourceLinksSaveInterface.php) | Saves sources to stocks assignments | -
@@ -85,10 +86,11 @@ Service | Description | Deprecated API
 
 ## Inventory Catalog API
 
-The following services reside under the [`Magento/InventoryCatalogApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventoryCatalogApi/Api) namespace.
+The following services reside under the [`Magento/InventoryCatalogApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventoryCatalogApi/Api) namespace.
 
 Service | Description
 --- | ---
+
 [``DefaultSourceProviderInterface``]({{ msi_blob_url }}/app/code/Magento/InventoryCatalogApi/Api/DefaultSourceProviderInterface.php) | Retrieves Default Source code
 [`DefaultStockProviderInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryCatalogApi/Api/DefaultStockProviderInterface.php) | Retrieves Default Stock id
 [`BulkInventoryTransferInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryCatalogApi/Api/BulkInventoryTransferInterface.php) | [Bulk transfers]({{page.baseurl}}/rest/modules/inventory/bulk-inventory.html) the whole quantity of products from origin to destination source
@@ -96,10 +98,11 @@ Service | Description
 
 ## Inventory Sales API
 
-The following services reside under the [`Magento/InventorySalesApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventorySalesApi/Api) namespace, replacing deprecated services and APIs.
+The following services reside under the [`Magento/InventorySalesApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventorySalesApi/Api) namespace, replacing deprecated services and APIs.
 
 Service | Description | Deprecated API
 --- | --- | ---
+
 [`StockResolverInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySalesApi/Api/StockResolverInterface.php) | Resolves linked Stock by provided sales channel type and code | [`StockRegistryInterface::getStock`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockRegistryInterface.php#L23)
 [`GetStockBySalesChannelInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySalesApi/Api/GetStockBySalesChannelInterface.php) | Resolves linked stock to provided sales channel object | [`StockRegistryInterface::getStock`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockRegistryInterface.php#L23)
 [`IsProductSalableInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySalesApi/Api/IsProductSalableInterface.php) | Checks whether product salable |  [`StockRegistryInterface::getProductStockStatus`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockRegistryInterface.php#L62) <br /> [`StockRegistryInterface::getProductStockStatusBySku`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockRegistryInterface.php#L70) <br /> [`StockRegistryInterface::getStockStatusBySku`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockRegistryInterface.php#L53)
@@ -109,28 +112,31 @@ Service | Description | Deprecated API
 
 ## Inventory Configuration API
 
-The following services reside under the [`Magento/InventoryConfigurationApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventoryConfigurationApi/Api) namespace, replacing deprecated services and APIs.
+The following services reside under the [`Magento/InventoryConfigurationApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventoryConfigurationApi/Api) namespace, replacing deprecated services and APIs.
 
 Service | Description | Deprecated API
 --- | --- | ---
+
 [`GetStockItemConfigurationInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryConfigurationApi/Api/GetStockItemConfigurationInterface.php)  |  Retrieves stock item configuration by SKU and stock id |  Catalog inventory configuration stored in [`StockItem`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php) entity
 [`SaveStockItemConfigurationInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryConfigurationApi/Api/SaveStockItemConfigurationInterface.php)  | Saves stock item configuration  |  Stock configuration saved using [`StockItemRepositoryInterface::save`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/StockItemRepositoryInterface.php#L25)
 
 ## Inventory Source Selection Algorithm (SSA) API
 
-The following services reside under the [`Magento/InventorySourceSelectionApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventorySourceSelectionApi/Api) namespace.
+The following services reside under the [`Magento/InventorySourceSelectionApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventorySourceSelectionApi/Api) namespace.
 
 Service | Description
 --- | ---
+
 [`GetDefaultSourceSelectionAlgorithmCodeInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySourceSelectionApi/Api/GetDefaultSourceSelectionAlgorithmCodeInterface.php)  |  Gets the default Source Selection Algorithm (SSA) code
 [`GetSourceSelectionAlgorithmListInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php)  |  Gets the entire Source Selection Algorithm (SSA) list
 [`SourceSelectionServiceInterface`]({{ msi_blob_url }}/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php)  |  Runs a specified Source Selection Algorithm (SSA) based on provided Inventory Request object
 
 ## Inventory Export Aggregated Stock Data API
 
-The following services reside under the [`Magento/InventoryExportStockApi/Api`](https://github.com/magento/inventory/tree/2.3-develop/app/code/Magento/InventoryExportStockApi/Api) namespace.
+The following services reside under the [`Magento/InventoryExportStockApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventoryExportStockApi/Api) namespace.
 
 Service | Description
 --- | ---
+
 [`ExportStockIndexDataInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryExportStockApi/Api/ExportStockIndexDataInterface.php)  |  Returns salable quantities for a provided sales channel not including placed reservations for completed orders. The quantity amount is less precise and runs with high performance and speed.
 [`ExportStockSalableQtyInterface`]({{ msi_blob_url }}/app/code/Magento/InventoryExportStockApi/Api/ExportStockSalableQtyInterface.php)  |  Returns salable quantities for a provided sales channel including placed reservations (for completed orders). The quantity amount is precise and runs with reduced performance and slower speed.
