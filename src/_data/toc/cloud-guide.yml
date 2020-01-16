@@ -129,10 +129,6 @@ pages:
               url: /cloud/docker/docker-syncing-data.html
               versionless: true
               
-            - label: Connect to the database
-              url: /cloud/docker/docker-database.html
-              versionless: true
-              
         - label: Configure Docker
           url: /cloud/docker/docker-config.html
           versionless: true

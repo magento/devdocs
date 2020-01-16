@@ -294,7 +294,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ site.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-cli.html#cron-container) based on the PHP-CLI image.
+   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-containers-cli.html#cron-container) based on the PHP-CLI image.
 
    -  Added the following services to the Docker build:
 

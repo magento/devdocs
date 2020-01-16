@@ -5,12 +5,14 @@ functional_areas:
   - Cloud
 ---
 
-In a Docker development environment, you can use the [Magento Functional Testing Framework] (MFTF)]{{site.baseurl}}/mftf/docs/introduction.html)(M) for Magento application testing.
+In a Cloud Docker development environment, you can use the [Magento Functional Testing Framework (MFTF)][MFTF docs] for Magento application testing.
+
+You use the [CLI container command] `mftf-command` to run MFTF commands in the Cloud Docker environment, for example `docker-compose run test mftf-command generate:tests --debug=none`.
 
 {:.bs-callout-info}
-MFTF support is enabled by the [Selenium container]({{site.baseurl}}/cloud/docker/docker-service-containers.html) available in [{{site.data.var.mcd}}][cloud-docker-repo] version 1.0 or later. If you are using an earlier version of Docker that was integrated into the {{site.data.var.ct}} package, you must upgrade to {{site.data.var.mcd}} v1.0.
+Support for MFTF support requires [Magento Cloud Docker] version 1.0 or later.
 
-1. Prepare the environment
+1. Prepare the local environment:
 
    -  Add the MFTF dependency to your project using Composer.
 
@@ -30,9 +32,9 @@ MFTF support is enabled by the [Selenium container]({{site.baseurl}}/cloud/docke
     ./vendor/bin/ece-docker build:compose --with-selenium --no-cron
     ```
 
-1. Start Magento Cloud Docker.
+1. Start the Magento Cloud Docker environment.
 
-    Optionally, you can set up {{site.data.var.mcd}} to work in [Developer Mode]({{site.baseurl}}/cloud/docker/docker-mode-developer.html)
+    Optionally, you can set up {{site.data.var.mcd}} to work in [Developer Mode].
 
     ```bash
     ./bin/magento-docker up
@@ -57,11 +59,17 @@ MFTF support is enabled by the [Selenium container]({{site.baseurl}}/cloud/docke
       {:.bs-callout-info}
       In this example, the variable configuration is for testing a Magento application deployed to the Docker environment. To run tests in a remote environment, change the value of `MAGENTO_BASE_URL` to the remote URL and update the credentials as needed.
 
-   -  Disable Magento settings that conflict with MFTF functionality.
+   -  Disable the Magento settings that conflict with MFTF functionality.
 
       ```bash
       docker-compose run deploy magento-command config:set admin/   security/admin_account_sharing 1
+      ```
+
+      ```bash
       docker-compose run deploy magento-command config:set admin/   security/use_form_key 0
+      ```
+
+      ```bash
       docker-compose run deploy magento-command config:set web/   secure/use_in_adminhtml 0
       ```
 
@@ -69,21 +77,33 @@ MFTF support is enabled by the [Selenium container]({{site.baseurl}}/cloud/docke
 
       ```bash
       docker-compose run deploy magento-command config:set    system/full_page_cache/caching_application 2 --lock-env
+      ```
+
+      ```bash
       docker-compose run deploy magento-command setup:config:set    --http-cache-hosts=varnish
       ```
 
 1. Generate MFTF tests.
 
    ```bash
-    docker-compose run test mftf-command build:project
-    docker-compose run test mftf-command generate:tests --debug=none
-    ```
+   docker-compose run test mftf-command build:project
+   ```
+
+   ```bash
+   docker-compose run test mftf-command generate:tests --debug=none
+   ```
 
 1. Run the generated tests.
 
-    ```bash
-    docker-compose run test mftf-command run:test AdminLoginTest --debug=none
-    docker-compose run test mftf-command run:test AddProductBySkuWithEmptyQtyTest --debug=none
-    ```
+   ```bash
+   docker-compose run test mftf-command run:test AdminLoginTest --debug=none
+   ```
 
+   ```bash
+   docker-compose run test mftf-command run:test AddProductBySkuWithEmptyQtyTest --debug=none
+   ```
+
+[MFTF docs]: {{site.baseurl}}/mftf/docs/introduction.html
+[CLI container command]:  {{site.baseurl}}/cloud/docker/docker-containers-cli.html#cli-container-commands
 [cloud-docker-repo]: https://github.com/magento/magento-cloud-docker
+[developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
