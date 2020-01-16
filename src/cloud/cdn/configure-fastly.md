@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Set up Fastly
 redirect_from:
-   - /cloud/configure/fastly-vcl-extend-timeout.html
    - /cloud/access-acct/fastly.html
 functional_areas:
   - Cloud

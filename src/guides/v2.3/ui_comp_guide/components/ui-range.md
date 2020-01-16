@@ -9,14 +9,18 @@ The Range component implements the range for filtering rows in a grid. Visually,
 
 | Option | Description | Type | Default Value |
 | -------- | --------------------- | --------------------- | --------------------- |
-| <code>rangeType</code> | Defines what kind of input elements the range contains.<br/>For example, if the value is <code>date</code>, then range includes two date fields. | String | - |
-| <code>template</code> | Path to the component’s <code>.html</code> template. | String | <code>ui/grid/filters/elements/group</code> |
+| `class` | Path to the PHP class responsible for the backend implementation of the component. | String | `Magento\Ui\Component\Filters\Type\Range` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/filters/range` |
+| `isRange` | Defines range filter. | Boolean | `true` |
+| `rangeType` | Defines what kind of input elements the range contains.<br/>For example, if the value is `date`, then range includes two date fields. | String | - |
+| `template` | Path to the component’s `.html` template. | String | `ui/grid/filters/elements/group` |
 
 ## Source files
 
 Extends [`Multiline`]({{ page.baseurl }}/ui_comp_guide/components/ui-multiline.html):
 
 -  [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
+-  [app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/group.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/filters/elements/group.html)
 
 ## Examples
 
@@ -61,3 +65,11 @@ This is an example of how to add a text range filter type:
 #### Result
 
 ![TextRange filter type]({{ site.baseurl }}/common/images/ui_comps/text-range-result.png)
+
+### Methods and events
+
+The following [API](https://glossary.magento.com/api) methods are available:
+
+-  `buildChildren()` - create a configuration for the child components.
+-  `clear()` - clear child elements data.
+-  `hasData()` - check if some children element has data.

@@ -31,13 +31,13 @@ Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config
 ## Details about the deployment configuration {#config-php-contents}
 `config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
-On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework.
+On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key---where both the key and its value are defined by the Magento framework.
 
 [Magento\Framework\App\DeploymentConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/DeploymentConfig.php) merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the [module](https://glossary.magento.com/module) sequence definition, which is obtained by merging all modules' configuration files, with the [exception](https://glossary.magento.com/exception) of disabled modules.
 
-The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
+The following sections discusses the structure and contents of the deployment configuration---`config.php` and `env.php`.
 
 *  [Manage installed modules](#config-php-contents-config-php)
 *  [System-specific configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#app-etc-env-php)

@@ -5,8 +5,6 @@ functional_areas:
   - Install
   - System
   - Setup
-redirect_from:
-  - guides/v2.2/install-gde/trouble/tshoot_segfault.html
 ---
 
 ## Overview of backup {#instgde-cli-uninst-back-over}
