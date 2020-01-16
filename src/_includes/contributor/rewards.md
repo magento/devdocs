@@ -65,9 +65,9 @@ Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed
 
 Contributors and maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and applies labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
 
-These are examples for calculated reward points:
+These examples show how reward points are calculated:
 
-* A contributor who submits a PR with HTML formatting and typos fixes will receive an Editorial (base achievement) label = 1 point
+* A contributor who submits a PR that reformats HTML into markdown or fixes typos will receive an Editorial (base achievement) label = 1 point
 * A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points and a Major update (additional achievement) labe = 20 points for a total of 30 points
 
 ### Base achievements
