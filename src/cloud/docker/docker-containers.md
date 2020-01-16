@@ -20,16 +20,16 @@ Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.y
 | [build] | Build Container |   |   | PHP Container, runs build process
 | [cron]| Cron Jobs |   |   |  PHP Container, runs cron tasks
 | [deploy] | Deploy Container |   |  |  PHP Container, runs the deploy process
-| [db] | MariaDB     | --db | 10.0, 10.1, 10.2 |  Standard database container
-| [elasticsearch] | Elasticsearch | --es | 1.7, 2.4, 5.2, 6.5 |
-| [fpm][fpm-container] | PHP FPM | --php | 7.0, 7.1, 7.2 |  Used for all incoming requests
-| [node][node-container] | Node | --node | 6, 8, 10, 11 |  Used gulp or other NPM based commands
-| [rabbitmq][rabbitmq-container]| RabbitMQ | --rmq | 3.5, 3.7, 3.8 |
-| [redis][redis-container] | Redis     | --redis | 3.2, 4.0, 5.0 |   Standard redis container
+| [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
+| [elasticsearch] | Elasticsearch | `--es` | 1.7, 2.4, 5.2, 6.5 |
+| [fpm][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2 |  Used for all incoming requests
+| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
+| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
+| [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
-| [varnish][varnish-container] | Varnish | --varnish | 4, 6 |
-| [web][web-container] | Nginx | --nginx | 1.9, latest |
+| [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
+| [web][web-container] | Nginx | `--nginx` | 1.9, latest |
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 
@@ -68,17 +68,15 @@ You do not interact with most of these volumes, which are used by the Docker con
 
 ### Rebuild a clean environment
 
-Use the following command to remove all data and rebuild a clean environment:
+The `docker-compose down -v` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
+
+You can use the following command to remove _all_ data and rebuild a clean environment:
 
 ```bash
  bin/docker down
 ```
 
-This command runs the `docker-compose down -v` command which removes all components of your local Docker instance including containers, networks, volumes, and images. This command does not [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
-
-The `magento-sync` volume is an external volume that you have to create or delete manually.
-
-If the `magento-sync` volume does not exist, the following error message displays:
+The `magento-sync` volume is an external volume that you must create or delete manually. If the `magento-sync` volume does not exist, the following error message displays:
 
 ```terminal
 ERROR: Volume magento-sync declared as external, but could not be found. Please create the volume manually using `docker volume create --name=magento-sync` and try again.
@@ -92,7 +90,7 @@ All containers use the Docker logging method. You can view the logs using the `d
 docker-composer logs -f tls
 ```
 
-After you run this command, you can see all requests that are passing through the tls container and check for errors.
+Now you can see all requests that are passing through the TLS container and check for errors.
 
 [build]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#build-container
 [cron]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#cron-container
