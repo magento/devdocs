@@ -60,7 +60,7 @@ build | [magento/magento-cloud-docker-php], which is based on the Docker [php] i
 
 The build container mimics the behavior of the Magento Cloud build process so that testing the build  and deploy process is as close to testing in production as possible.
 
-You can use the build container to run commands manually to recreate steps from the build process. For example, you can run the following command to deploy static content.
+You can also run build commands manually from the build container to perform individual steps from the build process. For example, you can run the following command to deploy static content.
 
 ```bash
 docker-compose run build magento-command setup:static-content:deploy
