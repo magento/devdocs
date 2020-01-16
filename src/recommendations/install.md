@@ -3,7 +3,7 @@ group: product-recommendations
 title: Installing and Configuring Recommendations
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of widgets such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data, they result in highly engaging, relevant, and personalized experiences for the shopper.
+Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data, they result in highly engaging, relevant, and personalized experiences for the shopper.
 
 For the Early Access Program, deploying recommendations to your site requires that you complete the following tasks:
 
@@ -24,10 +24,10 @@ If you prefer, you can install the above extensions explicitly via the following
 
 1. After you install the `product-recommendations` module, you need to:
 
-* [Configure the environment]({{ page.baseurl }}/recs/configure.html#configureenv)
-* [Install the SaaS Export module]({{ page.baseurl }}/recs/configure.html#installcatalogsaas)
-* [Enter the SaaS Environment ID]({{ page.baseurl }}/recs/configure.html#envid)
+* [Configure the environment]({{ page.baseurl }}/recommendations/configure.html#configureenv)
+* [Install the SaaS Export module]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas)
+* [Enter the SaaS Environment ID you received when you signed up]({{ page.baseurl }}/recommendations/configure.html#envid)
 
 ## Uninstall the Product Recommendations Module
 
-If needed, you can [uninstall the product recommendations module](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-uninst).
+If needed, you can [uninstall the product recommendations module]({{ page.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-uninst).

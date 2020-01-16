@@ -25,7 +25,7 @@ composer config repositories.magento composer https://repo.magento.com
 composer require magento/saas-export
 ```
 
-1. [Verify and enable the module](https://devdocs.magento.com/extensions/install/#verify-the-extension).
+1. [Verify and enable the module]({{ page.baseurl }}/extensions/install/#verify-the-extension).
 
 ### Configure the Catalog SaaS Export Module {#apikeys}
 
@@ -69,19 +69,4 @@ After you have installed the DataServices module, you need to configure your env
 
 1. Expand the **Services ID** section.
 
-1. In the **SaaS Environment ID** field, enter the SaaS Environment ID you received after signing up. If you did not receive your ID, please contact us...
-
-## Verify Data is Being Captured
-
-```from Misha:
-Confirm that behavioral events are being sent
-Without snowplow addon
-Confirm ds.js or ds.min.js is loaded on the page
-```
-
-
-After you configure your storefront, verify that the behavioral data is being sent to Magento:
-
-1. Make sure you disable any ad blocker on your browser.
-2. Install the [Snowplow Event Tracker extension for Chrome](https://chrome.google.com/webstore/detail/snowplow-inspector/maplkdomeamdlngconidoefjpogkmljm). This extension displays the events being collected and sent to Magento.
-3. To see the flow of events in the tracker, go to your production website and click on products, categories, etc.
+1. In the **SaaS Environment ID** field, enter the SaaS Environment ID you received after signing up. If you did not receive your ID, please contact Magento by emailing: `magento-product-recs-feedback@adobe.com`.
