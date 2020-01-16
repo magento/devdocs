@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. All customized Docker containers are available in the repository. You can customize these containers and add more as needed.
+The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. You can customize the Docker containers available in the repository and add more as needed.
 
 Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the the container instances, build, and deploy the {{site.data.var.ee}} site.
 
@@ -86,7 +86,7 @@ ERROR: Volume magento-sync declared as external, but could not be found. Please 
 
 ## Container Logs
 
-All containers use the Docker logging method. You can view the logs using the docker-compose command. For example, the following command follow the tls container log files.
+All containers use the Docker logging method. You can view the logs using the `docker-compose` command. The following example uses the `-f` option to _follow_ the log output of the TLS container:
 
 ```bash
 docker-composer logs -f tls

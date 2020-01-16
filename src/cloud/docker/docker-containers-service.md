@@ -13,7 +13,7 @@ The following containers provide the services required to build, deploy and run 
 {:.bs-callout-info}
 See the [service version values available]({{site.baseurl}}/cloud/docker/docker-containers.html#service-versions) for use when launching Docker.
 
-## Database Container
+## Database container
 
 Container name |Docker base image | Ports exposed
 -------- | -------- | ---------------
@@ -25,7 +25,7 @@ The Database container is based on the [mariadb][db-image] image and includes th
    -  `magento-db: /var/lib/mysql`
    -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
 
-When a database container is started for the first time, a new database with the specified name is created and initialized using the configuration variables specified in the docker-compose configuration. The initial start up process also executes all files with extensions .sh, .sql and .sql.gz that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
+When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql` and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
 
@@ -55,7 +55,7 @@ Although it is a more complex approach, you can use GZIP to import the database 
 
 ### Customize the database container
 
-You can inject MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
+You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
 {:.procedure}
 Add a custom `my.cnf` to the `docker-compose.override.yml` file:
@@ -67,7 +67,7 @@ db:
 ```
 
 {:.procedure}
-Add configuration values directly to the `docker-compose.override.yml` file:
+Add configuration values to the `docker-compose.override.yml` file:
 
 ```yaml
   db:
@@ -200,7 +200,7 @@ For additional information about configuring the php environment, see the [XDebu
 
 ## RabbitMQ container
 
-Container name |Docker base image | Ports exposed
+Container name | Docker base image | Ports exposed
 -------- | -------- | ---------------
 rabbitmq | [rabbitmq] | 4369, 5671, 5672, 25672
 
@@ -208,7 +208,7 @@ The RabbitMQ container for {{site.data.var.mcd}} is a standard RabbitMQ containe
 
 ## Redis container
 
-Container name |Docker base image | Ports exposed
+Container name | Docker base image | Ports exposed
 -------- | -------- | ---------------
 redis | [redis] | 6379
 
@@ -224,9 +224,9 @@ docker-compose run redis redis-cli -h redis
 
 Container name |Docker base image | Ports exposed
 -------- | -------- | ---------------
-selenium |[selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome) | 4444
+selenium | [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome) | 4444
 
-The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Dockr environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
+The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
 
 ## TLS container
 
