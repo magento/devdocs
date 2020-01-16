@@ -9,8 +9,8 @@ functional_areas:
 The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
 {:.bs-callout-warning}
-Be careful when updating your MariaDB!
-MariaDB 10.1 was the last version that supports XtraDB as the storage engine. 10.2 uses InnoDB for the storage engine, which is not supported by Magento AND it is impossible to downgrade from 10.2 back to 10.1! Read about this [backwards incompatible change](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
+Be careful when upgrading MariaDB from version 10.1 to 10.2.
+MariaDB 10.1 is the last version that support XtraDB as the storage engine. Version 10.2 uses InnoDB for the storage engine. Once you upgrade from 10.1 to 10.2, you cannot rollback the change. Magento supports both storage engines; however, you must check extensions and other systems used by your project to make sure they are compatible with MariaDB 10.2. Read about this [backwards incompatible change](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
 
 {% include cloud/service-config-integration-starter.md %}
 
