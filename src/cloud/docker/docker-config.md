@@ -89,7 +89,7 @@ Use the following command to stop and remove the Docker configuration:
    ```
 
 {: .bs-callout-warning}
-This removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
+This command removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
 
 ## Sendmail service
 
