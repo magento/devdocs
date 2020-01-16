@@ -20,8 +20,8 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{ site
 
 Extends [Column component]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html)
 
--  [`app/code/Magento/Ui/view/base/web/js/grid/columns/link.js`]({{ site.mage2bloburl }}/{{ site.version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
--  [`app/code/Magento/Ui/view/base/web/templates/grid/cells/link.html`]({{ site.mage2bloburl }}/{{ site.version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/link.html)
+-  [`app/code/Magento/Ui/view/base/web/js/grid/columns/link.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
+-  [`app/code/Magento/Ui/view/base/web/templates/grid/cells/link.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/link.html)
 
 ## Examples
 
