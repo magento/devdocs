@@ -21,7 +21,6 @@ db | [mariadb](https://hub.docker.com/_/mariadb) | 3306 |
 
 The Database container is based on the [mariadb][db-image] image and includes the following volumes:
 
--  Volumes:
    -  `magento-db: /var/lib/mysql`
    -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
 
@@ -29,36 +28,11 @@ When a database container initializes, it creates a new database with the specif
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
 
-### Import a database dump
-
-{:.bs-callout-warning}
-Before you import a database from an existing Magento installation into a new {{ site.data.var.ece }} environment, you must add the encryption key from the remote environment to the new environment, and then deploy the changes. See [Add the Magento encryption key]({{ site.baseurl}}/cloud/setup/first-time-setup-import-import.html#encryption-key).
-
-{:.procedure}
-To import a database dump into the Docker environment:
-
-1. Create a local copy of the remote database.
-
-   ```bash
-   magento-cloud db:dump
-   ```
-
-   {: .bs-callout-note }
-   The `magento-cloud db:dump` command runs the [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) command with the `--single-transaction` flag, which allows you to back up your database without locking the tables.
-
-1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
-
-   The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
-
-{:.bs-callout-tip}
-Although it is a more complex approach, you can use GZIP to import the database by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and import it inside the Docker container.
-
-### Customize the database container
+## Customize the database container
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
-{:.procedure}
-Add a custom `my.cnf` to the `docker-compose.override.yml` file:
+*Add a custom `my.cnf` file to the `docker-compose.override.yml` file:*
 
 ```yaml
 db:
@@ -66,8 +40,7 @@ db:
     - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-{:.procedure}
-Add configuration values to the `docker-compose.override.yml` file:
+*Add configuration values to the `docker-compose.override.yml` file:*
 
 ```yaml
   db:
@@ -212,7 +185,7 @@ Container name | Docker base image | Ports exposed
 -------- | -------- | ---------------
 redis | [redis] | 6379
 
-The RabbitMQ container for {{site.data.var.mcd}} is a standard Redis container with no customization, no persistence, and no additional configuration.
+The Redis container for {{site.data.var.mcd}} is a standard container with no customization, no persistence, and no additional configuration.
 
 Connect to and run redis commands using the redis-cli inside the container:
 
