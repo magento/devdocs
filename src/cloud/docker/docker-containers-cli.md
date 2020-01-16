@@ -7,9 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The CLI containers provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations and to interact with the application.
-
-The following CLI containers, most of which are based on a [PHP-CLI version 7 image], provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
+The following CLI containers, most of which are based on a [PHP-CLI version 7 image], provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations and interact with the application:
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
@@ -24,7 +22,6 @@ Run the `{{site.data.var.ct}}` ideal-state command.
 docker-compose run deploy ece-command wizard:ideal-state
 ```
 
-{:.procedure}
 Sample response:
 
 ```terminal
@@ -37,20 +34,20 @@ All build and deploy processes are defined and configured using {{site.data.var.
 
 ## CLI container commands
 
-These commands are available in any of the containers.
+These commands are available in the Magento Cloud Docker environment
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
-| cloud-build | build | Used to build the application in production mode, configured via build hook in .magento.app.yml
-| cloud-deploy | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| cloud-post-deploy | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| ece-command | deploy | Used to run other commands from ece-tools CLI Tool
-| magento-command | deploy | Used to run bin/magento commands
-| magento-installer | deploy | Just runs build and then deploy hooks
-| mftf-command | deploy | Used to run MFTF command for testing
-| run-cron | cron | Used to run cron jobs
+| `cloud-build` | build | Used to build the application in production mode, configured via build hook in .magento.app.yml
+| `cloud-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
+| `cloud-post-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
+| `ece-command` | deploy | Used to run other commands from ece-tools CLI Tool
+| `magento-command` | deploy | Used to run bin/magento commands
+| `magento-installer` | deploy | Just runs build and then deploy hooks
+| `mftf-command` | deploy | Used to run MFTF command for testing
+| `run-cron` | cron | Used to run cron jobs
 
-To understand the processing for each command, review the scripts in the [Magento Cloud Docker GitHub repository][scripts].
+To understand the processing for each command, review the [scripts in the Magento Cloud Docker GitHub repository][scripts].
 
 ## Build container
 
@@ -58,7 +55,7 @@ Container name |Docker base image
 -------- | -------- |
 build | [magento/magento-cloud-docker-php], which is based on the Docker [php] image
 
-The build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
+The Build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
 
 You can also run build commands manually from the build container to perform individual steps from the build process. For example, you can run the following command to deploy static content.
 
@@ -76,7 +73,6 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 
 The cron container runs the scheduled cron jobs automatically, and you can use it to run cron jobs manually.
 
-{:.procedure}
 To view the cron log:
 
 ```bash
@@ -86,7 +82,6 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environments
 -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
-{:.procedure}
 To run cron jobs manually:
 
 ```bash
@@ -110,7 +105,7 @@ Container name | Docker base image
 -------- | --------
 deploy | [magento/magento-cloud-docker-php], which is based on the [php] Docker image
 
-The deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
+The Deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
 
 You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the Magento store:
 
