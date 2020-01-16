@@ -111,4 +111,4 @@ where:
 
 {:.ref-header}
 Related topic
-[Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)
+[Tutorial---configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)

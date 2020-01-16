@@ -4,9 +4,9 @@ title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 ---
 
- {:.bs-callout-info}
-The Magento Testing Framework (MTF) is superseded by the Magento Functional Testing Framework ([MFTF][]).
-While the MTF is still functional, all MTF tests are being ported over to the MFTF. We recommend using the MFTF for testing.
+{:.bs-callout-warning}
+The Magento Testing Framework (MTF) is deprecated and is superseded by the Magento Functional Testing Framework ([MFTF][]).
+This documentation is no longer updated to reflect changes in Magento functionality. Issues may arise if using MTF with the latest Magento code.
 
 This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.
 
