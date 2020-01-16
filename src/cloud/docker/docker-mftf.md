@@ -7,8 +7,6 @@ functional_areas:
 
 In a Cloud Docker development environment, you can use the [Magento Functional Testing Framework (MFTF)][MFTF docs] for Magento application testing.
 
-You use the [CLI container command] `mftf-command` to run MFTF commands in the Cloud Docker environment, for example `docker-compose run test mftf-command generate:tests --debug=none`.
-
 You use the [CLI container command] `mftf-command` to run MFTF commands in the Cloud Docker environment. For example, the following command generates the MFTF tests:
 
 ```bash
