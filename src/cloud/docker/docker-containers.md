@@ -9,7 +9,7 @@ functional_areas:
 
 The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. All customized Docker containers are available in the repository. You can customize these containers and add more as needed.
 
-{{ site.data.var.mcd }} generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the the container instances, build, and deploy the {{site.data.var.ee}} site.
+Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the the container instances, build, and deploy the {{site.data.var.ee}} site.
 
 ## Service versions
 
