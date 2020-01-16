@@ -14,7 +14,6 @@ For instance, see this calculated reward points example:
 1. When a contributor submits a PR with complex code contributions, they receive a total of 30 points:
     * Improvement (base achievement) = 10 points
     * Complex (additional achievement) = 20 points
-
 1. When a contributor submits a PR with complex code and tests, they receive a total of 40 points:
     * Improvement (base achievement) = 10 points
     * Complex (additional achievement) = 20 points
@@ -32,6 +31,9 @@ For instance, see this calculated reward points example:
     * Test coverage (additional achievement) = 10 points
 
 Earned achievements display as labels in each PR in GitHub and for each contributor, partner, and maintainer on [magento.com](https://magento.com/magento-contributors).
+
+{:.bs-callout-info}
+Multiple minor editorial fixes should be combined into a single PR, for the sake of efficiency.
 
 ### Base achievements
 {:.no_toc}
@@ -91,4 +93,4 @@ New topic | 30 | New topic submissions for content that has never existed in Dev
 Major update | 20 | Significant updates to existing content.
 Technical | 10 | Updates to code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content.
 
-If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points. This is determinable at the time of internal assessment.
+If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points. This is determinable at the time of internal assessment. Certain issues may already be labeled as Special Achievement in an effort to prompt contribution---the PRs that fix these issues will receive the extra 20 points.
