@@ -55,7 +55,7 @@ After you log in to the Extension Manager, a list displays as follows:
 
 {% collapsible Supported actions for each type %}
 
-We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application&mdash;module, language package, theme, or metapackage. *Extension* refers to anything you can install, uninstall, or update.)
+We support different actions for each *type* of component. (*Component* is a general term that includes any type of code you can install in the Magento application---module, language package, theme, or metapackage. *Extension* refers to anything you can install, uninstall, or update.)
 
 The following figure shows how types display in the Extension Manager.
 
@@ -66,7 +66,7 @@ Following is a definition of types:
 *  `module` for a module (that is, PHP code that modifies Magento behavior)
 *  `language` for a language package used to translate the Magento storefront and Admin
 *  `theme` for a collection of styles that affect the look of the storefront or Admin
-*  `library` for a library&mdash;such as a shared third-party library
+*  `library` for a library---such as a shared third-party library
 *  `component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
 Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of different types) or *non-metapackages* (that is, a single type).

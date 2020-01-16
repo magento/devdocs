@@ -5,7 +5,11 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-add-simple-products.html
 ---
 
-Simple products are physical products that do not have variations, such as color, size, or price. The `addSimpleProductsToCart` mutation allows you to add multiple simple products to the cart at the same time, but you cannot add other product types with this mutation. To add a simple product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.
+The `addSimpleProductsToCart` mutation allows you to add any number of simple and group products to the cart at the same time.
+
+Simple products are physical products that do not have variations, such as color, size, or price. Group products are a set of simple standalone products that are assigned a unique SKU and are presented as a group. Each product in the group is purchased as a separate item.
+
+To add a simple or grouped product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.
 
 ## Syntax
 
@@ -21,7 +25,7 @@ The following example adds a simple product to a cart. The response contains the
 
 **Request:**
 
-```text
+```graphql
 mutation {
   addSimpleProductsToCart(
     input: {
@@ -79,7 +83,7 @@ If a product has a customizable option, you can specify the option's value in th
 
 **Request:**
 
-``` text
+```graphql
 mutation {
   addSimpleProductsToCart (input: {
     cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
@@ -139,6 +143,79 @@ mutation {
                 ]
               }
             ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+### Add a grouped product to a cart
+
+The following example adds a grouped product (`Workout-Kit`) to a cart. The grouped product contains three simple products.
+
+**Request:**
+
+```graphql
+mutation {
+  addSimpleProductsToCart(
+    input: {
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      cart_items: [
+        {
+          data: {
+            quantity: 1
+            sku: "Workout-Kit"
+          }
+        }
+      ]
+    }
+  ) {
+    cart {
+      items {
+        id
+        product {
+          name
+          sku
+        }
+        quantity
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "addSimpleProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "id": "5",
+            "product": {
+              "name": "Go-Get'r Pushup Grips",
+              "sku": "24-UG05"
+            },
+            "quantity": 1
+          },
+          {
+            "id": "6",
+            "product": {
+              "name": "Dual Handle Cardio Ball",
+              "sku": "24-UG07"
+            },
+            "quantity": 1
+          },
+          {
+            "id": "7",
+            "product": {
+              "name": "Harmony Lumaflex&trade; Strength Band Kit ",
+              "sku": "24-UG03"
+            },
+            "quantity": 1
           }
         ]
       }

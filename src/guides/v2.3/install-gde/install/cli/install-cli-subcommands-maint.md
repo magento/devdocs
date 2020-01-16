@@ -68,7 +68,7 @@ magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 ```
 
  {:.bs-callout-info}
-  After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumer:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
+  After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumers:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
 
 ## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}
 
