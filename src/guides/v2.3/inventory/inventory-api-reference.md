@@ -86,7 +86,7 @@ Service | Description | Deprecated API
 
 ## Inventory Catalog API
 
-The following services reside under the [`Magento/InventoryCatalogApi/Api`](https://github.com/magento/inventory/tree/1.1-develop/app/code/Magento/InventoryCatalogApi/Api) namespace.
+The following services reside under the [`Magento/InventoryCatalogApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventoryCatalogApi/Api) namespace.
 
 Service | Description
 --- | ---
@@ -98,7 +98,7 @@ Service | Description
 
 ## Inventory Sales API
 
-The following services reside under the [`Magento/InventorySalesApi/Api`](https://github.com/magento/inventory/tree/1.1-develop/app/code/Magento/InventorySalesApi/Api) namespace, replacing deprecated services and APIs.
+The following services reside under the [`Magento/InventorySalesApi/Api`]({{ msi_blob_url }}/app/code/Magento/InventorySalesApi/Api) namespace, replacing deprecated services and APIs.
 
 Service | Description | Deprecated API
 --- | --- | ---
