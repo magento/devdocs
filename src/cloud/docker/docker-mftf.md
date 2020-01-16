@@ -9,6 +9,12 @@ In a Cloud Docker development environment, you can use the [Magento Functional T
 
 You use the [CLI container command] `mftf-command` to run MFTF commands in the Cloud Docker environment, for example `docker-compose run test mftf-command generate:tests --debug=none`.
 
+You use the [CLI container command] `mftf-command` to run MFTF commands in the Cloud Docker environment. For example, the following command generates the MFTF tests:
+
+```bash
+docker-compose run test mftf-command generate:tests --debug=none
+```
+
 {:.bs-callout-info}
 Support for MFTF support requires [Magento Cloud Docker] version 1.0 or later.
 
@@ -32,18 +38,17 @@ Support for MFTF support requires [Magento Cloud Docker] version 1.0 or later.
     ./vendor/bin/ece-docker build:compose --with-selenium --no-cron
     ```
 
-1. Start the Magento Cloud Docker environment.
+1. Start the Magento Cloud Docker environment. Optionally, you can set up {{site.data.var.mcd}} to work in [Developer Mode].
 
-    Optionally, you can set up {{site.data.var.mcd}} to work in [Developer Mode].
-
-    ```bash
-    ./bin/magento-docker up
+   ```bash
+   ./bin/magento-docker up
+   ```
+   
+   ```bash
     ./bin/magento-docker ece-redeploy
     ```
 
-1. Prepare the {{site.data.var.ee}} application for MFTF testing:
-
-   -  Add the environment variables required for application testing with MFTF.
+1. Prepare the Magento application by adding envirionment variables that are specific to MFTF:
 
       ```bash
       CONFIG="MAGENTO_BASE_URL=http://magento2.docker/
@@ -52,36 +57,37 @@ Support for MFTF support requires [Magento Cloud Docker] version 1.0 or later.
       MAGENTO_ADMIN_PASSWORD=123123q
       MODULE_WHITELIST=Magento_Framework,Magento_ConfigurableProductWishlist,Magento_ConfigurableProductCatalogSearch
       SELENIUM_HOST=selenium"
-
+      ```
+      ```bash
       docker-compose run deploy bash -c "echo \"$CONFIG\" > /app/dev/tests/acceptance/.env"
       ```
 
-      {:.bs-callout-info}
+      {:.bs-callout-tip}
       In this example, the variable configuration is for testing a Magento application deployed to the Docker environment. To run tests in a remote environment, change the value of `MAGENTO_BASE_URL` to the remote URL and update the credentials as needed.
 
-   -  Disable the Magento settings that conflict with MFTF functionality.
+1. Disable the Magento settings that conflict with MFTF functionality.
 
-      ```bash
-      docker-compose run deploy magento-command config:set admin/   security/admin_account_sharing 1
-      ```
+   ```bash
+   docker-compose run deploy magento-command config:set admin/   security/admin_account_sharing 1
+   ```
 
-      ```bash
-      docker-compose run deploy magento-command config:set admin/   security/use_form_key 0
-      ```
+   ```bash
+   docker-compose run deploy magento-command config:set admin/   security/use_form_key 0
+   ```
 
-      ```bash
-      docker-compose run deploy magento-command config:set web/   secure/use_in_adminhtml 0
-      ```
+   ```bash
+   docker-compose run deploy magento-command config:set web/   secure/use_in_adminhtml 0
+   ```
 
-   -  Enable the Varnish cache for the Magento application.
+1. Enable the Varnish cache for the Magento application.
 
-      ```bash
-      docker-compose run deploy magento-command config:set    system/full_page_cache/caching_application 2 --lock-env
-      ```
-
-      ```bash
-      docker-compose run deploy magento-command setup:config:set    --http-cache-hosts=varnish
-      ```
+   ```bash
+   docker-compose run deploy magento-command config:set    system/full_page_cache/caching_application 2 --lock-env
+   ```
+   
+   ```bash
+   docker-compose run deploy magento-command setup:config:set    --http-cache-hosts=varnish
+   ```
 
 1. Generate MFTF tests.
 
