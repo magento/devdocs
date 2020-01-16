@@ -45,5 +45,4 @@ When using this to make changes that require testing you can refresh the build o
 docker-compose up -d --force-recreate --build
 ```
 
-
 [multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
