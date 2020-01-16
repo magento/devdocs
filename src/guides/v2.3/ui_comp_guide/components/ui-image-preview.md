@@ -41,8 +41,8 @@ The ImagePreview component has dependencies on the following components:
 
 Extends `Column`:
 
-*  [app\code\Magento\Ui\view\base\web\js\grid\columns\image-preview.js](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/grid/columns/image-preview.js)
-*  [app\code\Magento\Ui\view\base\web\templates\grid\columns\image-preview.html](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/templates/grid/columns/image-preview.html)
+*  [app\code\Magento\Ui\view\base\web\js\grid\columns\image-preview.js]({{ site.mage2bloburl }}/{{ page.guide_version }}p/app/code/Magento/Ui/view/base/web/js/grid/columns/image-preview.js)
+*  [app\code\Magento\Ui\view\base\web\templates\grid\columns\image-preview.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/columns/image-preview.html)
 
 ### Result
 
