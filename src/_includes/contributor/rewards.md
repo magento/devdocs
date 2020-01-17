@@ -23,8 +23,6 @@ For instance, see this calculated reward points example:
       - Improvement (base achievement) = 10 points
       - Complex (additional achievement) = 20 points
       - Author of ported issue = 5 points
-    * Porting contributor---
-      - Port (base achievement) = 5 points
 1. When a maintainer reviews and approves a PR with complex code and tests, they receive a total of 40 points:
     * Improvement (base achievement) = 10 points
     * Complex (additional achievement) = 20 points
