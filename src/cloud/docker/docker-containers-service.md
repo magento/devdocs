@@ -122,7 +122,7 @@ Container name |Docker base image | Ports exposed
 -------- | -------- | ---------------
 tls | [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image | 443
 
-The TLS termination proxy container, based on the  [magento/magento-cloud-docker-tls][tls] image, facilitates the Varnish SSL termination over HTTPS.
+The TLS termination proxy container, based on the [magento/magento-cloud-docker-tls][tls] image, facilitates the Varnish SSL termination over HTTPS.
 
 To increase the timeout on this container, add the following code to the  `docker-compose.override.yml` file:
 

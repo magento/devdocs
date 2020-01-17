@@ -15,7 +15,7 @@ docker-compose run test mftf-command generate:tests --debug=none
 {:.bs-callout-info}
 Support for MFTF requires [Magento Cloud Docker] version 1.0 or later.
 
-1. Prepare the local environment:
+1. Prepare the local environment.
 
    -  Add the MFTF dependency to your project using Composer.
 
@@ -45,7 +45,7 @@ Support for MFTF requires [Magento Cloud Docker] version 1.0 or later.
     ./bin/magento-docker ece-redeploy
     ```
 
-1. Prepare the Magento application by adding environment variables that are specific to MFTF:
+1. Prepare the Magento application by adding environment variables that are specific to MFTF.
 
    ```bash
    CONFIG="MAGENTO_BASE_URL=http://magento2.docker/
@@ -61,7 +61,7 @@ Support for MFTF requires [Magento Cloud Docker] version 1.0 or later.
    ```
 
    {:.bs-callout-tip}
-   In this example, the variable configuration is for testing a Magento application deployed to the Docker environment. To run tests in a remot environment, change the value of `MAGENTO_BASE_URL` to the remote URL and update the credentials as needed.
+   In this example, the variable configuration is for testing a Magento application deployed to the Docker environment. To run tests in a remote environment, change the value of `MAGENTO_BASE_URL` to the remote URL and update the credentials as needed.
 
 1. Disable the Magento settings that conflict with MFTF functionality.
 

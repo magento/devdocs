@@ -34,7 +34,7 @@ All build and deploy processes are defined and configured using {{site.data.var.
 
 ## CLI container commands
 
-These commands are available in the Magento Cloud Docker environment
+These commands are available in the Magento Cloud Docker environment:
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
