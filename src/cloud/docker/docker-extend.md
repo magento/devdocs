@@ -41,7 +41,7 @@ services:
 ```
 This example defines the build context for the web container, however this can be done with any of the images in `vendor/magento/magento-cloud-docker` or any image, including locally resourced outside of the project.
 
-If you want to update the container configuration and test iteratively, you can run the following command to refresh the container build.
+If you want to update the container configuration and test iteratively, run the following command to refresh the container build.
 
 ```bash
 docker-compose up -d --force-recreate --build
