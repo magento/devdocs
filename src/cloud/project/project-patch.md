@@ -15,14 +15,14 @@ You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl
 {% include cloud/note-upgrade.md %}
 
 {:.procedure}
-To use {{ site.data.var.mcp }} as a stand-alone package: 
+To use {{ site.data.var.mcp }} as a stand-alone package:
 
 1. Add the {{site.data.var.mcp}} package to your `composer.json` file.
 
     ```bash
     composer require magento/magento-cloud-patches
     ```
-    
+
 {:.procedure}
 To apply {{site.data.var.ece}} patches manually:
 
