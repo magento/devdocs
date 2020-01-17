@@ -575,8 +575,12 @@ interface MutableInterface
  */
 class LimitedMutableClass implements MutableInterface
 {
+    /**
+     * Returns integer value
+     */
     public function getVal(): int
     {
+        ...
     }
 
     /**
@@ -586,6 +590,7 @@ class LimitedMutableClass implements MutableInterface
      */
     public function setVal($value): void
     {
+        ...
     }
 }
 ```
@@ -683,6 +688,42 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
  * @see ClassTwo
  * @see FooInterface
  */
+```
+
+### @method tag {#method}
+
+The `@method` allows a class to know which ‘magic’ methods are callable.
+
+Syntax:
+
+```bash
+@method [[static] return type] [name]([[type] [parameter]<, ...>]) [<description>]
+```
+
+[See](https://docs.phpdoc.org/references/phpdoc/tags/method.html) more information about `@method` tag.
+
+```php
+/**
+ * Image operations
+ *
+ * @method string getFile()
+ * @method string getLabel()
+ * @method string getPosition()
+ */
+class Image extends \Magento\Framework\Model\AbstractModel
+{
+    //.....
+}
+```
+
+### @link tag {#link}
+
+The `@link` tag indicates a custom relation between associated Structural Elements and a website, which is identified by an absolute URI.
+
+Syntax:
+
+```bash
+@link [URI] [<description>]
 ```
 
 ### Other tags
