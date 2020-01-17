@@ -35,7 +35,7 @@ composer require magento/saas-export
 
 1. Generate and copy the API key for **Production**.
 
-![]({{ page.baseurl }}/images/get-api-key.png)
+![]({{ page.baseurl }}/recommendations/images/get-api-key.png)
 
 1. In the Magento Admin, click **Stores** on the Admin panel.
 
@@ -45,7 +45,7 @@ composer require magento/saas-export
   
 1. In the **API Keys** section, paste your key value into the **Production Api Key** field regardless of whether you are in a production environment or non-production environment.
 
-![]({{ page.baseurl }}/images/cfg-api-key.png)
+![]({{ page.baseurl }}/recommendations/images/cfg-api-key.png)
 
 ## Configure Your Environment {#configureenv}
 
