@@ -125,7 +125,7 @@ pages:
               url: /cloud/docker/docker-containers-cli.html
               versionless: true
               
-            - label: Syncing Data
+            - label: Synchronizing data
               url: /cloud/docker/docker-syncing-data.html
               versionless: true
               
@@ -136,7 +136,15 @@ pages:
             - label: Xdebug for Docker
               url: /cloud/docker/docker-development-debug.html
               versionless: true
-  
+
+            - label: Manage the database
+              url: /cloud/docker/docker-manage-database.html
+              versionless: true
+
+            - label: Manage cron jobs
+              url: /cloud/docker/docker-manage-cron-jobs.html
+              versionless: true
+
             - label: Developer mode
               url: /cloud/docker/docker-mode-developer.html
               versionless: true

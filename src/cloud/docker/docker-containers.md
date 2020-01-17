@@ -22,7 +22,7 @@ Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.y
 | [deploy] | Deploy Container |   |  |  PHP Container, runs the deploy process
 | [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
 | [elasticsearch] | Elasticsearch | `--es` | 1.7, 2.4, 5.2, 6.5 |
-| [fpm][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2 |  Used for all incoming requests
+| [fpm][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2, 7.3 |  Used for all incoming requests
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
 | [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container

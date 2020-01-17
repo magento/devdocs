@@ -234,7 +234,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
-   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-containers.html#sendmail-service).
+   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-config.html#sendmail-service).
 
    -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
@@ -304,7 +304,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
       -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
+   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-manage-database.html#import-a-database-dump). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
 -  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 

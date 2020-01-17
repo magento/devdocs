@@ -17,9 +17,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
 ## Prerequisites
 
 1. You must have the following software installed on your local workstation:
-   -  PHP version 7.1 or later
-      -  [php@7.1][php71]
-      -  [php@7.2][php72]
+   -  [PHP version 7.1 or later][php]
    -  [Composer]
    -  [Docker]
    -  On MacOS and Windows, file synchronization is required for developer mode—use one of the following:
@@ -102,8 +100,7 @@ ENABLE_SENDMAIL=true
 {:.bs-callout-warning}
 We do not recommend using Sendmail on CLI containers because the service can slow down the container creation process.
 
-[php71]: https://formulae.brew.sh/formula/php@7.1
-[php72]: https://formulae.brew.sh/formula/php@7.2
+[php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
 [Docker]: https://www.docker.com/get-started
 [docker-reference]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html

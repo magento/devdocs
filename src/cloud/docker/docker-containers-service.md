@@ -21,14 +21,12 @@ db | [mariadb](https://hub.docker.com/_/mariadb) | 3306 |
 
 The Database container is based on the [mariadb][db-image] image and includes the following volumes:
 
-   -  `magento-db: /var/lib/mysql`
-   -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
+-  `magento-db: /var/lib/mysql`
+-  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
 
 When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql` and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
-
-## Customize the database container
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
@@ -48,91 +46,7 @@ db:
       - innodb-buffer-pool-size=134217728
 ```
 
-### Connect to the database
-
-There are two ways to connect to the database. Before you begin, locate the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:
-
-> Filename: `.docker/config.php`
-
-```php?start_inline=1
-return [
-    'MAGENTO_CLOUD_RELATIONSHIPS' => base64_encode(json_encode([
-        'database' => [
-            [
-                'host' => 'db',
-                'path' => 'magento2',
-                'password' => 'magento2',
-                'username' => 'magento2',
-                'port' => '3306'
-            ],
-        ],
-```
-{:.no-copy}
-
-{:.procedure}
-To connect to the database using Docker commands:
-
-1. Connect to the CLI container.
-
-   ```bash
-   docker-compose run deploy bash
-   ```
-
-1. Connect to the database with a username and password.
-
-   ```bash
-   mysql --host=db --user=magento2 --password=magento2
-   ```
-
-1. Verify the version of the database service.
-
-   ```mysql
-   SELECT VERSION();
-   +--------------------------+
-   | VERSION()                |
-   +--------------------------+
-   | 10.0.38-MariaDB-1~xenial |
-   +--------------------------+
-   ```
-   {:.no-copy}
-
-{:.procedure}
-To connect to the database port:
-
-1. Find the port used by the database. The port can change each time you restart Docker.
-
-   ```bash
-   docker-compose ps
-   ```
-
-   Sample response:
-
-   ```terminal
-             Name                         Command               State               Ports
-   --------------------------------------------------------------------------------------------------
-   mc-master_db_1              docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
-   ```
-   {:.no-copy}
-
-1. Connect to the database with port information from the previous step.
-
-   ```bash
-   mysql -h127.0.0.1 -p32769 -umagento2 -pmagento2
-   ```
-
-1. Verify the version of the database service.
-
-   ```mysql
-   SELECT VERSION();
-   +--------------------------+
-   | VERSION()                |
-   +--------------------------+
-   | 10.0.38-MariaDB-1~xenial |
-   +--------------------------+
-   ```
-   {: .no-copy}
-
-[db-image]: https://hub.docker.com/_/mariadb
+See [Manage the database] for details about using the database.
 
 ## Elasticsearch container
 
@@ -155,6 +69,7 @@ The FPM container is based on the [magento/magento-cloud-docker-php][php] image 
    -  `/app/vendor`
    -  `/app/generated`
    -  `/app/setup`
+
 -  Read/Write volumes:
    -  `/app/var`
    -  `/app/app/etc`
@@ -257,6 +172,7 @@ The nginx configuration for this container is the standard Magento [nginx config
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
+[Manage the database]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [XDebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [redis]: https://hub.docker.com/_/redis
