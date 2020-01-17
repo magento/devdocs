@@ -78,7 +78,7 @@ Lists are useful for organizing and displaying related items. Below are examples
 
 ### Images {#images}
 
-Please add any images you may need to the [`common/images`](https://GitHub.com/magento/devdocs/tree/develop/common/images){:target="_blank"} directory.
+Please add any images you may need to the [`src/common/images`](https://github.com/magento/devdocs/tree/master/src/common/images) directory.
 
 Once the image is added, you can use it in your documentation:
 

@@ -23,7 +23,7 @@ The goal of this standard is to unify usage of code DocBlocks for all files, not
 
 The following is assumed by default:
 
-*  Formatting according [phpDocumentor](https://www.phpdoc.org/docs/latest/guides/docblocks.html){:target="_blank"} standard
+*  Formatting according [phpDocumentor](https://docs.phpdoc.org/latest/references/phpdoc/basic-syntax.html#what-is-a-docblock){:target="_blank"} standard
 *  Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
 
 ## General principles
@@ -673,7 +673,7 @@ foreach ($errors as $error) {
 
 ### @see tag {#see}
 
-Besides the normal way of using `@see` tag as [recommended by phpDocumentor](http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html), it may be used as an addition to `@var`, when the `@var` is already used in this comment.
+Besides the normal way of using `@see` tag as [recommended by phpDocumentor](https://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.see.pkg.html), it may be used as an addition to `@var`, when the `@var` is already used in this comment.
 
 Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:
 

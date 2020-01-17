@@ -11,7 +11,7 @@ You can download the Selenium Server from [Selenium project website].
 {:.bs-callout-warning}
 Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Server.
 
-Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium server version.](http://docs.seleniumhq.org/about/platforms.jsp)
+Specific versions of the Selenium Server are compatible with specific versions of browsers. [Read more about compatibility of browser version and Selenium server version.](https://selenium.dev/documentation/en/)
 
  {:.bs-callout-info}
 Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
@@ -71,7 +71,7 @@ php generate.php
 
 <!-- Internet -->
 [Selenium project website]: http://www.seleniumhq.org/download/
-[web driver]: http://docs.seleniumhq.org/about/platforms.jsp
+[web driver]: https://selenium.dev/documentation/en/getting_started_with_webdriver/
 
 <!-- ABBREVIATIONS -->
 *[FTF]: Functional Testing Framework
