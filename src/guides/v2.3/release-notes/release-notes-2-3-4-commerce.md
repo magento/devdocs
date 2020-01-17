@@ -116,7 +116,7 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 ### dotdigital
 
-Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent.
+Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
 
 ### Google Shopping ads Channel
 
@@ -180,7 +180,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6205-->
 
-*  You can now successfully install Magento 2.3.x with MySQL 8.  Previously, installation stopped because  the patch triggered forced indexation. *Fix submitted by Anton Kaplya in pull request [25357](https://github.com/magento/magento2/pull/25357)*. [GitHub-25294](https://github.com/magento/magento2/issues/25294)
+*  You can successfully install Magento 2.3.4 with MySQL 8. Previously, installation stopped because  the patch triggered forced indexation. However, Magento 2.3.4 is not yet fully compatible with MySQL 8, so use at your own risk. Full support for MySQL 8 is scheduled for Magento 2.4.0. *Fix submitted by Anton Kaplya in pull request [25357](https://github.com/magento/magento2/pull/25357)*. [GitHub-25294](https://github.com/magento/magento2/issues/25294)
 
 <!--- ENGCOM-6218-->
 
@@ -526,10 +526,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Merchants can now scroll down the **Create New Product** page to determine whether the product has been saved if they enter invalid values in the **Schedule Design Update** fields. Previously, customers could not scroll to see if the product had been saved. *Fix submitted by Eden Duong in pull request [24242](https://github.com/magento/magento2/pull/24242)*. [GitHub-24241](https://github.com/magento/magento2/issues/24241)
 
-<!--- MC-21933-->
-
-*  Type declarations for the `$condition` arguments were removed from two private methods that were created during recent refactoring of product collection code.
-
 <!--- ENGCOM-6127-->
 
 *  Quote model extension attributes are now properly encoded and present on the checkout page as expected. Previously, these attributes were present as empty objects {}. *Fix submitted by skylineop in pull request [24771](https://github.com/magento/magento2/pull/24771)*. [GitHub-15959](https://github.com/magento/magento2/issues/15959)
@@ -784,10 +780,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento now correctly saves the values assigned to the `sort_order` and `attribute_group_code` attributes by the POST `/V1/products/attribute-sets/groups` call. *Fix submitted by Eden Duong in pull request [23690](https://github.com/magento/magento2/pull/23690)*. [GitHub-23634](https://github.com/magento/magento2/issues/23634)
 
-<!--- ENGCOM-5977-->
-
-*  The `eav_attribute_label` table now contains a unique key constraint on the (`store_id`, `attribute_id`) column pair. *Fix submitted by KaushikChavda in pull request [24582](https://github.com/magento/magento2/pull/24582)*. [GitHub-24581](https://github.com/magento/magento2/issues/24581)
-
 <!--- ENGCOM-5367-->
 
 *  You can now perform mass actions on items in a grid that uses an EAV collection. Previously, grids created with the now-deprecated `Magento\Backend\Block\Widget\Grid` (as many third-party extensions are) threw an exception when you tried to perform a mass action. *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*.[GitHub-23451](https://github.com/magento/magento2/issues/23451)
@@ -888,10 +880,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Problems with less compilation  in Magento's blank theme when using an alternative less compiler than the one that ships with Magento by default have been resolved. *Fix submitted by Pieter Hoste in pull request [24001](https://github.com/magento/magento2/pull/24001)*. [GitHub-23619](https://github.com/magento/magento2/issues/23619)
 
-<!--- ENGCOM-5559-->
-
-*  Mix-ins for `price-box.js` now work in all supported browsers. Previously, only the Chrome browser could call the `updatePrice` function (`Magento_Catalog/js/price-box`).  *Fix submitted by Renon Stewart in pull request [24054](https://github.com/magento/magento2/pull/24054)*. [GitHub-22338](https://github.com/magento/magento2/issues/22338)
-
 <!--- ENGCOM-5631-->
 
 *  Magento now extracts handles from layout updates before merging layouts. *Fix submitted by Sergey Solo in pull request [23918](https://github.com/magento/magento2/pull/23918)*. [GitHub-5901](https://github.com/magento/magento2/issues/5901)
@@ -952,7 +940,15 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5569-->
 
-*  The size of images displayed  in RSS feeds is now determined by the `view.xml` file. *Fix submitted by Sunil in pull request [23533](https://github.com/magento/magento2/pull/23533)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
+*  The size of images displayed in RSS feeds is now determined by the `view.xml` file. *Fix submitted by Sunil in pull request [23533](https://github.com/magento/magento2/pull/23533)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
+
+<!--- ENGCOM-5635-->
+
+*  The content attribute for `msapplication-TileImage` now resolves to a localised theme path.  *Fix submitted by Burlacu Vasilii in pull request [21798](https://github.com/magento/magento2/pull/21798)*. [GitHub-5023](https://github.com/magento/magento2/issues/5023)
+
+<!--- ENGCOM-5639-->
+
+*  When you move a category, the list of categories prepared for re-indexing now includes all affected subcategories when Flat Catalog is enabled. Previously, the order of categories on the storefront remained incorrect until the flat category was re-indexed. *Fix submitted by Sergey Solo in pull request [23820](https://github.com/magento/magento2/pull/23820)*. [GitHub-3993](https://github.com/magento/magento2/issues/3993)
 
 ### Import/export
 
@@ -1020,6 +1016,20 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  You can now successfully import an image from an external URL.
 
+### Index
+
+<!--- MC-18833-->
+
+*  The Tier Price REST API now considers account indexer mode as expected.
+
+<!--- MC-21897-->
+
+*  Partial reindexing operations no longer throw an exception when catalog permissions functionality is disabled and the `catalogpermissions_product_cl` table has non-reindexed rows. Previously,  the `vendor/magento/module-catalog-permissions/Model/Indexer/Plugin/IndexerConfigData.php::afterGet()` plugin killed a loaded instance of catalogpermissions_product` indexer under these conditions.
+
+<!--- MC-22021-->
+
+*  Query performance and indexer execution (`bin/magento indexer:reindex`) has been improved.
+
 ### Infrastructure
 
 <!--- ENGCOM-5540-->
@@ -1033,6 +1043,40 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6199-->
 
 *  Magento no longer adds a `form_key` field to POST forms that had external action URLs. (*External action URLS* are URLS that do not belonging to shop's base URL.) *Fix submitted by Mateusz Krzeszowiak in pull request [25336](https://github.com/magento/magento2/pull/25336)*. [GitHub-23382](https://github.com/magento/magento2/issues/23382)
+
+<!--- MC-18190-->
+
+*  The dictionary was removed from the `zxcvbn.js` library, and the following performance improvements have resulted: 1) The size of the `zxcvbn` library has been reduced from 395 KB to 11.3 KB on customer registration, customer edit, and customer forgot password pages. 2) The time required for asynchronously loading this library has been reduced by 90%.
+
+<!--- ENGCOM-5634-->
+
+*  The `scopeData()` method now returns a `DateTime` value that is scoped to the specified store locale. Previously, this method was not fully implemented.  *Fix submitted by Eden Duong in pull request [23693](https://github.com/magento/magento2/pull/23693)*. [GitHub-23359](https://github.com/magento/magento2/issues/23359)
+
+<!--- ENGCOM-5683-->
+
+*  The `getAttributeRawValue` method now returns a store-specific value even when there is no default value. Previously, no store value was returned when a default value was not present. *Fix submitted by semajeg in pull request [23369](https://github.com/magento/magento2/pull/23369)*. [GitHub-16382](https://github.com/magento/magento2/issues/16382)
+
+<!--- ENGCOM-5554-->
+
+*  The performance of the `ProductMetadata::getVersion` method has been improved as a result of adding the caching of he product version. This method is called by many third-party extensions to determine the version of Magento. *Fix submitted by David Verholen in pull request [24030](https://github.com/magento/magento2/pull/24030)*. [GitHub-24025](https://github.com/magento/magento2/issues/24025)
+
+<!--- ENGCOM-6119-->
+
+*  You can now add products with custom options of all types to the shopping cart. *Fix submitted by Alexandr Skrashuk in pull request [25055](https://github.com/magento/magento2/pull/25055)*. [GitHub-24726](https://github.com/magento/magento2/issues/24726)
+
+<!--- ENGCOM-6186-->
+
+*  Decimal numbers have been added to the Sample File in Import CSV section. Previously, using the **Download Sample File** option on the product’s import CSV page created a sample CSV file with a weight of 1, which was of limited use. *Fix submitted by Cristian Sanclemente in pull request [25317](https://github.com/magento/magento2/pull/25317)*. [GitHub-23920](https://github.com/magento/magento2/issues/23920)
+
+<!--- ENGCOM-6171-->
+
+*  A deprecated method in `\Magento\MysqlMq\Model\Driver\Exchange` has been replaced. Previously, this method caused an exception. *Fix submitted by Tjitse in pull request [25289](https://github.com/magento/magento2/pull/25289)*. [GitHub-21904](https://github.com/magento/magento2/issues/21904)
+
+### Media storage
+
+<!--- MC-19156-->
+
+*  Magento now retrieves images from the proper cache in multi-store deployments.
 
 ### Newsletter
 
@@ -1062,11 +1106,23 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento now displays the customer middle name in the customer details on orders and in the new order email sent to customers. *Fix submitted by Sergiy Vasiutynskyi in pull request [24746](https://github.com/magento/magento2/pull/24746)*. [GitHub-23627](https://github.com/magento/magento2/issues/23627)
 
+<!--- ENGCOM-5591-->
+
+*  Magento now updates the `сustomer_email` value in the `quote` and `sales_order` tables as expected when a customer changes their email address. *Fix submitted by Artem Voloznov in pull request [24049](https://github.com/magento/magento2/pull/24049)*. [GitHub-24012](https://github.com/magento/magento2/issues/24012)
+
+<!--- ENGCOM-5475-->
+
+*  Customers can now cancel an order they created using a coupon while logged in as a guest. Previously, when they tried to cancel the order, Magento threw an error. *Fix submitted by Pavel Bystritsky in pull request [20577](https://github.com/magento/magento2/pull/20577)*. [GitHub-19230](https://github.com/magento/magento2/issues/19230)
+
+<!--- ENGCOM-5552-->
+
+*  Magento now displays a warning message when you click the **Apply Coupon Code** button without filling in the coupon code when creating an order. *Fix submitted by Eden Duong in pull request [24016](https://github.com/magento/magento2/pull/24016)*. [GitHub-24015](https://github.com/magento/magento2/issues/24015)
+
+<!--- ENGCOM-6112-->
+
+*  Magento now sends New Order email as expected when the **Send Order Email Copy To** field contains a comma followed by a blank space. *Fix submitted by Eden Duong in pull request [25085](https://github.com/magento/magento2/pull/25085)*. [GitHub-25072](https://github.com/magento/magento2/issues/25072)
+
 ### Payment methods
-
-<!--- MC-19274-->
-
-*  Magento now copies bank transfer payment instructions from the correct store when an order invoice is created in a multi-store deployment. Previously, Magento copied this information from the default store view. [GitHub-17933](https://github.com/magento/magento2/issues/17933)
 
 <!--- MC-18783-->
 
@@ -1088,6 +1144,58 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
 
+<!--- MC-19008-->
+
+*  Magento no longer displays the PayPal Credit option on the checkout workflow on the storefront when this option is disabled in the Admin.
+
+<!--- MC-18365-->
+
+*  Magento now properly concatenates first and last names in PayPal Express address fields.
+
+<!--- MC-18194-->
+
+*  The Saved Credit Card Feature with Vault feature nows displays accurate card information in the order information page as expected for orders paid for with Payflow Pro.
+
+<!--- MC-19114-->
+
+*  The **Qty to Refund** field on the credit memo of an order paid for with Authorize.net is now editable.
+
+<!--- MC-19542-->
+
+*  Magento no longer throws a fatal error when you enter an invalid shipping address when placing an order with Braintree with Paypal.
+
+<!--- MC-19917-->
+
+*  Magento no longer displays duplicate Place Order buttons on the Review Order page for orders made with PayPal Express.
+
+<!--- MC-21467-->
+
+*  You can now successfully add new products to the cart when placing a re-order from the Admin when the original order used a coupon and the Braintree payment method.
+
+<!--- MC-22006-->
+
+*  Magento no longer displays the **PayPal Express Checkout** button on product pages or the shopping cart when the **Display on Product Details Page** and **Display on Shopping Cart (Advanced Settings)** settings are disabled.
+
+<!--- ENGCOM-5630-->
+
+*  Magento no longer displays the  **PayPal Credit** button when the **Checkout with PayPal** button is displayed on the shopping cart. *Fix submitted by Oleksii Lisovyi in pull request [24121](https://github.com/magento/magento2/pull/24121)*. [GitHub-22525](https://github.com/magento/magento2/issues/22525),[GitHub-22528](https://github.com/magento/magento2/issues/22528)
+
+<!--- ENGCOM-5710-->
+
+*  Validation logic has been added to the **Send Payment Failed Email Copy To**  field of **Admin** > **Store** > **Configurations** > **Sales** > **Checkout**. *Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24302](https://github.com/magento/magento2/issues/24302), [GitHub-24304](https://github.com/magento/magento2/issues/24304)
+
+<!--- ENGCOM-5804-->
+
+*  The Stored Payment Methods section of the customer dashboard no longer depends on Braintree being enabled. Removing this dependency permits custom payment methods can also use this section. *Fix submitted by prabhatrawat-webkul in pull request [24501](https://github.com/magento/magento2/pull/24501)*. [GitHub-23205](https://github.com/magento/magento2/issues/23205)
+
+<!--- ENGCOM-5849-->
+
+*  Magento no longer throws JavaScript errors when a customer tries to pay for an order using PayPal when the shipping address fields are incomplete. *Fix submitted by Anton in pull request [24622](https://github.com/magento/magento2/pull/24622)*. [GitHub-24618](https://github.com/magento/magento2/issues/24618)
+
+<!--- ENGCOM-5925-->
+
+*  Removed the redundant XML code in the`<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
+
 ### Performance
 
 <!--- MC-16108-->
@@ -1108,11 +1216,65 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Sorting has been disabled on the New Account column of the New Accounts report. *Fix submitted by Eden Duong in pull request [25034](https://github.com/magento/magento2/pull/25034)*. [GitHub-25033](https://github.com/magento/magento2/issues/25033)
 
+<!--- ENGCOM-5832-->
+
+*  A missing newline  has  been added to the end of `var/report` report output, which has improved the automatic parsing of log files. *Fix submitted by Mathew Beane in pull request [24559](https://github.com/magento/magento2/pull/24559)*. [GitHub-24588](https://github.com/magento/magento2/issues/24588)
+
+<!--- ENGCOM-5590-->
+
+*  Magento no longer throws a console error when you click **Select All** on the **Newsletter Problems Report** page. *Fix submitted by Eden Duong in pull request [24104](https://github.com/magento/magento2/pull/24104)*. [GitHub-24102](https://github.com/magento/magento2/issues/24102)
+
 ### Reviews
 
 <!--- ENGCOM-5737-->
 
 *  The **Reset** button now works as expected on the Admin **Marketing** > **All Reviews** > **New Review** page. *Fix submitted by Shankar Konar in pull request [24318](https://github.com/magento/magento2/pull/24318)*. [GitHub-23990](https://github.com/magento/magento2/issues/23990)
+
+<!--- MC-17630-->
+
+*  **Select All** on the coupon list of the Manage Coupon Codes page now works as expected.
+
+<!--- ENGCOM-5774-->
+
+*  Magento no longer displays the **Add New Review** button on the **Admin** > **Marketing** > **All Reviews** > **New Review** page if no product is present.  *Fix submitted by Eden Duong in pull request [24399](https://github.com/magento/magento2/pull/24399)*. [GitHub-24310](https://github.com/magento/magento2/issues/24310)
+
+<!--- ENGCOM-6113-->
+
+*  The product detail page now scrolls as expected when you click on the Review or Add Your Review link. Previously, the page did not scroll, and Magento displayed a JavaScript error.  *Fix submitted by Gaurav Agarwal in pull request [25051](https://github.com/magento/magento2/pull/25051)*. [GitHub-25039](https://github.com/magento/magento2/issues/25039)
+
+### Return Merchandise Authorizations (RMA)
+
+<!--- MC-17926-->
+
+*  Using the `DELETE V1/returns/:id` call now deletes an RMA as expected.
+
+<!--- MC-19769-->
+
+*  RMAs for the disabled child products of a configurable product are no longer available in the storefront.
+
+<!--- MC-19762-->
+
+*  The Returns tab on a customer’s **Account** > **My Orders** page now behaves as expected. Previously, if a customer clicked on the Refunds tab on her **Account** > **My Orders** page, the Returns tab disappeared.
+
+<!--- MC-17939-->
+
+*  RMAs created with the the `POST V1/returns/` call now render correctly on the Admin.
+
+<!--- MC-19857-->
+
+*  The amount displayed in the **Remaining Amount** field of **Admin** > **Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** is now accurate. Previously, this amount corresponded to the the total of items that were originally bought but not the actual remaining amount.
+
+<!--- MC-19258-->
+
+*  Magento no longer sends duplicate emails to a customer when an RMA return is created.
+
+<!--- MC-19433-->
+
+*  The **Print** button on the Admin  **Return** > **Packages** list now works as expected.
+
+<!--- MC-20986-->
+
+*  You can now create an RMA from the storefront when a product is listed as out-of-stock.
 
 ### Sales
 
@@ -1158,11 +1320,67 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Merchants can now manage Catalog Rule activity on the  Catalog Rule page using the **Is Active** toggle button.
 
+<!--- MC-19407-->
+
+*  Magento no longer adds a new row to the `changelog` table whenever an EAV attribute is updated and its value remains unchanged.
+
+<!--- MC-18731-->
+
+*  Preview staging now works when the store code is added to the URL as expected. Previously, the requested timestamp was not added to `href` links on the page, and Magento could not determine which version to display.
+
+<!--- MC-19270-->
+
+*  Media gallery image positions are no longer overridden by a scheduled change.
+
+<!--- MC-19765-->
+
+*  CMS pages no longer stores the wrong date in the `custom_theme_from`  field  when locale and country is set to locales other than `en_US`.
+
+<!--- MC-17653-->
+
+*  You can now schedule updates for Catalog Price rules when applied to a `date` attribute. Previously, Magento threw an error.
+
+<!--- MC-19013-->
+
+*  Administrators with the appropriate credentials can now schedule updates from a non-default site in a multi-site deployment. Previously, Magento did not create an update and displayed this error:  `Something went wrong while saving the Magento\Catalog\Api\Data\ProductInterface`.
+
+<!--- MC-21903-->
+
+*  Product updates can now be successfully scheduled when Magento is installed with DB prefixes set.
+
+### Store
+
+<!--- MC-20394-->
+
+*  Redirect URLs  are no longer truncated  after three slashes.
+
+<!--- MC-19306-->
+
+*  Magento installation no longer fails with pre-defined stores in `app/etc/config.php` due to MySQL locks.
+
+<!--- MC-19585-->
+
+*  CMS pages no longer redirect to the home page of the original store when you change store view in a multi-store deployment.
+
 ### Swatches
 
 <!--- ENGCOM-5716-->
 
 *  Magento now displays selected swatch options for a configurable product when you edit that product from the shopping cart. *Fix submitted by Rani Priya in pull request [24308](https://github.com/magento/magento2/pull/24308)*. [GitHub-24306](https://github.com/magento/magento2/issues/24306)
+
+<!--- MC-19739-->
+
+*  You can now add options values to text swatch and visual swatch attributes using REST.
+
+<!--- MC-19669-->
+
+*  Magento now loads product images as expected when you switch between product variations (for example, size or color).
+
+### Target Rule
+
+<!--- MC-21900-->
+
+*  The `Product Category does not contain` target rule condition now works as expected.
 
 ### Tax
 
@@ -1178,11 +1396,19 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento now correctly calculates VAT for products when you add them to the cart. *Fix submitted by Bruno Roeder in pull request [24737](https://github.com/magento/magento2/pull/24737)*. [GitHub-23116](https://github.com/magento/magento2/issues/23116)
 
+<!--- MC-17014-->
+
+*  User can now successfully save a fixed product tax  (FPT) to a product that is assigned to a specific website.
+
 ### Translation and locales
 
 <!--- ENGCOM-5972-->
 
 *  Serbian Latin language support has been added to this release, and merchants can now distinguish between Latin and Cyrillic Serbian locales. Locales are now identified as Serbian (Cyrillic, Serbia) and Serbian (Latin, Serbia). *Fix submitted by Bartłomiej Szubert in pull request [22293](https://github.com/magento/magento2/pull/22293)*. [GitHub-12256](https://github.com/magento/magento2/issues/12256), [GitHub-13263](https://github.com/magento/magento2/issues/13263)
+
+<!--- MC-20118-->
+
+*  The Arabic Date Selector now shows the date in the correct format. Previously, when the site was set to Arabic (Saudi Arabia), the storefront date selector always displayed a date of "`GGGG`.
 
 ### UI
 
@@ -1292,7 +1518,21 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  URL rewrites are no longer lost if an exception is thrown or a deadlock occurs during URL regeneration. Previously, when exceptions or deadlocks occurred, URLs were not regenerated, and Magento displayed 404 pages. *Fix submitted by Stanislav Ilnytskyi in pull request [23430](https://github.com/magento/magento2/pull/23430)*. [GitHub-23429](https://github.com/magento/magento2/issues/23429)
 
+### Visual Merchandiser
+
+<!--- MC-18672-->
+
+*  You can now change the sort order of products across pages for a multi-page category list. Previously, you could change the sort order for categories on one page only.
+
+<!--- MC-21033-->
+
+*  You can now sort products in a category by special prices (either ascending or descending order). Previously, when you tried to sort by special price, Magento displayed an informative error and directed you to the dashboard.
+
 ### Web API framework
+
+<!--- MC-19432-->
+
+*  When you use the default REST API to add a product to the cart but the payload is missing the `quote_id` parameter,  Magento now displays a `400 Bad Request` as expected. Previously, Magento generated a `404 Not Found` error.
 
 <!--- ENGCOM-5574-->
 
@@ -1301,6 +1541,14 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-5987-->
 
 *  You can now set expiration times for REST API oAuth tokens in minutes and seconds. Previously, expiration times were defined in hours only. *Fix submitted by Ivan Koliadynskyy in pull request [24769](https://github.com/magento/magento2/pull/24769)*. [GitHub-24716](https://github.com/magento/magento2/issues/24716)
+
+<!--- ENGCOM-5821-->
+
+*  The GET V1/attributeMetadata/customerAddress/attribute/prefix and GET V1/attributeMetadata/customerAddress/attribute/suffix calls now return options as expected. *Fix submitted by Eden Duong in pull request [24519](https://github.com/magento/magento2/pull/24519)*. [GitHub-24518](https://github.com/magento/magento2/issues/24518)
+
+<!--- ENGCOM-5610-->
+
+*  The Swagger schema generator no longer fails when a GET endpoint has parameters that contain extension attributes. *Fix submitted by Oleksandr Kravchuk in pull request [24117](https://github.com/magento/magento2/pull/24117)*. [GitHub-24116](https://github.com/magento/magento2/issues/24116)
 
 ### Wishlist
 
