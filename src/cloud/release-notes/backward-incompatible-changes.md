@@ -46,27 +46,34 @@ In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` 
 
 ### Cloud Docker changes
 
-- PHP 7.1 is now the minimum version required to work with {{site.data.var.mcd}}. 
+#### Minimum PHP version increased
+Change: PHP 7.1 is now the minimum version required to work with {{site.data.var.mcd}}. 
 
-    Workaround: Upgrade to PHP 7.1 or higher on your host machine.
+Workaround: Upgrade to PHP 7.1 or higher on your host machine.
 
-- The command `bin/docker` has been renamed to `bin/magento-docker`.
+#### Renamed bin/docker
+Change: The command `bin/docker` has been renamed to `bin/magento-docker`.
 
-    Workaround: Replace instances of `bin/docker` with `bin/magento-docker` in your scripts and commands.
+Workaround: Replace instances of `bin/docker` with `bin/magento-docker` in your scripts and commands.
 
-- `bin/magento-docker` commands now remove the containers they create after for one-off commands. 
+#### Docker command change
+Change: `bin/magento-docker` commands now remove the containers they create after for one-off commands. 
     
-    Workaround: No workaround is needed unless you relied on the leftover containers created after using `magento-docker` commands. If you did use those leftover containers, you can instead run the commands manually using `docker-compose run`.
+Workaround: No workaround is needed unless you relied on the leftover containers created after using `magento-docker` commands. If you did use those leftover containers, you can instead run the commands manually using `docker-compose run`.
 
-- `*.sql`, `*.gz`, `*.zip`, and `*.bz2` files are no longer synced when using docker-sync or mutagen.
+#### Synced file change
+Change: `*.sql`, `*.gz`, `*.zip`, and `*.bz2` files are no longer synced when using docker-sync or mutagen.
 
-    Workaround: Usually, these extensions are used for backups that don't need to be synced. If you need to sync the file anyway, rename the file so it doesn't end with `.sql`, `.gz`, `.zip`, or `.bz2`.
+Workaround: Usually, these extensions are used for backups that don't need to be synced. If you need to sync the file anyway, rename the file so it doesn't end with `.sql`, `.gz`, `.zip`, or `.bz2`.
 
-- The database container now stores database files in a Docker volume called `magento-db`. This means the database is no longer automatically deleted when running `docker-compose down`.
+#### magento-db volume
+Change: The database container now stores database files in a Docker volume called `magento-db`. This means the database is no longer automatically deleted when running `docker-compose down`.
 
-    Workaround: You can remove all associated volumes when shutting down containers by with `docker-compose -v`. Alternatively, you can manually remove the volume by running `docker volume rm magento-db`.
+Workaround: You can remove all associated volumes when shutting down containers by with `docker-compose -v`. Alternatively, you can manually remove the volume by running `docker volume rm magento-db`.
 
-- The `cloud-deploy` command no longer runs post deploy hooks. This has been moved to a separate command called `cloud-post-deploy`.
 
-    Workaround: After running `bin/magento-docker ece-deploy`, run `bin/magento-docker ece-post-deploy`. Alternatively, if you're using `docker-compose` commands directly, run `docker-compose run deploy cloud-post-deploy` after the deploy command.
+#### Post-deploy separated
+Change: The `cloud-deploy` command no longer runs post deploy hooks. This has been moved to a separate command called `cloud-post-deploy`.
+
+Workaround: After running `bin/magento-docker ece-deploy`, run `bin/magento-docker ece-post-deploy`. Alternatively, if you're using `docker-compose` commands directly, run `docker-compose run deploy cloud-post-deploy` after the deploy command.
 
