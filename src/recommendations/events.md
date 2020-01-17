@@ -1,9 +1,9 @@
 ---
 group: product-recommendations
-title: DataServices Events
+title: Recommendation Events
 ---
 
-The following table lists the events the DataServices module tracks.
+When you deploy the `product-recommendations` module, the module tracks the following user events, which enables behavioral data collection. This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information.
 
 Event |Description
 --- | ---

@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Configuring Product Recommendations
+title: Configuring Recommendations
 ---
 
 After you install the `product-recommendations` module you need to configure the catalog SaaS export module, set the environment, and specify the SaaS environment ID.

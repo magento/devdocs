@@ -15,8 +15,10 @@ Could potentially use “most popular” if you generate enough clicks on storef
 Confirm that behavioral events are being sent
 Without snowplow addon
 Confirm ds.js or ds.min.js is loaded on the page
+Debug network requests
 ```
 
+we said this...but how can we confirm without chrome extension?
 
 After you configure your storefront, verify that the behavioral data is being sent to Magento:
 

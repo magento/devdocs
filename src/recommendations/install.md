@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Installing and Configuring Recommendations
+title: Installing Recommendations
 ---
 
 Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data, they result in highly engaging, relevant, and personalized experiences for the shopper.
@@ -15,7 +15,7 @@ For the Early Access Program, deploying recommendations to your site requires th
 
   The `product-recommendations` module pulls in the following extensions:
   
-  * **module-data-services** - This module enables behavioral data collection. This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each store. This unlocks recommendation types like "Customers who viewed this, also viewed...", which adjust with shopper behavior over time.
+  * **module-data-services** - This module enables behavioral data collection by tracking [user events on the page]{{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each store. This unlocks recommendation types like "Customers who viewed this, also viewed...", which adjust with shopper behavior over time.
 
   * **saas-export** - This module syncs catalog data. This type of data provides product information to the Recommendations service so it can accurately return product names, pricing, images, URLs, and other attributes. It is also aware of inventory and configuration changes that impact product visibility.
 

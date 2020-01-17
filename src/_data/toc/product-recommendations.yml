@@ -1,0 +1,30 @@
+label: Product Recommendations
+versionless: true
+children:
+- label: What are Product Recommendations
+  url: /recommendations/install.html
+  versionless: true
+
+- label: Configuring Product Recommendations
+  url: /recommendations/configure.html
+  versionless: true
+
+- label: Product Recommendation Events
+  url: /recommendations/events.html
+  versionless: true
+
+- label: Using the Recommendations SDK
+  url: /recommendations/recs-api.html
+  versionless: true
+
+- label: Testing Recommendations
+  url: /recommendations/testing.html
+  versionless: true
+
+- label: Troubleshooting Recommendations
+  url: /recommendations/troubleshooting.html
+  versionless: true
+
+- label: Contacting Support
+  url: /recommendations/support.html
+  versionless: true

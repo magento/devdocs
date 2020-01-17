@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Send Feedback to Magento
+title: Sending Feedback to Magento
 ---
 
 As we continue to evolve this technology and ensure you are successful in implementing product recommendations, it is critical that we address any issues you encounter and plan for any feature requests.
