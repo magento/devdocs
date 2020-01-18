@@ -304,7 +304,6 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
       -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-manage-database.html#import-a-database-dump). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
 -  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
