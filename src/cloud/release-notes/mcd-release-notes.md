@@ -27,8 +27,6 @@ The release notes include:
 -  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
 
 -  {:.fix}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container).<!--MAGECLOUD-3978-->
-
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-manage-database.html#import-a-database-dump). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
    
 -  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
 
