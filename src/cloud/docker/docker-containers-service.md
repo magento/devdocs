@@ -162,7 +162,7 @@ web | [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos
 
 The Web container uses nginx to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
 
-The nginx configuration for this container is the standard Magento [nginx config]. This can be changed by mounting a new config using a volume.
+The NGINX configuration for this container is the standard Magento [nginx config]. This can be changed by mounting a new config using a volume.
 
 ```yaml
   web:
