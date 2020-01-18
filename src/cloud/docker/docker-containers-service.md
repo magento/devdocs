@@ -84,7 +84,7 @@ You can load custom extensions in the FPM configuration by adding the configurat
      - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
 ```
 
-For additional information about configuring the php environment, see the [XDebug for Docker documentation.
+For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 
 ## RabbitMQ container
 
