@@ -58,13 +58,13 @@ Taking into account that there are at least two valid business cases when to lau
 
 Use these interfaces to create your own SSA:
 
-*  [InventoryRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php) requests products for a given quantity and stock ID
-*  [ItemRequestInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU
-*  [SourceSelectionServiceInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php) returns the source selection algorithm result for the specified `inventoryRequest`
-*  [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
-*  [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
-*  [SourceSelectionInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
-*  [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for `\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
+*  [InventoryRequestInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php) requests products for a given quantity and stock ID
+*  [ItemRequestInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php) represents the requested quantity for a specific SKU
+*  [SourceSelectionServiceInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php) returns the source selection algorithm result for the specified `inventoryRequest`
+*  [GetSourceSelectionAlgorithmListInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
+*  [SourceSelectionAlgorithmInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
+*  [SourceSelectionInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
+*  [GetDistanceInterface](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for `\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
 
 ## Develop a custom algorithm
 
@@ -120,7 +120,7 @@ class MinimalDeliveryCostAlgorithm implements SourceSelectionInterface
 
 ### Create a `InventoryRequest` factory for quotes  (optional)
 
-Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines the sources to use to fulfill the order at the time a shipment is created.
+Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento/inventory/blob/1.1.3/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines the sources to use to fulfill the order at the time a shipment is created.
 
 ```php?start_inline=1
 class InventoryRequestFromOrderFactory
