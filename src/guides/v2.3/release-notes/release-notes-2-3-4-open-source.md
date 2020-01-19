@@ -1108,6 +1108,58 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Searching on categories from the New Product page now works as expected when you enter a search string that does not match an existing category. Previously, Magento displayed incorrect results instead of indicating zero search results. *Fix submitted by Eden Duong in pull request [23698](https://github.com/magento/magento2/pull/23698)*. [GitHub-23697](https://github.com/magento/magento2/issues/23697)
 
+<!--- MC-20381-->
+
+*  Elasticsearch now successfully finds products on the storefront using the  values of dropdown attributes.
+
+<!--- MC-19906-->
+
+*  Improved how Elasticsearch handles search queries that include words that contain diacritics as well as spellings of those words that are entered without the correct diacritics.
+
+<!--- MC-17947-->
+
+*  You can now search the **Sales** > **Orders** list by email address.
+
+<!--- MC-19849-->
+
+*  Running `bin/magento indexer:reindex catalogsearch_fulltext` no longer results in the deletion of an index-related database table.
+
+<!--- MC-19537-->
+
+*  Elasticsearch results now display all products as expected when the **Configuration** > **Catalog** > **Storefront** > **Allow All Products Per Page** is set to **Yes**. Previously, Magento displayed this error: `We can't find products matching the selection`.
+
+<!--- MC-19527-->
+
+*  Category pages now work as expected when Price Navigation Step Calculation is set to **Automatic (equalize product counts)**.
+
+<!--- MC-20250-->
+
+*  Magento no longer throws an exception when you initiate an advanced search using product name and SKU.
+
+<!--- MC-21962-->
+
+*  The pagination of multipage search results now works are expected. Previously, if you navigated away from the first page of search results, Magento displayed this error: We can't find products matching the selection.
+
+<!--- MC-15759-->
+
+*  Elasticsearch now successfully handles search queries that contain a question mark followed by a semicolon (?;).
+
+<!--- ENGCOM-5587-->
+
+*  Validation logic has been added to the **Number of results** and **Number of Uses** fields of **Admin** > **Marketing** > ** Search Terms**.  *Fix submitted by Eden Duong in pull request [24101](https://github.com/magento/magento2/pull/24101)*. [GitHub-24100](https://github.com/magento/magento2/issues/24100)
+
+<!--- ENGCOM-5596-->
+
+*  Magento no longer logs a warning when a catalog search query contains multiple custom option values. *Fix submitted by Eden Duong in pull request [23687](https://github.com/magento/magento2/pull/23687)*. [GitHub-23557](https://github.com/magento/magento2/issues/23557)
+
+<!--- ENGCOM-5662-->
+
+*  The undefined variable in the getStoreValuesForForm method has been defined. *Fix submitted by Ronak Parmar in pull request [23059](https://github.com/magento/magento2/pull/23059)*. [GitHub-23055](https://github.com/magento/magento2/issues/23055)
+
+<!--- ENGCOM-6106-->
+
+*  Elasticsearch 6.x now works only with Elasticsearch 6.x clients on the storefront. *Fix submitted by Pavel Bystritsky in pull request [24974](https://github.com/magento/magento2/pull/24974)*. [GitHub-24781](https://github.com/magento/magento2/issues/24781)
+
 ### Shipping
 
 <!--- ENGCOM-5215-->
@@ -1121,6 +1173,50 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-5993-->
 
 *  The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
+
+<!--- MC-22114-->
+
+*  UPS Mail Innovations tracking now works as expected. Previously, Magento displayed this error: `Tracking information is currently not available. Please contact us for more information or email us at support@example.com`.
+
+<!--- MC-21738-->
+
+*  Cart Price rules now work as expected for orders that are shipped to multiple addresses.
+
+<!--- MC-18366-->
+
+*  Shipping notification emails sent to customers now contain a link to order tracking.
+
+<!--- MC-16684-->
+
+*  Shipping calculations now load correctly from the shopping cart.
+
+<!--- MC-19105-->
+
+*  You can now successfully re-order a configurable product when shipping the order to multiple addresses. Previously, Magento duplicated this product during re-order.
+
+<!--- MC-18519-->
+
+*  Magento now displays the correct cost for shipping in the shopping cart when you return to the cart from the checkout page for an order being shipped to multiple addresses.
+
+<!--- MC-18215-->
+
+*  You can now create a shipping label as expected. Previously, Magento displayed this error: `Cannot do shipment for the order","Invalid security or form key. Please refresh the page`.
+
+<!--- MAGETWO-99043-->
+
+*  Magento now loads shipping methods as expected in the checkout workflow when running in Internet Explorer 11.x. Previously, when you tried to load shipping methods in the checkout workflow, Magento did not load these methods and displayed this error: `SCRIPT438: Object doesn't support property or method entries`. [GitHub-22119](https://github.com/magento/magento2/issues/22119)
+
+<!--- ENGCOM-5691-->
+
+*  Magento no longer displays **Shipping Method: undefined - Fixed** on the final page of the checkout workflow when a shipping method with an undefined or empty  method name is selected.  *Fix submitted by wbeltranc in pull request [24265](https://github.com/magento/magento2/pull/24265)*. [GitHub-19853](https://github.com/magento/magento2/issues/19853)
+
+<!--- ENGCOM-5674-->
+
+*  New order pages for orders that contain only virtual products no longer display a Shipping and Handling total.  *Fix submitted by Eden Duong in pull request [24213](https://github.com/magento/magento2/pull/24213)*. [GitHub-24212](https://github.com/magento/magento2/issues/24212)
+
+<!--- ENGCOM-5703-->
+
+*  Validation logic has been added to the **Sort Order** field of **Admin** > **Store** > **Configuration** > **Sales**  >  **Shipping methods**.  *Fix submitted by Eden Duong in pull request [24296](https://github.com/magento/magento2/pull/24296)*. [GitHub-24295](https://github.com/magento/magento2/issues/24295)
 
 ### Store
 
@@ -1274,6 +1370,70 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The tooltip associated with the **Product Additional Options** field for the order on the customer dashboard is now fully visible. *Fix submitted by Torben Höhn in pull request [25393](https://github.com/magento/magento2/pull/25393)*. [GitHub-25392](https://github.com/magento/magento2/issues/25392)
 
+<!--- MC-17003-->
+
+*  The Credit Memo page now has an **Update Totals** button as expected.
+
+<!--- MC-18348-->
+
+*  You can now enable the  **No layout updates** setting for categories when the Page Builder module is enabled.
+
+<!--- MC-20108-->
+
+*  You can now filter orders by date in stores running the `en_GB` locale.
+
+<!--- MC-18763-->
+
+*  Checkboxes that occur within widgets are now  fully clickable in the Admin.
+
+<!--- MC-19866-->
+
+*  Redundant attributes that were present in the CMS widget body have been removed.
+
+<!--- MC-17149-->
+
+*  UI components configuration has been corrected to eliminate potential for overlapping text labels.
+
+<!--- MC-19783-->
+
+*  The weight attribute label is now displayed for attributes in attribute sets.
+
+<!--- ENGCOM-5459-->
+
+*  Corrected issues with the **Admin** > **Marketing** > **User Contents** > **Reviews** **Created** date display. *Fix submitted by Syed Imtiyaz Hasan in pull request [23699](https://github.com/magento/magento2/pull/23699)*. [GitHub-23575](https://github.com/magento/magento2/issues/23575)
+
+<!--- ENGCOM-5608-->
+
+*  The current tab is now marked as active as expected in the customer account sidebar. *Fix submitted by Eden Duong in pull request [24078](https://github.com/magento/magento2/pull/24078)*. [GitHub-24068](https://github.com/magento/magento2/issues/24068)
+
+<!--- ENGCOM-5524-->
+
+*  `bin/magento app:config:import` and `bin/magento setup:upgrade` no longer fail due to a `TEXT` field limitation from `flag_data` in the flag table.  The `flag_data` field has been increased to `MEDIUMTEXT` (accepting 16MB).  *Fix submitted by Andreas Schrammel in pull request [13580](https://github.com/magento/magento2/pull/13580)*. [GitHub-11657](https://github.com/magento/magento2/issues/11657)
+
+<!--- ENGCOM-5643-->
+
+*  The **Unselect all** text string is no longer appended to the `HTML` element of the Compare icon on the product details page when you click this icon.  *Fix submitted by Shankar Konar in pull request [23774](https://github.com/magento/magento2/pull/23774)*. [GitHub-23705](https://github.com/magento/magento2/issues/23705)
+
+<!--- ENGCOM-5589-->
+
+*  Clicking on the **Visibility** header on **Admin** > **Marketing** > **All Reviews** or **Pending Review** now disables the sort ability as expected.  *Fix submitted by Eden Duong in pull request [24106](https://github.com/magento/magento2/pull/24106)*. [GitHub-24105](https://github.com/magento/magento2/issues/24105)
+
+<!--- ENGCOM-5627-->
+
+*  The Action column is now the last column of the **Admin** > **Content** > **Configuration** grid. *Fix submitted by Eden Duong in pull request [24140](https://github.com/magento/magento2/pull/24140)*. [GitHub-24139](https://github.com/magento/magento2/issues/24139)
+
+<!--- ENGCOM-5647 5647 5665-->
+
+*  Validation logic has been added to the required fields on **Admin** > **Content** > **Widget** > **Add Widget**. *Fix submitted by Eden Duong in pull requests [24155](https://github.com/magento/magento2/pull/24155) and [24163](https://github.com/magento/magento2/pull/24163)*. [GitHub-24154](https://github.com/magento/magento2/issues/24154)
+
+<!--- ENGCOM-5614-->
+
+*  You can now perform bulk delete operations on widgets in **Admin** > **Content** > **Widgets**. *Fix submitted by Burlacu Vasilii in pull request [20765](https://github.com/magento/magento2/pull/20765)*. [GitHub-20764](https://github.com/magento/magento2/issues/20764)
+
+<!--- ENGCOM-5695-->
+
+*  The Admin navigation sidebar menu now have toggle functionality for opening and closing menu items.  *Fix submitted by Sudheer Kumar Gajjala in pull request [24211](https://github.com/magento/magento2/pull/24211)*. [GitHub-24210](https://github.com/magento/magento2/issues/24210)
+
 ### URL rewrites
 
 <!--- MC-19706-->
@@ -1283,6 +1443,22 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-5446-->
 
 *  URL rewrites are no longer lost if an exception is thrown or a deadlock occurs during URL regeneration. Previously, when exceptions or deadlocks occurred, URLs were not regenerated, and Magento displayed 404 pages. *Fix submitted by Stanislav Ilnytskyi in pull request [23430](https://github.com/magento/magento2/pull/23430)*. [GitHub-23429](https://github.com/magento/magento2/issues/23429)
+
+<!--- MC-18561-->
+
+*  CMS pages now redirect correctly after you change the store view.
+
+<!--- MC-18368-->
+
+*  A category schedule update no longer unchecks the **use default value** setting on the URL key for the store view.
+
+<!--- MC-21737-->
+
+*  The performance of MySQL queries on url_rewrite operations  has been improved. Previously, Magento ran a full scan of the table, and the query was very slow.
+
+<!--- MC-21716-->
+
+*  `CatalogURLRewrite` no longer generates an extra product URL during product creation.
 
 ### Web API framework
 
@@ -1316,11 +1492,31 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Verification logic has been added to the wishlist so that it reflects accurate stock status of listed products. *Fix submitted by Rus0 in pull request [24300](https://github.com/magento/magento2/pull/24300)*. [GitHub-21519](https://github.com/magento/magento2/issues/21519)
 
+<!--- MC-19950-->
+
+*  Magento no longer displays a JavaScript error when you try to remove an item from a wishlist. Previously, Magento removed the Item from the wishlist  but displayed a JavaScript error in the console.
+
+<!--- MC-19060-->
+
+*  Wishlist SKU counts now reflect the actual products listed. Previously, the SKU count was incorrect after a product was disabled.
+
+<!--- MC-18196-->
+
+*  Products that are deleted from a wishlist from the Admin are now deleted from the storefront wishlist.
+
 ### WYSIWYG
 
 <!--- ENGCOM-5727-->
 
 *  The Admin WYSIWYG editor no longer hangs when an image upload dialog opens. Previously, Magento displayed the spinner cursor until you refreshed the page. *Fix submitted by Pavel Bystritsky in pull request [24333](https://github.com/magento/magento2/pull/24333)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
+
+<!--- MC-18709-->
+
+*  You can now open the Media Gallery. Without error. Previously, when you tried to open the Media gallery, Magento displayed the spinner icon on Media Gallery popup.
+
+<!--- MC-19062-->
+
+*  You can now upload a video from the WYSIWYG editor.
 
 ## Community contributions
 
