@@ -594,7 +594,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5573-->
 
-*  Enabling **Flush Catalog Images Cache** on **System** > **Cache Management** now clears all cached image files from both the filesystem and database. Previously, Magnto removed images from the filesystem only. *Fix submitted by Wharton in pull request [24088](https://github.com/magento/magento2/pull/24088)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
+*  Enabling **Flush Catalog Images Cache** on **System** > **Cache Management** now clears all cached image files from both the filesystem and database. Previously, Magnto removed images from the filesystem only. *Fix submitted by Wgwharton in pull request [24088](https://github.com/magento/magento2/pull/24088)*. [GitHub-23516](https://github.com/magento/magento2/issues/23516)
 
 ### Declarative schema
 
@@ -1270,7 +1270,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-20118-->
 
-*  The Arabic Date Selector now shows the date in the correct format. Previously, when the site was set to Arabic (Saudi Arabia), the storefront date selector always displayed a date of "`GGGG`.
+*  The Arabic Date Selector now shows the date in the correct format. Previously, when the site was set to Arabic (Saudi Arabia), the storefront date selector always displayed a date of `GGGG`.
+
+<!--- ENGCOM-5663-->
+
+*  The country names on the checkout, shipping, and billing address forms are now translatable. *Fix submitted by Bartłomiej Szubert in pull request [24179](https://github.com/magento/magento2/pull/24179)*. [GitHub-22956](https://github.com/magento/magento2/issues/22956)
 
 ### UI
 
@@ -1432,7 +1436,15 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5695-->
 
-*  The Admin navigation sidebar menu now have toggle functionality for opening and closing menu items.  *Fix submitted by Sudheer Kumar Gajjala in pull request [24211](https://github.com/magento/magento2/pull/24211)*. [GitHub-24210](https://github.com/magento/magento2/issues/24210)
+*  The Admin navigation sidebar menu now has toggle functionality for opening and closing menu items.  *Fix submitted by Sudheer Kumar Gajjala in pull request [24211](https://github.com/magento/magento2/pull/24211)*. [GitHub-24210](https://github.com/magento/magento2/issues/24210)
+
+<!--- ENGCOM-5607-->
+
+*  The TinyMCE editor now saves content with inline <style> tags as expected. *Fix submitted by gwharton in pull request [24114](https://github.com/magento/magento2/pull/24114)*. [GitHub-22867](https://github.com/magento/magento2/issues/22867)
+
+<!--- ENGCOM-5570-->
+
+*  Merchants can now use virtual configurable variants to assign a weight to a virtual product. *Fix submitted by Arushi Bansal in pull request [24013](https://github.com/magento/magento2/pull/24013)*. [GitHub-23977](https://github.com/magento/magento2/issues/23977)
 
 ### URL rewrites
 
