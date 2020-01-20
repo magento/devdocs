@@ -12,22 +12,11 @@ Magento Commerce 2.2.11 offers platform upgrades and substantial security change
 
 Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.2 technology stack requirements](https://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html) for information about supported versions.
 
+### Security enhancements
 
-### Platform upgrades
+Five security enhancements that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, two-factor authentication, use of a VPN, the use of a unique location rather than /admin, and good password hygiene.
 
-The following upgrades to core platform components boost platform security and support PCI compliance:
-
-### Substantial security enhancements
-
-This release includes the following security enhancements:
-
-#### Core payment methods integrations are now compliant with PSD2 regulations
-
-#### Security enhancements and fixes to core code
-
-### Infrastructure improvements
-
-This release contains 30 enhancements to core quality, which improve the quality of the Framework and these modules:
+With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for more information.
 
 ## Functional fixes
 
@@ -37,11 +26,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18720  -->
 
-*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content**  >  **Pages**.  Previously, Magento displayed this error: You cannot define a correlation namestore_tablemore than once.
+*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content**  >  **Pages**.  Previously, Magento displayed this error: `You cannot define a correlation namestore_tablemore than once`.
 
 <!--- MC-18903 -->
 
-*  The shopping cart that contains items no longer displays a subtotal and order total of zero when the **Clear Persistence on Sign Out** setting is disabled and the **Redirect Customer to Account Dashboard after Logging in** setting is enabled.
+*  A shopping cart that contains items no longer displays a subtotal and order total of zero when the **Clear Persistence on Sign Out** setting is disabled and the **Redirect Customer to Account Dashboard after Logging in** setting is enabled.
 
 ### CMS content
 
@@ -53,7 +42,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-19539  -->
 
-*  You can now add new options with new images to an existing  configurable product. Previously, when you clicked **Save**, Magento threw an error and did not save the new variations.
+*  You can now add new options with new images to an existing configurable product. Previously, when you clicked **Save**, Magento threw an error and did not save the new variations.
 
 <!--- MC-19672  -->
 
@@ -61,9 +50,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18809  -->
 
-*  Out-of-stock configurable product options are now listed as expected on the storefront when the **Display Out of Stock Products** setting is enabled on **Admin** > **Store** > **Configuration**  > **Inventory** > **Stock Options**.
+*  Out-of-stock configurable product options are now listed as expected on the storefront when the **Display Out of Stock Products** setting is enabled on **Admin** > **Store** > **Configuration** > **Inventory** > **Stock Options**.
 
-### Gift wrapping ee only
+### Gift wrapping
 
 <!--- MC-18147  -->
 
@@ -83,11 +72,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18201  -->
 
-*  The import process maintain custom option prices that were assigned to different websites and scope before import. Previously, after import, these custom option prices were set to the default scope values.
+*  The import process now maintains custom option prices that were assigned to different websites and scope before import. Previously, after import, these custom option prices were set to the default scope values.
 
 <!--- MC-18711  -->
 
-*  Magento now correctly processes product prices during export when the **All Store Views** scope is set. Previously, the logic for updating the price in custom options in non-default websites was missing when the **Catalog** > **Price** setting is set to **Website**.
+*  Magento now correctly processes product prices during export when the **All Store Views** scope is set. Previously, the logic for updating the price of custom options in non-default websites was missing when the **Catalog** > **Price** setting was set to **Website**.
 
 ### Indexing
 
@@ -111,23 +100,23 @@ Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Lif
 
 <!--- MC-18283  -->
 
-*  The Saved Credit Card Feature with Vault feature nows displays accurate card information in the order information page as expected for orders paid for with Payflow Pro.
+*  The Saved Credit Card Feature with Vault feature now displays accurate card information in the order information page as expected for orders paid for with Payflow Pro.
 
 ### Persistent
 
 <!--- MC-19019  -->
 
-*  Guest users can now checkout after persistent shopping cart has been disabled. Previously, Magento displayed this error: `No cart with such entityId=0`.
+*  Guest users can now check out after persistent shopping cart has been disabled. Previously, Magento displayed this error: `No cart with such entityId=0`.
 
 <!--- MC-17137  -->
 
 *  Magento no longer creates a persistent cart session for logged-in users when the persistent cart feature has been disabled. Previously, Magento did not empty shopping carts for users when the user logged out.
 
-### RMA ee only
+### RMA (Return Merchandise Authorization)
 
 <!--- MC-19856  -->
 
-*  The amount displayed in the **Remaining Amount** field of **Admin** > **Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** is now accurate. Previously, this amount corresponded to the the total of items that were originally bought but not the actual remaining amount.
+*  The amount displayed in the **Remaining Amount** field of **Admin** > **Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** is now accurate. Previously, this amount corresponded to the total of items that were originally bought but not the actual remaining amount.
 
 <!--- MC-18604  -->
 
