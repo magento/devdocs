@@ -153,5 +153,5 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
    -  For Pro, use the following command with db, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
 
    ```bash
-   mysql -h<db> -p<number> -u<username> -p<password>
+   mysql -h<db> -P<number> -u<username> -p<password>
    ```
