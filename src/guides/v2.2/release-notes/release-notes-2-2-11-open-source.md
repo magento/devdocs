@@ -4,6 +4,7 @@ group: release-notes
 title: Magento Open Source 2.2.11 Release Notes
 
 ---
+**This release (Magento 2.2.11) marks the final supported software release for Magento version 2.2. Magento 2.2 will no longer receive security updates or product quality fixes now that its support window has expired**.
 
 Magento Open Source 2.2.11 offers platform upgrades and substantial security changes. This release includes 24 functional fixes and enhancements to the core product and 30 security enhancements.
 

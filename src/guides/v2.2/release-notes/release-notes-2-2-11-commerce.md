@@ -4,6 +4,8 @@ title: Magento Commerce 2.2.11 Release Notes
 
 ---
 
+**This release (Magento 2.2.11) marks the final supported software release for Magento version 2.2. Magento 2.2 will no longer receive security updates or product quality fixes now that its support window has expired**.
+
 Magento Commerce 2.2.11 offers platform upgrades and substantial security changes. This release includes 29 functional fixes and enhancements to the core product and several security enhancements.
 
 Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP.
