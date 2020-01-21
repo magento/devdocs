@@ -54,6 +54,32 @@ Note that you can remove Varnish from the configuration, in which case the traff
 
 You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
 
+## Sharing Magento Cloud project data
+
+When you launch the {{site.data.var.ece}} project locally in a Docker environment, the default project configuration sets up the following volumes:
+
+```text
+magento-var
+magento-app-etc
+magento-pub-media
+magento-pub-static
+```
+
+You can use these volumes to interact with the shared writeable mount directories for your Magento Cloud project which are configured by default in the `.magento.app.yaml` file.
+
+```yaml
+ # The mounts that will be performed when the package is deployed.
+mounts:
+    "var": "shared:files/var"
+    "app/etc": "shared:files/etc"
+    "pub/media": "shared:files/media"
+    "pub/static": "shared:files/static"
+```
+
+You can customize this configuration by updating the [`mounts`][mount-configuration] section in the `magento.app.yaml` file.
+
+### File synchronization
+
 Additionally, you can share data into the containers using file synchronization. See the [File synchronization] and [Developer Mode] documentation.
 
 ## Container Volumes
@@ -111,3 +137,4 @@ Now you can see all requests that are passing through the TLS container and chec
 [tls-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container
 [varnish-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [web-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container
+[mount-configuration]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts
