@@ -369,6 +369,7 @@ To rename a column, delete the original column declaration and create a new one.
 ```xml
 onCreate="migrateDataFrom(entity_id)"
 ```
+
  {:.bs-callout-info}
 When renaming a column, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
