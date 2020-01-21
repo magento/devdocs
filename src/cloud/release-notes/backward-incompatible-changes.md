@@ -57,7 +57,7 @@ Change: The command `bin/docker` has been renamed to `bin/magento-docker`.
 Workaround: Replace instances of `bin/docker` with `bin/magento-docker` in your scripts and commands.
 
 #### Docker command change
-Change: `bin/magento-docker` commands now remove the containers they create after for one-off commands. 
+Change: `bin/magento-docker` commands now remove the containers they create after one-off commands. 
     
 Workaround: No workaround is needed unless you relied on the leftover containers created after using `magento-docker` commands. If you did use those leftover containers, you can instead run the commands manually using `docker-compose run`.
 
