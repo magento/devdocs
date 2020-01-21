@@ -149,10 +149,10 @@ A handler is a class and method that processes a message. Magento has two ways t
 *  In the `<handler>` element of the module's `communication.xml` file
 *  In the `handler` attribute of the module's `queue_consumer.xml` file
 
-The following conditions determine these handlers are processed:
+The following conditions determine how these handlers are processed:
 
 *  If the consumer in `queue_consumer.xml` does not have a `consumerInstance` defined, then the system uses the default consumer: `Magento\Framework\MessageQueue\Consumer`. In this case, if the `<consumer>` element contains the `handler` attribute, then it will be used, and the `<handler>` element in `communication.xml` will be ignored.
-*  If the consumer in `queue_consumer.xml` has a `consumerInstance` defined, then the specific consumer implmentation defines how the `handler` is used.
+*  If the consumer in `queue_consumer.xml` has a `consumerInstance` defined, then the specific consumer implementation defines how the `handler` is used.
 
 Magento provides these consumers out-of-the-box:
 
@@ -167,7 +167,7 @@ Magento provides these consumers out-of-the-box:
 The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. It contains the following elements:
 
 *  `exchange`
-*  `exchange/binding`(optional)
+*  `exchange/binding` (optional)
 *  `exchange/arguments` (optional)
 *  `exchange/binding/arguments` (optional)
 
