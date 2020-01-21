@@ -22,7 +22,7 @@ The release notes include:
 
 -  {:.new}**Support for Magento application testing**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
 
--  {:.new}<!--MAGECLOUD-3248-->**Manage mounts and volumes for your project–**Added the ability manage mounts and volumes when launching a Docker environment for local developments. See [Sharing Magento Cloud project data].
+-  {:.new}<!--MAGECLOUD-3248-->**Manage mounts and volumes for your project–**Added the ability manage mounts and volumes when launching a Docker environment for local development. See [Sharing Magento Cloud project data].
 
 -  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
 
