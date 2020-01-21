@@ -27,7 +27,7 @@ The release notes include:
 -  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
 
 -  {:.fix}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers]({{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container).<!--MAGECLOUD-3978-->
-   
+
 -  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
 
 -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->

@@ -304,7 +304,6 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
       -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-
 -  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
 -  {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{ site.baseurl }}/cloud/env/variables-deploy.html#enable_google_analytics).
@@ -366,7 +365,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
    -  <!--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and read-write file systems to more closely emulate the Cloud file system. See [Configure Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
 
    -  <!--MAGECLOUD--2442-->**Redis service support**—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
-   
+
    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
    -  <!--MAGECLOUD--2358-->**Varnish service support**— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html).
