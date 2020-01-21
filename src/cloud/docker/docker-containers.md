@@ -56,7 +56,7 @@ You can share files easily between your machine and a Docker container by placin
 
 ## Sharing Magento Cloud project data
 
-When you launch the {{site.data.var.ece}} project locally in a Docker environment, the default project configuration sets up the following volumes:
+When you launch the {{site.data.var.ece}} project locally in a Docker environment, the default project configuration creates the following volumes:
 
 ```text
 magento-var
