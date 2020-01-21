@@ -5,12 +5,9 @@ title: Magento Open Source 2.2.11 Release Notes
 
 ---
 
-*Patch code and release notes published on January 28, 2020.*
-
 Magento Open Source 2.2.11 offers platform upgrades and substantial security changes. This release includes 24 functional fixes and enhancements to the core product and 30 security enhancements.
 
-Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP. See [Magento 2.2 technology stack requirements](https://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html) for information about supported versions. 
-
+Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Life) on December 1, 2019. We recommend updating your deployment to a supported version of PHP.
 
 ## Functional fixes
 
@@ -78,10 +75,6 @@ Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Lif
 
 ### Payment methods
 
-<!--- MC-18770  -->
-
-*  You can now place an order from the Admin using Authorize.net as the payment method. Previously, Magento did not place the order and displayed this message: `Transaction has been declined. Please try again later`.
-
 <!--- MC-19773  -->
 
 *  You can now successfully complete an order using Braintree with PayPal when Shipping Flat Rate is activated. Previously, Magento displayed an informative error.
@@ -141,10 +134,6 @@ Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Lif
 <!--- MC-18287  -->
 
 *  Products that are deleted from a wishlist from the Admin are now deleted from the storefront wishlist.
-
-### System requirements
-
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
 ### Installation and upgrade instructions
 
