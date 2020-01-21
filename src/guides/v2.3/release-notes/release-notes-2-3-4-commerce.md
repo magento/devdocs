@@ -134,8 +134,6 @@ New B2B features and improvements include the following:
 
 This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
 
-## Backward-incompatible Changes
-
 ## Fixed issues
 
 We have fixed hundreds of issues in the Magento 2.3.4 core code.
@@ -279,7 +277,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19837-->
 
-*  Magento now handles decimal values in product quantities as expected when adding a product to a requisition list. Previously, when you entered a decimal value as a product quantity, Magento added the item quantity to the the requisition list but omitted the decimal value.
+*  Magento now handles decimal values in product quantities as expected when adding a product to a requisition list. Previously, when you entered a decimal value as a product quantity, Magento added the item quantity to the requisition list but omitted the decimal value.
 
 <!--- MC-19836-->
 
@@ -827,16 +825,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Validation logic has been added to the **Send Payment Failed Email Copy To** field of  **Admin** > **Stores** > **Configuration** > **Sales** > **Checkout**. *Fix submitted by Eden Duong in pull request [24313](https://github.com/magento/magento2/pull/24313)*. [GitHub-24312](https://github.com/magento/magento2/issues/24312)
 
-### JavaScript framework
-
-<!--- ENGCOM-5994-->
-
-*  Unnecessary define checks have been removed from JavaScript modules that are used by requireJS. *Fix submitted by Bartłomiej Szubert in pull request [24833](https://github.com/magento/magento2/pull/24833)*. [GitHub-22747](https://github.com/magento/magento2/issues/22747)
-
-<!--- ENGCOM-5815-->
-
-*  Excluding minified JavaScript files from the generated JavaScript bundles using the `view.xml` file inside a theme now works as expected. Previously, you needed to explicitly provide both the non-minified filename and the minified filename. Only the exact filename as it exists on the filesystem is needed now. The other variant is handled automatically. This reduces the size of the generated JavaScript bundle files in default Magento themes and may also improve the JavaScript bundle file size in custom themes. *Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
-
 ### Frameworks
 
 <!--- MC-19686-->
@@ -862,6 +850,16 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-22153-->
 
 *  Magento no longer throws an error when you open an image from the product image gallery from the storefront product detail page. Previously, Magento returned this JavaScript error in the console: `TypeError: The expression cannot be converted to return the specified type`.
+
+### JavaScript framework
+
+<!--- ENGCOM-5994-->
+
+*  Unnecessary define checks have been removed from JavaScript modules that are used by requireJS. *Fix submitted by Bartłomiej Szubert in pull request [24833](https://github.com/magento/magento2/pull/24833)*. [GitHub-22747](https://github.com/magento/magento2/issues/22747)
+
+<!--- ENGCOM-5815-->
+
+*  Excluding minified JavaScript files from the generated JavaScript bundles using the `view.xml` file inside a theme now works as expected. Previously, you needed to explicitly provide both the non-minified filename and the minified filename. Only the exact filename as it exists on the filesystem is needed now. The other variant is handled automatically. This reduces the size of the generated JavaScript bundle files in default Magento themes and may also improve the JavaScript bundle file size in custom themes. *Fix submitted by Pieter Hoste in pull request [24506](https://github.com/magento/magento2/pull/24506)*. [GitHub-4506](https://github.com/magento/magento2/issues/4506), [GitHub-13558](https://github.com/magento/magento2/issues/13558), [GitHub-14357](https://github.com/magento/magento2/issues/14357)
 
 ### General fixes
 
