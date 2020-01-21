@@ -7,32 +7,33 @@ functional_areas:
   - Configuration
 ---
 
-{{ site.data.var.mcd }} builds out the docker-compose.yml file to the required specifications. Then, you use docker-compose to create the the container instances, build, deploy and then use the {{site.data.var.ee}} instance like usual.
+The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. You can customize the Docker containers available in the repository and add more as needed.
 
-All customized Docker containers are stored in the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker). You can customize these containers and add more containers as needed.
+Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the the container instances, build, and deploy the {{site.data.var.ee}} site.
 
-### Service versions
+## Service versions
 
-{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator (the `docker:build` command), you can override a default service version with the following optional parameters:
+Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `docker:build` command, you can override a default service version with the following optional parameters:
 
 | Name       | Service   | Key  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
-| [build]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#build-container) | Build Container |   |   | PHP Container, runs build process
-| [cron]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#cron-container) | Cron Jobs |   |   |  PHP Container, runs cron tasks
-| [deploy]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#deploy-container) | Deploy Container |   |  |  PHP Container, runs the deploy process
-| [db]({{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container) | MariaDB     | --db | 10.0, 10.1, 10.2 |  Standard database container
-| [elasticsearch]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | Elasticsearch | --es | 1.7, 2.4, 5.2, 6.5 |
-| [fpm]({{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container) | PHP FPM | --php | 7.0, 7.1, 7.2 |  Used for all incoming requests
-| [node]({{site.baseurl}}/cloud/docker/docker-containers-cli.html#node-container) | Node | --node | 6, 8, 10, 11 |  Used gulp or other NPM based commands
-| [rabbitmq]({{site.baseurl}}/cloud/docker/docker-containers-service.html#rabbitmq-container) | RabbitMQ | --rmq | 3.5, 3.7, 3.8 |
-| [redis]({{site.baseurl}}/cloud/docker/docker-containers-service.html#redis-container) | Redis     | --redis | 3.2, 4.0, 5.0 |   Standard redis container
-| [tls]({{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container) | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
-| [varnish]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container) | Varnish | --varnish | 4,6 |
-| [web]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container) | Nginx | --nginx | 1.9, latest |
+| [build] | Build Container |   |   | PHP Container, runs build process
+| [cron]| Cron Jobs |   |   |  PHP Container, runs cron tasks
+| [deploy] | Deploy Container |   |  |  PHP Container, runs the deploy process
+| [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
+| [elasticsearch] | Elasticsearch | `--es` | 1.7, 2.4, 5.2, 6.5 |
+| [fpm][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2, 7.3 |  Used for all incoming requests
+| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
+| [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
+| [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
+| [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
+| [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
+| [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
+| [web][web-container] | NGNIX | `--nginx` | 1.9, latest |
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 
-For example, the following command starts the Docker configuration generator for the developer mode and specifies PHP version 7.2:
+For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
 
 ```bash
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
@@ -47,13 +48,13 @@ Web requests to https://magento2.docker/ are handled by the Docker containers us
 1. Web (nginx)
 1. PHP-FPM
 
-Note that Varnish can be removed from the configuration, in which case the traffic passes from the TLS container to Nginx.
+Note that you can remove Varnish from the configuration, in which case the traffic passes directly from the TLS container to the Web container.
 
 ## Sharing data between host machine and container
 
 You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
 
-Additionally, you can share data into the containers using file synchronization. See the [File Synchronization] and [Developer Mode] documentation.
+Additionally, you can share data into the containers using file synchronization. See the [File synchronization] and [Developer Mode] documentation.
 
 ## Container Volumes
 
@@ -65,52 +66,48 @@ Docker volumes are used to maintain data throughout the lifecycle of the Docker 
 
 You do not interact with most of these volumes, which are used by the Docker containers and follow the docker-compose lifecycle. The only exception to this is the `magento-sync` directory which is an external volume used by the Mutagen application to transport data into the containers from the host operating system.
 
-You can remove all data, and rebuild a clean environment using the following command:
-```
- bin/docker down
- # this triggers a docker-compose command which removes volumes
- # docker-compose down -v
-```
-If you are using Mutagen for file synchronization, this command does not remove the `magento-sync` volume, which is an external volume that you have to create or delete manually.
+### Rebuild a clean environment
 
-If the `magento-sync` volume does not exist, the following error message displays:
+The `docker-compose down -v` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
+
+You can use the following command to remove _all_ data and rebuild a clean environment:
+
+```bash
+ bin/docker down
 ```
+
+The `magento-sync` volume is an external volume that you must create or delete manually. If the `magento-sync` volume does not exist, the following error message displays:
+
+```terminal
 ERROR: Volume magento-sync declared as external, but could not be found. Please create the volume manually using `docker volume create --name=magento-sync` and try again.
 ```
 
 ## Container Logs
 
-All containers log using Dockers built in logging method. The easiest way to interface with this is to use the docker-compose command and view the logs.
+All containers use the Docker logging method. You can view the logs using the `docker-compose` command. The following example uses the `-f` option to _follow_ the log output of the TLS container:
 
-The following example will follow the tls container log files, allowing you to see all requests that are passing through, or errors it has had.
-```sh
+```bash
 docker-composer logs -f tls
 ```
 
-## Sendmail service
+Now you can see all requests that are passing through the TLS container and check for errors.
 
-You can send emails from your Docker environment when you enable `sendmail` in the `docker-compose.yml` configuration file:
-
-{:.bs-callout-warning}
-We do not recommend using Sendmail on CLI containers because the service can slow down the instancing of containers.
-
-```yaml
-ENABLE_SENDMAIL=true
-```
-
-[Docker architecture]: {{ site.baseurl }}/common/images/cloud/docker-topology.png
-[Database container]: {{site.baseurl}}/cloud/docker/docker-database.html
+[build]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#build-container
+[cron]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#cron-container
+[deploy]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#deploy-container
+[db]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
+[elasticsearch]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container
 [CLI containers]: {{site.baseurl}}/cloud/docker/docker-cli.html
 [Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [Developer Mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [docker-repo]: https://github.com/magento/magento-cloud-docker
-[elastic]: https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch
-[mariadb]: https://hub.docker.com/_/mariadb
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
-[node]: https://hub.docker.com/_/node/
-[rabbitmq]: https://hub.docker.com/_/rabbitmq
-[php-image]: https://hub.docker.com/r/magento/magento-cloud-docker-php
-[redis]: https://hub.docker.com/_/redis
-[tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
-[varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[node-container]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#node-container
+[rabbitmq-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#rabbitmq-container
+[fpm-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#fpm-container
+[redis-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#redis-container
+[selenium-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container
+[tls-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container
+[varnish-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
+[web-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container

@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Syncing Data in Docker
+title: Synchronizing data in Docker
 functional_areas:
   - Cloud
   - Setup

@@ -234,7 +234,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
-   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-containers.html#sendmail-service).
+   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-config.html#sendmail-service).
 
    -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
@@ -294,7 +294,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ site.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-cli.html#cron-container) based on the PHP-CLI image.
+   -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{ site.baseurl }}/cloud/docker/docker-containers-cli.html#cron-container) based on the PHP-CLI image.
 
    -  Added the following services to the Docker build:
 
@@ -303,8 +303,6 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
       -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7, 2.4, and 5.2
 
       -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
-
-   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
 -  {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{ site.baseurl }}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
@@ -367,6 +365,8 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
    -  <!--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and read-write file systems to more closely emulate the Cloud file system. See [Configure Docker]({{ site.baseurl }}/cloud/docker/docker-config.html).
 
    -  <!--MAGECLOUD--2442-->**Redis service support**—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
+
+   -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#database-container). Also, you can [share files]({{ site.baseurl }}/cloud/docker/docker-containers.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
    -  <!--MAGECLOUD--2358-->**Varnish service support**— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html).
 
