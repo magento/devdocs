@@ -65,7 +65,7 @@ magento-pub-media
 magento-pub-static
 ```
 
-You can use these volumes to interact with the shared writeable mount directories for your Magento Cloud project which are configured by default in the `.magento.app.yaml` file.
+You can use these volumes to interact with the shared writeable mount directories for your Magento Cloud project, which are configured by default in the `.magento.app.yaml` file.
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
