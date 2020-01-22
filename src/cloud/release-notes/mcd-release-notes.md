@@ -40,15 +40,13 @@ The release notes include:
 
 -  {:.new}**Command changes**–
 
-   -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
-
    -  {:.new}**New `cloud-post-deploy` command**–Previously, the post-deploy hooks defined in the `.magento.app.yaml` file ran automatically after you deployed Magento to a Cloud Docker container using the `cloud-deploy` command. Now, you must issue a separate `cloud-post-deploy` command to run the post-deploy hooks after you deploy. See the updated launch instructions for [developer] and [production] mode.<!--MAGECLOUD-3996-->
 
    -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
 
    -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
 
-   -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do normally require synchronization.<!--MAGECLOUD-3979-->
+   -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
 
 -  {:.new}**Validation improvements**–
 
@@ -60,4 +58,4 @@ The release notes include:
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [developer]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [production]: {{site.baseurl}}/cloud/docker/docker-mode-production.html
-[backward incompatible change]: {{site.baseurl}}/cloud/release-notes/backware-incompatible-changes.html#docker-updates
+[backward incompatible change]: {{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#docker-updates
