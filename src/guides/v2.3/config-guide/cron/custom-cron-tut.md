@@ -187,6 +187,8 @@ In order to make the cron schedule configurable from admin panel, you may use th
 </config>
 ```
 
+Where, `system/config/path` is a system configuration path defined in `etc/adminhtml/system.xml` of a module.
+
 {% endcollapsible %}
 
 ## Step 5: Compile and cache clean
