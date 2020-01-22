@@ -68,17 +68,17 @@ This release contains 250 enhancements to core quality, which improve the qualit
 
 ### Merchant tool enhancements
 
-*  **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content.
+*  **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
 
 ### Page Builder
 
 Page Builder enhancements for this release include:
 
-*  Improved product sorting. Merchants can now sort by product position in category or list of product SKUs, and sort by defined parameters such as name or stock status.
+*  Improved product sorting. Merchants can now sort by product position in category or in list of producSKUs. Sorting by predefined parameters such as name or stock status remains available.
 
-*  Improved product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in Page Builder Products content type.
+*  Product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in Page Builder Products content type: grid or carousel.
 
-*  The content that merchants create in Page Builder is optimized for rendering on the storefront using the Venia Theme (PWA Studio). Unstructured content (HTML) that Page Builder generates and saves into a data base is converted into structured data that works in React and PWA Studio.
+*  Content created with Page Builder can now be displayed in storefronts built with PWA Studio using new PWA & Page Builder components. The unstructured content (HTML) that Page Builder generates and saves into a data base is converted into structured data that works in React and PWA Studio.
 
 ### Inventory Management
 
@@ -126,9 +126,9 @@ Live Chat powered by dotdigital enables merchants to increase conversion rates, 
 
 New B2B features and improvements include the following:
 
-*  **Ability to export requisition lists into CSV format**. B2B buyers can then perform batch modification for subsequent import into the shopping cart or import back into the requisition list. <!--- MC-17417-->
+*  **Ability to export Requisition Lists into CSV format**. B2B buyers can export the contents of Requisition Lists for local editing. These exported lists can then be uploaded into B2B Quick Order for creation of new orders, quotes, or lists. See [Managing Requisition Lists](https://docs.magento.com/m2/b2b/user_guide/customers/account-dashboard-requisition-lists-manage.html).<!--- MC-17417-->
 
-*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin,  controlling which  employees can work with B2B items and settings. <!--- MC-19649-->
+*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin, controlling which employees can work with B2B items and settings. See [Role Resources](https://docs.magento.com/m2/ce/user_guide/system/permissions-role-resources.html. <!--- MC-19649-->
 
 ### Vendor-developed extension enhancements
 
@@ -184,13 +184,16 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  You can now use SSL to connect Magento 2.x to an MySQL server. *Fix submitted by Malyovanets Nickolas in pull request [25398](https://github.com/magento/magento2/pull/25398)*. [GitHub-13561](https://github.com/magento/magento2/issues/13561)
 
+<!--- MAGETWO-94919-->
+
+*  Merchants can use a  new system configuration setting to specify the API key for a currency provider. This key is needed when using the Currency Converter API  to import currency rates. Previously, a merchant could not import currency rates as expected from **Stores** > **Currency Rates**.
+
 ### AdminGWS
 
 <!--- MC-18702-->
 
 *  Administrators with restricted access can now view **Content** > **Pages**. Previously, when an administrator tried to access this page, Magento displayed this error: `You cannot define a correlation namestore_tablemore than once`.
 
-<!--- MC-18702-->
 ### Analytics
 
 <!--- ENGCOM-5978-->
@@ -241,7 +244,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-17007-->
 
-*  You can now successfully set a valid customer to active status using the **Active** action that is available from the All Customers list Actions menu. Previously, when you tried to set a valid customer to active, Magento did not change the customer status and let the status field empty, which prevented you from including this customer when creating a company.
+*  You can now successfully set a valid customer to active status using the **Active** action that is available from the All Customers list Actions menu. Previously, when you tried to set a valid customer to active, Magento did not change the customer status and left the status field empty, which prevented you from including this customer when creating a company.
 
 <!--- MC-19185-->
 
@@ -261,7 +264,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19650-->
 
-*  PayPal Express now works as expected as a payment method for quotes. Previously, Magento displayed this error when you tries to complete payment using PayPal Express:  `We can't initialize Express Checkout`.
+*  PayPal Express now works as expected as a payment method for quotes. Previously, Magento displayed this error when you tried to complete payment using PayPal Express:  `We can't initialize Express Checkout`.
 
 <!--- MC-20117-->
 
@@ -281,7 +284,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19836-->
 
-*  The Select All checkbox on the Requisition List page now work as expected. Previously, when you deselected all products in a requisition list, the **Select All** checkbox remained enabled.
+*  The **Select All** checkbox on the Requisition List page now works as expected. Previously, when you deselected all products in a requisition list, the **Select All** checkbox remained enabled.
 
 <!--- MC-20212-->
 
@@ -301,7 +304,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-21459-->
 
-*  Magento now uses the language set for the store view in which the order was placed when displaying an order's payment information in the Admin. Previously, Magento always derived this information from  the default store view for all orders created in a multi-site deployment.
+*  Magento now uses the language set for the store view in which the order was placed when displaying an order's payment information in the Admin. Previously, Magento always derived this information from  the default store view for  orders created in a multi-site deployment.
 
 <!--- MC-21462-->
 
@@ -317,11 +320,15 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19915-->
 
-*  You can now successfully create a company from the storefront account of another company. Previously, Magento displayed an informative error message.
+*  You can now successfully create a company from the storefront account of another company. Previously, Magento displayed an error message.
 
 <!--- MC-17417-->
 
-*  You can now export requisition lists into CSV format. B2B buyers can then perform batch modification for subsequent import into the shopping cart or import back into the requisition list.
+*  B2B buyers can now export Requisition Lists as a CSV file for local editing. These exported lists can then be uploaded into B2B Quick Order for creation of new orders, quotes, or list.
+
+<!--- MC-19631-->
+
+*  Prices are now shown and calculated correctly when additional products are added to a Quote by an administrative user. Previously, prices were shown as 0.00 for added products.
 
 ### Cache
 
@@ -475,6 +482,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Quote item prices are no longer NULL in cart-related events. *Fix submitted by Eden Duong in pull request [23839](https://github.com/magento/magento2/pull/23839)*. [GitHub-18685](https://github.com/magento/magento2/issues/18685)
 
+<!--- MC-21568-->
+
+*  Magento now successfully saves the shipping information that a customer enters when persistent cart is enabled and after a customer has logged in after her session has expired but before the interval specified by the Persistence Lifetime value has been exceeded. Previously, Magento did not save the shipping information, and displayed an error. [GitHub-23908](https://github.com/magento/magento2/issues/23908)
+
 ### Catalog
 
 <!--- MC-19398-->
@@ -548,6 +559,14 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-19737-->
 
 *  The Date field customizable option for products now saves accurate values for stores in different time zones.
+
+<!--- MC-19031-->
+
+*  Custom attributes listed on the **Stores** > **Attributes** > **Product** > **Add New Attribute** page are now sorted alphabetically as expected. Previously, custom product attributes were sorted by value ID.
+
+<!--- MC-15341-->
+
+*  The default value for the **Products per Page on Grid**  setting  was updated to 12. This setting affects the number of products that are displayed on the storefront for products when the list view is specified. This change will affect new customers and customer who have not previously saved this setting.
 
 ### CatalogInventory
 
@@ -765,6 +784,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The data/schema patch **getAliases()** method now works as expected. *Fix submitted by korostii in pull request [25265](https://github.com/magento/magento2/pull/25265)*. [GitHub-23031](https://github.com/magento/magento2/issues/23031)
 
+<!--- MC-22807-->
+
+*  The following foreign keys have been removed from declarative schema:  `WISHLIST_ITEM_OPTION_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID` and `WISHLIST_ITEM_OPTION_PRODUCT_ID_SEQUENCE_PRODUCT_SEQUENCE_VALUE`.
+
 ### Downloadable products
 
 <!--- ENGCOM-5865-->
@@ -784,6 +807,22 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-13951-->
 
 *  Schema upgrades no longer result in unexpected foreign key re-creation and column modifications.
+
+<!--- MC-19851-->
+
+*  Cart Price rules now remain attached as expected to a dynamic block when you add the rule to related promotions and then open the Related Dynamic Blocks tab.
+
+<!--- MC-19000-->
+
+*  Checkboxes that are positioned inside the list of widgets on **Admin** > **Content** > **Widgets** are now fully clickable as expected.
+
+<!--- MC-19738-->
+
+*  Magento no longer displays a dynamic block after its associated cart price rule has expired or been set to inactive.
+
+<!--- MC-22387-->
+
+*  The Visibility Column on the Dynamic Block grid now accurately reflects the scope assigned to the listed dynamic blocks.
 
 ### EAV
 
@@ -850,6 +889,18 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-22153-->
 
 *  Magento no longer throws an error when you open an image from the product image gallery from the storefront product detail page. Previously, Magento returned this JavaScript error in the console: `TypeError: The expression cannot be converted to return the specified type`.
+
+<!--- MAGETWO-99401-->
+
+*  Order-related `save_after_commit` callbacks are now called for guest checkouts as expected. Previously, the corresponding `order _save_commit_after` events were not dispatched.
+
+<!--- MC-17332-->
+
+*  The product counter and page lister on **Catalog** > **Products** now works correctly after the **Add Store Code to Urls** setting has been enabled or disabled.
+
+<!--- MC-19250-->
+
+*  The new CONSUMERS_WAIT_FOR_MAX_MESSAGES environment variable lets merchants configure how consumers process messages from the message queue. You can set this variable by adding the `consumers-wait-for-messages` option to `bin magento queue:consumers:start`. Using this option can help Magento deployments avoid being affected by long delays in message queue processing. See [Start message queue consumers](https://devdocs.magento.com/guides/v2.3/config-guide/mq/manage-message-queues.html).
 
 ### JavaScript framework
 
@@ -1301,6 +1352,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Removed the redundant XML code in the`<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
 
+<!--- MC-15140-->
+
+*  The **Enable this Solution** setting is now set back to **no** for  PayPal Express as expected when a customer clicks on **Cancel** on the “There is already another PayPal solution enabled. Enable this solution instead?” popup during PayPal Express checkout.
+
 ### Performance
 
 <!--- MC-16108-->
@@ -1437,7 +1492,33 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The **Quote Lifetime (days)**  setting, which specifies the number of days that a quoted price remains valid, now works as expected.
 
+### Sales Rule
+
+<!--- MC-19716-->
+
+*  You can now change action settings for a scheduled update of a Cart rule. Previously, Magento did not save an action condition if you added it to the cart rule’s scheduled update.
+
+<!--- MC-19238-->
+
+*  Magento no longer displays an error when  a customer clicks **Subscribe to Order Status** on an order page, and now subscribes the customer to the XML feed as expected.
+
+<!--- MAGETWO-96379-->
+
+*  The counter values on the **Marketing** > **Cart Price Rules** grid now match the number of rules listed in the grid as expected.
+
+<!--- MC-19260-->
+
+*  Magento now applies coupon codes correctly when an order subtotal dips below the threshold specified in the applicable cart price rule. Previously, Magento applied the coupon correctly momentarily, then removed the coupon code during the tax and shipping sections of the checkout workflow.
+
 ### Search
+
+<!--- MC-21962-->
+
+*  The pagination of multipage search results now works are expected. Previously, if you navigated away from the first page of search results, Magento displayed this error: We can't find products matching the selection.
+
+<!--- MC-21808-->
+
+*  MySQL performance for search queries has been optimized, and merchants running sites with many search queries will notice improvements in query speed.
 
 <!--- MC-18165-->
 
@@ -1482,10 +1563,6 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-20250-->
 
 *  Magento no longer throws an exception when you initiate an advanced search using product name and SKU.
-
-<!--- MC-21962-->
-
-*  The pagination of multipage search results now works are expected. Previously, if you navigated away from the first page of search results, Magento displayed this error: We can't find products matching the selection.
 
 <!--- MC-15759-->
 
@@ -1617,6 +1694,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The Low Stock report now accurately displays low stock levels. Previously,  this report showed a product level of 0 even when product stock exceeded 0.
 
+<!--- MC-19951-->
+
+*  The value of the `news_from_date` attribute that Magento creates for a product’s scheduled update now equals the current time as expected. Previously, `\Magento\Catalog Staging\Observer\UpdateProductDataAttributes::execute` used the current staging version start and end times for all products, not only for the products that belong to this staging version.
+
 ### Store
 
 <!--- MC-20394-->
@@ -1644,6 +1725,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-19669-->
 
 *  Magento now loads product images as expected when you switch between product variations (for example, size or color).
+
+<!--- MC-19683-->
+
+*  Magento now displays the correct “as low as” price on the storefront for a configurable product with multiple attributes that include a `color` attribute. Previously, Magento did not display the lowest price.
 
 ### Target Rule
 
@@ -1865,6 +1950,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 ### URL rewrites
 
+<!--- MC-22635-->
+
+*  We have reverted the following fix, which was included in 2.3.3, because it changed expected system behavior: "Magento no longer removes the query string from URLs when the query string is preceded by a slash. Previously, when a customer opened a URL that contained a trailing slash and query string (for example, http://magento.host.com/sample-url-key/?cupcakes), Magento redirected the user to a URL that omitted the slash (http://magento.host.com/sample-url-key)".
+
 <!--- MC-19706-->
 
 *  Magento now populates the `url_rewrite` table with the new product URL rewrite when you create a new product when single-store mode is enabled. Previously, Magento did not generate a user-friendly URL upon the creation of products when single-store mode was enabled.
@@ -1896,6 +1985,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- ENGCOM-6124-->
 
 *  Magento now correctly stores the attribute `url_path` for non-default stores. *Fix submitted by Dmytro Androshchuk in pull request [25143](https://github.com/magento/magento2/pull/25143)*. [GitHub-25120](https://github.com/magento/magento2/issues/25120)
+
+<!--- MAGETWO-69825-->
+
+*  The following reserved keywords cannot be used as URL keys: `admin`,`soap`, `rest`, `graphql`, and any custom Admin path.
 
 ### Visual Merchandiser
 
@@ -1951,6 +2044,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Products that are deleted from a wishlist from the Admin are now deleted from the storefront wishlist.
 
+<!--- MC-20139-->
+
+*  The Admin wishlist display now lists the correct configurable products for all wishlists no matter which stores the wishlists were assigned to. Previously,  wishlists viewed from the Admin displayed only products that belonged to the default website.
+
 ### WYSIWYG
 
 <!--- ENGCOM-5727-->
@@ -1964,6 +2061,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-19062-->
 
 *  You can now upload a video from the WYSIWYG editor.
+
+<!--- MC-17574-->
+
+*  The WYSIWYG editor now saves quotation marks correctly. Previously, quotation marks were converted to `&quot;`.
 
 ## Community contributions
 
@@ -1987,7 +2088,7 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/system-requirements.html).
 
 ### Installation and upgrade instructions
 
