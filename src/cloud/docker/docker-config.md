@@ -197,12 +197,6 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
    ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine=mutagen
    ```
 
-1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
-
-   ```bash
-   cp ./docker/config.php.dist ./docker/config.php
-   ```
-
 1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1. Start the file synchronization.
