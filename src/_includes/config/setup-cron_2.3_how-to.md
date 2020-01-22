@@ -15,8 +15,9 @@ To create the Magento crontab:
    ```
 
 Use `--force` to rewrite an existing Magento crontab.
- 
+
 {:.bs-callout-info}
+
 *  `magento cron:install` does not rewrite an existing crontab inside `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.
 *  `magento cron:install --force` has no effect on any cron jobs outside the Magento comments.
 
