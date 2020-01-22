@@ -174,7 +174,7 @@ Create `crontab.xml` as follows in the `/var/www/html/magento2/app/code/Magento/
 
 The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class once per minute, resulting in a row being added to the `cron_schedule` table.
 
-In order to make the cron schedule configurable from admin panel, you may use the configuration path of your system configuration field.
+In order to make the cron schedule configurable from the admin panel, use the configuration path of your system configuration field.
 
 ```xml
 <?xml version="1.0"?>
