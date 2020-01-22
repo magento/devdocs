@@ -99,7 +99,7 @@ The `docker-compose down -v` command removes all components of your local Docker
 You can use the following command to remove _all_ data and rebuild a clean environment:
 
 ```bash
- bin/docker down
+ bin/magento-docker down
 ```
 
 The `magento-sync` volume is an external volume that you must create or delete manually. If the `magento-sync` volume does not exist, the following error message displays:
