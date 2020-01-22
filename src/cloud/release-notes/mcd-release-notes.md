@@ -18,27 +18,67 @@ The release notes include:
 
 ## v1.0.0
 
--  {:.new}**Added a stand-alone Magento Cloud Docker package**—Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
+-  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
 
--  {:.new}**Support for Magento application testing**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
+-  {:.new}**Container updates**–
 
--  {:.new}**Manage mounts and volumes for your project**—Added the ability manage mounts and volumes when launching a Docker environment for local development. See [Sharing Magento Cloud project data].<!--MAGECLOUD-3248-->
+   -  {:.new}**New Selenium container**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
 
--  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
+   -  {:.new}**RabbitMQ version support**–Updated the RabbitMQ container configuration to support RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
 
--  {:.new}Added support for RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
+   -  {:.new}**Updated the Magento PHP image to support Node.js**–Updated the PHP image to support node, npm, and the grunt-cli capabilities inside the PHP container.<!--MAGECLOUD-3953-->
 
--  {:.fix}The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers].<!--MAGECLOUD-3978-->
+   -  {:.fix}**Persistent database container**–The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers].<!--MAGECLOUD-3978-->
 
--  {:.new}Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Large files (>1 GB) can cause a period of inactivity and are not necessary to sync.<!--MAGECLOUD-3979-->
+   -  {:.new}**Updated the TLS and Varnish images to use official Docker images**–<!--MAGECLOUD-4163-->
 
--  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
+      -  {:.new}The base image for the [Magento Cloud TLS container] is now based on the `debian:jessie` Docker image.
 
--  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
+      -  {:.new}The base image for the [Magento Cloud Varnish container] is now based on the `centos` Docker image.
 
--  {:.new}Added validation to the deployment process for local Docker development environments to verify that the Cloud environment configuration includes the encryption key required to decrypt the database.  Now, you get an error message in the log if the envirionment configuration does not specify a value for the encryption key.<!--MAGECLOUD-4423-->
+   -  {:.new}**Improved default timeout configuration for the Magento Cloud TLS and Varnish containers**–[Fix submitted by Mathew Beane of Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
--  {:.fix}The `./bin/docker` file overwrites existing Docker binary files, which caused some Docker environments to break. Renamed the `./bin/docker` file to `./bin/magento-docker` to avoid any conflicts.<!-- MAGECLOUD-4038 -->
+      -  Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the TLS container. Both timeout values default to `300s` (5 minutes).
+
+      -  Increased the timeout value in the Varnish container configuration from 15 to 300 seconds.
+
+   -  {:.new}**Added support for the [Pound TLS Termination Proxy]**[Fix submitted by Sorin Sugar](https://github.com/magento/magento-cloud-docker/pull/37)–<!--MAGECLOUD-4061-->The [Pound configuration file][`pound.cfg`] adds the following ENV variables to customize the Docker configuration for the TLS container:
+
+      -  **`TimeOut` variable**–Sets the Time to First Byte (TTFB) timeout value. The default value is 300 seconds.
+
+      -  **`RewriteLocation` variable**–Determines whether the Pound proxy rewrites the location to the request URL by default. Defaults to `0` to prevent the rewrite from breaking redirects to outside websites like an external SSO site.
+
+-  {:.new}**Docker configuration changes**–
+
+   -  {:.new}**Manage mounts and volumes for your project**–Added the ability to manage mounts and volumes when launching a Docker environment for local development. See [Sharing Magento Cloud project data].<!--MAGECLOUD-3248-->
+
+   -  {:.new}**Support for network bridge mode**–Added support for network bridge mode to enable connections between Docker containers over the local network.<!--MAGECLOUD-4165-->
+
+   -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do not normally require synchronization since you can regenerate them.<!--MAGECLOUD-3979-->
+
+-  {:.new}**Command changes**–
+
+   -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
+
+   -  {:.new}**New `cloud-post-deploy` command**–Previously, the post-deploy hooks defined in the `.magento.app.yaml` file ran automatically after you deployed Magento to a Cloud Docker container using the `cloud-deploy` command. Now, you must issue a separate `cloud-post-deploy` command to run the post-deploy hooks after you deploy. See the updated launch instructions for [developer] and [production] mode.<!--MAGECLOUD-3996-->
+
+   -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
+
+   -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
+
+
+-  {:.new}**Validation improvements**–
+
+   -  {:.new}Added validation to the deployment process for local Docker development environments to verify that the Cloud environment configuration includes the encryption key required to decrypt the database.  Now, you get an error message in the log if the environment configuration does not specify a value for the encryption key.<!--MAGECLOUD-4423-->
+
+   -  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
 
 [Sharing Magento Cloud project data]: {{site.baseurl}}/cloud/docker/docker-containers.html#sharing-magento-cloud-project-data
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
+[developer]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
+[production]: {{site.baseurl}}/cloud/docker/docker-mode-production.html
+[backward incompatible change]: {{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html
+[Magento Cloud TLS container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container
+[Magento Cloud Varnish container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
+[Pound TLS Termination Proxy]: https://github.com/mnuessler/docker-tls-termination-proxy/blob/master/README.md
+[`pound.cfg`]: https://github.com/magento/magento-cloud-docker/blob/1.0/images/tls/pound.cfg
