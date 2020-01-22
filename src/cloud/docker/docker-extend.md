@@ -39,7 +39,6 @@ services:
    build:
      context: ./vendor/magento/magento-cloud-docker/images/nginx/1.9/
 ```
-This example defines the build context for the web container, however this can be done with any of the images in `vendor/magento/magento-cloud-docker` or any image, including locally resourced outside of the project.
 
 If you want to update the container configuration and test iteratively, run the following command to refresh the container build.
 
