@@ -6,9 +6,9 @@ functional_areas:
   - Upgrade
 ---
 The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package
-provides Magento Cloud patches which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. You can also add and apply custom patches using {{ site.data.var.mcp }}.
+provides Magento Cloud patches, which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and support quick delivery of critical fixes.
 
-The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package. When you install or update the {{ site.data.var.ct }} package version, the Patches package is also installed or updated. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
 
 You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) provided by support or third-party extension developers.  To use this feature,  copy the custom patch to the `/m2-hotfixes` directory in the {{ site.data.var.ee }} project root directory. Then, test the patch on your local workstation.
 
