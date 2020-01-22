@@ -41,7 +41,7 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 | [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
 | [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | docker-sync, mutagen, native
 
-## bin/docker
+## bin/magento-docker
 
 Run `bin/docker` commands using the following format:
 
