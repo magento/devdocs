@@ -38,7 +38,7 @@ The release notes include:
 
    -  {:.new}**Improved default timeout configuration for the Magento Cloud TLS and Varnish containers**–[Fix submitted by Mathew Beane of Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
-      -  Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the TLS container. Both timeout values default to `300s` (5 minutes)
+      -  Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the TLS container. Both timeout values default to `300s` (5 minutes).
 
       -  Increased the timeout value in the Varnish container configuration from 15 to 300 seconds.
 
@@ -50,11 +50,11 @@ The release notes include:
 
 -  {:.new}**Docker configuration changes**–
 
-   -  {:.new}**Manage mounts and volumes for your project**–Added the ability manage mounts and volumes when launching a Docker environment for local development. See [Sharing Magento Cloud project data].<!--MAGECLOUD-3248-->
+   -  {:.new}**Manage mounts and volumes for your project**–Added the ability to manage mounts and volumes when launching a Docker environment for local development. See [Sharing Magento Cloud project data].<!--MAGECLOUD-3248-->
 
    -  {:.new}**Support for network bridge mode**–Added support for network bridge mode to enable connections between Docker containers over the local network.<!--MAGECLOUD-4165-->
 
-   -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do normally require synchronization.<!--MAGECLOUD-3979-->
+   -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do not normally require synchronization since you can regenerate them.<!--MAGECLOUD-3979-->
 
 -  {:.new}**Command changes**–
 
@@ -66,7 +66,6 @@ The release notes include:
 
    -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
 
-   -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do normally require synchronization.<!--MAGECLOUD-3979-->
 
 -  {:.new}**Validation improvements**–
 
