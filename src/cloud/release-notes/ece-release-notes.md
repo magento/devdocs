@@ -118,7 +118,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
-   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#bindocker).
+   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#binmagento-docker).
 
    -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-config.html#prerequisites).
 
