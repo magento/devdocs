@@ -19,6 +19,7 @@ The following table explains this command’s options, parameters, and values.
 Parameter | Value | Required? | Default Value
 --- | --- | --- | ---
 `--max-messages=<value>` | The maximum number of messages to consume per invocation. If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously. | No | 0
+`--consumers-wait-for-messages=<value>` | Specifies whether consumers should continue polling for messages if the number of processed messages is less than the `max-messages` value. This value is set to `0` to prevent stuck deployments caused by long delays in message queue processing | No | 0
 `--batch-size=<value>` | The number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue. | No | 0
 `--pid-file-path=<value>` | This option is deprecated. Use the `single-thread` option instead. | No |
 `--single-thread` | This option prevents running multiple copies of a consumer simultaneously. | No |
