@@ -93,15 +93,23 @@ To launch the Docker environment in developer mode:
    {:.bs-callout-info}
    If you host your Docker environment on Windows and the session start fails, update the `mutagen.sh` file to change the value for the `--symlink-mode` option to `portable`.
 
-1. Deploy Magento in the Docker container.
+1. Install Magento in your Docker environment.
 
-   ```bash
-   docker-compose run deploy cloud-deploy && \
-   docker-compose run deploy magento-command deploy:mode:set developer
-   ```
+   -  Deploy Magento in the Docker container.
 
-   {: .bs-callout-info }
-   Developer mode does not require the `build` operation.
+      ```bash
+      docker-compose run deploy cloud-deploy && \
+      docker-compose run deploy magento-command deploy:mode:set developer
+      ```
+
+   -  Run post-deploy hooks.
+
+       ```bash
+       docker-compose run deploy cloud-post-deploy
+       ```
+
+      {: .bs-callout-info }
+      Developer mode does not require the `build` operation.
 
 1. Configure and connect Varnish.
 

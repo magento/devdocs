@@ -44,20 +44,23 @@ To launch the Docker environment in developer mode:
 
 1. Install Magento in your Docker environment.
 
-   -  Build Magento in the Docker container:
+   -  Build Magento in the Docker container.
 
       ```bash
       docker-compose run build cloud-build
       ```
 
-   -  Deploy Magento in the Docker container:
+   -  Deploy Magento in the Docker container.
 
       ```bash
       docker-compose run deploy cloud-deploy
       ```
 
-   {: .bs-callout-info }
-   For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
+   -  Run post-deploy hooks.
+
+      ```bash
+      docker-compose run deploy cloud-post-deploy
+      ```
 
 1. Configure and connect Varnish.
 
