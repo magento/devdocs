@@ -34,7 +34,7 @@ Magento does not support independent releases. If you need support, you must con
 
 ### Install an independent release
 
-Independent releases are available as Composer "edge" packages on `repo.magento.com`. Composer will automatically select the most recent version compatible with your installed version of Magento. If you install an independent release and then upgrade to the latest version of Magento, you will receive the latest version bundled with that Magento release.
+Independent releases are available as Composer "edge" packages on `repo.magento.com`. Composer automatically selects the most recent version compatible with your installed version of Magento. If you install an independent release and then upgrade to the latest version of Magento, you will receive the latest version bundled with that Magento release.
 
 To install an independent release:
 
