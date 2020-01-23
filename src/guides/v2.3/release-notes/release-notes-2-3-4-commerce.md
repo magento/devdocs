@@ -74,11 +74,11 @@ This release contains 250 enhancements to core quality, which improve the qualit
 
 Page Builder enhancements for this release include:
 
-*  Improved product sorting. Merchants can now sort by product position in category or in list of producSKUs. Sorting by predefined parameters such as name or stock status remains available.
+*  Improved product sorting. Merchants can now sort by product position within a category or within a list of product SKUs. Sorting by predefined parameters, such as name or stock status, remains available.
 
-*  Product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in Page Builder Products content type: grid or carousel.
+*  Product carousel. Merchants can choose how to showcase products in their content by selecting from predefined options in the Page Builder Products content type: grid or carousel.
 
-*  Content created with Page Builder can now be displayed in storefronts built with PWA Studio using new PWA & Page Builder components. The unstructured content (HTML) that Page Builder generates and saves into a data base is converted into structured data that works in React and PWA Studio.
+*  Content created with Page Builder can now be displayed in storefronts built with PWA Studio using new PWA & Page Builder components. The unstructured content (HTML) that Page Builder generates and saves into a database is converted into structured data that works in React and PWA Studio.
 
 ### Inventory Management
 
@@ -102,7 +102,7 @@ This release includes improved GraphQL coverage for search, layered navigation, 
 
 *  **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
 
-*  **You can search categories by ID, name, and/or URL key.** The [`categoryList`]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated category` query.
+*  **You can search categories by ID, name, and/or URL key.** The [`categoryList`]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated `category` query.
 
 *  **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
 
@@ -128,7 +128,7 @@ New B2B features and improvements include the following:
 
 *  **Ability to export Requisition Lists into CSV format**. B2B buyers can export the contents of Requisition Lists for local editing. These exported lists can then be uploaded into B2B Quick Order for creation of new orders, quotes, or lists. See [Managing Requisition Lists](https://docs.magento.com/m2/b2b/user_guide/customers/account-dashboard-requisition-lists-manage.html).<!--- MC-17417-->
 
-*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin, controlling which employees can work with B2B items and settings. See [Role Resources](https://docs.magento.com/m2/ce/user_guide/system/permissions-role-resources.html. <!--- MC-19649-->
+*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin, controlling which employees can work with B2B items and settings. See [Role Resources](https://docs.magento.com/m2/b2b/user_guide/system/permissions-role-resources.html. <!--- MC-19649-->
 
 ### Vendor-developed extension enhancements
 
@@ -174,7 +174,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5582-->
 
-*  Static content deployment (`php bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
+*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
 
 <!--- ENGCOM-6205-->
 
@@ -568,6 +568,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The default value for the **Products per Page on Grid**  setting  was updated to 12. This setting affects the number of products that are displayed on the storefront for products when the list view is specified. This change will affect new customers and customer who have not previously saved this setting.
 
+<!--- ENGCOM-5739-->
+
+*  You can now  change the page layout of the `catalog_product_view` page from a custom theme by changing `<theme_dir>/Magento_Catalog/layout/override/base/catalog_product_view.xml`. *Fix submitted by ochnygosch in pull request [24367](https://github.com/magento/magento2/pull/24367)*. [GitHub-24362](https://github.com/magento/magento2/issues/24362)
+
 ### CatalogInventory
 
 <!--- MC-17524-->
@@ -718,7 +722,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5934-->
 
-*  The `php bin/magento cron:run` command now  adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
+*  The `bin/magento cron:run` command now  adds an entry for `currency_rates_update` in the `cron_schedule` table as expected. *Fix submitted by Bruno Roeder in pull request [24590](https://github.com/magento/magento2/pull/24590)*. [GitHub-23846](https://github.com/magento/magento2/issues/23846)
 
 ### Customer
 
@@ -756,7 +760,9 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-17925-->
 
-*  Spaces are now trimmed as expected from values entered into the customer account **Phone** field.
+*  Spaces are now trimmed as expected from values entered into the customer account **Phone** fie<!--- ENGCOM-5971-->
+
+*  The Reset Password Confirmation Link email is now scoped appropriately for global customers. Previously, Magento always sent email from the default store, not the store to which the customer was assigned.  *Fix submitted by Roman Kis in pull request [24783](https://github.com/magento/magento2/pull/24783)*. [GitHub-23295](https://github.com/magento/magento2/issues/23295)
 
 ### Custom customer attributes
 
@@ -772,7 +778,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5498-->
 
-*  The `php bin/magento catalog:image:resize` command now processes images from the database as expected when files do not exist locally. *Fix submitted by gwharton in pull request [23913](https://github.com/magento/magento2/pull/23913)*. [GitHub-23911](https://github.com/magento/magento2/issues/23911)
+*  The `bin/magento catalog:image:resize` command now processes images from the database as expected when files do not exist locally. *Fix submitted by gwharton in pull request [23913](https://github.com/magento/magento2/pull/23913)*. [GitHub-23911](https://github.com/magento/magento2/issues/23911)
 
 <!--- ENGCOM-5573-->
 
@@ -782,7 +788,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6166-->
 
-*  The data/schema patch **getAliases()** method now works as expected. *Fix submitted by korostii in pull request [25265](https://github.com/magento/magento2/pull/25265)*. [GitHub-23031](https://github.com/magento/magento2/issues/23031)
+*  The data/schema patch `getAliases()` method now works as expected. *Fix submitted by korostii in pull request [25265](https://github.com/magento/magento2/pull/25265)*. [GitHub-23031](https://github.com/magento/magento2/issues/23031)
 
 <!--- MC-22807-->
 
@@ -872,7 +878,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-17633-->
 
-*  The `setup:db:status` command now returns successfully after you’ve run `setup:upgrade` on a deployment running Maria DB version 10.2. Previously, the `setup:db:status` command returned this message: `Declarative Schema is not up to date` and that we need to run `setup:upgrade`. [GitHub-19597](https://github.com/magento/magento2/issues/19597)
+*  The `bin/magento setup:db:status` command now returns successfully after you’ve run `bin/magento setup:upgrade` on a deployment running Maria DB version 10.2. Previously, the `bin/magento setup:db:status` command returned this message: `Declarative Schema is not up to date` and that we need to run `bin/magento setup:upgrade`. [GitHub-19597](https://github.com/magento/magento2/issues/19597)
 
 <!--- MC-19701-->
 
@@ -1028,7 +1034,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5640-->
 
-*  Magento no longer serializes user data multiple times when data is loaded by the loadByUsername method. *Fix submitted by Jamie Saunders in pull request [23827](https://github.com/magento/magento2/pull/23827)*. [GitHub-23824](https://github.com/magento/magento2/issues/23824)
+*  Magento no longer serializes user data multiple times when data is loaded by the `loadByUsername` method. *Fix submitted by Jamie Saunders in pull request [23827](https://github.com/magento/magento2/pull/23827)*. [GitHub-23824](https://github.com/magento/magento2/issues/23824)
 
 <!--- ENGCOM-6065-->
 
@@ -1046,6 +1052,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Catalog event Start/End dates are not changed when you edit the event.
 
+<!--- ENGCOM-5592-->
+
+*  Running `diff -rq ./build-1/ ./build-2/`  on two different builds of the same commit now yields the same results in generated/metadata folders. Previously, these results were not reproducible.  *Fix submitted by Ihor Sviziev in pull request [23325](https://github.com/magento/magento2/pull/23325)*. [GitHub-23324](https://github.com/magento/magento2/issues/23324)
+
 ### Gift cards
 
 <!--- MC-16375-->
@@ -1061,6 +1071,12 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-18005-->
 
 *  Magento now correctly processes orders that include gift wrapping for multiple products when an order is paid for using PayPal Express. Previously, Magento displayed this error: `PayPal gateway has rejected request. The totals of the cart item amounts do not match order amounts (#10413: Transaction refused because of an invalid argument. See additional error messages for details)`.
+
+### Google Tag Manager
+
+<!--- ENGCOM-4731-->
+
+*  Magento no longer throws a fatal error (500 error) when you try to enable  Google Tag Manager on Magento Commerce 2.2.5.  *Fix submitted by Raul E Watson in pull request [14](https://github.com/magento/partners-magento2ee/pull/14)*. [GitHub-20164](https://github.com/magento/magento2/issues/20164)
 
 ### Image
 
@@ -1150,7 +1166,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-18833-->
 
-*  The Tier Price REST API now considers account indexer mode as expected.
+*  The `POST /V1/products/tier-prices` call now considers account indexer mode as expected.
 
 <!--- MC-21897-->
 
@@ -1159,6 +1175,14 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-22021-->
 
 *  Query performance and indexer execution (`bin/magento indexer:reindex`) has been improved.
+
+<!--- ENGCOM-5624-->
+
+*  Magento no longer throws a fatal error when you create a preference for the category product indexer before running `bin/magento setup:di:compile`. *Fix submitted by Diego Cabrejas in pull request [23300](https://github.com/magento/magento2/pull/23300)*. [GitHub-22769](https://github.com/magento/magento2/issues/22769)
+
+<!--- ENGCOM-5910-->
+
+*  During re-indexing, Magento now deletes only products that have been identified as out-of-stock  when filtered by `$entityIds`. *Fix submitted by Bruce in pull request [24415](https://github.com/magento/magento2/pull/24415)*. [GitHub-24414](https://github.com/magento/magento2/issues/24414)
 
 ### Infrastructure
 
@@ -1206,11 +1230,25 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  You can now add handlers directly to the `di.xml`. Previously, you needed to extend the helper class and register the handlers. *Fix submitted by Thomas Klein in pull request [24405](https://github.com/magento/magento2/pull/24405)*. [GitHub-12371](https://github.com/magento/magento2/issues/12371)
 
+<!--- ENGCOM-6234-->
+
+*  You can now add a handler directly to the `di.xml` of a product template instead of adding a handler by extending the helper class and registering the handlers. *Fix submitted by Tomash Khamlai in pull request [25466](https://github.com/magento/magento2/pull/25466)*. [GitHub-25468](https://github.com/magento/magento2/issues/25468)
+
+<!--- ENGCOM-5539-->
+
+*  Magento no longer returns an empty string when calling `$this->_escaper->escapeXssInUrl(“0”);`, but instead returns the expected 0 value. *Fix submitted by Will Palmer in pull request [23988](https://github.com/magento/magento2/pull/23988)*. [GitHub-23987](https://github.com/magento/magento2/issues/23987)
+
 ### Inventory
 
 <!--- MC-17606-->
 
 *  You can now save an edited product when `max_sale_qty` is set to the Magento default value. [GitHub-23319](https://github.com/magento/magento2/issues/23319)
+
+### Layered navigation
+
+<!--- ENGCOM-5802-->
+
+*  Layered navigation is no longer visible when you set display mode to **Static Block only** on a particular category. *Fix submitted by Mahesh Singh in pull request [24497](https://github.com/magento/magento2/pull/24497)*. [GitHub-24031](https://github.com/magento/magento2/issues/24031)
 
 ### Media storage
 
@@ -1355,6 +1393,10 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-15140-->
 
 *  The **Enable this Solution** setting is now set back to **no** for  PayPal Express as expected when a customer clicks on **Cancel** on the “There is already another PayPal solution enabled. Enable this solution instead?” popup during PayPal Express checkout.
+
+<!--- ENGCOM-6153-->
+
+*  The Braintree `ClientToken` is now disabled when the the Braintree payment method is disabled for the current store view. *Fix submitted by Andrey Legayev in pull request [25223](https://github.com/magento/magento2/pull/25223)*. [GitHub-25343](https://github.com/magento/magento2/issues/25343)
 
 ### Performance
 
@@ -1584,6 +1626,14 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Elasticsearch 6.x now works only with Elasticsearch 6.x clients on the storefront. *Fix submitted by Pavel Bystritsky in pull request [24974](https://github.com/magento/magento2/pull/24974)*. [GitHub-24781](https://github.com/magento/magento2/issues/24781)
 
+<!--- ENGCOM-5861-->
+
+*  Elasticsearch clients can now use SSL without enabling HTTP Auth. *Fix submitted by Ihor Sviziev in pull request [24636](https://github.com/magento/magento2/pull/24636)*. [GitHub-22297](https://github.com/magento/magento2/issues/22297)
+
+<!--- ENGCOM-5834-->
+
+*  Elasticsearch no longer creates a double index when Magento throws an exception when it saves an index as a cron job fails. *Fix submitted by Vladislav Slesarenko in pull request [24552](https://github.com/magento/magento2/pull/24552)*. [GitHub-24550](https://github.com/magento/magento2/issues/24550)
+
 ### Shipping
 
 <!--- ENGCOM-5215-->
@@ -1656,6 +1706,14 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  Magento no longer displays multiple success notifications when you click on the **Save** button on **Marketing** > **Sitemap**. *Fix submitted by Bartłomiej Szubert in pull request [24482](https://github.com/magento/magento2/pull/24482)*. [GitHub-21610](https://github.com/magento/magento2/issues/21610)
 
+<!--- ENGCOM-5917-->
+
+*  The path that you specify when creating a sitemap is no longer transferred to the beginning of the URL that is included in any sitemap-related error message. *Fix submitted by Hailong in pull request [24675](https://github.com/magento/magento2/pull/24675)*. [GitHub-24623](https://github.com/magento/magento2/issues/24623)
+
+<!--- ENGCOM-5844-->
+
+*  We’ve corrected several problems with image URLs in sitemap generation. Previously,  sitemap image URLs had the  wrong cache path, and image size was incorrect.  *Fix submitted by Krzysztof Daniel in pull request [24605](https://github.com/magento/magento2/pull/24605)*. [GitHub-4511](https://github.com/magento/magento2/issues/4511), [GitHub-4511](https://github.com/magento/magento2/issues/5321), [GitHub-24484](https://github.com/magento/magento2/issues/24484)
+
 ### Staging
 
 <!--- MC-10974-->
@@ -1711,6 +1769,12 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 <!--- MC-19585-->
 
 *  CMS pages no longer redirect to the home page of the original store when you change store view in a multi-store deployment.
+
+### Swagger
+
+<!--- ENGCOM-5853-->
+
+*  Swagger schemas no longer fail when the GET endpoint has parameters that contain extension attributes. *Fix submitted by Oleksandr Kravchuk in pull request [24627](https://github.com/magento/magento2/pull/24627)*. [GitHub-24626](https://github.com/magento/magento2/issues/24626)
 
 ### Swatches
 
