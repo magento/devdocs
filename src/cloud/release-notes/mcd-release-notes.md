@@ -22,11 +22,15 @@ The release notes include:
 
 -  {:.new}**Container updates**–
 
+   -  {:.new}**PHP-FPM container updates**–
+
+      -  {:.new}**Added Node.js support**–Updated the PHP-FPM image to support node, npm, and the grunt-cli capabilities inside the PHP container.<!--MAGECLOUD-3953-->
+
+      -  {:.new}**Added support for [ionCube](https://www.ioncube.com/)**–Updated the default Docker configuration to support ionCube in the local Docker development environment.<!--MAGECLOUD-4354-->
+
    -  {:.new}**New Selenium container**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
 
    -  {:.new}**RabbitMQ version support**–Updated the RabbitMQ container configuration to support RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
-
-   -  {:.new}**Updated the Magento PHP image to support Node.js**–Updated the PHP image to support node, npm, and the grunt-cli capabilities inside the PHP container.<!--MAGECLOUD-3953-->
 
    -  {:.fix}**Persistent database container**–The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers].<!--MAGECLOUD-3978-->
 
