@@ -36,6 +36,7 @@ Magento does not support independent releases. If you need support, you must con
 
 Independent releases are available as Composer "edge" packages on `repo.magento.com`. Composer automatically selects the most recent version compatible with your installed version of Magento. If you install an independent release and then upgrade to the latest version of Magento, you will receive the latest version bundled with that Magento release.
 
+{:.procedure}
 To install an independent release:
 
 1. Backup your `composer.json` file.
@@ -44,7 +45,7 @@ To install an independent release:
    cp composer.json composer.json.bak
    ```
 
-1. Add the VBE "edge" package to your `composer.json` file:
+1. Add the VBE "edge" package to your `composer.json` file.
 
    ```bash
    composer require <vendor>/<package>-edge
