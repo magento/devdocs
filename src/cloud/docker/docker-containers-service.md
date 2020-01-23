@@ -56,13 +56,13 @@ elasticsearch | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.
 
 The Elasticsearch container for {{site.data.var.mcd}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
-## FPM container
+## PHP-FPM container
 
 Container name |Docker base image | Ports exposed
 -------- | -------- | ---------------
 fpm | [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image | 9000, 9001
 
-The FPM container is based on the [magento/magento-cloud-docker-php][php] image and includes the following volumes:
+The PHP-FPM container is based on the [magento/magento-cloud-docker-php][php] image and includes the following volumes:
 
 -  Read-only volumes:
    -  `/app`
