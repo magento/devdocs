@@ -40,7 +40,7 @@ The release notes include:
 
       -  {:.new}The base image for the [Magento Cloud Varnish container] is now based on the `centos` Docker image.
 
-   -  {:.new}**Improved default timeout configuration for the Magento Cloud TLS and Varnish containers**–[Fix submitted by Mathew Beane from Zilker Technologies(https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
+   -  {:.new}**Improved default timeout configuration for the Magento Cloud TLS and Varnish containers**–[Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
       -  Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the TLS container. Both timeout values default to `300s` (5 minutes).
 
@@ -66,7 +66,7 @@ The release notes include:
 
    -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
 
-   -  {:.new}**Added an option to expose the database port to the host**–[Updated submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/101).
+   -  {:.new}**Added an option to expose the database port to the host**–[Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/101).
 
       Use the `--expose-db-port=<PORT>` option to expose the database port to the host when building the `docker-compose.yml` file: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454-->
 
