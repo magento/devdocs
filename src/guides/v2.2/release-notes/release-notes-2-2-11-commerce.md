@@ -94,7 +94,7 @@ Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Lif
 
 <!--- MC-18283  -->
 
-*  The Saved Credit Card Feature with Vault feature now displays accurate card information in the order information page as expected for orders paid for with Payflow Pro.
+*  For orders paid with Payflow Pro, if the **Vault Enabled** option is set to Yes, Magento now displays accurate stored card information as expected on the order information page.
 
 ### Persistent
 
