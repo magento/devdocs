@@ -34,8 +34,8 @@ After you [install]({{ page.baseurl }}/recommendations/install.html) and [config
     -  Click the **Snowplow Analytics Debugger** tab.
     -  Under the **Event** column, select **Structured Event**.
     -  Scroll down to `storefront-instance` context and verify the following:
-         -  The SaaS Environment ID you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas) is correct.
-         -  The Instance ID you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#envid) is correct.
-         -  The Environment value you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#configureenv) is correct.
+          -  The SaaS Environment ID you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas) is correct.
+          -  The Instance ID you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#envid) is correct.
+          -  The Environment value you [set during configuration]({{ page.baseurl }}/recommendations/configure.html#configureenv) is correct.
 
 If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
