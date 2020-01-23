@@ -13,6 +13,7 @@ Action | Command
 Build and start Docker environment | `docker-compose up -d`
 Build environment | `docker-compose run build cloud-build`
 Deploy environment | `docker-compose run deploy cloud-deploy`
+Run post-deploy hooks | `docker-compose run deploy cloud-post-deploy`
 Connect to CLI container | `docker-compose run deploy bash`
 Use `{{site.data.var.ct}}` command | `docker-compose run deploy ece-command <command>`
 Use Magento command | `docker-compose run deploy magento-command <command>`
@@ -39,20 +40,20 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
 | [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | docker-sync, mutagen, native
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
 
 ## bin/magento-docker
 
-Run `bin/docker` commands using the following format:
+Run `bin/magento-docker` commands using the following format:
 
 ```bash
-./bin/docker <command>
+./bin/magento-docker <command>
 ```
 
 For example, to connect to the bash shell:
 
 ```terminal
-$ ./bin/docker bash
+$ ./bin/magento-docker bash
 Starting project_redis_1 ... done
 Starting project_db_1    ... done
 Starting project_elasticsearch_1 ... done
@@ -67,6 +68,7 @@ Connect to bash shell | `bash`
 Pull the latest images | `pull`
 Build application | `ece-build`
 Deploy application | `ece-deploy`
+Run post-deploy hooks | `ece-post-deploy`
 Re-build and re-deploy application | `ece-redeploy`
 Stop containers | `stop`
 Start containers | `start`
