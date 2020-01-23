@@ -54,7 +54,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18147  -->
 
-*  Magento now correctly processes orders that include giftwrap for multiple products when an order is paid for using PayPal Express. Previously, Magento displayed this error: `PayPal gateway has rejected request. The totals of the cart item amounts do not match order amounts (#10413: Transaction refused because of an invalid argument. See additional error messages for details)`.
+*  Magento now correctly processes orders that include giftwrap for multiple products when PayPal Express is used to pay for an order. Previously, Magento displayed this error: `PayPal gateway has rejected request. The totals of the cart item amounts do not match order amounts (#10413: Transaction refused because of an invalid argument. See additional error messages for details)`.
 
 ### Inventory
 
