@@ -67,9 +67,6 @@ pages:
     - label: Amazon Pay
       versionless: true
       children:
-      - label: Install
-        versionless: true
-        url: /extensions/vendor/amazon-pay/install/
       - label: Release Notes
         versionless: true
         url: /extensions/vendor/amazon-pay/release-notes/
@@ -77,9 +74,6 @@ pages:
     - label: Dotdigital
       versionless: true
       children:
-      - label: Install
-        versionless: true
-        url: /extensions/vendor/dotdigital/install/
       - label: Release Notes
         versionless: true
         url: /extensions/vendor/dotdigital/release-notes/
@@ -87,9 +81,6 @@ pages:
     - label: Klarna
       versionless: true
       children:
-      - label: Install
-        versionless: true
-        url: /extensions/vendor/klarna/install/
       - label: Release Notes
         versionless: true
         url: /extensions/vendor/klarna/release-notes/
@@ -97,9 +88,6 @@ pages:
     - label: Vertex
       versionless: true
       children:
-      - label: Install
-        versionless: true
-        url: /extensions/vendor/vertex/install/
       - label: Release Notes
         versionless: true
         url: /extensions/vendor/vertex/release-notes/
@@ -107,9 +95,6 @@ pages:
     - label: Yotpo
       versionless: true
       children:
-      - label: Install
-        versionless: true
-        url: /extensions/vendor/yotpo/install/
       - label: Release Notes
         versionless: true
         url: /extensions/vendor/yotpo/release-notes/
