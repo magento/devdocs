@@ -95,11 +95,11 @@ Extensions do not always provide downgrade scripts, so it is best to switch back
 1. Remove the VBE edge package:
 
    ```bash
-   composer remove magento/vndr-feature-edge
+   composer remove --no-update <vendor>/<package>-edge
    ```
 
-1. Add the VBE package to your `composer.json` file:
+1. Reinstall Magento release packages:
 
    ```bash
-   composer require magento/product-community-edition:<exact-magento-version>
+   composer install
    ```
