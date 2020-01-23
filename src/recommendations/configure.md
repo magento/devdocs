@@ -24,6 +24,11 @@ The Catalog SaaS export module is a requirement to successfully use the [Product
 
     ```bash
     composer config repositories.magento composer https://repo.magento.com
+    ```
+
+    and
+
+    ```bash
     composer require magento/saas-export
     ```
 
