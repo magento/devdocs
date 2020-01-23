@@ -20,8 +20,9 @@ em.example.com IN CNAME <sendgrid.net>
 s1.example.com IN CNAME <s1.example.sendgrid.net>
 s2.example.com IN CNAME <s2.example.sendgrid.net>
 ```
+
 {: .bs-callout-tip}
-You can find Sendgrid details for your account in the Onboarding UI. Use the `https://cloud.magento.com/project/{project-id}/setup/project_details` URL and select the **Project Details** > **Hosting Info** tab.
+You can find Sendgrid details for your account in the Onboarding UI. Use the `https://cloud.magento.com/project/_project-id_/setup/project_details` URL and select the **Project Details** > **Hosting Info** tab.
 
 The CNAME records resolve to the Domain Keys Identified Mail (DKIM) and Sender Policy Framework (SPF) records managed by SendGrid, so that spam filters are less likely to inhibit your messages.
 
