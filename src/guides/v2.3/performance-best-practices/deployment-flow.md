@@ -11,7 +11,7 @@ The Magento production deployment flow helps a store reach maximum performance.
 
 ## Install dependencies
 
-The `composer.json` and `composer.lock` files tell Composer what Magento dependencies to resolve and which versions to use (respectively).
+The `composer.json` and `composer.lock` files manage Magento dependencies and install the appropriate version for each package.
 
 To install Magento dependencies:
 
