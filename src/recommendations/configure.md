@@ -3,9 +3,11 @@ group: product-recommendations
 title: Configuring Recommendations
 ---
 
-After you install the `product-recommendations` module you need to configure the catalog SaaS export module, set the environment, and specify the SaaS environment ID.
+After you [install]({{ page.baseurl }}/recommendations/install.html) the `product-recommendations` module, you need to configure the catalog SaaS export module, set the environment, and specify the SaaS environment ID.
 
-## Install and Configure the Catalog SaaS Export Module {installcatalogsaas}
+## Install and Configure the Catalog SaaS Export Module {#installcatalogsaas}
+
+The Catalog SaaS Export Module allows you to access your store's catalog data. You create a link to that data via an API key.
 
 {:.bs-callout-info}
 The Catalog SaaS export module is a requirement to successfully use the [Product Recommendations JS SDK](https://www.npmjs.com/package/@magento/recommendations-js-sdk). This module requires Magento 2.3 or later.
@@ -59,9 +61,10 @@ After you have installed the DataServices module, you need to configure your env
 
 1. In the **Environment** drop-down, select either **Testing** or **Production**. Starting with version 3.0.2, the **Instance ID** field is auto-populated. Earlier versions required that you manually enter this ID.
 
-**Note** By explicitly setting the environment for data collection, Magento excludes testing data, such as load testing, from the calculations used to generate the recommendations. If you set the **Environment** to **Production** on a development site, the data Magento gathers to train the ML models and generate recommendations will not be accurate.
+{:.bs-callout-info}
+By explicitly setting the environment for data collection, Magento excludes testing data, such as load testing, from the calculations used to generate the recommendations. If you set the **Environment** to **Production** on a development site, the data Magento gathers to train the ML models and generate recommendations will not be accurate.
 
-## Enter Your SaaS Environment ID {envid}
+## Enter Your SaaS Environment ID {#envid}
 
 1. On the Admin sidebar, tap **Stores**. Then under **Settings**, choose **Configuration**.
 

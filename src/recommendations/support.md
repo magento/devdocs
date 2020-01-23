@@ -7,7 +7,7 @@ As we continue to evolve this technology and ensure you are successful in implem
 
 You can send us feedback by one of the following methods:
 
-* Email: `magento-product-recs-feedback@adobe.com`
+* <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>
 
 * Slack: Sign up [here](http://tinyurl.com/engcom-slack) to access the `#product-recs` (private) group on Magento Community Engineering
 

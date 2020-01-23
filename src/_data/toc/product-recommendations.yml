@@ -1,7 +1,6 @@
 label: Product Recommendations
-versionless: true
-children:
-- label: What are Product Recommendations
+pages:
+- label: Getting Started
   url: /recommendations/install.html
   versionless: true
 
