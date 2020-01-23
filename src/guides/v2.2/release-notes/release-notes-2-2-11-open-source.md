@@ -68,7 +68,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18631  -->
 
-*  The Tier Price REST API now considers account indexer mode as expected.
+*  The `POST /V1/products/tier-prices` endpoint now considers account indexer mode as expected.
 
 ### Infrastructure
 
