@@ -47,9 +47,9 @@ The Catalog SaaS export module is a requirement to successfully use the [Product
 1. In the Magento Admin, click **Stores** on the Admin panel.
 
 1. Under **Settings**, choose **Configuration**.
-  
+
 1. In the panel on the left under **Services**, choose **Magento Services**.
-  
+
 1. In the **API Keys** section, paste your key value into the **Production Api Key** field regardless of whether you are in a production environment or non-production environment.
 
     ![]({{ page.baseurl }}/recommendations/images/cfg-api-key.png)
