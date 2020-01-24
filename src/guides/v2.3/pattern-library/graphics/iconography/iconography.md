@@ -84,9 +84,6 @@ Icons, if in fonts or not, should be very descriptive, especially if they stand 
 1. Use colors with enough contrast for your icons.
 1. Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
 
-From: [http://modernwebaccessibility.com/en/blog/demystify-speak-none](http://modernwebaccessibility.com/en/blog/demystify-speak-none){:target="_blank"}
-
 ## Additional resources
 
 *  [https://yatil.net/the-best-way-to-use-icon-fonts/](https://yatil.net/the-best-way-to-use-icon-fonts/){:target="_blank"}
-*  [http://pictos.cc/articles/using-icon-fonts/](http://pictos.cc/articles/using-icon-fonts/){:target="_blank"}
