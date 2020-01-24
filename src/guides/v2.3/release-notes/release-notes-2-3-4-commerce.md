@@ -9,7 +9,7 @@ This release includes over 220 functional fixes to the core product and  over 30
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3. All hot fixes that were  applied to the 2.3.3 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3. All hot fixes that were  applied to the 2.3.3 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
 
 With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
@@ -294,7 +294,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19836-->
 
-*  The **Select All** checkbox on the Requisition List page now works as expected. Previously, when you deselected all products in a Requisition Lis, the **Select All** checkbox remained enabled.
+*  The **Select All** checkbox on the Requisition List page now works as expected. Previously, when you deselected all products in a Requisition List, the **Select All** checkbox remained enabled.
 
 <!--- MC-20212-->
 
