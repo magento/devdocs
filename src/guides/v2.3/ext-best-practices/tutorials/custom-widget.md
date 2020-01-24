@@ -156,6 +156,13 @@ And finally, create the template that will be used for showing the widget's data
 <h3><?= $block->escapeHtml($block->getData('label')) ?></h3>
 <h3><?= $block->escapeHtml(__('Size:')) ?> <?= $block->escapeHtml($block->getData('size')) ?></h3>
 ```
+### Step 6. Clean Cache
+
+Clean the Magento cache with the following command:
+
+```bash
+bin/magento cache:clean
+```
 
 ## Result
 
