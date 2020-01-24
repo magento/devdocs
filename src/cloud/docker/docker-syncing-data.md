@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Synchronizing data in a Docker development environment
+title: Synchronizing data in a Docker developer environment
 functional_areas:
   - Cloud
   - Setup
