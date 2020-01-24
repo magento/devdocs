@@ -30,7 +30,7 @@ To prevent accidental data loss, the database is stored in a persistent **`magen
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
-*Add a custom `my.cnf` file to the `docker-compose.override.yml` file:*
+**Add a custom `my.cnf` file to the `docker-compose.override.yml` file:**
 
 ```yaml
 db:
@@ -38,7 +38,7 @@ db:
     - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-*Add configuration values to the `docker-compose.override.yml` file:*
+**Add configuration values to the `docker-compose.override.yml` file:**
 
 ```yaml
   db:
