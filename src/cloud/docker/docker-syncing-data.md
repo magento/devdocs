@@ -1,17 +1,23 @@
 ---
 group: cloud-guide
-title: Synchronizing data in Docker
+title: Synchronizing data in a Docker developer environment
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
-In the Docker environment, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{ site.data.var.ee }} application data. You can provide access  either by directly mapping the current working directory or by using a file synchronization tool.
 
-You must use a file synchronization tool if you are using [Docker Desktop](https://www.docker.com/products/docker-desktop) for Windows or macOS. This tool is required because the filesystem for the Docker containers is inside a Virtual Machine that the Docker Desktop is creating. The application files must be local to the containers.
+In a Docker development environment, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
 
-## Native
-The Magento Cloud Docker uses the `/app/` directory inside the containers by default. If you are using Linux native, you can add the `--sync-engine="native` option to the `docker:build` command, which maps the current working directory to the `/app/` directory to eliminate the data synchronization requirement.
+The {{site.data.var.mcd}}  `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following values:
+
+`--sync-engine` value | Description
+--------------------- | ------------
+`native` | Maps the current working directory to the `/app` directory on each volume, which provides direct access to the data without requiring any synchronization. The `native` option is the default and works well on Linux native hosts. On macOS or Windows hosts, this option results in extremely slow performance in the Docker environment.
+`mutagen` | Uses [Mutagen] for file synchronization. When you select Mutagen, you must [install Mutagen] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
+`docker-sync` | Uses [docker-sync] for file synchronization. When you select docker-sync, you must [install docker-sync] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
+
+Launching the Docker development environment using the native file synchronization option maps to the `/app` folder for the following containers:
 
 ```yaml
   fpm:
@@ -31,12 +37,22 @@ The Magento Cloud Docker uses the `/app/` directory inside the containers by def
       - '.:/app'
 ```
 
-This configuration eliminates the requirement to use the `magento-sync` volume. You can bring the application up quickly without using the Mutagen or docker-sync applications.
+If you use a Linux host, this configuration eliminates the requirement to use the `magento-sync` volume. You can bring the application up quickly without installing the `Mutagen` or `docker-sync` applications.
 
-You can configure native file synchronization by specifying the `--sync-engine="native"` on the `docker:build` command.
+## Configure file synchronization
+
+You do not have to configure file synchronization if you use the `native` option since this is the default setting.
+
+On macOS or Windows systems, you can configure file synchronization using Mutagen or docker-sync by adding the `--sync-engine="<type>"` option to the `docker:build` command.
+
+For example:
+
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine="native"
+./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
 ```
 
-## Mutagen
-Mutagen is used to sync the application data into the containers. You must configure Mutagen when you build the Docker environment, and the Mutagen service must be running on your host operating system.
+[Mutagen]: https://mutagen.io/
+[install Mutagen]: https://mutagen.io/documentation/introduction/installation
+[docker-sync]: https://docker-sync.readthedocs.io/en/latest/#
+[dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
+[launch Docker in developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html

@@ -7,15 +7,13 @@ functional_areas:
   - Docker
 ---
 
-Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
+Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations. However, you can use file synchronization tools to improve performance.
+See [Synchronizing data in Docker].
 
 {: .bs-callout-info }
 The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
-When you launch the Docker environment in developer mode, you must select a file synchronization option:
-
--  On Windows or MacOS, use [docker-sync][dsync-install] or [mutagen][mutagen-install], `docker-sync` is the default option
--  On Linux, use the `native` option to disable file synchronization, which is not required for local Docker development
+When you use the Docker environment in developer mode, you can select the file synchronization option when you build the `docker-compose.yml` configuration file.
 
 Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `docker-sync.yml` and `mutagen.sh` files.
 
@@ -32,7 +30,7 @@ To launch the Docker environment in developer mode:
    composer install
    ```
 
-1. Install the selected file synchronization tool if required:
+1. On macOS or Windows hosts, install the selected file synchronization tool:
 
    -  [Docker-sync Installation instructions][dsync-install]
    -  [Mutagen.io Installation instructions][mutagen-install]
@@ -40,21 +38,13 @@ To launch the Docker environment in developer mode:
 1. In your local environment, generate the Docker Compose configuration file. You can use the service keys, such as `--php`, to [specify a version][services].
 
    ```bash
-   ./vendor/bin/ece-tools docker:build --mode="developer"
+   ./vendor/bin/ece-docker build:compose --mode="developer"
    ```
 
-   By default, the `docker-build` command generates the Docker Compose configuration file using 'docker-sync' for file synchronization. To use 'mutagen.io' for file synchronization on Windows or MacOS, you must run the command with the `--sync-engine="mutagen"` option.
-
-   For example:
+   If required, set the option for [synchronizing data in Docker]. For example:
 
    ```bash
-   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine="mutagen"
-   ```
-
-   On Linux, use the `native` option to generate the Docker Compose configuration file:
-
-   ```bash
-   ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine="native"
+   ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
    ```
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
@@ -65,7 +55,7 @@ To launch the Docker environment in developer mode:
 
 1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug][xdebug].
 
-1. Start the file synchronization.
+1. If you selected `docker-sync` for file synchronization, start the file synchronization.
 
    For the `docker-sync` tool:
 
@@ -75,16 +65,13 @@ To launch the Docker environment in developer mode:
 
    If this is the first installation, expect to wait a few minutes for file synchronization.
 
-   {: .bs-callout-info}
-   If you use the `mutagen.io` or `native` option for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the Docker containers.
-
 1. Build files to containers and run in the background.
 
    ```bash
    docker-compose up -d
    ```
 
-1. Start the file synchronization with `mutagen.io`. If you use the `docker-sync` or `native` options to generate the Docker Compose configuration file, skip this step.
+1. If you selected `mutagen` for file synchronization, start the file synchronization.
 
    ```bash
    bash ./mutagen.sh
@@ -133,6 +120,7 @@ To launch the Docker environment in developer mode:
 
    -  `https://magento2.docker`
 
+[Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-versions
