@@ -47,7 +47,7 @@ The `-o` option converts PSR-0/4 autoloading to classmap to get a faster autoloa
 composer dump-autoload -o --apcu
 ```
 
-If you update the autoloader, you should run the following commands in order:
+If you plan on updating the autoloader, you must run the following commands in order:
 
 ```bash
 composer install
