@@ -11,7 +11,7 @@ The Magento production deployment flow helps a store reach maximum performance.
 
 ## Install dependencies
 
-The `composer.json` and `composer.lock` files manage Magento dependencies and install the appropriate version for each package.
+The `composer.json` and `composer.lock` files manage Magento dependencies and install the appropriate version for each package. You must install dependencies before [preprocessing dependency injection instructions](#preprocess-dependency-injection-instructions) if you plan to update the [autoloader](#update-the-autoloader).
 
 To install Magento dependencies:
 
@@ -47,6 +47,24 @@ The `-o` option converts PSR-0/4 autoloading to classmap to get a faster autoloa
 composer dump-autoload -o --apcu
 ```
 
+If you update the autoloader, you should run the following commands in order:
+
+```bash
+composer install
+```
+
+```bash
+bin/magento setup:di:compile
+```
+
+```bash
+composer dump-autoload -o
+```
+
+```bash
+bin/magento setup:static-content:deploy
+```
+
 ## Deploy static content
 
 Deploying static content causes Magento 2 to perform the following actions:
@@ -70,6 +88,9 @@ bin/magento setup:static-content:deploy
 This command allows Composer to rebuild the mapping to project files so that they load faster.
 
 ## Set production mode
+
+{:.bs-callout-info}
+Setting production mode automatically runs `setup:di:compile` and `setup:static-content:deploy`.
 
 Finally, you need to place your store in Production mode. Production mode is specifically optimized for maximum performance of your store. It also de-activates all developer-specific features. This can be done in your `.htaccess` or `nginx.conf` file:
 
