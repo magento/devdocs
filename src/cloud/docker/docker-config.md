@@ -63,7 +63,7 @@ You can launch your Docker environment in one of the following modes:
 For example, the following command starts the Docker configuration generator for the developer mode:
 
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer"
+./vendor/bin/ece-docker build:compose --mode="developer"
 ```
 
 To skip the interactive mode, use the `-n, --no-interaction` option.
