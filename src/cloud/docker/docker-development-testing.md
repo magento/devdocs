@@ -97,7 +97,7 @@ Acceptance Tests (1) -----------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
- [Magento\MagentoCloud\Test\Functional\Robo\Tasks\GenerateDockerCompose] Running ./bin/ece-tools docker:build
+ [Magento\MagentoCloud\Test\Functional\Robo\Tasks\GenerateDockerCompose] Running ./bin/ece-docker build:compose
  --mode=functional --php=7.2
 ...
 ...

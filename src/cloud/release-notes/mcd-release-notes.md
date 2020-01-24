@@ -72,7 +72,11 @@ The release notes include:
 
    -  {:.new}Added the `--rm` option to `./bin/magento-docker` commands for the build and deploy containers. This removes the container after the task is complete.<!--MAGECLOUD-4205-->
 
-   -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development.<!--MAGECLOUD-4351-->
+   -  {:.new}**Updates to `build:compose` command**–
+
+      -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development. See [Synchronizing data in the Docker environment]({{site.baseurl}}/cloud/docker/docker-syncing-data.html).<!--MAGECLOUD-4351, MAGECLOUD-->
+
+   -  {:.new}Changed the default file synchronization setting from `docker-sync` to `native`.<!--MAGECLOUD-5066-->[Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/124).
 
 -  {:.new}**Validation improvements**–
 
