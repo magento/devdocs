@@ -34,25 +34,25 @@ The release notes include:
 
    -  {:.fix}**Persistent database container**–The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers].<!--MAGECLOUD-3978-->
 
-      -  {:.new}**Updated the TLS and Varnish images to use official Docker images**–<!--MAGECLOUD-4163-->
+   -  {:.new}**TLS container updates**–
 
-      -  {:.new}The base image for the [Magento Cloud TLS container] is now based on the `debian:jessie` Docker image.
+      -  {:.new}**Updated the container base image to use official image**–The [Magento Cloud TLS container] image is now based on the official `debian:jessie` Docker image.–<!--MAGECLOUD-4163-->
 
-      -  {:.new}The base image for the [Magento Cloud Varnish container] is now based on the `centos` Docker image.
+      -  {:.new}**Added support for the [Pound TLS Termination Proxy]**–The [Pound configuration file][`pound.cfg`] adds the following ENV variables to customize the Docker configuration for the TLS container:
 
-   -  {:.new}**Improved default timeout configuration for the Magento Cloud TLS and Varnish containers**–
+         -  **`TimeOut`**–Sets the Time to First Byte (TTFB) timeout value. The default value is 300 seconds.
 
-      -  Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the TLS container. Both timeout values default to `300s` (5 minutes).
+         -  **`RewriteLocation`**–Determines whether the Pound proxy rewrites the location to the request URL by default. Defaults to `0` to prevent the rewrite from breaking redirects to outside websites like an external SSO site. [Fix submitted by Sorin Sugar](https://github.com/magento/magento-cloud-docker/pull/37)<!--MAGECLOUD-4061-->
 
-      -  Increased the timeout value in the Varnish container configuration from 15 to 300 seconds.
+      -  {:.new} Increased the timeout value in the TLS container configuration from 15 to 300 seconds. [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
-      [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
+   -  {:.new}**Varnish container updates**–
 
-   -  {:.new}**Added support for the [Pound TLS Termination Proxy]**–The [Pound configuration file][`pound.cfg`] adds the following ENV variables to customize the Docker configuration for the TLS container:
+      -  {:.new}**Updated the container base image to use official image**The [Magento Cloud Varnish container] is now based on the official `centos` Docker image.<!--MAGECLOUD-4163-->
 
-      -  **`TimeOut`**–Sets the Time to First Byte (TTFB) timeout value. The default value is 300 seconds.
+      -  {:.new}**Improved default timeout configuration**-Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the Varnish container. Both timeout values default to `300s` (5 minutes). [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
-      -  **`RewriteLocation`**–Determines whether the Pound proxy rewrites the location to the request URL by default. Defaults to `0` to prevent the rewrite from breaking redirects to outside websites like an external SSO site. [Fix submitted by Sorin Sugar](https://github.com/magento/magento-cloud-docker/pull/37)<!--MAGECLOUD-4061-->
+      -  {:.fix}**Skip Varnish during Xdebug sessions**–Updated the Varnish container configuration to return `pass` on requests received when Xdebug is enabled. In previous Magento Cloud Docker releases, you could not use Xdebug if the Docker environment included Varnish. [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/111).<!--MAGECLOUD-4873-->
 
 -  {:.new}**Docker configuration changes**–
 
