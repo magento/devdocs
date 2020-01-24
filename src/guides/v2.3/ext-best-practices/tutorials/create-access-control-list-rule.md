@@ -57,14 +57,24 @@ Admin controllers:
 
 We can restrict the access to admin controllers by overriding the `_isAllowed` method of \Magento\Framework\App\Action\Action class.
 
-> `Controller/Adminhtml/Index.php`
+> `Controller/Adminhtml/Create/Index.php`
 
 ```php
 protected function _isAllowed()
 {
- return $this->_authorization->isAllowed(Magestore_CustomMenu::menu');
+ return $this->_authorization->isAllowed('Vendor_MyModule::create');
 }
 ```
+
+> `Controller/Adminhtml/Delete/Index.php`
+
+```php
+protected function _isAllowed()
+{
+ return $this->_authorization->isAllowed('Vendor_MyModule::delete');
+}
+```
+
 
 If user doesn't have permission, the action page will be like below.
 
