@@ -33,7 +33,7 @@ The release notes include:
    -  {:.new}**RabbitMQ version support**–Updated the RabbitMQ container configuration to support RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
 
    -  {:.fix}**Persistent database container**–The `magento-db: /var/lib/mysql` database volume now persists after you stop and remove the Docker configuration and restores when you restart the Docker configuration. Now, you must manually delete the database volume. See [Database containers].<!--MAGECLOUD-3978-->
-      
+
       -  {:.new}**Updated the TLS and Varnish images to use official Docker images**–<!--MAGECLOUD-4163-->
 
       -  {:.new}The base image for the [Magento Cloud TLS container] is now based on the `debian:jessie` Docker image.
