@@ -5,13 +5,13 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The ColumnsEditingClient [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for the [ColumnsEditor]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/editing/editor.js) component, it provides functionality for saving edited data.
+The ColumnsEditingClient [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for the [ColumnsEditor]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/editing/editor.js) component. It provides functionality for saving edited data.
 
 ## Configuration options
 
 | Option | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/grid/editing/client` |
+| `component` | The path to the component's `.js` file, relative to RequireJS. | String | `Magento_Ui/js/grid/editing/client` |
 | `requestConfig` | The request configuration for AJAX. | Object | `{dataType: 'json',type: 'POST'}` |
 | `saveUrl` | Path to a controller that will process the data saving request. | String | `-` |
 | `validateBeforeSave` | Defines whether validation executes before data saving. | Boolean | `true` |
