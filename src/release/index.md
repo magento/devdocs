@@ -38,4 +38,4 @@ Magento modules that have been built to be decoupled from the {{site.data.var.ee
 
 The following table shows the release status of Magento extension versions relative to {{site.data.var.ee}}.
 
-{% include compatibility.html data=site.data.compatibility %}
+{% include compatibility-mde.html data=site.data.mde %}
