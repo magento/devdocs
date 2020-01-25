@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The ColumnsEditor [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component, allowing users to select and edit grid records data.
+The ColumnsEditor [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component, allowing users to select and edit grid records data.
 
 ## Configuration options
 
