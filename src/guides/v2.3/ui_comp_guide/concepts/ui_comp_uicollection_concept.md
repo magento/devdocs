@@ -64,7 +64,7 @@ The `uiCollection` class implements the following methods:
 
 *  `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
 
-   Example of configuring the provider property by default for all child elements of the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component.
+   This is an example of configuring the provider property by default for all child elements of the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component.
 
    ```xml
    <listing>
