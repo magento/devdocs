@@ -90,7 +90,7 @@ This command allows Composer to rebuild the mapping to project files so that the
 ## Set production mode
 
 {:.bs-callout-info}
-Setting production mode automatically runs `setup:di:compile` and `setup:static-content:deploy`.
+Setting the mode to production automatically runs `setup:di:compile` and `setup:static-content:deploy`.
 
 Finally, you need to place your store in Production mode. Production mode is specifically optimized for maximum performance of your store. It also de-activates all developer-specific features. This can be done in your `.htaccess` or `nginx.conf` file:
 
