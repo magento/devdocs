@@ -42,4 +42,4 @@ In earlier releases of {{ site.data.var.ct }}, you could use the `m2-ece-build` 
 
 ### Patches changes
 
--  The {{site.data.var.mcp}} package bundles all patches available from the [Magento Technical resources](https://magento.com/tech-resources/download) page. If you have downloaded any Magento-supplied patches from this site and copied them into your Magento project, remove them to prevent conflicts.
+The {{site.data.var.mcp}} package bundles all patches available from the [Magento Technical resources](https://magento.com/tech-resources/download) page. If you have downloaded any Magento-supplied patches from this site and copied them into your Magento project, remove them to prevent conflicts.

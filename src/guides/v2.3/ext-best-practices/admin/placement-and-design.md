@@ -44,7 +44,7 @@ These extensions provide additional [API](https://glossary.magento.com/api) over
 
 **Placement:**
 
-All required settings for this connector type should appear in the **Stores** > **Settings** > **Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
+All required settings for this connector type should appear in the **Stores** > Settings > **Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
 
 ![Connector settings placement]({{ site.baseurl }}/common/images/ext-best-practices/connector-settings-placement.png)
 
@@ -58,13 +58,13 @@ All required settings for this connector type should appear in the **Stores** > 
 ### Store Feature Connector
 
 These extensions are responsible for integrating with different systems and need additional
-settings displayed under specific entries in the **Store** > **Settings** > **Configuration** section.
+settings displayed under specific entries in the **Store** > Settings > **Configuration** section.
 
 **Placement:**
 
-The settings for these extensions should be displayed under its respective parent section under the **Store** > **Settings > **Configuration** section.
+The settings for these extensions should be displayed under its respective parent section under the **Store** > Settings > **Configuration** section.
 
-For example, if the extension is for Shipping, then you can place it under **Store** > **Settings** > **Configuration** > **Sales** > **Shipping Settings**.
+For example, if the extension is for Shipping, then you can place it under **Store** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
 
 ![Store Feature Connector placement]({{ site.baseurl }}/common/images/ext-best-practices/store-feature-connector-placement.png)
 
