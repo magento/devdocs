@@ -35,7 +35,7 @@ There are 3 nodes (web nodes) for processing requests and web traffic: **php-fpm
 
 ![Web tier scaling]
 
-This complements the vertical scaling provided by the core tier. As the core tier scales in size and power to accommodate a growing database and increase in service usage, the web tier scales in size and power, and even instances, to accommodate growing process requests and traffic requirements.
+This complements the vertical scaling provided by the core tier. As the core tier scales in size and power to accommodate a growing database and increase in service usage, the web tier scales in size and power, and even instances, to accommodate an increase in process requests and higher traffic requirements.
 
 Consider an example that the web node instance type is _C5.2xlarge with 8 CPU and 16Gb RAM_. The number of requests to the site increased greatly. You can add an additional C5.2xlarge node to handle the increase in php-fpm processes or you can change each instance type to _C5.4xlarge with 16 CPU and 32Gb RAM_. Adding an additional node reduces the risk of insufficient surge capacity.
 
@@ -46,7 +46,7 @@ Minimally, Pro projects with the Scaled architecture have 6 nodes available.
 -  3 web nodes c5.2xlarge (8 CPU, 16 Gb RAM)
 -  3 core nodes m5.2xlarge (8 CPU, 32 Gb RAM)
 
-Each project is unique, however, and requires performance monitoring to properly analyze resource management. Each account includes the [New Relic Infrastructure service][nri], which automatically connects with the application data and performance analytics to provide dynamic server monitoring. Specifically, you can use the New Relic service to monitor CPU and RAM utilization to determine which nodes require additional resources. As a resource reaches capacity or a degradation in performance, you can create a request to scale your infrastructure to meet the demand.
+Each project is unique, however, and requires performance monitoring to properly analyze resource management. Each account includes the [New Relic Infrastructure service][nri], which automatically connects with the application data and performance analytics to provide dynamic server monitoring. Specifically, you can use the New Relic service to monitor CPU and RAM utilization to determine which nodes require additional resources. As a resource reaches capacity or you notice a degradation in performance based on the analytics, you can create a request to scale your infrastructure to meet the demand.
 
 ### SSH access
 
