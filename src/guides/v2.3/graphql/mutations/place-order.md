@@ -74,3 +74,17 @@ Attribute |  Data Type | Description
 Attribute |  Data Type | Description
 --- | --- | ---
 `order_id` String | The unique ID that identifies the order
+
+## Errors
+
+Error | Description
+--- | ---
+`Enter a valid payment method and try again` | Payment method is not set. See, [setPaymentMethodOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/mutations/set-payment-method.html) mutation.
+`Guest email for cart is missing.` | User places an order as guest and user's email is not set. See, [setGuestEmailOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-quote-email.html) mutation. 
+`Please check the billing address information` | Billing address is not set. See, [setBillingAddressOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/set-billing-address.html) mutation.
+`Required parameter "cart_id" is missing` | The mutation does not contain a `cart_id` parameter.
+`Some addresses can't be used due to the configurations for specific countries` | Shipping method is not set. See, [setShippingMethodsOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html) mutation.
+`Some of the products are out of stock` | Some products in your shopping cart is currently out of stock.
+`The current user cannot perform operations on cart` | An unauthorized user (guest) tried to place an order of authorized user (customer), or a customer tried to place an order of another customer.
+`The shipping method is missing. Select the shipping method and try again` | Shipping method is not set. See, [setShippingMethodsOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html) mutation.
+`Unable to place order: A server error stopped your order from being placed. Please try to place your order again` | Your tried to place order without products in the shopping cart.
