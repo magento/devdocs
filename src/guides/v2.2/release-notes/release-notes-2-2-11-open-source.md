@@ -18,7 +18,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18720  -->
 
-*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content**  >  **Pages**.  Previously, Magento displayed this error: `You cannot define a correlation namestore_table more than once`.
+*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content** > **Pages**.  Previously, Magento displayed this error: `You cannot define a correlation namestore_table more than once`.
 
 <!--- MC-18903 -->
 

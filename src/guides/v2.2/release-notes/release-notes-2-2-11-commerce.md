@@ -14,7 +14,7 @@ Magento 2.2.11 has not been tested with PHP 7.1. PHP 7.1 reached EOL (End of Lif
 
 Twenty-three security enhancements that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, two-factor authentication, use of a VPN, the use of a unique location rather than /admin, and good password hygiene.
 
-With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for more information.
+With this quarterly release, we’ve changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for more information.
 
 ## Functional fixes
 
@@ -24,7 +24,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MC-18720  -->
 
-*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content**  >  **Pages**.  Previously, Magento displayed this error: `You cannot define a correlation namestore_table more than once`.
+*  Administrators with appropriate but restricted privileges can now view the list of CMS pages at **Content** > **Pages**. Previously, Magento displayed this error: `You cannot define a correlation namestore_table more than once`.
 
 <!--- MC-18903 -->
 
