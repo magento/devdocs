@@ -49,8 +49,6 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
    sudo apachectl stop
    ```
 
-1. Optionally, [enable Xdebug].
-=======
 1. Optionally, [enable Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#enable-xdebug).
 
 ## Launch the Docker environment
@@ -179,7 +177,6 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     If you use `mutagen.io` for file synchronization, skip this step. You start `mutagen.io` _after_ deploying the docker containers.
 
 1. Start the file synchronization with mutagen.io. If you use docker-sync for file synchronization, skip this step.
->>>>>>> Cloud-2002.1.0
 
 ## Launch modes
 
