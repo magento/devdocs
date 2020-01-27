@@ -9,7 +9,7 @@ The Select component provides the interface for a list or a data set. With this 
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
-| `caption` | Caption for DOM select element. | String | `''` |
+| `caption` | Caption for DOM select element. | String | `-` |
 | `elementTmpl` | The path to the `.html` template of the particular type of field (select). | String | `ui/form/element/select` |
 | `options` | The array of the options to be displayed in the list for selection. | Array | `[]` |
 | `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `Magento_Ui/js/form/element/select` |
