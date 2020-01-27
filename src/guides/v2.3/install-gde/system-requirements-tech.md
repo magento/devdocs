@@ -44,7 +44,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 {:.bs-callout-warning}
 PHP 7.1 has reached [End of Life](https://www.php.net/supported-versions.php). To maintain PCI compliance, Magento should not be run on unsupported software.
-Installing from Github will no longer work with Magento 2.3.4/PHP 7.1.
+Installing from GitHub will no longer work with Magento 2.3.4/PHP 7.1.
 The only way to install 2.3.4 with PHP 7.1.x is with Composer.
 Magento recommends using PHP 7.3
 
