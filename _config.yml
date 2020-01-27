@@ -89,6 +89,7 @@ defaults:
       group: page-builder
       github_link: false
       feedback_link: false
+      ee_only: true
 
   - 
       scope:
@@ -97,6 +98,7 @@ defaults:
         group: page-builder
         github_link: false
         feedback_link: false
+        ee_only: true
 
   -
     scope:

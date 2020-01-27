@@ -48,6 +48,7 @@ The following sections discusses the structure and contents of the deployment co
 Examples:
 
 *  Uninstall components: [`bin/magento setup:uninstall`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html)
+*  Check status of components: [`bin/magento module:status`]({{ page.baseurl }}/reference/cli/magento.html#modulestatus)
 *  Enable or disable components: [`bin/magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), [`bin/magento module:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
 *  [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
 *  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

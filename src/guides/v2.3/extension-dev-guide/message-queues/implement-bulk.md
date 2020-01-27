@@ -72,14 +72,14 @@ class ScheduleBulk
      * ScheduleBulk constructor.
      *
      * @param BulkManagementInterface $bulkManagement
-     * @param OperationInterfaceFactory $operartionFactory
+     * @param OperationInterfaceFactory $operationFactory
      * @param IdentityGeneratorInterface $identityService
      * @param UserContextInterface $userContextInterface
      * @param UrlInterface $urlBuilder
      */
     public function __construct(
         BulkManagementInterface $bulkManagement,
-        OperationInterfaceFactory $operartionFactory,
+        OperationInterfaceFactory $operationFactory,
         IdentityGeneratorInterface $identityService,
         UserContextInterface $userContextInterface,
         UrlInterface $urlBuilder,
@@ -87,7 +87,7 @@ class ScheduleBulk
     ) {
         $this->userContext = $userContextInterface;
         $this->bulkManagement = $bulkManagement;
-        $this->operationFactory = $operartionFactory;
+        $this->operationFactory = $operationFactory;
         $this->identityService = $identityService;
         $this->urlBuilder = $urlBuilder;
         $this->jsonHelper = $jsonHelper;
