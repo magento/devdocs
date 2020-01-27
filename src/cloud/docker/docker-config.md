@@ -49,7 +49,6 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
    sudo apachectl stop
    ```
 
-<<<<<<< HEAD
 1. Optionally, [enable Xdebug].
 =======
 1. Optionally, [enable Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#enable-xdebug).
@@ -193,17 +192,11 @@ You can launch your Docker environment in one of the following modes:
 
 For example, the following command starts the Docker configuration generator for the developer mode:
 
-<<<<<<< HEAD
 ```bash
 ./vendor/bin/ece-docker build:compose --mode="developer"
 ```
 
 To skip the interactive mode, use the `-n, --no-interaction` option.
-=======
--  `http://magento2.docker`
-
--  `https://magento2.docker`
->>>>>>> Cloud-2002.1.0
 
 ## Stop and start containers
 
