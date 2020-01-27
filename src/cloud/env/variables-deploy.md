@@ -240,7 +240,7 @@ stage:
 -  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
+For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
 
 ### `ENABLE_GOOGLE_ANALYTICS`
 
