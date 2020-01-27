@@ -133,6 +133,8 @@ Attribute | Data type | Description
 {:.bs-callout-info}
 If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
 
+To enable sorting by an attribute that is not in the `ProductAttributeSortInput` object, set the **Stores** > Attributes > **Product** > <Attribute Name> > **Storefront Properties** > **Use in Search** and **Used in Sorting in Product Listing** fields to Yes.
+
 ## Deprecated input attributes
 
 The `filter` and `sort` attributes require new input objects. The following sections list the deprecated attributes.
@@ -1021,6 +1023,78 @@ In the following example, a catalog price rule that provides a 10% discount on a
 }
 ```
 
+### Sort by a custom attribute
+
+In this example, the `description` attribute has been enabled by setting the **Stores** > Attributes > **Product** > description > **Storefront Properties** > **Use in Search** and **Used in Sorting in Product Listing** fields to Yes. The query returns all products with a price range of $28 to $30, sorted by the description.
+
+**Request:**
+
+```graphql
+{
+  products(filter: { price: { from: "28" to: "30"} }
+  sort: {
+    description: ASC
+  }) {
+    total_count
+    items {
+      name
+      sku
+      description {
+        html
+      }
+      price_range {
+        maximum_price {
+          regular_price {
+            value
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "total_count": 25,
+      "items": [
+        {
+          "name": "Erikssen CoolTech&trade; Fitness Tank",
+          "sku": "MT01",
+          "description": {
+            "html": "<p>A good running tank helps make the miles pass by keep you cool. The Erikssen CoolTech&trade; Fitness Tank completes that mission, with performance fabric engineered to wick perspiration and promote airflow.</p>\n<p>&bull; Red performance tank.<br />&bull; Slight scoop neckline. <br />&bull; Reflectivity. <br />&bull; Machine wash/dry.</p>"
+          },
+          "price_range": {
+            "maximum_price": {
+              "regular_price": {
+                "value": 29
+              }
+            }
+          }
+        },
+        {
+          "name": "Primo Endurance Tank",
+          "sku": "MT03",
+          "description": {
+            "html": "<p>Chances are your workout goes beyond free weights, which is why the Primo Endurance Tank employs maximum versatility. Run, lift or play ball &ndash; this breathable mesh top will keep you cool during all your activities.</p>\n<p>&bull; Red heather tank with gray pocket.<br />&bull; Chafe-resistant flatlock seams. <br />&bull; Relaxed fit. <br />&bull; Contrast topstitching.<br />&bull; Machine wash/dry.</p>"
+          },
+          "price_range": {
+            "maximum_price": {
+              "regular_price": {
+                "value": 29
+              }
+            }
+          }
+        },
+        ...
+    }
+  }
+}  
+```
 ### Retrieve related products, up-sells, and cross-sells
 
 The following query shows how to get related products, up-sells, and cross-sells for a product:
