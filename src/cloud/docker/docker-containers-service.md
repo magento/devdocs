@@ -162,13 +162,25 @@ web | [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos
 
 The Web container uses nginx to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
 
-The NGINX configuration for this container is the standard Magento [nginx config]. This can be changed by mounting a new config using a volume.
+The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
-```yaml
-  web:
+{:.procedure}
+To mount custom NGINX configuration file using volumes:
+
+1. On your local host, create a `./.docker/nginx/etc/` directory.
+
+1. Copy the `nginx.conf` and `vhost.conf` [configuration files][configs] to the new directory.
+
+1. In the `vhost.conf` file, customize the values for variables like `!UPLOAD_MAX_FILESIZE!;` as needed.
+
+1. To mount the custom NGINX configuration to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
+
+   ```conf
+   web:
     volumes:
-      - path/to/custom.nginx.conf:/etc/nginx/conf.d/default.conf
-```
+      ./.docker/nginx/etc/nginx.conf:/etc/nginx/nginx.conf
+      ./.docker/nginx/etc/vhost.conf:/etc/nginx/conf.d/default.conf
+   ```
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
@@ -183,5 +195,7 @@ The NGINX configuration for this container is the standard Magento [nginx config
 [debian:jessie]: https://hub.docker.com/_/debian
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
 [centos]: https://hub.docker.com/_/centos
+[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
+[web config]: https://github.com/magento/docker
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish

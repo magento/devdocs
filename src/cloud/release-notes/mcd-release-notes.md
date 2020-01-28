@@ -28,6 +28,12 @@ The release notes include:
 
       -  {:.new}**Added support for [ionCube](https://www.ioncube.com/)**–Updated the default Docker configuration to support ionCube in the local Docker development environment.<!--MAGECLOUD-4354-->
 
+   -  {:.new}**Web container updates**–
+
+      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the Magento Cloud Docker environment. See [Web container]({{site.baseurl}}/cloud/docker/dockr-containers-service.html#web-container).
+
+      -  {:.new}**Auto-generated NGINX certificates**–The Docker configuration file now includes the configuration to auto-generate NGINX certificates for the Web container.<!--MAGECLOUD-4258-->
+
    -  {:.new}**New Selenium container**–Added a [Selenium container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#selenium-container) to support {{site.data.var.ee}} application testing using the Magento Functional Testing Framework (MFTF).<!--MAGECLOUD-4040-->
 
    -  {:.new}**RabbitMQ version support**–Updated the RabbitMQ container configuration to support RabbitMQ version 3.8.<!--MAGECLOUD-4674-->
