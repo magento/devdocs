@@ -64,6 +64,22 @@ The `uiCollection` class implements the following methods:
 
 *  `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
 
+   This is an example of configuring the provider property by default for all child elements of the [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html) component.
+
+   ```xml
+   <listing>
+       ...
+       <columns>
+           <settings>
+               <childDefaults>
+                   <param name="provider" xsi:type="string">ui_registry.path.to.provider.component</param>
+               </childDefaults>
+           </settings>
+           ...
+       </columns>
+   </listing>
+   ```
+
 ## uiCollection template {#uicollection_template}
 
 The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} GitHub repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/collection.html).
