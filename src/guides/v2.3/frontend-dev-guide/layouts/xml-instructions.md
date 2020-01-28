@@ -61,13 +61,13 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | A fully-qualified class name, such as `Vendor\Module\Block\Class`. Defaults to `Magento\Framework\View\Element\Template`. | no |
-| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false` | `false` |
+| `display` | Prevents a block from displaying (the associated PHP classes are still loaded). | `true` or `false` | no |
 | `name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
 | `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | `Vendor_Module::path/to/template.phtml` (Scope is already in the `templates` directory of the module) | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
-| `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | `false` |
+| `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
 | `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
@@ -96,7 +96,7 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 | `after` | Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-). | No |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | No |
 | `output` | Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.) | Any value except the obsolete `toHtml`. Recommended value is `1`. | No |
-| `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any of the following: `aside`, `dd`, `div`, `dl`, `fieldset`, `main`, `nav`, `header`, `footer`, `ol`, `p`, `section`, `table`, `tfoot`, `ul` | `No` or `Yes` - if `htmlClass` or `htmlId` is specified |
+| `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any of the following: `aside`, `dd`, `div`, `dl`, `fieldset`, `main`, `nav`, `header`, `footer`, `ol`, `p`, `section`, `table`, `tfoot`, `ul` | No or Yes - if `htmlClass` or `htmlId` is specified |
 | `htmlId` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `id` value. | No |
 | `htmlClass` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `class` value. | No |
 
