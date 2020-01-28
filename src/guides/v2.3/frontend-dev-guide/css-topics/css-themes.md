@@ -74,7 +74,7 @@ Your custom `default_head_blocks.xml` should be located as follows:
 
 To include a CSS file, add the `<css src="<path>/<file>" media="print|<option>"/>` block in `<head>` section in a layout file. `<path>` is specified relative to the theme web directory (`<theme_dir>/web`)
 
-For Example, to include <theme_dir>/web/css/custom.css file.
+For example, to include `<theme_dir>/web/css/custom.css`:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
