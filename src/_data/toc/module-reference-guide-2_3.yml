@@ -816,7 +816,7 @@ pages:
         url: /mrg/b2b/SharedCatalog.html
     
   
-  - label: Inventory Management (v)
+  - label: Inventory Management (v1.1.4)
     include_versions: ["2.3"]
     children:
     
