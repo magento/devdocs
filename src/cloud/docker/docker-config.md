@@ -17,9 +17,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
 ## Prerequisites
 
 1. You must have the following software installed on your local workstation:
-   -  PHP version 7.1 or later
-      -  [php@7.1][php71]
-      -  [php@7.2][php72]
+   -  [PHP version 7.1 or later][php]
    -  [Composer]
    -  [Docker]
    -  On MacOS and Windows, file synchronization is required for developer mode—use one of the following:
@@ -55,7 +53,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
 
 ## Launch modes
 
-_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
+_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 You can launch your Docker environment in one of the following modes:
 
@@ -65,7 +63,7 @@ You can launch your Docker environment in one of the following modes:
 For example, the following command starts the Docker configuration generator for the developer mode:
 
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer"
+./vendor/bin/ece-docker build:compose --mode="developer"
 ```
 
 To skip the interactive mode, use the `-n, --no-interaction` option.
@@ -89,18 +87,20 @@ Use the following command to stop and remove the Docker configuration:
    ```
 
 {: .bs-callout-warning}
-This removes all components of your local Docker instance including containers, networks, volumes, and images. This does NOT remove the persistent database volume. See [Database containers].
+This command removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
 
 ## Sendmail service
 
-You can send emails from your Docker environment when you enable `sendmail` in the `docker-compose.yml` configuration file:
+Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
 
 ```yaml
 ENABLE_SENDMAIL=true
 ```
 
-[php71]: https://formulae.brew.sh/formula/php@7.1
-[php72]: https://formulae.brew.sh/formula/php@7.2
+{:.bs-callout-warning}
+We do not recommend using Sendmail on CLI containers because the service can slow down the container creation process.
+
+[php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
 [Docker]: https://www.docker.com/get-started
 [docker-reference]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html
@@ -109,4 +109,5 @@ ENABLE_SENDMAIL=true
 [prod-mode]: {{site.baseurl}}/cloud/docker/docker-mode-production.html
 [dev-mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [enable Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
-[Database containers]: {{site.baseurl}}/cloud/docker/docker-database.html
+[Database container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
+[refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
