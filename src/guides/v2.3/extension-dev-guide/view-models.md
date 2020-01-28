@@ -65,4 +65,4 @@ $viewModel = $block->getViewModel();
 
 ## Examples of View models in Magento
 
--  [Magento Theme](https://github.com/magento/magento2/blob/2.2.9/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.
+-  [Magento Theme](https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L45 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.
