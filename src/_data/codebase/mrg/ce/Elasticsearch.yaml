@@ -1,7 +1,7 @@
 ---
 title: Magento_Elasticsearch
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/Elasticsearch/README.md
 last_modified_at: '2018-03-09 17:43:18 -0600'
 content: |-
