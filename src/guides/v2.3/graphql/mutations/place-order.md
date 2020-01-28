@@ -33,7 +33,7 @@ mutation {
     }
   ) {
     order {
-      order_id
+      order_number
     }
   }
 }
@@ -46,7 +46,7 @@ mutation {
   "data": {
     "placeOrder": {
       "order": {
-        "order_id": "000000006"
+        "order_number": "000000006"
       }
     }
   }
@@ -74,6 +74,7 @@ Attribute |  Data Type | Description
 Attribute |  Data Type | Description
 --- | --- | ---
 `order_id` String | The unique ID that identifies the order
+`order_number` String | The unique ID that identifies the order
 
 ## Errors
 
@@ -88,3 +89,4 @@ Error | Description
 `The current user cannot perform operations on cart` | An unauthorized user (guest) tried to place an order on behalf of an authorized user (customer), or a customer tried to place an order on behalf of another customer.
 `The shipping method is missing. Select the shipping method and try again` | The shipping method was not set. See [setShippingMethodsOnCart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html) mutation.
 `Unable to place order: A server error stopped your order from being placed. Please try to place your order again` | The shopper tried to place an order when no products are in the shopping cart.
+

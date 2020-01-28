@@ -40,7 +40,7 @@ The following call returns information about the logged-in customer. Provide the
         region_id
       }
       postcode
-      country_id
+      country_code
       telephone
     }
   }
@@ -72,7 +72,7 @@ The following call returns information about the logged-in customer. Provide the
            "region_id": 33
          }
          "postcode": "78758",
-         "country_id": "US",
+         "country_code": "US",
          "telephone": "512 555-1212"
         }
       ]
@@ -188,7 +188,83 @@ query {
   }
 }
 ```
+### Retrieve the customer's wish list
 
+The following query returns the customer's wish list:
+
+**Request:**
+
+```graphql
+{
+  customer {
+    wishlist {
+      items {
+        id
+        description
+        qty
+        product {
+          sku
+          name
+          price_range {
+            maximum_price {
+              regular_price {
+                value
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "customer": {
+      "wishlist": {
+        "items": [
+          {
+            "id": 1,
+            "description": "I need this",
+            "qty": 1,
+            "product": {
+              "sku": "24-WG080",
+              "name": "Sprite Yoga Companion Kit",
+              "price_range": {
+                "maximum_price": {
+                  "regular_price": {
+                    "value": 77
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": 2,
+            "description": null,
+            "qty": 1,
+            "product": {
+              "sku": "24-UG04",
+              "name": "Zing Jump Rope",
+              "price_range": {
+                "maximum_price": {
+                  "regular_price": {
+                    "value": 12
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
 ## Output attributes
 
 ### Customer attributes {#customerAttributes}
@@ -196,6 +272,26 @@ query {
 The `customer` object can contain the following attributes:
 
 {% include graphql/customer-output.md %}
+
+### Wishlist attributes {#Wishlist}
+
+Attribute | Data type | Description
+--- | --- | ---
+`items` | [WishlistItem](#wishlistitem) | An array of items in the customer's wish list
+`items_count` | Int | The number of items in the wish list
+`id` | ID | The unique identifier of the wish list
+`sharing_code` | String | An encrypted code that Magento uses to link to the wish list
+`updated_at` | String | The time of the last modification to the wish list
+
+### WishlistItem attributes {#wishlistitem}
+
+Attribute | Data type | Description
+--- | --- | ---
+`added_at` | String | The time when the customer added the item to the wish list
+`description` | String | The customer's comment about this item
+`id` | Int | The wish list item ID
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`qty` | Float | The quantity of this wish list item
 
 ### Store credit attributes
 
