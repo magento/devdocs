@@ -13,7 +13,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6223
 - description: Updated the [Pro architecture topic](https://devdocs.magento.com/cloud/architecture/pro-architecture.html#pro-cluster-scaling)
     topic in the _Cloud Guide_ to include information about scaling the architecture.
-  versions: ''
+  versions: 2.x
   type: Technical changes
   date: January 9, 2020
   link: https://github.com/magento/devdocs/pull/6353
