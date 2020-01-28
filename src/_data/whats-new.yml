@@ -4,8 +4,148 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Dec 3 09:59:53 2019
+updated: Mon Jan 27 21:17:38 2020
 entries:
+- description: Added `@method` and `@link` information to [Coding Standards](https://devdocs.magento.com/guides/v2.3/coding-standards/docblock-standard-general.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: January 17, 2020
+  link: https://github.com/magento/devdocs/pull/6223
+- description: Updated the [Pro architecture topic](https://devdocs.magento.com/cloud/architecture/pro-architecture.html#pro-cluster-scaling)
+    topic in the _Cloud Guide_ to include information about scaling the architecture.
+  versions: ''
+  type: Technical changes
+  date: January 9, 2020
+  link: https://github.com/magento/devdocs/pull/6353
+- description: Added the 'Set body attributes' section to the [Common layout customization
+    tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+    topic in the _Frontend Developer Guide_.
+  versions: 2.3.x
+  type: Technical changes
+  date: January 9, 2020
+  link: https://github.com/magento/devdocs/pull/6358
+- description: Added a new section about PHPStan to the [Magento Testing Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
+  versions: 2.3.3
+  type: Major update
+  date: January 7, 2020
+  link: https://github.com/magento/devdocs/pull/6350
+- description: Added additional information and an example code snippet for each node
+    in the [config.php reference](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-configphp.html)
+    topic in the _Configuration Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: January 7, 2020
+  link: https://github.com/magento/devdocs/pull/6224
+- description: Added a topic to the _Cloud Guide_ describing the new [Scaled architecture](https://devdocs.magento.com/cloud/architecture/scaled-architecture.html).
+  versions: 2.x
+  type: New topic
+  date: January 7, 2020
+  link: https://github.com/magento/devdocs/pull/6119
+- description: Added a new section about [extending module styles](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_approach.html)
+    to the _Frontend Developer Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: January 3, 2020
+  link: https://github.com/magento/devdocs/pull/6291
+- description: Added [clarification](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/prepare/prepare_file-str.html)
+    about required component files to the _Extension Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: January 2, 2020
+  link: https://github.com/magento/devdocs/pull/6184
+- description: Created a new [Compliance](https://devdocs.magento.com/compliance/industry-compliance.html)
+    section and added information about [CCPA](https://devdocs.magento.com/compliance/privacy/ccpa.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: December 19, 2019
+  link: https://github.com/magento/devdocs/pull/6191
+- description: Added a new [Form Validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/form-validation.html)
+    topic to the _Frontend Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: December 19, 2019
+  link: https://github.com/magento/devdocs/pull/6226
+- description: Added a new topic about using the [CheckboxToggleNotice](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-checkbox-toggle-notice.html)
+    UI component.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: December 19, 2019
+  link: https://github.com/magento/devdocs/pull/6233
+- description: Added substantial new information about plugin execution order in the
+    [Plugins (Interceptors)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html)
+    topic in the _Extension Developer Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: December 17, 2019
+  link: https://github.com/magento/devdocs/pull/6142
+- description: Added the "Reset indexer" section to the [Manage the indexers](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html)
+    topic in the _Configuration Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: December 16, 2019
+  link: https://github.com/magento/devdocs/pull/6209
+- description: Added instructions for configuring the PHP APCu extension to the [Software
+    recommendations](https://devdocs.magento.com/guides/v2.3/performance-best-practices/software.html)
+    and [Deployment flow](https://devdocs.magento.com/guides/v2.2/performance-best-practices/deployment-flow.html)
+    topics in the _Performance Best Practices Guide_.
+  versions: 2.x
+  type: Technical changes
+  date: December 12, 2019
+  link: https://github.com/magento/devdocs/pull/6192
+- description: Added reference information to the [env.php reference](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-envphp.html)
+    topic in the _Configuration Guide_.
+  versions: 2.3.x
+  type: Major update
+  date: December 12, 2019
+  link: https://github.com/magento/devdocs/pull/6167
+- description: Updated the [Contributor Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+    with guidance about accepting contributions to the 2.4 release line only.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 5, 2019
+  link: https://github.com/magento/devdocs/pull/6135
+- description: Updated information about guest REST endpoints in several steps in
+    the [Order Processing Tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-intro.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: December 5, 2019
+  link: https://github.com/magento/devdocs/pull/6086
+- description: Added a new topic for the [DynamicRowsDragAndDrop component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows-dnd.html)
+    in the _UI Components Guide_.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: December 5, 2019
+  link: https://github.com/magento/devdocs/pull/6115
+- description: Updated the _Cloud Guide_ with more information about the [Magento
+    Security Scanner](https://devdocs.magento.com/cloud/live/live.html#security-scan),
+    including which IP addresses, ports, and user agent strings it uses.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 5, 2019
+  link: https://github.com/magento/devdocs/pull/6130
+- description: Added the following sections to the _Cloud Guide_ with information
+    about using Adobe-generated alert policies:<br/>- [New Relic > Monitor performance
+    with New Relic alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-alert-policies)<br/>-
+    [Monitor performance](https://devdocs.magento.com/cloud/project/monitor-performance.html)
+  versions: 2.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6075
+- description: Added the "Configure variables in view.xml" section to the [Configure
+    images properties for a theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-images.html)
+    topic in the _Frontend Developers Guide_.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6080
+- description: Added the [Security configuration](https://devdocs.magento.com/cloud/live/go-live-checklist.html#security-configuration)
+    section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
+    current Go live checklist document attachment with the most recent version, which
+    is more comprehensive and up-to-date.
+  versions: 2.x
+  type: Major update
+  date: November 27, 2019
+  link: https://github.com/magento/devdocs/pull/6083
 - description: Added the Security configuration
     section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
     current Go live checklist document attachment with the most recent version, which
@@ -54,7 +194,6 @@ entries:
   date: November 18, 2019
   link: https://github.com/magento/devdocs/pull/5917
 - description: Published the release notes for Magento Commerce Cloud v2002.0.22
-    .
   versions: 2.x
   type: Major update
   date: November 15, 2019
@@ -1239,7 +1378,7 @@ entries:
   date: May 29, 2019
   link: https://github.com/magento/devdocs/pull/4613
 - description: Added a new topic for [Product layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html)
-    in the Frontend Developers Guide.
+    in the _Frontend Developer Guide_.
   versions: 2.x
   type: Major update
   date: May 28, 2019
@@ -1297,7 +1436,7 @@ entries:
   type: Technical changes
   date: May 22, 2019
   link: https://github.com/magento/devdocs/pull/4574
-- description: Added a [new tutorial](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/dynamic-row-system-config.html)
+- description: Added a [new tutorial](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-dynamicrows-dnd.html)
     that shows you how to add a dynamic rows system configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
@@ -2745,8 +2884,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
-- description: Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html)
-    for Commerce 2.3 Alpha.
+- description: Added installation instructions for Commerce 2.3 Alpha.
   versions: 2.3.x
   type: Major update
   date: Jul 20 2018
@@ -4157,7 +4295,7 @@ entries:
   versions: '2.2'
   type: New
   date: June 23 2017
-- description: '[Swagger documentation](https://devdocs.magento.com/swagger/index_22.html)'
+- description: 'Swagger documentation'
   versions: '2.2'
   type: Updated
   date: June 23 2017
