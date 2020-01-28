@@ -46,4 +46,22 @@ If you want to update the container configuration and test iteratively, run the 
 docker-compose up -d --force-recreate --build
 ```
 
+## Building the Magento Cloud Docker PHP Images
+When developing or extending the Magento Cloud Docker you may need to modify the PHP Images. Extensions and configuration can generally be handled using the container configuration. This method gives additional flexibility, and documents how these images are generated and then uploaded to Docker Hub.
+
+This is done by editing in the the following two directories in the magento-cloud-docker source:
+
+-  In `vendor/magento/magento-cloud-docker/`
+   -  `/images/php/cli`
+   -  `/images/php/fpm`
+
+*Do not edit in the the specific versioned directories.*
+
+After which you will need to locally build the other directories in the `images/php` directory.
+```bash
+ docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "./vendor/bin/ece-docker image:generate:php"
+```
+
+This command utilizes the php container to run this, and assumes you have already run `composer install` on the project.
+
 [multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files

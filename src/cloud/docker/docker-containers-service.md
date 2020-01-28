@@ -62,7 +62,7 @@ Container name |Docker base image | Ports exposed
 -------- | -------- | ---------------
 fpm | [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image | 9000, 9001
 
-The FPM container is based on the [magento/magento-cloud-docker-php][php] image and includes the following volumes:
+The FPM container is based on the [magento/magento-cloud-docker-php][php-cloud] image and includes the following volumes:
 
 -  Read-only volumes:
    -  `/app`
@@ -84,7 +84,7 @@ You can load custom extensions in the FPM configuration by adding the configurat
      - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
 ```
 
-For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
+For additional information about configuring the php environment, see the [XDebug for Docker] and [Rebuilding PHP Images] documentation.
 
 ## RabbitMQ container
 
@@ -175,6 +175,7 @@ The NGINX configuration for this container is the standard Magento [nginx config
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [XDebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
+[Rebuilding PHP Images]: {{site.baseurl}}/cloud/docker/docker-extend.html#building-the-magento-cloud-docker-php-images
 [redis]: https://hub.docker.com/_/redis
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [FPM]: https://php-fpm.org
