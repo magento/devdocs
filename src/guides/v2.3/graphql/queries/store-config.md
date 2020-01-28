@@ -38,6 +38,7 @@ The following call returns all details of a store's configuration.
     secure_base_link_url
     secure_base_static_url
     secure_base_media_url
+    store_name
   }
 }
 ```
@@ -63,7 +64,8 @@ The following call returns all details of a store's configuration.
       "secure_base_url": "http://magento2.vagrant193/",
       "secure_base_link_url": "http://magento2.vagrant193/",
       "secure_base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
-      "secure_base_media_url": "http://magento2.vagrant193/pub/media/"
+      "secure_base_media_url": "http://magento2.vagrant193/pub/media/",
+      "store_name": "My Store"
     }
   }
 }
@@ -177,6 +179,36 @@ The following query returns information about the store's catalog configuration.
 }
 ```
 
+### Query a store's fixed product tax configuration
+
+The following query returns enumeration values that indicate the store's fixed product tax configuration.
+
+**Request:**
+
+```graphql
+{
+  storeConfig {
+    category_fixed_product_tax_display_setting
+    product_fixed_product_tax_display_setting
+    sales_fixed_product_tax_display_setting
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "category_fixed_product_tax_display_setting": "EXCLUDE_FPT_WITHOUT_DETAILS",
+      "product_fixed_product_tax_display_setting": "EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS",
+      "sales_fixed_product_tax_display_setting": "INCLUDE_FPT_WITHOUT_DETAILS"
+    }
+  }
+}
+```
+
 ## Output attributes
 
 ### Supported storeConfig attributes
@@ -198,6 +230,7 @@ Attribute |  Data Type | Description | Example
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
+`store_name` | String | The store's name | `My Store`
 `timezone` | String | The store's time zone | `America/Chicago`
 `website_id` | Integer | The ID number assigned to the parent website | `1`
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
@@ -251,7 +284,28 @@ Attribute |  Data Type | Description | Example
 `list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
+`root_category_id` | Int | The ID of the root category
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
+
+### Supported WEEE (fixed product tax) attributes
+
+The **Stores** > Settings > **Configuration** > **Sales** > **Tax** > **Fixed Product Taxes** panel contains several fields that determine how to display fixed product tax (FPT) values and descriptions. Use the following attributes to determine the values of the **Fixed Product Taxes** fields. These attributes are defined in the `WeeeGraphQl` module.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`category_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Product Lists** field. It indicates how FPT information is displayed on category pages
+`product_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices On Product View Page** field. It indicates how FPT information is displayed on product pages
+`sales_fixed_product_tax_display_setting` | FixedProductTaxDisplaySettings | Corresponds to the **Display Prices In Sales Modules** field. It indicates how FPT information is displayed on cart, checkout, and order pages
+
+The `FixedProductTaxDisplaySettings` data type is an enumeration that describes whether displayed prices include fixed product taxes and whether Magento separately displays detailed information about the FPTs.
+
+Value | Description
+--- | ---
+EXCLUDE_FPT_AND_INCLUDE_WITH_DETAILS | The displayed price does not include the FPT amount. You must display the values of `ProductPrice.fixed_product_taxes` and the price including the FPT separately. This value corresponds to **Excluding FPT, Including FPT description and final price**
+EXCLUDE_FPT_WITHOUT_DETAILS | The displayed price does not include the FPT amount. The values from `ProductPrice.fixed_product_taxes` are not displayed. This value corresponds to **Excluding FPT**
+FPT_DISABLED | The FPT feature is not enabled. You can omit `ProductPrice.fixed_product_taxes` from your query
+INCLUDE_FPT_WITH_DETAILS | The displayed price includes the FPT amount while displaying the values of `ProductPrice.fixed_product_taxes` separately. This value corresponds to **Including FPT and FPT description**
+INCLUDE_FPT_WITHOUT_DETAILS | The displayed price includes the FPT amount without displaying the `ProductPrice.fixed_product_taxes` values. This value corresponds to **Including FPT only**
 
 ## Extend configuration data
 
