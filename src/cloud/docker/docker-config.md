@@ -89,6 +89,18 @@ Use the following command to stop and remove the Docker configuration:
 {: .bs-callout-warning}
 This command removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
 
+## Running Composer with Docker
+
+It is possible to run composer using `docker` before you have instanced the containers. This is very useful for instancing the application during the CI/CD build process, or even first time Magento set up.
+
+To do this you must use the proper [Docker Hub PHP Image Tag] that matches with the version of the Magento application. The following example shows PHP 7.3 and should be run in the project root directory.
+
+```bash
+docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
+```
+
+This command passes in the current working directory as `/app/`, includes composer from `~/.composer/` and runs the `composer install` in the container, after which it fixes the permissions on the files that have been added/changed.
+
 ## Sendmail service
 
 Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
@@ -111,3 +123,4 @@ We do not recommend using Sendmail on CLI containers because the service can slo
 [enable Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [Database container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
+[Docker Hub PHP Image Tag] https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
