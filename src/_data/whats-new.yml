@@ -55,6 +55,18 @@ entries:
   type: Major update
   date: November 7, 2019
   link: https://github.com/magento/devdocs/pull/5952
+- description: Added the [`mergeCarts` mutation](https://devdocs.magento.com/guides/v2.3/graphql/mutations/merge-carts.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.4
+  type: New topic
+  date: November 4, 2019
+  link: https://github.com/magento/devdocs/pull/5900
+- description: Added the [`customerCart` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/customer-cart.html)
+    to the _GraphQL Developer Guide_.
+  versions: 2.3.4
+  type: New topic
+  date: November 1, 2019
+  link: https://github.com/magento/devdocs/pull/5899
 - description: Added the [categoryList](https://devdocs.magento.com/guides/v2.3/graphql/queries/category.html)
     query to the _GraphQL Developer Guide_.
   versions: 2.3.4
