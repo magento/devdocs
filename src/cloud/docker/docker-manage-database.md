@@ -121,30 +121,11 @@ To import a database dump into the Docker environment:
 {:.bs-callout-tip}
 Although it is a more complex approach, you can use GZIP to import the database by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and import it inside the Docker container.
 
-You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
-
-Add a custom `my.cnf` to the `docker-compose.override.yml` file:
-
-```yaml
-db:
-  volumes:
-    - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
-```
-
-{:.procedure}
-Add configuration values to the `docker-compose.override.yml` file:
-
-```yaml
-  db:
-    environment:
-      - innodb-buffer-pool-size=134217728
-```
-
 ## Customize the database container
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
-*Add a custom `my.cnf` file to the `docker-compose.override.yml` file:*
+**Add a custom `my.cnf` file to the `docker-compose.override.yml` file:**
 
 ```yaml
 db:
@@ -152,7 +133,7 @@ db:
     - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-*Add configuration values to the `docker-compose.override.yml` file:*
+**Add configuration values to the `docker-compose.override.yml` file:**
 
 ```yaml
   db:
