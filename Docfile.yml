@@ -24,3 +24,4 @@ content_map:
   repository: magento/magento2-page-builder-data-migration
   branch: 1.0.0-release
   filter: true
+
