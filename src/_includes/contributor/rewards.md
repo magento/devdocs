@@ -12,21 +12,20 @@ Due to the level of work required for developing and reviewing a PR, contributor
 For instance, see this calculated reward points example:
 
 1. When a contributor submits a PR with complex code contributions, they receive a total of 30 points:
-    * Improvement (base achievement) = 10 points
-    * Complex (additional achievement) = 20 points
+      *  Improvement (base achievement) = 10 points
+      *  Complex (additional achievement) = 20 points
 1. When a contributor submits a PR with complex code and tests, they receive a total of 40 points:
-    * Improvement (base achievement) = 10 points
-    * Complex (additional achievement) = 20 points
-    * Test coverage (additional achievement) = 10 points
+      *  Improvement (base achievement) = 10 points
+      *  Complex (additional achievement) = 20 points
+      *  Test coverage (additional achievement) = 10 points
 1. When a contributor submits a PR port of an existing merged PR, they receive a total of 35 points:
-    * Original contributor---
-      - Improvement (base achievement) = 10 points
-      - Complex (additional achievement) = 20 points
-      - Author of ported issue = 5 points
+      *  Improvement (base achievement) = 10 points
+      *  Complex (additional achievement) = 20 points
+      *  Author of ported issue = 5 points
 1. When a maintainer reviews and approves a PR with complex code and tests, they receive a total of 40 points:
-    * Improvement (base achievement) = 10 points
-    * Complex (additional achievement) = 20 points
-    * Test coverage (additional achievement) = 10 points
+      *  Improvement (base achievement) = 10 points
+      *  Complex (additional achievement) = 20 points
+      *  Test coverage (additional achievement) = 10 points
 
 Earned achievements display as labels in each PR in GitHub and for each contributor, partner, and maintainer on [magento.com](https://magento.com/magento-contributors).
 
@@ -67,8 +66,8 @@ Contributors and maintainers can also earn rewards for merged submissions to the
 
 These examples show how reward points are calculated:
 
-* A contributor who submits a PR that reformats HTML into markdown or fixes typos will receive an Editorial (base achievement) label = 1 point
-* A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points and a Major update (additional achievement) labe = 20 points for a total of 30 points
+*  A contributor who submits a PR that reformats HTML into markdown or fixes typos will receive an Editorial (base achievement) label = 1 point
+*  A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points, a Major update (additional achievement) label = 20 points, and a Technical label (additional achievement) = 10 points, for a total of 40 points
 
 ### Base achievements
 {:.no_toc}
