@@ -13,7 +13,7 @@ Magento Cloud Docker generates the `docker-compose.yml` file to the required spe
 
 ## Service versions
 
-Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `docker:build` command, you can override a default service version with the following optional parameters:
+Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version with the following optional parameters:
 
 | Name       | Service   | Key  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
@@ -31,7 +31,7 @@ Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.y
 | [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
 | [web][web-container] | NGNIX | `--nginx` | 1.9, latest |
 
-The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
+The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 
 For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
 

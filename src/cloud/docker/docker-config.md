@@ -9,10 +9,10 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `ece-docker build:compose` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 {: .bs-callout-warning }
-The `docker:build` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
+The `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
 
 ## Prerequisites
 
@@ -53,7 +53,7 @@ The `docker:build` command overwrites the existing `docker-compose.yml` configur
 
 ## Launch modes
 
-_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
+_Mode_ is an additional configuration option for the Docker configuration generator (the `ece-docker build:compose` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 You can launch your Docker environment in one of the following modes:
 
