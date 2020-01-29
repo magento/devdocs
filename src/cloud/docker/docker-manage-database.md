@@ -80,7 +80,7 @@ To connect to the database port:
 1. Connect to the database with port information from the previous step.
 
    ```bash
-   mysql -h127.0.0.1 -p32769 -umagento2 -pmagento2
+   mysql -h127.0.0.1 -P32769 -umagento2 -pmagento2
    ```
 
 1. Verify the version of the database service.
