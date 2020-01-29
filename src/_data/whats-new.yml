@@ -4,8 +4,38 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jan 27 21:17:38 2020
+updated: Tue Jan 28 19:11:00 2020
 entries:
+- description: Added information about using [non-default sort attributes](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
+    with the `products` query.
+  versions: 2.3.4
+  type: Technical changes
+  date: January 27, 2020
+  link: https://github.com/magento/devdocs/pull/6468
+- description: Updated the Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+    regarding end-of-life for PHP 7.1.
+  versions: 2.3.4
+  type: Technical changes
+  date: January 27, 2020
+  link: https://github.com/magento/devdocs/pull/6469
+- description: Updated information about Magento [cron](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html)
+    jobs.
+  versions: 2.3.x
+  type: Technical changes
+  date: January 23, 2020
+  link: https://github.com/magento/devdocs/pull/6428
+- description: Added an example of adding a grouped product to a cart in the [`addSimpleProductsToCart`](https://devdocs.magento.com/guides/v2.3/graphql/mutations/add-simple-products.html)
+    mutation.
+  versions: 2.3.4
+  type: Technical changes
+  date: January 15, 2020
+  link: https://github.com/magento/devdocs/pull/6379
+- description: Updated the [REST schemas](https://devdocs.magento.com/redoc/2.3/)
+    for Magento 2.3.4.
+  versions: 2.3.4
+  type: Major update
+  date: January 8, 2020
+  link: https://github.com/magento/devdocs/pull/6354
 - description: Added `@method` and `@link` information to [Coding Standards](https://devdocs.magento.com/guides/v2.3/coding-standards/docblock-standard-general.html).
   versions: 2.2.x, 2.3.x
   type: Major update
