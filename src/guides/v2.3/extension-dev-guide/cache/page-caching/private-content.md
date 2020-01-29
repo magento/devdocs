@@ -104,7 +104,6 @@ Currently we have some place in sections that allows to declare 'action' node wi
 ```xml
     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
-    <!-- xml merger merge same actions name into one node -->
     <action name="customer/account/logout"/>
 </config>
 ```
