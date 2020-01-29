@@ -9,7 +9,7 @@ Access Control List(ACL) rules allow admin to limit the permissions of users in 
 
 ## Step 1. Create acl.xml
 
-In the module's directory, create acl.xml file. This file add the custom resources in resource tree.
+In your module, create acl.xml file. This file adds the custom resources in resource tree.
 
 > `etc/acl.xml`
 
@@ -32,14 +32,14 @@ In the module's directory, create acl.xml file. This file add the custom resourc
 ##Step 2. Create user role with custom resources
 
 1. Navigate to **SYSTEM** > Permissions > **User Roles** 
-1. After click Role Resources tab select Resource Access as Custom.
+1. After clicking the Role Resources tab, select Resource Access as Custom.
 ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
 1. Select the resources and save the role.
 ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
 ##Step 3. Use ACL in Menu
 
-In the module's directory create menu.xml file. We can hide the menu to the users by adding the `resource` attribute to `add` nodes in menu.xml.
+In your module create `menu.xml` file. We can hide the menu to the users by adding the `resource` attribute to `add` nodes in menu.xml.
 
 > `etc/adminhtml/menu.xml`
 
