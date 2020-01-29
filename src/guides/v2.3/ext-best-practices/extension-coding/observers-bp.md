@@ -25,12 +25,20 @@ Your observer should not contain logic other than what is needed for it to run. 
 
 #### Declare observer in the appropriate scope
 
-Make your observer as specific as it needs to be. Declare your observer in the appropriate scope:
+Make your observer as specific as it needs to be. Declare your observer in the appropriate area:
 
-*  For frontend events, declare observers in `<module-dir>/etc/frontend/events.xml`
-*  For backend events, declare observers in `<module-dir>/etc/adminhtml/events.xml`
+| Area | File location | Description |
+| --- | --- | --- |
+| `global` | `<module-dir>/etc/events.xml` | Observer will be executed in all areas: `adminhtml`, `crontab`, `frontend`, `graphql`, `webapi_rest`, `webapi_soap`. |
+| `adminhtml` | `<module-dir>/etc/adminhtml/events.xml` | Observer will be executed in the `adminhtml` area only. |
+| `crontab` | `<module-dir>/etc/crontab/events.xml` | Observer will be executed in the `crontab` area only. |
+| `frontend` | `<module-dir>/etc/frontend/events.xml` | Observer will be executed in the `frontend` area only. |
+| `graphql` | `<module-dir>/etc/graphql/events.xml` | Observer will be executed in the `graphql` area only. |
+| `webapi_rest` | `<module-dir>/etc/webapi_rest/events.xml` | Observer will be executed in the `webapi_rest` area only. |
+| `webapi_soap` | `<module-dir>/etc/webapi_soap/events.xml` | Observer will be executed in the `webapi_soap` area only. |
 
-Use the global `<module-dir>/etc/events.xml` file only when an event can occur on both the frontend and the backend.
+{:.bs-callout-info}
+It is `NOT RECOMMENDED` to register everything in the `global` area, as the bootstrapping process will become much heavier. For example, the application must run and process additional checks for your observer.
 
 #### Avoid cyclical event loops
 
