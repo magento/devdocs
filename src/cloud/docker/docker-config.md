@@ -91,9 +91,9 @@ This command removes all components of your local Docker instance including cont
 
 ## Running Composer with Docker
 
-It is possible to run composer using `docker` before you have instanced the containers. This is very useful for instancing the application during the CI/CD build process, or even first time Magento set up.
+You can run composer using the `docker` command before you create the container instance. This technique is useful to create an application instance during the CI/CD build process, or even during first time Magento set up.
 
-When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the Magento application version. The following example uses PHP 7.3. You run this command from the project root directory. 
+When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the Magento application version. The following example uses PHP 7.3. You run this command from the project root directory.
 
 ```bash
 docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
