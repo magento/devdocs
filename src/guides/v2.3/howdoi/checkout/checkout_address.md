@@ -331,3 +331,17 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file, 
     </body>
 </page>
 ```
+
+## Step 8: Deploy the static content and Clean cache
+
+1. Deploy static content:
+
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
+
+1. Clean cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
