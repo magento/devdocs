@@ -110,3 +110,17 @@ In this file, add the following:
     </body>
 </page>
 ```
+
+## Step 4: Deploy the static content and Clean cache
+
+1. Deploy static content:
+
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
+
+1. Clean cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
