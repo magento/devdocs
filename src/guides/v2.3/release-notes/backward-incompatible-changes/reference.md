@@ -11,6 +11,12 @@ The changes are aggregated into two tables:
 1. **Changes in classes** that contains backward incompatible changes made to the PHP classes
 1. **Changes in interfaces** that contains backward incompatible changes made to the PHP interfaces
 
+## 2.3.3 - 2.3.4
+
+{% include backward-incompatible-changes/open-source/2.3.3-2.3.4.md %}
+
+{% include backward-incompatible-changes/commerce/2.3.3-2.3.4.md %}
+
 ## 2.3.2 - 2.3.3
 
 {% include backward-incompatible-changes/open-source/2.3.2-2.3.3.md %}

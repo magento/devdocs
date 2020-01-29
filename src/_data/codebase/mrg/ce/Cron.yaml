@@ -1,7 +1,7 @@
 ---
 title: Magento_Cron
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/Cron/README.md
 last_modified_at: '2015-04-30 16:30:07 -0500'
 content: |-
