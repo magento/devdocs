@@ -99,7 +99,7 @@ When you run composer with Docker commands, you must use the [Docker Hub PHP Ima
 docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
 ```
 
-This command passes in the current working directory as `/app/`, includes composer from `~/.composer/` and runs the `composer install` in the container, after which it fixes the permissions on the files that have been added/changed.
+This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
 
 ## Sendmail service
 
