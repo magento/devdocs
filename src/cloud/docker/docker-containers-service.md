@@ -15,11 +15,11 @@ See the [service version values available]({{site.baseurl}}/cloud/docker/docker-
 
 ## Database container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-db | [mariadb](https://hub.docker.com/_/mariadb) | 3306 |
+**Container name:** db<br/>
+**Docker base image:** [mariadb]<br/>
+**Ports exposed:** 3306<br/>
 
-The Database container is based on the [mariadb][db-image] image and includes the following volumes:
+The Database container is based on the [mariadb] image and includes the following volumes:
 
 -  `magento-db: /var/lib/mysql`
 -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
@@ -30,7 +30,7 @@ To prevent accidental data loss, the database is stored in a persistent **`magen
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
-**Add a custom `my.cnf` file to the `docker-compose.override.yml` file:**
+Add a custom `my.cnf` file to the `docker-compose.override.yml` file:
 
 ```yaml
 db:
@@ -38,7 +38,7 @@ db:
     - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
-**Add configuration values to the `docker-compose.override.yml` file:**
+Add configuration values to the `docker-compose.override.yml` file:
 
 ```yaml
   db:
@@ -50,19 +50,19 @@ See [Manage the database] for details about using the database.
 
 ## Elasticsearch container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-elasticsearch | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | [elasticsearch](https://hub.docker.com/_/elasticsearch) | 9200, 9300
+**Container name:** elasticsearch<br/>
+**Docker base image:** [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)<br/>
+**Ports exposed:** 9200, 9300<br/>
 
 The Elasticsearch container for {{site.data.var.mcd}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
 ## FPM container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-fpm | [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image | 9000, 9001
+**Container name:** fpm<br/>
+**Docker base image:** [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
+**Ports exposed:** 9000, 9001<br/>
 
-The FPM container is based on the [magento/magento-cloud-docker-php][php] image and includes the following volumes:
+The FPM container includes the following volumes:
 
 -  Read-only volumes:
    -  `/app`
@@ -88,17 +88,17 @@ For additional information about configuring the php environment, see the [XDebu
 
 ## RabbitMQ container
 
-Container name | Docker base image | Ports exposed
--------- | -------- | ---------------
-rabbitmq | [rabbitmq] | 4369, 5671, 5672, 25672
+**Container name:** rabbitmq<br/>
+**Docker base image:** [rabbitmq]<br/>
+**Ports exposed:** 4369, 5671, 5672, 25672<br/>
 
 The RabbitMQ container for {{site.data.var.mcd}} is a standard RabbitMQ container with no configuration or changes.
 
 ## Redis container
 
-Container name | Docker base image | Ports exposed
--------- | -------- | ---------------
-redis | [redis] | 6379
+**Container name:** redis<br/>
+**Docker base image:** [redis]<br/>
+**Ports exposed:** 6379<br/>
 
 The Redis container for {{site.data.var.mcd}} is a standard container with no customization, no persistence, and no additional configuration.
 
@@ -110,19 +110,19 @@ docker-compose run redis redis-cli -h redis
 
 ## Selenium container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-selenium | [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome) | 4444
+**Container name:** selenium<br/>
+**Docker base image:** [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome)<br/>
+**Ports exposed:** 4444<br/>
 
 The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
 
 ## TLS container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-tls | [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image | 443
+**Container name:** tls<br/>
+**Docker base image:** [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
+**Ports exposed:** 443<br/>
 
-The TLS termination proxy container, based on the [magento/magento-cloud-docker-tls][tls] image, facilitates the Varnish SSL termination over HTTPS.
+The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
 
 To increase the timeout on this container, add the following code to the  `docker-compose.override.yml` file:
 
@@ -134,11 +134,11 @@ To increase the timeout on this container, add the following code to the  `docke
 
 ## Varnish container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-varnish | [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos] Docker image | 80
+**Container name:** varnish<br/>
+**Docker base image:** [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos] <br/>
+**Ports exposed:** 80<br/>
 
-The Varnish container, based on the [magento/magento-cloud-docker-varnish][varnish] image, simulates Fastly and is useful for testing VCL snippets. Varnish works on port 80.
+The Varnish container simulates Fastly and is useful for testing VCL snippets. Varnish works on port 80.
 
 You can specify `VARNISHD_PARAMS` and other environment variables using ENV, changing required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
 
@@ -156,9 +156,10 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 
 ## Web container
 
-Container name |Docker base image | Ports exposed
--------- | -------- | ---------------
-web | [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos] Docker image | none
+**Container name:** web<br/>
+**Docker base image:** [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos] Docker image
+<br/>
+**Ports exposed:** None<br/>
 
 The Web container uses nginx to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
 

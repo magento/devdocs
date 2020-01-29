@@ -51,9 +51,8 @@ To understand the processing for each command, review the [scripts in the Magent
 
 ## Build container
 
-Container name |Docker base image
--------- | -------- |
-build | [magento/magento-cloud-docker-php], which is based on the Docker [php] image
+**Container name**: build<br/>
+**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image
 
 The Build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
 
@@ -65,19 +64,17 @@ docker-compose run build magento-command setup:static-content:deploy
 
 ## Cron container
 
-Container name | Docker base image
--------- | -------- |
-cron | [magento/magento-cloud-docker-php], which is based on the Docker [php] image
+**Container name**: cron<br/>
+**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
-The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment starts. This container uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). This container has no custom configuration.
+The Cron container runs operations in the background immediately after the Docker environment starts. This container uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). This container has no custom configuration.
 
-See [Manage crons] for details on managing cron jobs in the Cloud Docker environment.
+For details on managing cron jobs in the Cloud Docker environment, see [Manage cron jobs].
 
 ## Deploy container
 
-Container name | Docker base image
--------- | --------
-deploy | [magento/magento-cloud-docker-php], which is based on the [php] Docker image
+**Container name:** deploy<br/>
+**Docker base image:** [magento/magento-cloud-docker-php], which is based on the [php] Docker image
 
 The Deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
 
@@ -89,9 +86,8 @@ docker-compose run build magento-command index:reindex
 
 ## Node container
 
-Container name | Docker base image
--------- | --------
-node | [node]
+**Container name:** node<br/>
+**Docker base image:** [node]<br/>
 
 The Node container is based on the [official Node Docker image][node]. You can use the container to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
 
@@ -102,3 +98,4 @@ The Node container is based on the [official Node Docker image][node]. You can u
 [magento/magento-cloud-docker-php]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [php]: https://hub.docker.com/_/php
 [node]: https://hub.docker.com/_/node
+[Manage cron jobs]: {{site.baseurl}}/cloud/docker/docker-manage-cron-jobs.html

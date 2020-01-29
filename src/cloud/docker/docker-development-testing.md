@@ -107,13 +107,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 
 ### Run all tests
 
-The following list provides the commands to run all available tests for each version of PHP.
-
--  **PHP 7.0**
-
-   ```bash
-   ./vendor/bin/codecept run -g php70 --steps
-   ```
+Use the following commands to run all available tests for each PHP version.
 
 -  **PHP 7.1**
 

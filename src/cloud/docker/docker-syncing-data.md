@@ -9,9 +9,9 @@ functional_areas:
 
 In a Docker development environment, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
 
-The {{site.data.var.mcd}}  `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following values:
+The {{site.data.var.mcd}}  `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following options:
 
-`--sync-engine` value | Description
+File sync option | Description
 --------------------- | ------------
 `native` | Maps the current working directory to the `/app` directory on each volume, which provides direct access to the data without requiring any synchronization. The `native` option is the default and works for Linux hosts. On macOS or Windows hosts, this option results in extremely slow performance in the Docker environment.
 `mutagen` | Uses [Mutagen] for file synchronization. When you select Mutagen, you must [install Mutagen] on your host operating system before you [launch Docker in developer mode]. Use this option on macOS or Windows hosts.
@@ -39,7 +39,7 @@ When you start Docker with the native file synchronization option, the current w
 
 ## Configure file synchronization
 
-You do not have to configure file synchronization if you use the `native` option since this is the default setting.
+If you do not specify a `--sync-engine` option, the Magento Docker build uses the `native` option.
 
 On macOS or Windows systems, you can configure file synchronization using Mutagen or docker-sync by adding the `--sync-engine="<type>"` option to the `docker:build` command.
 

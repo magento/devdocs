@@ -60,7 +60,7 @@ Support for MFTF requires [Magento Cloud Docker] version 1.0 or later.
    docker-compose run deploy bash -c "echo \"$CONFIG\" > /app/dev/tests/acceptance/.env"
    ```
 
-   {:.bs-callout-tip}
+   {:.bs-callout-info}
    In this example, the variable configuration is for testing a Magento application deployed to the Docker environment. To run tests in a remote environment, change the value of `MAGENTO_BASE_URL` to the remote URL and update the credentials as needed.
 
 1. Disable the Magento settings that conflict with MFTF functionality.
