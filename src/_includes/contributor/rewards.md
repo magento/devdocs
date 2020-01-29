@@ -67,7 +67,7 @@ Contributors and maintainers can also earn rewards for merged submissions to the
 These examples show how reward points are calculated:
 
 *  A contributor who submits a PR that reformats HTML into markdown or fixes typos will receive an Editorial (base achievement) label = 1 point
-*  A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points, a Major update (additional achievement) label = 20 points, and a Technical label (additional achievement) = 10 points, for a total of 40 points
+*  A contributor who submits a PR with a code sample update and new parameter descriptions will receive an Improvement (base achievement) label =  10 points _and_ either a Major update (additional achievement) label = 20 points _OR_ a Technical label (additional achievement) = 10 points
 
 ### Base achievements
 {:.no_toc}
