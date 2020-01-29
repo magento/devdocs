@@ -116,7 +116,7 @@ It suppose to tell our JS to invalidate all sections, but if you have declared s
     </action>
 </config>
 ```
-Note: action nodes without section name specification will be deprecated. and in case our SectionConfigConverter will recieve 
+Note: In future release action nodes without section name specification will be deprecated. and in case our SectionConfigConverter will recieve 
 ```xml
 <section name="*"/>
 ```
