@@ -206,6 +206,7 @@ class MyBlock extends Template {
     ```bash
     bin/magento setup:di:compile
     ```
+    
 1. Deploy static content:
 
    ```bash
