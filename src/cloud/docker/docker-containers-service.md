@@ -169,7 +169,7 @@ To mount custom NGINX configuration file using volumes:
 
 1. On your local host, create a `./.docker/nginx/etc/` directory.
 
-1. Copy the `nginx.conf` and `vhost.conf` [configuration files][configs] to the new directory.
+1. Copy the `nginx.conf` and `vhost.conf` [configuration files][nginx configs] to the new directory.
 
 1. In the `vhost.conf` file, customize the values for variables like `!UPLOAD_MAX_FILESIZE!;` as needed.
 

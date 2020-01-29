@@ -20,6 +20,8 @@ The release notes include:
 
 -  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
 
+-  {:.new}**Added versioning to the Docker images**–You must now update the {{site.data.var.mcd}} package to get the updated images.
+
 -  {:.new}**Container updates**–
 
    -  {:.new}**PHP-FPM container updates**–
@@ -30,7 +32,7 @@ The release notes include:
 
    -  {:.new}**Web container updates**–
 
-      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the Magento Cloud Docker environment. See [Web container]({{site.baseurl}}/cloud/docker/dockr-containers-service.html#web-container).
+      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the Magento Cloud Docker environment. See [Web container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->
 
       -  {:.new}**Auto-generated NGINX certificates**–The Docker configuration file now includes the configuration to auto-generate NGINX certificates for the Web container.<!--MAGECLOUD-4258-->
 

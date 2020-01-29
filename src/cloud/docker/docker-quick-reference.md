@@ -42,6 +42,9 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 | [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
 | [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
 
+{:.bs-callout-info}
+See [Service versions] for a list of the options to configure the software service version when building your Magento Cloud Docker environment.
+
 ## bin/magento-docker
 
 Run `bin/magento-docker` commands using the following format:
@@ -75,3 +78,5 @@ Start containers | `start`
 Restart containers | restart
 Destroy containers | `down`
 Destroy, re-create, and start containers | `up`
+
+[Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-versions
