@@ -55,6 +55,12 @@ entries:
   type: Major update
   date: November 7, 2019
   link: https://github.com/magento/devdocs/pull/5952
+- description: Added the [categoryList](https://devdocs.magento.com/guides/v2.3/graphql/queries/category.html)
+    query to the _GraphQL Developer Guide_.
+  versions: 2.3.4
+  type: New topic
+  date: October 7, 2019
+  link: https://github.com/magento/devdocs/pull/5562
 - description: Added the `store_name` attribute to the [storeConfig](https://devdocs.magento.com/guides/v2.3/graphql/queries/store-config.html)
     query.
   versions: 2.3.4
