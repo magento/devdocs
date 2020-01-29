@@ -31,7 +31,7 @@ Prior to setting up a local workspace, gather the following credentials and acco
 
 ## Launch a Docker environment
 
-You can use the Docker environment to emulate the {{site.data.var.ece}} Integration environment for local development. You need three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and {{site.data.var.ece}} `{{site.data.var.ct}}` package.
+You can use the Docker environment to emulate the {{site.data.var.ece}} Integration and production environments for local development and testing. You need three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
 -  [Docker architecture and common commands]({{site.baseurl}}/cloud/docker/docker-containers.html)
 -  [Launch Docker development environment]({{site.baseurl}}/cloud/docker/docker-config.html)

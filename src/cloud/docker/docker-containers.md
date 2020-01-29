@@ -80,11 +80,11 @@ You can customize this configuration by updating the [`mounts`][mount-configurat
 
 ### File synchronization
 
-Additionally, you can share data into the containers using file synchronization. See the [File synchronization] and [Developer Mode] documentation.
+Additionally, you can share data into the containers using file synchronization. See the [File synchronization] and [Developer mode] documentation.
 
 ## Container Volumes
 
-Docker volumes are used to maintain data throughout the lifecycle of the Docker containers.  These volumes can be defined in several ways:
+Magento Cloud Docker uses Docker volumes to maintain data throughout the lifecycle of the Docker containers.  These volumes can be defined in several ways:
 
 -  in a `docker-compose.yml` or other docker-compose files
 -  in the Dockerfile from the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker)
@@ -96,7 +96,7 @@ You do not interact with most of these volumes, which are used by the Docker con
 
 The `docker-compose down -v` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
 
-You can use the following command to remove _all_ data and rebuild a clean environment:
+Use the following command to remove _all_ data and rebuild a clean environment:
 
 ```bash
  bin/magento-docker down
