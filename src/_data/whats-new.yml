@@ -36,6 +36,25 @@ entries:
   type: Major update
   date: January 8, 2020
   link: https://github.com/magento/devdocs/pull/6354
+- description: Added information about bulk [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html)
+    in the _GraphQL Developer Guide_.
+  versions: 2.3.4
+  type: Major update
+  date: November 12, 2019
+  link: https://github.com/magento/devdocs/pull/5950
+- description: Added the 'Create cms-page/product/category-specific layouts' section
+    to [Common layout customization tasks](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html).
+  versions: 2.2.x
+  type: Major update
+  date: November 8, 2019
+  link: https://github.com/magento/devdocs/pull/5934
+- description: Updated the wish list documentation in the _GraphQL Developer Guide_.
+    The `wishlist` query has been deprecated. Wish list information is now returned
+    in the [`customer` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/customer.html<br/>).
+  versions: 2.3.4
+  type: Major update
+  date: November 7, 2019
+  link: https://github.com/magento/devdocs/pull/5952
 - description: Added `@method` and `@link` information to [Coding Standards](https://devdocs.magento.com/guides/v2.3/coding-standards/docblock-standard-general.html).
   versions: 2.2.x, 2.3.x
   type: Major update
