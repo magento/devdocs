@@ -36,7 +36,7 @@ The `docker:build` command runs in interactive mode and verifies the configured 
 For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
 
 ```bash
-./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
+./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
 ## Request Flow

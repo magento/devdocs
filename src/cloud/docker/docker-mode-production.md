@@ -25,7 +25,7 @@ To launch the Docker environment in developer mode:
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].
 
    ```bash
-   ./vendor/bin/ece-tools docker:build
+   ./vendor/bin/ece-docker build:compose
    ```
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
