@@ -116,7 +116,11 @@ It suppose to tell our JS to invalidate all sections, but if you have declared s
     </action>
 </config>
 ```
-Note: action nodes without section name specification will be deprecated. and in case our SectionConfigConverter will recieve <section name="*"/>, it will disregard any other rules
+Note: action nodes without section name specification will be deprecated. and in case our SectionConfigConverter will recieve 
+```xml
+<section name="*"/>
+```
+It will disregard any other rules
 
 
 {:.bs-callout-warning}
