@@ -55,6 +55,44 @@ entries:
   type: Major update
   date: November 7, 2019
   link: https://github.com/magento/devdocs/pull/5952
+- description: Added the `store_name` attribute to the [storeConfig](https://devdocs.magento.com/guides/v2.3/graphql/queries/store-config.html)
+    query.
+  versions: 2.3.4
+  type: Technical changes
+  date: October 4, 2019
+  link: https://github.com/magento/devdocs/pull/5448
+- description: Updated the [ProductInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/product-interface.html)
+    documentation in the _GraphQL Developer Guide_ to include new data types and attributes
+    that support tier pricing and price ranges in composite products.
+  versions: 2.3.4
+  type: Major update
+  date: September 30, 2019
+  link: https://github.com/magento/devdocs/pull/5512
+- description: Updated the [Private Content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html)
+    topic in the _Extension Developer Guide_ to provide information about support
+    in Magento 2.3.4.
+  versions: 2.3.4
+  type: Major update
+  date: September 24, 2019
+  link: https://github.com/magento/devdocs/pull/5461
+- description: Added support for cart rule discounts in the GraphQL [Cart output object](https://devdocs.magento.com/guides/v2.3/graphql/queries/cart.html#CartItemPrices).
+  versions: 2.3.4
+  type: Major update
+  date: September 20, 2019
+  link: https://github.com/magento/devdocs/pull/5425
+- description: Deprecated the [setPaymentMethodAndPlaceOrder mutation](https://devdocs.magento.com/guides/v2.3/graphql/mutations/set-payment-place-order.html)
+    in the _GraphQL Developer Guide_.
+  versions: 2.3.4
+  type: Major update
+  date: September 18, 2019
+  link: https://github.com/magento/devdocs/pull/5413
+- description: Added the topic [Filtering with custom attributes](https://devdocs.magento.com/guides/v2.3/graphql/custom-filters.html)
+    to the _GraphQL Developer Guide_ and significantly revised the [`products` query](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
+    to reflect changes in how the query works in Magento 2.3.4.
+  versions: 2.3.4
+  type: Major update
+  date: September 16, 2019
+  link: https://github.com/magento/devdocs/pull/5222
 - description: Added `@method` and `@link` information to [Coding Standards](https://devdocs.magento.com/guides/v2.3/coding-standards/docblock-standard-general.html).
   versions: 2.2.x, 2.3.x
   type: Major update
