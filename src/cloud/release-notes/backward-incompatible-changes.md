@@ -106,7 +106,7 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
    -  Remove all associated volumes when shutting down the Docker containers:
 
       ```bash
-      docker-compose -v
+      docker-compose down -v
       ```
 
 -  **Override file synchronization settings for archive and backup files**–Archive and backup files with the following extensions are no longer synchronized when using docker-sync or mutagen:  `*.sql`, `*.gz`, `*.zip`, and `*.bz2`.  You can override the default file synchronization for these file types by renaming the file to end with a different extension, for example `synchronize-me.zip-backup`.
