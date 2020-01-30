@@ -201,19 +201,19 @@ class MyBlock extends Template {
 
 ## Step 6: Run CLI commands
 
-1. Compile the code with this command:
+1. Compile the code with:
 
     ```bash
     bin/magento setup:di:compile
     ```
-    
-1. Deploy static content:
+
+1. Next, deploy static content:
 
    ```bash
    bin/magento setup:static-content:deploy
    ```
 
-1. Clean cache:
+1. Then clean the cache:
 
    ```bash
    bin/magento cache:clean
