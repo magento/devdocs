@@ -11,7 +11,7 @@ To unit test such classes, you must manually create mocks for all constructor pa
 Use the `\Magento\Framework\TestFramework\Unit\Helper\ObjectManager` helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.
 You can still create your custom mocks, if needed.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Do not use the ObjectManager helper class for classes with a small number of dependencies.
 
 ## ObjectManager methods {#help}
@@ -25,7 +25,8 @@ The ObjectManager public interface methods are:
 ### getObject {#getobject}
 
 Creates mocks for all constructor dependencies and applies any specified custom mocks from `$arguments` array.
-<p>Also, instantiates the required `$className` by using constructor with already existing mocks.
+Also, instantiates the required `$className` by using constructor with already existing mocks.
+
 **Syntax**:
 
 ```php
