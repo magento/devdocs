@@ -94,12 +94,12 @@ You do not interact with most of these volumes, which are used by the Docker con
 
 ### Rebuild a clean environment
 
-The `docker-compose down -v` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
+The `docker-compose down` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
 
 Use the following command to remove _all_ data and rebuild a clean environment:
 
 ```bash
- bin/magento-docker down
+ bin/magento-docker down -v
 ```
 
 The `magento-sync` volume is an external volume that you must create or delete manually. If the `magento-sync` volume does not exist, the following error message displays:

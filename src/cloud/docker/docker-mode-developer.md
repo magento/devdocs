@@ -53,7 +53,7 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug][xdebug].
+1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can enable Xdebug in the `.magento.app.yaml` file, and then update the configuration in the `docker-compose.yml` file. See [Configure Xdebug for Docker][xdebug].
 
 1. If you selected `docker-sync` for file synchronization, start the file synchronization.
 

@@ -18,9 +18,11 @@ The release notes include:
 
 ## v1.0.0
 
--  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
+-  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.
 
--  {:.new}**Added versioning to the Docker images**–You must now update the {{site.data.var.mcd}} package to get the updated images.
+   {{site.data.var.mcd}} package is a dependency for {{site.data.var.ct}} v2002.1.0 and later. When you update {{site.data.var.ct}} version to 2002.1.0, you also update to the Docker 1.0.0 release. If you used an Magento Cloud Docker in an earlier release, review the [backward incompatibilities]{{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and make any changes required to use {{site.data.var.mcd}} version 1.0.0.
+
+-  {:.new}**Added versioning to the Docker images**–You must now update the {{site.data.var.mcd}} package to get the updated images.<!--MAGECLOUD-4737-->
 
 -  {:.new}**Container updates**–
 
@@ -74,7 +76,7 @@ The release notes include:
 
    -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
 
-   -  {:.new}**Added an option to expose the database port to the host**–Use the `--expose-db-port=<PORT>` option to expose the database port to the host when building the `docker-compose.yml` file: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454--> [Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/101).
+   -  {:.new}**Added an option to expose the database port to the host**–Use the `--expose-db-port=<PORT>` option to expose the database port to the host when building the `docker-compose.yml` file: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454--> [Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/101).
 
    -  {:.new}**New post-deploy command**–Previously, the post-deploy hooks defined in the `.magento.app.yaml` file ran automatically after you deployed Magento to a Cloud Docker container using the `cloud-deploy` command. Now, you must issue a separate `cloud-post-deploy` command to run the post-deploy hooks after you deploy. See the updated launch instructions for [developer] and [production] mode.<!--MAGECLOUD-3996-->
 

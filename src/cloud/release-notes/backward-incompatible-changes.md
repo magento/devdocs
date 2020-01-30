@@ -87,9 +87,6 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
 
       ```bash
       bin/magento-docker ece-deploy
-      ```
-
-      ```bash
       bin/magento-docker ece-post-deploy
       ```
 

@@ -38,9 +38,9 @@ These commands are available in the Magento Cloud Docker environment:
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
-| `cloud-build` | build | Used to build the application in production mode, configured via build hook in .magento.app.yml
+| `cloud-build` | build | Used to build the application in production mode, configured via build hook in the `.magento.app.yml` file
 | `cloud-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| `cloud-post-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
+| `cloud-post-deploy` | deploy | Used to run post deploy hooks configured via the post deploy hook in the `.magento.app.yml` file
 | `ece-command` | deploy | Used to run other commands from ece-tools CLI Tool
 | `magento-command` | deploy | Used to run bin/magento commands
 | `magento-installer` | deploy | Just runs build and then deploy hooks
@@ -81,7 +81,7 @@ The Deploy container mimics the Magento Cloud deploy process so that testing the
 You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the Magento store:
 
 ```bash
-docker-compose run build magento-command index:reindex
+docker-compose run deploy magento-command index:reindex
 ```
 
 ## Node container

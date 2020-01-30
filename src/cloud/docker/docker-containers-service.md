@@ -84,6 +84,9 @@ You can load custom extensions in the FPM configuration by adding the configurat
      - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
 ```
 
+{:.bs-callout-tip}
+In most cases, you add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. Use the override capability only if you want to test an extension in the Docker environment without updating the configuration for your {{site.data.var.ece}} environment, See [PHP extensions].
+
 For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 
 ## RabbitMQ container
@@ -200,3 +203,4 @@ To mount custom NGINX configuration file using volumes:
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
 [web config]: https://github.com/magento/docker
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[Configure php options]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
