@@ -116,7 +116,7 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### PWA Studio
 
-PWA and Page Builder integration lets you use Page Builder to define your layout and render that content in a PWA Studio storefront
+PWA and Page Builder integration lets you use Page Builder to define your layout and render that content in a PWA Studio storefront.
 
 *  Improved the getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
 
