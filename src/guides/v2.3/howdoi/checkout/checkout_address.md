@@ -332,7 +332,7 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file, 
 </page>
 ```
 
-## Step 8: Deploy the static content and Clean cache
+## Step 8: Deploy the static content and clean the cache
 
 1. Deploy static content:
 
@@ -340,7 +340,7 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file, 
    bin/magento setup:static-content:deploy
    ```
 
-1. Clean cache:
+1. Then clean the cache:
 
    ```bash
    bin/magento cache:clean
