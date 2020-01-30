@@ -118,7 +118,7 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 PWA and Page Builder integration lets you use Page Builder to define your layout and render that content in a PWA Studio storefront
 
-*  Improved getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
+*  Improved the getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
 
 *  Separation of the logic (Talons) and presentation pieces (venia-ui) of certain React hooks in Peregrine. Developers can now swap out either the logic or the presentation side of a component
 
