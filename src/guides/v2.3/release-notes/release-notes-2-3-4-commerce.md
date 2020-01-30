@@ -27,7 +27,7 @@ This release includes the following security enhancements:
 
 #### Over 30 security enhancements that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.4) have been ported to 2.2.11, 1.14.4.4, and 1.9.4.4, as appropriate.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security updates available for Magento (APSB20-02)](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.4) have been ported to 2.2.11, 1.14.4.4, and 1.9.4.4, as appropriate.
 
 With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
@@ -35,9 +35,9 @@ With this quarterly release, we’ve changed how we describe these security issu
 
 Additional security enhancements include:
 
-*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**.  The **Custom Layout Updatefield on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that  contains the layout updates and select it for use. The name of the file containing an update must follow the  conventions described here. See [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html) <!--- MC-16129-->
+*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**. The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that contains the layout updates and select it for use. The name of the file containing an update must follow the conventions described [here](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html).  <!--- MC-16129-->
 
-*  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects.
+*  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
@@ -116,6 +116,22 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### PWA Studio
 
+PWA and Page Builder integration lets you use Page Builder to define your layout and render that content in a PWA Studio storefront
+
+*  Improved getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
+
+*  Separation of the logic (Talons) and presentation pieces (venia-ui) of certain React hooks in Peregrine. Developers can now swap out either the logic or the presentation side of a component
+
+*  Routing now handled through the React Router (library of navigational components)
+
+*  Refactored Venia [state management}(https://magento.github.io/pwa-studio/technologies/basic-concepts/state-management/) to abstract and reduce dependency on Redux
+
+*  Continued migration from REST to GraphQL
+
+*  Performance improvements (service workers, cache, image optimization)
+
+*  Breadcrumbs for improved storefront navigation
+
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
 
 ### dotdigital
@@ -123,6 +139,8 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 *  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
 
 *  Engagement Cloud includes a new Chat widget that makes it easy for shoppers to communicate in real time with customers as they shop in your store. Chat can be accessed from the Engagement Cloud section of the Magento configuration, or directly from your Engagement Cloud account. See [Engagement Cloud Chat](https://docs.magento.com/m2/ee/user_guide/marketing/engagement-cloud-chat.html).
+
+*  Merchants can now sync additional campaigns from Engagement Cloud to Magento.
 
 ### Google Shopping ads Channel
 
