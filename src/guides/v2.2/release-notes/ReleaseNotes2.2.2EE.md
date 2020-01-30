@@ -691,7 +691,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 **Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.
 
-**Workaround**: Use the [static Swagger site]({{ site.baseurl }}/swagger) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.
+**Workaround**: Use the static Swagger site to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.
 
 ### Magento Shipping issues
 

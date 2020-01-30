@@ -1,7 +1,7 @@
 ---
 title: Magento_GraphQl
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/GraphQl/README.md
 last_modified_at: '2017-10-25 11:14:11 -0500'
 content: "**GraphQl** provides the framework for the application to expose GraphQL
