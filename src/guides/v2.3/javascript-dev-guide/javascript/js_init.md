@@ -68,7 +68,7 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract component name
 
 -  If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either `config` or `element`. The recommended way to declare such components is [using the `<script>` tag](#init_script).
 
-#### Declarative notation using the `<script type="text/x-magento-init"> ... </script>` tag {#decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init">` tag {#decl_tag}
 
 To call a JS component on an HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute syntax shown in the following example.
 
