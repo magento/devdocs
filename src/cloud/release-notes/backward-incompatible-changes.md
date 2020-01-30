@@ -77,7 +77,7 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
       php ./vendor/bin/ece-docker list
       ```
 
-   -  **Updating the Magento Cloud docker-compose commands**–We changed the name of the `./bin/docker` directory to `./bin/magento-docker`.  Update your scripts and commands to use the new path.
+   -  **Updating the Magento Cloud docker-compose commands**–We renamed the path to the command file from `./bin/docker` to `./bin/magento-docker`.  Update your scripts and commands to use the new path.
 
    -  **Using temporary containers**–In previous versions, the containers created by `bin/magento-docker` command operations were not removed, so you could use them for other operations.  Now, the `magento-docker` commands remove any containers they create after the command completes.
 
