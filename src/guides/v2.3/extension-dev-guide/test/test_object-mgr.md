@@ -22,7 +22,7 @@ The ObjectManager public interface methods are:
 -  [getCollectionMock method](#getCollectionMock). Lists mocked constructor arguments.
 -  [getConstructArguments method](#getConstructArguments). Creates collection instances that contain specified elements.
 
-### getObject method {#getobject}
+### getObject {#getobject}
 
 Creates mocks for all constructor dependencies and applies any specified custom mocks from `$arguments` array.
 <p>Also, instantiates the required `$className` by using constructor with already existing mocks.
@@ -49,7 +49,7 @@ $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
      $arguments);
 ```
 
-### getCollectionMock method {#getCollectionMock}
+### getCollectionMock {#getCollectionMock}
 
 Retrieves a collection instance with mocked getIterator method.
 
@@ -79,7 +79,7 @@ $optionCollection =
           array($options));
 ```
 
-### getConstructArguments method {#getConstructArguments}
+### getConstructArguments {#getConstructArguments}
 
 Lists dependency mocks for a specified class.
 
