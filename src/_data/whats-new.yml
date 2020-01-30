@@ -36,6 +36,12 @@ entries:
   type: Major update
   date: January 8, 2020
   link: https://github.com/magento/devdocs/pull/6354
+- description: Added  the [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html)
+    topic to the _Frontend Developer Guide_.
+  versions: 2.3.4
+  type: New topic
+  date: December 11, 2019
+  link: https://github.com/magento/devdocs/pull/6107
 - description: Added information about bulk [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html)
     in the _GraphQL Developer Guide_.
   versions: 2.3.4
