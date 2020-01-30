@@ -6,10 +6,11 @@ menu_title: Object Manager helper
 menu_order: 3
 ---
 
-<p>Block and model class constructors declare many dependencies. The Magento system uses constructor [dependency injection](https://glossary.magento.com/dependency-injection).</p>
-<p>To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects. If the number of dependencies is ten or greater, this task is time-consuming.</p>
-<p>Use the <code>\Magento\Framework\TestFramework\Unit\Helper\ObjectManager</code> helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.</p>
-<p>You can still create your custom mocks, if needed.</p>
+Block and model class constructors declare many dependencies. The Magento system uses constructor [dependency injection](https://glossary.magento.com/dependency-injection).
+To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects. If the number of dependencies is ten or greater, this task is time-consuming.
+Use the `\Magento\Framework\TestFramework\Unit\Helper\ObjectManager` helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.
+You can still create your custom mocks, if needed.
+
  {:.bs-callout-info}
 Do not use the ObjectManager helper class for classes with a small number of dependencies.
 
@@ -23,15 +24,18 @@ The ObjectManager public interface methods are:
 
 ### getObject method {#getobject}
 
-<p>Creates mocks for all constructor dependencies and applies any specified custom mocks from <code>$arguments</code> array.</p>
-<p>Also, instantiates the required <code>$className</code> by using constructor with already existing mocks.</p>
-<p><b>Syntax:</b></p>
-<pre>
+Creates mocks for all constructor dependencies and applies any specified custom mocks from `$arguments` array.
+<p>Also, instantiates the required `$className` by using constructor with already existing mocks.
+**Syntax**:
+
+```php
 public function getObject($className,
      array $arguments = []);
-</pre>
-<p><b>Example:</b></p>
-<pre>
+```
+
+**Example**:
+
+```php
 $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 
 // default constructor arguments
@@ -43,19 +47,24 @@ $cacheMock = $this->getMock('\Magento\Cache\FrontendInterface');
 $arguments = array('cache' => $cacheMock);
 $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
      $arguments);
-</pre>
+```
 
 ### getCollectionMock method {#getCollectionMock}
 
-<p>Retrieves a collection instance with mocked getIterator method.</p>
-<p><b>Syntax:</b></p>
-<pre>
+Retrieves a collection instance with mocked getIterator method.
+
+**Syntax**:
+
+```php
 public function getCollectionMock($className,
      array $data);
-</pre>
-<p>The collection contains elements from the $data array.</p>
-<p><b>Example:</b></p>
-<pre>
+```
+
+The collection contains elements from the `$data` array.
+
+**Example**:
+
+```php
 $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 // Prepare mock for collection elements
 $option = $this->getMock(
@@ -68,19 +77,24 @@ $option = $this->getMock(
 $optionCollection =
      $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
           array($options));
-</pre>
+```
 
 ### getConstructArguments method {#getConstructArguments}
 
-<p>Lists dependency mocks for a specified class.</p>
-<p><b>Syntax:</b></p>
-<pre>
+Lists dependency mocks for a specified class.
+
+**Syntax**:
+
+```php
 public function getConstructArguments($className,
      array $arguments = []);
-</pre>
-<p>In the Magento system, several tests introduced mocks for abstract models and blocks.</p>
-<p><b>Example:</b></p>
-<pre>
+```
+
+In the Magento system, several tests introduced mocks for abstract models and blocks.
+
+**Example**:
+
+```php
 $attributeData = array(
     'store_label' => 'Test',
     'attribute_code' => 'test',
@@ -105,4 +119,4 @@ $arguments = $objectManagerHelper->getConstructArguments(
 /** @var $attribute \Magento\Eav\Model\Entity\Attribute\AbstractAttribute|\PHPUnit\Framework\MockObject\MockObject */
 $attribute = $this->getMockForAbstractClass($attributeClass,
     $arguments);
-</pre>
+```
