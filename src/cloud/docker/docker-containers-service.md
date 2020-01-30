@@ -151,7 +151,7 @@ varnish:
     - VARNISHD_PARAMS="-p default_ttl=3600 -p default_grace=3600 -p feature=+esi_ignore_https -p feature=+esi_disable_xml_check"
 ```
 
-Use the following command to clear the Varnish cache:
+To clear the Varnish cache:
 
 ```bash
 docker-compose exec varnish varnishadm ban req.url '~' '.'

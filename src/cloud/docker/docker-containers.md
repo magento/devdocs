@@ -56,7 +56,7 @@ You can share files easily between your machine and a Docker container by placin
 
 ## Sharing Magento Cloud project data
 
-When you launch the {{site.data.var.ece}} project locally in a Docker environment, the default project configuration creates the following volumes:
+When you launch the {{site.data.var.ece}} project in a local Docker environment, the default project configuration creates the following volumes:
 
 ```text
 magento-var
@@ -90,13 +90,13 @@ Magento Cloud Docker uses Docker volumes to maintain data throughout the lifecyc
 -  in the Dockerfile from the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker)
 -  in the upstream Docker image
 
-You do not interact with most of these volumes, which are used by the Docker containers and follow the docker-compose lifecycle. The only exception to this is the `magento-sync` directory which is an external volume used by the Mutagen application to transport data into the containers from the host operating system.
+You do not interact with most of these volumes, which are used by the Docker containers and follow the docker-compose lifecycle. The only exception to this is the `magento-sync` directory that is an external volume used by the Mutagen application to transport data into the containers from the host operating system.
 
 ### Rebuild a clean environment
 
 The `docker-compose down` command removes all components of your local Docker instance, including containers, networks, volumes, and images. However, this command does not affect [the persistent database volume][db] or the `magento-sync` volume used for file synchronization.
 
-Use the following command to remove _all_ data and rebuild a clean environment:
+To remove _all_ data and rebuild a clean environment:
 
 ```bash
  bin/magento-docker down -v

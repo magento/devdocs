@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Docker Development
+title: Docker development
 functional_areas:
   - Cloud
   - Docker
@@ -11,7 +11,7 @@ functional_areas:
 
 ## Host Operating Systems
 
-The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should be able to run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
+The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
 
 ## Gather credentials
 
