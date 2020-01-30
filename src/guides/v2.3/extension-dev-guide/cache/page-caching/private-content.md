@@ -99,15 +99,18 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
     </action>
 </config>
 ```
-{:.bs-callout-warning}
-Currently we have some place in sections that allows to declare 'action' node without specifying any sections, like -
+
+There are sections that allow you to declare an 'action' node without specifying a sections, for instance, when logging out:
+
 ```xml
-    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
-    <action name="customer/account/logout"/>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+  <action name="customer/account/logout"/>
 </config>
 ```
-It suppose to tell our JS to invalidate all sections, but if you have declared sections for this action in other xml file, that will override it and only newly added section will be invalidated, so if you need to reload all sections on some action you should either just use `*` as section name or use empty action and ensure that they will not be overriden by any other rules, e.g. -
+
+This tells Magento to invalidate all sections. But if you have declared sections for this action in another .xml file, it will override the initial sections and only newly added sections will be invalidated. If you need to reload all sections on some action, use `*` as section name or use an empty action and ensure that they will not be overriden by any other rules:
+
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
@@ -116,12 +119,6 @@ It suppose to tell our JS to invalidate all sections, but if you have declared s
     </action>
 </config>
 ```
-Note: In future release action nodes without section name specification will be deprecated. and in case our SectionConfigConverter will recieve 
-```xml
-<section name="*"/>
-```
-It will disregard any other rules
-
 
 {:.bs-callout-warning}
 Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and do not expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="_blank"}.
