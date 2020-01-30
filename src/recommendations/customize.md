@@ -7,12 +7,11 @@ If you want to customize how the recommendations display on your storefront, you
 
 `<your theme>/Magento_ProductRecommendationsLayout/web/template/recommendations.html`
 
-To ensure recommendations are fetched correctly, you need to preserve the following tags in the `recommendations.html` file:
+However, to ensure Magento can successfully collect metrics for the recommendations on your storefront, you must preserve the following tags in the `recommendations.html` file:
 
--  `<div data-bind="attr : {'data-unit-id' : unitId }"`
+|Tag|Use|
+|---|---|
+|`<div data-bind="attr : {'data-unit-id' : unitId }"...</div>`| Collects view events|
+|`<a data-bind="attr : {'data-sku' : sku, 'data-unit-id'...</a>`| Collects click events. **Note** If you add any anchor tags, you need to include these attributes.|
 
--  `<a tabindex="-1" class="product photo product-item-photo" data-bind="attr : {'data-sku' : sku, 'data-unit-id'...</a>`
-
--  `<a class="product-item-link" data-bind="attr : {'data-sku' : sku, 'data-unit-id'...</a>`
-
-Refer to the [template overview]({{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify the default template.
+Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify templates in Magento.

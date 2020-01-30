@@ -17,16 +17,16 @@ For issues related to the Catalog SaaS Export module:
 
 -  Confirm the modules are enabled. The `saas-export` metapackage installs the following modules, all of which need to be enabled:
 
-```bash
-"magento/module-catalog-data-exporter"
-"magento/module-catalog-inventory-data-exporter"
-"magento/module-catalog-url-rewrite-data-exporter"
-"magento/module-configurable-product-data-exporter"
-"magento/module-data-exporter"
-"magento/module-saas-catalog"
+```text
+    "magento/module-catalog-data-exporter"
+    "magento/module-catalog-inventory-data-exporter"
+    "magento/module-catalog-url-rewrite-data-exporter"
+    "magento/module-configurable-product-data-exporter"
+    "magento/module-data-exporter"
+    "magento/module-saas-catalog"
 ```
 
--  Check the logs - Check the logs and make sure there are not errors associated with the above modules
+-  Check the logs - Make sure there are no errors associated with the above modules
 
 -  Refresh Configuration cache - Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache
 
@@ -34,4 +34,4 @@ For issues related to the Catalog SaaS Export module:
 
 -  Confirm the indexers and cron jobs are running
 
--  Confirm there is data in the `catalog_data_exporter_products` db table
+-  Confirm there is data in the `catalog_data_exporter_products` database table
