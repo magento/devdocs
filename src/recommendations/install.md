@@ -13,11 +13,11 @@ Using recommendations on your storefront requires:
 
 1. Admin UI - Needed to configure recommendations on your storefront
 
-## Install Product Recommendations
+## Install Product Recommendations {#install}
 
 For the Early Access Program, deploying recommendations to your site requires that you complete the following tasks:
 
-1. Sign up through [this form](https://forms.gle/VE9VSSj9TMUTJ41u6). You will receive a SaaS Environment ID after signing up. You will use this ID to complete the installation steps below.
+1. Sign up through [this form](https://forms.gle/VE9VSSj9TMUTJ41u6). Within 24 hours, you will receive a SaaS Environment ID via Email from Product Management. This ID identifies a production or non-production cloud service environment for use with Product Recommendations. You will use this ID to complete the module [configuration]({{ page.baseurl }}/recommendations/configure.html). If, after 24 hours, you have not received your ID, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
 
 1. Install the `product-recommendations` module via the following composer command:
 
