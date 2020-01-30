@@ -15,4 +15,4 @@ To ensure recommendations are fetched correctly, you need to preserve the follow
 
 -  `<a class="product-item-link" data-bind="attr : {'data-sku' : sku, 'data-unit-id'...</a>`
 
-Refer to the [template overview]({{ base.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify the default template.
+Refer to the [template overview]({{ page.baseurl }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify the default template.
