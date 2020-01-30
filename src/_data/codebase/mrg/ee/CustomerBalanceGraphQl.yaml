@@ -1,7 +1,7 @@
 ---
 title: Magento_CustomerBalanceGraphQl
 source_repo: magento2ee
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/CustomerBalanceGraphQl/README.md
 last_modified_at: '2019-07-16 10:30:00 -0500'
 content: |

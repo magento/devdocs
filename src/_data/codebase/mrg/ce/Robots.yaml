@@ -1,7 +1,7 @@
 ---
 title: Magento_Robots
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/Robots/README.md
 last_modified_at: '2017-06-15 17:15:28 +0300'
 content: "The Robots module provides the following functionalities: \n* contains a

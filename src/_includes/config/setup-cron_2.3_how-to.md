@@ -45,7 +45,10 @@ content='The `update/cron.php` file exists in [Composer](https://glossary.magent
 In [Composer-based installations](https://glossary.magento.com/composer), Magento creates the `update/` directory when you run `composer create-project`. Running `composer install` does not create the `update/` directory (if it did not exist before). See [Recreate the Magento updater](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#recreate-magento-updater).'
 %}
 
-As of Magento 2.3.4, mentioned crons have been grouped to `all` (`cron:run`, `update/cron.php`, `setup:cron:run` crons) and `non-optional` (`cron:run` cron only) groups.
+Starting in Magento version 2.3.4, cron tasks are categorized into two groups:
+
+*  The `all` group includes the `cron:run`, `update/cron.php`, and `setup:cron:run` tasks.
+*  The `non-optional` group includes only the `cron:run` task.
 
 Use `--non-optional` (or `-d`) to install a non-optional CRON job:
 

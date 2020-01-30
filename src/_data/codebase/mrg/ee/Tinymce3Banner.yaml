@@ -1,7 +1,7 @@
 ---
 title: Magento_Tinymce3Banner
 source_repo: magento2ee
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/Tinymce3Banner/README.md
 last_modified_at: '2018-05-14 12:30:39 -0500'
 content: Tinymce3Banner module allows to update banner widget images on Wysiwyg. We
