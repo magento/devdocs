@@ -100,6 +100,20 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### PWA Studio
 
+*  Improved the getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
+
+*  Separation of the logic (Talons) and presentation pieces (`venia-ui`) of certain React hooks in Peregrine. Developers can now swap out either the logic or the presentation side of a component
+
+*  Routing is now handled through the React Router (library of navigational components)
+
+*  Refactored Venia [state management](https://magento.github.io/pwa-studio/technologies/basic-concepts/state-management/) to abstract and reduce dependency on Redux
+
+*  Continued migration from REST to GraphQL
+
+*  Performance improvements (service workers, cache, image optimization)
+
+*  Breadcrumbs for improved storefront navigation
+
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
 
 ### dotdigital
