@@ -103,7 +103,7 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
       docker volume rm magento-db
       ```
 
-   -  Remove the `magento-db` volume and all associated volumes when you shut down the containers:
+   -  Remove all associated volumes when shutting down the Docker containers:
 
       ```bash
       docker-compose -v
