@@ -1,2 +1,0 @@
-{: .bs-callout .bs-callout-info}
-**Updating your Pro project**: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.

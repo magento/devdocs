@@ -1,0 +1,11 @@
+label: Command-line tools reference
+pages:
+
+  - label: Open Source
+    url: /reference/cli/magento.html
+      
+  - label: Commerce
+    url: /reference/cli/magento-commerce.html
+  
+  - label: Cloud
+    url: /reference/cli/magento-cloud.html

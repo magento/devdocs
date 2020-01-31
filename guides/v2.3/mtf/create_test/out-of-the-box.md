@@ -1,1 +1,0 @@
-../../../../guides/v2.2/mtf/create_test/out-of-the-box.md

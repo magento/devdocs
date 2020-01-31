@@ -1,2 +1,2 @@
-style '_checks/md_style'
+style '_checks/styles/style-rules-dev'
 ignore_front_matter true

@@ -1,2 +1,0 @@
-{: .bs-callout .bs-callout-warning}
-Originally, Pro projects were provisioned using a [different architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture-legacy.html). To upgrade a Pro project that was **created before October 23, 2017**, contact your Customer Success Manager.

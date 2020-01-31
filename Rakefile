@@ -10,10 +10,9 @@ require 'html-proofer'
 require 'kramdown'
 require 'launchy'
 require 'colorator'
-require 'erb'
 
-# Require helper methods from the 'rakelib/lib' directory
-Dir.glob('rakelib/lib/**/*.rb') { |file| require_relative(file) }
+# Require helper methods from the 'lib' directory
+Dir.glob('lib/**/*.rb') { |file| require_relative(file) }
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
@@ -59,11 +58,34 @@ end
 desc 'Pull docs from external repositories'
 task init: %w[multirepo:init]
 
-desc 'Run checks (image optimization).'
-task check: %w[check:image_optim check:mdl] 
+desc 'Run checks (image optimization and Markdown style linting).'
+task check: %w[check:image_optim check:mdl]
 
-desc 'Generate data for the weekly digest.'
+desc 'Generate data for a news digest. Default timeframe is a week since today. For other period, use "since" argument: since="jul 4"'
 task :whatsnew do
+  date = ENV['since']
   print 'Generating data for the weekly digest: $ '.magenta
-  sh 'whatsup_github'
+  if date.nil? or date.empty?
+    sh 'bin/whatsup_github'
+  elsif date.is_a? String
+    sh 'bin/whatsup_github', 'since', ENV['since'].to_s
+  else
+    puts 'The "since" argument must be a string. Example: "jul 4"'
+  end
+end
+
+desc 'Generate index for Algolia'
+task index: %w[init] do
+  puts 'Generating index for Algolia ...'
+  sh 'bin/jekyll',
+        'algolia',
+          '--config=_config.yml,_config.index.yml'
+end
+
+desc 'Convert HTML text to kramdown in your terminal'
+task :convert do
+  puts 'Paste HTML text followed by a new line and press Control-D.'.magenta
+  result = `bin/kramdown --input=html --output=kramdown`
+  puts 'Converted text:'.magenta
+  puts result.bold
 end

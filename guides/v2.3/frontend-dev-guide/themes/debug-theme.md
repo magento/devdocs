@@ -1,1 +1,0 @@
-../../../v2.2/frontend-dev-guide/themes/debug-theme.md

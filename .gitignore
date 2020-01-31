@@ -11,6 +11,7 @@
 
 _config.local.yml
 .jekyll-metadata
+.jekyll-cache
 .whatsup.yml
 
 *.bat
@@ -23,14 +24,8 @@ _algolia_api_key
 # Docs from different repositories #
 ###################################
 
-/mbi/
-/page-builder/
-/page-builder-migration/
-/guides/m1x/
-/mftf/
-
-# Docs from different branches #
-###################################
-
-/guides/v2.0/
-/guides/v2.1/
+/src/mbi/
+/src/page-builder/
+/src/page-builder-migration/
+/src/guides/m1x/
+/src/mftf/

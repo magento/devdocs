@@ -1,2 +1,0 @@
-{: .bs-callout .bs-callout-info}
-For Pro projects **created before October 23, 2017**, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
