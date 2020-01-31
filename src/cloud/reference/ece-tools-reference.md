@@ -36,7 +36,7 @@ Command | Action
 `ece-docker build:compose --mode="production"` | Builds the docker environment in [production mode][mode].
 `ece-docker image:generate:php` | Convert PHP configuration files to Docker ENV files.
 
-The following example lists the `{{site.data.var.mcd}}` Docker commands:
+The following example lists the `{{site.data.var.mcd}}` commands:
 
 ```bash
 php ./vendor/bin/ece-docker list
