@@ -53,12 +53,14 @@ To implement what is discussed in this guide, you need a working Magento install
 
 To use this guide, you must be familiar with:
 
-*  CSS, CSS 3, and LESS
-*  HTML and HTML 5
+*  [CSS, CSS 3](https://glossary.magento.com/css)
+*  [LESS](https://glossary.magento.com/less)
+*  [HTML and HTML 5](https://glossary.magento.com/html)
 *  [XML](https://glossary.magento.com/xml)
 *  [JavaScript](https://glossary.magento.com/javascript)
-*  PHTML, PHP (Basic)
-*  Responsive Web Design (RWD)
+*  [PHTML](https://glossary.magento.com/phtml)
+*  [PHP (Basic)](https://glossary.magento.com/php)
+*  [Responsive Web Design (RWD)](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 {:.ref-header}
 Related topics
