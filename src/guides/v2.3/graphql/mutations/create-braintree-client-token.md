@@ -31,3 +31,8 @@ mutation {
 }
 ```
 
+## Errors
+
+Error | Description
+--- | ---
+`The Braintree payment method is not active.` | The [Braintree](https://docs.magento.com/m2/ee/user_guide/payment/braintree.html) payment method is disabled in admin.

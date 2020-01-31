@@ -15,6 +15,8 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Get started
 
+> We no longer accept contributions to files in the `src/guides/v2.2/` directory.
+
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
 1. Make sure you have a [GitHub account](https://github.com/signup/free).
@@ -118,49 +120,6 @@ title: Continue with your installation
 | ------------- | ---------- |
 | `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
 | `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
-
-## Symbolic links
-
-We use symbolic links for topics that are the same across versions of Magento. A file is symlinked if the entire content of the file is a path to the original version, such as [ext-best-practices/tutorials/serialized-to-json-data-upgrade.md](https://github.com/magento/devdocs/blob/master/guides/v2.3/ext-best-practices/tutorials/serialized-to-json-data-upgrade.md). Note that some editors will automatically follow symlinks so it might not be clear if a file is symlinked or not. Check the file on Github directly to be sure.
-
-### Create a symbolic link
-
-When you create a new topic (create a new `.md` file) and its content is the same for 2.2 and 2.3 versions, create a symbolic link.
-
-For example, if you created a new file for v.2.2: `guides/v2.2/install-gde/new-doc-topic.md` and its content is the same for v.2.3, use the command below to create the symbolic link.
-
-```bash
-cd <DEVDOCS_REPOSITORY_ROOT_DIR>/guides/v2.3/install-gde
-```
-
-```bash
-ln -s ../../v2.2/install-gde/new-doc-topic.md new-doc-topic.md
-```
-
-If you have an image that is identical between versions, it should placed in `/common/images`. Please optimize images before committing them to the repository.
-If done correctly, the symbolic link path will start with 2-4 instances of `../`, as the above example shows. If possible, check a symlinked file within the same folder to ensure the proper pathing.
-
-### Remove a symbolic link
-
-If your changes are unique to a specific version, remove the symbolic link and add a new file. Copy and paste a previous version of the topic to get started.
-
-The removal should use the `git rm` command specifically. Deleting the file through the regular file system might cause issues with the repository.
-
-For example:
-
-```bash
-cd <DEVDOCS_REPOSITORY_ROOT_DIR>
-```
-
-```bash
-git rm guides/v2.3/install-gde/new-doc-topic.md
-```
-
-```bash
-cp guides/v2.2/install-gde/new-doc-topic.md guides/v2.3/install-gde/new-doc-topic.md
-```
-
-Once you have the copy in place, you can edit it with the version-specific information.
 
 ## Report an issue
 

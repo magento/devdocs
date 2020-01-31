@@ -38,14 +38,14 @@ The following example returns the list of purchased downloadable products for th
       "items": [
         {
           "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
+          "download_url": "https://<M2_INSTANCE>/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
           "order_increment_id": "000000004",
           "remaining_downloads": "Unlimited",
           "status": "pending"
         },
         {
           "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
+          "download_url": "https://<M2_INSTANCE>/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
           "order_increment_id": "000000004",
           "remaining_downloads": "Unlimited",
           "status": "pending"

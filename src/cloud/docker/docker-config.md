@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Launch Docker
 redirect_from:
-  - /guides/v2.2/cloud/reference/docker-config.html
-  - /guides/v2.3/cloud/reference/docker-config.html
+  - /cloud/reference/docker-config.html
 functional_areas:
   - Cloud
   - Setup
@@ -54,9 +53,7 @@ For example, the following command starts the Docker configuration generator for
 ## Prerequisites
 
 1. You must have the following software installed on your local workstation:
-   -  PHP version 7.1 or later
-      -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
-      -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
+   -  [PHP](https://www.php.net/manual/en/install.php) version 7.1 or later
    -  [Composer](https://getcomposer.org)
    -  [Docker](https://www.docker.com/get-started)
    -  File synchronization required for developer mode—use one of the following:
@@ -108,16 +105,16 @@ For example, the following command starts the Docker configuration generator for
 
 Continue launching your Docker environment in the default _production_ mode.
 
+1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
+
+   ```bash
+   cp ./docker/config.php.dist ./docker/config.php
+   ```
+
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
    ```bash
    ./vendor/bin/ece-tools docker:build
-   ```
-
-1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
-
-   ```bash
-   cp .docker/config.php.dist .docker/config.php
    ```
 
 1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html#configure-xdebug).
@@ -180,6 +177,12 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
    If you have it installed, continue to the next step.
 
+1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
+
+   ```bash
+   cp ./docker/config.php.dist ./docker/config.php
+   ```
+
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
    ```bash
@@ -192,12 +195,6 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
    ```bash
    ./vendor/bin/ece-tools docker:build --mode="developer" --sync-engine=mutagen
-   ```
-
-1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
-
-   ```bash
-   cp .docker/config.php.dist .docker/config.php
    ```
 
 1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html).
@@ -259,9 +256,9 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 You can access the local Magento Cloud template by opening one of the following URLs in a browser:
 
--  [`http://magento2.docker`](http://magento2.docker)
+-  `http://magento2.docker`
 
--  [`https://magento2.docker`](https://magento2.docker)
+-  `https://magento2.docker`
 
 ## Stop and start containers
 

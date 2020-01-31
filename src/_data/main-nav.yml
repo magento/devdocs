@@ -148,7 +148,7 @@
           versionless: true
           exclude_versions: ['2.0']
 
-        - label: Business Intelligence Import API
+        - label: Business Intelligence API
           url: /mbi/docs/getting-started.html
           exclude_versions: ['2.0']
           versionless: true
@@ -195,6 +195,10 @@
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
+
+    - label: Compliance
+      url: /compliance/industry-compliance.html
+      versionless: true
 
     - label: Inventory Management
       url: /inventory/index.html

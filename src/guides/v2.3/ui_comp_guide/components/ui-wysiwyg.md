@@ -18,52 +18,15 @@ Extends all `abstract` configuration.
 
 Wysiwyg-specific options:
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><code>content</code></td>
-    <td>Initial WYSIWYG content.</td>
-    <td>String</td>
-    <td>''</td>
-  </tr>
-  <tr>
-    <td><code>elementSelector</code></td>
-    <td>The selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
-    <td>String</td>
-    <td><code>textarea</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the template particular field type template, specific for this component.</td>
-    <td>String</td>
-    <td><code>ui/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><div><code>links</code></div>
-        <div><code>value</code></div>
-    </td>
-    <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
-    <td>Object<br />String</td>
-    <td><code>${ $.provider }:${ $.dataScope }</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the general Field template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+| Option | Description | Type | Default |
+| --- | --- | --- | --- |
+| `class` | The path to the component class. | Object | `Magento\Ui\Component\Form\Element\Wysiwyg` |
+| `component` | The path to the component’s `.js` file in terms of RequireJS. | String | `'Magento_Ui/js/form/element/wysiwyg'` |
+| `content` | Initial WYSIWYG content. | String | `''` |
+| `elementSelector` | The selector of the HTML element that is wrapped by the WYSIWYG editor. | String | `'textarea'` |
+| `elementTmpl` | The path to the template particular field type template, specific for this component. | String | `'ui/form/element/wysiwyg'` |
+| `links`.`value` | [Links]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) the component's `value` property with the provider, using the path that is declared in the `dataScope` property. | String | `'${ $.provider }:${ $.dataScope }'` |
+| `template` | The path to the general Field template. | String | `'ui/form/field'` |
 
 ## Events
 
@@ -82,6 +45,15 @@ The following are available events for use in the WYSIWYG component adapter for 
 *  `tinymceBlur` - fires when the editor is blurred
 *  `tinymceChange` - fires when undo level is added to the editor
 *  `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
+
+## Source files
+
+Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
+
+*  [app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/wysiwyg.js)
+*  [app/code/Magento/Ui/view/base/web/templates/form/field.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/field.html)
+*  [app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/wysiwyg.html)
+*  [app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Form/Element/Wysiwyg.php)
 
 ## Add a default editor
 
@@ -133,13 +105,25 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
         <settings>
             <label>Wysiwyg Content</label>
         </settings>
-        <field name="wysiwyg_on_custom_page" template="ui/content/content" formElement="wysiwyg">
+        <field name="wysiwyg_example" sortOrder="50" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">100px</item>
+                        <item name="add_variables" xsi:type="boolean">true</item>
+                        <item name="add_widgets" xsi:type="boolean">true</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
             <settings>
                 <label>Content</label>
             </settings>
             <formElements>
                 <wysiwyg>
                     <settings>
+                        <rows>8</rows>
                         <wysiwyg>true</wysiwyg>
                     </settings>
                 </wysiwyg>
@@ -148,6 +132,10 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
     </fieldset>
 </form>
 ```
+
+#### Result
+
+![Wysiwyg Component example]({{ site.baseurl }}/common/images/ui_comps/ui-wysiwyg-result.png)
 
 Last, add your data provider, controller, and routes. Refer to [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) for more information.
 
