@@ -75,7 +75,7 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 
    -  `entity_type`: Possible variants `category`, `cms-page`, `product`, `store-page`
    -  `pattern|url|product_sku`: Use a `regexp` pattern or an exact match `url` to filter the URLs, or use an asterisk (\*) for all pages. Use product sku for the `product` entity type
-   -  `store_id|store_code`: Use the ID or Code of the store or an asterisk (\*) for all stores, you can pass several store ids or codes separated with `|`
+   -  `store_id|store_code`: Use the ID or Code of the store or an asterisk (\*) for all stores, you can pass several store IDs or codes separated with `|`
 
    The following example caches for `category` and `cms-page` entity types based on these criteria:
    -  all category pages for store with ID `1`

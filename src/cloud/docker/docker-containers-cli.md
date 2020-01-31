@@ -34,20 +34,19 @@ All build and deploy processes are defined and configured using {{site.data.var.
 
 ## CLI container commands
 
-These commands are available in the Magento Cloud Docker environment:
+These commands are available in the {{site.data.var.mcd-prod}} environment:
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
-| `cloud-build` | build | Used to build the application in production mode, configured via build hook in the `.magento.app.yml` file
-| `cloud-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| `cloud-post-deploy` | deploy | Used to run post deploy hooks configured via the post deploy hook in the `.magento.app.yml` file
-| `ece-command` | deploy | Used to run other commands from ece-tools CLI Tool
-| `magento-command` | deploy | Used to run bin/magento commands
-| `magento-installer` | deploy | Just runs build and then deploy hooks
-| `mftf-command` | deploy | Used to run MFTF command for testing
-| `run-cron` | cron | Used to run cron jobs
+| `cloud-build` | build | Build the application in production mode, configured by the build hook in the `.magento.app.yml` file
+| `cloud-deploy` | deploy | Deploy the application, configured by the deploy hook in the `.magento.app.yml` file
+| `cloud-post-deploy` | deploy | Run post deploy hooks, configured by the post deploy hook in the `.magento.app.yml` file
+| `ece-command` | deploy | Run [ece-tools CLI commands]
+| `magento-command` | deploy | Run bin/magento commands
+| `mftf-command` | deploy | Run MFTF command for testing
+| `run-cron` | cron | Run cron jobs
 
-To understand the processing for each command, review the [scripts in the Magento Cloud Docker GitHub repository][scripts].
+To understand the processing for each command, review the [scripts in the {{site.data.var.mcd-prod}} GitHub repository][scripts].
 
 ## Build container
 
@@ -99,3 +98,4 @@ The Node container is based on the [official Node Docker image][node]. You can u
 [php]: https://hub.docker.com/_/php
 [node]: https://hub.docker.com/_/node
 [Manage cron jobs]: {{site.baseurl}}/cloud/docker/docker-manage-cron-jobs.html
+[ece-tools CLI]: {{site.baseurl}}/cloud/reference/ece-tools-reference.html

@@ -220,7 +220,7 @@ For best results, we recommend the following tools:
 
 ### Functional testing
 
-You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from a {{site.data.var.mcd}} environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
+You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
 
 ## Set up Magento Security Scan Tool {#security-scan}
 

@@ -25,7 +25,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package includes a dependency for the {{site.data.var.mcd}} package, which provides functionality and Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run Magento Cloud Docker as a stand-alone package.
+The `{{site.data.var.ct}}` package includes a dependency for the `{{site.data.var.mcd}}` package, which provides functionality and Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
 
 You use the following commands to generate the Docker configuration files and build your environment.
 
@@ -36,7 +36,7 @@ Command | Action
 `ece-docker build:compose --mode="production"` | Builds the docker environment in [production mode][mode].
 `ece-docker image:generate:php` | Convert PHP configuration files to Docker ENV files.
 
-The following example lists the `{{site.data.var.mcd}}` Docker commands:
+The following example lists the {{site.data.var.mcd-prod}} commands:
 
 ```bash
 php ./vendor/bin/ece-docker list
@@ -61,7 +61,7 @@ Available commands:
 ```
 {:.no-copy}
 
-See [Docker development] to learn more about using Magento Cloud Docker for development and testing your {{site.data.var.ece}} projects.
+See [Docker development] to learn more about using `{{site.data.var.mcd-prod}}` for development and testing your {{site.data.var.ece}} projects.
 
 ## Services, routes, and variables
 

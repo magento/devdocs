@@ -54,13 +54,13 @@ See [Manage the database] for details about using the database.
 **Docker base image**: [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)<br/>
 **Ports exposed**: `9200`, `9300`<br/>
 
-The Elasticsearch container for {{site.data.var.mcd}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
+The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
 ## FPM container
 
 **Container name**: fpm<br/>
-Docker base image: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
-Ports exposed: `9000`, `9001`<br/>
+**Docker base image**: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
+**Ports exposed**: `9000`, `9001`<br/>
 
 The FPM container includes the following volumes:
 
@@ -76,16 +76,8 @@ The FPM container includes the following volumes:
    -  `/app/pub/static`
    -  `/app/pub/media`
 
-You can load custom extensions in the FPM configuration by adding the configuration to the `docker-compose.override.yml` file. This configuration is applied when you build and deploy.
-
-```yaml
-  generic:
-    environment:
-     - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
-```
-
 {:.bs-callout-tip}
-In most cases, you add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. Use the override capability only if you want to test an extension in the Docker environment without updating the configuration for your {{site.data.var.ece}} environment, See [PHP extensions].
+You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the  [Docker override] file, `docker-compose.override.yml` Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
 For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 
@@ -95,7 +87,7 @@ For additional information about configuring the php environment, see the [XDebu
 **Docker base image**: [rabbitmq]<br/>
 **Ports exposed**: `4369`, `5671`, `5672`, `25672`<br/>
 
-The RabbitMQ container for {{site.data.var.mcd}} is a standard RabbitMQ container with no configuration or changes.
+The RabbitMQ container for {{site.data.var.mcd-prod}} is a standard RabbitMQ container with no configuration or changes.
 
 ## Redis container
 
@@ -103,7 +95,7 @@ The RabbitMQ container for {{site.data.var.mcd}} is a standard RabbitMQ containe
 **Docker base image**: [redis]<br/>
 **Ports exposed**: `6379`<br/>
 
-The Redis container for {{site.data.var.mcd}} is a standard container with no customization, no persistence, and no additional configuration.
+The Redis container for {{site.data.var.mcd-prod}} is a standard container with no customization, no persistence, and no additional configuration.
 
 Connect to and run Redis commands using the redis-cli inside the container:
 
@@ -143,7 +135,7 @@ To increase the timeout on this container, add the following code to the  `docke
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
-You can specify `VARNISHD_PARAMS` and other environment variables using ENV, changing required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
+You can specify `VARNISHD_PARAMS` and other environment variables using ENV to specify custom values for required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
 
 ```yaml
 varnish:
@@ -203,3 +195,4 @@ To mount custom NGINX configuration file using volumes:
 [web config]: https://github.com/magento/docker
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions
+[Docker override file]: https://docs.docker.com/compose/extends/

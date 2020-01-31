@@ -9,7 +9,7 @@ functional_areas:
 
 In a Docker development environment, the {{site.data.var.ee}} application works only if the Docker containers have access to the {{site.data.var.ee}} application data. You can provide access either by directly mapping the current working directory or by using a file synchronization tool.
 
-The {{site.data.var.mcd}}  `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following options:
+The {{site.data.var.mcd-prod}} `docker-build` command provides the `--sync-engine <type>` option to select the file synchronization behavior when you build the `docker-compose.yml` configuration file. You can select from the following options:
 
 > File synchronization options
 

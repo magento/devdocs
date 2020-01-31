@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
+The [`{{site.data.var.mcd}}` repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
 
-Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the container instances and to build and deploy the {{site.data.var.ee}} site.
+{{site.data.var.mcd-prod}} generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the container instances and to build and deploy the {{site.data.var.ee}} site.
 
 ## CLI Containers
 
@@ -26,13 +26,10 @@ See [Docker CLI containers] for details.
 
 ## Service containers
 
-Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version with the following optional parameters:
+{{site.data.var.mcd-prod}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version with the following optional parameters:
 
 | Name       | Service   | Key  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
-| [build] | Build Container |   |   | PHP Container, runs build process
-| [cron]| Cron Jobs |   |   |  PHP Container, runs cron tasks
-| [deploy] | Deploy Container |   |  |  PHP Container, runs the deploy process
 | [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
 | [elasticsearch] | Elasticsearch | `--es` | 1.7, 2.4, 5.2, 6.5 |
 | [FPM][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2, 7.3 |  Used for all incoming requests
@@ -100,10 +97,10 @@ Additionally, you can share data into the containers using file synchronization.
 
 ## Container Volumes
 
-Magento Cloud Docker uses Docker volumes to maintain data throughout the lifecycle of the Docker containers.  These volumes can be defined in several ways:
+{{site.data.var.mcd-prod}} uses Docker volumes to maintain data throughout the lifecycle of the Docker containers.  These volumes can be defined in several ways:
 
 -  in a `docker-compose.yml` or other docker-compose files
--  in the Dockerfile from the [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker)
+-  in the Dockerfile from the [{{site.data.var.mcd-prod}} repository](https://github.com/magento/magento-cloud-docker)
 -  in the upstream Docker image
 
 You do not interact with most of these volumes, which are used by the Docker containers and follow the docker-compose lifecycle. The only exception to this is the `magento-sync` directory that is an external volume used by the Mutagen application to transport data into the containers from the host operating system.

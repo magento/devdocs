@@ -5,8 +5,6 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-redirect_from:
-  - /cloud/reference/docker-config.html
 ---
 
 The Cloud Docker development environment provides MySQL services through a MariaDB database deployed to the [Docker database container]. You connect to the database using `docker-compose` commands. You can also import data from an existing Magento project into the database container using the `magento-cloud db:dump` command.

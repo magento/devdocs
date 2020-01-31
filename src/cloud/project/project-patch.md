@@ -10,7 +10,7 @@ provides Magento Cloud patches which improve the integration of all {{site.data.
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
 
-You can also use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) provided by support or third-party extension developers.  To use this feature,  copy the custom patch to the `/m2-hotfixes` directory in the {{ site.data.var.ee }} project root directory. Then, test the patch on your local workstation.
+You can use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) provided by support or third-party extension developers.  To use this feature,  copy the custom patch to the `/m2-hotfixes` directory in the {{ site.data.var.ee }} project root directory. Then, test the patch on your local workstation.
 
 {% include cloud/note-upgrade.md %}
 

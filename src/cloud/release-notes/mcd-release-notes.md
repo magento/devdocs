@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [`{{site.data.var.mcd}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
-The {{site.data.var.mcd}} package uses the following version sequence: `<major>.<minor>.<patch>`.
+The `{{site.data.var.mcd}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 The release notes include:
 
@@ -18,11 +18,11 @@ The release notes include:
 
 ## v1.0.0
 
--  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.
+-  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**–Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
 
-   {{site.data.var.mcd}} package is a dependency for {{site.data.var.ct}} v2002.1.0 and later. When you update {{site.data.var.ct}} version to 2002.1.0, you also update to the Docker 1.0.0 release. If you used an Magento Cloud Docker in an earlier release, review the [backward incompatibilities]{{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and make any changes required to use {{site.data.var.mcd}} version 1.0.0.
+   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and update your project as scripts, commands, and processes as needed.
 
--  {:.new}**Added versioning to the Docker images**–You must now update the {{site.data.var.mcd}} package to get the updated images.<!--MAGECLOUD-4737-->
+-  {:.new}**Added versioning to the Docker images**–You must now update the `{{site.data.var.mcd}}` package to get the updated images.<!--MAGECLOUD-4737-->
 
 -  {:.new}**Container updates**–
 
@@ -34,7 +34,7 @@ The release notes include:
 
    -  {:.new}**Web container updates**–
 
-      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the Magento Cloud Docker environment. See [Web container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->
+      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the {{site.data.var.mcd-prod}} environment. See [Web container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->
 
       -  {:.new}**Auto-generated NGINX certificates**–The Docker configuration file now includes the configuration to auto-generate NGINX certificates for the Web container.<!--MAGECLOUD-4258-->
 
@@ -62,7 +62,7 @@ The release notes include:
 
       -  {:.new}**Improved default timeout configuration**-Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the Varnish container. Both timeout values default to `300s` (5 minutes). [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
-      -  {:.fix}**Skip Varnish during Xdebug sessions**–Updated the Varnish container configuration to return `pass` on requests received when Xdebug is enabled. In previous Magento Cloud Docker releases, you could not use Xdebug if the Docker environment included Varnish. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/111).<!--MAGECLOUD-4873-->
+      -  {:.fix}**Skip Varnish during Xdebug sessions**–Updated the Varnish container configuration to return `pass` on requests received when Xdebug is enabled. In previous releases, you could not use Xdebug if the Docker environment included Varnish. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/111).<!--MAGECLOUD-4873-->
 
 -  {:.new}**Docker configuration changes**–
 

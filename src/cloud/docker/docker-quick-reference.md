@@ -43,7 +43,7 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 | [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
-See [Service versions] for a list of the options to configure the software service version when building your Magento Cloud Docker environment.
+See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
 
 ## bin/magento-docker
 
