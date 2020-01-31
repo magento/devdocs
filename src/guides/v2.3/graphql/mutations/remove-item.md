@@ -24,7 +24,7 @@ mutation {
       cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       cart_item_id: 14
     }
-  ) 
+  )
  {
   cart {
     items {
