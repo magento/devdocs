@@ -17,8 +17,6 @@ The Cloud Docker environment supports Linux, macOS, and Windows operating system
 
 Prior to setting up a local workspace, gather the following credentials and accounts:
 
--  **Magento Access Key**
-
 -  **Magento authentication keys (Composer keys)**
 
     Magento authentication keys are 32-character authentication tokens that provide secure access to the Magento 2 Composer repository (repo.magento.com), and any other Git services required for Magento development such as GitHub. Your account can have multiple Magento authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Project Owner to create them, or create the [Magento authentication keys] yourself.
