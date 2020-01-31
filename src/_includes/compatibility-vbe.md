@@ -43,7 +43,7 @@
   table-layout: auto;
 }
 
-.compatibility-table .magento-version th { 
+.compatibility-table .magento-version th {
   padding: 5px 15px;
   background: none;
 }
@@ -54,7 +54,7 @@
   background: rgba(20,115,230,10%);
 }
 
-.compatibility-table .extension-name th { 
+.compatibility-table .extension-name th {
   padding: 5px 15px;
 }
 
