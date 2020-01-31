@@ -11,4 +11,4 @@ You can send us feedback by one of the following methods:
 
 -  Slack: Sign up [here](http://tinyurl.com/engcom-slack) to access the `#product-recs` (private) group on Magento Community Engineering
 
-Additionally, please see the [troubleshooting]({{ page.baseurl }}/recommendations/troubleshooting.html) section for solutions to common errors.
+Additionally, see the [troubleshooting]({{ page.baseurl }}/recommendations/troubleshooting.html) section for solutions to common errors.
