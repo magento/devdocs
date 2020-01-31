@@ -164,7 +164,7 @@ To add, remove, or update a custom cron job, change the configuration in the `cr
 
 ## Disable cron jobs
 
-In some cases you might want to manually disable cron jobs before you complete maintenance tasks like reindexing or cleaning the cache to prevent performance issues. You can use the ece-tools CLI command `cron:disable` to disable all Magento cron jobs and stop any active cron processes.
+In some cases you might want to manually disable cron jobs before you complete maintenance tasks like reindexing or cleaning the cache to prevent performance issues. You can use the {{site.data.var.ct}} CLI command `cron:disable` to disable all Magento cron jobs and stop any active cron processes.
 
 {:.procedure}
 To disable cron jobs:
