@@ -52,7 +52,41 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
 
 *  `$defaultScope`. Defines the configuration scope to be read by default. The default value for this parameter is global scope.
 
- After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
+After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
+
+### Examples of use
+
+The following example from the Magento_Sales module illustrates how to create a configuration object.
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Sales\Model\Order\Pdf\Config\Reader">
+        <arguments>
+            <argument name="fileName" xsi:type="string">pdf.xml</argument>
+            <argument name="converter" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\Converter</argument>
+            <argument name="schemaLocator" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\SchemaLocator</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="pdfConfigDataStorage" type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="reader" xsi:type="object">Magento\Sales\Model\Order\Pdf\Config\Reader</argument>
+            <argument name="cacheId" xsi:type="string">sales_pdf_config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Config">
+        <arguments>
+            <argument name="dataStorage" xsi:type="object">pdfConfigDataStorage</argument>
+        </arguments>
+    </type>
+</config>
+```
+
+The first type node sets the Reader's filename, associated `Converter` and `SchemaLocator` classes.
+
+Then, the `pdfConfigDataStorage` virtual type attaches that reader class to an instance of [Magento\Framework\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Data.php). And finally, the last type attaches that config data virtual type to the [Magento\Sales\Model\Order\Pdf\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Pdf/Config.php) class, which is used for actually reading values in from those [pdf.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/pdf.xml) files.
 
 ## Validate a configuration type {#config-files-validate}
 
