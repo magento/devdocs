@@ -7,11 +7,24 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. You can customize the Docker containers available in the repository and add more as needed.
+The [Magento Cloud Docker repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
 
-Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the the container instances, build, and deploy the {{site.data.var.ee}} site.
+Magento Cloud Docker generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the container instances and to build and deploy the {{site.data.var.ee}} site.
 
-## Service versions
+## CLI Containers
+
+The following CLI containers, most of which are based on a PHP-CLI version 7 Docker image, provide `magento-cloud` and `ece-tools` commands to perform file system operations and interact with the application:
+
+| Name       | Service   | Key  | Available Versions | Notes
+| ------------- | ---------- | ---------- | ------------------ |------------------
+| [build] | Build Container | none  | none  | PHP Container, runs build process
+| [deploy] | Deploy Container | none   | none |  PHP Container, runs the deploy process
+| [cron]| Cron Jobs | none  | none  |  PHP Container, runs cron tasks
+| [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
+
+See [Docker CLI containers] for details.
+
+## Service containers
 
 Magento Cloud Docker references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version with the following optional parameters:
 
@@ -39,16 +52,19 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
+See [See Docker services containters] for details.
+
 ## Request Flow
 
-Web requests to https://magento2.docker/ are handled by the Docker containers using the following request flow:
+Web requests to `https://magento2.docker/` are handled by the Docker containers using the following request flow:
 
 1. TLS
-1. Varnish *
+1. *Varnish*
 1. Web (nginx)
 1. FPM
 
-Note that you can remove Varnish from the configuration, in which case the traffic passes directly from the TLS container to the Web container.
+{:.bs-callout-info}
+You can remove Varnish from the configuration, in which case the traffic passes directly from the TLS container to the Web container.
 
 ## Sharing data between host machine and container
 
@@ -123,7 +139,8 @@ Now you can see all requests that are passing through the TLS container and chec
 [deploy]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html#deploy-container
 [db]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [elasticsearch]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container
-[CLI containers]: {{site.baseurl}}/cloud/docker/docker-cli.html
+[Docker CLI containers]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html
+[Docker service containers]: {{site.baseurl}}/cloud/docker-containers-service.html
 [Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [Developer Mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html

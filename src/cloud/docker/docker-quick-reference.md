@@ -79,4 +79,4 @@ Restart containers | restart
 Destroy containers | `down`
 Destroy, re-create, and start containers | `up`
 
-[Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-versions
+[Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers

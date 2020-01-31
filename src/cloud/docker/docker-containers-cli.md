@@ -52,7 +52,7 @@ To understand the processing for each command, review the [scripts in the Magent
 ## Build container
 
 **Container name**: build<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image
+**Docker base image**: [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
 The Build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
 
@@ -65,7 +65,7 @@ docker-compose run build magento-command setup:static-content:deploy
 ## Cron container
 
 **Container name**: cron<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
+**Docker base image**: [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
 The Cron container runs operations in the background immediately after the Docker environment starts. This container uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). This container has no custom configuration.
 
@@ -73,8 +73,8 @@ For details on managing cron jobs in the Cloud Docker environment, see [Manage c
 
 ## Deploy container
 
-**Container name:** deploy<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the [php] Docker image
+**Container name**: deploy<br/>
+Docker base image: [magento/magento-cloud-docker-php], which is based on the [php] Docker image<br/>
 
 The Deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
 
@@ -86,8 +86,8 @@ docker-compose run deploy magento-command index:reindex
 
 ## Node container
 
-**Container name:** node<br/>
-**Docker base image:** [node]<br/>
+**Container name**: node<br/>
+**Docker base image**: [node]<br/>
 
 The Node container is based on the [official Node Docker image][node]. You can use the container to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
 

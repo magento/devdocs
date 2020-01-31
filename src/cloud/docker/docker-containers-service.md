@@ -11,13 +11,13 @@ functional_areas:
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.
 
 {:.bs-callout-info}
-See the [service version values available]({{site.baseurl}}/cloud/docker/docker-containers.html#service-versions) for use when launching Docker.
+See the [service version values available]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers) for use when launching Docker.
 
 ## Database container
 
-**Container name:** db<br/>
-**Docker base image:** [mariadb]<br/>
-**Ports exposed:** 3306<br/>
+**Container name**: db<br/>
+**Docker base image**: [mariadb]<br/>
+**Ports exposed**:  `3306`<br/>
 
 The Database container is based on the [mariadb] image and includes the following volumes:
 
@@ -30,12 +30,12 @@ To prevent accidental data loss, the database is stored in a persistent **`magen
 
 You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
 
-Add a custom `my.cnf` file to the `docker-compose.override.yml` file:
+Add a custom `my.cnf` file to the `services` section in the  `docker-compose.override.yml` file:
 
 ```yaml
-db:
-  volumes:
-    - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
+   db:
+    volumes:
+      - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
 
 Add configuration values to the `docker-compose.override.yml` file:
@@ -50,17 +50,17 @@ See [Manage the database] for details about using the database.
 
 ## Elasticsearch container
 
-**Container name:** elasticsearch<br/>
-**Docker base image:** [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)<br/>
-**Ports exposed:** 9200, 9300<br/>
+**Container name**: elasticsearch<br/>
+**Docker base image**: [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)<br/>
+**Ports exposed**: `9200`, `9300`<br/>
 
 The Elasticsearch container for {{site.data.var.mcd}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
 ## FPM container
 
-**Container name:** fpm<br/>
-**Docker base image:** [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
-**Ports exposed:** 9000, 9001<br/>
+**Container name**: fpm<br/>
+Docker base image: [magento/magento-cloud-docker-php][php-cloud], which is based on the [php](https://hub.docker.com/_/php) Docker image<br/>
+Ports exposed: `9000`, `9001`<br/>
 
 The FPM container includes the following volumes:
 
@@ -78,7 +78,7 @@ The FPM container includes the following volumes:
 
 You can load custom extensions in the FPM configuration by adding the configuration to the `docker-compose.override.yml` file. This configuration is applied when you build and deploy.
 
-```bash
+```yaml
   generic:
     environment:
      - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
@@ -91,21 +91,21 @@ For additional information about configuring the php environment, see the [XDebu
 
 ## RabbitMQ container
 
-**Container name:** rabbitmq<br/>
-**Docker base image:** [rabbitmq]<br/>
-**Ports exposed:** 4369, 5671, 5672, 25672<br/>
+**Container name**: rabbitmq<br/>
+**Docker base image**: [rabbitmq]<br/>
+**Ports exposed**: `4369`, `5671`, `5672`, `25672`<br/>
 
 The RabbitMQ container for {{site.data.var.mcd}} is a standard RabbitMQ container with no configuration or changes.
 
 ## Redis container
 
-**Container name:** redis<br/>
-**Docker base image:** [redis]<br/>
-**Ports exposed:** 6379<br/>
+**Container name**: redis<br/>
+**Docker base image**: [redis]<br/>
+**Ports exposed**: `6379`<br/>
 
 The Redis container for {{site.data.var.mcd}} is a standard container with no customization, no persistence, and no additional configuration.
 
-Connect to and run redis commands using the redis-cli inside the container:
+Connect to and run Redis commands using the redis-cli inside the container:
 
 ```bash
 docker-compose run redis redis-cli -h redis
@@ -113,17 +113,17 @@ docker-compose run redis redis-cli -h redis
 
 ## Selenium container
 
-**Container name:** selenium<br/>
-**Docker base image:** [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome)<br/>
-**Ports exposed:** 4444<br/>
+**Container name**: selenium<br/>
+**Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome)<br/>
+**Ports exposed**: `4444`<br/>
 
 The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
 
 ## TLS container
 
-**Container name:** tls<br/>
-**Docker base image:** [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
-**Ports exposed:** 443<br/>
+**Container name**: tls<br/>
+**Docker base image**: [magento/magento-cloud-docker-tls][tls], which is based on the [debian:jessie](https://hub.docker.com/_/debian) Docker image<br/>
+**Ports exposed**: `443`</br>
 
 The TLS termination proxy container facilitates the Varnish SSL termination over HTTPS.
 
@@ -137,11 +137,11 @@ To increase the timeout on this container, add the following code to the  `docke
 
 ## Varnish container
 
-**Container name:** varnish<br/>
-**Docker base image:** [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos] <br/>
-**Ports exposed:** 80<br/>
+**Container name**: varnish<br/>
+**Docker base image**: [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos]<br/>
+**Ports exposed**: `80`<br/>
 
-The Varnish container simulates Fastly and is useful for testing VCL snippets. Varnish works on port 80.
+The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
 You can specify `VARNISHD_PARAMS` and other environment variables using ENV, changing required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
 
@@ -159,12 +159,11 @@ docker-compose exec varnish varnishadm ban req.url '~' '.'
 
 ## Web container
 
-**Container name:** web<br/>
-**Docker base image:** [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos] Docker image
-<br/>
-**Ports exposed:** None<br/>
+**Container name**: web<br/>
+**Docker base image**: [magento/magento-cloud-docker-nginx][nginx], which is based on the [centos] Docker image<br/>
+**Ports exposed**: None<br/>
 
-The Web container uses nginx to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
+The Web container uses NGINX to handle web requests after TLS and Varnish. This container passes all requests to the FPM container to serve the PHP code. See [Request flow]({{site.baseurl}}/cloud/docker/docker-containers.html#request-flow).
 
 The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
@@ -203,4 +202,4 @@ To mount custom NGINX configuration file using volumes:
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
 [web config]: https://github.com/magento/docker
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
-[Configure php options]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions

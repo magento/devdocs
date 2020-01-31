@@ -26,16 +26,18 @@ You can use the built-in extension mechanism of Docker to specify [multiple comp
    ```
 
 ## Specify Docker build sources
-To test changes to images or make more extensive changes to the containers, you must build them from source.
 
-The following example shows how to build from source by adding the `build:context` configuration  to the `docker-compose.override.yml` file. This example defines the build context for the web container. You can use the same technique to build from any of the images in `vendor/magento/magento-cloud-docker` or any other Docker image, including local images resourced outside the project.
+To test changes to images or make more extensive changes to the containers, you must build them from source. You can do this by
+by adding the `build:context` configuration to the `docker-compose.override.yml` file.
+
+The following example defines the build context for the Web container. You can use the same technique to build from any of the images in  the `vendor/magento/magento-cloud-docker` directory or any other Docker image, including local images that are resourced outside the project.
 
 ```yaml
 version: '2.1'
-services:
- web:
-   build:
-     context: ./vendor/magento/magento-cloud-docker/images/nginx/1.9/
+   services:
+     web:
+       build:
+         context: ./vendor/magento/magento-cloud-docker/images/nginx/1.9/
 ```
 
 To update the container configuration and test iteratively, use the `--force-recreate` option to refresh the container build:
