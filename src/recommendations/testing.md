@@ -16,10 +16,10 @@ To ensure that the `DataServices.js` file is loading on all site pages:
 1. Reload page.
 1. You should see `ds.js` or `ds.min.js`.
 
-![]({{ page.baseurl }}/recommendations/images/filter-ds.png)
+    ![]({{ page.baseurl }}/recommendations/images/filter-ds.png)
 
 {:.procedure}
-To ensure events are firing on pages across your site (home, product, checkout, etc):
+To ensure events are firing on pages across your site (home, product, checkout, and so on):
 
 1. In Chrome, choose **Customize and control Google Chrome** then select **More Tools** > **Developer Tools**.
 1. Choose the **Network** tab then select the **XHR** type.
@@ -27,7 +27,7 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 1. Reload page.
 1. You should see calls under `tp2` name.
 
-![]({{ page.baseurl }}/recommendations/images/filter-tp2.png)
+    ![]({{ page.baseurl }}/recommendations/images/filter-tp2.png)
 
 ## Verify using Snowplow Chrome extension
 
@@ -35,13 +35,14 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 
 1. Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.google.com/webstore/detail/snowplow-analytics-debugg/jbnlcgeengmijcghameodeaenefieedm). This extension displays the events being collected and sent to Magento.
 
-{:.procedure}
-In Chrome, choose **Customize and control Google Chrome** then select **More Tools** > **Developer Tools**.
+1. In Chrome, choose **Customize and control Google Chrome** then select **More Tools** > **Developer Tools**.
 
 1. Choose the **Snowplow Analytics Debugger** tab.
+
 1. Under the **Event** column, select **Structured Event**.
+
 1. Scroll down to `storefront-instance` context and verify that the [SaaS Environment ID]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas), [Instance ID]({{ page.baseurl }}/recommendations/configure.html#envid), and [Environment value]({{ page.baseurl }}/recommendations/configure.html#configureenv) are set correctly.
 
-![]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
+    ![]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
 If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.

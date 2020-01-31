@@ -3,14 +3,14 @@ group: product-recommendations
 title: Configuring Recommendations
 ---
 
-After you [install]({{ page.baseurl }}/recommendations/install.html) the `product-recommendations` module, you must configure the catalog SaaS export module, set the environment, and specify the SaaS environment ID.
+After you [install]({{ page.baseurl }}/recommendations/install.html) the `product-recommendations` module, you must configure the catalog SaaS export module, set the environment, and specify the SaaS Environment ID.
 
 ## Configure the Catalog SaaS Export module {#installcatalogsaas}
 
-The Catalog SaaS Export Module allows you to access your store's catalog data. You create a link to that data using an API key.
+The Catalog SaaS Export module allows you to access your store's catalog data. You create a link to that data using an API key.
 
 {:.bs-callout-info}
-The Catalog SaaS export module is a requirement to successfully use the [Product Recommendations JS SDK](https://www.npmjs.com/package/@magento/recommendations-js-sdk). This module requires Magento 2.3 or later.
+The Catalog SaaS Export module is a requirement to successfully use the [Product Recommendations JS SDK](https://www.npmjs.com/package/@magento/recommendations-js-sdk). This module requires Magento 2.3 or later.
 
 ### Provide API key {#apikeys}
 
