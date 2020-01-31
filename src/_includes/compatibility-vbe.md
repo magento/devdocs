@@ -1,26 +1,16 @@
 {% assign packages = site.data.composer_lock.packages %}
 
-{% for package in packages %}
-
-  {% if package.name == "amzn/amazon-pay-and-login-magento-2-module" or package.name == "dotmailer/dotmailer-magento2-extension-package" or package.name == "klarna/m2-payments" or package.name == "vertex/product-magento-module" or package.name == "yotpo/magento2-module-yotpo-reviews-bundle" %}
-
--  {{ package.name }} {{ package.version }}
-  
-  {% endif %}
-
-{% endfor %}
-
 {% assign versionsNumber = include.data.versions.size %}
 {% assign extensions = include.data.extension %}
 {% if include.extension %}
 {% assign extensions = include.data.extension | where: "name", include.extension %}
 {% endif %}
 
-**Supported**{: .status-light.supported } – version that has been thoroughly tested by Magento and is fully supported.
+**Supported**{: .status-light.supported } – version that has been fully tested by Magento and is supported.
 
-**Compatible**{: .status-light.compatible } – independent release version that has not been thoroughly tested by Magento, but is compatible.
+<!-- **Compatible**{: .status-light.compatible } – independent release version that has not been fully tested by Magento, but is confirmed to be compatible. -->
 
-**Not&nbsp;supported**{: .status-light.not-supported } - version that is not compatible with a Commerce release.
+**Not&nbsp;supported**{: .status-light.not-supported } - version that is not compatible with a Magento release.
 
 <table class="compatibility-table">
   <thead>
