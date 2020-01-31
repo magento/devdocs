@@ -63,38 +63,38 @@ pages:
   - label: Vendor Bundled Extensions (VBEs)
     url: /extensions/vendor/
     versionless: true
-    children:
-    - label: Amazon Pay
-      versionless: true
-      children:
-      - label: Release Notes
-        versionless: true
-        url: /extensions/vendor/amazon-pay/release-notes/
+    # children:
+    # - label: Amazon Pay
+    #   versionless: true
+    #   children:
+    #   - label: Release Notes
+    #     versionless: true
+    #     url: /extensions/vendor/amazon-pay/release-notes/
 
-    - label: Dotdigital
-      versionless: true
-      children:
-      - label: Release Notes
-        versionless: true
-        url: /extensions/vendor/dotdigital/release-notes/
+    # - label: Dotdigital
+    #   versionless: true
+    #   children:
+    #   - label: Release Notes
+    #     versionless: true
+    #     url: /extensions/vendor/dotdigital/release-notes/
 
-    - label: Klarna
-      versionless: true
-      children:
-      - label: Release Notes
-        versionless: true
-        url: /extensions/vendor/klarna/release-notes/
+    # - label: Klarna
+    #   versionless: true
+    #   children:
+    #   - label: Release Notes
+    #     versionless: true
+    #     url: /extensions/vendor/klarna/release-notes/
 
-    - label: Vertex
-      versionless: true
-      children:
-      - label: Release Notes
-        versionless: true
-        url: /extensions/vendor/vertex/release-notes/
+    # - label: Vertex
+    #   versionless: true
+    #   children:
+    #   - label: Release Notes
+    #     versionless: true
+    #     url: /extensions/vendor/vertex/release-notes/
 
-    - label: Yotpo
-      versionless: true
-      children:
-      - label: Release Notes
-        versionless: true
-        url: /extensions/vendor/yotpo/release-notes/
+    # - label: Yotpo
+    #   versionless: true
+    #   children:
+    #   - label: Release Notes
+    #     versionless: true
+    #     url: /extensions/vendor/yotpo/release-notes/
