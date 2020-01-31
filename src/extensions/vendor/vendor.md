@@ -17,14 +17,6 @@ Current VBEs include:
 {:.bs-callout-info}
 Installing or upgrading Magento also installs VBEs, but you may need to set up an account with a vendor to configure and use an extension.
 
-## Compatibility
-
-The following table shows VBE version compatibility with Magento:
-
-```text
-<matrix-goes-here>
-```
-
 ## Independent releases
 
 Independent releases provide vendors with the ability to address support issues between Magento releases. Independent releases are planned, tested, and compatible with Magento, but they do not go through the full regression test cycle that is required for Magento releases. Vendors are allowed one independent release per quarter.
@@ -103,3 +95,9 @@ Extensions do not always provide downgrade scripts, so it is best to switch back
    ```bash
    composer install
    ```
+
+## Compatibility
+
+The following table shows VBE version compatibility with Magento:
+
+{% include compatibility-vbe.md data=site.data.vbe%}
