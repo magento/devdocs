@@ -2,7 +2,7 @@
 group: cloud-guide
 title: Manage branches with the Project Web Interface
 redirect_from:
-  - /guides/v2.2/cloud/project/project-priv-repos.html
+  - /cloud/project/project-priv-repos.html
 functional_areas:
   - Cloud
   - Configuration

@@ -69,7 +69,7 @@ The following are recommended changes and checks:
 
 ## Performance testing {#performance}
 
-We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 

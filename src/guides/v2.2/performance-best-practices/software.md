@@ -104,7 +104,7 @@ Edit your `apcu.ini` configuration file to add the APCu extension module:
 ```text
 extension=apcu.so
 [apcu]
-acp.enabled = 1
+apc.enabled = 1
 ```
 
 ## Web server

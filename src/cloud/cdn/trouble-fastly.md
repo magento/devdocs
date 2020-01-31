@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Fastly troubleshooting
 redirect_from:
-   - /guides/v2.2/cloud/trouble/trouble_fastly.html
-   - /guides/v2.3/cloud/trouble/trouble_fastly.html
+   - /cloud/trouble/trouble_fastly.html
 functional_areas:
   - Cloud
   - Configuration
@@ -257,7 +256,7 @@ This section provides suggestions for resolving errors returned when checking re
 
 #### Fastly module is not enabled {#no-module}
 
-If the Fastly module is not enabled (`Fastly-Module-Enabled: no`) or if the header is missing, [use SSH to log in]({{ site.baseurl }}/cloud/env/environments-ssh.html#magento-cli) to the project. Then, run the following command to check the module status.
+If the Fastly module is not enabled (`Fastly-Module-Enabled: no`) or if the header is missing, [use SSH to log in]({{site.baseurl}}/cloud/env/environments-ssh.html#magento-cli) to the project. Then, run the following command to check the module status.
 
 ```bash
 php bin/magento module:status Fastly_Cdn
@@ -269,7 +268,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 -  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ site.baseurl }}/cloud/howtos/install-components.html#manage).
 
-   If you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
+   If you use [Configuration Management]({{site.baseurl}}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
 
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 

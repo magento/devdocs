@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Reroute requests to a CMS backend
 redirect_from:
-   - /guides/v2.2/cloud/configure/fastly-vcl-wordpress.html
-   - /guides/v2.3/cloud/configure/fastly-vcl-wordpress.html
+   - /cloud/configure/fastly-vcl-wordpress.html
 functional_areas:
   - Cloud
   - Setup

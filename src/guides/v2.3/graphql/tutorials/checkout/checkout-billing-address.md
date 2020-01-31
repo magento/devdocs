@@ -29,8 +29,8 @@ The following mutation adds a new billing address. `{ CART_ID }` is the unique s
 
 **Request:**
 
-{:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```text
 mutation {
@@ -103,7 +103,7 @@ mutation {
 
 ## Add a new address for billing and shipping
 
-The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used for billing and shipping.
+The following mutation includes the `same_as_shipping` attribute, which allows the same address to be used for billing and shipping.
 
 **Request:**
 
@@ -125,7 +125,7 @@ mutation {
             telephone: "123-456-0000"
             save_in_address_book: false
           }
-          use_for_shipping: true
+          same_as_shipping: true
       }
     }
   ) {

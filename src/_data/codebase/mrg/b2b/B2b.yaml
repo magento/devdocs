@@ -1,7 +1,7 @@
 ---
 title: Magento_B2b
 source_repo: magento2b2b
-release: 1.1.3
+release: 1.1.4
 github_path: app/code/Magento/B2b/README.md
 last_modified_at: '2017-02-15 17:02:23 +0300'
 content: "## Overview\n\nThe Magento_b2b module is the base module for B2B. It must

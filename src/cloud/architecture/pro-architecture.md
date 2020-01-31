@@ -2,11 +2,9 @@
 group: cloud-guide
 title: Pro architecture
 redirect_from:
-  - /guides/v2.2/cloud/discover-arch.html
-  - /guides/v2.2/cloud/reference/discover-arch.html
-  - /guides/v2.3/cloud/reference/discover-arch.html
-  - /guides/v2.2/cloud/architecture/pro-architecture-legacy.html
-  - /guides/v2.3/cloud/architecture/pro-architecture-legacy.html
+  - /cloud/discover-arch.html
+  - /cloud/reference/discover-arch.html
+  - /cloud/architecture/pro-architecture-legacy.html
 functional_areas:
   - Cloud
 ---
@@ -165,6 +163,8 @@ The following figure shows the technologies used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
+### Pro cluster scaling
+
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
 
 -  Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
@@ -172,11 +172,11 @@ The following figure shows the technologies used in the Production environment:
 
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
-<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
+For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
 ## Software versions {#cloud-arch-software}
 
-{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
+{{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
 -  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)

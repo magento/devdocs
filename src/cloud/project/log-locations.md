@@ -5,8 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_from:
-  - /guides/v2.2/cloud/trouble/environments-logs.html
-  - /guides/v2.3/cloud/trouble/environments-logs.html
+  - /cloud/trouble/environments-logs.html
 ---
 Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook].
 
@@ -142,6 +141,10 @@ Because each service runs in a separate container, the service logs are not avai
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
 -  **RabbitMQ log**: `/var/log/rabbitmq/rabbit@host1.log`
 
+{:.bs-callout-tip}
+Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
+
 [hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
+[scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations

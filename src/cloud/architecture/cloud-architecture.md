@@ -4,7 +4,7 @@ title: Magento Commerce Cloud architecture
 functional_areas:
   - Cloud
 redirect_from:
-  - /guides/v2.2/cloud/basic-information/cloud-plans.html
+  - /cloud/basic-information/cloud-plans.html
 ---
 
 {{site.data.var.ece}} has a Starter and a Pro plan. Each plan has a unique architecture to drive your {{site.data.var.ee}} development and deployment process. Both the Starter plan and the Pro plan architecture deploy databases, web server, and caching servers across multiple environments for end-to-end testing while supporting continuous integration.
@@ -24,14 +24,14 @@ For comparison, each plan includes the following infrastructure features and sup
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
         </ul>
       </td>
       <td>
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Pro</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
