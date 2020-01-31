@@ -54,7 +54,7 @@ The following diagram shows the contribution workflow:
 
     **We will close your pull request if you do not respond to feedback in two weeks.**
 
-**Note:** If you have not signed the [Adobe Contributor License Agreement](https://opensource.adobe.com/cla.html), the pull request provides a link. You must sign the the CLA before can accept your contribution.
+**Note:** If you have not signed the [Adobe Contributor License Agreement](https://opensource.adobe.com/cla.html), the pull request provides a link. You must sign the CLA before we can accept your contribution.
 
 ## Contribution guidelines
 
