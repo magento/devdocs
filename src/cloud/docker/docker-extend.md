@@ -15,8 +15,8 @@ You can use the built-in extension mechanism of Docker to specify [multiple comp
    version: '2'
    services:
      deploy:
-       environment:
-         - ENABLE_SENDMAIL=true
+      environment:
+       - ENABLE_SENDMAIL=true
    ```
 
 1. Pass both configuration files while executing your commands. For example:
@@ -34,10 +34,10 @@ The following example defines the build context for the Web container. You can u
 
 ```yaml
 version: '2.1'
-   services:
-     web:
-       build:
-         context: ./vendor/magento/magento-cloud-docker/images/nginx/1.9/
+services:
+   web:
+    build:
+     context: ./vendor/magento/magento-cloud-docker/images/nginx/1.9/
 ```
 
 To update the container configuration and test iteratively, use the `--force-recreate` option to refresh the container build:
