@@ -53,7 +53,7 @@ JS resources are accessed using relative paths.
 *  Called in script:
 
    ```javascript
-   require(["js/theme.js"], function(){
+   require(["js/theme"], function(){
    });
    ```
 
