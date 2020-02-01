@@ -11,7 +11,7 @@ In a Cloud Docker development environment, you can use the [Magento Functional T
 docker-compose run test mftf-command generate:tests --debug=none
 ```
 
-{:.procedure}
+{:.bs-callout-info}
 Support for MFTF requires `{{site.data.var.mcd}}` version 1.0 or later.
 
 {:.procedure}
