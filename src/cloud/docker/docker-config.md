@@ -123,4 +123,4 @@ We do not recommend using Sendmail on CLI containers because the service can slo
 [enable Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [Database container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
-[Docker Hub PHP Image Tag] https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
+[Docker Hub PHP Image Tag]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
