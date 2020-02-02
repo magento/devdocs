@@ -27,7 +27,7 @@ In Magento 2, you have two options for specifying declarative notation:
 
    > This is used to target a specific HTML element. It is easier to implement and is commonly used for jQuery UI widgets. This method can only be implemented on the specified HTML tag. For example, `<nav data-mage-init='{ "<component_name>": {...} }'></nav>`. This is preferred for its concise syntax, and direct access to the HTML element.
 
--  Using the `<script type="text/x-magento-init" />` tag
+-  Using the `<script type="text/x-magento-init"> ... </script>` tag
 
    > This is used to target either a CSS selector or `*`. If the CSS selector matches multiple HTML elements, the script will run for each matched HTML element. For `*`, no HTML element is selected and the script will run once with the HTML DOM as its target. This method can be implemented from anywhere in the codebase to target any HTML element. This is preferred when direct access to the HTML element is restricted, or when there is no target HTML element.
 
@@ -68,7 +68,7 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract component name
 
 -  If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either `config` or `element`. The recommended way to declare such components is [using the `<script>` tag](#init_script).
 
-#### Declarative notation using the `<script type="text/x-magento-init" />` tag {#decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init">` tag {#decl_tag}
 
 To call a JS component on an HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute syntax shown in the following example.
 
