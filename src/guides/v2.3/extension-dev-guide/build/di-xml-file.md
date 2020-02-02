@@ -269,7 +269,7 @@ This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the objec
 
 ### Override method using Preference
 
-If you want to override a method from core file, you can utilize preference to acheive it.
+If you want to override a public or protected method from core class, you can utilize `preference` to achieve it.
 Here is an example to overide a method from core file.
 
 ```xml
@@ -327,6 +327,9 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
     }
 }
 ```
+
+`Note:`
+Overriding entire methods is not recommended approach and should be avoided whenever it's possible. This approach brings potential conflicts to the system and reduces the system upgradability. Use other extensibility options like event observers and plugins instead.
 
 ### Parameter configuration inheritance
 
