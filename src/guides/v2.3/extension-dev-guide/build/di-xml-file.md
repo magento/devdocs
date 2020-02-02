@@ -267,6 +267,67 @@ This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\
 
 This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the [admin](https://glossary.magento.com/admin) area.
 
+### Override method using Preference
+
+If you want to override a method from core file, you can utilize preference to acheive it.
+Here is an example to overide a method from core file.
+
+```xml
+<!-- app/code/<VendorName/<ModuleName>/etc/di.xml -->
+<config  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Checkout\Block\Onepage\Success" type="VendorName\ModuleName\Block\Onepage\Success" />
+</config>
+```
+
+Below example will override isVisible method from Magento\Checkout\Block\Onepage\Success block class.
+
+```php
+namespace <VendorName>\<ModuleName>\Block\Onepage;
+
+class Success extends \Magento\Checkout\Block\Onepage\Success
+{
+    /**
+     * Constructor Modification
+     *
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Checkout\Model\Session $checkoutSession
+     * @param \Magento\Sales\Model\Order\Config $orderConfig
+     * @param \Magento\Framework\App\Http\Context $httpContext
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Checkout\Model\Session $checkoutSession,
+        \Magento\Sales\Model\Order\Config $orderConfig,
+        \Magento\Framework\App\Http\Context $httpContext,
+        array $data = []
+    ) {
+        parent::__construct(
+            $context,
+            $checkoutSession,
+            $orderConfig,
+            $httpContext,
+            $data
+        );
+    }
+
+    /**
+     * Is order visible
+     *
+     * @param Order $order
+     * @return bool
+     */
+    protected function isVisible(Order $order)
+    {
+        # Write your custom logic here.
+        return !in_array(
+            $order->getStatus(),
+            $this->_orderConfig->getInvisibleOnFrontStatuses()
+        );
+    }
+}
+```
+
 ### Parameter configuration inheritance
 
 Parameters configured for a class type pass on its configuration to its descendant classes.
