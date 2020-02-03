@@ -1,17 +1,17 @@
 ---
 group: extension-best-practices
-title: Create Access Control List(ACL) Rule
+title: Create Access Control List (ACL) rule
 contributor_name: Ziffity
 contributor_link: https://www.Ziffity.com/
 ---
 
-Access Control List(ACL) rules allow admin to limit the permissions of users in Magento. We can use ACL rules for authorize the users to access menu,controllers and API endpoints.
+Access Control List (ACL) rules allow an admin to limit the permissions of users in Magento. For example, you can use ACL rules to authorize the users to access menus, controllers, and API endpoints.
 
-## Step 1. Create acl.xml
+In this tutorial, we are creating three custom resources (Custom Menu, Create, Delete), then creating a role that has access to these resources, and taking steps to restrict access by three entities (Admin users, controllers, and web APIs).
 
-In the module's directory, create acl.xml file. This file add the custom resources in resource tree.
+## Step 1. Create an `acl.xml` file
 
-> `etc/acl.xml`
+Create the `etc/acl.xml` file in your module. This file adds the custom resources in resource tree.
 
 ```xml
 <?xml version="1.0"?>
@@ -29,19 +29,18 @@ In the module's directory, create acl.xml file. This file add the custom resourc
 </config>
 ```
 
-##Step 2. Create user role with custom resources
+## Step 2. Create user role with custom resources
 
-1. Navigate to **SYSTEM** > Permissions > **User Roles** 
-1. After click Role Resources tab select Resource Access as Custom.
+1. Navigate to **SYSTEM** > Permissions > **User Roles**.
+1. After clicking a Add New Role button, enter Role Name and Your Password.
+1. Then, click a Role Resources tab select Resource Access as Custom.
 ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
-1. Select the resources and save the role.
+1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
 ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
-##Step 3. Use ACL in Menu
+## Step 3. Restrict access to Admin users
 
-In the module's directory create menu.xml file. We can hide the menu to the users by adding the `resource` attribute to `add` nodes in menu.xml.
-
-> `etc/adminhtml/menu.xml`
+In your module, create the `etc/adminhtml/menu.xml` file. This file defines a menu that will be hidden from unauthorized users. The `resource` attributes in the `add` nodes determine which resource each action accesses.
 
 ```xml
 <?xml version="1.0"?>
@@ -54,11 +53,15 @@ In the module's directory create menu.xml file. We can hide the menu to the user
 </config>
 ```
 
-##Step 4. Use ACL in Controllers
+The menu displays like below,
 
-We can restrict the access to admin controllers by overriding the `_isAllowed` method of \Magento\Framework\App\Action\Action class.
+![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
 
-> `Controller/Adminhtml/Create/Index.php`
+## Step 4. Restrict controller access
+
+We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
+
+Add the following to your module's `Controller/Adminhtml/Create/Index.php` file:
 
 ```php
 protected function _isAllowed()
@@ -67,7 +70,7 @@ protected function _isAllowed()
 }
 ```
 
-> `Controller/Adminhtml/Delete/Index.php`
+Add the following to your module's `Controller/Adminhtml/Delete/Index.php` file:
 
 ```php
 protected function _isAllowed()
@@ -76,11 +79,9 @@ protected function _isAllowed()
 }
 ```
 
-##Step 5. Use ACL in API endpoints
+## Step 5. Restrict web API access
 
-We can restrict the users to access API endpoints, using the ACL rule. When we creates Web API configuration file (webapi.xml), the rules defined in acl.xml can be use to restrict the access to API endpoints.
-
-> `etc/webapi.xml`
+We can restrict users from accessing API endpoints by using the ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
 
 ```xml
 <?xml version = "1.0"?>
@@ -95,8 +96,6 @@ We can restrict the users to access API endpoints, using the ACL rule. When we c
 </routes>
 ```
 
-If user doesn't have permission, the action page will be like below.
-
-![Not allowed user action page]({{ site.baseurl }}/common/images/ext-best-practices/not_allowed_users_create_acl_rule.png)
+If user doesn't have permission, the action page displays an "Access Denied" message.
 
 
