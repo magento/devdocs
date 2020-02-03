@@ -24,7 +24,7 @@ The Database container is based on the [mariadb] image and includes the followin
 -  `magento-db: /var/lib/mysql`
 -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
 
-When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql` and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
+When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql`, and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
 
@@ -77,7 +77,7 @@ The FPM container includes the following volumes:
    -  `/app/pub/media`
 
 {:.bs-callout-tip}
-You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the  [Docker override] file, `docker-compose.override.yml` Configuration settings in this file are applied only when you build and deploy to the Docker environment.
+You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override] file. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
 For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 
