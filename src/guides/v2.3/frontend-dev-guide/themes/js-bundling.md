@@ -61,9 +61,6 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
 {% collapsible Show example %}
 
 ```xml
-<vars module="Js_Bundle">
-    <var name="bundle_size">1MB</var>
-</vars>
 <exclude>
     <item type="file">Lib::jquery/jquery.min.js</item>
     <item type="file">Lib::jquery/jquery-ui-1.9.2.js</item>
@@ -123,6 +120,14 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
 The `bundle_size` variable controls the file size of the generated bundles.
 Specifying a large `bundle_size` reduces the number of bundles generated, but generates larger file sizes.
 Specifying a smaller `bundle_size` generates more bundles with a smaller file sizes.
+
+Example:
+
+```xml
+<vars module="Js_Bundle">
+    <var name="bundle_size">1MB</var>
+</vars>
+```
 
 The goal is to balance the number of bundles to download with the size of each bundle.
 As a rule of thumb, each bundle should be at least 100 kB.
