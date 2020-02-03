@@ -34,25 +34,24 @@ All build and deploy processes are defined and configured using {{site.data.var.
 
 ## CLI container commands
 
-These commands are available in the Magento Cloud Docker environment:
+These commands are available in the {{site.data.var.mcd-prod}} environment:
 
 | Command    | Target Containers   |  Notes
 | ------------- |  ------------------ |------------------
-| `cloud-build` | build | Used to build the application in production mode, configured via build hook in .magento.app.yml
-| `cloud-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| `cloud-post-deploy` | deploy | Used to deploy the application, configured via deploy hook in .magento.app.yml
-| `ece-command` | deploy | Used to run other commands from ece-tools CLI Tool
-| `magento-command` | deploy | Used to run bin/magento commands
-| `magento-installer` | deploy | Just runs build and then deploy hooks
-| `mftf-command` | deploy | Used to run MFTF command for testing
-| `run-cron` | cron | Used to run cron jobs
+| `cloud-build` | build | Build the application in production mode, configured by the build hook in the `.magento.app.yml` file
+| `cloud-deploy` | deploy | Deploy the application, configured by the deploy hook in the `.magento.app.yml` file
+| `cloud-post-deploy` | deploy | Run post deploy hooks, configured by the post deploy hook in the `.magento.app.yml` file
+| `ece-command` | deploy | Run [ece-tools CLI commands]
+| `magento-command` | deploy | Run bin/magento commands
+| `mftf-command` | deploy | Run MFTF command for testing
+| `run-cron` | cron | Run cron jobs
 
-To understand the processing for each command, review the [scripts in the Magento Cloud Docker GitHub repository][scripts].
+To understand the processing for each command, review the [scripts in the {{site.data.var.mcd-prod}} GitHub repository][scripts].
 
 ## Build container
 
 **Container name**: build<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image
+**Docker base image**: [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
 The Build container mimics the behavior of the Magento Cloud build process so that testing the build and deploy process is as close to testing in production as possible.
 
@@ -65,7 +64,7 @@ docker-compose run build magento-command setup:static-content:deploy
 ## Cron container
 
 **Container name**: cron<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
+**Docker base image**: [magento/magento-cloud-docker-php], which is based on the Docker [php] image<br/>
 
 The Cron container runs operations in the background immediately after the Docker environment starts. This container uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#crons). This container has no custom configuration.
 
@@ -73,21 +72,21 @@ For details on managing cron jobs in the Cloud Docker environment, see [Manage c
 
 ## Deploy container
 
-**Container name:** deploy<br/>
-**Docker base image:** [magento/magento-cloud-docker-php], which is based on the [php] Docker image
+**Container name**: deploy<br/>
+Docker base image: [magento/magento-cloud-docker-php], which is based on the [php] Docker image<br/>
 
 The Deploy container mimics the Magento Cloud deploy process so that testing the build and deploy process is as close to testing in production as possible.
 
 You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the Magento store:
 
 ```bash
-docker-compose run build magento-command index:reindex
+docker-compose run deploy magento-command index:reindex
 ```
 
 ## Node container
 
-**Container name:** node<br/>
-**Docker base image:** [node]<br/>
+**Container name**: node<br/>
+**Docker base image**: [node]<br/>
 
 The Node container is based on the [official Node Docker image][node]. You can use the container to install NPM dependencies, such as Gulp, or run any Node-based command line tools.
 
@@ -99,3 +98,4 @@ The Node container is based on the [official Node Docker image][node]. You can u
 [php]: https://hub.docker.com/_/php
 [node]: https://hub.docker.com/_/node
 [Manage cron jobs]: {{site.baseurl}}/cloud/docker/docker-manage-cron-jobs.html
+[ece-tools CLI]: {{site.baseurl}}/cloud/reference/ece-tools-reference.html

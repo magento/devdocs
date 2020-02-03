@@ -53,7 +53,7 @@ To launch the Docker environment in developer mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug][xdebug].
+1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can enable Xdebug in the `.magento.app.yaml` file, and then update the configuration in the `docker-compose.yml` file. See [Configure Xdebug for Docker][xdebug].
 
 1. If you selected `docker-sync` for file synchronization, start the file synchronization.
 
@@ -123,7 +123,7 @@ To launch the Docker environment in developer mode:
 [Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
-[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-versions
+[services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/

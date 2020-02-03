@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Docker Development
+title: Docker development
 functional_areas:
   - Cloud
   - Docker
@@ -11,15 +11,15 @@ functional_areas:
 
 ## Host Operating Systems
 
-The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should be able to run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
+The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
 
 ## Gather credentials
 
 Prior to setting up a local workspace, gather the following credentials and accounts:
 
--  **Magento Access Key**
+-  **Magento authentication keys (Composer keys)**
 
-   Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 Composer repository (repo.magento.com), and any other Git services—such as GitHub—required for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. Contact the Project Owner to generate [Magento authentication keys].
+    Magento authentication keys are 32-character authentication tokens that provide secure access to the Magento 2 Composer repository (repo.magento.com), and any other Git services required for Magento development such as GitHub. Your account can have multiple Magento authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Project Owner to create them, or create the [Magento authentication keys] yourself.
 
 -  **Cloud Project account**
 

@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Docker](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [`{{site.data.var.mcd}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
-The {{site.data.var.mcd}} package uses the following version sequence: `<major>.<minor>.<patch>`.
+The `{{site.data.var.mcd}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 The release notes include:
 
@@ -18,9 +18,11 @@ The release notes include:
 
 ## v1.0.0
 
--  {:.new}**Added a stand-alone Magento Cloud Docker package**–Moved the Docker package to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.<!--MAGECLOUD-3986-->
+-  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**–Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
 
--  {:.new}**Added versioning to the Docker images**–You must now update the {{site.data.var.mcd}} package to get the updated images.
+   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and update your project as scripts, commands, and processes as needed.
+
+-  {:.new}**Added versioning to the Docker images**–You must now update the `{{site.data.var.mcd}}` package to get the updated images.<!--MAGECLOUD-4737-->
 
 -  {:.new}**Container updates**–
 
@@ -32,7 +34,7 @@ The release notes include:
 
    -  {:.new}**Web container updates**–
 
-      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the Magento Cloud Docker environment. See [Web container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->
+      -  {:.new}**Customize NGINX configuration**–Added the capability to mount a custom `nginx.conf` file to the {{site.data.var.mcd-prod}} environment. See [Web container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container).<!--MAGECLOUD-4204-->
 
       -  {:.new}**Auto-generated NGINX certificates**–The Docker configuration file now includes the configuration to auto-generate NGINX certificates for the Web container.<!--MAGECLOUD-4258-->
 
@@ -52,15 +54,15 @@ The release notes include:
 
          -  **`RewriteLocation`**–Determines whether the Pound proxy rewrites the location to the request URL by default. Defaults to `0` to prevent the rewrite from breaking redirects to outside websites like an external SSO site. [Fix submitted by Sorin Sugar](https://github.com/magento/magento-cloud-docker/pull/37)<!--MAGECLOUD-4061-->
 
-      -  {:.new} Increased the timeout value in the TLS container configuration from 15 to 300 seconds. [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
+      -  {:.new} Increased the timeout value in the TLS container configuration from 15 to 300 seconds. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
    -  {:.new}**Varnish container updates**–
 
-      -  {:.new}**Updated the container base image to use official image**The [Magento Cloud Varnish container] is now based on the official `centos` Docker image.<!--MAGECLOUD-4163-->
+      -  {:.new}**Updated the container base image to use official image**—The [Magento Cloud Varnish container] is now based on the official `centos` Docker image.<!--MAGECLOUD-4163-->
 
-      -  {:.new}**Improved default timeout configuration**-Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the Varnish container. Both timeout values default to `300s` (5 minutes). [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
+      -  {:.new}**Improved default timeout configuration**-Added `.first_byte_timeout` and `.between_bytes_timeout` configuration to the Varnish container. Both timeout values default to `300s` (5 minutes). [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/78)<!--MAGECLOUD-4460-->
 
-      -  {:.fix}**Skip Varnish during Xdebug sessions**–Updated the Varnish container configuration to return `pass` on requests received when Xdebug is enabled. In previous Magento Cloud Docker releases, you could not use Xdebug if the Docker environment included Varnish. [Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/111).<!--MAGECLOUD-4873-->
+      -  {:.fix}**Skip Varnish during Xdebug sessions**–Updated the Varnish container configuration to return `pass` on requests received when Xdebug is enabled. In previous releases, you could not use Xdebug if the Docker environment included Varnish. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/111).<!--MAGECLOUD-4873-->
 
 -  {:.new}**Docker configuration changes**–
 
@@ -74,7 +76,7 @@ The release notes include:
 
    -  {:.fix}Renamed the `./bin/docker` file to `./bin/magento-docker` to fix an issue that caused some Docker environments to break because the `./bin/docker` file overwrites existing Docker binary files. This is a [backward incompatible change] that requires updates to your scripts and commands.<!-- MAGECLOUD-4038 -->
 
-   -  {:.new}**Added an option to expose the database port to the host**–Use the `--expose-db-port=<PORT>` option to expose the database port to the host when building the `docker-compose.yml` file: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454--> [Fix submitted by Adarsh Manickam](https://github.com/magento/magento-cloud-docker/pull/101).
+   -  {:.new}**Added an option to expose the database port to the host**–Use the `--expose-db-port=<PORT>` option to expose the database port to the host when building the `docker-compose.yml` file: `bin/ece-docker build:compose --expose-db-port=<PORT>`<!--MAGECLOUD-4454--> [Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/101).
 
    -  {:.new}**New post-deploy command**–Previously, the post-deploy hooks defined in the `.magento.app.yaml` file ran automatically after you deployed Magento to a Cloud Docker container using the `cloud-deploy` command. Now, you must issue a separate `cloud-post-deploy` command to run the post-deploy hooks after you deploy. See the updated launch instructions for [developer] and [production] mode.<!--MAGECLOUD-3996-->
 
@@ -84,7 +86,7 @@ The release notes include:
 
       -  {:.new}Added the `--sync-engine="native"` option to the `docker-build` command to disable file synchronization when you generate the Docker Compose configuration file in developer mode. Use this option when developing on Linux systems, which do not require file synchronization for local Docker development. See [Synchronizing data in the Docker environment]({{site.baseurl}}/cloud/docker/docker-syncing-data.html).<!--MAGECLOUD-4351, MAGECLOUD-->
 
-   -  {:.new}Changed the default file synchronization setting from `docker-sync` to `native`.<!--MAGECLOUD-5066-->[Fix submitted by Mathew Beane from Zilker Technologies](https://github.com/magento/magento-cloud-docker/pull/124).
+   -  {:.new}Changed the default file synchronization setting from `docker-sync` to `native`. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/124).<!--MAGECLOUD-5066-->
 
 -  {:.new}**Validation improvements**–
 

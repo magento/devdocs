@@ -21,7 +21,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 ## v2002.1.0
 
--  {:.new}<!--MAGECLOUD-3986-->Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.cd}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.
+-  {:.new}<!--MAGECLOUD-3986-->Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.
 
 -  {:.new}<!--MAGECLOUD-4567-->We moved Magento patches from the {{site.data.var.ct}} repository to the [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) repository. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).
 
@@ -179,7 +179,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
    -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
-   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
+   -  {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
 
    -  {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 
