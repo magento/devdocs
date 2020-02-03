@@ -14,7 +14,7 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 
 ## Adding themes to Grunt configuration {#add_theme}
 
-To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/local-themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
+To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
 
 1. Install [node.js] to any location on your machine.
 
