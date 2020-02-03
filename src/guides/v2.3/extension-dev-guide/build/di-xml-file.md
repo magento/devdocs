@@ -269,20 +269,20 @@ This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the objec
 
 ### Override method using Preference
 
-If you want to override a public or protected method from core class, you can utilize `preference` to achieve it.
-Here is an example to overide a method from core file.
+If you want to override a public or protected method from a core class, you can utilize the `preference` node from `di.xml` to achieve it.
+Here is an example of overriding a method from the core file.
 
 ```xml
-<!-- app/code/<VendorName/<ModuleName>/etc/di.xml -->
+<!-- app/code/OrangeCompany/OverrideExample/etc/di.xml -->
 <config  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Checkout\Block\Onepage\Success" type="VendorName\ModuleName\Block\Onepage\Success" />
+    <preference for="Magento\Checkout\Block\Onepage\Success" type="OrangeCompany\OverrideExample\Block\Onepage\Success" />
 </config>
 ```
 
 Below example will override isVisible method from Magento\Checkout\Block\Onepage\Success block class.
 
 ```php
-namespace <VendorName>\<ModuleName>\Block\Onepage;
+namespace OrangeCompany\OverrideExample\Block\Onepage;
 
 class Success extends \Magento\Checkout\Block\Onepage\Success
 {
@@ -328,7 +328,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
 }
 ```
 
-`Note:`
+{:.bs-callout-info}
 Overriding entire methods is not recommended approach and should be avoided whenever it's possible. This approach brings potential conflicts to the system and reduces the system upgradability. Use other extensibility options like event observers and plugins instead.
 
 ### Parameter configuration inheritance
