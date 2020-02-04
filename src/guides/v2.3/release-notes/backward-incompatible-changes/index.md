@@ -87,7 +87,7 @@ Example:
 </config>
 ```
 
-See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html) for information on how to invalidate private content.
+See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html) for information on how to invalidate private content.
 
 ## Application framework libraries
 
