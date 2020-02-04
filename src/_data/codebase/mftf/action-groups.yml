@@ -234,7 +234,7 @@
   module: "Sales"
   actiongroups:
      - name: "AdminMoveProductToItemsOrderedFromShoppingCartActionGroup"
-       description: "Move product to the 'Items Ordered' section from shopping cart."
+       description: "Move product to the \"Items Ordered\" section from shopping cart."
  
 - filename: "AdminAddToOrderConfigurableProductActionGroup.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAddToOrderConfigurableProductActionGroup.xml"
@@ -1409,7 +1409,7 @@
   module: "Catalog"
   actiongroups:
      - name: "StorefrontCategoryPageSortProductActionGroup"
-       description: "Select 'Sort by' parameter for sorting Products on Category page"
+       description: "Select \"Sort by\" parameter for sorting Products on Category page"
 
      - name: "StorefrontCategoryPageSortAscendingActionGroup"
        description: "Set Ascending Direction for sorting Products on Category page"
@@ -1879,8 +1879,7 @@
        description: "Requires navigation to subcategory creation/edit. Fills the name, and sets the Search Engine Optimization for the category."
 
      - name: "AdminCategoryAssignProduct"
-
-       description: "Requires navigation to category creation/edit page. Assign products to category - using 'Products in Category' tab."
+       description: "Requires navigation to category creation/edit page. Assign products to category - using \"Products in Category\" tab."
 
      - name: "DeleteDefaultCategoryChildren"
        description: "Deletes all children categories of Default Root Category."
@@ -2358,7 +2357,7 @@
   module: "Catalog"
   actiongroups:
      - name: "AdminAssertProductEditPageCreateAttributeSaveInAttributeSetPopUpShownActionGroup"
-       description: "Asserts that after click on 'Save In New Attribute Set' poup shown."
+       description: "Asserts that after click on \"Save In New Attribute Set\" poup shown  ."
  
 - filename: "FilterProductInGridByStoreViewAndNameActionGroup.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/ActionGroup/FilterProductInGridByStoreViewAndNameActionGroup.xml"
@@ -3767,7 +3766,7 @@
   module: "Checkout"
   actiongroups:
      - name: "AdminCheckoutSelectCheckMoneyOrderBillingMethodActionGroup"
-       description: "Selects the Billing Method 'Check / Money order' on the Admin 'Create New Order for' page."
+       description: "Selects the Billing Method \"Check / Money order\" on the Admin 'Create New Order for' page."
  
 - filename: "VerifyCheckoutPaymentOrderSummaryActionGroup.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/ActionGroup/VerifyCheckoutPaymentOrderSummaryActionGroup.xml"
@@ -4438,7 +4437,7 @@
 
      - name: "attachImage"
        description: "Uploads the provided Image to Media Gallery.
-                If you use this action group, you MUST add steps to delete the image in the 'after' steps."
+                If you use this action group, you MUST add steps to delete the image in the \"after\" steps."
 
      - name: "deleteImage"
        description: "Deletes the selected Image from the Media Gallery."
