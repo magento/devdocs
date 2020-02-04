@@ -10,10 +10,10 @@ pages:
         - label: GraphQL requests
           url: /graphql/send-request.html
 
-        - label: Authorization tokens
-          url: /graphql/authorization-tokens.html
+        - label: Get customer authorization token
+          url: /graphql/get-customer-authorization-token.html
 
-        - label: GraphQL caching
+        - label: GraphQL Caching
           url: /graphql/caching.html
 
         - label: Filtering with custom attributes
