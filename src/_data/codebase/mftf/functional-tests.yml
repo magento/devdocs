@@ -13,7 +13,7 @@
   tests:
     - testname: "StorefrontElasticSearch6ForChineseLocaleTest"
       title: "Elastic search for Chinese locale"
-      description: "Elastic search for Cese locale"
+      description: "Elastic search for Chinese locale"
  
 - filename: "AdminGridFilterDeleteAndVerifyErrorMessageTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Ui/Test/Mftf/Test/AdminGridFilterDeleteAndVerifyErrorMessageTest.xml"
