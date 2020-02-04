@@ -23,8 +23,6 @@ redirect_from:
 *  [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 *  [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
 
-Interested in the Magento 2.2.x releases? Check out the [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.
-
 ## Security-only patches
 
 With the release of Magento 2.3.3, Magento introduced a new type of patch: the security-only patch. Patch 2.3.3-p1 includes the significant security fixes that Magento 2.3.4 introduces, plus the hot fixes that were applied to Magento 2.3.3, without the hundreds of functional fixes and enhancements that Magento 2.3.4 also includes.  (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) Merchants deploying Magento 2.3.3 can apply patch 2.3.3-p1 to immediately take advantage of time-sensitive security fixes without investing the time required to install Magento 2.3.4.
