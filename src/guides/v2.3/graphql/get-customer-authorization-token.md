@@ -1,4 +1,3 @@
--1,38 +0,0 @@
 ---
 group: graphql
 title: Get customer authorization token
