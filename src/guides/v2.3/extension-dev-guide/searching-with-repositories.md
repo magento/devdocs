@@ -285,9 +285,10 @@ The [`PaginationProcessor`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib
 #### Join Processor
 
 The [`JoinProcessor`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php) class allows you to join fields from other tables into an abstract database collection.
+To join a table should be implemented `Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface::apply(AbstractDb $collection)`, inside the class can use used `$collection->join(…)` method.
 
-Below is an example of creating a Join Processor virtual type in the `di.xml` file named `Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor`:
-
+Below is an example of creating a Join Processor: 
+The virtual type in the `di.xml` class named `Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor`:
 ```xml
 <virtualType name="Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor">
   <arguments>
@@ -311,8 +312,7 @@ Below is an example of creating a Join Processor virtual type in the `di.xml` fi
 ```
 
 The Join Processor aggregates Custom Joins objects implementing the interface [`CustomJoinInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php).
-
-{% collapsible Show Custom Join implementation example %}
+Below is `Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate` as Custom Join implementation example
 
 ```php
     namespace Magento\Tax\Model\Api\SearchCriteria\JoinProcessor;
@@ -338,7 +338,76 @@ The Join Processor aggregates Custom Joins objects implementing the interface [`
     }
 ```
 
-{% endcollapsible %}
+In the `apply` method the object calls `joinCalculationData` method of `Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection` class
+
+
+```php
+    /**
+     * Join calculation data to result
+     *
+     * @param string $alias table alias
+     * @return \Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection
+     */
+    public function joinCalculationData($alias)
+    {
+        $this->getSelect()->joinLeft(
+            [$alias => $this->getTable('tax_calculation')],
+            "main_table.tax_calculation_rule_id = {$alias}.tax_calculation_rule_id",
+            []
+        );
+        $this->getSelect()->group('main_table.tax_calculation_rule_id');
+
+        return $this;
+    }
+```
+
+The `rate` is alias of table, the alias is used in the Join.
+In this case the `joinCalculationData(...)` is LEFT JOIN on `tax_calculation_rule_id` and group by `tax_calculation_rule_id`
+
+The other case `Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\RateCode` class
+provides additional LEFT JOIN except `joinCalculationData`
+
+```php
+    /**
+     * @param AbstractDb $collection
+     * @return true
+     */
+    public function apply(AbstractDb $collection)
+    {
+        $taxCalculationTableAlias = 'tc';
+
+        $collection->joinCalculationData($taxCalculationTableAlias);
+
+        $collection->getSelect()->joinLeft(
+            ['rc' => $collection->getTable('tax_calculation_rate')],
+            "{$taxCalculationTableAlias}.tax_calculation_rate_id = rc.tax_calculation_rate_id",
+            []
+        );
+
+        return true;
+    }
+```
+As result the processors will be used in the `Magento\Tax\Model\TaxRuleRepository`:
+```xml
+<type name="Magento\Tax\Model\TaxRuleRepository">
+    <arguments>
+        <argument name="collectionProcessor" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\TaxRuleCollectionProcessor</argument>
+    </arguments>
+</type>
+```
+The `Magento\Tax\Model\Api\SearchCriteria\TaxRuleCollectionProcessor`
+```xml
+<virtualType name="Magento\Tax\Model\Api\SearchCriteria\TaxRuleCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+    <arguments>
+        <argument name="processors" xsi:type="array">
+            <item name="joins" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor</item>
+            <item name="filters" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleFilterProcessor</item>
+            <item name="sorting" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleSortingProcessor</item>
+            <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+        </argument>
+    </arguments>
+</virtualType>
+```
 
 ### Using Collection Processors in Repositories
 
