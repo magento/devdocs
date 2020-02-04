@@ -5,7 +5,10 @@ redirect_from:
   - /guides/v2.3/graphql/reference/wishlist.html
 ---
 
-Use the `wishlist` query to retrieve information about a customer's wish list. [Get customer authorization token]({{page.baseurl}}/graphql/get-customer-authorization-token.html) describes how to supply an authorization token for a specific customer.
+{:.bs-callout-warning}
+The `wishlist` query has been deprecated. Wish list information is now provided by the [customer]({{page.baseurl}}/graphql/queries/customer.html) query.
+
+Use the `wishlist` query to retrieve information about a customer's wish list. [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes how to supply an authorization token for a specific customer.
 
 ## Syntax
 

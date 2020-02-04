@@ -2,10 +2,7 @@
 group: cloud-guide
 title: Set up Fastly
 redirect_from:
-   - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
-   - /guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html
-   - /guides/v2.2/cloud/access-acct/fastly.html
-   - /guides/v2.3/cloud/access-acct/fastly.html
+   - /cloud/access-acct/fastly.html
 functional_areas:
   - Cloud
   - Setup
@@ -186,7 +183,7 @@ For more information, see the Magento 2 [Backend settings guide](https://github.
 
 ### Configure purge options {#purge}
 
-Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly aches after finishing updates through the Cache Management page.
+Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly caches after finishing updates through the Cache Management page.
 
 The options include:
 
@@ -294,7 +291,7 @@ To check the version of Fastly CDN module for Magento 2:
    composer show *fastly*
    ```
 
-1. If the [latest release]((https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
+1. If the [latest release](https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
 
 {:.procedure}
 To upgrade the Fastly module:

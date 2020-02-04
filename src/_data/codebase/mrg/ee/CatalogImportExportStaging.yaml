@@ -1,7 +1,7 @@
 ---
 title: Magento_CatalogImportExportStaging
 source_repo: magento2ee
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/CatalogImportExportStaging/README.md
 last_modified_at: '2016-04-07 09:45:21 -0500'
 content: |

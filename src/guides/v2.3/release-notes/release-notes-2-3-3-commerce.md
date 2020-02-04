@@ -1096,7 +1096,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 *  You can now successfully download a CSV file after export. Previously, Magento redirected you to the Admin dashboard when you tried to download the CSV file that was created during export.
 
 <!--- MAGETWO-99927-->
-  Products are successfully updated through import of an CSV file in **Add/Update** mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
+  Products are successfully updated through import of an CSV file in **Add/Update**  mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
 
 <!--- MAGETWO-60918-->
 

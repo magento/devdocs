@@ -2,8 +2,7 @@
 group: cloud-guide
 title: Clone and branch the project
 redirect_from:
-  - /guides/v2.2/cloud/before/before-setup-env-keys.html
-  - /guides/v2.2/cloud/before/before-setup-env-env.html
+  - /cloud/before/before-setup-env-keys.html
 functional_areas:
   - Cloud
   - Setup

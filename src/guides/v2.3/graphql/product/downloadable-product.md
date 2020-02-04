@@ -24,7 +24,7 @@ The `DownloadableProductSamples` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | Deprecated. This information should not be exposed on frontend
+`id` | Int | Deprecated. This attribute is not applicable for GraphQL
 `sample_file` | String | Deprecated. Use `sample_url` instead
 `sample_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
 `sample_url` | String | The URL to the downloadable sample
@@ -38,9 +38,9 @@ The `DownloadableProductLinks` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `id` | Int | Deprecated. This information should not be exposed on frontend
-`is_shareable` | Boolean | Deprecated. This information should not be exposed on frontend
+`is_shareable` | Boolean | Deprecated. This attribute is not applicable for GraphQL
 `link_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
-`number_of_downloads` | Int | Deprecated. This information should not be exposed on frontend
+`number_of_downloads` | Int | Deprecated. This attribute is not applicable for GraphQL
 `price` | Float | The price of the downloadable product
 `sample_file` | String | Deprecated. Use `sample_url` instead
 `sample_type` | DownloadableFileTypeEnum | Deprecated. Use `sample_url` instead
