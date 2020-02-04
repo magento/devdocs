@@ -53,7 +53,7 @@ The following example shows the diff in `Magento\Catalog\Model\ResourceModel\Pro
         );
 ...
 ```
-## Customer data sections invalidation
+## Customer data section invalidation
 
 Magento 2.3.4 introduced a change in the customer data sections invalidation logic.
 
@@ -73,8 +73,6 @@ Here’s an example of a typical usage. This usage is no longer compatible with 
 Deployments that use custom customer sections with this type of action invalidation may face an issue when private content isn’t entered correctly. As a result, problems may occur in the storefront checkout and cart workflows.
 
 ### Workaround
-
-For all actions where it is required to invalidate custom customer sections, use either `*` as the section name or use empty actions and ensure that they will not be overridden by any other rules.
 
 For all actions where it is required to invalidate custom customer sections, use either `*` as the section name or use empty actions and ensure that they will not be overridden by any other rules.
 

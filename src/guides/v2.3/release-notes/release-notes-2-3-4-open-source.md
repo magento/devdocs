@@ -1820,7 +1820,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 ## Known issue
 
-This release introduces an enhancement to the  customer data sections invalidation mechanism logic that is not compatible with how pre-2.3.4 deployments.  You can no longer invalidate custom customer sections in etc/frontend/sections.xml by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+This release introduces an enhancement to the  customer data sections invalidation mechanism logic that is not compatible with how pre-2.3.4 deployments.  You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
 
 ## Community contributions
 
