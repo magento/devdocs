@@ -27,7 +27,7 @@ This release includes the following updates:
 
 -  {:.fix}**Fix cron deadlocks and improve cron locking**–<!--MAGECLOUD-4530-->
 
-   -  {:.fix}Fixes an issue with some cron jobs not running due to an incorrect status value in the `cron_schedule` table. Now, we use the Magento lock framework to check and update cron job status instead of using the `cron_schedule` table.
+   -  {:.fix}Fixes an issue with some cron jobs not running due to an incorrect status value in the `cron_schedule` table. Now, we use the Magento lock framework to check and update cron job status instead of using the `cron_schedule` table. Cron jobs that have ended with an error status are retried during the next `cron:run` instead of waiting 24 hours.
    -  {:.new}Adds a retry operation to avoid deadlock during updates to the data in the `cron_schedule` table.
 
 ## v1.0.0
