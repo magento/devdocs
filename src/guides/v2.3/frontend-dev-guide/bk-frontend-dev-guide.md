@@ -42,9 +42,6 @@ You can apply these levels of customization to your site, where the levels requi
 
     This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 
-{:.bs-callout-info}
-There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a [WYSIWYG](https://glossary.magento.com/wysiwyg) mode. We'd like to clarify that to meet higher priority objectives, the VDE will _not_ be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.
-
 ## Frontend development prerequisites {#fedg-prereqs}
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
@@ -53,12 +50,14 @@ To implement what is discussed in this guide, you need a working Magento install
 
 To use this guide, you must be familiar with:
 
-*  CSS, CSS 3, and LESS
-*  HTML and HTML 5
+*  [CSS, CSS 3](https://glossary.magento.com/css)
+*  [LESS](https://glossary.magento.com/less)
+*  [HTML and HTML 5](https://glossary.magento.com/html)
 *  [XML](https://glossary.magento.com/xml)
 *  [JavaScript](https://glossary.magento.com/javascript)
-*  PHTML, PHP (Basic)
-*  Responsive Web Design (RWD)
+*  [PHTML](https://glossary.magento.com/phtml)
+*  [PHP (Basic)](https://glossary.magento.com/php)
+*  [Responsive Web Design (RWD)](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 {:.ref-header}
 Related topics
