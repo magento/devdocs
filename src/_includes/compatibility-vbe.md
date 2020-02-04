@@ -1,9 +1,9 @@
 {% assign packages = site.data.composer_lock.packages %}
 
 {% assign versionsNumber = include.data.versions.size %}
-{% assign extensions = include.data.extension %}
-{% if include.extension %}
-{% assign extensions = include.data.extension | where: "name", include.extension %}
+{% assign extensions = include.data.extensions %}
+{% if include.extensions %}
+{% assign extensions = include.data.extensions | where: "name", include.extensions %}
 {% endif %}
 
 **Supported**{: .status-light.supported } – version that has been fully tested by Magento and is supported.
@@ -21,16 +21,16 @@
     {% endfor %}
     </tr>
   </thead>
-  {% for extension in extensions %}
+  {% for extensions in extensions %}
   <tbody>
     <tr class="extension-name">
-      <th colspan="{{ versionsNumber | plus: 1 }}">{{ extension.name }}</th>
+      <th colspan="{{ versionsNumber | plus: 1 }}">{{ extensions.name }}</th>
     </tr>
-    {% for extensionVersion in extension.versions %}
+    {% for extensionsVersion in extensions.versions %}
     <tr class="extension-version">
-      <td>{{ extension.name }} {{ extensionVersion.name }}</td>
+      <td>{{ extensions.name }} {{ extensionsVersion.name }}</td>
       {% for version in include.data.versions %}
-      <td><span class="status-light {{ extensionVersion.support[version] | replace: ' ', '-' }}">{{ extensionVersion.support[version] | capitalize }}</span></td>
+      <td><span class="status-light {{ extensionsVersion.support[version] | replace: ' ', '-' }}">{{ extensionsVersion.support[version] | capitalize }}</span></td>
       {% endfor %}
     </tr>
     {% endfor %}
