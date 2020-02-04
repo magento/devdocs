@@ -33,6 +33,10 @@ Define data interfaces in the `Api/Data` subdirectory for a module.
 
 For example, the data interfaces for the Customer module are in the `/app/code/Magento/Customer/Api/Data` subdirectory.
 
+ {:.bs-callout-info}
+Magento Framework's [SimpleDataObjectConverter]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SimpleDataObjectConverter.php) follows strict camel case to snake case conversion of data keys (table columns), so it's recommended not to use `underscore (_)` between numbers and alphabets in column names.
+ For example, use `default_shipping1` instead of `default_shipping_1`, as the Data Interface method `defaultShipping1` will be converted into `default_shipping1`.
+
 ### Data search results interfaces {#search-results-interfaces}
 
 When you pass search criteria to a `getList()` call, a search results interface is returned with the search results.
