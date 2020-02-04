@@ -1,5 +1,4 @@
 {% assign packages = site.data.composer_lock.packages %}
-
 {% assign versionsNumber = include.data.versions.size %}
 {% assign extensions = include.data.extensions %}
 {% if include.extensions %}
