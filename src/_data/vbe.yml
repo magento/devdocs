@@ -49,7 +49,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
   -
-    name: Dotdigital
+    name: dotdigital
     versions:
       -
         name: 4.1.0
