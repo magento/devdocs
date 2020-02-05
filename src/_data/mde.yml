@@ -3,6 +3,7 @@ versions:
   - 2.3.1
   - 2.3.2
   - 2.3.3
+  - 2.3.4
 extensions:
   -
     name: Amazon Sales Channel
@@ -14,6 +15,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 3.0.0
         support:
@@ -21,6 +23,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 2.0.0
         support:
@@ -28,6 +31,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
   -
     name: Google Shopping ads Channel
     versions:
@@ -38,6 +42,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 3.0.0
         support:
@@ -45,6 +50,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 2.0.2
         support:
@@ -52,6 +58,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 2.0.1
         support:
@@ -59,6 +66,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 2.0.0
         support:
@@ -66,6 +74,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       -
         name: 1.1.2
         support:
@@ -73,6 +82,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
       - 
         name: 1.1.1
         support:
@@ -80,6 +90,7 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: general availability
   -
     name: Magento Inventory
     versions:
@@ -90,31 +101,62 @@ extensions:
           2.3.1: general availability
           2.3.2: general availability
           2.3.3: general availability
+          2.3.4: 
       -
         name: 1.1.2
         support:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.4: 
       -
         name: 1.1.0
         support:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: 
+          2.3.4: 
       -
         name: 1.0.3
         support:
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
+          2.3.3: 
+          2.3.4: 
   -
     name: Page Builder
     versions:
+      -
+        name: 1.2.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: general availability
+      -
+        name: 1.1.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: general availability
+          2.3.4: not supported
+      -
+        name: 1.0.1
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: general availability
+          2.3.3: not supported
+          2.3.4: not supported
       -
         name: 1.0.0
         support:
           2.3.0: open beta
           2.3.1: general availability
-          2.3.2: general availability
-          2.3.3: general availability
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
