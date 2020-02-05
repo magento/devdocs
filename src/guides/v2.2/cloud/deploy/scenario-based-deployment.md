@@ -137,7 +137,7 @@ In this example "enable-maintenance-mode" step will move to the beginning of the
 
 ### Extension mechanism
 
-Default implementations of API interfaces can be replaced with your own. For this you need to register your module in the extensions list of `{{site.data.var.ct}}`  similar to how modules are registering in Magento.
+Default implementations of API interfaces can be replaced with your own. For this you need to register your module in the extensions list of `{{site.data.var.ct}}`  similar to how modules are being registered in Magento core.
 
 Create or extend `registration.php` file in the root of your module.
 ```php
