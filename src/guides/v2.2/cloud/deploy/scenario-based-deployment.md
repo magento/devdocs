@@ -84,7 +84,7 @@ Custom scenarios can replace default steps and provide custom implementation.
 ```
 
 #### Changing steps priority
-Custom scenarios can change priority of default steps.
+Custom scenarios can change priority of default steps. This mechanism works same way as a replace mechanism with only priority field being changed.
 ```xml
 <scenario>
     <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="10"/>
