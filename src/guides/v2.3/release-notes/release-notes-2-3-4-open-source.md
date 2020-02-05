@@ -11,7 +11,7 @@ This release includes over 220 functional fixes to the core product and  over 30
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3. All hot fixes that were  applied to the 2.3.3 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
 
-With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
+With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento (APSB20-02)](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
 ## Highlights
 
@@ -29,9 +29,9 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 Additional security enhancements include:
 
-*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**.  The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that  contains the layout updates and select it for use. The name of the file containing an update must follow the  conventions described here. See [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html). <!--- MC-16129-->
+*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**. The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that contains the layout updates and select it for use. The name of the file containing an update must follow the conventions described [here](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html).  <!--- MC-16129-->
 
-*  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects.
+*  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
@@ -100,6 +100,20 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 ### PWA Studio
 
+*  Improved the getting-started experience through the use of `@magento/create-pwa` to scaffold your initial project using Venia as your template
+
+*  Separation of the logic (Talons) and presentation pieces (`venia-ui`) of certain React hooks in Peregrine. Developers can now swap out either the logic or the presentation side of a component
+
+*  Routing is now handled through the React Router (library of navigational components)
+
+*  Refactored Venia [state management](https://magento.github.io/pwa-studio/technologies/basic-concepts/state-management/) to abstract and reduce dependency on Redux
+
+*  Continued migration from REST to GraphQL
+
+*  Performance improvements (service workers, cache, image optimization)
+
+*  Breadcrumbs for improved storefront navigation
+
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases)
 
 ### dotdigital
@@ -107,6 +121,8 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 *  Live Chat powered by dotdigital enables merchants to increase conversion rates, and keep customers coming back with real-time engagement. All Magento 2.3.x merchants (both Magento Open Source and Magento Commerce) can receive a free live chat agent without the need for a full dotdigital Engagement Cloud license.
 
 *  Engagement Cloud includes a new Chat widget that makes it easy for shoppers to communicate in real time with customers as they shop in your store. Chat can be accessed from the Engagement Cloud section of the Magento configuration, or directly from your Engagement Cloud account. See [Engagement Cloud Chat](https://docs.magento.com/m2/ee/user_guide/marketing/engagement-cloud-chat.html).
+
+*  Merchants can now sync additional campaigns from Engagement Cloud to Magento.
 
 ### Google Shopping ads Channel
 
