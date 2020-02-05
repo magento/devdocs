@@ -76,7 +76,7 @@ Custom scenario can remove steps from default scenarios, in the next example ste
 ```
 
 #### Replacing steps
-Custom scenarios can replace default steps and provide custom implementation.
+Custom scenarios can replace default steps and provide custom implementation. To do so, same as default step name should be used for the custom step.
 ```xml
 <scenario>
     <step name="enable-maintenance-mode" type="VendorName\VendorModule\Step\CustomEnableMaintenanceMode" priority="300"/>
