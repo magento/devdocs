@@ -53,22 +53,16 @@ You may ignore, rename or change the system configurations when migrating settin
 1. Change to the following directory:
 
     ```bash
-    <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+    cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
     ```
 
-    For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+    For example, if Magento 2 is installed in `/var/www/html`, you will find `settings.xml.dist` in one of the following directories:
 
-    ```bash
-    /var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-commerce
-    ```
+    `/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-commerce`
 
-    ```bash
-        /var/www/html/vendor/magento/data-migration-tool/etc/commerce-to-commerce
-    ```
+    `/var/www/html/vendor/magento/data-migration-tool/etc/commerce-to-commerce`
 
-    ```bash    
-    /var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-opensource
-    ```
+    `/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-opensource`
 
 1. To create a `settings.xml` file from the provided sample, run:
 
