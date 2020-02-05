@@ -19,9 +19,7 @@ The Magento cron implementation has the following limitations:
 -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environments
 -  In the Docker environment, cron works only with the CLI container to run the `./bin/magento cron:run` command
 
-By default, cron container is not present in your Docker development environment to improve overall performance.
-
-## Add the cron container
+To improve the overall performance in the Docker development environment, the cron container is not present by default. You can add the cron container as needed using the `--with-cron` option.
 
 ```bash
 ./vendor/bin/ece-docker build:compose --mode="developer" --with-cron --sync-engine="mutagen"
@@ -37,15 +35,6 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 
 ```bash
 docker-compose run cron /usr/local/bin/php bin/magento cron:run
-```
-
-## Disable the Cron container
-
-If cron runs cause a performance problem, you can prevent the Cron container from running automatically by adding the following snippet to your `docker-compose.override.yml` file.
-
-```yaml
-cron:
-  entrypoint: "bash -c"
 ```
 
 [Cron container]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html
