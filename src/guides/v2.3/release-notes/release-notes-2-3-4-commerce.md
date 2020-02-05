@@ -202,7 +202,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5582-->
 
-*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
+*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https://github.com/magento/magento2/issues/22880)
 
 <!--- ENGCOM-6205-->
 
@@ -1106,7 +1106,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-4731-->
 
-*  Magento no longer throws a fatal error (500 error) when you try to enable  Google Tag Manager.  *Fix submitted by Raul E Watson in pull request [14](https://github.com/magento/partners-magento2ee/pull/14)*. [GitHub-20164](https://github.com/magento/magento2/issues/20164)
+*  Magento no longer throws a fatal error (500 error) when you try to enable  Google Tag Manager.  *Fix submitted by Raul E Watson*. [GitHub-20164](https://github.com/magento/magento2/issues/20164)
 
 ### Image
 
