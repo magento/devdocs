@@ -165,8 +165,8 @@ Service   |  Magento 2.3  | Magento 2.2
 `mariadb` | 10.0 to 10.2  | 10.0 to 10.2
 `nginx`   | 1.9           | 1.9
 `node`    | 6, 8, 10, 11  | 6, 8, 10, 11
-`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1
-`rabbitmq`| 3.5, 3.7      | 3.5
+`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3.
+`rabbitmq`| 3.5, 3.7, 3.8      | 3.5
 `redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
 `varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
 

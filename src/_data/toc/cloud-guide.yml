@@ -113,26 +113,64 @@ pages:
       url: /cloud/docker/docker-development.html
       versionless: true
       children:
-        - label: Launch Docker
+        - label: Docker container architecture
+          url: /cloud/docker/docker-containers.html
+          versionless: true
+          children:
+            - label: Service containers
+              url: /cloud/docker/docker-containers-service.html
+              versionless: true
+    
+            - label: CLI containers
+              url: /cloud/docker/docker-containers-cli.html
+              versionless: true
+              
+            - label: Synchronizing data
+              url: /cloud/docker/docker-syncing-data.html
+              versionless: true
+              
+        - label: Configure Docker
           url: /cloud/docker/docker-config.html
           versionless: true
+          children:
+            - label: Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
+              versionless: true
 
-        - label: Configure Xdebug for Docker
-          url: /cloud/docker/docker-development-debug.html
-          versionless: true
+            - label: Manage the database
+              url: /cloud/docker/docker-manage-database.html
+              versionless: true
 
-        - label: Connect to the database
-          url: /cloud/docker/docker-database.html
-          versionless: true
+            - label: Manage cron jobs
+              url: /cloud/docker/docker-manage-cron-jobs.html
+              versionless: true
 
-        - label: Functional testing in Docker
-          url: /cloud/docker/docker-development-testing.html
-          versionless: true
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
+              versionless: true
+
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
+              versionless: true
+  
+            - label: Extend Docker
+              url: /cloud/docker/docker-extend.html
+              versionless: true
+
+        - label: Functional Testing
+          children:
+            - label: Magento application testing
+              url: /cloud/docker/docker-mftf.html
+              versionless: true
+
+            - label: ECE-Tools testing
+              url: /cloud/docker/docker-development-testing.html
+              versionless: true
 
         - label: Docker quick reference
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
-
+          
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html
       versionless: true
@@ -520,7 +558,7 @@ pages:
           url: /cloud/project/ece-tools-update.html
           versionless: true
 
-        - label: Apply custom patches
+        - label: Apply patches
           url: /cloud/project/project-patch.html
           versionless: true
 
@@ -531,3 +569,23 @@ pages:
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
       versionless: true
+      children:
+        - label: ece-tools
+          url: /cloud/release-notes/ece-release-notes.html
+          versionless: true
+
+        - label: magento-cloud-components
+          url: /cloud/release-notes/mcc-release-notes.html
+          versionless: true
+        
+        - label: magento-cloud-docker
+          url: /cloud/release-notes/mcd-release-notes.html
+          versionless: true
+
+        - label: magento-cloud-patches
+          url: /cloud/release-notes/mcp-release-notes.html
+          versionless: true
+
+        - label: Backward incompatible changes
+          url: /cloud/release-notes/backward-incompatible-changes.html
+          versionless: true

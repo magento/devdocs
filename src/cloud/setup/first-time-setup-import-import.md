@@ -103,14 +103,13 @@ After you have completed the git reference configuration, you can import the {{s
 
    If the import succeeds, the {{site.data.var.ece}} environment redeploys.
 
-   ```bash
+   ```terminal
    Re-deploying environment 43biovskhelhy-master-l5ut8gq.
       Environment configuration:
         mymagento (type: php:7.0, size: S, disk: 2048)
         mysql (type: mysql:10.0, size: S, disk: 2048)
         redis (type: redis:3.0, size: S)
         solr (type: solr:4.10, size: S, disk: 1024)
-
    Environment routes:
       http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
       https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
@@ -128,11 +127,12 @@ You need the following information to complete this task:
 {:.bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
 
-When importing data, you will need to drop and create a new database. If you have done any data you want to keep, [create a backup]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the database.
+When importing data, you need to drop and create a new database. If you have data you want to keep, [create a backup]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the database.
 
+{:.procedure}
 To drop and re-create the Cloud database:
 
-1. SSH to the Integration environment.
+1. Use SSH to log in to the Integration environment.
 
    ```bash
    magento-cloud ssh
@@ -160,13 +160,13 @@ To drop and re-create the Cloud database:
 
 1. At the shell command prompt, enter the following command to re-create the database.
 
-   ```bash
-   zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+   ```shell
+   zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u   <db-user> <db-name>
    ```
 
    For example,
 
-   ```bash
+   ```shell
    zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
    ```
 
@@ -176,9 +176,10 @@ Before you can access Magento from your local Cloud development system, you must
 
 The following example shows how to change _only_ the insecure URL but you can use the same procedure to change secure URLs as well.
 
+{:.procedure}
 To update the unsecure base URL:
 
-1. If you haven't already done so, SSH to the Cloud integration server.
+1. If you have not already done so, use SSH to connect to the Cloud integration server.
 
    ```bash
    magento-cloud ssh
@@ -196,7 +197,7 @@ To update the unsecure base URL:
    SELECT * from core_config_data;
    ```
 
-   Note the `path` of `web/unsecure/base_url`; this is the value you'll change.
+    Note the `path` of `web/unsecure/base_url`; this is the value to change.
 
 1. Enter the following command to change the value of `path` to your integration server's unsecure base URL:
 
@@ -225,18 +226,31 @@ The {{site.data.var.ee}} encryption key is required as an environment variable i
 
 You copied the key in a [previous step]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
-To add your {{site.data.var.ee}} encryption key:
+{:.procedure}
+To add your {{site.data.var.ee}} encryption key using the `CRYPT_KEY` environment variable:
 
-1. If you haven't done so already, SSH to the Cloud environment.
+1. Log in to your Cloud project as an Admin user from the Project Web UI, or from the command line.
+
+1. Set the `CRYPT_KEY` environment variable to the encryption key value that you copied from the remote environment:
+
+   -  From the Project Web UI, select your environment, then select the _Variables_ tab to set the `CRYPT_KEY` value. See [Set environment and project variables]({{site.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
+
+   -  From the command line, use the `project:variable:set` command to add the encryption key to the `CRYPT_KEY` environment variable. See [Working with environment variables]({{ site.baseurl }}/cloud/env/working-with-variables.html).
+
+{:.procedure}
+To add your {{site.data.var.ee}} encryption key to the `env.php` file for each environment:
+
+1. If you have not done so already, use SSH to connect to the Cloud environment.
 
    ```bash
    magento-cloud environment:ssh
    ```
 
-1. Open `app/etc/env.php` in a text editor.
+1. Open the `app/etc/env.php` file in a text editor.
+
 1. Replace the existing value of `key` with your [{{site.data.var.ee}} key]({{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#encryption-key).
 
-   ```php
+   ```php?start_inline=1
    return array (
      'crypt' =>
      array (
@@ -254,7 +268,7 @@ To add your {{site.data.var.ee}} encryption key:
 
 To import media files into your Cloud environment:
 
-1. If you haven't done so already, SSH to the Cloud environment.
+1. If you have not done so already, use SSH to connect to the Cloud environment.
 
    ```bash
    magento-cloud ssh -p <project ID> -e <environment ID>
