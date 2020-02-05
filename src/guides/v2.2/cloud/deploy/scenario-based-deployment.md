@@ -90,7 +90,7 @@ Custom scenarios can change priority of default steps. This mechanism works same
     <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="10"/>
 </scenario>
 ```
-In this example "enable-maintenance-mode" step will be moving to the begin of scenario.
+In this example "enable-maintenance-mode" step will move to the beginning of the scenario.
 
 #### Example of extending deploy scenario
 
