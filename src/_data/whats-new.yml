@@ -6,7 +6,8 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Tue Feb 4 12:02:47 2020
 entries:
-- description: Updated the Magento CLI references for [Commerce](https://devdocs.magento.com/guides/v2.2/reference/cli/magento-commerce.html) and [Open Source](https://devdocs.magento.com/guides/v2.2/reference/cli/magento.html).
+- description: Updated the Magento CLI reference ([Commerce](https://devdocs.magento.com/guides/v2.2/reference/cli/magento-commerce.html)
+    \| [Open Source](https://devdocs.magento.com/guides/v2.2/reference/cli/magento.html)).
   versions: 2.2.11
   type: Major update
   date: January 30, 2020
