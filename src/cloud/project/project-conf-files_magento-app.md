@@ -30,7 +30,7 @@ The `type`  and `build` properties provide information about the base container 
 The supported `type` language is [PHP](https://glossary.magento.com/php). Specify the PHP version as follows:
 
 ```yaml
-type: php:<version>
+type: php:7.1
 ```
 
 The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
@@ -290,13 +290,13 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 
-The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.x.
+The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
 
 ```yaml
 variables:
@@ -312,7 +312,7 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: mymagento
-type: php:<version>
+type: php:7.2
 ```
 
 ### PHP extensions
@@ -493,4 +493,4 @@ workers:
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
-For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.

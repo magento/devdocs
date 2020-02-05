@@ -304,7 +304,7 @@ entries:
   type: Major update
   date: November 18, 2019
   link: https://github.com/magento/devdocs/pull/5917
-- description: Published the release notes for Magento Commerce Cloud v2002.0.22.
+- description: Published the release notes for Magento Commerce Cloud v2002.0.22
   versions: 2.x
   type: Major update
   date: November 15, 2019
@@ -1897,21 +1897,21 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3973
-- description: The Magento Open Source 2.1.17 Release Notes and Magento Commerce 2.1.17 Release Notes provide detailed information about the Magento Open Source 2.1.17 and Magento Commerce 2.1.17 releases.
+- description: The Magento Open Source 2.1.17 Release Notes and Magento Commerce 2.1.17 Release Notes provide detailed information about the Magento Open Source 2.1.17 and Magento Commerce 2.1.17 releases.
   versions: 2.1.17
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3981
-- description: The [Magento Open Source 2.2.8 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)  and
-     [Magento Commerce 2.2.8  Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html)
+- description: The [Magento Open Source 2.2.8 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)  and
+     [Magento Commerce 2.2.8  Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html)
     provide detailed information about the Magento Open Source 2.2.8 and Magento Commerce
     2.2.8 releases.
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3963
-- description: The Magento Open Source 2.3.1 Release Notes  and
-     Magento Commerce 2.3.1  Release Notes
+- description: The Magento Open Source 2.3.1 Release Notes  and
+     Magento Commerce 2.3.1  Release Notes
     provide detailed information about the Magento Open Source 2.3.1 and Magento Commerce
     2.3.1 releases.
   versions: 2.2.8
@@ -2939,7 +2939,8 @@ entries:
   type: Major update
   date: Aug 02 2018
 - description: Added Magento Cloud v2.1
-    and v2.2 release notes for `ece-tools` package v2002.0.13
+    and v2.2
+    release notes for `ece-tools` package v2002.0.13
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: Aug 04 2018

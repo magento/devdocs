@@ -19,7 +19,7 @@ Some restrictions in the core {{site.data.var.ee}} code base prevent you from up
 | Current Version | Upgrade Path |
 | --- | --- |
 | 2.1.3 and earlier | You must upgrade to version 2.1.4 or later before you continue. |
-| 2.1.4 and later | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html#v200209) and later. |
+| 2.1.4 and later | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v200209) and later. |
 | 2.2.x | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.8]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) and later. |
 
  {:.bs-callout-info}
