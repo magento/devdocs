@@ -15,7 +15,11 @@ The `{{site.data.var.mcc}}` package uses the following version sequence: `<major
 
 This release includes the following updates:
 
+- {:.new}Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the [post-deploy variables]({{site.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) topic for a detailed feature description.<!--MAGECLOUD-4444-->
+
 -  {:.fix}Fixed an issue caused by an invalid store URL that causes the post-deploy hook to fail when using the `WARM_UP_PAGES` functionality to populate the cache. This issue occurred only when URL rewrites were disabled.<!-- MAGECLOUD-4094 -->
+
+
 
 ## v1.0.1
 
