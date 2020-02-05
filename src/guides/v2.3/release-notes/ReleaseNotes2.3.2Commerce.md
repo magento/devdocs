@@ -820,7 +820,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4695-->
 
-*  The Reporting Security Issues section of the [Magento 2 README](https://github.com/magento/magento2/blob/2.3-develop/README.md) file has been updated to reflect use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
+*  The Reporting Security Issues section of the [Magento 2 README](https://github.com/magento/magento2/blob/2.3/README.md) file has been updated to reflect use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
 
 <!--- ENGCOM-4654-->
 

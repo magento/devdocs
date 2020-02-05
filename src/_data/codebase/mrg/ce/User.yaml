@@ -1,7 +1,7 @@
 ---
 title: Magento_User
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/User/README.md
 last_modified_at: '2015-08-27 15:34:05 -0500'
 content: |

@@ -1,7 +1,7 @@
 ---
 title: Magento_WebapiSecurity
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/WebapiSecurity/README.md
 last_modified_at: '2016-03-22 15:38:49 -0500'
 content: |

@@ -70,7 +70,7 @@ An event preset specifies observers and dispatched events handled by them. `<mag
 </preset>
 ```
 
-**Example:**:
+**Example**:
 
 ```xml
 <preset name="custom">

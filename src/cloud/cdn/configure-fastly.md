@@ -2,7 +2,6 @@
 group: cloud-guide
 title: Set up Fastly
 redirect_from:
-   - /cloud/configure/fastly-vcl-extend-timeout.html
    - /cloud/access-acct/fastly.html
 functional_areas:
   - Cloud
@@ -292,7 +291,7 @@ To check the version of Fastly CDN module for Magento 2:
    composer show *fastly*
    ```
 
-1. If the [latest release]((https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
+1. If the [latest release](https://github.com/fastly/fastly-magento2/releases)is not installed, complete the steps to upgrade the Fastly module.
 
 {:.procedure}
 To upgrade the Fastly module:

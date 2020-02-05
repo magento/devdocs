@@ -42,7 +42,9 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `only_x_left_in_stock` | Float | The "Only X left Threshold" assigned to the product. This attribute is defined in the `InventoryGraphQl` module.
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
+`price` | ProductPrices | Deprecated. Use `price_range` instead
+`price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
+`price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `related_products` | [ProductInterface] | An array of related products
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
@@ -55,27 +57,72 @@ Attribute | Data type | Description
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the `SwatchesGraphQl` module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the `TaxGraphQl` module.
 `thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
-`tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
-`tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
-`type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
+`tier_price` | Float | Deprecated. Use `price_tiers` instead
+`tier_prices` | [ProductTierPrices] | Deprecated. Use `price_tiers` instead
+`type_id` | String | Deprecated. Use the GraphQL `__typename` meta attribute instead
 `updated_at` | String | The timestamp indicating when the product was last updated
 `upsell_products` | [ProductInterface] | An array of up-sell products
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_path` | String | Deprecated. Use `canonical_url` instead
+`url_suffix` | String | The part of the URL that is appended to the `url_key`, such as `.html`. This attribute is defined in the `CatalogUrlRewriteGraphQl` module
 `url_rewrites` | [[UrlRewrite]](#urlRewriteObject) | A list of URL rewrites
-`websites` | [[Website]](#websiteObject) | An array of websites in which the product is available
+`websites` | [[Website]](#websiteObject) | Deprecated. This attribute is not applicable for GraphQL
 
 ### ProductPrices object {#ProductPrices}
+
+{:.bs-callout-info}
+The `ProductPrices` object has been deprecated. Use the [`PriceRange`](#PriceRange) object instead.
 
 The `ProductPrices` object contains the regular price of an item, as well as its minimum and maximum prices. Only composite products, which include bundle, configurable, and grouped products, can contain a minimum and maximum price.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
-`minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
-`regularPrice` | Price | The base price of a product.
+`maximalPrice` | Price | Deprecated. Use `PriceRange.maximum_price` instead
+`minimalPrice` | Price | Deprecated. Use `PriceRange.minimum_price` instead
+`regularPrice` | Price | Deprecated. Use `PriceRange.maximum_price` or `PriceRange.minimum_price` instead
+
+### PriceRange object {#PriceRange}
+
+The `PriceRange` object defines the price range for a product. If a product only has a single price, the minimum and maximum price will be the same.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`maximum_price` | ProductPrice | The highest possible final price for a product
+`minimum_price` | ProductPrice | The lowest possible final price for a product
+
+### ProductPrice object {#ProductPrice}
+
+The `ProductPrice` object includes the regular price, final price, and the difference between those two prices.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`discount` | ProductDiscount | The amount of the discount applied to the product. It represents the difference between the `final_price` and `regular_price`
+`final_price`| Money! | The price of the product after applying discounts
+`fixed_product_taxes` | [[FixedProductTax](#FixedProductTax)] | An array of fixed product taxes that either have been or can be applied to a product price
+`regular_price` | Money! | The regular price of the product, without any applied discounts
+
+### ProductDiscount object {#ProductDiscount}
+
+The `ProductDiscount` object expresses the discount applied to a product as a fixed amount, such as $5, and as a percentage, such as 10%. The discount originates from special pricing or a catalog price rule.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount_off` | Float | The actual value of the discount
+`percent_off` | Float | The discount expressed as a percentage
+
+### FixedProductTax object {#FixedProductTax}
+
+Some tax jurisdictions have a fixed product tax (FPT) that must be applied to certain types of products. An example FPT is the Waste Electrical and Electronic Equipment (WEEE) tax, which is collected on some types of electronics to offset the cost of recycling.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`amount` | Money | The amount of the fixed product tax
+`label` | String | The label assigned to the fixed product tax to be displayed on the frontend
 
 ### Price object {#Price}
+
+{:.bs-callout-info}
+The `Price` object has been deprecated. Use the [`ProductPrice`](#ProductPrice) object instead.
 
 The `Price` object defines the price of a product as well as any tax-related adjustments.
 
@@ -94,6 +141,9 @@ Attribute |  Data Type | Description
 `value` | Float | The price of the product
 
 #### PriceAdjustment array {#PriceAdjustment}
+
+{:.bs-callout-info}
+The `PriceAdjustment` object has been deprecated. In cases where the value for the `code` attribute was `WEEE`, use `fixed_product_taxes.label` instead. If the value was `tax` or `weee_tax`, the taxes will be included or excluded as part of the price in the `ProductPrice` or `FixedProductTax` object, respectively.
 
 The `PriceAdjustment` object defines the amount of money to apply as an adjustment, the type of adjustment to apply, and whether the item is included or excluded from the adjustment.
 
@@ -177,75 +227,48 @@ Attribute | Type | Description
 
 ### ProductTierPrices object {#ProductTier}
 
+{:.bs-callout-info}
+The `ProductTierPrices` object and all of its attributes have been deprecated. Use [`TierPrice`](#TierPrice) instead.
+
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
 Attribute | Type | Description
 --- | --- | ---
-`customer_group_id` | Int | The ID of the customer group
-`percentage_value` | Float | The percentage discount of the item
-`qty` | Float | The number of items that must be purchased to qualify for tier pricing
-`value` | Float | The price of the fixed price item
-`website_id` | Int | The ID assigned to the website
+`customer_group_id` | Int | Deprecated. This attribute is not applicable for GraphQL
+`percentage_value` | Float | Deprecated. Use `TierPrice.discount` instead
+`qty` | Float | Deprecated. Use `TierPrice.quantity` instead
+`value` | Float | Deprecated. Use `TierPrice.final_price` instead
+`website_id` | Int | Deprecated. This attribute is not applicable for GraphQL
 
-## PhysicalProductInterface {#PhysicalProductInterface}
+### TierPrice object {#TierPrice}
 
-`PhysicalProductInterface`defines the weight of all tangible products.
-
-Attribute | Type | Description
---- | --- | ---
-`weight` | Float | The weight of the item, in units defined by the store
-
-## LayerFilter object
-
-The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
+The `TierPrice` object defines a tier price, which is a price based on the quantity purchased.
 
 Attribute | Type | Description
 --- | --- | ---
-`filter_items` |  [LayerFilterItemInterface] | An array of filter items
-`filter_items_count` | Int | The number of filter items in filter group
-`name` | String | The layered navigation filter name
-`request_var` | String | The request variable name for the filter query
-
-### LayerFilterItemInterface
-
-`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
-
-Attribute | Type | Description
---- | --- | ---
-`items_count` | Int | The number of items the filter returned
-`label` | String | The label applied to a filter
-`value_string` | String | The value for filter request variable to be used in a query
-
-## SortFields object
-The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`default` | String | The default sort field
-`options` | `SortField` | An array that contains all the fields you can use for sorting
-
-### SortField object
-
-Attribute | Type | Description
---- | --- | ---
-`label` | String | The attribute's label
-`value` | String | The attribute name or code to use as the sort field
+`discount` | ProductDiscount | The price discount applied to this tier
+`final_price`| Money! | The price of the product at this tier
+`quantity` | Float | The minimum number of items that must be purchased to qualify for this price tier
 
 ### Website object {#websiteObject}
 
-Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID.
+{:.bs-callout-info}
+The `Website` object has been deprecated because it is not applicable for GraphQL.
+
+Use the `Website` attributes to retrieve information about the website's configuration, which includes the website name, website code, and default group ID. The `Website` object is defined in the StoreGraphQl module.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String | A code assigned to the website to identify it
 `default_group_id` | String | The default group ID that the website has
 `id` | Integer | The ID number assigned to the store
+`is_default` | Boolean | Indicates whether this is the default website
 `name` | String | The website name. Websites use this name to identify it easier
 `sort_order` | Integer | The attribute to use for sorting websites
 
 ### UrlRewrite object {#urlRewriteObject}
 
-The `products` query can request details about the `UrlRewrite` object.
+The `products` query can request details about the `UrlRewrite` object. This object is defined in the UrlRewriteGraphQl module.
 
 Attribute | Type | Description
 --- | --- | ---
@@ -260,3 +283,11 @@ Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
+
+## PhysicalProductInterface {#PhysicalProductInterface}
+
+`PhysicalProductInterface`defines the weight of all tangible products.
+
+Attribute | Type | Description
+--- | --- | ---
+`weight` | Float | The weight of the item, in units defined by the store

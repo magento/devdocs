@@ -205,7 +205,7 @@ pages:
           url: /cloud/cdn/configure-fastly.html
           versionless: true
           children:
-            - label: Customize error pages
+            - label: Customize error and maintenance pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
               versionless: true
 
