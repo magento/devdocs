@@ -61,7 +61,7 @@ hooks:
 
 Merging rules:
  - Scenarios are prioritized from their positions. Where right has higher priority than left. (C -> B → A)
- - If Scenario B has a step StepA with the same name as step StepA in Scenario A, step from Scenario B will be used
+ - If Scenario B has some step with the same name as step in Scenario A, step from Scenario B will be prioritized. By using the same step name you can override default step from the baseline scenario with your custom step.
 
 
 #### Removing default steps
