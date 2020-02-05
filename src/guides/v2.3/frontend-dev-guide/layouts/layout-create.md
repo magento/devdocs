@@ -9,8 +9,7 @@ functional_areas:
 
 If an existing page layout doesn't meet your requirements, then you can create a new page layout in Magento.
 
-For example, If a new page is going to be designed in `3-columns-double-footer` layout, you may create the new layout in the following way. Create a custom page-layout xml file in the below directory.
-app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/page_layout/3-columns-double-footer.xml
+For example, if a new page is going to be designed as `3-columns-double-footer` layout, you may create the new layout in the following way. Create a custom page-layout XML file in following directory `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/page_layout/3-columns-double-footer.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -24,8 +23,7 @@ app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/page_layout/3-columns
 
 ### Add the new layout in layouts.xml file
 
-Add the newly created page layout in the `layouts.xml` file in the below directory
-app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layouts.xml
+Add the newly created page layout to the `layouts.xml` file of the theme directory `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layouts.xml`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
