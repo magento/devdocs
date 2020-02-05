@@ -51,7 +51,7 @@ Your Git branch must have the following files for building and deploying in your
 
 We highly recommend the following best practices and considerations for your deployment process:
 
--  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html).
+-  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html).
 
 -  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configurations when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
 
