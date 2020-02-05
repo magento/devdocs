@@ -1,17 +1,15 @@
 versions:
-  - 2.2.4+
   - 2.3.0
   - 2.3.1
   - 2.3.2
   - 2.3.3
-extension:
+extensions:
   -
     name: Amazon Sales Channel
     versions:
       -
         name: 3.0.1
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -19,7 +17,6 @@ extension:
       -
         name: 3.0.0
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -27,7 +24,6 @@ extension:
       -
         name: 2.0.0
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -38,7 +34,6 @@ extension:
       -
         name: 3.0.1
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -46,7 +41,6 @@ extension:
       -
         name: 3.0.0
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -54,7 +48,6 @@ extension:
       -
         name: 2.0.2
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -62,7 +55,6 @@ extension:
       -
         name: 2.0.1
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -70,7 +62,6 @@ extension:
       -
         name: 2.0.0
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -78,7 +69,6 @@ extension:
       -
         name: 1.1.2
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -86,7 +76,6 @@ extension:
       - 
         name: 1.1.1
         support:
-          2.2.4+: general availability
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -97,7 +86,6 @@ extension:
       -
         name: 1.6.1
         support:
-          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -105,21 +93,18 @@ extension:
       -
         name: 1.1.2
         support:
-          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
       -
         name: 1.1.0
         support:
-          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
       -
         name: 1.0.3
         support:
-          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
           2.3.2: general availability
@@ -129,7 +114,6 @@ extension:
       -
         name: 1.0.0
         support:
-          2.2.4+: not supported
           2.3.0: open beta
           2.3.1: general availability
           2.3.2: general availability
