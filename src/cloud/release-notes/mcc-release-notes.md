@@ -19,8 +19,6 @@ This release includes the following updates:
 
 -  {:.fix}Fixed an issue caused by an invalid store URL that causes the post-deploy hook to fail when using the `WARM_UP_PAGES` functionality to populate the cache. This issue occurred only when URL rewrites were disabled.<!-- MAGECLOUD-4094 -->
 
-
-
 ## v1.0.1
 
 This release includes the following updates:
