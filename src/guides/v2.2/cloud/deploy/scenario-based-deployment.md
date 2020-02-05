@@ -60,7 +60,7 @@ hooks:
 ```
 
 Merging rules:
- - Scenarios are prioritized from their positions. Where right has higher priority than left. (C -> B → A)
+ - Scenarios are prioritized based on their sequence in hook's definition. The last defined scenario to the right has the highest priority and removes or overrides same steps from other scenarios as well as adds new steps`. The same rules apply for more than 2 scenarios with them being prioritized from right to left. (C → B → A)
  - If Scenario B has some step with the same name as step in Scenario A, step from Scenario B will be prioritized. By using the same step name you can override default step from the baseline scenario with your custom step.
 
 
