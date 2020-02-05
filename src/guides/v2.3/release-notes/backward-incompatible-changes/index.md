@@ -53,6 +53,41 @@ The following example shows the diff in `Magento\Catalog\Model\ResourceModel\Pro
         );
 ...
 ```
+## Customer data section invalidation
+
+Magento 2.3.4 introduced a change in the customer data sections invalidation logic.
+
+### Issue
+
+With the release of Magento 2.3.4, you can no longer invalidate custom customer sections in `etc/frontend/sections.xml` by declaring an action node without specifying any related sections.
+
+Here’s an example of a typical usage. This usage is no longer compatible with deployments running Magento 2.3.4:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <action name="customer/account/logout"/>
+</config>
+```
+
+Deployments that use custom customer sections with this type of action invalidation may face an issue when private content isn’t entered correctly. As a result, problems may occur in the storefront checkout and cart workflows.
+
+### Workaround
+
+For all actions where it is required to invalidate custom customer sections, use either `*` as the section name or use empty actions and ensure that they will not be overridden by any other rules.
+
+Example:
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <action name="customer/account/editPost">
+        <section name="*"/>
+    </action>
+</config>
+```
+
+See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html) for information on how to invalidate private content.
 
 ## Application framework libraries
 
