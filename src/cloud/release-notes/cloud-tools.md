@@ -25,7 +25,7 @@ See the package release notes for details:
 -  [`{{site.data.var.mcd}}` release notes]
 -  [`{{site.data.var.mcc}}` release notes]
 
-[`{{site.data.var.ct}}` release notes]: {{ site.baseurl }}/cloud/release-notes/ece-release-notes.html
-[`{{site.data.var.mcc}}` release notes]: {{ site.baseurl }}/cloud/release-notes/mcc-release-notes.html
-[`{{site.data.var.mcd}}` release notes]: {{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html
-[`{{site.data.var.mcp}}` release notes]: {{ site.baseurl }}/cloud/release-notes/mcp-release-notes.html
+[`{{site.data.var.ct}}` release notes]: {{site.baseurl}}/cloud/release-notes/ece-release-notes.html
+[`{{site.data.var.mcc}}` release notes]: {{site.baseurl}}/cloud/release-notes/mcc-release-notes.html
+[`{{site.data.var.mcd}}` release notes]: {{site.baseurl}}/cloud/release-notes/mcd-release-notes.html
+[`{{site.data.var.mcp}}` release notes]: {{site.baseurl}}/cloud/release-notes/mcp-release-notes.html

@@ -48,7 +48,7 @@ A parent and a child theme can belong to different vendors. For example, your cu
 
 ## Override view.xml file
 
-If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<theme_dir>/etc/view.xml` file in your theme, it overrides the parent's file.
+If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<theme_dir>/etc/view.xml` file in your theme, it extends the parent file.
 
 ## Override static assets {#theme-inherit-static}
 

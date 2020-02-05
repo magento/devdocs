@@ -41,7 +41,7 @@ Item | Replacement
 
 ### CLI command changes
 
-In {{ site.data.var.ct }} v2002.1.0, we removed support for the following CLI commands.
+The following table summarizes CLI command changes in {{ site.data.var.ct }} v2002.1.0 that might require you to update commands or scripts.
 
  Command| Replacement
  -------- |-------

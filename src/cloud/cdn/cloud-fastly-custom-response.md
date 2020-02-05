@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Customize error pages
+title: Customize error and maintenance pages
 redirect_from:
    - /cloud/configure/fastly-vcl-extend-timeout.html
 functional_areas:

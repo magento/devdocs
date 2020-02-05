@@ -1,7 +1,7 @@
 ---
 title: Magento_Deploy
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/Deploy/README.md
 last_modified_at: '2019-07-16 21:19:40 +0100'
 content: "## Purpose of module\n\nDeploy is a module that holds collection of services

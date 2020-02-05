@@ -9,7 +9,7 @@ See [Paypal Payflow Pro payment method]({{page.baseurl}}/graphql/payment-methods
 
 ## Syntax
 
-`createPayflowProToken(input: PayflowProTokenInput): PayflowProToken`
+`createPayflowProToken(input: PayflowProTokenInput): CreatePayflowProTokenOutput`
 
 ## Example usage
 
@@ -83,7 +83,10 @@ Attribute |  Data Type | Description
 
 ## Output attributes
 
-The `PayflowProToken` object contains the following attributes:
+{:.bs-callout-info}
+The `createPayflowProToken` mutation previously returned a `PayflowProToken` object, which has been deprecated. The mutation now returns a `CreatePayflowProTokenOutput` object. The contents of these objects are identical.
+
+The `CreatePayflowProTokenOutput` object contains the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---

@@ -112,7 +112,7 @@ include note.html
 type='info'
 content='If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:
 
-*  [flatlinesecurity](http://flatlinesecurity.com/posts/*arnish-4-selinux/)
+*  [flatlinesecurity](http://flatlinesecurity.com/posts/varnish-4-selinux/)
 *  [CentOS wiki](https://wiki.centos.org/HowTos/SELinux)
 *  [CentOS documentation](https://www.centos.org)'
 

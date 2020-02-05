@@ -114,7 +114,7 @@ The `isTemplate` configuration for the original UI component must be `true` to s
 
 In the following example, a custom Table UI component is created using an existing configuration template with the name `my_row_template_component_name`.
 
-The [`mageUtils`](https://github.com/magento/magento2/tree/2.3-develop/lib/web/mage/utils) helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
+The [`mageUtils`](https://github.com/magento/magento2/tree/2.3/lib/web/mage/utils) helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
 
 **Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/table.js`
 
@@ -145,4 +145,3 @@ define([
     });
 });
 ```
-

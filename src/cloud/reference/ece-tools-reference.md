@@ -31,24 +31,37 @@ You use the following commands to generate the Docker configuration files and bu
 
 Command | Action
 :------ | :------
-`docker:build` | Builds the docker environment in [production mode][mode] by default and verifies configured service versions.
-`docker:build --mode="developer"` | Builds the docker environment in [developer mode][mode].
-`docker:config:convert` | Convert PHP configuration files to Docker ENV files.
+`ece-docker build:compose` | Builds the docker environment in [production mode][mode] by default and verifies configured service versions.
+`ece-docker build:compose --mode="developer"` | Builds the docker environment in [developer mode][mode].
+`ece-docker build:compose --mode="production"` | Builds the docker environment in [production mode][mode].
+`ece-docker image:generate:php` | Convert PHP configuration files to Docker ENV files.
 
-The following example lists the `{{site.data.var.ct}}` Docker commands:
+The following example lists the {{site.data.var.mcd-prod}} commands:
 
 ```bash
-php ./vendor/bin/ece-tools list | grep docker
+php ./vendor/bin/ece-docker list
 ```
 
 Sample response:
 
 ```terminal
- docker
-  docker:build              Build docker configuration
-  docker:config:convert     Convert raw config to .env files configuration
+Available commands:
+  help                Displays help for a command
+  list                Lists commands
+ build
+  build:compose       Build docker configuration
+  build:dist          Generates Docker .dist files
+ image
+  image:generate:php  Generates proper configs
+ build
+  build:compose       Build docker configuration
+  build:dist          Generates Docker .dist files
+ image
+  image:generate:php  Generates proper configs
 ```
 {:.no-copy}
+
+See [Docker development] to learn more about using `{{site.data.var.mcd-prod}}` for development and testing your {{site.data.var.ece}} projects.
 
 ## Services, routes, and variables
 

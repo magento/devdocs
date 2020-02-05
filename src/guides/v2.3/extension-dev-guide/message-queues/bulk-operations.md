@@ -89,7 +89,7 @@ try {
 }
 ```
 
-See [Create a publisher]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.
+See [Create a consumer]( {{page.baseurl}}/extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.
 
 ### Get the status of operations
 
@@ -99,7 +99,7 @@ Value | Constant
 --- | ---
 0 | NOT_STARTED
 1 | IN_PROGRESS
-2 | FINISHED_SUCCESFULLY
+2 | FINISHED_SUCCESSFULLY
 3 | FINISHED_WITH_FAILURE
 
 #### Related Topic
