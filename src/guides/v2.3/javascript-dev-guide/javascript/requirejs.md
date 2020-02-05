@@ -47,6 +47,9 @@ map: {
 }
 ```
 
+{:.bs-callout-tip}
+The `map` configuration can also be used to override a JS module with a custom JS module. More information can be found at [Custom JS component]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#js_replace)
+
 ### paths {#requirejs-config-paths}
 
 The `paths` configuration, similar to `map`, is used for aliasing not just any real AMD module that calls `define()`, but also any JS file (event from a URL), HTML templates, etc. Magento uses this to alias URLs and third party libraries.
