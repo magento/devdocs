@@ -46,7 +46,7 @@ As you can see each hook described as xml file with defined steps in it. For exa
 </scenario>
 ```
 
-Such format are giving a possibility to extend default scenarios with changes that needed for your project.
+This approach provides a possibility to extend default scenarios with custom steps which your project may need as part of custom build, deploy or post-deploy processes.
 
 
 ## Extend default scenario
