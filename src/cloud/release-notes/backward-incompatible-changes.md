@@ -3,23 +3,41 @@ group: cloud-guide
 title: Backward incompatible changes
 ---
 
-Use the following information to learn about backward incompatible changes that might require you to adjust Cloud configuration and processes for existing Cloud projects when you upgrade to the latest release of the {{site.data.var.ct}} package or other {{site.data.var.csuite}} packages.
+Use the following information to learn about backward incompatible changes that might require you to adjust Cloud configuration and processes for existing Cloud projects when you upgrade to the latest release of the `{{site.data.var.ct}}` package or other {{site.data.var.csuite}} packages.
+
+## {{site.data.var.ct}} changes
+
+Some functionality previously included in the `{{site.data.var.ct}}` package is now provided in separate packages. These packages are composer dependencies for `{{site.data.var.ct}}`, which are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
+
+The new architecture should not affect your install or update processes.  However, you might need to change some command syntax and processes when working with your {{site.data.var.ece}} project. For details, review the release notes and backward incompatible changes information for each package.
+
+-  **`{{site.data.var.mcp}}`**–See [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html) and [Magento Cloud Patches changes](#magento-cloud-patches-changes).
+
+-  **`{{site.data.var.mcd}}`**–See [Release notes for magento/magento-cloud-docker]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html) and [{{site.data.var.mcd-prod}} changes](#magento-cloud-docker-changes).
+
+-  **`{{site.data.var.mcc}}`**–See [Release notes for `{{site.data.var.mcc}}`]({{ site.baseurl }}/cloud/release-notes/mcc-release-notes.html).
+
+{:.bs-callout-info}
+See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html) to learn about updates specific to the `{{site.data.var.ct}}` package.
 
 ### Service version requirement changes
 
 We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
 
+{:.bs-callout-warning}
+Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running Magento 2.1.15 or later. If your project uses an earlier release, you must [upgrade the Magento version]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.
+
 ### Environment configuration changes
 
 The following table provides information about environment variables and other environment configuration files that were removed or deprecated in `{{ site.data.var.ct }}` v2002.1.0.
 
-   Item | Replacement
-   -------- | -------
-   `SCD_EXCLUDE_THEMES` variable | [`SCD_MATRIX`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_matrix)
-   `STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
-   `DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
-   `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
-   `build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
+Item | Replacement
+-------- | -------
+`SCD_EXCLUDE_THEMES` variable | [`SCD_MATRIX`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_matrix)
+`STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
+`DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
+`STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
+`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
 
 ### CLI command changes
 

@@ -13,6 +13,26 @@ The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}}
 
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+{:.bs-callout-info}
+See [Apply patches] to learn more about how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
+
+## v1.0.1
+
+We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
+
+This release includes the following updates:
+
+-  {:.fix}**Updated patches to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.<!--MAGECLOUD-4606-->
+
+-  {:.fix}**Updated patch for Elasticsearch catalog pagination fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp}} v1.0 with a more effective fix.<!--MAGECLOUD-4847-->
+
+-  {:.fix}**Updated the Magento Page Builder patches**–Update previously released Page Builder security patches for Magento versions 2.3.1 and 2.3.2 to address an issue in Page Builder preview that allows unauthenticated users to use some templating methods, which can lead to remote code execution (RCE) and global information leak. These patches were initially released in {{site.data.var.mcp}} v1.0.0.<!--MAGECLOUD-4884-->
+
+-  {:.fix}**Fix cron deadlocks and improve cron locking**–<!--MAGECLOUD-4530-->
+
+   -  {:.fix}Fixes an issue with some cron jobs not running due to an incorrect status value in the `cron_schedule` table. Now, we use the Magento lock framework to check and update cron job status instead of using the `cron_schedule` table. Cron jobs that have ended with an error status are retried during the next `cron:run` instead of waiting 24 hours.
+   -  {:.new}Adds a retry operation to avoid deadlock during updates to the data in the `cron_schedule` table.
+
 ## v1.0.0
 
 This is the first release of the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package version 2002.0.22 or later releases.
@@ -21,22 +41,10 @@ This is the first release of the [`magento/magento-cloud-patches`](https://githu
 
 This release includes the following patches and critical fixes:
 
--  {:.fix}<!--MAGECLOUD-4649-->**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.
+-  {:.fix}**Page Builder security patches for 2.3.1.x and 2.3.2.x releases**–Fixes an issue in Page Builder preview that allows unauthenticated users to access some templating methods that can be used to trigger arbitrary code execution over the network (RCE) resulting in global information leaks. This issue can occur when using unsupported versions of Page Builder with {{ site.data.var.ee }} versions 2.3.1 and 2.3.2.<!--MAGECLOUD-4649-->
 
--  {:.fix}<!--MAGECLOUD-4428-->**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.
+-  {:.fix}**MSI patches**–Fixes issues that caused indexing errors and performance issues when using default inventory settings for managing stock.<!--MAGECLOUD-4428-->
 
--  {:.fix}<!--MAGECLOUD-4422-->**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.
+-  {:.fix}**Backward Compatibility of new Mail Interfaces**-Fixes a backward incompatibility issue caused by the `Magento\Framework\Mail\EmailMessageInterface` PHP interface introduced in {{ site.data.var.ee }} v2.3.3. In the scope of this patch, the new `EmailMessageInterface` inherits from the old `MessageInterface`, and {{ site.data.var.ee }} core modules are reverted to depend on `MessageInterface`.<!--MAGECLOUD-4422-->
 
--  {:.fix}<!--MAGECLOUD-4448-->**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.
-
-## v1.0.1
-
-All Magento Open Source 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) are included in this release. If you copied any patches into your project previously, remove them to avoid conflicts.
-
-This release includes the following patches and critical fixes:
-
--  {:.fix}<!--MAGECLOUD-4606-->**Review Hotfixes List and Add All Missing for 2.1.4+**–Updated the magento-cloud-patches package to include all Magento Open Source 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download).
-
--  {:.fix}<!--MAGECLOUD-4847-->**Fixed issues caused by the MC-21696 hot fix from `ece-tools` patches**–Replaced the patch for MC-21696 with a more accurate fix.
-
--  {:.fix}<!--MAGECLOUD-4884-->**Update PageBuilder Patches for RCE**–Update PageBuilder Patches which were bundled for 2.3.1 and 2.3.2 in MAGECLOUD-4649 before + add few more patches..
+-  {:.fix}**Catalog pagination does not work on Elasticsearch 6.x**–Fixes a critical issue with search result pagination that affects customers using Elasticsearch 6.x as the catalog search engine.<!--MAGECLOUD-4448-->

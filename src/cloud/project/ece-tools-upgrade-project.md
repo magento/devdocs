@@ -5,6 +5,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
+
 If you still use a version of {{site.data.var.ece}} that does not contain the `{{site.data.var.ct}}` package, then your project requires an _upgrade_. We deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages in favor of the `{{site.data.var.ct}}` package.
 
 You must perform a one-time, manual step to update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file, located in the root directory. This constraint enables updates for {{site.data.var.ece}} metapackages—including removing deprecated packages—without upgrading your current {{site.data.var.ee}} version. If your project contains the `{{site.data.var.ct}}` package and you have updated the metapackage, you can skip the following upgrade and see [Update {{site.data.var.ct}}]({{ site.baseurl }}/cloud/project/ece-tools-update.html).
@@ -32,7 +33,7 @@ The following example places a constraint for the {{site.data.var.ece}} metapack
 
 ```json
 "require": {
-    "magento/magento-cloud-metapackage": ">=2.2.0 <2.2.1"
+    "magento/magento-cloud-metapackage":  ">=2.2.0 <2.2.1"
 },
 ```
 
@@ -46,7 +47,8 @@ To upgrade project to use ece-tools:
 1. Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 
     ```bash
-    composer require "magento/magento-cloud-metapackage":">=2.2.0 <2.2.1" --no-update
+    composer require "magento/
+    /magento-cloud-metapackage":  ">=2.2.0 <2.2.1" --no-update
     ```
 
 1. Update the metapackage.
