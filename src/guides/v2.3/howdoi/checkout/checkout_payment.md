@@ -308,5 +308,24 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
     </body>
 </page>
 ```
+## Step 5:Run the CLI Commands {#compile-code-deploy-contents-and-clean-the-cache}
+
+1.Compile the code:
+
+```bash
+bin/magento setup:di:compile
+```
+
+2.deploy the static contents:
+
+```bash
+bin/magento setup:static-content:deploy
+```
+3.clean the cache:
+
+```bash
+bin/magento cache:clean
+```
+
 
 For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)
