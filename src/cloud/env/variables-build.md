@@ -21,6 +21,19 @@ The following variables were removed in v2.2:
 -  `skip_di_clearing`
 -  `skip_di_compilation`
 
+### `ERROR_REPORT_DIR_NESTING_LEVEL`
+
+-  **Default**—`1`
+-  **Version**—Magento 2.1.4 and later
+
+Subdirectories nesting level, which indicates how many nested subdirectories will be created in the directory `<magento_root>/var/report/` before saving the error report. [Directories Nesting Level Changes for Error Reporting]({{ page.baseurl }}/cloud/live/configure/directories-nesting-level-changes-for-error-reporting.html)
+
+```yaml
+stage:
+  build:
+    ERROR_REPORT_DIR_NESTING_LEVEL: 2
+```
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
