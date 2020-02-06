@@ -14,18 +14,20 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `createEmptyCart` mutation creates an empty shopping cart and generates a cart ID.
+The `customerCart` query returns the active cart for the logged-in customer. If the cart does not exist, the query creates one. The customer’s authorization token must be specified in the headers. ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes describes these tokens.
 
 {:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the Authorization parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+Use the [`createEmptyCart`]({{page.baseurl}}/graphql/mutations/create-empty-cart.html) mutation to create an empty shopping cart and generate a cart ID for a guest user. If the guest later logs in as a customer, use the [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation to transfer the contents of the guest cart into the customer's cart.
 
 **Request:**
 
-The following mutation creates an empty cart:
+The customer created in the previous step does not have an active cart. The following query creates an empty cart and returns the cart ID:
 
 ```text
-mutation {
-  createEmptyCart
+{
+  customerCart{
+    id
+  }
 }
 ```
 
@@ -34,7 +36,9 @@ mutation {
 ```json
 {
   "data": {
-    "createEmptyCart": "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
+    "customerCart": {
+      "id": "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
+    }
   }
 }
 ```
@@ -43,4 +47,4 @@ In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUj
 
 ## Verify this step {#verify-step}
 
-There are no additional verification steps. The values of `quote` and `entity_id` value are  not displayed on the website or in the Magento Admin.
+There are no additional verification steps. The value of `id` value is not displayed on the website or in the Magento Admin.
