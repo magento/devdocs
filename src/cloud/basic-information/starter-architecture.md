@@ -66,11 +66,11 @@ The Production and Staging environments include the following technologies. You 
 -  Fastly for HTTP caching and CDN
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
 -  Redis server
--  Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
+-  Elasticsearch for searching for {{site.data.var.ece}} 2.2 and later
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.2.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 
