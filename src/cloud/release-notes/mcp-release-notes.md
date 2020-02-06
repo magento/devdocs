@@ -25,7 +25,10 @@ This release includes the following updates:
 
 Catalog pagination does not work on Elasticsearch 6.x
 
--  {:.fix}<!--MAGECLOUD-4884-->**Updated the Magento Page Builder patches**–Update previously released Page Builder security patches for Magento versions 2.3.1 and 2.3.2 to address an issue in Page Builder preview that allows unauthenticated users to use some templating methods, which can lead to remote code execution (RCE) and global information leak. These patches were initially released in {{site.data.var.mcp}} v1.0.0.
+-  {:.fix}<!--MAGECLOUD-4884-->**Updated the Magento Page Builder patches**–In {{site.data.var.mcp-prod}} 1.0.0, we bundled patches for Page Builder to address known remote code execution (RCE) issues, with the initial fix based on Magento 2.3.3. We have updated these patches with a more stable implementation based on Magento 2.3.4., which includes multiple optimizations for fixing the issue.
+
+If you have an older version of the {{site.data.var.mcp}} package, you are still protected from the RCE vulnerability issues. If you update to {{site.data.var.mcp}} 1.0.1 or later, you will have a better implementation of the same fix.
+
 
 ## v1.0.0
 
