@@ -438,8 +438,9 @@ pages:
           url: /cloud/deploy/cloud-deployment-process.html
           versionless: true
 
-        - label: Scenario based deployment
+        - label: Scenario-based deployment
           url: /cloud/deploy/scenario-based-deployment.html
+          versionless: true
 
         - label: Zero downtime deployment
           url: /cloud/deploy/reduce-downtime.html

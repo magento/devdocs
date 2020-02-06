@@ -25,6 +25,12 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}<!--MAGECLOUD-4567-->We moved Magento patches from the {{site.data.var.ct}} repository to the [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) repository. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).
 
+-  {:.new}**Support for scenario-based deployments**–<!--MAGECLOUD-4101-->
+
+   -  {:.new}Now you can customize the build, deploy, and post-deploy processes using XML configuration files to override or customize the default configuration.
+
+   -  {:.new}**Changed the `hooks` configuration in `.magento.app.yaml`**–We updated the `hooks` configuration format to support scenario-based deployments.  The legacy format from earlier {{site.data.var.ct}} 2002.0.X release is still supported. However, you must update to the new format to use the scenario-based deployment feature. See [Scenario-based deployments]({{site.baseurl}}/cloud/deploy/scenario-based-deployment.html#add-scenarios-using-build-and-deploy-hooks).
+
 -  {:.new}**New cron command**–You can now manually manage cron processing in your Magento Commerce Cloud environment using the `cron:disable` and `cron:enable` commands. Use the disable command to stop all active cron processes and disable all Magento cron jobs.  Use the enable command to re-enable cron jobs when you are ready.  See [Disable cron jobs]({{site.baseurl}}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs).
 
 -  {:.new}<!--MAGECLOUD-4444-->Extended the functionality of the WARM_UP_PAGES environment variable to support cache preloading for specific product pages. See the expanded definition in the [post-deploy variables]({{site.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) topic.
