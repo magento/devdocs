@@ -452,6 +452,7 @@ pages:
 
         - label: Smart wizards
           url: /cloud/deploy/smart-wizards.html
+          versionless: true
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
       versionless: true
