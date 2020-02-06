@@ -14,7 +14,7 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. It i
 
 ## Upgrading from older versions of the Magento application
 
-If you are upgrading from 2.1.4 or later to 2.2.X or later, review the [Magento technology stack requirements]. Your upgrade tasks may include the following:
+If you are upgrading from 2.1.4 or later to 2.2.x or later, review the [Magento technology stack requirements]. Your upgrade tasks may include the following:
 
 -  Upgrade your PHP version
 -  Convert an older configuration management file

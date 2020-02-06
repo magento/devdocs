@@ -4,8 +4,67 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Jan 28 19:11:00 2020
+updated: Tue Feb 4 12:02:47 2020
 entries:
+- description: Updated the Magento CLI reference ([Commerce](https://devdocs.magento.com/guides/v2.2/reference/cli/magento-commerce.html)
+    \| [Open Source](https://devdocs.magento.com/guides/v2.2/reference/cli/magento.html)).
+  versions: 2.2.11
+  type: Major update
+  date: January 30, 2020
+  link: https://github.com/magento/devdocs/pull/6506
+- description: Added CLI command step to [Add a new field in address form](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_new_field.html).
+  versions: 2.3.x
+  type: Major update
+  date: January 30, 2020
+  link: https://github.com/magento/devdocs/pull/6499
+- description: Updated `composer.lock` data files for the 2.3.4 release.
+  versions: 2.2.11, 2.3.4
+  type: Technical changes
+  date: January 29, 2020
+  link: https://github.com/magento/devdocs/pull/6490
+- description: Updated the Magento CLI references for [Open Source](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-commerce.html).
+  versions: 2.3.4
+  type: Major update
+  date: January 29, 2020
+  link: https://github.com/magento/devdocs/pull/6491
+- description: Updated the [Start message queue consumers](https://devdocs.magento.com/guides/v2.3/config-guide/mq/manage-message-queues.html)
+    topic to add the `consumers-wait-for-messages` option, which can help prevent
+    stuck deployments caused by long delays in message queue processing.
+  versions: 2.3.4
+  type: Technical changes
+  date: January 29, 2020
+  link: https://github.com/magento/devdocs/pull/6437
+- description: Added the backward incompatible changes [reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#233---234)
+    after the Magento 2.3.4 release.
+  versions: 2.3.4
+  type: Major update
+  date: January 28, 2020
+  link: https://github.com/magento/devdocs/pull/6484
+- description: Updated [GraphQL Overview](https://devdocs.magento.com/guides/v2.3/graphql/index.html)
+    to reflect recent accomplishments and to provide information about what's to come.
+  versions: 2.3.4
+  type: Major update
+  date: January 28, 2020
+  link: https://github.com/magento/devdocs/pull/6485
+- description: Published all documentation updates related to the Q1 2020 Commerce
+    and Open Source releases.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: January 28, 2020
+  link: https://github.com/magento/devdocs/pull/6466
+- description: Added the backward incompatible changes [reference](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html#releases-2_2_10-2_2_11)
+    after the Magento 2.2.11 release.
+  versions: 2.2.11
+  type: Major update
+  date: January 28, 2020
+  link: https://github.com/magento/devdocs/pull/6483
+- description: Updated the [Module reference guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)
+    after the 2.3.4 release.
+  versions: 2.3.4
+  type: Major update
+  date: January 28, 2020
+  link: https://github.com/magento/devdocs/pull/6489
 - description: Added information about using [non-default sort attributes](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
     with the `products` query.
   versions: 2.3.4

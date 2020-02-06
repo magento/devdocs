@@ -72,11 +72,11 @@ pages:
         - label: List widget
           url: /javascript-dev-guide/widgets/widget_list.html
 
-        - label: Magnifier widget
-          url: /javascript-dev-guide/widgets/widget_gallery_mg.html
-
         - label: Loader widget
           url: /javascript-dev-guide/widgets/widget_loader.html
+
+        - label: Magnifier widget
+          url: /javascript-dev-guide/widgets/widget_gallery_mg.html
 
         - label: MediaUploader widget
           url: /javascript-dev-guide/widgets/widget-media-uploader.html

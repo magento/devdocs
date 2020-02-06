@@ -11,7 +11,7 @@ To fully upgrade {{site.data.var.ece}}, see [Upgrade Magento Commerce (Cloud)]({
 
 ## Highlights {#highlights}
 
-{{site.data.var.ece}} 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. For full {{site.data.var.ece}} highlights and updates, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html)
+{{site.data.var.ece}} 2.2.0 includes a wealth of new, exciting features, and hundreds of enhancements and fixes. For full {{site.data.var.ece}} highlights and updates, see Magento Commerce 2.2.0 Release Notes.
 
 Look for the following {{site.data.var.ece}} highlights in this release:
 
@@ -25,13 +25,13 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 *  **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
-*  **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/packages-cloud.html) have been upgraded to the latest stable version.
+*  **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.3/release-notes/packages-cloud.html) have been upgraded to the latest stable version.
 
-*  **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/config-guide/deployment/pipeline/).
+*  **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ site.baseurl }}/guides/v2.3/config-guide/deployment/pipeline/).
 
 *  **Bundled extensions**. This release of Magento includes the first third-party extension that we are bundling with Magento Commerce -- Magento Social. This extension establishes a connection between your store and your corporate Facebook account, and creates a page with products from your catalog. When shoppers click a product, they are redirected to the corresponding product page in your Magento store.
 
-*  **Integrated Signifyd fraud protection**. You can learn more about this fraud protection service, which can help merchants eliminate liability for any losses or fees from fraudulent orders, in [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html).
+*  **Integrated Signifyd fraud protection**. You can learn more about this fraud protection service, which can help merchants eliminate liability for any losses or fees from fraudulent orders, in [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.3/payments-integrations/signifyd/signifyd.html).
 
 *  **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilience against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks.
 
@@ -39,7 +39,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 *  **Substantial contributions from our Community members**. Our Community Engineering Team has been working with skilled and enthusiastic community members, and together they've added hundreds of pull requests to the Magento code base. For more information about our Community Engineering Team. see [Magento Community Engineering](https://github.com/magento-engcom).
 
-Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation]({{ site.baseurl }}/guides/v2.3/).
 
 ## Security enhancements {#security}
 
@@ -51,11 +51,11 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 ## Known issues {#known}
 
-For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
+For all known {{site.data.var.ee}} 2.2.0 GA issues, see Magento Commerce 2.2.0 Release Notes.
 
 ## Fixed issues {#fixed}
 
-This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see [Magento Commerce 2.2.0 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.0EE.html).
+This release contains numerous fixes and enhancements. This section includes only fixes for {{site.data.var.ece}}. For all known {{site.data.var.ee}} 2.2.0 GA issues, see Magento Commerce 2.2.0 Release Notes.
 
 <!--RFC-125-->
 
