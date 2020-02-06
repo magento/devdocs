@@ -29,7 +29,6 @@ Catalog pagination does not work on Elasticsearch 6.x
 
 If you have an older version of the {{site.data.var.mcp}} package, you are still protected from the RCE vulnerability issues. If you update to {{site.data.var.mcp}} 1.0.1 or later, you have a better implementation of the same fix.
 
-
 ## v1.0.0
 
 This is the first release of the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package version 2002.0.22 or later releases.
