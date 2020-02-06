@@ -231,7 +231,7 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
--  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+-  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
 {:.bs-callout-info}
 Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
