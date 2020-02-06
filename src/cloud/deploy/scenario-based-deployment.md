@@ -7,11 +7,11 @@ functional_areas:
 ---
 
 With `{{site.data.var.ct}}` 2002.1.0 and later, you can use the scenario-based deployment feature to customize the default deployment behavior.
-This feature is implemented using **scenarios** and **steps**:
+This feature uses **scenarios** and **steps** in the configuration:
 
 -  **Scenario configuration**–Each deployment hook is a *scenario*, which is an XML configuration file that describes the sequence and configuration parameters to complete Magento deployment tasks. You configure the scenarios in the `hooks` section of the `.magento.app.yaml` file.
 
--  **Step configuration**–Each scenario file specifies a sequence of *steps* where each step is an XML structure that programmatically describes the operations required to complete deployment tasks.
+-  **Step configuration**–Each scenario uses a sequence of *steps* that programmatically describe the operations required to complete deployment tasks. You configure the steps in an XML-based scenario configuration file.
 
 {{site.data.var.ece}} provides a set of [default scenarios] and [default steps] in the {{site.data.var.ct}} package. You can customize deployment behavior by creating custom XML configuration files to override or customize the default configuration. You can also use scenarios and steps to run code from custom modules.
 
@@ -266,7 +266,11 @@ To register a module with the {{site.data.var.ct}} package:
 
 To learn more about dependency injection, see [Symfony Dependency Injection](https://symfony.com/doc/current/components/dependency_injection.html).
 
+<<<<<<< HEAD
 [default scenarios]: https://github.com/magento/ece-tools/tree/2002.1/scenario
+=======
+[default scenarios]: https://github.com/magento/ece-tools/tree/2002.1/develop/scenario
+>>>>>>> e9d470a9bbae51493432ab0bab479e16612e3f7e
 [default steps]: https://github.com/magento/ece-tools/tree/2002.1/src/Step
 [default deploy scenario]: https://github.com/magento/ece-tools/blob/develop/scenario/deploy.xml
 [EnableMaintenanceMode PHP script]: https://github.com/magento/ece-tools/blob/develop/src/Step/EnableMaintenanceMode.php
