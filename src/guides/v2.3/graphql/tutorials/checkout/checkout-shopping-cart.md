@@ -47,4 +47,4 @@ In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUj
 
 ## Verify this step {#verify-step}
 
-There are no additional verification steps. The value of `id` value is not displayed on the website or in the Magento Admin.
+There are no additional verification steps. The value of `id` is not displayed on the website or in the Magento Admin.
