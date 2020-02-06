@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as Docker environment deployment, cron management, and project verification. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
+The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying  Magento patches and hot fixes. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
 
 {% include cloud/note-ece-tools-package.md %}
 
@@ -25,7 +25,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package includes a dependency for the `{{site.data.var.mcd}}` package, which provides functionality and Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
 
 You use the following commands to generate the Docker configuration files and build your environment.
 
@@ -122,9 +122,17 @@ Ideal state is configured
 
 {% include cloud/note-ece-tools-release-info.md %}
 
+## Magento patches and custom patches
+
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
+
 <!-- link definitions -->
 [mode]: {{site.baseurl}}/cloud/docker/docker-config.html#launch-modes
 [hooks]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [cloudvar]: {{site.baseurl}}/cloud/env/variables-cloud.html
 [wizard]: {{site.baseurl}}/cloud/deploy/smart-wizards.html
 [Docker development]: {{site.baseurl}}/cloud/docker/docker-development.html
+[Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
+[magento/magento-cloud-docker]: https://github.com/magento/magento-cloud-docker
+[magento/magento-cloud-patches]: https://github.com/magento/magento-cloud-patches
+

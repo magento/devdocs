@@ -9,20 +9,14 @@ Use the following information to learn about backward incompatible changes that 
 
 Some functionality previously included in the `{{site.data.var.ct}}` package is now provided in separate packages. These packages are composer dependencies for `{{site.data.var.ct}}`, which are installed and updated automatically when you install or update {{site.data.var.ct}}.
 
-The new architecture should not affect your install or update processes.  However, you might need to change some command syntax and processes when working with your {{site.data.var.ece}} project. For details, review the backward incompatible changes information and release notes for each package.
-
--  **`{{site.data.var.mcp}}` package**–See [Magento Cloud Patches changes](#magento-cloud-patches-changes) and [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).
-
--  **`{{site.data.var.mcd}}` package**–See [{{site.data.var.mcd-prod}} changes](#magento-cloud-docker-changes) and [Release notes for magento/magento-cloud-docker]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html).
-
--  **`{{site.data.var.mcc}}` package**–See [Release notes for [`{{site.data.var.mcp}}magento/magento-cloud-components`]({{ site.baseurl }}/cloud/release-notes/mcp-release-notes.html).
-
-{:.bs-callout-info}
-See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html) to learn about updates specific to the `{{site.data.var.ct}}` package.
+The new architecture should not affect your install or update processes.  However, you might need to change some command syntax and processes when working with your {{site.data.var.ece}} project. For details, review the following backward incompatible changes information and the [Cloud Suite release notes].
 
 ### Service version requirement changes
 
 We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
+
+{:.bs-callout-warning}
+Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running Magento 2.1.15 or later. If your project uses an earlier release, you must [upgrade the Magento version]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.
 
 ### Environment configuration changes
 
@@ -34,7 +28,7 @@ Item | Replacement
 `STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
 `DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
 `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
-`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configureenvironment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
+`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
 
 ### CLI command changes
 
@@ -49,7 +43,7 @@ The following table summarizes CLI command changes in {{ site.data.var.ct }} v20
 `vendor/bin/ece-tools docker:build` | `vendor/bin/ece-docker build:compose`
 `vendor/bin/ece-tools docker:config:convert` | `vendor/bin/ece-docker  image:generate:php`
 
-In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
+In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
 ## Magento Cloud Patches changes
 
@@ -63,7 +57,7 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
    php ./vendor/bin/ece-patches apply
    ```
 
-## {{site.data.var.mcd-prod}} changes
+## Magento Cloud Docker changes
 
 -  **The minimum PHP version requirement is now PHP 7.1**–If your {{site.data.var.mcd-prod}} host is running an earlier version, upgrade to PHP v7.1 or later.
 
@@ -107,3 +101,6 @@ In previous {{ site.data.var.ct }} releases, you could use the `m2-ece-build` an
       ```
 
 -  **Override file synchronization settings for archive and backup files**–Archive and backup files with the following extensions are no longer synchronized when using docker-sync or mutagen:  `*.sql`, `*.gz`, `*.zip`, and `*.bz2`.  You can override the default file synchronization for these file types by renaming the file to end with a different extension. For example: `synchronize-me.zip-backup`
+
+[Cloud Suite release notes]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
+

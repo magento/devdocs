@@ -265,6 +265,8 @@ hooks:
 
 You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
+{% include cloud/note-ece-tools-custom-deployment.md %}
+
 ### `crons`
 
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
