@@ -24,7 +24,7 @@ If you are upgrading from 2.1.4 or later to 2.2.X or later, review the [Magento 
 
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.X or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
+If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
 
 {:.procedure}
 To create a temporary `config.php` file:
