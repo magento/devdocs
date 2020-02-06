@@ -26,7 +26,7 @@ The following variables were removed in v2.2:
 -  **Default**—`1`
 -  **Version**—Magento 2.1.4 and later
 
-Set the level of directory nesting for saving error report files to avoid a situation where the report directory contains tens of thousands of files, making it difficult to manage and review the data. This setting defaults to `1`. Typically, you do not need to change the default value unless you are experiencing issues with managing error report data in the `<magento_root>/var/report/` directory.
+Set the level of directory nesting for saving error report files to avoid filling the report directory with tens of thousands of files, which makes it difficult to manage and review the data. This setting defaults to `1`. Typically, you do not need to change the default value unless you have problems managing error report files in the `<magento_root>/var/report/` directory.
 
 ```yaml
 stage:
