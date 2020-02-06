@@ -67,7 +67,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Remove deprecated build commands**– Removed the following build commands: `m2-ece-build`, `m2-ece-deploy`, `m2-ece-scd-dump`, and renamed `ece-tools docker` commands to `ece-docker`. See [Backward incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html)<!--MAGECLOUD-4392-->
 
--  {:.new}Removed the deprecated `build_options.ini` file and added validation to fail the build if the file exists. Use the [.magento.env.yaml](https://devdocs.magento.com/guides/v2.3/cloud/project/magento-env-yaml.html) file to configure build options.
+-  {:.new}Removed the deprecated `build_options.ini` file and added validation to fail the build if the file exists. Use the [.magento.env.yaml]({{site.baseurl}}/cloud/project/magento-env-yaml.html) file to configure build options.
 
 -  {:.fix}Fixed an issue that caused the build process to fail when the `config.php` file is empty.<!--MAGECLOUD-4127-->
 
