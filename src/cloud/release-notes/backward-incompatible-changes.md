@@ -9,16 +9,7 @@ Use the following information to learn about backward incompatible changes that 
 
 Some functionality previously included in the `{{site.data.var.ct}}` package is now provided in separate packages. These packages are composer dependencies for `{{site.data.var.ct}}`, which are installed and updated automatically when you install or update {{site.data.var.ct}}.
 
-The new architecture should not affect your install or update processes.  However, you might need to change some command syntax and processes when working with your {{site.data.var.ece}} project. For details, review the release notes and backward incompatible changes information for each package.
-
--  **`{{site.data.var.mcp}}`**–See [Release notes for magento/magento-cloud-patches]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html) and [Magento Cloud Patches changes](#magento-cloud-patches-changes).
-
--  **`{{site.data.var.mcd}}`**–See [Release notes for magento/magento-cloud-docker]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html) and [{{site.data.var.mcd-prod}} changes](#magento-cloud-docker-changes).
-
--  **`{{site.data.var.mcc}}`**–See [Release notes for `{{site.data.var.mcc}}`]({{ site.baseurl }}/cloud/release-notes/mcc-release-notes.html).
-
-{:.bs-callout-info}
-See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/mcd-release-notes.html) to learn about updates specific to the `{{site.data.var.ct}}` package.
+The new architecture should not affect your install or update processes.  However, you might need to change some command syntax and processes when working with your {{site.data.var.ece}} project. For details, review the following backward incompatible changes information and the [Cloud Suite release notes].
 
 ### Service version requirement changes
 
@@ -37,7 +28,7 @@ Item | Replacement
 `STATIC_CONTENT_THREADS` variable | [`SCD_THREADS`]({{ site.baseurl}}/cloud/env/variables-build.html#scd_threads)
 `DO_DEPLOY_STATIC_CONTENT` variable | [`SKIP_SCD`]({{ site.baseurl}}/cloud/env/variables-build.html#skip_scd)
 `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
-`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configureenvironment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
+`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
 
 ### CLI command changes
 
@@ -111,3 +102,5 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
       ```
 
 -  **Override file synchronization settings for archive and backup files**–Archive and backup files with the following extensions are no longer synchronized when using docker-sync or mutagen:  `*.sql`, `*.gz`, `*.zip`, and `*.bz2`.  You can override the default file synchronization for these file types by renaming the file to end with a different extension. For example: `synchronize-me.zip-backup`
+
+[Cloud Suite release notes]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html

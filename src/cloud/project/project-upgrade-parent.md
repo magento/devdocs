@@ -6,16 +6,17 @@ functional_areas:
   - Upgrade
 ---
 
-The Upgrades and patches section provides information about how to update `{{site.data.var.ct}}`, upgrade the Magento version, and how to [apply patches] to your {{site.data.var.ece}} project environments.
+The Upgrades and patches section provides information about how to update `{{site.data.var.ct}}`, upgrade the Magento version, and how to [apply patches] to your {{site.data.var.ece}} project.
 
-Some restrictions in the core Magento Commerce code base prevent you from upgrading to the new application architecture directly, so use the following table to determine your upgrade path:
+Some restrictions in the core Magento Commerce code base affect your ability to update to a specific `{{site.data.var.ct}}` release or to upgrade Magento.
+Use the following table to determine the best upgrade path:
 
 | Current Version | Upgrade Path | Instructions
 | --- | --- | --- |
 | 2.1.3 and earlier | You must upgrade Magento to version 2.1.4 or later before you continue. | [Upgrade Magento version] |
-| 2.1.4 – 2.1.14 | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html#v200209) and later 2002.0.x releases. | [Update {{site.data.var.ct}} version] |
-| 2.1.15 – 2.1.16 | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html#v200209) and later. | [Update {{site.data.var.ct}} version] |
-| 2.2.x and later | You can begin the upgrade to [{{site.data.var.ct}} 2002.0.08]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) and later. | [Update {{site.data.var.ct}} version] |
+| 2.1.4 – 2.1.14 | You can update to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200209) and later 2002.0.x releases. | [Update {{site.data.var.ct}} version] |
+| 2.1.15 – 2.1.16 | You can update to [{{site.data.var.ct}} 2002.0.9]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200209) and later. | [Update {{site.data.var.ct}} version] |
+| 2.2.x and later | You can update to [{{site.data.var.ct}} 2002.0.8]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v200208) and later. | [Update {{site.data.var.ct}} version] |
 
 {% include cloud/note-ece-tools-package.md %}
 

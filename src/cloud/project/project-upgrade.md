@@ -99,7 +99,7 @@ Review the [Magento technology stack requirements] before upgrading your Magento
 If you use PHP version 7.2, you must remove the `mcrypt` extension from the [extensions section of the .magento.app.yaml file]. For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
  {:.bs-callout-info}
-When upgrading to 2.3.X from 2.2.X, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
+When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
 To upgrade the Magento version:
