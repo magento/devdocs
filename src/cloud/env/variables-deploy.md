@@ -361,7 +361,7 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
-[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
