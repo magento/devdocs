@@ -266,11 +266,7 @@ To register a module with the {{site.data.var.ct}} package:
 
 To learn more about dependency injection, see [Symfony Dependency Injection](https://symfony.com/doc/current/components/dependency_injection.html).
 
-<<<<<<< HEAD
 [default scenarios]: https://github.com/magento/ece-tools/tree/2002.1/scenario
-=======
-[default scenarios]: https://github.com/magento/ece-tools/tree/2002.1/develop/scenario
->>>>>>> e9d470a9bbae51493432ab0bab479e16612e3f7e
 [default steps]: https://github.com/magento/ece-tools/tree/2002.1/src/Step
 [default deploy scenario]: https://github.com/magento/ece-tools/blob/develop/scenario/deploy.xml
 [EnableMaintenanceMode PHP script]: https://github.com/magento/ece-tools/blob/develop/src/Step/EnableMaintenanceMode.php

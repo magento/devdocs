@@ -14,7 +14,7 @@ The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}}
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 {:.bs-callout-info}
-See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn more about how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
+See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
 
 ## v1.0.1
 
