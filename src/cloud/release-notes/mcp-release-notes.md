@@ -13,6 +13,9 @@ The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}}
 
 The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+{:.bs-callout-info}
+See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn more about how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
+
 ## v1.0.1
 
 We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
