@@ -7,16 +7,16 @@ When you deploy the `product-recommendations` module, the module tracks the foll
 
 Event |Description
 --- | ---
-`add-to-cart` | A product has been added to the cart
-`add-to-wishlist` | A wishlist updates with a new item
-`apply-discount-action` | A discount is applied to a cart
-`edit-product-qty` | The number of items in a cart is modified
-`initiate-checkout` |The shopper clicked the **Proceed to Checkout** button
-`instant-purchase` | The shopper completes an instant purchase. Typically triggered on a product page, but could be triggered on product listing pages like category and search results
-`place-order` | The customer's order is complete
-`remove-discount-action` | A discount is removed from a cart
-`remove-from-cart` | An item is removed from a cart
-`remove-from-wishlist` | An item from a wishlist is removed
+`add-to-cart` | A product is added to the cart
+`add-to-wishlist` | A product is added to the wishlist
+`apply-discount-action` | A discount code is applied to the cart
+`edit-product-qty` | A quantity of items in a cart is modified
+`initiate-checkout` | The shopper clicked the **Proceed to Checkout** button
+`instant-purchase` | The shopper completes an instant purchase.
+`place-order` | The customer's order is submitted
+`remove-discount-action` | A discount code is removed from a cart
+`remove-from-cart` | A product is removed from a cart
+`remove-from-wishlist` | A product is removed from a wishlist
 `sign-in` | The shopper signs into their account
 `sign-out` | The shopper signs out of their account
 `view` | A shopper views a product details page (PDP)
