@@ -120,7 +120,6 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
    In the response, find the MySQL information. For example:
 
    ```json
-   {
    "database" : [
       {
          "password" : "",
