@@ -10,16 +10,17 @@ This guide discusses the following widgets:
 
 -  [Accordion widget]
 -  [Alert widget]
--  [Breadcrumb widget]
+-  [Breadcrumbs widget]
 -  [Calendar widget]
 -  [Collapsible widget]
--  [Confirm widget]
+-  [Confirmation widget]
 -  [Dropdown widget]
 -  [DropdownDialog widget]
 -  [FolderTree widget]
 -  [Gallery widget]
 -  [List widget]
 -  [Loader widget]
+-  [Magnifier widget]
 -  [MediaUploader widget]
 -  [Menu widget]
 -  [Modal widget]
@@ -46,16 +47,17 @@ Magento out of the box does not contain jQuery UI styles. Also, it is not recomm
 
 [Accordion widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html
 [Alert widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_alert.html
-[Breadcrumb widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-breadcrumbs.html
+[Breadcrumbs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-breadcrumbs.html
 [Calendar widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html
 [Collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
-[Confirm widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
+[Confirmation widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_confirm.html
 [Dropdown widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dropdown.html
 [DropdownDialog widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_dialog.html
 [FolderTree widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-folder-tree.html
 [Gallery widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html
 [List widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_list.html
 [Loader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_loader.html
+[Magnifier widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery_mg.html
 [MediaUploader widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget-media-uploader.html
 [Menu widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html
 [Modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
