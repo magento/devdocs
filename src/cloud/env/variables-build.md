@@ -26,7 +26,7 @@ The following variables were removed in v2.2:
 -  **Default**—`1`
 -  **Version**—Magento 2.1.4 and later
 
-Subdirectories nesting level, which indicates how many nested subdirectories will be created in the directory `<magento_root>/var/report/` before saving the error report. [Directories Nesting Level Changes for Error Reporting]({{ page.baseurl }}/cloud/live/configure/directories-nesting-level-changes-for-error-reporting.html)
+Set the level of directory nesting for saving error report files to avoid a situation where the report directory contains tens of thousands of files, making it difficult to manage and review the data. This setting defaults to `1`. Typically, you do not need to change the default value unless you are experiencing issues with managing error report data in the `<magento_root>/var/report/` directory.
 
 ```yaml
 stage:
