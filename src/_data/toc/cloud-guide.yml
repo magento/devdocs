@@ -552,10 +552,6 @@ pages:
       url: /cloud/project/project-upgrade-parent.html
       versionless: true
       children:
-        - label: Upgrade to use ece-tools
-          url: /cloud/project/ece-tools-upgrade-project.html
-          versionless: true
-
         - label: Update ece-tools version
           url: /cloud/project/ece-tools-update.html
           versionless: true
@@ -568,6 +564,10 @@ pages:
           url: /cloud/project/project-upgrade.html
           versionless: true
 
+        - label: Upgrade to use ece-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+          versionless: true
+
     - label: Release notes
       url: /cloud/release-notes/cloud-tools.html
       versionless: true
@@ -576,16 +576,16 @@ pages:
           url: /cloud/release-notes/ece-release-notes.html
           versionless: true
 
-        - label: magento-cloud-components
-          url: /cloud/release-notes/mcc-release-notes.html
+        - label: Magento Cloud Patches
+          url: /cloud/release-notes/mcp-release-notes.html
           versionless: true
-        
-        - label: magento-cloud-docker
+
+        - label: Magento Cloud Docker
           url: /cloud/release-notes/mcd-release-notes.html
           versionless: true
 
-        - label: magento-cloud-patches
-          url: /cloud/release-notes/mcp-release-notes.html
+        - label: Magento Cloud Components
+          url: /cloud/release-notes/mcc-release-notes.html
           versionless: true
 
         - label: Backward incompatible changes
