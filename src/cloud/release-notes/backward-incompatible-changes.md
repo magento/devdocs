@@ -30,6 +30,7 @@ Item | Replacement
 `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
 `build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
 
+
 ### CLI command changes
 
 The following table summarizes CLI command changes in {{ site.data.var.ct }} v2002.1.0 that might require you to update commands or scripts.
@@ -103,3 +104,4 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 -  **Override file synchronization settings for archive and backup files**–Archive and backup files with the following extensions are no longer synchronized when using docker-sync or mutagen:  `*.sql`, `*.gz`, `*.zip`, and `*.bz2`.  You can override the default file synchronization for these file types by renaming the file to end with a different extension. For example: `synchronize-me.zip-backup`
 
 [Cloud Suite release notes]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
+

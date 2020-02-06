@@ -33,7 +33,7 @@ You can inject a MySQL configuration into the database container at creation by 
 Add a custom `my.cnf` file to the `services` section in the  `docker-compose.override.yml` file:
 
 ```yaml
-   db:
+  db:
     volumes:
       - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
 ```
