@@ -265,6 +265,8 @@ hooks:
 
 You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
+{% include cloud/note-ece-tools-custom-deployment.md %}
+
 ### `crons`
 
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
@@ -494,3 +496,5 @@ workers:
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
 For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+
+[Scenario-based deployment]: {{site.baseurl}}/cloud/deploy/scenario-based-deployment.html

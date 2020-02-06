@@ -438,6 +438,10 @@ pages:
           url: /cloud/deploy/cloud-deployment-process.html
           versionless: true
 
+        - label: Scenario-based deployment
+          url: /cloud/deploy/scenario-based-deployment.html
+          versionless: true
+
         - label: Zero downtime deployment
           url: /cloud/deploy/reduce-downtime.html
           versionless: true
@@ -449,7 +453,6 @@ pages:
         - label: Smart wizards
           url: /cloud/deploy/smart-wizards.html
           versionless: true
-
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
       versionless: true
