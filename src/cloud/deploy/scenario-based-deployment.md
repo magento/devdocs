@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Scenario based deployment
+title: Scenario-based deployment
 functional_areas:
   - Cloud
   - Deploy
