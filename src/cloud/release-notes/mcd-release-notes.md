@@ -70,6 +70,8 @@ The release notes include:
 
    -  {:.new}**Support for network bridge mode**–Added support for network bridge mode to enable connections between Docker containers over the local network.<!--MAGECLOUD-4165-->
 
+   -  {:.new}**Cron container disabled by default**–To improve performance, the Cron container is no longer configured by default when you build the Docker environment. You can use the `--with-cron` option on the Docker build command to add a Cron container to your environment. See [Managing cron jobs]({{site.baseurl}}/cloud/docker/docker-manage-cron-jobs.html).<!--MAGECLOUD-5181-->
+
    -  {:.new}**Stop synchronizing large backup files**–Added DB dumps and archive files—ZIP, SQL, GZ, and BZ2—to the exclusion list in the `dist/docker-sync.yml` and `dist/mutagen.sh` files. Synchronizing large files (>1 GB) can cause a period of inactivity and backup files do not normally require synchronization since you can regenerate them.<!--MAGECLOUD-3979-->
 
 -  {:.new}**Command changes**–
