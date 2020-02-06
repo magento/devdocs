@@ -89,4 +89,3 @@ From: [http://modernwebaccessibility.com/en/blog/demystify-speak-none](http://mo
 ## Additional resources
 
 * [https://yatil.net/the-best-way-to-use-icon-fonts/](https://yatil.net/the-best-way-to-use-icon-fonts/){:target="_blank"}
-* [http://pictos.cc/articles/using-icon-fonts/](http://pictos.cc/articles/using-icon-fonts/){:target="_blank"}

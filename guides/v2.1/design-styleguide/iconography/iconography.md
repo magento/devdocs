@@ -120,5 +120,3 @@ Icons should be very descriptive, especially if they stand on their own. Add des
 ## Learn More
 
 * yatil.: [The best way to use icon fonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
-
-* Pictos: [Using Icon Fonts](http://pictos.cc/articles/using-icon-fonts/)
