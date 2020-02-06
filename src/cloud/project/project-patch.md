@@ -5,23 +5,28 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package
-provides Magento Cloud patches which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes.
+The [{{site.data.var.mcp-prod}}](https://github.com/magento/magento-cloud-patches) package
+delivers Magento patches and hot fixes, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical fixes. The package can also deliver custom patches that you add to your project root directory.
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
 
-You can use {{site.data.var.mcp}} to apply [custom patches]({{ site.baseurl }}/guides/v2.3/comp-mgr/patching.html#custom-patches) provided by support or third-party extension developers.  To use this feature,  copy the custom patch to the `/m2-hotfixes` directory in the {{ site.data.var.ee }} project root directory. Then, test the patch on your local workstation.
+When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp}}` to check for pending patches and applies them automatically in the following order:
+
+1. Apply Magento-provided patches included in the `{{site.data.var.mcp}}` package.
+1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
+
+You can also apply patches manually.
+
+{:.bs-callout-info}
+All patch file names must end with the `.patch` extension.
+
+## Prerequisite
 
 {% include cloud/note-upgrade.md %}
 
-{:.procedure}
-To use {{ site.data.var.mcp }} as a stand-alone package:
+## Apply patches manually
 
-1. Add the {{site.data.var.mcp}} package to your `composer.json` file.
-
-    ```bash
-    composer require magento/magento-cloud-patches
-    ```
+You can apply patches manually in a local environment and test them before you deploy.
 
 {:.procedure}
 To apply {{site.data.var.ece}} patches manually:
@@ -42,6 +47,10 @@ To apply {{site.data.var.ece}} patches manually:
 
 1. Test the patches, make any necessary changes to custom patches.
 
+## Apply a custom patch
+
+When you deploy, `{{site.data.var.ct}}` applies all Magento patches and any custom patches that you add to the `/m2-hotfixes` directory in the Magento project root.
+
 {:.procedure}
 To apply and test a custom patch:
 
@@ -55,3 +64,34 @@ To apply and test a custom patch:
 
     {:.bs-callout-info}
     Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with `magento-cloud environment:branch <branch-name>`
+
+## Apply patches to a Magento enterprise or open source project
+
+You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magento patches and hot fixes to a Magento project that is not deployed on the Cloud platform.
+
+{:.procedure}
+To use magento-cloud-patches as a stand-alone package:
+
+1. Add the magento-cloud-patches package to your composer.json file.
+
+   ```php
+   composer require magento/magento-cloud-patches
+   ```
+
+1. From the project root, apply the patches.
+
+   ```php
+   php ./vendor/bin/ece-patches apply
+   ```
+
+   This command applies Magento patches and any custom patches found in the m2/hotfixes directory.
+
+1. Clear the Magento cache.
+
+   ```php
+   php ./bin/magento cache:clean
+   ```
+
+   You can also clean the cache using the Magento Admin Cache Management.
+
+1. Test the patches, and make any necessary changes to custom patches.

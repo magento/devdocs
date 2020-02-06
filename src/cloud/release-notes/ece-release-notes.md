@@ -76,4 +76,3 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## Older releases
 
 See the [release notes archive]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html) for version 2002.0.22 and earlier.
-
