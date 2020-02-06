@@ -21,6 +21,19 @@ The following variables were removed in v2.2:
 -  `skip_di_clearing`
 -  `skip_di_compilation`
 
+### `ERROR_REPORT_DIR_NESTING_LEVEL`
+
+-  **Default**—`1`
+-  **Version**—Magento 2.1.4 and later
+
+Set the level of directory nesting for saving error report files to avoid filling the report directory with tens of thousands of files, which makes it difficult to manage and review the data. This setting defaults to `1`. Typically, you do not need to change the default value unless you have problems managing error report files in the `<magento_root>/var/report/` directory.
+
+```yaml
+stage:
+  build:
+    ERROR_REPORT_DIR_NESTING_LEVEL: 2
+```
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
