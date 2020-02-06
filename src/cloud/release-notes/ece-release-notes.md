@@ -23,11 +23,11 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Infrastructure updates**–
 
-   -  {:.new}Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
+   -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
 
-   -  {:.new}Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. `{{site.data.var.ct}}` still applies patches when you deploy to a Staging or Production using the new package. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
+   -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. `{{site.data.var.ct}}` uses the new package to apply patches during deployment. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
 
-   -  {:.new}Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the `{{site.data.var.suite}}` including `{{site.data.var.mcc}}`, `{{site.data.var.mcp}}`, and `{{site.data.var.mcd}}`. These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
+   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the `{{site.data.var.csuite}}` including `{{site.data.var.mcc}}`, `{{site.data.var.mcp}}`, and `{{site.data.var.mcd}}`. These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
 
 -  {:.new}**Support for scenario-based deployments**–<!--MAGECLOUD-4101-->
 
