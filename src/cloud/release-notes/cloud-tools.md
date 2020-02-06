@@ -9,7 +9,7 @@ redirect_from:
   - /cloud/release-notes/CloudReleaseNotes.html
 ---
 
-This release information details the latest improvements to the {{site.data.var.csuite}} packages which are designed to deploy and manage {{site.data.var.ee}} installations and upgrades on the Cloud platform.
+This release information details the latest improvements to the {{site.data.var.csuite}} packages, which are designed to deploy and manage {{site.data.var.ee}} installations and upgrades on the Cloud platform.
 
 | Package | Version | Description | Release notes |
 | --- | --- | --- | --- |
