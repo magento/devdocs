@@ -25,22 +25,22 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
 
-   -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. `{{site.data.var.ct}}` uses the new package to apply patches during deployment. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
+   -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. During deployment, `{{site.data.var.ct}}` uses the new package to apply patches. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
 
-   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the `{{site.data.var.csuite}}` including `{{site.data.var.mcc}}`, `{{site.data.var.mcp}}`, and `{{site.data.var.mcd}}`. These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
+   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the [`{{site.data.var.csuite}}`]({{site.baseurl}}/cloud/release-notes/cloud-tools.html). These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
 
 -  {:.new}**Support for scenario-based deployments**–<!--MAGECLOUD-4101-->
 
    -  {:.new}Now you can customize the build, deploy, and post-deploy processes using XML configuration files to override or customize the default configuration.
 
-   -  {:.new}**Changed the `hooks` configuration in `.magento.app.yaml`**–We updated the `hooks` configuration format to support scenario-based deployments.  The legacy format from earlier {{site.data.var.ct}} 2002.0.X release is still supported. However, you must update to the new format to use the scenario-based deployment feature. See [Scenario-based deployments]({{site.baseurl}}/cloud/deploy/scenario-based-deployment.html#add-scenarios-using-build-and-deploy-hooks).
+   -  {:.new}**Changed the `hooks` configuration in `.magento.app.yaml`**–We updated the `hooks` configuration format to support scenario-based deployments.  The legacy format from earlier {{site.data.var.ct}} 2002.0.x release is still supported. However, you must update to the new format to use the scenario-based deployment feature. See [Scenario-based deployments]({{site.baseurl}}/cloud/deploy/scenario-based-deployment.html#add-scenarios-using-build-and-deploy-hooks).
 
    {:.bs-callout-info}
-  Before updating to {{site.data.var.ct}} version 2002.1.0, review the [backward incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to update {{site.data.var.ece}} project configuration or processes.
+   Before updating to {{site.data.var.ct}} version 2002.1.0, review the [backward   incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to   update {{site.data.var.ece}} project configuration or processes.
 
 -  {:.new}**Services updates**–
 
-   -  {:.new}Added support for PHP 7.3. See [Service versions]({{site.baseurl}}/cloud/project/project-conf-files_services.html).<!--MAGECLOUD-4022-->
+   -  {:.new}Added support for PHP 7.3.<!--MAGECLOUD-4022-->
 
    -  {:.new}Added support for RabbitMQ 3.8.<!--MAGECLOUD-4674-->
 

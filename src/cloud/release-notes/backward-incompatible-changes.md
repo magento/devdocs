@@ -42,7 +42,6 @@ The following table summarizes CLI command changes in {{ site.data.var.ct }} v20
 `vendor/bin/ece-tools patch` | `vendor/bin/ece-patches apply`
 `vendor/bin/ece-tools docker:build` | `vendor/bin/ece-docker build:compose`
 `vendor/bin/ece-tools docker:config:convert` | `vendor/bin/ece-docker  image:generate:php`
-`build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment that includes the `build_options.ini` file, the build fails.
 
 In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and `m2-ece-deploy` commands to configure deployment hooks in the `.magento.app.yaml` file. When you update to v2002.1.0, check the `hooks` configuration in the `.magento.app.yaml` file for the obsolete commands, and replace them if needed.
 
