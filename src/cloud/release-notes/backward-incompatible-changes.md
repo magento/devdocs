@@ -30,7 +30,6 @@ Item | Replacement
 `STATIC_CONTENT_SYMLINK` variable | None. Now, the build always creates a symlink to the static content directory `pub/static`.
 `build_options.ini` file | Use the [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file to configure environment variables to manage build and deploy actions across all your environments.<br><br>If you build a Cloud environment thatincludes the `build_options.ini` file, the build fails.
 
-
 ### CLI command changes
 
 The following table summarizes CLI command changes in {{ site.data.var.ct }} v2002.1.0 that might require you to update commands or scripts.
