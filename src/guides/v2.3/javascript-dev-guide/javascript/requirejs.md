@@ -48,7 +48,7 @@ map: {
 ```
 
 {:.bs-callout-tip}
-The `map` configuration can also be used to override a JS module with a custom JS module. More information can be found at [Custom JS component]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#js_replace)
+You can also use the `map` configuration to override a JS module with a custom JS module. See [Custom JS component]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#js_replace).
 
 ### paths {#requirejs-config-paths}
 
