@@ -62,7 +62,7 @@ mutation {
 }
 ```
 
-[`createCustomer`]({{ page.baseurl }}/graphql/mutations/create-customer.html) mutation describes additional parameters.
+The [`createCustomer`]({{ page.baseurl }}/graphql/mutations/create-customer.html) mutation describes additional parameters.
 
 ## Generate an authentication token for the customer
 
