@@ -92,6 +92,6 @@ To use magento-cloud-patches as a stand-alone package:
    php ./bin/magento cache:clean
    ```
 
-   You can also clean the cache using the Magento Admin Cache Management.
+   You can clean the cache using the Magento Admin Cache Management.
 
 1. Test the patches, and make any necessary changes to custom patches.
