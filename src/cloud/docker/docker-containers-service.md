@@ -160,7 +160,7 @@ The Web container uses NGINX to handle web requests after TLS and Varnish. This 
 The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
 {:.procedure}
-To mount custom NGINX configuration file using volumes:
+To mount the custom NGINX configuration file using volumes:
 
 1. On your local host, create a `./.docker/nginx/etc/` directory.
 
@@ -179,7 +179,7 @@ To mount custom NGINX configuration file using volumes:
    ```
 
 {:.procedure}
-To mount custom index.php file using volumes:
+To mount the custom index.php file using volumes:
 
 1. To mount the custom index.php file to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
 
