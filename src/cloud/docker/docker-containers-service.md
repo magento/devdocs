@@ -181,7 +181,7 @@ To mount custom NGINX configuration file using volumes:
 {:.procedure}
 To mount custom index.php file using volumes:
 
-1. To mount the custom NGINX file to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
+1. To mount the custom index.php file to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
 
 ```yaml
   services:
