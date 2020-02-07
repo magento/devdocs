@@ -84,7 +84,7 @@ To use magento-cloud-patches as a stand-alone package:
    php ./vendor/bin/ece-patches apply
    ```
 
-   This command applies Magento patches and any custom patches found in the m2/hotfixes directory.
+   This command applies Magento patches and any custom patches found in the `m2/hotfixes` directory.
 
 1. Clear the Magento cache.
 
