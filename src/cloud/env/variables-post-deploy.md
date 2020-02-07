@@ -70,17 +70,19 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 -  **multiple pages**—Use the following format to cache multiple pages according to a specific regular expression pattern:
 
    ```terminal
-   <entity_type>:<pattern|url>:<store_id|store_code>
+   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
    ```
 
-   -  `entity_type`: Choose `category` or `cms-page`
-   -  `pattern|url`: Use a `regexp` pattern or an exact match `url` to filter the URLs, or use an asterisk (\*) for all pages
-   -  `store_id|store_code`: Use the ID or Code of the store or an asterisk (\*) for all stores
+   -  `entity_type`: Possible variants `category`, `cms-page`, `product`, `store-page`
+   -  `pattern|url|product_sku`: Use a `regexp` pattern or an exact match `url` to filter the URLs, or use an asterisk (\*) for all pages. Use product sku for the `product` entity type
+   -  `store_id|store_code`: Use the ID or Code of the store or an asterisk (\*) for all stores, you can pass several store IDs or codes separated with `|`
 
-   The following example caches:
-   -  all category pages for store with ID 1
+   The following example caches for `category` and `cms-page` entity types based on these criteria:
+   -  all category pages for store with ID `1`
+   -  all category pages for stores with code `store1` and `store2`
    -  category page `cars` for store with code `store_en`
    -  cms page `contact` for all stores
+   -  cms page `contact` for stores with ID `1` and `2`
    -  any category page that contains `car_` and ends with `html` for store with ID 2
    -  any category page that contains `tires_` for store with code `store_gb`
 
@@ -89,11 +91,45 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
         post-deploy:
           WARM_UP_PAGES:
             - "category:*:1"
+            - "category:*:store1|store2"
             - "category:cars:store_en"
-            - "cms-page:contact:*
+            - "cms-page:contact:*"
+            - "cms-page:contact:1|2"
             - "category:|car_.*?\\.html$|:2"
             - "category:|tires_.*|:store_gb"
       ```
+
+   The following example caches for the `product` entity type based on these criteria:
+   -  all products for all store (programmatically limited to 100 per store to avoid performance issues)
+   -  all products for store `store1`
+   -  products with `sku1` for all stores
+   -  products with `sku1` for stores with code `store1` and `store2`
+   -  products with `sku1`, `sku2` and `sku3` for stores with code `store1` and `store2`
+
+      ```yaml
+      stage:
+        post-deploy:
+          WARM_UP_PAGES:
+            - "product:*:*"
+            - "product:*:store1"
+            - "product:sku1:*"
+            - "product:sku1:store1|store2"
+            - "product:sku1|sku2|sku3:store1|store2"
+      ```
+
+   The following example caches for the `store-page` entity type based on these criteria:
+   -  page `/contact-us` for all stores
+   -  page `/contact-us` for store with ID `1`
+   -  page `/contact-us` for stores with code `code1` and `code2`
+
+   ```yaml
+         stage:
+           post-deploy:
+             WARM_UP_PAGES:
+               - "store-page:/contact-us:*"
+               - "store-page:/contact-us:1"
+               - "store-page:/contact-us:code1|code2"
+   ```
 
 [hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [CMS]: https://glossary.magento.com/cms/

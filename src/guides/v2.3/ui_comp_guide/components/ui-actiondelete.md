@@ -17,7 +17,7 @@ The ActionDelete component provides a user interface for deleting records of the
 
 ## Source files
 
-Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js)::
+Extends [`Abstract`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/abstract.js):
 
 -  [`app/code/Magento/Ui/view/base/web/js/dynamic-rows/action-delete.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/dynamic-rows/action-delete.js)
 -  [`app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/action-delete.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/action-delete.html)

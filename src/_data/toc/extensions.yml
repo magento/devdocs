@@ -59,3 +59,7 @@ pages:
     children:
     - label: Install
       url: /security/two-factor-authentication.html
+
+  - label: Vendor Bundled Extensions (VBEs)
+    url: /extensions/vendor/
+    versionless: true
