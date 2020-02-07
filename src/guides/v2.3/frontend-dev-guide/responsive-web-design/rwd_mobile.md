@@ -41,7 +41,7 @@ Use `styles-m.less` to generate mobile-specific styles.
 
 Media queries `@media-common`, `max screen__m`, `max screen__s`, `max @screen__xs` and `max @screen__xxs`   will be added to `styles-m.css`.
 
-Example of a Mixin to target screen width less than 480px:
+Example of a LESS mixin to target screen width less than 480px:
 
 ```less
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
