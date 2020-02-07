@@ -170,9 +170,9 @@ To mount custom NGINX configuration file using volumes:
 
 1. To mount the custom NGINX configuration to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
 
-   ```yaml
-   services:
-     web:
+```yaml
+  services:
+    web:
       volumes:
         - ./.docker/nginx/etc/nginx.conf:/etc/nginx/nginx.conf
         - ./.docker/nginx/etc/vhost.conf:/etc/nginx/conf.d/default.conf
@@ -183,12 +183,12 @@ To mount custom index.php file using volumes:
 
 1. To mount the custom NGINX file to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
 
-    ```yaml
-    services:
-     web:
-       volumes:
-         - ./pub/index.php:/app/pub/index.php:ro
-    ```
+```yaml
+  services:
+    web:
+      volumes:
+        - ./pub/index.php:/app/pub/index.php:ro
+```
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
