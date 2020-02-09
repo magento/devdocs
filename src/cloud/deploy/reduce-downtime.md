@@ -17,7 +17,7 @@ Use the following steps to reduce the amount of time it takes your store to depl
    Your {{site.data.var.ece}} project must have the latest `{{site.data.var.ct}}` package so that you have the tools available to configure an optimal deployment. If you have the latest `{{site.data.var.ct}}`, continue to the next step.
 
    {:.bs-callout-info}
-   Even though it is a best practice to use the latest `{{site.data.var.ct}}` package, the zero-downtime deployment method works with `{{site.data.var.ct}}` [version 2002.0.13]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002013) and later.
+   Even though it is a best practice to use the latest `{{site.data.var.ct}}` package, the zero-downtime deployment method works with `{{site.data.var.ct}}` [version 2002.0.13]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002013) and later.
 
 1. [Configure static content deployment]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html)
    If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. When a failure occurs during the build phase, the process avoids downtime because it never begins the deploy phase. [Generating static content during the build phase with minified HTML]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html#setting-the-scd-on-build), also known as the ideal state, is the optimal configuration for zero-downtime deployments and _prevents_ downtime if a failure occurs.
