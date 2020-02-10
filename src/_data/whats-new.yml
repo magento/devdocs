@@ -4,8 +4,83 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Feb 4 12:02:47 2020
+updated: Thu Feb 6 20:18:03 2020
 entries:
+- description: Added release notes and documentation for the following Magento
+    Cloud Suite packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
+    1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components 1.0.2
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6586
+- description: Documented updates to the ece-tools CLI command to generate a Docker configuration file
+    for a Magento Cloud project:<br/>- Added new `--sync-engine="native"` file synchronization
+    option to the [Developer mode](https://devdocs.magento.com/cloud/docker/docker-mode-developer.html)
+    topic in the _Cloud Guide_.<br/>- Changed `ece-tools` command references to `ece-docker`
+    to reflect new CLI command structure introduced in Magento Cloud Docker 1.0.0.
+    1.0.0.
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6448
+- description: Updated the
+   [Docker quick reference](https://devdocs.magento.com/cloud/docker/docker-quick-reference.html)
+   in the _Cloud Guide_:<br/>-Changed the Docker command file path from
+    `.bin/docker` to the new `.bin/magento-docker` path and updated commands<br/>- Added documentation
+    for `cloud-post-deploy` command and updated the launch instructions.
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6431
+- description: Updated the [Docker container architecture](https://devdocs.magento.com/cloud/docker/docker-containers.html)
+    topic in the _Cloud Guide_ with information about managing mounts and volumes when launching a
+    Docker environment for local development.
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6426
+- description: Improved the Magento Cloud Docker service container documentation<br/>-
+    Added detailed service definitions<br/>- Added a request flow diagram<br/>- Provided
+    more detailed information about container configuration
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6363
+- description: Updated the [Upgrades and patches](https://devdocs.magento.com/cloud/project/project-upgrade-parent.html)
+    topics in the _Cloud Guide_ to add instructions for using the `magento/magento-cloud-patches` 1.0.1 package to apply Magento
+    patches and hot fixes.
+  versions: 2.x
+  type: Major update
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6440
+- description: Added [Magento Cloud Components release notes ](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html)
+    topic to the _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6283
+- description: Added a [Backward incompatible changes](https://devdocs.magento.com/cloud/release-notes/backward-incompatible-changes.html)
+    topic to the  _Cloud Guide_.
+  versions: 2.x
+  type: New topic
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6215
+- description: Added a [Cloud Suite release notes](https://devdocs.magent.com/cloud/release-notes/cloud-tools.html) section
+    to the _Cloud Guide_ to provide release information for all Cloud Suite packages.
+  versions: 2.x
+  type: New topic
+  date: February 6, 2020
+  link: https://github.com/magento/devdocs/pull/6155
+- description: Added a topic for the [ColumnsEditor UI component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor.html).
+  versions: 2.3.x
+  type: New topic
+  date: February 5, 2020
+  link: https://github.com/magento/devdocs/pull/6394
+- description: Added a section about [vendor bundled extensions (VBEs)](https://devdocs.magento.com/extensions/vendor/).
+  versions: ''
+  type: New topic
+  date: February 5, 2020
+  link: https://github.com/magento/devdocs/pull/6521
 - description: Updated the Magento CLI reference ([Commerce](https://devdocs.magento.com/guides/v2.2/reference/cli/magento-commerce.html)
     \| [Open Source](https://devdocs.magento.com/guides/v2.2/reference/cli/magento.html)).
   versions: 2.2.11
