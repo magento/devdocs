@@ -40,7 +40,7 @@ Add a custom `my.cnf` file to the `services` section in the  `docker-compose.ove
 
 Add a custom `custom.cnf` file to the `.docker/mysql/mariadb.conf.d` directory:
 
-```sh
+```shell
 cp custom.cnf .docker/mysql/mariadb.conf.d
 ```
 
