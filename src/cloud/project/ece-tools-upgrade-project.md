@@ -29,11 +29,11 @@ Each {{site.data.var.ee}} version requires a different constraint based on the f
 
 You can always find the latest metapackage constraint in the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
-The following example places a constraint for the {{site.data.var.ece}} metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:
+The following example places a constraint for the {{site.data.var.ece}} metapackage to any version greater than or equal to the current version 2.3.4 and lower than next version 2.3.5:
 
 ```json
 "require": {
-    "magento/magento-cloud-metapackage": ">=2.2.0 <2.2.1"
+    "magento/magento-cloud-metapackage": ">=2.3.4 <2.3.5"
 },
 ```
 
@@ -47,7 +47,7 @@ To upgrade project to use ece-tools:
 1. Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 
     ```bash
-    composer require "magento//magento-cloud-metapackage": ">=2.2.0 <2.2.1" --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.3.4 <2.3.5" --no-update
     ```
 
 1. Update the metapackage.
