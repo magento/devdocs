@@ -111,9 +111,11 @@ In this file, add the following:
 </page>
 ```
 
-## Step 4: Deploy the static content and Clean cache
+## Step 4: Clean cache
 
 1. Deploy static content:
+
+   Note: doesn't need to run in developer mode.
 
    ```bash
    bin/magento setup:static-content:deploy
