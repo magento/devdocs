@@ -108,10 +108,9 @@ The following query returns information about bundle product `24-WG080`, which i
 }
 ```
 
-
 {% collapsible Response %}
 
-``` text
+```json
 {
   "data": {
     "products": {
@@ -308,5 +307,3 @@ The following query returns information about bundle product `24-WG080`, which i
 ## Related topics
 
 -  [addBundleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-bundle-products.html)
-
-
