@@ -65,7 +65,7 @@ entries:
   type: New topic
   date: February 6, 2020
   link: https://github.com/magento/devdocs/pull/6215
-- description: Added a [Cloud Suite release notes](https://devdocs.magent.com/cloud/release-notes/cloud-tools.html) section
+- description: Added a [Cloud Suite release notes](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html) section
     to the _Cloud Guide_ to provide release information for all Cloud Suite packages.
   versions: 2.x
   type: New topic
