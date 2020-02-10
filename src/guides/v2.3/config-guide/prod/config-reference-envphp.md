@@ -15,6 +15,7 @@ The `env.php` file contains the following sections:
 | `cache_types`         | Cache storage settings                         |
 | `crypt`               | The encryption key for cryptographic functions |
 | `db`                  | Database connection settings                   |
+| `downloadable_domains`| List of downloadable domains                   |
 | `install`             | The installation date                          |
 | `lock`                | Lock provider settings                         |
 | `MAGE_MODE`           | The [Magento mode][magento-mode]               |
@@ -22,7 +23,7 @@ The `env.php` file contains the following sections:
 | `resource`            | Mapping of resource name to a connection       |
 | `session`             | Session storage data                           |
 | `x-frame-options`     | Setting for [x-frame-options][x-frame-options] |
-| `downloadable_domains`| List of downloadable domains                   |
+
 ## backend
 
 Configure the **frontName** for the Magento admin url using the `backend` node in env.php.
@@ -92,6 +93,18 @@ All database configurations are availble in this node.
   ]
 ]
 ```
+
+## downloadable_domains
+
+A list of downloadable domains available in this node. Additional domains can be added, removed, or listed using CLI commands.
+
+```conf
+'downloadable_domains' => [
+    'local.vanilla.com'
+]
+```
+
+Learn more about [downloadable-domains][downloadable_domains] commands.
 
 ## install
 
@@ -165,17 +178,6 @@ x-frame-options header can be configured using this node.
 ```
 
 Learn more about session in [x-frame-options][x-frame-options].
-
-## downloadable_domains
-List of downloadable domains are available in this node. Additional domains can be added, removed or listed through CLI commands.
-
-```conf
-'downloadable_domains' => [
-    'local.vanilla.com'
-]
-```
-
-Learn more about [downloadable-domains][downloadable_domains] commands.
 
 <!-- Link definitions -->
 [lock-provider-config]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-lock.html
