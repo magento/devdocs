@@ -45,24 +45,24 @@ To modify `di.xml`:
 1. Open `di.xml` in a text editor and locate the following block:
 
    ```xml
-    <type name="Magento\Framework\App\Cache\Frontend\Pool">
-        <arguments>
-            <argument name="frontendSettings" xsi:type="array">
-                <item name="page_cache" xsi:type="array">
-                    <item name="backend_options" xsi:type="array">
-                    <item name="cache_dir" xsi:type="string">page_cache</item>
-                    </item>
-                </item>
-            </argument>
-        </arguments>
-    </type>
-    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
-        <arguments>
-            <argument name="typeFrontendMap" xsi:type="array">
-            <item name="full_page" xsi:type="string">page_cache</item>
-            </argument>
-        </arguments>
-    </type>
+   <type name="Magento\Framework\App\Cache\Frontend\Pool">
+       <arguments>
+           <argument name="frontendSettings" xsi:type="array">
+               <item name="page_cache" xsi:type="array">
+                   <item name="backend_options" xsi:type="array">
+                       <item name="cache_dir" xsi:type="string">page_cache</item>
+                   </item>
+               </item>
+           </argument>
+       </arguments>
+   </type>
+   <type name="Magento\Framework\App\Cache\Type\FrontendPool">
+       <arguments>
+           <argument name="typeFrontendMap" xsi:type="array">
+               <item name="full_page" xsi:type="string">page_cache</item>
+           </argument>
+       </arguments>
+   </type>
    ```
 
    The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.
@@ -73,23 +73,23 @@ To modify `di.xml`:
 
    ```xml
    <type name="Magento\Framework\App\Cache\Frontend\Pool">
-         <arguments>
-             <argument name="frontendSettings" xsi:type="array">
-                 <item name="page_cache" xsi:type="array">
-                       <item name="backend" xsi:type="string">database</item>
-                   </item>
-                   <item name="<your cache id>" xsi:type="array">
-                       <item name="backend" xsi:type="string">database</item>
-                   </item>
-             </argument>
-         </arguments>
+       <arguments>
+           <argument name="frontendSettings" xsi:type="array">
+               <item name="page_cache" xsi:type="array">
+                   <item name="backend" xsi:type="string">database</item>
+               </item>
+               <item name="<your cache id>" xsi:type="array">
+                   <item name="backend" xsi:type="string">database</item>
+               </item>
+           </argument>
+       </arguments>
    </type>
    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
-         <arguments>
-             <argument name="typeFrontendMap" xsi:type="array">
-                <item name="backend" xsi:type="string">database</item>
-             </argument>
-         </arguments>
+       <arguments>
+           <argument name="typeFrontendMap" xsi:type="array">
+               <item name="backend" xsi:type="string">database</item>
+           </argument>
+       </arguments>
    </type>
    ```
 
@@ -222,54 +222,54 @@ This section contains code sample snippets to refer to when configuring database
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
 ```php
- 'cache' => [
-     'frontend' => [
+'cache' => [
+    'frontend' => [
         'magento_cache' => [
-             'backend' => 'database'
-         ],
-      ],
-      'type' => [
-         'config' => [
+            'backend' => 'database'
+        ],
+    ],
+    'type' => [
+        'config' => [
             'frontend' => 'magento_cache'
-          ],
-         'layout' => [
+        ],
+        'layout' => [
             'frontend' => 'magento_cache'
-          ],
-         'block_html' => [
+        ],
+        'block_html' => [
             'frontend' => 'magento_cache'
-          ],
-         'view_files_fallback' => [
+        ],
+        'view_files_fallback' => [
             'frontend' => 'magento_cache'
-          ],
-         'view_files_preprocessing' => [
+        ],
+        'view_files_preprocessing' => [
             'frontend' => 'magento_cache'
-          ],
-         'collections' => [
+        ],
+        'collections' => [
             'frontend' => 'magento_cache'
-          ],
-         'db_ddl' => [
+        ],
+        'db_ddl' => [
             'frontend' => 'magento_cache'
-          ],
-         'eav' => [
+        ],
+        'eav' => [
             'frontend' => 'magento_cache'
-          ],
-         'full_page' => [
+        ],
+        'full_page' => [
             'frontend' => 'magento_cache'
-          ],
-         'translate' => [
+        ],
+        'translate' => [
             'frontend' => 'magento_cache'
-          ],
-         'config_integration' => [
+        ],
+        'config_integration' => [
             'frontend' => 'magento_cache'
-          ],
-         'config_integration_api' => [
+        ],
+        'config_integration_api' => [
             'frontend' => 'magento_cache'
-          ],
-         'config_webservice' => [
+        ],
+        'config_webservice' => [
             'frontend' => 'magento_cache'
-          ],
-      ],
-  ],
+        ],
+    ],
+],
 ```
 
 <!-- Link references -->

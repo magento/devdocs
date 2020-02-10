@@ -4,7 +4,7 @@ subgroup: 3_Widgets
 title: Navigation widget
 ---
 
-Magento navigation widget is a customized [jQuery UI Menu widget]. Magento navigation extends the default functionality with the following:
+Magento navigation widget is an [extension](https://glossary.magento.com/extension) of the [Magento Menu widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html) with the following funcitonalities:
 
 -  Expanding all layers of the menu tree past the second layer.
 -  Limiting the maximum number of list items contained within the main
@@ -12,7 +12,7 @@ Magento navigation widget is a customized [jQuery UI Menu widget]. Magento navig
    level).
 -  Method for handling the responsive layout of the menu.
 
-The navigation widget source is [lib/web/mage/menu.js].
+The navigation widget source is present in [lib/web/mage/menu.js] along with the menu widget source.
 
 ## Initialize the navigation widget {#navigation_init}
 
@@ -38,7 +38,7 @@ Width of user's window in px for which the menu switches between mobile view and
 
 ### `container` {#n_container}
 
-Container to track the menu overflow on responsive navigation.
+Container's CSS selector to track the menu overflow on responsive navigation.
 
 **Type**: String
 
@@ -66,7 +66,7 @@ The default responsive handler for the navigation widget.
 
 **Type**: String
 
-**Default value**: `'wrap'`
+**Default value**: `wrap`
 
 **Accepted values**: `wrap`, `onResize`, `onReload`
 
@@ -81,6 +81,5 @@ Moves the list items that are more than the total max item number set by the use
 ### `setupMoreMenu()` {#nav_setupMoreMenu}
 Builds the more overflowing menu by cloning the main menu items.
 
-[jQuery UI Menu widget]: http://api.jqueryui.com/menu/
 [lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
