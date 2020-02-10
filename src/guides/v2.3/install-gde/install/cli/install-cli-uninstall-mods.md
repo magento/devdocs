@@ -171,26 +171,26 @@ For example, to restore a code (that is, file system) backup, enter the followin
 
 *  Display a list of backups:
 
-    ```bash
-    magento info:backups:list
-    ```
+   ```bash
+   magento info:backups:list
+   ```
 
 *  Restore a file backup named `1433876616_filesystem.tgz`:
 
-    ```bash
-    magento setup:rollback --code-file="1433876616_filesystem.tgz"
-    ```
+   ```bash
+   magento setup:rollback --code-file="1433876616_filesystem.tgz"
+   ```
 
-    Messages similar to the following display:
+   Messages similar to the following display:
 
-    ```terminal
-    Enabling maintenance mode
-    Code rollback is starting ...
-    Code rollback filename: 1433876616_filesystem.tgz
-    Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
-    [SUCCESS]: Code rollback has completed successfully.
-    Disabling maintenance mode
-    ```
+   ```terminal
+   Enabling maintenance mode
+   Code rollback is starting ...
+   Code rollback filename: 1433876616_filesystem.tgz
+   Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
+   [SUCCESS]: Code rollback has completed successfully.
+   Disabling maintenance mode
+   ```
 
  {:.bs-callout-info}
 To run the `magento` command again without changing directories, you might need to enter `cd pwd`.

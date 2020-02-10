@@ -20,9 +20,9 @@ You can either add a `require` section to `composer.json` or you can use the `co
 1. Log in to the Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 1. Change to the directory to which you cloned the Magento application. For example,
 
-    ```bash
-    cd /var/www/magento2
-    ```
+   ```bash
+   cd /var/www/magento2
+   ```
 
 You have the following options:
 
