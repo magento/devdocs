@@ -29,7 +29,7 @@ Attribute | Type | Description
 
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
-``` text
+```graphql
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -59,7 +59,7 @@ The following query returns information about downloadable product `24-WG085_Gro
 
 {% collapsible Response %}
 
-``` text
+```json
 {
   "data": {
     "products": {
