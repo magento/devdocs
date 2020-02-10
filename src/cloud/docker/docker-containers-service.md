@@ -28,7 +28,7 @@ When a database container initializes, it creates a new database with the specif
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
 
-You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
+You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values by including a `my.cnf` file using a mount, or by copying the custom configuration file to the directory `.docker/mysql/mariadb.conf.d`. Also, you can add the correct variables directly to the override file as shown in the following examples.
 
 Add a custom `my.cnf` file to the `services` section in the  `docker-compose.override.yml` file:
 
@@ -36,6 +36,12 @@ Add a custom `my.cnf` file to the `services` section in the  `docker-compose.ove
   db:
     volumes:
       - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
+```
+
+Add a custom `custom.cnf` file to the `.docker/mysql/mariadb.conf.d` directory:
+
+```shell
+cp custom.cnf .docker/mysql/mariadb.conf.d
 ```
 
 Add configuration values to the `docker-compose.override.yml` file:
