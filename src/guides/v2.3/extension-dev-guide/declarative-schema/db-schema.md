@@ -416,8 +416,8 @@ In the following example, the selected `constraint` node defines the characteris
 </schema>
 ```
 
- {:.bs-callout-info}
-Foreign keys can only be added to tables where both the tables are created by using declarative schema (`db_schema.xml`) only.
+{:.bs-callout-info}
+Foreign keys can only be added to tables when both tables were created using a declarative schema (`db_schema.xml`).
 
 ### Drop a foreign key
 
