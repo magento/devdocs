@@ -10,7 +10,7 @@ Event |Description
 `add-to-cart` | A product is added to the cart
 `add-to-wishlist` | A product is added to the wishlist
 `apply-discount-action` | A discount code is applied to the cart
-`edit-product-qty` | A quantity of a product in a cart changed to a non-zero value
+`edit-product-qty` | The quantity of a product in a cart changed to a non-zero value
 `initiate-checkout` | The customer initiates checkout
 `instant-purchase` | The customer completes an instant purchase.
 `place-order` | The customer's order is submitted
