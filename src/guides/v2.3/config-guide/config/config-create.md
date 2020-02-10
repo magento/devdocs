@@ -75,10 +75,13 @@ The following example from the Magento_Sales module's [di.xml]({{ site.mage2blob
 * And finally, the last type node attaches that config data virtual type to the [Magento\Sales\Model\Order\Pdf\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Pdf/Config.php) class, which is used for actually reading values in from those [pdf.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/pdf.xml) files.
 
 
-4. Define a reader by extending [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class to provide the following parameters:
+4. Define a reader by extending [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class and rewrite the following parameters:
 
-{:.bs-callout-info}
-You can also implement `ReaderInterface` to create your own version of the reader. For reference see [Magento_Analytics config reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Analytics/ReportXml/Config/Reader.php)
+```php
+$_idAttributes // Array of node attribute IDs.
+```
+
+**Example:**
 
 ```php
 namespace Vendor\ModuleName\Model\Config;
@@ -96,6 +99,10 @@ class Reader extends \Magento\Framework\Config\Reader\Filesystem
     ];
 }
 ```
+
+{:.bs-callout-info}
+If you prefer to create your own version of the reader you can do so by implementing `\Magento\Framework\Config\ReaderInterface` . For reference see [Magento_Analytics config reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Analytics/ReportXml/Config/Reader.php)
+
 
 After define your reader, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
