@@ -120,10 +120,10 @@ composer require magento/product-community-edition=2.3.3 --no-update
 
 Security patches contain security fixes only. They are designed to make the upgrade process faster and easier.
 
-Security patches use the Composer naming convention `2.3.2-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ee}} 2.3.2-p1 metapackage:
+Security patches use the Composer naming convention `2.3.3-px`. Use Composer to specify a patch. For example, to download the {{site.data.var.ce}} 2.3.3-p1 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.2-p1 --no-update
+composer require magento/product-community-edition=2.3.3-p1 --no-update
 ```
 
 ## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
