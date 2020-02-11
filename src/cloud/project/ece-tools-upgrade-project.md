@@ -47,7 +47,7 @@ To upgrade project to use ece-tools:
 1. Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
 
     ```bash
-    composer require "magento//magento-cloud-metapackage": ">=2.2.0 <2.2.1" --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.2.0 <2.2.1" --no-update
     ```
 
 1. Update the metapackage.
