@@ -17,6 +17,6 @@ jobs:
       with:
         ruby-version: 2.6
     - name: Install mdl gem
-      run: gem install mdl
+      run: gem install mdl -v '0.7.0'
     - name: Run mdl
       run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
