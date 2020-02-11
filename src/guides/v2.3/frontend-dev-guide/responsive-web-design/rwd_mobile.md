@@ -24,7 +24,8 @@ To create a mobile-specific theme:
     </head>
 </page>
 ```
-The `<remove>` instruction will remove the desktop-specific files from your theme.
+
+The `<remove>` instruction removes the desktop-specific files from your theme.
 
 ## Applying mobile-specific styles
 
@@ -39,7 +40,7 @@ Use `styles-m.less` to generate mobile-specific styles.
 </page>
 ```
 
-Media queries `@media-common`, `max screen__m`, `max screen__s`, `max @screen__xs` and `max @screen__xxs`   will be added to `styles-m.css`.
+Media queries `@media-common`, `max screen__m`, `max screen__s`, `max @screen__xs` and `max @screen__xxs` will be added to `styles-m.css`.
 
 Example of a LESS mixin to target screen width less than 480px:
 
