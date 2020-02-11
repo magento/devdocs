@@ -14,7 +14,7 @@ The Catalog SaaS Export module is a requirement to successfully use the [Product
 
 ### Provide API key {#apikeys}
 
-1. Log in to your Magento account at `https://account.magento.com`.
+1. Log in to your Magento account at [account.magento.com](https://account.magento.com).
 
 1. Under the **Magento** tab, select **API Portal** on the sidebar.
 
