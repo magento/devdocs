@@ -28,6 +28,8 @@ The release notes include:
 
    -  {:.new}**PHP-FPM container updates**–
 
+      - {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
+
       -  {:.new}**Added Node.js support**–Updated the PHP-FPM image to support node, npm, and the grunt-cli capabilities inside the PHP container.<!--MAGECLOUD-3953-->
 
       -  {:.new}**Added support for [ionCube](https://www.ioncube.com/)**–Updated the default Docker configuration to support ionCube in the local Docker development environment.<!--MAGECLOUD-4354-->
