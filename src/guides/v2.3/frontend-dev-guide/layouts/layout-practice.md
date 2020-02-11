@@ -93,7 +93,7 @@ Other modules use this block to add their specific links to the header using the
 
 The Luma theme [moves]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.
 
-    <Magento_luma_theme_dir>/Magento_Customer/layout/default.xml
+`<Magento_luma_theme_dir>/Magento_Customer/layout/default.xml`
 
 ```xml
 <referenceBlock name="header.links">
@@ -170,7 +170,7 @@ OrangeCo needs to create a new block, say, `header.links`, in the `header.panel`
 
 So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) layout is added in the Orange theme:
 
-    app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
+`app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml`
 
 ```xml
 <?xml version="1.0"?>
