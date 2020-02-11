@@ -64,6 +64,7 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
     </menu>
 </config>
 ```
+
 | Attribute | Description |
 | --------- | ----------- |
 | `id` | Unique string and should be in this format: `Vendor_ModuleName::resourceName` |
@@ -73,7 +74,6 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
 | `parent` | The another menu which is parent of current menu |
 | `action` | Url of the page which needs to be display after click the menu. It should be in following format: `front_name/controller_path/action` |
 | `resource` | To restrict using ACL rule |
-
 
 The menu displays like below,
 
