@@ -46,15 +46,15 @@ To work around it:
 
    *  Downgrade Composer using the following command:
 
-       ```bash
-       composer self-update 1.0.0-alpha11
-       ```
+      ```bash
+      composer self-update 1.0.0-alpha11
+      ```
 
    *  Upgrade Composer to a version later than November 26, 2015:
 
-       ```bash
-       composer self-update
-       ```
+      ```bash
+      composer self-update
+      ```
 
 1. Delete your Magento 2 directory and subdirectories.
 1. Try the download again using either [`composer create-project`]({{ page.baseurl }}/install-gde/composer.html) or [`git clone`]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
