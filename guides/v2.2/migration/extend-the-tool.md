@@ -96,7 +96,7 @@ Using the same "GreatBlog" example, suppose the extension contains three tables 
     ...
     <step title="GreatBlog Step">
         <integrity>Migration\Step\GreatBlog\Integrity</integrity>
-        <delta>Migration\Step\GreatBlog\Data</delta>
+        <data>Migration\Step\GreatBlog\Data</data>
         <volume>Migration\Step\GreatBlog\Volume</volume>
     </step>
 </steps>
