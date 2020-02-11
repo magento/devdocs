@@ -1,0 +1,22 @@
+name: Markdown linting test
+
+on:
+  pull_request:
+    branches:
+      - master
+      - 2.*-develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: Install mdl gem
+      run: gem install mdl
+    - name: Run mdl
+      run: mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .
