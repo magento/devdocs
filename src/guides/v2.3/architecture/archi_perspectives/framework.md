@@ -53,7 +53,7 @@ The `vendor/magento/framework` directory maps to the `Magento\Framework` [namesp
 
 ## Highlights of Magento Framework
 
-The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an [extension](https://glossary.magento.com/extension) developer, you may be interested in this subset of Framework namespaces.
+The Magento Framework (`vendor/magento/fremework/`) provides a robust range of functionality. If you are an [extension](https://glossary.magento.com/extension) developer, you may be interested in this subset of Framework namespaces.
 
 |Namespace|Purpose|
 |--- |--- |
