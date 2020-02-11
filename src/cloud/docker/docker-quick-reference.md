@@ -6,6 +6,9 @@ functional_areas:
   - Docker
 ---
 
+{:.bs-callout-info}
+See [Configure Docker] for details on configuring and launching a {{site.data.var.mcd-prod}} environment.
+
 ## docker-compose
 
 Action | Command
@@ -39,8 +42,8 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
+| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes-for-configuring-the-docker-environment)         | `--mode`, `-m`   | production, developer
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes-for-configuring-the-docker-environment) | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
 See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
@@ -80,3 +83,4 @@ Destroy containers | `down`
 Destroy, re-create, and start containers | `up`
 
 [Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[Configure Docker]: {{site.baseurl}}/cloud/docker/docker-config.html

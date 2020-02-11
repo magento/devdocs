@@ -51,7 +51,7 @@ The `ece-docker build:compose` command overwrites the existing `docker-compose.y
 
 1. Optionally, [enable Xdebug].
 
-## Launch modes
+## Launch modes for configuring the Docker environment
 
 _Mode_ is an additional configuration option for the Docker configuration generator (the `ece-docker build:compose` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
