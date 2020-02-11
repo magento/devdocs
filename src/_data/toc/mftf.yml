@@ -87,7 +87,7 @@ pages:
     children:
 
       - label: Action group reference
-        url: /mftf/docs/actiongroup-list.html
+        url: /guides/v2.3/reference/mftf/action-groups.html
         versionless: true
 
       - label: Codecept
@@ -99,7 +99,7 @@ pages:
         versionless: true
       
       - label: MFTF functional test reference
-        url: /mftf/docs/mftf-tests.html
+        url: /guides/v2.3/reference/mftf/functional-tests.html
         versionless: true
 
   - label: Reporting

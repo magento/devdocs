@@ -40,6 +40,14 @@ For the Early Access Program, deploying recommendations to your site requires th
 
 1. Now that you have installed and configured the recommendations module, [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html).
 
+### Update Product Recommendations installation
+
+If you need to update your existing product recommendations installation, run:
+
+```bash
+composer update magento/product-recommendations --with-dependencies
+```
+
 ## Uninstall Product Recommendations
 
 If needed, you can [uninstall the product-recommendations module]({{ site.baseurl }}/guides/v{{ site.version }}/install-gde/install/cli/install-cli-uninstall-mods.html).

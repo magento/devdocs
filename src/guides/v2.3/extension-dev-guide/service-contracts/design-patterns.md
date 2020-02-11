@@ -10,7 +10,7 @@ In the programming community, a _design pattern_ is a recommended way of writing
 
 Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those interfaces.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}
@@ -32,6 +32,10 @@ You must define the service interfaces for a service contract in the `Api` subdi
 Define data interfaces in the `Api/Data` subdirectory for a module.
 
 For example, the data interfaces for the Customer module are in the `/app/code/Magento/Customer/Api/Data` subdirectory.
+
+{:.bs-callout-info}
+The [SimpleDataObjectConverter]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SimpleDataObjectConverter.php) follows a strict 'camel case' to 'snake case' conversion of data keys (table columns). You should not use `underscores (_)` between alphanumerical characters in column names.
+For example, use `default_shipping1` instead of `default_shipping_1`, as the Data Interface method `defaultShipping1` will be converted into `default_shipping1`.
 
 ### Data search results interfaces {#search-results-interfaces}
 
