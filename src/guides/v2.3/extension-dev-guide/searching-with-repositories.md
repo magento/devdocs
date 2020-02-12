@@ -284,7 +284,7 @@ The [`PaginationProcessor`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib
 The [`JoinProcessor`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor.php) class allows you to join fields from other tables into an abstract database collection.
 To join a table, implement `Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface::apply(AbstractDb $collection)`. Inside the class, use the `$collection->join(…)` method.
 
-Below is an example of creating a Join Processor: 
+Below is an example of creating a Join Processor:
 The virtual type in the `di.xml` class named `Magento\Tax\Model\Api\SearchCriteria\CollectionProcessor\TaxRuleJoinProcessor`:
 
 ```xml
@@ -336,8 +336,7 @@ class Rate implements CustomJoinInterface
 }
 ```
 
-In the `apply` method the object calls `joinCalculationData` method of `Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection` class
-
+In the `apply` method the object calls `joinCalculationData` method of `Magento\Tax\Model\ResourceModel\Calculation\Rule\Collection` class.
 
 ```php
 /**
