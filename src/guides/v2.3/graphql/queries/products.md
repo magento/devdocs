@@ -352,7 +352,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 
 ```graphql
 {
-  products(search: "Yoga pants", pageSize: 10) {
+  products(search: "Yoga pants", pageSize: 2) {
     total_count
     items {
       name
@@ -523,7 +523,7 @@ The following query returns aggregations for a query that filters on items with 
 
 ```graphql
 {
-  products(filter: {category_id: {eq: "27"}, price: {from: "30", to: "39.99"}, color: {eq: "49"}}, pageSize: 25, sort: {name: DESC}) {
+  products(filter: {category_id: {eq: "27"}, price: {from: "30", to: "39.99"}}, pageSize: 25, sort: {name: DESC}) {
     aggregations {
       attribute_code
       count
