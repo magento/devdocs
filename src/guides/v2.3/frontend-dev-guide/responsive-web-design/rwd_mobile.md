@@ -25,6 +25,8 @@ To create a mobile-specific theme:
 </page>
 ```
 
+The `<remove>` instruction removes the desktop-specific files from your theme.
+
 ## Applying mobile-specific styles
 
 Use `styles-m.less` to generate mobile-specific styles.
@@ -32,14 +34,21 @@ Use `styles-m.less` to generate mobile-specific styles.
  ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <head>
+    <remove src="css/styles-l.css" />
     <css src="css/styles-m.css" />
   </head>
 </page>
 ```
 
-Media queries `@media-common`, `max screen__s` and `max` `screen__m` will be added to `styles-m.css`.
+Media queries `@media-common`, `max screen__m`, `max screen__s`, `max @screen__xs` and `max @screen__xxs` will be added to `styles-m.css`.
 
-This will remove the desktop-specific files from your theme.
+Example of a LESS mixin to target screen width less than 480px:
+
+```less
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    // your code
+}
+```
 
 ## Recommended reading
 
