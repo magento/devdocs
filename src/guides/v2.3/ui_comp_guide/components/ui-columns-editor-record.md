@@ -91,3 +91,4 @@ This is an example of how the ColumnsEditorRecord component integrates with the 
 #### Result
 
 ![ColumnsEditorRecord Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-editor-record-result.png)
+
