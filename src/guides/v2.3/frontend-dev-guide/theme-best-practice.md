@@ -30,5 +30,10 @@ We recommend using the following best practices when developing themes:
    ```xml
    <a href="#"><?= __('Click to download'); ?></a>
    ```
+1. By following the standard conventions, you give your code a professional look while making it easier to read. Ensure that your Magento coding standards are based on PSR coding standards.
+1. When inheriting Blank or Luma themes, Make use of the mobile first approach that is already been followeed in these themes.
+1. Avoid using redundant or duplicate code, which can be hard to maintain. Being it for styling (CSS, LESS) or developemnt (PHP), Instead of copy and paste of same code, create a single class or method and reference it when needed. Be sure to reuse code as much as possible.
+1. While styling any custom module, Do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example, like in app/code/company/module/view/frontend/web/css/source/_module.less.
+1. While you’re developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won’t function properly.
 
 After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your templates, layouts, and styles.
