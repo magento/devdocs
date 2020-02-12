@@ -90,6 +90,9 @@ For more information see: [naming your component]({{ page.baseurl }}/extension-d
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="MyCompany_ExampleAdminNewPage">
+    <sequence>
+      <module name="Magento_Checkout"/>
+    </sequence>
   </module>
 </config>
 ```
@@ -100,6 +103,16 @@ If your module does not implement [Declarative Schema]({{ page.baseurl }}/extens
 
 ```xml
 <module name="MyCompany_ExampleAdminNewPage" setup_version="1.0.0">
+```
+
+If your module has dependency with other modules, you can change the loading order sequence of the module by using `sequence` node. In below example, `MyCompany_ExampleAdminNewPage` will be load after `Magento_Checkout` module.
+
+```xml
+<module name="MyCompany_ExampleAdminNewPage">
+  <sequence>
+    <module name="Magento_Checkout"/>
+  </sequence>
+</module>
 ```
 
 ## Routing and navigation
