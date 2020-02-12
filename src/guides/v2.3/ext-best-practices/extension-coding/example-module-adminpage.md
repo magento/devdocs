@@ -90,9 +90,6 @@ For more information see: [naming your component]({{ page.baseurl }}/extension-d
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="MyCompany_ExampleAdminNewPage">
-    <sequence>
-      <module name="Magento_Checkout"/>
-    </sequence>
   </module>
 </config>
 ```
