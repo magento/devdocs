@@ -6,8 +6,7 @@ functional_areas:
   - Docker
 ---
 
-{:.bs-callout-info}
-See [Configure Docker] for details on configuring and launching a {{site.data.var.mcd-prod}} environment.
+{%include cloud/note-docker-config-reference-link.md%}
 
 ## docker-compose
 
@@ -42,8 +41,8 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes-for-configuring-the-docker-environment)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes-for-configuring-the-docker-environment) | `--sync-engine` | native (default), docker-sync, mutagen
+| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode)         | `--mode`, `-m`   | production, developer
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-syncing-data.html) | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
 See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
