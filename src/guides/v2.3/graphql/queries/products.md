@@ -519,11 +519,14 @@ The following query returns aggregations for a query that filters on items with 
 -  In the price range of $30 - $39.99
 -  Comes in black (color `49`)
 
+{:.bs-callout-info}
+By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describe how to enable this attribute for filtering.
+
 **Request:**
 
 ```graphql
 {
-  products(filter: {category_id: {eq: "27"}, price: {from: "30", to: "39.99"}}, pageSize: 25, sort: {name: DESC}) {
+  products(filter: {category_id: {eq: "27"}, price: {from: "30", to: "39.99"}, color: {eq: "49"}}, pageSize: 25, sort: {name: DESC}) {
     aggregations {
       attribute_code
       count
