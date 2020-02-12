@@ -1025,7 +1025,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
 
 ### Sort by a custom attribute
 
-In this example, the `description` attribute has been enabled by setting the **Stores** > Attributes > **Product** > description > **Storefront Properties** > **Use in Search** and **Used in Sorting in Product Listing** fields to Yes. The query returns all products with a price range of $28 to $30, sorted by the description.
+In this example, the `description` attribute has been enabled by setting the **Stores** > Attributes > **Product** > description > **Storefront Properties** > **Use in Search** and **Used for Sorting in Product Listing** fields to Yes. The query returns all products with a price range of $28 to $30, sorted by the description.
 
 **Request:**
 
