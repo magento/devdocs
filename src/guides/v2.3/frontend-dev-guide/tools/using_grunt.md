@@ -94,7 +94,7 @@ To use a custom file for Grunt configuration:
    Example:
    If your custom configuration file `local-themes.js` is located in the `<magento_root>/dev/tools/grunt/configs` directory, the following is already set in your `grunt-config.json`:
 
-   ```js
+   ```json
    {
        "themes": "dev/tools/grunt/configs/local-themes"
    }

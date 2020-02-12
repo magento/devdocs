@@ -98,7 +98,7 @@ Some email clients (for example, Gmail) support only CSS styles that have been a
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
 
 ```html
-{{inlinecss file="css/email-inline.css"}}
+{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
 ```
 
 The `inlinecss` directive tells Magento which files to apply as inline styles on the email template.
@@ -355,10 +355,10 @@ To set those values:
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
 ```text
-{{var store.getFrontendName()}}
-{{var store_email}}
-{{var store_phone}}
-{{var store_hours}}
+{% raw %}{{var store.getFrontendName()}}{% endraw %}
+{% raw %}{{var store_email}}{% endraw %}
+{% raw %}{{var store_phone}}{% endraw %}
+{% raw %}{{var store_hours}}{% endraw %}
 ```
 
 ## Localization {#localization}
