@@ -117,15 +117,15 @@ There are two possible ways to configure the Data Migration Tool for migration:
 
 1. Change to the following directory:
 
-    ```bash
-    <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
-    ```
+   ```bash
+   <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+   ```
 
 1. Enter the following command to create a `config.xml` from the provided sample:
 
-    ```bash
-    cp config.xml.dist config.xml
-    ```
+   ```bash
+   cp config.xml.dist config.xml
+   ```
 
 1. Open `config.xml` in a text editor.
 
