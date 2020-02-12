@@ -23,7 +23,7 @@ The following query returns the order history of the logged in customer.
 {
   customerOrders {
     items {
-      increment_id
+      order_number
       id
       created_at
       grand_total
@@ -41,14 +41,14 @@ The following query returns the order history of the logged in customer.
     "customerOrders": {
       "items": [
         {
-          "increment_id": "000000001",
+          "order_number": "000000001",
           "id": 1,
           "created_at": "2019-02-21 00:24:34",
           "grand_total": 36.39,
           "status": "processing"
         },
         {
-          "increment_id": "000000002",
+          "order_number": "000000002",
           "id": 2,
           "created_at": "2019-02-21 00:24:35",
           "grand_total": 39.64,
@@ -77,7 +77,8 @@ Attribute | Data type | Description
 `created_at` | String | A timestamp indicating when the order was placed
 `grand_total` | Float | The total of the order
 `id` | Int | The ID assigned to the customer's order
-`increment_id` | String | An ID that indicates the sequence of the order in the customer's order history
+`increment_id` | String | Deprecated. Use `order_number` instead. An ID that indicates the sequence of the order in the customer's order history
+`order_number` | String! | The order number assigned to the order
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
 
 ## Errors

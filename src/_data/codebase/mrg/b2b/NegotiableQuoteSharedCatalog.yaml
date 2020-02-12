@@ -1,7 +1,7 @@
 ---
 title: Magento_NegotiableQuoteSharedCatalog
 source_repo: magento2b2b
-release: 1.1.3
+release: 1.1.4
 github_path: app/code/Magento/NegotiableQuoteSharedCatalog/README.md
 last_modified_at: '2017-02-17 11:38:50 +0300'
 content: "## Overview\n\nThe Magento_NegotiableQuoteSharedCatalog module enables the

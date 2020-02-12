@@ -201,16 +201,8 @@ To pass variables using the `magento-vars.php` file:
        if (!isset($_SERVER['HTTP_HOST'])) {
            return false;
        }
-       return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+       return $_SERVER['HTTP_HOST'] === $host;
    }
-   ```
-   {:.no-copy}
-
-1. Change the `return` line in the `function` block.
-
-   ```diff
-   -   return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-   +   return $_SERVER['HTTP_HOST'] ===  $host;
    ```
    {:.no-copy}
 

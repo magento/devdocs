@@ -12,7 +12,7 @@ The scaled architecture is available for {{site.data.var.ece}} accounts with the
 
 ## Split architecture
 
-Historically, the Pro architecture consisted of 3 nodes, each containing a full tech stack. Now, there is a  scalable infrastructure that provides a tiered solution with a minimum of 6 nodes: 3 nodes for the core database and other services and 3 nodes for the web server. This split architecture provides the capability to scale tiers independently to achieve an optimal balance of performance. The **core** tier scales vertically (increases in size), and the **web** tier scales horizontally (increases instance count) and vertically (changes instance type and size).
+Historically, the Pro architecture consisted of 3 nodes, each containing a full tech stack. Now, there is a scalable infrastructure that provides a tiered solution with a minimum of 6 nodes: 3 nodes for the core database and other services and 3 nodes for the web server. This split architecture provides the capability to scale tiers independently to achieve an optimal balance of performance. The **core** tier scales vertically (increases in size), and the **web** tier scales horizontally (increases instance count) and vertically (changes instance type and size).
 
 Scaling must use the same instance type and size for each node:
 
@@ -21,7 +21,7 @@ Scaling must use the same instance type and size for each node:
 
 ### Core tier scaling
 
-There are 3 nodes (core nodes) for the database and included services, such as ElasticSearch, MariaDB, and Redis. When the core tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available. Because the database cluster is designed for high availability, you cannot scale horizontally in a reliable way with the technologies used.
+There are 3 nodes (core nodes) for data storage, cache, and services: **ElasticSearch**, **MariaDB**, **Redis**, and more. When the core tier approaches capacity, the only way to scale is to increase the server size, such as boosting the CPU power and memory. Capacity is limited to the size of the node that is available. Because the database cluster is designed for high availability, you cannot scale horizontally in a reliable way with the technologies used.
 
 ![Core tier scaling]
 
@@ -31,11 +31,11 @@ You can further optimize the performance of the core tier by routing traffic bas
 
 ### Web tier scaling
 
-There are 3 nodes (web nodes) for php-fpm processing and web traffic. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level.
+There are 3 nodes (web nodes) for processing requests and web traffic: **php-fpm** and **NGINX**. In addition to vertical scaling by increasing power and memory, the web tier can scale horizontally by adding extra web servers to an existing cluster when constricted at the PHP level.
 
 ![Web tier scaling]
 
-This complements the vertical scaling provided by the core tier. As the core tier scales in size and power to accommodate a growing database and increase in service usage, the web tier scales in size and power, and even instances, to accommodate growing process and traffic requirements.
+This complements the vertical scaling provided by the core tier. As the core tier scales in size and power to accommodate a growing database and increase in service usage, the web tier scales in size and power, and even instances, to accommodate an increase in process requests and higher traffic requirements.
 
 Consider an example that the web node instance type is _C5.2xlarge with 8 CPU and 16Gb RAM_. The number of requests to the site increased greatly. You can add an additional C5.2xlarge node to handle the increase in php-fpm processes or you can change each instance type to _C5.4xlarge with 16 CPU and 32Gb RAM_. Adding an additional node reduces the risk of insufficient surge capacity.
 
@@ -46,7 +46,7 @@ Minimally, Pro projects with the Scaled architecture have 6 nodes available.
 -  3 web nodes c5.2xlarge (8 CPU, 16 Gb RAM)
 -  3 core nodes m5.2xlarge (8 CPU, 32 Gb RAM)
 
-Each project is unique, however, and requires performance monitoring to properly analyze resource management. Each account includes the [New Relic Infrastructure service][nri], which automatically connects with the application data and performance analytics to provide dynamic server monitoring. As a resource reaches capacity or a degradation in performance, you can create a request to scale your infrastructure to meet the demand.
+Each project is unique, however, and requires performance monitoring to properly analyze resource management. Each account includes the [New Relic Infrastructure service][nri], which automatically connects with the application data and performance analytics to provide dynamic server monitoring. Specifically, you can use the New Relic service to monitor CPU and RAM utilization to determine which nodes require additional resources. As a resource reaches capacity or you notice a degradation in performance based on the analytics, you can create a request to scale your infrastructure to meet the demand.
 
 ### SSH access
 
@@ -58,6 +58,9 @@ ssh <node>.<project-ID>-<environment>-<user-ID>@ssh.<region>.magento.com
 
 -  `node` 1 to 3—Addresses to access the core nodes
 -  `node` 4 to _n_—Addresses to access the web nodes
+
+{: .bs-callout-tip}
+After you log in, you can confirm the server ID and the role: core nodes use the _unified_ role, and web nodes use the _web_ role.
 
 Example response as you log in to a **core node** includes the _unified_ role:
 

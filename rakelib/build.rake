@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 namespace :build do
 
   desc 'Build the site for production'

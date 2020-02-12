@@ -9,7 +9,7 @@ Magento provides API functional tests that can verify extension points in GraphQ
 
 ## Creating a new GraphQL functional test
 
-All GraphQL functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\GraphQlAbstract`. It defines the `graphQlQuery()` method, which should be used to perform Web API calls from tests.
+All GraphQL functional tests should be located in the `dev/tests/api-functional/testsuite/Magento/GraphQl/` directory and inherit from the generic test case `Magento\TestFramework\TestCase\GraphQlAbstract`. It defines the `graphQlQuery()` and `graphQlMutation()` methods, which should be used to perform Web API calls from tests.
 
 The following test verifies that the schema returns the correct attribute type, given the `attribute_code` and corresponding `entity_type`.
 
