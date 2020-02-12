@@ -520,7 +520,7 @@ The following query returns aggregations for a query that filters on items with 
 -  Comes in black (color `49`)
 
 {:.bs-callout-info}
-By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describe how to enable this attribute for filtering.
+By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
 
 **Request:**
 
