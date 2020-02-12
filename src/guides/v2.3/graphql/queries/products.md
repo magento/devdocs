@@ -15,7 +15,7 @@ products(
   filter: ProductAttributeFilterInput
   pageSize: Int
   currentPage: Int
-  sort: ProductSortFilterInput
+  sort: ProductAttributeSortInput
 ): Products
 ```
 
@@ -280,7 +280,7 @@ The `AggregationOption` array contains a list of possible options for the `attri
 Attribute | Data type | Description
 --- | --- | ---
 `count` | Int | The number of items returned by the filter
-`label` | String! | The label of the filter
+`label` | String | The label of the filter
 `value` | String! | The internal ID representing the value of the option
 
 ### ProductInterface attributes {#ProductInterface}
