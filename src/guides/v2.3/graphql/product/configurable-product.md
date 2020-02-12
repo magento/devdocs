@@ -71,7 +71,7 @@ Attribute | Type | Description
 
 ### SwatchDataInterface {#swatchDataInterface}
 
-Configurable products often provide the shopper to select the color, texture, or other visual aspect of the item. Magento displays these options as color, graphic, or text swatches.
+Swatches allow the shopper to view the color, texture, or other visual aspect of a configurable product. Magento displays these options as color, graphic, or text swatches.
 
 The following data types implement `SwatchDataInterface`:
 
