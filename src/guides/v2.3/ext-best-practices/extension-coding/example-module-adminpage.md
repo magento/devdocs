@@ -102,7 +102,8 @@ If your module does not implement [Declarative Schema]({{ page.baseurl }}/extens
 <module name="MyCompany_ExampleAdminNewPage" setup_version="1.0.0">
 ```
 
-If your module has dependency with other modules, you can change the loading order sequence of the module by using `sequence` node. In below example, `MyCompany_ExampleAdminNewPage` will be load after `Magento_Checkout` module.
+If your module has a dependency with other modules, you can change the loading order sequence of the module by using the `sequence` node.
+In the example below, `MyCompany_ExampleAdminNewPage` will be loaded after the `Magento_Checkout` module.
 
 ```xml
 <module name="MyCompany_ExampleAdminNewPage">
