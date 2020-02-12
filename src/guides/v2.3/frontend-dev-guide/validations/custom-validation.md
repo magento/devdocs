@@ -17,9 +17,10 @@ $.validator.addMethod(
 )
 ```
 
-For example, this code snippet adds a new simple validation rule in the mixin to validate if an input field has only five words.
+This code snippet adds a simple new validation rule to the mixin to validate if an input field has only five words.
 
 `Vendor/Module/view/frontend/requirejs-config.js`
+
 ```javascript
 var config = {
   config: {
@@ -33,6 +34,7 @@ var config = {
 ```
 
 `Vendor/Module/view/frontend/web/js/validation-mixin.js`
+
 ```javascript
 define(['jquery'], function($) {
   'use strict';
