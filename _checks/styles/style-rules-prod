@@ -35,4 +35,4 @@ rule 'MD038'
 exclude_rule 'MD039'
 rule 'MD040'
 exclude_rule 'MD041'
-exclude_rule 'MD046'
+rule 'MD046', :style => :fenced
