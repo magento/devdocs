@@ -16,9 +16,13 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-## v1.0.1
+## v1.1.0
 
 -  {:.new}**Container updates**–
+
+   -  {:.new}**PHP-FPM container updates**–
+
+      - {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
 
    -  {:.new}**Varnish container**–
 
