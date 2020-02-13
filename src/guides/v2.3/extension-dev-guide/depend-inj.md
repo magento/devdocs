@@ -49,14 +49,22 @@ namespace Magento\Backend\Model\Menu;
 class Builder
 {
     /**
+     * @var Factory
+     */
+    private $menuItemFactory;
+
+    /**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
      */
     public function __construct(
-        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
+        \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
     ) {
         $this->_itemFactory = $menuItemFactory;
     }
 
+    /**
+     * @param \Magento\Backend\Model\Menu\Builder\AbstractCommand
+     */
     public function processCommand(\Magento\Backend\Model\Menu\Builder\AbstractCommand $command) // API param
     {
         // processCommand Code
