@@ -9,7 +9,7 @@ This release includes over 220 functional fixes to the core product and  over 30
 
 ## Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4 to address a critical PayPal Express Checkout issue
 
-This issue affects orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. When the customer enters a region in the text field, Magento throws this error: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`.  When the customer selects the country region from the drop-down menu when placing an order, the order is completed successfully.  See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Both Git-based  and Composer-based  patches are available. A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
+This issue affects orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. When the customer enters a region in the text field, Magento throws this error: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`.  When the customer selects the country region from the drop-down menu when placing an order, the order is completed successfully.  See [Applying patches]({{page.baseurl}}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Both Git-based  and Composer-based  patches are available. A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
 
 ## Security-only patch available
 
@@ -43,7 +43,6 @@ Additional security enhancements include:
 
 *  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
-{:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
@@ -2164,9 +2163,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The WYSIWYG editor now saves quotation marks correctly. Previously, quotation marks were converted to `&quot;`.
 
-## Known issue
+## Known issues
 
-This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments. You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+*  **Issue**: This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments. You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+
+*  **Issue**: Magento throws an error when a customer places an order with PayPal Express Checkout and the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. **Workaround**: Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4  (Git-based or Composer-based). A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
 
 ## Community contributions
 
