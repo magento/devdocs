@@ -103,7 +103,7 @@ class Reader extends \Magento\Framework\Config\Reader\Filesystem
 {:.bs-callout-info}
 If you prefer to create your own version of the reader you can do so by implementing `\Magento\Framework\Config\ReaderInterface`. For reference see [Magento_Analytics config reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Analytics/ReportXml/Config/Reader.php)
 
-After define your reader, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
+After defining your reader, use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
 ## Validate a configuration type {#config-files-validate}
 
