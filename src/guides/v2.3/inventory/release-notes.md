@@ -28,7 +28,7 @@ The release notes include:
 
 -  {:.new}**Increased test coverage.** Introduced a bunch of new Functional tests. Almost all manual Inventory scenarios are covered with automated tests.
 
--  {:.bug} Numerous bug fixes targeted to resolve issues with credit memos, grouped products, source and stock mass actions.    
+-  {:.bug} Numerous bug fixes targeted to resolve issues with credit memos, grouped products, source and stock mass actions.
 
 ### v1.1.3
 
