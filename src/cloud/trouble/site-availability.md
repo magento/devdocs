@@ -15,11 +15,13 @@ You may be able to resolve your issue by searching your logs for one of the exam
 
 This exception is caused by a known issue with how Magento handles simultaneous connections to Redis during static content deployment in the deploy phase.
 
-    [2018-01-30 18:56:52] Generating static content for locales: en_US
-    [2018-01-30 18:56:52] Command:php ./bin/magento setup:static-content:deploy --jobs=3  en_US
+```terminal
+[2018-01-30 18:56:52] Generating static content for locales: en_US
+[2018-01-30 18:56:52] Command:php ./bin/magento setup:static-content:deploy --jobs=3  en_US
 
-      [CredisException]
-      read error on connection
+    [CredisException]
+    read error on connection
+```
 
 During static content deployment in the deploy phase, the default number of processing jobs is set to `3`. We recommend setting the number of processing jobs to `1` as a workaround.
 
@@ -39,10 +41,14 @@ Modify the deploy phase using the `SCD_THREADS` environment variable and redeplo
 
 1. In a terminal, log in to your project.
 
-        magento-cloud login
+   ```bash
+   magento-cloud login
+   ```
 
 1. Set the variable.
 
-        magento-cloud variable:set SCD_THREADS '1' -e <environment>
+   ```bash
+   magento-cloud variable:set SCD_THREADS '1' -e <environment>
+   ```
 
 See [Manage variables]({{ site.baseurl }}/cloud/env/variables-intro.html).

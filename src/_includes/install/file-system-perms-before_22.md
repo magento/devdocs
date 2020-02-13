@@ -32,4 +32,6 @@ After you've performed the other tasks in this topic, enter one of the following
 
 For example,
 
-    su magento_user
+```bash
+su magento_user
+```

@@ -45,10 +45,12 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
 
     For example, to merge the XML files:
 
-       array(
-         '</path/to/node>' => '<identifierAttributeName>',
-         '</path/to/other/node>' => '<identifierAttributeName>',
-       }
+    ```php
+      array(
+        '</path/to/node>' => '<identifierAttributeName>',
+        '</path/to/other/node>' => '<identifierAttributeName>',
+      }
+    ```
 
 *  `$defaultScope`. Defines the configuration scope to be read by default. The default value for this parameter is global scope.
 
@@ -71,7 +73,9 @@ If you have an `events.xml` file and a first `events.xsd` file, the XSD files fo
 
 To ensure validation of an XML file by appropriate XSD file, you must add the Uniform Resource Name (URN) to the XSD file in the XML file. For example:
 
-    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd">
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd">
+```
 
 Your IDE can validate your configuration files at both runtime and during development.
 
