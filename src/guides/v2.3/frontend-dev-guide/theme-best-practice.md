@@ -30,10 +30,10 @@ We recommend using the following best practices when developing themes:
    ```xml
    <a href="#"><?= __('Click to download'); ?></a>
    ```
-1. By following the standard conventions, you give your code a professional look while making it easier to read. Ensure that your Magento coding standards are based on PSR coding standards.
-1. When inheriting Blank or Luma themes, Make use of the mobile first approach that is already been followeed in these themes.
-1. Avoid using redundant or duplicate code, which can be hard to maintain. Being it for styling (CSS, LESS) or developemnt (PHP), Instead of copy and paste of same code, create a single class or method and reference it when needed. Be sure to reuse code as much as possible.
-1. While styling any custom module, Do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example, like in app/code/company/module/view/frontend/web/css/source/_module.less.
-1. While you’re developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won’t function properly.
+1.As Magento follows Zend, PSR2 and PSR4 Coding standards. Make sure that you follow the same so that the code will be readable and easier to understand.
+1. When inheriting blank or luma themes. Make use of the mobile first approach that is already been followed in these themes.
+1. Create a single class or method or mixin rather than copy and paste of same code which will be easier to maintain and help reduce repeated works.
+1. While styling any custom module, Do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example, like in app/code/Company/Module/view/frontend/web/css/source/_module.less.
+1. Always do remember that you must clear cache or clear certain directories and give proper permissions periodically while developing a theme or modules or else your code will not run properly and end up with errors.
 
 After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your templates, layouts, and styles.
