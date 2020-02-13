@@ -16,25 +16,25 @@ To enable database query profiling:
 
 1. Enable profiling.
 
-    ```sql
-    SET @@profiling = 1;
-    ... run some queries
-    ```
+   ```sql
+   SET @@profiling = 1;
+   ... run some queries
+   ```
 
 1. Display the log of queries.
 
-    ```sql
-    SHOW profiles
-    ```
+   ```sql
+   SHOW profiles
+   ```
 
 1. Clear the profile queue.
 
-    ```sql
-    SET @@profiling = 0;
-    SET @@profiling_history_size = 0;
-    SET @@profiling_history_size = 100;
-    SET @@profiling = 1;
-    ```
+   ```sql
+   SET @@profiling = 0;
+   SET @@profiling_history_size = 0;
+   SET @@profiling_history_size = 100;
+   SET @@profiling = 1;
+   ```
 
 ## Example log
 

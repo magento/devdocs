@@ -37,10 +37,12 @@ Below are some basic examples of what you can do with markdown.
 |`**bold**`         | **bold**     |
 |`` `inline code` ``| `inline code`|
 
-By indenting your content by at least 4 spaces, you can create a code block. For extensive examples of adding code samples, see [Code blocks](#code-blocks).
+Use code fences to create code blocks. For extensive examples of adding code samples, see [Code blocks](#code-blocks).
 
-    //This is a code block!
-    print "Hello World!";
+```text
+//This is a code block!
+print "Hello World!";
+```
 
 For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_blank"}.
 

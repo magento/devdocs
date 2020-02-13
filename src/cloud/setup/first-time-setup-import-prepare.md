@@ -88,7 +88,7 @@ To create a new `auth.json` file:
 
 1. Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
 
-    ```json
+   ```json
    {
        "http-basic": {
            "repo.magento.com": {
@@ -97,7 +97,7 @@ To create a new `auth.json` file:
            }
        }
    }
-    ```
+   ```
 
 1. Save your changes and exit the text editor.
 
@@ -116,7 +116,7 @@ To add authentication keys using an environment variable:
 
 1. In the _Value_ field, add the following and replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials:
 
-    ```json
+   ```json
    {
        "http-basic": {
            "repo.magento.com": {
@@ -125,7 +125,7 @@ To add authentication keys using an environment variable:
            }
        }
    }
-    ```
+   ```
 
 1. Select **Visible during build** and deselect **Visible at run**.
 
