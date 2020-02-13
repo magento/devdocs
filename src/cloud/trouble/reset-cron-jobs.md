@@ -27,32 +27,32 @@ Running this command without the `--job-code` option resets _all_ cron jobs, inc
 
 1. Get the MySQL database credentials:
 
-    ```shell
-    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
-    ```
+   ```shell
+   echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+   ```
 
 1. Connect to the database using `mysql`:
 
-    ```shell
-    mysql -hdatabase.internal -uuser -ppassword main
-    ```
+   ```shell
+   mysql -hdatabase.internal -uuser -ppassword main
+   ```
 
 1. Select the `main` database:
 
-    ```shell
-    use main
-    ```
+   ```shell
+   use main
+   ```
 
 1. Find all running cron jobs:
 
-    ```shell
-    SELECT * FROM cron_schedule WHERE status = 'running';
-    ```
+   ```shell
+   SELECT * FROM cron_schedule WHERE status = 'running';
+   ```
 
 1. Copy the `schedule_id` of any job running longer than usual.
 
 1. Use the schedule IDs from the previous step to unlock specific cron jobs:
 
-    ```shell
-    ./vendor/bin/ece-tools cron:unlock --job-code=<schedule_id> --job-code=<schedule_id>
-    ```
+   ```shell
+   ./vendor/bin/ece-tools cron:unlock --job-code=<schedule_id> --job-code=<schedule_id>
+   ```

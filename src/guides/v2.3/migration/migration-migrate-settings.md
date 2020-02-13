@@ -16,12 +16,12 @@ According to our data migration [order]({{ page.baseurl }}/migration/migration-m
 
 ## Before you start: routine preparations
 
-1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to the server with your Magento 2 instance as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-1. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+1. Change to the Magento 2 `/bin` directory or make sure it is added to your system PATH.
 
- {:.bs-callout-info}
-Ensure Magento is deployed in default mode. Developer mode can cause validation errors in the migration tool.
+{:.bs-callout-info}
+Ensure Magento 2 is deployed in `default` mode. Developer mode can cause validation errors in the migration tool.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
@@ -39,7 +39,7 @@ where:
 
 *  `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 This command does not migrate all configuration settings. Verify all settings in the Magento 2 [Admin](https://glossary.magento.com/admin) before proceeding.
 
 The `Migration completed` message is displayed after the settings are transferred successfully.
@@ -48,17 +48,21 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to the server with your Magento 2 instance as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 1. Change to the following directory:
 
-       <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+   ```bash
+   cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+   ```
 
-   For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+   For example, if Magento 2 is installed in `/var/www/html`, you will find `settings.xml.dist` in one of the following directories:
 
-        /var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-commerce
-        /var/www/html/vendor/magento/data-migration-tool/etc/commerce-to-commerce
-        /var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-opensource
+   *  `/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-commerce`
+
+   *  `/var/www/html/vendor/magento/data-migration-tool/etc/commerce-to-commerce`
+
+   *  `/var/www/html/vendor/magento/data-migration-tool/etc/opensource-to-opensource`
 
 1. To create a `settings.xml` file from the provided sample, run:
 
