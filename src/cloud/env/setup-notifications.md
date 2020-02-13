@@ -52,13 +52,13 @@ To configure notifications:
 
 1. Commit and push your changes to the remote server.
 
-    ```bash
-    git -A && git commit -m "Configure build/deploy notifications"
-    ```
+   ```bash
+   git -A && git commit -m "Configure build/deploy notifications"
+   ```
 
-    ```bash
-    git push origin <branch-name>
-    ```
+   ```bash
+   git push origin <branch-name>
+   ```
 
 ### Example Slack configuration
 
