@@ -23,6 +23,7 @@ For issues related to the Catalog SaaS Export module:
         "magento/module-catalog-url-rewrite-data-exporter"
         "magento/module-configurable-product-data-exporter"
         "magento/module-data-exporter"
+        "magento/module-data-services" (use the latest version. Required >=3.0.6)
         "magento/module-saas-catalog"
     ```
 
