@@ -71,11 +71,11 @@ To create a new configuration type:
     </config>
     ```
 
-    *  The first type node sets the Reader's filename, associated `Converter` and `SchemaLocator` classes.
-    *  Then, the `pdfConfigDataStorage` virtual type node attaches the reader class to an instance of [Magento\Framework\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Data.php). 
-    *  And finally, the last type node attaches that config data virtual type to the [Magento\Sales\Model\Order\Pdf\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Pdf/Config.php) class, which is used for actually reading values in from those [pdf.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/pdf.xml) files.
+   *  The first type node sets the Reader's filename, associated `Converter` and `SchemaLocator` classes.
+   *  Then, the `pdfConfigDataStorage` virtual type node attaches the reader class to an instance of [Magento\Framework\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Data.php).
+   *  And finally, the last type node attaches that config data virtual type to the [Magento\Sales\Model\Order\Pdf\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Pdf/Config.php) class, which is used for actually reading values in from those [pdf.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/pdf.xml) files.
 
-4. Define a reader by extending [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class and rewrite the following parameters:
+1. Define a reader by extending [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class and rewrite the following parameters:
 
    ```php
    $_idAttributes // Array of node attribute IDs.
