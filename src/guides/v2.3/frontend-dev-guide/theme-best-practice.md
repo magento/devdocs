@@ -30,7 +30,7 @@ We recommend using the following best practices when developing themes:
    ```xml
    <a href="#"><?= __('Click to download'); ?></a>
    ```
-1.As Magento follows Zend, PSR2 and PSR4 Coding standards. Make sure that you follow the same so that the code will be readable and easier to understand.
+1. As Magento follows Zend, PSR2 and PSR4 Coding standards. Make sure that you follow the same so that the code will be readable and easier to understand.
 1. When inheriting blank or luma themes. Make use of the mobile first approach that is already been followed in these themes.
 1. Create a single class or method or mixin rather than copy and paste of same code which will be easier to maintain and help reduce repeated works.
 1. While styling any custom module, Do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example, like in app/code/Company/Module/view/frontend/web/css/source/_module.less.
