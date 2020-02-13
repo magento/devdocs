@@ -30,6 +30,7 @@ We recommend using the following best practices when developing themes:
    ```xml
    <a href="#"><?= __('Click to download'); ?></a>
    ```
+   
 1. As Magento follows Zend, PSR2 and PSR4 Coding standards. Make sure that you follow the same so that the code will be readable and easier to understand.
 1. When inheriting blank or luma themes. Make use of the mobile first approach that is already been followed in these themes.
 1. Create a single class or method or mixin rather than copy and paste of same code which will be easier to maintain and help reduce repeated works.
