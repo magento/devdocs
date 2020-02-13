@@ -960,17 +960,19 @@ To handle the messages we use the `\Magento\Backend\Test\Block\Messages` class, 
 
 This block must be added to `SynonymsIndex` class. To do this:
 
-1) Open `<magento2_root_dir>dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`.
+1. Open `<magento2_root_dir>dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`.
 
-2) Add the block node:
+1. Add the block node:
 
-```xml
-<block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
-```
+   ```xml
+   <block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
+   ```
 
-1) Launch the generating tool to update the page class:
+1. Launch the generating tool to update the page class:
 
-    php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+   ```bash
+   php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+   ```
 
 And now we can add `<constraint>` to each variation of a data set `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`:
 

@@ -78,14 +78,14 @@ To set up the build system:
 1. If you use Git, open `.gitignore` in a text editor.
 1. Start each of the following lines with a `#` character to comment them out:
 
-    ```conf
-    # app/etc/config.php
-    # pub/media/*
-    # generated/*
-    # pub/media/*.*
-    # pub/media/wysiwyg/*
-    # pub/static/*
-    ```
+   ```conf
+   # app/etc/config.php
+   # pub/media/*
+   # generated/*
+   # pub/media/*.*
+   # pub/media/wysiwyg/*
+   # pub/static/*
+   ```
 
 1. Save your changes to `.gitignore` and exit the text editor.
 1. If you use Git, use the following commands to commit the change:
