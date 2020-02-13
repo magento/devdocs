@@ -31,6 +31,6 @@ Before making changes to your Production environment, we highly recommend testin
 
 1. Add, commit, and push your code changes.
 
-    ```bash
-    git add -A && git commit -m "Set cache TTL for static files" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "Set cache TTL for static files" && git push origin <branch-name>
+   ```
