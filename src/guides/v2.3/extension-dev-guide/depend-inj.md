@@ -45,7 +45,9 @@ Service classes that do not exist in the codebase, such as [proxies], [factories
 The following code sample highlights the two types of dependency injections used in Magento:
 
 ```php
+
 namespace Magento\Backend\Model\Menu;
+
 class Builder
 {
     /**
@@ -70,6 +72,7 @@ class Builder
         // processCommand Code
     }
 }
+
 ```
 
 ### Constructor injection
