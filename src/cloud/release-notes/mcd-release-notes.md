@@ -16,6 +16,14 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.1.0
+
+-  {:.new}**Container updates**–
+
+   -  {:.new}**PHP-FPM container updates**–
+
+      - {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
+
 ## v1.0.0
 
 -  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**–Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
@@ -27,8 +35,6 @@ The release notes include:
 -  {:.new}**Container updates**–
 
    -  {:.new}**PHP-FPM container updates**–
-
-      - {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
 
       -  {:.new}**Added Node.js support**–Updated the PHP-FPM image to support node, npm, and the grunt-cli capabilities inside the PHP container.<!--MAGECLOUD-3953-->
 
