@@ -130,5 +130,5 @@ Your IDE can validate your configuration files at both runtime and during develo
 Related topics
 
 *  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
-*  [Configuration file merge]({{ page.baseurl }}/guides/v2.3/config-guide/config/config-files.html#config-files-load-merge-merge)
+*  [Configuration file merge]({{ page.baseurl }}/config-guide/config/config-files.html#config-files-load-merge-merge)
 *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
