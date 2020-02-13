@@ -208,7 +208,7 @@
 | Ashutosh Srivastva | [24502](https://github.com/magento/magento2/pull/24502) | [24410](https://github.com/magento/magento2/issues/24410) |
 | Rani Priya | [24510](https://github.com/magento/magento2/pull/24510) | [24509](https://github.com/magento/magento2/issues/24509) |
 | Eden Duong | [24514](https://github.com/magento/magento2/pull/24514) |  |
-| Ihor Sviziev | [22886](https://github.com/magento/magento2/pull/22886) | [22880](https://github.com/magento/magento2/issues/22880) |
+| Ihor Sviziev | [22886](https://github.com/magento/magento2/pull/22886) | 22880 |
 | Rani Priya | [24320](https://github.com/magento/magento2/pull/24320) | [24319](https://github.com/magento/magento2/issues/24319) |
 | Denis Solovyov | [24392](https://github.com/magento/magento2/pull/24392) | [24349](https://github.com/magento/magento2/issues/24349) |
 | Sunil | [24411](https://github.com/magento/magento2/pull/24411) | [24409](https://github.com/magento/magento2/issues/24409) |

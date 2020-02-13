@@ -18,8 +18,6 @@ If you are interested in participating in Magento Community projects we welcome 
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-Magento 2.3.3 supports PHP 7.3.
-
 ## Verify PHP is installed {#centos-verify-php}
 
 Most flavors of Linux have PHP installed by default.
@@ -45,19 +43,8 @@ On CentOS, [additional steps may be required][].
 
 Magento requires a set of extensions to be installed:
 
--  bcmath
--  devel
--  gd
--  iconv
--  intl
--  json
--  mbstring
--  mysql
--  mysqlnd
--  opcache
--  pdo
--  soap
--  xml
+<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+{% include install/php-extensions-template.md %}
 
 In the command line, type:
 

@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 #
 # This plugin generates a canonical_url parameter for each page implicitly, unless
 # canonical_url is set in front matter manually.

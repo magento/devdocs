@@ -34,6 +34,6 @@ html-proofer:
     - devdocs.magento.com
 
   # Ignore any link that includes a specified pattern
-  # :url_ignore:
-  # - !ruby/regexp /guides\/v2\.0/
+  :url_ignore:
+  - !ruby/regexp /guides\/v2\.2/
   

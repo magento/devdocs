@@ -14,7 +14,7 @@ The `.magento.env.yaml` file includes the following sections:
 
 -  **`stage`**—Accommodates the following stages of deployment:
    -  `global`—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.
-   -  `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
+   -  `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section.
    -  `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
    -  `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
 -  **`log`**—Controls [notifications]({{ site.baseurl }}/cloud/env/setup-notifications.html), including notification types and level of detail.

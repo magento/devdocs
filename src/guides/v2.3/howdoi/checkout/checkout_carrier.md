@@ -178,3 +178,17 @@ You must add `<your-validation-name>` like `%carrier%-rates-validation` - where 
     </body>
 </page>
 ```
+
+## Step 5: Deploy static content and clear the cache {#deploy-and-clean}
+
+1. Deploy static content:
+
+```bash
+bin/magento setup:static-content:deploy -f
+```
+
+1. Clean the cache:
+
+```bash
+bin/magento cache:clean
+```

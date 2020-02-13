@@ -12,7 +12,7 @@ Review the Table of Contents in the left pane of the Guide, and determine which 
 To add to Magento Docs:
 
 *  edit your local version of an existing file
-*  use the [generic template]({{ site.githuburl22 }}contributor-guide/templates/basic_template.md) and write a brand new topic, we will find the right home for it in the appropriate Guide.
+*  use the [generic template]({{ site.githuburl23 }}contributor-guide/templates/basic_template.md) and write a brand new topic, we will find the right home for it in the appropriate Guide.
 *  use an existing, empty template to write about a topic that we know we need, but haven't yet gotten around to writing
 *  Create a Pull Request to have your contribution reviewed by the DevDocs team.
 
