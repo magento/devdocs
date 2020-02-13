@@ -224,7 +224,7 @@ To resolve the error:
 
 [technology stack]: {{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[Magento technology stack requirements]: {{site.baseurl}}/guides/v2.2/install-gde/system-requirements-tech.html
+[Magento technology stack requirements]: {{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
 [extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
