@@ -116,7 +116,7 @@ Configuration file|Description|Stage|Configuration object
 
 ### Configuration interfaces {#config-files-classes-int}
 
-You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config). 
+You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config).
 
 You can also use these interfaces if you [create new configuration types]({{ page.baseurl }}/config-guide/config/config-create.html#config-files-extend-create-create).
 
