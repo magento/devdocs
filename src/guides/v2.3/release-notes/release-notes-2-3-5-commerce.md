@@ -3,8 +3,6 @@ group: release-notes
 title: Magento Commerce 2.3.5 Release Notes
 ---
 
-* Patch code and release notes published on *
-  
 Magento Commerce 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
 
 This release includes over  functional fixes to the core product and  over  security enhancements. It includes resolution of over contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
@@ -98,6 +96,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6339-->
 
+*  The link accessed from **Admin** > **Stores** > **Settings**  > **Configuration** > **General** > **Advanced Reporting** now opens in a new tab as expected.  *Fix submitted by Nagamaiah K in pull request [25760](https://github.com/magento/magento2/pull/25760)*. [GitHub-25757](https://github.com/magento/magento2/issues/25757)
+
 ### AdminGWS
 
 ### Adobe stock integration
@@ -113,6 +113,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6331-->
 
 *  You can now use keyboard arrow keys to navigate to the next image in the preview. *Fix submitted by Adarsh Manickam in pull request [25611](https://github.com/magento/magento2/pull/25611)*. [GitHub-691](https://github.com/magento/magento2/issues/691)
+
+<!--- ENGCOM-6272-->
+
+*  The **Search Stock Images** button now remains active as expected after you’ve searched for and saved an image from the media gallery. Previously,  this button was disabled after you used it to search for an image and saved it.  *Fix submitted by Nazar Klovanych in pull request [25556](https://github.com/magento/magento2/pull/25556)*. [GitHub-622](https://github.com/magento/magento2/issues/622)
 
 ### Analytics
 
@@ -220,7 +224,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29902-->
 
-
 ### Catalog rule
 
 <!--- MC-19646-->
@@ -232,7 +235,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29166-->
 
 <!--- MC-23252-->
-
 
 ### Cleanup and simple code refactoring
 
@@ -254,15 +256,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6180-->
 
-* Corrected misalignment of the calendar icon inside the textbook on the Add Design Change page. *Fix submitted by magudelo62 in pull request [25309](https://github.com/magento/magento2/pull/25309)*. [GitHub-20379](https://github.com/magento/magento2/issues/20379)
+*  Corrected misalignment of the calendar icon inside the textbook on the Add Design Change page. *Fix submitted by magudelo62 in pull request [25309](https://github.com/magento/magento2/pull/25309)*. [GitHub-20379](https://github.com/magento/magento2/issues/20379)
 
+<!--- ENGCOM-6345-->
+
+*  Deleted unused variable (`time_taken`) from the `Magento/Catalog/view/frontend/templates/product/listing.phtml` template. *Fix submitted by andrew-chornij in pull request [25770](https://github.com/magento/magento2/pull/25770)*. [GitHub-25715](https://github.com/magento/magento2/issues/25715)
 
 ### CMS content
 
 <!--- MC-30093-->
 
 <!--- MC-22927-->ee only
-
 
 ### Command-line interface (CLI commands)
 
@@ -274,6 +278,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6349-->
 
+*  Added validation logic to the **Create new value** input field of the configurable product creation workflow. Previously, you could create an  attribute option value that contained only a space. *Fix submitted by Torben Höhn in pull request [25421](https://github.com/magento/magento2/pull/25421)*. [GitHub-21504](https://github.com/magento/magento2/issues/21504)
+
 ### Cron
 
 <!--- ENGCOM-6253-->
@@ -281,7 +287,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  `bin/magento cron:run -v` no longer fails when the database name exceeds 64 characters but instead creates a shorter name. *Fix submitted by Vasil Pashovski in pull request [25472](https://github.com/magento/magento2/pull/25472)*. [GitHub-22240](https://github.com/magento/magento2/issues/22240)
 
 <!--- MC-22819-->
-
 
 ### Customer
 
@@ -302,7 +307,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Custom customer attributes
 
 <!--- MC-30689-->
-
 
 ### Database media storage
 
@@ -327,7 +331,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-21868-->
 
 [GitHub-25076](https://github.com/magento/magento2/issues/25076)
-
 
 ### Frameworks
 
@@ -361,7 +364,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22935-->ee only
 
-
 <!--- MC-22911-->ee only
 
 <!--- MC-22972-->
@@ -384,20 +386,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  The `.fotorama__thumb__arr`  arrows adjacent to the thumbnail images on the product gallery now work as expected. *Fix submitted by Alexey Rakitin in pull request [25666](https://github.com/magento/magento2/pull/25666)*. [GitHub-25652](https://github.com/magento/magento2/issues/25652)
 
-<!--- ENGCOM-6345-->
-
 <!--- ENGCOM-6215-->
 
 *  You can now accurately manipulate a zoomed image using your mouse. Previously. the magnified area was incorrectly offset. *Fix submitted by Mateusz Krzeszowiak in pull request [25358](https://github.com/magento/magento2/pull/25358)*. [GitHub-25027](https://github.com/magento/magento2/issues/25027)
 
 <!--- ENGCOM-6203-->
 
-LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*  
+*  LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*
 
 ### Gift cards
 
 <!--- MC-30365--> ee only
-
 
 ### Gift wrapping ee only
 
@@ -447,8 +446,9 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 
 <!--- ENGCOM-6188-->
 
-<!--- MC-22008-->
+*  The partial indexer no longer incorrectly removes stock data when updating at least 1000 products. Previously, the indexer removed stock data, which resulted in in-stock products appearing out-of-stock. *Fix submitted by Pieter Hoste in pull request [25306](https://github.com/magento/magento2/pull/25306)*. [GitHub-12205](https://github.com/magento/magento2/issues/12205), [GitHub-15984](https://github.com/magento/magento2/issues/15984)
 
+<!--- MC-22008-->
 
 ### Infrastructure
 
@@ -457,6 +457,8 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 *  Corrected the argument type of the email address constructor. *Fix submitted by Karyna Tsymbal in pull request [25485](https://github.com/magento/magento2/pull/25485)*. [GitHub-25434](https://github.com/magento/magento2/issues/25434)
 
 <!--- ENGCOM-6347-->
+
+*  Admin route names can now contain a hyphen in the URL. Previously, validators for the action menu did not accept hyphens.  *Fix submitted by Diego Pires in pull request [25612](https://github.com/magento/magento2/pull/25612)*. [GitHub-25635](https://github.com/magento/magento2/issues/25635)
 
 <!--- ENGCOM-6256-->
 
@@ -471,7 +473,6 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 <!--- MC-29177-->
 
 ### Layered navigation
-
 
 ### Logging
 
@@ -505,7 +506,6 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 
 <!--- MC-30550-->
 
-
 ### Performance
 
 ### Reports
@@ -525,7 +525,6 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 <!--- MC-30214-->
 
 <!--- MC-21729-->
-
 
 ### Rewards
 
@@ -595,6 +594,8 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 
 <!--- ENGCOM-6307-->
 
+*  Magento no longer displays an informative console error when you try to navigate to the Swagger index page. Magento previously threw an error as a result of a previous fix in which the `requirejs-config` block was removed from the layout file of the Swagger index page. *Fix submitted by Duckↄhip in pull request [25682](https://github.com/magento/magento2/pull/25682)*. [GitHub-25680](https://github.com/magento/magento2/issues/25680)
+
 ### Swatches
 
 <!--- MC-30269-->
@@ -626,7 +627,6 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 ### Translation and locales
 
 <!--- MC-23224-->
-
 
 ### UI
 
@@ -682,7 +682,7 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 
 <!--- ENGCOM-6371-->
 
-*  
+*  Logo images that are being uploaded into the Admin are now displayed with its native dimensions if no width and height parameters are explicitly set.  Previously, an administrator could set the `logo_img_width` and `logo_img_height` block arguments in the layout file for the logo block, which potentially distorted the display of the logo. *Fix submitted by Krzysztof Daniel in pull request [25789](https://github.com/magento/magento2/pull/25789)*. [GitHub-25042](https://github.com/magento/magento2/issues/25042)
 
 ### URL rewrites
 
@@ -702,10 +702,11 @@ LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved 
 
 <!--- MC-30137-->ee only
 
-
 ### WYSIWYG
 
 <!--- ENGCOM-6310-->
+
+*  The WYSIWYG editor now works as expected on Internet Explorer 11.x. Previously, when you edited a field using the editor,  selected text was deselected when you clicked **Link**.  *Fix submitted by Mateusz Krzeszowiak in pull request [25693](https://github.com/magento/magento2/pull/25693)*. [GitHub-13209](https://github.com/magento/magento2/issues/13209)
 
 <!--- ENGCOM-6272-->
 
