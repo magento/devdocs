@@ -114,7 +114,7 @@ LiveReload address: http://127.0.0.1:35729
         LiveReload: Browser connected
 ```
 
-1. The generated website shows up automatically in a new tab in your browser.
+1. The generated website launches automatically in a new tab in your browser.
 1. Press `Ctrl+C` in the serve terminal to stop the server.
 
 > ***TIP***
