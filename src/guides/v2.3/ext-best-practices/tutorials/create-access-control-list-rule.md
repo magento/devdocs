@@ -7,9 +7,9 @@ contributor_link: https://www.Ziffity.com/
 
 Access Control List (ACL) rules allow an admin to limit the permissions of users in Magento. For example, you can use ACL rules to authorize the users to access menus, controllers, and API endpoints.
 
-In this tutorial, we are creating three custom resources (Custom Menu, Create, Delete), then creating a role that has access to these resources, and taking steps to restrict access by three entities (Admin users, controllers, and web APIs).
+This tutorial creates three custom resources (Custom Menu, Create, Delete) as well as a role that has access to these resources. The tutorial also restricts access for three entities (Admin users, controllers, and web APIs).
 
-## Step 1. Define the custome resources
+## Step 1. Define the custom resources
 
 Create the `etc/acl.xml` file in your module. This file adds the custom resources in resource tree.
 
@@ -31,9 +31,9 @@ Create the `etc/acl.xml` file in your module. This file adds the custom resource
 
 | Attribute | Description |
 | --------- | ----------- |
-| `id` | Unique string and should be in this format: `Vendor_ModuleName::resourceName` |
-| `title` | Title which is display on menu bar|
-| `sortOrder` | Position in which menu to be disaplay |
+| `id` | Unique string that defines the resource. The value should be in the format `Vendor_ModuleName::resourceName` |
+| `title` | The title that is displayed on menu bar |
+| `sortOrder` | A number that determines the position in which a menu option is displayed |
 
 Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 
@@ -41,16 +41,23 @@ Clean the cache by clicking **System** > **Cache Management** > **Flush Magento 
 bin/magento cache:clean
 ```
 
+You can verify what the merchant will see on the Admin by performing these steps:
+
 1. Navigate to **System** > Permissions > **User Roles**.
-1. After clicking a Add New Role button, enter Role Name and Your Password.
-1. Then, click a Role Resources tab select Resource Access as Custom.
+
+1. Click the **Add New Role** button, then enter a value in the **Role Name** and **Your Password** fields.
+
+1. Click on a **Role Resources** tab and select **Resource Access as Custom**.
 ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
+
 1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
 ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
 ## Step 2. Restrict access to Admin users
 
-### Restricting admin menu:
+Now, we will restrict access on the Admin and for admin controllers.
+
+### Restrict the menu on the Admin
 
 In your module, create the `etc/adminhtml/menu.xml` file. This file defines a menu that will be hidden from unauthorized users. The `resource` attributes in the `add` nodes determine which resource each action accesses.
 
@@ -67,21 +74,21 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
 
 | Attribute | Description |
 | --------- | ----------- |
-| `id` | Unique string and should be in this format: `Vendor_ModuleName::resourceName` |
-| `title` | Title which is display on menu bar|
-| `module` | Module which containing the current menu |
-| `sortOrder` | Position in which menu to be disaplay |
-| `parent` | The another menu which is parent of current menu |
-| `action` | Url of the page which needs to be display after click the menu. It should be in following format: `front_name/controller_path/action` |
-| `resource` | To restrict using ACL rule |
+| `id` | The value should be in the format `Vendor_ModuleName::resourceName` |
+| `title` | The title displayed on the menu bar |
+| `module` | Module that contains the current menu |
+| `sortOrder` | A number that determines the position in which a menu option is displayed |
+| `parent` | The ID of the parent menu option |
+| `action` | The URL of the page to display when the merchant clicks this option. It should be in the format `front_name/controller_path/action` |
+| `resource` | The resource ID to be restricted |
 
-The menu displays like below,
+The example renders as follows:
 
 ![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
 
-###Restricting admin controllers:
+### Restrict admin controllers
 
-We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
+We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class. In this example, since we defined Create and Delete resources, we need to override this method in two places.
 
 Add the following to your module's `Controller/Adminhtml/Create/Index.php` file:
 
@@ -105,7 +112,7 @@ If user doesn't have permission, the action page displays an "Access Denied" mes
 
 ## Step 4. Restrict web API access
 
-We can restrict users from accessing API endpoints by using the ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
+We can restrict users from accessing API endpoints by using an ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
 
 ```xml
 <?xml version = "1.0"?>
@@ -119,7 +126,3 @@ We can restrict users from accessing API endpoints by using the ACL rule. By cre
     </route>
 </routes>
 ```
-
-
-
-
