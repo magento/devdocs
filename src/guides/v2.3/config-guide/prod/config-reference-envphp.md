@@ -104,7 +104,7 @@ A list of downloadable domains available in this node. Additional domains can be
 ]
 ```
 
-Learn more about [downloadable-domains][downloadable_domains] commands.
+Learn more about [Downloadable Domains][downloadable-domains] commands.
 
 ## install
 
