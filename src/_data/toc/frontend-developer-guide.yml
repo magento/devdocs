@@ -71,6 +71,9 @@ pages:
         - label: Product layouts
           url: /frontend-dev-guide/layouts/product-layouts.html
 
+        - label: Create a new layout
+          url: /frontend-dev-guide/layouts/layout-create.html
+
         - label: Extend a layout
           url: /frontend-dev-guide/layouts/layout-extend.html
 
