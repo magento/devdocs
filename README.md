@@ -70,7 +70,7 @@ Once you have completed preparing your environment, you can build locally and pr
    rake preview
    ```
 
-You will see the commands the rake task actually runs and the output. Each command is typically highlighted with the magenta color:
+You will see the commands called by the rake task and the corresponding output. Each command is typically highlighted with the magenta color:
 
 ```terminal
 ~/magento/devdocs (master)$ rake preview
