@@ -136,18 +136,18 @@ If the Magento updater is installed, remove and recreate it. It is located in th
 
    _{{ ce }} version {{ page.guide_version }}.3:_
 
-    ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.3 temp_dir --no-install
-    ```
+   ```bash
+   composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.3 temp_dir --no-install
+   ```
 
-    _{{ ee }} version {{ page.guide_version }}.3:_
+   _{{ ee }} version {{ page.guide_version }}.3:_
 
-    ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.3 temp_dir --no-install
-    ```
+   ```bash
+   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.3 temp_dir --no-install
+   ```
 
-     {:.bs-callout-info}
-    If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
+   {:.bs-callout-info}
+   If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
 
 1. Remove the old `update/` directory and move `temp_dir/update/` to the `update/` directory:
 
@@ -167,7 +167,7 @@ If the Magento updater is installed, remove and recreate it. It is located in th
 
 1. Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.
 
-    {:.bs-callout-info}
+   {:.bs-callout-info}
    Updating the metadata in `composer.json` file is entirely superficial, not functional.
 
 1. Apply updates.
@@ -200,7 +200,7 @@ Manually clear caches and generated content.
    rm -rf generated/code/*
    ```
 
-    {:.bs-callout-info}
+   {:.bs-callout-info}
    If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 1. Update the database schema and data.

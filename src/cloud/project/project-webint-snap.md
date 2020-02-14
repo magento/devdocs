@@ -133,9 +133,9 @@ To create a database dump:
 
 1. Enter the following command:
 
-    ```bash
-    vendor/bin/ece-tools db-dump
-    ```
+   ```bash
+   vendor/bin/ece-tools db-dump
+   ```
 
  {:.bs-callout-info}
 

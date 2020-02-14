@@ -19,9 +19,11 @@ Before you run this command, all of the following must be true:
 
 -  The `Magento_Developer` [module](https://glossary.magento.com/module) must be enabled. You can enable it as follows:
 
-        bin/magento module:enable [--force] Magento_Developer
+   ```bash
+   bin/magento module:enable [--force] Magento_Developer
+   ```
 
-    Use the `--force` option only if it's necessary.
+   Use the `--force` option only if it's necessary.
 
 -  Your system must be set up to run the desired tests.
 

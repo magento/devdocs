@@ -11,50 +11,50 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
-    ```bash
-    composer require magento/extension-b2b
-    ```
+   ```bash
+   composer require magento/extension-b2b
+   ```
 
-    If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
+   If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} for example:
 
-    ```terminal
-    [InvalidArgumentException] Could not find a matching version of package magento/extension-b2b.
-    ```
+   ```terminal
+   [InvalidArgumentException] Could not find a matching version of package magento/extension-b2b.
+   ```
 
-    Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).
+   Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).
 
-    If not already denfined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
+   If not already denfined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
 
-    ```json
-    {
-       "http-basic": {
-          "repo.magento.com": {
-             "username": "<public_key>",
-             "password": "<private_key>"
-          }
-       }
-    }
-    ```
+   ```json
+   {
+      "http-basic": {
+         "repo.magento.com": {
+            "username": "<public_key>",
+            "password": "<private_key>"
+         }
+      }
+   }
+   ```
 
 1. When prompted, enter your [authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). Your *public key* is your username; your *private key* is your password. If you have stored your public and private keys in `auth.json`, you won't be asked to enter them here.
 
 1. Run the following commands after Composer finishes updating modules:
 
-    ```bash
-    bin/magento setup:upgrade
-    ```
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
-    ```bash
-    bin/magento setup:di:compile
-    ```
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-    ```bash
-    bin/magento setup:static-content:deploy -f
-    ```
+   ```bash
+   bin/magento setup:static-content:deploy -f
+   ```
 
-    ```bash
-    bin/magento cache:clean
-    ```
+   ```bash
+   bin/magento cache:clean
+   ```
 
  {:.bs-callout-info}
   Note: In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
@@ -72,31 +72,31 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
 
 1. List the available message consumers:
 
-    ```bash
-    bin/magento queue:consumers:list
-    ```
+   ```bash
+   bin/magento queue:consumers:list
+   ```
 
-    You should see the following consumers:
+   You should see the following consumers:
 
-    ```terminal
-    sharedCatalogUpdatePrice
-    sharedCatalogUpdateCategoryPermissions
-    quoteItemCleaner
-    inventoryQtyCounter
-    async.operations.all
-    ```
+   ```terminal
+   sharedCatalogUpdatePrice
+   sharedCatalogUpdateCategoryPermissions
+   quoteItemCleaner
+   inventoryQtyCounter
+   async.operations.all
+   ```
 
 1. Start each consumer separately:
 
-    ```bash
-    bin/magento queue:consumers:start <consumer_name>
-    ```
+   ```bash
+   bin/magento queue:consumers:start <consumer_name>
+   ```
 
-    For example:
+   For example:
 
-    ```bash
-    bin/magento queue:consumers:start sharedCatalogUpdatePrice
-    ```
+   ```bash
+   bin/magento queue:consumers:start sharedCatalogUpdatePrice
+   ```
 
 {:.bs-callout-tip}
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands. For example: `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`.
