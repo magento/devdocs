@@ -135,7 +135,7 @@ exclude:
 
 >**TIP**
 >You can override any other configuration options using this file.
->If you want to ignore the `_config.local.yml` file and preview the site with default configuration, you can do this with:
+>Also, you can use the `preview:all` option to ignore the `_config.local.yml` file and preview the site with default configuration:
 >
 >```bash
 >rake preview:all
