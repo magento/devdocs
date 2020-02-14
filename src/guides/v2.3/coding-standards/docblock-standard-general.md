@@ -609,7 +609,7 @@ It will be retained to provide backward compatibility until the next major compo
 Use the `@deprecated` tag to indicate that an element is to be deprecated.
 
 You must explain why you added `@deprecated` tag.
-The `@see` tag MUST be used with references to the new implementation when code is deprecated and there is a new alternative.
+You MUST use the `@see` tag with references to the new implementation when code is deprecated and there is a new alternative.
 
 For example:
 
