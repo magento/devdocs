@@ -51,9 +51,9 @@ namespace Magento\Backend\Model\Menu;
 class Builder
 {
     /**
-     * @var Factory
+     * @var \Magento\Backend\Model\Menu\Item\Factory
      */
-    private $menuItemFactory;
+    private $_itemFactory;
 
     /**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
