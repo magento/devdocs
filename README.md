@@ -58,7 +58,7 @@ Docfile begins with public sources, because the `rake init` task fails when it a
 
 >**TIP**
 >All the helper CLI commands for this project are implemented using [rake](https://github.com/ruby/rake).
-You can get the complete list of available tasks by running `rake --tasks` or filter the list such as `rake --tasks test`.
+Use the `rake --tasks` command for a complete list of available tasks, or filter the list using a keyword, such as `rake --tasks test`.
 
 Once you have completed preparing your environment, you can build locally and preview the site in your browser.
 
