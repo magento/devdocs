@@ -48,10 +48,12 @@ You can verify what the merchant will see on the Admin by performing these steps
 1. Click the **Add New Role** button, then enter a value in the **Role Name** and **Your Password** fields.
 
 1. Click on a **Role Resources** tab and select **Resource Access as Custom**.
-![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
+
+   ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
 
 1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
-![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
+
+   ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
 ## Step 2. Restrict access to Admin users
 
