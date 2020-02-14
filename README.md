@@ -64,7 +64,7 @@ Once you have completed preparing your environment, you can build locally and pr
 
 ### Run the website
 
-1. Run the rake task that verifies all the required dependencies and starts the embedded webserver:
+1. Using the following rake task, verify all the required dependencies and start the embedded web server:
 
    ```bash
    rake preview
