@@ -347,7 +347,7 @@ Functions and methods should have:
    *  There is more than one possible input/output type.
 
       For example: `@return Config|null`.
-      The DockBlock needs to explain what situations will return `null`.
+      The DocBlock should explain what situations will return `null`.
 
       Another example: `@param FileInterface|null`.
       The DocBlock should explain what happens when the value of the parameter is `null`.
