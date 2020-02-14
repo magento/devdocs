@@ -45,4 +45,7 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 
     ![]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
+{:.bs-callout-info}
+Context data `environmentId` field is provided by `Magento_DataServices` module and available from version `3.0.5`.
+
 If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
