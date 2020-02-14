@@ -33,11 +33,17 @@ To develop a module, you must:
 
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
-    ```bash
-    cd <magento_base_dir>
-    mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
-    mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
-    ```
+   ```bash
+   cd <magento_base_dir>
+   ```
+
+   ```bash
+   mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
+   ```
+
+   ```bash
+   mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
+   ```
 
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
@@ -79,86 +85,86 @@ To develop a module, you must:
 
 1. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
 
-    The following example demonstrates a minimal `composer.json` file.
+   The following example demonstrates a minimal `composer.json` file.
 
-    ```json
-      {
-         "name": "Vendor1_Module1",
-         "description": "create integration from config",
-         "require": {
-            "php": "~7.1.3|~7.2.0|~7.3.0",
-            "magento/framework": "2.0.0",
-            "magento/module-integration": "2.0.0"
-         },
-         "type": "magento2-module",
-         "version": "1.0",
-         "autoload": {
-            "files": [ "registration.php" ],
-            "psr-4": {
-               "Vendor1\\Module1\\": ""
-            }
-         }
-      }
-    ```
+   ```json
+     {
+        "name": "Vendor1_Module1",
+        "description": "create integration from config",
+        "require": {
+           "php": "~7.1.3|~7.2.0|~7.3.0",
+           "magento/framework": "2.0.0",
+           "magento/module-integration": "2.0.0"
+        },
+        "type": "magento2-module",
+        "version": "1.0",
+        "autoload": {
+           "files": [ "registration.php" ],
+           "psr-4": {
+              "Vendor1\\Module1\\": ""
+           }
+        }
+     }
+   ```
 
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 1. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
-      ```php
-      <?php
-        /**
-        * Copyright © Magento, Inc. All rights reserved.
-        * See COPYING.txt for license details.
-        */
+   ```php
+   <?php
+   /**
+   * Copyright © Magento, Inc. All rights reserved.
+   * See COPYING.txt for license details.
+   */
 
-        \Magento\Framework\Component\ComponentRegistrar::register(
-        \Magento\Framework\Component\ComponentRegistrar::MODULE,
-        'Vendor1_Module1',
-        __DIR__
-        );
-      ```
+   \Magento\Framework\Component\ComponentRegistrar::register(
+   \Magento\Framework\Component\ComponentRegistrar::MODULE,
+   'Vendor1_Module1',
+   __DIR__
+   );
+   ```
 
 1. **Create an install class.** Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
-    The following sample is boilerplate and requires minor changes to make your integration work.
+   The following sample is boilerplate and requires minor changes to make your integration work.
 
-    ```php
-    <?php
-    namespace Vendor1\Module1\Setup;
+   ```php
+   <?php
+   namespace Vendor1\Module1\Setup;
 
-    use Magento\Framework\Setup\ModuleContextInterface;
-    use Magento\Framework\Setup\ModuleDataSetupInterface;
-    use Magento\Integration\Model\ConfigBasedIntegrationManager;
-    use Magento\Framework\Setup\InstallDataInterface;
+   use Magento\Framework\Setup\ModuleContextInterface;
+   use Magento\Framework\Setup\ModuleDataSetupInterface;
+   use Magento\Integration\Model\ConfigBasedIntegrationManager;
+   use Magento\Framework\Setup\InstallDataInterface;
 
-    class InstallData implements InstallDataInterface
-    {
-        /**
-         * @var ConfigBasedIntegrationManager
-         */
+   class InstallData implements InstallDataInterface
+   {
+       /**
+        * @var ConfigBasedIntegrationManager
+        */
 
-        private $integrationManager;
+       private $integrationManager;
 
-        /**
-         * @param ConfigBasedIntegrationManager $integrationManager
-         */
+       /**
+        * @param ConfigBasedIntegrationManager $integrationManager
+        */
 
-        public function __construct(ConfigBasedIntegrationManager $integrationManager)
-        {
-            $this->integrationManager = $integrationManager;
-        }
+       public function __construct(ConfigBasedIntegrationManager $integrationManager)
+       {
+           $this->integrationManager = $integrationManager;
+       }
 
-        /**
-         * {@inheritdoc}
-         */
+       /**
+        * {@inheritdoc}
+        */
 
-        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-        {
-            $this->integrationManager->processIntegrationConfig(['testIntegration']);
-        }
-    }
-    ```
+       public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+       {
+           $this->integrationManager->processIntegrationConfig(['testIntegration']);
+       }
+   }
+   ```
 
     In the following line
 
@@ -169,13 +175,13 @@ To develop a module, you must:
     The following example demonstrates a minimal `config.xml` file.
 
     ```xml
-   <integrations>
-      <integration name="TestIntegration">
-         <email>someone@example.com</email>
-         <endpoint_url>https://example.com</endpoint_url>
-         <identity_link_url>https://example.com/identity_link_url</identity_link_url>
-      </integration>
-   </integrations>
+    <integrations>
+       <integration name="TestIntegration">
+          <email>someone@example.com</email>
+          <endpoint_url>https://example.com</endpoint_url>
+          <identity_link_url>https://example.com/identity_link_url</identity_link_url>
+       </integration>
+    </integrations>
     ```
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
@@ -228,7 +234,7 @@ Your module can optionally provide values in configuration file `config.xml`, so
  {:.bs-callout-info}
 If you pre-configure the integration, the values cannot be edited from the [admin](https://glossary.magento.com/admin) panel.
 
-The  file defines which API resources the integration has access to.
+The file defines which API resources the integration has access to.
 
 ```xml
 <integrations>

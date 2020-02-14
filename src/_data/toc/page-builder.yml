@@ -77,6 +77,10 @@ pages:
 - label: How-Tos
   versionless: true
   children:
+  - label: Add an appearance
+    url: /page-builder/docs/how-to/how-to-add-appearance.html
+    versionless: true
+
   - label: Customize the panel
     url: /page-builder/docs/how-to/how-to-customize-panel.html
     versionless: true

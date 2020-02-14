@@ -438,36 +438,65 @@ For example:
 **Throwing Exception Implicitly:**
 
 ```php
-/**
- * Recursively delete directory from storage
- *
- * @param  string $path Target dir
- * @return void
- * @throws Mage_Core_Exception when directories cannot be deleted
- */
-public function deleteDirectory($path)
-{
-    // prevent accidental root directory deleting
-    $rootCmp = rtrim($this->getHelper()->getStorageRoot(), DS);
-    $pathCmp = rtrim($path, DS);
+    /**
+     * Perform login process
+     *
+     * @param string $username
+     * @param string $password
+     * @return void
+     * @throws \Magento\Framework\Exception\AuthenticationException
+     */
+    public function login($username, $password)
+    {
+        if (empty($username) || empty($password)) {
+            self::throwException(
+                __(
+                    'The account sign-in was incorrect or your account is disabled temporarily. '
+                    . 'Please wait and try again later.'
+                )
+            );
+        }
 
-    if ($rootCmp == $pathCmp) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')->__('Cannot delete root directory %s.', $path));
-    }
+        try {
+            $this->_initCredentialStorage();
+            $this->getCredentialStorage()->login($username, $password);
+            if ($this->getCredentialStorage()->getId()) {
+                $this->getAuthStorage()->setUser($this->getCredentialStorage());
+                $this->getAuthStorage()->processLogin();
 
-    $io = new Varien_Io_File();
+                $this->_eventManager->dispatch(
+                    'backend_auth_user_login_success',
+                    ['user' => $this->getCredentialStorage()]
+                );
+            }
 
-    if (Mage::helper('Mage_Core_Helper_File_Storage_Database')->checkDbUsage()) {
-        Mage::getModel('Mage_Core_Model_File_Storage_Directory_Database')->deleteDirectory($path);
+            if (!$this->getAuthStorage()->getUser()) {
+                self::throwException(
+                    __(
+                        'The account sign-in was incorrect or your account is disabled temporarily. '
+                        . 'Please wait and try again later.'
+                    )
+                );
+            }
+        } catch (PluginAuthenticationException $e) {
+            $this->_eventManager->dispatch(
+                'backend_auth_user_login_failed',
+                ['user_name' => $username, 'exception' => $e]
+            );
+            throw $e;
+        } catch (\Magento\Framework\Exception\LocalizedException $e) {
+            $this->_eventManager->dispatch(
+                'backend_auth_user_login_failed',
+                ['user_name' => $username, 'exception' => $e]
+            );
+            self::throwException(
+                __(
+                    $e->getMessage()? : 'The account sign-in was incorrect or your account is disabled temporarily. '
+                        . 'Please wait and try again later.'
+                )
+            );
+        }
     }
-    if (!$io->rmdir($path, true)) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')->__('Cannot delete directory %s.', $path));
-    }
-
-    if (strpos($pathCmp, $rootCmp) === 0) {
-        $io->rmdir($this->getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
-    }
-}
 ```
 
 #### @return tag {#return}
