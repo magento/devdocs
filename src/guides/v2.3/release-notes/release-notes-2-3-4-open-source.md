@@ -81,7 +81,7 @@ Inventory Management enhancements for this release include:
 
 *  Resolved multiple quality issues, including those related to credit memos, grouped products, source and stock mass actions.
 
-See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
+See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent Inventory bug fixes.
 
 ### GraphQL
 
