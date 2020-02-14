@@ -160,25 +160,25 @@ To build v2.0 documentation:
 
 1. Add an entry for 2.0 in the `Docfile.yml` file.
 
-    ```yaml
-    -
-      directory: guides/v2.0
-      repository: magento/devdocs
-      branch: 2.0
-      filter: false
-    ```
+   ```yaml
+   -
+     directory: guides/v2.0
+     repository: magento/devdocs
+     branch: 2.0
+     filter: false
+   ```
 
 1. Initialize the `2.0` branch in your local devdocs repository.
 
-    ```bash
-    rake init
-    ```
+   ```bash
+   rake init
+   ```
 
 1. Run the preview command.
 
-    ```bash
-    rake preview
-    ```
+   ```bash
+   rake preview
+   ```
 
 ### To build v2.1 documentation
 
@@ -192,25 +192,25 @@ To build v2.1 documentation:
 
 1. Add an entry for 2.1 in the `Docfile.yml` file.
 
-    ```yaml
-    -
-      directory: guides/v2.1
-      repository: magento/devdocs
-      branch: 2.1
-      filter: false
-    ```
+   ```yaml
+   -
+     directory: guides/v2.1
+     repository: magento/devdocs
+     branch: 2.1
+     filter: false
+   ```
 
 1. Initialize the `2.1` branch in your local devdocs repository.
 
-    ```bash
-    rake init
-    ```
+   ```bash
+   rake init
+   ```
 
 1. Run the preview command.
 
-    ```bash
-    rake preview
-    ```
+   ```bash
+   rake preview
+   ```
 
 ## Build using Vagrant
 

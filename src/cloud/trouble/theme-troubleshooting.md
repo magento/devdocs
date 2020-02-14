@@ -17,9 +17,9 @@ To resolve, you need the SSH information and store URL available through the [Pr
 1. [Checkout a branch]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) that corresponds to the environment where you are experiencing the issue.
 1. Regenerate the image cache:
 
-    ```bash
-    php bin/magento catalog:images:resize
-    ```
+   ```bash
+   php bin/magento catalog:images:resize
+   ```
 
 1. Test the category pages through the store URL.
 

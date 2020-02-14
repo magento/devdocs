@@ -33,17 +33,17 @@ To apply {{site.data.var.ece}} patches manually:
 
 1. From the project root, apply the patches.
 
-    ```bash
-     php ./vendor/bin/ece-patches apply
-    ```
+   ```bash
+   php ./vendor/bin/ece-patches apply
+   ```
 
 1. Clear the Magento cache.
 
-    ```bash
-    php ./bin/magento cache:clean
-    ```
+   ```bash
+   php ./bin/magento cache:clean
+   ```
 
-    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+   You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1. Test the patches, make any necessary changes to custom patches.
 
@@ -56,14 +56,14 @@ To apply and test a custom patch:
 
 1. In the project root, create a directory called `m2-hotfixes` if it does not exist
 
-    ```bash
-    mkdir m2-hotfixes
-    ```
+   ```bash
+   mkdir m2-hotfixes
+   ```
 
 1. Copy the patch file to the `/m2-hotfixes` directory.
 
-    {:.bs-callout-info}
-    Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with `magento-cloud environment:branch <branch-name>`
+   {:.bs-callout-info}
+   Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with `magento-cloud environment:branch <branch-name>`
 
 ## Apply patches to a Magento enterprise or open source project
 

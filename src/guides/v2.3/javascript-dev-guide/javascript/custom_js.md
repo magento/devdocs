@@ -143,9 +143,9 @@ To disable the auto-loading of default Magento JS components and widget initiali
 
 1. Create a `requirejs-config.js` file with the following content:
 
-    ```javascript
-    var config = { deps: [ ] };
-    ```
+   ```javascript
+   var config = { deps: [ ] };
+   ```
 
 1. Put the `requirejs-config.js` file in one of the following
   locations:
