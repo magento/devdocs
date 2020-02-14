@@ -151,7 +151,7 @@ To view the list of available tags:
 git tag --list
 ```
 
-Checkout to the version you need (for example 2.2.0):
+To checkout the version you need (for example 2.2.0):
 
 ```bash
 git checkout 2.2.0
