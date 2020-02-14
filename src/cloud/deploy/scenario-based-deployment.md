@@ -9,9 +9,9 @@ functional_areas:
 With `{{site.data.var.ct}}` 2002.1.0 and later, you can use the scenario-based deployment feature to customize the default deployment behavior.
 This feature uses **scenarios** and **steps** in the configuration:
 
--  **Scenario configuration**–Each deployment hook is a *scenario*, which is an XML configuration file that describes the sequence and configuration parameters to complete Magento deployment tasks. You configure the scenarios in the `hooks` section of the `.magento.app.yaml` file.
+-  **Scenario configuration** – Each deployment hook is a *scenario*, which is an XML configuration file that describes the sequence and configuration parameters to complete Magento deployment tasks. You configure the scenarios in the `hooks` section of the `.magento.app.yaml` file.
 
--  **Step configuration**–Each scenario uses a sequence of *steps* that programmatically describe the operations required to complete deployment tasks. You configure the steps in an XML-based scenario configuration file.
+-  **Step configuration** – Each scenario uses a sequence of *steps* that programmatically describe the operations required to complete deployment tasks. You configure the steps in an XML-based scenario configuration file.
 
 {{site.data.var.ece}} provides a set of [default scenarios] and [default steps] in the {{site.data.var.ct}} package. You can customize deployment behavior by creating custom XML configuration files to override or customize the default configuration. You can also use scenarios and steps to run code from custom modules.
 
