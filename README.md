@@ -145,7 +145,7 @@ exclude:
 
 The published website contains documentation for the latest Magento releases only. For cases, when you need to view the content as it was for an earlier release, we created [tags](https://github.com/magento/devdocs/tags) in this repository. Typically, they point at the commit when the release notes were finalized and published.
 
-Get the list of available tags:
+To view the list of available tags:
 
 ```bash
 git tag --list
