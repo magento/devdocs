@@ -48,7 +48,7 @@ rake init
 Docfile begins with public sources, because the `rake init` task fails when it attempts to clone content from private repositories without the corresponding permissions.
 
 >**NOTE**
->By default _rake_ clones with SSH. If you want to clone with HTTPS, run it with a variable `token`:
+>By default _rake_ clones using SSH. If you want to clone with HTTPS, you can run it with the `token` variable:
 >
 >```bash
 >token=none rake init
