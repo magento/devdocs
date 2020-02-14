@@ -23,9 +23,9 @@ Prior to installation, you may want to:
 1. Back up your database.
 1. Enable maintenance mode:
 
-    ```bash
-    bin/magento maintenance:enable
-    ```
+   ```bash
+   bin/magento maintenance:enable
+   ```
 
 To install an extension, you must:
 
@@ -45,15 +45,15 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
 1. In the upper-right corner, click **Your name** > **My Profile**.
 
-    ![Access your Marketplace account]({{ site.baseurl }}/common/images/marketplace-my-profile.png){:width="200px"}
+   ![Access your Marketplace account]({{ site.baseurl }}/common/images/marketplace-my-profile.png){:width="200px"}
 
 1. Click **My Purchases**.
 
-    ![Marketplace purchase history]({{ site.baseurl }}/common/images/marketplace-my-purchases.png){:width="650px"}
+   ![Marketplace purchase history]({{ site.baseurl }}/common/images/marketplace-my-purchases.png){:width="650px"}
 
 1. Find the extension you want to install and click **Technical Details**.
 
-    ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
+   ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
 {:.bs-callout-tip}
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
@@ -64,28 +64,28 @@ Add the extension's name and version to your `composer.json` file:
 
 1. Navigate to your Magento project directory and update your `composer.json` file.
 
-    ```bash
-    composer require <component-name>:<version>
-    ```
+   ```bash
+   composer require <component-name>:<version>
+   ```
 
-    For example,
+   For example,
 
-    ```bash
-    composer require j2t/module-payplug:2.0.2
-    ```
+   ```bash
+   composer require j2t/module-payplug:2.0.2
+   ```
 
 1. Enter your [authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
 
 1. Wait for Composer to finish updating your project dependencies and make sure there aren't any errors:
 
-    ```terminal
-    Updating dependencies (including require-dev)
-    Package operations: 1 install, 0 updates, 0 removals
-      - Installing j2t/module-payplug (2.0.2): Downloading (100%)
-    Writing lock file
-    Generating autoload files
-    ```
-    {:.no-copy}
+   ```terminal
+   Updating dependencies (including require-dev)
+   Package operations: 1 install, 0 updates, 0 removals
+     - Installing j2t/module-payplug (2.0.2): Downloading (100%)
+   Writing lock file
+   Generating autoload files
+   ```
+   {:.no-copy}
 
 ## Verify the extension
 
@@ -97,12 +97,12 @@ bin/magento module:status
 
 By default, the extension is probably disabled:
 
-  ```terminal
-  List of disabled modules:
-  J2t_Payplug
-  ```
+```terminal
+List of disabled modules:
+J2t_Payplug
+```
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
 
 ## Enable the extension
@@ -111,49 +111,49 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 1. Enable the extension and clear static view files:
 
-    ```bash
-    bin/magento module:enable J2t_Payplug --clear-static-content
-    ```
+   ```bash
+   bin/magento module:enable J2t_Payplug --clear-static-content
+   ```
 
-    You should see the following output:
+   You should see the following output:
 
-    ```terminal
-    The following modules have been enabled:
-    - J2t_Payplug
+   ```terminal
+   The following modules have been enabled:
+   - J2t_Payplug
 
-    To make sure that the enabled modules are properly registered, run 'setup:upgrade'.
-    Cache cleared successfully.
-    Generated classes cleared successfully. Please run the 'setup:di:compile' command to generate classes.
-    Generated static view files cleared successfully.
-    ```
+   To make sure that the enabled modules are properly registered, run 'setup:upgrade'.
+   Cache cleared successfully.
+   Generated classes cleared successfully. Please run the 'setup:di:compile' command to generate classes.
+   Generated static view files cleared successfully.
+   ```
 
 1. Register the extension:
 
-    ```bash
-    bin/magento setup:upgrade
-    ```
+   ```bash
+   bin/magento setup:upgrade
+   ```
 
 1. Recompile your Magento project: In Production mode, you may receive a message to "Please rerun Magento compile command". Magento does not prompt you to run the compile command in Developer mode.
 
-    ```bash
-    bin/magento setup:di:compile
-    ```
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
 1. Verify that the extension is enabled:
 
-    ```bash
-    bin/magento module:status
-    ```
+   ```bash
+   bin/magento module:status
+   ```
 
-    You should see output verifying that the extension is no longer disabled:
+   You should see output verifying that the extension is no longer disabled:
 
-    ```terminal
-    List of enabled modules:
-    J2t_Payplug
+   ```terminal
+   List of enabled modules:
+   J2t_Payplug
 
-    List of disabled modules:
-    None
-    ```
+   List of disabled modules:
+   None
+   ```
 
 1. Clean the cache:
 
@@ -178,22 +178,22 @@ To update or upgrade an extension:
 
 1. If a composer package exists for the extension, run one of the following.
 
-    Update per module name:
+   Update per module name:
 
-    ```bash
-    composer update vendor/module-name
-    ```
+   ```bash
+   composer update vendor/module-name
+   ```
 
-    Updater per version:
+   Updater per version:
 
-    ```bash
-    composer require vendor/module-name ^x.x.x
-    ```
+   ```bash
+   composer require vendor/module-name ^x.x.x
+   ```
 
 1. Run the following commands to upgrade, deploy, and clean the cache.
 
-    ```bash
-    php bin/magento setup:upgrade --keep-generated
-    php bin/magento setup:static-content:deploy
-    php bin/magento cache:clean
-    ```
+   ```bash
+   php bin/magento setup:upgrade --keep-generated
+   php bin/magento setup:static-content:deploy
+   php bin/magento cache:clean
+   ```
