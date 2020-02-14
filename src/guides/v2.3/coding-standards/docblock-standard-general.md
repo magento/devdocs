@@ -39,7 +39,7 @@ Below are ways of improving code to help simplify documentation:
 *  Make code self-explanatory.
 *  Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
 *  Break down a method into smaller methods with descriptive names.
-   See example below:
+   For example:
 
    ```php
     public function getPrice()
