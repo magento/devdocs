@@ -54,7 +54,7 @@ The following example shows how the InsertListing component integrates with the 
             </settings>
         </insertListing>
     </fieldset>
-</listing>
+</form>
 ```
 
 The listing example insert_listing_example.xml:
