@@ -70,49 +70,49 @@ Once you have completed preparing your environment, you can build locally and pr
    rake preview
    ```
 
-You will see the commands called by the rake task and the corresponding output. Each command is typically highlighted with the magenta color:
+   You will see the commands called by the rake task and the corresponding output. Each command is typically highlighted with the magenta color:
 
-```terminal
-~/magento/devdocs (master)$ rake preview
-Install gems listed in the Gemfile: $ bundle install
-Using rake 13.0.1
-Using public_suffix 4.0.3
-<truncated>
-Bundle complete! 16 Gemfile dependencies, 70 gems now installed.
-Use `bundle info [gemname]` to see where a bundled gem is installed.
-Installed!
-Cleaning after the last site generation: $ bundle exec jekyll clean
-Configuration file: /Users/user/magento/devdocs/_config.yml
-           Cleaner: Removing /Users/user/magento/devdocs/_site...
-           Cleaner: Removing src/.jekyll-metadata...
-           Cleaner: Removing src/.jekyll-cache...
-           Cleaner: Nothing to do for .sass-cache.
-Clean!
-Enabled the default configuration: $ bundle exec jekyll serve --incremental \
-                                 --open-url \
-                                 --livereload \
-                                 --trace \
-                                 --plugins _plugins,_checks
-Configuration file: /Users/user/magento/devdocs/_config.yml
- Theme Config file: /Users/user/.rvm/gems/ruby-2.6.5/bundler/gems/devdocs-theme-e1a4ff6880d5/_config.yml
-            Source: /Users/user/magento/devdocs/src
-       Destination: /Users/user/magento/devdocs/_site
- Incremental build: enabled
-      Generating...
-Running ["ImageCheck", "HtmlCheck", "LinkCheck", "ScriptCheck", "LinkChecker::DoubleSlashCheck"] on ["/Users/user/magento/devdocs/_site"] on *.html...
-
-
-Ran on 1747 files!
+   ```terminal
+   ~/magento/devdocs (master)$ rake preview
+   Install gems listed in the Gemfile: $ bundle install
+   Using rake 13.0.1
+   Using public_suffix 4.0.3
+   <truncated>
+   Bundle complete! 16 Gemfile dependencies, 70 gems now installed.
+   Use `bundle info [gemname]` to see where a bundled gem is installed.
+   Installed!
+   Cleaning after the last site generation: $ bundle exec jekyll clean
+   Configuration file: /Users/user/magento/devdocs/_config.yml
+             Cleaner: Removing /Users/user/magento/devdocs/_site...
+             Cleaner: Removing src/.jekyll-metadata...
+             Cleaner: Removing src/.jekyll-cache...
+             Cleaner: Nothing to do for .sass-cache.
+   Clean!
+   Enabled the default configuration: $ bundle exec jekyll serve --incremental \
+                                   --open-url \
+                                   --livereload \
+                                   --trace \
+                                   --plugins _plugins,_checks
+   Configuration file: /Users/user/magento/devdocs/_config.yml
+   Theme Config file: /Users/user/.rvm/gems/ruby-2.6.5/bundler/gems/devdocs-theme-e1a4ff6880d5/ _config.yml
+               Source: /Users/user/magento/devdocs/src
+         Destination: /Users/user/magento/devdocs/_site
+   Incremental build: enabled
+         Generating...
+   Running ["ImageCheck", "HtmlCheck", "LinkCheck", "ScriptCheck",  "LinkChecker::DoubleSlashCheck"] on ["/Users/user/magento/devdocs/_site"] on *.html...
 
 
-HTML-Proofer finished successfully.
-                    done in 220.316 seconds.
- Auto-regeneration: enabled for 'src'
-LiveReload address: http://127.0.0.1:35729
-    Server address: http://127.0.0.1:4000/
-  Server running... press ctrl-c to stop.
-        LiveReload: Browser connected
-```
+   Ran on 1747 files!
+
+
+   HTML-Proofer finished successfully.
+                       done in 220.316 seconds.
+   Auto-regeneration: enabled for 'src'
+   LiveReload address: http://127.0.0.1:35729
+       Server address: http://127.0.0.1:4000/
+     Server running... press ctrl-c to stop.
+           LiveReload: Browser connected
+   ```
 
 1. The generated website launches automatically in a new tab in your browser.
 1. Press `Ctrl+C` in the serve terminal to stop the server.
@@ -126,8 +126,6 @@ If you do not have access to the private repositories required by Docfile, you c
 
 Create a `_config.local.yml` file at the root of the project directory and exclude the paths you do not want to generate:
 
-The following example will generate Magento 2.2 documentation only.
-
 ```yaml
 exclude:
   - page-builder
@@ -135,7 +133,9 @@ exclude:
 
 >**TIP**
 >You can override any other configuration options using this file.
->Also, you can use the `preview:all` option to ignore the `_config.local.yml` file and preview the site with default configuration:
+
+>**TIP**
+>To ignore the `_config.local.yml` file and preview the site with default configuration, use the `preview:all` option :
 >
 >```bash
 >rake preview:all
@@ -151,7 +151,7 @@ To view the list of available tags:
 git tag --list
 ```
 
-To checkout the version you need (for example 2.2.0):
+To checkout the version (for example 2.2.0):
 
 ```bash
 git checkout 2.2.0
@@ -169,4 +169,3 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 -  [Visit our wiki](https://github.com/magento/devdocs/wiki)
 -  <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 -  [E-mail us](mailto:DL-Magento-Doc-Feedback@magento.com)
--  [Join us in Slack](http://tinyurl.com/engcom-slack)
