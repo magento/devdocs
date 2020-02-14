@@ -36,7 +36,7 @@ class MyClass
   private $eventManager;
 
   /**
-   * @param \Magento\Framework\Event\ManagerInterface as EventManager;
+   * @param \Magento\Framework\Event\ManagerInterface $eventManager;
    */
   public function __construct(EventManager $eventManager)
   {
