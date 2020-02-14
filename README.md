@@ -39,7 +39,7 @@ bundle install
 ```
 
 The website file structure contains directories pulled from multiple sources, not only this repository. The full list with mapped directories is defined in the [Docfile.yml](./Docfile.yml). It includes public and private repositories.
-There is a command to pull all the mapped sources:
+To pull all the mapped sources:
 
 ```bash
 rake init
