@@ -25,7 +25,7 @@ For the Early Access Program, deploying recommendations to your site requires th
    composer require magento/product-recommendations
    ```
 
-   The `product-recommendations` module installs the following dependencies:
+   The `product-recommendations` module requires to install the following dependencies:
 
     -  **module-data-services**—This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time.
 
