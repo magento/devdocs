@@ -36,13 +36,13 @@ To get the Magento metapackage:
     **{{site.data.var.ce}}**
 
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
 
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
 
     When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
