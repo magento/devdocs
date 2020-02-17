@@ -61,67 +61,6 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
   "quote_id": "4"
 }
 ```
-### Add a simple product with custom options to a cart {#add-simple-custom-options}
-
-To add a [simple product](https://glossary.magento.com/simple-product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
-
-The following example adds an medium-sized bottle (`sku`: `Sample-Bottle`, `option_id`: `1`, `option_value`: `2`) to the cart.
-
-**Endpoint:**
-
-`POST <host>/rest/<store_code>/V1/carts/mine/items`
-
-**Headers:**
-
-`Content-Type` `application/json`
-
-`Authorization` `Bearer <customer token>`
-
-**Payload:**
-
-```json
-{
-  "cartItem": {
-    "sku": "Sample-Bottle",
-    "qty": 1,
-    "quote_id": "4",
-    "product_option": {
-      "extension_attributes": {
-        "custom_options": [
-          {
-            "option_id": "1",
-            "option_value": "2"
-          }
-        ]
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-    "item_id": 17,
-    "sku": "Sample-Bottle",
-    "qty": 1,
-    "name": "Sample Bottle",
-    "price": 25,
-    "product_type": "simple",
-    "quote_id": "4",
-    "product_option": {
-        "extension_attributes": {
-            "custom_options": [
-                {
-                    "option_id": "1",
-                    "option_value": "2"
-                }
-            ]
-        }
-    }
-}
-```
 
 ### Add a downloadable product to a cart {#add-downloadable}
 
@@ -179,7 +118,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable-product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
-The following example adds the downloadable product LTS Downlodable (`sku`: LTS-Downlodable)
+The following example adds the downloadable product Luma Yoga For Life (`sku`: 240-LV09)
 
 **Endpoint:**
 
@@ -196,14 +135,14 @@ The following example adds the downloadable product LTS Downlodable (`sku`: LTS-
 ```json
 {
   "cartItem": {
-    "sku": "LTS-Downlodable",
+    "sku": "240-LV09",
     "qty": 1,
     "quote_id": "4",
     "product_option": {
       "extension_attributes": {
         "downloadable_option": {
           "downloadable_links": [
-            1
+            6
           ]
         }
       }
@@ -217,17 +156,17 @@ The following example adds the downloadable product LTS Downlodable (`sku`: LTS-
 ```json
 {
     "item_id": 18,
-    "sku": "LTS-Downlodable",
+    "sku": "240-LV09",
     "qty": 2,
-    "name": "LTS Downlodable",
-    "price": 12,
+    "name": "Luma Yoga For Life",
+    "price": 9,
     "product_type": "downloadable",
     "quote_id": "4",
     "product_option": {
         "extension_attributes": {
             "downloadable_option": {
                 "downloadable_links": [
-                    1
+                    6
                 ]
             }
         }
