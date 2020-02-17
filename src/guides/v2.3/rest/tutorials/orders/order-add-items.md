@@ -113,8 +113,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 }
 ```
 
-### Add a downloadable product to a cart (Links can be purchased separately)
- {#add-downloadable-lps}
+### Add a downloadable product to a cart ( Links can be purchased separately){#add-downloadable-lps}
 
 The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable-product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
