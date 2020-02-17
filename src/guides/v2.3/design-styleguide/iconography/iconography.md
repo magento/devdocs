@@ -35,7 +35,7 @@ In the Magento Admin, icons have a simple, flat, single-color, and two-dimension
 
 ### Instructions
 
-*  Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or <a href="src/Magento-icon-library.ai">Illustrator (AI)/a> files.
+*  Start by selecting an icon library file - download either the [Sketch (SKETCH)](src/magento_icon_library.sketch) or [Illustrator (AI)](src/Magento-icon-library.ai) files.
 
 *  Use our standard 300 x 300 pixel icon grid - see the guidance that follows in the "Create With the Icon Grid" section.
 
@@ -115,10 +115,6 @@ Icons should be very descriptive, especially if they stand on their own. Add des
 
 1. Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
 
-*Source:* Modern Web Accessibility: [Using icon fonts and demystifying speak:none;](http://modernwebaccessibility.com/en/blog/demystify-speak-none)
-
 ## Learn More
 
 *  yatil.: [The best way to use icon fonts](https://yatil.net/the-best-way-to-use-icon-fonts/)
-
-*  Pictos: [Using Icon Fonts](http://pictos.cc/articles/using-icon-fonts/)

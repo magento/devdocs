@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-Magento uses cron jobs for numerous features to schedule activities. This topic provides information for configuring crons for {{site.data.var.ece}} projects using the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) file.
+Magento uses cron jobs for numerous features to schedule activities. This topic provides information for configuring crons for `{{site.data.var.ece}}` projects using the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) file.
 
 The `.magento.app.yaml` file specifies the configuration for the default Magento cron jobs as well as any custom crons that you add to the following environments.
 
@@ -48,7 +48,7 @@ To review cron configuration on Pro plan environments:
 
 1. List the scheduled cron processes.
 
-   ```bash
+   ```shell
    crontab -l
    ```
 
@@ -154,17 +154,38 @@ To add custom crons:
 
 1. Add, commit, and push code changes.
 
-    ```bash
-    git add -A && git commit -m "cron config updates" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "cron config updates" && git push origin <branch-name>
+   ```
 
 ## Update custom cron jobs {#update}
 
 To add, remove, or update a custom cron job, change the configuration in the `crons` section of the `.magento.app.yaml` file for the Integration environment. Then, test the updates in the Integration environment before pushing the changes to the Production and Staging environments.
 
+## Disable cron jobs
+
+In some cases you might want to manually disable cron jobs before you complete maintenance tasks like reindexing or cleaning the cache to prevent performance issues. You can use the `{{site.data.var.ct}}` CLI command `cron:disable` to disable all Magento cron jobs and stop any active cron processes.
+
+{:.procedure}
+To disable cron jobs:
+
+1. Use [SSH to log in to your environment]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+
+1. Disable cron jobs and stop active cron processes.
+
+   ```shell
+   ./vendor/bin/ece-tools cron:disable
+   ```
+
+1. After you complete any required maintenance tasks, ensure that you enable the cron jobs again.
+
+   ```shell
+   ./vendor/bin/ece-tools cron:enable
+   ```
+
 ## Troubleshooting cron jobs
 
-Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you are having problems with cron processing, make sure that your project is using the most current version of the ece-tools package. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html).
+Magento has updated the {{site.data.var.ece}} package to optimize cron processing on the {{site.data.var.ece}} platform and to fix cron-related issues. If you encounter problems with cron processing, make sure that your project is using the most current version of the `{{site.data.var.ct}}` package. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html).
 
 You can review cron processing information in the application-level log files for each environment. See [Application logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 

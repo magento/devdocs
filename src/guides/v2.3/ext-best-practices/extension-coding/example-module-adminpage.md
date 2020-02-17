@@ -48,7 +48,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
       "AFL-3.0"
     ],
     "require": {
-      "php": "~5.6.0|7.0.2|7.0.4|~7.0.6"
+      "php": "~7.1.3||~7.2.0||~7.3.0"
     },
     "autoload": {
       "files": [ "registration.php" ],
@@ -100,6 +100,17 @@ If your module does not implement [Declarative Schema]({{ page.baseurl }}/extens
 
 ```xml
 <module name="MyCompany_ExampleAdminNewPage" setup_version="1.0.0">
+```
+
+If your module has a dependency with other modules, you can change the loading order sequence of the module by using the `sequence` node.
+In the example below, `MyCompany_ExampleAdminNewPage` will be loaded after the `Magento_Checkout` module.
+
+```xml
+<module name="MyCompany_ExampleAdminNewPage">
+  <sequence>
+    <module name="Magento_Checkout"/>
+  </sequence>
+</module>
 ```
 
 ## Routing and navigation

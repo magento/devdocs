@@ -74,7 +74,17 @@ Your custom `default_head_blocks.xml` should be located as follows:
 
 To include a CSS file, add the `<css src="<path>/<file>" media="print|<option>"/>` block in `<head>` section in a layout file. `<path>` is specified relative to the theme web directory (`<theme_dir>/web`)
 
-For example, the following illustrates how stylesheets are included in the default Blank theme:
+For example, to include `<theme_dir>/web/css/custom.css`:
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/custom.css"  src_type="url" rel="stylesheet" type="text/css"  />
+    </head>
+</page>
+```
+
+The following illustrates how stylesheets are included in the default Blank theme:
 
 [`/Magento_Theme/layout/default_head_blocks.xml`]
 
@@ -88,14 +98,11 @@ For example, the following illustrates how stylesheets are included in the defau
 </page>
 ```
 
-To include an external CSS file, add `<css src="URL to External Source" src_type="url" rel="stylesheet" type="text/css" />` to the list.
+To include an external CSS file, add `<css src="URL to External Source" src_type="url" rel="stylesheet" type="text/css" />`.
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="css/styles-m.css" />
-        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
-        <css src="css/print.css" media="print" />
         <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"  src_type="url" rel="stylesheet" type="text/css"  />
     </head>
 </page>

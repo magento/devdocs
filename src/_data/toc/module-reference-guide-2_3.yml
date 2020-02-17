@@ -3,7 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   
-  - label: Open Source
+  - label: Open Source (v2.3.4)
     include_versions: ["2.3"]
     children:
     
@@ -82,6 +82,12 @@ pages:
       - label: CatalogAnalytics
         url: /mrg/ce/CatalogAnalytics.html
     
+      - label: CatalogCmsGraphQl
+        url: /mrg/ce/CatalogCmsGraphQl.html
+    
+      - label: CatalogCustomerGraphQl
+        url: /mrg/ce/CatalogCustomerGraphQl.html
+    
       - label: CatalogGraphQl
         url: /mrg/ce/CatalogGraphQl.html
     
@@ -156,6 +162,9 @@ pages:
     
       - label: CustomerAnalytics
         url: /mrg/ce/CustomerAnalytics.html
+    
+      - label: CustomerDownloadableGraphQl
+        url: /mrg/ce/CustomerDownloadableGraphQl.html
     
       - label: CustomerGraphQl
         url: /mrg/ce/CustomerGraphQl.html
@@ -252,6 +261,12 @@ pages:
     
       - label: Marketplace
         url: /mrg/ce/Marketplace.html
+    
+      - label: MediaGallery
+        url: /mrg/ce/MediaGallery.html
+    
+      - label: MediaGalleryApi
+        url: /mrg/ce/MediaGalleryApi.html
     
       - label: MediaStorage
         url: /mrg/ce/MediaStorage.html
@@ -485,7 +500,7 @@ pages:
         url: /mrg/ce/WishlistGraphQl.html
     
   
-  - label: Commerce
+  - label: Commerce (v2.3.4)
     include_versions: ["2.3"]
     children:
     
@@ -730,7 +745,7 @@ pages:
         url: /mrg/ee/Worldpay.html
     
   
-  - label: B2B
+  - label: B2B (v1.1.4)
     include_versions: ["2.3"]
     children:
     
@@ -749,14 +764,14 @@ pages:
       - label: CheckoutAddressSearchNegotiableQuote
         url: /mrg/b2b/CheckoutAddressSearchNegotiableQuote.html
     
+      - label: CheckoutAgreementsNegotiableQuote
+        url: /mrg/b2b/CheckoutAgreementsNegotiableQuote.html
+    
       - label: Company
         url: /mrg/b2b/Company.html
     
       - label: CompanyCredit
         url: /mrg/b2b/CompanyCredit.html
-    
-      - label: CompanyGraphQl
-        url: /mrg/b2b/CompanyGraphQl.html
     
       - label: CompanyPayment
         url: /mrg/b2b/CompanyPayment.html
@@ -801,7 +816,7 @@ pages:
         url: /mrg/b2b/SharedCatalog.html
     
   
-  - label: Inventory Management
+  - label: Inventory Management (v1.1.4)
     include_versions: ["2.3"]
     children:
     

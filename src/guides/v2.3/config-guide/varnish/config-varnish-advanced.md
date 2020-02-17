@@ -70,7 +70,7 @@ You should designate one machine as the primary installation. On this machine, i
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.
 
-Alternatively, [static files](https://glossary.magento.com/static-files) versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Settings > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**.
+Alternatively, [static files](https://glossary.magento.com/static-files) versioning can be turned off on all machines. This can be accessed from the Admin under **Stores** > Settings > **Configuration** > **Advanced** > **Developer** > **Static Files Settings** > **Sign Static Files** = **No**.
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System** > Tools > **Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 

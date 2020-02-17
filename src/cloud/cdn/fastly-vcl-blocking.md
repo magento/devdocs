@@ -25,7 +25,7 @@ You create an Edge ACL to define the list of IP addresses to block. After creati
 If you want to manage access for both Staging and Production sites, create the Edge ACL with the same name in both environments. The VCL snippet code will apply to both environments.
 
 1. Log in to the Magento Admin.
-1. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+1. Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration**.
 1. Expand the **Edge ACL** section.
 1. Click **Add ACL** to create a list. For this example, name the list "blocklist".
 1. Enter IP address values in the list. Any client IPs added to this list will be blocked access from the site.

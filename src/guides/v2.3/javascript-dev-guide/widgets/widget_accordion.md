@@ -107,13 +107,13 @@ Defines which tab is active when the widget gets instantiated.
 
 **Type**: Array, String
 
-**Default value**: `0`
+**Default value**: `[0]`
 
-Example of the accordion initialization with the <code>active</code> option specified:
+Example of the accordion initialization with the `active` option specified:
 
 ```javascript
-$("#element").accordion({ active: "0 1"});
-$("#element").accordion({ active: [0,1]});
+$("#element").accordion({ active: "0 1" });
+$("#element").accordion({ active: [0,1] });
 ```
 
 ### `multipleCollapsible` {#collaps_multi}
@@ -127,17 +127,17 @@ Defines if multiple panels can be expanded at the same time.
 Example of the accordion initialization with the `multipleCollapsible` option specified:
 
 ```javascript
-$("#element").accordion({ multipleCollapsible: false});
+$("#element").accordion({ multipleCollapsible: false });
 ```
 
 Get or set the `multipleCollapsible` option, after initialization:
 
 ```javascript
 //getter
-var multipleCollapsible = $("#element").accordion("option","multipleCollapsible");
+var multipleCollapsible = $("#element").accordion("option", "multipleCollapsible");
 
 //setter
-$("#element").tabs("option","multipleCollapsible",false);
+$("#element").tabs("option", "multipleCollapsible", false);
 ```
 
 ### `openOnFocus` {#collaps_open}
@@ -168,9 +168,9 @@ If no `index` is passed, all panels are activated.
 Code examples:
 
 ```javascript
-$( "#element" ).accordion( "activate" );
-$( "#element" ).accordion( "activate", 1 );
-$( "#element" ).accordion( "activate", [0,1]);
+$( "#element" ).accordion("activate");
+$( "#element" ).accordion("activate", 1);
+$( "#element" ).accordion("activate", [0,1]);
 ```
 
 ### `deactivate(index)` {#meth_deact}
@@ -184,9 +184,9 @@ If no index is passed, all panels are deactivated.
 Code examples:
 
 ```javascript
-$( "#element" ).accordion( "deactivate" );
-$( "#element" ).accordion( "deactivate", 1 );
-$( "#element" ).accordion( "deactivate", [0,1]);
+$( "#element" ).accordion("deactivate");
+$( "#element" ).accordion("deactivate", 1);
+$( "#element" ).accordion("deactivate", [0,1]);
 ```
 
 ## Events {#accordion_events}
@@ -233,7 +233,7 @@ The following example shows how to initialize the accordion widget and pass opti
 ```html
 <div id="accordion" data-mage-init='{
         "accordion":{
-            "active": [1,2],
+            "active": [1, 2],
             "collapsible": true,
             "openedState": "active",
             "multipleCollapsible": true

@@ -19,22 +19,27 @@ The following query returns the attribute type for various custom and EAV attrib
 
 ```graphql
 {
- customAttributeMetadata(
-   attributes: {
-     attribute_code: "color"
-     entity_type: "4"
-   }
- ) {
-   items {
-     attribute_code
-     entity_type
-     attribute_type
-     attribute_options {
+  customAttributeMetadata(
+    attributes: [
+      {
+        attribute_code: "size"
+        entity_type: "4"
+      }
+      {
+        attribute_code: "color"
+        entity_type: "4"
+      }
+    ]
+  ) {
+    items {
+      attribute_code
+      attribute_type
+      attribute_options {
        value
        label
      }
-   }
- }
+    }
+  }
 }
 ```
 
@@ -46,25 +51,98 @@ The following query returns the attribute type for various custom and EAV attrib
     "customAttributeMetadata": {
       "items": [
         {
-          "attribute_code": "color",
-          "entity_type": "4",
+          "attribute_code": "size",
           "attribute_type": "Int",
+          "attribute_options": [
+            {
+              "value": "91",
+              "label": "55 cm"
+            },
+            {
+              "value": "169",
+              "label": "XS"
+            },
+            {
+              "value": "92",
+              "label": "65 cm"
+            },
+            {
+              "value": "170",
+              "label": "S"
+            },
+            {
+              "value": "93",
+              "label": "75 cm"
+            },
+            {
+              "value": "171",
+              "label": "M"
+            },
+            {
+              "value": "94",
+              "label": "6 foot"
+            },
+            {
+              "value": "172",
+              "label": "L"
+            },
+            {
+              "value": "95",
+              "label": "8 foot"
+            },
+            {
+              "value": "173",
+              "label": "XL"
+            },
+            {
+              "value": "96",
+              "label": "10 foot"
+            },
+            {
+              "value": "174",
+              "label": "28"
+            },
+            {
+              "value": "175",
+              "label": "29"
+            },
+            {
+              "value": "176",
+              "label": "30"
+            },
+            {
+              "value": "177",
+              "label": "31"
+            },
+            {
+              "value": "178",
+              "label": "32"
+            },
+            {
+              "value": "179",
+              "label": "33"
+            },
+            {
+              "value": "180",
+              "label": "34"
+            },
+            {
+              "value": "181",
+              "label": "36"
+            },
+            {
+              "value": "182",
+              "label": "38"
+            }
+          ]
+        },
+        {
+          "attribute_code": "color",
+          "attribute_type": "String",
           "attribute_options": [
             {
               "value": "49",
               "label": "Black"
-            },
-            {
-              "value": "214",
-              "label": "blue"
-            },
-            {
-              "value": "215",
-              "label": "green"
-            },
-            {
-              "value": "213",
-              "label": "red"
             },
             {
               "value": "50",
@@ -120,7 +198,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 ## Input attributes
 
-The `customAttributeMetadata` query requires the following attributes as input.
+The `AttributeInput` input object requires the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---

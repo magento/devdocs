@@ -12,6 +12,8 @@ The following table defines the `CategoryInterface` attributes and objects.
 Attribute | Type | Description
 --- | --- | ---
 `breadcrumbs` | [Breadcrumb] | A Breadcrumb object contains information the categories that comprise the breadcrumb trail for the specified category
+`canonical_url` | String | The relative canonical URL. This value is returned only if the system setting **Use Canonical Link Meta Tag For Categories** is enabled
+`cms_block` | CmsBlock | Contains a category CMS block. This attribute is defined in the `CatalogCmsGraphQl` module
 `created_at` | String | Timestamp indicating when the category was created
 `default_sort_by` | String | The attribute to use for sorting
 `description` | String | An optional description of the category
@@ -56,3 +58,7 @@ Attribute | Data type | Description
 `items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) for more information
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
+
+### CmsBlock attributes
+
+{% include graphql/cms-block-object.md %}
