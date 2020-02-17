@@ -79,7 +79,7 @@ The menu displays like below,
 
 ![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
 
-###Restricting admin controllers:
+### Restricting admin controllers:
 
 We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
 
@@ -120,6 +120,8 @@ We can restrict users from accessing API endpoints by using the ACL rule. By cre
 </routes>
 ```
 
+### Related Content
 
+*  [Creating A Admin Page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) - An in depth guide to creating a magento admin page.
 
-
+*  [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) - An in depth guide about web API authentication.
