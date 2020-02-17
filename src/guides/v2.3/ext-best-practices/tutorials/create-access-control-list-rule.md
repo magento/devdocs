@@ -46,9 +46,11 @@ bin/magento cache:clean
 1. After clicking a Add New Role button, enter Role Name and Your Password.
 
 1. Then, click a Role Resources tab select Resource Access as Custom.
+
 ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
 
 1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
+
 ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
 ## Step 2. Restrict access to Admin users
