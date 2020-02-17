@@ -173,7 +173,6 @@ The following example adds the downloadable product Luma Yoga For Life (`sku`: 2
 }
 ```
 
-
 ### Add a configurable product to a cart {#add-configurable}
 
 To add a configurable product to a cart, you must specify the `sku` as well as the set of `option_id`/`option_value` pairs that make the product configurable.
