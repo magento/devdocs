@@ -11,6 +11,10 @@
           url: /cloud/architecture/cloud-architecture.html
           versionless: true
 
+        - label: Project Structure
+          url: /cloud/project/project-start.html
+          versionless: true
+
         - label: Upgrades and Patches
           url: /cloud/project/project-upgrade-parent.html
           versionless: true
@@ -22,10 +26,10 @@
     - label: Cloud development
       children:
         - label: Local development
-          url: /cloud/setup/first-time-setup.html
+          url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Launch Docker
+        - label: Configure and launch Docker
           url: /cloud/docker/docker-config.html
           versionless: true
 
@@ -33,8 +37,22 @@
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
 
+        - label: Configure Application
+          url: /cloud/project/project-conf-files_magento-app.html
+          versionless: true
+
         - label: Configure Environments
           url: /cloud/env/environments.html
+          versionless: true
+
+    - label: Functional Testing
+      children:
+        - label: Magento application testing
+          url: /cloud/docker/docker-mftf.html
+          versionless: true
+
+        - label: ECE-Tools testing
+          url: /cloud/docker/docker-development-testing.html
           versionless: true
 
 - label: Setup
@@ -214,6 +232,10 @@
 
     - label: Payment Integrations
       url: /payments-integrations/bk-payments-integrations.html
+
+    - label: Product Recommendations
+      url: /recommendations/install.html
+      versionless: true
 
     - label: Staging
       url: /extension-dev-guide/staging.html

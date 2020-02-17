@@ -38,6 +38,22 @@ pages:
         - label: Columns component
           url: /ui_comp_guide/components/ui-columns.html
 
+        - label: ColumnsEditor component
+          url: /ui_comp_guide/components/ui-columns-editor.html
+          exclude_versions: ["2.2"]
+
+        - label: ColumnsEditorRecord component
+          url: /ui_comp_guide/components/ui-columns-editor-record.html
+          exclude_versions: ["2.2"]
+
+        - label: ColumnsEditingBulk component
+          url: /ui_comp_guide/components/ui-columns-editing-bulk.html
+          exclude_versions: ["2.2"]
+
+        - label: ColumnsEditingClient component
+          url: /ui_comp_guide/components/ui-columns-editing-client.html
+          exclude_versions: ["2.2"]
+
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
 

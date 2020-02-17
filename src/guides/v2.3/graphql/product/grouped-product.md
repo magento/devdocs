@@ -29,7 +29,7 @@ Attribute | Type | Description
 
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
-``` text
+```graphql
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -56,3 +56,57 @@ The following query returns information about downloadable product `24-WG085_Gro
   }
 }
 ```
+
+{% collapsible Response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 45,
+          "name": "Set of Sprite Yoga Straps",
+          "sku": "24-WG085_Group",
+          "type_id": "grouped",
+          "items": [
+            {
+              "qty": 0,
+              "position": 0,
+              "product": {
+                "sku": "24-WG085",
+                "name": "Sprite Yoga Strap 6 foot",
+                "type_id": "simple",
+                "url_key": "sprite-yoga-strap-6-foot"
+              }
+            },
+            {
+              "qty": 0,
+              "position": 1,
+              "product": {
+                "sku": "24-WG086",
+                "name": "Sprite Yoga Strap 8 foot",
+                "type_id": "simple",
+                "url_key": "sprite-yoga-strap-8-foot"
+              }
+            },
+            {
+              "qty": 0,
+              "position": 2,
+              "product": {
+                "sku": "24-WG087",
+                "name": "Sprite Yoga Strap 10 foot",
+                "type_id": "simple",
+                "url_key": "sprite-yoga-strap-10-foot"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+{% endcollapsible %}
+

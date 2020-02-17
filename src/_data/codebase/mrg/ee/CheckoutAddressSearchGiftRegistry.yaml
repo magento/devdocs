@@ -1,7 +1,7 @@
 ---
 title: Magento_CheckoutAddressSearchGiftRegistry
 source_repo: magento2ee
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/CheckoutAddressSearchGiftRegistry/README.md
 last_modified_at: '2019-04-05 18:54:17 -0500'
 content: |

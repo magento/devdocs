@@ -17,11 +17,11 @@ content_map:
 -
   directory: src/page-builder
   repository: magento/magento2-page-builder
-  branch: 1.1-develop
+  branch: develop
   filter: true
 -
   directory: src/page-builder-migration
   repository: magento/magento2-page-builder-data-migration
   branch: 1.0.0-release
   filter: true
-  
+

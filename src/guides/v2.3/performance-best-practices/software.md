@@ -43,20 +43,8 @@ Magento fully supports PHP 7.2.11. There are several factors to account for when
 
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
-*  `php-bcmath`
-*  `php-cli`
-*  `php-common`
-*  `php-curl`
-*  `php-gd`
-*  `php-intl`
-*  `php-mbstring`
-*  `php-opcache`
-*  `php-openssl`
-*  `php-pdo`
-*  `php-soap`
-*  `php-xml`
-*  `php-xsl`
-*  `php-zip`
+<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+{% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.
 

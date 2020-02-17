@@ -1,4 +1,20 @@
  
+- filename: "StorefrontElasticsearch6SearchInvalidValueTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Elasticsearch6/Test/Mftf/Test/StorefrontElasticsearch6SearchInvalidValueTest.xml"
+  module: "Elasticsearch6"
+  tests:
+    - testname: "StorefrontElasticsearch6SearchInvalidValueTest"
+      title: "Elasticsearch: try to search by invalid value of 'Searchable' attribute"
+      description: "Elasticsearch: try to search by invalid value of 'Searchable' attribute"
+ 
+- filename: "StorefrontElasticSearchForChineseLocaleTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Elasticsearch6/Test/Mftf/Test/StorefrontElasticSearchForChineseLocaleTest.xml"
+  module: "Elasticsearch6"
+  tests:
+    - testname: "StorefrontElasticSearch6ForChineseLocaleTest"
+      title: "Elastic search for Chinese locale"
+      description: "Elastic search for Chinese locale"
+ 
 - filename: "AdminGridFilterDeleteAndVerifyErrorMessageTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Ui/Test/Mftf/Test/AdminGridFilterDeleteAndVerifyErrorMessageTest.xml"
   module: "Ui"
@@ -6,6 +22,14 @@
     - testname: "AdminGridFilterDeleteAndVerifyErrorMessageTest"
       title: "Grid Filter Delete and Verify Error Message"
       description: "Test log in to uI and Delete Grid Filter Test"
+ 
+- filename: "AdminCategoryWithRestrictedUrlKeyNotCreatedTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogUrlRewrite/Test/Mftf/Test/AdminCategoryWithRestrictedUrlKeyNotCreatedTest.xml"
+  module: "CatalogUrlRewrite"
+  tests:
+    - testname: "AdminCategoryWithRestrictedUrlKeyNotCreatedTest"
+      title: "Category with restricted Url Key cannot be created"
+      description: "Category with restricted Url Key cannot be created"
  
 - filename: "AdminUrlForProductRewrittenCorrectlyTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogUrlRewrite/Test/Mftf/Test/AdminUrlForProductRewrittenCorrectlyTest.xml"
@@ -23,14 +47,6 @@
       title: "Rewriting Store-level URL key of child category"
       description: "Rewriting Store-level URL key of child category"
  
-- filename: "StorefrontVerifySecureURLRedirectAuthorizenetTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Authorizenet/Test/Mftf/Test/StorefrontVerifySecureURLRedirectAuthorizenetTest.xml"
-  module: "Authorizenet"
-  tests:
-    - testname: "StorefrontVerifySecureURLRedirectAuthorizenet"
-      title: "Verify Secure URLs For Storefront Authorizenet Pages"
-      description: "Verify that the Secure URL configuration applies to the Authorizenet pages on the Storefront"
- 
 - filename: "BraintreeCreditCardOnCheckoutTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Braintree/Test/Mftf/Test/BraintreeCreditCardOnCheckoutTest.xml"
   module: "Braintree"
@@ -46,6 +62,14 @@
     - testname: "AdminRemoveProductWeeeAttributeOptionTest"
       title: "Weee attribute options can be removed in product page"
       description: "Weee attribute options can be removed in product page"
+ 
+- filename: "AdminFixedTaxValSavedForSpecificWebsiteTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Weee/Test/Mftf/Test/AdminFixedTaxValSavedForSpecificWebsiteTest.xml"
+  module: "Weee"
+  tests:
+    - testname: "AdminFixedTaxValSavedForSpecificWebsiteTest"
+      title: "Fixed Product Tax value is saved correctly for Specific Website"
+      description: "Fixed Product Tax value is saved correctly for Specific Website"
  
 - filename: "AdminSwitchWYSIWYGOptionsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Tinymce3/Test/Mftf/Test/AdminSwitchWYSIWYGOptionsTest.xml"
@@ -63,6 +87,14 @@
       title: "Default Configuration for UPS Type"
       description: "Default Configuration for UPS Type"
  
+- filename: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Ups/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  module: "Ups"
+  tests:
+    - testname: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest"
+      title: ""
+      description: ""
+ 
 - filename: "StorefrontVerifySecureURLRedirectContactTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Contact/Test/Mftf/Test/StorefrontVerifySecureURLRedirectContactTest.xml"
   module: "Contact"
@@ -70,6 +102,14 @@
     - testname: "StorefrontVerifySecureURLRedirectContact"
       title: "Verify Secure URLs For Storefront Contact Pages"
       description: "Verify that the Secure URL configuration applies to the Contact pages on the Storefront"
+ 
+- filename: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Usps/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  module: "Usps"
+  tests:
+    - testname: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest"
+      title: ""
+      description: ""
  
 - filename: "ProductsListWidgetTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Widget/Test/Mftf/Test/ProductsListWidgetTest.xml"
@@ -94,6 +134,30 @@
     - testname: "AdminContentWidgetsNavigateMenuTest"
       title: "Admin content widgets navigate menu test"
       description: "Admin should be able to navigate to Content &gt; Widgets"
+ 
+- filename: "AdminCreatingShippingLabelTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Fedex/Test/Mftf/Test/AdminCreatingShippingLabelTest.xml"
+  module: "Fedex"
+  tests:
+    - testname: "AdminCreatingShippingLabelTest"
+      title: "Creating shipping label"
+      description: "Creating shipping label"
+ 
+- filename: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Fedex/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  module: "Fedex"
+  tests:
+    - testname: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest"
+      title: ""
+      description: ""
+ 
+- filename: "AdminFrontendAreaSessionMustNotAffectAdminAreaTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/PageCache/Test/Mftf/Test/AdminFrontendAreaSessionMustNotAffectAdminAreaTest.xml"
+  module: "PageCache"
+  tests:
+    - testname: "AdminFrontendAreaSessionMustNotAffectAdminAreaTest"
+      title: "Frontend area session must not affect admin area"
+      description: "Frontend area session must not affect admin area"
  
 - filename: "FlushStaticFilesCacheButtonVisibilityTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/PageCache/Test/Mftf/Test/FlushStaticFilesCacheButtonVisibilityTest.xml"
@@ -139,6 +203,14 @@
       title: "Create Order in Admin and update bundle product configuration"
       description: "Add bundle product with bundle option items with default quantity 2 to order in Admin and check price in product grid"
  
+- filename: "AdminCreateOrderForCustomerWithTwoAddressesTaxableAndNonTaxableTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateOrderForCustomerWithTwoAddressesTaxableAndNonTaxableTest.xml"
+  module: "Sales"
+  tests:
+    - testname: "AdminCreateOrderForCustomerWithTwoAddressesTaxableAndNonTaxableTest"
+      title: "Tax should not be displayed for non taxable address"
+      description: "Tax should not be displayed for non taxable address when switching from taxable address"
+ 
 - filename: "AdminCreateCreditMemoConfigurableProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateCreditMemoConfigurableProductTest.xml"
   module: "Sales"
@@ -179,6 +251,14 @@
       title: "Create custom order status"
       description: "Tests opening admin order status page, create a new order status with success message"
  
+- filename: "AdminCreateOrderWithSimpleProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateOrderWithSimpleProductTest.xml"
+  module: "Sales"
+  tests:
+    - testname: "AdminCreateOrderWithSimpleProductTest"
+      title: "Create Order in Admin with simple product"
+      description: "Create order with simple product and assert if it gets out of stock after ordering it."
+ 
 - filename: "AdminCreateCreditMemoBankTransferPaymentTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateCreditMemoBankTransferPaymentTest.xml"
   module: "Sales"
@@ -194,6 +274,14 @@
     - testname: "AdminReorderWithCatalogPriceTest"
       title: "Reorder doesn't show discount price in Order Totals block"
       description: "Reorder doesn't show discount price in Order Totals block"
+ 
+- filename: "AdminProductInTheShoppingCartCouldBeReachedByAdminDuringOrderCreationWithMultiWebsiteConfigTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminProductInTheShoppingCartCouldBeReachedByAdminDuringOrderCreationWithMultiWebsiteConfigTest.xml"
+  module: "Sales"
+  tests:
+    - testname: "AdminProductInTheShoppingCartCouldBeReachedByAdminDuringOrderCreationWithMultiWebsiteConfigTest"
+      title: "Product in the shopping cart could be reached by admin during order creation with multi website config"
+      description: "Product in the shopping cart could be reached by admin during order creation with multi website config"
  
 - filename: "AdminCreateCreditMemoWithPurchaseOrderTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateCreditMemoWithPurchaseOrderTest.xml"
@@ -523,6 +611,14 @@
       title: "Verify credit memo grand total after shipping discount is applied via Cart Price Rule"
       description: "Verify credit memo grand total after shipping discount is applied via Cart Price Rule"
  
+- filename: "AdminCreateOrderAddProductCheckboxTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateOrderAddProductCheckboxTest.xml"
+  module: "Sales"
+  tests:
+    - testname: "AdminCreateOrderAddProductCheckboxTest"
+      title: "Create Order in Admin and Add Product"
+      description: "Create order in Admin panel, add product by clicking checkbox, and verify it is checked"
+ 
 - filename: "StorefrontPrintOrderGuestTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/StorefrontPrintOrderGuestTest.xml"
   module: "Sales"
@@ -554,6 +650,14 @@
     - testname: "AdminCheckingCreditMemoTotalsTest"
       title: "Checking Credit Memo Update Totals button"
       description: "Checking Credit Memo Update Totals button"
+ 
+- filename: "AdminCreateOrderAndCheckTheReorderTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminCreateOrderAndCheckTheReorderTest.xml"
+  module: "Sales"
+  tests:
+    - testname: "AdminCreateOrderAndCheckTheReorderTest"
+      title: "'Reorder' button is not visible for customer if ordered item is out of stock"
+      description: "'Reorder' button is not visible for customer if ordered item is out of stock"
  
 - filename: "AdminOrdersReleaseInUnholdStatusTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sales/Test/Mftf/Test/AdminOrdersReleaseInUnholdStatusTest.xml"
@@ -675,6 +779,14 @@
       title: "Youtube video window on the product page"
       description: "Check Youtube video window on the product page"
  
+- filename: "AdminValidateUrlOnGetVideoInformationTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ProductVideo/Test/Mftf/Test/AdminValidateUrlOnGetVideoInformationTest.xml"
+  module: "ProductVideo"
+  tests:
+    - testname: "AdminValidateUrlOnGetVideoInformationTest"
+      title: "Admin validates the url when getting video information"
+      description: "Testing for a required video url when getting video information"
+ 
 - filename: "AdminAddDefaultVideoSimpleProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ProductVideo/Test/Mftf/Test/AdminAddDefaultVideoSimpleProductTest.xml"
   module: "ProductVideo"
@@ -738,6 +850,22 @@
     - testname: "StorefrontVerifyShoppingCartPersistenceUnderLongTermCookieTest"
       title: "Verify Shopping Cart Persistence under long-term cookie"
       description: "Verify Shopping Cart Persistence under long-term cookie"
+ 
+- filename: "StorefrontButtonsInlineTranslationTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Translation/Test/Mftf/Test/StorefrontButtonsInlineTranslationTest.xml"
+  module: "Translation"
+  tests:
+    - testname: "StorefrontButtonsInlineTranslationTest"
+      title: "[Inline Translation] Buttons inline translation"
+      description: "[Inline Translation] Buttons inline translation"
+ 
+- filename: "AdminInlineTranslationOnCheckoutTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Translation/Test/Mftf/Test/AdminInlineTranslationOnCheckoutTest.xml"
+  module: "Translation"
+  tests:
+    - testname: "AdminInlineTranslationOnCheckoutTest"
+      title: "[Inline Translation] Inline translate on Checkout"
+      description: "As merchant I want to be able to rename text labels on Checkout steps"
  
 - filename: "AdminCreateCustomVariableEntityTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Variable/Test/Mftf/Test/AdminCreateCustomVariableEntityTest.xml"
@@ -859,11 +987,47 @@
       title: "Admin stores currency rates navigate menu test"
       description: "Admin should be able to navigate to Stores &gt; Currency Rates"
  
+- filename: "AdminOrderRateDisplayWhenChooseThreeAllowedCurrenciesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CurrencySymbol/Test/Mftf/Test/AdminOrderRateDisplayWhenChooseThreeAllowedCurrenciesTest.xml"
+  module: "CurrencySymbol"
+  tests:
+    - testname: "AdminOrderRateDisplayWhenChooseThreeAllowedCurrenciesTest"
+      title: "Order rate converting currency for 'Base Currency' and 'Default Display Currency' displayed correct"
+      description: "Order rate converting currency for 'Base Currency' and 'Default Display Currency' displayed correct"
+ 
+- filename: "AdminOrderRateDisplayedInOneLineTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CurrencySymbol/Test/Mftf/Test/AdminOrderRateDisplayedInOneLineTest.xml"
+  module: "CurrencySymbol"
+  tests:
+    - testname: "AdminOrderRateDisplayedInOneLineTest"
+      title: "Order rate converting currency for 'Base Currency' and 'Default Display Currency' displayed correct once"
+      description: "Order rate converting currency for 'Base Currency' and 'Default Display Currency' displayed correct once"
+ 
+- filename: "AdminCurrencyConverterAPIConfigurationTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CurrencySymbol/Test/Mftf/Test/AdminCurrencyConverterAPIConfigurationTest.xml"
+  module: "CurrencySymbol"
+  tests:
+    - testname: "AdminCurrencyConverterAPIConfigurationTest"
+      title: "Currency Converter API configuration"
+      description: "Currency Converter API configuration"
+ 
+- filename: "StorefrontAdvancedSearchByPartialNameTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPartialNameTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPartialNameTest"
+      title: "Search product in advanced search by partial name"
+      description: "Search product in advanced search by partial name"
+ 
 - filename: "EndToEndB2CGuestUserTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/EndToEndB2CGuestUserTest.xml"
   module: "CatalogSearch"
   tests:
     - testname: "EndToEndB2CGuestUserTest"
+      title: ""
+      description: ""
+
+    - testname: "EndToEndB2CGuestUserMysqlTest"
       title: ""
       description: ""
  
@@ -939,6 +1103,70 @@
       title: "User should be able to use Quick Search to a configurable product's child products"
       description: "Use Quick Search to find a configurable product with enabled/disable children"
  
+- filename: "StorefrontAdvancedSearchByPartialShortDescriptionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPartialShortDescriptionTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPartialShortDescriptionTest"
+      title: "Search product in advanced search by partial short description"
+      description: "Search product in advanced search by partial short description"
+ 
+- filename: "StorefrontAdvancedSearchByShortDescriptionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByShortDescriptionTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByShortDescriptionTest"
+      title: "Search product in advanced search by short description"
+      description: "Search product in advanced search by short description"
+ 
+- filename: "StorefrontAdvancedSearchByPartialSkuAndDescriptionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPartialSkuAndDescriptionTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPartialSkuAndDescriptionTest"
+      title: "Search product in advanced search by partial sku and description"
+      description: "Search product in advanced search by partial sku and description"
+ 
+- filename: "StorefrontAdvancedSearchByAllParametersTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByAllParametersTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByAllParametersTest"
+      title: "Search product in advanced search by name, sku, description, short description, price from and price to"
+      description: "Search product in advanced search by name, sku, description, short description, price from and price to"
+ 
+- filename: "StorefrontAdvancedSearchByPartialSkuTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPartialSkuTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPartialSkuTest"
+      title: "Search product in advanced search by partial sku"
+      description: "Search product in advanced search by partial sku"
+ 
+- filename: "StorefrontAdvancedSearchWithoutEnteringDataTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchWithoutEnteringDataTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchWithoutEnteringDataTest"
+      title: "Do Advanced Search without entering data"
+      description: "'Enter a search term and try again.' error message is missed in Advanced Search"
+ 
+- filename: "StorefrontAdvancedSearchByDescriptionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByDescriptionTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByDescriptionTest"
+      title: "Search product in advanced search by description"
+      description: "Search product in advanced search by description"
+ 
+- filename: "StorefrontAdvancedSearchByNameSkuDescriptionPriceTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByNameSkuDescriptionPriceTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByNameSkuDescriptionPriceTest"
+      title: "Search product in advanced search by name, sku, description, short description, price from 49 and price to 50"
+      description: "Search product in advanced search by name, sku, description, short description, price from 49 and price to 50"
+ 
 - filename: "AdminDeleteSearchTermTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/AdminDeleteSearchTermTest.xml"
   module: "CatalogSearch"
@@ -954,6 +1182,22 @@
     - testname: "StorefrontUpdateSearchTermEntityTest"
       title: "Update Storefront Search Results"
       description: "You should see the updated Search Term on the Storefront via the Admin."
+ 
+- filename: "StorefrontAdvancedSearchByPriceFromAndPriceToTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPriceFromAndPriceToTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPriceFromAndPriceToTest"
+      title: "Search product in advanced search by price from and price to"
+      description: "Search product in advanced search by price from and price to"
+ 
+- filename: "StorefrontAdvancedSearchByNameTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByNameTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByNameTest"
+      title: "Search product in advanced search by name"
+      description: "Search product in advanced search by name"
  
 - filename: "AdvanceCatalogSearchSimpleProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/AdvanceCatalogSearchSimpleProductTest.xml"
@@ -1011,6 +1255,38 @@
       title: "Admin reports search terms navigate menu test"
       description: "Admin should be able to navigate to Reports &gt; Search Terms"
  
+- filename: "StorefrontAdvancedSearchNegativeProductSearchTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchNegativeProductSearchTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchNegativeProductSearchTest"
+      title: "Negative product search"
+      description: "Negative product search"
+ 
+- filename: "LayerNavigationOfCatalogSearchTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/LayerNavigationOfCatalogSearchTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "LayerNavigationOfCatalogSearchTest"
+      title: "Layer Navigation of Catalog Search Should Equalize Price Range As Default Configuration"
+      description: "Make sure filter of custom attribute with type of price displays on storefront Catalog page and price range should respect the configuration in Admin site"
+ 
+- filename: "StorefrontAdvancedSearchByPriceToTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchByPriceToTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchByPriceToTest"
+      title: "Search product in advanced search by price to"
+      description: "Search product in advanced search by price to"
+ 
+- filename: "StorefrontAdvancedSearchBySkuTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchBySkuTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchBySkuTest"
+      title: "Search product in advanced search by sku"
+      description: "Search product in advanced search by sku"
+ 
 - filename: "EndToEndB2CLoggedInUserTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/EndToEndB2CLoggedInUserTest.xml"
   module: "CatalogSearch"
@@ -1018,6 +1294,30 @@
     - testname: "EndToEndB2CLoggedInUserTest"
       title: ""
       description: ""
+ 
+- filename: "StorefrontAdvancedSearchEntitySimpleProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogSearch/Test/Mftf/Test/StorefrontAdvancedSearchEntitySimpleProductTest.xml"
+  module: "CatalogSearch"
+  tests:
+    - testname: "StorefrontAdvancedSearchEntitySimpleProductTest"
+      title: "Use Advanced Search to Find the Product"
+      description: "Use Advanced Search to Find the Product"
+ 
+- filename: "AdminProductGridFilteringByCustomAttributeTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminProductGridFilteringByCustomAttributeTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminProductGridFilteringByCustomAttributeTest"
+      title: "Sorting the product grid by custom product attribute"
+      description: "Sorting the product grid by custom product attribute should sort Alphabetically instead of value id"
+ 
+- filename: "StorefrontAdvanceCatalogSearchSimpleProductBySkuWithHyphenTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontAdvanceCatalogSearchSimpleProductBySkuWithHyphenTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontAdvanceCatalogSearchSimpleProductBySkuWithHyphenTest"
+      title: "Guest customer should be able to advance search simple product with product sku that contains hyphen"
+      description: "Guest customer should be able to advance search simple product with product sku that contains hyphen"
  
 - filename: "StorefrontPurchaseProductWithCustomOptionsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontPurchaseProductWithCustomOptionsTest.xml"
@@ -1091,6 +1391,14 @@
       title: "Delete Virtual Product"
       description: "Admin should be able to delete a virtual product"
  
+- filename: "AdminDeleteProductsImageInCaseOfMultipleStoresTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminDeleteProductsImageInCaseOfMultipleStoresTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminDeleteProductsImageInCaseOfMultipleStoresTest"
+      title: "Delete products image in case of multiple stores"
+      description: "Delete products image in case of multiple stores"
+ 
 - filename: "AdminUnassignProductAttributeFromAttributeSetTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminUnassignProductAttributeFromAttributeSetTest.xml"
   module: "Catalog"
@@ -1106,6 +1414,18 @@
     - testname: "AdminCreateInactiveInMenuFlatCategoryTest"
       title: "Flat Catalog - Exclude Category from Navigation Menu"
       description: "Login as admin and create inactive Include In Menu flat category and verify category is not displayed in Navigation Menu"
+ 
+- filename: "AdminProductTypeSwitchingOnEditingTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminProductTypeSwitchingOnEditingTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminVirtualProductTypeSwitchingToDownloadableProductTest"
+      title: "Virtual product type switching on editing to Downloadable product"
+      description: "Virtual product type switching on editing to Downloadable product"
+
+    - testname: "AdminDownloadableProductTypeSwitchingToSimpleProductTest"
+      title: "Downloadable product type switching on editing to Simple product"
+      description: "Downloadable product type switching on editing to Simple product"
  
 - filename: "AdminUpdateSimpleProductWithRegularPriceInStockUnassignFromCategoryTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateSimpleProductWithRegularPriceInStockUnassignFromCategoryTest.xml"
@@ -1139,6 +1459,14 @@
       title: "Tiered pricing and quantity increments work with decimal inventory"
       description: "Tiered pricing and quantity increments work with decimal inventory"
  
+- filename: "StorefrontAdvanceCatalogSearchVirtualProductBySkuWithHyphenTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontAdvanceCatalogSearchVirtualProductBySkuWithHyphenTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontAdvanceCatalogSearchVirtualProductBySkuWithHyphenTest"
+      title: "Guest customer should be able to advance search virtual product with product sku that contains hyphen"
+      description: "Guest customer should be able to advance search virtual product with product sku that contains hyphen"
+ 
 - filename: "AdminRemoveDefaultVideoVirtualProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminRemoveDefaultVideoVirtualProductTest.xml"
   module: "Catalog"
@@ -1146,6 +1474,14 @@
     - testname: "AdminRemoveDefaultVideoVirtualProductTest"
       title: "Admin should be able to remove default product video from a Virtual Product"
       description: "Admin should be able to remove default product video from a Virtual Product"
+ 
+- filename: "StorefrontEnsureThatAccordionAnchorIsVisibleOnViewportOnceClickedTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontEnsureThatAccordionAnchorIsVisibleOnViewportOnceClickedTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontEnsureThatAccordionAnchorIsVisibleOnViewportOnceClickedTest"
+      title: "Ensure that accordion anchor is visible on viewport once clicked"
+      description: "Ensure that accordion anchor is visible on viewport once clicked"
  
 - filename: "StorefrontProductWithEmptyAttributeTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontProductWithEmptyAttributeTest.xml"
@@ -1187,6 +1523,14 @@
       title: "Product grid filtering by store view level attribute"
       description: "Verify that products grid can be filtered on all store view level by attribute"
  
+- filename: "StorefrontCheckDefaultNumberProductsToDisplayTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontCheckDefaultNumberProductsToDisplayTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontCheckDefaultNumbersProductsToDisplayTest"
+      title: "Check default numbers: products to display"
+      description: "Check default numbers: products to display"
+ 
 - filename: "EndToEndB2CGuestUserTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/EndToEndB2CGuestUserTest.xml"
   module: "Catalog"
@@ -1194,6 +1538,18 @@
     - testname: "EndToEndB2CGuestUserTest"
       title: "You should be able to pass End to End B2C Guest User scenario"
       description: "User browses catalog, searches for product, adds product to cart, adds product to wishlist, compares products, uses coupon code and checks out."
+
+    - testname: "EndToEndB2CGuestUserMysqlTest"
+      title: "You should be able to pass End to End B2C Guest User scenario using the Mysql search engine"
+      description: "User browses catalog, searches for product, adds product to cart, adds product to wishlist, compares products, uses coupon code and checks out using the Mysql search engine."
+ 
+- filename: "DisplayRefreshCacheAfterChangingCategoryPageLayoutTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/DisplayRefreshCacheAfterChangingCategoryPageLayoutTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "DisplayRefreshCacheAfterChangingCategoryPageLayoutTest"
+      title: "'Refresh cache' admin notification is displayed when changing category page layout"
+      description: "'Refresh cache' message is not displayed when changing category page layout"
  
 - filename: "VerifyChildCategoriesShouldNotIncludeInMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/VerifyChildCategoriesShouldNotIncludeInMenuTest.xml"
@@ -1230,6 +1586,14 @@
     - testname: "AdminCreateSimpleProductNegativePriceTest"
       title: "Admin should not be able to create a product with a negative price"
       description: "Admin should not be able to create a product with a negative price"
+ 
+- filename: "AdminCreateNewAttributeFromProductPageTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateNewAttributeFromProductPageTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminCreateNewAttributeFromProductPageTest"
+      title: "We should validate the form when the user click Save in New Attribute Set"
+      description: "Admin should be able to create product attribute and validate the form when the user click Save in New Attribute Set"
  
 - filename: "AdminUpdateCategoryAndCheckDefaultUrlKeyOnStoreViewTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateCategoryAndCheckDefaultUrlKeyOnStoreViewTest.xml"
@@ -1294,6 +1658,14 @@
     - testname: "AdminDeleteConfigurableChildProductsTest"
       title: "Configurable Product should not be visible on storefront after child products are deleted"
       description: "Login as admin, delete configurable child product and verify product displays out of stock in store front"
+ 
+- filename: "AdminCreateAndEditVirtualProductSettingsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateAndEditVirtualProductSettingsTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminCreateAndEditVirtualProductSettingsTest"
+      title: "Admin should be able to set/edit other product information when creating/editing a virtual product"
+      description: "Admin should be able to set/edit other product information when creating/editing a virtual product"
  
 - filename: "AdminCreateProductAttributeRequiredTextFieldTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductAttributeRequiredTextFieldTest.xml"
@@ -1587,6 +1959,14 @@
       title: "Admin should be able to assign attributes to an attribute set"
       description: "Admin should be able to assign attributes to an attribute set"
  
+- filename: "StorefrontCategoryHighlightedAndProductDisplayedTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontCategoryHighlightedAndProductDisplayedTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontCategoryHighlightedAndProductDisplayedTest"
+      title: "Сheck that current category is highlighted and all products displayed for it"
+      description: "Сheck that current category is highlighted and all products displayed for it"
+ 
 - filename: "AdminCreateDropdownProductAttributeVisibleInStorefrontAdvancedSearchFormTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateDropdownProductAttributeVisibleInStorefrontAdvancedSearchFormTest.xml"
   module: "Catalog"
@@ -1642,14 +2022,6 @@
     - testname: "StorefrontPurchaseProductCustomOptionsDifferentStoreViewsTest"
       title: "Admin should be able to sell products with different variants of their own"
       description: "Admin should be able to sell products with different variants of their own"
- 
-- filename: "AdminAddBundleProductToCartFromWishListPageTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminAddBundleProductToCartFromWishListPageTest.xml"
-  module: "Catalog"
-  tests:
-    - testname: "AdminAddBundleProductToCartFromWishListPageTest"
-      title: "Add bundle product to Cart from Wish list page"
-      description: "Add bundle product to Cart from Wish list page"
  
 - filename: "AdminCreateCategoryWithAnchorFieldTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateCategoryWithAnchorFieldTest.xml"
@@ -1722,6 +2094,14 @@
     - testname: "AdminCreateSimpleProductWithUnicodeTest"
       title: "Admin should be able to create a unicode named simple product"
       description: "Admin should be able to create a unicode named simple product"
+ 
+- filename: "AdminDisableProductOnChangingAttributeSetTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminDisableProductOnChangingAttributeSetTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "AdminDisableProductOnChangingAttributeSetTest"
+      title: "Verify product status while changing attribute set"
+      description: "Value set for enabled product has to be shown when attribute set is changed"
  
 - filename: "AdminConfigureProductImagePlaceholderTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminConfigureProductImagePlaceholderTest.xml"
@@ -1855,6 +2235,14 @@
       title: "Update Simple Product Price to Verify Data Overriding on Store View Level"
       description: "Test log in to Update Simple Product and Update Simple Product Price to Verify Data Overriding on Store View Level"
  
+- filename: "StorefrontCatalogNavigationMenuUIDesktopTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/StorefrontCatalogNavigationMenuUIDesktopTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "StorefrontCatalogNavigationMenuUIDesktopTest"
+      title: "Storefront Catalog Navigation Menu UI, desktop"
+      description: "Verify UI of Navigation Menu functionality on Storefront"
+ 
 - filename: "AdminUpdateFlatCategoryNameAndDescriptionTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateFlatCategoryNameAndDescriptionTest.xml"
   module: "Catalog"
@@ -1934,6 +2322,10 @@
     - testname: "AdminMassUpdateProductAttributesStoreViewScopeTest"
       title: "Admin should be able to mass update product attributes in store view scope"
       description: "Admin should be able to mass update product attributes in store view scope"
+
+    - testname: "AdminMassUpdateProductAttributesStoreViewScopeMysqlTest"
+      title: "Admin should be able to mass update product attributes in store view scope using the Mysql search engine"
+      description: "Admin should be able to mass update product attributes in store view scope using the Mysql search engine"
  
 - filename: "AdminAddDefaultImageVirtualProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminAddDefaultImageVirtualProductTest.xml"
@@ -2070,6 +2462,14 @@
     - testname: "AdminCheckSubCategoryIsNotVisibleInNavigationMenuTest"
       title: "Active category is visible on navigation menu while subcategory is not visible on navigation menu, Include in Menu = Yes"
       description: "Login as admin and verify subcategory is not visible in navigation menu"
+ 
+- filename: "VerifyCategoryProductAndProductCategoryPartialReindexTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/VerifyCategoryProductAndProductCategoryPartialReindexTest.xml"
+  module: "Catalog"
+  tests:
+    - testname: "VerifyCategoryProductAndProductCategoryPartialReindexTest"
+      title: "Verify Category Product and Product Category partial reindex"
+      description: "Verify that Merchant Developer can use console commands to perform partial reindex for Category Products, Product Categories, and Catalog Search"
  
 - filename: "AdminCreateProductDuplicateUrlkeyTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminCreateProductDuplicateUrlkeyTest.xml"
@@ -2458,6 +2858,10 @@
     - testname: "AdminMassUpdateProductStatusStoreViewScopeTest"
       title: "Admin should be able to mass update product statuses in store view scope"
       description: "Admin should be able to mass update product statuses in store view scope"
+
+    - testname: "AdminMassUpdateProductStatusStoreViewScopeMysqlTest"
+      title: "Admin should be able to mass update product statuses in store view scope using the Mysql search engine"
+      description: "Admin should be able to mass update product statuses in store view scope using the Mysql search engine"
  
 - filename: "AdminUpdateVirtualProductWithRegularPriceOutOfStockVisibleInSearchOnlyTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Catalog/Test/Mftf/Test/AdminUpdateVirtualProductWithRegularPriceOutOfStockVisibleInSearchOnlyTest.xml"
@@ -2539,6 +2943,14 @@
       title: "Inactive Category and subcategory are not visible on navigation menu, Include in Menu = Yes"
       description: "Login as admin and verify inactive category and subcategory is not visible in navigation menu"
  
+- filename: "AdminCheckResultsOfColorAndOtherFiltersTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/LayeredNavigation/Test/Mftf/Test/AdminCheckResultsOfColorAndOtherFiltersTest.xml"
+  module: "LayeredNavigation"
+  tests:
+    - testname: "AdminCheckResultsOfColorAndOtherFiltersTest"
+      title: ""
+      description: ""
+ 
 - filename: "AdminSpecifyLayerNavigationConfigurationTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/LayeredNavigation/Test/Mftf/Test/AdminSpecifyLayerNavigationConfigurationTest.xml"
   module: "LayeredNavigation"
@@ -2554,6 +2966,14 @@
     - testname: "AdminMarketingSiteMapNavigateMenuTest"
       title: "Admin marketing site map navigate menu test"
       description: "Admin should be able to navigate to Marketing &gt; Site Map"
+ 
+- filename: "AdminMarketingSiteMapCreateNewTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Sitemap/Test/Mftf/Test/AdminMarketingSiteMapCreateNewTest.xml"
+  module: "Sitemap"
+  tests:
+    - testname: "AdminMarketingSiteMapCreateNewTest"
+      title: "Create New Site Map with valid data"
+      description: "Create New Site Map with valid data"
  
 - filename: "AdminCreateTaxRateWiderZipCodeRangeTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Tax/Test/Mftf/Test/AdminCreateTaxRateWiderZipCodeRangeTest.xml"
@@ -2843,6 +3263,22 @@
       title: "Admin stores tax rules navigate menu test"
       description: "Admin should be able to navigate to Stores &gt; Tax Rules"
  
+- filename: "StorefrontSortBundleProductsByPriceTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontSortBundleProductsByPriceTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "StorefrontSortBundleProductsByPriceTest"
+      title: "Customer should be able to sort bundle products by price when viewing products list"
+      description: "Customer should be able to sort bundle products by price when viewing products list"
+ 
+- filename: "StorefrontSpecialPriceBundleProductInCartTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontSpecialPriceBundleProductInCartTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "StorefrontSpecialPriceBundleProductInCartTest"
+      title: "Customer should not be able to add a Bundle Product to the cart when added a special price for associated products"
+      description: "Customer should not be able to add a Bundle Product to the cart when added a special price for associated products"
+ 
 - filename: "StorefrontBundleProductDetailsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontBundleProductDetailsTest.xml"
   module: "Bundle"
@@ -2859,6 +3295,18 @@
       title: "Admin should be able to remove default images from a Bundle Product"
       description: "Admin should be able to remove default images from a Bundle Product"
  
+- filename: "AdminCreateAndEditBundleProductSettingsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/AdminCreateAndEditBundleProductSettingsTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "AdminCreateAndEditBundleProductSettingsTest"
+      title: "Admin should be able to set/edit other product information when creating/editing a bundle product"
+      description: "Admin should be able to set/edit other product information when creating/editing a bundle product"
+
+    - testname: "AdminCreateAndEditBundleProductOptionsNegativeTest"
+      title: "Admin should be able to remove any bundle option a bundle product"
+      description: "Admin should be able to set/edit other product information when creating/editing a bundle product"
+ 
 - filename: "AdminEditRelatedBundleProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/AdminEditRelatedBundleProductTest.xml"
   module: "Bundle"
@@ -2866,6 +3314,14 @@
     - testname: "AdminEditRelatedBundleProductTest"
       title: "Admin should be able to set/edit Related Products information when editing a bundle product"
       description: "Admin should be able to set/edit Related Products information when editing a bundle product"
+ 
+- filename: "BundleProductWithTierPriceInCartTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/BundleProductWithTierPriceInCartTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "BundleProductWithTierPriceInCartTest"
+      title: "Customer should get the right subtotal in cart when the bundle product added to the cart twice"
+      description: "Customer should be able to add one more bundle product to the cart and get the right price"
  
 - filename: "StorefrontGoToDetailsPageWhenAddingToCartTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontGoToDetailsPageWhenAddingToCartTest.xml"
@@ -2891,6 +3347,14 @@
       title: "Admin should be able to select a “Bundle Product” product type when adding a new product"
       description: "Admin should be able to select a “Bundle Product” product type when adding a new product"
  
+- filename: "AdminAssociateBundleProductToWebsitesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/AdminAssociateBundleProductToWebsitesTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "AdminAssociateBundleProductToWebsitesTest"
+      title: "Admin should be able to associate bundle product to websites"
+      description: "Admin should be able to associate bundle product to websites"
+ 
 - filename: "AdminAddDefaultImageBundleProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/AdminAddDefaultImageBundleProductTest.xml"
   module: "Bundle"
@@ -2915,6 +3379,14 @@
       title: "Admin should be able to set/edit all the basic product attributes when creating/editing a bundle product"
       description: "Admin should be able to set/edit all the basic product attributes when creating/editing a bundle product"
  
+- filename: "StorefrontAdvanceCatalogSearchBundleBySkuWithHyphenTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontAdvanceCatalogSearchBundleBySkuWithHyphenTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "StorefrontAdvanceCatalogSearchBundleBySkuWithHyphenTest"
+      title: "Guest customer should be able to advance search Bundle product with product sku that contains hyphen"
+      description: "Guest customer should be able to advance search Bundle product with product sku that contains hyphen"
+ 
 - filename: "StorefrontVerifyDynamicBundleProductPricesForCombinationOfOptionsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/StorefrontVerifyDynamicBundleProductPricesForCombinationOfOptionsTest.xml"
   module: "Bundle"
@@ -2922,6 +3394,14 @@
     - testname: "StorefrontVerifyDynamicBundleProductPricesForCombinationOfOptionsTest"
       title: "Verify dynamic bundle product prices for combination of options"
       description: "Verify prices for various configurations of Dynamic Bundle product"
+ 
+- filename: "AdminAddBundleProductToCartFromWishListPageTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/AdminAddBundleProductToCartFromWishListPageTest.xml"
+  module: "Bundle"
+  tests:
+    - testname: "AdminAddBundleProductToCartFromWishListPageTest"
+      title: "Add bundle product to Cart from Wish list page"
+      description: "Add bundle product to Cart from Wish list page"
  
 - filename: "EndToEndB2CAdminTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/EndToEndB2CAdminTest.xml"
@@ -2967,6 +3447,10 @@
       title: "Guest customer should be able to advance search Bundle product with product name"
       description: "Guest customer should be able to advance search Bundle product with product name"
 
+    - testname: "AdvanceCatalogSearchBundleByNameMysqlTest"
+      title: "Guest customer should be able to advance search Bundle product with product name using the MySQL search engine"
+      description: "Guest customer should be able to advance search Bundle product with product name using the MySQL search engine"
+
     - testname: "AdvanceCatalogSearchBundleBySkuTest"
       title: "Guest customer should be able to advance search Bundle product with product sku"
       description: "Guest customer should be able to advance search Bundle product with product sku"
@@ -2975,13 +3459,25 @@
       title: "Guest customer should be able to advance search Bundle product with product description"
       description: "Guest customer should be able to advance search Bundle product with product description"
 
+    - testname: "AdvanceCatalogSearchBundleByDescriptionMysqlTest"
+      title: "Guest customer should be able to advance search Bundle product with product description using the MySQL search engine"
+      description: "Guest customer should be able to advance search Bundle product with product description using the MySQL search engine"
+
     - testname: "AdvanceCatalogSearchBundleByShortDescriptionTest"
       title: "Guest customer should be able to advance search Bundle product with product short description"
       description: "Guest customer should be able to advance search Bundle product with product short description"
 
+    - testname: "AdvanceCatalogSearchBundleByShortDescriptionMysqlTest"
+      title: "Guest customer should be able to advance search Bundle product with product short description using the MySQL search engine"
+      description: "Guest customer should be able to advance search Bundle product with product short description using the MySQL search engine"
+
     - testname: "AdvanceCatalogSearchBundleByPriceTest"
       title: "Guest customer should be able to advance search Bundle product with product price"
       description: "Guest customer should be able to advance search Bundle product with product price"
+
+    - testname: "AdvanceCatalogSearchBundleByPriceMysqlTest"
+      title: "Guest customer should be able to advance search Bundle product with product price using the MySQL search engine"
+      description: "Guest customer should be able to advance search Bundle product with product price the MySQL search engine"
  
 - filename: "EnableDisableBundleProductStatusTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Bundle/Test/Mftf/Test/EnableDisableBundleProductStatusTest.xml"
@@ -3119,6 +3615,14 @@
       title: "Admin user should not be able to trigger the password reset procedure twice"
       description: "Admin user should not be able to trigger the password reset procedure twice"
  
+- filename: "AdminUpdateUserTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Test/Mftf/Test/AdminUpdateUserTest.xml"
+  module: "User"
+  tests:
+    - testname: "AdminUpdateUserTest"
+      title: "Update admin user entity by changing user role"
+      description: "Change full access role for admin user to custom one with restricted permission (Sales)"
+ 
 - filename: "AdminSystemUserRolesNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Test/Mftf/Test/AdminSystemUserRolesNavigateMenuTest.xml"
   module: "User"
@@ -3143,6 +3647,22 @@
       title: "Admin system locked users navigate menu test"
       description: "Admin should be able to navigate to System &gt; Locked Users"
  
+- filename: "AdminBulkOperationsLogIsNotAccessibleForAdminUserWithLimitedAccessTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Test/Mftf/Test/AdminBulkOperationsLogIsNotAccessibleForAdminUserWithLimitedAccessTest.xml"
+  module: "User"
+  tests:
+    - testname: "AdminBulkOperationsLogIsNotAccessibleForAdminUserWithLimitedAccessTest"
+      title: "'Your Bulk Operations Log' isn't accessible if admin user doesn't have privileges for it"
+      description: "An admin user can view his own bulk operations only in a separate grid if his role has Bulk Operations resource."
+ 
+- filename: "AdminLockAdminUserEntityTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Test/Mftf/Test/AdminLockAdminUserEntityTest.xml"
+  module: "User"
+  tests:
+    - testname: "AdminLockAdminUserEntityTest"
+      title: "Lock admin  user after entering incorrect password specified number of times"
+      description: "Lock admin  user after entering incorrect password specified number of times"
+ 
 - filename: "AdminSystemManageEncryptionKeyNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/User/Test/Mftf/Test/AdminSystemManageEncryptionKeyNavigateMenuTest.xml"
   module: "User"
@@ -3150,6 +3670,14 @@
     - testname: "AdminSystemManageEncryptionKeyNavigateMenuTest"
       title: "Admin system manage encryption key navigate menu test"
       description: "Admin should be able to navigate to System &gt; Manage Encryption Key"
+ 
+- filename: "AdminExpireCustomerSessionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminExpireCustomerSessionTest.xml"
+  module: "Backend"
+  tests:
+    - testname: "AdminExpireCustomerSessionTest"
+      title: "Customer Session Expireon"
+      description: "Customer Session Expire"
  
 - filename: "AdminAttributeTextSwatchesCanBeFiledTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminAttributeTextSwatchesCanBeFiledTest.xml"
@@ -3166,6 +3694,14 @@
     - testname: "AdminUserLoginWithStoreCodeInUrlTest"
       title: "Admin panel should be accessible with Add Store Code to URL setting enabled"
       description: "Admin panel should be accessible with Add Store Code to URL setting enabled"
+ 
+- filename: "AdminExpireAdminSessionTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminExpireAdminSessionTest.xml"
+  module: "Backend"
+  tests:
+    - testname: "AdminExpireAdminSessionTest"
+      title: "Admin Session Expire"
+      description: "Admin Session Expire"
  
 - filename: "AdminPrivacyPolicyTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminPrivacyPolicyTest.xml"
@@ -3231,6 +3767,22 @@
       title: "Admin should be able to navigate between menu options with secret url keys enabled"
       description: "Admin should be able to navigate between menu options with secret url keys enabled"
  
+- filename: "AdminCheckLocaleAndDeveloperConfigInDeveloperModeTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminCheckLocaleAndDeveloperConfigInDeveloperModeTest.xml"
+  module: "Backend"
+  tests:
+    - testname: "AdminCheckLocaleAndDeveloperConfigInDeveloperModeTest"
+      title: "Check locale dropdown and developer configuration page are available in developer mode"
+      description: "Check locale dropdown and developer configuration page are available in developer mode"
+ 
+- filename: "AdminCheckLocaleAndDeveloperConfigInProductionModeTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminCheckLocaleAndDeveloperConfigInProductionModeTest.xml"
+  module: "Backend"
+  tests:
+    - testname: "AdminCheckLocaleAndDeveloperConfigInProductionModeTest"
+      title: "Check locale dropdown and developer configuration page are not available in production mode"
+      description: "Check locale dropdown and developer configuration page are not available in production mode"
+ 
 - filename: "AdminStoresConfigurationNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Backend/Test/Mftf/Test/AdminStoresConfigurationNavigateMenuTest.xml"
   module: "Backend"
@@ -3247,6 +3799,14 @@
       title: "Admin dashboard navigate menu test"
       description: "Admin should be able to navigate to Dashboard"
  
+- filename: "AdminProductImportCSVFileCorrectDifferentFilesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminProductImportCSVFileCorrectDifferentFilesTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminProductImportCSVFileCorrectDifferentFilesTest"
+      title: "Product import from CSV file correct from different files."
+      description: "Product import from CSV file correct from different files."
+ 
 - filename: "AdminCheckDoubleImportOfProductsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminCheckDoubleImportOfProductsTest.xml"
   module: "ImportExport"
@@ -3254,6 +3814,14 @@
     - testname: "AdminCheckDoubleImportOfProductsTest"
       title: "Admin check double import of products test"
       description: "Checking double Import of products CSV file"
+ 
+- filename: "AdminImportProductsWithErrorEntriesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminImportProductsWithErrorEntriesTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminImportProductsWithErrorEntriesTest"
+      title: "Import products with error entries"
+      description: "Verify import status during import products with error entries"
  
 - filename: "AdminImportProductsWithAddUpdateBehaviorTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminImportProductsWithAddUpdateBehaviorTest.xml"
@@ -3263,6 +3831,14 @@
       title: "Verify Magento native import products with add/update behavior."
       description: "Verify Magento native import products with add/update behavior."
  
+- filename: "AdminExportPagerGridTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminExportPagerGridTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminExportPagerGridTest"
+      title: "Testing if the grid is present on export page"
+      description: "Admin should be able to see the grid onn export page"
+ 
 - filename: "AdminImportProductsWithDeleteBehaviorTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminImportProductsWithDeleteBehaviorTest.xml"
   module: "ImportExport"
@@ -3271,6 +3847,30 @@
       title: "Verify Magento native import products with delete behavior."
       description: "Verify Magento native import products with delete behavior."
  
+- filename: "AdminImportCSVWithSpecialCharactersTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminImportCSVWithSpecialCharactersTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminImportCSVWithSpecialCharactersTest"
+      title: "Import CSV with special characters"
+      description: "Import CSV with special characters"
+ 
+- filename: "AdminURLKeyWorksWhenUpdatingProductThroughImportingCSVTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminURLKeyWorksWhenUpdatingProductThroughImportingCSVTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminURLKeyWorksWhenUpdatingProductThroughImportingCSVTest"
+      title: "Check that new URL Key works after updating a product through importing CSV file"
+      description: "Check that new URL Key works after updating a product through importing CSV file"
+ 
+- filename: "AdminCheckThatSomeAttributesChangedValueToEmptyAfterImportTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminCheckThatSomeAttributesChangedValueToEmptyAfterImportTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminCheckThatSomeAttributesChangedValueToEmptyAfterImportTest"
+      title: "Check that some attributes changed the value to an empty after import CSV"
+      description: "Check that some attributes changed the value to an empty after import CSV"
+ 
 - filename: "AdminExportPageNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminExportPageNavigateMenuTest.xml"
   module: "ImportExport"
@@ -3278,6 +3878,14 @@
     - testname: "AdminExportPageNavigateMenuTest"
       title: "Admin export page navigate menu test"
       description: "Admin should be able to navigate to System &gt; Export"
+ 
+- filename: "AdminProductVisibilityDifferentStoreViewsAfterImportTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminProductVisibilityDifferentStoreViewsAfterImportTest.xml"
+  module: "ImportExport"
+  tests:
+    - testname: "AdminProductVisibilityDifferentStoreViewsAfterImportTest"
+      title: "Checking product visibility in different store views after product importing"
+      description: "Checking product visibility in different store views after product importing"
  
 - filename: "AdminSystemImportNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ImportExport/Test/Mftf/Test/AdminSystemImportNavigateMenuTest.xml"
@@ -3295,6 +3903,30 @@
       title: "Verify Magento native import products with replace behavior."
       description: "Verify Magento native import products with replace behavior."
  
+- filename: "AdminCreateOrderCustomStoreShippingMethodTableRatesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateOrderCustomStoreShippingMethodTableRatesTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminCreateOrderCustomStoreShippingMethodTableRatesTest"
+      title: "Create order on second store with shipping method Table Rates"
+      description: "Create order on second store with shipping method Table Rates"
+ 
+- filename: "AdminCreateShipmentEntityTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminCreateShipmentEntityTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminCreateShipmentEntityWithTrackingNumberTest"
+      title: "Create Shipment for Offline Payment Methods"
+      description: "Admin Should be Able to Create Shipments"
+ 
+- filename: "AdminValidateShippingTrackingNumberTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminValidateShippingTrackingNumberTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminValidateShippingTrackingNumberTest"
+      title: "Admin validate the shipping tracking number for an order"
+      description: "Testing for a required tracking number when adding new shipping information"
+ 
 - filename: "TableRatesShippingMethodForDifferentStatesTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/TableRatesShippingMethodForDifferentStatesTest.xml"
   module: "Shipping"
@@ -3310,6 +3942,38 @@
     - testname: "EndToEndB2CAdminTest"
       title: ""
       description: ""
+ 
+- filename: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest"
+      title: "Check that all input fields disabled after executing CLI app:config:dump"
+      description: "Check that all input fields disabled after executing CLI app:config:dump"
+ 
+- filename: "AdminCreatePartialShipmentEntityTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminCreatePartialShipmentEntityTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminCreatePartialShipmentEntityTest"
+      title: "Create Partial Shipment for Offline Payment Methods"
+      description: "Admin Should be Able to Create Partial Shipments"
+ 
+- filename: "AdminCheckTheConfirmationPopupTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/AdminCheckTheConfirmationPopupTest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "AdminCheckTheConfirmationPopupTest"
+      title: "Admin confirmation modal should be in Magento style"
+      description: "Testing the confirmation modal for removing the tracking number"
+ 
+- filename: "StorefrontDisplayTableRatesShippingMethodForAETest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Shipping/Test/Mftf/Test/StorefrontDisplayTableRatesShippingMethodForAETest.xml"
+  module: "Shipping"
+  tests:
+    - testname: "StorefrontDisplayTableRatesShippingMethodForAETest"
+      title: "Displaying of Table Rates for Armed Forces Europe (AE)"
+      description: "Displaying of Table Rates for Armed Forces Europe (AE)"
  
 - filename: "AdvanceCatalogSearchDownloadableProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdvanceCatalogSearchDownloadableProductTest.xml"
@@ -3335,6 +3999,26 @@
       title: "Guest customer should be able to advance search Downloadable product with product price"
       description: "Guest customer should be able to advance search Downloadable product with product price"
  
+- filename: "StorefrontAdvanceCatalogSearchDownloadableBySkuWithHyphenTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/StorefrontAdvanceCatalogSearchDownloadableBySkuWithHyphenTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "StorefrontAdvanceCatalogSearchDownloadableBySkuWithHyphenTest"
+      title: "Guest customer should be able to advance search Downloadable product with product sku that contains hyphen"
+      description: "Guest customer should be able to advance search Downloadable product with product that contains hyphen"
+ 
+- filename: "AdminProductTypeSwitchingOnEditingTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminProductTypeSwitchingOnEditingTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "AdminDownloadableProductTypeSwitchingToConfigurableProductTest"
+      title: "Downloadable product type switching on editing to configurable product"
+      description: "Downloadable product type switching on editing to configurable product"
+
+    - testname: "AdminSimpleProductTypeSwitchingToDownloadableProductTest"
+      title: "Simple product type switching on editing to downloadable product"
+      description: "Simple product type switching on editing to downloadable product"
+ 
 - filename: "StorefrontVerifySecureURLRedirectDownloadableTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/StorefrontVerifySecureURLRedirectDownloadableTest.xml"
   module: "Downloadable"
@@ -3359,6 +4043,14 @@
       title: "Create downloadable product with out of stock status test"
       description: "Admin should be able to create downloadable product with out of stock status"
  
+- filename: "SelectAllDownloadableLinksDownloadableProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/SelectAllDownloadableLinksDownloadableProductTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "SelectAllDownloadableLinksDownloadableProductTest"
+      title: "Select all downloadable links downloadable product test"
+      description: "All the downloadable links must be selected or unselected when anyone click on select all or unselect all checkbox respectively."
+ 
 - filename: "AdminCreateDownloadableProductWithoutTaxClassIdTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminCreateDownloadableProductWithoutTaxClassIdTest.xml"
   module: "Downloadable"
@@ -3366,6 +4058,14 @@
     - testname: "AdminCreateDownloadableProductWithoutTaxClassIdTest"
       title: "Create downloadable product without tax class id test"
       description: "Admin should be able to create downloadable product without tax class id"
+ 
+- filename: "VerifyDisableDownloadableProductSamplesAreNotAccessibleTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/VerifyDisableDownloadableProductSamplesAreNotAccessibleTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "VerifyDisableDownloadableProductSamplesAreNotAccessibleTest"
+      title: "Samples of Downloadable Products are not accessible, if product is disabled"
+      description: "Samples of Downloadable Products are not accessible, if product is disabled"
  
 - filename: "AdminDeleteDownloadableProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminDeleteDownloadableProductTest.xml"
@@ -3431,6 +4131,14 @@
       title: "Admin should be able to remove default images from a Downloadable Product"
       description: "Admin should be able to remove default images from a Downloadable Product"
  
+- filename: "EditDownloadableProductWithSeparateLinksFromCartTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/EditDownloadableProductWithSeparateLinksFromCartTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "EditDownloadableProductWithSeparateLinksFromCartTest"
+      title: "Edit downloadable product with separate links from cart test"
+      description: "Product price should remain correct when editing downloadable product with separate links from cart."
+ 
 - filename: "AdminCreateDownloadableProductWithDefaultSetLinksTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminCreateDownloadableProductWithDefaultSetLinksTest.xml"
   module: "Downloadable"
@@ -3454,6 +4162,14 @@
     - testname: "AdminCreateDownloadableProductWithLinkTest"
       title: "Create Downloadable Product with link"
       description: "Admin should be able to create downloadable product with one simple link"
+ 
+- filename: "ManualSelectAllDownloadableLinksDownloadableProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/ManualSelectAllDownloadableLinksDownloadableProductTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "ManualSelectAllDownloadableLinksDownloadableProductTest"
+      title: "Manual select all downloadable links downloadable product test"
+      description: "Manually selecting all downloadable links must change 'Select/Unselect all' button label to 'Unselect all', and 'Select all' otherwise"
  
 - filename: "AdminCreateDownloadableProductAndAssignItToCustomStoreTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminCreateDownloadableProductAndAssignItToCustomStoreTest.xml"
@@ -3511,6 +4227,14 @@
       title: "Create downloadable product with special price test"
       description: "Admin should be able to create downloadable product with special price"
  
+- filename: "AdminCreateAndEditDownloadableProductSettingsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Downloadable/Test/Mftf/Test/AdminCreateAndEditDownloadableProductSettingsTest.xml"
+  module: "Downloadable"
+  tests:
+    - testname: "AdminCreateAndEditDownloadableProductSettingsTest"
+      title: "Admin should be able to set/edit other product information when creating/editing a downloadable product"
+      description: "Admin should be able to set/edit other product information when creating/editing a downloadable product"
+ 
 - filename: "AdminExportSimpleProductAssignedToMainWebsiteAndConfigurableProductAssignedToCustomWebsiteTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogImportExport/Test/Mftf/Test/AdminExportSimpleProductAssignedToMainWebsiteAndConfigurableProductAssignedToCustomWebsiteTest.xml"
   module: "CatalogImportExport"
@@ -3542,6 +4266,14 @@
     - testname: "AdminExportBundleProductTest"
       title: "Export Bundle Product"
       description: "Admin should be able to export Bundle Product"
+ 
+- filename: "AdminExportImportConfigurableProductWithImagesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogImportExport/Test/Mftf/Test/AdminExportImportConfigurableProductWithImagesTest.xml"
+  module: "CatalogImportExport"
+  tests:
+    - testname: "AdminExportImportConfigurableProductWithImagesTest"
+      title: "Check importing of configurable products with images present in filesystem"
+      description: "Check importing of configurable products with images present in filesystem"
  
 - filename: "AdminExportSimpleAndConfigurableProductsWithCustomOptionsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogImportExport/Test/Mftf/Test/AdminExportSimpleAndConfigurableProductsWithCustomOptionsTest.xml"
@@ -3718,6 +4450,10 @@
     - testname: "EndToEndB2CGuestUserTest"
       title: ""
       description: ""
+
+    - testname: "EndToEndB2CGuestUserMysqlTest"
+      title: ""
+      description: ""
  
 - filename: "StoreFrontFreeShippingRecalculationAfterCouponCodeAddedTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StoreFrontFreeShippingRecalculationAfterCouponCodeAddedTest.xml"
@@ -3750,6 +4486,14 @@
     - testname: "StorefrontAddOneBundleMultiSelectOptionToTheShoppingCartTest"
       title: "Select one multi select option of a bundle product and add to the shopping cart"
       description: "Select one multi select option of a bundle product and add to the shopping cart "
+ 
+- filename: "StorefrontCheckPagerShoppingCartWithMoreThan20ProductsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckPagerShoppingCartWithMoreThan20ProductsTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontCheckPagerShoppingCartWithMoreThan20ProductsTest"
+      title: "Test if the cart pager is visible with more than 20 cart items and the pager disappears if an item is removed from cart."
+      description: "Test if the cart pager is visible with more than 20 cart items and the pager disappears if an item is removed from cart."
  
 - filename: "StorefrontProductNameMinicartOnCheckoutPageDifferentStoreViewsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontProductNameMinicartOnCheckoutPageDifferentStoreViewsTest.xml"
@@ -3823,6 +4567,14 @@
       title: "Storefront guest checkout for specific countries test"
       description: "Checkout flow if shipping rates are not available"
  
+- filename: "StorefrontMissingPagerShoppingCartWith20ProductsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontMissingPagerShoppingCartWith20ProductsTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontMissingPagerShoppingCartWith20ProductsTest"
+      title: "Test if the cart pager is missing with 20 cart items."
+      description: "Test if the cart pager is missing with 20 cart items."
+ 
 - filename: "StorefrontAddTwoBundleMultiSelectOptionsToTheShoppingCartTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontAddTwoBundleMultiSelectOptionsToTheShoppingCartTest.xml"
   module: "Checkout"
@@ -3862,6 +4614,14 @@
     - testname: "DeleteConfigurableProductFromShoppingCartTest"
       title: "Delete configurable product from shopping cart test"
       description: "Delete configurable product from shopping cart"
+ 
+- filename: "StorefrontCustomerCheckoutDisabledProductAndCouponTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCustomerCheckoutDisabledProductAndCouponTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontCustomerCheckoutDisabledProductAndCouponTest"
+      title: "Customer can login if product in his cart was disabled"
+      description: "Customer can login with disabled product in the cart and a coupon applied"
  
 - filename: "StorefrontUKCustomerCheckoutWithCouponTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontUKCustomerCheckoutWithCouponTest.xml"
@@ -4035,6 +4795,14 @@
       title: "Guest Checkout - address State field should not allow just integer values"
       description: "Address State field should not allow just integer values"
  
+- filename: "StorefrontNotApplicableShippingMethodInReviewAndPaymentStepTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontNotApplicableShippingMethodInReviewAndPaymentStepTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontNotApplicableShippingMethodInReviewAndPaymentStepTest"
+      title: "Not applicable Shipping Method In Review and Payment Step"
+      description: "User should not be able to place order when free shipping declined after applying coupon code"
+ 
 - filename: "CheckNotVisibleProductInMinicartTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/CheckNotVisibleProductInMinicartTest.xml"
   module: "Checkout"
@@ -4090,6 +4858,14 @@
     - testname: "StorefrontGuestCheckoutWithCouponAndZeroSubtotalTest"
       title: "Verify guest checkout with virtual product using coupon for not logged in customers with Zero Subtotal"
       description: "Checkout with virtual product using coupon for not logged in customers with Zero Subtotal"
+ 
+- filename: "StorefrontShoppingCartPagerForOneItemPerPageAnd2ProductsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontShoppingCartPagerForOneItemPerPageAnd2ProductsTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontShoppingCartPagerForOneItemPerPageAnd2ProductsTest"
+      title: "Test if the cart pager is visible with 2 cart items and one item per page."
+      description: "Test if the cart pager is visible with 2 cart items and one item per page."
  
 - filename: "StorefrontCheckoutWithSpecialPriceProductsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontCheckoutWithSpecialPriceProductsTest.xml"
@@ -4158,6 +4934,14 @@
     - testname: "OnePageCheckoutWithAllProductTypesTest"
       title: "OnePageCheckout with all product types test"
       description: "Checkout with all product types"
+ 
+- filename: "StorefrontRegionUpdatesAfterChangingCountryAndLeavingRegionSelectUnselectedTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontRegionUpdatesAfterChangingCountryAndLeavingRegionSelectUnselectedTest.xml"
+  module: "Checkout"
+  tests:
+    - testname: "StorefrontRegionUpdatesAfterChangingCountryAndLeavingRegionSelectUnselectedTest"
+      title: "Region updates after changing country "
+      description: "Region dupdates after changing country and leaving region select unselected"
  
 - filename: "StorefrontGuestCheckoutTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Checkout/Test/Mftf/Test/StorefrontGuestCheckoutTest.xml"
@@ -4363,6 +5147,14 @@
       title: "Delete Grouped Product"
       description: "Admin should be able to delete a grouped product"
  
+- filename: "AdminAssociateGroupedProductToWebsitesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdminAssociateGroupedProductToWebsitesTest.xml"
+  module: "GroupedProduct"
+  tests:
+    - testname: "AdminAssociateGroupedProductToWebsitesTest"
+      title: "Admin should be able to associate grouped product to websites"
+      description: "Admin should be able to associate grouped product to websites"
+ 
 - filename: "AdminGroupedSetEditRelatedProductsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdminGroupedSetEditRelatedProductsTest.xml"
   module: "GroupedProduct"
@@ -4387,6 +5179,14 @@
       title: "Grouped Products: Sorting Associated Products Between Pages"
       description: "Make sure that products in grid were recalculated when sorting associated products between pages"
  
+- filename: "AdminCreateAndEditGroupedProductSettingsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdminCreateAndEditGroupedProductSettingsTest.xml"
+  module: "GroupedProduct"
+  tests:
+    - testname: "AdminCreateAndEditGroupedProductSettingsTest"
+      title: "Admin should be able to set/edit other product information when creating/editing a grouped product"
+      description: "Admin should be able to set/edit other product information when creating/editing a grouped product"
+ 
 - filename: "AdvanceCatalogSearchGroupedProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdvanceCatalogSearchGroupedProductTest.xml"
   module: "GroupedProduct"
@@ -4394,6 +5194,10 @@
     - testname: "AdvanceCatalogSearchGroupedProductByNameTest"
       title: "Guest customer should be able to advance search Grouped product with product name"
       description: "Guest customer should be able to advance search Grouped product with product name"
+
+    - testname: "AdvanceCatalogSearchGroupedProductByNameMysqlTest"
+      title: "Guest customer should be able to advance search Grouped product with product name using the MySQL search engine"
+      description: "Guest customer should be able to advance search Grouped product with product name using the MySQL search engine"
 
     - testname: "AdvanceCatalogSearchGroupedProductBySkuTest"
       title: "Guest customer should be able to advance search Grouped product with product sku"
@@ -4403,13 +5207,25 @@
       title: "Guest customer should be able to advance search Grouped product with product description"
       description: "Guest customer should be able to advance search Grouped product with product description"
 
+    - testname: "AdvanceCatalogSearchGroupedProductByDescriptionMysqlTest"
+      title: "Guest customer should be able to advance search Grouped product with product description using the MySQL search engine"
+      description: "Guest customer should be able to advance search Grouped product with product description using the MYSQL search engine"
+
     - testname: "AdvanceCatalogSearchGroupedProductByShortDescriptionTest"
       title: "Guest customer should be able to advance search Grouped product with product short description"
       description: "Guest customer should be able to advance search Grouped product with product short description"
 
+    - testname: "AdvanceCatalogSearchGroupedProductByShortDescriptionMysqlTest"
+      title: "Guest customer should be able to advance search Grouped product with product short description using the MySQL search engine"
+      description: "Guest customer should be able to advance search Grouped product with product short description using the MySQL search engine"
+
     - testname: "AdvanceCatalogSearchGroupedProductByPriceTest"
       title: "Guest customer should be able to advance search Grouped product with product price"
       description: "Guest customer should be able to advance search Grouped product with product price"
+
+    - testname: "AdvanceCatalogSearchGroupedProductByPriceMysqlTest"
+      title: "Guest customer should be able to advance search Grouped product with product price using the MySQL search engine"
+      description: "Guest customer should be able to advance search Grouped product with product price using the MySQL search engine"
  
 - filename: "AdminGroupedProductSetEditContentTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/GroupedProduct/Test/Mftf/Test/AdminGroupedProductSetEditContentTest.xml"
@@ -4459,6 +5275,14 @@
       title: "Admin should be able to add default video for a Grouped Product"
       description: "Admin should be able to add default video for a Grouped Product"
  
+- filename: "StoreFrontCheckingWithSingleShipmentTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontCheckingWithSingleShipmentTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StoreFrontCheckingWithSingleShipmentTest"
+      title: "Checking multi shipment with single shipment adresses on front end order page"
+      description: "Shipping price shows 0 when you return from multiple checkout to cart"
+ 
 - filename: "StorefrontVerifySecureURLRedirectMultishippingTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontVerifySecureURLRedirectMultishippingTest.xml"
   module: "Multishipping"
@@ -4466,6 +5290,54 @@
     - testname: "StorefrontVerifySecureURLRedirectMultishipping"
       title: "Verify Secure URLs For Storefront Multishipping Pages"
       description: "Verify that the Secure URL configuration applies to the Multishipping pages on the Storefront"
+ 
+- filename: "StoreFrontCheckingWithMultishipmentTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontCheckingWithMultishipmentTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StoreFrontCheckingWithMultishipmentTest"
+      title: "Checking multi shipment with multiple shipment adresses on front end order page"
+      description: "Shipping price shows 0 when you return from multiple checkout to cart"
+ 
+- filename: "StoreFrontMyAccountWithMultishipmentTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontMyAccountWithMultishipmentTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StorefrontMyAccountWithMultishipmentTest"
+      title: "Verify Shipping price for Storefront after multiple address checkout"
+      description: "Verify that shipping price on My account matches with shipping method prices after multiple addresses checkout (Order view page)"
+ 
+- filename: "StorefrontCheckingWithCartPriceRuleMatchingSubtotalForMultiShipmentTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckingWithCartPriceRuleMatchingSubtotalForMultiShipmentTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StorefrontCheckingWithCartPriceRuleMatchingSubtotalForMultiShipmentTest"
+      title: "Checking sub total amount and free shipping is applied with multiple shipment addresses on front end order page"
+      description: "Cart Price Rules not working and free shipping not applied for Multi shipping "
+ 
+- filename: "StorefrontProcessMultishippingCheckoutWhenCartPageIsOpenedInAnotherTabTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontProcessMultishippingCheckoutWhenCartPageIsOpenedInAnotherTabTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StorefrontProcessMultishippingCheckoutWhenCartPageIsOpenedInAnotherTabTest"
+      title: "Process multishipping checkout when Cart page is opened in another tab"
+      description: "Process multishipping checkout when Cart page is opened in another tab"
+ 
+- filename: "StoreFrontMinicartWithMultishipmentTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StoreFrontMinicartWithMultishipmentTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StoreFrontMinicartWithMultishipmentTest"
+      title: "Checking multi shipment with multiple shipment at minicart from checkout"
+      description: "Shipping price shows 0 when you return from multiple checkout to cart"
+ 
+- filename: "StorefrontCheckoutWithMultipleAddressesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Multishipping/Test/Mftf/Test/StorefrontCheckoutWithMultipleAddressesTest.xml"
+  module: "Multishipping"
+  tests:
+    - testname: "StorefrontCheckoutWithMultipleAddressesTest"
+      title: "Place an order with three different addresses"
+      description: "Place an order with three different addresses"
  
 - filename: "StoreViewLanguageCorrectSwitchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Test/Mftf/Test/StoreViewLanguageCorrectSwitchTest.xml"
@@ -4514,6 +5386,14 @@
     - testname: "VerifyTinyMCEv4IsNativeWYSIWYGOnBlockTest"
       title: "Admin should see TinyMCEv4.6 is the native WYSIWYG on Block"
       description: "Admin should see TinyMCEv4.6 is the native WYSIWYG on Block"
+ 
+- filename: "AdminMediaGalleryPopupUploadImagesWithoutErrorTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Test/Mftf/Test/AdminMediaGalleryPopupUploadImagesWithoutErrorTest.xml"
+  module: "Cms"
+  tests:
+    - testname: "AdminMediaGalleryPopupUploadImagesWithoutErrorTest"
+      title: "Media Gallery popup upload images without error"
+      description: "Media Gallery popup upload images without error"
  
 - filename: "AdminCreateCmsBlockTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Test/Mftf/Test/AdminCreateCmsBlockTest.xml"
@@ -4650,6 +5530,14 @@
     - testname: "AdminAddWidgetToWYSIWYGWithCatalogProductListTypeTest"
       title: "Admin should be able to create a CMS page with widget type: Catalog product list"
       description: "Admin should be able to create a CMS page with widget type: Catalog product list"
+ 
+- filename: "CheckOrderOfProdsInWidgetOnCMSPageTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Test/Mftf/Test/CheckOrderOfProdsInWidgetOnCMSPageTest.xml"
+  module: "Cms"
+  tests:
+    - testname: "CheckOrderOfProdsInWidgetOnCMSPageTest"
+      title: "Checking order of products in a widget on a CMS page - SKU condition"
+      description: "Checking order of products in a widget on a CMS page - SKU condition"
  
 - filename: "AdminDesignConfigMediaGalleryImageUploadTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Theme/Test/Mftf/Test/AdminDesignConfigMediaGalleryImageUploadTest.xml"
@@ -4879,6 +5767,14 @@
       title: "Create product URL rewrite, with temporary redirect"
       description: "Login as admin, create product UrlRewrite and add Temporary redirect"
  
+- filename: "AdminUrlRewritesForProductAfterImportTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminUrlRewritesForProductAfterImportTest.xml"
+  module: "UrlRewrite"
+  tests:
+    - testname: "AdminUrlRewritesForProductAfterImportTest"
+      title: "Verify the number of URL rewrites when edit or import product"
+      description: "After importing products to admin verify the number of URL including categories matches"
+ 
 - filename: "AdminCreateCategoryUrlRewriteAndAddPermanentRedirectTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminCreateCategoryUrlRewriteAndAddPermanentRedirectTest.xml"
   module: "UrlRewrite"
@@ -4903,6 +5799,14 @@
       title: "Create custom URL rewrite, temporary"
       description: "Login as Admin and create custom product UrlRewrite and add Temporary redirect type "
  
+- filename: "AdminProductCreateUrlRewriteForCustomStoreViewTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminProductCreateUrlRewriteForCustomStoreViewTest.xml"
+  module: "UrlRewrite"
+  tests:
+    - testname: "AdminProductCreateUrlRewriteForCustomStoreViewTest"
+      title: "Product custom URL Key is preserved when assigned to a Category"
+      description: "Verify Product custom URL Key (for custom Store View) is preserved when assigned to a Category (with custom URL Key) alongside with another Product without custom URL Key"
+ 
 - filename: "AdminCheckUrlRewritesInCatalogCategoriesAfterChangingUrlKeyForStoreViewAndMovingCategoryTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/UrlRewrite/Test/Mftf/Test/AdminCheckUrlRewritesInCatalogCategoriesAfterChangingUrlKeyForStoreViewAndMovingCategoryTest.xml"
   module: "UrlRewrite"
@@ -4910,6 +5814,14 @@
     - testname: "AdminCheckUrlRewritesInCatalogCategoriesAfterChangingUrlKeyForStoreViewAndMovingCategoryTest"
       title: "Check url rewrites in catalog categories after changing url key"
       description: "Check url rewrites in catalog categories after changing url key for store view and moving category"
+ 
+- filename: "StorefrontCheckCreditButtonConfigurationTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/StorefrontCheckCreditButtonConfigurationTest.xml"
+  module: "Paypal"
+  tests:
+    - testname: "StorefrontCheckCreditButtonConfigurationTest"
+      title: "Check Credit Button Configuration"
+      description: "Admin is able to customize Credit button"
  
 - filename: "AdminSalesBillingAgreementsNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/AdminSalesBillingAgreementsNavigateMenuTest.xml"
@@ -4927,6 +5839,30 @@
       title: "Verify Secure URLs For Storefront Paypal Pages"
       description: "Verify that the Secure URL configuration applies to the Paypal pages on the Storefront"
  
+- filename: "AdminCheckDefaultValueOfPayPalCustomizeButtonTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/AdminCheckDefaultValueOfPayPalCustomizeButtonTest.xml"
+  module: "Paypal"
+  tests:
+    - testname: "AdminCheckDefaultValueOfPayPalCustomizeButtonTest"
+      title: "Check Default Value Of Paypal Customize Button"
+      description: "Default value of Paypal Customize Button should be NO"
+ 
+- filename: "StorefrontPaypalSmartButtonInCheckoutPageTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/StorefrontPaypalSmartButtonInCheckoutPageTest.xml"
+  module: "Paypal"
+  tests:
+    - testname: "StorefrontPaypalSmartButtonInCheckoutPageTest"
+      title: "Mainflow of Paypal Smart Button"
+      description: "Users are able to place order using Paypal Smart Button"
+ 
+- filename: "AdminOnePayPalSolutionsEnabledAtTheSameTimeTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/AdminOnePayPalSolutionsEnabledAtTheSameTimeTest.xml"
+  module: "Paypal"
+  tests:
+    - testname: "AdminOnePayPalSolutionsEnabledAtTheSameTimeTest"
+      title: "Only one PayPal solution enabled at the same time"
+      description: "Verify that only one PayPal solution can be enabled"
+ 
 - filename: "AdminReportsPayPalSettlementNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Paypal/Test/Mftf/Test/AdminReportsPayPalSettlementNavigateMenuTest.xml"
   module: "Paypal"
@@ -4934,6 +5870,22 @@
     - testname: "AdminReportsPayPalSettlementNavigateMenuTest"
       title: "Admin reports paypal settlement navigate menu test"
       description: "Admin should be able to navigate to Reports &gt; PayPal Settlement"
+ 
+- filename: "AdminVerifyNewRatingFormSingleStoreModeYesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Review/Test/Mftf/Test/AdminVerifyNewRatingFormSingleStoreModeYesTest.xml"
+  module: "Review"
+  tests:
+    - testname: "AdminVerifyNewRatingFormSingleStoreModeYesTest"
+      title: "Verify New Rating Form if single store mode is Yes"
+      description: "New Rating Form should not have Default store view field if single store mode is Yes"
+ 
+- filename: "AdminVerifyNewRatingFormSingleStoreModeNoTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Review/Test/Mftf/Test/AdminVerifyNewRatingFormSingleStoreModeNoTest.xml"
+  module: "Review"
+  tests:
+    - testname: "AdminVerifyNewRatingFormSingleStoreModeNoTest"
+      title: "Verify New Rating Form if single store mode is No"
+      description: "New Rating Form should have Default store view field if single store mode is No"
  
 - filename: "AdminMarketingReviewsNavigateMenuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Review/Test/Mftf/Test/AdminMarketingReviewsNavigateMenuTest.xml"
@@ -5015,6 +5967,18 @@
       title: "Customers can filter products using image swatches"
       description: "Customers can filter products using image swatches"
  
+- filename: "StorefrontConfigurableProductSwatchMinimumPriceTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/StorefrontConfigurableProductSwatchMinimumPriceTest.xml"
+  module: "Swatches"
+  tests:
+    - testname: "StorefrontConfigurableProductSwatchMinimumPriceProductPageTest"
+      title: "Swatch option should show the lowest price possible on product page"
+      description: "Swatch option should show the lowest price possible on product page"
+
+    - testname: "StorefrontConfigurableProductSwatchMinimumPriceCategoryPageTest"
+      title: "Swatch option should show the lowest price possible on category page"
+      description: "Swatch option should show the lowest price possible on category page"
+ 
 - filename: "AdminCreateVisualSwatchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminCreateVisualSwatchTest.xml"
   module: "Swatches"
@@ -5039,13 +6003,21 @@
       title: "Admin can create product attribute with image swatch"
       description: "Admin can create product attribute with image swatch"
  
-- filename: "AdminWatermarkUploadTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminWatermarkUploadTest.xml"
+- filename: "AdminSaveConfigurableProductWithAttributesImagesAndSwatchesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminSaveConfigurableProductWithAttributesImagesAndSwatchesTest.xml"
   module: "Swatches"
   tests:
-    - testname: "AdminWatermarkUploadTest"
-      title: ""
-      description: ""
+    - testname: "AdminSaveConfigurableProductWithAttributesImagesAndSwatchesTest"
+      title: "Saving configurable product with custom product attribute (images as swatches)"
+      description: "Saving configurable product with custom product attribute (images as swatches)"
+ 
+- filename: "AdminSetUpWatermarkForSwatchImageTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminSetUpWatermarkForSwatchImageTest.xml"
+  module: "Swatches"
+  tests:
+    - testname: "AdminSetUpWatermarkForSwatchImageTest"
+      title: "Possibility to set up watermark for a swatch image type"
+      description: "Possibility to set up watermark for a swatch image type"
  
 - filename: "AdminCreateTextSwatchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminCreateTextSwatchTest.xml"
@@ -5054,6 +6026,14 @@
     - testname: "AdminCreateTextSwatchTest"
       title: "Admin can create product attribute with text swatch"
       description: "Admin can create product attribute with text swatch"
+ 
+- filename: "StorefrontImageColorWhenFilterByColorFilterTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/StorefrontImageColorWhenFilterByColorFilterTest.xml"
+  module: "Swatches"
+  tests:
+    - testname: "StorefrontImageColorWhenFilterByColorFilterTest"
+      title: "Image color when filtering by color filter on the Storefront"
+      description: "Image color when filtering by color filter on the Storefront"
  
 - filename: "StorefrontDisplayAllCharactersOnTextSwatchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/StorefrontDisplayAllCharactersOnTextSwatchTest.xml"
@@ -5071,6 +6051,14 @@
       title: "Customer can change product options using swatches"
       description: "Customer can change product options using swatches"
  
+- filename: "AdminDisablingSwatchTooltipsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/AdminDisablingSwatchTooltipsTest.xml"
+  module: "Swatches"
+  tests:
+    - testname: "AdminDisablingSwatchTooltipsTest"
+      title: "Admin disabling swatch tooltips test."
+      description: "Verify possibility to disable/enable swatch tooltips."
+ 
 - filename: "StorefrontFilterByVisualSwatchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Swatches/Test/Mftf/Test/StorefrontFilterByVisualSwatchTest.xml"
   module: "Swatches"
@@ -5087,29 +6075,13 @@
       title: "Out of stock associated products to configurable are not full page cache cleaned "
       description: "After last configurable product was ordered it becomes out of stock"
  
-- filename: "ConfigureAuthorizenetAcceptjsWithoutRequiredOptionsTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/Test/ConfigureAuthorizenetAcceptjsWithoutRequiredOptionsTest.xml"
-  module: "AuthorizenetAcceptjs"
+- filename: "AdminCreateProductWithZeroMaximumQtyAllowedInShoppingCartTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogInventory/Test/Mftf/Test/AdminCreateProductWithZeroMaximumQtyAllowedInShoppingCartTest.xml"
+  module: "CatalogInventory"
   tests:
-    - testname: "ConfigureAuthorizenetAcceptjsWithoutRequiredOptionsTest"
-      title: "Unable to configure Authorize.net Accept.js without required options"
-      description: "Unable to configure Authorize.net Accept.js without required options"
- 
-- filename: "GuestCheckoutVirtualProductAuthorizenetAcceptjsTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/Test/GuestCheckoutVirtualProductAuthorizenetAcceptjsTest.xml"
-  module: "AuthorizenetAcceptjs"
-  tests:
-    - testname: "GuestCheckoutVirtualProductAuthorizenetAcceptjsTest"
-      title: "Guest Checkout of Virtual Product using Authorize.net Accept.js"
-      description: "Checkout a virtual product with a guest using Authorize.net Accept.js"
- 
-- filename: "FullCaptureAuthorizenetAcceptjsTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/Test/FullCaptureAuthorizenetAcceptjsTest.xml"
-  module: "AuthorizenetAcceptjs"
-  tests:
-    - testname: "FullCaptureAuthorizenetAcceptjsTest"
-      title: "Full Capture using Authorize.net Accept.js"
-      description: "Capture an order placed using Authorize.net Accept.js"
+    - testname: "AdminCreateProductWithZeroMaximumQtyAllowedInShoppingCartTest"
+      title: "Verify that product maximum qty allowed in shopping cart can't be set to zero or less"
+      description: "Verify that product maximum qty allowed in shopping cart can't be set to zero or less"
  
 - filename: "ApplyCatalogRuleForSimpleAndConfigurableProductTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Test/Mftf/Test/ApplyCatalogRuleForSimpleAndConfigurableProductTest.xml"
@@ -5195,6 +6167,22 @@
       title: "Verify that Catalog Price Rule and Customer Group Membership are persisted under long-term cookie"
       description: "Verify that Catalog Price Rule and Customer Group Membership are persisted under long-term cookie"
  
+- filename: "ApplyCatalogPriceRuleByProductAttributeTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Test/Mftf/Test/ApplyCatalogPriceRuleByProductAttributeTest.xml"
+  module: "CatalogRule"
+  tests:
+    - testname: "ApplyCatalogPriceRuleByProductAttributeTest"
+      title: "Admin should be able to apply the catalog price rule by product attribute"
+      description: "Admin should be able to apply the catalog price rule by product attribute"
+ 
+- filename: "AdminApplyCatalogRuleForConfigurableProductWithSpecialPricesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Test/Mftf/Test/AdminApplyCatalogRuleForConfigurableProductWithSpecialPricesTest.xml"
+  module: "CatalogRule"
+  tests:
+    - testname: "AdminApplyCatalogRuleForConfigurableProductWithSpecialPricesTest"
+      title: "Admin should be able to apply the catalog price rule for configurable product with special prices"
+      description: "Admin should be able to apply the catalog price rule for configurable product with special prices"
+ 
 - filename: "AdminCreateCatalogPriceRuleTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRule/Test/Mftf/Test/AdminCreateCatalogPriceRuleTest.xml"
   module: "CatalogRule"
@@ -5242,6 +6230,14 @@
     - testname: "ApplyCatalogRuleForSimpleProductWithCustomOptionsTest"
       title: "Admin should be able to apply the catalog price rule for simple product with custom options"
       description: "Admin should be able to apply the catalog price rule for simple product with custom options"
+ 
+- filename: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Dhl/Test/Mftf/Test/AdminCheckInputFieldsDisabledAfterAppConfigDumpTest.xml"
+  module: "Dhl"
+  tests:
+    - testname: "AdminCheckInputFieldsDisabledAfterAppConfigDumpTest"
+      title: ""
+      description: ""
  
 - filename: "AdminAddVariableToWYSIWYGNewsletterTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Newsletter/Test/Mftf/Test/AdminAddVariableToWYSIWYGNewsletterTest.xml"
@@ -5347,6 +6343,14 @@
       title: "Create configurable product with tier price for one item"
       description: "Admin should be able to create configurable product with tier price for one item"
  
+- filename: "AdminCreateAndEditConfigurableProductSettingsTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminCreateAndEditConfigurableProductSettingsTest.xml"
+  module: "ConfigurableProduct"
+  tests:
+    - testname: "AdminCreateAndEditConfigurableProductSettingsTest"
+      title: "Admin should be able to set/edit other product information when creating/editing a configurable product"
+      description: "Admin should be able to set/edit other product information when creating/editing a configurable product"
+ 
 - filename: "AdminConfigurableProductCreateTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminConfigurableProductCreateTest.xml"
   module: "ConfigurableProduct"
@@ -5366,6 +6370,30 @@
     - testname: "ConfigurableProductAttributeNameDesignTest"
       title: "Generation of configurable products with an attribute named 'design'"
       description: "Generation of configurable products with an attribute named 'design'"
+ 
+- filename: "AdminProductTypeSwitchingOnEditingTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminProductTypeSwitchingOnEditingTest.xml"
+  module: "ConfigurableProduct"
+  tests:
+    - testname: "AdminSimpleProductTypeSwitchingToConfigurableProductTest"
+      title: "Simple product type switching on editing to configurable product"
+      description: "Simple product type switching on editing to configurable product"
+
+    - testname: "AdminConfigurableProductTypeSwitchingToVirtualProductTest"
+      title: "Configurable product type switching on editing to virtual product"
+      description: "Configurable product type switching on editing to virtual product"
+
+    - testname: "AdminVirtualProductTypeSwitchingToConfigurableProductTest"
+      title: "Virtual product type switching on editing to configurable product"
+      description: "Virtual product type switching on editing to configurable product"
+ 
+- filename: "AdminCheckResultsOfColorAndOtherFiltersTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminCheckResultsOfColorAndOtherFiltersTest.xml"
+  module: "ConfigurableProduct"
+  tests:
+    - testname: "AdminCheckResultsOfColorAndOtherFiltersTest"
+      title: "Checking results of color and other filters"
+      description: "Checking results of filters: color and other filters"
  
 - filename: "AdminConfigurableProductOutOfStockTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminConfigurableProductOutOfStockTest.xml"
@@ -5412,6 +6440,10 @@
   module: "ConfigurableProduct"
   tests:
     - testname: "EndToEndB2CGuestUserTest"
+      title: ""
+      description: ""
+
+    - testname: "EndToEndB2CGuestUserMysqlTest"
       title: ""
       description: ""
  
@@ -5558,6 +6590,14 @@
     - testname: "AdminConfigurableProductBulkDeleteTest"
       title: "admin should be able to mass delete configurable products"
       description: "admin should be able to mass delete configurable products"
+ 
+- filename: "NoOptionAvailableToConfigureDisabledProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/NoOptionAvailableToConfigureDisabledProductTest.xml"
+  module: "ConfigurableProduct"
+  tests:
+    - testname: "NoOptionAvailableToConfigureDisabledProductTest"
+      title: "Disabled variation of configurable product can't be added to shopping cart via admin"
+      description: "Disabled variation of configurable product can't be added to shopping cart via admin"
  
 - filename: "StorefrontConfigurableProductDetailsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontConfigurableProductDetailsTest.xml"
@@ -5723,6 +6763,14 @@
       title: ""
       description: ""
  
+- filename: "StorefrontAdvanceCatalogSearchConfigurableBySkuWithHyphenTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/StorefrontAdvanceCatalogSearchConfigurableBySkuWithHyphenTest.xml"
+  module: "ConfigurableProduct"
+  tests:
+    - testname: "StorefrontAdvanceCatalogSearchConfigurableBySkuWithHyphenTest"
+      title: "Guest customer should be able to advance search configurable product with product sku that contains hyphen"
+      description: "Guest customer should be able to advance search configurable product with product sku that contains hyphen"
+ 
 - filename: "AdminAssertNoticeThatExistingSkuAutomaticallyChangedWhenSavingProductWithSameSkuTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/ConfigurableProduct/Test/Mftf/Test/AdminAssertNoticeThatExistingSkuAutomaticallyChangedWhenSavingProductWithSameSkuTest.xml"
   module: "ConfigurableProduct"
@@ -5763,6 +6811,18 @@
       title: "Admin system index management navigate menu test"
       description: "Admin should be able to navigate to System &gt; Index Management"
  
+- filename: "StorefrontProductQuickSearchUsingElasticSearch6Test.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Elasticsearch/Test/Mftf/Test/StorefrontProductQuickSearchUsingElasticSearch6Test.xml"
+  module: "Elasticsearch"
+  tests:
+    - testname: "StorefrontProductQuickSearchUsingElasticSearch6Test"
+      title: "Product quick search doesn't throw exception after ES is chosen as search engine with different amount per page"
+      description: "Verify no elastic search exception is thrown when searching for products, when displayed products per page are greater or equal the size of available products."
+
+    - testname: "StorefrontProductQuickSearchUsingElasticSearch6WithNotAvailablePageTest"
+      title: "Product quick search doesn't throw exception after ES is chosen as search engine with selected page out of range"
+      description: "Verify no elastic search exception is thrown when try to get page with selected page out of range."
+ 
 - filename: "ProductQuickSearchUsingElasticSearchTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Elasticsearch/Test/Mftf/Test/ProductQuickSearchUsingElasticSearchTest.xml"
   module: "Elasticsearch"
@@ -5794,6 +6854,14 @@
     - testname: "AdminEmailTemplatePreviewTest"
       title: "Check email template preview"
       description: "Check if email template preview works correctly"
+
+    - testname: "AdminEmailTemplatePreviewWithDirectivesTest"
+      title: "Check email template preview with directives"
+      description: "Check if email template preview works correctly with directives"
+
+    - testname: "AdminEmailTemplatePreviewAsDraftWithDirectivesTest"
+      title: "Check email template preview with directives and preview as draft"
+      description: "Check if email template preview works correctly with directives in draft mode"
  
 - filename: "TransactionalEmailsLogoUploadTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Email/Test/Mftf/Test/TransactionalEmailsLogoUploadTest.xml"
@@ -5926,6 +6994,14 @@
     - testname: "SearchByEmailInCustomerGridTest"
       title: "Admin customer grid email searching"
       description: "Admin customer grid searching by email in keyword"
+ 
+- filename: "StorefrontUpdateCustomerAddressChinaTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/StorefrontUpdateCustomerAddressChinaTest.xml"
+  module: "Customer"
+  tests:
+    - testname: "StorefrontUpdateCustomerAddressChinaTest"
+      title: "Update customer address on storefront with china address"
+      description: "Update customer address on storefront with china address and verify you can select a region"
  
 - filename: "StorefrontResetCustomerPasswordFailedTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/StorefrontResetCustomerPasswordFailedTest.xml"
@@ -6087,6 +7163,14 @@
       title: "Create tax class customer group"
       description: "Create tax class customer group"
  
+- filename: "AdminCheckDefaultValueDisableAutoGroupChangeIsYesTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/AdminCheckDefaultValueDisableAutoGroupChangeIsYesTest.xml"
+  module: "Customer"
+  tests:
+    - testname: "AdminCheckDefaultValueDisableAutoGroupChangeIsYesTest"
+      title: "Check settings Default Value for Disable Automatic Group Changes Based on VAT ID is Yes"
+      description: "Check settings Default Value for Disable Automatic Group Changes Based on VAT ID is Yes"
+ 
 - filename: "AdminUpdateCustomerTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/AdminUpdateCustomerTest.xml"
   module: "Customer"
@@ -6179,6 +7263,14 @@
       title: "Persisted customer should be able to login from storefront"
       description: "Persisted customer should be able to login from storefront"
  
+- filename: "AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest.xml"
+  module: "Customer"
+  tests:
+    - testname: "AdminPanelIsFrozenIfStorefrontIsOpenedViaCustomerViewTest"
+      title: "Place an order and click print"
+      description: "Admin panel is not frozen if Storefront is opened via Customer View"
+ 
 - filename: "AdminVerifyCreateCustomerRequiredFieldsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/AdminVerifyCreateCustomerRequiredFieldsTest.xml"
   module: "Customer"
@@ -6218,6 +7310,22 @@
     - testname: "AdminSetCustomerDefaultShippingAddressTest"
       title: "Admin should be able to set customer default shipping address"
       description: "Admin should be able to set customer default shipping address from customer addresses grid row actions"
+ 
+- filename: "AdminCheckDefaultValueDisableAutoGroupChangeIsNoTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/AdminCheckDefaultValueDisableAutoGroupChangeIsNoTest.xml"
+  module: "Customer"
+  tests:
+    - testname: "AdminCheckDefaultValueDisableAutoGroupChangeIsNoTest"
+      title: "Check settings Default Value for Disable Automatic Group Changes Based on VAT ID is No"
+      description: "Check settings Default Value for Disable Automatic Group Changes Based on VAT ID is No"
+ 
+- filename: "StorefrontUpdateCustomerAddressBelgiumTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/StorefrontUpdateCustomerAddressBelgiumTest.xml"
+  module: "Customer"
+  tests:
+    - testname: "StorefrontUpdateCustomerAddressBelgiumTest"
+      title: "Update customer address on storefront with Belgium address"
+      description: "Update customer address on storefront with Belgium address and verify you can select a region"
  
 - filename: "StorefrontVerifyNoXssInjectionOnUpdateCustomerInformationAddAddressTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Test/Mftf/Test/StorefrontVerifyNoXssInjectionOnUpdateCustomerInformationAddAddressTest.xml"
@@ -6323,6 +7431,22 @@
       title: "Verify Secure URLs For Storefront Wishlist Pages"
       description: "Verify that the Secure URL configuration applies to the Wishlist pages on the Storefront"
  
+- filename: "StorefrontDeleteBundleDynamicProductFromWishlistTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontDeleteBundleDynamicProductFromWishlistTest.xml"
+  module: "Wishlist"
+  tests:
+    - testname: "StorefrontDeleteBundleDynamicProductFromWishlistTest"
+      title: "Delete Dynamic Bundle Product from Wishlist on Frontend"
+      description: "Delete Dynamic Bundle Product from Wishlist on Frontend"
+ 
+- filename: "StorefrontDeleteBundleFixedProductFromWishlistTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontDeleteBundleFixedProductFromWishlistTest.xml"
+  module: "Wishlist"
+  tests:
+    - testname: "StorefrontDeleteBundleFixedProductFromWishlistTest"
+      title: "Delete Fixed Bundle Product from Wishlist on Frontend"
+      description: "Delete Fixed Bundle Product from Wishlist on Frontend"
+ 
 - filename: "StorefrontAddMultipleStoreProductsToWishlistTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontAddMultipleStoreProductsToWishlistTest.xml"
   module: "Wishlist"
@@ -6347,6 +7471,14 @@
       title: "Customer should be able to delete a persistent wishlist"
       description: "Customer should be able to delete a persistent wishlist"
  
+- filename: "StorefrontDeleteConfigurableProductFromWishlistTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontDeleteConfigurableProductFromWishlistTest.xml"
+  module: "Wishlist"
+  tests:
+    - testname: "StorefrontDeleteConfigurableProductFromWishlistTest"
+      title: "Delete Configurable Product from Wishlist on Frontend"
+      description: "Delete Configurable Product from Wishlist on Frontend"
+ 
 - filename: "ConfProdAddToCartWishListWithUnselectedAttrTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/ConfProdAddToCartWishListWithUnselectedAttrTest.xml"
   module: "Wishlist"
@@ -6362,6 +7494,14 @@
     - testname: "ConfigurableProductChildImageShouldBeShownOnWishListTest"
       title: "When user add Configurable child product to WIshlist then child product image should be shown in Wishlist"
       description: "When user add Configurable child product to WIshlist then child product image should be shown in Wishlist"
+ 
+- filename: "AdminCustomerWishListShareOptionsInputValidationTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/AdminCustomerWishListShareOptionsInputValidationTest.xml"
+  module: "Wishlist"
+  tests:
+    - testname: "AdminCustomerWishListShareOptionsInputValidationTest"
+      title: "When user tries to set the Email Text Length Limit higher then 10,000 then validation message occurs"
+      description: "When user tries to set the Email Text Length Limit higher then 10,000 then validation message occurs"
  
 - filename: "StorefrontShareWishlistEntityTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Wishlist/Test/Mftf/Test/StorefrontShareWishlistEntityTest.xml"
@@ -6667,6 +7807,14 @@
       title: "Create New Localized Store View Status Enabled and Verify Save Message"
       description: "Test log in to Stores and Create New Localized Store View Status Enabled Test"
  
+- filename: "AdminDeleteDefaultStoreViewTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Store/Test/Mftf/Test/AdminDeleteDefaultStoreViewTest.xml"
+  module: "Store"
+  tests:
+    - testname: "AdminDeleteDefaultStoreViewTest"
+      title: "Delete Default Store View"
+      description: "Test another store view should be set as default when default store view is deleted"
+ 
 - filename: "AdminMoveStoreToOtherGroupSameWebsiteTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Store/Test/Mftf/Test/AdminMoveStoreToOtherGroupSameWebsiteTest.xml"
   module: "Store"
@@ -6731,14 +7879,6 @@
       title: "Create Store Group with Custom Website and Root Category"
       description: "Test log in to Stores and Create Store Group with Custom Website and Root Category Test"
  
-- filename: "AdminCreateStoreGroupTest.xml"
-  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/Store/Test/Mftf/Test/AdminCreateStoreGroupTest.xml"
-  module: "Store"
-  tests:
-    - testname: "AdminCreateStoreGroupTest"
-      title: "Admin should be able to create a store group"
-      description: "Admin should be able to create a store group"
- 
 - filename: "StorefrontAutoGeneratedCouponCodeTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontAutoGeneratedCouponCodeTest.xml"
   module: "SalesRule"
@@ -6763,6 +7903,14 @@
       title: "Check that cart rules applied for product in cart"
       description: "Check that cart rules applied for product in cart"
  
+- filename: "StorefrontCartRuleCouponForFreeShippingTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCartRuleCouponForFreeShippingTest.xml"
+  module: "SalesRule"
+  tests:
+    - testname: "StorefrontCartRuleCouponForFreeShippingTest"
+      title: "Create Cart Price Rule for Free Shipping And Verify Coupon Code will shown in Order's totals"
+      description: "Test that Coupon Code of Cart Price Rule without discount for Product price but with Free shipping will shown in Order's totals"
+ 
 - filename: "AdminCreateFixedAmountWholeCartDiscountTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/AdminCreateFixedAmountWholeCartDiscountTest.xml"
   module: "SalesRule"
@@ -6776,6 +7924,10 @@
   module: "SalesRule"
   tests:
     - testname: "EndToEndB2CGuestUserTest"
+      title: ""
+      description: ""
+
+    - testname: "EndToEndB2CGuestUserMysqlTest"
       title: ""
       description: ""
  
@@ -6794,6 +7946,14 @@
     - testname: "CartPriceRuleForConfigurableProductTest"
       title: "Checking Cart Price Rule for configurable products"
       description: "Checking Cart Price Rule for configurable products"
+ 
+- filename: "StorefrontCartTotalValueWithFullDiscountUsingCartRuleTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCartTotalValueWithFullDiscountUsingCartRuleTest.xml"
+  module: "SalesRule"
+  tests:
+    - testname: "StorefrontCartTotalValueWithFullDiscountUsingCartRuleTest"
+      title: "Cart Total value when 100% discount applied through Cart Rule"
+      description: "Cart Total value when 100% discount applied through Cart Rule"
  
 - filename: "AdminCreateCartPriceRuleWithMatchingCategoryAndVerifyRuleConditionIsAppliedTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/AdminCreateCartPriceRuleWithMatchingCategoryAndVerifyRuleConditionIsAppliedTest.xml"
@@ -6930,6 +8090,14 @@
     - testname: "AdminDeleteActiveSalesRuleWithComplexConditionsAndVerifyDeleteMessageTest"
       title: "Delete Active Sales Rule With Complex Conditions And Verify Delete Message"
       description: "Test log in to Cart Price Rule and Delete Active Sales Rule With Complex Conditions Test"
+ 
+- filename: "StorefrontCategoryRulesShouldApplyToGroupedProductWithInvisibleIndividualProductTest.xml"
+  repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/SalesRule/Test/Mftf/Test/StorefrontCategoryRulesShouldApplyToGroupedProductWithInvisibleIndividualProductTest.xml"
+  module: "SalesRule"
+  tests:
+    - testname: "StorefrontCategoryRulesShouldApplyToGroupedProductWithInvisibleIndividualProductTest"
+      title: "Category rules should apply to grouped product with invisible individual products"
+      description: "Category rules should apply to grouped product with invisible individual products"
  
 - filename: "AdminApplyCatalogRuleForConfigurableProductWithOptionsTest.xml"
   repo: "https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogRuleConfigurable/Test/Mftf/Test/AdminApplyCatalogRuleForConfigurableProductWithOptionsTest.xml"

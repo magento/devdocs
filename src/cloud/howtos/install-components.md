@@ -52,38 +52,38 @@ To update `composer.json`:
 1. If you haven't done so already, change to your environment root directory.
 1. Enter the following commands to update it:
 
-    ```bash
-    composer require <component-name>:<version> --no-update
-    ```
+   ```bash
+   composer require <component-name>:<version> --no-update
+   ```
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
-    For example:
+   For example:
 
-    ```bash
-    composer require pixlee/magento2:1.0.1 --no-update
-    ```
+   ```bash
+   composer require pixlee/magento2:1.0.1 --no-update
+   ```
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
 1. Wait for project dependencies to update.
 1. Enter the following commands in the order shown to commit your changes, including `composer.lock`:
 
-    ```bash
-    git add -A
-    ```
+   ```bash
+   git add -A
+   ```
 
-    ```bash
-    git commit -m "<message>"
-    ```
+   ```bash
+   git commit -m "<message>"
+   ```
 
-    ```bash
-    git push magento <environment ID>
-    ```
+   ```bash
+   git push magento <environment ID>
+   ```
 
 If there are errors, see [extension deployment failure]({{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
@@ -98,9 +98,9 @@ To verify the extension installed properly, you can check its functionality in t
 1. [Checkout the branch]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
 1. List all enabled modules:
 
-    ```bash
-    php bin/magento module:status
-    ```
+   ```bash
+   php bin/magento module:status
+   ```
 
 1. Verify the extension is listed.
 
@@ -120,27 +120,27 @@ Trying to enable and disable extensions not following this method can lead to pe
 1. In a terminal, access your local development environment.
 1. List all module.
 
-    ```bash
-    php bin/magento module:status
-    ```
+   ```bash
+   php bin/magento module:status
+   ```
 
 1. Enable a module.This command updates the `config.php` file with the enabled status of the module.
 
-    ```bash
-    php bin/magento module:enable <module name>
-    ```
+   ```bash
+   php bin/magento module:enable <module name>
+   ```
 
 1. Disable a module. This command updates the `config.php` file with the disable status of the module.
 
-    ```bash
-    php bin/magento module:disable <module name>
-    ```
+   ```bash
+   php bin/magento module:disable <module name>
+   ```
 
 1. Verify the status of a module:
 
-    ```bash
-    php bin/magento module:status
-    ```
+   ```bash
+   php bin/magento module:status
+   ```
 
 1. Push your updates to the Git branch.
 1. [Complete deployment]({{ site.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
@@ -164,17 +164,17 @@ To update an extension:
 1. Save your changes to `composer.json` and exit the text editor.
 1. Update project dependencies:
 
-    ```bash
-    composer update
-    ```
+   ```bash
+   composer update
+   ```
 
 1. Enter the following commands in the order to commit the changes and deploy the project, including `composer.lock`:
 
-    ```bash
-    git add -A
-    git commit -m "<message>"
-    git push origin <environment ID>
-    ```
+   ```bash
+   git add -A
+   git commit -m "<message>"
+   git push origin <environment ID>
+   ```
 
 1. Wait for the project to deploy and verify in your environment.
 
