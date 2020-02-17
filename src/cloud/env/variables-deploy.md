@@ -133,7 +133,7 @@ stage:
 {:.bs-callout-warning}
 You must set the `CRYPT_KEY` value through the Project Web UI instead of the `.magento.env.yaml` file to avoid exposing the key in the source code repository for your environment. See [Set environment and project variables]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
-When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
+When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file.
 
 ### `DATABASE_CONFIGURATION`
 
@@ -240,7 +240,7 @@ stage:
 -  Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
 
 {:.bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
+For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
 
 ### `ENABLE_GOOGLE_ANALYTICS`
 
@@ -361,7 +361,7 @@ stage:
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
 
-[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
+[ece-tools version 2002.0.18]({{ site.baseurl }}/cloud/release-notes/cloud-release-archive.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
@@ -411,28 +411,12 @@ stage:
     SCD_COMPRESSION_TIMEOUT: 800
 ```
 
-### `SCD_EXCLUDE_THEMES`
-
-{:.bs-callout-warning}
-The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
-
--  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
-
-Themes can include numerous files. Set this variable to `true` if you want to skip copying over theme files during deployment. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `magento/luma` theme:
-
-```yaml
-stage:
-  deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
-```
-
 ### `SCD_MATRIX`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure multiple locales per theme as long as the theme is not excluded using the [`SCD_EXCLUDE_THEMES` variable](#scd_exclude_themes) during deployment. This configuration is ideal to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure multiple locales per theme. This customization speeds up the deployment process by reducing the number of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example deploys the `Magento/backend` theme with three locales:
 
@@ -476,7 +460,7 @@ stage:
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Allows you to customize the [deployment strategy]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 
@@ -587,26 +571,6 @@ stage:
   deploy:
     SKIP_SCD: true
 ```
-
-### `STATIC_CONTENT_SYMLINK`
-
--  **Default**—`true`
--  **Version**—Magento 2.1.4 and later
-
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting the [`SCD_ON_DEMAND` variable]({{ site.baseurl }}/cloud/env/variables-global.html#scd_on_demand) to `true` disables this variable.
-
-If you generate static content during the build phase, it creates a symlink to the content folder.
-If you generate static content during the deploy phase, it writes directly to the content folder.
-Generating static content on demand disables this variable.
-
-```yaml
-stage:
-  deploy:
-    STATIC_CONTENT_SYMLINK: false
-```
-
-{:.bs-callout-warning}
-The `STATIC_CONTENT_SYMLINK` environment variable is marked as deprecated and will be removed in future releases. It's not recommended to use it in your deployment configuration. Ece-tools will always generate symlinks for static content.
 
 ### `UPDATE_URLS`
 

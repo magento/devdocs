@@ -1,14 +1,15 @@
+{% assign packages = site.data.composer_lock.packages %}
 {% assign versionsNumber = include.data.versions.size %}
-{% assign extensions = include.data.extension %}
-{% if include.extension %}
-{% assign extensions = include.data.extension | where: "name", include.extension %}
+{% assign extensions = include.data.extensions %}
+{% if include.extensions %}
+{% assign extensions = include.data.extensions | where: "name", include.extensions %}
 {% endif %}
 
-**General&nbsp;availability**{: .status-light.general-availability } – version that has been thoroughly tested by Magento and is fully supported.
+**Supported**{: .status-light.supported } – version that has been fully tested by Magento and is supported.
 
-**Open&nbsp;beta**{: .status-light.open-beta } – pre-release version that has been thoroughly tested by Magento, but is not yet included under Magento Support.
+<!-- **Compatible**{: .status-light.compatible } – independent release version that has not been fully tested by Magento, but is confirmed to be compatible. -->
 
-**Not&nbsp;supported**{: .status-light.not-supported } - version that is not compatible with a Commerce release.
+**Not supported**{: .status-light.not-supported } - version that is not compatible with a Magento release.
 
 <table class="compatibility-table">
   <thead>
@@ -19,16 +20,16 @@
     {% endfor %}
     </tr>
   </thead>
-  {% for extension in extensions %}
+  {% for extensions in extensions %}
   <tbody>
     <tr class="extension-name">
-      <th colspan="{{ versionsNumber | plus: 1 }}">{{ extension.name }}</th>
+      <th colspan="{{ versionsNumber | plus: 1 }}">{{ extensions.name }}</th>
     </tr>
-    {% for extensionVersion in extension.versions %}
+    {% for extensionsVersion in extensions.versions %}
     <tr class="extension-version">
-      <td>{{ extension.name }} {{ extensionVersion.name }}</td>
+      <td>{{ extensions.name }} {{ extensionsVersion.name }}</td>
       {% for version in include.data.versions %}
-      <td><span class="status-light {{ extensionVersion.support[version] | replace: ' ', '-' }}">{{ extensionVersion.support[version] | capitalize }}</span></td>
+      <td><span class="status-light {{ extensionsVersion.support[version] | replace: ' ', '-' }}">{{ extensionsVersion.support[version] | capitalize }}</span></td>
       {% endfor %}
     </tr>
     {% endfor %}
@@ -41,7 +42,7 @@
   table-layout: auto;
 }
 
-.compatibility-table .magento-version th { 
+.compatibility-table .magento-version th {
   padding: 5px 15px;
   background: none;
 }
@@ -52,7 +53,7 @@
   background: rgba(20,115,230,10%);
 }
 
-.compatibility-table .extension-name th { 
+.compatibility-table .extension-name th {
   padding: 5px 15px;
 }
 
@@ -71,11 +72,11 @@
   margin: 0 12px;
 }
 
-.status-light.general-availability::before {
+.status-light.supported::before {
   background: rgb(45, 157, 120);
 }
 
-.status-light.open-beta::before {
+.status-light.compatible::before {
   background: rgb(230, 134, 25);
 }
 

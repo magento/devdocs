@@ -34,6 +34,8 @@ The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.
 
 You can test the optimal configuration for the state of your project by running the [Smart wizards]({{ site.baseurl }}/cloud/deploy/smart-wizards.html).
 
+{% include cloud/note-ece-tools-custom-deployment.md %}
+
 [Build phase]: {{site.baseurl}}/common/images/cloud/status-build.png
 {:width="80px"}
 [Deploy phase]: {{site.baseurl}}/common/images/cloud/status-deploy.png
@@ -42,3 +44,5 @@ You can test the optimal configuration for the state of your project by running 
 {:width="80px"}
 [Verify state]: {{site.baseurl}}/common/images/cloud/status-verify.png
 {:width="80px"}
+
+[Scenario-based deployment]: {{site.baseurl}}/cloud/deploy/scenario-based-deployment.html

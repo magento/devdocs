@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack] before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
@@ -14,7 +14,7 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. It i
 
 ## Upgrading from older versions of the Magento application
 
-If you are upgrading from 2.1.4 or later to 2.2.X, review the [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html). Your upgrade tasks may include the following:
+If you are upgrading from 2.1.4 or later to 2.2.x or later, review the [Magento technology stack requirements]. Your upgrade tasks may include the following:
 
 -  Upgrade your PHP version
 -  Convert an older configuration management file
@@ -24,7 +24,7 @@ If you are upgrading from 2.1.4 or later to 2.2.X, review the [Magento technolog
 
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.X and use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html), you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
+If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
 
 {:.procedure}
 To create a temporary `config.php` file:
@@ -44,7 +44,7 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 ### Update the configuration file
 
-If you are upgrading from an older version of Magento to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X and later has new settings in the file.
+If you are upgrading from an older version of Magento to 2.2.x or later, you must also update your [.magento.app.yaml] file or you might encounter errors. {{site.data.var.ece}} 2.2.x and later has new settings in the file.
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -88,7 +88,7 @@ To update the `.magento.app.yaml` file:
 
 ## Upgrading the Magento application
 
-Review the [Magento technology stack requirements]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html) before upgrading your Magento application.
+Review the [Magento technology stack requirements] before upgrading your Magento application.
 
 ### Back up the database
 
@@ -96,15 +96,15 @@ Review the [Magento technology stack requirements]({{site.baseurl}}/guides/v2.3/
 
 ### Complete the upgrade
 
-If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
+If you use PHP version 7.2, you must remove the `mcrypt` extension from the [extensions section of the .magento.app.yaml file]. For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
 
  {:.bs-callout-info}
-When upgrading to 2.3 from 2.2, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
+When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
 To upgrade the Magento version:
 
-1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{ site.baseurl }}/cloud/project/ece-tools-upgrade-project.html#metapackage).
+1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax].
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
@@ -214,10 +214,19 @@ To resolve the error:
 
 1. Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file.
 
-1. [Examine the logs]({{ site.baseurl }}/cloud/project/log-locations.html) to determine the source of the issue.
+1. [Examine the logs] to determine the source of the issue.
 
 1. Add, commit, and push code changes.
 
    ```bash
    git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
    ```
+
+[technology stack]: {{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html
+[Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
+[Magento technology stack requirements]: {{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html
+[Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
+[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
+[version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
+[Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html

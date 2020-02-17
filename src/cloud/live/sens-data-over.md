@@ -83,7 +83,7 @@ The `config.php` file includes the following settings and configuration values:
 
 *  Configured values for settings entered through the Magento Admin (see the table below)
 *  Configured extension settings
-*  Scopes value for static content deployment (default is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick))
+*  Scopes value for static content deployment (default is [`quick`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick))
 
 <table>
 <tbody>
@@ -170,7 +170,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
    ```
 
-When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/variables-deploy.html).
+When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/variables-deploy.html).
 
  {:.bs-callout-info}
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
