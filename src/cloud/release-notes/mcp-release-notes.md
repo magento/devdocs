@@ -18,7 +18,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 ## v1.0.2
 
--  {:.fix}**[PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Updated the {{site.data.var.mcp}} package to add this critical patch, published on February 12, 2020. This patch resolves an issue that affects orders placed with PayPal Express Checkout where the  shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
+-  {:.fix}**[PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Updated the {{site.data.var.mcp}} package to add this critical patch, published on February 12, 2020. This patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
 
 ## v1.0.1
 
