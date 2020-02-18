@@ -125,8 +125,8 @@ We can restrict users from accessing API endpoints by using the ACL rule. By cre
 </routes>
 ```
 
-### Related Content
+### Related topics
 
-*  [Creating A Admin Page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) - An in depth guide to creating a magento admin page.
+*  [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html)
 
-*  [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) - An in depth guide about web API authentication.
+*  [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
