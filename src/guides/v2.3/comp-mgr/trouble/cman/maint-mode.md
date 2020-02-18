@@ -71,20 +71,20 @@ To redirect traffic to a custom maintenance page:
    *  Redirect all traffic to the maintenance page
    *  Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
 
-    The following example whitelists 192.0.2.110.
+   The following example whitelists 192.0.2.110.
 
-    Add the following at the end of your Apache configuration file:
+   Add the following at the end of your Apache configuration file:
 
-    ```terminal
-    RewriteEngine On
-    RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
-    RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
-    RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
-    RewriteCond %{SCRIPT_FILENAME} !maintenance.html
-    RewriteRule ^.*$ /maintenance.html [R=503,L]
-    ErrorDocument 503 /maintenance.html
-    Header Set Cache-Control "max-age=0, no-store"
-    ```
+   ```terminal
+   RewriteEngine On
+   RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
+   RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+   RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
+   RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+   RewriteRule ^.*$ /maintenance.html [R=503,L]
+   ErrorDocument 503 /maintenance.html
+   Header Set Cache-Control "max-age=0, no-store"
+   ```
 
 1. Restart Apache:
 

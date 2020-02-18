@@ -72,11 +72,11 @@ To create an SSH key pair:
        IdentityFile ~/.ssh/id_rsa
    ```
 
-    For Windows:
+   For Windows:
 
-    ```shell
-    eval $(ssh-agent -s)
-    ```
+   ```shell
+   eval $(ssh-agent -s)
+   ```
 
 1. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
 

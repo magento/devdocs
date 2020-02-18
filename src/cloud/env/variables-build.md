@@ -16,13 +16,23 @@ stage:
 
 {% include cloud/customize-build-deploy.md %}
 
- {:.bs-callout-info}
-You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
-
 The following variables were removed in v2.2:
 
 -  `skip_di_clearing`
 -  `skip_di_compilation`
+
+### `ERROR_REPORT_DIR_NESTING_LEVEL`
+
+-  **Default**—`1`
+-  **Version**—Magento 2.1.4 and later
+
+Set the level of directory nesting for saving error report files to avoid filling the report directory with tens of thousands of files, which makes it difficult to manage and review the data. This setting defaults to `1`. Typically, you do not need to change the default value unless you have problems managing error report files in the `<magento_root>/var/report/` directory.
+
+```yaml
+stage:
+  build:
+    ERROR_REPORT_DIR_NESTING_LEVEL: 2
+```
 
 ### `SCD_COMPRESSION_LEVEL`
 
@@ -50,28 +60,12 @@ stage:
     SCD_COMPRESSION_TIMEOUT: 800
 ```
 
-### `SCD_EXCLUDE_THEMES`
-
-{:.bs-callout-warning}
-The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
-
--  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
-
-Themes include numerous files. Set this variable to `true` if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly build this theme with your code updates and deployments. To exclude the `magento/luma` theme:
-
-```yaml
-stage:
-  build:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
-```
-
 ### `SCD_MATRIX`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during build. This is ideal if you want to speed up the build process by reducing the amount of unnecessary theme files. For example, you can build the _magento/backend_ theme in English and a custom theme in other languages.
+You can configure multiple locales per theme. This customization helps speed up the build process by reducing the number of unnecessary theme files. For example, you can build the _magento/backend_ theme in English and a custom theme in other languages.
 
 The following example builds the `magento/backend` theme with three locales:
 
@@ -115,7 +109,7 @@ stage:
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Customize the [deployment strategy]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 

@@ -358,7 +358,7 @@ The following example shows how to initialize the modal widget and pass options 
             'trigger': '[data-trigger=trigger]',
             'responsive': true,
             'buttons': [{
-                text: $.mage.__('Submit'),
+                text: jQuery.mage.__('Submit'),
                 class: 'action'
             }]
         }}">
