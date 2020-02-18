@@ -329,7 +329,7 @@ class Success extends \Magento\Checkout\Block\Onepage\Success
 ```
 
 {:.bs-callout-warning}
-Overriding entire methods is not the recommended approach and should be avoided whenever possible. This approach could cause conflicts in the system and it reduces the system upgradability. Use other extensibility options like `event observers` and `plugins` instead.
+Overriding entire methods is not recommended approach and is noted here as a method of last resort. This approach may cause conflicts in the system and reduces system upgradability. Other extensibility options such as `event observers` and `plugins` are preferable, when possible.
 
 ### Parameter configuration inheritance
 
