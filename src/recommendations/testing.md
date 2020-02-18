@@ -1,6 +1,6 @@
 ---
 group: product-recommendations
-title: Verifying Recommendations
+title: Verifying Event Collection
 ---
 
 After you [install]({{ page.baseurl }}/recommendations/install.html) and [configure]({{ page.baseurl }}/recommendations/configure.html) the product recommendations module, you can verify that the behavioral data is being sent to Magento. You can use developer tools available in Chrome or you can install the Snowplow Chrome extension.
@@ -46,3 +46,9 @@ To ensure events are firing on pages across your site (home, product, checkout, 
     ![]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
 If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
+
+## Verify events are firing correctly
+
+To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger.
+
+    ![]({{ page.baseurl }}/recommendations/images/event-metric.png)

@@ -42,7 +42,7 @@ For the Early Access Program, deploying recommendations to your site requires th
 
 ### Update Product Recommendations installation
 
-If you need to update your existing product recommendations installation, run:
+Throughout the EAP, we will make updates to the `product-recommendations` module. When we notify you of an update, run the following:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies

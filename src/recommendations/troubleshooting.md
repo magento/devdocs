@@ -28,10 +28,14 @@ For issues related to the Catalog SaaS Export module:
 
 -  Check the logs. Make sure there are no errors associated with the above modules.
 
+-  Confirm the indexers and cron jobs are running.
+
 -  Refresh Configuration cache. Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache.
 
 -  Confirm the `Product Feed` indexer is set to `Update by Schedule`.
 
--  Confirm the indexers and cron jobs are running.
-
 -  Confirm there is data in the `catalog_data_exporter_products` database table.
+
+### Events
+
+Refer to the [following]({{ page.baseurl }}/recommendations/testing.html) page for help in verifying behavioral events are being sent to Magento.
