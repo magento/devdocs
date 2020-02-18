@@ -24,7 +24,7 @@ All patch file names must end with the `.patch` extension.
 
 {% include cloud/note-upgrade.md %}
 
-To get the latest patches, [update to the latest version of {{site.data.var.ct}}]({{site.baseurl}}/cloud/project/ece-tools-update.html).
+To apply the latest patches, [install the latest version of {{site.data.var.ct}}]({{site.baseurl}}/cloud/project/ece-tools-update.html).
 
 ## Apply patches manually
 
