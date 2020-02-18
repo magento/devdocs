@@ -16,6 +16,10 @@ The `{{site.data.var.mcp}}` package uses the following version sequence: `<major
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
 
+## v1.0.2
+
+-  {:.fix}**[PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Updated the {{site.data.var.mcp}} package to add this critical patch, published on February 12, 2020. This patch resolves an issue that affects orders placed with PayPal Express Checkout where the  shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
+
 ## v1.0.1
 
 We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
