@@ -1,7 +1,7 @@
 ---
 title: Magento_GiftCardImportExport
 source_repo: magento2ee
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/GiftCardImportExport/README.md
 last_modified_at: '2015-08-18 15:10:06 +0300'
 content: |

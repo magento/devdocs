@@ -13,11 +13,8 @@ pages:
       url: /frontend-dev-guide/theme-best-practice.html
 
     - label: Themes
-      url: /frontend-dev-guide/themes/theme-general.html
+      url: /frontend-dev-guide/themes/theme-overview.html
       children:
-
-        - label: Themes overview
-          url: /frontend-dev-guide/themes/theme-overview.html
 
         - label: Install a third-party storefront theme
           url: /frontend-dev-guide/themes/theme-install.html
@@ -70,6 +67,9 @@ pages:
 
         - label: Product layouts
           url: /frontend-dev-guide/layouts/product-layouts.html
+
+        - label: Create a new layout
+          url: /frontend-dev-guide/layouts/layout-create.html
 
         - label: Extend a layout
           url: /frontend-dev-guide/layouts/layout-extend.html

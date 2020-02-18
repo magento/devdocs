@@ -241,6 +241,7 @@ The following example creates the `declarative_table` table with four columns. T
 </schema>
 ```
 
+ {:.bs-callout-info}
 When creating a new table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
 
 ### Drop a table
@@ -292,6 +293,7 @@ This declarative process of renaming a table is not fast. If you need to migrate
 </schema>
 ```
 
+ {:.bs-callout-info}
 When renaming a table, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add a column to table
@@ -314,6 +316,7 @@ The following example adds the `date_closed` column.
 </schema>
 ```
 
+ {:.bs-callout-info}
 When adding a new column into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
 
 ### Drop a column from a table
@@ -335,6 +338,7 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
+
  {:.bs-callout-info}
 It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
@@ -365,6 +369,8 @@ To rename a column, delete the original column declaration and create a new one.
 ```xml
 onCreate="migrateDataFrom(entity_id)"
 ```
+
+ {:.bs-callout-info}
 When renaming a column, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add an index
@@ -409,6 +415,9 @@ In the following example, the selected `constraint` node defines the characteris
     </table>
 </schema>
 ```
+
+{:.bs-callout-info}
+Foreign keys can only be added to tables when both tables were created using a declarative schema (`db_schema.xml`).
 
 ### Drop a foreign key
 

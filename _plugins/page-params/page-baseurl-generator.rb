@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # Author: jcalcaben@magento.com
 #
 # This custom plugin dynamically sets and injects the page.baseurl variable

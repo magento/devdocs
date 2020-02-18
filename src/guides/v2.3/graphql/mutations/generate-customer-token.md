@@ -57,6 +57,14 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `token` | String | The customer token
 
+## Errors
+
+Error | Description
+--- | ---
+`Specify the "email" value.` | The value specified in the `email` attribute is empty.
+`Specify the "password" value.` | The value specified value in the `password` attribute is empty.
+`The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.` | Authentication error. The email or password is incorrect, or the customer account is locked.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)

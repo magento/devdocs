@@ -52,12 +52,12 @@ Typical locations follow:
 
    *  To comment it out:
 
-        ```conf
-        ;session.save_path = <path>
-        ```
+      ```conf
+      ;session.save_path = <path>
+      ```
 
    *  To set it to a file system path:
 
-        ```conf
-        session.save_handler = files
-        ```
+      ```conf
+      session.save_handler = files
+      ```

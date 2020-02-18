@@ -8,8 +8,9 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `city` | String | The city or town
 `company` | String | The customer's company
-`country_id` | String | The customer's country
-`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Address custom attributes
+`country_code` | CountryCodeEnum | The customer's country
+`country_id` | String | Deprecated. Use `country_code` instead. The customer's country
+`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Deprecated. Not applicable for GraphQL
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
@@ -22,7 +23,7 @@ Attribute |  Data Type | Description
 `postcode` | String | The customer's ZIP or postal code
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `region` | [CustomerAddressRegion](#customerAddressRegionOutput) | An object that defines the customer's state or province
-`region_id` | Int | A number that uniquely identifies the state, province, or other area
+`region_id` | Int | Deprecated. Use `region` instead. A number that uniquely identifies the state, province, or other area
 `street` | [String] | An array of strings that define the street number and name
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
@@ -30,7 +31,7 @@ Attribute |  Data Type | Description
 
 ### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
 
-The `CustomerAddressAttribute` object contains the following attributes:
+The `CustomerAddressAttribute` output data type has been deprecated because the contents are not applicable for GraphQL. It can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -45,4 +46,4 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `region` | String | The state or province name
 `region_code` | String | The address region code
-`region_id` | Int | Uniquely identifies the region
+`region_id` | Int | Deprecated. Use `region` instead. Uniquely identifies the region

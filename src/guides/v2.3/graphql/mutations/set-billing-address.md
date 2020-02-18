@@ -5,7 +5,7 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-set-billing-address.html
 ---
 
-The `setBillingAddressOnCart` mutation sets the billing address for a specific cart. If you set the `use_for_shipping` attribute to `true`, Magento assigns the same address as the shipping address.
+The `setBillingAddressOnCart` mutation sets the billing address for a specific cart. If you set the `same_as_shipping` attribute to `true`, Magento assigns the same address as the shipping address.
 
 ## Syntax
 
@@ -35,7 +35,7 @@ mutation {
           telephone: "8675309"
           save_in_address_book: true
         }
-        use_for_shipping: false
+        same_as_shipping: false
       }
     }
   ) {
@@ -46,8 +46,16 @@ mutation {
         company
         street
         city
+        region{
+          code
+          label
+        }
         postcode
         telephone
+        country{
+          code
+          label
+        }
       }
     }
   }
@@ -70,8 +78,16 @@ mutation {
             "Main Street"
           ],
           "city": "Austin",
+          "region": {
+              "code": "TX",
+              "label": "Texas"
+            },
           "postcode": "78758",
-          "telephone": "8675309"
+          "telephone": "8675309",
+           "country": {
+             "code": "US",
+             "label": "US"
+          }
         }
       }
     }
@@ -96,7 +112,8 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `address` | [CartAddressInput](#CartAddressInput) | The billing address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
-`use_for_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
+`same_as_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
+`use_for_shipping` | Boolean | Deprecated. Use `same_as_shipping` instead
 
 ### CartAddressInput object {#CartAddressInput}
 

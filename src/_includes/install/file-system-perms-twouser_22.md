@@ -56,15 +56,15 @@ To find the web server user's group:
 
 *  CentOS:
 
-```bash
-grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
-```
+   ```bash
+   grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+   ```
 
-    or
+   or
 
-```bash
-grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
-```
+   ```bash
+   grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
+   ```
 
 Typically, the user and group name are both `apache`.
 
@@ -123,25 +123,25 @@ To set ownership and permissions before you install the Magento software:
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
 1. Enter the following commands in the order shown:
 
-```bash
-cd <magento_root>
-```
+   ```bash
+   cd <magento_root>
+   ```
 
-```bash
-find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
-```
+   ```bash
+   find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+   ```
 
-```bash
-find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-```
+   ```bash
+   find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+   ```
 
-```bash
-chown -R :<web server group> .
-```
+   ```bash
+   chown -R :<web server group> .
+   ```
 
-```bash
-chmod u+x bin/magento
-```
+   ```bash
+   chmod u+x bin/magento
+   ```
 
 {% include install/file-system-perms-twouser_cmds-only_22.md %}
 

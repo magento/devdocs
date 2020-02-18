@@ -1778,15 +1778,6 @@ This release includes the following changes to integrations for core payment met
 
 *  Wishlist items now display decimal values as appropriate. Previously, Magento saved decimal quantities for wishlist items but did not display these values in the wishlist on the storefront. *Fix submitted by Max Fickers in pull request [23933](https://github.com/magento/magento2/pull/23933)*. [GitHub-23932](https://github.com/magento/magento2/issues/23932)
 
-## Known issue
-
-**Issue**:
-With this release, the `\Magento\Framework\Mail\MessageInterface` class has been replaced with `\Magento\Framework\Mail\EmailMessageInterface`. This new class supports the sending of multi-part MIME-type content within email and extends the existing `MailMessageInterface` and `MessageInterface` classes to ensure backward compatibility and provide a transition period for extension developers. Extension developers and merchants who are deploying third-party extensions that implement `\Magento\Framework\Mail\MessageInterface` should be aware of these changes.
-
-The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newsletter\Model\Queue\TransportBuilder` structures were refactored to return this new `EmailMessageInterface` instead of the `MessageInterface`,  which was previously returned. Although the signature of the `Transport::getMessage()` method was not changed, extensions can start using the new `EmailMessageInterface`.
-
-**Workaround**: In deployments that include third-party customizations, the old `MessageInterface` might still be instantiated. How you prevent this instantiation depends upon the particular usage of `MessageInterface` in your code. See the Magento forum DevBlog post [Backward-incompatible Changes in the Mail Library for Magento 2.3.3](https://community.magento.com/t5/Magento-DevBlog/Backward-incompatible-Changes-in-the-Mail-Library-for-Magento-2/ba-p/144787) for more information. **This issue has been addressed in the EmailMessageInterface backward compatibility issue patch, which was released on October 14, 2019. Merchants should apply this patch as soon as possible, especially if their deployments include extensions or customizations that use the Mail interface.**
-
 ## Known issues
 
 **Issue**:

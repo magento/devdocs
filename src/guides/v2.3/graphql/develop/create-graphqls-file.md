@@ -28,10 +28,10 @@ The following example shows the `products` query. The `type` is defined as a `Qu
 type Query {
     products (
         search: String
-        filter: ProducFilterInput
+        filter: ProductAttributeFilterInput
         pageSize: Int = 20
         currentPage: Int = 1
-        sort: ProductSortInput
+        sort: ProductAttributeSortInput
     ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: Magento_MsrpConfigurableProduct
 source_repo: magento2ce
-release: 2.3.3
+release: 2.3.4
 github_path: app/code/Magento/MsrpConfigurableProduct/README.md
 last_modified_at: '2019-03-02 19:21:49 -0600'
 content: "**MsrpConfigurableProduct** provides type and resolver information for the
