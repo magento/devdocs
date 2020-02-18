@@ -17,6 +17,8 @@ When you use the Docker environment in developer mode, you can select the file s
 
 Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files—ZIP, SQL, GZ, and BZ2—are not necessary to sync. You can find exclusions to these file types in the `docker-sync.yml` and `mutagen.sh` files.
 
+{%include cloud/note-docker-config-reference-link.md%}
+
 {:.procedure}
 To launch the Docker environment in developer mode:
 
