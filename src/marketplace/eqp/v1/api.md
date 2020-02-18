@@ -15,8 +15,10 @@ The Magento EQP REST APIs are completely separate from those provided with Magen
 
 The APIs only accept encrypted communications using HTTPS at the following base URLs:
 
-    https://developer-api.magento.com - Production
-    https://developer-stg-api.magento.com - Sandbox
+```http
+https://developer-api.magento.com - Production
+https://developer-stg-api.magento.com - Sandbox
+```
 
 EQP APIs are based on REST concepts and use standard HTTP verbs:
 

@@ -82,7 +82,7 @@ To configure a new web location:
    ```yaml
    web:
        locations:
-           "/":&app
+           "/": &app
                # The public directory of the app, relative to its root.
                root: "pub"
                passthru: "/index.php"
@@ -98,7 +98,7 @@ To configure a new web location:
    ```yaml
    web:
        locations:
-           "/":&app
+           "/": &app
                # The public directory of the app, relative to its root.
                root: "pub"
                passthru: "/index.php"
@@ -130,14 +130,14 @@ To configure a location with a different directory:
    ```yaml
    web:
        locations:
-           "/":&root
+           "/": &root
                # The public directory of the app, relative to its root.
                root: "pub"
                passthru: "/index.php"
                index:
                - index.php
                ...
-           "/static":&static
+           "/static": &static
                root: "pub/static"
    ```
 
@@ -146,7 +146,7 @@ To configure a location with a different directory:
    ```yaml
    web:
        locations:
-           "/":&root
+           "/": &root
                # The public directory of the app, relative to its root.
                root: "pub"
                passthru: "/index.php"
@@ -156,7 +156,7 @@ To configure a location with a different directory:
            "/media":
                root: "pub/media"
                ...
-           "/static":&static
+           "/static": &static
                root: "pub/static"
                allow: true
                scripts: false

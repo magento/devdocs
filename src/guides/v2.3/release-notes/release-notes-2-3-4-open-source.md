@@ -7,11 +7,15 @@ Magento Open Source 2.3.4 offers significant platform upgrades, substantial secu
 
 This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
+## Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4 to address a critical PayPal Express Checkout issue
+
+This issue affects orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. When the customer enters a region in the text field, Magento throws this error: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`.  When the customer selects the country region from the drop-down menu when placing an order, the order is completed successfully.  See [Applying patches]({{page.baseurl}}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Both Git-based  and Composer-based  patches are available. A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
+
 ## Security-only patch available
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3. All hot fixes that were  applied to the 2.3.3 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
 
-With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento (APSB20-02)](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
+With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
 ## Highlights
 
@@ -33,7 +37,6 @@ Additional security enhancements include:
 
 *  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
-{:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
@@ -78,7 +81,7 @@ Inventory Management enhancements for this release include:
 
 *  Resolved multiple quality issues, including those related to credit memos, grouped products, source and stock mass actions.
 
-See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
+See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent Inventory bug fixes.
 
 ### GraphQL
 
@@ -172,7 +175,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5582-->
 
-*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
+*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https://github.com/magento/magento2/issues/22880)
 
 <!--- ENGCOM-6205-->
 
@@ -1818,9 +1821,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The WYSIWYG editor now saves quotation marks correctly. Previously, quotation marks were converted to `&quot;`.
 
-## Known issue
+## Known issues
 
-This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments.  You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+*  **Issue**: This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments.  You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+
+*  **Issue**: Magento throws an error when a customer places an order with PayPal Express Checkout and the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. **Workaround**: Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4  (Git-based or Composer-based). A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
 
 ## Community contributions
 

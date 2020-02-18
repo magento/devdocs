@@ -41,17 +41,17 @@ To find the docroot on your server:
 
    -  **Ubuntu**
 
-       ```text
-       /etc/apache2/sites-available/000-default.conf (Apache)
-       /etc/nginx/sites-available/default (nginx)
-       ```
+      ```text
+      /etc/apache2/sites-available/000-default.conf (Apache)
+      /etc/nginx/sites-available/default (nginx)
+      ```
 
    -  **CentOS**
 
-       ```text
-        /etc/httpd/conf/httpd.conf (Apache)
-        /etc/nginx/nginx.conf (nginx)
-        ```
+      ```text
+      /etc/httpd/conf/httpd.conf (Apache)
+      /etc/nginx/nginx.conf (nginx)
+      ```
 
 1. Search the file for `DocumentRoot` or `root`.
 
