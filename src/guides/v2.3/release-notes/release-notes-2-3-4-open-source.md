@@ -175,7 +175,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5582-->
 
-*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https: //github.com/magento/magento2/issues/22880)
+*  Static content deployment (`bin/magento setup:static-content:deploy`) no longer results in random deletion of CSS files or multiple exceptions. *Fix submitted by Ihor Sviziev in pull request [22886](https://github.com/magento/magento2/pull/22886)*. [GitHub-22880](https://github.com/magento/magento2/issues/22880)
 
 <!--- ENGCOM-6205-->
 
