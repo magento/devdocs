@@ -19,13 +19,13 @@ For the Early Access Program, deploying recommendations to your site requires th
 
 1. Sign up through [this form](https://forms.gle/VE9VSSj9TMUTJ41u6). Within 24 hours, you will receive an email that contains your SaaS Environment ID from Magento. This ID identifies a production or non-production cloud service environment for use with Product Recommendations. You must use this ID to complete the module [configuration]({{ page.baseurl }}/recommendations/configure.html). If, after 24 hours, you have not received your ID, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
 
-1. Install the `product-recommendations` module with composer:
+1. Install the `magento/product-recommendations` module with composer:
 
    ```bash
    composer require magento/product-recommendations
    ```
 
-   The `product-recommendations` module installs the following dependencies:
+   The `magento/product-recommendations` module installs the following dependencies:
 
     -  **module-data-services**—This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time.
 
@@ -36,7 +36,7 @@ For the Early Access Program, deploying recommendations to your site requires th
 
     -  Other modules responsible for configuration
 
-1. After you install the `product-recommendations` module, you must [configure the module]({{ page.baseurl }}/recommendations/configure.html).
+1. After you install the `magento/product-recommendations` module, you must [configure the module]({{ page.baseurl }}/recommendations/configure.html).
 
 1. Now that you have installed and configured the recommendations module, [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html).
 
