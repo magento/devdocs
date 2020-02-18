@@ -70,6 +70,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 For an example of `exports` usage in Magento code see [`product_form.xml`, line 76]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L76)
 
 ## `imports` property
+
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
 -  `key`: name of the internal property or method that receives the value.
@@ -183,7 +184,9 @@ When working with UI components, we often need to use the string representation 
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }:foo'
+```js
+${ $.provider }:foo
+```
 
 If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 

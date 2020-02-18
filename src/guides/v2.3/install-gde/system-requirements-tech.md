@@ -51,8 +51,6 @@ Magento recommends using PHP 7.3
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-Magento 2.3.3 adds support for PHP 7.3.
-
 ### Required PHP extensions
 
 {:.bs-callout-info}

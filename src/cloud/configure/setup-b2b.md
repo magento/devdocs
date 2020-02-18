@@ -7,7 +7,7 @@ With the {{site.data.var.ece}} Pro subscription for v2.2 and later, you can inst
 
 For additional information on using and extending B2B, see the following guides:
 
-*  [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html)
+*  [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.3/b2b/bk-b2b.html)
 *  [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)
 
 We provide these features as a module you can install and setup in {{site.data.var.ece}}. Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.
@@ -81,4 +81,4 @@ If you have a config.php file as part of your deployment, you should also add th
 
 ## Configure and use B2B {#use}
 
-For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).
+For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.3/b2b/bk-b2b.html).
