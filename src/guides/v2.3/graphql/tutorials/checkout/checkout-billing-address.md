@@ -32,7 +32,7 @@ The following mutation adds a new billing address. `{ CART_ID }` is the unique s
 {:.bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
-```text
+```graphql
 mutation {
   setBillingAddressOnCart(
     input: {
