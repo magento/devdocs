@@ -5,8 +5,6 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The [{{site.data.var.ct}}](https://github.com/magento/ece-tools) package is a set of scripts and tools designed to manage and deploy Cloud projects. These release notes describe the latest improvements to this package, which is part of the [{{site.data.var.csuite}}]({{page.baseurl}}/cloud/release-notes/cloud-tools.html). The release notes include:
