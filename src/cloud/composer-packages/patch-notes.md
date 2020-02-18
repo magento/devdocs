@@ -13,7 +13,7 @@ Use this section to learn about updates to the following Composer packages:
 
 -  `vendor/magento/magento-cloud-metapackage`
 -  [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packages/ece-patches.html)
--  [`vendor/magento/ece-tools`]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html)
+-  [`vendor/magento/ece-tools`]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html)
 -  `vendor/magento/product-enterprise-edition`
 
 {:.bs-callout-info}

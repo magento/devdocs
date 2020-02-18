@@ -105,22 +105,22 @@ The tasks discussed in this section require the following:
 
 1. If not already running, start Elasticsearch:
 
-    ```bash
-    sudo service elasticsearch start
-    ```
+   ```bash
+   sudo service elasticsearch start
+   ```
 
 1. Verify that Elasticsearch is working by entering the following command on the server on which it is running:
 
-    ```bash
-    curl -XGET '<host>:9200/_cat/health?v&pretty'
-    ```
+   ```bash
+   curl -XGET '<host>:9200/_cat/health?v&pretty'
+   ```
 
-    A message similar to the following is displayed:
+   A message similar to the following is displayed:
 
-    ```terminal
-    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
-    1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
-    ```
+   ```terminal
+   epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
+   1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
+   ```
 
 ## Upgrading Elasticsearch {#es-upgrade6}
 

@@ -48,14 +48,14 @@ bin/magento list
 
 ```terminal
 // general commands: just a group and an action
-magento setup:install
-magento module:status
+bin/magento setup:install
+bin/magento module:status
 
 // set of commands with a subject
-magento setup:config:set
-magento setup:config:delete
-magento setup:db-schema:upgrade
-magento setup:db-data:upgrade
+bin/magento setup:config:set
+bin/magento setup:config:delete
+bin/magento setup:db-schema:upgrade
+bin/magento setup:db-data:upgrade
 ```
 
  {:.bs-callout-info}
@@ -78,7 +78,7 @@ Arguments are values passed by the user in a specified order. The argument name 
 Example:
 
 ```bash
- magento dev:theme:create frontend vendor themename
+ bin/magento dev:theme:create frontend vendor themename
 ```
 
 where:
@@ -113,19 +113,19 @@ An option can also have a one-letter shortcut as an alternative to its full name
 For example,
 
 ```bash
-magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
+bin/magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 ```
 
 ```bash
-magento dev:theme:create -p=Magento/luma frontend vendor themename
+bin/magento dev:theme:create -p=Magento/luma frontend vendor themename
 ```
 
 ```bash
-magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
+bin/magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 ```
 
 ```bash
-magento module:disable -f Magento_Cms
+bin/magento module:disable -f Magento_Cms
 ```
 
 Where:
@@ -147,13 +147,13 @@ Example:
 
 ```terminal
 // correct
-magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
-magento module:disable --force Magento_Catalog
-magento module:disable -f Magento_Catalog
+bin/magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
+bin/magento module:disable --force Magento_Catalog
+bin/magento module:disable -f Magento_Catalog
 
 //incorrect
-magento module:disable --force=1 Magento_Catalog
-magento module:disable -f=yes Magento_Catalog
+bin/magento module:disable --force=1 Magento_Catalog
+bin/magento module:disable -f=yes Magento_Catalog
 ```
 
 ## Recommendations to avoid naming collisions {#cli-collision}

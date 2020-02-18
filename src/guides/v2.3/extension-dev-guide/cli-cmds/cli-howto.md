@@ -103,7 +103,7 @@ Following is a summary of the process:
                <argument name="name" xsi:type="string">my:first:command</argument>
            </arguments>
        </type>
-       <type name="Magento\Framework\Console\CommandList">
+       <type name="Magento\Framework\Console\CommandListInterface">
            <arguments>
                <argument name="commands" xsi:type="array">
                    <item name="commandexample_somecommand" xsi:type="object">Magento\CommandExample\Console\Command\SomeCommand</item>
@@ -114,10 +114,16 @@ Following is a summary of the process:
    </config>
    ```
 
-1. Clean the [cache](https://glossary.magento.com/cache) and compiled code directories:
+1. Clean the [cache](https://glossary.magento.com/cache):
 
    ```bash
-   rm -rf var/cache/* var/page_cache/* generated/*
+   bin/magento cache:clean
+   ```
+
+1. Regenerate the code:
+
+   ```bash
+   bin/magento setup:di:compile
    ```
 
 ### Result

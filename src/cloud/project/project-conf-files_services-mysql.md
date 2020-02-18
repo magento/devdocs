@@ -6,7 +6,11 @@ functional_areas:
   - Setup
 ---
 
-The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0 and later, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
+The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
+
+{:.bs-callout-warning}
+Be careful when upgrading MariaDB from version 10.1 to 10.2.
+MariaDB 10.1 is the last version that support XtraDB as the storage engine. Version 10.2 uses InnoDB for the storage engine. Once you upgrade from 10.1 to 10.2, you cannot rollback the change. Magento supports both storage engines; however, you must check extensions and other systems used by your project to make sure they are compatible with MariaDB 10.2. Read about this [backwards incompatible change](https://mariadb.com/kb/en/upgrading-from-mariadb-101-to-mariadb-102/#incompatible-changes-between-101-and-102).
 
 {% include cloud/service-config-integration-starter.md %}
 
@@ -92,7 +96,7 @@ relationships:
     databaseimporter: "mysql:importer"
 ```
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html) access control mechanism for stored procedures and views.
 
 ## Connect to the database
@@ -107,16 +111,15 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-      or
+   or
 
    ```bash
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
    ```
 
-   In the response, find the MySQL information, for example:
+   In the response, find the MySQL information. For example:
 
    ```json
-   {
    "database" : [
       {
          "password" : "",
@@ -142,12 +145,12 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
    -  For Starter, use the following command:
 
-   ```bash
-   mysql -h database.internal -u <username>
-   ```
+      ```bash
+      mysql -h database.internal -u <username>
+      ```
 
    -  For Pro, use the following command with db, username, and password retrieved from the `$MAGENTO_CLOUD_RELATIONSHIPS` variable.
 
-   ```bash
-   mysql -h<db> -p<number> -u<username> -p<password>
-   ```
+      ```bash
+      mysql -h<db> -P<number> -u<username> -p<password>
+      ```

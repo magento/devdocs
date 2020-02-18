@@ -51,7 +51,7 @@ Your Git branch must have the following files for building and deploying in your
 
 We highly recommend the following best practices and considerations for your deployment process:
 
--  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/cloud-tools.html).
+-  **Ensure that you are running the most current version of the `{{site.data.var.ct}}` package**–See [Release notes for {{site.data.var.ct}}]({{ site.baseurl }}/cloud/release-notes/ece-release-notes.html).
 
 -  **Follow the build and deploy process**–Ensure that you have the correct code in each environment to avoid overwriting configurations when merging code between environments. For example, to make configuration changes that apply to all environments, modify and test the changes in the local environment before deploying to Integration, and then deploy and test the changes in Staging before deploying to Production. When you merge from one environment to another, the deployment overwrites all code in the remote environment, except environment-specific configuration and settings. See [Build and deploy full steps](#steps).
 
@@ -231,7 +231,7 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
--  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+-  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`]({{ site.baseurl }}/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html).
 
 {:.bs-callout-info}
 Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.

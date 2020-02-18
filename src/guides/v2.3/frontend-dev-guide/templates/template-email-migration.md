@@ -225,7 +225,7 @@ it will resolve to “John”.
 {% endraw %}
 
 <!-- Link Definitions -->
-[Insert Variable]: https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html#customize-content
-[New Order email template]: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/view/frontend/email/order_new.html
-[model]: https://github.com/magento/magento2ce/blob/2.3-develop/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php
-[1]: https://github.com/magento/magento2ce/blob/2.3-develop/app/code/Magento/Email/Model/AbstractTemplate.php
+[Insert Variable]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-content
+[New Order email template]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html
+[model]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php
+[1]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/Model/AbstractTemplate.php

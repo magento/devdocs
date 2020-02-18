@@ -16,6 +16,9 @@ pages:
         - label: GraphQL Caching
           url: /graphql/caching.html
 
+        - label: Filtering with custom attributes
+          url: /graphql/custom-filters.html
+
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
@@ -50,6 +53,9 @@ pages:
         - label: category query
           url: /graphql/queries/category.html
 
+        - label: categoryList query
+          url: /graphql/queries/category-list.html
+
         - label: checkoutAgreements query
           url: /graphql/queries/checkout-agreements.html
 
@@ -73,6 +79,9 @@ pages:
 
         - label: customer query
           url: /graphql/queries/customer.html
+
+        - label: customerCart query
+          url: /graphql/queries/customer-cart.html
 
         - label: customerDownloadableProducts query
           url: /graphql/queries/customer-downloadable-products.html
@@ -112,8 +121,14 @@ pages:
         - label: Using mutations
           url: /graphql/mutations/index.html
 
+        - label: addBundleProductsToCart mutation
+          url: /graphql/mutations/add-bundle-products.html
+
         - label: addConfigurableProductsToCart mutation
           url: /graphql/mutations/add-configurable-products.html
+
+        - label: addDownloadableProductsToCart mutation
+          url: /graphql/mutations/add-downloadable-products.html
 
         - label: addSimpleProductsToCart mutation
           url: /graphql/mutations/add-simple-products.html
@@ -162,6 +177,9 @@ pages:
 
         - label: handlePayflowProResponse mutation
           url: /graphql/mutations/handle-payflow-pro-response.html
+
+        - label: mergeCarts mutation
+          url: /graphql/mutations/merge-carts.html
 
         - label: placeOrder mutation
           url: /graphql/mutations/place-order.html

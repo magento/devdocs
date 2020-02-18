@@ -7,7 +7,7 @@ functional_areas:
   - Standards
 ---
 
-The [storefront](https://glossary.magento.com/storefront) theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a [theme](https://glossary.magento.com/theme) [extension](https://glossary.magento.com/extension).
+The [storefront](https://glossary.magento.com/storefront) theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a [theme](https://glossary.magento.com/theme) [extension](https://glossary.magento.com/extension).
 
 ### Clear your cache periodically
 

@@ -107,3 +107,203 @@ The following query returns information about bundle product `24-WG080`, which i
    }
 }
 ```
+
+{% collapsible Response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "sku": "24-WG080",
+          "type_id": "bundle",
+          "id": 46,
+          "name": "Sprite Yoga Companion Kit",
+          "dynamic_sku": true,
+          "dynamic_price": true,
+          "dynamic_weight": true,
+          "price_view": "PRICE_RANGE",
+          "ship_bundle_items": "TOGETHER",
+          "items": [
+            {
+              "option_id": 1,
+              "title": "Sprite Stasis Ball",
+              "required": true,
+              "type": "radio",
+              "position": 1,
+              "sku": "24-WG080",
+              "options": [
+                {
+                  "id": 1,
+                  "quantity": 1,
+                  "position": 1,
+                  "is_default": true,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Stasis Ball 55 cm",
+                  "product": {
+                    "id": 26,
+                    "name": "Sprite Stasis Ball 55 cm",
+                    "sku": "24-WG081-blue",
+                    "type_id": "simple"
+                  }
+                },
+                {
+                  "id": 2,
+                  "quantity": 1,
+                  "position": 2,
+                  "is_default": false,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Stasis Ball 65 cm",
+                  "product": {
+                    "id": 29,
+                    "name": "Sprite Stasis Ball 65 cm",
+                    "sku": "24-WG082-blue",
+                    "type_id": "simple"
+                  }
+                },
+                {
+                  "id": 3,
+                  "quantity": 1,
+                  "position": 3,
+                  "is_default": false,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Stasis Ball 75 cm",
+                  "product": {
+                    "id": 32,
+                    "name": "Sprite Stasis Ball 75 cm",
+                    "sku": "24-WG083-blue",
+                    "type_id": "simple"
+                  }
+                }
+              ]
+            },
+            {
+              "option_id": 2,
+              "title": "Sprite Foam Yoga Brick",
+              "required": true,
+              "type": "radio",
+              "position": 2,
+              "sku": "24-WG080",
+              "options": [
+                {
+                  "id": 4,
+                  "quantity": 1,
+                  "position": 1,
+                  "is_default": true,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Foam Yoga Brick",
+                  "product": {
+                    "id": 21,
+                    "name": "Sprite Foam Yoga Brick",
+                    "sku": "24-WG084",
+                    "type_id": "simple"
+                  }
+                }
+              ]
+            },
+            {
+              "option_id": 3,
+              "title": "Sprite Yoga Strap",
+              "required": true,
+              "type": "radio",
+              "position": 3,
+              "sku": "24-WG080",
+              "options": [
+                {
+                  "id": 5,
+                  "quantity": 1,
+                  "position": 1,
+                  "is_default": true,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Yoga Strap 6 foot",
+                  "product": {
+                    "id": 33,
+                    "name": "Sprite Yoga Strap 6 foot",
+                    "sku": "24-WG085",
+                    "type_id": "simple"
+                  }
+                },
+                {
+                  "id": 6,
+                  "quantity": 1,
+                  "position": 2,
+                  "is_default": false,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Yoga Strap 8 foot",
+                  "product": {
+                    "id": 34,
+                    "name": "Sprite Yoga Strap 8 foot",
+                    "sku": "24-WG086",
+                    "type_id": "simple"
+                  }
+                },
+                {
+                  "id": 7,
+                  "quantity": 1,
+                  "position": 3,
+                  "is_default": false,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Yoga Strap 10 foot",
+                  "product": {
+                    "id": 35,
+                    "name": "Sprite Yoga Strap 10 foot",
+                    "sku": "24-WG087",
+                    "type_id": "simple"
+                  }
+                }
+              ]
+            },
+            {
+              "option_id": 4,
+              "title": "Sprite Foam Roller",
+              "required": true,
+              "type": "radio",
+              "position": 4,
+              "sku": "24-WG080",
+              "options": [
+                {
+                  "id": 8,
+                  "quantity": 1,
+                  "position": 1,
+                  "is_default": true,
+                  "price": 0,
+                  "price_type": "FIXED",
+                  "can_change_quantity": true,
+                  "label": "Sprite Foam Roller",
+                  "product": {
+                    "id": 22,
+                    "name": "Sprite Foam Roller",
+                    "sku": "24-WG088",
+                    "type_id": "simple"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+{% endcollapsible %}
+
+## Related topics
+
+-  [addBundleProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-bundle-products.html)

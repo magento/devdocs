@@ -69,7 +69,7 @@ The following are recommended changes and checks:
 
 ## Performance testing {#performance}
 
-We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 
@@ -90,10 +90,6 @@ You can also test using the following 3rd party options:
 ## Performance monitoring
 
 You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
-
-## Performance monitoring
-
-You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html).
 
 {:.ref-header}
 Next step
