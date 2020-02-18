@@ -61,7 +61,10 @@ mutation {
         company
         street
         city
-        region
+        region {
+          code
+          label
+        }
         postcode
         telephone
         country {

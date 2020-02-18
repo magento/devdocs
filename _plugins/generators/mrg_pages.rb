@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 # This plugin generates module-specific topics in the 'guides/v2.3/mrg'.

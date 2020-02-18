@@ -60,29 +60,29 @@ To ensure that the text you add in `.html` templates of UI components is added t
 
 -  When a string is added in the scope of an HTML element, both of the following examples result in the same output:
 
-    ```html
-    <span data-bind="i18n: 'Sign In'"></span>
-    ```
+   ```html
+   <span data-bind="i18n: 'Sign In'"></span>
+   ```
 
-    ```html
-    <span translate="'Sign In'"></span>
-    ```
+   ```html
+   <span translate="'Sign In'"></span>
+   ```
 
 -  When a string is added with no binding to an HTML element, both of the following examples result in the same output:
 
-    ```html
-    <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
-    ```
+   ```html
+   <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+   ```
 
-    ```html
-    <translate args="'You have no items in your shopping cart.'"/>
-    ```
+   ```html
+   <translate args="'You have no items in your shopping cart.'"/>
+   ```
 
 -  When a string is added as an attribute of an HTML element:
 
-    ```html
-    <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
-    ```
+   ```html
+   <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
+   ```
 
 ## Strings added in UI components configuration files {#add_strings_ui_xml}
 

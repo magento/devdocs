@@ -416,6 +416,9 @@ In the following example, the selected `constraint` node defines the characteris
 </schema>
 ```
 
+{:.bs-callout-info}
+Foreign keys can only be added to tables when both tables were created using a declarative schema (`db_schema.xml`).
+
 ### Drop a foreign key
 
 The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleting its `constraint` node. To drop a constraint declared in another module, redeclare it with the `disabled` attribute set to `true`.

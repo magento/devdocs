@@ -24,9 +24,9 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 1. Install Grunt CLI tool globally. To do this, run the following command in a command prompt:
 
-    ```bash
-    npm install -g grunt-cli
-    ```
+   ```bash
+   npm install -g grunt-cli
+   ```
 
 1. From the `<Magento_root>` directory, copy and paste the contents of the following files:
 
@@ -36,11 +36,17 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 1. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
 
-    ```bash
-    cd your_Magento_instance_directory
-    npm install
-    npm update
-    ```
+   ```bash
+   cd your_Magento_instance_directory
+   ```
+
+   ```bash
+   npm install
+   ```
+
+   ```bash
+   npm update
+   ```
 
 1. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
@@ -88,7 +94,7 @@ To use a custom file for Grunt configuration:
    Example:
    If your custom configuration file `local-themes.js` is located in the `<magento_root>/dev/tools/grunt/configs` directory, the following is already set in your `grunt-config.json`:
 
-   ```config
+   ```json
    {
        "themes": "dev/tools/grunt/configs/local-themes"
    }
@@ -102,7 +108,7 @@ You can also use the other way to declare a custom config file:
 
 1. In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the `themes.js` configuration file this would look like following:
 
-   ```config
+   ```js
    filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
    ```
 
@@ -116,12 +122,12 @@ To tell Grunt to use a custom configuration file, instead of the default one, ad
 
 1. Require file-router:
 
-   ```config
+   ```js
    var fileRouter = require('/files-router');
    ```
 
 1. Call the `get(%file_alias%)` method to get the configuration file.
 
-   ```config
+   ```js
    var themes = fileRouter.get('themes');
    ```

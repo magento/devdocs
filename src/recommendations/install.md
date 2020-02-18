@@ -21,11 +21,11 @@ For the Early Access Program, deploying recommendations to your site requires th
 
 1. Install the `product-recommendations` module with composer:
 
-    ```bash
-    composer require magento/product-recommendations
-    ```
+   ```bash
+   composer require magento/product-recommendations
+   ```
 
-    The `product-recommendations` module installs the following dependencies:
+   The `product-recommendations` module installs the following dependencies:
 
     -  **module-data-services**—This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time.
 
@@ -39,6 +39,14 @@ For the Early Access Program, deploying recommendations to your site requires th
 1. After you install the `product-recommendations` module, you must [configure the module]({{ page.baseurl }}/recommendations/configure.html).
 
 1. Now that you have installed and configured the recommendations module, [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html).
+
+### Update Product Recommendations installation
+
+If you need to update your existing product recommendations installation, run:
+
+```bash
+composer update magento/product-recommendations --with-dependencies
+```
 
 ## Uninstall Product Recommendations
 

@@ -17,10 +17,13 @@ functional_areas:
 
 Prior to setting up a workspace, gather the following credentials and accounts:
 
--  **Magento Access Key**
-    Provides secure access through a 32-character authentication token. The token authenticates between your account, the Magento 2 Composer repository (repo.magento.com), and any other Git services—such as GitHub—required for development. You can create multiple Magento access keys. For the workspace setup, you can start with one specific key for your code repository. Contact the Project Owner to generate [Magento authentication keys]({{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html).
+-  **Magento authentication keys (Composer keys)**
+
+    Magento authentication keys are 32-character authentication tokens that provide secure access to the Magento 2 Composer repository (repo.magento.com), and any other Git services required for Magento development such as GitHub. Your account can have multiple Magento authentication keys. For the workspace setup, start with one specific key for your code repository. If you do not have any keys, contact the Project Owner to create them, or create the [Magento authentication keys] yourself.
+
 -  **Cloud Project account**
     The Project Owner or Technical Admin (Super User) should invite you to the {{site.data.var.ece}} project. When you receive the e-mail invitation, click the link and follow the prompts to create your account. See [Set up an account]({{ site.baseurl }}/cloud/before/before-workspace.html#newaccount) for details.
+
 -  **Magento Encryption Key**
     When importing an existing Magento system only, capture the Magento encryption key used to protect your access and data for the Magento database. For details on this key, see [Resolve issues with encryption key]({{ site.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html)
 
@@ -44,3 +47,5 @@ You can manually add a virtual machine (VM) and install {{site.data.var.ee}}. Th
 1. [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html)
 
 You can import existing Magento custom code. See [First steps for importing {{site.data.var.ee}}]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html).
+
+[Magento authentication keys]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
