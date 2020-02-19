@@ -22,7 +22,9 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 -  {:.fix}**Updated the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) for Magento Open Source v2.3.1 and 2.3.2**-Fixed a syntax error in the `composer.json` file.
 
--  {:.fix}**Updated the `composer.json` constraints for compatibility with upcoming Magento releases**–Updated the `symfony` and `semver` version constraints for compatibility with Magento 2.4 and later.<!--MAGECLOUD-5127-->
+-  {:.fix}**Compatibility fixes to support upcoming Magento releases**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4 and later.<!--MAGECLOUD-5127-->
+
+-  {:.fix}**Compatibility fix to support the `{{site.data.var.ct}}` package**–Updated constraints in `composer.json` for compatibility with `{{site.data.var.ct}}` 2002.0.22 and later.
 
 ## v1.0.1
 
