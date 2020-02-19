@@ -24,7 +24,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 -  {:.fix}**Compatibility fixes to support upcoming Magento releases**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4 and later.<!--MAGECLOUD-5127-->
 
--  {:.fix}**Compatibility fix to support the `{{site.data.var.ct}}` package**–Updated constraints in `composer.json` for compatibility with `{{site.data.var.ct}}` 2002.0.22 and later.
+-  {:.fix}**Compatibility fix to support the `{{site.data.var.ct}}` package**–Updated constraints in `composer.json` for compatibility with `{{site.data.var.ct}}` 2002.0.22 and later 2002.0.x releases.
 
 ## v1.0.1
 
