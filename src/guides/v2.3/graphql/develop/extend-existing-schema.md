@@ -17,7 +17,7 @@ In our example, we aren't going to add a new field to the database, but rather, 
 
 The simplified structure of the query schema to get products is:
 
-```
+```text
 schema {
     query: Query
     ...
@@ -48,13 +48,14 @@ So we'll need to extend the `ProductInterface` since that is the schema object f
 interface ProductInterface {
     attribute_set_id: Int
         @doc(description: "ID of the attribute set assigned to the product")
-    attribute_set_name: String 
+    attribute_set_name: String
         @doc(description: "Name of attribute set assigned to the product")
         @resolver(class: "\\Orange\\CustomGQL\\Model\\Resolver\\ProductAttributeSetNameResolver")
 }
 ```
 
-The above schema file is merged with the schema present at `Magento_CatalogGraphQl/etc/schema.graphqls` which contains the original `ProductInterface` object. Let's take the case of the two fields described above: 
+The above schema file is merged with the schema present at `Magento_CatalogGraphQl/etc/schema.graphqls` which contains the original `ProductInterface` object. Let's take the case of the two fields described above:
+
 -  The `attribute_set_id` field is already present in the original schema, so the field described in our new schema will override field present in the `ProductInterface` object. We are changing only the `@doc` annotation content here to demonstrate the working.
 -  The `attribute_set_name` field is not present in the orignal schema, so the field is added to the `ProductInterface` object by extending it. For our new field, we set a description and a resolver class to resolve the data to be returned under this field.
 
@@ -99,6 +100,6 @@ class ProductAttributeSetNameResolver implements ResolverInterface
 
 ## Related Topics
 
-*  [Define the GraphQL schema for a module]({{ page.baseurl }}/graphql/develop/create-graphqls-file.html)
-*  [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html)
-*  [Declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema.html)
+-  [Define the GraphQL schema for a module]({{ page.baseurl }}/graphql/develop/create-graphqls-file.html)
+-  [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html)
+-  [Declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema.html)
