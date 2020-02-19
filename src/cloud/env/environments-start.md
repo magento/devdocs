@@ -3,6 +3,8 @@ group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
   - /cloud/before/integration-ip-addr.html
+  - /cloud/howtos/environment-tutorial-env-merge.html
+  - /cloud/howtos/how-to.html
 functional_areas:
   - Cloud
 ---
