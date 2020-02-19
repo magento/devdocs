@@ -11,7 +11,9 @@ The Magento GraphQL system is built in a way so that you can extend existing Gra
 
 The first step to retrieve a custom field along with an existing query is to extend the appropriate schema object.
 
-For example, we are going to change the description of an existing field (`attribute_set_id`), and add a new field (`attribute_set_name`) when the products are queried. 
+To add a new/custom field to the database, please refer to the [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema.html) documentation for more information on that.
+
+In our example, we aren't going to add a new field to the database, but rather, change the description of an existing field (`attribute_set_id`), and add a new field (`attribute_set_name`) to the GraphQL schema for the products query.
 
 The simplified structure of the query schema to get products is:
 
@@ -99,4 +101,4 @@ class ProductAttributeSetNameResolver implements ResolverInterface
 
 *  [Define the GraphQL schema for a module]({{ page.baseurl }}/graphql/develop/create-graphqls-file.html)
 *  [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html)
-
+*  [Declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema.html)
