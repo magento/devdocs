@@ -20,6 +20,10 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 -  {:.fix}**[PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Updated the {{site.data.var.mcp}} package to add this critical patch, published on February 12, 2020. This patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
 
+-  {:.fix}**Updated the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) for Magento Open Source v2.3.1 and 2.3.2**-Fixed a syntax error in the `composer.json` file.
+
+-  {:.fix}**Updated the `composer.json` constraints for compatibility with upcoming Magento releases**–Updated the `symfony` and `semver` version constraints for compatibility with Magento 2.4 and later.<!--MAGECLOUD-5127-->
+
 ## v1.0.1
 
 We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
