@@ -3,8 +3,7 @@ subgroup: howtos
 group: ui-components-guide
 title: Configure the TinyMCE editor
 ---
-The config of the TinyMCE editor builds by `CompositeConfigProvider` 
-
+The config of the TinyMCE editor builds by `CompositeConfigProvider`
 For example:
 
 ```xml
@@ -78,6 +77,5 @@ See a list of possibly TinyMCE settings on their [website](https://www.tinymce.c
 
 You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.
 
-First way is implementing `DefaultConfigProvider` class implements `Magento\Framework\Data\Wysiwyg\ConfigProviderInterfacemethod` in the custom module and implement the method `getConfig` where specify necessary configuration. 
-
+First way is implementing `DefaultConfigProvider` class implements `Magento\Framework\Data\Wysiwyg\ConfigProviderInterfacemethod` in the custom module and implement the method `getConfig` where specify necessary configuration.
 Other way the developers can use the after plugin for add or overwrite the configuration values.
