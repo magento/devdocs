@@ -16,7 +16,7 @@ To ensure that the `DataServices.js` file is loading on all site pages:
 1. Reload the page.
 1. You should see `ds.js` or `ds.min.js` in the **Name** column.
 
-    ![]({{ page.baseurl }}/recommendations/images/filter-ds.png)
+    ![Filter DataServices]({{ page.baseurl }}/recommendations/images/filter-ds.png)
 
 {:.procedure}
 To ensure events are firing on pages across your site (home, product, checkout, and so on):
@@ -27,7 +27,7 @@ To ensure events are firing on pages across your site (home, product, checkout, 
 1. Reload the page.
 1. You should see calls under `tp2` in the **Name** column.
 
-    ![]({{ page.baseurl }}/recommendations/images/filter-tp2.png)
+    ![Filter tp2]({{ page.baseurl }}/recommendations/images/filter-tp2.png)
 
 ## Verify using Snowplow Chrome extension
 
@@ -41,11 +41,11 @@ Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.go
 
 1. Under the **Event** column, select **Structured Event**.
 
-1. Scroll down and until you see **Context Data _n_**. Look for the storefront instance in the **Schema**.
+1. Scroll down until you see **Context Data _n_**. Look for the storefront instance in the **Schema**.
 
 1. Verify that the [SaaS Environment ID]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas), [Instance ID]({{ page.baseurl }}/recommendations/configure.html#envid), and [Environment value]({{ page.baseurl }}/recommendations/configure.html#configureenv) are set correctly.
 
-    ![]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
+    ![Snowplow filter]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
 If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
 
@@ -53,4 +53,4 @@ If you run into any problems verifying that the events are collected and sent to
 
 To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger.
 
-![]({{ page.baseurl }}/recommendations/images/event-metric.png)
+![Events for metrics]({{ page.baseurl }}/recommendations/images/event-metric.png)

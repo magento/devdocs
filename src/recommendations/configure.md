@@ -17,25 +17,25 @@ The Catalog SaaS Export module is a requirement to successfully use the [Product
 {:.bs-callout-info}
 To ensure the MageID and API key are linked, the user whose MageID was provided at [sign-up]({{ page.baseurl }}/recommendations/product-recs.html#install) needs to be the same user who generates the API key. If you must change the MageID that was used, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
 
-1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com/).
+1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com/ target="_blank").
 
 1. Under the **Magento** tab, select **API Portal** on the sidebar.
 
 1. Generate and copy the API key for **Production**.
 
-    ![]({{ page.baseurl }}/recommendations/images/get-api-key.png)
+    ![Generate API key]({{ page.baseurl }}/recommendations/images/get-api-key.png)
 
-1. In the Magento Admin, choose **Stores** > **Settings** > **Configuration** > **Services** > **Magento Services**.
+1. In the Magento Admin, choose **Stores** > Settings > **Configuration** > **Services** > **Magento Services**.
 
 1. In the **API Keys** section, paste your key value into the **Production Api Key** field regardless of whether you are in a production environment or non-production environment.
 
-    ![]({{ page.baseurl }}/recommendations/images/cfg-api-key.png)
+    ![Set API key]({{ page.baseurl }}/recommendations/images/cfg-api-key.png)
 
 ## Configure your environment {#configureenv}
 
 You must configure your environment to ensure the data being collected is coming from a production storefront rather than a storefront under test.
 
-1. On the Admin sidebar, choose **Stores** > **Settings** > **Configuration** > **Services** > **Magento Services**.
+1. On the Admin sidebar, choose **Stores** > Settings > **Configuration** > **Services** > **Magento Services**.
 
 1. Expand the **Services ID** section.
 
@@ -43,7 +43,7 @@ You must configure your environment to ensure the data being collected is coming
 
 ## Enter your SaaS Environment ID {#envid}
 
-1. On the Admin sidebar, choose **Stores** > **Settings** > **Configuration** > **Services** > **Magento Services**.
+1. On the Admin sidebar, choose **Stores** > Settings > **Configuration** > **Services** > **Magento Services**.
 
 1. Expand the **Services ID** section.
 

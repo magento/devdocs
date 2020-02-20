@@ -7,7 +7,7 @@ Before you deploy recommendations to your production environment, you should tes
 
 When testing recommendations in a non-production environment, it is likely you will not have any behavioral data from shoppers. Therefore, the best recommendations to test are those that do not rely on any behavioral data or data that requires inputs.
 
-The following orders the recommendation types that are ideal for testing in a non-production environment:
+The following recommendation types are listed in the recommended order when testing in a non-production environment:
 
 1. **More like this** - Does not require any input data. Uses a direct content similarity match.
 1. **Most popular** - Requires minimal input data. Testers need to view products.
