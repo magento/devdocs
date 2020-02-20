@@ -7,11 +7,11 @@ Product recommendations are a powerful marketing tool you can use to increase co
 
 Using recommendations on your storefront requires:
 
-1. Behavioral data-Needed to compute the product affinities used as the basis for recommendations
+1. Behavioral data - Needed to compute the product affinities used as the basis for recommendations.
 
-1. Catalog data-Needed to correctly reflect product metadata (name, price, availability, and so on) in recommendations
+1. Catalog data - Needed to correctly reflect product metadata (name, price, availability, and so on) in recommendations
 
-1. Admin UI-Needed to configure recommendations on your storefront
+1. Admin UI - Needed to configure recommendations on your storefront
 
 ## Install Product Recommendations {#install}
 
@@ -25,11 +25,11 @@ For the Early Access Program, deploying recommendations to your site requires th
    composer require magento/product-recommendations
    ```
 
-   The `product-recommendations` module installs the following dependencies:
+   The `product-recommendations` module requires the following dependencies:
 
-    -  **module-data-services**—This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time.
+    -  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, adds-to-cart, and checkouts. Magento does not collect personally identifiable information. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time.
 
-    -  **saas-export**—This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
+    -  **saas-export** — This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
 
         {:.bs-callout-info}
         If you prefer, you can install the above modules explicitly using composer: `composer require magento/module-data-services` and `composer require magento/saas-export`
