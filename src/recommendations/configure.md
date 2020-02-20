@@ -17,7 +17,7 @@ The Catalog SaaS Export module is a requirement to successfully use the [Product
 {:.bs-callout-info}
 To ensure the MageID and API key are linked, the user whose MageID was provided at [sign-up]({{ page.baseurl }}/recommendations/product-recs.html#install) needs to be the same user who generates the API key. If you must change the MageID that was used, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
 
-1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com/ target="_blank").
+1. Log in to your Magento account at [https://account.magento.com](https://account.magento.com/){:target="_blank"}.
 
 1. Under the **Magento** tab, select **API Portal** on the sidebar.
 
