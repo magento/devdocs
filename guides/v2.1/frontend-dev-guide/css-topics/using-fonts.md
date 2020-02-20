@@ -43,7 +43,10 @@ To ensure the stability of your customizations and prevent upgrades from overwri
         font-weight: 300;
         font-style: normal
     }
-    ```
+    ``` 
+
+3. Also you have to edit app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml file to declare your fonts, otherwise Magento 2.3 will not be able to create the static/web/fonts/ directory. Read more [here](app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml)
+  
 ## Overview of Magento's Icon CSS
 
 In addition to including custom fonts in your Magento Blank theme, you also can include custom fonts for any icons in the Blank theme. The icon font files for the Magento Blank theme are located in the `lib/web/fonts/Blank-Theme-Icons` directory. The `lib/web/css/source/lib/variables/_typography.less` file defines the font icon path and name for the icons and the `web/css/source/_icons.less` file uses these files to define the icon font face itself, which should be used in all CSS declarations.
