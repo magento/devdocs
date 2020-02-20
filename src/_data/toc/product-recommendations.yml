@@ -1,33 +1,37 @@
 label: Product Recommendations
 pages:
-- label: Get Started
-  url: /recommendations/install.html
+- label: Product Recommendations
+  url: /recommendations/product-recs.html
   versionless: true
 
-- label: Configure
+- label: Configure Recommendations
   url: /recommendations/configure.html
   versionless: true
 
-- label: Events
+- label: Recommendation Events
   url: /recommendations/events.html
   versionless: true
 
-- label: Verify
-  url: /recommendations/testing.html
+- label: Verify Event Collection
+  url: /recommendations/verify.html
   versionless: true
 
-- label: Troubleshoot
+- label: Test Recommendations
+  url: /recommendations/test.html
+  versionless: true
+
+- label: Troubleshoot Recommendations
   url: /recommendations/troubleshooting.html
   versionless: true
 
-- label: Customize
+- label: Customize Recommendations Template
   url: /recommendations/customize.html
   versionless: true
 
-- label: SDK
+- label: Recommendations SDK
   url: /recommendations/recs-api.html
   versionless: true
 
-- label: Support
+- label: Get Support
   url: /recommendations/support.html
   versionless: true

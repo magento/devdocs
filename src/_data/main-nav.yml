@@ -234,7 +234,7 @@
       url: /payments-integrations/bk-payments-integrations.html
 
     - label: Product Recommendations
-      url: /recommendations/install.html
+      url: /recommendations/product-recs.html
       versionless: true
 
     - label: Staging

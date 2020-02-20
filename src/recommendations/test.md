@@ -1,13 +1,13 @@
 ---
 group: product-recommendations
-title: Testing before deploying to production
+title: Test Recommendations
 ---
 
 Before you deploy recommendations to your production environment, you should test on a non-production environment to ensure everything is working as expected.
 
 When testing recommendations in a non-production environment, it is likely you will not have any behavioral data from shoppers. Therefore, the best recommendations to test are those that do not rely on any behavioral data or data that requires inputs.
 
-The following lists the recommendation types based on the least to most required input data:
+The following orders the recommendation types that are ideal for testing in a non-production environment:
 
 1. **More like this** - Does not require any input data. Uses a direct content similarity match.
 1. **Most popular** - Requires minimal input data. Testers need to view products.
@@ -24,6 +24,6 @@ The following lists the recommendation types based on the least to most required
 
 ### Caveats
 
--  You can use generated data, such as views, adds-to-cart, purchases, etc on your testing environment as identified as your non-production SaaS env ID we provided.
+-  You can use generated data, such as views, adds-to-cart, purchases, and so on in your testing environment as identified by the non-production SaaS Environment ID Magento provides.
 
--  Because you will not have behavioral data at scale, input data for computing product associations is sparse, we still send data to sensi to compute the ML models and provide recs based on data you've generated within this environment.
+-  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensi to compute the machine learning models and provide recommendations based on data you generated within this environment.
