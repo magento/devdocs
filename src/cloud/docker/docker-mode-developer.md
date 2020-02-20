@@ -89,7 +89,7 @@ To launch the Docker environment in developer mode:
       ```bash
       docker-compose run deploy cloud-deploy
       ```
-      
+
       ```bash
       docker-compose run deploy magento-command deploy:mode:set developer
       ```
