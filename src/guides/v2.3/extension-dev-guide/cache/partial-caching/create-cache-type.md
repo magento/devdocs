@@ -18,8 +18,8 @@ Declare a new cache type in the `etc/cache.xml` file with the following attribut
 | Attribute | Required? | Description |
 | --- | --- | --- |
 | `name` | Yes | A unique cache type ID |
-| `translate` | No | Parameters that would be translated during to render "Cache Management" page |
-| `instance` | Yes | The cache type model |
+| `translate` | No | Parameters (described below) that will be translated on the "Cache Management" page |
+| `instance` | Yes | The cache type model class |
 
 Also, cache type configuration has the following required parameters:
 
