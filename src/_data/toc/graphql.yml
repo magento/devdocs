@@ -27,14 +27,14 @@ pages:
         - label: Resolvers
           url: /graphql/develop/resolvers.html
 
+        - label: Extend an existing GraphQL schema
+          url: /graphql/develop/extend-existing-schema.html
+
         - label: Identity class
           url: /graphql/develop/identity-class.html
 
         - label: Create a custom urlResolver service
           url: /graphql/develop/create-custom-url-resolver.html
-
-        - label: Extend an existing GraphQL schema
-          url: /graphql/develop/extend-existing-schema.html
 
         - label: Debugging GraphQL queries
           url: /graphql/develop/debugging.html
