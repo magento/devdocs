@@ -77,7 +77,7 @@ The FPM container includes the following volumes:
    -  `/app/pub/media`
 
 {:.bs-callout-tip}
-You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override] file. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
+You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
 For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 

@@ -7,11 +7,11 @@ Product recommendations are a powerful marketing tool you can use to increase co
 
 Using recommendations on your storefront requires:
 
-1. Behavioral data-Needed to compute the product affinities used as the basis for recommendations
+1. Behavioral data - Needed to compute the product affinities used as the basis for recommendations.
 
-1. Catalog data-Needed to correctly reflect product metadata (name, price, availability, and so on) in recommendations
+1. Catalog data - Needed to correctly reflect product metadata (name, price, availability, and so on) in recommendations
 
-1. Admin UI-Needed to configure recommendations on your storefront
+1. Admin UI - Needed to configure recommendations on your storefront
 
 ## Install Product Recommendations {#install}
 

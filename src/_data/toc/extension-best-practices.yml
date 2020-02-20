@@ -66,3 +66,6 @@ pages:
 
         - label: Creating a custom widget
           url: /ext-best-practices/tutorials/custom-widget.html
+
+        - label: Creating an Access Control List (ACL) rule
+          url: /ext-best-practices/tutorials/create-access-control-list-rule.html

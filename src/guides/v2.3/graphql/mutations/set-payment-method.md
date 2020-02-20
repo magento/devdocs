@@ -112,3 +112,14 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
+`Required parameter "cart_id" is missing.` | The value specified in the `cart_id` argument is empty.
+`Required parameter "code" for "payment_method" is missing.` | The value specified in the `code` argument is empty.
+`The current user cannot perform operations on cart "XXX"` | An unauthorized user (guest) tried to set a payment method for an order on behalf of an authorized user (customer), or a customer tried to set a payment method for an order on behalf of another customer.
+`The requested Payment Method is not available.` | Specified in the `payment_method` argument payment method is disabled or does not exist.
+`The shipping address is missing. Set the address and try again.` | You ran `setPaymentMethodOnCart` mutation before [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-method.html). Set a shipping address first. [GraphQL checkout tutorial](https://devdocs.magento.com/guides/v2.3/graphql/tutorials/checkout/index.html) shows the order placement sequence.
