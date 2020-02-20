@@ -17,8 +17,9 @@ The `{{site.data.var.mcp}}` package uses the following version sequence: `<major
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
 
 ## v1.0.2
+*Release date: February 24, 2020*<br/>
 
--  {:.fix}**[PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Updated the {{site.data.var.mcp}} package to add this critical patch, published on February 12, 2020. This patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
+-  {:.fix}**Added the [PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Published on February 12, 2020,  this patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
 
 -  {:.fix}**Updated the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) for Magento Open Source v2.3.1 and 2.3.2**-Fixed a syntax error in the `composer.json` file.
 
@@ -27,6 +28,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 -  {:.fix}**Compatibility fix to support the `{{site.data.var.ct}}` package**–Updated constraints in `composer.json` for compatibility with `{{site.data.var.ct}}` 2002.0.22 and later 2002.0.x releases.
 
 ## v1.0.1
+*Release data: February 6, 2020*<br/>
 
 We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
 
@@ -34,15 +36,14 @@ This release includes the following updates:
 
 -  {:.fix}<!--MAGECLOUD-4606-->**Updated patches to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.
 
--  {:.fix}<!--MAGECLOUD-4847-->**Updated patch for Elasticsearch catalog pagingation fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp}} v1.0 with a more effective fix.
-
-Catalog pagination does not work on Elasticsearch 6.x
+-  {:.fix}<!--MAGECLOUD-4847-->**Updated patch for Elasticsearch catalog pagination fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp}} v1.0 with a more effective fix.
 
 -  {:.fix}<!--MAGECLOUD-4884-->**Updated the Magento Page Builder patches**–In {{site.data.var.mcp-prod}} 1.0.0, we bundled Page Builder patches to address a known Page Builder remote code execution (RCE) vulnerability, with the initial fix based on Magento 2.3.3. We have updated these patches with a more stable implementation based on Magento 2.3.4., which includes multiple optimizations for fixing the issue.
 
    If you have the {{site.data.var.mcp}} 1.0.0 package, you are still protected from the Page Builder RCE vulnerability issues. If you update to {{site.data.var.mcp}} 1.0.1 or later, you have a better implementation of the same fix.
 
 ## v1.0.0
+*Release date: November 14, 2019*<br/>
 
 This is the first release of the [`magento/magento-cloud-patches`](https://github.com/magento/magento-cloud-patches) package, which is a new dependency for the `{{ site.data.var.ct }}` package version 2002.0.22 or later releases.
 
