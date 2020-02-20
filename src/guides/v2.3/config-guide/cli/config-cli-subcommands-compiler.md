@@ -39,22 +39,22 @@ In some cases, you might want to compile code before you install the Magento app
 
 1. Enable the modules.
 
-    ```bash
-    bin/magento module:enable --all [-c|--clear-static-content]
-    ```
+   ```bash
+   bin/magento module:enable --all [-c|--clear-static-content]
+   ```
 
-    Use the `[-c|--clear-static-content]` option to clear [static content](https://glossary.magento.com/static-content). This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
+   Use the `[-c|--clear-static-content]` option to clear [static content](https://glossary.magento.com/static-content). This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
 
-    See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
+   See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 1. Compile the code.
 
-    ```bash
-    bin/magento setup:di:compile
-    ```
+   ```bash
+   bin/magento setup:di:compile
+   ```
 
-    ```terminal
-    Generated code and dependency injection configuration successfully.
-    ```
+   ```terminal
+   Generated code and dependency injection configuration successfully.
+   ```
 
 To compile code without a database, see [Deploy static view files without installing Magento]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db).

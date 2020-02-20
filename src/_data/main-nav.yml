@@ -29,7 +29,7 @@
           url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Launch Docker
+        - label: Configure and launch Docker
           url: /cloud/docker/docker-config.html
           versionless: true
 

@@ -50,9 +50,9 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 1. To determine if SELinux is enabled, use the following command:
 
-    ```bash
-    getenforce
-    ```
+   ```bash
+   getenforce
+   ```
 
   `Enforcing` displays to confirm that SELinux is running.
 
