@@ -64,4 +64,4 @@ If needed, you can [uninstall the product-recommendations module]({{ site.baseur
 
 ## A note about the documentation
 
-This documentation is ever evolving. As we develop new and refine existing features, expect to see those updates reflected here. If you notice errors or omissions in the documentation, please feel free to suggest an update using the "Edit this page on GitHub" link in the upper right side of each page.
+This documentation is constantly evolving. As we develop new and refine existing features, expect to see those updates reflected here. If you notice errors or omissions in the documentation, please feel free to suggest an update using the "Edit this page on GitHub" link in the upper right side of each page.
