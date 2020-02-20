@@ -24,6 +24,6 @@ The following orders the recommendation types that are ideal for testing in a no
 
 ### Caveats
 
--  You can use generated data, such as views, adds-to-cart, purchases, and so on in your testing environment as identified by the non-production SaaS Environment ID Magento provides.
+-  You can use generated data, such as views, products added to a cart, and checkouts, and so on in your testing environment as identified by the non-production SaaS Environment ID Magento provides.
 
 -  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensi to compute the machine learning models and provide recommendations based on data you generated within this environment.
