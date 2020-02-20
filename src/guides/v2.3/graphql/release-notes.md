@@ -15,7 +15,7 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-##  {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
 
 -  {:.fix} Custom attributes that are to be used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to **Yes**.
 
