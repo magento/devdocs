@@ -5,7 +5,7 @@ contributor_name: Adarsh Manickam
 contributor_link: https://github.com/drpayyne
 ---
 
-You can extend the default Magento GraphQL schema to add attributes and data types, modify existing resolver behavior, and add features using other extension points. GraphQL uses _stitching_ to assemble a single unified schema out of the many schemas defined in individual modules. All `schema.graphqls` files are stitched together to a single schema file. In this process, all nodes with the same type (type, interface, enum, etc.) and name are stitched together and recursively extended/overridden. This process is similar to how XML merging works.
+You can extend the default Magento GraphQL schema to add attributes and data types, modify existing resolver behavior, and add features using other extension points. GraphQL uses _stitching_ to assemble a single unified schema out of the many schemas defined in individual modules. All `schema.graphqls` files are stitched together to a single schema. In this process, all nodes with the same type (such as type, interface, and enum) and name are stitched together and recursively extended/overridden. This process is similar to how XML merging works.
 
 ## Extend the schema
 
@@ -52,9 +52,10 @@ interface ProductInterface {
 }
 ```
 
-The above schema file is merged with the schema present at `Magento_CatalogGraphQl/etc/schema.graphqls` which contains the original `ProductInterface` object. Let's take the case of the two fields described above:
+The above schema file is merged with the schema present at `Magento_CatalogGraphQl/etc/schema.graphqls` which contains the original `ProductInterface` object. Our schema file contains the following fields:
 
--  The `attribute_set_id` field is already present in the original schema, so the field described in our new schema will override the field present in the `ProductInterface` object. We are changing only the `@doc` annotation content here to demonstrate how the process works.
+-  The `attribute_set_id` field is already present in the original schema, so the field described in our new schema will override the field present in the `ProductInterface` object. This example only changes the `@doc` annotation content to demonstrate how the process works.
+
 -  The `attribute_set_name` field is not present in the orignal schema, so the field is added to the `ProductInterface` object by extending it. For our new field, we set a description and a resolver class to resolve the data to be returned.
 
 ## Resolve the field value
@@ -97,7 +98,7 @@ class ProductAttributeSetNameResolver implements ResolverInterface
 }
 ```
 
-## Related Topics
+## Related topics
 
 -  [Define the GraphQL schema for a module]({{ page.baseurl }}/graphql/develop/create-graphqls-file.html)
 -  [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html)
