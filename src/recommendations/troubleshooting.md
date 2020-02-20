@@ -34,8 +34,6 @@ For issues related to the Catalog SaaS Export module:
 
 -  Refresh Configuration cache. Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache.
 
--  Confirm the .
-
 -  Confirm there is data in the `catalog_data_exporter_products` database table.
 
 ### Events
