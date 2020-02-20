@@ -3,7 +3,7 @@ group: product-recommendations
 title: Product Recommendations
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensi, they result in highly engaging, relevant, and personalized experiences for the shopper. Magento and Adobe Sensi do not collect personally identifiable information.
+Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensei, they result in highly engaging, relevant, and personalized experiences for the shopper. Magento and Adobe Sensei do not collect personally identifiable information.
 
 Magento Commerce will soon bring the power of creating and managing smart product recommendations to its merchant community. Marketing managers will be able to quickly create, manage, and deploy recommendations across their store views directly from the Magento Admin panel.
 
@@ -23,7 +23,7 @@ Product recommendations require the following data:
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 
-Adobe Sensi aggregates the behavioral data and combines it with the catalog data to create product recommendations that are engaging, relevant, and personalized.
+Adobe Sensei aggregates the behavioral data and combines it with the catalog data to create product recommendations that are engaging, relevant, and personalized.
 
 To collect this data, you must install the `product-recommendations` module.
 
@@ -37,7 +37,7 @@ To collect this data, you must install the `product-recommendations` module.
 
    The `magento/product-recommendations` module requires the following dependencies:
 
-   -  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensi do not collect personally identifiable information.
+   -  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensei do not collect personally identifiable information.
 
    -  **saas-export** — This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
 
