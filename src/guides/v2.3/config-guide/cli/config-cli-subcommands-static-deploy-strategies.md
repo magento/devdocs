@@ -160,6 +160,6 @@ require.config({
 
 ## Tips for extension developers
 
-To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213).
+To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Asset/Repository.php#L211-L244).
 
 Do not use [URL](https://glossary.magento.com/url) concatenations to avoid problems with [static files](https://glossary.magento.com/static-files) being not found and not displayed during page rendering.
