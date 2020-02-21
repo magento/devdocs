@@ -9,6 +9,8 @@ functional_areas:
 
 Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
 
+{%include cloud/note-docker-config-reference-link.md%}
+
 {:.procedure}
 To launch the Docker environment in developer mode:
 

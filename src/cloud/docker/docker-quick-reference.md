@@ -6,6 +6,8 @@ functional_areas:
   - Docker
 ---
 
+{%include cloud/note-docker-config-reference-link.md%}
+
 ## docker-compose
 
 Action | Command
@@ -39,8 +41,8 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
+| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode)         | `--mode`, `-m`   | production, developer
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-syncing-data.html) | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
 See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
@@ -80,3 +82,4 @@ Destroy containers | `down`
 Destroy, re-create, and start containers | `up`
 
 [Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[Configure Docker]: {{site.baseurl}}/cloud/docker/docker-config.html

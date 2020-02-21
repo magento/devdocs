@@ -3,6 +3,8 @@ group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
   - /cloud/before/integration-ip-addr.html
+  - /cloud/howtos/environment-tutorial-env-merge.html
+  - /cloud/howtos/how-to.html
 functional_areas:
   - Cloud
 ---
@@ -50,15 +52,15 @@ After completing development, you can merge this branch to the parent:
 
 1. Add, commit, and push changes to the environment.
 
-    ```bash
-    git add -A && git commit -m "Commit message" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "Commit message" && git push origin <branch-name>
+   ```
 
 1. Merge with the parent environment:
 
-    ```bash
-    magento-cloud environment:merge <environment-ID>
-    ```
+   ```bash
+   magento-cloud environment:merge <environment-ID>
+   ```
 
 ## Delete an environment {#env-delete}
 
@@ -78,51 +80,51 @@ To delete an environment:
 
 1. Fetch updates from the remote server.
 
-    ```bash
-    git fetch
-    ```
+   ```bash
+   git fetch
+   ```
 
 1. Delete the environment branch.
 
-    ```bash
-    magento-cloud environment:delete <environment-ID>
-    ```
+   ```bash
+   magento-cloud environment:delete <environment-ID>
+   ```
 
-    Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
+   Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
 
-    ```bash
-    magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
-    ```
+   ```bash
+   magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
+   ```
 
 1. Respond to the prompts to delete the local environment and the corresponding remote environment.
 
-    ```terminal
-    The environment <environment-ID> is currently active: deleting it will delete all associated data.
-    Are you sure you want to delete the environment <environment-ID>? [Y/n]
-    ```
-    {:.no-copy}
+   ```terminal
+   The environment <environment-ID> is currently active: deleting it will delete all associated data.
+   Are you sure you want to delete the environment <environment-ID>? [Y/n]
+   ```
+   {:.no-copy}
 
-    Deleting the environment places it in an _inactive_ state.
+   Deleting the environment places it in an _inactive_ state.
 
-    ```terminal
-    Delete the remote Git branch too? [Y/n]
-    ```
+   ```terminal
+   Delete the remote Git branch too? [Y/n]
+   ```
 
-    Deleting the remote Git branch removes the environment from the project.
+   Deleting the remote Git branch removes the environment from the project.
 
 1. Wait for the environment to delete.
 
-    ```terminal
-    Deleting environment <environment-ID>
-    Waiting for the activity...
-      Deleting environment <project-id>-<environment-ID>-xxxxxx
+   ```terminal
+   Deleting environment <environment-ID>
+   Waiting for the activity...
+     Deleting environment <project-id>-<environment-ID>-xxxxxx
 
-      [============================]  1 min (complete)
-    Activity ID succeeded
-    Deleted remote Git branch <environment-ID>
-    Run git fetch --prune to remove deleted branches from your local cache.
-    ```
-    {:.no-copy}
+     [============================]  1 min (complete)
+   Activity ID succeeded
+   Deleted remote Git branch <environment-ID>
+   Run git fetch --prune to remove deleted branches from your local cache.
+   ```
+   {:.no-copy}
 
 {:.bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.

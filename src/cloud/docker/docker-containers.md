@@ -39,7 +39,7 @@ See [Docker CLI containers] for details.
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
 | [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
-| [web][web-container] | NGNIX | `--nginx` | 1.9, latest |
+| [web][web-container] | NGINX | `--nginx` | 1.9, latest |
 
 The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 

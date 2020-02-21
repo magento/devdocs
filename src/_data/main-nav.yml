@@ -29,7 +29,7 @@
           url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Launch Docker
+        - label: Configure and launch Docker
           url: /cloud/docker/docker-config.html
           versionless: true
 
@@ -234,7 +234,7 @@
       url: /payments-integrations/bk-payments-integrations.html
 
     - label: Product Recommendations
-      url: /recommendations/install.html
+      url: /recommendations/product-recs.html
       versionless: true
 
     - label: Staging
