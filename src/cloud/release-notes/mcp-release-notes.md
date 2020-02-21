@@ -26,7 +26,7 @@ This release includes the following updates:
 
    -  {:.fix}Fixes an issue with some cron jobs not running due to an incorrect status value in the cron_schedule table. Now, we use the Magento lock framework to check and update cron job status instead of using the cron_schedule table. Cron jobs that have ended with an error status are retried during the next cron:run instead of waiting 24 hours.
 
-   -  {:.new}Adds a retry operation to avoid deadlock during updates to the data in the `cron_schedule` table.
+   -  {:.new}Adds a _retry_ operation to avoid deadlock during updates to the data in the `cron_schedule` table.
 
 -  {:.fix}**Updated patches to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.<!--MAGECLOUD-4606-->
 
