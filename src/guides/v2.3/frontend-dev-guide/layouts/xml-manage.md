@@ -303,7 +303,7 @@ A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] c
 <referenceContainer name="content.bottom">
     <block class="Magento\Cms\Block\Block" name="block_identifier">
         <arguments>
-            <!- Here is the CMS Block id -->
+            <!-- Here is the CMS Block id -->
             <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
         </arguments>
     </block>
@@ -383,7 +383,7 @@ Extending layout:
   <arguments>
     <!-- Modified block argument -->
     <argument name="label" xsi:type="string">New Block Label</argument>
-    <!- Newly added block argument -->
+    <!-- Newly added block argument -->
     <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
   </arguments>
 </referenceBlock>

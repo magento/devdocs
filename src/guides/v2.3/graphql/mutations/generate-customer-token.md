@@ -61,8 +61,8 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`Specify the "email" value.` | The value specified in the `email` attribute is empty.
-`Specify the "password" value.` | The value specified value in the `password` attribute is empty.
+`Specify the "email" value.` | The value specified in the `email` argument is empty.
+`Specify the "password" value.` | The value specified value in the `password` argument is empty.
 `The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.` | Authentication error. The email or password is incorrect, or the customer account is locked.
 
 ## Related topics
