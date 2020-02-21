@@ -49,12 +49,12 @@ The `deleteCustomerAddress` mutation returns a Boolean value that indicates whet
 
 Error | Description
 --- | ---
-`Address "id" value should be specified` | The `id` attribute is zero.
-`Could not find a address with ID "XXX"` | The customer address specified in the `id` attribute does not exist.
+`Address "id" value should be specified` | The `id` argument is zero.
+`Could not find a address with ID "XXX"` | The customer address specified in the `id` argument does not exist.
 `Customer Address XXX is set as default billing address and cannot be deleted` | You cannot delete a default billing address.
 `Customer Address XXX is set as default shipping address and cannot be deleted` | You cannot delete a default shipping address.
-`Field "deleteCustomerAddress" argument "id" requires type Int!, found "XXX".` | The specified `id` attribute value has the wrong type.
-`Syntax Error: Expected Name, found )` | The `id` attribute was omitted or does not have a value.
+`Field "deleteCustomerAddress" argument "id" requires type Int!, found "XXX".` | The specified `id` argument value has the wrong type.
+`Syntax Error: Expected Name, found )` | The `id` argument was omitted or does not have a value.
 `The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
 
 ## Related topics

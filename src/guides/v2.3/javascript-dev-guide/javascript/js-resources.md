@@ -191,7 +191,7 @@ We should now be able to use the Slick library, for example, on any list that we
         'slick'
     ], function ($) {
         $(document).ready(function () {
-            $(".my_list").slick({
+            $(".my-list").slick({
                 dots: true,
                 infinite: true,
                 speed: 300,

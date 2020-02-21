@@ -4,6 +4,8 @@ title: Create and manage users
 functional_areas:
   - Cloud
   - Configuration
+redirect_from:
+  - /cloud/admin/admin-user-admin.html
 ---
 
 You can manage user access to {{ site.data.var.ece }} projects by assigning users one or more roles. You can add and manage user accounts for the entire project and permissions per available environment.
