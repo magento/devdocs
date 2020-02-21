@@ -25,7 +25,7 @@ Here is a brief summary of the most important labels:
 
 We also use version labels when appropriate (for example, 2.3.x).
 
-As a maintainer, we expect you to add or remove labels according to these guidelines. 
+As a maintainer, we expect you to add or remove labels according to these guidelines.
 
 See https://github.com/magento/devdocs/labels for all labels and their descriptions.
 
