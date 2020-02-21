@@ -135,7 +135,7 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html) widget is intialized on the `[data-role=example]` element as illustration):
 
 ```javascript
 $('[data-role=example]').accordion();
