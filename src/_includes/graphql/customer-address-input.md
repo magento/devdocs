@@ -9,7 +9,7 @@ Attribute |  Data Type | Description
 `country_code` | String | The customer's country
 `country_id` | String | Deprecated. Use `country_code` instead. The customer's country
 `custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Deprecated. Not applicable for GraphQL
-`customer_id` | Int | The customer ID
+`customer_id` | Int | Deprecated. This attribute is not applicable for GraphQL. The ID assigned to the customer
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `extension_attributes` | [CustomerAddressAttribute](#customerAddressAttributeInput) | Address extension attributes
