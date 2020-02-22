@@ -1,0 +1,127 @@
+label: Marketplace Seller Guide
+versionless: true
+pages:
+- label: Getting Started
+  url: /extensions/marketplace/getting-started.html
+  versionless: true
+  children:
+
+    - label: Before You Begin
+      url: /extensions/marketplace/before-you-begin.html
+
+    - label: Extension Quality Program
+      url: /extensions/marketplace/extension-quality-program.html
+
+- label: Your Seller Account
+  url: /extensions/marketplace/account-setup.html
+  versionless: true
+  children:
+
+    - label: Account Setup
+      url: /extensions/marketplace/account-overview.html
+
+    - label: Register as a Developer
+      url: /extensions/marketplace/developer-register.html
+
+- label: Marketplace Developer Portal
+  url: /extensions/marketplace/developer-portal.html
+  versionless: true
+  children:
+
+    - label: Account Information
+      url: /extensions/marketplace/profile-account.html
+
+    - label: Company Profile
+      url: /extensions/marketplace/profile-company.html
+
+    - label: Personal Profile
+      url: /extensions/marketplace/profile-personal.html
+
+- label: Build an Extension
+  url: /extensions/marketplace/extensions.html
+  versionless: true
+  children:
+
+    - label: Create a New Extension
+      url: /extensions/marketplace/extension-create.html
+
+    - label: Submit the Version
+      url: /extensions/marketplace/extension-version.html
+
+    - label: Complete the Extension
+      url: /extensions/marketplace/extension-complete.html
+  
+    - label: Add Extension Content
+      url: /extensions/marketplace/content.html
+
+    - label: Establish Your Brand
+      url: /extensions/marketplace/branding.html
+
+    - label: Define the Business Value
+      url: /extensions/marketplace/business-value.html
+
+- label: Build a Theme
+  url: /extensions/marketplace/themes.html
+  versionless: true
+ 
+- label: Build a Shared Package
+  url: /extensions/marketplace/shared-packages.html
+  versionless: true
+
+- label: Review Process
+  url: /extensions/marketplace/submit-for-review.html
+  versionless: true
+
+- label: Submit for Technical Review
+  url: /extensions/marketplace/submit-for-technical-review.html
+  versionless: true
+  children:
+
+    - label: Technical Review Guidelines
+      url: /extensions/marketplace/technical-review-guidelines.html
+
+    - label: Code Validation
+      url: /extensions/marketplace/code-validation.html
+
+- label: Submit for Marketing Review
+  url: /extensions/marketplace/submit-for-technical-review.html
+  versionless: true
+  children:
+
+    - label: Marketing Review Guidelines
+      url: /extensions/marketplace/marketing-review-guidelines.html
+
+    - label: Product Descriptions
+      url: /extensions/marketplace/product-descriptions.html
+
+    - label: Video Tips
+      url: /extensions/marketplace/video-tips.html
+
+    - label: Image Tips
+      url: /extensions/marketplace/image-tips.html
+
+    - label: Preview Your Submission
+      url: /extensions/marketplace/marketing-submission-preview.html
+
+- label: View the Results
+  url: /extensions/marketplace/review-report.html
+  versionless: true
+  children:
+
+    - label: Resubmit an Extension
+      url: /extensions/marketplace/extension-resubmit.html
+
+- label: Update Extension Information
+  url: /extensions/marketplace/extension-update-information.html
+  versionless: true
+
+- label: Manage Sales
+  url: /extensions/marketplace/sales.html
+  versionless: true
+  children:
+
+    - label: Revenue Share
+      url: /extensions/marketplace/revenue-share.html
+
+    - label: Analytics
+      url: /extensions/marketplace/analytics.html
