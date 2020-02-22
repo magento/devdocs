@@ -218,6 +218,9 @@
       url: /compliance/industry-compliance.html
       versionless: true
 
+    - label: Extensions Marketplace
+      url: /extensions/marketplace/getting-started.html
+
     - label: Inventory Management
       url: /inventory/index.html
       exclude_versions: ['2.0', '2.1', '2.2']
