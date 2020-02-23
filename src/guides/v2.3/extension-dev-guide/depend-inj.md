@@ -45,23 +45,34 @@ Service classes that do not exist in the codebase, such as [proxies], [factories
 The following code sample highlights the two types of dependency injections used in Magento:
 
 ```php
+
 namespace Magento\Backend\Model\Menu;
+
 class Builder
 {
+    /**
+     * @var \Magento\Backend\Model\Menu\Item\Factory
+     */
+    private $_itemFactory;
+
     /**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
      */
     public function __construct(
-        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
+        \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
     ) {
         $this->_itemFactory = $menuItemFactory;
     }
 
+    /**
+     * @param \Magento\Backend\Model\Menu\Builder\AbstractCommand
+     */
     public function processCommand(\Magento\Backend\Model\Menu\Builder\AbstractCommand $command) // API param
     {
         // processCommand Code
     }
 }
+
 ```
 
 ### Constructor injection

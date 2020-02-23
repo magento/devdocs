@@ -725,7 +725,7 @@ Syntax:
 @method [[static] return type] [name]([[type] [parameter]<, ...>]) [<description>]
 ```
 
-[See](https://docs.phpdoc.org/references/phpdoc/tags/method.html) for more information about the `@method` tag.
+See [PHP documentation](https://manual.phpdoc.org/HTMLSmartyConverter/PHP/phpDocumentor/tutorial_tags.method.pkg.html) for more information about the `@method` tag.
 
 ```php
 /**

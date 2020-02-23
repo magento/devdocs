@@ -1,6 +1,6 @@
 # DevDocs maintainer guidelines
 
-In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to devdocs maintainers. However, there are some additional guidelines specific to devdocs that will help you as a maintainer.
+In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some additional guidelines specific to DevDocs that will help you as a maintainer.
 
 ## General expectations
 
@@ -8,34 +8,32 @@ In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contri
    -  Review and approve or request changes
    -  Enforce the use of the issue/pull requests template
    -  Ask contributors to link to the code base to validate documentation updates when applicable
-   -  Ask contributors not to contribute to v2.0 docs
--  If a maintainer creates a pull request, it should be reviewed by another maintainer or DevDocs staff member
+   -  Ask contributors not to contribute to unsupported versions of documentation (for example, 2.0, 2.1, 2.2)
+-  If a DevDocs maintainer creates a pull request, it must be reviewed by another maintainer or DevDocs admin
 
 ## Labels
 
-Labels are important because they help us identify pull requests and ensure that contributors receive points and recognition. See [devdocs awards and points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs-awards-and-points).
+Labels are important because they help us identify pull requests by type and ensure that contributors receive points and recognition. See [DevDocs awards and points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs-awards-and-points).
 
 Here is a brief summary of the most important labels:
 
 -  `New Topic`: Entirely new documents
--  `Major Update`: Significant new info: new section in existing topic, etc.
--  `Technical`: Changes to technical content/code/processes/naming conventions (any change to technical content)
+-  `Major Update`: Significant new info (for example, a new section in an existing topic)
+-  `Technical`: Minor changes to technical content, code, processes, naming conventions
 -  `Editorial`: Typos, grammatical inconsistencies, or minor rewrites
 -  `small changes`: See [Small changes workflow](#small-changes-workflow)
 
-We also use version labels when appropriate.
+We also use version labels when appropriate (for example, 2.3.x).
 
-As a maintainer, we expect you to add or remove labels when appropriate.
+As a maintainer, we expect you to add or remove labels according to these guidelines.
 
 See https://github.com/magento/devdocs/labels for all labels and their descriptions.
 
 ## Testing
 
-Currently, we only test internal links. In the future, we plan to expand tests to include external links, markdown linting, and spell checking.
+We use a private CI/CD stack and do not provide access to it.
 
-We use private CI/CD stack and do not provide access to it.
-
-Every pull request to the `master` branch must pass tests before it can be merged. When a pull request is ready for tests, a member of the [`devdocs-admins`](https://github.com/orgs/magento/teams/devdocs-admins) team must add the test trigger phrase to the pull request as a comment. The trigger phrase is "_running tests_". By approving a pull request, you are signalling an admin that the pull request is ready for tests.
+Every pull request to the `master` branch must pass tests before it can be merged. When a pull request is ready for tests, a member of the [`devdocs-admins`](https://github.com/orgs/magento/teams/devdocs-admins) team must add the test trigger phrase to the pull request as a comment. The trigger phrase is "_running tests_". By approving a pull request, you are signalling to an admin that the pull request is ready for tests.
 
 ## Projects
 
@@ -49,21 +47,21 @@ We prefer Markdown over HTML (in most cases). You can use [kramdown](https://kra
 
 ## Small changes workflow
 
-Before merging a pull request to the `master` branch, it must pass automated testing. Testing takes about 30 minutes to complete for each pull request, so we created a workflow to save time for small changes.
+Before merging a pull request to the `master` branch, it must pass automated testing. Testing takes about 10 minutes to complete for each pull request, so we created a workflow to save time for small changes.
 
--  **Individual pull requests to `master`**—15 individual pull requests to `master` x 30 minutes per pull request = 7.5 hrs of testing time
--  **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 30 minutes = 30 minutes of testing time
+-  **Individual pull requests to `master`**—15 individual pull requests to `master` x 10 minutes per pull request = 2.5 hrs of testing time
+-  **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 10 minutes = 10 minutes of testing time
 
 This workflow is for typos, formatting issues, and minor text additions or deletions. It is not for substantial new content, changes to tables, new files, or files that have been moved.
 
-Periodically, we will create a pull request from `small_changes` to `master` and then run tests on that pull request to save time.
+Periodically, we will create a pull request from the `small_changes` branch to the `master` branch and then run tests on that pull request to save time.
 
 ### Process
 
 1. Review the pull request and either approve it or request changes.
-1. Apply the `Small changes` label if one of the following labels should also be applied:
+1. Apply the `small changes` label if one of the following labels should also be applied:
 
    -  `Editorial`
    -  `Technical`
 
-1. That's it! A devdocs-admin will run tests and merge.
+1. That's it! A DevDocs admin will run tests and merge.

@@ -27,6 +27,9 @@ pages:
         - label: Resolvers
           url: /graphql/develop/resolvers.html
 
+        - label: Extend an existing GraphQL schema
+          url: /graphql/develop/extend-existing-schema.html
+
         - label: Identity class
           url: /graphql/develop/identity-class.html
 
