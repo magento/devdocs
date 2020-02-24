@@ -91,11 +91,15 @@ To find your New Relic license key:
 1. Copy the license key.
 
 ### Second Option
+
 1. Open your account on New Relic Page [account page](https://login.newrelic.com/login).
+
 1. The License Key has in  [Account settings](https://rpm.newrelic.com/accounts/accountid)
        ![License key]({{ site.baseurl }}/common/images/cloud/cloud-project-details-new-relic-apikey.png){:width="650px"}
+
 1. The Api Key Insights has in  [Insights API](https://insights.newrelic.com/accounts/accountid/manage/api_keys)
        ![License key]({{ site.baseurl }}/common/images/cloud/cloud-project-details-new-relic-insightsapikey.png){:width="650px"}
+
 3. Configure data on Magento Admin "Admin -> Store -> Configuration -> General -> New Relic Reporting"
        ![License key]({{ site.baseurl }}/common/images/cloud/cloud-project-details-page-new-relic.png){:width="650px"}
 
