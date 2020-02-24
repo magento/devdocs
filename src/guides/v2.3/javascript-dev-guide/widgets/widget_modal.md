@@ -288,9 +288,17 @@ The modal widget has the following methods:
 
 Open the modal window.
 
+```javascript
+$('#css-selector').modal('openModal');
+```
+
 ### `closeModal()` {#modal_close}
 
 Close the modal window.
+
+```javascript
+$('#css-selector').modal('closeModal');
+```
 
 ### `keyEventSwitcher()` {#modal_keyEventSwitcher}
 

@@ -65,10 +65,26 @@ Attribute | Type | Description
 `default_label` | String | The label of the product on the default store
 `label` | String | The label of the product
 `store_label` | String | The label of the product on the current store
+`swatch_data` | [SwatchDataInterface](#swatchDataInterface) | Details about swatches that can be displayed for configurable product options
 `use_default_value` | Boolean | Indicates whether to use the default_label
 `value_index` | Int | A unique index number assigned to the configurable product option
 
-## Sample query
+### SwatchDataInterface {#swatchDataInterface}
+
+Swatches allow the shopper to view the color, texture, or other visual aspect of a configurable product. Magento displays these options as color, graphic, or text swatches.
+
+The following data types implement `SwatchDataInterface`:
+
+-  `ColorSwatchData`
+-  `ImageSwatchData`
+-  `TextSwatchData`
+
+Attribute | Type | Description
+--- | --- | ---
+`value` | String | The value of swatch item. The value is a hexadecimal color code, such as `#000000` (black), for color swatches, the image link for image swatches, or the display text for text swatches
+`thumbnail` | String | Applicable to image swatches only. The URL to thumbnail swatch image
+
+## Sample queries
 
 Add the following inline fragment to the output section of your `products` query to return information specific to configurable products:
 
@@ -80,11 +96,13 @@ Add the following inline fragment to the output section of your `products` query
 }
 ```
 
+### Extended example
+
 The following `products` query returns `ConfigurableProduct` information about the `WH01` configurable product, which is defined in the sample data.
 
 **Request:**
 
-```text
+```graphql
 {
   products(filter: { sku: { eq: "WH01" } }) {
     items {
@@ -148,9 +166,11 @@ The following `products` query returns `ConfigurableProduct` information about t
 }
 ```
 
-{% collapsible Response %}
+**Response:**
 
-``` text
+{% collapsible View response %}
+
+``` json
 {
   "data": {
     "products": {
@@ -684,6 +704,104 @@ The following `products` query returns `ConfigurableProduct` information about t
 ```
 
 {% endcollapsible %}
+
+### Return swatch information
+
+The following query returns the color and text swatches assigned to configurable product `MJ06`.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "MJ06"}}) {
+    items {
+        ... on ConfigurableProduct{
+      configurable_options{
+          values {
+            label
+            swatch_data{
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "configurable_options": [
+            {
+              "values": [
+                {
+                  "label": "Blue",
+                  "swatch_data": {
+                    "value": "#1857f7"
+                  }
+                },
+                {
+                  "label": "Green",
+                  "swatch_data": {
+                    "value": "#53a828"
+                  }
+                },
+                {
+                  "label": "Purple",
+                  "swatch_data": {
+                    "value": "#ef3dff"
+                  }
+                }
+              ]
+            },
+            {
+              "values": [
+                {
+                  "label": "XS",
+                  "swatch_data": {
+                    "value": "XS"
+                  }
+                },
+                {
+                  "label": "S",
+                  "swatch_data": {
+                    "value": "S"
+                  }
+                },
+                {
+                  "label": "M",
+                  "swatch_data": {
+                    "value": "M"
+                  }
+                },
+                {
+                  "label": "L",
+                  "swatch_data": {
+                    "value": "L"
+                  }
+                },
+                {
+                  "label": "XL",
+                  "swatch_data": {
+                    "value": "XL"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
 
 ## Related topics
 

@@ -15,6 +15,10 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
+
+-  {:.fix} Custom attributes used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to **Yes**.
+
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.4
 
 -  {:.new} **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.

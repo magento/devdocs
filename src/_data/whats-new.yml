@@ -1942,13 +1942,13 @@ entries:
   type: Major update
   date: April  2, 2019
   link: https://github.com/magento/devdocs/pull/4103
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
   date: April  1, 2019
   link: https://github.com/magento/devdocs/pull/4052
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
