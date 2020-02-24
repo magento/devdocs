@@ -45,11 +45,14 @@ pages:
     - label: Create a New Extension
       url: /extensions/marketplace/extension-create.html
 
-    - label: Submit the Version
+    - label: Specify the Version
       url: /extensions/marketplace/extension-version.html
 
-    - label: Complete the Extension
+    - label: Complete the Extension Information
       url: /extensions/marketplace/extension-complete.html
+
+    - label: Packaging v1.x Extensions
+      url: /extensions/marketplace/packaging-v1x-extensions.html    
   
     - label: Add Extension Content
       url: /extensions/marketplace/content.html
@@ -125,3 +128,7 @@ pages:
 
     - label: Analytics
       url: /extensions/marketplace/analytics.html
+
+- label: Reference
+  url: /extensions/marketplace/technical-reference.html
+  versionless: true
