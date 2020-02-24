@@ -5,9 +5,9 @@ redirect_from:
   - /recommendations/install.html
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensei, they result in highly engaging, relevant, and personalized experiences for the shopper. Magento and Adobe Sensei do not collect personally identifiable information.
+Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensei, they result in highly engaging, relevant, and personalized experiences for the shopper. 
 
-Magento Commerce will soon bring the power of creating and managing smart product recommendations to its merchant community. Marketing managers will be able to quickly create, manage, and deploy recommendations across their store views directly from the Magento Admin panel.
+Magento Commerce is bringing the power of creating and managing smart product recommendations to its merchant community. Marketing managers will be able to quickly create, manage, and deploy recommendations across their store views directly from the Magento Admin panel.
 
 ## Participate in the Early Access Program
 
@@ -21,13 +21,13 @@ Sign up through [this form](https://forms.gle/VE9VSSj9TMUTJ41u6). Within 24 hour
 
 Product recommendations require the following data:
 
--  **Behavioral** - Data from a shopper's engagement on your site, such as product views, items added to a cart, and purchases.
+-  **Behavioral** - Data from a shopper's engagement on your site, such as product views, items added to a cart, and purchases. Magento and Adobe Sensei do not collect personally identifiable information.
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 
 Adobe Sensei aggregates the behavioral data and combines it with the catalog data to create product recommendations that are engaging, relevant, and personalized.
 
-To collect this data, you must install the `product-recommendations` module.
+This data will automatically be captured when you install and configure the `product-recommendations` module.
 
 ### Install Product Recommendations {#install}
 
