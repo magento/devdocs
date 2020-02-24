@@ -4,8 +4,31 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb 24 11:03:56 2020
+updated: Mon Feb 24 12:34:55 2020
 entries:
+- description: Added the [Extend an existing GraphQL schema](https://devdocs.magento.com/guides/v2.3/graphql/develop/extend-existing-schema.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: New topic
+  date: February 21, 2020
+  link: https://github.com/magento/devdocs/pull/6678
+- description: Added the [Create a new layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-create.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6532
+- description: Added new tutorial for creating [ACL rule](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-access-control-list-rule.html).
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6453
+- description: Added the [Create validation rules](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-validation.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6556
 - description: Added a 'Example of use' section to [Create or extend configuration
     types](https://devdocs.magento.com/guides/v2.3/config-guide/config/config-create.html).
   versions: 2.3.3
@@ -19,6 +42,12 @@ entries:
   type: Major update
   date: February 13, 2020
   link: https://github.com/magento/devdocs/pull/6639
+- description: Added topic for [ColumnsEditorRecord](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-record.html)
+    UI component.
+  versions: 2.3.x
+  type: New topic
+  date: February 13, 2020
+  link: https://github.com/magento/devdocs/pull/6626
 - description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks)
     configuration for the Cloud guide.
   versions: 2.x
