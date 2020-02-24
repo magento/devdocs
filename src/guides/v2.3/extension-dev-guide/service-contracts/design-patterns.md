@@ -85,7 +85,7 @@ Repository interfaces must provide these functions:
    </tr>
    <tr>
       <td>
-         <p><code>get(id)</code></p>
+         <p><code>getById(id)</code></p>
       </td>
       <td>
          <p>Performs a database lookup by ID.</p>
