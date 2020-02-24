@@ -180,6 +180,10 @@ pages:
 
     - label: Form validation
       url: /frontend-dev-guide/validations/form-validation.html
+      children:
+
+        - label: Custom validation rule
+          url: /frontend-dev-guide/validations/custom-validation.html
 
     - label: Tools
       include_versions: ["2.2", "2.3"]
