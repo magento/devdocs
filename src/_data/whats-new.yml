@@ -29,15 +29,13 @@ entries:
   type: New topic
   date: February 18, 2020
   link: https://github.com/magento/devdocs/pull/6556
-- description: Added a 'Example of use' section to [Create or extend configuration
+- description: Added an 'Example of use' section to [Create or extend configuration
     types](https://devdocs.magento.com/guides/v2.3/config-guide/config/config-create.html).
   versions: 2.3.3
   type: Major update
   date: February 14, 2020
   link: https://github.com/magento/devdocs/pull/6539
-- description: Added information about the February 2020 PayPal Express Checkout issue
-    with region patch to the Magento 2.3.4 Release Notes. This patch provides a fix
-    for a significant PayPal-related vulnerability.
+- description: Added information about the February 2020 PayPal Express Checkout issue with region patch to the Magento 2.3.4 Release Notes. This patch provides a fix for a significant PayPal-related vulnerability. See the following release notes:<br>[Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html) \| [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)
   versions: 2.3.4
   type: Major update
   date: February 13, 2020
@@ -54,8 +52,7 @@ entries:
   type: Technical changes
   date: February 12, 2020
   link: https://github.com/magento/devdocs/pull/6633
-- description: Release documentation for the Magento Cloud Suite, which includes the
-    following packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
+- description: Added [release documentation](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html) for the Magento Cloud Suite, which includes the following packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
     1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components
     1.0.2
   versions: 2.x
