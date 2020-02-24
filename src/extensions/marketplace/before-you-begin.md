@@ -15,9 +15,9 @@ Before you begin the extension submission process, you need to have the followin
 
 - [License information]({% link extensions/marketplace/submit-for-technical-review.md %}) (license type or custom license name and link)
 
-- [Magento version compatibility]({% link extensions/marketplace/extension-new-version.md %})
+- [Magento version compatibility]({% link extensions/marketplace/extension-version.md %})
 
-- [Extension version number]({% link extensions/marketplace/extension-new-version.m %})
+- [Extension version number]({% link extensions/marketplace/extension-version.md %})
 
 ## Marketing Items
 
