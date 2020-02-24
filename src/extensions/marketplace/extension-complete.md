@@ -29,7 +29,7 @@ For technical information, see the Magento DevDocs for additional technical info
    -  Release notes in text format
    -  A user guide, installation guide, or reference manual in PDF format
 
-![]({% link extensions/marketplace/images/extension-prelp.png %}){: .zoom}
+![]({% link extensions/marketplace/images/extension-prep.png %}){: .zoom}
 _Building and Submitting an Extension_
 
 [1]: https://github.com/squizlabs/PHP_CodeSniffer
