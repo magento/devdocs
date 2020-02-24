@@ -4,11 +4,31 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu Feb 6 20:18:03 2020
+updated: Mon Feb 24 11:03:56 2020
 entries:
-- description: Added release notes and documentation for the following Magento
-    Cloud Suite packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
-    1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components 1.0.2
+- description: Added a 'Example of use' section to [Create or extend configuration
+    types](https://devdocs.magento.com/guides/v2.3/config-guide/config/config-create.html).
+  versions: 2.3.3
+  type: Major update
+  date: February 14, 2020
+  link: https://github.com/magento/devdocs/pull/6539
+- description: Added information about the February 2020 PayPal Express Checkout issue
+    with region patch to the Magento 2.3.4 Release Notes. This patch provides a fix
+    for a significant PayPal-related vulnerability.
+  versions: 2.3.4
+  type: Major update
+  date: February 13, 2020
+  link: https://github.com/magento/devdocs/pull/6639
+- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks)
+    configuration for the Cloud guide.
+  versions: 2.x
+  type: Technical changes
+  date: February 12, 2020
+  link: https://github.com/magento/devdocs/pull/6633
+- description: Release documentation for the Magento Cloud Suite, which includes the
+    following packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
+    1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components
+    1.0.2
   versions: 2.x
   type: Major update
   date: February 6, 2020
