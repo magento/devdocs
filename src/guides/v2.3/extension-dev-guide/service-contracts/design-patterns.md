@@ -119,7 +119,7 @@ Repository interfaces must provide these functions:
    </tr>
 </table>
 
-Each data entity has a corresponding interface. Consequently, the `get()` function in the corresponding interface, for example, can return the exact type.
+Each data entity has a corresponding interface. Consequently, the `getById()` function in the corresponding interface, for example, can return the exact type.
 
 ### Management interfaces {#management-interfaces}
 
