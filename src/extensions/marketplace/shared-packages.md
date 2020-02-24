@@ -1,16 +1,15 @@
 ---
+group: marketplace-sellers
 title: Shared Packages
-redirect_from:
-  - /extensions/shared-package-submit.html
 ---
 
 Shared packages are extension components containing code that can be used by other extensions. The package is a zipped archive of a valid code that is ready for technical review. Because components are not offered as standalone products in Magento Marketplace, they are not subject to marketing review.
 
 The Shared Packages tab shows the status of each shared package you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
 
-The process to submit a shared package to Magento Marketplace is basically the same as [submitting an extension]({% link sellers/submit-for-review.md %}). The only difference is that it takes place from the Shared Packages tab.
+The process to submit a shared package to Magento Marketplace is basically the same as [submitting an extension]({% link extensions/marketplace/submit-for-review.md %}). The only difference is that it takes place from the Shared Packages tab.
 
-![]({% link images/images/sellers/your-shared-packages.png %}){: .zoom}
+![]({% link extensions/marketplace/images/your-shared-packages.png %}){: .zoom}
 _Shared Packages_
 
 | Column | Description |

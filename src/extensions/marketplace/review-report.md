@@ -1,18 +1,28 @@
 ---
-title: Test Reports
+group: marketplace-sellers
+title: Review Report
 ---
 
 When the review is complete, a link to the resulting report is provided for the extension, theme, or package that was submitted for review. Test results will also be communicated via email.
 
-To view test reports, navigate to the extension status page. Under **Review Results**, click <span class="btn">Test Reports</span>. In the Report column, click **View** to view the report results in a popup window, or click **Download** to download the report as a JSON file.
+The report includes the results of the following tests:
 
-The following test report results are provided:
+- Code Sniffer
+- Copy Paste Detector (CPD)
+- Installation and Varnish
+- Manual QA Review
+- Marketing Review
 
-* Code Sniffer
-* Copy Paste Detector (CPD)
-* Installation and Varnish
-* Manual QA Review
-* Marketing Review
+## View the results of the reviewR
 
-![]({% link images/images/sellers/test-reports.png %}){: .zoom}
+1. To view the results of the tests, navigate to the extension status page.
+
+1. Under _**_Review Results_, click <span class="btn">Test Reports</span>.
+
+1. In the Report column, do one of the following:
+
+    - Click **View** to view the report results in a popup window.
+    - Click **Download** to download the report as a JSON file.
+
+![]({% link extensions/marketplace/images/test-reports.png %}){: .zoom}
 _Test Reports_

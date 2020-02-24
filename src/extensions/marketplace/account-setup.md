@@ -1,4 +1,5 @@
 ---
+group: marketplace-sellers
 title: Set Up Your Developer Account
 ---
 

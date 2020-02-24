@@ -1,16 +1,15 @@
 ---
+group: marketplace-sellers
 title: Analytics
-redirect_from:
-  - /sales/reports.html
 ---
 
 You can view data about the performance of your extension in the marketplace.
 
 ## View your performance data
 
-In the top navigation of the Marketplace Developer portal, click **Reports** and then click **Analytics**.
+In the top navigation of the Marketplace Developer portal, go to **Reports** >  **Analytics**.
 
-![]({% link images/images/sellers/reports-analytics.png %}){: .zoom}
+![]({% link extensions/marketplace/images/reports-analytics.png %}){: .zoom}
 _Marketplace Traffic Performance Metrics_
 
 ## Traffic overview

@@ -1,8 +1,6 @@
 ---
+group: marketplace-sellers
 title: Branding
-redirect_from:
-  - /marketing/branding.html
-  - /marketing/presentation.html
 ---
 
 The Magento name and its related logos are trademarks owned by Magento, Inc. Your extension and listing must not violate the trademarks and copyrights of Magento, Inc., or those of any other party. To learn more, see [Magento License / Trademark FAQs][1]{: target="_blank"}.

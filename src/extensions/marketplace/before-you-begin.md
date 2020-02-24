@@ -1,8 +1,6 @@
 ---
+group: marketplace-sellers
 title: Before You Begin
-group: getting-started
-redirect_from:
-  - /getting-started/quick-start.html
 ---
 
 Before you begin the extension submission process, you need to have the following items ready:

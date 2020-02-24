@@ -1,9 +1,6 @@
 ---
+group: marketplace-sellers
 title: Extension Quality Program
-group: getting-started
-redirect_from:
-  - /extensions/extension-quality-program.html
-  - /extensions/eqp.html
 ---
 
 The Extension Quality Program is powered by Magento expertise, development guidelines, and verification tools to ensure that extensions have a logical and efficient coding structure, acceptable performance and scalability, and are compatible with the Magento core.

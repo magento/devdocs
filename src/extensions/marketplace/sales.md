@@ -1,16 +1,15 @@
 ---
+group: marketplace-sellers
 title: Manage Sales
-redirect_from:
-  - /sales/dashboard.html
 ---
 
-All product sales in Magento Marketplace are subject to a [revenue share]({% link sellers/revenue-share.md %}), with 70% of the revenue for the developer, and 30% for Magento. This business model allows us to invest in marketing and promotions to grow the businesses of participating developers.
+All product sales in Magento Marketplace are subject to a [revenue share]({% link extensions/marketplace/revenue-share.md %}), with 70% of the revenue for the developer, and 30% for Magento. This business model allows us to invest in marketing and promotions to grow the businesses of participating developers.
 
 ## View your sales information
 
-In the Marketplace Developer portal, in the top navigation, click **Reports** and then click **Sales**.
+In the Marketplace Developer portal, in the top navigation, go to **Reports**  > **Sales**.
 
-![]({% link images/images/sellers/reports-sales.png %}){: .zoom}
+![]({% link extensions/marketplace/images/reports-sales.png %}){: .zoom}
 _Marketplace Sales Performance_
 
 | Field | Description |

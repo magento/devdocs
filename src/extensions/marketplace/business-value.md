@@ -1,7 +1,6 @@
 ---
+group: marketplace-sellers
 title: Business Value
-redirect_from:
-  - /marketing/business-value.html
 ---
 
 Extensions with a clearly stated business value are easy for us to promote, and easy for customers to find.

@@ -1,28 +1,29 @@
 ---
+group: marketplace-sellers
 title: Submit for Technical Review
-redirect_from:
-  - /extensions/extension-languages.html
-  - /extensions/extension-listing-guidelines.html
-  - /extensions/extension-submit-technical-review.html
 ---
 
-With your new extension entry created, you can submit your extension for Technical Review. We [review the code]({% link sellers/code-validation.md %}) according to [technical guidelines]({% link sellers/technical-review-guidelines.md %}), install and use the extension following submitted documentation, and verify specifics from your submission form. Track the status and progress of your extension submission through your Marketplace account.
+With your new extension entry created, you can submit your extension for Technical Review. We [review the code]({% link extensions/marketplace/code-validation.md %}) according to [technical guidelines]({% link extensions/marketplace/technical-review-guidelines.md %}), install and use the extension following submitted documentation, and verify specifics from your submission form. Track the status and progress of your extension submission through your Marketplace account.
 
-The following instructions show how to submit an extension for Technical Review. The process is essentially the same for [themes]({% link sellers/themes.md %}) and [shared packages]({% link sellers/shared-packages.md %}).
+The following instructions show how to submit an extension for Technical Review. The process is essentially the same for [themes]({% link extensions/marketplace/themes.md %}) and [shared packages]({% link extensions/marketplace/shared-packages.md %}).
 
 {: .bs-callout .bs-callout-info}
-**Important - Shared Packages**: If your extension uses [Shared Packages]({% link sellers/shared-packages.md %}) (or components), the packages must be ready and associated with your submission. You will not be able to submit your extension to Technical Review until the shared packages are available in your account.
+**Important - Shared Packages**: If your extension uses [Shared Packages]({% link extensions/marketplace/shared-packages.md %}) (or components), the packages must be ready and associated with your submission. You will not be able to submit your extension to Technical Review until the shared packages are available in your account.
 
 ## Prepare for Technical Review
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
-| ![]({% link images/images/assets/checkbox.png %}) | Review the [technical]({% link sellers/technical-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements. |
-| ![]({% link images/images/assets/checkbox.png %}) | For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc. |
-| ![]({% link images/images/assets/checkbox.png %}) | All extensions must be secure, without viruses, malware, or vulnerabilities. |
-| ![]({% link images/images/assets/checkbox.png %}) | Fully test your extension, including installation, dependencies, shared packages, configuration, and usage. |
+- Review the [technical]({% link extensions/marketplace/technical-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
 
-![]({% link images/images/sellers/tech-review-content.png %})
+- For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc. 
+
+- All extensions must be secure, without viruses, malware, or vulnerabilities. 
+
+- Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
+
+![]({% link extensions/marketplace/images/tech-review-content.png %})
+({% link extensions/marketplace/images/tech-review-content.png %}){: .zoom}
 
 ## Step 1: Enter technical submission details
 
@@ -34,37 +35,40 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Click **Attach Package** to upload the extension code package.
 
-   For complete package guidelines, see [Package a component][1] in our developer documentation.
+   For complete package guidelines, see [Package a component]({% link guides/v2.3/extension-dev-guide/package-module.md %}).
 
 1. For **Magento Version Compatibility**, select the supported version number and compatibility for the extension.
 
-   The listed options include all minor versions Magento supports at time of submission. The list is based on the release line selected at creation (M1 or M2).
+    The listed options include all minor versions Magento supports at time of submission. The list is based on the release line selected at creation (M1 or M2).
 
-    ![]({% link images/images/sellers/technical-submission-details1.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/technical-submission-details1.png %}){: .zoom}
     _Versions and Compatibility_
 
 1. Select the Licensing options.
 
    This option requires the user to agree to a license in addition to the Magento terms and conditions. You have two options:
 
-      * **Choose a License Type**\: Select a license type provided from the drop-down menu.
-      * **Enter a Custom License**\: Enter the name and URL location for your custom license, available from a public website.
+   - **Choose a License Type**\: Select a license type provided from the drop-down menu.
 
-    ![]({% link images/images/sellers/technical-submission-details2.png %}){: .zoom}
+    - **Enter a Custom License**\: Enter the name and URL location for your custom license, available from a public website.
+
+    ![]({% link extensions/marketplace/images/technical-submission-details2.png %}){: .zoom}
     _Licenses_
 
 1. Add Documentation and Resources for your extension.
 
     {: .bs-callout .bs-callout-info}
-    Magento Marketplace tests and reviews documentation during the Technical Review. You can add additional documentation during the [Marketing Review]({% link sellers/submit-for-marketing-review.md %}).
+    Magento Marketplace tests and reviews documentation during the Technical Review. You can add additional documentation during the [Marketing Review]({% link extensions/marketplace/submit-for-marketing-review.md %}).
 
-   You must include **at least one** of the following, in PDF format (less than 5MB):
+    You must include **at least one** of the following, in PDF format (less than 5MB):
 
-      * **Attach User Guide** - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
-      * **Attach Reference Manual** - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
-      * **Attach Installation Guide** - Documentation instructing how to install and configure the extension on your Magento instance.
+    - **Attach User Guide** - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
 
-    ![]({% link images/images/sellers/technical-submission-docs.png %}){: .zoom}
+    - **Attach Reference Manual** - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
+
+    - **Attach Installation Guide** - Documentation instructing how to install and configure the extension on your Magento instance.
+
+    ![]({% link extensions/marketplace/images/technical-submission-docs.png %}){: .zoom}
     _Documentation and Resources_
 
 1. Follow the same steps to upload a reference manual or installation guide.
@@ -74,14 +78,14 @@ Before submitting an extension or theme for marketing review, conduct your own i
     {: .bs-callout .bs-callout-info}
     **Important:** Before a shared package can be linked to an extension, it must be submitted for review and receive the status **Ready to Use**.
 
-    ![]({% link images/images/sellers/technical-submission-shared.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/technical-submission-shared.png %}){: .zoom}
     _Shared Packages_
 
 1. Enter **Release Notes** for your extension.
 
    This preliminary draft can be formatted with simple HTML and can include text, numbers, symbols, and spaces.
 
-    ![]({% link images/images/sellers/technical-submission-rnotes.png %}){: .zoom}
+![]({% link extensions/marketplace/images/technical-submission-rnotes.png %}){: .zoom}
     _Release Notes_
 
 1. When complete, submit the extension or save to continue progress later. To enter the queue, you must click <span class="btn">Submit</span>.
@@ -94,27 +98,36 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
     It might take a few minutes for your package to upload. You will receive email confirmation when the extension is submitted for Technical Review, and will be notified when the review is complete.
 
-    ![]({% link images/images/sellers/confirm-technical-submission.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/confirm-technical-submission.png %}){: .zoom}
     _Confirm Submission_
 
 ## After submission
 
-If you have not submitted the [Marketing Review]({% link sellers/submit-for-marketing-review.md %}), complete those steps to submission.
+1. If you have not submitted the [Marketing Review]({% link extensions/marketplace/submit-for-marketing-review.md %}), complete those steps to submission.
 
-Watch your email for feedback and updates for the Technical Review.
+1. Watch your email for feedback and updates for the Technical Review.
 
-Check the Test Reports posted for your extension submission through the Developer portal.
+1. Check the Test Reports posted for your extension submission through the Developer portal.
 
-If issues, errors, or changes are required, you will receive an email failure notification. The submission will be in a failed state. When those issues are resolved, re-submit the extension for review.
+1. If issues, errors, or changes are required, you will receive an email failure notification. The submission will be in a failed state. When those issues are resolved, re-submit the extension for review.
 
 ## Field descriptions
 
 |Field|Description|
 |--- |--- |
 |Magento Version Compatibility|Specifies each version of Magento that is supported by the extension.|
-|License Type|Identifies the license type that defines the terms of use. To learn more, see the Open Source Initiative’s Licenses by Name. Options: <br/>**Custom License** - To use a custom license, enter the Name of the license and the License URL, where customers can read the terms of use. <br/>**Academic Free License 3.0** - The [Academic Free License 3.0](https://opensource.org/licenses/AFL-3.0) (AFL) is an open source license that permits the free distribution and reuse of proprietary software and derivative works, provided that the source code is made available. <br/>**Apache License 2.0** - The [Apache License](http://www.apache.org/licenses/LICENSE-2.0) 2.0 describes the terms of use, reproduction, and distribution of third-party software products that include portions of Apache software. It requires clear attribution to The Apache Software Foundation for any distributions that include Apache software. <br/>**BSD 2-Clause License** - The [Berkeley Software Distribution 2-Clause License](https://opensource.org/licenses/BSD-2-Clause) requires the copyright notice to appear in all source code, but imposes minimal restrictions on the redistribution of open source software. The 2-clause license was derived from the original four-clause BSD license which requires a notice to appear in all advertising and prohibits the use of the contributor names in endorsements without prior written permission. <br/>**GNU General Public License 3.0**  - The [GNU General Public License 3.0](http://www.gnu.org/licenses/quick-guide-gplv3.html)(GLP-3.0) is  widely used and based on the GNU open source license, and allows for the redistribution of software received from the copyright holder within the provisions outlined in the agreement. Any improved version of the software must be made available for free. To learn more, see [Frequently Asked Questions about GNU Licenses](https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility). <br/>**GNU Lesser General Public License 3.0** - The [GNU Lesser General Public License 3.0](http://www.gnu.org/licenses/lgpl-3.0.en.html) (LGPL-3.0) is widely used and based on the GNU open source license. LGPL-3.0 is somewhat less restrictive than the standard GLP-3.0, and also requires that you provide installation instructions. To learn more, see [Frequently Asked Questions about GNU Licenses](https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility). <br/>**MIT License** - The [Massachusetts Institute of Technology License](https://opensource.org/licenses/MIT) (MIT) allows for the reuse, modification, distribution, sub-licensing, and sale of proprietary software, provided that all copies include the MIT license and copyright notice. <br/>**Mozilla Public License 1.1** - The [Mozilla Public License 1.1](https://www.mozilla.org/en-US/MPL/1.1/) (MPL-1.1) is an open source license that includes explicit patent rights and allows extensions of the code to be licensed in non-open ways. There is no requirement for a derivative work to be distributed under the same license. <br/>**Open Software License 3.0** - The [Open Software License 3.0](https://opensource.org/licenses/OSL-3.0) (OSL-3.0) is a worldwide, royalty-free, non-exclusive license that allows sub-licensing and derivative work, provided that they are distributed under the same license.|
+|License Type|Identifies the license type that defines the terms of use. To learn more, see the Open Source Initiative’s Licenses by Name. Options: <br/>**Custom License** - To use a custom license, enter the Name of the license and the License URL, where customers can read the terms of use. <br/>**Academic Free License 3.0** - The [Academic Free License 3.0][1] (AFL) is an open source license that permits the free distribution and reuse of proprietary software and derivative works, provided that the source code is made available. <br/>**Apache License 2.0** - The [Apache License][2] 2.0 describes the terms of use, reproduction, and distribution of third-party software products that include portions of Apache software. It requires clear attribution to The Apache Software Foundation for any distributions that include Apache software. <br/>**BSD 2-Clause License** - The [Berkeley Software Distribution 2-Clause License][3] requires the copyright notice to appear in all source code, but imposes minimal restrictions on the redistribution of open source software. The 2-clause license was derived from the original four-clause BSD license which requires a notice to appear in all advertising and prohibits the use of the contributor names in endorsements without prior written permission. <br/>**GNU General Public License 3.0**  - The [GNU General Public License 3.0][4] (GLP-3.0) is  widely used and based on the GNU open source license, and allows for the redistribution of software received from the copyright holder within the provisions outlined in the agreement. Any improved version of the software must be made available for free. To learn more, see [Frequently Asked Questions about GNU Licenses][5]. <br/>**GNU Lesser General Public License 3.0** - The [GNU Lesser General Public License 3.0][6] (LGPL-3.0) is widely used and based on the GNU open source license. LGPL-3.0 is somewhat less restrictive than the standard GLP-3.0, and also requires that you provide installation instructions. To learn more, see [Frequently Asked Questions about GNU Licenses][7]. <br/>**MIT License** - The [Massachusetts Institute of Technology License][8] (MIT) allows for the reuse, modification, distribution, sub-licensing, and sale of proprietary software, provided that all copies include the MIT license and copyright notice. <br/>**Mozilla Public License 1.1** - The [Mozilla Public License 1.1][9] (MPL-1.1) is an open source license that includes explicit patent rights and allows extensions of the code to be licensed in non-open ways. There is no requirement for a derivative work to be distributed under the same license. <br/>**Open Software License 3.0** - The [Open Software License 3.0][10] (OSL-3.0) is a worldwide, royalty-free, non-exclusive license that allows sub-licensing and derivative work, provided that they are distributed under the same license.|
 |Documents|Upload your customer-facing documentation in PDF format. The user guide is required, and you can optionally include a reference manual and installation guide. Maximum file size:  5 MB File type: PDF <br/>**User Guide** - Your extension must include one user guide. <br/>**Reference Manual** - (Optional) <br/>**Installation Guide** - (Optional) <br/>**_Note:_** Although the installation guide is optional, it might be required by some license types.|
 |Release Notes|The preliminary Release Notes text can include simple HTML, without CSS. Maximum characters: 10,000|
-|[Shared Packages]({% link sellers/shared-packages.md %})|If applicable, identifies each shared package that is required by this extension.|
+|[Shared Packages]({% link extensions/marketplace/shared-packages.md %})|If applicable, identifies each shared package that is required by this extension.|
 
-[1]: https://devdocs.magento.com/guides/v2.3/extension-dev-guide/package-module.html
+[1]: https://opensource.org/licenses/AFL-3.0
+[2]: http://www.apache.org/licenses/LICENSE-2.0
+[3]: https://opensource.org/licenses/BSD-2-Clause
+[4]: http://www.gnu.org/licenses/quick-guide-gplv3.html
+[5]: https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
+[6]: http://www.gnu.org/licenses/lgpl-3.0.en.html
+[7]: https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility
+[8]: https://opensource.org/licenses/MIT
+[9]: https://www.mozilla.org/en-US/MPL/1.1/)
+[10]: https://opensource.org/licenses/OSL-3.0

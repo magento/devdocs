@@ -1,4 +1,5 @@
 ---
+group: marketplace-sellers
 title: Product Descriptions
 ---
 
@@ -8,52 +9,69 @@ Every extension submitted requires a long, detailed description of the product a
 
 **Detailed opening paragraph that describes the extension (Required)**
 
-* Make it clear what the extension can do for the customer and how the extension works.
-* You may want to give examples of cases when the extension might be used.
-* Leave the merchant with a solid understanding of how their site will appear and function if they purchase your extension.
-* Do NOT include a heading before the opening paragraph.
+- Make it clear what the extension can do for the customer and how the extension works.
+
+- You may want to give examples of cases when the extension might be used.
+
+- Leave the merchant with a solid understanding of how their site will appear and function if they purchase your extension.
+
+- Do NOT include a heading before the opening paragraph.
 
 **List of Features (Required)**
 
-* Add a “Features” heading, using H3 or H2 tags.
-* List features vertically with bullet points.
-* Only use the bullet point button in the Admin to create the bullet points.
+- Add a “Features” heading, using H3 or H2 tags.
+
+- List features vertically with bullet points.
+
+- Only use the bullet point button in the Admin to create the bullet points.
 
 **Demo Links (Strongly Suggested)**
 
-* Provide hyperlinks to functioning demos.
-* Remember to label them and provide sign credentials if needed.
+- Provide hyperlinks to functioning demos.
+
+- Remember to label them and provide sign credentials if needed.
 
 **Use headings for any additional sections (H3 or H2 tags)**
 
-* Headings can be Black or Orange only.
-* Provide hyperlinks to functioning demos.
-* Remember to label them and provide sign credentials if needed.
+- Headings can be Black or Orange only.
+
+- Provide hyperlinks to functioning demos.
+
+- Remember to label them and provide sign credentials if needed.
 
 **Optional additions**
 
-* List of benefits
-* Links to documentation
-* Support links
-* Use cases
-* Examples
-* Highlights
+- List of benefits
+
+- Links to documentation
+
+- Support links
+
+- Use cases
+
+- Examples
+
+- Highlights
 
 ### Frequent reasons for rejection
 
-* Using stylized fonts or colors (except for headings)
-* Including installation instructions in the long description
-* Not hyperlinking URLS
-* Saying “This Magento extension” or “Magento 2 Newsletter Subscription extension” instead of “This extension for Magento” or “Newsletter Subscription extension for Magento 2”
-* Not capitalizing the “M” in “Magento”
+- Using stylized fonts or colors (except for headings)
+
+- Including installation instructions in the long description
+
+- Not hyperlinking URLS
+
+- Saying “This Magento extension” or “Magento 2 Newsletter Subscription extension” instead of “This extension for Magento” or “Newsletter Subscription extension for Magento 2”
+
+- Not capitalizing the “M” in “Magento”
 
 ## Integration Extensions
 
 These are in addition to all standard requirements (Opening Paragraph, Features, Demos, etc.)
 
-| ![]({% link images/images/assets/checkbox.png %})|Add an Introductory paragraph (BEFORE the opening paragraph) that gives background information on the company / service being integrated. Make the first mention of the company a BOLD hyperlink that leads to the corresponding company website. |
-| ![]({% link images/images/assets/checkbox.png %})|Add an “Account and Pricing” heading, using H3 or H2 tags. |
-| ![]({% link images/images/assets/checkbox.png %})|Under the “Account and Pricing” heading, add the following example in BOLD. Make it clear that a separate account is required. Specify whether or not the account is created during extension installation. Supply a link to the sign-up page. Specify if the SERVICE (not the extension) is free or if there are additional fees for the service/account. Add a link to the pricing page.
+| ![]({% link extensions/marketplace/images/assets/checkbox.png %})|Add an Introductory paragraph (BEFORE the opening paragraph) that gives background information on the company / service being integrated. Make the first mention of the company a BOLD hyperlink that leads to the corresponding company website. |
+| ![]({% link extensions/marketplace/images/assets/checkbox.png %})|Add an “Account and Pricing” heading, using H3 or H2 tags. |
+| ![]({% link extensions/marketplace/images/assets/checkbox.png %})|Under the “Account and Pricing” heading, add the following example in BOLD. Make it clear that a separate account is required. Specify whether or not the account is created during extension installation. Supply a link to the sign-up page. Specify if the SERVICE (not the extension) is free or if there are additional fees for the service/account. Add a link to the pricing page.
 
 **Examples**
 
@@ -73,11 +91,15 @@ These are in addition to all standard requirements and integration requirements 
 
 **Add Security and PCI Compliance information.** The merchant must know their responsibilities regarding PCI and Security.
 
-* Add information about how customer data is used and stored.
-* Is this handled through popup? Redirect? Both?
-* Is tokenization used?
-* Does any customer data cross over the Magento server?
-* Is any data stored on the Magento server?
+- Add information about how customer data is used and stored.
+
+- Is this handled through popup? Redirect? Both?
+
+- Is tokenization used?
+
+- Does any customer data cross over the Magento server?
+
+- Is any data stored on the Magento server?
 
 **Examples**
 
@@ -92,3 +114,4 @@ _Example 2:_
 _Example 3:_
 
   ATTENTION: Use this extension at your own risk. Sensitive customer payment data is stored on your server. Merchants are expected to take every precaution that they are fully PCI certified. Please only purchase this extension if you have an environment where storing credit card information is permitted by law.
+  

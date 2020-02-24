@@ -1,7 +1,6 @@
 ---
+group: marketplace-sellers
 title: Register as a Developer
-redirect_from:
-  - /sellers/developer-registration.html
 ---
 
 Follow these steps to create a new developer account, or to register as a developer with your existing Magento account.
@@ -63,7 +62,7 @@ When prompted, select the type of account you want to create, and click <span cl
 
 - Individual Account]({% link extensions/marketplace/images/profile-personal.md %})
 
-![]({% link images/images/sellers/account-type-business.png %}){: width="500px"}<br/>
+![]({% link extensions/marketplace/images/account-type-business.png %}){: width="500px"}<br/>
 
 [1]: https://developer.magento.com/
 [2]: https://marketplace.magento.com/

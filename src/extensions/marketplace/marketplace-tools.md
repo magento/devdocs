@@ -1,6 +1,6 @@
 ---
+group: marketplace-sellers
 title: Marketplace Tools
-group: resources
 ---
 
 The [Marketplace Tools][1]{: target="_blank"} directory on GitHub contains standalone tools that developers can use to validate extensions before submitting them to Magento Marketplace. Look for additional tools coming soon, including a validation script for Magento 1.x and a code sniffer.

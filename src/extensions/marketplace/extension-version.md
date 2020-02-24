@@ -1,21 +1,20 @@
 ---
-title: Creating a New Version
-redirect_from:
-  - /extensions/shared-package-new-version.html
+group: marketplace-sellers
+title: Specify the Version
 ---
 
-After you [create the extension entry]({% link sellers/creating-a-new-extension.md %}), the next step is to create and submit a new version. Extensions can have multiple versions, including the first version submitted.
+After you [create the extension entry]({% link extensions/marketplace/extension-create.md %}), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
 
 For existing, approved extensions, follow these instructions to add new versions as available and released.
 
 1. Log in to the Marketplace Developer Portal.
 
-1. Click **Extensions**, and then click an extension from the list.
+1. Click **Extensions**, and then choose an extension from the list.
 
 1. Click <span class="btn">Submit a New Version</span>.
 
-    ![]({% link images/images/sellers/submit-new-version.png %}){: .zoom}
-    _Submit a New Version_
+  ![]({% link extensions/marketplace/images/submit-new-version.png %}){: .zoom}
+  _Submit a New Version_
 
 1. For **Marketplace Version Number**, enter a version number for the extension as you want it to appear in the Marketplace listing. For example: 1.0.0
 
@@ -23,11 +22,12 @@ For existing, approved extensions, follow these instructions to add new versions
 
 1. For **Requested Launch Date**, select an option:
 
-   * `On Approval` - Immediately publishes when the extensions receives Magento Marketplace approval.
-   * `Requested Launch Date` - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
+  - ***On Approval*** - Immediately publishes when the extensions receives Magento Marketplace approval.
 
-    ![]({% link images/images/sellers/submit-a-new-version.png %}){: .zoom}
-    _New Version Details_
+  - ***Requested Launch Date*** - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
+
+  ![]({% link extensions/marketplace/images/submit-new-version-detail.png %}){: .zoom}
+  _New Version Detail_
 
 1. Click <span class="btn">Continue</span>.
 

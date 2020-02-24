@@ -1,9 +1,6 @@
 ---
-title: Welcome to Magento Marketplace
-group: getting-started
-redirect_from:
-  - /marketplace-getting-started.html
-  - /quick-tour/welcome.html
+group: marketplace-sellers
+title: Getting Started
 sections:
   - title: Before You Begin
     content: Take a look at the items you need to have ready in order to start the extension submission process. 

@@ -1,7 +1,6 @@
 ---
+group: marketplace-sellers
 title: Revenue Share
-redirect_from:
-  - /sales/revenue-sharing.html
 ---
 
 The revenue share enables Magento to curate content, and maintain the necessary review and verification process to ensure a high-quality experience for merchants, and a healthy ecosystem for providers. This business model supports our marketing effort to promote Magento Marketplace, and increases the demand for the products that our providers bring to market.

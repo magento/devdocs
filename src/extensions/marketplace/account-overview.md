@@ -1,8 +1,6 @@
 ---
+group: marketplace-sellers
 title: Account Setup Process
-redirect_from:
-  - /account/account-developer.html
-  - /extensions/build-process-overview.html
 ---
 
 ## Step 1: Log in or register for a developer account.

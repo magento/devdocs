@@ -1,4 +1,5 @@
 ---
+group: marketplace-sellers
 title: Seller Overview
 sections:
   - title: Account setup
@@ -16,7 +17,6 @@ sections:
   - title: Manage sales
     content: Use the Sales and Analytics reports to view and manage your extension sales information.
     url: extension/marketplace/sales.html
-
 ---
 
 As an extension seller, your process starts with the extension development and testing. During this phase, be sure to follow the [Best Practices for Extension Developers][1].

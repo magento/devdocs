@@ -1,7 +1,6 @@
 ---
+group: marketplace-sellers
 title: Code Validation
-redirect_from:
-  - /extensions/review-code-validation.html
 ---
 
 During technical review, all submissions are checked to ensure that the code meets Magento standards.
@@ -112,12 +111,12 @@ During technical review, all submissions are checked to ensure that the code mee
 #### Copy Paste Detector (CPD)
 
 Issue |The Copy Paste Detector indicates that the extension contains duplicate code from Magento native products or from other extensions.
-Solution|The Marketplace team will provide a list of places in your extension code that were identified as duplicate. If the extension is found to duplicate Magento code, review the list, and remove each instance of duplicate code. Then, upload a new package and resubmit the extension.Any extension that is found to duplicate code from another extension will be rejected. To prove that you own the code in question, see [Magento Marketplace Support](https://marketplacesupport.magento.com/).
+Solution|The Marketplace team will provide a list of places in your extension code that were identified as duplicate. If the extension is found to duplicate Magento code, review the list, and remove each instance of duplicate code. Then, upload a new package and resubmit the extension.Any extension that is found to duplicate code from another extension will be rejected. To prove that you own the code in question, see [Magento Marketplace Support][1].
 
 #### Sniffs
 
 Issue|The extension contains code elements that are not allowed to be used in Marketplace extensions. See the Technical Report for a list of elements in your code that are not allowed.
-Solution|To duplicate the tests locally, use the MEQP [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) tool. Remove all disallowed code elements. Then, upload a new package and resubmit the extension. To learn more, see [Magento Extension Quality Program Coding Standard](https://github.com/magento/marketplace-eqp).
+Solution|To duplicate the tests locally, use the MEQP [CodeSniffer][2] tool. Remove all disallowed code elements. Then, upload a new package and resubmit the extension. To learn more, see [Magento Extension Quality Program Coding Standard][3].
 
 #### Inconsistency
 
@@ -133,3 +132,7 @@ Solution|Upload a new package, and resubmit the extension.
 
 Issue|Hidden files were detected in the archive. It is possible that configuration files from the development environment were included in the distribution package. Such hidden files can cause configuration problems for the end user.
 Solution|Remove the hidden files. Then, upload a new package, and resubmit the extension.
+
+[1]: https://marketplacesupport.magento.com/
+[2]: https://github.com/squizlabs/PHP_CodeSniffer
+[3]: https://github.com/magento/marketplace-eqp

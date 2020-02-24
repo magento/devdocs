@@ -1,21 +1,24 @@
 ---
+group: marketplace-sellers
 title: Company Profile
 ---
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
-![]({% link images/images/sellers/developer-portal-company-profile.png %}){: .zoom}
+![]({% link extensions/marketplace/images/developer-portal-company-profile.png %}){: .zoom}
 _Company Profile_
 
 The following instructions walk you through the process of completing your company profile. All fields are required, unless marked “Optional”.
 
-| ![]({% link images/images/assets/checkbox.png %})| Before you begin, prepare an image for your company profile that is 255 pixels square. Then, save it as one of the following file types: JPG, GIF, or PNG. |
+## Before you begin
+
+Prepare an image for your company profile that is 255 pixels square. Then, save it as one of the following file types: JPG, GIF, or PNG.
 
 ## Step 1: Complete Your Company Background
 
 1. Select the checkbox at the top of the form if you want to use your company profile—rather than your personal profile—as the default.
 
-    ![]({% link images/images/sellers/account-company-profile-name.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/account-company-profile-name.png %}){: .zoom}
     _Company Profile_
 
 1. Enter your **Legal Company Name**.
@@ -24,8 +27,8 @@ The following instructions walk you through the process of completing your compa
 
 1. To upload the image that you have prepared to your company profile, do one of the following:
 
-   * Drag the image to the box.
-   * Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
+   - Drag the image to the box.
+   - Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
 
 ## Step 2: Enter Your Contact Information
 
@@ -41,34 +44,34 @@ The following instructions walk you through the process of completing your compa
     This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your company profile.
     </div>
 
-   ![]({% link images/images/sellers/account-company-profile-contact-info.png %}){: .zoom}
+   ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
    _Contact Information_
 
 ## Step 3: Enter Your Company Address
 
 Complete the following fields that make up your company address:
 
-* Country
-* Street Address, Apt/Suite
-* ZIP, City, State / Province
-* Phone Number
+- Country
+- Street Address, Apt/Suite
+- ZIP, City, State / Province
+- Phone Number
 
 To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
-![]({% link images/images/sellers/account-company-profile-address.png %}){: .zoom}
+![]({% link extensions/marketplace/images/account-company-profile-address.png %}){: .zoom}
 _Company Address_
 
 ## Step 4: Link to Your Social Networks (optional)
 
 Enter the link to each professional social network that you want to include in your company profile.
 
-* GitHub
-* Stack Exchange
-* Twitter
-* Facebook
-* LinkedIn
+- GitHub
+- Stack Exchange
+- Twitter
+- Facebook
+- LinkedIn
 
-![]({% link images/images/sellers/account-profile-social-networks.png %}){: .zoom}
+![]({% link extensions/marketplace/images/account-profile-social-networks.png %}){: .zoom}
 _Social Networks_
 
 ## Step 5: Activate Your Account
@@ -125,12 +128,3 @@ Watch for a confirmation email sent to the email address associated with the acc
 |Twitter|(Optional) The user name associated with your company’s Twitter account. For example: @username|
 |Facebook|(Optional) The URL of your company’s Facebook profile. For example: http://facebook.com/pages/username|
 |LinkedIn|(Optional) The URL of your company’s LinkedIn profile. For example: http://linkedin.com/company/username|
-
-<!--
-  This is a style declaration so that number graphics in the first column are larger
--->
-
-.fields-table td:first-of-type {
-  width: 200px;
-}
-</style>

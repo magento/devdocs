@@ -1,13 +1,12 @@
 ---
+group: marketplace-sellers
 title: Extension content
-redirect_from:
-  - /marketing/content.html
 ---
 
 The content that accompanies your extension listing is derived from the profile of the extension or theme, and information in the developer\'s company profile.
 
 * All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
-* Your content must not misuse the Magento name and its trademarks, or misrepresent the Magento brand. To learn more, see our [branding guidelines]({% link sellers/branding.md %}).
+* Your content must not misuse the Magento name and its trademarks, or misrepresent the Magento brand. To learn more, see our [branding guidelines]({% link extensions/marketplace/branding.md %}).
 * Do not promote additional services and extensions in your Marketplace listing and Company Bio.
 * The extension listing must accurately describe the product, including the description and overview information, version compatibility, and category selection.
 * Use English as the primary language for the Extension Title, Short Description, Long Description, and Company Bio. You are welcome to include a second language in the Long Description after the English description, separated by a horizontal line. The content, links, and images should be the same in both languages.
@@ -29,7 +28,7 @@ Maximum character length: 10,000 characters (including text, numbers, symbols, a
 * Make sure to convert all URLs to functioning hyperlinks.
 * You are welcome to include a second language in the long description below the English description. Separate the two languages with a horizontal line. Both languages should contain the same content, links and images, if applicable.
 
-For examples of long descriptions, see [Product Descriptions]({% link sellers/product-descriptions.md %}).
+For examples of long descriptions, see [Product Descriptions]({% link extensions/marketplace/product-descriptions.md %}).
 
 ### Short Description
 

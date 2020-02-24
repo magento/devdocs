@@ -1,22 +1,22 @@
 ---
+group: marketplace-sellers
 title: Extensions
 ---
-
 
 An extension is a custom module, language pack, or combination of custom modules and language packs, that adds new functionality to the core Magento product.
 
 All extensions submitted to Magento Marketplace are managed from the Extensions page in the Marketplace Developer Portal. It shows the status of each extension and language pack you have submitted, and provides access to the profile and version history of each. You can also use the workspace controls to sort and filter the list.
 
 {: .images-table }
-[ ![]({% link images/images/assets/code-development.png %}) ]({% link sellers/completing-your-extension.md %})|[**Completing Your Extension**]({% link sellers/completing-your-extension.md %}) - provides details on completing code, descriptions, documentation, and preparing to submit.
+[ ![]({% link extensions/marketplace/images/assets/code-development.png %}) ]({% link extensions/marketplace/completing-your-extension.md %})|[**Complete Your Extension**]({% link extensions/marketplace/extension-complete.md %}) - provides details on completing code, descriptions, documentation, and preparing to submit.
 
 {: .images-table }
-[ ![]({% link images/images/assets/new-extension.png %}) ]({% link sellers/creating-a-new-extension.md %})|[**Creating a New Extension**]({% link sellers/creating-a-new-extension.md %}) - provides instructions for creating the initial entry for an extension. You will add versions to attach code packages, documentation, and more.
+[ ![]({% link extensions/marketplace/images/assets/new-extension.png %}) ]({% link extensions/marketplace/creating-a-new-extension.md %})|[**Complete the Extension Information**]({% link extensions/marketplace/creating-a-new-extension.md %}) - provides instructions for creating the initial entry for an extension. You will add versions to attach code packages, documentation, and more.
 
 {: .images-table }
-[ ![]({% link images/images/assets/new-version.png %}) ]({% link sellers/creating-a-new-version.md %})|[**Creating a New Version**]({% link sellers/creating-a-new-version.md %}) - provides instructions for adding new versions for an extension entry. You will create a version for the initial submitted version and all subsequent versions for an extension.
+[ ![]({% link extensions/marketplace/images/assets/new-version.png %}) ]({% link extensions/marketplace/creating-a-new-version.md %})|[**Submit the Version**]({% link extensions/marketplace/creating-a-new-version.md %}) - provides instructions for adding new versions for an extension entry. You will create a version for the initial submitted version and all subsequent versions for an extension.
 
-![]({% link images/images/sellers/your-extensions.png %}){: .zoom}
+![]({% link extensions/marketplace/images/your-extensions.png %}){: .zoom}
 _Your Extensions_
 
 | Column | Description |

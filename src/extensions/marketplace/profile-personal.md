@@ -1,15 +1,18 @@
 ---
+group: marketplace-sellers
 title: Personal Profile
 ---
 
 The information in your personal profile identifies you as a vendor in Magento Marketplace, and includes your background, image, contact information, and social network addresses. The Personal Profile page initially appears when you set up your Marketplace account as an individual. From your Marketplace account, the Personal Profile is located on the Developer Portal tab under My Information.
 
-![]({% link images/images/sellers/developer-portal-personal-profile.png %}){: .zoom}
+![]({% link extensions/marketplace/images/developer-portal-personal-profile.png %}){: .zoom}
 _Personal Profile_
 
 The following instructions walk you through the process of completing your personal profile. All fields are required, unless marked “Optional”.
 
-| ![]({% link images/images/assets/checkbox.png %})| Before you begin, prepare an image for your personal profile that is 255 pixels square, and saved as one of the following file types: JPG, GIF, or PNG. |
+## Before you begin
+
+Prepare an image for your personal profile that is 255 pixels square, and saved as one of the following file types: JPG, GIF, or PNG.
 
 ## Step 1: Complete Your Personal Background
 
@@ -17,14 +20,14 @@ The following instructions walk you through the process of completing your perso
 
 1. To upload the image that you have prepared to your personal profile, do one of the following:
 
-    * Drag the image to the box.
-    * Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system, and upload it to your profile.
+    - Drag the image to the box.
+    - Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system, and upload it to your profile.
 
 1. Take note that a unique **Magento ID** is assigned to your account.
 
 1. Enter a brief description of your background as a Magento developer in the **Bio** box. To change the height of the text box, drag the lower-right corner into position.
 
-    ![]({% link images/images/sellers/account-personal-profile-name.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/account-personal-profile-name.png %}){: .zoom}
 
 ## Step 2: Enter Your Contact Information
 
@@ -41,34 +44,34 @@ The following instructions walk you through the process of completing your perso
     {: .bs-callout .bs-callout-info}
     This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your personal profile.
 
-![]({% link images/images/sellers/account-company-profile-contact-info.png %}){: .zoom}
+![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
 _Contact Information_
 
 ## Step 3: Enter Your Personal Address
 
 Complete the following fields that make up your personal address:
 
-* Country
-* Street Address, Apt/Suite
-* ZIP, City, State / Province
-* Phone Number
+- Country
+- Street Address, Apt/Suite
+- ZIP, City, State / Province
+- Phone Number
 
 To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
-![]({% link images/images/sellers/account-personal-profile-address.png %}){: .zoom}
+![]({% link extensions/marketplace/images/account-personal-profile-address.png %}){: .zoom}
 _Personal Address_
 
 ## Step 4: Link to Your Social Networks **(optional)**{: .ContrastSans}
 
 Enter the link to each professional social network that you want to include in your personal profile.
 
-* GitHub
-* Stack Exchange
-* Twitter
-* Facebook
-* LinkedIn
+- GitHub
+- Stack Exchange
+- Twitter
+- Facebook
+- LinkedIn
 
-![]({% link images/images/sellers/account-profile-social-networks.png %}){: .zoom}
+![]({% link extensions/marketplace/images/account-profile-social-networks.png %}){: .zoom}
 _Social Networks_
 
 ## Step 5: Activate Your Account
@@ -109,4 +112,3 @@ _Social Networks_
 |Twitter|(Optional) The user name associated with your Twitter account.|
 |Facebook|(Optional) The URL of your Facebook profile. For example: `http://facebook.com/pages/username`|
 |LinkedIn|(Optional) The URL of your LinkedIn profile. For example: `http://linkedin.com/company/username`|
-
