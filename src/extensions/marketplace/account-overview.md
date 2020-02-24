@@ -17,4 +17,4 @@ The information in your [personal profile]({% link extensions/marketplace/develo
 
 ## Step 4: Complete your company profile.
 
-Your [company profile]({% link extensions/marketplace/develoepr-register.md %}) is similar to your personal profile, and provides the information about your company and brand that appears in your Magento Marketplace listing.
+Your [company profile]({% link extensions/marketplace/developer-register.md %}) is similar to your personal profile, and provides the information about your company and brand that appears in your Magento Marketplace listing.
