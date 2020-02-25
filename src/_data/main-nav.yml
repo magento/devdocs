@@ -220,6 +220,7 @@
 
     - label: Extensions Marketplace
       url: /extensions/marketplace/getting-started.html
+      versionless: true
 
     - label: Inventory Management
       url: /inventory/index.html
