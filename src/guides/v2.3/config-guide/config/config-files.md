@@ -50,6 +50,9 @@ Magento's merge algorithm follows:
 
 After configuration files are merged, the resulting document contains all nodes from the original files.
 
+{:.bs-callout-info}
+Note that you can use [\Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class for debugging and understanding the logic behind [configuration files loader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php#L125) and [merge configs]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php#L144) process.
+
 ## Configuration types, objects, and interfaces {#config-files-classes}
 
 The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:
@@ -113,7 +116,9 @@ Configuration file|Description|Stage|Configuration object
 
 ### Configuration interfaces {#config-files-classes-int}
 
-You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config). You can also use these interfaces if you create new configuration types.
+You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config).
+
+You can also use these interfaces if you [create new configuration types]({{ page.baseurl }}/config-guide/config/config-create.html#config-files-extend-create-create).
 
 `Magento\Framework\Config` provides the following interfaces:
 

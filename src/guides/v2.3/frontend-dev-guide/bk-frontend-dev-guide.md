@@ -62,7 +62,7 @@ To use this guide, you must be familiar with:
 {:.ref-header}
 Related topics
 
-*  [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
+*  [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html)
 *  [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html)
 *  [Cascading style sheets (CSS)]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html)
 *  [JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)

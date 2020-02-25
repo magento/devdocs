@@ -83,3 +83,13 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Current user does not have an active cart.` | The `mergeCarts` mutation deactivates the guest cart specified in the `source_cart_id` after merging. The guest cannot make any further operations with it.
+`Required parameter "destination_cart_id" is missing` | The `destination_cart_id` attribute contains an empty value.
+`Required parameter "source_cart_id" is missing` | The `source_cart_id` attribute contains an empty value.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table, or you tried to merge two guest carts.
+`The current user cannot perform operations on cart` | The authorized customer tried to merge a guest cart into the cart of another customer.
