@@ -22,6 +22,6 @@ The following recommendation types are listed in the recommended order when test
 
 ### Caveats
 
--  The non-production SaaS Environment ID identifies an isolated environment in which the resulting product recommndations will be based entirely on the behavioral data generated on the associated storefront.
+-  The non-production SaaS Environment ID identifies an isolated environment in which the resulting product recommendations will be based entirely on the behavioral data generated on the associated storefront.
 
 -  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensei to compute the machine learning models and provide recommendations based on data you generated within this environment.
