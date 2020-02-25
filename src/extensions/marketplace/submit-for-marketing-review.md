@@ -14,11 +14,8 @@ Before submitting an extension or theme for marketing review, conduct your own i
 - Review the [marketing]({% link extensions/marketplace/marketing-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
 
 - Spell-check and review all text fields in your extension, product documentation, and marketing materials.
-
 - Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
-
 - Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
-
 - Consider the following: Is the presentation professional? Does it foster confidence in your skills as a developer? Does it have commercial appeal? Do you provide information to help customers understand your product and how it supports their storefronts and backend?
 
 ![]({% link extensions/marketplace/images/market-content.png %}){: .zoom}
@@ -41,16 +38,14 @@ Before submitting an extension or theme for marketing review, conduct your own i
 1. Complete each section and submit for review when it is complete.
 
     - Click <span class="btn">Save Submit</span> to save progress.
-
     - Click <span class="btn">Preview</span> to see the output of your marketing information.
-
     - After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
 
 ### Extension Description
 
 1. Under **Marketing Submission**, click **Extension Description**.
 
-    The **Extension name** and **Short Description** are pulled in from the [Basic Extension Information]({% link extensions/marketplace/creating-a-new-extension.md %}). You can edit this information. Maximum characters for Short Description: 239
+    The **Extension name** and **Short Description** are pulled in from the [Basic Extension Information]({% link extensions/marketplace/extension-information.md %}). You can edit this information. Maximum characters for Short Description: 239
 
     ![]({% link extensions/marketplace/images/marketing-description1.png %}){: .zoom}
     _Extension Name and Short Description_
@@ -98,7 +93,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
 
 1. Under **Marketing Submission**, click <span class="btn">Compatibility</span>.
 
-    The information displayed here is pulled from what you entered in the [Basic Extension Information]({% link extensions/marketplace/creating-a-new-extension.md %}) or [Technical Submission]({% link extensions/marketplace/submit-for-technical-review.md %}). To modify the Magento version compatibility, see [Submit for Technical Review]({% link extensions/marketplace/submit-for-technical-review.md %}).
+    The information displayed here is pulled from what you entered in the [Basic Extension Information]({% link extensions/marketplace/extension-information.md %}) or [Technical Submission]({% link extensions/marketplace/submit-for-technical-review.md %}). To modify the Magento version compatibility, see [Submit for Technical Review]({% link extensions/marketplace/submit-for-technical-review.md %}).
 
 1. For **Browser Selection**, select the checkboxes for browsers compatible with your extension.
 
@@ -141,23 +136,16 @@ You must provide a thumbnail and at least two high-quality images for the image 
 1. Choose the **Stability** setting that applies to this version of the extension:
 
    - Beta Build: Internal testing is complete, and the extension is released to the public to help identify any outstanding issues.
-
    - Stable Build: Any major issues found during the beta release stage have been resolved, and the extension is ready for market.
 
 1. Under **Other Options**, select checkboxes for each applicable option.
 
    - Released with setup scripts
-
    - Service contracts included
-
    - External service contracts included
-
    - Custom UI implementation
-
    - Web API supported
-
    - Test coverage supported
-
    - Responsive design supported
 
     ![]({% link extensions/marketplace/images/marketing-submission-additional-details.png %}){: .zoom}

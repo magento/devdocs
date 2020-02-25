@@ -37,7 +37,7 @@ The price of your extension is included as part of the marketing information. To
 
 ## Content: Complete the Product Profile
 
-The content that accompanies your extension listing is derived from the [marketing information]({% link extensions/marketplace/submit-for-marketing-review.md %}) you entered for the extension or theme, and information in your [company profile]({% link extensions/marketplace/profile-information.md %}). To learn more, see [Extension content]({% link extensions/marketplace/content.md %}).
+The content that accompanies your extension listing is derived from the [marketing information]({% link extensions/marketplace/submit-for-marketing-review.md %}) you entered for the extension or theme, and information in your [company profile]({% link extensions/marketplace/profile-company.md %}). To learn more, see [Extension content]({% link extensions/marketplace/content.md %}).
 
 - All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
 

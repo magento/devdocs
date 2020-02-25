@@ -35,7 +35,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Click **Attach Package** to upload the extension code package.
 
-   For complete package guidelines, see [Package a component]({% link guides/v2.3/extension-dev-guide/package-module.md %}).
+   For complete package guidelines, see [Package a component]({% link guides/v2.3/extension-dev-guide/package/package_module.md %}).
 
 1. For **Magento Version Compatibility**, select the supported version number and compatibility for the extension.
 

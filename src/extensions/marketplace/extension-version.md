@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Specify the Version
 ---
 
-After you [create the extension entry]({% link extensions/marketplace/extension-create.md %}), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
+After you [create the extension entry]({% link extensions/marketplace/extension-complete.md %}), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
 
 For existing, approved extensions, follow these instructions to add new versions as available and released.
 

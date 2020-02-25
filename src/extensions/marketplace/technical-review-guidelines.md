@@ -18,14 +18,12 @@ The submitted package must be a Magento module, theme, language pack, or metapac
 |Language Pack|`language.xml`|
 |Metapackage|`composer.json`|
 
-Developers of Magento 2.x extensions can use the validation tool to test the package before it is submitted to Magento Marketplace. To download the tool, see the [Marketplace Tools][1] GitHub repository.
+Developers of Magento 2.x extensions can use the validation tool to test the package before it is submitted to Magento Marketplace. To download the tool, see the Marketplace Tools GitHub repository.
 
 **_See also:_**
 
 - [PHP Developer Guide]({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
-
-- [How to Package Magento Extensions][2]{: target="_blank"}
-
+- [How to Package Magento Extensions][2]
 - [Packaging Magento Version 1.x Extensions]({% link extensions/marketplace/packaging-v1x-extensions.md %})
 
 ## Coding Standards: Check code quality/syntax
@@ -52,35 +50,26 @@ Extensions for Magento 2.x are installed with Varnish Cache enabled for each sup
 
 In addition to the Production Mode test, cacheable pages are accessed to ensure that they are served directory from Varnish Cache. You will be notified if your extension fails the test.
 
-**_See also:_** [Configure and Use Varnish]({% guides/v2.3/config-guide/varnish/config-varnish.md %})
+**_See also:_** [Configure and Use Varnish]({% link guides/v2.3/config-guide/varnish/config-varnish.md %})
 
 ## Quality Assurance (M2 only): Pass manual QA
 
 This check verifies that the extension installs without error, is configurable (as applicable), and operates as expected. To pass Manual QA, the extension must meet the following requirements:
 
 - Installs with Composer
-
 - Compiles without errors using the following command: `deploy:mode:set production`
-
 - Works with each version of Magento that is shown as supported in the extension product profile
-
 - Works with each version of PHP that is supported by the Magento version that is shown as supported in the extension product profile
-
 - Has all functionality that is described in the extension documentation
-
 - Does not crash with unhandled errors
-
 - Does not hang when invalid data is submitted
 
 **For Page Builder extensions:**
 
 - New and extended content types can be dragged to the stage, edited, duplicated, moved, hidden, saved, and deleted from the stage without errors.
-
 - New and extended content types are rendered on the storefront without errors.
-
 - Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 
-[1]: https://github.com/magento/marketplace-tools
 [2]: http://info2.magento.com/rs/magentosoftware/images/packagingmagentoconnectextensions6%200.pdf
 [3]: https://opensource.org/licenses/OSL-3.0
 [4]: http://rosenlaw.com/OSL3.0-explained.htm

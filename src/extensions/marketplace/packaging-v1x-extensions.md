@@ -9,7 +9,7 @@ Extensions developed for Magento version 1.x have different packaging guidelines
 
 1. From the Admin, go to **System** > **Magento Connect** > **Package Extensions**.
 
-    ![]({% link images/images/sellers/create-extension-package.png %}){: .zoom}
+    ![]({% link extensions/marketplace/images/create-extension-package.png %}){: .zoom}
     _Create Extension Package_
 
     This takes you to the Create Extension Package page, which consists of six sections:
@@ -123,7 +123,7 @@ For example, http://opensource.org/licenses/osl-3.0.php
 
 In order to understand this process, see [Software Versioning][1].
 
-![]({% link images/images/sellers/release-info.png %}){: .zoom}
+![]({% link extensions/marketplace/images/release-info.png %}){: .zoom}
 _Release Info_
 
 ### Release Version
@@ -153,7 +153,7 @@ Add any notes you may have for this release.
 
 In the Authors section, type in the real name, user name, and email address of all members who contributed to this extension. The first user must match the user name of your Magento Developer account used to display your extensions on Magento Marketplace.
 
-![]({% link images/images/sellers/authors.png %}){: .zoom}
+![]({% link extensions/marketplace/images/authors.png %}){: .zoom}
 _Authors_
 
 ## Section D: Dependencies
@@ -162,7 +162,7 @@ The dependencies tab is used to specify the dependence of our code in regard to 
 
 The following example provides an example of dependency on the `Mage\_Core\_Modules` package. This means that our extension will only work with Magento versions within the set range. The PHP version\_compare function http://php.net/version-compare is used to verify the compatibility of versions during the extension installation.
 
-![]({% link images/images/sellers/dependencies.png %}){: .zoom}
+![]({% link extensions/marketplace/images/dependencies.png %}){: .zoom}
 _Dependencies_
 
 ## Section E: Contents
@@ -188,7 +188,7 @@ _Where “`./`” represents the Magento root directory._
 
 In the Path field, enter the path relative to the path in the Target field. In the Include and Ignore fields, enter a regular expression which will check the path with the file name only for the rows where the Type field is set to Recursive Dir. A file to be included in the extension package must match the expression specified in the Include field. If the file matches the expression in the Ignore field, it will not be included in the extension package correspondingly.
 
-![]({% link images/images/sellers/contents.png %}){: .zoom}
+![]({% link extensions/marketplace/images/contents.png %}){: .zoom}
 _Contents_
 
 ## Section F: Load Local Package
