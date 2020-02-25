@@ -1,8 +1,8 @@
-label: Marketplace Seller Guide
+label: Marketplace Sellers
 versionless: true
 pages:
 - label: Getting Started
-  url: /extensions/marketplace/getting-started.html
+  url: /extensions/marketplace/index.html
   versionless: true
   children:
 
@@ -12,13 +12,16 @@ pages:
     - label: Extension Quality Program
       url: /extensions/marketplace/extension-quality-program.html
 
-- label: Your Seller Account
-  url: /extensions/marketplace/account-setup.html
+- label: Seller Overview
+  url: /extensions/marketplace/seller-overview.html
   versionless: true
   children:
 
-    - label: Account Setup
+    - label: Your Seller Account
       url: /extensions/marketplace/account-overview.html
+
+    - label: Account Setup
+      url: /extensions/marketplace/account-setup.html
 
     - label: Register as a Developer
       url: /extensions/marketplace/developer-register.html
@@ -132,3 +135,7 @@ pages:
 - label: Reference
   url: /extensions/marketplace/technical-reference.html
   versionless: true
+  children:
+
+    - label: Marketplace Tools
+      url: /extensions/marketplace/marketplace-tools.html
