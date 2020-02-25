@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Branding
 ---
 
-The Magento name and its related logos are trademarks owned by Magento, Inc. Your extension and listing must not violate the trademarks and copyrights of Magento, Inc., or those of any other party. To learn more, see [Magento License / Trademark FAQs][1]{: target="_blank"}.
+The Magento name and its related logos are trademarks owned by Magento, Inc. Your extension and listing must not violate the trademarks and copyrights of Adobe, Inc., or those of any other party. To learn more, see [Magento License / Trademark][1].
 
 ## Magento Name
 
@@ -14,13 +14,13 @@ Magento <sup>®</sup> is a registered trademark, and must include the registrat
 
 Your use of the Magento name cannot suggest an affiliation with Magento. The Magento name can be referenced only as follows:
 
-- _Correct:_ “I create extensions for Magento.”
-- _Incorrect:_ “I create Magento extensions.” or “My Magento Extension...”
+- Correct - “I create extensions for Magento.”
+- Incorrect - “I create Magento extensions.” or “My Magento Extension...”
 
 When referencing yourself or your company, use the _specializing in Magento_ phrasing.
 
-- _Correct:_ “We are a development agency specializing in Magento.”
-- _Incorrect:_ “We are a Magento development agency.”
+- Correct  - “We are a development agency specializing in Magento.”
+- Incorrect - “We are a Magento development agency.”
 
 The Magento name **cannot** be used in any of the following:
 

@@ -5,7 +5,7 @@ title: Before You Begin
 
 Before you begin the extension submission process, you need to have the following items ready:
 
-## Technical Items
+## Technical items
 
 - The [extension code package]({% link extensions/marketplace/technical-review-guidelines.md %})
 - A [user guide, reference manual, or installation guide]({% link extensions/marketplace/content.md %})/a> (at least one is required)
@@ -14,7 +14,7 @@ Before you begin the extension submission process, you need to have the followin
 - [Magento version compatibility]({% link extensions/marketplace/extension-version.md %})
 - [Extension version number]({% link extensions/marketplace/extension-version.md %})
 
-## Marketing Items
+## Marketing items
 
 - A [product icon]({% link extensions/marketplace/submit-for-marketing-review.md %})
 - A [short description]({% link extensions/marketplace/content.md %}) of your extension
