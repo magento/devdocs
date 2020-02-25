@@ -87,7 +87,10 @@ To launch the Docker environment in developer mode:
    -  Deploy Magento in the Docker container.
 
       ```bash
-      docker-compose run deploy cloud-deploy && \
+      docker-compose run deploy cloud-deploy
+      ```
+
+      ```bash
       docker-compose run deploy magento-command deploy:mode:set developer
       ```
 

@@ -81,17 +81,32 @@ The following query returns information about category ID `20` and four levels o
       "children_count": "8",
       "children": [
         {
-          "id": 21,
-          "level": 3,
-          "name": "Tops",
-          "path": "1/2/20/21",
-          "children": []
-        },
-        {
           "id": 22,
           "level": 3,
           "name": "Bottoms",
           "path": "1/2/20/22",
+          "children": [
+            {
+              "id": 27,
+              "level": 4,
+              "name": "Pants",
+              "path": "1/2/20/22/27",
+              "children": []
+            },
+            {
+              "id": 28,
+              "level": 4,
+              "name": "Shorts",
+              "path": "1/2/20/22/28",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "level": 3,
+          "name": "Tops",
+          "path": "1/2/20/21",
           "children": [
             {
               "id": 23,
@@ -119,20 +134,6 @@ The following query returns information about category ID `20` and four levels o
               "level": 4,
               "name": "Bras & Tanks",
               "path": "1/2/20/21/26",
-              "children": []
-            },
-            {
-              "id": 27,
-              "level": 4,
-              "name": "Pants",
-              "path": "1/2/20/22/27",
-              "children": []
-            },
-            {
-              "id": 28,
-              "level": 4,
-              "name": "Shorts",
-              "path": "1/2/20/22/28",
               "children": []
             }
           ]
@@ -162,6 +163,7 @@ The following query returns breadcrumb information about the women's `Tops` cate
       category_name
       category_level
       category_url_key
+      category_url_path
     }
   }
 }

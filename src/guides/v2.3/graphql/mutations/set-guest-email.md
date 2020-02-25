@@ -73,9 +73,9 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`Could not find a cart with ID "XXX"` | The ID specified in the `cart` attribute does not exist.
-`Invalid email format` | The value specified in the `email` attribute has an incorrect format.
-`Required parameter "cart_id" is missing` | The `cart_id` attribute was omitted or contains an empty value.
-`Required parameter "email" is missing` | The `email` attribute was omitted or contains an empty value.
+`Could not find a cart with ID "XXX"` | The ID specified in the `cart` argument does not exist.
+`Invalid email format` | The value specified in the `email` argument has an incorrect format.
+`Required parameter "cart_id" is missing` | The `cart_id` argument was omitted or contains an empty value.
+`Required parameter "email" is missing` | The `email` argument was omitted or contains an empty value.
 `The current user cannot perform operations on cart "XXX"` | An unauthorized user (guest) tried to set the email address on the customer's cart.
 `The request is not allowed for logged in customers` | An authorized user (customer) is not allowed to use the `setGuestEmailOnCart` mutation.
