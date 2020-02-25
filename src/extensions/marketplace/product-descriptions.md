@@ -62,13 +62,13 @@ These are in addition to all standard requirements (opening paragraph, features,
 
 _Account and Pricing Example 1:_
 
-  An additional \_\_\_\_\_\_ account is required, and additional fees apply. The account is not created during extension installation. To create an Account please visit the signup page. For more details please visit the company payment page.
+An additional \_\_\_\_\_\_ account is required, and additional fees apply. The account is not created during extension installation. To create an Account please visit the signup page. For more details please visit the company payment page.
 
 _Account and Pricing Example 2:_
 
-  To use this extension, you need to sign up for a \_\_\_\_\_\_\_ service account here. Transaction fees will be charged for every transaction. Transaction fees vary from merchant to merchant, based on what is agreed upon with \_\_\_\_\_\_\_ when negotiating your contract. \_\_\_\_\_\_ does not provide pricing details publicly. For more information and to register, please contact Lorem@Ipsum.com directly.
+To use this extension, you need to sign up for a \_\_\_\_\_\_\_ service account here. Transaction fees will be charged for every transaction. Transaction fees vary from merchant to merchant, based on what is agreed upon with \_\_\_\_\_\_\_ when negotiating your contract. \_\_\_\_\_\_ does not provide pricing details publicly. For more information and to register, please contact Lorem@Ipsum.com directly.
 
-  (Alternative: “For more information and to register, please visit the company contact form.” )
+(Alternative: “For more information and to register, please visit the company contact form.” )
 
 ## Payment extensions
 

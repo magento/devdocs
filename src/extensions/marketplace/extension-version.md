@@ -20,12 +20,12 @@ For existing, approved extensions, follow these instructions to add new versions
 
 1. Select the **Magento Compatibility** for the extension including the Magento edition (Open Source or Commerce) and version.
 
-1. For **Requested Launch Date**, select an option:
+For **Requested Launch Date**, select an option:
 
-  -  ***On Approval*** - Immediately publishes when the extensions receives Magento Marketplace approval.
-  -  ***Requested Launch Date*** - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
+-  ***On Approval*** - Immediately publishes when the extensions receives Magento Marketplace approval.
+-  ***Requested Launch Date*** - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
 
-  ![]({% link extensions/marketplace/images/submit-new-version-detail.png %}){: .zoom}
+![]({% link extensions/marketplace/images/submit-new-version-detail.png %}){: .zoom}
   _New Version Detail_
 
 1. Click <span class="btn">Continue</span>.

@@ -12,13 +12,13 @@ Follow these steps to create a new developer account, or to register as a develo
 
 1. Access your Magento account.
 
-    If you don’t yet have a Magento account, do one of the following:
+If you don’t yet have a Magento account, do one of the following:
 
-    -  Go to the [Magento Developer][1] page, and click <span class="btn">Create  Account</span>. Then, click <span class="btn">Register</span>.
-    -  In the upper-right corner of [Magento Marketplace][2], click **Sign In**. Then, click <span class="btn">Register</span>.
-    -  From [Magento.com][3], click **My Account**. Then under **New Customers**, click <span class="btn">Register</span>.
+-  Go to the [Magento Developer][1] page, and click <span class="btn">Create  Account</span>. Then, click <span class="btn">Register</span>.
+-  In the upper-right corner of [Magento Marketplace][2], click **Sign In**. Then, click <span class="btn">Register</span>.
+-  From [Magento.com][3], click **My Account**. Then under **New Customers**, click <span class="btn">Register</span>.
 
-    If you already have a Magento account, log in as a registered user.
+If you already have a Magento account, log in as a registered user.
 
 1. Click **Marketplace** and choose **Developer Portal**.
 
@@ -37,17 +37,17 @@ Follow these steps to create a new developer account, or to register as a develo
 
 ## Step 2: Agree to the terms of service
 
-1. Read the following documents that describe Magento Marketplace [terms of service][4].
+Read the following documents that describe Magento Marketplace [terms of service][4].
 
-   -  Xcelerate & Marketplace Master Terms
-   -  Xcelerate & Marketplace Development Terms
+-  Xcelerate & Marketplace Master Terms
+-  Xcelerate & Marketplace Development Terms
 
-    For your reference, you can also find these documents on [Magento.com][4].
+For your reference, you can also find these documents on [Magento.com][4].
 
-1. If you agree with the terms of use, select the checkbox and click <span class="btn">I Agree</span>.
+If you agree with the terms of use, select the checkbox and click <span class="btn">I Agree</span>.
 
-    ![]({% link extensions/marketplace/images/terms-of-service.png %}){: width="600px"}<br/>
-    _Terms of Service_
+![]({% link extensions/marketplace/images/terms-of-service.png %}){: width="600px"}<br/>
+ _Terms of Service_
 
 ## Step 3: Select the type of account
 

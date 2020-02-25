@@ -27,8 +27,8 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. To upload the image that you have prepared to your company profile, do one of the following:
 
-   -  Drag the image to the box.
-   -  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
+-  Drag the image to the box.
+-  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
 
 ### Step 2: Enter your contact information
 
@@ -51,10 +51,10 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. Complete the following fields that make up your company address:
 
-    -  Country
-    -  Street Address, Apt/Suite
-    -  ZIP, City, State / Province
-    -  Phone Number
+-  Country
+-  Street Address, Apt/Suite
+-  ZIP, City, State / Province
+-  Phone Number
 
 1. To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
@@ -91,7 +91,7 @@ _Social Networks_
 
 {: .fields-table }
 |Field|Description|
-|--- |--- |
+|---|---|
 |Use as my default profile|Mark the checkbox to use your company profile as the default.|
 |Legal Company Name|The name of your legally registered business. Your company name appears in your Marketplace profile, and as a link in your extensions listings.|
 |Company Bio|A description of your company’s background, products, and services. You might begin with a couple of sentences to give a brief overview, and finish it later with a more detailed description. If you use a word processor to compose and spell check your bio, make sure to save it as plain text before pasting it into your profile. Make sure to convert all URLs to working hyperlinks. Maximum characters: 1500, including spaces.|
