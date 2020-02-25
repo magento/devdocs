@@ -13,7 +13,7 @@ The report includes the results of the following tests:
 - Manual QA Review
 - Marketing Review
 
-## View the results of the reviewR
+## View the results of the review
 
 1. To view the results of the tests, navigate to the extension status page.
 

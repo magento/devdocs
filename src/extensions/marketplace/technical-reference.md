@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Technical Reference
 ---
 
-### Guides
+## Guides
 
 - [PHP Developer Guide]({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
 - [Magento Architecture]({% link guides/v2.3/architecture/bk-architecture.md %})
@@ -24,7 +24,7 @@ title: Technical Reference
 - [SOAP]({% link guides/v2.3/get-started/soap/soap-web-api-calls.md %})
 - [Marketplace EQP API]({% link marketplace/eqp/v1/api.md %})
 
-### System
+## System
 
 - [Installation]({% link guides/v2.3/install-gde/bk-install-guide.md %})
 - [Configuration]({% link guides/v2.3/config-guide/bk-config-guide.md %})

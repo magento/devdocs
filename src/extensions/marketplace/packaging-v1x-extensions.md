@@ -14,14 +14,14 @@ Extensions developed for Magento version 1.x have different packaging guidelines
 
     This takes you to the Create Extension Package page, which consists of six sections:
 
-    - Package Info
-    - Release Info
+    - Package info
+    - Release info
     - Authors
     - Dependencies
     - Contents
-    - Load Local Package
+    - Load local package
 
-## Section A: Package Info
+## Section A: Package info
 
 Enter the name of the extension. It is good practice to keep the name short using simple words whenever possible.
 
@@ -43,7 +43,7 @@ The Channel field is required and determined by the version of Magento you are u
 {: .bs-callout .bs-callout-info}
 If the wrong channel is used during the packaging process, you will receive an error and will have to resubmit it.
 
-### Supported Releases
+### Supported releases
 
 This field is intended for backward compatibility.
 
@@ -54,7 +54,7 @@ This field is intended for backward compatibility.
 {: .bs-callout .bs-callout-info}
 If you are using EE 1.9 or earlier versions this field is absent but this won’t affect extension packaging process. You can skip this step in this situation.
 
-### Upload and Packaging Options
+### Upload and packaging options
 
 If you are packaging an extension using a Magento Pre 1.5 (i.e., 1.4.x and lower) version and the extension only supports Pre 1.5 versions of Magento use the following settings:
 
@@ -92,7 +92,7 @@ Version numbers for your Pre 1.5 and 1.5+ versions should be different. You are 
 {: .bs-callout .bs-callout-tip}
 It’s a good idea to also mention information about the supported releases in the extensions description, so merchants can quickly know whether or not they can use it.
 
-### Summary and Description
+### Summary and description
 
 Provide a brief summary and description about the extension. This is a required field. Magento uses this information in the extension review process. The summary will be displayed in Magento Marketplace.
 
@@ -119,18 +119,18 @@ Use this field to link to the license text. It is not required, but recommended.
 
 For example, http://opensource.org/licenses/osl-3.0.php
 
-## Section B: Release Info
+## Section B: Release info
 
 In order to understand this process, see [Software Versioning][1].
 
 ![]({% link extensions/marketplace/images/release-info.png %}){: .zoom}
 _Release Info_
 
-### Release Version
+### Release version
 
 The release version can be any arbitrary number value that you want to use as the base version. This is often set to 1.0.0 or 10.0.0. It is critical, however, to increment the release version number every time you update and repackage this extension. To protect against incorrect release version inputs, Magento Marketplace will not allow you to upload the same version twice.
 
-### Release Stability
+### Release stability
 
 The release version can be any arbitrary number value that you want to use as the base version. This is often set to 1.0.0 or 10.0.0. It is critical, however, to increment the release version number every time you update and repackage this extension. To protect against incorrect release version inputs, Magento Marketplace will not allow you to upload the same version twice.
 
@@ -160,7 +160,7 @@ _Authors_
 
 The dependencies tab is used to specify the dependence of our code in regard to the PHP version. If it is necessary, the dependence on other extension packages can be filled out as well. During the installation of an extension, the system will check it in regard to all versions specified for it, and if dependent extensions are not installed, Magento Marketplace offers to install them. Also, you can specify the dependence on the PHP extensions, for example, if your module uses GD library functions of the latest version. In this case, if a necessary PHP extension is not installed on the server, Marketplace will show an alert the administrator.
 
-The following example provides an example of dependency on the `Mage\_Core\_Modules` package. This means that our extension will only work with Magento versions within the set range. The PHP version\_compare function http://php.net/version-compare is used to verify the compatibility of versions during the extension installation.
+The following example provides an example of dependency on the `Mage\_Core\_Modules` package. This means that our extension will only work with Magento versions within the set range. The PHP [`version\_compare`][2] function is used to verify the compatibility of versions during the extension installation.
 
 ![]({% link extensions/marketplace/images/dependencies.png %}){: .zoom}
 _Dependencies_
@@ -191,7 +191,7 @@ In the Path field, enter the path relative to the path in the Target field. In t
 ![]({% link extensions/marketplace/images/contents.png %}){: .zoom}
 _Contents_
 
-## Section F: Load Local Package
+## Section F: Load local package
 
 After you fill in all of the fields, click **Save Data and Create the Package**.
 
@@ -207,3 +207,4 @@ When the extension package file is ready, it can be [submitted for review]({% li
 First you should set write permissions to the appropriate folders.
 
 [1]: https://en.wikipedia.org/wiki/Software_versioning
+[2]: http://php.net/version-compare

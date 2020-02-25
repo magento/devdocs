@@ -7,12 +7,11 @@ When you have completed the code, you can submit your extension for marketing re
 
 When submitted, the extension is placed in a queue as soon as it is submitted. You will receive confirmation by email, and can track the status of your submission from your Marketplace account. You can submit your product for both technical and marketing review at the same time. The process is the same for both extensions and themes.
 
-## Prepare for Marketing Review
+## Prepare for marketing review
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
 - Review the [marketing]({% link extensions/marketplace/marketing-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
-
 - Spell-check and review all text fields in your extension, product documentation, and marketing materials.
 - Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
 - Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
@@ -41,7 +40,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
     - Click <span class="btn">Preview</span> to see the output of your marketing information.
     - After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
 
-### Extension Description
+### Extension description
 
 1. Under **Marketing Submission**, click **Extension Description**.
 
@@ -64,7 +63,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
     ![]({% link extensions/marketplace/images/marketing-description3.png %}){: .zoom}
     _Extension Category_
 
-### Images and Videos
+### Images and videos
 
 You must provide a thumbnail and at least two high-quality images for the image gallery that depict the extension. The Product Thumbnail represents the extension in Marketplace listings. In addition, you can upload up to fifteen Product Images. Make sure to include only relevant information, and crop the image to remove the URL and any unnecessary white space. Images can be in either JPG (JPEG) or PNG format, with a maximum file size of 5 MB for each.
 
@@ -89,7 +88,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
     ![]({% link extensions/marketplace/images/marketing-images3.png %}){: .zoom}
     _Video Links_
 
-### Compatibility Information
+### Compatibility information
 
 1. Under **Marketing Submission**, click <span class="btn">Compatibility</span>.
 
@@ -100,7 +99,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
     ![]({% link extensions/marketplace/images/marketing-compatibility.png %}){: .zoom}
     _Compatibility_
 
-### Pricing Information
+### Pricing information
 
 1. Under **Marketing Submission**, click <span class="btn">Pricing</span>.
 
@@ -114,7 +113,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
     ![]({% link extensions/marketplace/images/marketing-submission-pricing.png %}){: .zoom}
     _Installation Pricing_
 
-### Extension Support (Optional)
+### Extension support (Optional)
 
 1. Under **Marketing Submission**, click <span class="btn">Extension Support</span>.
 
@@ -129,7 +128,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
     ![]({% link extensions/marketplace/images/marketing-submission-support.png %}){: .zoom}
     _Extension Support_
 
-### Additional Details
+### Additional details
 
 1. On the extension status page, on the left side, under **Marketing Submission**, click <span class="btn">Additional Details</span>.
 
@@ -151,7 +150,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
     ![]({% link extensions/marketplace/images/marketing-submission-additional-details.png %}){: .zoom}
     _Additional Details_
 
-### Documentation and Resources
+### Documentation and resources
 
 {: .bs-callout .bs-callout-info}
 While you can add documentation PDF files during this review, the content is tested during the [Technical Review]({% link extensions/marketplace/submit-for-technical-review.md %}).

@@ -14,7 +14,7 @@ The following instructions walk you through the process of completing your perso
 
 Prepare an image for your personal profile that is 255 pixels square, and saved as one of the following file types: JPG, GIF, or PNG.
 
-## Step 1: Complete Your Personal Background
+## Step 1: Complete your personal background
 
 1. Enter your **First Name** and **Last Name**.
 
@@ -29,7 +29,7 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
 
     ![]({% link extensions/marketplace/images/account-personal-profile-name.png %}){: .zoom}
 
-## Step 2: Enter Your Contact Information
+## Step 2: Enter your contact information
 
 1. Enter the URL of your **Personal Website**.
 
@@ -47,7 +47,7 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
 ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
 _Contact Information_
 
-## Step 3: Enter Your Personal Address
+## Step 3: Enter your personal address
 
 Complete the following fields that make up your personal address:
 
@@ -61,7 +61,7 @@ To complete the **Phone Number**, choose the flag for your country code. Then, e
 ![]({% link extensions/marketplace/images/account-personal-profile-address.png %}){: .zoom}
 _Personal Address_
 
-## Step 4: Link to Your Social Networks **(optional)**{: .ContrastSans}
+## Step 4: Link to your social networks (optional)
 
 Enter the link to each professional social network that you want to include in your personal profile.
 
@@ -74,7 +74,7 @@ Enter the link to each professional social network that you want to include in y
 ![]({% link extensions/marketplace/images/account-profile-social-networks.png %}){: .zoom}
 _Social Networks_
 
-## Step 5: Activate Your Account
+## Step 5: Activate your account
 
 1. When the required fields are complete, click <span class="btn">Save</span>.
 

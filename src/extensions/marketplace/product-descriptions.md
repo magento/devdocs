@@ -5,7 +5,7 @@ title: Product Descriptions
 
 Every extension submitted requires a long, detailed description of the product as part of the marketing submission process. Some products, such as integration extensions and payment extensions, have additional requirements for their long descriptions.
 
-## Long Description Requirements
+## Long description requirements
 
 **Detailed opening paragraph that describes the extension (Required)**
 
@@ -14,13 +14,13 @@ Every extension submitted requires a long, detailed description of the product a
 - Leave the merchant with a solid understanding of how their site will appear and function if they purchase your extension.
 - Do NOT include a heading before the opening paragraph.
 
-**List of Features (Required)**
+**List of features (required)**
 
 - Add a “Features” heading, using H3 or H2 tags.
 - List features vertically with bullet points.
 - Only use the bullet point button in the Admin to create the bullet points.
 
-**Demo Links (Strongly Suggested)**
+**Demo links (recommended)**
 
 - Provide hyperlinks to functioning demos.
 - Remember to label them and provide sign credentials if needed.
@@ -48,14 +48,12 @@ Every extension submitted requires a long, detailed description of the product a
 - Saying “This Magento extension” or “Magento 2 Newsletter Subscription extension” instead of “This extension for Magento” or “Newsletter Subscription extension for Magento 2”
 - Not capitalizing the “M” in “Magento”
 
-## Integration Extensions
+## Integration extensions
 
-These are in addition to all standard requirements (Opening Paragraph, Features, Demos, etc.)
+These are in addition to all standard requirements (opening paragraph, features, demos, etc.)
 
-- Add an Introductory paragraph (BEFORE the opening paragraph) that gives background information on the company / service being integrated. Make the first mention of the company a BOLD hyperlink that leads to the corresponding company website.
-
+- Add an introductory paragraph (BEFORE the opening paragraph) that gives background information on the company / service being integrated. Make the first mention of the company a BOLD hyperlink that leads to the corresponding company website.
 - Add an “Account and Pricing” heading, using H3 or H2 tags.
-
 - Under the “Account and Pricing” heading, add the following example in BOLD. Make it clear that a separate account is required. Specify whether or not the account is created during extension installation. Supply a link to the sign-up page. Specify if the SERVICE (not the extension) is free or if there are additional fees for the service/account. Add a link to the pricing page.
 
 **Examples**
@@ -70,11 +68,11 @@ _Account and Pricing Example 2:_
 
   (Alternative: “For more information and to register, please visit the company contact form.” )
 
-## Payment Extensions
+## Payment extensions
 
-These are in addition to all standard requirements and integration requirements (Integration Paragraph, Opening Paragraph, Account &amp; Pricing information, Features, Demos, etc.)
+These are in addition to all standard requirements and integration requirements (integration paragraph, opening paragraph, account and pricing information, features, demos, etc.)
 
-**Add Security and PCI Compliance information.** The merchant must know their responsibilities regarding PCI and Security.
+**Add security and PCI compliance information.** The merchant must know their responsibilities regarding PCI and Security.
 
 - Add information about how customer data is used and stored.
 - Is this handled through popup? Redirect? Both?

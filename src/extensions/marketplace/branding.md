@@ -25,7 +25,7 @@ When referencing yourself or your company, use the _specializing in Magento_ phr
 The Magento name **cannot** be used in any of the following:
 
 - Name or title of the extension
-- - Extension icon
+- Extension icon
 - Developer branding
 - Your domain name
 - Your username or screen name
@@ -35,8 +35,8 @@ The Magento name **cannot** be used in any of the following:
 
 Approved Magento trademarks can be used in your extension listing or website only to refer to related Magento products or services.
 
-* The logo must be the current logo that is provided by Magento.
-* The Magento logo must not be altered in any way.
-* The Magento logo must be half the size of your own branding, to avoid the suggestion of any affiliation.
+- The logo must be the current logo that is provided by Magento.
+- The Magento logo must not be altered in any way.
+- The Magento logo must be half the size of your own branding, to avoid the suggestion of any affiliation.
 
 [1]: https://magento.com/legal/licensing
