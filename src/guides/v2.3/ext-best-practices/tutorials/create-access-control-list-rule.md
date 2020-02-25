@@ -11,51 +11,51 @@ In this tutorial, we are creating three custom resources (Custom Menu, Create, D
 
 ## Step 1. Define the custome resources
 
-Create the `etc/acl.xml` file in your module. This file adds the custom resources in resource tree.
+1. Create the `etc/acl.xml` file in your module. This file adds the custom resources in resource tree.
 
-```xml
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
-    <acl>
+   ```xml
+   <?xml version="1.0"?>
+   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+      <acl>
         <resources>
-            <resource id="Magento_Backend::admin">
-                <resource id="Vendor_MyModule::menu" title="Custom Menu" sortOrder="10" >
-                    <resource id="Vendor_MyModule::create" title="Create" sortOrder="0" />
-                    <resource id="Vendor_MyModule::delete" title="Delete" sortOrder="100" />
-                </resource>
-            </resource>
+           <resource id="Magento_Backend::admin">
+              <resource id="Vendor_MyModule::menu" title="Custom Menu" sortOrder="10" >
+                 <resource id="Vendor_MyModule::create" title="Create" sortOrder="0" />
+                 <resource id="Vendor_MyModule::delete" title="Delete" sortOrder="100" />
+              </resource>
+           </resource>
         </resources>
-    </acl>
-</config>
-```
+      </acl>
+   </config>
+   ```
 
-| Attribute | Description |
-| --------- | ----------- |
-| `id` | Unique string and should be in this format: `Vendor_ModuleName::resourceName` |
-| `title` | Title which is display on menu bar|
-| `sortOrder` | Position in which menu to be disaplay |
+   | Attribute | Description |
+   | --------- | ----------- |
+   | `id` | Unique string and should be in this format: `Vendor_ModuleName::resourceName` |
+   | `title` | Title which is display on menu bar |
+   | `sortOrder` | Position in which menu to be disaplay |
 
-Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+1. Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 
-```bash
-bin/magento cache:clean
-```
+   ```bash
+   bin/magento cache:clean
+   ```
 
 1. Navigate to **System** > Permissions > **User Roles**.
 
-1. After clicking a Add New Role button, enter Role Name and Your Password.
+1. After clicking the **Add New Role** button, enter values for **Role Name** and **Your Password**.
 
-1. Then, click a Role Resources tab select Resource Access as Custom.
+1. Then, click a Role Resources tab and select **Resource Access as Custom**.
 
-![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
+   ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
 
 1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
 
-![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
+   ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
 ## Step 2. Restrict access to Admin users
 
-### Restricting admin menu:
+### Restrict the admin menu
 
 In your module, create the `etc/adminhtml/menu.xml` file. This file defines a menu that will be hidden from unauthorized users. The `resource` attributes in the `add` nodes determine which resource each action accesses.
 
@@ -80,11 +80,11 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
 | `action` | Url of the page which needs to be display after click the menu. It should be in following format: `front_name/controller_path/action` |
 | `resource` | To restrict using ACL rule |
 
-The menu displays like below,
+The menu displays as follows:
 
 ![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
 
-### Restricting admin controllers:
+### Restrict admin controllers
 
 We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
 
@@ -106,9 +106,9 @@ protected function _isAllowed()
 }
 ```
 
-If user doesn't have permission, the action page displays an "Access Denied" message.
+If the user doesn't have permission, the action page displays an "Access Denied" message.
 
-## Step 4. Restrict web API access
+## Step 3. Restrict web API access
 
 We can restrict users from accessing API endpoints by using the ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
 
