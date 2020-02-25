@@ -74,7 +74,6 @@ To connect a Cloud environment to New Relic, you must add the New Relic license 
 -  For Starter accounts, you have a New Relic license key that supports up to three environments. You must add the New Relic license key to your Starter Project environments. We recommend adding the key to the Staging and Production (master) environments, and one other environment of your choice.  If you have more than three active environments using the same New Relic license key, you must remove the license variable from an existing environment.
 
 {:.procedure}
-### First Option
 
 To find your New Relic license key:
 
