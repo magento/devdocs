@@ -10,7 +10,7 @@ Attribute |  Data Type | Description
 `country_id` | String | Deprecated. Use `country_code` instead. The customer's country
 `custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Deprecated. Not applicable for GraphQL
 `default_billing` | Boolean | Indicates whether the address is the default billing address
-`default_shipping` | Boolean | Indicates whether the address is the default shipping address\
+`default_shipping` | Boolean | Indicates whether the address is the default shipping address
 `fax` | String | The fax number
 `firstname` | String | The first name of the person associated with the shipping/billing address
 `lastname` | String | The family name of the person associated with the shipping/billing address
