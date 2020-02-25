@@ -11,19 +11,17 @@ The following recommendation types are listed in the recommended order when test
 
 1. **More like this** - Does not require any input data. Uses a direct content similarity match.
 1. **Most popular** - Requires minimal input data. Testers need to view products.
-1. **Viewed this, viewed that** - Requires testers to view multiple products.
-1. **Bought this, bought that** - Requires testers to add products to a cart and purchase those items.
+1. **Viewed this, viewed that** - Requires multiple testers to view multiple products.
+1. **Bought this, bought that** - Requires multiple testers to purchase multiple products.
 
 ## Testing recommendations on a non-production environment
 
 1. Deploy the `product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
 
-1. <a href="mailto:magento-product-recs-feedback@adobe.com">Request</a> a non-production SaaS Environment ID.
-
-1. Use this non-production ID when you [set]({{ page.baseurl }}/recommendations/configure.html#envid) the SaaS Environment ID in the Magento Admin.
+1. Use one of the non-production SaaS Environment IDs for [configuration]({{ page.baseurl }}/recommendations/configure.html#envid) in the Magento Admin.
 
 ### Caveats
 
--  You can use generated data, such as views, products added to a cart, and checkouts, and so on in your testing environment as identified by the non-production SaaS Environment ID Magento provides.
+-  The non-production SaaS Environment ID identifies an isolated environment in which the resulting product recommendations will be based entirely on the behavioral data generated on the associated storefront.
 
 -  Because you will not have large amounts of behavioral data, input data for computing product associations is sparse. However, that data is still sent to Sensei to compute the machine learning models and provide recommendations based on data you generated within this environment.
