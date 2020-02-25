@@ -1,6 +1,6 @@
 ---
 group: marketplace-sellers
-itle: Packaging Magento Version 1.x Extensions
+title: Packaging Magento Version 1.x Extensions
 ---
 
 Extensions developed for Magento version 1.x have different packaging guidelines than [Magento version 2.x]({% link guides/v2.3/extension-dev-guide/package/package_module.md %}).
