@@ -75,7 +75,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 ## 2002.0.23
 *Release date: February 24, 2020*<br/>
 
--  {:.fix}Fixed a compatibility issue with `{{site.data.var.ct}}` 2002.0.x releases that prevented on demand static content generation from completing successfully in Magento production mode.
+-  {:.fix}Fixed a compatibility issue with `{{site.data.var.ct}}` 2002.0.x releases that prevented on-demand static content generation from completing successfully in Magento production mode.
 
 ## Older releases
 
