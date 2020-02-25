@@ -108,7 +108,7 @@ protected function _isAllowed()
 
 If user doesn't have permission, the action page displays an "Access Denied" message.
 
-## Step 4. Restrict web API access
+## Step 3. Restrict web API access
 
 We can restrict users from accessing API endpoints by using the ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
 
