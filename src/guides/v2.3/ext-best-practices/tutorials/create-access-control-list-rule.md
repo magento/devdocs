@@ -35,21 +35,21 @@ In this tutorial, we are creating three custom resources (Custom Menu, Create, D
    | `title` | Title which is display on menu bar |
    | `sortOrder` | Position in which menu to be disaplay |
 
-2. Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+1. Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 
    ```bash
    bin/magento cache:clean
    ```
 
-3. Navigate to **System** > Permissions > **User Roles**.
+1. Navigate to **System** > Permissions > **User Roles**.
 
-4. After clicking the **Add New Role** button, enter values for **Role Name** and **Your Password**.
+1. After clicking the **Add New Role** button, enter values for **Role Name** and **Your Password**.
 
-5. Then, click a Role Resources tab and select **Resource Access as Custom**.
+1. Then, click a Role Resources tab and select **Resource Access as Custom**.
 
    ![Resource access as custom]({{ site.baseurl }}/common/images/ext-best-practices/resource-access-custom-create-acl-rule.png)
 
-6. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
+1. Select the **Custom Menu**, **Create**, and **Delete** resources and save the role.
 
    ![Resource tree]({{ site.baseurl }}/common/images/ext-best-practices/role-resources-create-acl-rule.png)
 
