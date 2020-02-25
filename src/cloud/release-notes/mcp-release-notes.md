@@ -21,6 +21,8 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 -  {:.fix}**Added the [PayPal Express Checkout issue with region patch for Magento v2.3.4](https://magento.com/tech-resources/download#download2353)**-Published on February 12, 2020,  this patch resolves an issue that affects orders placed with PayPal Express Checkout where the shipping address for the order specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html).
 
+-  {:.fix}**Added the "FPC is getting disabled during deployments" patch for Magento 2.3.2 and later releases**–Fixes an issue that disabled the full page cache during the Magento deployment process.
+
 -  {:.fix}**Updated the [Scope parameter for Async/Bulk API patch](https://magento.com/tech-resources/download#download2312) for Magento Open Source v2.3.1 and 2.3.2**-Fixed a syntax error in the `composer.json` file.
 
 -  {:.fix}**Compatibility fixes to support upcoming Magento releases**–Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4 and later.<!--MAGECLOUD-5127-->
