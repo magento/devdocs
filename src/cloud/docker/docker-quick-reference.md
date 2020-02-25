@@ -49,13 +49,13 @@ See [Service versions] for a list of the options to configure the software servi
 
 ## bin/magento-docker
 
-Run `bin/magento-docker` commands using the following format:
+Use `bin/magento-docker` commands to simplify running docker-compose tasks. For example, instead of running separate docker-compose build, deploy, and post-deploy commands to redeploy Magento in a Docker environment, you can run the following command:
 
 ```bash
-./bin/magento-docker <command>
+./bin/magento-docker ece-redeploy
 ```
 
-For example, to connect to the bash shell:
+The following example shows the output for the `./bin/magento-docker` command to connect to the bash shell:
 
 ```terminal
 $ ./bin/magento-docker bash
@@ -69,17 +69,17 @@ root@deploy:/app#
 
 Action | Command
 :----- | :------
-Connect to bash shell | `bash`
-Pull the latest images | `pull`
-Build application | `ece-build`
-Deploy application | `ece-deploy`
-Run post-deploy hooks | `ece-post-deploy`
-Re-build and re-deploy application | `ece-redeploy`
-Stop containers | `stop`
-Start containers | `start`
-Restart containers | restart
-Destroy containers | `down`
-Destroy, re-create, and start containers | `up`
+Connect to bash shell | `./bin/magento-docker bash`
+Pull the latest images | `./bin/magento-docker pull`
+Build application | `./bin/magento-docker ece-build`
+Deploy application | `./bin/magento-docker ece-deploy`
+Run post-deploy hooks | `./bin/magento-docker ece-post-deploy`
+Re-build and re-deploy application | `./bin/magento-docker ece-redeploy`
+Stop containers | `./bin/magento-docker stop`
+Start containers | `./bin/magento-docker start`
+Restart containers | `./bin/magento-docker restart`
+Destroy containers | `./bin/magento-docker down`
+Destroy, re-create, and start containers | `./bin/magento-docker up`
 
 [Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [Configure Docker]: {{site.baseurl}}/cloud/docker/docker-config.html
