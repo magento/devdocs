@@ -137,5 +137,8 @@ pages:
   versionless: true
   children:
 
+    - label: Code Validation
+      url: /extensions/marketplace/code-validation.html
+
     - label: Marketplace Tools
       url: /extensions/marketplace/marketplace-tools.html

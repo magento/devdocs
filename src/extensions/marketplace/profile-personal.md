@@ -14,14 +14,14 @@ The following instructions walk you through the process of completing your perso
 
 Prepare an image for your personal profile that is 255 pixels square, and saved as one of the following file types: JPG, GIF, or PNG.
 
-## Step 1: Complete your personal background
+### Step 1: Complete your personal background
 
 1. Enter your **First Name** and **Last Name**.
 
 1. To upload the image that you have prepared to your personal profile, do one of the following:
 
-    - Drag the image to the box.
-    - Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system, and upload it to your profile.
+    -  Drag the image to the box.
+    -  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system, and upload it to your profile.
 
 1. Take note that a unique **Magento ID** is assigned to your account.
 
@@ -29,7 +29,7 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
 
     ![]({% link extensions/marketplace/images/account-personal-profile-name.png %}){: .zoom}
 
-## Step 2: Enter your contact information
+### Step 2: Enter your contact information
 
 1. Enter the URL of your **Personal Website**.
 
@@ -47,34 +47,34 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
 ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
 _Contact Information_
 
-## Step 3: Enter your personal address
+### Step 3: Enter your personal address
 
 Complete the following fields that make up your personal address:
 
-- Country
-- Street Address, Apt/Suite
-- ZIP, City, State / Province
-- Phone Number
+-  Country
+-  Street Address, Apt/Suite
+-  ZIP, City, State / Province
+-  Phone Number
 
 To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
 ![]({% link extensions/marketplace/images/account-personal-profile-address.png %}){: .zoom}
 _Personal Address_
 
-## Step 4: Link to your social networks (optional)
+### Step 4: Link to your social networks (optional)
 
 Enter the link to each professional social network that you want to include in your personal profile.
 
-- GitHub
-- Stack Exchange
-- Twitter
-- Facebook
-- LinkedIn
+-  GitHub
+-  Stack Exchange
+-  Twitter
+-  Facebook
+-  LinkedIn
 
 ![]({% link extensions/marketplace/images/account-profile-social-networks.png %}){: .zoom}
 _Social Networks_
 
-## Step 5: Activate your account
+### Step 5: Activate your account
 
 1. When the required fields are complete, click <span class="btn">Save</span>.
 

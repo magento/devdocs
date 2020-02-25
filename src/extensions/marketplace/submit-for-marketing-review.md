@@ -11,11 +11,11 @@ When submitted, the extension is placed in a queue as soon as it is submitted. Y
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
-- Review the [marketing]({% link extensions/marketplace/marketing-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
-- Spell-check and review all text fields in your extension, product documentation, and marketing materials.
-- Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
-- Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
-- Consider the following: Is the presentation professional? Does it foster confidence in your skills as a developer? Does it have commercial appeal? Do you provide information to help customers understand your product and how it supports their storefronts and backend?
+-  Review the [marketing]({% link extensions/marketplace/marketing-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
+-  Spell-check and review all text fields in your extension, product documentation, and marketing materials.
+-  Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
+-  Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
+-  Consider the following: Is the presentation professional? Does it foster confidence in your skills as a developer? Does it have commercial appeal? Do you provide information to help customers understand your product and how it supports their storefronts and backend?
 
 ![]({% link extensions/marketplace/images/market-content.png %}){: .zoom}
 
@@ -36,9 +36,9 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Complete each section and submit for review when it is complete.
 
-    - Click <span class="btn">Save Submit</span> to save progress.
-    - Click <span class="btn">Preview</span> to see the output of your marketing information.
-    - After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
+    -  Click <span class="btn">Save Submit</span> to save progress.
+    -  Click <span class="btn">Preview</span> to see the output of your marketing information.
+    -  After adding all content, with full checkmarks across sections, click <span class="btn">Submit</span>.
 
 ### Extension description
 
@@ -134,18 +134,18 @@ You must provide a thumbnail and at least two high-quality images for the image 
 
 1. Choose the **Stability** setting that applies to this version of the extension:
 
-   - Beta Build: Internal testing is complete, and the extension is released to the public to help identify any outstanding issues.
-   - Stable Build: Any major issues found during the beta release stage have been resolved, and the extension is ready for market.
+   -  Beta Build: Internal testing is complete, and the extension is released to the public to help identify any outstanding issues.
+   -  Stable Build: Any major issues found during the beta release stage have been resolved, and the extension is ready for market.
 
 1. Under **Other Options**, select checkboxes for each applicable option.
 
-   - Released with setup scripts
-   - Service contracts included
-   - External service contracts included
-   - Custom UI implementation
-   - Web API supported
-   - Test coverage supported
-   - Responsive design supported
+   -  Released with setup scripts
+   -  Service contracts included
+   -  External service contracts included
+   -  Custom UI implementation
+   -  Web API supported
+   -  Test coverage supported
+   -  Responsive design supported
 
     ![]({% link extensions/marketplace/images/marketing-submission-additional-details.png %}){: .zoom}
     _Additional Details_

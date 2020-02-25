@@ -11,9 +11,9 @@ During technical review, all submissions are checked to ensure that the code mee
 | Warning | 8 | A severity level 8 warning does not prevent an extension from passing technical review. Developers are encouraged to resolve any issues that trigger a level 8 warning. |
 | Warning | 6 | A severity level 6 warning does not prevent an extension from passing technical review. Developers are encouraged to resolve any issues that trigger a level 6 warning. |
 
-## Magento 2.x Rules
+## Magento 2.x rules
 
-### Critical Errors - Severity 10
+### Critical errors - severity 10
 
 `Generic.Functions.CallTimePassByReference.NotAllowed`|Call-time pass-by-reference calls are prohibited.
 `Generic.PHP.CharacterBeforePHPOpeningTag.Found`|The opening PHP tag must be the first content in the file.
@@ -32,7 +32,7 @@ During technical review, all submissions are checked to ensure that the code mee
 `PSR2.Files.ClosingTag.NotAllowed`|A closing tag is not permitted at the end of a PHP file.
 `Squiz.PHP.Eval.Discouraged`|Use of <code>eval()</code> is discouraged.
 
-### Warnings - Severity 8
+### Warnings - severity 8
 
 `Generic.Arrays.DisallowLongArraySyntax.Found`|Short array syntax must be used to define arrays.
 `Generic.Classes.DuplicateClassName.Found`|Duplicate class name found.
@@ -57,9 +57,9 @@ During technical review, all submissions are checked to ensure that the code mee
 `Squiz.Functions.GlobalFunction.Found`|Consider putting global function in a static class.
 `Squiz.PHP.GlobalKeyword.NotAllowed`|Use of the `global` keyword is forbidden.
 
-## Magento 1.x Rules
+## Magento 1.x rules
 
-### Critical Errors - Severity 10
+### Critical errors - severity 10
 
 `Generic.Arrays.DisallowShortArraySyntax.Found`|Short array syntax is not allowed.
 `Generic.Functions.CallTimePassByReference.NotAllowed`|Call-time pass-by-reference calls are prohibited.
@@ -79,7 +79,7 @@ During technical review, all submissions are checked to ensure that the code mee
 `Squiz.PHP.Eval.Discouraged`|Use of `eval()` is discouraged.
 `Zend.Files.ClosingTag.NotAllowed`|A closing tag is not permitted at the end of a PHP file.
 
-### Warnings - Severity 8
+### Warnings - severity 8
 
 `Generic.Classes.DuplicateClassName.Found`|Duplicate class name found.
 `Generic.CodeAnalysis.JumbledIncrementer.Found`|Loop incrementor jumbling with inner loop.
@@ -106,9 +106,9 @@ During technical review, all submissions are checked to ensure that the code mee
 `Squiz.Functions.GlobalFunction.Found`|Consider putting global function in a static class.
 `Squiz.PHP.GlobalKeyword.NotAllowed`|Use of the `global` keyword is forbidden.
 
-### Code Quality Issues and Solutions
+### Code quality issues and solutions
 
-#### Copy Paste Detector (CPD)
+#### Copy paste detector (CPD)
 
 Issue |The Copy Paste Detector indicates that the extension contains duplicate code from Magento native products or from other extensions.
 Solution|The Marketplace team will provide a list of places in your extension code that were identified as duplicate. If the extension is found to duplicate Magento code, review the list, and remove each instance of duplicate code. Then, upload a new package and resubmit the extension.Any extension that is found to duplicate code from another extension will be rejected. To prove that you own the code in question, see [Magento Marketplace Support][1].
@@ -123,12 +123,12 @@ Solution|To duplicate the tests locally, use the MEQP [CodeSniffer][2] tool. Rem
 Issue|The extension conflicts with other extensions.
 Solution|The Marketplace team will provide you with a list of the identified conflicts. Correct the code that is causing the conflict. Then, upload a new package and resubmit the extension.
 
-#### M1 Package Missing
+#### M1 Package missing
 
 Issue|The package file was not submitted, or is missing from the Magento repository. It's possible that the package file was not included correctly during the migration.
 Solution|Upload a new package, and resubmit the extension.
 
-#### Hidden Files in Archive
+#### Hidden files in archive
 
 Issue|Hidden files were detected in the archive. It is possible that configuration files from the development environment were included in the distribution package. Such hidden files can cause configuration problems for the end user.
 Solution|Remove the hidden files. Then, upload a new package, and resubmit the extension.

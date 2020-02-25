@@ -2,19 +2,19 @@
 group: marketplace-sellers
 title: Seller Overview
 sections:
-  - title: Account setup
+  -  title: Account setup
     content: Your Magento account provides access to the Extension Marketplace, as well as the developer tools needed to submit an extension for sale. 
     url: extensions/marketplace/account-overview.html
 
-  - title: Build your extension
+  -  title: Build your extension
     content: Walk through the steps of the extension building process, and learn about the technical and marketing guidelines for selling on Extension Marketplace.
     url: extensions/marketplace/extension-complete.html
 
-  - title: Submit for review
+  -  title: Submit for review
     content: After completing development, testing, and creating a new extension entry, submit your extension for technical and marketing review. 
     url: extensions/marketplace/submit-for-review.html
 
-  - title: Manage sales
+  -  title: Manage sales
     content: Use the Sales and Analytics reports to view and manage your extension sales information.
     url: extensions/marketplace/sales.html
 ---

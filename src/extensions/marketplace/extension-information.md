@@ -41,11 +41,11 @@ To add an entry, you need to complete these instructions and submit the [version
 
 1. Indicate if the extension enables integration with other services not part of Magento. If you select `Yes`, enter information for those services.
 
-   - **Name of Service** - The name of the non-Magento service.
-   - **URL of Service** - The full URL for website of the non-Magento service.
-   - **Is this service owned/operated by you or a 3rd party** - Indicate if you run this service, or another third party.
-   - **Does this Service require additional subscription payments to the 3rd party** - Indicate if the service requires additional payments and costs to use the extension. You must to provide this information during submissions for pricing.
-   - **Are subscription payments ALSO required to your company for the integration** - Indicate if additional subscription costs are required for the integration. You must to provide this information during submissions for pricing.
+   -  **Name of Service** - The name of the non-Magento service.
+   -  **URL of Service** - The full URL for website of the non-Magento service.
+   -  **Is this service owned/operated by you or a 3rd party** - Indicate if you run this service, or another third party.
+   -  **Does this Service require additional subscription payments to the 3rd party** - Indicate if the service requires additional payments and costs to use the extension. You must to provide this information during submissions for pricing.
+   -  **Are subscription payments ALSO required to your company for the integration** - Indicate if additional subscription costs are required for the integration. You must to provide this information during submissions for pricing.
 
 1. When complete, click <span class="btn">Submit and Continue</span>.
 

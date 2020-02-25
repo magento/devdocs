@@ -14,12 +14,12 @@ Extensions developed for Magento version 1.x have different packaging guidelines
 
     This takes you to the Create Extension Package page, which consists of six sections:
 
-    - Package info
-    - Release info
-    - Authors
-    - Dependencies
-    - Contents
-    - Load local package
+    -  Package info
+    -  Release info
+    -  Authors
+    -  Dependencies
+    -  Contents
+    -  Load local package
 
 ## Section A: Package info
 
@@ -37,8 +37,8 @@ _Package Info_
 
 The Channel field is required and determined by the version of Magento you are using to package your extension. Make sure to type it exactly as it is shown below. These fields are case sensitive.
 
-- If you are using Magento 1.5 or later to package your extension, type  `community`.
-- If you are using Magento 1.4 or prior to package your extension, type `connect.magentocommerce.com/community`.
+-  If you are using Magento 1.5 or later to package your extension, type  `community`.
+-  If you are using Magento 1.4 or prior to package your extension, type `connect.magentocommerce.com/community`.
 
 {: .bs-callout .bs-callout-info}
 If the wrong channel is used during the packaging process, you will receive an error and will have to resubmit it.
@@ -47,9 +47,9 @@ If the wrong channel is used during the packaging process, you will receive an e
 
 This field is intended for backward compatibility.
 
-- Select the option **Pre 1.5** if this extension supports Magento versions 1.4.x and lower. For these releases, the package will be created in PEAR format and all associated files will be saved in the magento/var/pear/ directory.
-- Select the option **1.5.0.0 &amp; later** if this extension supports Magento versions 1.5.x and later. For these releases, the package will be saved in the magento/var/connect directory.
-- Select both options if this extension supports both older and newer versions.
+-  Select the option **Pre 1.5** if this extension supports Magento versions 1.4.x and lower. For these releases, the package will be created in PEAR format and all associated files will be saved in the magento/var/pear/ directory.
+-  Select the option **1.5.0.0 &amp; later** if this extension supports Magento versions 1.5.x and later. For these releases, the package will be saved in the magento/var/connect directory.
+-  Select both options if this extension supports both older and newer versions.
 
 {: .bs-callout .bs-callout-info}
 If you are using EE 1.9 or earlier versions this field is absent but this won’t affect extension packaging process. You can skip this step in this situation.
@@ -58,33 +58,33 @@ If you are using EE 1.9 or earlier versions this field is absent but this won’
 
 If you are packaging an extension using a Magento Pre 1.5 (i.e., 1.4.x and lower) version and the extension only supports Pre 1.5 versions of Magento use the following settings:
 
-- Channel: **connect.magentocommerce.com/community**
-- Supported Releases: **Pre 1.5**
-- Package file will appear in `<magento root>/var/pear/`. Package will appear in PEAR format.
+-  Channel: **connect.magentocommerce.com/community**
+-  Supported Releases: **Pre 1.5**
+-  Package file will appear in `<magento root>/var/pear/`. Package will appear in PEAR format.
 
 {: .bs-callout .bs-callout-info}
 If there is no `<magento root>/var/pear` folder, create it before packaging your extension.
 
 If you are packaging an extension using a Magento 1.5 and later version and the extension only supports 1.5 and later versions of Magento use the following settings:
 
-- Channel: **Community**
-- Supported releases: **1.5 &amp; later**
-- Package file will appear in `<magento root>/var/connect/`.
+-  Channel: **Community**
+-  Supported releases: **1.5 &amp; later**
+-  Package file will appear in `<magento root>/var/connect/`.
 
 If you are packaging an extension using a Magento 1.5 and later version, but the extension supports both Magento Pre 1.5 and Magento 1.5 and later versions use the following settings:
 
-- Channel: **connect.magentocommerce.com/community**
-- Supported Releases: **Pre 1.5 and 1.5 &amp; later (select both)**
-- Package will appear in `<magento root>/var/pear`.
+-  Channel: **connect.magentocommerce.com/community**
+-  Supported Releases: **Pre 1.5 and 1.5 &amp; later (select both)**
+-  Package will appear in `<magento root>/var/pear`.
 
 {: .bs-callout .bs-callout-info}
 Another package will be created in `<magento root>/var/connect`. You will need this file if your extension is paid and you prefer to give customers the .tgz file to upload into their Magento Connect Manager.
 
 If you are supporting two extensions with the same name when one of them is compatible with Magento Pre 1.5 and another with Magento 1.5+ do the following:
 
-- Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
-- Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
-- Package will appear in `<magento root>/var/pear`.
+-  Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
+-  Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
+-  Package will appear in `<magento root>/var/pear`.
 
 {: .bs-callout .bs-callout-info}
 Version numbers for your Pre 1.5 and 1.5+ versions should be different. You are not allowed to upload several versions with the same version number to Magento Marketplace.
@@ -100,15 +100,15 @@ Provide a brief summary and description about the extension. This is a required 
 
 The License field is required. Select the license that your extension falls under. The full list of possible licenses as stated on the Magento community website is:
 
-- Open Software License (OSL)
-- Mozilla Public License (MPL)
-- Massachusetts Institute of Technology License (MITL)
-- GNU Lesser General Public License (LGPL)
-- GNU General Public License (GPL)
-- Berkeley Software Distribution License (BSDL)
-- Apache Software License (ASL)
-- Academic Free License (AFL)
-- You can specify another (commercial) license if you distribute the extension package as paid.
+-  Open Software License (OSL)
+-  Mozilla Public License (MPL)
+-  Massachusetts Institute of Technology License (MITL)
+-  GNU Lesser General Public License (LGPL)
+-  GNU General Public License (GPL)
+-  Berkeley Software Distribution License (BSDL)
+-  Apache Software License (ASL)
+-  Academic Free License (AFL)
+-  You can specify another (commercial) license if you distribute the extension package as paid.
 
 {: .bs-callout .bs-callout-info}
 If you are using EE 1.9 or earlier versions, this field is absent but this won’t affect extension packaging process. You can skip this step in such situation.
@@ -136,9 +136,9 @@ The release version can be any arbitrary number value that you want to use as th
 
 Release stability can be set to:
 
-- Alpha
-- Beta
-- Stable
+-  Alpha
+-  Beta
+-  Stable
 
 By default, Magento Marketplace users are only allowed to install Stable release extensions. To download development, alpha, or beta releases, the user must change this setting in the backend of Magento Marketplace. If you upload a package with release stability alpha or beta, add this information into the extension description.
 
@@ -171,18 +171,18 @@ This is one of the most important sections in the extension packaging process. I
 
 For proper compilation of extension package contents, use the following tips for the Target field. The following options correspond to the path on the disk:
 
-- Magento Local module file - `./app/code/local`
-- Magento Community module file - `./app/code/community`
-- Magento Core team module file - `./app/code/core`
-- Magento User Interface (layouts, templates) - `./app/design`
-- Magento Global Configuration - `./app/etc`
-- Magento PHP Library file - `./lib`
-- Magento Locale language file - `./app/locale`
-- Magento Media library - `./media`
-- Magento Theme Skin (Images, CSS, JS) - `./skin`
-- Magento Other web accessible file - `./`
-- Magento PHPUnit test - `./tests`
-- Magento other - `./`
+-  Magento Local module file - `./app/code/local`
+-  Magento Community module file - `./app/code/community`
+-  Magento Core team module file - `./app/code/core`
+-  Magento User Interface (layouts, templates) - `./app/design`
+-  Magento Global Configuration - `./app/etc`
+-  Magento PHP Library file - `./lib`
+-  Magento Locale language file - `./app/locale`
+-  Magento Media library - `./media`
+-  Magento Theme Skin (Images, CSS, JS) - `./skin`
+-  Magento Other web accessible file - `./`
+-  Magento PHPUnit test - `./tests`
+-  Magento other - `./`
 
 _Where “`./`” represents the Magento root directory._
 

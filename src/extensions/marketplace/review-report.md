@@ -7,11 +7,11 @@ When the review is complete, a link to the resulting report is provided for the 
 
 The report includes the results of the following tests:
 
-- Code Sniffer
-- Copy Paste Detector (CPD)
-- Installation and Varnish
-- Manual QA Review
-- Marketing Review
+-  Code Sniffer
+-  Copy Paste Detector (CPD)
+-  Installation and Varnish
+-  Manual QA Review
+-  Marketing Review
 
 ## View the results of the review
 
@@ -21,8 +21,8 @@ The report includes the results of the following tests:
 
 1. In the Report column, do one of the following:
 
-    - Click **View** to view the report results in a popup window.
-    - Click **Download** to download the report as a JSON file.
+    -  Click **View** to view the report results in a popup window.
+    -  Click **Download** to download the report as a JSON file.
 
 ![]({% link extensions/marketplace/images/test-reports.png %}){: .zoom}
 _Test Reports_

@@ -9,21 +9,21 @@ From a marketing perspective, all submissions to Magento Marketplace must solve 
 
 We have made an investment in the presentation of Magento Marketplace. In return, we ask that you put forth an effort to present your solutions in a professional manner. If we see room for improvement, we’ll reach out to you before listing your extension on Magento Marketplace.
 
-- Your product must have a professional presentation with clear descriptions, images, and screenshots.
-- The product name should indicate the purpose of the extension or theme.
-- The product description should be well-written, and provide an overview of the features and benefits.
-- Use only high-quality screenshots, images, and video to accompany the listing.
+-  Your product must have a professional presentation with clear descriptions, images, and screenshots.
+-  The product name should indicate the purpose of the extension or theme.
+-  The product description should be well-written, and provide an overview of the features and benefits.
+-  Use only high-quality screenshots, images, and video to accompany the listing.
 
 ## Pricing: Provide clear pricing information
 
 The price of your extension is included as part of the marketing information. To learn more, see [Enter Pricing Information]({% link extensions/marketplace/submit-for-marketing-review.md %}).
 
-- Items listed on Magento Marketplace can be offered for free, or sold as a commercial products.
-- The price of items offered for sale on Magento Marketplace can range anywhere from $25.00 to $999,999.00, and must reflect fair market value.
-- All purchases are paid for in US currency.
-- Items sold on Magento Marketplace are subject to a revenue sharing fee that is paid by the developer.
-- Any additional fees or subscription pricing — including fees charged by a third-party company for integrated services — must be included in the opening paragraph of the Long Description with bold formatting.
-- Magento recommends the following extension pricing:<br />
+-  Items listed on Magento Marketplace can be offered for free, or sold as a commercial products.
+-  The price of items offered for sale on Magento Marketplace can range anywhere from $25.00 to $999,999.00, and must reflect fair market value.
+-  All purchases are paid for in US currency.
+-  Items sold on Magento Marketplace are subject to a revenue sharing fee that is paid by the developer.
+-  Any additional fees or subscription pricing — including fees charged by a third-party company for integrated services — must be included in the opening paragraph of the Long Description with bold formatting.
+-  Magento recommends the following extension pricing:<br />
   Open Source - $99<br />
   Commerce - $199
 
@@ -31,10 +31,10 @@ The price of your extension is included as part of the marketing information. To
 
 The content that accompanies your extension listing is derived from the [marketing information]({% link extensions/marketplace/submit-for-marketing-review.md %}) you entered for the extension or theme, and information in your [company profile]({% link extensions/marketplace/profile-company.md %}). To learn more, see [Extension content]({% link extensions/marketplace/content.md %}).
 
-- All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
-- The promotion of additional services or other extensions from your extension profile page is not allowed.
-- The extension listing must accurately describe the product, including the description and overview information, version compatibility, and category selection.
-- The extension listing must be free of spelling and grammatical errors.
+-  All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
+-  The promotion of additional services or other extensions from your extension profile page is not allowed.
+-  The extension listing must accurately describe the product, including the description and overview information, version compatibility, and category selection.
+-  The extension listing must be free of spelling and grammatical errors.
 
 ## Branding: Use Magento name and logo correctly
 

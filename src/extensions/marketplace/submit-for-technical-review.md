@@ -14,13 +14,13 @@ The following instructions show how to submit an extension for Technical Review.
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
-- Review the [technical]({% link extensions/marketplace/technical-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
+-  Review the [technical]({% link extensions/marketplace/technical-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
 
-- For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc. 
+-  For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc. 
 
-- All extensions must be secure, without viruses, malware, or vulnerabilities. 
+-  All extensions must be secure, without viruses, malware, or vulnerabilities. 
 
-- Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
+-  Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
 
 ![]({% link extensions/marketplace/images/tech-review-content.png %})
 ({% link extensions/marketplace/images/tech-review-content.png %}){: .zoom}
@@ -48,9 +48,9 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
    This option requires the user to agree to a license in addition to the Magento terms and conditions. You have two options:
 
-   - **Choose a License Type**\: Select a license type provided from the drop-down menu.
+    -  **Choose a License Type**\: Select a license type provided from the drop-down menu.
 
-    - **Enter a Custom License**\: Enter the name and URL location for your custom license, available from a public website.
+    -  **Enter a Custom License**\: Enter the name and URL location for your custom license, available from a public website.
 
     ![]({% link extensions/marketplace/images/technical-submission-details2.png %}){: .zoom}
     _Licenses_
@@ -62,11 +62,11 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
     You must include **at least one** of the following, in PDF format (less than 5MB):
 
-    - **Attach User Guide** - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
+    -  **Attach User Guide** - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
 
-    - **Attach Reference Manual** - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
+    -  **Attach Reference Manual** - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
 
-    - **Attach Installation Guide** - Documentation instructing how to install and configure the extension on your Magento instance.
+    -  **Attach Installation Guide** - Documentation instructing how to install and configure the extension on your Magento instance.
 
     ![]({% link extensions/marketplace/images/technical-submission-docs.png %}){: .zoom}
     _Documentation and Resources_

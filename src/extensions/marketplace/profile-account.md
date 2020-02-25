@@ -12,7 +12,7 @@ Your contact information includes your address, phone number, and PayPal email a
 ![]({% link extensions/marketplace/images/account-information.png %}){: .zoom}
 _Contact Information_
  
-### Field Descriptions - Personal
+### Field Descriptions - personal
 
 |Field|Description|
 |--- |--- |
@@ -22,7 +22,7 @@ _Contact Information_
 |Login Credentials|Clicking <span class="btn">Go to My Account</span> takes you to your Magento account information.|
 |PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.|
 
-### Field Descriptions - Company
+### Field Descriptions - company
 
 |Field|Description|
 |--- |--- |
@@ -35,7 +35,7 @@ _Contact Information_
 |Login Credentials|Clicking <span class="btn">Go to My Account</span> takes you to your Magento account information.|
 |PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.|
 
-## Access Keys
+## Access keys
 
 Magento Marketplace uses a pair of public and private 32-character tokens to authenticate access to the repository of third-party extensions and themes. You can create multiple sets of access keys for others who install extensions for your store. Marketplace access keys can be generated, disabled or enabled, and deleted from your account.
 

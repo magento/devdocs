@@ -14,7 +14,7 @@ The following instructions walk you through the process of completing your compa
 
 Prepare an image for your company profile that is 255 pixels square. Then, save it as one of the following file types: JPG, GIF, or PNG.
 
-## Step 1: Complete your company background
+### Step 1: Complete your company background
 
 1. Select the checkbox at the top of the form if you want to use your company profile—rather than your personal profile—as the default.
 
@@ -27,10 +27,10 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. To upload the image that you have prepared to your company profile, do one of the following:
 
-   - Drag the image to the box.
-   - Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
+   -  Drag the image to the box.
+   -  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
 
-## Step 2: Enter your contact information
+### Step 2: Enter your contact information
 
 1. Enter the URL of your **Company Website**.
 
@@ -47,34 +47,34 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
    ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
    _Contact Information_
 
-## Step 3: Enter your company address
+### Step 3: Enter your company address
 
 1. Complete the following fields that make up your company address:
 
-    - Country
-    - Street Address, Apt/Suite
-    - ZIP, City, State / Province
-    - Phone Number
+    -  Country
+    -  Street Address, Apt/Suite
+    -  ZIP, City, State / Province
+    -  Phone Number
 
 1. To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
     ![]({% link extensions/marketplace/images/account-company-profile-address.png %}){: .zoom}
     _Company Address_
 
-## Step 4: Link to your social networks (optional)
+### Step 4: Link to your social networks (optional)
 
 Enter the link to each professional social network that you want to include in your company profile.
 
-- GitHub
-- Stack Exchange
-- Twitter
-- Facebook
-- LinkedIn
+-  GitHub
+-  Stack Exchange
+-  Twitter
+-  Facebook
+-  LinkedIn
 
 ![]({% link extensions/marketplace/images/account-profile-social-networks.png %}){: .zoom}
 _Social Networks_
 
-## Step 5: Activate your account
+### Step 5: Activate your account
 
 1. When the required fields are complete, click <span class="btn">Save</span>.
 
