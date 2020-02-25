@@ -75,7 +75,7 @@ To connect a Cloud environment to New Relic, you must add the New Relic license 
 
 {:.procedure}
 
-To find your New Relic license key:
+To copy the New Relic license key from your Magento account:
 
 1. Open your [account page](https://accounts.magento.cloud/user/).
 
