@@ -103,7 +103,7 @@ To copy the New Relic license key from your Magento account:
        ![License key]({{ site.baseurl }}/common/images/cloud/cloud-project-details-page-new-relic.png){:width="650px"}
 
 {:.procedure}
-To add a license key to an environment:
+To add the key to an environment from the command line:
 
 1. Change to the environment that needs the license key. For Starter accounts, you need to use the license key to set a variable in the environment.
 
