@@ -89,7 +89,6 @@ To copy the New Relic license key from your Magento account:
 
 1. Copy the license key.
 
-### Second Option
 
 1. Open your account on New Relic Page [account page](https://login.newrelic.com/login).
 
