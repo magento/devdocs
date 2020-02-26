@@ -266,7 +266,7 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceBlock name="page.title">
         <action method="setPageTitle">
-            <argument name="class" xsi:type="string">Greetings</argument>
+            <argument name="title" xsi:type="string">Greetings</argument>
         </action>
     </referenceBlock>
     <body>
