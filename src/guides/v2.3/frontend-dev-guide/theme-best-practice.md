@@ -34,6 +34,6 @@ We recommend using the following best practices when developing themes:
 1. Make use of the mobile first approach when inheriting blank or luma themes which has already been followed in these themes.
 1. Magento has a set of [coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) for both back-end and front-end technologies, Do refer and follow them when needed.
 1. Do not repeat a work while styling, instead create a class or mixin and call them when needed.
-1. While styling any custom module, do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example, like in app/code/Company/Module/view/frontend/web/css/source/_module.less.
+1. While styling any custom module, do add the styling for that specific module instead of adding it in the design theme so the style will not get loaded unless the module is being used. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
 
 After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your templates, layouts, and styles.
