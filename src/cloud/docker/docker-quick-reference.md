@@ -49,7 +49,7 @@ See [Service versions] for a list of the options to configure the software servi
 
 ## bin/magento-docker
 
-Use `bin/magento-docker` commands to simplify running docker-compose tasks. For example, instead of running separate docker-compose build, deploy, and post-deploy commands to redeploy Magento in a Docker environment, you can run the following command:
+The `bin/magento-docker` commands simplify running docker-compose tasks. For example, instead of running a separate docker-compose command for the build, deploy, and post-deploy steps, you can _redeploy_ Magento in a Docker environment using the following command:
 
 ```bash
 ./bin/magento-docker ece-redeploy
