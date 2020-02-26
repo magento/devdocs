@@ -8,9 +8,11 @@ pages:
 
     - label: Before You Begin
       url: /extensions/marketplace/before-you-begin.html
+      versionless: true
 
     - label: Extension Quality Program
       url: /extensions/marketplace/extension-quality-program.html
+      versionless: true
 
 - label: Seller Overview
   url: /extensions/marketplace/seller-overview.html
