@@ -73,7 +73,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 -  {:.fix}Fixed an issue that caused the build process to fail when the `config.php` file is empty.<!--MAGECLOUD-4127-->
 
 ## 2002.0.23
-*Release date: February 24, 2020*<br/>
+*Release date: February 27, 2020*<br/>
 
 -  {:.fix}Fixed a compatibility issue with `{{site.data.var.ct}}` 2002.0.x releases that prevented on-demand static content generation from completing successfully in Magento production mode.
 
