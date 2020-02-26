@@ -24,4 +24,4 @@ PHP Fatal error: Maximum function nesting level of '100' reached, aborting! in <
 
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the [storefront](https://glossary.magento.com/storefront) or [Magento Admin](https://glossary.magento.com/magento-admin) after installation.
 
-For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).
+For details, see [Known issue with xdebug](https://support.magento.com/hc/en-us/articles/360034242212).
