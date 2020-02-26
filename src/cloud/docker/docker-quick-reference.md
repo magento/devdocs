@@ -56,6 +56,7 @@ Use `bin/magento-docker` commands to simplify running docker-compose tasks. For 
 ```
 
 The following example shows the `./bin/magento-docker` command output when connecting to the bash shell:
+
 ```terminal
 $ ./bin/magento-docker bash
 Starting project_redis_1 ... done
