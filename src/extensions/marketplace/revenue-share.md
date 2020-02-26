@@ -9,6 +9,6 @@ All Magento Marketplace sales are subject to a 70/30 revenue share split, with 7
 
 Magento pays 70% of the revenue, minus any amount that is required to be withheld by the U. S. government Internal Revenue Service (IRS). Payment terms and processing fees are clearly stated and agreed upon at the time the extension and/or service is submitted to Marketplace.
 
-To learn more, see [Marketplace Revenue Share Model][1]{: target="_blank"}.
+To learn more, see [Marketplace Revenue Share Model][1].
 
 [1]: https://docs.magento.com/m2/pdf/marketplace/Marketplace_Revenue_Share.pdf
