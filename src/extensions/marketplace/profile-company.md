@@ -44,8 +44,8 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
     This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your company profile.
     </div>
 
-   ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
-   _Contact Information_
+    ![]({% link extensions/marketplace/images/account-company-profile-contact-info.png %}){: .zoom}
+    _Contact Information_
 
 ### Step 3: Enter your company address
 
@@ -83,7 +83,7 @@ _Social Networks_
     {: .bs-callout .bs-callout-info}
     **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
-1. Watch for a confirmation email sent to the email address associated with the account. 
+1. Watch for a confirmation email sent to the email address associated with the account.
 
 1. Click the email link to activate your account and gain access to the Developer Portal.
 
@@ -105,7 +105,7 @@ _Social Networks_
 |Company Website|The URL of your company website.|
 |Primary Email|(Optional) The primary contact email that is used by your company. Select the checkbox to use the email that is associated with your Magento account.|
 |Company Support Email|The email address that customers can use to contact your company for technical support.|
-|Vendor Name|A unique identifier that identifies your Marketplace account. The vendor name can be based on your company name, and must be lowercase alphanumeric characters, and can include dashes. <br/><br/>**_Important:_** For all Magento 2.x packages submitted to Marketplace, the Vendor Name must match the name field  in the Vendor section of the composer.json file.|
+|Vendor Name|A unique identifier that identifies your Marketplace account. The vendor name can be based on your company name, and must be lowercase alphanumeric characters, and can include dashes. <br/><br/>**_Important:_** For all Magento 2.x packages submitted to Marketplace, the Vendor Name must match the name field in the Vendor section of the composer.json file.|
 
 ### Company address
 

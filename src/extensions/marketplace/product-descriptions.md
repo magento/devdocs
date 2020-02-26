@@ -68,7 +68,7 @@ _Account and Pricing Example 2:_
 
 To use this extension, you need to sign up for a \_\_\_\_\_\_\_ service account here. Transaction fees will be charged for every transaction. Transaction fees vary from merchant to merchant, based on what is agreed upon with \_\_\_\_\_\_\_ when negotiating your contract. \_\_\_\_\_\_ does not provide pricing details publicly. For more information and to register, please contact Lorem@Ipsum.com directly.
 
-(Alternative: “For more information and to register, please visit the company contact form.” )
+Alternative: “For more information and to register, please visit the company contact form.”
 
 ## Payment extensions
 
@@ -95,4 +95,3 @@ We employ the industry\'s best security practices and tools to maintain bank-lev
 _Example 3:_
 
 ATTENTION: Use this extension at your own risk. Sensitive customer payment data is stored on your server. Merchants are expected to take every precaution that they are fully PCI certified. Please only purchase this extension if you have an environment where storing credit card information is permitted by law.
-  

@@ -16,9 +16,9 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 -  Review the [technical]({% link extensions/marketplace/technical-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
 
--  For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc. 
+-  For theme extensions, verify all image, css, and code assets correctly load on the storefront. For feature / service extensions, make sure data and options follow coding standards, logging, etc.
 
--  All extensions must be secure, without viruses, malware, or vulnerabilities. 
+-  All extensions must be secure, without viruses, malware, or vulnerabilities.
 
 -  Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
 
@@ -31,11 +31,11 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Click the extension name you want to submit.
 
-   The **Technical Submission** page loads. You can save progress and reopen this page to submit when you are ready.
+    The **Technical Submission** page loads. You can save progress and reopen this page to submit when you are ready.
 
 1. Click **Attach Package** to upload the extension code package.
 
-   For complete package guidelines, see [Package a component]({% link guides/v2.3/extension-dev-guide/package/package_module.md %}).
+    For complete package guidelines, see [Package a component]({% link guides/v2.3/extension-dev-guide/package/package_module.md %}).
 
 1. For **Magento Version Compatibility**, select the supported version number and compatibility for the extension.
 
@@ -46,11 +46,11 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Select the Licensing options.
 
-   This option requires the user to agree to a license in addition to the Magento terms and conditions. You have two options:
+    This option requires the user to agree to a license in addition to the Magento terms and conditions. You have two options:
 
-    -  **Choose a License Type**\: Select a license type provided from the drop-down menu.
+-  Choose a License Type - Select a license type provided from the drop-down menu.
 
-    -  **Enter a Custom License**\: Enter the name and URL location for your custom license, available from a public website.
+-  Enter a Custom License - Enter the name and URL location for your custom license, available from a public website.
 
     ![]({% link extensions/marketplace/images/technical-submission-details2.png %}){: .zoom}
     _Licenses_
@@ -62,11 +62,11 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
     You must include **at least one** of the following, in PDF format (less than 5MB):
 
-    -  **Attach User Guide** - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
+-  Attach User Guide - Documentation describing how to configure and use your extension features in the Magento Admin and extension screens.
 
-    -  **Attach Reference Manual** - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
+-  Attach Reference Manual - Documentation detailing fields, screens, and workflows for the added features, screens, and fields in the Magento Admin.
 
-    -  **Attach Installation Guide** - Documentation instructing how to install and configure the extension on your Magento instance.
+-  Attach Installation Guide - Documentation instructing how to install and configure the extension on your Magento instance.
 
     ![]({% link extensions/marketplace/images/technical-submission-docs.png %}){: .zoom}
     _Documentation and Resources_
@@ -83,7 +83,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Enter **Release Notes** for your extension.
 
-   This preliminary draft can be formatted with simple HTML and can include text, numbers, symbols, and spaces.
+    This preliminary draft can be formatted with simple HTML and can include text, numbers, symbols, and spaces.
 
 ![]({% link extensions/marketplace/images/technical-submission-rnotes.png %}){: .zoom}
     _Release Notes_
