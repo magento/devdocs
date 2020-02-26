@@ -219,7 +219,7 @@
       versionless: true
 
     - label: Extensions Marketplace
-      url: /extensions/marketplace/index.html
+      url: /extensions/marketplace/getting-started.html
       versionless: true
 
     - label: Inventory Management

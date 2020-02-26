@@ -2,7 +2,7 @@ label: Marketplace Sellers
 versionless: true
 pages:
 - label: Getting Started
-  url: /extensions/marketplace/index.html
+  url: /extensions/marketplace/getting-started.html
   versionless: true
   children:
 
