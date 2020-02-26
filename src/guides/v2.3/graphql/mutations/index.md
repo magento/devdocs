@@ -49,7 +49,7 @@ mutation myCreateCustomerNoVariables{
 }
 ```
 
-The mutation returns the customer Email:
+The mutation returns the customer email:
 
 ```json
 {
