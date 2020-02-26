@@ -144,6 +144,7 @@ mutation {
 ```
 
 ### More details and examples for other product types can be found here:
+
 -  [Simple Products]({{ page.baseurl }}/graphql/mutations/add-simple-products.html)
 -  [Virtual Products]({{ page.baseurl }}/graphql/mutations/add-virtual-products.html)
 -  [Configurable Products]({{ page.baseurl }}/graphql/mutations/add-configurable-products.html)
