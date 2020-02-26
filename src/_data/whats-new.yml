@@ -2464,7 +2464,7 @@ entries:
   type: Technical changes
   date: January 23, 2019
   link: https://github.com/magento/devdocs/pull/3611
-- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html#max-input-vars-error-due-to-large-forms)
+- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html)
     discussing the max-input-vars value in php.ini.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
