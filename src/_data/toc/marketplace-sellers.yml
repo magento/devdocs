@@ -19,12 +19,15 @@ pages:
 
     - label: Your Seller Account
       url: /extensions/marketplace/account-overview.html
+      versionless: true
 
     - label: Account Setup
       url: /extensions/marketplace/account-setup.html
+      versionless: true
 
     - label: Register as a Developer
       url: /extensions/marketplace/developer-register.html
+      versionless: true
 
 - label: Marketplace Developer Portal
   url: /extensions/marketplace/developer-portal.html
@@ -33,12 +36,15 @@ pages:
 
     - label: Account Information
       url: /extensions/marketplace/profile-account.html
+      versionless: true
 
     - label: Company Profile
       url: /extensions/marketplace/profile-company.html
+      versionless: true
 
     - label: Personal Profile
       url: /extensions/marketplace/profile-personal.html
+      versionless: true
 
 - label: Extensions
   url: /extensions/marketplace/extensions.html
@@ -47,24 +53,31 @@ pages:
 
     - label: Create a New Extension
       url: /extensions/marketplace/extension-create.html
+      versionless: true
 
     - label: Specify the Version
       url: /extensions/marketplace/extension-version.html
+      versionless: true
 
     - label: Complete the Extension Information
       url: /extensions/marketplace/extension-complete.html
+      versionless: true
 
     - label: Packaging v1.x Extensions
-      url: /extensions/marketplace/packaging-v1x-extensions.html    
+      url: /extensions/marketplace/packaging-v1x-extensions.html
+      versionless: true
   
     - label: Add Extension Content
       url: /extensions/marketplace/content.html
+      versionless: true
 
     - label: Establish Your Brand
       url: /extensions/marketplace/branding.html
+      versionless: true
 
     - label: Define the Business Value
       url: /extensions/marketplace/business-value.html
+      versionless: true
 
 - label: Themes
   url: /extensions/marketplace/themes.html
@@ -85,9 +98,11 @@ pages:
 
     - label: Technical Review Guidelines
       url: /extensions/marketplace/technical-review-guidelines.html
+      versionless: true
 
     - label: Code Validation
       url: /extensions/marketplace/code-validation.html
+      versionless: true
 
 - label: Submit for Marketing Review
   url: /extensions/marketplace/submit-for-technical-review.html
@@ -96,18 +111,23 @@ pages:
 
     - label: Marketing Review Guidelines
       url: /extensions/marketplace/marketing-review-guidelines.html
+      versionless: true
 
     - label: Product Descriptions
       url: /extensions/marketplace/product-descriptions.html
+      versionless: true
 
     - label: Video Tips
       url: /extensions/marketplace/video-tips.html
+      versionless: true
 
     - label: Image Tips
       url: /extensions/marketplace/image-tips.html
+      versionless: true
 
     - label: Preview Your Submission
       url: /extensions/marketplace/marketing-submission-preview.html
+      versionless: true
 
 - label: View the Results
   url: /extensions/marketplace/review-report.html
@@ -116,6 +136,7 @@ pages:
 
     - label: Resubmit an Extension
       url: /extensions/marketplace/extension-resubmit.html
+      versionless: true
 
 - label: Update Extension Information
   url: /extensions/marketplace/extension-update-information.html
@@ -128,9 +149,11 @@ pages:
 
     - label: Revenue Share
       url: /extensions/marketplace/revenue-share.html
+      versionless: true
 
     - label: Analytics
       url: /extensions/marketplace/analytics.html
+      versionless: true
 
 - label: Reference
   url: /extensions/marketplace/technical-reference.html
@@ -139,6 +162,8 @@ pages:
 
     - label: Code Validation
       url: /extensions/marketplace/code-validation.html
+      versionless: true
 
     - label: Marketplace Tools
       url: /extensions/marketplace/marketplace-tools.html
+      versionless: true
