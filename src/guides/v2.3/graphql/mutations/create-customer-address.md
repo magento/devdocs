@@ -35,7 +35,6 @@ mutation {
     default_billing: false
   }) {
     id
-    customer_id
     region {
       region
       region_id
@@ -59,7 +58,6 @@ mutation {
   "data": {
     "createCustomerAddress": {
       "id": 4,
-      "customer_id": 5,
       "region": {
         "region": "Arizona",
         "region_code": "AZ"
