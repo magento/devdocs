@@ -55,10 +55,13 @@ The `bin/magento-docker` commands simplify running docker-compose tasks. For exa
 ./bin/magento-docker ece-redeploy
 ```
 
-The following example shows the `./bin/magento-docker` command output when connecting to the bash shell:
+The following example shows the `./bin/magento-docker` command and output when connecting to the bash shell:
+
+```bash
+./bin/magento-docker bash
+```
 
 ```terminal
-$ ./bin/magento-docker bash
 Starting project_redis_1 ... done
 Starting project_db_1    ... done
 Starting project_elasticsearch_1 ... done
