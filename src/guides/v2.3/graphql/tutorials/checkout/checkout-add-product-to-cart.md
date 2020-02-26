@@ -14,10 +14,13 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-GraphQL supports [two types of product]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) which can be added into shopping cart:
+GraphQL supports [several types of product]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) which can be added into shopping cart:
 
 -  simple product
 -  virtual product
+-  configurable product
+-  bundle product
+-  downloadable product
 
 {:.bs-callout-info}
 If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
@@ -139,6 +142,13 @@ mutation {
   }
 }
 ```
+
+### More details and examples for other product types can be found here:
+-  [Simple Products]({{ page.baseurl }}/graphql/mutations/add-simple-products.html)
+-  [Virtual Products]({{ page.baseurl }}/graphql/mutations/add-virtual-products.html)
+-  [Configurable Products]({{ page.baseurl }}/graphql/mutations/add-configurable-products.html)
+-  [Bundle Products]({{ page.baseurl }}/graphql/mutations/add-bundle-products.html)
+-  [Downloadable Products]({{ page.baseurl }}/graphql/mutations/add-downloadable-products.html)
 
 Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 
