@@ -103,6 +103,9 @@ pages:
         - label: Form component
           url: /ui_comp_guide/components/ui-form.html
 
+        - label: GridDataProvider component
+          url: /ui_comp_guide/components/ui-grid-data-provider.html
+
         - label: Hidden component
           url: /ui_comp_guide/components/ui-hidden.html
 
