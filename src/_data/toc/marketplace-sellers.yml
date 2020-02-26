@@ -52,7 +52,7 @@ pages:
   children:
 
     - label: Create a New Extension
-      url: /extensions/marketplace/extension-create.html
+      url: /extensions/marketplace/extension-complete.html
       versionless: true
 
     - label: Specify the Version
@@ -60,7 +60,7 @@ pages:
       versionless: true
 
     - label: Complete the Extension Information
-      url: /extensions/marketplace/extension-complete.html
+      url: /extensions/marketplace/extension-information.html
       versionless: true
 
     - label: Packaging v1.x Extensions
