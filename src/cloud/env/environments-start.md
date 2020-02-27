@@ -15,28 +15,7 @@ To manage the branches and environments with the Project Web Interface, see [Man
 
 ## Common Magento Cloud CLI commands {#env-start-comm}
 
-Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
-
-The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
-option with any command to get more detailed information.
-
-Command | Description
---- | ---
-`git commit --allow-empty -m "redeploy" && git push <branch-name>` | Push an empty commit to force a redeployment. Some actions, such as adding a user, do not result in deployment.
-`magento-cloud login` | Log in to the project.
-`magento-cloud project:get <project-ID> <directory> -e <environment-ID>` | Clone a project to a directory. To clone the `master` environment, omit `-e <environment-ID>`.
-`magento-cloud environment:list -p <project-ID>` | List the environments in the current project.
-`magento-cloud environment:branch <name> <parent-branch>` | Create a new branch with a name and an ID. This information corresponds to the environment.
-`magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.
-`magento-cloud environment:merge -p <project-ID> -e <environment ID>` | Merge changes in this environment with its parent.
-`magento-cloud environment:synchronize -p <project-ID> -e <environment-ID> {code|data}` | Synchronize (`git pull`) code and data from the parent to this environment.
-`magento-cloud variable:list` | List variables in this environment.
-`magento-cloud variable:set <name> <value>` | Set a value for an environment variable.
-
-For a full list of commands, see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
-
-{:.bs-callout-info}
-The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
+Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 ## Get started creating branches {#getstarted}
 
