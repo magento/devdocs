@@ -165,7 +165,3 @@ pages:
     - label: Code Validation
       url: /extensions/marketplace/code-validation.html
       versionless: true
-
-    - label: Marketplace Tools
-      url: /extensions/marketplace/marketplace-tools.html
-      versionless: true
