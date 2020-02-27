@@ -31,7 +31,7 @@ This release includes the following patches and critical fixes:
 
 -  **Magento deployment**–Added a patch to fix an issue that disabled the full page cache during the Magento deployment process. This patch applies to Magento 2.3.2 and later releases.
 
--  **Scope parameter for Async/Bulk API**-Updated this patch to fix a syntax error in the `composer.json` file. This patch applies to {{site.data.var.ce}} Magento Open Source 2.3.1 and 2.3.2. See the complete patch description on the [patch download page](https://magento.com/tech-resources/download#download2312).
+-  **Scope parameter for Async/Bulk API**-Updated this patch to fix a syntax error in the `composer.json` file. This patch applies to {{site.data.var.ce}} 2.3.1 and 2.3.2. See the complete patch description on the [patch download page](https://magento.com/tech-resources/download#download2312).
 
 ## v1.0.1
 *Release date: February 6, 2020*<br/>
