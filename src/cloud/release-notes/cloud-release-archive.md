@@ -538,11 +538,11 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
       tail -f var/log/install_upgrade.log
       ```
 
--  <!-- MAGECLOUD-1367 -->**New cron command**—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the [`cron:unlock`]({{ site.baseurl }}/cloud/trouble/reset-cron-jobs.html) command. Not available in 2.1.
+-  <!-- MAGECLOUD-1367 -->**New cron command**—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the [`cron:unlock`](https://support.magento.com/hc/en-us/articles/360033099451) command. Not available in 2.1.
 
 -  <!-- MAGECLOUD-1369 -->**Unified configuration file**—You can now configure build and deploy stages using a [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file.
 
--  <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command]({{ site.baseurl }}/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
+-  <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](https://support.magento.com/hc/en-us/articles/360033182871) to restore these configuration files from a backup.
 
 -  <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
@@ -630,7 +630,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
 
 **Resolved issues:**
 
--  <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.
+-  <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs](https://support.magento.com/hc/en-us/articles/360033099451) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.
 
 ## v2002.0.3
 

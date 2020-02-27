@@ -7,6 +7,7 @@ menu_node:
 menu_order: 400
 functional_areas:
   - Upgrade
+redirect_to: https://support.magento.com/hc/en-us/articles/360032990672
 ---
 
 A backup can fail for any of the following reasons:

@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033782051
 ---
 
 If you use the [nginx](https://glossary.magento.com/nginx) web server and you attempt to install the Magento software, the installation sometimes fails.
