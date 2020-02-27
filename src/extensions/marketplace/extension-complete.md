@@ -1,18 +1,17 @@
 ---
 group: marketplace-sellers
-title: Complete Your Extension
+title: Create a New Extension
 ---
 
-Before you can submit your extension to Magento Marketplace, the code must be complete, tested, and packaged.
-
-For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
-
-({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
+Before you can submit your extension to Magento Marketplace, the code must be complete, tested, and packaged. For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
 
 -  [PHP Developer Guide]({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
 -  [Best Practices for Extension Developers]({% link guides/v2.3/ext-best-practices/bk-ext-best-practices.md %})
 -  [Magento Web APIs]({% link guides/v2.3/get-started/bk-get-started-api.md %})
 -  [Frontend Developer Guide]({% link guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.md %})
+
+![]({% link extensions/marketplace/images/extension-prep.png %}){: .zoom}
+_Building and Submitting an Extension_
 
 ## Build your extension
 
@@ -28,9 +27,6 @@ For technical information, see the Magento DevDocs for additional technical info
 
    -  Release notes in text format
    -  A user guide, installation guide, or reference manual in PDF format
-
-![]({% link extensions/marketplace/images/extension-prep.png %}){: .zoom}
-_Building and Submitting an Extension_
 
 [1]: https://github.com/squizlabs/PHP_CodeSniffer
 [2]: https://github.com/magento/marketplace-eqp
