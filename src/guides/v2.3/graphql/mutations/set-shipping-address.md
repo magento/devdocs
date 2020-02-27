@@ -31,7 +31,10 @@ mutation {
             company: "Magento"
             street: ["Magento Pkwy", "Main Street"]
             city: "Austin"
-            region: "TX"
+            address_region: {
+              code: "TX"
+              label: "Texas"
+            }
             postcode: "78758"
             country_code: "US"
             telephone: "8675309"

@@ -44,7 +44,10 @@ mutation {
             company: "Company Name"
             street: ["320 N Crescent Dr", "Beverly Hills"]
             city: "Los Angeles"
-            region: "CA"
+            address_region: {
+              code: "CA"
+              label: "California"
+            }
             postcode: "90210"
             country_code: "US"
             telephone: "123-456-0000"
