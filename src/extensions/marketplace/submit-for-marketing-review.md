@@ -7,6 +7,8 @@ When you have completed the code, you can submit your extension for marketing re
 
 When submitted, the extension is placed in a queue as soon as it is submitted. You will receive confirmation by email, and can track the status of your submission from your Marketplace account. You can submit your product for both technical and marketing review at the same time. The process is the same for both extensions and themes.
 
+![]({% link extensions/marketplace/images/market-content.png %}){: .zoom}
+
 ## Prepare for marketing review
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
@@ -16,8 +18,6 @@ Before submitting an extension or theme for marketing review, conduct your own i
 -  Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
 -  Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
 -  Consider the following: Is the presentation professional? Does it foster confidence in your skills as a developer? Does it have commercial appeal? Do you provide information to help customers understand your product and how it supports their storefronts and backend?
-
-![]({% link extensions/marketplace/images/market-content.png %}){: .zoom}
 
 ## Submit for review
 

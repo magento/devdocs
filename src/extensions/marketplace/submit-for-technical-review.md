@@ -5,6 +5,8 @@ title: Submit for Technical Review
 
 With your new extension entry created, you can submit your extension for Technical Review. We [review the code]({% link extensions/marketplace/code-validation.md %}) according to [technical guidelines]({% link extensions/marketplace/technical-review-guidelines.md %}), install and use the extension following submitted documentation, and verify specifics from your submission form. Track the status and progress of your extension submission through your Marketplace account.
 
+![]({% link extensions/marketplace/images/tech-review-content.png %}){: .zoom}
+
 The following instructions show how to submit an extension for Technical Review. The process is essentially the same for [themes]({% link extensions/marketplace/themes.md %}) and [shared packages]({% link extensions/marketplace/shared-packages.md %}).
 
 {: .bs-callout .bs-callout-info}
@@ -21,9 +23,6 @@ Before submitting an extension or theme for marketing review, conduct your own i
 -  All extensions must be secure, without viruses, malware, or vulnerabilities.
 
 -  Fully test your extension, including installation, dependencies, shared packages, configuration, and usage.
-
-![]({% link extensions/marketplace/images/tech-review-content.png %})
-({% link extensions/marketplace/images/tech-review-content.png %}){: .zoom}
 
 ## Step 1: Enter technical submission details
 
