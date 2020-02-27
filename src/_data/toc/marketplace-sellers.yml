@@ -107,7 +107,7 @@ pages:
       versionless: true
 
 - label: Submit for Marketing Review
-  url: /extensions/marketplace/submit-for-technical-review.html
+  url: /extensions/marketplace/submit-for-marketing-review.html
   versionless: true
   children:
 
