@@ -12,7 +12,7 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 The `{{site.data.var.mcc}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 ## v1.0.3
-*Release date: February 24, 2020*<br/>
+*Release date: February 27, 2020*<br/>
 
 -  {:.fix}Fixed a compatibility issue to support `{{site.data.var.ct}}` 2002.0.x releases that use older PHP versions.
 
