@@ -161,7 +161,3 @@ pages:
   url: /extensions/marketplace/technical-reference.html
   versionless: true
   children:
-
-    - label: Code Validation
-      url: /extensions/marketplace/code-validation.html
-      versionless: true
