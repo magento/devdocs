@@ -1,0 +1,1 @@
+../../../v2.3/config-guide/deployment/single-machine.md

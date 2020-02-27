@@ -1,0 +1,1 @@
+../../../../v2.3/install-gde/install/hosted/hosted_install_1_readiness.md
