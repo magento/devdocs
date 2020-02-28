@@ -1,6 +1,7 @@
 ---
 group: marketplace-sellers
 title: Account Setup Process
+redirect_from: /marketplace/user_guide/sellers/set-up-your-account.html
 ---
 
 ## Step 1: Log in or register for a developer account.
