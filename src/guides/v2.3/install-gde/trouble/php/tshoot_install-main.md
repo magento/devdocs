@@ -11,12 +11,12 @@ functional_areas:
   - Setup
 ---
 
-*  [Installation stops at about 70%]({{ page.baseurl }}/install-gde/trouble/php/tshoot_70pct.html)
-*  [Cannot install using nginx]({{ page.baseurl }}/install-gde/trouble/php/tshoot_nginx-port.html)
-*  [During installation, fatal PDO error displays]({{ page.baseurl }}/install-gde/trouble/php/tshoot_pdo.html)
-*  [During installation, Reflection Exception error]({{ page.baseurl }}/install-gde/trouble/tshoot_wrong-mysql.html)
-*  [During installation, exception SessionHandler::read()]({{ page.baseurl }}/install-gde/trouble/php/tshoot_session.html)
-*  [Errors installing optional sample data]({{ page.baseurl }}/install-gde/trouble/tshoot_sample-data.html)
-*  [Installation fails; cannot create install.log]({{ page.baseurl }}/install-gde/trouble/tshoot_install-log.html)
-*  [Download fails because of changes in Composer]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html)
-*  [During installation, xdebug maximum function nesting level error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html)
+*  [Installation stops at about 70%](https://support.magento.com/hc/en-us/articles/360033773871)
+*  [Cannot install using nginx](https://support.magento.com/hc/en-us/articles/360033782051)
+*  [During installation, fatal PDO error displays](https://support.magento.com/hc/en-us/articles/360033426412)
+*  [During installation, Reflection Exception error](https://support.magento.com/hc/en-us/articles/360034633551)
+*  [During installation, exception SessionHandler::read()](https://support.magento.com/hc/en-us/articles/360033427272)
+*  [Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)
+*  [Installation fails; cannot create install.log](https://support.magento.com/hc/en-us/articles/360033461912)
+*  [Download fails because of changes in Composer](https://support.magento.com/hc/en-us/articles/360033818091)
+*  [During installation, xdebug maximum function nesting level error](https://support.magento.com/hc/en-us/articles/360034238512)

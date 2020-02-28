@@ -98,7 +98,7 @@ While running, the Data Migration Tool may report inconsistencies between Magent
 *  `Incompatibility in data. Source document: <EXTENSION_TABLE>. Field: <FIELD>. Error: <ERROR_MESSAGE>`
 *  `Incompatibility in data. Destination document: <EXTENSION_TABLE>. Field: <FIELD>. Error: <ERROR_MESSAGE>`
 
-See the [Troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
+See the [Troubleshooting](https://support.magento.com/hc/en-us/articles/360033020451) section of this guide for more information and recommendations.
 
 ## Next migration step
 

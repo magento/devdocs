@@ -205,7 +205,7 @@ To use the mapping files:
 
 1. Copy them from `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>/` to `<your Magento 2 install dir>/app/code/Vendor/Migration/etc/<migration edition>/<ce or version>/` and remove the `.dist` [extension](https://glossary.magento.com/extension).
 
-1. Change the file name in the `<options>` node in the `config.xml` file to the new name of the file.
+1. Update the path to the new copied file in the `<options>` node of `config.xml`. The updated path should be a full file path: `/path/to/copied/config.xml` or a magento/data-migration-tool module relative file path: `etc/path/to/copied/config.xml`.
 
 The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
 

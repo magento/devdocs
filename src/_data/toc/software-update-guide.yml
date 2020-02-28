@@ -164,18 +164,6 @@ pages:
         - label: Sorry, we can't take that action right now
           url: /comp-mgr/trouble/cman/were-sorry.html
 
-        - label: Out of memory errors
-          url: /comp-mgr/trouble/cman/out-of-memory.html
-
-        - label: Troubleshoot cron
-          url: /comp-mgr/trouble/cman/cron.html
-
-        - label: Troubleshoot the updater application
-          url: /comp-mgr/trouble/cman/updater.html
-
-        - label: PHP version readiness check issues
-          url: /comp-mgr/trouble/cman/php-version.html
-
         - label: File permissions readiness check issues
           include_versions: ["2.0", "2.1"]
           url: /comp-mgr/trouble/cman/rc_perms.html
@@ -183,11 +171,5 @@ pages:
         - label: Roll back after update failure
           url: /comp-mgr/trouble/cman/update-fail.html
 
-        - label: Resolve component dependency readiness check issues
-          url: /comp-mgr/trouble/cman/component-depend.html
-
         - label: Maintenance mode options for upgrade
           url: /comp-mgr/trouble/cman/maint-mode.html
-
-        - label: Troubleshoot backups
-          url: /comp-mgr/trouble/cman/tshoot_backup.html
