@@ -7,7 +7,7 @@ The Extension Quality Program is powered by Magento expertise, development guide
 
 You can log in to your Marketplace account to check the status of your submission. If your submission does not pass our technical or marketing reviews, we will tell you why, and how to fix it. Otherwise, your successful submissions will be listed on the Marketplace.
 
-## [Build Your Extension or Theme]({% link marketplace/sellers/extension-complete.md %})
+## [Build Your Extension or Theme]({% link marketplace/sellers/extension-create.md %})
 
 When your extension code is complete, you can create the extension and version in Magento Marketplace.
 

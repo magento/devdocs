@@ -16,4 +16,4 @@ _Marketplace Developer Portal_
 |[Reports]({% link marketplace/sellers/sales.md %})|[Sales]({% link marketplace/sellers/sales.md %}) - Takes you to your Sales reports.<br/>[Analytics]({% link marketplace/sellers/analytics.md %}) - Takes you to your sales Analytics reports.|
 |[Support](https://marketplacesupport.magento.com/hc/en-us)|Opens the [Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us).|
 |Guidelines|Opens the extension development guidelines.|
-|[Profile Information]({% link marketplace/sellers/profile-account.md %})|Account Information<br/>Marketplace Profile<br/>Sign Out|
+|[Profile Information]({% link marketplace/sellers/profile-information.md %})|Account Information<br/>Marketplace Profile<br/>Sign Out|
