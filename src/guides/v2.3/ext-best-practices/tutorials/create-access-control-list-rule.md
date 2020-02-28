@@ -80,6 +80,12 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
 | `action` | Url of the page which needs to be display after click the menu. It should be in following format: `front_name/controller_path/action` |
 | `resource` | To restrict using ACL rule |
 
+Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```
+
 The menu displays like below,
 
 ![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
