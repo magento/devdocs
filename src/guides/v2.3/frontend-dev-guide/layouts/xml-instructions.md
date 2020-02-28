@@ -357,8 +357,14 @@ The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Mage
 -  The *url* type:
 
 ```xml
-<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
+<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" >
+    <param name="param1">param1value</param>
+    <param name="param2">param2value</param>
+    ...
+</argument>
 ```
+
+The *url* may have parameters, but they are optional.
 
 -  The *helper* type:
 
