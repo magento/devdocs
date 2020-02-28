@@ -55,7 +55,7 @@ bin/magento cache:clean
 
 ## Step 2. Restrict access to Admin users
 
-### Restricting admin menu:
+### Restrict the menu in Admin
 
 In your module, create the `etc/adminhtml/menu.xml` file. This file defines a menu that will be hidden from unauthorized users. The `resource` attributes in the `add` nodes determine which resource each action accesses.
 
@@ -86,11 +86,11 @@ Clean the cache by clicking **System** > **Cache Management** > **Flush Magento 
 bin/magento cache:clean
 ```
 
-The menu displays like below,
+The menu displays as follows:
 
 ![custom menu]({{ site.baseurl }}/common/images/ext-best-practices/custom_menu.png)
 
-### Restricting admin controllers:
+### Restrict admin controllers
 
 We can restrict the access to admin controllers by overriding the `_isAllowed` method of the `\Magento\Framework\App\Action\Action` class.
 
@@ -114,7 +114,7 @@ protected function _isAllowed()
 
 If user doesn't have permission, the action page displays an "Access Denied" message.
 
-## Step 4. Restrict web API access
+## Step 3. Restrict web API access
 
 We can restrict users from accessing API endpoints by using the ACL rule. By creating a Web API configuration file (`etc/webapi.xml`), the rules defined in `acl.xml` can restrict the access to API endpoints.
 
