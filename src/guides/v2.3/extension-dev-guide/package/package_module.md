@@ -16,8 +16,6 @@ To package a component, you must:
 *  Register the component using `registration.php`
 *  Package and publish your component.
 
-    Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
-
 ## Create a Magento Composer file {#composer}
 
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the [module](https://glossary.magento.com/module).

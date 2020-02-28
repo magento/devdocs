@@ -9,7 +9,7 @@ Access Control List (ACL) rules allow an admin to limit the permissions of users
 
 In this tutorial, we are creating three custom resources (Custom Menu, Create, Delete), then creating a role that has access to these resources, and taking steps to restrict access by three entities (Admin users, controllers, and web APIs).
 
-## Step 1. Define the custome resources
+## Step 1. Define the custom resources
 
 Create the `etc/acl.xml` file in your module. This file adds the custom resources in resource tree.
 
