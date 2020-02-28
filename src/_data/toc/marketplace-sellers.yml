@@ -78,6 +78,10 @@ pages:
       url: /marketplace/sellers/business-value.html
       versionless: true
 
+    - label: Update Extension Information
+      url: /marketplace/sellers/extension-update-information.html
+      versionless: true
+
 - label: Themes
   url: /marketplace/sellers/themes.html
   versionless: true
@@ -136,10 +140,6 @@ pages:
     - label: Resubmit an Extension
       url: /marketplace/sellers/extension-resubmit.html
       versionless: true
-
-- label: Update Extension Information
-  url: /marketplace/sellers/extension-update-information.html
-  versionless: true
 
 - label: Manage Sales
   url: /marketplace/sellers/sales.html
