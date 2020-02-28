@@ -1,1 +1,0 @@
-../../v2.3/release-notes/bk-release-notes.md
