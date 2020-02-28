@@ -9,7 +9,7 @@ You can view data about the performance of your extension in the marketplace.
 
 In the top navigation of the Marketplace Developer portal, go to **Reports** >  **Analytics**.
 
-![]({% link extensions/marketplace/images/reports-analytics.png %}){: .zoom}
+![]({% link marketplace/sellers/images/reports-analytics.png %}){: .zoom}
 _Marketplace Traffic Performance Metrics_
 
 ## Traffic overview

@@ -24,7 +24,7 @@ _See also:_
 
 -  [PHP Developer Guide]({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
 -  [How to Package Magento Extensions][2]
--  [Packaging Magento Version 1.x Extensions]({% link extensions/marketplace/packaging-v1x-extensions.md %})
+-  [Packaging Magento Version 1.x Extensions]({% link marketplace/sellers/packaging-v1x-extensions.md %})
 
 ## Coding Standards: Check code quality/syntax
 

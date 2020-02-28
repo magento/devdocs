@@ -5,7 +5,7 @@ title: Updating Extension Information
 
 There are four extension submission options:
 
--  **New** - See [Submit for Review]({% link extensions/marketplace/submit-for-review.md %})
+-  **New** - See [Submit for Review]({% link marketplace/sellers/submit-for-review.md %})
 -  **Update** - You can update only the marketing information for a product already in the store.
 -  **Patch** - If the system detects that the semantic versioning is a patch update, it will prompt you to indicate if it is a patch. If your answer is yes, the submission bypasses marketing review and, once all technical review tests are complete, the version goes to the store.
 -  **Backporting** - Submit a new version to an older line than what is currently on the store. For example, if you have posted 1.0 and 2.0 versions of your extension, and you have a security fix for the 1.0 line. You can now submit versions such as 1.1 or 1.0.1.

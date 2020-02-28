@@ -9,7 +9,7 @@ Your profile tracks and provides all information for your Marketplace Developer 
 
 Your contact information includes your address, phone number, and PayPal email address. As part of the registration process, you must enter a valid PayPal email, even if your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.
 
-![]({% link extensions/marketplace/images/account-information.png %}){: .zoom}
+![]({% link marketplace/sellers/images/account-information.png %}){: .zoom}
 _Contact Information_
  
 ### Field Descriptions - personal
@@ -50,19 +50,19 @@ For more technical information, see [Get your authentication keys][2] in the dev
 
 1. In the Basic Access Key Information dialog, enter an **Access Key Name** (max of 32 characters) to identify the access key. Then, click <span class="btn">Continue</span>.
 
-    ![]({% link extensions/marketplace/images/basic-access-key-information.png %}){: .zoom}
+    ![]({% link marketplace/sellers/images/basic-access-key-information.png %}){: .zoom}
     _Basic Access Key Information_
 
 Your new access key appears in the list, and can now be used to authorize downloads of Magento updates, extensions, and themes.
 
-![]({% link extensions/marketplace/images/access-keys.png %}){: .zoom}
+![]({% link marketplace/sellers/images/access-keys.png %}){: .zoom}
 _Access Key Added to Your Account_
 
 ## Marketplace Profile
 
 Your Marketplace Profile contains information you entered during account setup, lets you enter social media links, and gives you the option to upgrade your partner status.
 
-![]({% link extensions/marketplace/images/marketplace-profile.png %}){: .zoom}
+![]({% link marketplace/sellers/images/marketplace-profile.png %}){: .zoom}
 _Marketplace Profile_
 
 | Field | Description |
@@ -79,14 +79,14 @@ _Marketplace Profile_
 
 Marketplace policy requires all providers to submit business information to ensure the efficient processing of transactions and payments. Here you can download the necessary form for your tax status, and click <span class="btn">Email Tax Forms</span> to open an email in your default email client.
 
-![]({% link extensions/marketplace/images/tax-forms.png %}){: .zoom}
+![]({% link marketplace/sellers/images/tax-forms.png %}){: .zoom}
 _Tax Forms_
 
 ## Partner Portal
 
 Click **Partner Portal** to open the Magento Partner Portal dashboard.
 
-![]({% link extensions/marketplace/images/partner-portal.png %}){: .zoom}
+![]({% link marketplace/sellers/images/partner-portal.png %}){: .zoom}
 _Partner Portal_
 
 [1]: http://docs.magento.com/m2/ce/user_guide/system/encryption-key.html

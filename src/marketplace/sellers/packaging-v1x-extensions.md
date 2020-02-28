@@ -9,7 +9,7 @@ Extensions developed for Magento version 1.x have different packaging guidelines
 
 1. From the Admin, go to **System** > **Magento Connect** > **Package Extensions**.
 
-    ![]({% link extensions/marketplace/images/create-extension-package.png %}){: .zoom}
+    ![]({% link marketplace/sellers/images/create-extension-package.png %}){: .zoom}
     _Create Extension Package_
 
     This takes you to the Create Extension Package page, which consists of six sections:
@@ -30,7 +30,7 @@ Formatting requirements: The name of an extension can be a combination of letter
 {: .bs-callout .bs-callout-info}
 The name used in this field will be your extension key. It is case-sensitive.
 
-![]({% link extensions/marketplace/images/package-info.png %}){: .zoom}
+![]({% link marketplace/sellers/images/package-info.png %}){: .zoom}
 _Package Info_
 
 ### Channel
@@ -82,8 +82,8 @@ Another package will be created in `<magento root>/var/connect`. You will need t
 
 If you are supporting two extensions with the same name when one of them is compatible with Magento Pre 1.5 and another with Magento 1.5+ do the following:
 
--  Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
--  Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({% link extensions/marketplace/submit-for-review.md %}).
+-  Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({% link marketplace/sellers/submit-for-review.md %}).
+-  Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({% link marketplace/sellers/submit-for-review.md %}).
 -  Package will appear in `<magento root>/var/pear`.
 
 {: .bs-callout .bs-callout-info}
@@ -123,7 +123,7 @@ For example, http://opensource.org/licenses/osl-3.0.php
 
 In order to understand this process, see [Software Versioning][1].
 
-![]({% link extensions/marketplace/images/release-info.png %}){: .zoom}
+![]({% link marketplace/sellers/images/release-info.png %}){: .zoom}
 _Release Info_
 
 ### Release version
@@ -153,7 +153,7 @@ Add any notes you may have for this release.
 
 In the Authors section, type in the real name, user name, and email address of all members who contributed to this extension. The first user must match the user name of your Magento Developer account used to display your extensions on Magento Marketplace.
 
-![]({% link extensions/marketplace/images/authors.png %}){: .zoom}
+![]({% link marketplace/sellers/images/authors.png %}){: .zoom}
 _Authors_
 
 ## Section D: Dependencies
@@ -162,7 +162,7 @@ The dependencies tab is used to specify the dependence of our code in regard to 
 
 The following example provides an example of dependency on the `Mage\_Core\_Modules` package. This means that our extension will only work with Magento versions within the set range. The PHP [`version\_compare`][2] function is used to verify the compatibility of versions during the extension installation.
 
-![]({% link extensions/marketplace/images/dependencies.png %}){: .zoom}
+![]({% link marketplace/sellers/images/dependencies.png %}){: .zoom}
 _Dependencies_
 
 ## Section E: Contents
@@ -188,7 +188,7 @@ _Where “`./`” represents the Magento root directory._
 
 In the Path field, enter the path relative to the path in the Target field. In the Include and Ignore fields, enter a regular expression which will check the path with the file name only for the rows where the Type field is set to Recursive Dir. A file to be included in the extension package must match the expression specified in the Include field. If the file matches the expression in the Ignore field, it will not be included in the extension package correspondingly.
 
-![]({% link extensions/marketplace/images/contents.png %}){: .zoom}
+![]({% link marketplace/sellers/images/contents.png %}){: .zoom}
 _Contents_
 
 ## Section F: Load local package
@@ -201,7 +201,7 @@ This saves it in a package data file and creates a package file.
 
 **Extension package file** - The Extension Package file contains all source code needed. In addition, the archive includes another file that is created by a packager - `package.xml`. This file contains information about the extension, including the description of the structure of files and folders included in the package, and md5 sum for each file.
 
-When the extension package file is ready, it can be [submitted for review]({% link extensions/marketplace/submit-for-review.md %}).
+When the extension package file is ready, it can be [submitted for review]({% link marketplace/sellers/submit-for-review.md %}).
 
 {: .bs-callout .bs-callout-info}
 First you should set write permissions to the appropriate folders.

@@ -1,0 +1,10 @@
+---
+group: marketplace-sellers
+title: Set Up Your Developer Account
+---
+
+Create a [new Marketplace account]({% link marketplace/sellers/account-overview.md %}), or use your existing Magento account. Then, use the Marketplace Developer Portal to manage your profile information, product submissions, and the monthly payments you receive from sales on Magento Marketplace.
+
+-  [Process Overview]({% link marketplace/sellers/account-overview.md %})
+-  [Register as a developer]({% link marketplace/sellers/developer-register.md %})
+-  [Marketplace Developer Portal]({% link marketplace/sellers/developer-portal.md %})
