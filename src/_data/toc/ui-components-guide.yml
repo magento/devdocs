@@ -46,6 +46,10 @@ pages:
           url: /ui_comp_guide/components/ui-columns-editor-record.html
           exclude_versions: ["2.2"]
 
+        - label: ColumnsEditorView component
+          url: /ui_comp_guide/components/ui-columns-editor-view.html
+          exclude_versions: ["2.2"]
+
         - label: ColumnsEditingBulk component
           url: /ui_comp_guide/components/ui-columns-editing-bulk.html
           exclude_versions: ["2.2"]
@@ -102,6 +106,9 @@ pages:
 
         - label: Form component
           url: /ui_comp_guide/components/ui-form.html
+
+        - label: GridDataProvider component
+          url: /ui_comp_guide/components/ui-grid-data-provider.html
 
         - label: Hidden component
           url: /ui_comp_guide/components/ui-hidden.html

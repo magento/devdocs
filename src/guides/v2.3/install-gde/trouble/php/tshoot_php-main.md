@@ -11,6 +11,6 @@ functional_areas:
   - Setup
 ---
 
-*  . [PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
-*  . [During installation, PHP date warning]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-date.html)
-*  . [Resolve an illegal offset error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_opcache.html)
+*  . [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631)
+*  . [During installation, PHP date warning](https://support.magento.com/hc/en-us/articles/360034610051)
+*  . [Resolve an illegal offset error](https://support.magento.com/hc/en-us/articles/360034597391)

@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033432231
 ---
 
 ### Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:
