@@ -1,6 +1,7 @@
 ---
 group: marketplace-sellers
-title: Resubmitting an Extension
+title: Resubmit an Extension
+redirect_from: /marketplace/user_guide/sellers/resubmitting-an-extension.html
 ---
 
 If an extension fails a test at any time during the review process, you can correct the problem and resubmit. For example, after submitting an extension to Technical Review, it might fail the installation test. The Technical Report explains the error and links to related topics in the documentation.

@@ -1,15 +1,16 @@
 ---
 group: marketplace-sellers
 title: Complete the Extension Information
+redirect_from: /marketplace/user_guide/sellers/creating-a-new-extension.html
 ---
 
-When your extension code is complete, the next step is to create a new extension in Magento Marketplace. This creates an entry to your Extensions page in the Magento Marketplace Developer portal, but it does not submit the extension.
+When your extension code is complete, the next step is to add an entry for your extension to Magento Marketplace. This creates an entry on your Extensions page in the Magento Marketplace Developer portal, but does not submit the extension.
 
 To add an entry, you need to complete these instructions and submit the [version]({% link marketplace/sellers/extension-version.md %}).
 
 ## Create a new extension entry
 
-1. Log into the Magento Marketplace Developer portal.
+1. Log into the Marketplace [Developer portal]({% link marketplace/sellers/developer-portal.md %}).
 
 1. Click **Extensions**.
 

@@ -1,6 +1,7 @@
 ---
 group: marketplace-sellers
 title: Company Profile
+redirect_from: /marketplace/user_guide/sellers/company-profile.html
 ---
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.

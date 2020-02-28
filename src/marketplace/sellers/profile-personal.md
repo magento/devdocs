@@ -1,6 +1,7 @@
 ---
 group: marketplace-sellers
 title: Personal Profile
+redirect_from: /marketplace/user_guide/sellers/personal-profile.html
 ---
 
 The information in your personal profile identifies you as a vendor in Magento Marketplace, and includes your background, image, contact information, and social network addresses. The Personal Profile page initially appears when you set up your Marketplace account as an individual. From your Marketplace account, the Personal Profile is located on the Developer Portal tab under My Information.

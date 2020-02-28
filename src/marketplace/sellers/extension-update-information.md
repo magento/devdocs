@@ -1,6 +1,7 @@
 ---
 group: marketplace-sellers
-title: Updating Extension Information
+title: Update Extension Information
+redirect_from: /marketplace/user_guide/sellers/updating-extension-information.html
 ---
 
 There are four extension submission options:
