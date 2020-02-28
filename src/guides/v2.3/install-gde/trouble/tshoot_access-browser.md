@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033117152
 ---
 
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
