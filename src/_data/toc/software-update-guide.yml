@@ -57,7 +57,7 @@ pages:
               url: /comp-mgr/module-man/compman-uninst-data.html
 
         - label: Step 4. Uninstall
-          url: /comp-mgr/module-man/compman-uninst-final.html
+          url: /comp-mgr/extens-man/extensman-uninst-final.html
 
     - label: Run the Module Manager
       include_versions: ["2.2", "2.3"]

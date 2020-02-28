@@ -347,7 +347,7 @@ pages:
       children:
 
         - label: Manage message queues
-          url: /config-guide/mq/manage-mysql.html
+          url: /config-guide/mq/manage-message-queues.html
 
     - label: Message Queues
       include_versions: ["2.3"]
@@ -355,7 +355,7 @@ pages:
       children:
 
         - label: Manage message queues
-          url: /config-guide/mq/manage-mysql.html
+          url: /config-guide/mq/manage-message-queues.html
 
     - label: Install and configure Solr (Magento Commerce only)
       include_versions: ["2.0","2.1"]
