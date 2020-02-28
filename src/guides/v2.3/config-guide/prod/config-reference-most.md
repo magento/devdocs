@@ -174,7 +174,6 @@ Product Listing Sort by | `catalog/frontend/default_sort_by` | <!-- ![Not EE-onl
 Allow All Products per Page | `catalog/frontend/list_allow_all` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Use Flat Catalog Category | `catalog/frontend/flat_catalog_category` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Use Flat Catalog Product | `catalog/frontend/flat_catalog_product` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Allow Dynamic Media URLs in Products and Categories | `catalog/frontend/parse_url_directives` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Swatches per Product | `catalog/frontend/swatches_per_product` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow Guests to Write Reviews | `catalog/review/allow_guest` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow Alert When Product Price Changes | `catalog/productalert/allow_price` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |

@@ -153,7 +153,7 @@ And finally, create the template that will be used for showing the widget's data
 <?php
 /** \OrangeCompany\Learning\Block\Widget\Test $block */
 ?>
-<h3><?= $block->escapeHtml($block->getData('label')) ?></h3>
+<h3><?= $block->escapeHtml($block->getData('title')) ?></h3>
 <h3><?= $block->escapeHtml(__('Size:')) ?> <?= $block->escapeHtml($block->getData('size')) ?></h3>
 ```
 
