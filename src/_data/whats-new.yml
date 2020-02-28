@@ -2464,7 +2464,7 @@ entries:
   type: Technical changes
   date: January 23, 2019
   link: https://github.com/magento/devdocs/pull/3611
-- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html#max-input-vars-error-due-to-large-forms)
+- description: Added a [section](https://support.magento.com/hc/en-us/articles/360034599631)
     discussing the max-input-vars value in php.ini.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2619,7 +2619,7 @@ entries:
     system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html),
     [Step 3. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-backup.html),
     [Step 2. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/module-man/compman-backup.html),
-    and [Troubleshoot backups](https://devdocs.magento.com/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html).
+    and [Troubleshoot backups](https://support.magento.com/hc/en-us/articles/360032990672).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: December 10 2018
@@ -4417,11 +4417,11 @@ entries:
   versions: '2.2'
   type: Updated
   date: June 23 2017
-- description: '[Exceptions during installation](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_exceptions.html)'
+- description: '[Exceptions during installation](https://support.magento.com/hc/en-us/articles/360033432231)'
   versions: '2.2'
   type: Updated
   date: June 23 2017
-- description: '[Errors installing optional sample data](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_sample-data.html)'
+- description: '[Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)'
   versions: '2.2'
   type: Updated
   date: June 23 2017
@@ -4962,7 +4962,7 @@ entries:
   versions: 2.x
   type: New
   date: Nov 4 2016
-- description: "[Troubleshoot OPcache-related error](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/php/tshoot_opcache.html)"
+- description: "[Troubleshoot OPcache-related error](https://support.magento.com/hc/en-us/articles/360034597391)"
   versions: 2.x
   type: New
   date: Nov 4 2016

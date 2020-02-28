@@ -259,9 +259,6 @@ pages:
         - label: How Varnish caching works
           url: /config-guide/varnish/use-varnish-cache-how.html
 
-        - label: Troubleshooting 503 errors
-          url: /config-guide/varnish/tshoot-varnish-503.html
-
     - label: Use memcached for session storage
       url: /config-guide/memcache/memcache.html
       children:

@@ -33,7 +33,7 @@ To update the Magento software if you're a contributing developer:
    ```
 
     {:.bs-callout-info}
-   If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
+   If `git pull origin develop` fails, see [troubleshooting](https://support.magento.com/hc/en-us/articles/360034229872).
 
 1. Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
 1. Enter the following command:
