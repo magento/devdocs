@@ -36,7 +36,7 @@ To apply {{site.data.var.ece}} patches manually:
 1. From the project root, apply the patches.
 
    ```bash
-   php ./vendor/bin/ece-patches apply
+   php ./vendor/bin/ece-tools patch
    ```
 
 1. Clear the Magento cache.
@@ -83,7 +83,7 @@ To use magento-cloud-patches as a stand-alone package:
 1. From the project root, apply the patches.
 
    ```php
-   php ./vendor/bin/ece-patches apply
+   php ./vendor/bin/ece-tools patch
    ```
 
    This command applies Magento patches and any custom patches found in the `m2/hotfixes` directory.
