@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033773871
 ---
 
 During installation using the Setup Wizard, the process stops at about 70% (with or without sample data). No errors display on the screen.
