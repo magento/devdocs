@@ -23,7 +23,7 @@ pages:
       url: /marketplace/sellers/account-overview.html
       versionless: true
 
-    - label: Account Setup
+    - label: Account Setup Process
       url: /marketplace/sellers/account-setup.html
       versionless: true
 
@@ -36,8 +36,8 @@ pages:
   versionless: true
   children:
 
-    - label: Account Information
-      url: /marketplace/sellers/profile-account.html
+    - label: Profile Information
+      url: /marketplace/sellers/profile-information.html
       versionless: true
 
     - label: Company Profile
@@ -54,7 +54,7 @@ pages:
   children:
 
     - label: Create a New Extension
-      url: /marketplace/sellers/extension-complete.html
+      url: /marketplace/sellers/extension-create.html
       versionless: true
 
     - label: Specify the Version
@@ -157,7 +157,7 @@ pages:
       url: /marketplace/sellers/analytics.html
       versionless: true
 
-- label: Reference
+- label: Technical Reference
   url: /marketplace/sellers/technical-reference.html
   versionless: true
   children:
