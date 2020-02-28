@@ -9,19 +9,15 @@ Attribute |  Data Type | Description
 `country_code` | String | The customer's country
 `country_id` | String | Deprecated. Use `country_code` instead. The customer's country
 `custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Deprecated. Not applicable for GraphQL
-`customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
-`extension_attributes` | [CustomerAddressAttribute](#customerAddressAttributeInput) | Address extension attributes
 `fax` | String | The fax number
 `firstname` | String | The first name of the person associated with the shipping/billing address
-`id` | Int | The ID assigned to the address object
 `lastname` | String | The family name of the person associated with the shipping/billing address
 `middlename` | String | The middle name of the person associated with the shipping/billing address
 `postcode` | String | The customer's ZIP or postal code
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `region` | [CustomerAddressRegionInput](#customerAddressRegionInput) | An object that defines the customer's state or province
-`region_id` | Int | Deprecated. Use `region` instead. A number that uniquely identifies the state, province, or other area
 `street` | [String] | An array of strings that define the street number and name
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
