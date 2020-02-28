@@ -34,3 +34,15 @@ Add the newly created page layout to the `layouts.xml` file of the theme directo
     </layout>
 </page_layouts>
 ```
+
+Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```
+
+## Result
+
+The new page layout displays in all `Layout` dropdowns.
+
+![Custom page layout]({{ site.baseurl }}/common/images/fdg/custom_layout_admin_backend.png)
