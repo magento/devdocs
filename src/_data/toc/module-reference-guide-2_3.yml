@@ -4,7 +4,6 @@ pages:
     url: /mrg/intro.html
   
   - label: Open Source (v2.3.4)
-    include_versions: ["2.3"]
     children:
     
       - label: AdminAnalytics
@@ -501,7 +500,6 @@ pages:
     
   
   - label: Commerce (v2.3.4)
-    include_versions: ["2.3"]
     children:
     
       - label: AdminGws
@@ -746,7 +744,6 @@ pages:
     
   
   - label: B2B (v1.1.4)
-    include_versions: ["2.3"]
     children:
     
       - label: B2b
@@ -817,7 +814,6 @@ pages:
     
   
   - label: Inventory Management (v1.1.4)
-    include_versions: ["2.3"]
     children:
     
       - label: Inventory
