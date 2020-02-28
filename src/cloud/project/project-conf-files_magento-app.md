@@ -20,8 +20,8 @@ Use the following properties to build your application configuration file. The `
 
 The name is used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{:.bs-callout-info}
-Do not change the name of an application after it has been deployed.
+{:.bs-callout-warning}
+Do not change the name of an application after it has been deployed. Doing so will result in data loss. 
 
 ### `type` and `build`
 
