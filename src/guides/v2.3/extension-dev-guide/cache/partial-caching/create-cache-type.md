@@ -7,21 +7,17 @@ A *cache type* enables you to specify what is cached and enables merchants to cl
 
 The tag *scope* provides a mechanism for a cache type.
 
-## Adding a custom cache type {#m2devgde-adding-custom-cache-type}
-
-This topic discusses how to create a custom cache type.
-
-### Cache type configuration {#m2devgde-cache-type-configuration}
+## Cache type configuration {#m2devgde-cache-type-configuration}
 
 Declare a new cache type in the `etc/cache.xml` file with the following attributes:
 
 | Attribute | Required? | Description |
 | --- | --- | --- |
 | `name` | Yes | A unique cache type ID |
-| `translate` | No | Parameters (described below) that will be translated on the "Cache Management" page |
+| `translate` | No | Parameters that will be translated on the "Cache Management" page |
 | `instance` | Yes | The cache type model class |
 
-Also, cache type configuration has the following required parameters:
+Also, cache type configuration have the following required parameters:
 
 | Parameter | Description |
 | --- | --- |
@@ -40,9 +36,9 @@ For example:
 </config>
 ```
 
-We’ve made a possibility that enables you to declare one or more cache types.
+You may declare multiple cache types.
 
-### Cache type model {#m2devgde-cache-type-model}
+## Cache type model {#m2devgde-cache-type-model}
 
 ```php
 <?php
@@ -82,18 +78,8 @@ class CacheType extends TagScope
 You must specify the following parameters:
 
 *  `VendorName\ModuleName` defines the name of a [module](https://glossary.magento.com/module) that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
-*  `%cache_type_id%` defines unique identifier of a cache type.
-*  `%CACHE_TYPE_TAG%` defines unique tag to be used in the cache type scoping.
-
-## More information about caching
-
-You can get more information about caching by looking at the code.
-We suggest you locate classes that extend [Magento\Framework\Cache\Frontend\Decorator\TagScope][tagscope].
-
-For example, look at [Magento\Customer\Model\Cache\Type\Notification][type] to understand more about the customer notification cache type.
-
- {:.bs-callout-info}
-Please help us improve this topic by suggesting details using the **Edit this page in GitHub** link at the top of the page.
+*  `%cache_type_id%` defines the unique identifier of a cache type.
+*  `%CACHE_TYPE_TAG%` defines the unique tag to be used in the cache type scoping.
 
 [tagscope]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Cache/Type/Notification.php
