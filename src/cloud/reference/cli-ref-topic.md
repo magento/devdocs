@@ -26,7 +26,7 @@ To install the Magento Cloud CLI:
 
    Consult operating system documentation for details.
 
-1. Source the update bash profile.
+1. Reload the updated bash profile.
 
    ```bash
    . ~/.bash_profile
@@ -157,7 +157,7 @@ Help:
 
 ## Update Magento Cloud CLI
 
-The Magento Cloud CLI checks for available updates when you log in, but you can check for updates using the `self:update` command. If there is an update available, follow the instructions and enter `Y` for _yes_ to update the CLI.
+The Magento Cloud CLI checks for available updates when you log in, but you can check for updates using the `self:update` command. If there is an update available, follow the instructions to update the CLI.
 
 If your Magento Cloud CLI is up to date, you see the following response:
 
