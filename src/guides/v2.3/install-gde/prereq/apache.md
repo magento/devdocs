@@ -20,6 +20,19 @@ If you're new to all this and need some help getting started, we suggest the fol
 *  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
 *  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
+## Important: Apache required directives {#apache-required-directives}
+
+1. Set `AllowEncodedSlashes` in server config (globally) or in virtual host configurations to avoid decode the encoded slashes that may cause issues for URLs that contains slash, for instance retrieving products with slash in SKU via API, applying coupon code with slash:
+
+   ```conf
+   <VirtualHost *:443>
+     ...
+     # Allow encoded slashes
+     AllowEncodedSlashes NoDecode
+     ...
+   </VirtualHost>
+   ```
+
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
 This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
