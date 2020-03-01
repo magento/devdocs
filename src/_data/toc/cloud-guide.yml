@@ -519,10 +519,6 @@ pages:
           url: /cloud/trouble/trouble_comp-deploy-fail.html
           versionless: true
 
-        - label: Reset cron jobs
-          url: /cloud/trouble/reset-cron-jobs.html
-          versionless: true
-
         - label: Resolve issues with encryption key
           url: /cloud/trouble/trouble-crypt-key-variable.html
           versionless: true
@@ -533,10 +529,6 @@ pages:
 
         - label: Resolve issues with Google Analytics during deployment
           url: /cloud/trouble/trouble-google-analytics-deploy.html
-          versionless: true
-
-        - label: Restore configuration files
-          url: /cloud/trouble/restore-configuration-files.html
           versionless: true
 
         - label: Site availability

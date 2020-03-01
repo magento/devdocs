@@ -17,9 +17,9 @@ Messages similar to the following display if any readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*  [Updater check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
-*  [Cron script check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
-*  [Component dependency check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
-*  [PHP version readiness check issues]({{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html)
-*  [PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
+*  [Updater check failure](https://support.magento.com/hc/en-us/articles/360033352071)
+*  [Cron script check failure](https://support.magento.com/hc/en-us/articles/360032952852)
+*  [Component dependency check failure](https://support.magento.com/hc/en-us/articles/360033204651)
+*  [PHP version readiness check issues](https://support.magento.com/hc/en-us/articles/360033546411)
+*  [PHP settings errors](https://support.magento.com/hc/en-us/articles/360034599631)
 *  [PHP extensions check failure]({{ page.baseurl }}/install-gde/system-requirements.html)

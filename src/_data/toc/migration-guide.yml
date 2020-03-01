@@ -54,9 +54,6 @@ pages:
     - label: Data that needs to be migrated manually
       url: /migration/migration-manually.html
 
-    - label: Troubleshooting
-      url: /migration/migration-troubleshooting.html
-
     - label: After Migration
       url: /migration/migration-migrate-after.html
 

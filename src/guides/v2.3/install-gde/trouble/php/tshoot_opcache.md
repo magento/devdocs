@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360034597391
 ---
 
 In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:
