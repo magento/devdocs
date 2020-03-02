@@ -37,6 +37,17 @@ Magento uses server rewrites and `.htaccess` to provide directory-level instruct
 {:.bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
+## Apache required modules {#apache-required-modules}
+
+Magento requires the following Apache modules be installed:
+
+*  [mod_deflate.c](https://httpd.apache.org/docs/2.4/mod/mod_deflate.html)
+*  [mod_expires.c](https://httpd.apache.org/docs/2.4/mod/mod_expires.html)
+*  [mod_headers.c](https://httpd.apache.org/docs/2.4/mod/mod_headers.html)
+*  [mod_rewrite.c](https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html)
+*  [mod_security.c](https://modsecurity.org)
+*  [mod_ssl.c](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html)
+
 ## Verify the Apache version {#install-prereq-apache-verify}
 
 To verify the Apache version you're currently running, enter:
