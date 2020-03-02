@@ -47,6 +47,8 @@ To ensure the stability of your customizations and prevent upgrades from overwri
    }
    ```
 
+1. You must edit the `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml` file to declare your fonts.  Otherwise Magento 2.3 will not be able to create the `static/web/fonts/` directory. See `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`.
+
    `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
 
    Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.

@@ -34,9 +34,9 @@ where
 *  `-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see [About enabling and disabling modules](#instgde-cli-subcommands-enable-modules).
 *  `-c` or `--clear-static-content` cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
 
-   Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them.
+   Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them.
 
-   In other words, because of [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+   In other words, because of [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.svg` that are different, fallback might cause the wrong file to display.
 
 Use the following command to list enabled and disabled modules:
 
