@@ -18,6 +18,7 @@ The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/c
 | `realTimeLink` | Enable the link between insertListing's externalValue and value. Here `link` means the two-way [links property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links-property) of UI components, which allows immediate update. | Boolean | `true` |
 | `render_url` | With default `render_url(mui/index/render)` listing will be without buttons. For get a list with buttons url must be changed to `mui/index/render_handle` and the following GET parameters:<br /> buttons=1 (flag to get buttons)<br /> handle= (buttons scope) | String | `'mui/index/render'` |
 | `update_url` | Where the AJAX request will go to retrieve, foster component update data. It will be in json format by default and will be automatically set into `externalProvider.data` | String | `'mui/index/render'` |
+| `selectionsProvider` | Where the component integrated to the form brings the data for Ajax request of the main form through the identifier of the 'selectionColumns' | String | null |
 
 ## Source files
 
@@ -49,6 +50,7 @@ The following example shows how the InsertListing component integrates with the 
                     <imports>true</imports>
                 </dataLinks>
                 <autoRender>true</autoRender>
+                <selectionsProvider>insert_listing_example.insert_listing_example.columns.ids</selectionsProvider>
                 <dataScope>insert_listing_example</dataScope>
                 <ns>insert_listing_example</ns>
             </settings>
