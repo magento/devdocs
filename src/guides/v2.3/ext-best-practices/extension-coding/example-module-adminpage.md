@@ -328,3 +328,7 @@ Now that the module is code-complete, run the following commands to install it:
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 
 ![Hello World Page]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-page.png)
+
+## Related topics
+
+*  [Create an ACL rule]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html)

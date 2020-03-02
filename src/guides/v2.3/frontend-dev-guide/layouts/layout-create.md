@@ -23,11 +23,10 @@ For example, if a new page is going to be designed as `3-columns-double-footer` 
 
 ## Add the new layout to the layouts.xml file
 
-Add the newly created page layout to the `layouts.xml` file of the theme directory `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layouts.xml`.
+Add the newly created page layout to the `layouts.xml` file of the theme directory: `app/design/frontend/<VendorName>/<ThemeName>/Magento_Theme/layouts.xml`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-
 <page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">
     <layout id="3-columns-double-footer">
         <label translate="true">3 Columns Double Footer</label>
@@ -35,7 +34,7 @@ Add the newly created page layout to the `layouts.xml` file of the theme directo
 </page_layouts>
 ```
 
-Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+Clean the cache by going to **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 
 ```bash
 bin/magento cache:clean
