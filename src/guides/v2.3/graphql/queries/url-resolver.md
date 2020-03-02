@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: urlResolver query
+redirect_from:
+  - /guides/v2.3/graphql/reference/url-resolver.html
 ---
 
 A merchant can reconfigure (rewrite) the URL to any product, category, or CMS page. When the rewrite goes into effect, any links that point to the previous URL are redirected to the new address.
