@@ -36,7 +36,7 @@ where
 
    Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them.
 
-   In other words, because of [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.svg` that are different, fallback might cause the wrong file to display.
+   In other words, because of the [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.svg` that are different, fallback might cause the wrong file to display.
 
 Use the following command to list enabled and disabled modules:
 
