@@ -138,9 +138,8 @@ For example:
 
 /**
  * @param \Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider $subject
- * 
- * @param \Magento\Framework\DataObject $result 
- * @return \Magento\Framework\DataObject $result 
+ * @param \Magento\Framework\DataObject $result
+ * @return \Magento\Framework\DataObject $result
  * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 public function afterGetConfig(\Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider $subject, \Magento\Framework\DataObject $result)
