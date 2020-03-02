@@ -795,9 +795,9 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.6.1. Metadata file names MUST follow this pattern:
 
-* `{Type}Meta.xml`, where `{Type}` describes the type of entity.
-* Use [PascalCase](http://wiki.c2.com/?PascalCase).
-* Examples: `CategoryMeta.xml` and `ProductAttributeMeta.xml`
+*  `{Type}Meta.xml`, where `{Type}` describes the type of entity.
+*  Use [PascalCase](http://wiki.c2.com/?PascalCase).
+*  Examples: `CategoryMeta.xml` and `ProductAttributeMeta.xml`
 
 ## 12. Web API
 
