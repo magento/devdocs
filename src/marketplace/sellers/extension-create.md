@@ -14,6 +14,9 @@ Before you can submit your extension to Magento Marketplace, the code must be co
 ![]({% link marketplace/sellers/images/extension-prep.png %}){: .zoom}
 _Building and Submitting an Extension_
 
+{: .bs-callout .bs-callout-info}
+Magento Marketplace does not support encrypted extensions at this time.
+
 ## Build your extension
 
 1. Before submitting your extension review, see the [Technical Review Guidelines]({% link marketplace/sellers/technical-review-guidelines.md %}) and the [Marketing Review Guidelines]({% link marketplace/sellers/marketing-review-guidelines.md %}).

@@ -3,11 +3,13 @@ group: marketplace-sellers
 title: Submit for Marketing Review
 ---
 
-When you have completed the code, you can submit your extension for marketing review. We read, review, and determine the quality and approval of marketing content for your extension according to [marketing guidelines]({% link marketplace/sellers/marketing-review-guidelines.md %}).
+When you have completed the code, you can submit your extension for marketing review. You can submit your product for both technical and marketing review at the same time. The review process is the same for both extensions and themes.
 
-When submitted, the extension is placed in a queue as soon as it is submitted. You will receive confirmation by email, and can track the status of your submission from your Marketplace account. You can submit your product for both technical and marketing review at the same time. The process is the same for both extensions and themes.
+Your extension is placed in a queue as soon as it is submitted. You will receive confirmation by email, and can track the status of your submission from your Marketplace account.
 
 ![]({% link marketplace/sellers/images/market-content.png %}){: .zoom}
+
+During marketing review, your submission is examined to ensure that it meets Marketplace requirements for presentation, content, and branding. Before granting approval, we read, review, and determine the quality of the marketing content for your extension according to our [marketing guidelines]({% link marketplace/sellers/marketing-review-guidelines.md %}).
 
 ## Prepare for marketing review
 
@@ -31,7 +33,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
     As you complete sections, a checkmark displays tracking progress. If you updated or submitted content for the **Technical Submission**, the list displays checkmarks for that submitted content.
 
-    ![]({% link marketplace/sellers/images/marketing-submission-list.png %})
+    ![]({% link marketplace/sellers/images/marketing-submission-list.png %}){: .zoom}
     _Marketing Submission Progress_
 
 1. Complete each section and submit for review when it is complete.
@@ -114,6 +116,8 @@ You must provide a thumbnail and at least two high-quality images for the image 
     _Installation Pricing_
 
 ### Extension support (Optional)
+
+Customers are advised to contact you directly for support, using the information that you provide. For support issues related to Magento Marketplace, see the [Marketplace Help Center][1].
 
 1. Under **Marketing Submission**, click <span class="btn">Extension Support</span>.
 

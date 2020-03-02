@@ -3,9 +3,11 @@ group: marketplace-sellers
 title: Extension Quality Program
 ---
 
-The Extension Quality Program is powered by Magento expertise, development guidelines, and verification tools to ensure that extensions have a logical and efficient coding structure, acceptable performance and scalability, and are compatible with the Magento core.
+The Extension Quality Program (EQP) combines Magento expertise, development guidelines, and verification tools to ensure that all extensions on Magento Marketplace meet our coding standards and best practices.
 
-You can log in to your Marketplace account to check the status of your submission. If your submission does not pass our technical or marketing reviews, we will tell you why, and how to fix it. Otherwise, your successful submissions will be listed on the Marketplace.
+The review process includes both an automated check and manual QA review. During the process, the structure and code of each extension is examined and tested for evidence of virus/malware infection, and any indication of plagiarism. The review includes a deep technical examination and sanity check conducted by a Magento engineer, with a focus on documentation, coding structure, performance, scalability, security, and compatibility with the Magento core.
+
+You can log in to your Marketplace account to check the status of your submission. If your submission does not pass our technical or marketing reviews, we will tell you why, and how to fix it. Otherwise, your successful submissions will be listed on Marketplace.
 
 ## [Build Your Extension or Theme]({% link marketplace/sellers/extension-create.md %})
 

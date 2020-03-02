@@ -12,4 +12,6 @@ As an extension seller, your process starts with the extension development and t
 [![]({% link marketplace/sellers/images/assets/code-review.png %})]({% link marketplace/sellers/submit-for-review.md %})|[**Submit for Review**]({% link marketplace/sellers/submit-for-review.md %}) - After completing development, testing, and creating a new extension entry, submit your extension for technical and marketing review.|
 [![]({% link marketplace/sellers/images/assets/sales-data.png %})]({% link marketplace/sellers/sales.md %})|[**Manage Your Sales**]({% link marketplace/sellers/sales.md %}) - Use the Sales and Analytics reports to view and manage your extension sales information.|
 
+Although you are not prevented from listing and selling your products and services on your own site, we believe that Magento Marketplace presents the greatest opportunity to drive sales for your Magento-related products and services.
+
 [1]: https://devdocs.magento.com/guides/v2.3/ext-best-practices/bk-ext-best-practices.html
