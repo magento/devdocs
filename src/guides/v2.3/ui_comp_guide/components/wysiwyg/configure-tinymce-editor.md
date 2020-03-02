@@ -54,11 +54,12 @@ Or the Magento_PageBuilder module
 The class DefaultConfigProvider returns data required to render TinyMCE editor.
 From the example the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides existing configuration provided from the cms module.
 
-## Extending the TinyMCE editor 
+## Extending the TinyMCE editor
 
 Revise the `di.xml` file, adding the configuration settings as an argument to `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider`, to customize the TinyMCE editor present in Page Builder.
 The following code shows an example of configuration settings in the `di.xml` file that determine the font sizes available for selection and add a paragraph menu option associated with the `<p>` tag:
 The example of `Magento\PageBuilder\etc\adminhtml\di.xml`
+
 ```xml
 <type name="Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider">
     <arguments>
@@ -78,7 +79,7 @@ The example of `Magento\PageBuilder\etc\adminhtml\di.xml`
 Once you have edited the `di.xml` file you can apply custom styling for the settings you implemented in the related CSS file.
 
 Also, the config of the TinyMCE editor builds can be extended by a plugin.
-Configuration providers are classes with a `getConfig()` method that returns the configuration for a specific entity. 
+Configuration providers are classes with a `getConfig()` method that returns the configuration for a specific entity.
 
 For example, in the `Magento\Cms\Model\Wysiwyg\DefaultConfigProvider` the method `getConfig`
 adds the additional configuration and enable list of plugins:
@@ -131,16 +132,15 @@ See a list of possibly TinyMCE settings on their [website](https://www.tinymce.c
 
 In this case you can extend and fully customize the TinyMCE editor implementing `DefaultConfigProvider`, the class implements the method `getConfig` where specify necessary configuration. The method can by extended/overwrote of the after plugin.
 For example:
+
 ```php
 ...
 
 /**
  * @param \Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider $subject
  * 
- * @param \Magento\Framework\DataObject $result
- * 
- * @return \Magento\Framework\DataObject $result
- * 
+ * @param \Magento\Framework\DataObject $result 
+ * @return \Magento\Framework\DataObject $result 
  * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 public function afterGetConfig(\Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider $subject, \Magento\Framework\DataObject $result)
