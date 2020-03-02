@@ -1,7 +1,7 @@
 ---
 group: marketplace-sellers
 title: Create an Extension
-redirect_from: /marketplace/user_guide/sellers/completing-your-extension.html
+redirect_from: /marketplace/sellers/completing-your-extension.html
 ---
 
 Before you can submit your extension to Magento Marketplace, the code must be complete, tested, and packaged. For technical information, see the Magento DevDocs for additional technical information for developing extensions and more:
