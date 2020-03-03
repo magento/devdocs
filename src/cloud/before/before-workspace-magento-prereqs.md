@@ -172,48 +172,9 @@ To set `auto_increment_increment` to 3:
    service mysqld restart
    ```
 
-## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
+## Magento Cloud CLI {#cloud-ssh-cli-cli-install}
 
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
-
-These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/) or Git Bash.
-
-{:.procedure}
-To install the Magento Cloud CLI:
-
-1. Log in to your local development machine or switch to the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-
-1. Change to a directory to which the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has write access, such as the home directory.
-
-1. Enter the following command:
-
-   ```bash
-   curl -sS https://accounts.magento.cloud/cli/installer | php
-   ```
-
-1. After the CLI downloads, an operating system-specific command displays.
-
-   For example, on Ubuntu and CentOS, the command is similar to:
-
-   ```bash
-   source $HOME/.bashrc
-   ```
-
-   For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc)
-
-   You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
-
-   ```bash
-   export PATH=$PATH:$HOME/.magento-cloud/bin
-   ```
-
-   Consult operating system documentation for details.
-
-1. Verify the `magento-cloud` command is in your path by entering the following command:
-
-   ```bash
-   magento-cloud list
-   ```
+To install the `magento-cloud` CLI , see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 ## Additional requirements for Magento Commerce {#commerce}
 

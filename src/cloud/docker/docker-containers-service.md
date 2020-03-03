@@ -77,7 +77,7 @@ The FPM container includes the following volumes:
    -  `/app/pub/media`
 
 {:.bs-callout-tip}
-You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override] file. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
+You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
 For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
 
@@ -160,7 +160,7 @@ The Web container uses NGINX to handle web requests after TLS and Varnish. This 
 The NGINX configuration for this container is the standard Magento [nginx config], which includes the configuration to auto-generate NGINX certificates for the container. You can customize the NGINX configuration by mounting a new configuration file using a volume.
 
 {:.procedure}
-To mount custom NGINX configuration file using volumes:
+To mount the custom NGINX configuration file using volumes:
 
 1. On your local host, create a `./.docker/nginx/etc/` directory.
 
@@ -170,12 +170,25 @@ To mount custom NGINX configuration file using volumes:
 
 1. To mount the custom NGINX configuration to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
 
-   ```conf
-   web:
-    volumes:
-      ./.docker/nginx/etc/nginx.conf:/etc/nginx/nginx.conf
-      ./.docker/nginx/etc/vhost.conf:/etc/nginx/conf.d/default.conf
+```yaml
+  services:
+    web:
+      volumes:
+        - ./.docker/nginx/etc/nginx.conf:/etc/nginx/nginx.conf
+        - ./.docker/nginx/etc/vhost.conf:/etc/nginx/conf.d/default.conf
    ```
+
+{:.procedure}
+To mount the custom index.php file using volumes:
+
+1. To mount the custom index.php file to the Web container, add the volume configuration to the `docker-compose.override.yml` file.
+
+```yaml
+  services:
+    web:
+      volumes:
+        - ./pub/index.php:/app/pub/index.php:ro
+```
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb

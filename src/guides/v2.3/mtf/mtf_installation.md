@@ -45,7 +45,7 @@ The Functional Testing Framework requires Composer, which downloads libraries de
 If you're not sure that Composer is installed, see [Install Composer]({{page.baseurl }}/install-gde/prereq/dev_install.html#instgde-prereq-compose-install).
 
 1. <a href="{{page.baseurl }}/install-gde/basics/basics_login.html">Open a command prompt</a>.
-1. Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
+1. Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.)
 
    ```bash
    cd <magento2_root_dir>/dev/tests/functional/

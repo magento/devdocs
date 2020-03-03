@@ -73,6 +73,10 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 
    -  **Updating the Magento Cloud docker-compose commands**–We renamed the path to the command file from `./bin/docker` to `./bin/magento-docker`.  Update your scripts and commands to use the new path.
 
+   -  **Cron container no longer included in default Docker configuration**–Now, you must add the `--with-cron` option to the `ece-docker build:compose` command to include the Cron container in the Docker environment configuration. See [Manage cron jobs]({{site.baseurl}}/cloud/docker/docker-manage-cron-jobs.html).
+
+    Any scripts that previously generated containers with crons will now be lacking crons.
+
    -  **Using temporary containers**–In previous versions, the containers created by `bin/magento-docker` command operations were not removed, so you could use them for other operations.  Now, the `magento-docker` commands remove any containers they create after the command completes.
 
       If you want to keep a container created by a docker-compose operation, use the `docker-compose run` command instead of the `bin/magento-docker` command.
@@ -103,4 +107,3 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 -  **Override file synchronization settings for archive and backup files**–Archive and backup files with the following extensions are no longer synchronized when using docker-sync or mutagen:  `*.sql`, `*.gz`, `*.zip`, and `*.bz2`.  You can override the default file synchronization for these file types by renaming the file to end with a different extension. For example: `synchronize-me.zip-backup`
 
 [Cloud Suite release notes]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
-

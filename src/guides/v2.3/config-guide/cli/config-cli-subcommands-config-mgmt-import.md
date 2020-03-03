@@ -21,7 +21,9 @@ The `bin/magento app:config:import` command does not process configuration store
 
 On your production system, run the following command to import data from the configuration files (`config.php` and `env.php`) to the database:
 
-    bin/magento app:config:import [-n, --no-interaction]
+```bash
+bin/magento app:config:import [-n, --no-interaction]
+```
 
 Use the optional `[-n, --no-interaction]` flag to import data without any interaction.
 
@@ -29,9 +31,11 @@ If you enter `bin/magento app:config:import` without the optional flag, you're r
 
 For example, if configuration file contains one new [website](https://glossary.magento.com/website) and one new store, the following  message is displayed:
 
-    These Websites will be created: New Website
-    These Groups will be created: New Store
-    Do you want to continue [yes/no]?
+```terminal
+These Websites will be created: New Website
+These Groups will be created: New Store
+Do you want to continue [yes/no]?
+```
 
 To continue the import, enter `yes`.
 

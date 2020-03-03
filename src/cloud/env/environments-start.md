@@ -3,6 +3,8 @@ group: cloud-guide
 title: Manage branches with the CLI
 redirect_from:
   - /cloud/before/integration-ip-addr.html
+  - /cloud/howtos/environment-tutorial-env-merge.html
+  - /cloud/howtos/how-to.html
 functional_areas:
   - Cloud
 ---
@@ -11,30 +13,9 @@ After you install the Magento Cloud CLI and set up SSH keys for remote access to
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
-## Common Magento Cloud CLI commands {#env-start-comm}
+## Use Magento Cloud CLI commands {#env-start-comm}
 
-Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
-
-The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
-option with any command to get more detailed information.
-
-Command | Description
---- | ---
-`git commit --allow-empty -m "redeploy" && git push <branch-name>` | Push an empty commit to force a redeployment. Some actions, such as adding a user, do not result in deployment.
-`magento-cloud login` | Log in to the project.
-`magento-cloud project:get <project-ID> <directory> -e <environment-ID>` | Clone a project to a directory. To clone the `master` environment, omit `-e <environment-ID>`.
-`magento-cloud environment:list -p <project-ID>` | List the environments in the current project.
-`magento-cloud environment:branch <name> <parent-branch>` | Create a new branch with a name and an ID. This information corresponds to the environment.
-`magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.
-`magento-cloud environment:merge -p <project-ID> -e <environment ID>` | Merge changes in this environment with its parent.
-`magento-cloud environment:synchronize -p <project-ID> -e <environment-ID> {code|data}` | Synchronize (`git pull`) code and data from the parent to this environment.
-`magento-cloud variable:list` | List variables in this environment.
-`magento-cloud variable:set <name> <value>` | Set a value for an environment variable.
-
-For a full list of commands, see the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
-
-{:.bs-callout-info}
-The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
+Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter. See the [Magento Cloud CLI reference]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 ## Get started creating branches {#getstarted}
 
@@ -50,15 +31,15 @@ After completing development, you can merge this branch to the parent:
 
 1. Add, commit, and push changes to the environment.
 
-    ```bash
-    git add -A && git commit -m "Commit message" && git push origin <branch-name>
-    ```
+   ```bash
+   git add -A && git commit -m "Commit message" && git push origin <branch-name>
+   ```
 
 1. Merge with the parent environment:
 
-    ```bash
-    magento-cloud environment:merge <environment-ID>
-    ```
+   ```bash
+   magento-cloud environment:merge <environment-ID>
+   ```
 
 ## Delete an environment {#env-delete}
 
@@ -78,51 +59,51 @@ To delete an environment:
 
 1. Fetch updates from the remote server.
 
-    ```bash
-    git fetch
-    ```
+   ```bash
+   git fetch
+   ```
 
 1. Delete the environment branch.
 
-    ```bash
-    magento-cloud environment:delete <environment-ID>
-    ```
+   ```bash
+   magento-cloud environment:delete <environment-ID>
+   ```
 
-    Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
+   Optionally, you can delete more than one environment at a time by adding multiple environment IDs to the delete command.
 
-    ```bash
-    magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
-    ```
+   ```bash
+   magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
+   ```
 
 1. Respond to the prompts to delete the local environment and the corresponding remote environment.
 
-    ```terminal
-    The environment <environment-ID> is currently active: deleting it will delete all associated data.
-    Are you sure you want to delete the environment <environment-ID>? [Y/n]
-    ```
-    {:.no-copy}
+   ```terminal
+   The environment <environment-ID> is currently active: deleting it will delete all associated data.
+   Are you sure you want to delete the environment <environment-ID>? [Y/n]
+   ```
+   {:.no-copy}
 
-    Deleting the environment places it in an _inactive_ state.
+   Deleting the environment places it in an _inactive_ state.
 
-    ```terminal
-    Delete the remote Git branch too? [Y/n]
-    ```
+   ```terminal
+   Delete the remote Git branch too? [Y/n]
+   ```
 
-    Deleting the remote Git branch removes the environment from the project.
+   Deleting the remote Git branch removes the environment from the project.
 
 1. Wait for the environment to delete.
 
-    ```terminal
-    Deleting environment <environment-ID>
-    Waiting for the activity...
-      Deleting environment <project-id>-<environment-ID>-xxxxxx
+   ```terminal
+   Deleting environment <environment-ID>
+   Waiting for the activity...
+     Deleting environment <project-id>-<environment-ID>-xxxxxx
 
-      [============================]  1 min (complete)
-    Activity ID succeeded
-    Deleted remote Git branch <environment-ID>
-    Run git fetch --prune to remove deleted branches from your local cache.
-    ```
-    {:.no-copy}
+     [============================]  1 min (complete)
+   Activity ID succeeded
+   Deleted remote Git branch <environment-ID>
+   Run git fetch --prune to remove deleted branches from your local cache.
+   ```
+   {:.no-copy}
 
 {:.bs-callout-info}
 To activate an inactive environment, use the `magento-cloud environment:activate` command.

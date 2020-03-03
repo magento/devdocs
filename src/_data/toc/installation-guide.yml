@@ -73,7 +73,6 @@ pages:
 
             - label: PHP
               url: /install-gde/prereq/php-settings.html
-              include_versions: ["2.2", "2.3"]
 
             - label: MySQL
               url: /install-gde/prereq/mysql.html
@@ -92,12 +91,7 @@ pages:
 
             - label: RabbitMQ
               url: /install-gde/prereq/install-rabbitmq.html
-              include_versions: ["2.3"]
               
-            - label: RabbitMQ (Magento Commerce only)
-              url: /install-gde/prereq/install-rabbitmq.html
-              include_versions: ["2.2", "2.1", "2.0"]
-
             - label: Set up a remote MySQL database connection
               url: /install-gde/prereq/mysql_remote.html
 
@@ -112,21 +106,9 @@ pages:
 
         - label: Install Magento using Composer
           url: /install-gde/composer.html
-          include_versions: ["2.1","2.2","2.3"]
 
         - label: (Easy) Install the Magento archive on your server
           url: /install-gde/prereq/zip_install.html
-
-        - label: (Integrator) Integrator installation
-          url: /install-gde/prereq/integrator_install.html
-          include_versions: ["2.0"]
-          children:
-
-            - label: Get the Magento Open Source metapackage
-              url: /install-gde/prereq/integrator_install_ce.html
-
-            - label: Get the Magento Commerce metapackage
-              url: /install-gde/prereq/integrator_install_ee.html
 
         - label: (Contributor) Clone the Magento repository
           url: /install-gde/prereq/dev_install.html
@@ -236,7 +218,6 @@ pages:
 
             - label: Configure the lock provider
               url: /install-gde/install/cli/install-cli-subcommands-lock.html
-              include_versions: ["2.2","2.3"]
               
             - label: Configure the store
               url: /install-gde/install/cli/install-cli-subcommands-store.html
@@ -302,101 +283,14 @@ pages:
         - label: Access issues
           children:
 
-            - label: Cannot access Magento software in a web browser
-              url: /install-gde/trouble/tshoot_access-browser.html
-
             - label: 503 (Service Unavailable) errors accessing Magento software in a web browser
               url: /install-gde/trouble/php/tshoot_mod_access_compat.html
-
-            - label: After installing, images and stylesheets do not load; only text displays, no graphics
-              url: /install-gde/trouble/tshoot_no-styles.html
-
-            - label: Exceptions during installation
-              url: /install-gde/trouble/tshoot_exceptions.html
 
             - label: Cannot write to the var/generation directory
               url: /install-gde/trouble/tshoot_var-gen-perms.html
 
             - label: Installation dependencies not met
               url: /install-gde/trouble/tshoot_install_depend.html
-
-            - label: Error after logging in to the Magento Admin
-              url: /install-gde/trouble/tshoot_admin.html
-
-        - label: Errors during installation
-          children:
-
-            - label: Installation stops at about 70%
-              url: /install-gde/trouble/php/tshoot_70pct.html
-
-            - label: Cannot install using nginx
-              url: /install-gde/trouble/php/tshoot_nginx-port.html
-
-            - label: During installation, fatal PDO error displays
-              url: /install-gde/trouble/php/tshoot_pdo.html
-
-            - label: During installation, Reflection Exception error
-              url: /install-gde/trouble/tshoot_wrong-mysql.html
-
-            - label: During installation, exception SessionHandler::read()
-              url: /install-gde/trouble/php/tshoot_session.html
-
-            - label: Download fails because of changes in Composer
-              url: /install-gde/trouble/tshoot_composer-fail.html
-
-            - label: Unknown module Magento_BundleSampleData
-              url: /install-gde/trouble/tshoot_bundlesampledata.html
-
-            - label: Installation fails; cannot create install.log
-              url: /install-gde/trouble/tshoot_install-log.html
-
-            - label: Errors installing optional sample data
-              url: /install-gde/trouble/tshoot_sample-data.html
-
-            - label: During installation, xdebug maximum function nesting level error
-              url: /install-gde/trouble/php/tshoot_xdebug.html
-
-        - label: Readiness check issues
-          children:
-
-            - label: Component dependency readiness issues
-              url: /install-gde/trouble/readiness/tshoot_rc_depend.html
-
-            - label: cron readiness check issues
-              url: /install-gde/trouble/readiness/tshoot_rc_cron.html
-
-            - label: File permissions readiness check issues
-              url: /install-gde/trouble/readiness/tshoot_rc_perms.html
-
-            - label: PHP version readiness check issues
-              url: /install-gde/trouble/readiness/tshoot_rc_php.html
-
-        - label: GitHub errors
-          children:
-
-            - label: Cannot clone the Magento GitHub repository
-              url: /install-gde/trouble/git/tshoot_clone.html
-
-            - label: git pull origin develop fails when updating the Magento software
-              url: /install-gde/trouble/git/tshoot_git-pull-origin.html
-
-        - label: PHP errors
-          children:
-
-            - label: Resolve an illegal offset error
-              url: /install-gde/trouble/php/tshoot_opcache.html
-
-            - label: PHP settings errors
-              url: /install-gde/trouble/php/tshoot_php-set.html
-
-            - label: During installation, PHP date warning
-              url: /install-gde/trouble/php/tshoot_php-date.html
-
-        - label: Other issues
-          children:
-
-            - label: Known issues that affect installation
-              url: /install-gde/trouble/tshoot_install-issues.html
 
     - label: How Tos
       children:

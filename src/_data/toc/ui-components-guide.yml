@@ -7,7 +7,6 @@ pages:
       children:
 
         - label: ActionDelete component
-          include_versions: ["2.2","2.3"]
           url: /ui_comp_guide/components/ui-actiondelete.html
 
         - label: ActionsColumn component
@@ -29,7 +28,6 @@ pages:
           url: /ui_comp_guide/components/ui-checkboxset.html
 
         - label: ColorPicker component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-colorpicker.html
 
         - label: Column component
@@ -40,15 +38,18 @@ pages:
 
         - label: ColumnsEditor component
           url: /ui_comp_guide/components/ui-columns-editor.html
-          exclude_versions: ["2.2"]
+
+        - label: ColumnsEditorRecord component
+          url: /ui_comp_guide/components/ui-columns-editor-record.html
+
+        - label: ColumnsEditorView component
+          url: /ui_comp_guide/components/ui-columns-editor-view.html
 
         - label: ColumnsEditingBulk component
           url: /ui_comp_guide/components/ui-columns-editing-bulk.html
-          exclude_versions: ["2.2"]
 
         - label: ColumnsEditingClient component
           url: /ui_comp_guide/components/ui-columns-editing-client.html
-          exclude_versions: ["2.2"]
 
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
@@ -75,7 +76,6 @@ pages:
           url: /ui_comp_guide/components/ui-email.html
 
         - label: Expandable column component
-          include_versions: ["2.2","2.3"]
           url: /ui_comp_guide/components/ui-expandable-column.html
 
         - label: ExportButton component
@@ -99,6 +99,9 @@ pages:
         - label: Form component
           url: /ui_comp_guide/components/ui-form.html
 
+        - label: GridDataProvider component
+          url: /ui_comp_guide/components/ui-grid-data-provider.html
+
         - label: Hidden component
           url: /ui_comp_guide/components/ui-hidden.html
 
@@ -106,11 +109,9 @@ pages:
           url: /ui_comp_guide/components/ui-htmlcontent.html
 
         - label: ImagePreview component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-image-preview.html
 
         - label: ImageUploader component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/image-uploader/
 
         - label: Input component
@@ -123,14 +124,12 @@ pages:
           url: /ui_comp_guide/components/ui-insertlisting.html
 
         - label: LinkColumn component
-          include_versions: ["2.2","2.3"]
           url: /ui_comp_guide/components/ui-linkcolumn.html
 
         - label: Listing (grid) component
           url: /ui_comp_guide/components/ui-listing-grid.html
 
         - label: Masonry (grid) component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-masonry.html
 
         - label: MassActions component
@@ -194,19 +193,12 @@ pages:
           url: /ui_comp_guide/components/ui-treemassactions.html
 
         - label: UrlInput component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-urlinput.html
 
         - label: UI-select component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-secondary-uiselect.html
 
         - label: WYSIWYG component
-          include_versions: ["2.0","2.1","2.2"]
-          url: /ui_comp_guide/components/ui-wysiwyg.html
-
-        - label: WYSIWYG component
-          include_versions: ["2.3"]
           url: /ui_comp_guide/components/ui-wysiwyg.html
           children:
 
@@ -241,7 +233,6 @@ pages:
           url: /ui_comp_guide/concepts/knockout-bindings.html
 
         - label: Magento binding syntax
-          include_versions: ["2.2","2.3"]
           url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library
@@ -269,7 +260,6 @@ pages:
           url: /ui_comp_guide/howto/add_category_attribute.html
 
         - label: Update the page URL type
-          include_versions: ["2.3"]
           url: /ui_comp_guide/howto/update-url-type.html
 
     - label: Troubleshoot

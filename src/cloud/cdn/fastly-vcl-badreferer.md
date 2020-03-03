@@ -111,7 +111,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
 
    -  **VCL** snippet content —
 
-      ```
+      ```conf
       set req.http.Referer-Host = regsub(req.http.Referer,
       "^https?://?([^:/\s]+).*$", "1");
       if (table.lookup(referrer_blocklist, req.http.Referer-Host)) {
