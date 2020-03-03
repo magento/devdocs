@@ -164,7 +164,7 @@ To create a database dump:
  {:.bs-callout-info}
 
 -  We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--  This command creates an archive file for each database backup with the file name pattern `dump-<label><timestamp>.sql.gz` where  _label_ is replaced with the database name.  The archive files are available in your local project directory.
+-  This command creates an archive file for each database backup with the file name pattern `dump-<label><timestamp>.sql.gz` where  _label_ is replaced with the database name.  The archive files are saved to your remote project directory, and the path to each file is listed in the command output.
 -  If an error occurs during the dump, the command deletes any dump files to conserve disk space. Review the logs for details (`var/log/cloud.log`).
 -  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
