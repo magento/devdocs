@@ -118,7 +118,7 @@ For development and testing, we recommend the following:
 
 ## License and authentication requirements
 
-When you purchase a {{site.data.var.ece}} subscription, Magento creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and log in instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Magento partners involved in the code and production of the stores to the project.
+When you purchase a {{site.data.var.ece}} subscription, Magento creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and login instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Magento partners involved in the code and production of the stores to the project.
 
 To work with and deploy stores, you need the following:
 
