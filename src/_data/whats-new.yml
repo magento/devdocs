@@ -926,7 +926,7 @@ entries:
   type: New topic
   date: September 24, 2019
   link: https://github.com/magento/devdocs/pull/5452
-- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html)
     to the _GraphQL Developer Guide_.
   versions: 2.3.x
   type: Major update
@@ -2132,7 +2132,7 @@ entries:
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
 - description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
-    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
+    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/url-resolver.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019

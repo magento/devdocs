@@ -46,7 +46,7 @@ We strongly recommend you back up your current database and file system so you c
 
 To back up your system:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Enter the following commands:
 
    ```bash
