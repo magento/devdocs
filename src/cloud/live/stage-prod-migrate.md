@@ -159,7 +159,7 @@ To transfer media from remote-to-remote environments directly, you must enable s
 
 1. [Open an SSH connection]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
-   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**:
+   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**. The syntax for the SSH command is as follows:
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
