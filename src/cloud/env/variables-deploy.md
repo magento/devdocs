@@ -97,7 +97,7 @@ stage:
         - consumer2
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 The following command returns a list of message queue consumers:
 

@@ -24,7 +24,6 @@ pages:
           url: /extension-dev-guide/prepare/prepare_file-str.html
 
         - label: Extension repository structure
-          include_versions: ["2.3"]
           url: /extension-dev-guide/prepare/ext-repo-structure.html
 
         - label: Roadmap for developing and packaging components
@@ -41,7 +40,6 @@ pages:
           url: /extension-dev-guide/build/di-xml-file.html
 
         - label: Optimal development environment
-          include_versions: ["2.1","2.2", "2.3"]
           url: /extension-dev-guide/build/optimal-dev-environment.html
 
         - label: The composer.json file
@@ -116,7 +114,6 @@ pages:
           url: /extension-dev-guide/cli-cmds/cli-howto.html
 
     - label: Staging (Magento Commerce only)
-      include_versions: ["2.1","2.2", "2.3"]
       url: /extension-dev-guide/staging.html
 
     - label: Component development
@@ -124,7 +121,6 @@ pages:
       children:
 
         - label: Asynchronous/deferred operations
-          include_versions: ["2.3"]
           url: /extension-dev-guide/async-operations.html
           
         - label: Service contracts
@@ -170,14 +166,12 @@ pages:
               url: /extension-dev-guide/indexing.html
 
             - label: Indexer optimization
-              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/indexer-batch.html
 
             - label: Adding a custom indexer
               url: /extension-dev-guide/indexing-custom.html
 
         - label: Declarative schema
-          include_versions: ["2.3"]
           children:
 
             - label: Declarative schema overview
@@ -193,7 +187,6 @@ pages:
               url: /extension-dev-guide/declarative-schema/data-patches.html
 
         - label: Web APIs
-          include_versions: ["2.3"]
           children:
 
             - label: Configure services as web APIs
@@ -212,26 +205,21 @@ pages:
               url: /extension-dev-guide/message-queues/message-queues.html
 
             - label: Message queues and stores
-              include_versions: ["2.3"]
               url: /extension-dev-guide/message-queues/message-queues-stores.html
 
             - label: Configure message Queues
               url: /extension-dev-guide/message-queues/config-mq.html
 
             - label: Handling outdated in-memory object states
-              include_versions: ["2.3"]
               url: /extension-dev-guide/message-queues/refresh-config.html
             
             - label: Migrate message queue configuration
-              include_versions: ["2.1", "2.2", "2.3"]
               url: /extension-dev-guide/message-queues/queue-migration.html
               
             - label: Bulk operations
-              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/bulk-operations.html
 
             - label: Example bulk operations implementation
-              include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/implement-bulk.html
 
 
@@ -239,16 +227,7 @@ pages:
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
 
         - label: Searching with repositories
-          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/searching-with-repositories.html
-
-        - label: Configure services as web APIs
-          include_versions: ["2.0", "2.1", "2.2"]
-          url: /extension-dev-guide/service-contracts/service-to-web-service.html
-
-        - label: WebApi request processors pool
-          include_versions: ["2.2"]
-          url: /extension-dev-guide/webapi/request-processor-pool.html
 
         - label: Clear directories during development
           url: /howdoi/php/php_clear-dirs.html
@@ -257,15 +236,12 @@ pages:
           url: /extension-dev-guide/adapters.html
 
         - label: View models
-          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/view-models.html
 
         - label: Variable Pool
-          include_versions: ["2.3"]
           url: /extension-dev-guide/variable-pool/
 
     - label: Configuration
-      include_versions: ["2.2", "2.3"]
       children:
         - label: Sensitive Environment Settings
           url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
@@ -276,7 +252,6 @@ pages:
     - label: Framework
       children:
         - label: Serialize Library
-          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/framework/serializer.html
 
         - label: Array Manager
@@ -286,7 +261,6 @@ pages:
       children:
 
         - label: XSS Prevention
-          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/xss-protection.html
 
         - label: Non-secure functions

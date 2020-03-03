@@ -160,4 +160,4 @@ Related topics
 *  [Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
 *  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 *  [Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-*  [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+*  [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-message-queues.html)
