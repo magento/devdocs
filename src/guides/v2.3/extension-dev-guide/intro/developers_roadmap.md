@@ -57,9 +57,10 @@ use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_Config', __DIR__);
 ```
+
 *  Use these component-specific XML definition files:
    *  Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
-##### Example: `module.xml` file.   
+   ##### Example: `module.xml` file.
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -70,16 +71,18 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_Config', __DIR
     </module>
 </config>
 ```
+
    *  Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
-##### Example: `theme.xml` file.  
+   ##### Example: `theme.xml` file.
 ```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
     <title>Default</title>
     <version>0.1.0</version>
 </theme>
 ```
+
    *  Language packages: [`language.xml`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml)
-##### Example: `language.xml` file.  
+   ##### Example: `language.xml` file.
 ```xml
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_US</code>
