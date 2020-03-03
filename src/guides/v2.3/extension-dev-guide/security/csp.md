@@ -12,19 +12,19 @@ credit card info to an attacker's website, prevent loading of a malicious style 
 that wasn't supposed to be on a page etc. To read more on CSP and about each individual policy you can
 click [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 and [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy).
- 
+
 ## Magento and CSP
 
 As of version 2.3.5 Magento supports CSP headers (Magento_Csp module) and ways to configure them along
 with default configurations provided on application level and for individual core modules that require
 extra configuration. Policies can be configured for `adminhtml` and `storefront` areas separately to
-accommodate different use cases. Magento also allows configuring unique CSPs for specific pages
-- more on that later. CSP can work in 2 modes: `restrict mode` and `report-only mode` in which it will only report
+accommodate different use cases. Magento also allows configuring unique CSPs for specific pages -
+more on that later. CSP can work in 2 modes: `restrict mode` and `report-only mode` in which it will only report
 policy violations but will not interfere - this mode is useful for debugging.
 CSP violations will be only seen in browser console by default but can be configured to be reported to an
 endpoint as an HTTP request to collect logs. There are a number of service that will collect, store and
 sort your store's CSP violations reports for you.
- 
+
 ## Default configuration
 
 By default CSP is configured in `report-only` mode which will allow merchants and developers to first
@@ -34,22 +34,22 @@ include pages from the store itself, AJAX requests can only be sent to the store
 be sent to the store. For more details check `Magento/Csp/etc/config.xml` file. Some domains
 have already been whitelisted for modules that require it, for instance if you have `Magento_Paypal` module
 installed _'www.paypal.com'_ will be whitelisted for _script-src_ policy.
- 
+
 Additionally the next features are allowed:
 
 *  **Inline JavaScript** - meaning JS inside _\<script\>_ tags and _on\<event\>_ HTML tags
 *  JavaScript _eval()_ usage
 *  **Inline styles** - meaning CSS inside _\<style\>_ tags and _style_ HTML attributes
- 
+
 Please note that some of these features will be disabled by default for Magento 2.4.
- 
+
 ## Changing CSP mode for Magento
 
 You can change CSP mode to `restrict` by setting `default/csp/mode/report_only` setting to `0` by creating
 a `config.xml` in one of your custom modules. For reference please see our default `config.xml` in `Magento_Csp`
 module and read on how to create a module
 [here](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html).
- 
+
 Example `config.xml`:
 
 ```xml
@@ -69,14 +69,14 @@ Example `config.xml`:
     </default>
 </config>
 ```
- 
+
 ## Configuring CSPs for your custom code/extension/theme
 
 When preparing your store/extension/theme to be CSP compatible there are multiple ways you can add whitelisted
 resources to Magento CSP configuration. Be sure to only add resources you need in modules that require it.
 Remember that adding a domain to _default-src_ when you only need to load a _.js_ file from it will not work -
 you need to add the domain to _script-src_ for that.
- 
+
 ### Adding a domain to the whitelist
 
 You can add a domain to the whitelist for a policy (like _script-src, style-src, font-src_ and others) by
@@ -100,7 +100,7 @@ adding a `csp_whitelist.xml` to your custom module's `etc` folder. Please see th
     </policies>
 </csp_whitelist>
 ```
- 
+
 In case you include a script/css file from a _.phtml_ template you can also use dynamic whitelisting utility available
 as `$csp` which is an instance of `Magento\Csp\Api\InlineUtilInterface`:
 
@@ -108,7 +108,7 @@ as `$csp` which is an instance of `Magento\Csp\Api\InlineUtilInterface`:
 <div>This is my page!!!</div>
 <?= /* @noEscape */ $csp->renderTag('script', ['src' => 'http://my.magento.com/static/script.js']); ?>
 ```
- 
+
 ### Whitelisting an inline script/style
 
 While Magento 2.3 allows inline scripts/styles by default starting from 2.4 that will change so it makes sense
@@ -116,7 +116,7 @@ to prepare your custom code/extension for the future by whitelisting/avoiding us
 In order to whitelist a _script_ or _style_ HTML tag you need to use `Magento\Csp\Api\InlineUtilInterface`
 by adding it as a dependency to your class that renders HTML or using `$csp` variable inside a _.phtml_
 template.
- 
+
 Please see the following examples:
 
 **Inside a _.phtml_ template:**
@@ -136,7 +136,7 @@ class HtmlRenderer
      * @var \Magento\Csp\Api\InlineUtilInterface
      */
     private $cspUtil;
-    
+
     //...
 
     public function renderSomeHtml(): string
@@ -152,11 +152,11 @@ class HtmlRenderer
     }
 }
 ```
- 
+
 In it's current state CSP does not allow whitelisting of JavaScript inside _on\<event\>_ HTML attributes as well
 as styles inside _style_ attribute - avoid them inside your HTML by replacing them with separate _style_ and _script_
 HTML tags whitelisted via `Magento\Csp\Api\InlineUtilInterface`.
- 
+
 Alternatively inline CSS and JS inside _style_ and _script_ tags can also be whitelisted with `csp_whitelist.xml` files.
 You would need to get `sha256` hash of a tag's content and encode it as BASE64, then
 add it to your module's `csp_whitelist.xml`.
@@ -180,17 +180,17 @@ And this is how you would add it to a `csp_whitelist.xml` file:
     </policies>
 </csp_whitelist>
 ```
- 
+
 __NOTE:__ When _unsafe-inline_ is allowed for _script-src/style-src_ policy whitelisted inline scripts/styles hashes
-won't appear in `Content-Security-Policy` header. 
- 
+won't appear in `Content-Security-Policy` header.
+
 ### Advanced CSP configuration
 
 In order to configure other CSPs like, for instance, `sandbox` policy that does not consist of whitelisted hosts
 and hashes or for more advanced _fetch_ policies configurations, like removing inline support from _script-src_
 you would have to create a `config.xml` file inside your custom module and rewrite default values. For reference please
 see `Magento\Csp\etc\config.xml`
- 
+
 ### Report-Uri configuration
 
 Regardless of `restrict` or `report-only` mode CSP violations may be reported to an endpoint for collection.
@@ -213,7 +213,7 @@ URL to use for reporting by browsers can be configured in your custom module's `
     </default>
 </config>
 ```
- 
+
 ### Page specific Content-Security-Policies
 
 Magento can send unique policies for a specific page. To do so implement `Magento\Csp\Api\CspAwareActionInterface`
@@ -246,10 +246,10 @@ class Mypage extends \Magento\Framework\App\Action\Action implements \Magento\Cs
     }
 }
 ```
- 
+
 Don't worry about defining other policy options that you don't care about in the context like _unsafe-inline_ - same
 policy options read from config will be merged later.
- 
+
 ## Conclusion
 
 Content Security Policy is a powerful tool for XSS prevention and it is recommended to merchants, extension and theme
