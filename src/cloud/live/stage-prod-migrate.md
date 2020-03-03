@@ -221,7 +221,7 @@ To migrate a database:
    rsync -azvP /tmp/database.sql.gz <destination_environment_ssh_link@ssh.region.magento.cloud>:/tmp
    ```
 
-1. Type `exit` to terminate the SSH connection.
+1. Type `logout` to terminate the SSH connection.
 
 1. Open an SSH connection to the environment you want to migrate the database into:
 
