@@ -116,7 +116,15 @@ To restore a snapshot using the Magento CLI:
 
 ## Dump your database {#db-dump}
 
-You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools).
+You can create a copy of your database using the [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools) `db-dump` command.
+
+By default, this command creates backups for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
+You can also backup only selected databases by appending the database names to the command, for example:
+
+```bash
+php vendor/bin/ece-tools -- main sales
+
+For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
 
 {:.procedure}
 To create a database dump:
@@ -134,14 +142,30 @@ To create a database dump:
 1. Enter the following command:
 
     ```bash
-    vendor/bin/ece-tools db-dump
+    php vendor/bin/ece-tools db-dump
+    ```
+
+    ```terminal
+    php vendor/bin/ece-tools db-dump
+    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the the dump process.
+    Your site will not receive any traffic until the operation completes.
+    Do you wish to proceed with this process? (y/N)? y
+    2020-01-28 16:38:08] INFO: Starting backup.
+    [2020-01-28 16:38:08] NOTICE: Enabling Maintenance mode
+    [2020-01-28 16:38:10] INFO: Trying to kill running cron jobs and consumers processes
+    [2020-01-28 16:38:10] INFO: Running Magento cron and consumers processes were not found.
+    [2020-01-28 16:38:10] INFO: Waiting for lock on db dump.
+    [2020-01-28 16:38:10] INFO: Start creation DB dump for main database...
+    [2020-01-28 16:38:10] INFO: Finished DB dump for main database, it can be found here: /tmp/qxmtlseakof6y/dump-main-1580229490.sql.gz
+    [2020-01-28 16:38:10] INFO: Backup completed.
+    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
     ```
 
  {:.bs-callout-info}
 
 -  We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--  The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
--  If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
+-  This command creates an archive file for each database backup with the file name pattern `dump-<label><timestamp>.sql.gz` where  _label_ is replaced with the database name.  The archive files are saved to your remote project directory, and the path to each file is listed in the command output.
+-  If an error occurs during the dump, the command deletes any dump files to conserve disk space. Review the logs for details (`var/log/cloud.log`).
 -  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
 
 {:.bs-callout-tip}
