@@ -57,7 +57,6 @@ To satisfy the minimum required elements for creating or customizing your Magent
     ```php
     <?php
     use \Magento\Framework\Component\ComponentRegistrar;
-    
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_Config', __DIR__);
     ```
 
