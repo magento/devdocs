@@ -19,7 +19,7 @@ The component's data provider class is declared inside `<dataSource />`. The fol
 
 ```xml
 <argument name="dataProvider" xsi:type="configurableObject">
-    <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider</argument>
+    <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]\DataProvider</argument>
     <argument name="name" xsi:type="string">[YourComponentName]_data_source</argument>
     <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
     <argument name="requestFieldName" xsi:type="string">id</argument>
