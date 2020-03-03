@@ -59,7 +59,7 @@ Before installing, make sure you have:
 
 To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package.
 
-1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 1. Change to Magento 2 root directory.
 1. Enter the following commands:
 
@@ -89,7 +89,7 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
 
 If you've cloned Magento 2 from the GitHub repository, follow the steps below to install the Data Migration Tool.
 
-1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1. Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 1. Change to Magento 2 root directory.
 1. Enter the following commands:
 

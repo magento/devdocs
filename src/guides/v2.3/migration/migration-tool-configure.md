@@ -113,7 +113,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 There are two possible ways to configure the Data Migration Tool for migration:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Change to the following directory:
 
