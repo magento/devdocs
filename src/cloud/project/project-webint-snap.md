@@ -139,7 +139,23 @@ To create a database dump:
 1. Enter the following command:
 
     ```bash
-    vendor/bin/ece-tools db-dump
+    php vendor/bin/ece-tools db-dump
+    ```
+
+    ```terminal
+    php vendor/bin/ece-tools db-dump
+    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the the dump process.
+    Your site will not receive any traffic until the operation completes.
+    Do you wish to proceed with this process? (y/N)? y
+    2020-01-28 16:38:08] INFO: Starting backup.
+    [2020-01-28 16:38:08] NOTICE: Enabling Maintenance mode
+    [2020-01-28 16:38:10] INFO: Trying to kill running cron jobs and consumers processes
+    [2020-01-28 16:38:10] INFO: Running Magento cron and consumers processes were not found.
+    [2020-01-28 16:38:10] INFO: Waiting for lock on db dump.
+    [2020-01-28 16:38:10] INFO: Start creation DB dump for main database...
+    [2020-01-28 16:38:10] INFO: Finished DB dump for main database, it can be found here: /tmp/qxmtlseakof6y/dump-main-1580229490.sql.gz
+    [2020-01-28 16:38:10] INFO: Backup completed.
+    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
     ```
 
  {:.bs-callout-info}
