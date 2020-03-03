@@ -10,8 +10,8 @@ redirect_from:
 
 You can manage user access to {{site.data.var.ece}} projects by assigning users one or more roles. You can add and manage user accounts for the entire project and permissions per available environment.
 
-{:.bs-callout-info}
-Adding or updating user account information for a {{site.data.var.ece}} project environment triggers the build and deploy process automatically, which takes your site offline until the deployment completes.  For Staging and Production environments, we recommend completing user account management tasks during off-peak hours to prevent service disruptions.
+{:.bs-callout-tip}
+Adding or updating user account information for a {{site.data.var.ece}} environment triggers the build and deploy process automatically, which takes your site offline until the deployment completes. For Production environments, we recommend completing user account management tasks during off-peak hours to prevent service disruptions.
 
 ## Account owner role {#cloud-role-acct-owner}
 
