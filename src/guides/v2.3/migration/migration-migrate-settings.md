@@ -48,7 +48,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1. Log in to the server with your Magento 2 instance as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to the server with your Magento 2 instance as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Change to the following directory:
 

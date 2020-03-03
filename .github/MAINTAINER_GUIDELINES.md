@@ -8,7 +8,7 @@ In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contri
    -  Review and approve or request changes
    -  Enforce the use of the issue/pull requests template
    -  Ask contributors to link to the code base to validate documentation updates when applicable
-   -  Ask contributors not to contribute to unsupported versions of documentation (for example, 2.0, 2.1, 2.2)
+   -  Ask contributors not to contribute to unsupported versions of documentation when applicable
 -  If a DevDocs maintainer creates a pull request, it must be reviewed by another maintainer or DevDocs admin
 
 ## Labels

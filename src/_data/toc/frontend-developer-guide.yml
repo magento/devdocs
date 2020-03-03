@@ -186,7 +186,6 @@ pages:
           url: /frontend-dev-guide/validations/custom-validation.html
 
     - label: Tools
-      include_versions: ["2.2", "2.3"]
       url: /frontend-dev-guide/tools/tools_overview.html
       children:
 
