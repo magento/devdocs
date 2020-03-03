@@ -119,7 +119,10 @@ To restore a snapshot using the Magento CLI:
 You can create a copy of your database using the [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools) `db-dump` command.
 
 By default, this command creates backups for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
-If you need to create backups by selecting one or more databases, for this you need to transfer the database names as an argument to the console command
+You can also backup only selected databases by appending the database names to the command, for example:
+
+```bash
+vendor/bin/ece-tools -- main sales
 
 For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
 
