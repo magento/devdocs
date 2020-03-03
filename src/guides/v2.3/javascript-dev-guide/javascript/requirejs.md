@@ -17,6 +17,7 @@ All configuration is done in the `requirejs-config.js` file. It has a single roo
 var config = {
     'map': {...},
     'paths': {...},
+    'deps':[...],
     'shim': {...},
     'config': {
         'mixins': {...},
