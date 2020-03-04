@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033427272
 ---
 
 **Symptom**: At the last step of installing Magento 2, the following [exception](https://glossary.magento.com/exception) displays:

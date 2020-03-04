@@ -24,11 +24,9 @@ pages:
           url: /pattern-library/controls/button-bar/button-bar.html
 
         - label: Expandable Sections
-          include_versions: ["2.1","2.2", "2.3"]
           url: /pattern-library/controls/Expandable_Sections/expand-collapse.html
 
         - label: View Controller
-          include_versions: ["2.1","2.2", "2.3"]
           url: /pattern-library/controls/viewcontroller/viewcontroller.html
 
     - label: Displaying and Dealing with Data
@@ -80,7 +78,6 @@ pages:
           url: /pattern-library/getting-user-input/select_from_list/select_from_list.html
 
     - label: Graphics
-      include_versions: ["2.1","2.2", "2.3"]
       children:
 
         - label: Iconography
@@ -96,7 +93,6 @@ pages:
           url: /pattern-library/navigation/wizard/wizard.html
 
     - label: Staging Patterns
-      include_versions: ["2.1","2.2", "2.3"]
       children:
 
         - label: Timeline Dashboard

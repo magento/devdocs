@@ -9,7 +9,7 @@ This page lists all current action groups so developers can see what is availabl
 
 ## Action group list
 
-{% assign actiongroups = site.data.codebase.mftf.action-groups | group_by: "module" | sort: "name"  %}
+{% assign actiongroups = site.data.codebase.v2_3.mftf.action-groups | group_by: "module" | sort: "name"  %}
 {% for item in actiongroups %}
 
 ### {{ item.name }}

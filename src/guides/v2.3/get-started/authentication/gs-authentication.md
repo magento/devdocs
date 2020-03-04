@@ -179,3 +179,5 @@ Proceed to the authentication method for your preferred client:
 *  [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
 
 *  [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
+
+*  [Create an ACL rule]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html)

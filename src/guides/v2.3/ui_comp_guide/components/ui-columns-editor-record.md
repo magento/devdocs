@@ -92,3 +92,105 @@ This is an example of how the ColumnsEditorRecord component integrates with the 
 
 ![ColumnsEditorRecord Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-editor-record-result.png)
 
+### Add custom field type to ColumnsEditorRecord
+
+This is an example of how to add textarea and multi-select editor types to ColumnsEditorRecord component.
+
+```xml
+<listing>
+    ...
+    <columns name="columns">
+        <settings>
+            <editorConfig>
+                <param name="templates" xsi:type="array">
+                    <item name="record" xsi:type="array">
+                        <item name="templates" xsi:type="array">
+                            <item name="fields" xsi:type="array">
+                                <!-- add textarea field type -->
+                                <item name="textarea" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/textarea</item>
+                                    <item name="template" xsi:type="string">ui/form/field</item>
+                                </item>
+                                <!-- add multiselect field type -->
+                                <item name="multiselect" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_Ui/js/form/element/multiselect</item>
+                                    <item name="template" xsi:type="string">ui/form/element/multiselect</item>
+                                    <item name="options" xsi:type="array">
+                                        <item name="0" xsi:type="array">
+                                            <item name="value" xsi:type="number">1</item>
+                                            <item name="label" xsi:type="string" translate="true">Option #1</item>
+                                        </item>
+                                        <item name="1" xsi:type="array">
+                                            <item name="value" xsi:type="number">2</item>
+                                            <item name="label" xsi:type="string" translate="true">Option #2</item>
+                                        </item>
+                                        <item name="2" xsi:type="array">
+                                            <item name="value" xsi:type="number">3</item>
+                                            <item name="label" xsi:type="string" translate="true">Option #3</item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </param>
+                <param name="enabled" xsi:type="boolean">true</param>
+            </editorConfig>
+        </settings>
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="entity_id">
+            <settings>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="title">
+            <settings>
+                <filter>text</filter>
+                <editor>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">true</rule>
+                    </validation>
+                    <editorType>textarea</editorType>
+                </editor>
+                <label translate="true">Textarea</label>
+            </settings>
+        </column>
+        <column name="is_active" component="Magento_Ui/js/grid/columns/select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="options" xsi:type="array">
+                        <item name="0" xsi:type="array">
+                            <item name="value" xsi:type="number">1</item>
+                            <item name="label" xsi:type="string" translate="true">Option #1</item>
+                        </item>
+                        <item name="1" xsi:type="array">
+                            <item name="value" xsi:type="number">2</item>
+                            <item name="label" xsi:type="string" translate="true">Option #2</item>
+                        </item>
+                        <item name="2" xsi:type="array">
+                            <item name="value" xsi:type="number">3</item>
+                            <item name="label" xsi:type="string" translate="true">Option #3</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <editor>
+                    <editorType>multiselect</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Multiselect</label>
+            </settings>
+        </column>
+        ...
+    </columns>
+</listing>
+```
+
+#### Result
+
+![ColumnsEditorRecord Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-editor-record-custom-field-types-result.png)
