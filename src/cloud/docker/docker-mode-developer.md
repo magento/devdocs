@@ -48,8 +48,8 @@ To launch the Docker environment in developer mode:
    ```bash
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
    ```
-   On linux, set the optionto native, example:
-   
+   On linux, set the option to native, example:
+
    ```bash
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="native"
    ```
