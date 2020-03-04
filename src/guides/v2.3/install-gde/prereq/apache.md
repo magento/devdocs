@@ -30,10 +30,6 @@ Magento uses server rewrites and `.htaccess` to provide directory-level instruct
 {% include install/allowoverrides24.md %}
 {% endcollapsible %}
 
-{% collapsible Click to show Apache 2.2 instructions %}
-{% include install/allowoverrides22.md %}
-{% endcollapsible %}
-
 {:.bs-callout-info}
 Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
@@ -104,10 +100,6 @@ To install the default version of Apache (Ubuntu 14, 16---Apache 2.4, Ubuntu 12-
 ### Enable rewrites and .htaccess for Apache 2.4
 
 {% include install/allowoverrides24.md %}
-
-### Enable rewrites and .htaccess for Apache 2.2
-
-{% include install/allowoverrides22.md %}
 
 {:.ref-header}
 Next steps
@@ -207,11 +199,92 @@ Installing and configuring Apache is basically a three-step process: install the
 1. Continue with the next section.
 
    {:.bs-callout-info}
-   Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
+   Even though Apache 2.4 is provided by default with CentOS 7. See the following section to configure it.
 
-### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
+### Enable rewrites and .htaccess for CentOS 7
 
-{% include install/allowoverrides22.md %}
+1. Open `/etc/httpd/conf/httpd.conf` file for editing:
+
+   ```bash
+   vim /etc/httpd/conf/httpd.conf`
+   ```
+
+1. Locate the block that starts with:
+
+   ```conf
+   <Directory /var/www/html>
+   ```
+
+1. Change the value of `AllowOverride` to `All`.
+
+   For example,
+
+   ```conf
+   <Directory /var/www/>
+     Options Indexes FollowSymLinks MultiViews
+     AllowOverride All
+     Order allow,deny
+     Allow from all
+   <Directory>
+   ```
+
+   {:.bs-callout-info}
+   The preceding values for `Order` might not work in all cases. For more information, see the Apache documentation ([2.4](https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order)).
+
+1. Save the file and exit the text editor.
+
+1. To apply Apache settings, restart Apache.
+
+   ```bash
+   service apache2 restart
+   ```
+
+{:.bs-callout-info}
+Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
+
+### Enable rewrites and .htaccess for Ubuntu
+
+1. Open `/etc/apache2/sites-available/default` file for editing:
+
+   ```bash
+   vim /etc/apache2/sites-available/default
+   ```
+
+1. Locate the block that starts with:
+
+   *  Ubuntu 12: `<Directory /var/www/>`
+   *  Ubuntu 14: `<Directory /var/www/html>`
+
+1. Change the value of `AllowOverride` to `All`.
+
+   An example for Ubuntu 12 follows:
+
+   ```conf
+   <Directory /var/www/>
+     Options Indexes FollowSymLinks MultiViews
+     AllowOverride All
+     Order allow,deny
+     Allow from all
+   <Directory>
+   ```
+
+1. Save the file and exit the text editor.
+
+1. Configure Apache to use the `mod_rewrite` module:
+
+   ```bash
+   cd /etc/apache2/mods-enabled
+   ```
+
+   ```bash
+   ln -s ../mods-available/rewrite.load
+   ```
+
+1. Restart Apache to apply changes:
+
+   ```bash
+   service apache2 restart
+   ```
 
 {:.ref-header}
 Next steps
@@ -239,7 +312,7 @@ For example:
 ```conf
 <Directory /var/www/>
   Options Indexes FollowSymLinks MultiViews
-  AllowOverride <value from Apache site>
+  AllowOverride All
   Order allow,deny
   Require all granted
 </Directory>
@@ -257,7 +330,7 @@ For example:
 ```conf
 <Directory /var/www/>
   Options Indexes FollowSymLinks MultiViews
-  AllowOverride <value from Apache site>
+  AllowOverride All
   Order allow,deny
   Allow from all
 </Directory>
