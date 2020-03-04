@@ -89,6 +89,6 @@ When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide
     </page>
     ```
 
-    Note that `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can further specify if you want the recommendation unit to appear before or after this block by specifying `after="-"` or `before="-"`.
+    Note that `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information.
