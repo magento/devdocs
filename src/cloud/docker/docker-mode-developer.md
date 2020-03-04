@@ -32,7 +32,7 @@ To launch the Docker environment in developer mode:
    composer install
    ```
 
-1. On macOS or Windows hosts, install the selected file synchronization tool:
+1. On macOS or Windows hosts, install the selected file synchronization tool(Linux doesn't require a tool, as synchronization is native):
 
    -  [Docker-sync Installation instructions][dsync-install]
    -  [Mutagen.io Installation instructions][mutagen-install]
@@ -47,6 +47,11 @@ To launch the Docker environment in developer mode:
 
    ```bash
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
+   ```
+   On linux, set the optionto native, example:
+   
+   ```bash
+   ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="native"
    ```
 
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
