@@ -9,13 +9,13 @@ Your extension is placed in a queue as soon as it is submitted. You will receive
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/market-content.png){: .zoom}
 
-During marketing review, your submission is examined to ensure that it meets Marketplace requirements for presentation, content, and branding. Before granting approval, we read, review, and determine the quality of the marketing content for your extension according to our [marketing guidelines]({% link marketplace/sellers/marketing-review-guidelines.md %}).
+During marketing review, your submission is examined to ensure that it meets Marketplace requirements for presentation, content, and branding. Before granting approval, we read, review, and determine the quality of the marketing content for your extension according to our [marketing guidelines]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html).
 
 ## Prepare for marketing review
 
 Before submitting an extension or theme for marketing review, conduct your own internal review of the content to make sure that it is ready for publication.
 
--  Review the [marketing]({% link marketplace/sellers/marketing-review-guidelines.md %}) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
+-  Review the [marketing]({{ site.baseurl }}/marketplace/sellers/marketing-review-guidelines.html) guidelines to ensure that your extension meets Magento Marketplace and Magento development requirements.
 -  Spell-check and review all text fields in your extension, product documentation, and marketing materials.
 -  Read the text out loud to make sure that the tone is conversational, and with no missing or transposed words.
 -  Get a second opinion. Ask a friend or colleague to review the profile, screenshots, and any supplemental documentation.
@@ -46,7 +46,7 @@ Before submitting an extension or theme for marketing review, conduct your own i
 
 1. Under **Marketing Submission**, click **Extension Description**.
 
-    The **Extension name** and **Short Description** are pulled in from the [Basic Extension Information]({% link marketplace/sellers/extension-information.md %}). You can edit this information. Maximum characters for Short Description: 239
+    The **Extension name** and **Short Description** are pulled in from the [Basic Extension Information]({{ site.baseurl }}/marketplace/sellers/extension-information.html). You can edit this information. Maximum characters for Short Description: 239
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/marketing-description1.png){: .zoom}
     _Extension Name and Short Description_
@@ -78,14 +78,14 @@ You must provide a thumbnail and at least two high-quality images for the image 
 
 1. (Required) For **Extension Images**, click <span class="btn">Upload Gallery Image</span>.
 
-   Your extension must have at least two gallery images. For more information about using images, see [Image Tips]({% link marketplace/sellers/image-tips.md %}).
+   Your extension must have at least two gallery images. For more information about using images, see [Image Tips]({{ site.baseurl }}/marketplace/sellers/image-tips.html).
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/marketing-images2.png){: .zoom}
     _Extension Images_
 
 1. (Optional) Under **Video Links**, paste the URLs of any YouTube videos to include with your extension.
 
-    For more information about using videos, see [Video Tips]({% link marketplace/sellers/video-tips.md %}).
+    For more information about using videos, see [Video Tips]({{ site.baseurl }}/marketplace/sellers/video-tips.html).
 
     ![]({{ site.baseurl }}/marketplace/sellers/images/marketing-images3.png){: .zoom}
     _Video Links_
@@ -94,7 +94,7 @@ You must provide a thumbnail and at least two high-quality images for the image 
 
 1. Under **Marketing Submission**, click <span class="btn">Compatibility</span>.
 
-    The information displayed here is pulled from what you entered in the [Basic Extension Information]({% link marketplace/sellers/extension-information.md %}) or [Technical Submission]({% link marketplace/sellers/submit-for-technical-review.md %}). To modify the Magento version compatibility, see [Submit for Technical Review]({% link marketplace/sellers/submit-for-technical-review.md %}).
+    The information displayed here is pulled from what you entered in the [Basic Extension Information]({{ site.baseurl }}/marketplace/sellers/extension-information.html) or [Technical Submission]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html). To modify the Magento version compatibility, see [Submit for Technical Review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html).
 
 1. For **Browser Selection**, select the checkboxes for browsers compatible with your extension.
 
@@ -157,7 +157,7 @@ Customers are advised to contact you directly for support, using the information
 ### Documentation and resources
 
 {: .bs-callout .bs-callout-info}
-While you can add documentation PDF files during this review, the content is tested during the [Technical Review]({% link marketplace/sellers/submit-for-technical-review.md %}).
+While you can add documentation PDF files during this review, the content is tested during the [Technical Review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html).
 
 1. On the extension status page, on the left side, under **Marketing Submission**, click <span class="btn">Documentation and Resources</span>.
 
@@ -168,7 +168,7 @@ While you can add documentation PDF files during this review, the content is te
 
 ## What happens next?
 
-If you have not submitted the [Technical Review]({% link marketplace/sellers/submit-for-technical-review.md %}), complete those steps to submission.
+If you have not submitted the [Technical Review]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html), complete those steps to submission.
 
 Watch your email for feedback and updates for the Marketing Review.
 

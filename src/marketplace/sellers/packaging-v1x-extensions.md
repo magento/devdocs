@@ -3,7 +3,7 @@ group: marketplace-sellers
 title: Packaging Magento Version 1.x Extensions
 ---
 
-Extensions developed for Magento version 1.x have different packaging guidelines than [Magento version 2.x]({% link guides/v2.3/extension-dev-guide/package/package_module.md %}).
+Extensions developed for Magento version 1.x have different packaging guidelines than [Magento version 2.x]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/package/package_module.html).
 
 1. Log in to the Magento Admin.
 
@@ -82,8 +82,8 @@ Another package will be created in `<magento root>/var/connect`. You will need t
 
 If you are supporting two extensions with the same name when one of them is compatible with Magento Pre 1.5 and another with Magento 1.5+ do the following:
 
--  Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({% link marketplace/sellers/submit-for-review.md %}).
--  Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({% link marketplace/sellers/submit-for-review.md %}).
+-  Package version of your extension for Magento Pre 1.5 in Channel 1.0 format and [submit it to Magento Marketplace]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html).
+-  Package new version of your extension for Magento versions 1.5+ in Channel 2.0 format and [submit it to Magento Marketplace]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html).
 -  Package will appear in `<magento root>/var/pear`.
 
 {: .bs-callout .bs-callout-info}
@@ -201,7 +201,7 @@ This saves it in a package data file and creates a package file.
 
 **Extension package file** - The Extension Package file contains all source code needed. In addition, the archive includes another file that is created by a packager - `package.xml`. This file contains information about the extension, including the description of the structure of files and folders included in the package, and md5 sum for each file.
 
-When the extension package file is ready, it can be [submitted for review]({% link marketplace/sellers/submit-for-review.md %}).
+When the extension package file is ready, it can be [submitted for review]({{ site.baseurl }}/marketplace/sellers/submit-for-review.html).
 
 {: .bs-callout .bs-callout-info}
 First you should set write permissions to the appropriate folders.

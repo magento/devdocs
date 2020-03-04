@@ -4,7 +4,7 @@ title: Specify the Version
 redirect_from: /marketplace/sellers/creating-a-new-version.html
 ---
 
-After you [create the extension entry]({% link marketplace/sellers/extension-create.md %}), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
+After you [create the extension entry]({{ site.baseurl }}/marketplace/sellers/extension-create.html), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
 
 For existing, approved extensions, follow these instructions to add new versions as available and released.
 
