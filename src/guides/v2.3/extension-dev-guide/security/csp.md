@@ -33,28 +33,35 @@ sort your store's CSP violations reports for you.
 
 ## Default configuration
 
-By default CSP is configured in `report-only` mode which will allow merchants and developers to first
-configure policies to work according to their custom code and then switch mode to `restrict`.
-Any resource (like a _.js, .css, .jpg, .ttf_) can only be loaded from store's domain, iframes can only
-include pages from the store itself, AJAX requests can only be sent to the store, forms can only
-be sent to the store. For more details check `Magento/Csp/etc/config.xml` file. Some domains
-have already been whitelisted for modules that require it, for instance if you have `Magento_Paypal` module
-installed _'www.paypal.com'_ will be whitelisted for _script-src_ policy.
+By default, CSP is configured in `report-only` mode, which allows merchants and developers to
+configure policies to work according to their custom code. After the policies have been configured, switch the
+mode to `restrict`.
 
-Additionally the next features are allowed:
+Once configured, the following policies can be enforced:
 
-*  **Inline JavaScript** - meaning JS inside _\<script\>_ tags and _on\<event\>_ HTML tags
-*  JavaScript _eval()_ usage
-*  **Inline styles** - meaning CSS inside _\<style\>_ tags and _style_ HTML attributes
+*  Any resource, such as `.js`, `.css`, `.jpg`, or `.ttf` files, can only be loaded from the store's domain
+*  Iframes can only include pages from the store itself
+*  AJAX requests can only be sent to the store
+*  Forms can only be sent to the store
 
-Please note that some of these features will be disabled by default for Magento 2.4.
+For more details check the `Magento/Csp/etc/config.xml` file. Some domains
+have already been whitelisted for modules that require it. For instance if the `Magento_Paypal` module is
+installed, 'www.paypal.com' is already whitelisted for the `script-src` policy.
 
-## Changing CSP mode for Magento
+The followng features are allowed:
 
-You can change CSP mode to `restrict` by setting `default/csp/mode/report_only` setting to `0` by creating
-a `config.xml` in one of your custom modules. For reference please see our default `config.xml` in `Magento_Csp`
-module and read on how to create a module
-[here](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html).
+*  Inline JavaScript (JavaScript inside `<script>` tags and `on<event>` HTML tags)
+*  JavaScript `eval()` usage
+*  Inline styles (CSS inside `<style>` tags and `style` HTML attributes)
+
+{:.bs-callout-info}
+Some of these features will be disabled by default for Magento 2.4.
+
+## Configure a module's CSP mode
+
+You can set the CSP mode in a custom module by editing the module's `etc/config.xml` file. To set the mode to `restrict`,
+change the value of the `default/csp/mode/admin/report_only` and/or the `default/csp/mode/storefront/report_only` element 
+to 0. To enable `report-only` mode, set the values to 1.
 
 Example `config.xml`:
 
@@ -76,10 +83,13 @@ Example `config.xml`:
 </config>
 ```
 
-## Configuring CSPs for your custom code/extension/theme
+You can use the`etc/config.xml` file in the `Magento_Csp` module as a reference. 
+[Create your component file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html) describes how to create a module.
 
-When preparing your store/extension/theme to be CSP compatible there are multiple ways you can add whitelisted
-resources to Magento CSP configuration. Be sure to only add resources you need in modules that require it.
+## Configure CSPs for your custom code/extension/theme
+
+Magento provides multiple ways to add whitelisted resources to your custom code, extension, or theme.
+Be sure to only add resources you need in modules that require it.
 Remember that adding a domain to _default-src_ when you only need to load a _.js_ file from it will not work -
 you need to add the domain to _script-src_ for that.
 
