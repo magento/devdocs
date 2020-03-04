@@ -30,7 +30,7 @@ We can filter orders by attributes using REST Api endpoints. Here I take one exa
 
 `Authorization` `Bearer <administrator token>`
 
-**Params**
+**Params:**
 
 Param | Value | Description
 --- | --- | ---
