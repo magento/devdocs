@@ -8,7 +8,7 @@ updated: Wed Mar 4 10:30:29 2020
 entries:
 - description: Updated the [Magento Cloud reference topic](https://devdocs.magento.com/cloud/reference/cli-ref-topic.html)
     in the Cloud guide.
-  versions: ''
+  versions: 2.x
   type: Technical changes
   date: February 28, 2020
   link: https://github.com/magento/devdocs/pull/6737
@@ -33,13 +33,13 @@ entries:
   date: February 27, 2020
   link: https://github.com/magento/devdocs/pull/6700
 - description: Added topic for [GridDataProvider UI component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-grid-data-provider.html).
-  versions: ''
+  versions: 2.3.x
   type: New topic
   date: February 26, 2020
   link: https://github.com/magento/devdocs/pull/6728
 - description: Added topic for the [ColumnsEditorRecord](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-view.html)
     UI component.
-  versions: ''
+  versions: 2.3.x
   type: New topic
   date: February 25, 2020
   link: https://github.com/magento/devdocs/pull/6716
