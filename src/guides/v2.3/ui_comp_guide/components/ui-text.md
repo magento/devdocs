@@ -27,7 +27,7 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ### Integrate Text component with Form component
 
-The following example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component and displays customer first name in admin on the customer edit page:
+The following example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component and displays the customer's first name in the admin, on the Customer Edit page:
 
 ```xml
 <form>
