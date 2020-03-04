@@ -19,7 +19,7 @@ Failure to enable these settings typically results in no styles displaying on yo
 
    ```terminal
    <Directory "/var/www/html">
-       AllowOverride  <value from Apache site>
+       AllowOverride All
    </Directory>
    ```
 

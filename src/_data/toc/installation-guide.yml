@@ -73,7 +73,6 @@ pages:
 
             - label: PHP
               url: /install-gde/prereq/php-settings.html
-              include_versions: ["2.2", "2.3"]
 
             - label: MySQL
               url: /install-gde/prereq/mysql.html
@@ -92,12 +91,7 @@ pages:
 
             - label: RabbitMQ
               url: /install-gde/prereq/install-rabbitmq.html
-              include_versions: ["2.3"]
               
-            - label: RabbitMQ (Magento Commerce only)
-              url: /install-gde/prereq/install-rabbitmq.html
-              include_versions: ["2.2", "2.1", "2.0"]
-
             - label: Set up a remote MySQL database connection
               url: /install-gde/prereq/mysql_remote.html
 
@@ -112,21 +106,9 @@ pages:
 
         - label: Install Magento using Composer
           url: /install-gde/composer.html
-          include_versions: ["2.1","2.2","2.3"]
 
         - label: (Easy) Install the Magento archive on your server
           url: /install-gde/prereq/zip_install.html
-
-        - label: (Integrator) Integrator installation
-          url: /install-gde/prereq/integrator_install.html
-          include_versions: ["2.0"]
-          children:
-
-            - label: Get the Magento Open Source metapackage
-              url: /install-gde/prereq/integrator_install_ce.html
-
-            - label: Get the Magento Commerce metapackage
-              url: /install-gde/prereq/integrator_install_ee.html
 
         - label: (Contributor) Clone the Magento repository
           url: /install-gde/prereq/dev_install.html
@@ -236,7 +218,6 @@ pages:
 
             - label: Configure the lock provider
               url: /install-gde/install/cli/install-cli-subcommands-lock.html
-              include_versions: ["2.2","2.3"]
               
             - label: Configure the store
               url: /install-gde/install/cli/install-cli-subcommands-store.html
