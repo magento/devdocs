@@ -152,7 +152,7 @@ Go to the [storefront](https://glossary.magento.com/storefront) in a web browser
 
    ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:width="450px"}
 
-   Refer to the [troubleshooting section]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
+   Refer to the [troubleshooting section](https://support.magento.com/hc/en-us/articles/360032994352) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
 1. Try accessing the Magento directory for the Web Setup Wizard from a browser. Append "_setup/_" to your server's hostname or IP address in the address bar:
 

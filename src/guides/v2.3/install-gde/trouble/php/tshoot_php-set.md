@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360034599631
 ---
 
 ## PHP memory limit error {#trouble-php-memory}
@@ -52,7 +53,7 @@ There is no 'proper' value for `max-input-vars`; it depends on the size and comp
 
 ## xdebug maximum function nesting level error {#trouble-php-xdebug}
 
-See [During installation, xdebug maximum function nesting level error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html).
+See [During installation, xdebug maximum function nesting level error](https://support.magento.com/hc/en-us/articles/360034238512).
 
 ## Errors display when you access a PHTML template {#trouble-php-asptags}
 
