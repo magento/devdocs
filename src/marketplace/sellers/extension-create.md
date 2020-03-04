@@ -11,7 +11,7 @@ Before you can submit your extension to Magento Marketplace, the code must be co
 -  [Magento Web APIs]({% link guides/v2.3/get-started/bk-get-started-api.md %})
 -  [Frontend Developer Guide]({% link guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.md %})
 
-![]({% link marketplace/sellers/images/extension-prep.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/extension-prep.png){: .zoom}
 _Building and Submitting an Extension_
 
 {: .bs-callout .bs-callout-info}

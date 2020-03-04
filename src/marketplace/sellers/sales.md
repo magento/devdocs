@@ -25,7 +25,7 @@ Sales and refund information is available in your Marketplace dashboard, and it 
 
 In the Marketplace Developer portal, in the top navigation, go to **Reports** > **Sales**.
 
-![]({% link marketplace/sellers/images/reports-sales.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/reports-sales.png){: .zoom}
 _Marketplace Sales Performance_
 
 | Field | Description |

@@ -6,7 +6,7 @@ redirect_from: /marketplace/sellers/register-as-a-developer.html
 
 Follow these steps to create a new developer account, or to register as a developer with your existing Magento account.
 
-![]({% link marketplace/sellers/images/developer-portal-landing-page.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-landing-page.png){: .zoom}
 [_Developer Portal_][1]{: target="_blank"}
 
 ## Step 1: Create a developer account
@@ -47,7 +47,7 @@ For your reference, you can also find these documents on [Magento.com][4].
 
 If you agree with the terms of use, select the checkbox and click <span class="btn">I Agree</span>.
 
-![]({% link marketplace/sellers/images/terms-of-service.png %}){: width="600px"}<br/>
+![]({{ site.baseurl }}/marketplace/sellers/images/terms-of-service.png){: width="600px"}<br/>
  _Terms of Service_
 
 ## Step 3: Select the type of account
@@ -59,7 +59,7 @@ When prompted, select the type of account you want to create, and click <span cl
 -  [Business Account]({% link marketplace/sellers/profile-company.md %})
 -  [Individual Account]({% link marketplace/sellers/profile-personal.md %})
 
-![]({% link marketplace/sellers/images/account-type-business.png %}){: width="500px"}
+![]({{ site.baseurl }}/marketplace/sellers/images/account-type-business.png){: width="500px"}
 
 [1]: https://developer.magento.com/
 [2]: https://marketplace.magento.com/

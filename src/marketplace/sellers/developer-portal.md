@@ -6,7 +6,7 @@ redirect_from: /marketplace/sellers/marketplace-developer-dashboard.html
 
 From the Marketplace Developer Portal you can access your product submissions and reports, as well as Marketplace support information and extension guidelines.
 
-![]({% link marketplace/sellers/images/developer-portal.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal.png){: .zoom}
 _Marketplace Developer Portal_
 
 |Menu item|Description|

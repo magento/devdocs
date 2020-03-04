@@ -9,7 +9,7 @@ The Themes tab shows the status of each theme you have submitted, and provides a
 
 The process to submit a theme to Magento Marketplace is basically the same as [submitting an extension]({% link marketplace/sellers/submit-for-review.md %}). The only difference is that it takes place from the Themes tab.
 
-![]({% link marketplace/sellers/images/themes.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/themes.png){: .zoom}
 _Themes_
 
 | Column | Description |

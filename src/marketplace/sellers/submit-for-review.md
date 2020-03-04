@@ -20,5 +20,5 @@ You can submit your extension for [marketing review]({% link marketplace/sellers
 
 You must complete both the technical and marketing review to fully list your extension on the Magento Marketplace. The following diagram details the submission and review process.
 
-![]({% link marketplace/sellers/images/submit-chart1.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/submit-chart1.png){: .zoom}
 _Workflow for creating and submitting extensions_
