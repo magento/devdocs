@@ -99,6 +99,11 @@ pages:
         url: /rest/tutorials/orders/order-intro.html
         include_versions: ["2.1", "2.2", "2.3"]
 
+      - label: Filter orders
+        class: tutorial
+        url: /rest/tutorials/orders/filter-orders.html
+        include_versions: [2.3"]
+
       - label: Order processing with Inventory Management
         class: tutorial
         url: /rest/tutorials/inventory/index.html
