@@ -3,27 +3,33 @@ group: php-developer-guide
 title: Content Security Policy (CSP)
 ---
 
-Content Security Policies is a powerful tool for XSS attacks mitigation like card skimmers,
-session highjacking, clickjacking and others. CSPs are being sent as response HTTP headers, namely
-`Content-Security-Policy` or `Content-Security-Policy-Report-Only` to browsers to whitelist
-scripts, styles and other resources' origins along with some browser features to prevent
-loading of a malicious script from an attacker's website, prevent a malicious inline script from sending
-credit card info to an attacker's website, prevent loading of a malicious style that will make users click on element
-that wasn't supposed to be on a page etc. To read more on CSP and about each individual policy you can
-click [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-and [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy).
+Content Security Policies are a powerful tool to mitigate against Cross Site Scripting (XSS) and related attacks, such 
+as card skimmers, session highjacking, clickjacking, and others. Web servers send CSPs in response HTTP headers (namely
+`Content-Security-Policy` and `Content-Security-Policy-Report-Only`) to browsers that whitelist the origins of
+scripts, styles, and other resources. The CSPs and built-in browser features help prevent:
+
+*  Loading a malicious script from an attacker's website
+*  A malicious inline script from sending credit card info to an attacker's website
+*  Loading a malicious style that will make users click on an element that wasn't supposed to be on a page etc
+
+See [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+and [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) to learn more about CSP and each individual policy.
 
 ## Magento and CSP
 
-As of version 2.3.5 Magento supports CSP headers (Magento_Csp module) and ways to configure them along
-with default configurations provided on application level and for individual core modules that require
+As of version 2.3.5, Magento supports CSP headers (Magento_Csp module) and provides ways to configure them. Magento also
+provides default configurations at the application level and for individual core modules that require
 extra configuration. Policies can be configured for `adminhtml` and `storefront` areas separately to
-accommodate different use cases. Magento also allows configuring unique CSPs for specific pages -
-more on that later. CSP can work in 2 modes: `restrict mode` and `report-only mode` in which it will only report
-policy violations but will not interfere - this mode is useful for debugging.
-CSP violations will be only seen in browser console by default but can be configured to be reported to an
-endpoint as an HTTP request to collect logs. There are a number of service that will collect, store and
+accommodate different use cases. Magento also permits configuring unique CSPs for specific pages. 
+
+CSP can work in 2 modes: 
+
+*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode is useful for debugging.
+By default, CSP violations are written to the browser console, but they can be configured to be reported to an
+endpoint as an HTTP request to collect logs. There are a number of services that will collect, store, and
 sort your store's CSP violations reports for you.
+
+*  `restrict mode` - In this mode, Magento acts on any policy violations.
 
 ## Default configuration
 
