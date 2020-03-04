@@ -22,15 +22,15 @@ Developers of Magento 2.x extensions can use the validation tool to test the pac
 
 _See also:_
 
--  [PHP Developer Guide]({% link guides/v2.3/extension-dev-guide/bk-extension-dev-guide.md %})
+-  [PHP Developer Guide]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html)
 -  [How to Package Magento Extensions][2]
--  [Packaging Magento Version 1.x Extensions]({% link marketplace/sellers/packaging-v1x-extensions.md %})
+-  [Packaging Magento Version 1.x Extensions]({{ site.baseurl }}/marketplace/sellers/packaging-v1x-extensions.html)
 
 ## Coding Standards: Check code quality/syntax
 
 The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails to pass the review, a technical report is generated that describes each issue found, and its location in the codebase.
 
-_See also:_ [Coding Standards]({% link guides/v2.3/coding-standards/bk-coding-standards.md %})
+_See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html)
 
 ### Intellectual Property: Check for plagiarism
 
@@ -42,15 +42,15 @@ _See also:_ [OSL 3.0: A Better License for Open Source Software][4]
 
 ### Installation (M2 only): Verify that product installs correctly
 
-Extensions for Magento 2.x are installed with Varnish Cache enabled for each supported version of PHP, and switched from development to [production mode]({% link guides/v2.3/config-guide/cli/config-cli-subcommands-mode.md %}). If you have shared packages and dependencies required for your extension, also test installs and usage with those packages.
+Extensions for Magento 2.x are installed with Varnish Cache enabled for each supported version of PHP, and switched from development to [production mode]({{ site.baseurl }}/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html). If you have shared packages and dependencies required for your extension, also test installs and usage with those packages.
 
-_See also:_ [Magento System Requirements]({% link guides/v2.3/install-gde/system-requirements.md %})
+_See also:_ [Magento System Requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements.html)
 
 ### Page Caching (M2 only): Verify that Varnish works correctly
 
 In addition to the Production Mode test, cacheable pages are accessed to ensure that they are served directory from Varnish Cache. You will be notified if your extension fails the test.
 
-_See also:_ [Configure and Use Varnish]({% link guides/v2.3/config-guide/varnish/config-varnish.md %})
+_See also:_ [Configure and Use Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html)
 
 ### Quality Assurance (M2 only): Pass manual QA
 
