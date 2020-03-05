@@ -8,7 +8,7 @@ functional_areas:
 The [{{site.data.var.mcp-prod}}](https://github.com/magento/magento-cloud-patches) package
 delivers Magento patches and hot fixes, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical fixes. The package can also deliver custom patches that you add to your project root directory.
 
-The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ece }} project.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp}}` to check for pending patches and applies them automatically in the following order:
 
@@ -20,9 +20,11 @@ You can also apply patches manually.
 {:.bs-callout-info}
 All patch file names must end with the `.patch` extension.
 
-## Prerequisite
+## Prerequisites
 
 {% include cloud/note-upgrade.md %}
+
+To apply the latest patches, [install the latest version of {{site.data.var.ct}}]({{site.baseurl}}/cloud/project/ece-tools-update.html).
 
 ## Apply patches manually
 
@@ -34,7 +36,7 @@ To apply {{site.data.var.ece}} patches manually:
 1. From the project root, apply the patches.
 
    ```bash
-   php ./vendor/bin/ece-patches apply
+   php ./vendor/bin/ece-tools patch
    ```
 
 1. Clear the Magento cache.
@@ -81,10 +83,10 @@ To use magento-cloud-patches as a stand-alone package:
 1. From the project root, apply the patches.
 
    ```php
-   php ./vendor/bin/ece-patches apply
+   php ./vendor/bin/ece-tools patch
    ```
 
-   This command applies Magento patches and any custom patches found in the `m2/hotfixes` directory.
+   This command applies Magento patches and any custom patches found in the `/m2-hotfixes` directory.
 
 1. Clear the Magento cache.
 

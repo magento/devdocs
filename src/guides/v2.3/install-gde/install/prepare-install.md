@@ -19,7 +19,7 @@ We now use [Composer](http://getcomposer.org) to resolve dependencies before you
 
 The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click [here]({{ page.baseurl }}/install-gde/basics/basics_docroot.html).
 
-If the following error displays, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html):
+If the following error displays, see [troubleshooting](https://support.magento.com/hc/en-us/articles/360033818091):
 
 ```terminal
 file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory

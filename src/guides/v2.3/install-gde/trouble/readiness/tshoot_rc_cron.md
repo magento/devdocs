@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360033856251
 ---
 
 Following are symptoms of cron issues:

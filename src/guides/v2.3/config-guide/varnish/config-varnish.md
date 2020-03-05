@@ -98,7 +98,7 @@ Related topics
 [Final verification]: {{ page.baseurl }}/config-guide/varnish/config-varnish-final.html
 [How Magento cache clearing works with Varnish]: {{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html
 [How Varnish caching works]: {{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html
-[Troubleshooting 503 (Backend Fetch Failed) errors]: {{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html
+[Troubleshooting 503 (Backend Fetch Failed) errors]: https://support.magento.com/hc/en-us/articles/360034631211
 [Varnish Cache]: https://www.varnish-cache.org/
 
 [database]: {{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html

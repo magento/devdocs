@@ -5,8 +5,6 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-redirect_from:
-   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 The [{{site.data.var.ct}}](https://github.com/magento/ece-tools) package is a set of scripts and tools designed to manage and deploy Cloud projects. These release notes describe the latest improvements to this package, which is part of the [{{site.data.var.csuite}}]({{page.baseurl}}/cloud/release-notes/cloud-tools.html). The release notes include:
@@ -20,6 +18,7 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
 ## v2002.1.0
+*Release date: February 6, 2020*<br/>
 
 -  {:.new}**Infrastructure updates**–
 
@@ -72,6 +71,11 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 -  {:.new}Removed the deprecated `build_options.ini` file and added validation to fail the build if the file exists. Use the [.magento.env.yaml]({{site.baseurl}}/cloud/project/magento-env-yaml.html) file to configure build options.
 
 -  {:.fix}Fixed an issue that caused the build process to fail when the `config.php` file is empty.<!--MAGECLOUD-4127-->
+
+## 2002.0.23
+*Release date: February 27, 2020*<br/>
+
+-  {:.fix}Fixed a compatibility issue with `{{site.data.var.ct}}` 2002.0.x releases that prevented on-demand static content generation from completing successfully in Magento production mode.
 
 ## Older releases
 
