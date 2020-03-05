@@ -149,7 +149,7 @@ We use Redis `pipeline` in order to composite load requests. Currently we sugges
     ]
 ]
 ```
-This feature will be significantly enhanced in 2.4 release.
+This feature is in continuous enhancement process, and Magento team plans to deliver more optimizations in further releases.
  
 ## Basic verification {#redis-verify}
 
