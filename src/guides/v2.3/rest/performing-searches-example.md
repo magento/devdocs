@@ -15,7 +15,7 @@ We can search using REST Api endpoints. Here I take one example, filtering order
 
 `Authorization` `Bearer <administrator token>`
 
-**Params**
+**Params:**
 
 Param | Value | Description
 --- | --- | ---
