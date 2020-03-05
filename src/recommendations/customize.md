@@ -1,6 +1,7 @@
 ---
 group: product-recommendations
 title: Customize Recommendations
+ee_only: True
 ---
 
 When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory under your Magento theme directory. This directory contains files that you can customize to change how the recommendations appear on your storefront and where those recommendation units are placed.
