@@ -53,7 +53,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     |`checkout_onepage_success.xml`|Checkout|
     |`cms_index_index.xml`|Home|
 
-1. Let's modify the `catalog_product_view.xml` file so that the recommendation unit appears after the product image on the product detail page. Before you make any edits, the file should look something like this:
+1. Let's modify the `catalog_product_view.xml` file so that the recommendation unit appears after the product image on the product detail page. Before you customize this XML file, let's take a look at the file and understand the sections you will need to modify:
 
     ```xml
     <?xml version="1.0"?>
@@ -73,16 +73,16 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above snippet, `<referenceBlock name="main.content">` contains `name="product_recommendations_product_below_content"`, which means the recommendation unit will appear after the main content.
+    In the above snippet, the reference block `name` specifies `main.content`, which defines the block on the page. The block `class` contains the `after="-"` attribute, which indicates that the recommendation unit will be displayed on the page after the main content block.
 
-1. Replace with:
+1. Let's modify this file by specifying a different content block:
 
     ```xml
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-            <referenceBlock name="page.wrapper">
-        <block class="Magento\Framework\View\Element\Template" before="product.info" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
-    </referenceBlock>
+        <referenceBlock name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" before="-" name="product_recommendations_fetcher" template="Magento_ProductRecommendationsStorefront::fetcher.phtml" />
+        </referenceBlock>
         <body>
             <referenceBlock name="product.info.media">
                 <block class="Magento\ProductRecommendationsStorefront\Block\Renderer" after="-" name="product_recommendations_product_below_content" template="Magento_ProductRecommendationsStorefront::renderer.phtml">
@@ -95,6 +95,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above modified snippet, `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
+    In the above modified snippet, the reference block `name` changes from `main.content` to `product.info.media`.
+    This change results in your recommendation unit appearing after the product image on the product detail page. You can specify any open-source container layout name. You can also change the location of the recommendation unit to appear before or after the block by specifying the `after="-"` or `before="-"` attribute.
 
-Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information.
+Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
