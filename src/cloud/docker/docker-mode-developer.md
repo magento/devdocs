@@ -32,7 +32,7 @@ To launch the Docker environment in developer mode:
    composer install
    ```
 
-1. On macOS or Windows hosts, install the selected file synchronization tool(Linux doesn't require a tool, as synchronization is native):
+1. On macOS or Windows hosts, install the selected file synchronization tool (Linux doesn't require a tool, as synchronization is native):
 
    -  [Docker-sync Installation instructions][dsync-install]
    -  [Mutagen.io Installation instructions][mutagen-install]
