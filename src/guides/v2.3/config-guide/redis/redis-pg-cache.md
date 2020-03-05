@@ -96,7 +96,61 @@ As a result of the two example commands, Magento adds lines similar to the follo
     ]
 ],
 ```
+## New Redis cache implementation
+Since 2.3.5 we recommend to use our extended Redis cache implementation - `\Magento\Framework\Cache\Backend\Redis`.
 
+```php?start_inline=1
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\Redis',
+            'backend_options' => [
+                'server' => '127.0.0.1',
+                'database' => '0',
+                'port' => '6379'
+            ],
+        ],
+],
+```
+
+We noticed that Redis does not 100% guarantee cache eviction on save, especially with volatile-* policies, so this implementation cover this case and introduce possibility to preload redis data.
+
+As for now, in order to use this implementation you need to set it manually in `env.php`, it will be as default starting from 2.4
+
+## Preload feature in new Redis implementation. 
+Since Magento stores a lot of config data in Redis cache, we can preload data that are reusable between pages.
+We use Redis `pipeline` in order to composite load requests. Currently we suggest to use it with data that loads on each page e.g.
+`SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUGIN_LIST`, `EAV_ENTITY_TYPES`. Please note that keys should be added with database prefix.
+
+```php?start_inline=1
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'id_prefix' => '061_',
+            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend_options' => [
+                'server' => 'redis',
+                'database' => '0',
+                'port' => '6379',
+                'password' => '',
+                'compress_data' => '1',
+                'compression_lib' => '',
+                'preload_keys' => [
+                    '061_EAV_ENTITY_TYPES',
+                    '061_GLOBAL_PLUGIN_LIST',
+                    '061_DB_IS_UP_TO_DATE',
+                    '061_SYSTEM_DEFAULT',
+                ],
+            ]
+        ],
+        'page_cache' => [
+            'id_prefix' => '061_'
+        ]
+    ]
+]
+```
+This feature will be significantly enhanced in 2.4 release.
+ 
 ## Basic verification {#redis-verify}
 
 {% include config/redis-verify.md %}
