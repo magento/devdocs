@@ -13,12 +13,25 @@ Magento supports Apache 2.4.x.
 
 ## Help if you are just starting out {#apache-help-beginner}
 
-If you're new to all this and need some help getting started, we suggest the following:
+If you are new to all this and need some help getting started, we suggest the following:
 
 *  [Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
 *  [What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
 *  [What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
 *  [How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
+
+## Important: Apache required directives {#apache-required-directives}
+
+1. Set `AllowEncodedSlashes` in the server config (globally) or in the virtual host configurations to avoid decoding the encoded slashes that may cause issues for URLs. For instance, when retrieving products with a slash in the SKU via the API, you will not want that converted.
+
+   ```conf
+   <VirtualHost *:443>
+     ...
+     # Allow encoded slashes
+     AllowEncodedSlashes NoDecode
+     ...
+   </VirtualHost>
+   ```
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
