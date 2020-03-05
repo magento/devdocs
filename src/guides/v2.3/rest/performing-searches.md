@@ -204,3 +204,34 @@ The following searchCriteria can be used to determine the sort order and the num
 *  `searchCriteria[pageSize]` - Specifies the maximum number of items to return. The value must be an integer. If the `pageSize` is not specified, the system returns all matches.
 
 *  `searchCriteria[currentPage]` - Returns the current page.
+
+## Example
+
+Here is the example for search using REST. In this example we are search orders by attribute `status`.
+
+**Endpoint:**
+
+`GET <host>/rest/<store_code>/V1/orders/`
+
+**Headers:**
+
+`Content-Type` `application/json`
+
+`Authorization` `Bearer <administrator token>`
+
+**Params:**
+
+Param | Value | Description
+--- | --- | ---
+searchCriteria[filter_groups][0][filters][0][field] | status | Attribute name to filter
+searchCriteria[filter_groups][0][filters][0][value] | pending | Attribute value to filter
+fields | items[increment_id,entity_id] | Attributes needs to be return as response
+
+**Payload:**
+
+Not applicable
+
+**Response:**
+
+Response would have entity_id and increment_id of pending orders.
+
