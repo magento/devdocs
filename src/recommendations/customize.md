@@ -72,7 +72,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above snippet, the `main.content` reference block indicates the recommendation unit will be placed somewhere relative to that element. Its `block` element contains the `after="-"` attribute, which indicates that the recommendation unit will be displayed on the page after the main content block.
+    In the above snippet, the `main.content` reference block indicates the recommendation unit will be placed somewhere relative to that element. Its `block` element contains the `after="-"` attribute, which specifies that the recommendation unit will be displayed on the page after the main content block.
 
 1. Let's modify this file by specifying a different content block.
 
@@ -96,6 +96,6 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    This change results in your recommendation unit appearing after the product image on the product detail page. You also can change the location of the recommendation unit to appear before or after the block by specifying the `after="-"` or `before="-"` attribute.
+    This change results in your recommendation unit appearing after the product image on the product detail page. If you want the recommendation unit to appear before the `product.info.media`, change the `after="-"` attribute to `before="-"`. The `pagePlacement` argument is an internal argument that should not be modified.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
