@@ -52,7 +52,7 @@ Or the Magento_PageBuilder module
 ```
 
 The class DefaultConfigProvider returns data required to render TinyMCE editor.
-From the example the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides existing configuration provided from the cms module.
+From the example the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides existing configuration provided by `Magento_CMS` module.
 
 ## Extending the TinyMCE editor
 
@@ -78,10 +78,10 @@ The example of `Magento\PageBuilder\etc\adminhtml\di.xml`
 
 Once you have edited the `di.xml` file you can apply custom styling for the settings you implemented in the related CSS file.
 
-Also, the config of the TinyMCE editor builds can be extended by a plugin.
+Also, the config of the TinyMCE editor can be extended by a plugin.
 Configuration providers are classes with a `getConfig()` method that returns the configuration for a specific entity.
 
-For example, in the `Magento\Cms\Model\Wysiwyg\DefaultConfigProvider` the method `getConfig`
+For example, in the `Magento\Cms\Model\Wysiwyg\DefaultConfigProvider` the method `getConfig()`
 adds the additional configuration and enable list of plugins:
 
 ```php
@@ -127,10 +127,10 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
 }
 ```
 
-In the case the `Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider` enables the image plugin.
+In this case, the `Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider` enables the image plugin.
 See a list of possibly TinyMCE settings on their [website](https://www.tinymce.com/docs/configure/).
 
-In this case you can extend and fully customize the TinyMCE editor implementing `DefaultConfigProvider`, the class implements the method `getConfig` where specify necessary configuration. The method can by extended/overwrote of the after plugin.
+The following example shows how you can extend the TinyMCE editor configuration by creating a plugin for `DefaultConfigProvider` which extends  `getConfig()` method of the original class.
 For example:
 
 ```php
