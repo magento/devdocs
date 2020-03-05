@@ -42,8 +42,6 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     cd `<your theme>/ProductRecommendationsLayout/layout`
     ```
 
-    Within this directory you will see several `<page handles>.xml` files
-
     The following table lists the XML files present in this directory:
 
     |Filename|Page|
@@ -76,7 +74,9 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
 
     In the above snippet, the reference block `name` specifies `main.content`, which defines the block on the page. The block `class` contains the `after="-"` attribute, which indicates that the recommendation unit will be displayed on the page after the main content block.
 
-1. Let's modify this file by specifying a different content block:
+1. Let's modify this file by specifying a different content block.
+
+    You will change the reference block `name` from `main.content` to `product.info.media`.
 
     ```xml
     <?xml version="1.0"?>
@@ -96,7 +96,6 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above modified snippet, the reference block `name` changes from `main.content` to `product.info.media`.
-    This change results in your recommendation unit appearing after the product image on the product detail page. You can specify any open-source container layout name. You can also change the location of the recommendation unit to appear before or after the block by specifying the `after="-"` or `before="-"` attribute.
+    This change results in your recommendation unit appearing after the product image on the product detail page. You also can change the location of the recommendation unit to appear before or after the block by specifying the `after="-"` or `before="-"` attribute.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
