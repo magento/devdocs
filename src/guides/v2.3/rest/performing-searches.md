@@ -233,5 +233,5 @@ Not applicable
 
 **Response:**
 
-Response would have entity_id and increment_id of pending orders.
+Response would have entity_id and increment_id of the pending orders.
 
