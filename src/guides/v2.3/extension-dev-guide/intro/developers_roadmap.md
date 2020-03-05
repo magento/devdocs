@@ -10,7 +10,7 @@ This topic introduces the high-level workflow for a developer who wants to creat
 
 To satisfy the minimum required elements for creating or customizing your Magento application:
 
-*  [Declare component dependencies]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in `composer.json`.
+*  [Declare component dependencies]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) in the `require` and/or `require-dev` section of the `composer.json`.
 
     ##### Example: `composer.json` file.
     ```json
@@ -63,7 +63,7 @@ To satisfy the minimum required elements for creating or customizing your Magent
 *  Use these component-specific XML definition files:
    *  Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
 
-       ##### Example: `module.xml` file.
+       ##### Example: `etc/module.xml` file.
         ```xml
         <?xml version="1.0"?>
         <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
