@@ -20,7 +20,7 @@ This topic will focus on how you can customize the recommendations template and 
 
 If you want to customize how the recommendations display on your storefront, you can modify or overwrite the following template:
 
-`<your theme>/Magento_ProductRecommendationsLayout/web/template/recommendations.html`
+`<your theme>/ProductRecommendationsLayout/web/template/recommendations.html`
 
 However, to ensure Magento can successfully collect metrics for the recommendations on your storefront, you must preserve the following tags in the `recommendations.html` file:
 
@@ -35,7 +35,13 @@ Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/f
 
 When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. You can select either above the main content or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento creates these files when you create a recommendation.
 
-1. Locate the `layout` directory: `<your theme>/Magento_ProductRecommendationsLayout/layout/<page handles>.xml`.
+1. Change to the `layout` directory:
+
+    ```bash
+    cd `<your theme>/ProductRecommendationsLayout/layout`
+    ```
+
+    Within this directory you will see a several `<page handles>.xml` files
 
     The following table lists the XML filenames used in the above `<page handles>` variable depending on your page:
 
@@ -47,9 +53,9 @@ When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide
     |`checkout_onepage_success.xml`|Checkout|
     |`cms_index_index.xml`|Home|
 
-1. Open the page you want to modify. For example, let's modify the `catalog_category_view.xml` file. It should look something like this:
+1. Let's modify the `catalog_product_view.xml` file so that the recommendation unit appears after the product image on the product detail page. Before you make any edits, the file should look something like this:
 
-    ```html
+    ```xml
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <referenceBlock name="page.wrapper">
@@ -67,11 +73,11 @@ When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide
     </page>
     ```
 
-    Note that `<referenceBlock name="main.content">` contains `name="product_recommendations_product_below_content"` which means the recommendation unit will appear after the main content. But maybe you want the recommendation unit to appear after the product image on the product detail page.
+    In the above snippet, `<referenceBlock name="main.content">` contains `name="product_recommendations_product_below_content"`, which means the recommendation unit will appear after the main content.
 
-1. Here is the code after you make your updates:
+1. Replace with:
 
-    ```html
+    ```xml
     <?xml version="1.0"?>
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
             <referenceBlock name="page.wrapper">
@@ -89,6 +95,6 @@ When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide
     </page>
     ```
 
-    Note that `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
+    In the above modified snippet `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information.
