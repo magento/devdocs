@@ -3,7 +3,7 @@ group: product-recommendations
 title: Customize Recommendations
 ---
 
-When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory under your Magento theme directory. The `ProductRecommendationsLayout` directory contains the files you can customize if you want to make changes to how the recommendations appear on your storefront and where those recommendation units are placed.
+When you install the Product Recommendations module, Magento creates the `ProductRecommendationsLayout` directory under your Magento theme directory. This directory contains files that you can customize to change how the recommendations appear on your storefront and where those recommendation units are placed.
 
 The following table describes each subdirectory under `ProductRecommendationsLayout`:
 
@@ -14,7 +14,7 @@ The following table describes each subdirectory under `ProductRecommendationsLay
 |`web\js`|Contains the JavaScript files that fetch and render recommendations for your store|
 |`web\template`|Contains the template for the `magento/product-recommendations` module|
 
-This topic will focus on how you can customize the recommendations template and the location where recommendation units appear on your site.
+This topic describes how you can customize the recommendations template as well as the placement of recommendation units on your site.
 
 ## Template updates
 
@@ -33,7 +33,7 @@ Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/f
 
 ## Recommendation unit placement
 
-When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. You can select either above the main content or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento creates these files when you create a recommendation.
+When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either above or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
 
 1. Change to the `layout` directory:
 
@@ -43,7 +43,7 @@ When you [create a new recommendation](https://docs.magento.com/m2/ee/user_guide
 
     Within this directory you will see a several `<page handles>.xml` files
 
-    The following table lists the XML filenames used in the above `<page handles>` variable depending on your page:
+    The following table lists the XML files present in this directory:
 
     |Filename|Page|
     |---|---|
