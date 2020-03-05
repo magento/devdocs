@@ -3,12 +3,13 @@ subgroup: howtos
 group: ui-components-guide
 title: Configure the TinyMCE editor
 ---
-You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.
-This enables richer content editing capabilities and ensures that content created in the Page Builder <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span> or CMS content is seamlessly integrated and consistent with your other content.
 
-The config of the TinyMCE editor builds by `CompositeConfigProvider`
-The class `CompositeConfigProvider` loads required config by adapter specified in system configuration General > Content Management >WYSIWYG Options > WYSIWYG Editor, this class is the configuration provider class and aggregates the data in the array.
-For example `Magento\Cms\Model\Wysiwyg\CompositeConfigProvider` of Magento_Cms module.
+You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.
+This enables richer content editing capabilities and ensures that content created in the Page Builder WYSIWYG or CMS content is seamlessly integrated and consistent with your other content.
+
+The configuration of the TinyMCE editor is built by the `CompositeConfigProvider` class.
+`CompositeConfigProvider` loads the required configuration by adapters specified in the admin configuration `General > Content Management >WYSIWYG Options > WYSIWYG Editor`. This class is the configuration provider and aggregates the data in the array.
+For example, `Magento\Cms\Model\Wysiwyg\CompositeConfigProvider` of Magento_Cms module:
 
 ```xml
 <type name="Magento\Cms\Model\Wysiwyg\CompositeConfigProvider">
@@ -29,7 +30,7 @@ For example `Magento\Cms\Model\Wysiwyg\CompositeConfigProvider` of Magento_Cms m
 </type>
 ```
 
-Or the Magento_PageBuilder module
+Or the Magento_PageBuilder module:
 
 ```xml
 <type name="Magento\Cms\Model\Wysiwyg\CompositeConfigProvider">
@@ -51,14 +52,13 @@ Or the Magento_PageBuilder module
 </type>
 ```
 
-The class DefaultConfigProvider returns data required to render TinyMCE editor.
-From the example the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides existing configuration provided by `Magento_CMS` module.
+The `DefaultConfigProvider` class returns the data required to render the TinyMCE editor.
+From the example, the class `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider` overrides the existing configuration provided by the `Magento_CMS` module.
 
 ## Extending the TinyMCE editor
 
-Revise the `di.xml` file, adding the configuration settings as an argument to `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider`, to customize the TinyMCE editor present in Page Builder.
-The following code shows an example of configuration settings in the `di.xml` file that determine the font sizes available for selection and add a paragraph menu option associated with the `<p>` tag:
-The example of `Magento\PageBuilder\etc\adminhtml\di.xml`
+To customize the TinyMCE editor present in Page Builder, revise the `di.xml` file, adding the configuration settings as an argument to `Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider`.
+The following code is an example of the configuration settings in the `di.xml` file that determine the font sizes available for selection. Then, it adds a paragraph menu option associated with the `<p>` tag:
 
 ```xml
 <type name="Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider">
@@ -76,13 +76,13 @@ The example of `Magento\PageBuilder\etc\adminhtml\di.xml`
 </type>
 ```
 
-Once you have edited the `di.xml` file you can apply custom styling for the settings you implemented in the related CSS file.
+Once you have edited the `di.xml` file, you can apply custom styling for the settings you implemented in the related CSS file.
 
-Also, the config of the TinyMCE editor can be extended by a plugin.
-Configuration providers are classes with a `getConfig()` method that returns the configuration for a specific entity.
+The config of the TinyMCE editor can be extended with a plugin.
+Configuration providers are classes with a `getConfig()` method that return the configuration for a specific entity.
 
-For example, in the `Magento\Cms\Model\Wysiwyg\DefaultConfigProvider` the method `getConfig()`
-adds the additional configuration and enable list of plugins:
+For instance, in the `Magento\Cms\Model\Wysiwyg\DefaultConfigProvider` class, the `getConfig()` method
+adds the additional configuration and enables a list of plugins:
 
 ```php
 /**
@@ -127,11 +127,10 @@ class DefaultConfigProvider implements \Magento\Framework\Data\Wysiwyg\ConfigPro
 }
 ```
 
-In this case, the `Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider` enables the image plugin.
-See a list of possibly TinyMCE settings on their [website](https://www.tinymce.com/docs/configure/).
+In this case, the `Magento\Cms\Model\Wysiwyg\Gallery\DefaultConfigProvider` class enables the image plugin.
+See a list of available TinyMCE settings on their [website](https://www.tinymce.com/docs/configure/).
 
-The following example shows how you can extend the TinyMCE editor configuration by creating a plugin for `DefaultConfigProvider` which extends  `getConfig()` method of the original class.
-For example:
+The following example shows how you can extend the TinyMCE editor configuration by creating a plugin for `DefaultConfigProvider` which extends the `getConfig()` method of the original class.
 
 ```php
 ...
