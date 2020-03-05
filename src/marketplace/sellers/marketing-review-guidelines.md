@@ -16,7 +16,7 @@ We have made an investment in the presentation of Magento Marketplace. In return
 
 ## Pricing: Provide clear pricing information
 
-The price of your extension is included as part of the marketing information. To learn more, see [Enter Pricing Information]({% link marketplace/sellers/submit-for-marketing-review.md %}).
+The price of your extension is included as part of the marketing information. To learn more, see [Enter Pricing Information]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html).
 
 -  Items listed on Magento Marketplace can be offered for free, or sold as a commercial products.
 -  The price of items offered for sale on Magento Marketplace can range anywhere from $25.00 to $999,999.00, and must reflect fair market value.
@@ -29,7 +29,7 @@ The price of your extension is included as part of the marketing information. To
 
 ## Content: Complete the product profile
 
-The content that accompanies your extension listing is derived from the [marketing information]({% link marketplace/sellers/submit-for-marketing-review.md %}) you entered for the extension or theme, and information in your [company profile]({% link marketplace/sellers/profile-company.md %}). To learn more, see [Extension content]({% link marketplace/sellers/content.md %}).
+The content that accompanies your extension listing is derived from the [marketing information]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html) you entered for the extension or theme, and information in your [company profile]({{ site.baseurl }}/marketplace/sellers/profile-company.html). To learn more, see [Extension content]({{ site.baseurl }}/marketplace/sellers/content.html).
 
 -  All content that is associated with a Magento Marketplace listing must be free of offensive or discriminatory language, sexual content, or nudity.
 -  The promotion of additional services or other extensions from your extension profile page is not allowed.
@@ -38,4 +38,4 @@ The content that accompanies your extension listing is derived from the [marketi
 
 ## Branding: Use Magento name and logo correctly
 
-The Magento name and its related logos are trademarks owned by Adobe. Your extension and listing must not violate the trademarks and copyrights of Magento, Adobe, or those of any other party. To learn more, see [Branding]({% link marketplace/sellers/branding.md %}).
+The Magento name and its related logos are trademarks owned by Adobe. Your extension and listing must not violate the trademarks and copyrights of Magento, Adobe, or those of any other party. To learn more, see [Branding]({{ site.baseurl }}/marketplace/sellers/branding.html).
