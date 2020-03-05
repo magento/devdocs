@@ -40,6 +40,13 @@ pages:
         - label: Magento Commerce 2.3.0 Release Notes
           url: /release-notes/ReleaseNotes2.3.0Commerce.html
 
+    - label: 2.4 Release Notes
+      include_versions: ["2.4"]
+      children:
+
+        - label: Component Status
+          url: /release-notes/component-status.html
+  
     - label: Backward incompatible changes
       children:
 
