@@ -8,8 +8,8 @@ This is one in a series of topics to help Magento merchants and developers prepa
 
 Use the following data flow diagrams and database entity mappings for reference when developing compliance programs for privacy regulations such as:
 
--  [GDPR]({% link compliance/privacy/gdpr.md %})
--  [CCPA]({% link compliance/privacy/ccpa.md %})
+-  [GDPR]({{ site.baseurl }}/compliance/privacy/gdpr.html)
+-  [CCPA]({{ site.baseurl }}/compliance/privacy/ccpa.html)
 
 ## Dataflow diagrams
 
