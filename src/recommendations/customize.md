@@ -41,7 +41,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     cd `<your theme>/ProductRecommendationsLayout/layout`
     ```
 
-    Within this directory you will see a several `<page handles>.xml` files
+    Within this directory you will see several `<page handles>.xml` files
 
     The following table lists the XML files present in this directory:
 
@@ -95,6 +95,6 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above modified snippet `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
+    In the above modified snippet, `<referenceBlock name=` now contains the container layout name where you want the recommendation unit to appear: `<referenceBlock name="product.info.media">`. You can specify any open-source container layout name. If you want the recommendation unit to appear before or after the block, specify the `after="-"` or `before="-"` attribute.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information.
