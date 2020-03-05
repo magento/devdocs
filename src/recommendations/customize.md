@@ -12,8 +12,8 @@ The following table describes each subdirectory under `ProductRecommendationsLay
 |---|---|
 |`layout`|Contains `*.xml` files for each page type|
 |`templates`|Contains files that call the fetch and render scripts|
-|`web\js`|Contains the JavaScript files that fetch and render recommendations for your store|
-|`web\template`|Contains the template for the `magento/product-recommendations` module|
+|`web/js`|Contains the JavaScript files that fetch and render recommendations for your store|
+|`web/template`|Contains the template for the `magento/product-recommendations` module|
 
 This topic describes how you can customize the recommendations template as well as the placement of recommendation units on your site.
 
@@ -72,7 +72,7 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     </page>
     ```
 
-    In the above snippet, the reference block `name` specifies `main.content`, which defines the block on the page. The block `class` contains the `after="-"` attribute, which indicates that the recommendation unit will be displayed on the page after the main content block.
+    In the above snippet, the `main.content` reference block indicates the recommendation unit will be placed somewhere relative to that element. Its `block` element contains the `after="-"` attribute, which indicates that the recommendation unit will be displayed on the page after the main content block.
 
 1. Let's modify this file by specifying a different content block.
 
