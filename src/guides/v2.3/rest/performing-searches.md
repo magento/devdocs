@@ -233,5 +233,22 @@ Not applicable
 
 **Response:**
 
-Response would have entity_id and increment_id of the pending orders.
+Response would be as follows.
+
+{
+    "items": [
+        {
+            "entity_id": 3003,
+            "increment_id": "WA0003003"
+        },
+        {
+            "entity_id": 3140,
+            "increment_id": "WA0003140"
+        },
+        {
+            "entity_id": 9435,
+            "increment_id": "WA0009435"
+        }
+    ]
+}
 
