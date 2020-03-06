@@ -4,7 +4,7 @@ title: Specify the Version
 redirect_from: /marketplace/sellers/creating-a-new-version.html
 ---
 
-After you [create the extension entry]({% link marketplace/sellers/extension-create.md %}), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
+After you [create the extension entry]({{ site.baseurl }}/marketplace/sellers/extension-create.html), the next step is to specify and submit a new version. Extensions can have multiple versions, including the first version submitted.
 
 For existing, approved extensions, follow these instructions to add new versions as available and released.
 
@@ -14,7 +14,7 @@ For existing, approved extensions, follow these instructions to add new versions
 
 1. Click <span class="btn">Submit a New Version</span>.
 
-  ![]({% link marketplace/sellers/images/submit-new-version.png %}){: .zoom}
+  ![]({{ site.baseurl }}/marketplace/sellers/images/submit-new-version.png){: .zoom}
   _Submit a New Version_
 
 1. For **Marketplace Version Number**, enter a version number for the extension as you want it to appear in the Marketplace listing. For example: 1.0.0
@@ -26,7 +26,7 @@ For **Requested Launch Date**, select an option:
 -  ***On Approval*** - Immediately publishes when the extensions receives Magento Marketplace approval.
 -  ***Requested Launch Date*** - Date and time for launching and publishing the extension to Marketplace. This date is not necessarily the date the product will launch; it is the earliest it can be launched, provided the product passes all reviews.
 
-![]({% link marketplace/sellers/images/submit-new-version-detail.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/submit-new-version-detail.png){: .zoom}
   _New Version Detail_
 
 1. Click <span class="btn">Continue</span>.

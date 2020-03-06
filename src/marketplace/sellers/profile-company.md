@@ -6,7 +6,7 @@ redirect_from: /marketplace/sellers/company-profile.html
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
-![]({% link marketplace/sellers/images/developer-portal-company-profile.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-company-profile.png){: .zoom}
 _Company Profile_
 
 The following instructions walk you through the process of completing your company profile. All fields are required, unless marked “Optional”.
@@ -19,7 +19,7 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. Select the checkbox at the top of the form if you want to use your company profile—rather than your personal profile—as the default.
 
-    ![]({% link marketplace/sellers/images/account-company-profile-name.png %}){: .zoom}
+    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-name.png){: .zoom}
     _Company Profile_
 
 1. Enter your **Legal Company Name**.
@@ -45,7 +45,7 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
     This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your company profile.
     </div>
 
-    ![]({% link marketplace/sellers/images/account-company-profile-contact-info.png %}){: .zoom}
+    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-contact-info.png){: .zoom}
     _Contact Information_
 
 ### Step 3: Enter your company address
@@ -59,7 +59,7 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
-    ![]({% link marketplace/sellers/images/account-company-profile-address.png %}){: .zoom}
+    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-address.png){: .zoom}
     _Company Address_
 
 ### Step 4: Link to your social networks (optional)
@@ -72,7 +72,7 @@ Enter the link to each professional social network that you want to include in y
 -  Facebook
 -  LinkedIn
 
-![]({% link marketplace/sellers/images/account-profile-social-networks.png %}){: .zoom}
+![]({{ site.baseurl }}/marketplace/sellers/images/account-profile-social-networks.png){: .zoom}
 _Social Networks_
 
 ### Step 5: Activate your account

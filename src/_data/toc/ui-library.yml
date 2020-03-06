@@ -1,20 +1,20 @@
 label: UI Components
 pages:
     - label: Overview
-      url: /ui-components/ui-component.html
+      url: /ui_comp_guide/bk-ui_comps.html
 
     - label: Using UI components client-side
-      url: /ui-components/ui_components_js.html
+      url: /ui_comp_guide/bk-ui_comps.html
 
     - label: Listing/Grid Component
-      url: /ui-components/ui-listing-grid.html
+      url: /ui_comp_guide/bk-ui_comps.html
       children:
 
         - label: Grid search indexing
           url: /ui-components/ui-listing-grid-search.html
 
     - label: Listing/Grid Secondary Components
-      url: /ui-components/ui-secondary.html
+      url: /ui_comp_guide/bk-ui_comps.html
       children:
 
         - label: Filter Component
@@ -60,4 +60,4 @@ pages:
       url: /ui-components/ui-form.html
 
     - label: definition.xml
-      url: /ui-components/ui-definition.html
+      url: /ui_comp_guide/bk-ui_comps.html

@@ -29,11 +29,9 @@ pages:
           url: /payments-integrations/payment-gateway/response-handler.html
 
         - label: Error Code Mapping
-          include_versions: ["2.2", "2.3"]
           url: /payments-integrations/payment-gateway/error-code-mapper.html
 
     - label: Adding a new payment integration (payment method)
-      include_versions: ["2.1","2.2", "2.3"]
       url: /payments-integrations/base-integration/integration-intro.html
       children:
 
@@ -59,7 +57,6 @@ pages:
           url: /payments-integrations/base-integration/admin-integration.html
 
     - label: Adding vault integration
-      include_versions: ["2.1", "2.2", "2.3"]
       url: /payments-integrations/vault/vault-intro.html
       children:
 
@@ -88,9 +85,7 @@ pages:
           url: /payments-integrations/vault/admin-integration.html
 
     - label: Signifyd fraud protection
-      include_versions: ["2.2", "2.3"]
       url: /payments-integrations/signifyd/signifyd.html
 
     - label: CardinalCommerce 3-D Secure
-      include_versions: ["2.2", "2.3"]
       url: /payments-integrations/cardinal/cardinal.html

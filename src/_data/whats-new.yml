@@ -4,8 +4,45 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb 24 12:34:55 2020
+updated: Wed Mar 4 10:30:29 2020
 entries:
+- description: Updated the [Magento Cloud reference topic](https://devdocs.magento.com/cloud/reference/cli-ref-topic.html)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical changes
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6737
+- description: Added an example of how to add a custom field type to the [ColumnsEditorRecord
+    component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-record.html).
+  versions: 2.3.x
+  type: Major update
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6726
+- description: Added information about how to [add a parameter](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html)
+    to URL argument type.
+  versions: 2.3.x
+  type: Technical changes
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6747
+- description: 'Added release notes for the following Magento Cloud Suite packages:  [ece-tools
+    v2002.0.23](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html),<br/>[Magento
+    Cloud Patches v1.0.2](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html),
+    and [Magento Cloud Components v1.0.3](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).'
+  versions: 2.x
+  type: Technical changes
+  date: February 27, 2020
+  link: https://github.com/magento/devdocs/pull/6700
+- description: Added topic for [GridDataProvider UI component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-grid-data-provider.html).
+  versions: 2.3.x
+  type: New topic
+  date: February 26, 2020
+  link: https://github.com/magento/devdocs/pull/6728
+- description: Added topic for the [ColumnsEditorRecord](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-view.html)
+    UI component.
+  versions: 2.3.x
+  type: New topic
+  date: February 25, 2020
+  link: https://github.com/magento/devdocs/pull/6716
 - description: Added the [Extend an existing GraphQL schema](https://devdocs.magento.com/guides/v2.3/graphql/develop/extend-existing-schema.html)
     topic to the _GraphQL Developer Guide_.
   versions: 2.3.x
@@ -926,7 +963,7 @@ entries:
   type: New topic
   date: September 24, 2019
   link: https://github.com/magento/devdocs/pull/5452
-- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html)
     to the _GraphQL Developer Guide_.
   versions: 2.3.x
   type: Major update
@@ -2132,7 +2169,7 @@ entries:
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
 - description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
-    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
+    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/url-resolver.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
