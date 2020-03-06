@@ -49,7 +49,7 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
-See [Docker service containers] for details.
+See [Docker service containers][] for details.
 
 ## Request Flow
 
