@@ -1,0 +1,1 @@
+../../../../v2.3/rest/tutorials/inventory/reassign-products-to-another-source.md

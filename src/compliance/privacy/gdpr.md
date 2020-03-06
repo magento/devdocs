@@ -1,11 +1,6 @@
 ---
 group: compliance
 title: General Data Protection Regulation
-redirect_from:
-  - /guides/v2.3/architecture/gdpr/magento-2x.html
-  - /guides/v2.3/architecture/gdpr/magento-1x.html
-  - /guides/v2.2/architecture/gdpr/magento-2x.html
-  - /guides/v2.2/architecture/gdpr/magento-1x.html
 ---
 
 {: .bs-callout-info}

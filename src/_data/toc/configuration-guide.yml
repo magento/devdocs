@@ -364,9 +364,5 @@ pages:
       url: /config-guide/sessions.html
 
     - label: GDPR compliance
-      children:
-        - label: Magento 2.x
-          url:  /architecture/gdpr/magento-2x.html
-
-        - label: Magento 1.x
-          url:  /architecture/gdpr/magento-1x.html
+      url: /compliance/privacy/gdpr.html
+      versionless: true

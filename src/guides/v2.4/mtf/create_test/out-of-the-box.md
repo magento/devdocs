@@ -1,0 +1,1 @@
+../../../v2.3/mtf/create_test/out-of-the-box.md
