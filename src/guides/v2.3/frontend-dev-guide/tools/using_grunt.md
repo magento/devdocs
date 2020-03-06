@@ -80,7 +80,7 @@ Where the following notation is used:
 Once these are set correctly, run grunt to watch your changes.
 
 -  Run `grunt exec:<theme>` from the root directory to republish the symlinks.
--  Run `grunt watch:<theme>`, so that grunt will watch for each and every changes you make.
+-  Run `grunt watch:<theme>` so that grunt will watch for file changes.
 
 ## Using custom Grunt configuration files
 
