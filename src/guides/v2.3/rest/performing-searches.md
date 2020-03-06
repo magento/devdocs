@@ -235,6 +235,7 @@ Not applicable
 
 Response would be as follows.
 
+```json
 {
     "items": [
         {
@@ -251,4 +252,4 @@ Response would be as follows.
         }
     ]
 }
-
+```
