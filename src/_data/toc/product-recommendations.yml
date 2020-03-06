@@ -24,7 +24,7 @@ pages:
   url: /recommendations/troubleshooting.html
   versionless: true
 
-- label: Customize Recommendations Template
+- label: Customize Recommendations
   url: /recommendations/customize.html
   versionless: true
 
