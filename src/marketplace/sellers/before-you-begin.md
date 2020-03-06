@@ -7,18 +7,18 @@ Before you begin the extension submission process, you need to have the followin
 
 ## Technical items
 
--  The [extension code package]({% link marketplace/sellers/technical-review-guidelines.md %})
--  A [user guide, reference manual, or installation guide]({% link marketplace/sellers/content.md %})/a> (at least one is required)
--  [Release notes]({% link marketplace/sellers/submit-for-technical-review.md %})
--  [License information]({% link marketplace/sellers/submit-for-technical-review.md %}) (license type or custom license name and link)
--  [Magento version compatibility]({% link marketplace/sellers/extension-version.md %})
--  [Extension version number]({% link marketplace/sellers/extension-version.md %})
+-  The [extension code package]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html)
+-  A [user guide, reference manual, or installation guide]({{ site.baseurl }}/marketplace/sellers/content.html)/a> (at least one is required)
+-  [Release notes]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html)
+-  [License information]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html) (license type or custom license name and link)
+-  [Magento version compatibility]({{ site.baseurl }}/marketplace/sellers/extension-version.html)
+-  [Extension version number]({{ site.baseurl }}/marketplace/sellers/extension-version.html)
 
 ## Marketing items
 
--  A [product icon]({% link marketplace/sellers/submit-for-marketing-review.md %})
--  A [short description]({% link marketplace/sellers/content.md %}) of your extension
--  A [detailed description]({% link marketplace/sellers/content.md %}) of your extension
--  [Video links]({% link marketplace/sellers/submit-for-marketing-review.md %})
--  [Magento version compatibility]({% link marketplace/sellers/submit-for-marketing-review.md %}) information
--  [Pricing information]({% link marketplace/sellers/submit-for-marketing-review.md %}) for your extension
+-  A [product icon]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html)
+-  A [short description]({{ site.baseurl }}/marketplace/sellers/content.html) of your extension
+-  A [detailed description]({{ site.baseurl }}/marketplace/sellers/content.html) of your extension
+-  [Video links]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html)
+-  [Magento version compatibility]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html) information
+-  [Pricing information]({{ site.baseurl }}/marketplace/sellers/submit-for-marketing-review.html) for your extension
