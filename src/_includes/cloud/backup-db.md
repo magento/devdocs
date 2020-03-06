@@ -31,5 +31,4 @@ To back up your Staging or Production environment database before deploying:
    vendor/bin/ece-tools db-dump
    ```
 
-
 -  The dump operation creates a `dump-<timestamp>.sql.gz` archive file in your remote project directory. See [Snapshot and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html#db-dump).
