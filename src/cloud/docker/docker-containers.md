@@ -137,7 +137,7 @@ Now you can see all requests that are passing through the TLS container and chec
 [db]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [elasticsearch]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container
 [Docker CLI containers]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html
-[Docker service containers]: {{site.baseurl}}/cloud/docker-containers-service.html
+[Docker service containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
 [Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [Developer Mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
