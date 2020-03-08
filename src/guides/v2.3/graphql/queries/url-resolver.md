@@ -26,7 +26,9 @@ The following query returns information about the URL containing `joust-duffle-b
   urlResolver(url: "joust-duffle-bag.html") {
     id
     relative_url
+    redirectCode
     type
+
   }
 }
 ```
@@ -39,6 +41,7 @@ The following query returns information about the URL containing `joust-duffle-b
     "urlResolver": {
       "id": 1,
       "relative_url": "catalog/product/view/id/1",
+      "redirectCode": 0,
       "type": "PRODUCT"
     }
   }
@@ -63,7 +66,7 @@ Attribute |  Data Type | Description
 `id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
 `relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
-`url` | String | The URL to resolve. Magento stores product and category URLs with the `.html` extension.  CMS URLs do not contain the extension.
+`redirectCode` | Int | 301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect.
 
 ## Related topics
 
