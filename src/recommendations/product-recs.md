@@ -3,6 +3,7 @@ group: product-recommendations
 title: Product Recommendations
 redirect_from:
   - /recommendations/install.html
+ee_only: True
 ---
 
 Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensei, they result in highly engaging, relevant, and personalized experiences for the shopper.
