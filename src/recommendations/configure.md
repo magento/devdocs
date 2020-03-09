@@ -1,6 +1,7 @@
 ---
 group: product-recommendations
 title: Configure Recommendations
+ee_only: True
 ---
 
 After you [install]({{ page.baseurl }}/recommendations/product-recs.html) the `product-recommendations` module, you must configure the catalog SaaS export module, set the environment, and specify the SaaS Environment ID.

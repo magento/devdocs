@@ -159,7 +159,7 @@ This configuration is stored in the `window.checkoutConfig` variable that is def
 
 In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI [frontend](https://glossary.magento.com/frontend) configuration. The following code samples illustrate this.
 
-A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
+This is a sample `.php` file implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
 ```php?start_inline=1
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
@@ -175,7 +175,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
 }
 ```
 
-A sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
+Here is the associated sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
 
 ```xml
 ...

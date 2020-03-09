@@ -34,7 +34,7 @@ mutation {
     }
   ) {
     cart {
-      applied_coupon {
+      applied_coupons {
         code
       }
     }
@@ -49,7 +49,7 @@ mutation {
   "data": {
     "applyCouponToCart": {
       "cart": {
-        "applied_coupon": {
+        "applied_coupons": {
           "code": "{ COUPON_CODE }"
         }
       }
@@ -69,7 +69,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 mutation {
   removeCouponFromCart(input: { cart_id: "{ CART_ID }" }) {
     cart {
-      applied_coupon {
+      applied_coupons {
         code
       }
     }
@@ -84,7 +84,7 @@ mutation {
   "data": {
     "removeCouponFromCart": {
       "cart": {
-        "applied_coupon": {
+        "applied_coupons": {
           "applied_coupon": null
         }
       }
