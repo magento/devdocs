@@ -69,7 +69,7 @@ The following query returns information about bundle product `24-WG080`, which i
    {
       items{
          sku
-         type_id
+         __typename
          id
          name
           ... on BundleProduct {
@@ -98,7 +98,7 @@ The following query returns information about bundle product `24-WG080`, which i
                 id
                 name
                 sku
-                type_id
+                __typename
               }
             }
           }
@@ -117,7 +117,7 @@ The following query returns information about bundle product `24-WG080`, which i
       "items": [
         {
           "sku": "24-WG080",
-          "type_id": "bundle",
+          "__typename": "bundle",
           "id": 46,
           "name": "Sprite Yoga Companion Kit",
           "dynamic_sku": true,
@@ -147,7 +147,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 26,
                     "name": "Sprite Stasis Ball 55 cm",
                     "sku": "24-WG081-blue",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 },
                 {
@@ -163,7 +163,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 29,
                     "name": "Sprite Stasis Ball 65 cm",
                     "sku": "24-WG082-blue",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 },
                 {
@@ -179,7 +179,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 32,
                     "name": "Sprite Stasis Ball 75 cm",
                     "sku": "24-WG083-blue",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 }
               ]
@@ -205,7 +205,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 21,
                     "name": "Sprite Foam Yoga Brick",
                     "sku": "24-WG084",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 }
               ]
@@ -231,7 +231,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 33,
                     "name": "Sprite Yoga Strap 6 foot",
                     "sku": "24-WG085",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 },
                 {
@@ -247,7 +247,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 34,
                     "name": "Sprite Yoga Strap 8 foot",
                     "sku": "24-WG086",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 },
                 {
@@ -263,7 +263,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 35,
                     "name": "Sprite Yoga Strap 10 foot",
                     "sku": "24-WG087",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 }
               ]
@@ -289,7 +289,7 @@ The following query returns information about bundle product `24-WG080`, which i
                     "id": 22,
                     "name": "Sprite Foam Roller",
                     "sku": "24-WG088",
-                    "type_id": "simple"
+                    "__typename": "simple"
                   }
                 }
               ]
