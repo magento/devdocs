@@ -206,6 +206,7 @@ Attribute | Type | Description
 The following query returns information about the customizable options configured for the product with a `sku` of `xyz`.
 
 ```text
+{
   products(filter: {sku: {eq: "xyz"}}) {
     items {
       id
