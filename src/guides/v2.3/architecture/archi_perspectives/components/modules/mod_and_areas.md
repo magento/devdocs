@@ -22,7 +22,7 @@ Magento is organized into these main areas:
 
 *  **Cron** (`crontab`): In `pub/cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
-You can also send requests to Magento using the SOAP, REST and GraphQL APIs. These two areas
+You can also send requests to Magento using the SOAP, REST and GraphQL APIs. These three areas
 
 *  **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
 
