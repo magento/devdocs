@@ -127,10 +127,10 @@ It is not recommended to have too many steps for a wizard. But if a use case ari
 
 ## Assets
 
-*  [Download Wizard Style - PSD source](src/wizard-pattern-styles.psd)
-*  [Download Variation 1 - PSD source](src/Variation1.psd)
-*  [Download Variation 2 - PSD source](src/Variation2.psd)
-*  [Download Variation 3 - PSD source](src/Variation3.psd)
-*  [Download Variation 4 - PSD source](src/Variation4.psd)
+*  [Download Wizard Style - PSD source](https://devdocs.magedevteam.com/1547/download/wizard-pattern-styles.psd)
+*  [Download Variation 1 - PSD source](https://devdocs.magedevteam.com/1547/download/Variation1.psd)
+*  [Download Variation 2 - PSD source](https://devdocs.magedevteam.com/1547/download/Variation2.psd)
+*  [Download Variation 3 - PSD source](https://devdocs.magedevteam.com/1547/download/Variation3.psd)
+*  [Download Variation 4 - PSD source](https://devdocs.magedevteam.com/1547/download/Variation4.psd)
 
 Please reach out to the Magento UX Design team if you need anything else.

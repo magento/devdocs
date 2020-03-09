@@ -65,6 +65,6 @@ Required fields should not be located within a collapsed section, as this increa
 
 ## Assets
 
-[Download Expandable Section ZIP file](src/Magento_expandable_section.zip)
+[Download Expandable Section ZIP file](https://devdocs.magedevteam.com/1547/download/Magento_expandable_section.zip)
 
 Please reach out to the Magento UX Design team if you need anything else.

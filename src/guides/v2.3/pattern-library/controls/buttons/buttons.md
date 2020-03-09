@@ -326,6 +326,6 @@ Left/Right margin spacing should not be less than 10px
 
 ## Assets
 
-[Download Button PSD source](src/magento-buttons.psd).
+[Download Button PSD source](https://devdocs.magedevteam.com/1547/download/magento-buttons.psd).
 
 Please reach out to the Magento UX Design team if you need anything else.

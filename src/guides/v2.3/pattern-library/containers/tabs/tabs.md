@@ -54,6 +54,6 @@ Follow the rule "Make all functionality available from a keyboard".
 
 ## Assets
 
-[Download Tabs PSD source](src/magento-tabs.psd)
+[Download Tabs PSD source](https://devdocs.magedevteam.com/1547/download/magento-tabs.psd)
 
 Please reach out to the Magento UX Design team if you need anything else.

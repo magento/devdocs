@@ -66,4 +66,4 @@ For specific details concerning styling including fonts, colors and effects and 
 
 ## Assets
 
-Download [PhotoShop source file](src/tile-pattern-styles.psd).
+Download [PhotoShop source file](https://devdocs.magedevteam.com/1547/download/tile-pattern-styles.psd).

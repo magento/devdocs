@@ -42,4 +42,4 @@ Follow this form control accessibility guideline: [http://www.w3.org/TR/WCAG10-H
 
 ## Assets
 
-[Download Variations of Select-From-List ZIP File](src/Magento_select_from_list_srce.zip).
+[Download Variations of Select-From-List ZIP File](https://devdocs.magedevteam.com/1547/download/Magento_select_from_list_srce.zip).

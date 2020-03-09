@@ -222,8 +222,8 @@ Data-table with Confirmation Message
 
 ## Assets
 
-*  [Download Slide-out Panels PSD source](src/Slide-out-Panels.psd)
-*  [Download Modal PSD source](src/Modal.psd)
+*  [Download Slide-out Panels PSD source](https://devdocs.magedevteam.com/1547/download/Slide-out-Panels.psd)
+*  [Download Modal PSD source](https://devdocs.magedevteam.com/1547/download/Modal.psd)
 
 ## Technical Implementation
 
