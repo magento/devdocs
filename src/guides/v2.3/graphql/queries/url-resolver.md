@@ -61,11 +61,11 @@ The `EntityUrl` output object contains the `id`, `relative_url`, and `type` attr
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`canonical_url` | String | Deprecated. Use `relative_url` instead.
-`id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
-`relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
-`type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
-`redirectCode` | Int | 301 or 302 HTTP code for url permanent or temporary redirect. Contains 0 when there's no redirect.
+`canonical_url` | String | Deprecated. Use `relative_url` instead
+`id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID
+`redirectCode` | Int | Contains 0 when there is no redirect error. A value of 301 indicates the URL of the requested resource has been changed permanently, while a value of 302 indicates a temporary redirect
+`relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original
+`type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE
 
 ## Related topics
 
