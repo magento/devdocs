@@ -92,10 +92,10 @@ The following `products` query returns `ConfigurableProduct` information about t
       attribute_set_id
       name
       sku
-      type_id
-      price {
-        regularPrice {
-          amount {
+      __typename
+      price_range{
+        minimum_price{
+          regular_price{
             value
             currency
           }
@@ -127,9 +127,9 @@ The following `products` query returns `ConfigurableProduct` information about t
             ... on PhysicalProductInterface {
               weight
             }
-            price {
-              regularPrice {
-                amount {
+            price_range{
+              minimum_price{
+                regular_price{
                   value
                   currency
                 }
@@ -160,10 +160,10 @@ The following `products` query returns `ConfigurableProduct` information about t
           "attribute_set_id": 9,
           "name": "Mona Pullover Hoodlie",
           "sku": "WH01",
-          "type_id": "configurable",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "__typename": "configurable",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 57,
                 "currency": "USD"
               }
@@ -247,9 +247,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XS-Green",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -276,9 +276,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XS-Orange",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -305,9 +305,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XS-Purple",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -334,9 +334,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-S-Green",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -363,9 +363,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-S-Orange",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -392,9 +392,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-S-Purple",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -421,9 +421,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-M-Green",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -450,9 +450,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-M-Orange",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -479,9 +479,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-M-Purple",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -508,9 +508,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-L-Green",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -537,9 +537,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-L-Orange",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -566,9 +566,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-L-Purple",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -595,9 +595,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XL-Green",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -624,9 +624,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XL-Orange",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
@@ -653,9 +653,9 @@ The following `products` query returns `ConfigurableProduct` information about t
                 "sku": "WH01-XL-Purple",
                 "attribute_set_id": 9,
                 "weight": 1,
-                "price": {
-                  "regularPrice": {
-                    "amount": {
+                "price_range": {
+                  "minimum_price": {
+                    "regular_price": {
                       "value": 57,
                       "currency": "USD"
                     }
