@@ -75,7 +75,7 @@ To connect a Cloud environment to New Relic, you must add the New Relic license 
 
 ### Configure New Relic for Starter environments
 
-For Starter environments, you must add the New Relic license key to the environment configuration to enable New Relic reporting. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _Magento User Guide_.
+For Starter environments, you must add the New Relic license key to the environment configuration to enable the New Relic integration. We recommend adding the key to the Staging and Production (master) environments and one other environment of your choice. Only the New Relic license key is required for configuration. You can find information about additional configuration options in the [New Relic reporting] topic in the _Magento User Guide_.
 
 {:.bs-callout-warning}
 Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables].
@@ -84,14 +84,14 @@ Updating the environment configuration triggers a redeployment, which takes your
 Prerequisites
 
 -  Log in credentials for the Magento Cloud project account page, or for the New Relic account associated with your project
--  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or [Magento Admin credentials](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) to access the Magento Admin page for the environment.
+-  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or [Magento Admin credentials](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) the Magento Admin UI for the environment.
 
 {:.procedure}
 To configure New Relic on a Starter environment:
 
 1. Find your New Relic license key from your Magento account page, or [from your New Relic account page]:
 
-   -  Open your [account page].
+   -  Open your [Magento account page].
 
    -  On the _Projects_ tab, find your project.
 
@@ -111,7 +111,7 @@ To configure New Relic on a Starter environment:
       magento-cloud variable:set php:newrelic.license <newrelic-license-key>
       ```
 
-   -  [Log in to New Relic][5] to verify that it is receiving data.
+1. [Log in to New Relic][5] to verify that you can view data from the Magento Cloud environment. (See [Investigate performance](#investigate-performance).)
 
 ### Remove New Relic license key from a Starter environment
 
@@ -283,6 +283,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
 [New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [add it from the Magento Admin]: https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html#step-3-configure-your-store
+[Investigate performance]: #investigate-performance
 [from your New Relic account page]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
