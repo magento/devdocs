@@ -10,7 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud) enables you to do the following for all Starter and Pro environments:
+The {{site.data.var.ece}} Project Web Interface enables you to do the following for all Starter and Pro environments:
 
 -  [Access projects](#project-access)
 -  Create and manage projects
@@ -31,7 +31,7 @@ The Project Web Interface provides several ways to access your project and envir
 
 To access projects and environments through the Project Web Interface:
 
-1. [Log in to your project](https://accounts.magento.cloud).
+1. Log in to your project.
 1. Click **Access Project** for a list of URLs and SSH.
 
    ![Access your project by URL or SSH]({{ site.baseurl }}/common/images/cloud_project-access.png){:width="600px"}
