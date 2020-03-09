@@ -28,7 +28,6 @@ The following query returns information about the URL containing `joust-duffle-b
     relative_url
     redirectCode
     type
-
   }
 }
 ```
@@ -66,7 +65,7 @@ Attribute |  Data Type | Description
 `id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
 `relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
-`redirectCode` | Int | 301 or 302 HTTP code for url permanent or temporary redirect or 0 for the 200 no redirect.
+`redirectCode` | Int | 301 or 302 HTTP code for url permanent or temporary redirect. Contains 0 when there's no redirect.
 
 ## Related topics
 
