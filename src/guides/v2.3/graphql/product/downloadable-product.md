@@ -71,10 +71,10 @@ The following query returns information about downloadable product `240-LV04`, w
       id
       name
       sku
-      type_id
-      price {
-        regularPrice {
-          amount {
+      __typename
+      price_range{
+				minimum_price{
+          regular_price{
             value
             currency
           }
@@ -85,17 +85,15 @@ The following query returns information about downloadable product `240-LV04`, w
         links_purchased_separately
 
         downloadable_product_links {
-          id
           sample_url
           sort_order
           title
-          link_type
           price
         }
         downloadable_product_samples {
           title
           sort_order
-          sample_file
+          sample_url
         }
       }
     }
@@ -114,10 +112,10 @@ The following query returns information about downloadable product `240-LV04`, w
           "id": 47,
           "name": "Beginner's Yoga",
           "sku": "240-LV04",
-          "type_id": "downloadable",
-          "price": {
-            "regularPrice": {
-              "amount": {
+          "__typename": "downloadable",
+          "price_range": {
+            "minimum_price": {
+              "regular_price": {
                 "value": 6,
                 "currency": "USD"
               }
@@ -127,11 +125,9 @@ The following query returns information about downloadable product `240-LV04`, w
           "links_purchased_separately": 0,
           "downloadable_product_links": [
             {
-              "id": 1,
               "sample_url": null,
               "sort_order": 1,
               "title": "Beginner's Yoga",
-              "link_type": "FILE",
               "price": 6
             }
           ],
@@ -139,17 +135,17 @@ The following query returns information about downloadable product `240-LV04`, w
             {
               "title": "Trailer #1",
               "sort_order": 1,
-              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             },
             {
               "title": "Trailer #2",
               "sort_order": 1,
-              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             },
             {
               "title": "Trailer #3",
               "sort_order": 1,
-              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+              "sample_url": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
             }
           ]
         }
