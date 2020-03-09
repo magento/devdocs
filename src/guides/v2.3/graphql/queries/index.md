@@ -150,7 +150,7 @@ The following query returns a list of Magento queries. The results are truncated
 ```graphql
 query IntrospectionQuery {
   __schema {
-    mutationType {
+    queryType {
       fields {
         name
         description
