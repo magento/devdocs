@@ -32,7 +32,7 @@ To return attributes that are specific to a product type, append a structure sim
 
 For example, to return `GroupedProduct` attributes, construct your query like this:
 
-```text
+```graphql
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -59,3 +59,46 @@ For example, to return `GroupedProduct` attributes, construct your query like th
   }
 }
 ```
+
+{% collapsible Response %}
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 4,
+          "name": "Group-1",
+          "sku": "G-1",
+          "__typename": "GroupedProduct",
+          "items": [
+            {
+              "qty": 0,
+              "position": 1,
+              "product": {
+                "sku": "xyz",
+                "name": "T-shirt",
+                "__typename": "SimpleProduct",
+                "url_key": "product1"
+              }
+            },
+            {
+              "qty": 0,
+              "position": 2,
+              "product": {
+                "sku": "240-LV04",
+                "name": "Beginner's Yoga",
+                "__typename": "DownloadableProduct",
+                "url_key": "beginner-s-yoga"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+{% endcollapsible %}
