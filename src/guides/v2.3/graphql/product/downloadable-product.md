@@ -73,7 +73,7 @@ The following query returns information about downloadable product `240-LV04`, w
       sku
       __typename
       price_range{
-				minimum_price{
+        minimum_price{
           regular_price{
             value
             currency
