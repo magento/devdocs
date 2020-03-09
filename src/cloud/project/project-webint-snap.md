@@ -163,7 +163,7 @@ To create a database dump:
 
  {:.bs-callout-info}
 
--  Before creating dump the command will put the application in maintenance mode. Also, command stops all crons and kill all running consumers and crons.   
+-  Before creating a dump, the command switches the application to maintenance mode and stops all crons, which terminates all running consumers and cron jobs.   
 -  This command creates an archive file for each database backup with the file name pattern `dump-<label><timestamp>.sql.gz` where  _label_ is replaced with the database name.  The archive files are saved to your remote project directory, and the path to each file is listed in the command output.
 -  If an error occurs during the dump, the command deletes any dump files to conserve disk space. Review the logs for details (`var/log/cloud.log`).
 -  In the end the command will remove the flag about maintenance mode and will re-enable cron processes.
