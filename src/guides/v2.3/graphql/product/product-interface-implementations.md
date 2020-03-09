@@ -35,7 +35,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
 ```graphql
 {
   products(filter:
-    {sku: {eq: "24-WG085_Group"}}
+    {sku: {eq: "G-1"}}
   )
   {
     items {
