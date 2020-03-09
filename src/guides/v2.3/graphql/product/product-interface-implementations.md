@@ -32,6 +32,8 @@ To return attributes that are specific to a product type, append a structure sim
 
 For example, to return `GroupedProduct` attributes, construct your query like this:
 
+**Request:**
+
 ```graphql
 {
   products(filter:
@@ -60,7 +62,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
 }
 ```
 
-{% collapsible Response %}
+**Response:**
 
 ```json
 {
@@ -100,5 +102,3 @@ For example, to return `GroupedProduct` attributes, construct your query like th
   }
 }
 ```
-
-{% endcollapsible %}
