@@ -80,7 +80,8 @@ For Starter environments, you must add the New Relic license key to the environm
 {:.bs-callout-warning}
 Updating the environment configuration triggers a redeployment, which takes your site offline until deployment completes. For Production environments, we recommend completing this work during off-peak hours to avoid service disruptions. See [Working with variables].
 
-{:.prerequisites}
+{:.procedure}
+Prerequisites
 
 -  Log in credentials for the Magento Cloud project account page, or for the New Relic account associated with your project
 -  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or [Magento Admin credentials](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) to access the Magento Admin page for the environment.
