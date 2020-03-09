@@ -113,7 +113,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 There are two possible ways to configure the Data Migration Tool for migration:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Change to the following directory:
 
@@ -205,9 +205,13 @@ To use the mapping files:
 
 1. Copy them from `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>/` to `<your Magento 2 install dir>/app/code/Vendor/Migration/etc/<migration edition>/<ce or version>/` and remove the `.dist` [extension](https://glossary.magento.com/extension).
 
-1. Update the path to the new copied file in the `<options>` node of `config.xml`. The updated path should be a full file path: `/path/to/copied/config.xml` or a magento/data-migration-tool module relative file path: `etc/path/to/copied/config.xml`.
+1. Update the path to the newly copied file in the `<options>` node of `config.xml`. The updated path should be one of the following:
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
+   1. Absolute file path, e. g. `/var/www/html/app/code/Vendor/Migration/etc/opensource-to-opensource/1.9.4.1/map.xml`
+   1. magento/data-migration-tool module relative file path: `etc/opensource-to-opensource/1.9.4.1/map.xml`
+   1. Magento root-relative file path: `app/code/Vendor/Migration/etc/opensource-to-opensource/1.9.4.1/map.xml`
+
+The `<Magento 2 dir>/vendor/magento/data-migration-tool/etc` and `<Magento 2 dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 

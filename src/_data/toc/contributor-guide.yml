@@ -33,4 +33,3 @@ pages:
 
     - label: Maintainers
       url: /contributor-guide/maintainers.html
-      include_versions: ["2.1","2.2","2.3"]

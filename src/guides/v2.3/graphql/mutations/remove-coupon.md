@@ -30,7 +30,7 @@ mutation {
         }
         quantity
       }
-      applied_coupon {
+      applied_coupons {
         code
       }
       prices {
@@ -65,7 +65,7 @@ mutation {
             "quantity": 1
           }
         ],
-        "applied_coupon": null,
+        "applied_coupons": null,
         "prices": {
           "grand_total": {
             "value": 39,

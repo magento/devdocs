@@ -48,7 +48,7 @@ initialize: function () {
 }
 ```
 
-*  The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
+*  The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller. If that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 
 As an example:
 

@@ -1,6 +1,7 @@
 ---
 group: product-recommendations
 title: Get Support
+ee_only: True
 ---
 
 As we continue to evolve this technology and ensure you are successful in implementing product recommendations, it is critical that we address any issues you encounter and plan for any feature requests.

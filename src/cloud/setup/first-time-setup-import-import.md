@@ -117,6 +117,8 @@ After you have completed the git reference configuration, you can import the {{s
 
 ## Import the Magento database {#cloud-import-db}
 
+{%include cloud/note-db-import-export-warning.md%}
+
 Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ece}}, you must import the database.
 
 You need the following information to complete this task:
@@ -124,10 +126,10 @@ You need the following information to complete this task:
 -  [SSH URL]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment
 -  The database name, username, and password for the [Cloud database]({{ site.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
 
+When importing data, you need to drop and create a new database. If you have data you want to keep, [create a backup]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the database.
+
 {:.bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
-
-When importing data, you need to drop and create a new database. If you have data you want to keep, [create a backup]({{ site.baseurl }}/cloud/project/project-webint-snap.html) of the database.
 
 {:.procedure}
 To drop and re-create the Cloud database:

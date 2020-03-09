@@ -37,7 +37,6 @@ The following call returns information about the logged-in customer. Provide the
       region {
         region_code
         region
-        region_id
       }
       postcode
       country_code
@@ -68,8 +67,7 @@ The following call returns information about the logged-in customer. Provide the
          "city": "Anytown",
          "region": {
            "region_code": "MI",
-           "region": "Michigan",
-           "region_id": 33
+           "region": "Michigan"
          }
          "postcode": "78758",
          "country_code": "US",

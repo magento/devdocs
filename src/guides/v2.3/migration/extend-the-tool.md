@@ -66,7 +66,7 @@ Refer to the following for an explanation of the changes in the previous example
 
 -  Unnecessary data from the index table `great_blog_index` should not be migrated
 -  The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data should be migrated to the new table
-   -  The `summary` field was renamed `title`, so data should be migrated to the new field
+   -  The `summary` field was renamed to `title`, so data should be migrated to the new field
    -  The `priority` field was removed and no longer exists in Magento 2
    -  The data in the `body` field has changed format and should be processed by the custom handler: `\Migration\Handler\GreatBlog\NewFormat`
 -  A new ratings feature was developed for the "GreatBlog" extension in Magento 2
@@ -96,7 +96,7 @@ Using the same "GreatBlog" example, suppose the extension contains three tables 
     ...
     <step title="GreatBlog Step">
         <integrity>Migration\Step\GreatBlog\Integrity</integrity>
-        <delta>Migration\Step\GreatBlog\Data</delta>
+        <data>Migration\Step\GreatBlog\Data</data>
         <volume>Migration\Step\GreatBlog\Volume</volume>
     </step>
 </steps>
