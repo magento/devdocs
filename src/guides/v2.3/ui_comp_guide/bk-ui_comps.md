@@ -2,13 +2,7 @@
 group: ui-components-guide
 title: Overview of UI components
 redirect_from:
-  - /guides/v2.3/ui-components/ui-component.html
-  - /guides/v2.3/ui-components/ui-definition.html
-  - /guides/v2.3/ui-components/ui-secondary.html
-  - /guides/v2.3/ui-components/ui_components_js.html
   - /guides/v2.3/ui-components/ui-listing-grid.html
-  - /guides/v2.3/ui_comp_guide/concepts/ui_comp_architecture_concept.html
-  - /guides/v2.3/ui_comp_guide/ui_component_explained.html
 ---
 
 ## Overview of UI components

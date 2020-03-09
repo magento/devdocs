@@ -8,10 +8,6 @@ pages:
       url: /comp-mgr/prereq/prereq_compman.html
       children:
 
-        - label: Enter your authentication keys in the Admin
-          include_versions: ["2.1", "2.0"]
-          url: /comp-mgr/prereq/prereq_auth-token.html
-
         - label: Set ulimit for the web server user
           url: /comp-mgr/prereq/prereq_compman-ulimit.html
 
@@ -24,43 +20,7 @@ pages:
     - label: Magento Marketplace example
       url: /comp-mgr/marketplace/marketplace.html
 
-    - label: Run the Component Manager
-      include_versions: ["2.0","2.1"]
-      url: /comp-mgr/module-man/compman-checklist.html
-      children:
-
-        - label: Start the Component Manager
-          url: /comp-mgr/module-man/compman-start.html
-
-        - label: Manage your components
-          url: /comp-mgr/module-man/compman-main-pg.html
-
-        - label: Step 1. Readiness check
-          url: /comp-mgr/module-man/compman-readiness.html
-
-        - label: Step 2. Back up the file system and database
-          url: /comp-mgr/module-man/compman-backup.html
-
-        - label: Step 3
-          children:
-
-            - label: Component Install
-              url: /comp-mgr/module-man/compman-new-purchase.html
-
-            - label: Component Update
-              url: /comp-mgr/module-man/compman-update.html
-
-            - label: Enable/Disable
-              url: /comp-mgr/module-man/compman-enable-disable.html
-
-            - label: Data Option
-              url: /comp-mgr/module-man/compman-uninst-data.html
-
-        - label: Step 4. Uninstall
-          url: /comp-mgr/module-man/compman-uninst-final.html
-
     - label: Run the Module Manager
-      include_versions: ["2.2", "2.3"]
       url: /comp-mgr/module-man/compman-checklist.html
       children:
 
@@ -77,7 +37,6 @@ pages:
           url: /comp-mgr/module-man/modman-enable-disable.html
 
     - label: Run the Extension Manager
-      include_versions: ["2.2", "2.3"]
       url: /comp-mgr/extens-man/extensman-checklist.html
       children:
 
@@ -123,11 +82,9 @@ pages:
 
         - label: (Optional) Upgrade using the custom script
           url: /comp-mgr/cli/upgrade-with-script.html
-          include_versions: ["2.3"]
           
         - label: (Experimental) Upgrade using the composer plugin
           url: /comp-mgr/cli/upgrade-with-plugin.html
-          include_versions: ["2.3"]
 
         - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
@@ -163,10 +120,6 @@ pages:
 
         - label: Sorry, we can't take that action right now
           url: /comp-mgr/trouble/cman/were-sorry.html
-
-        - label: File permissions readiness check issues
-          include_versions: ["2.0", "2.1"]
-          url: /comp-mgr/trouble/cman/rc_perms.html
 
         - label: Roll back after update failure
           url: /comp-mgr/trouble/cman/update-fail.html

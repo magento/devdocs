@@ -39,13 +39,13 @@ This example integrates the Input component with the [Form]({{ page.baseurl }}/u
     ...
     <fieldset>
         ...
-        <input name="input_example" formElement="text">
+        <field name="input_example" formElement="input" sortOrder="10">
             <settings>
                 <visible>true</visible>
                 <elementTmpl>ui/form/element/input</elementTmpl>
                 <label translate="true">Input field example</label>
             </settings>
-        </input>
+        </field>
     </fieldset>
 </form>
 ```
