@@ -214,7 +214,7 @@ The following query returns information about the customizable options configure
       id
       name
       sku
-      type_id
+      __typename
       ... on CustomizableProductInterface {
         options {
           title
