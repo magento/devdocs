@@ -148,6 +148,49 @@ Management interfaces provide management functions that are not related to repos
    </tr>
 </table>
 
+### Metadata interfaces {#metadata-interfaces}
+
+Metadata interfaces provide methods for retive metadata, the interfaces are not related to repositories. For example:
+
+<table style="width:100%">
+   <tr bgcolor="lightgray">
+      <th>Interface</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>
+         <p><code>AttributeMetadataInterface</code></p>
+      </td>
+      <td>
+         <p>Provides customer attribute metadata and defines the constants used as keys of data array and methods. See more [AttributeMetadataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/Data/AttributeMetadataInterface.php){:target="_blank"}.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>ProductMetadataInterface</code></p>
+      </td>
+      <td>
+         <p>Provides Magento application product metadata. Defines the <code>getVersion()</code>, <code>getEdition()</code>, <code>getName()</code> methods.</p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>CustomerMetadataManagementInterface</code></p>
+      </td>
+      <td>
+         <p>Interface for managing customer attributes metadata. Defines the constant <code>ENTITY_TYPE_CUSTOMER</code></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p><code>AddressMetadataInterface</code></p>
+      </td>
+      <td>
+         <p>Interface for retrieval information about customer address attributes metadata. Defines the constants <code>ATTRIBUTE_SET_ID_ADDRESS</code>, <code>ENTITY_TYPE_ADDRESS</code>, <code>DATA_INTERFACE_NAME</code></p>
+      </td>
+   </tr>
+</table>
+
 {:.ref-header}
 Related topics
 
