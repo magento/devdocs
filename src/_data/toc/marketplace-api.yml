@@ -21,6 +21,10 @@ pages:
       url: /marketplace/eqp/v1/packages.html
       versionless: true
 
+    - label: Test Results
+      url: /marketplace/eqp/v1/test-results.html
+      versionless: true
+
     - label: Reports
       url: /marketplace/eqp/v1/reports.html
       versionless: true
@@ -29,3 +33,6 @@ pages:
       url: /marketplace/eqp/v1/filtering.html
       versionless: true
 
+    - label: API Callbacks
+      url: /marketplace/eqp/v1/callbacks.html
+      versionless: true
