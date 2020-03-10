@@ -25,7 +25,7 @@ You must bypass the Fastly service in your Production environment when profiling
 
 ## Get your Blackfire login credentials
 
-The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to log in to the Blackfire website initially. An invitation email is sent to the Project Owner's e-mail address to complete activation.
+The License Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to log in to the Blackfire website initially. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up an account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user).
 
