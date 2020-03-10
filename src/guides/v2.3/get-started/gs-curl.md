@@ -30,7 +30,7 @@ Option | Description
 
 ### Using cUrl in Magento
 
-Magento provides native functionality for cURL instead of using default php cURL. The class ``Magento\Framework\HTTP\Client\Curl`` can be used to work with HTTP protocol using curl library.
+Magento provides its own service-wrapper for using cURL instead of using default php cURL. The class ``Magento\Framework\HTTP\Client\Curl`` can be used to work with HTTP protocol using cURL library.
 At first, the instance of ``Magento\Framework\HTTP\Client\Curl`` should be created.
 
 ```php
@@ -42,17 +42,17 @@ At first, the instance of ``Magento\Framework\HTTP\Client\Curl`` should be creat
 public function __construct(
    Magento\Framework\HTTP\Client\Curl $curl
 ) {
-   $this->_curl = $curl;
+   $this->curl = $curl;
 }
 ```
 #### Make GET request using cURL
 
 ```php
 // get method
-$this->_curl->get($url);
+$this->curl->get($url);
 
 // output of curl request
-$result = $this->_curl->getBody();
+$result = $this->curl->getBody();
 ```
 
 Where the ``$url`` is the endpoint url
@@ -61,13 +61,22 @@ Where the ``$url`` is the endpoint url
 
 ```php
 // post method
-$this->_curl->post($url, $params);
+$this->curl->post($url, $params);
 
 // output of curl requestt
-$result = $this->_curl->getBody();
+$result = $this->curl->getBody();
 ```
 
-Where the ``$url`` is the endpoint url, ``$params`` an array, the extra parameters can be added in the url.
+Where the ``$url`` is the endpoint url, ``$params`` is an array of data that is being sent via the POST request, the extra parameters can be added in the url.
+``$params`` example:
+
+```php
+$params = [
+  'user[email]' => $user->getEmail(),
+  'user[cellphone]' => $providerInfo['phone_number'],
+  'user[country_code]' => $providerInfo['country_code'],
+]
+```
 
 The Curl client can also adds headers, basic authorization, additional cURL options and cookies in the curl request. The Curl client provides these methods before using ``get`` or ``post`` method.
 
@@ -76,17 +85,17 @@ The Curl client can also adds headers, basic authorization, additional cURL opti
 The ``addHeader`` method accepts two parameters. The curl header name and a curl header value.
 
 ```php
-$this->_curl->addHeader("Content-Type", "application/json");
-$this->_curl->addHeader("Content-Length", 200);
+$this->curl->addHeader("Content-Type", "application/json");
+$this->curl->addHeader("Content-Length", 200);
 ```
 
 #### Set curl header using setHeaders method
 
-The ``setHeaders`` method accepts a parameter as an array.
+The ``setHeaders`` method accepts an array as a parameter.
 
 ```php
 $headers = ["Content-Type" => "application/json", "Content-Length" => "200"];
-$this->_curl->setHeaders($headers);
+$this->curl->setHeaders($headers);
 ```
 
 #### Set basic authorization in Curl
@@ -96,22 +105,22 @@ Set the basic authorization using the ``setCredentials`` method.
 $userName = "User_Name";
 $password = "User_Password";
 
-$this->_curl->setCredentials($userName, $password);
+$this->curl->setCredentials($userName, $password);
 ```
 
 It is equivalent to setting CURLOPT_HTTPHEADER value
 
-```text
-“Authorization : “. “Basic “.base64_encode($userName.”:”.$password)
+```php
+"Authorization : ". "Basic ".base64_encode($userName.":".$password)
 ```
 
 #### Set curl option using setOption method
 
-The ``setOption`` method accepts two parameters. The curl option name and the curl option value.
+The ``setOption`` method accepts two parameters. The curl option name and the cURL option value.
 
 ```php
-$this->_curl->setOption(CURLOPT_RETURNTRANSFER, true);
-$this->_curl->setOption(CURLOPT_PORT, 8080);
+$this->curl->setOption(CURLOPT_RETURNTRANSFER, true);
+$this->curl->setOption(CURLOPT_PORT, 8080);
 ```
 
 #### Set curl option using setOptions method
@@ -121,24 +130,24 @@ The ``setOptions`` method accepts a parameter as an array.
 ```php
 $options = [CURLOPT_RETURNTRANSFER => true, CURLOPT_PORT => 8080];
 
-$this->_curl->setOptions($options);
+$this->curl->setOptions($options);
 ```
 
 #### Set curl cookies using addCookie method
 
-The ``addCookie`` method accepts two parameters. The cookie name and the cookie value.
+The ``addCookie`` method accepts an array as a parameter. The cookie name and the cookie value.
 
 ```php
-$this->_curl->addCookie("cookie-name", "cookie-value");
+$this->curl->addCookie("cookie-name", "cookie-value");
 ```
 
 #### Set curl cookies using setCookies method
 
-The ``setCookies`` method accepts a parameter as an array.
+The ``setCookies`` method accepts an array as a parameter.
 
 ```php
 $cookies = ["cookie-name-1" => "cookie-value-1", "cookie-name-2" => "cookie-value-2"];
-$this->_curl->setCookies($cookies);
+$this->curl->setCookies($cookies);
 ```
 
 {:.ref-header}
