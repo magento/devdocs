@@ -18,7 +18,7 @@ As of Magento 2.3.4, GraphQL provides the following features:
 
 The `graphql-ce` Community Engineering repository has been archived. Development for Magento 2.3.5 will be limited to bug fixes.
 
-For the 2.4 release, Magento teams are working towards completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
+For the 2.4 release, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
 
 *  Order history for logged in customers
 *  Reorders
@@ -26,7 +26,6 @@ For the 2.4 release, Magento teams are working towards completing GraphQL covera
 *  Gift wrapping and messages
 *  Saved payment methods
 *  Inventory Management store pickups
-
 
 We also expect to begin adding coverage for B2B scenarios.
 
