@@ -172,7 +172,7 @@ Check the following example on getting the breakpoints variable by the [`Gallery
  */
 public function getBreakpoints()
 {
-    return $this->jsonEncoder->encode($this->getVar('breakpoints'));
+    return $this->jsonSerializer->serialize($this->getVar('breakpoints'));
 }
 ```
 
