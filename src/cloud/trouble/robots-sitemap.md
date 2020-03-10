@@ -49,6 +49,9 @@ If the `<domain.your.project>/robots.txt` file generates a `404 error`, [submit 
 
  If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
+ {:.bs-callout-info}
+ You can upload custom VCL snippets from the Magento Admin UI or using the Fastly API. See [Custom VCL snippet examples and tutorials]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#custom-vcl-snippet-examples-and-tutorials).
+
 ### Use a Fastly VCL snippet for redirect
 
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key-value pairs.
@@ -59,7 +62,7 @@ Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sit
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }"
+  "content": "if ( req.url.path ~ "^/?sitemap.xml$" ) { set req.url = "/media/sitemap.xml"; }"
 }
 ```
 
@@ -71,7 +74,7 @@ The following example demonstrates how to rewrite the path for `robots.txt` and 
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; } else if (req.url.path ~ \"^/?robots.txt$\") { set req.url = \"/media/robots.txt\";}"
+  "content": "if ( req.url.path ~ "^/?sitemap.xml$\" ) { set req.url = "/media/sitemap.xml"; } else if (req.url.path ~ "^/?robots.txt$") { set req.url = "/media/robots.txt";}"
 }
 ```
 
@@ -86,7 +89,7 @@ Create a `pub/media/domain_robots.txt` file, where the domain is `domain.com` an
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }}"
+  "content": "if ( req.url.path == "/robots.txt" ) { if ( req.http.host ~ "(domain).com$" ) { set req.url = "/media/" re.group.1 "_robots.txt"; }}"
 }
 ```
 
@@ -100,7 +103,7 @@ To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, 
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }} else if ( req.url.path == \"/sitemap.xml\" ) { if ( req.http.host ~ \"(domain).com$\" ) {  set req.url = \"/media/\" re.group.1 \"_sitemap.xml\"; }}"
+  "content": "if ( req.url.path == "/robots.txt" ) { if ( req.http.host ~ "(domain).com$" ) { set req.url = "/media/" re.group.1 "_robots.txt"; }} else if ( req.url.path == "/sitemap.xml" ) { if ( req.http.host ~ "(domain).com$" ) {  set req.url = "/media/" re.group.1 "_sitemap.xml"; }}"
 }
 ```
 

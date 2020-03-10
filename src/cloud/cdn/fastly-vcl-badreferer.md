@@ -59,7 +59,7 @@ For more information about Edge Dictionaries, see [Creating and using Edge Dicti
 
 ## Create a custom VCL snippet to block referrer spam
 
-The following custom VCL snippet code (JSON format) checks incoming requests and blocks requests from any referrer site included in the `referrer_blocklist` edge dictionary.
+The following custom VCL snippet code (JSON format) shows the logic to check and block requests. The VCL snippet captures the host of a referrer website into a header, and then compares the host name to the list of URLs in the `referrer_blocklist` dictionary. If the host name matches, the request is blocked with a `403 Forbidden` error.
 
 ```json
 {
@@ -67,35 +67,33 @@ The following custom VCL snippet code (JSON format) checks incoming requests and
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?://?([^:/\\s]+).*$\", \"\\1\"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
+  "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/s]+).*$", "\1"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"
 }
 ```
 
-Review the example code and change values as needed:
+Before creating your own snippet from this example, review the values to determine whether you need to make any changes:
 
 -  `name` — Name for the VCL snippet. For this example, we used `block_bad_referrer`.
 
 -  `dynamic` — Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
 
--  `priority` — Determines when the VCL snippet runs. The priority  is `5` to run this snippet code before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
+-  `priority` — Determines when the VCL snippet runs. The priority  is `5` to run this snippet code before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50. You must set the priority for each custom snippet higher or lower than 50 depending on when you want your snippet to run. Lower priority numbers execute first.
 
 -  `type` — Specifies a location to insert the snippet in the VCL version. In this example, the VCL snippet is a `recv` snippet. When the snippet is inserted into the VCL version, it is added to the `vcl_recv` subroutine,  below the default Fastly VCL code and above any objects.
 
 -  `content` — The snippet of VCL code to run in one line, without line breaks.
 
-In this example, the VCL code logic captures the host of a referrer website into a header, and then compares the host name to the list of URLs in the `referrer_blocklist` dictionary.
+After reviewing and updating the code for your environment, use either of the following methods to add the custom VCL snippet to your Fastly service configuration:
 
-If the host name matches, the request is blocked with a `403 Forbidden` error.
+-  [Add the custom VCL snippet from the Magento Admin](#add-the-custom-vcl-snippet). This method is recommended if you can access the Magento Admin UI. (Requires [Fastly CDN module for Magento 2 version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
 
-See the [Fastly VCL reference](https://docs.fastly.com/vcl/reference/) for information about creating Fastly VCL code snippets.
-
-Add the custom VCL snippet to your Fastly service configuration from the Magento Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{  site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html(#manage-custom-vcl-snippets-using-the-api).
+-  Save the JSON code example to a file (for example, `allowlist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
 
 ## Add the custom VCL snippet
 
 {% include cloud/admin-ui-login-step.md %}
 
-1. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
 1. Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
