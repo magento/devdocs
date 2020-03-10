@@ -51,7 +51,7 @@ The following query returns information about gift card product `GiftCard25`. (I
   products(filter: { sku: { eq: "GiftCard25" } }) {
     items {
       id
-      type_id
+      __typename
       name
       sku
     }
