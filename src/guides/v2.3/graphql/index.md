@@ -18,13 +18,15 @@ As of Magento 2.3.4, GraphQL provides the following features:
 
 The `graphql-ce` Community Engineering repository has been archived. Development for Magento 2.3.5 will be limited to bug fixes.
 
-For the 2.4 release, Magento teams are working to implement a new microservice architecture with the following features that affect GraphQL:
+For the 2.4 release, Magento teams are working towards completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
 
-*  All new GraphQL coverage will rely on newly-defined Storefront APIs. If there are no appropriate Storefront APIs for the particular business scenario being covered, these APIs will be introduced. Existing coverage will work with the Storefront APIs without changing the current schema.
-*  Storefront API implementations must rely on the Magento Framework only.  No dependencies on entities defined in Magento modules will be allowed.
-*  GraphQL resolvers will not contain business logic.
+*  Order history for logged in customers
+*  Reorders
+*  Replace product-specific mutations that add products to a card with a single mutation that can handle all product types
+*  Gift wrapping and messages
+*  Saved payment methods
+*  Inventory Management store pickups
 
-The Catalog, Customer, and Cart modules will be the first modules to be re-architected. Details about the new architecture and modules will be published as it becomes available, before the 2.4 release.
 
 We also expect to begin adding coverage for B2B scenarios.
 
