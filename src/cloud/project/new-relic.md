@@ -101,7 +101,7 @@ To configure New Relic on a Starter environment:
 
    -  Copy the license key.
 
-1. Add the New Relic license key to an environment using an environment variable, or [add it from the Magento Admin]:
+1. Add the New Relic license key to an environment using the Magento Cloud CLI, or [add it from the Magento Admin]:
 
    -  Change to the environment that needs the license key.
 
