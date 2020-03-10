@@ -260,6 +260,8 @@ If you want to modify the thresholds of an alert condition, create a new alert p
 {:.bs-callout-tip}
 See [Alerts concepts and workflow] in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
 
+<!-- link definitions -->
+
 [1]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [2]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/add-update-users#adding_users
 [3]: https://account.newrelic.com/accounts/1311131/users
