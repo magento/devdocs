@@ -195,3 +195,7 @@ m1xgithuburl: https://github.com/magento/devdocs-m1/tree/master
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/
+
+# Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+
+downloads: https://devdocs.magento.com/download
