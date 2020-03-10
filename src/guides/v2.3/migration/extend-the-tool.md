@@ -87,24 +87,55 @@ In addition to the Map Step, there are other steps in the `config.xml` file whic
 
 Unlike the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step), these steps scan a predefined list of tables instead of all tables.
 
+For the major data format and structure changes you can create a custom step.
+
 ### Create custom steps
 
-Using the same "GreatBlog" example, suppose the extension contains three tables in Magento 1, but was redesigned to have only one table in Magento 2. To migrate all data from multiple tables to a single table, you can create a custom step in the `config.xml` file. For example:
+Using the same "GreatBlog" example, suppose the extension has one table in Magento 1, but was redesigned to have two tables in Magento 2. 
+
+In Magento 1 there was a single `greatblog_post` table:
+
+| Field     | Type     |
+|-----------|----------|
+| post_id   | INT      |
+| title     | VARCHAR  |
+| content   | TEXT     |
+| author_id | SMALLINT |
+| tags      | TEXT     | 
+
+In Magento 2 a new table for tags `greatblog_post_tags` was introduced:
+
+| Field      | Type     |
+|------------|----------|
+| post_id    | INT      |
+| tag        | VARCHAR  |
+| sort_order | SMALLINT |
+
+Magento 2 `greatblog_post` table now looks like this:
+
+| Field     | Type     |
+|-----------|----------|
+| post_id   | INT      |
+| title     | VARCHAR  |
+| content   | TEXT     |
+| author_id | SMALLINT |
+
+To migrate all data from old tables structure to a new one you can create a custom step in the `config.xml` file. For example:
 
 ```xml
 <steps mode="data">
     ...
     <step title="GreatBlog Step">
-        <integrity>Migration\Step\GreatBlog\Integrity</integrity>
-        <data>Migration\Step\GreatBlog\Data</data>
-        <volume>Migration\Step\GreatBlog\Volume</volume>
+        <integrity>Vendor\Migration\Step\GreatBlog\Integrity</integrity>
+        <data>Vendor\Migration\Step\GreatBlog\Data</data>
+        <volume>Vendor\Migration\Step\GreatBlog\Volume</volume>
     </step>
 </steps>
 <steps mode="delta">
     ...
     <step title="GreatBlog Step">
-        <delta>Migration\Step\GreatBlog\Delta</delta>
-        <volume>Migration\Step\GreatBlog\Volume</volume>
+        <delta>Vendor\Migration\Step\GreatBlog\Delta</delta>
+        <volume>Vendor\Migration\Step\GreatBlog\Volume</volume>
     </step>
 </steps>
 ```
@@ -121,7 +152,245 @@ Steps can include four types of classes:
  {:.bs-callout-info}
 Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#configuration), [Step internals]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-internals), [Stages]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#step-stages) and [Running modes]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#running-modes) for more information.
 
-Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
+Complex SQL queries can be assembled inside these classes to fetch and migrate data. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
+
+For Integrity checking we define additional map file in `config.xml`. It will be used to verify that tables structure is like we expect.
+
+```xml
+<config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+        xs:noNamespaceSchemaLocation="urn:magento:module:Magento_DataMigrationTool:etc/config.xsd">
+    ...
+    <options>
+        ...
+        <greatblog_map_file>app/code/Vendor/Migration/etc/opensource-to-opensource/map-greatblog.xml</greatblog_map_file>
+        ...
+    </options>
+</config>
+```
+
+Map file `map-greatblog.xml`:
+
+```xml
+<map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+     xs:noNamespaceSchemaLocation="urn:magento:module:Magento_DataMigrationTool:etc/map.xsd">
+    <source>
+        <field_rules>
+            <ignore>
+                <field>greatblog_post.tags</field>
+            </ignore>
+        </field_rules>
+    </source>
+    <destination>
+        <document_rules>
+            <ignore>
+                <document>greatblog_post_tags</document>
+            </ignore>
+        </document_rules>
+    </destination>
+</map>
+```
+
+Integrity checking class extends `Migration\App\Step\AbstractIntegrity` and contains `perform` method where we verify tables structure:
+
+```php
+class Integrity extends \Migration\App\Step\AbstractIntegrity
+{
+    ...
+    /**
+     * Integrity constructor.
+     * @param ProgressBar\LogLevelProcessor $progress
+     * @param Logger $logger
+     * @param Config $config
+     * @param ResourceModel\Source $source
+     * @param ResourceModel\Destination $destination
+     * @param MapFactory $mapFactory
+     * @param string $mapConfigOption
+     */
+    public function __construct(
+        ProgressBar\LogLevelProcessor $progress,
+        Logger $logger,
+        Config $config,
+        ResourceModel\Source $source,
+        ResourceModel\Destination $destination,
+        MapFactory $mapFactory,
+        $mapConfigOption = 'greatblog_map_file'
+    ) {
+        parent::__construct($progress, $logger, $config, $source, $destination, $mapFactory, $mapConfigOption);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function perform()
+    {
+        $this->progress->start($this->getIterationsCount());
+        $this->check(['greatblog_post'], MapInterface::TYPE_SOURCE);
+        $this->check(['greatblog_post', 'greatblog_post_tags'], MapInterface::TYPE_DEST);
+        $this->progress->finish();
+        return $this->checkForErrors();
+    }
+    ...
+}
+```
+
+Next you will need to create a class for processing and saving data to Magento 2 database `Vendor\Migration\Step\GreatBlog\Data`:
+
+```php
+class Data implements StageInterface
+{
+    ...
+    /**
+     * Data constructor.
+     *
+     * @param ProgressBar\LogLevelProcessor $progress
+     * @param ResourceModel\Source $source
+     * @param ResourceModel\Destination $destination
+     * @param ResourceModel\RecordFactory $recordFactory
+     * @param RecordTransformerFactory $recordTransformerFactory
+     * @param MapFactory $mapFactory
+     */
+    public function __construct(
+        ProgressBar\LogLevelProcessor $progress,
+        ResourceModel\Source $source,
+        ResourceModel\Destination $destination,
+        ResourceModel\RecordFactory $recordFactory,
+        RecordTransformerFactory $recordTransformerFactory,
+        MapFactory $mapFactory
+    ) {
+        $this->progress = $progress;
+        $this->destination = $destination;
+        $this->recordFactory = $recordFactory;
+        $this->source = $source;
+        $this->recordTransformerFactory = $recordTransformerFactory;
+        $this->map = $mapFactory->create('greatblog_map_file');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function perform()
+    {
+        $sourceDocName = 'greatblog_post';
+        $sourceDocument = $this->source->getDocument($sourceDocName);
+        $destinationDocName = 'greatblog_post';
+        $destinationDocument = $this->destination->getDocument($destinationDocName);
+        /** @var \Migration\RecordTransformer $recordTransformer */
+        $recordTransformer = $this->recordTransformerFactory->create(
+            [
+                'sourceDocument' => $sourceDocument,
+                'destDocument'   => $destinationDocument,
+                'mapReader'      => $this->map
+            ]
+        );
+        $recordTransformer->init();
+
+        $this->progress->start($this->source->getRecordsCount($sourceDocName));
+        $pageNumber = 0;
+        while (!empty($items = $this->source->getRecords($sourceDocName, $pageNumber))) {
+            $pageNumber++;
+            $recordsToSave = $destinationDocument->getRecords();
+            foreach ($items as $item) {
+                $sourceRecord = $this->recordFactory->create(
+                    ['document' => $sourceDocument, 'data' => $item]
+                );
+                $destinationRecord = $this->recordFactory->create(['document' => $destinationDocument]);
+                $recordTransformer->transform($sourceRecord, $destinationRecord);
+                $recordsToSave->addRecord($destinationRecord);
+            }
+            $this->destination->saveRecords($destinationDocName, $recordsToSave);
+            
+            $tags = $this->getTags($items);
+            $this->destination->saveRecords('greatblog_post_tags', $tags);
+            $this->progress->advance();
+        }
+
+        $this->progress->finish();
+        return true;
+    }
+    ...
+}    
+```
+
+In a Volume class we check if data have been fully migrated `Vendor\Migration\Step\GreatBlog\Volume`:
+
+```php
+class Volume extends AbstractVolume
+{
+    ...
+    /**
+     * @inheritdoc
+     */
+    public function perform()
+    {
+        $documentName = 'greatblog_post';
+        $sourceCount = $this->source->getRecordsCount($documentName);
+        $destinationCount = $this->destination->getRecordsCount($documentName);
+        if ($sourceCount != $destinationCount) {
+            $this->errors[] = sprintf(
+                'Mismatch of entities in the document: %s Source: %s Destination: %s',
+                $documentName,
+                $sourceCount,
+                $destinationCount
+            );
+        }
+
+        return $this->checkForErrors(Logger::ERROR);
+    }
+    ...
+}
+```
+
+To add delta migration functionality you also need to add a new group to `deltalog.xml`. 
+In group specify name of tables that will be checked for changes:
+
+```xml
+<groups>
+    ...
+    <group name="delta_greatblog">
+        <document key="post_id">greatblog_post</document>
+    </group>
+</groups>
+```
+
+Then create `Delta` class `Vendor\Migration\Step\GreatBlog\Delta` that extends `Migration\App\Step\AbstractDelta`:
+
+```php
+class Delta extends AbstractDelta
+{
+    /**
+     * @var string
+     */
+    protected $mapConfigOption = 'greatblog_map_file';
+
+    /**
+     * @var string
+     */
+    protected $groupName = 'delta_greatblog';
+
+    /**
+     * @inheritDoc
+     */
+    public function perform()
+    {
+        $sourceDocumentName = 'greatblog_post';
+        $idKeys = ['post_id'];
+        $page = 0;
+        while (!empty($items = $this->source->getChangedRecords($sourceDocumentName, $idKeys, $page++))) {
+            $this->destination->deleteRecords(
+                'greatblog_post_tags',
+                $idKeys,
+                $items
+            );
+
+            $tags = $this->getTags($items);
+            $this->destination->saveRecords('greatblog_post_tags', $tags);
+        }
+
+        //parent class will take care of greatblog_post records automatically
+        return parent::perform();
+    }
+}
+```
 
 ## Prohibited extension methods
 
