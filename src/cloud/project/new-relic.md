@@ -83,15 +83,15 @@ Updating the environment configuration triggers a redeployment, which takes your
 {:.procedure}
 Prerequisites
 
--  Log in credentials for the Magento Cloud project account page, or for the New Relic account associated with your project
+-  Log in credentials for the Magento account page, or for the New Relic account associated with your project
 -  [Admin level access]({{site.baseurl}}/cloud/project/user-admin.html) to the Starter environments to configure, or credentials to access the [Magento Admin](https://docs.magento.com/m2/ce/user_guide/system/permissions.html) for the environment.
 
 {:.procedure}
 To configure New Relic on a Starter environment:
 
-1. Find your New Relic license key from your Magento account page, or [from your New Relic account page]:
+1. Find your New Relic license key from your Magento Cloud account page, or [from your New Relic account page]:
 
-   -  Open your [Magento account page].
+   -  Open your [account page].
 
    -  On the _Projects_ tab, find your project.
 
