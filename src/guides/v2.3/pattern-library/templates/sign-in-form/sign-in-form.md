@@ -117,6 +117,6 @@ The module container should be centered in the browser and should be some percen
 
 ## Assets
 
-[Download Sign-In form source]({{ site.baseurl }}/download/magento-sign-in.psd).
+[Download Sign-In form source]({{ site.downloads }}/magento-sign-in.psd).
 
 For any questions or additional information about the sign-in module please contact the Magento User Experience and Product Design team.

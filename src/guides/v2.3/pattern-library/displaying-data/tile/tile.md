@@ -66,4 +66,4 @@ For specific details concerning styling including fonts, colors and effects and 
 
 ## Assets
 
-Download [PhotoShop source file]({{ site.baseurl }}/download/tile-pattern-styles.psd).
+Download [PhotoShop source file]({{ site.downloads }}/tile-pattern-styles.psd).

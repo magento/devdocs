@@ -326,6 +326,6 @@ Left/Right margin spacing should not be less than 10px
 
 ## Assets
 
-[Download Button PSD source]({{ site.baseurl }}/download/magento-buttons.psd).
+[Download Button PSD source]({{ site.downloads }}/magento-buttons.psd).
 
 Please reach out to the Magento UX Design team if you need anything else.

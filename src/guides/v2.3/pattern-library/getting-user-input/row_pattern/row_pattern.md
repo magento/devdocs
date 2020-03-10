@@ -69,4 +69,4 @@ Follow this form control accessibility guideline: [http://www.w3.org/TR/WCAG10-H
 
 ## Assets
 
-[Download Row Pattern ZIP file]({{ site.baseurl }}/download/Magento_Row_pattern_src.zip).
+[Download Row Pattern ZIP file]({{ site.downloads }}/Magento_Row_pattern_src.zip).

@@ -85,6 +85,6 @@ Refer to Messaging Pattern for final styling on error message.
 
 ## Assets
 
-[Download Progress Indicator PSD and GIF source]({{ site.baseurl }}/download/magento-progressbar.zip).
+[Download Progress Indicator PSD and GIF source]({{ site.downloads }}/magento-progressbar.zip).
 
 For any other resources, please contact the Magento UX Design Team.
