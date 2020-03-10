@@ -56,4 +56,4 @@ In some unique instances a table may have "Quick Filters" associated with it. Th
 
 ## Assets
 
-Download [ZIP](https://devdocs.magedevteam.com/1547/download/filter-data-table.zip) of PhotoShop source files.
+Download [ZIP]({{ site.baseurl }}/download/filter-data-table.zip) of PhotoShop source files.

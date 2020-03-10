@@ -79,4 +79,4 @@ In the browser upload window, standard behavior should be kept.
 
 ## Assets
 
-[Download Image Uploader PSD source](https://devdocs.magedevteam.com/1547/download/Image_Video_Uploader.psd).
+[Download Image Uploader PSD source]({{ site.baseurl }}/download/Image_Video_Uploader.psd).

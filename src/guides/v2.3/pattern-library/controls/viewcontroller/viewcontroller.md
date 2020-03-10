@@ -49,6 +49,6 @@ The controller should be accessible by keyboard and have a voice over for screen
 
 ## Assets
 
-[Download View Controller PSD source](https://devdocs.magedevteam.com/1547/download/magento-viewcontrol.psd)
+[Download View Controller PSD source]({{ site.baseurl }}/download/magento-viewcontrol.psd)
 
 Please reach out to the Magento UX Design team if you need anything else.

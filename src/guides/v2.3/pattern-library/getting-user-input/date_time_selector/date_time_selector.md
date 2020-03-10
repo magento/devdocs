@@ -196,7 +196,7 @@ When the datepicker is active a calendar day of the week should always have focu
 
 ## Assets
 
-[Download Date&Time PSD source](https://devdocs.magedevteam.com/1547/download/date&timepicker.psd).
+[Download Date&Time PSD source]({{ site.baseurl }}/download/date&timepicker.psd).
 
 ## Implementation
 

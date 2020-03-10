@@ -42,4 +42,4 @@ User should be able to access this control via their keyboard and it should be l
 
 ## Assets
 
-[Download Default Config PSD source](https://devdocs.magedevteam.com/1547/download/defaultconfig.psd).
+[Download Default Config PSD source]({{ site.baseurl }}/download/defaultconfig.psd).

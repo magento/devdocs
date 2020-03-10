@@ -193,6 +193,6 @@ Follow this guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://ww
 
 ## Assets
 
-[Download Forms Patterns source (PSD) and PNGs](https://devdocs.magedevteam.com/1547/download/forms_pattern.zip).
+[Download Forms Patterns source (PSD) and PNGs]({{ site.baseurl }}/download/forms_pattern.zip).
 
 For any other resources, please contact the Magento UX Design Team.

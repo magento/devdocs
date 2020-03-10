@@ -68,6 +68,6 @@ Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http:/
 
 ## Assets
 
-[Download Links PSD source](https://devdocs.magedevteam.com/1547/download/magento-links.psd).
+[Download Links PSD source]({{ site.baseurl }}/download/magento-links.psd).
 
 Please reach out to the Magento UX Design team if you need anything else.

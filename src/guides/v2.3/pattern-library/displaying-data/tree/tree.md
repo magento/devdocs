@@ -196,4 +196,4 @@ The "add child" button should always have more importance than the "add parent" 
 
 ## Assets
 
-Download [PhotoShop source file](https://devdocs.magedevteam.com/1547/download/magento-tree-pattern.zip).
+Download [PhotoShop source file]({{ site.baseurl }}/download/magento-tree-pattern.zip).

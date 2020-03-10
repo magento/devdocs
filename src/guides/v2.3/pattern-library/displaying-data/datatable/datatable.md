@@ -459,4 +459,4 @@ This new version of the data-table will fully support the existing Magento data-
 
 ## Assets
 
-Download [ZIP](https://devdocs.magedevteam.com/1547/download/datatable-pattern-styles.zip) of PhotoShop source files.
+Download [ZIP]({{ site.baseurl }}/download/datatable-pattern-styles.zip) of PhotoShop source files.

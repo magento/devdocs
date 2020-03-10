@@ -64,6 +64,6 @@ This is used to clearly separate information for users to easily digest.
 
 ## Assets
 
-[Download Static Content Container PSD source](https://devdocs.magedevteam.com/1547/download/magento-static-content-container.psd)
+[Download Static Content Container PSD source]({{ site.baseurl }}/download/magento-static-content-container.psd)
 
 Please reach out to the Magento UX Design team if you need anything else.
