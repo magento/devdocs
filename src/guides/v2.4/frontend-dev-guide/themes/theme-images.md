@@ -1,1 +1,0 @@
-../../../v2.3/frontend-dev-guide/themes/theme-images.md
