@@ -190,7 +190,7 @@ Map file `map-greatblog.xml`:
 </map>
 ```
 
-Integrity checking class extends `Migration\App\Step\AbstractIntegrity` and contains `perform` method where we verify tables structure:
+Integrity checking class `Vendor\Migration\Step\GreatBlog\Integrity` extends `Migration\App\Step\AbstractIntegrity` and contains `perform` method where we verify tables structure:
 
 ```php
 class Integrity extends \Migration\App\Step\AbstractIntegrity
@@ -236,7 +236,7 @@ class Integrity extends \Migration\App\Step\AbstractIntegrity
 Next you will need to create a class for processing and saving data to Magento 2 database `Vendor\Migration\Step\GreatBlog\Data`:
 
 ```php
-class Data implements StageInterface
+class Data implements \Migration\App\Step\StageInterface
 {
     ...
     /**
@@ -311,10 +311,10 @@ class Data implements StageInterface
 }
 ```
 
-In a Volume class we check if data have been fully migrated `Vendor\Migration\Step\GreatBlog\Volume`:
+In a Volume class `Vendor\Migration\Step\GreatBlog\Volume` we check if data have been fully migrated `Vendor\Migration\Step\GreatBlog\Volume`:
 
 ```php
-class Volume extends AbstractVolume
+class Volume extends \Migration\App\Step\AbstractVolume
 {
     ...
     /**
@@ -355,7 +355,7 @@ In group specify name of tables that will be checked for changes:
 Then create `Delta` class `Vendor\Migration\Step\GreatBlog\Delta` that extends `Migration\App\Step\AbstractDelta`:
 
 ```php
-class Delta extends AbstractDelta
+class Delta extends \Migration\App\Step\AbstractDelta
 {
     /**
      * @var string
@@ -391,6 +391,10 @@ class Delta extends AbstractDelta
     }
 }
 ```
+
+After the custom step implementation provided in the examples, the system will take data from the single Magento 1 table,
+process it using `Vendor\Migration\Step\GreatBlog\Data` class and store the data in two Magento 2 tables. New and changed
+records will be delivered on delta migration using `Vendor\Migration\Step\GreatBlog\Delta` class.
 
 ## Prohibited extension methods
 
