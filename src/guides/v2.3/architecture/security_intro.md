@@ -6,7 +6,7 @@ menu_title: Security
 menu_order:
 ---
 
-The security of your data and digital experiences is our priority. To better protect Adobe Magento Commerce installations from the physical layer up, we have implemented hundreds of processes and controls to help us comply with [industry-accepted standards](1), regulations, and certifications. To help protect installations from the software layer down, we build in security measures that are based on the [Adobe Secure Product Lifecyle][2].
+The security of your data and digital experiences is our priority. To better protect Adobe Magento Commerce installations from the physical layer up, we have implemented hundreds of processes and controls to help us comply with [industry-accepted standards][1], regulations, and certifications. To help protect installations from the software layer down, we build in security measures that are based on the [Adobe Secure Product Lifecyle][2].
 
 Although there is no single way to eliminate all security risks, there are many steps you can take to harden your installations and make them a less attractive target for bad actors. The [Adobe Magento Commerce Security Best Practices Guide][3] offers insight and practical guidelines to help protect Adobe Magento Commerce installations from security incidents.
 
