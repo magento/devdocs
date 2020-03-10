@@ -22,7 +22,7 @@ For the 2.4 release, Magento teams are working toward completing GraphQL coverag
 
 *  Order history for logged in customers
 *  Reorders
-*  Replace product-specific mutations that add products to a card with a single mutation that can handle all product types
+*  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
 *  Gift wrapping and messages
 *  Saved payment methods
 *  Inventory Management store pickups
