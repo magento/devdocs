@@ -29,7 +29,6 @@ html-proofer:
   # Ignore entirely the files which pathname matches a specified pattern 
   :file_ignore:
     - !ruby/regexp /guides\/v2\.3\/mrg/
-    - !ruby/regexp /\/download\//
 
   :internal_domains:
     - devdocs.magento.com
@@ -37,4 +36,5 @@ html-proofer:
   # Ignore any link that includes a specified pattern
   :url_ignore:
   - !ruby/regexp /guides\/v2\.2/
+  - !ruby/regexp /\/download\//
   
