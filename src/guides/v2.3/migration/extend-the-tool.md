@@ -91,7 +91,7 @@ For the major data format and structure changes you can create a custom step.
 
 ### Create custom steps
 
-Using the same "GreatBlog" example, suppose the extension has one table in Magento 1, but was redesigned to have two tables in Magento 2. 
+Using the same "GreatBlog" example, suppose the extension has one table in Magento 1, but was redesigned to have two tables in Magento 2.
 
 In Magento 1 there was a single `greatblog_post` table:
 
@@ -101,7 +101,7 @@ In Magento 1 there was a single `greatblog_post` table:
 | title     | VARCHAR  |
 | content   | TEXT     |
 | author_id | SMALLINT |
-| tags      | TEXT     | 
+| tags      | TEXT     |
 
 In Magento 2 a new table for tags `greatblog_post_tags` was introduced:
 
@@ -298,7 +298,7 @@ class Data implements StageInterface
                 $recordsToSave->addRecord($destinationRecord);
             }
             $this->destination->saveRecords($destinationDocName, $recordsToSave);
-            
+
             $tags = $this->getTags($items);
             $this->destination->saveRecords('greatblog_post_tags', $tags);
             $this->progress->advance();
@@ -308,7 +308,7 @@ class Data implements StageInterface
         return true;
     }
     ...
-}    
+}
 ```
 
 In a Volume class we check if data have been fully migrated `Vendor\Migration\Step\GreatBlog\Volume`:
@@ -340,7 +340,7 @@ class Volume extends AbstractVolume
 }
 ```
 
-To add delta migration functionality you also need to add a new group to `deltalog.xml`. 
+To add delta migration functionality you also need to add a new group to `deltalog.xml`.
 In group specify name of tables that will be checked for changes:
 
 ```xml
