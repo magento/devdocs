@@ -39,7 +39,7 @@ The following call returns all details of a store's configuration.
     secure_base_static_url
     secure_base_media_url
     store_name
-    sendFriend {
+    send_friend {
       enabled_for_customers
       enabled_for_guests
     }
@@ -70,7 +70,7 @@ The following call returns all details of a store's configuration.
       "secure_base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
       "secure_base_media_url": "http://magento2.vagrant193/pub/media/",
       "store_name": "My Store",
-      "sendFriend": {
+      "send_friend": {
         "enabled_for_customers": true,
         "enabled_for_guests": false
       }
@@ -238,7 +238,7 @@ Attribute |  Data Type | Description | Example
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
-`sendFriend` | SendFriendConfiguration | Email to a Friend configuration | Not applicable
+`send_friend` | SendFriendConfiguration | Email to a Friend configuration | Not applicable
 `store_name` | String | The store's name | `My Store`
 `timezone` | String | The store's time zone | `America/Chicago`
 `website_id` | Integer | The ID number assigned to the parent website | `1`
