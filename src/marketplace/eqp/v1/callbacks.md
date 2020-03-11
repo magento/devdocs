@@ -11,7 +11,7 @@ API Callback URLs can only be registered through the API.
 
 Whenever an update occurs to a Product or a File, a JSON API request will be sent to the registered callback URL.
 
-## Registering a Callback
+## Register a callback
 
 Callbacks are registered using the [User Profile](users.html) API.
 
@@ -22,7 +22,8 @@ Callbacks are registered using the [User Profile](users.html) API.
 |username|string|Basic authorization username|
 |password|string|Basic authorization password - never returned in the GET response|
 
-**Request**
+**Request:**
+
 ```bash
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
@@ -31,7 +32,8 @@ curl -X PUT \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
 
-**Response**
+**Response:**
+
 ```json
 {
     ...
@@ -53,20 +55,22 @@ Callbacks are only sent using HTTPS to ensure the security and integrity of the 
 
 For the callback registered in the example above, the following
 header will be constructed and sent in every callback request:
+
 ```http
 Authorization: Basic a2V5OnNlY3JldA==
 ```
 
 ## Callback Structures
 
-Each event will have a unique code provided in the callback_event field.
-The update_info object will have a different structure depending on the event code.
-Resource IDs are provided in the update_info structure so that additional
+Each event has a unique code provided in the `callback_event` field.
+The `update_info` object has a different structure, depending on the event code.
+Resource IDs are provided in the `update_info` structure so that additional
 information can be requested using the REST APIs for those resources.
 
 ### File Upload Callbacks
 
 Malware scan results are sent out for [File](files.html) resources when the asynchronous scan completes.
+
 ```json
 {
     "callback_event": "malware_scan_complete",
@@ -78,7 +82,9 @@ Malware scan results are sent out for [File](files.html) resources when the asyn
 ```
 
 ### Package Callbacks
+
 EQP status updates are sent out for [Package](packages.html) resources when the product's EQP state is modified.
+
 ```json
 {
     "callback_event": "eqp_status_update",
