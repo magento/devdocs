@@ -96,7 +96,7 @@ To enable Fastly CDN caching in Staging and Production:
 
    If the test fails, verify that the correct service ID and API token values match the credentials for the current environment.
 
-   If the test fails again, submit a support ticket or contact your Technical Account Manager. For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
+   If the test fails again, submit a support ticket or contact your Dedicated Customer Technical Advisor (CTA). For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
  {:.bs-callout-info}
 If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
