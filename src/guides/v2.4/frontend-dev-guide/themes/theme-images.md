@@ -126,17 +126,17 @@ Each image assigned to a product must be resized in accordance with image [metad
 Command usage:
 
 ```bash
-php <magento install dir>/bin/magento catalog:images:resize
+bin/magento catalog:images:resize
 ```
 
-This command supports synchronous (default) and asynchronous mode.  Asynchronous means that images will not be processed at once during command execution. Via magento queue functionality these images will be scheduled for resizing and then processed in the background. To enable asynchronous mode use `-a` or `--async` option.
+This command supports synchronous (default) and asynchronous modes.  Asynchronous means that images will not be processed immediately on command execution. Using the Magento queue functionality, these images will be scheduled for resizing and then processed in the background. To enable asynchronous mode, use the `-a` or `--async` option.
 
-The message `Product images resized successfully` displays to confirm the command succeeded.
+The message `Product images resized successfully` displays after the command has finished.
 
-To increase resize speed in the asynchronous mode you may manually run several instances of consumers with the command for each instance:
+To speed up the job while in asynchronous mode, you may manually run several instances of a consumer with the command in each instance:
 
 ```bash
-php <magento install dir>/bin/magento queue:consumer:start media.storage.catalog.image.resize
+bin/magento queue:consumer:start media.storage.catalog.image.resize
 ```
 
 ## Configure variables in view.xml {#view_xml_vars}
