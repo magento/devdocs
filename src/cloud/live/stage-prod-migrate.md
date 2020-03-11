@@ -189,8 +189,6 @@ To transfer media from remote-to-remote environments directly you must enable ss
 {:.procedure}
 To migrate a database:
 
-
-
 1. Create a database dump file in `gzip` format:
 
    For Starter environments and Pro Integration environments:
@@ -198,8 +196,7 @@ To migrate a database:
    ```bash
    magento-cloud db:dump --gzip --relationship=database --file=database.sql.gz
    ```
- 
-
+   
 1. Import the database dump:
 
    The following example references the gzip file created by the database dump operation:
@@ -207,7 +204,7 @@ To migrate a database:
    ```bash
    zcat < database.sql.gz | magento-cloud sql --relationship=database
    ```
-
+   
 ### Troubleshooting the database migration
 
 If you encounter the following error, you can try to create a database dump with the DEFINER replaced:
