@@ -25,8 +25,8 @@ XSS vulnerabilities can be prevented by validating and sanitizing user input as 
 Any request data can be manipulated by attackers and can contain malicious values such as:
 
 -  form fields filled with control characters ("&lt;", ">" etc)
--  headers containg false IDs
--  URIs contaings fake parts/query parameters
+-  headers contains false IDs
+-  URIs contains fake parts/query parameters
 -  tampered cookies
 
 To combat this developers, must validate any value coming in from requests.
@@ -43,13 +43,16 @@ In general - do not trust any dynamic values.
 
 #### PHTML templates
 
-An 'Escaper' class is provided for .phtml templates and PHP classes responsible for generating HTML. It contains HTML sanitization methods for a variety of contexts.
+The `\Magento\Framework\Escaper` class is provided for `.phtml` templates and PHP classes responsible for generating HTML. It contains HTML sanitization methods for a variety of contexts.
 
-The `$block` local variable available inside .phtml templates duplicates these methods.
+The `$escaper` local variable is available inside the .phtml templates. See the [product listing template] as example
+of `$escaper` usage in .phtml templates.
+
+[product listing template]: https://github.com/magento/magento2/blob/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
 
 See [Template guide](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-overview.html) to read more about templates in Magento.
 
-When using the Escaper:
+When using the `\Magento\Framework\Escaper` or `$escaper`:
 
 -  If a method indicates that the content is escaped, do not escape: getTitleHtml(), getHtmlTitle() (the title is ready for HTML output)
 -  Type casting and the php function `count()` do not need escaping (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
@@ -62,24 +65,26 @@ When using the Escaper:
 ```php
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
-<?php echo $block->escapeHtml($block->getTitle()) ?>
+<?php echo $escaper->escapeHtml($block->getTitle()) ?>
 <?php echo (int)$block->getId() ?>
 <?php echo count($var); ?>
 <?php echo 'some text' ?>
 <?php echo "some text" ?>
-<a href="<?php echo $block->escapeUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?></a>
+<a href="<?php echo $escaper->escapeUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?></a>
 ```
 
 **When to use Escaper methods:**
 
 **Case**: JSON inside an HTML attribute
+
 **Escaper method**: escapeHtmlAttr
 
 ```php
-<div data-bind='settings: <?= $block->escapeHtmlAttr($myJson) ?>'></div>
+<div data-bind='settings: <?= $escaper->escapeHtmlAttr($myJson) ?>'></div>
 ```
 
 **Case**: JSON inside script tag
+
 **Escaper method**: _no sanitization needed_
 
 ```php
@@ -89,6 +94,7 @@ let settings = <?= $myJson ?>
 ```
 
 **Case**: HTML tag content that should not contain HTML
+
 **Escaper method**: escapeHtml
 
 You can pass in an optional array of allowed tags that will not be escaped.
@@ -98,52 +104,56 @@ If a tag is allowed, the following attributes will not be escaped: `id`, `class`
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 
 ```php
- <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
+ <span class="label"><?php echo $escaper->escapeHtml($block->getLabel()) ?></span>
   // Escaping translation
   <div id='my-element'>
-      <?php echo $block->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?>
+      <?php echo $escaper->escapeHtml(__('Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginUrl(), $block->getCreateAccountUrl()), ['a']) ?>
   </div>
 ```
 
 **Case**: URL inside certain HTML attributes
+
 **Escaper method**: escapeUrl
 
 Certain attributes like `a.href` accept URIs of various types and must be sanitized.
 
 ```php
-<a href="<?= $block->escapeUrl($myUrl) ?>">Click me</a>
-<div attr-js-extracts="<?= $block->escapeHtmlAttr($myOtherUrl) ?>"></div>
+<a href="<?= $escaper->escapeUrl($myUrl) ?>">Click me</a>
+<div attr-js-extracts="<?= $escaper->escapeHtmlAttr($myOtherUrl) ?>"></div>
 ```
 
 **Case**: All JavaScript inside attributes must be escaped by escapeJs before escapeHtmlAttr:
+
 **Escaper method**: escapeJS
 
 ```php
 <div
-    onclick="<?= $block->escapeHtmlAttr('handler("' .$block->escapeJs($aString) .'", ' .$block->escapeJs($aVar) .')') ?>">
+    onclick="<?= $escaper->escapeHtmlAttr('handler("' . $escaper->escapeJs($aString) . '", ' . $escaper->escapeJs($aVar) .')') ?>">
     My DIV
 </div>
 ```
 
 **Case**: JavaScript string that must not contain JS/HTML
+
 **Escaper method**: escapeJS
 
 ```php
 <script>
-let phrase = "Hi, my name is <?= $block->escapeJs($myName) ?>";
+let phrase = "Hi, my name is <?= $escaper->escapeJs($myName) ?>";
 //Do not use HTMl context methods like escapeUrl
-let redirectUrl = "<?= $block->escapeJs($myUrl) ?>";
+let redirectUrl = "<?= $escaper->escapeJs($myUrl) ?>";
 location.href = redirectUrl;
 </script>
 ```
 
 **Case**: JavaScript variable that must not contain JS/HTML
+
 **Escaper method**: escapeJS
 
 ```php
 <script>
-let <?= $block->escapeJs($dynamicVariable) ?> = <?= $myJson ?>;
-settings.<?= $block->escapeJs($myProperty) ?> = true;
+let <?= $escaper->escapeJs($dynamicVariable) ?> = <?= $myJson ?>;
+settings.<?= $escaper->escapeJs($myProperty) ?> = true;
 </script>
 ```
 
