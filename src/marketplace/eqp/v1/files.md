@@ -103,9 +103,11 @@ with a boundary string of `UNIQUE_BOUNDARY_TOKEN` is shown below:
 
  {:.bs-callout-info}
 The boundary marker must be part of the request **Content-Type** header and it must be a single line with no line breaks.
+
 ```http
 Content-Type: multipart/form-data; boundary=UNIQUE_BOUNDARY_TOKEN
 ```
+
 For more info on multipart/form-data requests, see the [IETF specification](https://tools.ietf.org/html/rfc2046#section-5.1)
 
 ```text
