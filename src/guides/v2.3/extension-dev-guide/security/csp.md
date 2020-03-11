@@ -25,11 +25,7 @@ accommodate different use cases. Magento also permits configuring unique CSPs fo
 
 CSP can work in two modes:
 
-*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode is useful
-for debugging. By default, CSP violations are written to the browser console, but they can be configured to be 
-reported to an endpoint as an HTTP request to collect logs. There are a number of services that will collect, 
-store, and sort your store's CSP violations reports for you.
-
+*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode is useful for debugging. By default, CSP violations are written to the browser console, but they can be configured to be reported to an endpoint as an HTTP request to collect logs. There are a number of services that will collect, store, and sort your store's CSP violations reports for you.
 *  `restrict mode` - In this mode, Magento acts on any policy violations.
 
 ## Default configuration
@@ -111,11 +107,10 @@ Policy name | Description
 `script-src` |
 `style-src` |
 
-
 ### Add a domain to the whitelist
 
 You can add a domain to the whitelist for a policy (like _script-src, style-src, font-src_ and others) by
-adding a `csp_whitelist.xml` to your custom module's `etc` folder. 
+adding a `csp_whitelist.xml` to your custom module's `etc` folder.
 
 ```xml
 <?xml version="1.0"?>
@@ -282,7 +277,7 @@ class Mypage extends \Magento\Framework\App\Action\Action implements \Magento\Cs
 }
 ```
 
-Don't worry about defining other policy options that you don't care about in the context like _unsafe-inline_ - same
+Do not worry about defining other policy options that you do not care about in the context like _unsafe-inline_ - same
 policy options read from config will be merged later.
 
 ## Conclusion
