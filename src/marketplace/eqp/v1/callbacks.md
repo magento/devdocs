@@ -7,7 +7,7 @@ Multiple steps of the EQP process take time to complete. The results of these st
 Rather than having to continuously poll for updates, you can register an API callback URL in the user profile.
 
  {:.bs-callout-info}
-API Callback URLs can only be registered through the API
+API Callback URLs can only be registered through the API.
 
 Whenever an update occurs to a Product or a File, a JSON API request will be sent to the registered callback URL.
 
@@ -48,8 +48,7 @@ curl -X PUT \
 
 ## Authentication
 
-API callbacks are authenticated using a Basic Authorization header. See [Authorization](auth.html)
-for more information on the structure and formatting of the Basic Authorization header.
+API callbacks are authenticated using a Basic Authorization header.
 Callbacks are only sent using HTTPS to ensure the security and integrity of the request. 
 
 For the callback registered in the example above, the following 
@@ -61,9 +60,9 @@ Authorization: Basic a2V5OnNlY3JldA==
 ## Callback Structures
 
 Each event will have a unique code provided in the callback_event field.
-The update_info structure will have a different structure depending on the event code.
-Unique document IDs are provided in the update_info structure so that additional
-information can be requested using the REST APIs for the resource.
+The update_info object will have a different structure depending on the event code.
+Resource IDs are provided in the update_info structure so that additional
+information can be requested using the REST APIs for those resources.
 
 ### File Upload Callbacks
 
