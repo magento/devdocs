@@ -82,7 +82,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
     </tr>
     <tr>
-      <td>Dedicated Customer Technical Advisor (CTA)</td>
+      <td>A dedicated Customer Technical Advisor (CTA)</td>
       <td class="blank"></td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>

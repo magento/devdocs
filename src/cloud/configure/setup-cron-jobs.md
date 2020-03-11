@@ -53,7 +53,7 @@ To review cron configuration on Pro plan environments:
    ```
 
    {:.bs-callout-info}
-   If the `crontab -l` command returns a `Command not found` error, contact your Dedicated Customer Technical Advisor or CSM about enabling the auto-crons self-service configuration option on your {{site.data.var.ece}} project.
+   If the `crontab -l` command returns a `Command not found` error, contact your Customer Technical Advisor or CSM about enabling the auto-crons self-service configuration option on your {{site.data.var.ece}} project.
 
 The following example shows the crontab output for an environment that has only the default crons configuration:
 
