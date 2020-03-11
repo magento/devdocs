@@ -42,7 +42,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
       id
       name
       sku
-      type_id
+      __typename
       ... on GroupedProduct {
         items{
           qty
@@ -50,7 +50,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
           product{
             sku
             name
-            type_id
+            __typename
             url_key
           }
         }
