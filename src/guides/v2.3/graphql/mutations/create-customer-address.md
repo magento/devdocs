@@ -37,7 +37,6 @@ mutation {
     id
     region {
       region
-      region_id
       region_code
     }
     country_code

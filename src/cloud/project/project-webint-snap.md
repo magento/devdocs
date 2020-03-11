@@ -139,10 +139,10 @@ To create a database dump:
 
  {:.bs-callout-info}
 
--  We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--  The command creates an archive in your local project directory called  `dump-<timestamp>.sql.gz`.
--  If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
--  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a `var/dbdump.lock` file to prevent running the command on more than one node.
+-  For Production environments, we recommend completing database dump operations during off-peak hours to minimize service disruptions that occur when the site is in maintenance mode.
+-  The `db-dump` command creates an archive in your remote project directory called  `dump-<timestamp>.sql.gz`.
+-  If an error occurs during the dump operation, the command deletes the dump file to conserve disk space. Review the logs for details (`var/log/cloud.log`).
+-  For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump might not be copied. The command generates a `var/dbdump.lock` file to prevent the command from running on more than one node.
 
 {:.bs-callout-tip}
 If you want to push this data into an environment, see [Migrate data and static files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html).
@@ -151,6 +151,6 @@ If you want to push this data into an environment, see [Migrate data and static 
 
 We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
-If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
+If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks might require database changes.
 
-Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
+Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) to the target environment again. See the [Deployment Process]({{ site.baseurl }}/cloud/reference/discover-deploy.html).
