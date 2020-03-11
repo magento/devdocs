@@ -48,6 +48,7 @@ The process can be summarized as follows:
    If there is nothing in your `<magento_root>/var/page_cache` directory, you have successfully configured Varnish with Magento!
 
 {:.bs-callout-info}
+
 *  Except where noted, you must enter all commands discussed in this topic as a user with `root` privileges.
 *  This topic is written for Varnish on CentOS and Apache 2.4. If you are setting up Varnish in a different environment, some commands may be different. Consult Varnish documentation for more information.
 
