@@ -1,6 +1,7 @@
 ---
 group: product-recommendations
 title: Test Recommendations
+ee_only: True
 ---
 
 Before you deploy recommendations to your production environment, you should test on a non-production environment to ensure everything is working as expected.

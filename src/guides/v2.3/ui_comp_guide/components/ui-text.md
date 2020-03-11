@@ -27,22 +27,22 @@ Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielemen
 
 ### Integrate Text component with Form component
 
-The following example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component:
+The following example integrates the Text component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component and displays the customer's first name in the admin, on the Customer Edit page:
 
 ```xml
 <form>
     ...
     <fieldset>
         ...
-        <text name="text_example" template="ui/form/field">
+        <field name="text_example" formElement="input" sortOrder="10">
             <settings>
-                <label translate="true">Text Field Example</label>
-                <visible>true</visible>
-                <disabled>false</disabled>
                 <elementTmpl>ui/form/element/text</elementTmpl>
-                <value>The text value example</value>
+                <label translate="true">Text Field Example</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.customer.firstname</link>
+                </imports>
             </settings>
-        </text>
+        </field>
     </fieldset>
 </form>
 ```

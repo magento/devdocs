@@ -22,8 +22,8 @@ System integrators can use the data flow diagrams and database information in th
 
 For technical information, see the data flow diagrams and database entity mappings in the Personal Information Reference that applies to each version of Magento that you support.
 
--  [Personal Information Reference (Magento 2.x)]({% link compliance/privacy/pi-data-reference-m2.md %})
--  [Personal Information Reference Magento 1.x)]({% link compliance/privacy/pi-data-reference-m1.md %})
+-  [Personal Information Reference (Magento 2.x)]({{ site.baseurl }}/compliance/privacy/pi-data-reference-m2.html)
+-  [Personal Information Reference Magento 1.x)]({{ site.baseurl }}/compliance/privacy/pi-data-reference-m1.html)
 
 For more information about how Magento helps merchants comply with GDPR, see the following:
 
