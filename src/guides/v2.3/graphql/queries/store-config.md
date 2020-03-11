@@ -71,8 +71,8 @@ The following call returns all details of a store's configuration.
       "secure_base_media_url": "http://magento2.vagrant193/pub/media/",
       "store_name": "My Store",
       "sendFriend": {
-        "enabled_for_customers": 0,
-        "enabled_for_guests": 0
+        "enabled_for_customers": true,
+        "enabled_for_guests": false
       }
     }
   }
