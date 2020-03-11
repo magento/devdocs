@@ -238,11 +238,11 @@ Attribute |  Data Type | Description | Example
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
-`sendFriend` | SendFriendConfiguration | Email to a Friend configuration
+`sendFriend` | SendFriendConfiguration | Email to a Friend configuration | Not applicable
 `store_name` | String | The store's name | `My Store`
 `timezone` | String | The store's time zone | `America/Chicago`
 `website_id` | Integer | The ID number assigned to the parent website | `1`
-`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
+`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
 
 #### SendFriendConfiguration attributes
 
