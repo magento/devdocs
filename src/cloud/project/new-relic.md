@@ -18,7 +18,7 @@ functional_areas:
 
 Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
-On {{site.data.var.ece}} Pro accounts, the Production environment also includes the [New Relic Infrastructure (NRI)][6] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+On {{site.data.var.ece}} Pro accounts, the Production environment also includes the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 {:.bs-callout-info}
 For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request installation.
@@ -30,14 +30,14 @@ When Magento provisions your {{site.data.var.ece}} project, the License Owner re
 An account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
 
 {:.bs-callout-tip}
-Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account][3] for New Relic can add users on behalf of the customer.
+Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account] for New Relic can add users on behalf of the customer.
 
 We recommend adding at least one Admin user to your New Relic account to manage all access, integrations, and tool usage. {{site.data.var.ece}} Project Owners and Admin users can add and remove users from the New Relic account.
 
 {:.procedure}
 To add a user:
 
-1. Using your License Owner New Relic credentials, [log in to New Relic][5].
+1. Using your License Owner New Relic credentials, [log in to New Relic][New Relic login].
 
 1. From the [account dropdown] menu, select **Account settings** > **Account** > **Users and roles**.
 
@@ -111,7 +111,7 @@ To configure New Relic on a Starter environment:
       magento-cloud variable:set php:newrelic.license <newrelic-license-key>
       ```
 
-1. [Log in to New Relic][5] to verify that you can view data from the Magento Cloud environment. (See [Investigate performance](#investigate-performance).)
+1. [Log in to New Relic][New Relic login] to verify that you can view data from the Magento Cloud environment. (See [Investigate performance](#investigate-performance).)
 
 ### Remove New Relic license key from a Starter environment
 
@@ -148,7 +148,7 @@ To remove a license key from an environment:
 
 ## Investigate performance
 
-New Relic connects and monitors your infrastructure and application using PHP agents. After a Cloud environment [connects to New Relic][4], you can log in to your New Relic account to review the data collected by the agent.
+New Relic connects and monitors your infrastructure and application using PHP agents. After a Cloud environment [connects to New Relic](#connect-to-new-relic), you can log in to your New Relic account to review the data collected by the agent.
 
 On the APM Applications page, use the [New Relic APM Overview] to view information about your application.
 
@@ -170,7 +170,7 @@ We recommend reviewing tracked data:
 All collected data details the time spent on an action transmitting data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to those issues.
 
 {:.bs-callout-info}
-You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the [New Relic APM] and [New Relic Infrastructure][6] documentation.
+You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the [New Relic APM] and [New Relic Infrastructure][New Relic infrastructure] documentation.
 
 ## Monitor performance with alert policies
 
@@ -188,13 +188,13 @@ For Pro Staging and Integration environments and Starter environments, use [Heal
 {:.procedure}
 Prerequisites
 
--  Credentials to log in to the [New Relic account] for your Cloud project.
--  Verify that your Cloud environment is [connected to New Relic][4].
+-  Credentials to log in to the [New Relic account] for your Cloud project
+-  Verify that your Cloud environment is [connected to New Relic](#connect-to-new-relic)
 
 {:.procedure}
 To review Adobe-generated alert policies:
 
-1. Use your Project Owner New Relic credentials to [log in to your New Relic account][5].
+1. Use your Project Owner New Relic credentials to [log in to your New Relic account][New Relic login].
 
 1. From the navigation menu, select  **Alerts**  > **Alert Policies**.
 
@@ -222,7 +222,7 @@ To configure a notification channel:
 
 1. Choose a notification channel type, and complete any [prerequisite steps] required to connect the channel with the New Relic service.
 
-1. [Log in to your New Relic account][5].
+1. [Log in to your New Relic account][New Relic login].
 
 1. Navigate to the _New Relic APM_ page.
 
@@ -262,34 +262,30 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 
 <!-- link definitions -->
 
-[1]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [2]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/add-update-users#adding_users
-[3]: https://account.newrelic.com/accounts/1311131/users
-[4]: #connect-to-new-relic
-[5]: https://login.newrelic.com/login
-[6]: https://newrelic.com/products/infrastructure
 
-[New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
-
-[Working with variables]: {{site.baseurl}}/cloud/env/working-with-variables.html
-[Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [account dropdown]: https://docs.newrelic.com/docs/using-new-relic/welcome-new-relic/getting-started/glossary#account-dropdown
 [account page]: https://accounts.magento.cloud/user
-[Apdex score]: https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction
-[reset the New Relic password]: https://rpm.newrelic.com/forgot_password
-[New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
-[New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
-[New Relic account]: #manage-your-new-relic-account
-[Health notifications]: {{site.baseurl}}/cloud/integrations/health-notifications.html
-[Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
-[View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
-[New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [add it from the Magento Admin]: https://docs.magento.com/m2/ce/user_guide/reports/new-relic-reporting.html#step-3-configure-your-store
-[Investigate performance]: #investigate-performance
-[from your New Relic account page]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
-[Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
-[prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
+[Alerts concepts and workflow]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow
+[Apdex score]: https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction
 [Configure notification channels using the New Relic Alerts user interface]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts
 [Configure notification channels using the New Relic API]: https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels
+[from your New Relic account page]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
+[Health notifications]: {{site.baseurl}}/cloud/integrations/health-notifications.html
+[Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
+[Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
+[Magento Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
+[prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
+[reset the New Relic password]: https://rpm.newrelic.com/forgot_password
+[Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions
-[Alerts concepts and workflow]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/getting-started/new-relic-alerts-concepts-workflow
+[View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
+[Working with variables]: {{site.baseurl}}/cloud/env/working-with-variables.html
+[New Relic account]: #manage-your-new-relic-account
+[New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
+[New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
+[New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
+[New Relic login]: https://login.newrelic.com/login
+[New Relic infrastructure]: https://newrelic.com/products/infrastructure
+[New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
