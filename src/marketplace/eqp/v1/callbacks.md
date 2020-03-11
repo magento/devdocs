@@ -20,7 +20,7 @@ Callbacks are registered using the [User Profile](users.html) API.
 |name|string|Optional: name for this callback|
 |url|string|URL that will receive callback JSON requests|
 |username|string|Basic authorization username|
-|password|string|Basic authorization password - never returned in the GET response| 
+|password|string|Basic authorization password - never returned in the GET response|
 
 **Request**
 ```bash
@@ -49,9 +49,9 @@ curl -X PUT \
 ## Authentication
 
 API callbacks are authenticated using a Basic Authorization header.
-Callbacks are only sent using HTTPS to ensure the security and integrity of the request. 
+Callbacks are only sent using HTTPS to ensure the security and integrity of the request.
 
-For the callback registered in the example above, the following 
+For the callback registered in the example above, the following
 header will be constructed and sent in every callback request:
 ```http
 Authorization: Basic a2V5OnNlY3JldA==
@@ -82,7 +82,7 @@ EQP status updates are sent out for [Package](packages.html) resources when the 
 ```json
 {
     "callback_event": "eqp_status_update",
-    "update_info": {  
+    "update_info": {
         "submission_id": "s5w9k703ru",
         "item_id": "user_upload_version_1",
         "eqp_flow": "marketing",

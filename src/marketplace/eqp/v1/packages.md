@@ -406,7 +406,6 @@ Once a package has been published to the store, this takes the following field:
 There is no way to directly re-publish a product to the store.
 Send the "submit" action for the marketing content to re-publish the product.
 
-
 #### eqp_status
 
 ```json
