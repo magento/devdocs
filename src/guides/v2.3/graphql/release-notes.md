@@ -20,7 +20,7 @@ These release notes can include:
 -  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) for details.
 -  {:.fix} Custom attributes used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to Yes.
 -  {:.fix} Added the `position` and `disabled` attributes to the `MediaGalleryInterface`.
--  {:.fix} Added the `sendFriend` object to the `storeConfig` query to prevent Magento from sending emails when the Email to Friend feature is disabled.
+-  {:.fix} Added the `sendFriend` object to the `storeConfig` query so that you can determine whether the Email to Friend feature is enabled.
 -  {:.fix} When you apply a gift card to a cart, an exception is no longer thrown when the last product is removed from the cart.
 -  {:.fix} In a category search, the `image` attribute returns the full path to an image, rather than a truncated path.
 -  {:.fix} Flat rate shipping amounts are calculated correctly when you add a configurable product to a cart.
