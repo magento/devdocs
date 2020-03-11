@@ -53,7 +53,7 @@ To review cron configuration on Pro plan environments:
    ```
 
    {:.bs-callout-info}
-   If the `crontab -l` command returns a `Command not found` error, contact your Magento account manager or CSM about enabling the auto-crons self-service configuration option on your {{site.data.var.ece}} project.
+   If the `crontab -l` command returns a `Command not found` error, contact your Customer Technical Advisor or CSM about enabling the auto-crons self-service configuration option on your {{site.data.var.ece}} project.
 
 The following example shows the crontab output for an environment that has only the default crons configuration:
 
@@ -120,7 +120,7 @@ The default cron interval for all environments provisioned in the US-3, EU-3, an
 
 ### Prerequisite
 
-On {{ site.data.var.ee }} Pro projects, the [auto-crons feature](#verify-cron-configuration-on-pro-projects) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled,contact your Magento account manager or CSM.
+On {{ site.data.var.ee }} Pro projects, the [auto-crons feature](#verify-cron-configuration-on-pro-projects) must be enabled on your {{site.data.var.ece}} project before you can add custom cron jobs to Staging and Production environments using `.magento.app.yaml`. If this feature is not enabled, contact your Customer Technical Advisor (CTA).
 
 {:.procedure}
 To add custom crons:
