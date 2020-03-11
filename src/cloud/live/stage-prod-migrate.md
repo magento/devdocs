@@ -189,56 +189,23 @@ To transfer media from remote-to-remote environments directly you must enable ss
 {:.procedure}
 To migrate a database:
 
-1. SSH into the environment you want to create a database dump from:
 
-   ```bash
-   ssh -A <environment_ssh_link@ssh.region.magento.cloud>
-   ```
-
-1. List the environment relationships to find the database login information:
-
-   ```bash
-   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-   ```
 
 1. Create a database dump file in `gzip` format:
 
    For Starter environments and Pro Integration environments:
 
    ```bash
-   mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+   magento-cloud db:dump --gzip --relationship=database --file=database.sql.gz
    ```
-
-   For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username):
-
-   ```bash
-   mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
-   ```
-
-1. Transfer the database dump to another remote environment with the `rsync` command:
-
-   ```bash
-   rsync -azvP /tmp/database.sql.gz <destination_environment_ssh_link@ssh.region.magento.cloud>:/tmp
-   ```
-
-1. Type `logout` to terminate the SSH connection.
-
-1. Open an SSH connection to the environment you want to migrate the database into:
-
-   ```bash
-   ssh -A <destination_environment_ssh_link@ssh.region.magento.cloud>
-   ```
+ 
 
 1. Import the database dump:
-
-   ```bash
-   zcat /tmp/database.sql.gz | mysql -h <database_host> -u <username> -p<password> <database name>
-   ```
 
    The following example references the gzip file created by the database dump operation:
 
    ```bash
-   zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
+   zcat < database.sql.gz | magento-cloud sql --relationship=database
    ```
 
 ### Troubleshooting the database migration
@@ -255,7 +222,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 To solve this problem, you can generate a new database dump changing or removing the `DEFINER` clause as shown in the following example:
 
 ```bash
-mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
+magento-cloud db:dump --stdout --relationship=database | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /path/to/file/database_no-definer.sql.gz
 ```
 
 Use the database dump file to [migrate the database](#cloud-live-migrate-db).
