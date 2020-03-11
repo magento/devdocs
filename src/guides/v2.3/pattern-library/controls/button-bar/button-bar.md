@@ -94,6 +94,6 @@ Buttons should make use of [CSS](https://glossary.magento.com/css) and [HTML](ht
 
 ## Assets
 
-[Download Button Bar PSD source](src/magento-button-bar.psd).
+[Download Button Bar PSD source]({{ site.downloads }}/magento-button-bar.psd).
 
 Please reach out to the Magento UX Design team if you need anything else.

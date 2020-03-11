@@ -222,7 +222,7 @@ Where:
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html
-[5]: https://docs.magento.com/marketplace/sellers/company-profile.html
+[5]: https://devdocs.magento.com/marketplace/sellers/profile-company.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com
 [8]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage

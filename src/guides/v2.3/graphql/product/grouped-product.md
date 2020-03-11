@@ -39,7 +39,7 @@ The following query returns information about downloadable product `24-WG085_Gro
       id
       name
       sku
-      type_id
+      __typename
       ... on GroupedProduct {
         items{
           qty
@@ -47,7 +47,7 @@ The following query returns information about downloadable product `24-WG085_Gro
           product{
             sku
             name
-            type_id
+            __typename
             url_key
           }
         }
@@ -68,7 +68,7 @@ The following query returns information about downloadable product `24-WG085_Gro
           "id": 45,
           "name": "Set of Sprite Yoga Straps",
           "sku": "24-WG085_Group",
-          "type_id": "grouped",
+          "__typename": "grouped",
           "items": [
             {
               "qty": 0,
@@ -76,7 +76,7 @@ The following query returns information about downloadable product `24-WG085_Gro
               "product": {
                 "sku": "24-WG085",
                 "name": "Sprite Yoga Strap 6 foot",
-                "type_id": "simple",
+                "__typename": "simple",
                 "url_key": "sprite-yoga-strap-6-foot"
               }
             },
@@ -86,7 +86,7 @@ The following query returns information about downloadable product `24-WG085_Gro
               "product": {
                 "sku": "24-WG086",
                 "name": "Sprite Yoga Strap 8 foot",
-                "type_id": "simple",
+                "__typename": "simple",
                 "url_key": "sprite-yoga-strap-8-foot"
               }
             },
@@ -96,7 +96,7 @@ The following query returns information about downloadable product `24-WG085_Gro
               "product": {
                 "sku": "24-WG087",
                 "name": "Sprite Yoga Strap 10 foot",
-                "type_id": "simple",
+                "__typename": "simple",
                 "url_key": "sprite-yoga-strap-10-foot"
               }
             }
