@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: storeConfig query
-redirect_from:
-  - /guides/v2.3/graphql/reference/store-config.html
 ---
 
 The `storeConfig` query defines information about a store's configuration. You can query a non-default store by [changing the header]({{ page.baseurl }}/graphql/send-request.html) in your GraphQL request.
@@ -39,6 +37,10 @@ The following call returns all details of a store's configuration.
     secure_base_static_url
     secure_base_media_url
     store_name
+    send_friend {
+      enabled_for_customers
+      enabled_for_guests
+    }
   }
 }
 ```
@@ -65,7 +67,11 @@ The following call returns all details of a store's configuration.
       "secure_base_link_url": "http://magento2.vagrant193/",
       "secure_base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
       "secure_base_media_url": "http://magento2.vagrant193/pub/media/",
-      "store_name": "My Store"
+      "store_name": "My Store",
+      "send_friend": {
+        "enabled_for_customers": true,
+        "enabled_for_guests": false
+      }
     }
   }
 }
@@ -230,10 +236,18 @@ Attribute |  Data Type | Description | Example
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
 `secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
+`send_friend` | SendFriendConfiguration | Email to a Friend configuration | Not applicable
 `store_name` | String | The store's name | `My Store`
 `timezone` | String | The store's time zone | `America/Chicago`
 `website_id` | Integer | The ID number assigned to the parent website | `1`
-`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
+`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, or similar
+
+#### SendFriendConfiguration attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`enabled_for_customers` | Boolean! | Indicates whether the Email to a Friend feature is enabled for customers
+`enabled_for_guests` | Boolean! | Indicates whether the Email to a Friend feature is enabled for guests
 
 ### Supported theme attributes
 
