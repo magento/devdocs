@@ -32,9 +32,6 @@ Magento explicitly disallows caching the following queries.
 *  `storeConfig`
 *  `wishlist`
 
-{: .bs-callout-info }
-Queries for logged in customers should not be cached. 
-
 [Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
 ## Caching with Varnish
