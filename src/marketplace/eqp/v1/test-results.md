@@ -90,9 +90,9 @@ curl -X GET \
 }
 ```
 
-*  The top-level status field contains the final decision made for this test. All status values in the reports array must be PASS in order for the test to pass.
-*  The reports array can contain multiple entries. For automated tests, there will be additional information about the environment used for testing.
-*  The details array structure will be different for each test.
+*  The top-level `status` field contains the final decision made for this test. All status values in the `reports` array must be PASS in order for the test to pass.
+*  The `reports` array can contain multiple entries. For automated tests, there will be additional information about the environment used for testing.
+*  The `details` array structure will be different for each test.
 
 ## Test result structures
 
