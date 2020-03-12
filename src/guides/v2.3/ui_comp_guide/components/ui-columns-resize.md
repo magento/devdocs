@@ -61,4 +61,4 @@ This is an example of how the ColumnsResize component integrates with the [Colum
 
 #### Result
 
-![ColumnsResize Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-resize-result.png)
+![ColumnsResize Component example]({{ site.baseurl }}/common/images/ui_comps/ui-columns-resize-result.gif)
