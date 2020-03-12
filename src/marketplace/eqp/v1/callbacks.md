@@ -67,7 +67,7 @@ The `update_info` object has a different structure, depending on the event code.
 Resource IDs are provided in the `update_info` structure so that additional
 information can be requested using the REST APIs for those resources.
 
-### File Upload Callbacks
+### File upload callbacks
 
 Malware scan results are sent out for [File](files.html) resources when the asynchronous scan completes.
 
@@ -81,7 +81,7 @@ Malware scan results are sent out for [File](files.html) resources when the asyn
 }
 ```
 
-### Package Callbacks
+### Package callbacks
 
 EQP status updates are sent out for [Package](packages.html) resources when the product's EQP state is modified.
 
