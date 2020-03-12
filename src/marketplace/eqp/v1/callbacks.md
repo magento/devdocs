@@ -1,15 +1,15 @@
 ---
 group: marketplace-api
-title: API Callbacks
+title: API callbacks
 ---
 
-Multiple steps of the EQP process take time to complete. The results of these steps can impact the availability or status of data that was previously submitted.
+The multiple steps of the EQP process take time to complete. The results of these steps can impact the availability or status of data that was previously submitted.
 Rather than having to continuously poll for updates, you can register an API callback URL in the user profile.
 
  {:.bs-callout-info}
 API Callback URLs can only be registered through the API.
 
-Whenever an update occurs to a Product or a File, a JSON API request will be sent to the registered callback URL.
+Whenever an update occurs to a product or a pile, a JSON API request will be sent to the registered callback URL.
 
 ## Register a callback
 
@@ -60,7 +60,7 @@ header will be constructed and sent in every callback request:
 Authorization: Basic a2V5OnNlY3JldA==
 ```
 
-## Callback Structures
+## Callback structures
 
 Each event has a unique code provided in the `callback_event` field.
 The `update_info` object has a different structure, depending on the event code.
