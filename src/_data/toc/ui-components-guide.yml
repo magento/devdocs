@@ -51,6 +51,10 @@ pages:
         - label: ColumnsEditingClient component
           url: /ui_comp_guide/components/ui-columns-editing-client.html
 
+        - label: ColumnsResize component
+          url: /ui_comp_guide/components/ui-columns-resize.html
+          exclude_versions: ["2.2"]
+
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
 
