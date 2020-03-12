@@ -55,7 +55,7 @@ $this->curl->get($url);
 $result = $this->curl->getBody();
 ```
 
-Where the ``$url`` is the endpoint url
+Where the ``$url`` is the endpoint URL
 
 #### Make POST request using cURL
 
@@ -67,7 +67,7 @@ $this->curl->post($url, $params);
 $result = $this->curl->getBody();
 ```
 
-Where the ``$url`` is the endpoint url, ``$params`` is an array of data that is being sent via the POST request, the extra parameters can be added in the url.
+Where the ``$url`` is the endpoint URL, ``$params`` is an array of data that is being sent via the POST request, the extra parameters can be added in the URL.
 ``$params`` example:
 
 ```php
@@ -78,18 +78,18 @@ $params = [
 ]
 ```
 
-The Curl client can also adds headers, basic authorization, additional cURL options and cookies in the curl request. The Curl client provides these methods before using ``get`` or ``post`` method.
+The cURL client can also adds headers, basic authorization, additional cURL options and cookies in the cURL request. The cURL client provides these methods before using ``get`` or ``post`` method.
 
-#### Set curl header using addHeader method
+#### Set cURL header using addHeader method
 
-The ``addHeader`` method accepts two parameters. The curl header name and a curl header value.
+The ``addHeader`` method accepts two parameters. The cURL header name and a cURL header value.
 
 ```php
 $this->curl->addHeader("Content-Type", "application/json");
 $this->curl->addHeader("Content-Length", 200);
 ```
 
-#### Set curl header using setHeaders method
+#### Set cURL header using setHeaders method
 
 The ``setHeaders`` method accepts an array as a parameter.
 
@@ -98,7 +98,7 @@ $headers = ["Content-Type" => "application/json", "Content-Length" => "200"];
 $this->curl->setHeaders($headers);
 ```
 
-#### Set basic authorization in Curl
+#### Set basic authorization in cURL
 Set the basic authorization using the ``setCredentials`` method.
 
 ```php
@@ -111,19 +111,19 @@ $this->curl->setCredentials($userName, $password);
 It is equivalent to setting CURLOPT_HTTPHEADER value
 
 ```php
-"Authorization : ". "Basic ".base64_encode($userName.":".$password)
+"Authorization : " . "Basic " . base64_encode($userName . ":" . $password)
 ```
 
-#### Set curl option using setOption method
+#### Set cURL option using setOption method
 
-The ``setOption`` method accepts two parameters. The curl option name and the cURL option value.
+The ``setOption`` method accepts two parameters. The cURL option name and the cURL option value.
 
 ```php
 $this->curl->setOption(CURLOPT_RETURNTRANSFER, true);
 $this->curl->setOption(CURLOPT_PORT, 8080);
 ```
 
-#### Set curl option using setOptions method
+#### Set cURL option using setOptions method
 
 The ``setOptions`` method accepts a parameter as an array.
 
@@ -133,7 +133,7 @@ $options = [CURLOPT_RETURNTRANSFER => true, CURLOPT_PORT => 8080];
 $this->curl->setOptions($options);
 ```
 
-#### Set curl cookies using addCookie method
+#### Set cURL cookies using addCookie method
 
 The ``addCookie`` method accepts an array as a parameter. The cookie name and the cookie value.
 
@@ -141,7 +141,7 @@ The ``addCookie`` method accepts an array as a parameter. The cookie name and th
 $this->curl->addCookie("cookie-name", "cookie-value");
 ```
 
-#### Set curl cookies using setCookies method
+#### Set cURL cookies using setCookies method
 
 The ``setCookies`` method accepts an array as a parameter.
 
