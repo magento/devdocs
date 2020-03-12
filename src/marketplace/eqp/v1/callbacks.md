@@ -9,7 +9,7 @@ Rather than having to continuously poll for updates, you can register an API cal
  {:.bs-callout-info}
 API Callback URLs can only be registered through the API.
 
-Whenever an update occurs to a product or a pile, a JSON API request will be sent to the registered callback URL.
+Whenever an update occurs to a product or a file, a JSON API request will be sent to the registered callback URL.
 
 ## Register a callback
 
