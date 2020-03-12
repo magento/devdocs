@@ -332,7 +332,7 @@ The execution will have a different flow, depending on the methods implemented b
 
 #### Scenario A
 
-Your plugin classes have the next methods:
+With these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 |  ------------ | ---------------- | ---------------- | ---------------- |
@@ -355,7 +355,7 @@ The execution will be in this order:
 
 #### Scenario B (with a `callable` around)
 
-Your plugin classes have the next methods:
+With these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | -----------   | --------------   | --------------   | --------------   |
@@ -402,7 +402,7 @@ The execution will be in this order:
 
 #### Scenario B (without a `callable` around)
 
-Your plugin classes have the next methods:
+Using these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | -----------   | --------------   | --------------   | --------------   |
@@ -419,7 +419,6 @@ class PluginB
     public function aroundDispatch(\Magento\Framework\App\Action\Action $subject, $next, $result)
     {
         // My custom code
-
         return $result;
     }
 }
@@ -435,11 +434,11 @@ The execution will be in this order:
 *  `PluginA::afterDispatch()`
 *  `PluginB::afterDispatch()`
 
-Because of absent a `callable` type for the `$next` agrument the plaginized `Action::dispatch()` will be not called and `Plugin C` will be not triggered.
+Because the`callable` type for the `$next` agrument is absent, `Action::dispatch()` will be not called and `Plugin C` will be not triggered.
 
 #### Scenario C
 
-Your plugin classes have the next methods:
+Assuming these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | ------------- | ---------------- | ---------------- | ---------------- |
@@ -468,7 +467,7 @@ The execution will be in this order:
 
 ## Configuration inheritance
 
-Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
+Classes and interfaces that are implementations of, or inherit from, classes that have plugins will also inherit plugins from the parent class.
 
 Magento uses plugins defined in the global scope when the system is in a specific area (such as frontend or backend). You can extend or override these global plugin configurations with an area's `di.xml` file.
 
