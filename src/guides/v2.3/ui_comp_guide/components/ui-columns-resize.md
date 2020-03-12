@@ -13,8 +13,8 @@ The ColumnsResize [UI component](https://glossary.magento.com/ui-component) is a
 | --- | --- | --- | --- |
 | `component` | The path to the component's `.js` file, relative to RequireJS. | String | `Magento_Ui/js/grid/resize` |
 | `rootSelector` | The CSS selector of a table parent element. | String | `${ $.columnsProvider }:.admin__data-grid-wrap` |
-| `tableSelector` | The CSS selector of a table element. | String | `${ $.rootSelector } -> table.data-grid` |
-| `mainTableSelector` | The CSS selector of a main table element. | String | `[data-role="grid"]` |
+| `tableSelector` | The CSS selector of a table element. The `columnSelector` and `fieldSelector` are children of the table element. | String | `${ $.rootSelector } -> table.data-grid` |
+| `mainTableSelector` | The CSS selector of a main table element. The function of automatically resizing columns after changing the screen size is enabled if the `tableSelector` element is matched to the main table element. | String | `[data-role="grid"]` |
 | `columnSelector` | The CSS selector of a table column element. | String | `${ $.tableSelector } thead tr th` |
 | `fieldSelector` | The CSS selector of a table field element. | String | `${ $.tableSelector } tbody tr td` |
 
