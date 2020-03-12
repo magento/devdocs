@@ -76,7 +76,7 @@ Here is a simple explanation with an example on how to implement this in your cu
 Once this is done, do a static content deploy and use the font family across the website wherever it is needed.
 
 {:.bs-callout-info}
-Note: When adding font subset, replace '&' with '&amp;' because it would create an ambiguity while parsing HTML entities inside HTML attributes.
+When adding font subset, replace '&' with '&amp;' because it would create an ambiguity while parsing HTML entities inside HTML attributes.
 
 ## Overview of Magento's Icon CSS
 
