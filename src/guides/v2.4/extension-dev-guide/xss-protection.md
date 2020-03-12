@@ -202,7 +202,6 @@ It covers the following cases:
 -  Output in double quotes without variables (for example echo "some text"). Test is green.
 -  Other of previously mentioned. Output is not escaped. Test is red.
 
-
 <!-- Link Definitions -->
 [product listing template]: https://github.com/magento/magento2/blob/78bb169ff9721c8d05c35b4c29a4464fd45bccbe/app/code/Magento/Catalog/view/frontend/templates/product/list.phtml#L16
 [Template guide]: {{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html
