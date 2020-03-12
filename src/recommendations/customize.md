@@ -17,7 +17,7 @@ The following table describes each subdirectory under `ProductRecommendationsLay
 
 This topic describes how you can customize the recommendations template as well as the placement of recommendation units on your site.
 
-## Template updates
+## Update template
 
 If you want to customize how the recommendations display on your storefront, you can modify or overwrite the following template:
 
@@ -32,7 +32,7 @@ However, to ensure Magento can successfully collect metrics for the recommendati
 
 Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify templates in Magento.
 
-## Recommendation unit placement
+## Reorder recommendation units
 
 When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either above or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
 
@@ -99,3 +99,17 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     This change results in your recommendation unit appearing after the product image on the product detail page. If you want the recommendation unit to appear before the `product.info.media`, change the `after="-"` attribute to `before="-"`. The `pagePlacement` argument is an internal argument that should not be modified.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
+
+### Customizing recommendation units for new pages
+
+You can create new pages for your storefront, link an existing recommendation unit to that new page, and customize where that recommendation unit appears on your storefront.
+
+1. [Create a new page](https://docs.magento.com/m2/ee/user_guide/cms/page-add.html) in the Admin UI.
+
+1. Magento creates a page handle name. Here's how you can see it.
+
+1. In the `layout` directory, create an xml file with the same name as the page handle name, such as, `blah.xml`.
+
+1. Complete the steps above to modify where you want your recommendation units to display.
+
+from Misha: checkout_onepage_success.xml might be named checkout_multipage_success.xml depending on what the user has selected in the admin.
