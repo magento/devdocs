@@ -1,23 +1,23 @@
 ---
 group: migration-guide
-title: Extend the tool
+title: Extend the migration tool
 functional_areas:
   - Tools
 ---
 
-If the data format and structure created by [Magento extensions](https://marketplace.magento.com/extensions.html){:target="_blank"} or custom code is different between Magento 1 and Magento 2, use extension points in the Data Migration Tool to migrate the data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.
+Sometimes the data format and structure created by [Magento extensions](https://marketplace.magento.com/extensions.html){:target="_blank"} or custom code is different between Magento 1 and Magento 2. Use extension points within the Data Migration Tool to migrate this data. If the data format and structure are the same, the tool can automatically migrate the data without user intervention.
 
-During migration, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables do not differ, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
+During migration, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) scans and compares all Magento 1 and Magento 2 tables, including those created by extensions. If the tables are the same, the tool automatically migrates the data. If the tables differ, the tool terminates and notifies the user.
 
  {:.bs-callout-info}
-Read the [Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) first before attempting to extend the Data Migration Tool. You should also review the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html) for general information about using the tool.
+Read the [Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) before attempting to extend the Data Migration Tool. Also review the [Migration Guide]({{ page.baseurl }}/migration/bk-migration-guide.html) for general information about using the migration tool.
 
 ## Minor data format and structure changes
 
 In most cases, the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) sufficiently resolves minor data format and structure changes using the following methods in the `map.xml` file:
 
 -  Change table or field names with mapping rules
--  Transform data formats with existing handlers or create a custom handler
+-  Transform data formats with existing handlers or a custom handler
 
 The following shows an example of using both mapping rules and a handler. This example uses a hypothetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
 
@@ -62,20 +62,18 @@ The following shows an example of using both mapping rules and a handler. This e
 </destination>
 ```
 
-Refer to the following for an explanation of the changes in the previous example:
-
--  Unnecessary data from the index table `great_blog_index` should not be migrated
--  The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data should be migrated to the new table
-   -  The `summary` field was renamed to `title`, so data should be migrated to the new field
-   -  The `priority` field was removed and no longer exists in Magento 2
-   -  The data in the `body` field has changed format and should be processed by the custom handler: `\Migration\Handler\GreatBlog\NewFormat`
--  A new ratings feature was developed for the "GreatBlog" extension in Magento 2
-   -  A new `great_blog_rating` table was created
-   -  A new `great_blog_post.rating` field was created
+-  Unnecessary data from the `great_blog_index` index table should not be migrated.
+-  The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data will be migrated to the new table.
+   -  The `summary` field was renamed to `title`, so data will be migrated to the new field.
+   -  The `priority` field was removed and no longer exists in Magento 2.
+   -  The data in the `body` field has changed format and should be processed by the custom handler: `\Migration\Handler\GreatBlog\NewFormat`.
+-  A new ratings feature was developed for the "GreatBlog" extension in Magento 2.
+   -  A new `great_blog_rating` table was created.
+   -  A new `great_blog_post.rating` field was created.
 
 ### Extend mapping in other steps
 
-Other steps support mapping, such as the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav) and Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the `eav_attribute` table and the name changed in Magento 2. Since the table is processed by the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav), mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remain the same.
+Other steps support mapping, such as the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav) and the Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the `eav_attribute` table and the name changed in Magento 2. Since the table is processed by the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav), mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remains the same.
 
 ## Major data format and structure changes
 
@@ -87,9 +85,9 @@ In addition to the Map Step, there are other steps in the `config.xml` file whic
 
 Unlike the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step), these steps scan a predefined list of tables instead of all tables.
 
-For the major data format and structure changes you can create a custom step.
+For major data format and structure changes, create a custom step.
 
-### Create custom steps
+### Create a custom step
 
 Using the same "GreatBlog" example, suppose the extension has one table in Magento 1, but was redesigned to have two tables in Magento 2.
 
@@ -154,7 +152,7 @@ Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-sp
 
 Complex SQL queries can be assembled inside these classes to fetch and migrate data. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 
-For Integrity checking we define additional map file in `config.xml`. It will be used to verify that tables structure is like we expect.
+For Integrity checking, define additional map file in `config.xml`. It is used to verify that tables structure is as we expect.
 
 ```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
@@ -190,7 +188,7 @@ Map file `map-greatblog.xml`:
 </map>
 ```
 
-Integrity checking class `Vendor\Migration\Step\GreatBlog\Integrity` extends `Migration\App\Step\AbstractIntegrity` and contains `perform` method where we verify tables structure:
+Integrity checking class `Vendor\Migration\Step\GreatBlog\Integrity` extends `Migration\App\Step\AbstractIntegrity` and contains the `perform` method where we verify tables structure:
 
 ```php
 class Integrity extends \Migration\App\Step\AbstractIntegrity
@@ -311,7 +309,7 @@ class Data implements \Migration\App\Step\StageInterface
 }
 ```
 
-In a Volume class `Vendor\Migration\Step\GreatBlog\Volume` we check if data have been fully migrated `Vendor\Migration\Step\GreatBlog\Volume`:
+In a Volume class `Vendor\Migration\Step\GreatBlog\Volume`, we check if the data has been fully migrated:
 
 ```php
 class Volume extends \Migration\App\Step\AbstractVolume
@@ -340,8 +338,8 @@ class Volume extends \Migration\App\Step\AbstractVolume
 }
 ```
 
-To add delta migration functionality you also need to add a new group to `deltalog.xml`.
-In group specify name of tables that will be checked for changes:
+To add delta migration functionality, add a new group to `deltalog.xml`.
+In `group`, specify the name of tables that will be checked for changes:
 
 ```xml
 <groups>
@@ -352,7 +350,7 @@ In group specify name of tables that will be checked for changes:
 </groups>
 ```
 
-Then create `Delta` class `Vendor\Migration\Step\GreatBlog\Delta` that extends `Migration\App\Step\AbstractDelta`:
+Then, create the `Delta` class `Vendor\Migration\Step\GreatBlog\Delta` that extends `Migration\App\Step\AbstractDelta`:
 
 ```php
 class Delta extends \Migration\App\Step\AbstractDelta
