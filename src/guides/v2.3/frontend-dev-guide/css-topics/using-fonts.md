@@ -57,6 +57,28 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
 A `<font>` node is added to HTML `<head>` type for layout in `lib/internal/Magento/Framework/View/Layout/etc/head.xsd`. All resources added with `<font>` node will be downloaded with `preload` html attribute.
 
+## Using Google fonts
+
+Google fonts has vast majority of fonts library that is easy to use.
+
+Here is a simple explanation with an example on how to implement this in your custom theme.
+
+1. Go to <Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml or create one if it doesn't exist.
+1. Choose your desired font from google fonts, copy the import code and add the <link> inside the <head> section as like in the example below.
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link rel="stylesheet" type="text/css" src="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i&amp;display=swap" src_type="url" />
+    </head>
+</page>
+```
+Once this is done, do a static content deploy and use the font family across the website wherever it is needed.
+
+{:.bs-callout-info}
+Note: When adding font subset, replace '&' with '&amp;' because it would create an ambiguity while parsing HTML entities inside HTML attributes.
+
+
 ## Overview of Magento's Icon CSS
 
 In addition to including custom fonts in your Magento Blank theme, you also can include custom fonts for any icons in the Blank theme. The icon font files for the Magento Blank theme are located in the `lib/web/fonts/Blank-Theme-Icons` directory. The `lib/web/css/source/lib/variables/_typography.less` file defines the font icon path and name for the icons and the `web/css/source/_icons.less` file uses these files to define the icon font face itself, which should be used in all CSS declarations.
