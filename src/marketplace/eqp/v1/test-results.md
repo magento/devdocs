@@ -1,6 +1,6 @@
 ---
 group: marketplace-api
-title: Test Results
+title: Test results
 ---
 
 Submissions go through several reviews before being released on the Magento Marketplace.
