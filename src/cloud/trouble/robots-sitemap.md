@@ -74,7 +74,7 @@ The following example demonstrates how to rewrite the path for `robots.txt` and 
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path ~ "^/?sitemap.xml$\" ) { set req.url = "/media/sitemap.xml"; } else if (req.url.path ~ "^/?robots.txt$") { set req.url = "/media/robots.txt";}"
+  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\\" ) { set req.url = \"/media/sitemap.xml\"; } else if (req.url.path ~ \"^/?robots.txt$\") { set req.url = \"/media/robots.txt\";}"
 }
 ```
 
