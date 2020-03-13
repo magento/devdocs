@@ -133,6 +133,6 @@ Instead of using a custom VCL snippet, you can use the Fastly [Blocking](https:/
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( req.http.User-Agent ~ "(UCBrowser|MQQBrowser|LieBaoFast|Mb2345Browser)" ) {error 405 "Not allowed";}"
+  "content": "if ( req.http.User-Agent ~ \"(UCBrowser|MQQBrowser|LieBaoFast|Mb2345Browser)\" ) {error 405 \"Not allowed\";}"
 }
 ```
