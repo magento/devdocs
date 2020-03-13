@@ -405,6 +405,15 @@ To configure a MySQL database instance:
 
    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
+1. In order for MySQL TIMESTAMP fields to follow the preferences and composition expected by Magento's declarative schema management, the sysvar `explicit_defaults_for_timestamp` must be set to `on`.
+
+   References;
+   
+    * [MySQL 5.6](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+    * [MySQL 5.7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+
+   If this setting is not enabled, `setup:db:status` will always report that `Declarative Schema is not up to date`
+
 {:.ref-header}
 Related topics
 
