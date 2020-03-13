@@ -338,7 +338,7 @@ class Volume extends \Migration\App\Step\AbstractVolume
 }
 ```
 
-To add delta migration functionality, add a new group to `deltalog.xml`.
+To add delta migration functionality, add a new group to the `deltalog.xml` file.
 In `group`, specify the name of tables that will be checked for changes:
 
 ```xml
