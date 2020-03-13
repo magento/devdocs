@@ -73,7 +73,7 @@ The following shows an example of using both mapping rules and a handler. This e
 
 ### Extend mapping in other steps
 
-Other steps support mapping, such as the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav) and the Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the `eav_attribute` table and the name changed in Magento 2. Since the table is processed by the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav), mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remains the same.
+Other steps support mapping, such as the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav) and the Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the "GreatBlog" extension has an additional field in the `eav_attribute` table and the name changed in Magento 2. Since the table is processed by the [EAV Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav), mapping rules should be written for the `map-eav.xml` file. The `map.xml` and `map-eav.xml` files use the same `map.xsd` schema, so mapping rules remain the same.
 
 ## Major data format and structure changes
 
