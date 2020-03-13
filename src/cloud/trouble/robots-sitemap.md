@@ -62,7 +62,7 @@ Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sit
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path ~ "^/?sitemap.xml$" ) { set req.url = "/media/sitemap.xml"; }"
+  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }"
 }
 ```
 
