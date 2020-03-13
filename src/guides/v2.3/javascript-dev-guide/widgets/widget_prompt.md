@@ -205,10 +205,10 @@ The prompt widget implements the following events:
 
 ## Keyboard navigation {#prompt_key_navigation}
 
--  the ESC key: cancel the input and close the current prompt window (the same behavior as for the 'Cancel' button)
--  the ENTER key: confirm the input and close the current prompt window (the same behavior as for the 'OK' button)
--  the TAB key: set focus to the next focusable element (looped inside the prompt window)
--  the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the prompt window)
+-  ESC key: cancel the input and close the current prompt window (the same behavior as for the 'Cancel' button)
+-  ENTER key: confirm the input and close the current prompt window (the same behavior as for the 'OK' button)
+-  TAB key: set focus to the next focusable element (looped inside the prompt window)
+-  SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the prompt window)
 
 ## Code Sample
 
