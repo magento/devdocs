@@ -473,6 +473,20 @@ Magento uses plugins defined in the global scope when the system is in a specifi
 
 For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
+### Disabling plugin.
+
+Each plugin can be disabling in a ``di.xml`` file. For it the ``disabled`` element should be set to ``true``
+
+For example:
+
+```xml
+<type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+    <plugin name="ProcessPaymentConfiguration" disabled="true"/>
+</type>
+```
+
+Where ``ProcessPaymentConfiguration`` is the name plugin declared in the `vendor/magento/module-payment/etc/frontend/di.xml` and is require parameter.
+
 {:.ref-header}
 Related topics
 
