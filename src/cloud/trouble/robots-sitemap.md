@@ -89,7 +89,7 @@ Create a `pub/media/domain_robots.txt` file, where the domain is `domain.com` an
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path == "/robots.txt" ) { if ( req.http.host ~ "(domain).com$" ) { set req.url = "/media/" re.group.1 "_robots.txt"; }}"
+  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }}"
 }
 ```
 
