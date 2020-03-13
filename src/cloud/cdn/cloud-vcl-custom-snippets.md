@@ -59,7 +59,7 @@ The following example shows the custom VCL snippet (JSON format) that filters tr
 ```
 
 {: .bs-callout-warning}
-In this example, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. When sending the snippet as JSON for an API request, you must escape special characters in the code to prevent JSON validation errors. See [Using dynamic VCL snippets](https://docs.fastly.com/vcl/vcl-snippets/) in the Fastly VCL documentation. If you submit the VCL snippet from the Magento Admin UI, you do not have to escape special characters. 
+In this example, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. When sending the snippet as JSON for an API request, you must escape special characters in the code to prevent JSON validation errors. See [Using dynamic VCL snippets](https://docs.fastly.com/vcl/vcl-snippets/) in the Fastly VCL documentation. If you submit the VCL snippet from the Magento Admin UI, you do not have to escape special characters.
 
 The VCL logic in the `content` field performs the following actions:
 
