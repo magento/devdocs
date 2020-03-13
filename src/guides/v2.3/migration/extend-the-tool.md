@@ -62,7 +62,7 @@ The following shows an example of using both mapping rules and a handler. This e
 </destination>
 ```
 
--  Unnecessary data from the `great_blog_index` index table should not be migrated.
+-  Do not migrate unnecessary data from the `great_blog_index` index table.
 -  The table `great_blog_publication` was renamed to `great_blog_post` in Magento 2, so data will be migrated to the new table.
    -  The `summary` field was renamed to `title`, so data will be migrated to the new field.
    -  The `priority` field was removed and no longer exists in Magento 2.
