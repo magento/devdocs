@@ -34,37 +34,9 @@ interface CatalogRuleRepositoryInterface
 
 An application programming interface (API) is a set of interfaces and their implementations that a module provides to other modules.
 
-### Example of implementation a set of API interfaces
+### Example of implementation a API interface
 
 The ``Magento_CatalogRule`` module.
-
-The ``Magento\CatalogRule\Api\Data\RuleInterface`` interface
-
-```php
-namespace Magento\CatalogRule\Api\Data;
-
-/**
- * @api
- * @since 100.1.0
- */
-interface RuleInterface extends \Magento\Framework\Api\CustomAttributesDataInterface
-{
-...
-```
-
-The ``Magento\CatalogRule\Api\Data\ConditionInterface`` interface
-
-```php
-namespace Magento\CatalogRule\Api\Data;
-
-/**
- * @api
- * @since 100.1.0
- */
-interface ConditionInterface extends \Magento\Framework\Api\CustomAttributesDataInterface
-{
-...
-```
 
 The ``Magento\CatalogRule\Api\CatalogRuleRepositoryInterface`` interface
 
@@ -78,7 +50,38 @@ namespace Magento\CatalogRule\Api;
  */
 interface CatalogRuleRepositoryInterface
 {
-...
+    /**
+     * @param \Magento\CatalogRule\Api\Data\RuleInterface $rule
+     * @return \Magento\CatalogRule\Api\Data\RuleInterface
+     * @throws \Magento\Framework\Exception\CouldNotSaveException
+     * @since 100.1.0
+     */
+    public function save(\Magento\CatalogRule\Api\Data\RuleInterface $rule);
+
+    /**
+     * @param int $ruleId
+     * @return \Magento\CatalogRule\Api\Data\RuleInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @since 100.1.0
+     */
+    public function get($ruleId);
+
+    /**
+     * @param \Magento\CatalogRule\Api\Data\RuleInterface $rule
+     * @return bool
+     * @throws \Magento\Framework\Exception\CouldNotDeleteException
+     * @since 100.1.0
+     */
+    public function delete(\Magento\CatalogRule\Api\Data\RuleInterface $rule);
+
+    /**
+     * @param int $ruleId
+     * @return bool
+     * @throws \Magento\Framework\Exception\CouldNotDeleteException
+     * @since 100.1.0
+     */
+    public function deleteById($ruleId);
+}
 ```
 
 The implementations of the interfaces in the ``di.xml``
@@ -86,11 +89,58 @@ The implementations of the interfaces in the ``di.xml``
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 ...
-    <preference for="Magento\CatalogRule\Api\Data\RuleInterface" type="Magento\CatalogRule\Model\Rule" />
-    <preference for="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" type="Magento\CatalogRule\Model\CatalogRuleRepository" />
-    <preference for="Magento\CatalogRule\Api\Data\ConditionInterface" type="Magento\CatalogRule\Model\Data\Condition" />
+    <preference for="Magento\CatalogRule\Api\CatalogRuleRepositoryInterface" type="Magento\CatalogRule\Model\CatalogRuleRepository" />/>
 ...
 </config>
+```
+
+The ``Magento\CatalogRule\Model\CatalogRuleRepository`` implements the default methods of the``CatalogRuleRepositoryInterface``:  ``save``, ``get``, ``delete``, ``deleteById``.
+
+```php
+namespace Magento\CatalogRule\Model;
+
+use Magento\CatalogRule\Api\Data;
+use Magento\Framework\Exception\CouldNotDeleteException;
+use Magento\Framework\Exception\CouldNotSaveException;
+use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Exception\ValidatorException;
+
+class CatalogRuleRepository implements \Magento\CatalogRule\Api\CatalogRuleRepositoryInterface
+{
+    ...
+
+    /**
+     * {@inheritdoc}
+     */
+    public function save(Data\RuleInterface $rule)
+    {
+        ...
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function get($ruleId)
+    {
+        ...
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function delete(Data\RuleInterface $rule)
+    {
+        ...
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deleteById($ruleId)
+    {
+        ...
+    }
+}
 ```
 
 ### API types {#api-types}
