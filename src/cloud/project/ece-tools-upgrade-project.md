@@ -60,17 +60,17 @@ To upgrade project to use ece-tools:
 
    ```yaml
    hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        set -e
-        php ./vendor/bin/ece-tools build:generate
-        php ./vendor/bin/ece-tools build:transfer
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        php ./vendor/bin/ece-tools deploy
-    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
-    post_deploy: |
-        php ./vendor/bin/ece-tools post-deploy
+      # We run build hooks before your application has been packaged.
+      build: |
+          set -e
+          php ./vendor/bin/ece-tools build:generate
+          php ./vendor/bin/ece-tools build:transfer
+      # We run deploy hook after your application has been deployed and started.
+      deploy: |
+          php ./vendor/bin/ece-tools deploy
+      # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+      post_deploy: |
+          php ./vendor/bin/ece-tools post-deploy
    ```
 
 1. Check for and remove the [deprecated packages](#remove-deprecated-packages). The deprecated packages can prevent a successful upgrade.
