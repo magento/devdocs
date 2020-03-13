@@ -188,7 +188,7 @@ Map file `map-greatblog.xml`:
 </map>
 ```
 
-Integrity checking class `Vendor\Migration\Step\GreatBlog\Integrity` extends `Migration\App\Step\AbstractIntegrity` and contains the `perform` method where we verify tables structure:
+Integrity checking class `Vendor\Migration\Step\GreatBlog\Integrity` extends `Migration\App\Step\AbstractIntegrity` and contains the `perform` method where we verify table structure:
 
 ```php
 class Integrity extends \Migration\App\Step\AbstractIntegrity
