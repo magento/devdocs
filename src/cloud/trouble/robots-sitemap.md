@@ -103,7 +103,7 @@ To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, 
   "dynamic": "0",
   "type": "recv",
   "priority": "90",
-  "content": "if ( req.url.path == "/robots.txt" ) { if ( req.http.host ~ "(domain).com$" ) { set req.url = "/media/" re.group.1 "_robots.txt"; }} else if ( req.url.path == "/sitemap.xml" ) { if ( req.http.host ~ "(domain).com$" ) {  set req.url = "/media/" re.group.1 "_sitemap.xml"; }}"
+  "content": "if ( req.url.path == \"/robots.txt\" ) { if ( req.http.host ~ \"(domain).com$\" ) { set req.url = \"/media/\" re.group.1 \"_robots.txt\"; }} else if ( req.url.path == \"/sitemap.xml\" ) { if ( req.http.host ~ \"(domain).com$\" ) {  set req.url = \"/media/\" re.group.1 \"_sitemap.xml\"; }}"
 }
 ```
 
