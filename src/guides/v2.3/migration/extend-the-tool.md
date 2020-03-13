@@ -392,7 +392,7 @@ class Delta extends \Migration\App\Step\AbstractDelta
 
 After the custom step implementation provided in the examples, the system will take data from the single Magento 1 table,
 process it using `Vendor\Migration\Step\GreatBlog\Data` class and store the data in two Magento 2 tables. New and changed
-records will be delivered on delta migration using `Vendor\Migration\Step\GreatBlog\Delta` class.
+records will be delivered on delta migration using the `Vendor\Migration\Step\GreatBlog\Delta` class.
 
 ## Prohibited extension methods
 
