@@ -152,7 +152,7 @@ Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-sp
 
 Complex SQL queries can be assembled inside these classes to fetch and migrate data. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 
-For Integrity checking, define additional map file in `config.xml`. It is used to verify that tables structure is as we expect.
+For Integrity checking, define an additional map file in  the `config.xml` file to verify that tables structure is as we expect.
 
 ```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
