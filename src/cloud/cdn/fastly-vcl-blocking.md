@@ -48,7 +48,7 @@ The following custom VCL snippet code (JSON format) shows the logic to block inc
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"
+  "content": "if ( client.ip ~ blocklist) { error 403 \"Forbidden\"; }"
 }
 ```
 
