@@ -89,7 +89,7 @@ After reviewing and updating the code for your environment, use either of the fo
    -  Add the **VCL** snippet content:
 
       ```conf
-      "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }"
+      if ( client.ip ~ blocklist) { error 403 "Forbidden"; }
       ```
 
 1. Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_blocklist.vcl`
