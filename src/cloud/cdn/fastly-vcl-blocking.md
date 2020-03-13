@@ -118,7 +118,7 @@ This example uses the two-character ISO 3166-1 country code for the country asso
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( geoip.country_code == "HK" ) { error 405 "Not allowed";}"
+  "content": "if ( geoip.country_code == \"HK\" ) { error 405 \"Not allowed\";}"
 }
 ```
 
