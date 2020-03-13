@@ -67,7 +67,7 @@ The following custom VCL snippet code (JSON format) shows the logic to check and
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "set req.http.Referer-Host = regsub(req.http.Referer, "^https?://?([^:/s]+).*$", "\1"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 "Forbidden"; }"
+  "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?:\/\/?([^:\/s]+).*$\", \"\\1\"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
 }
 ```
 
