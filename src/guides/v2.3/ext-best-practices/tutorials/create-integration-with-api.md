@@ -62,7 +62,7 @@ class GitApiService
 
     /**
      * GitApiService constructor
-     * 
+     *
      * @param ClientFactory $clientFactory
      * @param ResponseFactory $responseFactory
      */
