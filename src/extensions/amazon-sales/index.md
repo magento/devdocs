@@ -33,15 +33,15 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 
 1. Follow all instructions for Extension [Installation]({{ site.baseurl }}/extensions/install/).
 
-1. Update the services connector entry in your `composer.json` file
+1. Update the services connector entry in your `composer.json` file.
 
-    -  Add the extension's name and version to your composer.json file:
+   -  Add the extension's name and version to your composer.json file:
 
-    -  Navigate to your Magento project directory and update your composer.json file.
+   -  Navigate to your Magento project directory and update your composer.json file.
 
-        ```bash
-        composer require magento/services-connector:~1.0.3
-        ```
+     ```bash
+     composer require magento/services-connector:~1.0.3
+     ```
 
    -  Enter your [authentication keys]({{ site.baseurl }}/guides/v{{ site.version }}/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
 
