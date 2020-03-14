@@ -34,7 +34,6 @@ mutation {
     }
   ) {
     customer {
-      id
       firstname
       lastname
       email
@@ -51,7 +50,6 @@ mutation {
   "data": {
     "createCustomer": {
       "customer": {
-        "id": 6,
         "firstname": "John",
         "lastname": "Doe",
         "email": "john.doe@example.com",

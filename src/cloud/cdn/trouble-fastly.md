@@ -105,7 +105,7 @@ To check the Fastly 503 error page:
 
 1. Reopen the URL that caused the 503 error. Fastly returns an error page with the reason as shown in the following example.
 
-   ![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
+   ![Fastly error]({{ site.baseurl }}/common/images/cloud/cloud_fastly-503-example.png)
 
 ## Apex and subdomains already associated with a Fastly account {#domains}
 

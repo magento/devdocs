@@ -19,7 +19,7 @@ The component's data provider class is declared inside `<dataSource />`. The fol
 
 ```xml
 <argument name="dataProvider" xsi:type="configurableObject">
-    <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider</argument>
+    <argument name="class" xsi:type="string">[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]\DataProvider</argument>
     <argument name="name" xsi:type="string">[YourComponentName]_data_source</argument>
     <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
     <argument name="requestFieldName" xsi:type="string">id</argument>
@@ -30,7 +30,7 @@ In the block of code above, [YourNameSpace]\[YourModule] would be the directory 
 
 The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend [`\Magento\Ui\DataProvider\AbstractDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/AbstractDataProvider.php). The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or [metadata](https://glossary.magento.com/metadata) that the component needs or will use.
 
-While the [XML](https://glossary.magento.com/xml) tells Magento about the component's data provider, Magento doesn't do anything in particular with that unless you hook it up to the component's main PHP class. To make the data available in javascript, add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration.
+While the [XML](https://glossary.magento.com/xml) tells Magento about the component's data provider, Magento does not do anything in particular with that unless you hook it up to the component's main PHP class. To make the data available in javascript, add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration.
 
 Declare a `getData()` method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the [javascript](https://glossary.magento.com/javascript) class that is associated with the UI component and handles its behavior. Magento's Form Provider javascript class is often a good place to start.
 
@@ -69,7 +69,7 @@ The template literal is in a single-quote string, however, not the back-ticks wh
 
 When the component is initialized, it will automatically evaluate all string literals in properties. In the example above, `$.provider` will become  `[ComponentName].[ComponentName]_data_source`. The value of this `provider` was declared in the `js_config` block in the XML above. It is possible to pass nearly any configuration value this way and access it using template literals.
 
-But, XML is static and while that gets us the name of the data provider component, it still doesn't actually provide data. There is one more important step in providing data to Javascript components.
+But, XML is static and while that gets us the name of the data provider component, it still does not actually provide data. There is one more important step in providing data to Javascript components.
 
 # Javascript Component Linking
 
