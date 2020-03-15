@@ -5,9 +5,15 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This tutorial shows you how to create an integration with an external API using [GuzzleHttp](http://docs.guzzlephp.org/en/stable/quickstart.html){:target="_blank"} library, that is included into magento package.
+This tutorial shows you how to create an integration with an external API using [GuzzleHttp](http://docs.guzzlephp.org/en/stable/quickstart.html){:target="_blank"} library, that is included into Magento package.
 
 Guzzle is a PHP HTTP client that makes it easy to create some integrations with some web services.
+Its implementation code is more simpler, cleaner and readable, in comparision with cURL.
+
+GuzzleHttp uses cURL by default, but it can use any HTTP client that you want other than cURL like PHP's stream wrapper or sockets, in case `curl` isn't installed on your Web Server.
+
+{:.bs-callout-info}
+It's much easier to cover a GuzzleHttp implementation by [Unit Tests]({{ page.baseurl }}/test/unit/writing_testable_code.html), as you're able to mock the HTTP requests.
 
 ## Request options
 
@@ -19,7 +25,7 @@ Guzzle is a PHP HTTP client that makes it easy to create some integrations with 
 
 ## Create a Github API integration
 
-In the following example, we're be using the [Github API](https://api.github.com/) as web service, and will fetch some data regarding the Magento 2 Git repository.
+In the following example, we're using the [Github API](https://api.github.com/) as web service, and will fetch some data regarding the Magento 2 Git repository.
 
 ```php
 <?php
@@ -77,7 +83,7 @@ class GitApiService
     /**
      * Fetch some data from API
      */
-    public function execute()
+    public function execute(): void
     {
         $repositoryName = 'magento/magento2';
         $response = $this->doRequest(static::API_REQUEST_ENDPOINT . $repositoryName);
