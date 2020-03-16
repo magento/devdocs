@@ -475,7 +475,7 @@ For example, the developer can disable a global plugin in the [backend](https://
 
 ### Disabling plugin.
 
-Each plugin can be disabling in a ``di.xml`` file. For it the ``disabled`` element should be set to ``true``
+Each plugin can be disabled in a ``di.xml`` file. To disable a plugin the ``disabled`` parameter of the plugin declaration should be set to ``true``
 
 For example:
 
@@ -485,7 +485,7 @@ For example:
 </type>
 ```
 
-Where ``ProcessPaymentConfiguration`` is the name plugin declared in the `vendor/magento/module-payment/etc/frontend/di.xml` and is require parameter.
+Where ``ProcessPaymentConfiguration`` is the name of the plugin declared in the `vendor/magento/module-payment/etc/frontend/di.xml`.
 
 {:.ref-header}
 Related topics
