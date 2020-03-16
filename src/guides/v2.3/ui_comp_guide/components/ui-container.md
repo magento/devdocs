@@ -5,16 +5,16 @@ contributor_name: Jehangir Wahid
 contributor_link: https://github.com/Jehangir-Wahid
 ---
 
-The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text. It can also be used without any field but just to display a notice or description of a fieldset.
+The Container [UI component](https://glossary.magento.com/ui-component) is used for wrapping fields or other ui-components with descriptive text. It may be used without any field to display a notice or description of a fieldset.
 
 ## Configuration options
 
-Component's options are set in the UI-component's configuration `.xml` file as follows:
+Component options are set in the UI-component's configuration `.xml` file as follows:
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `template` | Path to the component's `.html` template. | String | `ui/form/components/complex` |
-| `sortOrder` | Sorting order of the Container. | Number | `0` |
+| `sortOrder` | Sort order of the Container. | Number | `0` |
 | `label` | Label displayed for the Container. | String | `''` |
 | `additionalClasses` | CSS class(es) applied to the root node of the component's `.html` template. | String | `''` |
 | `text` | Description for the Container. | String | `''` |
