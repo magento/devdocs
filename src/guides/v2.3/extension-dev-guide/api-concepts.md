@@ -34,7 +34,7 @@ interface CatalogRuleRepositoryInterface
 
 An application programming interface (API) is a set of interfaces and their implementations that a module provides to other modules.
 
-### Example of implementation a API interface
+### Example of an API interface implementation
 
 The ``Magento_CatalogRule`` module.
 
@@ -84,7 +84,7 @@ interface CatalogRuleRepositoryInterface
 }
 ```
 
-The implementations of the interfaces in the ``di.xml``
+The implementation of each interface is declared in the ``di.xml`
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
