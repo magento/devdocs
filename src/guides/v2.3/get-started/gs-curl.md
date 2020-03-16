@@ -125,7 +125,7 @@ $this->curl->setOption(CURLOPT_PORT, 8080);
 
 #### Set cURL option using setOptions method
 
-The ``setOptions`` method accepts a parameter as an array.
+The ``setOptions`` method accepts an array as a parameter.
 
 ```php
 $options = [CURLOPT_RETURNTRANSFER => true, CURLOPT_PORT => 8080];
