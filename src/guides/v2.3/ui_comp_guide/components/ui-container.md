@@ -3,9 +3,7 @@ group: ui-components-guide
 title: Container component
 ---
 
-The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text.
-
-It can also be used without any field but just to display a notice or description of a fieldset. 
+The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text. It can also be used without any field but just to display a notice or description of a fieldset. 
 
 ## Configuration options
 
