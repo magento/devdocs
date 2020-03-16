@@ -350,6 +350,73 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
+## Declaring the new custom noRoute processor
+
+Magento allows to add a custom noRoute processor.
+In order to add a new noRoute processor, add the argument to the ``NoRouteHandlerList``, the example of ``default`` noRoute processor declaring in the ``di.xml`` file:
+
+```xml
+<type name="Magento\Framework\App\Router\NoRouteHandlerList">
+    <arguments>
+        <argument name="default" xsi:type="array">
+            <item name="customNoRoute" xsi:type="array">
+                <item name="class" xsi:type="string">Magento\Framework\App\Router\NoRouteHandler</item>
+                <item name="sortOrder" xsi:type="string">100</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+```
+The noRoute processor class, for example the default Magento noRoute processor class:
+
+```php
+namespace Magento\Framework\App\Router;
+
+class NoRouteHandler implements \Magento\Framework\App\Router\NoRouteHandlerInterface
+{
+    /**
+     * @var \Magento\Framework\App\Config\ScopeConfigInterface
+     */
+    protected $_config;
+
+    /**
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
+     */
+    public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $config)
+    {
+        $this->_config = $config;
+    }
+
+    /**
+     * Check and process no route request
+     *
+     * @param \Magento\Framework\App\RequestInterface $request
+     * @return bool
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    public function process(\Magento\Framework\App\RequestInterface $request)
+    {
+        $noRoutePath = $this->_config->getValue('web/default/no_route', 'default');
+
+        if ($noRoutePath) {
+            $noRoute = explode('/', $noRoutePath);
+        } else {
+            $noRoute = [];
+        }
+
+        $moduleName = isset($noRoute[0]) ? $noRoute[0] : 'core';
+        $actionPath = isset($noRoute[1]) ? $noRoute[1] : 'index';
+        $actionName = isset($noRoute[2]) ? $noRoute[2] : 'index';
+
+        $request->setModuleName($moduleName)->setControllerName($actionPath)->setActionName($actionName);
+
+        return true;
+    }
+}
+```
+
+The noRoute processor should implement the ``Magento\Framework\App\Router\NoRouteHandlerInterface``
+
 ## Declaring the new route as Page Type
 
 After creating a new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
