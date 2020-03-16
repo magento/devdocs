@@ -108,7 +108,6 @@ To enable the GitLab integration:
    -  `--merge-requests-clone-parent-data`-—An _optional_ parameter that instructs {{site.data.var.ece}} to clone the parent environment's data for merge requests (`true` by default)
    -  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to fetch all branches from the remote (as inactive environments) (`true` by default)
    -  `--prune-branches`—An _optional_ parameter that instructs {{site.data.var.ece}} to delete branches that do not exist on the remote (`true` by default)
-      
 
    **Example**: Enable the GitLab integration for a private repository:
 
