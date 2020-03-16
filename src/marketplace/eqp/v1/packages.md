@@ -4,7 +4,7 @@ title: Packages
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the
-[Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
+[Magento Extension Quality Program (EQP)]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html).
 You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
 *  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.

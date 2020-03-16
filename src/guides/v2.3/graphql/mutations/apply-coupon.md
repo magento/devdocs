@@ -32,7 +32,7 @@ mutation {
         }
         quantity
       }
-      applied_coupon {
+      applied_coupons {
         code
       }
       prices {
@@ -73,7 +73,7 @@ mutation {
             "quantity": 1
           }
         ],
-        "applied_coupon": {
+        "applied_coupons": {
           "code": "H20"
         },
         "prices": {

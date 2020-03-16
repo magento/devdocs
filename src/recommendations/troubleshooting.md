@@ -1,6 +1,7 @@
 ---
 group: product-recommendations
 title: Troubleshoot Recommendations
+ee_only: True
 ---
 
 If you have configured the `product-recommendations` module correctly, but you are not seeing any recommendations, try the following:

@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360034594431
 ---
 
 {% include install/trouble/rc_php-version.md %}

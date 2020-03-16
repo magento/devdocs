@@ -12,7 +12,7 @@ Production mode is the default configuration setting for launching the Docker en
 {%include cloud/note-docker-config-reference-link.md%}
 
 {:.procedure}
-To launch the Docker environment in developer mode:
+To launch the Docker environment in production mode:
 
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
 
