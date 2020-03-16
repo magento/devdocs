@@ -69,11 +69,11 @@ For example, persistent data entities for the Customer module include Customer, 
 
 Repository interfaces must provide these functions:
 
-Interface | Description
+Method | Description
 --- | ---
 `save(data entity interface)` | If an ID is not specified, creates a record, If an ID is specified, updates the record for the specified ID.
 `get(id)` | Performs a database lookup by ID and returns a data entity interface, such as `CustomerInterface`or `AddressInterface`.
-`getList(search criteria)` | Performs a search for all data entities that match specified search criteria and returns a search results interface that gives access to the set of matches.
+`getList(search criteria)` | Performs a search for all data entities that match specified search criteria and returns a search result interface that gives access to the set of matches.
 `delete(data entity interface)` | Deletes a specified entity. The entity contains the key (ID).
 `deleteById(id)` | Deletes a specified entity by key (ID).
 
@@ -90,14 +90,14 @@ Interface | Description
 
 ### Metadata interfaces {#metadata-interfaces}
 
-Metadata interfaces provide methods for retive metadata, the interfaces are not related to repositories. For example:
+Metadata interfaces provide methods for retrieving metadata, the interfaces are not related to repositories. For example:
 
 Interface | Description
 --- | ---
 `AttributeMetadataInterface` | Provides customer attribute metadata and defines the constants used as keys of data array and methods. See more [AttributeMetadataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/Data/AttributeMetadataInterface.php){:target="_blank"}.
 `ProductMetadataInterface` | Provides Magento application product metadata. Defines the `getVersion()`, `getEdition()`, `getName()` methods.
 `CustomerMetadataManagementInterface` | Interface for managing customer attributes metadata. Defines the constant `ENTITY_TYPE_CUSTOMER`
-`AddressMetadataInterface` | Interface for retrieval information about customer address attributes metadata. Defines the constants `ATTRIBUTE_SET_ID_ADDRESS`, `ENTITY_TYPE_ADDRESS`, `DATA_INTERFACE_NAME`
+`AddressMetadataInterface` | Interface for retrieving information about customer address attributes metadata. Defines the constants `ATTRIBUTE_SET_ID_ADDRESS`, `ENTITY_TYPE_ADDRESS`, `DATA_INTERFACE_NAME`
 {:.ref-header}
 Related topics
 
