@@ -2,9 +2,13 @@
 group: ui-components-guide
 title: Container component
 ---
-The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text. It can also be used without any field but just to display a notice or description of a fieldset. 
+
+The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text. It can also be used without any field but just to display a notice or description of a fieldset.
+
 ## Configuration options
+
 Component's options are set in the UI-component's configuration `.xml` file as follows:
+
 ```xml
 <container name="%name%">
     <argument name="data" xsi:type="array">
@@ -19,6 +23,7 @@ Component's options are set in the UI-component's configuration `.xml` file as f
     </argument>
 </container>
 ```
+
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `template` | Path to the component's `.html` template. | String | `ui/form/components/complex` |
@@ -26,9 +31,13 @@ Component's options are set in the UI-component's configuration `.xml` file as f
 | `label` | Label displayed for the Container. | String | `''` |
 | `additionalClasses` | CSS class(es) applied to the root node of the component's `.html` template. | String | `''` |
 | `text` | Description for the Container. | String | `''` |
+
 ## Examples
+
 ### Container with a component
+
 The following sample is an example of the Container component contain a `Select` component.
+
 ```xml
 <container name="container_name">
     <argument name="data" xsi:type="array">
@@ -64,9 +73,13 @@ The following sample is an example of the Container component contain a `Select`
 </container>
 ```
 #### Result
+
 ![Container with a field]({{ site.baseurl }}/common/images/ui_comps/container-with-field-result.png)
+
 ### Container without any fields
+
 The following sample is an example of the Container component only.
+
 ```xml
 <container name="container_name">
     <argument name="data" xsi:type="array">
@@ -84,6 +97,9 @@ The following sample is an example of the Container component only.
     </argument>
 </container>
 ```
+
 #### Result
+
 The `text` of this container is styled using the `additionalClasses` value, i.e. `sample-additional-class`.
+
 ![Container with out any fields]({{ site.baseurl }}/common/images/ui_comps/container-result.png)
