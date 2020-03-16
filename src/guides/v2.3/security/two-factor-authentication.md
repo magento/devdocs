@@ -16,7 +16,7 @@ Two-Factor Authentication gives you the ability to:
 At this time, Two-Factor Authentication can be installed only from the command line.
 
 {:.bs-callout-info}
-**Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/id/129) for contributing these features as part of the Magento Community Engineering program.
+**Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/index/id/129/) for contributing these features as part of the Magento Community Engineering program.
 
 ## Install 2FA
 
