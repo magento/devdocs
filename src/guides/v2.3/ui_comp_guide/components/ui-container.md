@@ -1,6 +1,8 @@
 ---
 group: ui-components-guide
 title: Container component
+contributor_name: Jehangir Wahid
+contributor_link: https://github.com/Jehangir-Wahid
 ---
 
 The Container [UI component](https://glossary.magento.com/ui-component) can be used for wrapping particular fields or other ui-components in it with some description text. It can also be used without any field but just to display a notice or description of a fieldset.
@@ -9,25 +11,10 @@ The Container [UI component](https://glossary.magento.com/ui-component) can be u
 
 Component's options are set in the UI-component's configuration `.xml` file as follows:
 
-```xml
-<container name="%name%">
-    <argument name="data" xsi:type="array">
-        <item name="config" xsi:type="array">
-            <!-- Configurable options are specified here -->
-            <item name="template" xsi:type="%type%">%value%</item>
-            <item name="sortOrder" xsi:type="%type%">%value%</item>
-            <item name="label" xsi:type="%type%">%value%</item>
-            <item name="additionalClasses" xsi:type="%type%">%value%</item>
-            <item name="text" xsi:type="%type%" translate="%boolean%">%value%</item>
-        </item>
-    </argument>
-</container>
-```
-
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `template` | Path to the component's `.html` template. | String | `ui/form/components/complex` |
-| `sortOrder` | Description for the Container. | Number | `0` |
+| `sortOrder` | Sorting order of the Container. | Number | `0` |
 | `label` | Label displayed for the Container. | String | `''` |
 | `additionalClasses` | CSS class(es) applied to the root node of the component's `.html` template. | String | `''` |
 | `text` | Description for the Container. | String | `''` |
