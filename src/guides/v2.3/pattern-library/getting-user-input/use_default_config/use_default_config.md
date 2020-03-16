@@ -42,4 +42,4 @@ User should be able to access this control via their keyboard and it should be l
 
 ## Assets
 
-[Download Default Config PSD source](src/defaultconfig.psd).
+[Download Default Config PSD source]({{ site.downloads }}/defaultconfig.psd).

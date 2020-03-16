@@ -13,6 +13,7 @@ Attribute |  Data Type | Description
 `prices` | [CartPrices][CartPrices] | Contains subtotals and totals
 `selected_payment_method` | [SelectedPaymentMethod][SelectedPaymentMethod] | Selected payment method
 `shipping_addresses` | [[ShippingCartAddress]][ShippingCartAddress]! | Contains one or more shipping addresses
+`total_quantity` | Float! | Total Quantity of products in the cart
 
 [AppliedCoupon]: {{page.baseurl}}/graphql/queries/cart.html#AppliedCoupon
 [AppliedGiftCard]: {{page.baseurl}}/graphql/queries/cart.html#AppliedGiftCard
