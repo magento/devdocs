@@ -77,6 +77,11 @@ Where the following notation is used:
 -  `<language>`: specified in the `code_subtag` format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `language`.
 -  `<path_to_file>`: path to the root source file, relative to the `app/design/frontend/<Vendor>/<theme>/web` directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits] from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
+Once these are set correctly, run grunt to watch your changes.
+
+-  Run `grunt exec:<theme>` from the root directory to republish the symlinks.
+-  Run `grunt watch:<theme>` so that grunt will watch for file changes.
+
 ## Using custom Grunt configuration files
 
 There are several ways to declare a custom configuration file.

@@ -332,7 +332,7 @@ The execution will have a different flow, depending on the methods implemented b
 
 #### Scenario A
 
-Your plugin classes has this methods:
+With these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 |  ------------ | ---------------- | ---------------- | ---------------- |
@@ -353,9 +353,9 @@ The execution will be in this order:
 *  `PluginB::afterDispatch()`
 *  `PluginC::afterDispatch()`
 
-#### Scenario B
+#### Scenario B (with a `callable` around)
 
-Your plugin classes has this methods:
+With these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | -----------   | --------------   | --------------   | --------------   |
@@ -364,11 +364,31 @@ Your plugin classes has this methods:
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
 
+`PluginB`::`aroundDispatch()` defines the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
+
+```php
+class PluginB
+{
+    public function aroundDispatch(\Magento\Framework\App\Action\Action $subject, callable $next, ...$args)
+    {
+        // The first half of code goes here
+        // ...
+
+        $result = $next(...$args);
+
+        // The second half of code goes here
+        // ...
+
+        return $result;
+    }
+}
+```
+
 The execution will be in this order:
 
 *  `PluginA::beforeDispatch()`
 *  `PluginB::beforeDispatch()`
-*  `PluginB::aroundDispatch()` (Magento calls the first half until `callable`)
+*  `PluginB::aroundDispatch()` (Magento calls the first half before `callable`)
 
    *  `PluginC::beforeDispatch()`
 
@@ -380,9 +400,45 @@ The execution will be in this order:
 *  `PluginA::afterDispatch()`
 *  `PluginB::afterDispatch()`
 
+#### Scenario B (without a `callable` around)
+
+Using these methods:
+
+|               | PluginA          | PluginB          | PluginC          |
+| -----------   | --------------   | --------------   | --------------   |
+| **sortOrder** | 10               | 20               | 30               |
+| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
+| **around**    |                  | aroundDispatch() |                  |
+| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+
+`PluginB`::`aroundDispatch()` does not define the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
+
+```php
+class PluginB
+{
+    public function aroundDispatch(\Magento\Framework\App\Action\Action $subject, $next, $result)
+    {
+        // My custom code
+        return $result;
+    }
+}
+```
+
+The execution will be in this order:
+
+*  `PluginA::beforeDispatch()`
+*  `PluginB::beforeDispatch()`
+
+   *  `PluginB::aroundDispatch()`
+
+*  `PluginA::afterDispatch()`
+*  `PluginB::afterDispatch()`
+
+Because the`callable` type for the `$next` agrument is absent, `Action::dispatch()` will be not called and `Plugin C` will be not triggered.
+
 #### Scenario C
 
-Your plugin classes has this methods:
+Assuming these methods:
 
 |               | PluginA          | PluginB          | PluginC          |
 | ------------- | ---------------- | ---------------- | ---------------- |
@@ -411,7 +467,7 @@ The execution will be in this order:
 
 ## Configuration inheritance
 
-Classes and interfaces that are implementations of or inherit from classes that have plugins will also inherit plugins from the parent class.
+Classes and interfaces that are implementations of, or inherit from, classes that have plugins will also inherit plugins from the parent class.
 
 Magento uses plugins defined in the global scope when the system is in a specific area (such as frontend or backend). You can extend or override these global plugin configurations with an area's `di.xml` file.
 

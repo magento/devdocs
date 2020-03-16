@@ -341,9 +341,9 @@ type Customer @doc(description: "Customer defines the customer name and address 
     default_shipping: String @doc(description: "The ID assigned to the shipping address")
     date_of_birth: String @doc(description: "The customer's date of birth")
     taxvat: String @doc(description: "The customer's Tax/VAT number (for corporate customers)")
-    id: Int @doc(description: "The ID assigned to the customer")
     is_subscribed: Boolean @doc(description: "Indicates whether the customer is subscribed to the company's newsletter") @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\IsSubscribed")
     addresses: [CustomerAddress] @doc(description: "An array containing the customer's shipping and billing addresses")
+    gender: Int @doc(description: "The customer's gender (Male - 1, Female - 2)")
 }
 ```
 
@@ -361,7 +361,6 @@ mutation {
         }
     ) {
         customer {
-            id
             firstname
             lastname
             email
@@ -378,7 +377,6 @@ A sample response:
   "data": {
     "createCustomer": {
       "customer": {
-        "id": 5,
         "firstname": "John",
         "lastname": "Doe",
         "email": "j.doe@example.com",

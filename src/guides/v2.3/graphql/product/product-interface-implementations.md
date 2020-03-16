@@ -9,7 +9,7 @@ Magento provides multiple product types, and most of these product types have sp
 
 Product type | Implements | Has product-specific attributes?
 --- | --- | ---
-[BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html) | Yes
+[BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html) | Yes
 [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html) | Yes
 [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html),  [CustomizableProductInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)  | Yes
 [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html) | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html), [PhysicalProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html#PhysicalProductInterface), [CustomizableProductInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html) | Yes
@@ -42,7 +42,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
       id
       name
       sku
-      type_id
+      __typename
       ... on GroupedProduct {
         items{
           qty
@@ -50,7 +50,7 @@ For example, to return `GroupedProduct` attributes, construct your query like th
           product{
             sku
             name
-            type_id
+            __typename
             url_key
           }
         }

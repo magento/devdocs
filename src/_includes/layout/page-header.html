@@ -1,10 +1,5 @@
 <!-- page-header -->
 <section class="page-intro">
-{% if page.guide_version != nil and page.guide_version != site.version %}
-  <div class="message-banner version-banner">
-    This is archived documentation for Magento v2.2 and is <a href='https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf'>no longer supported</a>. Go to the <a href='https://devdocs.magento.com'>latest documentation</a>.
-  </div>
-{% endif %}
 
 {% if page.ee_only == true %}
 <span class="ee-only">{{site.data.var.ee}} only</span>

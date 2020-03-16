@@ -27,7 +27,7 @@ The following figure shows a sample storefront page. If it displays as follows, 
 
 ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:width="450px"}
 
-If the page displays a 404 (Not Found) or unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html).
+If the page displays a 404 (Not Found) or unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics](https://support.magento.com/hc/en-us/articles/360032994352).
 
 ## Verify the Magento Admin {#instgde-verify-admin}
 
@@ -41,8 +41,8 @@ The following figure shows a sample Magento Admin page. If it displays as follow
 
 ![Magento Admin which verifies a successful installation]({{ site.baseurl }}/common/images/install_success_admin.png)
 
-If the page displays unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html).
+If the page displays unconfigured (no styles, only text), see [After installing, images and stylesheets do not load; only text displays, no graphics](https://support.magento.com/hc/en-us/articles/360032994352).
 
-If you get a 404 (Not Found) error similar to the following, see [Cannot access Magento software in a web browser]({{ page.baseurl }}/install-gde/trouble/tshoot_access-browser.html).
+If you get a 404 (Not Found) error similar to the following, see [Cannot access Magento software in a web browser](https://support.magento.com/hc/en-us/articles/360033117152).
 
 `The requested URL /magento2index.php/admin/admin/dashboard/index/key/0c81957145a968b697c32a846598dc2e/ was not found on this server.`

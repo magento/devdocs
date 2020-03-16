@@ -58,11 +58,11 @@ To update Fastly IO:
 
 1. On the _Fastly Configuration_ page in the _Default IO config options_ field, click **Configure**.
 
-   ![View the Fastly IO configuration settings]({{ site.baseurl }}/common/images/cloud_fastly-io-default-config.png){:width="650px"})
+   ![View the Fastly IO configuration settings]({{ site.baseurl }}/common/images/cloud/cloud_fastly-io-default-config.png){:width="650px"})
 
 1. Review and update the Fastly IO configuration settings on the _Image optimization default config options_ page:
 
-   ![Review Fastly IO configuration]({{ site.baseurl }}/common/images/cloud_fastly-io-config-options.png){:width="650px"}
+   ![Review Fastly IO configuration]({{ site.baseurl }}/common/images/cloud/cloud_fastly-io-config-options.png){:width="650px"}
 
    -  **Auto WebP?**—leave the default setting (*Yes*) to convert images to the WebP format in browsers that support it. If you change the setting to **No**, Fastly uses the image file type instead of converting the image to WebP format.
 
@@ -86,13 +86,13 @@ To update Fastly IO:
 
 1. In the Image Optimization configuration _Enable deep image optimization_ field, select **Yes** to turn on deep image optimization.
 
-   ![Enable Fastly IO deep image optimization]({{ site.baseurl }}/common/images/cloud_fastly-io-deep-image-config.png){:width="650px"}
+   ![Enable Fastly IO deep image optimization]({{ site.baseurl }}/common/images/cloud/cloud_fastly-io-deep-image-config.png){:width="650px"}
 
    Deep image optimization is off by default. When this feature is enabled, the built-in resizing feature in Magento is turned off and resizing work is offloaded to the Fastly IO service. Image optimization only applies to product images. CMS images are not resized. See the [Fastly documentation](#deep-image-optimization).
 
 1. After you enable deep image optimization, enable the [adaptive pixel ratios](#adaptive-pixel-ratios) feature to generate images optimized for use in responsive websites.
 
-   ![Enable Fastly IO adaptive pixel ratios]({{ site.baseurl }}/common/images/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
+   ![Enable Fastly IO adaptive pixel ratios]({{ site.baseurl }}/common/images/cloud/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
 
    -  In the _Enable adaptive device pixel ratios_ field, select **Yes**.
    -  In the _Device pixel ratios_ field, accept the default setting, or click the **System Input** check box to remove the setting. Then, select the desired ratio. A higher Device Pixel Ratio setting delivers larger images.
