@@ -62,7 +62,9 @@ To upgrade project to use ece-tools:
    hooks:
        # We run build hooks before your application has been packaged.
        build: |
-           php ./vendor/bin/ece-tools build
+           set -e
+           php ./vendor/bin/ece-tools build:generate
+           php ./vendor/bin/ece-tools build:transfer
        # We run deploy hook after your application has been deployed and started.
        deploy: |
            php ./vendor/bin/ece-tools deploy
