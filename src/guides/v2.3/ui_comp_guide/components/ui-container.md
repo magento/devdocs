@@ -32,7 +32,7 @@ Component's options are set in the UI-component's configuration `.xml` file as f
 | `sortOrder` | Description for the Container. | Number | `0` |
 | `label` | Label displayed for the Container. | String | `''` |
 | `additionalClasses` | CSS class(es) applied to the root node of the component's `.html` template. | String | `''` |
-| `text` | Description for the Container. | Boolean | `''` |
+| `text` | Description for the Container. | String | `''` |
 
 ## Examples
 
