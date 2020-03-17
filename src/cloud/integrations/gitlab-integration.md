@@ -20,7 +20,11 @@ You must obtain a GitLab token and a webhook to continue the process.
 
 ## Prerequisites
 
-You must be a member of a group with write-access to the GitLab repository, so that you can _push_ to the repository.
+
+-  Administrator access to the {{site.data.var.ece}} project
+-  [`magento-cloud` CLI]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
+-  A GitLab account
+-  A [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) with write-access to the GitLab repository, selected scopes must be at least: `api` and `read_repository`.
 
 Selected scopes must be at least : `api` and `read_repository`
 
