@@ -20,13 +20,10 @@ You must obtain a GitLab token and a webhook to continue the process.
 
 ## Prerequisites
 
-
 -  Administrator access to the {{site.data.var.ece}} project
 -  [`magento-cloud` CLI]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
 -  A GitLab account
 -  A [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) with write-access to the GitLab repository, selected scopes must be at least: `api` and `read_repository`.
-
-
 
 ## Prepare your repository
 
@@ -117,7 +114,13 @@ To enable the GitLab integration:
    magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
    ```
 
-1. Enter the required information if prompted.
+1. When prompted, enter "Y" to add the integration.
+      
+   ```terminal
+   Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
+   This means it can overwrite all the code in your project.
+   Are you sure you want to continue? [y/N] y
+   ```
 
 1. Copy the **Hook URL** displayed by the return output.
 
@@ -161,3 +164,10 @@ In order to communicate events —such as a push or merge requests— with your 
 ## Test the integration
 
 To verify the integration works, make a change in the GitLab repository and use the magento-cloud CLI to pull the change into the local environment or just merge a request in GitLab.
+
+For more information see [Test the integration]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html#test-the-integration)
+
+If integration succed, you will see the following picture in your Magento Cloud project :
+
+![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud_gitlab-integration-success.png)
+

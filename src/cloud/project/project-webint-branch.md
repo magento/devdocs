@@ -200,6 +200,28 @@ To enter your project's public key as a Bitbucket deploy key:
 1. Click **Add Key**.
 1. Follow the prompts on your screen to complete the task.
 
+### Enter your GitLab deploy key {#cloud-deploykey-gitlab}
+
+To enter your project's public key as a [GitLab deploy key](https://docs.gitlab.com/ee/ssh/README.html#deploy-keys):
+
+1. Log in to your GitLab repository as its owner.
+1. At first, be sure Pipelines are enabled for your project as the following figure shows.
+
+   ![GitLab main settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings-main.png)
+   ![GitLab pipelines]({{ site.baseurl }}/common/images/cloud_gitlab-pipelines.png)
+   
+1. Then, in the left navigation bar, click Settings > **CI / CD** as the following figure shows.
+
+   ![GitLab settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings.png){:width="400px"}
+
+1. Click Deploy Keys > **Expand** button as the following figure shows.
+
+   ![GitLab deploy key]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key.png)
+
+1. Fill the form with a title and your SSH key then click **Add Key** as the following figure shows.
+
+   ![GitLab deploy key form]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key-form.png)
+
 ## Secure your environments and branches {#security}
 
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
