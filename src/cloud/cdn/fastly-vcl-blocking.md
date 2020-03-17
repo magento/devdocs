@@ -15,7 +15,7 @@ You can use the Fastly CDN module for Magento 2 to create an Edge ACL with a lis
 **Prerequisites:**
 
 -  List of client IP addresses to block
--  Account access and URL for the Magento Admin UI for the Staging or Production environment
+-  Admin credentials to access the Magento Admin UI for your {{ site.data.var.ece }} environment
 -  Fastly API credentials for Staging and Production environments
 
 ## Create Edge ACL for blocking client IPs {#edge-acl}
@@ -36,7 +36,7 @@ You reference the Edge ACL by name in your VCL snippet code.
 ## Create the custom VCL for the block list {#vcl}
 
 {:.bs-callout-info}
-This example shows advanced users how to create a VCL code snippet to configure custom blocking rules that can be uploaded to the Fastly service. You can configure blocklist or allowlist by country from the {{ site.data.var.ee }} Admin UI using the [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) feature available in the Fastly CDN for Magento 2 module.
+This example shows advanced users how to create a VCL code snippet to configure custom blocking rules that can be uploaded to the Fastly service. You can configure a block list or allow list based on country from the {{ site.data.var.ee }} Admin UI using the [Blocking](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BLOCKING.md) feature available in the Fastly CDN for Magento 2 module.
 
 After you define the Edge ACL, you can use it to create the VCL snippet to block access to the IP addresses specified in the ACL. You can use the same VCL snippet in both Staging and Production environments, but you must upload the snippet to each environment separately.
 
@@ -52,7 +52,7 @@ The following custom VCL snippet code (JSON format) shows the logic to block inc
 }
 ```
 
-Before creating your own snippet from this example, review the values to determine whether you need to make any changes:
+Before creating a snippet based on this example, review the values to determine whether you need to make any changes:
 
 -  `name`: Name for the VCL snippet. For this example, we used the name `blocklist`.
 
@@ -66,7 +66,7 @@ After reviewing and updating the code for your environment, use either of the fo
 
 -  [Add the custom VCL snippet from the Magento Admin](#complete). This method is recommended if you can access the Magento Admin UI. (Requires [Fastly CDN module for Magento 2 version 1.2.58]({{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade) or later.)
 
--  Save the JSON code example to a file (for example, `allowlist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
+-  Save the JSON code example to a file (for example, `blocklist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
 
 ## Add the custom VCL snippet {#complete}
 

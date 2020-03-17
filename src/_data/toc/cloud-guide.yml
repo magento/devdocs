@@ -270,7 +270,7 @@ pages:
               url: /cloud/cdn/fastly-vcl-badreferer.html
               versionless: true
 
-            - label: Custom VCL for IP allowlist
+            - label: Custom VCL for IP allow list
               url: /cloud/cdn/fastly-vcl-whitelist.html
               versionless: true
 
