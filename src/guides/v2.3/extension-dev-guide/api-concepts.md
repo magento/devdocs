@@ -84,7 +84,7 @@ interface CatalogRuleRepositoryInterface
 }
 ```
 
-An interface implementation is declared in the ``di.xml` as `<preference />`
+An interface implementation is declared in the `di.xml` as `<preference />`
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
