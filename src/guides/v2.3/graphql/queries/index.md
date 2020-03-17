@@ -150,7 +150,7 @@ The following query returns a list of Magento queries. The results are truncated
 ```graphql
 query IntrospectionQuery {
   __schema {
-    mutationType {
+    queryType {
       fields {
         name
         description
@@ -173,8 +173,8 @@ query IntrospectionQuery {
             "description": "Returns information about shopping cart"
           },
           {
-            "name": "category",
-            "description": "The category query searches for categories that match the criteria specified in the search and filter attributes."
+            "name": "categoryList",
+            "description": "Returns an array of categories based on the specified filters."
           }
         ]
       }
@@ -182,7 +182,6 @@ query IntrospectionQuery {
   }
 }
 ```
-
 ### Get details about a data type
 
 The following introspection query returns details about the `ProductAttributeFilterInput` data type.
