@@ -11,8 +11,7 @@ functional_areas:
   - Setup
 ---
 
-*  [cron readiness check issues]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
-*  [Component dependency readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_depend.html)
-*  [PHP version readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_php.html)
-*  [File permissions readiness check issues]( {{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_perms.html)
-
+*  [cron readiness check issues](https://support.magento.com/hc/en-us/articles/360032952852)
+*  [Component dependency readiness check issues](https://support.magento.com/hc/en-us/articles/360033469652)
+*  [PHP version readiness check issues](https://support.magento.com/hc/en-us/articles/360034594431)
+*  [File permissions readiness check issues](https://support.magento.com/hc/en-us/articles/360034224232)

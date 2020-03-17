@@ -48,7 +48,6 @@ pages:
 
     - label: Release Notes
       url: /inventory/release-notes.html
-      exclude_versions: ['2.0', '2.1', '2.2']
 
   - label: Google reCAPTCHA
     children:

@@ -4,13 +4,18 @@ title: Create and manage users
 functional_areas:
   - Cloud
   - Configuration
+redirect_from:
+  - /cloud/admin/admin-user-admin.html
 ---
 
-You can manage user access to {{ site.data.var.ece }} projects by assigning users one or more roles. You can add and manage user accounts for the entire project and permissions per available environment.
+You can manage user access to {{site.data.var.ece}} projects by assigning users one or more roles. You can add and manage user accounts for the entire project and permissions per available environment.
+
+{:.bs-callout-tip}
+Adding or updating user account information for a {{site.data.var.ece}} environment triggers the build and deploy process automatically, which takes your site offline until the deployment completes. For Production environments, we recommend completing user account management tasks during off-peak hours to prevent service disruptions.
 
 ## Account owner role {#cloud-role-acct-owner}
 
-The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
+The License Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
 
 The account has super user access and additional capabilities for managing all aspects of your project and environments.
 
@@ -29,21 +34,20 @@ A project reader can have one of the following roles per environment:
 -  The **Contributor** role grants access to push code to an environment and branch the environment.
 -  The **Reader** role, also referred to as the _viewer_ role grants view-only access to an environment.
 
-{:.bs-callout-info}
-We recommend that you limit the project Super user role and environment Admin roles to as few users as possible.
-
 ## Role management best practices
 
-When a development team works on a project, the team leader can be the project administrator who decides which roles to assign to team members. For example, the team lead might assign one team member as a Contributor to one environment, assign another as an Admin on a different environment, and assign the Reader role to the customer on the `master` environment.`
+-  We recommend that you limit the project Super user role and environment Admin roles to as few users as possible.
 
-Assign the Contributor role to users who require view access to an environment as well as the capability to commit code and branch the environment.
+-  When a development team works on a project, the team leader can be the project administrator who decides which roles to assign to team members. For example, the team lead might assign one team member as a Contributor to one environment, assign another as an Admin on a different environment, and assign the Reader role to the customer on the `master` environment.`
+
+-  Assign the Contributor role to users who require view access to an environment as well as the capability to commit code and branch the environment.
 
 {:.bs-callout-warning}
-An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in `.magento.app.yaml` by specifying `ssh: contributor`.
+An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change this behavior by updating the access configuration in the `.magento.app.yaml` file to include `ssh: contributor`.
 
 ## Create and manage users
 
-You can create and manage users using the Magento Cloud CLI or the Web Interface.
+You can create and manage users using the Magento Cloud CLI or the {{site.data.var.ece}} Project Web UI.
 
 ### Manage users with the CLI {#cloud-user-mg-cli}
 
@@ -67,27 +71,29 @@ To add a user and assign roles:
    magento-cloud user:add
    ```
 
-1. Follow the prompts to specify the user email address and to set the project and environment roles:
+1. Follow the prompts to specify the user email address, set the project and environment roles, and add the user:
 
-  ```terminal
-  Enter the user's email address: alice@example.com
+   ```terminal
+   Enter the user's email address: alice@example.com
 
-  Email address: alice@example.com
+   Email address: alice@example.com
 
-  The user's project role can be 'viewer' ('v') or 'admin' ('a').
-  Project role [V/a]: a
-  The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
-  development environment role [V/c/a]: c
-  Summary:
-    Email address: alice@example.com
-    Project role: contributor
-  Adding users can result in additional charges.
-  Are you sure you want to add this user? [Y/n]
-  Adding the user to the project
-  ```
-  {:.no-copy}
+   The user's project role can be 'viewer' ('v') or 'admin' ('a').
+   Project role [V/a]: a
+   The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
+   development environment role [V/c/a]: c
+   Summary:
+     Email address: alice@example.com
+     Project role: contributor
+   Adding users can result in additional charges.
+   Are you sure you want to add this user? [Y/n]
+   Adding the user to the project
+   ```
+   {:.no-copy}
 
-  After you add the user, Magento sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
+   {%include cloud/note-prevent-site-availability-issues.md%}
+
+   After you add the user, Magento sends an email to the specified address with instructions for accessing the {{ site.data.var.ece }} project.
 
 The following example changes the environment-level role that is assigned to a user:
 
@@ -98,10 +104,10 @@ magento-cloud user:role alice@example.com --level environment --environment deve
 {:.bs-callout-info}
 To list the available `magento-cloud` CLI commands, use the `magento-cloud list` command.
 
-### Manage users with the Web Interface {#cloud-user-webinterface}
+### Manage users from the Project Web UI {#cloud-user-webinterface}
 
 {:.procedure}
-To create user accounts using the Web Interface:
+To create user accounts from the Project Web UI:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 
@@ -127,25 +133,13 @@ To create user accounts using the Web Interface:
 
 1. Select the access for the account:
 
-   -  For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
+   -  For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all project environments.
 
-   -  Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
+   -  Select permissions per specific environment (or branch) in the Integration environment: _No access_, _Admin_ (change settings, execute action, merge code), _Contributor_ (push code), or _Reader_ (view only). When you add active environments, you can modify permissions per user.
 
 1. Click **Add User**.
 
-The user you add receives an email inviting them to join the {{site.data.var.ece}} project with instructions for The registering for an account and verifying their email address.
+   {%include cloud/note-prevent-site-availability-issues.md%}
 
-## Rebuild the environment {#rebuild}
+The user you add receives an email inviting them to join the {{site.data.var.ece}} project with instructions for account registration and email verification.
 
-After you add a new user to a Cloud environment using the Project Web UI or the CLI, you must rebuild and deploy the environment.
-
-Rebuilds are triggered when you push a new commit to an environment. To trigger a rebuild without changing any code, use the the following command to to create an empty commit and "force" rebuilding the environment:
-
-```bash
-git commit --allow-empty -m "redeploy" && git push <branch name>
-```
-
-The new user cannot access the environment until it is successfully built and deployed.
-
-{:.bs-callout-info}
-If you add an application user to the Magento Commerce application through the Magento Admin UI, you do not have to redeploy the {{ site.data.var.ece }} environment.

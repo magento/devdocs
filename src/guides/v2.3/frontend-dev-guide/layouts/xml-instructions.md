@@ -67,7 +67,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Element name or dash (-) | no |
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | `Vendor_Module::path/to/template.phtml` (Scope is already in the `templates` directory of the module) | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
-| `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+| `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false`. Defaults to `true`. | no |
 | `ifconfig` | Makes the block's visibility dependent on a system configuration field. | XPath to the system configuration field. E.g. `contact/contact/enabled` | no |
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction.
@@ -357,8 +357,14 @@ The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Mage
 -  The *url* type:
 
 ```xml
-<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
+<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" >
+    <param name="param1">param1value</param>
+    <param name="param2">param2value</param>
+    ...
+</argument>
 ```
+
+The *url* may have parameters, but they are optional.
 
 -  The *helper* type:
 

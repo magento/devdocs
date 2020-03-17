@@ -20,8 +20,8 @@ Use the following properties to build your application configuration file. The `
 
 The name is used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{:.bs-callout-info}
-Do not change the name of an application after it has been deployed.
+{:.bs-callout-warning}
+Do not change the name of an application after it has been deployed. Doing so will result in data loss.
 
 ### `type` and `build`
 
@@ -217,7 +217,9 @@ Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        php ./vendor/bin/ece-tools build
+        set -e
+        php ./vendor/bin/ece-tools build:generate
+        php ./vendor/bin/ece-tools build:transfer
     # We run deploy hook after your application has been deployed and started.
     deploy: |
         php ./vendor/bin/ece-tools deploy

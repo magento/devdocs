@@ -27,7 +27,7 @@ More information on developing extensions for Magento 2 is available in the [PHP
 
 ### Themes and customizations {#migrate-themes-customizations}
 
-Magento 2 uses new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 [themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html){:target="_blank"}, [layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"}, and [customizations]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"}.
+Magento 2 uses new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 [themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html){:target="_blank"}, [layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"}, and [customizations]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"}.
 
 ## Migration efforts {#migrate-efforts}
 

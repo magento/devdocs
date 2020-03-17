@@ -14,23 +14,30 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-GraphQL supports [two types of product]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) which can be added into shopping cart:
+GraphQL supports all product types, but this tutorial only demonstrates how to add a simple product and a virtual product to the shopping cart. You can find more details and examples in the following topics:
 
--  simple product
--  virtual product
+-  [Bundle products]({{ page.baseurl }}/graphql/mutations/add-bundle-products.html)
+-  [Configurable products]({{ page.baseurl }}/graphql/mutations/add-configurable-products.html)
+-  [Downloadable products]({{ page.baseurl }}/graphql/mutations/add-downloadable-products.html)
+-  [Simple and grouped products]({{ page.baseurl }}/graphql/mutations/add-simple-products.html)
+-  [Virtual products]({{ page.baseurl }}/graphql/mutations/add-virtual-products.html)
+
+[Product interface implementations]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) also describes how to create queries that access product interfaces.
+
+Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 
 {:.bs-callout .bs-callout-info}
 If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more details.
 
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 ## Add a simple product into the shopping cart
+
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 The following mutation adds a **simple product** into shopping cart.
 
 **Request:**
 
-```text
+```graphql
 mutation {
   addSimpleProductsToCart(
     input: {
@@ -88,7 +95,7 @@ The following mutation adds a **virtual product** into shopping cart.
 
 **Request:**
 
-```text
+```graphql
 mutation {
   addVirtualProductsToCart(
     input: {
@@ -139,8 +146,6 @@ mutation {
   }
 }
 ```
-
-Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 
 ## Verify this step {#verify-step}
 

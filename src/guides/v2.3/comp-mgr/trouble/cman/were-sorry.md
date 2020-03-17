@@ -39,7 +39,7 @@ The updater application uses a cron job to run the upgrade; if it's not initiali
 
 Modify Magento's `composer.json` to reference the `https://repo.magento.com` repository and run `composer install` in the updater's root directory to resolve dependencies and initialize it as follows:
 
-1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Change to your Magento installation directory.
 1. Back up your existing `composer.json`:
 

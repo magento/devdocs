@@ -35,10 +35,8 @@ mutation {
     default_billing: false
   }) {
     id
-    customer_id
     region {
       region
-      region_id
       region_code
     }
     country_code
@@ -59,7 +57,6 @@ mutation {
   "data": {
     "createCustomerAddress": {
       "id": 4,
-      "customer_id": 5,
       "region": {
         "region": "Arizona",
         "region_code": "AZ"
@@ -98,10 +95,10 @@ The `createCustomerAddress` mutation returns the following attributes:
 Error | Description
 --- | ---
 `Expected type CustomerAddressInput!, found "".` | The `input` attribute contains an empty value.
-`"input" value should be specified` | The `input` attribute is specified but is empty.
-`Required parameters are missing: firstname` | The `input.firstname` attribute was omitted or contains an empty value.
-`"Street Address" cannot contain more than 2 lines.` | The `input.street` attribute contains array with more than two elements.
-`Syntax Error: Expected Name, found )` | The `input` attribute was omitted.
+`"input" value should be specified` | The `input` argument is specified but is empty.
+`Required parameters are missing: firstname` | The `input.firstname` argument was omitted or contains an empty value.
+`"Street Address" cannot contain more than 2 lines.` | The `input.street` argument contains array with more than two elements.
+`Syntax Error: Expected Name, found )` | The `input` argument was omitted.
 `The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
 
 ## Related topics

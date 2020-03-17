@@ -1,9 +1,10 @@
 ---
 group: product-recommendations
 title: Recommendation Events
+ee_only: True
 ---
 
-When you deploy the `product-recommendations` module, the module tracks the following user events, which enables behavioral data collection.
+When you deploy the `product-recommendations` module, the module tracks the following user events. These events enable  behavioral data collection.
 
 Event |Description
 --- | ---

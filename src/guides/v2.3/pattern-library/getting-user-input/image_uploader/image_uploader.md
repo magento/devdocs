@@ -79,4 +79,4 @@ In the browser upload window, standard behavior should be kept.
 
 ## Assets
 
-[Download Image Uploader PSD source](src/Image_Video_Uploader.psd).
+[Download Image Uploader PSD source]({{ site.downloads }}/Image_Video_Uploader.psd).
