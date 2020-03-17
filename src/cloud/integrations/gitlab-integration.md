@@ -18,7 +18,7 @@ This integration enables you to:
 
 You must obtain a GitLab token and a webhook to continue the process.
 
-## Generate a GitLab token
+## Prerequisites
 
 You must be a member of a group with write-access to the GitLab repository, so that you can _push_ to the repository.
 
