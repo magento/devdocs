@@ -16,3 +16,12 @@ You can configure application settings, routes, build and deploy actions, and no
 -  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, Redis, RabbitMQ, and Elasticsearch. You must open a support ticket to push these changes to Pro plan Staging and Production environments.
 
 When you push code changes, the active environment provisions container updates using the YAML configuration files.
+
+## Update application configuration on Pro Staging and Production environments
+
+For {{site.data.var.ece}} Pro Staging and Production environments, you must submit a support ticket to update the following application configuration:
+
+-  Install or update services in the `.magento.services.yaml` file.
+-  Change the configuration for the `mount` and `disk` properties in the `.magento.app.yaml` file.
+
+Some Pro projects might also require a support ticket to update the [route configuration]({{site.baseurl}}/cloud/project/project-conf-files_routes.html) in the `routes.yaml` file, and the [cron configuration]({{site.baseurl}}/cloud/configure/setup-cron-jobs.html) in the `.magento.app.yaml` file.
