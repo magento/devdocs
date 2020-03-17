@@ -71,7 +71,7 @@ The following custom VCL snippet code (JSON format) shows the logic to check and
 }
 ```
 
-Before creating your own snippet from this example, review the values to determine whether you need to make any changes:
+Before creating a snippet based on this example, review the values to determine whether you need to make any changes:
 
 -  `name` — Name for the VCL snippet. For this example, we used `block_bad_referrer`.
 
