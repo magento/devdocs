@@ -1,13 +1,13 @@
 ---
 group: cloud-guide
-title: ECE-Tools testing
+title: Magento Cloud Docker testing
 functional_areas:
   - Cloud
   - Docker
   - Configuration
 ---
 
-You can use the `magento-cloud-docker` package to run functional tests in the Docker environment, which is helpful when testing code intended for `{{site.data.var.ct}}` contribution. Functional tests are in the `src/Test/Functional/Acceptance` folder of the [ece-tools repository].
+You can use the `magento-cloud-docker` package to run functional tests in the Docker environment, which is helpful when testing code intended for `magento-cloud-docker` contribution. Functional tests are in the `src/Test/Functional/Acceptance` folder of the [magento-cloud-docker repository].
 
 For testing the Magento application, see the [Magento Functional Testing Framework (MFTF)][mftf] guide.
 
@@ -15,10 +15,10 @@ For testing the Magento application, see the [Magento Functional Testing Framewo
 
 Before you run functional tests, you must prepare your environment with the following steps.
 
-1. Clone the {{site.data.var.ct}} GitHub repository.
+1. Clone the magento-cloud-docker GitHub repository.
 
    ```bash
-   git clone git@github.com:magento/ece-tools.git
+   git clone git@github.com:magento/magento-cloud-docker.git
    ```
 
 1. Stop all services that use the following ports:
@@ -73,7 +73,7 @@ Before you run functional tests, you must prepare your environment with the foll
    
    ```yaml
    params:
-     - vendor/magento/magento-cloud-docker/tests/functional/configuration.dist.yml
+     - tests/functional/configuration.dist.yml
      - env
      - .env
    ```
@@ -114,7 +114,7 @@ Use the following command format to run a specific functional test:
 For example, the following test verifies that the post-deploy task runs successfully.
 
 ```bash
-./vendor/bin/codecept run Acceptance PostDeployCest
+./vendor/bin/codecept run Acceptance AcceptanceCest
 ```
 
 Sample response:
@@ -125,13 +125,13 @@ Powered by PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
 Running with seed:
 Acceptance Tests (3) -----------------------------------------------------------
 AcceptanceCest: Test production mode
-Signature: Magento\MagentoCloud\Test\Functional\Acceptance\AcceptanceCest:testDefault
-Test: src/Test/Functional/Acceptance/AcceptanceCest.php:testDefault
+Signature: Magento\CloudDocker\Test\Functional\Acceptance\AcceptanceCest:testProductionMode
+Test: src/Test/Functional/Acceptance/AcceptanceCest.php:testProductionMode
 Scenario --
  I cleanup work dir 
 ...
 ...
-✔ AcceptanceCest: Test acceptance | {"ADMIN_EMAIL":"admin@example.com"} (210.41s)
+✔ AcceptanceCest: Test acceptance | {} (210.41s)
 ```
 {:.no-copy}
 
@@ -154,9 +154,8 @@ Use the following commands to run all available tests for each PHP version.
 -  **PHP 7.3**
 
    ```bash
-      ./vendor/bin/codecept run -x php71 -x php72 --steps
+      ./vendor/bin/codecept run -g php73 --steps
    ```
 
-[ece-tools repository]: https://github.com/magento/ece-tools/tree/develop/src/Test/Functional/Acceptance
-[mftf]: {{site.baseurl}}/mftf/docs/commands/mftf.html
-[codeception]: https://github.com/magento/ece-tools/blob/develop/codeception.dist.yml
+[magento-cloud-docker repository]: https://github.com/magento/magento-cloud-docker/tree/develop/src/Test/Functional/Acceptance
+[codeception]: https://github.com/magento/magento-cloud-docker/blob/develop/codeception.dist.yml
