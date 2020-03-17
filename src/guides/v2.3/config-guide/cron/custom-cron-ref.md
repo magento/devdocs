@@ -109,6 +109,36 @@ where:
 | `history_failure_lifetime` | Time (in minutes) that the record of failed cron jobs are kept in the database.                        |
 | `use_separate_process`     | Run this crongroup's jobs in a separate php process                                             |
 
+## Disable a cron job {#disable-cron-job}
+
+Cron jobs do not have a `disable` feature like we have for [observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html#subscribing-to-events). However, a cron job can be disabled by using the following technique: `schedule` a time that contains a date which will never happen.
+
+For example, disable the `visitor_clean` cron job which defined in `Magento_Customer` module:
+
+```xml
+...
+<group id="default">
+    <job name="visitor_clean" instance="Magento\Customer\Model\Visitor" method="clean">
+        <schedule>0 0 * * *</schedule>
+    </job>
+</group>
+...
+```
+
+To disable the `visitor_clean` cron job, create a custom module and rewrite the `visitor_clean` cron job `schedule`:
+
+```xml
+...
+<group id="default">
+    <job name="visitor_clean" instance="Magento\Customer\Model\Visitor" method="clean">
+        <schedule>0 0 30 2 *</schedule>
+    </job>
+</group>
+...
+```
+
+Now, the `visitor_clean` cron job has been set to run at 00:00 on the 30th of February - at the date which will never occur.
+
 {:.ref-header}
 Related topic
 [Tutorial---configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)
