@@ -209,7 +209,7 @@ To enter your project's public key as a [GitLab deploy key](https://docs.gitlab.
 
    ![GitLab main settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings-main.png)
    ![GitLab pipelines]({{ site.baseurl }}/common/images/cloud_gitlab-pipelines.png)
-   
+
 1. Then, in the left navigation bar, click Settings > **CI / CD** as the following figure shows.
 
    ![GitLab settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings.png){:width="400px"}

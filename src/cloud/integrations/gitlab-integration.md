@@ -115,7 +115,7 @@ To enable the GitLab integration:
    ```
 
 1. When prompted, enter "Y" to add the integration.
-      
+
    ```terminal
    Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
    This means it can overwrite all the code in your project.
