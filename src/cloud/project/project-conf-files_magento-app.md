@@ -178,7 +178,7 @@ The format for adding your mount to this list is as follows:
 You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
 
 {:.bs-callout-warning}
-Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, all files at the old location are permanently deleted.
+Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
 ### `dependencies`
 
