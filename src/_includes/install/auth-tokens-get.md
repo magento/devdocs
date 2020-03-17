@@ -1,5 +1,8 @@
 The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
+{:.bs-callout-info}
+For access to {{site.data.var.ee}} and {{site.data.var.ece}} packages, you must use keys associated with a MAGEID that has been entitled with access to those packages. If you encounter errors, you may not be authorized to access the package. Contact [Magento support](https://magento.com/support) for assistance with your MAGEID.
+
 To create authentication keys:
 
 1. Log in to the [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}. If you don't have an account, click **Register**.
