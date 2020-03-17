@@ -17,11 +17,12 @@ You can configure application settings, routes, build and deploy actions, and no
 
 When you push code changes, the active environment provisions container updates using the YAML configuration files.
 
-## Update application configuration on Pro Staging and Production environments
+## Update Pro Staging and Production environment configuration
 
-For {{site.data.var.ece}} Pro Staging and Production environments, you must submit a support ticket to update the following application configuration:
+For {{site.data.var.ece}} Pro Staging and Production environments, you can update many configuration options in your local development environment and commit the changes to apply them to these environments. However, you must submit a support ticket to update the following configuration options:
 
 -  Install or update services in the `.magento.services.yaml` file.
 -  Change the configuration for the `mount` and `disk` properties in the `.magento.app.yaml` file.
 
 Some Pro projects might also require a support ticket to update the [route configuration]({{site.baseurl}}/cloud/project/project-conf-files_routes.html) in the `routes.yaml` file, and the [cron configuration]({{site.baseurl}}/cloud/configure/setup-cron-jobs.html) in the `.magento.app.yaml` file.
+
