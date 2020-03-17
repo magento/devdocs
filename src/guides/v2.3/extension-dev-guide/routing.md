@@ -350,10 +350,10 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
-## Declaring the new custom noRoute processor
+## Declaring the new custom no route processor
 
-If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page where the query path will be query content, the Magento allows adding a custom noRoute processor.
-In order to add a new noRoute processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file:
+If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page where the query path will be query content, the Magento allows adding a custom no route processor.
+In order to add a new no route processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file:
 
 ```xml
 <type name="Magento\Framework\App\Router\NoRouteHandlerList">
@@ -416,7 +416,8 @@ class NoRouteHandler implements \Magento\Framework\App\Router\NoRouteHandlerInte
 }
 ```
 
-The noRoute processor should implement the ``Magento\Framework\App\Router\NoRouteHandlerInterface``
+The no route processor should implement the ``Magento\Framework\App\Router\NoRouteHandlerInterface``.
+A custom no route processor may be declared in order to extend or modify the system behavior when no route has been found for the provided URL.
 
 ## Declaring the new route as Page Type
 
