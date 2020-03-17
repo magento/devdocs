@@ -352,8 +352,8 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ## Declaring the new custom noRoute processor
 
-Magento allows to add a custom noRoute processor.
-In order to add a new noRoute processor, add the argument to the ``NoRouteHandlerList``, the example of ``default`` noRoute processor declaring in the ``di.xml`` file:
+If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page where the query path will be query content, the Magento allows adding a custom noRoute processor.
+In order to add a new noRoute processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file:
 
 ```xml
 <type name="Magento\Framework\App\Router\NoRouteHandlerList">
@@ -367,7 +367,8 @@ In order to add a new noRoute processor, add the argument to the ``NoRouteHandle
     </arguments>
 </type>
 ```
-The noRoute processor class, for example the default Magento noRoute processor class:
+
+In this example `Magento\Framework\App\Router\NoRouteHandler` is the no route scenario processor that is being executed when no route has been found for the entered URL:
 
 ```php
 namespace Magento\Framework\App\Router;
