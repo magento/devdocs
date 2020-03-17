@@ -105,7 +105,7 @@ Fastly validates the updated version of the VCL code during the upload process. 
 The following examples show how to block requests using inline condition statements instead of an ACL list.
 
 {: .bs-callout-warning}
-In these examples, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. You can submit the [VCL snippet from the Admin UI](#complete), or as a JSON string using the Fastly API. If you use the Fastly API with a JSON string, you must escape special characters to prevent validation errors.
+In these examples, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. You can submit the [VCL snippet from the Admin UI](#complete), or as a JSON string using the Fastly API. If you use the Fastly API with a JSON string, you must use a backslash to escape special characters to prevent validation errors.
 See [Using dynamic VCL snippets](https://docs.fastly.com/vcl/vcl-snippets/) in the Fastly VCL documentation.
 
 ### VCL code sample: Block by country code
