@@ -27,7 +27,6 @@ You must obtain a GitLab token and a webhook to continue the process.
 -  A [GitLab personal access token](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html) with write-access to the GitLab repository, selected scopes must be at least: `api` and `read_repository`.
 
 
-See [GitLab: Personal access tokens](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
 
 ## Prepare your repository
 
