@@ -155,7 +155,7 @@ In order to communicate events —such as a push or merge requests— with your 
    -  **URL**: Enter the `Hook URL` returned when you enabled the GitLab integration.
    -  **Secret Token**: Enter a verification secret if needed.
    -  **Trigger**: Check `Merge request events` and/or `Push events` depending on your needs
-   -  **Enable SSL verification**: Check it !
+   -  **Enable SSL verification**:  You must select this option
 
 1. Click **Add webhook**.
 
