@@ -33,13 +33,13 @@ To install the B2B module:
    composer require magento/extension-b2b --no-update
    ```
 
-1. Update the project.
+1. Update the project dependencies.
 
    ```bash
    composer update
    ```
 
-1. Use `ece-tools` to refresh the configuration and enable B2B module.
+1. Use `ece-tools` to refresh the configuration and enable the B2B module.
 
    ```bash
    ./vendor/bin/ece-tools module:refresh
@@ -71,13 +71,17 @@ To install the B2B module:
    bin/magento module:status Magento_B2b
    ```
 
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
+
    Sample response:
 
    ```terminal
    Module is enabled
    ```
 
-### Custom config.php
+If you encounter errors, see [extension deployment failure]({{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
+
+### Custom config.php file
 
 When adding the B2B module, the [`app/etc/config.php`][config] file is automatically updated. However, if you have a custom config file, you must update that manually.
 
