@@ -20,3 +20,5 @@ Attribute |  Data Type | Description
 `wishlist` | Wishlist! | Contains the contents of the customer's wish lists
 
 {% include graphql/customer-address-output-24.md %}
+
+{% include graphql/customer-orders-output.md %}
