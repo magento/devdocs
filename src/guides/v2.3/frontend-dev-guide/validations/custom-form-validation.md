@@ -12,7 +12,7 @@ This gives the possibility to customer to fix all the invalid data straight away
 
 There are several ways to initiate the form validation for a form as described in [Initializing JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html) topic.
 
-#### Using the `data-mage-init` attribute
+### Using the `data-mage-init` attribute
 
 ```html
 <form id="my-form" data-mage-init='{"validation": {}}'>
@@ -20,7 +20,7 @@ There are several ways to initiate the form validation for a form as described i
 </form>
 ```
 
-#### Using the `<script type="text/x-magento-init">` tag
+### Using the `<script type="text/x-magento-init">` tag
 
 ```html
 <script type="text/x-magento-init">
@@ -42,25 +42,25 @@ Additionally, you may also use any available [jQuery validation rule](https://jq
 
 There are couple of ways to define the validation rules for a form field.
 
-#### As `data-validate` attribute
+### As `data-validate` attribute
 
 ```html
 <input id="field-1" ... data-validate='{"required":true}'/>
 ```
 
-#### As attribute
+### As attribute
 
 ```html
 <input id="field-1" ... required="true"'/>
 ```
 
-#### As class name
+### As class name
 
 ```html
 <input id="field-1" ... class="input-text required-entry"'/>
 ```
 
-#### Using `data-mage-init`
+### Using `data-mage-init`
 
 ```html
 <form ... data-mage-init='{"validation": {"rules": {"field-1": {"required":true}}}}'>
