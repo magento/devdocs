@@ -96,8 +96,7 @@ After reviewing and updating the code for your environment, use either of the fo
 
 1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section to add the file to the Fastly service configuration.
 
-1. After the upload 
-s, refresh the cache according to the notification at the top of the page.
+1. After the uploads, refresh the cache according to the notification at the top of the page.
 
 Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit the custom VCL snippet to fix the issue. Then, upload the VCL again.
 
