@@ -24,8 +24,8 @@ Notice in the incorrect example, the `getConfirmationLink()` method is called di
 
 Note that spaces should be not be used next to the braces:
 
-- Correct: `{{var subscriber_data.confirmation_link}}`
-- Incorrect: `{{ var subscriber_data.confirmation_link }}`
+-  Correct: `{{var subscriber_data.confirmation_link}}`
+-  Incorrect: `{{ var subscriber_data.confirmation_link }}`
 
 We refer to this as 'strict mode' for email templates.
 All default templates have been converted to this strict mode.
