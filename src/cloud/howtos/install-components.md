@@ -65,8 +65,14 @@ To install an extension:
 
    ```bash
    git add -A
+   ```
+
+   ```bash 
    git commit -m "install <extension-name>"
-   git push magento <branch-name>
+   ```
+
+   ```bash
+   git push origin <branch-names>
    ```
 
    {:.bs-callout-warning}
@@ -86,7 +92,7 @@ To install an extension:
    Module is enabled
    ```
 
-If you encounter errors, see [extension deployment failure][].
+If you encounter errors, see [extension deployment failure][trouble].
 
 ### Custom config.php file
 
@@ -145,8 +151,14 @@ To enable or disable an extension:
 
    ```bash
    git add -A
+   ```
+
+   ```bash 
    git commit -m "disable <extension-name>"
-   git push magento <branch-name>
+   ```
+
+   ```bash
+   git push origin <branch-names>
    ```
 
 ## Upgrade an extension
@@ -176,7 +188,13 @@ To update an extension:
 
    ```bash
    git add -A
+   ```
+
+   ```bash 
    git commit -m "update <extension-name>"
+   ```
+
+   ```bash
    git push origin <branch-names>
    ```
 
@@ -186,5 +204,6 @@ If you encounter errors, see [extension deployment failure][].
 
 [branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
-[extension deployment failure]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html
+[extensions]: {{ site.baseurl }}/extensions/
 [Magento Marketplace]: https://marketplace.magento.com
+[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

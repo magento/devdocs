@@ -61,8 +61,14 @@ To install the B2B module:
 
    ```bash
    git add -A
-   git commit -m "install B2B module"
-   git push magento <branch-name>
+   ```
+
+   ```bash 
+   git commit -m "install b2b module"
+   ```
+
+   ```bash
+   git push origin <branch-names>
    ```
 
 1. After the build and deploy finishes, use a SSH to log in to the remote environment and verify the B2B module installed.
@@ -79,7 +85,7 @@ To install the B2B module:
    Module is enabled
    ```
 
-If you encounter errors, see [extension deployment failure]({{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
+If you encounter errors, see [extension deployment failure][trouble].
 
 ### Custom config.php file
 
@@ -94,6 +100,7 @@ To add the B2B module to a custom `config.php` file:
 
 1. In the _modules_ list, add the B2B module and save the file.
 
+   >Excerpt from the `config.php` file
    ```php?start_inline=1
    return [
        'modules' => [
@@ -118,3 +125,4 @@ To extend functionality, see the [Magento B2B Developer Guide][b2b-dev] and the 
 [extensions]: {{ site.baseurl }}/extensions/
 [install-b2b]: {{ site.baseurl }}/extensions/b2b/
 [messages]: {{ site.baseurl }}/extensions/b2b/#start-message-consumers
+[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html
