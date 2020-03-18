@@ -18,7 +18,7 @@ It's much easier to cover a GuzzleHttp implementation by [Unit Tests]({{ page.ba
 ## Request options
 
 | Option | Description | Type |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `method` | HTTP method, any of `GET`, `POST`, `PUT`, `DELETE` | String |
 | `uri` | The API endpoint that needs to be called | String |
 | `params` | A list of parameters that needs to be passed to the API  | Array |
