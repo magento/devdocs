@@ -63,7 +63,7 @@ To install the B2B module:
    git add -A
    ```
 
-   ```bash 
+   ```bash
    git commit -m "install b2b module"
    ```
 

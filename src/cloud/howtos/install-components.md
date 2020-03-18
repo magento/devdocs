@@ -67,7 +67,7 @@ To install an extension:
    git add -A
    ```
 
-   ```bash 
+   ```bash
    git commit -m "install <extension-name>"
    ```
 
@@ -153,7 +153,7 @@ To enable or disable an extension:
    git add -A
    ```
 
-   ```bash 
+   ```bash
    git commit -m "disable <extension-name>"
    ```
 
@@ -190,7 +190,7 @@ To update an extension:
    git add -A
    ```
 
-   ```bash 
+   ```bash
    git commit -m "update <extension-name>"
    ```
 
