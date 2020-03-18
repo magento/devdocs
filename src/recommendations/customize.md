@@ -52,6 +52,9 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     |`checkout_onepage_success.xml`|Checkout|
     |`cms_index_index.xml`|Home|
 
+    {:.bs-callout-info}
+    The filenames in the `layout` directory might be different if your store uses third-party extensions.
+
 1. Let's modify the `catalog_product_view.xml` file so that the recommendation unit appears after the product image on the product detail page. Before you customize this XML file, let's take a look at the file and understand the sections you will need to modify:
 
     ```xml
@@ -99,17 +102,3 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     This change results in your recommendation unit appearing after the product image on the product detail page. If you want the recommendation unit to appear before the `product.info.media`, change the `after="-"` attribute to `before="-"`. The `pagePlacement` argument is an internal argument that should not be modified.
 
 Refer to [layout overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/layouts/layout-overview.html) for more information about the types of blocks on the page.
-
-### Customizing recommendation units for new pages
-
-You can create new pages for your storefront, link an existing recommendation unit to that new page, and customize where that recommendation unit appears on your storefront.
-
-1. [Create a new page](https://docs.magento.com/m2/ee/user_guide/cms/page-add.html) in the Admin UI.
-
-1. Magento creates a page handle name. Here's how you can see it.
-
-1. In the `layout` directory, create an xml file with the same name as the page handle name, such as, `blah.xml`.
-
-1. Complete the steps above to modify where you want your recommendation units to display.
-
-from Misha: checkout_onepage_success.xml might be named checkout_multipage_success.xml depending on what the user has selected in the admin.
