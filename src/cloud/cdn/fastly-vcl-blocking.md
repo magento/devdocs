@@ -68,7 +68,7 @@ After reviewing and updating the code for your environment, use either of the fo
 
 -  Save the JSON code example to a file (for example, `blocklist.json`) and [upload it using the Fastly API]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api). Use this method if you cannot access the Magento Admin UI.
 
-## Add the custom VCL snippet {#complete}
+## Add the custom VCL snippet
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -96,7 +96,8 @@ After reviewing and updating the code for your environment, use either of the fo
 
 1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section to add the file to the Fastly service configuration.
 
-1. After the upload completes, refresh the cache according to the notification at the top of the page.
+1. After the upload 
+s, refresh the cache according to the notification at the top of the page.
 
 Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit the custom VCL snippet to fix the issue. Then, upload the VCL again.
 
@@ -105,7 +106,7 @@ Fastly validates the updated version of the VCL code during the upload process. 
 The following examples show how to block requests using inline condition statements instead of an ACL list.
 
 {: .bs-callout-warning}
-In these examples, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. You can submit the [VCL snippet from the Admin UI](#complete), or as a JSON string using the Fastly API. If you use the Fastly API with a JSON string, you must use a backslash to escape special characters to prevent validation errors.
+In these examples, the VCL code is formatted as a JSON payload that can be saved to a file and submitted in a Fastly API request. You can submit the [VCL snippet from the Admin UI](#add-the-custom-vcl-snippet), or as a JSON string using the Fastly API. If you use the Fastly API with a JSON string, you must use a backslash to escape special characters to prevent validation errors.
 See [Using dynamic VCL snippets](https://docs.fastly.com/vcl/vcl-snippets/) in the Fastly VCL documentation.
 
 ### VCL code sample: Block by country code
