@@ -5,7 +5,7 @@ title: Magento Commerce 2.3.5 Release Notes
 
 Magento Commerce 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
 
-This release includes over 180 functional fixes to the core product and  over 25 security enhancements. It includes resolution of over contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes over 180 functional fixes to the core product and  over 25 security enhancements. It includes resolution of over 46 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 ## Security-only patch available
 
@@ -27,9 +27,9 @@ This release includes the following security enhancements:
 
 #### Over 25 security enhancements that help close cross-site scripting (XSS) and remote code execution (RCE) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to  1.14.4.5 and 1.9.4.5, as appropriate.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security updates available for Magento APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to  1.14.4.5 and 1.9.4.5, as appropriate.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento  APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
 #### Security enhancements and fixes to core code
 
@@ -60,17 +60,19 @@ The following platform upgrades help enhance website security and performance:
 
 *  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom sections.xml invalidations are active.  (Previously, Private content (local storage) was not correctly filled in/populated when you have a custom*etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
-*  **Multiple optimizations to Redis performance**. Enhancements that minimize the number of queries to Redis that are performed on each Magento request. Optimizations include the following changes:
+*  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
--- Decreased size of network data transfers between Redis and Magento
--- Reduced Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
--- Reduced race conditions on Redis write operations
+   *  Decrease in size of network data transfers between Redis and Magento
+   *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
+   *  Reduction in race conditions on Redis write operations
 
-See xxx for recommendations on how to configure cache for Cloud and on-prem deployments.
+See xxx for recommendations on how to configure cache for Cloud and on-premise deployments.
 
 ### Infrastructure improvements
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
+
+The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
 ### Merchant tool enhancements
 
@@ -79,7 +81,6 @@ This release contains enhancements to core quality, which improve the quality of
 Page Builder enhancements for this release include:
 
 *  Page Builder Template Manager
-
 *  Video backgrounds
 
 ### Inventory Management
@@ -94,7 +95,7 @@ See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3
 
 ### GraphQL
 
-With this release, you can now use  `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the _GraphQL Developer Guide_ for details.
+With this release, you can now use  `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the [GraphQL Developer Guide](https://devdocs.magento.com/guides/v2.3/graphql/) for details.
 
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
@@ -106,19 +107,16 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 This release includes:
 
-**Integration of Engagement cloud and Magento B2B**. A new B2B integration module integrates Engagement cloud and the Magento B2B module enable Magento B2B merchants to leverage their B2B commerce data and better engage with their prospective and existing customers. This will include:
+*  Integration of Engagement cloud and Magento B2B. A new B2B integration module integrates Engagement cloud and the Magento B2B module enable Magento B2B merchants to leverage their B2B commerce data and better engage with their prospective and existing customers. This will include:
+   *  Company data sync (customer type, company, company status)
+   *  Sync of shared catalog data. Syncing additional product catalog data  (custom products and product attributes) to dotdigital. Merchants can turn additional product data into marketing campaigns or use it to make recommendations
+   *  Sync of quote data
 
-*  Company data sync (customer type, company, company status)
-*  Sync of shared catalog data. Syncing additional product catalog data  (custom products and product attributes ) to dotdigital. Merchants can turn additional product data into marketing campaigns or use it to make recommendations
-*  Sync of quote data
-
-Improved importer performance and coupon code re-send
+*  Improved importer performance and coupon code re-send
 
 ### Google Shopping ads Channel
 
-The Google Shopping ads Channel bundled extension has reached end-of-life and has been removed from the Magento core code in this release (2.3.5 and 2.3.4-p1). It will not be delivered as a bundled extension in any further release. See xxx on the Magento Marketplace.
-
-[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/) describes all changes to this feature for Magento 2.3.x.
+The Google Shopping ads Channel bundled extension has reached end-of-life and has been removed from the Magento core code in this release (2.3.5 and 2.3.4-p1). It will not be delivered as a bundled extension in future releases. Alternative extensions are available on the Magento Marketplace.
 
 ### B2B
 
