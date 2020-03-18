@@ -102,17 +102,19 @@ To add the B2B module to a custom `config.php` file:
 
 ## Configure the B2B module
 
-After installing the {{site.data.var.b2b}} module, you need to [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you need to [enable the B2B module in the Magento Admin panel][].
+After installing the {{site.data.var.b2b}} module, you need to [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you need to [enable the B2B module in the Magento Admin panel][admin-enable].
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide][b2b-user].
 
-To extend functionality, see the [Magento B2B Developer Guide][b2b-dev].
+To extend functionality, see the [Magento B2B Developer Guide][b2b-dev] and the [Extension Guide][extensions].
 
 <!-- link definitions -->
 
+[admin-enable]: {{ site.baseurl }}/extensions/b2b/#enable-b2b-features-in-magento-admin
 [b2b-dev]: {{ site.baseurl }}/guides/v2.3/b2b/bk-b2b.html
 [b2b-user]: http://docs.magento.com/m2/b2b/user_guide/getting-started.html
 [branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
+[extensions]: {{ site.baseurl }}/extensions/
 [install-b2b]: {{ site.baseurl }}/extensions/b2b/
 [messages]: {{ site.baseurl }}/extensions/b2b/#start-message-consumers
