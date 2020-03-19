@@ -144,7 +144,7 @@ To enable the GitLab integration:
    ```
    {:.no-copy}
 
-## Add the webhook in GitLab
+### Add the webhook in GitLab
 
 In order to communicate events —such as a push or merge requests— with your Cloud Git server, you need to [create a webhook](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) for your GitLab repository
 
@@ -170,4 +170,3 @@ For more information see [Test the integration]({{ site.baseurl }}/cloud/integra
 If integration succed, you will see the following picture in your Magento Cloud project :
 
 ![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud_gitlab-integration-success.png)
-
