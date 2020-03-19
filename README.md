@@ -159,7 +159,7 @@ docker-compose up
 1. Use the server address URL provided by the system response.
 
 For example:
-   
+
 ```terminal
 jekyll_1  |     Server address: http://127.0.0.1:4000/
 jekyll_1  |   Server running... press ctrl-c to stop.
