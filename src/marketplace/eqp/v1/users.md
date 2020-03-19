@@ -47,10 +47,10 @@ curl -X GET \
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
-            "file_upload_id": "uuid-001-234567-123.461",
+            "file_upload_id": "5c119a03b4ddf6.75124444.0",
             "filename": "portrait.png",
             "content_type": "image/png",
-            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
+            "url": "https://mp-stg-static.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
@@ -67,12 +67,19 @@ curl -X GET \
         "payment_info": {"paypal_email" : "jsmith@example.com"},
         "taxpayer_type": 2,
         "tax_review_status": 3,
-        "tax_withhold_percent": 0.00,
-        "extension_share_percent": 0.7,
-        "theme_share_percent": 0.7,
-        "install_share_percent": 0,
-        "support_share_percent": 0,
-
+        "tax_withhold_percent": 25,
+        "extension_share_percent": 70,
+        "theme_share_percent": 70,
+        "install_share_percent": 100,
+        "support_share_percent": 100,
+        "privacy_policy_url": "https://www.example.com/privacy",
+        "api_callbacks": [
+            {
+                "name": "My 1st EQP Callback",
+                "url": "https://developer.example.com/rest/v1/callback",
+                "username": "key"
+            }
+        ],
         "personal_profile": {
             "bio": "Writes extensions that pass review first time. Blindfolded.",
             "last_logged_in": "2017-09-30 8:09:10",
@@ -152,10 +159,10 @@ curl -X GET \
         "has_completed_profile": true,
         "has_accepted_tos": true,
         "profile_image_artifact": {
-            "file_upload_id": "uuid-001-234567-123.461",
+            "file_upload_id": "5c119a03b4ddf6.75124444.0",
             "filename": "portrait.png",
             "content_type": "image.png",
-            "url": "https://static-mp.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
+            "url": "https://mp-stg-static.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/d9/c2/d9c23dd795a5faaab603b6b5965eca8a6d9430f2/portrait.png",
             "size": 1234,
             "file_hash": "d5db29cd03a2ed055086cef9c31c252b4587ffff",
             "malware_status": "pass"
@@ -171,7 +178,7 @@ The following example shows a request to update the personal profile bio field:
 
 ```json
 {
-  "action" : "publish",
+  "action" : "submit",
   "personal_profile" : {
      "bio" : "My extensions have won Nobel Prizes in both literature and physics."
   }
@@ -180,7 +187,7 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `publish` --- The default if not specified. Publishes the profile to the relevant
+*  `submit` --- The default if not specified. Publishes the profile to the relevant
    [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
 *  `draft` --- The update is saved on the Developer Portal, but not published.
 
@@ -190,7 +197,7 @@ The `action` field specifies which update operation to perform:
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d '{ "action" : "publish", "personal_profile" : { "bio" : "My extensions have won Nobel Prizes in both literature and physics." } }' \
+     -d '{ "action" : "submit", "personal_profile" : { "bio" : "My extensions have won Nobel Prizes in both literature and physics." } }' \
      https://developer-stg-api.magento.com/rest/v1/users/MAG123456789
 ```
 
