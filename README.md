@@ -146,7 +146,7 @@ exclude:
 
 1. Install docker
 
-2. Run docker-compose command:
+1. Run docker-compose command:
 
 ```bash
 docker-compose up
@@ -154,8 +154,7 @@ docker-compose up
 
 Open your browser (http://127.0.0.1:4000)
 
-3. Press `Ctrl+C` in the serve terminal to stop the server.
-
+1. Press `Ctrl+C` in the serve terminal to stop the server.
 
 ## Building old versions
 
