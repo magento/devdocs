@@ -144,6 +144,10 @@ exclude:
 
 ## Docker (docker-compose)
 
+Docker provide an easy and fastr way to build the documentation for developers. There is no need to install any
+ruby dependency manually. The provided setup starts Jekyll inside the container in watch mode.
+Every change of a markdown file will automatically trigger a rebuild of the documentation.
+
 1. Install docker
 
 1. Run docker-compose command:
