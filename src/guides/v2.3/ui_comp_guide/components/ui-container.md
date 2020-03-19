@@ -19,6 +19,10 @@ Component options are set in the UI-component's configuration `.xml` file as fol
 | `additionalClasses` | CSS class(es) applied to the root node of the component's `.html` template. | String | `''` |
 | `text` | Description for the Container. | String | `''` |
 
+## Source files
+
+-  [`Magento/Ui/view/base/web/templates/form/components/complex.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/components/complex.html)
+
 ## Examples
 
 ### Container with a component
