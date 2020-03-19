@@ -27,4 +27,4 @@ This module is present at [`lib/web/mage/validation/validation.js`]({{ site.mage
 
 ## See also
 
-* [Validate a custom form]({{ page.baseurl }}/frontend-dev-guide/validations/custom-form-validation.html)
+*  [Validate a custom form]({{ page.baseurl }}/frontend-dev-guide/validations/custom-form-validation.html)
