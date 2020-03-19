@@ -564,7 +564,7 @@ query {
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+`cart_id` | String! | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 
 ## Output attributes {#cart-output}
 
@@ -653,7 +653,6 @@ Attribute |  Data Type | Description
 `city` | String! | The city specified for the billing address
 `company` | String | The company specified for the billing address
 `country` | [CartAddressCountry!](#CartAddressCountry) | The country code and label for the billing address
-`customer_notes` | String | Comments made to the customer that accompanies the order
 `firstname` | String! | The customer's first name
 `lastname` | String! | The customer's last name
 `postcode` | String | The postal code for the billing address
@@ -685,10 +684,10 @@ The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | String | ID of the item
+`id` | String! | ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
-`quantity` | Float | The number of items in the cart
+`quantity` | Float! | The number of items in the cart
 
 ### CartItemPrices object {#CartItemPrices}
 
@@ -777,6 +776,7 @@ The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddres
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
+`customer_notes` | String | Comments made to the customer that accompanies the order
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
