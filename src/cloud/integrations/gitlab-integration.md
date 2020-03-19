@@ -121,7 +121,6 @@ To enable the GitLab integration:
    ```
    {:.no-copy}
 
-
 1. Copy the **Hook URL** displayed by the return output.
 
    ```terminal

@@ -231,6 +231,7 @@ To add the public SSH key for your project as a [GitLab deploy key](https://docs
       ![GitLab deploy key form]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key-form.png)
 
    -  Click **Add Key** to save the configuration.
+   
 ## Secure your environments and branches {#security}
 
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
