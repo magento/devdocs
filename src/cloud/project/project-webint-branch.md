@@ -202,26 +202,35 @@ To enter your project's public key as a Bitbucket deploy key:
 
 ### Enter your GitLab deploy key {#cloud-deploykey-gitlab}
 
-To enter your project's public key as a [GitLab deploy key](https://docs.gitlab.com/ee/ssh/README.html#deploy-keys):
+To add the public SSH key for your project as a [GitLab deploy key](https://docs.gitlab.com/ee/ssh/README.html#deploy-keys):
 
 1. Log in to your GitLab repository as its owner.
-1. At first, be sure Pipelines are enabled for your project as the following figure shows.
 
-   ![GitLab main settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings-main.png)
-   ![GitLab pipelines]({{ site.baseurl }}/common/images/cloud_gitlab-pipelines.png)
+1. Verify that the _Pipelines_ option is enabled for your project.
 
-1. Then, in the left navigation bar, click Settings > **CI / CD** as the following figure shows.
+   -  In the project settings, expand the *Visibility, project, features, permissions* section.
 
-   ![GitLab settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings.png){:width="400px"}
+      ![GitLab main settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings-main.png)
 
-1. Click Deploy Keys > **Expand** button as the following figure shows.
+   -  If necessary, click **Pipelines** to enable the option.
 
-   ![GitLab deploy key]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key.png)
+      ![GitLab pipelines]({{ site.baseurl }}/common/images/cloud_gitlab-pipelines.png)
 
-1. Fill the form with a title and your SSH key then click **Add Key** as the following figure shows.
+1. Add your public SSH key to the CI/CD settings.
 
-   ![GitLab deploy key form]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key-form.png)
+   -  In the left navigation bar, click Settings > **CI / CD**.
 
+      ![GitLab settings]({{ site.baseurl }}/common/images/cloud_gitlab-settings.png){:width="400px"}
+
+   -  Click Deploy Keys > **Expand** to configure the key.
+
+      ![GitLab deploy key]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key.png)
+
+   -  In the _Deploy Key_ form, add a deploy key name to the _Title_ field, and paste your public SSH key in the _Key_ field.
+
+      ![GitLab deploy key form]({{ site.baseurl }}/common/images/cloud_gitlab-deploy-key-form.png)
+
+   -  Click **Add Key** to save the configuration.
 ## Secure your environments and branches {#security}
 
 You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.
