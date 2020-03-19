@@ -201,6 +201,9 @@ pages:
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
 
+        - label: reorderItems mutation
+          url: /graphql/mutations/reorder-items.html
+
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
