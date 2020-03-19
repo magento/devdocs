@@ -352,8 +352,8 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ## Declaring the new custom no route processor
 
-If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page where the query path will be query content, the Magento allows adding a custom no route processor.
-In order to add a new no route processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file:
+If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page, Magento allows adding a custom no route processor.
+In order to add a new no route processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file of your module:
 
 ```xml
 <type name="Magento\Framework\App\Router\NoRouteHandlerList">
