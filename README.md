@@ -157,11 +157,13 @@ docker-compose up
 ```
 
 1. Use the server address URL provided by the system response.
-   For example:
+
+For example:
    
-   ```terminal
-   jekyll_1  |     Server address: http://127.0.0.1:4000/
-   jekyll_1  |   Server running... press ctrl-c to stop.
+```terminal
+jekyll_1  |     Server address: http://127.0.0.1:4000/
+jekyll_1  |   Server running... press ctrl-c to stop.
+```
 
 1. Press `Ctrl+C` in the serve terminal to stop the server.
 
