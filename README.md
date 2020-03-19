@@ -144,7 +144,7 @@ exclude:
 
 ## Docker (docker-compose)
 
-Docker provides a quick and easy way to build and preview the documentation. You do not need to install Ruby dependencies manually. This Docker solution launches Jekyll inside the container in `watch` mode.```
+Docker provides a quick and easy way to build and preview the documentation. You do not need to install Ruby dependencies manually. This Docker solution launches Jekyll inside the container in `watch` mode.
 ruby dependency manually. The provided setup starts Jekyll inside the container in watch mode.
 Every change of a markdown file will automatically trigger a rebuild of the documentation.
 
