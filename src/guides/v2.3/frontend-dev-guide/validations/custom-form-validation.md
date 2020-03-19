@@ -6,7 +6,7 @@ contributor_link: https://www.atwix.com/
 ---
 
 This tutorial shows you how to validate your own form, using `mage/validation` library, before submitting it to the server.
-This gives the possibility to customer to fix all the invalid data straight away, which improves the good user experience.
+This gives the possibility to customer to fix all the invalid data straight away, which improves the user experience and user interface accessibility.
 
 ## Initiating validation
 
@@ -20,7 +20,7 @@ There are several ways to initiate the form validation for a form as described i
 </form>
 ```
 
-### Using the `<script type="text/x-magento-init">` tag
+### Using the `text/x-magento-init` script type tag
 
 ```html
 <script type="text/x-magento-init">
@@ -51,13 +51,13 @@ There are couple of ways to define the validation rules for a form field.
 ### As attribute
 
 ```html
-<input id="field-1" ... required="true"'/>
+<input id="field-1" ... required="true"/>
 ```
 
 ### As class name
 
 ```html
-<input id="field-1" ... class="input-text required-entry"'/>
+<input id="field-1" ... class="input-text required-entry"/>
 ```
 
 ### Using `data-mage-init`
