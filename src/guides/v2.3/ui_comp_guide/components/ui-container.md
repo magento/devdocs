@@ -13,6 +13,7 @@ Component options are set in the UI-component's configuration `.xml` file as fol
 
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
+| `component` | Path to the component's `.js` file. | String | `''` |
 | `template` | Path to the component's `.html` template. | String | `ui/form/components/complex` |
 | `sortOrder` | Sort order of the Container. | Number | `0` |
 | `label` | Label displayed for the Container. | String | `''` |
