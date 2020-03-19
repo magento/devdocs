@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 ---
 
-The GitLab integration enables you to manage your {{site.data.var.ece}} environments directly from your GitLab repository. The integration manages content already in GitLab and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitLab repository.
+You can configure a GitLab repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your GitLab repository with your Magento Commerce Cloud account.
 
 {% include cloud/note-private-repo.md %}
 
@@ -85,30 +85,28 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
 ## Enable the GitLab integration
 
-The following enables the GitLab integration and provides a Payload URL to use when creating a webhook.
+Use the `magento-cloud integration` command to enable the GitLab integration, and get the Payload URL for the GitLab webhook to send updates from GitLab to your {{site.data.var.ece}} project.
+
+```bash
+magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your-GitLab-token> [--base-url=<GitLab-url> --server-project=<GitLab-project> --build-merge-requests={true|false} --merge-requests-clone-parent-data={true|false} --fetch-branches={true|false} --prune-branches={true|false}]
+```
+
+-  `<project-ID>`—Your {{site.data.var.ece}} project ID
+-  `<your-GitLab-token>`—The personal access token you generated for GitLab
+-  `--base-url`-URL of GitLab (https://gitlab.com/ if GitLab is used in its SaaS version)
+-  `--server-project`-Project name in GitLab (part after the base url)
+-  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for each and every merge requests (`true` by default)
+-  `--merge-requests-clone-parent-data`-—An _optional_ parameter that instructs {{site.data.var.ece}} to clone the parent environment's data for merge requests (`true` by default)
+-  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to fetch all branches from the remote (as inactive environments) (`true` by default)
+-  `--prune-branches`—An _optional_ parameter that instructs {{site.data.var.ece}} to delete branches that do not exist on the remote (`true` by default)
 
 {:.bs-callout-warning}
-The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your GitLab repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitLab repository **before** adding the GitLab integration.
+The `magento-cloud integration` command overwrites *_all_* code in your {{site.data.var.ece}} project with the code from your GitLab repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your GitLab repository before adding the GitLab integration.
 
 {:.procedure}
 To enable the GitLab integration:
 
-1. Enable the integration.
-
-   ```bash
-   magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your-GitLab-token> [--base-url=<GitLab-url> --server-project=<GitLab-project> --build-merge-requests={true|false} --merge-requests-clone-parent-data={true|false} --fetch-branches={true|false} --prune-branches={true|false}]
-   ```
-
-   -  `<project-ID>`—Your {{site.data.var.ece}} project ID
-   -  `<your-GitLab-token>`—The personal access token you generated for GitLab
-   -  `--base-url`-URL of GitLab (https://gitlab.com/ if GitLab is used in its SaaS version)
-   -  `--server-project`-Project name in GitLab (part after the base url)
-   -  `--build-merge-requests`-—An _optional_ parameter that instructs {{site.data.var.ece}} to build a new environment for each and every merge requests (`true` by default)
-   -  `--merge-requests-clone-parent-data`-—An _optional_ parameter that instructs {{site.data.var.ece}} to clone the parent environment's data for merge requests (`true` by default)
-   -  `--fetch-branches`—An _optional_ parameter that causes {{site.data.var.ece}} to fetch all branches from the remote (as inactive environments) (`true` by default)
-   -  `--prune-branches`—An _optional_ parameter that instructs {{site.data.var.ece}} to delete branches that do not exist on the remote (`true` by default)
-
-   **Example**: Enable the GitLab integration for a private repository:
+1. From the terminal, add the GitLab integration to your {{site.data.var.ece}} project:
 
    ```bash
    magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
@@ -121,6 +119,8 @@ To enable the GitLab integration:
    This means it can overwrite all the code in your project.
    Are you sure you want to continue? [y/N] y
    ```
+   {:.no-copy}
+
 
 1. Copy the **Hook URL** displayed by the return output.
 
@@ -161,12 +161,18 @@ In order to communicate events —such as a push or merge requests— with your 
 
 1. Click **Add webhook**.
 
-## Test the integration
+### Test the integration
 
-To verify the integration works, make a change in the GitLab repository and use the magento-cloud CLI to pull the change into the local environment or just merge a request in GitLab.
+To verify that the integration works, make a change in the GitLab repository and use the magento-cloud CLI to pull the change into the local environment or just merge a request in GitLab. See [Test the integration]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html#test-the-integration).
 
-For more information see [Test the integration]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html#test-the-integration)
-
-If integration succed, you will see the following picture in your Magento Cloud project :
+If the integration succeeds, the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) shows the GitLab commit message and the status of the Cloud deployment:
 
 ![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud_gitlab-integration-success.png)
+
+## Create a new Cloud branch
+
+Use the Magento Cloud CLI `environment:push` command to create and activate a new environment. See [Create a new Cloud branch]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#create-a-new-cloud-branch).
+
+## Remove the integration
+
+Use the Magento Cloud CLI `integration:delete` command to remove the integration. See [Remove the integration]({{site.baseurl}}/cloud/integrations/bitbucket-integration.html#remove-the-integration).
