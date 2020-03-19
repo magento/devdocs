@@ -154,6 +154,10 @@ query IntrospectionQuery {
       fields {
         name
         description
+        type{
+         name
+         kind
+        }
       }
     }
   }
@@ -170,11 +174,72 @@ query IntrospectionQuery {
         "fields": [
           {
             "name": "cart",
-            "description": "Returns information about shopping cart"
+            "description": "Returns information about shopping cart",
+            "type": {
+              "name": "Cart",
+              "kind": "OBJECT"
+            }
           },
           {
             "name": "categoryList",
-            "description": "Returns an array of categories based on the specified filters."
+            "description": "Returns an array of categories based on the specified filters.",
+            "type": {
+              "name": null,
+              "kind": "LIST"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+#### Return a list of Magento mutations
+
+The following query returns a list of Magento mutations. The results are truncated.
+
+**Request:**
+
+```graphql
+query IntrospectionQuery {
+  __schema {
+    mutationType {
+      fields {
+        name
+        description
+        type{
+         name
+         kind
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "__schema": {
+      "mutationType": {
+        "fields": [
+          {
+            "name": "addBundleProductsToCart",
+            "description": null,
+            "type": {
+              "name": "AddBundleProductsToCartOutput",
+              "kind": "OBJECT"
+            }
+          },
+          {
+            "name": "addConfigurableProductsToCart",
+            "description": null,
+            "type": {
+              "name": "AddConfigurableProductsToCartOutput",
+              "kind": "OBJECT"
+            }
           }
         ]
       }
