@@ -58,7 +58,7 @@ The following platform upgrades help enhance website security and performance:
 
 ### Performance boosts
 
-*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom sections.xml invalidations are active.  (Previously, Private content (local storage) was not correctly filled in/populated when you have a custom*etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom sections.xml invalidations are active.  (Previously, Private content (local storage) was not correctly filled in/populated when you have a custom*etc/frontend/sections.xml* with action invalidations). See [Private content](htraktps://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
 *  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
@@ -107,12 +107,12 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 This release includes:
 
-*  Integration of Engagement cloud and Magento B2B. A new B2B integration module integrates Engagement cloud and the Magento B2B module enable Magento B2B merchants to leverage their B2B commerce data and better engage with their prospective and existing customers. This will include:
+*  **Integration of Engagement cloud and Magento B2B**. A new B2B integration module integrates Engagement cloud and the Magento B2B module enable Magento B2B merchants to leverage their B2B commerce data and better engage with their prospective and existing customers. This will include:
    *  Company data sync (customer type, company, company status)
    *  Sync of shared catalog data. Syncing additional product catalog data  (custom products and product attributes) to dotdigital. Merchants can turn additional product data into marketing campaigns or use it to make recommendations
    *  Sync of quote data
 
-*  Improved importer performance and coupon code re-send
+*  **Improved importer performance** and coupon code re-send
 
 ### Google Shopping ads Channel
 
@@ -219,7 +219,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29594-->
 
-*  You can now use the `PUT /V1/company/:companyId` endpoint to activate a Company. Previously, Magento threw this error: `message: "Invalid attribute value. Rejected date&time and Rejected Reason can be changed only when a company status is changed to Rejected.`,
+*  You can now use the `PUT /V1/company/:companyId` endpoint to activate a Company. Previously, Magento threw this error: `message: "Invalid attribute value. Rejected date&time and Rejected Reason can be changed only when a company status is changed to Rejected.`
 
 <!--- MC-29915-->
 
