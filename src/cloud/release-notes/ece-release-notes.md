@@ -56,7 +56,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}Added the `ERROR_REPORT_DIR_NESTING_LEVEL` environment variable to simplify error report data management in the `<magento_root>/var/report/` directory. See the variable description in the [build variables]({{site.baseurl}}/cloud/env/variables-build.html#error_report_dir_nesting_level) topic.
 
-   -  {:.fix}Removed the `SCD_EXCLUDE_THEMES`, `STATIC_CONTENT_THREADS`,`DO_DEPLOY_STATIC_CONTENT`, `SKIP_SCD`, and `STATIC_CONTENT_SYMLINK` environment variables. See [Backward incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#environment-configuration-changes).<!--MAGECLOUD-4407, MAGECLOUD-3873-->
+   -  {:.fix}Removed the `SCD_EXCLUDE_THEMES`, `STATIC_CONTENT_THREADS`,`DO_DEPLOY_STATIC_CONTENT`, and `STATIC_CONTENT_SYMLINK` environment variables. See [Backward incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#environment-configuration-changes).<!--MAGECLOUD-4407, MAGECLOUD-3873-->
 
    -  {:.fix}Fixed an issue in the Elastic Suite configuration process so that the default configuration is overwritten as expected when you configure the `ELASTICSUITE_CONFIGURATION` deploy variable without the `_merge` option.<!--MAGECLOUD-4388-->
 

@@ -42,7 +42,7 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 
 ## Fastly, New Relic, and Blackfire credentials {#integrations}
 
-Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the License Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 -  [Fastly](https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 

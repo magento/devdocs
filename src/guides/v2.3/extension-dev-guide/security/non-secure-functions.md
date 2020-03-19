@@ -16,7 +16,7 @@ As a developer, you should avoid using functions that introduce vulnerabilities 
 The following is a list of [PHP](https://glossary.magento.com/php) functions that are known to be vulnerable and exploitable.
 Avoid using these functions in your code.
 
-*  [`eval`](http://php.net/manual/en/function.eval.php){:target="_blank"} - Using `eval` is considered bad practice because of its ability to [execute arbitrary PHP code](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection){:target="_blank"}.
+*  [`eval`](http://php.net/manual/en/function.eval.php){:target="_blank"} - Using `eval` is considered bad practice because of its ability to [execute arbitrary PHP code](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html){:target="_blank"}.
 *  [`serialize`](http://php.net/manual/en/function.serialize.php){:target="_blank"}/[`unserialize`](http://php.net/manual/en/function.unserialize.php){:target="_blank"} - Attackers can create an exploit for these functions by passing a string with a serialized arbitrary object to the `unserialize` function to [run arbitrary code](https://www.owasp.org/index.php/PHP_Object_Injection){:target="_blank"}.
 *  [`md5`](http://php.net/manual/en/function.md5.php){:target="_blank"} - The algorithm for this function is known to have [cryptographic weaknesses](https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes){:target="_blank"}.
    You should never use this function for hashing passwords or any other sensitive data.
