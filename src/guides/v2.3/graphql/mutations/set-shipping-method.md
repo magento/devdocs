@@ -122,11 +122,11 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
-`Carrier with such method not found: carrier_code, method_code` | A provided carrier method is not found or it's not applicable for the defined shipping address.
+`Carrier with such method not found: carrier_code, method_code` | A specified carrier method was not found, or it is not applicable for the defined shipping address.
 `Required parameter "cart_id" is missing` | The value specified in the `cart_id` argument is empty.
 `Required parameter "carrier_code" is missing.` | The value specified in the `shipping_methods`.`carrier_code` argument is empty.
 `Required parameter "method_code" is missing.` | The value specified in the `shipping_methods`.`method_code` argument is empty.
 `Required parameter "shipping_methods" is missing` | The value specified in the `shipping_methods` argument is empty.
 `The current user cannot perform operations on cart "XXX"` | An unauthorized user (guest) tried to set a shipping method for an order on behalf of an authorized user (customer), or a customer tried to set a shipping method for an order on behalf of another customer.
-`The shipping method can't be set for an empty cart. Add an item to cart and try again.` | The shipping method can't be set for an empty cart.
-`You cannot specify multiple shipping methods.` | Only a single shipping method can be set for an order.
+`The shipping method can't be set for an empty cart. Add an item to cart and try again.` | The shipping method cannot be set for an empty cart.
+`You cannot specify multiple shipping methods.` | You can set only one shipping method for an order.
