@@ -17,6 +17,9 @@ UNDEFINED | An unknown error occurred.
 
 The `reorderItems` mutation will not add any products to the cart if it encounters the REORDER_NOT_AVAILABLE error. For any other error code, it will add the product to the cart, but it will continue adding other products, if applicable.
 
+{:.bs-callout-info}
+If any discounts or coupons from the original order are still valid, they will be applied to the cart.
+
 ## Syntax
 
 `mutation: {reorderItems(orderNumber: String!) {ReorderItemsOutput}}`
