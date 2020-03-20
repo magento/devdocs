@@ -475,7 +475,7 @@ For example, the developer can disable a global plugin in the [backend](https://
 
 ### Disabling plugins
 
-Plugins can be disabled in a `di.xml` file. To disable a plugin, the `disabled` parameter of the plugin declaration should be set to `true`.
+Plugins can be disabled in a `di.xml` file. To disable a plugin, set the `disabled` parameter of the plugin declaration  to `true`.
 
 ```xml
 <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
