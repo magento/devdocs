@@ -194,59 +194,6 @@ query IntrospectionQuery {
   }
 }
 ```
-#### Return a list of Magento mutations
-
-The following query returns a list of Magento mutations. The results are truncated.
-
-**Request:**
-
-```graphql
-query IntrospectionQuery {
-  __schema {
-    mutationType {
-      fields {
-        name
-        description
-        type{
-         name
-         kind
-        }
-      }
-    }
-  }
-}
-```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "__schema": {
-      "mutationType": {
-        "fields": [
-          {
-            "name": "addBundleProductsToCart",
-            "description": null,
-            "type": {
-              "name": "AddBundleProductsToCartOutput",
-              "kind": "OBJECT"
-            }
-          },
-          {
-            "name": "addConfigurableProductsToCart",
-            "description": null,
-            "type": {
-              "name": "AddConfigurableProductsToCartOutput",
-              "kind": "OBJECT"
-            }
-          }
-        ]
-      }
-    }
-  }
-}
-```
 ### Get details about a data type
 
 The following introspection query returns details about the `ProductAttributeFilterInput` data type.
