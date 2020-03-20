@@ -179,6 +179,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  The **Search Stock Images** button now remains active as expected after you’ve searched for and saved an image from the media gallery. Previously,  this button was disabled after you used it to search for an image and saved it.  *Fix submitted by Nazar Klovanych in pull request [25556](https://github.com/magento/magento2/pull/25556)*. [GitHub-622](https://github.com/magento/magento2/issues/622)
 
+
+### Analytics
+
+<!--- MC-31766-->
+
 ### Bundle products
 
 <!--- MC-29938-->
@@ -204,6 +209,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29598-->
 
 ### B2B
+
+<!--- MC-22684-->
 
 <!--- MC-30049-->
 
@@ -343,6 +350,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29865-->
 <!--- MC-29519-->
 
+<!--- MC-31801-->
+<!--- MC-30974-->
+<!--- MC-18057-->
+
 ### CatalogInventory
 
 <!--- MC-21821-->
@@ -459,6 +470,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### Dynamic block (formerly banner)
 
+<!--- MC-18280-->
+
 ### EAV
 
 <!--- MC-30487-->
@@ -503,6 +516,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-17563-->
 
 [GitHub-22909](https://github.com/magento/magento2/issues/22909)
+
+<!--- MC-30824-->ee only database fr
+<!--- MC-31708-->
+
 
 ### JavaScript framework
 
@@ -594,6 +611,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Image
 
 ### Import/export
+
+<!--- MC-21727-->
+
+<!--- MC-31470-->
 
 <!--- MC-29361-->
 
@@ -703,6 +724,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### Payment methods
 
+<!--- MC-31984-->
+
 <!--- MC-31168-->
 
 *  The integration of third-party payment methods into the core Magento code has been depreciated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer be supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
@@ -782,6 +805,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Magento now refunds reward points as expected when an order is returned to a store running in a multi-store environment where different reward point rates are set for each  store. Previously, Magento did not refund points as expected for a returned order that was purchased using reward points.
 
 ### Sales
+
+<!--- MC-31914-->
 
 <!--- MC-30116-->
 
@@ -971,6 +996,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-22606-->
 
 ### Visual Merchandiser
+
+<!--- MC-31124-->
 
 ### Web API framework
 
