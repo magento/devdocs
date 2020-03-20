@@ -8,7 +8,7 @@ Before you begin the extension submission process, you need to have the followin
 ## Technical items
 
 -  The [extension code package]({{ site.baseurl }}/marketplace/sellers/technical-review-guidelines.html)
--  A [user guide, reference manual, or installation guide]({{ site.baseurl }}/marketplace/sellers/content.html)/a> (at least one is required)
+-  A [user guide, reference manual, or installation guide]({{ site.baseurl }}/marketplace/sellers/content.html) (at least one is required)
 -  [Release notes]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html)
 -  [License information]({{ site.baseurl }}/marketplace/sellers/submit-for-technical-review.html) (license type or custom license name and link)
 -  [Magento version compatibility]({{ site.baseurl }}/marketplace/sellers/extension-version.html)
