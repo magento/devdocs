@@ -34,7 +34,7 @@ Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/f
 
 ## Reorder recommendation units
 
-When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either above or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
+When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either at the top or the bottom of the main content container. You can, however, customize that location more granularly by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
 
 1. Change to the `layout` directory:
 
