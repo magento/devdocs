@@ -34,7 +34,7 @@ Sprite Foam Yoga Brick | 24-WG084 | 1
 
 The customer wants to reorder these items, but the status of some of these items has changed:
 
--  Aeon Capri (WP07-29-Black) is in stock, but fewer than than three items are available for sale.
+-  Aeon Capri (WP07-29-Black) is in stock, but fewer than three items are available for sale.
 -  The Sprite Foam Yoga Brick (24-WG084) is out of stock.
 
 These items will not be added to the cart.
