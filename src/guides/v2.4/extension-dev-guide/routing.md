@@ -148,17 +148,16 @@ The `execute()` function in these classes contain the logic for dispatching requ
 
 Each Action should implement one or more Magento\Framework\App\Action\Http*HTTP Method*ActionInterface to declare which HTTP request methods it can process. The most common ones are:
 
-- `\Magento\Framework\App\Action\HttpDeleteActionInterface`
-- `\Magento\Framework\App\Action\HttpGetActionInterface`
-- `\Magento\Framework\App\Action\HttpPostActionInterface`
-- `\Magento\Framework\App\Action\HttpPutActionInterface`
+*  `\Magento\Framework\App\Action\HttpDeleteActionInterface`
+*  `\Magento\Framework\App\Action\HttpGetActionInterface`
+*  `\Magento\Framework\App\Action\HttpPostActionInterface`
+*  `\Magento\Framework\App\Action\HttpPutActionInterface`
 
 Magento has a `form key` validation in place for all `POST` non-AJAX requests - if your `Action` doesn't need that validation or you want to modify it you can implement `CsrfAwareActionInterface`.
 
 If you need to forward a request to another action in your class, use the [`Forward::forward(string $action)`] method.
 
 **Example:**
-
 
 ```php
 <?php
