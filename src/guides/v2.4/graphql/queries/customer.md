@@ -13,7 +13,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Example usage
 
-### Retrieving the logged-in customer
+### Retrieve basic information about the logged-in customer
 
 The following call returns information about the logged-in customer. Provide the customer's token in the header section of the query.
 
@@ -75,7 +75,236 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-### Retrieving the store credit history
+### Retrieve a previous order
+
+The following example returns an order the logged-in user previously made.
+
+**Request:**
+
+```graphql
+{
+  customer {
+    firstname
+    lastname
+    email
+    orders(filter: {number: {eq: "000000003"}}, pageSize: 1, currentPage: 1) {
+      total_count
+      page_info {
+        current_page
+        page_size
+        total_pages
+      }
+      items {
+        id
+        number
+        order_date
+        status
+        order_items {
+          product_sku
+          product_name
+          parent_product_sku
+          product_sale_price{
+            value
+            currency
+          }
+          quantity_ordered
+          product_sale_price{
+            value
+            currency
+          }
+          entered_options{
+            id
+            value
+          }
+            }
+        totals {
+          base_grand_total {
+            value
+            currency
+          }
+          grand_total {
+            value
+            currency
+          }
+          shipping_handling {
+            value
+            currency
+          }
+          subtotal {
+            value
+            currency
+          }
+          tax {
+            value
+            currency
+          }
+          discounts {
+            amount {
+              value
+              currency
+            }
+            label
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "customer": {
+      "firstname": "Veronica",
+      "lastname": "Costello",
+      "email": "roni_cost@example.com",
+      "orders": {
+        "total_count": 1,
+        "page_info": {
+          "current_page": 1,
+          "page_size": 1,
+          "total_pages": 1
+        },
+        "items": [
+          {
+            "id": "3",
+            "number": "000000003",
+            "order_date": "2020-03-21 22:41:38",
+            "status": "Pending",
+            "order_items": [
+              {
+                "product_sku": "WP07-29-Black",
+                "product_url": "url",
+                "product_name": "Aeon Capri",
+                "parent_product_sku": null,
+                "product_sale_price": {
+                  "value": 48,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 3,
+                "entered_options": [],
+                "selected_options": [
+                  {
+                    "id": "Size",
+                    "value": "29"
+                  },
+                  {
+                    "id": "Color",
+                    "value": "Black"
+                  }
+                ]
+              },
+              {
+                "product_sku": "WP07-29-Black",
+                "product_url": "url",
+                "product_name": "Aeon Capri-29-Black",
+                "parent_product_sku": "WP07-29-Black",
+                "product_sale_price": {
+                  "value": 48,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 3,
+                "entered_options": [],
+                "selected_options": []
+              },
+              {
+                "product_sku": "24-UG07",
+                "product_url": "url",
+                "product_name": "Dual Handle Cardio Ball",
+                "parent_product_sku": null,
+                "product_sale_price": {
+                  "value": 12,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 1,
+                "entered_options": [],
+                "selected_options": []
+              },
+              {
+                "product_sku": "24-WG084",
+                "product_url": "url",
+                "product_name": "Sprite Foam Yoga Brick",
+                "parent_product_sku": null,
+                "product_sale_price": {
+                  "value": 5,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 1,
+                "entered_options": [],
+                "selected_options": []
+              },
+              {
+                "product_sku": "WS06-S-Gray",
+                "product_url": "url",
+                "product_name": "Elisa EverCool&trade; Tee",
+                "parent_product_sku": null,
+                "product_sale_price": {
+                  "value": 29,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 1,
+                "entered_options": [],
+                "selected_options": [
+                  {
+                    "id": "Size",
+                    "value": "S"
+                  },
+                  {
+                    "id": "Color",
+                    "value": "Gray"
+                  }
+                ]
+              },
+              {
+                "product_sku": "WS06-S-Gray",
+                "product_url": "url",
+                "product_name": "Elisa EverCool&trade; Tee-S-Gray",
+                "parent_product_sku": "WS06-S-Gray",
+                "product_sale_price": {
+                  "value": 29,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 1,
+                "entered_options": [],
+                "selected_options": []
+              }
+            ],
+            "totals": {
+              "base_grand_total": {
+                "value": 205.68,
+                "currency": "USD"
+              },
+              "grand_total": {
+                "value": 205.68,
+                "currency": "USD"
+              },
+              "shipping_handling": {
+                "value": 0,
+                "currency": "USD"
+              },
+              "subtotal": {
+                "value": 190,
+                "currency": "USD"
+              },
+              "tax": {
+                "value": 15.68,
+                "currency": "USD"
+              },
+              "discounts": null
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Retrieve the store credit history
 
 The following example returns the store credit history for the logged-in user.
 
@@ -277,7 +506,7 @@ Attribute | Data type | Description
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
 
-### WishlistItem attributes {#wishlistitem}
+#### WishlistItem attributes {#wishlistitem}
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -297,7 +526,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged-in customer
 
-### CustomerStoreCredit attributes {#CustomerStoreCredit}
+#### CustomerStoreCredit attributes {#CustomerStoreCredit}
 
 The `store_credit` object contains store credit information, including the balance and history.
 
@@ -307,7 +536,7 @@ Attribute |  Data Type | Description
 `current_balance` | Money | The current store credit balance
 `enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the balance will not be returned
 
-### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
+#### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
 
 The `CustomerStoreCreditHistory` object contains an array of store credit items and paging information. If the store credit or store credit history feature is disabled, then a null value will be returned.
 
@@ -317,7 +546,7 @@ Attribute |  Data Type | Description
 `page_info` | SearchResultPageInfo | An object that includes the `page_size` and `current_page` values specified in the query
 `total_count` | Int | The number of items returned
 
-### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
+#### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
 
 The `CustomerStoreCreditHistoryItem` object contains information about a specific change to the customer's store credit.
 
