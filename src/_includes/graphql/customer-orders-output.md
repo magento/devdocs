@@ -70,7 +70,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `quantity_ordered` | Float | The number of units ordered for this item
 
-#### SalesItemInterface
+#### SalesItemInterface {#SalesItemInterface}
 
 `SalesItemInterface` is implemented by the `OrderItem` data type.
 
@@ -101,7 +101,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `shipping_handling` | Money! | The shipping and handling costs for the order
 
-#### SalesTotalsInterface
+#### SalesTotalsInterface {#SalesTotalsInterface}
 
 `SalesTotalInterface` is implemented by the `OrderTotals` data type.
 
