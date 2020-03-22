@@ -58,6 +58,9 @@ pages:
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
 
+        - label: Container component
+          url: /ui_comp_guide/components/ui-container.html
+
         - label: Date component
           url: /ui_comp_guide/components/ui-date.html
 
@@ -102,6 +105,9 @@ pages:
 
         - label: Form component
           url: /ui_comp_guide/components/ui-form.html
+
+        - label: FormDataProvider component
+          url: /ui_comp_guide/components/ui-form-data-provider.html
 
         - label: GridDataProvider component
           url: /ui_comp_guide/components/ui-grid-data-provider.html

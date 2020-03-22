@@ -14,6 +14,8 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
+{% include cloud/note-pro-mount-disk-config-yaml-support.md %}
+
 ### `name`
 
 {{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
@@ -149,7 +151,6 @@ Defines the persistent disk size of the application in MB.
 disk: 2048
 ```
 
-{:.bs-callout-info}
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
@@ -174,10 +175,10 @@ The format for adding your mount to this list is as follows:
 -  `shared`—Shares a volume between your applications inside an environment.
 -  `disk`—Defines the size available for the shared volume.
 
-{:.bs-callout-warning}
-The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-
 You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
+
+{:.bs-callout-warning}
+Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
 ### `dependencies`
 
