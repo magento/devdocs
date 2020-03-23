@@ -350,10 +350,10 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
-## Declaring the new custom no route processor
+## Declaring the new custom no-route processor
 
-If the standard 404 page should be extended or the customer should be directed to another page, for example, the search page, Magento allows adding a custom no route processor.
-In order to add a new no route processor, add the argument to the ``NoRouteHandlerList``  in the ``di.xml`` file of your module:
+If the standard 404 page needs to be extended or users redirected to another page, you can use a custom 'no-route' processor.
+In order to usef a no-route processor, add an argument to the `NoRouteHandlerList` in the `di.xml` file of your module:
 
 ```xml
 <type name="Magento\Framework\App\Router\NoRouteHandlerList">
@@ -368,7 +368,7 @@ In order to add a new no route processor, add the argument to the ``NoRouteHandl
 </type>
 ```
 
-In this example `Magento\Framework\App\Router\NoRouteHandler` is the no route scenario processor that is being executed when no route has been found for the entered URL:
+In this example, `Magento\Framework\App\Router\NoRouteHandler` is the 'no route' scenario processor that is executed when no acceptable route is found for the URL:
 
 ```php
 namespace Magento\Framework\App\Router;
@@ -416,12 +416,12 @@ class NoRouteHandler implements \Magento\Framework\App\Router\NoRouteHandlerInte
 }
 ```
 
-The no route processor should implement the ``Magento\Framework\App\Router\NoRouteHandlerInterface``.
-A custom no route processor may be declared in order to extend or modify the system behavior when no route has been found for the provided URL.
+The no-route processor implements the `Magento\Framework\App\Router\NoRouteHandlerInterface`.
+A custom no-route processor may be declared in order to extend or modify the system behavior when no route has been found for the provided URL.
 
 ## Declaring the new route as Page Type
 
-After creating a new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
+After creating the new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
 
 Defining a new page type:
 
