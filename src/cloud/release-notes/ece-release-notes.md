@@ -17,6 +17,13 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
+## v2002.1.1
+*Release date: TBD*<br/>
+
+-  {:.new}**Environment variable updates**–
+
+   -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MAGECLOUD-4593 -->
+
 ## v2002.1.0
 *Release date: February 6, 2020*<br/>
 
