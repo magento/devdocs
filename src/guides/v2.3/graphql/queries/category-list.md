@@ -6,7 +6,7 @@ title: categoryList query
 The `categoryList` query searches for categories that match the criteria specified in filters. It replaces the deprecated `category` query, which allowed you to search by category ID only.
 
 {:.bs-callout-info}
-This query does not support pagination. Use the `categories` query if you expect to return a large number of categories.
+This query does not support pagination. Use the [`categories` query]({{page.baseurl}}/graphql/queries/categories.html) if you expect to return a large number of categories.
 
 The `categoryList` query supports the following types of filters. You can specify multiple filters in a query.
 
