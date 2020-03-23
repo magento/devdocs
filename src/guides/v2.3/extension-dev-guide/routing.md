@@ -419,9 +419,9 @@ class NoRouteHandler implements \Magento\Framework\App\Router\NoRouteHandlerInte
 The no-route processor implements the `Magento\Framework\App\Router\NoRouteHandlerInterface`.
 A custom no-route processor may be declared in order to extend or modify the system behavior when no route has been found for the provided URL.
 
-## Declaring the new route as Page Type
+## Declaring a new route with Page Type
 
-After creating the new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
+After creating a new route: `routing/index/index`, it is good practice to provide admin controls for it. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
 
 Defining a new page type:
 
