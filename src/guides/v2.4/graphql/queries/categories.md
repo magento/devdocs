@@ -164,7 +164,6 @@ The following query returns the top-level categories (as well as two levels of c
 }
 ```
 
-
 ## Input attributes
 
 You must specify the `filters` attribute as input to your query.
@@ -181,8 +180,26 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
-The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
+The `categories` query returns a `CategoryResult` object, which contains the following attributes:
+
+Attribute | Data type | Description
+--- | --- | ---
+`items` | [CategoryTree] | A list of categories that match filter criteria
+`page_info`| SearchResultPageInfo | An object that includes the `page_info` and `currentPage` values specified in the query.
+`total_count` | Int | The total number of categories that match the criteria
+
+### CategoryTree attributes
+
+The `items` attribute contains a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
 `children` | `CategoryTree` | An array containing the next level of subcategories. By default, you can specify up to 10 levels of child categories
+
+### SearchResultPageInfo
+
+Attribute | Data type | Description
+--- | --- | ---
+current_page | Int | Specifies which page of results to return
+page_size | Int | Specifies the maximum number of items to return
+total_pages | Int | Total pages
