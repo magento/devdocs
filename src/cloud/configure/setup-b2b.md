@@ -39,24 +39,6 @@ To install the B2B module:
    composer update
    ```
 
-1. Use `ece-tools` to refresh the configuration and enable the B2B module.
-
-   ```bash
-   ./vendor/bin/ece-tools module:refresh
-   ```
-
-1. Complete any upgrade for the Magento application and the B2B module.
-
-   ```bash
-   bin/magento setup:upgrade
-   ```
-
-1. Clean the cache.
-
-   ```bash
-   bin/magento cache:clean
-   ```
-
 1. Add, commit, and push code changes.
 
    ```bash
@@ -64,7 +46,7 @@ To install the B2B module:
    ```
 
    ```bash
-   git commit -m "install b2b module"
+   git commit -m "Install B2B module."
    ```
 
    ```bash

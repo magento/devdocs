@@ -42,7 +42,7 @@ To remove the component:
 1. Clear the cache.
 
    ```bash
-   composer clearcache
+   composer clear-cache
    ```
 
 1. Remove the component from the `composer.json` file.
@@ -57,7 +57,7 @@ To remove the component:
    Package "<name>:<version>" listed for update is not installed. Ignoring.
    ```
 
-1. Wait while dependencies are updated.
+1. Wait while the dependencies are updated.
 
 1. Add, commit, and push code changes.
 
@@ -70,5 +70,5 @@ To remove the component:
    ```
 
    ```bash
-   git push origin <environment ID>
+   git push origin <environment-ID>
    ```

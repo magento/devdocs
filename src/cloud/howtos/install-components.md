@@ -43,24 +43,6 @@ To install an extension:
    composer update
    ```
 
-1. Use `ece-tools` to refresh the configuration and enable the extension.
-
-   ```bash
-   ./vendor/bin/ece-tools module:refresh
-   ```
-
-1. Complete any upgrade for the Magento application and the extension.
-
-   ```bash
-   bin/magento setup:upgrade
-   ```
-
-1. Clean the cache.
-
-   ```bash
-   bin/magento cache:clean
-   ```
-
 1. Add, commit, and push code changes.
 
    ```bash
@@ -68,7 +50,7 @@ To install an extension:
    ```
 
    ```bash
-   git commit -m "install <extension-name>"
+   git commit -m "Install <extension-name>"
    ```
 
    ```bash
@@ -154,7 +136,7 @@ To enable or disable an extension:
    ```
 
    ```bash
-   git commit -m "disable <extension-name>"
+   git commit -m "Disable <extension-name>"
    ```
 
    ```bash
@@ -191,7 +173,7 @@ To update an extension:
    ```
 
    ```bash
-   git commit -m "update <extension-name>"
+   git commit -m "Update <extension-name>"
    ```
 
    ```bash
