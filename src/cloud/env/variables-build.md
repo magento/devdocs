@@ -37,7 +37,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-You must install and configure the Baler module before using this feature. Because Baler is currently in alpha release, enable this option only on Staging environments.
+You must install and configure the Baler module before using this feature. Because Baler is currently in alpha release, we do not recommend using it in Production environments.
 
 ### `ERROR_REPORT_DIR_NESTING_LEVEL`
 
