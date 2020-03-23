@@ -172,7 +172,7 @@ class Courses extends AbstractEntity
      *
      * @return bool
      */
-    public function validateRow(array $rowData, int $rowNum): bool
+    public function validateRow(array $rowData, $rowNum): bool
     {
         if (isset($this->_validatedRows[$rowNum])) {
             return !$this->getErrorAggregator()->isRowInvalid($rowNum);
