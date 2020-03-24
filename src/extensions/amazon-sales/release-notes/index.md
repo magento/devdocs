@@ -21,23 +21,19 @@ The release notes include:
 
 ### v4.0
 
-Amazon Sales Channel 4.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user interface upgrades, along with minor bug fixes.
+Amazon Sales Channel 4.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
 
--  {:.new}Introduces a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page.
+-  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page.
 
--  {:.new}Introduces a new [store dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
+-  {:.new}Introduced a new [store dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
 
--  {:.new}Introduces a streamlined [onboarding process](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-onboarding-home.html) and [default store settings]((https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html)).
+-  {:.new}Introduced a streamlined [onboarding process](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-onboarding-home.html) and [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
 
--  {:.bug}<!--- CHAN-xxx --->Orders imported for a catalog product in `Disabled` status will not create a corresponding Magento order. This known issue also applies to imported orders that are unable to match with a catalog product SKU.
+-  {:.bug}<!--- CHAN-3073 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock`, a known issue exists preventing product quantity from updating to Amazon when an [Alias Seller SKU](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/create-alias-seller-sku.html) is created for the listing.
 
--  {:.bug}<!--- CHAN-3073 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stock/Source setting other than Default (need to find out more about this reference to stock/source setting?), a known issue exists preventing product quantity from updating to Amazon when an [Alias Seller SKU]https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/create-alias-seller-sku.html is created for the listing.
+-  {:.bug}<!--- CHAN-3068 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock` and listing settings defined to `Import Listing`, a known issue exists causing the listing is to import into Magento with a quantity of `0`.
 
--  {:.bug}<!--- CHAN-3068 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stock/Source setting other than Default (need to find out more about this reference to stock/source setting?) and listing settings defined to `Import Listing`, a known issue exists causing the listing is to import into Magento with a quantity of `0`.
-
--  {:.bug}<!--- CHAN-3072 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants  with a Stock/Source setting other than Default (need to find out more about this reference to stock/source setting?), a known issue exists preventing Salable Quantity values from updating to Amazon when an order is received and the product is reserved in Magento stock.
-
--  {:.bug}<!--- CHAN-4127 --->When an MWS authorization token is expired or becomes invalid, a known issue exists preventing merchants from renewing the toke inside the extension (is there a workaround?). When this occurs, the `AuthToken is not valid for SellerId and AWSAccountId.` message appears on the [Communications Error Log](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/communication-errors-log.html).
+-  {:.bug}<!--- CHAN-3072 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock`, a known issue exists preventing Salable Quantity values from updating to Amazon when an order is received and the product is reserved in Magento stock.
 
 -  {:.bug}<!--- CHAN-4102 --->When [creating attributes](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-attributes.html) for importing images from listings and **Store Views** is set to `All Store Views (Global)`, a known issue exists preventing images from importing to all store views. If you change the setting for **Store Views (to import values into)** to a specific store, the images will import for that store.
 
