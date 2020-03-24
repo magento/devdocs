@@ -52,37 +52,50 @@ Before you run functional tests, you must prepare your environment with the foll
 1. Add credentials
 
    1. Add credentials to environment variables.
-
-   ```bash
-   export REPO_USERNAME=your_public_key
-   ```
-
-   ```bash
-   export REPO_PASSWORD=your_private_key
-   ```
-   
-   If you want to install some packages from GitHub, add GitHub token
-   
-   ```bash
-   export GITHUB_TOKEN=your_github_token
-   ```
+    
+       ```bash
+       export REPO_USERNAME=your_public_key
+       ```
+    
+       ```bash
+       export REPO_PASSWORD=your_private_key
+       ```
+       
+       If you want to install some packages from GitHub, add GitHub token
+       
+       ```bash
+       export GITHUB_TOKEN=your_github_token
+       ```
    
    1. Add credentials to the ./.env file.
    
-   Edit the `codeception.dist.yml` file:
-   
-   ```yaml
-   params:
-     - tests/functional/configuration.dist.yml
-     - env
-     - .env
-   ```
-   
-   Require `vlucas/phpdotenv`:
-   
-   ```bash
-   composer require "vlucas/phpdotenv": "^3.0"
-   ```
+       Edit the `codeception.dist.yml` file:
+       
+       ```yaml
+       params:
+         - tests/functional/configuration.dist.yml
+         - env
+         - .env
+       ```
+       
+       Require `vlucas/phpdotenv`:
+       
+       ```bash
+       composer require "vlucas/phpdotenv": "^3.0"
+       ```
+
+   1. Just edit the `codeception.dist.yml` file and replace placeholder %REPO_USERNAME%, %REPO_PASSWORD% and %GITHUB_TOKEN% with your credentials:
+      
+       ```yaml
+       modules:
+         config:
+           Magento\CloudDocker\Test\Functional\Codeception\TestInfrastructure:
+             ...
+             composer_magento_username: "%REPO_USERNAME%"
+             composer_magento_password: "%REPO_PASSWORD%"
+             composer_github_token: "%GITHUB_TOKEN%"
+             ...
+       ```
 
 ## Run tests
 
