@@ -4,7 +4,7 @@ title: Install Amazon Sales Channel
 ---
 
 {:.bs-callout .bs-callout-warning}
-Amazon Sales Channel versions 4.0+ are only supported when integrated with Magento 2.3.x.
+Amazon Sales Channel versions 4.0+ are only supported when integrated with Magento 2.3.x versions.
 
 The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the [Amazon Sales Channel Marketplace](http://marketplace.magento.com/magento-module-amazon.html) page.
 
