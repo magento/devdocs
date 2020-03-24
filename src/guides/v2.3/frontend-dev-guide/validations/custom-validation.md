@@ -43,7 +43,7 @@ define(['jquery'], function($) {
     $.validator.addMethod(
       'validate-five-words',
       function(value, element) {
-        return value.split(' ').length == 5 ? true | false;
+        return value.split(' ').length == 5;
       },
       $.mage.__('Please enter exactly five words')
     )
