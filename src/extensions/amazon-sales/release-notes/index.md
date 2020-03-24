@@ -2,12 +2,14 @@
 group: extensions
 title: Amazon Sales Channel Release Notes
 ---
+{:.bs-callout .bs-callout-warning}
+Amazon Sales Channel versions 4.0+ are only supported when integrated with Magento 2.3.x versions.
 
-**Amazon Sales Channel** is now available for version 2.2.x and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to post and sell products in your Magento catalog on Amazon.
+**Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
 See the following documentation:
 
--  [Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-sales-channel.html) for merchant information and instructions
+-  [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel.html) for merchant information and instructions
 -  [Amazon Sales Channel install]({{site.baseurl}}/extensions/amazon-sales/) for installation and API key information
 -  [Amazon Sales Channel Marketplace](http://marketplace.magento.com/magento-module-amazon.html)
 
@@ -16,6 +18,24 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
+
+### v4.0
+
+Amazon Sales Channel 4.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+
+-  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page.
+
+-  {:.new}Introduced a new [store dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
+
+-  {:.new}Introduced a streamlined [onboarding process](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-onboarding-home.html) and [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
+
+-  {:.bug}<!--- CHAN-3073 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock`, a known issue exists preventing product quantity from updating to Amazon when an [Alias Seller SKU](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/create-alias-seller-sku.html) is created for the listing.
+
+-  {:.bug}<!--- CHAN-3068 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock` and listing settings defined to `Import Listing`, a known issue exists causing the listing is to import into Magento with a quantity of `0`.
+
+-  {:.bug}<!--- CHAN-3072 --->For [MSI](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/order-settings.html#order-creation-with-multi-source-inventory-msi) merchants with a Stores > Stocks setting other than `Default Stock`, a known issue exists preventing Salable Quantity values from updating to Amazon when an order is received and the product is reserved in Magento stock.
+
+-  {:.bug}<!--- CHAN-4102 --->When [creating attributes](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-attributes.html) for importing images from listings and **Store Views** is set to `All Store Views (Global)`, a known issue exists preventing images from importing to all store views. If you change the setting for **Store Views (to import values into)** to a specific store, the images will import for that store.
 
 ### v3.0.1
 
@@ -31,17 +51,17 @@ Amazon Sales Channel 3.0.1 is compatible with versions 2.2.4+ and 2.3.x of {{sit
 
 Amazon Sales Channel 3.0.0 is compatible with versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
+-  {:.new}**Amazon UK Marketplace Now Available**: Users can choose the United Kingdom marketplace when [creating and integrating](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/store-integration.html) an Amazon Sales Channel store. This UK upgrade includes additional support for:
 
    -  [Amazon VAT Calculation Service](https://services.amazon.co.uk/vat-calculation-service.html)
 
    -  [Product Tax Code](https://sellercentral.amazon.com/gp/help/help.html?itemID=G200794510&language=en_US) information.
 
--  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented the **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ce/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
+-  {:.new}**Improved Logging**: <!--CHAN-3642, 3672-->Implemented the **Enable Debug Logging** feature to collect additional synchronization data when troubleshooting is needed. See the [Sales Channels Settings](https://docs.magento.com/m2/ee/user_guide/configuration/sales-channels/global-settings.html) topic in the Configuration Reference.
 
 -  {:.fix}**Product Catalog**: <!--CHAN-3687-->Corrected an issue preventing images imported with an Amazon listing from being applied to the corresponding Magento catalog product.
 
--  {:.fix}**Order Creation**: <!--CHAN-3708-->Corrected an issue preventing Magento from creating orders for an Amazon order that does not match with a Magento catalog product. See [Order Settings](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/order-settings.html).
+-  {:.fix}**Order Creation**: <!--CHAN-3708-->Corrected an issue preventing Magento from creating orders for an Amazon order that does not match with a Magento catalog product. See [Order Settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/amazon/order-settings.html).
 
 -  {:.bug}**Duplicate Amazon Listings**: <!--CHAN-3593-->This issue causes the catalog to create a new item for an imported listing, using the same SKU but with a region code added on the end. Amazon then processes the modified SKU as a new item and creates a new listing. This issue will be addressed in an future release.
 
@@ -70,4 +90,4 @@ Version 1.0.0 was available in limited release only.
 
 -  {:.bug} Ineligible bundled products may display as Eligible for listing on Amazon. One of the products within the bundled product may not be eligible. If you encounter issues, check the eligibility status for bundled products items.
 
--  {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.
+-  {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.
