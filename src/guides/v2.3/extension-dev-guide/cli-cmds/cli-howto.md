@@ -22,7 +22,7 @@ Before you begin, make sure you understand the following:
 *  All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
 *  All CLI commands should be implemented in the scope of your [module](https://glossary.magento.com/module) and should depend on the module's status.
 *  Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
-*  Your command should have an unique `name` which can be defined in the `configure()` method of Command class:
+*  Your command should have an unique `name`, defined in the `configure()` method of the Command class:
 
    ```php
    protected function configure()
@@ -50,7 +50,7 @@ Before you begin, make sure you understand the following:
    </config>
    ```
 
-   otherwise [Symfony](https://github.com/symfony/console/blob/master/Application.php#L470) framework will return an `The command defined in "<Command class>" cannot have an empty name.` error.
+   Otherwise the [Symfony](https://github.com/symfony/console/blob/master/Application.php#L470) framework will return an `The command defined in "<Command class>" cannot have an empty name.` error.
 
 ## Add CLI commands using dependency injection {#cli-sample}
 
