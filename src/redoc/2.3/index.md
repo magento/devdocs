@@ -25,7 +25,7 @@ Each of the following links lead to a list of REST endpoints specific to a user 
 
 ## Asynchronous endpoints
 
-You can run POST and PUT endpoints asynchronously while the `async.operations.all` message queue consumer is active. [Asynchronous web endpoints]({{page.baseurl}}/rest/asynchronous-web-endpoints.html) provides information about asynchronous routes, payloads, and responses.
+You can run POST, PUT and DELETE endpoints asynchronously while the `async.operations.all` message queue consumer is active. [Asynchronous web endpoints]({{page.baseurl}}/rest/asynchronous-web-endpoints.html) provides information about asynchronous routes, payloads, and responses.
 
 *  [Admin REST API endpoints]({{site.baseurl}}/redoc/2.3/async-admin-rest-api.html) -  Available using an admin security token.
 
