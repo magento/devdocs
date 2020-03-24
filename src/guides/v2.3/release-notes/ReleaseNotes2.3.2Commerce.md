@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.2 Release Notes
 ---
 
-*Patch code and release notes published on June 25, 2019.*
+*Release notes published on June 25, 2019 and last updated on March 24, 2020.*
 
 We are pleased to present Magento Commerce 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes  contributions from our community members. These contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
@@ -18,6 +18,10 @@ Merchants can now install time-sensitive security fixes without applying the hun
 **If you have already upgraded to the pre-release version of this patch (2.3.2-p1), we strongly recommend that you upgrade to 2.3.2-p2 as soon as possible.**  Patch 2.3.2-p2 contains the critical security fixes that are included in Magento  2.3.3, 2.2.10, 1.9.4.3, and 1.14.4.3, but that are not included in patch 2.3.2-p1.
 
 For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.2-p1), see [Install Magento using Composer](https://devdocs-beta.magento.com/guides/v2.3/install-gde/composer.html#get-the-metapackage).
+
+## Apply updated hot fix for CVE-2019-8118
+
+The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8118) that was included in Magento 2.3.3 and 2.2.10. While the original fix for that bug stopped the logging of failed login attempts, information collected prior to updating to these current versions may still exist, and previous, unpatched versions of Magento may still have this issue. This hotfix includes both a patch (first released in Oct 2019) that stops the logging of failed login attempts and a new script that clears the login attempts that were previously collected. **We recommend that all merchants download and apply this patch and download and run the clean-up script**. See [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) for information on how to download and run the patch and clean-up script.
 
 ## Apply the Scope parameter for Async/Bulk API patch to address an issue with the Async/Bulk REST API
 
@@ -294,7 +298,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4355-->
 
-*  Magento now displays an error message as expected when a customer clicks on **Add to cart*without selecting at least one product from the recently ordered  product list. *Fix submitted by Prince Patel in pull request [21401](https://github.com/magento/magento2/pull/21401)*. [GitHub-21398](https://github.com/magento/magento2/issues/21398)
+*  Magento now displays an error message as expected when a customer clicks on **Add to cart* without selecting at least one product from the recently ordered  product list. *Fix submitted by Prince Patel in pull request [21401](https://github.com/magento/magento2/pull/21401)*. [GitHub-21398](https://github.com/magento/magento2/issues/21398)
 
 <!--- ENGCOM-4376-->
 
@@ -344,8 +348,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 *  Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
 
-{:.bs-callout-info}
-This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs.
+**This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs**.
 
 <!--- MAGETWO-96416-->
 
@@ -389,7 +392,7 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- ENGCOM-4360-->
 
-*  Magento no longer adds tax twice when adding a new product with tier pricing. Previously, MinimalTierPriceCalculator applied the tax twice when calculating the minimal price. *Fix submitted by Jitheesh V O in pull request [21395](https://github.com/magento/magento2/pull/21395)*. [GitHub-21383](https://github.com/magento/magento2/issues/21383)
+*  Magento no longer adds tax twice when adding a new product with tier pricing. Previously, `MinimalTierPriceCalculator` applied the tax twice when calculating the minimal price. *Fix submitted by Jitheesh V O in pull request [21395](https://github.com/magento/magento2/pull/21395)*. [GitHub-21383](https://github.com/magento/magento2/issues/21383)
 
 <!--- ENGCOM-4342-->
 
@@ -413,11 +416,11 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- MAGETWO-53037-->
 
-*  Magento now creates unique values for product attributes as expected when you duplicate a product. Previously, magento duplicated a product, but both products had the same attribute values.
+*  Magento now creates unique values for product attributes as expected when you duplicate a product. Previously, Magento duplicated a product, but both products had the same attribute values.
 
 <!--- MAGETWO-58219-->
 
-*  During product creation, Magento now displays default attribute values from the **Admin** column on the Manage Options (Values of Your Attribute) window when creating options. Previously, Magento displayed r options from the default storeview. [GitHub-6507](https://github.com/magento/magento2/issues/6507)
+*  During product creation, Magento now displays default attribute values from the **Admin** column on the Manage Options (Values of Your Attribute) window when creating options. Previously, Magento displayed options from the default storeview. [GitHub-6507](https://github.com/magento/magento2/issues/6507)
 
 <!--- MAGETWO-98522-->
 
@@ -824,7 +827,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4654-->
 
-*  You can now save an inactive admin user token by navigating to **System** > **Permissions** -> **All Users**, and clicking **Save User** on an inactive Admin user. Previously, if you tried to save an inactive Admin user token fom the Admin using this method, Magento threw an error and did not save the token. *Fix submitted by Pratik Oza in pull request [20772](https://github.com/magento/magento2/pull/20772)*. [GitHub-16513](https://github.com/magento/magento2/issues/16513)
+*  You can now save an inactive admin user token by navigating to **System** > **Permissions** > **All Users**, and clicking **Save User** on an inactive Admin user. Previously, if you tried to save an inactive Admin user token fom the Admin using this method, Magento threw an error and did not save the token. *Fix submitted by Pratik Oza in pull request [20772](https://github.com/magento/magento2/pull/20772)*. [GitHub-16513](https://github.com/magento/magento2/issues/16513)
 
 <!--- ENGCOM-4706-->
 
@@ -848,7 +851,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4776-->
 
-*  You can now duplicate a product with translated url keys over multiple store views without generating non-unique keys. Previously, when a product was duplicated, only one URL key was used and set for all store views. *Fix submitted by Vechirko Yurii in pull request [22178](https://github.com/magento/magento2/pull/22178)*. [GitHub-21737](https://github.com/magento/magento2/issues/21737)
+*  You can now duplicate a product with translated URL keys over multiple store views without generating non-unique keys. Previously, when a product was duplicated, only one URL key was used and set for all store views. *Fix submitted by Vechirko Yurii in pull request [22178](https://github.com/magento/magento2/pull/22178)*. [GitHub-21737](https://github.com/magento/magento2/issues/21737)
 
 ### Gift cards accounts
 
@@ -876,7 +879,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- MAGETWO-95313-->
 
-*  Magento now imports existing products that have a price change and unchanged url-key with no unnecessary updates. Previously, the product's price was updated as expected, but its unchanged url-key was deleted.
+*  Magento now imports existing products that have a price change and unchanged `url-key` with no unnecessary updates. Previously, the product's price was updated as expected, but its unchanged `url-key` was deleted.
 
 <!--- MAGETWO-70232-->
 
@@ -918,9 +921,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-3761-->
 
-*  Magento now validates CSV files that are created by custom adapters when you click **Check Data** if column and data are available. Previously, Magento threw an error.
-
-*Fix submitted by Jaimin Sutariya in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
+*  Magento now validates CSV files that are created by custom adapters when you click **Check Data** if column and data are available. Previously, Magento threw an error. *Fix submitted by Jaimin Sutariya in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
 
 ### Infrastructure
 
@@ -948,7 +949,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4147-->
 
-*  We added Type casting to \Magento\Shipping\Model\Carrier\AbstractCarrier::getTotalNumOfBoxes() to improve  validation. *Fix submitted by Mudit Shukla in pull request [20898](https://github.com/magento/magento2/pull/20898)*. [GitHub-13319](https://github.com/magento/magento2/issues/13319)
+*  We added Type casting to `\Magento\Shipping\Model\Carrier\AbstractCarrier::getTotalNumOfBoxes()` to improve  validation. *Fix submitted by Mudit Shukla in pull request [20898](https://github.com/magento/magento2/pull/20898)*. [GitHub-13319](https://github.com/magento/magento2/issues/13319)
 
 <!--- ENGCOM-4170-->
 
@@ -1070,7 +1071,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- MAGETWO-95294-->
 
-*  Improved catalog/search/advanced search pages response time: We have optimized the products load flow on storefront, which result in significant improvement of category, product, checkout and search result pages response time. There is minimum a five times improvement for page response time under high load.
+*  Improved catalog/search/advanced search pages response time: We have optimized the products load flow on storefront, which result in significant improvement of category, product, checkout, and search result pages response time. There is at minimum a five times improvement for page response time under high load.
 
 <!--- MC-16005-->
 
@@ -1114,7 +1115,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4302-->
 
-*  Magento now includes the amount of a credit memo's refunded discount in its calculation of the value displayed in the total column under **Last Orders** listing on the Admin dashboard. *Fix submitted by rav-redchamps in pull request [21283](https://github.com/magento/magento2/pull/21283)*. [GitHub-18754](https://github.com/magento/magento2/issues/18754), [GitHub-21281](https://github.com/magento/magento2/issues/21281)
+*  Magento now includes the amount of a credit memo's refunded discount in its calculation of the value displayed in the total column under **Last Orders** listing on the Admin. *Fix submitted by rav-redchamps in pull request [21283](https://github.com/magento/magento2/pull/21283)*. [GitHub-18754](https://github.com/magento/magento2/issues/18754), [GitHub-21281](https://github.com/magento/magento2/issues/21281)
 
 <!--- ENGCOM-4747-->
 
@@ -1124,7 +1125,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4560-->
 
-*  The text for review-related headers under **User Content** on the Admin dashboard has been edited for clarity.  *Fix submitted by Vishal Gelani in pull request [21621](https://github.com/magento/magento2/pull/21621)*. [GitHub-21620](https://github.com/magento/magento2/issues/21620)
+*  The text for review-related headers under **User Content** on the Admin  has been edited for clarity.  *Fix submitted by Vishal Gelani in pull request [21621](https://github.com/magento/magento2/pull/21621)*. [GitHub-21620](https://github.com/magento/magento2/issues/21620)
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -1200,9 +1201,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4620-->
 
-*  Magento now checks concrete class while applying plugins. Previously, when  the pluginized class was virtual-typed by a class with name ending with an autogenerated suffix and without the implementation of the base concrete class, the `di:compile` process failed.
-
-*Fix submitted by Riccardo Tempesta in pull request [22046](https://github.com/magento/magento2/pull/22046)*. [GitHub-21916](https://github.com/magento/magento2/issues/21916), [GitHub-21976](https://github.com/magento/magento2/issues/21976)
+*  Magento now checks concrete class while applying plugins. Previously, when  the pluginized class was virtual-typed by a class with name ending with an autogenerated suffix and without the implementation of the base concrete class, the `di:compile` process failed. *Fix submitted by Riccardo Tempesta in pull request [22046](https://github.com/magento/magento2/pull/22046)*. [GitHub-21916](https://github.com/magento/magento2/issues/21916), [GitHub-21976](https://github.com/magento/magento2/issues/21976)
 
 ### Shipping
 
@@ -1370,7 +1369,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4586-->
 
-*  Magento now retains filter terms after you apply a filter to the Admin `url_rewrites` table, and subsequently click the back button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
+*  Magento now retains filter terms after you apply a filter to the Admin `url_rewrites` table, and subsequently click the Back button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
 ### Web API
 
@@ -1380,7 +1379,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4674-->
 
-*  The REST-API locale now matches the appropriate store view in multistore deployments. Previously, Magento used the default scope for each store view. *Fix submitted by Julian Wundrak in pull request [19913](https://github.com/magento/magento2/pull/19913)*. [GitHub-19908](https://github.com/magento/magento2/issues/19908)
+*  The REST API locale now matches the appropriate store view in multistore deployments. Previously, Magento used the default scope for each store view. *Fix submitted by Julian Wundrak in pull request [19913](https://github.com/magento/magento2/pull/19913)*. [GitHub-19908](https://github.com/magento/magento2/issues/19908)
 
 <!--- ENGCOM-4173-->
 
@@ -1388,9 +1387,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4786-->
 
-*  The `PUT /V1/products/:sku/media/:entryId` API operation now updates product images as expected. Previously, this operation updated the label, types, and disabled settings, but the actual `file-content` was not replaced with the values that were provided in `base64_encoded_data`.
-
-*Fix submitted by Nazar Klovanych in pull request [22424](https://github.com/magento/magento2/pull/22424)*. [GitHub-22402](https://github.com/magento/magento2/issues/22402)
+*  The `PUT /V1/products/:sku/media/:entryId` API operation now updates product images as expected. Previously, this operation updated the label, types, and disabled settings, but the actual `file-content` was not replaced with the values that were provided in `base64_encoded_data`. *Fix submitted by Nazar Klovanych in pull request [22424](https://github.com/magento/magento2/pull/22424)*. [GitHub-22402](https://github.com/magento/magento2/issues/22402)
 
 ### Wish List
 
@@ -1422,12 +1419,12 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 *  **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
 
-  {:.bs-callout-warning}
-  {{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
+{:.bs-callout-warning}
+{{site.data.var.ece}} customers must submit a support ticket to upgrade the libsodium package on Pro Production and Staging environments prior to upgrading to {{site.data.var.ee}} 2.3.2. Currently, you cannot upgrade Starter environments to {{site.data.var.ee}} 2.3.2.
 
 ## Community contributions
 
- We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
 *  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
