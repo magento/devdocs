@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.3 Release Notes
 ---
 
-*Patch code and release notes published on October 8, 2019.*
+*Patch code and release notes published on October 8, 2019 and last updated on March 24, 2020.*
 
 Magento Open Source 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
@@ -20,6 +20,10 @@ For general information about security-only patches, see the Magento DevBlog pos
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+
+## Download and run the DB_CLEANUP_SCRIPT.php script
+
+This hotfix addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8118) that was included in Magento 2.3.3 and 2.2.10. While the original fix for that bug stopped the logging of failed login attempts, information collected prior to updating to these current versions may still exist, and previous, unpatched versions of Magento may still have this issue. This hotfix provides a script that clears the login attempts that were previously collected. We recommend that all merchants download and run this script. See [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) for information on how to download and run this database clean-up script.
 
 ## Apply the Catalog pagination issue on Elasticsearch 6.x patch to resolve a critical search result pagination issue
 
