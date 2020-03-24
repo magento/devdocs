@@ -47,7 +47,7 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 
    -  Wait for Composer to finish updating your project dependencies and make sure there aren't any errors.
 
-1. After installing, enter an [API Key](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-verify-api-key.html) to complete configuration.
+1. After installing, enter an [API Key](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-verify-api-key.html) to complete configuration.
 
 ## Add the Amazon Sales Channel API key
 
