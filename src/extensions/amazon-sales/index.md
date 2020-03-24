@@ -35,7 +35,7 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 
 1. Update the services connector entry in your `composer.json` file.
 
-   -  Add the extension's name and version to your composer.json file:
+   -  Add the extension's name and version to your composer.json file.
 
    -  Navigate to your Magento project directory and update your composer.json file.
 
