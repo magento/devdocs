@@ -10,7 +10,7 @@ The Amazon Sales Channel extension installs and adds features to integrate your 
 
 ## Requirements
 
--  **Magento Instance**: Amazon Sales Channel can be installed on instances with {{site.data.var.ce}} and {{site.data.var.ee}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1.
+-  **Magento Instance**: Amazon Sales Channel can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1.
 -  **Magento Web Account**: You should have a Magento web account, which is used to create and track an API key.
 -  **API Key**: Get a Amazon Sales Channel API key through your Magento web account. The following instructions include these steps.
 
