@@ -185,6 +185,10 @@ pages:
           url: /cloud/integrations/github-integration.html
           versionless: true
 
+        - label: GitLab integration
+          url: /cloud/integrations/gitlab-integration.html
+          versionless: true
+
         - label: Health notifications
           url: /cloud/integrations/health-notifications.html
           versionless: true
