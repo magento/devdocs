@@ -71,7 +71,7 @@ The following example uses the `curl` command to request a token for a customer 
 ```bash
 curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d "{"username":"customer1", "password":"customer1pw"}"
+     -d '{"username":"admin_username", "password":"admin_password"}'
 ```
 
 The following example makes the same request with [XML](https://glossary.magento.com/xml) for a customer account token:
