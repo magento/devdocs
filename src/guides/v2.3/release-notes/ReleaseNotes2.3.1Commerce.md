@@ -1199,7 +1199,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-95299 -->
 
-*  You can now upload PDP images larger than 1920 x 1200  without compressing and downsizing the images first. Previously,when a merchant uploaded a high quality product image (larger than 1920 X 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height.
+*  You can now upload PDP images larger than 1920 x 1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920 X 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height.
 
 <!--- MAGETWO-96975 -->
 

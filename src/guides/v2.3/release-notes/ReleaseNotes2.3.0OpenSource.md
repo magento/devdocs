@@ -667,7 +667,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-2373-->
 
-*  A type error in the payment void method of the Authorize.net module has been fixed.  *Fix submitted by Jeroen in pull request [16838](https://github.com/magento/magento2/pull/16838)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
+*  A type error in the payment void method of the Authorizenet module has been fixed.  *Fix submitted by Jeroen in pull request [16838](https://github.com/magento/magento2/pull/16838)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
 
 <!--- ENGCOM-2185-->
 
@@ -2503,7 +2503,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-82176-->
 
-*  Magento no longer throws a fatal error when you search for a customer from  **Reports** > **Reviews** > **By Customers**. *Fix submitted by Oscar Recio in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+*  Magento no longer throws a fatal error when you search for a customer from  **Reports** > Reviews > **By Customers**. *Fix submitted by Oscar Recio in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 <!--- MAGETWO-86260 -->
 
@@ -2613,7 +2613,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-2308 -->
 
-*  A type error in the payment void method of the Authorize.net module has been fixed. *Fix submitted by Vishal Gelani in pull request [16603](https://github.com/magento/magento2/pull/16603)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
+*  A type error in the payment void method of the Authorizenet module has been fixed. *Fix submitted by Vishal Gelani in pull request [16603](https://github.com/magento/magento2/pull/16603)*. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
 
 <!--- MAGETWO-93763 -->
 
