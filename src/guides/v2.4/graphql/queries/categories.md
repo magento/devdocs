@@ -27,8 +27,6 @@ categories(filters: CategoryFilterInput pageSize: Int currentPage: Int): Categor
 
 ## Example usage
 
-### Some
-
 The following query returns the top-level categories (as well as two levels of children) displayed on the Luma storefront. Because the `currentPage` attribute is set to `2`, the second page of results are returned.
 
 **Request:**
