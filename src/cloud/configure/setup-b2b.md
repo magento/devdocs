@@ -13,12 +13,12 @@ If your customers are companies, you can install the {{site.data.var.b2b}} modul
 -  [Magento B2B Developer Guide][b2b-dev]
 -  [Magento B2B User Guide][b2b-user]
 
+{:.bs-callout-tip}
+Because we provide B2B as a module for {{site.data.var.ece}}, we highly recommend that you have your Magento application fully deployed to an Integration or Staging environment before beginning.
+
 ## Install B2B module
 
-We recommend working in a development branch when adding the B2B module to your project. If you do not have a branch, see the [Get started creating branches][branching] topic.
-
-{:.bs-callout-info}
-Because we provide B2B as a module for {{site.data.var.ece}}, we highly recommend that you have your Magento application fully deployed to an Integration or Staging environment before beginning.
+We recommend working in a development branch when adding the B2B module to your project. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing the B2B module, the `Magento_B2b` module name is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
 
 {:.procedure}
 To install the B2B module:
@@ -46,7 +46,7 @@ To install the B2B module:
    ```
 
    ```bash
-   git commit -m "Install B2B module."
+   git commit -m "Install the B2B module."
    ```
 
    ```bash
@@ -67,27 +67,11 @@ To install the B2B module:
    Module is enabled
    ```
 
-If you encounter errors, see [extension deployment failure][trouble].
+   If you encounter deployment errors, see [extension deployment failure][trouble].
 
-### Custom config.php file
+## Enable the B2B module
 
-When adding the B2B module, the [`app/etc/config.php`][config] file is automatically updated. However, if you have a custom config file, you must update that manually.
-
-{:.procedure}
-To add the B2B module to a custom `config.php` file:
-
-1. Change to the `app/etc` directory.
-
-1. Edit the `config.php` with a text editor.
-
-1. In the _modules_ list, add the B2B module and save the file.
-
-   >Excerpt from the `config.php` file
-   ```php?start_inline=1
-   return [
-       'modules' => [
-           'Magento_B2b' => 1,
-   ```
+When you install the B2B module using Composer, the deployment process automatically enables the module. If you already have the B2B module installed, you can enable or disable the module using the CLI. See [Manage extensions][].
 
 ## Configure the B2B module
 
@@ -106,5 +90,6 @@ To extend functionality, see the [Magento B2B Developer Guide][b2b-dev] and the 
 [config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
 [extensions]: {{ site.baseurl }}/extensions/
 [install-b2b]: {{ site.baseurl }}/extensions/b2b/
+[Manage extensions]: {{ site.baseurl }}/cloud/howtos/install-components.html#manage-extensions
 [messages]: {{ site.baseurl }}/extensions/b2b/#start-message-consumers
 [trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

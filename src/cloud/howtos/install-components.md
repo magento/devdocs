@@ -16,7 +16,7 @@ You can extend your Magento application capabilities by adding an extension from
 
 ## Install an extension
 
-We recommend working in a development branch when adding the module to your implementation. If you do not have a branch, see the [Get started creating branches][branching] topic.
+We recommend working in a development branch when adding the module to your implementation. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing an extension, the extension name (`<VendorName>_<ComponentName>`) is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
 
 {:.procedure}
 To install an extension:
@@ -74,31 +74,11 @@ To install an extension:
    Module is enabled
    ```
 
-If you encounter errors, see [extension deployment failure][trouble].
-
-### Custom config.php file
-
-When adding an extension, the [`app/etc/config.php`][config] file is automatically updated. However, if you have a custom config file, you must update that manually.
-
-{:.procedure}
-To add an extension to a custom `config.php` file:
-
-1. Change to the `app/etc` directory.
-
-1. Edit the `config.php` with a text editor.
-
-1. In the _modules_ list, add the B2B module and save the file.
-
-   >Excerpt from the `config.php` file
-   ```php?start_inline=1
-   return [
-       'modules' => [
-           'Magento_B2b' => 1,
-   ```
+   If you encounter deployment errors, see [extension deployment failure][trouble].
 
 ## Manage extensions
 
-When managing extensions, use the format: `<VendorName>_<ComponentName>`. Never enable or disable an extension while logged in to the remote environments.
+When you add an extension using Composer, the deployment process automatically enables the extension. If you already have the extension installed, you can enable or disable the extension using the CLI. When managing extensions, use the format: `<VendorName>_<ComponentName>`. Never enable or disable an extension while logged in to the remote environments.
 
 {:.procedure}
 To enable or disable an extension:
@@ -145,7 +125,7 @@ To enable or disable an extension:
 
 ## Upgrade an extension
 
-Before you continue, you need the Composer name and version for the extension. Also, make sure the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version before you begin.
+Before you continue, you need the Composer name and version for the extension. Also, confirm that the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version before you begin.
 
 {:.procedure}
 To update an extension:
