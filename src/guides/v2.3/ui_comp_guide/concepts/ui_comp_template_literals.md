@@ -48,11 +48,10 @@ The `ignoreTmpls` property is an object that allows preventing template processi
 return Element.extend({
     defaults: {
         value: 'some component value',
-        property: '${ $.value }', // equal to 'some component value' after component initialization
-        propertyIgnoreTempls: '${ $.value }', // equal to '${ $.value }' after component initialization
+        propertyIgnoreTempls: '${ $.value }', // template literals will be ignored for this property
         ignoreTmpls: {
             propertyIgnoreTempls: true
-        }
+        } // ignoreTmpls object contains a list of properties with template literals ignored
     }
 });
 ```
