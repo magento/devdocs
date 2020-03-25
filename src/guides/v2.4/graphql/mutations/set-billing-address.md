@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: setBillingAddressOnCart mutation
-redirect from:
-  - /guides/v2.3/graphql/reference/quote-set-billing-address.html
 ---
 
 The `setBillingAddressOnCart` mutation sets the billing address for a specific cart. If you set the `same_as_shipping` attribute to `true`, Magento assigns the same address as the shipping address.
