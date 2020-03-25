@@ -1,6 +1,6 @@
 ## Composer name of an extension
 
-Although this section discusses how to get the Composer name and version of a module from Magento Marketplace, you can find the name and version of *any* module (whether or not you purchased it on Marketplace) in the module's Composer file. Open the `composer.json` file in a text editor and write down the `"name"` and `"version"` values.
+Although this section discusses how to get the Composer name and version of an extension or module from Magento Marketplace, you can find the name and version of *any* module (whether or not you purchased it on Marketplace) in the Composer file of the module. Open the `composer.json` file in a text editor and note the `"name"` and `"version"` values.
 
 {:.procedure}
 To get the Composer name of a module from the Magento Marketplace:

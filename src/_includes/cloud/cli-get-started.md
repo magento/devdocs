@@ -24,7 +24,7 @@ To get started with environment branches:
    ```
 
    {:.bs-callout-info}
-   It is important to use the `magento-cloud list` command because it displays environment hierarchies, whereas the `git branch` command does not.
+   It is important to use the `magento-cloud environment:list` command because it displays environment hierarchies, whereas the `git branch` command does not.
 
 1. Fetch origin branches to get the latest code.
 
@@ -32,14 +32,16 @@ To get started with environment branches:
    git fetch origin
    ```
 
-1. Checkout, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The `magento-cloud checkout` command checks out the branch and switches to the active environment.
+1. Checkout, or switch to, a specific branch and environment.
 
    ```bash
    magento-cloud environment:checkout <environment-ID>
    ```
 
+   Git commands only checkout the Git branch. The `magento-cloud checkout` command checks out the branch and switches to the active environment.
+
    {:.bs-callout-tip}
-   To create a new environment branch, use `magento-cloud environment:branch <environment-name> <parent-environment-ID>`
+   You can create a new environment branch using the `magento-cloud environment:branch <environment-name> <parent-environment-ID>` command syntax. It may take some additional time to create and activate a new environment branch.
 
 1. Use the environment ID to pull any updated code to your local. This is not necessary if the environment branch is new.
 

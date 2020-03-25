@@ -16,7 +16,7 @@ You can extend your Magento application capabilities by adding an extension from
 
 ## Install an extension
 
-We recommend working in a development branch when adding the module to your implementation. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing an extension, the extension name (`<VendorName>_<ComponentName>`) is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
+We recommend working in a development branch when adding an extension to your implementation. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing an extension, the extension name (`<VendorName>_<ComponentName>`) is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
 
 {:.procedure}
 To install an extension:
