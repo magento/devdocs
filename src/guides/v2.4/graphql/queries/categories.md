@@ -166,7 +166,7 @@ The following query returns the top-level categories (as well as two levels of c
 
 ## Input attributes
 
-You must specify the `filters` attribute as input to your query.
+If you omit the `filters` attribute, the query returns the store's default root category.
 
 Attribute | Data type | Description
 --- | --- | ---
