@@ -54,7 +54,7 @@ To install an extension:
    ```
 
    ```bash
-   git push origin <branch-names>
+   git push origin <branch-name>
    ```
 
    {:.bs-callout-warning}

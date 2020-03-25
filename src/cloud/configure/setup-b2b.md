@@ -50,10 +50,10 @@ To install the B2B module:
    ```
 
    ```bash
-   git push origin <branch-names>
+   git push origin <branch-name>
    ```
 
-1. After the build and deploy finishes, use a SSH to log in to the remote environment and verify the B2B module installed.
+1. After the build and deploy finishes, use SSH to log in to the remote environment and verify that the B2B module installed.
 
    ```bash
    bin/magento module:status Magento_B2b
@@ -75,7 +75,7 @@ When you install the B2B module using Composer, the deployment process automatic
 
 ## Configure the B2B module
 
-After installing the {{site.data.var.b2b}} module, you need to [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you need to [enable the B2B module in the Magento Admin panel][admin-enable].
+After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Magento Admin panel][admin-enable].
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide][b2b-user].
 
