@@ -100,6 +100,24 @@ Translated strings that originate from `.xml` files will not render unless they 
 __($this->config->getData('label'))
 ```
 
+## Strings added in Underscore templates {#add_strings_underscore_html}
+
+To ensure that the text you add in `.html` Underscore templates is collected by the `i18n` tool and added to the dictionary, use the `_.i18n('')` Underscore function.
+
+-  When only a string is added in template use the following example:
+
+   ```html
+   <%= _.i18n('Hello') %>
+   ```
+
+-  When the string contains a variable, use the variable placeholder for processing string stored in the dictionary:
+
+   ```html
+   <%= _.i18n('Hello %1').replace('%1', yourVariable) %>
+   ```
+
+   In this example, the _'Hello %1'_ string is added to the dictionary when the i18n tool is run.
+
 ## Strings added in .js files {#add_strings_js}
 
 To ensure that the text you add in a `.js` file is collected by the i18n tool and added to the dictionary:
