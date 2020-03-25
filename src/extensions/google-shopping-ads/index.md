@@ -3,6 +3,9 @@ group: extensions
 title: Install Google Shopping ads Channel
 ---
 
+{:.bs-callout .bs-callout-info}
+**Google Shopping ads Channel will be disabled on April 28, 2020. See [End of Life](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-eol.html) for more information.**
+
 The Google Shopping ads Channel extension installs and adds Google Shopping features to Magento. To review additional information, see the [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html).
 
 ## Requirements

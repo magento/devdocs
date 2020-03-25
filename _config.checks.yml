@@ -36,4 +36,5 @@ html-proofer:
   # Ignore any link that includes a specified pattern
   :url_ignore:
   - !ruby/regexp /guides\/v2\.2/
+  - !ruby/regexp /\/download\//
   
