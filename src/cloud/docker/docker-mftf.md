@@ -68,15 +68,15 @@ To set up and run MFTF tests in a Cloud Docker environment:
 1. Disable the Magento settings that conflict with MFTF functionality.
 
    ```bash
-   docker-compose run deploy magento-command config:set admin/ security/admin_account_sharing 1
+   docker-compose run deploy magento-command config:set admin/security/admin_account_sharing 1
    ```
 
    ```bash
-   docker-compose run deploy magento-command config:set admin/ security/use_form_key 0
+   docker-compose run deploy magento-command config:set admin/security/use_form_key 0
    ```
 
    ```bash
-   docker-compose run deploy magento-command config:set web/ secure/use_in_adminhtml 0
+   docker-compose run deploy magento-command config:set web/secure/use_in_adminhtml 0
    ```
 
 1. Enable the Varnish cache for the Magento application.

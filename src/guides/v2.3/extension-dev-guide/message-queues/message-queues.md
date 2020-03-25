@@ -20,7 +20,7 @@ The following code sends a message to the queue. The `publish` method is defined
 $publisher->publish($topic, $message)
 ```
 
-In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
+In a MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
 ## Instantiate a consumer
 
