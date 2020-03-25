@@ -7,6 +7,6 @@ Attribute |  Data Type | Description
 `lastname` | String! | The customer's last name
 `postcode` | String | The postal code for the billing or shipping address
 `region` | String | The region code and label for the billing or shipping address
-`save_in_address_book` | Boolean | Specifies whether to save the address (`True`/`False`)
+`save_in_address_book` | Boolean | Determines whether to save the address in the customer's address book. The default value is true.
 `street` | [String]! | An array containing the street for the billing or shipping address
 `telephone` | String | The telephone number for the billing or shipping address
