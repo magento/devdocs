@@ -42,7 +42,7 @@ Perhaps the most important part of template literals in Magento is the `$` objec
 
 ### The `ignoreTmpls` property
 
-The `ignoreTmpls` property is an object that allows preventing template processing for selected properties.
+The `ignoreTmpls` property is an object that prevents template processing for selected properties.
 
 ```javascript
 return Element.extend({
