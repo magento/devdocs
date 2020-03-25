@@ -35,7 +35,7 @@ This example shows a simplified way of creating a customer account. Typically, y
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
 **Payload:**
 
@@ -49,22 +49,26 @@ It is recommended that you substitute the value of the `email` parameter with a 
     "email": "jdoe@example.com",
     "firstname": "Jane",
     "lastname": "Doe",
-    "addresses": [{
-      "defaultShipping": true,
-      "defaultBilling": true,
-      "firstname": "Jane",
-      "lastname": "Doe",
-      "region": {
-        "regionCode": "NY",
-        "region": "New York",
-                                "regionId":43
-      },
-      "postcode": "10755",
-      "street": ["123 Oak Ave"],
-      "city": "Purchase",
-      "telephone": "512-555-1111",
-      "countryId": "US"
-    }]
+    "addresses": [
+      {
+        "defaultShipping": true,
+        "defaultBilling": true,
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "region": {
+          "regionCode": "NY",
+          "region": "New York",
+          "regionId": 43
+        },
+        "postcode": "10755",
+        "street": [
+          "123 Oak Ave"
+        ],
+        "city": "Purchase",
+        "telephone": "512-555-1111",
+        "countryId": "US"
+      }
+    ]
   },
   "password": "Password1"
 }
@@ -135,14 +139,14 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
 **Payload:**
 
 ```json
 {
-"username": "jdoe@example.com",
-"password": "Password1"
+  "username": "jdoe@example.com",
+  "password": "Password1"
 }
 ```
 

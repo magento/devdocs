@@ -46,9 +46,9 @@ Use the `V1/guest-carts` endpoint to create a cart on behalf of a guest. Do not 
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization`: `Bearer <customer token>`
 
 **Payload:**
 

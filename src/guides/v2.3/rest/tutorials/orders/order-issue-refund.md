@@ -39,9 +39,9 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <administrator token>`
+`Authorization`: `Bearer` `<administrator` `token>`
 
 **Payload:**
 
