@@ -15,6 +15,7 @@ This site is built by [Jekyll](https://jekyllrb.com/), which is an open-source t
 You can build the site locally in the following ways:
 
 -  [Installing the project dependencies locally](#build-locally) (Mac, Linux)
+-  [Using Docker (docker-compose)](#docker-docker-compose) (Mac, Linux, Windows)
 -  [Using a Vagrant virtual machine](https://github.com/magento-devdocs/vagrant-for-magento-devdocs) (Mac, Linux, Windows)
 -  [Build DevDocs in Windows](https://github.com/magento/devdocs/wiki/Build-DevDocs-in-Windows) (Windows 7 & 10)
 -  [Building older versions of the documentation](#building-old-versions)
@@ -140,6 +141,31 @@ exclude:
 >```bash
 >rake preview:all
 >```
+
+## Docker (docker-compose)
+
+Docker provides a quick and easy way to build and preview the documentation. You do not need to install Ruby dependencies manually. This Docker solution launches Jekyll inside the container in `watch` mode.
+ruby dependency manually. The provided setup starts Jekyll inside the container in watch mode.
+Every change of a markdown file will automatically trigger a rebuild of the documentation.
+
+1. Install [Docker](https://www.docker.com/get-started). If you have Docker installed, make sure Docker is running.
+
+1. Build and start the Docker environment.
+
+```bash
+docker-compose up
+```
+
+1. Use the server address URL provided by the system response.
+
+For example:
+
+```terminal
+jekyll_1  |     Server address: http://127.0.0.1:4000/
+jekyll_1  |   Server running... press ctrl-c to stop.
+```
+
+1. Press `Ctrl+C` in the serve terminal to stop the server.
 
 ## Building old versions
 

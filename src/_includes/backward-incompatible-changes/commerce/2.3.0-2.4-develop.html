@@ -1,0 +1,480 @@
+
+<h3 id="2.3.0-2.4-develop-class">Class changes</h3>
+<table><tbody>
+    <tr>
+        <th>What changed</th>
+        <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Model\Rules::getProductCollection</td>
+        <td>[protected] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Merchandiser\Tile::_construct</td>
+        <td>[protected] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesArchive\Block\Adminhtml\Sales\Order\View\Buttons::__construct</td>
+        <td>[public] Method parameter typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Rma\Block\Adminhtml\Order\View\Buttons::__construct</td>
+        <td>[public] Method parameter typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\AbstractRenderer::getValue</td>
+        <td>[public] Method return typehint was moved from doc block annotation to in-line.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomAttributeManagement\Block\Form\Renderer\Multiselect::getValue</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Collections::addReportCollectionStoreFilter</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="2.3.0-2.4-develop-database">Database changes</h3>
+<table><tbody>
+    <tr>
+        <th>What changed</th>
+        <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule/constraint</td>
+        <td>Module db schema whitelist reduced (visual_merchandiser_rule/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node/constraint</td>
+        <td>Module db schema whitelist reduced (magento_versionscms_hierarchy_node/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product/constraint</td>
+        <td>Module db schema whitelist reduced (magento_targetrule_product/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule/constraint</td>
+        <td>Module db schema whitelist reduced (magento_reminder_rule/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item/constraint</td>
+        <td>Module db schema whitelist reduced (magento_giftregistry_item/constraint).</td>
+    </tr>
+    <tr>
+        <td>wishlist_item/constraint</td>
+        <td>Module db schema whitelist reduced (wishlist_item/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions/constraint</td>
+        <td>Module db schema whitelist reduced (magento_catalogpermissions/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event/constraint</td>
+        <td>Module db schema whitelist reduced (magento_catalogevent_event/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule/constraint</td>
+        <td>Module db schema whitelist reduced (magento_banner_catalogrule/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule/constraint</td>
+        <td>Module db schema whitelist reduced (magento_banner_salesrule/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter/constraint</td>
+        <td>Module db schema whitelist reduced (magento_salesrule_filter/constraint).</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_salesrule_filter</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_salesrule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_reminder_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_versionscms_hierarchy_node</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogevent_event</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_catalogpermissions</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>wishlist_item_option</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_giftregistry_item</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_targetrule_product</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>visual_merchandiser_rule</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_banner_catalogrule</td>
+        <td>Table was added</td>
+    </tr>
+</tbody></table>
+
+<h3 id="2.3.0-2.4-develop-layout">Layout changes</h3>
+<table><tbody>
+    <tr>
+        <th>What changed</th>
+        <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>magento.rma.info</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>magento.rma.info.button</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>customer_form_user_attributes</td>
+        <td>Block was removed</td>
+    </tr>
+</tbody></table>
+
+<h3 id="2.3.0-2.4-develop-system">System changes</h3>
+<table><tbody>
+    <tr>
+        <th>What changed</th>
+        <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>system.xml</td>
+        <td>System configuration file was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/webhook_url</td>
+        <td>A field-node was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/is_multidomain</td>
+        <td>A field-node was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/admin_profile_id</td>
+        <td>A field-node was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/admin_access_key</td>
+        <td>A field-node was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/admin_secret_key</td>
+        <td>A field-node was added</td>
+    </tr>
+    <tr>
+        <td>payment/cybersource/webhook_url_admin</td>
+        <td>A field-node was added</td>
+    </tr>
+</tbody></table>
+
+<h3 id="2.3.0-2.4-develop-class-api-membership">Class API membership changes</h3>
+<table><tbody>
+    <tr>
+        <th>What changed</th>
+        <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Product\AbstractProduct</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\TargetRule\Block\Catalog\Product\ProductList\AbstractProductList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Block\Adminhtml\Order\Create\AbstractCreate</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Block\Customer\Edit\AbstractEdit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdvancedCheckout\Block\Adminhtml\Sku\Errors\AbstractErrors</td>
+        <td>Class was added.</td>
+    </tr>
+</tbody></table>
