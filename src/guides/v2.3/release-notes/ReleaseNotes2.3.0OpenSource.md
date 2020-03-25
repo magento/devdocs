@@ -3,9 +3,13 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018 and last updated on July 31, 2019.*
+*Release notes published November 28, 2018 and last updated on March 24, 2020.*
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
+
+## Apply updated hot fix for CVE-2019-8118
+
+The patch addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8118) that was included in Magento 2.3.3 and 2.2.10. While the original fix for that bug stopped the logging of failed login attempts, information collected prior to updating to these current versions may still exist, and previous, unpatched versions of Magento may still have this issue. This hotfix includes both a patch (first released in Oct 2019) that stops the logging of failed login attempts and a new script that clears the login attempts that were previously collected. **We recommend that all merchants download and apply this patch and download and run the clean-up script**. See [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) for information on how to download and run the patch and clean-up script.
 
 ## Apply patch PRODSECBUG-2233 to address critical remote code execution vulnerability (RCE)
 
@@ -20,15 +24,11 @@ See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https
 
 Follow these steps to download and apply this patch:
 
-1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
-
-1. Select the Git-based option from **Select your format**.
-
-1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
-
-1. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
-
-1. Refresh the cache from the Admin (**System** > **Cache Management**).
+*  Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+*  Select the Git-based option from **Select your format**.
+*  Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+*  From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
+*  Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## Highlights
 
@@ -38,9 +38,10 @@ Follow these steps to download and apply this patch:
 
 *  **Inventory Management (provided by [Magento Inventory (was MSI)](https://github.com/magento/inventory))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock.
 
-   Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
-   *  [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
-   *  [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
+Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+
+[Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
+[Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 
 ### Improved developer experience
 
@@ -140,9 +141,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-82781-->
 
-*  The `user.ini` files now recommend the correct values for `php_value memory_limit`.
-
-*Fix submitted by Mr. Lewis in pull request [11760](https://github.com/magento/magento2/pull/11760)*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
+*  The `user.ini` files now recommend the correct values for `php_value memory_limit`. *Fix submitted by Mr. Lewis in pull request [11760](https://github.com/magento/magento2/pull/11760)*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
 
 <!--- MAGETWO-81992-->
 
@@ -668,7 +667,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-2373-->
 
-*  A type error in the payment void method of the Authorize.net module has been fixed.  *Fix submitted by Jeroen in pull request [16838](https://github.com/magento/magento2/pull/16838)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
+*  A type error in the payment void method of the Authorizenet module has been fixed.  *Fix submitted by Jeroen in pull request [16838](https://github.com/magento/magento2/pull/16838)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
 
 <!--- ENGCOM-2185-->
 
@@ -716,7 +715,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-72620-->
 
-*  Configurable products are no longer displayed on a category page when all children are disabled by mass action and the **display out-of-stock products** setting is off.
+*  Configurable products are no longer displayed on a category page when all children are disabled by mass action and the **Display out-of-stock products** setting is off.
 
 <!--- MAGETWO-85618-->
 
@@ -1098,7 +1097,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-51484-->
 
-*  The **Store** > **Attributes** > **Product ** **Input type** field now supports the use of  the WYSIWYG editor as an input method when configuring custom product attributes.
+*  The **Store** > **Attributes** > **Product** > **Input type** field now supports the use of the WYSIWYG editor as an input method when configuring custom product attributes.
 
 ### Configurable products
 
@@ -1139,7 +1138,8 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 *  Magento no longer displays an inappropriate  product price when a configurable product has two price options. Previously, Magento displayed the  out-of-stock price of a configurable product when both an out-of-stock and in-stock price were configured.
 
 <!--- MAGETWO-86428 -->*
- Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by wardcapp in pull request [12962](https://github.com/magento/magento2/pull/12962)*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
+
+*  Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by wardcapp in pull request [12962](https://github.com/magento/magento2/pull/12962)*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
 
 <!--- MAGETWO-77744 -->
 
@@ -1355,7 +1355,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-94070 -->
 
-*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
+*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog** > **Catalog Search**).
 
 <!--- MAGETWO-91580 -->
 
@@ -1891,7 +1891,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-1857  -->
 
-*  The Module Manager module grid list is now displayed correctly (**System** > **Tools** > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
+*  The Module Manager module grid list is now displayed correctly (**System** > **Tools** > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by Vijay Golani in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
 <!--- MAGETWO-87176 -->
 
@@ -2301,7 +2301,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-87064 -->
 
-*  The **add to cart** checkboxes in Related Products are no longer visible when `$canItemsAddToCart` is set to **false**.  [GitHub-6891](https://github.com/magento/magento2/issues/6891)
+*  The **Add to cart** checkboxes in Related Products are no longer visible when `$canItemsAddToCart` is set to **false**.  [GitHub-6891](https://github.com/magento/magento2/issues/6891)
 
 <!---MAGETWO-87056 -->
 
@@ -2523,7 +2523,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-87615 -->
 
-*  Magento now uses the  store values (prefix, suffix, increment ID, and sequence tables ) from the correct store view when placing orders from a non-default store in a multistore deployment. [GitHub-9055](https://github.com/magento/magento2/issues/9055)
+*  Magento now uses the  store values (prefix, suffix, increment ID, and sequence tables) from the correct store view when placing orders from a non-default store in a multistore deployment. [GitHub-9055](https://github.com/magento/magento2/issues/9055)
 
 <!--- MAGETWO-87615 -->
 
@@ -2637,7 +2637,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-87519-->
 
-*  The incorrect @return tag (PHPDocs)  in the `placeCheckoutOrder` method has been corrected. *Fix submitted by Aki Ojalehto in pull request [13356](https://github.com/magento/magento2/pull/13356)*.
+*  The incorrect `@return` tag (PHPDocs)  in the `placeCheckoutOrder` method has been corrected. *Fix submitted by Aki Ojalehto in pull request [13356](https://github.com/magento/magento2/pull/13356)*.
 
 <!---ENGCOM-1526 -->
 
@@ -2879,7 +2879,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-70316 -->
 
-*  The **Catalog > Products** page now contains a keyword search. *Fix submitted by Josef Behr in pull request   [10089](https://github.com/magento/magento2/pull/10089)*. [GitHub-5785](https://github.com/magento/magento2/issues/5785)
+*  The **Catalog** > **Products** page now contains a keyword search. *Fix submitted by Josef Behr in pull request   [10089](https://github.com/magento/magento2/pull/10089)*. [GitHub-5785](https://github.com/magento/magento2/issues/5785)
 
 <!---MAGETWO-71801 -->
 
@@ -3083,7 +3083,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-87938  -->
 
-*  TinyMCE now loads successfully due to a refactoring of  the use of  `minify_exclude` configuration. *Fix submitted by Pieter Hoste in pull request [13687](https://github.com/magento/magento2/pull/13687)*. [GitHub-11577](https://github.com/magento/magento2/issues/11577)
+*  TinyMCE now loads successfully due to a refactoring of the use of  `minify_exclude` configuration. *Fix submitted by Pieter Hoste in pull request [13687](https://github.com/magento/magento2/pull/13687)*. [GitHub-11577](https://github.com/magento/magento2/issues/11577)
 
 ### Swagger
 
@@ -3475,7 +3475,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-2066  -->
 
-*  A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set   **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
+*  A generated Admin API token no longer expires immediately. Previously, when you created a token for an Admin user and have set **Admin Token Lifetime (hours))**  to empty, Magento denied access  because the token immediately expired.  *Fix submitted by Vijay Golani in pull request [15564](https://github.com/magento/magento2/pull/15564)*. [GitHub-15564](https://github.com/magento/magento2/issues/15564)
 
 <!-- MAGETWO-87057  -->
 
