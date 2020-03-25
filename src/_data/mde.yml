@@ -9,7 +9,7 @@ extensions:
     name: Amazon Sales Channel
     versions:
       -
-        name: 4.0
+        name: 4.0.0
         support:
           2.3.0: supported
           2.3.1: supported
