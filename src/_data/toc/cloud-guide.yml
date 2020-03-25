@@ -185,6 +185,10 @@ pages:
           url: /cloud/integrations/github-integration.html
           versionless: true
 
+        - label: GitLab integration
+          url: /cloud/integrations/gitlab-integration.html
+          versionless: true
+
         - label: Health notifications
           url: /cloud/integrations/health-notifications.html
           versionless: true
@@ -270,11 +274,11 @@ pages:
               url: /cloud/cdn/fastly-vcl-badreferer.html
               versionless: true
 
-            - label: Secure access to the Magento Admin UI
+            - label: Custom VCL for IP allow list
               url: /cloud/cdn/fastly-vcl-whitelist.html
               versionless: true
 
-            - label: Custom VCL for blocking
+            - label: Custom VCL for IP block list
               url: /cloud/cdn/fastly-vcl-blocking.html
               versionless: true
 

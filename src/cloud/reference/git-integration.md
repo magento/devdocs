@@ -49,7 +49,7 @@ When setting up your SSH, review our information at [SSH and sFTP]({{ site.baseu
 
 ## Git integrations {#integrations}
 
-We support using either [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html), [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) or [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html) integrations for your {{site.data.var.ece}} project.
 
  {:.bs-callout-info}
-To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ site.baseurl }}/cloud/project/project-webint-branch.html#private).
+To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub, Bitbucket or GitLab deploy keys, refer to [Pull code from a private Git repository]({{ site.baseurl }}/cloud/project/project-webint-branch.html#private).
