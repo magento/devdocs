@@ -131,6 +131,19 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
                - "store-page:/contact-us:code1|code2"
    ```
 
+### `WARM_UP_CONCURRENCY`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Configure _CONCURRENCY_ with which requests to _WARM_UP_PAGES_ will be sent. This configuration limits number of parallel connections. It can help to decrease server load in case of a big amount of pages to warm-up.
+
+```yaml
+stage:
+  post-deploy:
+    WARM_UP_CONCURRENCY: 4
+```
+
 [hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [CMS]: https://glossary.magento.com/cms/
 [Content elements]: https://docs.magento.com/m2/ce/user_guide/cms/content-elements.html
