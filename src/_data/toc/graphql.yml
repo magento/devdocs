@@ -52,6 +52,10 @@ pages:
         - label: cart query
           url: /graphql/queries/cart.html
 
+        - label: categories query
+          url: /graphql/queries/categories.html
+          exclude_versions: ["2.3"]
+
         - label: category query
           url: /graphql/queries/category.html
 
@@ -200,6 +204,10 @@ pages:
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
+
+        - label: reorderItems mutation
+          url: /graphql/mutations/reorder-items.html
+          exclude_versions: ["2.3"]
 
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
