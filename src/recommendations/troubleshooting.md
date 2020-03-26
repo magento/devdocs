@@ -16,6 +16,10 @@ If you have configured the `product-recommendations` module correctly, but you a
 
 For issues related to the Catalog SaaS Export module:
 
+-  Confirm the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
+
+-  Confirm the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
+
 -  Confirm the modules are enabled. The `saas-export` metapackage installs the following modules, all of which must be enabled:
 
    ```text
@@ -28,10 +32,6 @@ For issues related to the Catalog SaaS Export module:
    ```
 
 -  Check the [logs]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/logging.html). Make sure there are no errors associated with the above modules.
-
--  Confirm the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
-
--  Confirm the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
 
 -  Refresh Configuration cache. Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache.
 
