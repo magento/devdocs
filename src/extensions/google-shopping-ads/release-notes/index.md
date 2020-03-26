@@ -3,6 +3,9 @@ group: extensions
 title: Google Shopping ads Channel Release Notes
 ---
 
+{:.bs-callout .bs-callout-info}
+**Google Shopping ads Channel will be disabled on April 28, 2020. See [End of Life](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-eol.html) for more information.**
+
 Merchants can use **Google Shopping ads Channel** to integrate with their Google Merchant Center (GMC) and Google Ads accounts to advertise and sell Magento products. **Google Shopping ads Channel** is available for Magento versions 2.2.4+ and 2.3+ of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 Merchants on previous Magento versions (2.2.4+, 2.3.0, 2.3.1, and 2.3.2) can install or update the extension using the [Magento Marketplace](https://marketplace.magento.com/magento-google-shopping-ads.html).
