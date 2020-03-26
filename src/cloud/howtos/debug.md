@@ -325,6 +325,16 @@ php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
 
 If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
 
+## Debug CLI commands for Pro Staging and Production {#pro-debugcli}
+
+In addition to steps from [Debug CLI commands](#debugcli) to debug CLI command on Pro Production or Staging you need to use **php.xdebug.ini** file which is located in **/etc/platform/USERNAME/**. 
+
+Example:
+
+```bash
+php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
+```
+
 ## For debugging web requests {#webrequests}
 
 The following steps help you debug web requests.
