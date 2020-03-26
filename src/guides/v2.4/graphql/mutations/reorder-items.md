@@ -15,7 +15,7 @@ REORDER_NOT_AVAILABLE | Reorders have been disabled.
 PRODUCT_NOT_FOUND | The product has been deleted.
 UNDEFINED | An unknown error occurred.
 
-The `reorderItems` mutation will not add any products to the cart if it encounters the REORDER_NOT_AVAILABLE error. For any other error code, it will add the product to the cart, but it will continue adding other products, if applicable.
+The `reorderItems` mutation will not add any products to the cart if it encounters the REORDER_NOT_AVAILABLE error. For any other error code, the mutation will add the product to the cart, if possible, and it will continue adding other products, if applicable.
 
 ## Syntax
 
