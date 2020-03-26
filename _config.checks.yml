@@ -39,3 +39,5 @@ html-proofer:
     - !ruby/regexp /guides\/v2\.2/
     - !ruby/regexp /\/v2\.4\/mrg/
     - !ruby/regexp /\/redoc\/2\.4\//
+    - !ruby/regexp /\/download\//
+  

@@ -286,25 +286,6 @@ pages:
     - label: Configure the database profiler
       url: /config-guide/db-profiler/db-profiler.html
 
-    - label: Install and configure Elasticsearch (Magento Commerce only)
-      url: /config-guide/elasticsearch/es-overview.html
-      children:
-
-        - label: Configure nginx and Elasticsearch
-          url: /config-guide/elasticsearch/es-config-nginx.html
-
-        - label: Configure Apache and Elasticsearch
-          url: /config-guide/elasticsearch/es-config-apache.html
-
-        - label: Configure Elasticsearch stopwords
-          url: /config-guide/elasticsearch/es-config-stopwords.html
-
-        - label: Configure Magento to use Elasticsearch
-          url: /config-guide/elasticsearch/configure-magento.html
-
-        - label: Change the Elasticsearch client
-          url: /config-guide/elasticsearch/es-downgrade.html
-
     - label: Install and configure Elasticsearch
       url: /config-guide/elasticsearch/es-overview.html
       children:
