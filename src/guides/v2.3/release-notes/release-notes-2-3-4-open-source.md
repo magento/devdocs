@@ -349,7 +349,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6072-->
 
-*  The storefront and Admin shopping cart summary fields are now displayed consistently  and reflect setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
+*  The storefront and Admin shopping cart summary fields are now displayed consistently and reflect setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
 
 <!--- ENGCOM-6151-->
 
