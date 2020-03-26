@@ -25,10 +25,10 @@ See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https
 Follow these steps to download and apply this patch:
 
 1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
-2. Select the Git-based option from **Select your format**.
-3. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
-4. From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
-5. Refresh the cache from the Admin (**System** > **Cache Management**).
+1. Select the Git-based option from **Select your format**.
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
+1. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## Highlights
 
@@ -40,8 +40,8 @@ Follow these steps to download and apply this patch:
 
 Magento Inventory is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [Magento Inventory GitHub](https://github.com/magento/inventory) repository and [wiki](https://github.com/magento/inventory/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
-* [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
-* [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
+*  [Inventory Management overview]({{ page.baseurl }}/inventory/index.html) for developer documentation
+*  [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 
 ### Improved developer experience
 

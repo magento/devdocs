@@ -28,12 +28,12 @@ A critical SQL injection vulnerability has been identified in 2.3.x Magento code
 
 Follow these steps to download and apply this patch:
 
-1.  Access [My Account](https://account.magento.com/customer/account/login).
-2.  Navigate to the **Downloads** tab. Select the Magento edition and version you need.
-3.  Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**
-4.  Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
-5.  From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
-6.  Refresh the cache from the Admin (**System** > **Cache Management**).
+1. Access [My Account](https://account.magento.com/customer/account/login).
+1. Navigate to the **Downloads** tab. Select the Magento edition and version you need.
+1. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
+1. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## PayPal Payflow Pro active carding activity update
 
