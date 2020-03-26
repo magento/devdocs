@@ -6,6 +6,10 @@
         <th>How it changed</th>
     </tr>
     <tr>
+        <td>Magento\Elasticsearch\Elasticsearch5\Model\Adapter\FieldType</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Block\Adminhtml\Edit\Tab\Reviews</td>
         <td>Class was removed.</td>
     </tr>
@@ -340,6 +344,14 @@
     <tr>
         <td>Magento\GiftMessage\Block\Adminhtml\Sales\Order\View\Items::getSaveUrl</td>
         <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\DocumentFactory::__construct</td>
+        <td>[public] Method parameter typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\SearchAdapter\DocumentFactory::$objectManager</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Eav\Model\Entity\Attribute\AbstractAttribute::getDefaultValue</td>
@@ -954,10 +966,6 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Gallery::getMediaRecords</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Helper\Image</td>
         <td>Interface has been added.</td>
     </tr>
@@ -979,6 +987,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\Pricing\PriceCurrencyInterface::format</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Response\HttpInterface::getHeader</td>
         <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
@@ -1012,6 +1024,10 @@
     <tr>
         <td>Magento\Catalog\Api\CategoryListDeleteBySkuInterface</td>
         <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\OrderPaymentInterface::setAdditionalInformation</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\CatalogImportExport\Model\Import\Product\RowValidatorInterface::ERROR_SKU_MARGINAL_WHITESPACES</td>
@@ -1158,7 +1174,59 @@
         <td>Column was added</td>
     </tr>
     <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
         <td>Column was added</td>
     </tr>
     <tr>
@@ -1218,7 +1286,59 @@
         <td>Column was added</td>
     </tr>
     <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
         <td>Column was added</td>
     </tr>
     <tr>
@@ -1278,10 +1398,6 @@
         <td>Column was added</td>
     </tr>
     <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
         <td>queue_poison_pill</td>
         <td>Table was added</td>
     </tr>
@@ -1335,130 +1451,6 @@
     </tr>
     <tr>
         <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>catalog_product_entity_media_gallery_value/image_metadata</td>
         <td>Column was added</td>
     </tr>
 </tbody></table>
@@ -1471,6 +1463,10 @@
     </tr>
     <tr>
         <td>AdditionalFieldsForElasticsearchDataMapper</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Elasticsearch\Model\Client\ElasticsearchFactory</td>
         <td>Virtual Type was removed</td>
     </tr>
     <tr>
@@ -1606,6 +1602,38 @@
         <td>A field-node was removed</td>
     </tr>
     <tr>
+        <td>catalog/search/elasticsearch_server_hostname</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_server_port</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_index_prefix</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_enable_auth</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_username</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_password</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_server_timeout</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>catalog/search/elasticsearch_test_connect_wizard</td>
+        <td>A field-node was removed</td>
+    </tr>
+    <tr>
         <td>carriers/dhl/gateway_url</td>
         <td>A field-node was removed</td>
     </tr>
@@ -1632,6 +1660,10 @@
     <tr>
         <td>web/session/use_frontend_sid</td>
         <td>A field-node was removed</td>
+    </tr>
+    <tr>
+        <td>system.xml</td>
+        <td>System configuration file was added</td>
     </tr>
     <tr>
         <td>system.xml</td>
@@ -1802,10 +1834,6 @@
         <td>A field-node was added</td>
     </tr>
     <tr>
-        <td>catalog/search/elasticsearch_minimum_should_match</td>
-        <td>A field-node was added</td>
-    </tr>
-    <tr>
         <td>catalog/search/elasticsearch5_minimum_should_match</td>
         <td>A field-node was added</td>
     </tr>
@@ -1831,14 +1859,6 @@
     </tr>
     <tr>
         <td>catalog/layered_navigation/display_category</td>
-        <td>A field-node was added</td>
-    </tr>
-    <tr>
-        <td>web/url</td>
-        <td>A group-node was added</td>
-    </tr>
-    <tr>
-        <td>web/url/catalog_media_url_format</td>
         <td>A field-node was added</td>
     </tr>
     <tr>
@@ -1991,6 +2011,26 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Block\Adminhtml\Category\AbstractCategory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Bar</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Grids</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Sales</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Totals</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Dashboard\Orders\Grid</td>
         <td>Class was added.</td>
     </tr>
 </tbody></table>
