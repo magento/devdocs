@@ -102,15 +102,15 @@ __($this->config->getData('label'))
 
 ## Strings added in Underscore templates {#add_strings_underscore_html}
 
-To ensure that the text you add in `.html` Underscore templates is collected by the `i18n` tool and added to the dictionary, use the `_.i18n('')` Underscore function.
+To ensure that the text you add in `.html` Underscore templates is collected by the `i18n` tool, use the `_.i18n('')` Underscore function.
 
--  When only a string is added in template use the following example:
+-  When a string is added to the template:
 
    ```html
    <%= _.i18n('Hello') %>
    ```
 
--  When the string contains a variable, use the variable placeholder for processing string stored in the dictionary:
+-  If the string contains a variable, use the variable placeholder:
 
    ```html
    <%= _.i18n('Hello %1').replace('%1', yourVariable) %>
