@@ -50,3 +50,37 @@ define(['jquery'], function($) {
   }
 });
 ```
+
+Also, it is possible to adjust existing error message for some specific form
+field separately.
+
+This is implemented in the core codebase in scope of the
+[`Magento_Search` module]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CatalogSearch/view/frontend/templates/advanced/form.phtml).
+
+```html
+<script>
+require([
+    "jquery",
+    "mage/mage",
+    "mage/validation"
+], function($){
+    $('#form-validate').mage('validation', {
+            errorPlacement: function (error, element) {
+                var parent = element.parent();
+                if (parent.hasClass('range')) {
+                    parent.find(this.errorElement + '.' + this.errorClass).remove().end().append(error);
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            messages: {
+                'price[to]': {'greater-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'},
+                'price[from]': {'less-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'}
+            }
+        });
+});
+</script>
+```
+
+This comes in hand when the error message should be specific but the rule
+does not change.
