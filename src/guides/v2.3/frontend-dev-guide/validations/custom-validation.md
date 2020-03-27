@@ -51,11 +51,9 @@ define(['jquery'], function($) {
 });
 ```
 
-Also, it is possible to adjust existing error message for some specific form
-field separately.
+Also, it is possible to adjust existing error message for some specific form field separately.
 
-This is implemented in the core codebase in scope of the
-[`Magento_Search` module]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CatalogSearch/view/frontend/templates/advanced/form.phtml).
+This is implemented in the core codebase in scope of the [`Magento_CatlogSearch` module]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CatalogSearch/view/frontend/templates/advanced/form.phtml).
 
 ```html
 <script>
@@ -82,5 +80,17 @@ require([
 </script>
 ```
 
-This comes in hand when the error message should be specific but the rule
-does not change.
+The `messages` object is the one that does the job - they key is the input name and the value is a list of validation rules that should be adjusted for the specified input name. Here the rule name is the key and the validation message is the value.
+
+```js
+$('#form-to-validate').mage('validation', {
+    messages: {
+        'input-name': {
+            'validation-rule-1': 'Validation message 1',
+            'validation-rule-2': 'Validation message 2',
+        },
+    }
+});
+```
+
+This comes in hand when the error message should be specific but the rule does not change.
