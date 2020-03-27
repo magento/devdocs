@@ -484,8 +484,22 @@ class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
   {
 
   }
+  
+  public function canShowAdditionalData() {
+    return true;
+  }
 }
 ```
+
+Then, in the `cart/item/default.phtml` file get use of the viewModel
+
+```php
+$viewModel = $block->getData('viewModel');
+
+$viewModel->canShowAdditionalData();
+```
+
+Note that the name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
