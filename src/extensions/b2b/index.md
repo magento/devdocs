@@ -9,6 +9,9 @@ redirect_from:
 {:.bs-callout-warning}
 The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
+{:.bs-callout-info}
+For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.baseurl }}/cloud/configure/setup-b2b.html) in the _Cloud Guide_.
+
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
    ```bash

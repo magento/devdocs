@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.3 Release Notes
 ---
 
-*Patch code and release notes published on October 8, 2019.*
+*Patch code and release notes published on October 8, 2019 and last updated on March 24, 2020.*
 
 Magento Commerce 2.3.3 offers significant platform upgrades, substantial security changes, and PSD2-compliant core payment methods.
 
@@ -22,6 +22,10 @@ For general information about security-only patches, see the Magento DevBlog pos
 ## Other release information
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in separate, project-specific release information which is available in the documentation for each project.
+
+## Download and run the DB_CLEANUP_SCRIPT.php script
+
+This hotfix addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8118) that was included in Magento 2.3.3 and 2.2.10. While the original fix for that bug stopped the logging of failed login attempts, information collected prior to updating to these current versions may still exist, and previous, unpatched versions of Magento may still have this issue. This hotfix provides a script that clears the login attempts that were previously collected. **We recommend that all merchants download and run this script**. See [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) for information on how to download and run this database clean-up script.
 
 ## Apply the Catalog pagination issue on Elasticsearch 6.x patch to resolve a critical search result pagination issue
 
@@ -117,7 +121,7 @@ This release contains  enhancements to core quality, which improve the quality o
 
 <!--- MC-15298-->
 
-*  As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**. If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
+As part of our efforts to better understand the Admin user experience and improve product design, Magento is introducing the tracking of user actions and events on the Admin. After you upgrade to Magento 2.3.3, the first administrative user who logs into the Admin will be prompted to **Allow admin usage data collection**. If the user agrees to data collection, the data captured from Admin activity is sent to Adobe Analytics for analysis and reporting. Typical events include page views, save actions, and changes to Magento mode. See Store Admin for more information.
 
 ### Page Builder
 
@@ -129,7 +133,7 @@ Page Builder enhancements for this release include:
 
 ### Inventory Management enhancements
 
-*  Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
+Fixes to multiple  bugs. See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html).
 
 ### GraphQL
 
@@ -565,7 +569,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- ENGCOM-5387-->
 
-*  Magento no longer automatically assigns a storeID to a saved product that is not assigned to a store. *Fix submitted by manishgoswamij in pull request [23500](https://github.com/magento/magento2/pull/23500)*. [GitHub-23383](https://github.com/magento/magento2/issues/23383), [GitHub-23500](https://github.com/magento/magento2/issues/23500)
+*  Magento no longer automatically assigns a `storeID` to a saved product that is not assigned to a store. *Fix submitted by manishgoswamij in pull request [23500](https://github.com/magento/magento2/pull/23500)*. [GitHub-23383](https://github.com/magento/magento2/issues/23383), [GitHub-23500](https://github.com/magento/magento2/issues/23500)
 
 <!--- ENGCOM-5410-->
 
@@ -959,7 +963,7 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 
 <!--- MAGETWO-36337-->
 
-*  The **Save in address book** checkbox on the Shipping Address section of the Admin Create Order page now behaves as expected. When this checkbox is enabled, the address in the Shipping Address field is saved, and merchants can disable or enable the checkbox
+*  The **Save in address book** checkbox on the Shipping Address section of the Admin Create Order page now behaves as expected. When this checkbox is enabled, the address in the Shipping Address field is saved, and merchants can disable or enable the checkbox.
 
 <!--- MAGETWO-70681-->
 
@@ -1096,7 +1100,8 @@ We have fixed hundreds of issues in the Magento 2.3.3 core code.
 *  You can now successfully download a CSV file after export. Previously, Magento redirected you to the Admin dashboard when you tried to download the CSV file that was created during export.
 
 <!--- MAGETWO-99927-->
-  Products are successfully updated through import of an CSV file in **Add/Update**  mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
+
+*  Products are successfully updated through import of an CSV file in **Add/Update**  mode. Previously,  the import process failed, and Magento displayed this error: `The value specified in the URL Key field would generate a URL that already exists`.
 
 <!--- MAGETWO-60918-->
 
@@ -1212,7 +1217,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MAGEDTWO-99736 -->
 
-*  Authorize.net now provides 3D Secure verification through third-party services through the `cardholderAuthentication` request field. Starting from this release,the Authorize.Net `accept.js` integration will support 3DS 2.0 through CardinalCommerce.
+*  Authorize.net now provides 3D Secure verification through third-party services through the `cardholderAuthentication` request field. Starting from this release, the Authorize.net `accept.js` integration will support 3DS 2.0 through CardinalCommerce.
 
 <!--- MAGEDTWO-99739 -->
 
@@ -1340,7 +1345,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- ENGCOM-5505-->
 
-*  The access controls on the **Reports** > **Product** > **Downloads** have been refactored to permit access to only administrators with the correct permissions. Previously, administrators with no access to this area could access the Downloads report. *Fix submitted by Eden Duong in pull request [23901](https://github.com/magento/magento2/pull/23901)*. [GitHub-23900](https://github.com/magento/magento2/issues/23900)
+*  The access controls on the **Reports** > **Product** > **Downloads** page have been refactored to permit access to only administrators with the correct permissions. Previously, administrators with no access to this area could access the Downloads report. *Fix submitted by Eden Duong in pull request [23901](https://github.com/magento/magento2/pull/23901)*. [GitHub-23900](https://github.com/magento/magento2/issues/23900)
 
 <!--- ENGCOM-5052-->
 
@@ -1374,7 +1379,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-17798-->
 
-*  Online refunds now work as expected  when the **Refund Reward Points Automatically** configuration setting is enabled. Previously, the Refund button was disabled under these conditions.
+*  Online refunds now work as expected  when the **Refund Reward Points Automatically** configuration setting is enabled. Previously, the **Refund** button was disabled under these conditions.
 
 ### Sales
 
@@ -1416,7 +1421,7 @@ This release includes the following changes to integrations for core payment met
 
 <!--- MC-17797-->
 
-*  Magento no longer throws a fatal error when you click **View Order** on an order that contains a product that was available when the order was created but which was subsequently  deleted from the storefront.
+*  Magento no longer throws a fatal error when you click **View Order** on an order that contains a product that was available when the order was created but that was subsequently  deleted from the storefront.
 
 <!--- MAGETWO-98832-->
 
