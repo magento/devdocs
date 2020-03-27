@@ -499,7 +499,7 @@ $viewModel = $block->getData('viewModel');
 $viewModel->canShowAdditionalData();
 ```
 
-Note that the name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
+{:.bs-callout-info} The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
