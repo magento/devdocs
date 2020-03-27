@@ -74,14 +74,23 @@ This release contains enhancements to core quality, which improve the quality of
 
 The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
+we added a PHPStan static code analysis tool into our builds. This does not affect functionality.
+
 ### Merchant tool enhancements
 
 ### Page Builder
 
 Page Builder enhancements for this release include:
 
-*  Page Builder Template Manager
-*  Video backgrounds
+* **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
+
+* **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds. See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
+
+* **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site. See [Templates](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-templates.html).
+
+* **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://devdocs.magento.com/page-builder/docs/how-to/how-to-upgrade-content-types.html).
+
+See [Release notes for Page Bui](https://devdocs.magedevteam.com/1585/page-builder/docs/release-notes.html) for detailed information on the most recent enhancements and bug fixes.
 
 ### Inventory Management
 
@@ -159,6 +168,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The link accessed from **Admin** > **Stores** > **Settings**  > **Configuration** > **General** > **Advanced Reporting** now opens in a new tab as expected.  *Fix submitted by Nagamaiah K in pull request [25760](https://github.com/magento/magento2/pull/25760)*. [GitHub-25757](https://github.com/magento/magento2/issues/25757)
 
 <!--- MC-19037-->
+
+*  You can now successfully remove a website along with the website’s scope-specific configuration settings in app/etc/config.php as expected. Previously, when you tried to remove the website, the operation failed, and Magento displayed this error: `The website with code xxx that was requested wasn't found. Verify the website and try again`. Additionally, Magento displayed this error on the storefront:  `Config files have changed. Run app:config:import or setup:upgrade command to synchronize configuration`. [GitHub-24061](https://github.com/magento/magento2/issues/24061)
+
 <!--- MC-29795-->
 
 ### Adobe stock integration
@@ -266,7 +278,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30256-->
 
-*  Administrators can now order products from the Admin even if products are not included in a customer’s catalog.
+*  Shared catalog customers can now order unassigned or assigned  items from the Admin as expected. Previously, merchants could not order products that were not assigned to the catalog.
 
 <!--- MC-22842-->
 
@@ -299,6 +311,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Cart Price Rules that are based on payment methods are now applied during the checkout workflow. [GitHub-24206](https://github.com/magento/magento2/issues/24206)
 
 <!--- MC-23261-->
+
+*  You can now disable zip code validation on the checkout workflow from the Admin as expected. Previously, Magento threw an error when a customer entered a zip code that did not meet specified values for zip codes even after validation was disabled by setting Input Validation = 'None'  from **Admin** > **Stores** > **Attributes** > **Customer address** > **Edit Zip/Postal Code**.
 
 <!--- MC-30254-->
 
@@ -341,6 +355,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29876-->
 
+*  Magento now displays product images in the minicart without distortion. Previously, Magento stretched the image in the minicart to fill the entire width and hight of the image container.
+
 <!--- MC-29652-->
 
 <!--- MC-30213-->
@@ -348,6 +364,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-21948-->
 
 <!--- MC-29865-->
+
+*  The `getBasePrice` function now returns float value  as expected rather than a string.
+
 <!--- MC-29519-->
 
 <!--- MC-31801-->
@@ -364,7 +383,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29144-->
 
+*  The minicart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display  correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the minicart and Admin shopping cart displayed the original product price.
+
 <!--- MC-29902-->
+
+*  Product prices on the storefront now accurately reflect the application of a scheduled catalog price rule update. Previously, prices did not reflect the scheduled cart price rule until you manually re-indexed (`php bin/magento indexer:reindex catalogrule_rule`).
 
 ### Catalog rule
 
@@ -449,6 +472,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Customer segment
 
 <!--- MC-19235-->
+
+*  Magento now correctly applies customer segment cart price rules in a multi-website deployment when an administrator creates an order from the Admin and adds products to the cart from different websites.
 
 <!--- MC-29429-->
 
@@ -658,8 +683,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31089-->
 <!--- MC-31122-->
+
+*  CSV files generated during product import now contain group titles for downloadable products as expected. Previously, unnecessary validation of `group_title` during import prevented the display of group titles for downloadable products.
+
 <!--- MC-30321-->
+
+*  You can now successfully import or update customers using the Customer and addresses single file option of the import workflow. Previously, when you selected this option, Magento did not import the customer data and displayed this error: `Invalid data for insert`.
+
 <!--- MC-30438-->
+
+*  Magento now imports all custom options for a configurable product’s child products successfully when `store_view_code` is specified. This works whether you choose to import configurable products individually or collectively. Previously, Magento did not successfully import all custom options when the import file contained  more than one item  and `store_view_code` was specified
+
 <!--- MC-30285-->
 
 ### Index
@@ -707,6 +741,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Logging
 
 <!--- MC-29230-->
+
+*  Magento now logs sales shipment actions in the Admin Action log as expected. 
 
 <!--- MC-29312-->
 
@@ -797,6 +833,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22995-->
 <!--- MC-22754-->
+
+*  Magento now sends RMA processing emails to customers from the store from which the purchase was made in a multi-store deployment. Previously, Magento sent these emails from the default store.
 
 ### Rewards
 
@@ -1018,6 +1056,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  A wishlist now works as expected when it is enabled at the store-view level and disabled at the global level. Previously, when these settings were in place, adding a product to a wishlist resulted ion a 404 error.
 
 <!--- MC-30137-->
+
+*  Magento now correctly saves and displays a new name for a wishlist when you rename a wishlist in deployments that contain multiple wishlists. Previously, Magento continued to display the former wishlist name.
 
 ### WYSIWYG
 
