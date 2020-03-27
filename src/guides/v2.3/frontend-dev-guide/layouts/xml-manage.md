@@ -480,21 +480,22 @@ namespace Vendor\CustomModule\ViewModel;
 
 class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
 
-  public function canShowAdditionalData()
-  {
-    return true;
-  }
+    public function canShowAdditionalData()
+    {
+        return true;
+    }
 }
 ```
 
 Then, in the `cart/item/default.phtml` file get use of the viewModel
 
 ```php
+/** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
 $viewModel = $block->getData('viewModel');
 
 $viewModel->canShowAdditionalData();
