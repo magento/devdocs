@@ -485,7 +485,8 @@ class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 
   }
 
-  public function canShowAdditionalData() {
+  public function canShowAdditionalData()
+  {
     return true;
   }
 }
