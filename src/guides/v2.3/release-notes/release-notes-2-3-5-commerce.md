@@ -82,15 +82,15 @@ we added a PHPStan static code analysis tool into our builds. This does not affe
 
 Page Builder enhancements for this release include:
 
-* **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
+*  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-* **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds. See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
+*  **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds. See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-* **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site. See [Templates](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-templates.html).
+*  **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site. See [Templates](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-templates.html).
 
-* **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://devdocs.magento.com/page-builder/docs/how-to/how-to-upgrade-content-types.html).
+*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://devdocs.magento.com/page-builder/docs/how-to/how-to-upgrade-content-types.html).
 
-See [Release notes for Page Bui](https://devdocs.magedevteam.com/1585/page-builder/docs/release-notes.html) for detailed information on the most recent enhancements and bug fixes.
+See [Release notes for Page Builder](https://devdocs.magedevteam.com/1585/page-builder/docs/release-notes.html) for detailed information on the most recent enhancements and bug fixes.
 
 ### Inventory Management
 
@@ -190,7 +190,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6272-->
 
 *  The **Search Stock Images** button now remains active as expected after you’ve searched for and saved an image from the media gallery. Previously,  this button was disabled after you used it to search for an image and saved it.  *Fix submitted by Nazar Klovanych in pull request [25556](https://github.com/magento/magento2/pull/25556)*. [GitHub-622](https://github.com/magento/magento2/issues/622)
-
 
 ### Analytics
 
@@ -536,15 +535,16 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Watermark images no longer obscure the product image that they overlay. Previously, when the watermark image was larger than the product image it was applied to, the product image was not visible.
 
 <!--- MC-30290-->
+
 [GitHub-9041](https://github.com/magento/magento2/issues/9041)
 
 <!--- MC-17563-->
 
 [GitHub-22909](https://github.com/magento/magento2/issues/22909)
 
-<!--- MC-30824-->ee only database fr
-<!--- MC-31708-->
+<!--- MC-30824-->
 
+<!--- MC-31708-->
 
 ### JavaScript framework
 
@@ -742,7 +742,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29230-->
 
-*  Magento now logs sales shipment actions in the Admin Action log as expected. 
+*  Magento now logs sales shipment actions in the Admin Action log as expected.
 
 <!--- MC-29312-->
 
