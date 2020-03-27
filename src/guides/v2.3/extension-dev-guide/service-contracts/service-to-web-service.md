@@ -18,15 +18,10 @@ Users can make REST or SOAP calls to access the [web API](https://glossary.magen
 To configure a web API, read these topics:
 
 -  [Configure a web API](#configure-webapi)
-
 -  [Service Interface Requirements](#service-interface-requirements)
-
 -  [webapi.xml configuration options](#configuration-options)
-
 -  [Sample webapi.xml file](#sample-webapi)
-
 -  [webapi.xsd XML schema file](#validate-webapi)
-
 -  [Forcing Request Parameters](#forced-parameters)
 
 ## Configure a web API {#configure-webapi}
