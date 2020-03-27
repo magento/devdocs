@@ -210,9 +210,11 @@ declare(strict_types=1);
 
 namespace %path to your module namespace%;
 
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\UrlInterface;
 
-class Search extends \Magento\Backend\App\Action
+class Search extends \Magento\Backend\App\Action implements HttpGetActionInterface, HttpPostActionInterface
 {
     /**
      * Authorization level of a basic admin session
@@ -290,7 +292,9 @@ declare(strict_types=1);
 
 namespace %path to your module%;
 
-class GetSelected extends \Magento\Backend\App\Action
+use Magento\Framework\App\Action\HttpGetActionInterface;
+
+class GetSelected extends \Magento\Backend\App\Action implements HttpGetActionInterface
 {
     /**
      * Authorization level of a basic admin session
