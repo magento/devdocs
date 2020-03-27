@@ -6,7 +6,7 @@ redirect_from:
 ee_only: True
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Because these suggestions are backed by a deep analysis of aggregated visitor data using Adobe Sensei, they result in highly engaging, relevant, and personalized experiences for the shopper.
+Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”. Magento's product recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated visitor data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
 
 Magento Commerce is bringing the power of creating and managing smart product recommendations to its merchant community. Marketing managers will be able to quickly create, manage, and deploy recommendations across their store views directly from the Magento Admin panel.
 
@@ -26,9 +26,7 @@ Product recommendations require the following data:
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 
-Adobe Sensei aggregates the behavioral data and combines it with the catalog data to create product recommendations that are engaging, relevant, and personalized.
-
-This data will automatically be captured when you install and configure the `product-recommendations` module.
+When you install the `product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating product recommendations for each recommendation type. The product recommendations service then deploys those recommendations to your storefront.
 
 ### Install Product Recommendations {#install}
 
