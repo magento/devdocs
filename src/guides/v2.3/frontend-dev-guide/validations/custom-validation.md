@@ -63,19 +63,19 @@ require([
     "mage/validation"
 ], function($){
     $('#form-validate').mage('validation', {
-            errorPlacement: function (error, element) {
-                var parent = element.parent();
-                if (parent.hasClass('range')) {
-                    parent.find(this.errorElement + '.' + this.errorClass).remove().end().append(error);
-                } else {
-                    error.insertAfter(element);
-                }
-            },
-            messages: {
-                'price[to]': {'greater-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'},
-                'price[from]': {'less-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'}
+        errorPlacement: function (error, element) {
+            var parent = element.parent();
+            if (parent.hasClass('range')) {
+                parent.find(this.errorElement + '.' + this.errorClass).remove().end().append(error);
+            } else {
+                error.insertAfter(element);
             }
-        });
+        },
+        messages: {
+            'price[to]': {'greater-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'},
+            'price[from]': {'less-than-equals-to': '<?= $block->escapeJs(__('Please enter a valid price range.')) ?>'}
+        }
+    });
 });
 </script>
 ```
