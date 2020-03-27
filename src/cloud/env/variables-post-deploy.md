@@ -136,7 +136,7 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Configure _CONCURRENCY_ with which requests to _WARM_UP_PAGES_ will be sent. This configuration limits number of parallel connections. It can help to decrease server load in case of a big amount of pages to warm-up.
+Specify the number of concurrent requests to send during cache warmup operations to reduce server load. This value limits the number of parallel connections and is useful for environment configurations where the `WARM_UP_PAGES` post-deploy variable specifies a large number of pages for cache preloading.
 
 ```yaml
 stage:
