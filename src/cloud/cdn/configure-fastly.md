@@ -296,7 +296,7 @@ To check the version of Fastly CDN module for Magento 2:
 {:.procedure}
 To upgrade the Fastly module:
 
-1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html#update).
+1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
    ```text
    module name: fastly/magento2

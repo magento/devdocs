@@ -1,63 +1,34 @@
 ---
 group: cloud-guide
 title: Install, manage, and upgrade extensions
-redirect_from:
-  - /cloud/howtos/update-components.html
 functional_areas:
   - Cloud
   - Configuration
+  - Extensions
+  - Module
 ---
 
-This information includes information for [adding extensions](#install) to {{site.data.var.ece}}, [managing](#manage) enabled and disabled extensions, and [upgrading extension code](#update).
+You can extend your Magento application capabilities by adding an extension from the [Magento Marketplace][]. For example, you can add a theme to change the look and feel of your storefront, or you can add a language package to localize your storefront and Admin panel.
 
-When adding extensions to {{site.data.var.ece}}, you should add the code to a Git branch, test in Integration, deploy and test in Staging, before finally pushing and using in Production.
-
-Extensions include the following:
-
-*  Modules to extend Magento capabilities, with options through Magento Marketplace and directly through company sites
-*  Themes to change the look and feel of your storefronts
-*  Language packages to localize the storefront and Admin
-
-These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension's Composer name. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
-
-We also include instructions for [updating extensions](#update).
-
-## Create a branch for adding or updating the extension {#getstarted}
-
-We recommend using a branch for adding or updating, configuring, and testing your extension.
-
-{% include cloud/cli-get-started.md %}
-
-## Install an extension {#install}
-[Extension installation](#install) uses the following steps:
-
-1. Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com) or another site.
-1. [Create a branch](#getstarted) to work with the files.
-1. [Get the extension's Composer name](#compose) and version from your purchase history.
-1. In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.
-1. [Verify](#verify) the extension installed properly.
-
-### Step 1: Get the extension's Composer name and version {#compose}
-
-If you already know the extension's Composer name and version, skip this step and continue with [Update Magento's `composer.json`](#update).
+{% include cloud/tip-creating-branches.md %}
 
 {% include cloud/composer-name.md %}
 
-### Step 2: Update Magento's `composer.json` {#update}
+## Install an extension
 
-When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
+We recommend working in a development branch when adding an extension to your implementation. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing an extension, the extension name (`<VendorName>_<ComponentName>`) is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
 
-To update `composer.json`:
+{:.procedure}
+To install an extension:
 
-1. If you haven't done so already, change to your environment root directory.
-1. Enter the following commands to update it:
+1. On your local workstation, change to the Cloud project root directory.
+
+1. Create or checkout a development branch. See [branching][].
+
+1. Using the Composer name and version, add the extension to the `require` section of the `composer.json` file.
 
    ```bash
-   composer require <component-name>:<version> --no-update
-   ```
-
-   ```bash
-   composer update
+   composer require <extension-name>:<version> --no-update
    ```
 
    For example:
@@ -66,116 +37,135 @@ To update `composer.json`:
    composer require pixlee/magento2:1.0.1 --no-update
    ```
 
+1. Update the project dependencies.
+
    ```bash
    composer update
    ```
 
-1. Wait for project dependencies to update.
-1. Enter the following commands in the order shown to commit your changes, including `composer.lock`:
+1. Add, commit, and push code changes.
 
    ```bash
    git add -A
    ```
 
    ```bash
-   git commit -m "<message>"
+   git commit -m "Install <extension-name>"
    ```
 
    ```bash
-   git push magento <environment ID>
+   git push origin <branch-name>
    ```
 
-If there are errors, see [extension deployment failure]({{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
+   {:.bs-callout-warning}
+   When installing an extension, you must include the `composer.lock` file when you push code changes to the remote environment. The `composer install` command reads the `composer.lock` file to enable the defined dependencies in the remote environment.
 
-{:.bs-callout-warning}
-When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
-
-### Step 3: Verify the extension {#verify}
-
-To verify the extension installed properly, you can check its functionality in the Magento Admin or you can view enabled modules using the CLI:
-
-1. Open a terminal.
-1. [Checkout the branch]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
-1. List all enabled modules:
+1. After the build and deploy finishes, use a SSH to log in to the remote environment and verify the extension installed.
 
    ```bash
-   php bin/magento module:status
+   bin/magento module:status <extension-name>
    ```
 
-1. Verify the extension is listed.
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
 
-The extension name is in the format `<VendorName>_<ComponentName>`. It will not be in the same format as the Composer name.
+   Sample response:
 
-## Manage extensions {#manage}
+   ```terminal
+   Module is enabled
+   ```
 
-To manage your extensions, you can enable and disable or change settings per environment.
+   If you encounter deployment errors, see [extension deployment failure][trouble].
 
-### Enable and disable extensions {#enable-disable}
+## Manage extensions
 
-To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
+When you add an extension using Composer, the deployment process automatically enables the extension. If you already have the extension installed, you can enable or disable the extension using the CLI. When managing extensions, use the format: `<VendorName>_<ComponentName>`. Never enable or disable an extension while logged in to the remote environments.
 
-Trying to enable and disable extensions not following this method can lead to permissions and other issues.
+{:.procedure}
+To enable or disable an extension:
 
-1. [Work in a branch](#getstarted) to update `config.php`.
-1. In a terminal, access your local development environment.
-1. List all module.
+1. On your local workstation, change to the Cloud project root directory.
+
+1. Enable or disable a module. The `module` command updates the `config.php` file with the requested status of the module.
+
+   >Enable a module.
+   ```bash
+   bin/magento module:enable <module-name>
+   ```
+
+   >Disable a module.
+   ```bash
+   bin/magento module:disable <module-name>
+   ```
+
+1. If you enabled a module, use `ece-tools` to refresh the configuration.
 
    ```bash
-   php bin/magento module:status
+   ./vendor/bin/ece-tools module:refresh
    ```
 
-1. Enable a module.This command updates the `config.php` file with the enabled status of the module.
+1. Verify the status of a module.
 
    ```bash
-   php bin/magento module:enable <module name>
+   bin/magento module:status <module-name>
    ```
 
-1. Disable a module. This command updates the `config.php` file with the disable status of the module.
+1. Add, commit, and push code changes.
 
    ```bash
-   php bin/magento module:disable <module name>
+   git add -A
    ```
-
-1. Verify the status of a module:
 
    ```bash
-   php bin/magento module:status
+   git commit -m "Disable <extension-name>"
    ```
 
-1. Push your updates to the Git branch.
-1. [Complete deployment]({{ site.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
-
-### Modify configurations {#configure}
-
-You update configurations according to [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
+   ```bash
+   git push origin <branch-names>
+   ```
 
 ## Upgrade an extension
 
-You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
+Before you continue, you need the Composer name and version for the extension. Also, confirm that the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version before you begin.
 
-*  Know the extension's Composer name and version
-*  Know the extension is compatible with your project and {{site.data.var.ece}} version. In particular, check the required PHP version.
-
+{:.procedure}
 To update an extension:
 
-1. If you haven't done so already, change to your environment root directory.
-1. Open `composer.json` in a text editor.
+1. On your local workstation, change to the Cloud project root directory.
+
+1. Create or checkout a development branch. See [branching][].
+
+1. Open the `composer.json` file in a text editor.
+
 1. Locate your extension and update the version.
-1. Save your changes to `composer.json` and exit the text editor.
-1. Update project dependencies:
+
+1. Save your changes and exit the text editor.
+
+1. Update the project dependencies.
 
    ```bash
    composer update
    ```
 
-1. Enter the following commands in the order to commit the changes and deploy the project, including `composer.lock`:
+1. Add, commit, and push your code changes.
 
    ```bash
    git add -A
-   git commit -m "<message>"
-   git push origin <environment ID>
    ```
 
-1. Wait for the project to deploy and verify in your environment.
+   ```bash
+   git commit -m "Update <extension-name>"
+   ```
 
-If there are errors, see [Component deployment failure]({{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
+   ```bash
+   git push origin <branch-names>
+   ```
+
+If you encounter errors, see [extension deployment failure][].
+
+<!-- link definitions -->
+
+[branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
+[config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
+[extensions]: {{ site.baseurl }}/extensions/
+[Magento Marketplace]: https://marketplace.magento.com
+[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

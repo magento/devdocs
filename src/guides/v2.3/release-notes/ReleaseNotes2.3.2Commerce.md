@@ -45,7 +45,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will  assign and pu
 
 ### Performance boosts
 
-*  **Redesign of checkout page to support customers working with many addresses**. The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is  disabled by default and  must be enabled from Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).   <!--- MC-5681--->
+*  **Redesign of checkout page to support customers working with many addresses**. The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is  disabled by default and  must be enabled from the Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).   <!--- MC-5681--->
 
 *  **Significant improvement to storefront page response time**. The page response times for the catalog, search, and advanced search pages have been significantly improved under high load. <!--- MAGETWO-95294--->
 
@@ -83,7 +83,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 *  **New commands** allow merchants to check for reservation inconsistencies and resolve any that occur. See [Inventory CLI reference]({{ page.baseurl }}/inventory/inventory-cli-reference.html).
 
-*  Improved user interface for assigning sources to products. This redesigned interface includes:
+*  **Improved user interface** for assigning sources to products. This redesigned interface includes:
 
    *  Support for decimal order quantity
    *  New test scenarios created to cover Credit Memo use cases
@@ -118,11 +118,11 @@ See [Release notes]({{ page.baseurl }}/graphql/release-notes.html) for a more de
 
 ### Progressive Web Apps (PWA)
 
-*  **Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
+**Improved modular component library**. PWA Studio continues to build out the concept for functional and data components through the Peregrine library. Components can now be reused and scaled for frontend needs. Magento has planned a phased rollout for Peregrine functional and data components, starting with the Search component which is launching with this release.
 
 ### BlueFoot to Page Builder content migration
 
-*  **Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder-migration/docs/) for information about module installation and supported content types.
+**Assistance for BlueFoot to Page Builder migration**.  The BlueFoot content migration module (PageBuilderDataMigration) enables merchants who are running Magento 2.1.x or 2.2.x with BlueFoot  to upgrade to Magento 2.3.1+ with PageBuilder 1.0 without losing their website content. This module  migrates only content created with native BlueFoot. See [Overview of content migration](https://devdocs.magento.com/page-builder-migration/docs/) for information about module installation and supported content types.
 
 ### Vendor-developed extension enhancements
 
@@ -192,7 +192,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-3885-->
 
-*  Fixed display of **Option Title** label on **Catalog** > **Product** > **Customizable Options** > **Add Option**.  *Fix submitted by Arvinda kumar in pull request [20339](https://github.com/magento/magento2/pull/20339)*. [GitHub-20337](https://github.com/magento/magento2/issues/20337)
+*  Fixed display of **Option Title** label on **Catalog** > **Product** > **Customizable Options** > **Add Option**.  *Fix submitted by Arvinda Kumar in pull request [20339](https://github.com/magento/magento2/pull/20339)*. [GitHub-20337](https://github.com/magento/magento2/issues/20337)
 
 <!--- ENGCOM-4377-->
 
@@ -298,7 +298,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4355-->
 
-*  Magento now displays an error message as expected when a customer clicks on **Add to cart* without selecting at least one product from the recently ordered  product list. *Fix submitted by Prince Patel in pull request [21401](https://github.com/magento/magento2/pull/21401)*. [GitHub-21398](https://github.com/magento/magento2/issues/21398)
+*  Magento now displays an error message as expected when a customer clicks on **Add to cart** without selecting at least one product from the recently ordered  product list. *Fix submitted by Prince Patel in pull request [21401](https://github.com/magento/magento2/pull/21401)*. [GitHub-21398](https://github.com/magento/magento2/issues/21398)
 
 <!--- ENGCOM-4376-->
 
@@ -330,7 +330,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MC-5681-->
 
-*  The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is disabled by default and  must be enabled from Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).
+*  The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is disabled by default and  must be enabled from the Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).
 
 ### Cart Price rules
 
@@ -346,9 +346,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96429-->
 
-*  Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
-
-**This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs**.
+*  Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update. **This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs**.
 
 <!--- MAGETWO-96416-->
 
@@ -476,10 +474,7 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4490-->
 
-*  We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
-
-has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
-*Fix submitted by VitaliyBoyko in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+*  We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>` has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.) *Fix submitted by VitaliyBoyko in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 ### Catalog URL rewrite
 
@@ -835,7 +830,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4681-->
 
-*  The `stream_wrapper_unregister('phar')` function in `app/boostrap.php` is now run only when a stream wrapper is registered. Previously, calling `stream_wrapper_unregister('phar')` without checking to see if it was registered triggered a warning. *Fix submitted by Antoine Daudenthun in pull request [22171](https://github.com/magento/magento2/pull/22171)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-21973](https://github.com/magento/magento2/issues/21973)
+*  The `stream_wrapper_unregister('phar')` function in `app/boostrap.php` is now run only when a stream wrapper is registered. Previously, calling `stream_wrapper_unregister('phar')` without checking to see if it were registered triggered a warning. *Fix submitted by Antoine Daudenthun in pull request [22171](https://github.com/magento/magento2/pull/22171)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-21973](https://github.com/magento/magento2/issues/21973)
 
 <!--- ENGCOM-4055-->
 
@@ -975,9 +970,9 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 *  Magento no longer throws an exception under these conditions:
 
-   *  A product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
+   *  A product configuration specifies a **Minimum Qty Allowed in Shopping Cart** as a decimal value less than one
 
-   *  This configuration is later updated to set `Qty Uses Decimals` to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
+   *  This configuration is later updated to set **Qty Uses Decimals** to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
 ### Layered navigation
 
@@ -1369,13 +1364,13 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 
 <!--- ENGCOM-4586-->
 
-*  Magento now retains filter terms after you apply a filter to the Admin `url_rewrites` table, and subsequently click the Back button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
+*  Magento now retains filter terms after you apply a filter to the Admin `url_rewrites` table, and subsequently click the **Back** button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
 ### Web API
 
 <!--- ENGCOM-4771-->
 
-*  You can now use REST in scope `all` to save an existing category that does not have a `name` attribute. Previously, Magento threw this exception, `Could not save category with message. The "Name" attribute value is empty. Set the attribute and try again`. *Fix submitted by Nirav Patel in pull request [22362](https://github.com/magento/magento2/pull/22362)*. [GitHub-22309](https://github.com/magento/magento2/issues/22309)
+*  You can now use REST in scope `all` to save an existing category that does not have a `name` attribute. Previously, Magento threw this exception: `Could not save category with message. The "Name" attribute value is empty. Set the attribute and try again`. *Fix submitted by Nirav Patel in pull request [22362](https://github.com/magento/magento2/pull/22362)*. [GitHub-22309](https://github.com/magento/magento2/issues/22309)
 
 <!--- ENGCOM-4674-->
 

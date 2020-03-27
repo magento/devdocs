@@ -173,7 +173,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4397-->
 
-*  Magento now redirects to you the Admin home page or a 404 page as expected when you try to access a nonexisting Admin page and **Stores** > **Configuration** > **Advanced** > **Admin** > **Security** > **Add Secret Key to URLs** is enabled. Previously,  redirects did not work properly, and Magento displayed the following message, `The page isn’t redirecting properly`. *Fix submitted by Jitheesh  in pull request [21455](https://github.com/magento/magento2/pull/21455)*. [GitHub-21454](https://github.com/magento/magento2/issues/21454)
+*  Magento now redirects to you the Admin home page or a 404 page as expected when you try to access a nonexisting Admin page and **Stores** > **Configuration** > **Advanced** > **Admin** > **Security** > **Add Secret Key to URLs** is enabled. Previously,  redirects did not work properly, and Magento displayed the following message: `The page isn’t redirecting properly`. *Fix submitted by Jitheesh  in pull request [21455](https://github.com/magento/magento2/pull/21455)*. [GitHub-21454](https://github.com/magento/magento2/issues/21454)
 
 ### Back up
 
@@ -253,7 +253,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MC-5681-->
 
-*  The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is disabled by default and  must be enabled from Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).
+*  The checkout page now provides the ability to search addresses instead of listing addresses only on the Select shipping and Billing address steps. This new search feature can substantially increase checkout performance for customers with thousands of addresses. It is disabled by default and  must be enabled from the Admin.  See [Checkout](https://docs.magento.com/m2/ee/user_guide/configuration/sales/checkout.html#Checkout).
 
 ### Cart Price rules
 
@@ -269,9 +269,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96429-->
 
-*  Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
-
-**This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs**.
+*  Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update. **This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs**.
 
 <!--- MAGETWO-96416-->
 
@@ -383,9 +381,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4490-->
 
-*  We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>` has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
-
-*Fix submitted by Vitaliy in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+*  We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>` has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.) *Fix submitted by Vitaliy in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 ### Catalog URL rewrite
 
@@ -453,7 +449,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4475-->
 
-*  Added missing asterix adjacent to the Checkout Agreements checkbox. *Fix submitted by Karla Saaremäe in pull request [21649](https://github.com/magento/magento2/pull/21649)*. [GitHub-21648](https://github.com/magento/magento2/issues/21648)
+*  Added missing asterisk adjacent to the Checkout Agreements checkbox. *Fix submitted by Karla Saaremäe in pull request [21649](https://github.com/magento/magento2/pull/21649)*. [GitHub-21648](https://github.com/magento/magento2/issues/21648)
 
 <!--- ENGCOM-4595-->
 
@@ -691,7 +687,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4521-->
 
-*  You can now use a period (`.`) for inline CMS content edits. Previously, if you included  a period (`.`) in your edits, Magento displayed this error, `There are 1 messages requires your attention. Please make corrections to the errors in the table below and re-submit`. *Fix submitted by Nirav Patel in pull request [21376](https://github.com/magento/magento2/pull/21376)*. [GitHub-21374](https://github.com/magento/magento2/issues/21374)
+*  You can now use a period (`.`) for inline CMS content edits. Previously, if you included  a period (`.`) in your edits, Magento displayed this error: `There are 1 messages requires your attention. Please make corrections to the errors in the table below and re-submit`. *Fix submitted by Nirav Patel in pull request [21376](https://github.com/magento/magento2/pull/21376)*. [GitHub-21374](https://github.com/magento/magento2/issues/21374)
 
 <!--- ENGCOM-4523-->
 
@@ -711,7 +707,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4695-->
 
-*  The Reporting Security Issues section of the Magento 2 README file (https://github.com/magento/magento2/blob/2.3-develop/README.md) has been updated to reflect use of hackerone. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
+*  The Reporting Security Issues section of the [Magento 2 README file] (https://github.com/magento/magento2/blob/2.3-develop/README.md) has been updated to reflect the use of HackerOne for the Magento 2 Bug Bounty program. *Fix submitted by Andreas Mautz in pull request [22195](https://github.com/magento/magento2/pull/22195)*. [GitHub-22166](https://github.com/magento/magento2/issues/22166)
 
 <!--- ENGCOM-4654-->
 
@@ -723,7 +719,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4681-->
 
-*  `stream_wrapper_unregister('phar')` in `app/boostrap.php` is now unregistered only when appropriate. Previously, calling `stream_wrapper_unregister('phar')` without checking to see if it was registered triggered a warning. *Fix submitted by Antoine Daudenthun in pull request [22171](https://github.com/magento/magento2/pull/22171)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-21973](https://github.com/magento/magento2/issues/21973)
+*  `stream_wrapper_unregister('phar')` in `app/boostrap.php` is now unregistered only when appropriate. Previously, calling `stream_wrapper_unregister('phar')` without checking to see if it were registered triggered a warning. *Fix submitted by Antoine Daudenthun in pull request [22171](https://github.com/magento/magento2/pull/22171)*. [GitHub-22190](https://github.com/magento/magento2/issues/22190), [GitHub-21973](https://github.com/magento/magento2/issues/21973)
 
 <!--- ENGCOM-4055-->
 
@@ -757,7 +753,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-95313-->
 
-*  Magento now imports existing products that have a price change and unchanged url-key with no unnecessary updates. Previously, the product's price was updated as expected, but its unchanged url-key was deleted.
+*  Magento now imports existing products that have a price change and unchanged `url-key` with no unnecessary updates. Previously, the product's price was updated as expected, but its unchanged `url-key` was deleted.
 
 <!--- MAGETWO-70232-->
 
@@ -853,9 +849,9 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 *  Magento no longer throws an exception under these conditions:
 
-   *  a product configuration specifies a `Minimum Qty Allowed in Shopping Cart` as a decimal value less than one
+   *  a product configuration specifies a **Minimum Qty Allowed in Shopping Cart** as a decimal value less than one
 
-   *  this configuration is later updated by setting  `Qty Uses Decimals`  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
+   *  this configuration is later updated by setting  **Qty Uses Decimals**  to **no**, and later updating the **Qty Uses Decimals** attribute in the product congiration to **no**. *Fix submitted by Valerij Ivashchenko in pull request [21928](https://github.com/magento/magento2/pull/21928)*. [GitHub-21926](https://github.com/magento/magento2/issues/21926)
 
 ### Layered navigation
 
@@ -1067,7 +1063,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-98947-->
 
-*  The CGI URL gateway endpoint in the UPS module has been updated from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods] (https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS).
+*  The CGI URL gateway endpoint in the UPS module has been updated from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS).
 
 <!--- MAGETWO-98328-->
 
@@ -1107,10 +1103,6 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 *  The value of `product_price_value` in the shopping cart data section  now includes taxes if the configuration settings are set accordingly (**Stores** > **Configuration** > **Sales** > **Tax** > **Shopping Cart Display Settings** > **Display Prices** > **Including Tax**). *Fix submitted by Nick de Kleijn in pull request [20316](https://github.com/magento/magento2/pull/20316)*. [GitHub-20310](https://github.com/magento/magento2/issues/20310)
 
-<!--- MAGETWO-98028-->
-
-*  The tax that is applied to simple child product is now  based on the tax class of that product. Previously, the tax was based on the tax class of the parent product.
-
 <!--- ENGCOM-4480-->
 
 *  You can now successfully search for a tax rule based on both the **Name** and **Tax Rate** fields. Previously, Magento threw an MySQL error. *Fix submitted by Tuyen Nguyen in pull request [21701](https://github.com/magento/magento2/pull/21701)*. [GitHub-21521](https://github.com/magento/magento2/issues/21521)
@@ -1129,7 +1121,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-3799-->
 
-*  Logo files for transactional emails can now be successfully uploaded  using **Content** > **Configuration** > **Edit theme** > **Transactional Emails**. Previously, Magento did not upload the logo, but displayed this error, `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.` *Fix submitted by chaplynsky in pull request [20092](https://github.com/magento/magento2/pull/20092)*. [GitHub-20091](https://github.com/magento/magento2/issues/20091)
+*  Logo files for transactional emails can now be successfully uploaded  using **Content** > **Configuration** > **Edit theme** > **Transactional Emails**. Previously, Magento did not upload the logo, but displayed this error:  `A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later.` *Fix submitted by chaplynsky in pull request [20092](https://github.com/magento/magento2/pull/20092)*. [GitHub-20091](https://github.com/magento/magento2/issues/20091)
 
 <!--- ENGCOM-4338-->
 
@@ -1193,7 +1185,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-3803-->
 
-*  Magento now displays warning messages when validation fails on a form field that has a validation rule associated with it. Previously,  Magento displayed this error, `Javascript Error: Uncaught TypeError: msg.replace is not a function`, if validation failed on a form field. *Fix submitted by Seth Daugherty in pull request [20079](https://github.com/magento/magento2/pull/20079)*. [GitHub-20078](https://github.com/magento/magento2/issues/20078)
+*  Magento now displays warning messages when validation fails on a form field that has a validation rule associated with it. Previously,  Magento displayed this error: `Javascript Error: Uncaught TypeError: msg.replace is not a function`, if validation failed on a form field. *Fix submitted by Seth Daugherty in pull request [20079](https://github.com/magento/magento2/pull/20079)*. [GitHub-20078](https://github.com/magento/magento2/issues/20078)
 
 <!--- ENGCOM-3937-->
 
@@ -1211,13 +1203,13 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- ENGCOM-4586-->
 
-*  Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the Back button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
+*  Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the **Back** button. *Fix submitted by Vaibhav Bhalerao in pull request [21834](https://github.com/magento/magento2/pull/21834)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
 ### Web API framework
 
 <!--- ENGCOM-4771-->
 
-*  You can now use REST in scope `all` to save an existing category that does not have a `name` attribute. Previously, Magento threw this exception, `Could not save category with message. The "Name" attribute value is empty. Set the attribute and try again`. *Fix submitted by Nirav Patel in pull request [22362](https://github.com/magento/magento2/pull/22362)*. [GitHub-22309](https://github.com/magento/magento2/issues/22309)
+*  You can now use REST in scope `all` to save an existing category that does not have a `name` attribute. Previously, Magento threw this exception: `Could not save category with message. The "Name" attribute value is empty. Set the attribute and try again`. *Fix submitted by Nirav Patel in pull request [22362](https://github.com/magento/magento2/pull/22362)*. [GitHub-22309](https://github.com/magento/magento2/issues/22309)
 
 <!--- ENGCOM-4674-->
 
