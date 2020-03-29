@@ -235,6 +235,7 @@ namespace OrangeCompany\RoutingExample\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
@@ -243,7 +244,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  */
-class Index extends Action
+class Index extends Action implements HttpGetActionInterface
 {
     /**
      * @var PageFactory
@@ -350,9 +351,78 @@ As a result, by accessing the `http://site.com/learning` route, the `http://site
 
 ![Routing Result]({{ site.baseurl }}/common/images/routing-result.png)
 
-## Declaring the new route as Page Type
+## Declaring the new custom no-route processor
 
-After creating a new route `routing/index/index`, it is a good practice to give more control on it for the admin. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
+If the standard 404 page needs to be extended or users redirected to another page, you can use a custom 'no-route' processor.
+In order to usef a no-route processor, add an argument to the `NoRouteHandlerList` in the `di.xml` file of your module:
+
+```xml
+<type name="Magento\Framework\App\Router\NoRouteHandlerList">
+    <arguments>
+        <argument name="default" xsi:type="array">
+            <item name="customNoRoute" xsi:type="array">
+                <item name="class" xsi:type="string">Magento\Framework\App\Router\NoRouteHandler</item>
+                <item name="sortOrder" xsi:type="string">100</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+```
+
+In this example, `Magento\Framework\App\Router\NoRouteHandler` is the 'no route' scenario processor that is executed when no acceptable route is found for the URL:
+
+```php
+namespace Magento\Framework\App\Router;
+
+class NoRouteHandler implements \Magento\Framework\App\Router\NoRouteHandlerInterface
+{
+    /**
+     * @var \Magento\Framework\App\Config\ScopeConfigInterface
+     */
+    protected $_config;
+
+    /**
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $config
+     */
+    public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $config)
+    {
+        $this->_config = $config;
+    }
+
+    /**
+     * Check and process no route request
+     *
+     * @param \Magento\Framework\App\RequestInterface $request
+     * @return bool
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    public function process(\Magento\Framework\App\RequestInterface $request)
+    {
+        $noRoutePath = $this->_config->getValue('web/default/no_route', 'default');
+
+        if ($noRoutePath) {
+            $noRoute = explode('/', $noRoutePath);
+        } else {
+            $noRoute = [];
+        }
+
+        $moduleName = isset($noRoute[0]) ? $noRoute[0] : 'core';
+        $actionPath = isset($noRoute[1]) ? $noRoute[1] : 'index';
+        $actionName = isset($noRoute[2]) ? $noRoute[2] : 'index';
+
+        $request->setModuleName($moduleName)->setControllerName($actionPath)->setActionName($actionName);
+
+        return true;
+    }
+}
+```
+
+The no-route processor implements the `Magento\Framework\App\Router\NoRouteHandlerInterface`.
+A custom no-route processor may be declared in order to extend or modify the system behavior when no route has been found for the provided URL.
+
+## Declaring a new route with Page Type
+
+After creating a new route: `routing/index/index`, it is good practice to provide admin controls for it. By creating a new `Page Type`, the admin can manage the content of this page using widgets.
 
 Defining a new page type:
 
