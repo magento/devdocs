@@ -161,7 +161,6 @@ When the ACL resource for `Vendor_ModuleName::view_additional` is enabled the re
 
 ![admin page full content]({{ site.baseurl }}/common/images/ext-best-practices/acl-admin-page-content-full-access.jpg)
 
-
 When the ACL resource is disabled, the content on the page differs.
 
 ![admin page content limited]({{ site.baseurl }}/common/images/ext-best-practices/acl-admin-limited-page-content.jpg)
