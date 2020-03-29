@@ -125,7 +125,7 @@ With ACL it is also possible to [render layout blocks dynamically]({{ page.baseu
 It is enough to set the block's value for `aclResource` attribute:
 
 ```xml
-<block class="Vendor\MyModule\Block\Type" name="block.example" aclResource="Vendor_MyModule::view_additional">
+<block class="Vendor\MyModule\Block\Adminhtml\Type" name="block.example" aclResource="Vendor_MyModule::view_additional">
     <!-- ... -->
 </block>
 ```
