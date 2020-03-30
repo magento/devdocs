@@ -1,26 +1,26 @@
 ---
 group: configuration-guide
-title: Using TwoLevel cache in Magento application
+title: Using L2 cache in Magento application
 functional_areas:
   - Configuration
   - System
   - Cache
 ---
 
-## Starting from 2.3.5 there is a possibility to set up TwoLevel Syncronized cache as base cache adapter.
+## Set up an L2 syncronized cache as the base cache adapter
 
-###Overview.
-The main idea is to reduce network size transferring between remote cache storage and application. In Vanilla Magento instance we transfer around 300kb per 1 request and may reach network limitation, which is mainly up to 10Gbps, in around of ~1000 requests.
+Caching allow us to reduce network traffic between the remote cache storage and Magento. A standard Magento instance transfers around 300kb per request and traffic may quickly grow to over ~1000 requests in some situations.
 
-To overcame this and reduce pressure on redis we keep cache data on each web node locally and use Remote Cache for two purposes:
-- Check only data version to ensure that we have latest cache locally.
-- Transfer latest cache from remote to local if we have stale one.
+To reduce the network bandwidth to Redis, we can store cache data locally on each web node and use the remote cache for two purposes:
 
-We keep hashed data version in remote in addition to data, it has suffix ':version' in addition to ordinary key. In case we have outdated data locally we will transfer it form remote and save with a local cache adapter.
+-  To check the cache data version, ensuring we have the latest cache stored locally.
+-  If the data is out of date, transfer the latest cache from the remote machine to the local machine.
 
-###Configuration example. 
+Magento stores the hashed data version in Redis, with the suffix ':version' appended to the regular key. In case of an outdated local cache, we tranfer the data to the local machine with a cache adapter.
 
-```php?start_inline=1
+### Configuration example
+
+```php
 'cache' => [
     [   
         'default' => [
@@ -50,13 +50,13 @@ We keep hashed data version in remote in addition to data, it has suffix ':versi
     ],
 ]
 ```
-Where
 
-* `backend` is our RemoteSynchronizedCache TwoLevel cache implementation.
-* `remote_backend` is on of the supported cache implementation where we aim to store cache remotely, e.g. Redis or Mysql.
-* `remote_backend_options` is a regular option that cache implementation has, e.g. Redis.
-* `local_backend` is on of the supported cache implementation where we aim to store cache locally, e.g. Cm_Cache_Backend_File or APC adapter
+Where:
 
-We suggest to use our Redis implementation of cache - `\Magento\Framework\Cache\Backend\Redis` as remote, and File cache implementation - `Cm_Cache_Backend_File` as local cache
+*  `backend` is our remote L2 cache implementation.
+*  `remote_backend` is the remote cache implementation: Redis or MySQL.
+*  `remote_backend_options` are Redis or MySQL-specific options.
+*  `local_backend` is the local cache implementation: Cm_Cache_Backend_File or the APC adapter
 
-We highly recommend to use it in combination with `cache preload` feature, this will drastically decrease pressure on redis.
+We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache.
+We also recommend the use of the `cache preload` feature, as it will drastically decrease the pressure on Redis.
