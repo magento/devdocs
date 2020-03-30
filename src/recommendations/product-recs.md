@@ -6,15 +6,15 @@ redirect_from:
 ee_only: True
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Magento's product recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated visitor data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
+Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Magento's product recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
 
 ## Architectural overview
 
-At a high level, Magento's product recommendations are made up of two main blocks: Magento and SaaS services. The Magento side includes the storefront, which contains the event collector and page layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. The SaaS services side includes the recommendations service and Adobe Sensei.
+At a high level, Magento's product recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the the SaaS services side.
 
    ![Product recommendations architecture diagram]({{ page.baseurl }}/recommendations/images/arch-diag-sensei.png)
 
-Once both Magento and SaaS services are installed and configured, your storefront will begin collecting behavioral data. That data is combined with your catalog data and sent to Adobe Sensei for analysis. At this point, the merchant can create, manage, and deploy product recommendation units to their storefront directly from the Admin UI. Those recommendation units are powered by the results of the Adobe Sensei analysis.
+Once the recommendation modules are installed and configured, your storefront will begin collecting behavioral data. Adobe Sensei processes this behavioral data along with your catalog data and calculates product associations that are leveraged by the recommendations service. At this point, the merchant can create, manage, and deploy product recommendation units to their storefront directly from the Admin UI.
 
 ## Participate in the Early Access Program
 
