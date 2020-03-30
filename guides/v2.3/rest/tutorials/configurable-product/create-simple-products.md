@@ -1,1 +1,0 @@
-../../../../v2.2/rest/tutorials/configurable-product/create-simple-products.md

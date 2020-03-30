@@ -1,9 +1,19 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 namespace :test do
   # Run html-proofer to check for broken links
   desc 'Build devdocs and check for broken links'
   task links: %w[build links_no_build]
+
+  # Run htmlproofer to check for broken external links
+  desc 'Check the existing _site for broken EXTERNAL links'
+  task :external_links do
+    puts 'Testing external links'
+    system 'bundle exec htmlproofer _site/ --external_only'
+  end
 
   desc 'Check the entire _site for broken links and invalid HTML'
   task :html do
@@ -43,12 +53,12 @@ namespace :test do
   desc 'Test Markdown style with mdl'
   task :md do
     puts 'Testing Markdown style with mdl ...'.magenta
+    print 'List the rules: $ '.magenta
+    sh 'bin/mdl -l --style=_checks/styles/style-rules-prod'
+    puts 'Linting ...'.magenta
     output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
     puts output.yellow
-    abort "The Markdown linter has found #{output.lines.count} issues".red unless output.empty?
+    abort "The Markdown linter detected #{output.lines.count - 2} issue(s)".red unless output.empty?
     puts 'No issues found'.magenta
   end
-
-  task style: %w[md]
-  task cicd: %w[html]
 end

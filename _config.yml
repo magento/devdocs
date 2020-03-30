@@ -15,6 +15,10 @@ theme: devdocs
 # Base url that forms 
 baseurl: ""
 
+source: src
+
+plugins_dir: ./_plugins
+
 # Parameters for the version switcher. Numeric values must be wrapped in quotes.
 #
 version: "2.3"
@@ -85,6 +89,7 @@ defaults:
       group: page-builder
       github_link: false
       feedback_link: false
+      ee_only: true
 
   - 
       scope:
@@ -93,6 +98,7 @@ defaults:
         group: page-builder
         github_link: false
         feedback_link: false
+        ee_only: true
 
   -
     scope:
@@ -102,11 +108,6 @@ defaults:
       github_link: false
       feedback_link: false
 
-  -
-    scope:
-      path: guides/v2.2
-    values:
-      sitemap: false
 
 ##########################
 # Plugins and extensions #
@@ -139,7 +140,6 @@ relative_links:
     - guides
     - redoc
     - release
-    - tmp
     - 404.md
     - availability.md
     - magento-techbull.md
@@ -192,40 +192,9 @@ mage2bloburl: https://github.com/magento/magento2/blob
 m1xgdeurl: /guides/m1x
 m1xgithuburl: https://github.com/magento/devdocs-m1/tree/master
 
-# 2.2 variables
-gdeurl22: /guides/v2.2/
-githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
-
 # 2.3 variables
 gdeurl23: /guides/v2.3/
-githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
+githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/
 
-
-##########
-# Ignore #
-##########
-#
-# The path patterns excluded during site generation
-#
-exclude:
-  - scss
-  - bin
-  - node_modules
-  - vendor
-  - .github
-  - .idea
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - rakelib
-  - README.md
-  - _plugins
-  - tmp
-  - lib
-  - rakelib
-  - scripts
-  - redirects.json
-  - Docfile.yml
-
+# Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+downloads: https://devdocs.magento.com/download

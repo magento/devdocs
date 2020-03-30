@@ -1,1 +1,0 @@
-../../../v2.2/comp-mgr/extens-man/extensman-new-purchase.md

@@ -1,0 +1,128 @@
+label: Software Update Guide
+pages:
+
+    - label: Upgrade the Magento application and modules
+      url: /comp-mgr/bk-compman-upgrade-guide.html
+
+    - label: Prerequisites
+      url: /comp-mgr/prereq/prereq_compman.html
+      children:
+
+        - label: Set ulimit for the web server user
+          url: /comp-mgr/prereq/prereq_compman-ulimit.html
+
+        - label: Set up cron for update and upgrade
+          url: /comp-mgr/prereq/prereq_cron.html
+
+        - label: Update and upgrade checklist
+          url: /comp-mgr/prereq/prereq_compman-checklist.html
+
+    - label: Magento Marketplace example
+      url: /comp-mgr/marketplace/marketplace.html
+
+    - label: Run the Module Manager
+      url: /comp-mgr/module-man/compman-checklist.html
+      children:
+
+        - label: Start the Module Manager
+          url: /comp-mgr/module-man/compman-start.html
+
+        - label: Step 1. Readiness check
+          url: /comp-mgr/module-man/compman-readiness.html
+
+        - label: Step 2. Back up the file system and database
+          url: /comp-mgr/module-man/compman-backup.html
+
+        - label: Enable/Disable
+          url: /comp-mgr/module-man/modman-enable-disable.html
+
+    - label: Run the Extension Manager
+      url: /comp-mgr/extens-man/extensman-checklist.html
+      children:
+
+        - label: Start the Extension Manager
+          url: /comp-mgr/extens-man/extensman-main-pg.html
+
+        - label: Step 1. Readiness check
+          children:
+
+            - label: Readiness check success
+              url: /comp-mgr/extens-man/extensman-readiness-success.html
+
+            - label: Readiness check failure
+              url: /comp-mgr/extens-man/extensman-readiness-fail.html
+
+            - label: Readiness check with multiple extension updates
+              url: /comp-mgr/extens-man/extensman-readiness-multi.html
+
+        - label: Step 2. Back up the file system and database
+          url: /comp-mgr/extens-man/extensman-backup.html
+
+        - label: Step 3
+          children:
+
+            - label: Install
+              url: /comp-mgr/extens-man/extensman-new-purchase.html
+
+            - label: Extension Update
+              url: /comp-mgr/extens-man/extensman-update.html
+
+            - label: Remove or Keep Data
+              url: /comp-mgr/extens-man/extensman-uninst-data.html
+
+        - label: Step 4. Uninstall
+          url: /comp-mgr/extens-man/extensman-uninst-final.html
+
+    - label: Upgrade from Magento Open Source to Magento Commerce
+      url: /comp-mgr/upgrader/ce-ee-upgrade-start.html
+
+    - label: Command-line upgrade
+      url: /comp-mgr/cli/cli-upgrade.html
+      children:
+
+        - label: (Optional) Upgrade using the custom script
+          url: /comp-mgr/cli/upgrade-with-script.html
+          
+        - label: (Experimental) Upgrade using the composer plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
+
+        - label: Upgrade with sample data
+          url: /comp-mgr/cli/cli-rc1-samp.html
+
+    - label: Run System Upgrade
+      url: /comp-mgr/upgrader/upgrade-checklist.html
+      children:
+
+        - label: Start System Upgrade
+          url: /comp-mgr/upgrader/upgrade-start.html
+
+        - label: Step 1. Select versions to upgrade
+          url: /comp-mgr/upgrader/upgrade-main-pg.html
+
+        - label: Step 2. Readiness check
+          url: /comp-mgr/upgrader/upgrade-readiness.html
+
+        - label: Step 3. Back up the file system and database
+          url: /comp-mgr/upgrader/upgrade-backup.html
+
+        - label: Step 4. Upgrade
+          url: /comp-mgr/upgrader/upgrade.html
+
+    - label: Applying patches
+      url: /comp-mgr/patching.html
+    
+    - label: Update the updater application
+      url: /comp-mgr/updater/update-updater.html
+
+    - label: Troubleshooting suggestions
+      url: /comp-mgr/trouble/tshoot.html
+      children:
+
+        - label: Sorry, we can't take that action right now
+          url: /comp-mgr/trouble/cman/were-sorry.html
+
+        - label: Roll back after update failure
+          url: /comp-mgr/trouble/cman/update-fail.html
+
+        - label: Maintenance mode options for upgrade
+          url: /comp-mgr/trouble/cman/maint-mode.html

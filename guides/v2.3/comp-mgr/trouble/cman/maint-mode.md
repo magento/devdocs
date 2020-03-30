@@ -1,1 +1,0 @@
-../../../../../guides/v2.2/comp-mgr/trouble/cman/maint-mode.md

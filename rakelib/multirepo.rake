@@ -1,21 +1,29 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 namespace :multirepo do
   desc 'Create a file tree for devdocs website and get all required content'
   task :init do
-    ssh = 'git@github.com:'
-    https = 'https://${token}@github.com/'
-    protocol =
-      if ENV['token']
-        https
-      else
-        ssh
-      end
-
+    protocol = ENV['token'] ? "https://#{ENV['token']}@github.com/" : 'git@github.com:'
     content_map = DocConfig.new.content_map
     content_map.each do |subrepo|
-      sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
+      repo_url = protocol + subrepo['repository'] + '.git'
+      add_subrepo(subrepo['directory'], repo_url , subrepo['branch'], subrepo['filter'])
     end
+  end
+
+  desc 'Reinitialize subrepositories. CAUTION: This will remove directories and associated git repositories listed in Docfile'
+  task reinit: %w[clean] do
+    content_map = DocConfig.new.content_map
+    content_map.each do |subrepo|
+      if subrepo['directory']
+        puts "Removing #{subrepo['directory']}".yellow
+        sh 'rm', '-rf', subrepo['directory']
+      end
+    end
+    Rake::Task['init'].invoke
   end
 
   desc 'Add multirepo docs providing shell arguments "dir=<directory where to init a repo>", "repo=<SSH URL>", "branch=<branch to checkout>", "filter=<true/false>" ("true" by default) to 1) filter content if "true" or 2) add content from the entire repository if "false".'
@@ -25,11 +33,21 @@ namespace :multirepo do
     branch = ENV['branch']
     filter = ENV['filter']
 
-    abort 'Provide a directory name for the multirepo docs. Example: dir=mftf' unless dir
+    abort 'Provide a directory name for the multirepo docs. Example: dir=src/mftf' unless dir
     abort "'#{dir}' directory already exists" if Dir.exist? dir
     abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git' unless repo
     abort 'Provide a branch name for the multirepo docs. Example: branch=master' unless branch
 
-    sh "./scripts/docs-from-code.sh #{dir} #{repo} #{branch} #{filter}"
+    add_subrepo(dir, repo, branch, filter)
+  end
+end
+
+def add_subrepo(dir, repo, branch, filter)
+  filter_text = filter ? 'some' : 'all'
+  puts "Checking out #{filter_text} files from #{repo} (#{branch} branch) to the #{dir} directory ...".magenta
+  sh('./scripts/docs-from-code.sh', dir, repo, branch, filter.to_s) do |ok,res|
+    if !ok
+      abort "Couldn't checkout files for the #{repo} project".red
+    end
   end
 end

@@ -1,0 +1,129 @@
+label: JavaScript Developer Guide
+pages:
+    - label: Introduction
+      url: /javascript-dev-guide/bk-javascript-dev-guide.html
+
+    - label: Conventional notations used in this Guide
+      url: /javascript-dev-guide/conventions_js.html
+
+    - label: JavaScript
+      url: /javascript-dev-guide/javascript/js_overview.html
+      children:
+
+        - label: JavaScript resources in Magento
+          url: /javascript-dev-guide/javascript/js-resources.html
+
+        - label: RequireJS in Magento
+          url: /javascript-dev-guide/javascript/requirejs.html
+
+        - label: Calling and initializing JavaScript
+          url: /javascript-dev-guide/javascript/js_init.html
+
+        - label: Frontend product repository
+          url: /javascript-dev-guide/javascript/product-frontend-storage.html
+
+        - label: Use custom JavaScript
+          url: /javascript-dev-guide/javascript/custom_js.html
+
+        - label: Locate JavaScript components
+          url: /javascript-dev-guide/javascript/js_debug.html
+
+        - label: Customizing JavaScript illustration
+          url: /javascript-dev-guide/javascript/js_practice.html
+
+        - label: Using JavaScript mixins
+          url: /javascript-dev-guide/javascript/js_mixins.html
+
+    - label: Magento jQuery widgets
+      url: /javascript-dev-guide/widgets/jquery-widgets-about.html
+      children:
+
+        - label: Accordion widget
+          url: /javascript-dev-guide/widgets/widget_accordion.html
+
+        - label: Alert widget
+          url: /javascript-dev-guide/widgets/widget_alert.html
+
+        - label: Breadcrumbs widget
+          url: /javascript-dev-guide/widgets/widget-breadcrumbs.html
+
+        - label: Calendar widget
+          url: /javascript-dev-guide/widgets/widget_calendar.html
+
+        - label: Collapsible widget
+          url: /javascript-dev-guide/widgets/widget_collapsible.html
+
+        - label: Confirmation widget
+          url: /javascript-dev-guide/widgets/widget_confirm.html
+
+        - label: Dropdown widget
+          url: /javascript-dev-guide/widgets/widget_dropdown.html
+
+        - label: DropdownDialog widget
+          url: /javascript-dev-guide/widgets/widget_dialog.html
+
+        - label: FolderTree widget
+          url: /javascript-dev-guide/widgets/widget-folder-tree.html
+
+        - label: Gallery widget
+          url: /javascript-dev-guide/widgets/widget_gallery.html
+
+        - label: List widget
+          url: /javascript-dev-guide/widgets/widget_list.html
+
+        - label: Loader widget
+          url: /javascript-dev-guide/widgets/widget_loader.html
+
+        - label: Magnifier widget
+          url: /javascript-dev-guide/widgets/widget_gallery_mg.html
+
+        - label: MediaUploader widget
+          url: /javascript-dev-guide/widgets/widget-media-uploader.html
+
+        - label: Menu widget
+          url: /javascript-dev-guide/widgets/widget_menu.html
+
+        - label: Modal widget
+          url: /javascript-dev-guide/widgets/widget_modal.html
+
+        - label: Multiselect widget
+          url: /javascript-dev-guide/widgets/widget-multiselect.html
+
+        - label: Navigation widget
+          url: /javascript-dev-guide/widgets/widget_navigation.html
+
+        - label: PasswordStrengthIndicator widget
+          url: /javascript-dev-guide/widgets/widget_password_strength_indicator.html
+
+        - label: PopupWindow widget
+          url: /javascript-dev-guide/widgets/widget-popup-window.html
+
+        - label: Prompt widget
+          url: /javascript-dev-guide/widgets/widget_prompt.html
+
+        - label: QuickSearch widget
+          url: /javascript-dev-guide/widgets/widget_quickSearch.html
+
+        - label: RedirectUrl widget
+          url: /javascript-dev-guide/widgets/widget_redirectUrl.html
+
+        - label: RemainingCharacters widget
+          url: /javascript-dev-guide/widgets/widget-remaining-characters.html
+
+        - label: RowBuilder widget
+          url: /javascript-dev-guide/widgets/widget-row-builder.html
+
+        - label: Sortable widget
+          url: /javascript-dev-guide/widgets/widget-sortable.html
+
+        - label: Sticky widget
+          url: /javascript-dev-guide/widgets/widget_sticky.html
+
+        - label: Tabs widget
+          url: /javascript-dev-guide/widgets/widget_tabs.html
+
+        - label: ToggleAdvanced widget
+          url: /javascript-dev-guide/widgets/widget_toggle.html
+
+        - label: TrimInput widget
+          url: /javascript-dev-guide/widgets/widget-trim-input.html
