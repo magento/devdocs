@@ -145,25 +145,29 @@ exclude:
 ## Docker (docker-compose)
 
 Docker provides a quick and easy way to build and preview the documentation. You do not need to install Ruby dependencies manually. This Docker solution launches Jekyll inside the container in `watch` mode.
-ruby dependency manually. The provided setup starts Jekyll inside the container in watch mode.
-Every change of a markdown file will automatically trigger a rebuild of the documentation.
 
-1. Install [Docker](https://www.docker.com/get-started). If you have Docker installed, make sure Docker is running.
+Every change of a markdown file automatically triggers a rebuild of the documentation.
+
+1. Install [Docker](https://www.docker.com/get-started). If you have Docker installed, launch the Docker application.
+
+1. Clone the DevDocs repository.
+
+1. Change to the `devdocs` directory.
 
 1. Build and start the Docker environment.
 
-```bash
-docker-compose up
-```
+   ```bash
+   docker-compose up
+   ```
 
 1. Use the server address URL provided by the system response.
 
-For example:
+   For example:
 
-```terminal
-jekyll_1  |     Server address: http://127.0.0.1:4000/
-jekyll_1  |   Server running... press ctrl-c to stop.
-```
+   ```terminal
+   jekyll_1  |     Server address: http://127.0.0.1:4000/
+   jekyll_1  |   Server running... press ctrl-c to stop.
+   ```
 
 1. Press `Ctrl+C` in the serve terminal to stop the server.
 

@@ -4,8 +4,61 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Mar 4 10:30:29 2020
+updated: Mon Mar 23 12:42:59 2020
 entries:
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
+- description: Added instructions for setting up a [GitLab integration](https://devdocs.magento.com/cloud/integrations/gitlab-integration.html) to manage source
+    files for Magento Cloud projects.
+  versions: 2.x
+  type: New topic
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6876
+- description: Added a new topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-form.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 19, 2020
+  link: https://github.com/magento/devdocs/pull/6871
+- description: Added a new topic about how to create an integration using the [GuzzleHttp](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-integration-with-api.html) external API to use some external Web Services.
+  versions: 2.3.x
+  type: New topic
+  date: March 18, 2020
+  link: https://github.com/magento/devdocs/pull/6859
+- description: Added the 'Disable a cron' section to the [Custom cron job and cron
+    group reference](https://devdocs.magento.com/guides/v2.3/config-guide/cron/custom-cron-ref.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 16, 2020
+  link: https://github.com/magento/devdocs/pull/6863
+- description: Added topic for [ColumnsResize UI](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6838
+- description: Added execution order examples to [Plugin (Interceptors)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6811
+- description: Improved the instructions to configure Cloud Starter projects to use
+    New Relic to add alternative instructions for users who have access to New Relic
+    and the Magento Admin for a site, but do not have access to configure environment
+    variables through the Magento Cloud project. See [Configure New Relic for Starter
+    environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 11, 2020
+  link: https://github.com/magento/devdocs/pull/6809
+- description: Big rewrite of the [Configure the TinyMCE editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html)
+    topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 9, 2020
+  link: https://github.com/magento/devdocs/pull/6681
 - description: Updated the [Magento Cloud reference topic](https://devdocs.magento.com/cloud/reference/cli-ref-topic.html)
     in the Cloud guide.
   versions: 2.x
