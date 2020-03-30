@@ -33,9 +33,9 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -75,9 +75,9 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -145,9 +145,9 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -327,9 +327,9 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 

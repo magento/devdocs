@@ -30,9 +30,9 @@ where `3` is the `orderid`
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer` `<administrator` `token>`
+`Authorization: Bearer` `<administrator token>`
 
 **Payload:**
 
@@ -57,9 +57,9 @@ An invoice is structurally similar to an order, but an order contains more detai
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer` `<administrator` `token>`
+`Authorization: Bearer <administrator token>`
 
 **Payload:**
 

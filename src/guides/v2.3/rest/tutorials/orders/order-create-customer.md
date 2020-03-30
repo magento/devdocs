@@ -35,7 +35,7 @@ This example shows a simplified way of creating a customer account. Typically, y
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
 **Payload:**
 
@@ -139,7 +139,7 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
 **Payload:**
 

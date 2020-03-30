@@ -58,7 +58,7 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
 **Payload:**
 

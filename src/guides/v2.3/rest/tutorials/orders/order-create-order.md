@@ -31,9 +31,9 @@ Use the `V1/guest-carts/<cartId>/payment-information` endpoint to set the paymen
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -80,9 +80,9 @@ where `3` is the `orderid`
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer` `<administrator` `token>`
+`Authorization: Bearer <administrator token>`
 
 **Payload:**
 

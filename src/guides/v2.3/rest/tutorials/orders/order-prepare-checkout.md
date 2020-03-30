@@ -34,9 +34,9 @@ Use the `V1/guest-carts/<cartId>/estimate-shipping-methods` endpoint to estimate
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -120,9 +120,9 @@ Use the `V1/guest-carts/<cartId>/shipping-information` endpoint to set the billi
 
 **Headers:**
 
-`Content-Type`: `application/json`
+`Content-Type: application/json`
 
-`Authorization`: `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
