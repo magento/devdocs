@@ -4,8 +4,79 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Mar 23 12:42:59 2020
+updated: Mon Mar 30 10:07:01 2020
 entries:
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: 
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: Fixed filename and path to the 'webapi.xsd' file in [Configure services
+    as web API](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 27, 2020
+  link: https://github.com/magento/devdocs/pull/6905
+- description: Added code example for block visibility in [Common layout customization
+    tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html#ref_config_block).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 27, 2020
+  link: https://github.com/magento/devdocs/pull/6940
+- description: Updated code for HTTP Action interfaces in [Update the page URL type](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/howto/update-url-type.html)
+    and [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html<br/>).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 27, 2020
+  link: https://github.com/magento/devdocs/pull/6933
+- description: Updated the [Install, manage, and upgrade extensions](https://devdocs.magento.com/cloud/howtos/install-components.html)
+    and [B2B setup topic](https://devdocs.magento.com/cloud/configure/setup-b2b.html)
+    in the Cloud guide. Improved some notes and reduced redundant material related
+    to Cloud branching.
+  versions: 2.x
+  type: Technical changes
+  date: March 26, 2020
+  link: https://github.com/magento/devdocs/pull/6888
+- description: Clarified cURL sample code in [Token-based authentication](https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html#token-example).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 25, 2020
+  link: https://github.com/magento/devdocs/pull/6918
+- description: "Added a 'ignoreTmpls property' section to [Template Literals
+    in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
+    page."
+  versions: 2.3.x
+  type: 
+  date: March 25, 2020
+  link: https://github.com/magento/devdocs/pull/6873
+- description: Available now! Amazon Sales Channel 4.0 introduces a new [Amazon Sales
+    Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-sales-channel-home.html)
+    home page, a new [store dashboard](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-store-dashboard.html),
+    a streamlined [onboarding process](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-onboarding-home.html),
+    and new [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
+  versions: 2.3.x
+  type: 
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6915
+- description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.
+    See the following release notes for additional information:<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html<br/>-->
+  versions: 2.3.x
+  type: 
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6913
+- description: Removed unneeded 'int' parameter in the code sample in [Custom import
+    entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6906
+- description: Added code example for the Symphony 'name' variable in [How to add
+    CLI commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6911
 - description: Added a 'Declaring the new custom no-route processor' section to the
     [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
   versions: 2.3.x
