@@ -324,6 +324,16 @@ Any block can be configured to show or not based on a [Magento/Config/Model/Conf
 </block>
 ```
 
+The visibility can also be adjusted using the [ACL Resource]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html). Although it is used mostly in the admin area, the same approach works for the storefront as well.
+
+```xml
+<block class="Namespace\Module\Block\Type" name="block.example" aclResource="Vendor_ModuleName::acl_name">
+    <!-- ... -->
+</block>
+```
+
+In the admin area, this is implemented for [global search]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Backend/view/adminhtml/layout/default.xml) and for [admin notification list]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AdminNotification/view/adminhtml/layout/default.xml).
+
 ## Set the template used by a block {#set_template}
 
 There are two ways to set the template for a block:
