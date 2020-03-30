@@ -78,7 +78,7 @@ entries:
   type: Major update
   date: March 16, 2020
   link: https://github.com/magento/devdocs/pull/6863
-- description: Added topic for [ColumnsResize UI Compnent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
+- description: Added topic for the [ColumnsResize UI Compnent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
   versions: 2.3.x
   type: New topic
   date: March 12, 2020
