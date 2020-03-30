@@ -8,9 +8,9 @@ functional_areas:
 
 Static content deployment (SCD) has a significant impact on the store deployment process that depends on how much content to generate—such as images, scripts, CSS, videos, themes, locales, and web pages—and when to generate the content. For example, the default strategy generates static content during the [deploy phase]({{ site.baseurl }}/cloud/deploy/cloud-deployment-process.html#-deploy-phase) when the site is in maintenance mode; however, this deployment strategy takes time to write the content directly to the mounted `pub/static` directory. You have several options or strategies to help you improve the deployment time depending on your needs.
 
-## Optimize javascript and css content builds
+## Optimize JavaScript and HTML content
 
-You can use bundling and minification to build optimized javascript and html content for static content deployment.
+You can use bundling and minification to build optimized JavaScript and HTML content during static content deployment.
 
 ### Bundle JavaScript files
 
@@ -26,7 +26,7 @@ To install and configure Baler:
 1. Use the following Baler extension information to [install the the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install) in a {{site.var.data.ece}} development branch.
 
    ```text
-   module name: fastly/magento2
+   module name: magento/module-baler
    repository: https://github.com/magento/m2-baler
    ```
 
@@ -45,7 +45,7 @@ To install and configure Baler:
    {:.bs-callout-tip}
    If you do not have a copy of the `config.php` file in your development branch, see [Recommended procedure to manage your settings]({{site.baseurl}}/cloud/live/sens-data-over.html#cloud-config-specific-recomm) to learn how to generate and use this file to manage Magento store configuration for Cloud projects.
 
-1. Update your `.magento.env.yaml` environment configuration file to enable the SCD_USE_BALER option during the build process:
+1. Update your `.magento.env.yaml` environment configuration file to enable the `SCD_USE_BALER` option during the build process:
 
    >  `.magento.env.yaml`
 
@@ -62,13 +62,18 @@ To install and configure Baler:
 
    ```yaml
    hooks:
-      build: |
-         unset NPM_CONFIG_PREFIX
-         curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
-         export NVM_DIR="$HOME/.nvm"
-         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-         nvm install --lts=dubnium
-   ```
+       build: |
+           set -e
+        
+           unset NPM_CONFIG_PREFIX
+           curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
+           export NVM_DIR="$HOME/.nvm"
+           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+           nvm install --lts=dubnium
+           
+           php ./vendor/bin/ece-tools build:generate
+           php ./vendor/bin/ece-tools build:transfer
+   
 
 1. Add, commit, and push your code changes.
 
