@@ -10,7 +10,7 @@ Product recommendations are a powerful marketing tool you can use to increase co
 
 ## Architectural overview
 
-Magento's product recommendations are made up of two main blocks: Magento and SaaS services. The Magento side includes the storefront, which contains the event collector and page layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. The SaaS services side includes the recommendations service and Adobe Sensei.
+At a high level, Magento's product recommendations are made up of two main blocks: Magento and SaaS services. The Magento side includes the storefront, which contains the event collector and page layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. The SaaS services side includes the recommendations service and Adobe Sensei.
 
    ![Product recommendations architecture diagram]({{ page.baseurl }}/recommendations/images/arch-diag-sensei.png)
 
@@ -34,7 +34,7 @@ Product recommendations require the following data:
 
 When you install the `product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating product recommendations for each recommendation type. The product recommendations service then deploys those recommendations to your storefront.
 
-### Install Product Recommendations {#install}
+### Install product recommendations {#install}
 
 1. Install the `magento/product-recommendations` module with Composer:
 
@@ -57,7 +57,7 @@ When you install the `product-recommendations` module, Adobe Sensei aggregates t
 
 1. Now that you have installed and configured the recommendations module, [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html).
 
-## Update your Product Recommendations installation
+## Update your product recommendations installation
 
 Throughout the EAP, we will make updates to the `product-recommendations` module. When we notify you of an update, run the following:
 
@@ -65,7 +65,7 @@ Throughout the EAP, we will make updates to the `product-recommendations` module
 composer update magento/product-recommendations --with-dependencies
 ```
 
-## Uninstall Product Recommendations
+## Uninstall product recommendations
 
 If needed, you can [uninstall the product-recommendations module]({{ site.baseurl }}/guides/v{{ site.version }}/install-gde/install/cli/install-cli-uninstall-mods.html).
 
