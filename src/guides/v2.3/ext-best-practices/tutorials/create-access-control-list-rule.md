@@ -130,7 +130,7 @@ It is enough to set the block's value for `aclResource` attribute:
 </block>
 ```
 
-The `view/adminhtml/layout/custommenu_view_index.xml` example file below contains two blocks that shows information to the end user. One of which is accessible only to users with ACL `Vendor_MyModule::view_additional` allowed.
+The `view/adminhtml/layout/custommenu_view_index.xml` example file below contains two blocks that show information to the end-user. One of which is accessible only to users with ACL `Vendor_MyModule::view_additional` allowed.
 
 ```xml
 <?xml version="1.0"?>
