@@ -14,7 +14,7 @@ You can use bundling and minification to build optimized JavaScript and HTML con
 
 ### Bundle JavaScript files
 
-JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
+Javascript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
 
 For {{site.data.var.ece}} projects, you can use the Magento [Baler](https://github.com/magento/baler) extension to scan generated JavaScript code and create an optimized JavaScript bundle during the build process. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
 
@@ -23,23 +23,30 @@ You must install and configure your project to use Baler.
 {:.procedure}
 To install and configure Baler:
 
-1. Use the following Baler extension information to [install the the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install) in a {{site.var.data.ece}} development branch.
+1. Use the following Baler extension information to [install the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install) in a {{site.var.data.ece}} development branch.
 
    ```text
    module name: magento/module-baler
    repository: https://github.com/magento/m2-baler
    ```
 
-1. In the same environment, update the `config.php` project configuration file with the following settings to enable the javascript bundling options required to use Baler.
+1. In the same environment, update the `config.php` project configuration file with the following settings required to use Baler for JavaScript bundling.
 
    > `config.php`
 
    ```php
-       'js' => [
-         'merge_files' => '0',
-         'minify_files' => '0',
-         'enable_js_bundling' => '0',
-         'enable_baler_js_bundling' => '1',
+   'system' => [
+       'default' => [
+           'dev' => [
+               'js' => [
+                   'merge_files' => '0',
+                   'minify_files' => '0',
+                   'enable_js_bundling' => '0',
+                   'enable_baler_js_bundling' => '1',
+               ],
+            ],
+       ],
+   ],
    ```
 
    {:.bs-callout-tip}
@@ -51,12 +58,11 @@ To install and configure Baler:
 
    ```yaml
    stage:
-      build:
-         SCD_USE_BALER:
-            - "index.php"
+       build:
+           SCD_USE_BALER: true
    ```
 
-1. Update the .magento.app.yaml `hooks` configuration with the Node Version Manager (nvm) configuration that Baler requires to generate the Javascript bundle.
+1. In the `.magento.app.yaml` file, update the `hooks` configuration to install the Node Version Manager (nvm) and the Node version required to use Baler.
 
    > `.magento.app.yaml`
 
@@ -64,16 +70,16 @@ To install and configure Baler:
    hooks:
        build: |
            set -e
-        
+
            unset NPM_CONFIG_PREFIX
            curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.2/install.sh | dash
            export NVM_DIR="$HOME/.nvm"
            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
            nvm install --lts=dubnium
-           
+
            php ./vendor/bin/ece-tools build:generate
            php ./vendor/bin/ece-tools build:transfer
-   
+   ```
 
 1. Add, commit, and push your code changes.
 
