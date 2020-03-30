@@ -182,7 +182,7 @@ To set navigation using breakpoints, see the following example:
 
 ## Tooltip element
 
-To create a tooltip element, you may use the `.lib-tooltip()` mixin.
+To create a tooltip element, use the `.lib-tooltip()` mixin.
 
 | Option | Default |
 | --- | --- |
@@ -205,7 +205,7 @@ To create a tooltip element, you may use the `.lib-tooltip()` mixin.
 
 ### Result
 
-As result, we see the tooltip placed on the right side.
+As result, the tooltip placed on the right side.
 
 ![Tooltip element]({{ site.baseurl }}/common/images/fdg/tooltip-element-result.png)
 
