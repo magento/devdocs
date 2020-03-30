@@ -62,7 +62,7 @@ entries:
   type: New topic
   date: March 23, 2020
   link: https://github.com/magento/devdocs/pull/6876
-- description: Added a new topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-container.html).
+- description: Added a topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-container.html).
   versions: 2.3.x
   type: New topic
   date: March 19, 2020
