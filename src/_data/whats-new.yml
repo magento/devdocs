@@ -44,7 +44,7 @@ entries:
   date: March 24, 2020
   link: https://github.com/magento/devdocs/pull/6913
 - description: Added a 'Declaring the new custom no-route processor' section to the
-    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html).
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
   versions: 2.3.x
   type: Major Update
   date: March 23, 2020
