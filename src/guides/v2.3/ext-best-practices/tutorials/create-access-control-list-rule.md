@@ -81,7 +81,7 @@ In your module, create the `etc/adminhtml/menu.xml` file. This file defines a me
 | `module` | Module which containing the current menu |
 | `sortOrder` | Position in which menu to be displayed |
 | `parent` | The another menu which is parent of current menu |
-| `action` | Url of the page which needs to be display after click the menu. It should be in following format: `front_name/controller_path/action` |
+| `action` | Url of the page which needs to be displayed after clicking the menu. It should be in following format: `front_name/controller_path/action` |
 | `resource` | ACL rule to restrict the access |
 
 Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
