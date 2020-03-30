@@ -246,9 +246,10 @@ For example, if your logo file is `my_logo.png` sized 300x300px, you need to dec
     <body>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
-                <argument name="logo_img_width" xsi:type="number">300</argument>
-                <argument name="logo_img_height" xsi:type="number">300</argument>
+                <argument name="logo_src" xsi:type="string">images/my_logo.png</argument>
+                <argument name="logo_width" xsi:type="number">300</argument>
+                <argument name="logo_height" xsi:type="number">300</argument>
+                <argument name="logo_alt" xsi:type="string">Logo name</argument>
             </arguments>
         </referenceBlock>
     </body>
