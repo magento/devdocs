@@ -6,11 +6,11 @@ redirect_from:
 ee_only: True
 ---
 
-Product recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Magento's product recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
+Product Recommendations are a powerful marketing tool you can use to increase conversions, boost revenue, and stimulate shopper engagement. Product Recommendations are surfaced on the storefront in the form of units such as “Customers who viewed this product also viewed”, “Customers who bought this product also bought", "Recommended for you", and so on. Magento's Product Recommendations are powered by [Adobe Sensei](https://www.adobe.com/sensei.html), which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper.
 
 ## Architectural overview
 
-At a high level, Magento's product recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the the SaaS services side.
+At a high level, Magento's Product Recommendations are deployed as a SaaS service. The Magento side includes the storefront, which contains the event collector and recommendations layout template, and the backend, which includes the Data Services, SaaS Export module, and the Admin UI. Adobe Sensei intelligence services are leveraged on the the SaaS services side.
 
    ![Product recommendations architecture diagram]({{ page.baseurl }}/recommendations/images/arch-diag-sensei.png)
 
@@ -26,15 +26,15 @@ Sign up through [this form](https://forms.gle/VE9VSSj9TMUTJ41u6). Within 24 hour
 
 ### Types of data
 
-Product recommendations require the following data:
+Product Recommendations require the following data:
 
 -  **Behavioral** - Data from a shopper's engagement on your site, such as product views, items added to a cart, and purchases. Magento and Adobe Sensei do not collect personally identifiable information.
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 
-When you install the `product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating product recommendations for each recommendation type. The product recommendations service then deploys those recommendations to your storefront.
+When you install the `product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating Product Recommendations for each recommendation type. The Product Recommendations service then deploys those recommendations to your storefront.
 
-### Install product recommendations {#install}
+### Install Product Recommendations {#install}
 
 1. Install the `magento/product-recommendations` module with Composer:
 
@@ -57,7 +57,7 @@ When you install the `product-recommendations` module, Adobe Sensei aggregates t
 
 1. Now that you have installed and configured the recommendations module, [create the recommendations in the Admin UI](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html).
 
-## Update your product recommendations installation
+## Update your Product Recommendations installation
 
 Throughout the EAP, we will make updates to the `product-recommendations` module. When we notify you of an update, run the following:
 
@@ -65,7 +65,7 @@ Throughout the EAP, we will make updates to the `product-recommendations` module
 composer update magento/product-recommendations --with-dependencies
 ```
 
-## Uninstall product recommendations
+## Uninstall Product Recommendations
 
 If needed, you can [uninstall the product-recommendations module]({{ site.baseurl }}/guides/v{{ site.version }}/install-gde/install/cli/install-cli-uninstall-mods.html).
 
