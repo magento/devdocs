@@ -492,7 +492,7 @@ class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 }
 ```
 
-Then, in the `cart/item/default.phtml` file get use of the viewModel
+Then, in the `cart/item/default.phtml` file, use the viewModel:
 
 ```php
 /** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
@@ -501,7 +501,8 @@ $viewModel = $block->getData('viewModel');
 $viewModel->canShowAdditionalData();
 ```
 
-{:.bs-callout-info} The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
+{:.bs-callout-info}
+The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
