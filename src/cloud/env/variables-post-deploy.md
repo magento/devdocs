@@ -41,6 +41,19 @@ After you specify the pages to test and commit your changes, the _Time To First 
 
 For redirected paths, the log reports the path of the redirect target instead of the one configured in the environment variable. If you specify an invalid path, the log displays a warning message.
 
+### `WARM_UP_CONCURRENCY`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Specify the number of concurrent requests to send during cache warmup operations to reduce server load. This value limits the number of parallel connections and is useful for environment configurations where the `WARM_UP_PAGES` post-deploy variable specifies a large number of pages for cache preloading.
+
+```yaml
+stage:
+  post-deploy:
+    WARM_UP_CONCURRENCY: 4
+```
+
 ### `WARM_UP_PAGES`
 
 -  **Default**— `index.php`
@@ -130,19 +143,6 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
                - "store-page:/contact-us:1"
                - "store-page:/contact-us:code1|code2"
    ```
-
-### `WARM_UP_CONCURRENCY`
-
--  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
-
-Specify the number of concurrent requests to send during cache warmup operations to reduce server load. This value limits the number of parallel connections and is useful for environment configurations where the `WARM_UP_PAGES` post-deploy variable specifies a large number of pages for cache preloading.
-
-```yaml
-stage:
-  post-deploy:
-    WARM_UP_CONCURRENCY: 4
-```
 
 [hooks section]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [CMS]: https://glossary.magento.com/cms/
