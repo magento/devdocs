@@ -12,9 +12,9 @@ entries:
   type: Major Update
   date: March 30, 2020
   link: https://github.com/magento/devdocs/pull/6947
-- description: "Added a 'ignoreTmpls property' section to [Template Literals
+- description: "Added an 'ignoreTmpls property' section to the [Template Literals
     in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
-    page."
+    topic."
   versions: 2.3.x
   type: Major Update
   date: March 25, 2020
