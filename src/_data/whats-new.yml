@@ -4,7 +4,51 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Mar 23 12:42:59 2020
+updated: Mon Mar 30 08:59:14 2020
+entries:
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: "Added an 'ignoreTmpls property' section to the [Template Literals
+    in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
+    topic."
+  versions: 2.3.x
+  type: Major Update
+  date: March 25, 2020
+  link: https://github.com/magento/devdocs/pull/6873
+- description: Available now! Amazon Sales Channel 4.0 introduces a new [Amazon Sales
+    Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-sales-channel-home.html)
+    home page, a new [store dashboard](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-store-dashboard.html),
+    a streamlined [onboarding process](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-onboarding-home.html),
+    and new [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6915
+- description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.<br/>
+    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-4-open-source.html)<br/>
+    [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-4-commerce.html)<br/>
+    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-3-open-source.html)<br/>
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-3-commerce.html)<br/>
+    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
+    [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
+    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
+    [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
+    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
+    [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.0Commerce.html)
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6913
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
 entries:
 - description: Added a 'Declaring the new custom no-route processor' section to the
     [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
@@ -18,7 +62,7 @@ entries:
   type: New topic
   date: March 23, 2020
   link: https://github.com/magento/devdocs/pull/6876
-- description: Added a new topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-form.html).
+- description: Added a topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-container.html).
   versions: 2.3.x
   type: New topic
   date: March 19, 2020
@@ -34,7 +78,7 @@ entries:
   type: Major update
   date: March 16, 2020
   link: https://github.com/magento/devdocs/pull/6863
-- description: Added topic for [ColumnsResize UI](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
+- description: Added topic for the [ColumnsResize UI Compnent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
   versions: 2.3.x
   type: New topic
   date: March 12, 2020
