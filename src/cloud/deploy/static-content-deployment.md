@@ -56,7 +56,7 @@ To install and configure Baler:
             - "index.php"
    ```
 
-1. Update the .magento.app.yaml `hooks` configuration with the Node Version Manager (nvm) configuration that Baler requires to generate the Javascript bundle:
+1. Update the .magento.app.yaml `hooks` configuration with the Node Version Manager (nvm) configuration that Baler requires to generate the Javascript bundle.
 
    > `.magento.app.yaml`
 
