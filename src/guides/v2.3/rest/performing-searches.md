@@ -231,6 +231,14 @@ fields | items[increment_id,entity_id] | Attributes needs to be return as respon
 
 Not applicable
 
+**Request**
+
+```http
+<host>/rest/V1/orders/?searchCriteria[filter_groups][0][filters][0][field]=status&searchCriteria[filter_groups][0][filters][0][value]=pending&
+searchCriteria[sortOrders][0][field]=increment_id&
+fields=items[increment_id,entity_id,extension_attributes[pending_time]]
+```
+
 **Response:**
 
 Response would be as follows.
