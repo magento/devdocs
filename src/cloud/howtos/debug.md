@@ -56,7 +56,6 @@ To enable Xdebug:
            - redis
            - xsl
            - json
-           - blackfire
            - newrelic
            - sodium
            - xdebug

@@ -195,7 +195,7 @@ To learn more, see [Deployment process]({{ site.baseurl }}/cloud/reference/disco
 
 ### Push to Staging and test {#staging}
 
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 

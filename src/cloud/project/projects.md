@@ -40,13 +40,11 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 
-## Fastly, New Relic, and Blackfire credentials {#integrations}
+## Fastly and New Relic credentials {#integrations}
 
-Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the License Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). The project details display information for your project plan and important licenses and tokens for these integrations. Only the License Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 -  [Fastly](https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
-
--  [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
 -  [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
@@ -63,7 +61,7 @@ To review your integration tokens, IDs, and more:
 
    ![View your project details]({{ site.baseurl }}/common/images/cloud_blackfire-edit-details.png)
 
-1. On your project details page, scroll to and expand **Blackfire** and **New Relic** to review your credentials.
+1. On your project details page, scroll to and expand **New Relic** to review your credentials.
 
    ![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
 

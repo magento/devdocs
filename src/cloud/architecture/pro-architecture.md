@@ -56,13 +56,6 @@ The following table summarizes the differences between environments:
       <td>Yes</td>
       <td>Yes</td>
     </tr>
-   <tr>
-     <td>Includes Blackfire.io</td>
-     <td>Yes</td>
-     <td>Yes</td>
-     <td>Yes</td>
-   </tr>
-   <tr>
      <td>Includes New Relic</td>
      <td>No</td>
      <td>APM</td>
@@ -97,7 +90,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 

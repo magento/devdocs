@@ -16,7 +16,7 @@ Previous step
 
 [Build and deploy on local]({{ site.baseurl }}/cloud/live/live-sanity-check.html)
 
-When you are ready to deploy your store, you must complete deployment and testing on the Staging environment before deploying to Production. The Staging environment provides a near-production environment that includes a database, web server, and all services including Fastly, New Relic, and Blackfire.
+When you are ready to deploy your store, you must complete deployment and testing on the Staging environment before deploying to Production. The Staging environment provides a near-production environment that includes a database, web server, and all services including Fastly and New Relic.
 
 The following information provides the prerequisites to deploy {{ site.data.var.ee }} [Starter](#starter) and [Pro](#pro) projects to the Cloud platform.
 
