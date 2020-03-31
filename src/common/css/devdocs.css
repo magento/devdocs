@@ -36,3 +36,8 @@
   font-size: 1.3em;
   margin: 1.5em 0 0.5em 0;
 }
+
+/* Collapsible styles */
+.collapsible {
+  margin: 0 0 1.3em;
+}
