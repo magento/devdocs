@@ -23,7 +23,7 @@ You must install and configure your project to use Baler.
 {:.procedure}
 To install and configure Baler:
 
-1. Use the following Baler extension information to [install the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install) in a {{site.var.data.ece}} development branch.
+1. Use the following Baler extension information to [install the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install-an-extension) in a {{site.var.data.ece}} development branch.
 
    ```text
    module name: magento/module-baler
