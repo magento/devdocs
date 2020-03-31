@@ -11,8 +11,7 @@ and other resources. Together, CSPs and built-in browser features help prevent:
 
 *  Loading a malicious script from an attacker's website
 *  A malicious inline script from sending credit card info to an attacker's website
-*  Loading a malicious style that will make users click on an element that wasn't supposed to be
-on a page
+*  Loading a malicious style that will make users click on an element that wasn't supposed to be on a page
 
 See [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 and [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
@@ -28,10 +27,7 @@ Magento also permits configuring unique CSPs for specific pages.
 
 CSP can work in two modes:
 
-*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode is
-useful for debugging. By default, CSP violations are written to the browser console, but they can be
-configured to be reported to an endpoint as an HTTP request to collect logs. There are a number of
-services that will collect, store, and sort your store's CSP violations reports for you.
+*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode isuseful for debugging.  By default, CSP violations are written to the browser console, but they can be configured to be reported to an endpoint as an HTTP request to collect logs. There are a number of services that will collect, store, and sort your store's CSP violations reports for you.
 
 *  `restrict mode` - In this mode, Magento acts on any policy violations.
 
