@@ -154,8 +154,8 @@ A column can have the following attributes:
 
 For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
-*  [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
-*  [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
+*  [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html) or [Composer]({{page.baseurl}}/install-gde/composer.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc`
+*  [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
 
