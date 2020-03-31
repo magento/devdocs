@@ -6,7 +6,7 @@ title: Files
 Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
 
 -  Magento 1 tarball (.tgz)
--  Magento 2 ZIP files
+-  Magento 2 ZIP files (.zip)
 -  Image files for logos and galleries
 -  Product Icons
 -  PDF documents for User Guides, Installation Guides, and Reference Guides
@@ -41,8 +41,8 @@ GET /rest/v1/files/uploads/:file_upload_id
 |Field|Type|Description|
 |-----|----|-----------|
 |file_upload_id|URL element|The `file_upload_id` string that was returned when uploading or listing the file.|
-|offset|int|The `file_upload_id` string that was returned when uploading or listing the file.|
-|limit|int|The `file_upload_id` string that was returned when uploading or listing the file.|
+|offset|int|Index of the first element to return in the response. Used for pagination.|
+|limit|int|Maximum number of list items to return in the response. Used for pagination.|
 
 Sorting and filtering parameters are currently not available for this endpoint.
 
@@ -54,23 +54,23 @@ If it is omitted, then a batch response will be returned: an array of records fo
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-stg-api.magento.com/rest/v1/files/uploads/dhsiXjdksW17623
+     https://developer-stg-api.magento.com/rest/v1/files/uploads/5c129cd41ba478.65767699.1
 ```
 
 **Response:**
 
 ```json
 {
-    "file_upload_id" : "dhsiXjdksW17623",
-    "filename" : "acme_one-click-checkout.zip",
-    "content_type" : "application/zip",
-    "size" : 182934,
+    "file_upload_id" : "5c129cd41ba478.65767699.1",
+    "filename" : "icon.png",
+    "content_type" : "image/png",
+    "size" : 123456,
     "malware_status" : "pass",
     "file_hash" : "f53f5db985b8815f1ce6fd4b48a0439a",
     "submission_ids" : [
     ],
     "is_profile_image" : false,
-    "url" : "https://static-mp.magento.com/user/45/23/<hash of mag12345>/pub/1c/ee/<full file_hash>/icon.png"
+    "url" : "https://mp-stg-static.magento.com/user/68/f3/68f360d3516f594fc957c4179ed4a7a872911f07/pub/f5/3f/f53f5db985b8815f1ce6fd4b48a0439a/icon.png"
 }
 ```
 
@@ -99,34 +99,43 @@ POST /rest/v1/files/uploads
 ```
 
 A sample request body of mime type, [multipart/form-data](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2)
-with a boundary string of `----------287032381131322` is shown below:
+with a boundary string of `UNIQUE_BOUNDARY_TOKEN` is shown below:
+
+ {:.bs-callout-info}
+The boundary marker must be part of the request **Content-Type** header and it must be a single line with no line breaks.
+
+```http
+Content-Type: multipart/form-data; boundary=UNIQUE_BOUNDARY_TOKEN
+```
+
+For more info on multipart/form-data requests, see the [IETF specification](https://tools.ietf.org/html/rfc2046#section-5.1)
 
 ```text
-------------287032381131322
+--UNIQUE_BOUNDARY_TOKEN
 Content-Disposition: form-data; name="file[]"; filename="acme_one-click-checkout.zip"
 Content-Type: application/zip
 
 <zip file content here.....>
 
-------------287032381131322
-Content-Disposition: form-data; name="file[]"; filename="one-click-icon.png"
+--UNIQUE_BOUNDARY_TOKEN
+Content-Disposition: form-data; name="file[]"; filename="icon.png"
 Content-Type: image/png
 
 <image file content here.....>
 
-------------287032381131322
+--UNIQUE_BOUNDARY_TOKEN
 Content-Disposition: form-data; name="file[]"; filename="acme-logo.png"
 Content-Type: image/png
 
 <image file content here.....>
 
-------------287032381131322
+--UNIQUE_BOUNDARY_TOKEN
 Content-Disposition: form-data; name="file[]"; filename="user.pdf"
 Content-Type: application/pdf
 
 <pdf file content here....>
 
-------------287032381131322--
+--UNIQUE_BOUNDARY_TOKEN--
 ```
 
 -  Each part has a header and body.
@@ -148,7 +157,7 @@ you may use it in your POST request to upload the files:
 ```bash
 curl -X POST \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     -H "Content-Type: multipart/form-data; boundary=----------287032381131322" \
+     -H "Content-Type: multipart/form-data; boundary=UNIQUE_BOUNDARY_TOKEN" \
      --data-binary  @/tmp/files-payload \
      https://developer-stg-api.magento.com/rest/v1/files/uploads
 ```
@@ -163,28 +172,28 @@ The above request gives an output similar to:
     "filename" : "acme_one-click-checkout.zip",
     "content_type" : "application/zip",
     "size" : 182934,
-    "file_upload_id" : "dhsiXjdksW17623"
+    "file_upload_id" : "5c11e656057b42.97931218.5"
   },
 
   {
-    "filename" : "one-click-icon.png",
+    "filename" : "icon.png",
     "content_type" : "image/png",
     "size" : 37492,
-    "file_upload_id" : "gAdh628bzXv"
+    "file_upload_id" : "5c129cd41ba478.65767699.1"
   },
 
   {
     "filename" : "acme-logo.png",
     "content_type" : "image/png",
     "size" : 6825,
-    "file_upload_id" : "fur7284XcgdcV"
+    "file_upload_id" : "5c644fa344e5d7.04253635.8"
   },
 
   {
     "filename" : "user.pdf",
     "content_type" : "application/pdf",
     "size" : 48392,
-    "file_upload_id" : "j47dVbsFgkl"
+    "file_upload_id" : "5c644d97bb7c41.37505716.6"
   }
 ]
 ```

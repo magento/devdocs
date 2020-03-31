@@ -9,7 +9,7 @@ functional_areas:
 
 You can configure a Magento or third-party service as a web [API](https://glossary.magento.com/api).
 
-To [configure a web API](#configure-webapi), you define [XML](https://glossary.magento.com/xml) elements and attributes in the `webapi.xml` XML configuration file for the [module](https://glossary.magento.com/module) for the service. The `webapi.xml` file for your module specifies an XML schema file for validation. By default, this file is `app/code/<VENDOR>/Webapi/etc/webapi.xsd`.
+To [configure a web API](#configure-webapi), you define [XML](https://glossary.magento.com/xml) elements and attributes in the `webapi.xml` XML configuration file for the [module](https://glossary.magento.com/module) for the service. The `etc/webapi.xsd` file for your module specifies an XML schema file for validation. The default XML schema validation rules are stored in `app/code/Magento/Webapi/etc/webapi.xsd` or `vendor/magento/module-webapi/etc/webapi.xsd` file.
 
 Your module can use the default `webapi.xsd` file or you can create a customized XML schema file for validation.
 
@@ -18,13 +18,10 @@ Users can make REST or SOAP calls to access the [web API](https://glossary.magen
 To configure a web API, read these topics:
 
 -  [Configure a web API](#configure-webapi)
-
+-  [Service Interface Requirements](#service-interface-requirements)
 -  [webapi.xml configuration options](#configuration-options)
-
 -  [Sample webapi.xml file](#sample-webapi)
-
 -  [webapi.xsd XML schema file](#validate-webapi)
-
 -  [Forcing Request Parameters](#forced-parameters)
 
 ## Configure a web API {#configure-webapi}
