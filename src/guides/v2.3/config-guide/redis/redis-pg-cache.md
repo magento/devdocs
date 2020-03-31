@@ -117,7 +117,7 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 ## Redis preload feature
 
 Since Magento stores a lot of configuration data in the Redis cache, we can preload data that is reused between pages.
-Redis uses the `pipeline` in order to composite load requests. 
+Redis uses the `pipeline` in order to composite load requests.
 Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUGIN_LIST`,and `EAV_ENTITY_TYPES` should include the database prefix.
 
 ```php
@@ -147,7 +147,7 @@ Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUG
     ]
 ]
 ```
- 
+
 ## Basic verification {#redis-verify}
 
 {% include config/redis-verify.md %}
