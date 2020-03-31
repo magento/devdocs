@@ -54,7 +54,7 @@ Refer to the [RabbitMQ/Erlang version matrix](https://www.rabbitmq.com/which-erl
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-Refer to the RabbitMQ install page to get the latest supported vesion. Magento 2.3 supports RabbitM 3.8.x.
+Refer to the RabbitMQ install page to get the latest supported vesion. Magento 2.3 supports RabbitMQ 3.8.x.
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
