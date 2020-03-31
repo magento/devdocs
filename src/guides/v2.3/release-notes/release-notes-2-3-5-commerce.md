@@ -127,6 +127,8 @@ The Google Shopping ads Channel bundled extension has reached end-of-life and ha
 
 ### B2B
 
+This release includes bug fixes that are described in B2B release notes.
+
 ### Vendor-developed extension enhancements
 
 This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
@@ -143,7 +145,7 @@ Yotpo is now integrated with Page Builder.
 
 This release of Vertex includes the following new feature and enhancements:
 
-**Address Validation**. Addresses that are created or edited in the Customer Account are now validated when the module is enabled.
+*  **Address Validation**. Addresses that are created or edited in the Customer Account are now validated when the module is enabled.
 
 *  **Admin Configuration**.  Flexible Field dropdown options are now sorted alphabetically by the current Admin user's locale.
 
@@ -170,6 +172,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  You can now successfully remove a website along with the website’s scope-specific configuration settings in app/etc/config.php as expected. Previously, when you tried to remove the website, the operation failed, and Magento displayed this error: `The website with code xxx that was requested wasn't found. Verify the website and try again`. Additionally, Magento displayed this error on the storefront:  `Config files have changed. Run app:config:import or setup:upgrade command to synchronize configuration`. [GitHub-24061](https://github.com/magento/magento2/issues/24061)
 
 <!--- MC-29795-->
+
+*  Configuration settings that are disabled in index.php are no longer editable from the Admin. 
 
 ### Adobe stock integration
 
@@ -219,8 +223,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### B2B
 
-<!--- MC-22684-->
-
 <!--- MC-30049-->
 
 *  Administrators can now create a Shared Catalog when Indexer Dimension Mode is set to `website`. Previously, Magento displayed this error: `Could not save shared catalog`.
@@ -243,7 +245,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22856-->
 
-*  When a bundled product is disabled from the Product list after being added to the shopping cart, Magento now displays the **Checkout** button in the cart as expected. Previously, when a bundle product was disabled from the Product page after being added to the cart,  Magento displayed an error, and the cart did not display a **Checkout** button. [GitHub-25484](https://github.com/magento/magento2/issues/25484)
+*  When a bundle product is disabled and then re-enabled from the Admin Product grid after being added to the shopping cart, Magento now displays the **Checkout** button in the cart as expected. Previously, when a bundle product was disabled and then re-enabled from the Admin Product grid after being added to the cart, Magento displayed an error, and the cart did not display a **Checkout** button. [GitHub-25484](https://github.com/magento/magento2/issues/25484)
 
 <!--- MC-22684-->
 
@@ -267,7 +269,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29870-->
 
-*  Products can be added to cart from Quick Order after a user’s Customer Group is updated. Previously, customers whose customer group had been updates could not add a product to the cart, and Magento displayed this error: `The SKU was not found in the catalog`.
+*  Products can be added to cart from Quick Order after a user’s Customer Group is updated. Previously, customers whose customer group had been updated could not add a product to the cart, and Magento displayed this error: `The SKU was not found in the catalog`.
 
 <!--- MC-22875-->
 
@@ -279,19 +281,19 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22842-->
 
-*  Merchants can now use a custom attribute named `company` when creating a new Company account. Previously, Magento displayed a 500 error when you named a custom attribute named `company`.
+*  Merchants can now use a custom attribute named `company` when creating a new Company account. Previously, Magento displayed a 500 error when you named a custom attribute `company`.
 
 <!--- MC-21010-->
 
-*  You can now use the  `/V1/guest-carts/:cartId/items` endpoint to change the quantity of products in the cart on the Admin when the **Allowed Qty Below 0 and Notify Customer** setting is enabled for the product.
+*  You can now use the  `/V1/guest-carts/:cartId/items` endpoint to change the quantity of products in the cart when the **Allowed Qty Below 0** and **Notify Customer** setting are enabled for the product.
 
 <!--- MC-30287-->
 
-*  Magento now correctly displays products with special characters in Shared Catalogs on the Admin.
+*  Magento now correctly displays products with special characters in Shared Catalogs in the Admin.
 
 <!--- MC-30412-->
 
-*  Administrators with appropriate permissions can now add a configurable product to an order as expected.Previously, although Magento displayed the Configure Product popup window when an administrator selected a configurable product, the pop up’s drop-down list did not contain a **Quantity** input field.
+*  Administrators with appropriate permissions can now add a configurable product to an order as expected. Previously, although Magento displayed the Configure Product popup window when an administrator selected a configurable product, the pop up’s drop-down list did not contain a **Quantity** input field.
 
 ### Cache
 
@@ -350,15 +352,21 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29651-->
 <!--- MC-30067-->
 
+*  You can now assign a default watermark to a theme. Previously, after assigning the watermark, Magento threw an fatal error. 
+
 <!--- MC-29876-->
 
 *  Magento now displays product images in the minicart without distortion. Previously, Magento stretched the image in the minicart to fill the entire width and hight of the image container.
 
 <!--- MC-29652-->
 
+*  The Recently View Products feature now shows only products associated with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to. 
+
 <!--- MC-30213-->
 
 <!--- MC-21948-->
+
+*  Problems with the partial re-indexing of large categories have been resolved. Previously, due to problems with this process, products were randomly excluded from categories on the storefront.
 
 <!--- MC-29865-->
 
@@ -397,6 +405,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30249-->
 
 <!--- MC-29166-->
+
+*  The CatalogWidget products list now works as expected with anchor categories, and products from anchor categories are now matched and displayed. .Previously, when you selected a parent category that was an anchor, but that did not contain assigned products, products were not visible in the widget.
 
 <!--- MC-23252-->
 
@@ -443,7 +453,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Added validation logic to the **Create new value** input field of the configurable product creation workflow. Previously, you could create an attribute option value that contained only a space. *Fix submitted by Torben Höhn in pull request [25421](https://github.com/magento/magento2/pull/25421)*. [GitHub-21504](https://github.com/magento/magento2/issues/21504)
 
 <!--- MC-22732-->
+
 <!--- MC-18057-->
+
 ### Cron
 
 <!--- ENGCOM-6253-->
@@ -460,6 +472,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29789-->
 
+*  Magento now uses a new PHPSession for each change of password. 
+
 <!--- MC-21203-->
 
 [GitHub-17125](https://github.com/magento/magento2/issues/17125)
@@ -475,6 +489,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29429-->
 
 <!--- MC-30443-->
+
+*  Customer segment now work as expected  when segment conditions  include the total number of orders. 
 
 ### Custom customer attributes
 
@@ -512,7 +528,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-21868-->
 
-[GitHub-25076](https://github.com/magento/magento2/issues/25076)
+*  The order notification emails sent from Microsoft Outlook now contain the content rendered as expected from the assigned email template. Previously, the notification email that Magento sent contained a blank body that included content as an ATT*-labeled attachment to the email. [GitHub-25076](https://github.com/magento/magento2/issues/25076)
 
 ### Frameworks
 
@@ -560,6 +576,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-19435-->
 
+*  JavaScript bundling and JavaScript minimization should be disabled by default when `Magento_Baler` is enabled. 
+
 <!--- MC-19141-->
 
 ### General fixes
@@ -604,8 +622,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-22972-->
 <!--- MC-29261-->
 <!--- MC-23228-->
+
+*  The graphical orders chart accessible from the Orders tab on the Admin dashboard now accurately reflects order quantity.
+
 <!--- MC-30461-->
+
+*  Product price change alert email now includes the correct product price. Previously, this email suggested a new product price of 0. 
+
 <!--- MC-29111-->
+
+*  You can now save and duplicate all CMS pages. Previously Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
+
 <!--- MC-29994-->
 <!--- MC-30261-->
 
@@ -620,6 +647,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Gift wrapping
 
 <!--- MC-29005-->
+
+* Invoices now include gift wrapping details including charges and other details.
 
 <!--- MC-29784-->
 
@@ -694,6 +723,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30285-->
 
+*  Exported `.csv` file now reflects filter settings for including in-stock or out-of-stock products. Previously, Magento exported all products, no matter which stock setting you selected.
+
 ### Index
 
 <!--- ENGCOM-6188-->
@@ -744,15 +775,21 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29312-->
 
+*  Order status changes are now logged as expected under **System** > **Action Logs** > **Report**.
+
 <!--- MC-29615-->
 
 <!--- MC-30548-->
+
+*  Save actions on CMS pages are now logged as expected in Admin action logs when **Select all actions to be logged**  is enabled on the Admin Actions Logging tab (**Admin** > **Stores** > **Configuration** > **Advanced**).
 
 ### Media storage
 
 ### Newsletter
 
 <!--- MC-23192-->
+
+*  The preview template feature now works as expected. Previously, Magento displayed this error when you clicked **Preview Template” from the template edit page: `Request-URI Too Long The requested URL's length exceeds the capacity limit for this server`.
 
 ### Orders
 
@@ -793,9 +830,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that  needed access to the customer’s session — access that the new default Chrome same site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
 <!--- MC-31387-->
+
+*  Magento now successfully processes orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that the customer has manually entered into the text field rather than selected from the drop-down menu on the Shipping page. Previously, Magento displayed this error on the order review page: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`. [GitHub-26698](https://github.com/magento/magento2/issues/26698)
+
 <!--- MC-30497-->
+
+*  Magento now displays  an informative error message each time a customer clicks **Pay with PayPal** after entering an invalid shipping address in the checkout workflow.  Previously, Magento displayed an error message only when the customer first clicked the button, not for subsequent clicks.
+
 <!--- MC-30550-->
 <!--- MC-29919-->
+
+*  Magento now saves the information a customer enters in the default billing and shipping fields   during checkout when the transaction is initially declined due to invalid credit card but later completed successfully. Previously, although Magento created the orde when the customer enters valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow. 
 
 ### Performance
 
@@ -830,6 +875,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Magento no longer displays an error when you successfully create an order and RMA from the storefront. Previously, Magento created the RMA as expected, but also displayed this error:  `We can't create a return right now. Please try again later`.
 
 <!--- MC-22995-->
+*  Setting **Enable RMA on Storefront** to **yes** (**Admin** > **Enable RMA in Stores**  >  **Configuration**  >  **Sales** > **Sales** > **RMA Settings** ) now  works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
+
 <!--- MC-22754-->
 
 *  Magento now sends RMA processing emails to customers from the store from which the purchase was made in a multi-store deployment. Previously, Magento sent these emails from the default store.
@@ -903,6 +950,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29180-->
 
+*  The drop-down list that is available for selecting shipping methods during the process of creating  a Cart  Price Rule now contains only valid values. Previously, this dropdown list contained empty or extra values.  
+
 ### Sitemap
 
 <!--- MC-21860-->
@@ -916,6 +965,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Store
 
 <!--- MC-23000-->
+
+*  Customer sessions now persist as expected  when a customer logs into one store, adds products to the shopping cart, then switches to a new store in a multi-store deployment. Previously,  when the customer navigated to the second store, Magento logged out the customer and emptied the shopping cart.
 
 <!--- MC-22567-->
 
@@ -943,6 +994,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29099-->
 
+*  Magento now updates shipping rates and prices as expected when a customer changes the destination country for an order during checkout.
+
 <!--- MC-30500-->
 
 ### Testing
@@ -950,6 +1003,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-22926-->
 
 <!--- MC-23067-->
+
+*  Infrastructure static tests now check for missing return statements in class methods.
 
 ### Theme
 
@@ -962,6 +1017,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Translation and locales
 
 <!--- MC-23224-->
+
+*  Special price range settings (from/to dates) now work correctly for administrator accounts using a Dutch locale. 
 
 ### UI
 
@@ -1046,6 +1103,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Corrected issues with the POST `/rest/default/async/bulk/V1/products` calls.
 
 <!--- MC-15101-->
+
+*  Child products of a configurable product can now be successfully disabled through the API.
 
 ### Wishlist
 
