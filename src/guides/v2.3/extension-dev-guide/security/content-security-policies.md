@@ -88,7 +88,7 @@ Example `config.xml`:
 </config>
 ```
 
-You can use the`etc/config.xml` file in the `Magento_Csp` module as a reference.
+You can use the `etc/config.xml` file in the `Magento_Csp` module as a reference.
 [Create your component file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html)
 describes how to create a module.
 
