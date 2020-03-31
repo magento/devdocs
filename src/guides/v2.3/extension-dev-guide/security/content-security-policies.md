@@ -142,7 +142,7 @@ adding a `csp_whitelist.xml` to your custom module's `etc` folder.
 </csp_whitelist>
 ```
 
-In case you include a script/css file from a `.phtml` template you can also use dynamic whitelisting utility available
+In case you include a script/css file from a `.phtml` template you can also use the dynamic whitelisting utility available
 as `$csp`, which is an instance of `Magento\Csp\Api\InlineUtilInterface`:
 
 ```html
