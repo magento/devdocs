@@ -22,7 +22,7 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 ```php
 'cache' => [
-    [   
+    [
         'default' => [
              'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
              'backend_options' => [
