@@ -33,9 +33,9 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type: application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -57,6 +57,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
   "sku": "WS12-M-Orange",
   "qty": 1,
   "name": "Radiant Tee-M-Orange",
+  "price": 19.99,
   "product_type": "simple",
   "quote_id": "4"
 }
@@ -74,9 +75,9 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type: application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -144,9 +145,9 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type: application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -179,27 +180,27 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 ```json
 {
-    "item_id": 13,
-    "sku": "MH01-S-Gray",
-    "qty": 1,
-    "name": "Chaz Kangeroo Hoodie",
-    "price": 52,
-    "product_type": "configurable",
-    "quote_id": "4",
-    "product_option": {
-        "extension_attributes": {
-            "configurable_item_options": [
-                {
-                    "option_id": "93",
-                    "option_value": 52
-                },
-                {
-                    "option_id": "141",
-                    "option_value": 168
-                }
-            ]
+  "item_id": 13,
+  "sku": "MH01-S-Gray",
+  "qty": 1,
+  "name": "Chaz Kangeroo Hoodie",
+  "price": 52,
+  "product_type": "configurable",
+  "quote_id": "4",
+  "product_option": {
+    "extension_attributes": {
+      "configurable_item_options": [
+        {
+          "option_id": "93",
+          "option_value": 52
+        },
+        {
+          "option_id": "141",
+          "option_value": 168
         }
+      ]
     }
+  }
 }
 ```
 
@@ -326,9 +327,9 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type: application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization: Bearer <customer token>`
 
 **Payload:**
 
@@ -336,37 +337,37 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ```json
 {
-    "cartItem": {
-        "sku": "24-WG080",
-        "qty": "1",
-        "quote_id": "4",
-        "product_option": {
-            "extension_attributes": {
-                "bundle_options": [
-                    {
-                        "option_id": 1,
-                        "option_qty": 1,
-                        "option_selections": [2]
-                    },
-                    {
-                        "option_id": 2,
-                        "option_qty": 1,
-                        "option_selections": [4]
-                    },
-                    {
-                        "option_id": 3,
-                        "option_qty": 1,
-                        "option_selections": [6]
-                    },
-                    {
-                        "option_id": 4,
-                        "option_qty": 1,
-                        "option_selections": [8]
-                    }
-                ]
-            }
-        }
+  "cartItem": {
+    "sku": "24-WG080",
+    "qty": 1,
+    "quote_id": "4",
+    "product_option": {
+      "extension_attributes": {
+        "bundle_options": [
+          {
+            "option_id": 1,
+            "option_qty": 1,
+            "option_selections": [2]
+          },
+          {
+            "option_id": 2,
+            "option_qty": 1,
+            "option_selections": [4]
+          },
+          {
+            "option_id": 3,
+            "option_qty": 1,
+            "option_selections": [6]
+          },
+          {
+            "option_id": 4,
+            "option_qty": 1,
+            "option_selections": [8]
+          }
+        ]
+      }
     }
+  }
 }
 ```
 
