@@ -228,7 +228,7 @@ will not appear in the `Content-Security-Policy` header.
 ### Advanced CSP configuration
 
 To configure other CSPs such as `sandbox` policy, which does not consist of whitelisted hosts
-and hashes, or for more advanced _fetch_ policy configurations, like removing inline support from `script-src`
+and hashes, or for more advanced `fetch` policy configurations, like removing inline support from `script-src`,
 you would have to create a `config.xml` file inside your custom module and rewrite the default values.
 For reference, see `Magento\Csp\etc\config.xml`.
 
