@@ -231,7 +231,7 @@ fields | items[increment_id,entity_id] | Attributes needs to be return as respon
 
 Not applicable
 
-**Request**
+**Request:**
 
 ```http
 <host>/rest/V1/orders/?searchCriteria[filter_groups][0][filters][0][field]=status&searchCriteria[filter_groups][0][filters][0][value]=pending&
