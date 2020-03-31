@@ -142,8 +142,17 @@ In this step, you will need to aggregate all of the multiple `deps`, `shim`, `pa
 
 Within this file, you will find multiple entries for each of the configuration nodes (`deps`, `shim`, `paths`, `map`). You need to aggregate these multiple node values into your build.js file's single configuration node. For example, if your store's `requirejs-config.js` instance has entries for 15 separate `map` nodes, you will need to merge the entries for all 15 nodes into the single `map` node in your `build.js` file. The same will be true for the `deps`, `shim`, and `paths` nodes. Without a script to automate this process, it may take time.
 
- {:.bs-callout-info}
-You will need to replace the path mapping "mage/requirejs/text" for **"text"** in `paths` configuration node with **"requirejs/text"**.
+You will need to change the path `mage/requirejs/text` to `requirejs/text` in `paths` configuration node as following:
+
+```javascript
+({
+    //...
+    paths: {
+        //...
+        "text": "requirejs/text"
+    },
+})
+```
 
 #### 4\. Add a modules node
 
