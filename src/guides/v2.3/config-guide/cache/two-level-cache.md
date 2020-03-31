@@ -53,10 +53,10 @@ Magento stores the hashed data version in Redis, with the suffix ':version' appe
 
 Where:
 
-*  `backend` is our remote L2 cache implementation.
-*  `remote_backend` is the remote cache implementation: Redis or MySQL.
-*  `remote_backend_options` are Redis or MySQL-specific options.
-*  `local_backend` is the local cache implementation: Cm_Cache_Backend_File or the APC adapter
+-  `backend` is our remote L2 cache implementation.
+-  `remote_backend` is the remote cache implementation: Redis or MySQL.
+-  `remote_backend_options` are Redis or MySQL-specific options.
+-  `local_backend` is the local cache implementation: Cm_Cache_Backend_File or the APC adapter
 
 We recommend the use of Redis for remote caching - `\Magento\Framework\Cache\Backend\Redis`, and the File cache implementation - `Cm_Cache_Backend_File` as the local cache.
 We also recommend the use of the `cache preload` feature, as it will drastically decrease the pressure on Redis.
