@@ -13,8 +13,6 @@ RabbitMQ is an open source message broker that offers a reliable, highly availab
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-{{site.data.var.ce}} uses RabbitMQ to manage these message queues.
-
 The message queue system must be established before you install Magento. The basic sequence is
 
 1. Install RabbitMQ and any prerequisites.
