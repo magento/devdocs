@@ -13,7 +13,7 @@ The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Glob
 
 The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment.
 
-![High-level view of Pro architecture development workflow]({{ site.baseurl }}/common/images/cloud_pro-dev-workflow.png)
+![High-level view of Pro architecture development workflow]({{ site.baseurl }}/common/images/cloud/cloud_pro-dev-workflow.png)
 
 ## Development workflow {#develop}
 

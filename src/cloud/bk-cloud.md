@@ -29,7 +29,8 @@ The [`{{site.data.var.ct}}` package][ece] is a scalable deployment tool that sim
 [Cloud Benefits]: {{site.baseurl}}/common/images/cloud/CloudBenefits.svg
 {:width="930px"}
 
-[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.png
+[Cloud Stack]: {{site.baseurl}}/common/images/cloud/CloudStack.svg
+
 {:width="804px"}
 
 [ece]: reference/ece-tools-reference.html

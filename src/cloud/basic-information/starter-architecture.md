@@ -11,7 +11,7 @@ All environments are in PaaS (Platform-as-a-Service) containers. These container
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud/cloud_arch-starter.png)
 
 ## Production with a master branch {#cloud-arch-prod}
 

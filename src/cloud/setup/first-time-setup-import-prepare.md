@@ -34,7 +34,7 @@ Add these files to your {{site.data.var.ee}} code:
 
    The following figure shows an example of selecting the `2.3.3` branch.
 
-   ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud_cloud-git-233.png){:width="600px"}
+   ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git-233.png){:width="600px"}
 
 1. Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 1. Change to the Magento installation directory and create a `.magento` directory.
@@ -59,7 +59,7 @@ For example, to create `<Magento Commerce install dir>/.magento.app.yaml` from t
 1. In the  {{site.data.var.ece}} GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.3.3/.magento.app.yaml).
 1. In the upper right, click **Raw**, as the following figure shows.
 
-   ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
+   ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud/cloud_cloud-git_raw.png){:width="600px"}
 
 1. In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
 1. Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.

@@ -66,7 +66,7 @@ The following table summarizes the differences between environments:
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-wings.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture-wings.png)
 
 ## Integration environment {#cloud-arch-int}
 
@@ -154,7 +154,7 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
 
 The following figure shows the technologies used in the Production environment:
 
-![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl }}/common/images/cloud/cloud_stack-diagram.png)
 
 ### Pro cluster scaling
 
