@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Using L2 cache in Magento application
+title: L2 caching in the Magento application
 functional_areas:
   - Configuration
   - System
