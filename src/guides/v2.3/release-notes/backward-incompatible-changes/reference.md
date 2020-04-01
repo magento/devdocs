@@ -12,9 +12,15 @@ We use a custom tool that extends a PHP semantic version checker to auto-generat
 
 -  Class changes
 -  Class API membership changes
+-  Database changes
+-  Dependency injection (DI) changes
 -  Interface changes
+-  Interface API membership changes
+-  Layout changes
 -  System changes
 -  XSD changes
+
+We expanded documentation coverage of the types of changes in 2.3.5. Previously, the list included class changes, class API membership changes, and interface changes only.
 
 {:.bs-callout-info}
 Patch releases are primarily focused on delivering security and quality enhancements on a regular basis to help you keep your sites performing at their peak. On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes. See [Release policy]({{site.baseurl}}/release/policy/).
