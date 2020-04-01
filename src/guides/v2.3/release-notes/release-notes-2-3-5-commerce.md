@@ -66,15 +66,11 @@ The following platform upgrades help enhance website security and performance:
    *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
    *  Reduction in race conditions on Redis write operations
 
-See xxx for recommendations on how to configure cache for Cloud and on-premise deployments.
-
 ### Infrastructure improvements
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
 
 The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
-
-we added a PHPStan static code analysis tool into our builds. This does not affect functionality.
 
 ### Merchant tool enhancements
 
@@ -127,7 +123,7 @@ The Google Shopping ads Channel bundled extension has reached end-of-life and ha
 
 ### B2B
 
-This release includes bug fixes that are described in B2B release notes.
+This release includes bug fixes. See B2B release notes.
 
 ### Vendor-developed extension enhancements
 
@@ -196,6 +192,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Analytics
 
 <!--- MC-31766-->
+
+*  Analytic reports are now available after changing the store URL.
 
 ### Bundle products
 
@@ -299,6 +297,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23055-->
 
+*  Frontend cookies are now set as expected when you enable **Use Secure URLs on Storefront** and  **Secure Base URL** is set to **https**.
+
 ### Cart and checkout
 
 <!--- MC-31379-->
@@ -366,6 +366,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The Recently View Products feature now shows only products associated with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
 
 <!--- MC-30213-->
+
+*  The product compare feature now works as expected. It displays only products in the current user’s compare list.
 
 <!--- MC-21948-->
 
@@ -447,9 +449,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22927-->
 
-<!--- MC-30853-->
+*  Magento now loads blocks that are associated with the website that a restricted user has access to when the user navigates to  **Content** >  **Blocks**.
 
-### Command-line interface (CLI commands)
+<!--- MC-30853-->
 
 ### Configurable products
 
@@ -502,14 +504,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30689-->
 
 *  Magento now displays custom customer address attribute values as expected in the address section of the checkout workflow. Previously, Magento displayed the custom customer address attribute code instead of the value, and a JavaScript error was triggered.
-
-### Database media storage
-
-### Declarative schema
-
-<!--- MC-17545-->
-
-### Downloadable products
 
 ### Dynamic block (formerly banner)
 
@@ -630,6 +624,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-22911-->
 <!--- MC-22972-->
 <!--- MC-29261-->
+
+*  A store’s admin URL no longer redirects to the storefront URL when these two URLs differ.
+
 <!--- MC-23228-->
 
 *  The graphical orders chart accessible from the Orders tab on the Admin dashboard now accurately reflects order quantity.
@@ -653,6 +650,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30365-->
 
+*  An expired gift card becomes active as expected when you change its expiration date to a future date. Previously, the gift card remained expired.
+
 ### Gift wrapping
 
 <!--- MC-29005-->
@@ -668,8 +667,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The missing `Magento_GoogleTagManager::checkout/set_checkout_option.phtml` template has been restored.
 
 <!--- MC-29503-->
-
-### Image
 
 ### Import/export
 
@@ -770,11 +767,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23216-->
 
+*  You can now create an offline credit memo. Previously, when you ried to create one, Magento displayed this error: `The credit memo couldn't be saved`.
+
 <!--- MC-30099-->
 
 <!--- MC-29177-->
-
-### Layered navigation
 
 ### Logging
 
@@ -788,19 +785,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29615-->
 
+*  CMS page save actions are now logged in Admin Action Logs. Previously, only view actions were logged.
+
 <!--- MC-30548-->
 
 *  Save actions on CMS pages are now logged as expected in Admin action logs when **Select all actions to be logged**  is enabled on the Admin Actions Logging tab (**Admin** > **Stores** > **Configuration** > **Advanced**).
-
-### Media storage
 
 ### Newsletter
 
 <!--- MC-23192-->
 
 *  The preview template feature now works as expected. Previously, Magento displayed this error when you clicked **Preview Template” from the template edit page: `Request-URI Too Long The requested URL's length exceeds the capacity limit for this server`.
-
-### Orders
 
 ### Payment methods
 
@@ -824,7 +819,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-18714-->
 
-[GitHub-23934](https://github.com/magento/magento2/issues/23934)
+*  You can now create an order from the Admin using Authorize.net as the payment method. Previously, Magento did not create the order, and displayed this error: `Transaction has been declined. Please try again later`. [GitHub-23934](https://github.com/magento/magento2/issues/23934)
 
 <!--- MC-29060-->
 
@@ -847,6 +842,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Magento now displays  an informative error message each time a customer clicks **Pay with PayPal** after entering an invalid shipping address in the checkout workflow.  Previously, Magento displayed an error message only when the customer first clicked the button, not for subsequent clicks.
 
 <!--- MC-30550-->
+
+*  Magento no longer changes an order’s status to **processing** in the Payment Review section of the checkout workflow when a payment with PayPal fails.
+
 <!--- MC-29919-->
 
 *  Magento now saves the information a customer enters in the default billing and shipping fields   during checkout when the transaction is initially declined due to invalid credit card but later completed successfully. Previously, although Magento created the orde when the customer enters valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow.
@@ -854,10 +852,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 ### Performance
 
 <!--- MC-30786-->
-
-<!--- MC-19499-->
-
-### Reports
 
 ### Reviews
 
@@ -904,6 +898,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30116-->
 
 <!--- MC-23029-->
+
+*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multisite deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
 
 <!--- MC-29206-->
 
@@ -972,8 +968,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29287-->
 
-### Staging
-
 ### Store
 
 <!--- MC-23000-->
@@ -981,6 +975,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Customer sessions now persist as expected  when a customer logs into one store, adds products to the shopping cart, then switches to a new store in a multi-store deployment. Previously,  when the customer navigated to the second store, Magento logged out the customer and emptied the shopping cart.
 
 <!--- MC-22567-->
+
+*  Magento now redirects you to the correct product details page when you switch store view while on a product page in a multistore deployment. Previously, when you switched store view, Magento redirected you to a 404 page instead of the correct product page.
 
 ### Swagger
 
@@ -998,7 +994,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23194-->
 
+*  We’ve improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries about only changed products.
+
 <!--- MC-23084-->
+
+*  We’ve improved the  performance of the Product/Target Rule and Target Rule/Product indexers. Indexing  and editing and saving products are now faster.
 
 ### Tax
 
