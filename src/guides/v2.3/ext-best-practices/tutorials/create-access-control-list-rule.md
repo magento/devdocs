@@ -118,7 +118,7 @@ protected function _isAllowed()
 
 If the user does not have permission, the action page displays an "Access Denied" message.
 
-### Page content partial restriction for admin users
+### Content restrictions for admin users
 
 With the ACL it is also possible to [render layout blocks dynamically]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#ref_config_block) on the page.
 
