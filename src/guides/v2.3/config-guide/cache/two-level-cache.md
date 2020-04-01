@@ -7,8 +7,6 @@ functional_areas:
   - Cache
 ---
 
-## Set up an L2 syncronized cache as the base cache adapter
-
 Caching allows us to reduce network traffic between the remote cache storage and Magento. A standard Magento instance transfers around 300kb per request, and traffic may quickly grow to over ~1000 requests in some situations.
 
 To reduce the network bandwidth to Redis, we can store cache data locally on each web node and use the remote cache for two purposes:
@@ -18,7 +16,7 @@ To reduce the network bandwidth to Redis, we can store cache data locally on eac
 
 Magento stores the hashed data version in Redis, with the suffix ':version' appended to the regular key. In case of an outdated local cache, we tranfer the data to the local machine with a cache adapter.
 
-### Configuration example
+## Configuration example
 
 ```php
 'cache' => [
