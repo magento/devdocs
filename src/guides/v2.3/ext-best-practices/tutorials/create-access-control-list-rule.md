@@ -116,11 +116,11 @@ protected function _isAllowed()
 }
 ```
 
-If the user doesn't have permission, the action page displays an "Access Denied" message.
+If the user does not have permission, the action page displays an "Access Denied" message.
 
 ### Page content partial restriction for admin users
 
-With ACL it is also possible to [render layout blocks dynamically]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#ref_config_block) on the page.
+With the ACL it is also possible to [render layout blocks dynamically]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#ref_config_block) on the page.
 
 It is enough to set the block's value for `aclResource` attribute:
 
@@ -130,7 +130,7 @@ It is enough to set the block's value for `aclResource` attribute:
 </block>
 ```
 
-The `view/adminhtml/layout/custommenu_view_index.xml` example file below contains two blocks that show information to the end-user. One of which is accessible only to users with ACL `Vendor_MyModule::view_additional` allowed.
+The `view/adminhtml/layout/custommenu_view_index.xml` example file below contains two blocks that display information to the end-user, one of which is accessible only to users with ACL `Vendor_MyModule::view_additional` permissions.
 
 ```xml
 <?xml version="1.0"?>
@@ -157,11 +157,11 @@ The `view/adminhtml/layout/custommenu_view_index.xml` example file below contain
 </page>
 ```
 
-When the ACL resource for `Vendor_ModuleName::view_additional` is enabled the result is
+When the ACL resource for `Vendor_ModuleName::view_additional` is enabled, the result is:
 
 ![admin page full content]({{ site.baseurl }}/common/images/ext-best-practices/acl-admin-page-content-full-access.jpg)
 
-When the ACL resource is disabled, the content on the page differs.
+When the ACL resource is disabled, the content on the page differs:
 
 ![admin page content limited]({{ site.baseurl }}/common/images/ext-best-practices/acl-admin-limited-page-content.jpg)
 
