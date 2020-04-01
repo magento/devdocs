@@ -173,7 +173,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29795-->
 
-*  Configuration settings that are disabled in index.php are no longer editable from the Admin. 
+*  Configuration settings that are disabled in index.php are no longer editable from the Admin.
 
 ### Adobe stock integration
 
@@ -350,9 +350,12 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Corrected an issue that caused the PUT `/V1/products/:sku/media/:entryId` call to create a new entry rather than replace the existing one.
 
 <!--- MC-29651-->
+
+*  Customizable options are now imported as expected when `row_id` is not equal to a product's `entity_id`. Previously, Magento did not import customizable options when `row_id` was not equal to a product’s `entity_id`, which resulted in certain products not being imported.
+
 <!--- MC-30067-->
 
-*  You can now assign a default watermark to a theme. Previously, after assigning the watermark, Magento threw an fatal error. 
+*  You can now assign a default watermark to a theme. Previously, after assigning the watermark, Magento threw an fatal error.
 
 <!--- MC-29876-->
 
@@ -360,7 +363,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29652-->
 
-*  The Recently View Products feature now shows only products associated with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to. 
+*  The Recently View Products feature now shows only products associated with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
 
 <!--- MC-30213-->
 
@@ -373,6 +376,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The `getBasePrice` function now returns float value  as expected rather than a string.
 
 <!--- MC-29519-->
+
+*  Images are now saved in `pub/media/catalog/category` as expected when you save category images. Previously, Magento saved these images in `pub/media/catalog/tmp/category`.
 
 <!--- MC-31801-->
 <!--- MC-30974-->
@@ -472,7 +477,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29789-->
 
-*  Magento now uses a new PHPSession for each change of password. 
+*  Magento now uses a new PHPSession for each change of password.
 
 <!--- MC-21203-->
 
@@ -490,7 +495,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30443-->
 
-*  Customer segment now work as expected  when segment conditions  include the total number of orders. 
+*  Customer segment now work as expected  when segment conditions  include the total number of orders.
 
 ### Custom customer attributes
 
@@ -540,7 +545,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-20533-->
 
+*  Editing products in the Admin no longer triggers Redis errors.
+
 <!--- MC-29290-->
+
+*  `php bin/magento cron:run` no longer processes items from the change log table multiple times. Previously, when you had more than 100000 new versions in the change log table,  actions could be called several times for the same `entity id`.
 
 <!--- MC-29033-->
 
@@ -550,7 +559,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30290-->
 
-[GitHub-9041](https://github.com/magento/magento2/issues/9041)
+*  Non-cacheable blocks are no longer added to default layout handles. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process:  During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page’s final layout structure. The default layout handle is used as a basic handle for every page. As a result,  layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
 
 <!--- MC-17563-->
 
@@ -576,7 +585,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-19435-->
 
-*  JavaScript bundling and JavaScript minimization should be disabled by default when `Magento_Baler` is enabled. 
+*  JavaScript bundling and JavaScript minimization should be disabled by default when `Magento_Baler` is enabled.
 
 <!--- MC-19141-->
 
@@ -627,7 +636,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30461-->
 
-*  Product price change alert email now includes the correct product price. Previously, this email suggested a new product price of 0. 
+*  Product price change alert email now includes the correct product price. Previously, this email suggested a new product price of 0.
 
 <!--- MC-29111-->
 
@@ -648,7 +657,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29005-->
 
-* Invoices now include gift wrapping details including charges and other details.
+*  Invoices now include gift wrapping details including charges and other details.
 
 <!--- MC-29784-->
 
@@ -840,7 +849,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30550-->
 <!--- MC-29919-->
 
-*  Magento now saves the information a customer enters in the default billing and shipping fields   during checkout when the transaction is initially declined due to invalid credit card but later completed successfully. Previously, although Magento created the orde when the customer enters valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow. 
+*  Magento now saves the information a customer enters in the default billing and shipping fields   during checkout when the transaction is initially declined due to invalid credit card but later completed successfully. Previously, although Magento created the orde when the customer enters valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow.
 
 ### Performance
 
@@ -875,6 +884,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Magento no longer displays an error when you successfully create an order and RMA from the storefront. Previously, Magento created the RMA as expected, but also displayed this error:  `We can't create a return right now. Please try again later`.
 
 <!--- MC-22995-->
+
 *  Setting **Enable RMA on Storefront** to **yes** (**Admin** > **Enable RMA in Stores**  >  **Configuration**  >  **Sales** > **Sales** > **RMA Settings** ) now  works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
 
 <!--- MC-22754-->
@@ -896,6 +906,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-23029-->
 
 <!--- MC-29206-->
+
+*  Completed orders now appear in both the payment system and Magento. Previously, orders appeared in the payment system but not in Magento. [GitHub-25862](https://github.com/magento/magento2/issues/25862)
 
 ### Sales Rule
 
@@ -950,7 +962,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29180-->
 
-*  The drop-down list that is available for selecting shipping methods during the process of creating  a Cart  Price Rule now contains only valid values. Previously, this dropdown list contained empty or extra values.  
+*  The drop-down list that is available for selecting shipping methods during the process of creating  a Cart  Price Rule now contains only valid values. Previously, this dropdown list contained empty or extra values.
 
 ### Sitemap
 
@@ -992,6 +1004,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22931-->
 
+*  Magento now performs VAT calculations correctly in all stores in a multistore deployment. Previously, Magento displayed an incorrect shipping rate in the `default` store but the correct one in the `en_gb` store.
+
 <!--- MC-29099-->
 
 *  Magento now updates shipping rates and prices as expected when a customer changes the destination country for an order during checkout.
@@ -1018,7 +1032,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23224-->
 
-*  Special price range settings (from/to dates) now work correctly for administrator accounts using a Dutch locale. 
+*  Special price range settings (from/to dates) now work correctly for administrator accounts using a Dutch locale.
 
 ### UI
 
