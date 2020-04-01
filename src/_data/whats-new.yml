@@ -12,9 +12,9 @@ entries:
   type: Major Update
   date: March 30, 2020
   link: https://github.com/magento/devdocs/pull/6947
-- description: "Added an 'ignoreTmpls property' section to the [Template Literals
+- description: Added an 'ignoreTmpls property' section to the [Template Literals
     in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
-    topic."
+    topic.
   versions: 2.3.x
   type: Major Update
   date: March 25, 2020
@@ -29,16 +29,16 @@ entries:
   date: March 24, 2020
   link: https://github.com/magento/devdocs/pull/6915
 - description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.<br/>
-    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-4-open-source.html)<br/>
-    [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-4-commerce.html)<br/>
-    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-3-open-source.html)<br/>
-    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/release-notes/release-notes-2-3-3-commerce.html)<br/>
-    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
-    [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
-    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
-    [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
-    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
-    [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/release-notes/ReleaseNotes2.3.0Commerce.html)
+    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)<br/>
+    [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html)<br/>
+    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html)<br/>
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)<br/>
+    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
+    [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
+    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
+    [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
+    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
+    [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html)
   versions: 2.3.x
   type: Major Update
   date: March 24, 2020
