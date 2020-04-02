@@ -121,7 +121,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 `--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
 `--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
-`--elasticsearch-server-timeout` | The number of seconds before the system times out. The default is `15`. | No
+`--elasticsearch-timeout` | The number of seconds before the system times out. The default is `15`. | No
 `--elasticsearch-enable-auth` | Enables authentication on the Elasticsearch server. The default is `false`. | No
 `--elasticsearch-username` | The user ID to authenticate Elasticsearch | No, unless authentication is enabled
 `--elasticsearch-password` | The password to authenticate Elasticsearch | No, unless authentication is enabled
