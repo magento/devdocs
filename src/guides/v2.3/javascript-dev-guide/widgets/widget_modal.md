@@ -221,7 +221,7 @@ The class that is assigned to parent when the modal is opened.
 
 ### `outerClickHandler` {#modal_outerClickHandler}
 
-The function that handles a click outside the modal window. If `outerClickHandler` option is not specified, the [closeModal()](#modal_close) method is used for handling a click outside the modal window.
+The function that handles a click outside the modal window. If the `outerClickHandler` option is not specified, the [closeModal()](#modal_close) method is used for handling a click outside the modal window.
 
 **Type**: Function
 
