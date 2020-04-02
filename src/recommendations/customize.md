@@ -17,7 +17,7 @@ The following table describes each subdirectory under `ProductRecommendationsLay
 
 This topic describes how you can customize the recommendations template as well as the placement of recommendation units on your site.
 
-## Template updates
+## Update template
 
 If you want to customize how the recommendations display on your storefront, you can modify or overwrite the following template:
 
@@ -32,9 +32,9 @@ However, to ensure Magento can successfully collect metrics for the recommendati
 
 Refer to the [template overview]({{ site.baseurl }}/guides/v{{ site.version }}/frontend-dev-guide/templates/template-walkthrough.html) for more information about how to modify templates in Magento.
 
-## Recommendation unit placement
+## Reorder recommendation units
 
-When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either above or below the main content. You can, however, customize that location by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
+When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/marketing/create-new-rec.html), you specify [where you want the recommendation unit to appear](https://docs.magento.com/m2/ee/user_guide/marketing/product-recommendations.html#productrecplacement) on your page. In the Admin, you can select to place the recommendations either at the top or the bottom of the main content container. You can, however, customize that location more granularly by editing the `*.xml` files responsible for the layout. Magento generates these files when you create a recommendation.
 
 1. Change to the `layout` directory:
 
@@ -51,6 +51,9 @@ When you [create a recommendation](https://docs.magento.com/m2/ee/user_guide/mar
     |`checkout_cart_index.xml`|Cart|
     |`checkout_onepage_success.xml`|Checkout|
     |`cms_index_index.xml`|Home|
+
+    {:.bs-callout-info}
+    The filenames in the `layout` directory might be different if your store uses third-party extensions.
 
 1. Let's modify the `catalog_product_view.xml` file so that the recommendation unit appears after the product image on the product detail page. Before you customize this XML file, let's take a look at the file and understand the sections you will need to modify:
 
