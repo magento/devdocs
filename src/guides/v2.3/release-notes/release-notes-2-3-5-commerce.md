@@ -33,7 +33,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 #### Security enhancements and fixes to core code
 
-This release includes over 20 security fixes and platform security improvements. Additional security enhancements include:
+This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
 *  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is default.
 
@@ -58,7 +58,7 @@ The following platform upgrades help enhance website security and performance:
 
 ### Performance boosts
 
-*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom sections.xml invalidations are active.  (Previously, Private content (local storage) was not correctly filled in/populated when you have a custom*etc/frontend/sections.xml* with action invalidations). See [Private content](htraktps://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom sections.xml invalidations are active.  (Previously, Private content (local storage) was not correctly filled in/populated when you have a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
 *  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
