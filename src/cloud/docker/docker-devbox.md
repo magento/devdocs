@@ -162,5 +162,18 @@ mounts:
     path: "pub/static"
 ```
 
+## Fully custom configuration
+
+You can fully override the file configuration by using command `build:custom:compose`
+
+   ```bash
+   ./vendor/bin/ece-docker build:custom:compose '{"name":"magento","system":{"mode":"production","host":"magento2.docker","port":"80"},"services":{"php":{"version":"7.2","enabled":true,"extensions":{"enabled":["xsl"]}},"mysql":{"version":"10.0","enabled":true}},"hooks":{"build":"\nset -e\nphp .\/vendor\/bin\/ece-tools run scenario\/build\/generate.xml\nphp .\/vendor\/bin\/ece-tools run scenario\/build\/transfer.xml\n","deploy":"php .\/vendor\/bin\/ece-tools run scenario\/deploy.xml","post_deploy":"php .\/vendor\/bin\/ece-tools run scenario\/post-deploy.xml"},"mounts":{"var":{"path":"var"},"app-etc":{"path":"app\/etc"},"pub-media":{"path":"pub\/media"},"pub-static":{"path":"pub\/static"}}}' 
+   ```
+
+This command accepts next arguments:
+
+-  **source** — The JSON pre-formatted string with descition of required configuration.
+Is a JSON representation of `.magento-docker.yaml` configuration file.
+
 [docker-reference]: {{site.baseurl}}/cloud/docker/docker-quick-reference.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html
