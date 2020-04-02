@@ -70,7 +70,9 @@ The following platform upgrades help enhance website security and performance:
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules:  catalog, sales, PayPal, Elasticsearch, import, CMS, and B2B.
 
-The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+*  **The PayPal Pro payment method now works as expected in the Chrome 80 browser**. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+
+*  **A PHPStan code analysis check has been integrated into Magento static builds**. This tool  performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
 
 ### Merchant tool enhancements
 
@@ -123,7 +125,7 @@ The Google Shopping ads Channel bundled extension has reached end-of-life and ha
 
 ### B2B
 
-This release includes bug fixes. See B2B release notes.
+This release includes 18 bug fixes. See B2B release notes.
 
 ### Vendor-developed extension enhancements
 
@@ -214,6 +216,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Clicking **Enter** in the **Shipping Price** field for Negotiable Quotes now correctly updates shipping price.
 
 <!--- MC-22632-->
+
+*  Magento now displays the same price for a bundle product in the mini cart and on the product page.
 
 <!--- MC-29209-->
 
@@ -311,7 +315,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23261-->
 
-*  You can now disable zip code validation on the checkout workflow from the Admin as expected. Previously, Magento threw an error when a customer entered a zip code that did not meet specified values for zip codes even after validation was disabled by setting Input Validation = 'None'  from **Admin** > **Stores** > **Attributes** > **Customer address** > **Edit Zip/Postal Code**.
+*  You can now disable zip code validation on the checkout workflow from the Admin as expected. Previously, Magento threw an error when a customer entered a zip code that did not meet specified values for zip codes even after validation was disabled by setting `Input Validation` to **none**  from **Admin** > **Stores** > **Attributes** > **Customer address** > **Edit Zip/Postal Code**.
 
 <!--- MC-30254-->
 
@@ -483,7 +487,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-21203-->
 
-[GitHub-17125](https://github.com/magento/magento2/issues/17125)
+*  The steps involved in `x-magento-init` initialization now happen in the correct order: RequireJS loads `section-config.js`, and `section-config.js` constructs and initiates itself as required. Previously, RequireJS loaded `section-config.js`, but the internal data `section-config` required for functioning did not load, and `section-config.js` threw an error: `Uncaught TypeError: Cannot read property '*' of undefined`. [GitHub-17125](https://github.com/magento/magento2/issues/17125)
 
 <!--- MC-29722-->
 
@@ -640,7 +644,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  You can now save and duplicate all CMS pages. Previously Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
 
 <!--- MC-29994-->
+
 <!--- MC-30261-->
+
+*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
 
 ### Gift cards
 
@@ -659,6 +666,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Invoices now include gift wrapping details including charges and other details.
 
 <!--- MC-29784-->
+
+*  Gift wrapping can now be added to the cart when it is enabled on the product level. Previously, you could add gift wrapping to a product on the storefront, but Magento would not include gift wrapping in the order summary.
 
 ### Google Tag Manager
 
@@ -827,7 +836,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31154-->
 
-*  The **Place order** button on the checkout workflow is now disabled as expected until the customer updates the billing address when paying with Braintree. Previously, when secure 3D was enabled and the customer was paying with Braintree, Magento did not correctly validate the shipping address and displayed this JavaScript error: "TypeError: Cannot read property 'firstname' of null”.
+*  The **Place order** button on the checkout workflow is now disabled as expected until the customer updates the billing address when paying with Braintree. Previously, when secure 3D was enabled and the customer was paying with Braintree, Magento did not correctly validate the shipping address and displayed this JavaScript error: `TypeError: Cannot read property 'firstname' of null`.
 
 <!--- MC-31574-->
 
@@ -912,6 +921,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  `quote_item.applied_rule_ids` is now updated as expected after a cart price rule is disabled. [GitHub-24526](https://github.com/magento/magento2/issues/24526)
 
 <!--- MC-30268-->
+
+*  Cart Price rules with a **condition set as Category (Parent only)** now work as expected consistently.
 
 ### Search
 
