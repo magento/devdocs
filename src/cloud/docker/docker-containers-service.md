@@ -63,6 +63,8 @@ See [Manage the database] for details about using the database.
 
 The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
+To skip the Elasticsearch installation, add the `--no-es` option to the `ece-docker build:compose` command.
+
 ## FPM container
 
 **Container name**: fpm<br/>
