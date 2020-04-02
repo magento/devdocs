@@ -17,7 +17,7 @@ This page lists all those tests so that developers can have a good sense of what
 
 ## Functional test list
 
-{% assign mftf = site.data.codebase.mftf.functional-tests | group_by: "module" | sort: "name"  %}
+{% assign mftf = site.data.codebase.v2_3.mftf.functional-tests | group_by: "module" | sort: "name"  %}
 
 {% for item in mftf %}
 

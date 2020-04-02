@@ -4,6 +4,7 @@ title:  Restore configuration files
 functional_areas:
   - Cloud
   - Deploy
+redirect_to: https://support.magento.com/hc/en-us/articles/360033182871
 ---
 
 The deployment process creates a backup file for each configuration file:

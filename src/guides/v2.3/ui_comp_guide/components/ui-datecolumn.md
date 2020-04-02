@@ -10,6 +10,8 @@ The DateColumn component implements a table column that displays dates.
 | Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | `dateFormat` | Date format for the displayed column's values. | String | `MMM d, YYYY h:mm:ss A` |
+| `skipTimeZoneConversion` | Converts the given date to default (UTC) timezone. | Boolean | `true` |
+| `timezone` | Enables date conversion based on the timezone configuration. | Boolean | `true` |
 
 ## Source files
 
@@ -41,6 +43,7 @@ This is an example of how the DateColumn component integrates with the [Listing]
                 <dataType>date</dataType>
                 <dateFormat>yyyy-MM-dd hh:mm:ss</dateFormat>
                 <label translate="true">Date Column Example 2</label>
+                <timezone>false</timezone>
             </settings>
         </column>
         ...

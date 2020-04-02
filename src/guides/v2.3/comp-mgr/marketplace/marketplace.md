@@ -9,7 +9,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic provides a simple example of getting free extensions for {{site.data.var.ce}}. See the [Marketplace quick tour](https://docs.magento.com/marketplace/user_guide/buyers/install-extension.html).
+This topic provides a simple example of getting free extensions for {{site.data.var.ce}}. See the [Magento Marketplace](https://docs.magento.com/m2/ee/user_guide/magento/magento-marketplace.html).
 
 ### Log in to Magento Marketplace
 

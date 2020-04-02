@@ -23,7 +23,4 @@ To satisfy the minimum required elements for creating or customizing your Magent
 
 *  Distribute your component:
    *  [Package your component]({{ page.baseurl }}/extension-dev-guide/package/package_module.html) in `.zip` format.
-
-      Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
-
    *  If you upload the component to Magento Marketplace, it should be less than 30MB in size.

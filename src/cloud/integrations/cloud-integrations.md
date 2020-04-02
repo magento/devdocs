@@ -15,7 +15,7 @@ Integrations are useful for leveraging the functionality of external services—
 -  Git-based hosting services:
    -  [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html)
    -  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html)
-   <!-- -  [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html) -->
+   -  [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html)
 
 Use the `magento-cloud` CLI to list the integrations configured for your project:
 

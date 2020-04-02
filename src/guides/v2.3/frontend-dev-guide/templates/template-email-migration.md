@@ -22,6 +22,11 @@ Notice in the incorrect example, the `getConfirmationLink()` method is called di
 -  Old way: `{{var subscriber.getConfirmationLink()}}`
 -  New way: `{{var subscriber_data.confirmation_link}}`
 
+Note that spaces should be not be used next to the braces:
+
+-  Correct: `{{var subscriber_data.confirmation_link}}`
+-  Incorrect: `{{ var subscriber_data.confirmation_link }}`
+
 We refer to this as 'strict mode' for email templates.
 All default templates have been converted to this strict mode.
 
@@ -34,13 +39,13 @@ Any new email template created after installing 2.3.4 must be written in strict 
 Pre-2.3.4, the New Order email template had a line with a direct method call:
 
 ```html
-<p class="greeting">{{trans "%customer_name," customer_name=$order.getCustomerName()}}</p>
+<p class="greeting">{{trans "%customer_name", customer_name=$order.getCustomerName()}}</p>
 ```
 
 As of 2.3.4, with the method call removed:
 
 ```html
-<p class="greeting">{{trans "%customer_name," customer_name=$order_data.customer_name}}</p>
+<p class="greeting">{{trans "%customer_name", customer_name=$order_data.customer_name}}</p>
 ```
 
 Below, within the `$transport` block, `customer_name` is defined in the `order_data` object and the method call place there.

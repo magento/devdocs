@@ -25,6 +25,7 @@ Here are some advanced technologies we recommend getting familiar with:
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) for performance testing
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
 *  [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) if you need a Git repo
+*  [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
@@ -118,11 +119,11 @@ For development and testing, we recommend the following:
 
 ## License and authentication requirements
 
-The Account Owner creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+When you purchase a {{site.data.var.ece}} subscription, Magento creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and login instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Magento partners involved in the code and production of the stores to the project.
 
 To work with and deploy stores, you need the following:
 
-*  [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
+*  A [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
 *  [Project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
 *  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) for each user who contributes to the project
 

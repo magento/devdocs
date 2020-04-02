@@ -58,6 +58,13 @@ mutation {
   }
 }
 ```
+## Input attributes
+
+The `deletePaymentToken` object must contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`public_hash` | `String!` | The public hash of the token
 
 ## Output attributes
 
@@ -70,7 +77,7 @@ The `DeletePaymentTokenOutput` object returns the result of the operation and de
 Attribute | Data Type | Description
 --- | --- | ---
 `customerPaymentTokens` | `CustomerPaymentTokens` | Contains an array of customer payment tokens
-`result` | Boolean | A value of `true` indicates the request was successful
+`result` | Boolean! | A value of `true` indicates the request was successful
 
 {% include graphql/customer-payment-tokens.md %}
 

@@ -17,7 +17,7 @@ Magento is not supported on:
 
 ## Memory requirement
 
-Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}/comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
+Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ## Composer (latest stable version)
 
@@ -55,6 +55,9 @@ Magento recommends using PHP 7.3
 
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
+
+{:.bs-callout-warning}
+If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
 <!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}
@@ -140,7 +143,7 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php
-[Known issue with xdebug]: {{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html
+[Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212
 [php_xdebug 2.5.x]: http://xdebug.org/download.php
 [master databases]: {{page.baseurl}}/config-guide/multi-master/multi-master.html
 [bash]: https://www.gnu.org/software/bash/

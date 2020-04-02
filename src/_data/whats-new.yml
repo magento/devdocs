@@ -4,11 +4,191 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu Feb 6 20:18:03 2020
+updated: Mon Mar 30 08:59:14 2020
 entries:
-- description: Added release notes and documentation for the following Magento
-    Cloud Suite packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
-    1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components 1.0.2
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: Added an 'ignoreTmpls property' section to the [Template Literals
+    in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 25, 2020
+  link: https://github.com/magento/devdocs/pull/6873
+- description: Available now! Amazon Sales Channel 4.0 introduces a new [Amazon Sales
+    Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-sales-channel-home.html)
+    home page, a new [store dashboard](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-store-dashboard.html),
+    a streamlined [onboarding process](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-onboarding-home.html),
+    and new [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6915
+- description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.<br/>
+    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)<br/>
+    [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html)<br/>
+    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html)<br/>
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)<br/>
+    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
+    [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
+    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
+    [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
+    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
+    [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html)
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6913
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
+entries:
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
+- description: Added instructions for setting up a [GitLab integration](https://devdocs.magento.com/cloud/integrations/gitlab-integration.html) to manage source
+    files for Magento Cloud projects.
+  versions: 2.x
+  type: New topic
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6876
+- description: Added a topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-container.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 19, 2020
+  link: https://github.com/magento/devdocs/pull/6871
+- description: Added a new topic about how to create an integration using the [GuzzleHttp](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-integration-with-api.html) external API to use some external Web Services.
+  versions: 2.3.x
+  type: New topic
+  date: March 18, 2020
+  link: https://github.com/magento/devdocs/pull/6859
+- description: Added the 'Disable a cron' section to the [Custom cron job and cron
+    group reference](https://devdocs.magento.com/guides/v2.3/config-guide/cron/custom-cron-ref.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 16, 2020
+  link: https://github.com/magento/devdocs/pull/6863
+- description: Added topic for the [ColumnsResize UI Compnent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6838
+- description: Added execution order examples to [Plugin (Interceptors)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6811
+- description: Improved the instructions to configure Cloud Starter projects to use
+    New Relic to add alternative instructions for users who have access to New Relic
+    and the Magento Admin for a site, but do not have access to configure environment
+    variables through the Magento Cloud project. See [Configure New Relic for Starter
+    environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 11, 2020
+  link: https://github.com/magento/devdocs/pull/6809
+- description: Big rewrite of the [Configure the TinyMCE editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html)
+    topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 9, 2020
+  link: https://github.com/magento/devdocs/pull/6681
+- description: Updated the [Magento Cloud reference topic](https://devdocs.magento.com/cloud/reference/cli-ref-topic.html)
+    in the Cloud guide.
+  versions: 2.x
+  type: Technical changes
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6737
+- description: Added an example of how to add a custom field type to the [ColumnsEditorRecord
+    component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-record.html).
+  versions: 2.3.x
+  type: Major update
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6726
+- description: Added information about how to [add a parameter](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html)
+    to URL argument type.
+  versions: 2.3.x
+  type: Technical changes
+  date: February 28, 2020
+  link: https://github.com/magento/devdocs/pull/6747
+- description: 'Added release notes for the following Magento Cloud Suite packages:  [ece-tools
+    v2002.0.23](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html),<br/>[Magento
+    Cloud Patches v1.0.2](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html),
+    and [Magento Cloud Components v1.0.3](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).'
+  versions: 2.x
+  type: Technical changes
+  date: February 27, 2020
+  link: https://github.com/magento/devdocs/pull/6700
+- description: Added topic for [GridDataProvider UI component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-grid-data-provider.html).
+  versions: 2.3.x
+  type: New topic
+  date: February 26, 2020
+  link: https://github.com/magento/devdocs/pull/6728
+- description: Added topic for the [ColumnsEditorRecord](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-view.html)
+    UI component.
+  versions: 2.3.x
+  type: New topic
+  date: February 25, 2020
+  link: https://github.com/magento/devdocs/pull/6716
+- description: Added the [Extend an existing GraphQL schema](https://devdocs.magento.com/guides/v2.3/graphql/develop/extend-existing-schema.html)
+    topic to the _GraphQL Developer Guide_.
+  versions: 2.3.x
+  type: New topic
+  date: February 21, 2020
+  link: https://github.com/magento/devdocs/pull/6678
+- description: Added the [Create a new layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-create.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6532
+- description: Added new tutorial for creating [ACL rule](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-access-control-list-rule.html).
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6453
+- description: Added the [Create validation rules](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-validation.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: February 18, 2020
+  link: https://github.com/magento/devdocs/pull/6556
+- description: Added an 'Example of use' section to [Create or extend configuration
+    types](https://devdocs.magento.com/guides/v2.3/config-guide/config/config-create.html).
+  versions: 2.3.3
+  type: Major update
+  date: February 14, 2020
+  link: https://github.com/magento/devdocs/pull/6539
+- description: Added information about the February 2020 PayPal Express Checkout issue with region patch to the Magento 2.3.4 Release Notes. This patch provides a fix for a significant PayPal-related vulnerability. See the following release notes:<br>[Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html) \| [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)
+  versions: 2.3.4
+  type: Major update
+  date: February 13, 2020
+  link: https://github.com/magento/devdocs/pull/6639
+- description: Added topic for [ColumnsEditorRecord](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-editor-record.html)
+    UI component.
+  versions: 2.3.x
+  type: New topic
+  date: February 13, 2020
+  link: https://github.com/magento/devdocs/pull/6626
+- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks)
+    configuration for the Cloud guide.
+  versions: 2.x
+  type: Technical changes
+  date: February 12, 2020
+  link: https://github.com/magento/devdocs/pull/6633
+- description: Added [release documentation](https://devdocs.magento.com/cloud/release-notes/cloud-tools.html) for the Magento Cloud Suite, which includes the following packages:<br/>- ece-tools 2002.1.0<br/>- magento/magento-cloud-patches
+    1.0.1<br/>- magento/magento-cloud-docker 1.0.0<br/>- magento/magento-cloud-components
+    1.0.2
   versions: 2.x
   type: Major update
   date: February 6, 2020
@@ -880,7 +1060,7 @@ entries:
   type: New topic
   date: September 24, 2019
   link: https://github.com/magento/devdocs/pull/5452
-- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries.html)
+- description: Added example [introspection queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html)
     to the _GraphQL Developer Guide_.
   versions: 2.3.x
   type: Major update
@@ -2086,7 +2266,7 @@ entries:
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3840
 - description: Added `url_path`, `url_key`, and `url_rewrites` to [product endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/products.html)
-    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/url-resolver.html)
+    and added URL rewrite attributes and examples to [UrlRewrite endpoint](https://devdocs.magento.com/guides/v2.3/graphql/queries/url-resolver.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
@@ -2418,7 +2598,7 @@ entries:
   type: Technical changes
   date: January 23, 2019
   link: https://github.com/magento/devdocs/pull/3611
-- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html#max-input-vars-error-due-to-large-forms)
+- description: Added a [section](https://support.magento.com/hc/en-us/articles/360034599631)
     discussing the max-input-vars value in php.ini.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -2573,7 +2753,7 @@ entries:
     system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html),
     [Step 3. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-backup.html),
     [Step 2. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/module-man/compman-backup.html),
-    and [Troubleshoot backups](https://devdocs.magento.com/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html).
+    and [Troubleshoot backups](https://support.magento.com/hc/en-us/articles/360032990672).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: December 10 2018
@@ -4371,11 +4551,11 @@ entries:
   versions: '2.2'
   type: Updated
   date: June 23 2017
-- description: '[Exceptions during installation](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_exceptions.html)'
+- description: '[Exceptions during installation](https://support.magento.com/hc/en-us/articles/360033432231)'
   versions: '2.2'
   type: Updated
   date: June 23 2017
-- description: '[Errors installing optional sample data](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_sample-data.html)'
+- description: '[Errors installing optional sample data](https://support.magento.com/hc/en-us/articles/360033824571)'
   versions: '2.2'
   type: Updated
   date: June 23 2017
@@ -4916,7 +5096,7 @@ entries:
   versions: 2.x
   type: New
   date: Nov 4 2016
-- description: "[Troubleshoot OPcache-related error](https://devdocs.magento.com/guides/v2.2/install-gde/trouble/php/tshoot_opcache.html)"
+- description: "[Troubleshoot OPcache-related error](https://support.magento.com/hc/en-us/articles/360034597391)"
   versions: 2.x
   type: New
   date: Nov 4 2016

@@ -4,7 +4,7 @@ title: Packages
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the
-[Magento Extension Quality Program (EQP)](http://docs.magento.com/marketplace/user_guide/extensions/extension-quality-program.html).
+[Magento Extension Quality Program (EQP)]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html).
 You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
 *  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
@@ -167,7 +167,7 @@ Assuming a Magento 2 package:
 
 ```json
 "artifact" : {
-  "file_upload_id" : "dhsiXjdksW17623"
+  "file_upload_id" : "5c11e656057b42.97931218.5"
 }
 ```
 
@@ -176,15 +176,16 @@ Assuming a Magento 2 package:
 ```json
 "documentation_artifacts" : {
   "user" : {
-    "file_upload_id" : "j47dVbsFgkl"
+    "file_upload_id" : "5c644d97bb7c41.37505716.6"
   },
   "installation" : {
-    "file_upload_id" : "d67E82hVb20"
+    "file_upload_id" : "5c644daf21fee4.39102137.2"
   },
   "reference" : {
-    "file_upload_id" : "9Rb5yQh7dfA"
+    "file_upload_id" : "5c644f4dcb1900.18508194.9"
   }
 }
+
 ```
 
 #### shared_packages
@@ -193,12 +194,12 @@ Assuming a Magento 2 package:
 "shared_packages" : [
   {
     "artifact" : {
-      "file_upload_id" : "sfRh72Mx9d"
+      "file_upload_id" : "5c648b986aabc6.62305048.2"
     }
   },
   {
     "artifact" : {
-      "file_upload_id" : "Gh893dCxak"
+      "file_upload_id" : "5c648b986a70c0.11666567.3"
     }
   }
 ]
@@ -209,23 +210,23 @@ Assuming a Magento 2 package:
 ```json
 "media_artifacts" : {
   "icon_image" : {
-    "file_upload_id" : "gAdh628bzXv"
+    "file_upload_id" : "5c129cd41ba478.65767699.1"
   },
   "gallery_images" : [
     {
-      "file_upload_id" : "hj739djXvT"
+      "file_upload_id" : "5c644fa344e5d7.04253635.8"
     },
     {
-      "file_upload_id" : "9Dfg73482E"
+      "file_upload_id" : "5c648b98446065.77844389.4"
     },
     {
-      "file_upload_id" : "J87bdueDjxM"
+      "file_upload_id" : "5c648b984d0228.21794482.7"
     },
     {
-      "file_upload_id" : "Vhke71093Z4"
+      "file_upload_id" : "5c648b98698ed0.64632056.3"
     },
     {
-      "file_upload_id" : "Gh8273Cx78Q"
+      "file_upload_id" : "5c648b986a3d98.83415858.0"
     }
   ],
   "video_urls" : [
@@ -390,15 +391,20 @@ During the EQP process, it can take the following fields to control the parallel
 Once a package has been published to the store, this takes the following field:
 
 ```json
-"action" : {
-  "overall" : "publish"
+{
+    "action" : {
+      "overall" : "remove"
+    }
 }
 ```
 
 |Value|Type|Description|
 |-----|----|-----------|
-|publish|string|Re-publishes the package to the store if it was removed from it earlier by the developer.|
 |remove|string|Removes the package from the store.|
+
+ {:.bs-callout-info}
+There is no way to directly re-publish a product to the store.
+Send the "submit" action for the marketing content to re-publish the product.
 
 #### eqp_status
 
@@ -407,7 +413,6 @@ Once a package has been published to the store, this takes the following field:
   "overall" : "in_progress",
   "technical" : "draft",
   "marketing" : "approved"
-
 }
 ```
 
@@ -474,7 +479,7 @@ You can submit a package in either of the following ways:
 You can update one or more parameters in `draft` mode.
 In this mode, the API checks only for basic type-validation issues.
 
-When the `action` field is set to `publish`, the API validates fields to ensure all
+When the `action` field is set to `submit`, the API validates fields to ensure all
 required parameters are available on the Developer Portal to initiate the EQP process,
 and that parameters which depend upon each other match up correctly.
 
@@ -507,38 +512,38 @@ The following example shows a POST request with all required parameters set for 
     "long_description" : "<Long description here>",
     "release_notes" : "<Release notes here>",
     "artifact" : {
-      "file_upload_id" : "dhsiXjdksW17623"
+      "file_upload_id" : "5c11e656057b42.97931218.5"
     },
     "documentation_artifacts" : {
       "user" : {
-        "file_upload_id" : "j47dVbsFgkl"
+        "file_upload_id" : "5c644d97bb7c41.37505716.6"
       },
       "installation" : {
-        "file_upload_id" : "d67E82hVb20"
+        "file_upload_id" : "5c644daf21fee4.39102137.2"
       },
       "reference" : {
-        "file_upload_id" : "9Rb5yQh7dfA"
+        "file_upload_id" : "5c644f4dcb1900.18508194.9"
       }
     },
     "media_artifacts" : {
       "icon_image" : {
-        "file_upload_id" : "gAdh628bzXv"
+        "file_upload_id" : "5c129cd41ba478.65767699.1"
       },
       "gallery_images" : [
         {
-          "file_upload_id" : "hj739djXvT"
+          "file_upload_id" : "5c644fa344e5d7.04253635.8"
         },
         {
-          "file_upload_id" : "9Dfg73482E"
+          "file_upload_id" : "5c648b98446065.77844389.4"
         },
         {
-          "file_upload_id" : "J87bdueDjxM"
+          "file_upload_id" : "5c648b984d0228.21794482.7"
         },
         {
-          "file_upload_id" : "Vhke71093Z4"
+          "file_upload_id" : "5c648b98698ed0.64632056.3"
         },
         {
-          "file_upload_id" : "Gh8273Cx78Q"
+          "file_upload_id" : "5c648b986a3d98.83415858.0"
         }
       ],
       "video_urls" : [
@@ -639,7 +644,7 @@ The PUT method also allows for updating a single package with `submission_id` as
 curl -X PUT \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
      -H 'Content-Type: application/json' \
-     -d '{ "action" : { "overall" : "publish"} }' \
+     -d '{ "action" : { "marketing" : "submit"} }' \
      https://developer-stg-api.magento.com/rest/v1/products/packages/f4eacd72be
 ```
 
@@ -700,9 +705,6 @@ GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/skus/:url_encoded_sku
 GET /rest/v1/products/packages/items
 GET /rest/v1/products/packages/items/:item_id
-GET /rest/v1/products/packages/:submission_id/status
-GET /rest/v1/products/packages/sku/:url_encoded_sku/status
-GET /rest/v1/products/packages/item/:item_id/status
 ```
 
 There are various ways to retrieve package details, most of which are convenient alternatives to the typical way using `submission_id` for a specific package submission. The data returned is the same for the primary and the secondary ways.
@@ -718,14 +720,6 @@ The following basic endpoints retrieve all package details (every version of eve
 GET /rest/v1/products/packages
 GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/items
-```
-
-The following status endpoints provide a detailed EQP status report of a packages:
-
-```http
-GET /rest/v1/products/packages/:submission_id/status
-GET /rest/v1/products/packages/sku/:url_encoded_sku/status
-GET /rest/v1/products/packages/item/:item_id/status
 ```
 
 This sample call lists all packages belonging to a user:
@@ -763,7 +757,7 @@ curl -X GET \
     "version" : "1.1.5",
     "release_notes" : "<Release notes here>",
     "artifact" : {
-      "file_upload_id" : "dhsiXjdksW17623",
+      "file_upload_id" : "5c11e656057b42.97931218.5",
       "filename" : "acme_one-click-checkout.zip",
       "content_type" : "application/zip",
       "size" : 182934,
@@ -772,7 +766,7 @@ curl -X GET \
     },
     "documentation_artifacts" : {
       "user" : {
-        "file_upload_id" : "j47dVbsFgkl",
+        "file_upload_id" : "5c644d97bb7c41.37505716.6",
         "filename" : "user.pdf",
         "content_type" : "application/pdf",
         "size" : 48392,
@@ -780,7 +774,7 @@ curl -X GET \
         "file_hash" : "7f99e16a20457859fc0c86b5676a62ca"
       },
       "installation" : {
-        "file_upload_id" : "d67E82hVb20",
+        "file_upload_id" : "5c644daf21fee4.39102137.2",
         "filename" : "installation.pdf",
         "content_type" : "application/pdf",
         "size" : 34876,
@@ -788,7 +782,7 @@ curl -X GET \
         "file_hash" : "94392b98f02c56083995d23f02e460ab"
       },
       "reference" : {
-        "file_upload_id" : "9Rb5yQh7dfA",
+        "file_upload_id" : "5c644f4dcb1900.18508194.9",
         "filename" : "reference.pdf",
         "content_type" : "application/pdf",
         "size" : 23845,
@@ -798,8 +792,8 @@ curl -X GET \
     },
     "media_artifacts" : {
       "icon_image" : {
-        "file_upload_id" : "gAdh628bzXv",
-        "filename" : "one-click-icon.png",
+        "file_upload_id" : "5c129cd41ba478.65767699.1",
+        "filename" : "icon.png",
         "content_type" : "image/png",
         "size" : 37492,
         "malware_status" : "pass",
@@ -807,7 +801,7 @@ curl -X GET \
       },
       "gallery_images" : [
         {
-          "file_upload_id" : "hj739djXvT",
+          "file_upload_id" : "5c644fa344e5d7.04253635.8",
           "filename" : "acme-logo.png",
           "content_type" : "image/png",
           "size" : 23947,
@@ -815,7 +809,7 @@ curl -X GET \
           "file_hash" : "515f2eaf3cd4e43c32fda89a004306aa"
         },
         {
-          "file_upload_id" : "9Dfg73482E",
+          "file_upload_id" : "5c648b98446065.77844389.4",
           "filename" : "catalog_demo.png",
           "content_type" : "image/png",
           "size" : 37492,
@@ -823,7 +817,7 @@ curl -X GET \
           "file_hash" : "8da78313887fdc3d2506f39c46ccde4e"
         },
         {
-          "file_upload_id" : "J87bdueDjxM",
+          "file_upload_id" : "5c648b984d0228.21794482.7",
           "filename" : "cart-demo.png",
           "content_type" : "image/png",
           "size" : 38023,
@@ -831,7 +825,7 @@ curl -X GET \
           "file_hash" : "30b6fef138e1433e6f8ff23a45b2fbb9"
         },
         {
-          "file_upload_id" : "Vhke71093Z4",
+          "file_upload_id" : "5c648b98698ed0.64632056.3",
           "filename" : "click-demo.png",
           "content_type" : "image/png",
           "size" : 48293,
@@ -839,7 +833,7 @@ curl -X GET \
           "file_hash" : "0ced4d071dddc6e354acfa11f56a56f1"
         },
         {
-          "file_upload_id" : "Gh8273Cx78Q",
+          "file_upload_id" : "5c648b986a3d98.83415858.0",
           "filename" : "click-success.png",
           "content_type" : "image/png",
           "size" : 39482,
@@ -874,8 +868,8 @@ curl -X GET \
       "technical" : "rejected",
       "marketing" : "approved"
     },
-    "created_time" : "2018-04-23 16:00:00",
-    "modified_time" : "2018-04-23 17:53:22"
+    "created_at" : "2018-04-23 16:00:00",
+    "modified_at" : "2018-04-23 17:53:22"
   }
 ]
 ```
@@ -885,70 +879,7 @@ curl -X GET \
 *  The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 *  The `eqp_status` field will indicate the current state of the package in the EQP process.
 
-### Get EQP status details
-
-In the previous example, submission `f4eacd72be` failed. Specify the submission_id query parameter to get a more detailed report:
-
-**Request:**
-
-```bash
-curl -X GET \
-     -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-stg-api.magento.com/rest/v1/products/packages/f4eacd72be/status
-```
-
-**Response:**
-
-```json
-{
-  "code" : "fail",
-  "technical" : {
-    "code" : "fail",
-    "results" : [
-      {
-        "tool" : "phpcs",
-        "reports" : [
-          {
-            "platform" : "M2",
-            "edition" : "CE",
-            "version" : "2.1.12",
-            "php_version" : "7.1.16",
-            "status" : "pass",
-            "details" : {
-            }
-          }
-        ]
-      },
-      {
-        "tool" : "compile",
-        "reports" : [
-          {
-            "platform" : "M2",
-            "edition" : "CE",
-            "version" : "2.2.3",
-            "php_version" : "7.1.16",
-            "status" : "fail",
-            "details" : {
-              "output" : "<output bin/magento deploy:mode:set production here >"
-            }
-          }
-        ]
-
-      }
-    ]
-  },
-  "marketing" : {
-    "code" : "pass",
-    "results" : [
-    ]
-  }
-}
-```
-
-*  Technical reports include the Magento edition, version, and PHP version used to run tests.
-*  The top-level `code` indicates the overall result, which can be `pass`, `fail`, or `in_progress`.
-*  Each EQP review step, `technical` and `marketing` have their own overall status indicated by the `code` value, which can be `pass`, `fail` or `in_progress`.
-*  The `results` list contains details for each tool and their respective outcome via the `status` field, which can be `pass` or `fail`.
+To get additional details about the results of EQP testing, see [EQP Test Reports](test-results.html)
 
 ### Sorting and Filtering
 
@@ -971,17 +902,17 @@ The following fields enable both sorting and filtering support. Refer to the [Pa
 |custom_license_name|Sub-string match|
 |custom_license_url|Sub-string match|
 |requested_launch_date|date match, allows range|
-|created_time|date match, allows range|
-|modified_time|date match, allows range|
+|created_at|date match, allows range|
+|modified_at|date match, allows range|
 
-A sample cURL request filtering all `themes` sorted by `platform` in ascending order and `created_time` in descending order:
+A sample cURL request filtering all `themes` sorted by `platform` in ascending order and `created_at` in descending order:
 
 **Request:**
 
 ```bash
 curl -X GET \
      -H 'Authorization: Bearer baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7' \
-     https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_time
+     https://developer-stg-api.magento.com/rest/v1/products/packages?type=theme&sort=+platform,-created_at
 ```
 
 **Response:**

@@ -15,9 +15,10 @@ This site is built by [Jekyll](https://jekyllrb.com/), which is an open-source t
 You can build the site locally in the following ways:
 
 -  [Installing the project dependencies locally](#build-locally) (Mac, Linux)
+-  [Using Docker (docker-compose)](#docker-docker-compose) (Mac, Linux, Windows)
 -  [Using a Vagrant virtual machine](https://github.com/magento-devdocs/vagrant-for-magento-devdocs) (Mac, Linux, Windows)
 -  [Build DevDocs in Windows](https://github.com/magento/devdocs/wiki/Build-DevDocs-in-Windows) (Windows 7 & 10)
--  [Building older versions of the documentation](#building-old-versions)
+-  [Building older versions of the documentation](https://github.com/magento/devdocs/wiki/Build-DevDocs-with-Docker)
 
 ## Build locally
 

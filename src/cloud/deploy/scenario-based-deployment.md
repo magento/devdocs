@@ -69,7 +69,7 @@ hooks:
     php ./vendor/bin/ece-tools run scenario/deploy.xml vendor/<vendor-name>/<module-name>/deploy.xml vendor/<vendor-name>/<module-name>/deploy2.xml
 ```
 
-During deployment, the custom scenarios merge with the default scenario based on the following rules:
+During deployment, the custom scenarios merge with the default scenario-based on the following rules:
 
 -  Scenarios are prioritized based on their sequence in the hook definition with the last scenario listed having the highest priority.
 

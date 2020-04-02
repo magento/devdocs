@@ -101,7 +101,7 @@ Any new design related to Web API must satisfy the following constraints to keep
 1. The resource URL should be versioned (for example: V1). The version must be specified in the following format: `V\d.+`
 1. Resource names in a URL should be in plural form (for example: products, carts)
 1. ID parameters for operations on entities should be part of the resource URL (for example: /V1/products/**:sku** )
-1. POST should be used to create an entity.
+1. PUT should be used to create an entity, when UUID or a natural identifier is accepted from the client. POST should be used otherwise.
    PUT should be used to update an entity.
    PATCH should be used to patch (update only selected fields) an entity(s) update.
 1. REST is designed for system integrations, mobile app integrations, as well as for one-page apps. It supports tokens, cookies and OAuth 1.0 with token exchange. It also supports guest access to public resources.
