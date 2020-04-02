@@ -28,23 +28,30 @@ When a database container initializes, it creates a new database with the specif
 
 To prevent accidental data loss, the database is stored in a persistent **`magento-db`** volume after you stop and remove the Docker configuration. The next time you use the `docker-compose up` command, the Docker environment restores your database from the persistent volume. You must manually destroy the database volume using the `docker volume rm <volume_name>` command.
 
-You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file. Add the custom values using an included `my.cnf` file, or add the correct variables directly to the override file as shown in the following examples.
+You can inject a MySQL configuration into the database container at creation by adding the configuration to the `docker-compose-override.yml` file using any of the following methods:
 
-Add a custom `my.cnf` file to the `services` section in the  `docker-compose.override.yml` file:
+-  Use a mount to add a custom `my.cnf` file to the `services` section in the  `docker-compose.override.yml` file:
 
-```yaml
-  db:
-    volumes:
-      - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
-```
+   ```yaml
+     db:
+       volumes:
+         - path/to/custom.my.cnf:/etc/mysql/conf.d/custom.my.cnf
+   ```
 
-Add configuration values to the `docker-compose.override.yml` file:
+-  Add a custom `custom.cnf` file to the `.docker/mysql/mariadb.conf.d` directory:
 
-```yaml
-  db:
-    environment:
-      - innodb-buffer-pool-size=134217728
-```
+   ```bash
+   cp custom.cnf .docker/mysql/mariadb.conf.d
+   ```
+
+-  Add configuration values directly to the `docker-compose.override.yml` file:
+
+   ```yaml
+   services:
+     db:
+       environment:
+         - innodb-buffer-pool-size=134217728
+   ```
 
 See [Manage the database] for details about using the database.
 
@@ -135,13 +142,15 @@ To increase the timeout on this container, add the following code to the  `docke
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
-You can specify `VARNISHD_PARAMS` and other environment variables using ENV to specify custom values for required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
+The **Varnish** service is installed by default. When deployment completes, Magento is configured to use Varnish for full page caching (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
 
-```yaml
-varnish:
-  environment:
-    - VARNISHD_PARAMS="-p default_ttl=3600 -p default_grace=3600 -p feature=+esi_ignore_https -p feature=+esi_disable_xml_check"
+To skip the Varnish installation, add the `--no-varnish` option to the `ece-docker build:compose` command.
+
+```bash
+./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2 --no-varnish
 ```
+
+You can specify `VARNISHD_PARAMS` and other environment variables using ENV to specify custom values for required parameters. This is usually done by adding the configuration to the `docker-compose.override.yml` file.
 
 To clear the Varnish cache:
 
