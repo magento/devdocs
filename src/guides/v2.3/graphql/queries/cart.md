@@ -622,9 +622,9 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The cost of shipping using this shipping method
 `available` | Boolean! | Indicates whether this shipping method can be applied to the cart
-`base_amount` | Money | The base shipping cost, not including taxes or other cost adjustment. Could be null if method is not available
+`base_amount` | Money | Deprecated.  This attribute is not applicable for GraphQL
 `carrier_code` | String! | A string that identifies a commercial carrier or an offline shipping method
-`carrier_title` | String! | The label for the carrier code
+`carrier_title` | String! | The la This attribute is not applicable for GraphQL. bel for the carrier code
 `error_message` | String | Describes an error condition
 `method_code` | String | A shipping method code associated with a carrier. Could be null if method is not available
 `method_title` | String | The label for the method code. Could be null if method is not available
@@ -676,7 +676,7 @@ The `CartDiscount` object must contain the following attributes.
 Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The amount of all discounts applied to the cart
-`label` | [String!]! | A concatenated list of strings that describe each applied discount
+`label` | [String]! | A concatenated list of strings that describe each applied discount
 
 ### CartItemInterface {#CartItemInterface}
 
@@ -776,9 +776,9 @@ The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddres
 Attribute |  Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
-`customer_notes` | String | Comments made to the customer that accompanies the order
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
+`customer_notes` | String | Comments made to the customer that accompanies the order
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
 
