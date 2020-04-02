@@ -25,6 +25,7 @@ Here are some advanced technologies we recommend getting familiar with:
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) for performance testing
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
 *  [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) if you need a Git repo
+*  [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 

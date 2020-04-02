@@ -58,6 +58,9 @@ pages:
         - label: ColumnsControls component
           url: /ui_comp_guide/components/ui-columnscontrols.html
 
+        - label: Container component
+          url: /ui_comp_guide/components/ui-container.html
+
         - label: Date component
           url: /ui_comp_guide/components/ui-date.html
 
@@ -192,6 +195,9 @@ pages:
 
         - label: ThumbnailColumn component
           url: /ui_comp_guide/components/ui-thumbnailcolumn.html
+
+        - label: TimelineColumns component
+          url: /ui_comp_guide/components/ui-timeline-columns.html
 
         - label: ListingToolbar component
           url: /ui_comp_guide/components/ui-toolbar.html
