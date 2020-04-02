@@ -354,10 +354,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30093-->
 
-<!--- MC-22927-->
-
-*  Magento now loads blocks that are associated with the website that a restricted user has access to when the user navigates to  **Content** >  **Blocks**.
-
 <!--- MC-30853-->
 
 ### Configurable products
@@ -530,11 +526,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*
 
-<!--- MC-30741-->
-
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
-
-<!--- MC-22911-->
 <!--- MC-22972-->
 <!--- MC-29261-->
 
@@ -557,14 +548,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30261-->
 
 *  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
-
-### Google Tag Manager
-
-<!--- MC-30669-->
-
-*  The missing `Magento_GoogleTagManager::checkout/set_checkout_option.phtml` template has been restored.
-
-<!--- MC-29503-->
 
 ### Import/export
 
