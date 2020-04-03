@@ -103,7 +103,7 @@ This command passes in the current working directory as `/app/`, includes compos
 
 ## Running Docker on a custom host and port
 
-Sometimes it necessary to run docker with different hostname and port, for example, if you need to run more than one instance.
+Sometimes you might want to run Docker on a different host and port, for example if you need more than one Docker instance.
 
 To configure the custom host and port, add the `host` and `port` options to the `build:compose` command to specify the hostname and port number values.
 
