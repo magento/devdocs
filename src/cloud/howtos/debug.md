@@ -320,18 +320,13 @@ To debug CLI commands:
     These variables are removed when the SSH session ends. 
     If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
 
-    When adding the variables, you can add runtime options:
-
-    ```bash
-    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
-    ```
-
 1. Begin debugging
 
-    On Starter environments and Pro Integration environments, run the CLI command to debug, for example:
+    On Starter environments and Pro Integration environments, run the CLI command to debug.
+    You may add runtime options, for example:
 
     ```bash
-    php bin/magento cache:clean
+    php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 bin/magento cache:clean
     ```
 
     On Pro Staging and Production environments, you must specify the path to the Xdebug php configuration file when debugging CLI commands, for example:
