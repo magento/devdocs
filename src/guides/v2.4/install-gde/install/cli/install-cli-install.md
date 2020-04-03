@@ -117,7 +117,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 
 |Name|Value|Required?|
 |--- |--- |--- |
-`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch5`, `elasticsearch6`, and `elasticsearch7`. The default is `elasticsearch6` | No
+`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch5`, `elasticsearch6`, and `elasticsearch7`. The default is `elasticsearch7` | No
 `--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
 `--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
