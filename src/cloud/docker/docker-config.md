@@ -111,7 +111,7 @@ To configure the custom host and port, add the `host` and `port` options to the 
 ./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080
 ```
 
-Don't forget to add the custom hostname to your `/etc/hosts` file.
+You must also add the custom hostname to your `/etc/hosts` file.
 
 
 ## Sendmail service
