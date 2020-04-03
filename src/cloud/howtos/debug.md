@@ -317,19 +317,24 @@ To debug CLI commands:
    export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
    ```
 
-These variables are removed when the SSH session ends. When adding the variables, you can add runtime options:
+These variables are removed when the SSH session ends. 
+If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
+
+When adding the variables, you can add runtime options:
 
 ```bash
 php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
 ```
 
-If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
+1. Begin debugging
 
-## Debug CLI commands for Pro Staging and Production {#pro-debugcli}
+On Starter environments and Pro Integration environments, run the CLI command to debug, for example:
 
-In addition to steps from [Debug CLI commands](#debugcli) to debug CLI command on Pro Production or Staging you need to use **php.xdebug.ini** file which is located in **/etc/platform/USERNAME/**. 
+```bash
+php bin/magento cache:clean
+```
 
-Example:
+On Pro Staging and Production environments, you must specify the path to the Xdebug php configuration file when debugging CLI commands, for example:
 
 ```bash
 php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
