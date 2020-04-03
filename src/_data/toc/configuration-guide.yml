@@ -344,6 +344,9 @@ pages:
     - label: How to locate your session files
       url: /config-guide/sessions.html
 
+    - label: Configure SaaS Environments
+      url: /config-guide/saas/environment.html
+
     - label: GDPR compliance
       children:
         - label: Magento 2.x
