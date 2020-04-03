@@ -328,17 +328,17 @@ To debug CLI commands:
 
 1. Begin debugging
 
-On Starter environments and Pro Integration environments, run the CLI command to debug, for example:
+    On Starter environments and Pro Integration environments, run the CLI command to debug, for example:
 
-```bash
-php bin/magento cache:clean
-```
+    ```bash
+    php bin/magento cache:clean
+    ```
 
-On Pro Staging and Production environments, you must specify the path to the Xdebug php configuration file when debugging CLI commands, for example:
+    On Pro Staging and Production environments, you must specify the path to the Xdebug php configuration file when debugging CLI commands, for example:
 
-```bash
-php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
-```
+    ```bash
+    php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
+    ```
 
 ## For debugging web requests {#webrequests}
 
