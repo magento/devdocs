@@ -105,7 +105,7 @@ This command passes in the current working directory as `/app/`, includes compos
 
 Sometimes it necessary to run docker with different hostname and port, for example, if you need to run more than one instance.
 
-To configure custom hostname and port `build:compose` command has two option `--host` and `--port` respectively.
+To configure the custom host and port, add the `host` and `port` options to the `build:compose` command to specify the hostname and port number values.
 
 ```bash
 ./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080
