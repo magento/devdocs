@@ -12,4 +12,4 @@ This compliance documentation provides the technical information to ensure that 
 
 ## Compliance tools
 
--   [Adobe Privacy JavaScript Library](<{{ site.baseurl }}/compliance/privacy/adobe-privacy-js-library.html>)
+-  [Adobe Privacy JavaScript Library](<{{ site.baseurl }}/compliance/privacy/adobe-privacy-js-library.html>)
