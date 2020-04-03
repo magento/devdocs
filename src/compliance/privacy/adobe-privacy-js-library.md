@@ -11,17 +11,17 @@ Use this library to retrieve and remove the data stored in the browser by these 
 
 ## Installation
 
-Use one of the following methods to get a copy of the library file:
+Use one of the following methods to download the library file:
 
--  Using npm: `npm install @adobe/adobe-privacy`
--  Download the file from <https://github.com/Adobe-Marketing-Cloud/adobe-privacy>
+-  npm: `npm install @adobe/adobe-privacy`
+-  GitHub: <https://github.com/Adobe-Marketing-Cloud/adobe-privacy>
 
 After you have the file, you will need to add it to a custom module or theme installed in your Magento instance.
 Follow the instructions described in the [Use custom JavaScript][] topic to accomplish this task.
 
 ## Usage
 
-The Privacy JS Library provides various functions to manage identity data stored in the browser.
+The AdobePrivacy JS Library provides various functions to manage identity data stored in the browser.
 
 `retrieveIdentities()`
 : Returns an array of identities from a service along with an array of identities not found in the service
@@ -36,7 +36,7 @@ For more information and examples for using these functions, see the [official l
 
 ### Initialization
 
-Instantiate a new `AdobePrivacy` object to use the Privacy JS Library in your implementation code.
+Instantiate a new `AdobePrivacy` object to use the AdobePrivacy JS Library in your implementation code.
 
 ```js
 var adobePrivacy = new AdobePrivacy({});
