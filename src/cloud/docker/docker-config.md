@@ -101,7 +101,7 @@ docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento
 
 This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
 
-## Running Docker on custom hostname and port
+## Running Docker on a custom host and port
 
 Sometimes it necessary to run docker with different hostname and port, for example, if you need to run more than one instance.
 
