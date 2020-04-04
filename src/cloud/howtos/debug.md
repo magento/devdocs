@@ -317,7 +317,7 @@ To debug CLI commands:
    export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
    ```
 
-   These variables are removed when the SSH session ends. 
+   These variables are removed when the SSH session ends.
    If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
 
 1. Begin debugging
