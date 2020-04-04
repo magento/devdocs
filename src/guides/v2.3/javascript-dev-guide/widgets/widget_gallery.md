@@ -356,6 +356,15 @@ Sliding direction of thumbnails in the fullscreen view.
 *  `vertical`
 *  `horizontal`
 
+```javascript
+	<var name="options">
+	    <var name="options">
+	        <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
+	    </var>
+	</var>
+```
+
+
 #### `fullscreen/navarrows` {#full_navarrows}
 
 Show/hide arrows in thumb navigation.
