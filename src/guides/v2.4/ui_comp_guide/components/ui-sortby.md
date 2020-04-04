@@ -5,18 +5,18 @@ contributor_name: Shankar Konar
 contributor_link: https://github.com/konarshankar07
 ---
 
-The Sortby component allows to sort the column in ascending or descending order.
+The Sortby component allows you to sort the column in ascending or descending order.
 
 ## Configuration options
 
-|      Option              |   Description                                                         |      Type      |  Default Value |
-|--------------------------|-----------------------------------------------------------------------|----------------| ---------------|
-| template                 | Path to the component’s <code>.html</code> template.                  | String         | ui/grid/sortBy |
-| options                  | List of options available for sorting.                                | Array          | -              |
-| applied                  | Currently applied sorting.                                            | Object         | -              |
-| sorting                  | Column's sorting order. Can be ascending (`asc`), descending (`desc`).| String         | asc            |
-| selectedOption           | Currently selected option for sorting.                                | String         | -              |
-| isVisible                | Check if component is visible or not.                                 | Boolean        | true           |
+|      Option                |   Description                                                                 |      Type      |  Default Value   |
+|----------------------------|-------------------------------------------------------------------------------|----------------| -----------------|
+| `template`                 | Path to the component .html template.                                         | String         | `ui/grid/sortBy` |
+| `options`                  | List of options available for sorting.                                        | Array          | `-`              |
+| `applied`                  | Currently applied sorting.                                                    | Object         | `-`              |
+| `sorting`                  | Specify ascending (`asc`) or descending (`desc`) sorting order for the column.| String         | `asc`            |
+| `selectedOption`           | Currently selected option for sorting.                                        | String         | `-`              |
+| `isVisible`                | Check if component is visible or not.                                         | Boolean        | `true`           |
 
 ## Examples
 
