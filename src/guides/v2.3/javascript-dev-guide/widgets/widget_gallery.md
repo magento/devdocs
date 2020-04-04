@@ -358,7 +358,7 @@ Sliding direction of thumbnails in the fullscreen view.
 
 ```xml
 <var name="gallery">
-    <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->    
+   <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->    
 </var>
 ```
 
