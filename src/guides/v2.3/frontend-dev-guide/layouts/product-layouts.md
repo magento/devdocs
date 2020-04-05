@@ -21,6 +21,18 @@ Layout file | Description
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
 
+## Customize Product view page
+
+With the help gives numerous containers on the product page, You should simply reference the container and add blocks to it.
+
+*  `product.info.main`
+*  `product.info.price`
+*  `product.info.stock.sku`
+*  `product.info.form.content`
+*  `product.info.extrahint`
+*  `product.info.social`
+*  `product.info.media`
+
 ## Checkout cart configure page
 
 Layout file | Description
