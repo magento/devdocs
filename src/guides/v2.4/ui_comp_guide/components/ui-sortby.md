@@ -12,10 +12,10 @@ The Sortby component allows you to sort the column in ascending or descending or
 |      Option                |   Description                                                                 |      Type      |  Default Value   |
 |----------------------------|-------------------------------------------------------------------------------|----------------| -----------------|
 | `template`                 | Path to the component .html template.                                         | String         | `ui/grid/sortBy` |
-| `options`                  | List of options available for sorting.                                        | Array          | `-`              |
-| `applied`                  | Currently applied sorting.                                                    | Object         | `-`              |
+| `options`                  | List of options available for sorting.                                        | Array          | `[]`             |
+| `applied`                  | Currently applied sorting.                                                    | Object         | `{}`             |
 | `sorting`                  | Specify ascending (`asc`) or descending (`desc`) sorting order for the column.| String         | `asc`            |
-| `selectedOption`           | Currently selected option for sorting.                                        | String         | `-`              |
+| `selectedOption`           | Currently selected option for sorting.                                        | String         |  -               |
 | `isVisible`                | Check if component is visible or not.                                         | Boolean        | `true`           |
 
 ## Examples
