@@ -10,7 +10,7 @@ When Magento is launched, the store's configuration is loaded and copied into me
 
 To ensure the copy in memory is re-instantiated after an update, use the `PoisonPill` interfaces available in the MessageQueue module.
 There are three type of the `PoisonPill` interfaces:
-`Magento\Framework\MessageQueue\PoisonPill\PoisonPillPutInterface` - The interface contains the `put` method. The implementation of the method puts new version of poison pill inside DB. 
+`Magento\Framework\MessageQueue\PoisonPill\PoisonPillPutInterface` - The interface contains the `put` method. The implementation of the method puts new version of poison pill inside DB.
 `Magento\Framework\MessageQueue\PoisonPill\PoisonPillReadInterface` - The interface contains the `getLatestVersion` method. The implementation of the method gets and returns get latest version of poison pill.
 `Magento\Framework\MessageQueue\PoisonPill\PoisonPillCompareInterface` - The interface contains the `isLatestVersion` method. The implementation of the method checks if version of current poison pill is latest.
 
