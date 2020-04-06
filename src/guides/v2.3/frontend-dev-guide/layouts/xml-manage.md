@@ -236,6 +236,8 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 </page>
 ```
 
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
+
 **Example:** Add a custom attribute to the `body` tag.
 
 ```xml
@@ -254,8 +256,6 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
         <attribute name="class" value="my-new-body-class"/>
     </body>
 ```
-
-![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
 
 **Example:** Add an id to the `body` tag.
 
