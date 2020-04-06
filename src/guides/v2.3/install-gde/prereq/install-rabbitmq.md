@@ -13,8 +13,6 @@ RabbitMQ is an open source message broker that offers a reliable, highly availab
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-{{site.data.var.ce}} uses RabbitMQ to manage these message queues. As of Magento release 2.3.0, RabbitMQ can be used on {{site.data.var.ce}} installations.
-
 The message queue system must be established before you install Magento. The basic sequence is
 
 1. Install RabbitMQ and any prerequisites.
@@ -33,9 +31,9 @@ sudo apt install -y rabbitmq-server
 
 This command also installs the required Erlang packages.
 
-If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their [website](https://glossary.magento.com/website).
+If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="_blank"}.
+1. Download the .deb package from [rabbitmq-server](https://www.rabbitmq.com/download.html){:target="_blank"}.
 1. Install the package with `dpkg`.
 
 Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="_blank"} for more information.
@@ -48,31 +46,13 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="_blank"} for more information.
 
-Run the following commands to install this feature.
-
-```bash
-wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
-```
-
-```bash
-rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
-```
+Refer to the [RabbitMQ/Erlang version matrix](https://www.rabbitmq.com/which-erlang.html) to install the correct version.
 
 ### Install RabbitMQ
 
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="_blank"}.
-
-1. Run the following commands as a user with root permissions:
-
-   ```bash
-   rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
-   ```
-
-   ```bash
-   yum install rabbitmq-server-3.5.6-1.noarch.rpm
-   ```
+Refer to the RabbitMQ install page to get the latest supported vesion. Magento 2.3 supports RabbitMQ 3.8.x.
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="_blank"} for more information.
 
@@ -156,7 +136,7 @@ Related topics
 
 *  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
 *  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*  [PHP 7.1 or 7.2]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [Required PHP Settings]({{page.baseurl}}/install-gde/prereq/php-settings.html)
 *  [Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
 *  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 *  [Message queue overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
