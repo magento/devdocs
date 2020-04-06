@@ -148,7 +148,7 @@ If the product image sizes of your theme differ from those of the parent theme, 
 
 1. Create the `etc` directory in your theme folder.
 
-1. Copy the `view.xml` file from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory.
+1. Copy the `view.xml` file from the `etc` directory of parent theme or copy from Blank theme for example, `theme-frontend-blank/etc/view.xml` to your theme's etc directory. 
 
 1. Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
 
