@@ -256,6 +256,8 @@ Also from admin site __Layout Update XML__ field of __Design__ section on _Conte
     </body>
 ```
 
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
+
 **Example:** Add an id to the `body` tag.
 
 ```xml
