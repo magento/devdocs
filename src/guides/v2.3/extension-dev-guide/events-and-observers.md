@@ -128,7 +128,7 @@ The `observer` [xml](https://glossary.magento.com/xml) element has the following
 *  `shared` - Determines the [lifestyle]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is `true`.
 
 {: .bs-callout .bs-callout-warning}
-The observer `name` must be unique. Otherwise, an override happen.
+The observer name must be unique, or an override will occur.
 
 Below is an example of how to assign observers to watch certain events:
 
