@@ -246,7 +246,6 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 </page>
 ```
 
-Also from admin site __Layout Update XML__ field of __Design__ section on _Content Edit_ page  set attributes for the HTML `body` tag use the `<attribute>` instruction.
 
 **Example:** Add a new class to the `body` tag.
 
