@@ -318,8 +318,7 @@ To debug CLI commands:
    ```
 
    These variables are removed when the SSH session ends.
-   If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
-
+   
 1. Begin debugging
 
    On Starter environments and Pro Integration environments, run the CLI command to debug.
