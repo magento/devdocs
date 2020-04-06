@@ -25,8 +25,8 @@ XSS vulnerabilities can be prevented by validating and sanitizing user input as 
 Any request data can be manipulated by attackers and can contain malicious values such as:
 
 -  form fields filled with control characters ("&lt;", ">" etc)
--  headers containg false IDs
--  URIs contaings fake parts/query parameters
+-  headers contains false IDs
+-  URIs contains fake parts/query parameters
 -  tampered cookies
 
 To combat this developers, must validate any value coming in from requests.
