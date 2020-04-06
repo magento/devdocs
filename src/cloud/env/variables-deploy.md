@@ -216,8 +216,8 @@ stage:
       es_client:
         servers: 'remote-host:9200'
       indices_settings:
-        number_of_shards: 1
-        number_of_replicas: 0
+        number_of_shards: 3
+        number_of_replicas: 2
 ```
 
 {% include cloud/merge-configuration.md %}
