@@ -21,6 +21,26 @@ Layout file | Description
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
 
+## Customize product view pages
+
+Use containers on the product page to structure content in the layout. You can reference the container and add blocks to it.
+
+Containers assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include:
+
+*  `product.info.main`
+*  `product.info.price`
+*  `product.info.stock.sku`
+*  `product.info.form.content`
+*  `product.info.extrahint`
+*  `product.info.social`
+*  `product.info.media`
+
+### Example
+
+```xml
+<move element="product.info.social" destination="product.info.main" before="product.info.price"/>
+```
+
 ## Checkout cart configure page
 
 Layout file | Description
