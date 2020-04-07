@@ -206,6 +206,9 @@ pages:
         - label: Static content signing
           url: /config-guide/cache/static-content-signing.html
 
+        - label: L2 cache
+          url: /config-guide/cache/two-level-cache.html
+
     - label: Configure Redis
       url: /config-guide/redis/config-redis.html
       children:

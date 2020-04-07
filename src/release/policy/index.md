@@ -30,7 +30,7 @@ The following guidelines apply to patch releases:
 -  All supported versions receive security fixes.
 -  Newer versions receive full functional fixes and enhancements.
 -  Changes that could break extensions or code compatibility are avoided. For example, code written for 2.2.0 should still work on 2.2.7.
--  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
+-  On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes.
 -  Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, such as Page Builder.
 
 ## SECURITY release
