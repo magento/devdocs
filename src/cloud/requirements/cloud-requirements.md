@@ -61,7 +61,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
  {:.bs-callout-info}
-See [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements-tech.html) for the latest software version requirements.
+See the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
@@ -131,3 +131,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *  Bitbucket
 *  Google
 *  Create your own Cloud account
+
+<!--link definitions-->
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
