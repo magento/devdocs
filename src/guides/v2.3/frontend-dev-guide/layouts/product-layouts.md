@@ -23,7 +23,9 @@ Layout file | Description
 
 ## Customize product view pages
 
-With the help gives numerous containers on the product page, You should simply reference the container and add blocks to it.
+Use containers on the product page to structure content in the layout. You can reference the container and add blocks to it.
+
+Containers assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include:
 
 *  `product.info.main`
 *  `product.info.price`
