@@ -21,7 +21,7 @@ Layout file | Description
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
 
-## Customize Product view page
+## Customize product view pages
 
 With the help gives numerous containers on the product page, You should simply reference the container and add blocks to it.
 
