@@ -109,7 +109,7 @@ To extend a Module's styles in your theme:
    │   ├── web/
    │   │   ├── css/
    │   │   │   ├── source/
-               ├──_extend.less
+                  ├──_extend.less
    ...
    ```
 

@@ -13,7 +13,7 @@ Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [b
 Magento-specific logs are in the `<magento-root-dir>/var/` directory. See [Magento Logging][configlog] in the _Configuration guide_.
 
 {:.bs-callout-tip}
-You can [set up log-based Slack and email notifications][slacklog] when configuring your Cloud environment.
+When you configure your Cloud environment, you can [set up log-based Slack and email notifications][slacklog] for build and deploy actions.
 
 ## Viewing logs
 
