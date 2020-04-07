@@ -125,7 +125,6 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 `--elasticsearch-enable-auth` | Enables authentication on the Elasticsearch server. The default is `false`. | No
 `--elasticsearch-username` | The user ID to authenticate Elasticsearch | No, unless authentication is enabled
 `--elasticsearch-password` | The password to authenticate Elasticsearch | No, unless authentication is enabled
-`--skip-elasticsearch-validation` | Indicates whether Magento tests the connection to Elasticsearch. Possible values are `true` and `false`. The default value is `false`. | No
 
 **RabbitMQ configuration options:**
 
