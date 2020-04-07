@@ -33,7 +33,7 @@ With the help gives numerous containers on the product page, You should simply r
 *  `product.info.social`
 *  `product.info.media`
 
-Sample of usage in the product page layout containers:
+### Example
 
 ```xml
 <move element="product.info.social" destination="product.info.main" before="product.info.price"/>
