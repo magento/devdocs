@@ -196,6 +196,9 @@ pages:
         - label: ThumbnailColumn component
           url: /ui_comp_guide/components/ui-thumbnailcolumn.html
 
+        - label: TimelineColumns component
+          url: /ui_comp_guide/components/ui-timeline-columns.html
+
         - label: ListingToolbar component
           url: /ui_comp_guide/components/ui-toolbar.html
 
