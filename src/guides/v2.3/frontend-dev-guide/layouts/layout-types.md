@@ -182,6 +182,8 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;css&gt;</code></li>
           <li><code>&lt;font&gt;</code></li>
           <li><code>&lt;script&gt;</code></li>
+          <li><code>&lt;remove&gt;</code></li>
+          <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
       <td colspan="1" />
