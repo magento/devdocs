@@ -436,7 +436,7 @@ A Magento introspection query returns the same result whether or not you assign 
 
 #### Return a list of Magento queries
 
-The following query returns a list of Magento queries. The results are truncated.
+The following query returns a list of Magento queries.
 
 **Request:**
 
@@ -447,35 +447,38 @@ query IntrospectionQuery {
       fields {
         name
         description
+        type{
+         name
+         kind
+        }
       }
     }
   }
 }
 ```
+#### Return a list of Magento mutations
 
-**Response:**
+The following query returns a list of Magento mutations.
 
-```json
-{
-  "data": {
-    "__schema": {
-      "queryType": {
-        "fields": [
-          {
-            "name": "cart",
-            "description": "Returns information about shopping cart"
-          },
-          {
-            "name": "categoryList",
-            "description": "Returns an array of categories based on the specified filters."
-          }
-        ]
+**Request:**
+
+```graphql
+query IntrospectionQuery {
+  __schema {
+    mutationType {
+      fields {
+        name
+        description
+        type{
+         name
+         kind
+        }
       }
     }
   }
 }
 ```
-### Get details about a data type
+#### Get details about a data type
 
 The following introspection query returns details about the `ProductAttributeFilterInput` data type.
 
