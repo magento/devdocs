@@ -9,3 +9,7 @@ This compliance documentation provides the technical information to ensure that 
 
 -  [California Consumer Privacy Act (CCPA)]({{ site.baseurl }}/compliance/privacy/ccpa.html)
 -  [General Data Protection Regulation (GDPR)]({{ site.baseurl }}/compliance/privacy/gdpr.html)
+
+## Compliance tools
+
+-  [Adobe Privacy JavaScript Library](<{{ site.baseurl }}/compliance/privacy/adobe-privacy-js-library.html>)

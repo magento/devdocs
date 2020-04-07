@@ -113,7 +113,7 @@ To configure PhpStorm to work with Xdebug:
       -  Production: `/app/<project_code>/`
       -  Staging:  `/app/<project_code>_stg/`
 
-1. Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
+1. Change the Xdebug port to 9000 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 
 1. Click **Apply**.
 
