@@ -221,32 +221,6 @@ Syntax option | Description
 `@doc(description)` | Describes the purpose of the mutation
 `@deprecated(reason: "description")` | Use `@deprecated` to mark a query, mutation, or attribute as deprecated
 
-{:.bs-callout-tip}
-It is a good practice to define separate types for input and output data. This practice permits additional extension points, so every input and output type can be extended by adding additional fields to the definition.
-
-#### Example
-
-**Wrong approach:**
-
-```text
-type Mutation {
-    mutationQueryName(param1: String, param2: Int, ...): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
-}
-```
-
-**Correct approach:**
-
-```text
-type Mutation {
-    mutationQueryName(inputParam: InputParamsType): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
-}
-
-type InputParamsType {
-    param1: String
-    param2: Int
-}
-```
-
 ### Resolver class
 
 Use the following sample code as a template for the GraphQL resolver mutation class:
