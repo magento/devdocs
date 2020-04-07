@@ -6,6 +6,18 @@
         <th>How it changed</th>
     </tr>
     <tr>
+        <td>Magento\Signifyd\Model\MessageGenerators\GeneratorException</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Fingerprint</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Block\Adminhtml\CaseInfo</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Elasticsearch\Elasticsearch5\Model\Adapter\FieldType</td>
         <td>Class was removed.</td>
     </tr>
@@ -986,6 +998,34 @@
         <th>How it changed</th>
     </tr>
     <tr>
+        <td>Magento\Signifyd\Api\CaseCreationServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseManagementInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\CaseRepositoryInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCancelingServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\GuaranteeCreationServiceInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Signifyd\Api\Data\CaseSearchResultsInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Pricing\PriceCurrencyInterface::format</td>
         <td>[public] Method return typing changed.</td>
     </tr>
@@ -1026,6 +1066,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\AsynchronousOperations\Api\SaveMultipleOperationsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Api\Data\OrderPaymentInterface::setAdditionalInformation</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -1042,6 +1086,30 @@
         <th>How it changed</th>
     </tr>
     <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
         <td>product_alert_price/PRODUCT_ALERT_PRICE_STORE_ID_STORE_STORE_ID</td>
         <td>Foreign key was added</td>
     </tr>
@@ -1050,12 +1118,28 @@
         <td>Foreign key was added</td>
     </tr>
     <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
         <td>product_alert_price/PRODUCT_ALERT_PRICE_STORE_ID_STORE_STORE_ID</td>
         <td>Foreign key was added</td>
     </tr>
     <tr>
         <td>product_alert_stock/PRODUCT_ALERT_STOCK_STORE_ID_STORE_STORE_ID</td>
         <td>Foreign key was added</td>
+    </tr>
+    <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
     </tr>
     <tr>
         <td>product_alert_price/PRODUCT_ALERT_PRICE_STORE_ID_STORE_STORE_ID</td>
@@ -1070,6 +1154,14 @@
         <td>Unique key was added</td>
     </tr>
     <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
         <td>product_alert_price/PRODUCT_ALERT_PRICE_STORE_ID_STORE_STORE_ID</td>
         <td>Foreign key was added</td>
     </tr>
@@ -1080,6 +1172,14 @@
     <tr>
         <td>eav_attribute_label/EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID_UNIQUE</td>
         <td>Unique key was added</td>
+    </tr>
+    <tr>
+        <td>signifyd_case</td>
+        <td>Table was dropped</td>
+    </tr>
+    <tr>
+        <td>sales_order_grid</td>
+        <td>Table was dropped</td>
     </tr>
     <tr>
         <td>product_alert_price/PRODUCT_ALERT_PRICE_STORE_ID_STORE_STORE_ID</td>
@@ -1481,6 +1581,10 @@
         <td>cms_page/layout_update_selected</td>
         <td>Column was added</td>
     </tr>
+    <tr>
+        <td>Magento_Signifyd</td>
+        <td>Db Whitelist from module Magento_Signifyd was removed</td>
+    </tr>
 </tbody></table>
 
 <h3 id="2.3.0-2.4-develop-di">Di changes</h3>
@@ -1488,6 +1592,34 @@
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>SignifydAvsDefaultMapper</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>SignifydCvvDefaultMapper</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>SignifydIdListProvider</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\ResourceModel\Order\Grid</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>PaymentMapperSchemaLocator</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>PaymentMapperConfigReader</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>PaymentMethodConfigData</td>
+        <td>Virtual Type was removed</td>
     </tr>
     <tr>
         <td>AdditionalFieldsForElasticsearchDataMapper</td>
@@ -1570,6 +1702,14 @@
         <td>Block was removed</td>
     </tr>
     <tr>
+        <td>signifyd.fingerprint</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>order_case_info</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
         <td>empty</td>
         <td>An Update was removed</td>
     </tr>
@@ -1592,6 +1732,10 @@
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>system.xml</td>
+        <td>System configuration file was added</td>
     </tr>
     <tr>
         <td>payment/free</td>
@@ -1916,6 +2060,10 @@
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>/etc/signifyd_payment_mapping.xsd</td>
+        <td>A schema declaration was removed</td>
     </tr>
     <tr>
         <td>/etc/csp_whitelist.xsd</td>
