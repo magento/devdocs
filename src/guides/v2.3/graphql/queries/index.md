@@ -143,7 +143,7 @@ A Magento introspection query returns the same result whether or not you assign 
 
 #### Return a list of Magento queries
 
-The following query returns a list of Magento queries. The results are truncated.
+The following query returns a list of Magento queries.
 
 **Request:**
 
@@ -154,35 +154,38 @@ query IntrospectionQuery {
       fields {
         name
         description
+        type{
+         name
+         kind
+        }
       }
     }
   }
 }
 ```
+#### Return a list of Magento mutations
 
-**Response:**
+The following query returns a list of Magento mutations.
 
-```json
-{
-  "data": {
-    "__schema": {
-      "queryType": {
-        "fields": [
-          {
-            "name": "cart",
-            "description": "Returns information about shopping cart"
-          },
-          {
-            "name": "categoryList",
-            "description": "Returns an array of categories based on the specified filters."
-          }
-        ]
+**Request:**
+
+```graphql
+query IntrospectionQuery {
+  __schema {
+    mutationType {
+      fields {
+        name
+        description
+        type{
+         name
+         kind
+        }
       }
     }
   }
 }
 ```
-### Get details about a data type
+#### Get details about a data type
 
 The following introspection query returns details about the `ProductAttributeFilterInput` data type.
 
@@ -217,56 +220,3 @@ query IntrospectionQuery {
   }
 }
 ```
-
-**Response:**
-
-```json
-{
-  "data": {
-    "__type": {
-      "name": "ProductAttributeFilterInput",
-      "kind": "INPUT_OBJECT",
-      "description": "ProductAttributeFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.",
-      "inputFields": [
-        {
-          "name": "category_id",
-          "description": "Filter product by category id",
-          "defaultValue": null
-        },
-        {
-          "name": "description",
-          "description": "Attribute label: Description",
-          "defaultValue": null
-        },
-        {
-          "name": "name",
-          "description": "Attribute label: Product Name",
-          "defaultValue": null
-        },
-        {
-          "name": "price",
-          "description": "Attribute label: Price",
-          "defaultValue": null
-        },
-        {
-          "name": "short_description",
-          "description": "Attribute label: Short Description",
-          "defaultValue": null
-        },
-        {
-          "name": "sku",
-          "description": "Attribute label: SKU",
-          "defaultValue": null
-        },
-        {
-          "name": "url_key",
-          "description": "The part of the URL that identifies the product",
-          "defaultValue": null
-        }
-      ],
-      "fields": null
-    }
-  }
-}
-```
-

@@ -89,7 +89,7 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cart_id` | String | The unique ID that identifies the customer's cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 `cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 
 ### ConfigurableProductCartItemInput object {#configProdCartItemInput}
