@@ -15,7 +15,7 @@ CSP has two basic modes of operation:
 
 **Report-only mode**: The browser is instructed to report policy violations, but not enforce them. Every time a requested resource violates CSP, the browser logs the resulting errors to the console. The console log can then be used to investigate the cause of each violation.
 
-It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. When no more errors occur, it is safe to switch to restrict mode. Otherwise, a poorly configured CSP might produce a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
+It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. When no more errors occur, it is safe to switch to restrict mode. Otherwise, a poorly configured CSP might cause the browser to display a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
 
 **Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources.
 
