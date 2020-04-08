@@ -1,9 +1,17 @@
-label: Compliance
+label: Security and Compliance
 pages:
-    - label: Industry Compliance
-      url: /compliance/industry-compliance.html
-      versionless: true
-      children:
+      - label: Security
+        versionless: true
+        url: /security/security-and-compliance.html
+        children:
+
+        - label: Content Security Policy
+          versionless: true
+          url: /security/content-security-policy.html
+
+      - label: Industry Compliance
+        versionless: true
+        url: /compliance/industry-compliance.html
 
       - label: Privacy Regulations
       
