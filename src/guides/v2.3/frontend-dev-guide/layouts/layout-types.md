@@ -169,7 +169,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;head&gt;&lt;/head&gt;</code></td>
@@ -186,7 +186,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
@@ -202,7 +202,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;action&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;attribute&gt;</code></td>
@@ -214,7 +214,7 @@ The following table describes the instructions specific for page configuration f
           </li>
         </ul>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
       <td colspan="1">
         <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
         <p><code>&lt;html name="value'&gt;</code></p>
@@ -254,7 +254,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1" />
+      <td colspan="1" ></td>
     </tr>
     <tr>
       <td colspan="1">
@@ -352,7 +352,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1">
@@ -386,7 +386,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1" />
+      <td colspan="1"></td>
     </tr>
   </tbody>
 </table>
@@ -450,7 +450,7 @@ The following table describes the instructions specific for generic layout files
       <td colspan="1">
 none
       </td>
-<td />
+<td></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;container&gt;</code></td>
