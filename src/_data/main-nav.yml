@@ -195,8 +195,8 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Compliance
-      url: /compliance/industry-compliance.html
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
       versionless: true
 
     - label: Extensions Marketplace
