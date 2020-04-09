@@ -92,17 +92,14 @@ Following is a summary of the process:
             */
            protected function configure()
            {
-               $options = [
-                    new InputOption(
-                        self::NAME,
-                        null,
-                        InputOption::VALUE_REQUIRED,
-                        'Name'
-                    )
-               ];
                $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
-               $this->setDefinition($options);
+               $this->addOption(
+                   self::NAME,
+                   null,
+                   InputOption::VALUE_REQUIRED,
+                   'Name'
+               );
 
                parent::configure();
            }
