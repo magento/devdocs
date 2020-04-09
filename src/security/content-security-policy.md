@@ -19,7 +19,7 @@ It is important to review all CSP errors as they occur and refine the policies u
 
 **Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources.
 
-Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. For more information, see [Content Security Policies]({% link guides/v2.3/extension-dev-guide/content-security-policies.md %}) in the Magento _PHP Developer Guide_.
+Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. For more information, see [Content Security Policies]({% link guides/v2.3/extension-dev-guide/security/content-security-policies.md %}) in the Magento _PHP Developer Guide_.
 
 ##Reporting
 
