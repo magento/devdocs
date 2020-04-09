@@ -7,7 +7,7 @@ This is where you'll find information about security, privacy, and regulation co
 
 -  [Content Security Policy]({% link security/content-security-policy.md %})
 -  [Industry Compliance and Regulations]({% link compliance/industry-compliance.md %})
--  [Privacy Tools]({% link privacy/adobe-privacy-js-library.hmd %})
+-  [Privacy Tools]({% link privacy/adobe-privacy-js-library.md %})
 
 ## Additional resources
 
