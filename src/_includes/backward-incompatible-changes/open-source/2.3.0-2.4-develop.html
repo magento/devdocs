@@ -26,6 +26,22 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
+        <td>Magento\Authorizenet\Helper\Data</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Authorizenet\Helper\Backend\Data</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Authorizenet\Block\Transparent\Iframe</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Authorizenet\Block\Adminhtml\Order\View\Info\FraudDetails</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Webapi\ErrorProcessor::_critical</td>
         <td>[protected] Method return typing changed.</td>
     </tr>
@@ -743,18 +759,6 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Block\Product\View\Details</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\AuthorizenetAcceptjs\Block\Form</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\AuthorizenetAcceptjs\Block\Info</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\AuthorizenetAcceptjs\Block\Payment</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1645,6 +1649,14 @@
         <td>\Magento\Catalog\Ui\DataProvider\Product\ProductCollectionFactory</td>
         <td>Virtual Type was removed</td>
     </tr>
+    <tr>
+        <td>Magento\Authorizenet\Model\Directpost\Session\Storage</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>DirectpostIframeCcConfigProvider</td>
+        <td>Virtual Type was removed</td>
+    </tr>
 </tbody></table>
 
 <h3 id="2.3.0-2.4-develop-layout">Layout changes</h3>
@@ -1725,6 +1737,26 @@
         <td>admin.customer.reviews</td>
         <td>Block was removed</td>
     </tr>
+    <tr>
+        <td>root</td>
+        <td>Container was removed</td>
+    </tr>
+    <tr>
+        <td>authorizenet_directpost_iframe</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>root</td>
+        <td>Container was removed</td>
+    </tr>
+    <tr>
+        <td>authorizenet_directpost_iframe</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>authorizenet_fraud_details</td>
+        <td>Block was removed</td>
+    </tr>
 </tbody></table>
 
 <h3 id="2.3.0-2.4-develop-system">System changes</h3>
@@ -1732,6 +1764,10 @@
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>system.xml</td>
+        <td>System configuration file was added</td>
     </tr>
     <tr>
         <td>system.xml</td>
@@ -1832,14 +1868,6 @@
     <tr>
         <td>web/session/use_frontend_sid</td>
         <td>A field-node was removed</td>
-    </tr>
-    <tr>
-        <td>system.xml</td>
-        <td>System configuration file was added</td>
-    </tr>
-    <tr>
-        <td>system.xml</td>
-        <td>System configuration file was added</td>
     </tr>
     <tr>
         <td>system.xml</td>
@@ -2047,10 +2075,6 @@
     </tr>
     <tr>
         <td>system/upload_configuration/enable_resize</td>
-        <td>A field-node was added</td>
-    </tr>
-    <tr>
-        <td>payment/authorizenet_directpost/signature_key</td>
         <td>A field-node was added</td>
     </tr>
 </tbody></table>
