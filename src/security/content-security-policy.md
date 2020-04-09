@@ -15,10 +15,13 @@ To avoid interfering with site operations, CSP can be implemented gradually. CSP
 
 It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. It is safe to swith to `restrict mode` when no more errors occur. Otherwise, a poorly configured CSP might cause the browser to display a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
 
-**Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources. Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. See [Content Security Policies]({% link guides/v2.3/extension-dev-guide/security/content-security-policies.md %}) in the Magento _PHP Developer Guide_.
+**Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources. Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. See [Content Security Policies][] in the Magento _PHP Developer Guide_.
 
 ## Reporting
 
 By default, CSP sends errors to the browser console, but can be configured to collect error logs by HTTP request. In addition, there are a number of third-party services that you can use to monitor, collect, and report CSP violations.
 
-[Report URI](https://report-uri.io/) is a service that monitors CSP violations and displays the results in a dashboard. Both merchants and developers can use the service to receive reports whenever CSP violations occur.
+[Report URI][] is a service that monitors CSP violations and displays the results in a dashboard. Both merchants and developers can use the service to receive reports whenever CSP violations occur.
+
+[Content Security Policies]: {{page.baseurl}}/guides/v2.3/extension-dev-guide/security/content-security-policies.html
+[Report URI]: https://report-uri.io/
