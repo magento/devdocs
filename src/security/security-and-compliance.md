@@ -2,7 +2,7 @@
 group: compliance
 title: Security and Compliance
 ---
-This section of guide is a point-of-entry to security, privacy, and regulation compliance topics with links to technical resources for developers.
+This is where you'll find information about security, privacy, and regulation compliance, with links to technical resources.
 
 - [Content Security Policy]({% link security/content-security-policy.md %})
 - [Industry Compliance and Regulations]({% link compliance/industry-compliance.md %})
