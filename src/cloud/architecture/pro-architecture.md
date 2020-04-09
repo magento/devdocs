@@ -21,7 +21,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank" />
+      <td class="blank"></td>
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>
