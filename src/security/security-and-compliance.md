@@ -2,6 +2,7 @@
 group: compliance
 title: Security and Compliance
 ---
+
 This is where you'll find information about security, privacy, and regulation compliance, with links to technical resources.
 
 - [Content Security Policy]({% link security/content-security-policy.md %})
