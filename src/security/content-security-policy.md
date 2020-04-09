@@ -21,4 +21,4 @@ It is important to review all CSP errors as they occur and refine the policies u
 
 By default, CSP sends errors to the browser console, but can be configured to collect error logs by HTTP request. In addition, there are a number of third-party services that you can use to monitor, collect, and report CSP violations.
 
-- [Report URI](https://report-uri.io/) is a service that monitors CSP violations and displays the results in a dashboard. Both merchants and developers can use the service to receive reports whenever CSP violations occur.
+[Report URI](https://report-uri.io/) is a service that monitors CSP violations and displays the results in a dashboard. Both merchants and developers can use the service to receive reports whenever CSP violations occur.
