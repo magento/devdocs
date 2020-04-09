@@ -11,7 +11,7 @@ The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) pa
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package to apply patches to a {{ site.data.var.ee }} project that is not on the Cloud platform. These release notes describe the latest improvements to this package.
 
-The `{{site.data.var.mcp}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
+The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
@@ -21,7 +21,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 This release includes the following patches and critical fixes:
 
--  **Compatibility updates for `{{site.data.var.mcp}}`**–
+-  **Compatibility updates for ``**–
 
    -  Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4 and later releases.<!--MAGECLOUD-5127-->
 
@@ -36,7 +36,7 @@ This release includes the following patches and critical fixes:
 ## v1.0.1
 *Release date: February 6, 2020*<br/>
 
-We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
+We have included all {{site.data.var.ce}} 2.x patches from the [Magento Technical resources](https://magento.com/tech-resources/download) in the {{site.data.var.mcp-package}} v1.0.1 release. If you copied any patches into your project previously, remove them to avoid conflicts.
 
 This release includes the following patches and critical fixes:
 
@@ -46,13 +46,13 @@ This release includes the following patches and critical fixes:
 
    -  Adds a _retry_ operation to avoid deadlock during updates to the data in the `cron_schedule` table.
 
--  **Updated `{{site.data.var.mcp}}` to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.<!--MAGECLOUD-4606-->
+-  **Updated `{{site.data.var.mcp-package}}` to include all available patches for {{site.data.var.ce}} 2.x**–Updated the {{site.data.var.mcp-package}} package to include all {{site.data.var.ce}} 2.x patches available on the [Magento Download page](https://magento.com/tech-resources/download). If you copied any {{site.data.var.ce}} patches into your {{site.data.var.ece}} project previously, remove them to avoid conflicts.<!--MAGECLOUD-4606-->
 
--  **Elasticsearch catalog pagination fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp}} v1.0 with a more effective fix.<!--MAGECLOUD-4847-->
+-  **Elasticsearch catalog pagination fix** –Replaced the Elasticsearch catalog pagination patch delivered in {{site.data.var.mcp-package}} v1.0 with a more effective fix.<!--MAGECLOUD-4847-->
 
 -  **Magento Page Builder patches**–In {{site.data.var.mcp-prod}} 1.0.0, we bundled Page Builder patches to address a known Page Builder remote code execution (RCE) vulnerability, with the initial fix based on Magento 2.3.3. We have updated these patches with a more stable implementation based on Magento 2.3.4., which includes multiple optimizations for fixing the issue.<!--MAGECLOUD-4884-->
 
-   If you have the {{site.data.var.mcp}} 1.0.0 package, you are still protected from the Page Builder RCE vulnerability issues. If you update to {{site.data.var.mcp}} 1.0.1 or later, you have a better implementation of the same fix.
+   If you have the {{site.data.var.mcp-package}} 1.0.0 package, you are still protected from the Page Builder RCE vulnerability issues. If you update to 1.0.1 or later, you have a better implementation of the same fix.
 
 ## v1.0.0
 *Release date: November 14, 2019*<br/>

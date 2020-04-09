@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-The [`{{site.data.var.mcd}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
+The [`{{site.data.var.mcd-package}}`](https://github.com/magento/magento-cloud-docker) package provides functionality and Docker images to deploy {{ site.data.var.ee }} to a local Cloud environment. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
-The `{{site.data.var.mcd}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
+The `{{site.data.var.mcd-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 The release notes include:
 
@@ -21,9 +21,9 @@ The release notes include:
 
 -  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**–Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
 
-   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and update your project as scripts, commands, and processes as needed.
+   When you update {{site.data.var.ct}}, you also update the `{{site.data.var.mcd-package}}` package to version 1.0.0. If you used {{site.data.var.mcd-prod}} with an earlier `{{site.data.var.ct}}` release (2002.0.x), review the [backward incompatibilities]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html#magento-cloud-docker-changes) and update your project as scripts, commands, and processes as needed.
 
--  {:.new}**Added versioning to the Docker images**–You must now update the `{{site.data.var.mcd}}` package to get the updated images.<!--MAGECLOUD-4737-->
+-  {:.new}**Added versioning to the Docker images**–You must now update the `{{site.data.var.mcd-package}}` package to get the updated images.<!--MAGECLOUD-4737-->
 
 -  {:.new}**Container updates**–
 

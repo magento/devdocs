@@ -9,7 +9,7 @@ functional_areas:
 
 The [Magento Cloud Components](https://github.com/magento/magento-cloud-components) package provides extended Magento Commerce core functionality for sites deployed on the Cloud platform. This package is a dependency for the {{ site.data.var.ct }} package. These release notes describe the latest improvements to this package, which is a component of [{{ site.data.var.csuite }}]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html).
 
-The `{{site.data.var.mcc}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
+The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 ## v1.0.3
 *Release date: February 27, 2020*<br/>
