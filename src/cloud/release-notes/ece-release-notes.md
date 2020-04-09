@@ -33,7 +33,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. During deployment, `{{site.data.var.ct}}` uses the new package to apply patches. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
 
-   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the [`{{site.data.var.csuite}}`]({{site.baseurl}}/cloud/release-notes/cloud-tools.html). These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
+   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd-package}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the [`{{site.data.var.csuite}}`]({{site.baseurl}}/cloud/release-notes/cloud-tools.html). These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
 
 -  {:.new}**Support for scenario-based deployments**–<!--MAGECLOUD-4101-->
 
