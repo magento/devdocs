@@ -16,4 +16,4 @@ This is where you'll find information about security, privacy, and regulation co
 [Content Security Policy]: {{page.baseurl}}/security/content-security-policy.html
 [Industry Compliance and Regulations]: {{page.baseurl}}/compliance/industry-compliance.html
 [Magento Security Center]: https://magento.com/security
-[Adobe Trust Center]: www.adobe.com/trust.html
+[Adobe Trust Center]: https://www.adobe.com/trust.html
