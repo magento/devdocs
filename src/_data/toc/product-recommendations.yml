@@ -20,10 +20,6 @@ pages:
   url: /recommendations/test.html
   versionless: true
 
-- label: Troubleshoot Recommendations
-  url: /recommendations/troubleshooting.html
-  versionless: true
-
 - label: Customize Recommendations
   url: /recommendations/customize.html
   versionless: true

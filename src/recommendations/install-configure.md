@@ -41,8 +41,8 @@ If needed, you can [uninstall the product-recommendations module]({{ site.baseur
 
 ## Configure Product Recommendations {#configure}
 
-After you install the `magento/product-recommendations` module, you must link the module to Magento's SaaS Services by [retrieving the API Key and specifying the SaaS Environment](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html).
+After you install the `magento/product-recommendations` module, you must configure the module by [specifying the API Key and selecting a SaaS Environment](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html).
 
-When you add the API key to Magento Services, ensure that the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs and the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
+To ensure catalog export is running correctly, confirm that the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs and the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
 
-When you successfully link to Magento Services through the API key and specify the SaaS Environment, the catalog sync initiates and behavioral data collection begins on your storefront.
+When you successfully link to Magento Services through the API key and specify the SaaS Environment, the catalog sync initiates and [behavioral data collection]({{ page.baseurl }}/recommendations/verify.html) begins on your storefront.
