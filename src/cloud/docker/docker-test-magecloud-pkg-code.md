@@ -247,11 +247,7 @@ Use the following commands to run all available tests for each PHP versions:
 
 <!--Link definitions-->
 
-<<<<<<< HEAD
 [{{site.data.var.csuite}}]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
-=======
-[{{site.data.var.csuite}} package]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
->>>>>>> e30d5d7af02390c5086b6badf7e04d34d06ba2b3
 [Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
 [Codeception testing framework for PHP]: https://github.com/codeception/codeception
 [{{site.data.var.ct-repo}} codeception.dist.yml]: https://github.com/magento/ece-tools/blob/{{site.data.var.ct-release}}/codeception.dist.yml
