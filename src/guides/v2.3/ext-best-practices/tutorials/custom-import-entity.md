@@ -441,7 +441,7 @@ When updating the table's data, you must provide the `entity_id` value for each 
 
 Next, register the sample file for our entity.
 
-> `etc/adminhtml/di.xml`
+> `etc/di.xml`
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
