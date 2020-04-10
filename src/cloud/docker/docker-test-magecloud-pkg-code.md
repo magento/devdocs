@@ -9,7 +9,7 @@ redirect from:
   - /cloud/docker/docker-development-testing.html
 ---
 
-In a {{site.data.var.mcd-prod}} development environment, you can use the integrated test suite in each [{{site.data.var.csuite}}] package for Magento code testing. The test suites, which use the [Codeception testing framework for PHP], provide a series of acceptance tests to validate code intended for contribution to Magento Cloud package repositories.
+In a {{site.data.var.mcd-prod}} development environment, you can use the integrated test suite in each [{{site.data.var.csuite}}] package for Magento code testing. The test suites, which use the [Codeception testing framework for PHP], provide acceptance tests to validate code intended for contribution to Magento Cloud package repositories.
 
 Before you can run tests, you must prepare your Docker environment and update the test configuration file. (See [Prepare the test environment](#prepare-the-docker-environment-for-testing).)
 
@@ -247,7 +247,11 @@ Use the following commands to run all available tests for each PHP versions:
 
 <!--Link definitions-->
 
+<<<<<<< HEAD
 [{{site.data.var.csuite}}]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
+=======
+[{{site.data.var.csuite}} package]: {{site.baseurl}}/cloud/release-notes/cloud-tools.html
+>>>>>>> e30d5d7af02390c5086b6badf7e04d34d06ba2b3
 [Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
 [Codeception testing framework for PHP]: https://github.com/codeception/codeception
 [{{site.data.var.ct-repo}} codeception.dist.yml]: https://github.com/magento/ece-tools/blob/{{site.data.var.ct-release}}/codeception.dist.yml
