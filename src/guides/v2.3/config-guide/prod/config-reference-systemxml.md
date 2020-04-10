@@ -115,25 +115,25 @@ The following example validates a field and adds several different validation ru
 
 The following validation rules are available:
 
-| Rule                          | Description                                                                                                                      |
-|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| validate-no-html-tags         | HTML tags are not allowed.                                                                                                       |
-| validate-select               | Please select an option.                                                                                                         |
-| validate-no-empty             | Empty Value                                                                                                                      |
-| validate-alphanum-with-spaces | Please use only letters (a-z or A-Z), numbers (0-9) or spaces only in this field.                                                |
-| validate-data                 | Please use only letters (a-z or A-Z), numbers (0-9) or underscore (_) in this field, and the first character should be a letter. |
-| validate-street               | Please use only letters (a-z or A-Z), numbers (0-9), spaces and “#” in this field.                                               |
-| validate-phoneStrict          | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
-| validate-phoneLax             | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
-| validate-fax                  | Please enter a valid fax number (Ex: 123-456-7890).                                                                              |
-| validate-email                | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
-| validate-emailSender          | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
-| validate-password             | Please enter 6 or more characters. Leading and trailing spaces will be ignored.                                                  |
-| validate-admin-password       | Please enter 7 or more characters, using both numeric and alphabetic.                                                            |
-| validate-url                  | Please enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
-| validate-clean-url            | Please enter a valid URL. For example http://www.example.com or www.example.com.                                                 |
-| validate-xml-identifier       | Please enter a valid XML-identifier (Ex: something_1, block5, id-4).                                                             |
-| validate-ssn                  | Please enter a valid social security number (Ex: 123-45-6789).                                                                   |
-| validate-zip-us               | Please enter a valid zip code (Ex: 90602 or 90602-1234).                                                                         |
-| validate-date-au              | Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.                                     |
-| validate-currency-dollar      | Please enter a valid $ amount. For example $100.00.                                                                              |
+| Rule                            | Description                                                                                                                      |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| `validate-no-html-tags`         | HTML tags are not allowed.                                                                                                       |
+| `validate-select`               | Please select an option.                                                                                                         |
+| `validate-no-empty`             | Empty Value                                                                                                                      |
+| `validate-alphanum-with-spaces` | Please use only letters (a-z or A-Z), numbers (0-9) or spaces only in this field.                                                |
+| `validate-data`                 | Please use only letters (a-z or A-Z), numbers (0-9) or underscore (_) in this field, and the first character should be a letter. |
+| `validate-street`               | Please use only letters (a-z or A-Z), numbers (0-9), spaces and “#” in this field.                                               |
+| `validate-phoneStrict`          | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
+| `validate-phoneLax`             | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
+| `validate-fax`                  | Please enter a valid fax number (Ex: 123-456-7890).                                                                              |
+| `validate-email`                | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
+| `validate-emailSender`          | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
+| `validate-password`             | Please enter 6 or more characters. Leading and trailing spaces will be ignored.                                                  |
+| `validate-admin-password`       | Please enter 7 or more characters, using both numeric and alphabetic.                                                            |
+| `validate-url`                  | Please enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
+| `validate-clean-url`            | Please enter a valid URL. For example http://www.example.com or www.example.com.                                                 |
+| `validate-xml-identifier`       | Please enter a valid XML-identifier (Ex: something_1, block5, id-4).                                                             |
+| `validate-ssn`                  | Please enter a valid social security number (Ex: 123-45-6789).                                                                   |
+| `validate-zip-us`               | Please enter a valid zip code (Ex: 90602 or 90602-1234).                                                                         |
+| `validate-date-au`              | Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.                                     |
+| `validate-currency-dollar`      | Please enter a valid $ amount. For example $100.00.                                                                              |
