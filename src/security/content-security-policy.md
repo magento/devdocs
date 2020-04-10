@@ -9,7 +9,7 @@ CSP provides a standardized set of directives that tells the browser which conte
 
 ## Configuration
 
-To avoid interfering with site operations, CSP can be implemented gradually. CSP has two basic modes of operation: `report-only mode` and `restrict mode`. The release of Magento Commerce 2.3.5 marks the first phase of our implementation and makes CSP available in `report-only mode` by default. In a future release, `restrict mode` will be enabled by default for additional out-of-the-box protection.
+To avoid interfering with site operations, CSP can be implemented in phases. CSP has two basic modes of operation: `report-only mode` and `restrict mode`. The release of Magento Commerce 2.3.5 marks the first phase of our implementation and makes CSP available in `report-only mode` by default. In a future release, `restrict mode` will be enabled by default for additional out-of-the-box protection.
 
 **Report-only mode**: The browser is instructed to report policy violations, but not enforce them. Every time a requested resource violates CSP, the browser logs the resulting errors to the console. The console log can then be used to investigate the cause of each violation.
 
