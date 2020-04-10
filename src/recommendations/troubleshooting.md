@@ -2,7 +2,6 @@
 group: product-recommendations
 title: Troubleshoot Recommendations
 ee_only: True
-redirect_to: https://support.magento.com/hc/en-us/articles/360033099451
 ---
 
 If you have configured the `product-recommendations` module correctly, but you are not seeing any recommendations, try the following:
