@@ -441,11 +441,11 @@ When updating the table's data, you must provide the `entity_id` value for each 
 
 Next, register the sample file for our entity.
 
-> `etc/adminhtml/di.xml`
+> `etc/di.xml`
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_ImportExport:etc/import.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\ImportExport\Model\Import\SampleFileProvider">
         <arguments>
             <argument name="samples" xsi:type="array">

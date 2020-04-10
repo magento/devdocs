@@ -95,7 +95,7 @@ This topic describes the basic elements used in XML configuration files for decl
     <td>
       -
     </td>
-    <td />
+    <td></td>
     <td>
       Introduces the configuration block for UiComponent according
       to the <a href="{{ page.baseurl }}/ui_comp_guide/best-practices/semantic_config.html">

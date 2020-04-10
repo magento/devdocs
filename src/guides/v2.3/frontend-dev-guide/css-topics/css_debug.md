@@ -44,7 +44,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
    npm update
    ```
 
-1. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/local-themes.js` file, add your theme to `module.exports` like following:
+1. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
 
    ```javascript
    <theme>: {
