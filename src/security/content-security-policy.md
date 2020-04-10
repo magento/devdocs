@@ -3,7 +3,7 @@ group: compliance
 title: Content Security Policy
 ---
 
-Adobe’s Content Security Policy (CSP) provides an additional layer of defense for Magento installations by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data.
+A Content Security Policy (CSP) provides an additional layer of defense for Magento installations by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data.
 
 CSP provides a standardized set of directives that tells the browser which content resources can be trusted, and which should be blocked. Using carefully defined policies, CSP can restrict browser content to allow only whitelisted resources to appear.
 
@@ -13,7 +13,7 @@ To avoid interfering with site operations, CSP can be implemented gradually. CSP
 
 **Report-only mode**: The browser is instructed to report policy violations, but not enforce them. Every time a requested resource violates CSP, the browser logs the resulting errors to the console. The console log can then be used to investigate the cause of each violation.
 
-It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. It is safe to swith to `restrict mode` when no more errors occur. Otherwise, a poorly configured CSP might cause the browser to display a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
+It is important to review all CSP errors as they occur and refine the policies until all necessary resources are whitelisted. It is safe to switch to `restrict mode` when no more errors occur. Otherwise, a poorly configured CSP might cause the browser to display a blank page with numerous console errors. A properly configured CSP allows whitelisted content to be delivered without any perceived impact on performance.
 
 **Restrict mode**: The browser is instructed to enforce all content policies and limit publication to whitelisted resources. Because CSP is configured from the server, rather than from the Magento Admin, most merchants need the assistance of a system integrator or developer to configure it properly. See [Content Security Policies][] in the Magento _PHP Developer Guide_.
 
