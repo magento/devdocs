@@ -28,7 +28,7 @@ When you install the `product-recommendations` module, Adobe Sensei aggregates t
 
 ## Next steps
 
-The following topics will help you get started with Product Recommendations:
+Read the following topics to get started with Product Recommendations:
 
 -  [Install and configure Product Recommendations]({{ page.baseurl }}/recommendations/install-configure.html)
 

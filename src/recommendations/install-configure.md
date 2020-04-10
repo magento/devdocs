@@ -10,26 +10,24 @@ Deploying Product Recommendations to your storefront requires that you install, 
 
 ## Install Product Recommendations {#install}
 
-1. Install the `magento/product-recommendations` module with Composer:
+Install the `magento/product-recommendations` module with Composer:
 
    ```bash
    composer require magento/product-recommendations
    ```
 
-   The `magento/product-recommendations` module requires the following dependencies:
+The `magento/product-recommendations` module requires the following dependencies:
 
-   -  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensei do not collect personally identifiable information.
+-  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensei do not collect personally identifiable information.
 
-   -  **saas-export** — This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
+-  **saas-export** — This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
 
-       {:.bs-callout-info}
-       If you prefer, you can install the above modules explicitly using Composer: `composer require magento/module-data-services` and `composer require magento/saas-export`
-
-   -  Other modules responsible for configuration
+   {:.bs-callout-info}
+   If you prefer, you can install the above modules explicitly using Composer: `composer require magento/module-data-services` and `composer require magento/saas-export`
 
 ### Update your Product Recommendations installation
 
-To update the `product-recommendations` module, run the following:
+If for any reason you need to update the `product-recommendations` module, run the following:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies
