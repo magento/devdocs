@@ -106,7 +106,7 @@ To set environment specific variables in the Project Web Interface:
 
 {:.bs-callout-warning}
 If you are attempting to [override Magento configuration settings]({{ site.baseurl }}
-), you must prepend the variable name with `env:`. For example:
+), you must prepend `env:` to the variable name. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud/cloud_env_var_example.png)
 
 ### Project variable {#project}
