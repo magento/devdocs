@@ -57,12 +57,6 @@ The following table summarizes the differences between environments:
       <td>Yes</td>
     </tr>
    <tr>
-     <td>Includes Blackfire.io</td>
-     <td>Yes</td>
-     <td>Yes</td>
-     <td>Yes</td>
-   </tr>
-   <tr>
      <td>Includes New Relic</td>
      <td>No</td>
      <td>APM</td>
