@@ -21,7 +21,6 @@ The following technologies are requirements for developing and deploying your st
 Here are some advanced technologies we recommend getting familiar with:
 
 *  [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) for CDN and caching (based on Varnish)
-*  [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) for performance testing
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) for performance testing
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
 *  [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) if you need a Git repo
@@ -115,7 +114,6 @@ For development and testing, we recommend the following:
 *  Verify the Fastly VCL is uploaded to Fastly
 *  Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
 *  For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
-*  Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
 

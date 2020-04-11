@@ -76,12 +76,12 @@ The following are examples to better explain:
 
 *  Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
-   ![Store example 1]({{ site.baseurl }}/common/images/cloud_example-store1.png)
+   ![Store example 1]({{ site.baseurl }}/common/images/cloud/cloud_example-store1.png)
 
 *  Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
 
-   ![Store example 2]({{ site.baseurl }}/common/images/cloud_example-store2.png)
+   ![Store example 2]({{ site.baseurl }}/common/images/cloud/cloud_example-store2.png)
 
 *  Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
 
-   ![Store example 3]({{ site.baseurl }}/common/images/cloud_example-store3.png)
+   ![Store example 3]({{ site.baseurl }}/common/images/cloud/cloud_example-store3.png)
