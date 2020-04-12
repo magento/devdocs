@@ -24,7 +24,7 @@ Variable | Description
 
 {:.bs-callout-warning}
 To [add environment variables to override configuration settings]({{ site.baseurl }}/guides/v2.3/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
-![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
+![Environment variable example]({{ site.baseurl }}/common/images/cloud/cloud_env_var_example.png)
 
 Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the `MAGENTO_CLOUD_RELATIONSHIPS` variable to retrieve environment-related relationships as follows:
 
