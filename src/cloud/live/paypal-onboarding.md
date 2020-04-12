@@ -31,7 +31,7 @@ If you do not have an existing PayPal account, you have an option to create a ne
 
 See [PayPal account limitations](#limitations) for further information.
 
-![Log in to PayPal]({{ site.baseurl }}/common/images/cloud_paypal-access.png){:width="336px"}
+![Log in to PayPal]({{ site.baseurl }}/common/images/cloud/cloud_paypal-access.png){:width="336px"}
 
 ### PayPal limitations {#limitations}
 

@@ -75,7 +75,7 @@ To reset your branch:
 
 1. Clone the project to your local development environment. You can find the command in your Project Web Interface:
 
-   ![Click to copy the git clone command]({{ site.baseurl }}/common/images/copy-git-clone.png)
+   ![Click to copy the git clone command]({{ site.baseurl }}/common/images/cloud/cloud-copy-git-clone.png)
 
 1. Review the git history. Use `--reverse` to display history in reverse chronological order:
 

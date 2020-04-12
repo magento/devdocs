@@ -10,7 +10,7 @@ To create authentication keys:
 
 1. Click **Access Keys** in the Marketplace tab.
 
-   ![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud_access-key.png){:width="500px"}
+   ![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud/cloud_access-key.png){:width="500px"}
 
 1. Click **Create a New Access Key**. Enter a specific name for the keys (e.g., the name of the developer receiving the keys) and click **OK**.
 

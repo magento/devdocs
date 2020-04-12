@@ -166,7 +166,7 @@ To verify that the integration works, make a change in the GitLab repository and
 
 If the integration succeeds, the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) shows the GitLab commit message and the status of the Cloud deployment:
 
-![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud_gitlab-integration-success.png)
+![GitLab integration successfull]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-integration-success.png)
 
 ## Create a new Cloud branch
 
