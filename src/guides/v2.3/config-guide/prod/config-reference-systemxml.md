@@ -65,15 +65,15 @@ The following code snippet demonstrates the creation of a new tab with example d
 ``` xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-	<system>
-	    <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+    <system>
+        <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
             <label>A meaningful label</label>
         </tab>
     </system>
 </config>
 ```
 
-The snippet above creates a new tab with the identifier `A_UNIQUE_ID`. As the `translate`-attribute is defined and references the label, the `label`-node is translatable. During the rendering process, the css class `a-custom-css-class-to-style-this-tab` will be applied on the HTML element that was created for this tab.  
+The snippet above creates a new tab with the identifier `A_UNIQUE_ID`. As the `translate`-attribute is defined and references the label, the `label`-node is translatable. During the rendering process, the css class `a-custom-css-class-to-style-this-tab` will be applied on the HTML element that was created for this tab.
 The `sortOrder`-attribute with the value of `10` defines the position of the tab in the list of all tabs when rendered.
 
 ## Sections
@@ -119,16 +119,16 @@ The following code snippet demonstrates the basic usage of creating a new sectio
 ``` xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-	<system>
-    	<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
-			<label>A meaningful label</label>
-		</tab>
+    <system>
+        <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>A meaningful label</label>
+        </tab>
 
-		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
-			<label>A meaningful section label</label>
-			<tab>A_UNIQUE_ID</tab>
-			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
-		</section>
+        <section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+            <label>A meaningful section label</label>
+            <tab>A_UNIQUE_ID</tab>
+            <resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+        </section>
     </system>
 </config>
 ```
@@ -187,19 +187,19 @@ The following code snippet demonstrates the basic usage of creating a new group.
 
 ``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-	<system>
-		<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
-			<label>A meaningful label</label>
-		</tab>
+    <system>
+        <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>A meaningful label</label>
+        </tab>
 
-		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
-			<label>A meaningful section label</label>
-			<tab>A_UNIQUE_ID</tab>
-			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
-			
-			<group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
-				
-			</group>
+        <section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+            <label>A meaningful section label</label>
+            <tab>A_UNIQUE_ID</tab>
+            <resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+
+            <group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <!-- Add your fields here. -->
+            </group>
         </section>
     </system>
 </config>
@@ -266,45 +266,45 @@ The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a diff
 
 ``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-	<system>
-		<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
-			<label>A meaningful label</label>
-		</tab>
+    <system>
+        <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>A meaningful label</label>
+        </tab>
 
-		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
-			<label>A meaningful section label</label>
-			<tab>A_UNIQUE_ID</tab>
-			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+        <section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+            <label>A meaningful section label</label>
+            <tab>A_UNIQUE_ID</tab>
+            <resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
 
-			<group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
-				<label>A meaningful group label</label>
-				<comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
+            <group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>A meaningful group label</label>
+                <comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
 
-				<field id="A_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="select">
-					<label>Feature Flag Example</label>
-					<comment>This field is an example for a basic yes or no select.</comment>
-					<tooltip>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.</tooltip>
-					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-				</field>
+                <field id="A_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="select">
+                    <label>Feature Flag Example</label>
+                    <comment>This field is an example for a basic yes or no select.</comment>
+                    <tooltip>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.</tooltip>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
 
-				<field id="ANOTHER_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="text">
-					<label>A meaningful field label</label>
-					<comment>A descriptive text explaining this configuration field.</comment>
-					<tooltip>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.</tooltip>
-					<validate>required-entry no-whitespace</validate> <!-- Field is required and must not contain any whitespace. -->
-					<if_module_enabled>VENDOR_MODULE</if_module_enabled>
-					<depends> <!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 -->
-						<field id="A_UNIQUE_FIELD_ID">1</field>
-					</depends>
-				</field>
-			</group>
-		</section>
+                <field id="ANOTHER_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="text">
+                    <label>A meaningful field label</label>
+                    <comment>A descriptive text explaining this configuration field.</comment>
+                    <tooltip>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.</tooltip>
+                    <validate>required-entry no-whitespace</validate> <!-- Field is required and must not contain any whitespace. -->
+                    <if_module_enabled>VENDOR_MODULE</if_module_enabled>
+                    <depends> <!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 -->
+                        <field id="A_UNIQUE_FIELD_ID">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
     </system>
 </config>
 ```
 
-The example above creates two fields, both visible/configurable in default and in store view. Both fields have a comment and a tooltip to describe their purpose to the user. The `label`-node is translatable.  
-The field with the identifier `ANOTHER_UNIQUE_FIELD_ID` is visible when the given module in the `if_module_enabled` is enabled globally. The field also validates its value against the rules `required-entry` and `no-whitespace`.  
+The example above creates two fields, both visible/configurable in default and in store view. Both fields have a comment and a tooltip to describe their purpose to the user. The `label`-node is translatable.
+The field with the identifier `ANOTHER_UNIQUE_FIELD_ID` is visible when the given module in the `if_module_enabled` is enabled globally. The field also validates its value against the rules `required-entry` and `no-whitespace`.
 The field with the identifier `A_UNIQUE_FIELD_ID` defines a different source model which provides tha values `Yes` and `No`.
 
 ### Common source models
