@@ -6,10 +6,10 @@ functional_areas:
   - System
 ---
 
-The `system.xml` file is responsible to provide the possibility to manage the System Configuration.
-This document provides a general reference for the `system.xml`. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.
+The `system.xml` file is responsible for providing the possibility to manage the System Configuration. This document provides a general reference for the `system.xml`. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.
+As already mentioned, the system.xml file is located under `etc/adminhtml/system.xml`.
 
-As already mentioned, the `system.xml` file is located under `etc/adminhtml/system.xml`. The following code snippet shows the bare skeleton of the file:
+The following code snippet shows the bare skeleton of the file:
 
 ``` xml
 <?xml version="1.0" ?>
@@ -25,12 +25,12 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 
 ## Tab // Sections // Groups // Fields
 
-In the `system.xml`, it is possible to define four different types which are related to each other. The following section will describe the relations between tabs, sections, groups and fields.
-The following screenshot displays the Magento 2 System Configuration in the Admin backend. The Red squares mark the different types, that are defined in the `system.xml`:
+In the `system.xml`, it is possible to define four different types which are related to each other. The following section describes the relations between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
+The red squares mark the different types that are defined in the `system.xml`:
 
 ![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
 
-Tabs are used to semantically split different configuration areas. Each Tab can contains one or more sections, which can also be referenced as sub menu. A section contains one or more groups.
+Tabs are used to split different configuration areas semantically. Each Tab can contain one or more sections, which can also be referenced as sub-menu. A section contains one or more groups.
 Each group lists one or more fields. A group can also be used to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
 in the system configuration context.
 
@@ -46,9 +46,9 @@ A `<tab>`-Tag can have the following attributes:
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
 | `id`        | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
 | `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`      | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
-| `sortOrder` | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
-| `class`     | Adds a defined css class to the rendered tab html element.                                                                                          | `string` | optional |
+| `type`      | Defines the input type of the rendered HTML element—defaults to `text`.                                                                             | `string` | optional |
+| `sortOrder` | Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers drive the section to the top.           | `float`  | optional |
+| `class`     | Adds a defined CSS class to the rendered tab HTML element.                                                                                          | `string` | optional |
 
 ### Tab node reference
 
