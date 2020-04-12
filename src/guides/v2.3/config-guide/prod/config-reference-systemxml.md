@@ -34,6 +34,48 @@ Tabs are used to semantically split different configuration areas. Each Tab can 
 Each group lists one or more fields. A group can also be used to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
 in the system configuration context.
 
+## Tabs
+
+A `<tab>`-Tag references to either an existing or a new tab in the system configuration.
+
+### Tab attribute reference
+
+A `<tab>`-Tag can have the following attributes:
+
+| Attribute   | Description                                                                                                                                         | Type     | Required |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
+| `id`        | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
+| `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
+| `type`      | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder` | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `class`     | Adds a defined css class to the rendered tab html element.                                                                                          | `string` | optional |
+
+### Tab node reference
+
+A `<tab>`-Tag can have the following child:
+
+| Node    | Description                                          | Type     |
+|---------|------------------------------------------------------|----------|
+| `label` | Defines the label that is displayed in the frontend. | `string` |
+
+### Example: Create a new tab
+
+The following code snippet demonstrates the creation of a new tab with example data.
+
+``` xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+	    <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>A meaningful label</label>
+        </tab>
+    </system>
+</config>
+```
+
+The snippet above creates a new tab with the identifier `A_UNIQUE_ID`. As the `translate`-attribute is defined and references the label, the `label`-node is translatable. During the rendering process, the css class `a-custom-css-class-to-style-this-tab` will be applied on the HTML element that was created for this tab.  
+The `sortOrder`-attribute with the value of `10` defines the position of the tab in the list of all tabs when rendered.
+
 ## Sections
 
 A `<section>`-Tag references to either an existing or a new section in the system configuration. The following screenshot shows a rendered section in the Magento Admin:
@@ -55,21 +97,43 @@ A `<section>`-Tag can have the following attributes:
 | `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
 | `extends`       | By providing an identifier of another section, the content of this node will extend the section that you referenced.                                | `string` | optional |
 
-## Tabs
+### Section node reference
 
-A `<tab>`-Tag references to either an existing or a new tab in the system configuration.
+A `<section>`-Tag can have the following children:
 
-### Tab attribute reference
+| Node             | Description                                                                                                           | Type                |
+|------------------|-----------------------------------------------------------------------------------------------------------------------|---------------------|
+| `label`          | Defines the label that is displayed in the frontend.                                                                  | `string`            |
+| `class`          | Adds a defined css class to the rendered section html element.                                                        | `string`            |
+| `tab`            | References the associated tab. Expects the id of the tab.                                                             | `typeTabId`         |
+| `header_css`     | Neither used nor evaluated at the time of this writing.                                                               | `string`            |
+| `resource`       | References an ACL resource to provide permission settings for this section.                                           | `typeAclResourceId` |
+| `group`          | Define one or more sub groups.                                                                                        | `typeGroup`         |
+| `frontend_model` | Specifies a different frontend model to change the rendering and modify the output.                                   | `typeModel`         |
+| `include`        | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files. | `includeType`       |
 
-A `<tab>`-Tag can have the following attributes:
+### Example: Create a new section and assign it to a tab
 
-| Attribute       | Description                                                                                                                                         | Type     | Required |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
-| `id`        | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
-| `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`      | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
-| `sortOrder` | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
-| `class`     | Adds a defined css class to the rendered tab html element.                                                                                          | `string` | optional |
+The following code snippet demonstrates the basic usage of creating a new section.
+
+``` xml
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+    	<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+			<label>A meaningful label</label>
+		</tab>
+
+		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+			<label>A meaningful section label</label>
+			<tab>A_UNIQUE_ID</tab>
+			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+		</section>
+    </system>
+</config>
+```
+
+The section described above defines the id `A_UNIQUE_SECTION_ID`, is visible in the default config view and in a store context. The `label`-node is translatable. The section is associated to the tab with the id `A_UNIQUE_ID`. The section can only be accessed by users that have the permissions defined in the ACL `VENDOR_MODULE::path_to_the_acl_resource`.
 
 ## Groups
 
@@ -77,30 +141,185 @@ The `<group>`-Tag is used to group fields together.
 
 ### Group attribute reference
 
+A `<group>`-Tag can have the following attributes:
+
+| Attribute       | Description                                                                                                                                         | Type     | Required |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
+| `id`            | Defines the identifier that is used referencing the group.                                                                                          | `typeId` | required |
+| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
+| `type`          | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `showInDefault` | Defines whether the group is shown in the default store. Specify `1` to show the group and `0` to hide the group.                                   | `int`    | optional |
+| `showInStore`   | Defines whether the group is shown on store level. Specify `1` to show the group and `0` to hide the group.                                         | `int`    | optional |
+| `showInWebsite` | Defines whether the group is shown on website level. Specify `1` to show the group and `0` to hide the group.                                       | `int`    | optional |
+| `canRestore`    | Defines if the group can be restored to default.                                                                                                    | `int`    | optional |
+| `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
+| `extends`       | By providing an identifier of another group, the content of this node will extend the section that you referenced.                                  | `string` | optional |
+
 ### Group node reference
 
-| Node                        | Description                                                                                                                                                                               | Type        |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | string      |
-| `fieldset_css`              | Adds one or more css classes to a group fieldset.                                                                                                                                         | string      |
-| `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | typeModel   |
-| `clone_model`               | Specifies a given model to clone fields.                                                                                                                                                  | typeModel   |
-| `clone_fields`              | Enabled or disabled cloning of fields.                                                                                                                                                    | int         |
-| `help_url`                  | Not extensible. See below.                                                                                                                                                                | typeUrl     |
-| `more_url`                  | Not extensible. See below.                                                                                                                                                                | typeUrl     |
-| `demo_link`                 | Not extensible. See below.                                                                                                                                                                | typeUrl     |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` html can be applied.                                                                                                      | string      |
-| `hide_in_single_store_mode` | Whether the group should be visible in single store mode. `1` hides the group; `0` shows the group.                                                                                       | int         |
-| `field`                     | Define on or more field that should be available under this group.                                                                                                                        | field       |
-| `group`                     | Define one or more sub groups.                                                                                                                                                            | unbounded   |
-| `depends`                   | Can be used to declare dependencies to other fields. Is used to only show specific fields/groups when a given field has a value of `1`. This node expects a `section/group/field`-string. | depends     |
-| `attribute`                 | Custom attributes can be used by frontend models. Ususally used to make a given frontend model more dynamic.                                                                              | attribute   |
-| `include`                   | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files.                                                                     | includeType |
+A `<group>`-Tag can have the following children:
+
+| Node                        | Description                                                                                                                                                                               | Type          |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`      |
+| `fieldset_css`              | Adds one or more css classes to a group fieldset.                                                                                                                                         | `string`      |
+| `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | `typeModel`   |
+| `clone_model`               | Specifies a given model to clone fields.                                                                                                                                                  | `typeModel`   |
+| `clone_fields`              | Enabled or disabled cloning of fields.                                                                                                                                                    | `int`         |
+| `help_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
+| `more_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
+| `demo_link`                 | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
+| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` html can be applied.                                                                                                      | `string`      |
+| `hide_in_single_store_mode` | Whether the group should be visible in single store mode. `1` hides the group; `0` shows the group.                                                                                       | `int`         |
+| `field`                     | Define on or more field that should be available under this group.                                                                                                                        | `field`       |
+| `group`                     | Define one or more sub groups.                                                                                                                                                            | `unbounded`   |
+| `depends`                   | Can be used to declare dependencies to other fields. Is used to only show specific fields/groups when a given field has a value of `1`. This node expects a `section/group/field`-string. | `depends`     |
+| `attribute`                 | Custom attributes can be used by frontend models. Ususaly used to make a given frontend model more dynamic.                                                                               | `attribute`   |
+| `include`                   | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files.                                                                     | `includeType` |
 
 {:.bs-callout-warning}
 The nodes `more_url`, `demo_url` and `help_url` are defined by a PayPal frontend model that is only used once. These nodes are not reusable.
 
+### Example: Create a bew group for a given section
+
+The following code snippet demonstrates the basic usage of creating a new group.
+
+``` xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+			<label>A meaningful label</label>
+		</tab>
+
+		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+			<label>A meaningful section label</label>
+			<tab>A_UNIQUE_ID</tab>
+			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+			
+			<group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+				
+			</group>
+        </section>
+    </system>
+</config>
+```
+
+The group described above defines the id `A_UNIQUE_GROUP_ID`, is visible in the default config view and in a store context.
+
 ## Fields
+
+The `<field>`-Tag is used inside of `<group>`-Tags to define specific configuration values.
+
+### Field attribute reference
+
+A `<field>`-Tag can have the following attributes:
+
+| Attribute       | Description                                                                                                                                         | Type     | Required |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
+| `id`            | Defines the identifier that is used referencing the field.                                                                                          | `typeId` | required |
+| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
+| `type`          | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `showInDefault` | Defines whether the field is shown in the default store. Specify `1` to show the field and `0` to hide the field.                                   | `int`    | optional |
+| `showInStore`   | Defines whether the field is shown on store level. Specify `1` to show the field and `0` to hide the field.                                         | `int`    | optional |
+| `showInWebsite` | Defines whether the field is shown on website level. Specify `1` to show the field and `0` to hide the field.                                       | `int`    | optional |
+| `canRestore`    | Defines if the field can be restored to default.                                                                                                    | `int`    | optional |
+| `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
+| `extends`       | By providing an identifier of another field, the content of this node will extend the section that you referenced.                                  | `string` | optional |
+
+### Field node reference
+
+A `<field>`-Tag can have the following children:
+
+| Node                        | Description                                                                                                                                                                               | Type             |
+|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
+| `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` html can be applied.                                                                                                      | `string`         |
+| `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
+| `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
+| `frontend_class`            | Adds a defined css class to the rendered section html element.                                                                                                                            | `string`         |
+| `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | `typeModel`      |
+| `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
+| `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
+| `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
+| `validate`                  | Define different validation rules separated by comma. Full reference list of available validation rules is listed below.                                                                  | `string`         |
+| `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
+| `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
+| `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |
+| `upload_dir`                | Specify a target directory for uploads. This node has additional attributes and nodes. Look them up before using this.                                                                    | `typeUploadDir`  |
+| `button_url`                | Displays a button if `button_url` and `button_label` are specified. Usually used in combination with a custom frontend model.                                                             | `typeUrl`        |
+| `button_label`              | Displays a button if `button_label` and `button_url` are specified. Usually used in combination with a custom frontend model.                                                             | `string`         |
+| `more_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`        |
+| `demo_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`        |
+| `hide_in_single_store_mode` | Whether the group should be visible in single store mode. `1` hides the group; `0` shows the group.                                                                                       | `int`            |
+| `source_service`            | Service used to populate select options.                                                                                                                                                  | `complexType`    |
+| `options`                   | Not used. Potentially deprecated.                                                                                                                                                         | `complexType`    |
+| `depends`                   | Can be used to declare dependencies to other fields. Is used to only show specific fields/groups when a given field has a value of `1`. This node expects a `section/group/field`-string. | `complexType`    |
+| `attribute`                 | Custom attributes can be used by frontend models. Usually used to make a given frontend model more dynamic.                                                                               | `complexType`    |
+| `requires`                  | Not extensible. See below.                                                                                                                                                                | `complexType`    |
+
+{:.bs-callout-warning}
+The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a different core payment models and are only used once. These nodes are not reusable.
+
+### Example: Create two fields in a given group
+
+``` xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+			<label>A meaningful label</label>
+		</tab>
+
+		<section id="A_UNIQUE_SECTION_ID" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+			<label>A meaningful section label</label>
+			<tab>A_UNIQUE_ID</tab>
+			<resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
+
+			<group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+				<label>A meaningful group label</label>
+				<comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
+
+				<field id="A_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="select">
+					<label>Feature Flag Example</label>
+					<comment>This field is an example for a basic yes or no select.</comment>
+					<tooltip>Usually these kinds of fields are used to enable or disable a given feature. Other fields might be dependent to this and will only appear if this field is set to yes.</tooltip>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+
+				<field id="ANOTHER_UNIQUE_FIELD_ID" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="text">
+					<label>A meaningful field label</label>
+					<comment>A descriptive text explaining this configuration field.</comment>
+					<tooltip>Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.</tooltip>
+					<validate>required-entry no-whitespace</validate> <!-- Field is required and must not contain any whitespace. -->
+					<if_module_enabled>VENDOR_MODULE</if_module_enabled>
+					<depends> <!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 -->
+						<field id="A_UNIQUE_FIELD_ID">1</field>
+					</depends>
+				</field>
+			</group>
+		</section>
+    </system>
+</config>
+```
+
+The example above creates two fields, both visible/configurable in default and in store view. Both fields have a comment and a tooltip to describe their purpose to the user. The `label`-node is translatable.  
+The field with the identifier `ANOTHER_UNIQUE_FIELD_ID` is visible when the given module in the `if_module_enabled` is enabled globally. The field also validates its value against the rules `required-entry` and `no-whitespace`.  
+The field with the identifier `A_UNIQUE_FIELD_ID` defines a different source model which provides tha values `Yes` and `No`.
+
+### Common source models
+
+The following source models are provided by the Magento 2 Core. In general, there are many more source models; the following list describes the most common ones. Be aware, that these source models need the field attribute `type` to be set to `select` in order to work properly.
+
+| Source Model                                              | Description                                                                                                |
+|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| `Magento\Config\Model\Config\Source\Yesnocustom`          | Provides the values `Yes`, `No` and `Specified`.                                                           |
+| `Magento\Config\Model\Config\Source\Enabledisable`        | Provides the values `Enable`, `Disable`. Saves the values as `0` and `1` in the database.                  |
+| `Magento\AdminNotification\Model\Config\Source\Frequency` | Provides the values `1 Hour`,`2 Hours`,`6 Hours`,`12 Hours` and `24 Hours`. Values are saved as integers.  |
+| `Magento\Catalog\Model\Config\Source\TimeFormat`          | Provides the values for the time format (12 h/24 h).                                                       |
+| `Magento\Cron\Model\Config\Source\Frequency`              | Provides the values `Daily`, `Weekly` and `Monthly`. Values are saved in the database as `D`, `W` and `M`. |
+| `Magento\GoogleAdwords\Model\Config\Source\Language`      | Provides the values for a 2-letter code of a given language in the ISO 639-1 format (e.g. en).             |
+| `Magento\Config\Model\Config\Source\Locale`               | Provides the values similar to the above one, but pertains a locale code (e.g. en_US).                     |
 
 ### Field Validation
 
@@ -108,7 +327,7 @@ A field can have one or more validator-classes assigned to make sure that the in
 The following example validates a field and adds several different validation rules.
 
 ``` xml
-<field id="A_CUSTOM_IDENTIFIER" showInDefault="0" showInWebsite="0">
+<field id="A_CUSTOM_IDENTIFIER" showInDefault="1" showInWebsite="0" showInStore="1">
     <validate>required-entry validate-clean-url no-whitespace</validate>
 </field>
 ```
