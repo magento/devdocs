@@ -186,10 +186,6 @@
 - label: Functional Areas
   children:
 
-    - label: Security and Compliance
-      url: /security/security-and-compliance.html
-      versionless: true
-
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
 
@@ -218,6 +214,10 @@
 
     - label: Product Recommendations
       url: /recommendations/product-recs.html
+      versionless: true
+
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
       versionless: true
 
     - label: Staging
