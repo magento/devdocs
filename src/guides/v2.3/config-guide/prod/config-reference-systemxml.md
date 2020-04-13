@@ -79,7 +79,7 @@ The `sortOrder`-attribute with the value of `10` defines the position of the tab
 
 ## Sections
 
-A `<section>`-Tag references to either an existing or a new section in the system configuration. The following screenshot shows a rendered section in the Magento Admin:
+A `<section>`-Tag references to either an existing or a new section in the system configuration.
 
 ### Section attribute reference
 
