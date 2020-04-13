@@ -22,7 +22,7 @@ Avoid using "Ui" for your custom module name because the <code>%Vendor%_Ui</code
 ### Example
 
 ```php
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 ```
@@ -40,7 +40,7 @@ Here `<area>` is the functional area of the module (frontend, controller, and so
 ### Example
 
 ```php
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 ```
@@ -58,7 +58,7 @@ Here `<VendorName>` is the name of the company providing the package and `<packa
 ### Example
 
 ```php
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
 ```
@@ -76,7 +76,7 @@ Here `<vendor>` is the name of the company providing the library. `<library_name
 ### Example
 
 ```php
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::LIBRARY, 'magento/framework', __DIR__);
 ```
@@ -98,7 +98,7 @@ After you create your `registration.php` file and you are creating [your compone
 ### Sample `registration.php` file {#register-sample}
 
 ```php
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 ```

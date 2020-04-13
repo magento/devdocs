@@ -45,9 +45,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
-          <li>
-            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
-          </li>
           <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
         </ul>
       </td>
@@ -57,9 +54,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. <a href="{{ site.baseurl }}/cloud/project/new-relic.html">Adobe-generated alert policies</a> implement monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
           <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>

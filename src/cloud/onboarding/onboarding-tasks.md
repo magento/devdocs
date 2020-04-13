@@ -54,7 +54,7 @@ When you sign up for a Pro or Starter subscription plan, we provision your initi
 
 You can use the Project Web Interface to manage your project, add user accounts, and begin developing your store(s). The License Owner, Technical Admin users, and developers can use this interface to manage all environments and branches, environment variables, environment settings, and routes.
 
-![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud_project-access.png)
+![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png)
 
 For details, see [Project Web Interface]({{ site.baseurl }}/cloud/project/projects.html).
 
@@ -64,7 +64,7 @@ Get updates about {{site.data.var.ece}} platform environments and related servic
 
 The page lists current status for all {{site.data.var.ece}} components and services followed by notifications about incident reports, service upgrades, planned outages, and more. These notifications are ordered by date.
 
-![All status on the page]({{ site.baseurl }}/common/images/cloud_status.png)
+![All status on the page]({{ site.baseurl }}/common/images/cloud/cloud_status.png)
 
 Anyone working on your project can subscribe to the {{site.data.var.ece}} status site to receive event notifications and updates through email. You can customize your subscription to select only the platform and services that you want to track. Sign up from the [Subscription page](https://status.magento.cloud/subscribe).
 

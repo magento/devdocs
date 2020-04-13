@@ -58,7 +58,7 @@ To create authentication keys through the Magento Marketplace:
 
 1. Click **Access Keys** under _My Products_ in the _Marketplace_ tab.
 
-   ![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
+   ![Click Access Keys]({{ site.baseurl }}/common/images/cloud/cloud_access-key.png)
 
 1. Click **Create A New Access Key**.
 
@@ -201,7 +201,7 @@ php bin/magento info:adminuri
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 
-![Click Access for list of URLs]({{ site.baseurl }}/common/images/cloud-project-master-access.png){:width="297px"}
+![Click Access for list of URLs]({{ site.baseurl }}/common/images/cloud/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
 

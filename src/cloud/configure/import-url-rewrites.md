@@ -89,17 +89,17 @@ To import URL Rewrites:
 
    The import task begins with the following message:
 
-   ![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-task.png)
+   ![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-task.png)
 
    A successful import returns the following message:
 
-   ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
+   ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-success.png)
 
 ## Troubleshooting the import
 
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 
-![Failed URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-failed.png)
+![Failed URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-failed.png)
 
 {:.procedure}
 To research the URL rewrite error:
@@ -110,7 +110,7 @@ To research the URL rewrite error:
 
 1. In the _Bulk Actions Log_ view, search for your task, and click **Details** in the _Action_ column.
 
-   ![Bulk actions log]({{ site.baseurl }}/common/images/cloud-urlrewrite-bulk-actions-log.png)
+   ![Bulk actions log]({{ site.baseurl }}/common/images/cloud/cloud-urlrewrite-bulk-actions-log.png)
 
 1. In the _Action Details_ view, click the error number in the **ID** column to download a report about the failed operation.
 
