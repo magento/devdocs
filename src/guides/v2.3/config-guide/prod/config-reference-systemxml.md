@@ -24,7 +24,7 @@ If you want instant *XSD validation in your IDE, you can run `bin/magento dev:ur
 
 ## Tab // Sections // Groups // Fields
 
-In the `system.xml`, it is possible to define four different types which are related to each other. The following section describes the relations between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
+In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml`:
 
 ![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
