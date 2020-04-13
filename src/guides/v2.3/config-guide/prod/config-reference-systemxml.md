@@ -31,8 +31,8 @@ The red squares mark the different types that are defined in the `system.xml` fi
 
 ![Screenshot displaying a configured section in the Magento Admin.](img/magento2-system-configuration.png)
 
-Tabs are used to split different configuration areas semantically. Each Tab can contain one or more sections, which can also be referenced as sub-menu. A section contains one or more groups.
-Each group lists one or more fields. A group can also be used to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
+Tabs are used to split different configuration areas semantically. Each tab can contain one or more sections, which can also be referenced as submenus. A section contains one or more groups.
+Each group lists one or more fields. You can also use a group to add a general description for the following fields. As mentioned, each group can have one or more fields. Fields are the smallest entity
 in the system configuration context.
 
 ## Tabs
@@ -48,7 +48,7 @@ A `<tab>`-Tag can have the following attributes:
 | `id`        | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
 | `translate` | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
 | `type`      | Defines the input type of the rendered HTML element—defaults to `text`.                                                                             | `string` | optional |
-| `sortOrder` | Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers drive the section to the top.           | `float`  | optional |
+| `sortOrder` | Defines the sort order of the section. High numbers push the section to the bottom of the page; low numbers push the section to the top.           | `float`  | optional |
 | `class`     | Adds a defined CSS class to the rendered tab HTML element.                                                                                          | `string` | optional |
 
 ### Tab node reference
@@ -63,7 +63,7 @@ A `<tab>`-Tag can have the following child:
 
 The following code snippet demonstrates the creation of a new tab with example data.
 
-``` xml
+```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
@@ -74,7 +74,7 @@ The following code snippet demonstrates the creation of a new tab with example d
 </config>
 ```
 
-The snippet above creates a new tab with the identifier `A_UNIQUE_ID`. As the `translate`-attribute is defined and references the label, the `label`-node is translatable. During the rendering process, the css class `a-custom-css-class-to-style-this-tab` will be applied on the HTML element that was created for this tab.
+The snippet above creates a new tab with the identifier `A_UNIQUE_ID`. As the `translate`-attribute is defined and references the label, the `label`-node is translatable. During the rendering process, the CSS class `a-custom-css-class-to-style-this-tab` will be applied on the HTML element that was created for this tab.
 The `sortOrder`-attribute with the value of `10` defines the position of the tab in the list of all tabs when rendered.
 
 ## Sections
@@ -89,8 +89,8 @@ A `<section>`-Tag can have the following attributes:
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
 | `id`            | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
 | `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
-| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
 | `showInDefault` | Defines whether the section is shown in the default store. Specify `1` to show the section and `0` to hide the section.                             | `int`    | optional |
 | `showInStore`   | Defines whether the section is shown on store level. Specify `1` to show the section and `0` to hide the section.                                   | `int`    | optional |
 | `showInWebsite` | Defines whether the section is shown on website level. Specify `1` to show the section and `0` to hide the section.                                 | `int`    | optional |
@@ -105,11 +105,11 @@ A `<section>`-Tag can have the following children:
 | Node             | Description                                                                                                           | Type                |
 |------------------|-----------------------------------------------------------------------------------------------------------------------|---------------------|
 | `label`          | Defines the label that is displayed in the frontend.                                                                  | `string`            |
-| `class`          | Adds a defined css class to the rendered section html element.                                                        | `string`            |
-| `tab`            | References the associated tab. Expects the id of the tab.                                                             | `typeTabId`         |
+| `class`          | Adds a defined CSS class to the rendered section HTML element.                                                        | `string`            |
+| `tab`            | References the associated tab. Expects the ID of the tab.                                                             | `typeTabId`         |
 | `header_css`     | Neither used nor evaluated at the time of this writing.                                                               | `string`            |
 | `resource`       | References an ACL resource to provide permission settings for this section.                                           | `typeAclResourceId` |
-| `group`          | Define one or more sub groups.                                                                                        | `typeGroup`         |
+| `group`          | Define one or more subgroups.                                                                                        | `typeGroup`         |
 | `frontend_model` | Specifies a different frontend model to change the rendering and modify the output.                                   | `typeModel`         |
 | `include`        | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files. | `includeType`       |
 
@@ -117,7 +117,7 @@ A `<section>`-Tag can have the following children:
 
 The following code snippet demonstrates the basic usage of creating a new section.
 
-``` xml
+```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
@@ -134,7 +134,7 @@ The following code snippet demonstrates the basic usage of creating a new sectio
 </config>
 ```
 
-The section described above defines the id `A_UNIQUE_SECTION_ID`, is visible in the default config view and in a store context. The `label`-node is translatable. The section is associated to the tab with the id `A_UNIQUE_ID`. The section can only be accessed by users that have the permissions defined in the ACL `VENDOR_MODULE::path_to_the_acl_resource`.
+The section described above defines the ID `A_UNIQUE_SECTION_ID`, is visible in the default config view and in a store context. The `label`-node is translatable. The section is associated to the tab with the ID `A_UNIQUE_ID`. The section can only be accessed by users that have the permissions defined in the ACL `VENDOR_MODULE::path_to_the_acl_resource`.
 
 ## Groups
 
@@ -148,8 +148,8 @@ A `<group>`-Tag can have the following attributes:
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
 | `id`            | Defines the identifier that is used referencing the group.                                                                                          | `typeId` | required |
 | `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
-| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `type`          | Defines the input type of the rendered HTMLL element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
 | `showInDefault` | Defines whether the group is shown in the default store. Specify `1` to show the group and `0` to hide the group.                                   | `int`    | optional |
 | `showInStore`   | Defines whether the group is shown on store level. Specify `1` to show the group and `0` to hide the group.                                         | `int`    | optional |
 | `showInWebsite` | Defines whether the group is shown on website level. Specify `1` to show the group and `0` to hide the group.                                       | `int`    | optional |
@@ -164,29 +164,29 @@ A `<group>`-Tag can have the following children:
 | Node                        | Description                                                                                                                                                                               | Type          |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`      |
-| `fieldset_css`              | Adds one or more css classes to a group fieldset.                                                                                                                                         | `string`      |
+| `fieldset_css`              | Adds one or more CSS classes to a group fieldset.                                                                                                                                         | `string`      |
 | `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | `typeModel`   |
 | `clone_model`               | Specifies a given model to clone fields.                                                                                                                                                  | `typeModel`   |
 | `clone_fields`              | Enabled or disabled cloning of fields.                                                                                                                                                    | `int`         |
 | `help_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
 | `more_url`                  | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
 | `demo_link`                 | Not extensible. See below.                                                                                                                                                                | `typeUrl`     |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` html can be applied.                                                                                                      | `string`      |
+| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`      |
 | `hide_in_single_store_mode` | Whether the group should be visible in single store mode. `1` hides the group; `0` shows the group.                                                                                       | `int`         |
-| `field`                     | Define on or more field that should be available under this group.                                                                                                                        | `field`       |
-| `group`                     | Define one or more sub groups.                                                                                                                                                            | `unbounded`   |
-| `depends`                   | Can be used to declare dependencies to other fields. Is used to only show specific fields/groups when a given field has a value of `1`. This node expects a `section/group/field`-string. | `depends`     |
+| `field`                     | Define one or more fields that should be available under this group.                                                                                                                        | `field`       |
+| `group`                     | Define one or more subgroups.                                                                                                                                                            | `unbounded`   |
+| `depends`                   | Can be used to declare dependencies on other fields. Is used to show specific fields/groups only when a given field has a value of `1`. This node expects a `section/group/field`-string. | `depends`     |
 | `attribute`                 | Custom attributes can be used by frontend models. Ususaly used to make a given frontend model more dynamic.                                                                               | `attribute`   |
 | `include`                   | Used to include additional `system_include.xsd` compatible files. Usually used to structure large `system.xml` files.                                                                     | `includeType` |
 
 {:.bs-callout-warning}
 The nodes `more_url`, `demo_url` and `help_url` are defined by a PayPal frontend model that is only used once. These nodes are not reusable.
 
-### Example: Create a bew group for a given section
+### Example: Create a new group for a given section
 
 The following code snippet demonstrates the basic usage of creating a new group.
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
@@ -206,7 +206,7 @@ The following code snippet demonstrates the basic usage of creating a new group.
 </config>
 ```
 
-The group described above defines the id `A_UNIQUE_GROUP_ID`, is visible in the default config view and in a store context.
+The group described above defines the ID `A_UNIQUE_GROUP_ID`, is visible in the default config view and in a store context.
 
 ## Fields
 
@@ -220,8 +220,8 @@ A `<field>`-Tag can have the following attributes:
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
 | `id`            | Defines the identifier that is used referencing the field.                                                                                          | `typeId` | required |
 | `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered html element. Defaults to `text`.                                                                            | `string` | optional |
-| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will drive the section to the top. | `float`  | optional |
+| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                            | `string` | optional |
+| `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
 | `showInDefault` | Defines whether the field is shown in the default store. Specify `1` to show the field and `0` to hide the field.                                   | `int`    | optional |
 | `showInStore`   | Defines whether the field is shown on store level. Specify `1` to show the field and `0` to hide the field.                                         | `int`    | optional |
 | `showInWebsite` | Defines whether the field is shown on website level. Specify `1` to show the field and `0` to hide the field.                                       | `int`    | optional |
@@ -236,15 +236,15 @@ A `<field>`-Tag can have the following children:
 | Node                        | Description                                                                                                                                                                               | Type             |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
 | `label`                     | Defines the label that is displayed in the frontend.                                                                                                                                      | `string`         |
-| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` html can be applied.                                                                                                      | `string`         |
+| `comment`                   | Adds a comment below the group label. By using `<![CDATA[//]]>` HTML can be applied.                                                                                                      | `string`         |
 | `tooltip`                   | Another possible frontend element that also can be used to describe the meaning of this field. Will be displayed as a small icon beside the field.                                        | `string`         |
 | `hint`                      | Displays additional information. Only available with specific `frontend_model`.                                                                                                           | `string`         |
-| `frontend_class`            | Adds a defined css class to the rendered section html element.                                                                                                                            | `string`         |
+| `frontend_class`            | Adds a defined CSS class to the rendered section HTML element.                                                                                                                            | `string`         |
 | `frontend_model`            | Specifies a different frontend model to change the rendering and modify the output.                                                                                                       | `typeModel`      |
 | `backend_model`             | Specifies a different backend model to modify the configured values.                                                                                                                      | `typeModel`      |
 | `source_model`              | Specifies a different source model that provides a specific set of values.                                                                                                                | `typeModel`      |
 | `config_path`               | Can be used to overwrite the generic config path of a field.                                                                                                                              | `typeConfigPath` |
-| `validate`                  | Define different validation rules separated by comma. Full reference list of available validation rules is listed below.                                                                  | `string`         |
+| `validate`                  | Define different validation rules (comma separated). Full reference list of available validation rules is listed below.                                                                  | `string`         |
 | `can_be_empty`              | Used when `type` is `multiselect` to specify that a field can be empty.                                                                                                                   | `int`            |
 | `if_module_enabled`         | Used to display a field only when a given module is enabled.                                                                                                                              | `typeModule`     |
 | `base_url`                  | Used in combination with `upload_dir` for file uploads.                                                                                                                                   | `typeUrl`        |
@@ -261,11 +261,11 @@ A `<field>`-Tag can have the following children:
 | `requires`                  | Not extensible. See below.                                                                                                                                                                | `complexType`    |
 
 {:.bs-callout-warning}
-The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a different core payment models and are only used once. These nodes are not reusable.
+The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a different core payment model and are only used once. These nodes are not reusable.
 
 ### Example: Create two fields in a given group
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="A_UNIQUE_ID" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
@@ -327,7 +327,7 @@ The following source models are provided by the Magento 2 Core. In general, ther
 A field can have one or more validator-classes assigned to make sure that the input of the user meets the requirements of the extension. Validation rules can be applied with the `<validate>`-Tag.
 The following example validates a field and adds several different validation rules.
 
-``` xml
+```xml
 <field id="A_CUSTOM_IDENTIFIER" showInDefault="1" showInWebsite="0" showInStore="1">
     <validate>required-entry validate-clean-url no-whitespace</validate>
 </field>
@@ -338,20 +338,20 @@ The following validation rules are available:
 | Rule                            | Description                                                                                                                      |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | `validate-no-html-tags`         | HTML tags are not allowed.                                                                                                       |
-| `validate-select`               | Please select an option.                                                                                                         |
+| `validate-select`               | Select an option.                                                                                                         |
 | `validate-no-empty`             | Empty Value                                                                                                                      |
-| `validate-alphanum-with-spaces` | Please use only letters (a-z or A-Z), numbers (0-9) or spaces only in this field.                                                |
-| `validate-data`                 | Please use only letters (a-z or A-Z), numbers (0-9) or underscore (_) in this field, and the first character should be a letter. |
-| `validate-street`               | Please use only letters (a-z or A-Z), numbers (0-9), spaces and “#” in this field.                                               |
-| `validate-phoneStrict`          | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
-| `validate-phoneLax`             | Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.                                                   |
-| `validate-fax`                  | Please enter a valid fax number (Ex: 123-456-7890).                                                                              |
-| `validate-email`                | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
-| `validate-emailSender`          | Please enter a valid email address (Ex: johndoe@domain.com).                                                                     |
-| `validate-password`             | Please enter 6 or more characters. Leading and trailing spaces will be ignored.                                                  |
-| `validate-admin-password`       | Please enter 7 or more characters, using both numeric and alphabetic.                                                            |
-| `validate-url`                  | Please enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
-| `validate-clean-url`            | Please enter a valid URL. For example http://www.example.com or www.example.com.                                                 |
+| `validate-alphanum-with-spaces` | Use letters (a-z or A-Z), numbers (0-9), or spaces only in this field.                                                |
+| `validate-data`                 | Use letters (a-z or A-Z), numbers (0-9), or underscores (_) only in this field. The first character should be a letter. |
+| `validate-street`               | Use letters (a-z or A-Z), numbers (0-9), spaces, and “#” only in this field.                                               |
+| `validate-phoneStrict`          | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                   |
+| `validate-phoneLax`             | Enter a valid phone number. For example, (123) 456-7890 or 123-456-7890.                                                   |
+| `validate-fax`                  | Enter a valid fax number. For example, 123-456-7890.                                                                              |
+| `validate-email`                | Enter a valid email address. For example, johndoe@domain.com.                                                                     |
+| `validate-emailSender`          | Enter a valid email address. For example, johndoe@domain.com.                                                                     |
+| `validate-password`             | Enter 6 or more characters. Leading and trailing spaces will be ignored.                                                  |
+| `validate-admin-password`       | Enter 7 or more characters, using both numeric and alphabetic.                                                            |
+| `validate-url`                  | Enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
+| `validate-clean-url`            | Enter a valid URL. For example, http://www.example.com or www.example.com.                                                 |
 | `validate-xml-identifier`       | Enter a valid XML-identifier. For example, something_1, block5, id-4.                                                             |
 | `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                                   |
 | `validate-zip-us`               | Enter a valid ZIP code. For example, 90602 or 90602-1234.                                                                         |
