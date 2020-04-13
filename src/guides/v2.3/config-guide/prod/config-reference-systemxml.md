@@ -24,7 +24,7 @@ The following code snippet shows the bare skeleton of the file:
 {:.bs-callout-tip}
 If you want instant *XSD validation in your IDE, you can run `bin/magento dev:urn-catalog:generate [--ide IDE] [--] <path>`.
 
-## Tab // Sections // Groups // Fields
+## Tabs // Sections // Groups // Fields
 
 In the `system.xml` file, it is possible to define four different types of entities, which are related to each other. The following section describes the relationship between tabs, sections, groups, and fields. The following screenshot displays the Magento 2 System Configuration in the Admin backend.
 The red squares mark the different types that are defined in the `system.xml`:
