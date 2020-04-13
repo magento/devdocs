@@ -186,6 +186,10 @@
 - label: Functional Areas
   children:
 
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
+      versionless: true
+
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
 
@@ -194,10 +198,6 @@
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
-
-    - label: Security and Compliance
-      url: /security/security-and-compliance.html
-      versionless: true
 
     - label: Extensions Marketplace
       url: /marketplace/sellers/getting-started.html
