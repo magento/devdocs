@@ -351,7 +351,7 @@ The following validation rules are available:
 | `validate-url`                  | Please enter a valid URL. Protocol is required (http://, https:// or ftp://).                                                    |
 | `validate-clean-url`            | Please enter a valid URL. For example http://www.example.com or www.example.com.                                                 |
 | `validate-xml-identifier`       | Enter a valid XML-identifier. For example, something_1, block5, id-4.                                                             |
-| `validate-ssn`                  | Please enter a valid social security number (Ex: 123-45-6789).                                                                   |
+| `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                                   |
 | `validate-zip-us`               | Please enter a valid zip code (Ex: 90602 or 90602-1234).                                                                         |
 | `validate-date-au`              | Please use this date format: dd/mm/yyyy. For example 17/03/2006 for the 17th of March, 2006.                                     |
 | `validate-currency-dollar`      | Please enter a valid $ amount. For example $100.00.                                                                              |
