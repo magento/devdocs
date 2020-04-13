@@ -354,4 +354,4 @@ The following validation rules are available:
 | `validate-ssn`                  | Enter a valid social security number. For example, 123-45-6789.                                                                   |
 | `validate-zip-us`               | Enter a valid ZIP code. For example, 90602 or 90602-1234.                                                                         |
 | `validate-date-au`              | Use this date format: dd/mm/yyyy. For example, 17/03/2006 for the 17th of March, 2006.                                     |
-| `validate-currency-dollar`      | Please enter a valid $ amount. For example $100.00.                                                                              |
+| `validate-currency-dollar`      | Enter a valid $ amount. For example, $100.00.                                                                              |
