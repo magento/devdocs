@@ -7,7 +7,6 @@ functional_areas:
 ---
 
 The `system.xml` file allows you to manage the Magento system configuration. Use this topic as a general reference for the `system.xml` file. The `system.xml` file is located under `etc/adminhtml/system.xml` in a given Magento 2 extension.
-As already mentioned, the system.xml file is located under `etc/adminhtml/system.xml`.
 
 The following code snippet shows the bare skeleton of the file:
 
