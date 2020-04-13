@@ -10,7 +10,7 @@ The `system.xml` file allows you to manage the Magento system configuration. Use
 
 The following code snippet shows the bare skeleton of the file:
 
-``` xml
+```xml
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
