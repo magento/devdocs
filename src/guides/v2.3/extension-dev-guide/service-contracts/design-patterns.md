@@ -20,12 +20,7 @@ A [service contract](https://glossary.magento.com/service-contract) must define 
 Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the `Api/Data` subdirectory for a [module](https://glossary.magento.com/module).
 
 Service interfaces include management, repository, and [metadata](https://glossary.magento.com/metadata) interfaces.
-You must define the service interfaces for a service contract in the `Api` subdirectory for a module.<!--  You can substitute another implementation in this directory. -->
-
-<!--
-   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> [namespace](https://glossary.magento.com/namespace) define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
-                  </p>
-    -->
+You must define the service interfaces for a service contract in the `Api` subdirectory for a module.
 
 ## Data interfaces {#data-interfaces}
 
@@ -98,6 +93,7 @@ Interface | Description
 `ProductMetadataInterface` | Provides Magento application product metadata. Defines the `getVersion()`, `getEdition()`, `getName()` methods.
 `CustomerMetadataManagementInterface` | Interface for managing customer attributes metadata. Defines the constant `ENTITY_TYPE_CUSTOMER`.
 `AddressMetadataInterface` | Interface for retrieving information about customer address attributes metadata. Defines the constants `ATTRIBUTE_SET_ID_ADDRESS`, `ENTITY_TYPE_ADDRESS`, `DATA_INTERFACE_NAME`.
+
 {:.ref-header}
 Related topics
 
