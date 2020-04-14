@@ -39,10 +39,9 @@ After fully configuring your store, you should configure your deployment. This i
 
 We also provide integrations with:
 
-*  [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) configuration for tracking and investigating issues for bottleneck issues in processes, method calls, queries, loads, and so on
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) configuration for application and performance analysis
 *  [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) configuration for CDN and caching
-*  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) for managing your Git branches and code
+*  [Code collaboration and version control tools]({{site.baseurl}}/cloud/integrations/cloud-integrations.html) (GitHub, Bitbucket, and GitLab) for managing your Git branches and code
 
 ## Configuration management {#config-mgmt}
 

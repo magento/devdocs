@@ -48,7 +48,7 @@ To view your Fastly credentials:
    -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
  {:.bs-callout-info}
-If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
+If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
 
@@ -65,11 +65,11 @@ To enable Fastly CDN caching in Staging and Production:
 
 1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
-   ![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
+   ![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud/cloud_fastly_menu.png){:width="650px"}
 
 1. In the _Caching Application_ section, remove the selection from **Use system value**, and then select **Fastly CDN** from the drop-down list.
 
-   ![Choose Fastly]({{ site.baseurl }}/common/images/cloud-fastly_enable-admin.png){:width="550px"}
+   ![Choose Fastly]({{ site.baseurl }}/common/images/cloud/cloud-fastly_enable-admin.png){:width="550px"}
 
 1. Expand **Fastly Configuration** and [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module).
 
@@ -96,7 +96,7 @@ To enable Fastly CDN caching in Staging and Production:
 
    If the test fails, verify that the correct service ID and API token values match the credentials for the current environment.
 
-   If the test fails again, submit a support ticket or contact your Technical Account Manager. For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
+   If the test fails again, submit a support ticket or contact your Customer Technical Advisor (CTA). For Pro projects, include the URLs for your Production and Staging sites.  For Starter projects, include the URLs for your `Master` and Staging site.
 
  {:.bs-callout-info}
 If you need to change the Fastly API token credential for a Staging or Production environment, see [Change Fastly credentials]({{ site.baseurl}}/cloud/cdn/cloud-fastly.html#change-your-fastly-api-token).
@@ -113,7 +113,7 @@ To upload the Fastly VCL:
 
 1. In the _Fastly Configuration_ section, click **Upload VCL to Fastly** as the following figure shows.
 
-   ![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud_upload-vcl-to-fastly.png)
+   ![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud/cloud_fastly-upload-vcl-admin-ui.png)
 
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
@@ -146,7 +146,7 @@ To review the backend settings configuration:
 
 1. Expand **Backend settings** and click the gear to check the default backend. A modal opens that shows current settings with options to change them.
 
-   ![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
+   ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
 
 1. Select the **Shield** location (or datacenter) closest to your AWS region.
    For example, if Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
@@ -192,7 +192,7 @@ The options include:
 -  **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
 -  **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
-![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
+![Configure purge options]({{ site.baseurl }}/common/images/cloud/cloud_fastly-purgeoptions.png){:width="650px"}
 
 {:.procedure}
 To configure Fastly purge options:
@@ -237,7 +237,7 @@ The Fastly module includes GeoIP handling to automatically redirect visitors or 
 
 1. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
 
-   ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud_fastly-geo-code.png)
+   ![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud/cloud_fastly-geo-code.png)
 
 1. Click **Save Config** at the top of the page.
 
@@ -296,7 +296,7 @@ To check the version of Fastly CDN module for Magento 2:
 {:.procedure}
 To upgrade the Fastly module:
 
-1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html#update).
+1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
    ```text
    module name: fastly/magento2

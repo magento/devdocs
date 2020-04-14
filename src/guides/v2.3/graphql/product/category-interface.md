@@ -40,6 +40,7 @@ Attribute | Data type | Description
 `category_level` | Int | Indicates the depth of the category within the tree
 `category_name` | String |  The display name of the category
 `category_url_key` | String | The url key assigned to the category
+`category_url_path` | String | The url path assigned to the category
 
 ### CategoryProducts object
 
@@ -49,7 +50,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `currentPage` | Int |  Specifies which page of results to return. The default value is 1
 `pageSize` | Int | Specifies the maximum number of results to return at once. This attribute is optional. The default value is 20
-`sort` | `ProductSortInput` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/queries/index.html) describes sort orders
+`sort` | `ProductAttributeSortInput` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/queries/index.html) describes sort orders
 
 The `CategoryProducts` object contains the following attributes:
 
