@@ -5,17 +5,37 @@ title: GraphQL requests
 
 Magento GraphQL supports the HTTP GET and POST methods. You can send a query as a GET or POST request. Mutations must be POST requests. You can optionally send a GET query request in a URL. In these requests, you must specify `query` as the query string. You might need to encode the query, as shown below:
 
-`http://<host>/graphql?query=%7Bproducts(filter%3A%7Bsku%3A%7Blike%3A%2224-WB%25%22%7D%7D)%7Bitems%7Bsku%7D%7D%7D`
+`http://<host>/graphql?query=%7Bproducts(filter%3A%7Bsku%3A%7Beq%3A%2224-WB01%22%7D%7D)%7Bitems%7Bname%20sku%7D%7D%7D`
 
 The previous example is equivalent to the following query. You could send the query as either a GET or POST request,
+
+**Request:**
 
 ```text
 {
   products(
-    filter: { sku: { like: "24-WB%" } }
+    filter: { sku: { eq: "24-WB01" } }
   ) {
     items {
+      name
       sku
+    }
+  }
+}
+```
+
+**Response:**
+
+```text
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "name": "Voyage Yoga Bag",
+          "sku": "24-WB01"
+        }
+      ]
     }
   }
 }

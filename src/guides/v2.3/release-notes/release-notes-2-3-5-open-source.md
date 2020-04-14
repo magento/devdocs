@@ -141,7 +141,7 @@ This release of Vertex includes the following new feature and enhancements:
 
 *  **Admin Configuration**. Flexible Field dropdown options are now sorted alphabetically by the current Admin user's locale.
 
-*  **Virtual Products**. Klarna now uses an order's billing address to calculate taxes on virtual products. Shipping-related flexible fields are no longer completed for virtual products.
+*  **Virtual Products**. Vertex now uses an order's billing address to calculate taxes on virtual products. Shipping-related flexible fields are no longer completed for virtual products.
 
 *  **Restorable configuration settings**. The **Use Vertex for orders shipping to**, **Summarize Tax by**, and **Global Delivery Term** now provide an option to be restored to their default setting.
 
