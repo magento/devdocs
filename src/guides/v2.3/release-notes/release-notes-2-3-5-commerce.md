@@ -39,7 +39,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is the default.
+*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is the default. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html)
 
 *  **Removal of session id from URLs**. Exposure of `session id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods add/read session id from URLs.
 
@@ -86,13 +86,13 @@ This release contains enhancements to core quality, which improve the quality of
 
 Page Builder enhancements for this release include:
 
-*  **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site.
+*  **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site. See [Templates](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-templates.html).
 
-*  **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds.
+*  **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds. See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px).
+*  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions.
+*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://devdocs.magento.com/page-builder/docs/how-to/how-to-upgrade-content-types.html).
 
 ### Inventory Management
 
@@ -111,6 +111,14 @@ With this release, you can now use `products` and `categoryList` queries to retr
 See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
+
+PWA Studio 6.0.0 contains both new features and improvements to existing features:
+
+* **Launch of the PWA extensibility framework**.  This framework gives developers the ability to create an extensibility API for their storefront or write plugins that can tap into those API and modify storefront logic.
+
+* **Caching and data fetching improvements**. This release contains improved caching logic and other data fetching optimizations in the Peregrine and Venia UI component libraries. These components have been refactored to take advantage of Apollo cache features to reduce overfetching or prevent the storage of sensitive data.
+
+* **Shopping cart components** that can be used for a full-page shopping cart experience
 
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
@@ -802,8 +810,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6188-->
 
 *  The partial indexer no longer incorrectly removes stock data when updating at least 1000 products. Previously, the indexer removed stock data, which resulted in in-stock products appearing out-of-stock. *Fix submitted by Pieter Hoste in pull request [25306](https://github.com/magento/magento2/pull/25306)*. [GitHub-12205](https://github.com/magento/magento2/issues/12205), [GitHub-15984](https://github.com/magento/magento2/issues/15984)
-
-<!--- MC-22008-->
 
 ### Infrastructure
 
