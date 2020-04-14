@@ -13,7 +13,7 @@ Use this library to retrieve and remove the data stored in the browser by Magent
 
 ## Installation
 
-Download the Magento Privacy JavaScript Library from the following location: `commerce.adobe.net/magentoprivacy.js`
+The Magento Privacy JavaScript Library is available at the following CDN location: `commerce.adobe.net/magentoprivacy.js`
 
 After you have the file, you will need to add it to a custom module or theme installed in your Magento instance.
 Follow the instructions described in the [Use custom JavaScript][] topic to accomplish this task.
