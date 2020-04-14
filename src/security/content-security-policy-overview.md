@@ -23,5 +23,5 @@ By default, CSP sends errors to the browser console, but can be configured to co
 
 [Report URI][] is a service that monitors CSP violations and displays the results in a dashboard. Both merchants and developers can use the service to receive reports whenever CSP violations occur.
 
-[Content Security Policies]: {{page.baseurl}}/guides/v2.3/extension-dev-guide/security/content-security-policies.html
+[Content Security Policies]: {{site.baseurl}}/guides/v2.3/extension-dev-guide/security/content-security-policies.html
 [Report URI]: https://report-uri.io/
