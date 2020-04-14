@@ -1,5 +1,8 @@
 The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
+{:.bs-callout-info}
+For access to {{site.data.var.ee}} and {{site.data.var.ece}} packages, you must use keys associated with a MAGEID that has been granted access to those packages. If you encounter errors, you may not be authorized to access the package. Contact [Magento support](https://magento.com/support) for assistance with your MAGEID.
+
 To create authentication keys:
 
 1. Log in to the [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}. If you don't have an account, click **Register**.
@@ -7,7 +10,7 @@ To create authentication keys:
 
 1. Click **Access Keys** in the Marketplace tab.
 
-   ![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud_access-key.png){:width="500px"}
+   ![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud/cloud_access-key.png){:width="500px"}
 
 1. Click **Create a New Access Key**. Enter a specific name for the keys (e.g., the name of the developer receiving the keys) and click **OK**.
 

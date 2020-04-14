@@ -36,3 +36,15 @@
   font-size: 1.3em;
   margin: 1.5em 0 0.5em 0;
 }
+
+/* Collapsible styles */
+.collapsible {
+  margin: 0 0 1.3em;
+}
+
+/* Makes all the big code snippets scrollable */
+.content-wrap > div[class*="language-"].highlighter-rouge .highlight {
+  overflow: auto;
+  margin: 0 0 20px;
+  max-height: 700px;
+}

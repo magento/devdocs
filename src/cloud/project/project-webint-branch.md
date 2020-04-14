@@ -43,7 +43,7 @@ To add a branch:
 
    Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
 
-1. Click ![Create a branch]({{ site.baseurl }}/common/images/cloud_branch-icon.png){:width="30px"}.
+1. Click ![Create a branch]({{ site.baseurl }}/common/images/cloud/cloud_branch-icon.png){:width="30px"}.
 1. In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
 
    The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
@@ -55,11 +55,11 @@ To add a branch:
 
    During deployment, its status is **In process**, as the following figure shows.
 
-   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-deploy.png)
+   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud/cloud_branch-deploy.png)
 
    After a successful deployment, the status changes to **Success**:
 
-   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud_branch-success.png)
+   ![Branch is deploying]({{ site.baseurl }}/common/images/cloud/cloud_branch-success.png)
 
 1. Continue with one of the following:
 
@@ -74,16 +74,16 @@ To delete an environment and make it inactive:
 1. In the left pane, click the name of the branch to delete.
 1. Click **Configure environment** as the following figure shows.
 
-   ![Configure environment]({{ site.baseurl }}/common/images/cloud_project-env.png)
+   ![Configure environment]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png)
 
 1. Click the **Settings** tab.
 1. Click **Delete** next to the environment's status, as the following figure shows.
 
-   ![Delete an environment]({{ site.baseurl }}/common/images/cloud_env-delete.png)
+   ![Delete an environment]({{ site.baseurl }}/common/images/cloud/cloud_env-delete.png)
 
    A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.
 
-   ![Delete an environment]({{ site.baseurl }}/common/images/cloud_environment-deleted.png)
+   ![Delete an environment]({{ site.baseurl }}/common/images/cloud/cloud_environment-deleted.png)
 
 ## Sync from the environment's parent {#project-branch-sync}
 
@@ -95,11 +95,11 @@ To sync an environment with its parent:
 
 1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click the name of the branch you want to sync.
-1. Click ![Sync an environment]({{ site.baseurl }}/common/images/cloud_environment-sync.png){:width="30px"} (sync).
+1. Click ![Sync an environment]({{ site.baseurl }}/common/images/cloud/cloud_environment-sync.png){:width="30px"} (sync).
 
   The following prompt displays:
 
-  ![Choose what to sync]({{ site.baseurl }}/common/images/cloud_environment-sync2.png)
+  ![Choose what to sync]({{ site.baseurl }}/common/images/cloud/cloud_environment-sync2.png)
 
 1. Select the checkbox next to each item to sync and click **Sync**.
 
@@ -111,7 +111,7 @@ To merge an environment with its parent:
 
 1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. In the left pane, click the name of the branch you want to merge.
-1. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud_environment-merge.png){:width="30px"} (merge).
+1. Click ![Merge an environment]({{ site.baseurl }}/common/images/cloud/cloud_environment-merge.png){:width="30px"} (merge).
 1. Click **Merge** to confirm the action.
 
 ## View logs {#logs}
@@ -156,7 +156,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 
    The following figure shows an example.
 
-   ![Deploy Key]({{ site.baseurl }}/common/images/cloud_deploy-key.png){:width="500px"}
+   ![Deploy Key]({{ site.baseurl }}/common/images/cloud/cloud_deploy-key.png){:width="500px"}
 
 1. Copy the deploy key to the clipboard.
 1. See [Enter your GitHub deploy key](#cloud-deploykey-github).
@@ -170,14 +170,14 @@ To enter your project's public key as a GitHub deploy key:
 1. Log in to your GitHub repository as its administrator.
 1. Click **Settings** as the following figure shows.
 
-   ![GitHub settings]({{ site.baseurl }}/common/images/cloud_gh-settings.png){:width="650px"}
+   ![GitHub settings]({{ site.baseurl }}/common/images/cloud/cloud_gh-settings.png){:width="650px"}
 
     {:.bs-callout-info}
     If you do not see this option, you are not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.
 
 1. On the Settings page, in the left navigation bar, click **Deploy Keys** as the following figure shows.
 
-   ![GitHub deploy key]({{ site.baseurl }}/common/images/cloud_gh-deploy-key.png){:width="200px"}
+   ![GitHub deploy key]({{ site.baseurl }}/common/images/cloud/cloud_gh-deploy-key.png){:width="200px"}
 
 1. Click **Add deploy key**.
 1. Follow the prompts on your screen to complete the task.
@@ -191,14 +191,46 @@ To enter your project's public key as a Bitbucket deploy key:
 1. Log in to your Bitbucket repository as its administrator.
 1. In the left navigation bar, click **Settings** as the following figure shows.
 
-   ![Bitbucket settings]({{ site.baseurl }}/common/images/cloud_bb-settings.png)
+   ![Bitbucket settings]({{ site.baseurl }}/common/images/cloud/cloud_bb-settings.png)
 
 1. Click General > **Deployment Keys** as the following figure shows.
 
-   ![Bitbucket deploy key]({{ site.baseurl }}/common/images/cloud_bb-deploy-key.png)
+   ![Bitbucket deploy key]({{ site.baseurl }}/common/images/cloud/cloud_bb-deploy-key.png)
 
 1. Click **Add Key**.
 1. Follow the prompts on your screen to complete the task.
+
+### Enter your GitLab deploy key {#cloud-deploykey-gitlab}
+
+To add the public SSH key for your project as a [GitLab deploy key](https://docs.gitlab.com/ee/ssh/README.html#deploy-keys):
+
+1. Log in to your GitLab repository as its owner.
+
+1. Verify that the _Pipelines_ option is enabled for your project.
+
+   -  In the project settings, expand the *Visibility, project, features, permissions* section.
+
+      ![GitLab main settings]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-settings-main.png)
+
+   -  If necessary, click **Pipelines** to enable the option.
+
+      ![GitLab pipelines]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-pipelines.png)
+
+1. Add your public SSH key to the CI/CD settings.
+
+   -  In the left navigation bar, click Settings > **CI / CD**.
+
+      ![GitLab settings]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-settings.png){:width="400px"}
+
+   -  Click Deploy Keys > **Expand** to configure the key.
+
+      ![GitLab deploy key]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-deploy-key.png)
+
+   -  In the _Deploy Key_ form, add a deploy key name to the _Title_ field, and paste your public SSH key in the _Key_ field.
+
+      ![GitLab deploy key form]({{ site.baseurl }}/common/images/cloud/cloud_gitlab-deploy-key-form.png)
+
+   -  Click **Add Key** to save the configuration.
 
 ## Secure your environments and branches {#security}
 
