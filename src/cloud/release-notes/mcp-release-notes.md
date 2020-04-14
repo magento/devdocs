@@ -21,7 +21,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 This release includes the following patches and critical fixes:
 
--  **Compatibility updates for ``**–
+-  **Compatibility updates for `{{site.data.var.mcp-package}}`**–
 
    -  Updated the `symfony` and `semver` version constraints in the `composer.json` file for compatibility with Magento 2.4 and later releases.<!--MAGECLOUD-5127-->
 
