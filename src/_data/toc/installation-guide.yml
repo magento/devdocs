@@ -77,6 +77,20 @@ pages:
             - label: MySQL
               url: /install-gde/prereq/mysql.html
 
+            - label: Elasticsearch
+              url: /config-guide/elasticsearch/es-overview.html
+              exclude_versions: ["2.3"]
+              children:
+
+                - label: Configure nginx and Elasticsearch
+                  url: /config-guide/elasticsearch/es-config-nginx.html
+
+                - label: Configure Apache and Elasticsearch
+                  url: /config-guide/elasticsearch/es-config-apache.html
+                  
+                - label: Configure Elasticsearch stopwords
+                  url: /config-guide/elasticsearch/es-config-stopwords.html            
+
             - label: Get your authentication keys
               url: /install-gde/prereq/connect-auth.html
 
@@ -154,10 +168,14 @@ pages:
             - label: Step 4. Customize Your Store
               url: /install-gde/install/web/install-web_4-customize-store.html
 
-            - label: Step 5. Create Admin Account
+            - label: Step 5. Configure Catalog Search
+              url: /install-gde/install/web/install-web-configure-catalog-search.html
+              exclude_versions: ["2.3"]
+
+            - label: Step 6. Create Admin Account
               url: /install-gde/install/web/install-web_5-create-admin.html
 
-            - label: Step 6. Install
+            - label: Step 7. Install
               url: /install-gde/install/web/install-web_6-install.html
 
         - label: Post-installation
