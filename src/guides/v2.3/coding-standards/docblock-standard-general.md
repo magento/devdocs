@@ -797,8 +797,8 @@ For example, padding for visual alignment can be done in two ways:
 /**
  * ...
  *
- * @param string   $parentId
- * @param string   $childId
+ * @param string $parentId
+ * @param string $childId
  * @param int|null $position
  * @return int
  * @see _insertChild() for position explanation

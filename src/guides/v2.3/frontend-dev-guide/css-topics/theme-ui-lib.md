@@ -29,7 +29,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *  ratings
 *  sections - tabs and accordions
 *  tables
-*  tooltips
+*  [tooltips](#tooltip-element)
 *  typography
 *  list of theme variables
 
@@ -179,6 +179,35 @@ To set navigation using breakpoints, see the following example:
     .lib-main-navigation-desktop();
 }
 ```
+
+## Tooltip element
+
+To create a tooltip element, use the `.lib-tooltip()` mixin.
+
+| Option | Default |
+| --- | --- |
+| `position` | `top` |
+| `selector-toggle` | `.tooltip-toggle` |
+| `selector-content` | `.tooltip-content` |
+
+```html
+<span class="my-tooltip">
+    <a href="#" class="tooltip-toggle">Hover me</a>
+    <span class="tooltip-content">Details here</span>
+</span>
+```
+
+```css
+.my-tooltip {
+    .lib-tooltip(right);
+}
+```
+
+### Result
+
+As result, the tooltip placed on the right side.
+
+![Tooltip element]({{ site.baseurl }}/common/images/fdg/tooltip-element-result.png)
 
 ## Embedded documentation {#docs}
 
