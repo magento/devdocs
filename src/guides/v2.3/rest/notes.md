@@ -20,7 +20,7 @@ This applies to all REST APIs where a parameter is passed in the URL. Any value 
 
 ## Set a fixed price for bundled products
 
-When addeing bundled products, the `price_type` attribute should be set under `custom_attributes`.
+When adding bundled products, the `price_type` attribute should be set under `custom_attributes`.
 
 ```json
 "custom_attributes": [
