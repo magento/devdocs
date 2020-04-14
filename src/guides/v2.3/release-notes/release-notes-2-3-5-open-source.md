@@ -102,11 +102,11 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 PWA Studio 6.0.0 contains both new features and improvements to existing features:
 
-* **Launch of the PWA extensibility framework**.  This framework gives developers the ability to create an extensibility API for their storefront or write plugins that can tap into those API and modify storefront logic.
+*  **Launch of the PWA extensibility framework**.  This framework gives developers the ability to create an extensibility API for their storefront or write plugins that can tap into those API and modify storefront logic.
 
-* **Caching and data fetching improvements**. This release contains improved caching logic and other data fetching optimizations in the Peregrine and Venia UI component libraries. These components have been refactored to take advantage of Apollo cache features to reduce overfetching or prevent the storage of sensitive data.
+*  **Caching and data fetching improvements**. This release contains improved caching logic and other data fetching optimizations in the Peregrine and Venia UI component libraries. These components have been refactored to take advantage of Apollo cache features to reduce overfetching or prevent the storage of sensitive data.
 
-* **Shopping cart components** that can be used for a full-page shopping cart experience
+*  **Shopping cart components** that can be used for a full-page shopping cart experience
 
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
