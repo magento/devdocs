@@ -56,7 +56,7 @@ For the Pro plan, deploy the branch you created to Staging and Production.
 1. Select the Staging branch.
 1. Select the **Merge** option to deploy to Production.
 
-![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
+![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud/cloud_project-merge.png)
 
 ## Deploy using SSH {#ssh}
 
