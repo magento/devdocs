@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-You might encounter the following issue when using REST endpoints
+You might encounter the following issues when using REST endpoints.
 
 ## Duplicate parameters in an REST call
 
@@ -17,6 +17,19 @@ For example:
 The REST URL to update a customer is `PUT /V1/customers/:id`. If you specify an ID value of `1` in the URL (`http://<host>/rest/<store_code>/V1/customers/1`), and a body of `{ "customer": { "id": 2, "attr": "value" }}`, the customer with ID of `2` will be modified.
 
 This applies to all REST APIs where a parameter is passed in the URL. Any value specified in the URL with the same parameter name as in the request body is ignored.
+
+## Set a fixed price for bundled products
+
+When addeing bundled products, the `price_type` attribute should be set under `custom_attributes`.
+
+```json
+"custom_attributes": [
+    {
+      "attribute_code": "price_type",
+      "value": "1"
+    }
+  ]
+```
 
 {:.ref-header}
 Related topics
