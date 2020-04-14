@@ -48,7 +48,7 @@ To view your Fastly credentials:
    -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
  {:.bs-callout-info}
-If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
+If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
 

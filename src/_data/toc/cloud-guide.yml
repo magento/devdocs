@@ -61,10 +61,6 @@ pages:
           url: /cloud/project/new-relic.html
           versionless: true
 
-        - label: Blackfire.io
-          url: /cloud/project/project-integrate-blackfire.html
-          versionless: true
-
         - label: SendGrid
           url: /cloud/project/sendgrid.html
           versionless: true
