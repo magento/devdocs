@@ -3,6 +3,8 @@ group: compliance
 title: Magento Privacy JavaScript Library
 ---
 
+<!-- TODO: Unpublish this topic and create a topic redirect to the adobe privacy js topic when the adobe privacy library is integrated with Magento -->
+
 The Magento Privacy JavaScript Library is a set of tools to help create a process for accessing and deleting private data collected by Magento.
 
 Magento's data tracking services can store private information applicable to privacy regulations such as the [General Data Protection Regulation (GDPR)][] and [California Consumer Privacy Act (CCPA)][].

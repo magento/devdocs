@@ -3,6 +3,8 @@ group: compliance
 title: Adobe Privacy JavaScript Library
 ---
 
+<!-- TODO: Rename this topic without the `__` prefix to publish it when the library integration is ready -->
+
 The [Adobe Privacy JavaScript Library][] is a set of tools to help create a process for accessing and deleting private data.
 
 Magento and Adobe's data tracking services can store private information applicable to privacy regulations such as the [General Data Protection Regulation (GDPR)][] and [California Consumer Privacy Act (CCPA)][].
