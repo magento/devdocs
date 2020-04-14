@@ -31,7 +31,7 @@ For Magento application testing, use the Magento Application Testing (MFTF) fram
 
 Before you run functional tests, you must set up and configure the test environment:
 
-1. Clone the GitHub repository for the package to test:
+1. Clone the GitHub repository for the package to test.
 
    ```bash
    git clone git@github.com:magento/<cloud-suite-package-repository>.git
@@ -97,7 +97,7 @@ Add credentials to your Docker environment using any of the following methods:
 {:.procedure}
 To add credentials using environment variables:
 
-1. Create the following environment variables:
+1. Create environment variables for your GitHub authentication keys.
 
    ```bash
    export REPO_USERNAME=your_public_key
@@ -107,7 +107,7 @@ To add credentials using environment variables:
    export REPO_PASSWORD=your_private_key
    ```
 
-1. To install some packages from GitHub, create an environment variable for the GitHub token:
+1. Some packages require a GitHub authentication during installation. Create an environment variable with your GitHub token that can be used to install these packages. 
 
    ```bash
    `export GITHUB_TOKEN=your_github_token
@@ -126,7 +126,7 @@ To load credentials from the environment configuration file:
    echo "REPO_PASSWORD=your_private_key" >> ./.env
    ```
 
-1. Edit the `codeception.dist.yml` file:
+1. Edit the `codeception.dist.yml` file.
 
    ```yaml
    params:
@@ -144,7 +144,7 @@ To load credentials from the environment configuration file:
 {:.procedure}
 To add credentials directly to the test configuration file:
 
-1. Edit the `codeception.dist.yml` file.
+1. Open the `codeception.dist.yml` file in an editor.
 
 1. Replace the placeholder `%REPO_USERNAME%`, `%REPO_PASSWORD%`, and `%GITHUB_TOKEN%` with your credentials:
 
@@ -187,7 +187,7 @@ Use the following command format to run a specific functional test:
 ./vendor/bin/codecept run Acceptance <TestName>Cest
 ```
 
-For example, the following test for ```{{site.data.var.ct-repo}}``` code verifies that the post-deploy task runs successfully.
+For example, the following test for `{{site.data.var.ct-repo}}` code verifies that the post-deploy task runs successfully.
 
 ```bash
 ./vendor/bin/codecept run Acceptance PostDeployCest
@@ -212,7 +212,7 @@ PostDeployCest: Test post deploy | {"ADMIN_EMAIL":"admin@example.com"}
 {:.no-copy}
 
 {:.bs-callout-info}
-You can see the available tests for each package in the package source files. (See [Test resources](#test-resources).)
+You can see the available tests for each package in the package source files. See [Test resources](#test-resources).
 
 ### Run all tests
 
