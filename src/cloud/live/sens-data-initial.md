@@ -54,7 +54,7 @@ To change locale and static file optimization settings:
 1. In the right pane, expand **Locale Options**.
 1. From the **Locale** list, change the locale. You can change it back later.
 
-   ![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
+   ![Change the locale]({{ site.baseurl }}/common/images/cloud/cloud_var_locale.png){:width="400px"}
 
 1. Click **Save Config**.
 1. In the left navigation pane, click **Advanced** > **Developer**.
@@ -65,7 +65,7 @@ To change locale and static file optimization settings:
 1. From the **Merge CSS Files** list, click **No**.
 1. From the **Minify CSS Files** list, click **No**.
 
-   ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
+   ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud/cloud_vars_set-minify.png){:width="550px"}
 
 1. Click **Save Config**.
 1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
@@ -161,14 +161,14 @@ To verify your configuration changes:
 
    Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
 
-   ![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
+   ![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud/cloud_var_not-editable.png){:width="550px"}
 
 1. In the left navigation pane, click Advanced > **Developer**.
 1. In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
    Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.php`.
 
-   ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+   ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud/cloud_var_not-editable2.png){:width="550px"}
 
 1. Log out of the Magento Admin.
 

@@ -11,7 +11,7 @@ All environments are in PaaS (Platform-as-a-Service) containers. These container
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud/cloud_arch-starter.png)
 
 ## Production with a master branch {#cloud-arch-prod}
 
@@ -25,7 +25,7 @@ We highly recommend fully testing in your Staging environment and branch before 
 
 ## Staging branch and environment {#cloud-arch-stage}
 
-We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, Blackfire, and search.
+We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.
 

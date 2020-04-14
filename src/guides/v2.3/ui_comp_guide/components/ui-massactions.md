@@ -61,7 +61,7 @@ The MassActions component has dependencies on the following components:
   </tr>
   <tr>
     <td><code>callback</code></td>
-    <td />
+    <td></td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>

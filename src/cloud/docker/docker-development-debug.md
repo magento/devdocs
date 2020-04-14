@@ -26,7 +26,6 @@ runtime:
         - redis
         - xsl
         - json
-        - blackfire
         - newrelic
         - xdebug
 ```

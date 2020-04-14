@@ -52,9 +52,8 @@ class MyIdentity implements IdentityInterface
 Use the `@cache` directive in your module’s [`graphqls` file]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) to specify the location to your `Identity` class. Your module’s `graphqls` file must point to your `Identity` class, as shown below:
 
 ```text
-    category (
-        id: Int @doc(description: "Id of the category")
-    ): CategoryTree
-    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\CategoryTree") @doc(description: "The category query searches for categories that match the criteria specified in the search and filter attributes") @cache(cacheIdentity: "Magento\\CatalogGraphQl\\Model\\Resolver\\Category\\CategoryTreeIdentity")
+      categoryList(
+    filters: CategoryFilterInput @doc(description: "Identifies which Category filter inputs to search for and return.")
+    ): [CategoryTree] @doc(description: "Returns an array of categories based on the specified filters.") @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\CategoryList") @cache(cacheIdentity: "Magento\\CatalogGraphQl\\Model\\Resolver\\Category\\CategoriesIdentity")
 }
 ```

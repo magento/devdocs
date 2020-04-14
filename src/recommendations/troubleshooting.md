@@ -10,11 +10,15 @@ If you have configured the `product-recommendations` module correctly, but you a
 
 -  If you are not seeing the recommendations that you configured, it is possible there is not yet sufficient data to build recommendations for the user.
 
--  Ensure the SaaS Environment ID or API Key are valid. If you get an error after specifying your SaaS Environment ID or your API key during the product recommendations initialization, check to make sure you have entered the [SaaS Environment ID]({{ page.baseurl }}/recommendations/configure.html#envid) and [API key]({{ page.baseurl }}/recommendations/configure.html#apikeys) correctly. To ensure the MageID and API key are linked, the user whose MageID was provided at [sign-up]({{ page.baseurl }}/recommendations/product-recs.html#install) needs to be the same user who generates the API key. If you must change the MageID that was used, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
+-  Ensure the SaaS Environment ID or API Key are valid. If you get an error after specifying your SaaS Environment ID or your API key during the product recommendations initialization, check to make sure you have entered the [SaaS Environment ID and API key](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) correctly. To ensure the MageID and API key are linked, the user who owns the MageID, typically the user who owns the Magento license, needs to be the same user who generates the API key. If you must change the MageID that was used, [contact support](https://support.magento.com/hc/en-us).
 
 ### Catalog SaaS Export module
 
 For issues related to the Catalog SaaS Export module:
+
+-  Confirm the [cron](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
+
+-  Confirm the [indexers](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
 
 -  Confirm the modules are enabled. The `saas-export` metapackage installs the following modules, all of which must be enabled:
 
@@ -27,11 +31,7 @@ For issues related to the Catalog SaaS Export module:
        "magento/module-saas-catalog"
    ```
 
--  Check the [logs]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/logging.html). Make sure there are no errors associated with the above modules.
-
--  Confirm the [indexers]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-index.html) are running and the `Product Feed` indexer is set to `Update by Schedule`.
-
--  Confirm the [cron]({{ site.baseurl }}/guides/v{{ site.version }}/config-guide/cli/config-cli-subcommands-cron.html) jobs are running.
+-  Check the [logs](https://devdocs.magento.com/guides/v2.3/config-guide/cli/logging.html). Make sure there are no errors associated with the above modules.
 
 -  Refresh Configuration cache. Go to **System** > **Tools** > **Cache Management**, and clear the configuration cache.
 
@@ -39,4 +39,4 @@ For issues related to the Catalog SaaS Export module:
 
 ### Events
 
-[Recommendation Events]({{ page.baseurl }}/recommendations/verify.html) describes the behavioral events that are sent to Magento.
+[Recommendation Events](https://devdocs.magento.com/recommendations/verify.html) describes the behavioral events that are sent to Magento.
