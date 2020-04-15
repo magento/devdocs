@@ -11,6 +11,9 @@ Magento's data tracking services can store private information applicable to pri
 This library provides a set of functions for creating privacy-data requests and gathering their responses.
 Use this library to retrieve and remove the data stored in the browser by Magento's data tracking services.
 
+{:.bs-callout-info}
+If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
+
 ## Installation
 
 The Magento Privacy JavaScript Library is available at the following CDN location: `commerce.adobe.net/magentoprivacy.js`
