@@ -71,7 +71,17 @@ To fix the error, run the following `sysctl` command to increase the memory map 
 sysctl -w vm.max_map_count=262144
 ```
 
-To set this value permanently, update the `vm.max_map_count` setting in `/etc/sysctl.conf`. To verify after rebooting, run `sysctl vm.max_map_count`.
+{:.procedure}
+To permanently update the system setting for `vm.max_map_count`:
+
+1. Edit the sysctl configuration file (`etc/sysctl.conf`) and set the required value for the `vm.max_map_count` option.
+
+1. Reboot your system.
+
+1. Run the following command to verify the change.
+
+   ```bash
+   sysctl vm.max_map_count
 
 ## FPM container
 
