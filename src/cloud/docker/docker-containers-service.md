@@ -60,7 +60,7 @@ The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elastic
 
 On some Linux systems, when you launch the Docker environment, the Elasticsearch service fails to start and the following error displays:
 
-```bash
+```terminal
 ERROR: [1] bootstrap checks failed
 [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 ```
@@ -82,6 +82,7 @@ To permanently update the system setting for `vm.max_map_count`:
 
    ```bash
    sysctl vm.max_map_count
+   ```
 
 ## FPM container
 
