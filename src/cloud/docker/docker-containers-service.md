@@ -56,6 +56,23 @@ See [Manage the database] for details about using the database.
 
 The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
+### Troubleshooting
+
+On some Linux systems Elasticsearch container may not start with the following error:
+
+```bash
+ERROR: [1] bootstrap checks failed
+[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+```
+
+To fix the erroro, adjust the next value on the host machine:
+
+```bash
+sysctl -w vm.max_map_count=262144
+```
+
+To set this value permanently, update the `vm.max_map_count` setting in `/etc/sysctl.conf`. To verify after rebooting, run `sysctl vm.max_map_count`.
+
 ## FPM container
 
 **Container name**: fpm<br/>
