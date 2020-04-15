@@ -58,7 +58,7 @@ The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elastic
 
 ### Troubleshooting
 
-On some Linux systems Elasticsearch container may not start with the following error:
+On some Linux systems, when you launch the Docker environment, the Elasticsearch service fails to start and the following error displays:
 
 ```bash
 ERROR: [1] bootstrap checks failed
