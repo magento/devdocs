@@ -107,7 +107,7 @@ To add credentials using environment variables:
    export REPO_PASSWORD=your_private_key
    ```
 
-1. Some packages require a GitHub authentication during installation. Create an environment variable with your GitHub token that can be used to install these packages. 
+1. Some packages require a GitHub authentication during installation. Create an environment variable with your GitHub token that can be used to install these packages.
 
    ```bash
    `export GITHUB_TOKEN=your_github_token
