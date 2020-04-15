@@ -57,4 +57,4 @@ To verify that the events used for metrics are firing correctly, look for the `i
 ![Events for metrics]({{ page.baseurl }}/recommendations/images/event-metric.png)
 
 {:.bs-callout-info}
-If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper clicks *Agree* on the storefront. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
+If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
