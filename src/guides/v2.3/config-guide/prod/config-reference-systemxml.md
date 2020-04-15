@@ -85,18 +85,18 @@ A `<section>`-Tag references to either an existing or a new section in the syste
 
 A `<section>`-Tag can have the following attributes:
 
-| Attribute       | Description                                                                                                                                         | Type     | Required |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
-| `id`            | Defines the identifier that is used referencing the section.                                                                                        | `typeId` | required |
-| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                            | `string` | optional |
+| Attribute       | Description                                                                                                                                        | Type     | Required |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:---------|
+| `id`            | Defines the identifier that is used referencing the section.                                                                                       | `typeId` | required |
+| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                     | `string` | optional |
+| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                           | `string` | optional |
 | `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
-| `showInDefault` | Defines whether the section is shown in the default store. Specify `1` to show the section and `0` to hide the section.                             | `int`    | optional |
-| `showInStore`   | Defines whether the section is shown on store level. Specify `1` to show the section and `0` to hide the section.                                   | `int`    | optional |
-| `showInWebsite` | Defines whether the section is shown on website level. Specify `1` to show the section and `0` to hide the section.                                 | `int`    | optional |
-| `canRestore`    | Defines if the  section can be restored to default.                                                                                                 | `int`    | optional |
-| `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
-| `extends`       | By providing an identifier of another section, the content of this node will extend the section that you referenced.                                | `string` | optional |
+| `showInDefault` | Defines whether the section is shown in the default configuration scope. Specify `1` to show the section and `0` to hide the section.              | `int`    | optional |
+| `showInStore`   | Defines whether the section is shown on store level. Specify `1` to show the section and `0` to hide the section.                                  | `int`    | optional |
+| `showInWebsite` | Defines whether the section is shown on website level. Specify `1` to show the section and `0` to hide the section.                                | `int`    | optional |
+| `canRestore`    | Defines if the  section can be restored to default.                                                                                                | `int`    | optional |
+| `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
+| `extends`       | By providing an identifier of another section, the content of this node will extend the section that you referenced.                               | `string` | optional |
 
 ### Section node reference
 
@@ -144,18 +144,18 @@ The `<group>`-Tag is used to group fields together.
 
 A `<group>`-Tag can have the following attributes:
 
-| Attribute       | Description                                                                                                                                         | Type     | Required |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
-| `id`            | Defines the identifier that is used referencing the group.                                                                                          | `typeId` | required |
-| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered HTMLL element. Defaults to `text`.                                                                            | `string` | optional |
+| Attribute       | Description                                                                                                                                        | Type     | Required |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:---------|
+| `id`            | Defines the identifier that is used referencing the group.                                                                                         | `typeId` | required |
+| `translate`     | Defines the fields that should be translatable. Provide `label` to make the label translatable. Multiple fields should be separated by a space.    | `string` | optional |
+| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                           | `string` | optional |
 | `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
-| `showInDefault` | Defines whether the group is shown in the default store. Specify `1` to show the group and `0` to hide the group.                                   | `int`    | optional |
-| `showInStore`   | Defines whether the group is shown on store level. Specify `1` to show the group and `0` to hide the group.                                         | `int`    | optional |
-| `showInWebsite` | Defines whether the group is shown on website level. Specify `1` to show the group and `0` to hide the group.                                       | `int`    | optional |
-| `canRestore`    | Defines if the group can be restored to default.                                                                                                    | `int`    | optional |
-| `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
-| `extends`       | By providing an identifier of another group, the content of this node will extend the section that you referenced.                                  | `string` | optional |
+| `showInDefault` | Defines whether the group is shown in the default configuration scope. Specify `1` to show the group and `0` to hide the group.                    | `int`    | optional |
+| `showInStore`   | Defines whether the group is shown on store level. Specify `1` to show the group and `0` to hide the group.                                        | `int`    | optional |
+| `showInWebsite` | Defines whether the group is shown on website level. Specify `1` to show the group and `0` to hide the group.                                      | `int`    | optional |
+| `canRestore`    | Defines if the group can be restored to default.                                                                                                   | `int`    | optional |
+| `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
+| `extends`       | By providing an identifier of another group, the content of this node will extend the section that you referenced.                                 | `string` | optional |
 
 ### Group node reference
 
@@ -198,7 +198,9 @@ The following code snippet demonstrates the basic usage of creating a new group.
             <tab>A_UNIQUE_ID</tab>
             <resource>VENDOR_MODULE::path_to_the_acl_resource</resource>
 
-            <group id="A_UNIQUE_GROUP_ID" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+            <group id="A_UNIQUE_GROUP_ID" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>A meaningful group label</label>
+                <comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>
                 <!-- Add your fields here. -->
             </group>
         </section>
@@ -206,7 +208,7 @@ The following code snippet demonstrates the basic usage of creating a new group.
 </config>
 ```
 
-The group described above defines the ID `A_UNIQUE_GROUP_ID`, is visible in the default config view and in a store context.
+The group described above defines the ID `A_UNIQUE_GROUP_ID`, is visible in the default config view and in a store context. Both, the `label` and the `comment` are marked as translatable.
 
 ## Fields
 
@@ -216,18 +218,18 @@ The `<field>`-Tag is used inside of `<group>`-Tags to define specific configurat
 
 A `<field>`-Tag can have the following attributes:
 
-| Attribute       | Description                                                                                                                                         | Type     | Required |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------|----------|
-| `id`            | Defines the identifier that is used referencing the field.                                                                                          | `typeId` | required |
-| `translate`     | Defines the field that should be translatable. Provide `label` to make the label translatable.                                                      | `string` | optional |
-| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                            | `string` | optional |
+| Attribute       | Description                                                                                                                                        | Type     | Required |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:---------|
+| `id`            | Defines the identifier that is used referencing the field.                                                                                         | `typeId` | required |
+| `translate`     | Defines the fields that should be translatable. Provide `label` to make the label translatable. Multiple fields should be separated by a space.    | `string` | optional |
+| `type`          | Defines the input type of the rendered HTML element. Defaults to `text`.                                                                           | `string` | optional |
 | `sortOrder`     | Defines the sort order of the section. High numbers will push the section to the bottom of the page; low numbers will push the section to the top. | `float`  | optional |
-| `showInDefault` | Defines whether the field is shown in the default store. Specify `1` to show the field and `0` to hide the field.                                   | `int`    | optional |
-| `showInStore`   | Defines whether the field is shown on store level. Specify `1` to show the field and `0` to hide the field.                                         | `int`    | optional |
-| `showInWebsite` | Defines whether the field is shown on website level. Specify `1` to show the field and `0` to hide the field.                                       | `int`    | optional |
-| `canRestore`    | Defines if the field can be restored to default.                                                                                                    | `int`    | optional |
-| `advanced`      | Deprecated since 100.0.2.                                                                                                                           | `bool`   | optional |
-| `extends`       | By providing an identifier of another field, the content of this node will extend the section that you referenced.                                  | `string` | optional |
+| `showInDefault` | Defines whether the field is shown in the default configuration scope. Specify `1` to show the field and `0` to hide the field.                    | `int`    | optional |
+| `showInStore`   | Defines whether the field is shown on store level. Specify `1` to show the field and `0` to hide the field.                                        | `int`    | optional |
+| `showInWebsite` | Defines whether the field is shown on website level. Specify `1` to show the field and `0` to hide the field.                                      | `int`    | optional |
+| `canRestore`    | Defines if the field can be restored to default.                                                                                                   | `int`    | optional |
+| `advanced`      | Deprecated since 100.0.2.                                                                                                                          | `bool`   | optional |
+| `extends`       | By providing an identifier of another field, the content of this node will extend the section that you referenced.                                 | `string` | optional |
 
 ### Field node reference
 
