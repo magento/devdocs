@@ -6,6 +6,9 @@ ee_only: True
 
 When you deploy the `product-recommendations` module, the module tracks the following user events. These events enable  behavioral data collection.
 
+{:.bs-callout-info}
+If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper clicks *Agree* on the storefront. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.
+
 Event |Description
 --- | ---
 `add-to-cart` | A product is added to the cart
