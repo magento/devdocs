@@ -19,7 +19,7 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 ## v1.0.3
 *Release date: April 28, 2020*<br/>
 
--  Added the "FPC is getting disabled during deployments" patch to support the latest Magento 2.3.x releases. This patch fixes an issue that disabled the full page cache during the Magento deployment process.
+-  Added the "FPC is getting disabled during deployments" patch to support Magento 2.3.5.
 
 ## v1.0.2
 *Release date: February 27, 2020*<br/>
