@@ -1,4 +1,4 @@
-![How Magento installation works]({{ site.baseurl }}/common/images/install-diagram-24.svg){:width="1100px"}
+![How Magento installation works]({{ site.baseurl }}/common/images/install-diagram-24.png){:width="1100px"}
 
 The diagram shows the following:
 
@@ -10,7 +10,7 @@ The diagram shows the following:
 
    *  For simplicity, get a compressed {{site.data.var.ce}} or {{site.data.var.ee}} [archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html), extract it on your Magento server, and start your installation.
 
-   *  If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}} {% if page.guide_version == "2.0" %} [metapackage]({{page.baseurl}}/install-gde/prereq/integrator_install.html) {% else %} [metapackage]({{page.baseurl}}/install-gde/composer.html). {% endif %}
+   *  If you are more technical and you are familiar with Composer, get a {{site.data.var.ce}} or {{site.data.var.ee}}  [metapackage]({{page.baseurl}}/install-gde/composer.html).
 
    *  If you want to contribute to the {{site.data.var.ce}} codebase or customize the Magento application, [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
 

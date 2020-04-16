@@ -295,9 +295,11 @@ pages:
 
         - label: Configure nginx and Elasticsearch
           url: /config-guide/elasticsearch/es-config-nginx.html
+          include_versions: ["2.3"]
 
         - label: Configure Apache and Elasticsearch
           url: /config-guide/elasticsearch/es-config-apache.html
+          include_versions: ["2.3"]
 
         - label: Configure Elasticsearch stopwords
           url: /config-guide/elasticsearch/es-config-stopwords.html

@@ -46,6 +46,7 @@ If not, see the [Installation overview][].
    *  [Apache][]
    *  [PHP][]
    *  [MySQL][]
+   *  [Elasticsearch][]
 
 1. Just as importantly, set up the [Magento file system owner][]on the server.
 1. Switch to the [Magento file system owner][].
@@ -94,13 +95,16 @@ The following example shows how to install using the command line with the follo
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
+*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
 
     ```bash
     bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
     --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
     --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
     --admin-user=admin --admin-password=admin123 --language=en_US \
-    --currency=USD --timezone=America/Chicago --use-rewrites=1
+    --currency=USD --timezone=America/Chicago --use-rewrites=1 \
+    --search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
+    --elasticsearch-port=9200
    ```
 
 Optionally switch to [developer mode]({{page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
@@ -134,6 +138,7 @@ The following example shows how to install using the Web Setup Wizard with the f
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
+*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
 
 To run the Web Setup Wizard:
 
@@ -149,7 +154,7 @@ To run the Web Setup Wizard:
 
    Click **Start Readiness Check**
 
-   ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
+   ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install-qr-readiness-24.png){:width="400px"}
 
    *  If the readiness check passes, click **Next** and continue with the next step.
    *  If the readiness check fails, see [Readiness check issues][]
@@ -158,23 +163,23 @@ To run the Web Setup Wizard:
 
 1. Step 2: Add a Database enables you to set up your Magento database.
 
-   ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
+   ![Set up your Magento database]({{ site.baseurl }}/common/images/install-qr-database-24.png){:width="400px"}
 
-1. Web Configuration enables you to enter the storefront and Magento Admin URLs.
+1. Step 3: Web Configuration enables you to enter the storefront and Magento Admin URLs.
 
-   ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install_qr_web.png){:width="400px"}
+   ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install-qr-web-24.png){:width="400px"}
 
-1. Customize Your Store enables you to enter a default store currency, time zone, and language.
+1. Step 4: Customize Your Store enables you to enter a default store currency, time zone, and language.
 
-   ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install_qr_store.png){:width="400px"}
+   ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install-qr-store-24.png){:width="400px"}
 
-1. Configure Catalog Search enables you to configure Elasticsearch, which allows customers to search for products.
+1. Step 5: Configure Catalog Search enables you to configure Elasticsearch, which allows customers to search for products.
 
-   ![Configure catalog search]({{ site.baseurl }}/common/images/install-qr-catalog-search.png){:width="400px"}
+   ![Configure catalog search]({{ site.baseurl }}/common/images/install-qr-catalog-search-24.png){:width="400px"}
 
-1. Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
+1. Step 6: Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
 
-   ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install_qr_admin.png){:width="400px"}
+   ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install-qr-admin-24.png){:width="400px"}
 
 1. Install starts the installation when you click **Install Now**.
 
@@ -193,6 +198,7 @@ To run the Web Setup Wizard:
 [Apache]: {{page.baseurl }}/install-gde/prereq/apache.html
 [PHP]: {{page.baseurl }}/install-gde/prereq/php-settings.html
 [MySQL]: {{page.baseurl }}/install-gde/prereq/mysql.html
+[Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
 [Magento file system owner]: {{page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
 [Composer]: https://glossary.magento.com/composer
 [command line]: {{page.baseurl }}/install-gde/install/cli/install-cli.html

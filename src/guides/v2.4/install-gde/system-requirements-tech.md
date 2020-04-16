@@ -1,6 +1,6 @@
 ---
 group: installation-guide
-title: Magento 2.3 technology stack requirements
+title: Magento 2.4 technology stack requirements
 functional_areas:
   - Install
   - System
@@ -76,6 +76,23 @@ We recommend particular PHP configuration settings, such as `memory_limit`, that
 
 For more information, see [Required PHP settings][].
 
+## Elasticsearch
+
+*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+
+   {{site.data.var.ee}} version 2.4.x supports the following Elasticsearch versions:
+
+   *  Elasticsearch 6.8.x
+
+      Magento 2.3 supports [Elasticsearch PHP client][]{:target="_blank"} version 6.8.
+
+   *  Elasticsearch 7.x.x
+
+      {:.bs-callout-warning}
+      Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.
+
+      Follow the instructions in [Change Elasticsearch Module][].
+
 ## SSL
 
 *  A valid [security certificate][] is required for HTTPS.
@@ -106,20 +123,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.2
-*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
-
-   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
-
-   *  Elasticsearch 6.8.x
-
-      Magento 2.3 supports [Elasticsearch PHP client][]{:target="_blank"} version 6.8.
-
-   *  Elasticsearch 7.x.x
-
-      {:.bs-callout-warning}
-      Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.
-
-      Follow the instructions in [Change Elasticsearch Module][].
 
 *  RabbitMQ 3.8.x (compatible with 2.0 and later)
 

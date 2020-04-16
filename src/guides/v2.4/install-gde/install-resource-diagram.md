@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: 01_resource
 title: Installation flow diagram
-menu_title: Installation flow diagram
-menu_node:
-menu_order: 5
 functional_areas:
   - Install
   - System
