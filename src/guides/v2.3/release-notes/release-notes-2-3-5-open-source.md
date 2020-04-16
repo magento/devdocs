@@ -221,10 +221,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### Cart and checkout
 
-<!--- MC-31379-->
-
-*  Magento now displays an informative error message when you try to add a product by clicking **Order by SKU** when the file for upload is corrupt. Previously, Magento displayed a blank page.
-
 <!--- MC-19515-->
 
 *  Cart Price Rules that are based on payment methods are now applied during the checkout workflow. [GitHub-24206](https://github.com/magento/magento2/issues/24206)
@@ -370,10 +366,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30093-->
 
 *  Select from Gallery image thumbnails are now cached as expected. Previously, these images were resized on the fly.
-
-<!--- MC-22927-->
-
-*  Magento now loads blocks that are associated with the website that a restricted user has access to when the user navigates to  **Content** >  **Blocks**.
 
 <!--- MC-30853-->
 
@@ -536,14 +528,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6203-->
 
 *  LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*
-
-<!--- MC-30741-->
-
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
-
-<!--- MC-22911-->
-
-*  Magento now displays an inaccurate count for all users when a restricted administrative user accesses **System** > **All Users** and role scope was set to custom.
 
 <!--- MC-22972-->
 
@@ -1012,10 +996,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29981-->
 
 *  A wishlist now works as expected when it is enabled at the store-view level and disabled at the global level. Previously, when these settings were in place, adding a product to a wishlist resulted in a 404 error.
-
-<!--- MC-30137-->
-
-*  Magento now correctly saves and displays a new name for a wishlist when you rename a wishlist in deployments that contain multiple wishlists. Previously, Magento continued to display the former wishlist name.
 
 ### WYSIWYG
 
