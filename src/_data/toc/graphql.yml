@@ -276,6 +276,7 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+          include_versions: ["2.3"]
 
         - label: Braintree
           url: /graphql/payment-methods/braintree.html
