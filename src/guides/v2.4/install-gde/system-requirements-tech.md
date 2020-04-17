@@ -78,13 +78,11 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-*  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
 
    {{site.data.var.ee}} version 2.4.x supports the following Elasticsearch versions:
 
    *  Elasticsearch 6.8.x
-
-      Magento 2.3 supports [Elasticsearch PHP client][]{:target="_blank"} version 6.8.
 
    *  Elasticsearch 7.x.x
 
@@ -176,7 +174,6 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [More information about PayPal]: {{page.baseurl}}/install-gde/system-requirements_tls1-2.html
 [Redis]: {{page.baseurl}}/config-guide/redis/config-redis.html
 [Varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
-[Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
-[Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
+[Elasticsearch]: {{page.baseurl}}/install-gde/prereq/elasticsearch.html
 [2.x and 5.x]: https://www.elastic.co/support/eol
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html

@@ -105,12 +105,12 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 
 ### Next
 
-*  [Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-*  [Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
+*  [Configure nginx and Elasticsearch][]
+*  [Configure Apache and Elasticsearch][]
 
 <!-- Link Definitions -->
-[Configure nginx and Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html
-[Configure Apache and Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html
+[Configure nginx and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-nginx.html
+[Configure Apache and Elasticsearch]: {{page.baseurl}}/install-gde/prereq/es-config-apache.html
 [Configure Elasticsearch stopwords]: {{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html
 [Elasticsearch]: https://www.elastic.co
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html

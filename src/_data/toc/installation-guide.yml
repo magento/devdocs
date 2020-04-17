@@ -83,10 +83,10 @@ pages:
               children:
 
                 - label: Configure nginx and Elasticsearch
-                  url: /config-guide/elasticsearch/es-config-nginx.html
+                  url: /install-gde/prereq/es-config-nginx.html
 
                 - label: Configure Apache and Elasticsearch
-                  url: /config-guide/elasticsearch/es-config-apache.html      
+                  url: /install-gde/prereq/es-config-apache.html      
 
             - label: Get your authentication keys
               url: /install-gde/prereq/connect-auth.html

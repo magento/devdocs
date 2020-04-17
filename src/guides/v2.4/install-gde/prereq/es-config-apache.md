@@ -1,6 +1,8 @@
 ---
 group: configuration-guide
 title: Configure Apache and Elasticsearch
+redirect_from: 
+  - guides/v2.4/config-guide/elasticsearch/es-config-apache.html
 functional_areas:
   - Configuration
   - Search
@@ -86,6 +88,7 @@ See one of the following sections:
 *  [Verify communication is secure](#es-ws-secure-verify)
 
 ### Step 1: Create a password {#es-ws-secure-apache-pwd}
+
 {% include config/secure-ws-apache_step1.md %}
 
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}

@@ -42,7 +42,6 @@ If the test connection fails, try the following:
   If Elasticsearch is running on port 9200, it displays similar to the following:
   `tcp        0      0 :::9200            :::*          LISTEN`
 
-
 {:.ref-header}
 Related topics
 
