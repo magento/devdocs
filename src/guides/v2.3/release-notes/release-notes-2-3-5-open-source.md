@@ -21,6 +21,10 @@ With this quarterly release, we’ve changed how we describe these security issu
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Inventory Management and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
+## Download and run the updated Database Cleanup script
+
+This hotfix addresses an issue with a previous database clean-up script that was released in March 2020. That database cleanup script has been updated to clear pre-existing failed login data in additional database tables. **We recommend that all merchants run DB_CLEANUP_SCRIPT_v2 script to clear pre-existing failed login data in additional tables as soon as possible**. See the [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352?mkt_tok=eyJpIjoiTnpCbE1UQmxOV05oT0RSbSIsInQiOiJGdlcxeG1pMlwvNTFaZXdpeFFCT2ltVHZwMjZ3Rk5pcHZubitJVW10ck1PR0xOK2dyam9DMWVWeTcxbStWbExOZ085UVg3VFk5S0szUzBTekMwYVVMWXc9PSJ9) support article.
+
 ## Highlights
 
 Look for the following highlights in this release:
@@ -72,6 +76,8 @@ The following platform upgrades help enhance website security and performance:
    *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
    *  Reduction in race conditions on Redis write operations
 
+See [Use Redis for the Magento page and default cache](https://devdocs.magento.com/guides/v2.3/config-guide/redis/redis-pg-cache.html) and [Configure caching](https://devdocs.magento.com/guides/v2.3/config-guide/cache.html).
+
 ### Infrastructure improvements
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Catalog, Sales, PayPal, Elasticsearch, Import, and CMS.
@@ -84,7 +90,6 @@ This release contains enhancements to core quality, which improve the quality of
 
 Inventory Management enhancements for this release include:
 
-*  New bulk API for `IsProductSalableForRequestedQtyInterface`, which is used in checkout and cart verification
 *  New extension point for `SourceDataProvider` and `StockDataProvider`
 *  Ability to view allocated inventory sources from the Orders list
 
