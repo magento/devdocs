@@ -124,7 +124,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>length</code></td>
-<td>In text and binary types (including varchar and varbinary), specifies the length of a column.</td>
+<td>Specifies the length of a column. Can be used for `char`, `varchar`, `varbinary` types.</td>
 </tr>
 <tr>
 <td><code>nullable</code></td>
