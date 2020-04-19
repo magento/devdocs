@@ -19,7 +19,7 @@ You can add custom templates as physical files in your custom [theme](https://gl
 
 ### Customize email templates using a theme {#customize-email-theme}
 
-Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
+Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/templates/email` directory.
 
 [Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates) is supported for email templates, so parent themes of your current theme are searched for templates.
 
