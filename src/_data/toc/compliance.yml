@@ -24,3 +24,11 @@ pages:
         - label: PI Reference (M1.x)
           versionless: true
           url: /compliance/privacy/pi-data-reference-m1.html
+
+    - label: Compliance tools
+      versionless: true
+      children:
+
+        - label: Magento Privacy JavaScript Library
+          versionless: true
+          url: /compliance/privacy/magento-privacy-js-library.html

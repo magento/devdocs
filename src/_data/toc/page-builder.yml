@@ -77,6 +77,10 @@ pages:
 - label: How-Tos
   versionless: true
   children:
+  - label: Configure styling options
+    url: /page-builder/docs/how-to/how-to-configure-styling-options.html
+    versionless: true
+
   - label: Add an appearance
     url: /page-builder/docs/how-to/how-to-add-appearance.html
     versionless: true

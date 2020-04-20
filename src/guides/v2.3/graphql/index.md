@@ -18,21 +18,23 @@ As of Magento 2.3.4, GraphQL provides the following features:
 
 The `graphql-ce` Community Engineering repository has been archived. Development for Magento 2.3.5 will be limited to bug fixes.
 
-For the 2.4 release, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
+For the 2.4.0 and 2.4.1 releases, Magento teams are working toward completing GraphQL coverage for Business to Consumer (B2C) uses cases, with emphasis on the following:
 
-*  Order history for logged in customers
 *  Reorders
+*  Inventory Management store pickups
+*  Order history for logged in customers
 *  Replace product-specific mutations that add products to a cart with a single mutation that can handle all product types
 *  Gift wrapping and messages
 *  Saved payment methods
-*  Inventory Management store pickups
 
 We also expect to begin adding coverage for B2B scenarios.
 
 ## How to access GraphQL
 
-GraphiQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. For the Google Chrome browser, the [ChromeiQL extension](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij?hl=en) will do the job. The following image shows a sample query, its response, and the GraphQL browser
+Use a GraphQL IDE such as [GraphiQL](https://github.com/graphql/graphiql) or a browser extension to run the code samples and tutorials. If you install a browser extension, make sure it has the ability to set request headers. On Google Chrome, [Altair GraphQL Client](https://chrome.google.com/webstore/detail/altair-graphql-client/flnheeellpciglgpaodhkhmapeljopja) is one extension that can do the job.
+
+To begin exploring GraphQL, set the GraphQL endpoint by entering `http://<magento2-server>/graphql` in the URL bar of your IDE or extension. You can use the browser in the right column to determine how to set up a query or mutation. Examples are also available throughout the Magento GraphQL documentation.
+
+The following image shows a sample query, its response, and the GraphQL browser:
 
 ![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
-
-To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries/index.html).
