@@ -17,9 +17,9 @@ The following recommendation types are listed in the recommended order when test
 
 ## Testing recommendations on a non-production environment
 
-1. Deploy the `product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
+1. Deploy the `magento/product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
 
-1. Use one of the non-production SaaS Environment IDs for [configuration]({{ page.baseurl }}/recommendations/configure.html#envid) in the Magento Admin.
+1. Use one of the non-production SaaS Environment IDs for [configuration](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) in the Magento Admin.
 
 ### Caveats
 
