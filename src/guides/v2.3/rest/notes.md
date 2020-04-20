@@ -108,7 +108,7 @@ The following sample code creates a bundle product. The `price_type` attribute c
          {
             "attribute_code":"price_type",
             "value":"1"
-         }, 
+         },
          {
             "attribute_code":"price_view",
             "value":"0"
