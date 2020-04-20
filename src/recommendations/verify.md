@@ -4,7 +4,7 @@ title: Verify Event Collection
 ee_only: True
 ---
 
-After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/install-configure.html) the product recommendations module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
+After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/install-configure.html) the `magento/product-recommendations` module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
 
 ## Verify using developer tools in Chrome
 
@@ -55,3 +55,6 @@ If you run into any problems verifying that the events are collected and sent to
 To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger.
 
 ![Events for metrics]({{ page.baseurl }}/recommendations/images/event-metric.png)
+
+{:.bs-callout-info}
+If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.

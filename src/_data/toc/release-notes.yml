@@ -62,6 +62,9 @@ pages:
         - label: Reference
           url: /release-notes/backward-incompatible-changes/reference.html
 
+    - label: B2B
+      url: /release-notes/b2b-release-notes.html
+
     - label: Packages
       children:
 
