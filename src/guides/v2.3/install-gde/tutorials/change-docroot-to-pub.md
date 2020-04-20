@@ -114,6 +114,7 @@ Replace `192.168.33.10` with your server's hostname.
    ```
 
 ## 3. Update the env.php file
+
 The following node needs to be appended to the `env.php` file.
 
 ```conf
@@ -122,10 +123,10 @@ The following node needs to be appended to the `env.php` file.
 ]
 ```
 
-{:.bs-callout-info}
 Refer to the [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html) for more information.
 
 ## 4. Switch modes
+
 [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), which include `production` and `developer`, are designed to improve security and make development easier. As the names suggest, you should switch to `developer` mode when extending or customizing Magento and switch to `production` mode when running Magento in a live environment.
 
 Switching between modes is an important step in verifying that your server configuration is working properly. You can switch between modes using the Magento CLI tool:
