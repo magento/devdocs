@@ -24,7 +24,7 @@ Product Recommendations require the following data:
 
 -  **Catalog** - Product metadata, such as name, price, availability, and so on.
 
-When you install the `product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating Product Recommendations for each recommendation type. The Product Recommendations service then deploys those recommendations to your storefront.
+When you install the `magento/product-recommendations` module, Adobe Sensei aggregates the behavioral and catalog data, creating Product Recommendations for each recommendation type. The Product Recommendations service then deploys those recommendations to your storefront.
 
 ## Next steps
 
