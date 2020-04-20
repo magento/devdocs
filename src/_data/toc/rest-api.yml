@@ -70,7 +70,7 @@ pages:
         - label: Search for the status of a bulk operation
           url: /rest/operation-status-search.html
 
-        - label: Parameters in URLs
+        - label: API usage notes
           url: /rest/notes.html
 
     - label: Tutorials

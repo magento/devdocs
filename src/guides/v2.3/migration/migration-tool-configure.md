@@ -136,8 +136,8 @@ There are two possible ways to configure the Data Migration Tool for migration:
       <database host="127.0.0.1" name="magento1" user="root"/>
    </source>
    <destination>
-   <database host="127.0.0.1" name="magento2" user="root"/>
-      </destination>
+      <database host="127.0.0.1" name="magento2" user="root"/>
+   </destination>
    <options>
       <crypt_key />
    </options>
