@@ -134,7 +134,7 @@ This release includes:
    *  Sync of shared catalog data. Syncing additional product catalog data (custom products and product attributes) to dotdigital. Merchants can turn additional product data into marketing campaigns or use it to make recommendations
    *  Sync of quote data
 
-*  **Improved importer performance** and coupon code re-send
+*  **Improved importer performance** and coupon code re-send.
 
 ### Google Shopping ads Channel
 
@@ -164,7 +164,7 @@ This release of Vertex includes the following new feature and enhancements:
 
 *  **Restorable configuration settings**. The **Use Vertex for orders shipping to**, **Summarize Tax by**, and **Global Delivery Term** now provide an option to be restored to their default setting.
 
-*  **Port in WSDL**. The WSDL URL now support ports and basic authentication.
+*  **Port in WSDL**. The WSDL URL now supports ports and basic authentication.
 
 *  **Best Practices in Code**. Models intended to assist Observers have been relocated into the Model namespace to clean up the Observer namespace.
 
@@ -341,6 +341,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-30974-->
 
 *  You can now add a configurable product to the cart from the Cross-Sells tab. When you select a product and click **Add to Cart** from this tab, you are now taken to the product’s details page, where you can select specific product options. Previously, Magento redirected you to  a 404 error page.
+
+<!--- MC-30261-->
+
+*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
 
 ### CatalogInventory
 
@@ -588,9 +592,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*
 
-<!--- MC-30741-->
 
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
 
 <!--- MC-22911-->
 
@@ -620,9 +622,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Magento now redirects you to the home page of the appropriate store view when you change language on CMS pages in a multistore deployment. Previously, Magento displayed a 404 page when you changed language on certain CMS pages.
 
-<!--- MC-30261-->
 
-*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
 
 ### Gift cards
 
@@ -658,6 +658,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Merchants can now postpone sending data to Google Analytics until specified conditions are met.
 
+<!--- MC-30741-->
+
+*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
+
 ### Import/export
 
 <!--- MC-31470-->
@@ -670,7 +674,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30066-->
 
-*  Magento now deletes temporary files from `/var` as expected after product import has completed.
+*  Magento now deletes temporary files from `<Magento_home>/var` as expected after product import has completed.
 
 <!--- MC-21727-->
 
@@ -878,7 +882,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22995-->
 
-*  Setting **Enable RMA on Storefront** to **yes** (**Admin** > **Enable RMA in Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** ) now works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
+*  Setting **Enable RMA on Storefront** to **Yes** (**Admin** > **Enable RMA in Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** ) now works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
 
 <!--- MC-22754-->
 
@@ -974,7 +978,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6183-->
 
-*  Support for Columbia regions has been added, and these regions are now available from the shipping and billing country dropdown menus in the checkout workflow. *Fix submitted by magudelo62 in pull request [25313](https://github.com/magento/magento2/pull/25313)*. [GitHub-25312](https://github.com/magento/magento2/issues/25312)
+*  Support for Colombia regions has been added, and these regions are now available from the shipping and billing country dropdown menus in the checkout workflow. *Fix submitted by magudelo62 in pull request [25313](https://github.com/magento/magento2/pull/25313)*. [GitHub-25312](https://github.com/magento/magento2/issues/25312)
 
 <!--- MC-29180-->
 
@@ -1212,7 +1216,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install {{site.data.var.ee}} 2.3.4 using Composer.
+You can install {{site.data.var.ee}} 2.3.5 using Composer.
 
 ## Migration tool kits
 
