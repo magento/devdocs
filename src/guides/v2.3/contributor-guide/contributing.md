@@ -93,6 +93,13 @@ If you would like to work on some issue and have it assigned to you, just add a 
 ```text
 @magento I am working on this
 ```
+This command has several variations for better usability:
+```text
+@magento I am working on this
+@magento I am working on it
+@magento I'm working on this
+@magento I'm working on it
+```
 
 **Actions:** The following actions complete for the command:
 - If the user is a member of Magento GitHub organization, the user will be automatically assigned to the ticket
