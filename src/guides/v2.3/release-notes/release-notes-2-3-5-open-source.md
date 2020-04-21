@@ -21,9 +21,9 @@ With this quarterly release, we’ve changed how we describe these security issu
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Inventory Management and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
-## Upgrade to Magento 2.3.5-p1 or 2.3.4-p2 for merchants running pre-release versions of Magento 2.3.5  
+## Upgrade to Magento 2.3.5-p1 or 2.3.4-p2 for merchants running pre-release versions of Magento 2.3.5
 
-Merchants upgrading to pre-release versions of Magento 2.3.5 and security-only patch 2.3.4-p1 and whose deployments contain bundle products may encounter the following error during upgrade:  
+Merchants upgrading to pre-release versions of Magento 2.3.5 and security-only patch 2.3.4-p1 and whose deployments contain bundle products may encounter the following error during upgrade:
 
 `Module ‘Magento_Wishlist’:
 Unable to apply data patch Magento\Wishlist\Setup\Patch\Data\CleanUpData for module Magento_Wishlist. Original exception message: Unable to unserialize value. Error: Syntax error`
