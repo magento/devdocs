@@ -34,7 +34,7 @@ namespace :symlink do
 
     abort "Failed: Couldn't find the '#{new_path}' file to copy from".red unless path.exist?
 
-    sh "unlink #{path}"
+    sh "git rm #{path}"
     sh "cp #{new_path} #{path}"
     
     puts "Finished: replaced symlink with file at '#{path}'".green

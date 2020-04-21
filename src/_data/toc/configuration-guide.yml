@@ -193,6 +193,9 @@ pages:
             - label: env.php reference
               url: /config-guide/prod/config-reference-envphp.html
 
+            - label: system.xml reference
+              url: /config-guide/prod/config-reference-systemxml.html
+
     - label: Configure caching
       url: /config-guide/cache.html
       children:

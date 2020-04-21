@@ -20,12 +20,7 @@ A [service contract](https://glossary.magento.com/service-contract) must define 
 Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the `Api/Data` subdirectory for a [module](https://glossary.magento.com/module).
 
 Service interfaces include management, repository, and [metadata](https://glossary.magento.com/metadata) interfaces.
-You must define the service interfaces for a service contract in the `Api` subdirectory for a module.<!--  You can substitute another implementation in this directory. -->
-
-<!--
-   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> [namespace](https://glossary.magento.com/namespace) define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
-                  </p>
-    -->
+You must define the service interfaces for a service contract in the `Api` subdirectory for a module.
 
 ## Data interfaces {#data-interfaces}
 
@@ -69,55 +64,13 @@ For example, persistent data entities for the Customer module include Customer, 
 
 Repository interfaces must provide these functions:
 
-<table style="width:100%">
-   <tr bgcolor="lightgray">
-      <th>Function</th>
-      <th>Description</th>
-   </tr>
-   <tr>
-      <td>
-         <p><code>save(data entity interface)</code></p>
-      </td>
-      <td>
-         <p>If an ID is not specified, creates a record.</p>
-         <p>If an ID is specified, updates the record for the specified ID.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><code>getById(id)</code></p>
-      </td>
-      <td>
-         <p>Performs a database lookup by ID.</p>
-         <p>Returns a data entity interface, such as <code>CustomerInterface</code> or <code>AddressInterface</code>.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><code>getList(search criteria)</code></p>
-      </td>
-      <td>
-         <p>Performs a search for all data entities that match specified search criteria.</p>
-         <p>Returns a search results interface that gives access to the set of matches.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><code>delete(data entity interface)</code></p>
-      </td>
-      <td>
-         <p>Deletes a specified entity. The entity contains the key (ID).</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><code>deleteById(id)</code></p>
-      </td>
-      <td>
-         <p>Deletes a specified entity by key (ID).</p>
-      </td>
-   </tr>
-</table>
+Method | Description
+--- | ---
+`save(data entity interface)` | If entity ID is not specified, creates a record. If entity ID is specified, updates the record for the specified ID.
+`get(id)` | Performs a database lookup by ID and returns a data entity interface, such as `CustomerInterface`or `AddressInterface`.
+`getList(search criteria)` | Performs a search for all data entities that match specified search criteria and returns a search result interface that gives access to the set of matches.
+`delete(data entity interface)` | Deletes a specified entity. The entity contains the key (ID).
+`deleteById(id)` | Deletes a specified entity by key (ID).
 
 Each data entity has a corresponding interface. Consequently, the `getById()` function in the corresponding interface, for example, can return the exact type.
 
@@ -125,28 +78,21 @@ Each data entity has a corresponding interface. Consequently, the `getById()` fu
 
 Management interfaces provide management functions that are not related to repositories. For example:
 
-<table style="width:100%">
-   <tr bgcolor="lightgray">
-      <th>Interface</th>
-      <th>Description</th>
-   </tr>
-   <tr>
-      <td>
-         <p><code>AccountManagementInterface</code></p>
-      </td>
-      <td>
-         <p>Defines the <code>createAccount()</code>, <code>changePassword()</code>, <code>activate()</code>, and <code>isEmailAvailable()</code> functions.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><code>AddressManagementInterface</code></p>
-      </td>
-      <td>
-         <p>Defines the <code>validate()</code> function that validates an address.</p>
-      </td>
-   </tr>
-</table>
+Interface | Description
+--- | ---
+`AccountManagementInterface` | Defines the `createAccount()`, `changePassword()`, `activate()`, and `isEmailAvailable()` functions.
+`AddressManagementInterface` | Defines the `validate()` function that validates an address.
+
+### Metadata interfaces {#metadata-interfaces}
+
+Metadata interfaces provide methods for retrieving metadata, the interfaces are not related to repositories. For example:
+
+Interface | Description
+--- | ---
+`AttributeMetadataInterface` | Provides customer attribute metadata and defines the constants used as keys of data array and methods. See more [AttributeMetadataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/Data/AttributeMetadataInterface.php){:target="_blank"}.
+`ProductMetadataInterface` | Provides Magento application product metadata. Defines the `getVersion()`, `getEdition()`, `getName()` methods.
+`CustomerMetadataManagementInterface` | Interface for managing customer attributes metadata. Defines the constant `ENTITY_TYPE_CUSTOMER`.
+`AddressMetadataInterface` | Interface for retrieving information about customer address attributes metadata. Defines the constants `ATTRIBUTE_SET_ID_ADDRESS`, `ENTITY_TYPE_ADDRESS`, `DATA_INTERFACE_NAME`.
 
 {:.ref-header}
 Related topics

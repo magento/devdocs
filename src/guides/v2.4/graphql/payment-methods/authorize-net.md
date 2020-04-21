@@ -1,1 +1,0 @@
-../../../v2.3/graphql/payment-methods/authorize-net.md
