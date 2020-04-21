@@ -6,7 +6,7 @@ title: Code Contributions
 The following topics are included in this guide:
 
 -  [Contribute to Magento 2 code](#contribute)
--  [Community Backlog](#backlog)
+-  [Community Backlog Priority](#backlog)
 -  [GitHub and Two-Factor authentication](#two-factor)
 -  [Questions or enhancement requests?](#question)
 -  [Accepted pull requests and ported code](#rules)
@@ -35,7 +35,7 @@ When the Community Engineering Team works on reviewing the suggested changes, we
 {:.bs-callout-tip}
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
-## Community Backlog {#backlog}
+## Community Backlog Priority{#backlog}
 
 In order to be focused and provide timely resolution on the most critical issues and pull requests, Magento Team implemented Severity/Priority concept on community driven projects. This approach should make collaboration on open source projects more transparent for all participants.
 Having clear contribution rules in place will help build clear expectations for community contributors and establish clear priorities for Community maintainers and Magento team.
