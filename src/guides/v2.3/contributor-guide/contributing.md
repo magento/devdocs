@@ -84,9 +84,25 @@ Sometimes your pull request may have more than one commit (the main commit, then
 
 ## Magento contributor assistant {#contributor-assist}
 
-The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento/magento2` repository. It helps automate different issue and pull request workflows using commands entered as comments.
+The Magento Contributor Assistant is a bot that currently runs on the GitHub `magento` repositories. It helps automate different issue and pull request workflows using commands entered as comments.
 
-Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance. This gives a GitHub user an instance to test pull requests or reported issues. We plan on adding features in the future.
+### Assigning the issue
+If you would like to work on some issue and have it assigned to you, just add a simple comment and contribution assistant will do the work.
+
+**Command:** To assign issue to your GitHub account, add the following command as a comment to the Issue:
+```text
+@magento I am working on this
+```
+
+**Actions:** The following actions complete for the command:
+- If the user is a member of Magento GitHub organization, the user will be automatically assigned to the ticket
+- If user is NOT member of Magento GitHub organization yet, the invitation will be sent to user to join. Check your email or accept [Github invitation](https://github.com/orgs/magento/invitation). Once user joined Magento GitHub org, GitHub user can submit this command one more time to get assigned to the ticket 
+
+**Permissions:**
+
+-  All permissions granted for all users.
+
+Currently, the Magento Contributor Assistant automatically deploys test instances on Magento's hosting based on a contributor's pull request or provide a vanilla Magento instance on the `magento/magento2` repository. This gives a GitHub user an instance to test pull requests or reported issues. We plan on adding features in the future.
 
 -  [Deploy vanilla Magento instance](#vanilla-pr)
 -  [Deploy instance based on PR changes](#deploy-pr)
@@ -112,10 +128,7 @@ For `version`, the currently supported values are latest [version tags](https://
 
 **Admin access:**
 
--  https://i-{$issue_number}.{branch}.instances.magento-community.engineering/admin
--  Admin Credentials:
-   -  Username: admin
-   -  Password: 123123q
+Admins access will be shared via comment on GitHub
 
 **Permissions:**
 
@@ -135,13 +148,11 @@ To verify and test changes completed in a pull request, enter a command to gener
 
 -  It deploys a new Magento instance based on Pull Request changes.
 -  Deployment takes ~2 minutes.
+-  By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
 
 **Admin access:**
 
--  http://pr-xxx.engcom.dev.magento.com/admin
--  Admin Credentials:
-   -  Username: admin
-   -  Password: 123123q
+Admins access will be shared via comment on GitHub 
 
 **Permissions:**
 
