@@ -78,13 +78,11 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
-
-   {{site.data.var.ee}} version 2.4.x supports the following Elasticsearch versions:
-
-   *  Elasticsearch 6.8.x
+*  As of Magento 2.4.0, you must install [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). The following Elasticsearch versions are supported:
 
    *  Elasticsearch 7.x.x
+
+   *  Elasticsearch 6.8.x
 
       {:.bs-callout-warning}
       Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.

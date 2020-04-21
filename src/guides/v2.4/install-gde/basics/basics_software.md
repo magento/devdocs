@@ -20,7 +20,7 @@ The full list of software is listed in [System Requirements]({{ page.baseurl }}/
 
    For more information, see the [PHP manual](http://php.net/manual/en/intro-whatis.php) or the [PHP Wikipedia page](http://en.wikipedia.org/wiki/PHP).
 
-*  Search engine - [Elasticsearch](https://www.elastic.co/elasticsearch/) provides a search and analytics engine to help customers the products they want to buy.
+*  Search engine - [Elasticsearch](https://www.elastic.co/elasticsearch/) provides a search and analytics engine to help customers find the products they want to buy.
 
  {:.bs-callout-info}
 If you use a hosting provider, they might already have installed this software. Contact them if you are not sure.

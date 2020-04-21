@@ -64,7 +64,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 ### PHP
 
 {:.bs-callout-info}
-Magento 2.3.3 supports PHP 7.2.
+Magento 2.4 supports PHP 7.2.
 All 3rd party libraries now support PHP 7.2.
 If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
@@ -158,5 +158,6 @@ Related topics
 *  [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 *  [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
 *  [PHP]({{page.baseurl}}/install-gde/prereq/php-settings.html)
+*  [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html)
 *  [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
 *  [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

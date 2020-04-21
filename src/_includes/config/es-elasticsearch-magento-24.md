@@ -15,7 +15,7 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 |Option|Description|
 |--- |--- |
 |**Elasticsearch Server Hostname**|Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</br>{{site.data.var.ece}}: Get this value from your integration system.|
-|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you are using a secure proxy, it is typically 443.</br>{{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. The default is 9200.</br>{{site.data.var.ece}}: Get this value from your integration system.|
 |**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 
@@ -43,7 +43,7 @@ If so, try the following:
 *  Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue. In particular, make sure you started Elasticsearch as a user with `root` privileges.
 *  Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
 *  Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
-*  Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
+*  Use the `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
 
   For example, to see if Elasticsearch is running on its default port, use the following command:
 
@@ -73,19 +73,19 @@ To reindex using the command line:
 1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Enter any of the following commands:
 
-Enter the following command to reindex the catalog search index only:
+   Enter the following command to reindex the catalog search index only:
 
-```bash
-bin/magento indexer:reindex catalogsearch_fulltext
-```
+   ```bash
+   bin/magento indexer:reindex catalogsearch_fulltext
+   ```
 
-Enter the following command to reindex all indexers:
+   Enter the following command to reindex all indexers:
 
-```bash
-bin/magento indexer:reindex
-```
+   ```bash
+   bin/magento indexer:reindex
+   ```
 
 1. Wait until reindexing completes.
 
- {:.bs-callout-info}
-Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.
+   {:.bs-callout-info}
+   Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.

@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Configure and maintain Elasticsearch
+title: Configure Magento to use Elasticsearch
 functional_areas:
   - Configuration
   - Search

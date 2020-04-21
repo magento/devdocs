@@ -19,7 +19,7 @@ As of version 2.4.0, Magento requires [Elasticsearch][] to be the catalog search
 After you install and integrate Elasticsearch with Magento, you might need to perform additional maintenance:
 
 *  [Configure Elasticsearch stopwords][]
-*  [Change Elasticsearch Client][]
+*  [Change the Elasticsearch Client][]
 *  [Configure Magento to use Elasticsearch][]
 
 ## Additional resources {#es-resources}

@@ -31,7 +31,7 @@ If the test connection fails, try the following:
 *  Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue. In particular, make sure you started Elasticsearch as a user with `root` privileges.
 *  Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
 *  Verify the value of the **Elasticsearch Hostname** field. Make sure the server is available. You can try the server's IP address instead.
-*  Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Port** field is not being used by another process.
+*  Use the `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Port** field is not being used by another process.
 
   For example, to see if Elasticsearch is running on its default port, use the following command:
 
