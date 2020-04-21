@@ -201,4 +201,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [magento-mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [message-queues]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
-[change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub
+[change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
