@@ -205,9 +205,9 @@ The following searchCriteria can be used to determine the sort order and the num
 
 *  `searchCriteria[currentPage]` - Returns the current page.
 
-## Example
+### Example for search criteria to determine the sort order and attributes to return
 
-Here is the example for search using REST. In this example we are search orders by attribute `status`.
+This example shows how to use search criteria to determine the sort order and attributes to return. This example endpoint returns orders with status `pending`
 
 **Endpoint:**
 
@@ -225,7 +225,7 @@ Param | Value | Description
 --- | --- | ---
 searchCriteria[filter_groups][0][filters][0][field] | status | Attribute name to filter
 searchCriteria[filter_groups][0][filters][0][value] | pending | Attribute value to filter
-fields | items[increment_id,entity_id] | Attributes needs to be return as response
+fields | items[increment_id,entity_id] | Attributes needs to be return in response. If not specify this param, all attributes will be return
 
 **Payload:**
 
