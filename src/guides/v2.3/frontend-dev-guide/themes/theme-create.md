@@ -262,7 +262,7 @@ To learn more about theme layouts, refer to the [Layout section]({{page.baseurl}
 
 ## Troubleshooting {#trouble}
 
-When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
+When your theme changes are not visible even after clearing the cache, try redeploying your static files using the `bin/magento setup:static-content:deploy` command, or add the `-f` argument to force deploy static content in any deployment mode in case you are not in production mode.
 
  {:.bs-callout-info}
 Running this command with the `-f` argument can fix issues regarding deployment of static content, but removes **all** symlinks and deploys the actual static content files.
