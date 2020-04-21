@@ -75,7 +75,6 @@ Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred 
 | Severity: S3  | - Affects non-critical data or functionality and does not force users to employ a workaround.<br>- Impact to the product qualities that makes the product usable as best as possible.<br>- Problem with moderate impact requiring some restrictions. The fix would be for an area that is not critical.<br>  |
 | Severity: S4  | - A minor problem, annoyance, or technical issue with minimal impact. Fix is for a minor issue that makes the course less polished or only occasionally happens.<br>- Impact that does not prevent or hinder functionality.<br>- Affects aesthetics, professional look and feel, “quality” or “usability”.<br>  |
 
-
 | Priority | Description |
 | ------------- | ------------- |
 | Priority: P0  | - The defect needs to be fixed right now, everything else can wait no matter what work already started.<br> - This generally occurs in cases when an entire functionality is blocked   |
@@ -86,27 +85,27 @@ Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred 
 
 ### Who and how can Define Severity And Priority?
 
-**Priority**
+#### Priority
 
-*  Magento Team will define priority during a triage review meeting and based on Community assessment for Severity
+-  Magento Team will define priority during a triage review meeting and based on Community assessment for Severity
 
-**Severity**
+#### Severity
 
-*  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Workflow](#triage)
-*  Magento Team is allowed to set/edit #triage based on internal triage process and provided information
-*  Issue reporters can provide own evaluation for Severity by selecting checkbox from new Issue Report description.
+-  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Workflow](#triage)
+-  Magento Team is allowed to set/edit #triage based on internal triage process and provided information
+-  Issue reporters can provide own evaluation for Severity by selecting checkbox from new Issue Report description.
 
 Following list consist of some questions that may allow you to decide yourself the measure of severity.
 
-*  Does the system stop working after defect occurs?
-*  Does the system recover from the defect by any means?
-*  If the defect is recoverable, does the system require external effort to recover from the defect? (i.e. it will not recover on its own)
-*  Did I check whether the same defect is reflected in all other related sections (or entire system)?
-*  Can I be able to repeat the defect in some other system having same configuration (O/S, Browsers) as that of the system where I found the defect?
-*  Can I be able to repeat the defect in other configurations also?
-*  Does the defect affect all users? (i.e. Only a particular category of users will face the defect)
-*  Does the defect occurs frequently?
-*  Are the inputs to make the defect easy to get? (i.e. not special data has to be created)
+-  Does the system stop working after defect occurs?
+-  Does the system recover from the defect by any means?
+-  If the defect is recoverable, does the system require external effort to recover from the defect? (i.e. it will not recover on its own)
+-  Did I check whether the same defect is reflected in all other related sections (or entire system)?
+-  Can I be able to repeat the defect in some other system having same configuration (O/S, Browsers) as that of the system where I found the defect?
+-  Can I be able to repeat the defect in other configurations also?
+-  Does the defect affect all users? (i.e. Only a particular category of users will face the defect)
+-  Does the defect occurs frequently?
+-  Are the inputs to make the defect easy to get? (i.e. not special data has to be created)
 
 The number of 'Yes' on the previous questions should give you a good idea about the severity.
 
