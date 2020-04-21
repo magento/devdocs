@@ -103,8 +103,9 @@ This command has several variations for better usability:
 ```
 
 **Actions:** The following actions complete for the command:
+
 -  If the user is a member of Magento GitHub organization, the user will be automatically assigned to the ticket
--  If user is NOT member of Magento GitHub organization yet, the invitation will be sent to user to join. Check your email or accept [Github invitation](https://github.com/orgs/magento/invitation). Once user joined Magento GitHub org, GitHub user can submit this command one more time to get assigned to the ticket 
+-  If user is NOT member of Magento GitHub organization yet, the invitation will be sent to user to join. Check your email or accept [Github invitation](https://github.com/orgs/magento/invitation). Once user joined Magento GitHub org, GitHub user can submit this command one more time to get assigned to the ticket
 
 **Permissions:**
 
@@ -159,7 +160,7 @@ To verify and test changes completed in a pull request, enter a command to gener
 -  By default, instances have a lifetime of 3 hours. All deployments are terminated after that.
 
 **Admin access:**
-Admins access will be shared via comment on GitHub 
+Admins access will be shared via comment on GitHub
 
 **Permissions:**
 
