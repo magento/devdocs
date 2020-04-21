@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: setPaymentMethodOnCart mutation
-redirect from:
-  - /guides/v2.3/graphql/reference/quote-payment-method.html
 ---
 
 The `setPaymentMethodOnCart` mutation defines which payment method to apply to the cart. Magento GraphQL supports the following offline payment methods:
@@ -38,7 +36,7 @@ The following example assigns the `banktransfer` payment method to the specified
 
 **Request:**
 
-```text
+```graphql
 mutation {
   setPaymentMethodOnCart(input: {
       cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
