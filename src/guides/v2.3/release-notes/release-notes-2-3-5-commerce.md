@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5) provides. Patch 2.3.4.1 (Composer package 2.3.4-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes; not the additional security enhancements that are included in the full patch.
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5) provides. Patch 2.3.4.1 (Composer package 2.3.4-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p1), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include only security bug fixes; not the additional security enhancements that are included in the full patch.
 
 With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
 
@@ -21,9 +21,18 @@ With this quarterly release, we have changed how we describe these security issu
 
 Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
 
+## Upgrade to Magento 2.3.5-p1 or 2.3.4-p2 for merchants running pre-release versions of Magento 2.3.5  
+
+Merchants upgrading to pre-release versions of Magento 2.3.5 and security-only patch 2.3.4-p1 and whose deployments contain bundle products may encounter the following error during upgrade:
+
+`Module ‘Magento_Wishlist’:
+Unable to apply data patch Magento\Wishlist\Setup\Patch\Data\CleanUpData for module Magento_Wishlist. Original exception message: Unable to unserialize value. Error: Syntax error`
+
+Merchants who encounter this error after  installing Magento 2.3.5 should upgrade to Magento 2.3.5-p1. Merchants who encounter this error after  installing Magento 2.3.4-p1 should upgrade to Magento 2.3.4-p2. <!--- MC-33513 33514-->
+
 ## Download and run the updated Database Cleanup script
 
-This hotfix addresses an issue with a previous database clean-up script that was released in March 2020. That database cleanup script has been updated to clear pre-existing failed login data in additional database tables. **We recommend that all merchants run DB_CLEANUP_SCRIPT_v2 script to clear pre-existing failed login data in additional tables as soon as possible**. See the [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352?mkt_tok=eyJpIjoiTnpCbE1UQmxOV05oT0RSbSIsInQiOiJGdlcxeG1pMlwvNTFaZXdpeFFCT2ltVHZwMjZ3Rk5pcHZubitJVW10ck1PR0xOK2dyam9DMWVWeTcxbStWbExOZ085UVg3VFk5S0szUzBTekMwYVVMWXc9PSJ9) support article.
+This hotfix addresses an issue with a previous database clean-up script that was released in March 2020. That database cleanup script has been updated to clear pre-existing failed login data in additional database tables. **We recommend that all merchants run DB_CLEANUP_SCRIPT_v2 script to clear pre-existing failed login data in additional tables as soon as possible**. See the [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) support article.
 
 ## Highlights
 
@@ -35,7 +44,7 @@ This release includes the following security enhancements:
 
 #### Over 25 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to 1.14.4.5 and 1.9.4.5, as appropriate.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to 1.14.4.5 and 1.9.4.5, as appropriate.
 
 With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
 
@@ -43,7 +52,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is the default. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html)
+*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is the default. See [Content Security Policy Overview]({{page.baseurl}}/security/content-security-policy-overview.html)
 
 *  **Removal of session_id from URLs**. Exposure of `session id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods add/read session id from URLs.
 
@@ -68,7 +77,7 @@ The following platform upgrades help enhance website security and performance:
 
 ### Performance boosts
 
-*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
 *  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
@@ -76,7 +85,7 @@ The following platform upgrades help enhance website security and performance:
    *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
    *  Reduction in race conditions on Redis write operations
 
-See [Use Redis for the Magento page and default cache](https://devdocs.magento.com/guides/v2.3/config-guide/redis/redis-pg-cache.html) and [Configure caching](https://devdocs.magento.com/guides/v2.3/config-guide/cache.html).
+See [Use Redis for the Magento page and default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) and [Configure caching]({{page.baseurl}}/config-guide/cache.html).
 
 ### Infrastructure improvements
 
@@ -84,7 +93,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **The PayPal Pro payment method now works as expected in the Chrome 80 browser**. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
-*  **A PHPStan code analysis check has been integrated into Magento static builds**. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
+*  **A PHPStan code analysis check has been integrated into Magento static builds**. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide]({{page.baseurl}}/test/testing.html).
 
 ### Page Builder
 
@@ -96,7 +105,7 @@ Page Builder enhancements for this release include:
 
 *  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://devdocs.magento.com/page-builder/docs/how-to/how-to-upgrade-content-types.html).
+*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://docs.magento.com/m2/ee/user_guide/cms/page-builder/docs/how-to/how-to-upgrade-content-types.html).
 
 ### Inventory Management
 
@@ -105,13 +114,13 @@ Inventory Management enhancements for this release include:
 *  New extension point for `SourceDataProvider` and `StockDataProvider`
 *  Ability to view allocated inventory sources from the Orders list
 
-See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
+See [Inventory Management release notes]({{page.baseurl}}/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
 
 ### GraphQL
 
-With this release, you can now use `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the [GraphQL Developer Guide](https://devdocs.magento.com/guides/v2.3/graphql/) for details.
+With this release, you can now use `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries]({{page.baseurl}}/graphql/queries/index.html#staging) in the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details.
 
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
+See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
@@ -142,7 +151,7 @@ The Google Shopping ads Channel bundled extension has reached end-of-life with t
 
 ### B2B
 
-This release includes multiple bug fixes. See [B2B Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/b2b-release-notes.html).
+This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
 ### Vendor-developed extension enhancements
 
@@ -316,7 +325,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29652-->
 
-*  The Recently View Products feature now shows products associated only with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
+*  The Recently Viewed Products feature now shows products associated only with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
 
 <!--- MC-30213-->
 
@@ -464,7 +473,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30576-->
 
-*  You can now successfully create a customer and associate it with a particular website using the Associate to Website  dropdown menu  on **Customers** > **All Customers** >  **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multisite deployment, Magento displayed this error: `The store view is not in the associated website`.
+*  You can now successfully create a customer and associate it with a particular website using the Associate to Website  dropdown menu  on **Customers** > **All Customers** >  **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multi-site deployment, Magento displayed this error: `The store view is not in the associated website`.
 
 ### Customer segment
 
@@ -554,10 +563,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Clicking the **Refund Offline** button in the create a credit memo workflow now generates a credit memo as expected. Previously, a JavaScript error disabled this button, and Magento did not create a credit memo.
 
-<!--- MC-19435-->
-
-*  JavaScript bundling and JavaScript minimization should be disabled by default when `Magento_Baler` is enabled.
-
 ### General fixes
 
 <!--- MC-22935-->
@@ -602,7 +607,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29261-->
 
-*  A store’s admin URL no longer redirects to the storefront URL when these two URLs differ.
+*  A store’s Admin URL no longer redirects to the storefront URL when these two URLs differ.
 
 <!--- MC-23228-->
 
@@ -674,7 +679,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-21727-->
 
-*  Magento now removes related, up-sell, and cross-sell products as expected in the `import.csv` file when you set the value of the **Empty attribute value constant** field to `_EMPTYVALUE_` for products in **System** > **Import**. Previously, cross-sell, up-sell, and related products were not removed from the import .csv file.
+*  Magento now removes related, up-sell, and cross-sell products as expected in the import `.csv` file when you set the value of the **Empty attribute value constant** field to `_EMPTYVALUE_` for products in **System** > **Import**. Previously, cross-sell, up-sell, and related products were not removed from the import .csv file.
 
 <!--- MC-29874-->
 
@@ -800,7 +805,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31168-->
 
-*  The integration of third-party payment methods into the core Magento code has been depreciated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
 
 <!--- MC-30810-->
 
@@ -856,7 +861,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30786-->
 
-*  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+*  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
 <!--- MC-19646-->
 
@@ -912,7 +917,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29851-->
 
-*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multisite deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
+*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multi-site deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
 
 <!--- MC-29206-->
 
@@ -1048,7 +1053,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23067-->
 
-*  A PHPStan code analysis check has been integrated into Magento static builds. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
+*  A PHPStan code analysis check has been integrated into Magento static builds. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide]({{page.baseurl}}/test/testing.html).
 
 ### Theme
 
