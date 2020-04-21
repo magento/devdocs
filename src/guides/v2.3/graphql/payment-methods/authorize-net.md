@@ -3,6 +3,9 @@ group: graphql
 title: Authorize.Net payment method
 ---
 
+{:.bs-callout-warning}
+The Authorize.Net payment method has been deprecated for Magento 2.3.5 and will be removed in Magento 2.4.0.
+
 Accept.js is a JavaScript-based solution for sending secure payment data directly to Authorize.Net. The Accept JavaScript library intercepts the payment data before it is passed to Magento and submits it directly to Authorize.Net, which replaces it with a one-time-use token, or payment nonce. This payment nonce, which is returned by the JavaScript library, is used in place of payment data.
 
 ## Authorize.Net workflow

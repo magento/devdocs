@@ -21,7 +21,7 @@ Before you begin, do the following:
 
 ### SSH access to cloud environments {#ssh}
 
-To transfer the database dump and files to {{site.data.var.ece}}, you must know the SSH access link. You can locate the SSH access link using the [`magento-cloud`] CLI tool({{ site.baseurl }}/cloud/reference/cli-ref-topic.html):
+To transfer the database dump and files to {{site.data.var.ece}}, you must know the SSH access link. You can locate the SSH access link using the [Magento Cloud CLI tool]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html):
 
 ```bash
 magento-cloud environment:ssh --pipe
