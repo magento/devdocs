@@ -995,7 +995,7 @@ entries:
   type: Major update
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/4868
-- description: Added the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) topic
+- description: Added the Authorize.Net payment method topic
     to the _GraphQL Developer Guide_.
   versions: 2.3.3
   type: New topic
