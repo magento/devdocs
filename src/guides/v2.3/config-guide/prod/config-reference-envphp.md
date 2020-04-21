@@ -15,6 +15,7 @@ The `env.php` file contains the following sections:
 | `cache_types`         | Cache storage settings                         |
 | `crypt`               | The encryption key for cryptographic functions |
 | `db`                  | Database connection settings                   |
+| `directories`         | Magento directories mapping settings           |
 | `downloadable_domains`| List of downloadable domains                   |
 | `install`             | The installation date                          |
 | `lock`                | Lock provider settings                         |
@@ -91,6 +92,16 @@ All database configurations are availble in this node.
       'active' => '1'
     ]
   ]
+]
+```
+
+## directories
+
+Optional directory mapping options that need to be set when the web server is configured to serve Magento app from the `/pub` directory for [improved security][change-docroot-to-pub].
+
+```conf
+'directories' => [
+    'document_root_is_pub' => true
 ]
 ```
 
@@ -190,3 +201,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [magento-mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [message-queues]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
+[change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html

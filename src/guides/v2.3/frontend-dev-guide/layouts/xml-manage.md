@@ -229,12 +229,12 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 **Example:** Add a new class to the `body` tag.
 
 ```xml
-<page>
     <body>
         <attribute name="class" value="my-new-body-class"/>
     </body>
-</page>
 ```
+
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
 
 **Example:** Add a custom attribute to the `body` tag.
 
