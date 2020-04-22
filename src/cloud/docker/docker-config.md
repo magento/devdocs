@@ -101,6 +101,19 @@ docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento
 
 This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
 
+## Running Docker on a custom host and port
+
+Sometimes you might want to run Docker on a different host and port, for example if you need more than one Docker instance.
+
+To configure the custom host and port, add the `host` and `port` options to the `build:compose` command to specify the hostname and port number values.
+
+```bash
+./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080
+```
+
+You must also add the custom hostname to your `/etc/hosts` file.
+
+
 ## Sendmail service
 
 Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
