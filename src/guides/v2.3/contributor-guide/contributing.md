@@ -80,8 +80,8 @@ Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred 
 | Priority: P0  | - The defect needs to be fixed right now, everything else can wait no matter what work already started.<br> - This generally occurs in cases when an entire functionality is blocked   |
 | Priority: P1  | - Needs to be fixed before any other issues.<br>- Once the P0 defects have been fixed, a defect having this priority is the next candidate which has to be fixed |
 | Priority: P2  | - Should be fixed as early as possible<br>- A defect with this priority must be in contention to be fixed as it could also deal with functionality issues which are not as per expectation  |
-| Priority: P3  | - May be fixed according to the position in the backlog.<br>* 2  |
-| Priority: P4  | - We do not plan to do that in nearest time. Fixing can be deferred as a logical part of more important work. <br>* 2  |
+| Priority: P3  | - May be fixed according to the position in the backlog.|
+| Priority: P4  | - We do not plan to do that in the nearest time. Fixing can be deferred as a logical part of more important work.|
 
 ### Who and how can Define Severity And Priority?
 
@@ -91,7 +91,7 @@ Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred 
 
 #### Severity
 
--  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Workflow](#triage)
+-  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow)
 -  Magento Team is allowed to set/edit #triage based on internal triage process and provided information
 -  Issue reporters can provide own evaluation for Severity by selecting checkbox from new Issue Report description.
 
