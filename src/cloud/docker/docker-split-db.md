@@ -1,15 +1,14 @@
 ---
 group: cloud-guide
-title: Configure Magento split databases for Docker
+title: Prepare Magento Cloud Docker to deploy Magento split database performance solution
 functional_areas:
 - Cloud
 - Setup
 - Configuration
-- Debug
-- Split Databases
+- Split database performance solution
 ---
 
-## Configure Split Databases for Docker
+## Prepare Magento Cloud Docker to deploy Magento split database performance solution
 To prepare the configuration before deploying the split db architecture, you must modify several files:
 
 1. Add the following database services to the `.magento/services.yaml` configuration file:
@@ -25,7 +24,7 @@ mysql-sales:
  ...
 ```
 
-4. In the `magento.app.yaml` file, add the database relationships for the additional databases:
+2. In the `magento.app.yaml` file, add the relationships for the additional databases:
 
 ```yaml
 relationships:
@@ -35,17 +34,17 @@ relationships:
    ...
 ```
 
-5. Let's now generate the file by running the cli command:
+3. Generate the Docker Compose configuration file:
 ```bash
 php vendor/bin/ece-docker build:compose
 ```
 NOTES: As with the 'db' container, you can use the options to set the ports to forward to your local environment:
   
-```shell script
+```bash
 php vendor/bin/ece-docker build:compose --expose-db-quote-port=<port for quotee db service> --expose-db-sales-port=<port for sales db service>
 ```
 
-6. Аfter generation, open the file `./docker-compose.yml` and you will see that the configuration for database services has been added:
+4. Аfter generation, open the file `./docker-compose.yml` and you will see that the configuration for database services has been added:
 
 ```bash
 $ cat  ./docker-compose.yml
@@ -93,7 +92,7 @@ services:
 ...
 ```
      
-6.  Verify that the `./.docker/config.php.dist`  environment configuration file includes the updated database service configuration:
+5.  Verify that the `./.docker/config.php.dist`  environment configuration file includes the updated database service configuration:
 
 ```php
 <?php
@@ -124,20 +123,32 @@ return [
 ];
 ```
 
-7. Run 
+6. Run containers
 
 ```bash
 docker-compose up -d
 ```
 
-8. Run command 
+7. Ensure that additional database containers are running. The "db-quote" and "db-sales" containers must be present:
 
 ```bash
-docker-compose run deploy bash
+docker-compose ps
+            Name                           Command                  State                Ports
+-------------------------------------------------------------------------------------------------------
+...
+magento-cloud_db-quote_1        docker-entrypoint.sh mysqld      Up             0.0.0.0:32873->3306/tcp
+magento-cloud_db-sales_1        docker-entrypoint.sh mysqld      Up             0.0.0.0:32874->3306/tcp
+magento-cloud_db_1              docker-entrypoint.sh mysqld      Up             0.0.0.0:32872->3306/tcp
+...
 ```
 
-9. In the environment variable, 'MAGENTO_CLOUD_RELATIONSHIPS' of "deploy" service has also added data to access new database services. 
-Run command in the container: ` echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp `:
+8. In the environment variable 'MAGENTO_CLOUD_RELATIONSHIPS' of "deploy" service has also added data about credentials to access new database services. 
+
+```bash
+docker-compose run deploy bash -c "echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp"
+```
+
+Expected result:
 
 ```json
 {
@@ -161,27 +172,5 @@ Run command in the container: ` echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | 
    ]
 }
  ```
-
-10. Yuo can use this credentials to connect to DB services
-11. Exit from container and run `docker-compose ps`:
-
-```shell script
-docker-compose ps
-            Name                           Command                  State                Ports
--------------------------------------------------------------------------------------------------------
-...
-magento-cloud_db-quote_1        docker-entrypoint.sh mysqld      Up             0.0.0.0:32873->3306/tcp
-magento-cloud_db-sales_1        docker-entrypoint.sh mysqld      Up             0.0.0.0:32874->3306/tcp
-magento-cloud_db_1              docker-entrypoint.sh mysqld      Up             0.0.0.0:32872->3306/tcp
-...
-```
-
-12. Yuo can use this ports to connect to DB services from your host
  
 Now everything is ready to install Magento with Split Databases
-
-
-   ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
-
-[docker-config]: {{site.baseurl}}/cloud/docker/docker-config.html
-[Xdebug Helper extension]: https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en
