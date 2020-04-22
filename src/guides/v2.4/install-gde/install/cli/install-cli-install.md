@@ -117,7 +117,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 
 |Name|Value|Required?|
 |--- |--- |--- |
-`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch5`, `elasticsearch6`, and `elasticsearch7`. The default is `elasticsearch7` | No
+`--search-engine` | The version of Elasticsearch to use as the search engine. Possible values are `elasticsearch7`, `elasticsearch6`, and `elasticsearch5`. The default is `elasticsearch7`. Elasticsearch 5 has been deprecated and is not recommended. | No
 `--elasticsearch-host` | The host name or IP address where Elasticsearch is running. The default is `localhost`. | No
 `--elasticsearch-port` | The port for incoming HTTP requests. The default is `9200`. | No
 `--elasticsearch-index-prefix` | A prefix that identifies the Elasticsearch index. The default is `magento2`. | No
@@ -185,13 +185,16 @@ The following example installs Magento with the following options:
 *  Default language is `en_US` (U.S. English)
 *  Default currency is U.S. dollars
 *  Default time zone is U.S. Central (America/Chicago)
+*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
---currency=USD --timezone=America/Chicago --use-rewrites=1
+--currency=USD --timezone=America/Chicago --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
+--elasticsearch-port=9200
 ```
 
 Messages similar to the following display to indicate a successful installation:
@@ -206,12 +209,14 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 #### Example 2— Basic install without admin user account
 
-In {{ site.data.var.ee }} version 2.2.8 and later, you have the option to install Magento without creating the Magento administrator user as shown in the following example.
+You have the option to install Magento without creating the Magento administrator user as shown in the following example.
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
---language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+--language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
+--elasticsearch-port=9200
 ```
 
 Messages like the following display if the installation is successful:
@@ -252,6 +257,7 @@ The following example installs Magento with the following options:
 *  You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *  Session data is saved in the database
 *  Uses server rewrites
+*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
 
 ```bash
 magento setup:install --base-url=http://127.0.0.1/magento2/ \
@@ -260,7 +266,9 @@ magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --cleanup-database \
---sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
+--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1 \
+--search-engine=elasticsearch7 --elasticsearch-host=es-host.example.com \
+--elasticsearch-port=9200
 ```
 
 {:.bs-callout .bs-callout-info}

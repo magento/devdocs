@@ -294,6 +294,7 @@ pages:
 
     - label: Install and configure Elasticsearch
       url: /config-guide/elasticsearch/es-overview.html
+      include_versions: ["2.3"]
       children:
 
         - label: Configure nginx and Elasticsearch
@@ -311,6 +312,20 @@ pages:
         - label: Change the Elasticsearch client
           url: /config-guide/elasticsearch/es-downgrade.html
 
+    - label: Configure and maintain Elasticsearch
+      url: /config-guide/elasticsearch/es-overview.html
+      exclude_versions: ["2.3"]
+      children:
+
+        - label: Configure Elasticsearch stopwords
+          url: /config-guide/elasticsearch/es-config-stopwords.html
+
+        - label: Configure Magento to use Elasticsearch
+          url: /config-guide/elasticsearch/configure-magento.html
+
+        - label: Change the Elasticsearch client
+          url: /config-guide/elasticsearch/es-downgrade.html
+         
     - label: Message Queues
       url: /config-guide/mq/rabbitmq-overview.html
       children:

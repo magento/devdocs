@@ -77,6 +77,17 @@ pages:
             - label: MySQL
               url: /install-gde/prereq/mysql.html
 
+            - label: Elasticsearch
+              url: /install-gde/prereq/elasticsearch.html
+              exclude_versions: ["2.3"]
+              children:
+
+                - label: Configure nginx and Elasticsearch
+                  url: /install-gde/prereq/es-config-nginx.html
+
+                - label: Configure Apache and Elasticsearch
+                  url: /install-gde/prereq/es-config-apache.html      
+
             - label: Get your authentication keys
               url: /install-gde/prereq/connect-auth.html
 
@@ -140,8 +151,8 @@ pages:
 
         - label: Setup Wizard installation
           url: /install-gde/install/web/install-web.html
+          include_versions: ["2.3"]
           children:
-
             - label: Step 1. Readiness check
               url: /install-gde/install/web/install-web_1-readiness.html
 
@@ -158,6 +169,31 @@ pages:
               url: /install-gde/install/web/install-web_5-create-admin.html
 
             - label: Step 6. Install
+              url: /install-gde/install/web/install-web_6-install.html
+
+        - label: Setup Wizard installation
+          url: /install-gde/install/web/install-web.html
+          exclude_versions: ["2.3"]
+          children:
+            - label: Step 1. Readiness check
+              url: /install-gde/install/web/install-web_1-readiness.html
+
+            - label: Step 2. Add a Database
+              url: /install-gde/install/web/install-web_2-db.html
+
+            - label: Step 3. Web Configuration
+              url: /install-gde/install/web/install-web_3-web-conf.html
+
+            - label: Step 4. Customize Your Store
+              url: /install-gde/install/web/install-web_4-customize-store.html
+
+            - label: Step 5. Configure Catalog Search
+              url: /install-gde/install/web/install-web-configure-catalog-search.html
+
+            - label: Step 6. Create Admin Account
+              url: /install-gde/install/web/install-web_5-create-admin.html
+
+            - label: Step 7. Install
               url: /install-gde/install/web/install-web_6-install.html
 
         - label: Post-installation
