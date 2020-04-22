@@ -1,3 +1,9 @@
+title: Whats New on Devdocs
+description: |
+  This page contains recent changes that we think you'd like to know about.
+  We exclude from this list proofreading, spelling checks, and all minor updates.
+link: /whats-new.html
+thread: /whatsnew-feed.xml
 updated: Wed Apr 22 10:36:00 2020
 entries:
 - description: Added 'Set a fixed price for bundled products' to the [REST usage notes](https://devdocs.magento.com/guides/v2.3/rest/notes.html)
@@ -206,14 +212,6 @@ entries:
   type: Technical
   date: March 30, 2020
   link: https://github.com/magento/devdocs/pull/6928
-title: Whats New on Devdocs
-description: |
-  This page contains recent changes that we think you'd like to know about.
-  We exclude from this list proofreading, spelling checks, and all minor updates.
-link: /whats-new.html
-thread: /whatsnew-feed.xml
-updated: Mon Mar 30 08:59:14 2020
-entries:
 - description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
     topic.
   versions: 2.3.x
@@ -257,7 +255,6 @@ entries:
   type: Major Update
   date: March 23, 2020
   link: https://github.com/magento/devdocs/pull/6868
-entries:
 - description: Added a 'Declaring the new custom no-route processor' section to the
     [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
   versions: 2.3.x
