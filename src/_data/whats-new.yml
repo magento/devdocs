@@ -27,7 +27,7 @@ entries:
 - description: 'New Page Builder topic on how to configure three different options
     for styling elements in your content types: [How to configure styling options](https://devdocs.magento.com/page-builder/docs/how-to/how-to-configure-styling-options.html).'
   versions: 2.3.x
-  type: Major Update, Technical
+  type: Technical
   date: April 15, 2020
   link: https://github.com/magento/devdocs/pull/7044
 - description: Added a Troubleshooting section in the [Docker services container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
@@ -36,12 +36,6 @@ entries:
   type: Technical
   date: April 15, 2020
   link: https://github.com/magento/devdocs/pull/7043
-- description: 'New Page Builder topic on how to configure three different options
-    for styling elements in your content types: [How to configure styling options](https://devdocs.magento.com/page-builder/docs/how-to/how-to-configure-styling-options.html).'
-  versions: 2.3.x
-  type: Major Update, Technical
-  date: April 15, 2020
-  link: https://github.com/magento/devdocs/pull/7044
 - description: Added the 'Metadata interfaces' section to the [Service contract design
     patterns](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html#metadata-interfaces)
     topic.
@@ -63,7 +57,7 @@ entries:
   date: April 14, 2020
   link: https://github.com/magento/devdocs/pull/6823
 - description: Created new topic about the [Magento Privacy JS Library](https://devdocs.magento.com/compliance/privacy/magento-privacy-js-library.html)
-  versions: ''
+  versions: '2.x'
   type: New Topic
   date: April 14, 2020
   link: https://github.com/magento/devdocs/pull/7037
@@ -120,7 +114,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7004
 - description: Added HTML example in the [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
     topic
-  versions: ''
+  versions: '2.3.x'
   type: Technical
   date: April 6, 2020
   link: https://github.com/magento/devdocs/pull/6989
@@ -144,7 +138,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6927
 - description: Update instruction to improve performance in the [Configure Docker
     environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic
-  versions: ''
+  versions: '2.x'
   type: Technical
   date: April 2, 2020
   link: https://github.com/magento/devdocs/pull/6709
@@ -162,7 +156,7 @@ entries:
   type: Major Update
   date: April 1, 2020
   link: https://github.com/magento/devdocs/pull/6946
-- description: Describing how to perform any kind of validation to a custom form.
+- description: Describing how to perform any kind of [custom form validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-form-validation.html) to a custom form
   versions: 2.3.x
   type: New Topic
   date: April 1, 2020
