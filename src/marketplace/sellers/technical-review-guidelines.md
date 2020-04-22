@@ -36,29 +36,29 @@ _See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.3/coding-standards/b
 
 This check verifies that submitted code is packaged as valid Magento module, theme, language package, or meta-package, enforces best practices for Magento code distribution and helps to avoid common pitfalls. Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined that:
 
--  code submitted as zip archive
--  submitted package does not exceed 30 MB
--  submitted package contains `composer.json` file
--  `composer.json` file specifies:
-  -  `name`
-  -  `type`
-  -  `version`
--  `composer.json` does not declare:
-  -  `extra.map`
-  -  `extra.magento-root-dir`
--  package has valid Composer package type:
-  -  for extension valid types are: `magento2-module`, `magento2-language`, `metapackage`
-  -  for theme valid types is only `magento2-theme`
-  -  for shared library valid types are: `magento2-module`, `magento2-theme`, `magento2-language`
--  package does not restict set of compatible PHP versions declared by supported Magento versions
--  package does not declare any of the following packages as a dependency:
-  -  `magento/magento-composer-installer`
-  -  `magento/magento2-base`
-  -  `magento/product-community-edition`
-  -  `magento/magento2-ee-base`
-  -  `magento/product-enterprise-edition`
--  package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restrictin should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency)
--  [require inline alieases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
+1. Code submitted as zip archive.
+1. Submitted package does not exceed 30 MB.
+1. Submitted package contains `composer.json` file.
+1. `composer.json` file specifies:
+   *  `name`
+   *  `type`
+   *  `version`
+1. `composer.json` does not declare:
+   *  `extra.map`
+   *  `extra.magento-root-dir`
+1. Package has valid Composer package type:
+   *  for extension valid types are: `magento2-module`, `magento2-language`, `metapackage`
+   *  for theme valid types is only `magento2-theme`
+   *  for shared library valid types are: `magento2-module`, `magento2-theme`, `magento2-language`
+1. Package does not restict set of compatible PHP versions declared by supported Magento versions.
+1. Package does not declare any of the following packages as a dependency:
+   *  `magento/magento-composer-installer`
+   *  `magento/magento2-base`
+   *  `magento/product-community-edition`
+   *  `magento/magento2-ee-base`
+   *  `magento/product-enterprise-edition`
+1. Package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restrictin should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
+1. [Require inline alieases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
 
 Additional requirements to package declaration are applied depending on package type.
 
