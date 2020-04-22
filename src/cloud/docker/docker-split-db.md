@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Configure Split Databases for Docker
+title: Configure Magento split databases for Docker
 functional_areas:
 - Cloud
 - Setup
@@ -10,9 +10,9 @@ functional_areas:
 ---
 
 ## Configure Split Databases for Docker
-To prepare the configuration before deploying the split db architecture, you will need to modify several files:
+To prepare the configuration before deploying the split db architecture, you must modify several files:
 
-1. Add the next database services to the config file `.magento/services.yaml`:
+1. Add the following database services to the `.magento/services.yaml` configuration file:
 
 ```yaml
  ...
@@ -25,7 +25,7 @@ mysql-sales:
  ...
 ```
 
-4. Add the next relationships to the config file `.magento.app.yaml`:
+4. In the `magento.app.yaml` file, add the database relationships for the additional databases:
 
 ```yaml
 relationships:
@@ -36,7 +36,7 @@ relationships:
 ```
 
 5. Let's now generate the file by running the cli command:
-```shell script
+```bash
 php vendor/bin/ece-docker build:compose
 ```
 NOTES: As with the 'db' container, you can use the options to set the ports to forward to your local environment:
@@ -47,7 +47,7 @@ php vendor/bin/ece-docker build:compose --expose-db-quote-port=<port for quotee 
 
 6. Аfter generation, open the file `./docker-compose.yml` and you will see that the configuration for database services has been added:
 
-```shell script
+```bash
 $ cat  ./docker-compose.yml
 ...
 services:
@@ -126,13 +126,13 @@ return [
 
 7. Run 
 
-```shell script
+```bash
 docker-compose up -d
 ```
 
 8. Run command 
 
-```shell script
+```bash
 docker-compose run deploy bash
 ```
 
