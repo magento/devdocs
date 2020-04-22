@@ -915,9 +915,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  The **State/Province** field of the edit order page is now of type `Dropdown`.  Previously, in deployments that contained two websites where the main website has country restrictions, the **State** field had an input type of `Text`, not `Dropdown`. This occurred  when you  placed an order on the second website, and allowed you to enter an incorrect value for **State/Province**.
 
+*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multi-site deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
+
 <!--- MC-29851-->
 
-*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multi-site deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
+*  You can now successfully add a product in quantities exceeding five to an order from the Admin. Previously, when you tried to add a product in quantities exceeding five,  Magento displayed this error: `The requested qty is not available`.
 
 <!--- MC-29206-->
 
@@ -1190,6 +1192,20 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6272-->
 
 *  The WYSIWYG editor no longer hangs indefinitely when you try to upload an image from the Admin. Previously, the image upload popup window hung until you refreshed the page. *Fix submitted by Nazar Klovanych in pull request [25556](https://github.com/magento/magento2/pull/25556)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
+
+## Known issues
+
+**Issue**: Magento prompts customers to log in by displaying this message: `This account is not confirmed. Click here to resend confirmation email`.  The **Click here** link in this message should open the Send confirmation link page, but is currently inactive. Magento instead displays this message: `This account is not confirmed`. Click here to resend confirmation email`. **Workaround**: <!--- MC-33148-->
+
+**Issue**: The Compare Products feature does not work as expected in deployments with multiple store views. When a user tries to compare products from multiple store views and one product has an empty value for a comparable attribute, Magento displays a corrupted Compare Products page. **Workaround**: Comparable attribute values cannot be empty. Merchants should specify non-empty values for comparable product attributes or use the default storeview value for the attribute.  A fix will be available in Magento 2.3.6, with is scheduled for release in Q4 2020. <!--- MC-33203-->
+
+**Issue**: Magento throws an error on the Order Summary  section of the checkout workflow when a customer removes store credit after first selecting it as a payment method for the entire order. <!--- MC-33431-->
+
+**Issue**: The storefront checkout workflow will not display any payment method that has been enabled for only specific countries with the exception of these payment methods: PayPal, Braintree, Klarna, and Amazon Pay. **Workaround**: No workaround for this issue is available in Magento 2.3.5. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.   <!--- MC-33105—>
+
+**Issue**: You cannot complete an order to be shipped to multiple addresses if one of the ordered products is a virtual product. Currently, when you check out, Magento creates orders as expected  for the physical products and creates an empty order with no virtual product. <!--- MC-32819>
+
+**Issue**: The system message displayed by Magento after a bulk action (for example, mass product update or import/export) does not display an accurate count of products affected by the bulk action. <!--- MC-33345>
 
 ## Community contributions
 
