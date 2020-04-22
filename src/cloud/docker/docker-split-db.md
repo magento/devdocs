@@ -38,7 +38,8 @@ relationships:
 ```bash
 php vendor/bin/ece-docker build:compose
 ```
-NOTES: As with the 'db' container, you can use the options to set the ports to forward to your local environment:
+{: .bs-callout-note } 
+As with the 'db' container, you can use the options to set the ports to forward to your local environment:
   
 ```bash
 php vendor/bin/ece-docker build:compose --expose-db-quote-port=<port for quotee db service> --expose-db-sales-port=<port for sales db service>
@@ -142,7 +143,7 @@ magento-cloud_db_1              docker-entrypoint.sh mysqld      Up             
 ...
 ```
 
-8. In the environment variable 'MAGENTO_CLOUD_RELATIONSHIPS' of "deploy" service has also added data about credentials to access new database services. 
+8. In the environment variable 'MAGENTO_CLOUD_RELATIONSHIPS' of 'deploy' service has also added data about credentials to access new database services. 
 
 ```bash
 docker-compose run deploy bash -c "echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp"
@@ -173,4 +174,29 @@ Expected result:
 }
  ```
  
-Now everything is ready to install Magento with Split Databases
+Now everything is ready to install Magento with split database solution
+The process for deploying Magento with the split database solution in the Magento Cloud Docker is similar to the deployment process in Magento Cloud environment.
+
+9. Add the SPLIT_DB property with type or types of tables that will be imported into other databases into `.magento.env.yaml`
+
+```yaml
+stage:
+    deploy:
+        SPLIT_DB:
+            - quote
+            - sales
+```
+
+10. Run build phase of deployment process 
+```bash
+docker-compose run build cloud-build
+```
+
+11. Run deploy phase of deployment process
+```bash
+docker-compose run deploy cloud-deploy
+```
+
+At the deploy phase, `ece-tools` runs all the necessary commands to deploy the split DB solution for types specify in the SPLIT DB property of `.magento env.yaml` file
+
+After deploying Magento with the split DB solution, use the database credentials and port information to manage each database. See [Manage the database]({{site.baseurl}}/cloud/docker/docker-manage-database.html.
