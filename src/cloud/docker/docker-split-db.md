@@ -93,7 +93,7 @@ services:
 ...
 ```
      
-6. The file `./.docker/config.php.dist` was generated with next configurations:
+6.  Verify that the `./.docker/config.php.dist`  environment configuration file includes the updated database service configuration:
 
 ```php
 <?php
