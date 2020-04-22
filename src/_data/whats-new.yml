@@ -13,7 +13,7 @@ entries:
   date: April 20, 2020
   link: https://github.com/magento/devdocs/pull/7035
 - description: Added correct db schema information in the [Configure declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 16, 2020
@@ -31,7 +31,7 @@ entries:
   date: April 15, 2020
   link: https://github.com/magento/devdocs/pull/7044
 - description: Added a Troubleshooting section in the [Docker services container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
-    topic
+    topic.
   versions: 2.x
   type: Technical
   date: April 15, 2020
@@ -56,7 +56,7 @@ entries:
   type: Major Update
   date: April 14, 2020
   link: https://github.com/magento/devdocs/pull/6823
-- description: Created new topic about the [Magento Privacy JS Library](https://devdocs.magento.com/compliance/privacy/magento-privacy-js-library.html)
+- description: Created new topic about the [Magento Privacy JS Library](https://devdocs.magento.com/compliance/privacy/magento-privacy-js-library.html).
   versions: '2.x'
   type: New Topic
   date: April 14, 2020
@@ -69,26 +69,26 @@ entries:
   date: April 13, 2020
   link: https://github.com/magento/devdocs/pull/7030
 - description: Updated a code block in the [How to add CLI commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7016
 - description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 9, 2020
   link: https://github.com/magento/devdocs/pull/7015
 - description: Fix codeblock syntax in the [Register your component](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/component-registration.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 8, 2020
   link: https://github.com/magento/devdocs/pull/7009
 - description: Add another way of declaring a new CLI command in the [How to add CLI
     commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 8, 2020
@@ -101,31 +101,31 @@ entries:
   date: April 7, 2020
   link: https://github.com/magento/devdocs/pull/6934
 - description: Fix file location in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 7, 2020
   link: https://github.com/magento/devdocs/pull/6994
 - description: Update theme file name in the [Compile LESS using Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 7, 2020
   link: https://github.com/magento/devdocs/pull/7004
 - description: Added HTML example in the [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
-    topic
+    topic.
   versions: '2.3.x'
   type: Technical
   date: April 6, 2020
   link: https://github.com/magento/devdocs/pull/6989
 - description: Removed recommendations about defining separate types for input and
-    output data in GraphQL [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html#mutation-syntax)
+    output data in GraphQL [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html#mutation-syntax).
   versions: 2.3.x
   type: Technical
   date: April 6, 2020
   link: https://github.com/magento/devdocs/pull/7001
 - description: Update the JDK 8 install command in the [Install and configure Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#install-prereq-java-ubuntu)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: April 3, 2020
@@ -137,14 +137,14 @@ entries:
   date: April 2, 2020
   link: https://github.com/magento/devdocs/pull/6927
 - description: Update instruction to improve performance in the [Configure Docker
-    environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic
+    environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic.
   versions: '2.x'
   type: Technical
   date: April 2, 2020
   link: https://github.com/magento/devdocs/pull/6709
 - description: Added example for adjusting the form validation message in the [Custom
     validation rules](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-validation.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Major Update
   date: April 1, 2020
@@ -156,33 +156,33 @@ entries:
   type: Major Update
   date: April 1, 2020
   link: https://github.com/magento/devdocs/pull/6946
-- description: Describing how to perform any kind of [custom form validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-form-validation.html) to a custom form
+- description: Describing how to perform any kind of [custom form validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-form-validation.html) to a custom form.
   versions: 2.3.x
   type: New Topic
   date: April 1, 2020
   link: https://github.com/magento/devdocs/pull/6886
 - description: Added a sample response in the [GraphQL requests](https://devdocs.magento.com/guides/v2.3/graphql/send-request.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: March 31, 2020
   link: https://github.com/magento/devdocs/pull/6839
 - description: Removes RabbitMX EOL version number in the [RabbitMQ](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/install-rabbitmq.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: March 31, 2020
   link: https://github.com/magento/devdocs/pull/6943
 - description: Added note about setting the explicit defaults for timestamp config
     in the [MySQL]( https://devdocs.magento.com/guides/v2.3/install-gde/prereq/mysql.html#instgde-prereq-mysql-config)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: March 31, 2020
   link: https://github.com/magento/devdocs/pull/6916
 - description: Fix argument names in a code block in the [Create a new storefront
     theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-create.html)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: March 30, 2020
@@ -195,13 +195,13 @@ entries:
   link: https://github.com/magento/devdocs/pull/6947
 - description: Adds more content to the example in the [Common layout customization
     tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html#layout_markup_add_to_elements)
-    topic
+    topic.
   versions: 2.3.x
   type: Technical
   date: March 30, 2020
   link: https://github.com/magento/devdocs/pull/6938
 - description: Fixed code style for JSON blocks and styles of the collapsible elements
-    in the [Order processing tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-intro.html)
+    in the [Order processing tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-intro.html).
   versions: 2.3.x
   type: Technical
   date: March 30, 2020
