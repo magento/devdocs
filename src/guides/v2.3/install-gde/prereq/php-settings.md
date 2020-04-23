@@ -66,7 +66,9 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
-    PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+```terminal
+PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+```
 
 -  Set the PHP memory limit.
 
@@ -76,19 +78,14 @@ The `bcmath` extension is required for {{site.data.var.ee}} only.
       -  Installing and updating Magento components from Magento Marketplace, `2G`
       -  Testing, `~3-4G`
 
--  Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
+-  Enable [`opcache.save_comments`](https://www.php.net/manual/en/opcache.configuration.php#ini.opcache.save-comments){:target="_blank"}, which is required for Magento 2.1 and later.
 
-   If `asp_tags are` enabled, errors display when accessing PHTML templates.
-  `asp_tags` were removed in PHP 7.
-
--  Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"}, which is required for Magento 2.1 and later.
-
-   We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+   We recommend you enable the [PHP OPcache](https://www.php.net/manual/en/book.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
 
    Magento 2.1 and later use PHP code comments for code generation.
 
 {:.bs-callout-info}
-To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
+To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and the PHP web server plug-in's configuration. For more information, see the next section.
 
 ## Step 1: Find PHP configuration files {#php-required-find}
 
@@ -96,17 +93,15 @@ This section discusses how you find the configuration files necessary to update 
 
 ### Find `php.ini` configuration file
 
-To find the web server configuration, run a [`phpinfo.php` file]({{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpinfo) in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a [`phpinfo.php` file]({{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpinfo) in your web browser and look for the `Loaded Configuration File` as follows:
 
 ![]({{ site.baseurl }}/common/images/config_phpini-webserver.png)
 
 To locate the PHP command-line configuration, enter
 
 ```bash
-php --ini
+php --ini | grep "Loaded Configuration File"
 ```
-
-Use the value of Loaded Configuration file.
 
 {:.bs-callout-info}
 If you have only one `php.ini` file, make the changes in that file. If you have two `php.ini` files, make the changes in *all* files. Failure to do so might cause unpredictable performance.
@@ -129,7 +124,7 @@ Use the following guidelines to find it:
    sudo find / -name 'opcache.ini'
    ```
 
--  nginx web server with PHP-FPM: `/etc/php5/fpm/php.ini`
+-  nginx web server with PHP-FPM: `/etc/php/7.2/fpm/php.ini`
 
 If you have more than one `opcache.ini`, modify all of them.
 
@@ -138,7 +133,7 @@ If you have more than one `opcache.ini`, modify all of them.
 To set PHP options:
 
 1. Open a `php.ini` in a text editor.
-1. Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
+1. Locate your server's time zone in the available [time zone settings](https://php.net/manual/en/timezones.php){:target="_blank"}
 1. Locate the following setting and uncomment it if necessary:
 
    ```conf
@@ -154,25 +149,18 @@ To set PHP options:
    memory_limit=2G
    ```
 
-1. Locate the following setting:
-
-   ```conf
-   asp_tags =
-   ```
-
-1. Make sure its value is set to `Off`.
 1. Save your changes and exit the text editor.
 1. Open the other `php.ini` (if they are different) and make the same changes in it.
 
 ## Step 3: Set OPcache options {#php-required-opcache}
 
-To set opcache.ini options:
+To set `opcache.ini` options:
 
-1. Open your OpCache configuration file in a text editor:
+1. Open your OPcache configuration file in a text editor:
 
    -  `opcache.ini` (CentOS)
    -  `php.ini` (Ubuntu)
-   -  `/etc/php5/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
+   -  `/etc/php/7.2/fpm/php.ini` (nginx web server (CentOS or Ubuntu))
 
 1. Locate `opcache.save_comments` and uncomment it if necessary.
 1. Make sure its value is set to `1`.
