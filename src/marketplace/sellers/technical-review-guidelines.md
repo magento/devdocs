@@ -44,35 +44,35 @@ Any code submitted for technical review at [Magento Developers Portal](https://d
 
 1. Code submitted as a zip archive.
 1. Submitted package does not exceed 30 MB.
-1. Submitted package contains `composer.json` file.
-1. `composer.json` file specifies:
+1. Submitted package contains a `composer.json` file.
+1. The `composer.json` file specifies:
    -  `name`
    -  `type`
    -  `version`
-1. `composer.json` does not declare:
+1. The `composer.json` does not declare:
    -  `extra.map`
    -  `extra.magento-root-dir`
-1. Package has valid Composer package type:
-   -  for extension valid types are: `magento2-module`, `magento2-language`, `metapackage`
-   -  for theme valid types is only `magento2-theme`
-   -  for shared library valid types are: `magento2-module`, `magento2-theme`, `magento2-language`
-1. Package does not restict set of compatible PHP versions declared by supported Magento versions.
-1. Package does not declare any of the following packages as a dependency:
+1. The package has valid Composer package type:
+   -  for extensions, valid types are: `magento2-module`, `magento2-language`, `metapackage`
+   -  for themes, valid types is only `magento2-theme`
+   -  for shared libraries, valid types are: `magento2-module`, `magento2-theme`, `magento2-language`
+1. The package does not restict a set of compatible PHP versions declared by supported Magento versions.
+1. The package does not declare any of the following packages as a dependency:
    -  `magento/magento-composer-installer`
    -  `magento/magento2-base`
    -  `magento/product-community-edition`
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
-1. Package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
-1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
+1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
+1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in the `composer.json` file.
 
-Additional requirements to package declaration are applied depending on package type.
+Additional requirements for package declarations are applied depending on the package type.
 
-Magento modules (packages type `magento2-module`) must have correct `registrar.php` file and configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `compopser.json`: `autoload.files` must include at least `registrar.php` and `autoload.psr-4` is expected to declare at least one namespace.
+Magento modules (packages with type `magento2-module`) must have a valid `registrar.php` file. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `compopser.json`: `autoload.files` must include at least a `registrar.php` file and `autoload.psr-4` is expected to declare at least one namespace.
 
-Magento themes (package type `magento2-theme`) and language packages (type `magento2-language`) must have correct `registrar.php` which must be included in `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
+Magento themes (package type `magento2-theme`) and language packages (type `magento2-language`) must have a valid `registrar.php` file, which must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
 
-Packages of type `metapackage` must declare at least one dependency in `require` section.
+Packages of type `metapackage` must declare at least one dependency in the `require` section.
 
 ### Intellectual Property: Check for plagiarism
 
