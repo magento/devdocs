@@ -32,9 +32,15 @@ The Marketplace coding standard review uses a custom set of coding sniffs. If th
 
 _See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html)
 
-### Package Validation: Verify that submitted code is a valid Magento extension
+### Package Validation: verify that submitted code is a valid Magento extension
 
-This check verifies that submitted code is packaged as a valid Magento module, theme, language package, or meta-package, enforces best practices for Magento code distribution, and helps to avoid common pitfalls. Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined that:
+This check verifies that submitted code:
+
+-  Is packaged as a valid Magento module, theme, language package, or meta-package
+-  Enforces best practices for Magento code distribution
+-  Helps to avoid common pitfalls
+
+Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined to ensure that:
 
 1. Code submitted as a zip archive.
 1. Submitted package does not exceed 30 MB.
