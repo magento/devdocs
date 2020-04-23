@@ -32,11 +32,11 @@ The Marketplace coding standard review uses a custom set of coding sniffs. If th
 
 _See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html)
 
-### Package Verification: Verify that submitted code is valid Magento extension
+### Package Validation: Verify that submitted code is a valid Magento extension
 
-This check verifies that submitted code is packaged as valid Magento module, theme, language package, or meta-package, enforces best practices for Magento code distribution and helps to avoid common pitfalls. Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined that:
+This check verifies that submitted code is packaged as a valid Magento module, theme, language package, or meta-package, enforces best practices for Magento code distribution, and helps to avoid common pitfalls. Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined that:
 
-1. Code submitted as zip archive.
+1. Code submitted as a zip archive.
 1. Submitted package does not exceed 30 MB.
 1. Submitted package contains `composer.json` file.
 1. `composer.json` file specifies:
@@ -57,7 +57,7 @@ This check verifies that submitted code is packaged as valid Magento module, the
    -  `magento/product-community-edition`
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
-1. Package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restrictin should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
+1. Package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
 1. [Require inline alieases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
 
 Additional requirements to package declaration are applied depending on package type.
