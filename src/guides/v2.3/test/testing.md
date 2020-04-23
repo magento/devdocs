@@ -236,7 +236,7 @@ MFTF tests are kept within its respective Module folder:
 
 <!-- Link Definitions -->
 [Magento definition of done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
-[Functional]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Functional]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
 [performance toolkit]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html
@@ -244,7 +244,7 @@ MFTF tests are kept within its respective Module folder:
 [PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
-[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
