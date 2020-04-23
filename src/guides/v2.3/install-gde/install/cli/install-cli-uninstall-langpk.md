@@ -24,7 +24,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 Command usage:
 
 ```bash
-magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
+bin/magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
 ```
 
 The language package uninstall command performs the following tasks:
@@ -47,7 +47,7 @@ Cannot uninstall vendorname/language-en_us because the following package(s) depe
 One alternative is to uninstall both language packages after backing up the Magento codebase:
 
 ```bash
-magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
+bin/magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
 ```
 
 Messages similar to the following display:
