@@ -52,7 +52,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is default. See [Content Security Policy Overview](devdocs.magento.com/security/content-security-policy-overview.html)
+*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is default. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html)
 
 *  **Removal of session_id from URLs**. Exposure of `session id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods add/read session id from URLs.
 
