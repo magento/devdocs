@@ -58,7 +58,7 @@ This check verifies that submitted code is packaged as a valid Magento module, t
    -  `magento/magento2-ee-base`
    -  `magento/product-enterprise-edition`
 1. Package does not use `*` as version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
-1. [Require inline alieases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
+1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in `composer.json` file.
 
 Additional requirements to package declaration are applied depending on package type.
 
