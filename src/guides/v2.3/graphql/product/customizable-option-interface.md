@@ -205,13 +205,16 @@ Attribute | Type | Description
 
 The following query returns information about the customizable options configured for the product with a `sku` of `xyz`.
 
-```text
+**Request:**
+
+```graphql
+{
   products(filter: {sku: {eq: "xyz"}}) {
     items {
       id
       name
       sku
-      type_id
+      __typename
       ... on CustomizableProductInterface {
         options {
           title
@@ -220,6 +223,33 @@ The following query returns information about the customizable options configure
           option_id
         }
       }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 1,
+          "name": "T-shirt",
+          "sku": "xyz",
+          "__typename": "SimpleProduct",
+          "options": [
+            {
+              "title": "Image",
+              "required": false,
+              "sort_order": 1,
+              "option_id": 1
+            }
+          ]
+        }
+      ]
     }
   }
 }

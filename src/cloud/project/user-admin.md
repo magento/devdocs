@@ -113,21 +113,21 @@ To create user accounts from the Project Web UI:
 
 1. Click the **Projects** tab as the following figure shows.
 
-   ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud_account_project.png){:width="550px"}
+   ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud/cloud_account_project.png){:width="550px"}
 
 1. Click the name of your project.
 
 1. Click the configure project button next to project name in the top navigation bar as the following figure shows.
 
-   ![Configure the project]({{ site.baseurl }}/common/images/cloud_project_gear.png){:width="184px"}
+   ![Configure the project]({{ site.baseurl }}/common/images/cloud/cloud_project_gear.png){:width="184px"}
 
 1. In the right pane, click **Add Users**.
 
-   ![Start creating users]({{ site.baseurl }}/common/images/cloud_project-config.png){:width="500px"}
+   ![Start creating users]({{ site.baseurl }}/common/images/cloud/cloud_project-config.png){:width="500px"}
 
 1. Click **Add User**.
 
-   ![Add users]({{ site.baseurl }}/common/images/cloud_project-add-superuser.png){:width="500px"}
+   ![Add users]({{ site.baseurl }}/common/images/cloud/cloud_project-add-superuser.png){:width="500px"}
 
 1. Enter the user e-mail address.
 

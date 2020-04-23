@@ -25,3 +25,6 @@ This module is present at [`lib/web/mage/validation.js`]({{ site.mage2bloburl }}
 
 This module is present at [`lib/web/mage/validation/validation.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/validation/validation.js). This is considered the entry point for the form validator in Magento and is aliased as `validation` at [`Magento_Theme/view/frontend/requirejs-config.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/requirejs-config.js#L29). This includes `mage/validation` (which in turn includes `jquery/validate`), and adds a few more rules to the validator.
 
+## See also
+
+*  [Validate a custom form]({{ page.baseurl }}/frontend-dev-guide/validations/custom-form-validation.html)
