@@ -58,8 +58,8 @@ Functional tests are mainly used for system tests at a very high level by remote
 
 The [Magento Functional Testing Framework][] (MFTF) is the main way to do functional testing. It uses XML files to run browser testing.
 
-The [Functional Testing Framework][] (FTF) is the original framework used for testing Magento. This uses PHP scripts to run browser testing.
-This framework is no longer in development and all FTF tests are in the process of being [ported over][] to the MFTF.
+The [Functional Testing Framework][] (FTF) was the original framework used for testing Magento. It used PHP scripts to run browser testing.
+This framework is no longer supported and FTF tests were [ported over][] to MFTF.
 Until the porting to MFTF is finished, the FTF can still be run to ensure complete functional testing coverage.
 
 ## API Functional
@@ -244,7 +244,7 @@ MFTF tests are kept within its respective Module folder:
 [PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
-[Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
+[Functional Testing Framework]: https://github.com/magento/mtf
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
