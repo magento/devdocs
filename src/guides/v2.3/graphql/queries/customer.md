@@ -28,7 +28,6 @@ The following call returns information about the logged-in customer. Provide the
     lastname
     suffix
     email
-    id
     addresses {
       firstname
       lastname
@@ -56,7 +55,6 @@ The following call returns information about the logged-in customer. Provide the
       "lastname": "Doe",
       "suffix": null,
       "email": "jdoe@example.com",
-      "id": 3,
       "addresses": [
        {
          "firstname": "John",
