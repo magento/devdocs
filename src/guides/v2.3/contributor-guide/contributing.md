@@ -47,7 +47,7 @@ Magento Team and Community Maintainers will be processing contributions based on
 **Priority** signifies how important and urgently it is to fix this defect. In other words Priority means how high it is in the backlog of tasks. The Defect priority status is set by Product Managers. Priority is related to scheduling to resolve the problem. It is a pointer towards the importance of the bug and if High priority is mentioned then the developer has to fix it at the earliest. It also influenced by the technical aspect of the product, reflecting how bad the bug is for the system and also largely related to Business or Marketing aspect.
 
 {:.bs-callout-tip}
-**Severity** is a technical measure. It is an assessment of the impact of the defect without regard to other remaining work or the current schedule.
+**Severity** is an assessment of the defect which indicates the effect it has on the system in terms of its impact. Without regard to other remaining work or the current schedule.
 
 ### Ranking concept
 Severity | Description
@@ -92,7 +92,7 @@ Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred 
 #### Severity
 
 -  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow)
--  Magento Team is allowed to set/edit #triage based on internal triage process and provided information
+-  Magento Team is allowed to set/edit Severity and Priority based on internal triage process and provided information by initial Community triage
 -  Issue reporters can provide own evaluation for Severity by selecting checkbox from new Issue Report description.
 
 Following list consist of some questions that may allow you to decide yourself the measure of severity.
