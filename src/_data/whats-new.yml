@@ -4,8 +4,19 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Apr 22 10:36:00 2020
+updated: Fri Apr 24 14:03:20 2020
 entries:
+- description: Added the 'Package Validation' section to the [Technical Review Guidelines](https://devdocs.magento.com/marketplace/sellers/technical-review-guidelines.html).
+  versions: 2.3.x
+  type: Major Update
+  date: April 23, 2020
+  link: https://github.com/magento/devdocs/pull/7082
+- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 22, 2020
+  link: https://github.com/magento/devdocs/pull/7073
 - description: Added 'Set a fixed price for bundled products' to the [REST usage notes](https://devdocs.magento.com/guides/v2.3/rest/notes.html)
     topic.
   versions: 2.3.x
@@ -114,7 +125,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7004
 - description: Added HTML example in the [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
     topic.
-  versions: '2.3.x'
+  versions: 2.3.x
   type: Technical
   date: April 6, 2020
   link: https://github.com/magento/devdocs/pull/6989
@@ -138,7 +149,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6927
 - description: Update instruction to improve performance in the [Configure Docker
     environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic.
-  versions: '2.x'
+  versions: 2.x
   type: Technical
   date: April 2, 2020
   link: https://github.com/magento/devdocs/pull/6709
