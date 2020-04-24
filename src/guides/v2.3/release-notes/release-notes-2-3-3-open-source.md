@@ -137,6 +137,10 @@ See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-note
 
 PWA Studio 4.0.0 contains new hooks in Peregrine. Existing components have also been refactored to convert them into re-useable Peregrine hooks. For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
+### Google Shopping ads Channel
+
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension.
+
 ### Magento Shipping
 
 Due to the impending shutdown of Temando (the provider of the technology behind Magento Shipping), it is no longer possible to create a new Magento Shipping account. Support for current Magento Shipping deployments for all existing customers will continue. For detailed status information and recommendations for new shipping implementations in Magento, see our product information page.
