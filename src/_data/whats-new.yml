@@ -6,6 +6,36 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Fri Apr 24 14:03:20 2020
 entries:
+- description: Added a deprecation notice for the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Technical
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7055
+- description: Added [B2B Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/b2b-release-notes.html).
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7047
+- description: Added [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html), and changed navigation from "Compliance" to "Security and Compliance".
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7020
+- description: Added 2.3.5-develop backward incompatible changes [reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html) for pre-release.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6967
+- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6638
+- description: The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the _GraphQL Developer Guide_ for details.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6123
 - description: Added the 'Package Validation' section to the [Technical Review Guidelines](https://devdocs.magento.com/marketplace/sellers/technical-review-guidelines.html).
   versions: 2.3.x
   type: Major Update
