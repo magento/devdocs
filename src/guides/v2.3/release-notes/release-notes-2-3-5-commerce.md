@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5) provides. Patch 2.3.4.2 (Composer package 2.3.4-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.4. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include only security bug fixes; not the additional security enhancements that are included in the full patch.
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5-p1) provides. Patch 2.3.4.2 (Composer package 2.3.4-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.4. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include only security bug fixes; not the additional security enhancements that are included in the full patch.
 
 With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
 
@@ -152,6 +152,10 @@ The Google Shopping ads Channel bundled extension has reached end-of-life with t
 ### B2B
 
 This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
+
+### Product Recommendations
+
+Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html).
 
 ### Vendor-developed extension enhancements
 
@@ -445,7 +449,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22819-->
 
-*  We’ve improved the reliability of background `cron` execution. `cron:run` execution no longer causes an error on the application level, and `cron` jobs now rely on the lock framework.
+*  We’ve improved the reliability of background `cron` execution. We now use the Magento Lock Framework to lock `cron` jobs. Previously, Magento used job status in the `cron_schedule` table. As a result, `cron:run` execution no longer causes an error on the application level.
 
 ### Custom customer attributes
 
@@ -1197,12 +1201,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 **Issue**: Magento prompts customers to log in by displaying this message: `This account is not confirmed. <a href="Base URLcustomer/account/confirmation/?email=customer70%40yopmail.com">Click here</a> to resend confirmation email`.  The **Click here** link in this message should open the Send confirmation link page, but is currently inactive. Magento instead displays this message: `This account is not confirmed`. Click here to resend confirmation email`. **Workaround**: A hot fix will soon be available for this issue, and a fix will be available in Magento 2.3.6, with is scheduled for release in Q4 2020. <!--- MC-33148-->
 
+**Issue**: Magento 2.3.5 does not support  upgrading using the Web Setup Wizard from deployments running Magento 2.3.3 or earlier without manually updating dependencies for  `magento/updater`.  You can upgrade using the Web Setup Wizard without issue from Magento 2.3.4 to Magento 2.3.5. **Workaround**: Users should run the following commands before upgrading using the Web Setup Wizard:
+
+`cd update`
+`&& composer update`
+
 **Issue**: The Compare Products feature does not work as expected in deployments with multiple store views. When a user tries to compare products from multiple store views and one product has an empty value for a comparable attribute, Magento displays a corrupted Compare Products page. **Workaround**: Comparable attribute values cannot be empty. Merchants should specify non-empty values for comparable product attributes or use the default storeview value for the attribute. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33203-->
 
 **Issue**: Magento throws an error on the Order Summary  section of the checkout workflow when a customer removes store credit after first selecting it as a payment method for the entire order. **Workaround**: Customers can refresh the Order page by pressing **F5**. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
 <!-- MC-33431-->
 
-**Issue**: The storefront checkout workflow will not display any payment method that has been enabled for only specific countries with the exception of these payment methods: PayPal, Braintree, Klarna, and Amazon Pay. **Workaround**: No workaround for this issue is available in Magento 2.3.5. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.   <!--- MC-33105-—>
+**Issue**: The storefront checkout workflow will not display any payment method that has been enabled for only specific countries with the exception of these payment methods: PayPal, Braintree, Klarna, and Amazon Pay. **Workaround**: No workaround for this issue is available in Magento 2.3.5. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.   <!-- MC-33105-—>
 
 **Issue**: You cannot complete an order to be shipped to multiple addresses if one of the ordered products is a virtual product. Currently, when you check out, Magento successfully places the order for the physical products, but the virtual product order is empty. **Workaround**: A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-32819-->
 
