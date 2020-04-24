@@ -11,12 +11,12 @@ The following table describes the status of Magento software availability and wh
 
 | Product                                           | Availability                                                                                                                                | How to get it                                                                                     |
 |---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **{{site.data.var.ee}} 2.3.5**                    | April 2020                                                                                                                                  | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
-| **{{site.data.var.ee}} 2.3.4-p1** (security only) | April 2020                                                                                                                                  | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
+| **{{site.data.var.ee}} 2.3.5-p1**                 | Available now                                                                                                                               | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
+| **{{site.data.var.ee}} 2.3.4-p2** (security only) | Available now                                                                                                                               | [Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html)                              |
 | **{{site.data.var.ece}} Tools (aka ECE-Tools)**   | Available now                                                                                                                               | [Composer]({{ site.baseurl }}/cloud/project/ece-tools-update.html)                                |
 | **Product Recommendations**                       | Early access January 2020                                                                                                                   | [Email request](mailto:magento-product-recs-feedback@adobe.com)                                   |
 | **PWA Studio**                                    | Available now                                                                                                                               | [Documentation](http://pwastudio.io) and [GitHub](https://github.com/magento-research/pwa-studio) |
-| **Amazon Sales Channel 4.0**                    | Available now for {{site.data.var.ece}} 2.3.x (US, Canada, Mexico, and UK)                                                           | [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
+| **Amazon Sales Channel 4.0**                      | Available now for {{site.data.var.ece}} 2.3.x (US, Canada, Mexico, and UK)                                                                  | [Magento Marketplace](https://marketplace.magento.com/magento-module-amazon.html)                 |
 | **Google Shopping ads Channel 3.0.1**             | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x <br>Bundled in Magento starting with 2.3.3, but still available on the Marketplace | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)            |
 
 ## Patch schedule
@@ -29,12 +29,12 @@ For general information about security releases, see [Introducing the New Securi
 
 The following table provides the dates for each patch scheduled for release in 2020:
 
-| Version           | Pre-release | GA         |
-|-------------------|-------------|------------|
-| 2.3.4<br>2.3.3-p1 | January 14  | January 28 |
-| 2.3.5<br>2.3.4-p1 | April 14    | April 28   |
-| 2.3.5-p1          | July 14     | July 28    |
-| 2.3.6             | October 1   | October 15 |
+| Version              | Pre-release | GA         |
+|----------------------|-------------|------------|
+| 2.3.4<br>2.3.3-p1    | January 14  | January 28 |
+| 2.3.5-p1<br>2.3.4-p2 | April 14    | April 28   |
+| 2.3.5-p2             | July 14     | July 28    |
+| 2.3.6                | October 1   | October 15 |
 
 _These dates are subject to change._
 
