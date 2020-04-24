@@ -46,7 +46,7 @@ The parameter format must be `<hostname or ip>:<listen port>`, where you can omi
 For example,
 
 ```bash
-magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+bin/magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 ```
 
 You can then purge Varnish hosts when you refresh the Magento cache (also referred to as *cleaning* the cache) in the [Magento Admin](https://glossary.magento.com/magento-admin) or using the command line.
