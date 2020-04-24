@@ -63,7 +63,10 @@ Magento 2.2+ does not support HipHop Virtual Machine (HHVM).
 
 Magento also provides automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.
 
-This framework is located in the `dev/tests` directory. The functional testing framework `mftf` can be found in a [separate repository](https://github.com/magento/mftf){:target="_blank"}.
+This framework is located in the `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for local, customized tests and `<magento_root>/vendor/<vendor_name>/<module_name>/Test/Mftf/` for tests provided by Magento and vendors. If you installed Magento with Composer, please refer to vendor/magento/<module_dir>/Test/Mftf/ for examples. 
+
+The functional testing framework `mftf` can be found in a [separate repository](https://github.com/magento/mftf){:target="_blank"}.
+
 For more information, see the [Magento Functional Testing Framework]({{site.baseurl}}/mftf/docs/introduction.html) guide.
 
 {:.ref-header}
