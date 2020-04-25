@@ -63,7 +63,7 @@ If an error displays when you run these commands, verify that you updated instal
 The install command uses the following format:
 
 ```bash
-magento setup:install --<option>=<value> ... --<option>=<value>
+bin/magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
 The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
@@ -169,7 +169,7 @@ The following example installs Magento with the following options:
 *  Default time zone is U.S. Central (America/Chicago)
 
 ```bash
-magento setup:install --base-url=http://127.0.0.1/magento2/ \
+bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
@@ -191,7 +191,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 In {{ site.data.var.ee }} version 2.2.8 and later, you have the option to install Magento without creating the Magento administrator user as shown in the following example.
 
 ```bash
-magento setup:install --base-url=http://127.0.0.1/magento2/ \
+bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
 ```
@@ -236,7 +236,7 @@ The following example installs Magento with the following options:
 *  Uses server rewrites
 
 ```bash
-magento setup:install --base-url=http://127.0.0.1/magento2/ \
+bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
