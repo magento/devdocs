@@ -207,7 +207,7 @@ The following searchCriteria can be used to determine the sort order and the num
 
 ### Example for search criteria to determine the sort order and attributes to return
 
-This example shows how to use search criteria to determine the sort order and attributes to return. This example endpoint returns orders with status `pending`
+This example shows how to use search criteria to determine the sort order and attributes to return. It returns orders with status `pending`.
 
 **Endpoint:**
 
@@ -219,13 +219,13 @@ This example shows how to use search criteria to determine the sort order and at
 
 `Authorization` `Bearer <administrator token>`
 
-**Params:**
+**Parameters:**
 
-Param | Value | Description
+Parameter | Value | Description
 --- | --- | ---
 searchCriteria[filter_groups][0][filters][0][field] | status | Attribute name to filter
 searchCriteria[filter_groups][0][filters][0][value] | pending | Attribute value to filter
-fields | items[increment_id,entity_id] | Attributes needs to be return in response. If not specify this param, all attributes will be return
+fields | items[increment_id,entity_id] | Attributes to return in the response. If you do not specify this parameter, all attributes will be returned.
 
 **Payload:**
 
@@ -242,8 +242,6 @@ fields=items[increment_id,entity_id]
 ```
 
 **Response:**
-
-Response would be as follows.
 
 ```json
 {
