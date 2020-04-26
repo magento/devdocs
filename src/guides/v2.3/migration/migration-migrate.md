@@ -39,7 +39,7 @@ In addition to the command arguments mentioned here, see [Common arguments]({{ p
 Below is a typical command example:
 
 ```bash
-bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
+bin/magento migrate:<mode> [-r|--reset] [-a|--auto] {<path to config.xml>}
 ```
 
 where:
@@ -47,6 +47,8 @@ where:
 1. `<mode>` may be: [`settings`]({{ page.baseurl }}/migration/migration-migrate-settings.html), [`data`]({{ page.baseurl }}/migration/migration-migrate-data.html), or [`delta`]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 1. `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
+
+1. `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 1. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
