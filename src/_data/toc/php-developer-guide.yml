@@ -153,6 +153,9 @@ pages:
         - label: EAV and extension attributes
           url: /extension-dev-guide/attributes.html
 
+        - label: EAV Entity Types
+          url: /extension-dev-guide/eav-entity-types.html
+
         - label: Plugins (Interceptors)
           url: /extension-dev-guide/plugins.html
 
