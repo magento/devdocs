@@ -19,6 +19,26 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v4.1.0
+
+Amazon Sales Channel 4.1.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
+
+-  {:.fix}<!--4247, 4230-->Changed the requirements for creating Magento orders when Amazon orders are set to import. If an order contains an item that is not matched to a catalog item, does not have available stock, or is disabled in the catalog, no Magento order is created. This change was made to correct a variety of order import issues. See [Managing Orders and Fulfillment]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html).
+
+-  {:.fix}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Enhanced the _Recent Orders_ section of the store dashboard, including updates to the user interface, the addition of filters, and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
+
+-  {:.fix}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Amazon Renewed]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
+
+-  {:.fix}<!--CHAN-4073-->Added a **Back** button on the store dashboard. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
+
+-  {:.bug}<!--CHAN-4069-->Corrected an issue causing the distortion of icons on the store car
+.
+-  {:.bug}<!--CHAN-4165-->Corrected an error preventing the _Login_ screen from appearing after the session times out.
+
+-  {:.bug}<!--CHAN-4211-->Corrected an issue preventing the Amazon order tax amount from importing into the new Magento order.
+
+-  {:.bug}<!--CHAN-4234-->Corrected an issue causing revenue totals displayed on the store dashboard to include orders in `Canceled` or `Error` status.
+
 ### v4.0.0
 
 Amazon Sales Channel 4.0.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
