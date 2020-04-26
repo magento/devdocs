@@ -41,8 +41,14 @@ where
 Use the following command to list enabled and disabled modules:
 
 ```bash
-bin/magento module:status
+bin/magento module:status <module-name> [--enabled] [--disabled]
 ```
+
+where
+
+*  `<module-name>` is the name of the module for which you need to check the status.
+*  `--enabled` to list all the enabled modules.
+*  `--disabled` to list all the disabled modules.
 
 For example, to disable the Weee module, enter:
 
