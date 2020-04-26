@@ -31,8 +31,8 @@ Amazon Sales Channel 4.1.0 is compatible with version 2.3.x of {{site.data.var.c
 
 -  {:.fix}<!--CHAN-4073-->Added a **Back** button on the store dashboard. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
 
--  {:.bug}<!--CHAN-4069-->Corrected an issue causing the distortion of icons on the store car
-.
+-  {:.bug}<!--CHAN-4069-->Corrected an issue causing the distortion of icons on the store card.
+
 -  {:.bug}<!--CHAN-4165-->Corrected an error preventing the _Login_ screen from appearing after the session times out.
 
 -  {:.bug}<!--CHAN-4211-->Corrected an issue preventing the Amazon order tax amount from importing into the new Magento order.
