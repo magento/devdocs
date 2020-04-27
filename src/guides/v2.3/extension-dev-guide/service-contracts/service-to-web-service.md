@@ -246,7 +246,7 @@ In this `webapi.xml` example:
    </tr>
    <tr>
       <td>
-         3
+         2
       </td>
       <td>
          The XML schema file that is used to validate the XML.
@@ -256,7 +256,7 @@ In this `webapi.xml` example:
    </tr>
    <tr>
       <td>
-         5
+         4
       </td>
       <td>
          The HTTP method and web resource through which to access the route.
@@ -266,7 +266,7 @@ In this `webapi.xml` example:
    </tr>
    <tr>
       <td>
-         6
+         5
       </td>
       <td>
          The interface that the route implements and the name of the web API method.
@@ -276,7 +276,7 @@ In this `webapi.xml` example:
    </tr>
    <tr>
       <td>
-         8
+         7
       </td>
       <td>
          The resource to which the caller must have access.
@@ -285,7 +285,7 @@ In this `webapi.xml` example:
    </tr>
    <tr>
       <td>
-         18
+         17
       </td>
       <td>
          A required parameter.
