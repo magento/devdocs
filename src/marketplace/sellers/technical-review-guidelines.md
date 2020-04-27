@@ -23,7 +23,7 @@ Developers of Magento 2.x extensions can use the validation tool to test the pac
 _See also:_
 
 -  [PHP Developer Guide]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html)
--  [How to Package Magento Extensions][2]
+-  [How to Package Magento Extensions]({{ site.baseurl }}/guides/v2.3/extension-dev-guide/package/package_module.html)
 -  [Packaging Magento Version 1.x Extensions]({{ site.baseurl }}/marketplace/sellers/packaging-v1x-extensions.html)
 
 ## Coding Standards: Check code quality/syntax
@@ -31,6 +31,48 @@ _See also:_
 The Marketplace coding standard review uses a custom set of coding sniffs. If the submitted code fails to pass the review, a technical report is generated that describes each issue found, and its location in the codebase.
 
 _See also:_ [Coding Standards]({{ site.baseurl }}/guides/v2.3/coding-standards/bk-coding-standards.html)
+
+### Package Validation: verify that submitted code is a valid Magento extension
+
+This check verifies that submitted code:
+
+-  Is packaged as a valid Magento module, theme, language package, or meta-package
+-  Enforces best practices for Magento code distribution
+-  Helps to avoid common pitfalls
+
+Any code submitted for technical review at [Magento Developers Portal](https://developer.magento.com/) is examined to ensure that:
+
+1. Code submitted as a zip archive.
+1. Submitted package does not exceed 30 MB.
+1. Submitted package contains a `composer.json` file.
+1. The `composer.json` file specifies:
+   -  `name`
+   -  `type`
+   -  `version`
+1. The `composer.json` does not declare:
+   -  `extra.map`
+   -  `extra.magento-root-dir`
+1. The package has valid Composer package type:
+   -  for extensions, valid types are: `magento2-module`, `magento2-language`, `metapackage`
+   -  for themes, valid types is only `magento2-theme`
+   -  for shared libraries, valid types are: `magento2-module`, `magento2-theme`, `magento2-language`
+1. The package does not restict a set of compatible PHP versions declared by supported Magento versions.
+1. The package does not declare any of the following packages as a dependency:
+   -  `magento/magento-composer-installer`
+   -  `magento/magento2-base`
+   -  `magento/product-community-edition`
+   -  `magento/magento2-ee-base`
+   -  `magento/product-enterprise-edition`
+1. The package does not use `*` as a version restriction for Magento packages (packages with `magento` vendor). Version restriction should be specified according to [recommendations](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/dependencies.html?itm_source=devdocs&itm_medium=quick_search&itm_campaign=federated_search&itm_term=versio#determine-module-dependency).
+1. [Require inline aliases](https://getcomposer.org/doc/articles/aliases.md#require-inline-alias) are not used in the `composer.json` file.
+
+Additional requirements for package declarations are applied depending on the package type.
+
+Magento modules (packages with type `magento2-module`) must have a valid `registrar.php` file. Configured [autoloading](https://getcomposer.org/doc/04-schema.md#autoload) in `compopser.json`: `autoload.files` must include at least a `registrar.php` file and `autoload.psr-4` is expected to declare at least one namespace.
+
+Magento themes (package type `magento2-theme`) and language packages (type `magento2-language`) must have a valid `registrar.php` file, which must be included in the `autoload.files` section of `composer.json`. `autoload.psr-4` must not be used for these types of packages.
+
+Packages of type `metapackage` must declare at least one dependency in the `require` section.
 
 ### Intellectual Property: Check for plagiarism
 
@@ -70,6 +112,5 @@ This check verifies that the extension installs without error, is configurable (
 -  New and extended content types are rendered on the storefront without errors.
 -  Extensions that use Page Builder should also ensure that all Page Builder content creation functions work correctly. This includes, but is not limited to, all the functions previously described for new and extended content types rendered in the Admin stage and the storefront.
 
-[2]: http://info2.magento.com/rs/magentosoftware/images/packagingmagentoconnectextensions6%200.pdf
 [3]: https://opensource.org/licenses/OSL-3.0
 [4]: http://rosenlaw.com/OSL3.0-explained.htm
