@@ -35,13 +35,17 @@ This example integrates the Textarea component with the [Form]({{ page.baseurl }
     ...
     <fieldset>
         ...
-        <textarea name="textarea_example">
-            <settings>
-                <cols>15</cols>
-                <rows>5</rows>
-                <label translate="true">Textarea Field Example</label>
-            </settings>
-        </textarea>
+        <field name="textarea_example">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="cols" xsi:type="number">15</item>
+                    <item name="rows" xsi:type="number">5</item>
+                    <item name="label" translate="true" xsi:type="string">Textarea Field Example</item>
+                    <item name="dataType" translate="true" xsi:type="string">text</item>
+                </item>
+            </argument>
+        </field>
     </fieldset>
 </form>
 ```

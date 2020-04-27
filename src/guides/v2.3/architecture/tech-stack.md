@@ -58,7 +58,9 @@ For Magento 2.3.5, we have started porting unsupported Zend components to the [L
 
 Magento also provides automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.
 
-The Magento Functional Test Framework (MFTF) is the successor to MTF. You can read more in the [Intro to MFTF](https://devdocs.magento.com/mftf/docs/introduction.html).
+Testing frameworks are located in the `dev/tests` directory. Refer to our [Magento Testing Guide]({{page.baseurl}}/test/testing.html) to learn more about the frameworks and associated tests.
+
+The Magento Functional Test Framework (MFTF) is the successor to MTF. You can read more in the [Intro to MFTF](https://devdocs.magento.com/mftf/docs/introduction.html). The functional testing framework `mftf` can be found in a [separate repository](https://github.com/magento/mftf){:target="_blank"}.
 
 {:.ref-header}
 Related topics
