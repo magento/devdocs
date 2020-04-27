@@ -131,10 +131,6 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 *  Merchants can now sync additional campaigns from Engagement Cloud to Magento.
 
-### Google Shopping ads Channel
-
-[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
-
 ### Vendor-developed extension enhancements
 
 This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
