@@ -166,9 +166,6 @@
       url: /mftf/docs/introduction.html
       versionless: true
 
-    - label: Functional Testing
-      url: /mtf/mtf_introduction.html
-
     - label: Integration Testing
       url: /test/integration/integration_test_execution.html
 

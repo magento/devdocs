@@ -1,1 +1,0 @@
-../../v2.3/mtf/configuration.md

@@ -1,1 +1,0 @@
-../../../v2.3/mtf/create_test/create_new_test.md
