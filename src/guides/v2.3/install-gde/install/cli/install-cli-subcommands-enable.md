@@ -20,14 +20,14 @@ This command has no prerequisites.
 Use the following command to list enabled and disabled modules:
 
 ```bash
-bin/magento module:status <module-name> [--enabled] [--disabled]
+bin/magento module:status [--enabled] [--disabled] [<module-name>]
 ```
 
 where
 
-*  `<module-name>` is the name of the module for which you need to check the status.
-*  `--enabled` to list all the enabled modules.
-*  `--disabled` to list all the disabled modules.
+*  `--enabled` lists all enabled modules.
+*  `--disabled` lists all disabled modules.
+*  `<module-name>` specifies which module to return the status of. You cannot specify multiple module names.
 
 ## Module enable, disable {#instgde-cli-subcommands-enable-disable}
 
