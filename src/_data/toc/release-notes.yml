@@ -94,6 +94,3 @@ pages:
           url: /extensions/amazon-sales/release-notes/
           versionless: true
 
-        - label: Google Shopping ads
-          url: /extensions/google-shopping-ads/release-notes/
-          versionless: true
