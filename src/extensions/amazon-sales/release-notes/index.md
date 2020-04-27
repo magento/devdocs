@@ -25,7 +25,7 @@ Amazon Sales Channel 4.1.0 is compatible with version 2.3.x of {{site.data.var.c
 
 -  {:.fix}<!--4247, 4230-->Changed the requirements for creating Magento orders when Amazon orders are set to import. If an order contains an item that is not matched to a catalog item, does not have available stock, or is disabled in the catalog, no Magento order is created. This change was made to correct a variety of order import issues. See [Managing Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html).
 
--  {:.fix}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
+-  {:.fix}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html).
 
 -  {:.fix}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Amazon Renewed]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
 
