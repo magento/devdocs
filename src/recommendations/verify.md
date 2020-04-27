@@ -4,7 +4,7 @@ title: Verify Event Collection
 ee_only: True
 ---
 
-After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/install-configure.html) the product recommendations module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
+After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/install-configure.html) the `magento/product-recommendations` module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
 
 ## Verify using developer tools in Chrome
 
