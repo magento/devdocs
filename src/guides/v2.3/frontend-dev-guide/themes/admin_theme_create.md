@@ -83,8 +83,8 @@ To customize the Admin theme logo:
            <referenceBlock name="logo">
                <arguments>
                    <argument name="logo_image_src" xsi:type="string">images/custom-logo.svg</argument>
-                   <argument name="logo_img_width" xsi:type="number">150</argument> <!-- Add custom logo width -->
-                   <argument name="logo_img_height" xsi:type="number">80</argument> <!-- Add custom logo height -->
+                   <argument name="logo_width" xsi:type="number">150</argument> <!-- Add custom logo width -->
+                   <argument name="logo_height" xsi:type="number">80</argument> <!-- Add custom logo height -->
                </arguments>
            </referenceBlock>
        </body>
