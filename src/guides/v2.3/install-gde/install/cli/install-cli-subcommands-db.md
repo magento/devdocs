@@ -22,11 +22,11 @@ Before you run this command, you must [Create or update the deployment configura
 Command usage:
 
 ```bash
-magento setup:db-schema:upgrade
+bin/magento setup:db-schema:upgrade
 ```
 
 To see the status of the database, enter
 
 ```bash
-magento setup:db:status
+bin/magento setup:db:status
 ```

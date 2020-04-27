@@ -35,7 +35,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 Command usage:
 
 ```bash
-magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
+bin/magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
 ```
 
 where
@@ -77,7 +77,7 @@ Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following pa
 One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:
 
 ```bash
-magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
+bin/magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
 ```
 
 Messages similar to the following display:

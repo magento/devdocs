@@ -29,7 +29,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 Command usage:
 
 ```bash
-magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
+bin/magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
   {ModuleName} ... {ModuleName}
 ```
 
@@ -82,7 +82,7 @@ magento module:uninstall Magento_SampleMinimal
 One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's [database schema](https://glossary.magento.com/database-schema) or data:
 
 ```bash
-magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
+bin/magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 ```
 
 Messages similar to the following display:
@@ -128,7 +128,7 @@ Errors display if you attempt to uninstall a module with a dependency on another
 To restore the Magento codebase to the state at which you backed it up, use the following command:
 
 ```bash
-magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
+bin/magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 ```
 
 where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
