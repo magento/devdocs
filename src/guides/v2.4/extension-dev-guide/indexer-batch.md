@@ -129,16 +129,12 @@ The indexer table switching mechanism requires additional database storage.
 The Product EAV indexer reorganizes the EAV product structure to a flat structure.
 As of Magento 2.3, under certain circumstances, you can disable this indexer to improve performance. (Its indexation takes about 5 minutes on a large Magento 2 Commerce performance profile.)
 
-The following conditions must apply to disable Product EAV indexer:
-
-*  You are using a search engine other than MySQL (such as Elasticsearch). If you are using MySQL as the search engine, you cannot disable the Product EAV indexer.
-
-*  You have not installed any 3rd-party extensions that rely on the Product EAV indexer.
+To disable the Product EAV indexer, you have not installed any 3rd-party extensions that rely on the Product EAV indexer.
 
 {:.bs-callout-info}
 To determine whether any 3rd-party extensions are using the Product EAV indexer, check the `catalog_product_index_eav` table for reading/writing activity.
 
-To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search** and make sure the **Search Engine** field has a value other than MySQL.  Then set the value of **Enable EAV Indexer** to No.
+To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search** and set the value of **Enable EAV Indexer** to No.
 
 {:.ref-header}
 Related topics

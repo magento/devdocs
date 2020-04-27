@@ -9,12 +9,6 @@ functional_areas:
 
 Magento 2 is a highly flexible and scalable product containing solutions for merchants of all sizes. This section covers best practices and recommendations on configuring Magento to work with large amounts of data, extreme load, and other enterprise cases.
 
-## Search with Elasticsearch
-
-By default, Magento uses MySQL for all search operations. {{site.data.var.ee}} allows you to use Elasticsearch as a more optimized search solution. With Elasticsearch, the time on query processing will not change with the growth of search results (the way it does with MySQL). Elasticsearch can provide scaling opportunities when you experience increased loads on your store.
-
-To run Magento with Elasticsearch, you don’t need any specific configuration--just install the server and select the Elasticsearch search engine option in Magento admin.
-
 ## Calibrate index performance
 
 When dealing with large amounts of data, re-indexing can become a concern. The Magento team selected the most loaded indexes and enabled batch indexing, which  allows you to set a portion of data to be processed on each iteration. This way, the user can tune batch sizes based on the type and size of data in the database.

@@ -52,7 +52,6 @@ The following sections provide recommendations and considerations for each secti
 
 ### Search
 
-*  Consider using Elasticsearch to perform searches
 *  Tune the number of instances based on search traffic
 
 ### Storage

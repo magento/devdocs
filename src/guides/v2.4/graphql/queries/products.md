@@ -130,9 +130,6 @@ Attribute | Data type | Description
 `price` | SortEnum | Sorts by Price
 `relevance` | SortEnum | (Default) Sorts by the search relevance score
 
-{:.bs-callout-info}
-If you use MySQL for searches and you specify `relevance` and another sorting attribute, the `relevance` results are always listed first. This limitation does not apply to [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
-
 To enable sorting by an attribute that is not in the `ProductAttributeSortInput` object, set the **Stores** > Attributes > **Product** > <Attribute Name> > **Storefront Properties** > **Use in Search** and **Used in Sorting in Product Listing** fields to Yes.
 
 ## Deprecated input attributes
