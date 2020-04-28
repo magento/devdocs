@@ -20,7 +20,7 @@ Layout file | Description
 `catalog_product_view_type_grouped.xml` | Layout from this file is applied to `grouped` product only
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
-`catalog_product_view_id_123.xml` | Layout from this file is applied to specific `product ID` product only
+`catalog_product_view_id_{id}.xml` | Layout from this file is applied to the specific product by `Entity ID` value. E.g. `catalog_product_view_id_45.xml`
 `catalog_product_view_sku_AB01.xml` | Layout from this file is applied to specific `SKU` product only
 
 ## Customize product view pages
