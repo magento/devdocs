@@ -17,6 +17,7 @@ The `env.php` file contains the following sections:
 | `db`                  | Database connection settings                   |
 | `directories`         | Magento directories mapping settings           |
 | `downloadable_domains`| List of downloadable domains                   |
+| `env`                 | enable/disable the cron jobs                   |
 | `install`             | The installation date                          |
 | `lock`                | Lock provider settings                         |
 | `MAGE_MODE`           | The [Magento mode][magento-mode]               |
@@ -116,6 +117,16 @@ A list of downloadable domains available in this node. Additional domains can be
 ```
 
 Learn more about [Downloadable Domains][downloadable-domains] commands.
+
+## cron
+
+This node is used to enable/disable the crons. `0` means disable and `1` means enable. If crons are disabled, Jobs will not run.
+
+```conf
+'cron' => [
+  'enabled' => 0
+]
+```
 
 ## install
 
