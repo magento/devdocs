@@ -35,15 +35,15 @@ Use the `magento maintenance` CLI command to enable or disable Magento maintenan
 Command usage:
 
 ```bash
-magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+bin/magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
 ```
 
 ```bash
-magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+bin/magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
 ```
 
 ```bash
-magento maintenance:status
+bin/magento maintenance:status
 ```
 
 where
@@ -58,13 +58,13 @@ Using `--ip=<ip address>` with `magento maintenance:disable` means only that you
 For example, to enable maintenance mode with no IP address exemptions:
 
 ```bash
-magento maintenance:enable
+bin/magento maintenance:enable
 ```
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
 ```bash
-magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+bin/magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 ```
 
  {:.bs-callout-info}
@@ -75,7 +75,7 @@ magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
 ```bash
-magento maintenance:allow-ips <ip address> .. <ip address> [--none]
+bin/magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 ```
 
 where

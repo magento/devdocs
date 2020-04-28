@@ -4,8 +4,219 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Mar 30 08:59:14 2020
+updated: Fri Apr 24 14:03:20 2020
 entries:
+- description: Added the 'Package Validation' section to the [Technical Review Guidelines](https://devdocs.magento.com/marketplace/sellers/technical-review-guidelines.html).
+  versions: 2.3.x
+  type: Major Update
+  date: April 23, 2020
+  link: https://github.com/magento/devdocs/pull/7082
+- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 22, 2020
+  link: https://github.com/magento/devdocs/pull/7073
+- description: Added 'Set a fixed price for bundled products' to the [REST usage notes](https://devdocs.magento.com/guides/v2.3/rest/notes.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 20, 2020
+  link: https://github.com/magento/devdocs/pull/7035
+- description: Added correct db schema information in the [Configure declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 16, 2020
+  link: https://github.com/magento/devdocs/pull/7045
+- description: Added a new reference topic for the [system.xml](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-systemxml.html)
+    configuration file.
+  versions: 2.3.x
+  type: New Topic
+  date: April 16, 2020
+  link: https://github.com/magento/devdocs/pull/7024
+- description: 'New Page Builder topic on how to configure three different options
+    for styling elements in your content types: [How to configure styling options](https://devdocs.magento.com/page-builder/docs/how-to/how-to-configure-styling-options.html).'
+  versions: 2.3.x
+  type: New Topic
+  date: April 15, 2020
+  link: https://github.com/magento/devdocs/pull/7044
+- description: Added a Troubleshooting section in the [Docker services container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
+    topic.
+  versions: 2.x
+  type: Technical
+  date: April 15, 2020
+  link: https://github.com/magento/devdocs/pull/7043
+- description: Added the 'Metadata interfaces' section to the [Service contract design
+    patterns](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html#metadata-interfaces)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6827
+- description: Added the 'Example of an API interface implementation' section to the
+    [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/api-concepts.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6826
+- description: Added the 'Using cUrl in Magento' section to the [Use cURL to run the
+    request](https://devdocs.magento.com/guides/v2.3/get-started/gs-curl.html) topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6823
+- description: Created new topic about the [Magento Privacy JS Library](https://devdocs.magento.com/compliance/privacy/magento-privacy-js-library.html).
+  versions: '2.x'
+  type: New Topic
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/7037
+- description: Updated the PHP and Magento version support information for the [Magento
+    URL rewrites module](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
+    on Magento Cloud projects.
+  versions: 2.x
+  type: Technical
+  date: April 13, 2020
+  link: https://github.com/magento/devdocs/pull/7030
+- description: Updated a code block in the [How to add CLI commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 9, 2020
+  link: https://github.com/magento/devdocs/pull/7016
+- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 9, 2020
+  link: https://github.com/magento/devdocs/pull/7015
+- description: Fix codeblock syntax in the [Register your component](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/component-registration.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 8, 2020
+  link: https://github.com/magento/devdocs/pull/7009
+- description: Add another way of declaring a new CLI command in the [How to add CLI
+    commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 8, 2020
+  link: https://github.com/magento/devdocs/pull/7006
+- description: Updated [Xdebug instructions for debugging CLI commands]( https://devdocs.magento.com/cloud/howtos/debug.html#debugcli)
+    on Magento Cloud Pro Production and Staging environments  to specify the required
+    Xdebug php configuration file (`php.xdebug.ini`) when debugging commands.
+  versions: 2.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/6934
+- description: Fix file location in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/6994
+- description: Update theme file name in the [Compile LESS using Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/7004
+- description: Added HTML example in the [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 6, 2020
+  link: https://github.com/magento/devdocs/pull/6989
+- description: Removed recommendations about defining separate types for input and
+    output data in GraphQL [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html#mutation-syntax).
+  versions: 2.3.x
+  type: Technical
+  date: April 6, 2020
+  link: https://github.com/magento/devdocs/pull/7001
+- description: Update the JDK 8 install command in the [Install and configure Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#install-prereq-java-ubuntu)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 3, 2020
+  link: https://github.com/magento/devdocs/pull/6976
+- description: Added information about the `outerClickHandler` option for the [Modal
+    Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html).
+  versions: 2.3.x
+  type: Technical
+  date: April 2, 2020
+  link: https://github.com/magento/devdocs/pull/6927
+- description: Update instruction to improve performance in the [Configure Docker
+    environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic.
+  versions: 2.x
+  type: Technical
+  date: April 2, 2020
+  link: https://github.com/magento/devdocs/pull/6709
+- description: Added example for adjusting the form validation message in the [Custom
+    validation rules](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-validation.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6937
+- description: Added the _Content restrictions for admin users_ section to the [Creating
+    an Access Control List (ACL) rule](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-access-control-list-rule.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6946
+- description: Describing how to perform any kind of [custom form validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-form-validation.html) to a custom form.
+  versions: 2.3.x
+  type: New Topic
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6886
+- description: Added a sample response in the [GraphQL requests](https://devdocs.magento.com/guides/v2.3/graphql/send-request.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6839
+- description: Removes RabbitMX EOL version number in the [RabbitMQ](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/install-rabbitmq.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6943
+- description: Added note about setting the explicit defaults for timestamp config
+    in the [MySQL]( https://devdocs.magento.com/guides/v2.3/install-gde/prereq/mysql.html#instgde-prereq-mysql-config)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6916
+- description: Fix argument names in a code block in the [Create a new storefront
+    theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-create.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6950
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: Adds more content to the example in the [Common layout customization
+    tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html#layout_markup_add_to_elements)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6938
+- description: Fixed code style for JSON blocks and styles of the collapsible elements
+    in the [Order processing tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-intro.html).
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6928
 - description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
     topic.
   versions: 2.3.x
@@ -49,7 +260,6 @@ entries:
   type: Major Update
   date: March 23, 2020
   link: https://github.com/magento/devdocs/pull/6868
-entries:
 - description: Added a 'Declaring the new custom no-route processor' section to the
     [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
   versions: 2.3.x

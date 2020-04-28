@@ -17,7 +17,7 @@ Before you run this command, you must do all of the following *or* you must [ins
 Configuring consumer behavior is done by sending key/value pairs within the setup function:
 
 ```bash
-magento setup:config:set [--<parameter_name>=<value>, ...]
+bin/magento setup:config:set [--<parameter_name>=<value>, ...]
 ```
 
 ### Parameter descriptions

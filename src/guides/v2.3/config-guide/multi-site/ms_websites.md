@@ -169,7 +169,7 @@ You must perform this step last because you will lose access to the Magento Admi
 
 1. In the right pane, expand **Base URLs**.
 1. In the _Base URLs_ section, clear **Use system value**.
-1. Enter the `http://mysite.mg` URL in the **Base URL** and **Base Link URL** fields.
+1. Enter the `http://magento.mg` URL in the **Base URL** and **Base Link URL** fields.
 
 1. Repeat the previous step in the **Base URLs (Secure)** section.
 
