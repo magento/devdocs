@@ -809,12 +809,6 @@ entries:
   type: Major update
   date: November 21, 2019
   link: https://github.com/magento/devdocs/pull/6031
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for the Google Shopping ads Channel v3.0.2 release.
-  versions: 3.0.2 Google Shopping ads
-  type: Major update
-  date: November 19, 2019
-  link: https://github.com/magento/devdocs/pull/6027
 - description: Added the [Search for products with the /search endpoint](https://devdocs.magento.com/guides/v2.2/rest/search-endpoint.html)
     topic to the _REST API Reference_.
   versions: 2.2.x, 2.3.x
@@ -1065,12 +1059,6 @@ entries:
   type: New topic
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/5586
-- description: Added [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v3.0.1 to the _Extension Developer Guide_.
-  versions: 2.3.3, 3.0.1 GSa
-  type: Major update
-  date: October 8, 2019
-  link: https://github.com/magento/devdocs/pull/5568
 - description: Updated the REST schema for [2.3.3](https://devdocs.magento.com/redoc/2.3/)
     and [2.2.10](https://devdocs.magento.com/swagger/index_22.html).
   versions: 2.2.10, 2.3.3
@@ -1670,13 +1658,6 @@ entries:
   type: New topic
   date: July 12, 2019
   link: https://github.com/magento/devdocs/pull/4780
-- description: Updated the [Google Shopping ads Install documentation](https://devdocs.magento.com/extensions/google-shopping-ads/)
-    and [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for version 3.0.
-  versions: 2.0 Google Shopping ads
-  type: Major update
-  date: July 10, 2019
-  link: https://github.com/magento/devdocs/pull/4849
 - description: Added information and example about how to use the [ColorPicker component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-colorpicker.html).
   versions: 2.3.x
   type: New topic
@@ -1698,13 +1679,6 @@ entries:
   type: Major update
   date: July 8, 2019
   link: https://github.com/magento/devdocs/pull/4630
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v2.0.2 and the [Upcoming releases](https://devdocs.magento.com/release/)
-    page.
-  versions: 2.0.2 Google Shopping ads Channel
-  type: Major update
-  date: July 8, 2019
-  link: https://github.com/magento/devdocs/pull/4902
 - description: Added a `Code sample` section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -1971,12 +1945,6 @@ entries:
   type: Major update
   date: June 7, 2019
   link: https://github.com/magento/devdocs/pull/4599
-- description: Added [release notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel patch 1.1.2.
-  versions: 1.1.2-gsa
-  type: Major update
-  date: June 7, 2019
-  link: https://github.com/magento/devdocs/pull/4703
 - description: Added a [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html)
     topic to the Software Update Guide.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2332,13 +2300,13 @@ entries:
   type: Major update
   date: April  2, 2019
   link: https://github.com/magento/devdocs/pull/4103
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
   date: April  1, 2019
   link: https://github.com/magento/devdocs/pull/4052
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
