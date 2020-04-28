@@ -23,6 +23,10 @@ Magento's highly modular structure includes the following open-source technologi
 *  MySQL
 *  MySQL Percona
 
+### Search
+
+*  Elasticsearch
+
 ### HTTP accelerator
 
 *  Varnish
@@ -30,10 +34,6 @@ Magento's highly modular structure includes the following open-source technologi
 ### Cache Storage
 
 *  Redis
-
-### Search
-
-*  Elasticsearch ({{site.data.var.ee}} in Magento Open Source version 2.3.x)
 
 ### Additional technologies
 
@@ -51,7 +51,6 @@ For Magento 2.3.5, we have started porting unsupported Zend components to the [L
 
 *  Varnish (caching)
 *  Redis (used for page caching)
-*  Elasticsearch (search engine)
 *  RabbitMQ (message queue)
 
 ### Automated testing
