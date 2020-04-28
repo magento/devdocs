@@ -27,7 +27,6 @@ See one of the following resources:
 *  Apache
 
    *  [Apache 2.4 strong encryption how-to](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)
-   *  [Apache 2.2 SSL/TLS page](https://httpd.apache.org/docs/2.2/en/ssl/)
    *  [How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)](https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04)
    *  [Setting up an SSL secured Webserver with CentOS (CentOS wiki)](https://wiki.centos.org/HowTos/Https)
 
