@@ -139,7 +139,7 @@ PWA Studio 4.0.0 contains new hooks in Peregrine. Existing components have also 
 
 ### Google Shopping ads Channel
 
-The Google Shopping ads Channel Marketplace extension is now available as a bundled extension. [Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
+The Google Shopping ads Channel Marketplace extension is now available as a bundled extension.
 
 ### Magento Shipping
 

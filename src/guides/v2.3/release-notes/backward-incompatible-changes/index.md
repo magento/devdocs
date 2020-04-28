@@ -3,8 +3,7 @@ group: release-notes
 title: Magento 2.3 backward incompatible changes
 ---
 
-Magento 2.3 introduces several major changes that may affect the correct functionality of already released external modules.
-The purpose of this document is to highlight the changes between Magento 2.2 and 2.3.
+This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
 ## API changes
 
