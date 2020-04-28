@@ -11,15 +11,34 @@ This release includes over 180 functional fixes to the core product and over 25 
 
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.5 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
+{:.bs-callout-info}
+
+These release notes refer to the features and bugs released on April 28, 2020 as Magento 2.3.5. Actual Composer package names are  `2.3.5-p1`, which contains all new features and fixes, and  `2.3.4-p2`, which is a security-only release.
+
 ## Security-only patch available
 
-Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5) provides. Patch 2.3.4.1 (Composer package 2.3.4-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.5. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes; not the additional security enhancements that are included in the full patch.
+Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.5-p1) provides. Patch 2.3.4.2 (Composer package 2.3.4-p2) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.4. All hot fixes that were applied to the 2.3.4 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.)
 
-With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see Security updates available for Magento.
+For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.4-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
+
+With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
 
 ## Other release information
 
-Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, B2B, Page Builder, Inventory Management, and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are documented in the separate, project-specific release information that is available in the documentation for each project.
+
+## Upgrade to Magento 2.3.5-p1 or 2.3.4-p2 for merchants running pre-release versions of Magento 2.3.5
+
+Merchants upgrading to pre-release versions of Magento 2.3.5 and security-only patch 2.3.4-p1 and whose deployments contain bundle products may encounter the following error during upgrade:
+
+`Module ‘Magento_Wishlist’:
+Unable to apply data patch Magento\Wishlist\Setup\Patch\Data\CleanUpData for module Magento_Wishlist. Original exception message: Unable to unserialize value. Error: Syntax error`
+
+Merchants who encounter this error after  installing Magento 2.3.5 should upgrade to Magento 2.3.5-p1. Merchants who encounter this error after  installing Magento 2.3.4-p1 should upgrade to Magento 2.3.4-p2. <!--- MC-33513 33514-->
+
+## Download and run the updated Database Cleanup script
+
+This hotfix addresses an issue with a previous database clean-up script that was released in March 2020. That database cleanup script has been updated to clear pre-existing failed login data in additional database tables. **We recommend that all merchants run DB_CLEANUP_SCRIPT_v2 script to clear pre-existing failed login data in additional tables as soon as possible**. See the [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) support article.
 
 ## Highlights
 
@@ -31,17 +50,17 @@ This release includes the following security enhancements:
 
 #### Over 25 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to 1.14.4.5 and 1.9.4.5, as appropriate.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.5) have been ported to 1.14.4.5 and 1.9.4.5, as appropriate.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see Security updates available for Magento.
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
 
 #### Security enhancements and fixes to core code
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. This release implements the CSP SPI, which developers can use. Report-only mode is the default.
+*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html)
 
-*  **Removal of session id from URLs**. Exposure of `session id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods add/read session id from URLs.
+*  **Removal of session_id from URLs**. Exposure of `session-id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods that add or read session_id from URLs.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -50,67 +69,74 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 The following platform upgrades help enhance website security and performance:
 
-*  **Support for Elasticsearch 7.5**. Elasticsearch 7.5 is now the supported catalog search engine for both Magento Commerce and Magento Open Source. With this release, Magento 2.3.x supports only Elasticsearch 6.x and 7.x.  Elasticsearch 2.x and 5.x are now deprecated for Magento 2.3.x and will be removed in Magento 2.4.0. <!--- MC-30796-->
+*  **Support for Elasticsearch 7.x**. Elasticsearch 7.x is now the supported catalog search engine for both Magento Commerce and Magento Open Source. With this release, Magento 2.3.x supports only Elasticsearch 6.x and 7.x.  Elasticsearch 2.x and 5.x are now deprecated for Magento 2.3.x and will be removed in Magento 2.4.0. <!--- MC-30796-->
 
-*  **Deprecation of core integration of third-party payment methods**. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer be supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-31168-->
+*  **Deprecation of core integration of third-party payment methods**. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer  supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-31168-->
 
 *  **Deprecation of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!--- MC-31315-->
 
-*  **Upgrade of Symfony Components** to the latest lifetime support version (4.4). (Symfony Components are a set of decoupled PHP libraries used by the Magento Framework. <!--- MC-29549-->
+*  **Upgrade of Symfony Components** to the latest lifetime support version (4.4). (Symfony Components are a set of decoupled PHP libraries used by the Magento Framework.) <!--- MC-29549-->
 
 *  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. Magento 2.3.5 contains the minimal number of changes to code and configuration that are required to support the use of the Laminas libraries. These changes are backward-compatible, and you can continue to use your current code. However, **we recommend that extension developers and system integrators begin migrating their extensions to use Laminas**. While this migration is not required for compatibility with this patch release, long-term solutions will require it.
 
-   The `laminas/laminas-dependency-plugin` requires Composer 1.7.0 and higher. To see which version of Composer you are running, run `composer –version`. Run `composer self-update` if you are on an older version of Composer. <!--- MC-15318-->
+   The `laminas/laminas-dependency-plugin` requires Composer 1.7.0 and higher. To see which version of Composer you are running, run `composer -–version`. Then, run `composer self-update` if you are on an older version of Composer. <!--- MC-15318-->
 
 ### Performance boosts
 
-*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations.) See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
 *  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
-   *  Decrease in size of network data transfers between Redis and Magento
+   *  Decrease in the size of network data transfers between Redis and Magento
    *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
    *  Reduction in race conditions on Redis write operations
 
+See [Use Redis for the Magento page and default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) and [Configure caching]({{page.baseurl}}/config-guide/cache.html).
+
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these modules: catalog, sales, PayPal, Elasticsearch, Import, CMS, and B2B.
+This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Catalog, Sales, PayPal, Elasticsearch, Import, CMS, and B2B.
 
-*  **The PayPal Pro payment method now works as expected in the Chrome 80 browser**. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same-46 site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+*  **The PayPal Pro payment method now works as expected in the Chrome 80 browser**. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
-*  **A PHPStan code analysis check has been integrated into Magento static builds**. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
-
-### Merchant tool enhancements
+*  **A PHPStan code analysis check has been integrated into Magento static builds**. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide]({{page.baseurl}}/test/testing.html).
 
 ### Page Builder
 
 Page Builder enhancements for this release include:
 
-*  **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site.
+*  **Templates**. Page Builder now has templates that can be created from existing content and applied to new content areas. Page Builder templates save both content and layouts of existing pages, blocks, dynamic blocks, product attributes, and category descriptions. For example, you can save an existing Page Builder CMS page as a template and then apply that template (with all its content and layouts) to quickly create new CMS Pages for your site. See [Templates](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-templates.html).
 
-*  **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds.
+*  **Video Backgrounds for Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to use videos for their backgrounds. See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px).
+*  **Full Height Rows, Banners, and Sliders**. Page Builder Rows, Banners, and Sliders now have the option to set their heights to the full-height of the page using a number with any CSS unit (px, %, vh, em) or a calculation between units (100vh - 237px). See [Rows](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-layout-row.html), [Banners](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-banner.html), [Sliders](https://docs.magento.com/m2/ee/user_guide/cms/page-builder-media-slider.html).
 
-*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions.
+*  **Content type upgrade library**. We can now introduce new versions of Page Builder content types without introducing backward-incompatible issues with previous versions. Prior to this release, significant changes to content type configurations would create display and data-loss issues with previously saved Page Builder content types. Our new upgrade library eliminates these issues. The library upgrades previous versions of content types saved to the database to match the configuration changes of the new versions. See [Upgrading content types](https://docs.magento.com/m2/ee/user_guide/cms/page-builder/docs/how-to/how-to-upgrade-content-types.html).
 
 ### Inventory Management
 
 Inventory Management enhancements for this release include:
 
-*  New bulk API for `IsProductSalableForRequestedQtyInterface`, which is used in checkout and cart verification
 *  New extension point for `SourceDataProvider` and `StockDataProvider`
 *  Ability to view allocated inventory sources from the Orders list
 
-See [Inventory Management release notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
+See [Inventory Management release notes]({{page.baseurl}}/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
 
 ### GraphQL
 
-With this release, you can now use `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the [GraphQL Developer Guide](https://devdocs.magento.com/guides/v2.3/graphql/) for details.
+With this release, you can now use `products` and `categoryList` queries to retrieve information about products and categories that have been added to a staged campaign. See [Using queries]({{page.baseurl}}/graphql/queries/index.html#staging) in the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details.
 
-See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
+See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
+
+PWA Studio 6.0.0 contains both new features and improvements to existing features:
+
+*  **Launch of the PWA extensibility framework**.  This framework gives developers the ability to create an extensibility API for their storefront or write plugins that can tap into those API and modify storefront logic.
+
+*  **Caching and data fetching improvements**. This release contains improved caching logic and other data fetching optimizations in the Peregrine and Venia UI component libraries. These components have been refactored to take advantage of Apollo cache features to reduce overfetching or prevent the storage of sensitive data.
+
+*  **Shopping cart components** that can be used for a full-page shopping cart experience
 
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
@@ -123,7 +149,7 @@ This release includes:
    *  Sync of shared catalog data. Syncing additional product catalog data (custom products and product attributes) to dotdigital. Merchants can turn additional product data into marketing campaigns or use it to make recommendations
    *  Sync of quote data
 
-*  **Improved importer performance** and coupon code re-send
+*  **Improved importer performance** and coupon code re-send.
 
 ### Google Shopping ads Channel
 
@@ -131,7 +157,11 @@ The Google Shopping ads Channel bundled extension has reached end-of-life with t
 
 ### B2B
 
-This release includes 18 bug fixes. See B2B release notes.
+This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
+
+### Product Recommendations
+
+Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html).
 
 ### Vendor-developed extension enhancements
 
@@ -139,11 +169,7 @@ This release of Magento includes extensions developed by third-party vendors. It
 
 #### Klarna
 
-With this release, the Klarna extension is now available in Australia and New Zealand, and a new Oceania endpoint has been added to the existing API. This release also contains UX enhancements and minor bug fixes.
-
-#### Yotpo
-
-Yotpo is now integrated with Page Builder.
+With this release, the Klarna extension is now available in Australia and New Zealand. A new Oceania endpoint has been added to the existing API. This release also contains UX enhancements and minor bug fixes.
 
 #### Vertex
 
@@ -157,7 +183,7 @@ This release of Vertex includes the following new feature and enhancements:
 
 *  **Restorable configuration settings**. The **Use Vertex for orders shipping to**, **Summarize Tax by**, and **Global Delivery Term** now provide an option to be restored to their default setting.
 
-*  **Port in WSDL**. The WSDL URL now support ports and basic authentication.
+*  **Port in WSDL**. The WSDL URL now supports ports and basic authentication.
 
 *  **Best Practices in Code**. Models intended to assist Observers have been relocated into the Model namespace to clean up the Observer namespace.
 
@@ -203,6 +229,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Analytic reports are now available after changing the store URL.
 
+<!--- MC-31767-->
+
+*  Data sync is now enabled as expected by default.
+
 ### Bundle products
 
 <!--- MC-29938-->
@@ -211,7 +241,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23215-->
 
-*  The performance of the `catalog_product_price` reindex operation for bundle products has been improved.
+*  The performance of the `catalog_product_price` re-index operation for bundle products has been improved.
 
 <!--- MC-22741-->
 
@@ -227,81 +257,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29209-->
 
+*  You can now add any number of bundle products to your shopping cart without error. Previously,  when you added a bundle product to your cart, then navigated to the  cart,  Magento displayed this error: `Please correct the quantity for some products`.
+
 <!--- MC-29598-->
 
-### B2B
-
-<!--- MC-30049-->
-
-*  Administrators can now create a Shared Catalog when Indexer Dimension Mode is set to `website`. Previously, Magento displayed this error: `Could not save shared catalog`.
-
-<!--- MC-30280-->
-
-*  You can now search Companies in the Admin by user gender or phone number without error. Previously, Magento logged an exception in `exception.log` for the search on the phone number search, and the search on `Gender=Not Specified` did not produce results.
-
-<!--- MC-18048-->
-
-*  You can now successfully configure a downloadable product’s link options from the Admin View Quote page. Previously, you could only update these options if the first downloadable link was selected.
-
-<!--- MC-29594-->
-
-*  You can now use the `PUT /V1/company/:companyId` endpoint to activate a Company. Previously, Magento threw this error: `message: "Invalid attribute value. Rejected date&time and Rejected Reason can be changed only when a company status is changed to Rejected.`
-
-<!--- MC-29915-->
-
-*  Administrators with appropriate permissions can now successfully place a quote order when paying with PayPal. Previously, Magento displayed an informative error message and did not process payment.
-
-<!--- MC-22856-->
-
-*  When a bundle product is disabled and then re-enabled from the Admin Product grid after being added to the shopping cart, Magento now displays the **Checkout** button in the cart as expected. Previously, when a bundle product was disabled and then re-enabled from the Admin Product grid after being added to the cart, Magento displayed an error, and the cart did not display a **Checkout** button. [GitHub-25484](https://github.com/magento/magento2/issues/25484)
-
-<!--- MC-22684-->
-
-*  When you reassign Company administrator privileges from one user to another, Magento assigns the correct address to the administrator. Previously, when the company administrator was changed, Magento incorrectly associated the address of the former administrator to the current one.
-
-<!--- MC-22948-->
-
-*  The correct Company logo is now used in transactional emails for each website.
-
-<!--- MC-29984-->
-
-*  An administrator with appropriate permissions in a multisite deployment can now create a company for a website other than the one the administrator is currently logged in to.
-
-<!--- MC-30113-->
-
-*  Shared catalogs in multi-site deployments are now correctly associated with `group_id` rather than `store_id` and can be successfully saved from any store view that is associated with the `group_id`. Previously, when an administrator opened the shared catalog from a store view other than the store view from which the shared catalog was created,  Magento did not save the shared catalog and displayed this error: `The store that was requested wasn't found. Verify the store and try again`.
-
-<!--- MC-29050-->
-
-*  Clicking **Enter** when changing a proposed shipping price from  **Admin** > **Sales**  > **Quotes** no longer causes the page to refresh without an update.
-
-<!--- MC-29870-->
-
-*  Products can be added to cart from Quick Order after a user’s Customer Group is updated. Previously, customers whose customer group had been updated could not add a product to the cart, and Magento displayed this error: `The SKU was not found in the catalog`.
-
-<!--- MC-22875-->
-
-*  Clicking **Enter** when changing a proposed shipping price now changes the price as expected. Previously, clicking **Enter** refreshed the page, and you needed to fetch the relevant rates again.
-
-<!--- MC-30256-->
-
-*  Shared catalog customers can now order unassigned or assigned items from the Admin as expected. Previously, merchants could not order products that were not assigned to the catalog.
-
-<!--- MC-22842-->
-
-*  Merchants can now use a custom attribute named `company` when creating a new Company account. Previously, Magento displayed a 500 error when you named a custom attribute `company`.
-
-<!--- MC-21010-->
-
-*  You can now use the `/V1/guest-carts/:cartId/items` endpoint to change the quantity of products in the cart when the **Allowed Qty Below 0** and **Notify Customer** setting are enabled for the product.
-
-<!--- MC-30287-->
-
-*  Magento now correctly displays products with special characters in Shared Catalogs in the Admin.
-
-<!--- MC-30412-->
-
-*  Administrators with appropriate permissions can now add a configurable product to an order as expected. Previously, although Magento displayed the Configure Product popup window when an administrator selected a configurable product, the pop up’s drop-down list did not contain a **Quantity** input field.
+*  Administrators can no longer manually enter a tax class in the Admin for a bundle product when  the bundle product’s **Tax Class** and **Dynamic Price** settings are disabled for the default store view. Previously, when an administrator  unchecked the **Use Default Value**  option next to **Tax Class**, Magento enabled the option, permitting an administrator to enter another value and save the product.
 
 ### Cache
 
@@ -324,6 +284,8 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  You can now disable zip code validation on the checkout workflow from the Admin as expected. Previously, Magento threw an error when a customer entered a zip code that did not meet specified values for zip codes even after validation was disabled by setting **Input Validation** to **none** from **Admin** > **Stores** > **Attributes** > **Customer address** > **Edit Zip/Postal Code**.
 
 <!--- MC-30254-->
+
+*  The order review page in the checkout workflow now loads successfully for an order being shipped to multiple addresses when Terms and Conditions with the **Applied Manually** setting is enabled. Previously, the Review page did not pass validation, and Magento displayed a 404 error.
 
 ### Catalog
 
@@ -353,7 +315,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29022-->
 
-*  Custom attribute values can now be saved as expected in the Admin.
+*  Custom attribute values can now be saved as expected from the Admin.
 
 <!--- MC-20259-->
 
@@ -365,7 +327,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30067-->
 
-*  You can now assign a default watermark to a theme. Previously, after assigning the watermark, Magento threw an fatal error.
+*  You can now assign a default watermark to a theme. Previously, after assigning the watermark, Magento threw a fatal error.
 
 <!--- MC-29876-->
 
@@ -373,7 +335,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29652-->
 
-*  The Recently View Products feature now shows products associated only with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
+*  The Recently Viewed Products feature now shows products associated only with the current store view in multi-store deployments when **Stores** > **Configurations** > **Catalog** > **Recently Viewed/Compared Products** > **Show for Current**  is set to **store view**. Previously, Magento displayed recently viewed products from all websites, no matter which website the product was assigned to.
 
 <!--- MC-30213-->
 
@@ -385,15 +347,23 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29865-->
 
-*  The `getBasePrice` function now returns float value  as expected rather than a string.
+*  The `getBasePrice` function now returns a float value  as expected rather than a string.
 
 <!--- MC-29519-->
 
 *  Images are now saved in `pub/media/catalog/category` as expected when you save category images. Previously, Magento saved these images in `pub/media/catalog/tmp/category`.
 
 <!--- MC-31801-->
+
+*  Administrators with restricted permissions to Catalog can now create a downloadable product. Previously, administrators could not create a downloadable product, and Magento threw an error.
+
 <!--- MC-30974-->
-<!--- MC-18057-->
+
+*  You can now add a configurable product to the cart from the Cross-Sells tab. When you select a product and click **Add to Cart** from this tab, you are now taken to the product’s details page, where you can select specific product options. Previously, Magento redirected you to  a 404 error page.
+
+<!--- MC-30261-->
+
+*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
 
 ### CatalogInventory
 
@@ -411,15 +381,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Product prices on the storefront now accurately reflect the application of a scheduled Catalog Price Rule update. Previously, prices did not reflect the scheduled cart price rule until you manually re-indexed (`php bin/magento indexer:reindex catalogrule_rule`).
 
-### Catalog rule
-
-<!--- MC-19646-->
-
-*  The performance of the Catalog Product Rule Indexer has been improved.
-
 ### Catalog widget
 
 <!--- MC-30249-->
+
+*  Magento now displays all children of a selected parent category as expected. Previously, if you selected a parent category that is an anchor, but which did not have assigned products by itself, Magento did not display all nested products.
 
 <!--- MC-29166-->
 
@@ -439,15 +405,15 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6290-->
 
-*  Added a margin between the checkbox and icon when choosing a category when assigning a condition to a new Cart Price Rule.  *Fix submitted by Eden Duong in pull request [25597](https://github.com/magento/magento2/pull/25597)*. [GitHub-25596](https://github.com/magento/magento2/issues/25596)
+*  Added a margin between the checkbox and icon when choosing a category during the process of  assigning a condition to a new Cart Price Rule.  *Fix submitted by Eden Duong in pull request [25597](https://github.com/magento/magento2/pull/25597)*. [GitHub-25596](https://github.com/magento/magento2/issues/25596)
 
 <!--- ENGCOM-6249-->
 
-*  Rating stars no longer overlays the product over which your mouse hovers on the category page. *Fix submitted by Kajal Solanki in pull request [25524](https://github.com/magento/magento2/pull/25524)*. [GitHub-25517](https://github.com/magento/magento2/issues/25517)
+*  Rating stars no longer overlay the product over which your mouse hovers on the category page. *Fix submitted by Kajal Solanki in pull request [25524](https://github.com/magento/magento2/pull/25524)*. [GitHub-25517](https://github.com/magento/magento2/issues/25517)
 
 <!--- ENGCOM-6180-->
 
-*  Corrected misalignment of the calendar icon inside the textbook on the Add Design Change page. *Fix submitted by magudelo62 in pull request [25309](https://github.com/magento/magento2/pull/25309)*. [GitHub-20379](https://github.com/magento/magento2/issues/20379)
+*  Corrected misalignment of the calendar icon inside the textbox on the Add Design Change page. *Fix submitted by magudelo62 in pull request [25309](https://github.com/magento/magento2/pull/25309)*. [GitHub-20379](https://github.com/magento/magento2/issues/20379)
 
 <!--- ENGCOM-6345-->
 
@@ -457,11 +423,15 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30093-->
 
+*  Select from Gallery image thumbnails are now cached as expected. Previously, these images were resized on the fly.
+
 <!--- MC-22927-->
 
 *  Magento now loads blocks that are associated with the website that a restricted user has access to when the user navigates to  **Content** >  **Blocks**.
 
 <!--- MC-30853-->
+
+*  Magento now lets you create CMS blocks with identical names if the blocks are assigned to different store views.
 
 ### Configurable products
 
@@ -471,7 +441,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22732-->
 
+*  Magento now displays all attributes of a configurable product. Previously, when the product had two or more attributes, not all attributes were displayed.
+
 <!--- MC-18057-->
+
+*  Catalog Products List widgets can now process conditions that include product `test_date` attributes.
 
 ### Cron
 
@@ -480,6 +454,14 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  `bin/magento cron:run -v` no longer fails when the database name exceeds 64 characters but instead creates a shorter name. *Fix submitted by Vasil Pashovski in pull request [25472](https://github.com/magento/magento2/pull/25472)*. [GitHub-22240](https://github.com/magento/magento2/issues/22240)
 
 <!--- MC-22819-->
+
+*  We’ve improved the reliability of background `cron` execution. We now use the Magento Lock Framework to lock `cron` jobs. Previously, Magento used job status in the `cron_schedule` table. As a result, `cron:run` execution no longer causes an error on the application level.
+
+### Custom customer attributes
+
+<!--- MC-30689-->
+
+*  Magento now displays custom customer address attribute values as expected in the address section of the checkout workflow. Previously, Magento displayed the custom customer address attribute code instead of the value, and a JavaScript error was triggered.
 
 ### Customer
 
@@ -497,6 +479,12 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29722-->
 
+*  Magento now honors a customer’s default shipping address. Previously, Magento did not honor the default billing and default shipping addresses according to  the settings, and the **Same As Billing Address** setting was not enabled automatically.
+
+<!--- MC-30576-->
+
+*  You can now successfully create a customer and associate it with a particular website using the **Associate to Website**  dropdown menu  on **Customers** > **All Customers** >  **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multi-site deployment, Magento displayed this error: `The store view is not in the associated website`.
+
 ### Customer segment
 
 <!--- MC-19235-->
@@ -505,19 +493,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29429-->
 
+*  Magento no longer removes your customer account from a customer segment when you log in as a user that is assigned to the customer segment when the segment includes a condition for past orders. Previously, you had to click **Refresh Segment Data** after logging in before Magento  displayed your account in the Matched Customers list.
+
 <!--- MC-30443-->
 
 *  Customer segments now work as expected  when segment conditions  include the total number of orders.
 
-### Custom customer attributes
-
-<!--- MC-30689-->
-
-*  Magento now displays custom customer address attribute values as expected in the address section of the checkout workflow. Previously, Magento displayed the custom customer address attribute code instead of the value, and a JavaScript error was triggered.
-
 ### Dynamic block (formerly banner)
 
 <!--- MC-18280-->
+
+*  Dynamic blocks now work with customer segments as expected. Magento no longer displays a dynamic block when the condition that should trigger it is not fulfilled. Previously, Magento displayed a dynamic block for users logged in as a guest when the shopping cart was empty.
 
 ### EAV
 
@@ -537,15 +523,13 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-21868-->
 
-*  The order notification emails sent from Microsoft Outlook now contain the content rendered as expected from the assigned email template. Previously, the notification email that Magento sent contained a blank body that included content as an ATT*-labeled attachment to the email. [GitHub-25076](https://github.com/magento/magento2/issues/25076)
+*  The order notification emails sent from Microsoft Outlook now contain content that is rendered as expected from the assigned email template. Previously, the notification email that Magento sent contained a blank body that included content as an ATT*-labeled attachment to the email. [GitHub-25076](https://github.com/magento/magento2/issues/25076)
 
 ### Frameworks
 
 <!--- MC-15318 31567-->
 
 *  Dependencies on Zend Framework have been migrated to the [Laminas project](https://getlaminas.org/about/foundation) to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated.
-
-<!--- MC-30985-->
 
 <!--- MC-20533-->
 
@@ -554,8 +538,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-29290-->
 
 *  `php bin/magento cron:run` no longer processes items from the change log table multiple times. Previously, when you had more than 100000 new versions in the change log table,  actions could be called several times for the same `entity id`.
-
-<!--- MC-29033-->
 
 <!--- MC-30296-->
 
@@ -567,7 +549,15 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30824-->
 
+*  Setting `'persistent' => '1'` in `env.php` no longer throws an error when you run `setup:upgrade`.
+
 <!--- MC-31708-->
+
+*  Magento no longer downloads a `blank.html` page when an administrator clicks on a product while creating an order from the Admin.
+
+<!--- MC-17563-->
+
+*  The `RequireJS domReady!` plugin has been improved to prevent artificial delays when loading a storefront page. [GitHub-22909](https://github.com/magento/magento2/issues/22909)
 
 ### JavaScript framework
 
@@ -582,12 +572,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- MC-31170-->
 
 *  Clicking the **Refund Offline** button in the create a credit memo workflow now generates a credit memo as expected. Previously, a JavaScript error disabled this button, and Magento did not create a credit memo.
-
-<!--- MC-19435-->
-
-*  JavaScript bundling and JavaScript minimization should be disabled by default when `Magento_Baler` is enabled.
-
-<!--- MC-19141-->
 
 ### General fixes
 
@@ -623,19 +607,21 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  LESS styling for the `Magento_Contact` and `Magento_Cms` modules has been moved to the correct `design` directory. This change brings these modules into alignment with the organization of other modules, none of which include any LESS styling. *Fix submitted by Paweł Tylek in pull request [25355](https://github.com/magento/magento2/pull/25355)*. [GitHub-25276](https://github.com/magento/magento2/issues/25276)*
 
-<!--- MC-30741-->
-
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
-
 <!--- MC-22911-->
+
+*  Magento no longer displays an inaccurate count for all users when a restricted administrative user accesses **System** > **All Users** and role scope was set to custom.
+
 <!--- MC-22972-->
+
+*  Credit memos for orders with 100% discount (including shipping fees) now correctly include a 0 for the **Grand Total**. Previously,  Magento calculated a negative number for the **Grand Total**.
+
 <!--- MC-29261-->
 
-*  A store’s admin URL no longer redirects to the storefront URL when these two URLs differ.
+*  A store’s Admin URL no longer redirects to the storefront URL when these two URLs differ.
 
 <!--- MC-23228-->
 
-*  The graphical orders chart accessible from the Orders tab on the Admin dashboard now accurately reflects order quantity.
+*  The graphical orders chart accessible from the Orders tab on the Admin now accurately reflects order quantity.
 
 <!--- MC-30461-->
 
@@ -643,13 +629,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29111-->
 
-*  You can now save and duplicate all CMS pages. Previously Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
+*  You can now save and duplicate all CMS pages. Previously, Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
 
 <!--- MC-29994-->
 
-<!--- MC-30261-->
-
-*  You can now add a child product of a grouped product to your cart when one of the grouped product’s other child products is out-of-stock. Previously, when one child product was out-of-stock, you could not add any other child products to the cart.
+*  Magento now redirects you to the home page of the appropriate store view when you change language on CMS pages in a multistore deployment. Previously, Magento displayed a 404 page when you changed language on certain CMS pages.
 
 ### Gift cards
 
@@ -671,6 +655,10 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  Gift wrapping can now be added to the cart when it is enabled on the product level. Previously, you could add gift wrapping to a product on the storefront, but Magento would not include gift wrapping in the order summary.
 
+<!--- MC-31283-->
+
+*  Magento now  correctly calculates the cost of gift wrapping based on the number of products  for which you’ve ordered gift wrap. Previously, Magento included the cost of gift wrap for one product only in the order.
+
 ### Google Tag Manager
 
 <!--- MC-30669-->
@@ -679,11 +667,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29503-->
 
+*  Merchants can now postpone sending data to Google Analytics until specified conditions are met.
+
+<!--- MC-30741-->
+
+*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
+
 ### Import/export
 
-<!--- MC-21727-->
-
 <!--- MC-31470-->
+
+*  Magento now successfully imports customer data  using the **Customer and Addresses (single file))** option when `cron` is enabled and the Customer Grid Indexer is set to **Update By Schedule**.  After `cron` executes, the imported customer information is available in the Admin as expected.  Previously, Magento imported the customer data, but did not update the customer grid with the newly imported customer records.
 
 <!--- MC-29361-->
 
@@ -691,11 +685,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30066-->
 
-*  Magento now deletes temporary files from `/var` as expected after product import has completed.
+*  Magento now deletes temporary files from `<Magento_home>/var` as expected after product import has completed.
 
 <!--- MC-21727-->
 
-*  Magento now removes related, up-sell, and cross-sell products as expected in the `import.csv` file when you set the value of the **Empty attribute value constant** field to `_EMPTYVALUE_` for products in **System** > **Import**. Previously, cross-sell, up-sell, and related products were not removed from the import .csv file.
+*  Magento now removes related, up-sell, and cross-sell products as expected in the import `.csv` file when you set the value of the **Empty attribute value constant** field to `_EMPTYVALUE_` for products in **System** > **Import**. Previously, cross-sell, up-sell, and related products were not removed from the import .csv file.
 
 <!--- MC-29874-->
 
@@ -726,6 +720,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  You can now successfully import a product that does not have a `store_view_code` value. Previously, Magento displayed an error when you tried to import the product. *Fix submitted by Mahesh Singh in pull request [25080](https://github.com/magento/magento2/pull/25080)*. [GitHub-25069](https://github.com/magento/magento2/issues/25069)
 
 <!--- MC-31089-->
+
+*  The import of customer accounts has been refactored to improve import speed.
+
 <!--- MC-31122-->
 
 *  CSV files generated during product import now contain group titles for downloadable products as expected. Previously, unnecessary validation of `group_title` during import prevented the display of group titles for downloadable products.
@@ -736,7 +733,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30438-->
 
-*  Magento now imports all custom options for a configurable product’s child products successfully when `store_view_code` is specified. This works whether you choose to import configurable products individually or collectively. Previously, Magento did not successfully import all custom options when the import file contained more than one item and `store_view_code` was specified.
+*  Magento now successfully imports all custom options for a configurable product’s child products  when `store_view_code` is specified. This works whether you choose to import configurable products individually or collectively. Previously, Magento did not successfully import all custom options when the import file contained more than one item and `store_view_code` was specified.
 
 <!--- MC-30285-->
 
@@ -747,8 +744,6 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 <!--- ENGCOM-6188-->
 
 *  The partial indexer no longer incorrectly removes stock data when updating at least 1000 products. Previously, the indexer removed stock data, which resulted in in-stock products appearing out-of-stock. *Fix submitted by Pieter Hoste in pull request [25306](https://github.com/magento/magento2/pull/25306)*. [GitHub-12205](https://github.com/magento/magento2/issues/12205), [GitHub-15984](https://github.com/magento/magento2/issues/15984)
-
-<!--- MC-22008-->
 
 ### Infrastructure
 
@@ -772,17 +767,25 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  The condition of the shipping method title output in `Magento_Checkout/js/view/summary/shipping` has been corrected. *Fix submitted by Andrii Beziazychnyi in pull request [25530](https://github.com/magento/magento2/pull/25530)*. [GitHub-25529](https://github.com/magento/magento2/issues/25529)
 
-<!--- MC-15318-->
-
 ### Inventory
 
 <!--- MC-23216-->
 
-*  You can now create an offline credit memo. Previously, when you ried to create one, Magento displayed this error: `The credit memo couldn't be saved`.
+*  You can now create an offline credit memo. Previously, when you tried to create one, Magento displayed this error: `The credit memo couldn't be saved`.
 
 <!--- MC-30099-->
 
+*  Product widgets with product filter set to **Attribute Set**  now work as expected on both the Admin and storefront. Previously, when the attribute filter was set, CMS pages on both the storefront and Admin did not work as expected when multiple Inventory sources were deployed.
+
 <!--- MC-29177-->
+
+*  Customers can no longer check out  when their order contains more products than are currently in stock.
+
+### Layered navigation
+
+<!--- MC-31720-->
+
+*  Merchants can now create a product attribute of type `Decimal`. Previously, due an earlier bug fix, Magento did not display the product attribute type `Price`. [GitHub-26949](https://github.com/magento/magento2/issues/26949)
 
 ### Logging
 
@@ -810,11 +813,9 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### Payment methods
 
-<!--- MC-31984-->
-
 <!--- MC-31168-->
 
-*  The integration of third-party payment methods into the core Magento code has been depreciated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer be supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
 
 <!--- MC-30810-->
 
@@ -842,7 +843,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-31574-->
 
-*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome same site cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
 <!--- MC-31387-->
 
@@ -858,21 +859,23 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29919-->
 
-*  Magento now saves the information a customer enters in the default billing and shipping fields during checkout when the transaction is initially declined due to invalid credit card but later completed successfully. Previously, although Magento created the order when the customer enters valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow.
+*  Magento now saves the information a customer enters in the default billing and shipping fields during checkout when the transaction is initially declined due to an invalid credit card but later completed successfully. Previously, although Magento created the order when the customer entered valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow.
 
 ### Performance
 
+*  Optimizations to Redis performance minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
+
+   *  Decrease in size of network data transfers between Redis and Magento
+   *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
+   *  Reduction in race conditions on Redis write operations
+
 <!--- MC-30786-->
 
-### Reviews
+*  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
 
-<!--- MC-29327-->
+<!--- MC-19646-->
 
-*  Magento now disables the **Submit Review** button after the user clicks the button once. Previously, Magento did not disable this button after the first click and created multiple reviews when the user clicked the **Submit Review** button multiple times.
-
-<!--- MC-31271-->
-
-*  The **Admin** > **Reports** > **Reviews** > **By Products** filter list now displays results as expected. Previously, when you tried to filter this list, Magento did not display any results.
+*  The performance of the Catalog Product Rule Indexer has been improved.
 
 ### Return Merchandise Authorizations (RMA)
 
@@ -890,11 +893,21 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-22995-->
 
-*  Setting **Enable RMA on Storefront** to **yes** (**Admin** > **Enable RMA in Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** ) now works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
+*  Setting **Enable RMA on Storefront** to **Yes** (**Admin** > **Enable RMA in Stores** > **Configuration** > **Sales** > **Sales** > **RMA Settings** ) now works as expected. Previously, returns were not preselected no matter how return-related settings were configured in the Admin.
 
 <!--- MC-22754-->
 
 *  Magento now sends RMA processing emails to customers from the store from which the purchase was made in a multi-store deployment. Previously, Magento sent these emails from the default store.
+
+### Reviews
+
+<!--- MC-29327-->
+
+*  Magento now disables the **Submit Review** button after the user clicks the button once. Previously, Magento did not disable this button after the first click and created multiple reviews when the user clicked the **Submit Review** button multiple times.
+
+<!--- MC-31271-->
+
+*  The **Admin** > **Reports** > **Reviews** > **By Products** filter list now displays results as expected. Previously, when you tried to filter this list, Magento did not display any results.
 
 ### Rewards
 
@@ -904,13 +917,19 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ### Sales
 
-<!--- MC-31914-->
-
 <!--- MC-30116-->
+
+*  Order queries (`SalesOrderIndexGridAsyncInsertCron`) have been refactored to reduce the size of the dataset returned and the frequency of the queries.
 
 <!--- MC-23029-->
 
-*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multisite deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
+*  The **State/Province** field of the edit order page is now of type `Dropdown`.  Previously, in deployments that contained two websites where the main website has country restrictions, the **State** field had an input type of `Text`, not `Dropdown`. This occurred  when you  placed an order on the second website, and allowed you to enter an incorrect value for **State/Province**.
+
+*  The **State/Province** field of the Billing Address section of the checkout workflow is now of type `Dropdown` in multi-site deployments where the default store has country restrictions. Previously, the **State/Province** field was of type `Text`, which permitted you to enter an incorrect state.
+
+<!--- MC-29851-->
+
+*  You can now successfully add a product in quantities exceeding five to an order from the Admin. Previously, when you tried to add a product in quantities exceeding five,  Magento displayed this error: `The requested qty is not available`.
 
 <!--- MC-29206-->
 
@@ -945,7 +964,12 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  Magento now renders the **<** and **>** symbols correctly in storefront catalog search strings.
 
 <!--- MC-23113-->
+
+*  Magento now passes  product attribute filters as an `array` (instead of a `string`) to `strpos()`, which results in the proper display of the product list and layered navigation results. Previously, Magento passed product attribute filter as an `array`, which lead to the logging of this error in the `system.log` file: `Warning: strpos() expects parameter 1 to be string, array given in vendor/magento/module-eav/Model/Entity/Attribute/Source/Table.php`.
+
 <!--- MC-30183-->
+
+*  Elasticsearch now correctly displays results from category pages when you change the number of search results viewed per page. Previously, when you changed how many search results should be displayed on the search results page, Magento displayed a blank page and this error: `"0":"SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near'`
 
 ### Shipping
 
@@ -967,11 +991,15 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6183-->
 
-*  Support for Columbia regions has been added, and these regions are now available from the shipping and billing country dropdown menus in the checkout workflow. *Fix submitted by magudelo62 in pull request [25313](https://github.com/magento/magento2/pull/25313)*. [GitHub-25312](https://github.com/magento/magento2/issues/25312)
+*  Support for Colombia regions has been added, and these regions are now available from the shipping and billing country dropdown menus in the checkout workflow. *Fix submitted by magudelo62 in pull request [25313](https://github.com/magento/magento2/pull/25313)*. [GitHub-25312](https://github.com/magento/magento2/issues/25312)
 
 <!--- MC-29180-->
 
 *  The drop-down list that is available for selecting shipping methods during the process of creating a Cart Price Rule now contains only valid values. Previously, this dropdown list contained empty or extra values.
+
+<!--- MC-30980-->
+
+*  Free Shipping Price rules now affect only the relevant products when a shopping cart contains products from categories that are included by the Free Shipping Price rule as well as products from categories not included in the rule.  Previously, when a shopping cart included products from both the free shipping categories as well as other categories not included in the price rule, then free shipping was not applied to any products.
 
 ### Sitemap
 
@@ -980,6 +1008,12 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 *  The partial sitemaps that are listed in the sitemap index now have the correct URL (for example, `storeurl/pub/sitemap-1-1.xml`). Previously, these URLs included the folder structure between the Magento user home folder and the installation folder. [GitHub-24946](https://github.com/magento/magento2/issues/24946)
 
 <!--- MC-29287-->
+
+*  Magento now uses the project base URL as expected when you generate a sitemap.
+
+<!--- MC-31451-->
+
+*  `sitemap.xml` (generated from **Marketing**  >  **SEO & Search**  >  **Site Map**)  now includes the URL of the homepage.
 
 ### Store
 
@@ -1007,11 +1041,11 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23194-->
 
-*  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries about only changed products.
+*  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
 
 <!--- MC-23084-->
 
-*  We’ve improved the performance of the Product/Target Rule and Target Rule/Product indexers. Indexing operations and editing and saving product operations are now faster.
+*  We’ve improved the performance of the Product/Target rule and Target Rule/Product indexers. Indexing operations and editing and saving product operations are now faster.
 
 ### Tax
 
@@ -1025,13 +1059,13 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-30500-->
 
-### Testing
+*  Free shipping is now applied as expected based on the applicable cart price rule. Previously, cart price rules did not take into account taxes when calculating whether an order meets criteria for free shipping.
 
-<!--- MC-22926-->
+### Testing
 
 <!--- MC-23067-->
 
-*  Infrastructure static tests now check for missing return statements in class methods.
+*  A PHPStan code analysis check has been integrated into Magento static builds. This tool performs sophisticated static code analysis and identifies additional issues that are currently not detected by PHP CodeSniffer and PHP Mess Detector. See [Magento Testing Guide]({{page.baseurl}}/test/testing.html).
 
 ### Theme
 
@@ -1041,11 +1075,17 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-29750-->
 
+*  We’ve resolved a bug in `JsFooterPlugin.php` that affected the display of dynamic blocks. Previously, Magento displayed this error when you directly accessed `/banner/ajax/load/url`: `Uncaught TypeError: strpos() expects parameter 1 to be string, null given in`
+
 ### Translation and locales
 
 <!--- MC-23224-->
 
 *  Special price range settings (from/to dates) now work correctly for administrator accounts using a Dutch locale.
+
+<!--- MC-31016-->
+
+*  Inline translation now works as expected when enabled for a storefront.
 
 ### UI
 
@@ -1071,7 +1111,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6233-->
 
-*  Corrected position of the wishlist item delete button on the category page. *Fix submitted by Paweł Tylek in pull request [25380](https://github.com/magento/magento2/pull/25380)*. [GitHub-21190](https://github.com/magento/magento2/issues/21190)
+*  Corrected the position of the wishlist item **Delete** button on the category page. *Fix submitted by Paweł Tylek in pull request [25380](https://github.com/magento/magento2/pull/25380)*. [GitHub-21190](https://github.com/magento/magento2/issues/21190)
 
 <!--- ENGCOM-6282-->
 
@@ -1099,7 +1139,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- ENGCOM-6321-->
 
-*  Corrected the CSS-defined color for the **Minimum Quantity allowed in Shopping Cart** field of the **Admin** > **Store** > **Configuration** > **Inventory** page *Fix submitted by Eden Duong in pull request [25648](https://github.com/magento/magento2/pull/25648)*. [GitHub-25647](https://github.com/magento/magento2/issues/25647)
+*  Corrected the CSS-defined color for the **Minimum Quantity allowed in Shopping Cart** field of the **Admin** > **Store** > **Configuration** > **Inventory** page. *Fix submitted by Eden Duong in pull request [25648](https://github.com/magento/magento2/pull/25648)*. [GitHub-25647](https://github.com/magento/magento2/issues/25647)
 
 <!--- ENGCOM-6371-->
 
@@ -1107,15 +1147,23 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 <!--- MC-23219-->
 
+*  We’ve reverted a previous fix (https://github.com/magento/magento2/pull/25309) that had introduced a change to global styles that had the unintended consequence of breaking styles through the storefront.
+
 ### URL rewrites
 
 <!--- MC-30917-->
 
+*  Customers who change language on a CMS page can now successfully navigate to the store view they’ve selected. Previously, Magento displayed a 404 error.
+
 <!--- MC-22606-->
+
+*  You can now save a category that contains many products (for example, 140000). Previously, saving a category with this many products returned a 503 error.
 
 ### Visual Merchandiser
 
 <!--- MC-31124-->
+
+*  The edit category page now behaves as expected when you drag and drop products to a new position. Previously, dragging and dropping products on any category page repositioned the viewing window at the top of the page.
 
 ### Web API framework
 
@@ -1155,6 +1203,27 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  The WYSIWYG editor no longer hangs indefinitely when you try to upload an image from the Admin. Previously, the image upload popup window hung until you refreshed the page. *Fix submitted by Nazar Klovanych in pull request [25556](https://github.com/magento/magento2/pull/25556)*. [GitHub-23966](https://github.com/magento/magento2/issues/23966)
 
+## Known issues
+
+**Issue**: Magento prompts customers to log in by displaying this message: `This account is not confirmed. Click here to resend confirmation email`.  The **Click here** link in this message should open the Send confirmation link page, but is currently inactive. **Workaround**: A hot fix will soon be available for this issue, and a fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33148-->
+
+**Issue**: Magento 2.3.5 does not support  upgrading using the Web Setup Wizard from deployments running Magento 2.3.3 or earlier without first manually updating dependencies for  `magento/updater`.  You can upgrade using the Web Setup Wizard without issue from Magento 2.3.4 to Magento 2.3.5. **Workaround**: Users should run the following commands before upgrading using the Web Setup Wizard:
+
+`cd update`
+
+`&& composer update`
+
+**Issue**: The Compare Products feature does not work as expected in deployments with multiple store views. When a user tries to compare products from multiple store views and one product has an empty value for a comparable attribute, Magento displays a corrupted Compare Products page. **Workaround**: Comparable attribute values cannot be empty. Merchants should specify non-empty values for comparable product attributes or use the default storeview value for the attribute. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33203-->
+
+**Issue**: Magento throws an error on the Order Summary  section of the checkout workflow when a customer removes store credit after first selecting it as a payment method for the entire order. **Workaround**: Customers can refresh the Order page. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
+<!-- MC-33431-->
+
+**Issue**: The storefront checkout workflow will not display any payment method that has been enabled for only specific countries with the exception of these payment methods: PayPal, Braintree, Klarna, and Amazon Pay. **Workaround**: No workaround for this issue is available in Magento 2.3.5. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
+
+**Issue**: You cannot complete an order to be shipped to multiple addresses if one of the ordered products is a virtual product. Currently, when you check out, Magento successfully places the order for the physical products, but the virtual product order is empty. **Workaround**: A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-32819-->
+
+**Issue**: The system message displayed by Magento after a bulk action (for example, a mass product update or import/export) displays a count of 0 instead of an accurate count of the products affected by the bulk action. **Workaround**: A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33345-->
+
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1181,7 +1250,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install {{site.data.var.ee}} 2.3.4 using Composer.
+You can install {{site.data.var.ee}} 2.3.5 using Composer.
 
 ## Migration tool kits
 
