@@ -13,7 +13,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
     </div>
 
-    <a class="logo"href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}/">
+    <a class="logo" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}/">
       <img class="logo-image" src="{{ site.baseurl }}/assets/i/adobe-a.svg" alt="Adobe">
       <span class="logo-text">Magento</span>
       <span class="site-logo">{{ site.logo }}</span>
