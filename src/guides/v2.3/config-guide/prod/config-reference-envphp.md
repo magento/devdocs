@@ -72,6 +72,8 @@ This node is used to enable/disable the crons. `0` means disable and `1` means e
 ]
 ```
 
+Learn more about [Cron][crons].
+
 ## crypt
 
 Magento uses an encryption key to protect passwords and other sensitive data. This key is generated during the Magento installation process.
@@ -213,3 +215,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [message-queues]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
+[crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
