@@ -13,11 +13,11 @@ The `env.php` file contains the following sections:
 | --------------------- | ---------------------------------------------- |
 | `backend`             | Settings for the Admin area                    |
 | `cache_types`         | Cache storage settings                         |
+| `cron`                 | enable/disable the cron jobs                  |
 | `crypt`               | The encryption key for cryptographic functions |
 | `db`                  | Database connection settings                   |
 | `directories`         | Magento directories mapping settings           |
 | `downloadable_domains`| List of downloadable domains                   |
-| `env`                 | enable/disable the cron jobs                   |
 | `install`             | The installation date                          |
 | `lock`                | Lock provider settings                         |
 | `MAGE_MODE`           | The [Magento mode][magento-mode]               |
