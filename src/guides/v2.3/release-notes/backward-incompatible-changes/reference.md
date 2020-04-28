@@ -27,9 +27,9 @@ Patch releases are primarily focused on delivering security and quality enhancem
 
 ## 2.3.4 - 2.3.5
 
-{% include backward-incompatible-changes/open-source/2.3.4-2.3.5-develop.html %}
+{% include backward-incompatible-changes/open-source/2.3.4-2.3.5.md %}
 
-{% include backward-incompatible-changes/commerce/2.3.4-2.3.5-develop.html %}
+{% include backward-incompatible-changes/commerce/2.3.4-2.3.5.md %}
 
 ## 2.3.3 - 2.3.4
 
