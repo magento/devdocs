@@ -17,11 +17,6 @@ This section discusses how to configure Apache as an *unsecure* proxy so that Ma
 {:.bs-callout-info}
 The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.
 
-See one of the following sections:
-
-*  [Set up a proxy for Apache 2.4](#es-apache-proxy-24)
-*  [Set up a proxy for Apache 2.2](#es-apache-proxy-22)
-
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
 
 This section discusses how to configure an Elasticsearch proxy using a virtual host.
@@ -80,56 +75,6 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 1. Continue with [Configure Magento to use Elasticsearch](#elastic-m2-configure).
 
-### Set up a proxy for Apache 2.2 {#es-apache-proxy-22}
-
-This section discusses how to configure an Elasticsearch proxy using a virtual host.
-
-1. As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
-
-1. Locate the `Listen` directive and add another listen port; for example:
-
-   ```conf
-   Listen 8080
-   ```
-
-1. Scroll to the bottom of the file and add the following lines:
-
-   ```conf
-   <VirtualHost *:8080>
-       ProxyPass http://localhost:9200/
-       ProxyPassReverse http://localhost:9200/
-   </VirtualHost>
-   ```
-
-1. Restart Apache:
-
-   *  CentOS: `service httpd restart`
-   *  Ubuntu: `service apache2 restart`
-
-1. Verify the proxy works by entering the following command:
-
-   ```bash
-   curl -i http://localhost:<proxy port>/_cluster/health
-   ```
-
-   For example, if your proxy uses port 8080:
-
-   ```bash
-   curl -i http://localhost:8080/_cluster/health
-   ```
-
-   Messages similar to the following display to indicate success:
-
-   ```terminal
-   HTTP/1.1 200 OK
-   Date: Tue, 23 Feb 2016 20:38:03 GMT
-   Content-Type: application/json; charset=UTF-8
-   Content-Length: 389
-   Connection: keep-alive
-
-   {"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
-   ```
-
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 
 {% include config/es-elasticsearch-magento.md %}
@@ -138,7 +83,6 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617){:target="_blank"} authentication with Apache. For more options, consult one of the following resources:
 
-*  [Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}
 *  [Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html){:target="_blank"}
 
 See one of the following sections:
@@ -157,8 +101,6 @@ This section discusses how to set up [HTTP Basic authentication](https://httpd.a
 This section discusses how to specify who can access the Apache server.
 
 1. Use a text editor to add the following contents to your secure virtual host.
-
-   *  Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
 
    *  Apache 2.4: Edit `/etc/apache2/sites-available/default-ssl.conf`
 
