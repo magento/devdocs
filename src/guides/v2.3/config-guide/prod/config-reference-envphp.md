@@ -62,6 +62,16 @@ All the Magento cache types configuration are available from this node.
 
 Learn more about different [Cache Types][cache-types].
 
+## cron
+
+This node is used to enable/disable the crons. `0` means disable and `1` means enable. If crons are disabled, Jobs will not run.
+
+```conf
+'cron' => [
+  'enabled' => 0
+]
+```
+
 ## crypt
 
 Magento uses an encryption key to protect passwords and other sensitive data. This key is generated during the Magento installation process.
@@ -117,16 +127,6 @@ A list of downloadable domains available in this node. Additional domains can be
 ```
 
 Learn more about [Downloadable Domains][downloadable-domains] commands.
-
-## cron
-
-This node is used to enable/disable the crons. `0` means disable and `1` means enable. If crons are disabled, Jobs will not run.
-
-```conf
-'cron' => [
-  'enabled' => 0
-]
-```
 
 ## install
 
