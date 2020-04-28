@@ -64,7 +64,7 @@ Learn more about different [Cache Types][cache-types].
 
 ## cron
 
-This node is used to enable/disable the cron jobs. `0` means disabled and `1` means enabled. If crons are disabled, jobs will not run.
+This node is used to enable/disable the cron jobs. `0` means disabled and `1` means enabled. If disabled, jobs will not run.
 
 ```conf
 'cron' => [
