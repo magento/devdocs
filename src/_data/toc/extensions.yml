@@ -28,17 +28,6 @@ pages:
       url: /extensions/b2b/
       versionless: true
 
-  - label: Google Shopping ads Channel
-    versionless: true
-    children:
-    - label: Install
-      url: /extensions/google-shopping-ads/
-      versionless: true
-
-    - label: Release Notes
-      url: /extensions/google-shopping-ads/release-notes/
-      versionless: true
-
   - label: Inventory Management
     versionless: true
     children:
