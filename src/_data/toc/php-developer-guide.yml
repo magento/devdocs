@@ -266,6 +266,9 @@ pages:
         - label: Non-secure functions
           url: /extension-dev-guide/security/non-secure-functions.html
 
+        - label: Content Security Policies
+          url: /extension-dev-guide/security/content-security-policies.html
+
     - label: Versioning
       url: /extension-dev-guide/versioning/
       children:
