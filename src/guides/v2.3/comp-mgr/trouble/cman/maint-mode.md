@@ -14,7 +14,7 @@ This topic discusses how you can create a custom maintenance page to display to 
 Creating a custom page to which to redirect users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
  {:.bs-callout-info}
-You must perform the tasks in this section as a user with `root` privileges.
+You must perform the tasks in this section as a user with `root` privileges. When you are in developer mode you can not set this custom maintenance page.
 
 See one of the following sections for more information:
 
