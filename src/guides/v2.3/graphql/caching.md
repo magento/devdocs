@@ -79,6 +79,19 @@ sub process_graphql_headers {
 }
 ```
 
+Query results should not be cached for logged in customers, because it cannot be guaranteed that these results are applicable to all customers. For example, you can create multiple customer groups and set up different product prices for each group. Caching results like these might cause customers to see the prices of another customer group.
+
+To prevent customers from seeing the incorrect data from cached results, add the following to your `.vcl` file in the `vcl_recv` subroutine before the return (hash):
+
+```text
+# Authenticated GraphQL requests should not be cached by default
+if (req.url ~ "/graphql" && req.http.Authorization ~ "^Bearer") {
+    return (pass);
+}
+```
+
+This statement prevents any query with an authorization token from being cached.
+
 [Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) further describes how to configure the `default.vcl` file.
 
 ## Caching with Fastly

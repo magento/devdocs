@@ -35,7 +35,7 @@ Complete the following prerequisites:
 
 *  Learn about GraphQL, how it works, and how to use it. See [Introduction to GraphQL](https://graphql.org/learn/) for details.
 
-*  Know how to generate a customer token. See [Get customer authorization token]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for details.
+*  Know how to generate a customer token. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for details.
 
 *  Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 
