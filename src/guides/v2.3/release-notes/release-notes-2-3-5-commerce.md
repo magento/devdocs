@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 {:.bs-callout-info}
 
-During pre-release, we discovered issues that forced us to create new packages. To expedite delivery, we chose to  change the name of the full-release patch from 2.3.5 to 2.3.5-p1. The 2.3.5-p1 package contains all new features and fixes. We also changed the name of the security-only patch for this quarter from 2.3.4-p1 to 2.3.4-p2. Future releases will follow the typical package naming conventions for full-release  and security packages.
+During pre-release, we discovered issues that forced us to create new packages. To expedite delivery, we chose to  change the name of the full-release patch from 2.3.5 to 2.3.5-p1. The 2.3.5-p1 package contains all new features and fixes. We also changed the name of the security-only patch for this quarter from 2.3.4-p1 to 2.3.4-p2. Future releases will follow the typical package naming conventions for full-release  and security packages. See [Wishlist error during upgrade to Magento versions 2.3.4-p1 or 2.3.5](https://support.magento.com/hc/en-us/articles/360042621771).
 
 ## Security-only patch available
 
@@ -34,7 +34,7 @@ Merchants upgrading to pre-release versions of Magento 2.3.5 and security-only p
 `Module ‘Magento_Wishlist’:
 Unable to apply data patch Magento\Wishlist\Setup\Patch\Data\CleanUpData for module Magento_Wishlist. Original exception message: Unable to unserialize value. Error: Syntax error`
 
-Merchants who encounter this error after  installing Magento 2.3.5 should upgrade to Magento 2.3.5-p1. Merchants who encounter this error after  installing Magento 2.3.4-p1 should upgrade to Magento 2.3.4-p2. <!--- MC-33513 33514-->
+Merchants who encounter this error after  installing Magento 2.3.5 should upgrade to Magento 2.3.5-p1. Merchants who encounter this error after  installing Magento 2.3.4-p1 should upgrade to Magento 2.3.4-p2. See [Wishlist error during upgrade to Magento versions 2.3.4-p1 or 2.3.5](https://support.magento.com/hc/en-us/articles/360042621771).<!--- MC-33513 33514-->
 
 ## Download and run the updated Database Cleanup script
 
@@ -58,7 +58,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 25 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Implementation of Content Security Policy (CSP)**. `Content-Security-Policy` is an HTTP response header that browsers can use to enhance the security of a web page. This added layer of security supports the detection and mitigation of attacks, including cross-site scripting (XSS) and data injection attacks. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html)
+*  **Implementation of Content Security Policies (CSP)**. This release includes a set of powerful new security tools for Magento installations. Content Security Policies (CSP) provide additional layers of defense by helping to detect and mitigate Cross-Site Scripting (XSS) and related data injection attacks. This common attack vector works by injecting malicious content that falsely claims to originate from the website. After the malicious content is loaded and executed, it can initiate the unauthorized transfer of data. See [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html). For technical information, see [Content Security Policies](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/security/content-security-policies.html)in the *PHP Developer Guide*.
 
 *  **Removal of session_id from URLs**. Exposure of `session-id` values in URLs creates a potential security vulnerability in the form of session fixation. We are removing code from the classes and methods that add or read session_id from URLs.
 
