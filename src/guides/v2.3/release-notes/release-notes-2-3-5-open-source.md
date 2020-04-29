@@ -81,6 +81,8 @@ The following platform upgrades help enhance website security and performance:
 
    The  `laminas/laminas-dependency-plugin` requires Composer 1.7.0 and higher. To see which version of Composer you are running, run `composer –-version`. Then, run `composer self-update` if you are on an older version of Composer. <!--- MC-15318-->
 
+   See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251)  DevBlog post.
+
 ### Performance boosts
 
 *  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations.) See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
@@ -1031,7 +1033,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 ## Known issues
 
-**Issue**: Magento prompts customers to log in by displaying this message: `This account is not confirmed. Click here to resend confirmation email`.  The **Click here** link in this message should open the Send confirmation link page, but is currently inactive. **Workaround**: A hot fix will soon be available for this issue, and a fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33148-->
+**Issue**: Magento prompts customers to log in by displaying this message: `This account is not confirmed. Click here to resend confirmation email`.  The **Click here** link in this message should open the Send confirmation link page, but is currently inactive. **Workaround**: The Resend account confirmation email link issue patch is now available for this issue. See [Resend account confirmation email link issue patch for Magento 2.3.5](https://magento.com/tech-resources/download#download2368). A permanent fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33148-->
 
 **Issue**: Magento 2.3.5 does not support  upgrading using the Web Setup Wizard from deployments running Magento 2.3.3 or earlier without first manually updating dependencies for  `magento/updater`.  You can upgrade using the Web Setup Wizard without issue from Magento 2.3.4 to Magento 2.3.5. **Workaround**: Users should run the following commands before upgrading using the Web Setup Wizard:
 
