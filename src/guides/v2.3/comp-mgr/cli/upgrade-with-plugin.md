@@ -11,8 +11,7 @@ functional_areas:
 -->
 
 {:.bs-callout-warning}
-This upgrading scenario is still under development and is published here to make it available for the Community to test.
-Do not use it on production.
+This plugin is currently in beta. Do not use it on production. It only works with Composer version 1.8.0 or earlier. It is currently incompatible with Magento 2.3.5 or later.
 
 The [`magento/composer-root-update-plugin`][custom composer plugin] Composer plugin resolves changes that need to be made to the root project `composer.json` file before updating to a new Magento product requirement.
 
