@@ -7,6 +7,9 @@ functional_areas:
   - Setup
 ---
 
+{:.bs-callout-info}
+All of the requirements described here apply to the latest patch release of Magento 2.3.
+
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
