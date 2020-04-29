@@ -32,7 +32,7 @@ A [module](https://glossary.magento.com/module) has a set of built-in attributes
 *  visibility
 *  weight
 
-In this case, when `getCustomAttributes()` is called, the system returns only custom attributes that are not in this list.
+In this case, when `getCustomAttributes()` is called, the system returns only custom attributes that are not in this list. If you create custom attributes programmatically keep in mind to set the `system` option to false if you want to retrieve the attribute in the `custom_attributes` array.
 
 The `Customer` module does not treat its EAV attributes in a special manner. As a result, the `getCustomAttributes()` method returns all EAV attributes.
 
@@ -77,7 +77,7 @@ class AddCustomerExampleAttribute implements DataPatchInterface
     {
         $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
         $customerSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
-            // Attribute parameters
+            // Attribute options (list of options can be found below)
         ]);
     }
 
@@ -265,6 +265,7 @@ The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttri
 |searchable|Catalog EAV Attribute is_searchable|0|
 |sort_order|EAV Entity Attribute sort_order||
 |source|EAV Attribute source_model||
+|system|Declares the attribute as system attribute.|1|
 |table|EAV Attribute backend_table||
 |type|EAV Attribute backend_type|varchar|
 |unique|EAV Attribute is_unique|0|
