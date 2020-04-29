@@ -7840,7 +7840,7 @@
                   "default" : null,
                   "accept_value" : true,
                   "is_multiple" : false,
-                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy"
+                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy"
                },
                "db-ssl-ca" : {
                   "shortcut" : "",
@@ -8017,7 +8017,7 @@
                   "is_multiple" : false,
                   "accept_value" : true,
                   "default" : null,
-                  "description" : "Redis disable locking. Values: false (default), true",
+                  "description" : "Redis disable locking. Values: false (default), true",
                   "is_value_required" : true,
                   "name" : "--session-save-redis-disable-locking",
                   "shortcut" : ""
@@ -9493,7 +9493,7 @@
                   "accept_value" : true,
                   "default" : null,
                   "is_multiple" : false,
-                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy"
+                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy"
                },
                "session-save-redis-sentinel-servers" : {
                   "is_value_required" : true,
@@ -9736,7 +9736,7 @@
                   "default" : null,
                   "accept_value" : true,
                   "is_multiple" : false,
-                  "description" : "Redis disable locking. Values: false (default), true"
+                  "description" : "Redis disable locking. Values: false (default), true"
                },
                "cache-backend-redis-compression-lib" : {
                   "is_value_required" : true,

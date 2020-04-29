@@ -8178,7 +8178,7 @@
                   "is_value_required" : true,
                   "is_multiple" : false,
                   "name" : "--session-save-redis-disable-locking",
-                  "description" : "Redis disable locking. Values: false (default), true",
+                  "description" : "Redis disable locking. Values: false (default), true",
                   "default" : null
                },
                "quiet" : {
@@ -8239,7 +8239,7 @@
                   "is_value_required" : true,
                   "is_multiple" : false,
                   "default" : null,
-                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy",
+                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy",
                   "name" : "--session-save-redis-compression-lib",
                   "shortcut" : "",
                   "accept_value" : true
@@ -9780,7 +9780,7 @@
                },
                "session-save-redis-disable-locking" : {
                   "name" : "--session-save-redis-disable-locking",
-                  "description" : "Redis disable locking. Values: false (default), true",
+                  "description" : "Redis disable locking. Values: false (default), true",
                   "default" : null,
                   "is_value_required" : true,
                   "is_multiple" : false,
@@ -9862,7 +9862,7 @@
                "session-save-redis-compression-lib" : {
                   "accept_value" : true,
                   "shortcut" : "",
-                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy",
+                  "description" : "Redis compression library. Values: gzip (default), lzf, lz4, snappy",
                   "default" : null,
                   "name" : "--session-save-redis-compression-lib",
                   "is_multiple" : false,
