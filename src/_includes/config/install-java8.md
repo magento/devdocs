@@ -31,15 +31,11 @@ Java version 8 might not be available for all operating systems. For example, yo
 To install JDK 1.8 on Ubuntu, enter the following commands as a user with `root` privileges:
 
 ```bash
-add-apt-repository -y ppa:webupd8team/java
-```
-
-```bash
 apt-get -y update
 ```
 
 ```bash
-apt-get install -y oracle-java8-installer
+apt-get install -y openjdk-8-jdk
 ```
 
 For other options, see [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html).

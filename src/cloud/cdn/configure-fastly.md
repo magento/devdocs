@@ -48,7 +48,7 @@ To view your Fastly credentials:
    -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
  {:.bs-callout-info}
-If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Technical Account Manager.
+If you cannot find the Fastly credentials for the Staging or Production environments, contact your Magento Customer Technical Advisor (CTA).
 
 ## Enable Fastly caching for your Cloud environments {#cloud-fastly-config}
 
@@ -296,7 +296,7 @@ To check the version of Fastly CDN module for Magento 2:
 {:.procedure}
 To upgrade the Fastly module:
 
-1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html#update).
+1. In your local Integration environment, use the following module information to [upgrade the Fastly module]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
    ```text
    module name: fastly/magento2

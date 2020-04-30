@@ -31,9 +31,9 @@ where `3` is the order id.
 
 **Headers:**
 
-`Content-Type` `application/json`
+`Content-Type: application/json`
 
-`Authorization` `Bearer <administrator token>`
+`Authorization: Bearer <administrator token>`
 
 **Payload:**
 

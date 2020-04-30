@@ -50,6 +50,15 @@ Before you begin, make sure you understand the following:
    </config>
    ```
 
+   or in the `__construct` method (declaration is similar to `di.xml`):
+
+   ```php
+   public function __construct()
+   {
+       parent::__construct('my:first:command');
+   }
+   ```
+
    Otherwise the [Symfony](https://github.com/symfony/console/blob/master/Application.php#L470) framework will return an `The command defined in "<Command class>" cannot have an empty name.` error.
 
 ## Add CLI commands using dependency injection {#cli-sample}
@@ -83,17 +92,14 @@ Following is a summary of the process:
             */
            protected function configure()
            {
-               $options = [
-                    new InputOption(
-                        self::NAME,
-                        null,
-                        InputOption::VALUE_REQUIRED,
-                        'Name'
-                    )
-               ];
                $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
-               $this->setDefinition($options);
+               $this->addOption(
+                   self::NAME,
+                   null,
+                   InputOption::VALUE_REQUIRED,
+                   'Name'
+               );
 
                parent::configure();
            }

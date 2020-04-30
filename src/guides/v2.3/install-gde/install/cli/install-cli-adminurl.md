@@ -21,7 +21,7 @@ This section discusses how to use the command line to display the [Admin](https:
 Command options:
 
 ```bash
-magento info:adminuri
+bin/magento info:adminuri
 ```
 
 A sample result follows:

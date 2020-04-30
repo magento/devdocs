@@ -73,7 +73,7 @@ This release contains 250 enhancements to core quality, which improve the qualit
 
 ### Merchant tool enhancements
 
-*  **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
+**Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
 
 ### Inventory Management
 
@@ -93,11 +93,11 @@ This release includes improved GraphQL coverage for search, layered navigation, 
 
 *  **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.
 
-*  **A customer can start an order on one device and complete it on another.** Use the [`customerCart]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
+*  **A customer can start an order on one device and complete it on another.** Use the [`customerCart`]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
 
 *  **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
 
-*  **You can search categories by ID, name, and/or URL key.** The [`categoryList]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated`category` query.
+*  **You can search categories by ID, name, and/or URL key.** The [`categoryList`]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated `category` query.
 
 *  **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether to store supports these taxes.
 
@@ -130,10 +130,6 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 *  Engagement Cloud includes a new Chat widget that makes it easy for shoppers to communicate in real time with customers as they shop in your store. Chat can be accessed from the Engagement Cloud section of the Magento configuration, or directly from your Engagement Cloud account. See [Engagement Cloud Chat](https://docs.magento.com/m2/ee/user_guide/marketing/engagement-cloud-chat.html).
 
 *  Merchants can now sync additional campaigns from Engagement Cloud to Magento.
-
-### Google Shopping ads Channel
-
-[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
 
 ### Vendor-developed extension enhancements
 
@@ -349,7 +345,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6072-->
 
-*  The storefront and Admin shopping cart summary fields are now displayed consistently  and follow setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
+*  The storefront and Admin shopping cart summary fields are now displayed consistently and reflect setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
 
 <!--- ENGCOM-6151-->
 
@@ -455,7 +451,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19737-->
 
-*  The Date field customizable option for products now saves accurate values for stores in different time zones.
+*  The **Date** field customizable option for products now saves accurate values for stores in different time zones.
 
 <!--- MC-19031-->
 
@@ -483,7 +479,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5632-->
 
-*  An incorrect XML namespace url was removed from the generated sitemaps displayed at **Marketing** > **SEO & Search** > **Sitemap**. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
+*  An incorrect XML namespace URL was removed from the generated sitemaps displayed at **Marketing** > **SEO & Search** > **Sitemap**. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
 
 <!--- ENGCOM-5684-->
 
@@ -697,7 +693,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5367-->
 
-*  You can now perform mass actions on items in a grid that uses an EAV collection. Previously, grids created with the now-deprecated Magento\Backend\Block\Widget\Grid (as many third-party extensions are) threw an exception when you tried to performa a mass action. *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
+*  You can now perform mass actions on items in a grid that uses an EAV collection. Previously, grids created with the now-deprecated `Magento\Backend\Block\Widget\Grid` (as many third-party extensions are) threw an exception when you tried to perform a mass action. *Fix submitted by Thomas Klein in pull request [23452](https://github.com/magento/magento2/pull/23452)*. [GitHub-23451](https://github.com/magento/magento2/issues/23451)
 
 ### Email
 
@@ -773,7 +769,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5572-->
 
-*  Magento now correctly redirects you to the customer account page when you click the Back button on the Manage Addresses page. *Fix submitted by Eden Duong in pull request [24079](https://github.com/magento/magento2/pull/24079)*. [GitHub-24058](https://github.com/magento/magento2/issues/24058)
+*  Magento now correctly redirects you to the customer account page when you click the **Back** button on the Manage Addresses page. *Fix submitted by Eden Duong in pull request [24079](https://github.com/magento/magento2/pull/24079)*. [GitHub-24058](https://github.com/magento/magento2/issues/24058)
 
 <!--- ENGCOM-5762-->
 
@@ -857,7 +853,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5863-->
 
-*  You can now successfully select an image from the image gallery when you configure a theme ( **Admin** > **Content** > **Configuration**). *Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
+*  You can now successfully select an image from the image gallery when you configure a theme (**Admin** > **Content** > **Configuration**). *Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
 
 <!--- ENGCOM-6229-->
 
@@ -1201,7 +1197,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5925-->
 
-*  Removed the redundant XML code in the`<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
+*  Removed the redundant XML code in the `<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
 
 <!--- MC-15140-->
 
@@ -1411,7 +1407,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5993-->
 
-*  The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
+*  The **Back** button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
 
 <!--- MC-22114-->
 

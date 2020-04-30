@@ -4,8 +4,355 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Mar 4 10:30:29 2020
+updated: Mon Apr 27 14:03:20 2020
 entries:
+- description: Added release notes for the Magento Open Source and Commerce 2.3.5 Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7052
+- description: With the deactivation of the Google Shopping ads extension, the release notes and installation topics are removed, along with any related references to those topics.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7090
+- description: Added a deprecation notice for the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Technical
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7055
+- description: Added [B2B Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/b2b-release-notes.html).
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7047
+- description: Added [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html), and changed navigation from "Compliance" to "Security and Compliance".
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7020
+- description: Added 2.3.5-develop backward incompatible changes [reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html) for pre-release.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6967
+- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6638
+- description: The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the _GraphQL Developer Guide_ for details.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6123
+- description: Added the 'Package Validation' section to the [Technical Review Guidelines](https://devdocs.magento.com/marketplace/sellers/technical-review-guidelines.html).
+  versions: 2.3.x
+  type: Major Update
+  date: April 23, 2020
+  link: https://github.com/magento/devdocs/pull/7082
+- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 22, 2020
+  link: https://github.com/magento/devdocs/pull/7073
+- description: Added 'Set a fixed price for bundled products' to the [REST usage notes](https://devdocs.magento.com/guides/v2.3/rest/notes.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 20, 2020
+  link: https://github.com/magento/devdocs/pull/7035
+- description: Added correct db schema information in the [Configure declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 16, 2020
+  link: https://github.com/magento/devdocs/pull/7045
+- description: Added a new reference topic for the [system.xml](https://devdocs.magento.com/guides/v2.3/config-guide/prod/config-reference-systemxml.html)
+    configuration file.
+  versions: 2.3.x
+  type: New Topic
+  date: April 16, 2020
+  link: https://github.com/magento/devdocs/pull/7024
+- description: 'New Page Builder topic on how to configure three different options
+    for styling elements in your content types: [How to configure styling options](https://devdocs.magento.com/page-builder/docs/how-to/how-to-configure-styling-options.html).'
+  versions: 2.3.x
+  type: New Topic
+  date: April 15, 2020
+  link: https://github.com/magento/devdocs/pull/7044
+- description: Added a Troubleshooting section in the [Docker services container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
+    topic.
+  versions: 2.x
+  type: Technical
+  date: April 15, 2020
+  link: https://github.com/magento/devdocs/pull/7043
+- description: Added the 'Metadata interfaces' section to the [Service contract design
+    patterns](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html#metadata-interfaces)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6827
+- description: Added the 'Example of an API interface implementation' section to the
+    [Public interfaces & APIs](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/api-concepts.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6826
+- description: Added the 'Using cUrl in Magento' section to the [Use cURL to run the
+    request](https://devdocs.magento.com/guides/v2.3/get-started/gs-curl.html) topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/6823
+- description: Created new topic about the [Magento Privacy JS Library](https://devdocs.magento.com/compliance/privacy/magento-privacy-js-library.html).
+  versions: '2.x'
+  type: New Topic
+  date: April 14, 2020
+  link: https://github.com/magento/devdocs/pull/7037
+- description: Updated the PHP and Magento version support information for the [Magento
+    URL rewrites module](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
+    on Magento Cloud projects.
+  versions: 2.x
+  type: Technical
+  date: April 13, 2020
+  link: https://github.com/magento/devdocs/pull/7030
+- description: Updated a code block in the [How to add CLI commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 9, 2020
+  link: https://github.com/magento/devdocs/pull/7016
+- description: Fixed a config entry in the the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 9, 2020
+  link: https://github.com/magento/devdocs/pull/7015
+- description: Fix codeblock syntax in the [Register your component](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/component-registration.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 8, 2020
+  link: https://github.com/magento/devdocs/pull/7009
+- description: Add another way of declaring a new CLI command in the [How to add CLI
+    commands](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 8, 2020
+  link: https://github.com/magento/devdocs/pull/7006
+- description: Updated [Xdebug instructions for debugging CLI commands]( https://devdocs.magento.com/cloud/howtos/debug.html#debugcli)
+    on Magento Cloud Pro Production and Staging environments  to specify the required
+    Xdebug php configuration file (`php.xdebug.ini`) when debugging commands.
+  versions: 2.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/6934
+- description: Fix file location in the [Custom import entity](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/custom-import-entity.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/6994
+- description: Update theme file name in the [Compile LESS using Grunt](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 7, 2020
+  link: https://github.com/magento/devdocs/pull/7004
+- description: Added HTML example in the [Common layout customization tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 6, 2020
+  link: https://github.com/magento/devdocs/pull/6989
+- description: Removed recommendations about defining separate types for input and
+    output data in GraphQL [resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html#mutation-syntax).
+  versions: 2.3.x
+  type: Technical
+  date: April 6, 2020
+  link: https://github.com/magento/devdocs/pull/7001
+- description: Update the JDK 8 install command in the [Install and configure Elasticsearch](https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-overview.html#install-prereq-java-ubuntu)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: April 3, 2020
+  link: https://github.com/magento/devdocs/pull/6976
+- description: Added information about the `outerClickHandler` option for the [Modal
+    Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html).
+  versions: 2.3.x
+  type: Technical
+  date: April 2, 2020
+  link: https://github.com/magento/devdocs/pull/6927
+- description: Update instruction to improve performance in the [Configure Docker
+    environment](https://devdocs.magento.com/cloud/docker/docker-config.html) topic.
+  versions: 2.x
+  type: Technical
+  date: April 2, 2020
+  link: https://github.com/magento/devdocs/pull/6709
+- description: Added example for adjusting the form validation message in the [Custom
+    validation rules](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-validation.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6937
+- description: Added the _Content restrictions for admin users_ section to the [Creating
+    an Access Control List (ACL) rule](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-access-control-list-rule.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6946
+- description: Describing how to perform any kind of [custom form validation](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/validations/custom-form-validation.html) to a custom form.
+  versions: 2.3.x
+  type: New Topic
+  date: April 1, 2020
+  link: https://github.com/magento/devdocs/pull/6886
+- description: Added a sample response in the [GraphQL requests](https://devdocs.magento.com/guides/v2.3/graphql/send-request.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6839
+- description: Removes RabbitMX EOL version number in the [RabbitMQ](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/install-rabbitmq.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6943
+- description: Added note about setting the explicit defaults for timestamp config
+    in the [MySQL]( https://devdocs.magento.com/guides/v2.3/install-gde/prereq/mysql.html#instgde-prereq-mysql-config)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 31, 2020
+  link: https://github.com/magento/devdocs/pull/6916
+- description: Fix argument names in a code block in the [Create a new storefront
+    theme](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/theme-create.html)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6950
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: Adds more content to the example in the [Common layout customization
+    tasks](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html#layout_markup_add_to_elements)
+    topic.
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6938
+- description: Fixed code style for JSON blocks and styles of the collapsible elements
+    in the [Order processing tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/orders/order-intro.html).
+  versions: 2.3.x
+  type: Technical
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6928
+- description: Added a section for the Tooltip Element to the [Magento UI library](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 30, 2020
+  link: https://github.com/magento/devdocs/pull/6947
+- description: Added an 'ignoreTmpls property' section to the [Template Literals
+    in UI Components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 25, 2020
+  link: https://github.com/magento/devdocs/pull/6873
+- description: Available now! Amazon Sales Channel 4.0 introduces a new [Amazon Sales
+    Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-sales-channel-home.html)
+    home page, a new [store dashboard](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-store-dashboard.html),
+    a streamlined [onboarding process](https://docs.magento.com/m2/ce/user_guide/sales-channels/asc/amazon-onboarding-home.html),
+    and new [default store settings](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/default-store-settings.html).
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6915
+- description: Magento has released a hot fix on March 24, 2020 for Magento 2.3.x.<br/>
+    [Magento Open Source 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html)<br/>
+    [Magento Commerce 2.3.4 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html)<br/>
+    [Magento Open Source 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html)<br/>
+    [Magento Commerce 2.3.3 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html)<br/>
+    [Magento Open Source 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html)<br/>
+    [Magento Commerce 2.3.2 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html)<br/>
+    [Magento Open Source 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)<br/>
+    [Magento Commerce 2.3.1 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html)<br/>
+    [Magento Open Source 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)<br/>
+    [Magento Commerce 2.3.0 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html)
+  versions: 2.3.x
+  type: Major Update
+  date: March 24, 2020
+  link: https://github.com/magento/devdocs/pull/6913
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major Update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
+- description: Added a 'Declaring the new custom no-route processor' section to the
+    [Routing](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html) topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6868
+- description: Added instructions for setting up a [GitLab integration](https://devdocs.magento.com/cloud/integrations/gitlab-integration.html) to manage source
+    files for Magento Cloud projects.
+  versions: 2.x
+  type: New topic
+  date: March 23, 2020
+  link: https://github.com/magento/devdocs/pull/6876
+- description: Added a topic for the [`Container ui-component`](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-container.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 19, 2020
+  link: https://github.com/magento/devdocs/pull/6871
+- description: Added a new topic about how to create an integration using the [GuzzleHttp](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/create-integration-with-api.html) external API to use some external Web Services.
+  versions: 2.3.x
+  type: New topic
+  date: March 18, 2020
+  link: https://github.com/magento/devdocs/pull/6859
+- description: Added the 'Disable a cron' section to the [Custom cron job and cron
+    group reference](https://devdocs.magento.com/guides/v2.3/config-guide/cron/custom-cron-ref.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 16, 2020
+  link: https://github.com/magento/devdocs/pull/6863
+- description: Added topic for the [ColumnsResize UI Compnent](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-columns-resize.html).
+  versions: 2.3.x
+  type: New topic
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6838
+- description: Added execution order examples to [Plugin (Interceptors)](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/plugins.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 12, 2020
+  link: https://github.com/magento/devdocs/pull/6811
+- description: Improved the instructions to configure Cloud Starter projects to use
+    New Relic to add alternative instructions for users who have access to New Relic
+    and the Magento Admin for a site, but do not have access to configure environment
+    variables through the Magento Cloud project. See [Configure New Relic for Starter
+    environments](https://devdocs.magento.com/cloud/project/new-relic.html#configure-new-relic-for-starter-environments).
+  versions: 2.3.x
+  type: Technical changes
+  date: March 11, 2020
+  link: https://github.com/magento/devdocs/pull/6809
+- description: Big rewrite of the [Configure the TinyMCE editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html)
+    topic.
+  versions: 2.3.x
+  type: Major update
+  date: March 9, 2020
+  link: https://github.com/magento/devdocs/pull/6681
 - description: Updated the [Magento Cloud reference topic](https://devdocs.magento.com/cloud/reference/cli-ref-topic.html)
     in the Cloud guide.
   versions: 2.x
@@ -502,12 +849,6 @@ entries:
   type: Major update
   date: November 21, 2019
   link: https://github.com/magento/devdocs/pull/6031
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for the Google Shopping ads Channel v3.0.2 release.
-  versions: 3.0.2 Google Shopping ads
-  type: Major update
-  date: November 19, 2019
-  link: https://github.com/magento/devdocs/pull/6027
 - description: Added the [Search for products with the /search endpoint](https://devdocs.magento.com/guides/v2.2/rest/search-endpoint.html)
     topic to the _REST API Reference_.
   versions: 2.2.x, 2.3.x
@@ -758,12 +1099,6 @@ entries:
   type: New topic
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/5586
-- description: Added [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v3.0.1 to the _Extension Developer Guide_.
-  versions: 2.3.3, 3.0.1 GSa
-  type: Major update
-  date: October 8, 2019
-  link: https://github.com/magento/devdocs/pull/5568
 - description: Updated the REST schema for [2.3.3](https://devdocs.magento.com/redoc/2.3/)
     and [2.2.10](https://devdocs.magento.com/swagger/index_22.html).
   versions: 2.2.10, 2.3.3
@@ -1363,13 +1698,6 @@ entries:
   type: New topic
   date: July 12, 2019
   link: https://github.com/magento/devdocs/pull/4780
-- description: Updated the [Google Shopping ads Install documentation](https://devdocs.magento.com/extensions/google-shopping-ads/)
-    and [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for version 3.0.
-  versions: 2.0 Google Shopping ads
-  type: Major update
-  date: July 10, 2019
-  link: https://github.com/magento/devdocs/pull/4849
 - description: Added information and example about how to use the [ColorPicker component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-colorpicker.html).
   versions: 2.3.x
   type: New topic
@@ -1391,13 +1719,6 @@ entries:
   type: Major update
   date: July 8, 2019
   link: https://github.com/magento/devdocs/pull/4630
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v2.0.2 and the [Upcoming releases](https://devdocs.magento.com/release/)
-    page.
-  versions: 2.0.2 Google Shopping ads Channel
-  type: Major update
-  date: July 8, 2019
-  link: https://github.com/magento/devdocs/pull/4902
 - description: Added a `Code sample` section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -1664,12 +1985,6 @@ entries:
   type: Major update
   date: June 7, 2019
   link: https://github.com/magento/devdocs/pull/4599
-- description: Added [release notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel patch 1.1.2.
-  versions: 1.1.2-gsa
-  type: Major update
-  date: June 7, 2019
-  link: https://github.com/magento/devdocs/pull/4703
 - description: Added a [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html)
     topic to the Software Update Guide.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2025,13 +2340,13 @@ entries:
   type: Major update
   date: April  2, 2019
   link: https://github.com/magento/devdocs/pull/4103
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
   date: April  1, 2019
   link: https://github.com/magento/devdocs/pull/4052
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic

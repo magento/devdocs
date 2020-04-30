@@ -11,15 +11,15 @@ When testing recommendations in a non-production environment, it is likely you w
 The following recommendation types are listed in the recommended order when testing in a non-production environment:
 
 1. **More like this** - Does not require any input data. Uses a direct content similarity match.
-1. **Most popular** - Requires minimal input data. Testers need to view products.
+1. **Most Viewed** - Requires minimal input data. Testers need to view products.
 1. **Viewed this, viewed that** - Requires multiple testers to view multiple products.
 1. **Bought this, bought that** - Requires multiple testers to purchase multiple products.
 
 ## Testing recommendations on a non-production environment
 
-1. Deploy the `product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
+1. Deploy the `magento/product-recommendations` module to a non-production environment where the catalog data is similar to your production catalog.
 
-1. Use one of the non-production SaaS Environment IDs for [configuration]({{ page.baseurl }}/recommendations/configure.html#envid) in the Magento Admin.
+1. Use one of the non-production SaaS Environment IDs for [configuration](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) in the Magento Admin.
 
 ### Caveats
 

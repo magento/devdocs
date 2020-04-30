@@ -315,7 +315,7 @@ namespace.readNumber = function(x) {
 -5
 1e5
 Math.PI</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>Number</td>
@@ -351,23 +351,23 @@ Boolean(0)</pre></td>
       <td>RegExp</td>
       <td><pre>new RegExp('hello')
 /world/g</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>Date</td>
       <td><pre>new Date
 new Date()</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>null</td>
       <td><pre>null</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>undefined</td>
       <td><pre>undefined</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>void</td>
@@ -396,7 +396,7 @@ new Date()</pre></td>
       <td>Object</td>
       <td><pre>{}
 {foo: 'abc', bar: 123, baz: null}</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>Object.&lt;string></td>
@@ -431,7 +431,7 @@ So the key will always be a string in for...in loops. But the compiler will veri
 function SomeClass() {}
 
 new SomeClass();</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>SomeInterface</td>
@@ -439,7 +439,7 @@ new SomeClass();</pre></td>
 function SomeInterface() {}
 
 SomeInterface.prototype.draw = function() {};</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>project.MyClass</td>
@@ -447,7 +447,7 @@ SomeInterface.prototype.draw = function() {};</pre></td>
 project.MyClass = function () {}
 
 new project.MyClass()</pre></td>
-      <td />
+      <td></td>
    </tr>
    <tr>
       <td>Element</td>
@@ -495,7 +495,7 @@ new project.MyClass()</pre></td>
          <td>
             Simply the name of a type.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -512,7 +512,7 @@ new project.MyClass()</pre></td>
             Parametrizes a type, by applying a set of type arguments to
             that type. The idea is analogous to generics in Java.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -547,7 +547,7 @@ new project.MyClass()</pre></td>
             have a <code>length</code> property, you might write
             <code>Array.&lt;{length}&gt;</code>.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -595,7 +595,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies a function.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -608,7 +608,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies a function return type.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -623,7 +623,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies the context type of a function type.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -639,7 +639,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies the constructed type of a constructor.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -653,7 +653,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies variable arguments to a function.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -667,7 +667,7 @@ new project.MyClass()</pre></td>
             Specifies that the annotated function accepts a variable
             number of arguments.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -682,7 +682,7 @@ new project.MyClass()</pre></td>
          <td>
             Specifies optional arguments to a function.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -697,7 +697,7 @@ new project.MyClass()</pre></td>
             Specifies that the annotated function accepts an optional
             argument.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -709,7 +709,7 @@ new project.MyClass()</pre></td>
          <td>
             Indicates that the variable can take on any type.
          </td>
-         <td />
+         <td></td>
       </tr>
       <tr>
          <td>
@@ -722,7 +722,7 @@ new project.MyClass()</pre></td>
             Indicates that the variable can take on any type, and the
             compiler should not type-check any uses of it.
          </td>
-         <td />
+         <td></td>
       </tr>
    </tbody>
 </table>

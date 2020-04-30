@@ -210,6 +210,9 @@ pages:
             - label: Enable or disable maintenance mode
               url: /install-gde/install/cli/install-cli-subcommands-maint.html
 
+            - label: Configure consumer behavior
+              url: /install-gde/install/cli/install-cli-subcommands-consumers.html
+
             - label: Create the Magento database schema
               url: /install-gde/install/cli/install-cli-subcommands-db.html
 

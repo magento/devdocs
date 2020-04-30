@@ -294,25 +294,25 @@ The module is now complete. Your module's directory structure under `app/code` s
 
 ```tree
 MyCompany
-`-- ExampleAdminNewPage
+|-- ExampleAdminNewPage
     |
     |-- Controller
     |   |-- Adminhtml
     |       |-- HelloWorld
-    |           `-- <a href="#controlleradminhtmlhelloworldindexphp">Index.php</a>
+    |           |-- Index.php
     |-- etc
     |   |-- adminhtml
-    |   |   |-- <a href="#etcadminhtmlmenuxml">menu.xml</a>
-    |   |   `-- <a href="#etcadminhtmlroutesxml">routes.xml</a>
-    |   `-- <a href="#etcmodulexml">module.xml</a>
+    |   |   |-- menu.xml
+    |   |   |-- routes.xml
+    |   |-- module.xml
     |-- view
     |   |-- adminhtml
     |       |-- layout
-    |       |    `-- <a href="#viewadminhtmllayoutexampleadminnewpagehelloworldindexxml">exampleadminnewpage_helloworld_index.xml</a>
-    |       `-- templates
-    |           `-- <a href="#viewadminhtmltemplateshelloworldphtml">helloworld.phtml</a>
-    |-- <a href="#composerjson">composer.json</a>
-    `-- <a href="#registrationphp">registration.php</a>
+    |       |   |-- exampleadminnewpage_helloworld_index.xml
+    |       |-- templates
+    |           |-- helloworld.phtml
+    |-- composer.json
+    |-- registration.php
 ```
 
 ## Installing the module
@@ -323,6 +323,7 @@ Now that the module is code-complete, run the following commands to install it:
 1. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
 1. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
 1. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
+1. `bin/magento setup:static-content:deploy` - (Production mode only) This command deploys static view files. If you are in developer mode, refer to [Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) to refresh the static view files.
 1. `bin/magento cache:clean` - This command cleans the cache.
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
