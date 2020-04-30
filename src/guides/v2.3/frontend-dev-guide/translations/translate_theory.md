@@ -114,12 +114,16 @@ To ensure that the text you add in a `.js` file is collected by the i18n tool an
 
    ```javascript
    $.mage.__('<string>');
+   (or)
+   $t('<string>');
    ```
 
    If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
 
    ```javascript
    $.mage.__('Hello %1').replace('%1', yourVariable);
+   (or)
+   $t('Hello %1').replace('%1', yourVariable);
    ```
 
 In this example, the `'Hello %1'` string is added to the dictionary when the i18n tool is run.
