@@ -163,7 +163,7 @@ To check Elasticsearch software compatibility:
 
    -  Change the Elasticsearch service version in the `services.yaml` file to a version that is compatible with the Elasticsearch PHP client.
 
-      {%include /cloud/note-pro-elasticsearch-version-change.md%}
+      {%include /cloud/note-pro-using-yaml-support.md%}
 
 ## Restart the Elasticsearch service
 
