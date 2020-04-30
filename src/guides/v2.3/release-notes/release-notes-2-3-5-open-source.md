@@ -5,7 +5,7 @@ title: Magento Open Source 2.3.5 Release Notes
 
 Magento Open Source 2.3.5 offers significant platform upgrades, substantial security changes, and performance improvements.
 
-This release includes over 180 functional fixes to the core product and over 25 security enhancements. It includes resolution of over 4 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes over 180 functional fixes to the core product and over 25 security enhancements. It includes resolution of over 46 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
 {:.bs-callout-info}
 

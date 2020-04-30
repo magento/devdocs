@@ -116,12 +116,13 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 
 <table>
 <tr>
-<th colspan="6"><b>Incoming IP addresses</b></th>
+<th colspan="7"><b>Incoming IP addresses</b></th>
 </tr>
 <tr>
 <td>US Region</td>
 <td>US-2 Region</td>
 <td>US-3 Region</td>
+<td>US-5 Region</td>
 <td>EU Region</td>
 <td>EU-3 Region</td>
 <td>AP-3 Region</td>
@@ -143,6 +144,11 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 <p>34.215.10.85</p>
 </td>
 <td>
+<p>50.112.160.58</p>
+<p>54.213.195.223</p>
+<p>35.163.170.185</p>
+</td>
+<td>
 <p>52.209.44.44</p>
 <p>52.209.23.96</p>
 <p>52.51.117.101</p>
@@ -162,12 +168,13 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 
 <table>
 <tr>
-<th colspan="6"><b>Outgoing IP addresses</b></th>
+<th colspan="7"><b>Outgoing IP addresses</b></th>
 </tr>
 <tr>
 <td>US Region</td>
 <td>US-2 Region</td>
 <td>US-3 Region</td>
+<td>US-5 Region</td>
 <td>EU Region</td>
 <td>EU-3 Region</td>
 <td>AP-3 Region</td>
@@ -187,6 +194,11 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 <p>34.210.166.180</p>
 <p>34.215.83.92</p>
 <p>34.213.20.158</p>
+</td>
+<td>
+<p>54.70.238.217</p>
+<p>52.88.113.98</p>
+<p>52.36.188.230</p>
 </td>
 <td>
 <p>52.51.163.159</p>
