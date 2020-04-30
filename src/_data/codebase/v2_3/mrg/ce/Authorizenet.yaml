@@ -1,7 +1,7 @@
 ---
 title: Magento_Authorizenet
 source_repo: magento2ce
-release: 2.3.4
+release: 2.3.5
 github_path: app/code/Magento/Authorizenet/README.md
 last_modified_at: '2019-08-28 14:50:53 +0100'
 content: "The Magento_Authorizenet module implements the integration with the Authorize.Net
