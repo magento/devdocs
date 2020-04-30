@@ -40,14 +40,6 @@ See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library
 
 ### Integrate the Tab component with the Form component
 
-This example defines the page layout
-
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
-xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    ...
-</page>
-```
 This example integrates the Tab component with the [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) component.
 
 ```xml
