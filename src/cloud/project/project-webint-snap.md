@@ -26,7 +26,7 @@ To create a snapshot using the Magento Web Interface:
 
 1. Log in to your project.
 1. In the left pane, click the name of the environment to back up.
-1. In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+1. In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud/cloud_snapshots.png){:width="30px"} (snapshots).
 1. Click **Create**.
 
 {:.procedure}

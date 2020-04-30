@@ -204,3 +204,60 @@ The following searchCriteria can be used to determine the sort order and the num
 *  `searchCriteria[pageSize]` - Specifies the maximum number of items to return. The value must be an integer. If the `pageSize` is not specified, the system returns all matches.
 
 *  `searchCriteria[currentPage]` - Returns the current page.
+
+### Example for search criteria to determine the sort order and attributes to return
+
+This example shows how to use search criteria to determine the sort order and attributes to return. It returns orders with status `pending`.
+
+**Endpoint:**
+
+`GET <host>/rest/<store_code>/V1/orders/`
+
+**Headers:**
+
+`Content-Type` `application/json`
+
+`Authorization` `Bearer <administrator token>`
+
+**Parameters:**
+
+Parameter | Value | Description
+--- | --- | ---
+searchCriteria[filter_groups][0][filters][0][field] | status | Attribute name to filter
+searchCriteria[filter_groups][0][filters][0][value] | pending | Attribute value to filter
+fields | items[increment_id,entity_id] | Attributes to return in the response. If you do not specify this parameter, all attributes will be returned.
+
+**Payload:**
+
+Not applicable
+
+**Request:**
+
+```http
+GET <host>/rest/V1/orders?
+searchCriteria[filter_groups][0][filters][0][field]=status&
+searchCriteria[filter_groups][0][filters][0][value]=pending&
+searchCriteria[sortOrders][0][field]=increment_id&
+fields=items[increment_id,entity_id]
+```
+
+**Response:**
+
+```json
+{
+    "items": [
+        {
+            "entity_id": 3003,
+            "increment_id": "WA0003003"
+        },
+        {
+            "entity_id": 3140,
+            "increment_id": "WA0003140"
+        },
+        {
+            "entity_id": 9435,
+            "increment_id": "WA0009435"
+        }
+    ]
+}
+```

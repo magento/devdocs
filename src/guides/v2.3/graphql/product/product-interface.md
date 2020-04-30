@@ -171,7 +171,9 @@ The `MediaGalleryInterface` contains basic information about a product image or 
 
 Attribute | Type | Description
 --- | --- | ---
+`disabled` | Boolean | Indicates whether the media item is hidden from view
 `label` | String | The label for the product image or video
+`position` | Int | The media item's position after it has been sorted
 `url` | String | The URL for the product image or video
 
 ### ProductImage object {#ProductImage}

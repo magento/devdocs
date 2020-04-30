@@ -7,14 +7,11 @@ As of Magento 2.3.4, the `filter` attribute of the [`products`]({{page.baseurl}}
 
 ## Prerequisites
 
-To enable a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering, select the attribute on the **Stores** > Attributes > **Product** page in the Admin and edit the following fields:
+You have several options when enabling a custom attribute (or any attribute that is not listed by default in the `ProductAttributeFilterInput` object) for filtering. Navigate to the attribute's **Storefront Properties** page (**Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties**) in the Admin, then perform one or both of the following actions:
 
-Field | Setting
---- | ---
-**Use in Search** | Yes
-**Visible in Advanced Search** | Yes
-**Use in Layered Navigation** | Filterable (with results) or Filterable (no results)
-**Use in Search Results Layered Navigation** | Yes
+-  Set the **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**. This field allows the attribute to be used as a filter and returns layered navigation and aggregation data. If this field is set to **No**, then the attribute will not return layered navigation and aggregation data.
+
+-  Set the **Use in Search** and **Visible in Advanced Search** fields to **Yes**. These fields primarily allow Magento to index the attribute's contents, making the data available for quick and advanced searches. Setting both these fields also allows the attribute to be used as a filter. These fields do not configure the presence or absence of layered navigation and aggregation data. If you set only one of these fields to **Yes**, the attribute cannot be used as a filter (unless you set the **Use in Layered Navigation** field to a value other than **No**).
 
 ## Define the filter for your query
 
