@@ -14,9 +14,9 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 ## Upgrade from older versions of the Magento application
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
+Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Upgrade your PHP version
+-  Update your PHP version Elasticsearch version, and other services
 -  Convert an older configuration management file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
 -  Upgrade third-party extensions to the latest supported version
@@ -89,6 +89,8 @@ To update the `.magento.app.yaml` file:
 ## Upgrade the Magento application
 
 Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
+
+{%include cloud/note-pro-using-yaml-support.md%}
 
 ### Back up the database
 

@@ -15,8 +15,7 @@ This affects the following environments:
 -  All Starter environments including Production `master`
 -  Pro Integration environments
 
-{:.bs-callout-tip}
-For Pro, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+{%include cloud/note-pro-using-yaml-support.md%}
 
 ## Default and supported services
 
@@ -161,7 +160,7 @@ The following table lists the services used in {{site.data.var.ece}} and their v
 
 Service   |  Magento 2.3  | Magento 2.2
 --------- | ------------- | ------------
-`elasticsearch` | *Magento version 2.3.5 and later*–– 5.2, 6.5, 7.2, 7.5<br>*Magento version 2.3.1 to 2.3.4*–– 5.2, 6.5<br>*Magento version 2.3.0*–– 2.4, 5.2  | *Magento version 2.2.8 and later*–– 5.2, 6.5 <br>*Magento version 2.2.0 to 2.2.7*–– 5.2
+`elasticsearch` | *Magento version 2.3.5 and later*–– 5.2, 6.5, 7.2, 7.5<br>*Magento version 2.3.1 to 2.3.4*–– 6.5<br>*Magento version 2.3.0*–– 2.4, 5.2  | *Magento version 2.2.8 and later*–– 5.2, 6.5 <br>*Magento version 2.2.0 to 2.2.7*–– 5.2
 `mariadb` | 10.0 to 10.2  | 10.0 to 10.2
 `nginx`   | 1.9           | 1.9
 `node`    | 6, 8, 10, 11  | 6, 8, 10, 11
