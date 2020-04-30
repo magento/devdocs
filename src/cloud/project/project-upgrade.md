@@ -100,7 +100,7 @@ Review the [service versions][version compatibility matrix] information for the 
 
 ### Complete the upgrade
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
