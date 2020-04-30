@@ -1,7 +1,7 @@
 ---
 title: Magento_CatalogAnalytics
 source_repo: magento2ce
-release: 2.3.4
+release: 2.3.5
 github_path: app/code/Magento/CatalogAnalytics/README.md
 last_modified_at: '2019-08-06 14:40:28 -0500'
 content: 'The Magento_CatalogAnalytics module configures data definitions for a data
