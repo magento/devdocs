@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryLowQuantityNotificationApi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryLowQuantityNotificationApi/README.md
+release: 1.1.5
+github_path: InventoryLowQuantityNotificationApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryLowQuantityNotificationApi` module provides service contracts
   for managing Inventory Management notifications. \n\nThis module is part of the
