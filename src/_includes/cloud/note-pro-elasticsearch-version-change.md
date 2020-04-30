@@ -1,0 +1,2 @@
+ {:.bs-callout-info}
+For Pro projects, you must create a [Support ticket](http://support.magento.com) to change the Elasticsearch version installed on Staging and Production environments. It can take up to 48 hours for the Magento infrastructure team to update your project to the requested service version.
