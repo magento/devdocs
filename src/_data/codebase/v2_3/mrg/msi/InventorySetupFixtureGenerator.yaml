@@ -1,8 +1,8 @@
 ---
 title: Magento_InventorySetupFixtureGenerator
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventorySetupFixtureGenerator/README.md
+release: 1.1.5
+github_path: InventorySetupFixtureGenerator/README.md
 last_modified_at: '2018-12-24 14:41:45 +0200'
 content: "The `InventorySetupFixtureGenerator` module customizes the process of Inventory
   Data (Salable Quantity) Generation for [performance testing](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html).\n\nThis

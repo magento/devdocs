@@ -13,6 +13,7 @@ The `env.php` file contains the following sections:
 | --------------------- | ---------------------------------------------- |
 | `backend`             | Settings for the Admin area                    |
 | `cache_types`         | Cache storage settings                         |
+| `cron`                | Enable or disable the cron jobs                |
 | `crypt`               | The encryption key for cryptographic functions |
 | `db`                  | Database connection settings                   |
 | `directories`         | Magento directories mapping settings           |
@@ -60,6 +61,21 @@ All the Magento cache types configuration are available from this node.
 ```
 
 Learn more about different [Cache Types][cache-types].
+
+## cron
+
+Enable or disable cron jobs for the Magento application. By default, cron jobs are enabled. To disable them, add the `cron` configuration to the `env.php` file and set the value to `0`.
+
+```conf
+'cron' => [
+  'enabled' => 0
+]
+```
+
+{:.bs-callout-warning}
+Be careful when you disable cron jobs. When they are disabled essential processes required by the Magento application will not run.
+
+Learn more about [Crons][crons].
 
 ## crypt
 
@@ -202,3 +218,4 @@ Learn more about session in [x-frame-options][x-frame-options].
 [message-queues]: {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html
 [downloadable-domains]: {{ page.baseurl }}/reference/cli/magento.html#downloadabledomainsadd
 [change-docroot-to-pub]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
+[crons]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html
