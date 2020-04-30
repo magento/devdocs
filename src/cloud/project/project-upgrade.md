@@ -23,8 +23,7 @@ Review the [{{site.data.var.ece}} service versions][version compatibility matrix
 -  Update the `.gitignore` file
 
 {:.bs-callout-info}
-If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service. 
-
+If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
 ### Configuration management
 
 If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
