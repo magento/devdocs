@@ -19,13 +19,17 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+
 ### v4.1.0
 
-Amazon Sales Channel 4.1.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
+Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
 
--  {:.new}<!--4247, 4230-->Changed the requirements for creating Magento orders when Amazon orders are set to import. If an order contains an item that is not matched to a catalog item, does not have available stock, or is disabled in the catalog, no Magento order is created. This change was made to correct a variety of order import issues. See [Managing Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html).
+-  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Managing Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
 
--  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html).
+   This change also adds order information in the _Order Notes_ column of the redesigned _Amazon Orders_ table to let the merchant know there is an issue with the order import.
+
+-  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
 
 -  {:.new}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Amazon Renewed]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
 
@@ -41,9 +45,14 @@ Amazon Sales Channel 4.1.0 is compatible with version 2.3.x of {{site.data.var.c
 
 -  {:.fix}<!--CHAN-4326-->Corrected an issue causing order import errors associated with third-party extensions that use Magento shipping methods to create orders.
 
+-  {:.fix}<!--CHAN-4357-->Corrected an issue causing errors when running cron synchronization. A lock has been added on the CLI command that will prevent two cron jobs from synchronizing at the same time.
+
 ### v4.0.0
 
-Amazon Sales Channel 4.0.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+Amazon Sales Channel 4.0.0 is compatible with versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+
+{:.bs-callout .bs-callout-warning}
+Amazon Sales Channel 4.0.0 is not supported with Magento 2.3.5. For support with Magento 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
 
 -  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page with improved "card view" for your store information.
 
