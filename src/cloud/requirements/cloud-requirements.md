@@ -21,10 +21,10 @@ The following technologies are requirements for developing and deploying your st
 Here are some advanced technologies we recommend getting familiar with:
 
 *  [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) for CDN and caching (based on Varnish)
-*  [Blackfire Profiler]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) for performance testing
 *  [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html) for performance testing
 *  [GitHub]({{ site.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
 *  [Bitbucket]({{ site.baseurl }}/cloud/integrations/bitbucket-integration.html) if you need a Git repo
+*  [GitLab]({{ site.baseurl }}/cloud/integrations/gitlab-integration.html) if you need a Git repo
 
 {% include cloud/split-db-nosupport.md %}
 
@@ -61,7 +61,7 @@ You cannot upgrade the software, but you can configure the following services:
 *  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
  {:.bs-callout-info}
-See [Magento technology stack requirements]({{ site.baseurl }}/guides/v2.3/install-gde/system-requirements-tech.html) for the latest software version requirements.
+See the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements.
 
 For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
@@ -114,15 +114,14 @@ For development and testing, we recommend the following:
 *  Verify the Fastly VCL is uploaded to Fastly
 *  Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
 *  For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
-*  Profile key flows and customizations using Blackfire.io
 
 ## License and authentication requirements
 
-The Account Owner creates the initial {{site.data.var.ece}} account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+When you purchase a {{site.data.var.ece}} subscription, Magento creates an account for the License Owner and sends an invitation to the License Owner email address with account verification and login instructions. The License Owner has the Account owner role with permission to create user accounts and assign roles for technical staff, consultants, and Magento partners involved in the code and production of the stores to the project.
 
 To work with and deploy stores, you need the following:
 
-*  [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
+*  A [{{site.data.var.ece}} account]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
 *  [Project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
 *  [Magento authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) for each user who contributes to the project
 
@@ -132,3 +131,6 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *  Bitbucket
 *  Google
 *  Create your own Cloud account
+
+<!--link definitions-->
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions

@@ -180,7 +180,7 @@ For scalar attributes we can use next configuration:
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="first_custom_attribute" type="number" />
+        <attribute code="first_custom_attribute" type="int" />
         <attribute code="second_custom_attribute" type="string" />
     </extension_attributes>
 </config>

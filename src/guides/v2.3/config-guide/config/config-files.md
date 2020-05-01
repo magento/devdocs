@@ -11,7 +11,7 @@ functional_areas:
 
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various [module](https://glossary.magento.com/module) directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
-You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
+You can use these files---also referred to as *configuration types*---to customize specific aspects of your module's behavior.
 
 Multiple modules can declare configuration files that affect the same configuration type (for example, events), and these multiple configuration files are merged.
 
@@ -49,6 +49,9 @@ Magento's merge algorithm follows:
 -  If the original document has multiple nodes with the same identifier, an error is triggered because the identifiers cannot be distinguished.
 
 After configuration files are merged, the resulting document contains all nodes from the original files.
+
+{:.bs-callout-info}
+Note that you can use [\Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) class for debugging and understanding the logic behind [configuration files loader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php#L125) and [merge configs]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php#L144) process.
 
 ## Configuration types, objects, and interfaces {#config-files-classes}
 
@@ -113,7 +116,9 @@ Configuration file|Description|Stage|Configuration object
 
 ### Configuration interfaces {#config-files-classes-int}
 
-You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config). You can also use these interfaces if you create new configuration types.
+You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config).
+
+You can also use these interfaces if you [create new configuration types]({{ page.baseurl }}/config-guide/config/config-create.html#config-files-extend-create-create).
 
 `Magento\Framework\Config` provides the following interfaces:
 

@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 namespace :test do
@@ -50,6 +53,9 @@ namespace :test do
   desc 'Test Markdown style with mdl'
   task :md do
     puts 'Testing Markdown style with mdl ...'.magenta
+    print 'List the rules: $ '.magenta
+    sh 'bin/mdl -l --style=_checks/styles/style-rules-prod'
+    puts 'Linting ...'.magenta
     output = `bin/mdl --style=_checks/styles/style-rules-prod --ignore-front-matter --git-recurse -- .`
     puts output.yellow
     abort "The Markdown linter detected #{output.lines.count - 2} issue(s)".red unless output.empty?

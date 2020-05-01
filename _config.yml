@@ -89,6 +89,7 @@ defaults:
       group: page-builder
       github_link: false
       feedback_link: false
+      ee_only: true
 
   - 
       scope:
@@ -97,6 +98,7 @@ defaults:
         group: page-builder
         github_link: false
         feedback_link: false
+        ee_only: true
 
   -
     scope:
@@ -106,11 +108,6 @@ defaults:
       github_link: false
       feedback_link: false
 
-  -
-    scope:
-      path: guides/v2.2
-    values:
-      sitemap: false
 
 ##########################
 # Plugins and extensions #
@@ -195,10 +192,12 @@ mage2bloburl: https://github.com/magento/magento2/blob
 m1xgdeurl: /guides/m1x
 m1xgithuburl: https://github.com/magento/devdocs-m1/tree/master
 
-# 2.2 variables
-gdeurl22: /guides/v2.2/
-githuburl22: https://github.com/magento/devdocs/tree/master/src/guides/v2.2/
-
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/
+
+# Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
+downloads: https://devdocs.magento.com/download
+
+exclude:
+  - .git

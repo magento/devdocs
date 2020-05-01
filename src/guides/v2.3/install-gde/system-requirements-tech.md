@@ -7,6 +7,9 @@ functional_areas:
   - Setup
 ---
 
+{:.bs-callout-info}
+All of the requirements described here apply to the latest patch release of Magento 2.3.
+
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
@@ -17,7 +20,7 @@ Magento is not supported on:
 
 ## Memory requirement
 
-Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}/comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
+Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file](https://support.magento.com/hc/en-us/articles/360032980432); otherwise, your upgrade might fail.
 
 ## Composer (latest stable version)
 
@@ -42,20 +45,22 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 ## PHP
 
-{:.bs-callout-info}
-All 3rd party libraries now support PHP 7.2.
- If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board][] for a full list of outstanding issues.
+{:.bs-callout-warning}
+PHP 7.1 has reached [End of Life](https://www.php.net/supported-versions.php). To maintain PCI compliance, Magento should not be run on unsupported software.
+Installing from GitHub will no longer work with Magento 2.3.4/PHP 7.1.
+The only way to install 2.3.4 with PHP 7.1.x is with Composer.
+Magento recommends using PHP 7.3
 
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
-
-Magento 2.3.1 is certified and tested on PHP 7.2.11.
-Magento 2.3.3 adds support for PHP 7.3.
 
 ### Required PHP extensions
 
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
+
+{:.bs-callout-warning}
+If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
 <!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}
@@ -108,14 +113,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
    {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-   *  Elasticsearch [6.x][]{:target="_blank"}
+   *  Elasticsearch 6.8.x
 
-      Magento 2.3 uses [Elasticsearch PHP client][]{:target="_blank"} version 6.1.
+      Magento 2.3 supports [Elasticsearch PHP client][]{:target="_blank"} version 6.8.
+
+   *  Elasticsearch 7.x.x
 
       {:.bs-callout-warning}
-      Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x][].
-
-      If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+      Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.
 
       Follow the instructions in [Change Elasticsearch Module][].
 
@@ -141,7 +146,7 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php
-[Known issue with xdebug]: {{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html
+[Known issue with xdebug]: https://support.magento.com/hc/en-us/articles/360034242212
 [php_xdebug 2.5.x]: http://xdebug.org/download.php
 [master databases]: {{page.baseurl}}/config-guide/multi-master/multi-master.html
 [bash]: https://www.gnu.org/software/bash/
@@ -172,7 +177,6 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [Redis]: {{page.baseurl}}/config-guide/redis/config-redis.html
 [Varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
 [Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
-[6.x]: https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1
 [Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
 [2.x and 5.x]: https://www.elastic.co/support/eol
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html

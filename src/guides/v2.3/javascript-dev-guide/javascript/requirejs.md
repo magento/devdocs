@@ -17,6 +17,7 @@ All configuration is done in the `requirejs-config.js` file. It has a single roo
 var config = {
     'map': {...},
     'paths': {...},
+    'deps':[...],
     'shim': {...},
     'config': {
         'mixins': {...},
@@ -47,9 +48,12 @@ map: {
 }
 ```
 
+{:.bs-callout-tip}
+You can also use the `map` configuration to override a JS module with a custom JS module. See [Custom JS component]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#js_replace).
+
 ### paths {#requirejs-config-paths}
 
-The `paths` configuration, similar to `map`, is used for aliasing not just any real AMD module that calls `define()`, but also any JS file (event from a URL), HTML templates, etc. Magento uses this to alias URLs and third party libraries.
+The `paths` configuration, similar to `map`, is used for aliasing not just any real AMD module that calls `define()`, but also any JS file (even from a URL), HTML templates, etc. Magento uses this to alias URLs and third party libraries.
 
 ```javascript
 paths: {
@@ -92,7 +96,7 @@ shim: {
 
 ### mixins {#requirejs-config-mixin}
 
-The `mixins` configuration is used to overwrite component methods of an AMD module which returns either a UI component,a jQuery widget, or a JS object. Unlike the above configuration properties, the `mixins` property is under the `config` property, apart from the parent object called **config**.
+The `mixins` configuration is used to overwrite component methods of an AMD module which returns either a UI component, a jQuery widget, or a JS object. Unlike the above configuration properties, the `mixins` property is under the `config` property, apart from the parent object called **config**.
 
 In this snippet, `Vendor_Module/js/module-mixin` will overwrite the existing component methods in `Vendor_Module/js/module` with the specified component methods. It is a convention to name the mixin by appending a `-mixin` to the original `path/to/js`, although not required.
 

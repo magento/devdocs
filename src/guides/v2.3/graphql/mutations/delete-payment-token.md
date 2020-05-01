@@ -58,6 +58,13 @@ mutation {
   }
 }
 ```
+## Input attributes
+
+The `deletePaymentToken` object must contain the following attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`public_hash` | `String!` | The public hash of the token
 
 ## Output attributes
 
@@ -70,9 +77,16 @@ The `DeletePaymentTokenOutput` object returns the result of the operation and de
 Attribute | Data Type | Description
 --- | --- | ---
 `customerPaymentTokens` | `CustomerPaymentTokens` | Contains an array of customer payment tokens
-`result` | Boolean | A value of `true` indicates the request was successful
+`result` | Boolean! | A value of `true` indicates the request was successful
 
 {% include graphql/customer-payment-tokens.md %}
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a token using public hash: xxxxxxxx` | The customer token specified in the `public_hash` argument does not exist in the `vault_payment_token` table.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
 
 ## Related topics
 

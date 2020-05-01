@@ -73,4 +73,4 @@ The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterfac
 {:.ref-header}
 Next step
 
-[Example&mdash;logging database activity]({{ page.baseurl }}/config-guide/log/log-db.html)
+[Example---logging database activity]({{ page.baseurl }}/config-guide/log/log-db.html)

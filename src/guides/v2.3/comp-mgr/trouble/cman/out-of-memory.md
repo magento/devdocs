@@ -7,6 +7,7 @@ menu_node:
 menu_order: 4
 functional_areas:
   - Upgrade
+redirect_to: https://support.magento.com/hc/en-us/articles/360032980432
 ---
 
 You may encounter an error, caused by your system running out of physical memory, when you attempt to install or update an extension or the latest Magento 2.3.x version. We recommend you create a swap file to avoid this error.

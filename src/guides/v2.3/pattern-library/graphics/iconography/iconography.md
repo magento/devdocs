@@ -18,8 +18,8 @@ Typically icons should represent a single, unique concept and be used consistent
 
 In the Magento [Admin](https://glossary.magento.com/admin) UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
 
-[Download Icon Library .ai file](src/Magento-icon-library.ai)
-[Download Icon Library Sketch file](src/magento_icon_library.sketch)
+[Download Icon Library .ai file]({{ site.downloads }}/Magento-icon-library.ai)
+[Download Icon Library Sketch file]({{ site.downloads }}/magento_icon_library.sketch)
 
 ![](img/Magento-icon-contact-sheet.png)
 
@@ -27,7 +27,7 @@ In the Magento [Admin](https://glossary.magento.com/admin) UI icons have a simpl
 
 ### Rules
 
-*  Icons should be designed on the 300px by 300px icon grid. [Download Icon Grid .ai file](src/Magento_icon_grid_300x300.ai)
+*  Icons should be designed on the 300px by 300px icon grid. [Download Icon Grid .ai file]({{ site.downloads }}/Magento_icon_grid_300x300.ai)
 *  Icons should be monochromatic.
 *  Icons should look like they are part of the "family" of icons.
 *  Line weights should be consistent with other icons in the [library](https://glossary.magento.com/library).
@@ -45,7 +45,7 @@ Here is a guide to help you get started creating your own icon:
 
 How to use the icon grid:
 
-[Download Icon Grid .ai file](src/Magento_icon_grid_300x300.ai)
+[Download Icon Grid .ai file]({{ site.downloads }}/Magento_icon_grid_300x300.ai)
 
 ![](img/using-icon-grid.png)
 
@@ -84,9 +84,6 @@ Icons, if in fonts or not, should be very descriptive, especially if they stand 
 1. Use colors with enough contrast for your icons.
 1. Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.
 
-From: [http://modernwebaccessibility.com/en/blog/demystify-speak-none](http://modernwebaccessibility.com/en/blog/demystify-speak-none){:target="_blank"}
-
 ## Additional resources
 
 *  [https://yatil.net/the-best-way-to-use-icon-fonts/](https://yatil.net/the-best-way-to-use-icon-fonts/){:target="_blank"}
-*  [http://pictos.cc/articles/using-icon-fonts/](http://pictos.cc/articles/using-icon-fonts/){:target="_blank"}

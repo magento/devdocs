@@ -43,7 +43,7 @@ For Starter, deploy the development branch you created to Staging and Production
 1. Select the Staging branch.
 1. Select the **Merge** option to deploy to Production.
 
-![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
+![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud/cloud_project-merge.png)
 
 ### Deploy code with SSH and CLI {#ssh}
 
@@ -159,11 +159,11 @@ To transfer media from remote-to-remote environments directly, you must enable s
 
 1. [Open an SSH connection]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh) to the source environment.
 
-   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**:
+   To find the **SSH access** link in your Project Web Interface, select the environment and click **Access Site**. The syntax for the SSH command is as follows:
 
-    ```bash
-    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
-    ```
+   ```bash
+   ssh -A <environment_ssh_link@ssh.region.magento.cloud>
+   ```
 
 1. Use the `rsync` command to copy the `pub/media` directory from your current environment to  another remote environment:
 
@@ -172,6 +172,8 @@ To transfer media from remote-to-remote environments directly, you must enable s
    ```
 
 ## Migrate the database {#cloud-live-migrate-db}
+
+{%include cloud/note-db-import-export-warning.md%}
 
 **Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, confirm you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
 
@@ -199,7 +201,7 @@ To migrate a database:
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-1. Create a database dump file in `gzip format:
+1. Create a database dump file in `gzip` format:
 
    For Starter environments and Pro Integration environments:
 
@@ -213,13 +215,13 @@ To migrate a database:
    mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
    ```
 
-1. Transfer the database dump to another remote environment with an `rsync` command:
+1. Transfer the database dump to another remote environment with the `rsync` command:
 
    ```bash
    rsync -azvP /tmp/database.sql.gz <destination_environment_ssh_link@ssh.region.magento.cloud>:/tmp
    ```
 
-1. Enter `exit` to terminate the SSH connection.
+1. Type `logout` to terminate the SSH connection.
 
 1. Open an SSH connection to the environment you want to migrate the database into:
 
@@ -253,7 +255,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 To solve this problem, you can generate a new database dump changing or removing the `DEFINER` clause as shown in the following example:
 
 ```bash
-mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
+mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name>  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
 ```
 
 Use the database dump file to [migrate the database](#cloud-live-migrate-db).

@@ -48,11 +48,10 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 
 *  The [Magento Coding Standard] provides a set of rules and sniffs for the [PHP_CodeSniffer] tool
 *  [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
-*  [Extension Quality Program] in the Magento Marketplace User Guide
+*  [Extension Quality Program]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html) in the Magento User Guide
 *  [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
-[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
@@ -63,6 +62,5 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 [Magento Coding Standard]: https://github.com/magento/magento-coding-standard
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
-[Extension Quality Program]: https://docs.magento.com/marketplace/user_guide/sellers/extension-quality-program.html
 [01 The Module Skeleton Kata]: https://www.youtube.com/watch?v=JvBWJ6Lm9MU)
 [Mage2Katas]: http://mage2katas.com/

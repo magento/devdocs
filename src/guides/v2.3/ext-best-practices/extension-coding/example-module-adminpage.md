@@ -48,7 +48,7 @@ For more information see: [`composer.json`]({{ page.baseurl }}/extension-dev-gui
       "AFL-3.0"
     ],
     "require": {
-      "php": "~5.6.0|7.0.2|7.0.4|~7.0.6"
+      "php": "~7.1.3||~7.2.0||~7.3.0"
     },
     "autoload": {
       "files": [ "registration.php" ],
@@ -100,6 +100,17 @@ If your module does not implement [Declarative Schema]({{ page.baseurl }}/extens
 
 ```xml
 <module name="MyCompany_ExampleAdminNewPage" setup_version="1.0.0">
+```
+
+If your module has a dependency with other modules, you can change the loading order sequence of the module by using the `sequence` node.
+In the example below, `MyCompany_ExampleAdminNewPage` will be loaded after the `Magento_Checkout` module.
+
+```xml
+<module name="MyCompany_ExampleAdminNewPage">
+  <sequence>
+    <module name="Magento_Checkout"/>
+  </sequence>
+</module>
 ```
 
 ## Routing and navigation
@@ -176,40 +187,55 @@ Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`.
 {% collapsible File content for Index.php %}
  ```php
 <?php
-  namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
+namespace MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld;
 
-  class Index extends \Magento\Backend\App\Action
-  {
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
+
+/**
+ * Class Index
+ */
+class Index extends Action implements HttpGetActionInterface
+{
+    const MENU_ID = 'MyCompany_ExampleAdminNewPage::greetings_helloworld';
+
     /**
-    * @var \Magento\Framework\View\Result\PageFactory
-    */
+     * @var PageFactory
+     */
     protected $resultPageFactory;
 
     /**
-     * Constructor
+     * Index constructor.
      *
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
      */
     public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        Context $context,
+        PageFactory $resultPageFactory
     ) {
-         parent::__construct($context);
-         $this->resultPageFactory = $resultPageFactory;
+        parent::__construct($context);
+
+        $this->resultPageFactory = $resultPageFactory;
     }
 
     /**
      * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml
      *
-     * @return \Magento\Framework\View\Result\Page
+     * @return Page
      */
     public function execute()
     {
-         return  $resultPage = $this->resultPageFactory->create();
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->setActiveMenu(static::MENU_ID);
+        $resultPage->getConfig()->getTitle()->prepend(__('Hello World'));
+
+        return $resultPage;
     }
-  }
-?>
+}
  ```
 {% endcollapsible %}
 
@@ -238,11 +264,11 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
 ```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <title>
-            Greetings
-        </title>
-    </head>
+    <referenceBlock name="page.title">
+        <action method="setPageTitle">
+            <argument name="title" xsi:type="string">Greetings</argument>
+        </action>
+    </referenceBlock>
     <body>
         <referenceContainer name="content">
             <block class="Magento\Backend\Block\Template" template="MyCompany_ExampleAdminNewPage::helloworld.phtml"/>
@@ -268,25 +294,25 @@ The module is now complete. Your module's directory structure under `app/code` s
 
 ```tree
 MyCompany
-`-- ExampleAdminNewPage
+|-- ExampleAdminNewPage
     |
     |-- Controller
     |   |-- Adminhtml
     |       |-- HelloWorld
-    |           `-- <a href="#controlleradminhtmlhelloworldindexphp">Index.php</a>
+    |           |-- Index.php
     |-- etc
     |   |-- adminhtml
-    |   |   |-- <a href="#etcadminhtmlmenuxml">menu.xml</a>
-    |   |   `-- <a href="#etcadminhtmlroutesxml">routes.xml</a>
-    |   `-- <a href="#etcmodulexml">module.xml</a>
+    |   |   |-- menu.xml
+    |   |   |-- routes.xml
+    |   |-- module.xml
     |-- view
     |   |-- adminhtml
     |       |-- layout
-    |       |    `-- <a href="#viewadminhtmllayoutexampleadminnewpagehelloworldindexxml">exampleadminnewpage_helloworld_index.xml</a>
-    |       `-- templates
-    |           `-- <a href="#viewadminhtmltemplateshelloworldphtml">helloworld.phtml</a>
-    |-- <a href="#composerjson">composer.json</a>
-    `-- <a href="#registrationphp">registration.php</a>
+    |       |   |-- exampleadminnewpage_helloworld_index.xml
+    |       |-- templates
+    |           |-- helloworld.phtml
+    |-- composer.json
+    |-- registration.php
 ```
 
 ## Installing the module
@@ -297,8 +323,13 @@ Now that the module is code-complete, run the following commands to install it:
 1. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
 1. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
 1. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
+1. `bin/magento setup:static-content:deploy` - (Production mode only) This command deploys static view files. If you are in developer mode, refer to [Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) to refresh the static view files.
 1. `bin/magento cache:clean` - This command cleans the cache.
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 
 ![Hello World Page]({{ site.baseurl }}/common/images/ext-best-practices/hello-world-page.png)
+
+## Related topics
+
+*  [Create an ACL rule]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html)

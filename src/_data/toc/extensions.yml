@@ -28,17 +28,6 @@ pages:
       url: /extensions/b2b/
       versionless: true
 
-  - label: Google Shopping ads Channel
-    versionless: true
-    children:
-    - label: Install
-      url: /extensions/google-shopping-ads/
-      versionless: true
-
-    - label: Release Notes
-      url: /extensions/google-shopping-ads/release-notes/
-      versionless: true
-
   - label: Inventory Management
     versionless: true
     children:
@@ -48,7 +37,6 @@ pages:
 
     - label: Release Notes
       url: /inventory/release-notes.html
-      exclude_versions: ['2.0', '2.1', '2.2']
 
   - label: Google reCAPTCHA
     children:
@@ -59,3 +47,7 @@ pages:
     children:
     - label: Install
       url: /security/two-factor-authentication.html
+
+  - label: Vendor Bundled Extensions (VBEs)
+    url: /extensions/vendor/
+    versionless: true

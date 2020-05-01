@@ -14,14 +14,16 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
+{% include cloud/note-pro-mount-disk-config-yaml-support.md %}
+
 ### `name`
 
 {{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
 The name is used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{:.bs-callout-info}
-Do not change the name of an application after it has been deployed.
+{:.bs-callout-warning}
+Do not change the name of an application after it has been deployed. Doing so will result in data loss.
 
 ### `type` and `build`
 
@@ -30,7 +32,7 @@ The `type`  and `build` properties provide information about the base container 
 The supported `type` language is [PHP](https://glossary.magento.com/php). Specify the PHP version as follows:
 
 ```yaml
-type: php:7.1
+type: php:<version>
 ```
 
 The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
@@ -149,7 +151,6 @@ Defines the persistent disk size of the application in MB.
 disk: 2048
 ```
 
-{:.bs-callout-info}
 The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
@@ -174,10 +175,10 @@ The format for adding your mount to this list is as follows:
 -  `shared`—Shares a volume between your applications inside an environment.
 -  `disk`—Defines the size available for the shared volume.
 
-{:.bs-callout-warning}
-The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-
 You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
+
+{:.bs-callout-warning}
+Once your Magento site has data, do not change the `subpath` portion of the mount name. This value is the unique identifier for the files area. If you change this name, you will lose all site data stored at the old location.
 
 ### `dependencies`
 
@@ -217,7 +218,9 @@ Add CLI commands under the `build`, `deploy`, or `post_deploy` sections _before_
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        php ./vendor/bin/ece-tools build
+        set -e
+        php ./vendor/bin/ece-tools build:generate
+        php ./vendor/bin/ece-tools build:transfer
     # We run deploy hook after your application has been deployed and started.
     deploy: |
         php ./vendor/bin/ece-tools deploy
@@ -265,6 +268,8 @@ hooks:
 
 You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
+{% include cloud/note-ece-tools-custom-deployment.md %}
+
 ### `crons`
 
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
@@ -290,13 +295,13 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
+For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 
-The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
+The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.x.
 
 ```yaml
 variables:
@@ -312,7 +317,7 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: mymagento
-type: php:7.2
+type: php:<version>
 ```
 
 ### PHP extensions
@@ -493,4 +498,4 @@ workers:
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.

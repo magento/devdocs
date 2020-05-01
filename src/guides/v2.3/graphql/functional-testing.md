@@ -9,7 +9,7 @@ Magento provides API functional tests that can verify extension points in GraphQ
 
 ## Creating a new GraphQL functional test
 
-All GraphQL functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\GraphQlAbstract`. It defines the `graphQlQuery()` method, which should be used to perform Web API calls from tests.
+All GraphQL functional tests should be located in the `dev/tests/api-functional/testsuite/Magento/GraphQl/` directory and inherit from the generic test case `Magento\TestFramework\TestCase\GraphQlAbstract`. It defines the `graphQlQuery()` and `graphQlMutation()` methods, which should be used to perform Web API calls from tests.
 
 The following test verifies that the schema returns the correct attribute type, given the `attribute_code` and corresponding `entity_type`.
 
@@ -285,7 +285,9 @@ Define the exception message before invoking logic that generates the exception.
 
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
-    The current user cannot perform operations on cart "XXXXX"
+```terminal
+The current user cannot perform operations on cart "XXXXX"
+```
 
 `XXXXX` is the unique ID of Customer B's cart.
 

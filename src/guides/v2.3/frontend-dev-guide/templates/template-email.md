@@ -97,7 +97,9 @@ Some email clients (for example, Gmail) support only CSS styles that have been a
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
 
-    {% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```html
+{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```
 
 The `inlinecss` directive tells Magento which files to apply as inline styles on the email template.
 
@@ -136,9 +138,9 @@ The value of that variable comes from any of the following:
 *  Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
 
 ```html
-      <!--@styles
-      .example-style { color: green; }
-      @-->
+ <!--@styles
+   .example-style { color: green; }
+ @-->
 ```
 
 *  If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
@@ -352,10 +354,12 @@ To set those values:
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
-    {% raw %}{{var store.getFrontendName()}}{% endraw %}
-    {% raw %}{{var store_email}}{% endraw %}
-    {% raw %}{{var store_phone}}{% endraw %}
-    {% raw %}{{var store_hours}}{% endraw %}
+```text
+{% raw %}{{var store.getFrontendName()}}{% endraw %}
+{% raw %}{{var store_email}}{% endraw %}
+{% raw %}{{var store_phone}}{% endraw %}
+{% raw %}{{var store_hours}}{% endraw %}
+```
 
 ## Localization {#localization}
 
@@ -371,9 +375,7 @@ The `trans` directive will translate strings into whatever locale is configured 
 The directive supports multiple named parameters, separated by spaces. For example:
 
 ```html
-{% raw %}
-{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
-{% endraw %}
+{% raw %}{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}{% endraw %}
 ```
 
 Please note, that variable assignment must not contain spaces.
@@ -381,17 +383,13 @@ Please note, that variable assignment must not contain spaces.
 Correct:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
 ```
 
 Incorrect:
 
 ```html
-{% raw %}
-{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-{% endraw %}
+{% raw %}{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}{% endraw %}
 ```
 
 {:.bs-callout .bs-callout-info}

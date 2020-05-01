@@ -58,8 +58,8 @@ Functional tests are mainly used for system tests at a very high level by remote
 
 The [Magento Functional Testing Framework][] (MFTF) is the main way to do functional testing. It uses XML files to run browser testing.
 
-The [Functional Testing Framework][] (FTF) is the original framework used for testing Magento. This uses PHP scripts to run browser testing.
-This framework is no longer in development and all FTF tests are in the process of being [ported over][] to the MFTF.
+The [Functional Testing Framework][] (FTF) was the original framework used for testing Magento. It used PHP scripts to run browser testing.
+This framework is no longer supported and FTF tests were [ported over][] to MFTF.
 Until the porting to MFTF is finished, the FTF can still be run to ensure complete functional testing coverage.
 
 ## API Functional
@@ -85,7 +85,104 @@ For more information, please see the [Extension Developer Guide on JavaScript Te
 Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices.
 They are executed during continuous integration using the `bin/magento` tool.
 
-Please see the [`magento dev:tests:run`][] documentation for more information, using the test type `static`.
+See the [`magento dev:tests:run`][] documentation for more information, using the test type `static`.
+
+### PHPStan
+
+[PHPStan][] is a static analysis tool for PHP. Magento integrates PHPStan by default.
+It is available for developers to use in their own work, located at `Magento\Test\Php\LiveCodeTest::testPhpStan()`.
+
+It is run on changed `*.php` files using rule strictness [level 0][] and detects issues such as:
+
+-  Method should return something but return statement is missing.
+-  Access to constant on an unknown class
+-  Access to undefined constant
+-  Access to an undefined property
+-  Anonymous function has an unused use
+-  Array has N duplicate keys
+-  Call to an undefined method
+
+#### Suppressing errors
+
+To ignore errors in a particular piece of code, use the `phpstan:ignore` annotation.
+
+```php
+// phpstan:ignore "Error message"
+```
+
+The error message text is optional.
+It is possible to use the `*` wildcard within messages.
+
+```php
+/**
+ * Class ClassWithIgnoreAnnotation
+ */
+class ClassWithIgnoreAnnotation
+{
+    /**
+     * Test method.
+     * phpstan:ignore "Method level error"
+     */
+    public function getProductList()
+    {
+        // phpstan:ignore "Method Magento\PhpStan\Formatters\Fixtures\ClassWithIgnoreAnnotation::testMethod() invoked with 2 parameters, 1 required."
+        $this->testMethod('test1', 'test2');
+        // phpstan:ignore "Method * invoked with 2 parameters, 1 required."
+        $this->testMethod('test1', 'test2');
+        // phpstan:ignore
+        $this->testMethod('test1', 'test2');
+        $this->testMethod('test1', 'test2'); // phpstan:ignore
+    }
+    /**
+     * @param string $arg1
+     * @return string
+     */
+    private function testMethod(string $arg1)
+    {
+        return $arg1;
+    }
+}
+```
+
+#### Adding files and directories to PHPStan blacklist
+
+If some files are broken on purpose, add them to the blacklist to ignore them.
+
+The blacklist is located at `dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/blacklist/`.
+
+```config
+lib/internal/Magento/Framework/Interception/Test/Unit/Config/ConfigTest.php
+lib/internal/Magento/Framework/Cache/Backend/Eaccelerator.php
+```
+
+#### Exclude error messages from the analysis results
+
+If some error messages are not relevant for the current testing scenario, use regular expressions to filter them.
+
+The PHPStan configuration file is `dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/phpstan.neon`.
+
+Example:
+
+```config
+ignoreErrors:
+    # Ignore PHPStan\Rules\Classes\UnusedConstructorParametersRule
+   - '#Constructor of class [a-zA-Z0-9\\_]+ has an unused parameter#'
+```
+
+#### Exclude files and directories from analysis
+
+As needed in some cases, you can exclude specific directories and files using the `excludes_analyse` section in the PHPStan configuration file:
+`dev/tests/static/testsuite/Magento/Test/Php/_files/phpstan/phpstan.neon`.
+
+Example:
+
+```config
+excludes_analyse:
+   - %rootDir%/../../../*/_files/*
+   - %rootDir%/../../../dev/tests/*/Fixtures/*
+   - %rootDir%/../../../dev/tests/*/tmp/*
+   - %rootDir%/../../../pub/*
+```
 
 ## Unit
 
@@ -139,7 +236,7 @@ MFTF tests are kept within its respective Module folder:
 
 <!-- Link Definitions -->
 [Magento definition of done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
-[Functional]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Functional]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
 [performance toolkit]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html
@@ -147,7 +244,7 @@ MFTF tests are kept within its respective Module folder:
 [PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
-[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Functional Testing Framework]: https://github.com/magento/mtf
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
@@ -158,3 +255,5 @@ MFTF tests are kept within its respective Module folder:
 [Writing testable code]: {{ page.baseurl }}/test/unit/writing_testable_code.html
 [System Administrators Guide on Running Tests]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html
 [ported over]: https://github.com/magento/magento-functional-tests-migration
+[PHPStan]: https://github.com/phpstan/phpstan
+[level 0]: https://github.com/phpstan/phpstan#rule-levels

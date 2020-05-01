@@ -1,5 +1,4 @@
 label: GraphQL Developer Guide
-include_versions:  ["2.3"]
 pages:
 
     - label: Overview
@@ -10,10 +9,10 @@ pages:
         - label: GraphQL requests
           url: /graphql/send-request.html
 
-        - label: Get customer authorization token
-          url: /graphql/get-customer-authorization-token.html
+        - label: Authorization tokens
+          url: /graphql/authorization-tokens.html
 
-        - label: GraphQL Caching
+        - label: GraphQL caching
           url: /graphql/caching.html
 
         - label: Filtering with custom attributes
@@ -26,6 +25,9 @@ pages:
 
         - label: Resolvers
           url: /graphql/develop/resolvers.html
+
+        - label: Extend an existing GraphQL schema
+          url: /graphql/develop/extend-existing-schema.html
 
         - label: Identity class
           url: /graphql/develop/identity-class.html

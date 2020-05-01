@@ -26,9 +26,9 @@ Then, click the **+** (add) button in the top right to select the desired PHP bi
 
 ![Adding a PHP interpreter to PhpStorm]({{ site.baseurl }}/common/images/phpstorm_add_php_interpreter_dialogue.png){:width="600px"}
 
-Please refer to the PhpStorm documentation for further information on [how to configure a local PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-local-php-interpreters.html?origin=old_help).
+Please refer to the PhpStorm documentation for further information on [how to configure a local PHP interpreter](https://www.jetbrains.com/help/phpstorm/configuring-local-interpreter.html).
 
-It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help), which is a common setup when working with Vagrant or [Docker](https://glossary.magento.com/docker) based development environments.
+It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html), which is a common setup when working with Vagrant or [Docker](https://glossary.magento.com/docker) based development environments.
 
 Please be aware that the details on configuring the PHP interpreter might vary between PhpStorm versions.
 
@@ -38,11 +38,11 @@ After configuring the interpreter, the next step is to set up the PHPStorm prefe
 
 ![PhpStorm PHPUnit preference panel]({{ site.baseurl }}/common/images/phpstorm_phpunit_preferences_dialogue.png){:width="600px"}
 
-1. Click the **Use custom autoloader** option.
+1. Click the **Use Composer autoloader** option.
 1. Select the `vendor/autoload.php` file in your Magento 2 installation.
 1. Optionally select the `dev/tests/unit/phpunit.xml.dist` file as the **Default configuration file**. Doing this step makes creating temporary run configurations more convenient.
 
-Please refer to the PhpStorm documentation for further information on [enabling PHPUnit in PhpStorm](https://www.jetbrains.com/help/phpstorm/2016.1/enabling-phpunit-support.html#useAutoload).
+Please refer to the PhpStorm documentation for further information on [Configure a test framework in a project](https://www.jetbrains.com/help/phpstorm/php-test-frameworks.html#configure_php_test_framework_in_a_project).
 
 ### Creating a run configuration
 

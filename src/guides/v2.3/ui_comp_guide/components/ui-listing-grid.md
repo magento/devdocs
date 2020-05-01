@@ -5,6 +5,37 @@ title: Listing (grid) component
 
 Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.
 
+## Related components
+
+The following components can be used in the scope of the Listing component:
+
+*  [ActionsColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-actionscolumn.html)
+*  [Bookmarks]({{ page.baseurl }}/ui_comp_guide/components/ui-bookmarks.html)
+*  [Button]({{ page.baseurl }}/ui_comp_guide/components/ui-button.html)
+*  [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html)
+*  [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html)
+*  [ColumnsControls]({{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html)
+*  [DateColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-datecolumn.html)
+*  [DragAndDrop]({{ page.baseurl }}/ui_comp_guide/components/ui-draganddrop.html)
+*  [Expandable]({{ page.baseurl }}/ui_comp_guide/components/ui-expandable-column.html)
+*  [ExportButton]({{ page.baseurl }}/ui_comp_guide/components/ui-exportbutton.html)
+*  [Filters]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html)
+*  [FiltersChips]({{ page.baseurl }}/ui_comp_guide/components/ui-filterschips.html)
+*  [ImagePreview]({{ page.baseurl }}/ui_comp_guide/components/ui-image-preview.html)
+*  [LinkColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-linkcolumn.html)
+*  [MassActions]({{ page.baseurl }}/ui_comp_guide/components/ui-massactions.html)
+*  [MultiselectColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-multiselectcolumn.html)
+*  [OnOffColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-onoffcolumn.html)
+*  [Paging]({{ page.baseurl }}/ui_comp_guide/components/ui-paging.html)
+*  [Range]({{ page.baseurl }}/ui_comp_guide/components/ui-range.html)
+*  [Search]({{ page.baseurl }}/ui_comp_guide/components/ui-search.html)
+*  [SelectColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-selectcolumn.html)
+*  [Sizes]({{ page.baseurl }}/ui_comp_guide/components/ui-sizes.html)
+*  [ThumbnailColumn]({{ page.baseurl }}/ui_comp_guide/components/ui-thumbnailcolumn.html)
+*  [ListingToolbar]({{ page.baseurl }}/ui_comp_guide/components/ui-toolbar.html)
+*  [TreeMassActions]({{ page.baseurl }}/ui_comp_guide/components/ui-treemassactions.html)
+*  [UI-select]({{ page.baseurl }}/ui_comp_guide/components/ui-secondary-uiselect.html)
+
 ## Examples
 
 ### Create an instance
@@ -66,4 +97,4 @@ The listing component requires the data source to be properly configured and ass
 
 ## Source files
 
--  [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
+*  [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)

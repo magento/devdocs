@@ -11,7 +11,7 @@ All environments are in PaaS (Platform-as-a-Service) containers. These container
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud/cloud_arch-starter.png)
 
 ## Production with a master branch {#cloud-arch-prod}
 
@@ -25,7 +25,7 @@ We highly recommend fully testing in your Staging environment and branch before 
 
 ## Staging branch and environment {#cloud-arch-stage}
 
-We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, Blackfire, and search.
+We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.
 
@@ -66,11 +66,11 @@ The Production and Staging environments include the following technologies. You 
 -  Fastly for HTTP caching and CDN
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
 -  Redis server
--  Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
+-  Elasticsearch for searching for {{site.data.var.ece}} 2.2 and later
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.2.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 

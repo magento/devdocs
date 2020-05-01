@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as Docker environment deployment, cron management, and project verification. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
+The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as deploying to a Docker environment, managing crons, verifying project configuration, and applying  Magento patches and hot fixes. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
 
 {% include cloud/note-ece-tools-package.md %}
 
@@ -25,28 +25,43 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package provides all the commands necessary to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html).
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
+
+You use the following commands to generate the Docker configuration files and build your environment.
 
 Command | Action
 :------ | :------
-`docker:build` | Builds the docker environment in [production mode][mode] by default and verifies configured service versions.
-`docker:build --mode="developer"` | Builds the docker environment in [developer mode][mode].
-`docker:config:convert` | Convert PHP configuration files to Docker ENV files.
+`ece-docker build:compose` | Builds the docker environment in [production mode][mode] by default and verifies configured service versions.
+`ece-docker build:compose --mode="developer"` | Builds the docker environment in [developer mode][mode].
+`ece-docker build:compose --mode="production"` | Builds the docker environment in [production mode][mode].
+`ece-docker image:generate:php` | Convert PHP configuration files to Docker ENV files.
 
-The following example lists the `{{site.data.var.ct}}` Docker commands:
+The following example lists the {{site.data.var.mcd-prod}} commands:
 
 ```bash
-php ./vendor/bin/ece-tools list | grep docker
+php ./vendor/bin/ece-docker list
 ```
 
 Sample response:
 
 ```terminal
- docker
-  docker:build              Build docker configuration
-  docker:config:convert     Convert raw config to .env files configuration
+Available commands:
+  help                Displays help for a command
+  list                Lists commands
+ build
+  build:compose       Build docker configuration
+  build:dist          Generates Docker .dist files
+ image
+  image:generate:php  Generates proper configs
+ build
+  build:compose       Build docker configuration
+  build:dist          Generates Docker .dist files
+ image
+  image:generate:php  Generates proper configs
 ```
 {:.no-copy}
+
+See [Docker development] to learn more about using `{{site.data.var.mcd-prod}}` for development and testing your {{site.data.var.ece}} projects.
 
 ## Services, routes, and variables
 
@@ -107,8 +122,17 @@ Ideal state is configured
 
 {% include cloud/note-ece-tools-release-info.md %}
 
+## Magento patches and custom patches
+
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
+
 <!-- link definitions -->
-[mode]: {{site.baseurl}}/cloud/docker/docker-config.html#launch-modes
+[mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
 [hooks]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
 [cloudvar]: {{site.baseurl}}/cloud/env/variables-cloud.html
 [wizard]: {{site.baseurl}}/cloud/deploy/smart-wizards.html
+[Docker development]: {{site.baseurl}}/cloud/docker/docker-development.html
+[Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
+[magento/magento-cloud-docker]: https://github.com/magento/magento-cloud-docker
+[magento/magento-cloud-patches]: https://github.com/magento/magento-cloud-patches
+

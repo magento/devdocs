@@ -29,30 +29,5 @@ Attribute | Type | Description
 
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
-``` text
-{
-  products(filter:
-    {sku: {eq: "24-WG085_Group"}}
-  )
-  {
-    items {
-      id
-      name
-      sku
-      type_id
-      ... on GroupedProduct {
-        items{
-          qty
-          position
-          product{
-            sku
-            name
-            type_id
-            url_key
-          }
-        }
-      }
-    }
-  }
-}
-```
+{% include graphql/grouped-product-sample.md %}
+

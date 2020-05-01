@@ -2,7 +2,6 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
-redirect_from: /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
@@ -49,11 +48,11 @@ JS resources are accessed using relative paths.
 **Example 2:**
 
 *  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
-*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
+*  File published to `pub/static`: `pub/static/frontend/Magento/blank/<locale>/Magento_Theme/js/theme.js`
 *  Called in script:
 
    ```javascript
-   require(["js/theme.js"], function(){
+   require(["Magento_Theme/js/theme"], function(){
    });
    ```
 
@@ -192,7 +191,7 @@ We should now be able to use the Slick library, for example, on any list that we
         'slick'
     ], function ($) {
         $(document).ready(function () {
-            $(".my_list").slick({
+            $(".my-list").slick({
                 dots: true,
                 infinite: true,
                 speed: 300,

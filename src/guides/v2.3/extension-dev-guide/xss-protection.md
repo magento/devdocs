@@ -4,7 +4,6 @@ subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies
 menu_order: 1100
-redirect_from: guides/v2.2/frontend-dev-guide/templates/template-security.html
 ---
 
 ## Overview
@@ -26,8 +25,8 @@ XSS vulnerabilities can be prevented by validating and sanitizing user input as 
 Any request data can be manipulated by attackers and can contain malicious values such as:
 
 -  form fields filled with control characters ("&lt;", ">" etc)
--  headers containg false IDs
--  URIs contaings fake parts/query parameters
+-  headers containing false IDs
+-  URIs containing fake parts/query parameters
 -  tampered cookies
 
 To combat this developers, must validate any value coming in from requests.

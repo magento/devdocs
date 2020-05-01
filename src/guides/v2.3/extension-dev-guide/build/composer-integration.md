@@ -19,6 +19,34 @@ We recommend you include `composer.json` in your component's root directory even
  {:.bs-callout-info}
 Magento does not support the [`path`][3] repository.
 
+## composer.json
+
+Here is the example of composer.json file.
+
+{% collapsible File content for composer.json %}
+ ```json
+  {
+    "name": "mycompany/sample-module-minimal",
+    "description": "A module that creates a page in the Magento admin area",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+      "OSL-3.0",
+      "AFL-3.0"
+    ],
+    "require": {
+      "php": "~7.1.3||~7.2.0||~7.3.0"
+    },
+    "autoload": {
+      "files": [ "registration.php" ],
+      "psr-4": {
+        "MyCompany\\ExampleAdminNewPage\\": ""
+      }
+    }
+  }
+ ```
+{% endcollapsible %}
+
 ## Composer binary location {#composer-binary}
 
 Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed [composer](https://glossary.magento.com/composer).
@@ -194,7 +222,7 @@ Where:
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html
-[5]: https://docs.magento.com/marketplace/user_guide/sellers/company-profile.html
+[5]: https://devdocs.magento.com/marketplace/sellers/profile-company.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com
 [8]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage

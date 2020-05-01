@@ -18,6 +18,7 @@ This article describes the following typical [layout](https://glossary.magento.c
 -  [Reference a CMS block](#ref_cms_block)
 -  [Making the block visibility dynamic](#ref_config_block)
 -  [Create a block](#xml-manage-block)
+-  [Set body attributes](#layout_body_attributes)
 -  [Set the template used by a block](#set_template)
 -  [Modify block arguments](#layout_markup_modify-block)
 -  [Reference a block](#xml-manage-ref-block)
@@ -199,6 +200,12 @@ To add new classes to the container:
 {:.bs-callout-warning}
 This method overrides existing classes.
 
+To add a new ID to the container:
+
+```xml
+<referenceContainer name="page.wrapper" htmlId="MyWrapper"/>
+```
+
 ## Create a block {#xml-manage-block}
 
 Blocks are created (declared) using the `<block>` instruction.
@@ -213,6 +220,53 @@ Example: add a block with a product [SKU](https://glossary.magento.com/sku) info
     <argument name="css_class" xsi:type="string">sku</argument>
   </arguments>
 </block>
+```
+
+## Set body attributes {#layout_body_attributes}
+
+To set attributes for the HTML `body` tag use the `<attribute>` instruction.
+
+**Example:** Add a new class to the `body` tag.
+
+```xml
+    <body>
+        <attribute name="class" value="my-new-body-class"/>
+    </body>
+```
+
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
+
+**Example:** Add a custom attribute to the `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="data-role" value="my-body-role"/>
+    </body>
+</page>
+```
+
+**Example:** Add an id to the `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="id" value="my-new-body-id"/>
+    </body>
+</page>
+```
+
+{:.bs-callout-warning}
+It is not recommended to set the `body` id in layout files that have a wider impact (`e.g. default.xml`).
+
+**Example:** Add an inline style to the `body` tag.
+
+```xml
+<page>
+    <body>
+        <attribute name="style" value="opacity:0;"/>
+    </body>
+</page>
 ```
 
 ## Reference a block {#xml-manage-ref-block}
@@ -249,7 +303,7 @@ A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] c
 <referenceContainer name="content.bottom">
     <block class="Magento\Cms\Block\Block" name="block_identifier">
         <arguments>
-            <!- Here is the CMS Block id -->
+            <!-- Here is the CMS Block id -->
             <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
         </arguments>
     </block>
@@ -269,6 +323,16 @@ Any block can be configured to show or not based on a [Magento/Config/Model/Conf
     ...
 </block>
 ```
+
+The visibility can also be adjusted using the [ACL Resource]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html). Although it is used mostly in the admin area, the same approach works for the storefront as well.
+
+```xml
+<block class="Namespace\Module\Block\Type" name="block.example" aclResource="Vendor_ModuleName::acl_name">
+    <!-- ... -->
+</block>
+```
+
+In the admin area, this is implemented for [global search]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Backend/view/adminhtml/layout/default.xml) and for [admin notification list]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AdminNotification/view/adminhtml/layout/default.xml).
 
 ## Set the template used by a block {#set_template}
 
@@ -329,7 +393,7 @@ Extending layout:
   <arguments>
     <!-- Modified block argument -->
     <argument name="label" xsi:type="string">New Block Label</argument>
-    <!- Newly added block argument -->
+    <!-- Newly added block argument -->
     <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
   </arguments>
 </referenceBlock>
@@ -426,12 +490,29 @@ namespace Vendor\CustomModule\ViewModel;
 
 class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
+
+    public function canShowAdditionalData()
+    {
+        return true;
+    }
 }
 ```
+
+Then, in the `cart/item/default.phtml` file, use the viewModel:
+
+```php
+/** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
+$viewModel = $block->getData('viewModel');
+
+$viewModel->canShowAdditionalData();
+```
+
+{:.bs-callout-info}
+The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 

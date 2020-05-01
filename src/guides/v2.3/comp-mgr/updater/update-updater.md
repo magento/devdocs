@@ -4,7 +4,6 @@ title: Update the updater application
 functional_areas:
 - Upgrade
 redirect_from:
-- guides/v2.2/install-gde/prereq/prereq_updater.html
 - guides/v2.3/install-gde/prereq/prereq_updater.html
 ---
 
@@ -12,7 +11,7 @@ In some cases, you might need to update the updater application, which is respon
 
 To update the updater application:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Delete, move, or rename the directory containing the updater application.
 
    ```bash

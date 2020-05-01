@@ -19,37 +19,39 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
 1. If you build a theme using the Magento UI library, declare the font by adding the `.lib-font-face` [mixin](https://glossary.magento.com/mixin) to the `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/source/_typography.less` file:
 
-    ```css
-    .lib-font-face(
-        @family-name:'<any_font_name>',
-        @font-path: '@{baseDir}fonts/<path_to_font_file>',
-        @font-weight: <font_weight>,
-        @font-style: <font_style>
-        @font-display: <auto|block|fallback|option|swap>
-    );
-    ```
+   ```css
+   .lib-font-face(
+       @family-name:'<any_font_name>',
+       @font-path: '@{baseDir}fonts/<path_to_font_file>',
+       @font-weight: <font_weight>,
+       @font-style: <font_style>
+       @font-display: <auto|block|fallback|option|swap>
+   );
+   ```
 
-    Where:
+   Where:
 
-    *  `@{baseDir}` stands for the `app/design/frontend/<you_vendor_name>/<your_theme_name>/web` directory.
-    *  `<path_to_font_file>` includes the font file name, but without the extension. For example, `@font-path: '@{baseDir}fonts/Luma-Icons'` for the font stored in `web/fonts/Luma-Icons.woff`.
+      *  `@{baseDir}` stands for the `app/design/frontend/<you_vendor_name>/<your_theme_name>/web` directory.
+      *  `<path_to_font_file>` includes the font file name, but without the extension. For example, `@font-path: '@{baseDir}fonts/Luma-Icons'` for the font stored in `web/fonts/Luma-Icons.woff`.
 
-    The mixin generates the CSS, which includes the font. The following example shows how to generate CSS for the Open Sans font in the Blank theme:
+   The mixin generates the CSS, which includes the font. The following example shows how to generate CSS for the Open Sans font in the Blank theme:
 
-    ```css
-    @font-face {
-        font-family: 'Open Sans';
-        src: url('../fonts/opensans/light/opensans-300.eot');
-        src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
-        font-weight: 300;
-        font-style: normal
-        font-display: swap;
-    }
-    ```
+   ```css
+   @font-face {
+       font-family: 'Open Sans';
+       src: url('../fonts/opensans/light/opensans-300.eot');
+       src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
+       font-weight: 300;
+       font-style: normal
+       font-display: swap;
+   }
+   ```
 
-    `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
+1. You must edit the `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml` file to declare your fonts; otherwise, Magento 2.3 is not able to create the `static/web/fonts/` directory. See `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`.
 
-    Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
+   `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
+
+   Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
 
 ## `<font>` head type
 
@@ -76,7 +78,13 @@ For Example:
 
 See the [magento2-ui-library](https://magento-devdocs.github.io/magento2-ui-library/icons.html) for an icon list and implementation.
 
-To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
+To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/). To override Luma or Blank theme icon fonts, change the font path in the `_theme.less` file. For example:
+
+```css
+//  Fonts
+@icons__font-path: '@{baseDir}fonts/Theme-Icons'; //  Add you fonts in your-theme/web/fonts
+@icons__font-name: 'Theme-Icons';
+```
 
 {:.bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.

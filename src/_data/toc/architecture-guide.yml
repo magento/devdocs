@@ -13,6 +13,9 @@ pages:
         - label: Frontend customization
           url: /architecture/frontend_custom_strategies.html
 
+        - label: Security overview
+          url: /architecture/security_intro.html
+
     - label: Architectural layers
       url: /architecture/archi_perspectives/ALayers_intro.html
       children:

@@ -1,84 +1,95 @@
 ---
 group: cloud-guide
-title: Set up Magento B2B
+title: Set up Magento B2B module
+functional_areas:
+  - Cloud
+  - Extensions
+  - Module
+  - B2B
 ---
 
-With the {{site.data.var.ece}} Pro subscription for v2.2 and later, you can install and setup Magento Business to Business (B2B) Commerce features. B2B supports merchants whose customers are other companies. This section provides specific information for installing and setting up B2B in {{site.data.var.ece}}.
+If your customers are companies, you can install the {{site.data.var.b2b}} module to extend your {{site.data.var.ece}} Pro project to accommodate a business-to-business model. Although this topic provides information specific to installing and configuring the B2B module for {{site.data.var.ece}}, you can find additional B2B information in the following guides:
 
-For additional information on using and extending B2B, see the following guides:
+-  [Magento B2B Developer Guide][b2b-dev]
+-  [Magento B2B User Guide][b2b-user]
 
-*  [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html)
-*  [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html)
+{:.bs-callout-tip}
+Because we provide B2B as a module for {{site.data.var.ece}}, we highly recommend that you have your Magento application fully deployed to an Integration or Staging environment before beginning.
 
-We provide these features as a module you can install and setup in {{site.data.var.ece}}. Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.
+## Install B2B module
 
-## Prerequisites for adding B2B {#prereqs}
+We recommend working in a development branch when adding the B2B module to your project. If you do not have a branch, see the [Get started creating branches][branching] topic. When installing the B2B module, the `Magento_B2b` module name is automatically inserted in the [`app/etc/config.php`][config] file. There is no need to edit the file directly.
 
-Prior to adding the B2B module, you should have the following:
+{:.procedure}
+To install the B2B module:
 
-*  Upgraded to a {{site.data.var.ece}} 2.2.X on your environments
-*  A Git branch to add the new B2B module
-*  Have your Magento Authentication keys (public and private) available
+1. On your local workstation, change to the Cloud project root directory.
 
-We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Integration, Staging, and Production environments. For more information, see [First time deployment]({{ site.baseurl }}/cloud/setup/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
+1. Create or checkout a development branch. See [branching][].
 
-## Create a branch to work in {#branch}
-
-We recommend working in a branch to add the B2B module and features to your implementation. If you have a branch, continue to [Add B2B in the cloud](#add).
-
-{% include cloud/cli-get-started.md %}
-
-## Add B2B in the cloud {#add}
-
-You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/extensions/b2b/) in the B2B guide.
-
-1. Open a terminal application.
-1. Change to your local development environment root directory.
-1. Install the B2B module using composer.
+1. Add the B2B module to the `require` section of the `composer.json` file.
 
    ```bash
-   composer require magento/extension-b2b
+   composer require magento/extension-b2b --no-update
    ```
 
-   You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
+1. Update the project dependencies.
+
+   ```bash
+   composer update
+   ```
+
+1. Add, commit, and push code changes.
+
+   ```bash
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Install the B2B module."
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
+1. After the build and deploy finishes, use SSH to log in to the remote environment and verify that the B2B module installed.
+
+   ```bash
+   bin/magento module:status Magento_B2b
+   ```
+
+   An extension name uses the format: `<VendorName>_<ComponentName>`.
+
+   Sample response:
 
    ```terminal
-   InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
+   Module is enabled
    ```
 
-1. Add and commit the updated `composer.json` and `composer.lock` files.
+   If you encounter deployment errors, see [extension deployment failure][trouble].
 
-   ```bash
-   git add composer.json composer.lock && git commit -a -m "install b2b module"
-   ```
+## Enable the B2B module
 
-1. Enable all missing modules, including B2B, for updating.
+When you install the B2B module using Composer, the deployment process automatically enables the module. If you already have the B2B module installed, you can enable or disable the module using the CLI. See [Manage extensions][].
 
-   ```bash
-   ./vendor/bin/ece-tools module:refresh
-   ```
+## Configure the B2B module
 
-1. Complete the upgrade with B2B using the following command:
+After installing the {{site.data.var.b2b}} module, you must [start the message consumers][messages] so that you can enable the _Shared Catalog_ module, and you must [enable the B2B module in the Magento Admin panel][admin-enable].
 
-   ```bash
-   php bin/magento setup:upgrade
-   ```
+For additional information on using and configuring B2B, review the [Magento B2B User Guide][b2b-user].
 
-If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.
+To extend functionality, see the [Magento B2B Developer Guide][b2b-dev] and the [Extension Guide][extensions].
 
-1. Change to the app/etc directory.
-1. Edit the config.php with a text editor.
-1. In the modules list, add the B2B module.
-1. Save the file and update Git.
+<!-- link definitions -->
 
-   ```bash
-   git add -f app/etc/config.php
-   ```
-
-   ```bash
-   git commit -a -m “Add config.php.”
-   ```
-
-## Configure and use B2B {#use}
-
-For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).
+[admin-enable]: {{ site.baseurl }}/extensions/b2b/#enable-b2b-features-in-magento-admin
+[b2b-dev]: {{ site.baseurl }}/guides/v2.3/b2b/bk-b2b.html
+[b2b-user]: http://docs.magento.com/m2/b2b/user_guide/getting-started.html
+[branching]: {{ site.baseurl }}/cloud/env/environments-start.html#getstarted
+[config]: {{ site.baseurl }}/guides/v2.3/config-guide/config/config-php.html
+[extensions]: {{ site.baseurl }}/extensions/
+[install-b2b]: {{ site.baseurl }}/extensions/b2b/
+[Manage extensions]: {{ site.baseurl }}/cloud/howtos/install-components.html#manage-extensions
+[messages]: {{ site.baseurl }}/extensions/b2b/#start-message-consumers
+[trouble]: {{ site.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html

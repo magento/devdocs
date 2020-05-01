@@ -29,10 +29,10 @@ The following mutation adds a new billing address. `{ CART_ID }` is the unique s
 
 **Request:**
 
-{:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
-```text
+```graphql
 mutation {
   setBillingAddressOnCart(
     input: {
@@ -60,6 +60,10 @@ mutation {
         company
         street
         city
+        region{
+          code
+          label
+        }
         postcode
         telephone
         country {
@@ -88,6 +92,10 @@ mutation {
             "Beverly Hills"
           ],
           "city": "Los Angeles",
+          "region": {
+            "code": "CA",
+            "label": "California"
+          },
           "postcode": "90210",
           "telephone": "123-456-0000",
           "country": {
@@ -136,6 +144,10 @@ mutation {
         company
         street
         city
+        region{
+          code
+          label
+        }
         postcode
         telephone
         country {
@@ -177,6 +189,10 @@ mutation {
             "Beverly Hills"
           ],
           "city": "Los Angeles",
+          "region": {
+            "code": "CA",
+            "label": "California"
+          },
           "postcode": "90210",
           "telephone": "123-456-0000",
           "country": {
@@ -266,6 +282,10 @@ mutation {
         company
         street
         city
+        region{
+          code
+          label
+        }
         postcode
         telephone
         country {
@@ -294,6 +314,10 @@ mutation {
             "Beverly Hills"
           ],
           "city": "Los Angeles",
+          "region": {
+            "code": "CA",
+            "label": "California"
+          },
           "postcode": "90210",
           "telephone": "123-456-0000",
           "country": {

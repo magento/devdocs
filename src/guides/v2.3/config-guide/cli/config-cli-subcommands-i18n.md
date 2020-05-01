@@ -85,11 +85,13 @@ The translation cannot contain placeholder values not present in the original va
 
 An example of translating a phrase:
 
-    "Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
+```text
+"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
+```
 
 ## Create a language package {#config-cli-subcommands-xlate-pack}
 
-As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. You can translate a particular component&mdash;like a module or a theme&mdash;using a translation dictionary. [Learn more about language packages].
+As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. You can translate a particular component---like a module or a theme---using a translation dictionary. [Learn more about language packages].
 
 This section discusses how to create a language package, which writes `.csv` files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:
 
@@ -263,56 +265,56 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
    -  `registration.php` (sample following)
    -  `language.xml` (sample following)
 
-    **Sample `composer.json`:**
+   **Sample `composer.json`:**
 
-    ```json
-    {
-        "name": "examplecorp/language-xx_yy",
-        "description": "Sample language",
-        "version": "100.0.2",
-        "license": [
-            "OSL-3.0",
-            "AFL-3.0"
-        ],
-        "require": {
-            "magento/framework": "100.0.*"
-        },
-        "type": "magento2-language",
-        "autoload": {
-            "files": [
-                "registration.php"
-            ]
-        }
-    }
-    ```
+   ```json
+   {
+       "name": "examplecorp/language-xx_yy",
+       "description": "Sample language",
+       "version": "100.0.2",
+       "license": [
+           "OSL-3.0",
+           "AFL-3.0"
+       ],
+       "require": {
+           "magento/framework": "100.0.*"
+       },
+       "type": "magento2-language",
+       "autoload": {
+           "files": [
+               "registration.php"
+           ]
+       }
+   }
+   ```
 
-    **Sample `registration.php`:**
+   **Sample `registration.php`:**
 
-    ```php?start_inline=1
-     /**
-     * Copyright © Magento, Inc. All rights reserved.
-     * See COPYING.txt for license details.
-     */
-     use \Magento\Framework\Component\ComponentRegistrar;
-     ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_xx_yy', __DIR__);
-    ```
+   ```php?start_inline=1
+   /**
+   * Copyright © Magento, Inc. All rights reserved.
+   * See COPYING.txt for license details.
+   */
+   use \Magento\Framework\Component\ComponentRegistrar;
+   ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_xx_yy', __DIR__);
+   ```
 
-    **Sample `language.xml`:**
+   **Sample `language.xml`:**
 
-    ```xml
-    <?xml version="1.0"?>
-    <!--
-    /**
-     * Copyright © Magento, Inc. All rights reserved.
-     * See COPYING.txt for license details.
-     */
-    -->
-    <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
-        <code>xx_YY</code>
-        <vendor>examplecorp</vendor>
-        <package>xx_yy</package>
-    </language>
-    ```
+   ```xml
+   <?xml version="1.0"?>
+   <!--
+   /**
+    * Copyright © Magento, Inc. All rights reserved.
+    * See COPYING.txt for license details.
+    */
+   -->
+   <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
+       <code>xx_YY</code>
+       <vendor>examplecorp</vendor>
+       <package>xx_yy</package>
+   </language>
+   ```
 
 ## Additional information
 

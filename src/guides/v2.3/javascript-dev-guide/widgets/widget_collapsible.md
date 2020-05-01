@@ -108,13 +108,13 @@ Multiple types are supported:
 -  String: is parsed to an object as a json string
 -  Object: For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/).
 
-    ```javascript
-        {
-           duration: <Number>,
-           easing: <String>,
-           <propToAnimate>: <howToAnimate>
-        }
-    ```
+   ```javascript
+       {
+          duration: <Number>,
+          easing: <String>,
+          <propToAnimate>: <howToAnimate>
+       }
+   ```
 
 **Default value**: `false`
 

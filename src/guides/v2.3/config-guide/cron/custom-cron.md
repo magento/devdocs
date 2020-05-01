@@ -15,6 +15,7 @@ The Magento application provides the following cron groups:
 
 *  `default`, which contains most cron jobs
 *  `index`, which refreshes [indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
+*  `consumers`, which runs message queue [consumers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-queue.html)
 *  These topics are available in {{site.data.var.ee}} only
    *  `staging`, which runs [Staging-related](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html) tasks
    *  `catalog_event`, which runs tasks for target and shopping cart rules

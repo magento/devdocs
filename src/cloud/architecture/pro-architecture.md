@@ -21,7 +21,7 @@ The following table summarizes the differences between environments:
 <table>
   <tbody>
     <tr>
-      <td class="blank" />
+      <td class="blank"></td>
       <th>Integration</th>
       <th>Staging</th>
       <th>Production</th>
@@ -56,24 +56,18 @@ The following table summarizes the differences between environments:
       <td>Yes</td>
       <td>Yes</td>
     </tr>
-   <tr>
-     <td>Includes Blackfire.io</td>
-     <td>Yes</td>
-     <td>Yes</td>
-     <td>Yes</td>
-   </tr>
-   <tr>
+    <tr>
      <td>Includes New Relic</td>
      <td>No</td>
      <td>APM</td>
-     <td>APM + NRI</td>
+     <td>APM &plus; NRI</td>
    </tr>
   </tbody>
 </table>
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-wings.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture-wings.png)
 
 ## Integration environment {#cloud-arch-int}
 
@@ -97,7 +91,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
@@ -156,12 +150,14 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
    -  `pub/static`
    -  `app/etc`
 -  **Redis**—one server per VM with only one active and the other two as replicas
--  **Elasticsearch**—search for {{site.data.var.ece}} 2.1 and later
+-  **Elasticsearch**—search for {{site.data.var.ece}} 2.2 and later
 -  **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:
 
-![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl }}/common/images/cloud/cloud_stack-diagram.png)
+
+### Pro cluster scaling
 
 {{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
 
@@ -170,7 +166,7 @@ The following figure shows the technologies used in the Production environment:
 
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
-<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
+For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
 ## Software versions {#cloud-arch-software}
 

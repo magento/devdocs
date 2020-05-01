@@ -5,27 +5,65 @@ functional_areas:
   - Cloud
 ---
 
-The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web Interface and more. This utility provides an advanced management interface for developers, DevOps and system administrators, for doing routines and automation tasks. You can install and use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments. You cannot use these commands for the Pro Staging and Production environments which aren't listed in the cloud UI.
+The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web Interface and more. This utility provides an advanced management interface for developers and system administrators to perform routines and automation tasks. You can install and use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments.
 
-You can install the Magento Cloud CLI when setting up your local environment for development:
+{:.procedure}
+To install the Magento Cloud CLI:
 
-*  [Install Magento prerequisites]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
-*  [Enable SSH keys]({{ site.baseurl }}/cloud/before/before-workspace-ssh.html)
+1. On your local workstation, change to a directory where you plan to clone the cloud projects and where the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) has _write_ access.
+
+1. Install the `magento-cloud` CLI.
+
+   ```bash
+   curl -sS https://accounts.magento.cloud/cli/installer | php
+   ```
+
+1. Add `magento-cloud` CLI to the bash profile.
+
+   ```bash
+   export PATH=$PATH:$HOME/.magento-cloud/bin
+   ```
+
+   Consult operating system documentation for details.
+
+1. Reload the updated bash profile.
+
+   ```bash
+   . ~/.bash_profile
+   ```
+
+1. To initiate the CLI, call `magento-cloud` and enter your Cloud account credentials when prompted.
+
+   ```bash
+   magento-cloud
+   ```
+
+   ```terminal
+   Welcome to Magento Cloud!
+   Please log in using your Magento Cloud account.
+   Your email address or username:
+   ```
+
+1. Verify the `magento-cloud` command is in your path. The following example lists the available commands.
+
+   ```bash
+   magento-cloud list
+   ```
 
 ## Common commands
 
-The following lists the available `magento-cloud` CLI commands:
-
-```bash
-magento-cloud list
-```
-
 Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the `-p <project ID>` parameter.
 
-Action | Command
------- | --------
-Log in to a project | `magento-cloud login`
-Clone a project to a directory | `magento-cloud project:get <PROJECT_ID> <DIRECTORY> -e <ENVIRONMENT_ID>`<br>**Note**: If you want to clone the `master` environment, omit the `-e <ENVIRONMENT_ID>` parameter.
+The following list of commonly used Magento Cloud CLI commands includes required options only. You can use the `--help` option with any command to see more information.
+
+Command | Description
+------- | -----------
+`magento-cloud login` | Log in to the project.
+`magento-cloud list` | List the environments in the current project.
+`magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.
+`magento-cloud environment:merge -e <environment-ID>` | Merge changes in this environment with its parent.
+`magento-cloud variables` | List variables in this environment.
+`magento-cloud ssh` | Use SSH to connect to the remote environment.
 
 ## Environment commands
 
@@ -55,6 +93,11 @@ Trigger a redeployment without using a push. You must verify and confirm the env
 
 ```bash
 magento-cloud environment:redeploy
+```
+
+Sample response:
+
+```terminal
 Are you sure you want to redeploy the environment <environment_name>? [Y/n]
 ```
 
@@ -114,7 +157,7 @@ Help:
 
 ## Update Magento Cloud CLI
 
-The Magento Cloud CLI checks for available updates upon login, but you can also check for updates using the `self:update` command. If there is an update available, follow the instructions and enter `Y` for _yes_ to update the CLI.
+The Magento Cloud CLI checks for available updates when you log in, but you can check for updates using the `self:update` command. If there is an update available, follow the instructions to update the CLI.
 
 If your Magento Cloud CLI is up to date, you see the following response:
 

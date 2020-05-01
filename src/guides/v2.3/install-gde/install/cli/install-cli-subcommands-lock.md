@@ -31,7 +31,7 @@ If you are running Magento Commerce on the cloud infrastructure, you do not need
 > Command usage
 
 ```bash
-magento setup:store-config:set [--<parameter_name>=<value>, ...]
+bin/magento setup:config:set [--<parameter_name>=<value>, ...]
 ```
 
 > Parameter descriptions

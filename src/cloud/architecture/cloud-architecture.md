@@ -24,14 +24,14 @@ For comparison, each plan includes the following infrastructure features and sup
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
         </ul>
       </td>
       <td>
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Pro</a></li>
+          <li><a href="https://magento.com/products/business-intelligence">Business Intelligence</a></li>
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
@@ -45,9 +45,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
-          <li>
-            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
-          </li>
           <li>Platform-as-a-service (PaaS) based Production, Staging, and development environments (4 total active environments) optimized for {{site.data.var.ee}}</li>
         </ul>
       </td>
@@ -57,9 +54,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
             <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. <a href="{{ site.baseurl }}/cloud/project/new-relic.html">Adobe-generated alert policies</a> implement monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
           <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>
@@ -82,7 +76,7 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
     </tr>
     <tr>
-      <td>Dedicated Technical Account Manager</td>
+      <td>A dedicated Customer Technical Advisor (CTA)</td>
       <td class="blank"></td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>

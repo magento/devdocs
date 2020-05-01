@@ -222,9 +222,9 @@ Data-table with Confirmation Message
 
 ## Assets
 
-*  [Download Slide-out Panels PSD source](src/Slide-out-Panels.psd)
-*  [Download Modal PSD source](src/Modal.psd)
+*  [Download Slide-out Panels PSD source]({{ site.downloads }}/Slide-out-Panels.psd)
+*  [Download Modal PSD source]({{ site.downloads }}/Modal.psd)
 
 ## Technical Implementation
 
-Technically slideouts and modals are implemented using the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-modal.html).
+Technically slideouts and modals are implemented using the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-modal.html).

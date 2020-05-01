@@ -1,8 +1,0 @@
----
-title: Magento_AmqpStore
-source_repo: magento2ce
-release: 2.3.3
-github_path: app/code/Magento/AmqpStore/README.md
-last_modified_at: '2019-06-04 12:48:22 -0500'
-content: "**AmqpStore** provides ability to specify store before publish messages
-  with Amqp.\n"

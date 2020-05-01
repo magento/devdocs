@@ -15,8 +15,6 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Get started
 
-> We no longer accept contributions to files in the `src/guides/v2.2/` directory.
-
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
 1. Make sure you have a [GitHub account](https://github.com/signup/free).
@@ -54,7 +52,7 @@ The following diagram shows the contribution workflow:
 
     **We will close your pull request if you do not respond to feedback in two weeks.**
 
-**Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the pull request provides a link. Magento requires a signed form and agreement to the terms for contribution.
+**Note:** If you have not signed the [Adobe Contributor License Agreement](https://opensource.adobe.com/cla.html), the pull request provides a link. You must sign the CLA before we can accept your contribution.
 
 ## Contribution guidelines
 
@@ -69,7 +67,7 @@ The following guidelines may answer most of your questions and help you get star
 
    -  If you need to update the site navigation, ask for help in Slack ([#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H)).
 
--  Ensure that you update the correct version(s) of documentation (v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
+-  Ensure that you update the correct version(s) of documentation (v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
 -  Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
 -  Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
 -  Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.

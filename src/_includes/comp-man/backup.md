@@ -28,4 +28,4 @@ The following page displays to confirm a successful backup.
 
 ![A page displays to confirm your backup was a success]({{ site.baseurl }}/common/images/extensman_backup-success.png){:width="650px"}
 
-If errors display, see [Troubleshoot backups]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html).
+If errors display, see [Troubleshoot backups](https://support.magento.com/hc/en-us/articles/360032990672).

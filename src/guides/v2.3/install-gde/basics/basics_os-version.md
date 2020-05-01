@@ -9,7 +9,7 @@ functional_areas:
 
 How can you tell what operating system and version your Magento server runs?
 
-**Prerequisites:**: You must access the server using a command prompt (an application that enables you to enter commands directly).
+**Prerequisites**: You must access the server using a command prompt (an application that enables you to enter commands directly).
 
 If you can log in directly to the machine, the application is usually called Terminal.
 
@@ -17,7 +17,7 @@ If you cannot log in directly, you can [log in remotely]({{ page.baseurl }}/inst
 
 ## Exact command or process of elimination?
 
-If you already know you're running Ubuntu or CentOS but don't know the version, see one of the following sections. If you don't know that much, just use the process of elimination&mdash;run both commands until you find the one that works.
+If you already know you're running Ubuntu or CentOS but don't know the version, see one of the following sections. If you don't know that much, just use the process of elimination---run both commands until you find the one that works.
 
 ### CentOS
 

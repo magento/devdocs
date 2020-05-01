@@ -49,6 +49,9 @@ If the `<domain.your.project>/robots.txt` file generates a `404 error`, [submit 
 
  If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ site.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
+ {:.bs-callout-info}
+ You can upload custom VCL snippets from the Magento Admin UI or using the Fastly API. See [Custom VCL snippet examples and tutorials]({{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html#custom-vcl-snippet-examples-and-tutorials).
+
 ### Use a Fastly VCL snippet for redirect
 
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key-value pairs.
@@ -105,3 +108,9 @@ To configure a redirect for `robots.txt` and `sitemap.xml` in a single snippet, 
 ```
 
 In the `sitemap` admin config, you must specify the location of the file using `pub/media/` rather than `/`.
+
+### Configure indexing by search engine
+
+To activate `robots.txt` customizations, you must enable the **Indexing by search engines is On for <environment>** option in your project settings.
+
+![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud/cloud_project-robots-indexing-by-search-engine.png)

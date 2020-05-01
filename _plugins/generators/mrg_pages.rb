@@ -1,3 +1,6 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
 # frozen_string_literal: true
 
 # This plugin generates module-specific topics in the 'guides/v2.3/mrg'.
@@ -18,11 +21,11 @@ module Jekyll
 
       # Data from '_data/codebase/mrg' as a Hash where
       # the filename is a key and its content is a value.
-      mrg_data = @site.data['codebase']['mrg']
+      mrg_data = @site.data['codebase']['v2_3']['mrg']
       # Loop through the hash where a key is assigned to a 'mod' (module is a
       # special token in Ruby and should not be used) and value is assigned to
       # 'metadata'.
-      # For example, for '_data/codebase/mrg/NewModule.yml' that contains
+      # For example, for '_data/codebase/v2_3/mrg/NewModule.yml' that contains
       #
       #         title: Magento_NewModule
       #         edition: ce
