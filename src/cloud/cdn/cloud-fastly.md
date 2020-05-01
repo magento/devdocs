@@ -29,7 +29,8 @@ Fastly provides the following services to optimize and secure content delivery o
    -  **[Web Application Firewall]({{ site.baseurl }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment.
+{:.bs-callout-warning}
+To maintain PCI compliance for Magento sites deployed on the Cloud platform, you must set up Fastly on your Starter master, Pro Production, and Pro Staging environments. If you are using {{site.data.var.ee}} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly]({{site.baseurl}}/guides/v2.3/graphql/caching.html#caching-with-fastly) in the *GraphQL Developer Guide*.
 
 ## Fastly CDN module for Magento 2
 
