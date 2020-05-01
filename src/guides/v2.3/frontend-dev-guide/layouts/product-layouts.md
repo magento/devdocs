@@ -7,7 +7,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files or particular product types. We are liking to utilize product ID, for focusing on specific product use SKU type layout file.
+This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files. It is also possible to perform the customization for a particular product type or even for a concrete product page by Product Entity ID or SKU.
 
 ## Product view page
 
