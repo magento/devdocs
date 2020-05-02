@@ -268,7 +268,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 -  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
-   If you use [Configuration Management]({{site.baseurl}}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
+   If you use [Configuration Management]({{site.baseurl}}/cloud/live/sens-data-over.html), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
 
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 
