@@ -7,7 +7,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files or particular product types.
+This topic provides information about product layouts files. Magento allows you to customize view pages for all product types in the common layout files. It is also possible to perform the customization for a particular product type or even for a concrete product page by Product Entity ID or SKU.
 
 ## Product view page
 
@@ -20,6 +20,8 @@ Layout file | Description
 `catalog_product_view_type_grouped.xml` | Layout from this file is applied to `grouped` product only
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
+`catalog_product_view_id_{id}.xml` | Layout from this file is applied to the specific product by `Entity ID` value. E.g. `catalog_product_view_id_45.xml`
+`catalog_product_view_sku_{sku}.xml` | Layout from this file is applied to the specific product by `SKU` value. E.g. `catalog_product_view_sku_24-WG080.xml`
 
 ## Customize product view pages
 
