@@ -184,7 +184,7 @@ The `AddBundleProductsToCartInput` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
-`cart_items` | [[BundleProductCartItemInput!]](#bundleProductCartItemInput) | An array of bundle items to add to the cart
+`cart_items` | [[BundleProductCartItemInput!]!](#bundleProductCartItemInput) | An array of bundle items to add to the cart
 
 ### BundleProductCartItemInput object {#bundleProductCartItemInput}
 
@@ -192,8 +192,8 @@ The `BundleProductCartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`bundle_options` | [[BundleOptionInput!]](#bundleOptionInput) | An object that contains an array of options of the bundle product with the chosen value and quantity of each option
-`customizable_options` | [[CustomizableOptionInput]](#customOptionInput) | An object that contains the ID and value of the product
+`bundle_options` | [[BundleOptionInput!]!](#bundleOptionInput) | An object that contains an array of options of the bundle product with the chosen value and quantity of each option
+`customizable_options` | [[CustomizableOptionInput!]](#customOptionInput) | An object that contains the ID and value of the product
 `data` | [CartItemInput!](#cartItemInput) | An object that contains the quantity and SKU of the bundle product
 
 ### BundleOptionInput object {#bundleOptionInput}
@@ -234,6 +234,14 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the data.sku argument does not exist.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
+`Required parameter "cart_id" is missing` | The `cart_id` argument was omitted or contains an empty value.
 
 ## Related topics
 
