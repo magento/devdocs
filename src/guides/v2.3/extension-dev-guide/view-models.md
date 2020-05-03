@@ -14,13 +14,73 @@ Use this approach anytime you need to inject functionality into template files a
  {:.bs-callout-info}
 View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
-The following is an example of helper class directly used in `Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml` templates.
+The following is an example of view model usage in `Magento/Catalog/view/frontend/layout/catalog_product_view.xml` layout file.
+
+The view model class passed as an argument to `product.info.upsell` block in the layout configuration file
 
 ```xml
-$postDataHelper = $this->helper(Magento\Framework\Data\Helper\PostHelper::class);
-$postData = $postDataHelper->getPostData(
-   $block->escapeUrl($block->getAddToCartUrl($_item)),
-   ['product' => (int) $_item->getEntityId()]
+<block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
+    <arguments>
+        <argument name="type" xsi:type="string">upsell</argument>
+        <argument name="view_model" xsi:type="object">Magento\Catalog\ViewModel\Product\Listing\PreparePostData</argument>
+    </arguments>
+</block>
+```
+
+The following is an example of the view model class `Magento/Catalog/ViewModel/Product/Listing/PreparePostData.php` implementation in the catalog module.
+
+The class must implement `\Magento\Framework\View\Element\Block\ArgumentInterface` interface class.
+
+```php
+namespace Magento\Catalog\ViewModel\Product\Listing;
+
+use Magento\Framework\View\Element\Block\ArgumentInterface;
+use Magento\Framework\App\ActionInterface;
+use Magento\Framework\Url\Helper\Data as UrlHelper;
+
+/**
+ * Check is available add to compare.
+ */
+class PreparePostData implements ArgumentInterface
+{
+    /**
+     * @var UrlHelper
+     */
+    private $urlHelper;
+
+    /**
+     * @param UrlHelper $urlHelper
+     */
+    public function __construct(UrlHelper $urlHelper)
+    {
+        $this->urlHelper = $urlHelper;
+    }
+
+    /**
+     * Wrapper for the PostHelper::getPostData()
+     *
+     * @param string $url
+     * @param array $data
+     * @return array
+     */
+    public function getPostData(string $url, array $data = []):array
+    {
+        if (!isset($data[ActionInterface::PARAM_NAME_URL_ENCODED])) {
+            $data[ActionInterface::PARAM_NAME_URL_ENCODED] = $this->urlHelper->getEncodedUrl();
+        }
+        return ['action' => $url, 'data' => $data];
+    }
+}
+```
+
+The following is an example of the view model initialization in `app/code/Magento/Catalog/view/frontend/templates/product/list/items.phtml` template.
+
+```php
+/** @var $viewModel /Magento/Catalog/ViewModel/Product/Listing/PreparePostData */
+$viewModel = $block->getViewModel();
+$postArray = $viewModel->getPostData(
+    $block->escapeUrl($block->getAddToCartUrl($_item)),
+    ['product' => $_item->getEntityId()]
 );
 ```
 
