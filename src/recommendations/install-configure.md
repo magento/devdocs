@@ -27,7 +27,33 @@ The `magento/product-recommendations` module requires the following dependencies
 
 ### Update your Product Recommendations installation
 
-If for any reason you need to update the `magento/product-recommendations` module, run the following:
+Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:
+
+```bash
+composer update magento/product-recommendations --with-dependencies
+```
+
+If you need to update to a major version, such as from 1.0 to 2.0, you need to edit your project's root `composer.json` file. For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
+
+```json
+"require": {
+    ...
+    "magento/product-recommendations": "^1.0",
+    ...
+}
+```
+
+Let's bump the major version from `1.0` to `2.0`:
+
+```json
+"require": {
+    ...
+    "magento/product-recommendations": "^2.0",
+    ...
+}
+```
+
+Save the the `composer.json` file and run:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies
