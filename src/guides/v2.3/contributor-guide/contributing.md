@@ -35,7 +35,7 @@ When the Community Engineering Team works on reviewing the suggested changes, we
 {:.bs-callout-tip}
 Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms.
 
-## Community Backlog Priority{#backlog}
+## Community Backlog Priority {#backlog}
 
 In order to provide timely resolution on the most critical issues and pull requests, the Magento team has implemented Severity/Priority concepts to our community driven projects. This approach makes open-source collaboration more transparent for all participants.
 Having clear contribution rules in place helps to build clear expectations for Community Contributors and establish clear priorities for Community Maintainers and the Magento team.
