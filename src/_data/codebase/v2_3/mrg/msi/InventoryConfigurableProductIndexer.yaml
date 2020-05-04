@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryConfigurableProductIndexer
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryConfigurableProductIndexer/README.md
+release: 1.1.5
+github_path: InventoryConfigurableProductIndexer/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: |
   The `InventoryConfigurableProductIndexer` module integrates inventory management business logic into Magento's indexation logic for configurable products.

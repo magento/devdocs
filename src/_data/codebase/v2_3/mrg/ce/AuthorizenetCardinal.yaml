@@ -1,7 +1,7 @@
 ---
 title: Magento_AuthorizenetCardinal
 source_repo: magento2ce
-release: 2.3.4
+release: 2.3.5
 github_path: app/code/Magento/AuthorizenetCardinal/README.md
 last_modified_at: '2019-08-28 14:16:34 +0100'
 content: "Use the Magento_AuthorizenetCardinal module to enable 3D Secure 2.0 support
