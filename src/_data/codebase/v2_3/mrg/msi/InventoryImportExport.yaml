@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryImportExport
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryImportExport/README.md
+release: 1.1.5
+github_path: InventoryImportExport/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryImportExport` module provides compatibility between Magento's
   flat file import/export logic and Inventory Management.\n\nThis module is part of
