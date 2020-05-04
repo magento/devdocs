@@ -199,7 +199,7 @@ Catalog Search:                                    Update on Save
 ### Configure indexers
 
 {:.bs-callout-info}
-Before switching indexer modes, we recommend putting your website to [maintenance]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html) mode and [disable cron]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs). This will ensure you do not suffer database locks.
+Before switching indexer modes, we recommend putting your website to [maintenance]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html) mode and [disable cron]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html#disable-cron-jobs). This will ensure you do not suffer database locks.
 
 To specify the indexer configuration:
 
