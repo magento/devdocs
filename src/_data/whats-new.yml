@@ -4,8 +4,56 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Apr 27 14:03:20 2020
+updated: Mon May 4 15:02:34 2020
 entries:
+- description: Updated reference documentation for the [`magento-cloud`](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-cloud.html)
+    command line tool (v1.32.2).
+  versions: 2.x
+  type: 'Major Update'
+  date: May 1, 2020
+  link: https://github.com/magento/devdocs/pull/7144
+- description: Updated all the module topics according to codebase repositories for the
+    [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html).
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 30, 2020
+  link: https://github.com/magento/devdocs/pull/7134
+- description: Updated data for the `bin/magento` command-line tool reference for [Open
+    Source ](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html) and
+    [Commerce](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-commerce.html).
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7120
+- description: Updated the [MFTF functional test reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/functional-tests.html)
+    and the [MFTF action group reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/action-groups.html).
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7118
+- description: Updated the [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php)
+    and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7119
+- description: 'MISSING whatsnew in the PR #7131: "Magento 2.3.5 Release Note hotfix
+    update"'
+  versions: 2.3.x
+  type: 'Major Update'
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7131
+- description: Published all documentation updates related to the Q2 2020 Commerce and Open Source releases.
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7104
+- description: Generated [documentation updates](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#234---235)
+    for backward incompatible changes between 2.3.4 - 2.3.5 codebases.
+  versions: 2.3.5
+  type: 'Major Update'
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7112
 - description: Added release notes for the Magento Open Source and Commerce 2.3.5 Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
   versions: 2.3.5
   type: New Topic
