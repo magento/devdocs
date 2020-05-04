@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 50a967da2d02dbd49f016dcaaf8bacb816e2c23c
+  revision: fb265ec681d26b131b092c2b451e551129a76871
   branch: yb_spectrum
   specs:
     devdocs (8)
@@ -14,7 +14,7 @@ GEM
     algolia_html_extractor (2.6.2)
       json (~> 2.0)
       nokogiri (~> 1.10.4)
-    algoliasearch (1.27.1)
+    algoliasearch (1.27.2)
       httpclient (~> 2.8, >= 2.8.3)
       json (>= 1.5.1)
     colorator (1.1.0)
@@ -32,7 +32,7 @@ GEM
     filesize (0.2.0)
     forwardable-extended (2.6.0)
     fspath (3.1.2)
-    html-proofer (3.15.2)
+    html-proofer (3.15.3)
       addressable (~> 2.3)
       mercenary (~> 0.3)
       nokogumbo (~> 2.0)
@@ -131,7 +131,7 @@ GEM
     public_suffix (4.0.4)
     rainbow (3.0.0)
     rake (13.0.1)
-    rb-fsevent (0.10.3)
+    rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.2.4)
