@@ -4,8 +4,48 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Fri Apr 24 14:03:20 2020
+updated: Mon Apr 27 14:03:20 2020
 entries:
+- description: Added release notes for the Magento Open Source and Commerce 2.3.5 Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7052
+- description: With the deactivation of the Google Shopping ads extension, the release notes and installation topics are removed, along with any related references to those topics.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7090
+- description: Added a deprecation notice for the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Technical
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7055
+- description: Added [B2B Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/b2b-release-notes.html).
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7047
+- description: Added [Content Security Policy Overview](https://devdocs.magento.com/security/content-security-policy-overview.html), and changed navigation from "Compliance" to "Security and Compliance".
+  versions: 2.3.5
+  type: New Topic
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/7020
+- description: Added 2.3.5-develop backward incompatible changes [reference](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html) for pre-release.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6967
+- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html) in the _GraphQL Developer Guide_.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6638
+- description: The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) in the _GraphQL Developer Guide_ for details.
+  versions: 2.3.5
+  type: Major Update
+  date: April 27, 2020
+  link: https://github.com/magento/devdocs/pull/6123
 - description: Added the 'Package Validation' section to the [Technical Review Guidelines](https://devdocs.magento.com/marketplace/sellers/technical-review-guidelines.html).
   versions: 2.3.x
   type: Major Update
@@ -809,12 +849,6 @@ entries:
   type: Major update
   date: November 21, 2019
   link: https://github.com/magento/devdocs/pull/6031
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for the Google Shopping ads Channel v3.0.2 release.
-  versions: 3.0.2 Google Shopping ads
-  type: Major update
-  date: November 19, 2019
-  link: https://github.com/magento/devdocs/pull/6027
 - description: Added the [Search for products with the /search endpoint](https://devdocs.magento.com/guides/v2.2/rest/search-endpoint.html)
     topic to the _REST API Reference_.
   versions: 2.2.x, 2.3.x
@@ -1065,12 +1099,6 @@ entries:
   type: New topic
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/5586
-- description: Added [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v3.0.1 to the _Extension Developer Guide_.
-  versions: 2.3.3, 3.0.1 GSa
-  type: Major update
-  date: October 8, 2019
-  link: https://github.com/magento/devdocs/pull/5568
 - description: Updated the REST schema for [2.3.3](https://devdocs.magento.com/redoc/2.3/)
     and [2.2.10](https://devdocs.magento.com/swagger/index_22.html).
   versions: 2.2.10, 2.3.3
@@ -1670,13 +1698,6 @@ entries:
   type: New topic
   date: July 12, 2019
   link: https://github.com/magento/devdocs/pull/4780
-- description: Updated the [Google Shopping ads Install documentation](https://devdocs.magento.com/extensions/google-shopping-ads/)
-    and [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for version 3.0.
-  versions: 2.0 Google Shopping ads
-  type: Major update
-  date: July 10, 2019
-  link: https://github.com/magento/devdocs/pull/4849
 - description: Added information and example about how to use the [ColorPicker component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-colorpicker.html).
   versions: 2.3.x
   type: New topic
@@ -1698,13 +1719,6 @@ entries:
   type: Major update
   date: July 8, 2019
   link: https://github.com/magento/devdocs/pull/4630
-- description: Updated the [Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel v2.0.2 and the [Upcoming releases](https://devdocs.magento.com/release/)
-    page.
-  versions: 2.0.2 Google Shopping ads Channel
-  type: Major update
-  date: July 8, 2019
-  link: https://github.com/magento/devdocs/pull/4902
 - description: Added a `Code sample` section to [Calendar Widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html).
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -1971,12 +1985,6 @@ entries:
   type: Major update
   date: June 7, 2019
   link: https://github.com/magento/devdocs/pull/4599
-- description: Added [release notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
-    for Google Shopping ads Channel patch 1.1.2.
-  versions: 1.1.2-gsa
-  type: Major update
-  date: June 7, 2019
-  link: https://github.com/magento/devdocs/pull/4703
 - description: Added a [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html)
     topic to the Software Update Guide.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -2332,13 +2340,13 @@ entries:
   type: Major update
   date: April  2, 2019
   link: https://github.com/magento/devdocs/pull/4103
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic
   date: April  1, 2019
   link: https://github.com/magento/devdocs/pull/4052
-- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/authorization-tokens.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
   type: New topic

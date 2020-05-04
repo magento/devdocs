@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryReservationsApi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryReservationsApi/README.md
+release: 1.1.5
+github_path: InventoryReservationsApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: |
   The `InventoryReservationsApi` module provides service contracts for Inventory Management reservations.

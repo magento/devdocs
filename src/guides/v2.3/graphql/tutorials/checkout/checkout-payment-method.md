@@ -24,7 +24,7 @@ Use the following `cart` query to determine which payment methods which are avai
 **Request:**
 
 {:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```text
 query {
@@ -67,8 +67,8 @@ Use the `setPaymentMethodOnCart` mutation to set the payment method for your ord
 
 **Request:**
 
-{:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+{: .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```graphql
 mutation {

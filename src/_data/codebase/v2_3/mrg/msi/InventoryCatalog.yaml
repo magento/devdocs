@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryCatalog
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryCatalog/README.md
+release: 1.1.5
+github_path: InventoryCatalog/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryCatalog` module integrates inventory management business logic
   into Magento's catalog logic.\n\nThis module is part of the new inventory infrastructure.
