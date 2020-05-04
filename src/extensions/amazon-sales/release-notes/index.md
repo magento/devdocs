@@ -27,9 +27,9 @@ Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.
 
 -  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Managing Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
 
-   This change also adds order information in the _Order Notes_ column of the redesigned _Amazon Orders_ table to let the merchant know there is an issue with the order import.
+   This change also adds order information in the _Order Notes_ column of the redesigned _Amazon Orders_ table to let the merchant know there is an issue with the order import. See [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
 
--  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html).
+-  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ feature that shows all Amazon orders, including the addition of filters and the use of pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
 
 -  {:.new}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Amazon Renewed]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
 
@@ -46,6 +46,8 @@ Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.
 -  {:.fix}<!--CHAN-4326-->Corrected an issue causing order import errors associated with third-party extensions that use Magento shipping methods to create orders.
 
 -  {:.fix}<!--CHAN-4357-->Corrected an issue causing errors when running cron synchronization. A lock has been added on the CLI command that will prevent two cron jobs from synchronizing at the same time.
+
+-  {:.fix}Updated content security policy for support with Magento 2.3.5.
 
 ### v4.0.0
 
