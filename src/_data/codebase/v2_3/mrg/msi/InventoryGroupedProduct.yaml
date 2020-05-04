@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryGroupedProduct
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryGroupedProduct/README.md
+release: 1.1.5
+github_path: InventoryGroupedProduct/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventoryGroupedProduct` module integrates inventory management business
   logic into Magento's grouped product logic.\n\nThis module is part of the new inventory

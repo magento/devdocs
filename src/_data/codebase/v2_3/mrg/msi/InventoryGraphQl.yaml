@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryGraphQl
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryGraphQl/README.md
+release: 1.1.5
+github_path: InventoryGraphQl/README.md
 last_modified_at: '2019-03-30 16:15:21 +0100'
 content: |
   The `InventoryGraphQl` provides type information for the GraphQl module
