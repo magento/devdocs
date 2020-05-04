@@ -1,0 +1,75 @@
+---
+group: cloud-guide
+title: Bypass Fastly
+redirect_from:
+   - /cloud/configure/fastly-vcl-badreferer.html
+functional_areas:
+  - Cloud
+  - Setup
+---
+
+In some cases, you might need to configure a custom VCL snippet to bypass Fastly and submit requests from a specific IP address directly to the origin server. For example, if the Fastly service is returning incorrect headers, you can bypass Fastly to troubleshoot the problem.
+
+ {:.bs-callout-info}
+We recommend adding custom VCL configurations to a Staging environment where you can test them before running them in a Production environment.
+
+{:.procedure}
+Prerequisites
+
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
+
+{:.procedure}
+To bypass Fastly and submit requests to the Origin server:
+
+{% include cloud/admin-ui-login-step.md %}
+
+1. Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+
+1. Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+
+1. Click **Create Custom Snippet**.
+
+1. Add the VCL snippet values:
+
+   -  **Name** — `bypass_fastly`
+
+   -  **Type** — `recv`
+
+   -  **Priority** — `5`
+
+   -  **VCL** snippet content —
+
+      ```conf
+      if (client.ip == "Your IPv4 IP address" || client.ip == "Your IPv6 IP address") {
+        return(pass);
+      }
+      ```
+
+1. Click **Create**.
+
+   ![Create Fastly Bypass VCL snippet]
+
+1. After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
+
+1. After the upload completes, refresh the cache according to the notification at the top of the page.
+
+   Fastly validates the updated VCL version during the upload process. If the validation fails, edit your custom VCL snippet to fix any issues. Then, upload the VCL again.
+
+After you upload the custom snippet, you can submit API requests from the specified IP address to check response headers. See [Bypass Fastly to check Staging and Production sites][].
+
+{% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
+
+ {:.bs-callout-info}
+Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment][] in the Fastly CDN module for Magento 2 documentation.
+
+<!-- Link definitions -->
+
+[Create Fastly Bypass VCL snippet]: {{ site.baseurl }}/common/images/cloud/cloud-fastly-create-bypass-snippet.png
+{:width="550px"}
+
+[Manage custom VCL snippets]: {{ site.baseurl }}/common/images/cloud/cloud-fastly-edit-snippets.png
+{:width="550px"}
+
+[Bypass Fastly to check Staging and Production sites]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html#cloud-test-stage
+
+[Automated custom VCL snippets deployment]: https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment

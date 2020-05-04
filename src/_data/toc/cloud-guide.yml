@@ -278,6 +278,10 @@ pages:
               url: /cloud/cdn/fastly-vcl-blocking.html
               versionless: true
 
+            - label: Bypass Fastly
+              url: /cloud/cdn/fastly-vcl-bypass-to-origin.html
+              versionless: true
+
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html
           versionless: true
