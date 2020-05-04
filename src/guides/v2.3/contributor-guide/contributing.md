@@ -37,77 +37,60 @@ Refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/m
 
 ## Community Backlog Priority{#backlog}
 
-In order to be focused and provide timely resolution on the most critical issues and pull requests, Magento Team implemented Severity/Priority concept on community driven projects. This approach should make collaboration on open source projects more transparent for all participants.
-Having clear contribution rules in place will help build clear expectations for community contributors and establish clear priorities for Community maintainers and Magento team.
+In order to provide timely resolution on the most critical issues and pull requests, the Magento team has implemented Severity/Priority concepts to our community driven projects. This approach makes open-source collaboration more transparent for all participants.
+Having clear contribution rules in place helps to build clear expectations for Community Contributors and establish clear priorities for Community Maintainers and the Magento team.
 
-If you would like to contribute any improvement or bug fix to the Magento product and make sure it is valuable for Community and Magento product as well, we highly recommend every community contributors to take issues from backlog based on **Priority**.
-Magento Team and Community Maintainers will be processing contributions based on issues/pull requests priority starting from P0, P1 ... P4. If you pull requests will have Priority: P4 it might be processed with delay.
-
-{:.bs-callout-tip}
-**Priority** signifies how important and urgently it is to fix this defect. In other words Priority means how high it is in the backlog of tasks. The Defect priority status is set by Product Managers. Priority is related to scheduling to resolve the problem. It is a pointer towards the importance of the bug and if High priority is mentioned then the developer has to fix it at the earliest. It also influenced by the technical aspect of the product, reflecting how bad the bug is for the system and also largely related to Business or Marketing aspect.
+If you would like to contribute improvements or bug fixes to Magento, and make sure it is valuable for the Community and Magento as well, we highly recommend that Community Contributors to take issues from the backlog based on **Priority**.
+Magento and Community Maintainers process contributions based on the issue/pull requests priority starting from P0, P1 to P4.
 
 {:.bs-callout-tip}
-**Severity** is an assessment of the defect which indicates the effect it has on the system in terms of its impact. Without regard to other remaining work or the current schedule.
+**Priority** signifies how important or detrimental a defect is. The defect priority status is set by Product Managers. Priority also helps to determine the scheduling of the fix: Higher priority bugs will be fixed and merged first. It is a reflection on how bad the bug is for the system and also for business or marketing requirements.
 
-### Ranking concept
-Severity | Description
-| ------------ | --- |
-Severity: S0| significant catastrophic impact. Issues like that are more critical than any expected behavior. It is the ability to highlight "FIRE" among critical issues.
-Severity: S1| impact to the key product qualities
-Severity: S2| impact to the product qualities that makes the product more usable
-Severity: S3| impact to the product qualities that makes the product usable as best as possible
-Severity: S4| impact that does not prevent or hinder functionality
+{:.bs-callout-tip}
+**Severity** is a measure of how ‘bad’ the bug is and how much disruption it causes, without regard to remaining work or the release schedule.
 
-Priority | Description
-| ------------ | --- |
-Priority: P0| The defect needs to be fixed right now, everything else can wait no matter what work already started
-Priority: P1| Needs to be fixed before any other issues
-Priority: P2| Should be fixed as early as possible
-Priority: P3| May be fixed according to the position in the backlog. (This is the priority set as default)
-Priority: P4| We do not plan to do that in nearest time. Fixing can be deferred as a logical part of more important work
+### Priority and severity descriptions
 
-#### Justifications
-| Severity         | Description |
+| Severity | Description |
 | -------- | ------------- |
-| Severity: S0  | - Affects critical data or functionality and leaves users with no workaround.<br>- Significant catastrophic impact. Issues like that are more critical than any expected behavior. It is the ability to highlight "FIRE" among critical issues.<br>- Problem that is blocking the ability to work. An immediate fix is needed.<br>  |
-| Severity: S1  | - Affects critical data or functionality and forces users to employ a workaround.<br>- Impact to the key product qualities.<br>- Urgent problem that has critical impact. An immediate fix is needed.<br> |
-| Severity: S2  | - Affects non-critical data or functionality and forces users to employ a workaround.<br>- Impact to the product qualities that makes the product more usable.<br>- Major restrictions or short-term circumventions are required until a fix is available. Fix is for important.<br>  |
-| Severity: S3  | - Affects non-critical data or functionality and does not force users to employ a workaround.<br>- Impact to the product qualities that makes the product usable as best as possible.<br>- Problem with moderate impact requiring some restrictions. The fix would be for an area that is not critical.<br>  |
-| Severity: S4  | - A minor problem, annoyance, or technical issue with minimal impact. Fix is for a minor issue that makes the course less polished or only occasionally happens.<br>- Impact that does not prevent or hinder functionality.<br>- Affects aesthetics, professional look and feel, “quality” or “usability”.<br>  |
+| Severity: S0 | -  Affects critical data or functionality and leaves users with no workaround.<br>-  Significant catastrophic impact.<br>-  A problem that is blocking the ability to work. An immediate fix is needed.<br> |
+| Severity: S1 | -  Affects critical data or functionality and forces users to employ a workaround.<br>-  Impact to the key product qualities.<br>-  An immediate fix is needed.<br> |
+| Severity: S2 | -  Affects non-critical data or functionality and forces users to employ a workaround.<br>-  Impact to the product qualities that makes the product more usable.<br>-  Major restrictions or short-term circumventions are required until a fix is available. A fix is important.<br> |
+| Severity: S3 | -  Affects non-critical data or functionality and does not force users to employ a workaround.<br>-  Problem has moderate impact requiring some restrictions. The fix is in an area that is not critical.<br> |
+| Severity: S4 | -  A minor problem, annoyance, or technical issue with minimal impact.<br>-  Impact that does not prevent or hinder functionality.<br>-  Affects aesthetics, professional look and feel, “quality” or “usability”.<br> |
 
 | Priority | Description |
 | ------------- | ------------- |
-| Priority: P0  | - The defect needs to be fixed right now, everything else can wait no matter what work already started.<br> - This generally occurs in cases when an entire functionality is blocked   |
-| Priority: P1  | - Needs to be fixed before any other issues.<br>- Once the P0 defects have been fixed, a defect having this priority is the next candidate which has to be fixed |
-| Priority: P2  | - Should be fixed as early as possible<br>- A defect with this priority must be in contention to be fixed as it could also deal with functionality issues which are not as per expectation  |
-| Priority: P3  | - May be fixed according to the position in the backlog.|
-| Priority: P4  | - We do not plan to do that in the nearest time. Fixing can be deferred as a logical part of more important work.|
+| Priority: P0 | -  The defect needs to be fixed right now, everything else can wait.<br> - This generally occurs in cases when the entire functionality is blocked. |
+| Priority: P1 | -  Needs to be fixed before any other issues.<br>-  Once P0 defects have been fixed, a defect having this priority is the next candidate for fixing. |
+| Priority: P2 | -  Should be fixed as early as possible<br>-  A defect with this priority could have functionality issues which are not to expectations. |
+| Priority: P3 | -  May be fixed according to the position in the backlog.|
+| Priority: P4 | -  No current plan to fix. Fixing can be deferred as a logical part of more important work.|
 
-### Who and how can Define Severity And Priority?
+### Who and how can define severity and priority?
 
 #### Priority
-
--  Magento Team will define priority during a triage review meeting and based on Community assessment for Severity
+The Magento team defines priorities during regular triage review meetings, based on the community assessment for severity.
 
 #### Severity
 
--  Members of Community Maintainers are allowed to set Severity labels during initial public issue triage (confirmation) according to [Issue Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow)
--  Magento Team is allowed to set/edit Severity and Priority based on internal triage process and provided information by initial Community triage
--  Issue reporters can provide own evaluation for Severity by selecting checkbox from new Issue Report description.
+-  Community Maintainers are allowed to set Severity labels during the initial issue triage according to the [Issue Processing Workflow](https://github.com/magento/magento2/wiki/GitHub-Issues-Processing-Workflow).
+-  The Magento team can set or edit severity and priority based on our internal triage process and information provided in the initial community triage.
+-  Issue reporters can provide their own evaluation for severity by selecting a checkbox in the Issue description.
 
-Following list consist of some questions that may allow you to decide yourself the measure of severity.
+The following list consists of questions you can ask to help determine the proper severity:
 
 -  Does the system stop working after defect occurs?
--  Does the system recover from the defect by any means?
+-  Can the system recover from the defect?
 -  If the defect is recoverable, does the system require external effort to recover from the defect? (i.e. it will not recover on its own)
--  Did I check whether the same defect is reflected in all other related sections (or entire system)?
--  Can I be able to repeat the defect in some other system having same configuration (O/S, Browsers) as that of the system where I found the defect?
--  Can I be able to repeat the defect in other configurations also?
--  Does the defect affect all users? (i.e. Only a particular category of users will face the defect)
+-  Does the defect affect other related sections (or the entire system)?
+-  Can I repeat the defect in some other system having same configuration (O/S, Browsers) as that of the system where I found the defect?
+-  Does the defect show up in other configurations?
+-  Does the defect affect all users/roles? (i.e. Only a particular category of users will face the defect)
 -  Does the defect occurs frequently?
--  Are the inputs to make the defect easy to get? (i.e. not special data has to be created)
+-  Are the inputs to make the defect easy to reproduce? (i.e. special data is not required)
 
-The number of 'Yes' on the previous questions should give you a good idea about the severity.
+The number of 'Yes' answers should help you to determine the severity.
 
 ## GitHub and Two-Factor authentication {#two-factor}
 
