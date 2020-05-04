@@ -239,9 +239,9 @@ Attribute |  Data Type | Description
 
 Error | Description
 --- | ---
-`Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the data.sku argument does not exist.
-`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
-`Required parameter "cart_id" is missing` | The `cart_id` argument was omitted or contains an empty value.
+`Could not find a product with SKU "XXX"` | A simple product with the SKU specified in the `data.sku` argument does not exist.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` database table.
+`Required parameter "cart_id" is missing` | The `cart_id` argument is omitted or contains an empty value.
 
 ## Related topics
 
