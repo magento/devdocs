@@ -126,7 +126,7 @@ ERROR: Volume magento-sync declared as external, but could not be found. Please 
 All containers use the Docker logging method. You can view the logs using the `docker-compose` command. The following example uses the `-f` option to _follow_ the log output of the TLS container:
 
 ```bash
-docker-composer logs -f tls
+docker-compose logs -f tls
 ```
 
 Now you can see all requests that are passing through the TLS container and check for errors.
