@@ -14,14 +14,16 @@ You can upgrade the core {{site.data.var.ee}} code base to a newer version. Befo
 
 ## Upgrade from older versions of the Magento application
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
+Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Upgrade your PHP version
+-  Update your PHP version Elasticsearch version, and other services
 -  Convert an older configuration management file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
 -  Upgrade third-party extensions to the latest supported version
 -  Update the `.gitignore` file
 
+{:.bs-callout-info}
+If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
 ### Configuration management
 
 If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
@@ -90,15 +92,15 @@ To update the `.magento.app.yaml` file:
 
 Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
 
+{%include cloud/note-pro-using-yaml-support.md%}
+
 ### Back up the database
 
 {% include cloud/backup-db.md %}
 
 ### Complete the upgrade
 
-If you use PHP version 7.2, you must remove the `mcrypt` extension from the [extensions section of the .magento.app.yaml file].
-
- {:.bs-callout-info}
+{:.bs-callout-info}
 When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
@@ -107,11 +109,11 @@ To upgrade the Magento version:
 1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax].
 
    ```bash
-   composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
+   composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
    ```
 
-    {:.bs-callout-info}
-   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
+   {:.bs-callout-info}
+   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package. You can find the version constraint in the `composer.json` file for the version of the [Magento application template](https://github.com/magento/magento-cloud/blob/master/composer.json) you are using for the upgrade.
 
 1. Update the project.
 
