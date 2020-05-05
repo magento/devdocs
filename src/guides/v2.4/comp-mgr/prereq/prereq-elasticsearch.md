@@ -35,7 +35,7 @@ Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch
 {:.bs-callout-info}
 Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)]({{page.baseurl}}/install-gde/prereq/elasticsearch.html#prereq-java) to check which version of JDK is installed.
 
-[Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html) describes the tasks you must perform after updating Elasticsearch 2.
+[Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html) describes the tasks you must perform after updating Elasticsearch 2 to a supported version.
 
 ## Elasticsearch 5
 
@@ -53,4 +53,4 @@ If you are using Elasticsearch 6 or 7 as your catalog search engine, you are not
 
 ## Third-party extensions
 
-Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4. However, you are not required to perform any additional steps before upgrading to Magento 2.4.
+Magento recommends that you contact your search engine vendor to determine whether your extension is fully compatible with Magento 2.4.

@@ -18,7 +18,23 @@ bin/magento config:show catalog/search/engine
 The error occurs if the returned value is `mysql` or `elasticsearch`.
 
 {:.bs-callout-warning}
-If you have received this error, Magento is in an inconsistent state, and you cannot access the Admin. We recommend that you revert to your previous version of Magento while you resolve this error. To do this, run the `composer require magento/product-enterprise-edition=<version>` or `composer require magento/product-community-edition=<version>` command, where `<version>` is the version of Magento you were running **before** the upgrade. For example, `2.3.5`.
+
+
+{%
+include note.html
+type='warning'
+content='If you have received this error, Magento is in an inconsistent state, and you cannot access the Admin. We recommend that you revert to your previous version of Magento while you resolve this error. To do this, run one of the following commands:
+
+```bash
+composer require magento/product-enterprise-edition=<version>
+```
+
+```bash
+composer require magento/product-community-edition=<version>
+```
+
+where `<version>` is the version of Magento you were running **before** the upgrade. For example, `2.3.5`.'
+%}
 
 Follow the guidelines described in the following sections to recover from Magento's inconsistent state.
 
