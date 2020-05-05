@@ -37,8 +37,7 @@ entries:
   type: 'Major Update'
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7119
-- description: 'MISSING whatsnew in the PR #7131: "Magento 2.3.5 Release Note hotfix
-    update"'
+- description: 'Added information about the April 30th Resend account confirmation email link issue patch'
   versions: 2.3.x
   type: 'Major Update'
   date: April 29, 2020
