@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-In some cases, you might need to bypass Fastly caching and submit requests directly to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot  You can use the VCL configure a custom VCL snippet to bypass Fastly caching and submit requests directly to the origin server. This might be to 
+You can create a custom VCL snippet to bypass Fastly caching if you need to submit requests directly to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot headers. You can configure the snippet to bypass Fastly for requests from a specific IP address or URL.
 
 {:.bs-callout-info}
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running them in a Production environment.
