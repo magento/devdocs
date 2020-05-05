@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryAdminUi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryAdminUi/README.md
+release: 1.1.5
+github_path: InventoryAdminUi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: |
   The `InventoryAdminUi` module extends the Magento Admin UI to add Inventory Management functionality.

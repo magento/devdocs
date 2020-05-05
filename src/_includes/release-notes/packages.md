@@ -34,7 +34,7 @@ Click the **Name** links to view the repository and the license agreement.
 
 | Name | Version |  License | Description |
 | --- | --- | --- | --- |{% for package in packages %}{% unless package.name contains 'magento/' %}
-| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
+| {% if package.source.url contains '://' %}[{{ package.name }}]({{ package.source.url }}) {% else %}{{ package.name }}{% endif %} | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
 
 {% unless packages-dev == empty %}
 
@@ -42,7 +42,7 @@ Click the **Name** links to view the repository and the license agreement.
 
 | Name | Version |  License | Description |
 | --- | --- | --- | --- |{% for package in packages-dev %}{% unless package.name contains 'magento/' %}
-| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
+| {% if package.source.url contains '://' %}[{{ package.name }}]({{ package.source.url }}) {% else %}{{ package.name }}{% endif %} | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
 {% endunless %}
 
 {% else %}
