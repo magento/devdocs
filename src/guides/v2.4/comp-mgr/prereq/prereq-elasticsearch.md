@@ -28,7 +28,7 @@ Some third-party catalog search engines run on top of Magento's search engine. C
 
 ## Elasticsearch 2
 
-Magento does not support Elasticsearch 2. You must update to more recent version. Elasticsearch 7 is recommended.
+Magento does not support Elasticsearch 2. You must update to a more recent version. Elasticsearch 7 is recommended.
 
 Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 
