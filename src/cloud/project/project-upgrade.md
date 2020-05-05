@@ -109,11 +109,11 @@ To upgrade the Magento version:
 1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax].
 
    ```bash
-   composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
+   composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
    ```
 
-    {:.bs-callout-info}
-   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
+   {:.bs-callout-info}
+   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package. You can find the version constraint in the `composer.json` file for the version of the [Magento application template](https://github.com/magento/magento-cloud/blob/master/composer.json) you are using for the upgrade.
 
 1. Update the project.
 
