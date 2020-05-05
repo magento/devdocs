@@ -95,6 +95,7 @@ entries:
   date: April 23, 2020
   link: https://github.com/magento/devdocs/pull/7082
 - description: Added release notes for the Magento Open Source and Commerce 2.3.5 Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
+
   versions: 2.3.5
   type: New Topic
   date: April 27, 2020
