@@ -192,10 +192,6 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Compliance
-      url: /compliance/industry-compliance.html
-      versionless: true
-
     - label: Extensions Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
@@ -215,6 +211,10 @@
 
     - label: Product Recommendations
       url: /recommendations/product-recs.html
+      versionless: true
+
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
       versionless: true
 
     - label: Staging

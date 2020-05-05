@@ -1,8 +1,8 @@
 ---
 title: Magento_InventorySalesFrontendUi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventorySalesFrontendUi/README.md
+release: 1.1.5
+github_path: InventorySalesFrontendUi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventorySalesFrontendUi` module extends Magento's frontend UI with
   Inventory Management functionality. \n\nThis module is part of the new inventory
