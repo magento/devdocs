@@ -22,6 +22,7 @@ Instead, see [Update the Magento application][] for upgrade instructions.
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
+-  **Determine whether your current catalog search engine is supported**-Avoid significant upgrade errors by ensuring your search engine complies with 2.4 requirements. See [Check the catalog search engine] for more details.
 -  **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
 -  **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
 -  **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
@@ -266,3 +267,4 @@ All scenarios require that you comply with the [Prerequisites].
 [Upgrade using the custom composer plugin]: upgrade-with-plugin.html
 [Upgrade using the script]: upgrade-with-script.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
+[Check the catalog search engine]: {{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html
