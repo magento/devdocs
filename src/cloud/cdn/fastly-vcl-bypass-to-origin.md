@@ -8,9 +8,9 @@ functional_areas:
   - Setup
 ---
 
-In some cases, you might need to configure a custom VCL snippet to bypass Fastly and submit requests from a specific IP address directly to the origin server. For example, if the Fastly service is returning incorrect headers, you can bypass Fastly to troubleshoot the problem.
+In some cases, you might need to bypass Fastly caching and submit requests directly to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot  You can use the VCL configure a custom VCL snippet to bypass Fastly caching and submit requests directly to the origin server. This might be to 
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running them in a Production environment.
 
 {:.procedure}
@@ -39,11 +39,21 @@ To bypass Fastly and submit requests to the Origin server:
 
    -  **VCL** snippet content —
 
-      ```conf
-      if (client.ip == "Your IPv4 IP address" || client.ip == "Your IPv6 IP address") {
-        return(pass);
-      }
-      ```
+      -  The following example bypasses Fastly for a specific IP address:
+
+        ```conf
+        if (client.ip == "<Your IPv4 IP address>" || client.ip == "<Your IPv6 IP address>") {
+          return(pass);
+        }
+        ```
+
+      -  The following example bypasses Fastly for a specific URL pattern:
+
+        ```conf
+        if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
+        ```
+
+        For an exact match, use the `==` operator instead of the `~` operator. See [Fastly VCL reference] for detailed information.
 
 1. Click **Create**.
 
@@ -54,8 +64,6 @@ To bypass Fastly and submit requests to the Origin server:
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
    Fastly validates the updated VCL version during the upload process. If the validation fails, edit your custom VCL snippet to fix any issues. Then, upload the VCL again.
-
-After you upload the custom snippet, you can submit API requests from the specified IP address to check response headers. See [Bypass Fastly to check Staging and Production sites][].
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
@@ -70,6 +78,8 @@ Instead of manually uploading custom VCL snippets, you can add snippets to the `
 [Manage custom VCL snippets]: {{ site.baseurl }}/common/images/cloud/cloud-fastly-edit-snippets.png
 {:width="550px"}
 
-[Bypass Fastly to check Staging and Production sites]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html#cloud-test-stage
+[Checking cache]: https://docs.fastly.com/en/guides/checking-cache#using-curl
+
+[Fastly VCL reference]: https://docs.fastly.com/vcl/
 
 [Automated custom VCL snippets deployment]: https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment
