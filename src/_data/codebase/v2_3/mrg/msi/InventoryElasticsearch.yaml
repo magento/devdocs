@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryElasticsearch
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryElasticsearch/README.md
+release: 1.1.5
+github_path: InventoryElasticsearch/README.md
 last_modified_at: '2018-12-21 16:08:11 +0200'
 content: |
   The `InventoryElasticsearch` module provides elastic search support for Inventory Management.

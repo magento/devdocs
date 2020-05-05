@@ -1,8 +1,8 @@
 ---
 title: Magento_InventorySourceDeductionApi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventorySourceDeductionApi/README.md
+release: 1.1.5
+github_path: InventorySourceDeductionApi/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventorySourceDeductionApi` module provides service contracts for
   managing source deductuions when products are sold. \n\nThis module is part of the
