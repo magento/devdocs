@@ -105,7 +105,7 @@ Before you continue, make sure the sample module is registered and enabled.
    Module is enabled
    ```
 
-If the output indicates that the `Module does not exist`, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
+If the output indicates that the `Module does not exist`, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module will not load. Also, do not forget to run `magento setup:upgrade`.
 
 ## Step 3: Create a class to run cron {#cron-tut-class}
 
