@@ -155,7 +155,7 @@ If the headers do not have the correct values, see the following information:
 
 ### Bypass Fastly to check Staging and Production sites {#cloud-test-stage}
 
-If the Fastly service returns incorrect headers, you can create a VCL snippet that allows you to submit a Fastly API request directly to the origin server from a specified IP address, bypassing the Fastly CDN service. See [Bypass Fastly]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin).
+If the Fastly service returns incorrect headers, you can create a VCL snippet that allows you to submit a Fastly API request directly to the origin server from a specified IP address, bypassing the Fastly CDN service. See [Bypass Fastly]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html).
 
 After you add the VCL snippet, you can use cURL commands to submit requests to the origin from the specified IP address.
 

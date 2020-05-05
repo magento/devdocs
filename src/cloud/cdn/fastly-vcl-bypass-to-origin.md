@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Bypass Fastly
+title: Custom VCL to bypass Fastly
 redirect_from:
    - /cloud/configure/fastly-vcl-badreferer.html
 functional_areas:
@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-You can create a custom VCL snippet to bypass Fastly caching if you need to submit requests directly to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot headers. You can configure the snippet to bypass Fastly for requests from a specific IP address or URL.
+You can create a custom VCL snippet to bypass Fastly caching and submit requests directly to the origin server, for example to determine whether site issues are caused by caching, or to troubleshoot headers. You can configure the snippet to bypass Fastly for requests from a specific IP address or URL.
 
 {:.bs-callout-info}
 We recommend adding custom VCL configurations to a Staging environment where you can test them before running them in a Production environment.
@@ -39,21 +39,21 @@ To bypass Fastly and submit requests to the Origin server:
 
    -  **VCL** snippet content —
 
-      -  The following example bypasses Fastly for a specific IP address:
+      The following example bypasses Fastly for a specific IP address:
 
-        ```conf
-        if (client.ip == "<Your IPv4 IP address>" || client.ip == "<Your IPv6 IP address>") {
-          return(pass);
-        }
-        ```
+      ```conf
+      if (client.ip == "<Your IPv4 IP address>" || client.ip == "<Your IPv6 IP address>") {
+        return(pass);
+      }
+      ```
 
-      -  The following example bypasses Fastly for a specific URL pattern:
+      The following example bypasses Fastly for a specific URL pattern:
 
-        ```conf
-        if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
-        ```
+      ```conf
+      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
+      ```
 
-        For an exact match, use the `==` operator instead of the `~` operator. See [Fastly VCL reference] for detailed information.
+      For an exact URL match, use the `==` operator instead of the `~` operator. See the [Fastly VCL reference] for details.
 
 1. Click **Create**.
 
