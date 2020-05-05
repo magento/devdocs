@@ -33,7 +33,7 @@ Magento does not support Elasticsearch 2. You must update to more recent version
 Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production. Depending on your current version of Elasticsearch, a full cluster restart may or may not be required.
 
 {:.bs-callout-info}
-Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
+Elasticsearch requires JDK 1.8 or higher. See [Install the Java Software Development Kit (JDK)]({{page.baseurl}}/install-gde/prereq/elasticsearch.html#prereq-java) to check which version of JDK is installed.
 
 [Configure Magento to use Elasticsearch]({{site.baseurl}}/guides/v2.3/config-guide/elasticsearch/configure-magento.html) describes the tasks you must perform after updating Elasticsearch 2.
 
