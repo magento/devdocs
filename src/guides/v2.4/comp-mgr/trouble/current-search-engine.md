@@ -5,7 +5,11 @@ functional_areas:
   - Upgrade
 ---
 
-The `Your current search engine, <Engine Name>, is not supported. You must install a supported search engine before upgrading. See the System Upgrade Guide for more information.` error message indicates that Magento version you are upgrading from is configured to use a catalog search engine that is not supported in the Magento version you are upgrading to. This error means one of the following conditions are true on the down-level version of Magento:
+The following error message indicates that the Magento version you are upgrading from is configured to use a catalog search engine that is not supported in the Magento version you are upgrading to:
+
+`Your current search engine, <Engine Name>, is not supported. You must install a supported search engine before upgrading. See the System Upgrade Guide for more information.`
+
+This error means one of the following conditions are true on the down-level version of Magento:
 
 *  The search engine is set to MySQL.
 *  The search engine is set to a version of Elasticsearch that is no longer supported.
@@ -15,11 +19,10 @@ Use the following command to check the current search engine:
 ```bash
 bin/magento config:show catalog/search/engine
 ```
+
 The error occurs if the returned value is `mysql` or `elasticsearch`.
 
 {:.bs-callout-warning}
-
-
 {%
 include note.html
 type='warning'
