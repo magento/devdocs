@@ -19,7 +19,7 @@ Prerequisites
 {%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
 
 {:.procedure}
-To bypass Fastly and submit requests to the Origin server:
+To bypass Fastly and submit requests to the origin server:
 
 {% include cloud/admin-ui-login-step.md %}
 
