@@ -66,13 +66,13 @@ $viewModel = $block->getViewModel();
 <h1><?= $block->escapeHtml($viewModel->getTitle()); ?></h1>
 ```
 
-## Examples of View models in Magento
+## Examples of view models
 
 -  [Magento Theme](https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L45 "view_model definition"). This `view_model` is injected into a template to return the target store redirect url.
 
-The following is an example of view model usage in `Magento/Catalog/view/frontend/layout/catalog_product_view.xml` layout file.
+The following is an example of view model usage within the `Magento/Catalog/view/frontend/layout/catalog_product_view.xml` layout file.
 
-The view model class passed as an argument to `product.info.upsell` block in the layout configuration file
+The view model class is passed as an argument to the `product.info.upsell` block in the layout configuration file:
 
 ```xml
 <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell" template="Magento_Catalog::product/list/items.phtml">
@@ -85,7 +85,7 @@ The view model class passed as an argument to `product.info.upsell` block in the
 
 The following is an example of the view model class `Magento/Catalog/ViewModel/Product/Listing/PreparePostData.php` implementation in the catalog module.
 
-The class must implement `\Magento\Framework\View\Element\Block\ArgumentInterface` interface class.
+The class must implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface class.
 
 ```php
 namespace Magento\Catalog\ViewModel\Product\Listing;
@@ -129,7 +129,7 @@ class PreparePostData implements ArgumentInterface
 }
 ```
 
-The following is an example of the view model initialization in `app/code/Magento/Catalog/view/frontend/templates/product/list/items.phtml` template.
+The following is an example of the view model initialization in the `app/code/Magento/Catalog/view/frontend/templates/product/list/items.phtml` template.
 
 ```php
 /** @var $viewModel /Magento/Catalog/ViewModel/Product/Listing/PreparePostData */
