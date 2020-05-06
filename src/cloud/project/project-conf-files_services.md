@@ -165,10 +165,9 @@ Service   |  Magento 2.3  | Magento 2.2
 `nginx`   | 1.9           | 1.9
 `node`    | 6, 8, 10, 11  | 6, 8, 10, 11
 `php`     | *Magento version 2.3.4 and later*–– 7.2, 7.3<br>*Magento version 2.3.3*–– 7.2, 7.3<br>*Magento version 2.3.0 to 2.3.2*––  7.2, 7.3 | *Magento version 2.2.10 and later*––  7.2<br>*Magento version 2.2.5 to 2.2.9*––  7.1, 7.2<br>*Magento version 2.2.4 and earlier*–– 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, we recommend using PHP version 7.3. PHP version 7.1 is end of life, if you continue using it you must use v7.1.3 or later.
-`rabbitmq`| *Magento version 2.3.4*–– 3.8<br>*Magento version 2.3.0 to 2.3.3*–– 3.8     | 3.5
+`rabbitmq`| *Magento version 2.3.4*–– 3.8<br>*Magento version 2.3.0 to 2.3.3*–– 3.8 | 3.5
 `redis`   | *Magento version 2.3.1 and later*–– 4.0, 5.0<br>*Magento version 2.3.0*–– 4.0 | 4.0, 5.0
-`varnish` | *Magento version 2.3.3 and later*—– 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2*—– 4.0, 5.0 | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching, Varnish is available only for local development. 
-
+`varnish` | *Magento version 2.3.3 and later*—– 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2*—– 4.0, 5.0 | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching, Varnish is available only for local development.
 
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
