@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: fb265ec681d26b131b092c2b451e551129a76871
-  branch: yb_spectrum
+  revision: 0adc044e0cb5a882ed9131ea69586a478baa42e8
   specs:
     devdocs (8)
       jekyll (>= 4.0)
