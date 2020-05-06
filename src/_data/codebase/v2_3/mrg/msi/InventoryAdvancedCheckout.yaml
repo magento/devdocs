@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryAdvancedCheckout
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryAdvancedCheckout/README.md
+release: 1.1.5
+github_path: InventoryAdvancedCheckout/README.md
 last_modified_at: '2019-08-02 00:04:37 -0500'
 content: |-
   ## Magento_InventoryAdvancedCheckout
