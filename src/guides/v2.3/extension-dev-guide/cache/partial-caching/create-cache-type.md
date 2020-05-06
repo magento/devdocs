@@ -58,7 +58,7 @@ class CacheType extends TagScope
     const TYPE_IDENTIFIER = '%cache_type_id%';
 
     /**
-     * The tag name that that limits the cache cleaning scope within a particular tag
+     * The tag name that limits the cache cleaning scope within a particular tag
      */
     const CACHE_TAG = '%CACHE_TYPE_TAG%';
 
