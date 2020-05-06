@@ -104,9 +104,9 @@ The following query shows the status of a cart that is ready to be converted int
     }
     selected_payment_method {
       code
-      title
+      title      
     }
-    applied_coupons {
+    applied_coupon {
       code
     }
     prices {
@@ -251,7 +251,7 @@ The following query shows the status of a cart that is ready to be converted int
         "code": "checkmo",
         "title": "Check / Money order"
       },
-      "applied_coupons": null,
+      "applied_coupon": null,
       "prices": {
         "grand_total": {
           "value": 105.26,
@@ -297,7 +297,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
       }
       quantity
     }
-    applied_coupons {
+    applied_coupon {
       code
     }
     prices {
@@ -354,7 +354,7 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
           "quantity": 4
         }
       ],
-      "applied_coupons": [
+      "applied_coupon": [
         {
           "code": "NEW"
         }
