@@ -29,6 +29,9 @@ namespace :check do
   task :mdl do
     puts
     puts 'Checking Markdown ...'.magenta
+    print 'List the rules: $ '.magenta
+    sh 'bin/mdl -l --style=_checks/styles/style-rules-dev'
+    puts 'Linting ...'.magenta
 
     path = ENV['path']
 
