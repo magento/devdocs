@@ -96,22 +96,16 @@ Before you continue, make sure the sample module is registered and enabled.
 1. Run the following command:
 
    ```bash
-   bin/magento module:status
+   bin/magento module:status Magento_SampleMinimal
    ```
 
-1. Make sure that the module's name is displaying under `List of enabled modules:`.
+1. Make sure that the module is enabled.
 
-   ```text
-   List of enabled modules:
-   ...
-   Magento_SampleMinimal
-   ...
-
-   List of disabled modules:
-   None
+   ```terminal
+   Module is enabled
    ```
 
-If the module does not display, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won't load. Also, don't forget to run `magento setup:upgrade`.
+If the output indicates that the `Module does not exist`, review [step 1](#cron-tut-get) carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module will not load. Also, do not forget to run `magento setup:upgrade`.
 
 ## Step 3: Create a class to run cron {#cron-tut-class}
 
