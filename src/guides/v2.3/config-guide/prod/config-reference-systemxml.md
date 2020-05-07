@@ -297,7 +297,7 @@ The nodes `more_url`, `demo_url`, `requires` and `options` are defined by a diff
                     <validate>required-entry no-whitespace</validate> <!-- Field is required and must not contain any whitespace. -->
                     <if_module_enabled>VENDOR_MODULE</if_module_enabled>
                     <depends> <!-- This field will only be visible if the field with the id A_UNIQUE_FIELD_ID is set to value 1 -->
-                        <field id="A_UNIQUE_FIELD_ID">1</field>
+                        <field id="A_UNIQUE_FIELD_ID">1</field><!-- If this field is in another group, use A_UNIQUE_SECTION_ID/A_UNIQUE_GROUP_ID/A_UNIQUE_FIELD_ID -->
                     </depends>
                 </field>
             </group>
