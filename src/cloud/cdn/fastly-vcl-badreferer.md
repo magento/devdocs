@@ -15,9 +15,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 **Prerequisites:**
 
--  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
-
--  Admin credentials to access the Magento Admin UI for your {{ site.data.var.ece }} environment
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
 
 -  Review your site logs for fake referral URLs, and make a list of domains to block.
 

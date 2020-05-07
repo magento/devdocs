@@ -5,7 +5,7 @@ title: What's new on DevDocs
 
 {% assign whatsnew = site.data.whats-new %}
 
-<a class="btn" href="{{ whatsnew.thread }}"><img src="{{ site.baseurl }}/i/icons/rss.svg" /> RSS feed</a>
+<a class="btn" href="{{ whatsnew.thread }}"><img src="{{ site.baseurl }}/assets/i/icons/rss.svg" /> RSS feed</a>
 <!-- The link enables RSS readers to recognize the whatsnew-feed thread on the page -->
 <link rel="alternate" type="application/atom+xml" title="What's new on Magento DevDocs" href= "{{ whatsnew.thread }}" />
 
