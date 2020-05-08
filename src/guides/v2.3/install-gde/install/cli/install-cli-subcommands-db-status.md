@@ -24,7 +24,7 @@ Before you run this command, you must [Create or update the deployment configura
 To check the status of the Magento database, enter
 
 ```bash
-magento setup:db:status
+bin/magento setup:db:status
 ```
 
 This command has no arguments or options.

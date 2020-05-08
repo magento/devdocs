@@ -18,16 +18,42 @@ Install the `magento/product-recommendations` module with Composer:
 
 The `magento/product-recommendations` module requires the following dependencies:
 
--  **module-data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and storeview. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensei do not collect personally identifiable information.
+-  **data-services** — This module enables behavioral data collection by tracking [user events on the page]({{ page.baseurl }}/recommendations/events.html). This type of data is required by Adobe Sensei to compute product affinities based on production shopper behavior like product views, products added to a cart, and checkouts. Adobe Sensei then uses this information to create and train machine learning models for each website and store view. This unlocks recommendation types like "Customers who viewed this, also viewed...", which automatically adjusts with shopper behavior over time. Magento and Adobe Sensei do not collect personally identifiable information.
 
 -  **saas-export** — This module syncs catalog data. This type of data provides product information to the Product Recommendations service so it can accurately return product names, pricing, images, URLs, inventory and availability, and other attributes.
 
    {:.bs-callout-info}
-   If you prefer, you can install the above modules explicitly using Composer: `composer require magento/module-data-services` and `composer require magento/saas-export`
+   If you prefer, you can install the above modules explicitly using Composer: `composer require magento/data-services` and `composer require magento/saas-export`
 
 ### Update your Product Recommendations installation
 
-If for any reason you need to update the `product-recommendations` module, run the following:
+Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:
+
+```bash
+composer update magento/product-recommendations --with-dependencies
+```
+
+If you need to update to a major version, such as from 1.0 to 2.0, you need to edit your project's root `composer.json` file. For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
+
+```json
+"require": {
+    ...
+    "magento/product-recommendations": "^1.0",
+    ...
+}
+```
+
+Let's bump the major version from `1.0` to `2.0`:
+
+```json
+"require": {
+    ...
+    "magento/product-recommendations": "^2.0",
+    ...
+}
+```
+
+Save the the `composer.json` file and run:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies

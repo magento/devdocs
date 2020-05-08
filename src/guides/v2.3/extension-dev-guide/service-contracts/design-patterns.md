@@ -72,7 +72,7 @@ Method | Description
 `delete(data entity interface)` | Deletes a specified entity. The entity contains the key (ID).
 `deleteById(id)` | Deletes a specified entity by key (ID).
 
-Each data entity has a corresponding interface. Consequently, the `get()` function in the corresponding interface, for example, can return the exact type.
+Each data entity has a corresponding interface. Consequently, the `getById()` function in the corresponding interface, for example, can return the exact type.
 
 ### Management interfaces {#management-interfaces}
 

@@ -15,8 +15,7 @@ This affects the following environments:
 -  All Starter environments including Production `master`
 -  Pro Integration environments
 
-{:.bs-callout-tip}
-For Pro, you must enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to install or update services in the Staging and Production environments. Indicate the service changes needed and include your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
+{%include cloud/note-pro-using-yaml-support.md%}
 
 ## Default and supported services
 
@@ -161,14 +160,14 @@ The following table lists the services used in {{site.data.var.ece}} and their v
 
 Service   |  Magento 2.3  | Magento 2.2
 --------- | ------------- | ------------
-`elasticsearch` | Magento 2.3.1 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.3.0—1.7, 2.4, 5.2 | Magento versions 2.2.8 and later—1.7, 2.4, 5.2, 6.5<br>Magento 2.2.0 to 2.2.7—1.7, 2.4, 5.2
+`elasticsearch` | *Magento version 2.3.5 and later*–– 5.2, 6.5, 7.2, 7.5<br>*Magento version 2.3.1 to 2.3.4*–– 6.5<br>*Magento version 2.3.0*–– 2.4, 5.2  | *Magento version 2.2.8 and later*–– 5.2, 6.5 <br>*Magento version 2.2.0 to 2.2.7*–– 5.2
 `mariadb` | 10.0 to 10.2  | 10.0 to 10.2
 `nginx`   | 1.9           | 1.9
 `node`    | 6, 8, 10, 11  | 6, 8, 10, 11
-`php`     | Magento 2.3.3 and later—7.1, 7.2, 7.3<br>Magento 2.3.0 to 2.3.2—7.1, 7.2 | Magento 2.2.10 and later—7.1, 7.2<br>Magento 2.2.5 to 2.2.9—7.0, 7.1<br>Magento 2.2.4 and earlier—7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3.
-`rabbitmq`| 3.5, 3.7, 3.8      | 3.5
-`redis`   | 3.2, 4.0, 5.0 | 3.2, 4.0, 5.0
-`varnish` | Magento 2.3.3 and later—4.0, 5.0, 6.2<br>Magento 2.3.0 to 2.3.2—4.0, 5.0 | 4.0, 5.0
+`php`     | *Magento version 2.3.4 and later*–– 7.1, 7.2<br>*Magento version 2.3.3*–– 7.1, 7.2, 7.3<br>*Magento version 2.3.0 to 2.3.2*––  7.1, 7.2 | *Magento version 2.2.10 and later*––  7.1, 7.2<br>*Magento version 2.2.5 to 2.2.9*––  7.0, 7.1<br>*Magento version 2.2.4 and earlier*–– 7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3.
+`rabbitmq`| *Magento version 2.3.4*–– 3.7, 3.8<br>*Magento version 2.3.0 to 2.3.3*–– 3.7     | 3.5
+`redis`   | *Magento version 2.3.1 and later*–– 4.0, 5.0<br>*Magento version 2.3.0*–– 3.2, 4.0 | 3.2, 4.0, 5.0
+`varnish` | *Magento version 2.3.3 and later*—– 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2*—– 4.0, 5.0 | 4.0, 5.0
 
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
