@@ -50,7 +50,7 @@ Example of a LESS mixin to target screen width less than 480px:
 }
 ```
 
-Example of a LESS mixin to target screen width less than 767px:
+Example of a LESS mixin to target screen width less than 768px:
 
 ```less
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
