@@ -1,9 +1,24 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 21c18f2fe396b5d9ba4ca4941fae4b7b48d8ea5a
+  revision: 2dbac369b13f4b3b7e616a26791c103544a88546
   specs:
     devdocs (9)
       jekyll (>= 4.0)
+
+GIT
+  remote: https://github.com/magento-devdocs/magedocs_helper.git
+  revision: d1dfd398d01b081fbe8bad3d99a3f6a800f11fbd
+  specs:
+    magedocs_helper (0.1.0)
+      colorator
+      html-proofer
+      image_optim
+      image_optim_pack
+      kramdown
+      launchy
+      mdl (= 0.7.0)
+      rake
+      whatsup_github
 
 GEM
   remote: https://rubygems.org/
@@ -162,21 +177,14 @@ PLATFORMS
 
 DEPENDENCIES
   devdocs!
-  html-proofer
-  image_optim
-  image_optim_pack
-  jekyll
   jekyll-algolia (~> 1.0)
   jekyll-optional-front-matter
   jekyll-redirect-from
   jekyll-relative-links
   jekyll-sitemap
   jekyll-titles-from-headings
-  launchy
-  mdl (= 0.7.0)
-  rake
+  magedocs_helper!
   wdm
-  whatsup_github
 
 BUNDLED WITH
    1.17.3

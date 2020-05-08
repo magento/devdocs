@@ -3,21 +3,11 @@
 source 'https://rubygems.org'
 
 gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
-gem 'jekyll'
-gem 'whatsup_github'
-gem 'rake'
 
 gem 'wdm', platform: :mswin
 
-group :test do
-  gem 'html-proofer'
-  gem 'mdl', '= 0.7.0'
-  gem 'launchy'
-end
-
-group :optimization do
-  gem 'image_optim'
-  gem 'image_optim_pack'
+group :development, :test do
+  gem 'magedocs_helper', git: 'https://github.com/magento-devdocs/magedocs_helper.git'
 end
 
 group :jekyll_plugins do

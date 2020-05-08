@@ -11,7 +11,8 @@
 #
 require 'html-proofer'
 require 'yaml'
-require_relative '../lib/double_slash_check.rb'
+# require_relative '../lib/double_slash_check.rb'
+require 'magedocs_helper'
 
 Jekyll::Hooks.register :site, :post_write do |site|
   # Do nothing unless 'site.check_links' is set
