@@ -111,7 +111,6 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     // your code
 }
-```
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     // your code
