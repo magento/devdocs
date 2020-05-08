@@ -2,51 +2,43 @@
 
 <div class="content-container">
 
-  <aside class="sidebar">
-  	<button class="toc-toggler">Table of Contents</button>
-  	<div class="sidebar-wrapper">
-
-
-      {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
-      {% assign first_step = steps[0] %}
-      <ul>
-        <li class="level-0">
-          <a href="{{ page.baseurl }}/{{ page.return_to.url }}">
-            &larr; {{ page.return_to.title }}
-          </a>
-        </li>
-      {% for step in steps %}
-        <li class="level1{% if step.url == page.url %}{% assign index = forloop.index %}  active{% endif %}">
-          <a href="{{ site.baseurl }}{{ step.url }}">{% if step.menu_title %}{{ step.menu_title }}{% else %}{{step.title}}{% endif %}</a>
-        </li>
-      {% endfor %}
-      </ul>
-
-    </div>
-  </aside>
-  <!-- /.sidebar -->
+  {% include layout/sidebar.html %}
 
 	<section class="content">
 		<div class="content-wrap">
-			{% include layout/page-header.html %}
-			{{ content }}
+      <header class="content-header">
+        {% include layout/page-header.html %}
+      </header>
+      <main>
+        {{ content }}
+        
+        <hr />
+        <div class="spectrum-ButtonGroup">
+          {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
+          {% assign first_step = steps[0] %}
+          {%- for step in steps -%}
+            {% if step.url == page.url %}{% assign index = forloop.index %}{% endif %}
+          {%- endfor -%}
+          {% assign steps_size = steps | size %}
+          {% if index == 1 %}
+            <a href="{{ site.baseurl }}{{ steps[index].url }}" class="spectrum-Button spectrum-Button--cta">Begin Tutorial</a>
+          {% else %}
+            {% assign next_i = index %}
+            {% assign prev_i = index | minus: 2 %}
+            
+            <a href="{{ site.baseurl }}{{ steps[prev_i].url }}" class="spectrum-Button spectrum-Button--primary">Previous</a>
+            {% if index != steps_size %}
+            <a href="{{ site.baseurl }}{{ steps[next_i].url }}" class="spectrum-Button spectrum-Button--cta">Next</a>
+            {% endif %}
 
-      <div class="horisontal-nav">
-        {% assign steps_size = steps | size %}
-        {% if index == 1 %}
-          <a href="{{ site.baseurl }}{{ steps[index].url }}" class="btn btn-large btn-primary">Begin Tutorial</a>
-        {% else %}
-          {% assign next_i = index %}
-          {% assign prev_i = index | minus: 2 %}
-
-          <a href="{{ site.baseurl }}{{ steps[prev_i].url }}" class="btn btn-large btn-secondary">Previous</a>
-          {% if index != steps_size %}
-          <a href="{{ site.baseurl }}{{ steps[next_i].url }}" class="btn btn-large btn-primary">Next</a>
           {% endif %}
+        </div>
+        <!-- /.spectrum-ButtonGroup -->
+      </main>
 
-        {% endif %}
-      </div>
-      <!-- /.horisontal-nav -->
+      <footer class="content-footer">
+				{% include layout/content-footer.html %}
+			</footer>
 
 		</div>
 		<!-- /.content-wrap -->
