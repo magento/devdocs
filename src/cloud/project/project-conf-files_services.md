@@ -121,17 +121,17 @@ To verify relationships in local environment:
    redis:
        -
    ...
-           type: 'redis:3.2'
+           type: 'redis:3.8'
            port: 6379
    elasticsearch:
        -
    ...
-           type: 'elasticsearch:6.5'
+           type: 'elasticsearch:6.6'
            port: 9200
    database:
        -
    ...
-           type: 'mysql:10.0'
+           type: 'mysql:10.2'
            port: 3306
    ```
 
@@ -167,7 +167,7 @@ Service   |  Magento 2.3  | Magento 2.2
 `php`     | *Magento version 2.3.4 and later**— 7.1, 7.2<br>*Magento version 2.3.3**— 7.1, 7.2, 7.3<br>*Magento version 2.3.0 to 2.3.2**—  7.1, 7.2 | *Magento version 2.2.10 and later**—  7.1, 7.2<br>*Magento version 2.2.5 to 2.2.9**— 7.0, 7.1<br>*Magento version 2.2.4 and earlier**— 7.0.2, 7.0.4, ~7.0.6, 7.1<br><br>**Note:** Beginning with {{ site.data.var.ct }} v2002.1.0, you must use PHP version 7.1.3 or later for both Magento 2.2 and 2.3.
 `rabbitmq`| *Magento version 2.3.4**— 3.7, 3.8<br>*Magento version 2.3.0 to 2.3.3*— 3.7     | 3.5
 `redis`   | *Magento version 2.3.1 and later**— 4.0, 5.0<br>*Magento version 2.3.0*— 3.2, 4.0 | 3.2, 4.0, 5.0
-`varnish` | *Magento version 2.3.3 and later**— 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2**— 4.0, 5.0 | 4.0, 5.0
+`varnish` | *Magento version 2.3.3 and later**— 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2**— 4.0, 5.0 | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.
 
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
