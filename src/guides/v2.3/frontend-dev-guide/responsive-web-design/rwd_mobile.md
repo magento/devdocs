@@ -50,6 +50,14 @@ Example of a LESS mixin to target screen width less than 480px:
 }
 ```
 
+Example of a LESS mixin to target screen width less than 767px:
+
+```less
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    // your code
+}
+```
+
 ## Recommended reading
 
 [CSS in Magento responsive design]({{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_css.html)
