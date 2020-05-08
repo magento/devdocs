@@ -113,6 +113,11 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 ```
 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    // your code
+}
+```
+
 You can find more information about the Magento UI library responsive mixin usage in `<your_Magento_instance>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html` (view in a browser).
 
 {:.ref-header}
