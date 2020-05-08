@@ -169,6 +169,5 @@ Service   |  Magento 2.3  | Magento 2.2
 `redis`   | *Magento version 2.3.1 and later**— 4.0, 5.0<br>*Magento version 2.3.0*— 3.2, 4.0 | 3.2, 4.0, 5.0
 `varnish` | *Magento version 2.3.3 and later**— 4.0, 5.0, 6.2<br>*Magento version 2.3.0 to 2.3.2**— 4.0, 5.0 | 4.0, 5.0<br>**Note:** On Cloud projects, you must use the [Fastly service]({{site.baseurl}}/cloud/cdn/cloud-fastly.html) for caching. Varnish is available only for local development.
 
-
 {:.bs-callout-info}
 When you set up the Elasticsearch service, check to ensure that you use a version that is compatible with the installed [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client. See [Check Elasticsearch software compatibility]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
