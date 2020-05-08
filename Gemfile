@@ -6,7 +6,7 @@ gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
 
 gem 'wdm', platform: :mswin
 
-group :development, :test do
+group :test do
   gem 'magedocs_helper', git: 'https://github.com/magento-devdocs/magedocs_helper.git'
 end
 
