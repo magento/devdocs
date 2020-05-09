@@ -22,6 +22,44 @@ Before you begin, make sure you understand the following:
 *  All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
 *  All CLI commands should be implemented in the scope of your [module](https://glossary.magento.com/module) and should depend on the module's status.
 *  Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
+*  Your command should have an unique `name`, defined in the `configure()` method of the Command class:
+
+   ```php
+   protected function configure()
+   {
+      $this->setName('my:first:command');
+      $this->setDescription('This is my first console command.');
+
+      parent::configure();
+   }
+   ...
+   ```
+
+   or in the `di.xml` file:
+
+   ```xml
+   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+      ...
+      <type name="Magento\CommandExample\Console\Command\SomeCommand">
+         <arguments>
+            <!-- configure the command name via constructor $name argument -->
+            <argument name="name" xsi:type="string">my:first:command</argument>
+         </arguments>
+      </type>
+      ...
+   </config>
+   ```
+
+   or in the `__construct` method (declaration is similar to `di.xml`):
+
+   ```php
+   public function __construct()
+   {
+       parent::__construct('my:first:command');
+   }
+   ```
+
+   Otherwise the [Symfony](https://github.com/symfony/console/blob/master/Application.php#L470) framework will return an `The command defined in "<Command class>" cannot have an empty name.` error.
 
 ## Add CLI commands using dependency injection {#cli-sample}
 
@@ -54,16 +92,14 @@ Following is a summary of the process:
             */
            protected function configure()
            {
-               $options = [
-                    new InputOption(
-                        self::NAME,
-                        null,
-                        InputOption::VALUE_REQUIRED,
-                        'Name'
-                    )
-               ];
+               $this->setName('my:first:command');
                $this->setDescription('This is my first console command.');
-               $this->setDefinition($options);
+               $this->addOption(
+                   self::NAME,
+                   null,
+                   InputOption::VALUE_REQUIRED,
+                   'Name'
+               );
 
                parent::configure();
            }
@@ -97,12 +133,6 @@ Following is a summary of the process:
    ```xml
    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
        ...
-       <type name=" Magento\CommandExample\Console\Command\SomeCommand">
-           <arguments>
-               <!-- configure the command name via constructor $name argument -->
-               <argument name="name" xsi:type="string">my:first:command</argument>
-           </arguments>
-       </type>
        <type name="Magento\Framework\Console\CommandListInterface">
            <arguments>
                <argument name="commands" xsi:type="array">

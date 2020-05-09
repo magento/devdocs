@@ -11,17 +11,25 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 
 The `{{site.data.var.mcc}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+## v1.0.3
+*Release date: February 27, 2020*<br/>
+
+-  {:.fix}Fixed a compatibility issue to support `{{site.data.var.ct}}` 2002.0.x releases that use older PHP versions.
+
 ## v1.0.2
+*Release date: February 6, 2020*<br/>
 
 -  {:.new}Extended the functionality of the `WARM_UP_PAGES` environment variable to support cache preloading for specific product pages. See the [post-deploy variables]({{site.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) topic for a detailed feature description.<!--MAGECLOUD-4444-->
 
 -  {:.fix}Fixed an issue where an invalid store URL causes the post-deploy hook to fail when using the `WARM_UP_PAGES` functionality to populate the cache. This issue occurred only when URL rewrites were disabled.<!-- MAGECLOUD-4094 -->
 
 ## v1.0.1
+*Release date: July 23, 2019*<br/>
 
 -  {:.fix}Fixed an issue affecting [**WARM_UP_PAGES**]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages) functionality that uses a default store URL. Now, if the `config:show:default-url` command cannot fetch a base URL, then the URL from the MAGENTO_CLOUD_ROUTES variable is used.<!-- MAGECLOUD-3866 -->
 
 ## v1.0.0
+*Release date: June 12, 2019*<br/>
 
 This is the first release of the [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components) package, which is a new dependency for `{{ site.data.var.ct }}` package version 2002.0.20 and later.
 

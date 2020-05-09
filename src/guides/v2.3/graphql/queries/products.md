@@ -15,7 +15,7 @@ products(
   filter: ProductAttributeFilterInput
   pageSize: Int
   currentPage: Int
-  sort: ProductSortFilterInput
+  sort: ProductAttributeSortInput
 ): Products
 ```
 
@@ -203,13 +203,6 @@ null
 to
 ```
 
--  Comparable on Storefront
--  Use in Layered Navigation
--  Use in Search Results Layered Navigation
--  Visible on Catalog Pages on Storefront
--  Used in Product Listing
--  Used for Sorting in Product Listing"
-
 {:.bs-callout-info}
 Wildcards are no longer supported in `products` queries.
 
@@ -266,6 +259,9 @@ Attribute | Data type | Description
 
 Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
 
+{:.bs-callout-info}
+To enable a custom attribute to return layered navigation and aggregation data from the Admin, set the **Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties** > **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**.
+
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_code` | String! | Attribute code of the filter item
@@ -280,7 +276,7 @@ The `AggregationOption` array contains a list of possible options for the `attri
 Attribute | Data type | Description
 --- | --- | ---
 `count` | Int | The number of items returned by the filter
-`label` | String! | The label of the filter
+`label` | String | The label of the filter
 `value` | String! | The internal ID representing the value of the option
 
 ### ProductInterface attributes {#ProductInterface}
@@ -352,7 +348,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 
 ```graphql
 {
-  products(search: "Yoga pants", pageSize: 10) {
+  products(search: "Yoga pants", pageSize: 2) {
     total_count
     items {
       name
@@ -518,6 +514,9 @@ The following query returns aggregations for a query that filters on items with 
 -  Women's pants (category ID `27`)
 -  In the price range of $30 - $39.99
 -  Comes in black (color `49`)
+
+{:.bs-callout-info}
+By default, you cannot filter on the `color` attribute. [Filtering with custom attributes]({{page.baseurl}}/graphql/custom-filters.html) describes how to enable this attribute for filtering. You can also run the following query without enabling the attribute by deleting `, color: {eq: "49"}`.
 
 **Request:**
 
@@ -1025,7 +1024,7 @@ In the following example, a catalog price rule that provides a 10% discount on a
 
 ### Sort by a custom attribute
 
-In this example, the `description` attribute has been enabled by setting the **Stores** > Attributes > **Product** > description > **Storefront Properties** > **Use in Search** and **Used in Sorting in Product Listing** fields to Yes. The query returns all products with a price range of $28 to $30, sorted by the description.
+In this example, the `description` attribute has been enabled by setting the **Stores** > Attributes > **Product** > description > **Storefront Properties** > **Use in Search** and **Used for Sorting in Product Listing** fields to Yes. The query returns all products with a price range of $28 to $30, sorted by the description.
 
 **Request:**
 

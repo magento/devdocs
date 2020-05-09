@@ -6,6 +6,8 @@ functional_areas:
   - Docker
 ---
 
+{%include cloud/note-docker-config-reference-link.md%}
+
 ## docker-compose
 
 Action | Command
@@ -39,24 +41,27 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-config.html#launch-modes) | `--sync-engine` | native (default), docker-sync, mutagen
+| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode)         | `--mode`, `-m`   | production, developer
+| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-syncing-data.html) | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
 See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
 
 ## bin/magento-docker
 
-Run `bin/magento-docker` commands using the following format:
+The `bin/magento-docker` commands simplify running docker-compose tasks. For example, instead of running a separate docker-compose command for the build, deploy, and post-deploy steps, you can _redeploy_ Magento in a Docker environment using the following command:
 
 ```bash
-./bin/magento-docker <command>
+./bin/magento-docker ece-redeploy
 ```
 
-For example, to connect to the bash shell:
+The following example shows the `./bin/magento-docker` command and output when connecting to the bash shell:
+
+```bash
+./bin/magento-docker bash
+```
 
 ```terminal
-$ ./bin/magento-docker bash
 Starting project_redis_1 ... done
 Starting project_db_1    ... done
 Starting project_elasticsearch_1 ... done
@@ -67,16 +72,17 @@ root@deploy:/app#
 
 Action | Command
 :----- | :------
-Connect to bash shell | `bash`
-Pull the latest images | `pull`
-Build application | `ece-build`
-Deploy application | `ece-deploy`
-Run post-deploy hooks | `ece-post-deploy`
-Re-build and re-deploy application | `ece-redeploy`
-Stop containers | `stop`
-Start containers | `start`
-Restart containers | restart
-Destroy containers | `down`
-Destroy, re-create, and start containers | `up`
+Connect to bash shell | `./bin/magento-docker bash`
+Pull the latest images | `./bin/magento-docker pull`
+Build application | `./bin/magento-docker ece-build`
+Deploy application | `./bin/magento-docker ece-deploy`
+Run post-deploy hooks | `./bin/magento-docker ece-post-deploy`
+Re-build and re-deploy application | `./bin/magento-docker ece-redeploy`
+Stop containers | `./bin/magento-docker stop`
+Start containers | `./bin/magento-docker start`
+Restart containers | `./bin/magento-docker restart`
+Destroy containers | `./bin/magento-docker down`
+Destroy, re-create, and start containers | `./bin/magento-docker up`
 
 [Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
+[Configure Docker]: {{site.baseurl}}/cloud/docker/docker-config.html

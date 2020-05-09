@@ -29,7 +29,7 @@ The articles in this chapter describe the particular approaches used in the Blan
 
 ## Recommended reading
 
--  [Magento Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html)
+-  [Magento Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html)
 
 [CSS in Magento responsive design]: {{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_css.html
 [JavaScript in Magento responsive design]: {{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_js.html

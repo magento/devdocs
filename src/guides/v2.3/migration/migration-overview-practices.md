@@ -25,9 +25,11 @@ This section provides our best information about how to speed up and simplify yo
 
 *  To boost performance, you may **enable the `direct_document_copy` option** in your `config.xml`:
 
-        <direct_document_copy>1</direct_document_copy>
+   ```xml
+   <direct_document_copy>1</direct_document_copy>
+   ```
 
-  In this case, Magento 1 and Magento 2 databases must be located in the same MySQL instance, and the database account must have access to each database.
+   In this case, Magento 1 and Magento 2 databases must be located in the same MySQL instance, and the database account must have access to each database.
 
 ## Benchmarking estimates
 

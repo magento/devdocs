@@ -6,25 +6,27 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to a newer version. It is best to review the summary of the updated [technology stack] before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to a newer version. Before upgrading your project, review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches] for upgrade path details.
 
 {% include cloud/note-upgrade.md %}
 
 {% include cloud/note-ece-tools-package.md %}
 
-## Upgrading from older versions of the Magento application
+## Upgrade from older versions of the Magento application
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later, review the [Magento technology stack requirements]. Your upgrade tasks may include the following:
+Review the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements. Your upgrade tasks may include the following:
 
--  Upgrade your PHP version
+-  Update your PHP version Elasticsearch version, and other services
 -  Convert an older configuration management file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Upgrade to the latest supported version of Fastly
+-  Upgrade third-party extensions to the latest supported version
 -  Update the `.gitignore` file
 
+{:.bs-callout-info}
+If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
 ### Configuration management
 
-If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly as the `config.local.php` file, with additional settings that include a list of your enabled modules, additional configurations, and a different name.
+If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
 
 {:.procedure}
 To create a temporary `config.php` file:
@@ -86,9 +88,11 @@ To update the `.magento.app.yaml` file:
 
 1. Continue with the upgrade process.
 
-## Upgrading the Magento application
+## Upgrade the Magento application
 
-Review the [Magento technology stack requirements] before upgrading your Magento application.
+Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
+
+{%include cloud/note-pro-using-yaml-support.md%}
 
 ### Back up the database
 
@@ -96,9 +100,7 @@ Review the [Magento technology stack requirements] before upgrading your Magento
 
 ### Complete the upgrade
 
-If you use PHP version 7.2, you must remove the `mcrypt` extension from the [extensions section of the .magento.app.yaml file]. For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
-
- {:.bs-callout-info}
+{:.bs-callout-info}
 When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
 
 {:.procedure}
@@ -107,11 +109,11 @@ To upgrade the Magento version:
 1. Change to your Magento root directory and set the upgrade version using the [version constraint syntax].
 
    ```bash
-   composer require "magento/magento-cloud-metapackage":">=2.x.2 <2.x.3" --no-update
+   composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
    ```
 
-    {:.bs-callout-info}
-   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
+   {:.bs-callout-info}
+   You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package. You can find the version constraint in the `composer.json` file for the version of the [Magento application template](https://github.com/magento/magento-cloud/blob/master/composer.json) you are using for the upgrade.
 
 1. Update the project.
 
@@ -173,7 +175,7 @@ To create a system-specific configuration file:
 {:.bs-callout-warning}
 For an upgrade, you delete the `config.php` file. Once this file is added to your code, you should **not** delete it. If you need to remove or edit settings, you must edit the file manually.
 
-### Upgrading extensions
+### Upgrade extensions
 
 Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}}. If you need to upgrade any third-party extensions and modules, we recommend working in a new Integration branch with your extensions disabled.
 
@@ -197,7 +199,9 @@ To verify and upgrade your extensions:
 1. Push to the Staging environment to test in a pre-production environment.
 
 We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your go-live process.
-We also recommend upgrading to the latest version of the Fastly CDN module for Magento 2.
+
+{:.bs-callout-info}
+When you upgrade your Magento version, the upgrade process updates to the latest version of the [Fastly CDN module for Magento 2] automatically.
 
 ## Troubleshoot upgrade
 
@@ -222,11 +226,11 @@ To resolve the error:
    git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
    ```
 
-[technology stack]: {{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[Magento technology stack requirements]: {{site.baseurl}}/guides/v2.2/install-gde/system-requirements-tech.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
 [extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
+[Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html

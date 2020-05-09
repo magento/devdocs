@@ -1,5 +1,4 @@
 label: GraphQL Developer Guide
-include_versions:  ["2.3"]
 pages:
 
     - label: Overview
@@ -10,10 +9,10 @@ pages:
         - label: GraphQL requests
           url: /graphql/send-request.html
 
-        - label: Get customer authorization token
-          url: /graphql/get-customer-authorization-token.html
+        - label: Authorization tokens
+          url: /graphql/authorization-tokens.html
 
-        - label: GraphQL Caching
+        - label: GraphQL caching
           url: /graphql/caching.html
 
         - label: Filtering with custom attributes
@@ -26,6 +25,9 @@ pages:
 
         - label: Resolvers
           url: /graphql/develop/resolvers.html
+
+        - label: Extend an existing GraphQL schema
+          url: /graphql/develop/extend-existing-schema.html
 
         - label: Identity class
           url: /graphql/develop/identity-class.html
@@ -293,7 +295,40 @@ pages:
 
     - label: Tutorial
       class: tutorial
-      url: /graphql/tutorials/checkout/index.html
+      children:
 
+        - label: GraphQL checkout tutorial
+          url: /graphql/tutorials/checkout/index.html
+
+        - label: Step 1. Create a customer
+          url: /graphql/tutorials/checkout/checkout-customer.html
+
+        - label: Step 2. Create an empty cart
+          url: /graphql/tutorials/checkout/checkout-shopping-cart.html
+
+        - label: Step 3. Add products to the cart
+          url: /graphql/tutorials/checkout/checkout-add-product-to-cart.html
+
+        - label: Step 4. Set the shipping address
+          url: /graphql/tutorials/checkout/checkout-shipping-address.html
+
+        - label: Step 5. Set the billing address
+          url: /graphql/tutorials/checkout/checkout-billing-address.html
+
+        - label: Step 6. Set the shipping method
+          url: /graphql/tutorials/checkout/checkout-shipping-method.html
+
+        - label: Step 7. Apply a coupon
+          url: /graphql/tutorials/checkout/checkout-coupon.html
+
+        - label: Step 8. Set email on the cart
+          url: /graphql/tutorials/checkout/checkout-quote-email.html
+
+        - label: Step 9. Set the payment method
+          url: /graphql/tutorials/checkout/checkout-payment-method.html
+
+        - label: Step 10. Place the order
+          url: /graphql/tutorials/checkout/checkout-place-order.html
+ 
     - label: Release Notes
       url: /graphql/release-notes.html

@@ -7,11 +7,19 @@ Magento Commerce 2.3.4 offers significant platform upgrades, substantial securit
 
 This release includes over 220 functional fixes to the core product and  over 30 security enhancements. It includes resolution of over 275 contributions by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
 
+## Download and run the DB_CLEANUP_SCRIPT.php script
+
+This hotfix addresses an issue with [CVE-2019-8118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8118) that was included in Magento 2.3.3 and 2.2.10. While the original fix for that bug stopped the logging of failed login attempts, information collected prior to updating to these current versions may still exist, and previous, unpatched versions of Magento may still have this issue. This hotfix provides a script that clears the login attempts that were previously collected. **We recommend that all merchants download and run this script**. See [Remove failed login attempts from the database](https://support.magento.com/hc/en-us/articles/360040209352) for information on how to download and run this database clean-up script.
+
+## Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4 to address a critical PayPal Express Checkout issue
+
+This issue affects orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. When the customer enters a region in the text field, Magento throws this error: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`.  When the customer selects the country region from the drop-down menu when placing an order, the order is completed successfully.  See [Applying patches]({{page.baseurl}}/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches. Both Git-based  and Composer-based  patches are available. A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
+
 ## Security-only patch available
 
 Merchants can now install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly release (for example, Magento 2.3.4) provides. Patch 2.3.3.1 (Composer package 2.3.3-p1) is a security-only patch that provides fixes for vulnerabilities that have been identified in our previous quarterly release, Magento 2.3.3. All hot fixes that were  applied to the 2.3.3 release are included in this security-only patch. (A *hot fix* provides a fix to a released version of Magento that addresses a specific problem or bug.) For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.3-p1), see [Install Magento using Composer](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html). Security-only patches include only security bug fixes, not the additional security enhancements that are included in the full patch.
 
-With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
+With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
 ## Other release information
 
@@ -29,17 +37,16 @@ This release includes the following security enhancements:
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security updates available for Magento (APSB20-02)](https://helpx.adobe.com/security/products/magento/apsb20-02.html) for a discussion of these fixed issues. All known exploitable security issues fixed in this release (2.3.4) have been ported to 2.2.11, 1.14.4.4, and 1.9.4.4, as appropriate.
 
-With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento | APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
+With this quarterly release, we’ve changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin. Please see [Security updates available for Magento APSB20-02](https://helpx.adobe.com/security/products/magento/apsb20-02.html).
 
 #### Security enhancements and fixes to core code
 
 Additional security enhancements include:
 
-*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**. The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that contains the layout updates and select it for use. The name of the file containing an update must follow the conventions described [here](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html).  <!--- MC-16129-->
+*  **Removal of custom layout updates and the deprecation of layout updates to remove the opportunity for Remote Code Execution (RCE)**. The **Custom Layout Update** field on the CMS Page Edit, Category Edit, and Product Edit pages has now been converted to a selector. You can no longer specify an entity-specific layout update with text but instead must create a physical file that contains the layout updates and select it for use. The name of the file containing an update must follow the conventions described [here](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/layout-extend.html).  <!--- MC-16129-->
 
 *  **Redesigned  content template features so that only whitelisted variables can be added to templates**. This avoids the situation where administrator-defined templates such as email, newsletters, and CMS content can include variables and directives that can directly call PHP functions on objects. See [Migrating custom email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email-migration.html) and [Email templates](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-email.html).
 
-{:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Platform upgrades
@@ -72,7 +79,7 @@ This release contains 250 enhancements to core quality, which improve the qualit
 
 ### Merchant tool enhancements
 
-*  **Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
+**Integration with Adobe Stock image galleries**. The new bundled Adobe stock integration extension enables merchants to add high quality media assets to their website content without leaving the Magento Admin. Merchants can use the searchable interface in the Magento Media Gallery to explore, preview, license, and deploy stock images in website content. See [Adobe Stock Integration](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock.html) and [Using Adobe Stock Images](https://docs.magento.com/m2/ee/user_guide/cms/adobe-stock-manage.html).
 
 ### Page Builder
 
@@ -102,7 +109,7 @@ This release includes improved GraphQL coverage for search, layered navigation, 
 
 *  **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.
 
-*  **A customer can start an order on one device and complete it on another.** Use the [`customerCart]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
+*  **A customer can start an order on one device and complete it on another.** Use the [`customerCart`]({{page.baseurl}}/graphql/queries/customer-cart.html) query to obtain the cart ID for a logged-in customer.
 
 *  **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
 
@@ -142,17 +149,13 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 *  Merchants can now sync additional campaigns from Engagement Cloud to Magento.
 
-### Google Shopping ads Channel
-
-[Google Shopping ads Channel Release Notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)  describes all changes to this feature for Magento 2.3.x.
-
 ### B2B
 
 New B2B features and improvements include the following:
 
 *  **Ability to export Requisition Lists into CSV format**. B2B buyers can export the contents of Requisition Lists for local editing. These exported lists can then be uploaded into B2B Quick Order for creation of new orders, quotes, or lists. See [Managing Requisition Lists](https://docs.magento.com/m2/b2b/user_guide/customers/account-dashboard-requisition-lists-manage.html).<!--- MC-17417-->
 
-*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin, controlling which employees can work with B2B items and settings. See [Role Resources](https://docs.magento.com/m2/b2b/user_guide/system/permissions-role-resources.html. <!--- MC-19649-->
+*  **Granular ACLs for B2B modules**. Merchants can now restrict access to B2B features from the Admin, controlling which employees can work with B2B items and settings. <!--- MC-19649-->
 
 ### Vendor-developed extension enhancements
 
@@ -476,7 +479,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-6072-->
 
-*  The storefront and Admin shopping cart summary fields are now displayed consistently  and follow setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
+*  The storefront and Admin shopping cart summary fields are now displayed consistently  and reflect setting preferences. *Fix submitted by Eden Duong in pull request [25037](https://github.com/magento/magento2/pull/25037)*. [GitHub-25036](https://github.com/magento/magento2/issues/25036)
 
 <!--- ENGCOM-6151-->
 
@@ -586,7 +589,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- MC-19737-->
 
-*  The Date field customizable option for products now saves accurate values for stores in different time zones.
+*  The **Date** field customizable option for products now saves accurate values for stores in different time zones.
 
 <!--- MC-19031-->
 
@@ -624,7 +627,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5632-->
 
-*  An incorrect XML namespace url was removed from the generated sitemaps displayed at **Marketing** > **SEO & Search** > **Sitemap**. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
+*  An incorrect XML namespace URL was removed from the generated sitemaps displayed at **Marketing** > **SEO & Search** > **Sitemap**. Previously, Magento returned a 404 error when you clicked on the sitemap link. *Fix submitted by Sunil in pull request [23716](https://github.com/magento/magento2/pull/23716)*. [GitHub-23706](https://github.com/magento/magento2/issues/23706)
 
 <!--- ENGCOM-5684-->
 
@@ -960,7 +963,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5572-->
 
-*  Magento now correctly redirects you to the customer account page when you click the Back button on the Manage Addresses page. *Fix submitted by Eden Duong in pull request [24079](https://github.com/magento/magento2/pull/24079)*. [GitHub-24058](https://github.com/magento/magento2/issues/24058)
+*  Magento now correctly redirects you to the customer account page when you click the **Back** button on the Manage Addresses page. *Fix submitted by Eden Duong in pull request [24079](https://github.com/magento/magento2/pull/24079)*. [GitHub-24058](https://github.com/magento/magento2/issues/24058)
 
 <!--- ENGCOM-5762-->
 
@@ -1044,7 +1047,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5863-->
 
-*  You can now successfully select an image from the image gallery when you configure a theme ( **Admin** > **Content** > **Configuration**). *Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
+*  You can now successfully select an image from the image gallery when you configure a theme (**Admin** > **Content** > **Configuration**). *Fix submitted by Rani Priya in pull request [24431](https://github.com/magento/magento2/pull/24431)*. [GitHub-24430](https://github.com/magento/magento2/issues/24430)
 
 <!--- ENGCOM-6229-->
 
@@ -1418,7 +1421,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5925-->
 
-*  Removed the redundant XML code in the`<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
+*  Removed the redundant XML code in the `<payflow_advanced>` node of the PayPal `config.xml` configuration file. Previously, this redundancy caused errors. *Fix submitted by yupik in pull request [24694](https://github.com/magento/magento2/pull/24694)*. [GitHub-23880](https://github.com/magento/magento2/issues/23880)
 
 <!--- MC-15140-->
 
@@ -1684,7 +1687,7 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 <!--- ENGCOM-5993-->
 
-*  The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the Back button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
+*  The Back button on the Check Out with Multiple Addresses page now returns you to the correct page. Previously, clicking the **Back** button from this page returned a 404 error. *Fix submitted by Max Souza in pull request [24827](https://github.com/magento/magento2/pull/24827)*. [GitHub-24701](https://github.com/magento/magento2/issues/24701)
 
 <!--- MC-22114-->
 
@@ -2160,9 +2163,11 @@ We have fixed hundreds of issues in the Magento 2.3.4 core code.
 
 *  The WYSIWYG editor now saves quotation marks correctly. Previously, quotation marks were converted to `&quot;`.
 
-## Known issue
+## Known issues
 
-This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments. You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+*  **Issue**: This release introduces an enhancement to the invalidation logic for customer data sections that is not compatible with pre-2.3.4 deployments. You can no longer invalidate custom customer sections in `etc/frontend/sections.xml` files by declaring an action node without specifying any related sections. See [Magento 2.3 backward incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) for a discussion of this change.
+
+*  **Issue**: Magento throws an error when a customer places an order with PayPal Express Checkout and the order’s shipping address specifies a country region that has been manually entered into the text field rather than selected from the drop-down menu on the Shipping page. **Workaround**: Apply the PayPal Express Checkout issue with region patch for Magento 2.3.4  (Git-based or Composer-based). A fix for this issue will be included in Magento 2.3.5, which is scheduled for release in April 2020.
 
 ## Community contributions
 

@@ -2,10 +2,8 @@ This section discusses the minimum settings you must choose to test Elasticsearc
 For additional details about configuring Elasticsearch, see the [{{site.data.var.ee}} User Guide](http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html).
 
 {:.bs-callout-warning}
-Magento 2.3.1 adds support for Elasticsearch 6.x, and it is enabled by default.
-Magento still provides modules for Elasticsearch 2.x and 5.x, but these must be enabled in order to use these versions.
-Elasticsearch 2.x is still available but strongly discouraged. Versions 2.x and 5.x are [End of Life](https://www.elastic.co/support/eol).
-If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must downgrade the Elasticsearch client to an older version.
+Magento 2.3.5 adds support for Elasticsearch 7.x.x and 6.8.x.
+Versions 2.x and 5.x are [End of Life](https://www.elastic.co/support/eol) and are not supported.
 Follow the instructions in [Change the Elasticsearch Client]({{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html).
 
 ## Configure Elasticsearch within Magento
@@ -14,10 +12,7 @@ To configure Magento to use Elasticsearch:
 
 1. Log in to the Magento Admin as an administrator.
 1. Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-1. From the **Search Engine** list, select the correct Elasticsearch version as the following figure shows.
-   (The **Elasticsearch 5.0+/6.0+** options are not available for Magento 2.1.)
-
-![]({{ site.baseurl }}/common/images/elastic_choose-in-admin-es6.png){:width="650px"}
+1. From the **Search Engine** list, select your Elasticsearch version.
 
 The following table lists the required configuration options to configure and test the connection with Magento.
 Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.
@@ -80,7 +75,7 @@ To clean the cache using the command line, use the [`magento cache:clean`]({{ pa
 
 To reindex using the command line:
 
-1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 1. Enter any of the following commands:
 
 Enter the following command to reindex the catalog search index only:

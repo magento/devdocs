@@ -29,7 +29,7 @@ mutation myCreateCustomer{
 
 In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) The `CustomerOutput` object defines which fields to return.
 
-Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
+Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `email`.
 
 ```text
 mutation myCreateCustomerNoVariables{
@@ -43,20 +43,20 @@ mutation myCreateCustomerNoVariables{
     )
     {
         customer {
-            id
+            email
         }
     }
 }
 ```
 
-The mutation returns the customer ID:
+The mutation returns the customer email:
 
 ```json
 {
   "data": {
       "createCustomer": {
           "customer": {
-              "id": 2
+              "email" : "mshaw@example.com"
             }
         }
     }
@@ -96,7 +96,7 @@ mutation myCreateCustomerWithVariables($CustomerInput: CustomerInput!){
     )
     {
         customer {
-            id
+            email
         }
     }
 }
@@ -127,7 +127,6 @@ mutation myUpdateCustomer($email: String!, $password: String!){
     )
     {
         customer {
-            id
             email
         }
     }

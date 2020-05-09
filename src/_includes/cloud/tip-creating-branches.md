@@ -1,0 +1,2 @@
+{:.bs-callout-tip}
+We highly recommend that you have your Magento application fully deployed to an Integration or Staging environment before attempting to add a module. Always work in a development branch when adding a module to your implementation. If you do not have a branch, see [Get started creating branches]({{ site.baseurl }}/cloud/env/environments-start.html#getstarted).

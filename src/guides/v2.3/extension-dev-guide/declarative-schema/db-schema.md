@@ -124,7 +124,7 @@ A column can have the following attributes:
 </tr>
 <tr>
 <td><code>length</code></td>
-<td>In text and binary types (including varchar and varbinary), specifies the length of a column.</td>
+<td>Specifies the length of a column. Can be used for `char`, `varchar`, and `varbinary` types.</td>
 </tr>
 <tr>
 <td><code>nullable</code></td>
@@ -353,7 +353,7 @@ The following example changes the `type` of the `title` column from `varchar` to
         <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
         <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
 -       <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
-+       <column xsi:type="text" name="title" nullable="false" length="255" comment="Title"/>
++       <column xsi:type="text" name="title" nullable="false" comment="Title"/>
         <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
@@ -415,6 +415,9 @@ In the following example, the selected `constraint` node defines the characteris
     </table>
 </schema>
 ```
+
+{:.bs-callout-info}
+Foreign keys can only be added to tables when both tables were created using a declarative schema (`db_schema.xml`).
 
 ### Drop a foreign key
 

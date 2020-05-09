@@ -229,12 +229,12 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 **Example:** Add a new class to the `body` tag.
 
 ```xml
-<page>
     <body>
         <attribute name="class" value="my-new-body-class"/>
     </body>
-</page>
 ```
+
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
 
 **Example:** Add a custom attribute to the `body` tag.
 
@@ -303,7 +303,7 @@ A CMS block is injected into the layout by using the [Magento/Cms/Block/Block] c
 <referenceContainer name="content.bottom">
     <block class="Magento\Cms\Block\Block" name="block_identifier">
         <arguments>
-            <!- Here is the CMS Block id -->
+            <!-- Here is the CMS Block id -->
             <argument name="block_id" xsi:type="string">my_cms_block_identifier</argument>
         </arguments>
     </block>
@@ -323,6 +323,16 @@ Any block can be configured to show or not based on a [Magento/Config/Model/Conf
     ...
 </block>
 ```
+
+The visibility can also be adjusted using the [ACL Resource]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html). Although it is used mostly in the admin area, the same approach works for the storefront as well.
+
+```xml
+<block class="Namespace\Module\Block\Type" name="block.example" aclResource="Vendor_ModuleName::acl_name">
+    <!-- ... -->
+</block>
+```
+
+In the admin area, this is implemented for [global search]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Backend/view/adminhtml/layout/default.xml) and for [admin notification list]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AdminNotification/view/adminhtml/layout/default.xml).
 
 ## Set the template used by a block {#set_template}
 
@@ -383,7 +393,7 @@ Extending layout:
   <arguments>
     <!-- Modified block argument -->
     <argument name="label" xsi:type="string">New Block Label</argument>
-    <!- Newly added block argument -->
+    <!-- Newly added block argument -->
     <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
   </arguments>
 </referenceBlock>
@@ -480,12 +490,29 @@ namespace Vendor\CustomModule\ViewModel;
 
 class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
+
+    public function canShowAdditionalData()
+    {
+        return true;
+    }
 }
 ```
+
+Then, in the `cart/item/default.phtml` file, use the viewModel:
+
+```php
+/** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
+$viewModel = $block->getData('viewModel');
+
+$viewModel->canShowAdditionalData();
+```
+
+{:.bs-callout-info}
+The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
@@ -659,9 +686,9 @@ For CMS Pages:
 
 where:
 
--  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_"
--  _Layout Update Name_ is what is shown as the option for __Custom layout update__ field of __Design__
-  section on _CMS Page Edit_ page
+-  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_".
+-  _Layout Update Name_ is what is shown as the option for the  __Custom layout update__ field of the __Design__
+  section on the _CMS Page Edit_ page. For example, a layout update for an "About Us" page will be "cms_page_view_selectable_about-us_AboutUs.xml".
 
 These files must be placed in the appropriate folders for layout XML files. They will be available as __Custom Layout Update__ options for Merchants after flushing the cache.
 

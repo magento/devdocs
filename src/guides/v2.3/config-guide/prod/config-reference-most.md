@@ -174,7 +174,6 @@ Product Listing Sort by | `catalog/frontend/default_sort_by` | <!-- ![Not EE-onl
 Allow All Products per Page | `catalog/frontend/list_allow_all` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Use Flat Catalog Category | `catalog/frontend/flat_catalog_category` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Use Flat Catalog Product | `catalog/frontend/flat_catalog_product` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Allow Dynamic Media URLs in Products and Categories | `catalog/frontend/parse_url_directives` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Swatches per Product | `catalog/frontend/swatches_per_product` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow Guests to Write Reviews | `catalog/review/allow_guest` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow Alert When Product Price Changes | `catalog/productalert/allow_price` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
@@ -266,6 +265,7 @@ Set Items' Status to be In Stock When Order is Cancelled | `cataloginventory/opt
 Display Out of Stock Products | `cataloginventory/options/show_out_of_stock` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Only X left Threshold | `cataloginventory/options/stock_threshold_qty` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Display Products Availability in Stock on Storefront | `cataloginventory/options/display_product_stock_status` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Synchronize with Catalog | `cataloginventory/options/synchronize_with_catalog` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Manage Stock | `cataloginventory/item_options/manage_stock` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Backorders | `cataloginventory/item_options/backorders` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Use deferred Stock update | `cataloginventory/item_options/use_deferred_stock_update` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |

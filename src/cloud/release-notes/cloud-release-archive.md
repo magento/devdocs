@@ -139,7 +139,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
    -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
-   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{ site.baseurl }}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
+   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{ site.baseurl }}/cloud/docker/docker-config.html#set-the-launch-mode). Developer mode supports active development with full, writable filesystem permissions.
 
    -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
@@ -198,7 +198,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
 
    -  <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
-   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-config.html#sendmail-service).
+   -  <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).
 
    -  <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{ site.baseurl }}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
@@ -538,11 +538,11 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
       tail -f var/log/install_upgrade.log
       ```
 
--  <!-- MAGECLOUD-1367 -->**New cron command**—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the [`cron:unlock`]({{ site.baseurl }}/cloud/trouble/reset-cron-jobs.html) command. Not available in 2.1.
+-  <!-- MAGECLOUD-1367 -->**New cron command**—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the [`cron:unlock`](https://support.magento.com/hc/en-us/articles/360033099451) command. Not available in 2.1.
 
 -  <!-- MAGECLOUD-1369 -->**Unified configuration file**—You can now configure build and deploy stages using a [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html) file.
 
--  <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command]({{ site.baseurl }}/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
+-  <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command](https://support.magento.com/hc/en-us/articles/360033182871) to restore these configuration files from a backup.
 
 -  <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
@@ -630,7 +630,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
 
 **Resolved issues:**
 
--  <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.
+-  <!-- MAGECLOUD-1355 -->You can now [manually reset stuck Magento cron jobs](https://support.magento.com/hc/en-us/articles/360033099451) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs.
 
 ## v2002.0.3
 

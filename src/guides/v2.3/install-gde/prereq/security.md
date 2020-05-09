@@ -37,6 +37,10 @@ chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/media
 chcon -R --type httpd_sys_rw_content_t <magento_root>/pub/static
 ```
 
+```bash
+chcon -R --type httpd_sys_rw_content_t <magento_root>/generated
+```
+
 The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we do not guarantee these commands work in all situations. For more information, see:
 
 *  [man page](http://linux.die.net/man/8/httpd_selinux)
@@ -50,9 +54,9 @@ To enable Apache to initiate a connection to another host with SELinux enabled:
 
 1. To determine if SELinux is enabled, use the following command:
 
-    ```bash
-    getenforce
-    ```
+   ```bash
+   getenforce
+   ```
 
   `Enforcing` displays to confirm that SELinux is running.
 

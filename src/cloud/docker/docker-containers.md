@@ -39,7 +39,7 @@ See [Docker CLI containers] for details.
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
 | [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
-| [web][web-container] | NGNIX | `--nginx` | 1.9, latest |
+| [web][web-container] | NGINX | `--nginx` | 1.9, latest |
 
 The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
 
@@ -49,7 +49,7 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
-See [See Docker services containters] for details.
+See [Docker service containers][] for details.
 
 ## Request Flow
 
@@ -126,7 +126,7 @@ ERROR: Volume magento-sync declared as external, but could not be found. Please 
 All containers use the Docker logging method. You can view the logs using the `docker-compose` command. The following example uses the `-f` option to _follow_ the log output of the TLS container:
 
 ```bash
-docker-composer logs -f tls
+docker-compose logs -f tls
 ```
 
 Now you can see all requests that are passing through the TLS container and check for errors.
@@ -137,7 +137,7 @@ Now you can see all requests that are passing through the TLS container and chec
 [db]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [elasticsearch]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container
 [Docker CLI containers]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html
-[Docker service containers]: {{site.baseurl}}/cloud/docker-containers-service.html
+[Docker service containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
 [Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [Developer Mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html

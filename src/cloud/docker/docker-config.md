@@ -51,14 +51,12 @@ The `ece-docker build:compose` command overwrites the existing `docker-compose.y
 
 1. Optionally, [enable Xdebug].
 
-## Launch modes
+## Set the launch mode
 
-_Mode_ is an additional configuration option for the Docker configuration generator (the `ece-docker build:compose` command). This mode option does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
+You can launch a Docker environment in production or developer mode by setting the `mode` option on the `ece-docker build:compose` command:
 
-You can launch your Docker environment in one of the following modes:
-
--  [**production**][prod-mode]—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
--  [**developer**][dev-mode]—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
+-  **Production mode**—The `--mode="production"` setting supports an active production environment with read-only filesystem permissions. This is the default configuration setting for launching a Docker environment. Selecting this option builds the Docker environment in production mode and verifies configured service versions. See [Production mode launch instructions][prod-mode].
+-  **Developer mode**—The `--mode="developer"` setting supports an active development environment with full, writable filesystem permissions. Selecting this option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations. See [Developer mode launch instructions][dev-mode].
 
 For example, the following command starts the Docker configuration generator for the developer mode:
 
@@ -67,6 +65,9 @@ For example, the following command starts the Docker configuration generator for
 ```
 
 To skip the interactive mode, use the `-n, --no-interaction` option.
+
+{:.bs-callout-info}
+The mode option for the `ece-docker build:compose` command does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 ## Stop and start containers
 
@@ -89,14 +90,14 @@ Use the following command to stop and remove the Docker configuration:
 {: .bs-callout-warning}
 This command removes all components of your local Docker instance including containers, networks, volumes, and images except for the persistent database and the `magento-sync` volume. See [Rebuild a clean environment][refresh].
 
-## Running Composer with Docker
+## Run Composer with Docker
 
 You can run composer using the `docker` command before you create the container instance. This technique is useful to create an application instance during the CI/CD build process, or even during first time Magento set up.
 
 When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the Magento application version. The following example uses PHP 7.3. You run this command from the project root directory.
 
 ```bash
-docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
+docker run -it  -v $(pwd):/app/:delegated -v ~/.composer/:/root/.composer/:delegated magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
 ```
 
 This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
@@ -113,7 +114,7 @@ To configure the custom host and port, add the `host` and `port` options to the 
 
 You must also add the custom hostname to your `/etc/hosts` file.
 
-## Sendmail service
+## Set up email
 
 Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
 

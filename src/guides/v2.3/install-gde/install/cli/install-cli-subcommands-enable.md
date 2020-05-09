@@ -15,16 +15,30 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 This command has no prerequisites.
 
+## Module status {#instgde-cli-subcommands-status}
+
+Use the following command to list enabled and disabled modules:
+
+```bash
+bin/magento module:status [--enabled] [--disabled] [<module-name>]
+```
+
+where
+
+*  `--enabled` lists all enabled modules.
+*  `--disabled` lists all disabled modules.
+*  `<module-name>` specifies which module to return the status of. You cannot specify multiple module names.
+
 ## Module enable, disable {#instgde-cli-subcommands-enable-disable}
 
 To enable or disable available modules, use the following command:
 
 ```bash
-magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+bin/magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
 ```
 
 ```bash
-magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
+bin/magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
 ```
 
 where
@@ -34,20 +48,14 @@ where
 *  `-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see [About enabling and disabling modules](#instgde-cli-subcommands-enable-modules).
 *  `-c` or `--clear-static-content` cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
 
-   Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them.
+   Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them.
 
-   In other words, because of [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
-
-Use the following command to list enabled and disabled modules:
-
-```bash
-magento module:status
-```
+   In other words, because of the [static file fallback]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html) rules, if you do not clear static files and there is more than one file named `logo.svg` that are different, fallback might cause the wrong file to display.
 
 For example, to disable the Weee module, enter:
 
 ```bash
-magento module:disable Magento_Weee
+bin/magento module:disable Magento_Weee
 ```
 
 For important information about enabling and disabling modules, see [About enabling and disabling modules](#instgde-cli-subcommands-enable-modules).

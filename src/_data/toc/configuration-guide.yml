@@ -41,7 +41,6 @@ pages:
           url: /config-guide/bootstrap/magento-how-to-set.html
 
     - label: Pipeline Deployment
-      include_versions: ["2.2", "2.3"]
       url: /config-guide/deployment/
       children:
 
@@ -76,7 +75,6 @@ pages:
               url: /config-guide/deployment/pipeline/example/environment-variables.html
 
     - label: Single machine deployment
-      include_versions: ["2.2", "2.3"]
       url: /config-guide/deployment/single-machine.html
 
     - label: Command line configuration
@@ -87,7 +85,6 @@ pages:
           url: /config-guide/cli/config-cli-subcommands.html
 
         - label: Logging
-          include_versions: ["2.2", "2.3"]
           url: /config-guide/cli/logging.html
 
         - label: Manage the cache
@@ -106,7 +103,6 @@ pages:
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
         - label: Start message queue consumers
-          include_versions: ["2.3"]
           url: /config-guide/cli/config-cli-subcommands-queue.html
 
         - label: URN highlighter
@@ -116,7 +112,6 @@ pages:
           url: /config-guide/cli/config-cli-subcommands-depen.html
 
         - label: Configuration management
-          include_versions: ["2.2", "2.3"]
           children:
 
             - label: Export the configuration
@@ -135,7 +130,6 @@ pages:
           children:
 
             - label: Static files deployment strategies
-              include_versions: ["2.2", "2.3"]
               url: /config-guide/cli/config-cli-subcommands-static-deploy-strategies.html
 
             - label: Deploy static view files
@@ -170,11 +164,9 @@ pages:
           url: /config-guide/config/config-create.html
 
         - label: Disable module output
-          include_versions: ["2.2", "2.3"]
           url: /config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          exclude_versions: ["2.0"]
           children:
 
             - label: Sensitive and system-specific
@@ -188,22 +180,21 @@ pages:
 
             - label: Magento Commerce for B2B Extension configuration paths reference
               url: /config-guide/prod/config-reference-b2b.html
-              include_versions: ["2.2", "2.3"]
 
             - label: .gitignore reference
               url: /config-guide/prod/config-reference-gitignore.html
-              include_versions: ["2.2", "2.3"]
 
             - label: Use environment variables to override configuration settings
               url: /config-guide/prod/config-reference-var-name.html
 
             - label: config.php reference
               url: /config-guide/prod/config-reference-configphp.html
-              include_versions: ["2.2", "2.3"]
 
             - label: env.php reference
               url: /config-guide/prod/config-reference-envphp.html
-              include_versions: ["2.2", "2.3"]
+
+            - label: system.xml reference
+              url: /config-guide/prod/config-reference-systemxml.html
 
     - label: Configure caching
       url: /config-guide/cache.html
@@ -216,8 +207,10 @@ pages:
           url: /config-guide/cache/cache-options.html
 
         - label: Static content signing
-          include_versions: ["2.2", "2.3"]
           url: /config-guide/cache/static-content-signing.html
+
+        - label: L2 cache
+          url: /config-guide/cache/two-level-cache.html
 
     - label: Configure Redis
       url: /config-guide/redis/config-redis.html
@@ -243,11 +236,9 @@ pages:
           url: /config-guide/varnish/config-varnish-magento.html
 
         - label: Advanced Varnish configuration
-          include_versions: ["2.2", "2.3"]
           url: /config-guide/varnish/config-varnish-advanced.html
 
         - label: How Magento cache clearing works with multiple Varnish instances
-          include_versions: ["2.2", "2.3"]
           url: /config-guide/varnish/use-multiple-varnish-cache.html
 
         - label: Final verification
@@ -258,9 +249,6 @@ pages:
 
         - label: How Varnish caching works
           url: /config-guide/varnish/use-varnish-cache-how.html
-
-        - label: Troubleshooting 503 errors
-          url: /config-guide/varnish/tshoot-varnish-503.html
 
     - label: Use memcached for session storage
       url: /config-guide/memcache/memcache.html
@@ -304,28 +292,7 @@ pages:
     - label: Configure the database profiler
       url: /config-guide/db-profiler/db-profiler.html
 
-    - label: Install and configure Elasticsearch (Magento Commerce only)
-      include_versions: ["2.1","2.2"]
-      url: /config-guide/elasticsearch/es-overview.html
-      children:
-
-        - label: Configure nginx and Elasticsearch
-          url: /config-guide/elasticsearch/es-config-nginx.html
-
-        - label: Configure Apache and Elasticsearch
-          url: /config-guide/elasticsearch/es-config-apache.html
-
-        - label: Configure Elasticsearch stopwords
-          url: /config-guide/elasticsearch/es-config-stopwords.html
-
-        - label: Configure Magento to use Elasticsearch
-          url: /config-guide/elasticsearch/configure-magento.html
-
-        - label: Change the Elasticsearch client
-          url: /config-guide/elasticsearch/es-downgrade.html
-
     - label: Install and configure Elasticsearch
-      include_versions: ["2.3"]
       url: /config-guide/elasticsearch/es-overview.html
       children:
 
@@ -343,33 +310,13 @@ pages:
 
         - label: Change the Elasticsearch client
           url: /config-guide/elasticsearch/es-downgrade.html
-
-    - label: Message Queues (Magento Commerce only)
-      include_versions: ["2.0","2.1", "2.2"]
-      url: /config-guide/mq/rabbitmq-overview.html
-      children:
-
-        - label: Manage message queues
-          url: /config-guide/mq/manage-mysql.html
 
     - label: Message Queues
-      include_versions: ["2.3"]
       url: /config-guide/mq/rabbitmq-overview.html
       children:
 
         - label: Manage message queues
-          url: /config-guide/mq/manage-mysql.html
-
-    - label: Install and configure Solr (Magento Commerce only)
-      include_versions: ["2.0","2.1"]
-      url: /config-guide/solr/solr-overview.html
-      children:
-
-        - label: Configure Solr and Magento
-          url: /config-guide/solr/solr-magento.html
-
-        - label: Prepare Solr for production
-          url: /config-guide/solr/solr-script.html
+          url: /config-guide/mq/manage-message-queues.html
 
     - label: Split database performance solution (Magento Commerce only)
       url: /config-guide/multi-master/multi-master.html
@@ -403,31 +350,7 @@ pages:
     - label: How to locate your session files
       url: /config-guide/sessions.html
 
-    - label: Deploy Magento to production
-      url: /config-guide/prod/prod.html
-      include_versions: ["2.0","2.1"]
-      children:
-
-        - label: Magento ownership and permissions in development and production
-          url: /config-guide/prod/prod_file-sys-perms.html
-
-        - label: Deploy to production
-          url: /config-guide/prod/prod_deploy.html
-
-        - label: Single machine deployment
-          url: /config-guide/prod/single-machine-deployment.html
-
-    - label: Optimization
-      include_versions: ["2.0", "2.1"]
-      children:
-        - label: Magento Optimization Guide
-          url: /config-guide/prod/prod_perf-optimize.html
-        - label: Development environment recommendations
-          include_versions: ["2.1"]
-          url: /config-guide/prod/development-environment.html
-          
     - label: GDPR compliance
-      include_versions: ["2.1", "2.2", "2.3"]
       children:
         - label: Magento 2.x
           url:  /architecture/gdpr/magento-2x.html

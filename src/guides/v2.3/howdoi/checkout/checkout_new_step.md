@@ -201,46 +201,46 @@ Create a mixin as follows:
 
 1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
 
-    ```js
-    var config = {
-        'config': {
-            'mixins': {
-               'Magento_Checkout/js/view/shipping': {
-                   'Vendor_Module/js/view/shipping-payment-mixin': true
-               },
-               'Magento_Checkout/js/view/payment': {
-                   'Vendor_Module/js/view/shipping-payment-mixin': true
-               }
-           }
-        }
-    }
-    ```
+   ```js
+   var config = {
+       'config': {
+           'mixins': {
+              'Magento_Checkout/js/view/shipping': {
+                  'Vendor_Module/js/view/shipping-payment-mixin': true
+              },
+              'Magento_Checkout/js/view/payment': {
+                  'Vendor_Module/js/view/shipping-payment-mixin': true
+              }
+          }
+       }
+   }
+   ```
 
 1. Create the mixin. We'll use the same mixin for both payment and shipping:
 
-    ```js
-    define(
-        [
-            'ko'
-        ], function (ko) {
-            'use strict';
+   ```js
+   define(
+       [
+           'ko'
+       ], function (ko) {
+           'use strict';
 
-            var mixin = {
+           var mixin = {
 
-                initialize: function () {
-                    this.isVisible = ko.observable(false); // set visible to be initially false to have your step show first
-                    this._super();
+               initialize: function () {
+                   this.isVisible = ko.observable(false); // set visible to be initially false to have your step show first
+                   this._super();
 
-                    return this;
-                }
-            };
+                   return this;
+               }
+           };
 
-            return function (target) {
-                return target.extend(mixin);
-            };
-        }
-    );
-    ```
+           return function (target) {
+               return target.extend(mixin);
+           };
+       }
+   );
+   ```
 
  {:.bs-callout-info}
 For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins, see [JS Mixins]({{ page.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).

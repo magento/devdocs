@@ -7,6 +7,7 @@ menu_node:
 menu_order: 7
 functional_areas:
   - Upgrade
+redirect_to: https://support.magento.com/hc/en-us/articles/360032952852
 ---
 
 Following are symptoms of cron issues:

@@ -34,7 +34,6 @@ mutation {
     }
   ) {
     customer {
-      id
       firstname
       lastname
       email
@@ -51,7 +50,6 @@ mutation {
   "data": {
     "createCustomer": {
       "customer": {
-        "id": 6,
         "firstname": "John",
         "lastname": "Doe",
         "email": "john.doe@example.com",
@@ -90,7 +88,7 @@ mutation {
 }
 ```
 
-["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes the mutation further.
+[Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes the mutation further.
 
 ## Verify this step {#verify-step}
 

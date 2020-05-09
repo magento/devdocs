@@ -9,8 +9,10 @@ functional_areas:
 
 Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
 
+{%include cloud/note-docker-config-reference-link.md%}
+
 {:.procedure}
-To launch the Docker environment in developer mode:
+To launch the Docker environment in production mode:
 
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
 

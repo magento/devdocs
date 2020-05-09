@@ -29,7 +29,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 Command usage:
 
 ```bash
-magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
+bin/magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
   {ModuleName} ... {ModuleName}
 ```
 
@@ -82,7 +82,7 @@ magento module:uninstall Magento_SampleMinimal
 One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's [database schema](https://glossary.magento.com/database-schema) or data:
 
 ```bash
-magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
+bin/magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 ```
 
 Messages similar to the following display:
@@ -128,7 +128,7 @@ Errors display if you attempt to uninstall a module with a dependency on another
 To restore the Magento codebase to the state at which you backed it up, use the following command:
 
 ```bash
-magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
+bin/magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 ```
 
 where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
@@ -171,26 +171,26 @@ For example, to restore a code (that is, file system) backup, enter the followin
 
 *  Display a list of backups:
 
-    ```bash
-    magento info:backups:list
-    ```
+   ```bash
+   magento info:backups:list
+   ```
 
 *  Restore a file backup named `1433876616_filesystem.tgz`:
 
-    ```bash
-    magento setup:rollback --code-file="1433876616_filesystem.tgz"
-    ```
+   ```bash
+   magento setup:rollback --code-file="1433876616_filesystem.tgz"
+   ```
 
-    Messages similar to the following display:
+   Messages similar to the following display:
 
-    ```terminal
-    Enabling maintenance mode
-    Code rollback is starting ...
-    Code rollback filename: 1433876616_filesystem.tgz
-    Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
-    [SUCCESS]: Code rollback has completed successfully.
-    Disabling maintenance mode
-    ```
+   ```terminal
+   Enabling maintenance mode
+   Code rollback is starting ...
+   Code rollback filename: 1433876616_filesystem.tgz
+   Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
+   [SUCCESS]: Code rollback has completed successfully.
+   Disabling maintenance mode
+   ```
 
  {:.bs-callout-info}
 To run the `magento` command again without changing directories, you might need to enter `cd pwd`.

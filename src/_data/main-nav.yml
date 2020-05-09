@@ -29,7 +29,7 @@
           url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Launch Docker
+        - label: Configure and launch Docker
           url: /cloud/docker/docker-config.html
           versionless: true
 
@@ -67,18 +67,12 @@
 
     - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
-      exclude_versions: ['2.0', '2.1']
-
-    - label: Component Manager and System Upgrade Guide
-      url: /comp-mgr/bk-compman-upgrade-guide.html
-      include_versions: ['2.0', '2.1']
 
     - label: Configuration Guide
       url: /config-guide/bk-config-guide.html
 
     - label: Performance Best Practices
       url: /performance-best-practices/introduction.html
-      exclude_versions: ['2.0','2.1']
 
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
@@ -119,13 +113,8 @@
         - label: Frontend Developer Guide
           url: /frontend-dev-guide/bk-frontend-dev-guide.html
 
-        - label: UI Components
-          url: /ui-components/ui-component.html
-          include_versions: ['2.0']
-
         - label: UI Components Guide
           url: /ui_comp_guide/bk-ui_comps.html
-          exclude_versions: ['2.0']
 
         - label: JavaScript Developer Guide
           url: /javascript-dev-guide/bk-javascript-dev-guide.html
@@ -138,11 +127,9 @@
 
         - label: PWA Documentation Site
           url: https://magento.github.io/pwa-studio/
-          include_versions: ['2.3']
 
         - label: Page Builder Developer Guide
           url: /page-builder/docs/index.html
-          exclude_versions: ['2.0', '2.1', '2.2']
           versionless: true
 
     - label: API
@@ -159,16 +146,13 @@
 
         - label: GraphQL Developer Guide
           url: /graphql/
-          include_versions: ['2.3']
 
         - label: Marketplace EQP API Reference
           url: /marketplace/eqp/v1/api.html
           versionless: true
-          exclude_versions: ['2.0']
 
         - label: Business Intelligence API
           url: /mbi/docs/getting-started.html
-          exclude_versions: ['2.0']
           versionless: true
 
 
@@ -180,11 +164,7 @@
 
     - label: Functional Acceptance Testing (MFTF)
       url: /mftf/docs/introduction.html
-      exclude_versions: ['2.0', '2.1']
       versionless: true
-
-    - label: Functional Testing
-      url: /mtf/mtf_introduction.html
 
     - label: Integration Testing
       url: /test/integration/integration_test_execution.html
@@ -205,52 +185,49 @@
 
     - label: Advanced Reporting
       url: /advanced-reporting/overview.html
-      exclude_versions: ['2.0','2.1']
 
     - label: B2B
       url: /b2b/bk-b2b.html
-      exclude_versions: ['2.0','2.1']
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Compliance
-      url: /compliance/industry-compliance.html
+    - label: Extensions Marketplace
+      url: /marketplace/sellers/getting-started.html
       versionless: true
 
     - label: Inventory Management
       url: /inventory/index.html
-      exclude_versions: ['2.0', '2.1', '2.2']
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
 
     - label: Page Builder
       url: /page-builder/docs/index.html
-      exclude_versions: ['2.0', '2.1', '2.2']
       versionless: true
 
     - label: Payment Integrations
       url: /payments-integrations/bk-payments-integrations.html
 
     - label: Product Recommendations
-      url: /recommendations/install.html
+      url: /recommendations/product-recs.html
+      versionless: true
+
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
       versionless: true
 
     - label: Staging
       url: /extension-dev-guide/staging.html
-      exclude_versions: ['2.0']
 
 - label: Tutorials
   children:
 
     - label: Rest Tutorials
       url: /rest/tutorials/index.html
-      exclude_versions: ['2.0']
 
     - label: Customize Product Creation Form
       url: /howdoi/customize_product.html
-      exclude_versions: ['2.0']
 
     - label: Customize Checkout
       url: /howdoi/checkout/checkout_overview.html

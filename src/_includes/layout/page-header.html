@@ -1,30 +1,21 @@
 <!-- page-header -->
 <section class="page-intro">
-{% if page.guide_version != nil and page.guide_version != site.version %}
-  <div class="message-banner version-banner">
-    This is archived documentation for Magento v2.2 and is <a href='https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf'>no longer supported</a>. Go to the <a href='https://devdocs.magento.com'>latest documentation</a>.
+
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {% if page.subtitle %}
+  <h2 class="page-subtitle no_toc">{{ page.subtitle }}</h2>
+  {% endif %}
+
+  {% include layout/github-links.html %}
+
+  {% include layout/edition-callout.html %}
+
+  {% if page.title == "How to Add a New Table to a Database" %}
+  <div class="bs-callout-warning">
+    This tutorial applies to Magento 2.2.x only. For Magento 2.3.x, see
+    <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema">Declarative Schema</a>.
   </div>
-{% endif %}
+  {% endif %}
 
-{% if page.ee_only == true %}
-<span class="ee-only">{{site.data.var.ee}} only</span>
-{% endif %}
-
-{% if page.subtitle %}
-<h1 class="page-subtitle">{{ page.subtitle }}</h1>
-{% endif %}
-
-{% if page.title == "How to Add a New Table to a Database" %}
-  <div class="message-banner">
-    This tutorial applies to Magento 2.2.x only. For Magento 2.3.x, see <a href="https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema">Declarative Schema</a>.
-  </div>
-{% endif %}
-
-{% if page.group == "product-recommendations" %}
-  <div class="message-banner">
-    This documentation is for the Product Recommendations Early Access Program. If you would like to participate, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>!
-  </div>
-{% endif %}
-
-<h1 class="page-heading">{{ page.title }}</h1>
 </section>

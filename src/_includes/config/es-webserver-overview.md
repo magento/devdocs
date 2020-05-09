@@ -17,7 +17,8 @@ We recommend the following:
 
 *  Elasticsearch runs on the same host as a web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.
 
-   The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server doesn't have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.
+   The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible. The Elasticsearch web server does not have to be the same as the Magento web server; for example, Magento can run Apache and Elasticsearch can run nginx.
+   If Elasticsearch is exposed to the public web, you should configure authentication. If your Elasticsearch instance is protected within your network, this may not be necessary. Work with your hosting provider to determine which security measures you should implement to protect your instance.
 
 ### More information about TLS
 
@@ -26,7 +27,6 @@ See one of the following resources:
 *  Apache
 
    *  [Apache 2.4 strong encryption how-to](https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html)
-   *  [Apache 2.2 SSL/TLS page](https://httpd.apache.org/docs/2.2/en/ssl/)
    *  [How To Create a SSL Certificate on Apache for Ubuntu 14.04 (Digitalocean tutorial)](https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-apache-for-ubuntu-14-04)
    *  [Setting up an SSL secured Webserver with CentOS (CentOS wiki)](https://wiki.centos.org/HowTos/Https)
 

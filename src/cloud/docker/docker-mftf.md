@@ -33,9 +33,9 @@ To set up and run MFTF tests in a Cloud Docker environment:
 
 1. Generate the `docker-compose.yml` file.
 
-    ```bash
-    ./vendor/bin/ece-docker build:compose --with-selenium
-    ```
+   ```bash
+   ./vendor/bin/ece-docker build:compose --with-selenium
+   ```
 
 1. Start the {{site.data.var.mcd-prod}} environment. Optionally, you can set up {{site.data.var.mcd-prod}} to work in [Developer Mode].
 
@@ -44,8 +44,8 @@ To set up and run MFTF tests in a Cloud Docker environment:
    ```
 
    ```bash
-    ./bin/magento-docker ece-redeploy
-    ```
+   ./bin/magento-docker ece-redeploy
+   ```
 
 1. Prepare the Magento application by adding environment variables that are specific to MFTF.
 
@@ -68,15 +68,15 @@ To set up and run MFTF tests in a Cloud Docker environment:
 1. Disable the Magento settings that conflict with MFTF functionality.
 
    ```bash
-   docker-compose run deploy magento-command config:set admin/ security/admin_account_sharing 1
+   docker-compose run deploy magento-command config:set admin/security/admin_account_sharing 1
    ```
 
    ```bash
-   docker-compose run deploy magento-command config:set admin/ security/use_form_key 0
+   docker-compose run deploy magento-command config:set admin/security/use_form_key 0
    ```
 
    ```bash
-   docker-compose run deploy magento-command config:set web/ secure/use_in_adminhtml 0
+   docker-compose run deploy magento-command config:set web/secure/use_in_adminhtml 0
    ```
 
 1. Enable the Varnish cache for the Magento application.

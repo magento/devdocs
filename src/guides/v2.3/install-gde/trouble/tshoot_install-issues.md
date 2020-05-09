@@ -9,6 +9,7 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360034242212
 ---
 
 If you use the optional [PHP](https://glossary.magento.com/php) [extension](https://glossary.magento.com/extension) `xdebug`, you can encounter exceptions:
@@ -18,7 +19,9 @@ If you use the optional [PHP](https://glossary.magento.com/php) [extension](http
 
 Sample exception:
 
-    Fatal error: Maximum function nesting level of '100' reached, aborting!
+```terminal
+Fatal error: Maximum function nesting level of '100' reached, aborting!
+```
 
 To resolve this issue, you can:
 

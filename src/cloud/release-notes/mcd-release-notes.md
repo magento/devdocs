@@ -33,6 +33,7 @@ The release notes include:
    -  {:.new}Added the `--no-varnish` option to the `ece-tools build:compose` command to skip Varnish service installation when you generate the configuration for a Magento Cloud Docker environment.<!--MAGECLOUD-3598-->
 
 ## v1.0.0
+*Release date: Nov 14, 2019*<br/>
 
 -  {:.new}**Created a separate package to deliver `{{site.data.var.mcd-prod}}`**–Moved the source code to deliver {{site.data.var.mcd-prod}} from the `{{site.data.var.ct}}` repository to the [new `magento-cloud-docker` repository](https://github.com/magento/magento-cloud-docker) to maintain code quality and provide independent releases.  The new package is a dependency for {{site.data.var.ct}} v2002.1.0 and later.
 

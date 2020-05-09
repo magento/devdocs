@@ -18,11 +18,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 {:.procedure}
 Prerequisites
 
--  Ensure that you are running the latest version of the Fastly CDN module for Magento 2. See [Upgrade the Fastly Module]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upgrade).
-
--  Verify the environment configuration for the Fastly service. See [Check Fastly caching]({{ site.baseurl }}/cloud/live/stage-prod-test.html#fastly).
-
--  You must have Admin credentials to access the Magento Cloud Staging and Production environments.
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
 
 {:.procedure}
 To reroute requests from {{ site.data.var.ee }} to WordPress:
@@ -31,7 +27,7 @@ To reroute requests from {{ site.data.var.ee }} to WordPress:
 
    -  Log in to the Magento Admin.
 
-   -  Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced**.
+   -  Navigate to **Stores** > Settings > **Configuration** > **Advanced** > **System** > **Full Page Cache** > **Fastly Configuration** > **Advanced**.
 
    -  Set the value for **Fastly Edge Modules** to **Yes**.
 

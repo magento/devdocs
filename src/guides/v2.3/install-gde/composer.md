@@ -36,13 +36,13 @@ To get the Magento metapackage:
     **{{site.data.var.ce}}**
 
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
 
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
     ```
 
     When prompted, enter your Magento authentication keys. Public and private keys are created and configured in your [Magento Marketplace][].
@@ -143,7 +143,7 @@ You cannot use the Web Setup Wizard if your docroot is set to the `pub/` directo
 [Magento Marketplace]: https://marketplace.magento.com/customer/accessKeys/
 [Modify docroot for security]: {{page.baseurl}}/install-gde/tutorials/change-docroot-to-pub.html
 [Install the Magento software from the command line]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
-[troubleshooting]:{{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html
+[troubleshooting]: https://support.magento.com/hc/en-us/articles/360033818091
 [Magento file system owner]: {{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html
 [authentication keys]: {{page.baseurl}}/install-gde/prereq/connect-auth.html
 [Install Composer]: https://getcomposer.org/download/

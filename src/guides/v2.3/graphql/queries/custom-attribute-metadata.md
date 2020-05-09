@@ -138,7 +138,7 @@ The following query returns the attribute type for various custom and EAV attrib
         },
         {
           "attribute_code": "color",
-          "attribute_type": "String",
+          "attribute_type": "Int",
           "attribute_options": [
             {
               "value": "49",

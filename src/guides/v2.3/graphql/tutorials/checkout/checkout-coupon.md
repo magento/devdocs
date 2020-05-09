@@ -22,8 +22,8 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/mutations/apply-coupon.html) 
 
 **Request:**
 
-{:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```text
 mutation {
@@ -34,7 +34,7 @@ mutation {
     }
   ) {
     cart {
-      applied_coupon {
+      applied_coupons {
         code
       }
     }
@@ -49,7 +49,7 @@ mutation {
   "data": {
     "applyCouponToCart": {
       "cart": {
-        "applied_coupon": {
+        "applied_coupons": {
           "code": "{ COUPON_CODE }"
         }
       }
@@ -62,14 +62,14 @@ Use [removeCouponFromCart]({{ page.baseurl }}/graphql/mutations/remove-coupon.ht
 
 **Request:**
 
-{:.bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more information.
 
 ```text
 mutation {
   removeCouponFromCart(input: { cart_id: "{ CART_ID }" }) {
     cart {
-      applied_coupon {
+      applied_coupons {
         code
       }
     }
@@ -84,7 +84,7 @@ mutation {
   "data": {
     "removeCouponFromCart": {
       "cart": {
-        "applied_coupon": {
+        "applied_coupons": {
           "applied_coupon": null
         }
       }

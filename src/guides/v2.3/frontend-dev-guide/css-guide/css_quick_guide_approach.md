@@ -15,14 +15,14 @@ To extend the parent theme's styles in your theme:
 1. In your theme directory, create a `web/css/source` sub-directory.
 1. Create a `_extend.less` file there. The path to it looks like following:
 
-    ```tree
-    <theme_dir>/
-    │  ├── web/
-    │  │   ├── css/
-    │  │   │   ├── source/
-    │  │   │      ├──_extend.less
-    ...
-    ```
+   ```tree
+   <theme_dir>/
+   │  ├── web/
+   │  │   ├── css/
+   │  │   │   ├── source/
+   │  │   │       ├──_extend.less
+   ...
+   ```
 
 1. Add your Less code in this file.
 
@@ -43,7 +43,7 @@ To override parent styles (that is, override default Magento UI [library](https:
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_theme.less
+   │  │   │       ├──_theme.less
    ...
    ```
 
@@ -68,8 +68,8 @@ To make your changes easier to read and support, structure them by adding a sepa
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_buttons_extend.less
-   │  │   │      ├──_extend.less
+   │  │   │       ├──_buttons_extend.less
+   │  │   │       ├──_extend.less
    ...
    ```
 
@@ -88,7 +88,7 @@ To override the parent theme's styles for buttons in your theme:
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_buttons.less
+   │  │   │       ├──_buttons.less
    ...
    ```
 
@@ -109,9 +109,10 @@ To extend a Module's styles in your theme:
    │   ├── web/
    │   │   ├── css/
    │   │   │   ├── source/
-               ├──_extend.less
+                   ├──_extend.less
    ...
    ```
+
 1. Add additional styles in the `_extend.less` file.
 
 For example, to extend the Magento_Review module's style, the directory path should be `<your_theme_dir>/Magento_Review/web/css/source/_extend.less`.
@@ -129,9 +130,10 @@ To override module styles in your theme:
    │   ├── web/
    │   │   ├── css/
    │   │   │   ├── source/
-               ├──_module.less
+   |   |   |       ├──_module.less
    ...
    ```
+
    This file overrides the `_module.less` file of the specific module.
 
 1. Add your styles in the `_module.less` file.

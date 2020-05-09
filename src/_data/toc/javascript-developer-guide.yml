@@ -20,7 +20,6 @@ pages:
           url: /javascript-dev-guide/javascript/js_init.html
 
         - label: Frontend product repository
-          include_versions: ["2.2", "2.3"]
           url: /javascript-dev-guide/javascript/product-frontend-storage.html
 
         - label: Use custom JavaScript

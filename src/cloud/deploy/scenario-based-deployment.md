@@ -25,8 +25,8 @@ You add the scenarios for building and deploying Magento to the `hooks` section 
 hooks:
     build: |
         set -e
-        php ./vendor/bin/ece-tools run scenario/generate.xml
-        php ./vendor/bin/ece-tools run scenario/transfer.xml
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
     deploy: |
         php ./vendor/bin/ece-tools run scenario/deploy.xml
     post_deploy: |
@@ -69,7 +69,7 @@ hooks:
     php ./vendor/bin/ece-tools run scenario/deploy.xml vendor/<vendor-name>/<module-name>/deploy.xml vendor/<vendor-name>/<module-name>/deploy2.xml
 ```
 
-During deployment, the custom scenarios merge with the default scenario based on the following rules:
+During deployment, the custom scenarios merge with the default scenario-based on the following rules:
 
 -  Scenarios are prioritized based on their sequence in the hook definition with the last scenario listed having the highest priority.
 
@@ -105,8 +105,8 @@ To use the custom configuration file, update the default `.magento.app.yaml` fil
 hooks:
     build: |
         set -e
-        php ./vendor/bin/ece-tools run scenario/generate.xml
-        php ./vendor/bin/ece-tools run scenario/transfer.xml
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
     deploy: |
         php ./vendor/bin/ece-tools run scenario/deploy.xml  vendor/vendor-name/module-name/deploy-custom-mode-config.xml
     post_deploy: |
@@ -202,8 +202,8 @@ To use this script in your project, add the following configuration to the `.mag
 hooks:
     build: |
         set -e
-        php ./vendor/bin/ece-tools run scenario/generate.xml
-        php ./vendor/bin/ece-tools run scenario/transfer.xml
+        php ./vendor/bin/ece-tools run scenario/build/generate.xml
+        php ./vendor/bin/ece-tools run scenario/build/transfer.xml
     deploy: |
         php ./vendor/bin/ece-tools run scenario/deploy.xml  vendor/vendor-name/module-name/deploy-extended.xml
     post_deploy: |

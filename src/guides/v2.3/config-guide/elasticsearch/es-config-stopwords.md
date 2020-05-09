@@ -39,7 +39,7 @@ See one of the following topics for more information:
 
 To edit stopwords:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 1. Use a text editor to open a stopword file in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
    `.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
@@ -65,7 +65,7 @@ To edit stopwords:
 
 To add stopwords for a locale:
 
-1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
+1. Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 1. Use a text editor to create a stopword file named `stopwords_<locale_code>.csv` in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
@@ -118,13 +118,13 @@ To change the directory:
 
 1. Change the value of `fileDir` to the desired directory:
 
-    ```xml
-    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
-        <arguments>
-            <argument name="stopwordsDirectory" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
-        </arguments>
-    </type>
-    ```
+   ```xml
+   <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+       <arguments>
+           <argument name="stopwordsDirectory" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
+       </arguments>
+   </type>
+   ```
 
 Save your changes to `di.xml` and exit the text editor.
 
@@ -133,14 +133,14 @@ Save your changes to `di.xml` and exit the text editor.
 1. [Create a new module](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/build/module-file-structure.html){:target="_blank"}
 1. In your module `etc/di.xml` add instructions:
 
-    ```xml
-    <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
-        <arguments>
-           <argument name="stopwordsModule" xsi:type="string">Your_Module</argument>
-           <argument name="stopwordsDirectory" xsi:type="string">stopwords</argument>
-        </arguments>
-    </type>
-    ```
+   ```xml
+   <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+       <arguments>
+          <argument name="stopwordsModule" xsi:type="string">Your_Module</argument>
+          <argument name="stopwordsDirectory" xsi:type="string">stopwords</argument>
+       </arguments>
+   </type>
+   ```
 
 1. In your module, create the directory `etc/stopwords`, with the corresponding `.csv`.
 

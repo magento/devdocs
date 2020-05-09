@@ -3,7 +3,7 @@ pages:
   - label: Introduction
     url: /mrg/intro.html
   
-  - label: Open Source (v2.3.4)
+  - label: Open Source (v2.3.5)
     include_versions: ["2.3"]
     children:
     
@@ -154,6 +154,9 @@ pages:
       - label: Cron
         url: /mrg/ce/Cron.html
     
+      - label: Csp
+        url: /mrg/ce/Csp.html
+    
       - label: CurrencySymbol
         url: /mrg/ce/CurrencySymbol.html
     
@@ -207,6 +210,9 @@ pages:
     
       - label: Elasticsearch6
         url: /mrg/ce/Elasticsearch6.html
+    
+      - label: Elasticsearch7
+        url: /mrg/ce/Elasticsearch7.html
     
       - label: Email
         url: /mrg/ce/Email.html
@@ -500,7 +506,7 @@ pages:
         url: /mrg/ce/WishlistGraphQl.html
     
   
-  - label: Commerce (v2.3.4)
+  - label: Commerce (v2.3.5)
     include_versions: ["2.3"]
     children:
     
@@ -548,6 +554,9 @@ pages:
     
       - label: CatalogStaging
         url: /mrg/ee/CatalogStaging.html
+    
+      - label: CatalogStagingGraphQl
+        url: /mrg/ee/CatalogStagingGraphQl.html
     
       - label: CatalogUrlRewriteStaging
         url: /mrg/ee/CatalogUrlRewriteStaging.html
@@ -720,6 +729,9 @@ pages:
       - label: Staging
         url: /mrg/ee/Staging.html
     
+      - label: StagingGraphQl
+        url: /mrg/ee/StagingGraphQl.html
+    
       - label: Support
         url: /mrg/ee/Support.html
     
@@ -731,6 +743,9 @@ pages:
     
       - label: VersionsCms
         url: /mrg/ee/VersionsCms.html
+    
+      - label: VersionsCmsUrlRewrite
+        url: /mrg/ee/VersionsCmsUrlRewrite.html
     
       - label: VisualMerchandiser
         url: /mrg/ee/VisualMerchandiser.html
@@ -745,7 +760,7 @@ pages:
         url: /mrg/ee/Worldpay.html
     
   
-  - label: B2B (v1.1.4)
+  - label: B2B (v1.1.5)
     include_versions: ["2.3"]
     children:
     
@@ -816,7 +831,7 @@ pages:
         url: /mrg/b2b/SharedCatalog.html
     
   
-  - label: Inventory Management (v1.1.4)
+  - label: Inventory Management (v1.1.5)
     include_versions: ["2.3"]
     children:
     

@@ -302,7 +302,7 @@ See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/m
 ### Related Topics
 
 *  [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-*  [Manage message queues with MySQL]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
+*  [Manage message queues with MySQL]({{page.baseurl}}/config-guide/mq/manage-message-queues.html)
 *  [Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)
 
 <!-- Link definitions -->

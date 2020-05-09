@@ -46,8 +46,16 @@ mutation {
         company
         street
         city
+        region{
+          code
+          label
+        }
         postcode
         telephone
+        country{
+          code
+          label
+        }
       }
     }
   }
@@ -70,8 +78,16 @@ mutation {
             "Main Street"
           ],
           "city": "Austin",
+          "region": {
+              "code": "TX",
+              "label": "Texas"
+            },
           "postcode": "78758",
-          "telephone": "8675309"
+          "telephone": "8675309",
+           "country": {
+             "code": "US",
+             "label": "US"
+          }
         }
       }
     }

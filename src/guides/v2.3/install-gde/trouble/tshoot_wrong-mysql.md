@@ -9,13 +9,16 @@ functional_areas:
   - Install
   - System
   - Setup
+redirect_to: https://support.magento.com/hc/en-us/articles/360034633551
 ---
 
 ### Details
 
 During the installation, a  message similar to the following displays:
 
-    [ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' in /<path>/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
+```terminal
+[ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' in /<path>/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
+```
 
 ### Solution
 

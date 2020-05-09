@@ -30,7 +30,7 @@ mutation {
         }
         quantity
       }
-      applied_coupon {
+      applied_coupons {
         code
       }
       prices {
@@ -65,7 +65,7 @@ mutation {
             "quantity": 1
           }
         ],
-        "applied_coupon": null,
+        "applied_coupons": null,
         "prices": {
           "grand_total": {
             "value": 39,
@@ -107,7 +107,7 @@ Error | Description
 `Cart does not contain products.` | The coupon cannot be removed from the empty cart.
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
 `Current user does not have an active cart.` | The user cannot perform this mutation on the inactive cart.
-`Required parameter "cart_id" is missing` | The required `cart_id` attribute contains an empty value.
+`Required parameter "cart_id" is missing` | The required `cart_id` argument contains an empty value.
 `The coupon code couldn't be deleted. Verify the coupon code and try again.` | The coupon was not removed from the cart. Check the existing shopping cart price rules for details.
 `The current user cannot perform operations on cart XXX` | An unauthorized user (guest) tried to add the product into a customer's cart, or an authorized user (customer) tried to add the product into the cart of another customer.
 `Wrong store code specified for cart` | The specified `cart_id` does not exist in specified store.

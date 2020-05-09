@@ -1,6 +1,7 @@
 ---
 group: migration-guide
 title: Troubleshooting
+redirect_to: https://support.magento.com/hc/en-us/articles/360033020451
 ---
 
 ## Common error messages

@@ -7,5 +7,9 @@ Merchants are obligated to meet industry guidelines for maintaining a secure env
 
 This compliance documentation provides the technical information to ensure that Magento Commerce installations comply with the requirements of specific privacy legislation. Some of these requirements require merchants to complete additional development work to achieve compliance. See the following topics for details:
 
--  [California Consumer Privacy Act (CCPA)]({% link compliance/privacy/ccpa.md %})
--  [General Data Protection Regulation (GDPR)]({% link compliance/privacy/gdpr.md %})
+-  [California Consumer Privacy Act (CCPA)]({{ site.baseurl }}/compliance/privacy/ccpa.html)
+-  [General Data Protection Regulation (GDPR)]({{ site.baseurl }}/compliance/privacy/gdpr.html)
+
+## Compliance tools
+
+-  [Magento Privacy JavaScript Library](<{{ site.baseurl }}/compliance/privacy/magento-privacy-js-library.html>)
