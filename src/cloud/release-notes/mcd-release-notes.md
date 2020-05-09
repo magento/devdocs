@@ -22,7 +22,7 @@ The release notes include:
 
    -  {:.new}**PHP-FPM container updates**–
 
-      - {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
+      -  {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
 
    -  {:.new}**Varnish container**–
 

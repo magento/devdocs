@@ -113,7 +113,6 @@ To configure the custom host and port, add the `host` and `port` options to the 
 
 You must also add the custom hostname to your `/etc/hosts` file.
 
-
 ## Sendmail service
 
 Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
