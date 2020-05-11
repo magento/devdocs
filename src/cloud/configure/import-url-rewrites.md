@@ -12,6 +12,7 @@ You can easily migrate to the {{site.data.var.ece}} platform without losing SEO 
 {:.bs-callout-info}
 This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only.
 
+
 {:.procedure}
 To install the URL rewrite module:
 
@@ -96,6 +97,9 @@ To import URL Rewrites:
    ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-success.png)
 
 ## Troubleshooting the import
+
+{:.bs-callout-info}
+Large uploads can be limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#customize-phpini-settings) to increase it.
 
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 
