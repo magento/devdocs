@@ -138,7 +138,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
 *  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
-*  PHPUnit (as a command-line tool) 6.2.0
+*  PHPUnit (as a command-line tool) 9.0.0
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php
