@@ -20,9 +20,7 @@ For Staging and Integration environments that should not be publicly accessible,
 
 **Prerequisites:**
 
--  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
-
--  Admin credentials to access the Magento Admin UI for your {{ site.data.var.ece }} environment
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
 
 -  List of client IP addresses to include on the allow list
 

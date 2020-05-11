@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryExportStockApi
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryExportStockApi/README.md
+release: 1.1.5
+github_path: InventoryExportStockApi/README.md
 last_modified_at: '2019-04-23 22:46:43 +0300'
 content: |
   The `InventoryExportStockApi` module provides provides aggregated stock export functionality api.

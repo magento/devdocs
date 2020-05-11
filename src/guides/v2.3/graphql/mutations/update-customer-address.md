@@ -9,7 +9,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {updateCustomerAddress(id: Int!input: CustomerAddressInput) {CustomerAddress}}`
+`mutation: {updateCustomerAddress(id: Int!, input: CustomerAddressInput) {CustomerAddress}}`
 
 ## Example usage
 

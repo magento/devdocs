@@ -1,8 +1,8 @@
 ---
 title: Magento_InventorySourceSelection
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventorySourceSelection/README.md
+release: 1.1.5
+github_path: InventorySourceSelection/README.md
 last_modified_at: '2018-11-09 00:12:40 +0200'
 content: "The `InventorySourceSelection` module provides source selection logic for
   Inventory Management.\n\nThis module is part of the new inventory infrastructure.

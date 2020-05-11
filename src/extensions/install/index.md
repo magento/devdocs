@@ -92,14 +92,13 @@ Add the extension's name and version to your `composer.json` file:
 To verify that the extension installed properly, run the following command:
 
 ```bash
-bin/magento module:status
+bin/magento module:status J2t_Payplug
 ```
 
 By default, the extension is probably disabled:
 
 ```terminal
-List of disabled modules:
-J2t_Payplug
+Module is disabled
 ```
 
 {:.bs-callout-info}
@@ -142,17 +141,13 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 1. Verify that the extension is enabled:
 
    ```bash
-   bin/magento module:status
+   bin/magento module:status J2t_Payplug
    ```
 
    You should see output verifying that the extension is no longer disabled:
 
    ```terminal
-   List of enabled modules:
-   J2t_Payplug
-
-   List of disabled modules:
-   None
+   Module is enabled
    ```
 
 1. Clean the cache:
