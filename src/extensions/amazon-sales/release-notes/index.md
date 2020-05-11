@@ -25,13 +25,13 @@ See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, su
 
 Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
 
--  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Managing Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
+-  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Manage Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
 
--  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ view that shows all your Amazon orders, including filter options and pagination for viewing more orders. See [Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
+-  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ view that shows all your Amazon orders, including filter options and pagination for viewing more orders. See [Amazon Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
 
 -  {:.new}Added the _Order Notes_ column of the redesigned _Amazon Orders_ table in both _Recent Orders_ and _All Orders_ views. _Order Notes_ let the merchant know there is an issue with the order's import. See [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
 
--  {:.new}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Amazon Renewed]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
+-  {:.new}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Renewed Products]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
 
 -  {:.new}<!--CHAN-3680-->Updated [Amazon Order Details](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-order-details.html) to include "generic data" for orders that are fulfilled by Amazon. See [Fulfilled by](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/fulfilled-by.html).
 
