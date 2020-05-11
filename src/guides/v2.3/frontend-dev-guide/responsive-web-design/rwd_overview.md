@@ -23,9 +23,10 @@ The articles in this chapter describe the particular approaches used in the Blan
 -  [Create a responsive mobile theme based on Blank]
 
 ## Terms used {#fedg_rwd_terms}
-  Term           Description
-  -------------- ---------------------------------------------------------------------------------
-  *Breakpoint*   The width of the user's screen that causes your responsive layout to change.
+
+Term | Description
+------------ | -------------
+*Breakpoint* | The width of the user's screen that causes your responsive layout to change.
 
 ## Recommended reading
 
