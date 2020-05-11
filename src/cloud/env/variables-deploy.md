@@ -54,6 +54,51 @@ stage:
             database: 11
 ```
 
+Be aware, if you use this `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` backend model then configuration structure will be the next:
+
+```php
+'cache' => [
+    'frontend' => [
+        'default' => [
+             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
+             'backend_options' => [
+                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+                 'remote_backend_options' => [
+                     'persistent' => 0,
+                     'server' => 'localhost',
+                     'database' => '0',
+                     'port' => '6370',
+                     'password' => '',
+                     'compress_data' => '1',
+                 ],
+                 'local_backend' => 'Cm_Cache_Backend_File',
+                 'local_backend_options' => [
+                     'cache_dir' => '/dev/shm/'
+                 ]
+             ],
+             'frontend_options' => [
+                 'write_control' => false,
+             ],
+         ]
+    ],
+    'type' => [
+        'default' => ['frontend' => 'default'],
+    ],
+]
+```
+
+### `REDIS_BACKEND`
+
+- **Default**—`Cm_Cache_Backend_Redis`
+- **Version**—Magento 2.3.5 and later
+
+Configuration the backend model for redis cache.
+
+Since version 2.3.5 Magento supports the next backend models:
+ - `Cm_Cache_Backend_Redis`
+ - `\Magento\Framework\Cache\Backend\Redis`
+ - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
+
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
