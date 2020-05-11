@@ -17,7 +17,7 @@ The `{{site.data.var.mcp}}` package uses the following version sequence: `<major
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
 
 ## v1.0.4
-*Release date: May 18, 2020*<br/>
+*Release date: May 12, 2020*<br/>
 
 -  **Amazon Pay checkout**—Fixes an issue with the Amazon Pay payment widget that prevented customers from changing the payment method on the _Review & Payments_ step during the checkout process.<!--MCLOUD-5930-->
 
