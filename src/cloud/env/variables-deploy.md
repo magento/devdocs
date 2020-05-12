@@ -99,6 +99,8 @@ Magento version 2.3.5 and later includes the following backend models:
  - `\Magento\Framework\Cache\Backend\Redis`
  - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
+{:.bs-callout-info}
+See [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/two-level-cache.html) for details on selecting the backend model for Redis caching.
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
