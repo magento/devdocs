@@ -17,7 +17,7 @@ Think of the {{site.data.var.ece}} as five functional layers, as shown here:
 
 ![Cloud Stack]
 
-Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for {{site.data.var.ece}}. For {{site.data.var.ece}} Pro plan subscriptions, you can choose either AWS or Microsoft Azure for IaaS support.
+Amazon Web Services (AWS) powers the underlying Infrastructure as a Service (IaaS) for {{site.data.var.ece}}. For {{site.data.var.ece}} Pro projects, you can choose either AWS or Microsoft Azure for IaaS support.
 
 Each {{site.data.var.ece}} plan provides a PaaS Integration environment for developing, testing, and integrating services, see [{{site.data.var.ece}} architecture]({{ site.baseurl }}/cloud/architecture/cloud-architecture.html) for a comparison and additional features. New Relic provides granular visibility into the site performance. [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) caches site assets and, as customers access the site and stores, loads the cached assets fast. The [Fastly Image Optimization]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html) (IO) offloads image processing and resizing load, freeing servers to process orders and conversions efficiently.
 <!-- Also, the Fastly Web Application Firewall (WAF) prevents malicious traffic and other OWASP Top 10 threats from affecting the site. -->
