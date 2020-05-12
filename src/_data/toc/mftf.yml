@@ -184,6 +184,10 @@ pages:
     url: /mftf/docs/troubleshooting.html
     versionless: true 
 
+  - label: Two-factor Authentication
+    url: /mftf/docs/configure-2fa.html
+    versionless: true 
+
   - label: Update MFTF
     url: /mftf/docs/update.html
     versionless: true
