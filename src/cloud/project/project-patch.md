@@ -64,14 +64,22 @@ To apply and test a custom patch:
 
 1. Copy the patch file to the `/m2-hotfixes` directory.
 
-1. Add, commit, and push your code changes:
+1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Apply <patch filename> patch" && git push origin
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Apply patch"
+   ```
+
+   ```bash
+   git push origin <branch-name>
    ```
 
    {:.bs-callout-info}
-   Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with `magento-cloud environment:branch <branch-name>`
+   Make sure to test all patches in a pre-production environment.  For Magento Cloud, new branches can be created with     `magento-cloud environment:branch <branch-name>`
 
 ## Apply patches to a Magento enterprise or open source project
 
