@@ -207,7 +207,7 @@ The following `products` query returns `ConfigurableProduct` information about t
           "configurable_options": [
             {
               "id": 147,
-              "attribute_id_v2": "93",
+              "attribute_id_v2": 93,
               "label": "Color",
               "position": 1,
               "use_default": false,
@@ -230,7 +230,7 @@ The following `products` query returns `ConfigurableProduct` information about t
             },
             {
               "id": 146,
-              "attribute_id_v2": "160",
+              "attribute_id_v2": 160,
               "label": "Size",
               "position": 0,
               "use_default": false,
