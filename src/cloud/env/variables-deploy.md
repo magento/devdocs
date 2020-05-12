@@ -94,7 +94,7 @@ If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\Rem
 
 Configuration the backend model for redis cache.
 
-Since version 2.3.5 Magento supports the next backend models:
+Magento version 2.3.5 and later includes the following backend models:
  - `Cm_Cache_Backend_Redis`
  - `\Magento\Framework\Cache\Backend\Redis`
  - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
