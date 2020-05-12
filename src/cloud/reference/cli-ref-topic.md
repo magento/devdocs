@@ -59,7 +59,8 @@ The following list of commonly used Magento Cloud CLI commands includes required
 Command | Description
 ------- | -----------
 `magento-cloud login` | Log in to the project.
-`magento-cloud list` | List the environments in the current project.
+`magento-cloud list` | List the available commands for CLI tool.
+`magento-cloud environment:list` | List the environments in the current project.
 `magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.
 `magento-cloud environment:merge -e <environment-ID>` | Merge changes in this environment with its parent.
 `magento-cloud variables` | List variables in this environment.
