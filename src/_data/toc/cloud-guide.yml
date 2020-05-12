@@ -137,7 +137,7 @@ pages:
               url: /cloud/docker/docker-manage-database.html
               versionless: true
 
-            - label: Manage Services
+            - label: Manage supported services
               url: /cloud/docker/docker-manage-services.html
               versionless: true
 

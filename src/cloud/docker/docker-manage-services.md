@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Manage Services
+title: Manage configuration for supported services
 functional_areas:
   - Cloud
   - Setup
@@ -11,28 +11,32 @@ The Cloud Docker development environment provides various [Services].
 
 ## Adding a new version of existing service
 
-The version of a service is determined through the `.magento/services.yml` file. A new version of the existing service can be added by defining `Dockerfile` to the `images` directory of magento-cloud-docker.
+In {{site.data.var.mcd}} package the available service versions are determined by the Docker service images configured in the {{site.data.var.mcd}} `images` directory. You can add a new service version by creating a directory for the version and adding a `Dockerfile` and other files to configure the new version.
 
 {:.procedure}
-For certain services such as [elasticsearch], [php], [nginx], [tls], [varnish] the new version can be added as follows:
+To add a new service version using a `Dockerfile`:
 
-1. Go to `images` directory of magento-cloud-docker and select the necessary service for which a new version needs to be added.
+1. Clone the `{{site.data.var.mcd}}` project to your local environment if necessary.
 
-1. Create a directory by specifying the version of the service.
+1. On the command line, change to the directory that contains the existing service version configurations.
 
-1. Inside the directory that is created, add a `Dockerfile`, specify the version, and add the other contents such as plugins etc. inside the `Dockerfile`.
+   ```bash
+      cd magento-cloud-docker/images/<service-name>
+   ```
+
+1. Create a directory for the new version.
+
+1. In the new directory, add the `Dockerfile` that contains the image configuration details for the new version. Use the `Dockerfile` for an existing version as a template and add any other required configuration such as supported plugins.
 
 1. Add the `docker-entrypoint.sh` and `healthcheck` files if needed.
 
-1. Add the necessary `.conf`, `.ini` files inside etc directory if needed.
+1. Add any necessary `.conf` and `.ini` files for the service to the `etc` directory.
 
 1. Run the following command to build the image.
 
-   `build -t test/<service-name>:<service-version>`
+   `docker build -t test/<service-name>:<service-version>`
+
+1. Once the build succeeds, test the changes by specifying the [Docker build sources].
 
 [Services]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html
-[elasticsearch]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container
-[php]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#fpm-container
-[tls]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#tls-container
-[varnish]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container
-[nginx]: https://devdocs.magento.com/cloud/docker/docker-containers-service.html#web-container
+[Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
