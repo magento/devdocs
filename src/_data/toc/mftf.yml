@@ -17,6 +17,10 @@ pages:
     url: /mftf/docs/credentials.html
     versionless: true
 
+  - label: Custom Helpers
+    url: /mftf/docs/custom-helpers.html
+    versionless: true
+
   - label: Data
     url: /mftf/docs/data.html
     versionless: true
