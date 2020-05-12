@@ -148,10 +148,10 @@ To review the backend settings configuration:
 
    ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
 
-1. Select the **Shield** location (or datacenter) closest to your AWS region.
-   For example, if Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
+1. Select the **Shield** location (or datacenter) closest to your Cloud service region.
+   For example, if your project is hosted on AWS, Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
 
-   The following list shows which Fastly shield locations to use based an AWS region:
+   The following list shows which Fastly shield locations to use based on AWS regions:
 
    -  ap-east-1 => hongkong-hk
    -  ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp

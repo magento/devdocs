@@ -110,13 +110,15 @@ To activate an inactive environment, use the `magento-cloud environment:activate
 
 ## Integration environment IP addresses {#ipaddress}
 
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
+The following tables list the incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ site.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int) for AWS and Azure regions. These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
+### IP addresses for AWS
+
 <table>
 <tr>
-<th colspan="7"><b>Incoming IP addresses</b></th>
+<th colspan="7"><b>Incoming IP addresses for AWS</b></th>
 </tr>
 <tr>
 <td>US Region</td>
@@ -168,7 +170,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 
 <table>
 <tr>
-<th colspan="7"><b>Outgoing IP addresses</b></th>
+<th colspan="7"><b>Outgoing IP addresses for AWS</b></th>
 </tr>
 <tr>
 <td>US Region</td>
@@ -214,6 +216,76 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 <p>52.65.143.178</p>
 <p>13.54.80.197</p>
 <p>52.62.224.4</p>
+</td>
+</tr>
+</table>
+
+### IP addresses for Azure {#ipaddress}
+
+<table>
+<tr>
+<th colspan="7"><b>Incoming IP addresses for AWS</b></th>
+</tr>
+<tr>
+<td>US Region</td>
+<td>Central US Region</td>
+<td>East US-2 Region</td>
+<td>West US-2 Region</td>
+</tr>
+<tr>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th colspan="7"><b>Outgoing IP addresses for Azure</b></th>
+</tr>
+<tr>
+<td>US Region</td>
+<td>Central US Region</td>
+<td>East US-2 Region</td>
+<td>West US-2 Region</td>
+</tr>
+<tr>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
+</td>
+<td>
+<p>TBD</p>
+<p>TBD</p>
+<p>TBD</p>
 </td>
 </tr>
 </table>
