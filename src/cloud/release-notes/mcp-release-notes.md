@@ -21,11 +21,11 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn 
 
 -  **Amazon Pay checkout**—Fixes an issue with the Amazon Pay payment widget that prevented customers from changing the payment method on the _Review & Payments_ step during the checkout process.<!--MCLOUD-5930-->
 
--  **Product display on Category pagew**—Fixes an issue that prevented products from displaying on the category page in _Show all pages_ view.<!--MCLOUD-5684-->
+-  **Product display on Category page**—Fixes an issue that prevented products from displaying on the category page in _Show all pages_ view.<!--MCLOUD-5684-->
 
 -  **Page Builder image upload**—Fixes a Page Builder interface issue that sometimes caused the following error when uploading images to the image gallery: `Destination folder is not writable or does not exist`<!--MCLOUD-5837-->
 
--  **Suppress unnecessary Sitemap generation warnings**—Adds a retry attempt when errors occur during sitemap generation and skips customer email notification in cases where errors can be recovered automatically.<!--MCLOUD-3025-->
+-  **Suppress unnecessary sitemap generation warnings**—Adds a retry attempt when errors occur during sitemap generation and skips customer email notification in cases where errors can be recovered automatically.<!--MCLOUD-3025-->
 
 -  **Site performance improvement**—Fixes a performance issue with the `Magento\Framework\App\DeploymentConfig\Reader::load` function, which periodically experienced long load times that affected site performance. <!--MCLOUD-5650-->
 
