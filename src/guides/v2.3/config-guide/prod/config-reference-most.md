@@ -586,6 +586,8 @@ Display Actual Price | `sales/msrp/display_price_type` | <!-- ![Not EE-only]({{ 
 Default Popup Text Message | `sales/msrp/explanation_message` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Default "What's This" Text Message | `sales/msrp/explanation_message_whats_this` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Enable Order by SKU on My Account in Storefront | `sales/product_sku/my_account_enable` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
+Enabled | `sales/instant_purchase/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Button Text | `sales/instant_purchase/button_text` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Customer Groups | `sales/product_sku/allowed_groups` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Enable Archiving | `sales/magento_salesarchive/active` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Archive Orders Purchased | `sales/magento_salesarchive/age` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
@@ -972,11 +974,15 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
+Customer Token Lifetime (hours) | `oauth/access_token_lifetime/customer` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Admin Token Lifetime (hours) | `oauth/access_token_lifetime/admin` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Cleanup Probability | `oauth/cleanup/cleanup_probability` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Expiration Period | `oauth/cleanup/expiration_period` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Expiration Period | `oauth/consumer/expiration_period` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 OAuth consumer credentials HTTP Post maxredirects | `oauth/consumer/post_maxredirects` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 OAuth consumer credentials HTTP Post timeout | `oauth/consumer/post_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Maximum Login Failures to Lock Out Account | `oauth/authentication_lock/max_failures_count` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Lockout Time (seconds) | `oauth/authentication_lock/timeout` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
 ## Advanced category
 
