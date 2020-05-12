@@ -54,7 +54,7 @@ stage:
             database: 11
 ```
 
-Be aware, if you use this `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` backend model then configuration structure will be the next:
+If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`for the backend model, you must use the following configuration structure:
 
 ```php
 'cache' => [
