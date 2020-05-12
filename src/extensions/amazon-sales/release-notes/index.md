@@ -19,9 +19,42 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+
+### v4.1.0
+
+Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes user-interface enhancements, along with minor bug fixes.
+
+-  {:.new}<!--4247, 4230-->Changed the order import process to align with Magento order requirements. These changes correct issues that prevented Magento from creating the corresponding order for an imported order. See [Manage Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/managing-orders.html) for information on order blockers and solutions.
+
+-  {:.new}<!--CHAN-CHAN-4167, 4297, 4311, 4312, 4324-->Updated the _Recent Orders_ section of the store dashboard and added a new _All Orders_ view that shows all your Amazon orders, including filter options and pagination for viewing more orders. See [Amazon Store Dashboard](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-store-dashboard.html) and [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
+
+-  {:.new}Added the _Order Notes_ column of the redesigned _Amazon Orders_ table in both _Recent Orders_ and _All Orders_ views. _Order Notes_ let the merchant know there is an issue with the order's import. See [View Amazon Orders](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-orders-all.html).
+
+-  {:.new}<!--CHAN-4013-->Updated product condition parameters to align with the [Amazon Renewed]( https://sell.amazon.com/programs/renewed.html) program. See [Renewed Products]( https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/renewed-products.html).
+
+-  {:.new}<!--CHAN-3680-->Updated [Amazon Order Details](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-order-details.html) to include "generic data" for orders that are fulfilled by Amazon. See [Fulfilled by](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/fulfilled-by.html).
+
+-  {:.fix}<!--CHAN-4069-->Corrected an issue causing the distortion of icons on the store card.
+
+-  {:.fix}<!--CHAN-4165-->Corrected an error preventing the _Login_ screen from appearing after the session times out.
+
+-  {:.fix}<!--CHAN-4211-->Corrected an issue preventing the Amazon order tax amount from importing into the new Magento order.
+
+-  {:.fix}<!--CHAN-4234-->Corrected an issue causing revenue totals displayed on the store dashboard to include orders in `Canceled` or `Error` status.
+
+-  {:.fix}<!--CHAN-4326-->Corrected an issue causing order import errors associated with third-party extensions that use Magento shipping methods to create orders.
+
+-  {:.fix}<!--CHAN-4357-->Corrected an issue causing errors when running cron synchronization. A lock has been added on the CLI command that will prevent two cron jobs from synchronizing at the same time.
+
+-  {:.fix}Updated content security policy for support with Magento 2.3.5.
+
 ### v4.0.0
 
-Amazon Sales Channel 4.0.0 is compatible with version 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+Amazon Sales Channel 4.0.0 is compatible with versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
+
+{:.bs-callout .bs-callout-warning}
+Amazon Sales Channel 4.0.0 is not supported with Magento 2.3.5. For support with Magento 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
 
 -  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page with improved "card view" for your store information.
 
