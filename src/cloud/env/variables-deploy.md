@@ -92,7 +92,7 @@ If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\Rem
 - **Default**—`Cm_Cache_Backend_Redis`
 - **Version**—Magento 2.3.5 and later
 
-Configuration the backend model for redis cache.
+Specifies the backend model configuration for the Redis cache.
 
 Magento version 2.3.5 and later includes the following backend models:
  - `Cm_Cache_Backend_Redis`
