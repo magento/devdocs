@@ -78,7 +78,7 @@ We recommend using a branching strategy with your development work. Using one br
 *  Integrate with a 3rd party service
 *  Push this code, test, and merge to Staging then Production
 
-And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
+And so on until you have your store fully built, configured, and ready to launch. But keep reading, we have even better options for your store and code configuration!
 
 {:.bs-callout-info}
 Do not complete any configurations in your local workstation yet.
@@ -203,14 +203,14 @@ To learn more, see [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-
 
 ### Push to Master / Production {#pro}
 
-When you push to the `master` branch, you are pushing to the Production environment. Complete configuration and testing activities in the Production environment like you did in the Staging environment with one important difference. In the Production environment use live credentials for during configuration and testing. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.
+When you push to the `master` branch, you are pushing to the Production environment. Complete configuration and testing activities in the Production environment like you did in the Staging environment with one important difference. In the Production environment use live credentials for during configuration and testing. The moment you launch your site,  customers must be able to complete purchases and administrators should be able to manage your live store.
 To learn more, see [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
-### Go live {#go-live}
+### Site launch {#go-live}
 
 We provide a clear walk-through for going live and launching, which requires more steps than pressing a button. After you complete these steps, your store can serve up products in your customized theme for sale immediately.
 
-To learn more, check out [Go live and launch]({{ site.baseurl }}/cloud/live/live.html).
+To learn more, see [Site launch]({{ site.baseurl }}/cloud/live/live.html).
 
 ## Continuous integration {#continuous-integration}
 

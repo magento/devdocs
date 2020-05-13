@@ -67,7 +67,7 @@ To review your integration tokens, IDs, and more:
 
 ## Access the project and environments {#project}
 
-When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
+When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
@@ -84,7 +84,7 @@ The following table details the branches for Pro:
 | Branch | Environment | Description |
 |----------
 | (no branch) | Global Master | This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
-| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
+| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to launch your site with updated configurations and code. |
 | `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
 | `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 

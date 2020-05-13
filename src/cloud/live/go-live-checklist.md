@@ -1,12 +1,15 @@
 ---
 group: cloud-guide
-title: Go live checklist
+title: Launch checklist
 functional_areas:
   - Cloud
   - Testing
+  
+redirect_from:
+  - /common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf
 ---
 
-Before you deploy to the Production environment, download the [Go live checklist]({{ site.downloads }}/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
+Before you deploy to the Production environment, download the [Launch checklist]({{ site.downloads }}/magento-commerce-cloud-prelaunch-checklist.pdf), and use it with these instructions to confirm that you have completed all required configuration and testing. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 

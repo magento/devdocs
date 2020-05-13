@@ -19,9 +19,9 @@ After testing and completing your launch checklist, you can start the final step
 
 Magento support staff work with you through the process, checking status, and helping if any questions or issues occur. All issues should be tracked with tickets to best capture what happened and how it was resolved. When you begin continuous iterations deploying updates to your launched store, you may have similar issues occur again. These tickets can help pinpoint the issues and help adjust your deployment tasks.
 
-## Contact Magento to go live {#contact}
+## Contact Magento to launch your site {#contact}
 
-Contact Magento support and update any go live tickets with the intended date and time to switch over and launch your store(s).
+Contact Magento support and update any site launch (go live) tickets with the intended date and time to switch over and launch your store(s).
 
 ## Switch DNS to the new site {#dns}
 
