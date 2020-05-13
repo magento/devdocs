@@ -26,6 +26,9 @@ Anytime you perform an action that causes the Magento [database schema](https://
 Note the following:
 
 *  If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
+
+   {% include install/web/deprecated.md %}
+
 *  A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
 
 1. Start the upgrade:

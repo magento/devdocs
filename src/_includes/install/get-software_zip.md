@@ -5,6 +5,8 @@ The following table discusses where to get the Magento software. We provide the 
 
 These packages are easy to get and install. You don't need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.
 
+{% include install/web/deprecated.md %} 
+
 Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 
 <table>

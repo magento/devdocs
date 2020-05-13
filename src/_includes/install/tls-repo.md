@@ -20,6 +20,8 @@ failed to open stream: operation failed
 
 ### Using the Web Setup Wizard
 
+{% include install/web/deprecated.md %}
+
 Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:
 
 ![SSL connect error]({{ site.baseurl }}/common/images/install_ssl-connect-error.png)
