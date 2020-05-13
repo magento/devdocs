@@ -16,7 +16,7 @@ The `composer.json` and `composer.lock` files manage Magento dependencies and in
 To install Magento dependencies:
 
 ```bash
-composer install
+composer install --no-dev
 ```
 
 ## Preprocess dependency injection instructions
