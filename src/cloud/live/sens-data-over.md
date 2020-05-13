@@ -15,13 +15,13 @@ You must have [environment-level, Admin role privileges][admin] to complete conf
 
 The database contains default configurations for your Magento store. When you update configurations in the {{site.data.var.ece}} environments using the Magento Admin panel, your configuration changes apply to the `app/etc/config.php` file. You can then use this file to manage and synchronize the Magento application configuration for your local environment and across each Cloud environment.
 
-The data "dumped" to the `app/etc/config.php` file becomes _locked_, which means the corresponding field in the Magento Admin panel becomes **read-only**. This file includes only the settings that you configure. It does not lock the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
-
 Use the `{{site.data.var.ct}}` command in the remote environment to generate a `config.php` file:
 
 ```bash
 ./vendor/bin/ece-tools config:dump
 ```
+
+The data "dumped" to the `app/etc/config.php` file becomes _locked_, which means the corresponding field in the Magento Admin panel becomes **read-only**. The `config.php` file includes only the settings that you configure. It does not lock the default values. Locking only the values you update also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
 ### Configuration data
 
@@ -36,14 +36,14 @@ The `config.php` file includes the following settings and configuration values:
 -  Scopes value for static content deployment (the default SCD strategy is [quick][])
 
 {:.bs-callout-warning}
-The `ece-tools config:dump` command does not retrieve detailed configurations for modules, such as B2B. If you need a comprehensive configuration dump, use the [Magento `app:config:dump` command][commerce-dump], but be aware that this command may lock values in a read-only state. This affects Fastly and other important modules.
+The `ece-tools config:dump` command does not retrieve detailed configurations for modules, such as B2B. If you need a comprehensive configuration dump, use the [Magento `app:config:dump` command][commerce-dump], but be aware that this command locks configuration values in a read-only state.
 
 {:.bs-callout-info}
-Because {{site.data.var.ece}} supports only the Magento production and maintenance modes, the **Advanced** > **Developer** section is not accessible in the Admin panel. You can configure these settings using [environment variables][env-yaml].
+Because {{site.data.var.ece}} supports only the Magento production and maintenance modes, the **Advanced** > **Developer** section is not accessible in the Admin panel. You can configure additional settings using [environment variables][env-yaml].
 
 ### Sensitive data
 
-Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to `app/etc/config.php` during the `scd-dump` process. We recommend using environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
+Sensitive values are _not_ stored in the `app/etc/config.php` file. Any sensitive configurations export to the `app/etc/config.php` file during the `config:dump` process. We recommend using environment variables to store sensitive values. For an example, see [Add Magento authentication keys][auth].
 
 ### SCD performance
 
@@ -109,11 +109,11 @@ To transfer the configuration file and apply to another environment:
    git push origin <branch-name>
    ```
 
-After the deployment is complete, log in to the Magento Admin panel for the updated environment to verify the settings. Only configured settings display when you use the dump command. Continue to merge any additional configurations to the Staging and Production environments, as needed.
+After the deployment is complete, log in to the Magento Admin panel for the updated environment to verify the settings. Continue to merge any additional configurations to the Staging and Production environments, as needed.
 
 ## Update configurations
 
-To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file.
+When you modify your environment through the Magento Admin panel and run the command again, new configurations are appended to the code in the `config.php` file.
 
 {:.bs-callout-warning}
 While you can manually edit the `config.php` file in the Staging and Production environments, we do **not** recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
