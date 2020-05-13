@@ -9,6 +9,9 @@ You can find the total storage capacity for your Cloud project in your {{site.da
 
 You can check disk space usage in each environment using the _disk free_ command, which reports the amount of disk space used by the file system. You must use SSH to log in to a remote environment.
 
+{:.bs-callout-info}
+The _df -h_ command is only for dedicated clusters i.e. use it on Staging and Production environments of Magento Cloud Pro projects. On the Integration environments and for Magento Cloud Starter projects, use _magento-cloud db:size_
+
 ```bash
 df -h
 ```
