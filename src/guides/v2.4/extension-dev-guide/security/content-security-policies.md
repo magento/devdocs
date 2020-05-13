@@ -1,0 +1,1 @@
+../../../v2.3/extension-dev-guide/security/content-security-policies.md

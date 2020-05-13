@@ -1,0 +1,1 @@
+../../../../v2.3/comp-mgr/trouble/cman/component-depend.md
