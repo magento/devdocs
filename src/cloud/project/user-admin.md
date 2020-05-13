@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Create and manage users
+title: Manage user access to Cloud environments
 functional_areas:
   - Cloud
   - Configuration
