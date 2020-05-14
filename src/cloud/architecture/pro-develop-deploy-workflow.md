@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment to go live. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
+The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment for launching and maintaining your live site. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
 
 The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment.
 
@@ -67,10 +67,10 @@ It is best to thoroughly test every service, verify your performance testing too
 
 ### Merge to Production
 
-After thorough testing in the Staging environment, merge to the Production environment and thoroughly test using live credentials. The moment you go live, customers must be able to complete purchases and administrators must be able to manage the live store. We provide a detailed, clear walk-through for deploying your store and going live:
+After thorough testing in the Staging environment, merge to the Production environment and thoroughly test using live credentials. The moment you launch your production site, customers must be able to complete purchases and administrators must be able to manage the live store. We provide a detailed, clear walk-through for deploying your store and going live:
 
 -  See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html)
--  See [Go live and launch]({{ site.baseurl }}/cloud/live/live.html)
+-  See [Site launch]({{ site.baseurl }}/cloud/live/live.html)
 
 ### Merge to Global Master
 
