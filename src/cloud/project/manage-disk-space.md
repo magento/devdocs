@@ -95,7 +95,7 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 192.168.5.5:/shared/project/var         9.8G  591M  9.3G   6% /app/project/var
 ```
 
-## Allocating disk space
+## Allocate disk space
 
 Two configuration files control the allocation of disk space in the Cloud environments: the `.magento.app.yaml` file and the `.magento/services.yaml` file. Each file contains the `disk` property, which defines the disk size value in MB for the respective configuration.
 
@@ -156,7 +156,7 @@ To increase disk space for a service:
 
    The changes take effect after you push the updated YAML file to the remote environment.
 
-## Monitoring disk space
+## Monitor disk space
 
 On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
 
