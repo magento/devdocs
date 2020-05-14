@@ -117,6 +117,8 @@ php magento deploy:mode:set developer
 
 ### Web Setup Wizard
 
+{% include install/web/deprecated.md %}
+
 {% collapsible Click to view the Web Setup Wizard installation %}
 
 The following example shows how to install using the Web Setup Wizard with the following options:

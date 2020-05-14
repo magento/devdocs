@@ -491,11 +491,11 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-    - label: Go live and launch
+    - label: Site launch
       url: /cloud/live/live.html
       versionless: true
       children:
-        - label: Go live checklist
+        - label: Launch checklist
           url: /cloud/live/go-live-checklist.html
           versionless: true
 
