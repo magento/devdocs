@@ -45,7 +45,7 @@ To complete these configuration management tasks, you need the following:
 
 ## Configure Magento through the Integration Admin panel {#configure}
 
-Log into the Magento Admin panel in Integration to modify configurations. See [Configuration data]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) for details.
+In the Integration environment, you can log in to the Magento Admin panel to modify system configuration settings for stores, websites, modules or extensions, static file optimization, and system values related to static content deployment. See [Configuration data]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data).
 
 To change locale and static file optimization settings:
 
