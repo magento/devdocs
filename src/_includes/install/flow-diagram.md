@@ -19,6 +19,8 @@ The diagram shows the following:
 
 1. Install the Magento software using either the Web Setup Wizard or command line.
 
+   {% include install/web/deprecated.md %}
+
    For simplicity, only the Web Setup Wizard is shown in the diagram.
 
    At each step, the Web Setup Wizard validates the information you entered. As shown in the preceding diagram, if validation fails, you must manually fix the issues before you proceed.
