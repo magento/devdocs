@@ -896,7 +896,7 @@ entries:
   type: Major update
   date: November 27, 2019
   link: https://github.com/magento/devdocs/pull/6080
-- description: Added the [Security configuration](https://devdocs.magento.com/cloud/live/go-live-checklist.html#security-configuration)
+- description: Added the [Security configuration](https://devdocs.magento.com/cloud/live/site-launch-checklist.html#security-configuration)
     section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
     current Go live checklist document attachment with the most recent version, which
     is more comprehensive and up-to-date.
