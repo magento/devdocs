@@ -265,7 +265,7 @@ CNAME records cannot be set for apex domains, also referred to as a naked or bas
 -  `151.101.129.124`
 -  `151.101.193.124`
 
-Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html) for more information.
+Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
 
