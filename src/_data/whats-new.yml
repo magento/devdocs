@@ -4,7 +4,7 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue May 5 12:22:39 2020
+updated: Thu May 14 12:53:38 2020
 entries:
 - description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
     or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
