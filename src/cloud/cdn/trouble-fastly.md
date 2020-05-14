@@ -113,7 +113,7 @@ If the apex domain and subdomains for your {{ site.data.var.ece }} project are a
 
 -  Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
 
--  [Enable and configure Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ site.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
+-  [Enable and configure Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ site.baseurl }}/cloud/live/site-launch-checklist.html#dns) for your project environment.
 
 ## Verify or debug Fastly services
 

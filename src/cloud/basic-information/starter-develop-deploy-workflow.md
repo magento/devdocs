@@ -203,10 +203,11 @@ To learn more, see [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-
 
 ### Push to Master / Production {#pro}
 
-When you push to the `master` branch, you are pushing to the Production environment. Complete configuration and testing activities in the Production environment like you did in the Staging environment with one important difference. In the Production environment use live credentials for during configuration and testing. The moment you launch your site,  customers must be able to complete purchases and administrators should be able to manage your live store.
+When you push to the `master` branch, you are pushing to the Production environment. Complete configuration and testing activities in the Production environment like you did in the Staging environment with one important difference. In the Production environment use live credentials for configuration and testing. The moment you launch your site, customers must be able to complete purchases and administrators should be able to manage your live store.
+
 To learn more, see [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
 
-### Site launch {#go-live}
+### Site launch
 
 We provide a clear walk-through for going live and launching, which requires more steps than pressing a button. After you complete these steps, your store can serve up products in your customized theme for sale immediately.
 

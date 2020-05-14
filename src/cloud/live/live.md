@@ -91,7 +91,7 @@ The scan results also provide suggested remediation steps for each failed securi
 
 ## Ready to launch your site {#ready}
 
-When you are ready to begin the go-live process, see the following:
+When you are ready to begin the site launch process, see the following:
 
-*  [Launch checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html)
+*  [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html)
 *  [Launch steps]({{ site.baseurl }}/cloud/live/launch-steps.html)
