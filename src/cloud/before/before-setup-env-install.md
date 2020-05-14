@@ -108,6 +108,8 @@ Be ready to install Magento using one of the following options:
 -  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html)
 -  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/install-gde/install/web/install-web.html)
 
+   {% include install/web/deprecated.md %}
+
 {:.procedure}
 To install Magento using the command line:
 
