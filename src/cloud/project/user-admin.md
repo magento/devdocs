@@ -176,5 +176,5 @@ You can add project-level and environment-level users from the Project Web UI, a
 
 <!--Link references-->
 
-[registered Magento account]: {{site.baseurl}}/cloud/onboarding/onboarding-tasks.html#user-registration
+[registered Magento account]: {{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#user-registration
 [your {{site.data.var.ece}} account]: https://account.magento.com/customer/account/login
