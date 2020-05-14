@@ -92,3 +92,15 @@ task :convert do
   puts 'Converted text:'.magenta
   puts result.bold
 end
+desc 'Generate data for a news digest. Default timeframe is a week since today. For other period, use "since" argument: since="jul 4"'
+task :whatsnew do
+  date = ENV['since']
+  print 'Generating data for the weekly digest: $ '.magenta
+  if date.nil? or date.empty?
+    sh 'bin/whatsup_github'
+  elsif date.is_a? String
+    sh 'bin/whatsup_github', 'since', ENV['since'].to_s
+  else
+    puts 'The "since" argument must be a string. Example: "jul 4"'
+  end
+end
