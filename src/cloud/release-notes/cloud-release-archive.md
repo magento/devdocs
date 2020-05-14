@@ -599,7 +599,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
 -  **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/) during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/cloud/env/variables-build.html) or [deploy variable]({{ site.baseurl }}/cloud/env/variables-deploy.html). See the following topics for more information:
 
    -  [Magento application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
-   -  [Static content deployment performance]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-confman-scd-over)
+   -  [Static content deployment performance]({{ site.baseurl }}/cloud/live/sens-data-over.html#scd-performance)
    -  [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html)
 
 -  **Configuration management**—We now auto-generate an `app/etc/config.php` file in your Git repository during the build phase if it does not already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html) for more information.
