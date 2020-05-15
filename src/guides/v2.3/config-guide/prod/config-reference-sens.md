@@ -139,7 +139,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|--------------|
-| Google API key | `cataloginventory/source_selection_distance_based_google/api_key` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}/common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Google API key | `cataloginventory/source_selection_distance_based_google/api_key` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}/common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### XML sitemap sensitive and system-specific paths
 
