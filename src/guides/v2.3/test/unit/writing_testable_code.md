@@ -158,7 +158,7 @@ As a rule of thumb, try to keep methods to five or fewer lines of code.
 
 Functions should do only one thing and they should do it very well.
 
-Once you respect the [single responsibility principle][]{:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
+Once you respect the [single responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle){:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
 Have a look at the following examples:
 
 ```php
