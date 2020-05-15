@@ -1,11 +1,131 @@
 title: Whats New on Devdocs
-description: |
+description: 
   This page contains recent changes that we think you'd like to know about.
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Apr 27 14:03:20 2020
+updated: Thu May 14 12:53:38 2020
 entries:
+- description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
+    or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
+    Magento in most places where it is mentioned.
+  versions: 2.3.x
+  type: Major Update
+  date: May 14, 2020
+  link: https://github.com/magento/devdocs/pull/7213
+- description: Added [Magento Cloud Patches version 1.0.4 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+  versions: 2.x
+  type: Major Update
+  date: May 12, 2020
+  link: https://github.com/magento/devdocs/pull/7195
+- description: Updated the _Cloud Guide_ to reflect the availability of Microsoft
+    Azure as an Iaas provider for Magento Commerce Cloud Pro projects.
+  versions: 2.x
+  type: Technical
+  date: May 12, 2020
+  link: https://github.com/magento/devdocs/pull/7199
+- description: Added Release Notes and updated Merchant Documentation for the Amazon
+    Sales Channel 4.1.0 release.
+  versions: ''
+  type: Major Update
+  date: May 11, 2020
+  link: https://github.com/magento/devdocs/pull/7193
+- description: Added [Bypass Fastly](https://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html)
+    topic with instructions for creating a custom VCL snippet to bypass Fastly on
+    requests from a specific IP address, URL, or URL pattern.
+  versions: ''
+  type: New Topic
+  date: May 7, 2020
+  link: https://github.com/magento/devdocs/pull/7159
+- description: Expanded the example code in the [View Models](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/view-models.html)
+    topic.
+  versions: 2.3.x
+  type: Major Update
+  date: May 6, 2020
+  link: https://github.com/magento/devdocs/pull/7139
+- description: Added a known issue about Amazon Pay to the [2.3.5 release notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html).
+  versions: 2.3.5
+  type: Major Update
+  date: May 5, 2020
+  link: https://github.com/magento/devdocs/pull/7154
+- description: Updated reference documentation for the [`magento-cloud`](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-cloud.html)
+    command line tool (v1.32.2).
+  versions: 2.x
+  type: Major Update
+  date: May 1, 2020
+  link: https://github.com/magento/devdocs/pull/7144
+- description: Add information about Fastly requirement for Magento Cloud projects
+    and for GraphQL caching on headless deployments deployed on Cloud platform. See
+    the [Fastly](https://devdocs.magento.com/cloud/cdn/cloud-fastly.html) topic in
+    the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: May 1, 2020
+  link: https://github.com/magento/devdocs/pull/7140
+- description: Added a [note](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
+    about Composer upgrade plugin compatibility with Magento 2.3.5.
+  versions: 2.3.5
+  type: Technical
+  date: April 30, 2020
+  link: https://github.com/magento/devdocs/pull/7132
+- description: Updated all module topics according to codebase repositories at the
+    Module Reference Guide.
+  versions: 2.3.5
+  type: Major Update
+  date: April 30, 2020
+  link: https://github.com/magento/devdocs/pull/7134
+- description: Added information about the April 30th Resend account confirmation
+    email link issue patch.
+  versions: 2.3.x
+  type: Major Update
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7131
+- description: Updated data for `bin/magento` command-line tool reference at [Open
+    Source ](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html) and
+    [Commerce](https://devdocs.magento.com/guides/v2.3/reference/cli/magento-commerce.html).
+  versions: 2.3.5
+  type: Major Update
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7120
+- description: Updated [PHP requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#php)
+    and [packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html).
+  versions: 2.3.5
+  type: Major Update
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7119
+- description: Updated [MFTF functional test reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/functional-tests.html)
+    and [MFTF action group reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/action-groups.html).
+  versions: 2.3.5
+  type: Major Update
+  date: April 29, 2020
+  link: https://github.com/magento/devdocs/pull/7118
+- description: Published the release notes for [Magento Cloud Patches 1.0.3](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
+  versions: 2.x
+  type: Technical
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7048
+- description: Published all documentation updates related to the Q2 2020 Commerce and Open Source releases.
+  versions: 2.3.5
+  type: Major Update
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7104
+- description: Generated [documentation updates](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html#234---235)
+    for backward incompatible changes between 2.3.4 - 2.3.5 codebases.
+  versions: 2.3.5
+  type: Major Update
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7112
+- description: Updated the [REST API Reference](https://devdocs.magento.com/redoc/2.3/) for 2.3.5.
+  versions: 2.3.5
+  type: Technical
+  date: April 28, 2020
+  link: https://github.com/magento/devdocs/pull/7107
+- description: Added an example in [Search using REST endpoints](https://devdocs.magento.com/guides/v2.3/rest/performing-searches.html)
+    that restricts which attributes are returned.
+  versions: 2.3.x
+  type: Technical
+  date: April 25, 2020
+  link: https://github.com/magento/devdocs/pull/6960
 - description: Added release notes for the Magento Open Source and Commerce 2.3.5 Release Notes. See<br/>[Magento Open Source 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html)<br/>[Magento Commerce 2.3.5 Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html)
   versions: 2.3.5
   type: New Topic
@@ -813,7 +933,7 @@ entries:
   type: Major update
   date: November 27, 2019
   link: https://github.com/magento/devdocs/pull/6080
-- description: Added the [Security configuration](https://devdocs.magento.com/cloud/live/go-live-checklist.html#security-configuration)
+- description: Added the [Security configuration](https://devdocs.magento.com/cloud/live/site-launch-checklist.html#security-configuration)
     section to the "Go live checklist" topic in the _Cloud Guide_ and replaced the
     current Go live checklist document attachment with the most recent version, which
     is more comprehensive and up-to-date.

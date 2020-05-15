@@ -30,12 +30,14 @@ See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migrat
 To start migrating settings, run:
 
 ```bash
-bin/magento migrate:settings [-r|--reset] {<path to config.xml>}
+bin/magento migrate:settings [-r|--reset] [-a|--auto] {<path to config.xml>}
 ```
 
 where:
 
 *  `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
+
+*  `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 *  `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 

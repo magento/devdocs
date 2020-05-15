@@ -19,6 +19,8 @@ This topic describes how to change the Apache [docroot]({{ page.baseurl }}/insta
 {:.bs-callout-warning}
 If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
 
+{% include install/web/deprecated.md %}
+
 ## A note about nginx
 
 If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
