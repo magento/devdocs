@@ -133,6 +133,14 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Elasticsearch HTTP Password | `catalog/search/elasticsearch_password` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
+### Inventory sensitive and system-specific paths
+
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Inventory**.
+
+| Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|--------------|--------------|--------------|--------------|--------------|--------------|
+| Google API key | `cataloginventory/source_selection_distance_based_google/api_key` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}/common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+
 ### XML sitemap sensitive and system-specific paths
 
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
