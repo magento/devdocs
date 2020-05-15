@@ -276,6 +276,9 @@ Notify for Quantity Below | `cataloginventory/item_options/notify_stock_qty` | <
 Enable Qty Increments | `cataloginventory/item_options/enable_qty_increments` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Qty Increments | `cataloginventory/item_options/qty_increments` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Automatically Return Credit Memo Item to Stock | `cataloginventory/item_options/auto_return` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Provider | `cataloginventory/source_selection_distance_based/provider` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
+Computation mode | `cataloginventory/source_selection_distance_based_google/mode` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
+Value | `cataloginventory/source_selection_distance_based_google/value` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 
 ### Visual Merchandiser paths
 
