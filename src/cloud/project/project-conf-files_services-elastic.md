@@ -179,7 +179,7 @@ If you need to restart the [Elasticsearch](https://www.elastic.co) service, you 
 
 ### Elasticsearch plugins
 
-Optionally, you can add Elasticsearch plugins by adding the `configuration:plugins` section to the `.magento/services.yaml` file. For example, the following code enables the ICU analysis plugin and Python script support plugins.
+Optionally, you can add Elasticsearch plugins by adding the `configuration:plugins` section to the `.magento/services.yaml` file. For example, the following code enables the ICU analysis and Phonetic analysis plugins.
 
 ```yaml
 elasticsearch:
@@ -188,7 +188,7 @@ elasticsearch:
     configuration:
         plugins:
             - analysis-icu
-            - lang-python
+            - analysis-phonetic
 ```
 
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
