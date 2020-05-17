@@ -43,7 +43,7 @@ For details about adding a custom preprocessor, see [Add custom CSS preprocessor
 
 1. Add the gulp-sass package for the Sass preprocessor by running the following command:
 
-   `npm install gulp-sass`
+   `npm install --prefer-offline --no-audit --no-optional gulp-sass`
 
 ## Create a theme and add Sass styles
 

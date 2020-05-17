@@ -21,7 +21,7 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
 ```bash
-npm install
+npm install --prefer-offline --no-audit --no-optional
 ```
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
@@ -248,7 +248,7 @@ Warning: Task "spec" not found. Use --force to continue.
 1. Remove `package.json`, `Gruntfile.js`.
 1. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
 1. Delete the `node_modules` directory.
-1. Run `npm install` in your terminal.
+1. Run `npm install --prefer-offline --no-audit --no-optional` in your terminal.
 
 ### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
 
@@ -271,7 +271,7 @@ cd <magento_root>/node_modules/grunt-contrib-jasmine
 ```
 
 ```bash
-npm install
+npm install --prefer-offline --no-audit --no-optional
 ```
 
 <!-- LINK DEFINITIONS -->

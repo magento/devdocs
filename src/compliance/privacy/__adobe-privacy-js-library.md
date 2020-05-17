@@ -15,7 +15,7 @@ Use this library to retrieve and remove the data stored in the browser by these 
 
 Use one of the following methods to download the library file:
 
--  npm: `npm install @adobe/adobe-privacy`
+-  npm: `npm install --prefer-offline --no-audit --no-optional @adobe/adobe-privacy`
 -  GitHub: <https://github.com/Adobe-Marketing-Cloud/adobe-privacy>
 
 After you have the file, you will need to add it to a custom module or theme installed in your Magento instance.

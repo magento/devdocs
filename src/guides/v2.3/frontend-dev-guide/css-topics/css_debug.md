@@ -37,7 +37,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
    ```
 
    ```bash
-   npm install
+   npm install --prefer-offline --no-audit --no-optional
    ```
 
    ```bash

@@ -260,7 +260,7 @@ dependencies:
 hooks:
     build: |
         cd public/profiles/project_name/themes/custom/theme_name
-        npm install
+        npm install --prefer-offline --no-audit --no-optional
         grunt
         cd
         php ./vendor/bin/ece-tools build

@@ -41,7 +41,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
    ```
 
    ```bash
-   npm install
+   npm install --prefer-offline --no-audit --no-optional
    ```
 
    ```bash
