@@ -86,6 +86,7 @@ pages:
 
         - label: Upgrade using the custom script
           url: /comp-mgr/cli/upgrade-with-script.html
+          exclude_versions: ["2.4"]
           
         - label: Upgrade using the Composer plugin
           url: /comp-mgr/cli/upgrade-with-plugin.html
