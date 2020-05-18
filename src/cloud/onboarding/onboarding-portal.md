@@ -82,4 +82,5 @@ The technical admin, technical users, developers, and others can directly access
 When you are ready to launch your sites and stores, work through Launch options:
 
 *  **UAT Checklist**: A high-level checklist for verifying Magento features and your configured settings, extensions, products, and more. You can follow this checklist along with the [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) information.
-*  **Site Launch**: A high-level checklist for your initial "go live". After completing the checklist, you can enter Live Site Configuration information to enter a Submit a Support ticket. You can follow this checklist along with the [Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) information.
+
+*  **Site Launch**: A high-level checklist for your initial "go live". After completing the checklist, you can enter Live Site Configuration information to enter a Submit a Support ticket. You can follow this checklist along with the [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html) information.
