@@ -44,20 +44,20 @@ To install and configure `php-fpm`:
 1. Install `php-fpm` and `php-cli`:
 
    ```bash
-   apt-get -y install php7.2-fpm php7.2-cli
+   apt-get -y install php7.3-fpm php7.3-cli
    ```
 
    {:.bs-callout-info}
-   This command installs the latest available version of PHP 7.2.X. See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
+   This command installs the latest available version of PHP 7.3.X. See [Magento 2.4.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for supported PHP versions.
 
 1. Open the `php.ini` files in an editor:
 
    ```bash
-   vim /etc/php/7.2/fpm/php.ini
+   vim /etc/php/7.3/fpm/php.ini
    ```
 
    ```bash
-   vim /etc/php/7.2/cli/php.ini
+   vim /etc/php/7.3/cli/php.ini
    ```
 
 1. Edit both files to match the following lines:
@@ -76,7 +76,7 @@ To install and configure `php-fpm`:
 1. Restart the `php-fpm` service:
 
    ```bash
-   systemctl restart php7.2-fpm
+   systemctl restart php7.3-fpm
    ```
 
 ### Install and configure MySQL
@@ -93,7 +93,7 @@ There are several ways to download the Magento software, including:
 
 *  [Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
-For this example, we'll install using Composer and the command line.
+For this example, we will install using Composer and the command line.
 
 {:.bs-callout-info}
 You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.

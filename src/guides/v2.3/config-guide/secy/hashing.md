@@ -3,7 +3,7 @@ group: configuration-guide
 title: Password hashing
 ---
 
-Currently Magento uses its own strategy for password hashing, based on different native PHP hashing algorithms. Magento supports multiple algorithms like `MD5`, `SHA256`, or `Argon 2ID13`. If the Sodium extension is installed (installed by default in PHP 7.2), then `Argon 2ID13` will be chosen as the default hashing algorithm. Otherwise, `SHA256` will be as default. As Magento still supports PHP 7.1.x, we cannot use the native PHP `password_hash` function with Argon 2i algorithm support, which was added in the PHP 7.2 release.
+Currently Magento uses its own strategy for password hashing, based on different native PHP hashing algorithms. Magento supports multiple algorithms like `MD5`, `SHA256`, or `Argon 2ID13`. If the Sodium extension is installed (installed by default in PHP 7.3), then `Argon 2ID13` will be chosen as the default hashing algorithm. Otherwise, `SHA256` will be as default. Magento can use the native PHP `password_hash` function with Argon 2i algorithm support.
 
 To avoid compromising older passwords that have been hashed with outdated algorithms like `MD5`, the current implementation provides a method to upgrade the hash without changing the original password. In general, the password hash has the following format:
 
@@ -52,4 +52,4 @@ Since Magento stores all used password hashes versions together with the passwor
 
 ## Implementation
 
-The `\Magento\Framework\Encryption\Encryptor` class is responsible for password hash generation and verification. The [`bin/magento customer:hash:upgrade`](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html#customerhashupgrade) command upgrades a customer password hash to the latest hash algorithm.
+The `\Magento\Framework\Encryption\Encryptor` class is responsible for password hash generation and verification. The [`bin/magento customer:hash:upgrade`](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html#customerhashupgrade) command upgrades a customer password hash to the latest hash algorithm.
