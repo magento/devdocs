@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/reference/customer.html
 ---
 
-The `customer` query returns information about the logged-in customer and store credit history.
+The `customer` query returns information about the logged-in customer, store credit history and customer's wishlist.
 
 To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
@@ -273,7 +273,7 @@ The `customer` object can contain the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [WishlistItem](#wishlistitem) | An array of items in the customer's wish list
+`items` | [[WishlistItem](#wishlistitem)] | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `id` | ID | The unique identifier of the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
