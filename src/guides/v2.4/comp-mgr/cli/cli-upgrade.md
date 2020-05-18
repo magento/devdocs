@@ -245,7 +245,7 @@ There are alternatives methods that automate parts of the upgrade process:
    We recommend using the script to upgrade if you have not made updates to the values that the script affects.
    If you previously made updates, do not upgrade using the script. The script will override your updates.
 1. [Upgrade using the custom Composer plugin][].
-   We created a [custom Composer plugin][] that enhances the semi-automated upgrade process.
+   We created a [custom Composer plugin][] to enhance the semi-automated upgrade process.
 
 The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
 
