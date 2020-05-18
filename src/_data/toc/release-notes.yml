@@ -50,6 +50,12 @@ pages:
       include_versions: ["2.4"]
       children:
   
+        - label: Magento Open Source 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-open-source.html
+
+        - label: Magento Commerce 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-commerce.html
+
     - label: Backward incompatible changes
       children:
 
