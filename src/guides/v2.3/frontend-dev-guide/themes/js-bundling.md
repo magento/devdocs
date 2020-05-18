@@ -43,6 +43,12 @@ JavaScript bundling does not work unless Magento is in [production mode][product
    bin/magento config:set dev/js/merge_files 0
    ```
 
+1. Finally need to clear cache:
+
+   ```bash
+   bin/magento cache:clean config
+   ```
+
    For example, when `Sign Static Files` is disabled (which is the default: `config:set dev/static/sign 0`), the URL to a static file might look like this: `/static/frontend/Magento/luma/en_US/mage/dataPost.js`. But when you enable the setting (`config:set dev/static/sign 1`), the same URL might look something like this: `static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js`, with a version number added as shown. The next time this file is updated (with `bin/magento setup:static-content:deploy`), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser's cache.
 
 ## How bundling works in Magento
