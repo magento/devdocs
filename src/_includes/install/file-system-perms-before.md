@@ -2,6 +2,8 @@
 
 This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.
 
+{% include install/web/deprecated.md %}
+
 The procedure you use is different, depending on whether you use [shared hosting](#perms-shared) and have one user or if you use a [private server](#perms-private) and have two users.
 
 {:.bs-callout-info}

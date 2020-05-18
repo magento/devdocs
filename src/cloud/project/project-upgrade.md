@@ -198,7 +198,7 @@ To verify and upgrade your extensions:
 
 1. Push to the Staging environment to test in a pre-production environment.
 
-We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your go-live process.
+We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your site launch process.
 
 {:.bs-callout-info}
 When you upgrade your Magento version, the upgrade process updates to the latest version of the [Fastly CDN module for Magento 2] automatically.

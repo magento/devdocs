@@ -20,6 +20,8 @@ Check the availability of exciting new features and releases, and learn how you 
 
 Consult the following table for getting started with installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 
+{% include install/web/deprecated.md %}
+
 <table>
     <tbody>
         <tr>
