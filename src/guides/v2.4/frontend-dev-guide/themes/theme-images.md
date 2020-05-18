@@ -184,3 +184,19 @@ public function getBreakpoints()
 
  {:.bs-callout-info}
 Variables may be used within the scope of modules than the defined one.
+
+### Image lazy loading {#lazy_loading}
+
+While saving product, images are resized based on different properties including `frame` - variable `product_image_white_borders` in `view.xml`.
+By default, images have frames. It means that at first Magento generates a white frame of a needed size and then it allocates the image on it.
+If image is small, a white frame takes more space.
+
+Variable `product_image_white_borders` can be overwritten in a custom theme. If it is not defined in a custom theme, it's also set in `app/code/Magento/Catalog/etc/view.xml`.
+Variables defined in theme `view.xml` have higher priority. If there is the same variable in a module's and in a theme's `view.xml`, module's variable will be overwritten by a theme's one.
+
+If `frame` is enabled in configuration file, native image lazy loading is enabled on category product page, checkout shopping cart and customer wish list.
+If `frame` property is disabled, image lazy-loading is disabled too unless variable `enable_lazy_loading_for_images_without_borders` is enabled in `view.xml`.
+It is done to prevent small size images to be stretched and be distorted.
+
+So if you have images with frames, and you are sure your images are correctly sized, you can enable lazy-loading by setting `enable_lazy_loading_for_images_without_borders` to `1` in `view.xml`.
+
