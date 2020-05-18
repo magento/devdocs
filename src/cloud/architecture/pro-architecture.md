@@ -119,7 +119,7 @@ The three gateways map to the three servers in your Production environment clust
 
 ### Backup and disaster recovery
 
-Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
+Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS or Azure Availability Zones, each zone with a separate data center.
 
 In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
 incremental backups, which include the file system and the database, every hour for the last 24 hours of operation. After the

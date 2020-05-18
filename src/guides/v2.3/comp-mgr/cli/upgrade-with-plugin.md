@@ -10,9 +10,6 @@ functional_areas:
 {% capture ee %}{{site.data.var.ee}}{% endcapture %}
 -->
 
-{:.bs-callout-warning}
-This plugin is in beta. Do not use it on production. It only works with Composer version 1.8.0 or earlier. It is currently incompatible with Magento 2.3.5 or later.
-
 The [`magento/composer-root-update-plugin`][custom composer plugin] Composer plugin resolves changes that need to be made to the root project `composer.json` file before updating to a new Magento product requirement.
 
 Basically, this section repeats the manual upgrade scenario with the only exclusion that you are guided to install the plugin to resolve the dependency conflicts instead of fixing them manually.
@@ -30,7 +27,7 @@ Backup the existing `composer.json` file in the Magento installation directory.
 ## Install the plugin
 
 ```bash
-composer require magento/composer-root-update-plugin ~0.1 --no-update
+composer require magento/composer-root-update-plugin ~1.0 --no-update
 ```
 
 Update the dependencies:

@@ -12,7 +12,7 @@ Build and deploy scripts activate when you merge code to a remote environment.  
 
 The build and deploy process is slightly different for each plan:
 
--  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To go live, push `staging` to `master` to deploy to the Production environment. You have full access to all branches through the Project Web Interface and the CLI commands.
+-  **Starter plans**—For the Integration environment, every active branch builds and deploys to a full environment for access and testing. Fully test your code after merging to the `staging` branch. To launch your site, push `staging` to `master` to deploy to the Production environment. You have full access to all branches through the Project Web Interface and the CLI commands.
 
 -  **Pro plans**—For the Integration environment, every _active_ branch builds and deploys to a full environment for access and testing. You must merge your code to the `integration` branch before you can merge to the Staging environment and then the Production environment. You can merge to the Staging and Production environments using the Project Web Interface or using SSH and Magento Cloud CLI commands.
 
@@ -35,7 +35,7 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—defines how Magento processes an incoming URL.
 -  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
--  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
+-  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) Magento uses to configure your store. Magento generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the Magento application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}
 
@@ -254,4 +254,4 @@ With an understanding of the process, we provide the following instructions for 
 -  [Prepare to deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 -  [Deploy code and data]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html)
 -  [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html)
--  [Go live and launch]({{ site.baseurl }}/cloud/live/live.html)
+-  [Site launch]({{ site.baseurl }}/cloud/live/live.html)

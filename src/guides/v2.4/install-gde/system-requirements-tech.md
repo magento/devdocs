@@ -118,7 +118,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 ## Technologies Magento can use
 
 *  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
-*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 4.x, 5.2 or 6.2
+*  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
 
 *  RabbitMQ 3.8.x (compatible with 2.0 and later)
 

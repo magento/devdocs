@@ -128,6 +128,8 @@ For a full description of the CLI install options, refer to [Install the Magento
 
 ### Web Setup Wizard
 
+{% include install/web/deprecated.md %}
+
 As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
 
 ```terminal
