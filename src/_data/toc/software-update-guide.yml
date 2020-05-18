@@ -84,10 +84,10 @@ pages:
       url: /comp-mgr/cli/cli-upgrade.html
       children:
 
-        - label: (Optional) Upgrade using the custom script
+        - label: Upgrade using the custom script
           url: /comp-mgr/cli/upgrade-with-script.html
           
-        - label: (Experimental) Upgrade using the composer plugin
+        - label: Upgrade using the Composer plugin
           url: /comp-mgr/cli/upgrade-with-plugin.html
 
         - label: Upgrade with sample data
