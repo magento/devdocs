@@ -17,6 +17,8 @@ This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]
 
 Errors similar to the following display when you run the Web Setup Wizard:
 
+{% include install/web/deprecated.md %}
+
 ```terminal
 Magento\Framework\Exception
  Command returned non-zero exit code:
