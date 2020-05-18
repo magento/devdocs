@@ -70,6 +70,18 @@ To bypass Fastly and submit requests to the origin server:
  {:.bs-callout-info}
 Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment][] in the Fastly CDN module for Magento 2 documentation.
 
+### A large number of graphql interface requests will cause a 403 error
+
+Please bypass WAF for GraphQL requests:
+1. Create a new custom VCL snippet https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md
+2. Set type: recv, priority: 15
+
+3. Configure VCL to bypass WAF processing:
+```
+if (req.url.path ~ "^/graphql") {
+    set req.http.bypasswaf = "1";
+}
+```
 <!-- Link definitions -->
 
 [Create Fastly Bypass VCL snippet]: {{ site.baseurl }}/common/images/cloud/cloud-fastly-create-bypass-snippet.png
