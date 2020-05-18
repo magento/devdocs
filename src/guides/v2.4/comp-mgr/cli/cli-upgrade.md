@@ -239,18 +239,10 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 ## Alternatives
 
-There are alternatives methods that automate parts of the upgrade process:
-
-1. [Upgrade using the script][] (semi-automated process)
-   Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
-   If you previously made updates, do not upgrade using the script. The script will override your updates.
-1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
-   We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
-
-The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
+Instead of manually upgrading Magento, try using our [custom Composer plugin][]. This plugin automates parts of the upgrade process. See [Upgrade using the custom Composer plugin].
 
 {:.bs-callout-warning}
-All scenarios require that you comply with the [Prerequisites].
+You must comply with the [Prerequisites].
 
 <!-- Link definitions -->
 
@@ -264,7 +256,6 @@ All scenarios require that you comply with the [Prerequisites].
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
-[Upgrade using the custom composer plugin]: upgrade-with-plugin.html
-[Upgrade using the script]: upgrade-with-script.html
+[Upgrade using the custom Composer plugin]: upgrade-with-plugin.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [Check the catalog search engine]: {{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html
