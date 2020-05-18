@@ -43,7 +43,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
    bin/magento config:set dev/js/merge_files 0
    ```
 
-1. Finally need to clear cache:
+1. Finally, clear the cache:
 
    ```bash
    bin/magento cache:clean config
