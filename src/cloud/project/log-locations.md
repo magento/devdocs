@@ -19,8 +19,10 @@ When you configure your Cloud environment, you can [set up log-based Slack and e
 
 There are three ways to view logs: file system, project web UI, or the `magento-cloud` CLI.
 
--  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster.
+-  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
+
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
 ### Log command
@@ -132,7 +134,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 
 ## Service logs
 
-Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Staging and Production environments:
+Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
 -  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`
