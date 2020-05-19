@@ -133,7 +133,7 @@ You can add project-level and environment-level users from the Project Web UI, a
 
    ![Configure the project]({{ site.baseurl }}/common/images/cloud/cloud_project_gear.png){:width="184px"}
 
-1. In the right pane, click **Add User**.
+1. In the _Users_ tab, click **Add User**.
 
    ![Start creating users]({{ site.baseurl }}/common/images/cloud/cloud_project-config.png){:width="500px"}
 

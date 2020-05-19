@@ -12,7 +12,7 @@ redirect_from:
 
 After your company purchases a {{site.data.var.ece}} subscription, initial project and code access is available only to the person designated as the License Owner (Account Owner).
 
-The _License Owner_  is the person in your business or finance organization that manages payments and other business-related issues for the {{site.data.var.ece}} account. This person serves as the point of contact with Magento.
+The _License Owner_ is the person in your business or finance organization that manages payments and other business-related issues for the {{site.data.var.ece}} account. This person serves as the point of contact with Magento.
 
 To quickly onboard your project, so you can begin developing your site for live deployment, you must complete specific set up steps and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with set up, customization, and development work.
 
@@ -25,11 +25,11 @@ Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales][]. We wi
 
 The person who signs up for a {{site.data.var.ece}} account is referred to as the _License Owner_.
 
-## Your welcome e-mail {#email}
+## Your welcome email {#email}
 
 Magento sends a welcome email to the License Owner using the address that was provided during the sign up process. The email contains a link to access your {{site.data.var.ece}} project so you can complete initial project set up.
 
-You can also access your project by [logging in to your account][your {{site.data.var.ece}} account].
+You can access your project by logging in to [your {{site.data.var.ece}} account][].
 
 ## Cloud Project portal
 
@@ -45,7 +45,7 @@ Use the {{site.data.var.ece}} Project Portal (Onboarding UI) to help project adm
 
 1. Log in to [your {{site.data.var.ece}} account][].
 
-1. On the My Account page, click the Magento tab to see the projects in your account.
+1. On the _My Account_ page, click the Magento tab to see the projects in your account.
 
 1. **Click View Project Page** in the [Projects section][].
 
