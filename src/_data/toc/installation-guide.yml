@@ -307,6 +307,8 @@ pages:
 
             - label: Installation dependencies not met
               url: /install-gde/trouble/tshoot_install_depend.html
+              include_versions: ["2.3"]
+
 
     - label: How Tos
       children:

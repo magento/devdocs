@@ -5,6 +5,8 @@ title: Introduction to Composer
 
 {% include install/composer-overview.md %}
 
+{% include install/web/deprecated.md %}
+
 ## Links to Magento code
 The key to developing any [Magento component](https://glossary.magento.com/magento-component) is its [`composer.json`](https://getcomposer.org/doc/04-schema.md){:target="_blank"}, which specifies version and dependency information for a component, among other things. You can look at Magento 2 code, such as:
 
