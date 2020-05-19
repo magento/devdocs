@@ -14,7 +14,7 @@ After your company purchases a {{site.data.var.ece}} subscription, initial proje
 
 The _License Owner_ is the person in your business or finance organization that manages payments and other business-related issues for the {{site.data.var.ece}} account. This person serves as the point of contact with Magento.
 
-To quickly onboard your project, so you can begin developing your site for live deployment, you must complete specific set up steps and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with set up, customization, and development work.
+To quickly onboard your project, so you can begin developing your site for live deployment, you must complete required setup and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with set up, customization, and development work.
 
 {:.bs-callout-info}
 If you need to change the License owner on your account, you must submit a Magento Support ticket.
@@ -80,7 +80,7 @@ You can use the Project Web Interface to manage your project, add user accounts,
 
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png)
 
-For details, see [Project Web Interface][].
+See [Project Web Interface][].
 
 ## Access your Magento Admin panel {#admin}
 
