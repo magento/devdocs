@@ -97,13 +97,13 @@ The Pro plan Production and Staging environments include three nodes that you ca
 -  Load balancer URLs:
 
    -  `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-   -  `http[s]:/staging.<your domain>.c.<project ID>.ent.magento.cloud`
+   -  `http[s]://<your staging domain name>.c.<project ID>.ent.magento.cloud`
 
 -  Direct access to one of the three redundant servers:
 
    -  `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
-   -  `http[s]://staging.<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
-
+   -  `http[s]://<your staging domain name>.{1|2|3}.<project ID>.ent.magento.cloud`
+  
    The production URL is used by the content delivery network (CDN).
 
 If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.
