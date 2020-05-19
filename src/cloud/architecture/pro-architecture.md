@@ -67,7 +67,7 @@ The following table summarizes the differences between environments:
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture-wings.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.png)
 
 ## Integration environment {#cloud-arch-int}
 
@@ -91,7 +91,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment, which is hosted on dedicated IaaS hardware, includes all services, such as Fastly CDN, New Relic APM, and search.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
