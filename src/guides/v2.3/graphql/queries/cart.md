@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: cart query
+redirect_from:
+  - /guides/v2.3/graphql/reference/quote.html
 ---
 
 Use the `cart` query to retrieve information about a particular cart.
@@ -665,9 +667,8 @@ The `CartAddressRegion` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String | The state or province code
-`label` | String | The display label for the region
-`region_id` | Int | The unique ID for a pre-defined region
+`code` | String! | The state or province code
+`label` | String! | The display label for the region
 
 ### CartDiscount object {#CartDiscount}
 
