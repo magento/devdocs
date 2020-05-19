@@ -23,7 +23,7 @@ Attribute |  Data Type | Description
 `postcode` | String | The customer's ZIP or postal code
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `region` | [CustomerAddressRegion](#customerAddressRegionOutput) | An object that defines the customer's state or province
-`region_id` | Int | Deprecated. Use `region` instead. A number that uniquely identifies the state, province, or other area
+`region_id` | Int | The unique ID for a pre-defined region
 `street` | [String] | An array of strings that define the street number and name
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
@@ -46,4 +46,4 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `region` | String | The state or province name
 `region_code` | String | The address region code
-`region_id` | Int | Deprecated. Use `region` instead. Uniquely identifies the region
+`region_id` | Int | The unique ID for a pre-defined region
