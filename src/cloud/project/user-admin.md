@@ -64,7 +64,8 @@ Available commands:
 
 The following examples show how to add a user and configure the project and environment-level role, and how to how to modify project assignments and assigned user roles.
 
-### Add a user and assign roles
+{:.procedure}
+Add a user and assign roles:
 
 1. Add the user:
 
@@ -107,9 +108,10 @@ To list the available `magento-cloud` CLI commands, use the `magento-cloud list`
 
 ## Manage users from the Project Web UI {#cloud-user-webinterface}
 
-You can add project-level and environment-level users from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.
+You can add project-level and environment-level users from the Project Web UI, and use the _Edit_ feature to modify permissions for an existing user.  After you add a user, the user receives an email inviting them to join the {{site.data.var.ece}} project with instructions for account registration and email verification.
 
-### Open the Project Web UI
+{:.procedure}
+Access the Project Web UI to add users:
 
 1. Log in to [your {{site.data.var.ece}} account][].
 
@@ -125,11 +127,10 @@ You can add project-level and environment-level users from the Project Web UI, a
 
 1. In the Project Web UI, add project-level users and environment-level users as needed.
 
-   When you add the user, the user receives an email inviting them to join the {{site.data.var.ece}} project with instructions for account registration and email verification.
+{:.procedure}
+Add a project-level user:
 
-### Add a project-level user
-
-1. Click the configure project gear icon next to project name in the top navigation bar.
+1. In the Project Web UI, click the configure project gear icon next to project name in the top navigation bar.
 
    ![Configure the project]({{ site.baseurl }}/common/images/cloud/cloud_project_gear.png){:width="184px"}
 
@@ -154,9 +155,10 @@ You can add project-level and environment-level users from the Project Web UI, a
    {:.bs-callout-warning}
    After you add project-level users, you must redeploy all environments to apply the changes. To trigger a redeploy, you need to push a new commit to the environment.
 
-### Add an environment-level user
+{:.procedure}
+Add an environment-level user:
 
-1. Select the environment, then click the configure environment settings icon next to the environment name.
+1. In the Project Web UI, select the environment, and then click the configure environment settings icon next to the environment name.
 
    ![Configure the environment]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="550px"}
 

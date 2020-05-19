@@ -14,24 +14,24 @@ After your company purchases a {{site.data.var.ece}} subscription, initial proje
 
 The _License Owner_ is the person in your business or finance organization that manages payments and other business-related issues for the {{site.data.var.ece}} account. This person serves as the point of contact with Magento.
 
-To quickly onboard your project, so you can begin developing your site for live deployment, you must complete required setup and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with set up, customization, and development work.
+To quickly onboard your project, so you can begin developing your site for live deployment, you must complete required setup and onboarding tasks. Typically, the License Owner begins the process by securing Admin access and creating Technical Admin users that can help with setup, customization, and development work.
 
 {:.bs-callout-info}
 If you need to change the License owner on your account, you must submit a Magento Support ticket.
 
 ## Sign up for a Cloud account {#cloud-first-acct}
 
-Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales][]. We will create your account and send you a welcome email that provides instructions to access the project.
+If you do not have a {{site.data.var.ece}} account, contact [Magento Sales][]. We will create your account and send you a welcome email that provides instructions to access the project.
 
 The person who signs up for a {{site.data.var.ece}} account is referred to as the _License Owner_.
 
 ## Your welcome email {#email}
 
-Magento sends a welcome email to the License Owner using the address that was provided during the sign up process. The email contains a link to access your {{site.data.var.ece}} project so you can complete initial project set up.
+Magento sends a welcome email to the License Owner using the address that was provided during the sign up process. The email contains a link to access your {{site.data.var.ece}} project so you can complete initial project setup.
 
 You can access your project by logging in to [your {{site.data.var.ece}} account][].
 
-## Cloud Project portal
+## Cloud Project portal (Onboarding UI)
 
 Use the {{site.data.var.ece}} Project Portal (Onboarding UI) to help project administrators, business users, and developers with the tasks required to develop, build, test, and launch your site.
 
@@ -49,7 +49,7 @@ Use the {{site.data.var.ece}} Project Portal (Onboarding UI) to help project adm
 
 1. **Click View Project Page** in the [Projects section][].
 
-1. Click the name of your project to open the Cloud project portal (Onboarding UI).
+1. Click the name of your project to open the Cloud Project portal (Onboarding UI).
 
    ![Cloud project portal]({{ site.baseurl }}/common/images/cloud/cloud_project-onboarding-ui.png){:width="650px"}
 
@@ -70,7 +70,7 @@ You can only add registered Magento users to your {{site.data.var.ece}} projects
 
 ### Set up shared account access
 
-The License owner can set up shared access for the Magento account. Shared access allows trusted employees and service providers to use the Magento Help center to submit and track Support tickets related to your {{site.var.data.ece}} projects. For set up instructions, see the [Shared Access][] article in the Magento Help Center.
+The License owner can set up shared access for the Magento account. Shared access allows trusted employees and service providers to use the Magento Help center to submit and track Support tickets related to your {{site.var.data.ece}} projects. For setup instructions, see the [Shared Access][] article in the Magento Help Center.
 
 ## Get started with the Project Web Interface {#project-setup}
 
@@ -84,7 +84,7 @@ See [Project Web Interface][].
 
 ## Access your Magento Admin panel {#admin}
 
-Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
+Users that have administrative access to the Admin panel can add users, configure store services, complete store setup and customization work, and more.
 
 For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the License Owner account. The default username for this account is the License Owner email address.
 
@@ -105,7 +105,7 @@ Get updates about {{site.data.var.ece}} platform environments and related servic
 
 The page lists current status for all {{site.data.var.ece}} components and services followed by notifications about incident reports, service upgrades, planned outages, and more. These notifications are ordered by date.
 
-![All status on the page]({{ site.baseurl }}/common/images/cloud/cloud_status.png)
+![All status on the page]({{ site.baseurl }}/common/images/cloud/cloud_status.png){:width="650px"}
 
 Anyone working on your project can subscribe to the {{site.data.var.ece}} status site to receive event notifications and updates through email. You can customize your subscription to select only the platform and services that you want to track. Sign up from the [Subscription page][].
 
