@@ -92,10 +92,17 @@ To access an environment store and admin, select a branch and click **Access Sit
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png)
 
-The Pro plan Production environment includes three nodes that you can access using the following links:
+The Pro plan Production and Staging environments include three nodes that you can access using the following links:
 
--  Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
--  Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+-  Load balancer URLs:
+
+   -  `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+   -  `http[s]:/staging.<your domain>.c.<project ID>.ent.magento.cloud`
+
+-  Direct access to one of the three redundant servers:
+
+   -  `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+   -  `http[s]://staging.<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
    The production URL is used by the content delivery network (CDN).
 
