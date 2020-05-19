@@ -6,7 +6,7 @@ functional_areas:
   - Testing
   
 redirect_from:
-  - /common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf
+  - https://devdocs.magento.com/common/pdf/magento-commerce-cloud-prelaunch-checklist.pdf
   - /cloud/live/go-live-checklist.html
 ---
 
