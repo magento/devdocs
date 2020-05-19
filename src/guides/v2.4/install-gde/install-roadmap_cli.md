@@ -5,7 +5,7 @@ functional_areas:
   - Install
   - System
   - Setup
-redirect_from: /guides/v2.3/install-gde/install-roadmap_web.html
+redirect_from: /guides/v2.4/install-gde/install-roadmap_web.html
 ---
 
 This roadmap provides a reference for the installation process. Refer to this topic at any time to move back and forth through the stages of installation.

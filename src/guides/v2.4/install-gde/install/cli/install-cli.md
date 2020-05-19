@@ -7,9 +7,6 @@ functional_areas:
   - Setup
 redirect_from:
   - /guides/v2.4/install-gde/install/web/install-web-configure-catalog-search.html
-  - /guides/v2.4/install-gde/install/web/install-web-sample-data-clone.html
-  - /guides/v2.4/install-gde/install/web/install-web-sample-data-composer.html
-  - /guides/v2.4/install-gde/install/web/install-web-sample-data.html
   - /guides/v2.4/install-gde/install/web/install-web.html
   - /guides/v2.4/install-gde/install/web/install-web_1-readiness.html
   - /guides/v2.4/install-gde/install/web/install-web_2-db.html

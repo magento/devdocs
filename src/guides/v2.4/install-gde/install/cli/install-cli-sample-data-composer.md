@@ -5,7 +5,7 @@ functional_areas:
   - Install
   - System
   - Setup
-redireect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data-composer.html
+redirect_from: /guides/v2.4/install-gde/install/web/install-web-sample-data-composer.html
 ---
 
 {% include install/sampledata/sample-data-composer.md %}
