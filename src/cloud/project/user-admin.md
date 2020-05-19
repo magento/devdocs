@@ -153,7 +153,7 @@ Add a project-level user:
 1. Click **Add User**.
 
    {:.bs-callout-warning}
-   After you add project-level users, you must redeploy all environments to apply the changes. To trigger a redeploy, you need to push a new commit to the environment.
+   After you add project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
 
 {:.procedure}
 Add an environment-level user:
