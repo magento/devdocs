@@ -113,7 +113,7 @@ If the apex domain and subdomains for your {{ site.data.var.ece }} project are a
 
 -  Update the apex and subdomain configuration on the existing Fastly account. See [Multiple Fastly accounts and assigned domains]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#domain).
 
--  [Enable and configure Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ site.baseurl }}/cloud/live/go-live-checklist.html#dns) for your project environment.
+-  [Enable and configure Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-config) and complete the [DNS configuration]({{ site.baseurl }}/cloud/live/site-launch-checklist.html#dns) for your project environment.
 
 ## Verify or debug Fastly services
 
@@ -155,12 +155,14 @@ If the headers do not have the correct values, see the following information:
 
 ### Bypass Fastly to check Staging and Production sites {#cloud-test-stage}
 
-If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.
+If the Fastly service returns incorrect headers, you can create a VCL snippet that allows you to submit a Fastly API request directly to the origin server from a specified IP address, bypassing the Fastly CDN service. See [Bypass Fastly]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html).
+
+After you add the VCL snippet, you can use cURL commands to submit requests to the origin from the specified IP address.
 
 {:.procedure}
 To check the response headers:
 
-1. To get the response data, submit an API request the origin server:
+1. To get the response data, submit an API request to the origin server:
 
    -  **Staging**
 
@@ -268,7 +270,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 -  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ site.baseurl }}/cloud/howtos/install-components.html).
 
-   If you use [Configuration Management]({{site.baseurl}}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
+   If you use [Configuration Management]({{site.baseurl}}/cloud/live/sens-data-over.html), check the Fastly CDN module status in the `app/etc/config.php` configuration file before you push changes to the Production or Staging environment.
 
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 

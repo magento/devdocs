@@ -270,12 +270,16 @@ pages:
               url: /cloud/cdn/fastly-vcl-badreferer.html
               versionless: true
 
-            - label: Custom VCL for IP allow list
+            - label: IP allow list
               url: /cloud/cdn/fastly-vcl-whitelist.html
               versionless: true
 
-            - label: Custom VCL for IP block list
+            - label: IP block list
               url: /cloud/cdn/fastly-vcl-blocking.html
+              versionless: true
+
+            - label: Bypass Fastly
+              url: /cloud/cdn/fastly-vcl-bypass-to-origin.html
               versionless: true
 
         - label: Fastly troubleshooting
@@ -487,11 +491,11 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-    - label: Go live and launch
+    - label: Site launch
       url: /cloud/live/live.html
       versionless: true
       children:
-        - label: Go live checklist
+        - label: Launch checklist
           url: /cloud/live/go-live-checklist.html
           versionless: true
 

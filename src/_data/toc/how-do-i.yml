@@ -1,0 +1,57 @@
+label: Customization tutorials
+pages:
+  - label: Customize product creation form
+    children:
+
+      - label: Initial tasks
+        url: /howdoi/customize_product.html
+
+      - label: Customize the form configuration
+        url: /howdoi/customize-form-configuration.html
+
+      - label: Customize using a modifier class
+        url: /howdoi/customize-modifier-class.html
+
+  - label: Customize checkout
+    children:
+      - label: Initial tasks
+        url: /howdoi/checkout/checkout_overview.html
+
+      - label: Add a new checkout step
+        url: /howdoi/checkout/checkout_new_step.html
+
+      - label: Customize the view of a checkout step
+        url: /howdoi/checkout/checkout_customize.html
+
+      - label: Add a custom payment method to checkout
+        url: /howdoi/checkout/checkout_payment.html
+
+      - label: Add custom validations before order placement
+        url: /howdoi/checkout/checkout_order.html
+
+      - label: Add a custom shipping carrier
+        url: /howdoi/checkout/checkout-add-custom-carrier.html
+
+      - label: Add custom shipping carrier validations
+        url: /howdoi/checkout/checkout_carrier.html
+
+      - label: Add a custom input mask for ZIP code
+        url: /howdoi/checkout/checkout_zip.html
+
+      - label: Add a custom template for a form field on Checkout page
+        url: /howdoi/checkout/checkout_edit_form.html
+
+      - label: Add a new input form to checkout
+        url: /howdoi/checkout/checkout_form.html
+
+      - label: Add a new field in address form
+        url: /howdoi/checkout/checkout_new_field.html
+
+      - label: Add a custom shipping address renderer
+        url: /howdoi/checkout/checkout_address.html
+
+      - label: Add custom fields that influence other Checkout fields
+        url: /howdoi/checkout/checkout_custom_checkbox.html
+
+      - label: Customize the list of shipping methods
+        url: /howdoi/checkout/checkout_shipping_methods.html
