@@ -41,7 +41,8 @@ Use the {{site.data.var.ece}} Project Portal (Onboarding UI) to help project adm
 -  Provide your developer with a getting started workflow to set up their local development environments and begin developing
 -  Complete a quick user acceptance test (UAT) checklist with links to further tests
 
-**Open the Magento Project Portal:**
+{:.procedure}
+To open the Cloud Project portal:
 
 1. Log in to [your {{site.data.var.ece}} account][].
 
