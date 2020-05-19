@@ -135,6 +135,7 @@ pages:
           url: /install-gde/continue-to-install.html
 
     - label: Setup Wizard Install
+      include_versions: ["2.3"]
       children:
         - label: Installation roadmap (reference)
           url: /install-gde/install-roadmap_web.html
@@ -171,33 +172,9 @@ pages:
             - label: Step 6. Install
               url: /install-gde/install/web/install-web_6-install.html
 
-        - label: Setup Wizard installation
-          url: /install-gde/install/web/install-web.html
-          exclude_versions: ["2.3"]
-          children:
-            - label: Step 1. Readiness check
-              url: /install-gde/install/web/install-web_1-readiness.html
-
-            - label: Step 2. Add a Database
-              url: /install-gde/install/web/install-web_2-db.html
-
-            - label: Step 3. Web Configuration
-              url: /install-gde/install/web/install-web_3-web-conf.html
-
-            - label: Step 4. Customize Your Store
-              url: /install-gde/install/web/install-web_4-customize-store.html
-
-            - label: Step 5. Configure Catalog Search
-              url: /install-gde/install/web/install-web-configure-catalog-search.html
-
-            - label: Step 6. Create Admin Account
-              url: /install-gde/install/web/install-web_5-create-admin.html
-
-            - label: Step 7. Install
-              url: /install-gde/install/web/install-web_6-install.html
-
         - label: Post-installation
           url: /install-gde/continue-to-verify.html
+          include_versions: ["2.3"]
 
     - label: Command Line Installation
       children:
