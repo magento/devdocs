@@ -49,10 +49,23 @@ php -m
 ```
 
 to see the list of installed modules. Verify that the listed extensions are installed.
-If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.4 modules can be added with:
+If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.3 modules can be added with:
 
 ```bash
- yum -y install php74u-pdo php74u-mysqlnd php74u-opcache php74u-xml php74u-gd php74u-devel php74u-mysql php74u-intl php74u-mbstring php74u-bcmath php74u-json php74u-iconv php74u-soap
+ yum -y install php73u
+ -pdo php73u
+ -mysqlnd php73u
+ -opcache php73u
+ -xml php73u
+ -gd php73u
+ -devel php73u
+ -mysql php73u
+ -intl php73u
+ -mbstring php73u
+ -bcmath php73u
+ -json php73u
+ -iconv php73u
+ -soap
 ```
 
 {:.bs-callout-info}
