@@ -62,7 +62,7 @@ To guarantee successful execution of all Magento instances without dumping data 
 
 #### ByteCode
 
-To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
+To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
 ```bash
   opcache.memory_consumption=512MB
@@ -113,7 +113,7 @@ Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apa
 
 This document does not provide in-depth MySQL tuning instructions because each store and environment is different, but we can make some general recommendations.
 
-There have been many improvements to MySQL 5.6 and 5.7. We are confident that MySQL is distributed with good default settings. The most critical settings are:
+There have been many improvements to MySQL 5.7.9 We are confident that MySQL is distributed with good default settings. The most critical settings are:
 
 Parameter | Default | Description
 --- | --- | ---
