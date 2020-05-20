@@ -65,6 +65,8 @@ The following table summarizes the differences between environments:
   </tbody>
 </table>
 
+## Pro environment architecture
+
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
 ![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.png)
