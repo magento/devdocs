@@ -60,6 +60,21 @@ The `updateCustomer` mutation returns the `CustomerOutput` object.
 
 {% include graphql/customer-output.md %}
 
+## Errors
+
+Error | Description
+--- | ---
+`"input" value should be specified` | The `input` argument is empty.
+`"Email" is not a valid email address.` | The value provided in the `input`.`email` argument has an invalid format.
+`A customer with the same email address already exists in an associated website.` | You can not set a new email to a current customer because a provided email already exists for another user.
+`Invalid date` | Incorrect value is provided in the `date_of_birth` argument.
+`Invalid login or password.` | Specified in the `password` argument customer password is incorrect.
+`Provide the current "password" to change "email".` | Specify a customer password to change an email in the `password` argument.
+`Required parameters are missing: First Name` | Customer first name can not have an empty value.
+`Required parameters are missing: Last Name` | Customer last name can not have an empty value.
+`The account is locked.` | You can not modify a locked customer account.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+
 ## Related topics
 
 *  [customer query]({{page.baseurl}}/graphql/queries/customer.html)
