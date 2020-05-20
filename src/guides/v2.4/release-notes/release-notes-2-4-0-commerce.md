@@ -5,7 +5,7 @@ title: Magento Commerce 2.4.0 Release Notes
 
 Magento Commerce 2.4.0 offers significant platform upgrades, substantial security changes, and performance improvements.
 
-This release includes over 200 functional fixes to the core product and over 30 security enhancements. It includes the resolution of over 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
+This release includes all the improvements to core quality that were included in Magento 2.3.5,  over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of  226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
 {:.bs-callout-info}
 
@@ -45,6 +45,12 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 30 security fixes and platform security improvements. Additional security enhancements include:
 
+*  **Two-factor authentication (2FA) is now enabled by default for the Magento Admin**. Admin users must first configure their 2FA before logging into the Admin through either the UI or an API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. <!--- MC-22631-->
+
+*  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
+
+*  **Data rendering for UI data providers is now disabled by default**. This removes an opportunity for malicious users to execute arbitrary JavaScript. <!--- MC-17356-->
+
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
@@ -52,28 +58,53 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 The following platform upgrades help enhance website security and performance:
 
-### Performance boosts
+*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. Installation of magento 2.4.x requires either PHP 7.4 or 7.3.
+
+*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
+
+*  **Elasticsearch 7.x support**. The latest Elasticsearch 7.x version is now the default catalog search engine for Magento Commerce and Open Source. Elasticsearch versions 2.x and 5.x have been deprecated and removed from the code. Elasticsearch v6.8 is still supported in Magento 2.4.0 (and 2.3.x).
+
+*  **MySQL 8.0 support**. Magneto 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database.
+
+*  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0.
+
+*  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251)  DevBlog post.
+
+*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!--- MC-31295—>
+
+*  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
 
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Catalog, Sales, PayPal, Elasticsearch, Import, CMS, and B2B.
+This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, Cart and Checkout, and B2B.
+
+*  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
+
+*  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release. By default, shoppers can use partial-word search for product names and SKUs, but merchants can extend this capability to custom product attributes by configuring the search_request.xml (catalog search configuration) file.
+
+*  **PayPal JavaScript SDK upgrade**. We’ve migrated the PayPal Express Checkout integration to the latest PayPal JavaScript SDK, an SDK that  automatically collects and passes needed risk parameters to PayPal. The behavior of the PayPal Express Checkout payment method remains unchanged. However, upgrading this SDK to the latest version let merchants access the latest features and security enhancements. <!--- MC-30962-->
+
+*  **Deprecation and removal of the Web Set Up Wizard**.
+
+### Adobe Stock Integration v2.0
+
+**Ability to license stock image previews from the Media Gallery**. Merchants can now find any Adobe Stock preview image in the Media Gallery, which reduces the number of steps required to license stock preview image.
+
+### Magento Media Gallery
+
+This replacement for the former Media Gallery offers a brand-new, searchable interface for Magento media assets. Administrators can now search, filter, and sort images up to 30x faster than they could in the earlier version of this feature. Merchants can use this tool to evaluate storefront image usage.
 
 ### Page Builder
 
-Page Builder enhancements for this release include:
+Page Builder now supports PHP 7.4, which brings it in line with the core product's PHP support.
 
 ### Inventory Management
 
-Inventory Management enhancements for this release include:
-
-See [Inventory Management release notes]({{page.baseurl}}/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
+Inventory Management enhancements for this release include support for in-store pickup and bundle product support. See [Inventory Management release notes]({{page.baseurl}}/inventory/release-notes.html) for a more detailed discussion of recent Inventory Management bug fixes.
 
 ### GraphQL
 
-With this release, you can now use
- in the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details.
-
-See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
+GraphQL enhancements include support for Inventory In-Store Pickup. See  the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this and other enhancements. See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
@@ -96,6 +127,18 @@ Magento’s Product Recommendations is a new marketing tool that merchants can u
 ### Vendor-developed extension enhancements
 
 This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
+
+### Magento Functional Testing Framework (MFTF)
+
+MFTF v3.0.0 includes these new features and includes support for PHP 7.4 and PHPUnit 9:
+
+*  MFTF helpers, which can create custom actions outside of the test framework
+*  schema updates for test entities
+*  sub-folders in test modules
+*  nested assertion syntax
+*  static check that checks and reports references to deprecated test entities
+
+This release also removes deprecated actions and upgrades scripts added to upgrade tests to MFTF major version requirements.
 
 #### Klarna
 
@@ -147,6 +190,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Frameworks
 
+*  Dependencies on Zend Framework have been migrated to the [Laminas project](https://getlaminas.org/about/foundation) to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated.
+
 ### JavaScript framework
 
 ### General fixes
@@ -172,6 +217,18 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 ### Newsletter
 
 ### Payment methods
+
+<!--- MC--->
+
+*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+
+<!--- MC--->
+
+*  The WorldPay payment integration with the Magento core has been deprecated. Please use the official Marketplace extension instead.
+
+<!--- MC--->
+
+*  The core implementation of Signifyd fraud protection is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on Magento Marketplace.
 
 ### Performance
 

@@ -5,7 +5,7 @@ title: Magento Open Source 2.4.0 Release Notes
 
 Magento Open Source 2.4.0 offers significant platform upgrades, substantial security changes, and performance improvements.
 
-This release includes over 200 functional fixes to the core product and over 30 security enhancements. It includes resolution of over 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements to Inventory Management and GraphQL.
+This release includes all the improvements to core quality that were included in Magento 2.3.5,  over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of  226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
 {:.bs-callout-info}
 
