@@ -23,7 +23,7 @@ Attribute | Type | Description
 `path_in_store` | String | Category path in the store
 `path` | String | The path to the category, as a string of category IDs, separated by slashes (/). For example, 1/2/20
 `position` | Int | The position of the category relative to other categories at the same level in tree
-`product_count` | Int | The number of products in the category
+`product_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
 `products(<attributes>)` | CategoryProducts | The list of products assigned to the category
 `updated_at` | String | Timestamp indicating when the category was updated
 `url_key` | String | The URL key assigned to the category
@@ -57,7 +57,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) for more information
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
-`total_count` | Int | The number of products returned
+`total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
 
 ### CmsBlock attributes
 
