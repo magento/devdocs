@@ -52,4 +52,4 @@ Since Magento stores all used password hashes versions together with the passwor
 
 ## Implementation
 
-The `\Magento\Framework\Encryption\Encryptor` class is responsible for password hash generation and verification. The [`bin/magento customer:hash:upgrade`](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html#customerhashupgrade) command upgrades a customer password hash to the latest hash algorithm.
+The `\Magento\Framework\Encryption\Encryptor` class is responsible for password hash generation and verification. The [`bin/magento customer:hash:upgrade`](https://devdocs.magento.com/guides/v2.3/reference/cli/magento.html#customerhashupgrade) command upgrades a customer password hash to the latest hash algorithm.
