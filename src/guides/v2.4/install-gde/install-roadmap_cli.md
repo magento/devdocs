@@ -30,7 +30,6 @@ Topics include:
 Topics include:
 
 *  [Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
-*  [Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 *  [Optional sample data]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html)
 
 ## Installation part 3: Post-installation

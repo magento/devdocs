@@ -26,7 +26,7 @@ When used in your server block that defines your site, the `nginx.conf.sample` c
     # /etc/nginx/sites-available/magento
 
     upstream fastcgi_backend {
-         server  unix:/run/php/php7.0-fpm.sock;
+         server  unix:/run/php/php7.4-fpm.sock;
      }
 
      server {
@@ -44,9 +44,10 @@ To complete this tutorial, you will need access to a working Magento installatio
 
 -  Linux
 -  Apache (2.2+)
--  MySQL (5.6+)
--  PHP (7.1.3+ or 7.2)
--  Magento (2.0+)
+-  MySQL (5.7+)
+-  PHP (7.3 or 7.4)
+-  Elasticsearch (7.x)
+-  Magento (2.3+)
 
 {:.bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.

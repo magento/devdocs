@@ -1,13 +1,6 @@
 ---
 group: installation-guide
 title: Install Magento using Composer
-redirect_from:
-  - guides/v2.3/install-gde/prereq/integrator_install.html
-  - guides/v2.3/install-gde/prereq/integrator_install_composer.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ce.html
-  - guides/v2.3/install-gde/prereq/integrator_install_ee.html
-  - guides/v2.3/release-notes/2.3.0-install.html
-  - guides/v2.3/release-notes/2.3.0-alpha-install.html
 functional_areas:
   - Install
   - System
@@ -55,18 +48,18 @@ To get the Magento metapackage:
 
 ### Example - Minor release
 
-Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.3.0 metapackage:
+Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.4.0 metapackage:
 
 ```bash
-composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.3.0 <install-directory-name>
+composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.4.0 <install-directory-name>
 ```
 
 ### Example - Quality patch
 
-Quality patches primarily contain functional _and_ security fixes. However, they can also sometimes contain new, backward-compatible features. Use Composer to download a quality patch. For example, to specify the {{site.data.var.ee}} 2.3.3 metapackage:
+Quality patches primarily contain functional _and_ security fixes. However, they can also sometimes contain new, backward-compatible features. Use Composer to download a quality patch. For example, to specify the {{site.data.var.ee}} 2.3.4 metapackage:
 
 ```bash
-composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.3.3 <install-directory-name>
+composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.3.4 <install-directory-name>
 ```
 
 ### Example - Security patch

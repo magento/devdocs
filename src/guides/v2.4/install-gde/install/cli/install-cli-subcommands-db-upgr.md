@@ -29,7 +29,7 @@ A Magento *component* can be a module, theme, or language pack; it doesn't matte
 1. Start the upgrade:
 
    ```bash
-    magento setup:upgrade [--keep-generated]
+    bin/magento setup:upgrade [--keep-generated]
     ```
 
     where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).

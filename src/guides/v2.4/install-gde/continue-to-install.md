@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: Z_continue
 title:
-menu_title: Next&mdash;Installation part 2, installing
-menu_node: parent
-menu_order: 1
 functional_areas:
   - Install
   - System
@@ -14,7 +10,7 @@ functional_areas:
 {:.bs-callout-tip}
 Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
-## Installation options: command line or Setup Wizard
+## Installation
 
 Now that you've installed prerequisites and taken the first steps (merchant, system integrator, or developer), you're ready to install the Magento software. You must use the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) to install Magento.
 

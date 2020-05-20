@@ -70,8 +70,6 @@ Alternatively, you can also download a [Magento software archive][].
 
 You must install the Magento software using the [command line][].
 
-### Command line installation
-
 {% collapsible Click to view the command-line installation %}
 
 The following example shows how to install using the command line with the following options:
