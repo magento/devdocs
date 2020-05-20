@@ -21,7 +21,7 @@ Merchants can now install time-sensitive security fixes without applying the hun
 
 For general information about security-only patches, see the Magento DevBlog post [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security-only patches (including patch 2.3.5-p2), see [Install Magento using Composer]({{page.baseurl}}/install-gde/composer.html). Security-only patches include security bug fixes only, not the additional security enhancements that are included in the full patch.
 
-With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
+With this quarterly release, we have changed how we describe these security issues. Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin.
 
 ## Other release information
 
@@ -39,7 +39,7 @@ This release includes the following security enhancements:
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues.
 
-With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an [Adobe Security bulletin](https://helpx.adobe.com/security/products/magento/apsb20-22.html).
+With the Magento 2.3.4 release, we changed how we describe these security issues.  Individual issues are no longer described in the Magento Security Center. Instead, these issues are documented in an Adobe Security bulletin.
 
 #### Security enhancements and fixes to core code
 
@@ -70,7 +70,7 @@ The following platform upgrades help enhance website security and performance:
 
 *  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251)  DevBlog post.
 
-*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!--- MC-31295—>
+*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!---MC-31295—>
 
 *  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
 
@@ -80,11 +80,33 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net, eWay, CyberSource, and Worldpay payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
 
-*  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release. By default, shoppers can use partial-word search for product names and SKUs, but merchants can extend this capability to custom product attributes by configuring the search_request.xml (catalog search configuration) file.
+*  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release. By default, shoppers can use partial-word search for product names and SKUs, but merchants can extend this capability to custom product attributes by configuring the `search_request.xml` (catalog search configuration) file.
 
 *  **PayPal JavaScript SDK upgrade**. We’ve migrated the PayPal Express Checkout integration to the latest PayPal JavaScript SDK, an SDK that  automatically collects and passes needed risk parameters to PayPal. The behavior of the PayPal Express Checkout payment method remains unchanged. However, upgrading this SDK to the latest version let merchants access the latest features and security enhancements. <!--- MC-30962-->
 
 *  **Deprecation and removal of the Web Set Up Wizard**.
+
+*  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html). **This feature is not available for Beta**.
+
+
+### Performance improvements
+
+*  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations.) See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+
+*  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
+
+   *  Decrease in the size of network data transfers between Redis and Magento
+   *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
+   *  Reduction in race conditions on Redis write operations
+
+   See [Use Redis for the Magento page and default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) and [Configure caching]({{page.baseurl}}/config-guide/cache.html).
+
+*  **Improved caching of results of SQL queries to inventory tables**. These enhancements include:
+  
+    *  Caching of SQL queries to inventory_stock_sales_channel table (1 query instead of 16)
+    *  Caching of result of queries to inventory_stock table (1 query instead of 16)
+
+*  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
 ### Adobe Stock Integration v2.0
 
@@ -96,7 +118,7 @@ This replacement for the former Media Gallery offers a brand-new, searchable int
 
 ### Page Builder
 
-Page Builder now supports PHP 7.4, which brings it in line with the core product's PHP support.
+Page Builder now supports PHP 7.4.
 
 ### Inventory Management
 
@@ -104,7 +126,13 @@ Inventory Management enhancements for this release include support for in-store 
 
 ### GraphQL
 
-GraphQL enhancements include support for Inventory In-Store Pickup. See  the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this and other enhancements. See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
+GraphQL enhancements include:
+
+*  `pickupLocations` query supports the Inventory In-store pickup feature
+*  `categories` query returns a list of categories that match a specified filter. This query differs from the `categoryList` query in that it supports pagination.
+*  `reorderItems` mutation allows a logged-in user to add all the products from a previous order into their cart.
+
+See  the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this and other enhancements. See [Release notes]({{page.baseurl}}/graphql/release-notes.html) for a detailed discussion of recent GraphQL bug fixes.
 
 ### PWA Studio
 
@@ -112,21 +140,17 @@ PWA Studio 6.0.0 contains both new features and improvements to existing feature
 
 For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
-### dotdigital
-
-This release includes:
-
 ### B2B
 
-This release includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
+**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers.  
+
+**Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers.  Customers must opt-in to allow storefront access to their accounts. All sessions are destroyed following admin logout, and admin users cannot access customer passwords.  
+
+This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
 ### Product Recommendations
 
 Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html).
-
-### Vendor-developed extension enhancements
-
-This release of Magento includes extensions developed by third-party vendors. It includes both quality and UX improvements to these extensions.
 
 ### Magento Functional Testing Framework (MFTF)
 
@@ -140,11 +164,54 @@ MFTF v3.0.0 includes these new features and includes support for PHP 7.4 and PHP
 
 This release also removes deprecated actions and upgrades scripts added to upgrade tests to MFTF major version requirements.
 
+### Vendor-developed extension enhancements
+
+This release of Magento includes extensions developed by third-party vendors. It introduces both quality and UX improvements to these extensions and an expansion of MFTF coverage.
+
+### dotdigital
+
+This release includes these enhancements:
+
+*  Customer attribute values that are captured by any input type (for example, dropdown, multi-select) are now correctly synced as data fields.
+*  Cart insight data is now sent for all active quotes, even if they contain no items. This allows merchants to exit contacts from a program if they empty their cart.
+*  Merchants can now sync website name, store name, and store view name by individual data fields.
+*  Wishlist, Review, and Order syncs now look up the transactional data sync limit once.
+*  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
+*  Configurable products now have a stock figure that is the sum of their child products.
+*  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
+
+#### Amazon Pay
+
+This release includes:
+
+*  Updates to CSP whitelists
+*  Ability to do multiple authorizations for a multi-item order
+*  Support for Japanese addresses
+
+#### Braintree Payments
+
+This extension replaces our core Braintree integration. It provides the same features as the Braintree core integration. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
+
 #### Klarna
+
+This release includes additional on-site messaging options and improvements to:
+
+*  refunds
+*  API efficiency
+*  cookies and unit tests
 
 #### Vertex
 
 This release of Vertex includes the following new feature and enhancements:
+
+*  Improvements to Admin UI configuration
+*  Removal of unnecessary plugins associated with Admin order creation, which has improved extension performance
+*  Replacement of installation and upgrade scripts with XML schema files and patches
+*  Removal of deprecated code (ApiClient and ClientInterface) and replacement with service-specific interfaces
+
+#### Yotpo
+
+Yotpo is now integrated with Page Builder.
 
 ## Fixed issues
 
