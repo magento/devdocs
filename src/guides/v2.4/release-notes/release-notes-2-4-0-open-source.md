@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 {:.bs-callout-info}
 
-During pre-release, we discovered issues that forced us to create new packages. To expedite delivery, we chose to change the name of the full-release patch from 2.3.5 to 2.3.5-p1. The 2.3.5-p1 package contains all new features and fixes. We also changed the name of the security-only patch for this quarter from 2.3.4-p1 to 2.3.4-p2. Future releases will follow the typical package naming conventions for full-release  and security packages. See [Wishlist error during upgrade to Magento versions 2.3.4-p1 or 2.3.5](https://support.magento.com/hc/en-us/articles/360042621771).
+The name of the security-only patch for this quarter is 2.3.5-p2. Future releases will follow the typical package naming conventions for full-release  and security packages.
 
 ## Security-only patch available
 

@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.
 
 {:.bs-callout-info}
 
-During pre-release, we discovered issues that forced us to create new packages. To expedite delivery, we chose to  change the name of the full-release patch from 2.3.5 to 2.3.5-p1. The 2.3.5-p1 package contains all new features and fixes. We also changed the name of the security-only patch for this quarter from 2.3.4-p1 to 2.3.4-p2. Future releases will follow the typical package naming conventions for full-release  and security packages. See [Wishlist error during upgrade to Magento versions 2.3.4-p1 or 2.3.5](https://support.magento.com/hc/en-us/articles/360042621771).
+The name of the security-only patch for this quarter is 2.3.5-p2. Future releases will follow the typical package naming conventions for full-release  and security packages.
 
 ## Security-only patch available
 
@@ -45,7 +45,7 @@ With the Magento 2.3.4 release, we changed how we describe these security issues
 
 This release includes over 30 security fixes and platform security improvements. Additional security enhancements include:
 
-*  **Two-factor authentication (2FA) is now enabled by default for the Magento Admin**. Admin users must first configure their 2FA before logging into the Admin through either the UI or an API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. <!--- MC-22631-->
+*  **Two-factor authentication (2FA) is now enabled by default for the Magento Admin**. Admin users must first configure their 2FA before logging into the Admin through either the UI or an API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
 *  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
 
@@ -64,7 +64,7 @@ The following platform upgrades help enhance website security and performance:
 
 *  **Elasticsearch 7.x support**. The latest Elasticsearch 7.x version is now the default catalog search engine for Magento Commerce and Open Source. Elasticsearch versions 2.x and 5.x have been deprecated and removed from the code. Elasticsearch v6.8 is still supported in Magento 2.4.0 (and 2.3.x).
 
-*  **MySQL 8.0 support**. Magneto 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database.
+*  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database.
 
 *  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0.
 
@@ -88,7 +88,6 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html). **This feature is not available for Beta**.
 
-
 ### Performance improvements
 
 *  **Improvements to customer data section invalidation logic**. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active.  (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations.) See [Private content]({{page.baseurl}}/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
@@ -96,15 +95,18 @@ This release contains enhancements to core quality, which improve the quality of
 *  **Multiple optimizations to Redis performance**. The enhancements minimize the number of queries to Redis that are performed on each Magento request. These optimizations include:
 
    *  Decrease in the size of network data transfers between Redis and Magento
+
    *  Reduction in Redis’ consumption of CPU cycles by improving the adapter’s ability to automatically determine what needs to be loaded
+
    *  Reduction in race conditions on Redis write operations
 
    See [Use Redis for the Magento page and default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) and [Configure caching]({{page.baseurl}}/config-guide/cache.html).
 
 *  **Improved caching of results of SQL queries to inventory tables**. These enhancements include:
-  
-    *  Caching of SQL queries to inventory_stock_sales_channel table (1 query instead of 16)
-    *  Caching of result of queries to inventory_stock table (1 query instead of 16)
+
+   *  Caching of SQL queries to the `inventory_stock_sales_channel` table (1 query instead of 16)
+
+   *  Caching of result of queries to the `inventory_stock` table (1 query instead of 16)
 
 *  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
@@ -142,15 +144,11 @@ For information on these enhancements plus other improvements, see [PWA Studio r
 
 ### B2B
 
-**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers.  
+**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers.
 
-**Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers.  Customers must opt-in to allow storefront access to their accounts. All sessions are destroyed following admin logout, and admin users cannot access customer passwords.  
+**Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers.  Customers must opt-in to allow storefront access to their accounts. All sessions are destroyed following admin logout, and admin users cannot access customer passwords.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
-
-### Product Recommendations
-
-Magento’s Product Recommendations is a new marketing tool that merchants can use to increase conversions, boost revenue, and stimulate shopper engagement. It is powered by Adobe Sensei, which uses artificial intelligence and machine-learning algorithms to perform a deep analysis of aggregated shopper data. This data, when combined with your Magento catalog, results in highly engaging, relevant, and personalized experiences for the shopper. See [Product Recommendations](https://devdocs.magento.com/recommendations/product-recs.html).
 
 ### Magento Functional Testing Framework (MFTF)
 
