@@ -62,7 +62,7 @@ Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed
 
 ## Docs awards and points
 
-Contributors and maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs) and [MerchDocs repository](https://github.com/magento/merchdocs). These earned points add to contributor totals. Like code contributions, the Docs team assesses the PRs and applies labels (which may vary between repos) to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
+Contributors and maintainers can also earn rewards for pull requests (PRs) that are merged in the [DevDocs](https://github.com/magento/devdocs) and [MerchDocs](https://github.com/magento/merchdocs) repositories. These earned points add to contributor totals. Like code contributions, the Docs team assesses the PRs and applies labels (which may vary between repositories) to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
 
 {:.bs-callout-info}
 Some documentation projects, such as MFTF and PWA, are published on the DevDocs site, but the source repositories exist outside of the DevDocs repository. The teams that maintain these projects have discretion over defining points for documentation contributions.
@@ -100,6 +100,6 @@ If the PR earns recognition for significant updates and additions to the documen
 
 Both DevDocs and MerchDocs have contribution programs for publicly recognizing and thanking contributors for their hard work and contributions to documentation.
 
-The top monthly contributors and new contributors are thanked on [Twitter](https://twitter.com/MagentoDevDocs) and in Slack ([DevDocs](https://magentocommeng.slack.com/archives/CAN932A3H) and [MerchDocs](https://magentocommeng.slack.com/archives/CJP33CEKY)) each month. The top quarterly contributor will also be recognized via these channels each quarter.
+The top monthly contributors and new contributors are thanked on [Twitter](https://twitter.com/MagentoDevDocs) and in Slack ([DevDocs](https://magentocommeng.slack.com/archives/CAN932A3H) and [MerchDocs](https://magentocommeng.slack.com/archives/CJP33CEKY)) each month. The top quarterly contributor will also be recognized through these channels each quarter.
 
 Stay tuned for updates and improvements to the contributor programs for both DevDocs and MerchDocs.
