@@ -12,8 +12,8 @@ List of possible errors:
 
 | Step | Description | Error code |
 | --- | --- | --- |
-| general | File `./app/etc/env.php` is not writable | 2 |
-| | Configuration isn't defined in schema.yaml | 3 |
+| general | File `./app/etc/env.php` is not writable | [2](#ENV_PHP_IS_NOT_WRITABLE) |
+| | Configuration isn't defined in schema.yaml | [3](#CONFIG_NOT_DEFINED) |
 | | Failed to parse .magento.env.yaml | 4 |
 | | Unable to read .magento.env.yaml | 5 |
 | | Unable to read .schema.yaml | 6 |
@@ -43,7 +43,7 @@ List of possible errors:
 | --- | --- | --- |
 | pre-deploy: cache | Wrong cache configuration (missed port or host) | 101 |
 | general | File `./app/etc/env.php` is not writable | 102 |
-| | Configuration isn't defined in schema.yaml | 103 |
+| | Configuration isn't defined in schema.yaml | [103](#CONFIG_NOT_DEFINED) |
 | | Failed to parse .magento.env.yaml | 104 |
 | | Unable to read .magento.env.yaml | 105 |
 | | Unable to read .schema.yaml | 106 |
