@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: 01_resource
 title: Installation quick reference (tutorial)
-menu_title: Installation quick reference (tutorial)
-menu_node:
-menu_order: 2
 functional_areas:
   - Install
   - System
@@ -68,13 +64,11 @@ You are required to authenticate; see [Get your authentication keys][] for detai
 {:.bs-callout-tip}
 Alternatively, you can also download a [Magento software archive][].
 
-{% include install/file-system-perms-before_22.md %}
+{% include install/file-system-perms-before_24.md %}
 
 ## Installation part 2: Installing the Magento software
 
-You can choose to install the Magento software using either a [web-based Setup Wizard][] or using the [command line][].
-
-### Command line installation
+You must install the Magento software using the [command line][].
 
 {% collapsible Click to view the command-line installation %}
 
@@ -119,74 +113,6 @@ php magento deploy:mode:set developer
 
 {% endcollapsible %}
 
-### Web Setup Wizard
-
-{% collapsible Click to view the Web Setup Wizard installation %}
-
-The following example shows how to install using the Web Setup Wizard with the following options:
-
-*  The Magento software is installed in the `magento2` directory relative to the web server docroot, which means your storefront URL is `http://192.0.2.5/magento2/`
-*  The database server is on the same host as the web server.
-
-   The database name is `magento`, and the username and password are both `magento`
-
-*  The Magento administrator has the following properties:
-
-   *  Username is `admin` and the password is `admin123`
-   *  E-mail address is `user@example.com`
-
-*  Default language is `en_US` (U.S. English)
-*  Default currency is U.S. dollars
-*  Default time zone is U.S. Central (America/Chicago)
-*  Elasticsearch 7 is installed on `es-host.example.com` and connects on port 9200
-
-To run the Web Setup Wizard:
-
-1. Enter the following URL in your browser's address or location field:
-
-    http://192.0.2.5/magento2/setup
-
-1. At the welcome page, click **Agree and Setup Magento**.
-
-   [You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
-
-1. Readiness Check verifies your system is ready to install the Magento software.
-
-   Click **Start Readiness Check**
-
-   ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install-qr-readiness-24.png){:width="400px"}
-
-   *  If the readiness check passes, click **Next** and continue with the next step.
-   *  If the readiness check fails, see [Readiness check issues][]
-   *  If the readiness check passes, click **Next** and continue with the next step.
-   *  If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
-
-1. **Add a Database** enables you to set up your Magento database.
-
-   ![Set up your Magento database]({{ site.baseurl }}/common/images/install-qr-database-24.png){:width="400px"}
-
-1. **Web Configuration** enables you to enter the storefront and Magento Admin URLs.
-
-   ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install-qr-web-24.png){:width="400px"}
-
-1. **Customize Your Store** enables you to enter a default store currency, time zone, and language.
-
-   ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install-qr-store-24.png){:width="400px"}
-
-1. **Configure Catalog Search** enables you to configure Elasticsearch, which allows customers to search for products.
-
-   ![Configure catalog search]({{ site.baseurl }}/common/images/install-qr-catalog-search-24.png){:width="400px"}
-
-1. **Create Admin Account** enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
-
-   ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install-qr-admin-24.png){:width="400px"}
-
-1. **Install** starts the installation when you click **Install Now**.
-
-   You can optionally expand **Console Log** to see installation messages while the installation is in progress.
-
-{% endcollapsible %}
-
 ## Installation part 3: Post-installation
 
 *  [Verify the installation][] was successful.
@@ -204,7 +130,6 @@ To run the Web Setup Wizard:
 [command line]: {{page.baseurl }}/install-gde/install/cli/install-cli.html
 [Get your authentication keys]: {{page.baseurl }}/install-gde/prereq/connect-auth.html
 [Magento software archive]: {{page.baseurl }}/install-gde/install/get-software.html
-[web-based Setup Wizard]: {{page.baseurl }}/install-gde/install/web/install-web.html
 [Readiness check issues]:{{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html
 [Verify the installation]: {{page.baseurl }}/install-gde/install/verify.html
 [Component Manager and System Upgrade]: {{page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
