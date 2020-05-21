@@ -11,7 +11,7 @@ pages:
         - label: Backward compatible development
           url: /contributor-guide/backward-compatible-development/
 
-    - label: DevDocs Contributions
+    - label: Docs Contributions
       children:
         - label: Contribution Guidelines
           url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
