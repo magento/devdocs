@@ -60,9 +60,9 @@ Author of Ported Issue | 5 | Additional points for a contribution that ports (up
 Issue Triage: Confirmed | 5 | A public issue report is verified and confirmed. The description contains all the required information needed to easily reproduce the issue with the provided steps.
 Issue Triage: Rejected/Closed | 4 | A public issue report is verified and closed/rejected because it is not a bug or cannot be reproduce using the provided steps in the description on the supported Magento versions.
 
-## DevDocs awards and points
+## Docs awards and points
 
-Contributors and maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and applies labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
+Contributors and maintainers can also earn rewards for pull requests (PRs) that are merged in the [DevDocs](https://github.com/magento/devdocs) and [MerchDocs](https://github.com/magento/merchdocs) repositories. These earned points add to contributor totals. Like code contributions, the Docs team assesses the PRs and applies labels (which may vary between repositories) to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
 
 {:.bs-callout-info}
 Some documentation projects, such as MFTF and PWA, are published on the DevDocs site, but the source repositories exist outside of the DevDocs repository. The teams that maintain these projects have discretion over defining points for documentation contributions.
@@ -94,3 +94,12 @@ Major update | 20 | Significant updates to existing content.
 Technical | 10 | Updates to code or processes that alter the technical content of the document, such as code snippets, reference documentation, parameter names and values, and other relevant content.
 
 If the PR earns recognition for significant updates and additions to the documentation, it may also receive a Special Achievement label, which garners an additional 20 points. This is determinable at the time of internal assessment. Certain issues may already be labeled as Special Achievement in an effort to prompt contribution---the PRs that fix these issues will receive the extra 20 points.
+
+### Contribution programs
+{:.no_toc}
+
+Both DevDocs and MerchDocs have contribution programs for publicly recognizing and thanking contributors for their hard work and contributions to documentation.
+
+The top monthly contributors and new contributors are thanked on [Twitter](https://twitter.com/MagentoDevDocs) and in Slack ([DevDocs](https://magentocommeng.slack.com/archives/CAN932A3H) and [MerchDocs](https://magentocommeng.slack.com/archives/CJP33CEKY)) each month. The top quarterly contributor will also be recognized through these channels each quarter.
+
+Stay tuned for updates and improvements to the contributor programs for both DevDocs and MerchDocs.
