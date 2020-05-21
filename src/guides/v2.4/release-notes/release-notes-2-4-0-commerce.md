@@ -9,7 +9,7 @@ This release includes all the improvements to core quality that were included in
 
 {:.bs-callout-info}
 
-Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.3.5 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.0 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 {:.bs-callout-info}
 
@@ -56,21 +56,21 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 ### Platform upgrades
 
-The following platform upgrades help enhance website security and performance:
+The following platform upgrades help enhance website security and performance. Supported versions of PHP and PHPUnit, Elasticsearch, MySQL, and other dependencies are listed in [Magento 2.4 technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. Installation of magento 2.4.x requires either PHP 7.4 or 7.3.
+*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. Installation of Magento 2.4.x requires either PHP 7.4 or 7.3.
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  **Elasticsearch 7.x support**. The latest Elasticsearch 7.x version is now the default catalog search engine for Magento Commerce and Open Source. Elasticsearch versions 2.x and 5.x have been deprecated and removed from the code. Elasticsearch v6.8 is still supported in Magento 2.4.0 (and 2.3.x).
+*  **Elasticsearch 7.x support**. The latest Elasticsearch 7.x version is now the default catalog search engine for Magento Commerce and Open Source. Elasticsearch version 2.x code has been removed, and Elasticsearch version 5.x has been deprecated. Elasticsearch v6.8 is still supported in Magento 2.4.0 (and 2.3.x).
 
 *  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database.
 
-*  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0.
+*  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
 *  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251)  DevBlog post.
 
-*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace. <!---MC-31295—>
+*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
 
 *  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
 
@@ -138,9 +138,7 @@ See  the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on thi
 
 ### PWA Studio
 
-PWA Studio 6.0.0 contains both new features and improvements to existing features:
-
-For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
+PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on these enhancements plus other improvements, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
 ### B2B
 
@@ -166,14 +164,14 @@ This release also removes deprecated actions and upgrades scripts added to upgra
 
 This release of Magento includes extensions developed by third-party vendors. It introduces both quality and UX improvements to these extensions and an expansion of MFTF coverage.
 
-### dotdigital
+#### dotdigital
 
 This release includes these enhancements:
 
 *  Customer attribute values that are captured by any input type (for example, dropdown, multi-select) are now correctly synced as data fields.
 *  Cart insight data is now sent for all active quotes, even if they contain no items. This allows merchants to exit contacts from a program if they empty their cart.
 *  Merchants can now sync website name, store name, and store view name by individual data fields.
-*  Wishlist, Review, and Order syncs now look up the transactional data sync limit once.
+*  Wishlist, Review, and Order syncs now look up the transactional data sync limit once only.
 *  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
 *  Configurable products now have a stock figure that is the sum of their child products.
 *  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
