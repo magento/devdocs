@@ -165,7 +165,7 @@ Go to the [storefront](https://glossary.magento.com/storefront) in a web browser
 
    Refer to the [troubleshooting section](https://support.magento.com/hc/en-us/articles/360032994352) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
-1. Try accessing the Magento directory for the Web Setup Wizard from a browser. Append "_setup/_" to your server's hostname or IP address in the address bar:
+1. Try accessing a Magento directory from a browser. Append the directory name to your server's hostname or IP address in the address bar:
 
    If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 

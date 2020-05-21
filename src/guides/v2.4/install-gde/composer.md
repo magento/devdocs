@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-{% include install/composer-overview.md %}
+{% include install/composer-overview_24.md %}
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 
 ## Set file permissions
 
-You must set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.
+You must set read-write permissions for the web server group before you install the Magento software. This is necessary so that the command line can write files to the Magento file system.
 
 ```terminal
 cd /var/www/html/<magento install directory>

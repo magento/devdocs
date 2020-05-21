@@ -23,7 +23,7 @@ You cannot have a live store that accepts orders and so on.
 
 {% include install/prereq.md %}
 
-{% include install/composer-overview.md %}
+{% include install/composer-overview_24.md %}
 
 ## Install Composer {#instgde-prereq-compose-install}
 
