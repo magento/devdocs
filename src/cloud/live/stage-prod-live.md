@@ -25,7 +25,7 @@ Now you are ready to develop and deploy:
 1. Push your local branch to the Git remote branch to test in a full environment.
 1. To fully test in a near-production level environment, push code to a Staging branch.
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
-1. Finally, deploy to the Production `master` to complete testing, go live steps, and start selling.
+1. Finally, deploy to the Production `master` to complete testing, site launch steps, and start selling.
 
 For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html).
 
@@ -39,7 +39,7 @@ Pro comes with a large Integration environment with eight active branches and en
 1. Merge final code to the Integration `master` branch.
 1. To fully test in a near-production level environment, push code to the Staging environment.
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
-1. Finally, deploy to the Production environment to complete testing, go live steps, and start selling.
+1. Finally, deploy to the Production environment to complete testing, site launch steps, and start selling.
 
 For detailed information of the process, see [Pro Develop and Deploy Workflow]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html).
 
@@ -80,4 +80,4 @@ To learn more, check the following:
 *  [Prepare to deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 *  [Migrate and deploy]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html)
 *  [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html)
-*  [Go live and launch]({{ site.baseurl }}/cloud/live/live.html)
+*  [Site launch]({{ site.baseurl }}/cloud/live/live.html)
