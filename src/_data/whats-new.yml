@@ -4,8 +4,36 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu May 14 12:53:38 2020
+updated: Thu May 21 16:26:01 2020
 entries:
+- description: Updated instructions for [managing user access to Cloud environments](https://devdocs.magento.com/cloud/project/user-admin.html)
+    and updated the [Onboarding Tasks](https://devdocs.magento.com/cloud/onboarding/onboarding-portal.html)
+    topic with fresh screen captures and additional guidance on user registration
+    and using the Cloud Project Portal.
+  versions: 2.x
+  type: Major Update
+  date: May 19, 2020
+  link: https://github.com/magento/devdocs/pull/7211
+- description: Updated the [Extend Docker](https://devdocs.magento.com/cloud/docker/docker-extend.html)  topic
+    to include instructions for adding a new version of  an existing service (elasticsearch,
+    php, nginx, tls, varnish) to Magento Cloud Docker.
+  versions: ''
+  type: Technical
+  date: May 18, 2020
+  link: https://github.com/magento/devdocs/pull/7190
+- description: Updated the Cloud guide [Configuration management for store settings](https://devdocs.magento.com/cloud/live/sens-data-over.html)
+    topic.
+  versions: 2.x
+  type: Major Update
+  date: May 14, 2020
+  link: https://github.com/magento/devdocs/pull/7147
+- description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
+    or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
+    Magento in most places where it is mentioned.
+  versions: 2.3.x
+  type: Major Update
+  date: May 14, 2020
+  link: https://github.com/magento/devdocs/pull/7213
 - description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
     or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
     Magento in most places where it is mentioned.
