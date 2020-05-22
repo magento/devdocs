@@ -59,9 +59,6 @@ If any modules are missing, they are added using the same workflow used for inst
  yum -y install php72u-pdo php72u-mysqlnd php72u-opcache php72u-xml php72u-gd php72u-devel php72u-mysql php72u-intl php72u-mbstring php72u-bcmath php72u-json php72u-iconv php72u-soap
 ```
 
-{:.bs-callout-info}
-The `bcmath` extension is required for {{site.data.var.ee}} only.
-
 ## Check PHP settings
 
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:

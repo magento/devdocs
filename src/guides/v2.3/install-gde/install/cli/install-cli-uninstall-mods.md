@@ -49,11 +49,11 @@ The module uninstall command performs the following tasks:
 1. Puts the store in maintenance mode.
 1. Processes the following command options.
 
-| Option           | Meaning                                                                          | Backup file name and location                |
-| ---------------- | -------------------------------------------------------------------------------- | -------------------------------------------- |
-| `--backup-code`  | Backs up the Magento file system (excluding `var` and `pub/static` directories). | var/backups/<timestamp>_filesystem.tgz       |
-| `--backup-media` | Backs up the pub/media directory.                                                | var/backups/<timestamp>_filesystem_media.tgz |
-| `--backup-db`    | Backs up the Magento 2 database.                                                 | var/backups/<timestamp>_db.gz                |
+    | Option           | Meaning                                                                          | Backup file name and location                |
+    | ---------------- | -------------------------------------------------------------------------------- | -------------------------------------------- |
+    | `--backup-code`  | Backs up the Magento file system (excluding `var` and `pub/static` directories). | var/backups/<timestamp>_filesystem.tgz       |
+    | `--backup-media` | Backs up the pub/media directory.                                                | var/backups/<timestamp>_filesystem_media.tgz |
+    | `--backup-db`    | Backs up the Magento 2 database.                                                 | var/backups/<timestamp>_db.gz                |
 
 1. If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
