@@ -75,6 +75,77 @@ To add a new service version using a `Dockerfile`:
 
 1. Once the build succeeds, test the changes by specifying the [Docker build sources].
 
+## Add a new PHP extension
+
+In addition to built-in extensions, you can add PHP extensions to the PHP container.
+
+{:.procedure}
+To add a new PHP extension:
+
+1. Clone the `{{site.data.var.mcd}}` project to your local environment if necessary.
+
+1. On the command line, navigate to the PHP directory.
+
+   ```bash
+   cd magento-cloud-docker/src/Compose/Php
+
+1. Open the `ExtensionResolver.php` file, define the required extension inside the `getConfig` method by specifying the extension type and dependency.
+
+   For instance the following block adds the GNUPG extension:
+
+   ```php?start_inline=1
+   'gnupg' => [
+     '>=7.0' => [
+     self::EXTENSION_TYPE => self::EXTENSION_TYPE_PECL,
+     self::EXTENSION_OS_DEPENDENCIES => ['libgpgme11-dev'],
+   ],],
+   ```
+
+   The extension type can be either CORE or PECL, which are defined as `EXTENSION_TYPE_PECL` or `EXTENSION_TYPE_CORE` respectively.
+
+1. Add any required `.ini` files to the PHP FPM container configuration.
+
+   -  On the command line, navigate to FPM image directory `magento-cloud-docker/images/php/fpm`:
+
+      ```bash
+      cd ../../../images/php/fpm
+      ```
+
+   -  Add each required `.ini` file to the `etc` directory.
+
+   -  For each `.ini` file that you add, you must add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/fpm/Dockerfile`):
+
+      ```conf
+      COPY etc/<filename>.ini /usr/local/etc/php/conf.d/<filename>.ini
+      ```
+
+1. Add any required `.ini` files to the PHP CLI container configuration.
+
+   -  On the command line, navigate to the CLI image directory `magento-cloud-docker/images/php/cli`.
+
+      ```bash
+      cd ../cli
+      ```
+
+   -  Add each required `.ini` file to the `etc` directory.
+
+   -  For each `.ini` file that you add, you must add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/cli/Dockerfile`):
+
+       ```conf
+       ADD etc/<file-name>.ini /usr/local/etc/php/conf.d/<filename>.ini
+       ```
+
+1. Generate an updated `Dockerfile` for all PHP image versions included in the {{site.data.var.mcd}} package.
+
+   ```bash
+   bin/ece-docker image:generate:php
+   ```
+
+1. Test the extension by specifying the [Docker build sources].
+
+[multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
+[service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
+[Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
 [multiple compose files]: https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files
 [service versions]: https://devdocs.magento.com/cloud/docker/docker-containers.html#service-containers
 [Docker build sources]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
