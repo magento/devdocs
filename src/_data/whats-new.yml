@@ -34,13 +34,6 @@ entries:
   type: Major Update
   date: May 14, 2020
   link: https://github.com/magento/devdocs/pull/7213
-- description: Added a deprecation notice about the Web Setup Wizard when [installing](https://devdocs.magento.com/guides/v2.3/install-gde/install/web/install-web.html)
-    or [upgrading](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html)
-    Magento in most places where it is mentioned.
-  versions: 2.3.x
-  type: Major Update
-  date: May 14, 2020
-  link: https://github.com/magento/devdocs/pull/7213
 - description: Added [Magento Cloud Patches version 1.0.4 release notes](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Major Update
