@@ -102,14 +102,14 @@ To add a new PHP extension:
    ```
    The extension type can be either CORE or PECL, which are defined as `EXTENSION_TYPE_PECL` or `EXTENSION_TYPE_CORE` respectively.
 
-1. Add any required `.ini` files to the PHP FPM container configuration:
+1. Add any required `.ini` files to the PHP FPM container configuration.
 
    -  On the command line, navigate to FPM image directory.
 
       ```bash
       cd magento-cloud-docker/images/php/fpm
       ```
- 
+
    -  Add each required `.ini` file to the `etc` directory.
 
    -  For each `.ini` file that you added, add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/fpm/Dockerfile`):
@@ -118,15 +118,15 @@ To add a new PHP extension:
         COPY etc/<filename>.ini /usr/local/etc/php/conf.d/<filename>.ini
       ```
 
-1. Add any required `.ini` files to the PHP CLI container configuration: 
+1. Add any required `.ini` files to the PHP CLI container configuration.
 
    -  On the command line, navigate to the CLI image directory.
 
       ```bash
       cd magento-cloud-docker/images/php/cli
       ```
- 
-   -  Add each required `.ini` file to the `etc` directory
+
+   -  Add each required `.ini` file to the `etc` directory.
 
    -  For each `.ini` file that you added, add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/cli/Dockerfile`):
 
