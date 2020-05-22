@@ -89,18 +89,20 @@ If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\Rem
 
 ### `REDIS_BACKEND`
 
-- **Default**—`Cm_Cache_Backend_Redis`
-- **Version**—Magento 2.3.5 and later
+-  **Default**—`Cm_Cache_Backend_Redis`
+-  **Version**—Magento 2.3.5 and later
 
 Specifies the backend model configuration for the Redis cache.
 
 Magento version 2.3.5 and later includes the following backend models:
- - `Cm_Cache_Backend_Redis`
- - `\Magento\Framework\Cache\Backend\Redis`
- - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
+
+-  `Cm_Cache_Backend_Redis`
+-  `\Magento\Framework\Cache\Backend\Redis`
+-  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
 {:.bs-callout-info}
 See [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/two-level-cache.html) for details on selecting the backend model for Redis caching.
+
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
