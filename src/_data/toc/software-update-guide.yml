@@ -126,6 +126,7 @@ pages:
 
         - label: Sorry, we can't take that action right now
           url: /comp-mgr/trouble/cman/were-sorry.html
+          include_versions: ["2.3"]
 
         - label: Your current search engine is not supported
           url: /comp-mgr/trouble/current-search-engine.html

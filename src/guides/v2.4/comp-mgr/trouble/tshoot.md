@@ -16,6 +16,5 @@ The following topics discuss Component Manager and System Upgrade errors and sug
 
 ### System Upgrade only
 
-*  ["Sorry, we can't take that action right now"]({{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html)
 *  ["Your current search engine is not supported"]({{ page.baseurl }}/comp-mgr/trouble/current-search-engine.html)
 *  [Roll back after upgrade failure]({{ page.baseurl }}/comp-mgr/trouble/cman/update-fail.html)
