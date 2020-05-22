@@ -19,7 +19,7 @@ The Production environment is your live store(s) and site(s). The environment in
 
 The Production environment runs your public-facing Magento single and multi-site storefronts. This system is read-only, requiring deployment across the architecture from the Integration environment to the Staging environment, and finally to the Production environment.
 
-We walk you through [deploying to Production]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Go Live]({{ site.baseurl }}/cloud/live/live.html) requirements and processes.
+We walk you through [deploying to Production]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [launching your site]({{ site.baseurl }}/cloud/live/live.html) requirements and processes.
 
 We highly recommend fully testing in your Staging environment and branch before pushing to the `master` branch which deploys to the Production environment.
 
