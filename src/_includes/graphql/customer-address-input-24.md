@@ -40,4 +40,4 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `region` | String | The state or province name
 `region_code` | String | The address region code
-`region_id` | Int | Deprecated. Use `region` instead. Uniquely identifies the region
+`region_id` | Int | The unique ID for a pre-defined region
