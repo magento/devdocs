@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Troubleshooting suggestions
+title: Troubleshooting
 functional_areas:
   - Upgrade
 ---

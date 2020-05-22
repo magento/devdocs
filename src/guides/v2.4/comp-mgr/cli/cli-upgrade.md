@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Command-line upgrade
+title: Upgrade Magento
 functional_areas:
   - Upgrade
 ---
@@ -18,7 +18,7 @@ You can upgrade your Magento application from the command line if you installed 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
 Instead, see [Update the Magento application][] for upgrade instructions.
 
-## Prerequisites
+## Before you begin
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
@@ -253,7 +253,6 @@ You must comply with the [Prerequisites].
 [metapackage]: https://glossary.magento.com/metapackage
 [Prerequisites]: #prerequisites
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
-[System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the custom Composer plugin]: upgrade-with-plugin.html
