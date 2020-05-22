@@ -116,7 +116,7 @@ php magento deploy:mode:set developer
 ## Installation part 3: Post-installation
 
 *  [Verify the installation][] was successful.
-*  Learn about the [Component Manager and System Upgrade][] for future updates.
+*  Learn about the [component management and system upgrade][] for future updates.
 
 <!-- Link Definitions -->
 [Installation overview]: {{page.baseurl }}/install-gde/bk-install-guide.html
@@ -132,4 +132,4 @@ php magento deploy:mode:set developer
 [Magento software archive]: {{page.baseurl }}/install-gde/install/get-software.html
 [Readiness check issues]:{{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html
 [Verify the installation]: {{page.baseurl }}/install-gde/install/verify.html
-[Component Manager and System Upgrade]: {{page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
+[component management and system upgrade]: {{page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html

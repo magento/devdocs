@@ -20,7 +20,7 @@ Before you use these commands, you must [install the Magento software][].
 
 To update the Magento software:
 
-*  If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
+*  If you installed the software from an archive or if you used 'composer-create-project', see the [Upgrade Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
 *  If you are a contributing developer (that is, you used `git clone`), see [Contributing developers—update, reinstall Magento][].
 
 ## Reinstall the Magento software {#instgde-install-magento-reinstall}

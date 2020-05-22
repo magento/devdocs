@@ -18,7 +18,7 @@ You can upgrade your Magento application from the command line if you installed 
 Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
 Instead, see [Update the Magento application][] for upgrade instructions.
 
-## Before you begin
+## Before you begin {#prerequisites}
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 

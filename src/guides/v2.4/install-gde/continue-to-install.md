@@ -16,7 +16,4 @@ Now that you've installed prerequisites and taken the first steps (merchant, sys
 
 ## Already installed the Magento software?
 
-You might want to manage Magento components or to upgrade:
-
-*  [Component Manager Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-*  [Upgrade Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+You might want to manage Magento components or to upgrade. See the [Upgrade Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html).
