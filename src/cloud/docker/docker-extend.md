@@ -77,23 +77,23 @@ To add a new service version using a `Dockerfile`:
 
 ## Add a new PHP extension
 
-In addition to built in extensions, you can add PHP extensions to the PHP container.
+In addition to built-in extensions, you can add PHP extensions to the PHP container.
 
 {:.procedure}
 To add a new PHP extension:
 
 1. Clone the `{{site.data.var.mcd}}` project to your local environment if necessary.
 
-1. On the command line, navigate to the following directory
-   ```bash
-      cd magento-cloud-docker/src/Compose/Php
-   ```
+1. On the command line, navigate to the PHP directory.
 
-1. Open `ExtensionResolver.php` file, define the required extension inside the `getConfig` method by specifying the extension type and dependency.
+   ```bash
+   cd magento-cloud-docker/src/Compose/Php
+
+1. Open the `ExtensionResolver.php` file, define the required extension inside the `getConfig` method by specifying the extension type and dependency.
 
    For instance the following block adds the GNUPG extension:
 
-   ```php
+   ```php?start_inline=1
    'gnupg' => [
      '>=7.0' => [
      self::EXTENSION_TYPE => self::EXTENSION_TYPE_PECL,
@@ -112,10 +112,10 @@ To add a new PHP extension:
 
    -  Add each required `.ini` file to the `etc` directory.
 
-   -  For each `.ini` file that you added, add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/fpm/Dockerfile`):
+   -  For each `.ini` file that you add, you must add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/fpm/Dockerfile`):
 
       ```conf
-        COPY etc/<filename>.ini /usr/local/etc/php/conf.d/<filename>.ini
+      COPY etc/<filename>.ini /usr/local/etc/php/conf.d/<filename>.ini
       ```
 
 1. Add any required `.ini` files to the PHP CLI container configuration.
@@ -128,7 +128,7 @@ To add a new PHP extension:
 
    -  Add each required `.ini` file to the `etc` directory.
 
-   -  For each `.ini` file that you added, add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/cli/Dockerfile`):
+   -  For each `.ini` file that you add, you must add the following line to the `Dockerfile` (`magento-cloud-docker/images/php/cli/Dockerfile`):
 
        ```conf
        ADD etc/<file-name>.ini /usr/local/etc/php/conf.d/<filename>.ini
