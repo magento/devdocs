@@ -278,6 +278,9 @@ Qty Increments | `cataloginventory/item_options/qty_increments` | <!-- ![Not EE-
 Automatically Return Credit Memo Item to Stock | `cataloginventory/item_options/auto_return` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Run asynchronously | `cataloginventory/bulk_operations/async` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Asynchronous batch size | `cataloginventory/bulk_operations/batch_size` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
+Provider | `cataloginventory/source_selection_distance_based/provider` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Computation mode | `cataloginventory/source_selection_distance_based_google/mode` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Value | `cataloginventory/source_selection_distance_based_google/value` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
 ### Visual Merchandiser paths
 
