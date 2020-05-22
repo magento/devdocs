@@ -100,14 +100,15 @@ To add a new PHP extension:
      self::EXTENSION_OS_DEPENDENCIES => ['libgpgme11-dev'],
    ],],
    ```
+
    The extension type can be either CORE or PECL, which are defined as `EXTENSION_TYPE_PECL` or `EXTENSION_TYPE_CORE` respectively.
 
 1. Add any required `.ini` files to the PHP FPM container configuration.
 
-   -  On the command line, navigate to FPM image directory.
+   -  On the command line, navigate to FPM image directory `magento-cloud-docker/images/php/fpm`:
 
       ```bash
-      cd magento-cloud-docker/images/php/fpm
+      cd ../../../images/php/fpm
       ```
 
    -  Add each required `.ini` file to the `etc` directory.
@@ -120,10 +121,10 @@ To add a new PHP extension:
 
 1. Add any required `.ini` files to the PHP CLI container configuration.
 
-   -  On the command line, navigate to the CLI image directory.
+   -  On the command line, navigate to the CLI image directory `magento-cloud-docker/images/php/cli`.
 
       ```bash
-      cd magento-cloud-docker/images/php/cli
+      cd ../cli
       ```
 
    -  Add each required `.ini` file to the `etc` directory.
