@@ -118,6 +118,7 @@ pages:
     
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
+      include_versions: ["2.3"]
 
     - label: Troubleshooting suggestions
       url: /comp-mgr/trouble/tshoot.html
