@@ -143,12 +143,12 @@ To add custom crons:
 
    ```yaml
    crons:
-    magento:
-        spec: '* * * * *'
-        cmd: 'php bin/magento cron:run'
-        productcatalog:
-            spec: '20 */8 * * *'
-            cmd: 'bin/magento export:start catalog_product_category'
+       magento:
+           spec: '* * * * *'
+           cmd: 'php bin/magento cron:run'
+       productcatalog:
+           spec: '20 */8 * * *'
+           cmd: 'bin/magento export:start catalog_product_category'
     ```
     {:.no-copy}
 

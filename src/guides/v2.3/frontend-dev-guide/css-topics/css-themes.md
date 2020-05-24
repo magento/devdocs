@@ -79,7 +79,7 @@ For example, to include `<theme_dir>/web/css/custom.css`:
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="css/custom.css"  src_type="url" rel="stylesheet" type="text/css"  />
+        <css src="css/custom.css" rel="stylesheet" type="text/css"  />
     </head>
 </page>
 ```
