@@ -188,10 +188,9 @@ This release includes additional on-site messaging options and improvements to:
 
 This release of Vertex includes the following new feature and enhancements:
 
-*  Improvements to Admin UI configuration
-*  Removal of unnecessary plugins associated with Admin order creation, which has improved extension performance
+*  Improvements to the Admin configuration user experience
 *  Replacement of installation and upgrade scripts with XML schema files and patches
-*  Removal of deprecated code (ApiClient and ClientInterface) and replacement with service-specific interfaces
+*  Removal of deprecated code (ApiClient and ClientInterface)
 
 #### Yotpo
 
