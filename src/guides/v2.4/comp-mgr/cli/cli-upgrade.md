@@ -22,6 +22,7 @@ Instead, see [Update the Magento application][] for upgrade instructions.
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
+-  **Determine whether your current catalog search engine is supported**-Avoid significant upgrade errors by ensuring your search engine complies with 2.4 requirements. See [Check the catalog search engine] for more details.
 -  **Complete the Update and upgrade checklist**—To avoid possible errors during installation or upgrading, complete the [Update and upgrade checklist].
 -  **Set the `pub/` directory root**—See [Modify docroot to improve security][] for more details.
 -  **Check PHP and environment settings**—Verify that your PHP and other environment settings are compatible with the [system requirements].
@@ -89,7 +90,7 @@ See the examples at the end of this section for help specifying different releas
 1. Specify additional packages.
 
    ```bash
-   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.5 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
+   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.5 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~9.0.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
    ```
 
 1. Remove unused packages.
@@ -238,18 +239,10 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 ## Alternatives
 
-There are alternatives methods that automate parts of the upgrade process:
-
-1. [Upgrade using the script][] (semi-automated process)
-   Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
-   If you previously made updates, do not upgrade using the script. The script will override your updates.
-1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
-   We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
-
-The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
+Instead of manually upgrading Magento, try using our [custom Composer plugin][]. This plugin automates parts of the upgrade process. See [Upgrade using the custom Composer plugin].
 
 {:.bs-callout-warning}
-All scenarios require that you comply with the [Prerequisites].
+You must comply with the [Prerequisites].
 
 <!-- Link definitions -->
 
@@ -263,6 +256,6 @@ All scenarios require that you comply with the [Prerequisites].
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
-[Upgrade using the custom composer plugin]: upgrade-with-plugin.html
-[Upgrade using the script]: upgrade-with-script.html
+[Upgrade using the custom Composer plugin]: upgrade-with-plugin.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
+[Check the catalog search engine]: {{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html

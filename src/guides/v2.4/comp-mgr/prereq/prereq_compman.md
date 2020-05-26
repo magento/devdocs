@@ -9,10 +9,9 @@ functional_areas:
   - Upgrade
 ---
 
-## Prerequisites
-
 Before running the [Module](https://glossary.magento.com/module) Manager, [Extension](https://glossary.magento.com/extension) Manager, or System Upgrade, complete the following tasks:
 
+*  [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html)
 *  [Set up cron]({{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html)
 *  [Set `ulimit` for the web server user]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html)
 *  [Checklist]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-checklist.html)

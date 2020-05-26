@@ -44,7 +44,7 @@ In Integration, Staging, and Production, *only* the following directories are wr
 -  `/tmp`
 
  {:.bs-callout-info}
-In Production, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
+In Production and Staging environments, each node in the three-node cluster has a `/tmp` directory that is not shared with the other nodes.
 
 ## Ignoring files
 
