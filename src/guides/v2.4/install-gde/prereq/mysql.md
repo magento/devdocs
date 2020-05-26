@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-Magento version 2.4.0 and later requires minimum stable MySQL 5.7.9. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
+Magento version 2.4.0 and later requires minimum stable MySQL 5.7.9. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.2, 10.4, Percona 5.7 and other binary compatible MySQL technologies. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported due to the removal of support for MySQL 5.6 in this release.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -33,327 +33,93 @@ If your web server and database server are on different hosts, perform the tasks
 
 ## Installing MySQL on Ubuntu {#instgde-prereq-mysql-ubuntu}
 
-See one of the following sections for more information:
+Magento 2.4 requires a clean installation of MySQL 5.7.9 or 8.0. Follow the links below for instructions on installing MySQL on your machine.
 
-*  [Installing and configuring MySQL 5.7 on Ubuntu 16](#instgde-prereq-mysql57-ub16)
-*  [Installing MySQL 5.6 on Ubuntu 14](#instgde-prereq-mysql56ubu14)
-*  [Installing MySQL 5.6 on Ubuntu 12](#instgde-prereq-mysql56ubu12)
+*  [Ubuntu][https://ubuntu.com/server/docs/databases-mysql]
+*  [CentOS][https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html]
 
-### Installing and configuring MySQL 5.7 on Ubuntu 16 {#instgde-prereq-mysql57-ub16}
-
-This section discusses how to install MySQL 5.7 on Ubuntu 16.
-
-{:.bs-callout-info}
-The Magento application 2.1.2 and later are compatible with MySQL 5.7.
-
-To install MySQL 5.7 on Ubuntu 16:
-
-1. Enter this command:
-
-   ```bash
-   sudo apt install -y mysql-server mysql-client
-   ```
-
-1. Start MySQL:
-
-   ```bash
-   sudo service mysql start
-   ```
-
-1. Secure the installation:
-
-   ```bash
-   sudo mysql_secure_installation
-   ```
-
-1. Test the installation:
-
-   ```bash
-   mysql -u root -p
-   ```
-
-   Sample output:
-
-   ```terminal
-   Welcome to the MySQL monitor.  Commands end with ; or \g.
-   Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
-
-   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-
-   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
-
-   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-   mysql>
-   ```
-
-1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
+If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
   {% include install/mysql_max-allowed-packet-ubuntu.md %}
 
-1. [Configure the Magento database instance](#instgde-prereq-mysql-config).
+Then, [Configure the Magento database instance](#instgde-prereq-mysql-config).
 
-### Installing MySQL 5.6 on Ubuntu 14 {#instgde-prereq-mysql56ubu14}
+## MySQL 8 changes
 
-To install MySQL 5.6 on Ubuntu 14:
+For Magento 2.4, we added support for MySQL 8.
+This section describes major changes to MySQL 8 that Magento developers should be aware of.
 
-1. Enter this command:
+### Removed width for integer types (Padding)
 
-   ```bash
-   apt-get -y install mysql-server-5.6 mysql-client-5.6
-   ```
+The display width specification for integer data types (TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT)
+have been deprecated in MySQL 8.0.17. Statements that include data-type definitions in their output no longer show the display width for integer types, with these exception of TINYINT(1). MySQL Connectors assume that TINYINT(1) columns originated as BOOLEAN columns. This exception enables them to continue to make that assumption.
 
-1. Start MySQL:
+#### Example:
 
-   ```bash
-   sudo service mysql start
-   ```
+**Describe admin_user at mysql 5.6**
 
-1. Secure the installation:
+| Field | Type | Null | Key | Default | Extra |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| user\_id | int\(10\) unsigned | NO | PRI | NULL | auto\_increment |
+| firstname | varchar\(32\) | YES | | NULL | |
+| lastname | varchar\(32\) | YES | | NULL | |
+| email | varchar\(128\) | YES | | NULL | |
+| username | varchar\(40\) | YES | UNI | NULL | |
+| password | varchar\(255\) | NO | | NULL | |
+| created | timestamp | NO | | CURRENT\_TIMESTAMP | |
+| modified | timestamp | NO | | CURRENT\_TIMESTAMP | on update CURRENT\_TIMESTAMP |
+| logdate | timestamp | YES | | NULL | |
+| lognum | smallint\(5\) unsigned | NO | | 0 | |
 
-   ```bash
-   mysql_secure_installation
-   ```
+**Describe admin_user at mysql 8.19**
 
-1. Test the installation by entering the following command:
+| Field | Type | Null | Key | Default | Extra |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| user\_id | int unsigned | NO | PRI | NULL | auto\_increment |
+| firstname | varchar\(32\) | YES | | NULL | |
+| lastname | varchar\(32\) | YES | | NULL | |
+| email | varchar\(128\) | YES | | NULL | |
+| username | varchar\(40\) | YES | UNI | NULL | |
+| password | varchar\(255\) | NO | | NULL | |
+| created | timestamp | NO | | CURRENT\_TIMESTAMP | DEFAULT\_GENERATED |
+| modified | timestamp | NO | | CURRENT\_TIMESTAMP | DEFAULT\_GENERATED on update CURRENT\_TIMESTAMP |
+| logdate | timestamp | YES | | NULL | |
+| lognum | smallint unsigned | NO | | 0 | |
 
-   ```bash
-   mysql -u root -p
-   ```
+With the exception of *TINYINT(1)*, all integer padding (TINYINT > 1, SMALLINT, MEDIUMINT, INT, BIGINT) should be removed from `db_schema.xml`.
 
-   Sample output:
+For more information, see [https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html#mysqld-8-0-19-feature](
+https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html#mysqld-8-0-19-feature).
 
-   ```terminal
-   Welcome to the MySQL monitor.  Commands end with ; or \g.
-   Your MySQL connection id is 45 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+### Default ORDER BY behavior
 
-   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Before 8.0, entries were sorted by the foreign key. XXXXX What happens now? XXXXXX
+Always specify a sort order if your code depends on the sort.
 
-   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
+### Deprecated ASC and DESC qualifiers for GROUP BY
 
-   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+As of MySQL 8.0.13, the deprecated `ASC` or `DESC` qualifiers for `GROUP BY` clauses have been removed. Queries that previously relied on GROUP BY sorting may produce results that differ from previous MySQL versions. To produce a given sort order, provide an ORDER BY clause.
 
-   mysql>
-   ```
+## Magento and MySQL 8
 
-1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
+There have been some changes to Magento to properly support MySQL 8.
 
-   {% include install/mysql_max-allowed-packet-ubuntu.md %}
+### Query and Insert Behavior
 
-1. [Configure the Magento database instance](#instgde-prereq-mysql-config).
+Magento disabled the regular validation behavior by setting SET SQL_MODE='' in `/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php:424.`. With validation disabled, it is possible that MySQL will truncat data. In MySQL, the Query behavior has changed: `Select * on my_table where IP='127.0.0.1'` will no longer return any results because it will not truncated. XXXXX need to clarify last sentence. XXXXXX
 
-### Installing MySQL 5.6 on Ubuntu 12 {#instgde-prereq-mysql56ubu12}
+## Upgrading from MySQL 5.7 to MySQL 8
 
-To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubuntu.com](http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04){:target="_blank"}.
+In order to properly update your MySQL from version 5.7 to version 8, the process must be done in the following order:
+XXXXX These steps need clarification. At what step should the update to 8 occur? XXXXXXXXXX
 
-1. Enter the following commands in the order shown:
-
-   ```bash
-   apt-get -y update
-   ```
-
-   ```bash
-   apt-add-repository ppa:ondrej/mysql-5.6
-   ```
-
-   ```bash
-   apt-get -y update
-   ```
-
-   ```bash
-   apt-get -y install mysql-server
-   ```
-
-1. Start MySQL:
-
-   ```bash
-   sudo service mysql start
-   ```
-
-1. Secure the installation:
-
-   ```bash
-   mysql_secure_installation
-   ```
-
-1. Test the installation:
-
-   ```bash
-   mysql -u root -p
-   ```
-
-   Messages similar to the following display:
-
-   ```terminal
-   Welcome to the MySQL monitor.  Commands end with ; or \g.
-   Your MySQL connection id is 43 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
-
-   Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-
-   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
-
-   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-   mysql>
-   ```
-
-1. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
-
-   {% include install/mysql_max-allowed-packet-ubuntu.md %}
-
-1. [Configure the Magento database instance](#instgde-prereq-mysql-config).
-
-## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
-
-This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
-
-{:.bs-callout-info}
-The Magento application 2.1.2 and later are compatible with MySQL 5.7.
-
-### Get MySQL 5.7 for CentOS 7
-
-The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
-
-As a user with `root` privileges, enter the following commands in the order shown:
-
-```bash
-wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
-```
-
-```bash
-yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
-```
-
-Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos-config).
-
-### Get MySQL 5.7 for CentOS 6
-
-The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
-
-As a user with `root` privileges, enter the following commands in the order shown:
-
-```bash
-wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
-```
-
-```bash
-yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
-```
-
-Continue with the next section.
-
-### Install and configure MySQL 5.7 on CentOS 6 or 7 {#mysql57-centos-config}
-
-1. Enter the following commands in the order shown:
-
-   ```bash
-   yum -y install mysql-community-server
-   ```
-
-   ```bash
-   service mysqld start
-   ```
-
-1. Verify the version:
-
-   ```bash
-   mysql --version
-   ```
-
-   Sample output follows:
-
-   ```bash
-   mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
-   ```
-
-1. Get the temporary database `root` user password:
-
-   ```bash
-   grep 'temporary password' /var/log/mysqld.log
-   ```
-
-1. Secure the installation:
-
-   ```bash
-   mysql_secure_installation
-   ```
-
-   ```bash
-   mysql_secure_installation
-   ```
-
-   Follow the prompts on your screen to set a new password and configure other options.
-
-1. Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
-
-## Installing and configuring MySQL 5.6 on CentOS {#instgde-prereq-mysql-centos}
-
-The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux](http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/){:target="_blank"}.
-
-1. *CentOS 6* Install the MySQL database:
-
-   ```bash
-   yum -y update
-   ```
-
-   ```bash
-   sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
-   ```
-
-   ```bash
-   sudo yum -y install mysql-server
-   ```
-
-1. *CentOS 7* Install the MySQL database:
-
-   ```bash
-   yum -y update
-   ```
-
-   ```bash
-   sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
-   ```
-
-   ```bash
-   sudo yum -y install mysql-server
-   ```
-
-1. Start MySQL:
-
-   ```bash
-   service mysqld start
-   ```
-
-1. Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration:
-
-   ```bash
-   mysql_secure_installation
-   ```
-
-1. Verify the MySQL server version:
-
-   ```bash
-   mysql -u root -p
-   ```
-
-   Messages similar to the following display:
-
-   ```terminal
-   Welcome to the MySQL monitor.  Commands end with ; or \g.
-   Your MySQL connection id is 15 Server version: 5.6.23 MySQL Community Server (GPL)
-
-   Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
-
-   Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.
-
-   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-   ```
-
-1. If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} parameter. We recommend a value of at least 16MB.
-
-   {% include install/mysql_max-allowed-packet-centos.md %}
-
-1. Configure the Magento database instance as discussed in the next section.
+ 1. Upgrade Magento to 2.4.0.
+    Test everything makes sure your system work as expected.
+ 1. Enable maintenance mode.
+ 1. Make a backup from the database.
+ 1. Import dump in MySQL 8.
+ 1. Switch engine clean cache.
+ 1. Disable maintenance mode.
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
 
