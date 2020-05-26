@@ -42,7 +42,7 @@ Using the more manual process of upgrading via the command line allows you to tr
 ## Manage packages
 
 {:.bs-callout-info}
-See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
+See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
 
 1. Backup the `composer.json` file.
 
@@ -56,18 +56,18 @@ See the examples at the end of this section for help specifying different releas
    composer remove magento/product-community-edition --no-update
    ```
 
-1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.3`), that you want to upgrade to.
+1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.0`), that you want to upgrade to.
 
    _{{ ce }}_:
 
    ```bash
-   composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
+   composer require magento/product-community-edition={{ page.guide_version }}.0 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require magento/product-enterprise-edition={{ page.guide_version }}.3 --no-update
+   composer require magento/product-enterprise-edition={{ page.guide_version }}.0 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">
@@ -95,7 +95,7 @@ See the examples at the end of this section for help specifying different releas
 
 1. Remove unused packages.
 
-   If you are upgrading from 2.2.x to 2.3.x, remove unused packages with the following command. It is not needed if you are upgrading from 2.3.x.
+   If you are upgrading from 2.2.x to 2.4.x, remove unused packages with the following command. It is not needed if you are upgrading from 2.3.x.
 
    ```bash
    composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
@@ -103,10 +103,10 @@ See the examples at the end of this section for help specifying different releas
 
 ### Example - Minor release
 
-Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.3.0 metapackage:
+Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.4.0 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.0 --no-update
+composer require magento/product-community-edition=2.4.0 --no-update
 ```
 
 ### Example - Quality patch
@@ -127,7 +127,7 @@ Security patches use the Composer naming convention `2.3.3-px`. Use Composer to 
 composer require magento/product-community-edition=2.3.3-p1 --no-update
 ```
 
-## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
+c## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
 
 If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
 
