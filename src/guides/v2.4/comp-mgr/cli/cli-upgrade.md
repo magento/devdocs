@@ -127,43 +127,6 @@ Security patches use the Composer naming convention `2.3.3-px`. Use Composer to 
 composer require magento/product-community-edition=2.3.3-p1 --no-update
 ```
 
-c## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
-
-If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
-
-1. Backup the `update/` directory.
-
-1. Create a Composer project.
-
-   _{{ ce }} version {{ page.guide_version }}.3:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.3 temp_dir --no-install
-   ```
-
-   _{{ ee }} version {{ page.guide_version }}.3:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.3 temp_dir --no-install
-   ```
-
-   {:.bs-callout-info}
-   If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-
-1. Remove the old `update/` directory and move `temp_dir/update/` to the `update/` directory:
-
-   ```bash
-   rm -rf update
-   ```
-
-   ```bash
-   mv temp_dir/update .
-   ```
-
-   ```bash
-   rm -rf temp_dir
-   ```
-
 ## Update metadata
 
 1. Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as needed.

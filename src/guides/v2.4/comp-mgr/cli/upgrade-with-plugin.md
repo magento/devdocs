@@ -89,42 +89,6 @@ composer show magento/product-enterprise-edition {{ page.guide_version }}.* --al
 
 </div>
 
-## Modify the Magento updater
-
-_Optional_—If the Magento updater is installed (it is located in `update/`) modify it:
-
-1. Backup `update/` directory.
-1. Create a Composer project.
-
-   _{{ ce }} version {{ page.guide_version }}.2:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.2 temp_dir --no-install
-   ```
-
-   _{{ ee }} version {{ page.guide_version }}.2:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
-   ```
-
-    {:.bs-callout-info}
-   If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-
-1. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
-
-   ```bash
-   rm -rf update
-   ```
-
-   ```bash
-   mv temp_dir/update .
-   ```
-
-   ```bash
-   rm -rf temp_dir
-   ```
-
 ## Update metadata
 
  {:.bs-callout-info}
