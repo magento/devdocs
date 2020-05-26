@@ -22,7 +22,7 @@ The Integration environment provides a single, base `integration` branch contain
 The {{site.data.var.ece}} environments support a flexible, continuous integration process. Begin by cloning the `integration` branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:
 
 -  **Fetch** changes from `integration`
--  **Branch** from `integration`
+-  **Create** branch from `integration`
 -  **Develop** code on local workstation
 -  **Push** code changes to remote and validate
 -  **Merge** to `integration` and test
