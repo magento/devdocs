@@ -1220,7 +1220,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 **Issue**: Magento throws an error on the Order Summary  section of the checkout workflow when a customer removes store credit after first selecting it as a payment method for the entire order. **Workaround**: Customers can refresh the Order page. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
 <!-- MC-33431-->
 
-**Issue**: The storefront checkout workflow will not display any payment method that has been enabled for only specific countries with the exception of these payment methods: PayPal, Braintree, Klarna, and Amazon Pay. **Workaround**: No workaround for this issue is available in Magento 2.3.5. A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
+**Issue**: The storefront checkout workflow will  display only the Klarna and Amazon Pay payment methods for some countries, although other payment methods have been enabled. **Workaround**: Download and apply [Patch for specific country payment method issue](https://magento.com/tech-resources/download#download2369). A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020.
 
 **Issue**: An error message appears when a shopper attempts to change their credit card from the payments widget while checking out with Amazon Pay.  The shopper cannot successfully complete checkout by ignoring the error and proceeding to checkout. To resolve this issue and remove the error, see [Amazon Pay credit card change error](https://support.magento.com/hc/en-us/articles/360042646332) to apply the fix. <!-- BUNDLE-2554-->
 

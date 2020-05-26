@@ -65,9 +65,6 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) and [Service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
 
-   {:.bs-callout-warning}
-   If your project uses a shared Staging environment, be aware that changes to the Elasticsearch installation in the Staging environment affect the Production environment.
-
 -  **Test locally and in the Integration environment before deploying to Staging and Production**–Identify and fix issues in your local and Integration environments to prevent extended downtime when you deploy to Staging and Production environments.
 
    -  Use the `magento-cloud local:build` command to test the build in your local environment. Identify and fix any issues related to composer dependencies and environment and application configuration before deploying to a remote environment. See [Test build your code locally before deployment]({{ site.baseurl }}/cloud/live/live-sanity-check.html#test-build).
