@@ -104,7 +104,7 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 'cache' => [
     'frontend' => [
         'default' => [
-            'backend' => '\\Magento\\Framework\\Cache\\Backend\Redis',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => '127.0.0.1',
                 'database' => '0',
@@ -118,6 +118,7 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 
 Since Magento stores a lot of configuration data in the Redis cache, we can preload data that is reused between pages.
 Redis uses the `pipeline` in order to composite load requests.
+This feature works only with `\Magento\Framework\Cache\Backend\Redis` as cache adapter.
 Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUGIN_LIST`,and `EAV_ENTITY_TYPES` should include the database prefix.
 
 ```php
@@ -125,7 +126,7 @@ Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUG
     'frontend' => [
         'default' => [
             'id_prefix' => '061_',
-            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => 'redis',
                 'database' => '0',
@@ -146,6 +147,17 @@ Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUG
         ]
     ]
 ]
+```
+
+In case you use Preload feature with L2 cache, you should add ':hash' suffix to your keys.
+
+```php
+'preload_keys' => [
+    '061_EAV_ENTITY_TYPES:hash',
+    '061_GLOBAL_PLUGIN_LIST:hash',
+    '061_DB_IS_UP_TO_DATE:hash',
+    '061_SYSTEM_DEFAULT:hash',
+],
 ```
 
 ## Basic verification {#redis-verify}
