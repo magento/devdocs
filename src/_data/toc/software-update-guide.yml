@@ -88,9 +88,6 @@ pages:
       url: /comp-mgr/cli/cli-upgrade.html
       exclude_versions: ["2.3"]
       children:
-          
-        - label: Upgrade using the Composer plugin
-          url: /comp-mgr/cli/upgrade-with-plugin.html
 
         - label: Upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
