@@ -1,4 +1,4 @@
-![How Magento installation works]({{ site.baseurl }}/common/images/install-diagram-24.png){:width="1100px"}
+![How Magento installation works]({{ site.baseurl }}/common/images/install-diagram-24.svg)
 
 The diagram shows the following:
 
