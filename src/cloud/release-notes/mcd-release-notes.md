@@ -20,17 +20,15 @@ The release notes include:
 
 -  {:.new}**Container updates**–
 
-   -  {:.new}**PHP-FPM container updates**–
+   -  {:.new}**PHP-FPM**—Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
 
-      -  {:.new}Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
-
-   -  {:.new}**Varnish container**–
-
-      -  {:.new}The Varnish service is now provisioned by default when you deploy a Magento Cloud Docker environment using a supported version of the Magento Cloud application template.<!--MAGECLOUD-3598-->
+   -  {:.new}**Varnish**—The Varnish service is now provisioned by default when you deploy a Magento Cloud Docker environment using a supported version of the Magento Cloud application template.<!--MAGECLOUD-2634-->
 
 -  {:.new}**Command changes**–
 
-   -  {:.new}Added the `--no-varnish` option to the `ece-tools build:compose` command to skip Varnish service installation when you generate the configuration for a Magento Cloud Docker environment.<!--MAGECLOUD-3598-->
+   -  {:.new}Added the `--no-varnish` option to the `ece-tools build:compose` command to skip Varnish service installation when you generate the configuration for a Magento Cloud Docker environment.<!--MCLOUD-2634-->
+
+   -  {:.new}Added the `--es-env-var` option to the `ece-tools build:compose` command to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the configuration for a Magento Cloud Docker environment.<!--MCLOUD-3059-->
 
 ## v1.0.0
 *Release date: Nov 14, 2019*<br/>

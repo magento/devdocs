@@ -27,7 +27,7 @@ List containers and ports | `docker-compose ps` or `docker ps`
 
 ### Override configuration
 
-Because the `ece-docker build:compose` command in the `{{site.data.var.ct}}` package overwrites the base configuration, we recommend saving your customizations in an override configuration file. You can use this method to merge multiple custom configurations. See [Docker Docs: Multiple Compose files](https://docs.docker.com/compose/extends/#multiple-compose-files).
+Because the `ece-docker build:compose` command overwrites the base configuration, we recommend saving your customizations in an override configuration file. You can use this method to merge multiple custom configurations. See [Docker Docs: Multiple Compose files][].
 
 The `docker-compose up` command considers the base `docker-compose.yml` configuration by default. If the `docker-compose.override.yml` file is present, then the override configuration merges with the base configuration.
 
@@ -41,11 +41,11 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
-| [Mode]({{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode)         | `--mode`, `-m`   | production, developer
-| [File synchronization engine]({{site.baseurl}}/cloud/docker/docker-syncing-data.html) | `--sync-engine` | native (default), docker-sync, mutagen
+| [Mode][]         | `--mode`, `-m`   | production, developer
+| [File synchronization engine][] | `--sync-engine` | native (default), docker-sync, mutagen
 
 {:.bs-callout-info}
-See [Service versions] for a list of the options to configure the software service version when building your {{site.data.var.mcd-prod}} environment.
+See [Service versions] for a list of the options to configure and customize software service versions and other options when building your {{site.data.var.mcd-prod}} environment.
 
 ## bin/magento-docker
 
@@ -84,5 +84,10 @@ Restart containers | `./bin/magento-docker restart`
 Destroy containers | `./bin/magento-docker down`
 Destroy, re-create, and start containers | `./bin/magento-docker up`
 
-[Service versions]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
-[Configure Docker]: {{site.baseurl}}/cloud/docker/docker-config.html
+<!--Link definitions-->
+
+[Docker Docs: Multiple Compose files]: https://docs.docker.com/compose/extends/#multiple-compose-files
+[Mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
+[File synchronization engine]: {{ site.baseurl }}/cloud/docker/docker-syncing-data.html
+[Service versions]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers
+[Configure Docker]: {{ site.baseurl }}/cloud/docker/docker-config.html

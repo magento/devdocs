@@ -7,7 +7,6 @@ functional_areas:
   - Configuration
 ---
 
-
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.
 
 {:.bs-callout-info}
@@ -62,6 +61,14 @@ See [Manage the database] for details about using the database.
 **Ports exposed**: `9200`, `9300`<br/>
 
 The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
+
+You can customize the Elasticsearch container using the `--es-env-var` option when you generate the Docker Compose configuration file. You can set Elasticsearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
+
+```bash
+php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx512m" --es-env-var=node.store.allow_mmapfs=false
+```
+
+See [Important Elasticsearch configuration][] for information about available settings.
 
 ### Troubleshooting
 
@@ -246,3 +253,4 @@ To mount the custom index.php file using volumes:
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions
 [Docker override file]: https://docs.docker.com/compose/extends/
+[Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
