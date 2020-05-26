@@ -68,9 +68,6 @@ If any modules are missing, they are added using the same workflow used for inst
  -soap
 ```
 
-{:.bs-callout-info}
-The `bcmath` extension is required for {{site.data.var.ee}} only.
-
 ## Check PHP settings
 
 -  Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:

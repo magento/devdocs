@@ -54,7 +54,7 @@ For Less styles rules to be compiled to `styles-m.css` without a media query so 
 
 ```less
 //
-//  Common (style-m.css)
+//  Common (styles-m.css)
 //  _____________________________________________
 & when (@media-common = true) {
     // your code
@@ -73,7 +73,7 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 
 ```less
 //
-//  Mobile (style-m.css)
+//  Mobile (styles-m.css)
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
@@ -109,6 +109,10 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    // your code
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     // your code
 }
 ```
