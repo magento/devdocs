@@ -107,7 +107,7 @@ interface AdapterInterface
 
 1. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file.
 
-Example: 
+Example:
 
 ```bash
 vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_soap.xml
