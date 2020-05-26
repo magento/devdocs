@@ -4,7 +4,7 @@ To update or upgrade a module or extension:
 
 1. Export the contents to your Magento root.
 
-1. If a cCmposer package exists for the module, run one of the following.
+1. If a Composer package exists for the module, run one of the following.
 
    Update per module name:
 
@@ -21,7 +21,7 @@ To update or upgrade a module or extension:
 1. Run the following commands to upgrade, deploy, and clean the cache.
 
    ```bash
-   php bin/magento setup:upgrade --keep-generated
-   php bin/magento setup:static-content:deploy
-   php bin/magento cache:clean
+   bin/magento setup:upgrade --keep-generated
+   bin/magento setup:static-content:deploy
+   bin/magento cache:clean
    ```
