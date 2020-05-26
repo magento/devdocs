@@ -89,7 +89,7 @@ You must use constructor dependency injection for all optional and required depe
 
 ### Method injection
 
-In the code sample, the `Builder` class is also dependent on the `CommandAbstract` class for its `processCommand()` method.
+In the code sample, the `Builder` class is also dependent on the `AbstractCommand` class for its `processCommand()` method.
 
 Method injection involves passing in a dependency as a method parameter to use it in the class logic.
 When an object needs to perform actions on a dependency that cannot be injected, use method injection.
