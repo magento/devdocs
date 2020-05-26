@@ -1,12 +1,16 @@
 label: Software Update Guide
 pages:
 
-    - label: Introduction
+    - label: Magento upgrade overview
       url: /comp-mgr/bk-compman-upgrade-guide.html
 
     - label: Prerequisites
       url: /comp-mgr/prereq/prereq_compman.html
       children:
+
+        - label: Check the catalog search engine
+          url: /comp-mgr/prereq/prereq-elasticsearch.html	
+          exclude_versions: ["2.3"]
 
         - label: Set ulimit for the web server user
           url: /comp-mgr/prereq/prereq_compman-ulimit.html

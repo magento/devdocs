@@ -2,9 +2,7 @@
 
 The Magento _crontab_ is the configuration used to run Magento cron jobs.
 
-Magento uses cron tasks that can run with different configurations:
-
-*  PHP command-line configuration: The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
+Magento uses cron tasks that can run with different configurations. The PHP command-line configuration controls the general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on.
 
 {:.bs-callout-warning}
 

@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Introduction
+title: Magento upgrade overview
 functional_areas:
   - Upgrade
 ---
@@ -12,7 +12,7 @@ functional_areas:
 
 This topic discusses the ways you can:
 
-*  Upgrade (that is, *patch*) the Magento software from version {{ page.guide_version }}.0 to {{ page.guide_version }}.1, for example
+*  Upgrade the Magento software from one version to another
 *  Update any of the following:
 
    *  Modules (also referred to as *extensions*; extend Magento capabilities)
