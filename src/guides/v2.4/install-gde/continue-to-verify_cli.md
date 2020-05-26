@@ -24,8 +24,8 @@ If you haven't already installed optional sample data, you can [install it now](
 
 ### Manage and upgrade components
 
-*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
+*  [Component management (install, uninstall, enable, disable, update)]({{ page.baseurl }}/comp-mgr/manage-module.html)
+*  [System upgrade (upgrade the Magento software)]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html)
 
 ### Configure
 
