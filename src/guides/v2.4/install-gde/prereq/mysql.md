@@ -52,7 +52,7 @@ This section describes major changes to MySQL 8 that Magento developers should b
 ### Removed width for integer types (Padding)
 
 The display width specification for integer data types (TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT)
-have been deprecated in MySQL 8.0.17. Statements that include data-type definitions in their output no longer show the display width for integer types, with these exception of TINYINT(1). MySQL Connectors assume that TINYINT(1) columns originated as BOOLEAN columns. This exception enables them to continue to make that assumption.
+have been deprecated in MySQL 8.0.17. Statements that include data-type definitions in their output no longer show the display width for integer types, with the exception of TINYINT(1). MySQL Connectors assume that TINYINT(1) columns originated as BOOLEAN columns. This exception enables them to continue to make that assumption.
 
 #### Example:
 
