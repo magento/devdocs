@@ -33,7 +33,7 @@ You must install [Elasticsearch]({{ page.baseurl }}/install-gde/prereq/elasticse
 {:.bs-callout-warning}
 Magento no longer provides support for Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol) as they are End of Life. If you are using ES2, follow the instructions in [Change Elasticsearch Module]({{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html) before upgrading.
 
-The changes with removing values from the `system.xml` file require eliminating ES2 support from the Admin UI. sOther API classes were removed to clean up the code when we deprecated ES2 and ES5 in Magento 2.3.5.
+The changes with removing values from the `system.xml` file require eliminating ES2 support from the Admin UI. Other API classes were removed to clean up the code when we deprecated ES2 and ES5 in Magento 2.3.5.
 
 #### Level Target/Location Code/Reason
 
@@ -68,14 +68,14 @@ Magento_Elasticsearch:0 M303 A field-node was removed
 
 ### Inventory asynchronous reindex
 
-A new Stock/Source reindex strategy configurationsetting option was added to the Admin to prevent index table collisions. The setting has the following options:
+A new Stock/Source reindex strategy configuration setting option was added to the Admin to prevent index table collisions. The setting has the following options:
 
 -  Synchronous
 -  Asynchronous
 
-Previoously, it was possible to have a "burst" of activity that triggered contention oi the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
+Previoously, it was possible to have a "burst" of activity that triggered contention of the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
 
-For example, if the indexer was running based on schedule and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. That woulld previously result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
+For example, if the indexer was running based on schedule, and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. Previously, that would result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
 
 ```terminal
 MAJOR Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
@@ -86,7 +86,7 @@ MAJOR Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
 
 ### JSON field support
 
-MySQL 5.7 supports the native JSON data type: [https://dev.mysql.com/doc/refman/5.7/en/json.html](https://dev.mysql.com/doc/refman/5.7/en/json.html). Magento 2.4.0 now supports using JSON fields with declarative schema.
+MySQL 5.7 supports the native JSON data type: [https://dev.mysql.com/doc/refman/5.7/en/json.html](https://dev.mysql.com/doc/refman/5.7/en/json.html). Magento 2.4.0 now supports using JSON fields with a declarative schema.
 
 ### Laminas
 
@@ -101,9 +101,9 @@ Both files are API class/interface. These changes will be solved dynamically dur
 
 ### MediaContent and MediaContentApi modules
 
-The MediaContent and MediaContentApi modules were introduced to provide the ability to manage relationships between content and media assets used in that content.
+The 'MediaContent' and 'MediaContentApi' modules were introduced to provide the ability to manage relationships between content and media assets used in that content.
 
-Additionally, observers have been added to the CMS and Catalog modules to save the relationship of corresponding entities to MediaContent storage.
+Additionally, observers have been added to the CMS and Catalog modules to save the relationship of corresponding entities to 'MediaContent' storage.
 
 ### Method parameter typing changed
 
@@ -127,8 +127,8 @@ InventorySalesApi/Api/AreProductsSalableForRequestedQtyInterface
 
 These changes allow third-party developers to optimize performance by providing an implementation for bulk services.
 
--  Introduced a Bulk version of IsProductSalableForRequestedQtyInterface API
--  Introduced a Bulk version of IsProductSalableInterface when working with a list of items
+-  Introduced a Bulk version of `IsProductSalableForRequestedQtyInterface` API
+-  Introduced a Bulk version of `IsProductSalableInterface` when working with a list of items
 
 ### Size field added to media_gallery_asset table
 
@@ -136,17 +136,17 @@ This is a dependency for the Adobe Stock integration.
 
 A size field was added to the `media_gallery_asset` table to enable storing and using the media asset size. The Media Gallery Asset entity model and interface were updated accordingly.
 
-The Magento\MediaGalleryApi\Api\Data\AssetInterface that was updated with a new public method in the scope of the changes is not marked as @api so it's not currently part of Magento API.
+The `Magento\MediaGalleryApi\Api\Data\AssetInterface` that was updated with a new public method in the scope of the changes is not marked as @api so it is not currently part of Magento API.
 
-The possible impact is minimal, the table was introduced in 2.3.4 (just several month ago) and it was not used by any functionality in Magento 2 (only Adobe Stock Integration extension).
+The possible impact is minimal: the table was introduced in 2.3.4 (just several month ago) and it was not used by any functionality in Magento 2 (only Adobe Stock Integration extension).
 
 ### SVC failure due to adding strict types
 
 This change fixes a bug where `getDefaultLimitPerPageValue` returns a value that is not available.
 
-As a Store Administrator, you are able to provide the Products per Page on Grid Allowed Values and Products per Page on Grid Default Value. There is no verification, so you can accidentally set the default value to be one of the unavailable options.
+As a Store Administrator, you are able to provide the 'Products per Page on Grid Allowed' values and 'Products per Page on Grid Default' value. There is no verification, so you can accidentally set the default value to be one of the unavailable options.
 
-The only stores that might be affected are the ones who changed the configuration value for Default items per page, without customizing possible options. Some  system integrators customize either the default value or allowed values.
+The only stores that might be affected are the ones who changed the configuration value for 'Default items per page', without customizing possible options. Some system integrators customize either the default value or allowed values.
 
 As a result, there is inconsistency between default and allowed values. So far this worked by coincidence, but after the change, that would be explicit.
 
