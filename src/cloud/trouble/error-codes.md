@@ -28,8 +28,8 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | 9 | validate-config | Composer.json missed required autoload section | {{site.data.cloud-error-messages.COMPOSER_MISSED_REQUIRED_AUTOLOAD}} |
 | 10 | validate-config | The file `.magento.env.yaml` contains an option which isn't declared in the schema, or has an invalid value or stage | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_MAGENTO_ENV_YAML}}|
 | 11 | refresh-modules | Command `/bin/magento module:enable --all` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
-| 12 | apply-patches | Patch applying failed | |
-| 13 | set-report-dir-nesting-level | Can't write to the file /pub/errors/local.xml | |
+| 12 | apply-patches | Failed to apply patch | |
+| 13 | set-report-dir-nesting-level | Can't write to the file `/pub/errors/local.xml` | |
 | 14 | copy-sample-data | Failed to copy sample data files | |
 | 15 | compile-di | Command `/bin/magento setup:di:compile` failed | |
 | 16 | dump-autoload | Command `composer dump-autoload` failed | {{site.data.cloud-error-messages.COMPOSER_DUMP_AUTOLOAD_FAILED}} |
