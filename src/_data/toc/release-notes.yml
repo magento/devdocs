@@ -3,6 +3,20 @@ pages:
     - label: Introduction
       url: /release-notes/bk-release-notes.html
 
+    - label: 2.4 Release Notes
+      include_versions: ["2.4"]
+      children:
+
+        - label: Component Status
+          url: /release-notes/component-status.html
+
+        - label: Magento Open Source 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-open-source.html
+
+        - label: Magento Commerce 2.4.0 Release Notes
+          url: /release-notes/release-notes-2-4-0-commerce.html
+
+
     - label: 2.3 Release Notes
       include_versions: ["2.3"]
       children:
