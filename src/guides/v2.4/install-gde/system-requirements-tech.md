@@ -42,10 +42,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 ## PHP
 
-Magento 2.4.0 supports PHP 7.3 and 7.4.
-To maintain PCI compliance, Magento should not be run on unsupported software.
-
-<!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
+<!--{% assign supported_php_versions = site.data.codebase.v2_4.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
 ### Required PHP extensions
@@ -56,7 +53,7 @@ The [PHP installation instructions][] include a step for installing these extens
 {:.bs-callout-warning}
 If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign platform-req = site.data.codebase.v2_4.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.
