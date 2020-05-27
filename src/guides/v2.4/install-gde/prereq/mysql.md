@@ -56,7 +56,7 @@ have been deprecated in MySQL 8.0.17. Statements that include data-type definiti
 
 #### Example:
 
-**Describe admin_user at mysql 5.6**
+Describe admin_user at mysql 5.6
 
 | Field | Type | Null | Key | Default | Extra |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -71,7 +71,7 @@ have been deprecated in MySQL 8.0.17. Statements that include data-type definiti
 | logdate | timestamp | YES | | NULL | |
 | lognum | smallint\(5\) unsigned | NO | | 0 | |
 
-**Describe admin_user at mysql 8.19**
+Describe admin_user at mysql 8.19
 
 | Field | Type | Null | Key | Default | Extra |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -113,13 +113,13 @@ Magento disabled the regular validation behavior by setting SET SQL_MODE='' in `
 In order to properly update your MySQL from version 5.7 to version 8, the process must be done in the following order:
 XXXXX These steps need clarification. At what step should the update to 8 occur? XXXXXXXXXX
 
- 1. Upgrade Magento to 2.4.0.
-    Test everything makes sure your system work as expected.
- 1. Enable maintenance mode.
- 1. Make a backup from the database.
- 1. Import dump in MySQL 8.
- 1. Switch engine clean cache.
- 1. Disable maintenance mode.
+1. Upgrade Magento to 2.4.0.
+   Test everything makes sure your system work as expected.
+1. Enable maintenance mode.
+1. Make a backup from the database.
+1. Import dump in MySQL 8.
+1. Switch engine clean cache.
+1. Disable maintenance mode.
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
 
