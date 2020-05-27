@@ -103,7 +103,17 @@ where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]
 
 **Step 3:**
 
-To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
+To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider.
+
+Sample dependency injection:
+
+```xml
+<type name="%YourNamespce\YourModule\Ui\DataProvider\YourDataProviderClass%">
+    <arguments>
+        <argument name="pool" xsi:type="object">%YourNamespace\YourModule\DataProvider\Modifier\Pool%</argument>
+    </arguments>
+</type>
+```
 
 ## Related reading
 
