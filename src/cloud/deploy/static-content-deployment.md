@@ -50,7 +50,7 @@ To install and configure Baler:
    ```
 
    {:.bs-callout-tip}
-   If you do not have a copy of the `config.php` file in your development branch, see [Recommended procedure to manage your settings]({{site.baseurl}}/cloud/live/sens-data-over.html#cloud-config-specific-recomm) to learn how to generate and use this file to manage Magento store configuration for Cloud projects.
+   If you do not have a copy of the `config.php` file in your development branch, see [Procedure to manage your settings]({{site.baseurl}}/cloud/live/sens-data-over.html#procedure-to-manage-your-settings) to learn how to generate and use this file to manage Magento store configuration for Cloud projects.
 
 1. Update your `.magento.env.yaml` environment configuration file to enable the `SCD_USE_BALER` option during the build process:
 
