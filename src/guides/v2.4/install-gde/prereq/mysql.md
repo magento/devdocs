@@ -113,7 +113,7 @@ Magento disabled the regular validation behavior by setting SET SQL_MODE='' in `
 In order to properly update your MySQL from version 5.7 to version 8, the process must be done in the following order:
 
 1. Upgrade Magento to 2.4.0.
-   Test everything makes sure your system work as expected.
+   Test everything and make sure your system works as expected.
 1. Enable maintenance mode.
 1. Make a backup from the database.
 1. Update MySQL to version 8.
