@@ -564,7 +564,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-On the deploy phase, we recommend setting SKIP_SCD=true so that the static content build does not happen during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment.
+On the deploy phase, we recommend setting `SKIP_SCD: true` so that the static content build does not happen during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:

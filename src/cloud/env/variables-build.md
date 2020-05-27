@@ -147,7 +147,7 @@ Set to `true` to skip static content deployment during the build phase.
 
 If you already deploy static content during the build phase with [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
-On the build phase, we recommend setting `SKIP_SCD=false` so that the static content build occurs during the build phase where the process will not impact site deployment or cause unnecessary site downtime.
+On the build phase, we recommend setting `SKIP_SCD: false` so that the static content build occurs during the build phase where the process will not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:
