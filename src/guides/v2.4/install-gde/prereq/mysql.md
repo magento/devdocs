@@ -114,13 +114,30 @@ To properly update MySQL from version 5.7 to version 8, you must follow these st
 
 1. Upgrade Magento to 2.4.0.
    Test everything and make sure your system works as expected.
-1. Enable maintenance mode: `bin/magento maintenance:enable`.
-1. Make a data [backup]({{page.baseurl }}/install-gde/install/cli/install-cli-backup).html#instgde-cli-uninst-back) from the database.
+1. Enable maintenance mode:
+
+   ```bash
+   bin/magento maintenance:enable
+   ```
+1. Make a database backup:
+
+   ```bash
+   bin/magento setup:backup --db
+   ```
+
 1. Update MySQL to version 8.
 1. Import the backed-up data into MySQL.
-1. Set the database engine in the Magento admin to MySQL 8.
-1. Clean the [cache](https://docs.magento.com/user-guide/system/cache-management.html).
-1. Disable maintenance mode: `bin/magento maintenance:disable`.
+1. In the Magento admin, set the database engine to MySQL 8.
+1. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
+1. Disable maintenance mode:
+
+   ```bash
+   bin/magento maintenance:disable
+   ```
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
 
