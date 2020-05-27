@@ -31,14 +31,14 @@ See [Docker CLI containers] for details.
 | Name       | Service   | Key  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
 | [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
-| [elasticsearch] | Elasticsearch | `--es` | 1.7, 2.4, 5.2, 6.5 |
-| [FPM][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2, 7.3 |  Used for all incoming requests
+| [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6 |
+| [FPM][fpm-container] | PHP FPM | `--php` | 7.0, 7.1, 7.2, 7.3, 7.4 |  Used for all incoming requests
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
 | [redis][redis-container] | Redis     | `--redis` | 3.2, 4.0, 5.0 |   Standard redis container
 | [selenium][selenium-container]| Selenium | `--with-selenium`<br>`--selenium-version`<br>`--selenium-image`| Any | Enables Magento application testing using the Magento Functional Testing Framework (MFTF)
 | [tls][tls-container] | SSL Endpoint |  |   |  Terminates SSL, can be configured to pass to varnish or nginx
-| [varnish][varnish-container] | Varnish | `--varnish` | 4, 6 |
+| [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 |
 | [web][web-container] | NGINX | `--nginx` | 1.9, latest |
 
 The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
