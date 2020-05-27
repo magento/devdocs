@@ -10,12 +10,19 @@ This {{site.data.var.ct}} error message reference provides information to resolv
 Error messages are categorized by deployment stage–build, deploy, and post-deploy. Each section provides a list of associated errors with the following information for each error:
 
 -  **Error code**:  The Magento-assigned identifier for the error message
--  **Step**:  Indicates the step in the deployment scenario where the error can occur. If the _Step_ column is blank, the error is a general error that can occur in multiple steps, or during pre-processing operations. See [Scenario-based deployment]({{site.baseurl}}/cloud/deploy/scenario-based-deployment.html).
+-  **Step**:  Indicates the step in the deployment scenario where the error can occur. If the _Step_ column is blank, the error is a general error that can occur in multiple steps, or during pre-processing operations. See [Scenario-based deployment]({{site.baseurl}}/cloud/deploy/scenario-based-deployment.html) for more information about the build, deploy, and post-deploy steps.
 -  **Error description**: A short phrase that summarizes the cause of the error
 -  **Suggested action**: Provides guidance to troubleshoot and resolve the error
 
 ## Build stage
 
+<style>
+table.my-special-table td:nth-child(1) {
+  width: 50px;
+}
+</style>
+
+{:.table.my-special-table}
 | Error code | Build step | Error description | Suggested action |
 | --- | --- | --- | -- |
 | 2 | | File `./app/etc/env.php` is not writable | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}}|
@@ -55,7 +62,7 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | 106 | | Unable to read the `.schema.yaml` file | |
 | 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | {{site.data.cloud-error-messages.
 
-REDIS_CACHE_CLEAN_FAILED}}. See [Setup Redis service]({{site.baseurl}}/cloud/project/project-conf-files_services-redis.html). |
+REDIS_CACHE_CLEAN_FAILED}}. |
 | 108 | pre-deploy: set-production-mode | Command `/bin/magento maintenance:enable` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 109 | validate-config | Incorrect database configuration | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_DB}} |
 | 110 | validate-config | Incorrect session configuration | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_SESSION}} |
