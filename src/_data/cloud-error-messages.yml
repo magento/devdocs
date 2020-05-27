@@ -1,0 +1,86 @@
+# Error messages
+
+# Magento Cloud error labels and suggested solutions to include in Cloud error reference table
+
+# ENV_PHP_IS_NOT_WRITEABLE applies to errors 102 and 202
+
+ENV_PHP_IS_NOT_WRITABLE: "Deployment script can't make required changes to the `/app/etc/env.php` file. Check your filesystem permissions."
+
+# CONFIG_NOT_DEFINED applies to errors 103 and 203
+
+CONFIG_NOT_DEFINED: "Configuration isn't defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct and it's defined."
+
+# CONFIG_PARSE_FAILED applies to 4, 104, 204
+CONFIG_PARSE_FAILED: The `./.magento.env.yaml` file format is invalid. Format the file according to YAML standards.
+
+# CONFIG_UNABLE_TO_READ applies to 5, 105, 205
+CONFIG_UNABLE_TO_READ: Unable to read the `./.magento.env.yaml` file. Check file permissions.
+
+CONFIG_PHP_IS_NOT_WRITABLE: Deployment script can't make required changes to the `/app/etc/config.php` file. Check your filesystem permissions.
+
+CANT_READ_COMPOSER_JSON: Unable to read the `./composer.json` file. Check file permissions.
+
+COMPOSER_MISSED_REQUIRED_AUTOLOAD: Required `autoload` section is missing from the `composer.json` file. Compare the autoload section from the Magento `composer.json` file template, and add the missing configuration.
+
+WRONG_CONFIGURATION_MAGENTO_ENV_YAML: The `./.magento.env.yaml` file contains invalid configuration. Check the error log for detailed info.
+
+COMPOSER_DUMP_AUTOLOAD_FAILED: The `composer dump-autoload` command failed. Check the `cloud.log` for more information.
+
+BALER_NOT_FOUND: "Check the `SCD_USE_BALER` environment variable to verify that the Baler module is configured and enabled for JS bundling. If you don't want to use the Baler module, set `SCD_USE_BALER: false`."
+
+#The UTILITY_NOT_FOUND_ACTION applies to the following errors: 
+#  BUILD_UTILITY_NOT_FOUND = 18
+#  DEPLOY_UTILITY_NOT_FOUND = 118
+
+UTILITY_NOT_FOUND_ACTION: One of required utilities was not found on server. Check the `cloud.log` for more information and install required utility.
+
+# The CHECK_CLOUD_LOG_ACTION applies to the following errors:
+# SCD_COMPRESSION_FAILED = 20, 120
+# SCD_COPYING_FAILED = 21
+
+CHECK_CLOUD_LOG_ACTION: Check the `cloud.log` for more information.
+
+WRITABLE_DIRECTORY_COPYING_FAILED: Failed to copy writable directories into the `./init` folder. Check your filesystem permissions.
+
+CLEAN_INIT_PUB_STATIC_FAILED: Failed to clean `./init/pub/static` folder. Check your filesystem permissions.
+
+COMPOSER_PACKAGE_NOT_FOUND: If you installed the Magento application version directly from the Magento git repository, verify that the `DEPLOYED_MAGENTO_VERSION_FROM_GIT` environment variable is configured.
+
+WRONG_CACHE_CONFIGURATION: Cache configuration is missing required parameters `server` or `port`. Check the `cloud.log` for more information.
+
+REDIS_CACHE_CLEAN_FAILED: Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service]({{ site.baseurl}}/cloud/project/project-conf-files_services-redis.html).
+
+WRONG_CONFIGURATION_DB: Check that the the `DATABASE_CONFIGURATION` environment variable is configured correctly.
+
+WRONG_CONFIGURATION_SESSION: Check that the `SESSION_CONFIGURATION` environment variable is configured correctly. The configuration must contain at least the `save` parameter.
+
+WRONG_CONFIGURATION_SEARCH: Check that the `SEARCH_CONFIGURATION` environment variable is configured correctly.. The configuration must contain at least the `engine` parameter.
+
+WRONG_CONFIGURATION_RESOURCE: Check that the `RESOURCE_CONFIGURATION` environment variable is configured correctly. The configuration must contain at least `connection` parameter.
+
+ELASTIC_SUITE_WITHOUT_ES: ElasticSuite is installed, but the Elasticsearch service is not available. Check that the `SEARCH_CONFIGURATION` environment variable is configured correctly, and verify that the Elasticsearch service is available.
+
+ELASTIC_SUITE_WRONG_ENGINE: ElasticSuite is installed but another search engine is configured. Update the `SEARCH_CONFIGURATION` environment variable to enable Elasticsearch and verify the Elasticsearch service configuration in the `services.yaml` file.
+
+#The INSTALL_UPGRADE_ACTION applies to the following errors: 
+#  INSTALL_COMMAND_FAILED - 116
+#  UPGRADE_COMMAND_FAILED - 126
+
+INSTALL_UPGRADE_ACTION: "Check the `cloud.log` and `install_upgrade.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output."
+
+SCD_UNABLE_UPDATE_VERSION: Cannot update `./pub/static/deployed_version.txt` file. Check your filesystem permissions.
+
+VIEW_PREPROCESSED_CLEAN_FAILED: Unable to clean the `./var/view_preprocessed` folder. Check your filesystem permissions.
+
+FILE_CREDENTIALS_EMAIL_NOT_WRITABLE: Failed to update the `/var/credentials_email.txt` file. Check your filesystem permissions.
+
+#The CLOUD_LOG_VERBOSE_ACTION applies to the following errors:
+
+#  MODULE_ENABLE_COMMAND_FAILED - 11
+#  SCD_FAILED - 19, 119, 
+#  MAINTENANCE_MODE_ENABLING_FAILED - 108,  
+#  CONFIG_IMPORT_COMMAND_FAILED- 117
+#  SPLIT_DB_COMMAND_FAILED - 123
+#  CACHE_FLUSH_COMMAND_FAILED - 127, 227
+
+CLOUD_LOG_VERBOSE_ACTION: "Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output."
