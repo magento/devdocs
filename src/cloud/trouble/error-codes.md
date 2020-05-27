@@ -19,17 +19,17 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | Error code | Build step | Error description | Suggested action |
 | --- | --- | --- | -- |
 | 2 | | File `./app/etc/env.php` is not writable | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}}|
-| 3 | | Configuration isn't defined in schema.yaml | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}}|
-| 4 | | Failed to parse .magento.env.yaml | {{site.data.cloud-error-messages.CONFIG_PARSE_FAILED}}|
-| 5 | | Unable to read .magento.env.yaml | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}}|
-| 6 | | Unable to read .schema.yaml | |
-| 7 | refresh-modules | File `./app/etc/config.php` is not writable |{{site.data.cloud-error-messages.CONFIG_PHP_IS_NOT_WRITABLE}} |
-| 8 | validate-config | Unable to read composer.json |{{site.data.cloud-error-messages.CANT_READ_COMPOSER_JSON}} |
-| 9 | validate-config | Composer.json missed required autoload section | {{site.data.cloud-error-messages.COMPOSER_MISSED_REQUIRED_AUTOLOAD}} |
+| 3 | | Configuration isn't defined in the `schema.yaml` file | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}}|
+| 4 | | Failed to parse the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_PARSE_FAILED}}|
+| 5 | | Unable to read the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}}|
+| 6 | | Unable to read the `.schema.yaml` file | |
+| 7 | refresh-modules | Cannot write to the `./app/etc/config.php` file |{{site.data.cloud-error-messages.CONFIG_PHP_IS_NOT_WRITABLE}} |
+| 8 | validate-config | Cannot read the `composer.json` file |{{site.data.cloud-error-messages.CANT_READ_COMPOSER_JSON}} |
+| 9 | validate-config | Composer.json is missing required autoload section | {{site.data.cloud-error-messages.COMPOSER_MISSED_REQUIRED_AUTOLOAD}} |
 | 10 | validate-config | The file `.magento.env.yaml` contains an option which isn't declared in the schema, or has an invalid value or stage | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_MAGENTO_ENV_YAML}}|
 | 11 | refresh-modules | Command `/bin/magento module:enable --all` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 12 | apply-patches | Failed to apply patch | |
-| 13 | set-report-dir-nesting-level | Can't write to the file `/pub/errors/local.xml` | |
+| 13 | set-report-dir-nesting-level | Cannot write to the file `/pub/errors/local.xml` | |
 | 14 | copy-sample-data | Failed to copy sample data files | |
 | 15 | compile-di | Command `/bin/magento setup:di:compile` failed | |
 | 16 | dump-autoload | Command `composer dump-autoload` failed | {{site.data.cloud-error-messages.COMPOSER_DUMP_AUTOLOAD_FAILED}} |
@@ -48,13 +48,14 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | Error code | Deploy step | Error description | Suggested action |
 | --- | --- | --- | -- |
 | 101 | pre-deploy: cache | Incorrect cache configuration (missing port or host) | {{site.data.cloud-error-messages.WRONG_CACHE_CONFIGURATION}} |
-| 102 | | File `./app/etc/env.php` is not writable | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}} |
+| 102 | | Cannot write to the `./app/etc/env.php` file | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}} |
 | 103 | | Configuration isn't defined in the `schema.yaml` file  | |
 | 104 | | Failed to parse the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}} |
 | 105 | | Unable to read the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}} |
 | 106 | | Unable to read the `.schema.yaml` file | |
 | 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | {{site.data.cloud-error-messages.
-REDIS_CACHE_CLEAN_FAILED}} |
+
+REDIS_CACHE_CLEAN_FAILED}}. See [Setup Redis service]({{site.baseurl}}/cloud/project/project-conf-files_services-redis.html). |
 | 108 | pre-deploy: set-production-mode | Command `/bin/magento maintenance:enable` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 109 | validate-config | Incorrect database configuration | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_DB}} |
 | 110 | validate-config | Incorrect session configuration | {{site.data.cloud-error-messages.WRONG_CONFIGURATION_SESSION}} |

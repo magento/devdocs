@@ -507,6 +507,11 @@ pages:
       url: /cloud/trouble/trouble.html
       versionless: true
       children:
+
+        - label: Deployment error reference
+          url: /cloud/trouble/error-codes.html
+          versionless: true
+
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
           versionless: true

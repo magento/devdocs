@@ -4,19 +4,19 @@
 
 # ENV_PHP_IS_NOT_WRITEABLE applies to errors 102 and 202
 
-ENV_PHP_IS_NOT_WRITABLE: "Deployment script can't make required changes to the `/app/etc/env.php` file. Check your filesystem permissions."
+ENV_PHP_IS_NOT_WRITABLE: "Deployment script cannot make required changes to the `/app/etc/env.php` file. Check your filesystem permissions."
 
 # CONFIG_NOT_DEFINED applies to errors 103 and 203
 
-CONFIG_NOT_DEFINED: "Configuration isn't defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct and it's defined."
+CONFIG_NOT_DEFINED: "Configuration isn't defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct, and that it defined."
 
 # CONFIG_PARSE_FAILED applies to 4, 104, 204
-CONFIG_PARSE_FAILED: The `./.magento.env.yaml` file format is invalid. Format the file according to YAML standards.
+CONFIG_PARSE_FAILED: The `./.magento.env.yaml` file format is invalid. Use a YAML parser to check the syntax and fix any errors.
 
 # CONFIG_UNABLE_TO_READ applies to 5, 105, 205
 CONFIG_UNABLE_TO_READ: Unable to read the `./.magento.env.yaml` file. Check file permissions.
 
-CONFIG_PHP_IS_NOT_WRITABLE: Deployment script can't make required changes to the `/app/etc/config.php` file. Check your filesystem permissions.
+CONFIG_PHP_IS_NOT_WRITABLE: Deployment script cannot make required changes to the `/app/etc/config.php` file. Check your filesystem permissions.
 
 CANT_READ_COMPOSER_JSON: Unable to read the `./composer.json` file. Check file permissions.
 
@@ -26,7 +26,7 @@ WRONG_CONFIGURATION_MAGENTO_ENV_YAML: The `./.magento.env.yaml` file contains in
 
 COMPOSER_DUMP_AUTOLOAD_FAILED: The `composer dump-autoload` command failed. Check the `cloud.log` for more information.
 
-BALER_NOT_FOUND: "Check the `SCD_USE_BALER` environment variable to verify that the Baler module is configured and enabled for JS bundling. If you don't want to use the Baler module, set `SCD_USE_BALER: false`."
+BALER_NOT_FOUND: "Check the `SCD_USE_BALER` environment variable to verify that the Baler module is configured and enabled for JS bundling. If you don't need the Baler module, set `SCD_USE_BALER: false`."
 
 #The UTILITY_NOT_FOUND_ACTION applies to the following errors: 
 #  BUILD_UTILITY_NOT_FOUND = 18
@@ -48,7 +48,7 @@ COMPOSER_PACKAGE_NOT_FOUND: If you installed the Magento application version dir
 
 WRONG_CACHE_CONFIGURATION: Cache configuration is missing required parameters `server` or `port`. Check the `cloud.log` for more information.
 
-REDIS_CACHE_CLEAN_FAILED: Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service]({{ site.baseurl}}/cloud/project/project-conf-files_services-redis.html).
+REDIS_CACHE_CLEAN_FAILED: Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available.
 
 WRONG_CONFIGURATION_DB: Check that the the `DATABASE_CONFIGURATION` environment variable is configured correctly.
 
