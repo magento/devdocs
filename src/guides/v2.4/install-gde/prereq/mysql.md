@@ -86,7 +86,7 @@ Describe admin_user at mysql 8.19
 | logdate | timestamp | YES | | NULL | |
 | lognum | smallint unsigned | NO | | 0 | |
 
-With the exception of *TINYINT(1)*, all integer padding (TINYINT > 1, SMALLINT, MEDIUMINT, INT, BIGINT) should be removed from `db_schema.xml`.
+With the exception of *TINYINT(1)*, all integer padding (TINYINT > 1, SMALLINT, MEDIUMINT, INT, BIGINT) should be removed from the `db_schema.xml` file.
 
 For more information, see [https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html#mysqld-8-0-19-feature](
 https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html#mysqld-8-0-19-feature).
