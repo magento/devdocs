@@ -7,15 +7,9 @@ This page highlights backward incompatible changes between releases that have a 
 
 ## 2.3.0 - 2.4-develop
 
-### Blocks removed after moving UrlRewrite grid implementation to UI components
+### UrlRewrite module
 
-Admin grid in UrlRewrite module was moved to UI components and all unused blocks were removed. Added mass delete action and inline edit were added.
-
-Admin grid in UrlRewrite module was moved to UI components, so all unused blocks were also removed which is MAJOR change. It is okay since those blocks aren't used in rendering anymore and thus are helpless for those who extends them.
-
-The PR https://github.com/magento/magento2/pull/23570 moved admin grid in UrlRewrite module to UI components and removed unused blocks which is MAJOR change. It is okay since thos blocks aren't used in rendering anymore and thus are helpless for those who extends them.
-
-https://public-results-storage-prod.magento-testing-service.engineering/reports/magento/magento2/pull/23570/4c4ba72f82b105e3e91ab8483932c0e7/SemanticVersionChecker/report-magento2.html
+The Admin grid in the UrlRewrite module was moved to UI components and all unused blocks were removed. Added mass delete and inline edit actions.
 
 ```terminal
 adminhtml.block.url_rewrite.grid.container
@@ -31,16 +25,17 @@ adminhtml.url_rewrite.grid.columnSet.actions
 
 ### Elasticsearch
 
-As a part of Elasticsearch 7.x.x Upgrade, Elasticsearch 2 support will be removed. We should communicate with customers using Elasticsearch 2 that they should perform additional steps before upgrading to the latest 2.4 Magento version.
+You must install [Elasticsearch]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html) before upgrading to Magento 2.4.0. The following Elasticsearch versions are supported:
 
-Update ElasticSearch version on their server. First update to ES 5 and then update to ES6 or ES7.
-Check if their extensions support usage of new ElasticSearch version.
-After upgrading, switch to supported ES version in configuration, before running reindexation on 2.4 version
-Also, we should add information to Cloud related documentation about this breaking change as well. We recommend merchants switch to ES 5 before upgrade and than switch to ES 7.  (Flow for Pro:Create ZD ticket to upgrade to ES5 -> Upgrade Magento to 2.4 -> Create ZD ticket to upgrade to ES7)
+-  Elasticsearch 7.x
+-  Elasticsearch 6.x (6.8 or higher is recommended)
 
-Links to existing documentation https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html
+{:.bs-callout-warning}
+Magento no longer provides support for Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol) as they are End of Life. If you are using ES2, follow the instructions in [Change Elasticsearch Module]({{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html) before upgrading.
 
-Level Target/Location Code/Reason
+The changes with removing values from the `system.xml` file require eliminating ES2 support from the Admin UI. sOther API classes were removed to clean up the code when we deprecated ES2 and ES5 in Magento 2.3.5.
+
+#### Level Target/Location Code/Reason
 
 ```terminal
 MAJOR Magento\Elasticsearch\Elasticsearch5\Model\Adapter\FieldType
@@ -71,18 +66,16 @@ MAJOR catalog/search/elasticsearch_minimum_should_match
 Magento_Elasticsearch:0 M303 A field-node was removed
 ```
 
-The changes with removing values from system.xml require to eliminate ES2 support from our UI
-Other API classes were removed to clean up our code from the deprecated in the previous release. The code was specific for ES2 or @deprecated functionality for ES5.
-The potential effect on existing merchant can be caused by upgrades if they used ES2 before. It should be communicated by release notes for on-premise and cloud customers.
-
 ### Inventory asynchronous reindex
 
-The new setting is added to the configuration: Stock/Source reindex strategy
+A new Stock/Source reindex strategy configurationsetting option was added to the Admin to prevent index table collisions. The setting has the following options:
 
-It's possible to have a "burst" of activity that triggers contention on the index process.
-Even if I was to batch and defer the individual updates (that we control via automated updates) that were triggering the indexer, it's still highly likely that an index table collision would occur based on "other" activity.
+-  Synchronous
+-  Asynchronous
 
-Eg; if the indexer is running based on schedule, and replenishment happens manually through admin, or interaction with an order, indexing gets triggered. Now we have two processes attempting to index - one of those will "lose", leading to deadlock/stale index.
+Previoously, it was possible to have a "burst" of activity that triggered contention oi the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
+
+For example, if the indexer was running based on schedule and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. That woulld previously result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
 
 ```terminal
 MAJOR Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
@@ -91,40 +84,32 @@ MAJOR Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
 /InventoryIndexer/Indexer/SourceItem/SourceItemIndexer.php:27 M113 [public] Method parameter typing changed.
 ```
 
-Also the new setting is added to the configuration: "Stock/Source reindex strategy" with possible options: "Synchronous" and "Asynchronous"
-
 ### JSON field support
 
-Starting MySQL 5.7 supports native JSON data type. https://dev.mysql.com/doc/refman/5.7/en/json.html
-
-This pull request enables the possibility to use JSON fields with Magento declarative schema.
+MySQL 5.7 supports the native JSON data type: [https://dev.mysql.com/doc/refman/5.7/en/json.html](https://dev.mysql.com/doc/refman/5.7/en/json.html). Magento 2.4.0 now supports using JSON fields with declarative schema.
 
 ### Laminas
 
-In the scope of work on migration ZF2 components to Laminas, we have 2 BIC changes in the following files:
+Migrating ZF2 components to Laminas introduced BICs in the following files:
 
 ```terminal
 Magento\Backend\App\Area\FrontNameResolver::_construct - _constructor argument type was changed
 Magento\Framework\App\Response\HttpInterface::getHeader - declared return type was changed
 ```
 
-Both files are API class/interface. From my point of view, these changes are not BIC because they will be solved dynamically in runtime if our customers follow recommended guidelines
+Both files are API class/interface. These changes will be solved dynamically during runtime if you follow the recommended guidelines.
 
 ### MediaContent and MediaContentApi modules
 
-MediaContent and MediaContentApi modules were introduced providing the ability to track relations between content and media assets used in that content.
+The MediaContent and MediaContentApi modules were introduced to provide the ability to manage relationships between content and media assets used in that content.
 
-The Magento_MediaContent module provides implementations for managing relations between content and media files used in that content.
-
-Additionally, observers have been added to Cms and Catalog modules to save the relation of corresponding entities to MediaContent storage
+Additionally, observers have been added to the CMS and Catalog modules to save the relationship of corresponding entities to MediaContent storage.
 
 ### Method parameter typing changed
 
-Leveraging PHP 7+ Throwables (https://www.php.net/manual/en/class.throwable.php) to enable catching ALL possible errors as such might expose confidential information such as passwords.
+Method parameter typing was changed to leverage [PHP 7+ Throwables](https://www.php.net/manual/en/class.throwable.php) and enable catching ALL possible errors that might expose confidential information, such as passwords.
 
-Leveraging PHP7+ Throwables (https://www.php.net/manual/en/class.throwable.php) to enable catching ALL possible errors as such might expose confidential information such passwords.
-
-https://public-results-storage-prod.magento-testing-service.engineering/reports/magento/magento2/pull/25250/721bb8a137f3ae81d84077ad7622765b/SemanticVersionChecker/report-magento2.html
+#### Level Target/Location Code/Reason
 
 ```terminal
 Magento\Framework\App\Bootstrap::terminate
@@ -133,31 +118,27 @@ Magento\Framework\App\Bootstrap::terminate
 
 ### New bulk interfaces for inventory scalability check
 
-In order to support bulk check for products salability we introduced two new interfaces:
+In order to support bulk check for products scalability, we introduced two new interfaces:
 
 ```terminal
 InventorySalesApi/Api/AreProductsSalableInterface
 InventorySalesApi/Api/AreProductsSalableForRequestedQtyInterface
 ```
 
-Such changes will provide the ability for 3d party developers to optimize performance by providing an implementation for bulk services.
+These changes allow third-party developers to optimize performance by providing an implementation for bulk services.
 
 -  Introduced a Bulk version of IsProductSalableForRequestedQtyInterface API
 -  Introduced a Bulk version of IsProductSalableInterface when working with a list of items
 
 ### Size field added to media_gallery_asset table
 
-Dependency for Adobe Stock integration
+This is a dependency for the Adobe Stock integration.
 
-Size field added to media_gallery_asset table
+A size field was added to the `media_gallery_asset` table to enable storing and using the media asset size. The Media Gallery Asset entity model and interface were updated accordingly.
 
-Size field added to media_gallery_asset table to enable storing and using the media asset size.
+The Magento\MediaGalleryApi\Api\Data\AssetInterface that was updated with a new public method in the scope of the changes is not marked as @api so it's not currently part of Magento API.
 
-Media Gallery Asset entity model and interface were updated accordingly.
-
-Magento\MediaGalleryApi\Api\Data\AssetInterface that was updated with a new public method in the scope of the changes is not marked as @api so it's not currently part of Magento API
-
-The possible impact is minimal, the table was introduced in 2.3.4 (just several month ago) and it was not used by any functionality in magento2 (only Adobe Stock Integration extension)
+The possible impact is minimal, the table was introduced in 2.3.4 (just several month ago) and it was not used by any functionality in Magento 2 (only Adobe Stock Integration extension).
 
 ### SVC failure due to adding strict types
 
@@ -204,6 +185,4 @@ Build: https://public-results-storage-prod.magento-testing-service.engineering/r
 
 ### UUID validator
 
-This code adds Ramsey library as UUID validator and creates wrappers on it.
-
-This feature is needed for the async-import project. They pass UUID to get status of the async-import, for that they need to validate UUID.
+This code adds the Ramsey library as a UUID validator and creates wrappers for it. This feature is needed for the async-import project. They pass UUID to get status of the async-import, for that they need to validate UUID.
