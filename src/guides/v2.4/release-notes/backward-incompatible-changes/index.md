@@ -142,17 +142,17 @@ The possible impact is minimal, the table was introduced in 2.3.4 (just several 
 
 ### SVC failure due to adding strict types
 
-Fix bug: `getDefaultLimitPerPageValue` returns value that is not available
-
-The pull request fixes bug where `getDefaultLimitPerPageValue` returns value that is not available https://github.com/magento/magento2/issues/27089
+This change fixes a bug where `getDefaultLimitPerPageValue` returns a value that is not available.
 
 As a Store Administrator, you are able to provide the Products per Page on Grid Allowed Values and Products per Page on Grid Default Value. There is no verification, so you can accidentally set the default value to be one of the unavailable options.
 
-As per technical guidelines]
+The only stores that might be affected are the ones who changed the configuration value for Default items per page, without customizing possible options. Some  system integrators customize either the default value or allowed values.
 
-All new PHP files MUST have strict type mode enabled by starting with declare(strict_types=1);. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.
+As a result, there is inconsistency between default and allowed values. So far this worked by coincidence, but after the change, that would be explicit.
 
-Strict typing was added to the app/code/Magento/Catalog/Helper/Product/ProductList.php
+Per technical guidelines, all new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces MAY have this declaration.
+
+Strict typing was added to the `app/code/Magento/Catalog/Helper/Product/ProductList.php` file.
 
 It caused SVC failures.
 
@@ -168,20 +168,11 @@ Return type now array (the same as before in DocBlock):
 changed.MAJORMagento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122V060 [public] Method parameter name
 ```
 
-Now returns int for DefaultLimitPerPageValue:
+Now returns int for `DefaultLimitPerPageValue`:
 
 ```terminal
 changed.MAJORMagento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue /app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
 ```
-
-PR: https://github.com/magento/magento2/pull/27093
-
-BC change impact:
-
-The only stores that would be affected are the ones who changed the configuration value for Default items per page, without customizing possible options. Some of system integrators customize either default value or allowed values.
-As a result - there is inconsistency between default and allowed values. So far this worked by coincidence, but after the change, that would be explicit.
-
-Build: https://public-results-storage-prod.magento-testing-service.engineering/reports/magento/magento2/pull/27093/0737340aa088462c5834e9dd4547bb1e/SemanticVersionChecker/report-magento2.html
 
 ### UUID validator
 
