@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Command-line upgrade
+title: Upgrade Magento
 functional_areas:
   - Upgrade
 ---
@@ -15,10 +15,10 @@ You can upgrade your Magento application from the command line if you installed 
 -  Downloading the [metapackage][] using `composer create-project`.
 -  Installing the compressed archive.
 
-Do not use this method to upgrade if you cloned the Magento 2 GitHub repository.
-Instead, see [Update the Magento application][] for upgrade instructions.
+{:.bs-callout-info}
+Do not use this method to upgrade if you cloned the Magento 2 GitHub repository. Instead, see [Update the Magento application][] for upgrade instructions.
 
-## Prerequisites
+## Before you begin {#prerequisites}
 
 Complete the following prerequisites to prepare your environment before starting the upgrade process:
 
@@ -36,13 +36,26 @@ Complete the following prerequisites to prepare your environment before starting
 
      {:.bs-callout-info}
     Optionally, you can create a [custom maintenance mode page].
+-  **Install the Composer update plugin**—The [`magento/composer-root-update-plugin`][custom Composer plugin] Composer plugin resolves changes that need to be made to the root project `composer.json` file before updating to a new Magento product requirement.
 
-Using the more manual process of upgrading via the command line allows you to track and control exactly what is being changed in the upgrade.
+   The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them them manually.
+
+   To install the plugin:
+
+   ```bash
+   composer require magento/composer-root-update-plugin ~1.0 --no-update
+   ```
+
+   Update the dependencies:
+
+   ```bash
+   composer update
+   ```
 
 ## Manage packages
 
 {:.bs-callout-info}
-See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access 2.3.x patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
+See the examples at the end of this section for help specifying different release levels. For example, minor release, quality patch, and security patch. {{site.data.var.ee}} customers can access patches two weeks before the General Availability (GA) date. Pre-release packages are available through Composer only. You cannot find them on the Magento Portal or GitHub until GA. If you cannot find these packages in Composer, contact Magento Support.
 
 1. Backup the `composer.json` file.
 
@@ -56,18 +69,26 @@ See the examples at the end of this section for help specifying different releas
    composer remove magento/product-community-edition --no-update
    ```
 
-1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.3`), that you want to upgrade to.
+1. Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.0`), that you want to upgrade to.
+
+   {:.bs-callout-info}
+   The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
+   To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
+
+   {:.bs-callout-tip}
+   Use `composer require --help` to learn more about available options.
+   To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
 
    _{{ ce }}_:
 
    ```bash
-   composer require magento/product-community-edition={{ page.guide_version }}.3 --no-update
+   composer require magento/product-community-edition={{ page.guide_version }}.0 --no-update
    ```
 
    _{{ ee }}_:
 
    ```bash
-   composer require magento/product-enterprise-edition={{ page.guide_version }}.3 --no-update
+   composer require magento/product-enterprise-edition={{ page.guide_version }}.0 --no-update
    ```
 
    <div class="bs-callout-tip" markdown="1">
@@ -87,26 +108,12 @@ See the examples at the end of this section for help specifying different releas
 
    </div>
 
-1. Specify additional packages.
-
-   ```bash
-   composer require --dev allure-framework/allure-phpunit:~1.2.0 friendsofphp/php-cs-fixer:~2.14.0 lusitanian/oauth:~0.8.10 magento/magento-coding-standard:~3.0.0 magento/magento2-functional-testing-framework:2.4.5 pdepend/pdepend:2.5.2 phpmd/phpmd:@stable phpunit/phpunit:~6.5.0 sebastian/phpcpd:~3.0.0 squizlabs/php_codesniffer:~3.4.0 --sort-packages --no-update
-   ```
-
-1. Remove unused packages.
-
-   If you are upgrading from 2.2.x to 2.3.x, remove unused packages with the following command. It is not needed if you are upgrading from 2.3.x.
-
-   ```bash
-   composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
-   ```
-
 ### Example - Minor release
 
-Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.3.0 metapackage:
+Minor releases contain new features, quality fixes, and security fixes. Use Composer to specify a minor release. For example, to specify the {{site.data.var.ee}} 2.4.0 metapackage:
 
 ```bash
-composer require magento/product-community-edition=2.3.0 --no-update
+composer require magento/product-community-edition=2.4.0 --no-update
 ```
 
 ### Example - Quality patch
@@ -126,43 +133,6 @@ Security patches use the Composer naming convention `2.3.3-px`. Use Composer to 
 ```bash
 composer require magento/product-community-edition=2.3.3-p1 --no-update
 ```
-
-## (_Optional)_ Recreate the Magento updater {#recreate-magento-updater}
-
-If the Magento updater is installed, remove and recreate it. It is located in the `update/` directory.
-
-1. Backup the `update/` directory.
-
-1. Create a Composer project.
-
-   _{{ ce }} version {{ page.guide_version }}.3:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.3 temp_dir --no-install
-   ```
-
-   _{{ ee }} version {{ page.guide_version }}.3:_
-
-   ```bash
-   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.3 temp_dir --no-install
-   ```
-
-   {:.bs-callout-info}
-   If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-
-1. Remove the old `update/` directory and move `temp_dir/update/` to the `update/` directory:
-
-   ```bash
-   rm -rf update
-   ```
-
-   ```bash
-   mv temp_dir/update .
-   ```
-
-   ```bash
-   rm -rf temp_dir
-   ```
 
 ## Update metadata
 
@@ -237,21 +207,6 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    -  `generated/code/`
 1. Check your storefront in your web browser again.
 
-## Alternatives
-
-There are alternatives methods that automate parts of the upgrade process:
-
-1. [Upgrade using the script][] (semi-automated process)
-   Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
-   If you previously made updates, do not upgrade using the script. The script will override your updates.
-1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
-   We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
-
-The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
-
-{:.bs-callout-warning}
-All scenarios require that you comply with the [Prerequisites].
-
 <!-- Link definitions -->
 
 [custom composer plugin]: https://github.com/magento/composer-root-update-plugin
@@ -259,12 +214,8 @@ All scenarios require that you comply with the [Prerequisites].
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [metapackage]: https://glossary.magento.com/metapackage
-[Prerequisites]: #prerequisites
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
-[System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
-[Upgrade using the custom composer plugin]: upgrade-with-plugin.html
-[Upgrade using the script]: upgrade-with-script.html
 [Modify docroot to improve security]: {{ page.baseurl }}/install-gde/tutorials/change-docroot-to-pub.html
 [Check the catalog search engine]: {{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html

@@ -33,7 +33,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ## Database
 
-MySQL 5.6, 5.7
+MySQL 5.7.9
 
 Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
@@ -138,7 +138,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
 *  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
-*  PHPUnit (as a command-line tool) 6.2.0
+*  PHPUnit (as a command-line tool) 9.0.0
 
 <!-- Link Definitions -->
 [`mcrypt`]: http://php.net/manual/en/book.mcrypt.php
