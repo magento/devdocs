@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-Magento version 2.4.0 and later requires minimum stable MySQL 5.7.9. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.2, 10.4, Percona 5.7 and other binary compatible MySQL technologies. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported due to the removal of support for MySQL 5.6 in this release.
+Magento version 2.4.0 and later requires minimum stable MySQL 5.7.9. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.2, 10.4, and other binary compatible MySQL technologies. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported due to the removal of support for MySQL 5.6 in this release.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -93,8 +93,8 @@ https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html#mysqld-8-0-19-f
 
 ### Default ORDER BY behavior
 
-Before 8.0, entries were sorted by the foreign key. XXXXX What happens now? XXXXXX
-Always specify a sort order if your code depends on the sort.
+Before 8.0, entries were sorted by the foreign key. Default sort order depends on the engine that is used.
+Always specify a sort order if your code depends on a specific sort.
 
 ### Deprecated ASC and DESC qualifiers for GROUP BY
 
@@ -106,18 +106,18 @@ There have been some changes to Magento to properly support MySQL 8.
 
 ### Query and Insert Behavior
 
-Magento disabled the regular validation behavior by setting SET SQL_MODE='' in `/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php:424.`. With validation disabled, it is possible that MySQL will truncat data. In MySQL, the Query behavior has changed: `Select * on my_table where IP='127.0.0.1'` will no longer return any results because it will not truncated. XXXXX need to clarify last sentence. XXXXXX
+Magento disabled the regular validation behavior by setting SET SQL_MODE='' in `/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php:424.`. With validation disabled, it is possible that MySQL will truncate data. In MySQL, the Query behavior has changed: `Select * on my_table where IP='127.0.0.1'` will no longer return any results because the IP address is now properly seen as a string, rather than an integer.
 
 ## Upgrading from MySQL 5.7 to MySQL 8
 
 In order to properly update your MySQL from version 5.7 to version 8, the process must be done in the following order:
-XXXXX These steps need clarification. At what step should the update to 8 occur? XXXXXXXXXX
 
 1. Upgrade Magento to 2.4.0.
    Test everything makes sure your system work as expected.
 1. Enable maintenance mode.
 1. Make a backup from the database.
-1. Import dump in MySQL 8.
+1. Update MySQL to version 8.
+1. Import the dump into MySQL.
 1. Switch engine clean cache.
 1. Disable maintenance mode.
 
