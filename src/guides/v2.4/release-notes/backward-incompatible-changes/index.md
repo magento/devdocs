@@ -198,7 +198,7 @@ PR: https://github.com/magento/magento2/pull/27093
 BC change impact:
 
 The only stores that would be affected are the ones who changed the configuration value for Default items per page, without customizing possible options. Some of system integrators customize either default value or allowed values.
-As a result - there is inconsistency between default and allowed values. So far this worked by coincidence, but after the change, that would be explicit. 
+As a result - there is inconsistency between default and allowed values. So far this worked by coincidence, but after the change, that would be explicit.
 
 Build: https://public-results-storage-prod.magento-testing-service.engineering/reports/magento/magento2/pull/27093/0737340aa088462c5834e9dd4547bb1e/SemanticVersionChecker/report-magento2.html
 
