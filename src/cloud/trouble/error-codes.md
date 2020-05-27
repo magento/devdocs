@@ -5,7 +5,6 @@ title: Ece-tools error codes
 
 This page helps you to detect the problem in case of failed deployment process.
 
-
 List of possible errors:
 
 ### Build stage
