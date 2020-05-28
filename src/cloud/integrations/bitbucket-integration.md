@@ -40,16 +40,22 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
    magento-cloud project:get <project-ID>
    ```
 
+1. View remote repository URL.  
+
+   ```bash
+   git remote -v
+   ```
+
+1. Delete the default `origin` remote.
+
+   ```bash
+   git remote remove origin
+   ```
+
 1. Add your Bitbucket repository as a remote.
 
    ```bash
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
-   ```
-
-1. Delete the default `magento` remote.
-
-   ```bash
-   git remote remove magento
    ```
 
 1. Verify that you added the Bitbucket remote correctly.
