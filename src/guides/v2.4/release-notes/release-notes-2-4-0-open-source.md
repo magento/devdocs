@@ -58,7 +58,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 The following platform upgrades help enhance website security and performance. Supported versions of PHP and PHPUnit, Elasticsearch, MySQL, and other dependencies are listed in [Magento 2.4 technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. All testing of 2.4.0 has been done on PHP 7.4. You can still install Magento 2.4.x, but we recommend using PHP 7.4.
+*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. All testing of 2.4.0 has been done on PHP 7.4. You can still install Magento 2.4.x with PHP 7.3, but we recommend using PHP 7.4.
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
 
