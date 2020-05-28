@@ -179,7 +179,7 @@ The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
 The **Varnish** service is installed by default. When deployment completes, Magento is configured to use Varnish for full page caching (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
 
-To skip the Varnish installation, add the `--no-varnish` option to the `ece-docker build:compose` command.
+In some cases, you might require a Docker environment without Varnish, for example to debug or run performance tests. You can generate the Docker Compose configuration file without Varnish by adding the `--no-varnish` option to the `ece-docker build:compose` command.
 
 ```bash
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2 --no-varnish
