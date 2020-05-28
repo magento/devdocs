@@ -6,6 +6,12 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Thu May 28 13:20:08 2020
 entries:
+- description: Added [release notes highlights](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    to support the 2.4.0 beta release.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7301
 - description: Added a new section about whitelisting inline scripts and styles in
     a [content security policy](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
   versions: 2.4.0
