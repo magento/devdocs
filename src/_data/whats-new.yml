@@ -4,7 +4,7 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu May 28 13:20:08 2020
+updated: Thu May 28 15:55:01 2020
 entries:
 - description: Added [release notes highlights](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     to support the 2.4.0 beta release.
@@ -18,52 +18,52 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7293
-- description: Added a new section to [MySQL](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/mysql.html)
+- description: Added BIC [highlights](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
+    and [reference](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html)
+    to support the 2.4.0 beta release.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7295
+- description: Added a new section to [MySQL](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/mysql.html)
     about upgrading to MySQL 8.
   versions: 2.4.0
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7283
+- description: Added the 'Image lazy loading' section to the [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7236
 - description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html#php)
     to 7.3 and 7.4.
   versions: 2.4.0
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7255
-- description: Added the 'Image lazy loading' section to the [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
-  versions: 2.4.0
-  type: Major Update
-  date: May 28, 2020
-  link: https://github.com/magento/devdocs/pull/7236
-- description: Added BIC [highlights](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
-    and [reference]( https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html)
-    to support the 2.4.0 beta release.
-  versions: 2.4.0
-  type: Major Update
-  date: May 28, 2020
-  link: https://github.com/magento/devdocs/pull/7295
 - description: Removed references to the Web Setup Wizard, Component Manager, Module
     Manager, System Upgrade Utility, and Magento "updater" application because the
-    functionality was removed in 2.4.0. Updated the [installation flow diagram](https://devdocs.magento.com/guides/v2.3/install-gde/install-flow-diagram.html)
-    and optimized the [Software Update Guide](https://devdocs.magento.com/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html).
+    functionality was removed in 2.4.0. Updated the [installation flow diagram](https://devdocs.magento.com/guides/v2.4/install-gde/install-flow-diagram.html)
+    and optimized the [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html).
   versions: 2.4.0
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7287
-- description: Removed the option to disable 2FA from the [Two-Factor Authentication<br/>](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- description: Removed the option to disable 2FA from the [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
     topic and added a new section describing the Magento Web API workflow.
   versions: 2.4.0
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7262
 - description: Removed the topic about using the custom script to upgrade Magento.
-    The [Composer update plugin](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
+    The [Composer update plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html)
     replaces the custom script.
   versions: 2.3.x, 2.4.0
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7232
-- description: Removed beta information from the [Composer root update plugin](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/upgrade-with-plugin.html)
+- description: Removed beta information from the [Composer root update plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html)
     topic to support the GA release of the tool.
   versions: 2.3.x, 2.4.0
   type: Technical
