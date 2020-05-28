@@ -138,7 +138,7 @@ adding a `csp_whitelist.xml` to your custom module's `etc` folder.
 Stores that have `unsafe-inline` disabled for `style-src` and `script-src` (default for Magento 2.4) inline scripts and styles
 must be whitelisted.
 
-You would need to use `Magento\Framework\View\Helper\SecureHtmlRenderer` that is available
+You must use `Magento\Framework\View\Helper\SecureHtmlRenderer`, which is available
 as `$secureRenderer` variable in _.phtml_ templates to achieve this.
  
  
