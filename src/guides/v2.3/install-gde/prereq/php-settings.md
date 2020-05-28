@@ -11,10 +11,6 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-{:.bs-callout-info}
-All 3rd party libraries now support PHP 7.2.
-If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
-
 <!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
@@ -31,7 +27,7 @@ php -v
 If [PHP](https://glossary.magento.com/php) is installed, a message similar to the following displays:
 
 ```terminal
-PHP 7.2.0 (cli) (built: Jan 9 2018 09:23:16) ( NTS )
+PHP 7.3.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
@@ -53,10 +49,23 @@ php -m
 ```
 
 to see the list of installed modules. Verify that the listed extensions are installed.
-If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.2 modules can be added with:
+If any modules are missing, they are added using the same workflow used for installing PHP. For example, if you use `yum` to install PHP, the PHP 7.3 modules can be added with:
 
 ```bash
- yum -y install php72u-pdo php72u-mysqlnd php72u-opcache php72u-xml php72u-gd php72u-devel php72u-mysql php72u-intl php72u-mbstring php72u-bcmath php72u-json php72u-iconv php72u-soap
+ yum -y install php73u
+ -pdo php73u
+ -mysqlnd php73u
+ -opcache php73u
+ -xml php73u
+ -gd php73u
+ -devel php73u
+ -mysql php73u
+ -intl php73u
+ -mbstring php73u
+ -bcmath php73u
+ -json php73u
+ -iconv php73u
+ -soap
 ```
 
 ## Check PHP settings

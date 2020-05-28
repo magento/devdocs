@@ -7,6 +7,12 @@
   </div>
   {% endif %}
 
+  {% if page.guide_version == "2.4" %}
+  <div class="message-banner">
+    This is the 2.4.0 beta release version of documentation. Content in this version is subject to change.
+  </div>
+  {% endif %}
+
   <h1 class="page-title">{{ page.title }}</h1>
 
   {% if page.subtitle %}
