@@ -45,6 +45,9 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 <!--{% assign supported_php_versions = site.data.codebase.v2_4.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
+Magento recommends using PHP 7.4.
+While Magento supports PHP 7.3, note that it will move to [End of Life](https://www.php.net/supported-versions.php) on 2020-12-06.
+
 ### Required PHP extensions
 
 {:.bs-callout-info}
