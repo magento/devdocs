@@ -27,10 +27,12 @@ php -v
 If [PHP](https://glossary.magento.com/php) is installed, a message similar to the following displays:
 
 ```terminal
-PHP 7.3.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
+PHP 7.4.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
 Copyright (c) 1997-2018 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
+
+Magento 2.4 is compatible with PHP 7.3, but we test with, and recommend using, PHP 7.4.
 
 If PHP is not installed, or a version upgrade is needed, install it following instructions for your particular Linux flavor.
 On CentOS, [additional steps may be required][].
