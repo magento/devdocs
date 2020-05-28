@@ -115,6 +115,7 @@ Sample dependency injection:
 </type>
 ```
 
+For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php).
 ## Related reading
 
 -  [Dependency injection]( {{ page.baseurl }}/extension-dev-guide/depend-inj.html)
