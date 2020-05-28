@@ -43,7 +43,7 @@ Once configured, Magento can enforce policies like these:
 *  Iframes can only include pages from the store itself
 *  AJAX requests can only be sent to the store
 *  Forms can only be sent to the store
-*  Only whitelisted inline scripts and styles to be compiled by browser
+*  Only whitelisted inline scripts and styles can be compiled by browser
 
 For more details check the `Magento/Csp/etc/config.xml` file. Some domains have already been
 whitelistedfor modules that require it. For instance if the `Magento_Paypal` module is installed,
