@@ -186,7 +186,7 @@ _Inside a .phtml template_
 <?= $secureRenderer->renderStyleAsTag('color: blue', '#blue-div'); ?>
 ```
  
-_Please note that using inline scripts and styles is discouraged in favor of UI Components and classes_
+_Using inline scripts and styles is discouraged in favor of UI Components and classes_
 
 You can also whitelist inline CSS and JS inside `style` and `script` tags in a `csp_whitelist.xml` file.
 To do this, get a `sha256` hash of a tag's content and encode it as BASE64, then
