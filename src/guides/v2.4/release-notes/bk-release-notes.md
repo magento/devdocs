@@ -3,11 +3,14 @@ group: release-notes
 title: 2.4 Release Information
 ---
 
-## Magento 2.4 release notes
+## Magento 2.4.x release notes
+
+*  [{{site.data.var.ce}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-open-source.html)
+*  [{{site.data.var.ee}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-commerce.html)
 
 ## Backward-incompatible changes
 
-Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) introduced in the 2.4 releases
+Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) introduced in the 2.4.x releases
 
 ## {{site.data.var.ece}} {#cloud-updates}
 

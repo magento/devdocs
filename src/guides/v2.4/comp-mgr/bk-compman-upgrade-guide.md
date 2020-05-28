@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Upgrade the Magento application and modules
+title: Magento upgrade overview
 functional_areas:
   - Upgrade
 ---
@@ -10,11 +10,9 @@ functional_areas:
 {% capture ee %}{{site.data.var.ee}}{% endcapture %}
 -->
 
-## Upgrade the Magento application and modules
-
 This topic discusses the ways you can:
 
-*  Upgrade (that is, *patch*) the Magento software from version {{ page.guide_version }}.0 to {{ page.guide_version }}.1, for example
+*  Upgrade the Magento software from one version to another
 *  Update any of the following:
 
    *  Modules (also referred to as *extensions*; extend Magento capabilities)
@@ -27,13 +25,10 @@ This topic discusses the ways you can:
 
 The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
-*  {{ce}} and {{ee}}: If you used [Composer] to install the Magento application or if you downloaded an [archive], use the [System Upgrade utility] or the [command line].
+*  {{ce}} and {{ee}}: If you used [Composer] to install the Magento application or if you downloaded an [archive], you must use the [command line].
 *  {{ce}} only: If you cloned the Magento 2 GitHub repository because you are contributing code to the {{ce}} codebase, [upgrade the software manually].
 *  If your Magento root directory is `<your Magento install directory/pub>`, you can upgrade in any of the following ways:
    *  For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
-
-   Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.
-
    *  Upgrade the Magento software using the [command line].
 
 *  To upgrade from {{ce}} to {{ee}}, see [Upgrade from Open Source to Commerce].
@@ -65,6 +60,5 @@ Complete the tasks discussed in [Prerequisites].
 [Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
 [Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html
 {:target="_blank"}
-[System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
-[Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/upgrader/ce-ee-upgrade-start.html
+[Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html#manage-packages
 [upgrade the software manually]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
