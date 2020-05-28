@@ -139,7 +139,7 @@ Stores that have `unsafe-inline` disabled for `style-src` and `script-src` (defa
 must be whitelisted.
 
 You must use `Magento\Framework\View\Helper\SecureHtmlRenderer`, which is available
-as `$secureRenderer` variable in _.phtml_ templates to achieve this.
+as a `$secureRenderer` variable in the _.phtml_ templates to achieve this.
  
  
 * For `script` or `style` tags containing inline JavaScript/CSS use `renderTag`:
