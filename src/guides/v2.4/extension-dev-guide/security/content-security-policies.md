@@ -46,7 +46,7 @@ Once configured, Magento can enforce policies like these:
 *  Only whitelisted inline scripts and styles can be compiled by browser
 
 For more details, check the `Magento/Csp/etc/config.xml` file. Some domains have already been
-whitelistedfor modules that require it. For instance if the `Magento_Paypal` module is installed,
+whitelisted for modules that require it. For instance if the `Magento_Paypal` module is installed,
 `www.paypal.com` is already whitelisted for the `script-src` policy. If inline scripts and styles have also been whitelisted,
 their hashes will be added to the `Content-Security-Policy` header only when inline scripts/styles are not allowed.
 
@@ -140,17 +140,18 @@ must be whitelisted.
 
 You must use `Magento\Framework\View\Helper\SecureHtmlRenderer`, which is available
 as a `$secureRenderer` variable in the _.phtml_ templates to achieve this.
- 
- 
-* For `script` or `style` tags containing inline JavaScript/CSS, use `renderTag`:
-  
-_Inside a .phtml template_
+
+*  For `script` or `style` tags containing inline JavaScript/CSS, use `renderTag`:
+
+#### Inside a .phtml template
+
 ```html
 <div>Other content</div>
 <?= $secureRenderer->renderTag('script', ['type' => 'text/javascript'], "\nconsole.log('I am a whitelisted script');\n", false); ?>
 ```
- 
-_Inside a class responsible for HTML rendering_
+
+#### Inside a class responsible for HTML rendering_
+
 ```php
 /** @var \Magento\Framework\View\Helper\SecureHtmlRenderer */
 private $secureRenderer;
@@ -159,34 +160,36 @@ private $secureRenderer;
 
 function someMethod() {
    ....
-   
+
    $html .= $this->secureRenderer->renderTag('style', [], "#element { color: blue } ", false);
-   
+
    ....
 }
 ```
- 
-* For event handlers previously defined in HTML attributes, use `renderEventListenerAsTag`:
- 
-_Inside a .phtml template_
+
+*  For event handlers previously defined in HTML attributes, use `renderEventListenerAsTag`:
+
+#### Inside a .phtml template
+
 ```html
 <!-- <div onclick="alert('Old way!')">Old way</div> -->
 
 <div id="alert-div">New way</div>
 <?= $secureRenderer->renderEventListenerAsTag('onclick', 'alert("New way!");', '#alert-div'); ?>
 ```
- 
-* For inline styles previously defined in `style` attributes, use `renderStyleAsTag`:
- 
-_Inside a .phtml template_
+
+*  For inline styles previously defined in `style` attributes, use `renderStyleAsTag`:
+
+#### Inside a .phtml template
+
 ```html
 <!-- <div style="color:blue">Old way</div> -->
 
 <div id="blue-div">New way</div>
 <?= $secureRenderer->renderStyleAsTag('color: blue', '#blue-div'); ?>
 ```
- 
-_Using inline scripts and styles is discouraged in favor of UI Components and classes_
+
+#### Using inline scripts and styles is discouraged in favor of UI Components and classes
 
 You can also whitelist inline CSS and JS inside `style` and `script` tags in a `csp_whitelist.xml` file.
 To do this, get a `sha256` hash of a tag's content and encode it as BASE64, then
