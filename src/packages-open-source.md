@@ -1,1 +1,0 @@
-guides/v2.3/release-notes/packages-open-source.md
