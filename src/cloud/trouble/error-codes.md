@@ -31,7 +31,7 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | 12 | apply-patches | Failed to apply patch | |
 | 13 | set-report-dir-nesting-level | Cannot write to the file `/pub/errors/local.xml` | |
 | 14 | copy-sample-data | Failed to copy sample data files | |
-| 15 | compile-di | Command `/bin/magento setup:di:compile` failed | |
+| 15 | compile-di | Command `/bin/magento setup:di:compile` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 16 | dump-autoload | Command `composer dump-autoload` failed | {{site.data.cloud-error-messages.COMPOSER_DUMP_AUTOLOAD_FAILED}} |
 | 17 | run-baler | The command to run `Baler` for Javascript bundling failed | {{site.data.cloud-error-messages.BALER_NOT_FOUND}} |
 | 18 | compress-static-content | Required utility wasn't found (timeout, bash) | {{site.data.cloud-error-messages.UTILITY_NOT_FOUND}} |
@@ -49,7 +49,7 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 | --- | --- | --- | -- |
 | 101 | pre-deploy: cache | Incorrect cache configuration (missing port or host) | {{site.data.cloud-error-messages.WRONG_CACHE_CONFIGURATION}} |
 | 102 | | Cannot write to the `./app/etc/env.php` file | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}} |
-| 103 | | Configuration isn't defined in the `schema.yaml` file  | |
+| 103 | | Configuration isn't defined in the `schema.yaml` file  | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}} |
 | 104 | | Failed to parse the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}} |
 | 105 | | Unable to read the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}} |
 | 106 | | Unable to read the `.schema.yaml` file | |
@@ -65,7 +65,7 @@ REDIS_CACHE_CLEAN_FAILED}}. See [Setup Redis service]({{site.baseurl}}/cloud/pro
 | 114 | validate-config:elasticsuite-integrity | ElasticSuite is installed, but another search engine is used | {{site.data.cloud-error-messages.ELASTIC_SUITE_WRONG_ENGINE}} |
 | 115 |  | Database query execution failed | |
 | 116 | install-update: setup | Command `/bin/magento setup:install` failed | {{site.data.cloud-error-messages.INSTALL_UPGRADE_ACTION}} |
-| 117 | install-update: config-import | Command `app:config:import` failed | {{site.data.cloud-error-messages.INSTALL_UPGRADE_ACTION}} |
+| 117 | install-update: config-import | Command `app:config:import` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 118 |  | Required utility wasn't found (timeout, bash) | {{site.data.cloud-error-messages.UTILITY_NOT_FOUND}} |
 | 119 | install-update: deploy-static-content | Command `/bin/magento setup:static-content:deploy` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 120 | compress-static-content | Static content compression failed | {{site.data.cloud-error-messages.CHECK_CLOUD_LOG_ACTION}} |
@@ -74,7 +74,7 @@ REDIS_CACHE_CLEAN_FAILED}}. See [Setup Redis service]({{site.baseurl}}/cloud/pro
 | 123 | install-update: split-db | Command `/bin/magento setup:db-schema:split` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 124 | clean-view-preprocessed | Failed to clean the `var/view_preprocessed` folder | {{site.data.cloud-error-messages.VIEW_PREPROCESSED_CLEAN_FAILED}} |
 | 125 | install-update: reset-password | Failed to update the `/var/credentials_email.txt` file | {{site.data.cloud-error-messages.FILE_CREDENTIALS_EMAIL_NOT_WRITABLE}} |
-| 126 | install-update: update | Command `/bin/magento setup:upgrade` failed | |
+| 126 | install-update: update | Command `/bin/magento setup:upgrade` failed | {{site.data.cloud-error-messages.INSTALL_UPGRADE_ACTION}} |
 | 127 | clean-cache | Command `/bin/magento cache:flush` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 128 | disable-maintenance-mode | Command `/bin/magento maintenance:disable` failed | |
 | 129 | install-update: reset-password | Enable to read reset password template | |
@@ -86,7 +86,7 @@ REDIS_CACHE_CLEAN_FAILED}}. See [Setup Redis service]({{site.baseurl}}/cloud/pro
 | 201 | is-deploy-failed | Deploy stage failed | |
 | 202 |  | The `./app/etc/env.php` file is not writable | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}} |
 | 203 |  | Configuration isn't defined in the `schema.yaml` file | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}} |
-| 204 |  | Failed to parse the `.magento.env.yaml` file | |
+| 204 |  | Failed to parse the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_PARSE_FAILED}} |
 | 205 |  | Unable to read the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}} |
 | 206 |  | Unable to read the `.schema.yaml` file | |
 | 207 | warm-up | Failed to warm-up some pages | |
