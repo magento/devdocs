@@ -176,7 +176,7 @@ _Inside a .phtml template_
 <?= $secureRenderer->renderEventListenerAsTag('onclick', 'alert("New way!");', '#alert-div'); ?>
 ```
  
-* For inline styles previously defined in `style` attribute use `renderStyleAsTag`
+* For inline styles previously defined in `style` attributes, use `renderStyleAsTag`:
  
 _Inside a .phtml template_
 ```html
