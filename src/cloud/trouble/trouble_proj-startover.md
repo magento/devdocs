@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Resolve issues with a new project
-menu_title: Resolve issues with a new project
-menu_order: 10
-menu_node:
 functional_areas:
   - Cloud
   - Setup
