@@ -7,9 +7,6 @@ pages:
       include_versions: ["2.4"]
       children:
 
-        - label: Component Status
-          url: /release-notes/component-status.html
-
         - label: Magento Open Source 2.4.0 Release Notes
           url: /release-notes/release-notes-2-4-0-open-source.html
 
