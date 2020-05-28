@@ -100,7 +100,7 @@ entries:
   type: Major Update
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/6979
-- description: Added a new topic for the [Sortby](https://devdocs.magento.com/guides/v2.4//ui_comp_guide/components/ui-sortby.html)
+- description: Added a new topic for the [Sortby](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-sortby.html)
     UI component.
   versions: 2.4.0
   type: New Topic
