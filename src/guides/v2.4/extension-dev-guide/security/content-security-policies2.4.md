@@ -166,7 +166,7 @@ function someMethod() {
 }
 ```
  
-* For event handlers previously defined in HTML attributes use `renderEventListenerAsTag`
+* For event handlers previously defined in HTML attributes, use `renderEventListenerAsTag`:
  
 _Inside a .phtml template_
 ```html
