@@ -16,16 +16,10 @@ Error messages are categorized by deployment stage–build, deploy, and post-dep
 
 ## Build stage
 
-<style>
-table.my-special-table td:nth-child(1) {
-  width: 50px;
-}
-</style>
-
-{:.table.my-special-table}
+{: .error-table}
 | Error code | Build step | Error description | Suggested action |
-| --- | --- | --- | -- |
-| 2 | | File `./app/etc/env.php` is not writable | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}}|
+| ---------- | ---------- | ----------------- | ---------------- |
+| 2 | | Cannot write to the `./app/etc/env.php` file | {{site.data.cloud-error-messages.ENV_PHP_IS_NOT_WRITABLE}}|
 | 3 | | Configuration isn't defined in the `schema.yaml` file | {{site.data.cloud-error-messages.CONFIG_NOT_DEFINED}}|
 | 4 | | Failed to parse the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_PARSE_FAILED}}|
 | 5 | | Unable to read the `.magento.env.yaml` file | {{site.data.cloud-error-messages.CONFIG_UNABLE_TO_READ}}|
@@ -52,6 +46,7 @@ table.my-special-table td:nth-child(1) {
 
 ## Deploy stage
 
+{: .error-table}
 | Error code | Deploy step | Error description | Suggested action |
 | --- | --- | --- | -- |
 | 101 | pre-deploy: cache | Incorrect cache configuration (missing port or host) | {{site.data.cloud-error-messages.WRONG_CACHE_CONFIGURATION}} |
@@ -83,11 +78,12 @@ REDIS_CACHE_CLEAN_FAILED}}. |
 | 125 | install-update: reset-password | Failed to update the `/var/credentials_email.txt` file | {{site.data.cloud-error-messages.FILE_CREDENTIALS_EMAIL_NOT_WRITABLE}} |
 | 126 | install-update: update | Command `/bin/magento setup:upgrade` failed | {{site.data.cloud-error-messages.INSTALL_UPGRADE_ACTION}} |
 | 127 | clean-cache | Command `/bin/magento cache:flush` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
-| 128 | disable-maintenance-mode | Command `/bin/magento maintenance:disable` failed | |
+| 128 | disable-maintenance-mode | Command `/bin/magento maintenance:disable` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 129 | install-update: reset-password | Enable to read reset password template | |
 
 ## Post-deploy stage
 
+{: .error-table}
 | Error code | Post-deploy step | Error description | Suggested action |
 | --- | --- | --- | -- |
 | 201 | is-deploy-failed | Deploy stage failed | |
@@ -103,3 +99,17 @@ REDIS_CACHE_CLEAN_FAILED}}. |
 <!--Link definitions-->
 
 [Scenario-based deployment]: {{site.baseurl}}/cloud/deploy/scenario-based-deployment.html
+
+<!--Custom css-->
+
+<!--
+  This is a style declaration so that first column does not wrap
+-->
+
+<style>
+table.error-table td:nth-child(1) {
+  width: 125px;
+}
+table.error-table td:nth-child(2) {
+  width: 200px;
+}

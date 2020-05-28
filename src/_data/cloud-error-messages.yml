@@ -48,7 +48,7 @@ COMPOSER_PACKAGE_NOT_FOUND: If you installed the Magento application version dir
 
 WRONG_CACHE_CONFIGURATION: Cache configuration is missing required parameters `server` or `port`. Check the `cloud.log` for more information.
 
-REDIS_CACHE_CLEAN_FAILED: Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html).
+REDIS_CACHE_CLEAN_FAILED: Failed to clean the Redis cache. Check that the Redis cache configuration is correct and that the Redis service is available. See [Setup Redis service](https://devdocs.magento.com/cloud/project/project-conf-files_services-redis.html).
 
 WRONG_CONFIGURATION_DB: Check that the the `DATABASE_CONFIGURATION` environment variable is configured correctly.
 
