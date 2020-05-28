@@ -142,7 +142,7 @@ You must use `Magento\Framework\View\Helper\SecureHtmlRenderer`, which is availa
 as a `$secureRenderer` variable in the _.phtml_ templates to achieve this.
  
  
-* For `script` or `style` tags containing inline JavaScript/CSS use `renderTag`:
+* For `script` or `style` tags containing inline JavaScript/CSS, use `renderTag`:
   
 _Inside a .phtml template_
 ```html
