@@ -37,7 +37,7 @@ The kernel parameter `net.core.somaxconn` controls the maximum number of open so
 
 ## PHP
 
-Magento fully supports PHP 7.2.11. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
+Magento fully supports PHP 7.3 and 7.4. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
 
 ### PHP extensions
 
@@ -49,7 +49,7 @@ We recommend limiting the list of active PHP extensions to those that are requir
 Adding more extensions increases library load times.
 
  {:.bs-callout-info}
-`php-mcrypt` has been removed from PHP 7.2 and replaced with the [`sodium` library](https://www.php.net/manual/en/book.sodium.php). Ensure that [sodium](https://www.php.net/manual/en/sodium.installation.php) is properly enabled when upgrading to PHP 7.2.
+`php-mcrypt` has been removed from PHP 7.2 and replaced with the [`sodium` library](https://www.php.net/manual/en/book.sodium.php). Ensure that [sodium](https://www.php.net/manual/en/sodium.installation.php) is properly enabled when upgrading PHP.
 
  {:.bs-callout-info}
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.
@@ -62,7 +62,7 @@ To guarantee successful execution of all Magento instances without dumping data 
 
 #### ByteCode
 
-To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
+To get maximum speed out of Magento 2 on PHP 7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
 ```bash
   opcache.memory_consumption=512MB
@@ -113,7 +113,7 @@ Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apa
 
 This document does not provide in-depth MySQL tuning instructions because each store and environment is different, but we can make some general recommendations.
 
-There have been many improvements to MySQL 5.6 and 5.7. We are confident that MySQL is distributed with good default settings. The most critical settings are:
+There have been many improvements to MySQL 5.7.9 We are confident that MySQL is distributed with good default settings. The most critical settings are:
 
 Parameter | Default | Description
 --- | --- | ---
