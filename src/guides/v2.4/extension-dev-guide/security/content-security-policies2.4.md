@@ -47,7 +47,7 @@ Once configured, Magento can enforce policies like these:
 
 For more details, check the `Magento/Csp/etc/config.xml` file. Some domains have already been
 whitelistedfor modules that require it. For instance if the `Magento_Paypal` module is installed,
-`www.paypal.com` is already whitelisted for the `script-src` policy. Inline scripts as well as styles have also been whitelisted,
+`www.paypal.com` is already whitelisted for the `script-src` policy. If inline scripts and styles have also been whitelisted,
 their hashes will be added to `Content-Security-Policy` header only when inline scripts/styles are not allowed.
 
 Please note that `eval()` is still allowed.
