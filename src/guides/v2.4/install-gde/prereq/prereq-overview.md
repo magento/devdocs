@@ -16,9 +16,9 @@ Before you install Magento, you must do all of the following:
 *  Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout-info}
-We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
+We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you are setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
-We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
+We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Do not know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
 
 Enter the following commands as a user with `root` privileges:
 
@@ -63,10 +63,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-{:.bs-callout-info}
-Magento 2.4 supports PHP 7.2.
-All 3rd party libraries now support PHP 7.2.
-If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
+Magento 2.4 supports PHP 7.3, but we recommend using PHP 7.4.
 
 ```bash
 php -v
@@ -74,15 +71,15 @@ php -v
 
 {% include install/php-versions-template.md %}
 
-You must run [PHP](https://glossary.magento.com/php) version 7.2 or 7.3:
+You must run [PHP](https://glossary.magento.com/php) version 7.3 or 7.4:
 
 ```terminal
-PHP 7.2.0 (cli) (built: Jan  9 2018 09:23:16) ( NTS )
+PHP 7.3.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
 Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
 ```
 
-See [PHP](/guides/v2.3/install-gde/prereq/php-settings.html) for info on PHP requirements.
+See [PHP][] for info on PHP requirements.
 
 ### MySQL
 
@@ -96,14 +93,14 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.6 or later as the following result indicates:
+You must run MySQL version 5.7.9 or later as the following result indicates:
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 871
-Server version: 5.6.21 MySQL Community Server (GPL)
+Server version: 5.7.9 MySQL Community Server (GPL)
 
-Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
 
 Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
