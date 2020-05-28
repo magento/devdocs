@@ -70,9 +70,9 @@ entries:
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/7210
 - description: Magento 2.4 requires that Elasticsearch be installed and configured
-    on your Magento 2.3.x instance before you upgrade. [Check the catalog search engine](https://devdocs.magento.com/guides/v2.4/comp-mgr/prereq/prereq-elasticsearch.md)
+    on your Magento 2.3.x instance before you upgrade. [Check the catalog search engine](https://devdocs.magento.com/guides/v2.4/comp-mgr/prereq/prereq-elasticsearch.html)
     describes how to check your search engine, while [Your current search engine is
-    not supported](https://devdocs.magento.com/guides/v2.4/comp-mgr/trouble/current-search-engine.md)
+    not supported](https://devdocs.magento.com/guides/v2.4/comp-mgr/trouble/current-search-engine.html)
     provides troubleshooting information if you attempt to upgrade with a search engine
     that is not supported in 2.4.
   versions: 2.4.0
