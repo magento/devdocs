@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-The {{site.data.var.ece}} Pro plan includes a single, Git repository with a Global Master and three, main environments: the Integration environment for development and testing, the Staging environment for testing with all services, and the Production environment for launching and maintaining your live site. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
+The {{site.data.var.ece}} Pro plan includes a single Git repository with a Global Master and three main environments: the **Integration** environment for development and testing, the **Staging** environment for testing with all services, and the **Production** environment for launching and maintaining your live site. See [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) for an overview.
 
 The following graphic demonstrates the Pro develop and deploy workflow, which uses a simple, git-branching approach. You [develop](#develop) code using an Active branch based on the Integration environment branch, _pushing_ and _pulling_ code changes to and from your remote, Active branch. You deploy verified code by _merging_ the remote branch to the base branch, which activates an automated [build and deploy](#deploy) process for that environment.
 
