@@ -49,7 +49,7 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 ## Add custom ZIP code input masks {#add}
 
-To add custom ZIP code input masks or change the default ones, create a new `zip_code.xml` in the `<your_module_dir>/etc` directory.
+To add custom ZIP code input masks or change the default ones, create a new `zip_codes.xml` in the `<your_module_dir>/etc` directory.
 
 The content of the file should be similar to the following sample:
 
