@@ -84,7 +84,7 @@ There are two ways to apply patches:
 
 1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
 
-Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
+  Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
 
 ### Composer
 
