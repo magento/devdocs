@@ -148,7 +148,7 @@ If you use the Setup Wizard, you must use the Magento Marketplace repository. A 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 1. Create the package in a way similar to the described above.
 1. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
-1. To use the private packaging repository in a project, add the following to your `composer.json`file:
+1. To use the private packaging repository in a project, add the following to your `composer.json` file:
 
    ```json
    {
