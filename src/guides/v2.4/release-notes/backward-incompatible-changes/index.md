@@ -132,7 +132,7 @@ These changes allow third-party developers to optimize performance by providing 
 
 ### PHP
 
-PHP 7.4 support is added to Magento 2.4.0 and the lowest compatible version is PHP 7.3. As the result, some of the Composer libraries used by Magento have been updated.
+PHP 7.4 support is added to Magento 2.4.0, and the lowest compatible version is PHP 7.3. As the result, some of the Composer libraries used by Magento have been updated.
 
 This section lists the backward incompatible changes and deprecated features in PHP 7.4. During development, we also discovered changes in the behavior of the `setcookie` function:
 
@@ -171,7 +171,7 @@ The most critical changes include:
    PHPUnit\Framework\TestCase::onNotSuccessfulTest()
    ```
 
--  The following method has been removed and the tests implementation should be changed
+-  The following methods have been removed, and you should change the implementation their tests:
 
    ```terminal
    assertAttributeContains()
@@ -205,7 +205,7 @@ The most critical changes include:
 
 #### Tips and Tricks
 
--  Use `\PHPUnit\Framework\Assert::assertEqualsCanonicalizing()` if you need to compare 2 entities with a different order of elements. `assertEquals()` has been used before.
+-  Use `\PHPUnit\Framework\Assert::assertEqualsCanonicalizing()` if you need to compare two entities with a different order of elements. `assertEquals()` has been used before.
 -  Use `\PHPUnit\Framework\Assert::assertEqualsWithDelta()` if you need non-strict comparison. `assertEquals()` with additional parameters has been used before.
 
 ### Size field added to media_gallery_asset table
