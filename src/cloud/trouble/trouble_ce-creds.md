@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Incorrect credentials
-menu_title: Incorrect credentials
-menu_order: 7
-menu_node:
 functional_areas:
   - Cloud
   - Configuration
