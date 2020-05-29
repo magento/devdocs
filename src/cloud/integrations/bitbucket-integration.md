@@ -40,7 +40,7 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
    magento-cloud project:get <project-ID>
    ```
 
-1. View remote repository URL.  
+1. List the tracked repositories.
 
    ```bash
    git remote -v
