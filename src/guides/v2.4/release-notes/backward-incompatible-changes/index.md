@@ -136,6 +136,84 @@ These changes allow third-party developers to optimize performance by providing 
 -  Introduced a Bulk version of `IsProductSalableForRequestedQtyInterface` API
 -  Introduced a Bulk version of `IsProductSalableInterface` when working with a list of items
 
+### PHP
+
+PHP 7.4 support is added to Magento 2.4.0, and the lowest compatible version is PHP 7.3. As the result, some of the Composer libraries used by Magento have been updated.
+
+This section lists the backward incompatible changes and deprecated features in PHP 7.4. During development, we also discovered changes in the behavior of the `setcookie` function:
+
+```php
+setcookie("tst", "Test Message");
+print_r(headers_list());
+//PHP 7.3
+Array
+(
+    [0] => X-Powered-By: PHP/7.3.14
+    [1] => Set-Cookie: tst=Test+Message
+)
+//PHP 7.4
+Array
+(
+    [0] => X-Powered-By: PHP/7.4.4
+    [1] => Set-Cookie: tst=Test%20Message
+)
+```
+
+### PHPUnit
+
+The current PHPUnit framework version used with Magento 2.4.0 is PHPUnit 9. This requires refactoring most PHPUnit-based tests.
+
+The most critical changes include:
+
+-  The methods listed below now have a void return type declaration:
+
+   ```terminal
+   PHPUnit\Framework\TestCase::setUpBeforeClass()
+   PHPUnit\Framework\TestCase::setUp()
+   PHPUnit\Framework\TestCase::assertPreConditions()
+   PHPUnit\Framework\TestCase::assertPostConditions()
+   PHPUnit\Framework\TestCase::tearDown()
+   PHPUnit\Framework\TestCase::tearDownAfterClass()
+   PHPUnit\Framework\TestCase::onNotSuccessfulTest()
+   ```
+
+-  The following methods have been removed, and you should change the implementation their tests:
+
+   ```terminal
+   assertAttributeContains()
+   assertAttributeNotContains()
+   assertAttributeContainsOnly()
+   assertAttributeNotContainsOnly()
+   assertAttributeCount()
+   assertAttributeNotCount()
+   assertAttributeEquals()
+   assertAttributeNotEquals()
+   assertAttributeEmpty()
+   assertAttributeNotEmpty()
+   assertAttributeGreaterThan()
+   assertAttributeGreaterThanOrEqual()
+   assertAttributeLessThan()
+   assertAttributeLessThanOrEqual()
+   assertAttributeSame()
+   assertAttributeNotSame()
+   assertAttributeInstanceOf()
+   assertAttributeNotInstanceOf()
+   assertAttributeInternalType()
+   assertAttributeNotInternalType()
+   attribute()
+   attributeEqualTo()
+   readAttribute()
+   getStaticAttribute()
+   getObjectAttribute()
+   ```
+
+-  The signature of `assertContains()`, `assertNotContains()`, `assertEquals()`, and `assertNotEquals()` were changed. In most cases, more specific methods should be used instead, like `assertStringContainsString()`
+
+#### Tips and Tricks
+
+-  Use `\PHPUnit\Framework\Assert::assertEqualsCanonicalizing()` if you need to compare two entities with a different order of elements. `assertEquals()` has been used before.
+-  Use `\PHPUnit\Framework\Assert::assertEqualsWithDelta()` if you need non-strict comparison. `assertEquals()` with additional parameters has been used before.
+
 ### Size field added to media_gallery_asset table
 
 This is a dependency for the Adobe Stock integration.
