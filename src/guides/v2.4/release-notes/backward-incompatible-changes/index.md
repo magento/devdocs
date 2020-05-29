@@ -7,63 +7,69 @@ This page highlights backward incompatible changes between releases that have a 
 
 ## 2.3.0 - 2.4-develop
 
-### UrlRewrite module
-
-The Admin grid in the UrlRewrite module was moved to UI components and all unused blocks were removed. Added mass delete and inline edit actions.
-
-```terminal
-adminhtml.block.url_rewrite.grid.container
-adminhtml.block.url_rewrite.grid
-adminhtml.url_rewrite.grid.columnSet
-adminhtml.url_rewrite.grid.columnSet.url_rewrite_id
-adminhtml.url_rewrite.grid.columnSet.store_id
-adminhtml.url_rewrite.grid.columnSet.request_path
-adminhtml.url_rewrite.grid.columnSet.target_path
-adminhtml.url_rewrite.grid.columnSet.redirect_type
-adminhtml.url_rewrite.grid.columnSet.actions
-```
-
 ### Elasticsearch
 
-You must install [Elasticsearch]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html) before upgrading to Magento 2.4.0. The following Elasticsearch versions are supported:
+In Magento 2.4.0, we removed support for two deprecated catalog search engines:
+
+-  MySQL
+-  Elasticsearch 2.x
+
+Merchants must [install and configure]{{ page.baseurl }}/install-gde/prereq/elasticsearch.html) a supported version of Elasticsearch before they upgrade to Magento 2.4.0. New installations require a connection to Elasticsearch to complete.
+
+{:.bs-calllout-warning}
+If you attempt to upgrade Magento before installing and configuring a supported search engine, Magento could go into an inconsistent state and the Admin will become inaccessible.
+
+The following Elasticsearch versions are supported:
 
 -  Elasticsearch 7.x
 -  Elasticsearch 6.x (6.8 or higher is recommended)
+
+Extension developers must update any module that depends on the unsupported search engines.
 
 {:.bs-callout-warning}
 Magento no longer provides support for Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol) as they are End of Life. If you are using ES2, follow the instructions in [Change Elasticsearch Module]({{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html) before upgrading.
 
 The changes with removing values from the `system.xml` file require eliminating ES2 support from the Admin UI. Other API classes were removed to clean up the code when we deprecated ES2 and ES5 in Magento 2.3.5.
 
-#### Level Target/Location Code/Reason
+The following modules have been refactored to use the `ElasticSearchResultApplier` class and avoid usage of `CatalogSearch` and `SearchResultApplier`, which was based on MySQL:
+
+-  CatalogGraphQL
+-  QuickOrder (B2B)
+
+In addition, the following constructors were modified to provide a mixed type. We have removed deprecated class private and protected components but have left their usages as arguments in the constructor for backward compatibility.
 
 ```terminal
-MAJOR Magento\Elasticsearch\Elasticsearch5\Model\Adapter\FieldType
-/app/code/Magento/Elasticsearch/Elasticsearch5/Model/Adapter/FieldType.php:20 V005 Class was removed.
-MAJOR Magento\Elasticsearch\SearchAdapter\DocumentFactory::__construct
-/app/code/Magento/Elasticsearch/SearchAdapter/DocumentFactory.php:30 M113 [public] Method parameter typing changed.
-MAJOR Magento\Elasticsearch\SearchAdapter\DocumentFactory::$objectManager
-/app/code/Magento/Elasticsearch/SearchAdapter/DocumentFactory.php:30 V009 [protected] Property has been removed.
-MAJOR Magento\Elasticsearch\Model\Client\ElasticsearchFactory
-Magento_Elasticsearch:0
-MAJOR catalog/search/elasticsearch_server_hostname
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_server_port
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_index_prefix
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_enable_auth
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_username
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_password
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_server_timeout
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_test_connect_wizard
-Magento_Elasticsearch:0 M303 A field-node was removed
-MAJOR catalog/search/elasticsearch_minimum_should_match
-Magento_Elasticsearch:0 M303 A field-node was removed
+Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection
+Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection
+Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full
+```
+
+{:.bs-callout-info}
+We recommend that you do not inherit from any Magento class. If your extension does inherit from any of the classes above, make sure it is not using any of the deprecated or removed mixed type class members. For compatibility, modify your constructors accordingly.
+
+The following deprecated interfaces were deleted. If your extension implements any of these interfaces, refactor your code to use the Elasticsearch module.
+
+```terminal
+Magento\Framework\Search\Adapter\Mysql\Query\Builder\QueryInterface
+Magento\CatalogSearch\Model\Search\FilterMapper\FilterStrategyInterface
+```
+
+The following deprecated classes were deleted. If your extension uses any of the above classes, then you must do a major refactor to your code to use the Elasticsearch module and not rely on the MySQL Search class implementations.
+
+```terminal
+Magento\Framework\Search\Adapter\Mysql\DocumentFactory
+Magento\Framework\Search\Adapter\Mysql\Mapper
+Magento\Framework\Search\Adapter\Mysql\ScoreBuilder
+Magento\Framework\Search\Adapter\Mysql\Query\Builder\Match
+Magento\Framework\Search\Adapter\Mysql\Field\FieldFactory
+Magento\Framework\Search\Adapter\Mysql\Aggregation\Builder
+Magento\Framework\Search\Adapter\Mysql\Aggregation\DataProviderContainer
+Magento\CatalogSearch\Model\Search\TableMapper
+Magento\CatalogSearch\Model\Indexer\IndexerHandler
+Magento\CatalogSearch\Model\Indexer\ProductFieldset
+Magento\CatalogSearch\Model\Indexer\Scope\IndexTableNotExistException
+Magento\CatalogSearch\Model\Indexer\Fulltext\Action\IndexIterator
+Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver
 ```
 
 ### Inventory asynchronous reindex
@@ -250,6 +256,22 @@ Now returns int for `DefaultLimitPerPageValue`:
 
 ```terminal
 changed.MAJORMagento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue /app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
+```
+
+### UrlRewrite module
+
+The Admin grid in the UrlRewrite module was moved to UI components and all unused blocks were removed. Added mass delete and inline edit actions.
+
+```terminal
+adminhtml.block.url_rewrite.grid.container
+adminhtml.block.url_rewrite.grid
+adminhtml.url_rewrite.grid.columnSet
+adminhtml.url_rewrite.grid.columnSet.url_rewrite_id
+adminhtml.url_rewrite.grid.columnSet.store_id
+adminhtml.url_rewrite.grid.columnSet.request_path
+adminhtml.url_rewrite.grid.columnSet.target_path
+adminhtml.url_rewrite.grid.columnSet.redirect_type
+adminhtml.url_rewrite.grid.columnSet.actions
 ```
 
 ### UUID validator
