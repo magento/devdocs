@@ -6,7 +6,7 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-We strongly recommend that test all patches in a staging/development environment before deploying to production. We also strongly recommend that you back up your data before applying a patche. See [Back up and roll back the file system][].
+We strongly recommend that test all patches in a staging/development environment before deploying to production. We also strongly recommend that you back up your data before applying a patch. See [Back up and roll back the file system][].
 
 ## How patches work
 
