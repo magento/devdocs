@@ -43,7 +43,7 @@ Complete the following prerequisites to prepare your environment before starting
    To install the plugin:
 
    ```bash
-   composer require magento/composer-root-update-plugin ~1.0 --no-update
+   composer require magento/composer-root-update-plugin=~1.0 --no-update
    ```
 
    Update the dependencies:
