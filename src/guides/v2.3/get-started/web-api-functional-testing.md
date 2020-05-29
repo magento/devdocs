@@ -105,4 +105,8 @@ interface AdapterInterface
 
 1. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be the same specified in the `phpunit_rest.xml` or `phpunit_soap.xml` file.
 
-1. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file.
+1. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file:
+
+   ```bash
+   vendor/bin/phpunit --config ./dev/tests/api-functional/phpunit_soap.xml
+   ```

@@ -27,18 +27,18 @@ We strongly recommend you do *not*:
 *  Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.
 *  Use the `ObjectManager` directly in production code.
 
-There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.
+There always is a better alternative, usually a [generated] `Factory` class, or a [`Locator`][Locator]{:target="_blank"} class of sorts.
 
  {:.bs-callout-info}
-This rule applies only to production code. When writing [integration tests]({{ page.baseurl }}/test/integration/integration_test_execution.html), this is not true. In fact, the object manager is recommended for integration tests.
+This rule applies only to production code. When writing [integration tests][integration-tests], this is not true. In fact, the object manager is recommended for integration tests.
 
 ### Collaborator classes
 
 Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.
 
-[PHP](https://glossary.magento.com/php) cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.
+[PHP] cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.
 
-Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
+Collaborator instances should be passed into the class using [constructor injection][constructor-injection].
 
 ### The environment (file system, time, global variables)
 
@@ -48,19 +48,19 @@ For example, if you need...
 
 *  file system access?
 
-  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
+  Use [`\Magento\Framework\Filesystem\Io\IoInterface`][IoInterface]{:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
 
 *  the current time?
 
-   Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
+   Inject a [`\DateTimeInterface`][DateTimeInterface]{:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
 
 *  the remote IP?
 
-  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
+  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`][RemoteAddress]{:target="_blank"}.
 
 *  access to `$_SERVER`?
 
-  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
+  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`][Request]{:target="_blank"}.
 
 Anything that can be easily replaced by a test double is preferable to using low level functions.
 
@@ -158,7 +158,7 @@ As a rule of thumb, try to keep methods to five or fewer lines of code.
 
 Functions should do only one thing and they should do it very well.
 
-Once you respect the [single responsibility principle][]{:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
+Once you respect the [single responsibility principle][single-responsibility-principle]{:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
 Have a look at the following examples:
 
 ```php
@@ -223,7 +223,7 @@ The following list principles are by no means complete, but they can serve as a 
 
 ### Tell, do not ask
 
-Try to use a few getters as possible. Instead, use methods that tell the objects directly what to do. Asking for object values is a sign of misplaced responsibilities. [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck){:target="_blank"} called that "feature envy".
+Try to use a few getters as possible. Instead, use methods that tell the objects directly what to do. Asking for object values is a sign of misplaced responsibilities. [Kent Beck][Kent-Beck]{:target="_blank"} called that "feature envy".
 
 Consider moving the code in that needs the value into a class that has the data available as the following example shows:
 
@@ -249,7 +249,7 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 
 ### The Law of Demeter
 
-The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Do not talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
+The [Law of Demeter][Law-of-Demeter]{:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Do not talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
 *  Objects received as constructor arguments
 *  Objects received as arguments to the current method
@@ -281,10 +281,25 @@ Almost as a side effect, those classes are very easy to test.
 
 ## For more information
 
-*  [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
-*  [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
-*  [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
-*  [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
+*  [Rules of simple software design][BeckDesignRules]{:target="_blank"} by Kent Beck
+*  [Clean Code][clean-code]{:target="_blank"} by Robert C. Martin
+*  [Refactoring][refactoring]{:target="_blank"} by Martin Fowler
+*  [Growing Object Oriented Software Guided by Tests][growing-object-oriented-software]{:target="_blank"} by Steve Freeman and Nat Pryce
 
 <!-- Link definitions -->
 [single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle
+[generated]: {{ page.baseurl }}/extension-dev-guide/code-generation.html
+[Locator]: https://thephp.cc/news/2015/09/dependencies-in-disguise
+[integration-tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
+[PHP]: https://glossary.magento.com/php
+[constructor-injection]: {{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection
+[IoInterface]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php
+[DateTimeInterface]: http://php.net/manual/en/refs.calendar.php
+[RemoteAddress]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php
+[Request]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php
+[Law-of-Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
+[Kent-Beck]: https://en.wikipedia.org/wiki/Kent_Beck
+[BeckDesignRules]: http://martinfowler.com/bliki/BeckDesignRules.html
+[clean-code]: https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ
+[refactoring]: http://martinfowler.com/books/refactoring.html
+[growing-object-oriented-software]: http://www.growing-object-oriented-software.com
