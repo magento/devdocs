@@ -27,7 +27,7 @@ Backup the existing `composer.json` file in the Magento installation directory.
 ## Install the plugin
 
 ```bash
-composer require magento/composer-root-update-plugin ~1.0 --no-update
+composer require magento/composer-root-update-plugin=~1.0 --no-update
 ```
 
 Update the dependencies:
