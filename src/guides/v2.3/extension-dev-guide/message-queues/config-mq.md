@@ -13,7 +13,6 @@ The message queue topology is a {{site.data.var.ce}} feature. It can be included
 
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
-*  [`queue.xml`](#queuexml) - Defines brokers that processes topics. Use for `db` ([MySQL]) connections only. Do not create this file for `amqp` ([RabbitMQ]) connections.
 *  [`communication.xml`](#communicationxml) - Defines aspects of the message queue system that all communication types have in common.
 *  [`queue_consumer.xml`](#queueconsumerxml) - Defines the relationship between an existing queue and its consumer.
 *  [`queue_topology.xml`](#queuetopologyxml) - Defines the message routing rules and declares queues and exchanges.
@@ -27,48 +26,6 @@ Depending on your needs, you may only need to create and configure `communicatio
 *  If you only want to consume from an existing queue,  you will only need the `queue_consumer.xml` config file.
 *  In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the `queue_publisher.xml` and `queue_topology.xml` files.
 *  When you want to configure the local queue and consume messages published by 3rd party system, you will need the `queue_topology.xml` and `queue_consumer.xml` files.
-
-### `queue.xml` {#queuexml}
-
-The `queue.xml` file defines the broker that processes topics. It also specifies the queue each topic will be sent to. Do not create this file for [RabbitMQ] connections.
-
-### Sample `queue.xml` file
-{:.no_toc}
-
-```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
-    <broker topic="product_action_attribute.update" exchange="magento-db" type="db">
-        <queue name="product_action_attribute.update"
-               consumer="product_action_attribute.update"
-               consumerInstance="Magento\Framework\MessageQueue\Consumer"
-               handler="Magento\Catalog\Model\Attribute\Backend\Consumer::process"/>
-    </broker>
-</config>
-```
-
-### broker element
-{:.no_toc}
-
-The `broker` element also contains `queue` elements.
-
-Parameter | Description
---- | ---
-topic | A topic defined in the `communication.xml` file.
-type | The type of message broker. The value must be `db`.
-exchange | The name of the exchange to publish to. The default system exchange name is `magento`.
-
-### queue element
-{:.no_toc}
-
-The `queue` element defines the module's queues.
-
-Parameter | Description
---- | ---
-name (required) | Defines the queue name to send the message to.
-consumer (required) | The name of the consumer.
-consumerInstance | The path to a Magento class that consumes the message.
-handler | Specifies the class and method that processes the message. The value must be specified in the format `<Vendor>\Module\<ServiceName>::<methodName>`.
-maxMessages | Specifies the maximum number of messages to consume.
 
 ### `communication.xml` {#communicationxml}
 

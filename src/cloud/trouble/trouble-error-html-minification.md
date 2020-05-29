@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Resolve issues with HTML minification
-menu_title: Resolve issues with HTML minification
-menu_order: 30
-menu_node:
 functional_areas:
   - Cloud
   - Configuration
