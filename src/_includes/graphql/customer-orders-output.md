@@ -18,14 +18,17 @@ orders(filter: {number: {eq: "000000007"}}, pageSize: 25, currentPage: 1)
 
 Attribute | Data type | Description
 --- | --- | ---
-`number` | FilterEqualTypeInput | Filter orders by order numbers
+`number` | FilterStringTypeInput | Filter orders by order number
 
-#### FilterEqualTypeInput attributes
+#### FilterStringTypeInput attributes
+
+The `FilterStringTypeInput` object defines a filter for an input string.
 
 Attribute | Data type | Description
 --- | --- | ---
-`eq` | String | Use this attribute to exactly match the specified string. For example, to filter on a specific order number, specify a value like `5`
-`in` | [String] | Use this attribute to filter on an array of values. For example, to filter on order number 4, 5, and 6, specify a value of `["4", "5", "6"]`
+`eq` | String | Filters items that are exactly the same as the specified string. For example, to filter on a specific order number, specify a value like `5`
+`in` | [String] | Filters items that are exactly the same as entries specified in an array of strings. For example, to filter on order number 4, 5, and 6, specify a value of `["4", "5", "6"]`
+`match` | String | Defines a filter that performs a fuzzy search on the specified string. For example, if you specify a value of `20`, the query returns all order IDs that contain the string `20`
 
 ### orders output attributes (CustomerOrders) {#customerOrders}
 
@@ -111,7 +114,8 @@ Attribute | Data type | Description
 `discounts` | [Discount] | The applied discounts to the order
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
-`tax` | Money! | The amount of tax applied to the order
+`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
+`total_tax` | Money! | The amount of tax applied to all orders
 
 #### SearchResultPageInfo attributes {#SearchResultPageInfo}
 
@@ -122,3 +126,11 @@ Attribute | Data type | Description
 `current_page` | Int |Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
+
+#### TaxItem
+
+Attribute | Data type | Description
+--- | --- | ---
+`amount` | Money! | The amount of tax applied to an order
+`rate` | Float | The tax rate applied to an order
+`title` | String! | A label that describes the tax
