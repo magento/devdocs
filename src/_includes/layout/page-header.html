@@ -13,6 +13,18 @@
   </div>
   {% endif %}
 
+  {% if page.url contains "guides/v2.4/install-gde/" %}
+  <div class="message-banner">
+    You must install Elasticsearch before installing {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/install-gde/prereq/elasticsearch.html">Elasticsearch</a> for details.
+  </div>
+  {% endif %}
+
+  {% if page.url contains "guides/v2.4/comp-mgr/" %}
+  <div class="message-banner">
+    You must install and configure Elasticsearch 6.x or 7.x before upgrading to {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the catalog search engine</a> for details.
+  </div>
+  {% endif %}
+
   <h1 class="page-title">{{ page.title }}</h1>
 
   {% if page.subtitle %}
