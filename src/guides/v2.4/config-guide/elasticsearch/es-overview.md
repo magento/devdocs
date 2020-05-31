@@ -34,6 +34,6 @@ For additional information, see the [Elasticsearch documentation][]
 [Elasticsearch]: https://www.elastic.co
 [Configure Magento to use Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-[Change Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
+[Change the Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
 [Setup Wizard installation]: {{page.baseurl}}/install-gde/install/web/install-web.html
 [Install the Magento software]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html
