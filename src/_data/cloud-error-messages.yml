@@ -84,3 +84,7 @@ FILE_CREDENTIALS_EMAIL_NOT_WRITABLE: Failed to update the `/var/credentials_emai
 #  CACHE_FLUSH_COMMAND_FAILED - 127, 227
 
 CLOUD_LOG_VERBOSE_ACTION: "Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output."
+
+CACHE_ENABLE_FAILED: "The `php ./bin/magento cache:enable` command failed. Check the `cloud.log` for more information."
+
+CRYPT_KEY_IS_ABSENT: "Crypt key does not exist neither in `./app/etc/env.php` nor in cloud environment variable CRYPT_KEY"
