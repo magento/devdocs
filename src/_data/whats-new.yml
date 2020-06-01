@@ -106,8 +106,6 @@ entries:
   type: New Topic
   date: May 28, 2020
   link: https://github.com/magento/devdocs/pull/6986
-updated: Wed May 27 14:25:48 2020
-entries:
 - description: Updated the [Extend Docker](https://devdocs.magento.com/cloud/docker/docker-extend.html)
     topic with instructions to update the `magento/magento-cloud-docker` package to
     support a new PHP version.
