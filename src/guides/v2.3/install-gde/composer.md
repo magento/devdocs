@@ -16,6 +16,8 @@ functional_areas:
 
 {% include install/composer-overview.md %}
 
+{% include install/web/deprecated.md %}
+
 ## Prerequisites
 
 Before you continue, you must do the following:

@@ -1,0 +1,1 @@
+../../../v2.3/frontend-dev-guide/translations/translate_theory.md
