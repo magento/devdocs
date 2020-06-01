@@ -32,7 +32,7 @@ The release notes include:
 
    -  {:.new}Added the `--es-env-var` option to the `ece-tools build:compose` command to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the configuration for a Magento Cloud Docker environment.<!--MCLOUD-3059-->
 
-   - {:.new}Added the `--with-xdebug` option to the `ece-tools build:compose` command to add a separate container to handle Xdebug requests.<!--MCLOUD-4098-->
+   -  {:.new}Added the `--with-xdebug` option to the `ece-tools build:compose` command to add a separate container to handle Xdebug requests.<!--MCLOUD-4098-->
 
 ## v1.0.0
 *Release date: Nov 14, 2019*<br/>
