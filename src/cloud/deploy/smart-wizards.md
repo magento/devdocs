@@ -24,6 +24,7 @@ Command | Description
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
 `wizard:scd-on-build` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies that the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
+`wizard:split-db-state` | Checks existence of ability to split Magento DB on current environment. This command also checks whether split DB was already done or not.
 
 As an example, you can verify that your configuration properly enables the SCD on-demand feature:
 
