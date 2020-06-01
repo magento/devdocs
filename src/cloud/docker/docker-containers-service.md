@@ -121,7 +121,7 @@ The FPM container includes the following volumes:
 {:.bs-callout-tip}
 You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
-For additional information about configuring the php environment, see the [XDebug for Docker] documentation.
+Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker][].
 
 ## RabbitMQ container
 
@@ -238,10 +238,10 @@ To mount the custom index.php file using volumes:
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
-[XDebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [redis]: https://hub.docker.com/_/redis
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [FPM]: https://php-fpm.org
+[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
 [tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
 [debian:jessie]: https://hub.docker.com/_/debian
