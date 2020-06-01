@@ -21,14 +21,15 @@ plugins_dir: ./_plugins
 
 # Parameters for the version switcher. Numeric values must be wrapped in quotes.
 #
-version: "2.3"
+version: "2.4"
 versions:
-   -
-      name: "2.2"
-      url: /guides/v2.2/
-   -
-      name: "2.3"
-      url: /guides/v2.3/
+  -
+    name: "2.3"
+    url: /guides/v2.3/
+  -
+    name: "2.4"
+    url: /guides/v2.4/
+
 
 collections:
   videos:
