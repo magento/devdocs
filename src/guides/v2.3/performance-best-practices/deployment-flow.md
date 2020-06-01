@@ -16,7 +16,7 @@ The `composer.json` and `composer.lock` files manage Magento dependencies and in
 To install Magento dependencies:
 
 ```bash
-composer install
+composer install --no-dev
 ```
 
 ## Preprocess dependency injection instructions
@@ -50,7 +50,7 @@ composer dump-autoload -o --apcu
 If you plan on updating the autoloader, you must run the following commands in order:
 
 ```bash
-composer install
+composer install --no-dev
 ```
 
 ```bash
