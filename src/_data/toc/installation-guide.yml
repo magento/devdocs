@@ -77,6 +77,17 @@ pages:
             - label: MySQL
               url: /install-gde/prereq/mysql.html
 
+            - label: Elasticsearch
+              url: /install-gde/prereq/elasticsearch.html
+              exclude_versions: ["2.3"]
+              children:
+
+                - label: Configure nginx and Elasticsearch
+                  url: /install-gde/prereq/es-config-nginx.html
+
+                - label: Configure Apache and Elasticsearch
+                  url: /install-gde/prereq/es-config-apache.html      
+
             - label: Get your authentication keys
               url: /install-gde/prereq/connect-auth.html
 
@@ -124,6 +135,7 @@ pages:
           url: /install-gde/continue-to-install.html
 
     - label: Setup Wizard Install
+      include_versions: ["2.3"]
       children:
         - label: Installation roadmap (reference)
           url: /install-gde/install-roadmap_web.html
@@ -140,8 +152,8 @@ pages:
 
         - label: Setup Wizard installation
           url: /install-gde/install/web/install-web.html
+          include_versions: ["2.3"]
           children:
-
             - label: Step 1. Readiness check
               url: /install-gde/install/web/install-web_1-readiness.html
 
@@ -162,22 +174,13 @@ pages:
 
         - label: Post-installation
           url: /install-gde/continue-to-verify.html
+          include_versions: ["2.3"]
 
     - label: Command Line Installation
       children:
 
         - label: Installation roadmap (reference)
           url: /install-gde/install-roadmap_cli.html
-
-        - label: Install optional sample data modules
-          url: /install-gde/install/cli/install-cli-sample-data.html
-          children:
-
-            - label: Install using Composer
-              url: /install-gde/install/cli/install-cli-sample-data-composer.html
-
-            - label: Install by cloning repositories
-              url: /install-gde/install/cli/install-cli-sample-data-clone.html
 
         - label: Install the Magento software using the command line
           url: /install-gde/install/cli/install-cli.html
@@ -237,6 +240,16 @@ pages:
             - label: Uninstall language packages
               url: /install-gde/install/cli/install-cli-uninstall-langpk.html
 
+        - label: Install optional sample data modules
+          url: /install-gde/install/cli/install-cli-sample-data.html
+          children:
+
+            - label: Install using Composer
+              url: /install-gde/install/cli/install-cli-sample-data-composer.html
+
+            - label: Install by cloning repositories
+              url: /install-gde/install/cli/install-cli-sample-data-clone.html
+
         - label: Contributing developers—update, reinstall Magento
           url: /install-gde/install/cli/dev_options.html
           children:
@@ -294,6 +307,8 @@ pages:
 
             - label: Installation dependencies not met
               url: /install-gde/trouble/tshoot_install_depend.html
+              include_versions: ["2.3"]
+
 
     - label: How Tos
       children:

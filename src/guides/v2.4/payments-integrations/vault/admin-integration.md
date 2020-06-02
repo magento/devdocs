@@ -1,0 +1,1 @@
+../../../v2.3/payments-integrations/vault/admin-integration.md

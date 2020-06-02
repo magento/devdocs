@@ -1,12 +1,8 @@
 ---
 group: software-update-guide
-subgroup: 50_trouble
-title: Troubleshooting suggestions
-menu_title: Troubleshooting suggestions
-menu_node: parent
-menu_order: 1
+title: Troubleshooting
 functional_areas:
-  - UpgradeUpgrade
+  - Upgrade
 ---
 
 The following topics discuss Component Manager and System Upgrade errors and suggested solutions:
