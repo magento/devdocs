@@ -153,7 +153,7 @@ PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on th
 *  ACL to controls which administrators can log in to customer accounts can be configured on a per-website basis
 *  Compatibility with multiple websites and customer account scopes
 *  Orders placed on behalf of customers are logged in the storefront and Admin
-*  All sessions are destroyed following administrator logout, and administrator users cannot access customer passwords.
+*  All sessions are destroyed following administrator logout, and administrative users cannot access customer passwords.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
