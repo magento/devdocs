@@ -91,7 +91,7 @@ To add the Blackfire.io extension to your Cloud Docker environment:
 1. Make sure necessary containers are up and running.
 
    ```bash
-   docker ps
+   docker-compose ps
    ```
 
 {:.procedure}
