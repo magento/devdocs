@@ -9,7 +9,9 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `ece-docker build:compose` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+`{{site.data.var.mcd-prod}}` deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You also have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.
+
+You use the `ece-docker build:compose` command to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 {: .bs-callout-warning }
 The `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
@@ -48,8 +50,6 @@ The `ece-docker build:compose` command overwrites the existing `docker-compose.y
    ```bash
    sudo apachectl stop
    ```
-
-1. Optionally, [enable Xdebug].
 
 ## Set the launch mode
 

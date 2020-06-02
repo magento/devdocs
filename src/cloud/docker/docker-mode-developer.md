@@ -46,13 +46,14 @@ To launch the Docker environment in developer mode:
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
    ```
 
+   {:.bs-callout-info}
+   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys][].
+
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
    ```bash
    cp .docker/config.php.dist .docker/config.php
    ```
-
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can enable Xdebug in the `.magento.app.yaml` file, and then update the configuration in the `docker-compose.yml` file. See [Configure Xdebug for Docker][xdebug].
 
 1. If you selected `docker-sync` for file synchronization, start the file synchronization.
 
@@ -126,6 +127,7 @@ To launch the Docker environment in developer mode:
 [cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
-[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
+[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]
+[service key]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/

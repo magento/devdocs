@@ -20,15 +20,19 @@ The release notes include:
 
 -  {:.new}**Container updates**–
 
-   -  {:.new}**PHP-FPM**—Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MAGECLOUD-5142-->
+   -  {:.new}**PHP-FPM-XDEBUG**—Added a separate Docker container to handle Xdebug requests that simplifies configuration and improves performance when debugging PHP code. See [Configure Xdebug]{{site.baseurl}}/cloud/docker/docker-development-debug.html).<!--MCLOUD-4098-->
 
-   -  {:.new}**Varnish**—The Varnish service is now provisioned by default when you deploy a Magento Cloud Docker environment using a supported version of the Magento Cloud application template.<!--MAGECLOUD-2634-->
+   -  {:.new}**Varnish**—The Varnish service is now provisioned by default when you deploy a Magento Cloud Docker environment using a supported version of the Magento Cloud application template.<!--MCLOUD-2634-->
+
+   -  {:.fix}**PHP-FPM**—Fixed an issue in the Docker entrypoint script (docker-entrypoint.sh) that caused errors when connecting to the PHP container.<!--MCLOUD-3958-->
 
 -  {:.new}**Command changes**–
 
    -  {:.new}Added the `--no-varnish` option to the `ece-tools build:compose` command to skip Varnish service installation when you generate the configuration for a Magento Cloud Docker environment.<!--MCLOUD-2634-->
 
    -  {:.new}Added the `--es-env-var` option to the `ece-tools build:compose` command to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the configuration for a Magento Cloud Docker environment.<!--MCLOUD-3059-->
+
+   -  {:.new}Added the `--with-xdebug` option to the `ece-tools build:compose` command to add a separate container to handle Xdebug requests.<!--MCLOUD-4098-->
 
 ## v1.0.0
 *Release date: Nov 14, 2019*<br/>
