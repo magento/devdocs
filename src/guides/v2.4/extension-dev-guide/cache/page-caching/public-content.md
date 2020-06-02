@@ -1,0 +1,1 @@
+../../../../v2.3/extension-dev-guide/cache/page-caching/public-content.md

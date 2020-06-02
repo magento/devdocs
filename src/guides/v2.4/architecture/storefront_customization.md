@@ -1,0 +1,1 @@
+../../v2.3/architecture/storefront_customization.md

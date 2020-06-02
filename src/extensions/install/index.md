@@ -165,30 +165,4 @@ If you encounter errors when loading the storefront in a browser, use the follow
 
 ## Upgrade an extension
 
-To update or upgrade an extension:
-
-1. Download the updated extension file from Marketplace or another extension developer. Take note of the module-name and version.
-
-1. Export the contents to your Magento root.
-
-1. If a composer package exists for the extension, run one of the following.
-
-   Update per module name:
-
-   ```bash
-   composer update vendor/module-name
-   ```
-
-   Updater per version:
-
-   ```bash
-   composer require vendor/module-name ^x.x.x
-   ```
-
-1. Run the following commands to upgrade, deploy, and clean the cache.
-
-   ```bash
-   php bin/magento setup:upgrade --keep-generated
-   php bin/magento setup:static-content:deploy
-   php bin/magento cache:clean
-   ```
+{% include upgrade/module.md %}

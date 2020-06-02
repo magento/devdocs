@@ -1,0 +1,1 @@
+../../../v2.3/ext-best-practices/extension-coding/example-module-adminpage.md

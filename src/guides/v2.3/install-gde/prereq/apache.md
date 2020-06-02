@@ -35,7 +35,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 
 ## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
+This topic discusses how to enable Apache 2.4 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
 
 Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
@@ -75,19 +75,18 @@ Server built: Jul 22 2014 14:35:32
 *  If Apache is *not* installed, see:
    *  [Installing or upgrading Apache on Ubuntu](#install-prereq-apache-ubuntu)
    *  [Installing Apache on CentOS](#install-prereq-apache-centos)
-*  If Apache 2.2 is installed on Ubuntu 12 *and* you want to use [PHP](https://glossary.magento.com/php) 5.6, see the next section
 
 ## Installing or upgrading Apache on Ubuntu {#install-prereq-apache-ubuntu}
 
 The following sections discusses how to install or upgrade Apache:
 
 *  Install Apache
-*  Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 7+
+*  Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 7.3+
 
 ### Installing Apache on Ubuntu 16, 14, or 12 {#install-prereq-apache-ubuntu-install}
 
 {% collapsible Click to show/hide content %}
-To install the default version of Apache (Ubuntu 14, 16---Apache 2.4, Ubuntu 12---Apache 2.2):
+To install the default version of Apache (Ubuntu 14, 16---Apache 2.4):
 
 1. Install Apache
 
@@ -127,7 +126,7 @@ Next steps
 
 {% collapsible Click to show/hide content %}
 
-To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
+To use PHP 7.3 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
 To upgrade to Apache 2.4:
 
@@ -190,7 +189,7 @@ Installing and configuring Apache is basically a three-step process: install the
 
 ### Installing Apache {#apache-install-centos}
 
-1. Install Apache 2.4 if you haven't already done so.
+1. Install Apache 2.4 if you have not already done so.
 
    ```bash
    yum -y install httpd
@@ -313,9 +312,6 @@ Next steps
 {% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
-*  [Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
-*  [Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
-
 ### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
 To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
@@ -333,24 +329,6 @@ For example:
 
 {:.bs-callout-info}
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
-
-### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
-
-To enable website visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="_blank"}.
-
-For example:
-
-```conf
-<Directory /var/www/>
-  Options Indexes FollowSymLinks MultiViews
-  AllowOverride All
-  Order allow,deny
-  Allow from all
-</Directory>
-```
-
-{:.bs-callout-info}
-The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
 
 {:.ref-header}
