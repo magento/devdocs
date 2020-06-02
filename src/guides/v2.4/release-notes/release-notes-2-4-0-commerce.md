@@ -146,7 +146,7 @@ PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on th
 *  Customizable permissions for all aspects of the feature
 *  Quick storefront view of Purchase Orders that require approval
 *  Full history log of actions that have been performed on each Purchase Order
-*  Email notification for relevant parties  during all steps in the approval process
+*  Email notification for relevant parties  during all steps in the approval process.
 
 **Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers. Customers  opt in to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). Features include:
 
