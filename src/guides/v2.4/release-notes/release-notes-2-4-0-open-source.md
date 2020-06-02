@@ -684,9 +684,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 ### Index
 
 <!--- MC-25236-->
-
-*  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
-
 <!--- MC-30779-->
 
 *  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
