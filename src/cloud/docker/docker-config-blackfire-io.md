@@ -8,7 +8,7 @@ functional_areas:
 
 ---
 
-You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to complete automated performance testing.
+You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to fully automate performance testing.
 
 [Blackfire.io for Magento Cloud](https://blackfire.io/magento) is a PHP profiler and automated performance testing tool that can be used in the development Integration, Staging, and Production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code. Blackfire digs deeper to provide granular performance analytics.
 
