@@ -4,8 +4,115 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu May 21 16:26:01 2020
+updated: Thu May 28 15:55:01 2020
 entries:
+- description: Added [release notes highlights](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
+    to support the 2.4.0 beta release.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7301
+- description: Added a new section about whitelisting inline scripts and styles in
+    a [content security policy](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7293
+- description: Added BIC [highlights](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/index.html)
+    and [reference](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html)
+    to support the 2.4.0 beta release.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7295
+- description: Added a new section to [MySQL](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/mysql.html)
+    about upgrading to MySQL 8.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7283
+- description: Added the 'Image lazy loading' section to the [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7236
+- description: Updated the [supported versions of PHP](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html#php)
+    to 7.3 and 7.4.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7255
+- description: Removed references to the Web Setup Wizard, Component Manager, Module
+    Manager, System Upgrade Utility, and Magento "updater" application because the
+    functionality was removed in 2.4.0. Updated the [installation flow diagram](https://devdocs.magento.com/guides/v2.4/install-gde/install-flow-diagram.html)
+    and optimized the [Software Update Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html).
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7287
+- description: Removed the option to disable 2FA from the [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+    topic and added a new section describing the Magento Web API workflow.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7262
+- description: Removed the topic about using the custom script to upgrade Magento.
+    The [Composer update plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html)
+    replaces the custom script.
+  versions: 2.3.x, 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7232
+- description: Removed beta information from the [Composer root update plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html)
+    topic to support the GA release of the tool.
+  versions: 2.3.x, 2.4.0
+  type: Technical
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7210
+- description: Magento 2.4 requires that Elasticsearch be installed and configured
+    on your Magento 2.3.x instance before you upgrade. [Check the catalog search engine](https://devdocs.magento.com/guides/v2.4/comp-mgr/prereq/prereq-elasticsearch.html)
+    describes how to check your search engine, while [Your current search engine is
+    not supported](https://devdocs.magento.com/guides/v2.4/comp-mgr/trouble/current-search-engine.html)
+    provides troubleshooting information if you attempt to upgrade with a search engine
+    that is not supported in 2.4.
+  versions: 2.4.0
+  type: New Topic
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7145
+- description: As of Magento 2.4.0, Elasticsearch is required for all installations.
+    Magento will not install unless a connection to an Elasticsearch can be established.
+    See [Elasticsearch](https://devdocs.magento.com/guides/v2.4/install-gde/prereq/elasticsearch.html)
+    in the _Installation Guide_ for more information about setting up Magento.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7039
+- description: Removed the Authorize.Net payment method topic from the _GraphQL Developer
+    Guide_ because Authorize.Net is no longer supported.
+  versions: 2.4.0
+  type: Technical
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/7056
+- description: Added several new flags for including Elasticsearch when installing
+    Magento from the command line. See [Install the Magento software](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli-install.html)
+    for details.
+  versions: 2.4.0
+  type: Major Update
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/6979
+- description: Added a new topic for the [Sortby](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/components/ui-sortby.html)
+    UI component.
+  versions: 2.4.0
+  type: New Topic
+  date: May 28, 2020
+  link: https://github.com/magento/devdocs/pull/6986
+- description: Updated the [Extend Docker](https://devdocs.magento.com/cloud/docker/docker-extend.html)
+    topic with instructions to update the `magento/magento-cloud-docker` package to
+    support a new PHP version.
+  versions: 2.x
+  type: Technical
+  date: May 22, 2020
+  link: https://github.com/magento/devdocs/pull/7269
 - description: Updated instructions for [managing user access to Cloud environments](https://devdocs.magento.com/cloud/project/user-admin.html)
     and updated the [Onboarding Tasks](https://devdocs.magento.com/cloud/onboarding/onboarding-portal.html)
     topic with fresh screen captures and additional guidance on user registration
@@ -1374,7 +1481,7 @@ entries:
   type: Major update
   date: October 8, 2019
   link: https://github.com/magento/devdocs/pull/4868
-- description: Added the [Authorize.Net payment method](https://devdocs.magento.com/guides/v2.3/graphql/payment-methods/authorize-net.html) topic
+- description: Added the Authorize.Net payment method topic
     to the _GraphQL Developer Guide_.
   versions: 2.3.3
   type: New topic
@@ -3744,8 +3851,8 @@ entries:
   type: Major update
   date: Jun 27 2018
 - description: Added the backward incompatible changes for the Magento 2.2.5 release
-    in [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).
+    in [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html).
   versions: 2.2.x
   type: Major update
   date: Jun 27 2018
@@ -3869,8 +3976,8 @@ entries:
   type: Technical changes
   date: May 04 2018
 - description: Updated the backward incompatible changes between _2.2.0_ and _2.3-develop_
-    for [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html).
+    for [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html).
   versions: 2.3.x
   type: Technical changes
   date: May 02 2018
@@ -4308,8 +4415,8 @@ entries:
   versions: 2.2.x
   type: New
   date: Dec 13 2017
-- description: Added info about backward incompatible changes Open Source 2.1.10 - 2.1.11 and Commerce 2.1.10-2.1.11;[Open Source 2.2.1 - 2.2.2](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce 2.2.1-2.2.2](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html);
+- description: Added info about backward incompatible changes Open Source 2.1.10 - 2.1.11 and Commerce 2.1.10-2.1.11;[Open Source 2.2.1 - 2.2.2](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce 2.2.1-2.2.2](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html);
     [B2B](https://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html))
   versions: 2.1.x, 2.2.x
   type: Updated
@@ -4415,8 +4522,8 @@ entries:
   type: Updated
   date: Nov 22 2017
 - description: Added detailed backward incompatible changes descriptions for deltas
-    of minor releases Open Source 2.0.0 - 2.1.0 and [2.1.0-2.2.0](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html);
-    Commerce  2.0.0 - 2.1.0 and [2.1.0-2.2.0](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html))
+    of minor releases Open Source 2.0.0 - 2.1.0 and [2.1.0-2.2.0](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html);
+    Commerce  2.0.0 - 2.1.0 and [2.1.0-2.2.0](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html))
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Nov 21 2017
@@ -4456,8 +4563,8 @@ entries:
   type: Updated
   date: Nov 13 2017
 - description: 'Published backward incompatible changes: Open Source 2.1.9-2.1.10,
-    [Open Source 2.2.0-2.2.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html),
-    Commerce 2.1.9-2.1.10, [Commerce 2.2.0-2.2.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)'
+    [Open Source 2.2.0-2.2.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html),
+    Commerce 2.1.9-2.1.10, [Commerce 2.2.0-2.2.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)'
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Nov 09 2017
@@ -4625,8 +4732,8 @@ entries:
   type: Updated
   date: Sep 27 2017
 - description: Published backward incompatible changes between 2.2.0 and 2.1.9 versions
-    in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+    in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Sep 27 2017
@@ -4655,8 +4762,8 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 14 2017
-- description: Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Sep 14 2017
@@ -4696,8 +4803,8 @@ entries:
   versions: 2.x
   type: New and Updated
   date: Sep 05 2017
-- description: Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Sep 04 2017
@@ -4722,13 +4829,13 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Aug 28 2017
-- description: Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Aug 28 2017
-- description: Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Aug 22 2017
@@ -4748,8 +4855,8 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Aug 21 2017
-- description: Added backward incompatible changes for 2.2.0 RC2.0 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Added backward incompatible changes for 2.2.0 RC2.0 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Aug 18 2017
@@ -4780,8 +4887,8 @@ entries:
   versions: 2.x
   type: New
   date: Aug 08 2017
-- description: Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
-    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+- description: Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)
   versions: 2.2.x
   type: Updated
   date: Aug 07 2017
@@ -4789,7 +4896,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Aug 03 2017
-- description: "[Added generated BICs for delta RC1.6-RC1.5](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+- description: "[Added generated BICs for delta RC1.6-RC1.5](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)"
   versions: 2.2.x
   type: Updated
   date: Jul 31 2017
@@ -4801,7 +4908,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Jul 28 2017
-- description: "[Added generated BICs for delta RC1.5-RC1.4](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+- description: "[Added generated BICs for delta RC1.5-RC1.4](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)"
   versions: 2.2.x
   type: Updated
   date: Jul 24 2017
@@ -4809,8 +4916,8 @@ entries:
   versions: 2.2.x
   type: New
   date: Jul 21 2017
-- description: "[Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)<br/>[Added
-    BICs for delta Magento EE 2.2.0 RC1.4-RC1.3](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)"
+- description: "[Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)<br/>[Added
+    BICs for delta Magento EE 2.2.0 RC1.4-RC1.3](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)"
   versions: 2.2.x
   type: Updated
   date: Jul 17 2017
@@ -4826,7 +4933,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Jul 07 2017
-- description: "[Added tables with BICs for delta 2.2.0-RC1.2 and 2.2.0-RC1.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+- description: "[Added tables with BICs for delta 2.2.0-RC1.2 and 2.2.0-RC1.1](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/reference.html)"
   versions: 2.2.x
   type: Updated
   date: Jul 07 2017

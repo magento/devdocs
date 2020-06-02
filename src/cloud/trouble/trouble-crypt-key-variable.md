@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Resolve issues with encryption key
-menu_title: Resolve issues with encryption key
-menu_order: 25
-menu_node:
 functional_areas:
   - Cloud
   - Setup
