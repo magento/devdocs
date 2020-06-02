@@ -1,6 +1,6 @@
 ### orders input attributes {#orders}
 
-The `orders` attribute defines a filter that returns details about one or more of the customer's previous orders. It takes the following attributes as input:
+The `orders` attribute defines a filter that returns details about one or more of the logged-in customer's previous orders. It takes the following attributes as input:
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -47,11 +47,12 @@ The `CustomerOrder` object contains details about each order returned by the `or
 Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | Unique identifier for the order
+`invoices` | [Invoice]! | Contains a list of invoices for the order
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
 `order_items` | [OrderItem]! | An array containing the items purchased in this order
 `status` | String! | The current status of the order
-`totals` | OrderTotals! | Contains details about the calculated totals for this order
+`totals` | OrderTotal! | Contains details about the calculated totals for this order
 
 **Deprecated attributes:**
 
@@ -64,6 +65,15 @@ Attribute | Data type | Description
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `order_number` | String! | Deprecated. Use the number `attribute` instead
 `status` | String  | Deprecated. Use the orders from customer order instead
+
+#### Invoice attributes
+
+Attribute | Data type | Description
+--- | --- | ---
+id | Id! | The internal ID of the invoice
+items | [InvoiceItem]! | Contains details about invoiced products
+number | String! | The sequential number of the invoice
+total | InvoiceTotal! | 
 
 #### OrderItem attributes
 
@@ -79,7 +89,9 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
+`discounts` | [Discount] | Final discount information for the product
 `entered_options` | [SalesItemOption] | The entered option for the base product, such as a logo or image
+`parent_product_name` | String | Name of parent product, like configurable or bundle
 `parent_product_sku` | String | For configurable or bundle products, the SKU of the parent product
 `product_name` | String | Name of the base product
 `product_sale_price` | Money! | The sale price of the base product, including selected options
@@ -87,9 +99,14 @@ Attribute | Data type | Description
 `product_url` | String | URL of the base product
 `selected_options` | [SalesItemOption] | The selected options for the base product, such as color or size
 
+#### Discount attributes
+
+`amount` | Money! | The amount of the discount
+`label` | String! | A description of the discount
+
 #### SalesItemOption attributes
 
-The `SalesItemOption` data type contains the ID and value for the selected or entered options.
+The `SalesItemOption` data type contains the ID and value for the selected or entered options. 
 
 Attribute | Data type | Description
 --- | --- | ---
