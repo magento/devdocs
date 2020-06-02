@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
   revision: ab43ba7fd03f5ff5021e0542a86ed6e5c13793fe
+  branch: yb_performance
   specs:
     devdocs (9)
       jekyll (>= 4.0)
@@ -54,17 +55,17 @@ GEM
       image_optim (~> 0.19)
     image_size (2.0.2)
     in_threads (1.5.4)
-    jekyll (4.0.1)
+    jekyll (4.1.0)
       addressable (~> 2.4)
       colorator (~> 1.0)
       em-websocket (~> 0.5)
-      i18n (>= 0.9.5, < 2)
+      i18n (~> 1.0)
       jekyll-sass-converter (~> 2.0)
       jekyll-watch (~> 2.0)
       kramdown (~> 2.1)
       kramdown-parser-gfm (~> 1.0)
       liquid (~> 4.0)
-      mercenary (~> 0.3.3)
+      mercenary (~> 0.4.0)
       pathutil (~> 0.9)
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
@@ -108,7 +109,7 @@ GEM
       kramdown-parser-gfm (~> 1.0)
       mixlib-cli (~> 2.1, >= 2.1.1)
       mixlib-config (>= 2.2.1, < 4)
-    mercenary (0.3.6)
+    mercenary (0.4.0)
     mini_portile2 (2.4.0)
     mixlib-cli (2.1.6)
     mixlib-config (3.0.6)
