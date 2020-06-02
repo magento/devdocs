@@ -145,6 +145,10 @@ pages:
               url: /cloud/docker/docker-extend.html
               versionless: true
 
+            - label: Add Blackfire.io service
+              url:  /cloud/docker/docker-config-blackfire-io.html
+              versionless: true
+
         - label: Launch Docker
           children: 
             - label: Developer mode
