@@ -139,7 +139,7 @@ PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on th
 
 ### B2B
 
-**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. This new feature includes support for:
+**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. Features include:
 
 *  Self-service configuration of unique approval rules for each Company account
 *  Rule criteria that can be based on order amount, number of line items, or shipment cost with configurable thresholds
