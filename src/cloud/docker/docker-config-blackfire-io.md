@@ -45,7 +45,7 @@ To add the Blackfire.io extension to your Cloud Docker environment:
    ```bash
    ./bin/magento-docker ece-redeploy
    ```
-  
+ 
   {:.bs-callout-info}
   If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
 
