@@ -223,7 +223,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-25036-->
 
-*  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript magnification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
+*  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript minification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
 
 ### Bundle products
 
@@ -683,11 +683,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Index
 
-<!--- MC-25236-->
-
-*  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
-
-<!--- MC-30779-->
+<!--- MC-25236 30779-->
 
 *  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
 
@@ -867,7 +863,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30131-->
 
-*  Selecting all products from the products list page using Elasticsearch now displays all products in the search results as expected. Previously, Magento displayed no search results when this search was run on a staging server.
+*  Selecting all products from the products list page using Elasticsearch now displays all products in the search results as expected. Previously, Magento displayed no search results.
 
 <!--- MC-30201-->
 
@@ -926,12 +922,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32402-->
 
 *  Magento no longer throws an error when you edit and save the `NOT LOGGED IN` customer group when B2B is installed.
-
-### Testing
-
-<!--- MC-30908-->
-
-*  Magento now lets you create CMS blocks with identical names if the blocks are assigned to different store views.
 
 ### Theme
 
