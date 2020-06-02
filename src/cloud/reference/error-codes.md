@@ -84,6 +84,8 @@ REDIS_CACHE_CLEAN_FAILED}}. |
 | 127 | clean-cache | Command `/bin/magento cache:flush` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 128 | disable-maintenance-mode | Command `/bin/magento maintenance:disable` failed | {{site.data.cloud-error-messages.CLOUD_LOG_VERBOSE_ACTION}} |
 | 129 | install-update: reset-password | Enable to read reset password template | |
+| 130 | install-update: cache_type | Command `php ./bin/magento cache:enable` failed. | {{site.data.cloud-error-messages.CACHE_ENABLE_FAILED}} |
+| 131 | install-update | Crypt key does not exist neither in `./app/etc/env.php` nor in cloud environment variable CRYPT_KEY. | {{site.data.cloud-error-messages.CRYPT_KEY_IS_ABSENT}} |
 
 ## Post-deploy stage
 

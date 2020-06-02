@@ -84,3 +84,7 @@ FILE_CREDENTIALS_EMAIL_NOT_WRITABLE: Failed to update the `/var/credentials_emai
 #  CACHE_FLUSH_COMMAND_FAILED - 127, 227
 
 CLOUD_LOG_VERBOSE_ACTION: "Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output."
+
+CACHE_ENABLE_FAILED: "Command `php ./bin/magento cache:enable` runs only when Magento was installed but `./app/etc/env.php` file was absent or empty at the beginning of the deployment. Check the `cloud.log` for more information. Add `VERBOSE_COMMANDS: '-vvv'` into `.magento.env.yaml` for more detailed command output."
+
+CRYPT_KEY_IS_ABSENT: "This error occurs when Magento was installed but `./app/etc/env.php` did not exist at the beginning of the deployment or the file does not have `crypt/key` value. If you migrate DB from another environment you need to set crypt key from that environment using [CRYPT_KEY](({{ site.baseurl }}/cloud/env/variables-deploy.html#crypt_key)) cloud environment variable. If `./app/etc/env.php` was removed accidentally you may restore it from backup files from previous deployment using `./vendor/bin/ece-tools backup:restore` CLI command ."
