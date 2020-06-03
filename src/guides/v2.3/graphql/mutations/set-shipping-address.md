@@ -135,3 +135,18 @@ Attribute |  Data Type | Description
 {% include graphql/cart-object.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
+
+## Errors
+
+Error | Description
+--- | ---
+`Could not find a address with ID "XXX"` | The specified `input`.`shipping_addresses`.`customer_address_id` value does not exist in the `customer_address_entity` database table.
+`Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` database table.
+`Current customer does not have permission to address with ID "XXX"` | The specified address ID in the `input`.`shipping_addresses`.`customer_address_id` argument belongs to another customer.
+`Required parameter "cart_id" is missing.` | The value specified in the `cart_id` argument is empty.
+`Required parameter "shipping_addresses" is missing` | The `shipping_addresses` argument is empty.
+`The Cart includes virtual product(s) only, so a shipping address is not used.` | You do not need to specify a shipping address because virtual products are not supposed to be delivered.
+`The current customer isn't authorized.` | The current customer is not currently logged in, or the customer's token does not exist in the `oauth_token` table.
+`The current user cannot perform operations on cart "XXX"` | An unauthorized user (guest) tried to update a shipping address of a customer's cart, or an authorized user (customer) tried to update the shipping address of another customer's cart.
+`The shipping address cannot contain "customer_address_id" and "address" at the same time.` | You may provide either ID of the existing customer's address in the `input`.`shipping_addresses`.`customer_address_id` argument or a new customer's address in the `input`.`shipping_addresses`.`address` argument (but not both).
+`You cannot specify multiple shipping addresses.` | You can not specify more than one customer's address in the `input`.`shipping_addresses`.`address` argument.
