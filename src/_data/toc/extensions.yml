@@ -1,12 +1,11 @@
 label: Magento Extensions Guide
 pages:
 
-
   - label: Introduction
     url: /extensions/
     versionless: true
 
-  - label: General CLI installation
+  - label: Install extensions
     url: /extensions/install/
     versionless: true
 
