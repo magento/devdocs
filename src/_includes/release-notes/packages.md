@@ -6,6 +6,8 @@ The `composer.json` file declares the list of packages, whereas the `composer.lo
 This section contains information about the `magento` dependencies for the latest {{ edition }} {{page.guide_version}} release.
 Click the **Name** links to view the repository and the license agreement.
 
+{% if packages %}
+
 ### Required packages
 
 | Name | Version |  License | Description |
@@ -42,3 +44,9 @@ Click the **Name** links to view the repository and the license agreement.
 | --- | --- | --- | --- |{% for package in packages-dev %}{% unless package.name contains 'magento/' %}
 | {% if package.source.url contains '://' %}[{{ package.name }}]({{ package.source.url }}) {% else %}{{ package.name }}{% endif %} | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
 {% endunless %}
+
+{% else %}
+
+There is no data available for this reference at the moment.
+
+{% endif %}

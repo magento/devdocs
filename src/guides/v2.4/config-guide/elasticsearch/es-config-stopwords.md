@@ -1,0 +1,1 @@
+../../../v2.3/config-guide/elasticsearch/es-config-stopwords.md
