@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018 and last updated on March 24, 2020.*
+*Release notes published November 28, 2018 and last updated on June 3, 2020.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
@@ -23,20 +23,6 @@ blog post. You can directly access patch code through your Magento account for M
 A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.3.1. **We strongly suggest that you install these full patches as soon as you can**.
 
 See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability.
-
-Follow these steps to download and apply this patch:
-
-1. Access [My Account](https://account.magento.com/customer/account/login).
-
-1. Navigate to the **Downloads** tab. Select the Magento edition and version you need.
-
-1. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
-
-1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
-
-1. From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
-
-1. Refresh the cache from the Admin (**System** > **Tools** > **Cache Management**).
 
 ## Highlights
 
@@ -3681,6 +3667,8 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 *  Only tables and columns are currently supported.
 
 *  Renaming of tables is not supported.
+
+**Known issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation](https://devdocs.magento.com/extensions/install/).  See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 
