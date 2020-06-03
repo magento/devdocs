@@ -1,10 +1,6 @@
 ---
 group: software-update-guide
-subgroup: 02_prereq
 title: Prerequisites
-menu_title: Prerequisites
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Upgrade
 ---
@@ -20,5 +16,5 @@ Before running the [Module](https://glossary.magento.com/module) Manager, [Exten
 After you've completed all prerequisites, continue with:
 
 *  [Module Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-main-pg.html)
+*  [General CLI installation]({{ site.baseurl }}/extensions/install/)
 *  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)

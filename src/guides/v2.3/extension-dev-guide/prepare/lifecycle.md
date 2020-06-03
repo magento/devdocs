@@ -262,7 +262,7 @@ class UpgradeData implements UpgradeDataInterface
 
 ## Uninstall event
 
-Magento executes the uninstall event class when your module is uninstalled using the [Component Manager] or with the following command line command:
+Magento executes the uninstall event class when your module is uninstalled using the command line:
 
 ```bash
 bin/magento module:uninstall --remove-data <module_name>
@@ -309,5 +309,4 @@ Avoid this situation by not including dependencies in your uninstall event class
 [`ModuleDataSetupInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php
 [Customer module's DefaultCustomerGroupsAndAttributes.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Customer/Setup/Patch/Data/DefaultCustomerGroupsAndAttributes.php
 [`ModuleContextInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
-[Component Manager]: {{ page.baseurl }}/comp-mgr/extens-man/extensman-uninst-final.html
 [`UninstallInterface`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php
