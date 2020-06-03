@@ -16,5 +16,5 @@ Before running the [Module](https://glossary.magento.com/module) Manager, [Exten
 After you've completed all prerequisites, continue with:
 
 *  [Module Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
-*  [General CLI installation]({{ site.baseurl }}/extensions/install/)
+*  [Extension install]({{ site.baseurl }}/extensions/install/)
 *  [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
