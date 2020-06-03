@@ -2,6 +2,8 @@
 
 {% assign commands = file.commands %}
 
+{% if file %}
+
 {% if app.version %}
 **Version**: {{ app.version }}
 {:style="color:gray; font-size: 120%"}
@@ -103,3 +105,9 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 {% endunless %}
 {% endfor %}
+
+{% else %}
+
+There is no data available for this reference at the moment.
+
+{% endif %}

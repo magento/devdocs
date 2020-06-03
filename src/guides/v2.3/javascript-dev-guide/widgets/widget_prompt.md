@@ -205,7 +205,10 @@ The prompt widget implements the following events:
 
 ## Keyboard navigation {#prompt_key_navigation}
 
-The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
+-  ESC key: cancel the input and close the current prompt window (the same behavior as for the 'Cancel' button)
+-  ENTER key: confirm the input and close the current prompt window (the same behavior as for the 'OK' button)
+-  TAB key: set focus to the next focusable element (looped inside the prompt window)
+-  SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the prompt window)
 
 ## Code Sample
 
@@ -307,4 +310,3 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 [`ui/template/modal/modal-prompt-content.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-prompt-content.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
-[navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

@@ -55,7 +55,7 @@ For example:
 
 -  [Translations overview]
 -  [Translation dictionaries and language packages]
--  [Usetranslation dictionary to customize strings]
+-  [Use translation dictionary to customize strings]
 
 [dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms
 [Product page where the Add to Compare string is displayed]: {{site.baseurl}}/common/images/fdg_trans_bag.png

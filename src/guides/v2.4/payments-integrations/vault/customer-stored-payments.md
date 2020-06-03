@@ -1,0 +1,1 @@
+../../../v2.3/payments-integrations/vault/customer-stored-payments.md
