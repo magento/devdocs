@@ -1227,7 +1227,7 @@ We have fixed hundreds of issues in the Magento 2.3.5 core code.
 
 *  **Issue**: The system message displayed by Magento after a bulk action (for example, a mass product update or import/export) displays a count of 0 instead of an accurate count of the products affected by the bulk action. **Workaround**: A fix will be available in Magento 2.3.6, which is scheduled for release in Q4 2020. <!--- MC-33345-->
 
-*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation](https://devdocs.magento.com/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

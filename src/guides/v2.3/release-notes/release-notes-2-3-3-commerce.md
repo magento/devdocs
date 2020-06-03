@@ -1795,7 +1795,7 @@ The  `Magento\Framework\Mail\Template\TransportBuilder` and `Magento\Newslet
 **Issue**:
 Method chaining does not work as expected in extensions and customizations that are based on a product collection entity. Many extensions rely on product collection entities, which represent a list of products that satisfy search and filtering criteria. In the process of refactoring the `addAttributeToFilter` method, method chaining as it was implemented in Magento versions earlier than 2.3.3 was broken. **Workaround**: Apply the Method chaining fix for product collection patch. See [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html) for specific instructions on downloading and applying Magento patches.
 
-**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation](https://devdocs.magento.com/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

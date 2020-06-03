@@ -1251,7 +1251,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 
 *  **Issue**: After upgrade to Magento 2.3.2 Product Flat Data index takes significantly more time to reindex. See [GitHub-23462](https://github.com/magento/magento2/issues/23462) for a full discussion of this issue.
 
-*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation](https://devdocs.magento.com/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 
