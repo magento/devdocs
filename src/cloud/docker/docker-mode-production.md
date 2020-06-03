@@ -42,8 +42,6 @@ To launch the Docker environment in production mode:
    cp .docker/config.php.dist .docker/config.php
    ```
 
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [configure Xdebug].
-
 1. Build files to containers and run in the background.
 
    ```bash
