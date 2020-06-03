@@ -239,6 +239,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Bundle product prices are now calculated correctly on product pages.
 
+<!--- MC-29745-->
+
+*  You can now add any number of bundle products to your shopping cart without error. Previously, when you added a bundle product to your cart, then navigated to the cart, Magento displayed this error: `Please correct the quantity for some products`.
+
 ### Cart and checkout
 
 <!--- MC-23870-->
@@ -332,6 +336,14 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-29449-->
 
 *  The mini cart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the mini cart and Admin shopping cart displayed the original product price.
+
+<!--- MC-31171-->
+
+*  The Recently Viewed Products widget now works correctly when **Stores** > **Configuration** > **Catalog** > **Catalog** > **Recently Viewed/Compared** > **Synchronize widget products with backend storage** is set to **yes**.
+
+<!--- MC-30777-->
+
+*  Filtering on the Admin product grid website column now works as expected. Previously, filter results did not display the correct number of products, but consistently displayed the total number of products as 1.
 
 ### Catalog widget
 
@@ -433,6 +445,18 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now successfully imports customer data using the **Customer and Addresses (single file))** option when `cron` is enabled and the Customer Grid Indexer is set to **Update By Schedule**. After `cron` executes, the imported customer information is available in the Admin as expected. Previously, Magento imported the customer data, but did not update the customer grid with the newly imported customer records.
 
+<!--- MC-31117-->
+
+*  You can now create a new customer from the storefront when date of birth is required. Previously, you could not create a new customer when this field was required, even when you entered valid DOB values. [GitHub-26700](https://github.com/magento/magento2/issues/26700)
+
+<!--- MC-31945-->
+
+*  Customer creation from the Admin now honors the default customer group setting as expected.
+
+<!--- MC-31425-->
+
+*  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.
+
 ### Directory
 
 <!--- MC-33168-->
@@ -500,6 +524,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31729-->
 
 *  Non-cacheable blocks are no longer added to default layout handles. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process: During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page’s final layout structure. The default layout handle is used as a basic handle for every page. As a result, layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
+
+<!--- MC-31920-->
+
+*  Lock manager on the basis of MySQL is now a primary locker instead of lock manager on the basis of the caching system. As a result now minimal stable version of MySQL which is 5.7.9 is required.
 
 ### General fixes
 
@@ -586,6 +614,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32224-->
 
 *  Magento now displays the **Credit memo** button after the partial refund of an order. Previously, Magento did not display this button after you created a partial refund, and you could not create a credit memo for the rest of the order.
+
+<!--- MC-31878-->
+
+*  Bulk order update through REST now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
 
 ### Gift cards
 
@@ -681,6 +713,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now deletes temporary files from `<Magento_home>/var` as expected after product import has completed.
 
+<!--- MC-31879-->
+
+*  Magento no longer creates duplicate SKUs in the Admin when products are imported by CSV file.
+
 ### Index
 
 <!--- MC-25236 30779-->
@@ -708,6 +744,12 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32593-->
 
 *  `var/resource_config.json` is no longer regenerated whenever an image is requested by `get.php`. Previously, this file was rewritten on each call to `get.php`.
+
+### Newsletter
+
+<!--- MC-31768-->
+
+*  Customers can now subscribe as expected to newsletters. Previously, when a customer tried to confirm their subscription, Magento displayed this error: `This is an invalid subscription confirmation code`.
 
 ### Orders
 
@@ -781,6 +823,12 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
+### Performance
+
+<!--- MC-31499-->
+
+*  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://{{page.baseurl}}/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+
 ### Product alert
 
 <!--- MC-30255-->
@@ -790,6 +838,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32873-->
 
 *  Product stock alert unsubscribe now works when a user’s session expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
+
+<!--- MC-31979-->
+
+*  Unsubscribe actions for product alerts now work as expected. Previously, when a customer clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
 
 ### Product video
 
@@ -828,6 +880,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31786-->
 
 *  Adminstrators with restricted permissions that include view permission for credit memos, invoices, and shipments can now view invoices and shipments from the Orders page as expected. Previously, when a restricted administrator tried to view an order, Magento displayed this error: Something went wrong with processing the default view and we have restored the filter to its original state.
+
+<!--- MC-24023-->
+
+*  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [Githib-24365](https://github.com/magento/magento2/issues/24365)
 
 ### Sales Rule
 
@@ -934,6 +990,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-24186-->
 
 *  Inline translation now works as expected on the storefront when **Admin** > **Stores** > **Configuration** > **Advanced** > **Developer** > **Translate Inline** > **Enabled for Storefront** is set.
+
+<!--- MC-31663-->
+
+*  Inline translation now works as expected when enabled for a storefront.
 
 ### UI
 
