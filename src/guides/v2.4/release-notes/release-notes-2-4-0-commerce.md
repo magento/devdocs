@@ -949,7 +949,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31499-->
 
 *  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://{{page.baseurl}}/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
- 
+
 ### Product alert
 
 <!--- MC-30255-->
