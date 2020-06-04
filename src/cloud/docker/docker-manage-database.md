@@ -11,10 +11,7 @@ The Cloud Docker development environment provides MySQL services through a Maria
 
 ## Connect to the database
 
- {: .bs-callout-note }
- If you work with the split database architecture, then all actions are true for split databases too. Only identifiers will change for command related with split databases
-
-There are two ways to connect to the database. Before you begin, locate the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:
+You can connect to the database through the Docker container or through the database port. Before you begin, locate the database credentials in the `database` section of the `.docker/config.php` file. The examples use the following default credentials:
 
 > Filename: `.docker/config.php`
 

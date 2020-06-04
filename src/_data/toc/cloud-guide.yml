@@ -137,6 +137,10 @@ pages:
               url: /cloud/docker/docker-manage-database.html
               versionless: true
 
+            - label: Enable split database solution
+              url: /cloud/docker/docker-split-db.html
+              versionless: true
+
             - label: Manage cron jobs
               url: /cloud/docker/docker-manage-cron-jobs.html
               versionless: true
