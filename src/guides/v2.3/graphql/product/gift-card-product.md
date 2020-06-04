@@ -54,8 +54,7 @@ The following query returns information about gift card product `GiftCard25`. (I
       __typename
       name
       sku
-    }
-    ... on GiftCardProduct {
+      ... on GiftCardProduct {
       allow_message
       message_max_length
       allow_open_amount
@@ -71,6 +70,7 @@ The following query returns information about gift card product `GiftCard25`. (I
         attribute_id
         website_value
       }
+     }
     }
   }
 }
