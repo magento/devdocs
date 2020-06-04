@@ -45,13 +45,9 @@ To add the Blackfire.io extension to your Cloud Docker environment:
    ```bash
    ./bin/magento-docker ece-redeploy
    ```
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> ea7d0a551bd292c4c7c0d981efcdc4485606a6ff
-  {:.bs-callout-info}
-  If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
+ 
+   {:.bs-callout-info}
+   If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
 
 1. Add context to use locally customized PHP images as described in [Extend the Docker configuration](https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources).
 
@@ -95,11 +91,7 @@ To add the Blackfire.io extension to your Cloud Docker environment:
 1. Make sure necessary containers are up and running.
 
    ```bash
-<<<<<<< HEAD
-   docker ps
-=======
    docker-compose ps
->>>>>>> ea7d0a551bd292c4c7c0d981efcdc4485606a6ff
    ```
 
 {:.procedure}
