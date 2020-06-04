@@ -37,17 +37,22 @@ Use the `-f` argument to specify an alternate configuration file. The following 
 docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custom-docker-compose.yml] up
 ```
 
-### Build options
+## Docker compose configuration generator
+
+{%include cloud/cloud-docker-config-generator-cmds.md%}
+
+### Additional build options
 
 | Option       | Key              | Available values
 | ------------ | ---------------- | ------------------
 | [Mode][]         | `--mode`, `-m`   | production, developer
 | [File synchronization engine][] | `--sync-engine` | native (default), docker-sync, mutagen
+| Specify a custom URL for Magento | `--host`<br>`--port`
 
 {:.bs-callout-info}
-See [Service versions] for a list of the options to configure and customize software service versions and other options when building your {{site.data.var.mcd-prod}} environment.
+See [Service versions] for a list of service configuration options you can add to the `ece-docker build:compose` command to customize the Cloud Docker environment configuration.
 
-## bin/magento-docker
+## bin/magento-docker CLI commands
 
 The `bin/magento-docker` commands simplify running docker-compose tasks. For example, instead of running a separate docker-compose command for the build, deploy, and post-deploy steps, you can _redeploy_ Magento in a Docker environment using the following command:
 
