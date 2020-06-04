@@ -13,10 +13,11 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
-The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
-
 Use the following command to list the {{site.data.var.mcd-prod}} `ece-docker` commands:
 
 ```bash
 php ./vendor/bin/ece-docker list
 ```
+
+{:.bs-callout-info}
+The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.

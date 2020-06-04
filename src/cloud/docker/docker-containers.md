@@ -34,7 +34,11 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
+See [Service containers] for details.
+
 ### Service configuration options
+
+The following table shows the options to customize service container configuration when you generate the Docker Compose configuration file.
 
 | Name       | Service   | Key & options  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------

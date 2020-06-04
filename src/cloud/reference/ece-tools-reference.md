@@ -25,11 +25,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
-
-{%include cloud/cloud-docker-config-generator-cmds.md%}
-
-See [Docker development] to learn more about using `{{site.data.var.mcd-prod}}` for development and testing your {{site.data.var.ece}} projects.
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to launch a Docker development environment for {{site.data.var.ece}}. You can also run {{site.data.var.mcd-prod}} as a stand-alone package. See [Docker development].
 
 ## Services, routes, and variables
 
@@ -103,4 +99,3 @@ The `{{site.data.var.ct}}` package includes a dependency for the [magento/magent
 [Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
 [magento/magento-cloud-docker]: https://github.com/magento/magento-cloud-docker
 [magento/magento-cloud-patches]: https://github.com/magento/magento-cloud-patches
-
