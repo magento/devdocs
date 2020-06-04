@@ -14,6 +14,7 @@ The smart wizards can help you determine whether your Cloud configuration follow
 -  Ideal state for minimal deployment downtime
 -  Load balancing configuration for database and Redis
 -  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
+-  Check ability to split DBs and display for what DBs split was already done
 
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
 
