@@ -24,7 +24,7 @@ To launch the Docker environment in production mode:
    curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
    ```
 
-   If you need to customize some aspect of initializing your environment, see the possible options `init-docker.sh` supports:
+   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
 
    ```bash
    curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
