@@ -23,7 +23,7 @@ To launch the Docker environment in developer mode:
 
 1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
-1. Install the template dependencies and add the default hostname to your `/etc/hosts` file
+1. To install the template dependencies, and add the default hostname to your `/etc/hosts` file, run the following command:
 
    ```bash
    curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
