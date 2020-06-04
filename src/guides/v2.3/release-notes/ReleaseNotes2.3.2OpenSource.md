@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.2 Release Notes
 ---
 
-*Release notes published on June 25, 2019 and last updated on March 24, 2020.*
+*Release notes published on June 25, 2019 and last updated on June 3, 2020.*
 
 We are pleased to present Magento Open Source 2.3.2.  This release includes over 200 functional fixes to the core product, over 350 pull requests contributed by the community, and  over 75 security enhancements. It includes significant contributions from our community members.
 
@@ -1250,6 +1250,8 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 *  **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions.
 
 *  **Issue**: After upgrade to Magento 2.3.2 Product Flat Data index takes significantly more time to reindex. See [GitHub-23462](https://github.com/magento/magento2/issues/23462) for a full discussion of this issue.
+
+*  **Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

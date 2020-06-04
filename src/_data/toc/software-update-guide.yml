@@ -42,44 +42,6 @@ pages:
         - label: Enable/Disable
           url: /comp-mgr/module-man/modman-enable-disable.html
 
-    - label: Run the Extension Manager
-      url: /comp-mgr/extens-man/extensman-checklist.html
-      include_versions: ["2.3"]
-      children:
-
-        - label: Start the Extension Manager
-          url: /comp-mgr/extens-man/extensman-main-pg.html
-
-        - label: Step 1. Readiness check
-          children:
-
-            - label: Readiness check success
-              url: /comp-mgr/extens-man/extensman-readiness-success.html
-
-            - label: Readiness check failure
-              url: /comp-mgr/extens-man/extensman-readiness-fail.html
-
-            - label: Readiness check with multiple extension updates
-              url: /comp-mgr/extens-man/extensman-readiness-multi.html
-
-        - label: Step 2. Back up the file system and database
-          url: /comp-mgr/extens-man/extensman-backup.html
-
-        - label: Step 3
-          children:
-
-            - label: Install
-              url: /comp-mgr/extens-man/extensman-new-purchase.html
-
-            - label: Extension Update
-              url: /comp-mgr/extens-man/extensman-update.html
-
-            - label: Remove or Keep Data
-              url: /comp-mgr/extens-man/extensman-uninst-data.html
-
-        - label: Step 4. Uninstall
-          url: /comp-mgr/extens-man/extensman-uninst-final.html
-
     - label: Upgrade from Magento Open Source to Magento Commerce
       url: /comp-mgr/upgrader/ce-ee-upgrade-start.html
       include_versions: ["2.3"]

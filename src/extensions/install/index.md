@@ -2,9 +2,18 @@
 group: extensions
 title: General CLI installation
 redirect_from:
- - guides/v2.2/comp-mgr/install-extensions.html
- - guides/v2.3/comp-mgr/install-extensions.html
-
+ - guides/v2.3/comp-mgr/extens-man/extensman-backup.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-checklist.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-main-pg.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-new-purchase.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-fail.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-multi.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-success.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-data.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-final.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-update.html
+ - guides/v2.3/comp-mgr/extens-man/step3-parent.html
 ---
 
 Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
