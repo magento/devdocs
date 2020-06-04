@@ -18,7 +18,7 @@ The `ece-docker build:compose` command overwrites the existing `docker-compose.y
 
 ## Prerequisites
 
-To get started with local development you must have [Docker] installed on your workstation. In addition, macOS and Windows systems require file synchronization between the host and Docker environments. To do this, you should set up either [docker-sync] or [Mutagen].
+To get started with local development you must have [Docker] installed on your workstation. In addition, macOS and Windows systems require either [docker-sync] or [Mutagen] for file synchronization between the host and Docker environments.
 
 ### Optional Steps
 
