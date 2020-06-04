@@ -18,7 +18,7 @@ The release notes include:
 
 ## v1.1.0
 
--  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Configure and deploy the Magento Split database performance solution for]({{site.data.var.mcd-prod}}]/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
+-  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Configure and deploy the Magento Split database performance solution for]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
 
 -  {:.new}**Blackfire.io support**–Added support to use the [Blackfire.io extension]({{site.baseurl}}/cloud/docker/docker-config-blackfire-io.html) for automated performance testing. [Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/202)<!--MCLOUD-5857-->
 
