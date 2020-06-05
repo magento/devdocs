@@ -105,7 +105,7 @@ You can generate a translation dictionary to use by itself (for example, to tran
 ## Language packages {#m2devgde-xlate-languagepack}
 
 {:.bs-callout-tip}
-Existing language packages can be installed using the [Extension Manager]({{ page.baseurl}}/comp-mgr/extens-man/extensman-main-pg.html) or [Composer]({{ site.baseurl }}/cloud/howtos/install-components.html) like any other extension. You can search for package names on Packagist.
+Existing language packages can be installed using [Composer]({{ site.baseurl }}/cloud/howtos/install-components.html) like any other extension. You can search for package names on Packagist.
 
 Magento enables you to create the following types of language packages:
 
