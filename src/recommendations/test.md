@@ -14,7 +14,7 @@ The following recommendation types require behavioral data:
 -  **Viewed this, viewed that**
 -  **Bought this, bought that**
 
-So how can you test your recommendations in a non-production environment using behavioral data? There are a couple of options.
+How can you test your recommendations in a non-production environment using behavioral data? There are a couple of options.
 
 ## Fetch recommendations from your production environment (recommended)
 
