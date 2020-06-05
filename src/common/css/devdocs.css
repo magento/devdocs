@@ -1,8 +1,7 @@
 /* Banner on top of the site header */
 .message-banner {
-  margin-top: 0;
+  margin: 0 0 10px 0;
 }
-
 
 /* Reference styles */
 .content .ref-list {
