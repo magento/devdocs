@@ -52,4 +52,4 @@ Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/com
 
 If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
 
-For details, see [Run the Extension Manager]({{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html)
+For details, see [Install extensions]({{ site.baseurl }}/extensions/install/).

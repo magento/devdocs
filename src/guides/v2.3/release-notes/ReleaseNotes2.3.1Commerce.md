@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
 
-*Release notes published on March 26, 2019 and last edited on March 24, 2020.*
+*Release notes published on March 26, 2019 and last edited on June 3, 2020.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements.
 
@@ -2366,6 +2366,8 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
 *  Tap **Save Config**.
 
 **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
+
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 
