@@ -6,7 +6,7 @@ ee_only: True
 
 Before you deploy recommendations to your production environment, you should test on a non-production environment to ensure everything is working as expected.
 
-Product Recommendations return products based on shopper [behavioral data]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data) collected from your storefront. In a non-production environment, however, it is likely you will not have any behavioral data from shoppers. The only recommendation type you can test without behavioral data is **More like this**. This recommendation type does not require any input data as it uses a direct content similarity match.
+Product Recommendations return products based on shopper [behavioral data]({{ page.baseurl }}/recommendations/product-recs.html#types-of-data) collected from your storefront. In a non-production environment, however, it is likely you will not have any behavioral data from shoppers. The only recommendation type you can test without behavioral data is **More like this**. This recommendation type does not require any input data, as it uses a direct content similarity match.
 
 The following recommendation types require behavioral data:
 
