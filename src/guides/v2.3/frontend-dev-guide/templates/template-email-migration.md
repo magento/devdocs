@@ -33,7 +33,6 @@ All default templates have been converted to this strict mode.
 {: .bs-callout-info}
 All existing custom email templates will continue to work after upgrading to 2.3.4.
 Any new email template created after installing 2.3.4 must be written in strict mode.
-As of 2.4.0, the template filter, specifically anything that uses or extends `\Magento\Framework\Filter\Template`, will use strict mode by default.
 
 ## Abstraction example
 
