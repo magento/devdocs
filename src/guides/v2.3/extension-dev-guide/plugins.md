@@ -485,32 +485,17 @@ Plugins can be disabled in a `di.xml` file. To disable a plugin, set the `disabl
 
 where `ProcessPaymentConfiguration` is the name of the plugin declared in the `vendor/magento/module-payment/etc/frontend/di.xml`.
 
-Note, if you need to disable a particular plugin in your custom module then you have to use the same class name which defined in the type `name` attribute.
+Note that the same class can be called two ways: with the leading slash or without.
 
-For example, if you want to disable a `bindAttributeIndexerMassUpdate` plugin:
+`\Magento\Checkout\Block\Checkout\LayoutProcessor`
 
-```xml
-<type name="\Magento\Catalog\Controller\Adminhtml\Product\Action\Attribute\Save">
-    <plugin name="bindAttributeIndexerMassUpdate"
-            type="\Magento\GoogleShoppingAds\Plugin\Catalog\Controller\Adminhtml\Product\Action\Attribute\Save\BindAttributeIndexer"/>
-</type>
-```
+and
 
-then you should use the next approach
+`Magento\Checkout\Block\Checkout\LayoutProcessor`
 
-```xml
-<type name="\Magento\Catalog\Controller\Adminhtml\Product\Action\Attribute\Save">
-    <plugin name="bindAttributeIndexerMassUpdate" disabled="true"/>
-</type>
-```
+are both valid.
 
-The following example with no trailing backslash `Magento\Catalog\Controller\Adminhtml\Product\Action\Attribute\Save` will not work:
-
-```xml
-<type name="Magento\Catalog\Controller\Adminhtml\Product\Action\Attribute\Save">
-    <plugin name="bindAttributeIndexerMassUpdate" disabled="true"/>
-</type>
-```
+When disabling the plugin, make sure to use the same path format to call and disable the plugin.
 
 {:.ref-header}
 Related topics
