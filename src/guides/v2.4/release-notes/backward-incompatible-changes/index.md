@@ -79,7 +79,7 @@ A new Stock/Source reindex strategy configuration setting option was added to th
 -  Synchronous
 -  Asynchronous
 
-Previoously, it was possible to have a "burst" of activity that triggered contention of the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
+Previously, it was possible to have a "burst" of activity that triggered contention of the index process. Even batching and deferring individual updates that were triggering the indexer, it was still highly likely that an index table collision would occur based on "other" activity.
 
 For example, if the indexer was running based on schedule, and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. Previously, that would result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
 
@@ -127,8 +127,8 @@ Magento\Framework\App\Bootstrap::terminate
 In order to support bulk check for products scalability, we introduced two new interfaces:
 
 ```terminal
-InventorySalesApi/Api/AreProductsSalableInterface
-InventorySalesApi/Api/AreProductsSalableForRequestedQtyInterface
+Magento\InventorySalesApi\Api\AreProductsSalableInterface
+Magento\InventorySalesApi\Api\AreProductsSalableForRequestedQtyInterface
 ```
 
 These changes allow third-party developers to optimize performance by providing an implementation for bulk services.
