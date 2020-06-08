@@ -2,9 +2,18 @@
 group: extensions
 title: General CLI installation
 redirect_from:
- - guides/v2.2/comp-mgr/install-extensions.html
- - guides/v2.3/comp-mgr/install-extensions.html
-
+ - guides/v2.3/comp-mgr/extens-man/extensman-backup.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-checklist.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-main-pg.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-new-purchase.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-fail.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-multi.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-success.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-data.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-final.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-update.html
+ - guides/v2.3/comp-mgr/extens-man/step3-parent.html
 ---
 
 Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
@@ -165,30 +174,4 @@ If you encounter errors when loading the storefront in a browser, use the follow
 
 ## Upgrade an extension
 
-To update or upgrade an extension:
-
-1. Download the updated extension file from Marketplace or another extension developer. Take note of the module-name and version.
-
-1. Export the contents to your Magento root.
-
-1. If a composer package exists for the extension, run one of the following.
-
-   Update per module name:
-
-   ```bash
-   composer update vendor/module-name
-   ```
-
-   Updater per version:
-
-   ```bash
-   composer require vendor/module-name ^x.x.x
-   ```
-
-1. Run the following commands to upgrade, deploy, and clean the cache.
-
-   ```bash
-   php bin/magento setup:upgrade --keep-generated
-   php bin/magento setup:static-content:deploy
-   php bin/magento cache:clean
-   ```
+{% include upgrade/module.md %}
