@@ -42,6 +42,3 @@ Advanced reporting functionality is implemented in the following Magento modules
 [WishlistAnalytics]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/WishlistAnalytics/README.md
 
 [report data collection]: ./data-collection.html
-
-<!-- ABBREVIATIONS -->
-*[MBI]: Magento Business Analytics
