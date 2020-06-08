@@ -67,7 +67,7 @@ The following table summarizes the differences between environments:
 </table>
 
 {:.bs-callout-info}
-Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for development and testing {{site.data.var.ee}} projects in a local Cloud Docker environment. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development).
+Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for development and testing {{site.data.var.ee}} projects in a local Cloud Docker environment. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
 
 ## Pro environment architecture
 
@@ -106,6 +106,8 @@ For best performance in the Integration environment follow these best practices:
 -  Do not use the Integration environment to test {{site.data.var.b2b}} functionality
 
 -  You cannot restore the Integration database from Production or Staging
+
+{% include cloud/note-enhanced-integration-envs-kb.md%}
 
 ## Staging environment {#cloud-arch-stage}
 
@@ -217,7 +219,7 @@ Always push a copy of the Production code to the Master environment in case you 
 -  Do **not** create a branch from Master. Use the Integration environment branch to create new, active branches.
 -  Do not use the Master environment for development or testing
 
-## Infrastructure software {#cloud-arch-software}
+## Software versions {#cloud-arch-software}
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
