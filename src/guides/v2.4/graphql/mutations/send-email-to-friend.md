@@ -1,0 +1,1 @@
+../../../v2.3/graphql/mutations/send-email-to-friend.md

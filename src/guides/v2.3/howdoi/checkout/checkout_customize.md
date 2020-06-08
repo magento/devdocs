@@ -19,20 +19,20 @@ To change the `.js` implementation and template used for components rendering, y
 1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom [module](https://glossary.magento.com/module) should depend on the Magento_Checkout module.)
 1. In this file, add the following:
 
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceBlock name="checkout.root">
-                <arguments>
-                    <argument name="jsLayout" xsi:type="array">
-                        <!-- Your customization will be here -->
-                        ...
-                    </argument>
-                </arguments>
-        </referenceBlock>
-    </body>
-</page>
-```
+    ```xml
+    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <referenceBlock name="checkout.root">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <!-- Your customization will be here -->
+                            ...
+                        </argument>
+                    </arguments>
+            </referenceBlock>
+        </body>
+    </page>
+    ```
 
 1. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
 
