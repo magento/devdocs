@@ -88,7 +88,7 @@ Attribute |  Data Type | Description
 Error | Description
 --- | ---
 `Could not find a cart with ID "XXX"` | The specified `cart_id` value does not exist in the `quote_id_mask` table.
-`Guest email for cart is missing.` |  The guest attempted to place an order but did not provide an email address. See [setGuestEmailOnCart]({{ page.baseurl }}/graphql/mutations/set-guest-email.html) mutation.
+`Guest email for cart is missing.` |  The guest attempted to place an order but did not provide an email address. See the [setGuestEmailOnCart]({{ page.baseurl }}/graphql/mutations/set-guest-email.html) mutation.
 `Required parameter "cart_id" is missing` | The required `cart_id` argument contains an empty value.
 `Required parameter "code" for "payment_method" is missing.` | The value specified in the `code` argument is empty.
 `The current user cannot perform operations on cart "XXX"` | An unauthorized user (guest) tried to set a payment method and place an order with a customer's cart, or an authorized user (customer) tried to set a payment method and place an order with a cart of another customer.
