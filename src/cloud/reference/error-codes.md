@@ -11,7 +11,7 @@ functional_areas:
 
 This {{site.data.var.ct}} error message reference provides information to troubleshoot errors that can occur during the {{site.data.var.ece}} deployment process.
 
-All error or warning messages can be found not only in `var/log/cloud.log` but also in a separate file `/var/log/cloud.error.log` which contains only errors and only from the latest deployment. If file is empty - no error occurred during last deployment.
+All error and warning messages generated during deployment are written to both the `var/log/cloud.log` and `/var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
 
 Error messages are categorized by deployment stage–*build*, *deploy*, and *post-deploy*. Each section provides a list of associated errors with the following information for each error:
 
