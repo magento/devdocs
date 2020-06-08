@@ -76,7 +76,7 @@ Re-deploying environment project-integration-ID
 
 ### Error logs
 
-Errors and warnings which were identified by `ece-tools` are written in `var/log/cloud.log` and also duplicated in separate file `var/log/cloud.error.log`. This file has contains errors only from the latest deployment, if file is empty - it means that no error occurred in last deployment.
+Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
 
 The following logs have a common location for all Cloud projects:
 
