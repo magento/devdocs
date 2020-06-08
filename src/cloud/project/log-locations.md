@@ -74,9 +74,14 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 
+### Error logs
+
+Errors and warnings which were identified by `ece-tools` are written in `var/log/cloud.log` and also duplicated in separate file `var/log/cloud.error.log`. This file has contains errors only from the latest deployment, if file is empty - it means that no error occurred in last deployment.
+
 The following logs have a common location for all Cloud projects:
 
--  **Build log**: `var/log/cloud.log`
+-  **Deployment log**: `var/log/cloud.log`
+-  **Last deployment error log**: `var/log/cloud.error.log`
 -  **Debug log**: `var/log/debug.log`
 -  **Exception log**: `var/log/exception.log`
 -  **Reports**: `var/reports/`
