@@ -71,7 +71,7 @@ Each service runs in its own secure container. Containers are managed together i
 -  Git
 -  Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
+You can have multiple applications running in the same project. Building a microservice-oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
 ### Software versions {#cloud-arch-software}
 
