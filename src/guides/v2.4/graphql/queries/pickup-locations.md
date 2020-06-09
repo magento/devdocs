@@ -7,8 +7,8 @@ Use `pickupLocations` query to receive a list of available pickup locations.
 
 The `pickupLocations` query supports the following types of filters. You can specify multiple filters in a query.
 
-- Area Filtering
-- Attributes Filtering (by country/postcode/region/city/street/name/pickup location code)
+*  Area Filtering
+*  Attributes Filtering (by country/postcode/region/city/street/name/pickup location code)
 
 {:.bs-callout-info}
 Search by SKU assignment intersection is not supported in the GraphQl query.
@@ -123,7 +123,6 @@ Attribute | Data type | Description
 `radius` | Int | The radius for the search in KM.
 `search_term` | String | The country code where search must be performed. Required parameter together with region, city, or postcode. Example of search term with country code `Austin:US`.
 
-
 ### PickupLocationFilterInput object {#PickupLocationFilterInput}
 
 Use the `PickupLocationFilterInput` to apply filtration by Pickup Location attributes. See [FilterTypeInput]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/schema.graphqls#L50).
@@ -194,7 +193,6 @@ Attribute | Data type | Description
 `street` | String | Street where pickup location is placed.
 `postcode` | String | Postcode where pickup location is placed.
 `phone` | String | Contact phone number of the pickup location.
-
 
 ### SearchResultPageInfo object {#SearchResultPageInfo}
 
