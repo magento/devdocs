@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store. Additionally, the **Master** environment provides a backup for current production code:
+Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store.
 
 -  **Integration**—Provides a single environment branch, and you can create one additional, environment branch. This allows for up to two _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
 -  **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
@@ -31,7 +31,6 @@ The following table summarizes the differences between environments:
       <td>Yes</td>
       <td>Limited</td>
       <td>Limited</td>
-      <td>Yes</td>
     </tr>
     <tr>
       <td>Supports multiple branches</td>
@@ -101,7 +100,7 @@ For best performance in the Integration environment follow these best practices:
 
 -  The Integration environment architecture does not match the Production and Staging architecture
 
--  Do not use the Integration environment for performance testing or UAT
+-  Do not use the Integration environment for development testing, performance testing, or user acceptance testing (UAT)
 
 -  Do not use the Integration environment to test {{site.data.var.b2b}} functionality
 
@@ -117,9 +116,9 @@ You cannot create a branch from the Staging environment branch. You must push co
 
 **Recommended use cases:**
 
-The Staging environment matches the Production architecture and is designed for UAT, content staging, and final review before pushing features to the Production environment. For example, you can use the Staging envirionment to complete tasks like the following:
+The Staging environment matches the Production architecture and is designed for UAT, content staging, and final review before pushing features to the Production environment. For example, you can use the Staging environment to complete the following tasks:
 
--  Complete Regression testing against production data
+-  Regression testing against production data
 
 -  Performance testing with Fastly caching enabled
 
@@ -211,13 +210,12 @@ For example, you can add extra web servers to an existing cluster should the con
 
 ## Master environment
 
-On Pro plan projects, the Master branch provides an active backup for your Production environment.
-Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.
+On Pro plan projects, the Master branch provides an active PaaS environment with your Production environment. Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.
 
 **Caveats:**
 
 -  Do **not** create a branch from Master. Use the Integration environment branch to create new, active branches.
--  Do not use the Master environment for development or testing
+-  Do not use the Master environment for development, UAT or performance testing
 
 ## Software versions {#cloud-arch-software}
 

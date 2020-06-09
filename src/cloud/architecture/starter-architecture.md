@@ -7,7 +7,7 @@ redirect_from:
   - /cloud/basic-information/starter-architecture.html
 ---
 
-Your {{site.data.var.ece}} Starter architecture supports up to **three** environments including a Master environment that contains the initial project code, the Staging environment, and one Integration environment.
+Your {{site.data.var.ece}} Starter architecture supports up to **four** environments, including a Master environment that contains the initial project code, the Staging environment, and up to two Integration environments.
 
 All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.  Each environment provide a database and web server.
 
@@ -45,7 +45,7 @@ Developers use the Integration environment to develop, deploy, and test:
 -  Extensions
 -  Services
 
-You can have **one** active Integration environment. You create the Integration environment by creating a branch from the Staging branch. When you create an Integration environment, the environment name matches the branch name. An integration environment includes a web server and a database. It does not include all services, for example Fastly CDN and New Relic are not available.
+You can have up to **two** active Integration environments. You create an Integration environment by creating a branch from the Staging branch. When you create an Integration environment, the environment name matches the branch name. An integration environment includes a web server and a database. It does not include all services, for example Fastly CDN and New Relic are not available.
 
 You can have an unlimited number of inactive branches for code storage. To access, view, and test an inactive branch, you must activate it.
 
@@ -64,7 +64,7 @@ The Production and Staging environments include the following technologies. You 
 
 {{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.2.x and later), Redis, and RabbitMQ.
 
-Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
+Each service runs in a separate, secure container. Containers are managed together in the project. Some services are standard, such as the following:
 
 -  HTTP router (handling incoming requests, but also caching and redirects)
 -  PHP application server
@@ -99,11 +99,11 @@ You can create a snapshot of your database and file system using the Project Web
 
 The following workflow summarizes the process to branch your code, develop, and deploy your store:
 
--  Set up your local environment
--  Clone the `master` branch from the Project to your local environment
--  Create a `staging` branch from `master`
--  Create branches for development from `staging`
--  Push code to Git that builds and deploys to an environment for testing
+1. Set up your local environment
+1. Clone the `master` branch from the Project to your local environment
+1. Create a `staging` branch from `master`
+1. Create branches for development from `staging`
+1. Push code to Git that builds and deploys to an environment for testing
 
 See the following sections for detailed instructions and walk-throughs to develop, test, and deploy your store:
 
@@ -115,21 +115,21 @@ See the following sections for detailed instructions and walk-throughs to develo
 
 <!--Link definitions-->
 [Deploy your store]: {{ site.baseurl }}/cloud/live/stage-prod-live.html
-[launching your site]: {{ site.baseurl }}/cloud/live/live.html
-[Test deployment]: {{ site.baseurl }}/cloud/live/stage-prod-test.html
-[nginx]: https://glossary.magento.com/nginx
-[PHP]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
-[MySQL]: {{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html
-[Redis]: {{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html
-[RabbitMQ]: {{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html
+[Docker development]: {{ site.baseurl }}/cloud/docker/docker-development.html
 [Elasticsearch]: {{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html
 [Fastly CDN module for Magento 2]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
+[Manage branches]: {{ site.baseurl }}/cloud/env/environments-start.html
+[MySQL]: {{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html#configure-new-relic-for-starter-environments
-[magento.app.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
-[routes.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_routes.html
-[services.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_services.html
+[PHP]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
+[RabbitMQ]: {{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html
+[Redis]: {{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html
+[Site launch]: {{ site.baseurl }}/cloud/live/live.html
 [Snapshots and backup management]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
 [Starter develop and deploy workflow]: {{ site.baseurl}}/cloud/architecture/starter-develop-deploy-workflow.html
-[Docker development]: {{ site.baseurl }}/cloud/docker/docker-development.html
-[Site launch]: {{ site.baseurl }}/cloud/live/live.html
-[Manage branches]: {{ site.baseurl }}/cloud/env/environments-start.html
+[Test deployment]: {{ site.baseurl }}/cloud/live/stage-prod-test.html
+[launching your site]: {{ site.baseurl }}/cloud/live/live.html
+[magento.app.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
+[nginx]: https://glossary.magento.com/nginx
+[routes.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_routes.html
+[services.yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_services.html
