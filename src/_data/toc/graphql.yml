@@ -113,6 +113,9 @@ pages:
         - label: products query
           url: /graphql/queries/products.html
 
+        - label: pickupLocations query
+          url: /graphql/queries/pickup-locations.html
+
         - label: storeConfig query
           url: /graphql/queries/store-config.html
 
