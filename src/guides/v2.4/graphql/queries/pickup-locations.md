@@ -120,8 +120,8 @@ Use the `AreaInput` to apply filtration by distance. All attributes are required
 
 Attribute | Data type | Description
 --- | --- | ---
-`radius` | Int | The radius for the search in KM.
-`search_term` | String | The country code where search must be performed. Required parameter together with region, city, or postcode. Example of search term with country code `Austin:US`.
+`radius` | Int! | The radius for the search in KM.
+`search_term` | String! | The country code where search must be performed. Required parameter together with region, city, or postcode. Example of search term with country code `Austin:US`.
 
 ### PickupLocationFilterInput object {#PickupLocationFilterInput}
 
@@ -198,6 +198,6 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-current_page | Int | Specifies which page of results to return
-page_size | Int | Specifies the maximum number of items to return
-total_pages | Int | Total pages
+`current_page` | Int | Specifies which page of results to return.
+`page_size` | Int | Specifies the maximum number of items to return.
+`total_pages` | Int | Total pages.
