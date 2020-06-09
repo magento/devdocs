@@ -124,7 +124,7 @@ Send an email to the customer that the order is ready to be picked up and create
 }
 ```
 
-**Response**
+**Response:**
 
 Magento returns an array with success status and an array of error messages for each failed order.
 
