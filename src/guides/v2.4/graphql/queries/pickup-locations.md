@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: pickupLocations query
+contributor_name: Oleksandr Kravchuk
+contributor_link: https://github.com/swnsma
 ---
 
 Use `pickupLocations` query to receive a list of available pickup locations.
