@@ -12,9 +12,8 @@ entries:
   type: Major Update
   date: June 3, 2020
   link: https://github.com/magento/devdocs/pull/7343
-- description: Added a brief note about a new known issue with the Magento Extension
-    Manager  in 2.3.x deployments and provides a link to the related Knowledge Base
-    article.<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-open-source.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-open-source.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-4-commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-open-source.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/release-notes-2-3-3-commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.2Commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html<br/>https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html
+- description: Added a brief note about a new known issue with the [Extension Manager
+    showing no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
   versions: 2.3.x
   type: Major Update
   date: June 3, 2020
