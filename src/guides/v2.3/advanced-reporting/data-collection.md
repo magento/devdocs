@@ -5,16 +5,16 @@ functional_areas:
     - Reports
 ---
 
-A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports.
-All the data are stored in an encrypted archive file which is securely transferred to the MBI.
-Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
+A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. All the data are stored in an encrypted archive file which is securely transferred to MBI. Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
 -  Which report files must be included into the archive file.
 -  Which provider classes must collect data for each report file.
 -  Which report data configuration must be applied to collected data.
 
+You do not need to have an MBI account to use Advanced Reporting.
+
 {:.bs-callout-warning}
-This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
+This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service does not expect any changes of configuration in the current version.
 
 ## Example
 
