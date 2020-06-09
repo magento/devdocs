@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Magento provides command line options to configure Redis page and default caching. Although you can configure caching by editing the `<Magento install dir>app/etc/env.php` file, using the command line is the recommended method, especially for initial configurations. The command line provides validation, ensuring the configuration is syntactically correct.
+Magento provides command line options to configure the Redis page and default caching. Although you can configure caching by editing the `<Magento install dir>app/etc/env.php` file, using the command line is the recommended method, especially for initial configurations. The command line provides validation, ensuring the configuration is syntactically correct.
 
 You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
@@ -73,7 +73,7 @@ bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=127.0.
 
 As a result of the two example commands, Magento adds lines similar to the following to `<Magento install dir>app/etc/env.php`:
 
-```php?start_inline=1
+```php
 'cache' => [
     'frontend' => [
         'default' => [
@@ -150,10 +150,16 @@ Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUG
 
 ## Parallel generation
 
-Starting from 2.4.0 release, we introduce `allow_parallel_generation` option for the users that want to eliminate waitings for locks.
-It's disabled by default, and we recommend keeping it disabled until you have excessive configurations and/or blocks.
+Starting with the 2.4.0 release, we introduced the `allow_parallel_generation` option for the users that want to eliminate waitings for locks.
+It is disabled by default, and we recommend keeping it disabled until you have excessive configurations and/or blocks.
 
-To enable it just run `bin/magento setup:config:set --allow-parallel-generation` command. Since it is a flag you cannot disable it with a command to you will need to put false in configuration manually e.g.
+To enable it, run:
+
+```bash
+bin/magento setup:config:set --allow-parallel-generation`
+```
+
+Since it is a flag, you cannot disable it with a command. You will need to manually set the configuration value to `false`:
 
 ```php
     'cache' => [
@@ -177,7 +183,6 @@ To enable it just run `bin/magento setup:config:set --allow-parallel-generation`
         'allow_parallel_generation' => false
     ],
 ```
-
 
 ## Basic verification {#redis-verify}
 
