@@ -110,7 +110,7 @@ For development and testing, we recommend the following:
 
 *  Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
-   You can enable and test individual features, new extensions, and third party integration on different environments prior to merging into a single environment.
+   You can enable and test individual features, new extensions, and third-party integration on different environments prior to merging into a single environment.
 
 *  Verify [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode)
 
