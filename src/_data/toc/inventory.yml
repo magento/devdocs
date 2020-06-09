@@ -52,6 +52,7 @@ pages:
 
         - label: In-Store Pickup
           url: /rest/modules/inventory/in-store-pickup.html
+          exclude_versions: ["2.3"]
 
     - label: Manage Inventory Management modules
       url: /extensions/inventory-management/
