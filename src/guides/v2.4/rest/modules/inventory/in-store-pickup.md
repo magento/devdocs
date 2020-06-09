@@ -1,6 +1,8 @@
 ---
 group: rest-api
 title: In-Store Pickup
+contributor_name: Oleksandr Kravchuk
+contributor_link: https://github.com/swnsma
 ---
 
 In-Store Pickup functionality expose multiple several endpoints to receive list of Pickup Locations and to notify customer that order is ready for pickup.
