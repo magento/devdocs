@@ -53,7 +53,7 @@ You can have an unlimited number of inactive branches for code storage. To acces
 
 ## Production and Staging technology stack {#technology}
 
-The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [`.magento.app.yaml`][] file.
+The Production and Staging environments include the following technologies. You can modify and configure these technologies through the [`.magento.app.yaml`][magento.app.yaml] file.
 
 -  Fastly for HTTP caching and CDN
 -  Nginx web server speaking to PHP-FPM, one instance with multiple workers
