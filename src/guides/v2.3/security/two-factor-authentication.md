@@ -43,7 +43,7 @@ Two-Factor Authentication is implemented for Magento Web APIs with the following
 ## Install 2FA
 
 The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.4.x. The extension installs like a Core Bundled Extension (CBE).
- 
+
 ## Configure and manage 2FA
 
 See the _Magento User Guide_ to [configure][4] 2FA settings and [manage user authenticators][5].
