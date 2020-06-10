@@ -5,7 +5,7 @@ contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
 ---
 
-In-Store Pickup functionality expose multiple several endpoints to receive list of Pickup Locations and to notify customer that order is ready for pickup.
+The Inventory In-Store Pickup functionality exposes an endpoint that retrieves a list of pickup locations, and another endpoint that notifies the customer that their order is ready for pickup.
 
 **Service names:**
 
@@ -21,39 +21,49 @@ GET /V1/inventory/in-store-pickup/pickup-locations
 POST /V1/order/notify-orders-are-ready-for-pickup
 ```
 
-## Search for the list of Pickup Locations
+## Search for pickup locations
 
-Endpoint is responsible for searching Pickup Locations. It has a wide variety of request parameters making it quite flexible.
+The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for and filters on pickup locations, allowing the shopper to quickly narrow the results.
+
+Search terms, filters, and other attributes are specified as query parameters in the URL. This endpoint uses different a different syntax than other Magento GET calls that send `searchCriteria` parameters. Instead, the `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint requires that each query parameter begins with `searchRequest`. The `scopeCode` parameter is required. All other parameters are optional.
+
+Name | Type | Description
+--- | --- | ---
+`[scopeCode]=` | String | Required. The Sales Channel code of the assigned Stock.
+`[scopeType]=` | String | The Sales Channel type. The default value is `website`.
+`[area][radius]=` | Int | The radius, in kilometers, to search. This parameter must be used with `[area][searchTerm]`.
+`[area][searchTerm]=` | String | The text to search, such as a city or region. This parameter must be used with `[area][radius]`.
+`[filters][country][value]=` | String | Filters by the specified `country_id`.
+`[filters][country][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][postcode][value]=` | String | Filters by the specified `postcode`.
+`[filters][postcode][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][region][value]=` | String | Filters by the specified `region`.
+`[filters][region][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][city][value]=` | String | Filters by the specified `city`.
+`[filters][city][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][street][value]=` | String | Filters by the specified `street`.
+`[filters][street][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][name][value]=` | String | Filters by the specified display `name`.
+`[filters][name][conditionType]=` | String | Optional. The default value is `eq`.
+`[filters][pickupLocationCode][value]=` | String | Filters by the specified source code name.
+`[filters][pickupLocationCode][conditionType]=` | String | Optional. The default value is `eq`.
+`[extensionAttributes][productsInfo][0][sku]=` | String | Returns a list of products with the specified SKU that are assigned to each pickup location. Locations without all the assigned products will be filtered out.
+`[extensionAttributes][productsInfo][0][extensionAttributes]=` | String | Extension point reserved for future use.
+`[pageSize]=` | Int | Specifies the maximum number of items to return.
+`[currentPage]=` | Int | Returns the current page.
+`[sort][0][field]=` | String | Specifies the field to sort on.
+`[sort][0][direction]=` | String | Specifies whether to return results in ascending (`ASC`) or descending (`DESC`) order. The default is `DESC`.
+
+[Search using REST endpoints]({{page.baseurl}}/rest/performing-searches.html) provides a full list of supported condition types.
+
 
 **Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/in-store-pickup/pickup-locations`
 
-Name | Description | Type
---- | --- | ---
-`area` | For searching locations by area defined by a distance radius from the customer address | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\AreaInterface
-`area[radius]` | Search radius in KM | Int
-`area[searchTerm]` | Search term string | String
-`filters` | Set of Pickup Location fields filters | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FiltersInterface
-`filters[country]` | Filter by country | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[postcode]` | Filter by postcode | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[region]` | Filter by region | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[city]` | Filter by city | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[street]` | Filter by street | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[name]` | Filter by name | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`filters[pickupLocationCode]` | Filter by pickup location code | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\FilterInterface
-`pageSize` | Result page size | Int
-`currentPage` | Current page | Int
-`scopeType` | Scope type (expects `website` by default)| String
-`scopeCode` | Scope code (Sales Channel Code)| String
-`sort` | Sort orders for pickup locations list | \Magento\Framework\Api\SortOrder[]
-`extensionAttributes[productsInfo]` | list of products that be assigned to each pickup location. Locations without all the products assigned will be filtered out | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\ProductInfoInterface[]
-`extensionAttributes[productsInfo][0][sku]` | Product SKU | String
-`extensionAttributes[productsInfo][0][extensionAttributes]` | Extension point for future customizations | \Magento\InventoryInStorePickupApi\Api\Data\SearchRequest\ProductInfoExtensionInterface
-
 **Payload:**
 
-Payload should be placed as a part of GET request string.
+Define the payload as part of the `GET` request string.
 
 ```http
 searchRequest[area][radius]=1500&
@@ -106,9 +116,9 @@ Magento returns Pickup Locations list, search request given and total results co
 }
 ```
 
-## Mark Order as Ready for Pickup
+## Mark an order as ready for pickup
 
-Send an email to the customer that the order is ready to be picked up and create a shipment.
+The `POST /V1/order/notify-orders-are-ready-for-pickup` endpoint creates a shipment and sends an email notifying the customer that the order is ready to be picked up.
 
 **Sample Usage:**
 
