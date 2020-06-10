@@ -4,8 +4,26 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu May 28 15:55:01 2020
+updated: Tue Jun 9 10:53:40 2020
 entries:
+- description: Removed the Extension Manager section of the Software Update Guide
+    and redirected it to the [CLI installation](https://devdocs.magento.com/extensions/install/).
+  versions: 2.3.x
+  type: Major Update
+  date: June 3, 2020
+  link: https://github.com/magento/devdocs/pull/7343
+- description: Added a brief note about a new known issue with the [Extension Manager
+    showing no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+  versions: 2.3.x
+  type: Major Update
+  date: June 3, 2020
+  link: https://github.com/magento/devdocs/pull/7344
+- description: Published documentation deliverables for the Commerce and Open Source
+    2.4.0 beta releases.
+  versions: 2.4.0
+  type: Major Update
+  date: June 1, 2020
+  link: https://github.com/magento/devdocs/pull/7312
 - description: Added [release notes highlights](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     to support the 2.4.0 beta release.
   versions: 2.4.0
