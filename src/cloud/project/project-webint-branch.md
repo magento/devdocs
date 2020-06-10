@@ -28,7 +28,7 @@ Complete development of code and added extensions in a branch and, when complete
 -  For Starter, we recommend you create a `staging` branch from Master, then branch from `staging` for development.
 -  For Pro, create a development branch from the Integration environment.
 
-For branching strategies, review [Starter]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) architecture overviews.
+For branching strategies, review [Starter]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) and [Pro]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) architecture overviews.
 
 Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can [delete it entirely]({{ site.baseurl }}/cloud/env/environments-start.html#env-delete) using the CLI.
 
