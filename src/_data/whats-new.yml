@@ -7,7 +7,7 @@ thread: /whatsnew-feed.xml
 updated: Tue Jun 9 10:53:40 2020
 entries:
 - description: Removed the Extension Manager section of the Software Update Guide
-    and redirected to [CLI installation](https://devdocs.magento.com/extensions/install/).
+    and redirected it to the [CLI installation](https://devdocs.magento.com/extensions/install/).
   versions: 2.3.x
   type: Major Update
   date: June 3, 2020
