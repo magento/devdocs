@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
+After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
