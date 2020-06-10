@@ -31,7 +31,7 @@ Name | Type | Description
 --- | --- | ---
 `[scopeCode]=` | String | Required. The Sales Channel code of the assigned Stock.
 `[scopeType]=` | String | The Sales Channel type. The default value is `website`.
-`[area][radius]=` | Int | The radius, in kilometers, to search. This parameter must be used with `[area][searchTerm]`.
+`[area][radius]=` | Int | The radius, in kilometers, to search. The Distance Priority Algorithm must be configured to search an area. This parameter must be used with `[area][searchTerm]`.
 `[area][searchTerm]=` | String | The text to search, such as a city or region. This parameter must be used with `[area][radius]`.
 `[filters][country][value]=` | String | Filters by the specified `country_id`.
 `[filters][country][conditionType]=` | String | Optional. The default value is `eq`.
