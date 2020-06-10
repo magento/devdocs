@@ -56,7 +56,6 @@ Name | Type | Description
 
 [Search using REST endpoints]({{page.baseurl}}/rest/performing-searches.html) provides a full list of supported condition types.
 
-
 **Sample Usage:**
 
 `GET <host>/rest/<store_code>/V1/inventory/in-store-pickup/pickup-locations`
