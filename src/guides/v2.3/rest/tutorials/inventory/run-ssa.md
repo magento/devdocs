@@ -1,5 +1,6 @@
 ---
 layout: tutorial
+group: rest-api
 title: Step 11. Run the Source Selection Algorithms
 subtitle: Order processing with Inventory Management
 menu_title: Step 11. Run the Source Selection Algorithms
