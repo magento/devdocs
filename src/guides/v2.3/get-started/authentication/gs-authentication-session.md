@@ -23,10 +23,11 @@ For example, if a customer is logged in to the Magento storefront and the [JavaS
 
 `GET /rest/V1/customers/me`
 
-Similarly, if an admin is logged in to the Magento Admin and the JavaScript widget invokes the `Magento_Customer::group` API, details for the logged-in admin are fetched. The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource. [**Note:** this is the intended behaviour. In fact admin session-based authentication is not currently possible for API endpoints owing to [a bug](https://github.com/magento/magento2/issues/9138).]
+Similarly, if an admin is logged in to the Magento Admin and the JavaScript widget invokes the `Magento_Customer::group` API, details for the logged-in admin are fetched. The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the `Magento_Customer::group` resource.
 
- {:.bs-callout-info}
-The session based authentication functionality is restricted to only allow for AJAX calls and not direct browser requests due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.
+{:.bs-callout-warning}
+Admin session-based authentication is not currently possible for API endpoints.
+The session based authentication functionality is restricted to AJAX calls. Direct browser requests cannot be made due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.
 
 ## Related topic
 
