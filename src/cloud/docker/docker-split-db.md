@@ -11,10 +11,10 @@ functional_areas:
 The Magento split database performance solution improves the scalability of Magento by providing three separate databases to manage different functional areas of the Magento application.  The following instructions show how to configure this solution in the {{site.data.var.mcd-prod}} environment, exporting the Magento Sales and Magento Quote data from the main database and creating two separate databases in the Cloud Docker environment.
 
 {:.bs-callout-info}
-See the [Magento split database performance solution][] guide for detailed information and extended examples.
+See the [Magento split database performance solution][] topic in the _Configuration Guide_ for detailed information and extended examples.
 
 {:.procedure}
-Add split DB configuration to {{site.data.var.ece}} project configuration
+To add split DB to {{site.data.var.ece}} project configuration:
 
 1. In the root directory of your Magento project, add the database services to the `.magento/services.yaml` configuration file.
 
@@ -29,7 +29,7 @@ Add split DB configuration to {{site.data.var.ece}} project configuration
    ...
    ```
 
-1. In the magento.app.yaml` file, add the relationships for the additional databases.
+1. In the `.magento.app.yaml` file, add the relationships for the additional databases.
 
    ```yaml
    relationships:

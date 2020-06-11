@@ -132,7 +132,7 @@ The Cloud Docker deploy process copies the `php.ini` file to the Docker environm
 {:.bs-callout-warning}
 If you use the `docker-sync` or `mutagen` file synchronization options, the `php.ini` file is available only after the file synchronization completes.
 
-### Add custom PHP extensions
+### Customize PHP extensions
 
 You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
