@@ -120,7 +120,7 @@ Table: `core_config_data`
 
 Table: `tfa_user_config`
 
--  Delete one user row to reset the user's 2FA preerence and configuration.
+-  Delete one user row to reset the user's 2FA preference and configuration.
 
 [1]: https://twitter.com/rictempesta
 [2]: https://partners.magento.com/portal/details/partner/index/id/129/
