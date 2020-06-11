@@ -115,6 +115,7 @@ pages:
 
         - label: pickupLocations query
           url: /graphql/queries/pickup-locations.html
+          exclude_versions: ["2.3"]
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
