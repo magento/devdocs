@@ -103,7 +103,7 @@ After loading, modifying, and merging all configurations, Magento serializes the
 
 In your module's `view/base/requirejs-config.php` file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.
 
-**Example:** CKEditor\CKEditor4\view\base\requirejs-config.php
+**Example:** CKEditor\CKEditor4\view\base\requirejs-config.js
 
 ```json
 var config = {

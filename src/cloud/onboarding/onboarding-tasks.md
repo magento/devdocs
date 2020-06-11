@@ -119,7 +119,7 @@ Anyone working on your project can subscribe to the {{site.data.var.ece}} status
 [Manage user access to Cloud projects]: {{ site.baseurl }}/cloud/project/user-admin.html
 [register for an account]: https://account.magento.com/customer/account/create/
 [Shared Access]: https://support.magento.com/hc/en-us/articles/360000913794-Magento-Help-Center-User-Guide#shared-access
-[Starter Architecture]: {{ site.baseurl }}/cloud/basic-information/starter-architecture.html
+[Starter Architecture]: {{ site.baseurl }}/cloud/architecture/starter-architecture.html
 [Pro Architecture]: {{ site.baseurl }}/cloud/architecture/pro-architecture.html
 [Project Web Interface]: {{ site.baseurl }}/cloud/project/projects.html
 [Status page]: https://status.adobe.com/products/3350
