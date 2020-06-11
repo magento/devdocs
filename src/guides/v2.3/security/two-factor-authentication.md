@@ -73,27 +73,27 @@ MFTF uses Google Authenticator to execute tests with 2FA enabled. The following 
 
 1. Select Google Authenticator as the 2FA provider:
 
-```bash
-bin/magento config:set twofactorauth/general/force_providers google
-```
+   ```bash
+   bin/magento config:set twofactorauth/general/force_providers google
+   ```
 
 1. Increase the lifetime of the window to 60 seconds to prevent tokens from expiring.
 
-```bash
-bin/magento config:set twofactorauth/google/otp_window 60
-```
+   ```bash
+   bin/magento config:set twofactorauth/google/otp_window 60
+   ```
 
 1. Generate a Base32-encoded string for the shared secret value.  For example, encoding the string `abcd` with the online [Base32 Encode][13] tool returns the value `MFRGGZDF`. Use the following key to add the encoded value to the MFTF `.credentials` file:
 
-```bash
-magento/tfa/OTP_SHARED_SECRET=MFRGGZDF
-```
+   ```bash
+   magento/tfa/OTP_SHARED_SECRET=MFRGGZDF
+   ```
 
 1. Use CLI to add the encoded shared secret to Google Authenticator.
 
-```bash
-bin/magento security:tfa:google:set-secret admin MFRGGZDF
-```
+   ```bash
+   bin/magento security:tfa:google:set-secret admin MFRGGZDF
+   ```
 
 ## Troubleshooting
 
@@ -103,9 +103,9 @@ The extension supports command line options to revoke and reset authenticators. 
 
 If you need to manually reset a single user configuration, enter the following command. It restarts configuration and 2FA subscription for the user account.
 
-```bash
-bin/magento security:tfa:reset <user> <provider>
-```
+   ```bash
+   bin/magento security:tfa:reset <user> <provider>
+   ```
 
 ### Advanced emergency steps
 
