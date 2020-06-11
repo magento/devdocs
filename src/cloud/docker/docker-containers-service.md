@@ -15,13 +15,15 @@ See [Service configuration build options]({{site.baseurl}}/cloud/docker/docker-c
 ## Database container
 
 **Container name**: db<br/>
-**Docker base image**: [mariadb]<br/>
+**Docker base image**: [mariadb], [MySQL]<br/>
 **Ports exposed**:  `3306`<br/>
 
-The Database container is based on the [mariadb] image and includes the following volumes:
+You can configure the database container to use either MariaDB or MySQL for the database. The default configuration uses the [mariadb] image and includes the following volumes:
 
 -  `magento-db: /var/lib/mysql`
 -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
+
+To use MySQL for the database, add the `--db image` option when you generate the Docker Compose configuration file. See [Service configuration options][].
 
 When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql`, and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
 
@@ -69,6 +71,9 @@ php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx
 ```
 
 See [Important Elasticsearch configuration][] in the Elasticsearch documentation for details about available configuration options.
+
+{:.bs-callout-info}
+If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
 
 ### Troubleshooting
 
@@ -246,6 +251,7 @@ To mount the custom index.php file using volumes:
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
+[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
 [Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html

@@ -18,31 +18,41 @@ The release notes include:
 
 ## v1.1.0
 
--  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Configure and deploy the Magento Split database performance solution for]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
+-  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Enable split database solution]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
 
--  {:.new}**Blackfire.io support**–Added support to use the [Blackfire.io extension]({{site.baseurl}}/cloud/docker/docker-config-blackfire-io.html) for automated performance testing. [Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/202)<!--MCLOUD-5857-->
+-  {:.new}**Support for {{site.data.var.ee}} and {{site.data.var.ce}} deployment**–Now you can use {{site.data.var.mcd-prod}} to deploy a local development environment for projects not hosted on the Magento Cloud platform. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).<!--MCLOUD-5667-->
+
+-  {:.new}**Blackfire.io support**–Added support to use the [Blackfire.io extension]({{site.baseurl}}/cloud/docker/docker-config-blackfire-io.html) for automated performance testing. *[Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/202)*<!--MCLOUD-5857-->
 
 -  {:.new}**Container updates**
 
    -  {:.new}**Varnish**—Now Varnish is the default cache when you deploy Magento in a Cloud Docker environment using a supported version of the Magento Cloud application template. See [Varnish container]({{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container).<!--MCLOUD-2634-->
 
-   -  {:.new}**Database**–Added the ability to customize MySQL auto-increment settings when you generate the Docker compose file. See [Service containers]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers).<!--MCLOUD-5735-->
+   -  {:.new}**Database**
 
-   -  {:.new}**PHP-FPM**—
+      -  Added the support for the MySQL database. Now, you can configure the Cloud Docker environment with either MariaDB or MySQL. See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-5691-->
 
-      -  Added support for PHP 7.4. [Fix submitted by Mohanela Murugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/198)<!--MCLOUD-198-->
+      -  Added the `--no-varnish` option to skip Varnish service installation when you generate the Cloud Docker configuration file.<!--MCLOUD-2634-->
 
-      -  Added ability to copy a `php.ini` file in the Magento root project directory to the Cloud Docker environment and apply custom PHP settings to the PHP-FPM and CLI containers. See [Customize PHP settings]({{site.baseurl}}/cloud/docker/docker-containers-service.html#customize-php-settings). [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/130)<!--MCLOUD-6012-->
+      -  Added the ability to customize MySQL auto-increment settings when you generate the Docker compose file. See [Service containers]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers).<!--MCLOUD-5735-->
 
-      -  Added a container health check. [Fix submitted by Visanth Sampath from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/188)<!--MCLOUD-5752-->
+   -  {:.new}**PHP-FPM**
 
-   -  {:.fix}**Node.js**—Updated the default Node.js version from version 8 to version 10 to improve security. Node.js version 8 is deprecated and no longer updated with bug fixes or security patches. [Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/183)<!--MCLOUD-5586-->
+      -  Added support for PHP 7.4. *[Fix submitted by Mohanela Murugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/198)*<!--MCLOUD-198-->
+
+      -  Added ability to copy a `php.ini` file in the Magento root project directory to the Cloud Docker environment and apply custom PHP settings to the PHP-FPM and CLI containers. See [Customize PHP settings]({{site.baseurl}}/cloud/docker/docker-containers-service.html#customize-php-settings). *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/130).*<!--MCLOUD-6012-->
+
+      -  Added a container health check. *[Fix submitted by Visanth Sampath from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/188).*<!--MCLOUD-5752-->
+
+   -  {:.fix}**Node.js**—Updated the default Node.js version from version 8 to version 10 to improve security. Node.js version 8 is deprecated and no longer updated with bug fixes or security patches. *[Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/183).*<!--MCLOUD-5586-->
 
    -  {:.new}**Elasticsearch**
 
       -  Added support for Elasticsearch 6.8, 7.2, 7.5, and 7.6.<!--MCLOUD-4050, MCLOUD-5855,MCLOUD-5860-->
 
       -  Added the ability to customize the [Elasticsearch container configuration]({{ site.baseurl }}/cloud/docker/docker-containers-service.html#elasticsearch-container) when you generate the Docker compose configuration file for the Cloud Docker environment.<!--MCLOUD-3059-->
+
+      -  Added the `--no-es` option to the build configuration options for the `ece-docker build:compose` command. Use this option to remove the Elasticsearch configuration from the Docker Compose configuration file if you want to use MySQL search instead.<!--MCLOUD-3766-->
 
    -  {:.new}**FPM-XDEBUG container**—Added a build configuration option to enable and use Xdebug for debugging PHP in your Cloud Docker environment. See [Configure Xdebug]({{site.baseurl}}/cloud/docker/docker-development-debug.html).<!--MCLOUD-4098-->
 
@@ -56,7 +66,7 @@ The release notes include:
 
    -  Improved ability to handle large responses from the upstream PHP-FPM container by increasing the `fastcgi_buffers` value for the Nginx server.<!--MCLOUD-5980-->
 
-   -  Improved mutagen file synchronization performance by adding a second sync session to synchronize files in the `vendor` directory. This change prevents mutagen from getting stuck during the file sync process. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127)<!--MCLOUD-6010-->
+   -  Improved mutagen file synchronization performance by adding a second sync session to synchronize files in the `vendor` directory. This change prevents mutagen from getting stuck during the file synchronization process. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
    -  {:.new}**CLI command updates**
 
@@ -66,20 +76,24 @@ The release notes include:
       Clear Varnish cache | `bin/magento-docker flush-varnish`
       Skip default Varnish installation | `.vendor/bin/ece-docker build:compose --no-varnish`<!--MCLOUD-2634-->
       [Customize Elasticsearch options]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | `.vendor/bin/ece-docker    build:compose --es-env-var`<!--MCLOUD-3059-->
+      [Remove Elasticsearch configuration]({{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container) | `.vendor/bin/ece-docker    build:compose --no-es`<!--MCLOUD-3766-->
+      Configure DB container with MySQL version 5.6 or 5.7 |  `./vendor/bin/ece-docker build:compose --db <mysql-version-number> --db-image mysql`<!--MCLOUD-5691-->
       Specify custom Magento base URL | `./vendor/bin/ece-docker build:compose --host=<hostname> --port=<port-number>`<!--MCLOUD-3063-->
       [Add container for Xdebug configuration]({{site.baseurl}}/cloud/docker/docker-development-debug.html) | `.vendor/bin/ece-docker build:compose --mode    developer --sync-engine native --with-xdebug`<!--MCLOUD-4098-->
 
--  {:.fix}Fixed the configuration of mutagen file synchronization to prevent mutagen from creating stale sessions. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127)<!--MCLOUD-6010-->
+-  {:.fix}Fixed the configuration of mutagen file synchronization to prevent mutagen from creating stale sessions. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
--  {:.fix}Fixed a configuration issue that caused syntax errors in the Docker compose log when starting the PHP-FPM container. [Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/129)<!--MCLOUD-3958-->
+-  {:.fix}Fixed a configuration issue that caused syntax errors in the Docker compose log when starting the PHP-FPM container. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/129).*<!--MCLOUD-3958-->
 
--  {:.fix}Fixed volume conflict errors that sometimes occurred when using multiple Docker environments. [Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/168)
+-  {:.fix}Fixed volume conflict errors that sometimes occurred when using multiple Docker environments. *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/168).*
 
--  {:.fix}Fixed an issue that caused the `ece-docker build:compose` command to fail if the configuration included Blackfire.io. [Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/199).<!--MCLOUD-5797-->
+-  {:.fix}Fixed an issue that caused the `ece-docker build:compose` command to fail if the configuration included Blackfire.io.*[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/199).* <!--MCLOUD-5797-->
 
--  {:.fix}Updated the PHP CLI image configuration to prevent out-of-memory errors that occurred when installing multiple packages using {{site.data.var.mcd-prod}}. [Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/197)<!--MCLOUD-5818-->
+-  {:.fix}Updated the PHP CLI image configuration to prevent out-of-memory errors that occurred when installing multiple packages using {{site.data.var.mcd-prod}}. *[Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/197)*<!--MCLOUD-5818-->
 
--  {:.fix}Added support for multiple MySQL users in the Cloud Docker environment. In earlier releases, the `build:compose` operation failed if the `magento.app.yaml` file specified multiple database users. [Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/181)<!--MCLOUD-5670-->
+-  {:.fix}Added support for multiple MySQL users in the Cloud Docker environment. In earlier releases, the `build:compose` operation failed if the `magento.app.yaml` file specified multiple database users. *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/181).*<!--MCLOUD-5670-->
+
+-  {:.fix}Removed `rsyslog` from the {{site.data.var.mcd-prod}} PHP containers to resolve compatibility issues that caused warning notifications during deployment. Magento Cloud Docker does not use the rsyslog utility.<!--MCLOUD-6173-->
 
 ## v1.0.0
 *Release date: Nov 14, 2019*<br/>

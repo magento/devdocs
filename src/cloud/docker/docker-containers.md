@@ -34,16 +34,16 @@ For example, the following command starts the Docker configuration generator in 
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
 ```
 
-See [Service containers] for details.
-
 ### Service configuration options
 
 The following table shows the options to customize service container configuration when you generate the Docker Compose configuration file.
 
+{: .docker-service-versions-table}
+
 | Name       | Service   | Key & options  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
-| [db] | MariaDB     | `--db`<br>`--expose-db-port`<br>`--db-increment`<br>`--db-offset` | 10.0, 10.1, 10.2 |  Standard database container. Use the increment and offset options to customize the [auto-increment settings][Using AUTO_INCREMENT].
-| [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6 | Use the options to specify the Elasticsearch version and set configuration options
+| [db] | MariaDB or MySQL<br>     | `--db`, `--db-image` (MySQL)<br>`--expose-db-port`<br>`--db-increment`<br>`--db-offset` | 10.0, 10.1, 10.2<br>5.6, 5.7 | Use the increment and offset options to customize the [auto-increment settings][Using AUTO_INCREMENT].<br>*Example build commands:*<br>`ece-docker build:compose --db <mariadb-version>`<br>`ece-docker build:compose --db <mysql-version> --db-image`
+| [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var`<br>`--no-es` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6 | Use the options to specify the Elasticsearch version,  customize Elasticsearch configuration options, or to build a Docker environment without Elasticsearch.
 | [FPM][fpm-container] | PHP FPM | `--php`<br>`--with-xdebug` | 7.0, 7.1, 7.2, 7.3, 7.4 |  Used for all incoming requests. Optionally, add Xdebug configuration to debug PHP code in the Docker environment.
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
@@ -161,3 +161,14 @@ Now you can see all requests that are passing through the TLS container and chec
 [varnish-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [web-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container
 [mount-configuration]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts
+
+<!--Custom css-->
+
+<!--
+  This is a style declaration so that first column does not wrap
+-->
+
+<style>
+table.docker-service-versions-table td:nth-child(3) {
+  width: 200px;
+}

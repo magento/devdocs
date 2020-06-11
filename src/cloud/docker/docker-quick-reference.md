@@ -8,7 +8,7 @@ functional_areas:
 
 {%include cloud/note-docker-config-reference-link.md%}
 
-## docker-compose
+## Docker Compose
 
 Action | Command
 :----- | :------
@@ -37,7 +37,7 @@ Use the `-f` argument to specify an alternate configuration file. The following 
 docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custom-docker-compose.yml] up
 ```
 
-## Docker compose configuration generator
+### Docker Compose configuration generator
 
 {%include cloud/cloud-docker-config-generator-cmds.md%}
 
@@ -52,7 +52,7 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 {:.bs-callout-info}
 See [Service versions] for a list of service configuration options you can add to the `ece-docker build:compose` command to customize the Cloud Docker environment configuration.
 
-## bin/magento-docker CLI commands
+## Magento Cloud Docker CLI
 
 The `bin/magento-docker` commands simplify running docker-compose tasks. For example, instead of running a separate docker-compose command for the build, deploy, and post-deploy steps, you can _redeploy_ Magento in a Docker environment using the following command:
 
