@@ -23,9 +23,9 @@ POST /V1/order/notify-orders-are-ready-for-pickup
 
 ## Search for pickup locations
 
-The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for and filters on pickup locations, allowing the shopper to quickly narrow the results.
+The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for and filters on pickup locations, allowing the shopper to quickly narrow the results. The endpoint does not require authentication.
 
-Search terms, filters, and other attributes are specified as query parameters in the URL. This endpoint uses different a different syntax than other Magento GET calls that send `searchCriteria` parameters. Instead, the `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint requires that each query parameter begins with `searchRequest`. The `scopeCode` parameter is required. All other parameters are optional.
+Search terms, filters, and other attributes are specified as query parameters in the URL. This endpoint uses a different syntax than other Magento GET calls that send `searchCriteria` parameters. Instead, the `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint requires that each query parameter begins with `searchRequest`. The `scopeCode` parameter is required. All other parameters are optional.
 
 Name | Type | Description
 --- | --- | ---
@@ -118,6 +118,7 @@ Magento returns Pickup Locations list, search request given and total results co
 ## Mark an order as ready for pickup
 
 The `POST /V1/order/notify-orders-are-ready-for-pickup` endpoint creates a shipment and sends an email notifying the customer that the order is ready to be picked up.
+The endpoint requires appropriate permission to resource `Magento_InventoryInStorePickupApi::notify_orders_are_ready_for_pickup`.
 
 **Sample Usage:**
 
