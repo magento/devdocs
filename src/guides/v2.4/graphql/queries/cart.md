@@ -782,7 +782,7 @@ Attribute |  Data Type | Description
 `cart_items_v2` | [CartItemInterface] | An array that lists the items in the cart
 `items_weight` | Float | Deprecated. This attribute is not applicable for GraphQL
 `selected_shipping_method` | [SelectedShippingMethod](#SelectedShippingMethod) | An object that describes the selected shipping method
-`pickup_location_code` | String | The code of Pickup Location which will be used for In-Store Pickup.
+`pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order
 
 ## Related topics
 
