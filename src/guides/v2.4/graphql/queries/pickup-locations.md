@@ -5,19 +5,21 @@ contributor_name: Oleksandr Kravchuk
 contributor_link: https://github.com/swnsma
 ---
 
-Use `pickupLocations` query to receive a list of available pickup locations.
+Use the `pickupLocations` query to retrieve a list of available pickup locations.
 
-The `pickupLocations` query supports the following types of filters. You can specify multiple filters in a query.
+The `pickupLocations` query supports the following types of filters.
 
-*  Area Filtering
-*  Attributes Filtering (by country/postcode/region/city/street/name/pickup location code)
+*  Area filters allow you to specify a location and a radius to find all locations within that radius.
+*  Attribute filters allow you to return locations within a specified country, postal code, region, city, street, street, name, and pickup location code.
+
+You can specify multiple filters in a query.
 
 {:.bs-callout-info}
 Search by SKU assignment intersection is not supported in the GraphQl query.
 
-The query supports pagination and sorting (including sorting by distance if Area Filtering was applied).
+The query supports pagination and sorting (including sorting by distance if area filtering was applied).
 
-The query returns `PickupLocations` object which contains information about pagination and list of `PickupLocation` items.
+The query returns a `PickupLocations` object, which contains information about pagination and list of `PickupLocation` items.
 
 ## Syntax
 
@@ -28,7 +30,7 @@ pickupLocations (area: AreaInput filters: PickupLocationFilterInput sort: Pickup
 ## Example usage
 
 The following query returns the closest pickup location to `Austin` with limitation in 1500 KM.
-Because `pageSize` is set to 1 and distance by `distance` is applied, result will return the most closest pickup location.
+Because `pageSize` is set to 1 and distance by `distance` is applied, result will return the closest pickup location.
 
 **Request:**
 
@@ -106,12 +108,12 @@ Because `pageSize` is set to 1 and distance by `distance` is applied, result wil
 
 ## Input attributes
 
-All attributes are optional. If no filters are provided, the query will return a list of pickup locations, assigned to the Sales Channel which is used by the store.
+All top-level attributes are optional. If no filters are provided, the query returns a list of pickup locations, assigned to the Sales Channel that is used by the store.
 
 Attribute | Data type | Description
 --- | --- | ---
-`area` | [AreaInput](#AreaInput) | Perform search by location using radius and search term.
-`filters` | [PickupLocationFilterInput](#PickupLocationFilterInput) | Apply filters by attributes.
+`area` | [AreaInput](#AreaInput) | Performs a search by location using a specified radius and search term
+`filters` | [PickupLocationFilterInput](#PickupLocationFilterInput) | Applies filters by attributes
 `sort` | [PickupLocationSortInput](#PickupLocationSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 `pageSize` | Int | The maximum number of pickup locations to return at once. The attribute is optional. The default value is 20.
 `currentPage` | Int | Specifies which page of results to return. The default value is 1.
@@ -122,57 +124,56 @@ Use the `AreaInput` to apply filtration by distance. All attributes are required
 
 Attribute | Data type | Description
 --- | --- | ---
-`radius` | Int! | The radius for the search in KM.
-`search_term` | String! | The country code where search must be performed. Required parameter together with region, city, or postcode. Example of search term with country code `Austin:US`.
+`radius` | Int! | The radius to the search, in kilometers.
+`search_term` | String! | A combination of either the region, city, or postcode, a colon, and the country code. This value determines the location to use as the center of the search radius.  For example, `Austin:US`.
 
 ### PickupLocationFilterInput object {#PickupLocationFilterInput}
 
-Use the `PickupLocationFilterInput` to apply filtration by Pickup Location attributes. See [FilterTypeInput]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/schema.graphqls#L50).
+Use the `PickupLocationFilterInput` to filter by pickup location attributes. See [FilterTypeInput]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/schema.graphqls#L50).
 
 Attribute | Data type | Description
 --- | --- | ---
-`name` | FilterTypeInput | Filter by pickup location name.
-`pickup_location_code` | FilterTypeInput | Filter by pickup location code.
-`country_id` | FilterTypeInput | Filter by country.
-`postcode` | FilterTypeInput | Filter by postcode.
-`region` | FilterTypeInput | Filter by region.
-`region_id` | FilterTypeInput | Filter by region id.
-`city` | FilterTypeInput | Filter by city.
-`street` | FilterTypeInput | Filter by street.
+`city` | FilterTypeInput | Filter by city
+`country_id` | FilterTypeInput | Filter by country
+`name` | FilterTypeInput | Filter by pickup location name
+`pickup_location_code` | FilterTypeInput | Filter by pickup location code
+`postcode` | FilterTypeInput | Filter by postcode
+`region` | FilterTypeInput | Filter by region
+`region_id` | FilterTypeInput | Filter by region ID
+`street` | FilterTypeInput | Filter by street
 
 ### PickupLocationSortInput object {#PickupLocationSortInput}
 
-`PickupLocationSortInput` provides possibility to sort result by Pickup Location attributes. See [SortEnum]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/schema.graphqls#L88)
+`PickupLocationSortInput` provides the ability to sort results by pickup location attributes. See [SortEnum]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/GraphQl/etc/schema.graphqls#L88)
 
 Attribute | Data type | Description
 --- | --- | ---
-`name` | SortEnum | The pickup location name. Customer uses this to identify the pickup location.
-`pickup_location_code` | SortEnum | A code assigned to pickup location to identify the source.
-`distance` | SortEnum | Distance to the address, requested by distance filter. Applicable only with distance filter. If the distance sort order is present, all other sort orders will be ignored.
-`country_id` | SortEnum | Id of the country in two letters.
-`region` | SortEnum | Name of the region.
-`region_id` | SortEnum | Id of the region.
-`city` | SortEnum | City where the pickup location is placed.
-`street` | SortEnum | Street where the pickup location is placed.
-`postcode` | SortEnum | Postcode where the pickup location is placed.
-`pickup_location_code` | SortEnum | Filter by the pickup location code.
-`longitude` | SortEnum | Geographic longitude where the pickup location is placed.
-`latitude` | SortEnum | Geographic latitude where the pickup location is placed.
-`email` | SortEnum | Contact email of the pickup location.
-`fax` | SortEnum | Contact fax of the pickup location.
-`phone` | SortEnum | Contact phone number of the pickup location.
-`contact_name` | SortEnum | Name of the contact person.
-`description` | SortEnum | Description of the pickup location.
+`city` | SortEnum | City of the pickup location
+`contact_name` | SortEnum | Name of the contact person
+`country_id` | SortEnum | The two-letter country ID
+`description` | SortEnum | Description of the pickup location
+`distance` | SortEnum | Distance to the address, requested by distance filter. Applicable only with the distance filter. If the distance sort order is present, all other sort orders will be ignored
+`email` | SortEnum | Contact email of the pickup location
+`fax` | SortEnum | Fax number of the pickup location
+`latitude` | SortEnum | Geographic latitude of the pickup location
+`longitude` | SortEnum | Geographic longitude of the pickup location
+`name` | SortEnum | The pickup location name. The customer uses this to identify the pickup location
+`pickup_location_code` | SortEnum | A code assigned to pickup location to identify the source
+`phone` | SortEnum | Contact phone number of the pickup location
+`postcode` | SortEnum | Postal code of the pickup location
+`region` | SortEnum | Name of the region
+`region_id` | SortEnum | ID of the region
+`street` | SortEnum | Street of the pickup location
 
 ### PickupLocations object
 
-Top level object returned in a pickup locations search.
+`PickupLocations` is the top-level object returned in a pickup locations search.
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [[PickupLocation]](#PickupLocation) | An array of pickup locations that match the specific search request.
-`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the page_info and currentPage values specified in the query.
-`total_count` | Int | The number of products returned.
+`items` | [[PickupLocation]](#PickupLocation) | An array of pickup locations that match the specific search request
+`page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the page_info and currentPage values specified in the query
+`total_count` | Int | The number of products returned
 
 ### PickupLocation object {#PickupLocation}
 
@@ -180,26 +181,26 @@ Defines Pickup Location information.
 
 Attribute | Data type | Description
 --- | --- | ---
-`pickup_location_code` | String | Source Code, assigned to Pickup Location.
-`name` | String | Pickup Location name.
-`email` | String | Pickup Location email.
-`fax` | String | Pickup Location fax.
-`contact_name` | String | Pickup Location contact person name.
-`description` | String | Pickup Location description.
-`latitude` | Float | Geographic latitude where pickup location is placed.
-`longitude` | Float | Geographic longitude where pickup location is placed.
-`country_id` | String | Id of the country in two letters.
-`region_id` | Int | Id of the region.
-`region` | String | Name of the region.
-`city` | String | City where pickup location is placed.
-`street` | String | Street where pickup location is placed.
-`postcode` | String | Postcode where pickup location is placed.
-`phone` | String | Contact phone number of the pickup location.
+`city` | String | City of the pickup location
+`contact_name` | String | The contact person at the pickup location
+`country_id` | String | The two-letter country ID
+`description` | String | A description of the pickup location
+`email` | String | The email of the pickup location
+`fax` | String | The fax number of the pickup location
+`latitude` | Float | Geographic latitude of the pickup location
+`longitude` | Float | Geographic longitude of the pickup location
+`name` | String | Name of the pickup location
+`phone` | String | The phone number of the pickup location
+`pickup_location_code` | String | Source Code assigned to the pickup location
+`postcode` | String | Postal code of the pickup location
+`region` | String | Region name of the pickup location
+`region_id` | Int | ID of the region
+`street` | String | Street of the pickup location
 
 ### SearchResultPageInfo object {#SearchResultPageInfo}
 
 Attribute | Data type | Description
 --- | --- | ---
-`current_page` | Int | Specifies which page of results to return.
-`page_size` | Int | Specifies the maximum number of items to return.
-`total_pages` | Int | Total pages.
+`current_page` | Int | Specifies which page of results to return
+`page_size` | Int | Specifies the maximum number of items to return
+`total_pages` | Int | Total pages
