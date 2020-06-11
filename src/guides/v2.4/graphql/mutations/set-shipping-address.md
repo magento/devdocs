@@ -122,7 +122,7 @@ Attribute |  Data Type | Description
 `address` | [CartAddressInput](#CartAddressInputShip) | The shipping address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
 `customer_notes` | String | Text provided by the customer
-`pickup_location_code` | String | The code of Pickup Location which will be used for In-Store Pickup.
+`pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order.
 
 ## Output attributes
 
