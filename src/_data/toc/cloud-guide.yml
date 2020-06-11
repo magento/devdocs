@@ -14,11 +14,11 @@ pages:
       versionless: true
       children:
         - label: Starter architecture
-          url: /cloud/basic-information/starter-architecture.html
+          url: /cloud/architecture/starter-architecture.html
           versionless: true
 
         - label: Starter develop and deploy workflow
-          url: /cloud/basic-information/starter-develop-deploy-workflow.html
+          url: /cloud/architecture/starter-develop-deploy-workflow.html
           versionless: true
 
         - label: Pro architecture

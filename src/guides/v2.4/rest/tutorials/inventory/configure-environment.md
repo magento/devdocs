@@ -1,5 +1,6 @@
 ---
 layout: tutorial
+group: rest-api
 title: Step 1. Configure your environment
 subtitle: Order processing with Inventory Management
 menu_title: Step 1. Configure your environment
