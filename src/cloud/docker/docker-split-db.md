@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Prepare Magento Cloud Docker to deploy Magento split database performance solution
+title: Enable Magento split database solution
 functional_areas:
 - Cloud
 - Setup
@@ -8,11 +8,15 @@ functional_areas:
 - Split database performance solution
 ---
 
-## Prepare Magento Cloud Docker to deploy Magento split database performance solution
+The Magento split database performance solution improves the scalability of Magento by providing three separate databases to manage different functional areas of the Magento application.  The following instructions show how to configure this solution in the {{site.data.var.mcd-prod}} environment, exporting the Magento Sales and Magento Quote data from the main database and creating two separate databases in the Cloud Docker environment.
 
-To prepare the configuration before deploying the split db architecture, you must modify several files:
+{:.bs-callout-info}
+See the [Magento split database performance solution][] topic in the _Configuration Guide_ for detailed information and extended examples.
 
-1. Add the following database services to the `.magento/services.yaml` configuration file:
+{:.procedure}
+To add split DB to {{site.data.var.ece}} project configuration:
+
+1. In the root directory of your Magento project, add the database services to the `.magento/services.yaml` configuration file.
 
    ```yaml
    ...
@@ -25,7 +29,7 @@ To prepare the configuration before deploying the split db architecture, you mus
    ...
    ```
 
-1. In the `magento.app.yaml` file, add the relationships for the additional databases.
+1. In the `.magento.app.yaml` file, add the relationships for the additional databases.
 
    ```yaml
    relationships:
@@ -42,59 +46,59 @@ To prepare the configuration before deploying the split db architecture, you mus
    ```
 
    {:.bs-callout-note}
-   As with the 'db' container, you can use the options to set the ports to forward to your local environment.
+   As with the 'db' container, you can use the options to set ports to forward to your local environment.
 
    ```bash
    php vendor/bin/ece-docker build:compose --expose-db-quote-port=<port for quote db service> --expose-db-sales-port=<port for sales db service>
    ```
 
-1. Аfter generation, open the file `./docker-compose.yml` and you will see that the configuration for database services has been added:
+1. Verify the updated database configuration in the  `./docker-compose.yml` file.
 
-  ```bash
-  $ cat  ./docker-compose.yml
-  ...
-  services:
-    ...
-    db-quote:
-      hostname: db-quote.magento2.docker
-      image: 'mariadb:10.2'
-      environment:
-        - MYSQL_ROOT_PASSWORD=magento2
-        - MYSQL_DATABASE=magento2
-        - MYSQL_USER=magento2
-        - MYSQL_PASSWORD=magento2
-      ports:
-        - '3306'
-      volumes:
-        - 'magento-db-quote:/var/lib/mysql'
-        - 'docker-entrypoint-quote:/docker-entrypoint-initdb.d'
-        - 'mariadb-conf:/etc/mysql/mariadb.conf.d'
-        - 'docker-mnt:/mnt:delegated'
-      networks:
-        magento:
-          aliases:
-            - db-quote.magento2.docker
-    db-sales:
-      hostname: db-sales.magento2.docker
-      image: 'mariadb:10.2'
-      environment:
-        - MYSQL_ROOT_PASSWORD=magento2
-        - MYSQL_DATABASE=magento2
-        - MYSQL_USER=magento2
-        - MYSQL_PASSWORD=magento2
-      ports:
-        - '3306'
-      volumes:
-        - 'magento-db-sales:/var/lib/mysql'
-        - 'docker-entrypoint-sales:/docker-entrypoint-initdb.d'
-        - 'mariadb-conf:/etc/mysql/mariadb.conf.d'
-        - 'docker-mnt:/mnt:delegated'
-      networks:
-        magento:
-          aliases:
-            - db-sales.magento2.docker
-  ...
-  ```
+   ```terminal
+   $ cat  ./docker-compose.yml
+   ...
+   services:
+     ...
+     db-quote:
+       hostname: db-quote.magento2.docker
+       image: 'mariadb:10.2'
+       environment:
+         - MYSQL_ROOT_PASSWORD=magento2
+         - MYSQL_DATABASE=magento2
+         - MYSQL_USER=magento2
+         - MYSQL_PASSWORD=magento2
+       ports:
+         - '3306'
+       volumes:
+         - 'magento-db-quote:/var/lib/mysql'
+         - 'docker-entrypoint-quote:/docker-entrypoint-initdb.d'
+         - 'mariadb-conf:/etc/mysql/mariadb.conf.d'
+         - 'docker-mnt:/mnt:delegated'
+       networks:
+         magento:
+           aliases:
+             - db-quote.magento2.docker
+     db-sales:
+       hostname: db-sales.magento2.docker
+       image: 'mariadb:10.2'
+       environment:
+         - MYSQL_ROOT_PASSWORD=magento2
+         - MYSQL_DATABASE=magento2
+         - MYSQL_USER=magento2
+         - MYSQL_PASSWORD=magento2
+       ports:
+         - '3306'
+       volumes:
+         - 'magento-db-sales:/var/lib/mysql'
+         - 'docker-entrypoint-sales:/docker-entrypoint-initdb.d'
+         - 'mariadb-conf:/etc/mysql/mariadb.conf.d'
+         - 'docker-mnt:/mnt:delegated'
+       networks:
+         magento:
+           aliases:
+             - db-sales.magento2.docker
+   ...
+   ```
 
 1. Verify that the `./.docker/config.php.dist`  environment configuration file includes the updated database service configuration:
 
@@ -126,13 +130,13 @@ To prepare the configuration before deploying the split db architecture, you mus
    ];
    ```
 
-1. Run containers
+1. Build the containers and run in the background.
 
    ```bash
    docker-compose up -d
    ```
 
-1. Ensure that additional database containers are running. The "db-quote" and "db-sales" containers must be present:
+1. Confirm that the `db-quote` and `db-sales` database containers are running.
 
    ```bash
    docker-compose ps
@@ -145,7 +149,7 @@ To prepare the configuration before deploying the split db architecture, you mus
    ...
    ```
 
-1. In the environment variable 'MAGENTO_CLOUD_RELATIONSHIPS' of 'deploy' service has also added data about credentials to access new database services.
+1. Verify that the 'MAGENTO_CLOUD_RELATIONSHIPS' variable returns the database access credentials.
 
    ```bash
    docker-compose run deploy bash -c "echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp"
@@ -174,20 +178,24 @@ To prepare the configuration before deploying the split db architecture, you mus
          }
       ]
    }
-    ```
+   ```
 
-Now everything is ready to install Magento with split database solution
-The process for deploying Magento with the split database solution in the Magento Cloud Docker is similar to the deployment process in Magento Cloud environment.
+## Install Magento with the split database solution
 
-1. Add the SPLIT_DB property with type or types of tables that will be imported into other databases into `.magento.env.yaml`
+After updating the Docker compose configuration file, you must specify the database tables to deploy to the separate database services, and then deploy Magento to the Cloud Docker environment.
 
-  ```yaml
-  stage:
-      deploy:
-          SPLIT_DB:
-              - quote
-              - sales
-  ```
+{:.procedure}
+To deploy Magento to the Cloud environment with the split database configuration:
+
+1. In the `.magento.env.yaml` file in project root, add the `SPLIT_DB` property with the table names to import into the other data.
+
+   ```yaml
+   stage:
+       deploy:
+           SPLIT_DB:
+               - quote
+               - sales
+   ```
 
 1. Run the build phase of deployment process.
 
@@ -195,12 +203,14 @@ The process for deploying Magento with the split database solution in the Magent
    docker-compose run build cloud-build
    ```
 
-1. Run deploy phase of deployment process.
+1. Run the deploy phase of deployment process.
 
    ```bash
    docker-compose run deploy cloud-deploy
    ```
 
-During the deploy phase, `ece-tools` runs all the commands to deploy the split DB solution for the types included in `.magento env.yaml` configuration for the SPLIT_DB property.
+1. After deployment, use the database credentials and port information to [manage each database][Manage the database].
 
-After deploying Magento with the split DB solution, use the database credentials and port information to manage each database. See [Manage the database]({{site.baseurl}}/cloud/docker/docker-manage-database.html.
+<!--Link definitions-->
+[Magento split database performance solution]: {{site.baseurl}}/guides/v2.3/config-guide/multi-master/multi-master.html
+[Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html

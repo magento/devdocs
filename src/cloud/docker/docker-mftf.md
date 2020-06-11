@@ -89,6 +89,12 @@ To set up and run MFTF tests in a Cloud Docker environment:
    docker-compose run deploy magento-command setup:config:set  --http-cache-hosts=varnish
    ```
 
+1. Clear the cache.
+
+   ```bash
+   docker-compose run deploy magento-command cache:clean
+   ```
+
 1. Generate MFTF tests.
 
    ```bash

@@ -10,10 +10,11 @@ functional_areas:
 
 You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to fully automate performance testing.
 
-[Blackfire.io for Magento Cloud](https://blackfire.io/magento) is a PHP profiler and automated performance testing tool that can be used in development, integration, staging, and production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code. Blackfire also digs deeper to provide granular performance analytics.
+Blackfire.io for Magento Cloud is a PHP profiler and automated performance testing tool that can be used in development, integration, staging, and production environments. It enables you to locate and investigate performance issues in your environment at the code level and creates a performance profile by tracking every PHP call, method, and SQL query performed by your code. Blackfire also digs deeper to provide granular performance analytics.
 
 {:.procedure}
-To add the Blackfire.io extension to your Cloud Docker environment:
+You must have a Blackfire license and account to use Blackfire.io with {{site.data.var.ece}} projects.
+See [Blackfire.io for Magento Cloud][].
 
 1. Add the following Blackfire.io configuration to the `runtime:extensions` section of the `.magento.app.yaml` file.
 
@@ -45,11 +46,11 @@ To add the Blackfire.io extension to your Cloud Docker environment:
    ```bash
    ./bin/magento-docker ece-redeploy
    ```
- 
+
    {:.bs-callout-info}
    If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
 
-1. Add context to use locally customized PHP images as described in [Extend the Docker configuration](https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources).
+1. Add context to use locally customized PHP images as described in [Extend the Docker configuration][].
 
 1. Install Magento in your Docker environment.
 
@@ -97,13 +98,14 @@ To add the Blackfire.io extension to your Cloud Docker environment:
 {:.procedure}
 To use Blackfire.io for Magento performance testing in Cloud Docker:
 
-1. Install a profiling client as described in the [Blackfire documentation](https://blackfire.io/docs/up-and-running/installation#install-a-profiling-client).
+1. Install a profiling client as described in the [Blackfire documentation][].
 
 1. Profile the Magento website. See the [Blackfire.io documentation].
 
 <!--Link definitions-->
-[Blackfire documentation]: https://blackfire.io/docs/up-and-running/installation#install-a-profiling-client
+[Blackfire for Magento Cloud]: https://blackfire.io/magento
+[Blackfire documentation]: https://support.blackfire.io/en/collections/145130-blackfire-on-magento-cloud
 [build or service configuration options]: https://devdocs.magento.com/cloud/docker/docker-quick-reference.html
+[Extend the Docker configuration]: https://devdocs.magento.com/cloud/docker/docker-extend.html#specify-docker-build-sources
 [file synchronization options]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
 [Launch Docker in developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
-[Blackfire.io documentation]: https://blackfire.io/docs/integrations/paas/magentocloud

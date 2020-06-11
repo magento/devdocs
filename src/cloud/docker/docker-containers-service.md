@@ -10,18 +10,20 @@ functional_areas:
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.
 
 {:.bs-callout-info}
-See the [service version values available]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers) for use when launching Docker.
+See [Service configuration build options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers) to customize container configuration when you build the Docker compose configuration file.
 
 ## Database container
 
 **Container name**: db<br/>
-**Docker base image**: [mariadb]<br/>
+**Docker base image**: [mariadb], [MySQL]<br/>
 **Ports exposed**:  `3306`<br/>
 
-The Database container is based on the [mariadb] image and includes the following volumes:
+You can configure the database container to use either MariaDB or MySQL for the database. The default configuration uses the [mariadb] image and includes the following volumes:
 
 -  `magento-db: /var/lib/mysql`
 -  `.docker/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d`
+
+To use MySQL for the database, add the `--db image` option when you generate the Docker Compose configuration file. See [Service configuration options][].
 
 When a database container initializes, it creates a new database with the specified name and uses the configuration variables specified in the docker-compose configuration. The initial start-up process also executes files with `.sh`, `.sql`, and `.sql.gz` extensions that are found in the `/docker-entrypoint-initdb.d` directory. Files are executed in alphabetical order. See [mariadb Docker documentation](https://hub.docker.com/_/mariadb).
 
@@ -52,7 +54,7 @@ You can inject a MySQL configuration into the database container at creation by 
          - innodb-buffer-pool-size=134217728
    ```
 
-See [Manage the database] for details about using the database.
+See [Manage the database][] for details about using the database.
 
 ## Elasticsearch container
 
@@ -68,7 +70,10 @@ You can customize the Elasticsearch container using the `--es-env-var` option wh
 php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx512m" --es-env-var=node.store.allow_mmapfs=false
 ```
 
-See [Important Elasticsearch configuration][] for information about available settings.
+See [Important Elasticsearch configuration][] in the Elasticsearch documentation for details about available configuration options.
+
+{:.bs-callout-info}
+If your Cloud project uses Magento version 2.3.5 or earlier with MySQL search, add the `--no-es` option to skip the Elasticsearch container configuration when you generate the Docker Compose configuration file: `ece-docker build:compose --no-es`.
 
 ### Troubleshooting
 
@@ -118,7 +123,17 @@ The FPM container includes the following volumes:
    -  `/app/pub/static`
    -  `/app/pub/media`
 
-{:.bs-callout-tip}
+### Customize PHP settings
+
+You can customize PHP service settings for PHP-FPM and CLI containers by adding a `php.ini` file to the root directory of your Magento project.
+
+The Cloud Docker deploy process copies the `php.ini` file to the Docker environment after applying the default Docker and Magento extension configurations and applies the settings to the FPM and CLI containers.
+
+{:.bs-callout-warning}
+If you use the `docker-sync` or `mutagen` file synchronization options, the `php.ini` file is available only after the file synchronization completes.
+
+### Customize PHP extensions
+
 You can add custom PHP extensions and manage their status from the `runtime` section of the `.magento.app.yaml` file. See [PHP extensions]. To test custom extensions without updating the {{site.data.var.ece}} environment configuration, you can add the custom configuration to the [`docker-compose.override.yml`][Docker override file]. Configuration settings in this file are applied only when you build and deploy to the Docker environment.
 
 Optionally, you can add Xdebug to your Cloud Docker environment to debug your PHP code. See [Configure XDebug for Docker][].
@@ -236,8 +251,10 @@ To mount the custom index.php file using volumes:
 
 [mariadb]: https://hub.docker.com/_/mariadb
 [mariadb Docker documentation]: https://hub.docker.com/_/mariadb
-[Manage the database]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
+[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
+[Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
+[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
 [redis]: https://hub.docker.com/_/redis
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [FPM]: https://php-fpm.org

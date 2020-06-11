@@ -26,12 +26,24 @@ See [Docker CLI containers] for details.
 
 ## Service containers
 
-{{site.data.var.mcd-prod}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version with the following optional parameters:
+{{site.data.var.mcd-prod}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version or specify custom configuration with the optional build parameters.
 
-| Name       | Service   | Key  | Available Versions | Notes
+For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
+
+```bash
+./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
+```
+
+### Service configuration options
+
+The following table shows the options to customize service container configuration when you generate the Docker Compose configuration file.
+
+{: .docker-service-versions-table}
+
+| Name       | Service   | Key & options  | Available Versions | Notes
 | ------------- | ---------- | ---------- | ------------------ |------------------
-| [db] | MariaDB     | `--db` | 10.0, 10.1, 10.2 |  Standard database container
-| [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6 |
+| [db] | MariaDB or MySQL<br>     | `--db`, `--db-image` (MySQL)<br>`--expose-db-port`<br>`--db-increment`<br>`--db-offset` | 10.0, 10.1, 10.2<br>5.6, 5.7 | Use the increment and offset options to customize the [auto-increment settings][Using AUTO_INCREMENT].<br>*Example build commands:*<br>`ece-docker build:compose --db <mariadb-version>`<br>`ece-docker build:compose --db <mysql-version> --db-image`
+| [elasticsearch] | Elasticsearch | `--es`<br>`--es-env-var`<br>`--no-es` | 1.7, 2.4, 5.2, 6.5, 6.8, 7.5, 7.6 | Use the options to specify the Elasticsearch version,  customize Elasticsearch configuration options, or to build a Docker environment without Elasticsearch.
 | [FPM][fpm-container] | PHP FPM | `--php`<br>`--with-xdebug` | 7.0, 7.1, 7.2, 7.3, 7.4 |  Used for all incoming requests. Optionally, add Xdebug configuration to debug PHP code in the Docker environment.
 | [node][node-container] | Node | `--node` | 6, 8, 10, 11 |  Used gulp or other NPM based commands
 | [rabbitmq][rabbitmq-container]| RabbitMQ | `--rmq` | 3.5, 3.7, 3.8 |
@@ -41,15 +53,11 @@ See [Docker CLI containers] for details.
 | [varnish][varnish-container] | Varnish | `--no-varnish` | 4, 6.2 | Varnish is provisioned by default. Use the `--no-varnish` option to skip Varnish service installation
 | [web][web-container] | NGINX | `--nginx` | 1.9, latest |
 
-The `ece-docker build:compose` command runs in interactive mode and verifies the configured service versions. To skip interactive mode, use the `-n, --no-interaction` option.
-
-For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
+Use the following command to view the available options for the `ece-docker build:compose` command:
 
 ```bash
-./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2
+./vendor/bin/ece-docker build:compose --help
 ```
-
-See [Docker service containers][] for details.
 
 ## Request Flow
 
@@ -138,6 +146,7 @@ Now you can see all requests that are passing through the TLS container and chec
 [elasticsearch]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#elasticsearch-container
 [Docker CLI containers]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html
 [Docker service containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html
+[Using AUTO_INCREMENT]: https://dev.mysql.com/doc/refman/8.0/en/example-auto-increment.html
 [Web containers]: {{site.baseurl}}/cloud/docker/docker-php.html
 [Developer Mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [File Synchronization]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
@@ -152,3 +161,14 @@ Now you can see all requests that are passing through the TLS container and chec
 [varnish-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [web-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container
 [mount-configuration]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts
+
+<!--Custom css-->
+
+<!--
+  This is a style declaration so that first column does not wrap
+-->
+
+<style>
+table.docker-service-versions-table td:nth-child(3) {
+  width: 200px;
+}
