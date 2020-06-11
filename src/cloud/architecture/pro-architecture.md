@@ -67,7 +67,7 @@ The following table summarizes the differences between environments:
 </table>
 
 {:.bs-callout-info}
-Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for development and testing {{site.data.var.ee}} projects in a local Cloud Docker environment. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development).
+Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for development and testing {{site.data.var.ee}} projects in a local Cloud Docker environment. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
 
 ## Pro environment architecture
 

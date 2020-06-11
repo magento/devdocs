@@ -83,13 +83,13 @@ The release notes include:
 
 -  {:.fix}Fixed the configuration of mutagen file synchronization to prevent mutagen from creating stale sessions. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
--  {:.fix}Fixed a configuration issue that caused syntax errors in the Docker compose log when starting the PHP-FPM container. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/129).*<!--MCLOUD-3958-->
+-  {:.fix}Fixed a configuration issue that caused syntax errors in the Docker compose log when starting the PHP-FPM container. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/129)*<!--MCLOUD-3958-->
 
 -  {:.fix}Fixed volume conflict errors that sometimes occurred when using multiple Docker environments. *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/168).*
 
 -  {:.fix}Fixed an issue that caused the `ece-docker build:compose` command to fail if the configuration included Blackfire.io.*[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/199).* <!--MCLOUD-5797-->
 
--  {:.fix}Updated the PHP CLI image configuration to prevent out-of-memory errors that occurred when installing multiple packages using {{site.data.var.mcd-prod}}. *[Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/197)*<!--MCLOUD-5818-->
+-  {:.fix}Updated the PHP CLI image configuration to prevent out-of-memory errors that occurred when installing multiple packages using {{site.data.var.mcd-prod}}. *[Fix submitted by Mohan Elamurugan from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/197).*<!--MCLOUD-5818-->
 
 -  {:.fix}Added support for multiple MySQL users in the Cloud Docker environment. In earlier releases, the `build:compose` operation failed if the `magento.app.yaml` file specified multiple database users. *[Fix submitted by G Arvind from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/181).*<!--MCLOUD-5670-->
 
@@ -176,6 +176,7 @@ The release notes include:
 
    -  {:.new}Added a container health check to the Elasticsearch service to ensure that the service is ready before continuing with build and deploy processing. If the health check returns an error, the container restarts automatically.<!--MAGECLOUD-4456-->
 
+<!--Link definitions-->
 [Sharing Magento Cloud project data]: {{site.baseurl}}/cloud/docker/docker-containers.html#sharing-magento-cloud-project-data
 [Database containers]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [developer]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
