@@ -15,7 +15,7 @@ The `pickupLocations` query supports the following types of filters.
 You can specify multiple filters in a query.
 
 {:.bs-callout-info}
-Search by SKU assignment intersection is not supported in the GraphQl query.
+The `pickupLocations` query does not support searching by SKU assignment intersections.
 
 The query supports pagination and sorting (including sorting by distance if area filtering was applied).
 
