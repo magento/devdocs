@@ -10,7 +10,7 @@ functional_areas:
 
 This topic describes a generic recommended setup for {{site.data.var.ee}} and {{site.data.var.ce}} instances using plain servers hosted physically in a data center (not virtualized) in which resources are not shared with other users. Your hosting provider, especially if it specializes in Magento high performance hosting, might recommend a different setup that is equally or more effective for your requirements.
 
-For {{site.data.var.ece}} environments, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html).
+For {{site.data.var.ece}} environments, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html).
 
 ## Magento Reference Architecture diagram
 
