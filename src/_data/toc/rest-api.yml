@@ -255,3 +255,8 @@ pages:
 
             - label: Manage source selection algorithms
               url: /rest/modules/inventory/manage-source-selection.html
+
+            - label: In-Store Pickup
+              url: /rest/modules/inventory/in-store-pickup.html
+              exclude_versions: ["2.3"]
+              
