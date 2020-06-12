@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-## Configure the Magento application {#configuration}
+## Configure the Magento application {#configuration} - Woohoo Magento!
 
 You can configure the Magento application in any of the following ways:
 
