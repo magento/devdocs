@@ -11,6 +11,8 @@ functional_areas:
 
 This {{site.data.var.ct}} error message reference provides information to troubleshoot errors that can occur during the {{site.data.var.ece}} deployment process.
 
+All error and warning messages generated during deployment are written to both the `var/log/cloud.log` and `/var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
+
 Error messages are categorized by deployment stage–*build*, *deploy*, and *post-deploy*. Each section provides a list of associated errors with the following information for each error:
 
 -  **Error code**:  The Magento-assigned identifier for the error message

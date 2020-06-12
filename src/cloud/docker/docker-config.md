@@ -18,38 +18,16 @@ The `ece-docker build:compose` command overwrites the existing `docker-compose.y
 
 ## Prerequisites
 
-1. You must have the following software installed on your local workstation:
-   -  [PHP version 7.1 or later][php]
-   -  [Composer]
-   -  [Docker]
-   -  On MacOS and Windows, file synchronization is required for developer mode—use one of the following:
-      -  [docker-sync]
-      -  [mutagen]
+To get started with local development you must have [Docker] installed on your workstation. In addition, macOS and Windows systems require either [docker-sync] or [Mutagen] for file synchronization between the host and Docker environments.
 
-1. Update the hosts file.
+### Optional Steps
 
-   Before you begin, you must add the following hostname to your `/etc/hosts` file:
+Magento Cloud Docker binds to port `80` on your host environment. If you have enabled the bundled web server on your workstation you must stop the service before launching the Docker environment.
 
-   ```conf
-   127.0.0.1 magento2.docker
-   ```
 
-   Alternatively, you can run the following command to add it to the file:
-
-   ```bash
-   echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
-   ```
-
-   {:.bs-callout-tip}
-   To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
-
-1. Stop the default Apache instance on macOS.
-
-   Because macOS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
-
-   ```bash
-   sudo apachectl stop
-   ```
+```bash
+sudo apachectl stop
+```
 
 ## Set the launch mode
 
@@ -112,7 +90,17 @@ To configure the custom host and port, add the `host` and `port` options to the 
 ./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080
 ```
 
-You must also add the custom hostname to your `/etc/hosts` file.
+You must also add or update the custom host name in your `/etc/hosts` file.
+
+```conf
+127.0.0.1 magento2.test
+```
+
+Alternatively, you can run the following command to add it to the file:
+
+```bash
+echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
+```
 
 ## Set up email
 

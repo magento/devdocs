@@ -18,10 +18,16 @@ To launch the Docker environment in production mode:
 
 1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
-1. Install the template dependencies.
+1. To install the template dependencies and add the default hostname to your `/etc/hosts` file, use the following command to run the Docker initialization script:
 
    ```bash
-   composer install
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
+   ```
+
+   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
+
+   ```bash
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
    ```
 
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].

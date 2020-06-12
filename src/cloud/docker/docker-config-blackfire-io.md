@@ -47,8 +47,8 @@ See [Blackfire.io for Magento Cloud][].
    ./bin/magento-docker ece-redeploy
    ```
 
-  {:.bs-callout-info}
-  If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
+   {:.bs-callout-info}
+   If you are using file synchronization, synchronize files as needed. See [Launch Docker in developer mode][]
 
 1. Add context to use locally customized PHP images as described in [Extend the Docker configuration][].
 
