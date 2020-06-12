@@ -54,11 +54,11 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 
 The following platform upgrades help enhance website security and performance. Supported versions of PHP and PHPUnit, Elasticsearch, MySQL, and other dependencies are listed in [Magento 2.4 technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. All testing of 2.4.0 has been done on PHP 7.4. You can still install Magento 2.4.x with PHP 7.3, but we recommend using PHP 7.4.
+*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4. Magento 2.4.0 can be installed with Elasticsearch 7.6.x only.
 
 *  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
 
-*  **Elasticsearch 7.x support**. The latest Elasticsearch 7.x version is now the default catalog search engine for Magento Commerce and Open Source. Elasticsearch version 2.x code has been removed, and Elasticsearch version 5.x has been deprecated. Elasticsearch v6.8 is still supported in Magento 2.4.0 (and 2.3.x). You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
+*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for Magento Commerce and Open Source. You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed, and Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 *  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
@@ -107,6 +107,8 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Improvement of up to 25-30% to Quick Order add-to-cart performance**.
 
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+
 ### Adobe Stock Integration v2.0
 
 **Ability to license stock image previews from the Media Gallery**. Merchants can now find any Adobe Stock preview image in the Media Gallery, which reduces the number of steps required to license stock preview image.
@@ -153,7 +155,7 @@ PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on th
 *  ACL to controls which administrators can log in to customer accounts can be configured on a per-website basis
 *  Compatibility with multiple websites and customer account scopes
 *  Orders placed on behalf of customers are logged in the storefront and Admin
-*  All sessions are destroyed following administrator logout, and administrative users cannot access customer passwords.
+*  All sessions are destroyed following administrator logout, and administrators cannot access customer passwords.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -167,7 +169,7 @@ MFTF v3.0.0 includes these new features and includes support for PHP 7.4 and PHP
 *  nested assertion syntax
 *  static check that checks and reports references to deprecated test entities
 
-This release also removes deprecated actions and upgrades scripts added to upgrade tests to MFTF major version requirements.
+This release also removes deprecated actions and upgrades scripts that were added to upgrade tests to MFTF major version requirements.
 
 ### Vendor-developed extension enhancements
 
@@ -242,11 +244,24 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  `\Magento\Store\App\Config\Source\RuntimeConfigSource::getEntities` has been refactored to decrease the number of `SHOW TABLE STATUS` queries it makes. (This change reverts to the behavior this function displayed in Magento 2.3.3.)
 
+<!--- MC-23890-->
+
+*  Data scripts are no longer re-run whenever you attempt to upgrade the database by running `bin/magento setup:upgrade`. Previously, upgrade scripts were re-run unnecessarily, which affected performance. [GitHub-19469](https://github.com/magento/magento2/issues/19469)
+
+<!--- MC-30397-->
+
+*  Magento now displays the following behaviors when your connection to Redis is interrupted. Previously, Magento did not reload the current page and displayed this error: An error has happened during application run. See exception log for details.
+
+   *  Admin and storefront sessions expire
+   *  Admin and storefront users must log in again
+   *  Session data is saved to `var/session/`
+   *  No error or exceptions are logged.
+
 ### AdminGWS
 
 <!--- MC-33031-->
 
-*  Administrative users with limited role scope can now modify alt text, and Magento saves those values. If an administrative user is not permitted to modify alt text, then the alt text box is grayed out.
+*  Administrators with limited role scope can now modify alt text, and Magento saves those values. If an administrator is not permitted to modify alt text, then the alt text box is grayed out.
 
 ### Analytics
 
@@ -308,6 +323,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now displays an informative error message when you try to add a product by clicking **Order by SKU** when the file for upload is corrupt. Previously, Magento displayed a blank page.
 
+<!--- MC-32962-->
+
+*  Magento now applies Cart Price Rules to only the bundle product  child products that match the rule criteria. Previously, Magento applied the Cart Price Rule to all child products that belonged to the bundle product.
+
 ### Cart Price Rule
 
 <!--- MC-23986-->
@@ -334,7 +353,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29896-->
 
-*  Magento now displays product images in the mini cart without distortion. Previously, Magento stretched the image in the mini cart to fill the entire width and height of the image container.
+*  Magento now displays product images in the minicart without distortion. Previously, Magento stretched the image in the minicart to fill the entire width and height of the image container.
 
 <!--- MC-29866-->
 
@@ -366,7 +385,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31838-->
 
-*  The **Product in Websites** checkbox of the new product page is now enabled by default for restricted administrative users in multi-site deployments. Previously, the checkbox for the non-default website was not preselected, and if the administrator left the checkbox unselected, Magento displayed an error message.
+*  The **Product in Websites** checkbox of the new product page is now enabled by default for restricted administrators in multi-site deployments. Previously, the checkbox for the non-default website was not preselected, and if the administrator left the checkbox unselected, Magento displayed an error message.
 
 <!--- MC-32772-->
 
@@ -374,11 +393,15 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29449-->
 
-*  The mini cart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the mini cart and Admin shopping cart displayed the original product price.
+*  The minicart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the minicart and Admin shopping cart displayed the original product price.
 
 <!--- MC-30777-->
 
 *  Filtering on the Admin product grid website column now works as expected. Previously, filter results did not display the correct number of products, but consistently displayed the total number of products as 1.
+
+<!--- MC-31432-->
+
+*  Price condition uses `catalog_product_entity_decimal` to filter by price. However, this table contains no records for configurable, bundle dynamic, and grouped products because these products have no fixed price. The correct table to use for filtering by price is `catalog_product_index_price`.
 
 ### Catalog widget
 
@@ -456,7 +479,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-33361-->
 
-*  Magento now saves custom customer address attributes and implements them in registration forms as expected. Previously, when you created a new custom Customer Address Attribute while creating an account from the cart, Magento did not save the attribute information, and the information in the **My Account Area** > **Address Book**.
+*  Magento now saves custom customer address attributes and implements them in registration forms as expected. Previously, when you created a new custom customer address attribute while creating an account from the cart, Magento did not save the attribute information, and the information in the **My Account Area** > **Address Book**.
 
 <!--- MC-32301-->
 
@@ -486,7 +509,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31481-->
 
-*  Magento now successfully imports customer data using the **Customer and Addresses (single file))** option when `cron` is enabled and the Customer Grid Indexer is set to **Update By Schedule**. After `cron` executes, the imported customer information is available in the Admin as expected. Previously, Magento imported the customer data, but did not update the customer grid with the newly imported customer records.
+*  Magento now successfully imports customer data using the **Customer and Addresses (single file)** option when `cron` is enabled and the Customer Grid Indexer is set to **Update By Schedule**. After `cron` executes, the imported customer information is available in the Admin as expected. Previously, Magento imported the customer data, but did not update the customer grid with the newly imported customer records.
 
 <!--- MC-31117-->
 
@@ -496,9 +519,13 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Customer creation from the Admin now honors the default customer group setting as expected.
 
-<!--- MC-31425-->
+<!--- MC-31435-->
 
 *  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.
+
+<!--- MC-32152-->
+
+*  The Admin view of a customer cart now displays all the products that were added to the cart from multiple websites in a multi-website deployment. Previously, when a customer added a product to their cart from a non-default website, the product was not displayed in the Admin even when **Share customer account** is set to **Global**.
 
 ### Customer segment
 
@@ -512,7 +539,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32409-->
 
-*  Customer segment rules now applied as expected when customer accounts are set up to be shared globally.
+*  Customer segment rules are now applied as expected when customer accounts are set up to be shared globally.
 
 <!--- MC-33081-->
 
@@ -532,17 +559,13 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Dynamic block (formerly banner)
 
-<!--- MC-23852-->
+<!--- MC-23852 31632-->
 
 *  Dynamic blocks now work with customer segments as expected. Magento no longer displays a dynamic block when the condition that should trigger it is not fulfilled. Previously, Magento displayed a dynamic block for users logged in as a guest when the shopping cart was empty.
 
 <!--- MC-32652-->
 
 *  Dynamic blocks are now rendered on the storefront based on customer segment and store view.
-
-<!--- MC-31632-->
-
-*  Dynamic blocks now work with customer segments as expected. Magento no longer displays a dynamic block when the condition that should trigger it is not fulfilled. Previously, Magento displayed a dynamic block for users logged in as a guest when the shopping cart was empty.
 
 ### EAV
 
@@ -602,7 +625,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31920-->
 
-*  Lock manager on the basis of MySQL is now a primary locker instead of lock manager on the basis of the caching system. As a result now minimal stable version of MySQL which is 5.7.9 is required.
+*  The MySQL lock manager is now the primary lock manager. As a result,  the minimal required version of MySQL is 5.7.9.
 
 ### General fixes
 
@@ -676,7 +699,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32815-->
 
-*  Product rules now apply to out-of-stock products as expected. Previously, Magento did not display out-of-stock products in the related products list even when the .the rule was configured to display out-of-stock products.
+*  Product rules now apply to out-of-stock products as expected. Previously, Magento did not display out-of-stock products in the related products list even when the rule was configured to display out-of-stock products.
 
 <!--- MC-33222-->
 
@@ -693,6 +716,14 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31878-->
 
 *  Bulk order update through REST now updates order status as expected. Previously, Magento threw this error: `report.ERROR: Property "AdditionalInformation" does not have accessor method "setAdditionalInformation" in class "Magento\Sales\Api\Data\OrderPaymentInterface".`
+
+<!--- MC-30398-->
+
+*  Attribute filters are now displayed as expected in the Shopping Options block of the Category page.
+
+<!--- MC-25138-->
+
+*  You can now change the product limit on the Category page from 24 to 36 in deployments where B2B is installed. Previously, Magento threw a fatal error when this product limit was increased to 36.
 
 ### Gift cards
 
@@ -746,6 +777,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now displays `.png` images as expected after upload.
 
+<!--- MC-29483-->
+
+*  Images that have been uploaded into a CMS block using Page Builder are now displayed in the preview as expected when uploaded from an Admin that has a base URL that differs from the storefront URL.
+
 ### Import/export
 
 <!--- MC-25206-->
@@ -782,7 +817,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30672-->
 
-*  Magento now provides a message during product import that identifies which products in the imported CSV file have duplicated keys. Merchants can use this information to resolve conflicts. Previously, Magento displayed this error: `Notice: Undefined index: name in /var/www/html/ee233dev/app/code/Magento/CatalogImportExport/Model/Import/Product.php on line 2524`
+*  Magento now provides a message during product import that identifies which products in the imported `.csv` file have duplicated keys. Merchants can use this information to resolve conflicts. Previously, Magento displayed this error: `Notice: Undefined index: name in /var/www/html/ee233dev/app/code/Magento/CatalogImportExport/Model/Import/Product.php on line 2524`
 
 <!--- MC-29960-->
 
@@ -790,7 +825,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29959-->
 
-*  The CSV file used during import now contains the correct links for downloadable products and is now correctly formatted to support importing and updating downloadable products.
+*  The `.csv` file used during import now contains the correct links for downloadable products and is now correctly formatted to support importing and updating downloadable products.
 
 <!--- MC-30189-->
 
@@ -806,7 +841,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32153-->
 
-*  When `cron` is enabled and you perform a customer import using the **(Customer and Addresses (single file))** option, Magento populates data to the Admin customer grid as expected. The customer grid displays the customers once manual re-indexing completes for `customer_grid indexer`. Previously, Magento did not update the customer grid with newly imported customer addresses.
+*  When `cron` is enabled and you perform a customer import using the **(Customer and Addresses (single file)** option, Magento populates data to the Admin customer grid as expected. The customer grid displays the customers once manual re-indexing completes for `customer_grid indexer`. Previously, Magento did not update the customer grid with newly imported customer addresses.
 
 <!--- MC-32154-->
 
@@ -818,7 +853,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31879-->
 
-*  Magento no longer creates duplicate SKUs in the Admin when products are imported by CSV file.
+*  Magento no longer creates duplicate SKUs in the Admin when products are imported by `.csv` file.
 
 ### Index
 
@@ -829,6 +864,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-29917-->
 
 *  Product prices on the storefront now accurately reflect the application of a scheduled Catalog Price Rule update. Previously, prices did not reflect the scheduled cart price rule until you manually re-indexed (`php bin/magento indexer:reindex catalogrule_rule`).
+
+<!--- MC-30588-->
+
+*  You can now successfully re-index the product database after adding an attribute that is unsearchable (that is, the `is_searchable`, `is_filterable`, `is_visible_in_advanced_search` attributes are disabled).
 
 ### Infrastructure
 
@@ -882,7 +921,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC--->
 
-*  The integration of third-party payment methods into the core Magento code has been deprecated. With this release, the integrations of the Authorize.Net, eWay, CyberSource, and Worldpay payment methods are deprecated. These core features are no longer supported and will be removed in the next minor release (2.4.0). Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods (Authorize.Net, eWay, CyberSource, and Worldpay) into the core Magento code has been deprecated. Merchants should migrate to the official extensions that are available on the Magento Marketplace.
 
 <!--- MC--->
 
@@ -944,11 +983,23 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
 
+<!--- MC-31292-->
+
+*  You can now successfully use PayPal Express to pay for an order when persistent checkout cart has been enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
+
 ### Performance
 
 <!--- MC-31499-->
 
 *  Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See [Private content](https://{{page.baseurl}}/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content).
+
+<!--- MC-31449-->
+
+*  The import of customer accounts has been refactored to improve import speed.
+
+<!--- MC-23383-->
+
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
 
 ### Product alert
 
@@ -958,7 +1009,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32873-->
 
-*  Product stock alert unsubscribe now works when a user’s session expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
+*  Product stock alert unsubscribe now works when a user’s session has expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
 
 <!--- MC-31979-->
 
@@ -1024,7 +1075,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31786-->
 
-*  Adminstrators with restricted permissions that include view permission for credit memos, invoices, and shipments can now view invoices and shipments from the Orders page as expected. Previously, when a restricted administrator tried to view an order, Magento displayed this error: Something went wrong with processing the default view and we have restored the filter to its original state.
+*  Adminstrators with restricted permissions that include view permission for credit memos, invoices, and shipments can now view invoices and shipments from the Orders page as expected. Previously, when a restricted administrator tried to view an order, Magento displayed this error: `Something went wrong with processing the default view and we have restored the filter to its original state`.
 
 <!--- MC-24023-->
 
@@ -1041,6 +1092,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  Magento now displays category trees as expected when you try to create or edit a Cart Price rule. Previously, selecting a category in the Condition section while creating or editing a rule resulted in JavaScript errors.
 
 ### Search
+
+*  Elasticsearch 7.6.x is now the default catalog search engine for Magento Commerce and Open Source. You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed, and Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
 <!--- MC-23753-->
 
@@ -1073,6 +1126,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32430-->
 
 *  Price sorting now works correctly for out-of-stock configurable products.
+
+<!--- MC-25176-->
+
+*  Magento no longer throws an exception when a customer uses the storefront  quick search in multi-website deployments.
 
 ### Shipping
 
@@ -1208,6 +1265,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  You can now navigate and modify wishlists from the cart in deployments running Internet Explorer 11.x. Previously, you could not create, edit, or move a wishlist in this environment.
 
+## Known issues
+
+**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHO 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. <!--- MC-34170-->
+
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1220,9 +1281,13 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
+{% include release-notes/engcomm-2-4-0-partner.md %}
+
 ### Individual contributor contributions
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
+{% include release-notes/engcomm-2-4-0-issues.md %}
 
 ### System requirements
 
