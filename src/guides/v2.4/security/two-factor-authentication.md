@@ -5,10 +5,11 @@ functional_areas:
   - Configuration
 ---
 
-Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento _Admin_ for all users and from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. 2FA is enabled by default for all Magento _Admin_ users, and cannot be disabled from the Magento _Admin_ or from the command line. 2FA is not available for storefront customer accounts.
+Magento Two-Factor Authentication (2FA) improves security by requiring two-step authentication to access the Magento _Admin_ UI from all devices. The extension supports multiple authenticators including Google Authenticator, Authy, Duo, and U2F keys. 2FA applies to Magento _Admin_ users only, and is not available for  storefront customer accounts.
 
 Two-Factor Authentication gives you the ability to:
 
+-  Specify which authentication providers are supported from the _Admin_.
 -  Manage and configure authenticator settings globally or per user account.
 -  Reset authenticators for users.
 
@@ -52,11 +53,12 @@ Administrators have options to:
 
 -  Review existing authenticators configured per user account
 -  Require specific authenticators
--  Reset authenticators to resolve access issues
+-  Reset or remove authenticators to resolve access issues
+-  Revoke access for devices to resolve access issues
 
 ## Install authenticator
 
-After configuring 2FA for your Magento instance, Magento _Admin_ users must install and configure an authenticator for their personal use. For complete instructions and workflows, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
+After configuring 2FA for your Magento instance, Magento _Admin_ users need to install and configure an authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
 
 ### Supported authenticators
 
@@ -110,9 +112,9 @@ bin/magento security:tfa:reset <user> <provider>
 ### Advanced emergency steps
 
 {:.bs-callout-warning}
-These advanced steps require a full understanding of database management and modifications. Exercise caution when making any changes directly to your database.
+These advanced steps require a full understanding of database management and modifications. We advise that you exercise caution when making any changes directly to your database.
 
-In your database, you can modify the following tables and values to affect 2FA.
+In your database, you can modify the following tables and values to affect and override 2FA.
 
 Table: `core_config_data`
 
