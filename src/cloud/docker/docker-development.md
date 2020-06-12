@@ -9,8 +9,6 @@ functional_areas:
 
 {{site.data.var.mcd-prod}} provides an option to deploy Magento to a Docker environment for development, test, and automation tasks.
 
-
-
 The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
 {%include cloud/note-docker-config-reference-link.md%}
