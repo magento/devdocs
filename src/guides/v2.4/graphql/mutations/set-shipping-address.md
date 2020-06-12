@@ -34,7 +34,8 @@ mutation {
             country_code: "US"
             telephone: "8675309"
             save_in_address_book: false
-          }
+          },
+          pickup_location_code: "txspeqs"
         }
       ]
     }
@@ -56,6 +57,7 @@ mutation {
           code
           label
         }
+        pickup_location_code
       }
     }
   }
@@ -88,7 +90,8 @@ mutation {
             "country": {
               "code": "US",
               "label": "US"
-            }
+            },
+            "pickup_location_code": "txspeqs"
           }
         ]
       }
@@ -119,6 +122,7 @@ Attribute |  Data Type | Description
 `address` | [CartAddressInput](#CartAddressInputShip) | The shipping address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
 `customer_notes` | String | Text provided by the customer
+`pickup_location_code` | String | The code of the in-store pickup location where the customer will receive the order.
 
 ## Output attributes
 

@@ -1,5 +1,6 @@
 ---
 layout: tutorial
+group: rest-api
 title: Step 3. Create stocks
 subtitle: Order processing with Inventory Management
 menu_title: Step 3. Create stocks

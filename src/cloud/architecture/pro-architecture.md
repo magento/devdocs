@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store.  Additionally, the **Master** environment provides a backup for current production code:
+Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store.
 
 -  **Integration**—Provides a single environment branch, and you can create one additional, environment branch. This allows for up to two _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
 -  **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
@@ -67,7 +67,7 @@ The following table summarizes the differences between environments:
 </table>
 
 {:.bs-callout-info}
-Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for development and testing {{site.data.var.ee}} projects in a local Cloud Docker environment. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
+Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for developing and testing {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
 
 ## Pro environment architecture
 
@@ -81,7 +81,7 @@ The Integration environment runs in a Linux container (LXC) on a grid of servers
 
 **Recommended use cases:**
 
-Integration environments are designed for limited testing and development before moving changes to Staging and Production. For example, you can use the Integration environment to complete tasks like the following:
+Integration environments are designed for limited testing and development before moving changes to Staging and Production. For example, you can use the Integration environment to complete the following tasks:
 
 -  Ensure that changes to continuous integration (CI) processes are Cloud compatible
 
@@ -101,11 +101,13 @@ For best performance in the Integration environment follow these best practices:
 
 -  The Integration environment architecture does not match the Production and Staging architecture
 
--  Do not use the Integration environment for performance testing or UAT
+-  Do not use the Integration environment for development testing, performance testing, or user acceptance testing (UAT)
 
 -  Do not use the Integration environment to test {{site.data.var.b2b}} functionality
 
 -  You cannot restore the Integration database from Production or Staging
+
+{% include cloud/note-enhanced-integration-envs-kb.md%}
 
 ## Staging environment {#cloud-arch-stage}
 
@@ -115,9 +117,9 @@ You cannot create a branch from the Staging environment branch. You must push co
 
 **Recommended use cases:**
 
-The Staging environment matches the Production architecture and is designed for UAT, content staging, and final review before moving features to the Production environment. For example, you can use the Staging envirionment to complete tasks like the following:
+The Staging environment matches the Production architecture and is designed for UAT, content staging, and final review before pushing features to the Production environment. For example, you can use the Staging environment to complete the following tasks:
 
--  Complete Regression testing against production data
+-  Regression testing against production data
 
 -  Performance testing with Fastly caching enabled
 
@@ -133,7 +135,7 @@ See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and 
 
 **Caveats:**
 
--  After launching the Production site, use the Staging environment primarily to test patches for Production critical bug fixes.
+-  After launching the Production site, use the Staging environment primarily to test patches for Production-critical bug fixes.
 
 -  You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
@@ -209,15 +211,14 @@ For example, you can add extra web servers to an existing cluster should the con
 
 ## Master environment
 
-On Pro plan projects, the Master branch provides an active backup for your Production environment.
-Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.
+On Pro plan projects, the Master branch provides an active PaaS environment with your Production environment. Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.
 
 **Caveats:**
 
 -  Do **not** create a branch from Master. Use the Integration environment branch to create new, active branches.
--  Do not use the Master environment for development or testing
+-  Do not use the Master environment for development, UAT or performance testing
 
-## Infrastructure software {#cloud-arch-software}
+## Software versions {#cloud-arch-software}
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
 
