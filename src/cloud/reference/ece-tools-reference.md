@@ -17,8 +17,6 @@ The following lists the available `{{site.data.var.ct}}` commands:
 php ./vendor/bin/ece-tools list
 ```
 
-Sample response:
-
 ```terminal
 Available commands:
   build                    Builds application
@@ -175,4 +173,3 @@ The `{{site.data.var.ct}}` package includes a dependency for the [magento/magent
 [Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
 [magento/magento-cloud-docker]: https://github.com/magento/magento-cloud-docker
 [magento/magento-cloud-patches]: https://github.com/magento/magento-cloud-patches
-
