@@ -77,16 +77,10 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-*  As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). The following Elasticsearch versions are supported:
+As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento supports Elasticsearch 7.6.x.
 
-   *  Elasticsearch 7.x
-
-   *  Elasticsearch 6.x (6.8 or higher is recommended)
-
-      {:.bs-callout-warning}
-      Magento no longer provides support for Elasticsearch [2.x and 5.x][] as they are End of Life.
-
-      Follow the instructions in [Change Elasticsearch Module][].
+{:.bs-callout-warning}
+Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].
 
 ## SSL
 
@@ -153,7 +147,6 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [php]: http://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
-[Change Elasticsearch Module]: {{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html
 [Composer]: https://glossary.magento.com/composer
 [Apache 2.4]: http://httpd.apache.org/download.cgi
 [`mod_rewrite`]: https://httpd.apache.org/docs/2.4/mod/mod_rewrite.html
@@ -172,5 +165,5 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [Redis]: {{page.baseurl}}/config-guide/redis/config-redis.html
 [Varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
 [Elasticsearch]: {{page.baseurl}}/install-gde/prereq/elasticsearch.html
-[2.x and 5.x]: https://www.elastic.co/support/eol
+[2.x, 5.x, and 6.x]: https://www.elastic.co/support/eol
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html
