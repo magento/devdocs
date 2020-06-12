@@ -10,7 +10,7 @@ functional_areas:
 The following containers provide the services required to build, deploy and run {{site.data.var.ee}} sites.
 
 {:.bs-callout-info}
-See [Service configuration build options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers) to customize container configuration when you build the Docker compose configuration file.
+See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-containers) to customize container configuration when you build the Docker compose configuration file.
 
 ## Database container
 
@@ -194,7 +194,7 @@ The Varnish container simulates Fastly and is useful for testing VCL snippets.
 
 The **Varnish** service is installed by default. When deployment completes, Magento is configured to use Varnish for full page caching (FPC) for Magento version 2.2.0 or later. The configuration process preserves any custom FPC configuration settings that already exist.
 
-In some cases, you might require a Docker environment without Varnish, for example to debug or run performance tests. You can generate the Docker Compose configuration file without Varnish by adding the `--no-varnish` option to the `ece-docker build:compose` command.
+In some cases, you might require a Docker environment without Varnish, for example to debug or run performance tests. You can generate the Docker Compose configuration without Varnish by adding the `--no-varnish` option to the `ece-docker build:compose` command.
 
 ```bash
 ./vendor/bin/ece-docker build:compose --mode="developer" --php 7.2 --no-varnish

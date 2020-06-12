@@ -24,7 +24,6 @@ To get started with local development you must have [Docker] installed on your w
 
 Magento Cloud Docker binds to port `80` on your host environment. If you have enabled the bundled web server on your workstation you must stop the service before launching the Docker environment.
 
-
 ```bash
 sudo apachectl stop
 ```
