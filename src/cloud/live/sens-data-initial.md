@@ -88,13 +88,13 @@ To create and transfer `config.php`:
 1. Create `config.php` on the integration server.
 
    ```bash
-   ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+   ssh <SSH URL> "php vendor/bin/ece-tools config:dump"
    ```
 
    For example,
 
    ```bash
-   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/ece-tools config:dump"
    ```
 
 1. If you haven't done so already, change to the project root directory.
@@ -197,7 +197,7 @@ To add additional configuration values in the Integration environment Magento Ad
 
 ### Run the config.php command {#regenerate}
 
-By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
+By running the command again for `php vendor/bin/ece-tools config:dump`, the new configuration is appended to the file.
 
 1. On your local system, find the integration server's SSH URL.
 
@@ -208,13 +208,13 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 1. Run the `config.php` creation command again on the Integration server.
 
    ```bash
-   ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"
+   ssh <SSH URL> "php vendor/bin/ece-tools config:dump"
    ```
 
    For example,
 
    ```bash
-   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/ece-tools config:dump"
    ```
 
 1. If you haven't done so already, change to the project root directory.

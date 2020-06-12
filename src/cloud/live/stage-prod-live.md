@@ -27,7 +27,7 @@ Now you are ready to develop and deploy:
 1. Fully test in the Staging environment including payment gateways, shipping, price rules, various products, and full customer and admin interactions.
 1. Finally, deploy to the Production `master` to complete testing, site launch steps, and start selling.
 
-For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html).
+For detailed information of the process, see [Starter Develop and Deploy Workflow]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html).
 
 ## Pro plan deployment {#pro}
 

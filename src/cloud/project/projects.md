@@ -71,7 +71,7 @@ When you first login, a list of projects you have access to displays. As an Acco
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html).
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html).
 
 ![Starter branch hierarchy]({{ site.baseurl }}/common/images/cloud/cloud_project-starter.png)
 
