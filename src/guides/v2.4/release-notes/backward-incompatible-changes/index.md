@@ -9,25 +9,14 @@ This page highlights backward incompatible changes between releases that have a 
 
 ### Elasticsearch
 
-In Magento 2.4.0, we removed support for two deprecated catalog search engines:
+MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
--  MySQL
--  Elasticsearch 2.x
-
-Merchants must [install and configure]{{ page.baseurl }}/install-gde/prereq/elasticsearch.html) a supported version of Elasticsearch before they upgrade to Magento 2.4.0. New installations require a connection to Elasticsearch to complete.
-
-{:.bs-calllout-warning}
-If you attempt to upgrade Magento before installing and configuring a supported search engine, Magento could go into an inconsistent state and the Admin will become inaccessible.
-
-The following Elasticsearch versions are supported:
-
--  Elasticsearch 7.x
--  Elasticsearch 6.x (6.8 or higher is recommended)
-
-Extension developers must update any module that depends on the unsupported search engines.
+You must [install and configure]{{ page.baseurl }}/install-gde/prereq/elasticsearch.html) Elasticsearch 7.6.x before upgrading to Magento 2.4.0. New installations require a connection to Elasticsearch to complete.
 
 {:.bs-callout-warning}
-Magento no longer provides support for Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol) as they are End of Life. If you are using ES2, follow the instructions in [Change Elasticsearch Module]({{ page.baseurl }}/config-guide/elasticsearch/es-downgrade.html) before upgrading.
+Magento does not support Elasticsearch 2.x, 5.x, and 6.x. If you attempt to upgrade Magento before installing and configuring a supported search engine, Magento could go into an inconsistent state and the Admin will become inaccessible.
+
+Extension developers must update any module that depends on the unsupported search engines.
 
 The changes with removing values from the `system.xml` file require eliminating ES2 support from the Admin UI. Other API classes were removed to clean up the code when we deprecated ES2 and ES5 in Magento 2.3.5.
 

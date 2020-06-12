@@ -8,18 +8,16 @@ functional_areas:
   - Setup
 ---
 
-As of version 2.4.0, Magento requires [Elasticsearch][] to be the catalog search engine. Refer to the following topics for details about installing Elasticsearch and initial configuration:
+As of version 2.4, Magento requires [Elasticsearch][] to be the catalog search engine. Refer to the following topics for details about installing Elasticsearch and initial configuration:
 
 *  [Elasticsearch prerequisites][]
 *  [Configure nginx and Elasticsearch][]
 *  [Configure Apache and Elasticsearch][]
-*  [Setup Wizard installation][]
 *  [Install the Magento software][] (command line interface)
 
 After you install and integrate Elasticsearch with Magento, you might need to perform additional maintenance:
 
 *  [Configure Elasticsearch stopwords][]
-*  [Change the Elasticsearch Client][]
 *  [Configure Magento to use Elasticsearch][]
 
 ## Additional resources {#es-resources}
@@ -34,6 +32,4 @@ For additional information, see the [Elasticsearch documentation][]
 [Elasticsearch]: https://www.elastic.co
 [Configure Magento to use Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-[Change the Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
-[Setup Wizard installation]: {{page.baseurl}}/install-gde/install/web/install-web.html
 [Install the Magento software]: {{page.baseurl}}/install-gde/install/cli/install-cli-install.html

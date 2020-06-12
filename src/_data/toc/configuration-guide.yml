@@ -322,9 +322,6 @@ pages:
 
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
-
-        - label: Change the Elasticsearch client
-          url: /config-guide/elasticsearch/es-downgrade.html
          
     - label: Message Queues
       url: /config-guide/mq/rabbitmq-overview.html
