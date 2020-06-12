@@ -23,10 +23,10 @@ As of Magento 2.4, all installations must be configured to use [Elasticsearch][]
 
 ## Supported versions {#es-spt-versions}
 
-Magento version 2.4 supports the following Elasticsearch versions:
+You must install and configure Elasticsearch 7.6.x before upgrading to Magento 2.4.0.
 
-*  Elasticsearch 7.x.x
-*  Elasticsearch 6.8.x
+{:.bs-callout-info}
+Magento does not support Elasticsearch 2.x, 5.x, and 6.x.
 
 ## Recommended configuration {#es-arch}
 
@@ -116,9 +116,7 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Elasticsearch clustering documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
 [Elasticsearch Ubuntu documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html
 [Configuring Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
-[End of Life]: https://www.elastic.co/support/eol
 [Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
 [Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
-[Change Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
 [Installing Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html

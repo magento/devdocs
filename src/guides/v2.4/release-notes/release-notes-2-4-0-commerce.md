@@ -139,21 +139,21 @@ PWA Studio 6.0.0 and 6.0.1 are supported on Magento 2.4.0. For information on th
 
 ### B2B
 
-**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. This new feature includes support for:
+**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. Features include:
 
 *  Self-service configuration of unique approval rules for each Company account
-*  Rule criteria that can be based on order amount, line items, or shipment cost with configurable thresholds
+*  Rule criteria that can be based on order amount, number of line items, or shipment cost with configurable thresholds
 *  Customizable permissions for all aspects of the feature
 *  Quick storefront view of Purchase Orders that require approval
 *  Full history log of actions that have been performed on each Purchase Order
-*  Email notification for relevant parties  during all steps in the approval process
+*  Email notification for relevant parties  during all steps in the approval process.
 
-**Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers. Customers  opt in to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). Additional features include:
+**Login as Customer**. This feature allows merchants to view the storefront on behalf of their customers. Customers  opt in to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). Features include:
 
-*  ACL that controls which administrators can log in to customer accounts can be configured on a website basis
+*  ACL to controls which administrators can log in to customer accounts can be configured on a per-website basis
 *  Compatibility with multiple websites and customer account scopes
 *  Orders placed on behalf of customers are logged in the storefront and Admin
-*  All sessions are destroyed following administrator logout, and administrator users cannot access customer passwords.
+*  All sessions are destroyed following administrator logout, and administrative users cannot access customer passwords.
 
 This release also includes multiple bug fixes. See [B2B Release Notes]({{page.baseurl}}/release-notes/b2b-release-notes.html).
 
@@ -252,7 +252,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-25036-->
 
-*  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript magnification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
+*  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript minification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
 
 ### Bundle products
 
@@ -772,11 +772,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Index
 
-<!--- MC-25236-->
-
-*  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
-
-<!--- MC-30779-->
+<!--- MC-25236 30779-->
 
 *  We have improved the performance of `indexer_update_all_views`. Indexing is now faster, inactive rules are no longer processed, and caches are cleared of entries for only changed products.
 
@@ -994,7 +990,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30131-->
 
-*  Selecting all products from the products list page using Elasticsearch now displays all products in the search results as expected. Previously, Magento displayed no search results when this search was run on a staging server.
+*  Selecting all products from the products list page using Elasticsearch now displays all products in the search results as expected. Previously, Magento displayed no search results.
 
 <!--- MC-30201-->
 
@@ -1063,12 +1059,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32402-->
 
 *  Magento no longer throws an error when you edit and save the `NOT LOGGED IN` customer group when B2B is installed.
-
-### Testing
-
-<!--- MC-30908-->
-
-*  Magento now lets you create CMS blocks with identical names if the blocks are assigned to different store views.
 
 ### Theme
 

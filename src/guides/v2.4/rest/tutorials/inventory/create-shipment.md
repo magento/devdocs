@@ -1,5 +1,6 @@
 ---
 layout: tutorial
+group: rest-api
 title: Step 12. Create a shipment
 menu_title: Step 12. Create a shipment
 subtitle: Order processing with Inventory Management

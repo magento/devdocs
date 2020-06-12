@@ -95,7 +95,7 @@ For comparison, each plan includes the following infrastructure features and sup
 
 ## Starter projects
 
-The [Starter plan architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) has four environments:
+The [Starter plan architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) has four environments:
 
 -  **Integration**—The Integration environment provides three testable environments. Each environment includes an active Git branch, database, web server, caching, some services, environment variables, and configurations.
 -  **Staging**—As code and extensions pass your tests, you can merge your Integration branch to a Staging environment, which becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, third-party services, environment variables, configurations, and services, such as Fastly and New Relic.
