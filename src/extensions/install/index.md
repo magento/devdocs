@@ -111,7 +111,7 @@ Module is disabled
 ```
 
 {:.bs-callout-info}
-The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
+The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension. If you are not sure what the extension name is, you can run `bin/magento module:status` and look for the extension under List of disabled modules.
 
 ## Enable the extension
 
