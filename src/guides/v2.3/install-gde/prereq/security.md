@@ -48,7 +48,7 @@ The preceding commands work only with the Apache web server. Because of the vari
 
 ### Enable inter-server communication
 
-If Apache and the database server are on the same host, you will still need to use the following command if you are planning to use integrations that use curl (ex. Paypal and USPS).
+If Apache and the database server are on the same host, you may still need to use the following command if you are planning to use integrations that use curl (ex. Paypal and USPS).
 
 To enable Apache to initiate a connection to another host with SELinux enabled:
 
