@@ -13,7 +13,7 @@ entries:
   type: New Topic
   date: June 12, 2020
   link: https://github.com/magento/devdocs/pull/7383
-- description: Added the [`pickupLocations` query](https://devdocs/magento.com/guides/v2.4/graphql/queries/pickup-locations.html),
+- description: Added the [`pickupLocations` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/pickup-locations.html),
     which returns a list of locations that customers can use to pick up their orders.
   versions: 2.4.x
   type: New Topic
