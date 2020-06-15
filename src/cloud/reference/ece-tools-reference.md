@@ -17,6 +17,44 @@ The following lists the available `{{site.data.var.ct}}` commands:
 php ./vendor/bin/ece-tools list
 ```
 
+```terminal
+Available commands:
+  build                    Builds application
+  db-dump                  Creates backup of database
+  deploy                   Deploys application
+  help                     Displays help for a command
+  list                     Lists commands
+  patch                    Applies custom patches
+  post-deploy              Performs after deploy operations.
+  run                      Execute scenario(s)
+ backup
+  backup:list              Shows the list of backup files
+  backup:restore           Restore important configuration files. Run backup:list to show the list of backup files
+ build
+  build:generate           Generates all necessary files for build stage
+  build:transfer           Transfer generated files into init directory
+ config
+  config:dump              [dump] Dump configuration for static content deployment.
+ cron
+  cron:disable             Disable all Magento cron processes and kills currently running
+  cron:enable              Enable Magento cron processes
+  cron:kill                Kill all Magento cron processes
+  cron:unlock              Unlock cron jobs that stuck in "running" state.
+ dev
+  dev:git:update-composer  Updates composer for deployment from git.
+ env
+  env:config:show          Display encoded cloud configuration environment variables
+ module
+  module:refresh           Refresh config to enable newly added modules
+ wizard
+  wizard:ideal-state       Verifies ideal state of configuration
+  wizard:master-slave      Verifies master-slave configuration
+  wizard:scd-on-build      Verifies SCD on build configuration
+  wizard:scd-on-demand     Verifies SCD on demand configuration
+  wizard:scd-on-deploy     Verifies SCD on deploy configuration
+```
+{:.no-copy}
+
 ## Build and deploy
 
 The `{{site.data.var.ct}}` package contains commands to perform operations for the build, deploy, and post-deploy stages of launching your {{site.data.var.ece}} application. For example, the `php ./vendor/bin/ece-tools build` command begins the application build process.
@@ -135,4 +173,3 @@ The `{{site.data.var.ct}}` package includes a dependency for the [magento/magent
 [Apply patches]: {{site.baseurl}}/cloud/project/project-patch.html
 [magento/magento-cloud-docker]: https://github.com/magento/magento-cloud-docker
 [magento/magento-cloud-patches]: https://github.com/magento/magento-cloud-patches
-
