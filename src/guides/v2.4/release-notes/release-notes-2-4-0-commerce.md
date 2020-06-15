@@ -317,7 +317,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-33230-->
 
-*  Magento now displays an informative message when a product in the minicart becomes out-of-stock before checkout. Once you’ve removed the out-of-stock item, Magento now displays the **Proceed to Checkout** button. Previously, Magento did not display this button.
+*  Magento now displays an informative message when a product in the mini cart becomes out-of-stock before checkout. Once you’ve removed the out-of-stock item, Magento now displays the **Proceed to Checkout** button. Previously, Magento did not display this button.
 
 <!--- MC-31391-->
 
@@ -353,7 +353,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29896-->
 
-*  Magento now displays product images in the minicart without distortion. Previously, Magento stretched the image in the minicart to fill the entire width and height of the image container.
+*  Magento now displays product images in the mini cart without distortion. Previously, Magento stretched the image in the mini cart to fill the entire width and height of the image container.
 
 <!--- MC-29866-->
 
@@ -393,7 +393,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29449-->
 
-*  The minicart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the minicart and Admin shopping cart displayed the original product price.
+*  The mini cart and Admin shopping cart (**Admin** > **Customers** > **Manage Shopping Cart**) now display correct product prices when a Catalog Price Rule is applied. Previously, the storefront shopping cart displayed the correct product price, but the mini cart and Admin shopping cart displayed the original product price.
 
 <!--- MC-30777-->
 
@@ -497,7 +497,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30650-->
 
-*  You can now successfully create a customer and associate it with a particular website using the Associate to Website dropdown menu on **Customers** > **All Customers** > **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multisite deployment, Magento displayed this error: `The store view is not in the associated website`.
+*  You can now successfully create a customer and associate it with a particular website using the Associate to Website dropdown menu on **Customers** > **All Customers** > **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multi-site deployment, Magento displayed this error: `The store view is not in the associated website`.
 
 <!--- MC-29946-->
 
@@ -1079,7 +1079,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-24023-->
 
-*  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [Githib-24365](https://github.com/magento/magento2/issues/24365)
+*  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [Github-24365](https://github.com/magento/magento2/issues/24365)
 
 ### Sales Rule
 
@@ -1105,7 +1105,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-25254-->
 
-*  Magento no longer requires a full search reindex in order for a new product attribute to be searchable on the storefront.
+*  Magento no longer requires a full search re-index in order for a new product attribute to be searchable on the storefront.
 
 <!--- MC-29545-->
 
