@@ -6,12 +6,6 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Mon Jun 15 09:55:11 2020
 entries:
-- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
-    before upgrading to Magento 2.4.0.
-  versions: 2.4.0
-  type: Major Update
-  date: June 12, 2020
-  link: https://github.com/magento/devdocs/pull/7394
 - description: Added two new REST endpoints that add support for the Inventory Management
     [In-store Pickup](https://devdocs.magento.com/guides/v2.4/rest/modules/inventory/in-store-pickup.html)
     feature.
