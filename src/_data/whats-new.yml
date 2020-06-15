@@ -13,29 +13,29 @@ entries:
   type: New Topic
   date: June 12, 2020
   link: https://github.com/magento/devdocs/pull/7383
-- description: Added the [`pickupLocations` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/pickup-locations.html),
-    which returns a list of locations that customers can use to pick up their orders.
-  versions: 2.4.x
-  type: New Topic
-  date: June 11, 2020
-  link: https://github.com/magento/devdocs/pull/7378
-- description: Added the Stale cache options section to [L2 caching in the Magento
-    application](https://devdocs.magento.com/guides/v2.4/config-guide/cache/two-level-cache.html).
-  versions: 2.4.0
-  type: Major Update
-  date: June 9, 2020
-  link: https://github.com/magento/devdocs/pull/7330
 - description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
     before upgrading to Magento 2.4.0.
   versions: 2.4.0
   type: Major Update
   date: June 12, 2020
   link: https://github.com/magento/devdocs/pull/7394
+- description: Added the [`pickupLocations` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/pickup-locations.html),
+    which returns a list of locations that customers can use to pick up their orders.
+  versions: 2.4.x
+  type: New Topic
+  date: June 11, 2020
+  link: https://github.com/magento/devdocs/pull/7378
 - description: Updated [Pro architecture](https://devdocs.magento.com/cloud/architecture/pro-architecture.html) topics to reflect new enhanced Integration environment provisioning and added recommendations for using Pro Staging and Integration environments.
   versions: 2.x
   type: Major Update
   date: June 10, 2020
   link: https://github.com/magento/devdocs/pull/7369
+- description: Added the Stale cache options section to [L2 caching in the Magento
+    application](https://devdocs.magento.com/guides/v2.4/config-guide/cache/two-level-cache.html).
+  versions: 2.4.0
+  type: Major Update
+  date: June 9, 2020
+  link: https://github.com/magento/devdocs/pull/7330
 - description: Removed the Extension Manager section of the Software Update Guide
     and redirected it to the [CLI installation](https://devdocs.magento.com/extensions/install/).
   versions: 2.3.x
