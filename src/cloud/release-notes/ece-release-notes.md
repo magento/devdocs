@@ -23,7 +23,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 -  {:.new}**Environment variable updates**–
 
    -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MAGECLOUD-3457-->
-   
+
 -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events.<!-- MCLOUD-5637-->
 
 ## v2002.1.0
