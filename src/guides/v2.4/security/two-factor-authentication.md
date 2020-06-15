@@ -43,7 +43,7 @@ Administrators have options to:
 
 ## Install authenticator
 
-After configuring 2FA for your Magento instance, Magento _Admin_ users need to install and configure an authenticator. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
+After selecting the supported 2FA authenticators for your Magento instance, each Magento _Admin_ user needs to install and configure one of the supported solutions. For complete instructions, see [Using Two-Factor Authentication](https://docs.magento.com/m2/ee/user_guide/stores/security-two-factor-authentication-use.html).
 
 ### Supported authenticators
 
