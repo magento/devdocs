@@ -502,7 +502,7 @@
 | Lukasz Bajsarowicz | [#27597](https://github.com/magento/magento2/pull/27597) | [171](https://github.com/magento/magento2/issues/171) |
 | Oleh Usik | [#27563](https://github.com/magento/magento2/pull/27563) | N/A |
 | Bartłomiej Szubert | [#27491](https://github.com/magento/magento2/pull/27491) | N/A |
-| Sergiy Vasiutynskyi | [#27343](https://github.com/magento/magento2/pull/27343) | [13851](https://github.com/magento/magento2/issues/13851) | 
+| Sergiy Vasiutynskyi | [#27343](https://github.com/magento/magento2/pull/27343) | [13851](https://github.com/magento/magento2/issues/13851) |
 | Lukasz Bajsarowicz | [#26988](https://github.com/magento/magento2/pull/26988) | [26986](https://github.com/magento/magento2/issues/26986) |
 | Tu Nguyen | [#26926](https://github.com/magento/magento2/pull/26926) | N/A |
 | Krzysztof Daniel | [#26036](https://github.com/magento/magento2/pull/26036) | N/A |

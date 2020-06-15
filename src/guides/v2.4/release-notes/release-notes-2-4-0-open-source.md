@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.0 Release Notes
 ---
 
-Magento Open Source 2.4.0 offers significant platform upgrades, substantial security changes, and performance improvements.
+Magento Commerce 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -35,7 +35,7 @@ This release includes over 30 security fixes and platform security improvements.
 
 #### Over 30 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP whitelisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues.
 
 Additional security enhancements include:
 
@@ -47,7 +47,7 @@ This release includes over 30 security fixes and platform security improvements.
 
 *  **Data rendering for UI data providers is now disabled by default**. This removes an opportunity for malicious users to execute arbitrary JavaScript. <!--- MC-17356-->
 
-*  **Content Security Policy (CSP) improvements**. `SecureHtmlRenderer` has been added to the Magento Framework and is available in `.phtml` templates to support the whitelisting of inline `style` and `script` tags. Inline scripts and styles are not typically permitted with the default CSP configuration. Although most core template files have been updated, some pages may display CSP violations. See [Content Security Policies]({{page.baseurl}}/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
+*  **Content Security Policy (CSP) improvements**. `SecureHtmlRenderer` has been added to the Magento Framework and is available in `.phtml` templates to support the allowlisting of inline `style` and `script` tags. Inline scripts and styles are not typically permitted with the default CSP configuration. Although most core template files have been updated, some pages may display CSP violations. See [Content Security Policies]({{page.baseurl}}/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -116,9 +116,9 @@ This release contains enhancements to core quality, which improve the quality of
 
 **Ability to license stock image previews from the Media Gallery**. Merchants can now find any Adobe Stock preview image in the Media Gallery, which reduces the number of steps required to license stock preview image.
 
-### Magento Media Gallery
+### New Media Gallery
 
-This replacement for the former Media Gallery offers a brand-new, searchable interface for Magento media assets. Administrators can now search, filter, and sort images up to 30x faster than they could in the earlier version of this feature. Merchants can use this tool to evaluate storefront image usage.
+This replacement for the former Media Gallery offers a new, searchable interface for Magento media assets. Administrators can now search, filter, and sort images up to 30x faster than they could in the earlier version of this feature. Merchants can use this tool to evaluate storefront image usage. Extension developers should be aware that extensions that were developed for the Media Gallery will not work as expected with the new Media Gallery.
 
 ### Inventory Management
 
@@ -172,7 +172,7 @@ This release includes these enhancements:
 
 This release includes:
 
-*  Updates to CSP whitelists
+*  Updates to CSP allowlists
 *  Ability to do multiple authorizations for a multi-item order
 *  Support for Japanese addresses
 
