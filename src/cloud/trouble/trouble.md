@@ -10,7 +10,6 @@ The troubleshooting topics help to resolve specific issues with your {{site.data
 
 -  Verify your [credentials]({{ site.baseurl }}/cloud/trouble/trouble_ce-creds.html)
 -  Review the [log files]({{ site.baseurl }}/cloud/live/stage-prod-test.html)
--  For help with deployment errors, check the [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html)
 -  Search for relevant content in the {{site.data.var.ece}} documentation
 -  Search the [Magento Help Center](https://support.magento.com/hc/en-us) troubleshooting articles, FAQ, and Tech resources
 

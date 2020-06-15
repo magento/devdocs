@@ -499,10 +499,6 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-        - label: Error log message reference
-          url: /cloud/reference/error-codes.html
-          versionless: true
-
     - label: Site launch
       url: /cloud/live/live.html
       versionless: true

@@ -23,7 +23,7 @@ You can track build and deploy actions in real-time using the terminal or the Pr
 If you are using external GitHub repositories, the log of operations does not display in the GitHub session. However, you can still follow activity in the interface for the external repository and the Project Web Interface. See [Integrations]({{ site.baseurl }}/cloud/integrations/cloud-integrations.html).
 
 {:.bs-callout-info}
-In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ site.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs) logs. For troubleshooting information, see the [Deployment error reference]({{site.baseurl}}/cloud/reference/error-codes.html).
+In Integration environments, you cannot view the deploy logs from the Project Web Interface. This feature is available only for Production and Staging environments. However, you can view logs for every phase of the deployment in any environment using the Magento [build and deploy]({{ site.baseurl }}/cloud/project/log-locations.html#build-and-deploy-logs) logs.
 
 ## Project configuration {#cloud-deploy-conf}
 
