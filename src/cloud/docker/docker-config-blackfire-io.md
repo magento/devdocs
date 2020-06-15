@@ -5,7 +5,6 @@ functional_areas:
 - Cloud
 - Setup
 - Configuration
-
 ---
 
 You can add Blackfire.io to your {{site.data.var.mcd-prod}} environment to fully automate performance testing.
