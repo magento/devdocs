@@ -175,43 +175,6 @@ Title | `payment/payflow_link/title` | <!-- ![Not EE-only]({{ site.baseurl }}/co
 Sort Order | `payment/payflow_link/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Payment Action | `payment/payflow_link/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
-### Braintree paths
-
-Name  | Config path | EE only? | Encrypted? |
-|--------------|--------------|--------------|--------------|
-Title | `payment/braintree/title` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Environment | `payment/braintree/environment` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment Action | `payment/braintree/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Enable this Solution | `payment/braintree/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Enable PayPal through Braintree | `payment/braintree_paypal/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Vault Enabled | `payment/braintree_cc_vault/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Vault Title | `payment/braintree_cc_vault/title` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Advanced Fraud Protection | `payment/braintree/fraudprotection` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Debug | `payment/braintree/debug` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-CVV Verification | `payment/braintree/useccv` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Credit Card Types | `payment/braintree/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Sort Order | `payment/braintree/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment from Applicable Countries | `payment/braintree/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment from Specific Countries | `payment/braintree/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Country Specific Credit Card Types | `payment/braintree/countrycreditcard` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Title | `payment/braintree_paypal/title` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Vault Enabled | `payment/braintree_paypal_vault/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Sort Order | `payment/braintree_paypal/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment Action | `payment/braintree_paypal/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment from Applicable Countries | `payment/braintree_paypal/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Payment from Specific Countries | `payment/braintree_paypal/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Require Customer's Billing Address | `payment/braintree_paypal/require_billing_address` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Allow to Edit Shipping Address Entered During Checkout on PayPal Side | `payment/braintree_paypal/allow_shipping_address_override` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Debug | `payment/braintree_paypal/debug` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Display on Shopping Cart | `payment/braintree_paypal/display_on_shopping_cart` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Skip Order Review | `payment/braintree_paypal/skip_order_review` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-3D Secure Verification | `payment/braintree/verify_3dsecure` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Threshold Amount | `payment/braintree/threshold_amount` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Verify for Applicable Countries | `payment/braintree/verify_all_countries` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Verify for Specific Countries | `payment/braintree/verify_specific_countries` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Name | `payment/braintree/descriptor_name` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Phone | `payment/braintree/descriptor_phone` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-
 ### Zero Subtotal Checkout paths
 
 Name  | Config path | EE only? | Encrypted? |
