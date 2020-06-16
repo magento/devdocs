@@ -110,7 +110,7 @@ By default, the extension is probably disabled:
 Module is disabled
 ```
 
-The extension name is in the format `<VendorName>_<ComponentName>`; this is a different format from the Composer name. Use this format to enable the extension. If you are unsure of the extension name, run
+The extension name is in the format `<VendorName>_<ComponentName>`; this is a different format from the Composer name. Use this format to enable the extension. If you are unsure of the extension name, run:
 
 ```bash
 bin/magento module:status
