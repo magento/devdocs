@@ -8,6 +8,8 @@ Attribute | Data type | Description
 `currentPage` | Int | Specifies which page of results to return. The default value is 1
 `pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20
 
+The `customers` query returns a [`CustomerOrders`](#customerOrders) object.
+
 The following example shows a fully-defined `orders` attribute:
 
 ```graphql
@@ -46,13 +48,22 @@ The `CustomerOrder` object contains details about each order returned by the `or
 
 Attribute | Data type | Description
 --- | --- | ---
+
+`billing_address` | [CustomerAddress](#customerAddressOutput) | The billing address for the order
+`carrier` | String | The shipping carrier for the order delivery
+`comments` | [CommentItem] | Comments on the order
+`credit_memos` | [CreditMemo] Contains a list of credit memos for the order
 `id` | ID! | Unique identifier for the order
 `invoices` | [Invoice]! | Contains a list of invoices for the order
+`items` | [OrderItemInterface] | An array containing the items purchased in this order
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
-`order_items` | [OrderItem]! | An array containing the items purchased in this order
+`payment_methods` | [PaymentMethod] | Payment details for the order
+`shipments` | [OrderShipment] Shipment list for the order
+`shipping_address` | [CustomerAddress](#customerAddressOutput) | shipping address for the order
+`shipping_method` | String | Shipping method for the order
 `status` | String! | The current status of the order
-`totals` | OrderTotal! | Contains details about the calculated totals for this order
+`total` | OrderTotal | Contains details about the calculated totals for this order
 
 **Deprecated attributes:**
 
@@ -65,6 +76,10 @@ Attribute | Data type | Description
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `order_number` | String! | Deprecated. Use the number `attribute` instead
 `status` | String  | Deprecated. Use the orders from customer order instead
+
+#### CommentItem attributes
+
+#### CreditMemo attributes
 
 #### Invoice attributes
 
