@@ -114,7 +114,7 @@ The extension name is in the format `<VendorName>_<ComponentName>`; this is a di
 
 ```bash
 bin/magento module:status
-``` 
+```
 
 and look for the extension under "List of disabled modules".
 
