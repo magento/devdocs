@@ -13,7 +13,7 @@ process payment actions between Magento Sales Management and payment processor.
 
 Add the [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration for [payment method](https://glossary.magento.com/payment-method) facade in your `%Vendor_Module%/etc/di.xml`.
 
-The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml#L10)):
+The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml)):
 
 ```xml
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
@@ -43,7 +43,7 @@ The following arguments must be configured (all arguments are mandatory):
 
 Let's look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions.
 
-For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml#L296)):
+For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml)):
 
 ```xml
 <virtualType name="BraintreeValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">

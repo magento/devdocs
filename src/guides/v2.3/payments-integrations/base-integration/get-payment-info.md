@@ -164,7 +164,7 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 </config>
 ```
 
-This [event](https://glossary.magento.com/event) will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
+This [event](https://glossary.magento.com/event) will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php) method call:
 
 ```php
 public function assignData(\Magento\Framework\DataObject $data)

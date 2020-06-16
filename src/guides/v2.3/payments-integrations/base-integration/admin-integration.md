@@ -35,5 +35,4 @@ The DI configuration for [authorization](https://glossary.magento.com/authorizat
 </virtualType>
 ```
 
-While the general [app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml#L140) does not
-have 3D secure verification builder for Admin panel, but [virtual type](https://glossary.magento.com/virtual-type) has the same name (object will be created according to context of area).
+While the general [app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml) does not have 3D secure verification builder for Admin panel, but [virtual type](https://glossary.magento.com/virtual-type) has the same name (object will be created according to context of area).
