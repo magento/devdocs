@@ -231,7 +231,7 @@ If your [module](https://glossary.magento.com/module) adds several payment metho
 
 In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Paypal module.
 
-The template for rendering the Paypal Express payment method in checkout is [`<Magento_Paypal_module_dir>/frontend/web/template/payment/paypal-express.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/template/payment/paypal-express.html).
+The template for rendering the Paypal Express payment method in checkout is [`<Magento_Paypal_module_dir>/frontend/web/template/payment/paypal-express.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Paypal/view/frontend/web/template/payment/paypal-express.html).
 
 ## Step 4: Declare the payment method in layout {#layout}
 

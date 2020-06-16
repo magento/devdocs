@@ -21,7 +21,7 @@ If your payment flow should be different for storefront and Admin panel, you can
 ## Example
 
 For example, on the storefront 3D Secure verification is integrated for the Braintree payment method, but it should not be available in Admin panel
-The DI configuration for [authorization](https://glossary.magento.com/authorization) request builder for [admin area]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/adminhtml/di.xml) looks like following:
+The DI configuration for [authorization](https://glossary.magento.com/authorization) request builder for [admin area]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/adminhtml/di.xml) looks like following:
 
 ```xml
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -35,5 +35,5 @@ The DI configuration for [authorization](https://glossary.magento.com/authorizat
 </virtualType>
 ```
 
-While the general [app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L140) does not
+While the general [app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml#L140) does not
 have 3D secure verification builder for Admin panel, but [virtual type](https://glossary.magento.com/virtual-type) has the same name (object will be created according to context of area).
