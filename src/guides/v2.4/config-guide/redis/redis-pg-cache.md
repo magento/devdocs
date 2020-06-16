@@ -117,8 +117,9 @@ As of Magento 2.3.5, it is recommended to use the extended Redis cache implement
 ## Redis preload feature
 
 Since Magento stores a lot of configuration data in the Redis cache, we can preload data that is reused between pages.
+To find keys that need to be preloaded, you need to analyze data that is transferred from Redis to Magento. We suggest to preload data that is loaded on every page, common examples are `SYSTEM_DEFAULT`, `EAV_ENTITY_TYPES`, `DB_IS_UP_TO_DATE`.
 Redis uses the `pipeline` in order to composite load requests.
-Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUGIN_LIST`,and `EAV_ENTITY_TYPES` should include the database prefix.
+Please note that keys should include the database prefix, e.g. if database prefix is `061_`, preload key will looks like `061_SYSTEM_DEFAULT`.
 
 ```php
 'cache' => [
