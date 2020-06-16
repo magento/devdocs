@@ -62,7 +62,7 @@ In most cases, customers fill all required information (credit card, expiration 
 So our [payment method](https://glossary.magento.com/payment-method) implementation should provide the ability to display and process payment form on checkout step.
 
 We can send to [backend](https://glossary.magento.com/backend) any specific data, just need to override `getData()` method in
-[payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
+[payment UI component]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
 
 ```javascript
 define(
@@ -164,7 +164,7 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 </config>
 ```
 
-This [event](https://glossary.magento.com/event) will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
+This [event](https://glossary.magento.com/event) will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php) method call:
 
 ```php
 public function assignData(\Magento\Framework\DataObject $data)
