@@ -13,17 +13,20 @@ functional_areas:
 Action | Command
 :----- | :------
 Build and start Docker environment | `docker-compose up -d`
-Build environment | `docker-compose run build cloud-build`
-Deploy environment | `docker-compose run deploy cloud-deploy`
-Run post-deploy hooks | `docker-compose run deploy cloud-post-deploy`
-Connect to CLI container | `docker-compose run deploy bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run deploy ece-command <command>`
-Use Magento command | `docker-compose run deploy magento-command <command>`
+Build environment | `docker-compose run --rm build cloud-build`
+Deploy environment | `docker-compose run --rm deploy cloud-deploy`
+Run post-deploy hooks | `docker-compose run --rm deploy cloud-post-deploy`
+Connect to CLI container | `docker-compose run --rm deploy bash`
+Use `{{site.data.var.ct}}` command | `docker-compose run --rm deploy ece-command <command>`
+Use Magento command | `docker-compose run --rm deploy magento-command <command>`
 Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
 Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
 List images | `docker-compose images`
 List containers and ports | `docker-compose ps` or `docker ps`
+
+{:.bs-callout-info}
+The `--rm` option automatically removes containers when they stop. This setting overrides any restart policy specified in the service configuration and prevents orphaned containers from consuming excess disk space. See [`docker-compose run`][] in the _Docker command-line reference_.
 
 ### Override configuration
 
@@ -91,8 +94,9 @@ Destroy, re-create, and start containers | `./bin/magento-docker up`
 
 <!--Link definitions-->
 
-[Docker Docs: Multiple Compose files]: https://docs.docker.com/compose/extends/#multiple-compose-files
-[Mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
-[File synchronization engine]: {{ site.baseurl }}/cloud/docker/docker-syncing-data.html
-[Service versions]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers
 [Configure Docker]: {{ site.baseurl }}/cloud/docker/docker-config.html
+[Docker Docs: Multiple Compose files]: https://docs.docker.com/compose/extends/#multiple-compose-files
+[`docker-compose run`]: https://docs.docker.com/compose/reference/run/
+[File synchronization engine]: {{ site.baseurl }}/cloud/docker/docker-syncing-data.html
+[Mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
+[Service versions]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers

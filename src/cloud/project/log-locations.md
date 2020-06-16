@@ -121,8 +121,6 @@ You can use the same CLI command to view a deploy log from the Staging environme
 magento-cloud log platform/<project_id>_stg/deploy
 ```
 
-{%include cloud/note-error-message-reference-ece-tools.md%}
-
 ## Application logs
 
 Similar to deploy logs, application logs are unique for each environment. For Pro Staging and Production environments, the Deploy, Post-deploy, and Cron logs are available only on the first node in the cluster.

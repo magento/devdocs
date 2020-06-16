@@ -157,7 +157,7 @@ The Redis container for {{site.data.var.mcd-prod}} is a standard container with 
 Connect to and run Redis commands using the redis-cli inside the container:
 
 ```bash
-docker-compose run redis redis-cli -h redis
+docker-compose run --rm redis redis-cli -h redis
 ```
 
 ## Selenium container

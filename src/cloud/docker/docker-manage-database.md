@@ -55,7 +55,7 @@ To connect to the database using Docker commands:
 1. Connect to the CLI container.
 
    ```bash
-   docker-compose run deploy bash
+   docker-compose run --rm deploy bash
    ```
 
 1. Connect to the database with a username and password.

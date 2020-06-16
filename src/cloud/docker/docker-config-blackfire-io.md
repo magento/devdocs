@@ -56,17 +56,17 @@ See [Blackfire.io for Magento Cloud][].
    -  Deploy Magento in the Docker container.
 
       ```bash
-      docker-compose run deploy cloud-deploy
+      docker-compose run --rm deploy cloud-deploy
       ```
 
       ```bash
-      docker-compose run deploy magento-command deploy:mode:set developer
+      docker-compose run --rm deploy magento-command deploy:mode:set developer
       ```
 
    -  Run post-deploy hooks.
 
       ```bash
-      docker-compose run deploy cloud-post-deploy
+      docker-compose run --rm deploy cloud-post-deploy
       ```
 
    {:.bs-callout-warning}
@@ -75,17 +75,17 @@ See [Blackfire.io for Magento Cloud][].
 1. Enable the Varnish cache for the Magento application.
 
    ```bash
-   docker-compose run deploy magento-command config:set  system/full_page_cache/caching_application 2 --lock-env
+   docker-compose run --rm deploy magento-command config:set  system/full_page_cache/caching_application 2 --lock-env
    ```
 
    ```bash
-   docker-compose run deploy magento-command setup:config:set  --http-cache-hosts=varnish
+   docker-compose run --rm deploy magento-command setup:config:set  --http-cache-hosts=varnish
    ```
 
 1. Clear the cache.
 
    ```bash
-   docker-compose run deploy magento-command cache:clean
+   docker-compose run --rm deploy magento-command cache:clean
    ```
 
 1. Make sure necessary containers are up and running.
