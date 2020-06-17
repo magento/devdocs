@@ -89,8 +89,8 @@ The following workflow outlines the PrivateLink enablement process for {{site.da
 
    -  **Customer** approves the request to complete the setup. See the Cloud platform documentation for instructions:
 
-      - For AWS, see [Accepting and rejecting interface endpoint connection requests][].
-      - For Azure, see [Manage connection requests][].
+      -  For AWS, see [Accepting and rejecting interface endpoint connection requests][].
+      -  For Azure, see [Manage connection requests][].
 
    -  **Customer** verifies the connection to and from the Magento VPC.
 
@@ -104,20 +104,19 @@ The customer VPC must have a the following resources available to support bidire
 
 If these resources are not available in the customer VPC, you must sign into your Cloud platform account to add the configuration.
 
-   -  Amazon VPC console– ```https://console.aws.amazon.com/vpc/```
-   -  Azure portal– ```https://portal.azure.com```
+-  Amazon VPC console– ```https://console.aws.amazon.com/vpc/```
+-  Azure portal– ```https://portal.azure.com```
 
-See your Cloud platform documentation for set up instructions:
+See the Cloud platform documentation for PrivateLink set up instructions:
 
-- **AWS PrivateLink topics**
+-  **AWS PrivateLink topics**
+   -  [Create a Network Load Balancer][]
+   -  [Create an endpoint service configuration][]
+   -  [Create an interface endpoint][]
 
-  -  [Create a Network Load Balancer][]
-  -  [Create an endpoint service configuration][]
-  -  [Create an interface endpoint][]
-
-- **Azure PrivateLink topics**
-  -  [Create a Load Balancer][]
-  -  [Azure PrivateLink workflow][]
+-  **Azure PrivateLink topics**
+   -  [Create a Load Balancer][]
+   -  [Azure PrivateLink workflow][]
 
 <!--Link definitions-->
 
