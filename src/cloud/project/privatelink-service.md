@@ -21,7 +21,7 @@ The PrivateLink service offering for {{site.data.var.ece}} projects includes the
 
 ## Limitations
 
--  Support for PrivateLink is available on Pro plan Production and Staging environments only. It is not available on local or integration environments, or on Starter plan projects.
+-  Support for PrivateLink is available on Pro plan Production and Staging environments only. It is not available on  Starter environments or Pro Integration environments.
 -  You cannot establish SSH connections using PrivateLink. Due to infrastructure requirements, Magento cannot open Port 22 for communication between VPCs.
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement. Customers have the option to purchase additional support from Magento Services.
 -  Customers are responsible for costs associated with managing their own VPC.
