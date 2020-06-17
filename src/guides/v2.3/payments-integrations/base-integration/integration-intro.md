@@ -17,7 +17,7 @@ You can create integration with other payment providers, using [Magento payment 
 The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information.
 
 The topics in this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this [payment method](https://glossary.magento.com/payment-method). For illustration, we use code
-samples from the [Braintree]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree) payment integration.
+samples from the [Braintree]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree) payment integration.
 
 To simplify the development of a new payment integration, Magento developed the [Payment sample module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway).
 It contains all required infrastructure and you can use it as starting point.

@@ -25,7 +25,7 @@ Customers | `<module>/frontend`
 
 The files placed in the `adminhtml` and `frontend` directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verification due to mis-entered data and similar reasons. The store's administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.
 
-The  [braintree_error_mapping.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/braintree_error_mapping.xml) file provides an example  collection:
+The  [braintree_error_mapping.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/braintree_error_mapping.xml) file provides an example  collection:
 
 ```xml
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/error_mapping.xsd">
@@ -102,7 +102,7 @@ A response validator verifies response codes from the payment gateway.
 It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
 It is the responsibility of a gateway command to call an appropriate service.
 
-For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
+For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
 Its implementation allows to retrieve errors codes from a response.
 
 First, create a new code provider. It can be a simple class with a public method that should return a list of error codes by the provided response:
