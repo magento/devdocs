@@ -6,16 +6,16 @@ functional_areas:
   - Setup
 ---
 
-Magento supports PrivateLink connections for Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and external systems. Both the Magento application and external systems must be accessible through private VPC endpoints hosted within the same Cloud region (AWS or Azure).
+Magento supports PrivateLink connections for Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and external systems. Both the Magento application and external systems must be accessible through private Virutal Private Cloud (VPC) endpoints hosted within the same Cloud region (AWS or Azure).
 
 ## Features and support
 
 The PrivateLink service offering for {{site.data.var.ece}} projects includes the following features and support:
 
--  A secure connection between a customer Virtual Private Cloud (VPC) and the Magento VPC within the same Cloud region.
+-  A secure connection between a customer VPC and the Magento VPC within the same Cloud region.
 -  Support for unidirectional or bidirectional communication between Magento and Customer VPCs.
 -  Service enablement–
-   -  Open communication on the necessary ports in the Magento Cloud environment
+   -  Open communication on the necessary ports in the {{site.data.var.ece}} Production or Staging environment
    -  Establish the initial connection between the customer and Magento VPCs
    -  Troubleshoot connection issues during enablement
 
@@ -32,7 +32,7 @@ The following network diagram shows the PrivateLink connection types available t
 
 ![PrivateLink network diagram]
 
-For Pro plan Production and Staging environments, you must specify the PrivateLink connection type required for your environments:
+You must determine the PrivateLink connection type required for your {{site.data.var.ece}} environments:
 
 -  **Unidirectional PrivateLink**–Choose this configuration to retrieve data securely from a Magento Commerce store.
 -  **Bidirectional PrivateLink**–Choose this configuration to establish secure connections to and from systems outside of the Magento Cloud environment. The bidirectional option requires two connections:
@@ -58,8 +58,8 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
    -  **Cloud region**–Provide the Cloud region where the account is hosted for verification purposes
    -  **Services and communication ports**–Magento must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
    -  **Magento Cloud Project ID**
-   -  **Connection Type**–Specify unidirectional or bidirectional for connection type
-   -  **Service Name**–Service name for the VPC service endpoint that Magento must connect to. Required only to enable bidirectional PrivateLink connections.
+   -  **Connection Type**–Specify unidirectional or  bidirectional for connection type
+   -  **Service Name**–Service name for the VPC service endpoint. Magento requires this only to enable bidirectional PrivateLink connections.
 
 ### Enablement workflow
 
@@ -104,8 +104,8 @@ The customer VPC must have a the following resources available to support bidire
 
 If these resources are not available in the customer VPC, you must sign into your Cloud platform account to add the configuration.
 
--  Amazon VPC console– ```https://console.aws.amazon.com/vpc/```
--  Azure portal– ```https://portal.azure.com```
+-  Amazon VPC console– `https://console.aws.amazon.com/vpc/`
+-  Azure portal– `https://portal.azure.com`
 
 See your Cloud platform documentation for PrivateLink set up instructions:
 
