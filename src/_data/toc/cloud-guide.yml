@@ -57,6 +57,10 @@ pages:
           url: /cloud/env/environments-ssh.html
           versionless: true
 
+        - label: PrivateLink
+          url: /cloud/project/privatelink-service.html
+          versionless: true
+
         - label: New Relic
           url: /cloud/project/new-relic.html
           versionless: true
