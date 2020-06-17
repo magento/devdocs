@@ -4,8 +4,56 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Thu May 28 15:55:01 2020
+updated: Mon Jun 15 09:55:11 2020
 entries:
+- description: Added two new REST endpoints that add support for the Inventory Management
+    [In-store Pickup](https://devdocs.magento.com/guides/v2.4/rest/modules/inventory/in-store-pickup.html)
+    feature.
+  versions: 2.4.0
+  type: New Topic
+  date: June 12, 2020
+  link: https://github.com/magento/devdocs/pull/7383
+- description: Clarified that you must install and configure [Elasticsearch 7.6.x](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+    before upgrading to Magento 2.4.0.
+  versions: 2.4.0
+  type: Major Update
+  date: June 12, 2020
+  link: https://github.com/magento/devdocs/pull/7394
+- description: Added the [`pickupLocations` query](https://devdocs.magento.com/guides/v2.4/graphql/queries/pickup-locations.html),
+    which returns a list of locations that customers can use to pick up their orders.
+  versions: 2.4.x
+  type: New Topic
+  date: June 11, 2020
+  link: https://github.com/magento/devdocs/pull/7378
+- description: Updated [Pro architecture](https://devdocs.magento.com/cloud/architecture/pro-architecture.html) topics to reflect new enhanced Integration environment provisioning and added recommendations for using Pro Staging and Integration environments.
+  versions: 2.x
+  type: Major Update
+  date: June 10, 2020
+  link: https://github.com/magento/devdocs/pull/7369
+- description: Added the Stale cache options section to [L2 caching in the Magento
+    application](https://devdocs.magento.com/guides/v2.4/config-guide/cache/two-level-cache.html).
+  versions: 2.4.0
+  type: Major Update
+  date: June 9, 2020
+  link: https://github.com/magento/devdocs/pull/7330
+- description: Removed the Extension Manager section of the Software Update Guide
+    and redirected it to the [CLI installation](https://devdocs.magento.com/extensions/install/).
+  versions: 2.3.x
+  type: Major Update
+  date: June 3, 2020
+  link: https://github.com/magento/devdocs/pull/7343
+- description: Added a brief note about a new known issue with the [Extension Manager
+    showing no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
+  versions: 2.3.x
+  type: Major Update
+  date: June 3, 2020
+  link: https://github.com/magento/devdocs/pull/7344
+- description: Published documentation deliverables for the Commerce and Open Source
+    2.4.0 beta releases.
+  versions: 2.4.0
+  type: Major Update
+  date: June 1, 2020
+  link: https://github.com/magento/devdocs/pull/7312
 - description: Added [release notes highlights](https://devdocs.magento.com/guides/v2.4/release-notes/bk-release-notes.html)
     to support the 2.4.0 beta release.
   versions: 2.4.0

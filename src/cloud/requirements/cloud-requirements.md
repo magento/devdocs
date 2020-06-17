@@ -75,28 +75,34 @@ For information about configuring the software versions to use in your implement
 
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*  Set up a [local development environment]({{ site.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *  Get [`repo.magento.com` credentials]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html) in your account.
+
 *  Get a [project invitation]({{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Account Owner or a super user.
 
-We walk you through everything you need to do and know.
+*  Set up a [local Docker development environment]({{ site.baseurl }}/cloud/docker/docker-development.html).
+
+   Magento Commerce Cloud environments are **Read Only**, including all Starter environments and all Pro Integration, Staging, and Production environments. In a local development environment, you can write and test code prior to pushing it to an Integration environment for further testing, followed by deployment to Staging and Production.
+
+   In the local development environment, you develop in branches to add modules, extensions, third-party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 
 ## Magento configurations {#cloud-req-test}
 
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
-*  For Pro, set the database [`auto_increment_increment` to 3]({{ site.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
-*  Test with the correct file permissions in [PRODUCTION mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode)
+*  For Pro, set the database [`auto_increment_increment` to 3]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers) when you generate the Docker configuration file
+
+*  Test with the correct file permissions in [Production mode]({{ site.baseurl }}/cloud/docker/docker-mode-production.html)
 
    Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 
-*  Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/css) enabled
+*  Test with minification for HTML, JavaScript, and CSS enabled. See [Static content deployment strategies]({{ site.baseurl }}/cloud/env/variables-global.html#skip_html_minification)
+
 *  Test with [Redis enabled for page cache and session cache]({{ site.baseurl }}/guides/v2.3/config-guide/redis/config-redis.html)
-*  Install and configure [Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html)
+
 *  Test using [Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
 
- {:.bs-callout-info}
-{{ site.data.var.ece }} supports production and maintenance modes only.
+  {:.bs-callout-info}
+  {{ site.data.var.ece }} supports Magento production and maintenance modes only.
 
 ## Development and testing {#cloud-req-devtest}
 
@@ -104,14 +110,14 @@ For development and testing, we recommend the following:
 
 *  Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
-   You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
+   You can enable and test individual features, new extensions, and third-party integration on different environments prior to merging into a single environment.
 
 *  Verify [`magento setup:install`]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ site.baseurl }}/guides/v2.3/comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode)
 
    You can set an environment variable or enter a CLI command for this specific mode.
 
 *  Fully [test your site]({{ site.baseurl }}/cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
-*  Verify the Fastly VCL is uploaded to Fastly
+*  [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) and verify that the Fastly VCL is uploaded
 *  Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
 *  For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
 

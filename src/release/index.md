@@ -32,7 +32,7 @@ The following table provides the dates for each patch scheduled for release in 2
 |----------------------|-------------|------------|
 | 2.3.4<br>2.3.3-p1    | January 14  | January 28 |
 | 2.3.5-p1<br>2.3.4-p2 | April 14    | April 28   |
-| 2.3.5-p2             | July 14     | July 28    |
+| 2.3.5-p2             | N/A         | July 28    |
 | 2.3.6                | October 1   | October 15 |
 
 _These dates are subject to change._
