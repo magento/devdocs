@@ -180,4 +180,4 @@ Add an environment-level user:
 
 [registered Magento account]: {{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#user-registration
 [your {{site.data.var.ece}} account]: https://account.magento.com/customer/account/login
-[snapshots]: {{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-project
+[snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
