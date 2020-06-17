@@ -10,13 +10,13 @@ Magento supports PrivateLink connections for Cloud customers to establish secure
 
 ## Features and support
 
-The AWS PrivateLink service for Magento Cloud customers includes the following features and support:
+The PrivateLink service offering for {{site.data.var.ece}} projects includes the following features and support:
 
 -  A secure connection between a customer Virtual Private Cloud (VPC) and the Magento VPC within the same Cloud region.
 -  Support for unidirectional or bidirectional communication between Magento and Customer VPCs.
 -  Service enablement–
    -  Open communication on the necessary ports in the Magento Cloud environment
-   -  Establish the initial connection between the customer and Magento VPC
+   -  Establish the initial connection between the customer and Magento VPCs
    -  Troubleshoot connection issues during enablement
 
 ## Limitations
@@ -40,7 +40,7 @@ For Pro plan Production and Staging environments, you must specify the PrivateLi
    -  A connection between the Magento VPC and your VPC
 
 {:.bs-callout-tip}
-Work with your network administrator and Magento CSM to determine the right PrivateLink connection type for your project. Also, see your Cloud platform PrivateLink documentation [AWS PrivateLink][], [Azure PrivateLink].
+Work with your network administrator and Magento CTA to determine the right PrivateLink connection type for your project. Also, see your Cloud platform PrivateLink documentation [AWS PrivateLink][], [Azure PrivateLink].
 
 ## Request PrivateLink enablement
 
@@ -49,10 +49,10 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
 
 ### Prerequisites
 
--  A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance
--  A VPC in the customer environment that hosts the services to connect via PrivateLink
--  For bidirectional PrivateLink connections, your must configure the PrivateLink service in your VPC environment before requesting Magento PrivateLink enablement. See [Customer set up for bidirectional PrivateLink communication][#customer-set-up-for-bidirectional-privateLink-communication].
--  Gather the following data required for PrivateLink enablement:
+-  {:.fix}A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance
+-  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink
+-  {:.fix}For bidirectional PrivateLink connections, your must configure the PrivateLink service in your VPC environment before requesting Magento PrivateLink enablement. See [Customer set up for bidirectional PrivateLink communication](#customer-set-up-for-bidirectional-privatelink-connections).
+-  {:.fix}Gather the following data required for PrivateLink enablement:
 
    -  **Cloud account number** (AWS or Azure)–Must be in the same region as the Magento Cloud instance
    -  **Cloud region**–Provide the Cloud region where the account is hosted for verification purposes
@@ -65,11 +65,11 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
 
 The following workflow outlines the PrivateLink enablement process for {{site.data.var.ece}}.
 
-1. **Customer** contacts their Magento CSM to request PrivateLink enablement, providing the customer data required for PrivateLink enablement.
+1. **Customer** contacts their Magento Customer Technical Advisor (CTA) to request PrivateLink enablement, providing the customer data required for PrivateLink enablement.
 
-1. After verifying the customer data, **the Magento CSM** submits a Magento Support ticket request for PrivateLink enablement.
+1. After verifying the customer data, **the Magento CTA** submits a Magento Support ticket request for PrivateLink enablement.
 
-   We use the Support ticket to coordinate communication between you, your CSM, the Magento infrastructure team, and the Magento Support team during the enablement process.
+   We use the Support ticket to coordinate communication between you, your CTA, the Magento infrastructure team, and the Magento Support team during the enablement process.
 
 1. **Magento infrastructure team** enables customer account access to the Magento VPC.
 
@@ -94,7 +94,7 @@ The following workflow outlines the PrivateLink enablement process for {{site.da
 
    -  **Customer** verifies the connection to and from the Magento VPC.
 
-## Customer set up for bidirectional PrivateLink communication
+## Customer set up for bidirectional PrivateLink connections
 
 The customer VPC must have a the following resources available to support bidirectional PrivateLink connections:
 
@@ -107,14 +107,14 @@ If these resources are not available in the customer VPC, you must sign into you
 -  Amazon VPC console– ```https://console.aws.amazon.com/vpc/```
 -  Azure portal– ```https://portal.azure.com```
 
-See the Cloud platform documentation for PrivateLink set up instructions:
+See your Cloud platform documentation for PrivateLink set up instructions:
 
--  **AWS PrivateLink topics**
+-  **AWS PrivateLink  documentation**
    -  [Create a Network Load Balancer][]
    -  [Create an endpoint service configuration][]
    -  [Create an interface endpoint][]
 
--  **Azure PrivateLink topics**
+-  **Azure PrivateLink documentation**
    -  [Create a Load Balancer][]
    -  [Azure PrivateLink workflow][]
 
