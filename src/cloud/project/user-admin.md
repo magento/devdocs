@@ -26,7 +26,7 @@ You cannot modify settings for the Account Owner user. If you need to change the
 
 You can assign the following project-level roles to users:
 
--  The **Super user** role grants administrator access to all environments. They can change settings and execute actions on any environment, including creating and restoring snapshots.
+-  The **Super user** role grants administrator access to all environments. They can change settings and execute actions on any environment, including creating and restoring [snapshots][].
 
 -  The **Project reader** role grants view access to all environments in a project. Users with this role cannot execute actions on any environment. However, you can update the configuration on each environment to add environment-level permission for users with Project reader access.
 
@@ -180,3 +180,4 @@ Add an environment-level user:
 
 [registered Magento account]: {{ site.baseurl }}/cloud/onboarding/onboarding-tasks.html#user-registration
 [your {{site.data.var.ece}} account]: https://account.magento.com/customer/account/login
+[snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
