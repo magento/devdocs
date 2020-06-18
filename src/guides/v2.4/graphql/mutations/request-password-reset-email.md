@@ -5,8 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `requestPasswordResetEmail` mutation triggers the password reset email by the provided email address. 
-
+The `requestPasswordResetEmail` mutation triggers the password reset email by the provided email address.
 <!-- Use it to initiate the process to reset the registered customer's password before calling the [resetPassword]({{page.baseurl}}/graphql/mutations/reset-password.html) mutation. -->
 
 When the customer clicks the `Set a New Password` button, Magento sends an email to the customer that contains a URL for resetting their password.
@@ -19,7 +18,7 @@ The URL has the following format:
 https://<MAGENTOSITE>/customer/account/createPassword/?token=gh80pkjGdsPyiXc0sUUXswX1uGN7crUr
 ```
 
-Use the value of the token in the `resetPassword` mutation,
+Use the value of the token in the `resetPassword` mutation.
 
 ## Syntax
 
