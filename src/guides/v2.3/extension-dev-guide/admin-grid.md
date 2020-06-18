@@ -70,8 +70,8 @@ Here are the required files to get started:
 
 ### 2. Define the Admin Grid
 
-The grid will display a list of available categories that start with a letter `b` or `B`.
-The grid will show three columns: `ID`, `category path` and `category name`. `ID` and `category path` are from the `catalog_category_entity` table. For the `name` values, joins are used.
+The grid displays a list of available categories that start with a letter `b` or `B`.
+This grid has three columns: `ID`, `category path` and `category name`. `ID` and `category path` are from the `catalog_category_entity` table. For the `name` values, joins are used.
 The page layout file is `app/code/Dev/Grid/view/adminhtml/layout/dev_grid_index_index.xml`:
 
 ```xml
@@ -210,7 +210,7 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
 
 This file consists of several sections:
 
-*  `dataSource` - references a class that is responsible for pulling out the requested data.
+*  `dataSource` - references the class that is responsible for getting the requested data.
 *  `listingToolbar` - where mass actions and filters are defined.
 *  `columns` - lists the columns to be displayed.
 
@@ -325,13 +325,13 @@ class AddAttributesToUiDataProvider
 ```
 
 This works with both enterprise and community versions by linking on different fields.
-In this case `LIKE` is case insensitive.
+In this case, `LIKE` is case insensitive.
 
 ### 4. Data Source Collection
 
-`dataSource` name `dev_grid_category_listing_data_source` is linked to `Dev\Grid\Ui\DataProvider\Category\Listing\Collection` collection in `app/code/Dev/Grid/etc/di.xml`.
+The `dataSource` name `dev_grid_category_listing_data_source` links to `Dev\Grid\Ui\DataProvider\Category\Listing\Collection` collection in `app/code/Dev/Grid/etc/di.xml`.
 
-`di.xml` also sets main table and resource model:
+`di.xml` also sets the main table and resource model:
 
 ```xml
  <virtualType name="DevGridCategoryCollection" type="Dev\Grid\Ui\DataProvider\Category\Listing\Collection">
@@ -365,7 +365,7 @@ class Collection extends SearchResult
 }
 ```
 
-It uses a custom collection file to add custom filters to map, and make grid filters work with the ID and name fields. Without `addFilterToMap` you will not be able to search within the `name` column.
+It uses a custom collection file to add custom filters to map, and makes the grid filters work with the ID and name fields. Without `addFilterToMap`, you will not be able to search within the `name` column.
 
 ### 5. Column Actions Class
 
@@ -493,7 +493,7 @@ class Index extends Action implements HttpGetActionInterface
 }
 ```
 
-The Ui grid file defines a custom route `dev_grid/category/massDelete` (mass delete) and it translates into `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
+The Ui grid file defines the custom route `dev_grid/category/massDelete` (mass delete) and translates into `app/code/Dev/Grid/Controller/Adminhtml/Category/MassDelete.php`:
 
 ```php
 namespace Dev\Grid\Controller\Adminhtml\Category;
