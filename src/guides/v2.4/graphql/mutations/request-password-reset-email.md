@@ -5,7 +5,21 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `requestPasswordResetEmail` mutation triggers the password reset email by the provided email address. Use it to initiate the process to reset the registered customer's password before calling the [resetPassword]({{page.baseurl}}/graphql/mutations/reset-password.html) mutation.
+The `requestPasswordResetEmail` mutation triggers the password reset email by the provided email address. 
+
+<!-- Use it to initiate the process to reset the registered customer's password before calling the [resetPassword]({{page.baseurl}}/graphql/mutations/reset-password.html) mutation. -->
+
+When the customer clicks the `Set a New Password` button, Magento sends an email to the customer that contains a URL for resetting their password.
+
+![Reset password email]({{ page.baseurl }}/graphql/images/reset-password-email.png)
+
+The URL has the following format:
+
+```text
+https://<MAGENTOSITE>/customer/account/createPassword/?token=gh80pkjGdsPyiXc0sUUXswX1uGN7crUr
+```
+
+Use the value of the token in the `resetPassword` mutation,
 
 ## Syntax
 
@@ -35,16 +49,6 @@ mutation {
 }
 ```
 
-Customer will receive an email that contains a URL for resetting their password.
-
-![Reset password email]({{ page.baseurl }}/graphql/images/reset-password-email.png)
-
-Example of `Set a New Password` button reset URL:
-
-```text
-https://<MAGENTOSITE>/customer/account/createPassword/?token=gh80pkjGdsPyiXc0sUUXswX1uGN7crUr
-```
-
 ## Input arguments
 
 You must specify the customer's email address in the `email` input argument.
@@ -69,4 +73,4 @@ Error | Description
 
 ## Related topics
 
--  [resetPassword mutation]({{page.baseurl}}/graphql/mutations/reset-password.html)
+<!-- [resetPassword mutation]({{page.baseurl}}/graphql/mutations/reset-password.html) -->
