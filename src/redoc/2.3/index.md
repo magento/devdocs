@@ -17,11 +17,11 @@ The list of Admin REST API endpoints contains a large number of endpoints and ta
 
 Each of the following links lead to a list of REST endpoints specific to a user type:
 
-*  [Admin REST API endpoints]({{site.baseurl}}/redoc/2.3/admin-rest-api.html) -  Available using an admin security token.
+*  [Admin REST API endpoints](https://magento.redoc.ly/2.3.5-admin/) -  Available using an admin security token.
 
-*  [Customer REST API endpoints]({{site.baseurl}}/redoc/2.3/customer-rest-api.html) -  Available using a customer security token
+*  [Customer REST API endpoints](https://magento.redoc.ly/2.3.5-customer/) -  Available using a customer security token
 
-*  [Guest REST API endpoints]({{site.baseurl}}/redoc/2.3/guest-rest-api.html) -  Available for anonymous users
+*  [Guest REST API endpoints](https://magento.redoc.ly/2.3.5-guest/) -  Available for anonymous users
 
 ## Asynchronous endpoints
 
