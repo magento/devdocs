@@ -42,22 +42,25 @@ Attribute | Data type | Description
 `page_info` | [SearchResultPageInfo](#SearchResultPageInfo) | An object that includes the `current_page`, `page_info`, and `page_size` values specified in the query
 `total_count` | Int | The total count of customer orders
 
-#### CustomerOrder attributes {#customerOrder}
+### CustomerOrder attributes {#customerOrder}
 
 The `CustomerOrder` object contains details about each order returned by the `orders` attribute.
 
 Attribute | Data type | Description
 --- | --- | ---
-
 `billing_address` | [CustomerAddress](#customerAddressOutput) | The billing address for the order
 `carrier` | String | The shipping carrier for the order delivery
 `comments` | [CommentItem] | Comments on the order
+`created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [CreditMemo] Contains a list of credit memos for the order
+`grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
 `id` | ID! | Unique identifier for the order
+`increment_id` | String | Deprecated. Use the `id` attribute instead
 `invoices` | [Invoice]! | Contains a list of invoices for the order
 `items` | [OrderItemInterface] | An array containing the items purchased in this order
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
+`order_number` | String! | Deprecated. Use the number `attribute` instead
 `payment_methods` | [PaymentMethod] | Payment details for the order
 `shipments` | [OrderShipment] Shipment list for the order
 `shipping_address` | [CustomerAddress](#customerAddressOutput) | shipping address for the order
@@ -65,80 +68,58 @@ Attribute | Data type | Description
 `status` | String! | The current status of the order
 `total` | OrderTotal | Contains details about the calculated totals for this order
 
-**Deprecated attributes:**
+The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query:
 
-These attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query:
+#### BundleInvoiceItem {#BundleInvoiceItem}
 
-Attribute | Data type | Description
---- | --- | ---
-`created_at` | String | Deprecated. Use the `order_date` attribute instead
-`grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
-`increment_id` | String | Deprecated. Use the `id` attribute instead
-`order_number` | String! | Deprecated. Use the number `attribute` instead
-`status` | String  | Deprecated. Use the orders from customer order instead
-
-#### CommentItem attributes
-
-#### CreditMemo attributes
-
-#### Invoice attributes
+The `BundleInvoiceItem` object implements the `InvoiceItemInterface`. It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
-id | Id! | The internal ID of the invoice
-items | [InvoiceItem]! | Contains details about invoiced products
-number | String! | The sequential number of the invoice
-total | InvoiceTotal! | 
+`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
-#### OrderItem attributes
+#### BundleOrderItem {#BundleOrderItem}
 
-The `OrderItem` data type implements the [`SalesItemInterface`](#SalesItemInterface). It also supports the following attribute:
+`bundle_options` | [ItemSelectedBundleOption] | A list of bundle options that are assigned to the bundle product
 
-Attribute | Data type | Description
---- | --- | ---
-`quantity_ordered` | Float | The number of units ordered for this item
+#### CommentItem attributes {#CommentItem}
 
-#### SalesItemInterface {#SalesItemInterface}
-
-`SalesItemInterface` is implemented by the `OrderItem` data type.
+The `CommentItem` object contains details about a comment applied an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`discounts` | [Discount] | Final discount information for the product
-`entered_options` | [SalesItemOption] | The entered option for the base product, such as a logo or image
-`parent_product_name` | String | Name of parent product, like configurable or bundle
-`parent_product_sku` | String | For configurable or bundle products, the SKU of the parent product
-`product_name` | String | Name of the base product
-`product_sale_price` | Money! | The sale price of the base product, including selected options
-`product_sku` | String! | SKU of the base product
-`product_url` | String | URL of the base product
-`selected_options` | [SalesItemOption] | The selected options for the base product, such as color or size
+`message` | String!| The text of the message
+`timestamp` | String! | The timestamp of the comment
 
-#### Discount attributes
+#### CreditMemo attributes {#CreditMemo}
 
-`amount` | Money! | The amount of the discount
-`label` | String! | A description of the discount
-
-#### SalesItemOption attributes
-
-The `SalesItemOption` data type contains the ID and value for the selected or entered options. 
+The `CreditMemo` object contains details about credit memos applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | String! | The name of the option
-`value` | String! | The value of the option
+`comments` | [CommentItem] | Comments on the credit memo
+`id` | ID! | The unique ID of the credit memo
+`items` | [CreditMemoItem] | An array containing details about refunded items
+`number` | String! | The sequential credit memo number
+`total` | CreditMemoTotal | Contains details about the total refunded amount
 
-#### OrderTotals attributes
+#### CreditMemoItem attributes {#CreditMemoItem}
 
-The `OrderTotals` data type contains details about the subtotals used to calculate the final price. It implements [`SalesTotalsInterface`](#SalesTotalsInterface). It also supports the following attribute:
+The `CreditMemoItem` object describes a specific credit memo.
 
 Attribute | Data type | Description
 --- | --- | ---
-`shipping_handling` | Money! | The shipping and handling costs for the order
+`discounts` | [Discount] | The final discount information for the base product, including discounts on options
+`id` | ID! | The unique ID of the credit memo item
+`order_item` | [OrderItemInterface](#OrderItemInterface) | Contains details about a refunded order item
+`product_name` | String | The name of the base product
+`product_sale_price` | Money! | The sale price for the base product, including selected options
+`product_sku` | String! | The SKU of the base product
+`quantity_invoiced` | Float | The number of invoiced items
 
-#### SalesTotalsInterface {#SalesTotalsInterface}
+#### CreditMemoTotal attributes {#CreditMemoTotal}
 
-`SalesTotalInterface` is implemented by the `OrderTotals` data type.
+The CreditMemoTotal object implements [`SalesTotalAmountInterface`](#SalesTotalAmountInterface). It does not define additional attributes.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -148,6 +129,168 @@ Attribute | Data type | Description
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
 `taxes` | [TaxItem]! | An array containing information about taxes on individual orders
 `total_tax` | Money! | The amount of tax applied to all orders
+
+#### Discount attributes {#Discount}
+
+The `Discount` object describes the amount of an item.
+
+Attribute | Data type | Description
+--- | --- | ---
+`amount` | Money! | The amount of the discount
+`label` | String! | A description of the discount
+
+#### Invoice attributes {#Invoice}
+
+The `Invoice` object provides details about a customer invoice.
+
+Attribute | Data type | Description
+--- | --- | ---
+`comments` | [CommentItem] | Comments on the invoice
+`id` | Id! | The internal ID of the invoice
+`items` | [InvoiceItemInterface]! | Contains details about invoiced products
+`number` | String! | The sequential number of the invoice
+`total` | InvoiceTotal! | Invoice total amount details
+
+#### InvoiceItem attributes {#InvoiceItem}
+
+The InvoiceItem object implements the `InvoiceItemInterface`. It does not add any attributes.
+
+#### InvoiceItemInterface {#InvoiceItemInterface}
+
+`InvoiceItemInterface` is implemented by the `InvoiceItem` and `BundleInvoiceItem` data types.
+
+Attribute | Data type | Description
+--- | --- | ---
+`discounts` | [Discount] | Contains information about the final discount amount for the base product, including discounts on options
+`id` | ID! | The unique ID of the invoice item
+`order_item` | OrderItemInterface | Contains details about an individual order item
+`product_name` | String | The name of the base product
+`product_sale_price` | Money! | The sale price for the base product including selected options
+`product_sku` | String! | The SKU of the base product
+`product_type` | String | The type of product, such as simple, configurable, or bundle
+`quantity_invoiced` | Float |The number of invoiced items
+
+#### InvoiceTotal attributes
+
+The InvoiceTotal object contains details about the totals of an invoice.
+
+Attribute | Data type | Description
+--- | --- | ---
+`base_grand_total` | Money! | The final base grand total amount in the base currency
+`discounts` | [Discount] | The applied discounts to the invoice
+`grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
+`shipping_handling` | ShippingHandling | Contains details about the shipping and handling costs for the invoice
+`subtotal` | Money! | The subtotal of the invoice, excluding shipping, discounts, and taxes
+`taxes` | [TaxItem]! | An array containing information about taxes on individual invoices
+`total_shipping` | Money! | The shipping amount for the invoice
+`total_tax` | Money! | The amount of tax applied to all invoices
+
+#### ItemSelectedBundleOption attributes {#ItemSelectedBundleOption}
+
+The ItemSelectedBundleOption object contains a list of bundle options that are assigned to the bundle product.
+
+Attribute | Data type | Description
+--- | --- | ---
+`id` | ID! | The unique identifier of the option
+`label` | String! | The label of the option
+`values` | [ItemSelectedBundleOptionValue!]! | A list of products that represent the values of the parent option
+
+#### ItemSelectedBundleOptionValue attributes {#ItemSelectedBundleOptionValue}
+
+Attribute | Data type | Description
+--- | --- | ---
+`id` | ID! | The unique identifier of the option
+`price` | Money! | The price of the child product
+`product_name` | String! | The name of the child product
+`product_sku` | String! | The SKU of the child product
+`quantity` | Float! | The number of selected items
+
+#### KeyValue attributes {#KeyValue}
+
+The `KeyValue` object defines key/attribute pairs that are passed to or from the payment processor.
+
+Attribute | Data type | Description
+--- | --- | ---
+`name` | String | The name part of the name/value pair
+`value` | String | The value part of the name/value pair
+
+#### OrderItem attributes {#OrderItem}
+
+The `OrderItem` data type implements the [`OrderItemInterface`](#OrderItemInterface).
+
+#### OrderItemInterface {#OrderItemInterface}
+
+`OrderItemInterface` is implemented by the `OrderItem` and `BundleOrderItem` data types.
+
+Attribute | Data type | Description
+--- | --- | ---
+`discounts` | [Discount] | Final discount information for the product
+`entered_options` | [OrderItemOption] | The entered option for the base product, such as a logo or image
+`id` | ID! | The unique identifier for the order item
+`product_name` | String | The name of the base product
+`product_sale_price` | Money! | The sale price of the base product, including selected options
+`product_sku` | String! | SKU of the base product
+`product_type` | String | The type of product, such as simple, configurable, or bundle
+`product_url_key` | String | URL key of the base product
+`quantity_canceled` | Float | The number of canceled items
+`quantity_invoiced` | Float | The number of invoiced items
+`quantity_ordered` | Float | The number of units ordered for this item
+`quantity_refunded` | Float | The number of refunded items
+`quantity_returned` | Float | The number of returned items
+`quantity_shipped` | Float | The number of shipped items
+`selected_options` | [OrderItemOption] | The selected options for the base product, such as color or size
+`status` | String | The status of the order item
+
+#### OrderItemOption attributes {#OrderItemOption}
+
+Attribute | Data type | Description
+--- | --- | ---
+`id` | String! | The name of the option
+`value` | String! | The value of the option
+
+#### OrderShipment attributes {#OrderShipment}
+
+Attribute | Data type | Description
+--- | --- | ---
+`comments` | [CommentItem] | Comments added to the shipment
+`id` | ID! | The unique ID of the shipment
+`items` | [ShipmentItem] | Contains items included in the shipment
+`number` | String! | The sequential credit shipment number
+`tracking` | [ShipmentTracking] | Contains shipment tracking detail
+
+#### OrderTotal attributes {#OrderTotal}
+
+The `OrderTotal` object contains details about the sales total amounts used to calculate the final price. It implements [`SalesTotalAmountInterface`](#SalesTotalAmountInterface). It also supports the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`base_grand_total` | Money! | The final base grand total amount in the base currency
+`discounts` | [Discount] | The applied discounts to the order
+`grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
+`shipping_handling` | Money! | The shipping and handling costs for the order
+`subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
+`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
+`total_shipping` | Money! | The for the order
+`total_tax` | Money! | The amount of tax applied to the order
+
+#### PaymentMethod attributes {#PaymentMethod}
+
+The PaymentMethod data type contains details about the payment method used to pay for the order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`additional_data` | [KeyValue] | Additional data per payment method type
+`name` | String! | The label that describes the payment method
+`type` | String! | The payment method code that indicates how the order was paid for
+
+#### SalesItemOption attributes {#SalesItemOption}
+
+The `SalesItemOption` data type contains the ID and value for the selected or entered options.
+
+Attribute | Data type | Description
+--- | --- | ---
+`id` | String! | The name of the option
+`value` | String! | The value of the option
 
 #### SearchResultPageInfo attributes {#SearchResultPageInfo}
 
@@ -159,10 +302,56 @@ Attribute | Data type | Description
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
 
-#### TaxItem
+#### ShipmentItem attributes {#ShipmentItem}
+
+Attribute | Data type | Description
+--- | --- | ---
+`id` | ID! @doc(description | The unique ID of the shipment item
+`order_item` | OrderItemInterface | The shipped order item
+`product_name` | String | The name of the base product
+`product_sale_price` | Money! | The sale price for the base product
+`product_sku` | String! | The SKU of the base product
+`quantity_shipped` | Float! | The number of shipped items
+
+#### ShipmentTracking attributes {#ShipmentTracking}
+
+The ShipmentTracking object contains the shipping carrier name and other tracking details.
+
+Attribute | Data type | Description
+--- | --- | ---
+`carrier` | String! | The shipping carrier for the order delivery
+`number` | String | The tracking number of the order shipment
+`title` | String! | The shipment tracking title
+
+#### ShippingHandling attributes {#ShippingHandling}
+
+The `ShippingHandling` object provides details about shipping and handling charges.
+
+Attribute | Data type | Description
+--- | --- | ---
+`amount_excluding_tax` | Money | The shipping amount, excluding tax
+`amount_including_tax` | Money | The shipping amount, including tax
+`discounts` | [Discount] | The applied discounts to the shipping
+`taxes` | [TaxItem] | Contains details about taxes applied for shipping
+`total_amount`| Money! | The total amount for shipping
+
+#### TaxItem attributes {#TaxItem}
 
 Attribute | Data type | Description
 --- | --- | ---
 `amount` | Money! | The amount of tax applied to an order
 `rate` | Float | The tax rate applied to an order
 `title` | String! | A label that describes the tax
+
+#### SalesTotalAmountInterface {#SalesTotalAmountInterface}
+
+`SalesTotalAmountInterface` is implemented by the `CreditMemoTotal`, `InvoiceTotal`, and `OrderTotal` data types.
+
+Attribute | Data type | Description
+--- | --- | ---
+`base_grand_total` | Money! | The final base grand total amount in the base currency
+`discounts` | [Discount] | The applied discounts to the order
+`grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
+`subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
+`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
+`total_tax` | Money! | The amount of tax applied to all orders
