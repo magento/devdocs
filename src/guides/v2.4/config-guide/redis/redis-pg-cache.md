@@ -149,7 +149,7 @@ Please note that keys should include the database prefix, e.g. if database prefi
 ]
 ```
 
-In case you are using the preload feature with the L2 cache, don't forget to add the ':hash' suffix to your keys, since L2 cache transfer only hash of the data but not data itself:
+In case you are using the preload feature with the L2 cache, do not forget to add the ':hash' suffix to your keys, since L2 cache only transfers the hash of the data, not the data itself:
 
 ```php
 'preload_keys' => [
