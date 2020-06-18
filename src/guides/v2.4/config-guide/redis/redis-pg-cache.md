@@ -77,7 +77,7 @@ As a result of the two example commands, Magento adds lines similar to the follo
 'cache' => [
     'frontend' => [
         'default' => [
-            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => '127.0.0.1',
                 'database' => '0',
@@ -85,7 +85,7 @@ As a result of the two example commands, Magento adds lines similar to the follo
             ],
         ],
         'page_cache' => [
-            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => '127.0.0.1',
                 'port' => '6379',
@@ -126,7 +126,7 @@ Please note that keys should include the database prefix, e.g. if database prefi
     'frontend' => [
         'default' => [
             'id_prefix' => '061_',
-            'backend' => 'Cm_Cache_Backend_Redis',
+            'backend' => 'Magento\\Framework\\Cache\\Backend\\Redis',
             'backend_options' => [
                 'server' => 'redis',
                 'database' => '0',
@@ -147,6 +147,17 @@ Please note that keys should include the database prefix, e.g. if database prefi
         ]
     ]
 ]
+```
+
+In case you are using the preload feature with the L2 cache, do not forget to add the ':hash' suffix to your keys, since L2 cache only transfers the hash of the data, not the data itself:
+
+```php
+'preload_keys' => [
+    '061_EAV_ENTITY_TYPES:hash',
+    '061_GLOBAL_PLUGIN_LIST:hash',
+    '061_DB_IS_UP_TO_DATE:hash',
+    '061_SYSTEM_DEFAULT:hash',
+],
 ```
 
 ## Parallel generation
