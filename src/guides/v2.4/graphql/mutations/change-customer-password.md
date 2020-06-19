@@ -55,6 +55,8 @@ Attribute |  Data Type | Description
 
 The `changeCustomerPassword` mutation returns the `customer` object.
 
+The following table lists the top-level attributes of the `customer` object. See the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) for complete details about this object.
+
 {% include graphql/customer-output-24.md %}
 
 ## Errors

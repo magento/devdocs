@@ -1,6 +1,12 @@
+{% if page.url contains 'graphql/queries/customer.html' %}
+{% assign customeraddress_text = '[CustomerAddress](#customerAddressOutput)' %}
+{% else %}
+{% assign customeraddress_text = 'CustomerAddress' %}
+{% endif %}
+
 Attribute |  Data Type | Description
 --- | --- | ---
-`addresses` | [CustomerAddress](#customerAddressOutput)  | An array containing the customer's shipping and billing addresses
+`addresses` | {{ customeraddress_text }}  | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
 `date_of_birth` | String | The customer's date of birth
 `default_billing` | String | The ID assigned to the billing address
@@ -19,7 +25,3 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 `wishlist` | Wishlist! | Contains the contents of the customer's wish lists
-
-{% include graphql/customer-address-output-24.md %}
-
-{% include graphql/customer-orders-output.md %}

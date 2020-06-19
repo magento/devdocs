@@ -1,4 +1,3 @@
-### orders input attributes {#orders}
 
 The `orders` attribute defines a filter that returns details about one or more of the logged-in customer's previous orders. It takes the following attributes as input:
 
@@ -22,7 +21,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `number` | FilterStringTypeInput | Filter orders by order number
 
-#### FilterStringTypeInput attributes
+#### FilterStringTypeInput attributes {#FilterStringTypeInput}
 
 The `FilterStringTypeInput` object defines a filter for an input string.
 
@@ -50,23 +49,23 @@ Attribute | Data type | Description
 --- | --- | ---
 `billing_address` | [CustomerAddress](#customerAddressOutput) | The billing address for the order
 `carrier` | String | The shipping carrier for the order delivery
-`comments` | [CommentItem] | Comments on the order
+`comments` | [[CommentItem](#CommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
-`credit_memos` | [CreditMemo] Contains a list of credit memos for the order
+`credit_memos` | [[CreditMemo](#CreditMemo)] Contains a list of credit memos for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
-`invoices` | [Invoice]! | Contains a list of invoices for the order
-`items` | [OrderItemInterface] | An array containing the items purchased in this order
+`invoices` | [[Invoice](#Invoice)]! | Contains a list of invoices for the order
+`items` | [[OrderItemInterface](#OrderItemInterface)] | An array containing the items purchased in this order
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the number `attribute` instead
-`payment_methods` | [PaymentMethod] | Payment details for the order
-`shipments` | [OrderShipment] Shipment list for the order
+`payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
+`shipments` | [[OrderShipment](#OrderShipment)] Shipment list for the order
 `shipping_address` | [CustomerAddress](#customerAddressOutput) | shipping address for the order
 `shipping_method` | String | Shipping method for the order
 `status` | String! | The current status of the order
-`total` | OrderTotal | Contains details about the calculated totals for this order
+`total` | [OrderTotal](#OrderTotal) | Contains details about the calculated totals for this order
 
 The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query:
 
@@ -80,7 +79,7 @@ Attribute | Data type | Description
 
 #### BundleOrderItem {#BundleOrderItem}
 
-`bundle_options` | [ItemSelectedBundleOption] | A list of bundle options that are assigned to the bundle product
+`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
 #### CommentItem attributes {#CommentItem}
 
@@ -97,11 +96,11 @@ The `CreditMemo` object contains details about credit memos applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [CommentItem] | Comments on the credit memo
+`comments` | [[CommentItem](#CommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
-`items` | [CreditMemoItem] | An array containing details about refunded items
+`items` | [[CreditMemoItem](CreditMemoItem)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
-`total` | CreditMemoTotal | Contains details about the total refunded amount
+`total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
 #### CreditMemoItem attributes {#CreditMemoItem}
 
@@ -127,7 +126,7 @@ Attribute | Data type | Description
 `discounts` | [Discount] | The applied discounts to the order
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
-`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
+`taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_tax` | Money! | The amount of tax applied to all orders
 
 #### Discount attributes {#Discount}
@@ -145,11 +144,11 @@ The `Invoice` object provides details about a customer invoice.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [CommentItem] | Comments on the invoice
+`comments` | [[CommentItem](#CommentItem)] | Comments on the invoice
 `id` | Id! | The internal ID of the invoice
-`items` | [InvoiceItemInterface]! | Contains details about invoiced products
+`items` | [[InvoiceItemInterface](#InvoiceItemInterface)]! | Contains details about invoiced products
 `number` | String! | The sequential number of the invoice
-`total` | InvoiceTotal! | Invoice total amount details
+`total` | [InvoiceTotal](#InvoiceTotal)! | Invoice total amount details
 
 #### InvoiceItem attributes {#InvoiceItem}
 
@@ -181,7 +180,7 @@ Attribute | Data type | Description
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
 `shipping_handling` | ShippingHandling | Contains details about the shipping and handling costs for the invoice
 `subtotal` | Money! | The subtotal of the invoice, excluding shipping, discounts, and taxes
-`taxes` | [TaxItem]! | An array containing information about taxes on individual invoices
+`taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual invoices
 `total_shipping` | Money! | The shipping amount for the invoice
 `total_tax` | Money! | The amount of tax applied to all invoices
 
@@ -193,7 +192,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | The unique identifier of the option
 `label` | String! | The label of the option
-`values` | [ItemSelectedBundleOptionValue!]! | A list of products that represent the values of the parent option
+`values` | [[ItemSelectedBundleOptionValue!](#ItemSelectedBundleOptionValue)]! | A list of products that represent the values of the parent option
 
 #### ItemSelectedBundleOptionValue attributes {#ItemSelectedBundleOptionValue}
 
@@ -225,7 +224,7 @@ The `OrderItem` data type implements the [`OrderItemInterface`](#OrderItemInterf
 Attribute | Data type | Description
 --- | --- | ---
 `discounts` | [Discount] | Final discount information for the product
-`entered_options` | [OrderItemOption] | The entered option for the base product, such as a logo or image
+`entered_options` | [[OrderItemOption](#OrderItemOption)] | The entered option for the base product, such as a logo or image
 `id` | ID! | The unique identifier for the order item
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price of the base product, including selected options
@@ -252,11 +251,11 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [CommentItem] | Comments added to the shipment
+`comments` | [[CommentItem](#CommentItem)] | Comments added to the shipment
 `id` | ID! | The unique ID of the shipment
-`items` | [ShipmentItem] | Contains items included in the shipment
+`items` | [[ShipmentItem](#ShipmentItem)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
-`tracking` | [ShipmentTracking] | Contains shipment tracking detail
+`tracking` | [[ShipmentTracking](#ShipmentTracking)] | Contains shipment tracking detail
 
 #### OrderTotal attributes {#OrderTotal}
 
@@ -269,7 +268,7 @@ Attribute | Data type | Description
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
 `shipping_handling` | Money! | The shipping and handling costs for the order
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
-`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
+`taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_shipping` | Money! | The for the order
 `total_tax` | Money! | The amount of tax applied to the order
 
@@ -279,7 +278,7 @@ The PaymentMethod data type contains details about the payment method used to pa
 
 Attribute | Data type | Description
 --- | --- | ---
-`additional_data` | [KeyValue] | Additional data per payment method type
+`additional_data` | [[KeyValue]{#KeyValue}] | Additional data per payment method type
 `name` | String! | The label that describes the payment method
 `type` | String! | The payment method code that indicates how the order was paid for
 
@@ -306,8 +305,8 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | ID! @doc(description | The unique ID of the shipment item
-`order_item` | OrderItemInterface | The shipped order item
+`id` | ID! | The unique ID of the shipment item
+`order_item` | [OrderItemInterface]{#OrderItemInterface} | The shipped order item
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price for the base product
 `product_sku` | String! | The SKU of the base product
@@ -332,7 +331,7 @@ Attribute | Data type | Description
 `amount_excluding_tax` | Money | The shipping amount, excluding tax
 `amount_including_tax` | Money | The shipping amount, including tax
 `discounts` | [Discount] | The applied discounts to the shipping
-`taxes` | [TaxItem] | Contains details about taxes applied for shipping
+`taxes` | [[TaxItem](#TaxItem)] | Contains details about taxes applied for shipping
 `total_amount`| Money! | The total amount for shipping
 
 #### TaxItem attributes {#TaxItem}
@@ -342,16 +341,3 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of tax applied to an order
 `rate` | Float | The tax rate applied to an order
 `title` | String! | A label that describes the tax
-
-#### SalesTotalAmountInterface {#SalesTotalAmountInterface}
-
-`SalesTotalAmountInterface` is implemented by the `CreditMemoTotal`, `InvoiceTotal`, and `OrderTotal` data types.
-
-Attribute | Data type | Description
---- | --- | ---
-`base_grand_total` | Money! | The final base grand total amount in the base currency
-`discounts` | [Discount] | The applied discounts to the order
-`grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
-`subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
-`taxes` | [TaxItem]! | An array containing information about taxes on individual orders
-`total_tax` | Money! | The amount of tax applied to all orders
