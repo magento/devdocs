@@ -5,7 +5,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `subscribeEmailToNewsletter` mutation allows subscription for guests and registered customers.
+The `subscribeEmailToNewsletter` mutation allows guests and registered customers to sign up to receive newsletters.
 
 ## Syntax
 
@@ -13,7 +13,7 @@ The `subscribeEmailToNewsletter` mutation allows subscription for guests and reg
 
 ## Example usage
 
-The following call adds an email into a newsletter subscription.
+The following call subscribes an email to the store's newsletter.
 
 **Request:**
 
@@ -41,7 +41,7 @@ mutation {
 
 ## Input arguments
 
-Mutation contains a required `email` parameter that specifies an email address that should be added into a newsletter subscription.
+The mutation contains a required `email` parameter that specifies the email address to be added into a newsletter subscription.
 
 ## Output attributes
 
@@ -57,10 +57,10 @@ The `SubscriptionStatusesEnum` is a predefined set of possible subscription stat
 
 Value | Description
 --- | ---
-`NOT_ACTIVE` | Subscription requires a confirmation. Confirmation email has been sent to specified email address to confirm the subscription.
-`SUBSCRIBED` | Email address is subscribed.
-`UNSUBSCRIBED` | Email address is unsubscribed.
-`UNCONFIRMED` | Specified email ties to customer which did not confirm a required customer registration.
+`NOT_ACTIVE` | The subscription requires a confirmation. A confirmation email has been sent to specified email address to confirm the subscription.
+`SUBSCRIBED` | The email address is subscribed.
+`UNSUBSCRIBED` | The email address is unsubscribed.
+`UNCONFIRMED` | The specified email is that of a customer who did not previously confirm a required customer registration.
 
 The `subscribeEmailToNewsletter` mutation for the `status` field may return only the following statuses:
 
@@ -74,6 +74,6 @@ Error | Description
 `Cannot create a newsletter subscription.` | A general error message that appears on some internal system errors. The original error is logged and can be found in the Magento logs.
 `Enter a valid email address.` | The value provided in the `email` argument has an invalid format.
 `Guests can not subscribe to the newsletter. You must create an account to subscribe.` | Guest subscription is disabled. Go to **Stores** > **Configuration** > **Customers** > **Newsletter** > **Subscription Options** > **Allow Guest Subscription** in the Admin to adjust the setting.
-`The account sign-in was incorrect or your account is disabled temporarily.` | The email address provided in the `email` argument ties to customer account pending confirmation.
+`The account sign-in was incorrect or your account is disabled temporarily.` | The email address provided in the `email` argument is that of a customer account pending confirmation.
 `This email address is already subscribed.` | The email address provided in the `email` argument is already subscribed.
-`You must specify an email address to subscribe to a newsletter.`| The empty value is provided in the `email` argument.
+`You must specify an email address to subscribe to a newsletter.`| The `email` argument is empty.
