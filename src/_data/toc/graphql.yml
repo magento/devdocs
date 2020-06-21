@@ -213,6 +213,10 @@ pages:
           url: /graphql/mutations/reorder-items.html
           exclude_versions: ["2.3"]
 
+        - label: requestPasswordResetEmail mutation
+          url: /graphql/mutations/request-password-reset-email.html
+          exclude_versions: ["2.3"]
+
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
