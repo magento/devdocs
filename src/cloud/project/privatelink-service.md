@@ -32,7 +32,7 @@ The following network diagram shows the PrivateLink connection types available t
 
 ![PrivateLink network diagram]
 
-For Pro plan Production and Staging environments, you must specify the PrivateLink connection type required for your environments:
+You must determine the PrivateLink connection type required for your {{site.data.var.ece}} environments:
 
 -  **Unidirectional PrivateLink**–Choose this configuration to retrieve data securely from a Magento Commerce store.
 -  **Bidirectional PrivateLink**–Choose this configuration to establish secure connections to and from systems outside of the {{site.data.var.ece}} environment. The bidirectional option requires two connections:
@@ -173,8 +173,8 @@ The customer VPC must have the following resources available to support bidirect
 
 If these resources are not available in the customer VPC, you must sign into your Cloud platform account to add the configuration.
 
--  Amazon VPC console– ```https://console.aws.amazon.com/vpc/```
--  Azure portal– ```https://portal.azure.com```
+-  Amazon VPC console– `https://console.aws.amazon.com/vpc/`
+-  Azure portal– `https://portal.azure.com`
 
 See your Cloud platform documentation for PrivateLink set up instructions:
 
