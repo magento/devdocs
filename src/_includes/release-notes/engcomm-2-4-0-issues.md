@@ -105,7 +105,7 @@
 | Gihovani Filipp Pereira Demétrio | [#26157](https://github.com/magento/magento2/pull/26157) | N/A |
 | Ravi Chandra | [#26160](https://github.com/magento/magento2/pull/26160) | [26155](https://github.com/magento/magento2/issues/26155) |
 | Eduard Chitoraga | [#26154](https://github.com/magento/magento2/pull/26154) | N/A |
-| Eduard Chitoraga | [#26150](https://github.com/magento/magento2/pull//26150) | [#26148](https://github.com/magento/magento2/pull/26148) |  |
+| Eduard Chitoraga | [#26150](https://github.com/magento/magento2/pull/26150) | [#26148](https://github.com/magento/magento2/pull/26148) |  |
 | Eden Duong | [#26140](https://github.com/magento/magento2/pull/26140) | N/A |
 | Sathish Subramanian | [#26136](https://github.com/magento/magento2/pull/26136) | N/A |
 | Lukasz Bajsarowicz | [#26128](https://github.com/magento/magento2/pull/26128) | N/A |
