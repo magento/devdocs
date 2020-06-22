@@ -13,7 +13,7 @@ Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.
 
 {:.bs-callout-info}
 
-The package names of security-only releases are typically appended with -p1. However, we could not avoid deviating from these naming conventions with Magento 2.3.5, which in turn has had a temporary ripple effect on the subsequent security package names. Specifically, the full-feature Magento 2.3.5 release is Magento 2.3.5-p1. The security-only release that we will release when Magento 2.4.0 GAs will be Magento 2.3.5-p2. We hope to return to the usual naming conventions subsequently.
+The package names of security-only releases are typically appended with -p1. However, we could not avoid deviating from these naming conventions with Magento 2.3.5, which in turn has had a temporary ripple effect on the subsequent security package names. Specifically, the full-feature Magento 2.3.5 release is Magento 2.3.5-p1. The security-only release that we will release when Magento 2.4.0 GAs will be Magento 2.3.5-p2. We hope to return to the usual naming conventions in future releases.
 
 ## Security-only patch available
 
@@ -236,11 +236,25 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
    *  Session data is saved to `var/session/`
    *  No error or exceptions are logged.
 
+<!--- ENGCOM-6247-->
+
+*  Composer dependencies have been updated to implement Redis key expiry, which has improved Redis performance. _Fix submitted by toxix in pull request [25488](https://github.com/magento/magento2/pull/25488)_. [GitHub-25487](https://github.com/magento/magento2/issues/25487)
+
+### Adobe Stock Integration
+
+<!--- ENGCOM-6507-->
+
+*  CSS styles have been added to the Adobe Stock image display to support highlighting the selected image.  _Fix submitted by Serhiy Zhovnir in pull request [25864](https://github.com/magento/magento2/pull/25864)_. [GitHub-761](https://github.com/magento/magento2/issues/761)
+
 ### Backend
 
 <!--- MC-25036-->
 
 *  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript minification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
+
+<!--- ENGCOM-6433-->
+
+*  Administrators can now log into the Admin as expected after an admin account with limited privileges has been created. Previously,  the Admin was not accessible. Instead, users were redirected to the storefront with a 404 error. _Fix submitted by Eden Duong in pull request [25909](https://github.com/magento/magento2/pull/25909)_. [GitHub-25881](https://github.com/magento/magento2/issues/25881)
 
 ### Bundle products
 
@@ -289,6 +303,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31391-->
 
 *  Magento now displays an informative error message when you try to add a product by clicking **Order by SKU** when the file for upload is corrupt. Previously, Magento displayed a blank page.
+
+<!--- ENGCOM-6251-->
+
+*  The promotion region of the mini cart is now rendered as expected. _Fix submitted by Matti Vapa in pull request [25375](https://github.com/magento/magento2/pull/25375)_. [GitHub-25373](https://github.com/magento/magento2/issues/25373)
 
 ### Cart Price Rule
 
@@ -340,7 +358,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30794-->
 
-*  The Recently Viewed Products feature now works as expected in multistore deployments.
+*  The Recently Viewed Products feature now works as expected in multi-store deployments.
 
 <!--- MC-31837-->
 
@@ -352,7 +370,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32772-->
 
-*  `addToCart` events are now tracked as expected in the datalayer. Previously, after changing the configurable options for a product, then clicking **Add to cart**, the new `addToCart` event was not added to the datalayer.
+*  `addToCart` events are now tracked as expected in the data layer. Previously, after changing the configurable options for a product, then clicking **Add to cart**, the new `addToCart` event was not added to the data layer.
 
 <!--- MC-29449-->
 
@@ -366,6 +384,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Filtering on the Admin product grid website column now works as expected. Previously, filter results did not display the correct number of products, but consistently displayed the total number of products as 1.
 
+<!--- ENGCOM-7104-->
+
+*  Magento now displays the Admin catalog MSRP value with the correct currency symbol. _Fix submitted by Sergiy Vasiutynskyi in pull request [27261](https://github.com/magento/magento2/pull/27261)_. [GitHub-21910](https://github.com/magento/magento2/issues/21910), [GitHub-20906](https://github.com/magento/magento2/issues/20906), [GitHub-20472](https://github.com/magento/magento2/issues/20472)
+
 ### Catalog widget
 
 <!--- MC-29167-->
@@ -375,6 +397,20 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-30260-->
 
 *  Magento now displays all children of a selected parent category as expected. Previously, if you selected a parent category that is an anchor, but which did not have assigned products by itself, Magento did not display all nested products.
+
+### Cleanup
+
+<!--- ENGCOM-6573-->
+
+*  Removed extra closing tag from module XML. _Fix submitted by Tejash Kumbhare in pull request [26339](https://github.com/magento/magento2/pull/26339)_. [GitHub-26338](https://github.com/magento/magento2/issues/26338)
+
+<!--- ENGCOM-6485-->
+
+*  Corrected misalignment of the calendar icon on the Add Design Change page. _Fix submitted by Eduard Chitoraga in pull request [26063](https://github.com/magento/magento2/pull/26063)_. [GitHub-20379](https://github.com/magento/magento2/issues/20379)
+
+<!--- ENGCOM-6967-->
+
+*  Corrected misalignment of the tax rate zip/post code range and checkbox on the Add New Tax Rate/Zip Code page (**Admin**  >  **Store**  >  **Taxes** >  **Tax Zones and Rates**). _Fix submitted by Sathish Subramanian in pull request [26932](https://github.com/magento/magento2/pull/26932)_. [GitHub-26917](https://github.com/magento/magento2/issues/26917)
 
 ### CMS content
 
@@ -481,6 +517,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-32152-->
 
 *  The Admin view of a customer cart now displays all the products that were added to the cart from multiple websites in a multi-website deployment. Previously, when a customer added a product to their cart from a non-default website, the product was not displayed in the Admin even when **Share customer account** is set to **Global**.
+
+<!--- ENGCOM-6667-->
+
+*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer’s shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
 
 ### Directory
 
@@ -610,11 +650,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29998-->
 
-*  Magento now redirects you to the home page of the appropriate store view when you change language on CMS pages in a multistore deployment. Previously, Magento displayed a 404 page when you changed language on certain CMS pages.
+*  Magento now redirects you to the home page of the appropriate store view when you change language on CMS pages in a multi store deployment. Previously, Magento displayed a 404 page when you changed language on certain CMS pages.
 
 <!--- MC-30162-->
 
-*  Order queries (`SalesOrderIndexGridAsyncInsertCron`) have been refactored to reduce the size of the dataset returned and the frequency of the queries.
+*  Order queries (`SalesOrderIndexGridAsyncInsertCron`) have been refactored to reduce the size of the data set returned and the frequency of the queries.
 
 <!--- MC-32371-->
 
@@ -634,7 +674,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31305-->
 
-*  Magento now displays an informative error message and continues to display the registration form as expected if an error occurs when a customer tries to complete a registration form that contains a multiselect customer attribute. Previously, Magento displayed a 500 error.
+*  Magento now displays an informative error message and continues to display the registration form as expected if an error occurs when a customer tries to complete a registration form that contains a multi-select customer attribute. Previously, Magento displayed a 500 error.
 
 <!--- MC-32224-->
 
@@ -653,6 +693,20 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-31041-->
 
 *  The GET `V1/orders/:orderId` call returns gift card codes as expected.
+
+### GraphQL
+
+<!--- ENGCOM-7074-->
+
+*  Magento now returns the GraphQL message `The cart isn't active` instead of `Current user does not have an active cart` under certain circumstances when a cart becomes inactive and a new cart ID is created. _Fix submitted by Vadim Malesh in pull request [27187](https://github.com/magento/magento2/pull/27187)_. [GitHub-26117](https://github.com/magento/magento2/issues/26117)
+
+<!--- ENGCOM-7105-->
+
+*  Removed code that caused an error when using GraphQL to add products to a cart when a previously added product became out-of-stock. _Fix submitted by AleksLi in pull request [27015](https://github.com/magento/magento2/pull/27015)_. [GitHub-26683](https://github.com/magento/magento2/issues/26683)
+
+<!--- ENGCOM-6535-->
+
+*  Corrected a problem in GraphQL in which Magento did not return all the required information while using fragments on products query. _Fix submitted by Riccardo Tempesta in pull request [26218](https://github.com/magento/magento2/pull/26218)_. [GitHub-26217](https://github.com/magento/magento2/issues/26217)
 
 ### Images
 
@@ -766,6 +820,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The validation logic associated with the **Date of Birth** field of the Customer Registration form no longer triggers a JavaScript error.
 
+<!--- ENGCOM-6378-->
+
+*  Enabling the **Block all cookies** setting in Safari no longer results in JavaScript errors, and Magento displays the `cookies disabled` message as expected. Previously, Magento displayed multiple `SecurityError (DOM Exception 18): The operation is insecure` errors in the console. _Fix submitted by Ra̼l Verdugo Lorenzo in pull request [25324](https://github.com/magento/magento2/pull/25324)_. [GitHub-13865](https://github.com/magento/magento2/issues/13865)
+
 ### Layered navigation
 
 <!--- MC-31763-->
@@ -870,9 +928,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The import of customer accounts has been refactored to improve import speed.
 
-<!--- MC-23383-->
+<!--- MC-23383 ENGCOM-7006-->
 
-*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html).
+*  Merchants can now use [lazy loading](https://en.wikipedia.org/wiki/Lazy_loading) to load images. See [Configure theme properties](https://devdocs.magento.com/guides/v2.4/frontend-dev-guide/themes/theme-images.html). _Fix submitted by Timon de Groot in pull request [27033](https://github.com/magento/magento2/pull/27033)_. [GitHub-27032](https://github.com/magento/magento2/issues/27032)
 
 ### Product alert
 
@@ -929,6 +987,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-24023-->
 
 *  Magento no longer displays an error when a customer adds a quantity of a product to their cart that exceeds half of the existing product stock but does not exceed the total stock. Previously, under these circumstances, Magento displayed this error: `The requested qty is not available`. [Github-24365](https://github.com/magento/magento2/issues/24365)
+
+<!--- ENGCOM-6910-->
+
+*  You can now successfully add a product to the cart from the Admin when the stock quantity is 1. Previously, Magento didn’t add the product to the cart and displayed this message: The requested qty is not available. _Fix submitted by Serhii Petrychenko in pull request [26650](https://github.com/magento/magento2/pull/26650)._ [GitHub-25675](https://github.com/magento/magento2/issues/25675)
 
 ### Sales Rule
 
@@ -1036,6 +1098,12 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento no longer throws an error when you edit and save the `NOT LOGGED IN` customer group when B2B is installed.
 
+### Test
+
+<!--- ENGCOM-7000-->
+
+*  Added an integration test to cover `$storeId` for the  Category Repository `get()` method. _Fix submitted by Lukasz Bajsarowicz in pull request [27048](https://github.com/magento/magento2/pull/27048)_. [GitHub-27044](https://github.com/magento/magento2/issues/27044)
+
 ### Theme
 
 <!--- MC-29804-->
@@ -1052,17 +1120,35 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Inline translation now works as expected when enabled for a storefront.
 
+<!--- ENGCOM-6899-->
+
+*  The `es_US Spanish (United States)` locale is now supported. _Fix submitted by Vinh Le in pull request [26857](https://github.com/magento/magento2/pull/26857)_. [GitHub-26843](https://github.com/magento/magento2/issues/26843)
+
 ### UI
 
 <!--- MC-32547-->
 
 *  You can now use Page Builder to add a product as a button link (**Edit Content** > **Button Link**). Previously, Magento threw this error when you tried to select the product: `Product with ID: XXXX doesn't exist`.
 
+<!--- ENGCOM-7237-->
+
+*  The link from the Setup Wizard to the Admin now works as expected. _Fix submitted by Oleh Usik in pull request [26100](https://github.com/magento/magento2/pull/26100)_. [GitHub-24990](https://github.com/magento/magento2/issues/24990)
+
+<!--- ENGCOM-6328-->
+
+*  The layout of the Admin Billing Address/Shipping Address page has been refactored to meet Magento Admin form display conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-23481](https://github.com/magento/magento2/issues/23481), GitHub-19805](https://github.com/magento/magento2/issues/19805)
+
 ### URL rewrites
 
 <!--- MC-31147-->
 
 *  Customers who change language on a CMS page can now successfully navigate to the store view they’ve selected. Previously, Magento displayed a 404 error.
+
+### VAT
+
+<!--- ENGCOM-7458-->
+
+*  Corrected the VAT Validation URL for EU Vat numbers (http://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl).  _Fix submitted by Shikha Mishra in pull request [27886](https://github.com/magento/magento2/pull/27886)_. [GitHub-27874](https://github.com/magento/magento2/issues/27874)
 
 ### Vault
 
@@ -1079,6 +1165,14 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-30675-->
 
 *  Corrected issues with the POST `/rest/default/async/bulk/V1/products` calls.
+
+<!--- ENGCOM-6945-->
+
+*  The `getList` method has been refactored to retrieve the `is_subscribed` extension attribute. Previously, you could not retrieve this attribute when fetching a customer entity though the API. _Fix submitted by enriquei4 in pull request [25311](https://github.com/magento/magento2/pull/25311)_. [GitHub-13252](https://github.com/magento/magento2/issues/13252)
+
+!--- ENGCOM-6920-->
+
+*  Nullable getters in service contracts no longer throw reflection errors when used in the web API. Methods that can return null and a valid type now working correctly regardless of order, too.  _Fix submitted by Marco K̦pcke in pull request [25806](https://github.com/magento/magento2/pull/25806)_. [GitHub-25656](https://github.com/magento/magento2/issues/25656)
 
 ### Wishlist
 
