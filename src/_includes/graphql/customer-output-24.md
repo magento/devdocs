@@ -9,7 +9,6 @@
 {% assign crossref_text = '' %}
 {% endif %}
 
-
 Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | {{ customeraddress_text }}  | An array containing the customer's shipping and billing addresses
