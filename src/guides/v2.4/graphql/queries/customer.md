@@ -75,7 +75,7 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-### Retrieve a previous order
+### Retrieve detailed information about a previous order
 
 The following example returns an order the logged-in user previously made.
 
@@ -84,40 +84,38 @@ The following example returns an order the logged-in user previously made.
 ```graphql
 {
   customer {
-    firstname
-    lastname
-    email
-    orders(filter: {number: {eq: "000000003"}}, pageSize: 1, currentPage: 1) {
+    orders(filter: {number: {eq: "000000001"}}) {
       total_count
-      page_info {
-        current_page
-        page_size
-        total_pages
-      }
       items {
         id
+        carrier
         number
         order_date
         status
-        order_items {
-          product_sku
+        items {
           product_name
-          parent_product_sku
-          product_sale_price{
+          product_sku
+          product_url_key
+          product_sale_price {
+            value
+          }
+          product_sale_price {
             value
             currency
           }
           quantity_ordered
-          product_sale_price{
-            value
-            currency
+          quantity_invoiced
+          quantity_shipped
+        }
+        shipments {
+          id
+          number
+          items {
+            product_name
+            quantity_shipped
           }
-          entered_options{
-            id
-            value
-          }
-            }
-        totals {
+        }
+        total {
           base_grand_total {
             value
             currency
@@ -126,17 +124,41 @@ The following example returns an order the logged-in user previously made.
             value
             currency
           }
-          shipping_handling {
+          total_tax {
             value
-            currency
           }
           subtotal {
             value
             currency
           }
-          tax {
+          taxes {
+            amount {
+              value
+              currency
+            }
+            title
+            rate
+          }
+          total_shipping {
             value
-            currency
+          }
+          shipping_handling {
+            amount_including_tax {
+              value
+            }
+            amount_excluding_tax {
+              value
+            }
+            total_amount {
+              value
+            }
+            taxes {
+              amount {
+                value
+              }
+              title
+              rate
+            }
           }
           discounts {
             amount {
@@ -150,7 +172,6 @@ The following example returns an order the logged-in user previously made.
     }
   }
 }
-
 ```
 
 **Response:**
@@ -159,142 +180,72 @@ The following example returns an order the logged-in user previously made.
 {
   "data": {
     "customer": {
-      "firstname": "Veronica",
-      "lastname": "Costello",
-      "email": "roni_cost@example.com",
       "orders": {
         "total_count": 1,
-        "page_info": {
-          "current_page": 1,
-          "page_size": 1,
-          "total_pages": 1
-        },
         "items": [
           {
-            "id": "3",
-            "number": "000000003",
-            "order_date": "2020-03-21 22:41:38",
-            "status": "Pending",
-            "order_items": [
+            "id": "MQ==",
+            "carrier": null,
+            "number": "000000001",
+            "order_date": "2020-03-18 17:25:20",
+            "status": "Processing",
+            "items": [
               {
-                "product_sku": "WP07-29-Black",
-                "product_url": "url",
-                "product_name": "Aeon Capri",
-                "parent_product_sku": null,
-                "product_sale_price": {
-                  "value": 48,
-                  "currency": "USD"
-                },
-                "quantity_ordered": 3,
-                "entered_options": [],
-                "selected_options": [
-                  {
-                    "id": "Size",
-                    "value": "29"
-                  },
-                  {
-                    "id": "Color",
-                    "value": "Black"
-                  }
-                ]
-              },
-              {
-                "product_sku": "WP07-29-Black",
-                "product_url": "url",
-                "product_name": "Aeon Capri-29-Black",
-                "parent_product_sku": "WP07-29-Black",
-                "product_sale_price": {
-                  "value": 48,
-                  "currency": "USD"
-                },
-                "quantity_ordered": 3,
-                "entered_options": [],
-                "selected_options": []
-              },
-              {
-                "product_sku": "24-UG07",
-                "product_url": "url",
-                "product_name": "Dual Handle Cardio Ball",
-                "parent_product_sku": null,
-                "product_sale_price": {
-                  "value": 12,
-                  "currency": "USD"
-                },
-                "quantity_ordered": 1,
-                "entered_options": [],
-                "selected_options": []
-              },
-              {
-                "product_sku": "24-WG084",
-                "product_url": "url",
-                "product_name": "Sprite Foam Yoga Brick",
-                "parent_product_sku": null,
-                "product_sale_price": {
-                  "value": 5,
-                  "currency": "USD"
-                },
-                "quantity_ordered": 1,
-                "entered_options": [],
-                "selected_options": []
-              },
-              {
-                "product_sku": "WS06-S-Gray",
-                "product_url": "url",
-                "product_name": "Elisa EverCool&trade; Tee",
-                "parent_product_sku": null,
+                "product_name": "Iris Workout Top",
+                "product_sku": "WS03-XS-Red",
+                "product_url_key": "iris-workout-top",
                 "product_sale_price": {
                   "value": 29,
                   "currency": "USD"
                 },
                 "quantity_ordered": 1,
-                "entered_options": [],
-                "selected_options": [
-                  {
-                    "id": "Size",
-                    "value": "S"
-                  },
-                  {
-                    "id": "Color",
-                    "value": "Gray"
-                  }
-                ]
-              },
-              {
-                "product_sku": "WS06-S-Gray",
-                "product_url": "url",
-                "product_name": "Elisa EverCool&trade; Tee-S-Gray",
-                "parent_product_sku": "WS06-S-Gray",
-                "product_sale_price": {
-                  "value": 29,
-                  "currency": "USD"
-                },
-                "quantity_ordered": 1,
-                "entered_options": [],
-                "selected_options": []
+                "quantity_invoiced": 1,
+                "quantity_shipped": 1
               }
             ],
-            "totals": {
+            "shipments": null,
+            "total": {
               "base_grand_total": {
-                "value": 205.68,
+                "value": 36.39,
                 "currency": "USD"
               },
               "grand_total": {
-                "value": 205.68,
+                "value": 36.39,
                 "currency": "USD"
               },
-              "shipping_handling": {
-                "value": 0,
-                "currency": "USD"
+              "total_tax": {
+                "value": 2.39
               },
               "subtotal": {
-                "value": 190,
+                "value": 29,
                 "currency": "USD"
               },
-              "tax": {
-                "value": 15.68,
-                "currency": "USD"
+              "taxes": [
+                {
+                  "amount": {
+                    "value": 2.39,
+                    "currency": "USD"
+                  },
+                  "title": "US-MI-*-Rate 1",
+                  "rate": 8.25
+                }
+              ],
+              "total_shipping": {
+                "value": 5
               },
-              "discounts": null
+              "shipping_handling": {
+                "amount_including_tax": {
+                  "value": 5
+                },
+                "amount_excluding_tax": {
+                  "value": 5
+                },
+                "total_amount": {
+                  "value": 5
+                },
+                "taxes": []
+              },
+              "discounts": []
             }
           }
         ]
@@ -527,7 +478,7 @@ Attribute |  Data Type | Description
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
-### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
+#### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
 
 The `CustomerAddressAttribute` output data type has been deprecated because the contents are not applicable for GraphQL. It can contain the following attributes:
 
@@ -536,7 +487,7 @@ Attribute |  Data Type | Description
 `attribute_code` | String | Attribute code
 `value` | String | Attribute value
 
-### CustomerAddressRegion attributes {#customerAddressRegionOutput}
+#### CustomerAddressRegion attributes {#customerAddressRegionOutput}
 
 The `customerAddressRegion` output returns the following attributes:
 
