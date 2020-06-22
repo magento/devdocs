@@ -51,7 +51,7 @@ Attribute | Data type | Description
 `carrier` | String | The shipping carrier for the order delivery
 `comments` | [[CommentItem](#CommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
-`credit_memos` | [[CreditMemo](#CreditMemo)] Contains a list of credit memos for the order
+`credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
@@ -61,7 +61,7 @@ Attribute | Data type | Description
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the number `attribute` instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
-`shipments` | [[OrderShipment](#OrderShipment)] Shipment list for the order
+`shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [CustomerAddress](#customerAddressOutput) | shipping address for the order
 `shipping_method` | String | Shipping method for the order
 `status` | String! | The current status of the order
@@ -98,7 +98,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[CommentItem](#CommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
-`items` | [[CreditMemoItem](CreditMemoItem)] | An array containing details about refunded items
+`items` | [[CreditMemoItem](#CreditMemoItem)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
@@ -118,7 +118,7 @@ Attribute | Data type | Description
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
-The CreditMemoTotal object implements [`SalesTotalAmountInterface`](#SalesTotalAmountInterface). It does not define additional attributes.
+The CreditMemoTotal object contains details about the totals of an credit memo.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -169,7 +169,7 @@ Attribute | Data type | Description
 `product_type` | String | The type of product, such as simple, configurable, or bundle
 `quantity_invoiced` | Float |The number of invoiced items
 
-#### InvoiceTotal attributes
+#### InvoiceTotal attributes {#InvoiceTotal}
 
 The InvoiceTotal object contains details about the totals of an invoice.
 
@@ -259,7 +259,7 @@ Attribute | Data type | Description
 
 #### OrderTotal attributes {#OrderTotal}
 
-The `OrderTotal` object contains details about the sales total amounts used to calculate the final price. It implements [`SalesTotalAmountInterface`](#SalesTotalAmountInterface). It also supports the following attribute:
+The `OrderTotal` object contains details about the sales total amounts used to calculate the final price.
 
 Attribute | Data type | Description
 --- | --- | ---
