@@ -51,7 +51,7 @@ Enabling PrivateLink can take up to 5 business days. Providing incomplete, or in
 
 -  {:.fix}A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance
 -  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink. See the AWS or Azure documentation for help with VPC set up or contact your network administrator.
--  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting Magento PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#Set-up-for-bidirectional-privatelink-connections).
+-  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting Magento PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#set-up-for-bidirectional-privatelink-connections).
 -  {:.fix}Gather the following data required for PrivateLink enablement:
 
    -  **Customer Cloud account number** (AWS or Azure)–Must be in the same region as the {{site.data.var.ece}} instance
@@ -82,7 +82,7 @@ The following workflow outlines the enablement process for PrivateLink integrati
 
 1. **Magento** approves the connection request.
 
-1. After connection request approval, **the customer** [verifies the connection](#test-privatelink-connection) between their VPC and the Magento VPC.
+1. After connection request approval, **the customer** [verifies the connection](#test-vpc-endpoint-service-connection) between their VPC and the Magento VPC.
 
 1. Additional steps to enable bidirectional connections:
 
@@ -101,11 +101,11 @@ The following workflow outlines the enablement process for PrivateLink integrati
 
    -  **Customer** approves the connection request from Magento to complete the setup.
 
-   -  **Customer** [verifies the connection](#test-privatelink-connection) from the Magento VPC.
+   -  **Customer** [verifies the connection](#test-vpc-endpoint-service-connection) from the Magento VPC.
 
-## Test the PrivateLink connection
+## Test VPC endpoint service connection
 
-You can use the Telnet application to test the PrivateLink connection to VPC endpoint services.
+You can use the Telnet application to test the connection to the VPC endpoint service.
 
 {:.bs-callout-tip}
 For help installing and using Telnet, see [Telnet How-To][] in the Telnet documentation.
@@ -163,7 +163,7 @@ Submit a Magento Support ticket to change an existing PrivateLink configuration.
 -  Change the customer Cloud platform account number for accessing the Magento endpoint service.
 -  Add or remove PrivateLink connections from the Magento VPC to other endpoint services available in the customer VPC environment.
 
-## Customer set up for bidirectional PrivateLink connections
+## Set up for bidirectional PrivateLink connections
 
 The customer VPC must have the following resources available to support bidirectional PrivateLink connections:
 
