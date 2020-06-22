@@ -6,23 +6,23 @@ functional_areas:
   - Setup
 ---
 
-Magento supports PrivateLink connections for Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and external systems. Both the Magento application and external systems must be accessible through private VPC endpoints hosted within the same Cloud region (AWS or Azure).
+Magento supports integration with the [AWS PrivateLink][] or [Azure Private Link][] service to allow Cloud customers to establish secure, private communication between {{site.data.var.ece}} environments and services and applications hosted on external systems. Both the Magento application and external systems must be accessible through private VPC endpoints configured within the same Cloud region (AWS or Azure).
 
 ## Features and support
 
-The PrivateLink service offering for {{site.data.var.ece}} projects includes the following features and support:
+The PrivateLink service integration for {{site.data.var.ece}} projects includes the following features and support:
 
 -  A secure connection between a customer Virtual Private Cloud (VPC) and the Magento VPC within the same Cloud region.
--  Support for unidirectional or bidirectional communication between Magento and Customer VPCs.
+-  Support for unidirectional or bidirectional communication between endpoint services available in Magento and Customer VPCs.
 -  Service enablement–
-   -  Open communication on the necessary ports in the Magento Cloud environment
+   -  Open required ports in the {{site.data.var.ece}} environment
    -  Establish the initial connection between the customer and Magento VPCs
    -  Troubleshoot connection issues during enablement
 
 ## Limitations
 
 -  Support for PrivateLink is available on Pro plan Production and Staging environments only. It is not available on local or integration environments, or on Starter plan projects.
--  You cannot establish SSH connections using PrivateLink. Due to infrastructure requirements, Magento cannot open Port 22 for communication between VPCs.
+-  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement. Customers have the option to purchase additional support from Magento Services.
 -  Customers are responsible for costs associated with managing their own VPC.
 
@@ -35,71 +35,140 @@ The following network diagram shows the PrivateLink connection types available t
 For Pro plan Production and Staging environments, you must specify the PrivateLink connection type required for your environments:
 
 -  **Unidirectional PrivateLink**–Choose this configuration to retrieve data securely from a Magento Commerce store.
--  **Bidirectional PrivateLink**–Choose this configuration to establish secure connections to and from systems outside of the Magento Cloud environment. The bidirectional option requires two connections:
-   -  A connection between your VPC and the Magento VPC
-   -  A connection between the Magento VPC and your VPC
+-  **Bidirectional PrivateLink**–Choose this configuration to establish secure connections to and from systems outside of the {{site.data.var.ece}} environment. The bidirectional option requires two connections:
+   -  A connection between the customer VPC and the Magento VPC
+   -  A connection between the Magento VPC and the customer VPC
 
 {:.bs-callout-tip}
-Work with your network administrator and Magento CTA to determine the right PrivateLink connection type for your project. Also, see your Cloud platform PrivateLink documentation [AWS PrivateLink][], [Azure PrivateLink].
+ Work with your network administrator or Cloud platform provider for help selecting the PrivateLink connection type, or help with VPC setup and administration. Also, see your Cloud platform PrivateLink documentation [AWS PrivateLink][], [Azure Private Link][].
 
 ## Request PrivateLink enablement
 
 {:.bs-callout-warning}
-Enabling PrivateLink can take up to 5 business days. Providing incomplete, or inaccurate information when you request enablement can delay the process.
+Enabling PrivateLink can take up to 5 business days. Providing incomplete, or inaccurate information can delay the process.
 
 ### Prerequisites
 
 -  {:.fix}A Cloud account (AWS or Azure) in the same region as the {{site.data.var.ece}} instance
--  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink
--  {:.fix}For bidirectional PrivateLink connections, your must configure the PrivateLink service in your VPC environment before requesting Magento PrivateLink enablement. See [Customer set up for bidirectional PrivateLink communication](#customer-set-up-for-bidirectional-privatelink-connections).
+-  {:.fix}A VPC in the customer environment that hosts the services to connect via PrivateLink. See the AWS or Azure documentation for help with VPC set up or contact your network administrator.
+-  {:.fix}For bidirectional PrivateLink connections, you must create the endpoint service configuration for your application or service, and create an endpoint in your VPC environment before requesting Magento PrivateLink enablement. See [Set up for bidirectional PrivateLink connections](#Set-up-for-bidirectional-privatelink-connections).
 -  {:.fix}Gather the following data required for PrivateLink enablement:
 
-   -  **Cloud account number** (AWS or Azure)–Must be in the same region as the Magento Cloud instance
+   -  **Customer Cloud account number** (AWS or Azure)–Must be in the same region as the {{site.data.var.ece}} instance
    -  **Cloud region**–Provide the Cloud region where the account is hosted for verification purposes
    -  **Services and communication ports**–Magento must open ports to enable service communication between VPCs, for example _Webserver, HTTP port 80_, _SFTP port 2222_
-   -  **Magento Cloud Project ID**
-   -  **Connection Type**–Specify unidirectional or bidirectional for connection type
-   -  **Service Name**–Service name for the VPC service endpoint that Magento must connect to. Required only to enable bidirectional PrivateLink connections.
+   -  **Magento Cloud Project ID**–Provide the {{site.data.var.ece}} Pro project ID. You can get the Project ID and other project information using the folllowing [Magento Cloud CLI][] command:  ```magento-cloud project:info```
+   -  **Connection type**–Specify unidirectional or bidirectional for connection type
+   -  **Service endpoint**–For bidirectional PrivateLink connections, provide the DNS URL for the VPC service endpoint that Magento must connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
 
 ### Enablement workflow
 
-The following workflow outlines the PrivateLink enablement process for {{site.data.var.ece}}.
+The following workflow outlines the enablement process for PrivateLink integration with {{site.data.var.ece}}.
 
-1. **Customer** contacts their Magento Customer Technical Advisor (CTA) to request PrivateLink enablement, providing the customer data required for PrivateLink enablement.
+1. **Customer** submits a support ticket requesting PrivateLink enablement with the subject line `PrivateLink support for <company>`. Include the [data required for enablement](#prerequisites) in the ticket.
 
-1. After verifying the customer data, **the Magento CTA** submits a Magento Support ticket request for PrivateLink enablement.
+   We use the Support ticket to coordinate communication during the enablement process.
 
-   We use the Support ticket to coordinate communication between you, your CTA, the Magento infrastructure team, and the Magento Support team during the enablement process.
+1. **Magento** enables customer account access to the endpoint service in the Magento VPC.
 
-1. **Magento infrastructure team** enables customer account access to the Magento VPC.
+   -  Update the Magento endpoint service configuration to accept requests initiated from the customer AWS or Azure account.
 
-   -  Update the Magento VPC configuration to accept requests initiated from the customer Cloud platform account.
+   -  Update the Support ticket to provide the service name for the Magento VPC endpoint to connect to, for example `com.amazonaws.vpce.<cloud-region>.vpce-svc-<service-id>`.
 
-   -  Update the Support ticket to provide Magento VPC connection details to the customer.
+1. **Customer** adds the Magento endpoint service to their Cloud account (AWS or Azure), which triggers a connection request to Magento. See the Cloud platform documentation for instructions:
 
-1. **Customer** submits a PrivateLink connection request to the Magento VPC using the Magento VPC connection details.
+   -  For AWS, see [Accepting and rejecting interface endpoint connection requests][].
+   -  For Azure, see [Manage connection requests][].
 
-1. **Magento infrastructure team** approves the connection request.
+1. **Magento** approves the connection request.
 
-1. After connection request approval, **the customer** verifies the connection between your VPC and the Magento VPC.
+1. After connection request approval, **the customer** [verifies the connection](#test-privatelink-connection) between their VPC and the Magento VPC.
 
 1. Additional steps to enable bidirectional connections:
 
-   -  **Magento infrastructure team** uses the endpoint service name supplied by the customer to submit a connection request from the Magento VPC to the customer Network Load Balancer (NLB).
+   -  **Magento** supplies the Magento account principal (root user for AWS or Azure account) and requests access to the customer VPC endpoint service.
 
-   -  **Customer** approves the request to complete the setup. See the Cloud platform documentation for instructions:
+   -  **Customer** enables Magento access to the endpoint service in customer VPC.
 
-      -  For AWS, see [Accepting and rejecting interface endpoint connection requests][].
-      -  For Azure, see [Manage connection requests][].
+      -  Update the customer endpoint service configuration to accept requests initiated from Magento account. See the Cloud platform documentation for instructions:
 
-   -  **Customer** verifies the connection to and from the Magento VPC.
+         -  For AWS, see [Adding and removing permissions for your endpoint service][].
+         -  For Azure, see [Manage a Private Endpoint connection][]
+
+      -  Provide Magento with the endpoint service name for the customer VPC.
+
+   -  **Magento** adds the customer endpoint service to Magento platform account (AWS or Azure), which triggers a connection request to customer VPC.
+
+   -  **Customer** approves the connection request from Magento to complete the setup.
+
+   -  **Customer** [verifies the connection](#test-privatelink-connection) from the Magento VPC.
+
+## Test the PrivateLink connection
+
+You can use the Telnet application to test the PrivateLink connection to VPC endpoint services.
+
+{:.bs-callout-tip}
+For help installing and using Telnet, see [Telnet How-To][] in the Telnet documentation.
+
+{:.procedure}
+To test the connection to the VPC endpoint service:
+
+1. Log in to {{site.data.var.ece}} project, and checkout the Staging or Production environment.
+
+   ```bash
+   magento-cloud login
+   ```
+
+1. From the project root directory, checkout the environment configured to access the PrivateLink service endpoint.
+
+   ```bash
+   magento-cloud environment:checkout <environment-id>
+   ```
+
+1. Run the following CURL command:
+
+   ```bash
+   curl telnet://<endpoint-service-dns-url>:<port>/ -vvv
+   ```
+
+   For example:
+
+   ```bash
+   curl telnet://vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443/ -vvv
+   ```
+
+   If the connection succeeds, the following output displays:
+
+   ```terminal
+   * Trying vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com...
+   * TCP_NODELAY set
+   * Connected to //vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com (xx.xxx.xxx.xx) port 8443 (#0)
+   ```
+   {:.no-copy}
+
+   If the connection fails, review the error messages which might indicate that the port is closed, or that the indicated remote server is not listening on the specified port.
+
+   See the following articles for help troubleshooting connection issues:
+
+   -  [AWS: Troubleshooting endpoint service connections][]
+   -  [Amazon: Troubleshooting Azure Private Link connectivity problems][]
+
+   If you cannot resolve the errors, update the Magento Support ticket to request help establishing the connection.
+
+## Change PrivateLink configuration
+
+Submit a Magento Support ticket to change an existing PrivateLink configuration. For example, you can request changes like the following:
+
+-  Remove the PrivateLink connection from the {{site.data.var.ece}} Pro Production or Staging environment.
+-  Change the customer Cloud platform account number for accessing the Magento endpoint service.
+-  Add or remove PrivateLink connections from the Magento VPC to other endpoint services available in the customer VPC environment.
 
 ## Customer set up for bidirectional PrivateLink connections
 
-The customer VPC must have a the following resources available to support bidirectional PrivateLink connections:
+The customer VPC must have the following resources available to support bidirectional PrivateLink connections:
 
 -  A Network Load Balancer
--  An endpoint service configuration that enables access to a service from your VPC environment
+-  An endpoint service configuration that enables access to an application or service from the customer VPC
 -  An [interface endpoint][] (AWS) or [private endpoint][] (Azure) that allows Magento to connect to endpoint services hosted in your VPC
 
 If these resources are not available in the customer VPC, you must sign into your Cloud platform account to add the configuration.
@@ -113,26 +182,35 @@ See your Cloud platform documentation for PrivateLink set up instructions:
    -  [Create a Network Load Balancer][]
    -  [Create an endpoint service configuration][]
    -  [Create an interface endpoint][]
+   -  [Interface endpoint lifecycle][]
 
 -  **Azure PrivateLink documentation**
    -  [Create a Load Balancer][]
-   -  [Azure PrivateLink workflow][]
+   -  [Azure Private Link workflow][]
 
 <!--Link definitions-->
 
 [PrivateLink network diagram]: {{site.baseurl}}/common/images/cloud/cloud-privatelink-architecture-diagram.png
 {:width="800px"}
 
-[AWS PrivateLink Overview]: https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#endpoint-service-overview
-[AWS PrivateLink documentation]: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html#what-is-privatelink
-[AWS PrivateLink]: https://aws.amazon.com/privatelink/
 [Accepting and rejecting interface endpoint connection requests]: https://docs.aws.amazon.com/vpc/latest/userguide/accept-reject-endpoint-requests.html
-[Azure PrivateLink]: https://docs.microsoft.com/en-us/azure/private-link/
+[Adding and removing permissions for your endpoint service]:https://docs.aws.amazon.com/vpc/latest/userguide/add-endpoint-service-permissions.html
+[Amazon: Troubleshooting Azure Private Link connectivity problems]: https://docs.microsoft.com/en-us/azure/private-link/troubleshoot-private-link-connectivity
+[AWS PrivateLink documentation]: https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html#what-is-privatelink
+[AWS PrivateLink Overview]: https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#endpoint-service-overview
+[AWS PrivateLink]: https://aws.amazon.com/privatelink/
+[AWS: Troubleshooting endpoint service connections]: https://aws.amazon.com/premiumsupport/knowledge-center/connect-endpoint-service-vpc/
+[Azure Private Link workflow]: https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview#workflow
+[Azure Private Link]: https://docs.microsoft.com/en-us/azure/private-link/
 [Create a Load Balancer]: https://docs.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-portal
 [Create a Network Load Balancer]: https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html
 [Create an endpoint service configuration]: https://docs.aws.amazon.com/vpc/latest/userguide/create-endpoint-service.html
 [Create an interface endpoint]: https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint
-[Manage connection requests]: https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview#manage-your-connection-requests
+[Enable SSH keys]: https://devdocs.magento.com/cloud/before/before-workspace-ssh.html
+[interface endpoint lifecycle]: https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#vpce-interface-lifecycle
 [interface endpoint]: https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html
+[Magento Cloud CLI]: {{site.baseurl}}/cloud/reference/cli-ref-topic.html
+[Manage a Private Endpoint connection]: https://docs.microsoft.com/en-us/azure/private-link/manage-private-endpoint
+[Manage connection requests]: https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview#manage-your-connection-requests
 [private endpoint]: https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview
-[Azure PrivateLink workflow]: https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview#workflow
+[Telnet How-To]: https://www.telnet.org/htm/howto.htm
