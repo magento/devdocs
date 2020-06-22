@@ -134,15 +134,15 @@ To test the connection to the VPC endpoint service:
    For example:
 
    ```bash
-   curl telnet://vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443/ -vvv
+   curl telnet://vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443/ -vvv
    ```
 
    If the connection succeeds, the following output displays:
 
    ```terminal
-   * Trying vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com...
+   * Trying vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443...
    * TCP_NODELAY set
-   * Connected to //vpce-004678b7ff06dfxxx-qmmwu44q.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com (xx.xxx.xxx.xx) port 8443 (#0)
+   * Connected to //vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443 (xx.xxx.xxx.xx) port 8443 (#0)
    ```
    {:.no-copy}
 
