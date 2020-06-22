@@ -26,7 +26,7 @@ Attribute |  Data Type | Description
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
 `lastname` | String | The customer's family name
 `middlename` |String | The customer's middle name
-`orders(<FilterCriteria>)` | {{ customeroutput_text }} | Defines a filter for returning previous customer orders
+`orders(<FilterCriteria>)` | {{ customeroutput_text }} | Defines a filter for returning previous customer orders{{ customeraddress_text }}
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
