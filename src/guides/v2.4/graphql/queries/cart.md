@@ -748,6 +748,16 @@ Attribute |  Data Type | Description
 `amount` | Money! | The amount of the discount applied to the cart
 `label` | String! | The description of the discount
 
+### GiftMessage object {#GiftMessage}
+
+The `GiftMessage` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`from` | String! | Identifies the sender
+`message` | String! | The gift message text
+`to` | String! | Identifies the recipient
+
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
 The `SelectedPaymentMethod` object can contain the following attributes.

@@ -7,7 +7,7 @@ Attribute |  Data Type | Description
 `available_payment_methods` | [[AvailablePaymentMethod]][AvailablePaymentMethod] | Available payment methods
 `billing_address` | [BillingCartAddress][BillingCartAddress] | Contains the billing address specified in the customer's cart
 `email` | String | The customer's email address
-`gift_message` | GiftMessage | A gift message added to the cart
+`gift_message` | [GiftMessage][GiftMessage] | A gift message added to the cart
 `id` | ID! | The ID of the cart
 `is_virtual` | Boolean! | Indicates whether the cart contains only virtual products
 `items` | [[CartItemInterface]][CartItemInterface] | Contains the items in the customer's cart
@@ -23,5 +23,6 @@ Attribute |  Data Type | Description
 [BillingCartAddress]: {{page.baseurl}}/graphql/queries/cart.html#BillingCartAddress
 [CartItemInterface]: {{page.baseurl}}/graphql/queries/cart.html#CartItemInterface
 [CartPrices]: {{page.baseurl}}/graphql/queries/cart.html#CartPrices
+[GiftMessage]: {{page.baseurl}}/graphql/queries/cart.html#GiftMessage
 [SelectedPaymentMethod]: {{page.baseurl}}/graphql/queries/cart.html#SelectedPaymentMethod
 [ShippingCartAddress]: {{page.baseurl}}/graphql/queries/cart.html#ShippingCartAddress
