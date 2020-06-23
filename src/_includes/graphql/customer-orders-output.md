@@ -145,7 +145,7 @@ The `Invoice` object provides details about a customer invoice.
 Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[CommentItem](#CommentItem)] | Comments on the invoice
-`id` | Id! | The internal ID of the invoice
+`id` | ID! | The internal ID of the invoice
 `items` | [[InvoiceItemInterface](#InvoiceItemInterface)]! | Contains details about invoiced products
 `number` | String! | The sequential number of the invoice
 `total` | [InvoiceTotal](#InvoiceTotal)! | Invoice total amount details
@@ -178,9 +178,9 @@ Attribute | Data type | Description
 `base_grand_total` | Money! | The final base grand total amount in the base currency
 `discounts` | [Discount] | The applied discounts to the invoice
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
-`shipping_handling` | ShippingHandling | Contains details about the shipping and handling costs for the invoice
+`shipping_handling` | [ShippingHandling](#ShippingHandling) | Contains details about the shipping and handling costs for the invoice
 `subtotal` | Money! | The subtotal of the invoice, excluding shipping, discounts, and taxes
-`taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual invoices
+`taxes` | [[TaxItem](#TaxItem)] | An array containing information about taxes on individual invoices
 `total_shipping` | Money! | The shipping amount for the invoice
 `total_tax` | Money! | The amount of tax applied to all invoices
 
@@ -266,7 +266,7 @@ Attribute | Data type | Description
 `base_grand_total` | Money! | The final base grand total amount in the base currency
 `discounts` | [Discount] | The applied discounts to the order
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
-`shipping_handling` | Money! | The shipping and handling costs for the order
+`shipping_handling` | [ShippingHandling](#ShippingHandling) | The shipping and handling costs for the order
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_shipping` | Money! | The for the order
@@ -278,7 +278,7 @@ The PaymentMethod data type contains details about the payment method used to pa
 
 Attribute | Data type | Description
 --- | --- | ---
-`additional_data` | [[KeyValue]{#KeyValue}] | Additional data per payment method type
+`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
 `name` | String! | The label that describes the payment method
 `type` | String! | The payment method code that indicates how the order was paid for
 
@@ -306,7 +306,7 @@ Attribute | Data type | Description
 Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | The unique ID of the shipment item
-`order_item` | [OrderItemInterface]{#OrderItemInterface} | The shipped order item
+`order_item`| [OrderItemInterface](#OrderItemInterface) | The shipped order item
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price for the base product
 `product_sku` | String! | The SKU of the base product
