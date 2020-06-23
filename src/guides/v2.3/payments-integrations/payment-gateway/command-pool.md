@@ -22,7 +22,7 @@ implements `CommandPoolInterface` and takes a list of commands as an optional ar
 
 ## Command pool configuration for a particular provider
 
-Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's [payment method](https://glossary.magento.com/payment-method) configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml)).
+Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's [payment method](https://glossary.magento.com/payment-method) configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/etc/di.xml)).
 
 ```xml
 ...
