@@ -32,7 +32,22 @@ Wysiwyg-specific options:
 
 Events are dispatched by modules when certain actions are triggered. When an event is dispatched, it can pass data to any observers configured to watch that event.
 
-See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) to learn more about events and how to use them.
+Use a global `varienGlobalEvents` to attach a custom event handler to WYSIWYG events. For example:
+
+```javascript
+require([
+    'mage/adminhtml/events'
+], function () {
+    /**
+     * Editor focused.
+     */
+    function editorFocused() {
+        console.log('The editor is focused!');
+    }
+
+    varienGlobalEvents.attachEventHandler('tinymceFocus', editorFocused);
+});
+```
 
 The following are available events for use in the WYSIWYG component adapter for TinyMCE4:
 
