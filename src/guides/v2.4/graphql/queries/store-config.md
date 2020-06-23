@@ -13,7 +13,7 @@ The `storeConfig` query defines information about a store's configuration. You c
 
 ### Query a store's configuration
 
-There are `base` and `extended` store configuration settings which `storeConfig` query may return. The following call returns all `base` details of a store's configuration.
+The `storeConfig` query can return `base` and `extended` store configuration setting. The following call returns all `base` details of a store's configuration.
 
 **Request:**
 
@@ -54,14 +54,14 @@ There are `base` and `extended` store configuration settings which `storeConfig`
       "default_display_currency_code": "USD",
       "timezone": "America/Chicago",
       "weight_unit": "lbs",
-      "base_url": "http://magento2.vagrant193/",
-      "base_link_url": "http://magento2.vagrant193/",
-      "base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
-      "base_media_url": "http://magento2.vagrant193/pub/media/",
-      "secure_base_url": "http://magento2.vagrant193/",
-      "secure_base_link_url": "http://magento2.vagrant193/",
-      "secure_base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
-      "secure_base_media_url": "http://magento2.vagrant193/pub/media/"
+      "base_url": "http://magentohost.example.com/",
+      "base_link_url": "http://magentohost.example.com/",
+      "base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
+      "base_media_url": "http://magentohost.example.com/pub/media/",
+      "secure_base_url": "http://magentohost.example.com/",
+      "secure_base_link_url": "http://magentohost.example.com/",
+      "secure_base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
+      "secure_base_media_url": "http://magentohost.example.com/pub/media/"
     }
   }
 }
