@@ -78,6 +78,6 @@ The PayflowProResponseOutput contains a `Cart` object.
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.

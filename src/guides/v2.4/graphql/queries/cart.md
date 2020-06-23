@@ -574,7 +574,7 @@ The top-level `Cart` object is listed first. All interfaces and child objects ar
 
 The `Cart` object can contain the following attributes.
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 ### AppliedCoupon object {#AppliedCoupon}
 
