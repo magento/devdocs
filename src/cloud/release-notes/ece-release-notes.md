@@ -22,8 +22,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Infrastructure updates**–
 
-   -  Added validation to check the Magento composer dependencies for the Zend Framework which has migrated to the Laminas project.
-      If the required dependencies are missing, the following error message displays during the build process.
+   -  **Update for Zend Framework composer dependencies**–Added validation to check the Magento composer dependencies for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
 
       ```terminal
       Required configuration is missed in autoload section of composer.json file.
