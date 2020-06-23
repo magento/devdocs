@@ -18,20 +18,39 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
 ## v2002.1.1
-*Release date: TBD*<br/>
+*Release date: June 24, 2020*<br/>
+
+-  {:.new}**Infrastructure updates**–
+
+   -  Added validation to check the Magento composer dependencies for the Zend Framework which has migrated to the Laminas project.
+      If the required dependencies are missing, the following error message displays during the build process.
+
+      ```terminal
+      Required configuration is missed in autoload section of composer.json file.
+      Add ("Laminas\Mvc\Controller\Zend\": "setup/src/Zend/Mvc/Controller/") to the `autoload -> psr-4` section.
+      Then, re-run the "composer update" command locally, and commit the updated composer.json and composer.lock files.
+      ```
+
+      See [Verify Zend Framework dependencies]({{site.baseurl}}/cloud/project/project-upgrade.html#verify-zend-framework-composer-dependencies). <!--MCLOUD-4094-->
 
 -  {:.new}**Environment variable updates**–
 
    -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MAGECLOUD-3457-->
 
+   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later.<!--MCLOUD-5721-->
+
 -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events.<!-- MCLOUD-5637-->
+
+**CLI command updates**–
+
+-  {:.new}Updated the following Magento CLI commands with an option for more detailed logging: `app:config:dump`, `app:config:import`, and `module:enable`.  The logging level for each call is determined by the configuration of the [`VERBOSE_COMMANDS`]({{site.baseurl}}/cloud/env/variables-build.html#verbose_commands) variable in the `.magento.app.yaml` file.<!--MCLOUD-3503-->
 
 ## v2002.1.0
 *Release date: February 6, 2020*<br/>
 
 -  {:.new}**Infrastructure updates**–
 
-   -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
+   -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-2927-->
 
    -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. During deployment, `{{site.data.var.ct}}` uses the new package to apply patches. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
 

@@ -98,10 +98,63 @@ Review the [service versions][version compatibility matrix] information for the 
 
 {% include cloud/backup-db.md %}
 
-### Complete the upgrade
+### Verify Zend Framework composer dependencies
 
-{:.bs-callout-info}
-When upgrading to 2.3.x from 2.2.x, you must verify that the `composer.json` file contains `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` in the `"psr-4":` section of the `autoload` property.
+When upgrading to 2.3.x or later from 2.2.x, verify that the Zend Framework dependencies in the `autoload` property of the `composer.json` file have been updated with the Laminas plugin, which supports new requirements for the Zend Framework migration to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
+
+{:.procedure}
+To check and update Zend Framework dependencies:
+
+1. On your local workstation, change to the Cloud project root directory.
+
+1. Checkout your integration branch.
+
+1. Open the `composer.json` file in a text editor.
+
+1. Check the `autoload:psr-4` section for the Laminas plugin:
+
+   ```diff
+    "autoload": {
+      "psr-4": {
+         "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+         "Magento\\Setup\\": "setup/src/Magento/Setup/",
+         "Magento\\": "app/code/Magento/",
+   +     "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+      },
+   ```
+   {:.no-copy}
+
+1. If the Laminas plugin is missing, update `composer.json`:
+
+   -  Add the following line to the `autoload: psr-4` section:
+
+      ```json
+      "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
+      ```
+
+   -  Update the project dependencies.
+
+      ```bash
+      composer update
+      ```
+
+   -  Add, commit, and push code changes.
+
+      ```bash
+      git add -A
+      ```
+
+      ```bash
+      git commit -m "Update Zend Framework dependencies with Laminas plugin."
+      ```
+
+      ```bash
+      git push origin <branch-name>
+      ```
+
+   -  Merge changes to the Staging environment, and then to Production.
+
+### Complete the upgrade
 
 {:.procedure}
 To upgrade the Magento version:
@@ -124,7 +177,15 @@ To upgrade the Magento version:
 1. Add, commit, and push code changes.
 
    ```bash
-   git add -A && git commit -m "Upgrade" && git push magento <branch-name>
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Upgrade"
+   ```
+
+   ```bash
+   git push origin <branch-name>
    ```
 
    `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (`magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
@@ -226,11 +287,13 @@ To resolve the error:
    git add -A && git commit -m "Fixed deployment failure" && git push magento <branch-name>
    ```
 
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
-[Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
-[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+<!--Link definitions-->
 [.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
-[version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
-[Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
+[Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
+[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
+[Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
+[Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
+[version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
