@@ -331,13 +331,13 @@ Attribute |  Data Type | Description | Configuration path | Default Value
 `minimum_password_length` | String | The minimum number of characters required for a valid password. | customer/password/minimum_password_length | 6
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). | customer/password/required_character_classes_number | 2
 
-### Supported gift messages attributes
+### Supported gift message attributes
 
-Retrieves information about the store's gift message settings. These attributes are defined in the `GiftMessageGraphQl` module.
+These attributes retrieve information about the store's gift message settings. They are defined in the `GiftMessageGraphQl` module.
 
 Attribute |  Data Type | Description | Configuration path | Default Value
 --- | --- | ---
-`allow_order` | String | Allows gift messages on order level. Possible values: 1 (Yes) and 0 (No). | sales/gift_options/allow_order | 0
+`allow_order` | String | Allows gift messages at the order level. Possible values: 1 (Yes) and 0 (No). | sales/gift_options/allow_order | 0
 `allow_items` | String | Allows gift messages for order items. Possible values: 1 (Yes) and 0 (No). | sales/gift_options/allow_items | 0
 
 ### Supported WEEE (fixed product tax) attributes
