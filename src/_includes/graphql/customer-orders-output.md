@@ -3,17 +3,11 @@ The `orders` attribute defines a filter that returns details about one or more o
 
 Attribute | Data type | Description
 --- | --- | ---
-`filter` | CustomerOrdersFilterInput | Defines the criteria to search for. If no filter is specified, the query returns the customer's first order
+`filter` | CustomerOrdersFilterInput | Defines the criteria to search for. If no filter is specified, the query returns and paginates all of the customer's orders
 `currentPage` | Int | Specifies which page of results to return. The default value is 1
 `pageSize` | Int | Specifies the maximum number of results to return at once. The default value is 20
 
 The `customers` query returns a [`CustomerOrders`](#customerOrders) object.
-
-The following example shows a fully-defined `orders` attribute:
-
-```graphql
-orders(filter: {number: {eq: "000000007"}}, pageSize: 25, currentPage: 1)
-```
 
 #### CustomerOrdersFilterInput attributes
 
@@ -59,19 +53,19 @@ Attribute | Data type | Description
 `items` | [[OrderItemInterface](#OrderItemInterface)] | An array containing the items purchased in this order
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
-`order_number` | String! | Deprecated. Use the number `attribute` instead
+`order_number` | String! | Deprecated. Use the `number` attribute instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
-`shipping_address` | [CustomerAddress](#customerAddressOutput) | shipping address for the order
+`shipping_address` | [CustomerAddress](#customerAddressOutput) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order
 `status` | String! | The current status of the order
 `total` | [OrderTotal](#OrderTotal) | Contains details about the calculated totals for this order
 
-The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query:
+The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query.
 
 #### BundleInvoiceItem {#BundleInvoiceItem}
 
-The `BundleInvoiceItem` object implements the `InvoiceItemInterface`. It also defines the following attribute:
+The `BundleInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -79,11 +73,15 @@ Attribute | Data type | Description
 
 #### BundleOrderItem {#BundleOrderItem}
 
+The `BundleOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
 #### CommentItem attributes {#CommentItem}
 
-The `CommentItem` object contains details about a comment applied an order.
+The `CommentItem` object contains details about a comment applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -118,7 +116,7 @@ Attribute | Data type | Description
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
-The CreditMemoTotal object contains details about the totals of an credit memo.
+The CreditMemoTotal object contains details about the totals of a credit memo.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -131,7 +129,7 @@ Attribute | Data type | Description
 
 #### Discount attributes {#Discount}
 
-The `Discount` object describes the amount of an item.
+The `Discount` object contains a description of a discount and the amount.
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -269,7 +267,7 @@ Attribute | Data type | Description
 `shipping_handling` | [ShippingHandling](#ShippingHandling) | The shipping and handling costs for the order
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
-`total_shipping` | Money! | The for the order
+`total_shipping` | Money! | The shipping costs for the order
 `total_tax` | Money! | The amount of tax applied to the order
 
 #### PaymentMethod attributes {#PaymentMethod}
@@ -297,7 +295,7 @@ The `SearchResultPageInfo` data type provides pagination for the items returned 
 
 Attribute | Data type | Description
 --- | --- | ---
-`current_page` | Int |Specifies which page of results to return
+`current_page` | Int | Specifies which page of results to return
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
 
