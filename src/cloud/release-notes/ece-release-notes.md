@@ -87,7 +87,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
    -  {:.new}**Added validation for `env.php` file and data**–Added checks for the `env.php` file and data during the Magento install and upgrade process.<!--MCLOUD-5991-->
 
       -  If the `env.php` file is missing from the Magento installation, and the `crypt/key` value is not specified in the `.magento.app.yaml` file, the deployment fails with the following notification:
-      
+
          ```text
          The crypt/key key value does not exist in the ./app/etc/env.php file or the CRYPT_KEY cloud environment variable``Missing crypt key for upgrading Magento`.
          ```
@@ -100,7 +100,6 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
          Required data will be restored from environment configurations and from the .magento.env.yaml file.
          ```
          {:.no-copy}
-
 
 ## v2002.1.0
 *Release date: February 6, 2020*<br/>
