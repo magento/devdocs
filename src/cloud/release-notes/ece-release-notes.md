@@ -24,60 +24,27 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Support for Magento split database performance solution**–Now you can use the `{{site.data.var.ct}}` package to configure and deploy a Magento store on the Cloud platform with the Magento Split database performance solution. See _Enable split database solution_.<!--MCLOUD-2863-->
 
-   -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html) <!-- MCLOUD-5637, 5531-->
+   -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html).<!-- MCLOUD-5637, 5531-->
 
    -  {:.new}**Improved Javascript bundling capabilities**–Now you can use the [Magento Baler module](https://github.com/magento/baler) to build optimized JavaScript and HTML content during static content deployment. See [Optimize JavaScript and HTML content]({{site.baseurl}}/cloud/deploy/static-content-deployment.html#optimize-javascript-and-html-content).<!--MCLOUD-3456-->
 
-   -  {:.fix}Fixed an issue to ensure that the project URL is updated correctly when deploying to Staging and Production environments. Now, {{site.data.var.ct}} uses the URL for the route with the `primary:true` attribute set in the project route configuration. See [Deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#update_urls).<!--MCLOUD-5883-->
+   -  {:.new}Improved the process for database dumps (`vendor/bin/ece-tools db-dump`) and updated log messages to clarify that the database dump operation switches the application to maintenance mode, stops consumer queue processes, and disables cron jobs before the dump begins.<!--MCLOUD-5324, MCLOUD-2062-->
 
--  {:.new}**Validation improvements**–
+   -  {:.fix}Fixed an issue to ensure that the project URL is updated correctly when deploying to Staging and Production environments. Now, `{{site.data.var.ct}}` uses the URL for the route with the `primary:true` attribute set in the project route configuration. See [Deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#update_urls).<!--MCLOUD-5883-->
 
-   -  {:.new}**Elasticsearch 7.x compatibility checks**–Updated Elasticsearch validation for Elasticsearch 7.x software compatibility checks.<!--MCLOUD-5542-->
+   -  {:.fix}Updated the `generate.xml` build scenario workflow for applying patches. Patches must be applied earlier to update Magento to fix any issues that might cause the `di:compile` and `module:refresh` steps to fail.<!--MCLOUD-5941-->
 
-   -  {:.new}**Updated service version and EOL validation checks**–Updated validation to check installed service versions against Magento 2.4. requirements.<!--MCLOUD-6144-->
+   -  {:.fix}Fixed an issue in the Magento installation process that incorrectly returns the `Crypt key missing` error. The `crypt/key` value is generated automatically during the installation.<!--MCLOUD-6120-->
 
-   -  {:.new}**Added validation for Zend Framework dependencies**–Added validation for composer dependencies for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
+-  {:.new}**Service updates**–
 
-      ```terminal
-      Required configuration is missing from the autoload section of the composer.json file.
-      Add ("Laminas\Mvc\Controller\Zend\": "setupsrc/ Zend/Mvc/Controller/") to
-      the `autoload -> psr-4` section. Then, re-run the "composer update" command locally, and
-      commit the updated composer.json and composer.lock files.
-      ```
-
-      See [Verify Zend Framework dependencies]({{site.baseurl}}/cloud/project/project-upgrade.html#verify-zend-framework-composer-dependencies).<!--MCLOUD-4094-->
-
-   -  {:.new}**Validate `env.php` file**–Added validation for the `env.php` file and data during the Magento install and upgrade process.<!--MCLOUD-5991-->
-
-      -  If the `env.php` file is missing from the Magento installation, and the `crypt/key` value is not specified in the `.magento.app.yaml` file, the deployment fails with the following notification: `The crypt/key key value does not exist in the ./app/etc/env.php file or the CRYPT_KEY cloud environment variable``Missing crypt key for upgrading Magento`.
-
-      -  If the Magento installation does not include the `env.php` file, or the configuration contains only one cache type, the `cron:enable` command runs during the upgrade process to restore the file with all `cache_types`. The following notification is added to the log:
-
-         ```terminal
-         Magento state indicated as installed but configuration file app/etc/env.php was empty or did not exist.
-         Required data will be restored from environment configurations and from the .magento.env.yaml file.
-         ```
-
-   -  {:.fix}Fixed a validation issue so that the following post-deploy warning message displays only when the `post-deploy` hook configuration is missing from the `.magento.app.yaml` file:
-
-       ```terminal
-       Your application does not have the "post_deploy" hook enabled.
-       ```
-       <!--MCLOUD-4077-->
+   -  {:.new}Added support for PHP 7.4 and MariaDB 10.4.<!--MAGECLOUD-2957, MCLOUD-4144-->
 
 -  {:.new}**Environment variable updates**–
 
    -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MCLOUD-3456, MCLOUD-3457-->
 
-   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later.See the variable description in the [deploy variables]{{site.baseurl}}/cloud/env/variables-deploy.html#redis_backend)<!--MCLOUD-5721, MCLOUD-5865-->
-
--  {:.new}**Service updates**–
-
-   -  {:.new}Added support for PHP 7.4<!--MAGECLOUD-2957-->
-
-   -  {:.new}Added support for MariaDB 10.4.<!--MCLOUD-4144-->
-
-   -  {:.new}Updated the version validation schema to support Magento 2.4. validation to check installed service versions against the EOL date for each service. Now, customers receive a notification if a service version is within three months of the EOL date, and a warning if the EOL date is in the past.<!--MAGECLOUD-4076-->
+   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later.See the variable description in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#redis_backend).<!--MCLOUD-5721, MCLOUD-5865-->
 
 -  {:.new}**CLI command updates**–
 
@@ -91,11 +58,49 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
       The logging level for each call is determined by the configuration of the [`VERBOSE_COMMANDS`]({{site.baseurl}}/cloud/env/variables-build.html#verbose_commands) variable in the `.magento.app.yaml` file.<!--MCLOUD-3503-->
 
-   -  {:.new}Improved the process for database dumps (`vendor/bin/ece-tools db-dump`) and updated log messages to clarify that the database dump operation switches the application to maintenance mode, stops consumer queue processes, and disables cron jobs before the dump begins.<!--MCLOUD-5324, MCLOUD-2062-->
+-  {:.new}**Validation improvements**–
 
--  {:.fix}Updated the `generate.xml` build scenario workflow for applying patches. Patches must be applied earlier to update the Magento application and  configuration to fix any issues that might cause  the `di:compile` and `module:refresh` steps to fail.<!--MCLOUD-5941-->
+   -  {:.new}**Elasticsearch 7.x compatibility checks**–Updated Elasticsearch validation for Elasticsearch 7.x software compatibility checks.<!--MCLOUD-5542-->
 
--  {:.fix}Fixed an in the Magento installation process that incorrectly issued a `Crypt key missing`  notification. The `crypt/key` value is generated automatically during the Magento installation.<!--MCLOUD-6120-->
+   -  {:.new}**Updated service version and EOL validation checks**–Updated validation to check installed service versions against Magento 2.4. requirements.<!--MCLOUD-6144-->
+
+   -  {:.fix}Fixed a validation issue so that the following post-deploy warning message displays only when the `post-deploy` hook configuration is missing from the `.magento.app.yaml` file:
+
+      ```text
+      Your application does not have the "post_deploy" hook enabled.
+      ```
+      {:.no-copy}
+      <!--MCLOUD-4077-->
+
+   -  {:.new}**Added validation for Zend Framework dependencies**–Added compoer dependency validation for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
+
+      ```text
+      Required configuration is missing from the autoload section of the composer.json file.
+      Add ("Laminas\Mvc\Controller\Zend\": "setupsrc/ Zend/Mvc/Controller/") to
+      the `autoload -> psr-4` section. Then, re-run the "composer update" command locally, and
+      commit the updated composer.json and composer.lock files.
+      ```
+      {:.no-copy}
+
+      See [Verify Zend Framework dependencies]({{site.baseurl}}/cloud/project/project-upgrade.html#verify-zend-framework-composer-dependencies).<!--MCLOUD-4094-->
+
+   -  {:.new}**Added validation for `env.php` file and data**–Added checks for the `env.php` file and data during the Magento install and upgrade process.<!--MCLOUD-5991-->
+
+      -  If the `env.php` file is missing from the Magento installation, and the `crypt/key` value is not specified in the `.magento.app.yaml` file, the deployment fails with the following notification:
+      
+         ```text
+         The crypt/key key value does not exist in the ./app/etc/env.php file or the CRYPT_KEY cloud environment variable``Missing crypt key for upgrading Magento`.
+         ```
+         {:.no-copy}
+
+      -  If the Magento installation does not include the `env.php` file, or the configuration contains only one cache type, the `cron:enable` command runs during the upgrade process to restore the file with all `cache_types`. The following notification is added to the log:
+
+         ```text
+         Magento state indicated as installed but configuration file app/etc/env.php was empty or did not exist.
+         Required data will be restored from environment configurations and from the .magento.env.yaml file.
+         ```
+         {:.no-copy}
+
 
 ## v2002.1.0
 *Release date: February 6, 2020*<br/>
