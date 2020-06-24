@@ -18,7 +18,7 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
 ## v2002.1.1
-*Release date: June 24, 2020*<br/>
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
 
 -  {:.new}**Infrastructure updates**–
 
@@ -44,7 +44,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MCLOUD-3456, MCLOUD-3457-->
 
-   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later.See the variable description in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#redis_backend).<!--MCLOUD-5721, MCLOUD-5865-->
+   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later. See the variable description in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#redis_backend).<!--MCLOUD-5721, MCLOUD-5865-->
 
 -  {:.new}**CLI command updates**–
 
@@ -64,7 +64,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Updated service version and EOL validation checks**–Updated validation to check installed service versions against Magento 2.4. requirements.<!--MCLOUD-6144-->
 
-   -  {:.fix}Fixed a validation issue so that the following post-deploy warning message displays only when the `post-deploy` hook configuration is missing from the `.magento.app.yaml` file:
+   -  {:.fix}Fixed a validation issue so that the following post-deploy warning message displays only if the `post-deploy` hook configuration is missing from the `.magento.app.yaml` file:
 
       ```text
       Your application does not have the "post_deploy" hook enabled.
