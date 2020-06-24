@@ -13,7 +13,7 @@ The `storeConfig` query defines information about a store's configuration. You c
 
 ### Query a store's configuration
 
-The following call returns all details of a store's configuration.
+The `storeConfig` query can return `base` and `extended` store configuration setting. The following call returns all `base` details of a store's configuration.
 
 **Request:**
 
@@ -36,11 +36,6 @@ The following call returns all details of a store's configuration.
     secure_base_link_url
     secure_base_static_url
     secure_base_media_url
-    store_name
-    send_friend {
-      enabled_for_customers
-      enabled_for_guests
-    }
   }
 }
 ```
@@ -59,19 +54,14 @@ The following call returns all details of a store's configuration.
       "default_display_currency_code": "USD",
       "timezone": "America/Chicago",
       "weight_unit": "lbs",
-      "base_url": "http://magento2.vagrant193/",
-      "base_link_url": "http://magento2.vagrant193/",
-      "base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
-      "base_media_url": "http://magento2.vagrant193/pub/media/",
-      "secure_base_url": "http://magento2.vagrant193/",
-      "secure_base_link_url": "http://magento2.vagrant193/",
-      "secure_base_static_url": "http://magento2.vagrant193/pub/static/version1536249714/",
-      "secure_base_media_url": "http://magento2.vagrant193/pub/media/",
-      "store_name": "My Store",
-      "send_friend": {
-        "enabled_for_customers": true,
-        "enabled_for_guests": false
-      }
+      "base_url": "http://magentohost.example.com/",
+      "base_link_url": "http://magentohost.example.com/",
+      "base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
+      "base_media_url": "http://magentohost.example.com/pub/media/",
+      "secure_base_url": "http://magentohost.example.com/",
+      "secure_base_link_url": "http://magentohost.example.com/",
+      "secure_base_static_url": "http://magentohost.example.com/pub/static/version1536249714/",
+      "secure_base_media_url": "http://magentohost.example.com/pub/media/"
     }
   }
 }
@@ -180,6 +170,36 @@ The following query returns information about the store's catalog configuration.
       "grid_per_page": 9,
       "list_per_page": 10,
       "catalog_default_sort_by": "position"
+    }
+  }
+}
+```
+
+### Query a store's customer configuration
+
+The following query returns information about the store's customer configuration.
+
+**Request:**
+
+```graphql
+{
+    storeConfig {
+        autocomplete_on_storefront
+        minimum_password_length
+        required_character_classes_number
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "storeConfig": {
+      "autocomplete_on_storefront": true,
+      "minimum_password_length": "6",
+      "required_character_classes_number": "2"
     }
   }
 }
@@ -300,6 +320,16 @@ Attribute |  Data Type | Description | Example
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `root_category_id` | Int | The ID of the root category
 `title_separator` | String | Identifies the character that separates the category name and subcategory in the browser title bar | `-`
+
+### Supported catalog attributes
+
+Use the `customer` attributes to retrieve information about the store's customer settings. These attributes are defined in the `CustomerGraphQl` module.
+
+Attribute |  Data Type | Description | Configuration path | Default Value
+--- | --- | ---
+`autocomplete_on_storefront` | Boolean | Enable autocomplete on login and forgot password forms. | customer/password/autocomplete_on_storefront | true
+`minimum_password_length` | String | The minimum number of characters required for a valid password. | customer/password/minimum_password_length | 6
+`required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). | customer/password/required_character_classes_number | 2
 
 ### Supported WEEE (fixed product tax) attributes
 

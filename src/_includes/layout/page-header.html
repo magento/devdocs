@@ -1,7 +1,13 @@
 <!-- page-header -->
 <section class="page-intro">
 
-  {% if page.url contains "guides/v2.3/install-gde/install/web/" or page.url contains "guides/v2.3/comp-mgr/upgrader/" %}
+  {% if page.url contains "guides/v2.4/payments-integrations/base-integrations/" or page.url contains "guides/v2.4/payments-integrations/payment-gateway" or page.url contains "guides/v2.4/payments-integrations/vault" or page.url contains "guides/v2.4/payments-integrations/bk-payments-integrations" %}
+  <div class="bs-callout-warning">
+    The Payment Provider Gateway documentation uses the Magento 2.3.x version of the Braintree module as a reference application. The Braintree module was removed in Magento 2.4.0. The concepts described in this guide are still applicable to Magento 2.4.0, but the code samples are not supported.
+  </div>
+  {% endif %}
+
+  {% if page.url contains "guides/v2.3/install-gde/install/web/" or page.url contains "guides/v2.3/comp-mgr/upgrader/" or page.url contains "guides/v2.3/comp-mgr/module-man/" %}
   <div class="bs-callout-warning">
     The Web Setup Wizard is being deprecated in Magento 2.3.6 and will be removed in Magento 2.4.0. After it is removed, you must use the command line to <a href="https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli.html">install</a> or <a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html">upgrade</a> Magento.
   </div>
@@ -9,7 +15,7 @@
 
   {% if page.guide_version == "2.4" %}
   <div class="message-banner">
-    This is the 2.4.0 beta release version of documentation. Content in this version is subject to change.
+    This is a beta release of documentation for Magento 2.4, published for previewing soon-to-be-released functionality. Content in this version is subject to change. Links to the v2.4 code base may not properly resolve until the code is officially released.
   </div>
   {% endif %}
 
@@ -21,7 +27,7 @@
 
   {% if page.url contains "guides/v2.4/comp-mgr/" %}
   <div class="message-banner">
-    You must install and configure Elasticsearch 6.x or 7.x before upgrading to {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the catalog search engine</a> for details.
+    You must install and configure Elasticsearch 7.6.x before upgrading to {{ site.data.var.ee }} or {{ site.data.var.ce }} 2.4.0. See <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq-elasticsearch.html">Check the catalog search engine</a> for details.
   </div>
   {% endif %}
 

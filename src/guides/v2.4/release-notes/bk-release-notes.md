@@ -1,6 +1,7 @@
 ---
 group: release-notes
 title: 2.4 Release Information
+redirect_from: magento-release-information.html
 ---
 
 ## Magento 2.4.x release notes

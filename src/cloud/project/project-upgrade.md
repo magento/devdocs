@@ -155,7 +155,7 @@ To create a system-specific configuration file:
    For example for Pro, to run the `scd-dump` on the `integration` branch:
 
    ```bash
-   ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
+   ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/ece-tools config:dump"
    ```
 
 1. Transfer the `config.php` file to your local workstations using `rsync` or `scp`. You can only add this file to the branch locally.

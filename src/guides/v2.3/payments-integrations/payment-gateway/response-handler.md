@@ -25,7 +25,7 @@ Basic interface for a response handler is [`Magento\Payment\Gateway\Response\Han
 
 ### Example
 
-Example of a simple response handler ([`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php)):
+Example of a simple response handler ([`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php)):
 
 ```php
 class PayPalDetailsHandler implements HandlerInterface
