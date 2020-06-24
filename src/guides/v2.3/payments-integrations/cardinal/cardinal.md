@@ -66,7 +66,7 @@ And the `system.xml` file of the AuthorizenetAcceptjs payment method:
 
 You can pass this parameter on storefront via checkout config using `\Magento\Checkout\Model\ConfigProviderInterface`
 
-See [app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php#L19) as an example.
+See [app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php) as an example.
 
 ```php
 namespace Magento\AuthorizenetCardinal\Model\Checkout;
@@ -296,7 +296,7 @@ Then you can expect to see an additional field with a cardholder authentication 
 [list of compatible payment gateways]: https://www.cardinalcommerce.com/partners/gateways
 [module]: https://glossary.magento.com/module
 [payment method]: https://glossary.magento.com/payment-method
-[app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php#L19
+[app\code\AuthorizenetCardinal\Model\Checkout\ConfigProvider.php]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Model/Checkout/ConfigProvider.php
 [JWT]: https://en.wikipedia.org/wiki/JSON_Web_Token
 [API Reference]: https://cardinaldocs.atlassian.net/wiki/spaces/CC/pages/98315/Response+Objects
 [\Magento\AuthorizenetCardinal\Gateway\Request\Authorize3DSecureBuilder]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AuthorizenetCardinal/Gateway/Request/Authorize3DSecureBuilder.php

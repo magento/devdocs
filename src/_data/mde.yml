@@ -5,6 +5,7 @@ versions:
   - 2.3.3
   - 2.3.4
   - 2.3.5-p1
+  - 2.4.0
 extensions:
   -
     name: Amazon Sales Channel
@@ -17,7 +18,8 @@ extensions:
           2.3.2: supported
           2.3.3: supported
           2.3.4: supported
-          2.3.5-p1: supported 
+          2.3.5-p1: supported
+          2.4.0: not supported
       -
         name: 4.0.0
         support:
@@ -26,7 +28,8 @@ extensions:
           2.3.2: compatible
           2.3.3: compatible
           2.3.4: compatible
-          2.3.5-p1: not supported     
+          2.3.5-p1: not supported
+          2.4.0: not supported
       -
         name: 3.0.1
         support:
@@ -36,6 +39,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: not supported
       -
         name: 3.0.0
         support:
@@ -45,6 +49,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: not supported
       -
         name: 2.0.0
         support:
@@ -54,9 +59,20 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: not supported
   -
     name: Magento Inventory
     versions:
+      -
+        name: 1.1.6
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: supported
       -
         name: 1.1.5
         support:
@@ -66,6 +82,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: supported
+          2.4.0: compatible
       -
         name: 1.1.4
         support:
@@ -75,6 +92,7 @@ extensions:
           2.3.3: compatible
           2.3.4: supported
           2.3.5-p1: compatible
+          2.4.0: compatible
       -
         name: 1.1.3
         support:
@@ -84,6 +102,7 @@ extensions:
           2.3.3: supported
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: compatible
       -
         name: 1.1.2
         support:
@@ -93,6 +112,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: compatible
       -
         name: 1.1.1
         support:
@@ -102,6 +122,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: compatible
       -
         name: 1.1.0
         support:
@@ -111,9 +132,20 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: compatible
+          2.4.0: compatible
   -
     name: Page Builder
     versions:
+      - 
+        name: 1.4.0
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.4.0: supported
       -
         name: 1.3.1
         support:
@@ -123,6 +155,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: supported
+          2.4.0: not supported
       -
         name: 1.2.0
         support:
@@ -132,6 +165,7 @@ extensions:
           2.3.3: not supported
           2.3.4: supported
           2.3.5-p1: not supported
+          2.4.0: not supported
       -
         name: 1.1.0
         support:
@@ -141,6 +175,7 @@ extensions:
           2.3.3: supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.4.0: not supported
       -
         name: 1.0.1
         support:
@@ -150,6 +185,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.4.0: not supported
       -
         name: 1.0.0
         support:
@@ -159,6 +195,7 @@ extensions:
           2.3.3: not supported
           2.3.4: not supported
           2.3.5-p1: not supported
+          2.4.0: not supported
   -
     name: Product Recommendations
     versions:
@@ -171,6 +208,7 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
+          2.4.0: supported
       -
         name: 2.0.0
         support:
@@ -180,3 +218,4 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
+          2.4.0: supported

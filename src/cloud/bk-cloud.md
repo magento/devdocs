@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-{{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the on-premise {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
+{{site.data.var.ece}} is a managed, automated hosting platform for the {{site.data.var.ee}} software. {{site.data.var.ece}} comes with a variety of additional features that sets it apart from the on-premises {{site.data.var.ee}} and {{site.data.var.ce}} platforms:
 
 ![Cloud Benefits]
 
