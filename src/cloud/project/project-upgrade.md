@@ -24,6 +24,7 @@ Review the [{{site.data.var.ece}} service versions][version compatibility matrix
 
 {:.bs-callout-info}
 If you upgrade the PHP version, you must also submit a Support ticket to update the New Relic service.
+
 ### Configuration management
 
 If you are upgrading from 2.1.4 or later to 2.2.x or later and use [Configuration Management], you need to migrate the `config.local.php` file. Older versions used a `config.local.php` file for Configuration Management, but version 2.2.0 and later use the `config.php` file. This file works exactly like the `config.local.php` file, but it has different configuration settings that include a list of your enabled modules and additional configuration options.
@@ -88,16 +89,6 @@ To update the `.magento.app.yaml` file:
 
 1. Continue with the upgrade process.
 
-## Upgrade the Magento application
-
-Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
-
-{%include cloud/note-pro-using-yaml-support.md%}
-
-### Back up the database
-
-{% include cloud/backup-db.md %}
-
 ### Verify Zend Framework composer dependencies
 
 When upgrading to 2.3.x or later from 2.2.x, verify that the Zend Framework dependencies in the `autoload` property of the `composer.json` file have been updated with the Laminas plugin, which supports new requirements for the Zend Framework migration to the Laminas project. See [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) on the _Magento DevBlog_.
@@ -126,7 +117,7 @@ To check and update Zend Framework dependencies:
 
 1. If the Laminas plugin is missing, update `composer.json`:
 
-   -  Add the following line to the `autoload: psr-4` section:
+   -  Add the following line to the `autoload:psr-4` section.
 
       ```json
       "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
@@ -145,7 +136,7 @@ To check and update Zend Framework dependencies:
       ```
 
       ```bash
-      git commit -m "Update Zend Framework dependencies with Laminas plugin."
+      git commit -m "Add Laminas plugin to Zend Framework composer dependencies"
       ```
 
       ```bash
@@ -153,6 +144,16 @@ To check and update Zend Framework dependencies:
       ```
 
    -  Merge changes to the Staging environment, and then to Production.
+
+## Upgrade the Magento application
+
+Review the [service versions][version compatibility matrix] information for the latest software version requirements before upgrading your Magento application.
+
+{%include cloud/note-pro-using-yaml-support.md%}
+
+### Back up the database
+
+{% include cloud/backup-db.md %}
 
 ### Complete the upgrade
 

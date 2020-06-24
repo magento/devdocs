@@ -37,7 +37,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-You must install and configure the Baler module before using this feature. Because Baler is currently in alpha release, we do not recommend using it in Production environments.
+You must install and configure the Baler module before using this feature. See [Optimize JavaScript and HTML content]({{site.baseurl}}/cloud/deploy/static-content-deployment.html#optimize-javascript-and-html-content). Because Baler is currently in alpha release, we do not recommend using it in Production environments.
 
 ### `ERROR_REPORT_DIR_NESTING_LEVEL`
 
