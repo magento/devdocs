@@ -14,6 +14,7 @@ The smart wizards can help you determine whether your Cloud configuration follow
 -  Ideal state for minimal deployment downtime
 -  Load balancing configuration for database and Redis
 -  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
+-  Check ability to update the environment configuration to support the Magento split database performance solution. If the split database configuration has already been applied, the wizard displays information about the database configuration.
 
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
 
@@ -24,6 +25,7 @@ Command | Description
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
 `wizard:scd-on-build` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies that the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
+`wizard:split-db-state` | Checks existence of ability to split Magento DB on current Pro Staging or Production environment. This command also checks whether the project has already been updated to support the split DB configuration has already been applied
 
 As an example, you can verify that your configuration properly enables the SCD on-demand feature:
 

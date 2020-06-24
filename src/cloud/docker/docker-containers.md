@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The [`{{site.data.var.mcd}}` repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
+The [`{{site.data.var.mcd-package}}` repository][docker-repo] contains build information to create a Docker environment with the required specifications for Magento Cloud. The build configuration creates a Docker instance with CLI and service containers required to run Magento Cloud in a local Docker environment. You can customize the Docker containers available in the repository and add more as needed.
 
 {{site.data.var.mcd-prod}} generates the `docker-compose.yml` file to the required specifications. Then, you use docker-compose to create the container instances and to build and deploy the {{site.data.var.ee}} site.
 

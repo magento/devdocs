@@ -28,6 +28,8 @@ The deployment log is located in `/var/log/platform/<prodject ID>/deploy.log`. T
 
 When accessing logs in Production or Staging environments, you must use SSH to log in to each of the three nodes to locate the logs. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
+{%include cloud/note-error-message-reference-ece-tools.md%}
+
 ## Check the code base {#codebase}
 
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
