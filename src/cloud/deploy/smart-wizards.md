@@ -14,7 +14,7 @@ The smart wizards can help you determine whether your Cloud configuration follow
 -  Ideal state for minimal deployment downtime
 -  Load balancing configuration for database and Redis
 -  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
--  Check ability to update the environment configuration to support the Magento split database performance solution. If the split database configuration has already been applied, display information about the database configuration.
+-  Check ability to update the environment configuration to support the Magento split database performance solution. If the split database configuration has already been applied, the wizard displays information about the database configuration.
 
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
 
