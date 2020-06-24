@@ -8,7 +8,9 @@ functional_areas:
 - Debug
 ---
 
-Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local Docker environment.
+Xdebug is an extension for debugging your PHP. {{site.data.var.mcd-prod}} provides a separate container to handle Xdebug requests in the Docker environment.  Use this container to enable Xdebug and debug PHP code in your Docker environment without affecting your {{site.data.var.ece}} project configuration.
+
+The following instructions explain how to configure Xdebug and PhpStorm to debug in your local Docker environment.
 
 If you use Microsoft Windows, take the following steps before continuing:
 
@@ -18,38 +20,47 @@ If you use Microsoft Windows, take the following steps before continuing:
 
 ## Enable Xdebug
 
-To enable Xdebug for your project, add `xdebug` to the `runtime:extensions` section of the `.magento.app.yaml` file.
+1. To enable Xdebug for your Docker environment, generate the Docker Compose configuration file in developer mode with the `--with-xdebug` option and any other required options, for example.
 
-```yaml
-runtime:
-    extensions:
-        - redis
-        - xsl
-        - json
-        - newrelic
-        - xdebug
-```
+   ```bash
+   vendor/bin/ece-docker build:compose --mode --sync-engine="mutagen" developer --with-xdebug
+   ```
 
-## Configure Xdebug
-
-1. Rebuild the `docker-compose.yml` file by continuing to configure your local workstation to [launch the Docker environment]({{ site.baseurl }}/cloud/docker/docker-config.html). The following is an excerpt from the `docker-compose.yml` file that shows Docker global variables.
+   This command adds the Xdebug configuration to your `docker-compose.yml` file.
 
    ```yaml
-   generic:
-     image: alpine
-     environment:
-       - PHP_MEMORY_LIMIT=2048M
-       - UPLOAD_MAX_FILESIZE=64M
-       - MAGENTO_ROOT=/app
-       - PHP_IDE_CONFIG=serverName=magento_cloud_docker
-       - XDEBUG_CONFIG=remote_host=host.docker.internal
-       - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl xdebug'
+      fpm_xdebug:
+       hostname: fpm_xdebug.magento2.docker
+       image: 'magento/magento-cloud-docker-php:7.3-fpm-1.1'
+       extends: generic
+       ports:
+         - '9001:9001'
+       volumes:
+         - 'mymagento-magento-sync:/app:nocopy'
+       environment:
+         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap    socketssysvmsg    sysvsem sysvshm opcache zip redis xsl sodium'
+       networks:
+         magento:
+           aliases:
+             - fpm_xdebug.magento2.docker
+       depends_on:
+         db:
+           condition: service_started
    ```
    {:.no-copy}
 
-1. Change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
+1. Follow the steps to [launch the Docker environment in Developer mode][].
 
-   ```yaml
+   The default Docker environment configuration sets the following Xdebug configuration variables:
+
+   ```conf
+   PHP_IDE_CONFIG=serverName=magento_cloud_docker
+   XDEBUG_CONFIG=remote_host=host.docker.internal
+   ```
+
+1. Change any Xdebug configuration using the `XDEBUG_CONFIG` option. For example, to change the xdebug.remote_port option:
+
+   ```bash
    XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
    ```
 
@@ -67,7 +78,7 @@ To configure PhpStorm to work with Xdebug:
 
 1. Configure the following settings for the new server configuration:
 
-   -  **Name**—Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker-compose.yml` file.
+   -  **Name**—Enter the name used for the `serverName` option from `PHP_IDE_CONFIG` value.
    -  **Host**—Enter `localhost`.
    -  **Port**—Enter `80`.
    -  **Debugger**—Select `Xdebug`.
@@ -155,4 +166,5 @@ To use Xdebug Helper with Chrome:
    ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
 
 [docker-config]: {{site.baseurl}}/cloud/docker/docker-config.html
+[launch the Docker environment in Developer mode]: {{site.baseurl}}/cloud/docker/docker-mode-developer.html
 [Xdebug Helper extension]: https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en

@@ -31,6 +31,7 @@ The following table summarizes the differences between environments:
       <td>Yes</td>
       <td>Limited</td>
       <td>Limited</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>Supports multiple branches</td>

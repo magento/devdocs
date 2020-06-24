@@ -74,9 +74,14 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 
+### Error logs
+
+Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
+
 The following logs have a common location for all Cloud projects:
 
--  **Build log**: `var/log/cloud.log`
+-  **Deployment log**: `var/log/cloud.log`
+-  **Last deployment error log**: `var/log/cloud.error.log`
 -  **Debug log**: `var/log/debug.log`
 -  **Exception log**: `var/log/exception.log`
 -  **Reports**: `var/reports/`

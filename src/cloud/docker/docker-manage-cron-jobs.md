@@ -28,13 +28,13 @@ To improve the overall performance in the Docker development and production envi
 **To view the cron log:**
 
 ```bash
-docker-compose run deploy bash -c "cat /app/var/cron.log"
+docker-compose run --rm deploy bash -c "cat /app/var/cron.log"
 ```
 
 **To run cron jobs manually:**
 
 ```bash
-docker-compose run cron /usr/local/bin/php bin/magento cron:run
+docker-compose run --rm cron /usr/local/bin/php bin/magento cron:run
 ```
 
 [Cron container]: {{site.baseurl}}/cloud/docker/docker-containers-cli.html

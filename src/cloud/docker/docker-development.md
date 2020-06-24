@@ -7,7 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package.
+{{site.data.var.mcd-prod}} provides an option to deploy Magento to a Docker environment for development, test, and automation tasks.
+
+The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
 {%include cloud/note-docker-config-reference-link.md%}
 
