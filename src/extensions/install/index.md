@@ -110,8 +110,13 @@ By default, the extension is probably disabled:
 Module is disabled
 ```
 
-{:.bs-callout-info}
-The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
+The extension name is in the format `<VendorName>_<ComponentName>`; this is a different format from the Composer name. Use this format to enable the extension. If you are unsure of the extension name, run:
+
+```bash
+bin/magento module:status
+```
+
+and look for the extension under "List of disabled modules".
 
 ## Enable the extension
 

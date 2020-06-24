@@ -1,1 +1,11 @@
-../../v2.3/rest/rest_endpoints.md
+---
+group: rest-api
+subgroup: A_rest
+title: List of service names per module
+menu_title: List of service names per module
+menu_order: 4
+functional_areas:
+  - Integration
+---
+
+{% include webapi/services24.md%}
