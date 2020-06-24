@@ -162,7 +162,7 @@ Ideal state is configured
 
 ## Magento patches and custom patches
 
-The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp-package}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
 
 <!-- link definitions -->
 [mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
