@@ -22,9 +22,9 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**Infrastructure updates**–
 
-   -  {:.new}**Support for Magento split database performance solution**–Now you can use the `{{site.data.var.ct}}` package to configure and deploy a Magento store on the Cloud platform with the Magento Split database performance solution. See _Enable split database solution_.<!--MCLOUD-2863-->
-
    -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html).<!-- MCLOUD-5637, 5531-->
+
+   -  {:.new}**Support for Magento split database performance solution**–Now you can use the `{{site.data.var.ct}}` package to configure and deploy a Magento store on the Cloud platform with the Magento Split database performance solution.<!--MCLOUD-2863-->
 
    -  {:.new}**Improved Javascript bundling capabilities**–Now you can use the [Magento Baler module](https://github.com/magento/baler) to build optimized JavaScript and HTML content during static content deployment. See [Optimize JavaScript and HTML content]({{site.baseurl}}/cloud/deploy/static-content-deployment.html#optimize-javascript-and-html-content).<!--MCLOUD-3456-->
 
