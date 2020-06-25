@@ -8,7 +8,7 @@ functional_areas:
 - Split database performance solution
 ---
 
-The Split database performance solution improves scalability by providing three separate databases to manage different functional areas of Magento application.  The following instructions show how to configure this solution in the {{site.data.var.mcd-prod}} environment, exporting the Magento Sales and Magento Quote data from the main database and creating two separate databases in the Cloud Docker environment.
+The Split database performance solution improves scalability by providing three separate databases to manage different functional areas of the Magento application.  The following instructions show how to configure this solution in the {{site.data.var.mcd-prod}} environment, exporting the Magento Sales and Magento Quote data from the main database and creating two separate databases in the Cloud Docker environment.
 
 {:.bs-callout-info}
 See the [Magento split database performance solution][] topic in the _Configuration Guide_ for detailed information and extended examples.

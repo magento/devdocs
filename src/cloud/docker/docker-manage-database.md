@@ -27,7 +27,7 @@ return [
                 'port' => '3306'
             ],
         ],
-        // The following configuration will be available if you are using the split database architecture.
+        // The following configuration is available if you are using the split database architecture.
         'database-quote' => [
             [
                 'host' => 'db-quote',
@@ -67,11 +67,11 @@ To connect to the database using Docker commands:
    If you use the split database architecture:
 
    ```bash
-      mysql --host=db-quote --user=magento2 --password=magento2
+   mysql --host=db-quote --user=magento2 --password=magento2
    ```
 
    ```bash
-      mysql --host=db-sales --user=magento2 --password=magento2
+   mysql --host=db-sales --user=magento2 --password=magento2
    ```
 
 1. Verify the version of the database service.
@@ -102,7 +102,7 @@ To connect to the database port:
    --------------------------------------------------------------------------------------------------
    magento-cloud_db_1          docker-entrypoint.sh mysqld      Up       0.0.0.0:32769->3306/tcp
 
-   # The following lines will be available if you are using the split database architecture.
+   # The following lines are available if you are using the split database architecture.
 
    magento-cloud_db-quote_1    docker-entrypoint.sh mysqld      Up       0.0.0.0:32873->3306/tcp
    magento-cloud_db-sales_1    docker-entrypoint.sh mysqld      Up       0.0.0.0:32874->3306/tcp
@@ -116,7 +116,7 @@ To connect to the database port:
    mysql -h127.0.0.1 -P32769 -umagento2 -pmagento2
    ```
 
-   If you use the split database architecture then use the appropriate ports:
+   If you use the split database architecture, use the following ports to connect:
 
    For 'db-quote' service:
 
