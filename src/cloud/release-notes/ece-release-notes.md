@@ -46,8 +46,6 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 -  {:.new}**CLI command updates**–
 
-   -  {:.new}Added the `wizard:split-db-state` smart wizard to check the status and configuration of the Magento split database performance solution on {{site.data.var.ece}} Pro and Staging environments. See [Smart wizards]({{site.baseurl}}/cloud/deploy/smart-wizards.html).<!--MCLOUD-3734-->
-
    -  {:.new}Updated the following Magento CLI commands with an option for more detailed logging:
 
       -  `app:config:dump`
