@@ -54,6 +54,39 @@ stage:
             database: 11
 ```
 
+If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`for the backend model, you must use the following configuration structure:
+
+```php
+'cache' => [
+    'frontend' => [
+        'default' => [
+             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
+             'backend_options' => [
+                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+                 'remote_backend_options' => [
+                     'persistent' => 0,
+                     'server' => 'localhost',
+                     'database' => '0',
+                     'port' => '6370',
+                     'password' => '',
+                     'compress_data' => '1',
+                 ],
+                 'local_backend' => 'Cm_Cache_Backend_File',
+                 'local_backend_options' => [
+                     'cache_dir' => '/dev/shm/'
+                 ]
+             ],
+             'frontend_options' => [
+                 'write_control' => false,
+             ],
+         ]
+    ],
+    'type' => [
+        'default' => ['frontend' => 'default'],
+    ],
+]
+```
+
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
@@ -345,6 +378,22 @@ stage:
         host: changedmq.host
         port: 1234
 ```
+
+### `REDIS_BACKEND`
+
+-  **Default**—`Cm_Cache_Backend_Redis`
+-  **Version**—Magento 2.3.5 and later
+
+Specifies the backend model configuration for the Redis cache.
+
+Magento version 2.3.5 and later includes the following backend models:
+
+-  `Cm_Cache_Backend_Redis`
+-  `\Magento\Framework\Cache\Backend\Redis`
+-  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
+
+{:.bs-callout-info}
+See [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) for details on selecting the backend model for Redis caching.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
