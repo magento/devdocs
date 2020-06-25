@@ -21,7 +21,7 @@ The release notes include:
 
 -  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Enable split database solution]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
 
--  {:.new}**Support for {{site.data.var.ee}} and {{site.data.var.ce}} deployment**–Now you can use {{site.data.var.mcd-prod}} to deploy a local development environment for projects that are not hosted on the Magento Cloud platform. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).<!--MCLOUD-5667-->
+-  {:.new}**Support for {{site.data.var.ee}} and {{site.data.var.ce}} deployment**–Now you can use {{site.data.var.mcd-prod}} to deploy a local development environment for projects that are not hosted on the Magento Cloud platform.<!--MCLOUD-5667-->
 
 -  {:.new}**Blackfire.io support**–Added support to use the [Blackfire.io extension]({{site.baseurl}}/cloud/docker/docker-config-blackfire-io.html) for automated performance testing. *[Fix submitted by Adarsh Manickam from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/202)*<!--MCLOUD-5857-->
 
