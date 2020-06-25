@@ -59,6 +59,14 @@ Save the the `composer.json` file and run:
 composer update magento/product-recommendations --with-dependencies
 ```
 
+### Install Page Builder support
+
+The Product Recommendations content type in Page Builder is supported in Magento 2.3.1 and later. Because Page Builder [does not support](https://devdocs.magento.com/release/#compatibility) the same number of versions as the Product Recommendations module, you need to explicitly install Page Builder support with the following:
+
+```bash
+composer require magento/module-page-builder-product-recommendations
+```
+
 ### Uninstall Product Recommendations
 
 If needed, you can [uninstall the product-recommendations module]({{ site.baseurl }}/guides/v{{ site.version }}/install-gde/install/cli/install-cli-uninstall-mods.html).
