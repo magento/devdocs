@@ -25,6 +25,17 @@ The `magento/product-recommendations` module requires the following dependencies
    {:.bs-callout-info}
    If you prefer, you can install the above modules explicitly using Composer: `composer require magento/data-services` and `composer require magento/saas-export`
 
+If you want to use Product Recommendations with Page Builder, run the following:
+
+```bash
+composer require magento/module-page-builder-product-recommendations
+```
+
+By enabling support for Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to a page, block, or dynamic block.
+
+   {:.bs-callout-info}
+   Product Recommendations are supported in Magento Commerce 2.3.1 and later. [Check](https://devdocs.magento.com/release/#compatibility) if your version of Page Builder supports Product Recommendations.
+
 ### Update your Product Recommendations installation
 
 Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:
@@ -57,14 +68,6 @@ Save the the `composer.json` file and run:
 
 ```bash
 composer update magento/product-recommendations --with-dependencies
-```
-
-### Install Page Builder support
-
-The Product Recommendations content type in Page Builder is supported in Magento 2.3.1 and later. Because Page Builder [does not support](https://devdocs.magento.com/release/#compatibility) the same number of versions as the Product Recommendations module, you need to explicitly install Page Builder support with the following:
-
-```bash
-composer require magento/module-page-builder-product-recommendations
 ```
 
 ### Uninstall Product Recommendations
