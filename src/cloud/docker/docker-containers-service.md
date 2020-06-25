@@ -15,7 +15,7 @@ See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-contain
 ## Database container
 
 **Container name**: db<br/>
-**Docker base image**: [mariadb], [MySQL]<br/>
+**Docker base image**: [mariadb], MySQL<br/>
 **Ports exposed**:  `3306`<br/>
 
 You can configure the database container to use either MariaDB or MySQL for the database. The default configuration uses the [mariadb] image and includes the following volumes:
@@ -64,7 +64,7 @@ See [Manage the database][] for details about using the database.
 
 The Elasticsearch container for {{site.data.var.mcd-prod}} is a standard Elasticsearch container with required plugins and configurations for {{site.data.var.ee}}.
 
-You can customize the Elasticsearch container using the `--es-env-var` option when you generate the Docker Compose configuration file. You can set Elasticsearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
+Use the `--es-env-var` option to customize the Elasticsearch container when you generate the Docker Compose configuration file. You can set Elasticsearch options and specify the environment variables to apply when the container starts, such as the heap size for JVM.
 
 ```bash
 php vendor/bin/ece-docker build:compose --es-env-var=ES_JAVA_OPTS="-Xms512m -Xmx512m" --es-env-var=node.store.allow_mmapfs=false
@@ -163,7 +163,7 @@ docker-compose run --rm redis redis-cli -h redis
 ## Selenium container
 
 **Container name**: selenium<br/>
-**Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome)<br/>
+**Docker base image**: [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome<br/>
 **Ports exposed**: `4444`<br/>
 
 The Selenium container, based on the [selenium/standalone-chrome/](https://hub.docker.com/r/selenium/standalone-chrome/h), enables the [Magento Functional Testing Framework (MFTF)](https://devdocs.magento.com/mftf/docs/introduction.html) for Magento application testing in the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-app-mftf.html).
@@ -187,7 +187,7 @@ To increase the timeout on this container, add the following code to the  `docke
 ## Varnish container
 
 **Container name**: varnish<br/>
-**Docker base image**: [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos]<br/>
+**Docker base image**: [magento/magento-cloud-docker-varnish][varnish], which is based on the [centos]<br>
 **Ports exposed**: `80`<br/>
 
 The Varnish container simulates Fastly and is useful for testing VCL snippets.
@@ -249,25 +249,27 @@ To mount the custom index.php file using volumes:
         - ./pub/index.php:/app/pub/index.php:ro
 ```
 
-[mariadb]: https://hub.docker.com/_/mariadb
-[mariadb Docker documentation]: https://hub.docker.com/_/mariadb
-[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
-[Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
-[php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
-[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
-[redis]: https://hub.docker.com/_/redis
-[rabbitmq]: https://hub.docker.com/_/rabbitmq
-[FPM]: https://php-fpm.org
-[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
-[varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
-[tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
-[debian:jessie]: https://hub.docker.com/_/debian
-[nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
+<!--Link definitions-->
+
 [centos]: https://hub.docker.com/_/centos
-[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
-[nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
-[web config]: https://github.com/magento/docker
-[varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
-[PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions
+[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
+[Configure Xdebug for Docker]: {{site.baseurl}}/cloud/docker/docker-development-debug.html
+[debian:jessie]: https://hub.docker.com/_/debian
 [Docker override file]: https://docs.docker.com/compose/extends/
+[FPM]: https://php-fpm.org
 [Important Elasticsearch configuration]: https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html
+[Manage the database]: {{site.baseurl}}/cloud/docker/docker-manage-database.html
+[mariadb Docker documentation]: https://hub.docker.com/_/mariadb
+[mariadb]: https://hub.docker.com/_/mariadb
+[nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
+[nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
+[nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
+[PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions
+[php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
+[rabbitmq]: https://hub.docker.com/_/rabbitmq
+[redis]: https://hub.docker.com/_/redis
+[Service configuration options]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options
+[tls]: https://hub.docker.com/r/magento/magento-cloud-docker-tls
+[varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[varnish]: https://hub.docker.com/r/magento/magento-cloud-docker-varnish
+[web config]: https://github.com/magento/docker

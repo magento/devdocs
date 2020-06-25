@@ -9,9 +9,9 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-`{{site.data.var.mcd-prod}}` deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You also have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.
+`{{site.data.var.mcd-prod}}` deploys Magento to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You also have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.
 
-You use the `ece-docker build:compose` command to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+You use the `ece-docker build:compose` command to generate the Docker Compose configuration to deploy {{site.data.var.ece}} to a local Docker environment.
 
 {: .bs-callout-warning }
 The `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
@@ -83,7 +83,7 @@ This command passes in the current working directory as `/app/`, includes compos
 
 Sometimes you might want to run Docker on a different host and port, for example if you need more than one Docker instance.
 
-To configure the custom host and port, add the `host` and `port` options to the `build:compose` command to specify the hostname and port number values.
+To configure the custom host and port, add the `host` and `port` options to the `build:compose` command.
 
 ```bash
 ./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080

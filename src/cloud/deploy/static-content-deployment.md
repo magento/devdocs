@@ -18,10 +18,10 @@ Javascript bundling is an optimization technique you can use to reduce the numbe
 
 For {{site.data.var.ece}} projects, you can use the Magento [Baler](https://github.com/magento/baler) extension to scan generated JavaScript code and create an optimized JavaScript bundle during the build process. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
 
-You must install and configure your project to use Baler.
+Before you can use Baler, you must install the Baler extension and configure your project.
 
 {:.procedure}
-To install and configure Baler:
+To install Baler and configure your project:
 
 1. Use the following Baler extension information to [install the Baler extension]({{ site.baseurl }}/cloud/howtos/install-components.html#install-an-extension) in a {{site.var.data.ece}} development branch.
 
@@ -30,7 +30,7 @@ To install and configure Baler:
    repository: https://github.com/magento/m2-baler
    ```
 
-1. In the same environment, update the `config.php` project configuration file with the following settings required to use Baler for JavaScript bundling.
+1. In the same environment, update the `config.php` project configuration file with the following settings:
 
    > `config.php`
 
@@ -62,7 +62,7 @@ To install and configure Baler:
            SCD_USE_BALER: true
    ```
 
-1. In the `.magento.app.yaml` file, update the `hooks` configuration to install the Node Version Manager (nvm) and the Node version required to use Baler.
+1. In the `.magento.app.yaml` file, update the `hooks` configuration to install the Node Version Manager (nvm) and the Node version that Baler requires.
 
    > `.magento.app.yaml`
 

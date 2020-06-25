@@ -26,7 +26,7 @@ See [Docker CLI containers] for details.
 
 ## Service containers
 
-{{site.data.var.mcd-prod}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, you can override a default service version or specify custom configuration with the optional build parameters.
+{{site.data.var.mcd-prod}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator using the `ece-docker build:compose` command, use the optional build parameters to override a default service version or specify custom configuration.
 
 For example, the following command starts the Docker configuration generator in developer mode and specifies PHP version 7.2:
 

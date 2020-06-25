@@ -11,7 +11,7 @@ redirect from:
 
 In a {{site.data.var.mcd-prod}} development environment, you can use the integrated test suite in each [{{site.data.var.csuite}}] package for Magento code testing. The test suites, which use the [Codeception testing framework for PHP], provide acceptance tests to validate code intended for contribution to Magento Cloud package repositories.
 
-Before you can run tests, you must prepare your Docker environment and update the test configuration file. (See [Prepare the test environment](#prepare-the-docker-environment-for-testing).)
+Before you run tests, you must prepare your Docker environment and update the test configuration file. (See [Prepare the test environment](#prepare-the-docker-environment-for-testing).)
 
 ## Test resources
 
@@ -29,7 +29,8 @@ For Magento application testing, use the Magento Application Testing (MFTF) fram
 
 ## Prepare the Docker environment for testing
 
-Before you run functional tests, you must set up and configure the test environment:
+{:.procedure}
+To set up and configure the test environment:
 
 1. Clone the GitHub repository for the package to test.
 
@@ -146,7 +147,7 @@ To add credentials directly to the test configuration file:
 
 1. Open the `codeception.dist.yml` file in an editor.
 
-1. Replace the placeholder `%REPO_USERNAME%`, `%REPO_PASSWORD%`, and `%GITHUB_TOKEN%` with your credentials:
+1. Replace the `%REPO_USERNAME%`, `%REPO_PASSWORD%`, and `%GITHUB_TOKEN%` placeholder values with your credentials:
 
    ```yaml
    modules:

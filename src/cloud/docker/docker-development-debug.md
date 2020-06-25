@@ -8,7 +8,7 @@ functional_areas:
 - Debug
 ---
 
-Xdebug is an extension for debugging your PHP. {{site.data.var.mcd-prod}} provides a separate container to handle Xdebug requests in the Docker environment.  Use this container to enable Xdebug and debug PHP code in your Docker environment without affecting your {{site.data.var.ece}} project configuration.
+Xdebug is an extension for debugging your PHP code. {{site.data.var.mcd-prod}} provides a separate container to handle Xdebug requests in the Docker environment.  Use this container to enable Xdebug and debug PHP code in your Docker environment without affecting your {{site.data.var.ece}} project configuration.
 
 The following instructions explain how to configure Xdebug and PhpStorm to debug in your local Docker environment.
 

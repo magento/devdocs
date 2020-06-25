@@ -7,7 +7,6 @@ functional_areas:
   - Configuration
 ---
 
-
 {% assign suggestions = site.data.codebase.cloud.cloud-error-messages %}
 
 This {{ site.data.var.ct }} error message reference provides information to troubleshoot errors that can occur during the {{site.data.var.ece }} deployment process.
@@ -62,9 +61,7 @@ Error messages are categorized by deployment stage–*build*, *deploy*, and *pos
 | 104 | | Failed to parse the `.magento.env.yaml` file | {{ suggestions.CONFIG_NOT_DEFINED }} |
 | 105 | | Unable to read the `.magento.env.yaml` file | {{ suggestions.CONFIG_UNABLE_TO_READ }} |
 | 106 | | Unable to read the `.schema.yaml` file | |
-| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | {{ suggestions.
-
-REDIS_CACHE_CLEAN_FAILED }}. |
+| 107 | pre-deploy: clean-redis-cache | Failed to clean the Redis cache | {{ suggestions.REDIS_CACHE_CLEAN_FAILED }}. |
 | 108 | pre-deploy: set-production-mode | Command `/bin/magento maintenance:enable` failed | {{ suggestions.CLOUD_LOG_VERBOSE_ACTION }} |
 | 109 | validate-config | Incorrect database configuration | {{ suggestions.WRONG_CONFIGURATION_DB }} |
 | 110 | validate-config | Incorrect session configuration | {{ suggestions.WRONG_CONFIGURATION_SESSION }} |
