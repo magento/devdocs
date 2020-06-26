@@ -31,7 +31,7 @@ Product Recommendations for [Page Builder]({{ site.baseurl }}/page-builder/docs/
 composer require magento/module-page-builder-product-recommendations
 ```
 
-By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any Page Builder content such as pages, blocks, or dynamic blocks.
+By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
 
 ### Update your Product Recommendations installation
 
