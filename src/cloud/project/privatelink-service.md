@@ -128,7 +128,7 @@ To test the connection to the VPC endpoint service:
 1. Run the following CURL command:
 
    ```bash
-   curl telnet://<endpoint-service-dns-url>:<port>/ -vvv
+   curl -v telnet://<endpoint-service-dns-url>:<port>/
    ```
 
    Example:
