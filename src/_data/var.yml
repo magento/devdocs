@@ -34,7 +34,7 @@ mcd-prod: Magento Cloud Docker
 mcd-release: 1.1.0
 mcc-prod: Magento Cloud Components
 mcc-package: magento/magento-cloud-components
-mcc-release: 1.0.4
+mcc-release: 1.0.5
 
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
