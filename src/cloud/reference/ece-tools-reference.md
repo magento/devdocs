@@ -63,43 +63,7 @@ By default, these `{{site.data.var.ct}}` commands are in the [hooks property][ho
 
 ## Docker configuration generator
 
-The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to [launch a Docker development environment]({{ site.baseurl }}/cloud/docker/docker-config.html) for Magento Cloud. You can also run {{site.data.var.mcd-prod}} as a stand-alone package.
-
-You use the following commands to generate the Docker configuration files and build your environment.
-
-Command | Action
-:------ | :------
-`ece-docker build:compose` | Builds the docker environment in [production mode][mode] by default and verifies configured service versions.
-`ece-docker build:compose --mode="developer"` | Builds the docker environment in [developer mode][mode].
-`ece-docker build:compose --mode="production"` | Builds the docker environment in [production mode][mode].
-`ece-docker image:generate:php` | Convert PHP configuration files to Docker ENV files.
-
-The following example lists the {{site.data.var.mcd-prod}} commands:
-
-```bash
-php ./vendor/bin/ece-docker list
-```
-
-Sample response:
-
-```terminal
-Available commands:
-  help                Displays help for a command
-  list                Lists commands
- build
-  build:compose       Build docker configuration
-  build:dist          Generates Docker .dist files
- image
-  image:generate:php  Generates proper configs
- build
-  build:compose       Build docker configuration
-  build:dist          Generates Docker .dist files
- image
-  image:generate:php  Generates proper configs
-```
-{:.no-copy}
-
-See [Docker development] to learn more about using `{{site.data.var.mcd-prod}}` for development and testing your {{site.data.var.ece}} projects.
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-docker] package, which provides functionality and configuration files for Docker images to launch a Docker development environment for {{site.data.var.ece}}. You can also run {{site.data.var.mcd-prod}} as a stand-alone package. See [Docker development].
 
 ## Services, routes, and variables
 
@@ -162,7 +126,7 @@ Ideal state is configured
 
 ## Magento patches and custom patches
 
-The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
+The `{{site.data.var.ct}}` package includes a dependency for the [magento/magento-cloud-patches] package, which delivers Magento patches and hot fixes that improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical fixes. The `{{site.data.var.mcp-package}}` also delivers custom patches that you add to your {{site.data.var.ece}} project. See [Apply patches].
 
 <!-- link definitions -->
 [mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
