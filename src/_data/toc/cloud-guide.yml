@@ -141,12 +141,20 @@ pages:
               url: /cloud/docker/docker-manage-database.html
               versionless: true
 
+            - label: Enable split database solution
+              url: /cloud/docker/docker-split-db.html
+              versionless: true
+
             - label: Manage cron jobs
               url: /cloud/docker/docker-manage-cron-jobs.html
               versionless: true
   
             - label: Extend Docker
               url: /cloud/docker/docker-extend.html
+              versionless: true
+
+            - label: Add Blackfire.io service
+              url:  /cloud/docker/docker-config-blackfire-io.html
               versionless: true
 
         - label: Launch Docker
@@ -162,11 +170,11 @@ pages:
         - label: Functional Testing
           children:
             - label: Magento application testing
-              url: /cloud/docker/docker-mftf.html
+              url: /cloud/docker/docker-test-app-mftf.html
               versionless: true
 
-            - label: ECE-Tools testing
-              url: /cloud/docker/docker-development-testing.html
+            - label: Magento Cloud code testing
+              url: /cloud/docker/docker-test-magecloud-pkg-code.html
               versionless: true
 
         - label: Docker quick reference
@@ -495,6 +503,10 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
+        - label: Error log message reference
+          url: /cloud/reference/error-codes.html
+          versionless: true
+
     - label: Site launch
       url: /cloud/live/live.html
       versionless: true
@@ -511,6 +523,7 @@ pages:
       url: /cloud/trouble/trouble.html
       versionless: true
       children:
+        
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
           versionless: true
