@@ -23,7 +23,7 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 
 -  Support for PrivateLink is available on Pro plan Production and Staging environments only. It is not available on local or integration environments, or on Starter plan projects.
 -  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
--  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement. Customers have the option to purchase additional support from Magento Services.
+-  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
 
 ## PrivateLink connection types
@@ -131,22 +131,27 @@ To test the connection to the VPC endpoint service:
    curl telnet://<endpoint-service-dns-url>:<port>/ -vvv
    ```
 
-   For example:
+   Example:
 
-   ```bash
-   curl telnet://vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443/ -vvv
+   ```terminal
+   $ curl -v telnet://vpce-007ffnb9qkcnjgult-yfhmywqh.vpce-svc-083cqvm2ta3rxqat5v.us-east-1.vpce.amazonaws.com:80
    ```
 
    If the connection succeeds, the following output displays:
 
    ```terminal
-   * Trying vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443...
-   * TCP_NODELAY set
-   * Connected to //vpce-004678b7ff06dfxxx-qmmwuxxx.vpce-svc-0aca4ec0ef530xxxx.us-east-1.vpce.amazonaws.com:8443 (xx.xxx.xxx.xx) port 8443 (#0)
+   * Rebuilt URL to: telnet://vpce-007ffnb9qkcnjgult-yfhmywqh.vpce-svc-083cqvm2ta3rxqat5v.us-east-1.vpce.amazonaws.com:80
+   * Connected to vpce-0088d56482571241d-yfhmywqh.vpce-svc-083cqvm2ta3rxqat5v.us-east-1.vpce. amazonaws.com (192.168.7.104) port 80 (#0)
    ```
    {:.no-copy}
 
-   If the connection fails, review the error messages which might indicate that the port is closed, or that the indicated remote server is not listening on the specified port.
+   If the connection fails, the following output displays:
+
+   ```terminal
+   Failed to connect to vpce-007ffnb9qkcnjgult-yfhmywqh.vpce-svc-083cqvm2ta3rxqat5v.ap-southeast-1.vpce.amazonaws.com port 80: Connection timed out
+   * Closing connection 0
+   ```
+   {:.no-copy}
 
    See the following articles for help troubleshooting connection issues:
 
