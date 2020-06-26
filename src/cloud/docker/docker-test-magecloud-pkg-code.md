@@ -153,10 +153,10 @@ To add credentials directly to the test configuration file:
    modules:
      config:
        Magento\CloudDocker\Test\Functional\Codeception\TestInfrastructure:
-         ...
-         composer_magento_username: "%REPO_USERNAME%"
-         composer_magento_password: "%REPO_PASSWORD%"
-         composer_github_token: "%GITHUB_TOKEN%"
+       ...
+       composer_magento_username: "%REPO_USERNAME%"
+       composer_magento_password: "%REPO_PASSWORD%"
+       composer_github_token: "%GITHUB_TOKEN%"
          ...
    ```
 

@@ -52,7 +52,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
       -  `app:config:import`
       -  `module:enable`
 
-      The logging level for each call is determined by the configuration of the [`VERBOSE_COMMANDS`]({{site.baseurl}}/cloud/env/variables-build.html#verbose_commands) variable in the `.magento.app.yaml` file.<!--MCLOUD-3503-->
+      The logging level for each call is determined by the configuration of the [`VERBOSE_COMMANDS`]({{site.baseurl}}/cloud/env/variables-build.html#verbose_commands) variable in the `.magento.env.yaml` file.<!--MCLOUD-3503-->
 
 -  {:.new}**Validation improvements**–
 
