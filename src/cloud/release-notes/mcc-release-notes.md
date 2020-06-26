@@ -14,7 +14,7 @@ The `{{site.data.var.mcc-package}}` package uses the following version sequence:
 ## v1.0.5
 *Release date: June 26, 2020*<br/>
 
--  {:.fix}Fixed an issue introduced in package version 1.0.4 with cache flush operation through Fastly extension failing during the deploy phase, causing the deployment to be interrupted.
+-  {:.fix}Fixed an issue introduced in {{site.data.var.mcc-package}} version 1.0.4 that caused the flush cache operation initiated by the Fastly extension to fail during the deploy phase, which interrupts deployment.
 
 ## v1.0.4
 *Release date: June 25, 2020*<br/>
