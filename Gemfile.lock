@@ -153,7 +153,7 @@ GEM
     unicode-display_width (1.7.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
-    whatsup_github (0.1.1)
+    whatsup_github (0.2.0)
       netrc (~> 0.10)
       octokit (~> 4.14)
       thor (~> 0.20)
@@ -163,6 +163,7 @@ PLATFORMS
   ruby
   x86-mswin32
   x86_64-darwin-18
+  x86_64-darwin-19
 
 DEPENDENCIES
   devdocs!

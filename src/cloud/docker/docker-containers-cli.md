@@ -19,7 +19,7 @@ For example, you can check the state of the your project using the _ideal-state_
 Run the `{{site.data.var.ct}}` ideal-state command.
 
 ```bash
-docker-compose run deploy ece-command wizard:ideal-state
+docker-compose run --rm deploy ece-command wizard:ideal-state
 ```
 
 Sample response:
@@ -58,7 +58,7 @@ The Build container mimics the behavior of the Magento Cloud build process so th
 You can also run build commands manually from the build container to perform individual steps from the build process. For example, you can run the following command to deploy static content.
 
 ```bash
-docker-compose run build magento-command setup:static-content:deploy
+docker-compose run --rm build magento-command setup:static-content:deploy
 ```
 
 ## Cron container
@@ -80,7 +80,7 @@ The Deploy container mimics the Magento Cloud deploy process so that testing the
 You can run `build` and `deploy` commands manually from the deploy container. The following example reindexes the Magento store:
 
 ```bash
-docker-compose run deploy magento-command index:reindex
+docker-compose run --rm deploy magento-command index:reindex
 ```
 
 ## Node container
