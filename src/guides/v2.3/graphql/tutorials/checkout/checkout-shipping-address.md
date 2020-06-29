@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-method.html) mutation to set a shipping address. You can set the shipping address in the following ways:
+Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation to set a shipping address. You can set the shipping address in the following ways:
 
 *  Add a new shipping address
 *  Assign the shipping address to be the same as the billing address
