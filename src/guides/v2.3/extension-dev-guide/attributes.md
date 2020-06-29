@@ -97,6 +97,8 @@ class AddCustomerExampleAttribute implements DataPatchInterface
     }
 }
 ```
+{:.bs-callout-tip}
+Customer custom attribute scope is globle while other entities supports all Global, Website and StoreView scope.
 
 ## Extension attributes {#extension}
 
