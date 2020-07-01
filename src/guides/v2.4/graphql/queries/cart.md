@@ -383,6 +383,40 @@ The `3T1free` rule is applied first, and Magento returns the price of a single s
 }
 ```
 
+### Gift message example
+
+The following example shows how to retrieve a gift message for cart.
+
+**Request:**
+
+```graphql
+{
+    cart(cart_id: "8RNne0xE1QGaTAtHl1D9hdpxvlePKeXp") {
+        gift_message {
+            to
+            from
+            message
+        }
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "cart": {
+      "gift_message": {
+        "to": "Mercutio",
+        "from": "Romeo",
+        "message": "I thought all for the best."
+      }
+    }
+  }
+}
+```
+
 ### Tier price example
 
 In the following example, tier prices has been established for product `24-UG01` and `24-UG05`, as shown in the following table:
@@ -562,7 +596,7 @@ query {
 
 ## Input attributes
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `cart_id` | String! | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 
@@ -574,13 +608,13 @@ The top-level `Cart` object is listed first. All interfaces and child objects ar
 
 The `Cart` object can contain the following attributes.
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 ### AppliedCoupon object {#AppliedCoupon}
 
-The `AppliedCoupon` object must contain the following attributes.
+The `AppliedCoupon` object must contain the following attribute.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `code` | String! | The coupon code applied to the order
 
@@ -588,7 +622,7 @@ Attribute |  Data Type | Description
 
 The `AppliedGiftCard` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `applied_balance` | Money | Applied balance to the current cart
 `code` | String | The gift card code applied to the order
@@ -609,7 +643,7 @@ Attribute |  Data Type | Description
 
 The `AvailablePaymentMethod` object must contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `code` |  String! | The payment method code
 `title` | String! | The payment method title
@@ -618,7 +652,7 @@ Attribute |  Data Type | Description
 
 The `AvailableShippingMethod` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `amount` | Money! | The cost of shipping using this shipping method
 `available` | Boolean! | Indicates whether this shipping method can be applied to the cart
@@ -639,7 +673,7 @@ The `BillingCartAddress` object implements [`CartAddressInterface`](#CartAddress
 
 The `CartAddressCountry` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `code` | String! | The country code
 `label` | String! | The display label for the country
@@ -648,7 +682,7 @@ Attribute |  Data Type | Description
 
 The `CartAddressInterface` contains the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `city` | String! | The city specified for the billing address
 `company` | String | The company specified for the billing address
@@ -665,7 +699,7 @@ Attribute |  Data Type | Description
 
 The `CartAddressRegion` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `code` | String | The state or province code
 `label` | String | The display label for the region
@@ -675,7 +709,7 @@ Attribute |  Data Type | Description
 
 The `CartDiscount` object must contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `amount` | Money | The amount of all discounts applied to the cart
 `label` | [String!]! | A concatenated list of strings that describe each applied discount
@@ -684,7 +718,7 @@ Attribute |  Data Type | Description
 
 The `CartItemInterface` can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
@@ -695,7 +729,7 @@ Attribute |  Data Type | Description
 
 The `CartItemPrices` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `discounts`| [Discount] | An array of discounts to be applied to the cart item
 `price` | Money! | The price of the item before any discounts were applied
@@ -716,7 +750,7 @@ Attribute |  Data Type | Description
 
 The `CartPrices` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
 `discount` | CartDiscount | Deprecated. Use `discounts` instead
@@ -730,7 +764,7 @@ Attribute |  Data Type | Description
 
 The `CartTaxItem` object must contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `amount` | Money! | The amount of tax applied to the item
 `label` | String! | The description of the tax
@@ -743,16 +777,22 @@ If a cart rule does not have a label, Magento uses `Discount` as the default lab
 
 The `Discount` object must contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `amount` | Money! | The amount of the discount applied to the cart
 `label` | String! | The description of the discount
+
+### GiftMessage object {#GiftMessage}
+
+The `GiftMessage` object must contain the following attributes.
+
+{% include graphql/gift-message-24.md %}
 
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
 The `SelectedPaymentMethod` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `code` | String! | The payment method code
 `purchase_order_number` | String | The purchase order number
@@ -762,7 +802,7 @@ Attribute |  Data Type | Description
 
 The `SelectedShippingMethod` object can contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `amount` | Money! | The cost of shipping using this shipping method
 `base_amount` | Money | Deprecated. This attribute is not applicable for GraphQL
@@ -775,7 +815,7 @@ Attribute |  Data Type | Description
 
 The `ShippingCartAddress` object implements [`CartAddressInterface`](#CartAddressInterface). It can also contain the following attributes.
 
-Attribute |  Data Type | Description
+Attribute | Data Type | Description
 --- | --- | ---
 `available_shipping_methods` | [[AvailableShippingMethod]](#AvailableShippingMethod) | An array that lists the shipping methods that can be applied to the cart
 `cart_items` | [[CartItemQuantity]](#CartItemQuantity) | Deprecated. Use `cart_items_v2` instead
