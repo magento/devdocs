@@ -75,11 +75,22 @@ The `CustomerOrder` object defines details about each order the customer has pla
 Attribute | Data type | Description
 --- | --- | ---
 `created_at` | String | A timestamp indicating when the order was placed
+`gift_message` | [GiftMessage]({{page.baseurl}}/graphql/queries/customer-orders.html#GiftMessage) | The entered gift message for the order
 `grand_total` | Float | The total of the order
 `id` | Int | The ID assigned to the customer's order
 `increment_id` | String | Deprecated. Use `order_number` instead. An ID that indicates the sequence of the order in the customer's order history
 `order_number` | String! | The order number assigned to the order
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
+
+#### GiftMessage object {#GiftMessage}
+
+The `GiftMessage` object contains the following required attributes.
+
+Attribute | Data Type | Description
+--- | --- | ---
+`to` | String! | Recipient name
+`from` | String! | Sender name
+`message` | String! | Gift message text
 
 ## Errors
 
