@@ -49,7 +49,7 @@ namespace :update do
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[m1 mbi pb pbm mftf]
+  task subrepos: %w[mbi pb pbm mftf]
 end
 
 def update_dir(dir)
