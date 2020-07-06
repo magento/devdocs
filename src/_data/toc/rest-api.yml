@@ -12,15 +12,15 @@ pages:
           children:
 
             - label: Admin REST endpoints
-              url: /redoc/2.3/admin-rest-api.html
+              url: https://magento.redoc.ly/
               versionless: true
 
             - label: Customer REST endpoints
-              url: /redoc/2.3/customer-rest-api.html
+              url: https://magento.redoc.ly/
               versionless: true
 
             - label: Guest REST endpoints
-              url: /redoc/2.3/guest-rest-api.html
+              url: https://magento.redoc.ly/
               versionless: true
 
             - label: Asynchronous Admin REST endpoints

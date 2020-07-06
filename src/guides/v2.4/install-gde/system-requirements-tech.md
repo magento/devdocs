@@ -47,16 +47,13 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 While Magento supports PHP 7.3, Magento 2.4 is tested on, and we recommend using, PHP 7.4.
 
-{.bs-callout-warning}
+{:.bs-callout-warning}
 There is a [bug](https://bugs.php.net/bug.php?id=79174) in PHP 7.4.2 which causes some messages to not render properly. Magento recommends using other versions of 7.4.
 
 ### Required PHP extensions
 
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
-
-{:.bs-callout-warning}
-If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
 <!--{% assign platform-req = site.data.codebase.v2_4.open-source.composer_lock.platform %}-->
 {% include install/php-extensions-template.md %}

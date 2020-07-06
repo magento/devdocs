@@ -25,6 +25,14 @@ The `magento/product-recommendations` module requires the following dependencies
    {:.bs-callout-info}
    If you prefer, you can install the above modules explicitly using Composer: `composer require magento/data-services` and `composer require magento/saas-export`
 
+Product Recommendations for [Page Builder]({{ site.baseurl }}/page-builder/docs/index.html) is an optional module and is installed separately. To use Product Recommendations with Page Builder, install the module by running the following command:
+
+```bash
+composer require magento/module-page-builder-product-recommendations
+```
+
+By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
+
 ### Update your Product Recommendations installation
 
 Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:

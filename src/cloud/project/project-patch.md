@@ -10,9 +10,9 @@ delivers Magento patches and hot fixes, which improve the integration of all `{{
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
 
-When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp}}` to check for pending patches and applies them automatically in the following order:
+When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp-package}}` to check for pending patches and applies them automatically in the following order:
 
-1. Apply Magento-provided patches included in the `{{site.data.var.mcp}}` package.
+1. Apply Magento-provided patches included in the `{{site.data.var.mcp-package}}` package.
 1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 You can also apply patches manually.

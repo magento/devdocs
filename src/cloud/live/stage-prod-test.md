@@ -14,9 +14,9 @@ functional_areas:
 {:.ref-header}
 Previous step
 
-[Migrate data and static files]({{ site.baseurl }}/cloud/live/stage-prod-migrate.html)
+[Migrate data and static files][]
 
-When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
+When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter][] and [Pro][] access information.
 
 The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more.
 
@@ -28,6 +28,8 @@ The deployment log is located in `/var/log/platform/<prodject ID>/deploy.log`. T
 
 When accessing logs in Production or Staging environments, you must use SSH to log in to each of the three nodes to locate the logs. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
+{%include cloud/note-error-message-reference-ece-tools.md%}
+
 ## Check the code base {#codebase}
 
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
@@ -38,9 +40,9 @@ Check the Magento configuration settings through the Admin panel including the B
 
 ## Check Fastly caching {#fastly}
 
-Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API token, and a proper VCL snippet uploaded.
+Verify Fastly is caching properly on Staging and Production. [Configuring Fastly][] requires careful attention to details, using the correct Fastly Service ID and Fastly API token, and a proper VCL snippet uploaded.
 
-First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains).
+First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS][].
 
 The following examples use Pro URLs. You can use any URL with the `dig` command.
 
@@ -53,7 +55,7 @@ Next, use a `curl` command to verify X-Magento-Tags exist and additional header 
 curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
 ```
 
-For Starter, enter the full site URL from your environment [Access info]({{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) in the command to view the headers.
+For Starter, enter the full site URL from your environment [Access info][] in the command to view the headers.
 
 For Pro Staging and Production, the command differs per server:
 
@@ -71,8 +73,8 @@ Check the returned response headers and values:
 -  `Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
 -  `X-Cache` should be either `HIT` or `HIT, HIT`
 -  `x-cache-hits` should be 1,1
--  [`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
--  [`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
+-  [`Cache-Control: max-age`][] should be greater than 0
+-  [`Pragma`][] should be `cache`
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
@@ -84,7 +86,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 {:.bs-callout-warning}
 Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
 
-The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) and [Fastly troubleshooting]({{ site.baseurl }}/cloud/cdn/trouble-fastly.html).
+The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly][] and [Fastly troubleshooting][].
 
 ## Complete UAT testing {#uat-testing}
 
@@ -212,16 +214,38 @@ We recommend that you review the [Magento Performance Toolkit]({{ site.mage2blob
 
 For best results, we recommend the following tools:
 
--  [Magento application performance test]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages)—Test Magento application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
--  [Siege](https://www.joedog.org/siege-home/)—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
--  [Jmeter](http://jmeter.apache.org/)—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
+-  [Magento application performance test][]—Test Magento application performance by configuring the `TTFB_TESTED_PAGES` environment variable to test site response time.
+-  [Siege][]—Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+-  [Jmeter][]—Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 -  New Relic (provided)—Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
--  [WebPageTest](https://www.webpagetest.org/) and [Pingdom](https://www.pingdom.com/)—Real-time analysis of your site pages load time with different origin locations. Pingdom may require a fee. WebPageTest is a free tool.
+-  [WebPageTest][] and [Pingdom][]—Real-time analysis of your site pages load time with different origin locations. Pingdom may require a fee. WebPageTest is a free tool.
 
 ### Functional testing
 
-You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from the Cloud Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-mftf.html).
+You can use the Magento Functional Testing Framework (MFTF) to complete functional testing for {{site.data.var.ee}} from the Cloud Docker environment. See [Magento application testing][]
 
 ## Set up Magento Security Scan Tool {#security-scan}
 
-We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool]({{ site.baseurl }}/cloud/live/live.html#security-scan).
+We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool][].
+
+<!--Link definitions>
+
+[Migrate data and static files]: {{ site.baseurl }}/cloud/live/stage-prod-migrate.html
+[Starter]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
+[Pro]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls
+[Log locations]: {{ site.baseurl }}/cloud/project/log-locations
+[Configuring Fastly]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html
+[Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains
+[Access info]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
+[`Cache-Control: max-age`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9
+[`Pragma`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32
+[Set up Fastly]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html
+[Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
+[Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit)
+[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deployhtml#ttfb_tested_pages
+[Siege](https://www.joedog.org/siege-home/
+[Jmeter]: http://jmeter.apache.org/
+[WebPageTest]: https://www.webpagetest.org/
+[Pingdom]: https://www.pingdom.com/
+[Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
+[Magento Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan

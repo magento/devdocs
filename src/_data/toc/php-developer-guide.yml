@@ -225,6 +225,9 @@ pages:
 
         - label: Adding extension attributes to entity
           url: /extension-dev-guide/extension_attributes/adding-attributes.html
+         
+        - label: Adding an admin grid
+          url: /extension-dev-guide/admin-grid.html
 
         - label: Searching with repositories
           url: /extension-dev-guide/searching-with-repositories.html
