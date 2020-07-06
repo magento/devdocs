@@ -12,17 +12,13 @@ See [Token-based authentication][] for instructions on requesting and using secu
 
 ## Synchronous endpoints
 
-The REST API reference for all synchronous endpoints are available at [https://magento.redoc.ly/](https://magento.redoc.ly/).
+Each of the following links lead to a list of REST endpoints specific to a user type:
 
-Use the drop-down menu in the top-left corner to see a list of REST endpoints specific to a user type.
+*  [Admin REST API endpoints](https://magento.redoc.ly/2.3.5-admin/)—Available using an admin security token.
 
-![Schema switcher]({{ site.baseurl }}/common/images/schema-switcher.png)
+*  [Customer REST API endpoints](https://magento.redoc.ly/2.3.5-customer/)—Available using a customer security token.
 
-*  Admin REST API endpoints—Available using an admin security token.
-
-*  Customer REST API endpoints—Available using a customer security token.
-
-*  Guest REST API endpoints—Available for anonymous users.
+*  [Guest REST API endpoints](https://magento.redoc.ly/2.3.5-guest/)—Available for anonymous users.
 
 ## Asynchronous endpoints
 
