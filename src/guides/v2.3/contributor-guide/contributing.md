@@ -228,7 +228,7 @@ Admins access will be shared via comment on GitHub.
 
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
--  [Contributor]({{page.baseurl}}/contributor-guide/contributors.html#/individual-contributors)
+-  [Contributor]({{page.baseurl}}/contributor-guide/contributors.html#individual-contributors)
 
 ### Combine multiple pull requests {#combine-pr}
 
