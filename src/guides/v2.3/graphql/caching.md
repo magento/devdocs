@@ -116,7 +116,7 @@ In developer mode, Magento returns several headers that could be useful for debu
 
 Header | Description
 --- |---
-`X-Magento=Cache-Debug` | HIT (the page was loaded from cache) or MISS (the page was not loaded from cache.
+`X-Magento-Cache-Debug` | HIT (the page was loaded from cache) or MISS (the page was not loaded from cache.
 `X-Magento-Tags` | A list of cache tags that correspond to the catalog, category, or CMS items returned in the query. Magento caches these items.
 
 ## Cache invalidation

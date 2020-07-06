@@ -4,8 +4,105 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jun 15 09:55:11 2020
+updated: Wed Jun 25 15:26:35 2020
 entries:
+- description: Added [Magento Cloud Patches v 1.0.5 Release Notes](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).
+  versions: 2.x
+  type: Major Update
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7411
+- description: Added [Magento Cloud Components v 1.0.4 Release Notes]( https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).
+  versions: 2.x
+  type: Major Update
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7412
+- description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/error-codes.html)
+    with error listing and suggested actions to resolve build and deploy issues.
+  versions: 2.x
+  type: Major update
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7327
+- description: Added the `wizard:split-db-state` command to the [Smart wizards]( https://devdocs.magento.com/cloud/deploy/smart-wizards.html)
+    topic in the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7322
+- description: Updated the [Deploy variables](https://devdocs.magento.com/cloud/env/variables-deploy.html) topic in the _Cloud Guide_
+    to add the `REDIS_BACKEND` environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 and later.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7194
+- description: Updated the [Import URL Rewrites](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
+    topic with guidance about checking the PHP  file upload limit to prevent errors
+    when uploading a large file for importing URL rewrites.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7196
+- description: Added instructions to complete functional testing for Magento Cloud packages in the Docker environment.
+    See [Magento Cloud code testing](https://cloud/docker/docker-test-magecloud-pkg-code.html).
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7019
+- description: Added instructions for using the Magento Baler extension
+    to bundle javascript content during the Magento Cloud build process. See [Static
+    content deployment](https://devdocs.magento.com/cloud/deploy/static-content-deployment.html).
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/6944
+- description: Added information about the [Cloud error log](https://devdocs.magento.com/cloud/project/log-locations.html)
+    (`var/log/Cloud.error.log`) which contains all error and warning messages from the latest deployment of the Cloud environment.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7372
+- description: Updated the [Xdebug configuration instructions]( https://devdocs.magento.com/cloud/docker/docker-development-debug.html)
+    for Magento Cloud Docker, which now requires using the `--with-xdedug` option
+    to build a container to handle Xdebug requests instead of adding the Xdebug configuration
+    to the `.magento.app.yaml` file.
+  versions: 2.x
+  type: New topic
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7321
+- description: Added basic instructions for configuring and using Blackfire.io for
+    performance testing in a Magento Cloud Docker environment. See [Add Blackfire.io
+    to Magento Cloud Docker](https://devdocs.magento.com/cloud/docker/docker-config-blackfire-io.html).
+  versions: 2.x
+  type: New Topic
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7335
+- description: Added an example using the `--no-varnish` option to skip Varnish container
+    installation when building a Magento Cloud Docker environment. See the [Varnish
+    container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#varnish-container)
+    topic in the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7294
+- description: Documented the new `es-en-var` option to customize the Elasticsearch
+    container configuration when building the Docker Compose file for a Magento Cloud
+    Docker environment. See [Elasticsearch container](https://devdocs.magento.com/cloud/docker/docker-containers-service.html#elasticsearch-container).
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/7282
+- description: Added instructions for running Docker on a custom host and port. See
+    [Docker configuration](https://devdocs.magento.com/cloud/docker/docker-config.html) topic in the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/6977
+- description: Added information about the default Varnish container configuration
+    to the [Docker services containers](https://devdocs.magento.com/cloud/docker/docker-containers-service.html)
+    topic in the _Cloud Guide_.
+  versions: 2.x
+  type: Technical
+  date: June 25, 2020
+  link: https://github.com/magento/devdocs/pull/6618
 - description: Added two new REST endpoints that add support for the Inventory Management
     [In-store Pickup](https://devdocs.magento.com/guides/v2.4/rest/modules/inventory/in-store-pickup.html)
     feature.
@@ -170,9 +267,9 @@ entries:
   date: May 19, 2020
   link: https://github.com/magento/devdocs/pull/7211
 - description: Updated the [Extend Docker](https://devdocs.magento.com/cloud/docker/docker-extend.html)  topic
-    to include instructions for adding a new version of  an existing service (elasticsearch,
+    to include instructions for adding a new version of an existing service (elasticsearch,
     php, nginx, tls, varnish) to Magento Cloud Docker.
-  versions: ''
+  versions: Major update
   type: Technical
   date: May 18, 2020
   link: https://github.com/magento/devdocs/pull/7190
@@ -202,14 +299,14 @@ entries:
   link: https://github.com/magento/devdocs/pull/7199
 - description: Added Release Notes and updated Merchant Documentation for the Amazon
     Sales Channel 4.1.0 release.
-  versions: ''
+  versions: 2.x
   type: Major Update
   date: May 11, 2020
   link: https://github.com/magento/devdocs/pull/7193
 - description: Added [Bypass Fastly](https://devdocs.magento.com/cloud/cdn/fastly-vcl-bypass-to-origin.html)
     topic with instructions for creating a custom VCL snippet to bypass Fastly on
     requests from a specific IP address, URL, or URL pattern.
-  versions: ''
+  versions: Major update
   type: New Topic
   date: May 7, 2020
   link: https://github.com/magento/devdocs/pull/7159
@@ -803,7 +900,7 @@ entries:
   date: February 5, 2020
   link: https://github.com/magento/devdocs/pull/6394
 - description: Added a section about [vendor bundled extensions (VBEs)](https://devdocs.magento.com/extensions/vendor/).
-  versions: ''
+  versions: Major update
   type: New topic
   date: February 5, 2020
   link: https://github.com/magento/devdocs/pull/6521
@@ -5766,3 +5863,4 @@ entries:
   versions: 2.x
   type: New
   date: Oct 7 2016
+  
