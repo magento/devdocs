@@ -102,7 +102,7 @@ Attribute |  Data Type | Description
 
 ### CartItemUpdateInput object {#CartItemUpdateInput}
 
-The `CartItemUpdateInput` object must contain the following attributes:
+The `CartItemUpdateInput` object may contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -126,7 +126,7 @@ Attribute |  Data Type | Description
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 [Cart query output]({{page.baseurl}}/graphql/queries/cart.html#cart-output) provides more information about the `Cart` object.
 
