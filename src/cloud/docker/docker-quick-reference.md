@@ -86,6 +86,7 @@ Build application | `./bin/magento-docker ece-build`
 Deploy application | `./bin/magento-docker ece-deploy`
 Run post-deploy hooks | `./bin/magento-docker ece-post-deploy`
 Re-build and re-deploy application | `./bin/magento-docker ece-redeploy`
+Run a command in a PHP container | `./bin/magento-docker php <PHP version> <command>`
 Stop containers | `./bin/magento-docker stop`
 Start containers | `./bin/magento-docker start`
 Restart containers | `./bin/magento-docker restart`
