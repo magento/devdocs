@@ -102,7 +102,7 @@ Attribute |  Data Type | Description
 
 ### CartItemUpdateInput object {#CartItemUpdateInput}
 
-The `CartItemUpdateInput` object must contain the following attributes:
+The `CartItemUpdateInput` object may contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
