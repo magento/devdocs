@@ -65,6 +65,8 @@ The following table lists the attributes you can use as input for the `createCus
 
 The `createCustomer` mutation returns the `CustomerOutput` object.
 
+The following table lists the top-level attributes of the `customer` object. See the [`customer` query]({{page.baseurl}}/graphql/queries/customer.html) for complete details about this object.
+
 {% include graphql/customer-output-24.md %}
 
 ## Errors

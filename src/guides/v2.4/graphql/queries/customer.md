@@ -13,7 +13,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Example usage
 
-### Retrieving the logged-in customer
+### Retrieve basic information about the logged-in customer
 
 The following call returns information about the logged-in customer. Provide the customer's token in the header section of the query.
 
@@ -75,7 +75,187 @@ The following call returns information about the logged-in customer. Provide the
 }
 ```
 
-### Retrieving the store credit history
+### Retrieve detailed information about a previous order
+
+The following example returns an order the logged-in user previously made.
+
+**Request:**
+
+```graphql
+{
+  customer {
+    orders(filter: {number: {eq: "000000001"}}) {
+      total_count
+      items {
+        id
+        carrier
+        number
+        order_date
+        status
+        items {
+          product_name
+          product_sku
+          product_url_key
+          product_sale_price {
+            value
+          }
+          product_sale_price {
+            value
+            currency
+          }
+          quantity_ordered
+          quantity_invoiced
+          quantity_shipped
+        }
+        shipments {
+          id
+          number
+          items {
+            product_name
+            quantity_shipped
+          }
+        }
+        total {
+          base_grand_total {
+            value
+            currency
+          }
+          grand_total {
+            value
+            currency
+          }
+          total_tax {
+            value
+          }
+          subtotal {
+            value
+            currency
+          }
+          taxes {
+            amount {
+              value
+              currency
+            }
+            title
+            rate
+          }
+          total_shipping {
+            value
+          }
+          shipping_handling {
+            amount_including_tax {
+              value
+            }
+            amount_excluding_tax {
+              value
+            }
+            total_amount {
+              value
+            }
+            taxes {
+              amount {
+                value
+              }
+              title
+              rate
+            }
+          }
+          discounts {
+            amount {
+              value
+              currency
+            }
+            label
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "customer": {
+      "orders": {
+        "total_count": 1,
+        "items": [
+          {
+            "id": "MQ==",
+            "carrier": null,
+            "number": "000000001",
+            "order_date": "2020-03-18 17:25:20",
+            "status": "Processing",
+            "items": [
+              {
+                "product_name": "Iris Workout Top",
+                "product_sku": "WS03-XS-Red",
+                "product_url_key": "iris-workout-top",
+                "product_sale_price": {
+                  "value": 29,
+                  "currency": "USD"
+                },
+                "quantity_ordered": 1,
+                "quantity_invoiced": 1,
+                "quantity_shipped": 1
+              }
+            ],
+            "shipments": null,
+            "total": {
+              "base_grand_total": {
+                "value": 36.39,
+                "currency": "USD"
+              },
+              "grand_total": {
+                "value": 36.39,
+                "currency": "USD"
+              },
+              "total_tax": {
+                "value": 2.39
+              },
+              "subtotal": {
+                "value": 29,
+                "currency": "USD"
+              },
+              "taxes": [
+                {
+                  "amount": {
+                    "value": 2.39,
+                    "currency": "USD"
+                  },
+                  "title": "US-MI-*-Rate 1",
+                  "rate": 8.25
+                }
+              ],
+              "total_shipping": {
+                "value": 5
+              },
+              "shipping_handling": {
+                "amount_including_tax": {
+                  "value": 5
+                },
+                "amount_excluding_tax": {
+                  "value": 5
+                },
+                "total_amount": {
+                  "value": 5
+                },
+                "taxes": []
+              },
+              "discounts": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Retrieve the store credit history
 
 The following example returns the store credit history for the logged-in user.
 
@@ -267,6 +447,60 @@ The `customer` object can contain the following attributes:
 
 {% include graphql/customer-output-24.md %}
 
+### CustomerAddress attributes {#customerAddressOutput}
+
+The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the `Customer` object.
+
+The `CustomerAddress` output returns the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`city` | String | The city or town
+`company` | String | The customer's company
+`country_code` | CountryCodeEnum | The customer's country
+`country_id` | String | Deprecated. Use `country_code` instead. The customer's country
+`custom_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Deprecated. Not applicable for GraphQL
+`customer_id` | Int | Deprecated. This attribute is not applicable for GraphQL. The ID assigned to the customer
+`default_billing` | Boolean | Indicates whether the address is the default billing address
+`default_shipping` | Boolean | Indicates whether the address is the default shipping address
+`extension_attributes` | [CustomerAddressAttribute](#customerAddressAttributeOutput) | Address extension attributes
+`fax` | String | The fax number
+`firstname` | String | The first name of the person associated with the shipping/billing address
+`id` | Int | The ID assigned to the address object
+`lastname` | String | The family name of the person associated with the shipping/billing address
+`middlename` | String | The middle name of the person associated with the shipping/billing address
+`postcode` | String | The customer's ZIP or postal code
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`region` | [CustomerAddressRegion](#customerAddressRegionOutput) | An object that defines the customer's state or province
+`region_id` | Int | The unique ID for a pre-defined region
+`street` | [String] | An array of strings that define the street number and name
+`suffix` | String | A value such as Sr., Jr., or III
+`telephone` | String | The telephone number
+`vat_id` | String | The customer's Tax/VAT number (for corporate customers)
+
+#### CustomerAddressAttribute attributes {#customerAddressAttributeOutput}
+
+The `CustomerAddressAttribute` output data type has been deprecated because the contents are not applicable for GraphQL. It can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String | Attribute code
+`value` | String | Attribute value
+
+#### CustomerAddressRegion attributes {#customerAddressRegionOutput}
+
+The `customerAddressRegion` output returns the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`region` | String | The state or province name
+`region_code` | String | The address region code
+`region_id` | Int | The unique ID for a pre-defined region
+
+### orders input attributes {#orders}
+
+{% include graphql/customer-orders-output.md %}
+
 ### Wishlist attributes {#Wishlist}
 
 Attribute | Data type | Description
@@ -277,7 +511,7 @@ Attribute | Data type | Description
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
 
-### WishlistItem attributes {#wishlistitem}
+#### WishlistItem attributes {#wishlistitem}
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -297,7 +531,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `store_credit` | [CustomerStoreCredit](#CustomerStoreCredit) | Contains the store credit information for the logged-in customer
 
-### CustomerStoreCredit attributes {#CustomerStoreCredit}
+#### CustomerStoreCredit attributes {#CustomerStoreCredit}
 
 The `store_credit` object contains store credit information, including the balance and history.
 
@@ -307,7 +541,7 @@ Attribute |  Data Type | Description
 `current_balance` | Money | The current store credit balance
 `enabled` | Boolean | Indicates whether store credits are enabled. If the feature is disabled, then the balance will not be returned
 
-### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
+#### CustomerStoreCreditHistory attributes {#CustomerStoreCreditHistory}
 
 The `CustomerStoreCreditHistory` object contains an array of store credit items and paging information. If the store credit or store credit history feature is disabled, then a null value will be returned.
 
@@ -317,7 +551,7 @@ Attribute |  Data Type | Description
 `page_info` | SearchResultPageInfo | An object that includes the `page_size` and `current_page` values specified in the query
 `total_count` | Int | The number of items returned
 
-### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
+#### CustomerStoreCreditHistoryItem attributes {#CustomerStoreCreditHistoryItem}
 
 The `CustomerStoreCreditHistoryItem` object contains information about a specific change to the customer's store credit.
 

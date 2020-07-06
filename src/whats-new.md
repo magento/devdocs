@@ -15,7 +15,7 @@ title: What's new on DevDocs
 
 {% assign grouped_by_year = entries | group_by_exp: "entry", "entry.date | date: '%Y'" %}
 
-{% for group in grouped_by_year %}
+{% for group in grouped_by_year limit:2 %}
 
 ## {{ group.name }}
 

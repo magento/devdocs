@@ -78,11 +78,11 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
 -  {:.new}**Docker Updates**—
 
-   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{ site.baseurl }}/cloud/docker/docker-development-testing.html).
+   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-magecloud-pkg-code.html).
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
-   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#binmagento-docker).
+   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).
 
    -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-config.html#prerequisites).
 

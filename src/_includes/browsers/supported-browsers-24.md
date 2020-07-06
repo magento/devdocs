@@ -1,5 +1,6 @@
 Storefront and Admin:
 
+*  Microsoft Edge, latest–1
 *  Firefox latest, latest&ndash;1 (any operating system)
 *  Chrome latest, latest&ndash;1 (any operating system)
 *  Safari latest, latest&ndash;1 (Mac OS only)
