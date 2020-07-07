@@ -18,12 +18,6 @@ namespace :update do
     update_dir 'src/mbi'
   end
 
-  desc 'Update Magento 1 docs'
-  task :m1 do
-    puts 'Updating Magento 1 docs:'.magenta
-    update_dir 'src/guides/m1x'
-  end
-
   desc 'Update Page Builder docs'
   task :pb do
     puts 'Updating Page Builder docs:'.magenta
@@ -55,7 +49,7 @@ namespace :update do
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[m1 mbi pb pbm mftf]
+  task subrepos: %w[mbi pb pbm mftf]
 end
 
 def update_dir(dir)

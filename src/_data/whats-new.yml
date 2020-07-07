@@ -2208,8 +2208,8 @@ entries:
   type: Major update
   date: June 25, 2019
   link: https://github.com/magento/devdocs/pull/4825
-- description: Added release notes for [Magento Commerce 1.14.4.2](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html)
-    and [Magento Open Source 1.9.4.2](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).
+- description: Added release notes for Magento Commerce 1.14.4.2
+    and Magento Open Source 1.9.4.2.
   versions: 1.9.4.2
   type: Major update
   date: June 25, 2019
@@ -3975,8 +3975,8 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Technical changes
   date: Jun 28 2018
-- description: Added [Magento Commerce Release Notes (1.14 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html)
-    and [Magento Open Source Release Notes (1.9 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).
+- description: Added [Magento Commerce Release Notes (1.14 and later)
+    and [Magento Open Source Release Notes (1.9 and later).
   versions: ''
   type: Major update
   date: Jun 27 2018
@@ -5778,7 +5778,7 @@ entries:
   versions: 2.x
   type: New
   date: Oct 21 2016
-- description: "[How to apply the SUPEE-8788 security patch](https://devdocs.magento.com/guides/m1x/other/ht_install-patches.html)"
+- description: "How to apply the SUPEE-8788 security patch"
   versions: 1.x
   type: Updated
   date: Oct 21 2016
@@ -5802,23 +5802,19 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 14 2016
-- description: '[JSON responses added by Tim Reynolds](https://devdocs.magento.com/guides/m1x/api/rest/Resources/resource_customer_addresses.html)'
+- description: 'JSON responses added by Tim Reynolds'
   versions: 1.x
   type: Updated
   date: Oct 14 2016
-- description: '[JSON responses added by Tim Reynolds](https://devdocs.magento.com/guides/m1x/api/rest/Resources/resource_customers.html)'
-  versions: 1.x
-  type: Updated
-  date: Oct 14 2016
-- description: '[Magento CE 1.9.3 release notes](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html)'
+- description: 'Magento CE 1.9.3 release notes'
   versions: 1.x
   type: New
   date: Oct 14 2016
-- description: '[Magento EE 1.14.3 release notes](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html)'
+- description: 'Magento EE 1.14.3 release notes'
   versions: 1.x
   type: New
   date: Oct 14 2016
-- description: '[Updated system requirements](https://devdocs.magento.com/guides/m1x/system-requirements.html)'
+- description: 'Updated system requirements'
   versions: 1.x
   type: Updated
   date: Oct 14 2016
