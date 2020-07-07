@@ -1,9 +1,5 @@
 content_map:
--
-  directory: src/guides/m1x
-  repository: magento/devdocs-m1
-  branch: master
-  filter: false
+
 -
   directory: src/mbi
   repository: magento/devdocs-mbi

@@ -208,7 +208,7 @@ Admins access is shared via comment on GitHub.
 
 To verify and test changes within a pull request, enter a command to generate a Magento instance using code based on the PR.
 
-**Command:** To deploy, [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members), a [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) member, or a contributor under the existing Pull Request enters the following command as a comment to the pull request:
+**Command:** To deploy, [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers), a Magento EngCom Team member, or a contributor under the existing Pull Request enters the following command as a comment to the pull request:
 
 ```text
 @magento give me test instance
@@ -226,15 +226,15 @@ Admins access will be shared via comment on GitHub.
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
--  Contributor
+-  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
+-  Magento EngCom Team
+-  [Contributor]({{page.baseurl}}/contributor-guide/contributors.html)
 
 ### Combine multiple pull requests {#combine-pr}
 
 To optimize the pull request queue, enter a command with a series of related pull request numbers to merge and test the code. If all tests pass, the entered PRs are merged into the current PR.
 
-**Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members) or [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members) under the existing Pull Request will enter the following command:
+**Command:** To combine pull requests, a member of the [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers) or Magento EngCom Team under the existing Pull Request will enter the following command:
 
 ```text
 @magento combine {xxx} {yyy} {zzz}
@@ -252,8 +252,8 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 **Permissions:**
 
--  [Community Maintainers](https://github.com/orgs/magento/teams/open-source-maintainers/members)
--  [Magento EngCom Team](https://github.com/orgs/magento/teams/core-maintainers/members)
+-  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
+-  Magento EngCom Team
 
 ## Report an issue {#report}
 
