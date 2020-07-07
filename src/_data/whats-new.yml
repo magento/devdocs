@@ -4,30 +4,32 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Jun 25 15:26:35 2020
+updated: Tue Jul 7 12:33:02 2020
 entries:
-- description: Added [Magento Cloud Patches v 1.0.5 Release Notes](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).
+- description: "Removed Magento 1 documentation from the Magento Developer Documentation
+    to follow the end of support Magento policy. Deprecated M1 content is still available:
+    <br/>-[PDF site archive](https://github.com/magento/devdocs-m1/blob/master/site-archive-pdf.zip)
+    with M1 content<br/>- Use the `1.x-eos` tag in the [Magento DevDocs repository](https://github.com/magento/devdocs/releases/tag/1.x-eos)
+    to find the latest commit containing Magento 1 content and to generate the documentation locally"
+  versions: 1.x
+  type: Major Update
+  date: July 6, 2020
+  link: https://github.com/magento/devdocs/pull/7452
+- description: Added release notes for the June 2020
+    Magento Cloud packages release:<br/>- [ece-tools](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200211)<br/>-
+    [Magento Cloud Patches](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v105)<br/>-
+    [Magento Cloud Docker](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v110)<br/>-
+    [Magento Cloud Components](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v104)
   versions: 2.x
   type: Major Update
   date: June 25, 2020
-  link: https://github.com/magento/devdocs/pull/7411
-- description: Added [Magento Cloud Components v 1.0.4 Release Notes]( https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html).
-  versions: 2.x
-  type: Major Update
-  date: June 25, 2020
-  link: https://github.com/magento/devdocs/pull/7412
+  link: https://github.com/magento/devdocs/pull/7447
 - description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/error-codes.html)
-    with error listing and suggested actions to resolve build and deploy issues.
+    to the _Cloud Guide_ with error listing and suggested actions to resolve build and deploy issues.
   versions: 2.x
   type: Major update
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/7327
-- description: Added the `wizard:split-db-state` command to the [Smart wizards]( https://devdocs.magento.com/cloud/deploy/smart-wizards.html)
-    topic in the _Cloud Guide_.
-  versions: 2.x
-  type: Technical
-  date: June 25, 2020
-  link: https://github.com/magento/devdocs/pull/7322
 - description: Updated the [Deploy variables](https://devdocs.magento.com/cloud/env/variables-deploy.html) topic in the _Cloud Guide_
     to add the `REDIS_BACKEND` environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 and later.
   versions: 2.x
@@ -35,14 +37,14 @@ entries:
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/7194
 - description: Updated the [Import URL Rewrites](https://devdocs.magento.com/cloud/configure/import-url-rewrites.html)
-    topic with guidance about checking the PHP  file upload limit to prevent errors
+    topic in the _Cloud Guide_ with guidance about checking the PHP  file upload limit to prevent errors
     when uploading a large file for importing URL rewrites.
   versions: 2.x
   type: Technical
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/7196
-- description: Added instructions to complete functional testing for Magento Cloud packages in the Docker environment.
-    See [Magento Cloud code testing](https://cloud/docker/docker-test-magecloud-pkg-code.html).
+- description: Updated the _Cloud Guide_ with instructions to complete functional testing for Magento Cloud packages in the Docker environment.
+    See [Magento Cloud code testing](https://devdocs.magento.com/cloud/docker/docker-test-magecloud-pkg-code.html).
   versions: 2.x
   type: Technical
   date: June 25, 2020
@@ -103,6 +105,80 @@ entries:
   type: Technical
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/6618
+- description: Added documentation for enabling a PrivateLink integration for Magento
+    Cloud projects to establish secure, private connections  between Magento Cloud
+    Pro Staging and Production environments and external services.  See [PrivateLink
+    service](https://devdocs.magento.com/cloud/project/privatelink-service.html).
+  versions: 2.x
+  type: New Topic
+  date: June 23, 2020
+  link: https://github.com/magento/devdocs/pull/7425
+- description: Added Microsoft Edge to the list of [supported browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html)
+    for 2.4.0, which was mistakenly removed.
+  versions: 2.4.0
+  type: Technical
+  date: June 22, 2020
+  link: https://github.com/magento/devdocs/pull/7434
+- description: Improved [REST API reference](https://devdocs.magento.com/guides/v2.3/rest/bk-rest.html)
+    performance.
+  versions: 2.3.x
+  type: Technical
+  date: June 22, 2020
+  link: https://github.com/magento/devdocs/pull/7430
+- description: Added the [Adding an admin grid](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/admin-grid.html)
+    topic.
+  versions: 2.3.x
+  type: New Topic
+  date: June 18, 2020
+  link: https://github.com/magento/devdocs/pull/7307
+- description: Added new configuration options to [Use Redis for Magento page and
+    default cache](https://devdocs.magento.com/guides/v2.4/config-guide/redis/redis-pg-cache.html).
+  versions: 2.4.0
+  type: Major Update
+  date: June 17, 2020
+  link: https://github.com/magento/devdocs/pull/7331
+- description: Removed Internet Explorer 11 from the list of [supported web browsers](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements_browsers.html).
+  versions: 2.4.0
+  type: Technical
+  date: June 17, 2020
+  link: https://github.com/magento/devdocs/pull/7419
+- description: Updated [Magento-developed extension (MDE)](https://devdocs.magento.com/release/#compatibility)
+    and [vendor-bundled extension (VBE)](https://devdocs.magento.com/extensions/vendor/#compatibility)
+    compatibility for Magento 2.4.0.
+  versions: 2.4.0
+  type: Major Update
+  date: June 17, 2020
+  link: https://github.com/magento/devdocs/pull/7423
+- description: Removed references to Signifyd, which was deprecated in 2.3 and removed
+    in 2.4.
+  versions: 2.4.0
+  type: Major Update
+  date: June 16, 2020
+  link: https://github.com/magento/devdocs/pull/7415
+- description: Added a banner message to the top of all pages in the [Payments Integration
+    Guide](https://devdocs.magento.com/guides/v2.4/payments-integrations/bk-payments-integrations.html)
+    (except [CardinalCommerce 3-D Secure](https://devdocs.magento.com/guides/v2.4/payments-integrations/cardinal/cardinal.html))
+    announcing the removal of the Braintree module in Magento 2.4.0 and updated links
+    to the Magento 2 codebase to point to the 2.3 branch.
+  versions: 2.4.0
+  type: Major Update
+  date: June 16, 2020
+  link: https://github.com/magento/devdocs/pull/7417
+- description: Removed references to deprecated payment methods Authorize.net, Cybersource,
+    eWay, and Worldpay. Replaced the Authorize.net payment example with a Paypal example
+    in the [Customize checkout](https://devdocs.magento.com/guides/v2.4/howdoi/checkout/checkout_payment.html)
+    tutorial.
+  versions: 2.4.0
+  type: Major Update
+  date: June 16, 2020
+  link: https://github.com/magento/devdocs/pull/7414
+- description: Reverted changes to the [2.3.x version](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html)
+    of the _Two Factor Authentication_ topic and updated the [2.4.x version](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+    with the appropriate changes.
+  versions: 2.3.x, 2.4.0
+  type: Major Update
+  date: June 15, 2020
+  link: https://github.com/magento/devdocs/pull/7392
 - description: Added two new REST endpoints that add support for the Inventory Management
     [In-store Pickup](https://devdocs.magento.com/guides/v2.4/rest/modules/inventory/in-store-pickup.html)
     feature.
