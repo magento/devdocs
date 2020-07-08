@@ -65,7 +65,7 @@ To guarantee successful execution of all Magento instances without dumping data 
 To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
 ```bash
-  opcache.memory_consumption=2GB
+  opcache.memory_consumption=2048
   opcache.max_accelerated_files=60000
   opcache.consistency_checks=0
   opcache.validate_timestamps=0
