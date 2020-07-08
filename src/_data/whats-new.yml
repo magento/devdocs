@@ -8,7 +8,7 @@ updated: Tue Jul 7 12:33:02 2020
 entries:
 - description: "Removed Magento 1 documentation from the Magento Developer Documentation
     to follow the end of support Magento policy. Deprecated M1 content is still available:
-    <br/>-[PDF site archive](https://github.com/magento/devdocs-m1/blob/master/site-archive-pdf.zip)
+    <br/>- [PDF site archive](https://github.com/magento/devdocs-m1/blob/master/site-archive-pdf.zip)
     with M1 content<br/>- Use the `1.x-eos` tag in the [Magento DevDocs repository](https://github.com/magento/devdocs/releases/tag/1.x-eos)
     to find the latest commit containing Magento 1 content and to generate the documentation locally"
   versions: 1.x
@@ -16,10 +16,10 @@ entries:
   date: July 6, 2020
   link: https://github.com/magento/devdocs/pull/7452
 - description: Added release notes for the June 2020
-    Magento Cloud packages release:<br/>- [ece-tools](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200211)<br/>-
-    [Magento Cloud Patches](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v105)<br/>-
-    [Magento Cloud Docker](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v110)<br/>-
-    [Magento Cloud Components](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v104)
+    Magento Cloud packages release:<br/>- [ece-tools package 2002.1.1](https://devdocs.magento.com/cloud/release-notes/ece-release-notes.html#v200211)<br/>-
+    [Magento Cloud Patches 1.0.5](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html#v105)<br/>-
+    [Magento Cloud Docker 1.1.0](https://devdocs.magento.com/cloud/release-notes/mcd-release-notes.html#v110)<br/>-
+    [Magento Cloud Components 1.0.4](https://devdocs.magento.com/cloud/release-notes/mcc-release-notes.html#v104)
   versions: 2.x
   type: Major Update
   date: June 25, 2020
