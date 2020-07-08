@@ -143,4 +143,4 @@ If executing the `setup:uninstall` command fails and cannot be completed, you mi
    -  `env.php`
    -  `env.php.bak`
 
-After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).
+After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database. Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).

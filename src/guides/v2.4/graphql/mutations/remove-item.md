@@ -94,7 +94,7 @@ Attribute |  Data Type | Description
 
 ### Cart object {#CartObject}
 
-{% include graphql/cart-object.md %}
+{% include graphql/cart-object-24.md %}
 
 ## Errors
 

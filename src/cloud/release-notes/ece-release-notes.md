@@ -17,16 +17,96 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
+## v2002.1.1
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.new}**Infrastructure updates**–
+
+   -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html).<!-- MCLOUD-5637, 5531-->
+
+   -  {:.new}**Improved Javascript bundling capabilities**–Now you can use the [Magento Baler module](https://github.com/magento/baler) to build optimized JavaScript and HTML content during static content deployment. See [Optimize JavaScript and HTML content]({{site.baseurl}}/cloud/deploy/static-content-deployment.html#optimize-javascript-and-html-content).<!--MCLOUD-3456-->
+
+   -  {:.new}Improved the process for database dumps (`vendor/bin/ece-tools db-dump`) and updated log messages to clarify that the database dump operation switches the application to maintenance mode, stops consumer queue processes, and disables cron jobs before the dump begins.<!--MCLOUD-5324, MCLOUD-2062-->
+
+   -  {:.fix}Fixed an issue to ensure that the project URL is updated correctly when deploying to Staging and Production environments. Now, `{{site.data.var.ct}}` uses the URL for the route with the `primary:true` attribute set in the project route configuration. See [Deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#update_urls).<!--MCLOUD-5883-->
+
+   -  {:.fix}Updated the `generate.xml` build scenario workflow for applying patches. Patches must be applied earlier to update Magento to fix any issues that might cause the `di:compile` and `module:refresh` steps to fail.<!--MCLOUD-5941-->
+
+   -  {:.fix}Fixed an issue in the Magento installation process that incorrectly returns the `Crypt key missing` error. The `crypt/key` value is generated automatically during the installation.<!--MCLOUD-6120-->
+
+-  {:.new}**Service updates**–
+
+   -  {:.new}Added support for PHP 7.4 and MariaDB 10.4.<!--MAGECLOUD-2957, MCLOUD-4144-->
+
+-  {:.new}**Environment variable updates**–
+
+   -  {:.new}Added the **SCD_USE_BALER** variable to enable the Magento Baler module for JavaScript bundling during the {{site.data.var.ece }} build process. See the variable description in the [build variables]({{site.variable}}/cloud/env/variables-build.html#scd_use_baler).<!-- MCLOUD-3456, MCLOUD-3457-->
+
+   -  {:.new}Added the **REDIS_BACKEND** environment variable to configure the Redis backend model for Redis cache for Magento 2.3.5 or later. See the variable description in the [deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#redis_backend).<!--MCLOUD-5721, MCLOUD-5865-->
+
+-  {:.new}**CLI command updates**–
+
+   -  {:.new}Updated the following Magento CLI commands with an option for more detailed logging:
+
+      -  `app:config:dump`
+      -  `app:config:import`
+      -  `module:enable`
+
+      The logging level for each call is determined by the configuration of the [`VERBOSE_COMMANDS`]({{site.baseurl}}/cloud/env/variables-build.html#verbose_commands) variable in the `.magento.env.yaml` file.<!--MCLOUD-3503-->
+
+-  {:.new}**Validation improvements**–
+
+   -  {:.new}**Elasticsearch 7.x compatibility checks**–Updated Elasticsearch validation for Elasticsearch 7.x software compatibility checks.<!--MCLOUD-5542-->
+
+   -  {:.new}**Updated service version and EOL validation checks**–Updated validation to check installed service versions against Magento 2.4. requirements.<!--MCLOUD-6144-->
+
+   -  {:.fix}Fixed a validation issue so that the following post-deploy warning message displays only if the `post-deploy` hook configuration is missing from the `.magento.app.yaml` file:
+
+      ```text
+      Your application does not have the "post_deploy" hook enabled.
+      ```
+      {:.no-copy}
+      <!--MCLOUD-4077-->
+
+   -  {:.new}**Added validation for Zend Framework dependencies**–Added compoer dependency validation for the Zend Framework which has migrated to the Laminas project. If the required dependencies are missing, the following error message displays during the build process.
+
+      ```text
+      Required configuration is missing from the autoload section of the composer.json file.
+      Add ("Laminas\Mvc\Controller\Zend\": "setupsrc/ Zend/Mvc/Controller/") to
+      the `autoload -> psr-4` section. Then, re-run the "composer update" command locally, and
+      commit the updated composer.json and composer.lock files.
+      ```
+      {:.no-copy}
+
+      See [Verify Zend Framework dependencies]({{site.baseurl}}/cloud/project/project-upgrade.html#verify-zend-framework-composer-dependencies).<!--MCLOUD-4094-->
+
+   -  {:.new}**Added validation for `env.php` file and data**–Added checks for the `env.php` file and data during the Magento install and upgrade process.<!--MCLOUD-5991-->
+
+      -  If the `env.php` file is missing from the Magento installation, and the `crypt/key` value is not specified in the `.magento.app.yaml` file, the deployment fails with the following notification:
+
+         ```text
+         The crypt/key key value does not exist in the ./app/etc/env.php file or the CRYPT_KEY cloud environment variable``Missing crypt key for upgrading Magento`.
+         ```
+         {:.no-copy}
+
+      -  If the Magento installation does not include the `env.php` file, or the configuration contains only one cache type, the `cron:enable` command runs during the upgrade process to restore the file with all `cache_types`. The following notification is added to the log:
+
+         ```text
+         Magento state indicated as installed but configuration file app/etc/env.php was empty or did not exist.
+         Required data will be restored from environment configurations and from the .magento.env.yaml file.
+         ```
+         {:.no-copy}
+
 ## v2002.1.0
 *Release date: February 6, 2020*<br/>
 
 -  {:.new}**Infrastructure updates**–
 
-   -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-3986-->
+   -  {:.new}**Added separate package for Magento Cloud Docker**–Decoupled the Docker package from the `{{site.data.var.ct}}` package to maintain code quality and provide independent releases. Updates and fixes related to `{{site.data.var.ct}}` are managed from the [magento-cloud-docker](https://github.com/magento/magento-cloud-docker) GitHub repository.<!--MAGECLOUD-2927-->
 
    -  {:.new}**Updated patching capabilities**–Moved the Magento patching functionality from the {{site.data.var.ct}} package to a separate [magento-cloud-patches](https://github.com/magento/magento-cloud-patches) package. During deployment, `{{site.data.var.ct}}` uses the new package to apply patches. See [Magento Cloud patches release notes]({{site.baseurl}}/cloud/release-notes/mcp-release-notes.html).<!--MAGECLOUD-4567-->
 
-   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all components in the [`{{site.data.var.csuite}}`]({{site.baseurl}}/cloud/release-notes/cloud-tools.html). These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
+   -  {:.new}**Updated Composer dependencies**–Updated the `composer.json` file for {{site.data.var.ece}} with a dependency for the `{{site.data.var.mcd-package}}` package. Now, `{{site.data.var.ct}}` includes dependencies for all packages in the [`{{site.data.var.csuite}}`]({{site.baseurl}}/cloud/release-notes/cloud-tools.html). These packages are installed and updated automatically when you install or update `{{site.data.var.ct}}`.
 
 -  {:.new}**Support for scenario-based deployments**–<!--MAGECLOUD-4101-->
 
@@ -37,7 +117,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
    {:.bs-callout-info}
    Before updating to {{site.data.var.ct}} version 2002.1.0, review the [backward   incompatible changes]({{site.baseurl}}/cloud/release-notes/backward-incompatible-changes.html) to learn about changes that might require you to   update {{site.data.var.ece}} project configuration or processes.
 
--  {:.new}**Services updates**–
+-  {:.new}**Service updates**–
 
    -  {:.new}Added support for PHP 7.3.<!--MAGECLOUD-4022-->
 
