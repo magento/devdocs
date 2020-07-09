@@ -1,22 +1,15 @@
 ---
 group: web-api
-subgroup: 40_Authentication
 title: Authentication
-menu_title: Authentication
-menu_order: 1
-menu_node: parent
 functional_areas:
   - Integration
 ---
 
-## Web API authentication overview
+Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in the `webapi.xml` configuration file. See [Services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
-Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in a configuration file <code>webapi.xml</code>.
-Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
+Before you can make [web API](https://glossary.magento.com/web-api) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. A user's (administrator, integration, customer, or guest) access rights determine an API call's resource accessibility.
 
-Before you can make [web API](https://glossary.magento.com/web-api) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
-
-### Accessible resources
+## Accessible resources
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
 Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
@@ -28,18 +21,19 @@ Administrator or Integration | Resources for which administrators or integrators
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
 
-### Relation between acl.xml and webapi.xml
+## Relationship between acl.xml and webapi.xml
 
-The <code>acl.xml</code> file defines the access control list (ACL) for a given [module](https://glossary.magento.com/module). It defines available set of permissions to access the resources.
-`acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed [Admin](https://glossary.magento.com/admin) role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
+The `acl.xml` file defines the access control list (ACL) for a given [module](https://glossary.magento.com/module). It defines the available set of permissions to access resources.
 
-#### Sample customer acl.xml
+All `acl.xml` files across all Magento modules are consolidated to build an ACL tree, which is used to select allowed [Admin](https://glossary.magento.com/admin) role resources or third-party integration access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
+
+### Sample customer acl.xml
 
 For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/acl.xml).
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
-#### Sample (truncated) customer webapi.xml
+### Sample (truncated) customer webapi.xml
 
 ```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -96,9 +90,9 @@ A guest or anonymous is a special permission that doesn't need to be defined in 
 <br/><br/>
 Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, `GET /V1/customers/me` fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets.
 
-### Web API clients and authentication methods
+## Web API clients and authentication methods
 
-You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.
+You must use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.
 
 Each type of client has a preferred authentication method. To authenticate, use the authentication method for your preferred client:
 
@@ -164,6 +158,43 @@ Each type of client has a preferred authentication method. To authenticate, use 
       </td>
    </tr>
 </table>
+
+The following sections describe tips about which type of authentication method you should use depending on your use case.
+
+## Token based (Bearer Authentication)
+
+This method is a good choice for authenticating customers and Admin users in third-party applications that need to make authorized API calls to the Magento store.
+
+*  **Customer Token**—Use this token in applications to authorize specific customer and query data related to that customer (for example, customer details, cart, and orders).
+*  **Admin Token**—Use this token in applications to authorize an Admin user and access Admin-related APIs.
+
+[Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then (include it in future requests)({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
+
+{:.bs-callout-info}
+You should use this type of authentication mechanism over HTTPS:
+
+## Integration (Bearer Authentication)
+
+This method is a good choice for integrating with a third-party system that supports this kind of authentication. You can restrict access to specific resources.
+
+Magento generates a consumer key, consumer secret, access token, and access token secret when you create an active integration (self activated).
+
+To use bearer authentication for API requests, you can use an access token. [Create an active integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#integration-tokens) (self activated) and [use the access token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access) in the authentication header:
+
+```bash
+curl -X GET "http://magento2ce74.loc:8080/index.php/rest/V1/customers/1" -H "Authorization: Bearer 9xvitupdkju0cabq2i3dxyg6bblqmg5h"
+```
+
+{:.bs-callout-info}
+You should use this type of authentication mechanism over HTTPS.
+
+## Integration (Oauth)
+
+This method is a good choice for integrating with a third-party system that support OAuth 1.0a.
+
+After activating an integration (self activated), you can use the generated consumer key, consumer secret, access token, and access token secret to provide third-party systems access to Magento Store resources. You do not need to make calls to the `/oauth/token/request` or `/oauth/token/access` endpoints to exchange tokens.
+
+If a third-party system provides endpoints, you can use them to [activate an integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html#activate) and link your account. After completing the activation process, a third-party service can use the consumer key, consumer secret, access token, and access token secret provided by Magento during activation to make API calls.
 
 {:.ref-header}
 Related topics
