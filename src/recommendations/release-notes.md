@@ -14,7 +14,7 @@ The release notes include:
 ## **3.0.2** for Magento Commerce (EE) and Commerce on Cloud (ECE) 2.3.1
 
 -  {:.new}Added a status column on the grid when selecting Recommendation units in Page Builder
--  {:.fix}Fixed an issue with incorrect http/https protocol in product and image URLs
+-  {:.fix}Fixed an issue with incorrect http/https protocols in product and image URLs
 
 ## **3.0.1** for Magento Commerce (EE) and Commerce on Cloud (ECE) 2.3.1
 
