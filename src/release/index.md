@@ -30,7 +30,7 @@ For general information about security releases, see [Introducing the New Securi
 
 ### Early access
 
-Pre-release is General Availability code that is available to {{site.data.var.ee}} merchants and all partners two weeks before GA. It allows for quicker deployment of code before General Availability.
+Pre-release is General Availability code that is available to {{site.data.var.ee}} merchants and all partners two weeks before General Availability. It allows for quicker deployment of code before General Availability.
 
 Beta is non-General Availability code that is available to all partners. It allows for extra time to review code and affected components.
 
