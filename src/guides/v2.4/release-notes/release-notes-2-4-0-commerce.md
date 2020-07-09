@@ -303,9 +303,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Administrators can now log into the Admin as expected after an admin account with limited privileges has been created. Previously,  the Admin was not accessible. Instead, users were redirected to the storefront with a 404 error. _Fix submitted by Eden Duong in pull request [25909](https://github.com/magento/magento2/pull/25909)_. [GitHub-25881](https://github.com/magento/magento2/issues/25881)
 
-<!--- ENGCOM-6458-->
-
 <!--- ENGCOM-6785-->
+
+*  Magento no longer duplicates SEO data such as URL key, meta title, meta keywords, and  meta description when you duplicate a product.  _Fix submitted by Dasharth patel in pull request [26659](https://github.com/magento/magento2/pull/26659)_. [GitHub-26054](https://github.com/magento/magento2/issues/26054)
 
 <!--- ENGCOM-6442-->
 
@@ -371,9 +371,15 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7485-->
 
+*  StorefrontMiniCartSection  has been replaced by StorefrontMinicartSection in MFTF tests.   _Fix submitted by Andrii Kalinich in pull request [27955](https://github.com/magento/magento2/pull/27955)_. [GitHub-27897](https://github.com/magento/magento2/issues/27897)
+
 <!--- ENGCOM-6389-->
 
+*  Hardcoded references to the country selector component on the shipping address form have been removed.  _Fix submitted by Mateusz Krzeszowiak in pull request [25541](https://github.com/magento/magento2/pull/25541)_. [GitHub-22416](https://github.com/magento/magento2/issues/22416)
+
 <!--- ENGCOM-6522-->
+
+*  Magento no longer underlines the Delete icon in the shopping cart when the cursor hovers over the icon when viewing the storefront in Internet Explorer.  _Fix submitted by divyajyothi5321 in pull request [26173](https://github.com/magento/magento2/pull/26173)_. [GitHub-26164](https://github.com/magento/magento2/issues/26164)
 
 <!--- ENGCOM-6352-->
 
@@ -382,8 +388,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-6251-->
 
 *  The promotion region of the mini cart is now rendered as expected. _Fix submitted by Matti Vapa in pull request [25375](https://github.com/magento/magento2/pull/25375)_. [GitHub-25373](https://github.com/magento/magento2/issues/25373)
-
-<!--- ENGCOM-6532-->
 
 ### Cart Price Rule
 
@@ -477,13 +481,16 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6424-->
 
+*  Magento no longer throws an error when you try to  filter products on the Category page using an invalid price. Previously, Magento logged this error in the system log:  [2019-12-05 11:25:41] main.CRITICAL: Notice: A non well formed numeric value encountered in /var/www/magento2/vendor/magento/module-catalog-search/Model/Layer/Filter/Price.php on line 180 [] []
+[2019-12-05 11:25:43] main.CRITICAL: The "catalog.leftnav" block threw an exception, and it can't be rendered. [] []. _Fix submitted by Ihor Sviziev in pull request [25912](https://github.com/magento/magento2/pull/25912)_. [GitHub-25911](https://github.com/magento/magento2/issues/25911)
+
 <!--- ENGCOM-6455-->
+
+*  You can now navigate through multi-page category search results. Previously, Magento created duplicate pages of search results when you tried to use the Back button to return to the first page of results. _Fix submitted by Douglas Radburn in pull request [25337](https://github.com/magento/magento2/pull/25337)_. [GitHub-14971](https://github.com/magento/magento2/issues/14971)
 
 <!--- ENGCOM-6194-->
 
 *  Corrected the return type to `string|null` for the `getSourceModel` method in the `Eav\Attribute.php` class. _Fix submitted by Mychailo in pull request [25333](https://github.com/magento/magento2/pull/25333)_. [GitHub-25278](https://github.com/magento/magento2/issues/25278)
-
-<!--- ENGCOM-6593-->
 
 <!--- ENGCOM-6625-->
 
@@ -507,13 +514,17 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7453-->
 
-## Catalog Rule
+*  Validation logic has been added to the **Products per Page on Grid Allowed Values** and **Products per Page on Grid Default Value** fields of the store configuration page. Previously, store administrators could enter unavailable values in these fields.  _Fix submitted by Lukasz Bajsarowicz in pull request [27093](https://github.com/magento/magento2/pull/27093)_. [GitHub-27089](https://github.com/magento/magento2/issues/27089)_
+
+### Catalog Rule
 
 <!--- ENGCOM-6550-->
 
 *  Corrected the behavior of the Datepicker page element on **Admin** > **Marketing** > **Promotions** > **Catalog Price Rule**. _Fix submitted by Hitesh in pull request [26290](https://github.com/magento/magento2/pull/26290)_. [GitHub-26289](https://github.com/magento/magento2/issues/26289)
 
 <!--- ENGCOM-5122-->
+
+*  Catalog price rules now work with custom options as expected on Product details pages. _Fix submitted by Pavel Bystritsky in pull request [22917](https://github.com/magento/magento2/pull/22917)_. [GitHub-22856](https://github.com/magento/magento2/issues/22856)
 
 ### Catalog widget
 
@@ -553,6 +564,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7033-->
 
+*  The CMS  page custom layout update logic  has been improved. Magento now applies specific layout changes from `cms_page_view_selectable_home_somechanges.xml`. _Fix submitted by Sergiy Vasiutynskyi in pull request [27131](https://github.com/magento/magento2/pull/27131)_. [GitHub-26758](https://github.com/magento/magento2/issues/26758)
+
 ### Cookies
 
 <!--- MC-24182-->
@@ -565,6 +578,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6891-->
 
+*  Metadata has been added to the `setRedirectCookie` and `clearRedirectCookie` functions.  _Fix submitted by Alexander Lukyanov in pull request [24612](https://github.com/magento/magento2/pull/24612)_. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
+
 ### Cleanup
 
 <!--- ENGCOM-6573-->
@@ -573,13 +588,23 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6521-->
 
+*  Corrected misalignment of the **My billing and shipping address are the same** checkbox on the Review and Payments page section of the checkout workflow.  _Fix submitted by divyajyothi5321 in pull request [26169](https://github.com/magento/magento2/pull/26169)_. [GitHub-26168](https://github.com/magento/magento2/issues/26168)
+
 <!--- ENGCOM-6581-->
+
+*  Removed unnecessary white space between the field labels and asterisks on the Shipping  Address section of the checkout workflow.  _Fix submitted by Daniel Ruf in pull request [26285](https://github.com/magento/magento2/pull/26285)_. [GitHub-26275](https://github.com/magento/magento2/issues/26275)
 
 <!--- ENGCOM-6480-->
 
+*  Corrected misalignment of the radio buttons on the Shipping methods section of the checkout workflow.  _Fix submitted by Hitesh in pull request [25966](https://github.com/magento/magento2/pull/25966)_. [GitHub-25962](https://github.com/magento/magento2/issues/25962)
+
 <!--- ENGCOM-6579-->
 
+*  Corrected inconsistent menu spacing in mobile view. _Fix submitted by Hitesh in pull request [26238](https://github.com/magento/magento2/pull/26238)_. [GitHub-26235](https://github.com/magento/magento2/issues/26235)
+
 <!--- ENGCOM-7225-->
+
+*  Corrected misalignment of the mini cart Edit and Remove icons in mobile view.  _Fix submitted by Vasilii Burlacu in pull request [27493](https://github.com/magento/magento2/pull/27493)_. [GitHub-26652](https://github.com/magento/magento2/issues/26652)
 
 <!--- ENGCOM-6967-->
 
@@ -613,6 +638,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Corrected misalignment of the out-of-stock text in relation to the  **Add to cart** button on the product list page in mobile view.  _Fix submitted by divyajyothi5321 in pull request [26183](https://github.com/magento/magento2/pull/26183)_. [GitHub-26181](https://github.com/magento/magento2/issues/26181)
 
+<!--- ENGCOM-6458-->
+
+*  The integration success message displayed on  **Admin**  > **System** > **Extensions** > **Integrations** is now displayed correctly. _Fix submitted by divyajyothi5321 in pull request [26011](https://github.com/magento/magento2/pull/26011)_. [GitHub-25930](https://github.com/magento/magento2/issues/25930)
+
 ### Configurable products
 
 <!--- MC-23546-->
@@ -637,11 +666,19 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6460-->
 
+*  You can now save `system.xml` configuration information  by entering values in  **Admin** > **System** > **Configuration** in fields that do not have associated labels. _Fix submitted by Andrii  Chorniy in pull request [25985](https://github.com/magento/magento2/pull/25985)_. [GitHub-23899](https://github.com/magento/magento2/issues/23899)
+
 <!--- ENGCOM-6689-->
+
+*  The performance of `\Magento\ConfigurableProduct\Model\Product\Type\Configurable::isSalable` has been optimized.  _Fix submitted by Stanislav Ilnytskyi in pull request [26071](https://github.com/magento/magento2/pull/26071)_. [GitHub-26065](https://github.com/magento/magento2/issues/26065)
 
 <!--- ENGCOM-6992-->
 
+*  The logic responsible  for updating configurable product product images has been improved. Previously,  simple products associated with a configurable product displayed only the default image associated with the configurable product, and  Magento sometimes displayed the wrong main image for the product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26560](https://github.com/magento/magento2/pull/26560)_. [GitHub-26473](https://github.com/magento/magento2/issues/26473), [GitHub-26856](https://github.com/magento/magento2/issues/26856), [GitHub-26858](https://github.com/magento/magento2/issues/26858)
+
 <!--- ENGCOM-6520-->
+
+*  Magento now displays a product’s special price as expected when you select a discounted option of a configurable product. Previously, `class="normal-price"` was not changed to `class="special-price"` when a discounted option was selected. _Fix submitted by Ravi Chandra in pull request [26170](https://github.com/magento/magento2/pull/26170)_. [GitHub-24972](https://github.com/magento/magento2/issues/24972)
 
 ### Custom customer attributes
 
@@ -705,7 +742,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7036-->
 
+*  Validation now works as expected for the Date of birth field when editing a customer from the Admin. Previously, Magento did not factor in the user locale, and for some birthdates displayed this error: `The Date of Birth should not be greater than today`.   _Fix submitted by Sergiy Vasiutynskyi in pull request [27149](https://github.com/magento/magento2/pull/27149)_. [GitHub-27027](https://github.com/magento/magento2/issues/27027)
+
 <!--- ENGCOM-6208-->
+
+*  The email field is no longer required when placing an order from the Admin.  _Fix submitted by solwininfotech in pull request [24479](https://github.com/magento/magento2/pull/24479)_. [GitHub-22251](https://github.com/magento/magento2/issues/22251)
 
 <!--- ENGCOM-6667-->
 
@@ -713,9 +754,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6423-->
 
-<!--- ENGCOM-7032-->
+*  The My Account dashboard now displays the value of email address correctly in mobile view. _Fix submitted by Eden Duong in pull request [25942](https://github.com/magento/magento2/pull/25942)_. [GitHub-25935](https://github.com/magento/magento2/issues/25935)
 
 <!--- ENGCOM-7034-->
+
+*  Clicking the **Create an Account** button on the customer registration form multiple times no longer submits the registration request more than once. _Fix submitted by princeCB in pull request [26642](https://github.com/magento/magento2/pull/26642)_. [GitHub-26590](https://github.com/magento/magento2/issues/26590)
 
 ### Customer segment
 
@@ -821,7 +864,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-31729-->
 
-*  Non-cacheable blocks are no longer added to default layout handles. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process: During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page’s final layout structure. The default layout handle is used as a basic handle for every page. As a result, layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
+*  Non-cacheable blocks added to the default layout in reference instructions for non-existent (undeclared) components on the page no longer affect page caching. Adding non-cacheable blocks to default layout handlers renders all Magento pages non-cacheable. This results from the layout generation process: During layout generation, Magento collects all available layout handles for a particular page and merges instructions from them into the page’s final layout structure. The default layout handle is used as a basic handle for every page. As a result, layout updates that are declared for the default handler appear on every Magento page. [GitHub-9041](https://github.com/magento/magento2/issues/9041)
 
 <!--- MC-31920-->
 
@@ -840,6 +883,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-7071-->
 
 <!--- ENGCOM-6552-->
+
+*  You can now save products as expected after changing a product-related date (for example, `news_from_date`, `news_to_date`, `special_price_from_date`, `special_price_to_date`)  in stores implementing non-English locales. Previously, Magento threw an error similar to this:  `Invalid input datetime format of value '22/5/2019`.
 
 ### General fixes
 
@@ -939,8 +984,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  You can now change the product limit on the Category page from 24 to 36 in deployments where B2B is installed. Previously, Magento threw a fatal error when this product limit was increased to 36.
 
-<!--- ENGCOM-7137-->
-
 <!--- ENGCOM-7175-->
 
 *  Customer billing and shipping addresses are now displayed as expected under the Addresses tab on the Admin Customer Edit page when displayed in Internet Explorer. _Fix submitted by Vasilii Burlacu in pull request [27383](https://github.com/magento/magento2/pull/27383)_. [GitHub-27370](https://github.com/magento/magento2/issues/27370)
@@ -964,6 +1007,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-7144-->
 
 <!--- ENGCOM-6014-->
+
+*  Merchants can now set an expiration date on Admin user accounts. _Fix submitted by Laura Folco in pull request [22837](https://github.com/magento/magento2/pull/22837)_. [GitHub-22833](https://github.com/magento/magento2/issues/22833)
 
 ### Gift cards
 
@@ -1409,6 +1454,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6938-->
 
+*  The Pending Reviews menu item is now activated as expected on **Admin** >  **Marketing** > **User Content** > **Pending Reviews**.  _Fix submitted by Ravinder in pull request [26230](https://github.com/magento/magento2/pull/26230)_. [GitHub-26229](https://github.com/magento/magento2/issues/26229)
+
 ### Rewards
 
 <!--- MC-31459-->
@@ -1452,6 +1499,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  The layout of the Sales order address information edit form has been refactored to match Admin form library conventions. _Fix submitted by Alexey Rakitin in pull request [25699](https://github.com/magento/magento2/pull/25699)_. [GitHub-19805](https://github.com/magento/magento2/issues/19805)
 
 <!--- ENGCOM-6007-->
+
+*  The checkboxes on the Products section of the Catalog > Categories page now work as expected.  _Fix submitted by Denis Kopylov in pull request [22990](https://github.com/magento/magento2/pull/22990)_. [GitHub-22988](https://github.com/magento/magento2/issues/22988)
 
 <!--- ENGCOM-6809-->
 
@@ -1587,7 +1636,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6750-->
 
+*  The Minimum Advertised Price now changes as expected when a customer selects a new swatch option for a configurable product. _Fix submitted by Sergiy Vasiutynskyi in pull request [26241](https://github.com/magento/magento2/pull/26241)_. [GitHub-26240](https://github.com/magento/magento2/issues/26240)
+
 <!--- ENGCOM-6685-->
+
+*  Magento no longer duplicates the Minimum Advertised Price for a configurable product when you select a new swatch option. _Fix submitted by Sergiy Vasiutynskyi in pull request [26317](https://github.com/magento/magento2/pull/26317)_. [GitHub-26314](https://github.com/magento/magento2/issues/26314)
 
 <!--- ENGCOM-6966-->
 
@@ -1761,9 +1814,15 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7153-->
 
+*  Corrected display issues with the table header on the **My Account**  > **Address Book**  Address Entries table.  _Fix submitted by Abrar Pathan in pull request [27336](https://github.com/magento/magento2/pull/27336)_. [GitHub-27335](https://github.com/magento/magento2/issues/27335)
+
 <!--- ENGCOM-5986-->
 
+*  The currency symbol used in Layered Navigation Price Step is now based on default settings as expected.  _Fix submitted by Bartłomiej Szubert in pull request [24815](https://github.com/magento/magento2/pull/24815)_. [GitHub-21684](https://github.com/magento/magento2/issues/21684)
+
 <!--- ENGCOM-6324-->
+
+*  The symbol for the Belarusian currency (BYR) has been updated. _Fix submitted by Bartomiej Szubert in pull request [25723](https://github.com/magento/magento2/pull/25723)_. [GitHub-24713](https://github.com/magento/magento2/issues/24713)
 
 <!--- ENGCOM-6622-->
 
@@ -1793,6 +1852,18 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The **Sort By** label no longer overlaps with the **Shop By** button on the category page in mobile view. _Fix submitted by Andrii Kartavtsev in pull request [26381](https://github.com/magento/magento2/pull/26381)_. [GitHub-25300](https://github.com/magento/magento2/issues/25300)
 
+<!--- ENGCOM-7137-->
+
+*  You can now update the value of a downloadable product’s sample and link title by enabling the  Use default checkbox. _Fix submitted by Abel Truong in pull request [27295](https://github.com/magento/magento2/pull/27295)_. [GitHub-27169](https://github.com/magento/magento2/issues/27169)  
+
+<!--- ENGCOM-6532-->
+
+*  Corrected spacing between the Update button and Qty field on the mini cart.  _Fix submitted by Hitesh in pull request [26234](https://github.com/magento/magento2/pull/26234)_. [GitHub-26227](https://github.com/magento/magento2/issues/26227)
+
+<!--- ENGCOM-7032-->
+
+*  The bottom border color of the Additional Address Entries table on the Address Book page now matches `thead` and `tbody` border color. _Fix submitted by Tejash Kumbhare in pull request [26649](https://github.com/magento/magento2/pull/26649)_. [GitHub-26648](https://github.com/magento/magento2/issues/26648)
+
 ### URL
 
 <!--- ENGCOM-6869-->
@@ -1806,6 +1877,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  Customers who change language on a CMS page can now successfully navigate to the store view they’ve selected. Previously, Magento displayed a 404 error.
 
 <!--- ENGCOM-6997-->
+
+*  URL rewrite generation for product URLs for which you’ve enabled category path inclusion now works as expected. Previously, in deployments with multiple store views, Magento sometimes generated incorrect URL rewrites by using the default value of the category url path instead of the storeview-specific URL path. _Fix submitted by Pieter Hoste in pull request [26784](https://github.com/magento/magento2/pull/26784)_. [GitHub-25124](https://github.com/magento/magento2/issues/25124), [GitHub-11616](https://github.com/magento/magento2/issues/11616), [GitHub-11616](https://github.com/magento/magento2/issues/11616)
 
 <!--- ENGCOM-6995-->
 
