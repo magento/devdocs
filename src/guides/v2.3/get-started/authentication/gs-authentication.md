@@ -161,7 +161,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
 
 The following sections describe tips about which type of authentication method you should use depending on your use case.
 
-## Token based (Bearer Authentication)
+### Token based (Bearer Authentication)
 
 This method is a good choice for authenticating customers and Admin users in third-party applications that need to make authorized API calls to the Magento store.
 
@@ -173,7 +173,7 @@ This method is a good choice for authenticating customers and Admin users in thi
 {:.bs-callout-info}
 You should use this type of authentication mechanism over HTTPS:
 
-## Integration (Bearer Authentication)
+### Integration (Bearer Authentication)
 
 This method is a good choice for integrating with a third-party system that supports this kind of authentication. You can restrict access to specific resources.
 
@@ -188,7 +188,7 @@ curl -X GET "http://magento2ce74.loc:8080/index.php/rest/V1/customers/1" -H "Aut
 {:.bs-callout-info}
 You should use this type of authentication mechanism over HTTPS.
 
-## Integration (Oauth)
+### Integration (Oauth)
 
 This method is a good choice for integrating with a third-party system that support OAuth 1.0a.
 
