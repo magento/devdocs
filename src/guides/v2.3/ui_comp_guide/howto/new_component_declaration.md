@@ -96,7 +96,7 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
     <argument name="data" xsi:type="array">
         <fieldset name="customer">
             ...
-            <field name="sendemail_store_id" formElement="my_select">
+            <field name="sendemail_store_id" formElement="select">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
                         <item name="source" xsi:type="string">customer</item>
