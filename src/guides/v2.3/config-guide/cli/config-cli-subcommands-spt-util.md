@@ -24,7 +24,7 @@ Magento Support uses these backups (also referred to as *dumps*) to analyze issu
 
 1. You back up the database to a `.tar.gz` file.
 
-   By default, [sensitive data](#sens-data) is hashed when making the backup.
+   By default, sensitive data is hashed when making the backup.
 
 1. You upload your backups to a file sharing service.
 1. Support analyzes your issues without affecting your development or production environment.
