@@ -98,3 +98,7 @@ pages:
           url: /extensions/amazon-sales/release-notes/
           versionless: true
 
+    - label: Product Recommendations
+      url: /recommendations/release-notes.html
+      versionless: true
+
