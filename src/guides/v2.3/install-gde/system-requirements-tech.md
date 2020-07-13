@@ -167,5 +167,4 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [Varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
 [Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
 [Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
-[end-of-life]: https://www.elastic.co/support/eol
 [RabbitMQ]: {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html
