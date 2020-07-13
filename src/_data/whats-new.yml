@@ -12,7 +12,7 @@ entries:
   date: July 9, 2020
   link: https://github.com/magento/devdocs/pull/7505
 - description: Removed instructions for using Baler for Javascript bundling on Magento
-    Cloud  environments until Baler extension installation process is easier to complete.
+    Cloud environments until Baler extension installation process is easier to complete.
   versions: 2.x
   type: Technical
   date: July 8, 2020
@@ -20,18 +20,8 @@ entries:
 - description: Removed Magento 1 documentation from the Magento Developer Documentation
     to follow the end of support Magento policy. Deprecated M1 content is still available:<br/>-
     [PDF site archive](https://github.com/magento/devdocs-m1/blob/master/site-archive-pdf.zip)
-    with M1 content<br/>- Use the `1.x-eos` tag in the [Magento DevDocs repository](https://github.com/magento/devdocs/releases/tag/1.x-eos)  to
-    find the latest commit containing Magento 1 content and to generate the documentation
-    locally
-  versions: 1.x
-  type: Major Update
-  date: July 6, 2020
-  link: https://github.com/magento/devdocs/pull/7452
-- description: Removed Magento 1 documentation from the Magento Developer Documentation
-    to follow the end of support Magento policy. Deprecated M1 content is still available:<br/>-
-    [PDF site archive](https://github.com/magento/devdocs-m1/blob/master/site-archive-pdf.zip)
-    with M1 content<br/>- Use the `1.x-eos` tag in the [Magento DevDocs repository](https://github.com/magento/devdocs/releases/tag/1.x-eos)
-    to find the latest commit containing Magento 1 content and to generate the documentation locally"
+    with M1 content<br/>- Use the `1.x-eos` tag in the [Magento DevDocs repository](https://github.com/magento/devdocs/releases/tag/1.x-eos) to
+    find the latest commit containing Magento 1 content and to generate the documentation locally.
   versions: 1.x
   type: Major Update
   date: July 6, 2020
