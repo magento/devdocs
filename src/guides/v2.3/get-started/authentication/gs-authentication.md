@@ -179,7 +179,7 @@ This method is a good choice for integrating with a third-party system that supp
 
 Magento generates a consumer key, consumer secret, access token, and access token secret when you create an active integration (self activated).
 
-To use bearer authentication for API requests, you can use an access token. [Create an active integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#integration-tokens) (self activated) and [use the access token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access) in the authentication header:
+To use bearer authentication for API requests, you can use an access token. [Create an active integration]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#integration-tokens) (self activated) and [use the access token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access) in the authorization header:
 
 ```bash
 curl -X GET "http://magento2ce74.loc:8080/index.php/rest/V1/customers/1" -H "Authorization: Bearer 9xvitupdkju0cabq2i3dxyg6bblqmg5h"
@@ -190,7 +190,7 @@ You should use this type of authentication mechanism over HTTPS.
 
 ### Integration (Oauth)
 
-This method is a good choice for integrating with a third-party system that support OAuth 1.0a.
+This method is a good choice for integrating with a third-party system that supports OAuth 1.0a.
 
 After activating an integration (self activated), you can use the generated consumer key, consumer secret, access token, and access token secret to provide third-party systems access to Magento Store resources. You do not need to make calls to the `/oauth/token/request` or `/oauth/token/access` endpoints to exchange tokens.
 
