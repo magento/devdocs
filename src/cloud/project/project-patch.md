@@ -10,9 +10,9 @@ delivers Magento patches and hot fixes, which improve the integration of all `{{
 
 The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
 
-When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp}}` to check for pending patches and applies them automatically in the following order:
+When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp-package}}` to check for pending patches and applies them automatically in the following order:
 
-1. Apply Magento-provided patches included in the `{{site.data.var.mcp}}` package.
+1. Apply Magento-provided patches included in the `{{site.data.var.mcp-package}}` package.
 1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 You can also apply patches manually.
@@ -88,15 +88,15 @@ You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magen
 {:.procedure}
 To use magento-cloud-patches as a stand-alone package:
 
-1. Add the magento-cloud-patches package to your composer.json file.
+1. Add the magento-cloud-patches package to your `composer.json` file.
 
-   ```php
+   ```bash
    composer require magento/magento-cloud-patches
    ```
 
 1. From the project root, apply the patches.
 
-   ```php
+   ```bash
    php ./vendor/bin/ece-tools patch
    ```
 
@@ -104,7 +104,7 @@ To use magento-cloud-patches as a stand-alone package:
 
 1. Clear the Magento cache.
 
-   ```php
+   ```bash
    php ./bin/magento cache:clean
    ```
 
