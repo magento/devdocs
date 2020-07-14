@@ -201,7 +201,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 
 1. On the Cloud projects page, click the **Account settings** tab.
 
-   ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="650px"}
+   ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="550px"}
 
 1. On the Account settings tab, expand the **Security** section. Then, click **Set up application**.
 
@@ -231,7 +231,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 
 1. On the _TFA setup - Recovery_ codes page, copy and save the recovery codes so that you can log into your {{site.data.var.ece}} project when you cannot access your mobile device or authentication app.
 
-   ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="650px"}
+   ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
    {:.bs.callout-warning}
    Copy the recovery codes to another location or write them down to use if you lose access to your device or authentication app. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
@@ -240,7 +240,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 
 1. On the _Account settings_ page, you can view and manage TFA configuration from the _Security_ section.
 
-   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="650px"}
+   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
 
 ### Create an API token
 
@@ -252,19 +252,19 @@ On projects that have 2FA enforcement enabled, you must have an API token to ena
 
 1. On the Cloud projects page, click the **Account settings** tab.
 
-   ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="650px"}
+   ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="550px"}
 
 1. On the Account settings tab, expand the **API Tokens** section. Then, click **Create an API token**.
 
-   ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-create-api-token.png){:width="650px"}
+   ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-create-api-token.png){:width="550px"}
 
 1. Specify an **Application** name for the token, for example specify a name that matches the machine user or automated process that will use the API token.
 
-   ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-app-name.png){:width="650px"}
+   ![Cloud create API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-app-name.png){:width="550px"}
 
 1. Click **Create API token** to generate the token.
 
-   ![Cloud generate API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-created.png){:width="650px"}
+   ![Cloud generate API token]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-api-token-created.png){:width="550px"}
 
 <!--Link references-->
 
