@@ -171,7 +171,7 @@ This method is a good choice for authenticating customers and Admin users in thi
 [Request a token]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#request-token) and then (include it in future requests)({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html#web-api-access).
 
 {:.bs-callout-info}
-You should use this type of authentication mechanism over HTTPS:
+You should use this type of authentication mechanism over HTTPS.
 
 ### Integration (Bearer Authentication)
 
