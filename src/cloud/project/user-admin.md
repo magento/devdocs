@@ -26,7 +26,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 For added security, Magento is introducing a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement for SSH].
 
-When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users that with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
+When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
 ## Add users and manage access
 
@@ -166,11 +166,11 @@ Add an environment-level user:
 
 ## Update account security settings
 
-After you add a user to a Cloud project, ask the user to review their account settings and add the following security configuration as needed:
+After you add a user to a Cloud project, ask them to review their account settings and add the following configuration as needed:
 
 -  Enable two-factor authentication (TFA)
 
-   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Some projects will soon require two-factor authentication for all accounts that use SSH to connect to {{site.data.var.ece}} projects.
+   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Some projects will soon require two-factor authentication on all accounts that use SSH to connect to {{site.data.var.ece}} projects.
 
 -  Enable SSH keys
 
@@ -178,7 +178,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Create an API token
 
-   You can generate an API token on your account that can be used for secure machine access to an environment through an SSH connection. You can use the API token to enable login workflows for automated processes.
+   You can generate an API token on your account that can be used for secure machine access to an environment through an SSH connection. Use the API token to enable login workflows for automated processes.
 
    On projects with the MFA enforcement feature enabled, you must use the API token to authenticate SSH access requests from automated accounts. to bypass authentication workflows which require 2FA.
 
@@ -232,7 +232,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
    ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
    {:.bs.callout-warning}
-   Copy the recovery codes to another location or write them down to use if you lose access to your device or authentication app. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
+   Copy the recovery codes to another location or write them down to recover access if you your device or access to the authenticator application. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 
