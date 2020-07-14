@@ -27,3 +27,7 @@ pages:
 - label: Recommendations SDK
   url: /recommendations/recs-api.html
   versionless: true
+
+- label: Release Notes
+  url: /recommendations/release-notes.html
+  versionless: true

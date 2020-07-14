@@ -88,15 +88,15 @@ You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magen
 {:.procedure}
 To use magento-cloud-patches as a stand-alone package:
 
-1. Add the magento-cloud-patches package to your composer.json file.
+1. Add the magento-cloud-patches package to your `composer.json` file.
 
-   ```php
+   ```bash
    composer require magento/magento-cloud-patches
    ```
 
 1. From the project root, apply the patches.
 
-   ```php
+   ```bash
    php ./vendor/bin/ece-tools patch
    ```
 
@@ -104,7 +104,7 @@ To use magento-cloud-patches as a stand-alone package:
 
 1. Clear the Magento cache.
 
-   ```php
+   ```bash
    php ./bin/magento cache:clean
    ```
 

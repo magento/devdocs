@@ -29,9 +29,9 @@ Sample modifier:
 ```php
 <?php
 
-use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
+use Magento\Ui\DataProvider\Modifier\ModifierInterface;
 
-class Example extends AbstractModifier
+class Example implements ModifierInterface
 {
     public function modifyMeta(array $meta)
     {
@@ -115,7 +115,7 @@ Sample dependency injection:
 </type>
 ```
 
-For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php).
+For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\LayoutUpdate`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/Modifier/LayoutUpdate.php).
 
 ## Related reading
 
