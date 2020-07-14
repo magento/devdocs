@@ -52,7 +52,7 @@ The following sample introduces a runtime configuration that allows you to redef
 
 ```php
 'queue' => [
-     'topics' => [ 
+    'topics' => [
         'customer.created' => [
             'schema' => [
                 'schema_type' => 'object',
