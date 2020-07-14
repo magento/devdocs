@@ -51,13 +51,32 @@ Perform the following actions:
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
 ```php
-'queue' =>
-    array(
-     'topics' => array(
-        'customer.created' => [publisher="default-rabitmq"],
-        'order.created' => [publisher="default-rabitmq"],
-    ),
-),
+'queue' => [
+     'topics' => [ 
+        'customer.created' => [
+            'schema' => [
+                'schema_type' => 'object',
+                'schema_value' => 'string'
+            ],
+            'response_schema' => [
+                'schema_type' => 'object',
+                'schema_value' => 'string'
+            ],
+            'publisher' = 'default-rabitmq'
+        ],
+        'order.created' => [
+            'schema' => [
+                'schema_type' => 'object',
+                'schema_value' => 'string'
+            ],
+            'response_schema' => [
+                'schema_type' => 'object',
+                'schema_value' => 'string'
+            ],
+            'publisher' = 'default-rabitmq'
+        ],
+     ],
+],
 ```
 
 ### Related Topics
