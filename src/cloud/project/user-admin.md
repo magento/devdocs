@@ -13,14 +13,14 @@ redirect_from:
 
 You can manage access to {{site.data.var.ece}} projects by adding users and assigning roles. Assign project-level roles to provide access to the entire project, and environment-level roles to set permissions per available environment.
 
-| Role | Scope  | Access |
+| **Role** | **Scope**  | **Access** |
 |-|-|-|
-| Account owner | Project | Perform any task in any project or environment, including deleting it.<br>Magento assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the Magento Commerce Cloud account.<br><br>You must submit a Magento Support ticket to modify settings or change the Account owner. |
-| Super user | Project | Administrator access to all project settings and Cloud environments. Super users<br>can change settings and perform tasks on any environment, including creating<br>and restoring [snapshots][]. |
-| Project reader | Project | View access to all project environments. Users with this role cannot perform tasks on<br>any environment. However, you can configure environment-level permissions for users with<br>this role to permit write access to a specific environment. |
-| Admin | Environment | Change settings and perform tasks on an environment, including merging with the parent<br>environment |
-| Contributor | Environment | Push code and branch the environment |
-| Reader | Environment | View-only access to an environment |
+| **Account owner** | Project | Perform any task in any project or environment, including deleting it.<br>Magento assigns this role to the License Owner associated with the email address,<br>name, and information of the person who registered the Magento Commerce Cloud account.<br><br>You must submit a Magento Support ticket to modify settings or change the Account owner. |
+| **Super user** | Project | Administrator access to all project settings and Cloud environments. Super users<br>can change settings and perform tasks on any environment, including creating<br>and restoring [snapshots][]. |
+| **Project reader** | Project | View access to all project environments. Users with this role cannot perform tasks on<br>any environment. However, you can configure environment-level permissions for users with<br>this role to permit write access to a specific environment. |
+| **Admin** | Environment | Change settings and perform tasks on an environment, including merging with the parent<br>environment |
+| **Contributor** | Environment | Push code and branch the environment |
+| **Reader** | Environment | View-only access to an environment |
 
 ## Add user authentication requirements
 
