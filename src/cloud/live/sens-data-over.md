@@ -165,7 +165,7 @@ This process **overwrites** the store configuration; only do the following if th
 
 <!-- link definitions -->
 
-[admin]: {{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env
+[admin]: {{ site.baseurl }}/cloud/project/user-admin.html
 [auth]: {{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#auth-json
 [app-yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
 [commerce-dump]: {{ site.baseurl }}/guides/v2.3/reference/cli/magento-commerce.html#appconfigdump
