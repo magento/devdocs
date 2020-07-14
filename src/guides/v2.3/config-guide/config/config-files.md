@@ -67,7 +67,7 @@ The following table shows each configuration type and the Magento configuration 
 Configuration file|Description|Stage|Configuration object
 --- | --- | --- | ---
 `address_formats.xml`|Address format declaration|primary, global|[\Magento\Customer\Model\Address\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Address/Config.php)
-`acl.xml`|[Access Control List]({{ page.baseurl }}/get-started/authentication/gs-authentication.html#relation-between-aclxml-and-webapixml)|global|[\Magento\Framework\Acl\AclResource\Provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Acl/AclResource/Provider.php)
+`acl.xml`|[Access Control List]({{ page.baseurl }}/get-started/authentication/gs-authentication.html#relationship-between-aclxml-and-webapixml)|global|[\Magento\Framework\Acl\AclResource\Provider]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Acl/AclResource/Provider.php)
 `analytics.xml`|[Advanced reporting]({{ page.baseurl }}/advanced-reporting/data-collection.html)|primary, global|[\Magento\Analytics\Model\Config\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Analytics/Model/Config/Reader.php)
 `cache.xml`|Cache type declaration|primary, global|[\Magento\Framework\Cache\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Config/Data.php)
 `catalog_attributes.xml`|Catalog attributes configuration|global|[\Magento\Catalog\Model\Attribute\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Attribute/Config/Data.php)
