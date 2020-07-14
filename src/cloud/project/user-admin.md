@@ -211,7 +211,7 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 1. Use the linked instructions to install one of the approved authentication applications on your mobile device, if needed.
 
    ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/
-   cloud_account_settings-tfa-setup-steps.png){:width="550px"}
+   cloud_account_settings-tfa-setup-app-options.png){:width="550px"}
 
 1. On your mobile device, open the authentication app and add the setup code to the app.
 
