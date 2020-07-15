@@ -44,7 +44,7 @@ Here are the required files to get started:
 );
 ```
 
-`app/code/Goivvy/Grid/etc/adminhtml/routes.xml`:
+`app/code/Dev/Grid/etc/adminhtml/routes.xml`:
 
 ```xml
 <?xml version="1.0"?>
