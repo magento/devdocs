@@ -36,7 +36,7 @@ _Static file optimization_ means merging and minifying [JavaScript](https://glos
 
 To complete these configuration management tasks, you need the following:
 
-*  Minimum a project reader role with [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
+*  Minimum a project reader role with [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html) privileges
 *  Magento Admin panel URL and credentials for Integration, Staging, and Production environments
 *  Push all updated code to your Integration environment:
 
