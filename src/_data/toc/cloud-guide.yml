@@ -420,8 +420,12 @@ pages:
           url: /cloud/project/log-locations.html
           versionless: true
 
-        - label: Create and manage users
+        - label: Manage user access
           url: /cloud/project/user-admin.html
+          versionless: true
+
+        - label: Enable MFA enforcement for SSH
+          url: /cloud/project/project-enable-mfa-project.html
           versionless: true
 
         - label: Manage branches with the Interface
