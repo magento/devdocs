@@ -3,1696 +3,1696 @@ content:
 - type: Data changes
   changes:
   - what: Magento_Staging/Data/S5UpdateNameStaging/startDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/endDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/productPrice
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/scheduleStartDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/scheduleEndDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/scheduleStartTime
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/scheduleEndTime
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/start
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/end
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S5UpdateNameStaging/preview
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/startDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/endDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/productPrice
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/scheduleStartDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/scheduleEndDate
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/scheduleStartTime
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/scheduleEndTime
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/start
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/end
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/viewedit
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
   - what: Magento_Staging/Data/S8UpdateNameStaging/preview
-     how: Entity <data> element was removed
+    how: Entity <data> element was removed
 
 - type: Metadata changes
   changes:
   - what: Magento_Banner/Metadata/createBannerWidget
-     how: <operation> was removed
+    how: <operation> was removed
 
 - type: Page changes
   changes:
   - what: Magento_Staging/Page/AdminStagingUpdatePage
-     how: <page> was removed
+    how: <page> was removed
   - what: Magento_MultipleWishlist/Page/AdminCustomerWishlistConfigurationPage
-     how: <page> was removed
+    how: <page> was removed
   - what: Magento_Banner/Page/AdminBannerGridPage
-     how: <page> was removed
+    how: <page> was removed
 
 - type: Section changes
   changes:
   - what: Magento_Staging/Section/StagingDashboardSection
-     how: <section> was removed
+    how: <section> was removed
   - what: Magento_MultipleWishlist/Section/WishlistGeneralSection/GeneralOptionsTab
-     how: <section> <element> was removed
+    how: <section> <element> was removed
   - what: Magento_MultipleWishlist/Section/WishlistGeneralSection/CheckIfGeneralOptionsTabExpand
-     how: <section> <element> was removed
+    how: <section> <element> was removed
   - what: Magento_GiftWrapping/Section/AdminSystemConfigGiftOptionSection/allowGiftWrappingOnOrderLevel
-     how: <section> <element> was removed
+    how: <section> <element> was removed
   - what: Magento_Banner/Section/AdminBannerBasicActionSection/Type
-     how: <section> <element> was removed
+    how: <section> <element> was removed
   - what: Magento_Banner/Section/AdminBannerGridSection
-     how: <section> was removed
+    how: <section> was removed
   - what: Magento_Banner/Section/StorefrontPropertiesSection/GenericPage
-     how: <section> <element> was removed
+    how: <section> <element> was removed
 
 - type: Test changes
   changes:
   - what: Magento_VisualMerchandiser/Test/AddProductToCategoryByAttributeContainsCondition
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_VisualMerchandiser/Test/AddProductToCategorySortTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_VisualMerchandiser/Test/AdminVerifyAddProductToCategoryWithoutErrorTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AdminVerifyAddProductToCategoryWithoutErrorTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryBySKUsTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/EnableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/rule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/rule2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/rule3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/seeProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/seeProductInCategory/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleCloneCategoryIDTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/EnableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/rule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/rule2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/rule3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/rule4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/seeProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/seeProduct2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/seeProduct2InCategory/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/seeProduct3InCategory/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleSkuEqualTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/EnableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/rule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/rule2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/rule3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/rule4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/seeProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/seeProduct2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/seeProduct2InCategory/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/seeProduct3InCategory/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRuleNameContainsTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/EnableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/rule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/rule2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/rule3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/rule4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/AssignProductsToCategoryMatchByRulePriceQuantityTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/addProductToCategoryBySku/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/seeSimpleProductInCategoryGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/addProductToCategoryBySearch/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/seeConfigurableProductInCategoryGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/addProductToCategoryByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/EndToEndB2CAdminTest/seeDownloadableProductInCategoryGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection21/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection22/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/MoveProductByPositionFieldGridMode4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/MoveProductByPositionFieldGridMode5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/OpenProductsInCategorySection5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInGridModeInvalidValuesTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageGridModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/annotations/{}group(skip)
-     how: <test> <annotation> <group> was removed
+    how: <test> <annotation> <group> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfDifferentPageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageGridModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInMiddleOfSamePageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection21/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection22/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/MoveProductByPositionFieldTileMode4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/MoveProductByPositionFieldTileMode5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/OpenProductsInCategorySection5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldInTileModeInvalidValuesTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageGridModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstDifferentPageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/goToAdminCategoryPage1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/OpenProductsInCategorySection1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/DisableMatchProductsByRule1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/SelectSortOrderInProductInCategory1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/switchToGrid1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/saveCategoryWithProducts1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/saveSuccess1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/OpenProductsInCategorySection2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeTotalCount2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/MoveProductByPositionFieldGridMode2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId21
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId22
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId23
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId24
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/GoToStorefrontCategoryPage2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine21
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine22
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine23
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine24
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/goToAdminCategoryPage3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/OpenProductsInCategorySection3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/MoveProductByPositionFieldGridMode3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId31
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId32
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId33
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeRowId34
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/saveCategoryWithProducts3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/saveSuccess3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/GoToStorefrontCategoryPage3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine31
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine32
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine33
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/seeProductNameLine34
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/login
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/category
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product3
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product4
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product5
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product6
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product7
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product8
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product9
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product10
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product11
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product12
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product13
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product14
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product15
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product16
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product17
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product18
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product19
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product20
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product21
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product22
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/before/product23
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/logout
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct5
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct6
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct7
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct8
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct9
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct10
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct11
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct12
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct13
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct14
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct15
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct16
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct17
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct18
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct19
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct20
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct21
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct22
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageGridModeTest/after/deleteProduct23
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToFirstSamePageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/goToAdminCategoryPage4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/OpenProductsInCategorySection4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/DisableMatchProductsByRule4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/SelectSortOrderInProductInCategory4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/goToAdminCategoryPage5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/OpenProductsInCategorySection5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/MoveProductByPositionFieldGridMode5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/GoToStorefrontCategoryPage5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageGridModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/annotations/{}group(skip)
-     how: <test> <annotation> <group> was removed
+    how: <test> <annotation> <group> was removed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/goToAdminCategoryPage4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/OpenProductsInCategorySection4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/DisableMatchProductsByRule4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/SelectSortOrderInProductInCategory4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/goToAdminCategoryPage5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/OpenProductsInCategorySection5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/MoveProductByPositionFieldTileMode5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/GoToStorefrontCategoryPage5/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastDifferentPageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/MoveProductByPositionFieldGridMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/MoveProductByPositionFieldGridMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageGridModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/MoveProductByPositionFieldTileMode2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/GoToStorefrontCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/goToAdminCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/MoveProductByPositionFieldTileMode3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/GoToStorefrontCategoryPage3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/MoveProductsByPositionFieldToLastSamePageTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/GoToAddProductsBySku/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/seeProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/seeProduct2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/GoToAddProductsBySku2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/StorefrontCheckCategorySimpleProduct
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySKUsTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/GoToAddProductsBySearch/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/SearchAProductForCategoryByKeyword/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/OpenProductsInCategorySection2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryBySearchTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryGridModeTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/goToAdminCategoryPage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/OpenProductsInCategorySection1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/DisableMatchProductsByRule1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/SelectSortOrderInProductInCategory1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/switchToTile1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/OpenProductsInCategorySection12/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/goToAdminCategoryPage2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/OpenProductsInCategorySection22/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/OpenProductsInCategorySection3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/after/goToAdminCategoryPage0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/after/OpenProductsInCategorySection0/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/after/switchToGrid/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/UnassignProductsFromCategoryTileModeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/goToAdminCategoryPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/OpenProductsInCategorySection/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/EnableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/DisableMatchProductsByRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/GoToAddProductsBySku/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/switchToGrid1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/seeProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/seeProduct2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/GoToAddProductsBySku2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/switchToGrid2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VisualMerchandiser/Test/VisualMerchandizerUiElementsTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/createNewPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/before/createNewPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/after/deletePage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/after/deletePage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_VersionsCms/Test/VerifyCMSPageGetsSavedWithSameURLKeyForMultiStoreTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/amOnProductGridPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/waitForPageLoad
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/filterGroupedProductOptions
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/createScheduleUpdate/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/clickButtonSheduleNewUpdate1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/fillUpdateName
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/fillDescription
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/fillStartDate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/fillProductPrice
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/clickSave
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/waitForPageLoad4
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeStartDate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeStartTime1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeStart
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeUpdateName
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeDescription
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seeViewAneEdit
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/seePreview
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminPermanentUpdateWithStartDateAfterExistedRangeTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickScheduleActions
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeUpdatePopup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickRemoveFromUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeTitleRemoveSection
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickMoveToAnotherUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickSortByTime
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeUpdateName1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeSelectButtonDisable
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickSelectAssignToExistingUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeUpdateName2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeScheduleSummaryName
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/clickDone
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/panelIsClosed
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/seeNewScheduleUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/clickButtonScheduleNewUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/waitForScheduleSectionLoad
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/createScheduleUpdate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/saveProductForm/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/waitForProductPageLoad2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/clickButtonScheduleNewUpdate2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/waitForScheduleSectionLoad2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/createScheduleUpdate2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/before/saveProductForm2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/AdminScheduledUpdateMoveToAnotherCampaignTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/CreationScheduledUpdateForStagingDashboardTest/LoginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/CreationScheduledUpdateForStagingDashboardTest/CreateCatalogPriceRule/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Staging/Test/TemporaryUpdateWithStartAndSateBeforeExistingUpdateTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Staging/Test/TemporaryUpdateWithStartDateLessAndDateBiggerThanStartDateOfExistingUpdate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_SalesRuleStaging/Test/AdminStagingDashboardProvideAbilityToViewEditForUpdatesVithCartPriceRuleTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForVirtualProductTest/addToCartFromStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForVirtualProductTest/waitForPaymentSectionLoadedTest2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForVirtualProductTest/before/loginAsAdmin1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForVirtualProductTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForPhysicalProductTest/addToCartFromStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForPhysicalProductTest/waitForPaymentSectionLoadedTest2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForPhysicalProductTest/before/loginAsAdmin1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutForPhysicalProductTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutThatCoveredAllAmountTest/addToCartFromStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutThatCoveredAllAmountTest/before/loginAsAdmin1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/ApplyRewardPointsOnCheckoutThatCoveredAllAmountTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Reward/Test/CreditMemoOrderPaidWithRewardPointsTest/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Reward/Test/CreditMemoOrderPaidWithRewardPointsTest/addToCartFromStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_MultipleWishlist/Test/StoreFrontAddProductsToWishListWithMultipleWishlistsEnabledTest/loginToAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_MultipleWishlist/Test/StoreFrontAddProductsToWishListWithMultipleWishlistsEnabledTest/browseAssertCategoryProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_MultipleWishlist/Test/StoreFrontAddProductsToWishListWithMultipleWishlistsEnabledTest/after/logout
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_MultipleWishlist/Test/StorefrontCreateMultipleWishlistTest/flushCache2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_MultipleWishlist/Test/StorefrontCreateMultipleWishlistTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_MultipleWishlist/Test/StorefrontCreateMultipleWishlistTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GroupedProductStaging/Test/AdminGroupedProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GroupedProductStaging/Test/AdminGroupedProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftWrapping/Test/CustomerCanNotApplyGiftOptionsForVirtualProducts
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeAppliedOnOrderLevelTest/annotations/{}group(skip)
-     how: <test> <annotation> <group> was removed
+    how: <test> <annotation> <group> was removed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeAppliedOnOrderLevelTest/before/loginAsAdmin1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeAppliedOnOrderLevelTest/before/filterGroupedProductOptions/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeAppliedOnOrderLevelTest/before/saveProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeAppliedOnOrderLevelTest/after/logoutAdminUserAfterTest/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeDisabledForSpecificProductTest/before/loginAsAdmin1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeDisabledForSpecificProductTest/before/filterGroupedProductOptions/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeDisabledForSpecificProductTest/before/saveProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeDisabledForSpecificProductTest/before/saveProduct1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftWrapping/Test/GiftWrappingCanBeDisabledForSpecificProductTest/after/logoutAdminUserAfterTest/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/navigateToEmailTemplatePage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/createNewTemplate/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/openCreatedTemplate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/findCreatedTemplate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/clickSearchButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/waitForNewCreatedTemplatesAppeared
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/wait1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/clickToOpenCreatedTemplate
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/waitForCreatedTemplatePageOpened
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/clickPreviewTemplateButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/waitForPreviewPageLoaded
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/switchToNewOpenedTab
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/seeCurrentUrl
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/verifySystemDisplaysCorrectlyPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/after/deleteCreatedTemplate/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftRegistry/Test/CheckingOfPreviewingRegistryUpdateEmailTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCardAccount/Test/AdminCancelGuestOrderUsingGiftCard
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftCardAccount/Test/AdminCreditMemoOrderPaidWithGiftCard
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/loginAsAdmin1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/waitForGenerateNewPoolCode
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/logout
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/amOnStorefrontPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/loginAsAdmin2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/onOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/waitForLoadingMaskToDisappearOnOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/fillOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/submitSearchOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/waitForLoadingMaskToDisappearOnSearch
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/clickOrderRow
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/amOnGiftCardAccountGridPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/clickResetFilterButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/waitForLoadingMaskToDisappearAfterReset
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/clickCodeField
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/clickSearchButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/waitForLoadingMaskToDisappearOnSearch2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/clickOnRow
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutTest/after/logout2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/loginAsAdmin1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/waitForGenerateNewPoolCode
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/logout
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/amOnStorefrontPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/loginAsAdmin2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/onOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/waitForOrderPageLoaded
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/waitForLoadingMaskToDisappearOnOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/clearExistingOrderFilter
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/fillOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/submitSearchOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/waitForLoadingMaskToDisappearOnSearch
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/clickOrderRow
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForPhysicalProductTest/after/logout2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/loginAsAdmin1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/waitForGenerateNewPoolCode
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/logout
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/amOnStorefrontPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/loginAsAdmin2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/onOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/waitForLoadingMaskToDisappearOnOrdersPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/fillOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/submitSearchOrderNum
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/waitForLoadingMaskToDisappearOnSearch
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/clickOrderRow
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCardAccount/Test/StorefrontApplyGiftCardDuringCheckoutForVirtualProductTest/after/logout2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/goToCreateProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/addImageForProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/saveProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/assertProductImageAdminProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/AssertProductInStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/assertProductImageStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultImageGiftCardProductTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminAddDefaultVideoGiftCardProductTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftCard/Test/AdminCreateGiftCardTest/before/logIn/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminCreateGiftCardTest/after/logOut/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminCreateGiftCardOpenTest/before/logIn/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminCreateGiftCardOpenTest/after/logOut/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/goToCreateProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/addImageForProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/saveProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/removeProductImage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/saveProductFormAfterRemove/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/assertProductImageNotInAdminProductPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/AssertProductInStorefrontProductPageAfterRemove/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/assertProductImageNotInStorefrontProductPage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultImageGiftCardProductTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/AdminRemoveDefaultVideoGiftCardProductTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_GiftCard/Test/EndToEndB2CAdminTest/goToCreateGiftCard/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/EndToEndB2CAdminTest/saveGiftCard/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/EndToEndB2CAdminTest/deleteGiftCardProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_GiftCard/Test/StorefrontGiftCardValidation
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_DownloadableStaging/Test/AdminDownloadableProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_DownloadableStaging/Test/AdminDownloadableProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CustomerCustomAttributes/Test/CreateNewAccountAfterCheckoutTest/before/LoginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/CreateNewAccountAfterCheckoutTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/CustomerCustomAddressAttributeDefaultFormVisibilityTest/before/LoginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/CustomerCustomAddressAttributeDefaultFormVisibilityTest/after/logOut/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/CustomerCustomAttributeDefaultFormVisibilityTest/before/LoginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/CustomerCustomAttributeDefaultFormVisibilityTest/after/logOut/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/StoreFrontCustomerCustomAttributesOrderPlacement
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CustomerCustomAttributes/Test/StorefrontCustomerCustomAttributesTest/before/LoginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerCustomAttributes/Test/StorefrontCustomerCustomAttributesTest/after/logOut/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CustomerBalance/Test/ApplyStoreCreditDuringCheckoutTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CustomerBalance/Test/ApplyStoreCreditDuringCheckoutForVirtualProductTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CustomerBalance/Test/ApplyStoreCreditDuringCheckoutForPhysicalProductTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_ConfigurableProductStaging/Test/AdminConfigurableProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_ConfigurableProductStaging/Test/AdminConfigurableProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/LoginAsAdmin
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/GoToAllStoresPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/AdminCreateNewWebsite
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/AdminCreateNewStore
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/AdminCreateNewStoreView
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/GoToUserRoles
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/AdminCreateNewUserRole
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/GoToAllUser
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/AdminCreateUser
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/SignOut
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/LoginActionGroup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/goToBlocks
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/RestrictedAdminCreateCMSActionGroup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/goToBlocks1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/RestrictedAdminDeleteCMSActionGroup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/WaitForBlockDeleted
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/SignOut1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/LoginAsAdmin1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/GoToAllStoresPage1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/AdminDeleteWebsiteActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/GoToAllUser2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/AdminDeleteUserActionGroup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/GoToUserRoles1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CmsStaging/Test/RestrictedAdminCreateCMSBlockTest/after/AdminDeleteRoleActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/loginMagentoAsAdmin
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/goToProductPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/adminCreateSimpleProduct
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/CreateDiscount/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/AddProductToCard/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/GoToProductPage1
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CheckoutStaging/Test/GiftCardNotificationTest/deleteCreatedProduct
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_CatalogStaging/Test/AdminShareStagingUpdateTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogStaging/Test/AdminSimpleProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CatalogStaging/Test/AdminSimpleProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CatalogStaging/Test/AdminVirtualProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CatalogStaging/Test/AdminVirtualProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_CatalogRuleStaging/Test/AdminApplyCatalogRuleByCategoryTest/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminApplyCatalogRuleByCategoryTest/selectActive
-     how: <test> <remove action> was added
+    how: <test> <remove action> was added
   - what: Magento_CatalogRuleStaging/Test/AdminCreateCatalogPriceRuleByPercentTest/before/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminCreateCatalogPriceRuleByFixedTest/before/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminCreateCatalogPriceRuleToPercentTest/before/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminCreateCatalogPriceRuleToFixedTest/before/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminCreateCatalogPriceRuleForCustomerGroupTest/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/AdminDeleteCatalogPriceRuleTest/fillOutActionGroup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_CatalogRuleStaging/Test/StorefrontInactiveCatalogRuleTest
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_BundleStaging/Test/AdminBundleProductUpdateTestEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_BundleStaging/Test/AdminBundleProductUpdateTestNoEndDate
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AddMediaGalleryToBanner
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/clickBrowserBtn/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/verifyMediaGalleryStorageBtn/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/createImageFolder/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/attachImage1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/insertImage/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/fillOutUploadImagePopup/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/reindex
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/flushCache
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/AdminAddNestedBannerWithImageTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_Banner/Test/InsertDefaultMagentoVariableIntoWYSIWYGOnBannerPages
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AdminCreateBannerWithCategoryLink
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AdminApplyBannerToDifferentAdminRole
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AdminCreateEditBannerForSpecificStoreView
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/AssociateCustomerSegmentToBanner
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_Banner/Test/DefaultTinyMCEv4onBannerPage
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_AdminGws/Test/AdminConfigurationPermission
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_AdminGws/Test/AdminCreateUserWithNewAdminRoleTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/AdminCreateUserRoleTest/before/login/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/RestrictedAdminCatalogMassActionPermissionTest/loginAsAdmin
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedAdminCatalogMassActionPermissionTest/dontSeeUpdateAttributeMassAction
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedAdminCatalogMassActionPermissionTest/after/loginAsAdminAllWebAccess/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/RestrictedAdminCatalogMassActionPermissionTest/after/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/loginAsAdmin
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/amOnAdminSystemStorePage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/createStoreViewButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/waitForProductPageLoad
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/selectStoreGroup
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/fillStoreViewName
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/fillStoreViewCode
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/enableStoreViewStatus
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/clickStoreViewSaveButton
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/waitForAcceptNewStoreViewCreationModal
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/AcceptNewStoreViewCreation
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/waitForPageReolad
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/seeSaveMessage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/amOnAdminLoginPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/fillUsername
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/fillPassword
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/clickOnSignIn2
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/searchForProduct
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/openEditProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleForProductRemovalTest/after/loginAsAdminWithAllAccess/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/RestrictedUserRoleProductAttributeTest/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_AdminGws/Test/RestrictedUserRoleProductAttributeTest/amOnLogoutPage
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_AdminGws/Test/RestrictedUserRoleProductAttributeTest/after/loginAsAdminWithAllAccess/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
 
 - type: ActionGroup changes
   changes:
   - what: Magento_VisualMerchandiser/ActionGroup/OpenProductsInCategorySection
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/EnableMatchProductsByRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/DisableMatchProductsByRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/GoToAddProductsBySku
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/GoToAddProductsBySearch
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/AddProductToCategoryBySku
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/AddProductToCategoryBySearch
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/AddProductToCategoryByRuleSku
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SeeProductInProductCategoryGrid
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SeeProductInProductCategoryTileForCurrentCategory
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SeeProductInProductCategoryGridForCurrentCategory
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/AddFirstConditionForMatchProductByRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/AddNthConditionForMatchProductByRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SwitchToGridModeProductInCategory
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SwitchToTileModeProductInCategory
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SortProductsByCriteriaInCategory
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/MoveProductByPositionFieldGridMode
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/MoveProductByPositionFieldTileMode
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_VisualMerchandiser/ActionGroup/SearchAProductForCategoryByKeyword
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Staging/ActionGroup/changeStagingView/waitForStagingDashboard
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/navigateToViewStagingUpdateFromStagingDashboard/amOnStagingUpdatePage
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/navigateToViewStagingUpdateFromStagingDashboard/waitForPageLoad1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/navigateToViewStagingUpdateFromStagingDashboard/seePreview
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/navigateToStagingSlideout/waitForPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/waitForPageLoad2
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeStartDate
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeEndDate
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeStartTime1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeEndTime1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeStart
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeEnd
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeUpdateName
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeDescription
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seeViewAneEdit
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/seePreview
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/timeStart
-     how: <actionGroup> <argument> was added
+    how: <actionGroup> <argument> was added
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/timeEnd
-     how: <actionGroup> <argument> was added
+    how: <actionGroup> <argument> was added
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateActionGroup/productPrice
-     how: <actionGroup> <argument> was added
+    how: <actionGroup> <argument> was added
   - what: Magento_Staging/ActionGroup/FillScheduleUpdateWithoutDateEndActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Staging/ActionGroup/CreateCatalogPriceRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/GoToContent
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/WaitForContentPageLoaded
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/GoToDashboard
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/WaitForStagingPageLoaded
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/DashboardIsOpened
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/WaitForPageOpened
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/WaitForUpdateSaved
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/VerifyUpdateIsSaved
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Staging/ActionGroup/ScheduleUpdate/ruleName/defaultValue
-     how: <actionGroup> <argument> was changed
+    how: <actionGroup> <argument> was changed
   - what: Magento_Staging/ActionGroup/RemoveRule/ruleName/defaultValue
-     how: <actionGroup> <argument> was changed
+    how: <actionGroup> <argument> was changed
   - what: Magento_GiftWrapping/ActionGroup/AdminGiftWrappingNewActionGroup/waitForPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftWrapping/ActionGroup/AdminGiftWrappingNewActionGroup/assertCheckoutPaymentUrl
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/AddGiftCardAccountActionGroup/savedGiftCardAccount
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/amOnGiftCardAccountGridPage
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/clickResetFilterButton
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/waitForLoadingMaskToDisappearAfterReset
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/clickCodeField
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/clickSearchButton
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/waitForLoadingMaskToDisappearOnSearch
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/clickOnRow
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/waitForEditPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_GiftCardAccount/ActionGroup/DeleteGiftCardAccountActionGroup/deletedGiftCardAccount
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CustomerCustomAttributes/ActionGroup/AdminCreateCustomerNewAttribute/setFormsToUse
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CustomerCustomAttributes/ActionGroup/AdminCreateCustomerNewAttribute/setFormsToUse1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CustomerCustomAttributes/ActionGroup/AdminCreateCustomerNewAttribute/Arguments/values
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_CustomerCustomAttributes/ActionGroup/AdminCreateCustomerNewAttributeWithoutFormsSelected/selectFormsToUse
-     how: <actionGroup> <remove action> was added
+    how: <actionGroup> <remove action> was added
   - what: Magento_CmsStaging/ActionGroup/AdminCreateWebsite
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/AdminCreateStoreView
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/AdminCreateRole
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/GoToAllUser
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/AdminCreateUser/Arguments/User
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_CmsStaging/ActionGroup/RestrictedAdminCreateCMSActionGroup/WaitForFrame
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CmsStaging/ActionGroup/RestrictedAdminCreateCMSActionGroup/switchToFrame
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CmsStaging/ActionGroup/RestrictedAdminCreateCMSActionGroup/switchBackToWindow
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_CmsStaging/ActionGroup/RestrictedAdminCreateCMSActionGroup/Arguments/id
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_CmsStaging/ActionGroup/LoginAsAnyUser
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/AdminDeleteRoleActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CmsStaging/ActionGroup/AdminDeleteUserActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CheckoutStaging/ActionGroup/AddGiftCardAccountActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CheckoutStaging/ActionGroup/CreateCardPriceRule
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CheckoutStaging/ActionGroup/AddSimpleProductToCart
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CheckoutStaging/ActionGroup/DeleteGiftCardAccountActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CatalogRuleStaging/ActionGroup/newCatalogPriceRuleByUI
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_CatalogRuleStaging/ActionGroup/createCatalogRuleStagingUpdate
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Banner/ActionGroup/AssignBannerToWidgetActionGroup/clickOnDisplayOnDropdown
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Banner/ActionGroup/AssignBannerToWidgetActionGroup/waitForLoading3
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Banner/ActionGroup/AssignBannerToWidgetActionGroup/waitForLoading4
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Banner/ActionGroup/AssignRelatedCartPriceRuleToBannerActionGroup/Arguments/Banner
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_Banner/ActionGroup/fillDynamicBlockName
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Banner/ActionGroup/navigateToCreatedDynamicBlock
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Banner/ActionGroup/CreateBannerActionGroup/waitForPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Banner/ActionGroup/DeleteBannerActionGroup/waitForPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Banner/ActionGroup/DeleteBannerActionGroup/waitForDynamicBlockDeletionPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/navigateToNewRole
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/waitForPageLoad1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/fillRoleName
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/enterPassword
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/clickRoleResourcesTab
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/waitForScopeSelection
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/selectScope
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/selectAccess
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/clickSaveRoleButton
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/waitForPageLoad2
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/seeSuccessMessage
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_AdminGws/ActionGroup/AdminCreateUserRoleActionGroup/Arguments/role
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_AdminGws/ActionGroup/AdminDeleteUserRoleActionGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
 

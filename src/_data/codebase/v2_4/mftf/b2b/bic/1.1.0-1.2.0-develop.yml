@@ -3,72 +3,72 @@ content:
 - type: Page changes
   changes:
   - what: Magento_SharedCatalog/Page/AdminSharedCatalogsPage
-     how: <page> was removed
+    how: <page> was removed
 
 - type: Section changes
   changes:
   - what: Magento_SharedCatalog/Section/AdminSharedCatalogsSection/multicheck
-     how: <section> <element> was removed
+    how: <section> <element> was removed
   - what: Magento_SharedCatalog/Section/AdminSharedCatalogsSection/selectAll
-     how: <section> <element> was removed
+    how: <section> <element> was removed
 
 - type: Test changes
   changes:
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/annotations/{}group(skip)
-     how: <test> <annotation> <group> was removed
+    how: <test> <annotation> <group> was removed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/createSimpleProductInAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/cacheFlush
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/after/deleteProduct/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/after/clearCompaniesFilters
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_SharedCatalog/Test/StorefrontProductListWidgetWithSharedCatalogTest/after/logout/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_NegotiableQuote/Test/CreateNegotiableQuoteWithNegotiatedShippingPrice
-     how: <test> was removed
+    how: <test> was removed
   - what: Magento_B2b/Test/CheckTierPricingOfProductsTest/ProductSetAdvancedPricingB2B1/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_B2b/Test/CheckTierPricingOfProductsTest/ProductSetAdvancedPricingB2B2/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_B2b/Test/CheckTierPricingOfProductsTest/ProductSetAdvancedPricingB2B3/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_B2b/Test/CheckTierPricingOfProductsTest/ProductSetAdvancedPricingB2B4/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_B2b/Test/CreateCompanyWithOptionalRegionTest/CreateCompany
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_B2b/Test/CreateCompanyWithOptionalRegionTest/before/loginAsAdmin/ref
-     how: <test> <actionGroup> ref was changed
+    how: <test> <actionGroup> ref was changed
   - what: Magento_B2b/Test/CreateCompanyWithOptionalRegionTest/before/disallowStateForCountry
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_B2b/Test/CreateCompanyWithOptionalRegionTest/after/CleanupConfigurations
-     how: <test> <action> was removed
+    how: <test> <action> was removed
   - what: Magento_B2b/Test/CreateCompanyWithOptionalRegionTest/after/DeleteCompany
-     how: <test> <action> was removed
+    how: <test> <action> was removed
 
 - type: ActionGroup changes
   changes:
   - what: Magento_SharedCatalog/ActionGroup/selectNotLoggedInCustomerGroup
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
   - what: Magento_Company/ActionGroup/AdminDeleteCompanyActionGroup/fillName
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Company/ActionGroup/AdminDeleteCompanyActionGroup/clickSubmitSearch
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Company/ActionGroup/AdminDeleteCompanyActionGroup/Arguments/company
-     how: <actionGroup> <argument> was removed
+    how: <actionGroup> <argument> was removed
   - what: Magento_Company/ActionGroup/AdminDeleteCompanyActionGroup/companyName
-     how: <actionGroup> <argument> was added
+    how: <actionGroup> <argument> was added
   - what: Magento_Company/ActionGroup/AdminClearCompaniesFiltersActionGroup/amOnCompaniesPage
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_Company/ActionGroup/AdminClearCompaniesFiltersActionGroup/waitForPageToLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_B2b/ActionGroup/CreateCompanyWithoutStateActionGroup/waitForSuccessPageLoad
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_B2b/ActionGroup/CreateCatalogPriceRuleB2b/ClickToSetStartDate1
-     how: <actionGroup> <action> was removed
+    how: <actionGroup> <action> was removed
   - what: Magento_B2b/ActionGroup/ProductSetAdvancedPricingB2B
-     how: <actionGroup> was removed
+    how: <actionGroup> was removed
 
