@@ -185,7 +185,7 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
          <filter>text</filter>
          <bodyTmpl>ui/grid/cells/text</bodyTmpl>
          <label translate="true">Path</label>
-      </settings
+     </settings>
     </column>
     <column name="name">
       <settings>
