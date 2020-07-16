@@ -35,9 +35,9 @@ We recommend using the following best practices when developing themes:
 1. Magento has a set of [coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) for both back-end and front-end technologies. Refer to them when needed.
 1. Do not repeat work while styling. Instead, create a class or mixin and call them when needed.
 1. While styling any custom module, add the styling within the module, instead of adding it to the design theme. This way, the style will not be loaded unless the module is called. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
-1. While styling custom theme, add styles to seperate less files, instead of adding it to a single file. This way, styles are easier to track down and debug. For example, here is a `app/design/frontend/Company/ThemeCustom/web/css/style-l.less` with styles for desktop.
+1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug. For example, here is a `app/design/frontend/Company/ThemeCustom/web/css/style-l.less` with styles for desktop.
 
-   **In file style-l.less:**
+   In `style-l.less`, define:
 
    ```less
    // Define default styles from parent
@@ -46,7 +46,7 @@ We recommend using the following best practices when developing themes:
    @import 'source/_custom-styles.less';
    ```
 
-   **Then in file _custom-styles.less define the following**
+   and then in ` _custom-styles.less`:
 
    ```less
    //
@@ -87,6 +87,6 @@ We recommend using the following best practices when developing themes:
    @import 'theme/pages/_checkout.less';
    ```
 
-   As you can see, styles for every component as well as for every page are declared in a separate file. Example we need add/modify minor changes to homepage just go to file `app/design/frontend/Company/ThemeCustom/web/css/source/theme/pages/_homepage.less`
+   Styles for every component, as well as for every page, are declared in a separate file. For example: to add or modify minor changes to the homepage, go to `app/design/frontend/Company/ThemeCustom/web/css/source/theme/pages/_homepage.less`.
 
-After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your templates, layouts, and styles.
+After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your respective templates, layouts, and styles.
