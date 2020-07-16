@@ -43,8 +43,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 ## PHP
 
-<!--{% assign supported_php_versions = site.data.codebase.v2_4.open-source.composer_lock.platform.php | split: "||" %}-->
-{% include install/php-versions-template.md %}
+*  ~7.4.0
 
 Magento 2.4 can be installed with 7.3, but it is not tested or recommended.
 
