@@ -36,7 +36,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 *  MySQL 8.0 for on-premise installations
 *  MariaDB 10.4 for {{site.data.var.ece}} projects
 
-Magento is also compatible, but has not been tested and is not recommended, with MySQL 5.7.9, NDB Cluster 7.4.*, MariaDB 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
+Magento is also compatible, but has not been tested and is not recommended, with MySQL 5.7.9, MariaDB 10.2, and Percona 5.7.
 
 {:.bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
