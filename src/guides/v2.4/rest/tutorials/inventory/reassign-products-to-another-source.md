@@ -92,62 +92,86 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 {
   "sourceItems": [{
     "sku": "24-WB01",
-    "source_code": "baltimore_wh",
+    "source_code": "ne_wh",
     "quantity": 35,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "austin_wh",
+    "source_code": "brooklyn",
     "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "reno_wh",
-    "quantity": 25,
+    "source_code": "huntington1",
+    "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "berlin_wh",
+    "source_code": "manhattan1",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB01",
+    "source_code": "de_wh",
     "quantity": 15,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "frankfurt_wh",
-    "quantity": 15,
+    "source_code": "berlin",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB01",
+    "source_code": "frankfurt",
+    "quantity": 1,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "baltimore_wh",
-    "quantity": 19,
+    "source_code": "ne_wh",
+    "quantity": 50,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "austin_wh",
+    "source_code": "brooklyn",
     "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "reno_wh",
-    "quantity": 42,
+    "source_code": "huntington1",
+    "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "berlin_wh",
-    "quantity": 32,
+    "source_code": "manhattan1",
+    "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "frankfurt_wh",
-    "quantity": 7,
+    "source_code": "de_wh",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "berlin",
+    "quantity": 20,
+    "status": 1
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "frankfurt",
+    "quantity": 20,
     "status": 1
   },
   {
@@ -157,6 +181,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
     "status": 1
   }]
 }
+
 ```
 
 **Response:**

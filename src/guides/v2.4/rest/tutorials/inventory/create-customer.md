@@ -118,10 +118,10 @@ We can use the same customer definition presented in [Step 3. Create a customer]
                "region" : "New York"
             },
             "countryId" : "US",
-            "postcode" : "10755",
-            "city" : "Purchase",
+            "postcode" : "11501",
+            "city" : "Mineola",
             "street" : [
-               "123 Oak Ave"
+               "160 1st St."
             ],
             "telephone" : "512-555-1111"
          }
@@ -137,12 +137,12 @@ The customer `id` is `3`.
 
 ```json
 {
-    "id": 3,
+    "id": 5,
     "group_id": 1,
     "default_billing": "3",
     "default_shipping": "3",
-    "created_at": "2019-01-28 20:53:45",
-    "updated_at": "2019-01-28 20:53:46",
+    "created_at": "2020-07-13 17:43:49",
+    "updated_at": "2020-07-13 17:43:49",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -152,7 +152,7 @@ The customer `id` is `3`.
     "addresses": [
         {
             "id": 3,
-            "customer_id": 3,
+            "customer_id": 5,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
@@ -161,11 +161,11 @@ The customer `id` is `3`.
             "region_id": 43,
             "country_id": "US",
             "street": [
-                "123 Oak Ave"
+                "160 1st St."
             ],
             "telephone": "512-555-1111",
-            "postcode": "10755",
-            "city": "Purchase",
+            "postcode": "11501",
+            "city": "Mineola",
             "firstname": "Jane",
             "lastname": "Doe",
             "default_shipping": true,
@@ -174,6 +174,11 @@ The customer `id` is `3`.
     ],
     "disable_auto_group_change": 0,
     "extension_attributes": {
+        "company_attributes": {
+            "customer_id": 5,
+            "company_id": 0,
+            "status": 1
+        },
         "is_subscribed": false
     }
 }
