@@ -41,7 +41,7 @@ The `CustomerOrder` object contains details about each order returned by the `or
 
 Attribute | Data type | Description
 --- | --- | ---
-`billing_address` | [CustomerAddress](#customerAddressOutput) | The billing address for the order
+`billing_address` | [OrderAddress](#OrderAddress) | The billing address for the order
 `carrier` | String | The shipping carrier for the order delivery
 `comments` | [[CommentItem](#CommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
@@ -56,7 +56,7 @@ Attribute | Data type | Description
 `order_number` | String! | Deprecated. Use the `number` attribute instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
-`shipping_address` | [CustomerAddress](#customerAddressOutput) | Shipping address for the order
+`shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order
 `status` | String! | The current status of the order
 `total` | [OrderTotal](#OrderTotal) | Contains details about the calculated totals for this order
@@ -210,6 +210,28 @@ Attribute | Data type | Description
 --- | --- | ---
 `name` | String | The name part of the name/value pair
 `value` | String | The value part of the name/value pair
+
+#### OrderAddress attributes {#OrderAddress}
+
+The `OrderAddress` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`city` | String! | The city or town
+`company` | String | The customer's company
+`country_code` | CountryCodeEnum | The customer's country
+`fax` | String | The fax number
+`firstname` | String! | The first name of the person associated with the shipping/billing address
+`lastname` | String! | The family name of the person associated with the shipping/billing address
+`middlename` | String | The middle name of the person associated with the shipping/billing address
+`postcode` | String | The customer's ZIP or postal code
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`region` | [CustomerAddressRegion](#customerAddressRegionOutput) | An object that defines the customer's state or province
+`region_id` | Int | The unique ID for a pre-defined region
+`street` | [String]! | An array of strings that define the street number and name
+`suffix` | String | A value such as Sr., Jr., or III
+`telephone` | String! | The telephone number
+`vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
 #### OrderItem attributes {#OrderItem}
 
