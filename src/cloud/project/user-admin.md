@@ -5,6 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
   - Account
+  - Security
 
 redirect_from:
   - /cloud/admin/admin-user-admin.html
@@ -35,7 +36,7 @@ When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users wi
 You can add users and assign roles using the Magento CLI or the Project Web Interface.
 
 {:.bs-callout-tip}
-Adding or updating a user for a {{site.data.var.ece}} environment triggers a site deployment, which takes your site offline until deployment completes. For Production environments, we recommend completing user administrative tasks during off-peak hours to prevent service disruptions.
+Changing user configuration on a {{site.data.var.ece}} environment triggers a site deployment, which takes your site offline until deployment completes. For Production environments, we recommend completing user administration tasks during off-peak hours to prevent service disruptions.
 
 **Prerequisites:**
 
@@ -52,7 +53,7 @@ Available commands:
 -  `magento-cloud user:list [users]`–list project users
 -  `magento-cloud user:role`–view or change the user role
 
-The following examples show how to add a user and configure the project and environment-level role, and how to modify project assignments and assigned user roles.
+The following examples use the CLI to add a user, configure roles, and modify project assignments and assigned user roles.
 
 {:.procedure}
 Add a user and assign roles:
@@ -225,6 +226,8 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Click **Verify and save**.
 
+   After the account configuration update completes, Magento sends a confirmation to the address on the account notifying the user that two-factor authentication has been added.
+
 1. Optional. Enable _Trusted browser_ settings to save current authentication code in the browser session for 30 days and reduce number of authentication challenges during project log in.
 
 1. Click **Save** or **Skip**.
@@ -290,5 +293,5 @@ To create an API token:
 [FreeOTP (Android)]: https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp
 [GAuth Authenticator (Firefox OS, desktop, others)]: https://github.com/gbraad/gauth
 [Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
-[MFA enforcement for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-project.html
+[MFA enforcement for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-enforcement.html
 [snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html

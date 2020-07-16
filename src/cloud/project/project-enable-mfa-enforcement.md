@@ -6,6 +6,9 @@ functional_areas:
   - Configuration
   - Security
   - Compliance
+  
+redirect_from:
+  - /cloud/project/project-enable-mfa-project.html
 ---
 
 {%include cloud/beta-release-content-warning.md%}
