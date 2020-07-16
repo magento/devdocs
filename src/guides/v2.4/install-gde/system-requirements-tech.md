@@ -33,9 +33,10 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ## Database
 
-MySQL 5.7.9 and 8.0
+*  MySQL 8.0 for on-premise installations
+*  MariaDB 10.4 for {{site.data.var.ece}} projects
 
-Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.2, 10.4 (recommended,) Percona 5.7, and other binary-compatible MySQL technologies.
+Magento is also compatible, but has not been tested and is not recommended, with MySQL 5.7.9, NDB Cluster 7.4.*, MariaDB 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
 {:.bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
@@ -45,7 +46,7 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 <!--{% assign supported_php_versions = site.data.codebase.v2_4.open-source.composer_lock.platform.php | split: "||" %}-->
 {% include install/php-versions-template.md %}
 
-While Magento supports PHP 7.3, Magento 2.4 is tested on, and we recommend using, PHP 7.4.
+Magento 2.4 can be installed with 7.3, but it is not tested or recommended.
 
 {:.bs-callout-warning}
 There is a [bug](https://bugs.php.net/bug.php?id=79174) in PHP 7.4.2 which causes some messages to not render properly. Magento recommends using other versions of 7.4.
@@ -107,10 +108,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
+*  [Redis][] version 5.0 is recommended and used in testing (compatible, but not tested with 2.4+) for page caching and session storage.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
 
-*  RabbitMQ 3.8.x (compatible with 2.0 and later)
+*  RabbitMQ 3.8.x
 
    [RabbitMQ][]{:target="_blank"} can be used to publish messages to queue and to define the consumers that receive the messages asynchronously.
 
@@ -127,7 +128,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 {:.bs-callout-info}
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug][].
 
-*  [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"} (for PHP < 7.2)
 *  PHPUnit (as a command-line tool) 9.0.0
 
 <!-- Link Definitions -->
