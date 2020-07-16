@@ -4,6 +4,8 @@ title: Manage user access to Cloud projects
 functional_areas:
   - Cloud
   - Configuration
+  - Account
+
 redirect_from:
   - /cloud/admin/admin-user-admin.html
   - /cloud/project/user-admin.html#cloud-role-acct-owner
@@ -26,7 +28,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 For added security, Magento is introducing a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement for SSH].
 
-When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
+When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
 
 ## Add users and manage access
 
@@ -166,11 +168,11 @@ Add an environment-level user:
 
 ## Update account security settings
 
-After you add a user to a Cloud project, ask them to review their account settings and add the following configuration as needed:
+After you add a user to a Cloud project, ask the user to review their account settings and add the following security configuration as needed:
 
 -  Enable two-factor authentication (TFA)
 
-   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Some projects will soon require two-factor authentication on all accounts that use SSH to connect to {{site.data.var.ece}} projects.
+   Magento recommends adding two-factor authentication to all accounts to meet security and compliance standards. Projects configured with [MFA enforcement][mfa-enforcement-for-ssh] require two-factor authentication for all accounts that require SSH access to {{site.data.var.ece}} projects.
 
 -  Enable SSH keys
 
@@ -178,13 +180,13 @@ After you add a user to a Cloud project, ask them to review their account settin
 
 -  Create an API token
 
-   You can generate an API token on your account that can be used for secure machine access to an environment through an SSH connection. Use the API token to enable login workflows for automated processes.
+   You can generate an API token on your account that can be used for secure machine access to an environment through an SSH connection. You can use the API token to enable login workflows for automated processes.
 
-   On projects with the MFA enforcement feature enabled, you must use the API token to authenticate SSH access requests from automated accounts. to bypass authentication workflows which require 2FA.
+   On projects with the MFA enforcement feature enabled, you must use the API token to authenticate SSH access requests from automated accounts. to bypass authentication workflows which require two-factor authentication.
 
-### Enable 2FA
+### Enable 2FA for Cloud accounts
 
-{{site.data.var.ece}} supports 2FA using any of the following applications:
+{{site.data.var.ece}} supports two-factor authentication using any of the following applications:
 
 -  [Google Authenticator (Android/iPhone/BlackBerry)][]
 -  [Authy (Android/iPhone)][]
@@ -192,10 +194,10 @@ After you add a user to a Cloud project, ask them to review their account settin
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
-You can find instructions for setting up the authenticator app and enabling 2FA on the _Account settings_ page for your {{site.data.var.ece}} user account.
+You can find instructions for setting up the authenticator app and enabling two-factor authentication (TFA) on the _Account settings_ page for your {{site.data.var.ece}} user account.
 
 {:.procedure}
-To enable 2FA on your {{site.data.var.ece}} user account:
+To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Log in to the [{{site.data.var.ece}} user account][{{site.data.var.ece}} account].
 
@@ -205,11 +207,11 @@ To enable 2FA on your {{site.data.var.ece}} user account:
 
 1. On the Account settings tab, expand the **Security** section. Then, click **Set up application**.
 
-   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app.png){:width="550px"}
+   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-app.png){:width="550px"}
 
 1. Use the linked instructions to install one of the approved authentication applications on your mobile device, if needed.
 
-   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app-options.png){:width="550px"}
+   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-options.png){:width="550px"}
 
 1. On your mobile device, open the authentication app and add the setup code to the app.
 
@@ -232,19 +234,33 @@ To enable 2FA on your {{site.data.var.ece}} user account:
    ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
    {:.bs.callout-warning}
-   Copy the recovery codes to another location or write them down to recover access if you your device or access to the authenticator application. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
+   Copy the recovery codes to another location or write them down to use if you lose access to your device or authentication app. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 
-1. On the _Account settings_ page, you can view and manage TFA configuration from the _Security_ section.
+#### Manage TFA configuration and recovery codes
 
-   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
+You can manage TFA configuration from the _Security_ section on the _Account settings_ page.
+
+![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
+
+Use the available links to update the two-factor authentication settings for your {{site.data.var.ece}} account:
+
+-  Disable two-factor authentication
+-  Reset authenticator application
+-  Add or remove trusted browsers
+-  View or refresh TFA recovery codes on account
 
 ### Create an API token
 
 An API token can be exchanged for an OAuth 2 access token, which can then be used to authenticate requests.
 
 On projects that have 2FA enforcement enabled, you must have an API token to enable secure SSH access for machine users and automated processes.
+
+{%include cloud/cloud-secure-api-token.md%}
+
+{:.procedure}
+To create an API token:
 
 1. Log in to the [{{site.data.var.ece}} account][].
 
@@ -266,14 +282,13 @@ On projects that have 2FA enforcement enabled, you must have an API token to ena
 
 <!--Link references-->
 
-[snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
-[Enable MFA enforcement for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-project.html
-[{{site.data.var.ece}} account]: https://accounts.magento.cloud/user/
-[enable SSH keys]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html
-[{{site.data.var.ece}} user account]: https://account.magento.cloud/user
-[snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
-[Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
-[Authy (Android/iPhone)]: https://www.authy.com/app/
+[{{ site.data.var.ece }} account]: https://accounts.magento.cloud/user/
+[{{ site.data.var.ece }} user account]: https://account.magento.cloud/user
 [Authenticator (Windows Phone)]: http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8
+[Authy (Android/iPhone)]: https://www.authy.com/app/
+[enable SSH keys]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html
 [FreeOTP (Android)]: https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp
 [GAuth Authenticator (Firefox OS, desktop, others)]: https://github.com/gbraad/gauth
+[Google Authenticator (Android/iPhone/BlackBerry)]: https://support.google.com/accounts/answer/1066447?hl=en
+[MFA enforcement for SSH]: {{ site.baseurl }}/cloud/project/project-enable-mfa-project.html
+[snapshots]: {{ site.baseurl }}/cloud/project/project-webint-snap.html
