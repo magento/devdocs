@@ -152,7 +152,32 @@ To test the connection to the VPC endpoint service:
    * Closing connection 0
    ```
    {:.no-copy}
+   
+1. Run the following command to check connection is established or not:
 
+   ```bash
+   netstat -an |grep ESTABLISHED
+   ```   
+ 
+1. Run the following command to check the packages flow:
+
+   ```bash
+   tcpdump -i <ethernet interface> -tt -nn port <destination port> and host <source host>
+   ```   
+   
+1. Run the following command to verify service is listening on VM or not:
+
+   ```bash
+   netsat -na |grep <port>
+   ```      
+  
+   Perform a qucik check on internal settings to make sure everything looks good: 
+   
+   - Check endpoint and endpoint services settings
+   - Check NLB settings
+   - Check target groups in NLB and verify they are healthy
+   - netcat/curl endpoint URL from each VM(CMD's listed above)
+   
    See the following articles for help troubleshooting connection issues:
 
    -  [AWS: Troubleshooting endpoint service connections][]
