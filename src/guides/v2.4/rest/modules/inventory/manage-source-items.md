@@ -67,7 +67,7 @@ Magento returns an empty array.
 `POST V1/inventory/source-items` is a powerful endpoint that allows you to define which sources carry each product as well as how many units are available at each source. You can use the endpoint to set up the initial quantities for each SKU at each source or add quantities as you receive shipments to replenish your supply.
 
 {:.bs-callout-info}
-If a bundle product is configured so that all items must be shippedtogether, then all component products must be assigned to the same source.
+If a bundle product is configured so that all items must be shipped together, then all component products must be assigned to the same source.
 
 The following example assigns `1000` units of product `new_product1` to the `central` source and `2000` units to the `east` source. It also assigns `500` units of product `new_product2` to the `central` source and `250` units to the `east` source.
 
