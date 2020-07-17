@@ -183,7 +183,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
    You can generate an API token on your account that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
 
-   On projects with the MFA enforcement feature enabled, you must use the API token to authenticate SSH access requests from automated accounts. to bypass authentication workflows which require two-factor authentication.
+   On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts to bypass authentication workflows which require two-factor authentication.
 
 ### Enable 2FA for Cloud accounts
 
