@@ -241,7 +241,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
    ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
    {:.bs.callout-warning}
-   Copy the recovery codes to another location or write them down to use if you lose access to your device or authentication app. Save the codes to your account to view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your Project administrator, or submit a Magento support ticket to reset the TFA application.
+   Copy the recovery codes to another location or write them down in case you lose access to your device or authentication app. Save the codes to your account so you can view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your project administrator, or submit a Magento support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 
