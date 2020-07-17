@@ -153,7 +153,7 @@ To test the connection to the VPC endpoint service:
    ```
    {:.no-copy}
    
-1. Run the following command to check connection is established or not:
+1. Run the following command to check whether the connection is established:
 
    ```bash
    netstat -an |grep ESTABLISHED
