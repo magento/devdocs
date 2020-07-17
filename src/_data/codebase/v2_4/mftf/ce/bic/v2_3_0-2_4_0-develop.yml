@@ -1,3 +1,4 @@
+versions: 2.3.0 ... 2.4.0-develop
 disclaimer: This list may not be complete as it is generated from a development version of Semantic Version Checker tool.
 content:
 - type: Data changes
