@@ -107,7 +107,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] version 5.0 is recommended and used in testing (compatible, but not tested with 2.4+) for page caching and session storage.
+*  [Redis][] version 5.0 is recommended and used in testing for page caching and session storage
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
 
 *  RabbitMQ 3.8.x
