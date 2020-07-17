@@ -36,7 +36,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ## Database
 
-*  MySQL 5.7 or on-premise installations
+*  MySQL 5.7 for on-premise installations
 *  MariaDB 10.2 for {{site.data.var.ece}} projects
 
 Magento is also compatible with, but has not been tested and is not recommended, with MySQL 5.6, MariaDB 10.1, and Percona 5.7.
