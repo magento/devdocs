@@ -69,6 +69,55 @@ pages:
           url: /cloud/project/sendgrid.html
           versionless: true
 
+    - label: Manage your project
+      url: /cloud/project/projects.html
+      versionless: true
+      children:
+
+        - label: Configure your project
+          url: /cloud/project/project-webint-basic.html
+          versionless: true
+
+        - label: Project structure
+          url: /cloud/project/project-start.html
+          versionless: true
+
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+          versionless: true
+
+        - label: Manage user access
+          url: /cloud/project/user-admin.html
+          versionless: true
+
+        - label: Enable MFA enforcement for SSH
+          url: /cloud/project/project-enable-mfa-enforcement.html
+          versionless: true
+
+        - label: Manage branches with the Interface
+          url: /cloud/project/project-webint-branch.html
+          versionless: true
+
+        - label: Manage branches with the CLI
+          url: /cloud/env/environments-start.html
+          versionless: true
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
+          versionless: true
+
+        - label: Monitor performance
+          url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: Snapshots and backup management
+          url: /cloud/project/project-webint-snap.html
+          versionless: true
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
+          versionless: true
+
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       versionless: true
@@ -401,55 +450,6 @@ pages:
       children:
         - label: Example of managing system-specific settings
           url: /cloud/live/sens-data-initial.html
-          versionless: true
-
-    - label: Manage your project
-      url: /cloud/project/projects.html
-      versionless: true
-      children:
-
-        - label: Configure your project
-          url: /cloud/project/project-webint-basic.html
-          versionless: true
-
-        - label: Project structure
-          url: /cloud/project/project-start.html
-          versionless: true
-
-        - label: Log locations
-          url: /cloud/project/log-locations.html
-          versionless: true
-
-        - label: Manage user access
-          url: /cloud/project/user-admin.html
-          versionless: true
-
-        - label: Enable MFA enforcement for SSH
-          url: /cloud/project/project-enable-mfa-project.html
-          versionless: true
-
-        - label: Manage branches with the Interface
-          url: /cloud/project/project-webint-branch.html
-          versionless: true
-
-        - label: Manage branches with the CLI
-          url: /cloud/env/environments-start.html
-          versionless: true
-
-        - label: Profile database queries
-          url: /cloud/project/profile-database-queries.html
-          versionless: true
-
-        - label: Manage disk space
-          url: /cloud/project/manage-disk-space.html
-          versionless: true
-
-        - label: Monitor performance
-          url: /cloud/project/monitor-performance.html
-          versionless: true
-
-        - label: Snapshots and backup management
-          url: /cloud/project/project-webint-snap.html
           versionless: true
 
     - label: Optimize deployment

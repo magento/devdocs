@@ -4,14 +4,21 @@ title: Enable MFA enforcement for SSH access
 functional_areas:
   - Cloud
   - Configuration
+  - Security
+  - Compliance
+  
+redirect_from:
+  - /cloud/project/project-enable-mfa-project.html
 ---
 
-For added security, {{site.data.var.ece}} provides a mutlitfactor authentication (MFA) enforcement feature to manage multifactor authentication requirements for SSH access to Cloud infrastructure.
+{%include cloud/beta-release-content-warning.md%}
 
-When MFA enforcement is enabled on a project, any user or machine account establishing an SSH connection to an environment must follow an authentication workflow that requires a two-factor authentication (2FA) code and an SSH certificate, or an API token to access the environment.
+For added security, {{site.data.var.ece}} provides mutltifactor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments.
+
+When MFA enforcement is enabled on a project, all {{site.data.var.ece}} accounts with SSH access must follow an authentication workflow that requires a two-factor authentication (2FA) code and an SSH certificate, or an API token to access the environment.
 
 {:.bs.callout-important}
-The MFA enforcement feature is not enabled by default on {{site.data.var.ece}} projects. You must submit a Magento support ticket to request 2FA enablement on your project. After enablement, all subsequent SSH connection requests require either a 2FA token or an API token.
+MFA enforcement is not enabled on Cloud projects by default. You must submit a Magento support request to enable it. As soon as MFA enforcement is turned on, all users must have two-factor authentication (TFA) enabled on their {{ site.data.var.ece }} account for SSH access to the environment.
 
 ## Certificates for SSH access
 
@@ -27,6 +34,9 @@ magento-cloud ssh-cert:load
 
 The `ssh-cert:load` command generates the SSH certificate and installs it in the SSH agent of the local user.
 
+{:.bs-callout-tip}
+You can streamline the authentication process by using an API token for authentication. With an API token, you can skip loading the SSH certificate. See [Connect with an API token](#connect-to-an-environment-using-ssh-with-api-token).
+
 ## Connect to an environment using SSH with 2FA
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, any user that connects to a Cloud environment using SSH must have 2FA enabled on their account. See [Enable 2FA][].
@@ -37,7 +47,7 @@ For {{site.data.var.ece}} projects enabled for MFA enforcement, SSH access requi
 
 -  [Admin or contributor access to the {{site.data.var.ece}} environment][Manage user access]
 -  [SSH access key configured on account][add public SSH key]
--  [2FA enabled on account][]
+-  [2FA enabled on account][Enable 2FA]
 
 {:.procedure}
 To connect using SSH with 2FA user account credentials:
@@ -76,20 +86,58 @@ To connect using SSH with 2FA user account credentials:
 
     Welcome to Magento Cloud.
 
-    This is environment master-7rqtwti
-    of project gbhzpx7xmpule.
+    This is environment master-7rqtabc
+    of project abcdef7uyxabce.
 
    web@mymagento.0:~$
    ```
+
+### Troubleshooting
 
 If your request does not provide a valid certificate, a message similar to the following displays:
 
 ```terminal
 Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
-authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:> (reason: access requires MFA)
+authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
+(reason: access requires MFA)
 ```
 
-To resolve this issue, verify that you have 2FA on your account. Also, try regenerating the certificate using the `magento-cloud ssh-cert:load` command.
+Try the following troubleshooting procedures to resolve the connection issue:
+
+-  Verify the account TFA configuration
+-  Authenticate again, and then reload the certificate
+
+{:.procedure}
+To verify TFA configuration and authentication:
+
+1. On your [Cloud account][Cloud account page], click **Account settings** > **Security**.
+
+   If TFA is enabled, the Security section provides options to manage the TFA configuration:
+
+   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
+
+1. If TFA is not set up, click **Set up application** and follow the instructions to enable it. See [Enable 2FA][].
+
+1. If TFA is configured, try authenticating again.
+
+{:.procedure}
+To authenticate and reload the SSH certificate:
+
+1. Use the Magento Cloud CLI to authenticate again:
+
+   ```bash
+   magento-cloud logout
+   ```
+
+   ```bash
+   magento-cloud login
+   ```
+
+1. Reload the SSH certificate:
+
+   ```bash
+   magento-cloud ssh-cert:load
+   ```
 
 ## Connect to an environment using SSH with API token
 
@@ -99,29 +147,30 @@ The API token allows the SSH connection request to bypass the user authenticatio
 
 **Prerequisites:**
 
--  [Admin or contributor access to the {{site.data.var.ece}} environment][Manage user access]
+-  [Admin or Contributor access to the {{site.data.var.ece}} environment][Manage user access]
 -  [Valid API token available on account][Create an API token]
 
 {:.procedure}
 To connect using SSH with an API token credential:
 
-1. Log in to the Cloud project using API key authentication, supplying a valid API token when prompted:
+1. Log in to the Cloud project using API key authentication.
 
    ```bash
    magento-cloud auth:api-token
    ```
+1. At the prompt, enter the value for a valid API token.
 
-  ```terminal
-  Please enter an API token:
-  >
+   ```terminal
+   Please enter an API token:
+   >
 
-  The API token is valid.
-  You are logged in.
-  ```
+   The API token is valid.
+   You are logged in.
+   ```
 
 <!--Link references-->
-[Manage user access]: {{ site.baseurl }}/cloud/project/user-admin.html
-[Enable 2FA]: {{ site.baseurl }}/cloud/project/user-admin.html
-[add public ssh key]: {{site.baseurl}}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
-[2FA enabled on account]: {{ site.baseurl }}/cloud/project/user-admin.html#enable-2fa
+[add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
+[Cloud account page]: https://accounts.magento.cloud/user
 [Create an API token]: {{ site.baseurl }}/cloud/project/user-admin.html#create-an-api-token
+[Enable 2FA]: {{ site.baseurl }}/cloud/project/user-admin.html#enable-2fa-for-cloud-accounts
+[Manage user access]: {{ site.baseurl }}/cloud/project/user-admin.html
