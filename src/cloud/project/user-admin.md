@@ -208,11 +208,13 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Click **Security** to access the TFA configuration settings. Then, click **Set up application**.
 
-   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-app.png){:width="550px"}
+   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app.png){:width="550px"}
 
 1. Use the linked instructions to install an approved authenticator application on your mobile device, if needed.
 
-   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-options.png){:width="550px"}
+   ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-app-options.png){:width="550px"}
+
+1. On your mobile device, open the authentication app and add the setup code to the app.
 
 1. On your mobile device, open the authenticator application. Then, add the setup code to the app.
 
