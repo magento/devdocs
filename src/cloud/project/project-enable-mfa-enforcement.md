@@ -112,7 +112,7 @@ To verify TFA configuration and authentication:
 
 1. On your [Cloud account][Cloud account page], click **Account settings** > **Security**.
 
-   If the TFA is enabled, the Security section provides options for managing the TFA configuration:
+   If TFA is enabled, the Security section provides options to manage the TFA configuration:
 
    ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
 
