@@ -153,11 +153,11 @@ To test the connection to the VPC endpoint service:
    ```
    {:.no-copy}
    
-1. Run the following command to check whether the connection is established:
+1. Run the following command to to ensure the service is listening on VM:
 
    ```bash
-   netstat -an |grep ESTABLISHED
-   ```   
+   netsat -na |grep <port>
+   ```        
  
 1. Run the following command to check the packages flow:
 
@@ -165,11 +165,7 @@ To test the connection to the VPC endpoint service:
    tcpdump -i <ethernet interface> -tt -nn port <destination port> and host <source host>
    ```   
    
-1. Run the following command to verify service is listening on VM or not:
 
-   ```bash
-   netsat -na |grep <port>
-   ```      
   
    Check the following internal settings to ensure that the configuration is valid: 
    
