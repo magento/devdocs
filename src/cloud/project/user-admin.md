@@ -228,7 +228,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Click **Verify and save**.
 
-   After the account configuration update completes, Magento sends an email to the address on the account to notify about the configuration change.
+   After the account configuration update completes, Magento sends an email to the address on the account to notify the user about the configuration change.
 
 1. Optional. Enable _Trusted browser_ settings to cache the authentication code in the browser for 30 days.
 

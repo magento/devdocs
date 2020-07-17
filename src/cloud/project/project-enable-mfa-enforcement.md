@@ -104,7 +104,7 @@ authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--m
 
 Try the following troubleshooting procedures to resolve the connection issue:
 
--  Verify account TFA configuration
+-  Verify the account TFA configuration
 -  Authenticate again, and then reload the certificate
 
 {:.procedure}
