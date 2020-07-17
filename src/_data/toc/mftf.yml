@@ -197,4 +197,3 @@ pages:
   - label: Changelog
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
     versionless: true
-    
