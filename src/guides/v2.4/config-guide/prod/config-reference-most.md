@@ -760,9 +760,9 @@ Name  | Config path | EE only? |
 Allow Shipping to Multiple Addresses | `multishipping/options/checkout_multiple` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Maximum Qty Allowed for Shipping to Multiple Addresses | `multishipping/options/checkout_multiple_maximum_qty` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
-### Shipping methods paths
+### Delivery methods paths
 
-These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Delivery Methods**.
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|

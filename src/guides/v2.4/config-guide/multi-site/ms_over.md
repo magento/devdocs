@@ -23,7 +23,7 @@ You configure the websites, stores, and store views in the Magento [Admin](https
 
 Consider the following terms:
 
--  **Website**—is the top-level container for sites, shipping methods, payment methods, and more. To create completely separate sites that do not share cart, shipping methods, or other you must create separate websites.
+-  **Website**—is the top-level container for sites, delivery methods, payment methods, and more. To create completely separate sites that do not share cart, delivery methods, or other you must create separate websites.
 
    Website customer accounts can be shared between multiple websites within a single Magento instance. A website contains at least one store. Catalog prices should be managed at the website level.
 
