@@ -18,7 +18,7 @@ For added security, {{site.data.var.ece}} provides mutltifactor authentication (
 When MFA enforcement is enabled on a project, all {{site.data.var.ece}} accounts with SSH access must follow an authentication workflow that requires a two-factor authentication (2FA) code and an SSH certificate, or an API token to access the environment.
 
 {:.bs.callout-important}
-The MFA enforcement feature is not enabled by default. You must submit a Magento support request to add the feature to your project. As soon as the feature is turned on, all accounts must have 2FA enabled on their account or an API token for SSH access to the environment.
+MFA enforcement is not enabled on Cloud projects by default. You must submit a Magento support request to enable it. As soon as MFA enforcement is turned on, all users must have two-factor authentication (TFA) enabled on their {{ site.data.var.ece }} account for SSH access to the environment.
 
 ## Certificates for SSH access
 
