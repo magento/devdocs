@@ -171,7 +171,7 @@ To test the connection to the VPC endpoint service:
    netsat -na |grep <port>
    ```      
   
-   Perform a qucik check on internal settings to make sure everything looks good: 
+   Check the following internal settings to ensure that the configuration is valid: 
    
    - Check endpoint and endpoint services settings
    - Check NLB settings
