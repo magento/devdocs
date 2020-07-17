@@ -13,7 +13,7 @@ redirect_from:
 
 {%include cloud/beta-release-content-warning.md%}
 
-For added security, {{site.data.var.ece}} provides a mutlitfactor authentication (MFA) enforcement feature to manage authentication requirements for SSH access to Cloud environments.
+For added security, {{site.data.var.ece}} provides mutltifactor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments.
 
 When MFA enforcement is enabled on a project, all {{site.data.var.ece}} accounts with SSH access must follow an authentication workflow that requires a two-factor authentication (2FA) code and an SSH certificate, or an API token to access the environment.
 
