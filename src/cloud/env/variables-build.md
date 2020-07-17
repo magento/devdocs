@@ -138,6 +138,24 @@ stage:
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
+### `SCD_USE_BALER`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+[Baler](https://github.com/magento/baler) scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+
+Set to `true` to run Baler after performing static content deployment.
+
+```yaml
+stage:
+  build:
+    SCD_USE_BALER: true
+```
+
+{:.bs-callout-info}
+Because Baler is currently in alpha release, we do not recommend using it in Production environments.
+
 ### `SKIP_SCD`
 
 -  **Default**— _Not set_

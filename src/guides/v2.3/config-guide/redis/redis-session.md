@@ -54,10 +54,10 @@ where
 
 ### Example command
 
-The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
+The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 4, and sets the database number to 2. All other parameters are set to the default value.
 
 ```bash
-bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2
+bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=4 --session-save-redis-db=2
 ```
 
 ### Result
@@ -78,7 +78,7 @@ Magento adds lines similar to the following to `<magento_root>app/etc/env.php`:
         'database' => '2',
         'compression_threshold' => '2048',
         'compression_library' => 'gzip',
-        'log_level' => '3',
+        'log_level' => '4',
         'max_concurrency' => '6',
         'break_after_frontend' => '5',
         'break_after_adminhtml' => '30',

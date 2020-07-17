@@ -51,8 +51,8 @@
           url: /cloud/docker/docker-mftf.html
           versionless: true
 
-        - label: ECE-Tools testing
-          url: /cloud/docker/docker-development-testing.html
+        - label: Magento Cloud code testing
+          url: /cloud/docker/docker-test-magecloud-pkg-code.html
           versionless: true
 
 - label: Setup
