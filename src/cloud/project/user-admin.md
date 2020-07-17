@@ -110,9 +110,9 @@ Access the Project Web UI to add users:
 
    ![Click the projects tab to access your Cloud project]({{ site.baseurl }}/common/images/cloud/cloud_account_project.png){:width="550px"}
 
-1. Click the name of your project to open the Cloud project portal (Onboarding UI).
+1. Click your project name to open the Cloud project portal (Onboarding UI).
 
-1. Click **Infrastructure access**, and then click the **Project Access (Web UI)** link.
+1. Click **Infrastructure access**, and then click **Project Access (Web UI)**.
 
    ![Cloud project portal]({{ site.baseurl }}/common/images/cloud/cloud-login-infrastructure-access.png){:width="550px"}
 
@@ -121,7 +121,7 @@ Access the Project Web UI to add users:
 {:.procedure}
 Add a project-level user:
 
-1. In the Project Web UI, click the configure project gear icon next to project name in the top navigation bar.
+1. In the Project Web UI, click the settings icon in the top navigation bar.
 
    ![Configure the project]({{ site.baseurl }}/common/images/cloud/cloud_project_gear.png){:width="184px"}
 
@@ -137,23 +137,23 @@ Add a project-level user:
 
    -  Select the access for the account:
 
-      For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all project environments.
+      For a project administrator account, select **Super User**. This role provides Admin rights to all settings and environments. If not selected, the account has only view options for all project environments.
 
    -  Select permissions per specific environment (or branch) in the Integration environment: _No access_, _Admin_ (change settings, execute action, merge code), _Contributor_ (push code), or _Reader_ (view only). When you add active environments, you can modify permissions per user.
 
 1. Click **Add User**.
 
    {:.bs-callout-warning}
-   After you add project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
+   After adding project-level users, you must redeploy all environments to apply the changes. Adding a project user does not trigger the redeploy automatically.
 
 {:.procedure}
 Add an environment-level user:
 
-1. In the Project Web UI, select the environment. Then, click the configure environment settings icon next to the environment name.
+1. In the Project Web UI, select the environment. Then, click **Configure environment**.
 
    ![Configure the environment]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="550px"}
 
-1. Click the **Users** tab, then click **Add User**.
+1. Click the **Users** tab, and then click **Add User**.
 
 1. Complete the _Add User_ form:
 
@@ -181,7 +181,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
 -  Create an API token
 
-   You can generate an API token on your account that can be used for secure machine access to an environment through an SSH connection. You can use the API token to enable login workflows for automated processes.
+   You can generate an API token on your account that can be used for secure SSH access to an environment. You need the token to enable authentication workflows for automated processes.
 
    On projects with the MFA enforcement feature enabled, you must use the API token to authenticate SSH access requests from automated accounts. to bypass authentication workflows which require two-factor authentication.
 
@@ -195,7 +195,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 -  [FreeOTP (Android)][]
 -  [GAuth Authenticator (Firefox OS, desktop, others)][]
 
-You can find instructions for setting up the authenticator app and enabling two-factor authentication (TFA) on the _Account settings_ page for your {{site.data.var.ece}} user account.
+Instructions for installing the authenticator application and enabling two-factor authentication (TFA) are available on the {{site.data.var.ece}} _Account settings_ page in the Cloud Project Web UI.
 
 {:.procedure}
 To enable TFA on your {{site.data.var.ece}} user account:
@@ -206,17 +206,17 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    ![Cloud projects page]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-tab.png){:width="550px"}
 
-1. On the Account settings tab, expand the **Security** section. Then, click **Set up application**.
+1. Click **Security** to access the TFA configuration settings. Then, click **Set up application**.
 
    ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-app.png){:width="550px"}
 
-1. Use the linked instructions to install one of the approved authentication applications on your mobile device, if needed.
+1. Use the linked instructions to install an approved authenticator application on your mobile device, if needed.
 
    ![Cloud Security settings]({{ site.baseurl }}/common/images/cloud/cloud_acct_settings-tfa-options.png){:width="550px"}
 
-1. On your mobile device, open the authentication app and add the setup code to the app.
+1. On your mobile device, open the authenticator application. Then, add the setup code to the app.
 
-   For example, if you use Google authenticator, click the + sign in the app, and then enter the text code from Magento in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
+   For example, for Google Authenticator, click the + sign in the app. Then, enter the text code from Magento in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
 
    ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
 
@@ -226,9 +226,11 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
 1. Click **Verify and save**.
 
-   After the account configuration update completes, Magento sends a confirmation to the address on the account notifying the user that two-factor authentication has been added.
+   After the account configuration update completes, Magento sends an email to the address on the account to notify about the configuration change.
 
-1. Optional. Enable _Trusted browser_ settings to save current authentication code in the browser session for 30 days and reduce number of authentication challenges during project log in.
+1. Optional. Enable _Trusted browser_ settings to cache the authentication code in the browser for 30 days.
+
+   This configuration reduces the number of authentication challenges during project login.
 
 1. Click **Save** or **Skip**.
 
@@ -250,7 +252,7 @@ You can manage TFA configuration from the _Security_ section on the _Account set
 Use the available links to update the two-factor authentication settings for your {{site.data.var.ece}} account:
 
 -  Disable two-factor authentication
--  Reset authenticator application
+-  Reset the authenticator application
 -  Add or remove trusted browsers
 -  View or refresh TFA recovery codes on account
 
@@ -258,7 +260,7 @@ Use the available links to update the two-factor authentication settings for you
 
 An API token can be exchanged for an OAuth 2 access token, which can then be used to authenticate requests.
 
-On projects that have 2FA enforcement enabled, you must have an API token to enable secure SSH access for machine users and automated processes.
+On projects that have MFA enforcement enabled, you must have an API token to enable secure SSH access for machine users and automated processes.
 
 {%include cloud/cloud-secure-api-token.md%}
 
