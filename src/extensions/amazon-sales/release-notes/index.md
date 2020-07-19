@@ -29,19 +29,19 @@ This version of Amazon Sales Channel includes fixes and improvements.
 
 -  {:.fix}<!--ticket#-->The extension has been updated for support with Magento 2.4.x. Previous versions are not supported with Magento 2.4.x. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
 
-- {:.fix}<!--CHAN-4431-->Corrected an error causing an "Access Denied" error for UK customers.
+-  {:.fix}<!--CHAN-4431-->Corrected an error causing an "Access Denied" error for UK customers.
 
 -  {:.fix}<!--CHAN-4334, 4394-->Corrected an issue causing errors when creating corresponding Magento orders. Order creation has been updated to accept address changes when submitted in the Amazon order. State and Zip Code data synchronization has also been updated.
 
-- {:.fix}<!--CHAN-4429-->Removed error notifications in the user interface for issues that do not affect or prevent extension performance. Error notifications are still recorded in the error logs.
+-  {:.fix}<!--CHAN-4429-->Removed error notifications in the user interface for issues that do not affect or prevent extension performance. Error notifications are still recorded in the error logs.
 
-- {:.fix}<!--ticket#-->Order synchronization has been updated to ignore failed order imports, thus reducing multiple fetch attempts and allowing subsequent imports to process, with order fetch requests submitted every 5 minutes. Synchronization errors are still recorded in the error logs.
+-  {:.fix}<!--ticket#-->Order synchronization has been updated to ignore failed order imports, thus reducing multiple fetch attempts and allowing subsequent imports to process, with order fetch requests submitted every 5 minutes. Synchronization errors are still recorded in the error logs.
 
-- {:.fix}<!--CHAN-4356-->Error logging has been updated to include log fetch errors. Fetch errors are logged, but marked as "processed" to allow further logging functions. Error logging has also been updated to report more information for “Uncaught Exception” errors.
+-  {:.fix}<!--CHAN-4356-->Error logging has been updated to include log fetch errors. Fetch errors are logged, but marked as "processed" to allow further logging functions. Error logging has also been updated to report more information for “Uncaught Exception” errors.
 
-- {:.fix}<!--ticket#-->Corrected an issue causing the initial sync of "Lowest Price" data to fail due to missing "Price" value.
+-  {:.fix}<!--ticket#-->Corrected an issue causing the initial sync of "Lowest Price" data to fail due to missing "Price" value.
 
-- {:.fix}<!--CHAN-4410-->Corrected issues causing errors, including erroneous dates, when the date range field is left blank.
+-  {:.fix}<!--CHAN-4410-->Corrected issues causing errors, including erroneous dates, when the date range field is left blank.
 
 ### v4.1.0
 
