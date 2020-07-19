@@ -191,5 +191,8 @@ elasticsearch:
 
 If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{ site.baseurl }}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
+{:.bs-callout-info}
+Newest Elasticsearch versions **> 7.2** does not support `analysis-icu`, `analysis-phonetic` plugins.
+
 {:.bs-callout-tip}
 For details on using or troubleshooting the Elasticsuite plugin with Magento, see the [Elasticsuite documentation](https://github.com/Smile-SA/elasticsuite).
