@@ -3,7 +3,7 @@ group: extensions
 title: Amazon Sales Channel Release Notes
 ---
 {:.bs-callout .bs-callout-warning}
-Amazon Sales Channel versions 4.0+ are only supported when integrated with Magento 2.3.x versions.
+Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported when integrated with Magento 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is only supported when integrated with Magento 2.4.x versions.
 
 **Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
@@ -20,6 +20,28 @@ The release notes include:
 -  {:.bug}Known issues
 
 See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, support, and compatibility.
+
+### v4.2.0
+
+Amazon Sales Channel 4.2.0 is compatible with versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If the extension is not updated, you will be prompted to update the extension before you can complete the Magento 2.4.0 update.
+
+This version of Amazon Sales Channel includes fixes and improvements.
+
+-  {:.fix}<!--ticket#-->The extension has been updated for support with Magento 2.4.x. Previous versions are not supported with Magento 2.4.x. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
+
+- {:.fix}<!--CHAN-4431-->Corrected an error causing an "Access Denied" error for UK customers.
+
+-  {:.fix}<!--CHAN-4334, 4394-->Corrected an issue causing errors when creating corresponding Magento orders. Order creation has been updated to accept address changes when submitted in the Amazon order. State and Zip Code data synchronization has also been updated.
+
+- {:.fix}<!--CHAN-4429-->Removed error notifications in the user interface for issues that do not affect or prevent extension performance. Error notifications are still recorded in the error logs.
+
+- {:.fix}<!--ticket#-->Order synchronization has been updated to ignore failed order imports, thus reducing multiple fetch attempts and allowing subsequent imports to process, with order fetch requests submitted every 5 minutes. Synchronization errors are still recorded in the error logs.
+
+- {:.fix}<!--CHAN-4356-->Error logging has been updated to include log fetch errors. Fetch errors are logged, but marked as "processed" to allow further logging functions. Error logging has also been updated to report more information for “Uncaught Exception” errors.
+
+- {:.fix}<!--ticket#-->Corrected an issue causing the initial sync of "Lowest Price" data to fail due to missing "Price" value.
+
+- {:.fix}<!--CHAN-4410-->Corrected issues causing errors, including erroneous dates, when the date range field is left blank.
 
 ### v4.1.0
 
