@@ -61,7 +61,7 @@ Not applicable
 
 The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array. In this example, we'll select the `priority` SSA. [Manage source selection algorithms]({{ page.baseurl }}/rest/modules/inventory/manage-source-selection.html) includes an example using the `distance` priority.
 
-This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (40 items of product `24-WB01` and 20 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
+This tutorial does not consider complications, such as selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (40 items of product `24-WB01` and 20 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
 **Endpoint:**
 
