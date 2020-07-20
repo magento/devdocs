@@ -34,7 +34,7 @@ The release notes include:
 
 -  {:.bug} Numerous bug fixes to resolve issues with source assignment, scalable environment feature support, and compatibility with PHP 7.4, MySQL 8, and PHPUNIT 9.
 
--  {:.new} **Increased test coverage.** New functionality covered with automated tests, extended coverage for discovered and fixed issues. 
+-  {:.new} **Increased test coverage.** New functionality covered with automated tests, extended coverage for discovered and fixed issues.
 
 ### v1.1.5
 
@@ -44,7 +44,7 @@ The release notes include:
 
 -  {:.bug} Bug fixes to prevent product oversell, "Out of stock" products visibility on the storefront, numerous fixes for scalable environment support and user interface improvements.
 
--  {:.new} **Functional tests.** Introduced new functional tests to eliminate the test coverage gap. Fixed several issues to make tests more stable and reliable).   
+-  {:.new} **Functional tests.** Introduced new functional tests to eliminate the test coverage gap. Fixed several issues to make tests more stable and reliable).
 
 ### v1.1.4
 
