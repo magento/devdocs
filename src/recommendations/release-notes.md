@@ -48,5 +48,5 @@ This is a major version release. You must [edit your project's root composer.jso
 
 To learn more about Product Recommendations and Product Recommendations development:
 
--  [Developer Documentation]({{ page.baseurl }}recommendations/product-recs.html)
+-  [Developer Documentation]({{ page.baseurl }}/recommendations/product-recs.html)
 -  [User Guide](https://docs.magento.com/user-guide/marketing/product-recommendations.html)
