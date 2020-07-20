@@ -36,7 +36,7 @@ This is a major version release. You must [edit your project's root composer.jso
 -  {:.fix}Fixed an issue where checkout was inhibited for shoppers using uBlock Origin
 -  {:.fix}Fixed an issue sending extraneous add-to-cart events
 
-## 1.0.4 of magento/module-page-builder-product-recommendations for Page Builder
+## 1.0.3 of magento/module-page-builder-product-recommendations for Page Builder
 
 -  {:.new}Page Builder support. With the Page Builder integration, you can accurately and granularly place Recommendation units in any arbitrary location on Page Builder-authored content. You also can style the headings and recommendation units themselves. [Page Builder support](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) further describes this feature.
 
