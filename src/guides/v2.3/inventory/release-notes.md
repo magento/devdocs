@@ -20,6 +20,32 @@ The release notes include:
 -  {:.fix}Fixes and improvements
 -  {:.bug}Known issues
 
+### v1.2.0
+
+{{site.data.var.im}} 1.2.0 (module version: `magento/inventory-metapackage = 1.2.0`) is supported with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new} In-store delivery method: allows to select a source to be used as a pickup location during the checkout of your order.
+
+-  {:.new} Bundle product support for multi source mode. Inventory is supporting all product types with multiple sources.
+
+-  {:.new} Asynchronous stock re-indexation. Provides an ability to re-index stock asynchronously and improve performance on several critical scenarios.
+
+-  {:.new} Introduced new bulk interfaces for salability check: `\Magento\InventorySalesApi\Api\AreProductsSalableInterface`, `\Magento\InventorySalesApi\Api\AreProductsSalableForRequestedQtyInterface`.
+
+-  {:.bug} Numerous bug fixes targeted to resolve issues with source assignment, scalable environment feature support and provided compatibility with PHP 7.4, MySQL 8 and PHPUNIT 9.
+
+-  {:.new} **Increased test coverage.** New functionality covered with automated tests, extended coverage for discovered and fixed issue. 
+
+### v1.1.5
+
+{{site.data.var.im}} 1.1.5 (module version: `inventory-composer-metapackage = 1.1.5`) is supported with version 2.3.5 and compatible with version 2.3.4, 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+-  {:.new} Update inventory once product SKU is changed. Introduced new setting in the configuration to switch to the new behavior: "Synchronize with Catalog".
+
+-  {:.bug} Bug fixes targeted to prevent products oversell, "Out of stock" products visibility on the storefront, numerous fixes for scalable environment support, user UI improvements and so on.
+
+-  {:.new} New functional tests are introduced to eliminate the coverage gap, several fixes to make tests stable and reliable.   
+
 ### v1.1.4
 
 {{site.data.var.im}} 1.1.4 (module version: `inventory-composer-metapackage = 1.1.4`) is supported with version 2.3.4 and compatible with version 2.3.3, 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
