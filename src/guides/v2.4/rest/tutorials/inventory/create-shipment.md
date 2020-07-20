@@ -13,21 +13,21 @@ functional_areas:
   - Integration
 ---
 
-In the previous step, the SSA recommended shipping 20 `24-WB01` items and 19 `24-WB03` items from Baltimore. It also recommended shipping 31 `24-WB03` items from Reno.
+In the previous step, the SSA recommended shipping 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. It also recommended shipping 5 `24-WB01` items from the Brooklyn store.
 
-You can always override the SSA recommendations. It would be valid, for example, to ship all the `24-WB01` items and 42 `24-WB03` items from Reno, leaving 8 `24-WB03` items to be shipped from Baltimore.
+You can always override the SSA recommendations. It would be valid, for example, to ship 25 `24-WB01` items and 5 `24-WB03` items each from the Brooklyn, Manhattan, and Huntington stores.
 
-Fulfilling the order requires two partial shipments (unless you want to create a scenario that also involves the Austin warehouse). In this example, we'll follow the SSA recommendations.
+Fulfilling the order requires two partial shipments (unless you want to create a scenario that also involves more than one store). In this example, we'll follow the SSA recommendations.
 
 When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.
 
-## Recommended: Ship using  `POST /V1/order/:orderId/ship`
+## Recommended: Ship using `POST /V1/order/:orderId/ship`
 
 Although you can use the `POST V1/shipment` endpoint to create a shipment, the `POST /V1/order/:orderId/ship` endpoint is a better option in that it is more efficient and the payload can be simpler.
 
-### Ship from the Baltimore warehouse
+### Ship from the Northeast warehouse
 
-We'll ship 20 `24-WB01` items and 19 `24-WB03` items from the Baltimore warehouse. The `order_item_id` value for `24-WB01` is 3, and the value for `24-WB03` is 4.
+We'll ship 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. The `order_item_id` value for `24-WB01` is 9, and the value for `24-WB03` is 8.
 
 **Endpoint:**
 
@@ -56,16 +56,16 @@ where `3` is the `orderid`
     },
     {
       "order_item_id": 4,
-      "qty": 19
+      "qty": 35
     }
   ],
   "notify": true,
   "comment": {
-    "comment": "Shipment from Baltimore"
+    "comment": "Shipment from Northeast warehouse"
   },
   "arguments": {
     "extension_attributes": {
-      "source_code": "baltimore_wh"
+      "source_code": "ne_wh"
     }
   }
 }
@@ -75,9 +75,9 @@ where `3` is the `orderid`
 
 The shipment ID, such as `3`.
 
-### Ship from the Reno warehouse
+### Ship from the Brooklyn store
 
-Use the same endpoint to ship the remaining 31 `24-WB03` items from the Reno warehouse.
+Use the same endpoint to ship the remaining five `24-WB03` items from the Brooklyn store.
 
 **Payload:**
 
@@ -86,16 +86,16 @@ Use the same endpoint to ship the remaining 31 `24-WB03` items from the Reno war
   "items": [
     {
       "order_item_id": 4,
-      "qty": 31
+      "qty": 5
     }
   ],
   "notify": true,
   "comment": {
-    "comment": "Shipment from Reno"
+    "comment": "Shipment from Brooklyn"
   },
   "arguments": {
     "extension_attributes": {
-      "source_code": "reno_wh"
+      "source_code": "brooklyn"
     }
   }
 }
@@ -109,7 +109,7 @@ The shipment ID, such as `4`.
 
 Magento also supports the `POST /V1/shipment` endpoint for sending full or partial shipments.
 
-### Ship from the Baltimore warehouse
+### Ship from the Northeast warehouse
 
 **Endpoint:**
 
@@ -130,11 +130,11 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 ```json
 {
   "entity": {
-    "billing_address_id": 2,
+    "billing_address_id": 4,
     "customer_id": 3,
     "order_id": 3,
     "store_id": 2,
-    "total_qty": 39,
+    "total_qty": 55,
     "items": [
       {
         "name": "Voyage Yoga Bag",
@@ -142,7 +142,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
         "product_id": 8,
         "sku": "24-WB01",
         "order_item_id": 3,
-        "qty": 20
+        "qty": 35
       },
       {
         "name": "Driven Backpack",
@@ -150,11 +150,11 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
         "product_id": 12,
         "sku": "24-WB03",
         "order_item_id": 4,
-        "qty": 19
+        "qty": 20
       }
     ],
     "extension_attributes": {
-      "source_code": "baltimore_wh"
+      "source_code": "ne_wh"
     }
   }
 }
@@ -174,37 +174,37 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
     "updated_at": "2018-08-02 21:14:43",
     "items": [
         {
-            "entity_id": 5,
-            "name": "Voyage Yoga Bag",
-            "parent_id": 13,
-            "price": 32,
-            "product_id": 8,
-            "sku": "24-WB01",
-            "order_item_id": 3,
-            "qty": 20
+          "entity_id": 5,
+          "name": "Voyage Yoga Bag",
+          "parent_id": 13,
+          "price": 32,
+          "product_id": 8,
+          "sku": "24-WB01",
+          "order_item_id": 3,
+          "qty": 35
         },
         {
-            "entity_id": 5,
-            "name": "Driven Backpack",
-            "parent_id": 13,
-            "price": 36,
-            "product_id": 12,
-            "sku": "24-WB03",
-            "order_item_id": 4,
-            "qty": 19
+          "entity_id": 5,
+          "name": "Driven Backpack",
+          "parent_id": 13,
+          "price": 36,
+          "product_id": 12,
+          "sku": "24-WB03",
+          "order_item_id": 4,
+          "qty": 20
         }
     ],
     "tracks": [],
     "comments": [],
     "extension_attributes": {
-        "source_code": "baltimore_wh"
+        "source_code": "ne_wh"
     }
 }
 ```
 
-### Ship from the Reno warehouse
+### Ship from the Brooklyn store
 
-Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehouse.
+Use the same endpoint to ship the remaining five items from the Brooklyn store.
 
 **Payload:**
 
@@ -213,19 +213,19 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
   "entity": {
     "customer_id": 3,
     "order_id": 3,
-    "total_qty": 31,
+    "total_qty": 5,
     "items": [
       {
-        "name": "Driven Backpack",
-        "price": 36,
-        "product_id": 12,
-        "sku": "24-WB03",
-        "order_item_id": 4,
-        "qty": 31
+        "name": "Voyage Yoga Bag",
+        "price": 32,
+        "product_id": 8,
+        "sku": "24-WB01",
+        "order_item_id": 3,
+        "qty": 5
       }
     ],
     "extension_attributes": {
-      "source_code": "reno_wh"
+      "source_code": "brooklyn"
     }
   }
 }
@@ -246,20 +246,20 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
     "updated_at": "2018-08-02 22:22:23",
     "items": [
         {
-            "entity_id": 10,
-            "name": "Driven Backpack",
-            "parent_id": 16,
-            "price": 36,
-            "product_id": 12,
-            "sku": "24-WB03",
-            "order_item_id": 4,
-            "qty": 31
+          "entity_id": 10,
+          "name": "Voyage Yoga Bag",
+          "parent_id": 16,
+          "price": 32,
+          "product_id": 12,
+          "sku": "24-WB01",
+          "order_item_id": 3,
+          "qty": 5
         }
     ],
     "tracks": [],
     "comments": [],
     "extension_attributes": {
-        "source_code": "reno_wh"
+        "source_code": "brooklyn"
     }
 }
 ```

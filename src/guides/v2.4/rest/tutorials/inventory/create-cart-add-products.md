@@ -39,18 +39,18 @@ None
 
 **Response:**
 
-The response is the `quoteId`: 3
+The response is the `quoteId`: 8
 
 ## Check for product availability
 
 In [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
-Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
+Product | Northeast Warehouse | Brooklyn Store  | Manhattan Store | Long Island Store
 --- | --- | --- | ---
-`24-WB01` | 35 | 10 | 25
-`24-WB03` | 19 | 0 | 42
+`24-WB01` | 35 | 10 | 10 | 10
+`24-WB03` | 50 | 0 | 0 | 0
 
-Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
+Later in this step, we'll order 40 `24-WB01` items and 20 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
 ### Check for product `24-WB01`
 
@@ -76,7 +76,7 @@ Not applicable
 
 **Response:**
 
-`70`
+`65`
 
 ### Check for product `24-WB03`
 
@@ -102,7 +102,7 @@ Not applicable
 
 **Response:**
 
-`61`
+`50`
 
 ## Add items to the cart
 
@@ -110,7 +110,7 @@ We have ensured that we have enough physical products in stock to fulfill the po
 
 ### Add the first simple product
 
-In this call, we'll add 20 `24-WB01` items. This portion of the order can be fulfilled from the Baltimore or Reno warehouse.
+In this call, we'll add 20 `24-WB03` items. This portion of the order can be fulfilled from the Northeast warehouse.
 
 **Endpoint:**
 
@@ -131,9 +131,9 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 ```json
 {
   "cartItem": {
-    "sku": "24-WB01",
+    "sku": "24-WB03",
     "qty": 20,
-    "quote_id": "3"
+    "quote_id": "8"
   }
 }
 ```
@@ -144,27 +144,28 @@ Note the `item_id` for use in subsequent steps.
 
 ```json
 {
-    "item_id": 5,
-    "sku": "24-WB01",
+    "item_id": 8,
+    "sku": "24-WB03",
     "qty": 20,
-    "name": "Voyage Yoga Bag",
+    "name": "Driven Backpack",
+    "price": 36,
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "8"
 }
 ```
 
 ### Add the second simple product
 
-Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources will be required to fulfill this potential order.
+Use the same endpoint to add 40 items of `24-WB01` to the cart. Multiple sources will be required to fulfill this potential order.
 
 **Payload:**
 
 ```json
 {
   "cartItem": {
-    "sku": "24-WB03",
-    "qty": 50,
-    "quote_id": "3"
+    "sku": "24-WB01",
+    "qty": 40,
+    "quote_id": "8"
   }
 }
 ```
@@ -174,13 +175,13 @@ Note the `item_id` for use in subsequent steps.
 
 ```json
 {
-    "item_id": 6,
-    "sku": "24-WB03",
-    "qty": 50,
-    "name": "Driven Backpack",
-    "price": 36,
+    "item_id": 9,
+    "sku": "24-WB01",
+    "qty": 40,
+    "name": "Voyage Yoga Bag",
+    "price": 32,
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "8"
 }
 ```
 
@@ -195,7 +196,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
   "cartItem": {
     "sku": "240-LV06",
     "qty": 1,
-    "quote_id": "3"
+    "quote_id": "8"
   }
 }
 ```
@@ -204,13 +205,13 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 ```json
 {
-    "item_id": 7,
+    "item_id": 10,
     "sku": "240-LV06",
     "qty": 1,
     "name": "Yoga Adventure",
     "price": 22,
     "product_type": "downloadable",
-    "quote_id": "3",
+    "quote_id": "8",
     "product_option": {
         "extension_attributes": {
             "downloadable_option": {
