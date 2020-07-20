@@ -4,30 +4,30 @@ title: Release Notes
 ee_only: True
 ---
 
-The release notes contain updates to the following Product Recommendations metapackages:
+The release notes contain updates to the following Product Recommendations modules:
 
--  Product Recommendations: `magento/product-recommendations`
--  Page Builder support in Product Recommendations (optional): `magento/module-page-builder-product-recommendations`
+-  Product Recommendations metapackage: `magento/product-recommendations`
+-  Page Builder support in Product Recommendations (optional) module: `magento/module-page-builder-product-recommendations`
 
 The release notes include:
 
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-## 3.0.3 of magento/product-recommendations for Magento Commerce 2.3.1
+## 3.0.3 of magento/product-recommendations for Magento Commerce 2.3.x
 
 -  {:.fix}Improved symbol implementation in storefront template
 
-## 1.0.4 of magento/module-page-builder-product-recommendations for Page Builder
+## 1.0.4 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.3.1 and later
 
 -  {:.new}Added Product Recommendation name when editing the Page Builder content type
 
-## 3.0.2 magento/product-recommendations for Magento Commerce 2.3.1
+## 3.0.2 magento/product-recommendations for Magento Commerce 2.3.x
 
 -  {:.new}Added a status column on the grid when selecting Recommendation units in Page Builder
 -  {:.fix}Fixed an issue with incorrect http/https protocols in product and image URLs
 
-## 3.0.1 of magento/product-recommendations for Magento Commerce 2.3.1
+## 3.0.1 of magento/product-recommendations for Magento Commerce 2.3.x
 
 This is a major version release. You must [edit your project's root composer.json file]({{ page.baseurl }}/recommendations/install-configure.html#update-your-product-recommendations-installation).
 
@@ -36,11 +36,11 @@ This is a major version release. You must [edit your project's root composer.jso
 -  {:.fix}Fixed an issue where checkout was inhibited for shoppers using uBlock Origin
 -  {:.fix}Fixed an issue sending extraneous add-to-cart events
 
-## 1.0.3 of magento/module-page-builder-product-recommendations for Page Builder
+## 1.0.3 of magento/module-page-builder-product-recommendations for Page Builder for Magento Commerce 2.3.1 and later
 
 -  {:.new}Page Builder support. With the Page Builder integration, you can accurately and granularly place Recommendation units in any arbitrary location on Page Builder-authored content. You also can style the headings and recommendation units themselves. [Page Builder support](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) further describes this feature.
 
-## 2.0.0 of magento/product-recommendations for Magento Commerce 2.3.1
+## 2.0.0 of magento/product-recommendations for Magento Commerce 2.3.x
 
 -  {:.new}General availability release!
 
