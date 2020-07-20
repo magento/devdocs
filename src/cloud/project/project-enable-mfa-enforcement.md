@@ -34,9 +34,6 @@ magento-cloud ssh-cert:load
 
 The `ssh-cert:load` command generates the SSH certificate and installs it in the SSH agent of the local user.
 
-{:.bs-callout-tip}
-You can streamline the authentication process by using an API token for authentication. With an API token, you can skip loading the SSH certificate. See [Connect with an API token](#connect-to-an-environment-using-ssh-with-api-token).
-
 ## Connect to an environment using SSH with 2FA
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, any user that connects to a Cloud environment using SSH must have 2FA enabled on their account. See [Enable 2FA][].
@@ -92,6 +89,47 @@ To connect using SSH with 2FA user account credentials:
    web@mymagento.0:~$
    ```
 
+## Clone code using SSH with 2FA
+
+When managing source code for {{site.data.var.ece}} projects, you use SSH to authenticate to the Git repository for the project.  If your project has  MFA enforcement enabled, you must generate an SSH certificate before you can perform command line operations using the Git repository.
+
+{:.procedure}
+To connect using SSH with 2FA user account credentials:
+
+1. Log in to your {{site.data.var.ece}} account and authenticate using 2FA.
+
+   {:.bs-callout-info}
+   If you do not have 2FA enabled on your account, you must enable it. See [Enable 2FA on {{ site.data.var.ece }} accounts][Enable 2FA].
+
+1. On your local workstation, use the CLI to generate the SSH certificate.
+
+   ```bash
+   magento-cloud ssh-cert:load
+   ```
+
+   ```terminal
+   Generating SSH certificate...
+     Expires at: 2020-07-13T15:28:13-04:00
+     Multi-factor authentication: verified
+     Mode: interactive
+   The certificate will be automatically refreshed when necessary.
+   Checking SSH configuration file: /Users/<user-name>/.ssh/config
+   Do you want to update the file automatically? [Y/n] Y
+   Configuration file updated successfully: /Users/<user-name>/.ssh/config
+   ```
+
+1. Clone the Git repository for your project environment:
+
+    ```bash
+    git clone --branch integration abcdef7uyxabce@git.us-3.magento.cloud:gbhzpx7xmpule.git myproject
+    ```
+
+    ```terminal
+    Cloning into 'myproject'...
+    Connection to git.us-3.magento.cloud port 22 [tcp/ssh] succeeded!
+    remote: counting objects: 22, done.
+    Receiving objects: 100% (22/22), 82.42 KiB | 16.48 MiB/s, done.
+    ```
 ### Troubleshooting
 
 If your request does not provide a valid certificate, a message similar to the following displays:
@@ -143,7 +181,7 @@ To authenticate and reload the SSH certificate:
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, automated processes that require SSH access to a Cloud environment must authenticate using an API token.
 
-The API token allows the SSH connection request to bypass the user authentication flow that requires a 2FA token and SSH certificate. You generate the token from a {{site.data.var.ece}} account with Admin or Contributor access on the project.
+Authenticating with an API token still requires a 2FA token and SSH certificate. Automated processes must also automate generating a 2FA token.
 
 **Prerequisites:**
 
