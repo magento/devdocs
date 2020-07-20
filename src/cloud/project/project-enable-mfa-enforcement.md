@@ -116,7 +116,7 @@ To connect using SSH with 2FA user account credentials:
    Configuration file updated successfully: /Users/<user-name>/.ssh/config
    ```
    
-1. Clone the Git repository of your project:
+1. Clone the Git repository for your project environment:
 
     ```bash
     git clone --branch integration abcdef7uyxabce@git.us-3.magento.cloud:gbhzpx7xmpule.git myproject
