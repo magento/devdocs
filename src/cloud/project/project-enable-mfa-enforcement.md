@@ -92,7 +92,7 @@ To connect using SSH with 2FA user account credentials:
    
 ## Clone code using SSH with 2FA
 
-Cloud projects authenticate to the Git repository over SSH.  Projects with MFA enabled require an SSH certificate to be generated to perform operations on the Git repository.
+When managing source code for {{site.data.var.ece}} projects, you use SSH to authenticate to the Git repository for the project.  If your project has  MFA enforcement enabled, you must generate an SSH certificate before you can perform command line operations using the Git repository.
  
 {:.procedure}
 To connect using SSH with 2FA user account credentials:
