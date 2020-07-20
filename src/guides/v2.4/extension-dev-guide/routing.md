@@ -296,6 +296,7 @@ class Index implements HttpGetActionInterface
 
     /**
      * @param PageFactory $pageFactory
+     * @param RequestInterface $request
      */
     public function __construct(PageFactory $pageFactory, RequestInterface $request)
     {
