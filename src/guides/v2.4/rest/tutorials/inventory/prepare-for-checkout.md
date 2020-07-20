@@ -47,15 +47,15 @@ The payload contains the shipping address.
       "region_code": "NY",
       "country_id": "US",
       "street": [
-        "123 Oak Ave"
+        "160 1st St."
         ],
-      "postcode": "10577",
-      "city": "Purchase",
+      "postcode": "11501",
+      "city": "Mineola",
       "firstname": "Jane",
       "lastname": "Doe",
       "customer_id": 5,
       "email": "jdoe@example.com",
-      "telephone": "(512) 555-1111",
+      "telephone": "(516) 555-1111",
       "same_as_billing": 1
   }
 }
@@ -63,7 +63,7 @@ The payload contains the shipping address.
 
 **Response:**
 
-The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
+The cost for the `flatrate` shipping method is $300 (60 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
 
 ```json
 [
@@ -72,12 +72,12 @@ The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The do
         "method_code": "flatrate",
         "carrier_title": "Flat Rate",
         "method_title": "Fixed",
-        "amount": 350,
-        "base_amount": 350,
+        "amount": 300,
+        "base_amount": 300,
         "available": true,
         "error_message": "",
-        "price_excl_tax": 350,
-        "price_incl_tax": 350
+        "price_excl_tax": 300,
+        "price_incl_tax": 300
     }
 ]
 ```
@@ -113,14 +113,14 @@ Magento returns a list of payment options and calculates the order totals.
         "region_code": "NY",
         "country_id": "US",
         "street": [
-            "123 Oak Ave"
+            "160 1st St."
         ],
-        "postcode": "10577",
-        "city": "Purchase",
+        "postcode": "11501",
+        "city": "Mineola",
         "firstname": "Jane",
         "lastname": "Doe",
         "email": "jdoe@example.com",
-        "telephone": "512-555-1111"
+        "telephone": "516-555-1111"
     },
     "billing_address": {
         "region": "New York",
@@ -128,14 +128,14 @@ Magento returns a list of payment options and calculates the order totals.
         "region_code": "NY",
         "country_id": "US",
         "street": [
-            "123 Oak Ave"
+            "160 1st St."
         ],
-        "postcode": "10577",
-        "city": "Purchase",
+        "postcode": "11501",
+        "city": "Mineola",
         "firstname": "Jane",
         "lastname": "Doe",
         "email": "jdoe@example.com",
-        "telephone": "512-555-1111"
+        "telephone": "516-555-1111"
     },
     "shipping_carrier_code": "flatrate",
     "shipping_method_code": "flatrate"
@@ -145,7 +145,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Response:**
 
-The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
+The subtotal of the order is $2022, and shipping charges are $300. The grand total is $2322.
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
@@ -162,16 +162,16 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         }
     ],
     "totals": {
-        "grand_total": 2812,
-        "base_grand_total": 2812,
-        "subtotal": 2462,
-        "base_subtotal": 2462,
+        "grand_total": 2322,
+        "base_grand_total": 2322,
+        "subtotal": 2022,
+        "base_subtotal": 2022,
         "discount_amount": 0,
         "base_discount_amount": 0,
-        "subtotal_with_discount": 2462,
-        "base_subtotal_with_discount": 2462,
-        "shipping_amount": 350,
-        "base_shipping_amount": 350,
+        "subtotal_with_discount": 2022,
+        "base_subtotal_with_discount": 2022,
+        "shipping_amount": 300,
+        "base_shipping_amount": 300,
         "shipping_discount_amount": 0,
         "base_shipping_discount_amount": 0,
         "tax_amount": 0,
@@ -179,43 +179,20 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "weee_tax_applied_amount": null,
         "shipping_tax_amount": 0,
         "base_shipping_tax_amount": 0,
-        "subtotal_incl_tax": 2462,
-        "shipping_incl_tax": 350,
-        "base_shipping_incl_tax": 350,
+        "subtotal_incl_tax": 2022,
+        "shipping_incl_tax": 300,
+        "base_shipping_incl_tax": 300,
         "base_currency_code": "USD",
         "quote_currency_code": "USD",
-        "items_qty": 71,
+        "items_qty": 61,
         "items": [
             {
-                "item_id": 5,
-                "price": 32,
-                "base_price": 32,
-                "qty": 20,
-                "row_total": 640,
-                "base_row_total": 640,
-                "row_total_with_discount": 0,
-                "tax_amount": 0,
-                "base_tax_amount": 0,
-                "tax_percent": 0,
-                "discount_amount": 0,
-                "base_discount_amount": 0,
-                "discount_percent": 0,
-                "price_incl_tax": 32,
-                "base_price_incl_tax": 32,
-                "row_total_incl_tax": 640,
-                "base_row_total_incl_tax": 640,
-                "options": "[]",
-                "weee_tax_applied_amount": null,
-                "weee_tax_applied": null,
-                "name": "Voyage Yoga Bag"
-            },
-            {
-                "item_id": 6,
+                "item_id": 8,
                 "price": 36,
                 "base_price": 36,
-                "qty": 50,
-                "row_total": 1800,
-                "base_row_total": 1800,
+                "qty": 20,
+                "row_total": 720,
+                "base_row_total": 720,
                 "row_total_with_discount": 0,
                 "tax_amount": 0,
                 "base_tax_amount": 0,
@@ -225,15 +202,38 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "discount_percent": 0,
                 "price_incl_tax": 36,
                 "base_price_incl_tax": 36,
-                "row_total_incl_tax": 1800,
-                "base_row_total_incl_tax": 1800,
+                "row_total_incl_tax": 720,
+                "base_row_total_incl_tax": 720,
                 "options": "[]",
                 "weee_tax_applied_amount": null,
                 "weee_tax_applied": null,
                 "name": "Driven Backpack"
             },
             {
-                "item_id": 7,
+                "item_id": 9,
+                "price": 32,
+                "base_price": 32,
+                "qty": 40,
+                "row_total": 1280,
+                "base_row_total": 1280,
+                "row_total_with_discount": 0,
+                "tax_amount": 0,
+                "base_tax_amount": 0,
+                "tax_percent": 0,
+                "discount_amount": 0,
+                "base_discount_amount": 0,
+                "discount_percent": 0,
+                "price_incl_tax": 32,
+                "base_price_incl_tax": 32,
+                "row_total_incl_tax": 1280,
+                "base_row_total_incl_tax": 1280,
+                "options": "[]",
+                "weee_tax_applied_amount": null,
+                "weee_tax_applied": null,
+                "name": "Voyage Yoga Bag"
+            },
+            {
+                "item_id": 10,
                 "price": 22,
                 "base_price": 22,
                 "qty": 1,
@@ -260,26 +260,12 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
             {
                 "code": "subtotal",
                 "title": "Subtotal",
-                "value": 2462
-            },
-            {
-                "code": "giftwrapping",
-                "title": "Gift Wrapping",
-                "value": null,
-                "extension_attributes": {
-                    "gw_item_ids": [],
-                    "gw_price": "0.0000",
-                    "gw_base_price": "0.0000",
-                    "gw_items_price": "0.0000",
-                    "gw_items_base_price": "0.0000",
-                    "gw_card_price": "0.0000",
-                    "gw_card_base_price": "0.0000"
-                }
+                "value": 2022
             },
             {
                 "code": "shipping",
                 "title": "Shipping & Handling (Flat Rate - Fixed)",
-                "value": 350
+                "value": 300
             },
             {
                 "code": "tax",
@@ -292,25 +278,10 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
             {
                 "code": "grand_total",
                 "title": "Grand Total",
-                "value": 2812,
+                "value": 2322,
                 "area": "footer"
-            },
-            {
-                "code": "customerbalance",
-                "title": "Store Credit",
-                "value": 0
-            },
-            {
-                "code": "reward",
-                "title": "0 Reward points",
-                "value": 0
             }
-        ],
-        "extension_attributes": {
-            "reward_points_balance": 0,
-            "reward_currency_amount": 0,
-            "base_reward_currency_amount": 0
-        }
+        ]
     }
 }
 ```
