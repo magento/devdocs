@@ -72,7 +72,7 @@ Magento returns an empty array.
 
 ## Add more sources
 
-Use the same endpoint to create a source for the Leipzig warehouse. This endpoint also designates the Brooklyn, Huntington, Manhattan, Berlin, and Frankfurt shops as in-store pick up locations. We'll also create the HQ source for virtual and downloadable products.
+Use the same endpoint to create a source for the Leipzig warehouse. We will designate the Brooklyn, Huntington, Manhattan, Berlin, and Frankfurt stores as in-store pick up locations. We will also create the HQ source for virtual and downloadable products.
 
 ### Leipzig warehouse
 
@@ -98,7 +98,7 @@ Use the following payload to create the Leipzig warehouse:
 
 ### Brooklyn store
 
-Use the following payload to create the Brooklyn store:
+Use the following payload to create the Brooklyn store.
 
 ```json
 {
@@ -131,7 +131,7 @@ Use the following payload to create the Long Island store:
 {
    "source" : {
       "name" : "Long Island Store",
-      "source_code" : "huntington1",
+      "source_code" : "huntington",
       "postcode" : "11743",
       "enabled" : true,
       "contact_name" : "Leslie Arzy",
@@ -159,7 +159,7 @@ Use the following payload to create the Manhattan store:
 {
    "source" : {
       "name" : "Manhattan Store",
-      "source_code" : "manhattan1",
+      "source_code" : "manhattan",
       "postcode" : "10011",
       "enabled" : true,
       "contact_name" : "Kiara Smith",
@@ -172,7 +172,7 @@ Use the following payload to create the Manhattan store:
       "phone": "555 838-4500",
       "extension_attributes": {
         "is_pickup_location_active": true,
-        "frontend_name": "Manhatton (Greenwich Village) Store",
+        "frontend_name": "Manhattan (Greenwich Village) Store",
         "frontend_description": "Greenwich Village, Manhattan"
     }
   }
@@ -189,13 +189,19 @@ Use the following payload to create the Berlin store:
       "source_code" : "berlin",
       "postcode" : "10115",
       "enabled" : true,
-      "contact_name" : "Angela Schmidt",
+      "contact_name" : "Tereza Schmidt",
       "country_id" : "DE",
       "street": "Am Nordbahnhof 5",
       "city" : "Berlin",
       "region_id": 82,
       "latitude": 52.52343,
-      "longitude": 13.41144
+      "longitude": 13.41144,
+      "phone": "49-030-555-55555",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Berlin Store",
+        "frontend_description": "Central Station, Berlin"
+      }
    }
 }
 ```
@@ -217,7 +223,13 @@ Use the following payload to create the Frankfurt store:
       "city" : "Frankfurt",
       "region_id": 86,
       "latitude": 50.110645,
-      "longitude": 8.682092
+      "longitude": 8.682092,
+      "phone": "49-069-555-66666",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Frankfurt Store",
+        "frontend_description": "Central Station, Frankfurt"
+      }
    }
 }
 ```

@@ -58,12 +58,12 @@ In this example, we configure the Northeast warehouse to be the primary source f
         "priority" : 2
       },
       {
-        "source_code" : "manhattan1",
+        "source_code" : "manhattan",
         "stock_id" : 2,
         "priority" : 3
       },
       {
-        "source_code" : "huntington1",
+        "source_code" : "huntington",
         "stock_id" : 2,
         "priority": 4
       },
@@ -94,7 +94,6 @@ In this example, we configure the Northeast warehouse to be the primary source f
       }
    ]
 }
-
 ```
 
 **Response:**

@@ -84,7 +84,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 **Headers:**
 
 `Content-Type`: `application/json`
-`Authorization`: `Bearer <admin_token>``
+`Authorization`: `Bearer <admin_token>`
 
 **Payload:**
 
@@ -104,13 +104,13 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
   },
   {
     "sku": "24-WB01",
-    "source_code": "huntington1",
+    "source_code": "huntington",
     "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "manhattan1",
+    "source_code": "manhattan",
     "quantity": 10,
     "status": 1
   },
@@ -129,7 +129,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
   {
     "sku": "24-WB01",
     "source_code": "frankfurt",
-    "quantity": 1,
+    "quantity": 10,
     "status": 1
   },
   {
@@ -146,13 +146,13 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
   },
   {
     "sku": "24-WB03",
-    "source_code": "huntington1",
+    "source_code": "huntington",
     "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "manhattan1",
+    "source_code": "manhattan",
     "quantity": 0,
     "status": 1
   },
@@ -181,7 +181,6 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
     "status": 1
   }]
 }
-
 ```
 
 **Response:**
@@ -192,4 +191,4 @@ Magento returns an empty array.
 
 ## Verify this step
 
-In Admin, click **Catalog** > **Products**.  Products `24-WB01`, `24-WB03`, and `240-LV06` display quantities per assigned source in the **Quantity Per Source** column and an aggregated total of products per stock in the **Salable Quantity** column.
+In Admin, click **Catalog** > **Products**.  Products `24-WB01`, `24-WB03`, and `240-LV06` display quantities per assigned source in the **Quantity per Source** column and an aggregated total of products per stock in the **Salable Quantity** column.

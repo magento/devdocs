@@ -123,7 +123,7 @@ We can use the same customer definition presented in [Step 3. Create a customer]
             "street" : [
                "160 1st St."
             ],
-            "telephone" : "512-555-1111"
+            "telephone" : "516-555-1111"
          }
       ]
    },
@@ -133,16 +133,16 @@ We can use the same customer definition presented in [Step 3. Create a customer]
 
 **Response:**
 
-The customer `id` is `3`.
+The customer `id` is `4`.
 
 ```json
 {
-    "id": 5,
+    "id": 4,
     "group_id": 1,
-    "default_billing": "3",
-    "default_shipping": "3",
-    "created_at": "2020-07-13 17:43:49",
-    "updated_at": "2020-07-13 17:43:49",
+    "default_billing": "4",
+    "default_shipping": "4",
+    "created_at": "2020-07-18 21:30:19",
+    "updated_at": "2020-07-18 21:30:20",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -151,8 +151,8 @@ The customer `id` is `3`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 3,
-            "customer_id": 5,
+            "id": 4,
+            "customer_id": 4,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
@@ -163,7 +163,7 @@ The customer `id` is `3`.
             "street": [
                 "160 1st St."
             ],
-            "telephone": "512-555-1111",
+            "telephone": "516-555-1111",
             "postcode": "11501",
             "city": "Mineola",
             "firstname": "Jane",
@@ -174,11 +174,6 @@ The customer `id` is `3`.
     ],
     "disable_auto_group_change": 0,
     "extension_attributes": {
-        "company_attributes": {
-            "customer_id": 5,
-            "company_id": 0,
-            "status": 1
-        },
         "is_subscribed": false
     }
 }

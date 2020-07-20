@@ -61,7 +61,7 @@ Not applicable
 
 The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array. In this example, we'll select the `priority` SSA. [Manage source selection algorithms]({{ page.baseurl }}/rest/modules/inventory/manage-source-selection.html) includes an example using the `distance` priority.
 
-This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `24-WB01` and 50 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
+This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (40 items of product `24-WB01` and 20 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
 **Endpoint:**
 
@@ -85,11 +85,11 @@ This tutorial does not consider complications such selling out of products or ba
         "stockId": 2,
         "items": [{
             "sku": "24-WB01",
-            "qty": 20
+            "qty": 40
         },
         {
             "sku": "24-WB03",
-            "qty": 50
+            "qty": 20
         }]
     },
     "algorithmCode": "priority"
@@ -102,42 +102,60 @@ The SSA recommends shipping from the following sources:
 
 Product | Source | Quantity
 --- | --- | ---
-`24-WB01` | Baltimore | 20
-`24-WB03` | Baltimore | 19
-`24-WB03` | Reno | 31
+`24-WB01` | Northeast warehouse | 35
+`24-WB01` | Brooklyn store | 5
+`24-WB03` | Northeast warehouse | 20
 
 ```json
 {
     "source_selection_items": [
         {
-            "source_code": "baltimore_wh",
+            "source_code": "ne_wh",
             "sku": "24-WB01",
-            "qty_to_deduct": 20,
+            "qty_to_deduct": 35,
             "qty_available": 35
         },
         {
-            "source_code": "austin_wh",
+            "source_code": "ne_wh",
+            "sku": "24-WB03",
+            "qty_to_deduct": 20,
+            "qty_available": 50
+        },
+        {
+            "source_code": "brooklyn",
+            "sku": "24-WB01",
+            "qty_to_deduct": 5,
+            "qty_available": 10
+        },
+        {
+            "source_code": "brooklyn",
+            "sku": "24-WB03",
+            "qty_to_deduct": 0,
+            "qty_available": 0
+        },
+        {
+            "source_code": "manhattan",
             "sku": "24-WB01",
             "qty_to_deduct": 0,
             "qty_available": 10
         },
         {
-            "source_code": "reno_wh",
+            "source_code": "manhattan",
+            "sku": "24-WB03",
+            "qty_to_deduct": 0,
+            "qty_available": 0
+        },
+        {
+            "source_code": "huntington",
             "sku": "24-WB01",
             "qty_to_deduct": 0,
-            "qty_available": 25
+            "qty_available": 10
         },
         {
-            "source_code": "baltimore_wh",
+            "source_code": "huntington",
             "sku": "24-WB03",
-            "qty_to_deduct": 19,
-            "qty_available": 19
-        },
-        {
-            "source_code": "reno_wh",
-            "sku": "24-WB03",
-            "qty_to_deduct": 31,
-            "qty_available": 42
+            "qty_to_deduct": 0,
+            "qty_available": 0
         }
     ],
     "shippable": true
