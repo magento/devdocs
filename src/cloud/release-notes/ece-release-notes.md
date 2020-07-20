@@ -24,8 +24,6 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html).<!-- MCLOUD-5637, 5531-->
 
-   -  {:.new}**Improved Javascript bundling capabilities**–Now you can use the [Magento Baler module](https://github.com/magento/baler) to build optimized JavaScript and HTML content during static content deployment. See [Optimize JavaScript and HTML content]({{site.baseurl}}/cloud/deploy/static-content-deployment.html#optimize-javascript-and-html-content).<!--MCLOUD-3456-->
-
    -  {:.new}Improved the process for database dumps (`vendor/bin/ece-tools db-dump`) and updated log messages to clarify that the database dump operation switches the application to maintenance mode, stops consumer queue processes, and disables cron jobs before the dump begins.<!--MCLOUD-5324, MCLOUD-2062-->
 
    -  {:.fix}Fixed an issue to ensure that the project URL is updated correctly when deploying to Staging and Production environments. Now, `{{site.data.var.ct}}` uses the URL for the route with the `primary:true` attribute set in the project route configuration. See [Deploy variables]({{site.baseurl}}/cloud/env/variables-deploy.html#update_urls).<!--MCLOUD-5883-->
