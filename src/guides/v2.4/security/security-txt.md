@@ -13,7 +13,7 @@ Magento merchants can enter their contact information for [security issue report
 -  Contains a router to match application action class for requests to the `well-known/security.txt` and `.well-known/security.txt.sig` files.
 -  Serves the content of the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
 
-A valid `security.txt` file might look like the following example:
+A valid `security.txt` file might look like the following:
 
  ```bash
 Contact: mailto:security@example.com
