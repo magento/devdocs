@@ -100,7 +100,7 @@ To connect using SSH with 2FA user account credentials:
 1. Log in to your {{site.data.var.ece}} account and authenticate using 2FA.
 
    {:.bs-callout-info}
-   If you do not have 2FA enabled on your account, you must enable it. See [Enable 2FA on {{ site.data.var.ece }} accounts]({{ site.baseurl }}/cloud/project/user-admin.html#enable-2fa-for-cloud-accounts).
+   If you do not have 2FA enabled on your account, you must enable it. See [Enable 2FA on {{ site.data.var.ece }} accounts][Enable 2FA].
    
 
 1. On your local workstation, use the CLI to generate the SSH certificate.
