@@ -299,6 +299,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript minification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
 
+* The admin dashboard order chart is now rendered using graph.js, removing the image-charts.com implementation. _Fix submitted by Bartłomiej Szubert in pull request [26923](https://github.com/magento/magento2/pull/26923)_.
+
 <!--- ENGCOM-6433-->
 
 *  Administrators can now log into the Admin as expected after an admin account with limited privileges has been created. Previously,  the Admin was not accessible. Instead, users were redirected to the storefront with a 404 error. _Fix submitted by Eden Duong in pull request [25909](https://github.com/magento/magento2/pull/25909)_. [GitHub-25881](https://github.com/magento/magento2/issues/25881)
