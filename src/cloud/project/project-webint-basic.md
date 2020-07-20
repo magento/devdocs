@@ -13,7 +13,7 @@ functional_areas:
 The {{site.data.var.ece}} [Project Web Interface](https://account.magento.com/customer/account/login/) enables you to do the following for all Starter and Pro environments:
 
 -  [Access projects](#project-access)
--  [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html)
+-  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 
 As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
