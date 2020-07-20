@@ -11,7 +11,7 @@ This page highlights backward incompatible changes between releases that have a 
 
 MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
 
-You must [install and configure]{{ page.baseurl }}/install-gde/prereq/elasticsearch.html) Elasticsearch 7.6.x before upgrading to Magento 2.4.0. New installations require a connection to Elasticsearch to complete.
+You must [install and configure]({{ page.baseurl }}/install-gde/prereq/elasticsearch.html) Elasticsearch 7.6.x before upgrading to Magento 2.4.0. New installations require a connection to Elasticsearch to complete.
 
 {:.bs-callout-warning}
 Magento does not support Elasticsearch 2.x, 5.x, and 6.x. If you attempt to upgrade Magento before installing and configuring a supported search engine, Magento could go into an inconsistent state and the Admin will become inaccessible.
