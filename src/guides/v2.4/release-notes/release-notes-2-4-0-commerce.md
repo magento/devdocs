@@ -299,7 +299,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Email templates (**Admin** > **Marketing** > **Communications** > **Email Templates**) can now be previewed from the Admin when JavaScript minification is enabled. Previously, when you tried to preview an email template, the Email Preview popup window was empty. [GitHub-25068](https://github.com/magento/magento2/issues/25068)
 
-* The admin dashboard order chart is now rendered using graph.js, removing the image-charts.com implementation. _Fix submitted by Bartłomiej Szubert in pull request [26923](https://github.com/magento/magento2/pull/26923)_.
+* The admin dashboard order and revenue chart is now rendered using graph.js, removing the image-charts.com implementation. _Fix submitted by Bartłomiej Szubert in pull request [26923](https://github.com/magento/magento2/pull/26923)_.
 
 <!--- ENGCOM-6433-->
 
