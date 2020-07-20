@@ -88,12 +88,11 @@ To connect using SSH with 2FA user account credentials:
 
    web@mymagento.0:~$
    ```
-   
-   
+
 ## Clone code using SSH with 2FA
 
 When managing source code for {{site.data.var.ece}} projects, you use SSH to authenticate to the Git repository for the project.  If your project has  MFA enforcement enabled, you must generate an SSH certificate before you can perform command line operations using the Git repository.
- 
+
 {:.procedure}
 To connect using SSH with 2FA user account credentials:
 
@@ -101,7 +100,6 @@ To connect using SSH with 2FA user account credentials:
 
    {:.bs-callout-info}
    If you do not have 2FA enabled on your account, you must enable it. See [Enable 2FA on {{ site.data.var.ece }} accounts][Enable 2FA].
-   
 
 1. On your local workstation, use the CLI to generate the SSH certificate.
 
@@ -119,7 +117,7 @@ To connect using SSH with 2FA user account credentials:
    Do you want to update the file automatically? [Y/n] Y
    Configuration file updated successfully: /Users/<user-name>/.ssh/config
    ```
-   
+
 1. Clone the Git repository for your project environment:
 
     ```bash
