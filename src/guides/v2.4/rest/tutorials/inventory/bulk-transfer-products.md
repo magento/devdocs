@@ -13,11 +13,11 @@ functional_areas:
   - Integration
 ---
 
-The Driven Backpacks (`24-WB03`) have sold well in the United States, but not in Europe. The Baltimore and Austin warehouses are out of stock. In this step, we'll bulk transfer all of Berlin's stock for this product to Baltimore, and all of Frankfurt's stock to Austin. As a result, the product cannot be shipped from either European source.
+The Voyage Yoga Bags (`24-WB01`) have sold well in the United States, but not in Europe. The Northeast warehouse is out of stock, and the Brooklyn store is running low. In this step, we'll bulk transfer all of the stock from the Leipzig warehouse for this product to the Northeast warehouse, and all of the stock from the Frankfurt store to Brooklyn. As a result, the product cannot be shipped from either of these European sources.
 
 In this scenario, there are no pending orders that contain the product, nor is the product on back-order. In production, make sure that you fulfill any pending orders before you bulk transfer a product. You might want to remove the product from the European website before performing the bulk transfer.
 
-## Bulk transfer the product from Berlin to Baltimore
+## Bulk transfer the product from Leipzig to Northeast
 
 The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to specify an array of SKUs to bulk transfer from one source to another, but this example includes only one SKU. If you set the `unassignFromOrigin` attribute to `true`, the origin source is no longer associated with the specified products. If the attribute is `false`, Magento designates the products as being out of stock at the origin source with a quantity of 0.
 
@@ -40,10 +40,10 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 ```json
 {
   "skus": [
-    "24-WB03"
+    "24-WB01"
   ],
-  "originSource": "berlin_wh",
-  "destinationSource": "baltimore_wh",
+  "originSource": "de_wh",
+  "destinationSource": "ne_wh",
   "unassignFromOrigin": true
 }
 ```
@@ -52,19 +52,19 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 
 `true`
 
-## Bulk transfer the product from Frankfurt to Austin
+## Bulk transfer the product from Frankfurt to Brooklyn
 
-Use the same endpoint to bulk transfer the product to Austin.
+Use the same endpoint to bulk transfer the product to Brooklyn.
 
 **Payload:**
 
 ```json
 {
   "skus": [
-    "24-WB03"
+    "24-WB01"
   ],
-  "originSource": "frankfurt_wh",
-  "destinationSource": "austin_wh",
+  "originSource": "frankfurt",
+  "destinationSource": "brooklyn",
   "unassignFromOrigin": true
 }
 ```
