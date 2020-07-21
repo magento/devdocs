@@ -131,86 +131,6 @@ To connect using SSH with 2FA user account credentials:
     Receiving objects: 100% (22/22), 82.42 KiB | 16.48 MiB/s, done.
     ```
 
-## Troubleshooting
-
-### Your request does not provide a valid certificate
-
-If your request does not provide a valid certificate, a message similar to the following displays:
-
-```terminal
-Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
-authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
-(reason: access requires MFA)
-```
-
-Try the following troubleshooting procedures to resolve the connection issue:
-
--  Verify the account TFA configuration
--  Authenticate again, and then reload the certificate
-
-{:.procedure}
-To verify TFA configuration and authentication:
-
-1. On your [Cloud account][Cloud account page], click **Account settings** > **Security**.
-
-   If TFA is enabled, the Security section provides options to manage the TFA configuration:
-
-   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
-
-1. If TFA is not set up, click **Set up application** and follow the instructions to enable it. See [Enable 2FA][].
-
-1. If TFA is configured, try authenticating again.
-
-{:.procedure}
-To authenticate and reload the SSH certificate:
-
-1. Use the Magento Cloud CLI to authenticate again:
-
-   ```bash
-   magento-cloud logout
-   ```
-
-   ```bash
-   magento-cloud login
-   ```
-
-1. Reload the SSH certificate:
-
-   ```bash
-   magento-cloud ssh-cert:load
-   ```
-
-### Unable to authenticate to projects that do not have MFA enabled
-
-If you authenticate to a project with MFA enabled, you may receive the following error on other projects:
-
-   ```bash
-   ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
-   abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
-   ```
-
-During the SSH certificate generation, the Magento Cloud CLI adds an additional ssh certificate to your local environment. If your previous key was not added to the SSH configuration, it will no longer be used as a default.
-
-{:.procedure}
-To add your SSH key to your local configuration:
-
-1. Create the `config` file if it does not exists.
-
-    ```bash
-    touch ~/.ssh/config
-    ```
-
-1. Add an `IdentityFile` configuration.
-
-    ```yaml
-   Host *
-     IdentityFile /Users/<user-name>/.ssh/id_rsa
-    ```
-
-   {:.bs-callout-info}
-   You can specify multiple SSH keys by adding multiple IdentityFile entries to your configuration.
-
-1. Close your terminal session. The configuration will be used for all sessions going forward.
 
 ## Automatically generate certificate on login
 
@@ -330,6 +250,56 @@ If an API token is stored, the Magento Cloud CLI will automatically authenticate
    magento-cloud ssh-cert:load
    ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud "tail -n 10 ~/var/log/cloud.log"
    ```
+   
+## Troubleshooting
+
+### Your request does not provide a valid certificate
+
+If your request does not provide a valid certificate, a message similar to the following displays:
+
+```terminal
+Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
+authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
+(reason: access requires MFA)
+```
+
+Try the following troubleshooting procedures to resolve the connection issue:
+
+-  Verify the account TFA configuration
+-  Authenticate again, and then reload the certificate
+
+{:.procedure}
+To verify TFA configuration and authentication:
+
+1. On your [Cloud account][Cloud account page], click **Account settings** > **Security**.
+
+   If TFA is enabled, the Security section provides options to manage the TFA configuration:
+
+   ![Cloud manage TFA config]({{ site.baseurl }}/common/images/cloud/cloud-account-settings-manage-2fa-config.png){:width="550px"}
+
+1. If TFA is not set up, click **Set up application** and follow the instructions to enable it. See [Enable 2FA][].
+
+1. If TFA is configured, try authenticating again.
+
+{:.procedure}
+To authenticate and reload the SSH certificate:
+
+1. Use the Magento Cloud CLI to authenticate again:
+
+   ```bash
+   magento-cloud logout
+   ```
+
+   ```bash
+   magento-cloud login
+   ```
+
+1. Reload the SSH certificate:
+
+   ```bash
+   magento-cloud ssh-cert:load
+   ```
+
 
 <!--Link references-->
 [add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
