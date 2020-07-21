@@ -36,23 +36,22 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ## Database
 
-MySQL 5.6, 5.7
+*  MySQL 5.7 for on-premise installations
+*  MariaDB 10.2 for {{site.data.var.ece}} projects
 
-Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
+Magento is also compatible with, but has not been tested and is not recommended, with MySQL 5.6, MariaDB 10.1, and Percona 5.7.
 
 {:.bs-callout-info}
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
 
 ## PHP
 
+*  PHP ~7.3.0
+
 {:.bs-callout-warning}
 PHP 7.1 has reached [End of Life](https://www.php.net/supported-versions.php). To maintain PCI compliance, Magento should not be run on unsupported software.
 Installing from GitHub will no longer work with Magento 2.3.4/PHP 7.1.
 The only way to install 2.3.4 with PHP 7.1.x is with Composer.
-Magento recommends using PHP 7.3
-
-<!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
-{% include install/php-versions-template.md %}
 
 ### Required PHP extensions
 
@@ -107,7 +106,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ## Technologies Magento can use
 
-*  [Redis][] versions 3.2, 4.0, 5.0 (compatible with 2.4+) for page caching and session storage. Version 5.0 is highly recommended.
+*  [Redis][] version 5.0 is recommended and used in testing for page caching and session storage.
 *  [Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) version 6.x (tested with 6.3.1)
 *  [Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
