@@ -3270,12 +3270,6 @@ entries:
   type: Major update
   date: January 28, 2019
   link: https://github.com/magento/devdocs/pull/3630
-- description: "Corrected the route of the 
-    `POST   /V1/inventory/low-quantity-notifications-delete` endpoint."
-  versions: 2.3.x
-  type: Technical changes
-  date: January 28, 2019
-  link: https://github.com/magento/devdocs/pull/3627
 - description: Updated Magento Commerce and Magento Commerce Cloud release information
     to remove obsolete topics and add links to current Magento Commerce Cloud release
     information in Release Notes for ece-tools.
@@ -4031,6 +4025,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Major update
   date: Jul 12 2018
+
 - description: Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security)
     to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).
   versions: 2.2.x
@@ -5069,7 +5064,7 @@ entries:
   date: Aug 22 2017
 - description: "[Frontend Product Repository](https://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)<br/>[Render
     prices on frontend with Ui component](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Added
-    backward incompatible changes](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/index.html#recently-viewed-and-recently-compared-widgets)
+    backward incompatible changes](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/index.html#recently-viewed-and-recently-compared-widgets)<br/>"
   versions: 2.2.x
   type: New and Updated
   date: Aug 21 2017
