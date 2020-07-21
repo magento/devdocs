@@ -137,7 +137,7 @@ To connect using SSH with 2FA user account credentials:
 Configurations can be added to your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
 
 {:.procedure}
-To add SSH certificate auto generation to your configuration:
+To add SSH certificate auto generation to your Magento Cloud CLI configuration:
 
 1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
 
@@ -252,6 +252,8 @@ If an API token is stored, the Magento Cloud CLI will automatically authenticate
    ```
    
 ## Troubleshooting
+
+Use the following information to resolve SSH connection requests failures due to authentication errors like `access requires MFA` or `permission denied`.
 
 ### Your request does not provide a valid certificate
 
