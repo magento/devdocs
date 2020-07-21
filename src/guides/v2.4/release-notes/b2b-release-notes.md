@@ -10,7 +10,7 @@ These release notes can include:
 -  {:.fix}Fixes and improvements
 
 ## Magento B2B - Version 2.4.0
-  
+
 -  {:.new} Purchase Orders have been enhanced and rewritten. The are now included my default in Magento Commerce.
 -  {:.new} Purchase Order Approval Rules have been implemented. This allows users to control the Purchase Order workflow by creating purchasing rules for orders.
 -  {:.new} Login as Customer is now included by default in Magento Commerce. This allows site employees to assist customers by logging in as the customer to see what they see.
