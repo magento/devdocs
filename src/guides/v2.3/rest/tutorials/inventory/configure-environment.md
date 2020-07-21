@@ -103,9 +103,9 @@ For this tutorial, we'll assume that payment and shipping methods are configured
 
 {% include webapi/tutorials/set-payment-methods.md %}
 
-### Configure supported shipping methods (optional) {#ship-method}
+### Configure supported delivery methods (optional) {#ship-method}
 
-{% include webapi/tutorials/configure-shipping-methods.md %}
+{% include webapi/tutorials/configure-shipping-methods-24.md %}
 
 ## Reindex and flush the cache
 

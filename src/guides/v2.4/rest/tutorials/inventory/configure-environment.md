@@ -91,21 +91,21 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 To make it easier to locate products and log in as a customer later in this tutorial, configure Magento to add the store code to the URL.
 
-1. Click **Stores** > Setting* > **Configuration** > **Web** and expand the **Url Options** section.
+1. Click **Stores** > Settings > **Configuration** > **General** > **Web** and expand the **Url Options** section.
 1. Change the value of **Add Store Code to Urls** to **Yes**.
 1. Click **Save Config**.
 
-## Configure payment and shipping methods
+## Configure payment and delivery methods
 
-For this tutorial, we'll assume that payment and shipping methods are configured globally. You can also make configuration changes at the website or store view level.
+For this tutorial, we'll assume that payment and delivery methods are configured globally. You can also make configuration changes at the website or store view level.
 
 ### Set the payment method {#set-payment}
 
 {% include webapi/tutorials/set-payment-methods.md %}
 
-### Configure supported shipping methods (optional) {#ship-method}
+### Configure supported delivery methods {#ship-method}
 
-{% include webapi/tutorials/configure-shipping-methods.md %}
+{% include webapi/tutorials/configure-shipping-methods-24.md %}
 
 ## Reindex and flush the cache
 

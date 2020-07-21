@@ -39,7 +39,7 @@ The following table provides the dates for each scheduled release in 2020 and 20
 | Quarter             | Versions                   | General Availability | Pre-release        | Beta               |
 |---------------------|----------------------------|----------------------|--------------------|--------------------|
 | 2020 Q3             | 2.4.0<br>2.3.5-p2          | July 28, 2020        | None               | June 8, 2020       |
-| 2020 Q4             | 2.4.1<br>2.3.6             | October 15, 2020     | October 15, 2021   | September 10, 2020 |
+| 2020 Q4             | 2.4.1<br>2.4.0-p1<br>2.3.6 | October 15, 2020     | October 1, 2020    | September 10, 2020 |
 | 2021 Q1             | 2.4.2<br>2.4.1-p1<br>2.3.7 | February 9, 2021     | January 26, 2021   | January 5, 2021    |
 | 2021 Q2             | 2.4.3<br>2.4.2-p1<br>2.3.8 | May 11, 2021         | April 27, 2021     | April 6, 2021      |
 | 2021 Q3             | 2.4.4<br>2.4.3-p1<br>2.3.9 | August 10, 2021      | July 27, 2021      | July 6, 2021       |
