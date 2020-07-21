@@ -23,7 +23,7 @@ The Order Processing with Inventory Management tutorial configures several entit
 {:.bs-callout-info}
 To be eligible for in-store pickup, a product must be assigned to a custom stock. See <Merchdoc x-ref>.
 
-The **10-step tutorial** generally takes **30 minutes**.
+The **8-step tutorial** generally takes **30 minutes**.
 
 ### Before you begin
 

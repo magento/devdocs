@@ -16,8 +16,6 @@ When the customer selects a location for in-store pickup, you must provide the a
 
 In the following example, the customer has chosen to pick up the order at the Brooklyn store. The shipping address for this store was defined in the [Order Processing with Inventory Management]({{page.baseurl}}/rest/tutorials/inventory/index.html) tutorial.
 
-The following mutation adds a shipping address to the quote.
-
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
 
 **Headers:**

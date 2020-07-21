@@ -2,7 +2,7 @@
 layout: tutorial
 group: graphql
 title: Step 7. Set the payment method
-subtitle: GraphQL In-store Pickup tutorial
+subtitle: GraphQL In-store pickup tutorial
 level3_subgroup: graphql-inventory
 return_to:
   title: GraphQL Overview
