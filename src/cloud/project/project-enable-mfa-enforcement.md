@@ -34,6 +34,53 @@ magento-cloud ssh-cert:load
 
 The `ssh-cert:load` command generates the SSH certificate and installs it in the SSH agent of the local user.
 
+### Automatically generate certificate on login
+
+You can configure your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
+
+{:.procedure}
+To add SSH certificate auto generation to your Magento Cloud CLI configuration:
+
+1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
+
+    ```bash
+    touch ~/.magento-cloud/config.yaml
+    ```
+
+1. Edit the `config.yaml` file to add the following configuration.
+
+    ```yaml
+   api:
+      auto_load_ssh_cert: true
+    ```
+
+1. Use the Magento Cloud CLI to authenticate again:
+
+   ```bash
+   magento-cloud logout
+   ```
+
+   ```bash
+   magento-cloud login
+
+   Please open the following URL in a browser and log in:
+   http://127.0.0.1:5000
+
+   Help:
+     Leave this command running during login.
+     If you need to quit, use Ctrl+C.
+
+     To log in using an API token, run: magento-cloud auth:api-token-login
+
+   Login information received. Verifying...
+   You are logged in.
+
+   Generating SSH certificate...
+   A new SSH certificate has been generated.
+   It will be automatically refreshed when necessary.
+   The certificate is included in your SSH configuration: /Users/<user-name>/.ssh/config
+   ```
+
 ## Connect to an environment using SSH with 2FA
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, any user that connects to a Cloud environment using SSH must have 2FA enabled on their account. See [Enable 2FA][].
@@ -130,53 +177,6 @@ To connect using SSH with 2FA user account credentials:
     remote: counting objects: 22, done.
     Receiving objects: 100% (22/22), 82.42 KiB | 16.48 MiB/s, done.
     ```
-
-## Automatically generate certificate on login
-
-You can configure your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
-
-{:.procedure}
-To add SSH certificate auto generation to your Magento Cloud CLI configuration:
-
-1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
-
-    ```bash
-    touch ~/.magento-cloud/config.yaml
-    ```
-
-1. Edit the `config.yaml` file to add the following configuration.
-
-    ```yaml
-   api:
-      auto_load_ssh_cert: true
-    ```
-
-1. Use the Magento Cloud CLI to authenticate again:
-
-   ```bash
-   magento-cloud logout
-   ```
-
-   ```bash
-   magento-cloud login
-
-   Please open the following URL in a browser and log in:
-   http://127.0.0.1:5000
-
-   Help:
-     Leave this command running during login.
-     If you need to quit, use Ctrl+C.
-
-     To log in using an API token, run: magento-cloud auth:api-token-login
-
-   Login information received. Verifying...
-   You are logged in.
-
-   Generating SSH certificate...
-   A new SSH certificate has been generated.
-   It will be automatically refreshed when necessary.
-   The certificate is included in your SSH configuration: /Users/<user-name>/.ssh/config
-   ```
 
 ## Connect to an environment using SSH with API token
 
