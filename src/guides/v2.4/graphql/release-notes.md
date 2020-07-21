@@ -15,6 +15,14 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.4.0
+
+-  {:.new} **Added the [`reorderItems` mutation]({{page.baseurl}}/graphql/mutations/reorder-items.html).** This mutation enables the logged-in customer to add the contents of a previous order to their cart.
+
+-  {:.new} **Added the [`categories` query]({{page.baseurl}}/graphql/queries/categories.html) returns a list of categories that match a specified filter.** This query differs from the `categoryList` query in that it supports pagination.
+
+-  {:.new} **Added the [`pickupLocations` query]({{page.baseurl}}/graphql/queries/pickup-locations.html).** When the Inventory in-store pickup features is enabled, this query can be used to allow the shopper to select a pickup location. The `pickup_location_code` attribute has been added to the [`setShippingAddressesOnCart` mutation]({{page.baseurl}}/graphql/mutations/set-shipping-address.html) to specify which source will serve as the pickup location.
+
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
 
 -  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) for details.
