@@ -131,7 +131,6 @@ To connect using SSH with 2FA user account credentials:
     Receiving objects: 100% (22/22), 82.42 KiB | 16.48 MiB/s, done.
     ```
 
-
 ## Automatically generate certificate on login
 
 You can configure your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
@@ -250,7 +249,7 @@ If an API token is stored, the Magento Cloud CLI will automatically authenticate
    magento-cloud ssh-cert:load
    ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud "tail -n 10 ~/var/log/cloud.log"
    ```
-   
+
 ## Troubleshooting
 
 Use the following information to resolve SSH connection requests failures due to authentication errors like `access requires MFA` or `permission denied`.
@@ -301,7 +300,6 @@ To authenticate and reload the SSH certificate:
    ```bash
    magento-cloud ssh-cert:load
    ```
-
 
 <!--Link references-->
 [add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
