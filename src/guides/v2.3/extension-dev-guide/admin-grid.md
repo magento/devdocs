@@ -44,7 +44,7 @@ Here are the required files to get started:
 );
 ```
 
-`app/code/Goivvy/Grid/etc/adminhtml/routes.xml`:
+`app/code/Dev/Grid/etc/adminhtml/routes.xml`:
 
 ```xml
 <?xml version="1.0"?>
@@ -185,7 +185,7 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
          <filter>text</filter>
          <bodyTmpl>ui/grid/cells/text</bodyTmpl>
          <label translate="true">Path</label>
-      </settings
+     </settings>
     </column>
     <column name="name">
       <settings>

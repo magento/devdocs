@@ -13,7 +13,7 @@ To manage your project, environment, and branches, see:
 
 -  [Configure your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html)
 -  [Project structure]({{ site.baseurl }}/cloud/project/project-start.html)
--  [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html)
+-  [Manage user access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  Manage branches with the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ site.baseurl }}/cloud/env/environments-start.html)
 -  [Snapshots and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html)
 
@@ -134,6 +134,6 @@ magento-cloud variable:get -e <environment ID>
 
 ## Configure the project
 
-Click ![edit project]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
+Click ![edit project]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch). See [Manage user access]({{site.baseurl}}/cloud/project/user-admin.html).
 
 ![configure project]({{ site.baseurl }}/common/images/cloud/cloud_project-config.png){:width="650px"}
