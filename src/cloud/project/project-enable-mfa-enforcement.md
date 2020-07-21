@@ -134,7 +134,7 @@ To connect using SSH with 2FA user account credentials:
 
 ## Automatically generate certificate on login
 
-Configurations can be added to your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
+You can configure your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
 
 {:.procedure}
 To add SSH certificate auto generation to your Magento Cloud CLI configuration:
