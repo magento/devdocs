@@ -198,7 +198,7 @@ To add your SSH key to your local configuration:
 
     ```bash
     touch ~/.ssh/config
-    ``` 
+    ```
 
 1. Add an `IdentityFile` configuration.
 
@@ -224,14 +224,14 @@ To add SSH certificate auto generation to your configuration:
     ```bash
     touch ~/.magento-cloud/config.yaml
     ```
-    
+
 1. Edit the `config.yaml` file to add the following configuration.
 
     ```yaml
    api:
       auto_load_ssh_cert: true
     ```
- 
+
 1. Use the Magento Cloud CLI to authenticate again:
 
    ```bash
@@ -252,7 +252,7 @@ To add SSH certificate auto generation to your configuration:
 
    Login information received. Verifying...
    You are logged in.
-   
+
    Generating SSH certificate...
    A new SSH certificate has been generated.
    It will be automatically refreshed when necessary.
