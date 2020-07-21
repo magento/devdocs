@@ -118,12 +118,12 @@ We can use the same customer definition presented in [Step 3. Create a customer]
                "region" : "New York"
             },
             "countryId" : "US",
-            "postcode" : "10755",
-            "city" : "Purchase",
+            "postcode" : "11501",
+            "city" : "Mineola",
             "street" : [
-               "123 Oak Ave"
+               "160 1st St."
             ],
-            "telephone" : "512-555-1111"
+            "telephone" : "516-555-1111"
          }
       ]
    },
@@ -133,16 +133,16 @@ We can use the same customer definition presented in [Step 3. Create a customer]
 
 **Response:**
 
-The customer `id` is `3`.
+The customer `id` is `4`.
 
 ```json
 {
-    "id": 3,
+    "id": 4,
     "group_id": 1,
-    "default_billing": "3",
-    "default_shipping": "3",
-    "created_at": "2019-01-28 20:53:45",
-    "updated_at": "2019-01-28 20:53:46",
+    "default_billing": "4",
+    "default_shipping": "4",
+    "created_at": "2020-07-18 21:30:19",
+    "updated_at": "2020-07-18 21:30:20",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -151,8 +151,8 @@ The customer `id` is `3`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 3,
-            "customer_id": 3,
+            "id": 4,
+            "customer_id": 4,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
@@ -161,11 +161,11 @@ The customer `id` is `3`.
             "region_id": 43,
             "country_id": "US",
             "street": [
-                "123 Oak Ave"
+                "160 1st St."
             ],
-            "telephone": "512-555-1111",
-            "postcode": "10755",
-            "city": "Purchase",
+            "telephone": "516-555-1111",
+            "postcode": "11501",
+            "city": "Mineola",
             "firstname": "Jane",
             "lastname": "Doe",
             "default_shipping": true,
