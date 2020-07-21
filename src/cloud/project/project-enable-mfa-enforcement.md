@@ -184,7 +184,7 @@ When MFA enforcement is enabled on a {{site.data.var.ece}} project, automated pr
 
 You generate the token from a {{site.data.var.ece}} account with Admin or Contributor access on the project.
 
-Authenticating with an API token still requires a 2FA token and SSH certificate. Automated processes must also automate generating a 2FA token.
+Authenticating with an API token still requires generating an SSH certificate. Automated processes must also automate the generation of an SSH certificate.
 
 **Prerequisites:**
 
