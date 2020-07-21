@@ -51,12 +51,6 @@ pages:
               url: https://magento-24.redoc.ly/2.4-guest/
               include_versions: ["2.4"]
 
-        - label: List of REST endpoints by module
-          url: /rest/list.html
-
-        - label: List of service names per module
-          url: /rest/rest_endpoints.html
-
         - label: Generate a local API reference
           url: /rest/generate-local.html
 

@@ -3270,12 +3270,6 @@ entries:
   type: Major update
   date: January 28, 2019
   link: https://github.com/magento/devdocs/pull/3630
-- description: "[Corrected the route](https://devdocs.magento.com/guides/v2.3/rest/list.html)
-    of the `POST   /V1/inventory/low-quantity-notifications-delete` endpoint."
-  versions: 2.3.x
-  type: Technical changes
-  date: January 28, 2019
-  link: https://github.com/magento/devdocs/pull/3627
 - description: Updated Magento Commerce and Magento Commerce Cloud release information
     to remove obsolete topics and add links to current Magento Commerce Cloud release
     information in Release Notes for ece-tools.
@@ -4031,10 +4025,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Major update
   date: Jul 12 2018
-- description: Added MSI and bulk API endpoints to [List of REST endpoints by module](https://devdocs.magento.com/guides/v2.3/rest/list.html)
-  versions: 2.3.x
-  type: Technical changes
-  date: Jul 12 2018
+
 - description: Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security)
     to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).
   versions: 2.2.x
@@ -5073,8 +5064,7 @@ entries:
   date: Aug 22 2017
 - description: "[Frontend Product Repository](https://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)<br/>[Render
     prices on frontend with Ui component](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Added
-    backward incompatible changes](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/index.html#recently-viewed-and-recently-compared-widgets)<br/>[Updated
-    the list of REST endpoints](https://devdocs.magento.com/guides/v2.2/rest/list.html#catalog)"
+    backward incompatible changes](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/index.html#recently-viewed-and-recently-compared-widgets)<br/>"
   versions: 2.2.x
   type: New and Updated
   date: Aug 21 2017
@@ -5421,14 +5411,6 @@ entries:
   versions: '2.2'
   type: Updated
   date: June 23 2017
-- description: '[List of REST endpoints by module](https://devdocs.magento.com/guides/v2.2/rest/list.html)'
-  versions: '2.2'
-  type: Updated
-  date: June 23 2017
-- description: '[List of service names per module](https://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html)'
-  versions: '2.2'
-  type: Updated
-  date: June 23 2017
 - description: '[SOAP Reference](https://devdocs.magento.com/guides/v2.2/soap/bk-soap.html)'
   versions: '2.2'
   type: Updated
@@ -5743,14 +5725,6 @@ entries:
   type: Updated
   date: Dec 2 2016
 - description: '[Upgrade the Magento data migration tool](https://devdocs.magento.com/guides/v2.2/migration/migration-tool-upgrade.html)'
-  versions: 2.x
-  type: Updated
-  date: Dec 2 2016
-- description: '[Add REST APIs for Magento Enterprise Edition](https://devdocs.magento.com/guides/v2.2/rest/list.html)'
-  versions: 2.x
-  type: Updated
-  date: Dec 2 2016
-- description: '[Add REST API endpoints for Magento EE](https://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html)'
   versions: 2.x
   type: Updated
   date: Dec 2 2016
