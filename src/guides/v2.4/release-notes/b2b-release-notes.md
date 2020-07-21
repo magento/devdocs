@@ -9,7 +9,7 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-## Magento B2B - Version 2.4.0
+## Magento B2B - Version 1.2.0
 
 -  {:.new} Purchase Orders have been enhanced and rewritten. The are now included by default in Magento Commerce.
 -  {:.new} Purchase Order Approval Rules have been implemented. These rules allow users to control the Purchase Order workflow by creating purchasing rules for orders.
@@ -20,8 +20,8 @@ These release notes can include:
 -  {:.fix} Clicking on the **Clear All** Button now expands all the filters, rather than collapsing them.
 -  {:.fix} Product SKU/Name is now included in the Order History search filter summary.
 -  {:.fix} Sorting Indicator is now displayed properly in the My Purchase Orders Grid.
--  {:.fix} 'https://jira.corp.magento.com/browse/B2B-564'>B2B-564 - Now, you can click the Approve/Cancel/Reject/Purchase Purchase Order button only once. Previously, you could click the button multiple times.
--  {:.fix} The Purchase Order Approve, Reject, Cancel, Validate buttons now render correctly on mobile devices.
+-  {:.fix} Now, you can click the Approve, Cancel, Reject, and Purchase Purchase Order buttons only once. Previously, you could click the button multiple times.
+-  {:.fix} The Purchase Order Approve, Reject, Cancel, and Validate buttons now render correctly on mobile devices.
 -  {:.fix} Previously, approving a Purchase Order with a discount that has expired placed the order at the full amount and did not update the Purchase Order total. This now works correctly.
 -  {:.fix} A bug was introduced in 2.3.4 where custom extension attributes would not be copied from the Customer Address to the Quote Address. This bug has been fixed.
 -  {:.fix} With B2B installed, a SQL error would appear when assigning categories to shared catalogs. This bug has been fixed.
