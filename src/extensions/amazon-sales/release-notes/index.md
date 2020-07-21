@@ -29,6 +29,8 @@ This version of Amazon Sales Channel includes a new feature along with improveme
 
 -  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchronize with Amazon without address errors. Example: Shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
 
+-  {:.new}Support for PHP 7.4 has been added.
+
 -  {:.fix}<!--CHAN-4334-->The extension has been updated for support with Magento 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
 
 -  {:.fix}<!--CHAN-4431-->Corrected an error causing an "Access Denied" error for UK customers.
@@ -43,7 +45,7 @@ This version of Amazon Sales Channel includes a new feature along with improveme
 
 -  {:.fix}<!--CHAN-4410-->Corrected issues causing errors when the date range field is left blank when filtering your orders view.
 
--  {:.fix}<!--CHAN-4439-->Corrected an issue causing order sync errors related to order quantity. The extension has been updated to only accept whole number integers for order quantity. When a decimal value is received for an order quantity, the value is rounded down to the whole integer. Example: Shopper manually inputs `2.5` for quantity, the extension updates the value to `2`.
+-  {:.fix}<!--CHAN-4439-->Corrected an issue causing stock and fulfillment sync errors related to quantity. The extension has been updated to round down quantity values entered as a decimal before syncing with Amazon. Example: Merchant manually inputs `2.5` for quantity, the extension updates the value to `2` and then syncs the updated quantity with Amazon.
 
 ### v4.1.0
 
