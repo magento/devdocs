@@ -91,8 +91,8 @@ To connect using SSH with 2FA user account credentials:
 
 ## Clone code using SSH with 2FA
 
-When managing source code for {{site.data.var.ece}} projects, you use SSH to authenticate to the Git repository for the project.  If your project has  MFA enforcement enabled, you must generate an SSH certificate before you can perform command line operations using the Git repository.
-
+When managing source code for {{site.data.var.ece}} projects, you use SSH to authenticate to the Git repository for the project. If your project has MFA enforcement enabled, you must generate an SSH certificate before you can perform command line operations using the Git repository.
+ 
 {:.procedure}
 To connect using SSH with 2FA user account credentials:
 
@@ -121,7 +121,7 @@ To connect using SSH with 2FA user account credentials:
 1. Clone the Git repository for your project environment:
 
     ```bash
-    git clone --branch integration abcdef7uyxabce@git.us-3.magento.cloud:gbhzpx7xmpule.git myproject
+    git clone --branch integration abcdef7uyxabce@git.us-3.magento.cloud:abcdef7uyxabce.git myproject
     ```
 
     ```terminal
@@ -130,7 +130,10 @@ To connect using SSH with 2FA user account credentials:
     remote: counting objects: 22, done.
     Receiving objects: 100% (22/22), 82.42 KiB | 16.48 MiB/s, done.
     ```
-### Troubleshooting
+    
+## Troubleshooting
+
+### Your request does not provide a valid certificate
 
 If your request does not provide a valid certificate, a message similar to the following displays:
 
@@ -176,10 +179,92 @@ To authenticate and reload the SSH certificate:
    ```bash
    magento-cloud ssh-cert:load
    ```
+   
+### Unable to authenticate to projects that do not have MFA enabled
 
+If you authenticate to a project with MFA enabled, you may receive the following error on other projects:
+
+   ```bash
+   ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
+   abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
+   ```
+    
+During the SSH certificate generation, the Magento Cloud CLI adds an additional ssh certificate to your local environment. If your previous key was not added to the SSH configuration, it will no longer be used as a default.
+
+{:.procedure}
+To add your SSH key to your local configuration:
+
+1. Create the `config` file if it does not exists.
+
+    ```bash
+    touch ~/.ssh/config
+    ``` 
+    
+1. Add an `IdentityFile` configuration.
+
+    ```yaml
+   Host *
+     IdentityFile /Users/<user-name>/.ssh/id_rsa
+    ```
+
+   {:.bs-callout-info}
+   You can specify multiple SSH keys by adding multiple IdentityFile entries to your configuration.
+   
+1. Close your terminal session. The configuration will be used for all sessions going forward.
+    
+## Automatically generate certificate on login
+
+Configurations can be added to your local environment to automatically generate an SSH certificate when you authenticate to the Magento Cloud CLI.
+
+{:.procedure}
+To add SSH certificate auto generation to your configuration:
+
+1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
+   
+    ```bash
+    touch ~/.magento-cloud/config.yaml
+    ```
+    
+1. Edit the `config.yaml` file to add the following configuration.
+
+    ```yaml
+   api:
+      auto_load_ssh_cert: true
+    ```
+    
+1. Use the Magento Cloud CLI to authenticate again:
+
+   ```bash
+   magento-cloud logout
+   ```
+
+   ```bash
+   magento-cloud login
+
+   Please open the following URL in a browser and log in:
+   http://127.0.0.1:5000
+   
+   Help:
+     Leave this command running during login.
+     If you need to quit, use Ctrl+C.
+   
+     To log in using an API token, run: magento-cloud auth:api-token-login
+   
+   Login information received. Verifying...
+   You are logged in.
+   
+   Generating SSH certificate...
+   A new SSH certificate has been generated.
+   It will be automatically refreshed when necessary.
+   The certificate is included in your SSH configuration: /Users/<user-name>/.ssh/config
+   ```
+
+    
 ## Connect to an environment using SSH with API token
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, automated processes that require SSH access to a Cloud environment must authenticate using an API token.
+
+You generate the token from a {{site.data.var.ece}} account with Admin or Contributor access on the project.
 
 Authenticating with an API token still requires a 2FA token and SSH certificate. Automated processes must also automate generating a 2FA token.
 
@@ -206,6 +291,46 @@ To connect using SSH with an API token credential:
    You are logged in.
    ```
 
+### Example automated SSH script
+
+
+There are two options for storing the API token.
+{:.bs.callout-important}
+If an API token is stored, the Magento Cloud CLI will automatically authenticate and there is no need to perform the `mgc login` command
+
+#### Create an environment variable to store the API token.
+
+{:.procedure}
+1. Write the token to your bash_profile
+
+   ```bash
+   echo "export MAGENTO_CLOUD_CLI_TOKEN=<your api token>" >> ~/.bash_profile
+   ```
+
+#### Add the token to the Magento Cloud `config.yaml` file
+
+{:.procedure}
+1. On your local work environment, create a file named `config.yaml` in the `.magento-cloud` folder in your home directory if it does not exist.
+   
+    ```bash
+    touch ~/.magento-cloud/config.yaml
+    ```
+    
+1. Edit the `config.yaml` file to add the following configuration.
+
+    ```yaml
+   api:
+      token: <your api token>
+    ```
+   
+#### Sample bash script
+
+   ```shell
+   #!/bin/bash
+   magento-cloud ssh-cert:load
+   ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud "tail -n 10 ~/var/log/cloud.log"
+   ```
+   
 <!--Link references-->
 [add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
 [Cloud account page]: https://accounts.magento.cloud/user
