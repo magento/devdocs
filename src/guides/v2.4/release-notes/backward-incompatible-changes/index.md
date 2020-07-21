@@ -111,9 +111,9 @@ Magento\Framework\App\Bootstrap::terminate
 /lib/internal/Magento/Framework/App/Bootstrap.php:426 M114 [protected] Method parameter typing changed.
 ```
 
-### New bulk interfaces for inventory scalability check
+### New bulk interfaces for inventory salability check
 
-In order to support bulk check for products scalability, we introduced two new interfaces:
+In order to support bulk check for products salability, we introduced two new interfaces:
 
 ```terminal
 Magento\InventorySalesApi\Api\AreProductsSalableInterface
