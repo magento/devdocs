@@ -260,7 +260,7 @@ Use the following information to resolve SSH connection requests failures due to
 If your request does not provide a valid certificate, a message similar to the following displays:
 
 ```terminal
-Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
+to Hello user-test (UUID: abaacca12-5cd1-4b123-9096-411add578998), you successfully
 authenticated, but could not connect to service abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud:>
 (reason: access requires MFA)
 ```
