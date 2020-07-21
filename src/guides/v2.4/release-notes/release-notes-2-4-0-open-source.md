@@ -51,6 +51,10 @@ This release includes over 30 security fixes and platform security improvements.
 
 *  **Content Security Policy (CSP) improvements**. `SecureHtmlRenderer` has been added to the Magento Framework and is available in `.phtml` templates to support the allowlisting of inline `style` and `script` tags. Inline scripts and styles are not typically permitted with the default CSP configuration. Although most core template files have been updated, some pages may display CSP violations. See [Content Security Policies]({{page.baseurl}}/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
 
+*  **New `\Magento\Framework\Escaper` class**. This class is provided for `.phtml` templates and the PHP classes that are responsible for generating HTML. This class contains HTML sanitization methods relevant to multiple contexts. The `$escaper` local variable is available inside `.phtml` templates and should be used instead of the deprecated `$block->escape{method}`. Use `$escaper` rather than `$block` as the use of `$block->escape{method}` has been deprecated.
+
+*  *Support for new security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
+
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
@@ -89,6 +93,13 @@ This release contains enhancements to core quality, which improve the quality of
 *  **Deprecation and removal of the Web Set Up Wizard**. You must use the command line to install or upgrade Magento 2.4.0. See [Install Magento](https://devdocs.magento.com/guides/v2.4/install-gde/install/cli/install-cli.html).
 
 *  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+
+*  **Seller-assisted shopping**. This feature allows merchants to view the storefront on behalf of their customers. Customers opt to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). Features include:
+
+   *  ACL to controls which administrators can log in to customer accounts can be configured on a per-website basis
+   *  Compatibility with multiple websites and customer account scopes
+   *  Orders placed on behalf of customers are logged in the storefront and Admin
+   *  All sessions are destroyed following administrator logout, and administrators cannot access customer passwords.
 
 ### Performance improvements
 
@@ -246,7 +257,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-5546-->
 
-*  Problems with LESS compilation in Magento’s Luma theme when using an alternative LESS compiler than the one that ships with Magento by default have been resolved. _Fix submitted by Pieter Hoste in pull request [24003](https://github.com/magento/magento2/pull/24003)_. [GitHub-23619](https://github.com/magento/magento2/issues/23619
+*  Problems with LESS compilation in Magento’s Luma theme when using an alternative LESS compiler than the one that ships with Magento by default have been resolved. _Fix submitted by Pieter Hoste in pull request [24003](https://github.com/magento/magento2/pull/24003)_. [GitHub-23619](https://github.com/magento/magento2/issues/23619)
 
 <!--- ENGCOM-6367-->
 
@@ -274,7 +285,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!-- ENGCOM-6840-->
 
-*  Magento now caches messages for errors that occur when a customer tries to apply a filter for Adobe Stock images. _Fix submitted by Shankar Konar in pull request [26502](https://github.com/magento/magento2/pull/26502)_. [GitHub-863](https://github.com/magento/magento2/issues/863)
+*  Magento now caches messages for errors that occur when a customer tries to apply a filter to Adobe Stock images. _Fix submitted by Shankar Konar in pull request [26502](https://github.com/magento/magento2/pull/26502)_. [GitHub-863](https://github.com/magento/magento2/issues/863)
 
 <!-- ENGCOM-7195-->
 
@@ -288,7 +299,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6433-->
 
-*  Administrators can now log into the Admin as expected after an admin account with limited privileges has been created. Previously,  the Admin was not accessible. Instead, users were redirected to the storefront with a 404 error. _Fix submitted by Eden Duong in pull request [25909](https://github.com/magento/magento2/pull/25909)_. [GitHub-25881](https://github.com/magento/magento2/issues/25881)
+*  Administrators can now log into the Admin as expected after an administrator account with limited privileges has been created. Previously,  the Admin was not accessible. Instead, users were redirected to the storefront with a 404 error. _Fix submitted by Eden Duong in pull request [25909](https://github.com/magento/magento2/pull/25909)_. [GitHub-25881](https://github.com/magento/magento2/issues/25881)
 
 *  Magento no longer throws an error when you delete an image from a page while creating it from **Admin**  > **Content** > **Pages**  >  **Add New Page**. Previously, Magento threw this error in the developer console: `"500 (Internal Server Error)”`. _Fix submitted by Eden Duong in pull request [25924](https://github.com/magento/magento2/pull/25924)_. [GitHub-25893](https://github.com/magento/magento2/issues/25893)
 
@@ -384,7 +395,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7485-->
 
-*  StorefrontMiniCartSection  has been replaced by StorefrontMinicartSection in MFTF tests.   _Fix submitted by Andrii Kalinich in pull request [27955](https://github.com/magento/magento2/pull/27955)_. [GitHub-27897](https://github.com/magento/magento2/issues/27897)
+*  `StorefrontMiniCartSection`  has been replaced by `StorefrontMinicartSection` in MFTF tests.   _Fix submitted by Andrii Kalinich in pull request [27955](https://github.com/magento/magento2/pull/27955)_. [GitHub-27897](https://github.com/magento/magento2/issues/27897)
 
 <!--- ENGCOM-5822-->
 
@@ -996,7 +1007,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Corrected a problem in GraphQL in which Magento did not return all the required information while using fragments on products query. _Fix submitted by Riccardo Tempesta in pull request [26218](https://github.com/magento/magento2/pull/26218)_. [GitHub-26217](https://github.com/magento/magento2/issues/26217)
 
-*  The GraphQL mutation `setShippingMethodsOnCart` no longer retrieves the wrong data in `available_shipping_methods`. _Fix submitted by Vadim Malesh in pull request [27004](https://github.com/magento/magento2/pull/27004)_. [GitHub-26742](https://github.com/magento/magento2/issues/26742)
+*  The GraphQL mutation `setShippingMethodsOnCart` no longer retrieves the wrong data in the  `available_shipping_methods` attribute. _Fix submitted by Vadim Malesh in pull request [27004](https://github.com/magento/magento2/pull/27004)_. [GitHub-26742](https://github.com/magento/magento2/issues/26742)
 
 ### Grouped products
 
@@ -1032,7 +1043,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!-- ENGCOM-6962-->
 
-*  Custom attributes of images generated by Block\Product\ImageFactory now render correctly. Previously,you could not add your own custom attributes to the attribute markup due to incorrect escaping of the HTML output. _Fix submitted by alexander-aleman in pull request [26959](https://github.com/magento/magento2/pull/26959)_. [GitHub-25219](https://github.com/magento/magento2/issues/25219)
+*  Custom attributes of images generated by `Block\Product\ImageFactory`
+ now render correctly. Previously,you could not add your own custom attributes to the attribute markup due to incorrect escaping of the HTML output. _Fix submitted by alexander-aleman in pull request [26959](https://github.com/magento/magento2/pull/26959)_. [GitHub-25219](https://github.com/magento/magento2/issues/25219)
 
 <!--- ENGCOM-5980-->
 
@@ -1384,7 +1396,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6925-->
 
-*  The Low Stock report no longer includes disabled products._Fix submitted by Mohamed-Asar in pull request [26862](https://github.com/magento/magento2/pull/26862)_. [GitHub-26838](https://github.com/magento/magento2/issues/26838)
+*  The Low Stock report no longer includes disabled products. _Fix submitted by Mohamed-Asar in pull request [26862](https://github.com/magento/magento2/pull/26862)_. [GitHub-26838](https://github.com/magento/magento2/issues/26838)
 
 <!--- ENGCOM-7110-->
 
@@ -1444,7 +1456,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6007-->
 
-*  The checkboxes on the Products section of the Catalog > Categories page now work as expected.  _Fix submitted by Denis Kopylov in pull request [22990](https://github.com/magento/magento2/pull/22990)_. [GitHub-22988](https://github.com/magento/magento2/issues/22988)
+*  The checkboxes on the Products section of the **Catalog** > **Categories** page now work as expected.  _Fix submitted by Denis Kopylov in pull request [22990](https://github.com/magento/magento2/pull/22990)_. [GitHub-22988](https://github.com/magento/magento2/issues/22988)
 
 <!--- ENGCOM-6809-->
 
@@ -1556,6 +1568,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Plugins for `Magento\Ups\Model\Carrier` that implement custom `di.xml` now work properly in developer mode. Previously, Magento threw this error: `1 exception(s): Exception #0 (BadMethodCallException): Missing required argument $data of Magento\Ups\Model\Carrier`. _Fix submitted by Bartomiej Szubert in pull request [26130](https://github.com/magento/magento2/pull/26130)_. [GitHub-25390](https://github.com/magento/magento2/issues/25390)
 
+<!--- ENGCOM-6436-->
+
+*  Magento no longer displays a blank page instead of displaying all the shipping carriers in the dropdown/multi-select box. Previously, an error in the `toOptionArray` function in `vendor/magento/module-shipping/Model/Config/Source/Allmethods.php` occurred. _Fix submitted by Marc Rodriguez in pull request [25315](https://github.com/magento/magento2/pull/25315)_. [GitHub-13136](https://github.com/magento/magento2/issues/13136)
+
 ### Sitemap
 
 <!--- MC-29362-->
@@ -1634,7 +1650,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7143-->
 
-*  Consecutive requests in integration tests no longer fail. Previously, tests failed because request objects were shared between dispatches.    The resetRequest method now empties the state of `request`._Fix submitted by Lukasz Bajsarowicz in pull request [27300](https://github.com/magento/magento2/pull/27300)_. [GitHub-27299](https://github.com/magento/magento2/issues/27299)
+*  Consecutive requests in integration tests no longer fail. Previously, tests failed because request objects were shared between dispatches. The `resetRequest` method now empties the state of `request`. _Fix submitted by Lukasz Bajsarowicz in pull request [27300](https://github.com/magento/magento2/pull/27300)_. [GitHub-27299](https://github.com/magento/magento2/issues/27299)
 
 <!--- ENGCOM-7421-->
 
@@ -1694,10 +1710,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Added unit test for Path: app/code/Magento/Fedex/Model/Source/Generic.php. _Fix submitted by Sathish Subramanian in pull request [26549](https://github.com/magento/magento2/pull/26549)_.
 
-<!--- ENGCOM-6352-->
-
-*  Each Action group has been moved to a separate file to follow MFTF best practices, and in consistent file names have been revised. _Fix submitted by Lukasz Bajsarowicz in pull request [25800](https://github.com/magento/magento2/pull/25800)_. [GitHub-22853](https://github.com/magento/magento2/issues/22853)
-
 <!-- ENGCOM-6585-->
 
 *  Hardcoded URLs in Tests and ActionGroups have been replaced with  page references. _Fix submitted by Lukasz Bajsarowicz in pull request [117](https://github.com/magento/partners-magento2ee/pull/117)_. [GitHub-26331](https://github.com/magento/magento2/issues/26331)
@@ -1705,6 +1717,10 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!-- ENGCOM-6844-->
 
 *  All incorrect uses of `<amOnPage>` have been replaced with an appropriate `<actionGroup>` for Admin log out where applicable in tests. _Fix submitted by Lukasz Bajsarowicz in pull request [116](https://github.com/magento/partners-magento2ee/pull/116)_. [GitHub-26331](https://github.com/magento/magento2/issues/26331)
+
+<!--- ENGCOM-6352-->
+
+*  Each Action group has been moved to a separate file to follow MFTF best practices, and inconsistent file names have been revised. _Fix submitted by Lukasz Bajsarowicz in pull request [25800](https://github.com/magento/magento2/pull/25800)_. [GitHub-22853](https://github.com/magento/magento2/issues/22853)
 
 ### Translation and locales
 
@@ -1730,7 +1746,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6443-->
 
-*  Magento now displays this error message when you’ve entered a non-Latin character for a folder name in locales where only Latin letters are supported: `Please rename the folder using only Latin letters, numbers, underscores and dashes`. _Fix submitted by Eden Duong in pull request [25904](https://github.com/magento/magento2/pull/25904). [GitHub-25896](https://github.com/magento/magento2/issues/25896)_
+*  Magento now displays this error message when you enter a non-Latin character for a folder name in locales where only Latin letters are supported: `Please rename the folder using only Latin letters, numbers, underscores and dashes`. _Fix submitted by Eden Duong in pull request [25904](https://github.com/magento/magento2/pull/25904)_. [GitHub-25896](https://github.com/magento/magento2/issues/25896)_
 
 <!--- ENGCOM-6557-->
 
@@ -1792,7 +1808,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6532-->
 
-*  Corrected spacing between the Update button and Qty field on the mini cart.  _Fix submitted by Hitesh in pull request [26234](https://github.com/magento/magento2/pull/26234)_. [GitHub-26227](https://github.com/magento/magento2/issues/26227)
+*  Corrected spacing between the **Update** button and **Qty** field on the mini cart.  _Fix submitted by Hitesh in pull request [26234](https://github.com/magento/magento2/pull/26234)_. [GitHub-26227](https://github.com/magento/magento2/issues/26227)
 
 <!--- ENGCOM-7032-->
 
@@ -1808,7 +1824,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6482-->
 
-*  Input that is validated by the Javascript validator on the storefront will also pass validation on the Admin. Previously, the Javascript validator counted newlines as a single character on the storefront, but on the server side, `\Magento\Catalog\Model\Product\Option\Type\maxCharacters` counted newlines as two characters. _Fix submitted by Grzegorz Bogusz in pull request [26033](https://github.com/magento/magento2/pull/26033)_. [GitHub-25974](https://github.com/magento/magento2/issues/25974)
+*  Input that is validated by the JavaScript validator on the storefront will also pass validation on the Admin. Previously, the JavasScript validator counted newlines as a single character on the storefront, but on the server side, `\Magento\Catalog\Model\Product\Option\Type\maxCharacters` counted newlines as two characters. _Fix submitted by Grzegorz Bogusz in pull request [26033](https://github.com/magento/magento2/pull/26033)_. [GitHub-25974](https://github.com/magento/magento2/issues/25974)
 
 <!--- ENGCOM-6464-->
 
