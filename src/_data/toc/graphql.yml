@@ -306,47 +306,81 @@ pages:
         - label: PayPal Website Payments Pro Hosted Solution
           url: /graphql/payment-methods/hosted-pro.html
 
-    - label: Tutorial
-      class: tutorial
+    - label: Tutorials
       children:
 
         - label: GraphQL checkout tutorial
-          url: /graphql/tutorials/checkout/index.html
+          class: tutorial
+          children:
 
-        - label: Step 1. Create a customer
-          url: /graphql/tutorials/checkout/checkout-customer.html
+          - label: Checkout tutorial
+            url: /graphql/tutorials/checkout/index.html
 
-        - label: Step 2. Create an empty cart
-          url: /graphql/tutorials/checkout/checkout-shopping-cart.html
+          - label: Step 1. Create a customer
+            url: /graphql/tutorials/checkout/checkout-customer.html
 
-        - label: Step 3. Add products to the cart
-          url: /graphql/tutorials/checkout/checkout-add-product-to-cart.html
+          - label: Step 2. Create an empty cart
+            url: /graphql/tutorials/checkout/checkout-shopping-cart.html
 
-        - label: Step 4. Set the shipping address
-          url: /graphql/tutorials/checkout/checkout-shipping-address.html
+          - label: Step 3. Add products to the cart
+            url: /graphql/tutorials/checkout/checkout-add-product-to-cart.html
 
-        - label: Step 5. Set the billing address
-          url: /graphql/tutorials/checkout/checkout-billing-address.html
+          - label: Step 4. Set the shipping address
+            url: /graphql/tutorials/checkout/checkout-shipping-address.html
 
-        - label: Step 6. Set the shipping method
-          url: /graphql/tutorials/checkout/checkout-shipping-method.html
-          include_versions: ["2.3"]
+          - label: Step 5. Set the billing address
+            url: /graphql/tutorials/checkout/checkout-billing-address.html
 
-        - label: Step 6. Set the delivery method
-          url: /graphql/tutorials/checkout/checkout-shipping-method.html
+          - label: Step 6. Set the shipping method
+            url: /graphql/tutorials/checkout/checkout-shipping-method.html
+            include_versions: ["2.3"]
+
+          - label: Step 6. Set the delivery method
+            url: /graphql/tutorials/checkout/checkout-shipping-method.html
+            exclude_versions: ["2.3"]
+
+          - label: Step 7. Apply a coupon
+            url: /graphql/tutorials/checkout/checkout-coupon.html
+
+          - label: Step 8. Set email on the cart
+            url: /graphql/tutorials/checkout/checkout-quote-email.html
+
+          - label: Step 9. Set the payment method
+            url: /graphql/tutorials/checkout/checkout-payment-method.html
+
+          - label: Step 10. Place the order
+            url: /graphql/tutorials/checkout/checkout-place-order.html
+
+        - label: GraphQL In-store pickup tutorial
+          class: tutorial
           exclude_versions: ["2.3"]
+          children:
+          - label: In-store pickup tutorial
+            url: /graphql/tutorials/inventory/index.html
 
-        - label: Step 7. Apply a coupon
-          url: /graphql/tutorials/checkout/checkout-coupon.html
+          - label: Step 1. Generate the customer token
+            url: /graphql/tutorials/inventory/isp-customer-token.html
 
-        - label: Step 8. Set email on the cart
-          url: /graphql/tutorials/checkout/checkout-quote-email.html
+          - label: Step 2. Create an empty cart
+            url: /graphql/tutorials/inventory/isp-shopping-cart.html
 
-        - label: Step 9. Set the payment method
-          url: /graphql/tutorials/checkout/checkout-payment-method.html
+          - label: Step 3. Add products to the cart
+            url: /graphql/tutorials/inventory/isp-add-product-to-cart.html
 
-        - label: Step 10. Place the order
-          url: /graphql/tutorials/checkout/checkout-place-order.html
+          - label: Step 4. Search for in-store pickup locations
+            url: /graphql/tutorials/inventory/isp-search-pickup-locations.html
+
+          - label: Step 5. Set the shipping address
+            url: /graphql/tutorials/inventory/isp-shipping-address.html
+
+          - label: Step 6. Set the billing address
+            url: /graphql/tutorials/inventory/isp-billing-address.html
+
+          - label: Step 7. Set the payment method
+            url: /graphql/tutorials/inventory/isp-payment-method.html
+
+          - label: Step 8. Place the order
+            url: /graphql/tutorials/inventory/isp-place-order.html
  
     - label: Release Notes
       url: /graphql/release-notes.html
