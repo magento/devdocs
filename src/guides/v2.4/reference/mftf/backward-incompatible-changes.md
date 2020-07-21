@@ -5,7 +5,7 @@ functional_areas:
 - Testing
 ---
 
-This reference provides important changes that were introduced in functional tests at the Magento codebase after 2.3.0 release to comply with the [Magento MFTF test versioning and backward compatibility policy][].
+This reference describes important changes introduced to functional tests in the Magento codebase after the 2.3.0 release. This is in compliance with the [Magento MFTF test versioning and backward compatibility policy][].
 
 <!-- Posting CE data -->
 {% assign bic = site.data.codebase.v2_4.mftf.ce.bic.v2_3_0-2_4_0-develop %}
