@@ -213,6 +213,7 @@ This release includes new on-site messaging options to help shoppers understand 
 *  API efficiency
 *  cookies and unit tests
 *  discounts
+*  configuration settings now contain On-Site Messaging section for the control of the storefront display of Klarna promotional messaging. See [Setting Up Klarna](https://docs.magento.com/user-guide/payment/klarna-setup.html).
 
 #### Vertex
 
@@ -389,7 +390,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32962-->
 
-*  Magento now applies Cart Price Rules to only the bundle product  child products that match the rule criteria. Previously, Magento applied the Cart Price Rule to all child products that belonged to the bundle product.
+*  Magento now applies cart price rules to only the bundle product  child products that match the rule criteria. Previously, Magento applied the cart price rule to all child products that belonged to the bundle product.
 
 <!--- ENGCOM-7485-->
 
@@ -411,11 +412,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The promotion region of the mini cart is now rendered as expected. _Fix submitted by Matti Vapa in pull request [25375](https://github.com/magento/magento2/pull/25375)_. [GitHub-25373](https://github.com/magento/magento2/issues/25373)
 
-### Cart Price Rule
+### Cart price rule
 
 <!--- MC-23986-->
 
-*  Cart Price Rules that are based on payment methods are now applied during the checkout workflow. [GitHub-24206](https://github.com/magento/magento2/issues/24206)
+*  Cart price rules that are based on payment methods are now applied during the checkout workflow. [GitHub-24206](https://github.com/magento/magento2/issues/24206)
 
 <!--- ENGCOM-6550-->
 
@@ -427,7 +428,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-5822-->
 
-*  The unused coupon grid in the Create New Cart Price Rule workflow has been disabled. _Fix submitted by Eden Duong in pull request [24471](https://github.com/magento/magento2/pull/24471)_. [GitHub-24468](https://github.com/magento/magento2/issues/24468)
+*  The unused coupon grid in the create new cart price rule workflow has been disabled. _Fix submitted by Eden Duong in pull request [24471](https://github.com/magento/magento2/pull/24471)_. [GitHub-24468](https://github.com/magento/magento2/issues/24468)
 
 <!--- ENGCOM-6615-->
 
@@ -685,7 +686,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-30391-->
 
-*  Cart Price rules with a **condition set as Category (Parent only)** now consistently work as expected.
+*  Cart price rules with a **condition set as Category (Parent only)** now consistently work as expected.
 
 <!--- MC-30989-->
 
@@ -1659,11 +1660,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-32229-->
 
-*  Magento now displays category trees as expected when you try to create or edit a Cart Price rule. Previously, selecting a category in the Condition section while creating or editing a rule resulted in JavaScript errors.
+*  Magento now displays category trees as expected when you try to create or edit a cart price rule. Previously, selecting a category in the Condition section while creating or editing a rule resulted in JavaScript errors.
 
 <!--- ENGCOM-6824-->
 
-*  Magento now correctly calculates cart-level fixed discounts using Cart Price rules when a configurable product is first added to the cart. _Fix submitted by Lachlan Turner in pull request [26623](https://github.com/magento/magento2/pull/26623)_. [GitHub-26622](https://github.com/magento/magento2/issues/26622)
+*  Magento now correctly calculates cart-level fixed discounts using cart price rules when a configurable product is first added to the cart. _Fix submitted by Lachlan Turner in pull request [26623](https://github.com/magento/magento2/pull/26623)_. [GitHub-26622](https://github.com/magento/magento2/issues/26622)
 
 ### Search
 
@@ -1725,7 +1726,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC-29444-->
 
-*  The drop-down list that is available for selecting shipping methods during the process of creating a Cart Price Rule now contains only valid values. Previously, this dropdown list contained empty or extra values.
+*  The drop-down list that is available for selecting shipping methods during the process of creating a cart price rule now contains only valid values. Previously, this dropdown list contained empty or extra values.
 
 <!--- MC-30186-->
 
