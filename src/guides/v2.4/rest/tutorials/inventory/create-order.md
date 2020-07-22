@@ -48,10 +48,10 @@ When you submit payment information, Magento creates an order and sends an order
     "region_id": 43,
     "region_code": "NY",
     "country_id": "US",
-    "street": ["123 Oak Ave"],
-    "postcode": "10577",
-    "city": "Purchase",
-    "telephone": "512-555-1111",
+    "street": ["160 1st St."],
+    "postcode": "11501",
+    "city": "Mineola",
+    "telephone": "516-555-1111",
     "firstname": "Jane",
     "lastname": "Doe"
   }
