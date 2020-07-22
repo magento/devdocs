@@ -77,8 +77,8 @@ To update the `.magento.app.yaml` file:
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
-   For Magento 2.2.x - 2.3.x:
-   
+   For Magento 2.2.x - 2.3.x–
+
    ```yaml
    variables:
        env:
@@ -86,15 +86,15 @@ To update the `.magento.app.yaml` file:
            CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
-   
-   For Magento 2.4.x:
-   
+
+   For Magento 2.4.x–
+
    ```yaml
    variables:
        env:
            CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-    ```   
+    ```
 
 1. Save the file. Do not commit or push changes to your branch yet.
 
