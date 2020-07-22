@@ -1,3 +1,6 @@
+## Critical Errors
+
+
 ## Build stage
 
 {:.error-table}
@@ -79,6 +82,82 @@
 | 207 | warm-up | Failed to warm-up some pages | |
 | 208 | time-to-firs-byte | Failed to test time to first byte (TTFB) | |
 | 227 | clean-cache | Command `/bin/magento cache:flush` failed | {{ suggestions.CLOUD_LOG_VERBOSE_ACTION }} |
+
+### General
+
+{:.error-table}
+| Error code | General step | Error description | Suggested action |
+| - | - | - | - |
+| 243 |  | Configuration is not defined in the `schema.yaml` file | Check that the config variable name is correct, and that it defined. |
+| 244 |  | Failed to parse the `.magento.env.yaml` file | The `./.magento.env.yaml` file format is invalid. Use a YAML parser to check the syntax and fix any errors. |
+| 245 |  | Unable to read the `.magento.env.yaml` file | Unable to read the `./.magento.env.yaml` file. Check file permissions. |
+| 246 |  | Unable to read the `.schema.yaml` file |  |
+
+
+## Warning Errors
+
+
+### Build stage
+
+{:.error-table}
+| Error code | Build step | Error description | Suggested action |
+| - | - | - | - |
+| 1001 | validate-config | File app/etc/config.php does not exist |  |
+| 1002 | validate-config | The ./build_options.ini file is no longer supported |  |
+| 1003 | validate-config | The modules section is missing from the shared config file |  |
+| 1004 | validate-config | The configuration is not compatible with this version of Magento |  |
+| 1005 | validate-config | SCD options ignored |  |
+| 1006 | validate-config | The configured state is not ideal |  |
+| 1007 | run-baler | Baler JS bundling cannot be used |  |
+
+### Deploy stage
+
+{:.error-table}
+| Error code | Deploy step | Error description | Suggested action |
+| - | - | - | - |
+| 2001 | pre-deploy:cache | Cache is configured for a Redis service that is not available. Configuration will be ignored. |  |
+| 2002 | validate-config | The configured state is not ideal |  |
+| 2003 | validate-config | The directory nesting level value for error reporting has not been configured |  |
+| 2004 | validate-config | Invalid configuration in the ./pub/errors/local.xml file. |  |
+| 2005 | validate-config | Admin data is used to create an admin user during initial installation only. Any changes to Admin data are ignored during the upgrade process. | After the initial installation, you can remove admin data from the configuration. |
+| 2006 | validate-config | Admin user was not created as admin email was not set | After installation, you can create an admin user manually:  Use ssh to connect to your environment. Then, run the `bin/magento admin:user:create` command. |
+| 2007 | validate-config | Update php version to recommended version |  |
+| 2008 | validate-config | Solr support has been deprecated in Magento 2.1. |  |
+| 2009 | validate-config | Solr is no longer supported by Magento 2.2 or later. |  |
+| 2010 | validate-config | Elasticsearch service is installed at infrastructure layer, but it is not used as a search engine. | Consider removing the Elasticsearch service from the infrastructure layer to optimize resource usage. |
+| 2011 | validate-config | Elasticsearch service version on infrastructure layer is not compatible with current version of the elasticsearch/elasticsearch module, used by your Magento application. |  |
+| 2012 | validate-config | The current configuration is not compatible with this version of Magento |  |
+| 2013 | validate-config | SCD options ignored because the deploy process did not run on the build phase |  |
+| 2014 | validate-config | The configuration contains deprecated variables or values |  |
+| 2015 | validate-config | Environment configuration is not valid |  |
+| 2016 | validate-config | JSON type configuration can not be decoded |  |
+| 2017 | validate-config | The current configuration is not compatible with this version of Magento |  |
+| 2018 | validate-config | Some services have passed EOL |  |
+| 2019 | validate-config | The MySQL search configuration option is deprecated | Use Elasticsearch instead. |
+| 2020 | install-update | Magento installation completed, but the `app/etc/env.php` configuration file was missing or empty. | Required data will be restored from environment configurations and from .magento.env.yaml file. |
+| 2021 | install-update:db-connection | For split databases used custom connections |  |
+| 2022 | install-update:db-connection | You have changed to a database configuration that is not compatible with the slave connection. |  |
+| 2023 | install-update:split-db | Enabling a split database will be skipped. |  |
+| 2024 | install-update:split-db | The SPLIT_DB variable is missing the configuration for split connection types. |  |
+| 2025 | install-update:split-db | Slave connection not set. |  |
+| 2026 | pre-deploy:restore-writable-dirs | Restoring of some generated data from Build phase to mounted directories was failed. | Check the `cloud.log` for more information. |
+
+### Post-deploy stage
+
+{:.error-table}
+| Error code | Post-deploy step | Error description | Suggested action |
+| - | - | - | - |
+| 3001 | validate-config | Debug logging is enabled in Magento | To save disk space, do not enable debug logging for your production environments. |
+| 3002 | warm-up | Can not fetch store urls |  |
+| 3003 | warm-up | Can not fetch store url |  |
+| 3004 | backup | Cannot create backup files |  |
+
+### General
+
+{:.error-table}
+| Error code | General step | Error description | Suggested action |
+| - | - | - | - |
+| 4001 |  | Can not get system processor count: |  |
 
 <!--Link definitions-->
 
