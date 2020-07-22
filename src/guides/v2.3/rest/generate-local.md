@@ -67,7 +67,3 @@ The base URL for returning the asynchronous schema is `http://<magento_host>/res
 Related topics
 
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
-
-[List of REST APIs by module]({{ page.baseurl }}/rest/list.html)
-
-[List of service names per module]({{ page.baseurl }}/rest/rest_endpoints.html)

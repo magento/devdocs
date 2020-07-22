@@ -24,7 +24,7 @@ Magento Support uses these backups (also referred to as *dumps*) to analyze issu
 
 1. You back up the database to a `.tar.gz` file.
 
-   By default, [sensitive data](#sens-data) is hashed when making the backup.
+   By default, sensitive data is hashed when making the backup.
 
 1. You upload your backups to a file sharing service.
 1. Support analyzes your issues without affecting your development or production environment.
@@ -74,11 +74,24 @@ Where:
 -  **`--name`** specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 -  **`-o|--output=<path>` is the absolute file system path to store the backup (required).
 -  **`-l|--logs`** includes log files (optional).
--  **`-i|--ignore-sanitize`** means that data is preserved; omit the flag to hash [sensitive data](#sens-data) stored in the database when creating the backup (optional).
+-  **`-i|--ignore-sanitize`** means that data is preserved; omit the flag to hash sensitive data stored in the database when creating the backup (optional).
+
+Sensitive data includes customer information from the following database tables:
+
+```terminal
+'customer_entity',
+'customer_entity_varchar',
+'customer_address_entity',
+'customer_address_entity_varchar',
+'customer_grid_flat',
+'quote',
+'quote_address',
+'sales_order',
+'sales_order_address',
+'sales_order_grid'
+```
 
 After the command completes, provide the database backup to Magento Support.
-
-{% include install/sens-data.md %}
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
 

@@ -1,9 +1,37 @@
 
-<h3 id="2.3.0-2.4-develop-class">Class changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-class">Class changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\DocumentFactory</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Mapper</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\ScoreBuilder</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Query\Builder\Match</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Field\FieldFactory</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\Builder</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\DataProviderContainer</td>
+        <td>Class was removed.</td>
     </tr>
     <tr>
         <td>Magento\Signifyd\Model\MessageGenerators\GeneratorException</td>
@@ -23,6 +51,50 @@
     </tr>
     <tr>
         <td>Magento\Customer\Block\Adminhtml\Edit\Tab\Reviews</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\TableMapper</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexerHandler</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\ProductFieldset</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Scope\IndexTableNotExistException</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\IndexIterator</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Payment</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Paypal\Checkout\Review</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Customer\CardRenderer</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Customer\PayPal\VaultTokenRenderer</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Setup\MenuBuilder</td>
         <td>Class was removed.</td>
     </tr>
     <tr>
@@ -211,7 +283,7 @@
     </tr>
     <tr>
         <td>Magento\Sales\Model\Order\Config::getStateDefaultStatus</td>
-        <td>[public] Method return typehint was moved from doc block annotation to in-line.</td>
+        <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Model\Order\Config::getStatusLabel</td>
@@ -398,6 +470,14 @@
         <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
+        <td>Magento\ImportExport\Model\Import\AbstractEntity::getMasterAttributeCode</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ImportExport\Helper\Report::getReportSize</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
         <td>Magento\GiftMessage\Block\Cart\GiftOptions::getGiftOptionsConfigJson</td>
         <td>[public] Method return typing changed.</td>
     </tr>
@@ -428,6 +508,10 @@
     <tr>
         <td>Magento\Eav\Model\Attribute\Data\AbstractData::_validateInputRule</td>
         <td>[protected] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Model\Sample\Builder::setData</td>
+        <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
         <td>Magento\Directory\Helper\Data::getCountryCollection</td>
@@ -530,8 +614,28 @@
         <td>[public] Method parameter typing changed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection::__construct</td>
+        <td>[public] Method parameter typing removed.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection::setOrder</td>
         <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection::$queryResponse</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection::$queryFactory</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection::__construct</td>
+        <td>[public] Method parameter typing removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\Full::__construct</td>
+        <td>[public] Method parameter typing removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRule\Model\Indexer\IndexBuilder::getActiveRules</td>
@@ -643,7 +747,7 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Helper\Data::getPriceScope</td>
-        <td>[public] Method return typehint was moved from doc block annotation to in-line.</td>
+        <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Helper\Product\ProductList::getAvailableLimit</td>
@@ -746,6 +850,14 @@
         <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Radio::setValidationContainer</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Select::setValidationContainer</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Backup\Model\Backup::getFile</td>
         <td>[public] Method return typing changed.</td>
     </tr>
@@ -764,6 +876,10 @@
     <tr>
         <td>Magento\Backend\Block\Widget\Grid\Massaction\AbstractMassaction::_construct</td>
         <td>[protected] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Date::getHtml</td>
+        <td>[public] Method return typing changed.</td>
     </tr>
     <tr>
         <td>Magento\Backend\Block\Template\Context::getNameBuilder</td>
@@ -794,7 +910,7 @@
         <td>Class was added.</td>
     </tr>
     <tr>
-        <td>Magento\LoginAsCustomerUi\Block\Adminhtml\ConfirmationPopup</td>
+        <td>Magento\LoginAsCustomerAdminUi\Block\Adminhtml\ConfirmationPopup</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1042,6 +1158,14 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\Attribute\Data\File::__construct</td>
+        <td>[public] Added a required constructor object parameter.</td>
+    </tr>
+    <tr>
+        <td>Magento\Developer\Model\TemplateEngine\Decorator\DebugHints::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Model\Customer::getAttributeSetId</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -1078,20 +1202,84 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Adminhtml\System\Config\Backend\Engine::beforeSave</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Helper\Image</td>
         <td>Interface has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Category\Tree::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Checkbox::__construct</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Checkbox::getSelectionPrice</td>
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Checkbox::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Multi::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Multi::getSelectionPrice</td>
         <td>[public] Method has been added.</td>
     </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Multi::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Radio::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Radio::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Select::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Block\Adminhtml\Catalog\Product\Composite\Fieldset\Options\Type\Select::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Button::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Button::_beforeToHtml</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Grid\Column\Filter\Date::$secureHtmlRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Form\Element\Dependence::$secureRenderer</td>
+        <td>[protected] Property has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Button\SplitButton::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Block\Widget\Button\SplitButton::_beforeToHtml</td>
+        <td>[protected] Method has been added.</td>
+    </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-interface">Interface changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-interface">Interface changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -1126,8 +1314,20 @@
         <td>Interface was removed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogSearch\Model\Search\FilterMapper\FilterStrategyInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Pricing\PriceCurrencyInterface::format</td>
         <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\DB\Adapter\AdapterInterface::fetchRow</td>
+        <td>[public] Method return typing changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Bulk\OperationManagementInterface::changeOperationStatus</td>
+        <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\Framework\App\Response\HttpInterface::getHeader</td>
@@ -1178,7 +1378,7 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\MediaGalleryApi\Api\IsPathBlacklistedInterface</td>
+        <td>Magento\MediaGalleryApi\Api\IsPathExcludedInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1238,10 +1438,6 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\LoginAsCustomerWebapi\Api\CreateCustomerAccessTokenInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
         <td>Magento\LoginAsCustomerLog\Api\GetLogsListInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -1258,7 +1454,7 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\LoginAsCustomerApi\Api\AuthenticateCustomerInterface</td>
+        <td>Magento\LoginAsCustomerApi\Api\AuthenticateCustomerBySecretInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1266,11 +1462,7 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\LoginAsCustomerApi\Api\DeleteAuthenticationDataBySecretInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\LoginAsCustomerApi\Api\DeleteExpiredAuthenticationDataInterface</td>
+        <td>Magento\LoginAsCustomerApi\Api\DeleteAuthenticationDataForUserInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1315,7 +1507,7 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-database">Database changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-database">Database changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -1386,10 +1578,6 @@
         <td>Foreign key was added</td>
     </tr>
     <tr>
-        <td>eav_attribute_label/EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID_UNIQUE</td>
-        <td>Unique key was added</td>
-    </tr>
-    <tr>
         <td>signifyd_case</td>
         <td>Table was dropped</td>
     </tr>
@@ -1406,10 +1594,6 @@
         <td>Foreign key was added</td>
     </tr>
     <tr>
-        <td>eav_attribute_label/EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID_UNIQUE</td>
-        <td>Unique key was added</td>
-    </tr>
-    <tr>
         <td>signifyd_case</td>
         <td>Table was dropped</td>
     </tr>
@@ -1424,490 +1608,510 @@
     <tr>
         <td>product_alert_stock/PRODUCT_ALERT_STOCK_STORE_ID_STORE_STORE_ID</td>
         <td>Foreign key was added</td>
-    </tr>
-    <tr>
-        <td>eav_attribute_label/EAV_ATTRIBUTE_LABEL_ATTRIBUTE_ID_STORE_ID_UNIQUE</td>
-        <td>Unique key was added</td>
     </tr>
     <tr>
         <td>wishlist_item/constraint</td>
         <td>Module db schema whitelist reduced (wishlist_item/constraint).</td>
     </tr>
     <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>admin_user_expiration</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>queue_poison_pill</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_gallery_asset_keyword</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>media_content_asset</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>magento_login_as_customer_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>login_as_customer</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>admin_analytics_usage_version_log</td>
-        <td>Table was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_country_code</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address/validated_vat_number</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>quote_address_item/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_price/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>product_alert_stock/store_id</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>newsletter_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>email_template/is_legacy</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>core_config_data/updated_at</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
-        <td>cms_page/layout_update_selected</td>
-        <td>Column was added</td>
-    </tr>
-    <tr>
         <td>Magento_Signifyd</td>
         <td>Db Whitelist from module Magento_Signifyd was removed</td>
     </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>admin_user_expiration</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>queue_poison_pill</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_gallery_asset_keyword</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>media_content_asset</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>magento_login_as_customer_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>login_as_customer</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>admin_analytics_usage_version_log</td>
+        <td>Table was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_country_code</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address/validated_vat_number</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>quote_address_item/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_price/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>product_alert_stock/store_id</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>newsletter_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>email_template/is_legacy</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>core_config_data/updated_at</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>cms_page/layout_update_selected</td>
+        <td>Column was added</td>
+    </tr>
+    <tr>
+        <td>magento_operation/operation_key</td>
+        <td>Column was added</td>
+    </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-di">Di changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-di">Di changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -1966,6 +2170,254 @@
         <td>Virtual Type was removed</td>
     </tr>
     <tr>
+        <td>BraintreeFacade</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalFacade</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultPaymentConfig</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultPaymentValueHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultPaymentValueHandlerPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCreditCardVaultFacade</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultPaymentConfig</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultPaymentValueHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultPaymentValueHandlerPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultFacade</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeLoggerForTransactionSale</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCommandPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalCommandPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCaptureStrategyCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalCaptureStrategyCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCommandManager</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalCommandManager</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Gateway\ErrorMapper\VirtualErrorMessageMapper</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeAuthorizeCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeAuthorizeRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeSaleCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeSaleRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCaptureCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCaptureRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultAuthorizeCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultAuthorizeRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultSaleCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultSaleRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultCaptureCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultCaptureRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalAuthorizeCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalAuthorizeRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalSaleCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalSaleRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultAuthorizeCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultAuthorizeRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultSaleCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultSaleRequest</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeValueHandlerPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeConfigValueHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeAuthorizationHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVaultResponseHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalValueHandlerPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalConfigValueHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalResponseHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalVaultResponseHandler</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVoidCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeVoidRequestBuilder</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Gateway\CancelCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeRefundCommand</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeRefundBuilder</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeCountryValidator</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeValidatorPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalCountryValidator</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalValidatorPool</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreePayPalInfo</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeTransactionsCollectionFactoryForReporting</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeTransactionsReporting</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>BraintreeTransactionsDataProvider</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
+        <td>Magento\Setup\BackendApp</td>
+        <td>Virtual Type was removed</td>
+    </tr>
+    <tr>
         <td>Magento\Authorizenet\Model\Directpost\Session\Storage</td>
         <td>Virtual Type was removed</td>
     </tr>
@@ -1975,7 +2427,7 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-layout">Layout changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-layout">Layout changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -2054,6 +2506,74 @@
         <td>Block was removed</td>
     </tr>
     <tr>
+        <td>paypal_express_review_checkout_head_components</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal_express_review_head_components</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.cart.validationmessages</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>braintree.paypal.review</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>express.review.shipping.method</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.additional.actions</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.cart.coupon</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.express.review.details</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>checkout.onepage.review.item.renderers</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.express.review.details.totals</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>paypal.express.review.details.agreements</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>additional.product.info</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>checkout_onepage_review_item_renderers</td>
+        <td>An Update was removed</td>
+    </tr>
+    <tr>
+        <td>braintree.card.renderer</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>braintree_paypal.token.renderer</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>adminhtml.report.grid.braintree.tooltip</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
+        <td>braintree_payment_script</td>
+        <td>Block was removed</td>
+    </tr>
+    <tr>
         <td>root</td>
         <td>Container was removed</td>
     </tr>
@@ -2075,11 +2595,15 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-system">System changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-system">System changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
         <th>How it changed</th>
+    </tr>
+    <tr>
+        <td>system.xml</td>
+        <td>System configuration file was added</td>
     </tr>
     <tr>
         <td>system.xml</td>
@@ -2175,10 +2699,6 @@
     </tr>
     <tr>
         <td>dev/syslog/syslog_logging</td>
-        <td>A field-node was removed</td>
-    </tr>
-    <tr>
-        <td>payment/braintree_section/braintree/braintree_advanced/kount_id</td>
         <td>A field-node was removed</td>
     </tr>
     <tr>
@@ -2403,7 +2923,7 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-xsd">Xsd changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-xsd">Xsd changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -2435,7 +2955,7 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-class-api-membership">Class API membership changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-class-api-membership">Class API membership changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>
@@ -2575,7 +3095,7 @@
     </tr>
 </tbody></table>
 
-<h3 id="2.3.0-2.4-develop-interface-api-membership">Interface API membership changes</h3>
+<h3 id="ce_2.3.0-2.4.0-develop-interface-api-membership">Interface API membership changes</h3>
 <table><tbody>
     <tr>
         <th>What changed</th>

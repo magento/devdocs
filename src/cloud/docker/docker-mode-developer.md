@@ -23,10 +23,16 @@ To launch the Docker environment in developer mode:
 
 1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
 
-1. Install the template dependencies.
+1. Install the template dependencies, and add the default hostname to your `/etc/hosts` file.
 
    ```bash
-   composer install
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
+   ```
+
+   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
+
+   ```bash
+   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
    ```
 
 1. On macOS or Windows hosts, install the selected file synchronization tool:
@@ -46,13 +52,14 @@ To launch the Docker environment in developer mode:
    ./vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen"
    ```
 
+   {:.bs-callout-info}
+   You can further customize the Docker Compose configuration file by adding additional options to the `build:compose` command. For example, you can set the software version for a service, or add Xdebug configuration. See [service keys][].
+
 1. _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
    ```bash
    cp .docker/config.php.dist .docker/config.php
    ```
-
-1. _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can enable Xdebug in the `.magento.app.yaml` file, and then update the configuration in the `docker-compose.yml` file. See [Configure Xdebug for Docker][xdebug].
 
 1. If you selected `docker-sync` for file synchronization, start the file synchronization.
 
@@ -84,17 +91,17 @@ To launch the Docker environment in developer mode:
    -  Deploy Magento in the Docker container.
 
       ```bash
-      docker-compose run deploy cloud-deploy
+      docker-compose run --rm deploy cloud-deploy
       ```
 
       ```bash
-      docker-compose run deploy magento-command deploy:mode:set developer
+      docker-compose run --rm deploy magento-command deploy:mode:set developer
       ```
 
    -  Run post-deploy hooks.
 
        ```bash
-       docker-compose run deploy cloud-post-deploy
+       docker-compose run --rm deploy cloud-post-deploy
        ```
 
       {: .bs-callout-info }
@@ -103,17 +110,17 @@ To launch the Docker environment in developer mode:
 1. Configure and connect Varnish.
 
    ```bash
-   docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
+   docker-compose run --rm deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
    ```
 
    ```bash
-   docker-compose run deploy magento-command setup:config:set --http-cache-hosts=varnish
+   docker-compose run --rm deploy magento-command setup:config:set --http-cache-hosts=varnish
    ```
 
 1. Clear the cache.
 
    ```bash
-   docker-compose run deploy magento-command cache:clean
+   docker-compose run --rm deploy magento-command cache:clean
    ```
 
 1. Access the local Magento Cloud template by opening one of the following URLs in a browser:
@@ -126,6 +133,7 @@ To launch the Docker environment in developer mode:
 [cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
-[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug
+[xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]
+[service key]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
 [mutagen-install]: https://mutagen.io/documentation/introduction/installation/
