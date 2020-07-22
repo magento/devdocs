@@ -3,7 +3,7 @@ group: extensions
 title: Amazon Sales Channel Release Notes
 ---
 {:.bs-callout .bs-callout-warning}
-Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported with Magento 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with Magento 2.3.x versions but is only supported with Magento 2.4.x versions.
+Amazon Sales Channel versions 4.0.0 and 4.1.0 are only supported for Magento 2.3.x versions.<br/>Amazon Sales Channel version 4.2.0 is compatible with Magento 2.3.x versions but is only supported for Magento 2.4.x versions.
 
 **Amazon Sales Channel** can be installed on instances with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} versions 2.3.x. We no longer support the extension on Magento 2.1, Magento 2.2, or Magento 1. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to list and sell products from your Magento catalog on Amazon.
 
@@ -23,29 +23,29 @@ See [Upcoming Releases](https://devdocs.magento.com/release/) for versioning, su
 
 ### v4.2.0
 
-Amazon Sales Channel 4.2.0 is compatible with versions 2.3.x but only supported in versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your Magento to version 2.4.0, you will be prompted to update the extension before you can complete the Magento update.
+Amazon Sales Channel 4.2.0 is compatible with versions 2.3.x but only supported for versions 2.4.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. If you have a previous Amazon Sales Channel version installed and attempt to update your Magento to version 2.4.0, you will be prompted to update the extension before you can complete the Magento update.
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
--  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchronize with Amazon without address errors. Example: Shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
+-  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchronize (sync) with Amazon without address errors.<br/>For example, a shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
 
--  {:.new}Support for PHP 7.4 has been added.
+-  {:.new}Added support for PHP 7.4.
 
--  {:.fix}<!--CHAN-4334-->The extension has been updated for support with Magento 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
+-  {:.new}<!--CHAN-4334-->Added support for Magento 2.4.x. Previous versions may be compatible with Magento 2.4.x, but are not supported. See [Upcoming releases](https://devdocs.magento.com/release/) for version compatibility. Amazon Sales Channel must be updated to 4.2.0 before the Magento 2.4.0 update can be completed.
 
--  {:.fix}<!--CHAN-4431-->Corrected an error causing an "Access Denied" error for UK customers.
+-  {:.fix}<!--CHAN-4431-->Corrected an issue that caused an _Access Denied_ error for UK customers.
 
--  {:.fix}<!--CHAN-4394-->Corrected an issue preventing the Amazon shipping status from syncing to the corresponding Magento order, thus “locking” the order’s shipping status as `Pending` in Magento and `Unshipped` in Amazon. With the implementation of the new standardized address feature, these shipping status errors have been resolved.
+-  {:.fix}<!--CHAN-4394-->Corrected an issue that prevented the Amazon shipping status from syncing to the corresponding Magento order, thus “locking” the order’s shipping status as `Pending` in Magento and `Unshipped` in Amazon. With the new standardized address feature, these shipping status errors have been resolved.
 
--  {:.fix}<!--ticket#-->Order synchronization has been updated to ignore failed order imports, thus reducing multiple sync attempts and allowing subsequent imports to process, with order sync requests submitted every 5 minutes. Synchronization errors are still recorded in the error log. Synchronization errors are logged, but marked as "processed" to allow further logging functions. As part of this fix, Amazon Sales Channel now automatically removes excess data collected for orders that fail to create in Magento.
+-  {:.fix}<!--ticket#-->Updated order synchronization (sync) to ignore failed order imports, thus reducing multiple sync attempts and allowing subsequent imports to process, with order sync requests submitted every 5 minutes. Sync errors are still recorded in the error log, but marked as "processed" to allow further logging functions. Also, Amazon Sales Channel now automatically removes excess data collected for orders that fail to create in Magento.
 
--  {:.fix}Error logging has been updated to collect more information for “Uncaught Exception” and extension update errors.
+-  {:.fix}Updated error logging to collect more information for uncaught exception and extension update errors.
 
--  {:.fix}<!--ticket#-->Corrected an issue causing the initial sync of "Lowest Price" data to fail due to missing "Price" value.
+-  {:.fix}<!--ticket#-->Corrected an issue that caused the initial sync of the _lowest price_ data to fail due to a missing _price_ value.
 
--  {:.fix}<!--CHAN-4410-->Corrected issues causing errors when the date range field is left blank when filtering your orders view.
+-  {:.fix}<!--CHAN-4410-->Corrected issues that caused filtering errors in the _Amazon orders_ view when the date range field is left blank.
 
--  {:.fix}<!--CHAN-4439-->Corrected an issue causing stock and fulfillment sync errors related to quantity. The extension has been updated to round down quantity values entered as a decimal before syncing with Amazon. Example: Merchant manually inputs `2.5` for quantity, the extension updates the value to `2` and then syncs the updated quantity with Amazon.
+-  {:.fix}<!--CHAN-4439-->Corrected an issue that caused quantity-related stock and fulfillment sync errors. The extension now rounds down quantity values entered as a decimal before syncing with Amazon.<br/> For example, when a merchant manually inputs a quantity of `2.5`, the extension rounds down the value to `2` and then syncs the updated quantity with Amazon.
 
 ### v4.1.0
 
@@ -80,7 +80,7 @@ Amazon Sales Channel 4.1.0 is compatible with versions 2.3.x of {{site.data.var.
 Amazon Sales Channel 4.0.0 is compatible with versions 2.3.0, 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. This version of Amazon Sales Channel includes many user-interface upgrades, along with minor bug fixes.
 
 {:.bs-callout .bs-callout-warning}
-Amazon Sales Channel 4.0.0 is not supported with Magento 2.3.5. For support with Magento 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
+Amazon Sales Channel 4.0.0 is not supported for Magento 2.3.5. For support with Magento 2.3.5, upgrade to Amazon Sales Channel 4.1.0.
 
 -  {:.new}Introduced a new [Amazon Sales Channel](https://docs.magento.com/m2/ee/user_guide/sales-channels/asc/amazon-sales-channel-home.html) home page with improved "card view" for your store information.
 

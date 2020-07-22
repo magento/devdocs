@@ -39,7 +39,7 @@ extensions:
           2.3.3: compatible
           2.3.4: compatible
           2.3.5-p1: not supported
-          2.4.0: not supported     
+          2.4.0: not supported
       -
         name: 3.0.1
         support:
