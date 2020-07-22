@@ -49,8 +49,6 @@ This release includes over 30 security fixes and platform security improvements.
 
 *  **Data rendering for UI data providers is now disabled by default**. This removes an opportunity for malicious users to execute arbitrary JavaScript. <!--- MC-17356-->
 
-*  **Content Security Policy (CSP) improvements**. `SecureHtmlRenderer` has been added to the Magento Framework and is available in `.phtml` templates to support the allowlisting of inline `style` and `script` tags. Inline scripts and styles are not typically permitted with the default CSP configuration. Although most core template files have been updated, some pages may display CSP violations. See [Content Security Policies]({{page.baseurl}}/extension-dev-guide/security/content-security-policies.html#whitelist-an-inline-script-or-style).
-
 *  **New `\Magento\Framework\Escaper` class**. This class is provided for `.phtml` templates and the PHP classes that are responsible for generating HTML. This class contains HTML sanitization methods relevant to multiple contexts. The `$escaper` local variable is available inside `.phtml` templates and should be used instead of the deprecated `$block->escape{method}`. Use `$escaper` rather than `$block` as the use of `$block->escape{method}` has been deprecated.
 
 *  *Support for new security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
@@ -1245,7 +1243,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC--->
 
-*  The integration of the third-party payment method Authorize.Net into the core Magento code has been removed. Merchants should migrate to the official extension that is available on the Magento Marketplace.
+*  The integration of third-party payment methods Authorize.Net, eWay, CyberSource, Braintree, and Worldpay into the core Magento code have been removed. Merchants should migrate to the official extensions that are available on the Magento Marketplace.
 
 <!--- MC--->
 
@@ -1255,57 +1253,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  You can now create an order from the Admin using Authorize.net as the payment method. Previously, Magento did not create the order, and displayed this error: `Transaction has been declined. Please try again later`. [GitHub-23934](https://github.com/magento/magento2/issues/23934)
 
-<!--- MC-30498-->
-
-*  Magento now displays an informative error message each time a customer clicks **Pay with PayPal** after entering an invalid shipping address in the checkout workflow. Previously, Magento displayed an error message only when the customer first clicked the button, not for subsequent clicks.
-
-<!--- MC-30639-->
-
-*  Magento no longer changes an order’s status to **processing** in the Payment Review section of the checkout workflow when a payment with PayPal fails.
-
-<!--- MC-30864-->
-
-*  You can now successfully complete an order using the Payflow Link payment method. Previously, the Payflow Link payment method always rejected payment because the order status remained in the `Pending` payment state, even though the order status in the payment method logs was `Approved`.
-
-<!--- MC-32423-->
-
-*  The **OK** button is now clickable when you try to correct Braintree payment details for an order.
-
 <!--- MC-32546-->
 
 *  You can now successfully complete an order and return to the merchant’s home page when **Website Payments Pro Hosted Solution** is configured. Previously, when you clicked **Return to merchant**, Magento threw this error: `Invalid Form Key. Please refresh the page`.
-
-<!--- MC-32494-->
-
-*  Orders that are placed using PayPal Payflow Pro are now set to Suspected Fraud status when fraud filters are triggered.
-
-<!--- MC-33110-->
-
-*  You can now use PayPal Express Checkout with any supported credit card. Previously, when you clicked on a credit card button while using PayPal Express Checkout to complete an order, Magento hung, and you could not enter any credit card information.
-
-<!--- MC-33117-->
-
-*  Orders placed within PayPal Payflow Pro are now set to Suspected Fraud status when fraud filters are triggered. Previously, payment transaction status on PayPal was not validated before payment approval occurred on the Magento side.
-
-<!--- MC-33294-->
-
-*  Payflow Pro now works as expected when Website Restrictions are enabled.
-
-<!--- MC-31157-->
-
-*  The **Place order** button on the checkout workflow is now disabled as expected until the customer updates the billing address when paying with Braintree. Previously, when secure 3D was enabled and the customer was paying with Braintree, Magento did not correctly validate the shipping address and displayed this JavaScript error: `TypeError: Cannot read property 'firstname' of null`.
-
-<!--- MC-31196-->
-
-*  Magento now successfully processes orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that the customer has manually entered into the text field rather than selected from the drop-down menu on the Shipping page. Previously, Magento displayed this error on the order review page: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`. [GitHub-26698](https://github.com/magento/magento2/issues/26698)
-
-<!--- MC-31573-->
-
-*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
-
-<!--- MC-31292-->
-
-*  You can now successfully use PayPal Express to pay for an order when persistent checkout cart has been enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
 
 <!--- ENGCOM-6606-->
 
@@ -1327,9 +1277,61 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now collects the payment information that is displayed on both the Admin and in invoice and shipment invoices from the store in which the order was made in deployments with multiple stores. Previously, Magento derived payment information from the default store.  _Fix submitted by Bartomiej Szubert in pull request [26765](https://github.com/magento/magento2/pull/26765)_. [GitHub-17933](https://github.com/magento/magento2/issues/17933)
 
+<!--- MC-31157-->
+
+*  The **Place order** button on the checkout workflow is now disabled as expected until the customer updates the billing address when paying with Braintree. Previously, when secure 3D was enabled and the customer was paying with Braintree, Magento did not correctly validate the shipping address and displayed this JavaScript error: `TypeError: Cannot read property 'firstname' of null`.
+
+#### PayPal
+
+<!--- MC-30498-->
+
+*  Magento now displays an informative error message each time a customer clicks **Pay with PayPal** after entering an invalid shipping address in the checkout workflow. Previously, Magento displayed an error message only when the customer first clicked the button, not for subsequent clicks.
+
+<!--- MC-30639-->
+
+*  Magento no longer changes an order’s status to **processing** in the Payment Review section of the checkout workflow when a payment with PayPal fails.
+
+<!--- MC-30864-->
+
+*  You can now successfully complete an order using the Payflow Link payment method. Previously, the Payflow Link payment method always rejected payment because the order status remained in the `Pending` payment state, even though the order status in the payment method logs was `Approved`.
+
+<!--- MC-32494-->
+
+*  Orders that are placed using PayPal Payflow Pro are now set to Suspected Fraud status when fraud filters are triggered.
+
+<!--- MC-33110-->
+
+*  You can now use PayPal Express Checkout with any supported credit card. Previously, when you clicked on a credit card button while using PayPal Express Checkout to complete an order, Magento hung, and you could not enter any credit card information.
+
+<!--- MC-33117-->
+
+*  Orders placed within PayPal Payflow Pro are now set to Suspected Fraud status when fraud filters are triggered. Previously, payment transaction status on PayPal was not validated before payment approval occurred on the Magento side.
+
+<!--- MC-33294-->
+
+*  Payflow Pro now works as expected when Website Restrictions are enabled.
+
+<!--- MC-31196-->
+
+*  Magento now successfully processes orders placed with PayPal Express Checkout where the order’s shipping address specifies a country region that the customer has manually entered into the text field rather than selected from the drop-down menu on the Shipping page. Previously, Magento displayed this error on the order review page: `Error 500: NOTICE: PHP message: PHP Fatal error: Uncaught Error: Call to a member function getId() on null in httpdocs/vendor/magento/module-paypal/Model/Api/Nvp.php:1527`. [GitHub-26698](https://github.com/magento/magento2/issues/26698)
+
+<!--- MC-31573-->
+
+*  The PayPal Pro payment method now works as expected in the Chrome 80 browser. This payment method previously invoked a Magento callback endpoint that needed access to the customer’s session — access that the new default Chrome SameSite cookie functionality does not permit. [GitHub-26840](https://github.com/magento/magento2/issues/26840)
+
+<!--- MC-31292-->
+
+*  You can now successfully use PayPal Express to pay for an order when persistent checkout cart has been enabled and the **Clear Persistence on Sign Out** setting is set to **no**. Previously, Magento redirected you to the Login page.
+
 <!--- ENGCOM-6383-->
 
 *  Payments from Paypal Express and Web Payments Pro now move to the Processing state as expected once processing has begun. Previously, Paypal Web Payments Pro payments remained in the  Pending Payment state even when payment information was in the Processing state. _Fix submitted by azambon in pull request [25876](https://github.com/magento/magento2/pull/25876)_. [GitHub-25659](https://github.com/magento/magento2/issues/25659)
+
+#### Braintree
+
+<!--- MC-32423-->
+
+*  The **OK** button is now clickable when you try to correct Braintree payment details for an order.
 
 ### Performance
 
@@ -1635,83 +1637,77 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Test
 
-<!--- ENGCOM-7000-->
+<!-- ENGCOM-6585-->
 
-*  Added an integration test to cover `$storeId` for the  Category Repository `get()` method. _Fix submitted by Lukasz Bajsarowicz in pull request [27048](https://github.com/magento/magento2/pull/27048)_. [GitHub-27044](https://github.com/magento/magento2/issues/27044)
+*  Hardcoded URLs in tests and Action roups have been replaced with page references. _Fix submitted by Lukasz Bajsarowicz in pull request [117](https://github.com/magento/partners-magento2ee/pull/117)_. [GitHub-26331](https://github.com/magento/magento2/issues/26331)
 
 <!--- ENGCOM-7273-->
 
-*  Tests now cover the task of logging Admin actions related to CMS pages. _Fix submitted by Lukasz Bajsarowicz in pull request [172](https://github.com/magento/partners-magento2ee/pull/172)_. [GitHub-171](https://github.com/magento/magento2/issues/171)
-
-<!--- ENGCOM-7306-->
-
-*  PHPUnit tests no longer throw this fatal error: `Fatal error: Class Mock_CartExtensionInterface_0ba80a0b contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (Magento\Quote\Api\Data\CartExtensionInterface::getAmazonOrderReferenceId, Magento\Quote\Api\Data\CartExtensionInterface::setAmazonOrderReferenceId) in /var/www/html/vendor/phpunit/phpunit-mock-objects/src/Generator.php(264) : eval()'d code on line 1`. _Fix submitted by Lukasz Bajsarowicz in pull request [27701](https://github.com/magento/magento2/pull/27701)_. [GitHub-27638](https://github.com/magento/magento2/issues/27638)
-
-<!--- ENGCOM-7143-->
-
-*  Consecutive requests in integration tests no longer fail. Previously, tests failed because request objects were shared between dispatches. The `resetRequest` method now empties the state of `request`. _Fix submitted by Lukasz Bajsarowicz in pull request [27300](https://github.com/magento/magento2/pull/27300)_. [GitHub-27299](https://github.com/magento/magento2/issues/27299)
-
-<!--- ENGCOM-7421-->
-
-*  Acceptance tests now follow naming conventions for Magento/Indexer and Magento/Backup modules.  _Fix submitted by Shankar Konar in pull request [27515](https://github.com/magento/magento2/pull/27515)_. [GitHub-27503](https://github.com/magento/magento2/issues/27503)
-
-<!--- ENGCOM-7291-->
-
-*  AMPQ-related unit tests have been updated for PHPUnit 8. _Fix submitted by Ihor Sviziev in pull request [27522](https://github.com/magento/magento2/pull/27522)_. [GitHub-27500](https://github.com/magento/magento2/issues/27500)
-
-<!--- ENGCOM-6674-->
-
-*  Magento no longer throws this error when running integration tests: `Error: Call to a member function findFile() on array (/var/www/html/lib/internal/Magento/Framework/Code/Generator/DefinedClasses.php:59)`. Previously, an issue with `AutoloaderRegistry::getAutoloader` caused integration tests to fail randomly. _Fix submitted by Lukasz Bajsarowicz in pull request [26480](https://github.com/magento/magento2/pull/26480)_. [GitHub-26479](https://github.com/magento/magento2/issues/26479)
-
-<!--- ENGCOM-6791 6825-->
-
-*  The `AdminReorderWithCatalogPrice` test has been refactored and no longer fails during CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [135](https://github.com/magento/partners-magento2ee/pull/135)_. [GitHub-26607](https://github.com/magento/magento2/issues/26607)
-
-<!--- ENGCOM-6542-->
-
-*  You can now run the `\Magento\Downloadable\Test\Unit\Helper\DownloadTest` unit test without being connected to the internet.  _Fix submitted by aleromano89 in pull request [26264](https://github.com/magento/magento2/pull/26264)_. [GitHub-23521](https://github.com/magento/magento2/issues/23521)
+*  Tests now cover the task of logging Admin Actions related to CMS pages. _Fix submitted by Lukasz Bajsarowicz in pull request [172](https://github.com/magento/partners-magento2ee/pull/172)_. [GitHub-171](https://github.com/magento/magento2/issues/171)
 
 <!-- ENGCOM-7040 7051-->
 
 *  Invalid functional test names have been revised to follow best practices. _Fix submitted by Lukasz Bajsarowicz in pull request [27118](https://github.com/magento/magento2/pull/27118) and pull request [151](https://github.com/magento/partners-magento2ee/pull/151). [GitHub-27117](https://github.com/magento/magento2/issues/27117)_
 
-<!-- ENGCOM-6780 6795-->
-
-*  The `AdminAddingNewOptionsWithImagesAndPricesToConfigurableProduct` and `StorefrontApplyPromoCodeDuringCheckout` tests have been refactored and no longer fail during CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [26611](https://github.com/magento/magento2/pull/26611) and pull request [26614](https://github.com/magento/magento2/pull/26614)_. [GitHub-26612](https://github.com/magento/magento2/issues/26612), [GitHub-26610](https://github.com/magento/magento2/issues/26610)
-
 <!-- ENGCOM-7026-->
 
 *  Magento `cron` is now used for re-indexing after creating test data, and where applicable, `cache:flush config` replaces `cache:flush`. _Fix submitted by Lukasz Bajsarowicz in pull request [26990](https://github.com/magento/magento2/pull/26990)_. [GitHub-26989](https://github.com/magento/magento2/issues/26989)
 
-### Theme
+<!--- ENGCOM-7421-->
 
-<!--- MC-29804-->
+*  Acceptance tests now follow naming conventions for `Magento/Indexer` and `Magento/Backup` modules.  _Fix submitted by Shankar Konar in pull request [27515](https://github.com/magento/magento2/pull/27515)_. [GitHub-27503](https://github.com/magento/magento2/issues/27503)
 
-*  We’ve resolved a bug in `JsFooterPlugin.php` that affected the display of dynamic blocks. Previously, Magento displayed this error when you directly accessed `/banner/ajax/load/url`: `Uncaught TypeError: strpos() expects parameter 1 to be string, null given in`.
+<!--- ENGCOM-6791 6825-->
 
-<!--- ENGCOM-6708-->
+*  The `AdminReorderWithCatalogPrice` test has been refactored and no longer fails during the CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [135](https://github.com/magento/partners-magento2ee/pull/135)_. [GitHub-26607](https://github.com/magento/magento2/issues/26607)
 
-*  The `i18n` method provides the ability to add a string to underscore templates.  _Fix submitted by Sergiy Vasiutynskyi in pull request [26435](https://github.com/magento/magento2/pull/26435)_. [GitHub-18012](https://github.com/magento/magento2/issues/18012)
+<!-- ENGCOM-6780 6795-->
 
-<!--- ENGCOM-6666-->
+*  The `AdminAddingNewOptionsWithImagesAndPricesToConfigurableProduct` and `StorefrontApplyPromoCodeDuringCheckout` tests have been refactored and no longer fail during CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [26611](https://github.com/magento/magento2/pull/26611) and pull request [26614](https://github.com/magento/magento2/pull/26614)_. [GitHub-26612](https://github.com/magento/magento2/issues/26612), [GitHub-26610](https://github.com/magento/magento2/issues/26610)
 
-*  The `section-config` module has been refactored. This refactoring has reduced errors that were caused by third-party modules making POST requests or requesting customer data directly before the module was initialized by `data-mage-init`. _Fix submitted by Mateusz Krzeszowiak in pull request [25764](https://github.com/magento/magento2/pull/25764)_. [GitHub-17125](https://github.com/magento/magento2/issues/17125)
+<!-- ENGCOM-6621-->
 
-<!--- ENGCOM-6924-->
+*  The `DeleteProduct and DeleteCustomer Action Groups` tests have been refactored and no longer fail during the CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [26407](https://github.com/magento/magento2/pull/26407)_. [GitHub-26396](https://github.com/magento/magento2/issues/26396)
 
-*  `LoadCssAsync` HTML format errors have been fixed. _Fix submitted by Sathish Subramanian in pull request [26764](https://github.com/magento/magento2/pull/26764)_. [GitHub-26760](https://github.com/magento/magento2/issues/26760)
+<!-- ENGCOM-6608-->
 
-<!--- ENGCOM-7052-->
+*  The `AdminMoveAnchoredCategoryTest.xml` tests have been refactored and no longer fail during the CI validation process. _Fix submitted by Lukasz Bajsarowicz in pull request [26395](https://github.com/magento/magento2/pull/26395)_. [GitHub-26396](https://github.com/magento/magento2/issues/26396)
 
-*  When you create `default.xml` and `catalog_product_view.xml` files as part of creating a new theme, Magento either creates these pages or logs errors in the log files as expected. Previously, Magento logged errors in `vendor/magento/framework/View/Page/Config/Renderer.php` file. _Fix submitted by Vinh Le in pull request [27026](https://github.com/magento/magento2/pull/27026)_. [GitHub-27009](https://github.com/magento/magento2/issues/27009)
+#### Integration tests
+
+<!--- ENGCOM-7143-->
+
+*  Consecutive requests in integration tests no longer fail. Previously, tests failed because request objects were shared between dispatches. The `resetRequest` method now empties the state of `request`. _Fix submitted by Lukasz Bajsarowicz in pull request [27300](https://github.com/magento/magento2/pull/27300)_. [GitHub-27299](https://github.com/magento/magento2/issues/27299)
+
+<!-- ENGCOM-7262-->
+
+*  Additional integration tests added to cover for `Magento_Customer` email features. _Fix submitted by Lukasz Bajsarowicz in pull request [27606](https://github.com/magento/magento2/pull/27606)_. [GitHub-27607](https://github.com/magento/magento2/issues/27607)
+
+#### PHP unit tests
+
+<!-- ENGCOM-7435 7306-->
+
+*  PHP unit tests no longer throw this fatal error: `Fatal error: Class Mock_CartExtensionInterface_0ba80a0b contains 2 abstract methods and must therefore be declared abstract or implement the remaining methods (Magento\Quote\Api\Data\CartExtensionInterface::getAmazonOrderReferenceId, Magento\Quote\Api\Data\CartExtensionInterface::setAmazonOrderReferenceId) in /var/www/html/vendor/phpunit/phpunit-mock-objects/src/Generator.php(264) : eval()'d code on line 1`. _Fix submitted by Lukasz Bajsarowicz in pull requests [178](https://github.com/magento/partners-magento2ee/pull/178) and [27701](https://github.com/magento/magento2/pull/27701)_. [GitHub-27638](https://github.com/magento/magento2/issues/27638)
+
+<!-- ENGCOM-7271-->
+
+*  Tests for `Offline_Payments` are now compatible with PHPUnit 8.  _Fix submitted by Cristiano Pacheco in pull request [27627](https://github.com/magento/magento2/pull/27627)_. [GitHub-27500](https://github.com/magento/magento2/issues/27500)
+
+<!-- ENGCOM-7243 7284 7291-->
+
+*  Unit tests for `Framework`, `AdminAnalytics`, `AdminNotification`, and `AMPQ` have been updated for PHPUnit 8. _Fix submitted by Ihor Sviziev in pull requests [27522](https://github.com/magento/magento2/pull/27522), [27521](https://github.com/magento/magento2/pull/27521), [27519](https://github.com/magento/magento2/pull/27519), [27522](https://github.com/magento/magento2/pull/27522)_. [GitHub-27500](https://github.com/magento/magento2/issues/27500)
+
+<!--- ENGCOM-6542-->
+
+*  You can now run the `\Magento\Downloadable\Test\Unit\Helper\DownloadTest` unit test without being connected to the internet.  _Fix submitted by aleromano89 in pull request [26264](https://github.com/magento/magento2/pull/26264)_. [GitHub-23521](https://github.com/magento/magento2/issues/23521)
 
 <!--- ENGCOM-6695-->
 
 *  Added unit test for `app/code/Magento/Fedex/Model/Source/Generic.php`. _Fix submitted by Sathish Subramanian in pull request [26549](https://github.com/magento/magento2/pull/26549)_.
 
-<!-- ENGCOM-6585-->
+<!-- ENGCOM-7251 7283 7472-->
 
-*  Hardcoded URLs in Tests and ActionGroups have been replaced with  page references. _Fix submitted by Lukasz Bajsarowicz in pull request [117](https://github.com/magento/partners-magento2ee/pull/117)_. [GitHub-26331](https://github.com/magento/magento2/issues/26331)
+*  `<magentoCron>` has been added to multiple tests, which triggers partial reindexing. This changes addresses issues that created false negatives in functional tests that covered `Magento_Bundle`, `CatalogImportExport`, `CatalogInventory`, `CatalogRule`, `Backend`, `Braintree`, and `Captcha`. _Fix submitted by Lukasz Bajsarowicz in pull requests [27322](https://github.com/magento/magento2/pull/27322), [27323](https://github.com/magento/magento2/pull/27323), [27321](https://github.com/magento/magento2/pull/27321)_. [GitHub-27320](https://github.com/magento/magento2/issues/27320)
 
 <!-- ENGCOM-6844-->
 
@@ -1719,7 +1715,25 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6352-->
 
-*  Each Action group has been moved to a separate file to follow MFTF best practices, and inconsistent file names have been revised. _Fix submitted by Lukasz Bajsarowicz in pull request [25800](https://github.com/magento/magento2/pull/25800)_. [GitHub-22853](https://github.com/magento/magento2/issues/22853)
+*  Each Action group in a test has been moved to a separate file to follow MFTF best practices, and inconsistent file names have been revised. Tests for the following modules have been affected:
+
+   *  module-catalog-permissions
+   *  module-shared-catalog
+   *  module-catalog-event
+   *  module-banner
+   *  module-admin-gws
+   *  module-advanced-checkout
+   *  module-shipping
+   *  module-ui
+   *  module-shipping
+   *  module-checkout-address-search
+   *  module-sales
+   *  module-catalog
+   *  module-catalog-rule-staging
+   *  module-visual-merchandiser
+   *  module-customer
+
+   _Fix submitted by Lukasz Bajsarowicz in pull requests [25800](https://github.com/magento/magento2/pull/25800), [26323](https://github.com/magento/magento2/pull/26323), [26321](https://github.com/magento/magento2/pull/26321), [26320](https://github.com/magento/magento2/pull/26320), [26319](https://github.com/magento/magento2/pull/26319), [26322](https://github.com/magento/magento2/pull/26322), [25828](https://github.com/magento/magento2/pull/25828), [26329](https://github.com/magento/magento2/pull/26329) (and pull requests 104, 105, 106, 107, 108, 109, 111, 119, 120, 121 in private repository partners-magento2ee)_. [GitHub-22853](https://github.com/magento/magento2/issues/22853)
 
 ### Translation and locales
 
