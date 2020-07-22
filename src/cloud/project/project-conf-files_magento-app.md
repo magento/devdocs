@@ -299,7 +299,7 @@ If your project requires custom cron jobs, you can add them to the default cron 
 
 ## Variables
 
-The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.x - 2.3.x.
+The following environment variables are included in `.magento.app.yaml`. These are required for Magento 2.2.x - 2.3.x.
 
 ```yaml
 variables:

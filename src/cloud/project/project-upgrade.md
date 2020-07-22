@@ -77,7 +77,7 @@ To update the `.magento.app.yaml` file:
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
-   For 2.2.x - 2.3.x.
+   For Magento 2.2.x - 2.3.x:
    
    ```yaml
    variables:
@@ -87,7 +87,7 @@ To update the `.magento.app.yaml` file:
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
    
-   For 2.4.x.
+   For Magento 2.4.x:
    
    ```yaml
    variables:
