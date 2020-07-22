@@ -20,6 +20,8 @@ Error messages are categorized by deployment stage–*build*, *deploy*, and *pos
 -  **Error description**: A short phrase that summarizes the cause of the error
 -  **Suggested action**: Provides guidance to troubleshoot and resolve the error
 
+## Critical Errors
+
 ## Build stage
 
 {:.error-table}
