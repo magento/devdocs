@@ -32,11 +32,11 @@ The `source_code` values will be used in subsequent steps.
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/sources`
+`POST <host>/rest/default/V1/inventory/sources`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
