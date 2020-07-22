@@ -156,7 +156,7 @@ To test the connection to the VPC endpoint service:
 1. Run the following command to to ensure the service is listening on VM:
 
    ```bash
-   netsat -na |grep <port>
+   netstat -na |grep <port>
    ```
 
 1. Run the following command to check the packages flow:
@@ -167,10 +167,10 @@ To test the connection to the VPC endpoint service:
 
    Check the following internal settings to ensure that the configuration is valid:
 
-   - Check endpoint and endpoint services settings
-   - Check NLB settings
-   - Check target groups in NLB and verify they are healthy
-   - netcat/curl endpoint URL from each VM(CMD's listed above)
+   -  Endpoint and endpoint services settings
+   -  NLB settings
+   -  The target groups in NLB and verify they are healthy
+   -  The netcat/curl endpoint URL from each VM ( listed above)
 
    See the following articles for help troubleshooting connection issues:
 
@@ -191,7 +191,7 @@ Submit a Magento Support ticket to change an existing PrivateLink configuration.
 
 The customer VPC must have the following resources available to support bidirectional PrivateLink connections:
 
--  A Network Load Balancer
+-  A Network Load Balancer (NLB)
 -  An endpoint service configuration that enables access to an application or service from the customer VPC
 -  An [interface endpoint][] (AWS) or [private endpoint][] (Azure) that allows Magento to connect to endpoint services hosted in your VPC
 
