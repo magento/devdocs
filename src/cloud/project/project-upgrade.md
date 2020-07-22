@@ -47,7 +47,7 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 ### Update the configuration file
 
-If you are upgrading from an older version of Magento to 2.2.x or later, you must also update your [.magento.app.yaml] file or you might encounter errors. {{site.data.var.ece}} 2.2.x and later has new settings in the file.
+When you upgrade, you might need to update your [.magento.app.yaml] file to account for changes in the default configuration settings that are sometimes introduced to support changes in {{site.data.var.ece}} or the Magento application.
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
