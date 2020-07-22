@@ -309,7 +309,7 @@ variables:
         CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
-For {{site.data.var.ece}} 2.4.x. set next variables
+For Magento 2.4.x., set the following variables:
 
 ```yaml
 variables:
