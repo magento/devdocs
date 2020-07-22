@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 6. Set the shipping method
+title: Step 6. Set the delivery method
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-The `setShippingMethodsOnCart` mutation defines the shipping methods for your order. It requires these input parameters:
+The `setShippingMethodsOnCart` mutation defines the delivery methods for your order. It requires these input parameters:
 
 *  `cart_id`
 *  `carrier_code`
@@ -83,4 +83,4 @@ mutation {
 
 1. Go to Checkout.
 
-1. The selected shipping method is displayed in the Shipping Methods section on the Shipping step.
+1. The selected delivery method is displayed in the Shipping Methods section on the Shipping step.
