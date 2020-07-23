@@ -21,6 +21,10 @@ pages:
         - label: Two-Factor Authentication
           url: /security/two-factor-authentication.html
 
+        - label: Security.txt
+          url: /security/security-txt.html
+          exclude_versions: ["2.3"]
+
         - label: X-Frame-Options header
           url: /config-guide/secy/secy-xframe.html
 
