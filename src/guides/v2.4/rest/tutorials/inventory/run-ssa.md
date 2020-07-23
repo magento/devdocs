@@ -24,11 +24,11 @@ Currently, Magento supports SSAs based on priority and on distance. Third-party 
 
 **Endpoint:**
 
-`GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
+`GET <host>/rest/default/V1/inventory/source-selection-algorithm-list`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -63,13 +63,15 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 This tutorial does not consider complications, such as selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (40 items of product `24-WB01` and 20 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
+In [Step 4. Link stocks and sources]({{page.baseurl}}/rest/tutorials/assign-source-to-stock.html), we assigned the `priority` value of the Northeast warehouse and West warehouse to be `1` and `2`, respectively. Thus, the `priority` SSA attempts to fulfill the order from the Northeast warehouse first. If the primary source does not have enough of a product in stock, the SSA goes down the prioritized list of sources until the ordered quantity can be found. 
+
 **Endpoint:**
 
-`POST <host>/rest/us/V1/inventory/source-selection-algorithm-result`
+`POST <host>/rest/default/V1/inventory/source-selection-algorithm-result`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -103,7 +105,7 @@ The SSA recommends shipping from the following sources:
 Product | Source | Quantity
 --- | --- | ---
 `24-WB01` | Northeast warehouse | 35
-`24-WB01` | Brooklyn store | 5
+`24-WB01` | West warehouse | 5
 `24-WB03` | Northeast warehouse | 20
 
 ```json
@@ -122,9 +124,21 @@ Product | Source | Quantity
             "qty_available": 50
         },
         {
-            "source_code": "brooklyn",
+            "source_code": "west_wh",
             "sku": "24-WB01",
             "qty_to_deduct": 5,
+            "qty_available": 15
+        },
+        {
+            "source_code": "west_wh",
+            "sku": "24-WB03",
+            "qty_to_deduct": 0,
+            "qty_available": 10
+        },
+        {
+            "source_code": "brooklyn",
+            "sku": "24-WB01",
+            "qty_to_deduct": 0,
             "qty_available": 10
         },
         {
@@ -156,6 +170,30 @@ Product | Source | Quantity
             "sku": "24-WB03",
             "qty_to_deduct": 0,
             "qty_available": 0
+        },
+        {
+            "source_code": "berkeley",
+            "sku": "24-WB01",
+            "qty_to_deduct": 0,
+            "qty_available": 10
+        },
+        {
+            "source_code": "berkeley",
+            "sku": "24-WB03",
+            "qty_to_deduct": 0,
+            "qty_available": 20
+        },
+        {
+            "source_code": "sausalito",
+            "sku": "24-WB01",
+            "qty_to_deduct": 0,
+            "qty_available": 10
+        },
+        {
+            "source_code": "sausalito",
+            "sku": "24-WB03",
+            "qty_to_deduct": 0,
+            "qty_available": 20
         }
     ],
     "shippable": true

@@ -30,11 +30,11 @@ In this example, we configure the Northeast warehouse to be the primary source f
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/stock-source-links`
+`POST <host>/rest/default/V1/inventory/stock-source-links`
 
 **Scope:**
 
-`all` store views
+`default` store views
 
 **Headers:**
 
@@ -53,44 +53,39 @@ In this example, we configure the Northeast warehouse to be the primary source f
          "priority" : 1
       },
       {
-        "source_code" : "brooklyn",
+        "source_code" : "west_wh",
         "stock_id" : 2,
         "priority" : 2
       },
       {
-        "source_code" : "manhattan",
+        "source_code" : "brooklyn",
         "stock_id" : 2,
         "priority" : 3
       },
       {
+        "source_code" : "manhattan",
+        "stock_id" : 2,
+        "priority" : 4
+      },
+      {
         "source_code" : "huntington",
         "stock_id" : 2,
-        "priority": 4
+        "priority": 5
+      },
+      {
+        "source_code" : "berkeley",
+        "stock_id" : 2,
+        "priority" : 6
+      },
+      {
+         "source_code" : "sausalito",
+         "stock_id" : 2,
+         "priority" : 7
       },
       {
         "source_code" : "hq",
         "stock_id" : 2,
-        "priority" : 5
-      },
-      {
-        "source_code" : "de_wh",
-        "stock_id" : 3,
-        "priority" : 1
-      },
-      {
-        "source_code" : "berlin",
-        "stock_id" : 3,
-        "priority" : 2
-      },
-      {
-         "source_code" : "frankfurt",
-         "stock_id" : 3,
-         "priority" : 3
-      },
-      {
-         "source_code" : "hq",
-         "stock_id" : 3,
-         "priority" : 4
+        "priority" : 8
       }
    ]
 }
@@ -99,6 +94,7 @@ In this example, we configure the Northeast warehouse to be the primary source f
 **Response:**
 
 Magento returns empty array.
+
 []
 
 ## Reindex and flush cache

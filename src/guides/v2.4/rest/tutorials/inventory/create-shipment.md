@@ -13,11 +13,11 @@ functional_areas:
   - Integration
 ---
 
-In the previous step, the SSA recommended shipping 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. It also recommended shipping 5 `24-WB01` items from the Brooklyn store.
+In the previous step, the SSA recommended shipping 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehouse. It also recommended shipping 5 `24-WB01` items from the West warehouse.
 
 You can always override the SSA recommendations. It would be valid, for example, to ship 25 `24-WB01` items and 5 `24-WB03` items each from the Brooklyn, Manhattan, and Huntington stores.
 
-Fulfilling the order requires two partial shipments (unless you want to create a scenario that also involves more than one store). In this example, we'll follow the SSA recommendations.
+Fulfilling the order requires a minimum of two partial shipments. In this example, we'll follow the SSA recommendations.
 
 When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.
 
@@ -31,13 +31,13 @@ We'll ship 35 `24-WB01` items and 20 `24-WB03` items from the Northeast warehous
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/order/3/ship`
+`POST <host>/rest/default/V1/order/3/ship`
 
 where `3` is the `orderid`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -61,7 +61,7 @@ where `3` is the `orderid`
   ],
   "notify": true,
   "comment": {
-    "comment": "Shipment from Northeast warehouse"
+    "comment": "Shipment from the Northeast warehouse"
   },
   "arguments": {
     "extension_attributes": {
@@ -75,9 +75,9 @@ where `3` is the `orderid`
 
 The shipment ID, such as `3`.
 
-### Ship from the Brooklyn store
+### Ship from the West warehouse
 
-Use the same endpoint to ship the remaining five `24-WB03` items from the Brooklyn store.
+Use the same endpoint to ship the remaining five `24-WB03` items from the West warehouse.
 
 **Payload:**
 
@@ -85,17 +85,17 @@ Use the same endpoint to ship the remaining five `24-WB03` items from the Brookl
 {
   "items": [
     {
-      "order_item_id": 4,
+      "order_item_id": 3,
       "qty": 5
     }
   ],
   "notify": true,
   "comment": {
-    "comment": "Shipment from Brooklyn"
+    "comment": "Shipment from the West warehouse"
   },
   "arguments": {
     "extension_attributes": {
-      "source_code": "brooklyn"
+      "source_code": "west_wh"
     }
   }
 }
@@ -113,11 +113,11 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/shipment`
+`POST <host>/rest/default/V1/shipment`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -202,9 +202,9 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 }
 ```
 
-### Ship from the Brooklyn store
+### Ship from the West warehouse
 
-Use the same endpoint to ship the remaining five items from the Brooklyn store.
+Use the same endpoint to ship the remaining five items from the West warehouse.
 
 **Payload:**
 
@@ -225,7 +225,7 @@ Use the same endpoint to ship the remaining five items from the Brooklyn store.
       }
     ],
     "extension_attributes": {
-      "source_code": "brooklyn"
+      "source_code": "west_wh"
     }
   }
 }
@@ -259,7 +259,7 @@ Use the same endpoint to ship the remaining five items from the Brooklyn store.
     "tracks": [],
     "comments": [],
     "extension_attributes": {
-        "source_code": "brooklyn"
+        "source_code": "west_wh"
     }
 }
 ```

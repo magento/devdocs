@@ -39,16 +39,16 @@ None
 
 **Response:**
 
-The response is the `quoteId`: 8
+The response is the `quoteId`: 3
 
 ## Check for product availability
 
 In [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
-Product | Northeast Warehouse | Brooklyn Store  | Manhattan Store | Long Island Store
+Product | Northeast Warehouse | Brooklyn Store  | Manhattan Store | Long Island Store | West Warehouse | Berkeley Store | Sausalito Store
 --- | --- | --- | ---
-`24-WB01` | 35 | 10 | 10 | 10
-`24-WB03` | 50 | 0 | 0 | 0
+`24-WB01` | 35 | 10 | 10 | 10 | 15 | 10 | 10
+`24-WB03` | 50 | 0 | 0 | 0 | 10 | 20 | 20
 
 Later in this step, we'll order 40 `24-WB01` items and 20 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
@@ -58,11 +58,11 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Endpoint:**
 
-`GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
+`GET <host>/rest/default/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -76,7 +76,7 @@ Not applicable
 
 **Response:**
 
-`65`
+`100`
 
 ### Check for product `24-WB03`
 
@@ -84,11 +84,11 @@ Use the same endpoint to check the quantity available for product `24-WB03`.
 
 **Endpoint:**
 
-`GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
+`GET <host>/rest/default/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -102,7 +102,7 @@ Not applicable
 
 **Response:**
 
-`50`
+`100`
 
 ## Add items to the cart
 
@@ -114,11 +114,11 @@ In this call, we'll add 20 `24-WB03` items. This portion of the order can be ful
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine/items`
+`POST <host>/rest/default/V1/carts/mine/items`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -133,7 +133,7 @@ In this call, we'll add 20 `24-WB03` items. This portion of the order can be ful
   "cartItem": {
     "sku": "24-WB03",
     "qty": 20,
-    "quote_id": "8"
+    "quote_id": "3"
   }
 }
 ```
@@ -144,13 +144,27 @@ Note the `item_id` for use in subsequent steps.
 
 ```json
 {
-    "item_id": 8,
+    "item_id": 5,
     "sku": "24-WB03",
     "qty": 20,
     "name": "Driven Backpack",
     "price": 36,
     "product_type": "simple",
-    "quote_id": "8"
+    "quote_id": "3",
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 144,
+                    "base_amount": 144,
+                    "original_amount": 144,
+                    "base_original_amount": 144
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
+    }
 }
 ```
 
@@ -165,7 +179,7 @@ Use the same endpoint to add 40 items of `24-WB01` to the cart. Multiple sources
   "cartItem": {
     "sku": "24-WB01",
     "qty": 40,
-    "quote_id": "8"
+    "quote_id": "3"
   }
 }
 ```
@@ -175,13 +189,27 @@ Note the `item_id` for use in subsequent steps.
 
 ```json
 {
-    "item_id": 9,
+    "item_id": 6,
     "sku": "24-WB01",
     "qty": 40,
     "name": "Voyage Yoga Bag",
     "price": 32,
     "product_type": "simple",
-    "quote_id": "8"
+    "quote_id": "3",
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 256,
+                    "base_amount": 256,
+                    "original_amount": 256,
+                    "base_original_amount": 256
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
+    }
 }
 ```
 
@@ -196,7 +224,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
   "cartItem": {
     "sku": "240-LV06",
     "qty": 1,
-    "quote_id": "8"
+    "quote_id": "3"
   }
 }
 ```
@@ -204,14 +232,13 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 **Response:**
 
 ```json
-{
-    "item_id": 10,
+    "item_id": 7,
     "sku": "240-LV06",
     "qty": 1,
     "name": "Yoga Adventure",
     "price": 22,
     "product_type": "downloadable",
-    "quote_id": "8",
+    "quote_id": "3",
     "product_option": {
         "extension_attributes": {
             "downloadable_option": {
@@ -220,10 +247,24 @@ Finally, we'll add a single instance of a downloadable product to the cart.
                 ]
             }
         }
+    },
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 4.4,
+                    "base_amount": 4.4,
+                    "original_amount": 4.4,
+                    "base_original_amount": 4.4
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
     }
 }
 ```
 
 ## Verify this step {#verify-step}
 
-Sign in as the customer at `http://<host>/us` and click on the shopping cart. All the items you added display in the cart.
+Sign in as the customer at `http://<host>` and click on the shopping cart. All the items you added display in the cart.
