@@ -1,9 +1,13 @@
-### Critical Errors
+<!-Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.->
+
+## Critical Errors
+
+Critical errors indicate a problem with the Magento Commerce Cloud project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
 
 ### Build stage
 
 {:.error-table}
-| Error code | Build step | Error description | Suggested action |
+| Error code | Build step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 2 |  | Cannot write to the `./app/etc/env.php` file | Deployment script cannot make required changes to the `/app/etc/env.php` file. Check your filesystem permissions. |
 | 3 |  | Configuration isn't defined in the `schema.yaml` file | Configuration is not defined in the `./vendor/magento/ece-tools/config/schema.yaml` file. Check that the config variable name is correct, and that it is defined. |
@@ -34,7 +38,7 @@
 ### Deploy stage
 
 {:.error-table}
-| Error code | Deploy step | Error description | Suggested action |
+| Error code | Deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 101 | pre-deploy: cache | Incorrect cache configuration (missing port or host) | Cache configuration is missing required parameters `server` or `port`. Check the `cloud.log` for more information. |
 | 102 |  | Cannot write to the `./app/etc/env.php` file | Deployment script cannot make required changes to the `/app/etc/env.php` file. Check your filesystem permissions. |
@@ -74,7 +78,7 @@
 ### Post-deploy stage
 
 {:.error-table}
-| Error code | Post-deploy step | Error description | Suggested action |
+| Error code | Post-deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 201 | is-deploy-failed | Deploy stage failed |  |
 | 202 |  | The `./app/etc/env.php` file is not writable | Deployment script cannot make required changes to the `/app/etc/env.php` file. Check your filesystem permissions. |
@@ -89,19 +93,21 @@
 ### General
 
 {:.error-table}
-| Error code | General step | Error description | Suggested action |
+| Error code | General step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 243 |  | Configuration is not defined in the `schema.yaml` file | Check that the config variable name is correct, and that it defined. |
 | 244 |  | Failed to parse the `.magento.env.yaml` file | The `./.magento.env.yaml` file format is invalid. Use a YAML parser to check the syntax and fix any errors. |
 | 245 |  | Unable to read the `.magento.env.yaml` file | Unable to read the `./.magento.env.yaml` file. Check file permissions. |
 | 246 |  | Unable to read the `.schema.yaml` file |  |
 
-### Warning Errors
+## Warning Errors
+
+Warning errors indicate a problem with the Magento Commerce Cloud project configuration such as incorrect, deprecated, unsupported, or missing configuration settings for optional features that can affect site operation. Although the project is deployed, you should review warning messages and update the configuration to resolve them.
 
 ### Build stage
 
 {:.error-table}
-| Error code | Build step | Error description | Suggested action |
+| Error code | Build step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 1001 | validate-config | File app/etc/config.php does not exist |  |
 | 1002 | validate-config | The ./build_options.ini file is no longer supported |  |
@@ -114,7 +120,7 @@
 ### Deploy stage
 
 {:.error-table}
-| Error code | Deploy step | Error description | Suggested action |
+| Error code | Deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 2001 | pre-deploy:cache | Cache is configured for a Redis service that is not available. Configuration will be ignored. |  |
 | 2002 | validate-config | The configured state is not ideal |  |
@@ -145,7 +151,7 @@
 ### Post-deploy stage
 
 {:.error-table}
-| Error code | Post-deploy step | Error description | Suggested action |
+| Error code | Post-deploy step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 3001 | validate-config | Debug logging is enabled in Magento | To save disk space, do not enable debug logging for your production environments. |
 | 3002 | warm-up | Can not fetch store urls |  |
@@ -154,7 +160,7 @@
 ### General
 
 {:.error-table}
-| Error code | General step | Error description | Suggested action |
+| Error code | General step | Error description (Title) | Suggested action |
 | - | - | - | - |
 | 4001 |  | Can not get system processor count: |  |
 
