@@ -11,12 +11,12 @@ These release notes can include:
 
 ## Magento B2B - Version 1.2.0
 
--  {:.new} Purchase Orders have been enhanced and rewritten. The are now included by default in Magento Commerce.
+-  {:.new} Purchase Orders have been enhanced and rewritten. They are now included by default in Magento Commerce.
 -  {:.new} Purchase Order Approval Rules have been implemented. These rules allow users to control the Purchase Order workflow by creating purchasing rules for orders.
 -  {:.new} Login as Customer is now included by default in Magento Commerce. This allows site employees to assist customers by logging in as the customer to see what they see.
 
 -  {:.fix} Attribute aggregations are now working correctly for Layered Navigation with Elasticsearch
--  {:.fix} Search orders by special chars is now working properly.
+-  {:.fix} Search orders by special characters is now working properly.
 -  {:.fix} Clicking on the **Clear All** Button now expands all the filters, rather than collapsing them.
 -  {:.fix} Product SKU/Name is now included in the Order History search filter summary.
 -  {:.fix} Sorting Indicator is now displayed properly in the My Purchase Orders Grid.
@@ -28,8 +28,8 @@ These release notes can include:
 -  {:.fix} Due to an incorrect variable type value, admins could not add configurable products to an order. The option dropdowns would not populate. This feature now works properly.
 -  {:.fix} Previously, when editing Category Permissions for the Not Logged In group, an error would occur when saving the changes. This bug has now been fixed.
 -  {:.fix} A bug has been fixed that now allows admins to add products to an order that are not in the shared catalog. Previously, an error message would appear when adding an item not in the catalog.
--  {:.fix} Previously, after running the command `php bin/magento indexer:set-dimensions-mode catalog_product_price website` and then trying to make a shared catalog, an error would occur. This bug has been fixed.
--  {:.fix} When adding a new company and assigning it a non-default website, the wrong site id was sent, causing an error. This bug has now been fixed.
+-  {:.fix} Previously, after running the command `php bin/magento indexer:set-dimensions-mode catalog_product_price website` and then trying to create a shared catalog, an error would occur. This bug has been fixed.
+-  {:.fix} When adding a new company and assigning the Company Administrator to a non-default website, the wrong site ID was sent, causing an error. This bug has now been fixed.
 -  {:.fix} Previously, after a customer was moved to another customer group, adding a product to an order via Quick View would fail with an error. This bug has now been fixed.
 -  {:.fix} Previously, when attempting to checkout using the WebAPI with a B2B quote, an incorrect value was sent to the API, causing an error to occur. This bug has been fixed.
 -  {:.fix} Previously, when setting a company to "Active" via the API, an error would occur. This bug has now been fixed.
