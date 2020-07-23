@@ -1,4 +1,5 @@
 <!-Note: The error code tables in this file are auto-generated from source code. To request changes to error code descriptions or suggestions, submit a GitHub issue to the magento/ece-tools repository.->
+
 ## Critical Errors
 
 Critical errors indicate a problem with the Magento Commerce Cloud project configuration that causes deployment failure, for example incorrect, unsupported, or missing configuration for required settings. Before you can deploy, you must update the configuration to resolve these errors.
