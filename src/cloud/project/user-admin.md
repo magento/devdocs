@@ -29,7 +29,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 For added security, Magento is introducing a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement for SSH].
 
-When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable 2FA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for 2FA and SSH access](#update-account-security-settings).
+When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable TFA on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
 
 ## Add users and manage access
 
@@ -185,7 +185,7 @@ After you add a user to a Cloud project, ask the user to review their account se
 
    On projects with MFA enforcement enabled, you must use the API token to authenticate SSH access requests from automated accounts to bypass authentication workflows which require two-factor authentication.
 
-### Enable 2FA for Cloud accounts
+### Enable TFA for Cloud accounts
 
 {{site.data.var.ece}} supports two-factor authentication using any of the following applications:
 
@@ -220,11 +220,11 @@ To enable TFA on your {{site.data.var.ece}} user account:
 
    For example, for Google Authenticator, click the + sign in the app. Then, enter the text code from Magento in the app, or scan the QR code to enable {{site.data.var.ece}} TFA.
 
-   ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
+   ![Cloud TFA app device setup]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-app-example.png){:width="400px"}
 
 1. On the _TFA set up - Application_ page, type the two-factor authentication code from your mobile device in the **Application verification code** field.
 
-   ![Cloud 2FA app device setup]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-steps.png){:width="550px"}
+   ![Cloud TFA app device setup]({{ site.baseurl }}/common/images/cloud/cloud_account_settings-tfa-setup-steps.png){:width="550px"}
 
 1. Click **Verify and save**.
 
@@ -241,7 +241,7 @@ To enable TFA on your {{site.data.var.ece}} user account:
    ![Cloud TFA recovery codes]({{ site.baseurl }}/common/images/cloud/cloud-2fa-settings-tfa-recovery-codes.png){:width="550px"}
 
    {:.bs.callout-warning}
-   Copy the recovery codes to another location or write them down in case you lose access to your device or authentication app. Save the codes to your account so you can view and manage them from your account security settings. If you lose account access on a 2FA-enabled account and have no recovery codes, you must contact your project administrator, or submit a Magento support ticket to reset the TFA application.
+   Copy the recovery codes to another location or write them down in case you lose access to your device or authentication app. Save the codes to your account so you can view and manage them from your account security settings. If you lose account access on a TFA-enabled account and have no recovery codes, you must contact your project administrator, or submit a Magento support ticket to reset the TFA application.
 
 1. After completing the TFA setup, click **Save** to update your account.
 
