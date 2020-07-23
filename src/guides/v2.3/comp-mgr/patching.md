@@ -6,7 +6,7 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-We strongly recommend that test all patches in a staging/development environment before deploying to production. We also strongly recommend that you back up your data before applying a patche. See [Back up and roll back the file system][].
+We strongly recommend that test all patches in a staging/development environment before deploying to production. We also strongly recommend that you back up your data before applying a patch. See [Back up and roll back the file system][].
 
 ## How patches work
 
@@ -70,7 +70,7 @@ There are two ways to apply patches:
 ### Command line
 
 1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.
-1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
+1. Log into the server as the [Magento admin user][] and verify the file is in the correct directory.
 1. In the command line interface, run the following commands according to the patch extension:
 
    ```bash
@@ -84,7 +84,7 @@ There are two ways to apply patches:
 
 1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
 
-Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
+  Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
 
 ### Composer
 

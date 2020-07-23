@@ -84,7 +84,7 @@ class CardRenderer extends AbstractCardRenderer
 
 Next, you need to create the [layout](https://glossary.magento.com/layout) to be used for displaying token details. In this layout, specify the previously created token renderer.
 
-Example ([vault_cards_listaction.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
+Example ([vault_cards_listaction.xml]({{ site.mage2bloburl }}/2.3/app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">

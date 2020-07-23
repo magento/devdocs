@@ -9,12 +9,12 @@ functional_areas:
   - Cloud
 ---
 
-Your {{site.data.var.ece}} Pro architecture supports a maximum of **eight** environments that you can use to develop, test, and launch your store. Each environment contains a database and a web server:
+Your {{site.data.var.ece}} Pro architecture supports multiple environments that you can use to develop, test, and launch your store.
 
--  **Integration**—Provides a single environment branch, and you can create up to four additional, environment branches. This allows for a maximum of five _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
+-  **Integration**—Provides a single environment branch, and you can create one additional, environment branch. This allows for up to two _active_ branches deployed to Platform-as-a-Service (PaaS) containers.
 -  **Staging**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 -  **Production**—Provides a single environment branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
--  **Global Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
+-  **Master**—Provides a `master` branch deployed to Platform-as-a-Service (PaaS) containers.
 
 The following table summarizes the differences between environments:
 
@@ -65,38 +65,78 @@ The following table summarizes the differences between environments:
   </tbody>
 </table>
 
+{:.bs-callout-info}
+Magento also provides the {{site.data.var.mcd-prod}} solution to deploy Magento to a local Cloud Docker environment for developing and testing {{site.data.var.ee}} projects. See [Docker development]({{site.baseurl}}/cloud/docker/docker-development.html).
+
+## Pro environment architecture
+
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture-wings.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud/cloud_pro-branch-architecture.png)
 
 ## Integration environment {#cloud-arch-int}
 
-Developers use the Integration environment to develop, deploy, and test:
-
--  Magento application code
--  Custom code
--  Extensions
--  Services
-
 The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.
 
- {:.bs-callout-info}
-The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.
+**Recommended use cases:**
 
-### Global Master
+Integration environments are designed for limited testing and development before moving changes to Staging and Production. For example, you can use the Integration environment to complete the following tasks:
 
-The Global Master branch is a part of the Integration environment. You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.
+-  Ensure that changes to continuous integration (CI) processes are Cloud compatible
 
-Do **not** create a branch from Global Master. Use the Integration environment branch to create new, active branches.
+-  Test critical workflows on key pages like Home, Category, Product Details Page (PDP), Checkout, and Admin
+
+For best performance in the Integration environment follow these best practices:
+
+-  Restrict catalog size
+
+-  Limit use to one or two concurrent users
+
+-  Disable crons and manually run as needed
+
+**Caveats:**
+
+-  Fastly CDN and New Relic services are not accessible in an Integration environment
+
+-  The Integration environment architecture does not match the Production and Staging architecture
+
+-  Do not use the Integration environment for development testing, performance testing, or user acceptance testing (UAT)
+
+-  Do not use the Integration environment to test {{site.data.var.b2b}} functionality
+
+-  You cannot restore the Integration database from Production or Staging
+
+{% include cloud/note-enhanced-integration-envs-kb.md%}
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment, which is hosted on dedicated IaaS hardware, includes all services, such as Fastly CDN, New Relic APM, and search.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
-{:.bs-callout-warning}
-We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html).
+**Recommended use cases:**
+
+The Staging environment matches the Production architecture and is designed for UAT, content staging, and final review before pushing features to the Production environment. For example, you can use the Staging environment to complete the following tasks:
+
+-  Regression testing against production data
+
+-  Performance testing with Fastly caching enabled
+
+-  Test new builds instead of patching in Production
+
+-  UAT testing for new builds
+
+-  Test {{site.data.var.b2b}}
+
+-  Customize cron configuration and test cron jobs
+
+See [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ site.baseurl }}/cloud/live/stage-prod-test.html).
+
+**Caveats:**
+
+-  After launching the Production site, use the Staging environment primarily to test patches for Production-critical bug fixes.
+
+-  You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
 ## Production environment {#cloud-arch-prod}
 
@@ -119,7 +159,7 @@ The three gateways map to the three servers in your Production environment clust
 
 ### Backup and disaster recovery
 
-Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
+Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS or Azure Availability Zones, each zone with a separate data center.
 
 In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
 incremental backups, which include the file system and the database, every hour for the last 24 hours of operation. After the
@@ -168,6 +208,15 @@ Our redundant architecture means we can offer upscaling without downtime. When u
 
 For example, you can add extra web servers to an existing cluster should the constriction be at the PHP level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level. See [Scaled architecture]({{ site.baseurl }}/cloud/architecture/scaled-architecture.html).
 
+## Master environment
+
+On Pro plan projects, the Master branch provides an active PaaS environment with your Production environment. Always push a copy of the Production code to the Master environment in case you need to debug the Production environment without interrupting services.
+
+**Caveats:**
+
+-  Do **not** create a branch from Master. Use the Integration environment branch to create new, active branches.
+-  Do not use the Master environment for development, UAT or performance testing
+
 ## Software versions {#cloud-arch-software}
 
 {{site.data.var.ece}} uses the Debian GNU/Linux operating system and the [NGINX](https://glossary.magento.com/nginx) web server. You cannot upgrade this software, but you can configure versions for the following:
@@ -178,7 +227,7 @@ For example, you can add extra web servers to an existing cluster should the con
 -  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 -  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-For the Staging and Production environments, we recommend installing the Fastly CDN module 1.2.33 or later. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
+For the Staging and Production environments, we recommend installing the latest version of the Fastly CDN module. See [Fastly in Cloud]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 Edit the following YAML files to configure specific software versions to use in your implementation.
 

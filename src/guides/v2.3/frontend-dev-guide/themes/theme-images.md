@@ -61,7 +61,7 @@ The following table describes the attributes in detail:
       </td>
       <td>
         <p>Image identifier. Unique in the scope of theme.</p> <p>
-Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of [cross-sell](https://glossary.magento.com/cross-sell) products displayed in a shopping cart is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
+Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of <a href="https://glossary.magento.com/cross-sell">cross-sell</a> products displayed in a shopping cart is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
@@ -79,7 +79,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
         <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
         <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
         <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/magento-admin).</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the Magento Admin</li>
         <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
         </ul>
 

@@ -18,12 +18,10 @@ Use the following properties to build your application configuration file. The `
 
 ### `name`
 
-{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
-
-The name is used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
 
 {:.bs-callout-warning}
-Do not change the name of an application after it has been deployed. Doing so will result in data loss.
+Do not change the name of the application after it has been deployed. Doing so will result in data loss.
 
 ### `type` and `build`
 
@@ -463,6 +461,9 @@ After pushing your file, you can check that the custom PHP configuration has bee
 ```bash
 cat /etc/php5/fpm/php.ini
 ```
+
+{:.bs-callout-info}
+If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]{{site.baseurl}}//cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.
 
 ## Workers
 

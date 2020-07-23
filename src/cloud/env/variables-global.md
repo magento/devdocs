@@ -73,6 +73,24 @@ stage:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
 
+### `SCD_USE_BALER`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+[Baler](https://github.com/magento/baler) is a Magento module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+
+Set to `true` to run Baler after performing static content deployment.
+
+```yaml
+stage:
+  build:
+    SCD_USE_BALER: true
+```
+
+{:.bs-callout-info}
+You must install and configure the Baler module before using this feature. Because Baler is currently in alpha release, enable this option only on Staging environments.
+
 ### `SKIP_HTML_MINIFICATION`
 
 -  **Default**:

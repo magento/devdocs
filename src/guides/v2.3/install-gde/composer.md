@@ -16,6 +16,8 @@ functional_areas:
 
 {% include install/composer-overview.md %}
 
+{% include install/web/deprecated.md %}
+
 ## Prerequisites
 
 Before you continue, you must do the following:
@@ -127,6 +129,8 @@ You can customize the Admin URI with the `--backend-frontname` option. However, 
 For a full description of the CLI install options, refer to [Install the Magento software from the command line][].
 
 ### Web Setup Wizard
+
+{% include install/web/deprecated.md %}
 
 As an alternative to the CLI, use your browser to navigate to Magento's setup wizard:
 

@@ -21,14 +21,15 @@ plugins_dir: ./_plugins
 
 # Parameters for the version switcher. Numeric values must be wrapped in quotes.
 #
-version: "2.3"
+version: "2.4"
 versions:
-   -
-      name: "2.2"
-      url: /guides/v2.2/
-   -
-      name: "2.3"
-      url: /guides/v2.3/
+  -
+    name: "2.3"
+    url: /guides/v2.3/
+  -
+    name: "2.4"
+    url: /guides/v2.4/
+
 
 collections:
   videos:
@@ -51,11 +52,7 @@ defaults:
       github_link: true
       # Enables the 'Give us feedback' appearances on pages
       feedback_link: true
-  -
-    scope:
-      path: guides/m1x
-    values:
-      layout: null
+
   -
     scope:
       type: videos
@@ -187,10 +184,6 @@ check_links: true
 #
 # Magento 2 repository variable
 mage2bloburl: https://github.com/magento/magento2/blob
-
-# 1.x variables
-m1xgdeurl: /guides/m1x
-m1xgithuburl: https://github.com/magento/devdocs-m1/tree/master
 
 # 2.3 variables
 gdeurl23: /guides/v2.3/

@@ -138,6 +138,24 @@ stage:
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
+### `SCD_USE_BALER`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+[Baler](https://github.com/magento/baler) scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+
+Set to `true` to run Baler after performing static content deployment.
+
+```yaml
+stage:
+  build:
+    SCD_USE_BALER: true
+```
+
+{:.bs-callout-info}
+Because Baler is currently in alpha release, we do not recommend using it in Production environments.
+
 ### `SKIP_SCD`
 
 -  **Default**— _Not set_
@@ -147,12 +165,12 @@ Set to `true` to skip static content deployment during the build phase.
 
 If you already deploy static content during the build phase with [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
-We do not recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
+On the build phase, we recommend setting `SKIP_SCD: false` so that the static content build occurs during the build phase where the process will not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:
   build:
-    SKIP_SCD: true
+    SKIP_SCD: false
 ```
 
 ### `VERBOSE_COMMANDS`

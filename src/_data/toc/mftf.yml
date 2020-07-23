@@ -91,8 +91,7 @@ pages:
     children:
 
       - label: Action group reference
-        url: /guides/v2.3/reference/mftf/action-groups.html
-        versionless: true
+        url: /reference/mftf/action-groups.html
 
       - label: Codecept
         url: /mftf/docs/commands/codeception.html
@@ -103,8 +102,7 @@ pages:
         versionless: true
       
       - label: MFTF functional test reference
-        url: /guides/v2.3/reference/mftf/functional-tests.html
-        versionless: true
+        url: /reference/mftf/functional-tests.html
 
   - label: Reporting
     url: /mftf/docs/reporting.html
@@ -195,6 +193,10 @@ pages:
   - label: Versioning
     url: /mftf/docs/versioning.html
     versionless: true
+  
+  - label: Backward incompatible changes in tests
+    url: /reference/mftf/backward-incompatible-changes.html
+    include_versions: ['2.4']
 
   - label: Contribution guidelines
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md

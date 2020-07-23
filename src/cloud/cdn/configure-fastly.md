@@ -43,7 +43,7 @@ To view your Fastly credentials:
 
 -  Project Web UI—Check the following environment variables in the *[Environment configuration variables]({{ site.baseurl }}/cloud/project/projects.html#environment-configuration-variables)* section.
 
-   -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_TOKEN`
+   -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_API_KEY`
 
    -  `CONFIG__DEFAULT__SYSTEM__FULL_PAGE_CACHE__FASTLY__FASTLY_SERVICE_ID`
 
@@ -148,10 +148,10 @@ To review the backend settings configuration:
 
    ![Modify the backend]({{ site.baseurl }}/common/images/cloud/cloud_fastly-backend.png){:width="600px"}
 
-1. Select the **Shield** location (or datacenter) closest to your AWS region.
-   For example, if Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
+1. Select the **Shield** location (or datacenter) closest to your Cloud service region.
+   For example, if your project is hosted on AWS, Staging is on the west coast of the United States (us-west-1), select the `sjc-ca-us` Fastly shield location. This is the POP that provides caching services.
 
-   The following list shows which Fastly shield locations to use based an AWS region:
+   The following list shows which Fastly shield locations to use based on AWS regions:
 
    -  ap-east-1 => hongkong-hk
    -  ap-northeast-1 => tyo-tokyo-jp, hnd-tokyo-jp
@@ -265,7 +265,7 @@ CNAME records cannot be set for apex domains, also referred to as a naked or bas
 -  `151.101.129.124`
 -  `151.101.193.124`
 
-Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html) for more information.
+Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
 

@@ -52,6 +52,10 @@ pages:
         - label: cart query
           url: /graphql/queries/cart.html
 
+        - label: categories query
+          url: /graphql/queries/categories.html
+          exclude_versions: ["2.3"]
+
         - label: category query
           url: /graphql/queries/category.html
 
@@ -108,6 +112,10 @@ pages:
 
         - label: products query
           url: /graphql/queries/products.html
+
+        - label: pickupLocations query
+          url: /graphql/queries/pickup-locations.html
+          exclude_versions: ["2.3"]
 
         - label: storeConfig query
           url: /graphql/queries/store-config.html
@@ -201,6 +209,10 @@ pages:
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
 
+        - label: reorderItems mutation
+          url: /graphql/mutations/reorder-items.html
+          exclude_versions: ["2.3"]
+
         - label: revokeCustomerToken mutation
           url: /graphql/mutations/revoke-customer-token.html
 
@@ -268,6 +280,7 @@ pages:
 
         - label: Authorize.Net
           url: /graphql/payment-methods/authorize-net.html
+          include_versions: ["2.3"]
 
         - label: Braintree
           url: /graphql/payment-methods/braintree.html
@@ -317,6 +330,11 @@ pages:
 
         - label: Step 6. Set the shipping method
           url: /graphql/tutorials/checkout/checkout-shipping-method.html
+          include_versions: ["2.3"]
+
+        - label: Step 6. Set the delivery method
+          url: /graphql/tutorials/checkout/checkout-shipping-method.html
+          exclude_versions: ["2.3"]
 
         - label: Step 7. Apply a coupon
           url: /graphql/tutorials/checkout/checkout-coupon.html

@@ -19,8 +19,10 @@ When you configure your Cloud environment, you can [set up log-based Slack and e
 
 There are three ways to view logs: file system, project web UI, or the `magento-cloud` CLI.
 
--  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster.
+-  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
+
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
 ### Log command
@@ -72,9 +74,14 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 
+### Error logs
+
+Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
+
 The following logs have a common location for all Cloud projects:
 
--  **Build log**: `var/log/cloud.log`
+-  **Deployment log**: `var/log/cloud.log`
+-  **Last deployment error log**: `var/log/cloud.error.log`
 -  **Debug log**: `var/log/debug.log`
 -  **Exception log**: `var/log/exception.log`
 -  **Reports**: `var/reports/`
@@ -114,6 +121,8 @@ You can use the same CLI command to view a deploy log from the Staging environme
 magento-cloud log platform/<project_id>_stg/deploy
 ```
 
+{%include cloud/note-error-message-reference-ece-tools.md%}
+
 ## Application logs
 
 Similar to deploy logs, application logs are unique for each environment. For Pro Staging and Production environments, the Deploy, Post-deploy, and Cron logs are available only on the first node in the cluster.
@@ -132,7 +141,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 
 ## Service logs
 
-Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Staging and Production environments:
+Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
 -  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`

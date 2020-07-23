@@ -1,9 +1,5 @@
 content_map:
--
-  directory: src/guides/m1x
-  repository: magento/devdocs-m1
-  branch: master
-  filter: false
+
 -
   directory: src/mbi
   repository: magento/devdocs-mbi
@@ -16,8 +12,8 @@ content_map:
   filter: true
 -
   directory: src/page-builder
-  repository: magento/magento2-page-builder
-  branch: develop
+  repository: magento/magento2-page-builder-docs
+  branch: master
   filter: true
 -
   directory: src/page-builder-migration

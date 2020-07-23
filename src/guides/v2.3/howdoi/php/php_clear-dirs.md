@@ -43,7 +43,7 @@ A change that results in generated factories or proxies | `generated/metadata`, 
 A change in `di.xml` | `generated/metadata`, `generated/code` (also need to run the code compiler again)
 Add, remove, enable, or disable modules | `generated/metadata`, `generated/code`, `var/cache`, `var/page_cache`
 Add or edit a layout or theme | `var/view_preprocessed`, `var/cache`, `var/page_cache`
-Change LESS or templates | `var/view_preprocessed`, `var/cache`, `var/page_cache`
+Change LESS or templates | `var/view_preprocessed`, `var/cache`, `var/page_cache`, `pub/static`
 Change `*.js` or `*.html` files | `pub/static`
 Add or edit a CMS page, cacheable block, or use the Magento Admin to change the configuration |`var/cache`, `var/page_cache`
 

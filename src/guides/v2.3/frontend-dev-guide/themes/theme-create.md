@@ -153,12 +153,10 @@ If the product image sizes of your theme differ from those of the parent theme, 
 1. Configure all storefront product image sizes in the `view.xml` file. For example, you can make the [category](https://glossary.magento.com/category) grid view product images square by specifying a size of 250 x 250 pixels:
 
    ```xml
-    ...
      <image id="category_page_grid" type="small_image">
          <width>250</width>
          <height>250</height>
      </image>
-    ...
    ```
 
 For details about images configuration in the `view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
@@ -246,7 +244,7 @@ For example, if your logo file is `my_logo.png` sized 300x300px, you need to dec
     <body>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_src" xsi:type="string">images/my_logo.png</argument>
+                <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
                 <argument name="logo_width" xsi:type="number">300</argument>
                 <argument name="logo_height" xsi:type="number">300</argument>
                 <argument name="logo_alt" xsi:type="string">Logo name</argument>

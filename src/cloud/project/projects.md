@@ -13,7 +13,7 @@ To manage your project, environment, and branches, see:
 
 -  [Configure your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html)
 -  [Project structure]({{ site.baseurl }}/cloud/project/project-start.html)
--  [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html)
+-  [Manage user access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  Manage branches with the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ site.baseurl }}/cloud/env/environments-start.html)
 -  [Snapshots and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html)
 
@@ -67,11 +67,11 @@ To review your integration tokens, IDs, and more:
 
 ## Access the project and environments {#project}
 
-When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
+When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html).
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html).
 
 ![Starter branch hierarchy]({{ site.baseurl }}/common/images/cloud/cloud_project-starter.png)
 
@@ -84,7 +84,7 @@ The following table details the branches for Pro:
 | Branch | Environment | Description |
 |----------
 | (no branch) | Global Master | This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
-| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
+| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to launch your site with updated configurations and code. |
 | `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
 | `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 
@@ -92,10 +92,17 @@ To access an environment store and admin, select a branch and click **Access Sit
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png)
 
-The Pro plan Production environment includes three nodes that you can access using the following links:
+The Pro plan Production and Staging environments include three nodes that you can access using the following links:
 
--  Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
--  Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+-  Load balancer URLs:
+
+   -  `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+   -  `http[s]://<your staging domain name>.c.<project ID>.ent.magento.cloud`
+
+-  Direct access to one of the three redundant servers:
+
+   -  `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+   -  `http[s]://<your staging domain name>.{1|2|3}.<project ID>.ent.magento.cloud`
 
    The production URL is used by the content delivery network (CDN).
 
@@ -127,6 +134,6 @@ magento-cloud variable:get -e <environment ID>
 
 ## Configure the project
 
-Click ![edit project]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
+Click ![edit project]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch). See [Manage user access]({{site.baseurl}}/cloud/project/user-admin.html).
 
 ![configure project]({{ site.baseurl }}/common/images/cloud/cloud_project-config.png){:width="650px"}

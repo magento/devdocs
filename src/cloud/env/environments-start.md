@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
 ---
 
-After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
+After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html).
 
@@ -48,7 +48,7 @@ Only delete an environment if you are certain that you no longer need it. You ca
 {:.bs-callout-warning}
 You cannot delete the `master` environment of any project.
 
-You must be a [project administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a project administrator, environment administrator, or Account Owner to perform this task. See [Manage user access to Cloud projects]({{ site.baseurl }}/cloud/project/user-admin.html).
 
 When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 

@@ -27,7 +27,7 @@ Magento also permits configuring unique CSPs for specific pages.
 
 CSP can work in two modes:
 
-*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode isuseful for debugging.  By default, CSP violations are written to the browser console, but they can be configured to be reported to an endpoint as an HTTP request to collect logs. There are a number of services that will collect, store, and sort your store's CSP violations reports for you.
+*  `report-only` - In this mode, Magento reports policy violations but does not interfere. This mode is useful for debugging.  By default, CSP violations are written to the browser console, but they can be configured to be reported to an endpoint as an HTTP request to collect logs. There are a number of services that will collect, store, and sort your store's CSP violations reports for you.
 
 *  `restrict mode` - In this mode, Magento acts on any policy violations.
 
@@ -121,7 +121,7 @@ adding a `csp_whitelist.xml` to your custom module's `etc` folder.
 
 ```xml
 <?xml version="1.0"?>
-<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
     <policies>
         <policy id="script-src">
             <values>
@@ -206,7 +206,7 @@ Add the corresponding policy to a `csp_whitelist.xml` file:
 
 ```xml
 <?xml version="1.0"?>
-<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
     <policies>
         <policy id="script-src">
             <values>

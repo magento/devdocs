@@ -1,0 +1,1 @@
+../../../v2.3/graphql/product/product-interface.md

@@ -78,11 +78,11 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
 -  {:.new}**Docker Updates**—
 
-   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Functional testing in Docker]({{ site.baseurl }}/cloud/docker/docker-development-testing.html).
+   -  {:.new}<!-- MAGECLOUD-3129/3684 -->You can now perform functional testing using the `{{site.data.var.ct}}` package in the Docker environment. See [Magento application testing]({{site.baseurl}}/cloud/docker/docker-test-magecloud-pkg-code.html).
 
    -  {:.new}<!-- MAGECLOUD-3357 -->Added support for configuring PHP modules using the `.magento.app.yaml` file. Any [PHP Extensions specified in the `.magento.app.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#php-extensions) become available in the Docker PHP containers.
 
-   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#binmagento-docker).
+   -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).
 
    -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-config.html#prerequisites).
 
@@ -599,7 +599,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/cloud/composer-packa
 -  **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/) during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/cloud/env/variables-build.html) or [deploy variable]({{ site.baseurl }}/cloud/env/variables-deploy.html). See the following topics for more information:
 
    -  [Magento application environment variables]({{ site.baseurl }}/cloud/env/environment-vars_magento.html)
-   -  [Static content deployment performance]({{ site.baseurl }}/cloud/live/sens-data-over.html#cloud-confman-scd-over)
+   -  [Static content deployment performance]({{ site.baseurl }}/cloud/live/sens-data-over.html#scd-performance)
    -  [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html)
 
 -  **Configuration management**—We now auto-generate an `app/etc/config.php` file in your Git repository during the build phase if it does not already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/cloud/reference/discover-deploy.html) for more information.

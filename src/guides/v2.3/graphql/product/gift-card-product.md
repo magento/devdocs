@@ -54,22 +54,22 @@ The following query returns information about gift card product `GiftCard25`. (I
       __typename
       name
       sku
-    }
-    ... on GiftCardProduct {
-      allow_message
-      message_max_length
-      allow_open_amount
-      open_amount_min
-      open_amount_max
-      is_returnable
-      is_redeemable
-      giftcard_type
-      giftcard_amounts {
-        value_id
-        website_id
-        value
-        attribute_id
-        website_value
+      ... on GiftCardProduct {
+        allow_message
+        message_max_length
+        allow_open_amount
+        open_amount_min
+        open_amount_max
+        is_returnable
+        is_redeemable
+        giftcard_type
+        giftcard_amounts {
+          value_id
+          website_id
+          value
+          attribute_id
+          website_value
+        }
       }
     }
   }

@@ -364,7 +364,7 @@ With these methods:
 | **around**    |                  | aroundDispatch() |                  |
 | **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
 
-`PluginB`::`aroundDispatch()` defines the ($next)[{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php] argument with a `callable` type. For example:
+`PluginB`::`aroundDispatch()` defines the [$next]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/Interceptor.php) argument with a `callable` type. For example:
 
 ```php
 class PluginB
@@ -484,6 +484,18 @@ Plugins can be disabled in a `di.xml` file. To disable a plugin, set the `disabl
 ```
 
 where `ProcessPaymentConfiguration` is the name of the plugin declared in the `vendor/magento/module-payment/etc/frontend/di.xml`.
+
+Note that the same class can be called two ways: with the leading slash or without.
+
+`\Magento\Checkout\Block\Checkout\LayoutProcessor`
+
+and
+
+`Magento\Checkout\Block\Checkout\LayoutProcessor`
+
+are both valid.
+
+When disabling the plugin, make sure to use the same path format to call and disable the plugin.
 
 {:.ref-header}
 Related topics
