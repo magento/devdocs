@@ -49,17 +49,17 @@ The `source_code` values will be used in subsequent steps.
 ```json
 {
    "source" : {
-      "name" : "Baltimore Warehouse",
-      "source_code" : "baltimore_wh",
-      "postcode" : "21214",
+      "name" : "Northeast Warehouse",
+      "source_code" : "ne_wh",
+      "postcode" : "07306",
       "enabled" : true,
       "contact_name" : "Ethan Carter",
       "country_id" : "US",
-      "street": "901 Harford Rd.",
-      "city" : "Baltimore",
-      "region_id": 31,
-      "latitude": 39.290882,
-      "longitude": -76.610759
+      "street": "645 Newark Ave.",
+      "city" : "Jersey City",
+      "region_id": 41,
+      "latitude": 40.733790,
+      "longitude": -74.058720
       }
 }
 ```
@@ -72,75 +72,149 @@ Magento returns an empty array.
 
 ## Add more sources
 
-Use the same endpoint to create sources representing the Austin, Reno, Berlin, and Frankfurt warehouses as well as the source for virtual and downloadable products.
+Use the same endpoint to create a source for the Leipzig warehouse. We will designate the Brooklyn, Huntington, Manhattan, Berlin, and Frankfurt stores as in-store pick up locations. We will also create the HQ source for virtual and downloadable products.
 
-### Austin warehouse
+### Leipzig warehouse
+
+Use the following payload to create the Leipzig warehouse:
 
 ```json
 {
    "source" : {
-      "name" : "Austin Warehouse",
-      "source_code" : "austin_wh",
-      "postcode" : "78758",
+      "name" : "Leipzig Warehouse",
+      "source_code" : "de_wh",
+      "postcode" : "04109",
       "enabled" : true,
-      "contact_name" : "Karen Chen",
-      "country_id" : "US",
-      "street": "1822 W Braker Ln",
-      "city" : "Austin",
-      "region_id": 57,
-      "latitude": 30.271129,
-      "longitude": -97.7437
+      "contact_name" : "Claudia Mabuse",
+      "country_id" : "DE",
+      "street": "Willy-Brandt-Platz 5",
+      "city" : "Leipzig",
+      "region_id": 41,
+      "latitude": 51.344410,
+      "longitude": 12.380790
       }
 }
 ```
 
-### Reno warehouse
+### Brooklyn store
+
+Use the following payload to create the Brooklyn store.
 
 ```json
 {
    "source" : {
-      "name" : "Reno Warehouse",
-      "source_code" : "reno_wh",
-      "postcode" : "89512",
+      "name" : "Brooklyn Store",
+      "source_code" : "brooklyn",
+      "postcode" : "11211",
       "enabled" : true,
-      "contact_name" : "Fred Wilson",
+      "contact_name" : "Tai Hozie",
       "country_id" : "US",
-      "street": "1674 N Virginia St",
-      "city" : "Reno",
-      "region_id": 39,
-      "latitude": 39.526139,
-      "longitude": -119.812688
-   }
+      "street": "263 S 4th St",
+      "city" : "Brooklyn",
+      "region_id": 43,
+      "latitude": 40.710070,
+      "longitude": -73.957160,
+      "phone": "555 737-8088",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Brooklyn (Williamsburg) Store",
+        "frontend_description": "Williamsburg, Brooklyn"
+    }
+  }
+}
+```
+### Long Island store
+
+Use the following payload to create the Long Island store:
+
+```json
+{
+   "source" : {
+      "name" : "Long Island Store",
+      "source_code" : "huntington",
+      "postcode" : "11743",
+      "enabled" : true,
+      "contact_name" : "Leslie Arzy",
+      "country_id" : "US",
+      "street": "55 Gerard St,",
+      "city" : "Huntington",
+      "region_id": 43,
+      "latitude": 40.872510,
+      "longitude": -73.429352,
+      "phone": "555 939-4444",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Long Island (Huntington) Store",
+        "frontend_description": "Huntington, Long Island"
+    }
+  }
 }
 ```
 
-### Berlin warehouse
+### Manhattan store
+
+Use the following payload to create the Manhattan store:
+
+``` json
+{
+   "source" : {
+      "name" : "Manhattan Store",
+      "source_code" : "manhattan",
+      "postcode" : "10011",
+      "enabled" : true,
+      "contact_name" : "Kiara Smith",
+      "country_id" : "US",
+      "street": "70 W. 10th St",
+      "city" : "New York",
+      "region_id": 43,
+      "latitude": 40.734600,
+      "longitude": -73.998490,
+      "phone": "555 838-4500",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Manhattan (Greenwich Village) Store",
+        "frontend_description": "Greenwich Village, Manhattan"
+    }
+  }
+}
+```
+### Berlin store
+
+Use the following payload to create the Berlin store:
 
 ```json
 {
    "source" : {
-      "name" : "Berlin Warehouse",
-      "source_code" : "berlin_wh",
+      "name" : "Berlin Store",
+      "source_code" : "berlin",
       "postcode" : "10115",
       "enabled" : true,
-      "contact_name" : "Angela Kohl",
+      "contact_name" : "Tereza Schmidt",
       "country_id" : "DE",
       "street": "Am Nordbahnhof 5",
       "city" : "Berlin",
       "region_id": 82,
       "latitude": 52.52343,
-      "longitude": 13.41144
+      "longitude": 13.41144,
+      "phone": "49-030-555-55555",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Berlin Store",
+        "frontend_description": "Central Station, Berlin"
+      }
    }
 }
 ```
 
-### Frankfurt warehouse
+### Frankfurt store
+
+Use the following payload to create the Frankfurt store:
 
 ```json
 {
    "source" : {
-      "name" : "Frankfurt Warehouse",
-      "source_code" : "frankfurt_wh",
+      "name" : "Frankfurt Store",
+      "source_code" : "frankfurt",
       "postcode" : "60327",
       "enabled" : true,
       "contact_name" : "Ralf Schneider",
@@ -149,14 +223,20 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
       "city" : "Frankfurt",
       "region_id": 86,
       "latitude": 50.110645,
-      "longitude": 8.682092
+      "longitude": 8.682092,
+      "phone": "49-069-555-66666",
+      "extension_attributes": {
+        "is_pickup_location_active": true,
+        "frontend_name": "Frankfurt Store",
+        "frontend_description": "Central Station, Frankfurt"
+      }
    }
 }
 ```
 
 ### Headquarters
 
-This source will be used to fulfill virtual and downloadable products.
+The `hq` source will fulfill virtual and downloadable products.
 
 ```json
 {
@@ -178,4 +258,4 @@ This source will be used to fulfill virtual and downloadable products.
 
 ## Verify this step
 
-In Admin, click **Stores** > **Inventory** > **Sources**.  The new sources are displayed in the Sources grid.
+In Admin, click **Stores** > Inventory > **Sources**.  The new sources are displayed in the Sources grid.
