@@ -24,14 +24,14 @@ When initially setting up your local environment, you need to add the SSH keys t
 
 ## Unable to access projects without MFA
 
-If you authenticate to a project with MFA enabled, you might receive the following error when connecting to other projects that do not require MFA:
+If you authenticate to a project with multi-factor authentication (MFA) enabled, you might receive the following error when connecting to other projects that do not require MFA:
 
    ```bash
    ssh abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud
    abcdef7uyxabce-master-7rqtabc--mymagento@ssh.us-3.magento.cloud: Permission denied (publickey).
    ```
 
-During the SSH certificate generation, the Magento Cloud CLI adds an additional SSH key to your local environment. The key will be used by default if the SSH key for project access is not included in your local SSH configuration.
+During the SSH certificate generation, the Magento Cloud CLI adds an additional SSH key to your local environment. That key will be used by default if your local SSH configuration does not include the SSH key for project access.
 
 {:.procedure}
 To add your SSH key to the local configuration:
@@ -46,13 +46,17 @@ To add your SSH key to the local configuration:
 
     ```yaml
    Host *
-     IdentityFile /Users/<user-name>/.ssh/id_rsa
+     IdentityFile ~/.ssh/id_rsa
     ```
 
    {:.bs-callout-info}
    You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
-1. Close your terminal session. The configuration will be used for all sessions going forward.
+1. Reload your SSH configuration to apply the changes.
+
+    ```bash
+    source ~/.ssh/config
+    ```
 
 {:.ref-header}
 Next step
