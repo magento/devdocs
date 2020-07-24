@@ -144,7 +144,7 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 Because each service runs in a separate container, the service logs are not available in the Integration environment. {{ site.data.var.ece }} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
--  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`
+-  **Elasticsearch log**: `/var/log/elasticsearch/elasticsearch.log`
 -  **Mail log**: `/var/log/mail.log`
 -  **MySQL error log**: `/var/log/mysql/mysql-error.log`
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
