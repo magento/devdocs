@@ -209,3 +209,7 @@ pages:
   - label: Changelog
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
     versionless: true
+
+  - label: MFTF Guide (v2)
+    url: /mftf/v2/docs/introduction.html
+    versionless: true
