@@ -44,15 +44,21 @@ For general information about security releases, see [Introducing the New Securi
 
 ## Hot fix
 
-Released on an as needed basis by Magento. These are high impact security or quality fixes that affect a large number of Magento merchants. These could be backwards incompatible. These fixes are rolled into the next patch release for the applicable Magento minor version.
+Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are rolled into the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+
+{:.bs-callout-info}
+Hot fixes can contain backward incompatible changes.
 
 ## Individual patch
 
-Released on an as needed basis by Magento. Lower impact quality issues that are released by Magento to fix a specific issue. These are backwards compatible. These fixes are rolled into the most recently supported Minor version (ex: 2.4) but, could be missing from the previous minor version supported (ex:2.3).
+Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
+
+{:.bs-callout-info}
+Individual patches do not contain backward incompatible changes.
 
 ## Custom patch
 
-Created by non-Magento personnel to fix an issue or modify the Magento code for various reasons. This fix will not be supported by Magento
+Created by non-Magento personnel to fix an issue or modify the Magento code for various reasons. Magento does not support custom patches.
 
 ### Related topics
 

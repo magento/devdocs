@@ -6,13 +6,14 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-We strongly recommend that test all patches in a staging/development environment before deploying to production. We also strongly recommend that you back up your data before applying a patch. See [Back up and roll back the file system][].
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
 
 ## How patches work
 
-There are two types of patches:
+There are three types of patches:
 
--  **Official patches**—patches that Magento publishes on the [Magento Security Center][].
+-  **Hot fixes**—patches that Magento publishes on the [Magento Security Center][].
+-  **Individual patches**—patches that Magento Support creates and distributes on an individual basis.
 -  **Custom patches**—unofficial patches that you can create from a git commit.
 
 Patch (or diff) files are text files that note:
@@ -23,11 +24,23 @@ Patch (or diff) files are text files that note:
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
-## Official patches
+### Hot fixes
 
-You can find official Magento patches in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your version and installation type.
+Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are rolled into the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
 
-## Custom patches
+You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type.
+
+{:.bs-callout-info}
+Hot fixes can contain backward incompatible changes.
+
+### Individual patches
+
+Individual patches contain low-impact quality fixes for a specific issue. These fixes are appllied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
+
+{:.bs-callout-info}
+Individual patches do not contain backward incompatible changes.
+
+### Custom patches
 
 Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
 
@@ -66,6 +79,9 @@ There are two ways to apply patches:
 
 -  Using the command line
 -  Using Composer
+
+{:.bs-callout-info}
+To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 
 ### Command line
 
@@ -144,3 +160,4 @@ To apply a custom patch using Composer:
 [2]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede
 [3]: https://github.com/magento/magento2/issues/6474
 [4]: https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.diff
+[Apply patches]:{{ site.baseurl }}/cloud/project/project-patch.html
