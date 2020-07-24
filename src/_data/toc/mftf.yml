@@ -19,7 +19,7 @@ pages:
 
   - label: Custom Helpers
     url: /mftf/docs/custom-helpers.html
-    versionless: true
+    versionless: ['2.4']
 
   - label: Data
     url: /mftf/docs/data.html
@@ -36,6 +36,10 @@ pages:
   - label: Git vs. Composer installation
     url: /mftf/docs/guides/git-vs-composer-install.html
     versionless: true
+
+  - label: How to use MFTF in CICD
+    url: /mftf/docs/guides/cicd.html
+    versionless: ['2.4']
 
   - label: Merge points for extensions
     url: /mftf/docs/merge_points/introduction.html
@@ -184,7 +188,7 @@ pages:
 
   - label: Two-factor Authentication
     url: /mftf/docs/configure-2fa.html
-    versionless: true 
+    versionless: ['2.4'] 
 
   - label: Update MFTF
     url: /mftf/docs/update.html
