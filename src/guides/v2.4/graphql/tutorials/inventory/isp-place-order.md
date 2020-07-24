@@ -20,7 +20,7 @@ The `placeOrder` mutation places an order.
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 

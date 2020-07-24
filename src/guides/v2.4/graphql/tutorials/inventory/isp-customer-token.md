@@ -18,7 +18,7 @@ Use the `generateCustomerToken` mutation to generate the token. You must include
 
 **Headers:**
 
-`Store: us`
+`Store: default`
 
 **Request:**
 

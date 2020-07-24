@@ -22,7 +22,7 @@ In the following example, the customer has chosen to pick up the order at the Br
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 

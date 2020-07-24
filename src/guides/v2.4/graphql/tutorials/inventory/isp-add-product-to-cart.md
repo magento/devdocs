@@ -22,7 +22,7 @@ The following mutation adds two simple products, 24-WB01 and 24-WB03, to the sho
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 

@@ -22,7 +22,7 @@ Use the following `cart` query to determine which payment methods are available 
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 

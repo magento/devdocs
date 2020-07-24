@@ -18,7 +18,7 @@ The example below search for locations that are in a 50 km radius of the US ZIP 
 
 **Headers:**
 
-Not applicable
+`Store: default`
 
 **Request:**
 

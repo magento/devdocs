@@ -22,7 +22,7 @@ Query the customer to return the list of address IDs.
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 
