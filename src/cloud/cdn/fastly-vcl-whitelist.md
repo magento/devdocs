@@ -6,10 +6,10 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
+  - Security
 ---
 
-
-You can use the a Fastly Edge ACL list in combination with custom VCL code snippet to filter incoming requests and allow access by IP address. The ACL list specifies the IP addresses to allow.
+You can use a Fastly Edge ACL list in combination with custom VCL code snippet to filter incoming requests and allow access by IP address. The ACL list specifies the IP addresses to allow.
 
 Create an allow list to limit access to your Staging environment so that only requests from specified IP addresses for internal developers and approved external services are permitted. You can also create an allow list to secure access to the Magento Admin UI on Staging and Production environments.
 

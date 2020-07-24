@@ -197,6 +197,7 @@ To connect using SSH with an API token credential:
    ```bash
    magento-cloud auth:api-token
    ```
+
 1. At the prompt, enter the value for a valid API token.
 
    ```terminal
