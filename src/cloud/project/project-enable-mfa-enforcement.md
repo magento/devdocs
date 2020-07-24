@@ -318,4 +318,4 @@ To fix the problem, you might need to add the ssh key to your current session, o
 [Create an API token]: {{ site.baseurl }}/cloud/project/user-admin.html#create-an-api-token
 [Enable TFA]: {{ site.baseurl }}/cloud/project/user-admin.html#enable-tfa-for-cloud-accounts
 [Manage user access]: {{ site.baseurl }}/cloud/project/user-admin.html
-[Unable to access projects without MFA]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#unable-to -access-projects-without-mfa
+[Unable to access projects without MFA]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#unable-to-access-projects-without-mfa

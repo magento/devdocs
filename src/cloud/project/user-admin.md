@@ -27,7 +27,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Magento provides a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement for SSH].
+For added security, Magento provides a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement][].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable two-factor authentication (TFA) on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
 
