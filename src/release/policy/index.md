@@ -5,10 +5,13 @@ group: release
 
 {{site.data.var.ee}} uses [semantic versioning](https://semver.org/) on the individual module level (for example magento/framework 101.1.1) but not for the Magento marketing version number. For example:
 
--  **MAJOR**—2
--  **MINOR**—2.3
--  **PATCH**—2.3.1
--  **SECURITY**—2.3.2-p1
+-  **MAJOR release**—2
+-  **MINOR release**—2.3
+-  **PATCH release**—2.3.1
+-  **SECURITY release**—2.3.2-p1
+-  **Hot fix**
+-  **Individual patch**
+-  **Custom patch**
 
 ## MINOR release
 
@@ -38,6 +41,18 @@ The following guidelines apply to patch releases:
 Security releases provide fixes for vulnerabilities that have been identified in previous quarterly patch releases. You can install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly patch release contains.
 
 For general information about security releases, see [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security patches, see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html).
+
+## Hot fix
+
+Released on an as needed basis by Magento. These are high impact security or quality fixes that affect a large number of Magento merchants. These could be backwards incompatible. These fixes are rolled into the next patch release for the applicable Magento minor version.
+
+## Individual patch
+
+Released on an as needed basis by Magento. Lower impact quality issues that are released by Magento to fix a specific issue. These are backwards compatible. These fixes are rolled into the most recently supported Minor version (ex: 2.4) but, could be missing from the previous minor version supported (ex:2.3).
+
+## Custom patch
+
+Created by non-Magento personnel to fix an issue or modify the Magento code for various reasons. This fix will not be supported by Magento
 
 ### Related topics
 
