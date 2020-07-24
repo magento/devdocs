@@ -6,7 +6,9 @@ functional_areas:
   - Orders
 ---
 
-Most REST calls to Magento require an [authorization](https://glossary.magento.com/authorization) token. The token allows Magento to verify that the caller is authorized to access a system resource. To get a token, you must specify the user's username and password in the payload.
+In a production environment, you would typically [create an integration]({{page.baseurl}}/get-started/create-integration.html) and supply the integration token with any REST call that requires admin privileges. The token allows Magento to verify that the caller is authorized to access the affected system resource.
+
+In this tutorial, we will supply an admin token instead. To get a token, you must have 2FA configured. Your request must specify the admin user's username and password as well as the 2FA one-time authorization code in the payload.
 
 By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration** > **Admin Token Lifetime (hours)**.
 
@@ -14,7 +16,7 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 **Endpoint:**
 
-`POST <host>/rest/<store_code>/V1/integration/admin/token`
+`POST <host>/rest/<store_code>/V1/tfa/provider/google/authenticate`
 
 **Headers:**
 
@@ -24,8 +26,9 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 ```json
 {
-"username": "admin",
-"password": "123123q"
+  "username": "admin",
+  "password": "<admin-password>",
+  "otp": "<otp-value>"
 }
 ```
 
