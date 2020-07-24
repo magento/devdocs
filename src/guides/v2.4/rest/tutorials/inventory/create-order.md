@@ -23,7 +23,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine/payment-information`
+`POST <host>/rest/default/V1/carts/mine/payment-information`
 
 **Scope:**
 

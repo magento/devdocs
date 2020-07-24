@@ -27,6 +27,12 @@ For this tutorial, we'll assume that payment and delivery methods are configured
 
 {% include webapi/tutorials/configure-shipping-methods-24.md %}
 
+## Deactivate a cart price rule
+
+By default, the Luma store includes a promotion where shipping is free if you spend at least $50. Since this tutorial shows shipping calculations, we need to deactivate this promotion. The promotion is defined in a cart price rule, which is also known as a sales rule. When you deactivate the cart price rule, shipping is charged at a flat rate of $5 per item.
+
+To disable this cart price rule, select **Marketing** > Promotions > **Cart Price Rules**. Then edit rule ID 2 (Spend $50 or more - shipping is free!), and toggle the Active switch to No. Be sure to save the change.
+
 ## Flush the cache
 
 Run the following command to cache the changes in configuration.

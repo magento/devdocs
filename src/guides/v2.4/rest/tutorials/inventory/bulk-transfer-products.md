@@ -13,7 +13,7 @@ functional_areas:
   - Integration
 ---
 
-The Northeast warehouse is out of stock of Voyage Yoga Bags (`24-WB01`). In this step, we'll bulk transfer all of the stock from the Brooklyn, Manhattan, and Huntington stores to the Northeast warehouse. As a result, the product cannot be shipped from either of these sources. We will also transfer five bags from the Berkeley and Sausalito stores to the West warehouse.
+The Northeast warehouse is out of stock of Voyage Yoga Bags (`24-WB01`). In this step, we'll bulk transfer all of the stock from the Huntington store to the Northeast warehouse. As a result, the product cannot be shipped from that store. We will also transfer five bags from the Sausalito store to the West warehouse.
 
 In this scenario, there are no pending orders that contain the product, nor is the product on back-order. In production, make sure that you fulfill any pending orders before you bulk transfer a product. You might want to remove the product from the European website before performing the bulk transfer.
 

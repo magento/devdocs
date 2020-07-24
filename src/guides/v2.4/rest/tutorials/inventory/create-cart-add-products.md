@@ -21,11 +21,11 @@ The call to create a cart and add items must contain the customer’s authorizat
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -141,6 +141,8 @@ In this call, we'll add 20 `24-WB03` items. This portion of the order can be ful
 **Response:**
 
 Note the `item_id` for use in subsequent steps.
+
+The discount is a result of the "20% OFF Every $200-plus purchase!" cart price rule. 
 
 ```json
 {
