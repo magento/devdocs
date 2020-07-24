@@ -17,7 +17,7 @@ This step creates a customer that lives close to several stores that serve as in
 
 ## Create a customer
 
-If you prefer to use a customer is already defined on your installation, scroll down to [Generate the customer's access token](#get-token)
+If you prefer to use a customer that is already defined on your installation, scroll down to [Generate the customer's access token](#get-token)
 
 **Endpoint:**
 

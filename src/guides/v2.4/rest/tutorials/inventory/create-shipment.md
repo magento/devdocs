@@ -17,7 +17,7 @@ In the previous step, the SSA recommended shipping 35 `24-WB01` items and 20 `24
 
 You can always override the SSA recommendations. It would be valid, for example, to ship 25 `24-WB01` items and 5 `24-WB03` items each from the Brooklyn, Manhattan, and Huntington stores.
 
-Fulfilling the order requires a minimum of two partial shipments. In this example, we'll follow the SSA recommendations.
+Fulfilling the order requires a minimum of two partial shipments. In this example, we will follow the SSA recommendations.
 
 When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.
 
