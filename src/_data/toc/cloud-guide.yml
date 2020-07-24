@@ -90,7 +90,7 @@ pages:
           url: /cloud/project/user-admin.html
           versionless: true
 
-        - label: Enable MFA enforcement for SSH
+        - label: Enable MFA for SSH
           url: /cloud/project/project-enable-mfa-enforcement.html
           versionless: true
 

@@ -151,7 +151,7 @@ A staging query requires two specialized headers:
 
 Header name | Description
 --- | ---
-`Authorization Bearer: <authorization_token>` | An admin token. Use the `GET /V1/integration/admin/token` REST endpoint to generate this token.
+`Authorization Bearer: <authorization_token>` | An admin token. Use a 2FA REST endpoint such as  `POST /V1/tfa/provider/google/authenticate` to generate this token.
 `Preview-Version` | A timestamp (seconds since January 1, 1970) that is inside the range of dates of the campaign you are querying.
 
 Magento returns an authorization error if you specify an invalid token or do not include both headers. If the specified timestamp does not correspond to a date in a scheduled campaign, the query results reflect the current storefront settings.
