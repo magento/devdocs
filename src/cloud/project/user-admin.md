@@ -27,7 +27,7 @@ You can manage access to {{site.data.var.ece}} projects by adding users and assi
 
 ## Add user authentication requirements
 
-For added security, Magento provides a project-level MFA enforcement feature to improve security for SSH access to Cloud infrastructure. See [MFA enforcement for SSH].
+For added security, Magento provides project-level MFA enforcement to require two-factor authentication for SSH access to {{ site.data.var.ece }} project source code and environments. See [MFA enforcement for SSH].
 
 When MFA enforcement is enabled on a {{site.data.var.ece}} project, all users with SSH access to an environment in that project must enable two-factor authentication (TFA) on their {{site.data.var.ece}} account. For automated processes, users must create an API token that machine users can use to authenticate from the command line. See [Enable user accounts for TFA and SSH access](#update-account-security-settings).
 
@@ -58,7 +58,7 @@ The following examples use the CLI to add a user, configure roles, and modify pr
 {:.procedure}
 To add a user and assign roles:
 
-1. Add the user using Magento Cloud CLI.
+1. Use the CLI to add the user.
 
    ```bash
    magento-cloud user:add
@@ -95,7 +95,7 @@ magento-cloud user:role alice@example.com --level environment --environment deve
 ```
 
 {:.bs-callout-tip}
-Use the following command to list the available `magento-cloud` CLI commands: `magento-cloud list`
+The `magento-cloud list` command displays all the `magento-cloud` CLI commands.
 
 ### Manage users from the Project Web UI {#cloud-user-webinterface}
 

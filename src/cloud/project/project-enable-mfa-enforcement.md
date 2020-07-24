@@ -310,7 +310,7 @@ oh2wi6klp5ytk-mc-35985-integration-nnulm4a--mymagento@ssh.eu-3.magento.cloud: Pe
 ```
 {:.no-copy}
 
-To fix the problem, you might need to add the ssh key to your current session, or update the SSH configuration file to load your SSH keys automatically. See [Add a public ssh key][add public ssh key] and [Unable to access projects without MFA][].
+To fix the problem, you might need to add the SSH key to your current session, or update the SSH configuration file to load your SSH keys automatically. See [Add a public ssh key][add public ssh key] and [Unable to access projects without MFA][].
 
 <!--Link references-->
 [add public ssh key]: {{ site.baseurl }}/cloud/before/before-workspace-ssh.html#ssh-add-to-account
