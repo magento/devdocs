@@ -21,17 +21,17 @@ The `stock_id` of the default stock is `1`.  You cannot delete or add sources to
 
 For more information about stock, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
-## Create the stock for North America
+## Create the stock
 
 The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code` attributes are required. The `code` value cannot be changed.
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/stocks`
+`POST <host>/rest/default/V1/inventory/stocks`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
@@ -44,15 +44,14 @@ The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and
 The `name` attribute is required.
 
 ```json
-
 {
   "stock": {
-    "name": "North America Stock",
+    "name": "US Stock",
     "extension_attributes": {
       "sales_channels": [
         {
           "type": "website",
-          "code": "na_site"
+          "code": "base"
         }
       ]
     }
@@ -63,26 +62,6 @@ The `name` attribute is required.
 **Response:**
 
 Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps.
-
-## Create the Europe stock
-
-Use the same endpoint to add another stock. The `stock_id` for `Europe Stock` is `3`.
-
-```json
-{
-  "stock": {
-    "name": "Europe Stock",
-    "extension_attributes": {
-      "sales_channels": [
-        {
-          "type": "website",
-          "code": "eu_site"
-        }
-      ]
-    }
-  }
-}
-```
 
 ## Verify this step
 
