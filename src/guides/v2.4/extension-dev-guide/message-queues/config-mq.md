@@ -99,18 +99,18 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | consumerInstance              | The Magento class name that consumes the message |
 | connection                    | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
 | maxMessages                   | Specifies the maximum number of messages to consume.|
-| maxIdleTime                   | Defines the maximum waiting time in seconds for a new message from the queue. If no message was handled within this period of time, consumer exits. Default value: `null`|
+| maxIdleTime                   | Defines the maximum waiting time in seconds for a new message from the queue. If no message was handled within this period of time, the consumer exits. Default value: `null`|
 | sleep                         | Specifies time in seconds to sleep before checking if a new message is available in the queue. Default value is `null` which equals 1 second.|
-| onlySpawnWhenMessageAvailable | Boolean value that identifies if consumer should be spawned only if there is available message in the related queue. Default value: `false`|
+| onlySpawnWhenMessageAvailable | Boolean value that identifies whether a consumer should be spawned only if there is available message in the related queue. Default value: `false`|
 
 {:.bs-callout-info}
-Attributes `maxIdleTime` and `sleep` will be handled only by consumers that were fired with defined `maxMessages` parameter. Attribute `onlySpawnWhenMessageAvailable` is only checked and validated by class `\Magento\MessageQueue\Model\Cron\ConsumersRunner` that runs consumers processes by cron.
+The `maxIdleTime` and `sleep` attributes will be handled only by consumers that were fired with a defined `maxMessages` parameter. The `onlySpawnWhenMessageAvailable` attribute is only checked and validated by the `\Magento\MessageQueue\Model\Cron\ConsumersRunner` class that runs consumer processes with cron.
 
-Options `onlySpawnWhenMessageAvailable` and `maxIdleTime` can be combined if a specific consumer needs to run very infrequently. The consumer will only spawn when it is needed, and it will terminate itself if it wasn't active for a certain period. That should save some precious server resources.
+The `onlySpawnWhenMessageAvailable` and `maxIdleTime` attributes can be combined if a specific consumer needs to run very infrequently. The consumer will only spawn when it is needed, and it terminates itself if it is inactive for a certain period. Together, these attributes can save server resources.
 
-Option [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) works similar to `onlySpawnWhenMessageAvailable`. When it is set to `false`, consumer processes all messages and exits if there are no available messages in the queue.
+The [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) option works similar to `onlySpawnWhenMessageAvailable`. When it is set to `false`, the consumer processes all messages and exits if there are no available messages in the queue.
 The problem is that every time the cron job `cron_consumers_runner` runs, it spawns a new consumer process, the consumer checks if messages are available, and it terminates itself if there are no messages.
-Meanwhile `onlySpawnWhenMessageAvailable` attribute first checks if there are available messages, and it spawns a new consumer process only if there are messages. It means that it does not spawn unneeded processes which take up memory, live for a very short period and then disappear.
+Meanwhile, the `onlySpawnWhenMessageAvailable` attribute first checks if there are available messages, and it spawns a new consumer process only if there are messages. It means that it does not spawn unneeded processes which take up memory, live for a very short period, and then disappear.
 
 #### Consumer handlers
 
