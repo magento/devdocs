@@ -44,7 +44,7 @@ For general information about security releases, see [Introducing the New Securi
 
 ## Hot fix
 
-Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are rolled into the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
 
 {:.bs-callout-info}
 Hot fixes can contain backward incompatible changes.

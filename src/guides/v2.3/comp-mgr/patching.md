@@ -26,7 +26,7 @@ When the [patch][] program is run, this file is read in and the specified change
 
 ### Hot fixes
 
-Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are rolled into the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
 
 You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type.
 
