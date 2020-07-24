@@ -11,6 +11,10 @@ This release includes all the improvements to core quality that were included in
 
 {:.bs-callout-info}
 
+Minor releases bring substantial code enhancements. Before upgrading to Magento 2.4.0, confirm that your environment meets the minimal [technical stack requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html).
+
+{:.bs-callout-info}
+
 Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.0 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 {:.bs-callout-info}
@@ -37,7 +41,7 @@ This release includes over 30 security fixes and platform security improvements.
 
 #### Over 30 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See Security updates available for Magento for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-47.html) for a discussion of these fixed issues.
 
 Additional security enhancements include:
 
@@ -2202,7 +2206,27 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ## Known issues
 
-**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. <!--- MC-34170-->
+**Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: Magento recommends using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
+
+**Issue**: The **Add selections to my cart** button on the bottom of the shopping cart does not work. **Workaround**: Use the **Add selections to my cart** button on the top of the page. See [Add selections to my cart button does not work](https://support.magento.com/hc/en-us/articles/360045838312) Knowledge Base article. <!--- MC-35313-->
+
+**Issue**: Merchants cannot interact with any page elements on the Returns page after creating a shipping label for a Return Merchandise Authorization (RMA). <!--- MC-35984-->
+
+**Issue**: Administrators cannot add a configurable product by SKU to a quote. When an administrator clicks on the **Add to Quote** button,  the Quote Edit page remained in a loading state, and the administrator could not save their changes. **Workaround**:  There is no workaround for B2B Quote editing.  However, you can still order products by selecting the products from the products list instead of adding them by SKU. <!--- MC-35513-->
+
+**Issue**: Merchants can’t create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missed from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JS bundling for your Magento deployment. See Products By SKU' and 'Add Products' buttons are missed on Create New Order page in Admin Knowledge Base article. <!--- MC-36044-->
+
+**Issue**: Magento throws a `404 not found` error when a customer tries to remove reward points when checking out an order being shipped to multiple addresses. <!--- MC-35955-->
+
+**Issue**: Editing a configurable product from a customer’s wishlist results in the following unexpected behavior: An unexpected field appears on the Configure Product page, the Configure Product page does not disappear after you click **OK**, and Magento displays this message: `Please load Wish List item`. **Workaround**: Reload the Configure Product page. <!--- MC-35617-->
+
+**Issue**:  Customer cannot change the number of orders displayed per page when the Orders list spans m multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page. **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
+
+**Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. <!--- MC-35514-->
+
+**Issue**: Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page (**Admin** > **Stores** > **Tax Rules**)  does not download the `tax_rates.csv` file as expected. **Workaround**: Click the edge of the  **Export Tax Rates** button.  See [Export Tax Rates does not work](https://support.magento.com/hc/en-us/articles/360045850032)  Knowledge Base article. <!--- MC-35345-->
+
+**Issue**: The **Refresh** buttons on the Last Ordered Items,  Products in Comparison List, and Recently Compared Products sections of the Admin Customer Activities page do not work as expected. Currently, Magento scrolls the page  every time the **Refresh** button is clicked and does not display the product name. See [Refresh on Customer's Activities does not work](https://magento.zendesk.com/hc/en-us/articles/360046091332) Knowledge Base article. <!--- MC-35296-->
 
 ## Community contributions
 
