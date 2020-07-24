@@ -4,6 +4,7 @@ title: Fastly
 functional_areas:
   - Cloud
   - Setup
+  - Security
 ---
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
