@@ -75,7 +75,7 @@ To create an SSH key pair:
    ```
 
    {:.bs-callout-info}
-   You can specify multiple SSH keys by adding multiple IdentityFile entries to your configuration.
+   You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
    For Windows:
 
