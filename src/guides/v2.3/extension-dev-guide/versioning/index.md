@@ -68,7 +68,7 @@ If Magento is installed from GitHub without using Composer, the `version` is not
 
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
-[Backward compatible development]({{ page.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
+[Backward compatible development]({{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
 
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html

@@ -531,7 +531,7 @@ entries:
   type: Major Update
   date: April 23, 2020
   link: https://github.com/magento/devdocs/pull/7082
-- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/contributor-guide/contributing.html)
     topic.
   versions: 2.3.x
   type: Major Update
@@ -1253,7 +1253,7 @@ entries:
   type: Major update
   date: December 12, 2019
   link: https://github.com/magento/devdocs/pull/6167
-- description: Updated the [Contributor Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+- description: Updated the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
     with guidance about accepting contributions to the 2.4 release line only.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2010,7 +2010,7 @@ entries:
   type: New topic
   date: August 7, 2019
   link: https://github.com/magento/devdocs/pull/5007
-- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
+- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
   versions: 2.2.x, 2.3.x
   type: Major update
   date: August 5, 2019
@@ -2034,7 +2034,7 @@ entries:
   date: August 2, 2019
   link: https://github.com/magento/devdocs/pull/5091
 - description: Added the 'Backward Compatibility' section to the [Magento Definition
-    of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html).
+    of Done](https://devdocs.magento.com/contributor-guide/contributing_dod.html).
   versions: 2.3.x
   type: Major update
   date: July 31, 2019
@@ -2145,7 +2145,7 @@ entries:
   date: July 16, 2019
   link: https://github.com/magento/devdocs/pull/3982
 - description: Added the "GraphQl backward compatibility policy" section to [Backward
-    compatible development](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/)
+    compatible development](https://devdocs.magento.com/contributor-guide/backward-compatible-development/)
   versions: 2.3.x
   type: Major update
   date: July 16, 2019
@@ -3018,7 +3018,7 @@ entries:
   type: Technical changes
   date: March 19, 2019
   link: https://github.com/magento/devdocs/pull/3961
-- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/#magento-apis).
+- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/contributor-guide/backward-compatible-development/#magento-apis).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: March 18, 2019
@@ -3609,7 +3609,7 @@ entries:
   date: October 29 2018
 - description: Updated the [Contributing process](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
     for DevDocs with updates to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html)
-    and [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+    and [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: October 26 2018
@@ -3711,8 +3711,8 @@ entries:
   versions: 2.1.x, 2.2.x
   type: New topic
   date: October  1 2018
-- description: Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points)
-    section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added [Contribution awards and points](https://devdocs.magento.com/contributor-guide/contributing.html#points)
+    section to the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: September 27 2018
@@ -3750,9 +3750,9 @@ entries:
   type: Technical changes
   date: September 17 2018
 - description: Added announcements and supported pull requests for v2.1,
-    [v2.2](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html),
-    and [v2.3](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
-    Contributing guide. Updated the [basic template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html)
+    [v2.2](https://devdocs.magento.com/contributor-guide/contributing.html),
+    and [v2.3](https://devdocs.magento.com/contributor-guide/contributing.html)
+    Contributing guide. Updated the [basic template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html)
     for DevDocs contributions.
   versions: 2.x
   type: Major update
@@ -3878,7 +3878,7 @@ entries:
   type: Major update
   date: Aug 17 2018
 - description: Updated all GitHub labels used for community contributions and added
-    information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+    information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: Aug 16 2018
@@ -3960,7 +3960,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jul 31 2018
-- description: Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: Jul 30 2018
@@ -3978,7 +3978,7 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Jul 25 2018
-- description: Updated [Definition of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html)
+- description: Updated [Definition of Done](https://devdocs.magento.com/contributor-guide/contributing_dod.html)
     with examples and guidelines.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -4395,7 +4395,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Mar 21 2018
-- description: Added a [descriptive video](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added a [descriptive video](https://devdocs.magento.com/contributor-guide/contributing.html)
     showing how to keep your fork updated with the latest changes.
   versions: 2.x
   type: Updated
@@ -4453,7 +4453,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Mar 07 2018
-- description: Added a CodeTriage badge to the [Contributor Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html).
+- description: Added a CodeTriage badge to the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html).
   versions: 2.x
   type: Updated
   date: Mar 01 2018
@@ -4561,7 +4561,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Jan 22 2018
-- description: We updated the [quarterly contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)
+- description: We updated the [quarterly contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)
     page for Q4 2018.
   versions: 2.x
   type: Updated
@@ -4714,7 +4714,7 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 29 2017
-- description: Updated the [Devdocs Quarterly Contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)
+- description: Updated the [Devdocs Quarterly Contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)
     page for Q3 2017
   versions: ''
   type: Updated
@@ -5535,7 +5535,7 @@ entries:
   versions: 2.1.x
   type: New
   date: Apr 1 2017
-- description: '[Update sample contribution template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html)'
+- description: '[Update sample contribution template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html)'
   versions: 2.x
   type: Updated
   date: Apr 1 2017
@@ -5559,7 +5559,7 @@ entries:
   versions: 2.x
   type: New
   date: Mar 15 2017
-- description: '[Top quarterly devdocs contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)'
+- description: '[Top quarterly devdocs contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)'
   versions: 2.x
   type: Updated
   date: Mar 15 2017

@@ -2452,7 +2452,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-87524 -->
 
-*  The [Contribution Guide]({{ page.baseurl }}/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+*  The [Contribution Guide]({{ site.baseurl }}/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 <!---MAGETWO-87056 -->
 
