@@ -1,6 +1,9 @@
 ---
 group: contributor-guide
 title: Code Contributions
+redirect_from:
+- guides/v2.3/contributor-guide/contributing.html
+- guides/v2.4/contributor-guide/contributing.html
 ---
 
 The following topics are included in this guide:

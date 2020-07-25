@@ -1,6 +1,9 @@
 ---
 group: contributor-guide
 title: Backward compatible development
+redirect_from:
+- guides/v2.3/contributor-guide/backward-compatible-development/index.html
+- guides/v2.4/contributor-guide/backward-compatible-development/index.html
 ---
 This page describes rules and best practices for backward compatible development.
 

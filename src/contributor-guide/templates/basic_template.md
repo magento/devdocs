@@ -1,6 +1,9 @@
 ---
 group: contributor-guide
 title: Basic template
+redirect_from:
+- guides/v2.3/contributor-guide/templates/basic_template.html
+- guides/v2.4/contributor-guide/templates/basic_template.html
 ---
 
 Introductory text that gives an overview of the topic you will be writing about.

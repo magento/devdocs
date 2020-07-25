@@ -1,8 +1,9 @@
 ---
 group: contributor-guide
 title: Maintainers
-version: 2.1
-github_link: contributor-guide/maintainers.md
+redirect_from:
+- guides/v2.3/contributor-guide/maintainers.html
+- guides/v2.4/contributor-guide/maintainers.html
 ---
 
 Magento trusts our active community members to review pull requests and accept or reject proposed code changes. [Community Maintainers](https://magento.com/magento-contributors#maintainers){:target="_blank"} take part in discussions, reviews, and help process pull requests.
