@@ -1,18 +1,24 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 4. Search for in-store pickup locations
+title: Step 3. Search for in-store pickup locations
 subtitle: GraphQL In-store pickup tutorial
 level3_subgroup: graphql-inventory
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 40
+menu_order: 30
 functional_areas:
   - Integration
 ---
 
-Assuming all physical products the customer selected are eligible for in-store pickup, Magento displays the "Pick in Store" option on the checkout page. Use the [`pickupLocations` query]({{page.baseurl}}/) to return a list of places the customer can pick up their order.
+Assuming all physical products the customer selected are eligible for in-store pickup, when the shopper goes to the checkout page, the Luma storefront displays the **Pick in Store** tab and shipping method, as shown below.
+
+![Pick in Store tab]({{site.baseurl}}/common/images/graphql/in-store-pickup.png)
+
+When a logged-in customer clicks on the **Pick in Store** tab, Magento displays the closest location, based on the customer's default address. The customer can also select alternate locations. Guests do not have a pre-selected location, but they can select one.
+
+Use the [`pickupLocations` query]({{page.baseurl}}/) to return a list of places the customer can pick up their order.
 
 The example below search for locations that are in a 50 km radius of the US ZIP code 10101. The query returns three stores, listed in proximity to the specified ZIP code.
 

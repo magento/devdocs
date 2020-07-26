@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 5. Set the shipping address
+title: Step 4. Set the shipping address
 subtitle: GraphQL In-store pickup tutorial
 level3_subgroup: graphql-inventory
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 50
+menu_order: 40
 functional_areas:
   - Integration
 ---
@@ -15,8 +15,6 @@ functional_areas:
 When the customer selects a location for in-store pickup, you must provide the address of that location using the [`setShippingAddressesOnCart`]({{ page.baseurl }}/graphql/mutations/set-shipping-address.html) mutation. The payload must specify a valid source name in the `pickup_location_code` attribute.
 
 In the following example, the customer has chosen to pick up the order at the Brooklyn store. The shipping address for this store was defined in the [Order Processing with Inventory Management]({{page.baseurl}}/rest/tutorials/inventory/index.html) tutorial.
-
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
 
 **Headers:**
 
@@ -107,8 +105,4 @@ mutation {
 
 ## Verify this step {#verify-step}
 
-1. Sign in as a customer to the website using the email `jdoe@example.com` and password `Password1`.
-
-1. Go to Checkout.
-
-1. On the Shipping step, the pickup location is displayed.
+This step cannot be verified from the Admin.

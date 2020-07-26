@@ -1,20 +1,20 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 3. Add products to the cart
+title: Step 2. Add products to the cart
 subtitle: GraphQL In-store pickup tutorial
 level3_subgroup: graphql-inventory
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 30
+menu_order: 20
 functional_areas:
   - Integration
 ---
 
 GraphQL supports all product types, but this tutorial only demonstrates how to add simple products to the shopping cart.
 
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
+`{ CART_ID }` is the unique shopping cart ID from [Step 1. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
 
 The following mutation adds two simple products, 24-WB01 and 24-WB03, to the shopping cart.
 

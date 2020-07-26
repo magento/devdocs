@@ -40,7 +40,7 @@ query {
 {
   "data": {
     "customer": {
-      "default_billing": "4"
+      "default_billing": "2"
     }
   }
 }
@@ -48,13 +48,13 @@ query {
 
 ## Set the billing address
 
-Now that we have the value of the `default_billing` attribute, we can set the billing address. The `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
+Now that we have the value of the `default_billing` attribute, we can set the billing address.
 
 **Headers:**
 
 `Authorization: Bearer <customer token>`
 
-`Store: us`
+`Store: default`
 
 **Request:**
 
@@ -64,7 +64,7 @@ mutation {
     input: {
       cart_id: "{ CART_ID }"
       billing_address: {
-          customer_address_id: "4"
+          customer_address_id: 2
       }
     }
   ) {

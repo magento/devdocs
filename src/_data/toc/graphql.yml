@@ -358,28 +358,25 @@ pages:
           - label: In-store pickup tutorial
             url: /graphql/tutorials/inventory/index.html
 
-          - label: Step 1. Generate the customer token
-            url: /graphql/tutorials/inventory/isp-customer-token.html
-
-          - label: Step 2. Create an empty cart
+          - label: Step 1. Create an empty cart
             url: /graphql/tutorials/inventory/isp-shopping-cart.html
 
-          - label: Step 3. Add products to the cart
+          - label: Step 2. Add products to the cart
             url: /graphql/tutorials/inventory/isp-add-product-to-cart.html
 
-          - label: Step 4. Search for in-store pickup locations
+          - label: Step 3. Search for in-store pickup locations
             url: /graphql/tutorials/inventory/isp-search-pickup-locations.html
 
-          - label: Step 5. Set the shipping address
+          - label: Step 4. Set the shipping address
             url: /graphql/tutorials/inventory/isp-shipping-address.html
 
-          - label: Step 6. Set the billing address
+          - label: Step 5. Set the billing address
             url: /graphql/tutorials/inventory/isp-billing-address.html
 
-          - label: Step 7. Set the payment method
+          - label: Step 6. Set the payment method
             url: /graphql/tutorials/inventory/isp-payment-method.html
 
-          - label: Step 8. Place the order
+          - label: Step 7. Place the order
             url: /graphql/tutorials/inventory/isp-place-order.html
  
     - label: Release Notes

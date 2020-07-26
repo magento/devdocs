@@ -1,13 +1,13 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 7. Set the payment method
+title: Step 5. Set the payment method
 subtitle: GraphQL In-store pickup tutorial
 level3_subgroup: graphql-inventory
 return_to:
   title: GraphQL Overview
   url: graphql/index.html
-menu_order: 70
+menu_order: 50
 functional_areas:
   - Integration
 ---
@@ -15,8 +15,6 @@ functional_areas:
 You must always set a payment method for an order.
 
 Use the following `cart` query to determine which payment methods are available for your order.
-
-`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/inventory/isp-add-product-to-cart.html).
 
 **Headers:**
 
