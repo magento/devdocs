@@ -32,11 +32,11 @@ The `source_code` values will be used in subsequent steps.
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/sources`
+`POST <host>/rest/default/V1/inventory/sources`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
@@ -74,24 +74,24 @@ Magento returns an empty array.
 
 Use the same endpoint to create a source for the Leipzig warehouse. We will designate the Brooklyn, Huntington, Manhattan, Berlin, and Frankfurt stores as in-store pick up locations. We will also create the HQ source for virtual and downloadable products.
 
-### Leipzig warehouse
+### West warehouse
 
 Use the following payload to create the Leipzig warehouse:
 
 ```json
 {
    "source" : {
-      "name" : "Leipzig Warehouse",
-      "source_code" : "de_wh",
-      "postcode" : "04109",
+      "name" : "West Warehouse",
+      "source_code" : "west_wh",
+      "postcode" : "95207",
       "enabled" : true,
       "contact_name" : "Claudia Mabuse",
-      "country_id" : "DE",
-      "street": "Willy-Brandt-Platz 5",
-      "city" : "Leipzig",
-      "region_id": 41,
-      "latitude": 51.344410,
-      "longitude": 12.380790
+      "country_id" : "US",
+      "street": "7554 Pacific Ave",
+      "city" : "Stockton",
+      "region_id": 12,
+      "latitude": 38.018180,
+      "longitude": -121.319930
       }
 }
 ```
@@ -178,57 +178,57 @@ Use the following payload to create the Manhattan store:
   }
 }
 ```
-### Berlin store
+### Berkeley store
 
-Use the following payload to create the Berlin store:
+Use the following payload to create the Berkeley store:
 
 ```json
 {
    "source" : {
-      "name" : "Berlin Store",
-      "source_code" : "berlin",
-      "postcode" : "10115",
+      "name" : "Berkeley Store",
+      "source_code" : "berkeley",
+      "postcode" : "94705",
       "enabled" : true,
       "contact_name" : "Tereza Schmidt",
-      "country_id" : "DE",
-      "street": "Am Nordbahnhof 5",
-      "city" : "Berlin",
-      "region_id": 82,
-      "latitude": 52.52343,
-      "longitude": 13.41144,
-      "phone": "49-030-555-55555",
+      "country_id" : "US",
+      "street": "2705 Webster St",
+      "city" : "Berkeley",
+      "region_id": 12,
+      "latitude": 37.855850,
+      "longitude": -122.252460,
+      "phone": "510 555-2020",
       "extension_attributes": {
         "is_pickup_location_active": true,
-        "frontend_name": "Berlin Store",
-        "frontend_description": "Central Station, Berlin"
+        "frontend_name": "Berkeley Store",
+        "frontend_description": "Near College Ave. and Ashby Ave."
       }
    }
 }
 ```
 
-### Frankfurt store
+### Sausalito store
 
 Use the following payload to create the Frankfurt store:
 
 ```json
 {
    "source" : {
-      "name" : "Frankfurt Store",
-      "source_code" : "frankfurt",
-      "postcode" : "60327",
+      "name" : "Sausalito Store",
+      "source_code" : "sausalito",
+      "postcode" : "94965",
       "enabled" : true,
       "contact_name" : "Ralf Schneider",
-      "country_id" : "DE",
-      "street": "Frankfurt am Main, Stadt",
-      "city" : "Frankfurt",
-      "region_id": 86,
-      "latitude": 50.110645,
-      "longitude": 8.682092,
-      "phone": "49-069-555-66666",
+      "country_id" : "US",
+      "street": "150 Harbor Dr.",
+      "city" : "Sausalito",
+      "region_id": 12,
+      "latitude": 37.867168,
+      "longitude": -122.499367,
+      "phone": "415-555-6666",
       "extension_attributes": {
         "is_pickup_location_active": true,
-        "frontend_name": "Frankfurt Store",
-        "frontend_description": "Central Station, Frankfurt"
+        "frontend_name": "Sausalito Store",
+        "frontend_description": "Just off Bridgeway"
       }
    }
 }
