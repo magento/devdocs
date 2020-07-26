@@ -28,20 +28,10 @@ In the following example, the customer has chosen to pick up the order at the Br
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "{ CART_ID }"
+      cart_id: ""{ CART_ID }""
       shipping_addresses: [
         {
-          address: {
-            firstname: "Tai"
-            lastname: "Hozie"
-            street: ["263 S 4th St"]
-            city: "Brooklyn"
-            region: "NY"
-            postcode: "11211"
-            country_code: "US"
-            telephone: "555-737-8088"
-            save_in_address_book: false
-          }
+          customer_address_id: 2
           pickup_location_code: "brooklyn"
         }
       ]
@@ -78,9 +68,8 @@ mutation {
       "cart": {
         "shipping_addresses": [
           {
-            "firstname": "Tai",
-            "lastname": "Hozie",
-            "company": null,
+            "firstname": "Jane",
+            "lastname": "Doe",
             "street": [
               "263 S 4th St"
             ],
@@ -90,7 +79,7 @@ mutation {
               "label": "New York"
             },
             "postcode": "11211",
-            "telephone": "555-737-8088",
+            "telephone": "516-555-1111",
             "country": {
               "code": "US",
               "label": "US"

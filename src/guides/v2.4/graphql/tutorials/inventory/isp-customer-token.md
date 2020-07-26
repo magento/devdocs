@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 ---
 
-This step generates an authentication token for the customer defined in the [Order Processing with Inventory Management]({{page.baseurl}}/rest/tutorials/inventory/index.html) tutorial. This customer was created from the `us` store view. You must specify this view in the request header.
+This step generates an authentication token for the customer defined in the [Order Processing with Inventory Management]({{page.baseurl}}/rest/tutorials/inventory/index.html) tutorial.
 
 Use the `generateCustomerToken` mutation to generate the token. You must include the customer's email and password as input.
 
