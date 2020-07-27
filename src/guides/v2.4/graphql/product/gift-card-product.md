@@ -37,7 +37,7 @@ The `GiftCardAmounts` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `attribute_id` | Int | An internal attribute ID
-`id_v2` | String | A base64 string that encodes option details
+`uid` | String | A string that encodes option details.
 `value_id` | Int | An ID that is  assigned to each unique gift card amount
 `value` | Float | The value of the gift card
 `website_value` | Float |The value of the gift card
