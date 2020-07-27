@@ -93,7 +93,7 @@ This release contains enhancements to core quality, which improve the quality of
 
 *  **Composer update plugin**. Composer plugin streamlines the  upgrade process by resolving changes that must be made to the root project `composer.json` file before updating to a new Magento product requirement. This plug-in protects against overwriting customizations. See [Upgrade using the Magento composer root plugin](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
 
-*  **Seller-assisted shopping**. This feature allows merchants to view the storefront on behalf of their customers. Customers opt to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). Features include:
+*  **Seller-assisted shopping**. This feature allows merchants to view the storefront on behalf of their customers. Customers opt to allow storefront access to their accounts. This community-developed feature includes an original extension developed by [MAGEFAN](https://magefan.com/). See [Seller Assisted Shopping](https://docs.magento.com/user-guide/configuration/customers/login-as-customer.html). Features include:
 
    *  ACL to control which administrators can log in to customer accounts can be configured on a per-website basis
    *  Compatibility with multiple websites and customer account scopes
@@ -156,7 +156,8 @@ See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/ma
 
 ### B2B
 
-**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. Features include:
+**Order Approval Workflow feature for B2B**. Order Approvals allows managers of buying organizations to configure approval rules for their buyers. See [Approval Rules](https://docs.magento.com/user-guide/customers/account-dashboard-approval-rules.html
+). Features include:
 
 *  Self-service configuration of unique approval rules for each Company account
 *  Rule criteria that can be based on order amount, number of line items, or shipment cost with configurable thresholds
@@ -196,6 +197,7 @@ This release includes these enhancements:
 *  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
 *  Configurable products now have a stock figure that is the sum of their child products.
 *  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
+*  [Data mapping](https://docs.magento.com/user-guide/configuration/dotdigital/data-mapping.html) and [transactional email](https://docs.magento.com/user-guide/configuration/dotdigital/transactional-emails.html) configuration information has been updated.
 
 #### Amazon Pay
 
@@ -606,20 +608,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The CMS  page custom layout update logic  has been improved. Magento now applies specific layout changes from `cms_page_view_selectable_home_somechanges.xml`. _Fix submitted by Sergiy Vasiutynskyi in pull request [27131](https://github.com/magento/magento2/pull/27131)_. [GitHub-26758](https://github.com/magento/magento2/issues/26758)
 
-### Cookies
-
-<!--- MC-24182-->
-
-*  The `setRedirectCookie` and `clearRedirectCookie` functions now work as expected. Previously, these functions sent cookies to the browser, but all cookie parameters were missing. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
-
-<!--- MC-30789-->
-
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
-
-<!--- ENGCOM-6891-->
-
-*  Metadata has been added to the `setRedirectCookie` and `clearRedirectCookie` functions.  _Fix submitted by Alexander Lukyanov in pull request [24612](https://github.com/magento/magento2/pull/24612)_. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
-
 ### Cleanup
 
 <!--- ENGCOM-6573-->
@@ -719,6 +707,20 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-6520-->
 
 *  Magento now displays a product’s special price as expected when you select a discounted option of a configurable product. Previously, `class="normal-price"` was not changed to `class="special-price"` when a discounted option was selected. _Fix submitted by Ravi Chandra in pull request [26170](https://github.com/magento/magento2/pull/26170)_. [GitHub-24972](https://github.com/magento/magento2/issues/24972)
+
+### Cookies
+
+<!--- MC-24182-->
+
+*  The `setRedirectCookie` and `clearRedirectCookie` functions now work as expected. Previously, these functions sent cookies to the browser, but all cookie parameters were missing. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
+
+<!--- MC-30789-->
+
+*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
+
+<!--- ENGCOM-6891-->
+
+*  Metadata has been added to the `setRedirectCookie` and `clearRedirectCookie` functions.  _Fix submitted by Alexander Lukyanov in pull request [24612](https://github.com/magento/magento2/pull/24612)_. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
 
 ### Custom customer attributes
 
@@ -1768,7 +1770,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-4781-->
 
-*  Magento now removes the `sale_sequence_meta` and `sales_sequence_profile` tables as expected when a merchant deletes a store view. _Fix submitted by Bartomiej Szubert in pull request [22296](https://github.com/magento/magento2/pull/22296)_. [GitHub-14958](https://github.com/magento/magento2/issues/14958)
+*  Magento now deletes records that are related to a deleted store view from the `sale_sequence_meta` and `sales_sequence_profile` tables as expected. _Fix submitted by Bartomiej Szubert in pull request [22296](https://github.com/magento/magento2/pull/22296)_. [GitHub-14958](https://github.com/magento/magento2/issues/14958)
 
 <!--- ENGCOM-6869-->
 
@@ -1958,7 +1960,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6557-->
 
-*  The page title of the Product details page (`page.main.title`) is no longer translated by default. Previously, when you disabled the Translate Title setting on **Content** > **Design** > **Configuration**, the page title was still translated. _Fix submitted by Bartłomiej Szubert in pull request [26269](https://github.com/magento/magento2/pull/26269)_. [GitHub-7065](https://github.com/magento/magento2/issues/7065)
+*  You can now disable the translation of the page title of the Product details page (`page.main.title`), which is enabled by default. _Fix submitted by Bartłomiej Szubert in pull request [26269](https://github.com/magento/magento2/pull/26269)_. [GitHub-7065](https://github.com/magento/magento2/issues/7065)
 
 <!--- ENGCOM-7465-->
 
@@ -2200,47 +2202,47 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: Editing a configurable product from a customer’s wishlist results in the following unexpected behavior: An unexpected field appears on the Configure Product page, and the Configure Product page does not disappear after you click **OK**. Magento also displays this message: `Please load Wish List item`. **Workaround**: Reload the Configure Product page. <!--- MC-35617-->
 
-**Issue**:  Customers cannot change the number of orders displayed per page when the Orders list spans multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page. **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
+**Issue**:  Customers cannot change the number of orders displayed per page when the Orders list spans multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page: `You have placed no orders`. **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
 
 **Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. <!--- MC-35514-->
 
 **Issue**: Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page ( **Stores** > **Tax Rules**)  does not download the `tax_rates.csv` file as expected. **Workaround**: Click the edge of the  **Export Tax Rates** button.  See [Export Tax Rates does not work](https://support.magento.com/hc/en-us/articles/360045850032)  Knowledge Base article. <!--- MC-35345-->
 
-**Issue**: The **Refresh** buttons on the Last Ordered Items,  Products in Comparison List, and Recently Compared Products sections of the Admin Customer Activities page do not work as expected. Currently, Magento scrolls the page  every time the **Refresh** button is clicked and does not display the product name. See [Refresh on Customer's Activities does not work](https://magento.zendesk.com/hc/en-us/articles/360046091332) Knowledge Base article. <!--- MC-35296->
+**Issue**: The **Refresh** buttons on the Last Ordered Items,  Products in Comparison List, and Recently Compared Products sections of the Admin Customer Activities page do not work as expected. Currently, Magento scrolls the page  every time the **Refresh** button is clicked and does not display the product name. See [Refresh on Customer's Activities does not work](https://magento.zendesk.com/hc/en-us/articles/360046091332) Knowledge Base article. <!--- MC-35296-->
 
 ## Known issues -- VBE
 
 ### Amazon Pay
 
-*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay.  <!--- BUNDLE-2661—>
+*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay.   <!--- BUNDLE-2661-->
 
-*  **Issue**: Magento displays two identical Amazon Pay methods in the Payment Method drop-down list that is available when creating a new cart price rule.  <!--- BUNDLE-2685—>
+*  **Issue**: Magento displays two identical Amazon Pay methods in the Payment Method drop-down list that is available when creating a new cart price rule.  <!--- BUNDLE-2685-->
 
 ### Braintree
 
-*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: An error has happened during application run. See exception log for details.  <!--- BUNDLE-2683—>
+*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. <!--- BUNDLE-2683-->
 
-*  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: The "vault_capture" command doesn't exist. Verify the command and try again. <!--- BUNDLE-2647—>
+*  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
 
-*  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.  <!--- BUNDLE-2686—>
+*  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.   <!--- BUNDLE-2686-->
 
-*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. <!--- BUNDLE-2670—>
+*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields.  <!--- BUNDLE-2670-->
 
-*  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment. <!--- BUNDLE-2671, 2672, 2673, 2674, 2680, 2681 —>
+*  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment. <!--- BUNDLE-2671, 2672, 2673, 2674, 2680, 2681 —>  <!--- BUNDLE-2671 2672 2673 2674 2680 2681-->
 
 ### dotdigital
 
-*  **Issue**: Integration tests fail with this error: `PHP Fatal error: Declaration of Dotdigitalgroup\Email\Test\Integration\Model\Sync\Importer\ImporterFailedTest::setUp() must be compatible with PHPUnit\Framework\TestCase::setUp(): void in /var/www/vendor/dotmailer/dotmailer-magento2-extension/Test/Integration/Model/Sync/Importer/ImporterFailedTest.php on line 36`. <!--- BUNDLE-2684—>
+*  **Issue**: Integration tests fail with this error: `PHP Fatal error: Declaration of Dotdigitalgroup\Email\Test\Integration\Model\Sync\Importer\ImporterFailedTest::setUp() must be compatible with PHPUnit\Framework\TestCase::setUp(): void in /var/www/vendor/dotmailer/dotmailer-magento2-extension/Test/Integration/Model/Sync/Importer/ImporterFailedTest.php on line 36`.  <!--- BUNDLE-2684-->
 
 ### Klarna
 
-*  **Issue**:  Leaving the **Design Theme** field blank in Klarna On-Site Messaging  (**Admin**  >  **Stores**  >  **Configuration**  > **Klarna settings**) results in  a blank page.  **Workaround**: Select a design theme and save. <!--- BUNDLE-2623—>
+*  **Issue**:  Leaving the **Design Theme** field blank in Klarna On-Site Messaging  (**Admin**  >  **Stores**  >  **Configuration**  > **Klarna settings**) results in  a blank page.  **Workaround**: Select a design theme and save.  <!--- BUNDLE-2623-->
 
-*  **Issue**:  The Klarna portal does not display a Refund label next to a  Bundle product for which a refund has been created by clicking **Refund** on   **Invoices**   >  **Select invoice** ->  **Credit Memo**. <!--- BUNDLE-2640—>
+*  **Issue**:  The Klarna portal does not display a Refund label next to a  Bundle product for which a refund has been created by clicking **Refund** on   **Invoices**   >  **Select invoice** >  **Credit Memo**. <!--- BUNDLE-2640-->
 
 ### Vertex
 
-*  **Issue**: Address validation is not invoked as expected during the Payment step of the checkout workflow after the customer’s payment address is updated and different shipping and billing addresses are specified.  <!--- BUNDLE-2669—>
+*  **Issue**: Address validation is not invoked as expected during the Payment step of the checkout workflow after the customer’s payment address is updated and different shipping and billing addresses are specified.  <!--- BUNDLE-2669-->
 
 *  **Issue**:  Magento displays an  **Address verification** button on the shipping section of the checkout workflow even when address validation is disabled.  <!--- BUNDLE-2604-->
 
