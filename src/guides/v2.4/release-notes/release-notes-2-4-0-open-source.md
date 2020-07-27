@@ -86,7 +86,7 @@ The following platform upgrades help enhance website security and performance. S
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, Cart and Checkout, and B2B.
 
-*  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net and Braintree payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
+*  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net payment method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
 
 *  **Support for partial-word search for Elasticsearch (new default search engine)**. Elasticsearch now supports the use of  partial words in search terms for  product names and SKUs when using quick search. This capability was supported by the MySQL search engine, which has been deprecated and replaced by Elasticsearch in this release.
 
@@ -170,19 +170,6 @@ This release also removes deprecated actions and upgrades scripts that were adde
 This release of Magento includes extensions developed by third-party vendors. It introduces both quality and UX improvements to these extensions and an expansion of MFTF coverage.
 
 Magento Marketplace extension vendors should confirm that their extensions are compatible with PHP 7.4 when publishing a new version of their extension for Magento 2.4.0.
-
-#### dotdigital
-
-This release includes these enhancements:
-
-*  Customer attribute values that are captured by any input type (for example, dropdown, multi-select) are now correctly synced as data fields.
-*  Cart insight data is now sent for all active quotes, even if they contain no items. This allows merchants to exit contacts from a program if they empty their cart.
-*  Merchants can now sync website name, store name, and store view name by individual data fields.
-*  Wishlist, Review, and Order syncs now look up the transactional data sync limit once only.
-*  Logging output from the Client class has been improved and is now consistent across all methods in the API wrapper.
-*  Configurable products now have a stock figure that is the sum of their child products.
-*  A new plugin detects stock updates that are performed by third-party code (outside the Magento Admin).
-*  [Data mapping](https://docs.magento.com/user-guide/configuration/dotdigital/data-mapping.html) and [transactional email](https://docs.magento.com/user-guide/configuration/dotdigital/transactional-emails.html) configuration information has been updated.
 
 #### Amazon Pay
 
@@ -410,10 +397,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Catalog
 
-<!--- MC-23633-->
-
-*  Magento now disables the ability of a restricted administrator to change a product’s quantity attribute and disables advanced inventory as expected. Previously, only the visual display of the quantity attribute was affected, and Magento changed the quantity value in the database after the product was saved.
-
 <!--- MC-25235-->
 
 *  Magento no longer throws an error when you change the name of a tiered product that is included in a scheduled update. Previously, when you tried to save the product with a new name, Magento displayed this error: `SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3-0-0-2.0000-0' for key 'UNQ_EBC6A54F44DFA66FA9024CAD97FED6C7', query was: INSERT INTO catalog_product_entity_tier_price (all_groups, customer_group_id, qty, value, website_id, percentage_value, row_id) VALUES (?, ?, ?, ?, ?, ?, ?)`
@@ -453,10 +436,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- MC-30794-->
 
 *  The Recently Viewed Products feature now works as expected in multi-store deployments.
-
-<!--- MC-31837-->
-
-*  Administrators with restricted permissions to Catalog can now create a downloadable product. Previously, administrators could not create a downloadable product, and Magento threw an error.
 
 <!--- MC-31838-->
 
@@ -1112,10 +1091,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now displays `.png` images as expected after upload.
 
-<!--- MC-29483-->
-
-*  Images that have been uploaded into a CMS block using Page Builder are now displayed in the preview as expected when uploaded from an Admin that has a base URL that differs from the storefront URL.
-
 <!--- ENGCOM-7063-->
 
 *  Using REST to add or update an image now creates an image thumbnail as expected. _Fix submitted by Sergiy Vasiutynskyi in pull request [27170](https://github.com/magento/magento2/pull/27170)_. [GitHub-26825](https://github.com/magento/magento2/issues/26825)
@@ -1290,28 +1265,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!-- ENGCOM-6807-->
 
 *  Redundant `\Magento\Sales\Model\Order\Email\Sender\ShipmentSender` has been deprecated in favor of  `\Magento\Sales\Model\Order\Shipment\Sender\EmailSender`. _Fix submitted by Adarsh Manickam in pull request [26714](https://github.com/magento/magento2/pull/26714)_. [GitHub-14885](https://github.com/magento/magento2/issues/14885)
-
-### Logging
-
-<!--- MC-29636-->
-
-*  Order status changes are now logged as expected under **System** > **Action Logs** > **Report**.
-
-<!--- MC-29637-->
-
-*  Magento now logs sales shipment actions in the Admin Action log as expected.
-
-<!--- MC-29892-->
-
-*  CMS page save actions are now logged in Admin Action Logs. Previously, only view actions were logged.
-
-<!--- MC-30618-->
-
-*  Save actions on CMS pages are now logged as expected in Admin action logs when **Select all actions to be logged** is enabled on the Admin Actions Logging tab (**Admin** > **Stores** > **Configuration** > **Advanced**).
-
-<!--- ENGCOM-7274-->
-
-*  CMS page modifications are now logged as expected in the Action log. MFTF now covers this feature.  _Fix submitted by Lukasz Bajsarowicz in pull request [27597](https://github.com/magento/magento2/pull/27597)_. [GitHub-171](https://github.com/magento/magento2/issues/171)
 
 ### Media Gallery
 
@@ -1895,10 +1848,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### UI
 
-<!--- MC-32547-->
-
-*  You can now use Page Builder to add a product as a button link (**Edit Content** > **Button Link**). Previously, Magento threw this error when you tried to select the product: `Product with ID: XXXX doesn't exist`.
-
 <!--- ENGCOM-7490-->
 
 *  The Back button now works as expected from **Admin** > **Stores** > **Order Status** > **Edit Order Status**. _Fix submitted by Vadim Malesh in pull request [27976](https://github.com/magento/magento2/pull/27976)_. [GitHub-1270](https://github.com/magento/magento2/issues/1270)
@@ -2125,11 +2074,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. <!--- BUNDLE-2670-->
 
-*  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment. <!--- BUNDLE-2671, 2672, 2673, 2674, 2680, 2681 —>  <!--- BUNDLE-2671 2672 2673 2674 2680 2681-->
-
-### dotdigital
-
-*  **Issue**: Integration tests fail with this error: `PHP Fatal error: Declaration of Dotdigitalgroup\Email\Test\Integration\Model\Sync\Importer\ImporterFailedTest::setUp() must be compatible with PHPUnit\Framework\TestCase::setUp(): void in /var/www/vendor/dotmailer/dotmailer-magento2-extension/Test/Integration/Model/Sync/Importer/ImporterFailedTest.php on line 36`.  <!--- BUNDLE-2684-->
+*  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment.
 
 ### Klarna
 
