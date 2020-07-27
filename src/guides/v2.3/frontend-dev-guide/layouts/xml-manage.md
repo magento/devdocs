@@ -51,11 +51,21 @@ The following file is a sample of a file you must add:
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <head>
-    <!-- Add local resources -->
-    <css src="css/my-styles.css"/>
+    <!-- Add local styles resources -->
+    <css src="css/my-styles.css" />
+    <css src="<Namespace>_<Module>::css/custom-styles.css" />
+
     <!-- The following two ways to add local JavaScript files are equal -->
-    <script src="Magento_Catalog::js/sample1.js"/>
-    <link src="js/sample.js"/>
+    <script src="Magento_Catalog::js/sample1.js" />
+    <script src="Magento_Catalog/js/sample1.js" />
+
+    <!-- Magento support async or defer attribute in script tag -->
+    <script async="" src="Magento_Catalog::js/sample1.js" />
+    <script defer="" src="Magento_Catalog::js/sample1.js" />
+
+    <link src="js/sample.js" />
+    <link src="sample.js" />
+
     <!-- Add external resources -->
     <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
@@ -66,7 +76,7 @@ The following file is a sample of a file you must add:
 
 When adding external resources, specifying the `src_type="url"` argument value is a must.
 
-You can use either the `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
+You can use either the `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme. In this short way the path to js file will be `<theme_dir>/web/js/sample.js`. If we use `<link src="sample.js"/>` Magento will get js file in `<theme_dir>/web/sample.js`
 
 The path to assets is specified relatively to one the following locations:
 
@@ -104,19 +114,26 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <head>
-    <!-- Remove local resources -->
+    <!-- Remove local styles resources -->
     <remove src="css/styles-m.css" />
-    <remove src="my-js.js"/>
-    <remove src="Magento_Catalog::js/compare.js" />
+    <remove src="<Namespace>_<ModuleName>::css/styles.css" />
+
+    <!-- Remove js resources -->
+    <remove src="my-js.js" />
+    <remove src="Magento_Catalog::js/sample1.js" />
+
     <!-- Remove external resources -->
-    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
-    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
     <remove src="http://fonts.googleapis.com/css?family=Montserrat" />
    </head>
 </page>
 ```
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
+
+{:.bs-callout-warning}
+If js files have called via RequireJS approach by declaring in require/define sections, we can't remove it from the layout.
 
 ## Add meta tags to the head block {#layout_markup_meta}
 
