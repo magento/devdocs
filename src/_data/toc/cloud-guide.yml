@@ -508,7 +508,7 @@ pages:
           versionless: true
 
         - label: Error log message reference
-          url: /cloud/reference/error-codes.html
+          url: /cloud/reference/ece-tools-error-reference.html
           versionless: true
 
     - label: Site launch
