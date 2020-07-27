@@ -1,8 +1,9 @@
-# OS generated files #
-######################
+# OS and IDE generated files #
+##############################
 /*.db
 .DS_Store
 .vscode
+.history
 
 # Config and output files #
 ###########################

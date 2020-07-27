@@ -21,11 +21,11 @@ The call to create a cart and add items must contain the customer’s authorizat
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -45,12 +45,12 @@ The response is the `quoteId`: 3
 
 In [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
-Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
+Product | Northeast Warehouse | Brooklyn Store  | Manhattan Store | Long Island Store | West Warehouse | Berkeley Store | Sausalito Store
 --- | --- | --- | ---
-`24-WB01` | 35 | 10 | 25
-`24-WB03` | 19 | 0 | 42
+`24-WB01` | 35 | 10 | 10 | 10 | 15 | 10 | 10
+`24-WB03` | 50 | 0 | 0 | 0 | 10 | 20 | 20
 
-Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
+Later in this step, we'll order 40 `24-WB01` items and 20 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
 ### Check for product `24-WB01`
 
@@ -58,11 +58,11 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Endpoint:**
 
-`GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
+`GET <host>/rest/default/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -76,7 +76,7 @@ Not applicable
 
 **Response:**
 
-`70`
+`100`
 
 ### Check for product `24-WB03`
 
@@ -84,11 +84,11 @@ Use the same endpoint to check the quantity available for product `24-WB03`.
 
 **Endpoint:**
 
-`GET <host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
+`GET <host>/rest/default/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -102,7 +102,7 @@ Not applicable
 
 **Response:**
 
-`61`
+`100`
 
 ## Add items to the cart
 
@@ -110,15 +110,15 @@ We have ensured that we have enough physical products in stock to fulfill the po
 
 ### Add the first simple product
 
-In this call, we'll add 20 `24-WB01` items. This portion of the order can be fulfilled from the Baltimore or Reno warehouse.
+In this call, we'll add 20 `24-WB03` items. This portion of the order can be fulfilled from the Northeast warehouse.
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine/items`
+`POST <host>/rest/default/V1/carts/mine/items`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -131,7 +131,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 ```json
 {
   "cartItem": {
-    "sku": "24-WB01",
+    "sku": "24-WB03",
     "qty": 20,
     "quote_id": "3"
   }
@@ -142,28 +142,45 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 
 Note the `item_id` for use in subsequent steps.
 
+The discount is a result of the "20% OFF Every $200-plus purchase!" cart price rule.
+
 ```json
 {
     "item_id": 5,
-    "sku": "24-WB01",
+    "sku": "24-WB03",
     "qty": 20,
-    "name": "Voyage Yoga Bag",
+    "name": "Driven Backpack",
+    "price": 36,
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "3",
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 144,
+                    "base_amount": 144,
+                    "original_amount": 144,
+                    "base_original_amount": 144
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
+    }
 }
 ```
 
 ### Add the second simple product
 
-Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources will be required to fulfill this potential order.
+Use the same endpoint to add 40 items of `24-WB01` to the cart. Multiple sources will be required to fulfill this potential order.
 
 **Payload:**
 
 ```json
 {
   "cartItem": {
-    "sku": "24-WB03",
-    "qty": 50,
+    "sku": "24-WB01",
+    "qty": 40,
     "quote_id": "3"
   }
 }
@@ -175,12 +192,26 @@ Note the `item_id` for use in subsequent steps.
 ```json
 {
     "item_id": 6,
-    "sku": "24-WB03",
-    "qty": 50,
-    "name": "Driven Backpack",
-    "price": 36,
+    "sku": "24-WB01",
+    "qty": 40,
+    "name": "Voyage Yoga Bag",
+    "price": 32,
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "3",
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 256,
+                    "base_amount": 256,
+                    "original_amount": 256,
+                    "base_original_amount": 256
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
+    }
 }
 ```
 
@@ -203,7 +234,6 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 **Response:**
 
 ```json
-{
     "item_id": 7,
     "sku": "240-LV06",
     "qty": 1,
@@ -219,10 +249,24 @@ Finally, we'll add a single instance of a downloadable product to the cart.
                 ]
             }
         }
+    },
+    "extension_attributes": {
+        "discounts": [
+            {
+                "discount_data": {
+                    "amount": 4.4,
+                    "base_amount": 4.4,
+                    "original_amount": 4.4,
+                    "base_original_amount": 4.4
+                },
+                "rule_label": "Discount",
+                "rule_id": 3
+            }
+        ]
     }
 }
 ```
 
 ## Verify this step {#verify-step}
 
-Sign in as the customer at `http://<host>/us` and click on the shopping cart. All the items you added display in the cart.
+Sign in as the customer at `http://<host>` and click on the shopping cart. All the items you added display in the cart.

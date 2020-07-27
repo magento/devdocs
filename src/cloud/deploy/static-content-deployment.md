@@ -8,7 +8,11 @@ functional_areas:
 
 Static content deployment (SCD) has a significant impact on the store deployment process that depends on how much content to generate—such as images, scripts, CSS, videos, themes, locales, and web pages—and when to generate the content. For example, the default strategy generates static content during the [deploy phase]({{ site.baseurl }}/cloud/deploy/cloud-deployment-process.html#-deploy-phase) when the site is in maintenance mode; however, this deployment strategy takes time to write the content directly to the mounted `pub/static` directory. You have several options or strategies to help you improve the deployment time depending on your needs.
 
-## Minify content
+## Optimize JavaScript and HTML content
+
+You can use bundling and minification to build optimized JavaScript and HTML content during static content deployment.
+
+### Minify content
 
 You can improve the SCD load time during the deployment process if you skip copying the static view files in the `var/view_preprocessed` directory and generate _minified_ HTML when requested. You can activate this by setting the [SKIP_HTML_MINIFICATION]({{ site.baseurl }}/cloud/env/variables-global.html#skip_html_minification) global environment variable to `true` in the `.magento.env.yaml` file.
 

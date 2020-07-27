@@ -57,12 +57,65 @@ pages:
           url: /cloud/env/environments-ssh.html
           versionless: true
 
+        - label: PrivateLink
+          url: /cloud/project/privatelink-service.html
+          versionless: true
+
         - label: New Relic
           url: /cloud/project/new-relic.html
           versionless: true
 
         - label: SendGrid
           url: /cloud/project/sendgrid.html
+          versionless: true
+
+    - label: Manage your project
+      url: /cloud/project/projects.html
+      versionless: true
+      children:
+
+        - label: Configure your project
+          url: /cloud/project/project-webint-basic.html
+          versionless: true
+
+        - label: Project structure
+          url: /cloud/project/project-start.html
+          versionless: true
+
+        - label: Log locations
+          url: /cloud/project/log-locations.html
+          versionless: true
+
+        - label: Manage user access
+          url: /cloud/project/user-admin.html
+          versionless: true
+
+        - label: Enable MFA for SSH
+          url: /cloud/project/project-enable-mfa-enforcement.html
+          versionless: true
+
+        - label: Manage branches with the Interface
+          url: /cloud/project/project-webint-branch.html
+          versionless: true
+
+        - label: Manage branches with the CLI
+          url: /cloud/env/environments-start.html
+          versionless: true
+
+        - label: Manage disk space
+          url: /cloud/project/manage-disk-space.html
+          versionless: true
+
+        - label: Monitor performance
+          url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: Snapshots and backup management
+          url: /cloud/project/project-webint-snap.html
+          versionless: true
+
+        - label: Profile database queries
+          url: /cloud/project/profile-database-queries.html
           versionless: true
 
     - label: Local development setup
@@ -137,12 +190,20 @@ pages:
               url: /cloud/docker/docker-manage-database.html
               versionless: true
 
+            - label: Enable split database solution
+              url: /cloud/docker/docker-split-db.html
+              versionless: true
+
             - label: Manage cron jobs
               url: /cloud/docker/docker-manage-cron-jobs.html
               versionless: true
   
             - label: Extend Docker
               url: /cloud/docker/docker-extend.html
+              versionless: true
+
+            - label: Add Blackfire.io service
+              url:  /cloud/docker/docker-config-blackfire-io.html
               versionless: true
 
         - label: Launch Docker
@@ -158,11 +219,11 @@ pages:
         - label: Functional Testing
           children:
             - label: Magento application testing
-              url: /cloud/docker/docker-mftf.html
+              url: /cloud/docker/docker-test-app-mftf.html
               versionless: true
 
-            - label: ECE-Tools testing
-              url: /cloud/docker/docker-development-testing.html
+            - label: Magento Cloud code testing
+              url: /cloud/docker/docker-test-magecloud-pkg-code.html
               versionless: true
 
         - label: Docker quick reference
@@ -391,51 +452,6 @@ pages:
           url: /cloud/live/sens-data-initial.html
           versionless: true
 
-    - label: Manage your project
-      url: /cloud/project/projects.html
-      versionless: true
-      children:
-
-        - label: Configure your project
-          url: /cloud/project/project-webint-basic.html
-          versionless: true
-
-        - label: Project structure
-          url: /cloud/project/project-start.html
-          versionless: true
-
-        - label: Log locations
-          url: /cloud/project/log-locations.html
-          versionless: true
-
-        - label: Create and manage users
-          url: /cloud/project/user-admin.html
-          versionless: true
-
-        - label: Manage branches with the Interface
-          url: /cloud/project/project-webint-branch.html
-          versionless: true
-
-        - label: Manage branches with the CLI
-          url: /cloud/env/environments-start.html
-          versionless: true
-
-        - label: Profile database queries
-          url: /cloud/project/profile-database-queries.html
-          versionless: true
-
-        - label: Manage disk space
-          url: /cloud/project/manage-disk-space.html
-          versionless: true
-
-        - label: Monitor performance
-          url: /cloud/project/monitor-performance.html
-          versionless: true
-
-        - label: Snapshots and backup management
-          url: /cloud/project/project-webint-snap.html
-          versionless: true
-
     - label: Optimize deployment
       url: /cloud/deploy/optimize-cloud-deployment.html
       versionless: true
@@ -491,6 +507,10 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
+        - label: Error log message reference
+          url: /cloud/reference/error-codes.html
+          versionless: true
+
     - label: Site launch
       url: /cloud/live/live.html
       versionless: true
@@ -507,6 +527,7 @@ pages:
       url: /cloud/trouble/trouble.html
       versionless: true
       children:
+        
         - label: Troubleshoot deployment
           url: /cloud/trouble/troubleshoot-deployment.html
           versionless: true

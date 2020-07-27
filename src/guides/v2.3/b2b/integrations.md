@@ -11,7 +11,7 @@ functional_areas:
   - Integration
 ---
 
-This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}. See [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html) and [List of service names by module]({{ page.baseurl }}/rest/rest_endpoints.html) for the endpoints and services that Magento {{site.data.var.ee}} and {{site.data.var.ce}}.
+This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}.
 
 ## List of REST endpoints by module
 
@@ -145,9 +145,3 @@ sharedCatalogCompanyManagementV1
 sharedCatalogProductManagementV1
 sharedCatalogSharedCatalogRepositoryV1
 ```
-
-## Related Information
-
-[List of REST APIs by module]({{ page.baseurl }}/rest/list.html)
-
-[List of service names by module]({{ page.baseurl }}/rest/rest_endpoints.html)
