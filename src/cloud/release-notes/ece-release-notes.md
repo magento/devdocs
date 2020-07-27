@@ -17,8 +17,13 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.1
+## v2002.1.2
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
+## v2002.1.1
+*Release date: June 25, 2020*<br/>
 
 -  {:.new}**Infrastructure updates**–
 

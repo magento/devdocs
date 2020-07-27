@@ -11,8 +11,13 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 
 The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+## v1.0.6
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
 ## v1.0.5
-*Release date: June 26, 2020*<br/>
+*Release date: June 25, 2020*<br/>
 
 -  {:.fix}Fixed an issue introduced in {{site.data.var.mcc-package}} version 1.0.4 that caused the flush cache operation to fail during the deploy phase, interrupting the deployment process.
 
