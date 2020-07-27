@@ -152,7 +152,7 @@ To configure a MySQL database instance:
    GRANT ALL ON magento.* TO 'magento'@'localhost';
    ```
 
-   ```shell
+   ```sql
    flush privileges;
    ```
 
