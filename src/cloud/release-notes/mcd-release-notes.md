@@ -16,7 +16,7 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-## v1.2.0
+## v1.1.1
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
 <!--Add release notes below-->
