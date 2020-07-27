@@ -7,7 +7,7 @@ Shipping type | Configuration name | Enabled by default?
 Flat rate | `flatrate` | Yes
 Table rate | `tablerate` | Yes
 Free shipping | `freeshipping` | No
-In-store pickup | Not applicable | No
+In-store pickup | `pickup`| No
 
 To change which offline delivery methods are available:
 
