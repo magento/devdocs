@@ -140,19 +140,19 @@ To configure a MySQL database instance:
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
-   ```shell
+   ```sql
    create database magento;
    ```
 
-   ```shell
-   create user magento IDENTIFIED BY 'magento';
+   ```sql
+   create user 'magento'@'localhost' IDENTIFIED BY 'magento';
    ```
 
-   ```shell
-   GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+   ```sql
+   GRANT ALL ON magento.* TO 'magento'@'localhost';
    ```
 
-   ```shell
+   ```sql
    flush privileges;
    ```
 
