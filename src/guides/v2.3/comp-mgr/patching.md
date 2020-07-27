@@ -35,7 +35,7 @@ Hot fixes can contain backward incompatible changes.
 
 ### Individual patches
 
-Individual patches contain low-impact quality fixes for a specific issue. These fixes are appllied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
+Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
