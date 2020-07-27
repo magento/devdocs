@@ -2196,7 +2196,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: Administrators cannot add a configurable product by SKU to a quote. When an administrator clicks on the **Add to Quote** button,  the Quote Edit page remained in a loading state, and the administrator could not save their changes. **Workaround**:  There is no workaround for B2B Quote editing.  However, you can still order products by selecting the products from the products list instead of adding them by SKU. <!--- MC-35513-->
 
-**Issue**: Merchants can’t create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missing from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JavaScript bundling for your Magento deployment. See Products By SKU and Add Products buttons are missed on Create New Order page in Admin Knowledge Base article. <!--- MC-36044-->
+**Issue**: Merchants can’t create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missing from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JavaScript bundling for your Magento deployment. <!--- MC-36044-->
 
 **Issue**: Magento throws a `404 not found` error when a customer tries to remove reward points when checking out an order being shipped to multiple addresses. <!--- MC-35955-->
 
@@ -2214,19 +2214,19 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Amazon Pay
 
-*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay.   <!--- BUNDLE-2661-->
+*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay.  **Workaround**: Refresh the checkout page to display the missing methods.  <!--- BUNDLE-2661-->
 
 *  **Issue**: Magento displays two identical Amazon Pay methods in the Payment Method drop-down list that is available when creating a new cart price rule.  <!--- BUNDLE-2685-->
 
 ### Braintree
 
-*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. <!--- BUNDLE-2683-->
+*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. <!--- BUNDLE-2683-->
 
 *  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
 
 *  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.   <!--- BUNDLE-2686-->
 
-*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields.  <!--- BUNDLE-2670-->
+*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. <!--- BUNDLE-2670-->
 
 *  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment. <!--- BUNDLE-2671, 2672, 2673, 2674, 2680, 2681 —>  <!--- BUNDLE-2671 2672 2673 2674 2680 2681-->
 
@@ -2238,13 +2238,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  **Issue**:  Leaving the **Design Theme** field blank in Klarna On-Site Messaging  (**Admin**  >  **Stores**  >  **Configuration**  > **Klarna settings**) results in  a blank page.  **Workaround**: Select a design theme and save.  <!--- BUNDLE-2623-->
 
-*  **Issue**:  The Klarna portal does not display a Refund label next to a  Bundle product for which a refund has been created by clicking **Refund** on   **Invoices**   >  **Select invoice** >  **Credit Memo**. <!--- BUNDLE-2640-->
-
 ### Vertex
 
-*  **Issue**: Address validation is not invoked as expected during the Payment step of the checkout workflow after the customer’s payment address is updated and different shipping and billing addresses are specified.  <!--- BUNDLE-2669-->
-
-*  **Issue**:  Magento displays an  **Address verification** button on the shipping section of the checkout workflow even when address validation is disabled.  <!--- BUNDLE-2604-->
+*  **Issue**:  Magento displays an  **Address verification** button on the shipping section of the checkout workflow even when address validation is disabled. The address validator doesn’t re-check the updated address and continues to display a message that indicates that the address is invalid when a customer enters a correct address after first entering an incorrect address even when address validation is enabled. **Workaround**: Disable Vertex address validation. <!--- BUNDLE-2604-->
 
 ## Community contributions
 
