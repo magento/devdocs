@@ -14,6 +14,10 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.0.4 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Added support for Magento Commerce 2.4.0
+
 ## 3.0.3 of magento/product-recommendations for Magento Commerce 2.3.x
 
 -  {:.fix}Improved symbol implementation in storefront template

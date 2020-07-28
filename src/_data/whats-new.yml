@@ -153,7 +153,7 @@ entries:
   type: Technical
   date: June 17, 2020
   link: https://github.com/magento/devdocs/pull/7419
-- description: Updated [Magento-developed extension (MDE)](https://devdocs.magento.com/release/#compatibility)
+- description: Updated [Magento-developed extension (MDE)](https://devdocs.magento.com/release/availability.html#compatibility)
     and [vendor-bundled extension (VBE)](https://devdocs.magento.com/extensions/vendor/#compatibility)
     compatibility for Magento 2.4.0.
   versions: 2.4.0
