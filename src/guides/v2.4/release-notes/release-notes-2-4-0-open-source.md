@@ -2021,7 +2021,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. The **MC-35514-2.4.0-CE-composer.patch** hotfix  for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35514-->
 
-**Issue**: Magento displays this error message during command-line installation with third-party extensions that have dependencies on the `Store` module: `The default website isn't defined. Set the website and try again`. **Workaround**: Turn off third-party extensions, re-install Magento, and then re-install third-party extensions.
+**Issue**: Magento displays this error message during installation of Magento with third-party extensions that have dependencies on APIs for the `Store` module in CLI commands: `The default website isn't defined. Set the website and try again`. **Workaround**: Remove dependencies on third-party extensions from Composer, install Magento, and then install third-party extensions.
 
 **Issue**: The **Add selections to my cart** button on the bottom of the shopping cart does not work. **Workaround**: Use the **Add selections to my cart** button on the top of the page. See [Add selections to my cart button does not work](https://support.magento.com/hc/en-us/articles/360045838312) Knowledge Base article. <!--- MC-35313-->
 
