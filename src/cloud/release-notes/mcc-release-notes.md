@@ -16,6 +16,10 @@ The `{{site.data.var.mcc-package}}` package uses the following version sequence:
 
 <!--Add release notes below-->
 
+-  {:.new}**Improve Redis performance**–Added the `./bin/magento cache:evict` command to remove expired Redis keys, which reduces Redis memory usage to improve performance.<!--MCLOUD-6023-->
+
+-  {:.fix}Removed support for *New Relic Logs in Context* to fix a performance issue.<!--MCLOUD-6422-->
+
 ## v1.0.5
 *Release date: June 25, 2020*<br/>
 
