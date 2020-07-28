@@ -552,7 +552,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-7151-->
 
-*  Magento now provides **This item has weight** and **This item has no weight** options in the Actions drop-down menu that is accessible when you update a product’s attributes.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
+*  You can now use the Actions dropdown menu from the Products grid to specify whether a product has weight when you update multiple products’s attributes from the Admin.  _Fix submitted by Bartomiej Szubert in pull request [26075](https://github.com/magento/magento2/pull/26075)_. [GitHub-6310](https://github.com/magento/magento2/issues/6310)
 
 <!--- ENGCOM-7453-->
 
@@ -1638,7 +1638,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6786-->
 
-*  The **State Code and Title** column of **Admin** > **Stores**  > **Settings**  >  **Order Status** now displays state instead of status as expected.  _Fix submitted by Oleh Usik in pull request [26569](https://github.com/magento/magento2/pull/26569)_. [GitHub-17847](https://github.com/magento/magento2/issues/17847)
+*  The **State Code and Title** column of **Admin** > **Stores**  > Settings  >  **Order Status** now displays state instead of status as expected.  _Fix submitted by Oleh Usik in pull request [26569](https://github.com/magento/magento2/pull/26569)_. [GitHub-17847](https://github.com/magento/magento2/issues/17847)
 
 <!--- ENGCOM-6936-->
 
@@ -1708,7 +1708,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6364-->
 
-*  The Elasticsearch versions are now identified by X.x notation instead of X.0+ notation in the Admin (**Stores** > **Settings** > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**). _Fix submitted by Andreas Mautz in pull request [25838](https://github.com/magento/magento2/pull/25838)_. [GitHub-25674](https://github.com/magento/magento2/issues/25674)
+*  The Elasticsearch versions are now identified by X.x notation instead of X.0+ notation in the Admin (**Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**). _Fix submitted by Andreas Mautz in pull request [25838](https://github.com/magento/magento2/pull/25838)_. [GitHub-25674](https://github.com/magento/magento2/issues/25674)
 
 ### Shipping
 
@@ -1816,7 +1816,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Test
 
-**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration to enable Google Authenticator**. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
+{:.bs-callout-info}
+
+**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator**. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 <!-- ENGCOM-6585-->
 
@@ -1962,7 +1964,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6557-->
 
-*  You can now disable the translation of the page title of the Product details page (`page.main.title`), which is enabled by default. _Fix submitted by Bartłomiej Szubert in pull request [26269](https://github.com/magento/magento2/pull/26269)_. [GitHub-7065](https://github.com/magento/magento2/issues/7065)
+*  You can now disable the translation of the page title of the Product details page (`page.main.title`), which is enabled by default. _Fix submitted by Bartomiej Szubert in pull request [26269](https://github.com/magento/magento2/pull/26269)_. [GitHub-7065](https://github.com/magento/magento2/issues/7065)
 
 <!--- ENGCOM-7465-->
 
@@ -2020,11 +2022,11 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-5986-->
 
-*  The currency symbol used in Layered Navigation Price Step is now based on default settings as expected.  _Fix submitted by Bartłomiej Szubert in pull request [24815](https://github.com/magento/magento2/pull/24815)_. [GitHub-21684](https://github.com/magento/magento2/issues/21684)
+*  The currency symbol used in Layered Navigation Price Step is now based on default settings as expected.  _Fix submitted by Bartomiej Szubert in pull request [24815](https://github.com/magento/magento2/pull/24815)_. [GitHub-21684](https://github.com/magento/magento2/issues/21684)
 
 <!--- ENGCOM-6324-->
 
-*  The symbol for the Belarusian currency (BYR) has been updated. _Fix submitted by Bartomiej Szubert in pull request [25723](https://github.com/magento/magento2/pull/25723)_. [GitHub-24713](https://github.com/magento/magento2/issues/24713)
+*  The symbol for the Belarusian currency (BYR) has been updated to BYN. _Fix submitted by Bartomiej Szubert in pull request [25723](https://github.com/magento/magento2/pull/25723)_. [GitHub-24713](https://github.com/magento/magento2/issues/24713)
 
 <!--- ENGCOM-6622-->
 
@@ -2092,7 +2094,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6995-->
 
-*  We’ve added a check to prevent URL redirects if the request path is the same as the target path. _Fix submitted by Bartłomiej Szubert in pull request [26902](https://github.com/magento/magento2/pull/26902)_. [GitHub-20309](https://github.com/magento/magento2/issues/20309)
+*  We’ve added a check to prevent URL redirects if the request path is the same as the target path. _Fix submitted by Bartomiej Szubert in pull request [26902](https://github.com/magento/magento2/pull/26902)_. [GitHub-20309](https://github.com/magento/magento2/issues/20309)
 
 <!--- ENGCOM-6303-->
 
@@ -2126,7 +2128,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- ENGCOM-6500-->
 
-*  Updating customer information through `rest/all/V1/customers/:id` resets `group_id` no longer resets the `group_id` unnecessarily. Previously, when you updated a customer through REST, the customer group was changed to 1 if the body did not contain a customer group. _Fix submitted by MaxRomanov4669 in pull request [25958](https://github.com/magento/magento2/pull/25958)_. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
+*  Updating customer information through `/V1/customers/:id` no longer resets the `group_id` unnecessarily. Previously, when you updated a customer through REST, the customer group was changed to 1 if the body did not contain a customer group. _Fix submitted by MaxRomanov4669 in pull request [25958](https://github.com/magento/magento2/pull/25958)_. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
 
 <!--- ENGCOM-6920-->
 
