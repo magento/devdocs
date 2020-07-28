@@ -199,7 +199,7 @@ pages:
     versionless: true
   
   - label: Backward incompatible changes in tests
-    url: /mftf/backward-incompatible-changes.html
+    url: /mftf/docs/backward-incompatible-changes.html
     versionless: true
 
   - label: Contribution guidelines
