@@ -79,6 +79,15 @@ defaults:
       functional_areas:
         - Test
 
+  -
+    scope:
+      path: mftf/v2
+    values:
+      group: mftf-v2
+      github_files: https://github.com/magento/magento2-functional-testing-framework/tree/2.6.5/
+      github_repo: https://github.com/magento/magento2-functional-testing-framework/
+      functional_areas:
+        - Test
   - 
     scope:
       path: page-builder
