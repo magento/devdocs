@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-{{ site.data.var.ece }} subscriptions include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
+{{ site.data.var.ece }} accounts include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
 
 -  [New Relic APM](#new-relic-apm) (Pro and Starter)
 -  [New Relic Infrastructure](#new-relic-infrastructure) (Pro, Production environment only)
@@ -40,7 +40,7 @@ For Pro accounts, if New Relic APM is not installed on the Staging and Productio
 The aggregated data includes information from the following logs:
 
 -  All {{site.data.var.ct}} and Magento application logs from the `~/var/log` directory
--  Logs for cloud services from the `var/log/platform/<project ID>` directory
+-  Logs for cloud services from the `var/log/platform/<project-ID>` directory
 -  Fastly CDN and WAF logs
 
 As soon as your project is connected to New Relic, you can use the New Relic Logs service to complete tasks like the following:
@@ -210,10 +210,10 @@ You can learn more about using the New Relic APM and Infrastructure agents to co
 
 ### View and analyze log data
 
-After you log in to your New Relic account, you can use the New Relic Logs UI to search across the aggregated log data to troubleshoot application, infrastructure, CDN, and WAF errors. Also, you can connect the log data with other data collected by New Relic APM and Infrastructure services to create charts, dashboards, and alerts to manage Magento application and cloud service operations.
+You can use the New Relic Logs application to search across the aggregated log data and troubleshoot application, infrastructure, CDN, and WAF errors. Also, you can connect the log data with other data collected by New Relic APM and Infrastructure services to create charts, dashboards, and alerts to manage Magento application and cloud service operations.
 
 {:.procedure}
-To use the New Relic Logs UI:
+To use the New Relic Logs application:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
@@ -223,11 +223,11 @@ To use the New Relic Logs UI:
 
    If the **Logs** application does not display, you can also access New Relic Logs using search, or navigating from the [APM applications page](#investigate-performance) navigation menu.
 
-1. To review log data for cloud services, enter the `has:"ident"` query in the query field. Then, click **Query logs**.
+1. To review cloud services log data, enter the `has: "ident"` query in the _Find logs where_ field. Then, click **Query logs**.
 
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
 
-1. To review Fastly log data, enter the `has: "client_ip"` query in the query field. Then, click **Query logs**.
+1. To review Fastly log data, enter the `has: "client_ip"` query in the _Find logs where_ field. Then, click **Query logs**.
 
    ![Cloud project New Relic Fastly log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-logs-has-client_ip-fastly.png){:width="650px"}
 

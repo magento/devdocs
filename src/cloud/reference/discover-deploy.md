@@ -18,7 +18,7 @@ The build and deploy process is slightly different for each plan:
 
 ## Track the process {#track}
 
-You can track build and deploy actions in real-time using the terminal or the Project Web UI Status messages—`in-progress`, `pending`, `success`, or `failed`—display during the deployment process. You can view details in the log files. See [Review logs]({{ site.baseurl }}/cloud/project/log-locations.html).
+You can track build and deploy actions in real-time using the terminal or the Project Web UI Status messages—`in-progress`, `pending`, `success`, or `failed`—display during the deployment process. You can view details in the log files. See [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 
 If you are using external GitHub repositories, the log of operations does not display in the GitHub session. However, you can still follow activity in the interface for the external repository and the Project Web Interface. See [Integrations]({{ site.baseurl }}/cloud/integrations/cloud-integrations.html).
 
@@ -241,7 +241,7 @@ Successful deployment removes the maintenance mode to allow for normal access an
 
 If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
 
-To review build and deploy logs, see [Review logs]({{ site.baseurl }}/cloud/project/log-locations.html).
+To review build and deploy logs, see [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 
 ### Build and deploy full steps {#steps}
 
