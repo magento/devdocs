@@ -8,3 +8,7 @@ pages:
   - label: Release policy
     url: /release/policy
     versionless: true
+  
+  - label: Availability
+    url: /release/availability.html
+    versionless: true
