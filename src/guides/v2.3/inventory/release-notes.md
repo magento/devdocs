@@ -24,7 +24,7 @@ The release notes include:
 
 {{site.data.var.im}} 1.2.0 (module version: `magento/inventory-metapackage = 1.2.0`) is supported with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.new} **In-store delivery method.** Added a new option for users to select a source to be used as a pickup location during checkout.
+-  {:.new} **In-store delivery method.** Added a new option for users to select a source to be used as a pickup location during checkout. See [In-store Delivery](https://docs.magento.com/user-guide/shipping/shipping-in-store-delivery.html).
 
 -  {:.new} **Bundle product support for multi source mode.** Inventory supports all product types with multiple sources.
 
