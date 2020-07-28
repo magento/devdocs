@@ -8,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-{{ site.data.var.ece }} accounts include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
+{{ site.data.var.ece }} projects include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
 
 -  [New Relic APM](#new-relic-apm) (Pro and Starter)
 -  [New Relic Infrastructure](#new-relic-infrastructure) (Pro, Production environment only)
@@ -16,7 +16,7 @@ functional_areas:
 
 ## New Relic APM
 
-[New Relic for application performance management (APM)] is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
+[New Relic for application performance management (APM)] is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} projects and provides the following features:
 
 -  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
@@ -24,11 +24,11 @@ functional_areas:
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
 -  **Adobe-generated alert policies**–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See [Monitor performance using alerts](#monitor-performance-with-alert-policies).
 
-Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
+Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
 ## New Relic Infrastructure
 
-{{site.data.var.ece}} Pro projects include the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring. This service is available only on Production environments.
+{{site.data.var.ece}} Pro projects include the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring. This service is available on Production and Staging environments.
 
 {:.bs-callout-info}
 For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request installation.
@@ -47,16 +47,16 @@ As soon as your project is connected to New Relic, you can use the New Relic Log
 
 -  Use [New Relic queries][New Relic query syntax for logs] to search aggregated log data
 -  Visualize log data through the New Relic UI
--  Create customer charts, dashboards, and alerts
+-  Create custom charts, dashboards, and alerts
 -  Troubleshoot performance issues from a single dashboard
 
 See [View and analyze logs](#view-and-analyze-log-data).
 
 ## Manage your New Relic account
 
-When Magento provisions your {{site.data.var.ece}} project, the License Owner receives an email from New Relic with credentials and instructions for accessing the account. If you did not receive the email, use the License Owner email address to [reset the New Relic password].
+When Magento provisions your {{site.data.var.ece}} project, the License Owner receives an email from New Relic with credentials and instructions for accessing the New Relic account. If you did not receive the email, use the License Owner email address to [reset the New Relic password].
 
-An account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
+A New Relic account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
 
 {:.bs-callout-tip}
 Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account] for New Relic can add users on behalf of the customer.
@@ -217,17 +217,17 @@ To use the New Relic Logs application:
 
 1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. From the New Relic ONE home page, select **Logs**.
+1. Select your application.
 
-   ![Cloud project New Relic ONE Logs service]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-one-logs-access.png){:width="650px"}
+1. On the _APM applications page_, select **Logs** from the navigation menu.
 
-   If the **Logs** application does not display, you can also access New Relic Logs using search, or navigating from the [APM applications page](#investigate-performance) navigation menu.
+   ![Cloud project APM menu select Logs page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-basic.png){:width="650px"}
 
-1. To review infrastructure log data for cloud services, enter the `has: "ident"` query in the _Find logs where_ field. Then, click **Query logs**.
+1. To review infrastructure log data for cloud services, enter the query string `has: "ident"` in the _Find logs where_ field. Then, click **Query logs**.
 
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
 
-1. To review Fastly log data, enter the `has: "client_ip"` query in the _Find logs where_ field. Then, click **Query logs**.
+1. To review Fastly log data, enter the query string `has: "client_ip"` in the _Find logs where_ field. Then, click **Query logs**.
 
    ![Cloud project New Relic Fastly log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-logs-has-client_ip-fastly.png){:width="650px"}
 
