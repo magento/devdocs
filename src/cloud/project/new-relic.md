@@ -178,7 +178,7 @@ To remove a license key from an environment:
    magento-cloud variable:delete php:newrelic.license
    ```
 
-## Using New Relic
+## Use New Relic
 
 The following sections provide an overview for using the New Relic services integrated with your {{ site.data.var.ece }} project with a few examples. For more information and training resources, see the [New Relic Help Center][].
 
