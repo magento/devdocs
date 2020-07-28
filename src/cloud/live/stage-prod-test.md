@@ -26,7 +26,7 @@ If you encounter errors on deployment or other issues when testing, check the lo
 
 The deployment log is located in `/var/log/platform/<prodject ID>/deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
 
-When accessing logs in Production or Staging environments, you must use SSH to log in to each of the three nodes to locate the logs. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
+When accessing logs in Production or Staging environments, you must use SSH to log in to each of the three nodes to locate the logs. Or, you can use the New Relic Logs service to view and query aggregated log data from all nodes. See [View logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
 {%include cloud/note-error-message-reference-ece-tools.md%}
 
@@ -233,7 +233,7 @@ We provide a free Security Scan Tool for your sites. To add your sites and run t
 [Migrate data and static files]: {{ site.baseurl }}/cloud/live/stage-prod-migrate.html
 [Starter]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
 [Pro]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls
-[Log locations]: {{ site.baseurl }}/cloud/project/log-locations
+[View logs]: {{ site.baseurl }}/cloud/project/log-locations
 [Configuring Fastly]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html
 [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains
 [Access info]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls

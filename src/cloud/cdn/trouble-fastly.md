@@ -10,6 +10,8 @@ functional_areas:
 
 Use the following information to troubleshoot and manage the Fastly CDN module for Magento 2 in your {{ site.data.var.ece }} project environments. For example, you can investigate response header values and caching behavior to resolve Fastly service and performance issues.
 
+On Pro Production and Staging environments, you can also use [New Relic Logs]({{ site.baseurl }}/cloud/project/new-relic.html) to view and analyze Fastly CDN and WAF log data to troubleshoot errors and performance problems.
+
 {:.bs-callout-info}
 For information about setting up and configuring Fastly, see [Set up Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 

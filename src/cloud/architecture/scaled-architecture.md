@@ -100,9 +100,12 @@ project-id@server-id:~$
 
 The log locations vary slightly depending on the node. For example, a database log, such as the **MySQL error log**, is available on a core node (`/var/log/mysql/mysql-error.log`), but it is not available on a web node.
 
+Each Pro plan account includes the [New Relic Logs service][nrl] for Staging and Production environments, which automatically connects to aggregate log data from all nodes and display it on a centralized log management dashboard. Specifically, you can use the New Relic Logs service to troubleshoot performance issues on a specific node in an environment.
+
 <!-- Link definitions -->
 [Core tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-core.png
 [Web tier scaling]: {{ site.baseurl }}/common/images/cloud/scaling-web.png
 
 [SSH access list]: {{page.baseurl}}/cloud/env/environments-ssh.html#web-interface
 [nri]: {{page.baseurl}}/cloud/project/new-relic.html
+[nrl]: {{page.baseurl}}/cloud/project/new-relic.html
