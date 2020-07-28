@@ -9,7 +9,7 @@ functional_areas:
 <!-- All the assigned and captured content is used in the included template -->
 {% assign tool = 'bin/magento' %}
 
-{% assign file = site.data.codebase.v2_4.commerce.bin-magento %}
+{% assign file = site.data.codebase.v2_3.commerce.bin-magento %}
 
 {% assign edition = site.data.var.ee %}
 
