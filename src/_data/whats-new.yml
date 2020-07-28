@@ -23,7 +23,7 @@ entries:
   type: Technical
   date: July 23, 2020
   link: https://github.com/magento/devdocs/pull/7538
-- description: Adds support for security.txt to help security researchers report potential
+- description: Adds support for `security.txt` to help security researchers report potential
     security issues to site administrators.
   versions: 2.4.0
   type: Major Update
@@ -46,8 +46,8 @@ entries:
   date: July 22, 2020
   link: https://github.com/magento/devdocs/pull/7572
 - description: Because two-factor authentication for admin accounts is required in
-    2.4.0, references to the `POST /V1/integration/admin/token`endpoint have been
-    replaced  with `POST /V1/tfa/provider/google/authenticate` in the [REST tutorials](https://devdocs.magento.com/guides/v2.4/rest/tutorials/prerequisite-tasks/create-admin-token.html)
+    2.4.0, references to the `POST /V1/integration/admin/token` endpoint have been
+    replaced with `POST /V1/tfa/provider/google/authenticate` in the [REST tutorials](https://devdocs.magento.com/guides/v2.4/rest/tutorials/prerequisite-tasks/create-admin-token.html)
     and other places.
   versions: 2.4.0
   type: Major Update
@@ -94,7 +94,7 @@ entries:
     topic.<br/>- Added [Enable MFA enforcement for SSH](https://devdocs.magento.com/cloud/project/project-enable-mfa-project.html)
     topic to describe this project-level feature to enforce 2FA requirement for SSH
     access to Magento Cloud environments. Also added instructions for authenticating
-    on projects that have MFA enforcement enabled.<br/>
+    on projects that have MFA enforcement enabled.
   versions: 2.x
   type: Major Update
   date: July 15, 2020
