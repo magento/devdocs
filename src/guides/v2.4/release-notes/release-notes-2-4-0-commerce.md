@@ -43,9 +43,15 @@ This release includes over 30 security fixes and platform security improvements.
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-47.html) for a discussion of these fixed issues.
 
-Additional security enhancements include:
+#### Additional security enhancements
 
-*  **Two-factor authentication (2FA) is now enabled by default for the Magento Admin**. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. Additional implementations of 2FA are scheduled for release with Magento 2.4.0 General Availability, which is scheduled for late July. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+*  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
+
+   *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
+
+   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization.  See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+
+   *  **Securing Cloud SSH access**. Magento Commerce Cloud provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
 
 *  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
 
