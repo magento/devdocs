@@ -24,7 +24,7 @@ The release notes include:
 
 {{site.data.var.im}} 1.2.0 (module version: `magento/inventory-metapackage = 1.2.0`) is supported with version 2.4.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
--  {:.new} **In-store delivery method.** Added a new option for users to select a source to be used as a pickup location during checkout.
+-  {:.new} **In-store delivery method.** Added a new option for users to select a source to be used as a pickup location during checkout. See [In-store Delivery](https://docs.magento.com/user-guide/shipping/shipping-in-store-delivery.html).
 
 -  {:.new} **Bundle product support for multi source mode.** Inventory supports all product types with multiple sources.
 
@@ -32,9 +32,18 @@ The release notes include:
 
 -  {:.new} **Bulk interfaces.** Introduced new bulk interfaces for salability check: `\Magento\InventorySalesApi\Api\AreProductsSalableInterface`, `\Magento\InventorySalesApi\Api\AreProductsSalableForRequestedQtyInterface`.
 
--  {:.bug} Numerous bug fixes to resolve issues with source assignment, scalable environment feature support, and compatibility with PHP 7.4, MySQL 8, and PHPUNIT 9.
-
 -  {:.new} **Increased test coverage.** New functionality covered with automated tests, extended coverage for discovered and fixed issues.
+
+-  {:.fix} Numerous bug fixes to resolve issues with source assignment, scalable environment feature support, and compatibility with PHP 7.4, MySQL 8, and PHPUNIT 9.
+
+-  {:.bug} **Known issue.** The absence of the `object_id` field in the reservations metadata is preventing the `inventory_cleanup_reservations` cron job from working properly. This issue was introduced in [magento/inventory#3046](https://github.com/magento/inventory/pull/3046).
+
+   **Workaround:** Execute the following MySQL queries to manually cleanup reservations:
+
+   ```sql
+   SELECT GROUP_CONCAT(reservation_id) FROM inventory_reservation GROUP BY stock_id, sku HAVING SUM(quantity) = 0;
+   DELETE FROM inventory_reservation where reservation_id IN (result_of_the_first_query);
+   ```
 
 ### v1.1.5
 

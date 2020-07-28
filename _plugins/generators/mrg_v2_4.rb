@@ -3,7 +3,7 @@
 
 # frozen_string_literal: true
 
-# This plugin generates module-specific topics in the 'guides/v2.3/mrg'.
+# This plugin generates module-specific topics in the 'guides/v2.4/mrg'.
 # It takes data from files in '_data/codebase/mrg' and generates
 # a virtual .md page for it with the same name.
 # The content in data is generated internally from
@@ -12,7 +12,7 @@
 
 module Jekyll
   # Custom generator for MRG pages
-  class MRGPageGenerator < Generator
+  class Mrg2_4PageGenerator < Generator
     safe true
 
     def generate(site)
@@ -21,17 +21,17 @@ module Jekyll
 
       # Data from '_data/codebase/mrg' as a Hash where
       # the filename is a key and its content is a value.
-      mrg_data = @site.data['codebase']['v2_3']['mrg']
+      mrg_data = @site.data['codebase']['v2_4']['mrg']
       # Loop through the hash where a key is assigned to a 'mod' (module is a
       # special token in Ruby and should not be used) and value is assigned to
       # 'metadata'.
-      # For example, for '_data/codebase/v2_3/mrg/NewModule.yml' that contains
+      # For example, for '_data/codebase/v2_4/mrg/NewModule.yml' that contains
       #
       #         title: Magento_NewModule
       #         edition: ce
       #         content: Magento_NewModule is an awesome module
       #
-      # this will create a new virtual page guides/v2.3/mrg/ce/NewModule.md
+      # this will create a new virtual page guides/v2.4/mrg/ce/NewModule.md
       # that would correspond to:
       #         ---
       #         title: Magento_NewModule
@@ -47,7 +47,7 @@ module Jekyll
           mrg_topic = PageWithoutAFile.new(
             @site,
             @site.source,
-            "guides/v2.3/mrg/#{category}",
+            "guides/v2.4/mrg/#{category}",
             "#{mod}.md"
           )
           mrg_topic.content = metadata['content']
