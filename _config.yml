@@ -104,6 +104,14 @@ defaults:
       group: module-reference-guide-2_3
       github_link: false
       feedback_link: false
+  
+  -
+    scope:
+      path: guides/v2.4/mrg
+    values:
+      group: module-reference-guide-2_4
+      github_link: false
+      feedback_link: false
 
 
 ##########################
