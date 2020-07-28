@@ -19,7 +19,7 @@ pages:
 
   - label: Custom Helpers
     url: /mftf/docs/custom-helpers.html
-    include_versions: ["2.4"]
+    versionless: true
 
   - label: Data
     url: /mftf/docs/data.html
@@ -39,7 +39,7 @@ pages:
 
   - label: How to use MFTF in CICD
     url: /mftf/docs/guides/cicd.html
-    include_versions: ["2.4"]
+    versionless: true
 
   - label: Merge points for extensions
     url: /mftf/docs/merge_points/introduction.html
@@ -188,7 +188,7 @@ pages:
 
   - label: Two-factor Authentication
     url: /mftf/docs/configure-2fa.html
-    include_versions: ["2.4"] 
+    versionless: true 
 
   - label: Update MFTF
     url: /mftf/docs/update.html
@@ -200,7 +200,7 @@ pages:
   
   - label: Backward incompatible changes in tests
     url: /reference/mftf/backward-incompatible-changes.html
-    include_versions: ['2.4']
+    versionless: true
 
   - label: Contribution guidelines
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
