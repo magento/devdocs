@@ -223,7 +223,7 @@ To use the New Relic Logs application:
 
    If the **Logs** application does not display, you can also access New Relic Logs using search, or navigating from the [APM applications page](#investigate-performance) navigation menu.
 
-1. To review cloud services log data, enter the `has: "ident"` query in the _Find logs where_ field. Then, click **Query logs**.
+1. To review infrastructure log data for cloud services, enter the `has: "ident"` query in the _Find logs where_ field. Then, click **Query logs**.
 
    ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
 
