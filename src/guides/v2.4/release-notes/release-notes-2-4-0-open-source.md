@@ -210,6 +210,7 @@ Yotpo Ratings and Reviews are integrated with Page Builder.
 We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Installation, upgrade, deployment
+
 <!--- MC-23940-->
 
 *  You can now successfully remove a website along with the website’s scope-specific configuration settings in `app/etc/config.php` as expected. Previously, when you tried to remove the website, the operation failed, and Magento displayed this error: `The website with code xxx that was requested wasn't found. Verify the website and try again`. Additionally, Magento displayed this error on the storefront: `Config files have changed. Run app:config:import or setup:upgrade command to synchronize configuration`. [GitHub-24061](https://github.com/magento/magento2/issues/24061)
@@ -651,27 +652,15 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The `setRedirectCookie` and `clearRedirectCookie` functions now work as expected. Previously, these functions sent cookies to the browser, but all cookie parameters were missing. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
 
-<!--- MC-30789-->
-
-*  Google Tag Manager tags are no longer triggered when a customer navigates to a new store without accepting the Google Tag Manager cookie.
-
 <!--- ENGCOM-6891-->
 
 *  Metadata has been added to the `setRedirectCookie` and `clearRedirectCookie` functions.  _Fix submitted by Alexander Lukyanov in pull request [24612](https://github.com/magento/magento2/pull/24612)_. [GitHub-24547](https://github.com/magento/magento2/issues/24547)
 
 ### Custom customer attributes
 
-<!--- MC-30739-->
-
-*  Magento now displays custom customer address attribute values as expected in the address section of the checkout workflow. Previously, Magento displayed the custom customer address attribute code instead of the value, and a JavaScript error was triggered.
-
 <!--- MC-32301-->
 
 *  Magento no longer throws an error when you include an empty customer attribute field in the **Forms to Use In** field while creating a Company account on the storefront. Previously, Magento threw this error: `PHP Fatal error: Uncaught TypeError: Argument 2 passed to Magento\Eav\Model\Attribute\Data\Text::validateLength() must be of the type string, null given`.
-
-<!--- MC-33361-->
-
-*  Magento now saves custom customer address attributes and implements them in registration forms as expected. Previously, when you created a new custom customer address attribute while creating an account from the cart, Magento did not save the attribute information.
 
 <!--- MC-32301-->
 
@@ -1036,12 +1025,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-7071-->
 
 *  We’ve added the `@api`  PHP annotation to `AbstractExtensibleModel`, the `@deprecated` PHP annotation to `AbstractExtensibleObject`, and `@see` to `AbstractExtensibleModel`.  _Fix submitted by Alexander Taranovsky in pull request [22011](https://github.com/magento/magento2/pull/22011)_. [GitHub-22010](https://github.com/magento/magento2/issues/22010)
-
-### Gift cards
-
-<!--- MC-31041-->
-
-*  The GET `V1/orders/:orderId` call returns gift card codes as expected.
 
 ### GraphQL
 
@@ -1678,11 +1661,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Free shipping is now applied as expected based on the applicable cart price rule. Previously, cart price rules did not take into account taxes when calculating whether an order meets criteria for free shipping.
 
-<!--- MC-32402-->
-
-*  Magento no longer throws an error when you edit and save the `NOT LOGGED IN` customer group when B2B is installed.
-
 ### Test
+
+**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration to enable Google Authenticator**. See  [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 <!-- ENGCOM-6585-->
 
@@ -2040,6 +2021,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: Magento recommends using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
 
+**Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. The **MC-35514-2.4.0-CE-composer.patch** hotfix  for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35514-->
+
 **Issue**: The **Add selections to my cart** button on the bottom of the shopping cart does not work. **Workaround**: Use the **Add selections to my cart** button on the top of the page. See [Add selections to my cart button does not work](https://support.magento.com/hc/en-us/articles/360045838312) Knowledge Base article. <!--- MC-35313-->
 
 **Issue**: Merchants can’t create a new order from the Admin because the **Add Products By SKU** and **Add Products**  buttons are missing from the order creation page when JavaScript bundling is enabled.  **Workaround**: Disable the JavaScript bundling for your Magento deployment. <!--- MC-36044-->
@@ -2049,8 +2032,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 **Issue**: Editing a configurable product from a customer’s wishlist results in the following unexpected behavior: An unexpected field appears on the Configure Product page, and the Configure Product page does not disappear after you click **OK**. Magento also displays this message: `Please load Wish List item`. **Workaround**: Reload the Configure Product page. <!--- MC-35617-->
 
 **Issue**:  Customers cannot change the number of orders displayed per page when the Orders list spans multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page: `You have placed no orders`. **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
-
-**Issue**: Merchants cannot add ordered products to a package from the Admin Create Package page and save the package. <!--- MC-35514-->
 
 **Issue**: Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page (**Stores** > **Tax Rules**)  does not download the `tax_rates.csv` file as expected. **Workaround**: Click the edge of the  **Export Tax Rates** button.  See [Export Tax Rates does not work](https://support.magento.com/hc/en-us/articles/360045850032)  Knowledge Base article. <!--- MC-35345-->
 
