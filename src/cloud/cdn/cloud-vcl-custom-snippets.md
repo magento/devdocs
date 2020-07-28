@@ -90,7 +90,7 @@ The *Custom VCL snippets* view shows only the snippets added through the Magento
 
 See the following examples that show how to create and manage custom VCL snippets from the Magento Admin UI:
 
--  [Custom VCL for IP allowlist]({{ site.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
+-  [Custom VCL for IP allowlist]({{ site.baseurl }}/cloud/cdn/fastly-vcl-allowlist.html)
 -  [Block referral spam]({{ site.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
 
 ## Manage custom VCL snippets using the API
