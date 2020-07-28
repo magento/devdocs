@@ -22,7 +22,7 @@ This **13-step tutorial** generally takes **1 hour**.
 
 ### Complete these prerequisites
 
-*  Install Magento 2.3.0 or later.
+*  Install Magento 2.4.0 or later.
 
 *  Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
