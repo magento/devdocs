@@ -24,11 +24,11 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -90,11 +90,11 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/carts/mine/shipping-information`
+`POST <host>/rest/default/V1/carts/mine/shipping-information`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -153,23 +153,23 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 {
     "payment_methods": [
         {
-            "code": "banktransfer",
-            "title": "Bank Transfer Payment"
-        },
-        {
             "code": "checkmo",
             "title": "Check / Money order"
+        },
+        {
+            "code": "banktransfer",
+            "title": "Bank Transfer Payment"
         }
     ],
     "totals": {
-        "grand_total": 2322,
-        "base_grand_total": 2322,
+        "grand_total": 1917.6,
+        "base_grand_total": 1917.6,
         "subtotal": 2022,
         "base_subtotal": 2022,
-        "discount_amount": 0,
-        "base_discount_amount": 0,
-        "subtotal_with_discount": 2022,
-        "base_subtotal_with_discount": 2022,
+        "discount_amount": -404.4,
+        "base_discount_amount": -404.4,
+        "subtotal_with_discount": 1617.6,
+        "base_subtotal_with_discount": 1617.6,
         "shipping_amount": 300,
         "base_shipping_amount": 300,
         "shipping_discount_amount": 0,
@@ -187,7 +187,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "items_qty": 61,
         "items": [
             {
-                "item_id": 8,
+                "item_id": 5,
                 "price": 36,
                 "base_price": 36,
                 "qty": 20,
@@ -197,9 +197,9 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "tax_amount": 0,
                 "base_tax_amount": 0,
                 "tax_percent": 0,
-                "discount_amount": 0,
-                "base_discount_amount": 0,
-                "discount_percent": 0,
+                "discount_amount": 144,
+                "base_discount_amount": 144,
+                "discount_percent": 20,
                 "price_incl_tax": 36,
                 "base_price_incl_tax": 36,
                 "row_total_incl_tax": 720,
@@ -210,7 +210,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Driven Backpack"
             },
             {
-                "item_id": 9,
+                "item_id": 6,
                 "price": 32,
                 "base_price": 32,
                 "qty": 40,
@@ -220,9 +220,9 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "tax_amount": 0,
                 "base_tax_amount": 0,
                 "tax_percent": 0,
-                "discount_amount": 0,
-                "base_discount_amount": 0,
-                "discount_percent": 0,
+                "discount_amount": 256,
+                "base_discount_amount": 256,
+                "discount_percent": 20,
                 "price_incl_tax": 32,
                 "base_price_incl_tax": 32,
                 "row_total_incl_tax": 1280,
@@ -233,7 +233,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Voyage Yoga Bag"
             },
             {
-                "item_id": 10,
+                "item_id": 9,
                 "price": 22,
                 "base_price": 22,
                 "qty": 1,
@@ -243,9 +243,9 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "tax_amount": 0,
                 "base_tax_amount": 0,
                 "tax_percent": 0,
-                "discount_amount": 0,
-                "base_discount_amount": 0,
-                "discount_percent": 0,
+                "discount_amount": 4.4,
+                "base_discount_amount": 4.4,
+                "discount_percent": 20,
                 "price_incl_tax": 22,
                 "base_price_incl_tax": 22,
                 "row_total_incl_tax": 22,
@@ -263,6 +263,25 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "value": 2022
             },
             {
+                "code": "giftwrapping",
+                "title": "Gift Wrapping",
+                "value": null,
+                "extension_attributes": {
+                    "gw_item_ids": [],
+                    "gw_price": "0.0000",
+                    "gw_base_price": "0.0000",
+                    "gw_items_price": "0.0000",
+                    "gw_items_base_price": "0.0000",
+                    "gw_card_price": "0.0000",
+                    "gw_card_base_price": "0.0000"
+                }
+            },
+            {
+                "code": "discount",
+                "title": "Discount",
+                "value": -404.4
+            },
+            {
                 "code": "shipping",
                 "title": "Shipping & Handling (Flat Rate - Fixed)",
                 "value": 300
@@ -278,10 +297,25 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
             {
                 "code": "grand_total",
                 "title": "Grand Total",
-                "value": 2322,
+                "value": 1917.6,
                 "area": "footer"
+            },
+            {
+                "code": "customerbalance",
+                "title": "Store Credit",
+                "value": -0
+            },
+            {
+                "code": "reward",
+                "title": "0 Reward points",
+                "value": -0
             }
-        ]
+        ],
+        "extension_attributes": {
+            "reward_points_balance": 0,
+            "reward_currency_amount": 0,
+            "base_reward_currency_amount": 0
+        }
     }
 }
 ```

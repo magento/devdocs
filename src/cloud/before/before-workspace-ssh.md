@@ -6,6 +6,8 @@ redirect_from:
 functional_areas:
   - Cloud
   - Setup
+  - Security
+  - Config
 ---
 
 {:.ref-header}
@@ -22,7 +24,7 @@ When initially setting up your local environment, you need to add the SSH keys t
 
 {% include cloud/enable-ssh.md %}
 
-## Unable to access projects without MFA
+### Unable to access projects without MFA
 
 If you authenticate to a project with multi-factor authentication (MFA) enabled, you might receive the following error when connecting to other projects that do not require MFA:
 
