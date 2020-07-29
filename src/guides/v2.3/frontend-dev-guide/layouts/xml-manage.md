@@ -76,7 +76,7 @@ The following file is a sample of a file you must add:
 
 When adding external resources, specifying the `src_type="url"` argument value is a must.
 
-You can use either the `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme. In this short way the path to js file will be `<theme_dir>/web/js/sample.js`. If we use `<link src="sample.js"/>` Magento will get js file in `<theme_dir>/web/sample.js`
+You can use either the `<link src="js/sample.js"/>` or the `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme. This way, the path to the javascript file will be `<theme_dir>/web/js/sample.js`. If we use `<link src="sample.js"/>`, Magento will get the javascript file at `<theme_dir>/web/sample.js`
 
 The path to assets is specified relatively to one the following locations:
 
@@ -109,7 +109,7 @@ In this example, `orange` is a custom theme created by the OrangeCo vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
-To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
+To remove the static resources linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -133,7 +133,7 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
 {:.bs-callout-warning}
-If js files have called via RequireJS approach by declaring in require/define sections, we can't remove it from the layout.
+If js files are called via the RequireJS approach: by declaring in the require/define sections, we cannot remove it from the layout.
 
 ## Add meta tags to the head block {#layout_markup_meta}
 
