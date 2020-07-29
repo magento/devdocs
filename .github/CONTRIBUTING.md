@@ -62,6 +62,7 @@ The following guidelines may answer most of your questions and help you get star
 -  Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
 -  For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
 -  Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
+-  Do not make changes to content in the [`_data/codebase`](https://src/_data/codebase) directory, which contains version-specific, auto-generated content from Magento source code. Manual changes are not accepted and will be overwritten when the file regenerates.
 -  Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
 -  Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
