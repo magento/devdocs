@@ -46,7 +46,7 @@ The aggregated data includes information from the following logs:
 As soon as your project is connected to New Relic, you can use the New Relic Logs service to complete tasks like the following:
 
 -  Use [New Relic queries][New Relic query syntax for logs] to search aggregated log data
--  Visualize log data through the New Relic UI
+-  Visualize log data through the New Relic Logs application
 -  Create custom charts, dashboards, and alerts
 -  Troubleshoot performance issues from a single dashboard
 
@@ -221,7 +221,10 @@ To use the New Relic Logs application:
 
 1. On the _APM applications page_, select **Logs** from the navigation menu.
 
-   ![Cloud project APM menu select Logs page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-basic.png){:width="650px"}
+   ![Cloud project APM menu select Logs page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-logs-access.png){:width="650px"}
+
+   {:.bs-callout-tip}
+   You can also access the New Relic Logs application from the New Relic ONE home page. See [New Relic ONE core UI components][New Relic One UI].
 
 1. To review infrastructure log data for cloud services, enter the query string `has: "ident"` in the _Find logs where_ field. Then, click **Query logs**.
 
@@ -351,6 +354,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [New Relic account]: #manage-your-new-relic-account
 [New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
+[New Relic ONE UI]: https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/get-started/new-relic-one-core-ui-components
 [New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic Help Center]: https://newrelic.com/
 [New Relic Logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/get-started/introduction-new-relic-logs
