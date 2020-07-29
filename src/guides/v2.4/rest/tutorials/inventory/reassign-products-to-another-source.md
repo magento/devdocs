@@ -32,11 +32,11 @@ When you unassign a source from a product, all source data including inventory a
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/source-items-delete`
+`POST <host>/rest/default/V1/inventory/source-items-delete`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
@@ -75,16 +75,16 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/source-items`
+`POST <host>/rest/default/V1/inventory/source-items`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
 `Content-Type`: `application/json`
-`Authorization`: `Bearer <admin_token>``
+`Authorization`: `Bearer <admin_token>`
 
 **Payload:**
 
@@ -92,62 +92,86 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 {
   "sourceItems": [{
     "sku": "24-WB01",
-    "source_code": "baltimore_wh",
+    "source_code": "ne_wh",
     "quantity": 35,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "austin_wh",
+    "source_code": "brooklyn",
     "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "reno_wh",
-    "quantity": 25,
+    "source_code": "huntington",
+    "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "berlin_wh",
+    "source_code": "manhattan",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB01",
+    "source_code": "west_wh",
     "quantity": 15,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "frankfurt_wh",
-    "quantity": 15,
+    "source_code": "berkeley",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB01",
+    "source_code": "sausalito",
+    "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "baltimore_wh",
-    "quantity": 19,
+    "source_code": "ne_wh",
+    "quantity": 50,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "austin_wh",
+    "source_code": "brooklyn",
     "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "reno_wh",
-    "quantity": 42,
+    "source_code": "huntington",
+    "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "berlin_wh",
-    "quantity": 32,
+    "source_code": "manhattan",
+    "quantity": 0,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "frankfurt_wh",
-    "quantity": 7,
+    "source_code": "west_wh",
+    "quantity": 10,
+    "status": 1
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "berkeley",
+    "quantity": 20,
+    "status": 1
+  },
+  {
+    "sku": "24-WB03",
+    "source_code": "sausalito",
+    "quantity": 20,
     "status": 1
   },
   {
@@ -167,4 +191,4 @@ Magento returns an empty array.
 
 ## Verify this step
 
-In Admin, click **Catalog** > **Products**.  Products `24-WB01`, `24-WB03`, and `240-LV06` display quantities per assigned source in the **Quantity Per Source** column and an aggregated total of products per stock in the **Salable Quantity** column.
+In Admin, click **Catalog** > **Products**.  Products `24-WB01`, `24-WB03`, and `240-LV06` display quantities per assigned source in the **Quantity per Source** column and an aggregated total of products per stock in the **Salable Quantity** column.
