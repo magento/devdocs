@@ -86,7 +86,7 @@ You may need to disable {{site.data.var.im}} modules to:
 *  Use custom or third-party inventory and Order Management System (OMS) modules.
 *  Use [OMS](https://omsdocs.magento.com) for inventory and order management. The current OMS Connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
-See the [Enable or disable modules]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html) topic, specifically the [Module status]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-status) and [Module enable, disable]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html##instgde-cli-subcommands-enable-disable) sections, for information about how to disable the applicable modules.
+See the [Enable or disable modules]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html) topic, specifically the [Module status]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-status) and [Module enable, disable]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable) sections, for information about how to disable the applicable modules.
 
 When complete, you should a list of modules and values in `<Magento_installation_directory>/app/etc/config.php`, beginning with:
 
