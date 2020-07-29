@@ -14,7 +14,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
 The core code is the default Magento code that comes with the application. You should never edit the core code because code changes occur between version upgrades and any changes you make will get overwritten. Try achieving your desired behavior with plugins, overriding interface preferences, and [event](https://glossary.magento.com/event) observers.
 
-If you feel that Magento can be improved with your core code changes, please consider [contributing via Git]({{ page.baseurl }}/contributor-guide/contributing.html).
+If you feel that Magento can be improved with your core code changes, please consider [contributing via Git]({{ site.baseurl }}/contributor-guide/contributing.html).
 
 ### Learn the architecture
 
