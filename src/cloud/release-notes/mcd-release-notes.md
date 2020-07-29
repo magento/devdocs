@@ -19,6 +19,8 @@ The release notes include:
 ## v1.1.1
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
+-  {:.fix}**Updated email configuration**–Updated the default {{ site.var.ece.mcd-product }} configuration to support the MailHog service instead of using SendMail. See [Set up email]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-5624-->
+
 <!--Add release notes below-->
 
 ## v1.1.0
