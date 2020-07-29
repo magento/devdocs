@@ -32,11 +32,11 @@ When you unassign a source from a product, all source data including inventory a
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/source-items-delete`
+`POST <host>/rest/default/V1/inventory/source-items-delete`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
@@ -75,11 +75,11 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/source-items`
+`POST <host>/rest/default/V1/inventory/source-items`
 
 **Scope:**
 
-`all` store views
+`default` store view
 
 **Headers:**
 
@@ -116,19 +116,19 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
   },
   {
     "sku": "24-WB01",
-    "source_code": "de_wh",
+    "source_code": "west_wh",
     "quantity": 15,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "berlin",
+    "source_code": "berkeley",
     "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB01",
-    "source_code": "frankfurt",
+    "source_code": "sausalito",
     "quantity": 10,
     "status": 1
   },
@@ -158,19 +158,19 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
   },
   {
     "sku": "24-WB03",
-    "source_code": "de_wh",
+    "source_code": "west_wh",
     "quantity": 10,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "berlin",
+    "source_code": "berkeley",
     "quantity": 20,
     "status": 1
   },
   {
     "sku": "24-WB03",
-    "source_code": "frankfurt",
+    "source_code": "sausalito",
     "quantity": 20,
     "status": 1
   },
