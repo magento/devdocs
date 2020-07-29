@@ -3,12 +3,12 @@ group: configuration-guide
 title: Security.txt
 functional_areas:
   - Configuration
+contributor_name: Kalpesh Mehta from Corra
+contributor_link: https://partners.magento.com/portal/details/partner/id/70
+
 ---
 
 When security vulnerabilities are discovered by researchers, proper reporting channels are often lacking. As a result, some vulnerabilities are not reported. The purpose of the `security.txt` [file format](https://tools.ietf.org/html/draft-foudil-securitytxt-09) is to give security researchers the information they need to report their findings.
-
-{:.bs-callout-info}
-**Magento Community Contribution** - Magento thanks [Kalpesh Mehta](http://ka.lpe.sh) of [Corra](https://partners.magento.com/portal/details/partner/id/70) for contributing these features as part of the Magento Community Engineering program.
 
 Magento merchants can enter their contact information for [security issue reporting](https://docs.magento.com/user-guide/stores/security-issue-reporting.html) from the Magento _Admin_. For developers, the `Magento_Securitytxt` module provides the following functionality:
 
