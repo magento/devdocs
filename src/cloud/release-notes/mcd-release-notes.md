@@ -16,8 +16,13 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
-## v1.1.0
+## v1.1.1
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
+## v1.1.0
+*Release date: June 25, 2020*<br/>
 
 -  {:.new}**Added support for the Magento split database performance solution**–Now you can configure and deploy a Magento store using the Magento Split database performance solution in the Cloud Docker environment. See [Enable split database solution]({{site.baseurl}}/cloud/docker/docker-split-db.html).<!--MCLOUD-3740-->
 

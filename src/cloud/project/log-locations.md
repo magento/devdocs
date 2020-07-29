@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Log locations
+title: View logs
 functional_areas:
   - Cloud
   - Configuration
@@ -17,13 +17,17 @@ When you configure your Cloud environment, you can [set up log-based Slack and e
 
 ## Viewing logs
 
-There are three ways to view logs: file system, project web UI, or the `magento-cloud` CLI.
+There are three ways to view logs: file system, project web UI, `magento-cloud` CLI.
 
 -  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
 
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
 
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
+
+### Aggregated log data
+
+On Pro Production and Staging environments, you can review and analyze aggregated data from all {{ site.data.var.ece }} logs using the New Relic Logs service. See [New Relic services][].
 
 ### Log command
 
@@ -76,7 +80,7 @@ Re-deploying environment project-integration-ID
 
 ### Error logs
 
-Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
+Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors. See [Error message reference for ece-tools][Error reference].
 
 The following logs have a common location for all Cloud projects:
 
@@ -141,10 +145,10 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 
 ## Service logs
 
-Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
+Because each service runs in a separate container, the service logs are not available in the Integration environment. {{ site.data.var.ece }} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
--  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`
+-  **Elasticsearch log**: `/var/log/elasticsearch/elasticsearch.log`
 -  **Mail log**: `/var/log/mail.log`
 -  **MySQL error log**: `/var/log/mysql/mysql-error.log`
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
@@ -153,7 +157,15 @@ Because each service runs in a separate container, the service logs are not avai
 {:.bs-callout-tip}
 Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
 
-[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+<!--Link definitions-->
+
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
+<<<<<<< HEAD
+[Error reference]: {{site.baseurl}}/cloud/reference/ece-tools-error-reference.html
+[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+=======
+[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[New Relic services]: {{site.baseurl}}/cloud/project/new-relic.html
+>>>>>>> master
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
 [scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations

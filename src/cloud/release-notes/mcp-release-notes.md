@@ -16,8 +16,13 @@ The `{{site.data.var.mcp-package}}` package uses the following version sequence:
 {:.bs-callout-info}
 See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
 
-## v1.0.5
+## v1.0.6
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
+## v1.0.5
+*Release date: June 26, 2020*<br/>
 
 -  **Redis performance improvements**–Adds Redis optimization features to Magento versions 2.3.3 and 2.3.4. These fixes were included in the Magento version 2.3.5 release. See [Performance boosts]({{site.baseurl}}/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in the _Magento Commerce 2.3.5 Release Notes_.<!--MCLOUD-5771-->
 

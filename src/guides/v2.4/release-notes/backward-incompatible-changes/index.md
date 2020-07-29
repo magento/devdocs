@@ -61,6 +61,10 @@ Magento\CatalogSearch\Model\Indexer\Fulltext\Action\IndexIterator
 Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver
 ```
 
+### Magento Functional Testing Framework (MFTF)
+
+MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
+
 ### Inventory asynchronous reindex
 
 A new Stock/Source reindex strategy configuration setting option was added to the Admin to prevent index table collisions. The setting has the following options:

@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
