@@ -73,9 +73,9 @@ Previously, it was possible to have a "burst" of activity that triggered content
 For example, if the indexer was running based on schedule, and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. Previously, that would result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
 
 ```terminal
-MAJOR: Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
+changed.MAJOR: Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
 /InventoryIndexer/Indexer/Stock/StockIndexer.php:28 M113 [public] Method parameter typing changed.
-MAJOR: Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
+changed.MAJOR: Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
 /InventoryIndexer/Indexer/SourceItem/SourceItemIndexer.php:27 M113 [public] Method parameter typing changed.
 ```
 
@@ -232,7 +232,7 @@ It caused SVC failures.
 Return type now array (the same as before in DocBlock):
 
 ```terminal
-MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit
+changed.MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit
 /app/code/Magento/Catalog/Helper/Product/ProductList.php:122M120 [public] Method return typing
 ```
 
