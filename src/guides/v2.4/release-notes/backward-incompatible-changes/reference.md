@@ -20,11 +20,11 @@ We use a custom tool that extends a PHP semantic version checker to auto-generat
 {:.bs-callout-info}
 Patch releases are primarily focused on delivering security and quality enhancements on a regular basis to help you keep your sites performing at their peak. On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security or compliance issues and high-impact quality issues. On the module level, these are mostly PATCH-level changes; sometimes MINOR-level changes. See [Release policy]({{site.baseurl}}/release/policy/).
 
-## 2.3.0 - 2.4.0-develop
+## 2.3.0 - 2.4.0
 
-{% include backward-incompatible-changes/open-source/2.3.0-2.4.0-develop.html %}
+{% include backward-incompatible-changes/open-source/2.3.0-2.4.0.md %}
 
-{% include backward-incompatible-changes/commerce/2.3.0-2.4.0-develop.html %}
+{% include backward-incompatible-changes/commerce/2.3.0-2.4.0.md %}
 
 ### Functional tests (MFTF)
 
