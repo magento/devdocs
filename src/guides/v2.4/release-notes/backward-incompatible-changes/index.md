@@ -238,13 +238,13 @@ MAJORMagento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Mag
 Return type now array (the same as before in DocBlock):
 
 ```terminal
-changed.MAJORMagento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122V060 [public] Method parameter name
+changed.MAJOR Magento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122V060 [public] Method parameter name
 ```
 
 Now returns int for `DefaultLimitPerPageValue`:
 
 ```terminal
-changed.MAJORMagento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue /app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
+changed.MAJOR Magento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue /app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
 ```
 
 ### UrlRewrite module
