@@ -1,6 +1,9 @@
 ---
 group: contributor-guide
 title: Magento Definition of Done
+redirect_from:
+- guides/v2.3/contributor-guide/contributing_dod.html
+- guides/v2.4/contributor-guide/contributing_dod.html
 ---
 
 ## Overview
@@ -187,7 +190,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 Code to cover:
 
 *  Must cover any formal backward-incompatible changes on code level.
-   For more information, see [Magento's backward compatibility policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
+   For more information, see [Magento's backward compatibility policy]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
 A failure in a legacy test must provide comprehensive explanation of an alternative, if there is any.
 
@@ -211,12 +214,12 @@ The reviewer should check whether the task meets the original acceptance criteri
 
 The work cannot be considered as complete unless all the criteria are verified.
 
-[0]:{{ page.baseurl }}/coding-standards/docblock-standard-general.html
-[1]:{{ page.baseurl }}/contributor-guide/backward-compatible-development/
-[2]:{{ page.baseurl }}/test/testing.html
-[3]:{{ page.baseurl }}/test/integration/integration_test_execution.html
+[0]:{{ site.gdeurl }}/coding-standards/docblock-standard-general.html
+[1]:{{ site.baseurl }}/contributor-guide/backward-compatible-development/
+[2]:{{ site.gdeurl }}/test/testing.html
+[3]:{{ site.gdeurl }}/test/integration/integration_test_execution.html
 [4]:https://github.com/magento/devdocs
-[5]:{{ page.baseurl }}/extension-dev-guide/versioning/index.html
-[6]:{{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
-[7]:{{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
-[8]:{{ page.baseurl }}/contributor-guide/backward-compatible-development/index.html#where-to-document
+[5]:{{ site.gdeurl }}/extension-dev-guide/versioning/index.html
+[6]:{{ site.gdeurl }}/extension-dev-guide/versioning/codebase-changes.html
+[7]:{{ site.gdeurl }}/extension-dev-guide/versioning/dependencies.html
+[8]:{{ site.baseurl }}/contributor-guide/backward-compatible-development/index.html#where-to-document

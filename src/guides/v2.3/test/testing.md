@@ -235,7 +235,7 @@ MFTF tests are kept within its respective Module folder:
 ```
 
 <!-- Link Definitions -->
-[Magento definition of done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
+[Magento definition of done]: {{ site.baseurl }}/contributor-guide/contributing_dod.html
 [Functional]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API Functional]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Integration]: {{ page.baseurl }}/test/integration/integration_test_execution.html
@@ -243,7 +243,7 @@ MFTF tests are kept within its respective Module folder:
 [JavaScript]: {{ page.baseurl }}/test/js/jasmine.html
 [PhpCs]: {{ page.baseurl }}/coding-standards/code-standard-php.html
 [PhpMd]: https://phpmd.org/
-[Magento backward compatibility policy]: {{ page.baseurl }}/contributor-guide/backward-compatible-development/
+[Magento backward compatibility policy]: {{ site.baseurl }}/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: https://github.com/magento/mtf
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
