@@ -232,7 +232,8 @@ It caused SVC failures.
 Return type now array (the same as before in DocBlock):
 
 ```terminal
-MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122M120 [public] Method return typing
+MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit
+/app/code/Magento/Catalog/Helper/Product/ProductList.php:122M120 [public] Method return typing
 ```
 
 The input parameter is renamed to `viewMode`:
