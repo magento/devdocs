@@ -496,7 +496,7 @@ stage:
 
 Allows you to increase the maximum expected execution time for static content deployment.
 
-By default, Magento Commerce sets the maximum expected execution to 400 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
+By default, Magento Commerce sets the maximum expected execution to 900 seconds, but in some scenarios you might need more time to complete the static content deployment for a Cloud project.
 
 ```yaml
 stage:
