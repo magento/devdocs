@@ -26,7 +26,7 @@ The New Relic Logs application provides a centralized log management dashboard t
 
 ### Log command
 
-You use the `magento-cloud log` command to quickly view a specific log. If you do not specify a log name, you can choose a log from the response list.
+When you are logged into your {{ site.data.var.ece }} project, you can use the `magento-cloud log` CLI command to quickly view a specific log from the command line. If you do not specify a log name, you can choose a log from the response list.
 
 ```bash
 magento-cloud log
