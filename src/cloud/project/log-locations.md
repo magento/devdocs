@@ -1,33 +1,28 @@
 ---
 group: cloud-guide
-title: View logs
+title: View and manage logs
 functional_areas:
   - Cloud
   - Configuration
 redirect_from:
   - /cloud/trouble/environments-logs.html
 ---
-Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook].
 
- {:.bs-callout-info}
-Magento-specific logs are in the `<magento-root-dir>/var/` directory. See [Magento Logging][configlog] in the _Configuration guide_.
+Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the Magento application.
 
-{:.bs-callout-tip}
-When you configure your Cloud environment, you can [set up log-based Slack and email notifications][slacklog] for build and deploy actions.
+You can view the logs from the file system, the project web UI, and the `magento-cloud` CLI.
 
-## Viewing logs
-
-There are three ways to view logs: file system, project web UI, `magento-cloud` CLI.
-
--  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+-  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
 
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
 
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
-### Aggregated log data
+## Manage log data
 
-On Pro Production and Staging environments, you can review and analyze aggregated data from all {{ site.data.var.ece }} logs using the New Relic Logs service. See [New Relic services][].
+On Pro Production and Staging environments, use the New Relic Logs application integrated with your project to manage aggregated log data from all logs associated with your {{ site.data.var.ece }} project.
+
+The New Relic Logs application provides a centralized log management dashboard to troubleshoot and monitor {{site.data.var.ece}} Production and Staging environments. The dashboard also provides access to log data for Fastly CDN, Image Optimization, and Web application firewall (WAF) services. See [New Relic services][].
 
 ### Log command
 
@@ -77,6 +72,9 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] INFO: Warming up failed: http://integration-id-project.us.magentosite.cloud/
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
+
+{:.bs-callout-tip}
+When you configure your Cloud environment, you can set up [log-based Slack and email notifications][slacklog] for build and deploy actions.
 
 ### Error logs
 
