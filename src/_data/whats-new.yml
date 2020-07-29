@@ -4,8 +4,106 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 13 09:15:34 2020
+updated: Mon Jul 27 11:43:37 2020
 entries:
+- description: Added a known issue about the `inventory_cleanup_reservations` cron
+    job not working properly in the [Inventory 1.2.0 release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.0
+  type: Technical
+  date: July 27, 2020
+  link: https://github.com/magento/devdocs/pull/7596
+- description: Updated the Magento Cloud CLI reference for v1.35.0.
+  versions: 2.x
+  type: Technical
+  date: July 24, 2020
+  link: https://github.com/magento/devdocs/pull/7584
+- description: Added additional troubleshooting instructions for [PrivateLink VPC
+    connections](https://devdocs.magento.com/cloud/project/privatelink-service.html).
+  versions: 2.x
+  type: Technical
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7538
+- description: Adds support for `security.txt` to help security researchers report potential
+    security issues to site administrators.
+  versions: 2.4.0
+  type: Major Update
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7556
+- description: Added MFA troubleshooting step in the [Enable SSH keys](https://devdocs.magento.com/cloud/before/before-workspace-ssh.html)
+    topic in the Cloud guide.
+  versions: 2.x
+  type: Major Update
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7579
+- description: Added [B2B Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/b2b-release-notes.html).
+  versions: 2.4.0
+  type: New Topic
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7566
+- description: Updated the [Magento Cloud CLI command reference for v1.34.4](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html).
+  versions: 2.x
+  type: Technical
+  date: July 22, 2020
+  link: https://github.com/magento/devdocs/pull/7572
+- description: Because two-factor authentication for admin accounts is required in
+    2.4.0, references to the `POST /V1/integration/admin/token` endpoint have been
+    replaced with `POST /V1/tfa/provider/google/authenticate` in the [REST tutorials](https://devdocs.magento.com/guides/v2.4/rest/tutorials/prerequisite-tasks/create-admin-token.html)
+    and other places.
+  versions: 2.4.0
+  type: Major Update
+  date: July 22, 2020
+  link: https://github.com/magento/devdocs/pull/7576
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+    for MySQL, PHP, and Redis.
+  versions: 2.3.x
+  type: Technical
+  date: July 21, 2020
+  link: https://github.com/magento/devdocs/pull/7537
+- description: Deleted the "List of REST endpoints by module" and "List of service
+    names per module" topics from the _REST API Reference_.
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: July 21, 2020
+  link: https://github.com/magento/devdocs/pull/7569
+- description: Refactored the [Order Processing with Inventory Management](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/index.html)
+    REST tutorial to be compatible with In-Store Pickup.
+  versions: 2.4.0
+  type: Major Update
+  date: July 20, 2020
+  link: https://github.com/magento/devdocs/pull/7545
+- description: Added inventory 1.2.0 [release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.0
+  type: Major Update
+  date: July 20, 2020
+  link: https://github.com/magento/devdocs/pull/7554
+- description: Published [REST API reference](https://devdocs.magento.com/guides/v2.4/rest/bk-rest.html)
+    documentation.
+  versions: 2.4.0
+  type: Major Update
+  date: July 17, 2020
+  link: https://github.com/magento/devdocs/pull/7533
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+    for MySQL, PHP, and Redis.
+  versions: 2.4.0
+  type: Technical
+  date: July 17, 2020
+  link: https://github.com/magento/devdocs/pull/7529
+- description: Updated _Cloud Guide_ with information about account and project security
+    options:<br/>- Added instructions to configure 2FA security and API tokens setting
+    to the [Manage user access](https://devdocs.magento.com/cloud/project/user-admin.html)
+    topic.<br/>- Added [Enable MFA enforcement for SSH](https://devdocs.magento.com/cloud/project/project-enable-mfa-project.html)
+    topic to describe this project-level feature to enforce 2FA requirement for SSH
+    access to Magento Cloud environments. Also added instructions for authenticating
+    on projects that have MFA enforcement enabled.
+  versions: 2.x
+  type: Major Update
+  date: July 15, 2020
+  link: https://github.com/magento/devdocs/pull/7517
+- description: Added use cases for [web API authentication methods](https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 14, 2020
+  link: https://github.com/magento/devdocs/pull/7498
 - description: Added 2021 release dates to the [release information page](https://devdocs.magento.com/release/).
   versions: 2.x
   type: Major Update
