@@ -1,6 +1,6 @@
 # DevDocs maintainer guidelines
 
-In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some additional guidelines specific to DevDocs that will help you as a maintainer.
+In general, the same [guidelines](https://devdocs.magento.com/contributor-guide/maintainers.html) for [`magento/magento2`](https://github.com/magento/magento2) maintainers apply to DevDocs maintainers. However, there are some additional guidelines specific to DevDocs that will help you as a maintainer.
 
 ## General expectations
 
@@ -13,7 +13,7 @@ In general, the same [guidelines](https://devdocs.magento.com/guides/v2.3/contri
 
 ## Labels
 
-Labels are important because they help us identify pull requests by type and ensure that contributors receive points and recognition. See [DevDocs awards and points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs-awards-and-points).
+Labels are important because they help us identify pull requests by type and ensure that contributors receive points and recognition. See [DevDocs awards and points](https://devdocs.magento.com/contributor-guide/contributing.html#devdocs-awards-and-points).
 
 Here is a brief summary of the most important labels:
 

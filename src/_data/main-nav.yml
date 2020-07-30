@@ -106,6 +106,7 @@
 
         - label: Contributor Guide
           url: /contributor-guide/contributing.html
+          versionless: true
 
     - label: Frontend
       children:

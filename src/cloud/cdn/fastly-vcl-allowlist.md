@@ -7,6 +7,9 @@ functional_areas:
   - Cloud
   - Setup
   - Security
+redirect_from:
+   - /cloud/configure/fastly-vcl-whitelist.html
+   - /cloud/cdn/fastly-vcl-whitelist.html
 ---
 
 You can use a Fastly Edge ACL list in combination with a custom VCL code snippet to filter incoming requests and allow access by IP address. The ACL list specifies the IP addresses to allow.

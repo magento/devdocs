@@ -10,7 +10,7 @@ These features and extensions were developed as part of the [Magento Inventory (
 
 {{site.data.var.im}} installs with Magento {{site.data.var.ce}} and {{site.data.var.ee}} with all features enabled by default. No additional steps are required for enabling these inventory features. Upgrades from v2.1.x or 2.2.x may require additional steps. See [Upgrade Inventory Management](#upgrade-inventory-management).
 
-We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.3/install-gde/composer.html). You must install with a metapackage to receive all {{site.data.var.im}} modules.
+We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html). You must install with a metapackage to receive all {{site.data.var.im}} modules.
 
 The following line in the `composer.json` metapackage installs Inventory Management:
 
@@ -18,7 +18,7 @@ The following line in the `composer.json` metapackage installs Inventory Managem
         magento/inventory-composer-metapackage = 1.1.3
 ```
 
-For a list of {{site.data.var.im}} metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
+For a list of {{site.data.var.im}} metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.4/inventory/release-notes.html).
 
 The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The following list of modules are added:
 
@@ -82,67 +82,29 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable {{site.data.var.im}} modules to:
 
-*  Speed up the upgrade process for merchants migrating from 2.0.x, 2.1.x, or 2.2.x to 2.3.x.
-*  Use custom or third party inventory and order management modules.
-*  Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
+*  Speed up the upgrade process for merchants migrating from 2.0.x, 2.1.x, 2.2.x, or 2.3.x to 2.4.x.
+*  Use custom or third-party inventory and Order Management System (OMS) modules.
+*  Use [OMS](https://omsdocs.magento.com) for inventory and order management. The current OMS Connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
-To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `<Magento_installation_directory>/app/etc/config.php`:
+See the [Enable or disable modules]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html) topic, specifically the [Module status]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-status) and [Module enable, disable]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable) sections, for information about how to disable the applicable modules.
+
+When complete, you should a list of modules and values in `<Magento_installation_directory>/app/etc/config.php`, beginning with:
 
 ```php
-        'Magento_Inventory' => 0,
-        'Magento_InventoryAdminUi' => 0,
-        'Magento_InventoryAdvancedCheckout' => 0,
-        'Magento_InventoryApi' => 0,
-        'Magento_InventoryBundleProduct' => 0,
-        'Magento_InventoryBundleProductAdminUi' => 0,
-        'Magento_InventoryCatalog' => 0,
-        'Magento_InventorySales' => 0,
-        'Magento_InventoryCatalogAdminUi' => 0,
-        'Magento_InventoryCatalogApi' => 0,
-        'Magento_InventoryCatalogSearch' => 0,
-        'Magento_InventoryConfigurableProduct' => 0,
-        'Magento_InventoryConfigurableProductAdminUi' => 0,
-        'Magento_InventoryConfigurableProductIndexer' => 0,
-        'Magento_InventoryConfiguration' => 0,
-        'Magento_InventoryConfigurationApi' => 0,
-        'Magento_InventoryDistanceBasedSourceSelection' => 0,
-        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
-        'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
-        'Magento_InventoryElasticsearch' => 0,
-        'Magento_InventoryExportStockApi' => 0,
-        'Magento_InventoryIndexer' => 0,
-        'Magento_InventorySalesApi' => 0,
-        'Magento_InventoryGroupedProduct' => 0,
-        'Magento_InventoryGroupedProductAdminUi' => 0,
-        'Magento_InventoryGroupedProductIndexer' => 0,
-        'Magento_InventoryImportExport' => 0,
-        'Magento_InventoryCache' => 0,
-        'Magento_InventoryLowQuantityNotification' => 0,
-        'Magento_InventoryLowQuantityNotificationApi' => 0,
-        'Magento_InventoryMultiDimensionalIndexerApi' => 0,
-        'Magento_InventoryProductAlert' => 0,
-        'Magento_InventoryRequisitionList' => 0,
-        'Magento_InventoryReservations' => 0,
-        'Magento_InventoryReservationCli' => 0,
-        'Magento_InventoryReservationsApi' => 0,
-        'Magento_InventoryExportStock' => 0,
-        'Magento_InventorySalesAdminUi' => 0,
-        'Magento_InventorySalesFrontendUi' => 0,
-        'Magento_InventorySetupFixtureGenerator' => 0,
-        'Magento_InventoryShipping' => 0,
-        'Magento_InventorySourceDeductionApi' => 0,
-        'Magento_InventorySourceSelection' => 0,
-        'Magento_InventorySourceSelectionApi' => 0,
-        'Magento_InventoryLowQuantityNotificationAdminUi' => 0,
-        'Magento_InventoryShippingAdminUi' => 0,
-        'Magento_InventoryGraphQl' => 0,
+   'Magento_Inventory' => 0,
+   'Magento_InventoryAdminUi' => 0,
+   'Magento_InventoryAdvancedCheckout' => 0,
+   ...
 ```
+
+{:.bs-callout-warning}
+If you have the OMS Connector modules installed, ensure you do not disable the `Magento_InventoryMessageBus` module. It's a Connector module, not an MSI one, and you need it to use the Connector with OMS.
 
 ## Upgrade {{site.data.var.im}}
 
 ### Previous Magento versions
 
-When upgrading or updating an existing 2.1.x or 2.2.x Magento installation to Magento {{site.data.var.ce}} or {{site.data.var.ee}} 2.3.x, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
+When upgrading or updating an existing 2.1.x, 2.2.x, or 2.3.x Magento installation to Magento {{site.data.var.ce}} or {{site.data.var.ee}} 2.4.x, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
 
 Currently, Order Management does not support {{site.data.var.im}} (future development planned). When upgrading, {{site.data.var.im}} modules will be disabled to allow OMS and Magento 2.3.x to work seamlessly.
 
@@ -162,7 +124,7 @@ To enable {{site.data.var.im}} modules:
    bin/magento cache:clean
    ```
 
-We also recommend using [reservation inconsistencies commands]({{site.baseurl}}/guides/v2.3/inventory/inventory-cli-reference.html) after upgrading. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
+We also recommend using [reservation inconsistencies commands]({{site.baseurl}}/guides/v2.4/inventory/inventory-cli-reference.html) after upgrading. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 
 ### Previous {{site.data.var.im}} versions
 
@@ -176,13 +138,13 @@ For the latest, update your metapackage version:
 
 See the following guides for more information on upgrades:
 
-*  [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
-*  [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
+*  [Software Update Guide]({{site.baseurl}}/guides/v2.4/comp-mgr/bk-compman-upgrade-guide.html)
+*  [Enable or disable modules]({{site.baseurl}}/guides/v2.4/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information
 
 See the following guides for more information on {{site.data.var.im}}:
 
-*  [Release Notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html)
-*  [Inventory Management]({{site.baseurl}}/guides/v2.3/inventory/index.html) overview for developer resources
+*  [Release Notes]({{site.baseurl}}/guides/v2.4/inventory/release-notes.html)
+*  [Inventory Management]({{site.baseurl}}/guides/v2.4/inventory/index.html) overview for developer resources
 *  [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information

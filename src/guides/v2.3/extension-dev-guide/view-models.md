@@ -12,7 +12,7 @@ A view model is an abstraction of the view exposing public properties and comman
 Use this approach anytime you need to inject functionality into template files and your code does not need to be backwards compatible with Magento.
 
  {:.bs-callout-info}
-View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
+View models are available in Magento 2.2 onwards. If your code must be compatible with older versions of Magento, consider adding your logic to blocks. For more information about backward compatibility, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
  {:.bs-callout-info}
 The use of helpers in templates is discouraged. It is recommeneded to use view models instead.

@@ -1,6 +1,9 @@
 ---
 group: contributor-guide
 title: Code Contributions
+redirect_from:
+- guides/v2.3/contributor-guide/contributing.html
+- guides/v2.4/contributor-guide/contributing.html
 ---
 
 The following topics are included in this guide:
@@ -114,8 +117,8 @@ Review the following supported and accepted pull request rules. We defined these
 
 ## Contribution requirements {#requirements}
 
-1. Contributions must adhere to [Magento coding standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html).
-1. Refer to the Magento development team's [Definition of Done]({{page.baseurl}}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
+1. Contributions must adhere to [Magento coding standards]({{ site.gdeurl }}/coding-standards/bk-coding-standards.html).
+1. Refer to the Magento development team's [Definition of Done]({{ site.baseurl }}/contributor-guide/contributing_dod.html). We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
 1. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 1. Commits must be accompanied by meaningful commit messages.
 1. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
@@ -228,7 +231,7 @@ Admins access will be shared via comment on GitHub.
 
 -  [Community Maintainers](https://github.com/magento/magento2/wiki/Community-Maintainers)
 -  Magento EngCom Team
--  [Contributor]({{page.baseurl}}/contributor-guide/contributors.html)
+-  [Contributor]({{ site.baseurl }}/contributor-guide/contributors.html)
 
 ### Combine multiple pull requests {#combine-pr}
 

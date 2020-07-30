@@ -7,6 +7,9 @@ menu_order: 0
 return_to:
    title: Code Contributions
    url: contributor-guide/contributing.html
+redirect_from:
+- guides/v2.3/contributor-guide/templates/tutorial-template-first.html
+- guides/v2.4/contributor-guide/templates/tutorial-template-first.html
 ---
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:
