@@ -111,3 +111,7 @@ To use magento-cloud-patches as a stand-alone package:
    You can clean the cache using the Magento Admin Cache Management.
 
 1. Test the patches, and make any necessary changes to custom patches.
+
+## Skip Cloud patches
+
+You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) on Cloud projects.
