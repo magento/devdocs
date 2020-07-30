@@ -97,6 +97,9 @@ When complete, you should a list of modules and values in `<Magento_installation
    ...
 ```
 
+{:.bs-callout-warning}
+If you have the OMS Connector modules installed, ensure you do not disable the `Magento_InventoryMessageBus` module. It's a Connector module, not an MSI one, and you need it to use the Connector with OMS.
+
 ## Upgrade {{site.data.var.im}}
 
 ### Previous Magento versions
