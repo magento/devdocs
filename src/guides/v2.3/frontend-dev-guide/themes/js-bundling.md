@@ -43,7 +43,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
    bin/magento config:set dev/js/merge_files 0
    ```
 
-1. Modifying settings above when Magento is in production mode will require [static view files deployment][static-content]:
+1. Modifying the settings above when Magento is in production mode will require [static view files deployment][static-content]:
 
    ```bash
    bin/magento bin/magento setup:static-content:deploy
