@@ -5,7 +5,7 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
-## 2.3.0 - 2.4-develop
+## 2.3.0 - 2.4
 
 ### Elasticsearch
 
@@ -60,6 +60,10 @@ Magento\CatalogSearch\Model\Indexer\Scope\IndexTableNotExistException
 Magento\CatalogSearch\Model\Indexer\Fulltext\Action\IndexIterator
 Magento\CatalogSearch\Model\Adapter\Mysql\Filter\AliasResolver
 ```
+
+### Magento Functional Testing Framework (MFTF)
+
+MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 ### Inventory asynchronous reindex
 
