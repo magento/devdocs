@@ -2234,13 +2234,13 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Braintree
 
-*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. <!--- BUNDLE-2683-->
+*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. The **BUNDLE-2683_SettlementReport.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2683-->
 
 *  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
 
 *  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.   <!--- BUNDLE-2686-->
 
-*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. <!--- BUNDLE-2670-->
+*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. The **BUNDLE-2670_VirtualTerminal.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2670-->
 
 *  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment.
 
