@@ -7,7 +7,7 @@ group: mftf
 Action groups are important building blocks for quickly creating tests for the Magento Functional Testing Framework.
 This page lists all current action groups so developers can see what is available to them.
 
-{% assign action_groups = site.data.codebase.v2_4.mftf.action-groups %}
+{% assign action_groups = site.data.codebase.v2_4.mftf.ce.action-groups %}
 
 {% if action_groups %}
 

@@ -15,7 +15,7 @@ dl dt{
 The Magento Functional Testing Framework runs tests on every Module within Magento. These files are stored within each Module folder in the Magento repo.
 This page lists all those tests so that developers can have a good sense of what is covered.
 
-{% assign functional_tests = site.data.codebase.v2_4.mftf.functional-tests  %}
+{% assign functional_tests = site.data.codebase.v2_4.mftf.ce.functional-tests  %}
 
 {% if functional_tests %}
 
