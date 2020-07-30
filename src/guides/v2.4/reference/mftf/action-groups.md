@@ -13,8 +13,8 @@ This page lists all current action groups so developers can see what is availabl
 
 ## Action group list
 
-{% assign action_groups_by_module = actiongroups | group_by: "module" | sort: "name"  %}
-{% for item in actiongroups_by_module %}
+{% assign action_groups_by_module = action_groups | group_by: "module" | sort: "name"  %}
+{% for item in action_groups_by_module %}
 
 ### {{ item.name }}
 
