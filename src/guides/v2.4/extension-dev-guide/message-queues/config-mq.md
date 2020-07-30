@@ -84,7 +84,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
     <consumer name="basic.consumer" queue="basic.consumer.queue" handler="LoggerClass::log"/>
     <consumer name="synchronous.rpc.test" queue="synchronous.rpc.test.queue" handler="LoggerClass::log"/>
     <consumer name="rpc.test" queue="queue.for.rpc.test.unused.queue" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" connection="amqp"/>
-    <consumer name="test.product.delete" queue="queue.for.test.product.delete" connection="amqp" handler="Magento\Queue\Model\ProductDeleteConsumer::processMessage" maxMessages="200" maxIdleTime="180" sleep="60" onlySpawnWhenMessageAvailable="true"/>
+    <consumer name="test.product.delete" queue="queue.for.test.product.delete" connection="amqp" handler="Magento\Queue\Model\ProductDeleteConsumer::processMessage" maxMessages="200" maxIdleTime="180" sleep="60" onlySpawnWhenMessageAvailable="0"/>
 </config>
 ```
 
@@ -100,13 +100,17 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 | connection                    | For AMQP connections, the connection name must match the `connection` attribute in the `queue_topology.xml` file. Otherwise, the connection name must be `db`.  |
 | maxMessages                   | Specifies the maximum number of messages to consume.|
 | maxIdleTime                   | Defines the maximum waiting time in seconds for a new message from the queue. If no message was handled within this period of time, the consumer exits. Default value: `null`|
-| sleep                         | Specifies time in seconds to sleep before checking if a new message is available in the queue. Default value is `null` which equals 1 second.|
-| onlySpawnWhenMessageAvailable | Boolean value that identifies whether a consumer should be spawned only if there is available message in the related queue. Default value: `false`|
+| sleep                         | Specifies time in seconds to sleep before checking if a new message is available in the queue. Default value is `null` which equals to 1 second.|
+| onlySpawnWhenMessageAvailable | Boolean value (`1` or `0` only) that identifies whether a consumer should be spawned only if there is available message in the related queue. Default value: `null`|
 
 {:.bs-callout-info}
 The `maxIdleTime` and `sleep` attributes will be handled only by consumers that were fired with a defined `maxMessages` parameter. The `onlySpawnWhenMessageAvailable` attribute is only checked and validated by the `\Magento\MessageQueue\Model\Cron\ConsumersRunner` class that runs consumer processes with cron.
 
-The `onlySpawnWhenMessageAvailable` and `maxIdleTime` attributes can be combined if a specific consumer needs to run very infrequently. The consumer will only spawn when it is needed, and it terminates itself if it is inactive for a certain period. Together, these attributes can save server resources.
+It's possible to set `onlySpawnWhenMessageAvailable` globally by setting `queue/only_spawn_when_message_available` equal to `0` or `1` in `app/etc/env.php`. By default, global value of `only_spawn_when_message_available` for all consumers is `1`.
+`onlySpawnWhenMessageAvailable` consumer attribute has higher priority than the global `queue/only_spawn_when_message_available` setting in `app/etc/env.php`. It means that it's possible to overwrite global `only_spawn_when_message_available` value by setting `onlySpawnWhenMessageAvailable` equal to `0` or `1` for each consumer in `queue_consumer.xml`.
+
+The `onlySpawnWhenMessageAvailable` and `maxIdleTime` attributes can be combined if a specific consumer needs to run very infrequently. The consumer will only spawn when it is needed, and it terminates itself if it is inactive for a certain period.
+It's also possible to combine global `queue/only_spawn_when_message_available` setting in `app/etc/env.php` with `queue/consumers-wait-for-messages` setting. Hereby consumer will run only when there is an available message in the queue, and it will be terminated once there will be no messages to process. This combination of settings is recommended to save server resources like CPU usage.
 
 The [`consumers-wait-for-messages`]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-consumers.html) option works similar to `onlySpawnWhenMessageAvailable`. When it is set to `false`, the consumer processes all messages and exits if there are no available messages in the queue.
 The problem is that every time the cron job `cron_consumers_runner` runs, it spawns a new consumer process, the consumer checks if messages are available, and it terminates itself if there are no messages.
