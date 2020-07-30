@@ -82,15 +82,11 @@ pages:
           url: /cloud/project/project-start.html
           versionless: true
 
-        - label: Log locations
-          url: /cloud/project/log-locations.html
-          versionless: true
-
         - label: Manage user access
           url: /cloud/project/user-admin.html
           versionless: true
 
-        - label: Enable MFA enforcement for SSH
+        - label: Enable MFA for SSH
           url: /cloud/project/project-enable-mfa-enforcement.html
           versionless: true
 
@@ -108,6 +104,10 @@ pages:
 
         - label: Monitor performance
           url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: View logs
+          url: /cloud/project/log-locations.html
           versionless: true
 
         - label: Snapshots and backup management

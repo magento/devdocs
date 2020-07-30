@@ -26,15 +26,15 @@ To link a source to a stock, you must specify the `source_code`, `stock_id`, and
 
 The `POST V1/inventory/stock-source-links` endpoint accepts an array of links, so we can link all the stocks and sources we created in the previous steps with a single call. The `stock_id` of "North America Stock" is `2`, and the `stock_id` of "Europe Stock" is `3`. The HQ source is assigned to both stocks.
 
-In this example, we configure the Baltimore warehouse to be the primary source for North America orders. Austin and Reno are the second- and third-choice sources. In Europe, Berlin is preferred, followed by Frankfurt. HQ is the last choice for both stocks.
+In this example, we configure the Northeast warehouse to be the primary source for North America orders. The stores located in the New York City area are other available sources in North America. In Europe, the Leipzig warehouse is preferred, followed by the Berlin and Frankfurt stores. HQ is the last choice for both stocks.
 
 **Endpoint:**
 
-`POST <host>/rest/all/V1/inventory/stock-source-links`
+`POST <host>/rest/default/V1/inventory/stock-source-links`
 
 **Scope:**
 
-`all` store views
+`default` store views
 
 **Headers:**
 
@@ -48,39 +48,44 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 {
    "links" : [
       {
-         "source_code" : "baltimore_wh",
+         "source_code" : "ne_wh",
          "stock_id" : 2,
          "priority" : 1
       },
       {
-        "source_code" : "austin_wh",
+        "source_code" : "west_wh",
         "stock_id" : 2,
         "priority" : 2
       },
       {
-        "source_code" : "reno_wh",
+        "source_code" : "brooklyn",
         "stock_id" : 2,
         "priority" : 3
       },
       {
-        "source_code" : "hq",
+        "source_code" : "manhattan",
         "stock_id" : 2,
         "priority" : 4
       },
       {
-        "source_code" : "berlin_wh",
-        "stock_id" : 3,
-        "priority" : 1
+        "source_code" : "huntington",
+        "stock_id" : 2,
+        "priority": 5
       },
       {
-         "source_code" : "frankfurt_wh",
-         "stock_id" : 3,
-         "priority" : 2
+        "source_code" : "berkeley",
+        "stock_id" : 2,
+        "priority" : 6
       },
       {
-         "source_code" : "hq",
-         "stock_id" : 3,
-         "priority" : 3
+         "source_code" : "sausalito",
+         "stock_id" : 2,
+         "priority" : 7
+      },
+      {
+        "source_code" : "hq",
+        "stock_id" : 2,
+        "priority" : 8
       }
    ]
 }
@@ -89,6 +94,7 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 **Response:**
 
 Magento returns empty array.
+
 []
 
 ## Reindex and flush cache
@@ -101,4 +107,4 @@ bin/magento indexer:reindex && bin/magento cache:flush
 
 ### Verify this step
 
-In Admin, click **Stores** > **Inventory** > **Stocks**.  Then click **Edit** to the right of North America Stock. The **Assign Sources** section contains the linked source. Repeat this step for Europe Stock.
+In Admin, click **Stores** > Inventory > **Stocks**. The **Assign Sources** column lists the linked sources for each stock.

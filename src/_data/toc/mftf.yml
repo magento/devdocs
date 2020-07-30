@@ -17,6 +17,10 @@ pages:
     url: /mftf/docs/credentials.html
     versionless: true
 
+  - label: Custom Helpers
+    url: /mftf/docs/custom-helpers.html
+    versionless: true
+
   - label: Data
     url: /mftf/docs/data.html
     versionless: true
@@ -31,6 +35,10 @@ pages:
 
   - label: Git vs. Composer installation
     url: /mftf/docs/guides/git-vs-composer-install.html
+    versionless: true
+
+  - label: How to use MFTF in CICD
+    url: /mftf/docs/guides/cicd.html
     versionless: true
 
   - label: Merge points for extensions
@@ -87,8 +95,7 @@ pages:
     children:
 
       - label: Action group reference
-        url: /guides/v2.3/reference/mftf/action-groups.html
-        versionless: true
+        url: /reference/mftf/action-groups.html
 
       - label: Codecept
         url: /mftf/docs/commands/codeception.html
@@ -99,8 +106,7 @@ pages:
         versionless: true
       
       - label: MFTF functional test reference
-        url: /guides/v2.3/reference/mftf/functional-tests.html
-        versionless: true
+        url: /reference/mftf/functional-tests.html
 
   - label: Reporting
     url: /mftf/docs/reporting.html
@@ -180,12 +186,20 @@ pages:
     url: /mftf/docs/troubleshooting.html
     versionless: true 
 
+  - label: Two-factor Authentication
+    url: /mftf/docs/configure-2fa.html
+    versionless: true 
+
   - label: Update MFTF
     url: /mftf/docs/update.html
     versionless: true
 
   - label: Versioning
     url: /mftf/docs/versioning.html
+    versionless: true
+  
+  - label: Backward incompatible changes in tests
+    url: /mftf/docs/backward-incompatible-changes.html
     versionless: true
 
   - label: Contribution guidelines
@@ -194,4 +208,8 @@ pages:
 
   - label: Changelog
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
+    versionless: true
+
+  - label: MFTF Guide (v2)
+    url: /mftf/v2/docs/introduction.html
     versionless: true
