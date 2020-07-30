@@ -3,60 +3,55 @@ group: marketplace-api
 title: Introduction
 ---
 
- {:.bs-callout-info}
-These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
+## What is the Marketplace EQP API
 
-The Magento Extension Quality Program (EQP) REST APIs provide access to the [Magento Developer Portal](https://developer.magento.com).
+The **Magento Marketplace Extension Quality Program ([EQP]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html)) REST API** provides access to the [Marketplace Developer Portal][1].
 
-Use these APIs to submit Magento 1 and Magento 2 extensions and themes to the Magento EQP for publication on the [Magento Marketplace](https://marketplace.magento.com). You can also manage extensions that you have uploaded to the [Developer Portal](https://developer.magento.com).
-The Magento EQP REST APIs are completely separate from those provided with Magento 1 and Magento 2. There are no corresponding SOAP APIs.
+The **Marketplace Developer Portal** provides you the capability to do the following:
 
-## EQP API requests
+-  publish your product's marketing information on the [Magento Marketplace][3]
+   -  this allows your customers to find and purchase each of your products
+-  publish your individual or company profile on the **Magento Marketplace**
+   -  this allows your customers to learn more about you and your company
+-  house your code for your Magento 2 extensions, themes, and shared packages on the **Magento Product Repository**
+   -  after your customers purchase your product, this allows your customers to download your code
 
-The APIs only accept encrypted communications using HTTPS at the following base URLs:
+## Why would I use this API
 
-```http
-https://developer-api.magento.com - Production
-https://developer-stg-api.magento.com - Sandbox
-```
+Uses of the Marketplace EQP API include the following:
 
-EQP APIs are based on REST concepts and use standard HTTP verbs:
+-  submit and manage your Magento 2 extensions, themes, and shared packages
+-  access and update your profile
+-  access your sales reports
 
--  GET
--  POST
--  PUT
--  DELETE
+<a id="eligible"/>
 
-All endpoints start with **/rest/v1**, which supports API versioning. The initial release is version 1 (v1).
-All request and response content is formatted using JSON, including error information.
+## Who is eligible to use this API
 
-## Error handling
+Only specific partners are eligible to use the Marketplace EQP API:
 
-All HTTP 4xx errors contain a JSON payload with the following structure:
+| Adobe partner | legacy Magento partner |
+| ------------- | ---------------------- |
+| Innovate      | General Technology Partner <br/> Select Extensions Partner <br/> Premier Extensions Partner |
+| Accelerate    | Select Technology Partner     |
+| Premier       | Premier Technology Partner    |
+| Bronze        | Community Insider Partner <br/> Business Solution Partner |
+| Silver        | Professional Solution Partner |
+| Gold          | Enterprise Solution Partner   |
+| Platinum      | Global Elite Solution Partner |
 
-```json
-{
-  "code" : 1208,
-  "message" : "Insufficient information for Technical Submission"
-}
-```
+See more information about [becoming a partner][4].
 
-Batch responses return a HTTP 200 response code, but each item in the batch array contains the `code` and `message` pair indicating an error. A `code` of 200 indicates success.
+## Where can I use this API
 
-```json
-[
-    {
-      "code" : 1208,
-      "message" : "Insufficient information for Technical Submission"
-    },
-    {
-      "code" : 1210,
-      "message" : "Invalid SKU given. SKU must be of the form 'vendor_name/package_name'"
-    },
-    {
-      "code" : 200,
-      "message" : "Success",
-      // ... etc. Successful batch submissions also have all the fields from a successful result.
-    }
-]
-```
+There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
+
+1. production - [https://developer.magento.com][1]
+1. sandbox - [https://developer-stg.magento.com][2]
+
+Use your same login information for the production **Marketplace Developer Portal** to also log into the **Sandbox Marketplace Developer Portal**. Learn more about the [sandbox](sandbox.html) environment.
+
+[1]: https://developer.magento.com
+[2]: https://developer-stg.magento.com
+[3]: https://marketplace.magento.com
+[4]: https://magento.com/partners/become

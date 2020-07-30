@@ -4,19 +4,19 @@ title: Packages
 ---
 
 Use this resource to initiate and manage all aspects of submitting a package to the
-[Magento Extension Quality Program (EQP)]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html).
+[Marketplace Extension Quality Program (EQP)]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html).
 You can provide all metadata associated with a package, both the technical and the marketing information, in a single step, or in several steps, using incremental updates.
 
-*  **Technical information** - References to code artifacts, such as Magento 1 TGZ files or Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
+*  **Technical information** - References to code artifacts, such as Composer-compliant Magento 2 ZIP files, version compatibility, and release notes.
 
-*  **Marketing information** - Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides (user, installation, and reference) in PDF.
+*  **Marketing information** - Includes package descriptions, images for icons and galleries, pricing information, support and installation services offered, and various guides (user, installation, and reference) in PDF.
 
 Before submitting a package, you must first [upload your files](files.html) and associate the ID returned by the
 `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
-You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
+You can also check package submission status and retrieve [testing information](test-results.html) from the technical and marketing reviews.
 
-A successful submission results in a package being published on the [Magento Marketplace](https://marketplace.magento.com/).
+A successful submission results in a package being published to the [Magento Marketplace](https://marketplace.magento.com/).
 
 ## EQP review process
 
@@ -44,7 +44,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |action.technical|string|POST, PUT|-|no|Actions to be taken towards technical review.|`draft` (default), `submit` (...to review), `recall` (...from review)|
 |action.marketing|string|POST, PUT|-|no|The actions to be taken towards marketing review.|`draft` (default), `submit` (...to review), `recall` (...from review)|
 |actions_now_available|string|GET, POST, PUT|-|no|The list of values currently valid in the `action` field for this package|Comma-separated list.|
-|artifact|object|GET, POST, PUT|technical|no|This is the package code artifact (TGZ file for Magento 1 or ZIP file for Magento 2) associated with this version.|See [Object Details](#object-details)|
+|artifact|object|GET, POST, PUT|technical|no|This is the package code artifact (ZIP file for Magento 2) associated with this version.|See [Object Details](#object-details)|
 |artifact.file_upload_id|string|GET, POST, PUT|technical|no|The only writable field of this sub-object, used to associate a file with this package version.|Unique file upload ID obtained from the Files API.|
 |artifact.filename|string|GET, POST, PUT|technical|no|The filename given when uploading the file.|Any valid filename|
 |artifact.content_type|string|GET, POST, PUT|-|no|The mime-type given when uploading the file.|Any valid mime-type|
@@ -92,7 +92,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M1`, `M2`|
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
-|prices[N].edition|string|GET, POST, PUT|marketing|no|The magento edition for this price|`CE`, `EE`, `ECE`|
+|prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
 |prices[N].price|number|GET, POST, PUT|marketing|no|The value for the purchase price of this package|A number, with up to two decimal places, eg 123.45|
 |prices[N].installation_price|string|GET, POST, PUT|marketing|no|The value for the installation price of this package|A number, with up to two decimal places, eg 123.45|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
@@ -148,17 +148,21 @@ Listing the JSON structure of objects described above:
 
 #### version_compatibility
 
-Assuming a Magento 2 package:
+For a new Magento 2 package:
 
 ```json
 "version_compatibility" : [
   {
     "edition" : "CE",
-    "versions" : ["2.0", "2.1", "2.2"]
+    "versions" : ["2.3", "2.4"]
   },
   {
     "edition" : "EE",
-    "versions" : ["2.0","2.1", "2.2"]
+    "versions" : ["2.2","2.3", "2.4"]
+  },
+  {
+    "edition" : "ECE",
+    "versions" : ["2.2", "2.3", "2.4"]
   }
 ]
 ```
@@ -252,13 +256,19 @@ The **video_urls** property is optional.
     "currency_code" : "USD",
     "price" : 45.00,
     "installation_price" : 0.00
+  },
+  {
+    "edition" : "ECE",
+    "currency_code" : "USD",
+    "price" : 60.00,
+    "installation_price" : 0.00
   }
 ]
 ```
 
 #### support_tiers
 
-Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be supported:
+Up to three tiers per edition (`CE` (Open Source), `EE` (Commerce), `ECE` (Cloud)) can be supported:
 
 ```json
 "support_tiers" : [
@@ -274,8 +284,34 @@ Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be su
         "price" : 25.00
       }
     ]
-
   },
+  {
+    "tier" : 2,
+    "edition" : "CE",
+    "monthly_period" : 3,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 75.00
+      }
+    ]
+  },
+  {
+    "tier" : 3,
+    "edition" : "CE",
+    "monthly_period" : 6,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 100.00
+      }
+    ]
+  },
+
   {
     "tier" : 1,
     "edition" : "EE",
@@ -288,7 +324,59 @@ Up to three tiers per edition (`CE` (Open Source) and `EE` (Commerce)) can be su
         "price" : 50.00
       }
     ]
+  },
+  {
+    "tier" : 2,
+    "edition" : "EE",
+    "monthly_period" : 9,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 60.00
+      }
+    ]
+  },
+  {
+    "tier" : 3,
+    "edition" : "EE",
+    "monthly_period" : 12,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 70.00
+      }
+    ]
+  },
 
+  {
+    "tier" : 1,
+    "edition" : "ECE",
+    "monthly_period" : 1,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 45.00
+      }
+    ]
+  },
+  {
+    "tier" : 2,
+    "edition" : "ECE",
+    "monthly_period" : 6,
+    "short_description" : "<Short description goes here.>",
+    "long_description" : "<Long description goes here.>",
+    "prices" : [
+      {
+        "currency_code" : "USD",
+        "price" : 60.00
+      }
+    ]
   }
 ]
 ```
@@ -336,7 +424,7 @@ The list of valid browsers is the same as for `browser_os_compatibility`.
 ```json
 "browsers" : [
   "chrome",
-  "firefox",
+  "firefox"
 ]
 ```
 
@@ -500,11 +588,15 @@ The following example shows a POST request with all required parameters set for 
     "version_compatibility" : [
       {
         "edition" : "CE",
-        "versions" : ["2.1", "2.2"]
+        "versions" : ["2.3", "2.4"]
       },
       {
         "edition" : "EE",
-        "versions" : ["2.1", "2.2"]
+        "versions" : ["2.3", "2.4"]
+      },
+      {
+        "edition" : "ECE",
+        "versions" : ["2.3", "2.4"]
       }
     ],
     "name" : "One Click Checkout",
@@ -565,6 +657,12 @@ The following example shows a POST request with all required parameters set for 
         "currency_code" : "USD",
         "price" : 45.00,
         "installation_price" : 0.00
+      },
+      {
+        "edition" : "ECE",
+        "currency_code" : "USD",
+        "price" : 30.00,
+        "installation_price" : 0.00
       }
     ],
     "license_type" : "bsd"
@@ -601,8 +699,8 @@ curl -X POST \
       "technical": "in_automation",
       "marketing": "awaiting_marketing_review"
     },
-    "created_at": "2018-04-23 16:00:00",
-    "modified_at": "2018-02-23 16:00:00"
+    "created_at": "2020-04-17 16:00:00",
+    "modified_at": "2020-04-17 16:00:00"
   }
 ]
 ```
@@ -610,11 +708,11 @@ curl -X POST \
 *  The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
 *  Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error.
    Refer to the message for more details.
-*  A unique `submission_id` is returned for each successful item, which must be used for any GET or PUT methods.
+*  A unique `submission_id` is returned for each successful item, which must be used for any subsequent GET or PUT methods.
 *  Optionally, if a user-defined `item_id` was supplied during the POST,
    the response will echo back the same `item_id` for each item in the batch.
    The resource can be retrieved via GET using the `item_id`.
-*  Any non-200 HTTP response code indicates an error for the entire batch request.
+*  Any non-200 HTTP response code indicates an error for the entire batch request. See [handling errors](handling-errors.html).
 
 ### Update a package
 
@@ -624,7 +722,7 @@ The PUT method can be used to update packages in the following states:
 *  The package has been rejected in either the technical or marketing review; or both.
    You must fix these issues and re-submit the package.
 *  The package has been released to the Magento Marketplace.
-*  The package was removed from the store by the developer and needs to be re-published.
+*  The package was removed from Magento Marketplace by the developer and needs to be re-published.
 *  The package can be recalled while in the EQP pipeline.
 *  After a package has been released to the Magento Marketplace, you can update marketing information only.
    Changing marketing information causes the package to be placed in marketing review.
@@ -743,11 +841,15 @@ curl -X GET \
     "version_compatibility" : [
       {
         "edition" : "CE",
-        "versions" : ["2.1", "2.2"]
+        "versions" : ["2.3", "2.4"]
       },
       {
         "edition" : "EE",
-        "versions" : ["2.1", "2.2"]
+        "versions" : ["2.3", "2.4"]
+      },
+      {
+        "edition" : "ECE",
+        "versions" : ["2.3", "2.4"]
       }
     ],
     "name" : "One Click Checkout",
@@ -860,6 +962,12 @@ curl -X GET \
         "currency_code" : "USD",
         "price" : 45.00,
         "installation_price" : 0.00
+      },
+      {
+        "edition" : "ECE",
+        "currency_code" : "USD",
+        "price" : 30.00,
+        "installation_price" : 0.00
       }
     ],
     "license_type" : "bsd",
@@ -868,14 +976,16 @@ curl -X GET \
       "technical" : "rejected",
       "marketing" : "approved"
     },
-    "created_at" : "2018-04-23 16:00:00",
-    "modified_at" : "2018-04-23 17:53:22"
+    "created_at": "2020-04-17 16:00:00",
+    "modified_at": "2020-04-17 22:00:00"
   }
 ]
 ```
 
+<!-- M1: tar ball ... packages.xml -->
+
 *  The previous example shows one product only, but an array of products can be returned.
-*  The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
+*  The `sku` and version will be determined from the code artifact (M2 zip file) meta-information (M2 `composer.json`), once it passes the malware checks.
 *  The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 *  The `eqp_status` field will indicate the current state of the package in the EQP process.
 

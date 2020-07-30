@@ -2,43 +2,44 @@
 group: marketplace-api
 title: Authentication
 ---
+
  {:.bs-callout-info}
-This authentication process is only for those in the Early Adopter Program for this API.
-It **WILL** be changing completely before these APIs are opened to the public, as will the base URLs.
-Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
-
 All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
-The REST APIs use a two-step process to authenticate a client application and authorize access to resources:
 
-1. Obtain a session token using an application ID and secret.
+The Marketplace EQP API uses a two-step process to authenticate a client application and authorize access to resources:
+
+1. Using your [API access key](access-keys.html), obtain a session token.
 1. Provide the session token as an HTTP Authorization Bearer header to access a resource.
-
-First, you must create a user profile on either the [Developer Portal](https://developer.magento.com) or the [Sandbox Developer Portal](https://developer-stg.magento.com/).
-Then contact the feedback address to request an application ID and secret.
 
 ## Base URLs
 
-In code examples in the documentation, we use the Base URL of the sandbox.
+In code examples in this documentation, we use the Base URL of the [sandbox](sandbox.html).
 
-Once you are confident that your API calls are correct and you wish to submit a package for full manual review,
-simply use the production Base URL instead of the sandbox one, and your Production application ID and secret.
+Once you are confident your **sandbox** API calls are correct, and you wish to submit a package for full manual review on the **production** environment, do the following:
 
-|Server|Base Url|
-|------|--------|
-|sandbox|`https://developer-stg-api.magento.com`|
-|production|`https://developer-api.magento.com`|
+-  use the **production** Base URL instead of the sandbox one
+-  use your **production** API access key: application ID and application secret
 
-## Application ID and secret
+|Environment|Base Url|
+|-----------|--------|
+|sandbox    |`https://developer-stg-api.magento.com`|
+|production |`https://developer-api.magento.com`    |
 
-You must use an application ID and secret to obtain a session token.
-See the following list for examples of an application ID and secret:
+## Authentication and authorization flow
 
-*  **id** — `AQ17NZ49WC`
-*  **secret** — `8820c99614d65f923df7660276f20e029d73e2ca`
+### Example API Access Key
 
-## Session token
+You must use your [API access key](access-keys.html) -- which is an application ID and secret -- to obtain your session token.
+The following is an example:
 
-The following endpoint grants an application session token:
+-  **application ID** — `AQ17NZ49WC`
+-  **application secret** — `8820c99614d65f923df7660276f20e029d73e2ca`
+
+<a id="session-token"/>
+
+### Obtaining a session token
+
+The following endpoint grants a session token:
 
 ```http
 POST /rest/v1/app/session/token
@@ -58,9 +59,7 @@ Field details:
 
 |Field|Type|Description|
 |-----|----|-----------|
-|grant_type|string|The API supports the `session` grant type only: other values will give an error.|
-
-Other parameters are accepted but ignored.
+|grant_type|string|The API only supports the `session` grant type; other values will give an error.|
 
 **Request:**
 
@@ -82,7 +81,7 @@ A successful HTTP 200 OK response will be sent for a valid application ID and se
 {
  "mage_id": "MAG123456789",
  "ust": "baGXoStRuR9VCDFQGZNzgNqbqu5WUwlr.cAxZJ9m22Le7",
- "expires_in": 3600
+ "expires_in": 7200
 }
 ```
 
@@ -90,17 +89,21 @@ Field details:
 
 |Field|Type|Description|
 |-----|----|-----------|
-|mage_id|string|User account associated with the client application.|
-|ust|string|User Session Token, must be used as the `Authorization: Bearer` header for all subsequent API calls.|
+|mage_id|string|Your user account.  This is your "Magento ID."|
+|ust|string|User Session Token. Will be used in the **`Authorization: Bearer`** header for all subsequent API calls.|
 |expires_in|int|Number of seconds the session token will be valid.|
 
-Once the User Session Token expires, a new token must be obtained as described above.
-Multiple User Session Tokens may be valid at the same time, so you can run multiple scripts at the same time.
+-  The session token has a relatively short duration.
+-  You can get as many session tokens as you need.  You do **not** need to wait for a session token to expire before requesting another one.  Multiple session tokens can be active at the same time, so you can run multiple scripts at the same time.
+-  Once the session token expires, a new token must be obtained as described above.
+-  Session tokens are specific to each environment.  Session tokens generated for the **sandbox** cannot be used for **production**, and vice-versa.
 
-## Authorization bearer
+<a id="session-token-use"/>
 
-After obtaining a valid User Session Token, you must use it as a bearer token in all subsequent API calls.
-For example, to access a user profile with a User Session Token:
+## How to use a session token
+
+After obtaining a valid session token, you must use it as an **authorization bearer token** in all subsequent API calls.
+Using the example values from above, to access your user profile with a session token:
 
 ```bash
 curl -X GET \

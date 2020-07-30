@@ -3,21 +3,21 @@ group: marketplace-api
 title: Users
 ---
 
-The `users` resource accesses and updates your user profile. You can also access reports you own.
+The `users` resource accesses and updates your user profile. You can also access your sales reports.
 
-{:.bs-callout-info}
-You cannot use this resource to create a new
-profile. You must create a new profile on the [Developer Portal](https://developer.magento.com).
+ {:.bs-callout-info}
+You cannot use this resource to create a new profile.
+You must create a new profile on the [Marketplace Developer Portal][1].
+If you use the [sandbox](sandbox.html) environment, you must also create a new profile on the [Sandbox Marketplace Developer Portal][2].
 
 ## Profile
 
-You must use the `mage_id` associated with the client application in your developer account when making
-requests to these endpoints. You can get this ID when obtaining a [session token](auth.html#session-token).
+You must use your `mage_id` for these endpoints.
+One way you can get your `mage_id` is when you obtain a [session token](auth.html#session-token).
 
 ```http
 GET /rest/v1/users/:mage_id
 GET /rest/v1/users/:mage_id?style=summary
-PUT /rest/v1/users/:mage_id
 ```
 
 ### Get profile data
@@ -57,14 +57,14 @@ curl -X GET \
         },
 
         "tos_accepted_version": "1.0",
-        "tos_accepted_date": "2017-11-16 01:23:45",
+        "tos_accepted_date": "2018-11-16 01:23:45",
         "is_company": false,
         "vendor_name": "johnsmith",
         "partner_level": 4,
         "locale": "en-US",
         "timezone": "UTC",
         "payment_type": 1,
-        "payment_info": {"paypal_email" : "jsmith@example.com"},
+        "payment_info": "{\"paypal_email\" : \"jsmith@example.com\"}",
         "taxpayer_type": 2,
         "tax_review_status": 3,
         "tax_withhold_percent": 25,
@@ -82,11 +82,11 @@ curl -X GET \
         ],
         "personal_profile": {
             "bio": "Writes extensions that pass review first time. Blindfolded.",
-            "last_logged_in": "2017-09-30 8:09:10",
-            "created_at": "2016-02-29 14:04:59",
-            "modified_at": "2017-11-16 01:23:45",
+            "last_logged_in": "2020-07-21 8:09:10",
+            "created_at": "2018-10-01 14:04:59",
+            "modified_at": "2020-03-14 01:23:45",
             "social_media_info": {
-                "twitter": "@magento",
+                "twitter": "@johnsmith",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -99,7 +99,7 @@ curl -X GET \
                     "state": "Texas",
                     "country": "USA",
                     "postal_code": "77777",
-                    "phone": "555-1234-5678",
+                    "phone": "555-123-4567",
                     "country_code": "+1",
                     "is_primary": true
                 }
@@ -112,10 +112,10 @@ curl -X GET \
             "website_url": "https://www.example.com/",
             "primary_email": "jsmith@example.com",
             "support_email": "support@example.com",
-            "created_at": "2016-02-29 14:04:59",
-            "modified_at": "2017-09-30 01:23:45",
+            "created_at": "2018-10-01 14:04:59",
+            "modified_at": "2019-12-25 01:23:45",
             "social_media_info": {
-                "twitter": "@magento",
+                "twitter": "@johnsmithinc",
                 "stackexchange_url": "",
                 "facebook_url": "",
                 "linkedin_url": "",
@@ -128,7 +128,7 @@ curl -X GET \
                     "state": "Texas",
                     "country": "USA",
                     "postal_code": "77777",
-                    "phone": "555-1234-5678",
+                    "phone": "555-123-4567",
                     "country_code": "+1",
                     "is_primary": true
                 }
@@ -172,7 +172,11 @@ curl -X GET \
 
 ### Update profile data
 
-You can update all profile data fields, but you only need to include the fields you want to modify in the request body.
+You can update most of your profile data fields, but you only need to include the fields you want to modify in the request body.
+
+```http
+PUT /rest/v1/users/:mage_id
+```
 
 The following example shows a request to update the personal profile bio field:
 
@@ -187,9 +191,8 @@ The following example shows a request to update the personal profile bio field:
 
 The `action` field specifies which update operation to perform:
 
-*  `submit` --- The default if not specified. Publishes the profile to the relevant
-   [Marketplace Store Partners page](https://marketplace.magento.com/partners.html).
-*  `draft` --- The update is saved on the Developer Portal, but not published.
+*  `submit` --- Once your profile is complete, publishes the profile to the Magento Marketplace [partners page](https://marketplace.magento.com/partners.html).
+*  `draft` --- The update is saved on the Marketplace Developer Portal, but not published to the Magento Marketplace.
 
 **Request:**
 
@@ -203,9 +206,9 @@ curl -X PUT \
 
 A 200 OK HTTP response code indicates a successful update.
 
-## Keys
+## Magento 2 package access keys
 
-Use these APIs to manage Magento 1 and Magento 2 package access keys.
+Use these endpoints to manage your Magento 2 package access keys.  (These keys are **not** your [API access keys](access-keys.html).)
 
 ```http
 GET     /rest/v1/users/:mage_id/keys
@@ -216,7 +219,7 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 ### Get keys
 
-Use this API to return the keys associated with the specified `mage_id`.
+Use this endpoint to return the keys associated with the specified `mage_id`.
 
 ```http
 GET /rest/v1/users/:mage_id/keys
@@ -273,15 +276,9 @@ curl -X GET \
 *  A Composer key-pair is identified by `user_key` (username) and
    `password_key` (password) when prompted for Composer credentials.
 
-#### Magento 1 keys
-
-*  Provides a list of product names and associated product keys,
-   which can be used in the Magento Connect Manager to install extensions.
-*  You cannot create, update, or delete these keys.
-
 ### Create keys
 
-Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key.
+Use this endpoint to create new Magento 2 Composer key-pairs. You must specify a unique label for each key.
 You can create multiple key-pairs in a single request.
 
 ```http
@@ -342,7 +339,7 @@ curl -X POST \
 
 ### Update keys
 
-Use this API to enable or disable a Magento 2 Composer key-pair.
+Use this endpoint to enable or disable a Magento 2 Composer key-pair.
 You must specify the key-pair in the request using a URL-encoded string.
 
 ```http
@@ -376,7 +373,7 @@ curl -X PUT \
 
 ### Delete keys
 
-This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
+This endpoint can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.
 
 ```http
 DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
@@ -394,9 +391,11 @@ curl -X DELETE \
 
 A 204 No Content HTTP response code indicates a successful update.
 
+<a id="user-reports"/>
+
 ## Reports
 
-Use this API to retrieve reports owned by a specific user.
+Use these endpoints to retrieve reports owned by a specific user.
 Reports contain information about extension sales, payout status, aggregate sales, refund data, and more.
 
 ```http
@@ -406,5 +405,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
- {:.bs-callout-info}
-The Reports API specification is under design review. More details will be announced in the future.
+[1]: https://developer.magento.com
+[2]: https://developer-stg.magento.com
