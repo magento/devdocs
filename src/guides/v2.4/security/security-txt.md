@@ -1,6 +1,8 @@
 ---
 group: configuration-guide
 title: Security.txt
+contributor_name: Kalpesh Mehta from Corra
+contributor_link: https://partners.magento.com/portal/details/partner/id/70/
 functional_areas:
   - Configuration
 ---
