@@ -42,7 +42,7 @@ Asynchronous and Bulk APIs were built on top of standard Rest API. Topics for me
 
 `generateTopicNameFromService($serviceInterface, $serviceMethod, $httpMethod)` is responsible for generating topic name based on Service Contract interface, Service Contract method and http method.
 
-As example, from route defined in `webapi.xml`: 
+As example, from route defined in `webapi.xml`:
 
 ```xml
 <route url="/V1/products" method="POST">
@@ -53,16 +53,16 @@ As example, from route defined in `webapi.xml`:
 </route>
 ```
 
-will be generated the following topic name: 
+will be generated the following topic name:
 
 `async.magento.catalog.api.productrepositoryinterface.save.post`.
 
 It consists of following parts:
 
-* "async." as a prefix
-* lower cased service class
-* lower cased service method
-* lover cased http method
+*  "async." as a prefix
+*  lower cased service class
+*  lower cased service method
+*  lover cased http method
 
 Unfortunately there are no easy way to receive list of all generated topic names, but knowing this pattern developers can easily find required topic name and use it for executing of service contracts in asynchronous manner.
 
