@@ -32,7 +32,7 @@ In Magento, topics are usually defined in `communication.xml` configuration file
 
 Sort order is set to 0 and this allow developers to change some aspect of generated configuration in following config readers such as `communication.xml`, `env.php`.
 
-`\Magento\Framework\Communication\Config\CompositeReader::read()` collects configs from defined readers and merge config from them to one config.
+`\Magento\Framework\Communication\Config\CompositeReader::read()` collects configuration records from defined readers and merges these records into one config.
 
 Because generation of topics config is based on schema type, generated `<topic>` xml, by default will be returned with `"sync"=true` and `response` based on service response definition. So `WebapiAsync` module will change those settings to `"sync"=false` and `response` set to null. This changes will allow to execute topics in asynchronous mode.
 
