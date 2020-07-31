@@ -42,6 +42,9 @@ After successfully creating and testing the local installation to use multiple s
 1. **Modify Magento variables**—specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in the `magento-vars.php` file
 1. **Deploy and test environments**—deploy and test the `integration` branch
 
+{:.bs-callout-tip}
+You can also use a local {{site.data.var.mcd-prod}} environment to set up multiple websites or stores. See the Cloud Docker instructions to [Set up multiple websites or stores]({{site.baseurl}}/cloud/docker/docker-multi-website.html).
+
 ### Configure routes for separate domains {#routes}
 
 Routes define how to process incoming URLs. Multiple stores with unique domains requires you to define each domain in the `routes.yaml` file. The way you configure routes depends on how you want your site to operate.
