@@ -17,8 +17,8 @@ Magento Cloud Docker supports multi-website by using different subdomains.
     ```ini
     auto_prepend_file = /app/magento-vars.php
     ```
-
-Magento Cloud Docker read the `php.ini` file if it is included in your project.
+    {:.bs-callout-info}
+    {{ site.data.var.mcd-prod }} applies the configuration in the `php.ini` file if it is included in the root directory of your project.
 
 1. Each subdomain must be added to `/etc/hosts` configuration file
 
