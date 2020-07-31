@@ -12,7 +12,7 @@ Magento Cloud Docker supports multi-website by using different subdomains.
 
 ## Add subdomains
 
-1. Ensure the `php.ini` file included and pints to correct `magento-vars.php` configration
+1. Ensure that the `php.ini` file includes the configuration for the `magento-vars.php` file:
 
     ```ini
     auto_prepend_file = /app/magento-vars.php
