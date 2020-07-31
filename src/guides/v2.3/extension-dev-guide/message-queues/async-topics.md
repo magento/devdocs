@@ -34,7 +34,7 @@ Sort order is set to 0 and this allow developers to change some aspect of genera
 
 `\Magento\Framework\Communication\Config\CompositeReader::read()` collects configuration records from defined readers and merges these records into one config.
 
-Because generation of topics config is based on schema type, generated `<topic>` xml, by default will be returned with `"sync"=true` and `response` based on service response definition. So `WebapiAsync` module will change those settings to `"sync"=false` and `response` set to null. This changes will allow to execute topics in asynchronous mode.
+Because the generation of topics config is based on schema type, generated `<topic>` XML, by default will be returned with `"sync"=true` and `response` based on service response definition. So `WebapiAsync` module will change those settings to `"sync"=false` and `response` set to null. These changes will allow to execute topics in asynchronous mode.
 
 ### Topics generation
 
