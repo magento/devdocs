@@ -30,7 +30,7 @@ In Magento, topics are usually defined in `communication.xml` configuration file
 </type>
 ```
 
-Sort order is set to 0 and this allow developers to change some aspect of generated configuration in following config readers such as `communication.xml`, `env.php`.
+Sort order is set to 0 and this allows developers to change some aspects of generated configuration in the config readers such as `communication.xml`, `env.php`.
 
 `\Magento\Framework\Communication\Config\CompositeReader::read()` collects configuration records from defined readers and merges these records into one config.
 
