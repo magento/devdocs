@@ -161,7 +161,7 @@ The following table lists the services used in {{site.data.var.ece}} and their v
 {:.error-table}
 Service   |  Magento 2.4  |Magento 2.3  | Magento 2.2
 --------- | ------------- |-------------| ------------
-`elasticsearch` | 7.5.x, 7.6.x, 7.7.x | **Magento version 2.3.5 and later**— 5.2, 6.5, 7.2, 7.5<br>**Magento version 2.3.1 to 2.3.4**— 6.5<br>**Magento version 2.3.0**— 2.4, 5.2  | **Magento version 2.2.8 and later**— 5.2, 6.5 <br>**Magento version 2.2.0 to 2.2.7**— 5.2
+`elasticsearch` | 7.4.x, 7.5.x, 7.6.x, 7.7.x | **Magento version 2.3.5 and later**— 5.2, 6.5, 6.8, 7.4, 7.5, 7.6, 7.7<br>**Magento version 2.3.1 to 2.3.4**— 5.2, 6.5<br>**Magento version 2.3.0**— 5.2  | **Magento version 2.2.8 and later**— 5.2, 6.5 <br>**Magento version 2.2.0 to 2.2.7**— 5.2
 `mariadb` | 10.2, 10.3, 10.4 | **Magento version 2.3.0 to 2.3.5**–10.1 to 10.2<br> | 10.1 to 10.2
 `nginx`   | | 1.9           | 1.9
 `node`    | | 6, 8, 10, 11  | 6, 8, 10, 11
