@@ -27,7 +27,7 @@ Amazon Sales Channel 4.2.0 is compatible with versions 2.3.x but only supported 
 
 This version of Amazon Sales Channel includes a new feature along with improvements and fixes.
 
--  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management](https://docs.magento.com/user-guide/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento version.
+-  {:.bug}When Amazon Sales Channel 4.2.0 is integrated with Magento 2.4.0 and [Inventory Management](https://docs.magento.com/user-guide/catalog/inventory.html) (MSI) is enabled, there is a known issue that prevents the addition of products in your Magento catalog. This issue will be addressed in a future Magento release.
 
 -  {:.new}Amazon Sales Channel has been enhanced to accept text-based address data and match it to standardized address formats, including city, state, and zip code. This enables order and shipping data to synchvronize (sync) with Amazon without address errors.<br/>For example, a shopper inputs the city, state, zip code as `Escondido, californiA 92025-1501`. Amazon Sales Channel imports and matches the data to the standard format as `Escondido, CA 92025`, and then syncs it back to Amazon in this standardized format.
 
