@@ -9,7 +9,7 @@ functional_areas:
 
 Magento Queuing system is using topics exchange for managing messages. More detailed information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html){:target="_blank"}.
 
-In Magento, topics are usually defined in communication.xml configuration files. See [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml) https://devdocs.magento.com/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml
+In Magento, topics are usually defined in `communication.xml` configuration files. See [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml)
 
 ### Generating of communication.xml
 
@@ -65,4 +65,3 @@ It consists of following parts:
 *  lover cased http method
 
 Unfortunately there are no easy way to receive list of all generated topic names, but knowing this pattern developers can easily find required topic name and use it for executing of service contracts in asynchronous manner.
-
