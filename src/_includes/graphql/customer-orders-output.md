@@ -63,7 +63,15 @@ Attribute | Data type | Description
 
 The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query.
 
-#### BundleInvoiceItem {#BundleInvoiceItem}
+#### BundleCreditMemoItem attributes {#BundleCreditMemoItem}
+
+The `BundleCreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
+
+#### BundleInvoiceItem attributes {#BundleInvoiceItem}
 
 The `BundleInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
 
@@ -71,7 +79,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
-#### BundleOrderItem {#BundleOrderItem}
+#### BundleOrderItem attributes {#BundleOrderItem}
 
 The `BundleOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
 
@@ -100,31 +108,37 @@ Attribute | Data type | Description
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
-#### CreditMemoItem attributes {#CreditMemoItem}
+#### CreditMemoInterface attributes {#CreditMemoInterface}
 
-The `CreditMemoItem` object describes a specific credit memo.
+The `CreditMemoItemInterface` describes a specific credit memo.
 
 Attribute | Data type | Description
 --- | --- | ---
-`discounts` | [Discount] | The final discount information for the base product, including discounts on options
 `id` | ID! | The unique ID of the credit memo item
-`order_item` | [OrderItemInterface](#OrderItemInterface) | Contains details about a refunded order item
+`order_item` | [OrderItemInterface](#OrderItemInterface) | The order item the credit memo is applied to
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price for the base product, including selected options
 `product_sku` | String! | The SKU of the base product
-`quantity_invoiced` | Float | The number of invoiced items
+`quantity_refunded` | Float | The number of refunded items
+
+#### CreditMemoItem attributes {#CreditMemoItem}
+
+The `CreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface).
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
-The CreditMemoTotal object contains details about the totals of a credit memo.
+The `CreditMemoTotal` object contains details about the totals of a credit memo.
 
 Attribute | Data type | Description
 --- | --- | ---
+`adjustment` | Money! | An adjustment manually applied to the order
 `base_grand_total` | Money! | The final base grand total amount in the base currency
 `discounts` | [Discount] | The applied discounts to the order
 `grand_total` | Money! | The final total amount, including shipping, discounts, and taxes
+`shipping_handling` | [ShippingHandling](#ShippingHandling) | Contains details about the shipping and handling costs for the credit memo
 `subtotal` | Money! | The subtotal of the order, excluding shipping, discounts, and taxes
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
+`total_shipping` | Money! | The shipping amount for the credit memo
 `total_tax` | Money! | The amount of tax applied to all orders
 
 #### Discount attributes {#Discount}
