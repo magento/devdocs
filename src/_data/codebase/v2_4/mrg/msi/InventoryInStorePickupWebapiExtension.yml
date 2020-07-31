@@ -4,9 +4,9 @@ source_repo: inventory
 release: 1.2.0
 github_path: InventoryInStorePickupWebapiExtension/README.md
 last_modified_at: '2019-09-17 09:16:51 +0300'
-content: "# InventoryInStorePickupWebapiExtension module (Abandoned)\n\nThe `InventoryInStorePickupWebapiExtension`
-  \ is a part of `InStorePickup` implementation.\n\nThis module is part of the new
-  inventory infrastructure. The\n[Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
+content: "The `InventoryInStorePickupWebapiExtension`  is a part of `InStorePickup`
+  implementation.\n\nThis module is part of the new inventory infrastructure. The\n[Inventory
+  Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html)\ndescribes
   the MSI (Multi-Source Inventory) project in more detail.\nThe module provide fix
   for usage of extension attributes as parameter for get endpoint in web API.\nThe
   module is abandoned and will be removed as soon as fix for the described issue will
