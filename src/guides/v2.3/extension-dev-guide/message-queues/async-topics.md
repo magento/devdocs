@@ -13,7 +13,7 @@ In Magento, topics are usually defined in `communication.xml` configuration file
 
 ### Generating of communication.xml
 
-`communication.xml` for asynchronous api, is pre-generated automatically by `WebapiAsync` module. This module also automatically generating topic names for asynchronous processes. File generation processed by `\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Communication` class, which implements `\Magento\Framework\Config\ReaderInterface` and injected into `\Magento\Framework\Communication\Config\CompositeReader` constructor argument of main `di.xml` file.
+`communication.xml` for asynchronous API, is pre-generated automatically by `WebapiAsync` module. This module also automatically generating topic names for asynchronous processes. File generation processed by `\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Communication` class, which implements `\Magento\Framework\Config\ReaderInterface` and injected into `\Magento\Framework\Communication\Config\CompositeReader` constructor argument of main `di.xml` file.
 
 ```xml
 <type name="Magento\Framework\Communication\Config\CompositeReader">
