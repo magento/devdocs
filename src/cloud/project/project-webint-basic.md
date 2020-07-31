@@ -152,7 +152,7 @@ An environment's history includes:
 -  Syncs and merges
 -  Code pushes
 
-To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html).
+To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 
 The following figure shows a sample history.
 
