@@ -38,7 +38,7 @@ Because the generation of topics config is based on schema type, generated `<top
 
 ### Topics generation
 
-Asynchronous and Bulk APIs were built on top of standard Rest API. Topics for messages processing of the Asynchronous and Bulk Apis are generated automatically, together with `communication.xml` schema. This is done by `\Magento\WebapiAsync\Model\Config::getServices()`. Current method is responsible for retrieving all service contracts defined in `webapi.xml` files and generate topic names for corresponding asynchronous requests.
+Asynchronous and Bulk APIs were built on top of standard Rest API. Topics for messages processing of the Asynchronous and Bulk APIs are generated automatically, together with `communication.xml` schema. This is done by `\Magento\WebapiAsync\Model\Config::getServices()`. Current method is responsible for retrieving all service contracts defined in `webapi.xml` files and generate topic names for corresponding asynchronous requests.
 
 `generateTopicNameFromService($serviceInterface, $serviceMethod, $httpMethod)` is responsible for generating topic name based on Service Contract interface, Service Contract method and http method.
 
