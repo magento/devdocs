@@ -32,8 +32,8 @@ You can make next changes while your Cloud Docker is running.
 
 1. Add specific stores and websites in Magento admin:
 
-    * [Set up websites, stores, and store views]({{site.baseurl}}/cloud/project/project-multi-sites.html#set-stores)
+   - [Set up websites, stores, and store views]({{site.baseurl}}/cloud/project/project-multi-sites.html#set-stores)
 
 1. Use `magento-vars.php` configuration to add Magento store and website codes:
 
-    * [Modify Magento variables]({{site.baseurl}}/cloud/project/project-multi-sites.html#modify-magento-variables)
+   - [Modify Magento variables]({{site.baseurl}}/cloud/project/project-multi-sites.html#modify-magento-variables)
