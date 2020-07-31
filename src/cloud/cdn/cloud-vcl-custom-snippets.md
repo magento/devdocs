@@ -14,7 +14,7 @@ Custom VCL snippets—generated, compiled, and transmitted to all Fastly caches�
 
 Fastly supports two types of custom VCL snippets:
 
--  [Regular snippets](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets)—Custom regular VCL snippets are dependent on a specific VCL version. You can create, modify, and deploy regular VCL snippets from the Magento Admin UI or the Fastly API.
+-  [Regular snippets](https://docs.fastly.com/en/guides/about-vcl-snippets)—Custom regular VCL snippets are dependent on a specific VCL version. You can create, modify, and deploy regular VCL snippets from the Magento Admin UI or the Fastly API.
 
 -  [Dynamic snippets](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets)—VCL snippets created using the Fastly API. You can modify and deploy dynamic snippets without having to update the Fastly VCL version for your service.
 
@@ -77,7 +77,7 @@ The following table provides details about key data for custom VCL snippets.  Fo
 | `type`       | Specifies a location for inserting the generated snippet, such as init (above subroutines) and recv (within subroutines). See Fastly VCL snippet object values for information on these values. See the Fastly [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference.
 | `content`    | The snippet of VCL code to run. Fastly does not support all VCL language features, and it also provides extensions with custom functionality. See the [Fastly VCL programming reference](https://docs.fastly.com/vcl/reference/) for information about supported VCL code features.
 | `priority`   | Numeric value from `1` to `100` that specifies when the custom VCL snippet code runs. Snippets with lower priority values run first. If not specified, the `priority` value defaults to `100`.<br><br> Any custom VCL snippet with a priority value of `5` runs immediately, which is best for VCL code that implements request routing (block and allow lists and redirects). Priority `100` is best for overriding default VCL snippet code. <br><br>All [default VCL snippets]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) included in the Magento-Fastly module have `priority=50`.<br>-  Assign a high priority like `100` to run custom VCL code after all other VCL functions and override the default VCL code.
-| `dynamic` | Indicates if this is a [regular snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which is included in the versioned VCL for the Fastly service configuration, or a [dynamic snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which can be modified and deployed without requiring a new VCL version.
+| `dynamic` | Indicates if this is a [regular snippet](https://docs.fastly.com/en/guides/about-vcl-snippets) which is included in the versioned VCL for the Fastly service configuration, or a [dynamic snippet](https://docs.fastly.com/vcl/vcl-snippets/using-dynamic-vcl-snippets/) which can be modified and deployed without requiring a new VCL version.
 | `active`  | Indicates if the snippet or version is activated and in use. Returns `true` or `false`. Make note of the version number for an active snippet. Use this to clone the version.
 
 ## Manage custom VCL snippets from the Magento Admin UI
@@ -90,7 +90,7 @@ The *Custom VCL snippets* view shows only the snippets added through the Magento
 
 See the following examples that show how to create and manage custom VCL snippets from the Magento Admin UI:
 
--  [Custom VCL for IP allowlist]({{ site.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
+-  [Custom VCL for IP allowlist]({{ site.baseurl }}/cloud/cdn/fastly-vcl-allowlist.html)
 -  [Block referral spam]({{ site.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
 
 ## Manage custom VCL snippets using the API
@@ -215,7 +215,7 @@ The values include:
 
 -  `name`—Name for the VCL snippet.
 
--  `dynamic`—Indicates if this is a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) or a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
+-  `dynamic`—Indicates if this is a [regular snippet](https://docs.fastly.com/en/guides/about-vcl-snippets) or a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets).
 
 -  `type`—Specifies the location for inserting the generated snippet, such as `init` (above subroutines) and `recv` (within subroutines). See [Fastly VCL snippet object values](https://docs.fastly.com/api/config#snippet) for information on these values.
 
