@@ -1,6 +1,6 @@
 ---
 group: mftf
-title: MFTF action group reference
+title: Magento action group reference
 functional_areas:
 - Test
 ---
