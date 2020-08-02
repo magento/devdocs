@@ -758,6 +758,15 @@ Attribute |  Data Type | Description
 `message` | String! | The gift message text
 `to` | String! | Identifies the recipient
 
+### RewardPointsAmount {#RewardPointsAmount}
+
+The `RewardPointsAmount` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`points` | Float! | The amount of reward points, in points
+`money` | Money! | The amount of reward points, in the store's currency
+
 ### SelectedPaymentMethod object {#SelectedPaymentMethod}
 
 The `SelectedPaymentMethod` object can contain the following attributes.

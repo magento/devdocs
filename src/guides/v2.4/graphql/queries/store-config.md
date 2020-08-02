@@ -313,7 +313,7 @@ Attribute |  Data Type | Description | Example
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
 `grid_per_page` | Int | The default number of products per page in Grid View | `9`
-`grid_per_page_values` | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
+`grid_per_page_values` | String | A list of numbers that define how many products can be displayed in List View  | `9,15,30`
 `list_mode` | String  | The format of the search results list | `grid-list`
 `list_per_page` | Int | The default number of products per page in List View | `10`
 `list_per_page_values` | String | A list of numbers that define how many products can be displayed in List View | `5,10,15,20,25`
@@ -339,6 +339,24 @@ Attribute |  Data Type | Description | Configuration path | Default Value
 --- | --- | ---
 `allow_order` | String | Allows gift messages at the order level. Possible values: 1 (Yes) and 0 (No). | sales/gift_options/allow_order | 0
 `allow_items` | String | Allows gift messages for order items. Possible values: 1 (Yes) and 0 (No). | sales/gift_options/allow_items | 0
+
+### Supported reward points attributes
+
+Attribute |  Data Type | Description |  Default Value
+--- | --- | ---
+`magento_reward_general_is_enabled` | String | Indicates whether reward points are enabled. | `1` (enabled)
+`magento_reward_general_is_enabled_on_front` | String | Indicates whether reward points functionality is enabled on the storefront | `1` (enabled)
+`magento_reward_general_min_points_balance` | String | The minimum point balance customers must have before they can redeem them. A null value indicates no minimum | null
+`magento_reward_general_publish_history` | String | When enabled, customers can see a detailed history of their reward points | `1` (enabled)
+`magento_reward_points_invitation_customer` | String | The number of points for a referral when the invitee registers on the site | null
+`magento_reward_points_invitation_customer_limit` | String | The maximum number of registration referrals that qualify for rewards. A null value indicates no limit | null
+`magento_reward_points_invitation_order` | String | The number of points for a referral when the invitee places their first order on the site | null
+`magento_reward_points_invitation_order_limit` | String | The number of order conversions that can earn points for the customer who sends the invitation. A null value indicates no limit | null
+`magento_reward_points_newsletter` | String | The number of points earned by registered customers who subscribe to a newsletter | null
+`magento_reward_points_order` | String | Indicates whether customers earn points for shopping according to the reward point exchange rate. In Luma, this also controls whether to show a message in the shopping cart about the rewards points earned for the purchase, as well as the customer’s current reward point balance | null
+`magento_reward_points_register` | String | The number of points a customer gets for registering | null
+`magento_reward_points_review` | String | The number of points for writing a review | null
+`magento_reward_points_review_limit` | String | The maximum number of reviews that qualify for  rewards. A null value indicates no limit | null
 
 ### Supported WEEE (fixed product tax) attributes
 
