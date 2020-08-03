@@ -86,7 +86,7 @@ mysql:
     type: mysql:10.2
 ```
 
-Use [`Service versions`]{Service versions} table to see supported services and their versions
+Use [`Service versions`](#Service versions) table to see supported services and their versions
 
 ### `disk`
 
