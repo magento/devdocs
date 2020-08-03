@@ -202,6 +202,10 @@ check_links: true
 # Magento 2 repository variable
 mage2bloburl: https://github.com/magento/magento2/blob
 
+# Current version
+gdeurl: /guides/v2.4
+githuburl: https://github.com/magento/devdocs/tree/master/src/guides/v2.4
+
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/

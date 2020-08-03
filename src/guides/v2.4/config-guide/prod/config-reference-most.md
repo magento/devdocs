@@ -211,6 +211,7 @@ Show Results Count for Each Suggestion | `catalog/search/search_suggestion_count
 Enable Search Recommendations | `catalog/search/search_recommendations_enabled` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Search Recommendations Count | `catalog/search/search_recommendations_count` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
 Show Results Count for Each Recommendation | `catalog/search/search_recommendations_count_results_enabled` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) |
+Minimum Terms to Match | `catalog/search/minimum_should_match` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Popular Search Terms | `catalog/seo/search_terms` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Product URL Suffix | `catalog/seo/product_url_suffix` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Category URL Suffix | `catalog/seo/category_url_suffix` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
