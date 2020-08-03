@@ -86,7 +86,7 @@ mysql:
     type: mysql:10.2
 ```
 
-Use [`Service versions`](#Service versions) table to see supported services and their versions
+Use [`Service versions`](#service-versions) table to see supported services and their versions
 
 ### `disk`
 
@@ -184,6 +184,141 @@ During the deployment process, {{site.data.var.ct}} checks installed service ver
 
 To maintain Magento store security, update installed software versions before they reach EOL.
 
+## Change service version
+
+You can upgrade the installed service version for compatibility with the Magento version deployed in your Cloud environment.
+
+You cannot downgrade the service version for an installed service directly. However, you can create a new service with the required version. See [Downgrade service version](#downgrade-version).
+
+Use the [Service versions](#service-versions) table to check service version compatibility by Magento version. Note that some service versions supported by {{ site.data.var.ee }} are not supported on {{ site.data.var.ece }}.
+
+{:.bs-callout-warning}
+You must submit a support ticket to change the service configuration on Pro Production and Staging environments.
+
+{:.bs-callout-info}
+If you change the Elasticsearch service version, check the Elasticsearch composer package for compatibility with the new version. See [Elasticsearch software compatibility]({{ site.baseurl}}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
+
+### Upgrade installed service version
+
+You can upgrade the installed service version by updating the service configuration in the `services.yaml` file.
+
+1. Change the [`type`](#type) value for the service in the `.magento/services.yaml` file:
+
+   > Original service definition
+
+   ```yaml
+   mysql:
+       type: mysql:10.2
+       disk: 2048
+   ```
+
+   > Updated service definition
+
+   ```yaml
+   mysql:
+       type: mysql:10.3
+       disk: 2048
+   ```
+
+1. Add, commit, and push your code changes.
+
+   ```bash
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Upgrade MySQL from MariaDB 10.2 to 10.3."
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
+### Downgrade version
+
+You cannot downgrade an installed service directly. You have two options:
+
+-  Rename an existing service with the new version, which removes the existing service and adds a new one.
+
+-  Create a new service and save the data from the existing service.
+
+When you change the service version, you must update the service configuration in the `services.yaml` file, and update the relationships in the `.magento.app.yaml` file.
+
+{:.procedure}
+To downgrade a service version by renaming an existing service:
+
+1. Rename the existing service in the `.magento/services.yaml` file and change the version.
+
+   For example, to downgrade the MariaDB version for the _mysql_ service from version 10.3 to 10.2, change the existing service _name_ and _type_.
+
+   > Original `services.yaml` definition
+
+     ```yaml
+     mysql:
+         type: mysql:10.3
+         disk: 2048
+     ```
+
+   > New `services.yaml` definition
+
+     ```yaml
+     mysql2:
+          type: mysql:10.2
+          disk: 2048
+     ```
+
+1. Update the relationships in the `.magento.app.yaml` file.
+
+   > Original `.magento.app.yaml` configuration
+
+   ```yaml
+   relationships:
+       database: "mysql:mysql"
+   ```
+
+  > Updated `.magento.app.yaml` configuration
+
+  ```yaml
+  relationships:
+      database: "mysql2:mysql"
+  ```
+
+1. Add, commit, and push your code changes.
+
+{:.procedure}
+To downgrade a service by creating an additional service:
+
+1. Add the service definition to the `services.yaml` file for your project.
+
+   > services.yaml
+
+   ```yaml
+   mysql:
+       type: mysql:10.3
+       disk: 2048
+   mysql2:
+       type: mysql:10.2
+       disk: 2048
+   ```
+
+1. Change the relationships configuration in the `.magento.app.yaml` file to use the new service.
+
+   > Original `.magento.app.yaml` configuration
+
+     ```yaml
+     relationships:
+         database: "mysql:mysql"
+     ```
+
+   > New `.magento.app.yaml` configuration
+
+     ```yaml
+     relationships:
+         database: "mysql2:mysql"
+     ```
+
+1. Add, commit, and push your code changes.
+
 <!--Custom column widths for service version table-->
 <style>
 table.error-table td:nth-child(1) {
@@ -196,63 +331,3 @@ table.error-table td:nth-child(3) {
   width: 200px;
 }
 </style>
-
-## Change Service Version
-
-### Update version
-
-For increasing service version need to change its value in [`type`]{type}.
-
-Check allowed service versions in [*Service versions*]{Service versions} table.
-
-### Downgrade version
-
-Version downgrading is not allowed for installed service. To downgrade version you need to create new service with necessary version.
-New service is created if you add service with new [`name`]{name}. If rename existed service then previous one will be removed and new one is created. For example,
-there are MariiaDB 10.3 in `services.yaml` where service [`name`]{name} set as `mysql`
-
-```yaml
-mysql:
-    type: mysql:10.2
-    disk: 2048
-```
-
-To downgrade this version need to change the [`name`]{name} of this service in `services.yaml` file and update this value in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml`
-
-services.yaml
-```yaml
-mysql2:
-    type: mysql:10.2
-    disk: 2048
-```
-
-.magento.app.yaml
-```yaml
-relationships:
-    database: "mysql2:mysql"
-```
-
-After deployment your previous service MariiaDB version 10.3 is removed and new service with MariiaDB 10.2 is created.
-
-{:.bs-callout-info}
-
-If you do not want to loose your data from previous service version, instead of renaming service you need to create additional one:
-
-services.yaml
-```yaml
-mysql:
-    type: mysql:10.3
-    disk: 2048
-
-mysql2:
-    type: mysql:10.2
-    disk: 2048
-```
-
-and as in previous example you need to set that service name in [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` which you want to use.
-
-.magento.app.yaml
-```yaml
-relationships:
-    database: "mysql2:mysql"
-```
