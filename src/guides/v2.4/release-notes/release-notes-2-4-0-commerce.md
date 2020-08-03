@@ -51,7 +51,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
-   *  **Securing Cloud SSH access**. Magento Commerce Cloud provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
+   *  **Securing Cloud SSH access**. Magento Commerce Cloud provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. Multi-factor authentication for 2FA is not enabled by default on a project.  Magento highly recommends enabling this feature. Contact Support for assistance. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
 
 *  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
 
@@ -80,6 +80,8 @@ The following platform upgrades help enhance website security and performance. S
 *  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0. See [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html).
 
 *  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) DevBlog post.
+
+*  **Decomposition of Magento Controllers** allows extension developers to implement ActionInterface directly without "layer supertype" classes. See the [Decomposition of Magento Controllers](https://community.magento.com/t5/Magento-DevBlog/Decomposition-of-Magento-Controllers/ba-p/430883) DevBlog post. _Enhancement started by Vinai Kopp in pull request [16268](https://github.com/magento/magento2/pull/16268) and finalized by Lukasz Bajsarowicz in pull request [26778](https://github.com/magento/magento2/pull/26778)_. [GitHub-9582](https://github.com/magento/magento2/issues/9582)
 
 *  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
 
@@ -2234,13 +2236,13 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Braintree
 
-*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. <!--- BUNDLE-2683-->
+*  **Issue**: Magento displays an error when an administrator tries to access the Braintree Settlement Report page (**Admin** > **Reports** ). Currently, Magento displays this message: `An error has happened during application run. See exception log for details`. See [Braintree Settlement Report fails to load](https://support.magento.com/hc/en-us/articles/360046798251) Knowledge Base article. The **BUNDLE-2683_SettlementReport.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2683-->
 
 *  **Issue**: Merchants can’t create partial invoices for orders in deployments where Venmo is enabled and the **Enable Vault for Card Payments** setting is disabled. Currently, Magento displays this error: `The "vault_capture" command doesn't exist. Verify the command and try again`.  <!--- BUNDLE-2647-->
 
 *  **Issue**: Magento displays two identical PayPal methods in the Payment Method drop-down list that is available when creating a new cart price rule.   <!--- BUNDLE-2686-->
 
-*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. <!--- BUNDLE-2670-->
+*  **Issue**: Magento throws an error when opening **Sales** > **Braintree Virtual Terminal**. Although the form contains corrupted UI elements,  it still accepts payments. **Workaround**: Save the  correct Braintree credentials, which will fix the collapsed input fields. See [Braintree Virtual Terminal page is corrupted](https://support.magento.com/hc/en-us/articles/360046800071)  Knowledge Base article. The **BUNDLE-2670_VirtualTerminal.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2670-->
 
 *  **Issue**: Magento displays an error message in the following countries when a customer selects a local payment method during checkout: Belgium, Netherlands, Italy, Spain, and Poland.  **Workaround**: Ignore the error message and continue with payment.
 

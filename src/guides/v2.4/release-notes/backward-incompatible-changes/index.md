@@ -5,7 +5,7 @@ title: Magento 2.4 backward incompatible changes
 
 This page highlights backward incompatible changes between releases that have a major impact and require detailed explanation and special instructions to ensure third-party modules continue working with Magento. High-level reference information for all backward incompatible changes in each release are documented in the [Backward incompatible changes reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html) topic.
 
-## 2.3.0 - 2.4-develop
+## 2.3.0 - 2.4
 
 ### Elasticsearch
 
@@ -77,9 +77,9 @@ Previously, it was possible to have a "burst" of activity that triggered content
 For example, if the indexer was running based on schedule, and replenishment happens manually through the Admin or interaction with an order, indexing would be triggered. Previously, that would result in two processes attempting to index; one of those will "lose", leading to a deadlocked/stale index.
 
 ```terminal
-MAJOR Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
+changed.MAJOR: Magento\InventoryIndexer\Indexer\Stock\StockIndexer::__construct
 /InventoryIndexer/Indexer/Stock/StockIndexer.php:28 M113 [public] Method parameter typing changed.
-MAJOR Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
+changed.MAJOR: Magento\InventoryIndexer\Indexer\SourceItem\SourceItemIndexer::__construct
 /InventoryIndexer/Indexer/SourceItem/SourceItemIndexer.php:27 M113 [public] Method parameter typing changed.
 ```
 
@@ -236,19 +236,22 @@ It caused SVC failures.
 Return type now array (the same as before in DocBlock):
 
 ```terminal
-MAJORMagento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122M120 [public] Method return typing
+changed.MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit
+/app/code/Magento/Catalog/Helper/Product/ProductList.php:122M120 [public] Method return typing
 ```
 
-Return type now array (the same as before in DocBlock):
+The input parameter is renamed to `viewMode`:
 
 ```terminal
-changed.MAJORMagento\Catalog\Helper\Product\ProductList::getAvailableLimit /app/code/Magento/Catalog/Helper/Product/ProductList.php:122V060 [public] Method parameter name
+changed.MAJOR: Magento\Catalog\Helper\Product\ProductList::getAvailableLimit
+/app/code/Magento/Catalog/Helper/Product/ProductList.php:122V060 [public] Method parameter name
 ```
 
 Now returns int for `DefaultLimitPerPageValue`:
 
 ```terminal
-changed.MAJORMagento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue /app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
+changed.MAJOR: Magento\Catalog\Helper\Product\ProductList::getDefaultLimitPerPageValue
+/app/code/Magento/Catalog/Helper/Product/ProductList.php:147M120 [public] Method return typing changed.
 ```
 
 ### UrlRewrite module

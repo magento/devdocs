@@ -8,4 +8,4 @@ content: 'Magento_Rule module provides abstract implementation of rules and rule
   that are extended by other modules, in particular by: Magento_SalesRule, Magento_CatalogRule,
   etc...
 
-'
+  '

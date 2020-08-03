@@ -45,7 +45,7 @@ $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool');
 // custom constructor arguments
 $cacheMock = $this->getMock('\Magento\Cache\FrontendInterface');
 ...
-$arguments = array('cache' => $cacheMock);
+$arguments = ['cache' => $cacheMock];
 $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
      $arguments);
 ```
@@ -70,14 +70,14 @@ $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 // Prepare mock for collection elements
 $option = $this->getMock(
     'Magento\Bundle\Model\Option',
-    array('getSelections', '__wakeup', 'getData'),
+    ['getSelections', '__wakeup', 'getData'],
     [],
     '',
     false
 );
 $optionCollection =
      $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
-          array($options));
+          [$options]);
 ```
 
 ### getConstructArguments {#getConstructArguments}
@@ -96,25 +96,25 @@ In the Magento system, several tests introduced mocks for abstract models and bl
 **Example**:
 
 ```php
-$attributeData = array(
+$attributeData = [
     'store_label' => 'Test',
     'attribute_code' => 'test',
     'is_required' => 1,
-    'validate_rules' => array(
+    'validate_rules' => [
         'min_text_length' => 0,
         'max_text_length' => 0,
         'input_validation' => 0,
-    )
-);
+    ]
+];
 $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 $attributeClass = '\Magento\Eav\Model\Entity\Attribute\AbstractAttribute';
 $objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 // Retrieve mocked constructor arguments
 $arguments = $objectManagerHelper->getConstructArguments(
     $attributeClass,
-    array(
+    [
         'data' => $attributeData,
-    )
+    ]
 );
 
 /** @var $attribute \Magento\Eav\Model\Entity\Attribute\AbstractAttribute|\PHPUnit\Framework\MockObject\MockObject */
