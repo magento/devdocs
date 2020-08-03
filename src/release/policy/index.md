@@ -38,7 +38,7 @@ The following guidelines apply to patch releases:
 
 ## SECURITY release
 
-Security releases provide fixes for vulnerabilities that have been identified in previous quarterly patch releases. You can install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly patch release contains. These releases are appended with `-pN`, where N is the incremental patch version beginning with 1 (example: 2.3.5-p1, 2.3.5-p2). **These releases can also include hotfixes required to address critical issues that affect the Magento application.**
+Security releases provide fixes for vulnerabilities that have been identified in previous quarterly patch releases. You can install time-sensitive security fixes without applying the hundreds of functional fixes and enhancements that a full quarterly patch release contains. These releases are appended with `-pN`, where N is the incremental patch version beginning with 1 (example: 2.3.5-p1, 2.3.5-p2). These releases can also include hotfixes required to address critical issues that affect the Magento application.
 
 For general information about security releases, see [Introducing the New Security-only Patch Release](https://community.magento.com/t5/Magento-DevBlog/Introducing-the-New-Security-only-Patch-Release/ba-p/141287). For instructions on downloading and applying security patches, see [Install Magento using Composer]({{ site.baseurl }}/guides/v2.3/install-gde/composer.html).
 
