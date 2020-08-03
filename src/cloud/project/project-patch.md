@@ -15,6 +15,9 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 1. Apply Magento-provided patches included in the `{{site.data.var.mcp-package}}` package.
 1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
+{:.bs-callout-info}
+When you update `{{site.data.var.ct}}` or the `{{site.data.var.mcp-prod}}` package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
+
 You can also apply patches manually.
 
 {:.bs-callout-info}
@@ -111,7 +114,3 @@ To use magento-cloud-patches as a stand-alone package:
    You can clean the cache using the Magento Admin Cache Management.
 
 1. Test the patches, and make any necessary changes to custom patches.
-
-## Skip Cloud patches
-
-You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) on Cloud projects.
