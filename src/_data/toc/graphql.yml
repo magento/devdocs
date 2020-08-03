@@ -146,11 +146,15 @@ pages:
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
+        - label: applyCouponToCart mutation
+          url: /graphql/mutations/apply-coupon.html
+
         - label: applyGiftCardToCart mutation
           url: /graphql/mutations/apply-giftcard.html
 
-        - label: applyCouponToCart mutation
-          url: /graphql/mutations/apply-coupon.html
+        - label: applyRewardPointsToCart mutation
+          url: /graphql/mutations/apply-reward-points.html
+          exclude_versions: ["2.3"]
 
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
@@ -205,6 +209,10 @@ pages:
 
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
+
+        - label: removeRewardPointsFromCart mutation
+          url: /graphql/mutations/remove-reward-points.html
+          exclude_versions: ["2.3"]
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
