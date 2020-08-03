@@ -201,15 +201,15 @@ table.error-table td:nth-child(3) {
 
 ### Update version
 
-For increasing service version need to change its value in [`type`]{type}. 
+For increasing service version need to change its value in [`type`]{type}.
 
 Check allowed service versions in [*Service versions*]{Service versions} table.
 
 ### Downgrade version
 
-Version downgrading is not allowed for installed service. To downgrade version you need to create new service with necessary version. 
+Version downgrading is not allowed for installed service. To downgrade version you need to create new service with necessary version.
 New service is created if you add service with new [`name`]{name}. If rename existed service then previous one will be removed and new one is created. For example,
-there are MariiaDB 10.3 in `services.yaml` where service [`name`]{name} set as `mysql` 
+there are MariiaDB 10.3 in `services.yaml` where service [`name`]{name} set as `mysql`
 
 ```yaml
 mysql:
