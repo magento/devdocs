@@ -8,7 +8,7 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -43,11 +43,11 @@ elasticsearch:
 
 ## Service values
 
-You must provide the _type_ values: service _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
+You must provide the _type_ values: _service-name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
 
 ```yaml
 <name>:
-    type: <name>:<version>
+    type: <service-name>:<version>
     disk: <value-MB>
 ```
 
@@ -55,7 +55,7 @@ You must provide the _type_ values: service _name_ and _version_. If the service
 
 The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
 
-This _name_ value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+This _name_ value is used in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` configuration file:
 
 ```yaml
 relationships:
@@ -85,6 +85,8 @@ The `type` value specifies the service name and version. For example:
 mysql:
     type: mysql:10.2
 ```
+
+Use [`Service versions`]{Service versions} table to see supported services and their versions
 
 ### `disk`
 
@@ -146,10 +148,10 @@ To verify relationships in remote environments:
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   or
+   or using Cloud ece-tools
 
    ```bash
-   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   php ./vendor/bin/ece-tools env:config:show services
    ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number and any required username and password credentials.
@@ -194,3 +196,63 @@ table.error-table td:nth-child(3) {
   width: 200px;
 }
 </style>
+
+## Change Service Version
+
+### Update version
+
+For increasing service version need to change its value in [`type`]{type}. 
+
+Check allowed service versions in [*Service versions*]{Service versions} table.
+
+### Downgrade version
+
+Version downgrading is not allowed for installed service. To downgrade version you need to create new service with necessary version. 
+New service is created if you add service with new [`name`]{name}. If rename existed service then previous one will be removed and new one is created. For example,
+there are MariiaDB 10.3 in `services.yaml` where service [`name`]{name} set as `mysql` 
+
+```yaml
+mysql:
+    type: mysql:10.2
+    disk: 2048
+```
+
+To downgrade this version need to change the [`name`]{name} of this service in `services.yaml` file and update this value in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml`
+
+services.yaml
+```yaml
+mysql2:
+    type: mysql:10.2
+    disk: 2048
+```
+
+.magento.app.yaml
+```yaml
+relationships:
+    database: "mysql2:mysql"
+```
+
+After deployment your previous service MariiaDB version 10.3 is removed and new service with MariiaDB 10.2 is created.
+
+{:.bs-callout-info}
+
+If you do not want to loose your data from previous service version, instead of renaming service you need to create additional one:
+
+services.yaml
+```yaml
+mysql:
+    type: mysql:10.3
+    disk: 2048
+
+mysql2:
+    type: mysql:10.2
+    disk: 2048
+```
+
+and as in previous example you need to set that service name in [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` which you want to use.
+
+.magento.app.yaml
+```yaml
+relationships:
+    database: "mysql2:mysql"
+```
