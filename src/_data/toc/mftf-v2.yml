@@ -86,11 +86,11 @@ pages:
     versionless: true
     children:
 
-      - label: codecept CLI
+      - label: Codecept CLI
         url: /mftf/v2/docs/commands/codeception.html
         versionless: true
 
-      - label: mftf CLI
+      - label: MFTF CLI
         url: /mftf/v2/docs/commands/mftf.html
         versionless: true
         
