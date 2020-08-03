@@ -44,7 +44,7 @@ Information about auto-generation of `communication.xml` can be found in [Topics
 
 Sort order is set to 0 and this allows developers to change some aspects of generated configuration in the config readers such as `queue_publisher.xml`, `env.php`.
 
-`\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Publisher::read()` calls `\Magento\AsynchronousOperations\Model\ConfigInterface::getServices()` to get an array of all REST API routes which could be executed asynchronously. Then it defines connection name equals to `amqp` and echange equals to `magento` for each generated topic name.
+`\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Publisher::read()` calls `\Magento\AsynchronousOperations\Model\ConfigInterface::getServices()` to get an array of all REST API routes which could be executed asynchronously. Then it defines connection name equals to `amqp` and exchange equals to `magento` for each generated topic name.
 
 ### queue_consumer.xml
 
