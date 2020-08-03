@@ -200,7 +200,7 @@ If you change the Elasticsearch service version, check the Elasticsearch compose
 
 ### Upgrade installed service version
 
-You can upgrade the installed service version by changing the [`type`](#type) value for the service.
+You can upgrade the installed service version by updating the service configuration in the `services.yaml` file.
 
 1. Change the [`type`](#type) value for the service in the `.magento/services.yaml` file:
 
