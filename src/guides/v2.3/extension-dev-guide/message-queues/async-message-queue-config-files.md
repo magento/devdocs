@@ -16,7 +16,7 @@ For user Magento message queue, you have to utilise four configuration files in 
 
 More about them can be found in [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html).
 
-Asynchronous and Bulk APIs are build on top of usuall REST API and using Magento Message Queue Framework for processing messages. For make customer development as less as possible and make integration as easy as possible, Asynchronous API pre-generating following configuration files: 
+Asynchronous and Bulk APIs are built on top of the usual REST API and using Magento Message Queue Framework for processing messages. For making development effort as less as possible and making integration as easy as possible, Asynchronous API pre-generating following configuration files: 
 
 *  communication.xml
 *  queue_publisher.xml
