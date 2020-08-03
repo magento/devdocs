@@ -21,7 +21,7 @@ Asynchronous and Bulk APIs are built on top of the usual REST API and using Mage
 *  communication.xml
 *  queue_publisher.xml
 
-And provides `queue_topology.xml` and `queue_consumer.xml` within Magento/WebapiAsync module.
+and provides `queue_topology.xml` and `queue_consumer.xml` within `Magento/WebapiAsync` module.
 
 ### communication.xml
 
