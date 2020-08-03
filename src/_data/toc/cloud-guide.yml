@@ -186,6 +186,10 @@ pages:
               url: /cloud/docker/docker-development-debug.html
               versionless: true
 
+            - label: Set up multiple websites or stores
+              url: /cloud/docker/docker-multi-website.html
+              versionless: true
+
             - label: Manage the database
               url: /cloud/docker/docker-manage-database.html
               versionless: true
