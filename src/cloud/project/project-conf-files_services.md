@@ -148,7 +148,7 @@ To verify relationships in remote environments:
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   or using Cloud ece-tools
+   or, use the following {{ site.data.var.ct }} CLI command to view relationships:
 
    ```bash
    php ./vendor/bin/ece-tools env:config:show services
