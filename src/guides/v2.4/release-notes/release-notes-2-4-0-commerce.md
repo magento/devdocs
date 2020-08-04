@@ -2242,7 +2242,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### dotdigital
 
-*  **Issue**: Integration tests fail with this error: `PHP Fatal error: Declaration of Dotdigitalgroup\Email\Test\Integration\Model\Sync\Importer\ImporterFailedTest::setUp() must be compatible with PHPUnit\Framework\TestCase::setUp(): void in /var/www/vendor/dotmailer/dotmailer-magento2-extension/Test/Integration/Model/Sync/Importer/ImporterFailedTest.php on line 36`.  <!--- BUNDLE-2684-->
+*  **Issue**: Integration tests fail with this error: `PHP Fatal error: Declaration of Dotdigitalgroup\Email\Test\Integration\Model\Sync\Importer\ImporterFailedTest::setUp() must be compatible with PHPUnit\Framework\TestCase::setUp(): void in /var/www/vendor/dotmailer/dotmailer-magento2-extension/Test/Integration/Model/Sync/Importer/ImporterFailedTest.php on line 36`. **Workaround**: The **BUNDLE-2684 Dotdigital Integration Tests patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- BUNDLE-2684-->
 
 ### Klarna
 
