@@ -93,19 +93,18 @@ pages:
   - label: Reference
     versionless: true
     children:
-
-      - label: Action group reference
-        url: /reference/mftf/action-groups.html
-
-      - label: Codecept
+      - label: Codecept CLI
         url: /mftf/docs/commands/codeception.html
         versionless: true
 
-      - label: MFTF
+      - label: MFTF CLI
         url: /mftf/docs/commands/mftf.html
         versionless: true
+        
+      - label: Magento action groups
+        url: /reference/mftf/action-groups.html
       
-      - label: MFTF functional test reference
+      - label: Magento tests
         url: /reference/mftf/functional-tests.html
 
   - label: Reporting
