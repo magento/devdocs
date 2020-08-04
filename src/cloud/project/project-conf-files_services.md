@@ -294,7 +294,7 @@ To downgrade a service version by renaming an existing service:
 {:.procedure}
 To downgrade a service by creating an additional service:
 
-1. Add the service definition to the `services.yaml` file for your project.
+1. Add an additional service definition to the `services.yaml` file for your project with the downgraded version specification. See _mysql2_ in the following example:
 
    > services.yaml
 
