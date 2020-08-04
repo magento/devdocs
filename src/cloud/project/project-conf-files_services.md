@@ -8,7 +8,7 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the `relationships` property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -43,19 +43,22 @@ elasticsearch:
 
 ## Service values
 
-You must provide the _type_ values: service _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
+You must provide the <service-id> and service type configuration `type: <name>:<version>`.
+If the service uses persistent storage, then you must provide a _disk_ value.
+
+Use the following format:
 
 ```yaml
-<name>:
+<service-id>:
     type: <name>:<version>
     disk: <value-MB>
 ```
 
-### `name`
+### `service-id`
 
-The `name` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
+The `service-id` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
 
-This _name_ value is used in the `relationships` property of the `.magento.app.yaml` configuration file:
+This _service-id_ value is used in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` configuration file:
 
 ```yaml
 relationships:
@@ -85,6 +88,8 @@ The `type` value specifies the service name and version. For example:
 mysql:
     type: mysql:10.2
 ```
+
+Use [`Service versions`](#service-versions) table to see supported services and their versions
 
 ### `disk`
 
@@ -146,10 +151,10 @@ To verify relationships in remote environments:
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
    ```
 
-   or
+   or, use the following {{ site.data.var.ct }} CLI command to view relationships:
 
    ```bash
-   php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+   php ./vendor/bin/ece-tools env:config:show services
    ```
 
 1. Confirm the `service` and `type` from the response. The response provides connection information, such as the IP address and port number and any required username and password credentials.
@@ -181,6 +186,144 @@ During the deployment process, {{site.data.var.ct}} checks installed service ver
 -  If the EOL date is in the past, a warning notification displays.
 
 To maintain Magento store security, update installed software versions before they reach EOL.
+
+## Change service version
+
+You can upgrade the installed service version for compatibility with the Magento version deployed in your Cloud environment.
+
+You cannot downgrade the service version for an installed service directly. However, you can create a new service with the required version. See [Downgrade service version](#downgrade-version).
+
+Use the [Service versions](#service-versions) table to check service version compatibility by Magento version. Note that some service versions supported by {{ site.data.var.ee }} are not supported on {{ site.data.var.ece }}.
+
+{:.bs-callout-warning}
+You must submit a support ticket to change the service configuration on Pro Production and Staging environments.
+
+{:.bs-callout-info}
+If you change the Elasticsearch service version, check the Elasticsearch composer package for compatibility with the new version. See [Elasticsearch software compatibility]({{ site.baseurl}}/cloud/project/project-conf-files_services-elastic.html#elasticsearch-software-compatibility).
+
+### Upgrade installed service version
+
+You can upgrade the installed service version by updating the service configuration in the `services.yaml` file.
+
+1. Change the [`type`](#type) value for the service in the `.magento/services.yaml` file:
+
+   > Original service definition
+
+   ```yaml
+   mysql:
+       type: mysql:10.2
+       disk: 2048
+   ```
+
+   > Updated service definition
+
+   ```yaml
+   mysql:
+       type: mysql:10.3
+       disk: 2048
+   ```
+
+1. Add, commit, and push your code changes.
+
+   ```bash
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Upgrade MySQL from MariaDB 10.2 to 10.3."
+   ```
+
+   ```bash
+   git push origin <branch-name>
+   ```
+
+### Downgrade version
+
+You cannot downgrade an installed service directly. You have two options:
+
+-  Rename an existing service with the new version, which removes the existing service and data, and adds a new one.
+
+-  Create a new service and save the data from the existing service.
+
+When you change the service version, you must update the service configuration in the `services.yaml` file, and update the relationships in the `.magento.app.yaml` file.
+
+{:.procedure}
+To downgrade a service version by renaming an existing service:
+
+1. Rename the existing service in the `.magento/services.yaml` file and change the version.
+
+   {:.bs-callout-warning}
+   Renaming an existing service replaces it and deletes all data. If you need to retain the data, create a new service instead of renaming the existing one.
+
+   For example, to downgrade the MariaDB version for the _mysql_ service from version 10.3 to 10.2, change the existing  _service-id_ and _type_ configuration.
+
+   > Original `services.yaml` definition
+
+     ```yaml
+     mysql:
+         type: mysql:10.3
+         disk: 2048
+     ```
+
+   > New `services.yaml` definition
+
+     ```yaml
+     mysql2:
+          type: mysql:10.2
+          disk: 2048
+     ```
+
+1. Update the relationships in the `.magento.app.yaml` file.
+
+   > Original `.magento.app.yaml` configuration
+
+   ```yaml
+   relationships:
+       database: "mysql:mysql"
+   ```
+
+  > Updated `.magento.app.yaml` configuration
+
+  ```yaml
+  relationships:
+      database: "mysql2:mysql"
+  ```
+
+1. Add, commit, and push your code changes.
+
+{:.procedure}
+To downgrade a service by creating an additional service:
+
+1. Add an additional service definition to the `services.yaml` file for your project with the downgraded version specification. See _mysql2_ in the following example:
+
+   > services.yaml
+
+   ```yaml
+   mysql:
+       type: mysql:10.3
+       disk: 2048
+   mysql2:
+       type: mysql:10.2
+       disk: 2048
+   ```
+
+1. Change the relationships configuration in the `.magento.app.yaml` file to use the new service.
+
+   > Original `.magento.app.yaml` configuration
+
+     ```yaml
+     relationships:
+         database: "mysql:mysql"
+     ```
+
+   > New `.magento.app.yaml` configuration
+
+     ```yaml
+     relationships:
+         database: "mysql2:mysql"
+     ```
+
+1. Add, commit, and push your code changes.
 
 <!--Custom column widths for service version table-->
 <style>
