@@ -744,10 +744,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento now saves custom customer address attributes and implements them in registration forms as expected. Previously, when you created a new custom customer address attribute while creating an account from the cart, Magento did not save the attribute information.
 
-<!--- MC-32301-->
-
-*  Magento no longer throws an error when you include an empty customer attribute field in the **Forms to Use In** field while creating a Company account on the storefront. Previously, Magento threw this error: `PHP Fatal error: Uncaught TypeError: Argument 2 passed to Magento\Eav\Model\Attribute\Data\Text::validateLength() must be of the type string, null given`.
-
 ### Customer
 
 <!--- MC-29102-->
