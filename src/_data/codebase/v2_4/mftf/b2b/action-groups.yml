@@ -1,0 +1,1045 @@
+- filename: "AdminCatalogPriceRuleSelectCustomerGroupsActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminCatalogPriceRuleSelectCustomerGroupsActionGroup"
+       description: ""
+- filename: "AdminSharedCatalogTierPriceActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "SetTierPricePercentDiscountViaSharedCatalogActionGroup"
+       description: ""
+- filename: "AdminDeleteSharedCatalogActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminDeleteSharedCatalogActionGroup"
+       description: ""
+- filename: "AdminCartPriceRuleFillMainInfoActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminCartPriceRuleFillMainInfoActionGroup"
+       description: ""
+- filename: "AdminCatalogPriceRuleFillMainInfoActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminCatalogPriceRuleFillMainInfoActionGroup"
+       description: ""
+- filename: "AdminCreateSharedCatalogActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminCreateSharedCatalogActionGroup"
+       description: ""
+- filename: "AssertAdminProductFormAdvancedPricingCheckTierPriceActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AssertAdminProductFormAdvancedPricingCheckTierPriceActionGroup"
+       description: "Check AdvancedPricing tier price row."
+- filename: "AdminProductFormAdvancedPricingAddTierPriceActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminProductFormAdvancedPricingAddTierPriceActionGroup"
+       description: "Add new tier price on Advanced Pricing dialog on the Admin Product creation/edit page."
+- filename: "AdminAssignSharedCatalogToProductActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminAssignSharedCatalogToProductActionGroup"
+       description: ""
+- filename: "AdminSharedCatalogFilterProductsOnGridActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminSharedCatalogFilterProductsOnGridActionGroup"
+       description: ""
+- filename: "CreateCardPriceRuleActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "CreateCardPriceRuleActionGroup"
+       description: ""
+- filename: "AdminFilterSharedCatalogByCreatedByActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminFilterSharedCatalogByCreatedByActionGroup"
+       description: ""
+- filename: "AdminCartPriceRuleActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "SelectNotLoggedInCustomerGroupActionGroup"
+       description: ""
+- filename: "AdminSharedCatalogFilterByIdInTheGridActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminSharedCatalogFilterByIdInTheGridActionGroup"
+       description: ""
+- filename: "AdminVerifySharedCatalogProductActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminVerifySharedCatalogProductActionGroup"
+       description: ""
+- filename: "SelectRetailerCustomerGroupActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "SelectRetailerCustomerGroupActionGroup"
+       description: ""
+- filename: "AdminFilterSharedCatalogByNameActionGroup.xml"
+  module: "SharedCatalog"
+  actiongroups:
+     - name: "AdminFilterSharedCatalogByNameActionGroup"
+       description: ""
+- filename: "StorefrontAddMultipleProductsAtRequisitionListActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontAddMultipleProductsAtRequisitionListActionGroup"
+       description: ""
+- filename: "StorefrontCheckSelectBoxAtRequisitionListActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontCheckSelectBoxAtRequisitionListActionGroup"
+       description: ""
+- filename: "StorefrontCreateNewRequisitionListActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontCreateNewRequisitionListActionGroup"
+       description: ""
+- filename: "StorefrontCheckProductsExistenceAtRequisitionListActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontCheckProductsExistenceAtRequisitionListActionGroup"
+       description: ""
+- filename: "StorefrontClickViewRequisitionListActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontClickViewRequisitionListActionGroup"
+       description: "Open RequisitionList view page and assert that it page title."
+- filename: "StorefrontCreateRequisitionListFromProductPageActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontCreateRequisitionListFromProductPageActionGroup"
+       description: "Create RequisitionList from storefront product page."
+- filename: "StorefrontAssertRequisitionListProductsActionGroup.xml"
+  module: "RequisitionList"
+  actiongroups:
+     - name: "StorefrontAssertRequisitionListProductWithFileActionGroup"
+       description: "Open product lists in RequisitionList view page and assert that file attached to the product is exist."
+- filename: "CreateInvoiceActionGroup.xml"
+  module: "OrderHistorySearch"
+  actiongroups:
+     - name: "CreateInvoice"
+       description: ""
+- filename: "StorefrontRejectPurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontRejectPurchaseOrderActionGroup"
+       description: "Rejects a purchase order on the storefront and verifies status change. Must be on the View Purchase Order page"
+- filename: "StorefrontApprovePurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontApprovePurchaseOrderActionGroup"
+       description: "Approves a purchase order on the storefront and verifies status change. Must be on the View Purchase Order page"
+- filename: "StorefrontCancelPurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontCancelPurchaseOrderActionGroup"
+       description: "Cancels a purchase order on the storefront and verifies status change. Must be on the View Purchase Order page"
+- filename: "StorefrontCheckoutClickPlacePurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontCheckoutClickPlacePurchaseOrderActionGroup"
+       description: "Clicks on the 'Place Purchase Order' button. Validates that the Success Message is present and correct."
+- filename: "StorefrontApprovePurchaseOrderAsAdminActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontApprovePurchaseOrderAsAdminActionGroup"
+       description: "Approves a purchase order as an admin on the storefront and verifies status change. Must be on the View Purchase Order page"
+- filename: "StorefrontClickAddCommentButtonActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontClickAddCommentButtonActionGroup"
+       description: "Click the 'Add Comment' button to submit a manual comment to the Purchase Order on the Purchase Order view page"
+- filename: "StorefrontClickAddItemToShoppingCartActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontClickAddItemToShoppingCartActionGroup"
+       description: "Clicks on Add Item to Shopping Cart"
+- filename: "StorefrontPlacePurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontPlacePurchaseOrderActionGroup"
+       description: "Places an order for an approved purchase order on the storefront and verifies status change. Must be on the View Purchase Order page for an approved purchase order"
+- filename: "StorefrontWriteCommentInPurchaseOrderActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontWriteCommentInPurchaseOrderActionGroup"
+       description: "Write a comment into the Purchase Order comment box, to be submitted by a PO action or the add comment button"
+- filename: "AdminEnablePurchaseOrdersForStoreActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "AdminEnablePurchaseOrdersForStoreActionGroup"
+       description: "Goes to Admin B2B Config Page. Enable Purchase Order Approval Config. Saves configuration and validates success message."
+- filename: "AdminDisablePurchaseOrderForStoreActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "AdminDisablePurchaseOrderForStoreActionGroup"
+       description: "Goes to Admin B2B Config Page. Disable Purchase Order Approval Config. Saves configuration and validates success message."
+- filename: "AdminEnablePurchaseOrderForCompanyActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "AdminEnablePurchaseOrderForCompanyActionGroup"
+       description: "Enable Purchase Orders At Company Level. Must be on the Edit Company page"
+- filename: "StorefrontNavigateToCompanyPurchaseOrdersPageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontNavigateToCompanyPurchaseOrdersPageActionGroup"
+       description: "Navigates to the user's My Purchase Orders page and select Company Purchase Orders on the storefront using the UI. Must be within a user's Account Details on storefront."
+- filename: "StorefrontNavigateToPurchaseOrderHistoryLogTabActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontNavigateToPurchaseOrderHistoryLogTabActionGroup"
+       description: "Navigate to Purchase Order history log tab."
+- filename: "StorefrontNavigateToPurchaseOrderCommentTabActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontNavigateToPurchaseOrderCommentTabActionGroup"
+       description: "Navigate to Purchase Order comments tab on the Purchase Order view page"
+- filename: "StorefrontNavigateToMyPurchaseOrdersPageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontNavigateToMyPurchaseOrdersPageActionGroup"
+       description: "Navigates to the user's My Purchase Orders page on the storefront using the UI. Must be within a user's Account Details on storefront."
+- filename: "StorefrontNavigateToViewPurchaseOrderPageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontNavigateToViewPurchaseOrderPageActionGroup"
+       description: "Navigates to the View Purchase Order page for a specified Purchase Order on the storefront using the UI. Must be on the My Purchase Orders page on storefront."
+- filename: "StorefrontClickPurchaseOrderLinkFromSuccessfulPurchaseOrderPageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontClickPurchaseOrderLinkFromSuccessfulPurchaseOrderPageActionGroup"
+       description: "Clicks the purchase order number link from the successful purchase order submittal page"
+- filename: "StorefrontValidateApproveRejectCancelButtonsActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateApproveRejectCancelButtonsActionGroup"
+       description: "Validates that the Approve, Reject, and Cancel buttons appear in the purchase order view page."
+- filename: "StorefrontValidateNoApproveRejectButtonsActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateNoApproveRejectButtonsActionGroup"
+       description: "Validates that the Approve and Reject buttons do not appear but the Cancel button does appear in the purchase order view page."
+- filename: "StorefrontValidateNoCompanyPurchaseOrdersTabActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateNoCompanyPurchaseOrdersTabActionGroup"
+       description: "Verifies that a user cannot see the Company Purchase Order tab on the storefront. Must be on the Purchase Orders list page."
+- filename: "StorefrontVerifyHistoryLogMessageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontVerifyHistoryLogMessageActionGroup"
+       description: "Validate the History Log for a specific message and its date."
+- filename: "StorefrontValidatePurchaseOrderStatusActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderStatusActionGroup"
+       description: "Validates that the purchase order is in the provided status"
+- filename: "StorefrontValidateCommentCountInCommentTabActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateCommentCountInCommentTabActionGroup"
+       description: "Validate the amount of comments within the Comments tab on Purchase Order view page."
+- filename: "StorefrontValidateNumberOfEntriesInHistoryLogActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateNumberOfEntriesInHistoryLogActionGroup"
+       description: "Verify the number of messages in the History Log."
+- filename: "StorefrontValidateAddCommentButtonIsDisabledActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateAddCommentButtonIsDisabledActionGroup"
+       description: "Verify the Add Comment button on the Purchase Order view page is disabled"
+- filename: "StorefrontValidatePurchaseOrderApprovalRequiredActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderApprovalRequiredActionGroup"
+       description: "Validates the available actions for an admin on a purchase order with the status of Approval required"
+- filename: "StorefrontValidateCommentTabEmptyActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateCommentTabEmptyActionGroup"
+       description: "Verify the Comment Tab on the Purchase Order page is empty"
+- filename: "StorefrontVerifyPurchaseOrderExistsInGridActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontVerifyPurchaseOrderExistsInGridActionGroup"
+       description: "Verifies that the specified purchase order exists in the grid on the Purchase Order listing page on the storefront."
+- filename: "StorefrontValidateNoApprovalPurchaseOrdersTabActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateNoApprovalPurchaseOrdersTabActionGroup"
+       description: "Verifies that a user cannot see the Requires My Approval purchase order tab on the storefront. Must be on the Purchase Orders list page."
+- filename: "StorefrontValidatePurchaseOrderIdActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderIdActionGroup"
+       description: "Validates that the purchase order identifier is present."
+- filename: "StorefrontVerifyCommentMessageActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontVerifyCommentMessageActionGroup"
+       description: "Validate the Comment tab for a specific message and its date."
+- filename: "StorefrontValidateAddCommentButtonIsEnabledActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateAddCommentButtonIsEnabledActionGroup"
+       description: "Verify the Add Comment button on the Purchase Order view page is enabled"
+- filename: "StorefrontValidateSuccessfulPurchaseOrderSubmittalActionGroup.xml"
+  module: "PurchaseOrder"
+  actiongroups:
+     - name: "StorefrontValidateSuccessfulPurchaseOrderSubmittalActionGroup"
+       description: "Validates the successful purchase order submittal page"
+- filename: "AssertStorefrontNegotiableQuoteTotalsWithWeeeAttributeActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteTotalsWithWeeeAttributeActionGroup"
+       description: "Validates that the provided Subtotal/Total, weee subtotal are present and correct on storefront."
+- filename: "AssertAdminNegotiableQuoteItemWithWeeeAttributeIncludingAndExcludingTaxActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteItemWithWeeeAttributeIncludingAndExcludingTaxActionGroup"
+       description: "Validates that the provided Product details (Name and Price), Product Quantity, Weee data including and excluding tax are present and correct in the Negotiable Quote in admin."
+- filename: "AssertStorefrontNegotiableQuoteItemExcludingTaxWithWeeeAttributeActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteItemExcludingTaxWithWeeeAttributeActionGroup"
+       description: "Validates that the provided product price, subtotal, weee attribute value excluding tax are present and correct in the Negotiable quote on storefront."
+- filename: "AssertAdminNegotiableQuoteItemWithWeeeAttributeActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteItemWithWeeeAttributeActionGroup"
+       description: "Validates that the provided Product details (Name and Price), Product Quantity, Weee data are present and correct in the Negotiable Quote in admin."
+- filename: "AssertStorefrontNegotiableQuoteItemWithWeeeAttributeActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteItemWithWeeeAttributeActionGroup"
+       description: "Validates that the provided Product details (Name and Price), Product Quantity, Weee Attribute data are present and correct in the Negotiable Quote on storefront."
+- filename: "AssertAdminNegotiableQuoteTotalsWithWeeeAttributeActionGroup.xml"
+  module: "NegotiableQuoteWeee"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteTotalsWithWeeeAttributeActionGroup"
+       description: "Validates that the provided Subtotal/Total, Weee subtotal are present and correct in admin."
+- filename: "AssertStorefrontNegotiableQuoteTotalsActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteTotalsActionGroup"
+       description: "Validates that the provided Subtotal/Total are present and correct on storefront."
+- filename: "AssertStorefrontNegotiableQuoteItemActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteItemActionGroup"
+       description: "Validates that the provided Product details (Name and Price), Product Quantity are present and correct in the Negotiable Quote on storefront."
+- filename: "AssertAdminNegotiableQuoteTaxTotalsActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteTaxTotalsActionGroup"
+       description: "Validates that the provided catalog subtotal including tax, tax totals are present and correct in admin."
+- filename: "StorefrontSelectNegotiableQuoteCustomerAddressActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontSelectNegotiableQuoteCustomerAddressActionGroup"
+       description: "Select existing customer address to use it in negotiable quote."
+- filename: "AdminAssertProductInQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminAssertProductInQuoteActionGroup"
+       description: ""
+- filename: "AdminAssertBundleProductInQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminAssertBundleProductInQuoteActionGroup"
+       description: ""
+- filename: "AdminFilterQuoteByCompanyNameActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminFilterQuoteByCompanyNameActionGroup"
+       description: ""
+- filename: "StorefrontOpenNegotiableQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontOpenNegotiableQuoteActionGroup"
+       description: ""
+- filename: "AssertAdminNegotiableQuoteTotalsActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteTotalsActionGroup"
+       description: "Validates that the provided Subtotal/Total are present and correct in admin."
+- filename: "StorefrontNegotiableQuoteSendForReviewActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontNegotiableQuoteSendForReviewActionGroup"
+       description: "You are on the Storefront Negotiable Quote view page, press 'Send For Review' button"
+- filename: "AdminConfigureBundleProductInQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminConfigureBundleProductInQuoteActionGroup"
+       description: ""
+- filename: "AdminAddTwoProductsToQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminAddTwoProductsToQuoteActionGroup"
+       description: ""
+- filename: "StorefrontRequestQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontRequestQuoteActionGroup"
+       description: ""
+- filename: "StorefrontNegotiableQuoteSelectCustomerAddressAsShippingAddressActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontNegotiableQuoteSelectCustomerAddressAsShippingAddressActionGroup"
+       description: "You are on the Storefront Negotiable Quote view page, select shipping address and press 'Save' button"
+- filename: "AdminOpenNegotiableQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminOpenNegotiableQuoteActionGroup"
+       description: ""
+- filename: "AdminSendNegotiableQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminSendNegotiableQuoteActionGroup"
+       description: "You are on The Admin Negotiable Quote view page, click 'send' button"
+- filename: "AdminNegotiableQuoteSelectShippingMethodActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminNegotiableQuoteSelectShippingMethodActionGroup"
+       description: "You are on the Admin Negotiable Quote view page, select shipping method"
+- filename: "AssertStorefrontNegotiableQuoteItemExcludingTaxActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteItemExcludingTaxActionGroup"
+       description: "Validates that the provided product price and subtotal excluding tax are present and correct in the Negotiable Quote."
+- filename: "AdminConfigureGroupedProductInQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminConfigureGroupedProductInQuoteActionGroup"
+       description: ""
+- filename: "AdminChangeNegotiableQuoteExpirationDateActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AdminChangeNegotiableQuoteExpirationDateActionGroup"
+       description: ""
+- filename: "AssertAdminNegotiableQuoteItemActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertAdminNegotiableQuoteItemActionGroup"
+       description: "Validates that the provided Product details (Name and Price), Product Quantity are present and correct in the Negotiable Quote in admin."
+- filename: "AssertStorefrontNegotiableQuoteTaxTotalsActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "AssertStorefrontNegotiableQuoteTaxTotalsActionGroup"
+       description: "Validates that the provided catalog subtotal including tax, tax totals are present and correct on storefront."
+- filename: "StorefrontAssertNegotiableQuoteActionGroup.xml"
+  module: "NegotiableQuote"
+  actiongroups:
+     - name: "StorefrontAssertNegotiableQuoteExpirationDateActionGroup"
+       description: ""
+- filename: "StorefrontPartialApprovePurchaseOrderActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontPartialApprovePurchaseOrderActionGroup"
+       description: "Partially approved a purchase order on the storefront. This will not fully approve the order. Must be on the View Purchase Order page"
+- filename: "StorefrontPurchaseOrderRuleValidationActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontPurchaseOrderRuleValidationActionGroup"
+       description: "Validates a purchase order on the storefront and verifies status change. Must be on the View Purchase Order page"
+- filename: "StorefrontStartPOQueueConsumerAndReloadPageActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontStartPOQueueConsumerAndReloadPageActionGroup"
+       description: "Uses magentoCLI to run the consumer to process purchase order rules on open purchase orders and reloads current page."
+- filename: "StorefrontValidateNoApprovalFlowTabActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateNoApprovalFlowTabActionGroup"
+       description: "Validates that the Approval Flow tab is not displayed on pending purchase order view pages."
+- filename: "StorefrontValidateApprovalFlowAppliedRuleApproverContainsTextActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateApprovalFlowAppliedRuleApproverContainsTextActionGroup"
+       description: "Validates the status, message, and date for an applied approval rule on the Approval Flow page."
+- filename: "StorefrontValidateApprovalFlowAppliedRulePresentActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateApprovalFlowAppliedRulePresentActionGroup"
+       description: "Validates the applied rule is present on the Approval Flow page with the correct name."
+- filename: "StorefrontClickApprovalFlowTabActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontClickApprovalFlowTabActionGroup"
+       description: "Clicks the Approval Flow tab on the purchase order view page."
+- filename: "StorefrontClickAddNewPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontClickAddNewPurchaseOrderRuleActionGroup"
+       description: "Clicks the Add New Rule button on the purchase order rule listing page."
+- filename: "StorefrontNavigateToApprovalPurchaseOrdersPageActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontNavigateToApprovalPurchaseOrdersPageActionGroup"
+       description: "Navigates to the user's My Purchase Orders page and select Purchase Orders that require my approval on the storefront using the UI. Must be within a user's Account Details on storefront."
+- filename: "StorefrontGoToViewPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontGoToViewPurchaseOrderRuleActionGroup"
+       description: "Go to View a purchase order rule from the purchase rule listing page."
+- filename: "StorefrontNavigateToApprovalRulesPageActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontNavigateToApprovalRulesPageActionGroup"
+       description: "Navigates to the purchase order rule listing page using the UI. Must be within a user's Account Details on storefront"
+- filename: "StorefrontGoToEditPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontGoToEditPurchaseOrderRuleActionGroup"
+       description: "Go to Edit a purchase order rule from the purchase rule listing page."
+- filename: "StorefrontValidateRulePresentInListingWithoutEditActionsActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateRulePresentInListingWithoutEditActionsActionGroup"
+       description: "Validates content on the Purchase Order Rules listing page when the user does not have the Edit Purchase Order Rule Approval permission."
+- filename: "StorefrontValidatePurchaseOrderRuleDeleteModalActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleDeleteModalActionGroup"
+       description: "Validates content in the purchase order rule delete modal along with each method of closing the delete modal."
+- filename: "StorefrontValidatePurchaseOrderRuleRowInGridActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleRowInGridActionGroup"
+       description: "Validates content in each column for provided row in the purchase order rule listing grid."
+- filename: "StorefrontValidateEmptyPurchaseOrderRulesGridActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateEmptyPurchaseOrderRulesGridActionGroup"
+       description: "Validates the contents of the purchase order rules grid when empty."
+- filename: "StorefrontSaveAndValidateEmptyPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSaveAndValidateEmptyPurchaseOrderRuleActionGroup"
+       description: "Clicks the Save button on the create or edit purchase order page before a rule type is selected and expects to see required field errors. Must have empty required fields."
+- filename: "StorefrontSaveAndValidateEmptyPurchaseOrderRuleWithConditionActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSaveAndValidateEmptyPurchaseOrderRuleWithConditionActionGroup"
+       description: "Clicks the Save button on the create or edit purchase order page after selecting a condition and expects to see required field errors. Must have empty required fields."
+- filename: "StorefrontValidateNotUniquePurchaseOrderRuleNameActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateNotUniquePurchaseOrderRuleNameActionGroup"
+       description: "Expects to see error for not unique rule name field value. Must be on the Create or Edit Purchase Order Rule page and have not unique rule name value in field."
+- filename: "StorefrontSaveAndValidateInvalidPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSaveAndValidateInvalidPurchaseOrderRuleActionGroup"
+       description: "Clicks the Save button on the create or edit purchase order page and expects to see invalid field value errors. Must have invalid values in fields."
+- filename: "StorefrontValidatePuchaseOrderValidateActionNotAvailableActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePuchaseOrderValidateActionNotAvailableActionGroup"
+       description: "Validates content on the Purchase Order View page to make sure the user does not have the Validate Purchase Order permission."
+- filename: "StorefrontValidateSaveDisabledOnViewPurchaseOrderRulePageActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateSaveDisabledOnViewPurchaseOrderRulePageActionGroup"
+       description: "Verify that the Save button is disabled and there is a message about not being able to save on the View Purchase Order Rule page."
+- filename: "StorefrontValidatePurchaseOrderRuleAppliesToAllActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleAppliesToAllActionGroup"
+       description: "Verifies that Applies To option is set to 'All'. Must be on the edit Purchase Order Rule page."
+- filename: "StorefrontValidateMultiSelectOptionsActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateMultiSelectOptionsActionGroup"
+       description: "Verifies multiple selected options"
+- filename: "StorefrontValidatePurchaseOrderRuleEditFormActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleEditFormActionGroup"
+       description: "Validates the form fields for name, description, and approver for a purchase order rule."
+- filename: "StorefrontValidatePurchaseOrderRuleConditionEditFormActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleConditionEditFormActionGroup"
+       description: "Validate the form fields for a purchase order rule condition."
+- filename: "StorefrontValidatePurchaseOrderRuleDisabledActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleDisabledActionGroup"
+       description: "Verify the purchase order rule is disabled on the create or edit purchase order rule page."
+- filename: "StorefrontValidatePurchaseOrderRuleEnabledActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidatePurchaseOrderRuleEnabledActionGroup"
+       description: "Verify the purchase order rule is enabled on the create or edit purchase order rule page."
+- filename: "StorefrontValidateSaveEnabledOnEditPurchaseOrderRulePageActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateSaveEnabledOnEditPurchaseOrderRulePageActionGroup"
+       description: "Verify that the Save button is enabled and there is not a message about not being able to save on the Edit Purchase Order Rule page."
+- filename: "StorefrontValidateAccessDeniedActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontValidateAccessDeniedActionGroup"
+       description: "Validates that the provided url opens an Access Denied page on the storefront."
+- filename: "StorefrontFillPurchaseOrderRuleNameAndDescriptionActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontFillPurchaseOrderRuleNameAndDescriptionActionGroup"
+       description: "Fills the form fields for name and description for a purchase order rule. Must be on the create or edit purchase order page."
+- filename: "StorefrontSelectEmptyRuleTypeForPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSelectEmptyRuleTypeForPurchaseOrderRuleActionGroup"
+       description: "Selects the Please select option for the Rule Type on a purchase order rule form. Must be on the create or edit purchase order page."
+- filename: "StorefrontDeletePurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontDeletePurchaseOrderRuleActionGroup"
+       description: "Deletes a purchase order rule from the purchase rule listing page."
+- filename: "StorefrontSaveNewPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSaveNewPurchaseOrderRuleActionGroup"
+       description: "Clicks the Save button on the purchase order create page."
+- filename: "StorefrontAddMonetaryConditionToPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontAddMonetaryConditionToPurchaseOrderRuleActionGroup"
+       description: "Fills the form fields for a monetary purchase order rule condition (rule type that has an operator, a quantity, and a currency). Must be on the create or edit purchase order page."
+- filename: "StorefrontDisablePurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontDisablePurchaseOrderRuleActionGroup"
+       description: "Disable the purchase order rule via the toggle on the create or edit purchase order rule page."
+- filename: "StorefrontEnablePurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontEnablePurchaseOrderRuleActionGroup"
+       description: "Enable the purchase order rule via the toggle on the create or edit purchase order rule page."
+- filename: "StorefrontSelectPurchaseOrderRuleAppliesToSpecificEmptyActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSelectPurchaseOrderRuleAppliesToSpecificEmptyActionGroup"
+       description: "Selects the 'Specific' applies to option but does not select any roles. Must be on the create Purchase Order Rule page."
+- filename: "StorefrontSelectPurchaseOrderRuleAppliesToAllActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSelectPurchaseOrderRuleAppliesToAllActionGroup"
+       description: "Selects the applies to option with 'All'. Must be on the create Purchase Order Rule page."
+- filename: "StorefrontSelectPurchaseOrderRuleAppliesToSpecificActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSelectPurchaseOrderRuleAppliesToSpecificActionGroup"
+       description: "Selects the 'Specific' applies to option and selects provided roles. Must be on the create Purchase Order Rule page."
+- filename: "StorefrontAddQuantityConditionToPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontAddQuantityConditionToPurchaseOrderRuleActionGroup"
+       description: "Fills the form fields for a quantity purchase order rule condition (rule type that has an operator and a quantity). Must be on the create or edit purchase order page."
+- filename: "StorefrontFillPurchaseOrderRuleFormWithoutApproverActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontFillPurchaseOrderRuleFormWithoutApproverActionGroup"
+       description: "Unselects all approvers for a purchase order rule. Must be on the create or edit purchase order page."
+- filename: "StorefrontSaveExistingPurchaseOrderRuleActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontSaveExistingPurchaseOrderRuleActionGroup"
+       description: "Clicks the Save button on the purchase order edit page."
+- filename: "StorefrontFillPurchaseOrderRuleApproversActionGroup.xml"
+  module: "PurchaseOrderRule"
+  actiongroups:
+     - name: "StorefrontFillPurchaseOrderRuleApproversActionGroup"
+       description: "Selects the approvers specified for a purchase order rule. Must be on the create or edit purchase order page."
+- filename: "AdminStartCreatingCompanyActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminStartCreatingCompanyActionGroup"
+       description: "Navigate to the new company page and fill main comapny data"
+- filename: "AdminAssertCustomerGroupOnCustomerFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAssertCustomerGroupOnCustomerForm"
+       description: ""
+- filename: "AdminAssertCustomerGroupOnCatalogPriceRuleFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAssertCustomerGroupOnCatalogPriceRuleForm"
+       description: ""
+- filename: "AdminStartToCreateCompanyActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminStartToCreateCompanyActionGroup"
+       description: "Navigate to the Admin Companies list page, press 'Add New Company' button, fill data on main tab"
+- filename: "AdminNavigateToCompaniesIndexPageActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminNavigateToCompaniesIndexPageActionGroup"
+       description: "Navigates to the Companies Index page."
+- filename: "AdminClearCompaniesFiltersActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminClearCompaniesFiltersActionGroup"
+       description: "Clears the filters on the companies grid on the Companies Index page."
+- filename: "StorefrontCompanyStructureAssignSubordinateActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontCompanyStructureAssignSubordinateActionGroup"
+       description: "Assigns subordinateUser as a subordinate of supervisorUser. Must be on the Company Structure page on the storefront."
+- filename: "StorefrontCreateCompanyActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontCreateCompanyActionGroup"
+       description: ""
+- filename: "AssertCustomerGroupOnCustomerFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AssertCustomerGroupOnCustomerFormActionGroup"
+       description: ""
+- filename: "StorefrontEditRoleInformationActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontEditRoleInformationActionGroup"
+       description: "Edits all fields in the Role Information section on the company role edit page on the storefront."
+- filename: "StorefrontGoToCompanyUsersPageActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontGoToCompanyUsersPageActionGroup"
+       description: "Goes directly to the Company Users url on the storefront."
+- filename: "StorefrontSaveCompanyRoleActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontSaveCompanyRoleActionGroup"
+       description: "Clicks the Save button on the company role edit page on the storefront."
+- filename: "AdminAddACompanyToCustomerActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAddACompanyToCustomerActionGroup"
+       description: ""
+- filename: "AdminNewCompanySaveActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminNewCompanySaveActionGroup"
+       description: ""
+- filename: "AdminDeleteCompanyFilterByEmailActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminDeleteCompanyFilterByEmailActionGroup"
+       description: "Navigates to companies grid, filter it by email and delete found companies using bulk action."
+- filename: "AdminDeleteCompanyActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminDeleteCompanyActionGroup"
+       description: ""
+- filename: "StorefrontToggleCompanyRolePermissionActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontToggleCompanyRolePermissionActionGroup"
+       description: "Toggles the defined company role permission to ON state. Must be on the Edit Company Role storefront page"
+- filename: "AdminAssertCustomerGroupOnProductFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAssertCustomerGroupOnProductForm"
+       description: ""
+- filename: "AdminOpenCompanyEditPageActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminOpenCompanyEditPageActionGroup"
+       description: "Goes to the Admin Company Edit page for the provided Company ID #."
+- filename: "AdminFillCompanyLegalAddressActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminFillCompanyLegalAddressActionGroup"
+       description: "Fill company legal address"
+- filename: "AdminFilterCompanyByCompanyNameActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminFilterCompanyByCompanyNameActionGroup"
+       description: "Filters the companies grid on the Companies Index page by company name."
+- filename: "AdminFillCompanyAdminActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminFillCompanyAdminActionGroup"
+       description: "Fill company admin"
+- filename: "AdminCreateCompanyActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminCreateCompanyActionGroup"
+       description: ""
+- filename: "StorefrontUntoggleCompanyRolePermissionActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontUntoggleCompanyRolePermissionActionGroup"
+       description: "Toggles the defined company role permission to OFF state. Must be on the Edit Company Role storefront page"
+- filename: "AdminFilterCompanyByPhoneNumberActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminFilterCompanyByPhoneNumberActionGroup"
+       description: "Filters the companies grid on the Companies Index page by phone number."
+- filename: "AdminAddAssociateCompanyToCustomerActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAddAssociateCompanyToCustomerActionGroup"
+       description: ""
+- filename: "StorefrontDeleteRoleActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontDeleteRoleActionGroup"
+       description: "Deletes a role from the Roles and Permissions page on the storefront."
+- filename: "AdminChangeCompanyAdminActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminChangeCompanyAdminActionGroup"
+       description: ""
+- filename: "StorefrontNavigateToRolesAndPermissionsPageActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontNavigateToRolesAndPermissionsPageActionGroup"
+       description: "Navigates to the user's Roles and Permissions page on the storefront using the UI. Must be within a user's Account Details on storefront."
+- filename: "StorefrontNavigateToCompanyStructurePageActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontNavigateToCompanyStructurePageActionGroup"
+       description: "Navigates to the user's Company Structure page on the storefront using the UI. Must be within a user's Account Details on storefront."
+- filename: "StorefrontVerifyNoUserRoleOnCustomerAccountDashboardActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontVerifyNoUserRoleOnCustomerAccountDashboardActionGroup"
+       description: "Verifies that there is no User Role section for not company user on the customer account dashboard page"
+- filename: "AdminCompanySaveActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminCompanySaveActionGroup"
+       description: ""
+- filename: "StorefrontCompanyStructureExpandAllActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontCompanyStructureExpandAllActionGroup"
+       description: "Expand all items within the company structure to enable modification on any level."
+- filename: "StorefrontClickEditForCompanyUserInUsersGridActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontClickEditForCompanyUserInUsersGridActionGroup"
+       description: "Clicks the Edit button for a specified company user in the Company User grid. Must be on the Company User listing page on the storefront."
+- filename: "StorefrontEditCompanyUserActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontEditCompanyUserActionGroup"
+       description: "Edits all form fields on the Edit Company User modal on the storefront. customerData uses data from a createData entity whereas companyUserData uses data from a custom data entity"
+- filename: "StorefrontClickDuplicateForRoleInRolesGridActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontClickDuplicateForRoleInRolesGridActionGroup"
+       description: "Clicks the Duplicate button for a specified role in the Roles and Permissions grid"
+- filename: "AdminCheckCompanyAdminFormDataActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminCheckCompanyAdminFormDataActionGroup"
+       description: "Check company admin data is correct"
+- filename: "StorefrontFillCompanyUserFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontFillCompanyUserFormActionGroup"
+       description: ""
+- filename: "StorefrontClickEditForRoleInRolesGridActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontClickEditForRoleInRolesGridActionGroup"
+       description: "Clicks the Edit button for a specified role in the Roles and Permissions grid. Must be on the Company Roles and Permissions page on the storefront."
+- filename: "AdminAssertCustomerGroupOnCartPriceRuleFormActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "AdminAssertCustomerGroupOnCartPriceRuleForm"
+       description: ""
+- filename: "StorefrontSaveCompanyUserActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontSaveCompanyUserActionGroup"
+       description: "Clicks the Save button on the company role edit page on the storefront."
+- filename: "StorefrontVerifyUserRoleOnCustomerAccountDashboardActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontVerifyUserRoleOnCustomerAccountDashboardActionGroup"
+       description: "Verifies user role on the customer account dashboard page"
+- filename: "StorefrontFillCustomerUserWithPrefixEnabledActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "StorefrontFillCustomerUserWithPrefixEnabledActionGroup"
+       description: ""
+- filename: "FilterCompanyFromGridActionGroup.xml"
+  module: "Company"
+  actiongroups:
+     - name: "FilterCompanyFromGridActionGroup"
+       description: ""
+- filename: "AdminChangeCreditCurrencyActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminChangeCreditCurrencyActionGroup"
+       description: ""
+- filename: "AdminCreateCompanyWithCreditLimitActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminCreateCompanyWithCreditLimitActionGroup"
+       description: ""
+- filename: "AdminAssertCreditLimitActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminAssertCreditLimitActionGroup"
+       description: ""
+- filename: "AdminAddCompanyCreditLimitActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminAddCompanyCreditLimitActionGroup"
+       description: ""
+- filename: "AdminAssertCompanyCreditBalanceActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminAssertCompanyCreditBalanceActionGroup"
+       description: ""
+- filename: "AdminCompanyReimburseBalanceActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminCompanyReimburseBalanceActionGroup"
+       description: ""
+- filename: "AdminAssertCompanyCreditHistoryListingGridValueActionGroup.xml"
+  module: "CompanyCredit"
+  actiongroups:
+     - name: "AdminAssertCompanyCreditHistoryListingGridValueActionGroup"
+       description: ""
+- filename: "StorefrontQuickOrderActionGroup.xml"
+  module: "QuickOrder"
+  actiongroups:
+     - name: "StorefrontQuickOrderAddProductToCart"
+       description: ""
+- filename: "CatalogSelectCustomerGroupActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CatalogSelectCustomerGroupActionGroup"
+       description: ""
+- filename: "AssertCatalogRuleInGridActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AssertCatalogRuleInGridActionGroup"
+       description: ""
+- filename: "AdminCreateCartPriceRuleRuleInfoSectionCustomerGroupSelectActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCartPriceRuleRuleInfoSectionCustomerGroupSelectActionGroup"
+       description: ""
+- filename: "CreateScheduleUpdateActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CreateCatalogPriceRuleB2b"
+       description: ""
+- filename: "DisallowChoosingStateActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "DisallowChoosingStateActionGroup"
+       description: ""
+- filename: "ProductSetAdvancedPricingB2BActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "ProductSetAdvancedPricingB2BActionGroup"
+       description: ""
+- filename: "AdminCreateCustomerWithDefaultAddressWithoutPhoneB2BActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCustomerWithDefaultAddressWithoutPhoneB2BActionGroup"
+       description: ""
+- filename: "SelectGeneralCustomerGroupActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "SelectGeneralCustomerGroupActionGroup"
+       description: ""
+- filename: "AdminCreateCartPriceRuleActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCartPriceRuleActionGroup"
+       description: ""
+- filename: "CreateCatalogPriceRuleActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CreateCatalogPriceRuleActionGroup"
+       description: ""
+- filename: "AdminCreateCustomerWithWebSiteAndGroupActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCustomerWithWebSiteAndGroupActionGroup"
+       description: ""
+- filename: "CreateCompanyWithoutStateActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CreateCompanyWithoutStateActionGroup"
+       description: ""
+- filename: "ProductSetAdvancedTierFixedPricingActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "ProductSetAdvancedTierFixedPricingActionGroup"
+       description: ""
+- filename: "AssertCatalogPriceRuleFormActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AssertCatalogPriceRuleFormActionGroup"
+       description: ""
+- filename: "AdminCreateNewCatalogPriceRuleActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateNewCatalogPriceRuleActionGroup"
+       description: ""
+- filename: "AdminCreateCartPriceRuleRuleInfoSectionActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCartPriceRuleRuleInfoSectionActionGroup"
+       description: ""
+- filename: "AdminReviewOrderWithOnlyReportsPermissionB2BActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCustomerWithWebsiteAndStoreViewB2BActionGroup"
+       description: ""
+- filename: "CleanupConfigurationsForDisallowChoosingStateActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CleanupConfigurationsForDisallowChoosingStateActionGroup"
+       description: ""
+- filename: "AdminUpdateCustomerGroupByEmailActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminUpdateCustomerGroupByEmailActionGroup"
+       description: ""
+- filename: "DeleteCompanyActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "DeleteCompanyActionGroup"
+       description: ""
+- filename: "AdminCustomerGridActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminSetCustomerActiveViaGrid"
+       description: ""
+- filename: "CreateCatalogPriceRuleViaTheUiActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "CreateCatalogPriceRuleViaTheUiActionGroup"
+       description: ""
+- filename: "AdminEditCustomerInformationFromActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminSetCustomerInactive"
+       description: ""
+- filename: "AdminCreateCartPriceRuleRuleInfoSectionSpecificCouponActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminCreateCartPriceRuleRuleInfoSectionSpecificCouponActionGroup"
+       description: ""
+- filename: "AdminInactiveCartPriceRuleActionGroup.xml"
+  module: "B2b"
+  actiongroups:
+     - name: "AdminInactiveCartPriceRuleActionGroup"
+       description: ""
