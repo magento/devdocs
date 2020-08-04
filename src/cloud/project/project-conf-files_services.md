@@ -46,7 +46,7 @@ elasticsearch:
 You must provide the _type_ values: _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
 
 ```yaml
-<name>:
+<service-id>:
     type: <name>:<version>
     disk: <value-MB>
 ```
