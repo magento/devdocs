@@ -6,16 +6,24 @@ functional_areas:
   - Upgrade
 ---
 The [{{site.data.var.mcp-prod}}](https://github.com/magento/magento-cloud-patches) package
-delivers Magento patches and hot fixes, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical fixes. The package can also deliver custom patches that you add to your project root directory.
+delivers Magento patches, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical and custom fixes.
 
-The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp-prod }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
+
+The {{ site.data.var.mcp-prod }} package can deliver the following patch types:
+
+-  Required patches included in the {{ site.data.var.mcp-prod }} package
+
+-  Optional Magento patches included in the `/m2-hotfixes` directory
+
+-  Custom patches included in the `/m2-hotfixes` directory
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp-package}}` to check for pending patches and applies them automatically in the following order:
 
-1. Apply Magento-provided patches included in the `{{site.data.var.mcp-package}}` package.
-1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
+1. Apply required patches from Magento included in the `{{site.data.var.mcp-package}}` package.
+1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
-You can also apply patches manually.
+Also, you can apply patches manually in your local environment.
 
 {:.bs-callout-info}
 All patch file names must end with the `.patch` extension.

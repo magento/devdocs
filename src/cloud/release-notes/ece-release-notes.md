@@ -22,6 +22,22 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 <!--Add release notes below-->
 
+**Validation and log improvements**–
+
+-  {:new}Added the `schema.error.yaml` file that includes all error and warning notifications that can occur during the Magento Cloud build, deploy, and post-deploy process along with suggestions for resolving the errors.  The information in this file is also available in the _Magento Cloud Guide_. See [Error message reference]({{ site.baseurl }}/cloud/reference/error-codes.html).<!--MCLOUD-5878-->
+
+-  {:.new}Changed the Cloud error log (`/var/log/cloud.error.log`) entries to JSON format to make the log easier to parse programmatically.<!--MCLOUD-5879-->
+
+-  {:.new}Added additional error checks to build, deploy, and post-deploy processing and improved existing checks:
+
+   -  Error code 2026–Failed to restore some data generated during the build phase to the mounted directories
+
+   -  Error code 3004–Cannot create backup files
+
+   -  Error code 102–Added additional checks for issues that occur when the `env.php` file is not writable <!--MCLOUD-6221-->
+
+-  {:.new}Added the **QUALITY_PATCHES** environment variable to specify one or more patches to apply during the deployment process. Currently, this variable is for Magento internal use only.<!--MCLOUD-6375-->
+
 ## v2002.1.1
 *Release date: June 25, 2020*<br/>
 

@@ -21,7 +21,7 @@ mbi: Magento Business Intelligence
 # Cloud product name variables
 
 ece: Magento Commerce Cloud
-ece-release-date: TBD, 2020
+ece-release-date: August 5, 2020
 csuite: Magento Commerce Cloud Suite
 ct: ece-tools
 ct-repo: magento/ece-tools

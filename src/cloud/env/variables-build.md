@@ -34,6 +34,33 @@ stage:
     ERROR_REPORT_DIR_NESTING_LEVEL: 2
 ```
 
+### `QUALITY_PATCHES`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+{:.bs-callout-warning}
+The `QUALITY_PATCHES` variable is for _Magento internal use only_.
+
+Specify a list of quality patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES: [ ]
+```
+
+The following example specifies three patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES:
+      - MC-31387
+      - MDVA-4567
+      - MC-456345
+```
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
