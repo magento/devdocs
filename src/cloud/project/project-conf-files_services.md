@@ -47,7 +47,7 @@ You must provide the _type_ values: _name_ and _version_. If the service uses pe
 
 ```yaml
 <name>:
-    type: <service-name>:<version>
+    type: <name>:<version>
     disk: <value-MB>
 ```
 
