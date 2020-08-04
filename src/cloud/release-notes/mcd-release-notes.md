@@ -23,9 +23,9 @@ The release notes include:
 
 -  {:.fix}Restored the PS library to the Cloud Docker environment configuration to fix `ps:  command not found` errors.<!--MCLOUD-6621-->
 
--  {:.fix}Updated the default {{ site.data.var.mcd-prod }} configuration to remove automatic configuration of database directories to fix `Cannot create container for service db` errors that can occur when starting your Cloud Docker environment.
+-  {:.fix}Updated the default {{ site.data.var.mcd-prod }} configuration to remove automatic mounting of the database entrypoint and MariaDB volumes to fix `Cannot create container for service db` errors that can occur when starting your Cloud Docker environment.
 
-   If you need to configure database directories in your Cloud Docker environment, add the following options to the `ece-docker build:compose` command when you generate the Docker compose configuration file: `--with-entry-point` and `with-mariadb-conf`. See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-6424-->
+   Now, you can configure the Cloud Docker environment to mount the database directories by adding the following options to the `ece-docker build:compose` command: `--with-entry-point` and `with-mariadb-conf`. See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-6424-->
 
 -  {:.new}**CLI command updates**
 
