@@ -66,7 +66,7 @@ Attribute |  Data Type | Description
 `email` | String! | The customer’s email address
 `firstname` | String! | The customer’s first name
 `gender` | Int | The customer's gender (Male - 1, Female - 2)
-`is_subscribed` | Boolean | The customer's new password
+`is_subscribed` | Boolean | Indicates whether the customer subscribes to the store's newsletter
 `lastname` | String! | The customer’s last name
 `middlename` | String | The customer’s middle name
 `password` | String | The customer's password
