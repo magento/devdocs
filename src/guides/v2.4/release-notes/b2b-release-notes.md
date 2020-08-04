@@ -44,3 +44,4 @@ These release notes can include:
 ### Known Issues
 
 -  If items in a purchase order that are out-of-stock, or of insufficient quantity when the purchase order is converted into an actual order, an error will occur. If backorders are enabled, the order will be processed normally.
+-  If a discount code expires before a purchase order is approved, the PO continues to show the discounted amount. Once the PO is approved, the order is placed at the non-discounted total.
