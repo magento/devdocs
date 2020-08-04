@@ -91,7 +91,7 @@ To apply and test a custom patch:
 
 ## Apply patches to a Magento enterprise or open source project
 
-You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magento patches and hot fixes to a Magento project that is not deployed on the Cloud platform.
+You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magento patches and hotfixes to a Magento project that is not deployed on the Cloud platform.
 
 {:.procedure}
 To use magento-cloud-patches as a stand-alone package:

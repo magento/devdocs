@@ -511,7 +511,7 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-        - label: Error log message reference
+        - label: Error message reference for ece-tools
           url: /cloud/reference/ece-tools-error-reference.html
           versionless: true
 
