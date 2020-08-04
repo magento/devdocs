@@ -21,6 +21,21 @@ The release notes include:
 
 -  {:.fix}**Updated email configuration**–Updated the default {{ site.var.ece.mcd-product }} configuration to support the MailHog service instead of using SendMail. See [Set up email]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-5624-->
 
+-  {:.fix}Restored the PS library to the Cloud Docker environment configuration to fix `ps:  command not found` errors.<!--MCLOUD-6621-->
+
+-  {:.fix}Updated the default {{ site.data.var.mcd-prod }} configuration to remove automatic configuration of database directories to fix `Cannot create container for service db` errors that can occur when starting your Cloud Docker environment.
+
+   If you need to configure database directories in your Cloud Docker environment, add the following options to the `ece-docker build:compose` command when you generate the Docker compose configuration file: `--with-entry-point` and `with-mariadb-conf`. See [Service configuration options]({{site.baseurl}}/cloud/docker/docker-containers.html#service-configuration-options).<!--MCLOUD-6424-->
+
+-  {:.new}**CLI command updates**
+
+{: .docker-service-versions-table}
+
+   Action | Command
+   ------ | -------
+   Add an entrypoint to the database container to restore the database from backup | `./vendor/bin/ece-docker build:compose --db --with-entrypoint`
+   Add a MariaDB configuration volume | `./vendor/bin/ece-docker build:compose --db --mariadb-conf`
+
 <!--Add release notes below-->
 
 ## v1.1.0
@@ -77,6 +92,8 @@ The release notes include:
    -  Improved mutagen file synchronization performance by adding a second sync session to synchronize files in the `vendor` directory. This change prevents mutagen from getting stuck during the file synchronization process. *[Fix submitted by Mathew Beane from Zilker Technology](https://github.com/magento/magento-cloud-docker/pull/127).*<!--MCLOUD-6010-->
 
    -  {:.new}**CLI command updates**
+
+      {: .docker-service-versions-table}
 
       Action | Command
       ------ | -------
@@ -194,3 +211,14 @@ The release notes include:
 [Magento Cloud Varnish container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [Pound TLS Termination Proxy]: https://github.com/mnuessler/docker-tls-termination-proxy/blob/master/README.md
 [`pound.cfg`]: https://github.com/magento/magento-cloud-docker/blob/1.0/images/tls/pound.cfg
+
+<!--Custom table configuration-->
+
+<!--
+  This is a style declaration so that first column does not wrap
+-->
+
+<style>
+table.docker-service-versions-table td:nth-child(2) {
+  width: 500px;
+}
