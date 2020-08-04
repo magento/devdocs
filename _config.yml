@@ -55,15 +55,15 @@ defaults:
   
   - 
     scope:
-      path: 'guides/v2.3'
+      path: guides/v2.3
     values:
-      guide_version: 2.3
+      guide_version: '2.3'
   
   - 
     scope:
-      path: 'guides/v2.4'
+      path: guides/v2.4
     values:
-      guide_version: 2.4
+      guide_version: '2.4'
 
   -
     scope:
