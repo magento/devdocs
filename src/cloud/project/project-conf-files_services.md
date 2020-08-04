@@ -51,7 +51,7 @@ You must provide the _type_ values: _name_ and _version_. If the service uses pe
     disk: <value-MB>
 ```
 
-### `name`
+### `service-id`
 
 The `service-id` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
 
