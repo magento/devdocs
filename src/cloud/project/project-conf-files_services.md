@@ -43,7 +43,7 @@ elasticsearch:
 
 ## Service values
 
-You must provide the _type_ values: _service-name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
+You must provide the _type_ values: _name_ and _version_. If the service uses persistent storage, then you must provide a _disk_ value. Use the following format:
 
 ```yaml
 <name>:
@@ -238,7 +238,7 @@ You can upgrade the installed service version by updating the service configurat
 
 You cannot downgrade an installed service directly. You have two options:
 
--  Rename an existing service with the new version, which removes the existing service and adds a new one.
+-  Rename an existing service with the new version, which removes the existing service and data, and adds a new one.
 
 -  Create a new service and save the data from the existing service.
 
@@ -248,6 +248,9 @@ When you change the service version, you must update the service configuration i
 To downgrade a service version by renaming an existing service:
 
 1. Rename the existing service in the `.magento/services.yaml` file and change the version.
+
+   {:.bs-callout-warning}
+   Renaming an existing service replaces it and deletes all data. If you need to retain the data, create a new service instead of renaming the existing one.
 
    For example, to downgrade the MariaDB version for the _mysql_ service from version 10.3 to 10.2, change the existing service _name_ and _type_.
 
