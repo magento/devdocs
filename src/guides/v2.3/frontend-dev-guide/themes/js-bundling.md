@@ -46,7 +46,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 1. Modifying the settings above when Magento is in production mode will require [static view files deployment][static-content]:
 
    ```bash
-   bin/magento bin/magento setup:static-content:deploy
+   bin/magento setup:static-content:deploy
    ```
 
 1. Finally, clear the cache:
