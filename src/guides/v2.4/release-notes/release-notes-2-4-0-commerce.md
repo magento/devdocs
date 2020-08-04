@@ -2220,6 +2220,8 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: The **Refresh** buttons on the Last Ordered Items,  Products in Comparison List, and Recently Compared Products sections of the Admin Customer Activities page do not work as expected. Currently, Magento scrolls the page  every time the **Refresh** button is clicked and does not display the product name. See [Refresh on Customer's Activities does not work](https://magento.zendesk.com/hc/en-us/articles/360046091332) Knowledge Base article. <!--- MC-35296-->
 
+**Issue**: If a discount code expires before a Purchase Order (PO) is approved, the PO continues to display the discounted amount, but once the PO is approved, the order is placed at the non-discounted total. **Workaround**: The **B2B-709 Purchase Order Discount patch** hotfix for this issue is now available from the **My Account** > **Downloads** section of `magento.com`.
+
 ## Known issues -- VBE
 
 ### Amazon Pay
