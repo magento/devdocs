@@ -73,7 +73,7 @@ The following guidelines may answer most of your questions and help you get star
 -  Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
 -  Do not directly contact DevDocs team members or maintainers on Slack to review your pull request unless it has been open for more than five days. We have a process and queue for pull requests that everyone must follow.
 -  Get recognized on the DevDocs web site for writing new topics! Add your name and a link to your company website or GitHub profile to the file metadata so that we can display it on the page. See [Edit metadata](#edit-metadata).
--  We no longer recognize individual community members who contribute features to the Magento 2 codebase in the corresponding feature topic(s) on the DevDocs web site. Magento recognizes these contributions in more appropriate channels (for example, the [Magento DevBlog](https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog)).
+-  We no longer recognize individual community members who contribute features to the Magento 2 codebase in the corresponding feature topic(s) on the DevDocs website. Magento recognizes these contributions in more appropriate channels (for example, the [Magento DevBlog](https://community.magento.com/t5/Magento-DevBlog/bg-p/devblog)).
 
 ## Tips for writing content
 
@@ -123,8 +123,8 @@ contributor_link:
 | ------------- | ---------- |
 | `group`       | Defines the topic's guide or section. Use the table of contents `.yml` file name. This loads your left-side navigation. We will help during the PR process to add new files to the `.yml` file. |
 | `title`       | Sets the title of the page in the HTML metadata and the main title on the page.  |
-| `contributor_name` | Sets the name of the contributor who wrote the topic on the page. |
-| `contributor_link` | Creates a link to the contributor's GitHub profile or company link. |
+| `contributor_name` | Sets the name of the contributor who wrote the topic and displays it on the page. |
+| `contributor_link` | Creates a link to the contributor's GitHub profile or company website. |
 
 ## Report an issue
 
