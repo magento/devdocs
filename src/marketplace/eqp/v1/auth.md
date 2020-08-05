@@ -18,7 +18,7 @@ In code examples in this documentation, we use the Base URL of the [sandbox](san
 Once you are confident your **sandbox** API calls are correct, and you wish to submit a package for full manual review on the **production** environment, do the following:
 
 -  Use the **production** Base URL instead of the sandbox one
--  use your **production** API access key: application ID and application secret
+-  Use your **production** API access key: application ID and application secret
 
 |Environment|Base Url|
 |-----------|--------|
