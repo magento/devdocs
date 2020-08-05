@@ -38,7 +38,7 @@ Marketplace EQP API **access keys** are self-serviced.  As long as you are [elig
     ![]({{ site.baseurl }}/marketplace/eqp/v1/images/sandbox-access-key-list.png){: .zoom}
     _New API Access Key Added_
 
-## Managing your API access keys
+## Manage your API access keys
 
 -  From the list of your API access keys, you can **regenerate** the key.
    -  Regenerating the key will result in a new pair of the **application ID** and **application secret**.
