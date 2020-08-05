@@ -31,7 +31,7 @@ Marketplace EQP API **access keys** are self-serviced.  As long as you are [elig
     ![]({{ site.baseurl }}/marketplace/eqp/v1/images/sandbox-access-key-empty.png){: .zoom}
     _Empty List of API Access Keys_
 1. Click **Create API Access Key**.
-1. In the "Create New API Key" dialog, enter an **API Key Name**.  This name is for your own use. Then, click <span class="btn">Continue</span>
+1. In the "Create New API Key" dialog, enter an **API Key Name**.  This name is for your own use. Then, click **Continue**.
     ![]({{ site.baseurl }}/marketplace/eqp/v1/images/sandbox-access-key-create.png){: .zoom}
     _Create API Access Key Dialog_
 1. Your new API access key appears in the list.  Notice that your API access key has an associated **application ID** and an **application secret**.
