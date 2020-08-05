@@ -52,6 +52,18 @@ defaults:
       github_link: true
       # Enables the 'Give us feedback' appearances on pages
       feedback_link: true
+  
+  - 
+    scope:
+      path: guides/v2.3
+    values:
+      guide_version: '2.3'
+  
+  - 
+    scope:
+      path: guides/v2.4
+    values:
+      guide_version: '2.4'
 
   -
     scope:
