@@ -90,7 +90,7 @@ Field details:
 |Field|Type|Description|
 |-----|----|-----------|
 |mage_id|string|Your user account.  This is your "Magento ID."|
-|ust|string|User Session Token. Will be used in the **`Authorization: Bearer`** header for all subsequent API calls.|
+|ust|string|User Session Token. It will be used in the **`Authorization: Bearer`** header for all subsequent API calls.|
 |expires_in|int|Number of seconds the session token will be valid.|
 
 -  The session token has a relatively short duration.
