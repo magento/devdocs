@@ -46,7 +46,7 @@ See more information about [becoming a partner][4].
 
 There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
 
-1. production - [https://developer.magento.com][1]
+-  Production - [https://developer.magento.com][1]
 1. sandbox - [https://developer-stg.magento.com][2]
 
 Use your same login information for the production **Marketplace Developer Portal** to also log into the **Sandbox Marketplace Developer Portal**. Learn more about the [sandbox](sandbox.html) environment.
