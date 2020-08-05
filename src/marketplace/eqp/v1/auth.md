@@ -103,7 +103,7 @@ Field details:
 ## How to use a session token {#token-use}
 
 After obtaining a valid session token, you must use it as an **authorization bearer token** in all subsequent API calls.
-Using the example values from above, to access your user profile with a session token:
+Using the example values from above, run the following command to access your user profile with a session token:
 
 ```bash
 curl -X GET \
