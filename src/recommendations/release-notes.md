@@ -14,6 +14,11 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## 3.0.5 of magento/product-recommendations for Magento Commerce 2.4.0
+
+-  {:.fix}Fixed "Unable to retrieve product options data" error during catalog export
+-  {:.fix}Currency symbol in **Revenue** column on the **Product Recommendations** dashboard now correctly reflects configured base currency
+
 ## 3.0.4 of magento/product-recommendations for Magento Commerce 2.4.0
 
 -  {:.fix}Added support for Magento Commerce 2.4.0
