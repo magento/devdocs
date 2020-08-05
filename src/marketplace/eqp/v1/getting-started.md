@@ -15,7 +15,7 @@ Follow these steps to get started using the **Marketplace EQP API**.
 
 [API access keys](access-keys.html) describes this process.
 
-## 3. Using your API access key, get a session token
+## 3. Get a session token
 
 -  See the section on [obtaining a session token](auth.html#session-token).
 
