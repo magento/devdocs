@@ -10476,7 +10476,7 @@
                "max-execution-time" : {
                   "accept_value" : true,
                   "shortcut" : "",
-                  "default" : 900,
+                  "default" : 400,
                   "description" : "The maximum expected execution time of deployment static process (in seconds).",
                   "name" : "--max-execution-time",
                   "is_multiple" : false,
