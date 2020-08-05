@@ -26,7 +26,7 @@ Uses of the Marketplace EQP API include the following:
 
 <a id="eligible"/>
 
-## Who is eligible to use this API
+## API eligibility {#eligible}
 
 Only specific partners are eligible to use the Marketplace EQP API:
 
