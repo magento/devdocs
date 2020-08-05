@@ -1,6 +1,6 @@
 ---
 group: marketplace-api
-title: API access key
+title: API access keys
 ---
 
 {:.bs-callout-info}
