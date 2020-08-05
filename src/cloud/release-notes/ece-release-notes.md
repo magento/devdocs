@@ -17,12 +17,33 @@ The `{{site.data.var.ct}}` package uses the following release versioning sequenc
 {:.bs-callout-info}
 See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
-## v2002.1.1
+## v2002.1.2
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
+**Validation and log improvements**–
+
+-  {:.new}Added the `schema.error.yaml` file that includes all error and warning notifications that can occur during the Magento Cloud build, deploy, and post-deploy process along with suggestions for resolving the errors.  The information in this file is also available in the _Magento Cloud Guide_. See [Error message reference for ece-tools]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html).<!--MCLOUD-5878-->
+
+-  {:.new}Changed the Cloud error log (`/var/log/cloud.error.log`) entries to JSON format to make the log easier to parse programmatically.<!--MCLOUD-5879-->
+
+-  {:.new}Added additional error checks to build, deploy, and post-deploy processing and improved existing checks:
+
+   -  Error code 2026–Failed to restore some data generated during the build phase to the mounted directories
+
+   -  Error code 3004–Cannot create backup files
+
+   -  Error code 102–Added additional checks for issues that occur when the `env.php` file is not writable <!--MCLOUD-6221-->
+
+-  {:.new}Added the **QUALITY_PATCHES** environment variable to specify one or more patches to apply during the deployment process. Currently, this variable is for Magento internal use only.<!--MCLOUD-6375-->
+
+## v2002.1.1
+*Release date: June 25, 2020*<br/>
 
 -  {:.new}**Infrastructure updates**–
 
-   -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/error-codes.html).<!-- MCLOUD-5637, 5531-->
+   -  {:.new}**Logging improvements**–Improved log tracking capability by assigning exit codes to critical deploy errors and exposing the exit codes in error message notifications and log events. See [Error message reference for ece-tools]({{site.baseurl}}/cloud/reference/ece-tools-error-reference.html).<!-- MCLOUD-5637, 5531-->
 
    -  {:.new}Improved the process for database dumps (`vendor/bin/ece-tools db-dump`) and updated log messages to clarify that the database dump operation switches the application to maintenance mode, stops consumer queue processes, and disables cron jobs before the dump begins.<!--MCLOUD-5324, MCLOUD-2062-->
 

@@ -23,7 +23,7 @@ If you use Microsoft Windows, take the following steps before continuing:
 1. To enable Xdebug for your Docker environment, generate the Docker Compose configuration file in developer mode with the `--with-xdebug` option and any other required options, for example.
 
    ```bash
-   vendor/bin/ece-docker build:compose --mode --sync-engine="mutagen" developer --with-xdebug
+   vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen" --with-xdebug
    ```
 
    This command adds the Xdebug configuration to your `docker-compose.yml` file.
@@ -38,7 +38,7 @@ If you use Microsoft Windows, take the following steps before continuing:
        volumes:
          - 'mymagento-magento-sync:/app:nocopy'
        environment:
-         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap    socketssysvmsg    sysvsem sysvshm opcache zip redis xsl sodium'
+         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap socketssysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
        networks:
          magento:
            aliases:
