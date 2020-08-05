@@ -8,7 +8,7 @@ Marketplace EQP API **access keys** are self-serviced.  As long as you are [elig
 
 ## What is an API access key
 
--  An API access key is a pair of an **application ID** and an **application secret**.
+-  An API access key is a pair consisting of an **application ID** and an **application secret**.
 -  Use an API access key to obtain a [session token](auth.html#session-token).  The **session token** is used when calling the [REST endpoints](rest-api.html).
 -  You decide the lifespan of your API access key: you can regenerate it as often as you wish, or you can choose to delete it.
 -  API access keys are specific to each **Marketplace Developer Portal** environment.  API access keys generated for the **sandbox** cannot be used for **production**, and vice-versa.
