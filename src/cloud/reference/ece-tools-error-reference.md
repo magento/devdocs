@@ -9,7 +9,7 @@ redirect_from:
   - /cloud/reference/error-codes.html
 ---
 
-This error message reference provides information to troubleshoot errors that can occur during the {{site.data.var.ece }} buid, deploy, and post-deploy processes.
+This error message reference provides information to troubleshoot errors that can occur during the {{site.data.var.ece }} build, deploy, and post-deploy processes.
 
 All critical and warning error messages that occur during deployment are written to both the `var/log/cloud.log` and `/var/log/cloud.error.log` files. The Cloud error log file contains only errors from the latest deployment. An empty file indicates a successful deployment with no errors.
 
