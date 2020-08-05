@@ -17,6 +17,10 @@ pages:
     url: /mftf/docs/credentials.html
     versionless: true
 
+  - label: Custom Helpers
+    url: /mftf/docs/custom-helpers.html
+    versionless: true
+
   - label: Data
     url: /mftf/docs/data.html
     versionless: true
@@ -31,6 +35,10 @@ pages:
 
   - label: Git vs. Composer installation
     url: /mftf/docs/guides/git-vs-composer-install.html
+    versionless: true
+
+  - label: How to use MFTF in CICD
+    url: /mftf/docs/guides/cicd.html
     versionless: true
 
   - label: Merge points for extensions
@@ -85,19 +93,18 @@ pages:
   - label: Reference
     versionless: true
     children:
-
-      - label: Action group reference
-        url: /reference/mftf/action-groups.html
-
-      - label: Codecept
+      - label: Codecept CLI
         url: /mftf/docs/commands/codeception.html
         versionless: true
 
-      - label: MFTF
+      - label: MFTF CLI
         url: /mftf/docs/commands/mftf.html
         versionless: true
+        
+      - label: Magento action groups
+        url: /reference/mftf/action-groups.html
       
-      - label: MFTF functional test reference
+      - label: Magento tests
         url: /reference/mftf/functional-tests.html
 
   - label: Reporting
@@ -178,6 +185,10 @@ pages:
     url: /mftf/docs/troubleshooting.html
     versionless: true 
 
+  - label: Two-factor Authentication
+    url: /mftf/docs/configure-2fa.html
+    versionless: true 
+
   - label: Update MFTF
     url: /mftf/docs/update.html
     versionless: true
@@ -187,8 +198,8 @@ pages:
     versionless: true
   
   - label: Backward incompatible changes in tests
-    url: /reference/mftf/backward-incompatible-changes.html
-    include_versions: ['2.4']
+    url: /mftf/docs/backward-incompatible-changes.html
+    versionless: true
 
   - label: Contribution guidelines
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
@@ -196,4 +207,8 @@ pages:
 
   - label: Changelog
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
+    versionless: true
+
+  - label: MFTF Guide (v2)
+    url: /mftf/v2/docs/introduction.html
     versionless: true

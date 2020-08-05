@@ -39,7 +39,7 @@ Magento provides a separate token service for administrators and customers. When
 
 The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
 
-The following table lists endpoints and services that can be used to get an authentication token. Some 2FA providers may require multiple calls.
+The following table lists endpoints and services that can be used to get an authentication token. Admin accounts must be authenticated with a [two factor authentication]({{page.baseurl}}/security/two-factor-authentication.html) provider. Some providers may require multiple calls.
 
 Token type |REST| SOAP
 ---|---|---

@@ -1,37 +1,27 @@
 ---
 group: mftf
+title: Magento action group reference
+functional_areas:
+- Test
 ---
-
-# MFTF action group reference
 
 Action groups are important building blocks for quickly creating tests for the Magento Functional Testing Framework.
 This page lists all current action groups so developers can see what is available to them.
 
-{% assign action_groups = site.data.codebase.v2_4.mftf.action-groups %}
+## {{ site.data.var.ce }}
 
-{% if action_groups %}
+{% assign action_groups = site.data.codebase.v2_4.mftf.ce.action-groups %}
 
-## Action group list
+{% include mftf/action-groups-template.md %}
 
-{% assign action_groups_by_module = actiongroups | group_by: "module" | sort: "name"  %}
-{% for item in actiongroups_by_module %}
+## {{ site.data.var.ee }} specific
 
-### {{ item.name }}
+{% assign action_groups = site.data.codebase.v2_4.mftf.ee.action-groups %}
 
-{% for file in item.items %}
+{% include mftf/action-groups-template.md %}
 
-#### [{{ file.filename }}]({{file.repo}})
+## {{ site.data.var.b2b }} specific
 
-{% for test in file.actiongroups %}
-{{test.name}}
-  : {% if test.description == '' %}No description.{% else %}{{test.description}}{% endif %}
-{:.ref-list-dt}
-{% endfor %}
-{% endfor %}
-{% endfor %}
+{% assign action_groups = site.data.codebase.v2_4.mftf.b2b.action-groups %}
 
-{% else %}
-
-There is no data available for this reference at the moment.
-
-{% endif %}
+{% include mftf/action-groups-template.md %}
