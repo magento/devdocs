@@ -42,7 +42,7 @@ Only specific partners are eligible to use the Marketplace EQP API:
 
 See more information about [becoming a partner][4].
 
-## Where can I use this API
+## Where to use this API
 
 There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
 
