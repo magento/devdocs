@@ -16,7 +16,7 @@ The release notes include:
 
 ## 3.0.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
--  {:.fix}Fixed "Unable to retrieve product options data" error during catalog export
+-  {:.fix}Fixed the "Unable to retrieve product options data" error that could occur during catalog export
 -  {:.fix}The currency symbol in the **Revenue** column on the **Product Recommendations** dashboard now correctly reflects the configured base currency
 
 ## 3.0.4 of magento/product-recommendations for Magento Commerce 2.4.0
