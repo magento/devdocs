@@ -10,7 +10,7 @@ Video is one of the most effective sales tools available. Demo videos use record
 -  Showcase the user experience.
 -  Walk customers through the installation and configuration process.
 
-Each extension can have up to two videos that are linked to the extension profile.
+Each extension can have up to three videos that are linked to the extension profile.
 
 ## Plan your presentation
 
