@@ -48,7 +48,7 @@ Marketplace EQP API **access keys** are self-serviced.  As long as you are [elig
    -  Once deleted, the key can no longer be used to obtain a [session token](auth.html#session-token).
    -  However, any **session tokens** obtained from the previous key will remain valid, until those session tokens expire.
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Marketplace EQP API **access keys** generated in the [sandbox][2] environment are separate from those generated in [production][1].
 You cannot use access keys from one environment in the other.
 <br/><br/>
