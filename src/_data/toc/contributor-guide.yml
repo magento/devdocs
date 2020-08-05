@@ -20,10 +20,6 @@ pages:
           url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
           versionless: true
 
-        - label: Suggested topics for contribution
-          url: /contributor-guide/contributing_docs_suggested.html
-          versionless: true
-
         - label: Templates
           children:
             - label: Basic template
