@@ -59,7 +59,7 @@ All timestamps are in UTC ([universal time coordinated](https://en.wikipedia.org
 
 <a id="batch"/>
 
-## Batch processing
+## Batch processing {#batch}
 
 Some endpoints can handle a **batch request**, such as the following:
 
