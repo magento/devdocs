@@ -9,10 +9,11 @@ description: Magento 2 Developer Documentation.
 # the base protocol and domain
 url: https://devdocs.magento.com
 
-# Site theme. https://jekyllrb.com/docs/themes/
+# Site theme: https://github.com/magento-devdocs/devdocs-theme
+# About themes in Jekyll: https://jekyllrb.com/docs/themes/
 theme: devdocs
 
-# Base url that forms 
+# A part of URL to be inserted between site.url and page.url
 baseurl: ""
 
 source: src
@@ -144,11 +145,11 @@ defaults:
 # This list doesn't include custom plugins.
 #
 plugins:
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jekyll-titles-from-headings
   - jekyll-optional-front-matter
+  - jekyll-redirect-from
   - jekyll-relative-links
+  - jekyll-sitemap
+  - jekyll-titles-from-headings
 
 optional_front_matter:
   remove_originals: true
@@ -157,19 +158,16 @@ optional_front_matter:
 # Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
 
 relative_links:
+  enabled:     true
+  collections: false
   exclude:
-    - _includes
-    - _videos
+    - 404.md
     - codelinks
     - community
     - extensions
     - guides
     - redoc
     - release
-    - 404.md
-    - availability.md
-    - magento-techbull.md
-    - magento-third-party.md
     - search
     - system-requirements.md
     - whats-new.md
@@ -211,16 +209,11 @@ check_links: true
 # Variables #
 #############
 #
-# Magento 2 repository variable
+# Magento 2 repository
 mage2bloburl: https://github.com/magento/magento2/blob
 
 # Current version
 gdeurl: /guides/v2.4
-githuburl: https://github.com/magento/devdocs/tree/master/src/guides/v2.4
-
-# 2.3 variables
-gdeurl23: /guides/v2.3/
-githuburl23: https://github.com/magento/devdocs/tree/master/src/guides/v2.3/
 
 # Path to S3 location where we store large downloadable binary files, such as .ai, .psd, .zip, .pdf, .sketch
 downloads: https://devdocs.magento.com/download
