@@ -19,7 +19,7 @@ Follow these steps to get started using the **Marketplace EQP API**.
 
 Use your API access key to [obtain a session token](auth.html#session-token).
 
-## 4. Using your session token, call one or more of the API endpoints
+## 4. Call one or more of the API endpoints
 
 -  See the various endpoints in the [REST API](rest-api.html) section.
    -  For a specific example on how to use a session token, look at the bottom of the [authentication](auth.html#session-token-use) documentation.
