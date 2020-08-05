@@ -63,7 +63,7 @@ All timestamps are in UTC ([universal time coordinated](https://en.wikipedia.org
 
 Some endpoints can handle a **batch request**, such as the following:
 
-```json
+```html
 POST /rest/v1/products/packages
 PUT /rest/v1/products/packages   // used when updating multiple packages in one request
 ```
