@@ -5,7 +5,7 @@ title: Error responses
 
 ## Handling an API error response
 
-### Complete processing failure
+## Complete processing failure
 
 All HTTP 4xx errors contain a JSON payload with the following structure:
 
