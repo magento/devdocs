@@ -222,3 +222,4 @@ The release notes include:
 table.docker-service-versions-table td:nth-child(2) {
   width: 500px;
 }
+</style>
