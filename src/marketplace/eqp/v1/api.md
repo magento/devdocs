@@ -1,36 +1,22 @@
 ---
 group: marketplace-api
-title: Introduction
+title: Marketplace EQP API
 ---
-
-## What is the Marketplace EQP API
 
 The **Magento Marketplace Extension Quality Program ([EQP]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html)) REST API** provides access to the [Marketplace Developer Portal][1].
 
 The **Marketplace Developer Portal** provides you the capability to do the following:
 
--  publish your product's marketing information on the [Magento Marketplace][3]
-   -  this allows your customers to find and purchase each of your products
--  publish your individual or company profile on the **Magento Marketplace**
-   -  this allows your customers to learn more about you and your company
--  house your code for your Magento 2 extensions, themes, and shared packages on the **Magento Product Repository**
-   -  after your customers purchase your product, this allows your customers to download your code
-
-## Why would I use this API
-
-Uses of the Marketplace EQP API include the following:
-
--  submit and manage your Magento 2 extensions, themes, and shared packages
--  access and update your profile
--  access your sales reports
-
-<a id="eligible"/>
+-  Publish your product's marketing information on the [Magento Marketplace][3]. As a result, your customers can find and purchase each of your products.
+-  Publish your individual or company profile on the **Magento Marketplace**, making it easy for your customers to earn more about you and your company.
+-  Store your code for your Magento 2 extensions, themes, and shared packages on the **Magento Product Repository**. After your customers purchase your product,  your customers can download your code.
+-  Access your sales reports. Get aggregated metrics on overall page views, category-specific page views, EQP process-related metrics and more.
 
 ## API eligibility {#eligible}
 
 Only specific partners are eligible to use the Marketplace EQP API:
 
-| Adobe partner | legacy Magento partner |
+| Adobe partner | Legacy Magento partner |
 | ------------- | ---------------------- |
 | Innovate      | General Technology Partner <br/> Select Extensions Partner <br/> Premier Extensions Partner |
 | Accelerate    | Select Technology Partner     |
