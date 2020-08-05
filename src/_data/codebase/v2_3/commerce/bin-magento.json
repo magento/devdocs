@@ -10718,7 +10718,7 @@
                   "is_value_required" : false,
                   "description" : "The maximum expected execution time of deployment static process (in seconds).",
                   "accept_value" : true,
-                  "default" : 900,
+                  "default" : 400,
                   "is_multiple" : false
                },
                "force" : {
