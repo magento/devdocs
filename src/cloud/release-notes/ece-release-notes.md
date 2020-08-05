@@ -24,7 +24,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
 **Validation and log improvements**–
 
--  {:new}Added the `schema.error.yaml` file that includes all error and warning notifications that can occur during the Magento Cloud build, deploy, and post-deploy process along with suggestions for resolving the errors.  The information in this file is also available in the _Magento Cloud Guide_. See [Error message reference for ece-tools]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html).<!--MCLOUD-5878-->
+-  {:.new}Added the `schema.error.yaml` file that includes all error and warning notifications that can occur during the Magento Cloud build, deploy, and post-deploy process along with suggestions for resolving the errors.  The information in this file is also available in the _Magento Cloud Guide_. See [Error message reference for ece-tools]({{ site.baseurl }}/cloud/reference/ece-tools-error-reference.html).<!--MCLOUD-5878-->
 
 -  {:.new}Changed the Cloud error log (`/var/log/cloud.error.log`) entries to JSON format to make the log easier to parse programmatically.<!--MCLOUD-5879-->
 
