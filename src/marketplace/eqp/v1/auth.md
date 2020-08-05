@@ -37,7 +37,7 @@ The following is an example:
 
 <a id="session-token"/>
 
-### Obtaining a session token
+### How to obtain a session token {#session-token}
 
 The following endpoint grants a session token:
 
