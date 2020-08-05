@@ -3,7 +3,7 @@ group: marketplace-api
 title: API access key
 ---
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Marketplace EQP API **access keys** are self-serviced.  As long as you are [eligible](api.html#eligible) to use the Marketplace EQP API, then you can create, regenerate, and delete your own **access keys**.
 
 ## What is an API access key
