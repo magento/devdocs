@@ -40,3 +40,8 @@ These release notes can include:
 -  {:.fix} Previously, using the API to save a quote item when backorder is set to "Allowed and Notify Customer" would fail. This API call now works as expected.
 -  {:.fix} The Fixed Product Tax is now displayed on the Quotes detail page.
 -  {:.fix} Previously, clicking on an attachment in the Comments tab of the My Quotes page would fail to download the file. This behavior now works as expected.
+
+### Known Issues
+
+-  If items in a purchase order are out-of-stock, or of insufficient quantity when the purchase order is converted into an actual order, an error will occur. If backorders are enabled, the order will be processed normally.
+-  If a discount code expires before a purchase order is approved, the PO continues to show the discounted amount. Once the PO is approved, the order is placed at the non-discounted total.
