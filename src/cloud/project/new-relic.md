@@ -8,7 +8,15 @@ functional_areas:
   - Services
 ---
 
-[New Relic for application performance management (APM)] is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
+{{ site.data.var.ece }} projects include access to New Relic services to help manage, monitor, and troubleshoot your applications and infrastructure by collecting, viewing, and analyzing data from your {{ site.data.var.ece }} project.
+
+-  [New Relic APM](#new-relic-apm) (Pro and Starter)
+-  [New Relic Infrastructure](#new-relic-infrastructure) (Pro, Production environment only)
+-  [New Relic Logs](#new-relic-logs) (Pro, Production and Staging environments)
+
+## New Relic APM
+
+[New Relic for application performance management (APM)] is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} projects and provides the following features:
 
 -  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
@@ -16,18 +24,39 @@ functional_areas:
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
 -  **Adobe-generated alert policies**–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See [Monitor performance using alerts](#monitor-performance-with-alert-policies).
 
-Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
+Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
-On {{site.data.var.ece}} Pro accounts, the Production environment also includes the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+## New Relic Infrastructure
+
+{{site.data.var.ece}} Pro projects include the [New Relic Infrastructure (NRI)][New Relic infrastructure] service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring. This service is available on Production and Staging environments.
 
 {:.bs-callout-info}
 For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
+## New Relic Logs
+
+{{site.data.var.ece}} Pro projects include the [New Relic Logs][] service on both Production and Staging environments. The service is pre-configured to aggregate all log data from your Staging and Production environments and display it in a centralized log management dashboard.
+
+The aggregated data includes information from the following logs:
+
+-  All {{site.data.var.ct}} and Magento application logs from the `~/var/log` directory
+-  Logs for cloud services from the `var/log/platform/<project-ID>` directory
+-  Fastly CDN and WAF logs
+
+As soon as your project is connected to New Relic, you can use the New Relic Logs service to complete tasks like the following:
+
+-  Use [New Relic queries][New Relic query syntax for logs] to search aggregated log data
+-  Visualize log data through the New Relic Logs application
+-  Create custom charts, dashboards, and alerts
+-  Troubleshoot performance issues from a single dashboard
+
+See [View and analyze logs](#view-and-analyze-log-data).
+
 ## Manage your New Relic account
 
-When Magento provisions your {{site.data.var.ece}} project, the License Owner receives an email from New Relic with credentials and instructions for accessing the account. If you did not receive the email, use the License Owner email address to [reset the New Relic password].
+When Magento provisions your {{site.data.var.ece}} project, the License Owner receives an email from New Relic with credentials and instructions for accessing the New Relic account. If you did not receive the email, use the License Owner email address to [reset the New Relic password].
 
-An account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
+A New Relic account can have only one person assigned to the Owner role. If you must change the account owner, assign the Admin role to the current Owner, then assign the Owner role to another user. See [Update the account owner] in the New Relic documentation for instructions.
 
 {:.bs-callout-tip}
 Before assigning the Owner role to a user, verify that the user exists on the New Relic account for {{site.data.var.ece}}. If you need to add the user to that account and an existing account Owner or Admin cannot help, any Magento user with access to the [Magento Partnership Owner Account] for New Relic can add users on behalf of the customer.
@@ -149,13 +178,17 @@ To remove a license key from an environment:
    magento-cloud variable:delete php:newrelic.license
    ```
 
-## Investigate performance
+## Use New Relic
+
+The following sections provide an overview for using the New Relic services integrated with your {{ site.data.var.ece }} project with a few examples. For more information and training resources, see the [New Relic Help Center][].
+
+### Investigate performance
 
 New Relic connects and monitors your infrastructure and application using PHP agents. After a Cloud environment [connects to New Relic](#connect-to-new-relic), you can log in to your New Relic account to review the data collected by the agent.
 
 On the APM Applications page, use the [New Relic APM Overview] to view information about your application.
 
- ![Cloud project New Relic overview page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-basic.png){:width="650px"}
+![Cloud project New Relic overview page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-basic.png){:width="650px"}
 
 From this view, you can track and find the following types of information:
 
@@ -175,7 +208,45 @@ All collected data details the time spent on an action transmitting data, querie
 {:.bs-callout-info}
 You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the [New Relic APM] and [New Relic Infrastructure][New Relic infrastructure] documentation.
 
-## Monitor performance with alert policies
+### View and analyze log data
+
+You can use the New Relic Logs application to search across the aggregated log data and troubleshoot application, infrastructure, CDN, and WAF errors. Also, you can connect the log data with other data collected by New Relic APM and Infrastructure services to create charts, dashboards, and alerts to manage Magento application and cloud service operations.
+
+{:.procedure}
+To use the New Relic Logs application:
+
+1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
+
+1. Select your application.
+
+1. On the _APM applications page_, select **Logs** from the navigation menu.
+
+   ![Cloud project APM menu select Logs page]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-dashboard-logs-access.png){:width="650px"}
+
+   {:.bs-callout-tip}
+   You can also access the New Relic Logs application from the New Relic ONE home page. See [New Relic ONE core UI components][New Relic One UI].
+
+1. To review infrastructure log data for cloud services, enter the query string `has: "ident"` in the _Find logs where_ field. Then, click **Query logs**.
+
+   ![Cloud project New Relic service log data]({{ site.baseurl }}/common/images/cloud/cloud_new-relic-log-query-has-ident.png){:width="650px"}
+
+1. To review Fastly log data, enter the query string `has: "client_ip"` in the _Find logs where_ field. Then, click **Query logs**.
+
+   ![Cloud project New Relic Fastly log data]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-logs-has-client_ip-fastly.png){:width="650px"}
+
+1. To filter the Fastly log results further, select an attribute from the left menu, then click **Query logs** to apply the updated query.
+
+   For example, to query the Fastly data by country code, select the _Geo Country Code_ attribute.
+
+   ![Cloud project New Relic CDN log attribute filter]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-fastly-log-attribute-filter.png){:width="650px"}
+
+The following example shows a New Relic Insights dashboard created from queries against the Fastly CDN log data:
+
+![Cloud project New Relic CDN Logs dashboard]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-cdn-logs-dashboard.png){:width="650px"}
+
+For further information and examples, see [Introduction to New Relic Logs][New Relic Logs] and [Introduction to New Relic Insights][New Relic Insights].
+
+### Monitor performance with alert policies
 
 Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
 
@@ -275,20 +346,26 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Configure notification channels using the New Relic Alerts user interface]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts
 [Configure notification channels using the New Relic API]: https://docs.newrelic.com/docs/alerts/rest-api-alerts/new-relic-alerts-rest-api/rest-api-calls-new-relic-alerts#channels
 [from your New Relic account page]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
+[Explore your data with New Relic Logs UI]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/explore-your-data-new-relic-logs-ui
 [Health notifications]: {{site.baseurl}}/cloud/integrations/health-notifications.html
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
 [Magento Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
+[New Relic account]: #manage-your-new-relic-account
+[New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
+[New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
+[New Relic ONE UI]: https://docs.newrelic.com/docs/new-relic-one/use-new-relic-one/get-started/new-relic-one-core-ui-components
+[New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
+[New Relic Help Center]: https://newrelic.com/
+[New Relic Logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/get-started/introduction-new-relic-logs
+[New Relic login]: https://login.newrelic.com/login
+[New Relic infrastructure]: https://newrelic.com/products/infrastructure
+[New Relic Insights]: https://docs.newrelic.com/docs/insights/use-insights-ui/getting-started/introduction-new-relic-insights
+[New Relic query syntax for logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/query-syntax-logs
+[New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [reset the New Relic password]: https://rpm.newrelic.com/forgot_password
 [Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions
 [View your license key]: https://docs.newrelic.com/docs/accounts/install-new-relic/account-setup/license-key#finding
 [Working with variables]: {{site.baseurl}}/cloud/env/working-with-variables.html
-[New Relic account]: #manage-your-new-relic-account
-[New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
-[New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
-[New Relic for application performance management (APM)]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
-[New Relic login]: https://login.newrelic.com/login
-[New Relic infrastructure]: https://newrelic.com/products/infrastructure
-[New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html

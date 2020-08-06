@@ -82,10 +82,6 @@ pages:
           url: /cloud/project/project-start.html
           versionless: true
 
-        - label: Log locations
-          url: /cloud/project/log-locations.html
-          versionless: true
-
         - label: Manage user access
           url: /cloud/project/user-admin.html
           versionless: true
@@ -108,6 +104,10 @@ pages:
 
         - label: Monitor performance
           url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: View logs
+          url: /cloud/project/log-locations.html
           versionless: true
 
         - label: Snapshots and backup management
@@ -184,6 +184,10 @@ pages:
           children:
             - label: Xdebug for Docker
               url: /cloud/docker/docker-development-debug.html
+              versionless: true
+
+            - label: Set up multiple websites or stores
+              url: /cloud/docker/docker-multi-website.html
               versionless: true
 
             - label: Manage the database

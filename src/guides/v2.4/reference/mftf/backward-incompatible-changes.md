@@ -8,7 +8,7 @@ functional_areas:
 This reference describes important changes introduced to functional tests in the Magento codebase after the 2.3.0 release. This is in compliance with the [Magento MFTF test versioning and backward compatibility policy][].
 
 <!-- Posting CE data -->
-{% assign bic = site.data.codebase.v2_4.mftf.ce.bic.v2_3_0-2_4_0-develop %}
+{% assign bic = site.data.codebase.v2_4.mftf.ce.bic.v2_3_0-2_4_0 %}
 
 ## {{ site.data.var.ce }} ({{ bic.versions }})
 
@@ -24,7 +24,7 @@ What changed | How Changed
 {% endfor %}
 
 <!-- Posting EE data -->
-{% assign bic = site.data.codebase.v2_4.mftf.ee.bic.v2_3_0-2_4_0-develop %}
+{% assign bic = site.data.codebase.v2_4.mftf.ee.bic.v2_3_0-2_4_0 %}
 
 ## {{ site.data.var.ee }} ({{ bic.versions }})
 
@@ -42,7 +42,7 @@ What changed | How Changed
 {% endfor %}
 
 <!-- Posting B2B data -->
-{% assign bic = site.data.codebase.v2_4.mftf.b2b.bic.v1_1_0-1_2_0-develop %}
+{% assign bic = site.data.codebase.v2_4.mftf.b2b.bic.v1_1_0-1_2_0 %}
 
 ## {{ site.data.var.b2b }} only ({{ bic.versions }})
 
