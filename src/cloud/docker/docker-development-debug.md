@@ -38,7 +38,7 @@ If you use Microsoft Windows, take the following steps before continuing:
        volumes:
          - 'mymagento-magento-sync:/app:nocopy'
        environment:
-         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap socketssysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
+         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
        networks:
          magento:
            aliases:

@@ -6,8 +6,6 @@ title: JavaScript
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
-You can follow the same approach when customizing Magento JavaScript, or [disable all the default scripts and their load by RequireJS].
-
 For information about how JS resources are located and configured, see [Configure JavaScript].
 
 ## What's in this chapter {#js_contents}
@@ -30,7 +28,6 @@ Topics of this chapter describe the following:
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
 
 [RequireJS file and module loader]: http://requirejs.org/
-[disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js
 [Configure JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
 [app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view
