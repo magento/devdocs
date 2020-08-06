@@ -144,6 +144,42 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of the discount
 `label` | String! | A description of the discount
 
+#### DownloadableItemsLinks attributes {#DownloadableItemsLinks}
+
+The `DownloadableProductLinks` object defines characteristics of a downloadable product.
+
+Attribute | Data type | Description
+--- | --- | ---
+`sort_order` | Int | A number indicating the sort order
+`title`| String | The display name of the link
+`uid` | ID! | A string that encodes option details
+
+#### DownloadableOrderItem attributes {#DownloadableOrderItem}
+
+The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that are ordered from the downloadable product
+
+#### GiftCardItem attributes {#GiftCardItem}
+
+The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item.
+
+Attribute | Data type | Description
+--- | --- | ---
+`message`| String | A message from the sender to the recipient
+`recipient_name` | String | The gift card recipient name
+`sender_name` | String | The gift card sender name
+
+#### GiftCardOrderItem attributes {#GiftCardOrderItem}
+
+The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an order item
+
 #### Invoice attributes {#Invoice}
 
 The `Invoice` object provides details about a customer invoice.
