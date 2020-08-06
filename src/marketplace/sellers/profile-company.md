@@ -6,8 +6,8 @@ redirect_from: /marketplace/sellers/company-profile.html
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
-![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-company-profile.png){: .zoom}
-_Company Profile_
+![]({{ site.baseurl }}/marketplace/sellers/images/magento-account-marketplace.png){: .zoom}
+_Profile Settings_
 
 The following instructions walk you through the process of completing your company profile. All fields are required, unless marked “Optional”.
 
