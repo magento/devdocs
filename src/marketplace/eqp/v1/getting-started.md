@@ -23,7 +23,7 @@ Use your API access key to [obtain a session token](auth.html#session-token).
 ## 4. Call one or more of the API endpoints
 
 See the various endpoints in the [REST API](rest-api.html) section.
-For a specific example on how to use a session token, look at the bottom of the [authentication](auth.html#session-token-use) documentation.
+For a specific example on how to use a session token, look at the bottom of the [authentication](auth.html#token-use) documentation.
 
 [1]: https://developer.magento.com
 [2]: https://developer-stg.magento.com
