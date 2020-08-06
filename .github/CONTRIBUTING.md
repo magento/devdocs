@@ -4,12 +4,12 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://github.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
+DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
 
 ## Rewards for contributions
 
 DevDocs works with Magento Community Engineering teams and projects.
-As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#points).
+As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.com/contributor-guide/contributing.html#points).
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
@@ -19,7 +19,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 1. Make sure you have a [GitHub account](https://github.com/signup/free).
 
-    **Note for partners:** Add [2FA](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
+    **Note for partners:** Add [2FA](https://devdocs.magento.com/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
@@ -62,6 +62,7 @@ The following guidelines may answer most of your questions and help you get star
 -  Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
 -  For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
 -  Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
+-  Do not make changes to content in the [`_data/codebase`](https://github.com/magento/devdocs/tree/master/src/_data/codebase) directory, which contains auto-generated data from Magento source code. Any manual changes will be lost when the file regenerates.
 -  Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
 -  Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
@@ -94,15 +95,15 @@ _(Optional)_ To review your changes in HTML output, follow the instructions in t
 
 We provide templates to help you get started writing new content and understanding Markdown formatting:
 
--  **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
+-  **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
 -  **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
-   -  First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
-   -  Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
-   -  Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.3/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
+   -  First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
+   -  Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
+   -  Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
 
 ### Edit metadata
 
-The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html).
+The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file. For more info, see the [Basic Template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html).
 
 ```yaml
 

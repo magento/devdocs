@@ -25,7 +25,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
        @font-path: '@{baseDir}fonts/<path_to_font_file>',
        @font-weight: <font_weight>,
        @font-style: <font_style>
-       @font-display: <auto|block|fallback|option|swap>
+       @font-display: <auto|block|fallback|optional|swap>
    );
    ```
 
