@@ -12,7 +12,7 @@ Use these resources if you need additional help.
 
 **Email:**
 
-- <magento-marketplace-eqp-apis@adobe.com>
+-  <magento-marketplace-eqp-apis@adobe.com>
 
 **DevDocs:**
 
