@@ -289,7 +289,7 @@ We recommend setting the memory limit to 2G when testing Magento. Refer to [Requ
 1. Uncomment the session path directory and set the path:
 
    ```conf
-   session.save_path = "/var/lib/php/session"
+   session.save_path = "/var/lib/php/sessions"
    ```
 
 1. Save and exit the editor.
