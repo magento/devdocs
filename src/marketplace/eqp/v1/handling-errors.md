@@ -1,9 +1,9 @@
 ---
 group: marketplace-api
-title: Error responses
+title: Handling errors
 ---
 
-## Handling an API error response
+Consider these tips when handling errors.
 
 ## Complete processing failure
 
