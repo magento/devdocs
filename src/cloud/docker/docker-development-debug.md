@@ -65,6 +65,7 @@ If you use Microsoft Windows, take the following steps before continuing:
    ```
    
    On Linux systems, use the following command instead:
+   
    ```bash
    XDEBUG_CONFIG=remote_host=host.docker.internal remote_port=9002
    ```
