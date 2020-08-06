@@ -1,26 +1,28 @@
 ---
 group: marketplace-api
-title: Help
+title: Getting help
 ---
 
--  Slack:
-   -  workspace: Magento Community Engineering
-   -  channel: **# marketplace-eqp-api**
+Use these resources if you need additional help.
 
--  Email:
-   -  <magento-marketplace-eqp-apis@adobe.com>
+**Slack:**
+-  workspace: Magento Community Engineering
+-  channel: **# marketplace-eqp-api**
 
--  DevDocs:
-   -  [Marketplace EQP API]({{ site.baseurl }}/marketplace/eqp/v1/api.html)
-   -  [Marketplace Sellers]({{ site.baseurl }}/marketplace/sellers/getting-started.html)
+**Email**:
+- <magento-marketplace-eqp-apis@adobe.com>
 
--  Websites:
-   -  [Marketplace Developer Portal](https://developer.magento.com)
-      -  [sandbox](https://developer-stg.magento.com)
-   -  [Magento Marketplace](https://marketplace.magento.com)
-   -  [Magento Account](https://account.magento.com)
+**DevDocs**:
+-  [Marketplace EQP API]({{ site.baseurl }}/marketplace/eqp/v1/api.html)
+-  [Marketplace Sellers]({{ site.baseurl }}/marketplace/sellers/getting-started.html)
 
--  Base URLs:
+**Websites**:
+-  [Marketplace Developer Portal](https://developer.magento.com)
+-  [sandbox](https://developer-stg.magento.com)
+-  [Magento Marketplace](https://marketplace.magento.com)
+-  [Magento Account](https://account.magento.com)
+
+**Base URLs**:
 
 |Environment|Base Url|
 |-----------|--------|
