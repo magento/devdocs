@@ -3,7 +3,7 @@ group: marketplace-api
 title: Authentication
 ---
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
 
 The Marketplace EQP API uses a two-step process to authenticate a client application and authorize access to resources:
@@ -27,15 +27,11 @@ Once you are confident your **sandbox** API calls are correct, and you wish to s
 
 ## Authentication and authorization flow
 
-### Example API Access Key
-
 You must use your [API access key](access-keys.html) -- which is an application ID and secret -- to obtain your session token.
 The following is an example:
 
 -  **application ID** — `AQ17NZ49WC`
 -  **application secret** — `8820c99614d65f923df7660276f20e029d73e2ca`
-
-<a id="session-token"/>
 
 ### How to obtain a session token {#session-token}
 
@@ -97,8 +93,6 @@ Field details:
 -  You can get as many session tokens as you need.  You do **not** need to wait for a session token to expire before requesting another one.  Multiple session tokens can be active at the same time, so you can run multiple scripts at the same time.
 -  Once the session token expires, a new token must be obtained as described above.
 -  Session tokens are specific to each environment.  Session tokens generated for the **sandbox** cannot be used for **production**, and vice-versa.
-
-<a id="session-token-use"/>
 
 ## How to use a session token {#token-use}
 
