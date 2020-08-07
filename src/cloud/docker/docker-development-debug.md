@@ -38,7 +38,7 @@ If you use Microsoft Windows, take the following steps before continuing:
        volumes:
          - 'mymagento-magento-sync:/app:nocopy'
        environment:
-         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap socketssysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
+         - 'PHP_EXTENSIONS=bcmath bz2 calendar exif gd gettext intl mysqli pcntl pdo_mysql soap sockets sysvmsg sysvsem sysvshm opcache zip redis xsl sodium'
        networks:
          magento:
            aliases:
@@ -62,6 +62,10 @@ If you use Microsoft Windows, take the following steps before continuing:
 
    ```bash
    XDEBUG_CONFIG='remote_host=host.docker.internal remote_port=9002'
+   ```
+   On Linux systems, use the following command instead:
+   ```bash
+   XDEBUG_CONFIG=remote_host=host.docker.internal remote_port=9002
    ```
 
 {:.procedure}

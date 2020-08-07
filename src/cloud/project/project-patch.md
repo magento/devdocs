@@ -23,7 +23,10 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 1. Apply required patches from Magento included in the `{{site.data.var.mcp-package}}` package.
 1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
-Also, you can apply patches manually in your local environment.
+{:.bs-callout-info}
+When you update `{{site.data.var.ct}}` or the `{{site.data.var.mcp-prod}}` package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
+
+You can also apply patches manually.
 
 {:.bs-callout-info}
 All patch file names must end with the `.patch` extension.
