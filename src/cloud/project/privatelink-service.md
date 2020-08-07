@@ -25,6 +25,7 @@ The PrivateLink service integration for {{site.data.var.ece}} projects includes 
 -  You cannot establish SSH connections using PrivateLink. For SSH, use the Magento SSH capabilities. See [Enable SSH keys][].
 -  Magento support does not cover troubleshooting AWS PrivateLink issues beyond initial enablement.
 -  Customers are responsible for costs associated with managing their own VPC.
+-  Connecting to Magento Commerce Cloud with HTTP(S) over Private Link is not supported.
 
 ## PrivateLink connection types
 
