@@ -47,14 +47,14 @@ Edit the `/app/etc/env.php` file to configure the cron job `consumers_runner`.
 
 ```php
 ...
-    'cron_consumers_runner' => array(
+    'cron_consumers_runner' => [
         'cron_run' => false,
         'max_messages' => 20000,
-        'consumers' => array(
+        'consumers' => [
             'consumer1',
             'consumer2',
-        )
-    ),
+        ]
+    ],
 ...
 ```
 
