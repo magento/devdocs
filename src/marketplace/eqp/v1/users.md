@@ -391,9 +391,7 @@ curl -X DELETE \
 
 A 204 No Content HTTP response code indicates a successful update.
 
-<a id="user-reports"/>
-
-## Reports
+## Reports {#user-reports}
 
 Use these endpoints to retrieve reports owned by a specific user.
 Reports contain information about extension sales, payout status, aggregate sales, refund data, and more.

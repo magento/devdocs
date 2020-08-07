@@ -89,7 +89,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |name|substring|GET, POST, PUT|marketing|yes|The name or title of the package.|Short free text. Duplicate names are not allowed.|
 |original_launch_date|DateTime|GET|-|yes|The UTC date and time this version of the package was first released to the store.|`YYYY-MM-DD HH:MM:SS`|
 |offset|integer|GET|-|no|In combination with the `limit` parameter, it can be used for paging the collection of packages.|See [Get package details](#get-package-details). Default value is 0.|
-|platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M1`, `M2`|
+|platform|string|GET, POST, PUT|technical|yes|The Magento platform compatibility of this package.|`M2`|
 |prices|array|GET, POST, PUT|marketing|no|The list of prices in USD set for this package by edition, and the respective installation prices (if any). Editions must match `version_compatibility`.|Array of sub-objects.|
 |prices[N].currency_code|string|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD`|
 |prices[N].edition|string|GET, POST, PUT|marketing|no|The Magento edition for this price|`CE`, `EE`, `ECE`|
@@ -117,10 +117,10 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |support_tiers[N].prices[0].currency_code|array|GET, POST, PUT|marketing|no|The currency code for this price|Currently only `USD` is supported.|
 |support_tiers[N].prices[0].price|array|GET, POST, PUT|marketing|no|The cost of this support level|A number, with up to two decimal places, eg 123.45|
 |technical_options|object|GET, POST, PUT|marketing|no|A set of technical options this package supports.|See [Additional notes](#additional-notes).|
-|type|string|GET, POST, PUT|technical|yes|Type of package.|`extension`, `theme`, `shared_package` (valid for M2 extensions only) or `all` (default).|
+|type|string|GET, POST, PUT|technical|yes|Type of package.|`extension`, `theme`, `shared_package` or `all` (default).|
 |version_compatibility|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports. Must match the editions in `prices`|Array of objects|
-|version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M1`, `M2`|
-|version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.0","2.1"]
+|version_compatibility[N].edition|string|GET, POST, PUT|technical|no|Magento edition for the accompanying versions list|`M2`|
+|version_compatibility[N].versions|array|GET, POST, PUT|technical|no|List of Magento versions that this package supports in the given edition.|Array of version strings, eg ["2.3","2.4"]
 |version|substring|GET|-|yes|The version of this package.|`major.minor.patch`, eg `2.5.3`.|
 
 ### Additional notes
@@ -158,11 +158,11 @@ For a new Magento 2 package:
   },
   {
     "edition" : "EE",
-    "versions" : ["2.2","2.3", "2.4"]
+    "versions" : ["2.4"]
   },
   {
     "edition" : "ECE",
-    "versions" : ["2.2", "2.3", "2.4"]
+    "versions" : ["2.4"]
   }
 ]
 ```

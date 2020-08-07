@@ -8,13 +8,23 @@ The **Magento Marketplace Extension Quality Program ([EQP]({{ site.baseurl }}/ma
 The **Marketplace Developer Portal** provides you the capability to do the following:
 
 -  Publish your product's marketing information on the [Magento Marketplace][3]. As a result, your customers can find and purchase each of your products.
--  Publish your individual or company profile on the **Magento Marketplace**, making it easy for your customers to earn more about you and your company.
--  Store your code for your Magento 2 extensions, themes, and shared packages on the **Magento Product Repository**. After your customers purchase your product,  your customers can download your code.
+-  Publish your individual or company profile on the **Magento Marketplace**, making it easy for your customers to learn more about you and your company.
+-  House your code for your Magento 2 extensions, themes, and shared packages on the **Magento Product Repository**. After your customers purchase your product,  your customers can download your code.
 -  Access your sales reports. Get aggregated metrics on overall page views, category-specific page views, EQP process-related metrics and more.
+
+## Where to use this API
+
+There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
+
+-  Production - [https://developer.magento.com][1]
+-  Sandbox - [https://developer-stg.magento.com][2]
+
+Use your same login information for the production **Marketplace Developer Portal** to also log into the **Sandbox Marketplace Developer Portal**. Learn more about the [sandbox](sandbox.html) environment.
 
 ## API eligibility {#eligible}
 
-Only specific partners are eligible to use the Marketplace EQP API:
+All developers are eligible to use the **production** Marketplace EQP API.
+However, only specific partners are eligible to use the **sandbox**:
 
 | Adobe partner | Legacy Magento partner |
 | ------------- | ---------------------- |
@@ -27,15 +37,6 @@ Only specific partners are eligible to use the Marketplace EQP API:
 | Platinum      | Global Elite Solution Partner |
 
 See more information about [becoming a partner][4].
-
-## Where to use this API
-
-There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
-
--  Production - [https://developer.magento.com][1]
--  Sandbox - [https://developer-stg.magento.com][2]
-
-Use your same login information for the production **Marketplace Developer Portal** to also log into the **Sandbox Marketplace Developer Portal**. Learn more about the [sandbox](sandbox.html) environment.
 
 [1]: https://developer.magento.com
 [2]: https://developer-stg.magento.com

@@ -12,7 +12,7 @@ You cannot use session tokens from one environment in the other.
 
 The **sandbox** environment gives you an opportunity to practice using the **Marketplace EQP API** without any affect on your **production** items.
 
-You could consider running CI/CD (continuous integration/continuous delivery) simulations on the **sandbox**.
+You can run CI/CD (continuous integration/continuous delivery) simulations on the **sandbox**.
 
 ## Differences between sandbox and production
 

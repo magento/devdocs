@@ -5,7 +5,7 @@ pages:
       url: /marketplace/eqp/v1/api.html
       versionless: true
 
-    - label: Getting Started
+    - label: Getting started
       url: /marketplace/eqp/v1/getting-started.html
       versionless: true
       children:
@@ -59,6 +59,6 @@ pages:
           url: /marketplace/eqp/v1/handling-errors.html
           versionless: true
 
-    - label:  Getting help
+    - label: Getting help
       url: /marketplace/eqp/v1/help.html
       versionless: true

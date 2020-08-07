@@ -1,6 +1,6 @@
 ---
 group: marketplace-api
-title: Getting Started
+title: Getting started
 ---
 
 Follow these steps to get started using the **Marketplace EQP API**.
@@ -22,7 +22,7 @@ Use your API access key to [obtain a session token](auth.html#session-token).
 
 ## 4. Call one or more of the API endpoints
 
-See the various endpoints in the [REST API](rest-api.html) section.
+Use your session token to call the Marketplace EQP API [endpoints](rest-api.html).
 For a specific example on how to use a session token, look at the bottom of the [authentication](auth.html#token-use) documentation.
 
 [1]: https://developer.magento.com

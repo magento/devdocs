@@ -87,7 +87,7 @@ Field details:
 |-----|----|-----------|
 |mage_id|string|Your user account.  This is your "Magento ID."|
 |ust|string|User Session Token. It will be used in the **`Authorization: Bearer`** header for all subsequent API calls.|
-|expires_in|int|Number of seconds the session token will be valid.|
+|expires_in|int|Number of seconds the session token will be valid. Example: 7200 seconds is 2 hours.|
 
 -  The session token has a relatively short duration.
 -  You can get as many session tokens as you need.  You do **not** need to wait for a session token to expire before requesting another one.  Multiple session tokens can be active at the same time, so you can run multiple scripts at the same time.
