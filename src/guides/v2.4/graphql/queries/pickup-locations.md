@@ -43,7 +43,12 @@ Because `pageSize` is set to 1 and distance by `distance` is applied, result wil
     }
     pageSize: 1
     currentPage: 1
-    sort: {distance: ASC}
+    sort: {distance: ASC},
+    productsInfo: [
+        {
+            sku: "SKU-1"
+        }
+    ]
   ) {
     items {
       pickup_location_code
@@ -117,6 +122,7 @@ Attribute | Data type | Description
 `sort` | [PickupLocationSortInput](#PickupLocationSortInput) | Specifies which attribute to sort on, and whether to return the results in ascending or descending order.
 `pageSize` | Int | The maximum number of pickup locations to return at once. The attribute is optional. The default value is 20.
 `currentPage` | Int | Specifies which page of results to return. The default value is 1.
+`productsInfo` |[[ProductInfoInput]](#ProductInfoInput)| Information about products which should be delivered. The information is used to filter Pickup Locations which do not have relations with mentioned products.
 
 ### AreaInput object {#AreaInput}
 
@@ -164,6 +170,14 @@ Attribute | Data type | Description
 `region` | SortEnum | Name of the region
 `region_id` | SortEnum | ID of the region
 `street` | SortEnum | Street of the pickup location
+
+### ProductInfoInput object {#ProductInfoInput}
+
+`ProductInfoInput` provides information about a product which should be delivered. In base implementation, the information will be used to filter Pickup Locations which do not have related source item with mentioned product.
+
+Attribute | Data type | Description
+--- | --- | ---
+`sku` | String! | Product SKU
 
 ### PickupLocations object
 
