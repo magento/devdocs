@@ -504,6 +504,8 @@ stage:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
 
+{% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`

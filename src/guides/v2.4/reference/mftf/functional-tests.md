@@ -1,45 +1,27 @@
 ---
 group: mftf
+title: Magento functional test reference
+functional_areas:
+- Test
 ---
-<style>
-.mftf-dl {
-  margin-bottom: 2.5em;
-}
-dl dt{
-  font-weight:400;
-}
-</style>
 
-# MFTF functional test reference
-
-The Magento Functional Testing Framework runs tests on every Module within Magento. These files are stored within each Module folder in the Magento repo.
+The Magento Functional Testing Framework runs tests on every module within Magento. These files are stored within each Module folder in the Magento repo.
 This page lists all those tests so that developers can have a good sense of what is covered.
+
+## {{ site.data.var.ce }}
 
 {% assign functional_tests = site.data.codebase.v2_4.mftf.ce.functional-tests  %}
 
-{% if functional_tests %}
+{% include mftf/functional-tests-template.md %}
 
-## Functional test list
+## {{ site.data.var.ee }} specific
 
-{% assign functional_tests_by_module = functional_tests | group_by: "module" | sort: "name"  %}
+{% assign functional_tests = site.data.codebase.v2_4.mftf.ee.functional-tests  %}
 
-{% for entry in functional_tests_by_module %}
+{% include mftf/functional-tests-template.md %}
 
-### {{ entry.name }}
-{% for file in entry.items %}
-#### [{{ file.filename }}]({{file.repo}})
-{: .mftf-test-link}
+## {{ site.data.var.b2b }} specific
 
-{% for test in file.tests %}
-{{ test.testname }}
-  : {{ test.description }}
-{: .mftf-dl}
-{% endfor %}
-{% endfor %}
-{% endfor %}
+{% assign functional_tests = site.data.codebase.v2_4.mftf.b2b.functional-tests  %}
 
-{% else %}
-
-There is no data available for this reference at the moment.
-
-{% endif %}
+{% include mftf/functional-tests-template.md %}
