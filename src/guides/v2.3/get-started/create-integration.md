@@ -29,7 +29,7 @@ To create an integration, follow these general steps:
 
 To develop a module, you must:
 
-1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
+1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/app/code/<vendor_name>/module-<module_name>`.
 
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
@@ -38,11 +38,11 @@ To develop a module, you must:
    ```
 
    ```bash
-   mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
+   mkdir -p app/code/<vendor_name>/module-<module_name>/etc/integration
    ```
 
    ```bash
-   mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
+   mkdir -p app/code/<vendor_name>/module-<module_name>/Setup
    ```
 
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
@@ -161,7 +161,7 @@ To develop a module, you must:
 
        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
        {
-           $this->integrationManager->processIntegrationConfig(['testIntegration']);
+           $this->integrationManager->processIntegrationConfig(['TestIntegration']);
        }
    }
    ```
@@ -211,7 +211,7 @@ In the following example, the test integration requires access to the following 
 
 ```xml
 <integrations>
-    <integration name="testIntegration">
+    <integration name="TestIntegration">
         <resources>
             <!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well-->
             <resource name="Magento_Customer::customer" />
@@ -281,7 +281,7 @@ Use the following steps to install your module:
 1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
    ```bash
-   bin/magento setup:upgrade</code>
+   bin/magento setup:upgrade
    ```
 
 1. Run the following command to generate the new code.
