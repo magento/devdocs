@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Applying patches
+title: Apply patches
 functional_areas:
   - Upgrade
 ---
@@ -10,12 +10,6 @@ We strongly recommend testing all patches in a staging or development environmen
 
 ## How patches work
 
-There are three types of patches:
-
--  **Hot fixes**—patches that Magento publishes on the [Magento Security Center][].
--  **Individual patches**—patches that Magento Support creates and distributes on an individual basis.
--  **Custom patches**—unofficial patches that you can create from a git commit.
-
 Patch (or diff) files are text files that note:
 
 -  The file(s) to be changed.
@@ -24,11 +18,17 @@ Patch (or diff) files are text files that note:
 
 When the [patch][] program is run, this file is read in and the specified changes are made to the file(s).
 
+There are three types of patches:
+
+-  **Hot fixes**—Patches that Magento publishes on the [Magento Security Center][].
+-  **Individual patches**—Patches that Magento Support creates and distributes on an individual basis.
+-  **Custom patches**—Unofficial patches that you can create from a git commit.
+
 ### Hot fixes
 
 Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
 
-You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type.
+You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type. Use the [command line](#command-line) or [Composer](#composer) to apply hot fix patches.
 
 {:.bs-callout-info}
 Hot fixes can contain backward incompatible changes.
@@ -37,6 +37,8 @@ Hot fixes can contain backward incompatible changes.
 
 Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
+Use the [Magento Quality Patch (MQP) package](#mqp) to apply individual patches.
+
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
 
@@ -44,7 +46,9 @@ Individual patches do not contain backward incompatible changes.
 
 Sometimes it takes a while for the Magento Engineering Team to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`][1] plugin to apply it to your Composer-based Magento 2 installation.
 
-There are many ways to create patch files. The example below focuses on creating a patch from a known commit.
+Use the [command line](#command-line) or [Composer](#composer) to apply custom patches.
+
+There are many ways to create custom patch files. The following example focuses on creating a patch from a known git commit.
 
 To create a custom patch:
 
@@ -75,13 +79,159 @@ index c8a6fef58d31..7d01c195791e 100644
 
 ## Applying patches
 
-There are two ways to apply patches:
+There are three ways to apply patches:
 
+-  Using the Magento Quality Patch (MQP) package
 -  Using the command line
 -  Using Composer
 
 {:.bs-callout-info}
 To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
+
+### Magento Quality Patch (MQP) package {#mqp}
+
+The [MQP package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
+
+#### Install the MQP package
+
+Add the `magento/quality-patches` Composer package to your `composer.json` file:
+
+```bash
+composer require magento/quality-patches
+```
+
+#### View individual patches
+
+To view the list of individual patches available for your version of Magento:
+
+```bash
+./vendor/bin/magento-patches status
+```
+
+You will see output similar to the following:
+
+```terminal
+╔════════════════╤═════════════════════════════════════════════════╤══════════╤═════════════╤═════════════════════════════════╗
+║ Id             │ Title                                           │ Type     │ Status      │ Details                         ║
+╠════════════════╪═════════════════════════════════════════════════╪══════════╪═════════════╪═════════════════════════════════╣
+║ MAGECLOUD-5069 │ FPC is getting disabled during deployments      │ Optional │ Not applied │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-page-cache    ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MCLOUD-5650    │ Hold deployment config after reading from file  │ Optional │ Not applied │ Affected components:            ║
+║                │                                                 │          │             │  - magento/framework            ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MCLOUD-5684    │ Pagination Not working - product_list_limit=all │ Optional │ Not applied │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-elasticsearch ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MCLOUD-5837    │ Fix load balancer issue                         │Deprecated│ Applied     │ Recommended replacement: MC-1   ║
+║                │                                                 │          │             │ Affected components:            ║
+║                │                                                 │          │             │  - magento/framework            ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ BUNDLE-2554    │ Set Payment info bug                            │ Optional │ Not applied │ Affected components:            ║
+║                │                                                 │          │             │  - amzn/amazon-pay-module       ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MC-1           │ Fixes issue 1                                   │ Optional │ Applied     │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-cms           ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MC-2           │ Fixes issue 2                                   │ Optional │ Not applied │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-cms           ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MC-3           │ Fixes issue 3                                   │ Optional │ Not applied │ Required patches:               ║
+║                │                                                 │          │             │  - MC-2                         ║
+║                │                                                 │          │             │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-cms           ║
+╟────────────────┼─────────────────────────────────────────────────┼──────────┼─────────────┼─────────────────────────────────╢
+║ MC-3-V2        │ Updated fix for issue 3, replaces MC-3 patch    │ Optional │ N/A         │ Affected components:            ║
+║                │                                                 │          │             │  - magento/module-cms           ║
+╚════════════════╧═════════════════════════════════════════════════╧══════════╧═════════════╧═════════════════════════════════╝
+Magento 2 Enterprise Edition, version 2.3.5.0
+```
+
+The status table contains the following types of information:
+
+-  **Type**:
+
+   -  Optional—All individual patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
+   -  Deprecated—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
+
+-  **Status**:
+
+   -  Applied—The patch has been applied.
+   -  Not applied—The patch has not been applied.
+   -  N/A—The status of the patch cannot be defined due to conflicts.
+
+-  **Details**:
+
+   -  Affected components—The list of affected Magento modules.
+   -  Required patches—The list of required patches (dependencies).
+   -  Recommended replacement—The patch that is a recommended replacement for a deprecated patch.
+
+#### Apply individual patches
+
+{:.bs-callout-warning}
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+
+To apply a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
+
+```bash
+./vendor/bin/magento-patches apply MAGETWO-XXXX
+```
+
+You can also apply several patches at the same time by separating multiple patch IDs with spaces:
+
+```bash
+./vendor/bin/magento-patches apply MAGETWO-XXXX MAGETWO-YYYY
+```
+
+You must clean the cache after applying patches to see changes in the Magento application:
+
+```bash
+./bin/magento cache:clean
+```
+
+#### Revert individual patches
+
+{:.bs-callout-warning}
+We strongly recommend testing all patches in a staging or development environment before deploying to production. We also strongly recommend backing up your data before applying a patch. See [Back up and roll back the file system][].
+
+To revert a single patch, run the following command where `MAGETWO-XXXX` is the patch ID specified in the status table:
+
+```bash
+./vendor/bin/magento-patches revert MAGETWO-XXXX
+```
+
+You can also revert several patches at the same time by separating multiple patch IDs with spaces:
+
+```bash
+./vendor/bin/magento-patches revert MAGETWO-XXXX MAGETWO-YYYY
+```
+
+To revert all applied patches:
+
+```bash
+./vendor/bin/magento-patches revert --all
+```
+
+#### Get updates
+
+Magento periodically releases new individual patches. You must update the MQP package to get new individual patches:
+
+```bash
+composer update magento/quality-patches
+```
+
+View the added patches:
+
+{:.bs-callout-tip}
+New add patches display at the bottom of the table.
+
+```bash
+./vendor/bin/magento-patches status
+```
+
+#### Logging
+
+The MQP package logs all operations in the `<Magento_root>/var/log/patch.log` file.
 
 ### Command line
 
@@ -150,6 +300,7 @@ To apply a custom patch using Composer:
 
 <!-- Link Definitions -->
 
+[MQP package]:https://github.com/magento/quality-patches
 [Magento Security Center]:https://magento.com/security/patches
 [-p1 instead of -p0]:http://man7.org/linux/man-pages/man1/patch.1.html
 [Back up and roll back the file system]:{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html
