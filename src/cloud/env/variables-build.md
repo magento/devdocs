@@ -209,7 +209,7 @@ stage:
 
 Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
 
-To change the verbosity of the output from _successful_ `bin/magento` CLI commands, you must also set the [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) to `debug`.
+The [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) must be set to `debug` for the most useful output.
 
 Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
