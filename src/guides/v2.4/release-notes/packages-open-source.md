@@ -1,9 +1,6 @@
 ---
 group: release-notes
 title: Magento Open Source packages
-redirect_from:
-- /magento-third-party.html
-- /guides/v2.3/release-notes/thirdparty-ce.html
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_4/open-source/composer_lock.json' file
