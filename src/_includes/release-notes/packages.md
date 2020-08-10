@@ -1,52 +1,40 @@
 The Magento application uses Composer to manage PHP packages.
 The `composer.json` file declares the list of packages, whereas the `composer.lock` file stores a complete list of the packages (a full version of each package and its dependencies) used to build a release version of the Magento application. The following tables list packages from the `composer.lock` file for {{ edition }} {{page.guide_version}}.
 
-## Magento packages
 
-This section contains information about the `magento` dependencies for the latest {{ edition }} {{page.guide_version}} release.
-Click the **Name** links to view the repository and the license agreement.
+{% assign packages_by_type = packages | group_by:"type" | sort: "name" | reverse %}
 
-{% if packages %}
+{% for group in packages_by_type %}
+## {{ group.name }}
 
-### Required packages
-
-| Name | Version |  License | Description |
-| --- | --- | --- | --- |{% for package in packages %}{% if package.name contains 'magento/' %}
-| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endif %}{% endfor %}
-
-{% assign magento-packages-dev = packages-dev | where_exp: "package", "package.name contains 'magento/'" %}
-
-{% unless magento-packages-dev == empty %}
-
-### Supported packages for development
-
-| Name | Version |  License | Description |
-| --- | --- | --- | --- |{% for package in magento-packages-dev %}
-| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endfor %}
-{% endunless %}
-
-## Third party packages
-
-This section contains information about third party packages for the latest {{ edition }} {{page.guide_version}} release.
-Click the **Name** links to view the repository and the license agreement.
-
-### Required packages
-
-| Name | Version |  License | Description |
-| --- | --- | --- | --- |{% for package in packages %}{% unless package.name contains 'magento/' %}
-| {% if package.source.url contains '://' %}[{{ package.name }}]({{ package.source.url }}) {% else %}{{ package.name }}{% endif %} | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
-
-{% unless packages-dev == empty %}
-
-### Supported packages for development
-
-| Name | Version |  License | Description |
-| --- | --- | --- | --- |{% for package in packages-dev %}{% unless package.name contains 'magento/' %}
-| {% if package.source.url contains '://' %}[{{ package.name }}]({{ package.source.url }}) {% else %}{{ package.name }}{% endif %} | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endunless %}{% endfor %}
-{% endunless %}
-
-{% else %}
-
-There is no data available for this reference at the moment.
-
-{% endif %}
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    {% if group.name == 'metapackage' %}
+      <th>Version</th>
+    {% endif %}
+      <th>License</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for package in group.items %}
+  <tr>
+    <td>
+  {% if package.source.url %}
+    <a href="{{ package.source.url }}">{{ package.name }}</a>
+  {% else %}
+    {{ package.name }}
+  {% endif %}
+    </td>
+    {% if group.name == 'metapackage' %}
+    <td>{{ package.version }}</td>
+    {% endif %}
+    <td>{{ package.license }}</td>
+    <td>{{ package.description }}</td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endfor %}
