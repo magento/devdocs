@@ -668,10 +668,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Magento no longer throws an error when you include an empty customer attribute field in the **Forms to Use In** field while creating a Company account on the storefront. Previously, Magento threw this error: `PHP Fatal error: Uncaught TypeError: Argument 2 passed to Magento\Eav\Model\Attribute\Data\Text::validateLength() must be of the type string, null given`.
 
-<!--- MC-32301-->
-
-*  Magento no longer throws an error when you include an empty customer attribute field in the **Forms to Use In** field while creating a Company account on the storefront. Previously, Magento threw this error: `PHP Fatal error: Uncaught TypeError: Argument 2 passed to Magento\Eav\Model\Attribute\Data\Text::validateLength() must be of the type string, null given`.
-
 ### Customer
 
 <!--- MC-29102-->
