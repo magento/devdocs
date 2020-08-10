@@ -10,6 +10,8 @@ Deploying Product Recommendations to your storefront requires that you install, 
 
 ## Install Product Recommendations {#install}
 
+Because the Product Recommendations module is a stand-alone metapackage, updates are released more frequently than Magento Commerce. To make sure you are up-to-date with the latest bug fixes and features, refer to the [release notes]({{ page.baseurl }}/recommendations/release-notes.html).
+
 Install the `magento/product-recommendations` module with Composer:
 
    ```bash
