@@ -19,14 +19,39 @@ title: What's new on DevDocs
 
 ## {{ group.name }}
 
-Description | Versions | Type | Date
----|---|---|---{% for item in group.items %}
-{{ item.description }} | {{ item.versions }} | {{ item.type }} |
-{%- if item.link -%}
-[{{ item.date | date: "%B&nbsp;%e" }}]({{ item.link }})
-{%- else -%}
-{{ item.date | date: "%B&nbsp;%e" }}
-{%- endif -%}
-{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Versions</th>
+      <th>Type</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in group.items %}
+    <tr>
+      <td><p>
+          {{ item.description | markdownify }}
+          </p>
+          {%- if item.contributor -%}
+          <p>
+          Contributed by <a href="{{ item.profile }}">{{ item.contributor }}</a>.
+          </p>
+          {% endif %}
+      </td>
+      <td>{{ item.versions }}</td>
+      <td>{{ item.type }}</td>
+      <td>
+          {%- if item.link -%}
+              <a href="{{ item.link }}">{{ item.date | date: "%B&nbsp;%e" }}</a>
+          {%- else -%}
+              {{ item.date | date: "%B&nbsp;%e" }}
+          {%- endif -%}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
 
 {% endfor %}
