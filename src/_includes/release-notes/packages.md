@@ -21,7 +21,7 @@ The `composer.json` file declares the list of packages, whereas the `composer.lo
 {% for package in group.items %}
   <tr>
     <td>
-  {% if package.source.url %}
+  {% if package.source.url contains '://'%}
     <a href="{{ package.source.url }}">{{ package.name }}</a>
   {% else %}
     {{ package.name }}
