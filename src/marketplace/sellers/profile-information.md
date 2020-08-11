@@ -11,8 +11,8 @@ Your contact information includes your address, phone number, and PayPal email a
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/account-information.png){: .zoom}
 _Contact Information_
- 
-### Field Descriptions - personal
+
+### Account Information 
 
 |Field|Description|
 |--- |--- |
@@ -22,7 +22,7 @@ _Contact Information_
 |Login Credentials|Clicking <span class="btn">Go to My Account</span> takes you to your Magento account information.|
 |PayPal Email|You must enter a valid PayPal account email, even if  your extensions are available for free on Magento Marketplace. Magento sends your revenue share payment to your PayPal account.|
 
-### Field Descriptions - company
+### Company
 
 |Field|Description|
 |--- |--- |
@@ -50,8 +50,8 @@ For more technical information, see [Get your authentication keys][2] in the dev
 
 1. In the Basic Access Key Information dialog, enter an **Access Key Name** (max of 32 characters) to identify the access key. Then, click <span class="btn">Continue</span>.
 
-    ![]({{ site.baseurl }}/marketplace/sellers/images/basic-access-key-information.png){: .zoom}
-    _Basic Access Key Information_
+   ![]({{ site.baseurl }}/marketplace/sellers/images/basic-access-key-information.png){: .zoom}
+   _Basic Access Key Information_
 
 Your new access key appears in the list, and can now be used to authorize downloads of Magento updates, extensions, and themes.
 
@@ -64,6 +64,8 @@ Your Marketplace Profile contains information you entered during account setup, 
 
 ![]({{ site.baseurl }}/marketplace/sellers/images/marketplace-profile.png){: .zoom}
 _Marketplace Profile_
+
+### Account Information 
 
 | Field | Description |
 |----------
