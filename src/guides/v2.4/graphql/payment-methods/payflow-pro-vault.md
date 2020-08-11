@@ -13,7 +13,7 @@ The following conditions must be true to use this payment method:
 
 You cannot use this payment method if the customer decides to use a credit or debit card that is not stored in the Magento vault.
 
-If the customer's stored payment information becomes outdated, use the [deletePaymentToken mutation]({{page.baseurl}}/graphql/mutations/delete-payment-token.html) to remove the token. The perform the actions described in the [PayPal Payflow Pro payment method]({{page.baseurl}}/graphql/) to generate a new token and process the order.
+If the customer's stored payment information becomes outdated, use the [deletePaymentToken mutation]({{page.baseurl}}/graphql/mutations/delete-payment-token.html) to remove the token. Then perform the actions described in the [PayPal Payflow Pro payment method]({{page.baseurl}}/graphql/) to generate a new token and process the order.
 
 {:.bs-callout-info}
 Use the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html) and specify the `payment_payflowpro_cc_vault_active` attribute to determine whether the Vault feature is enabled for Payflow Pro.
