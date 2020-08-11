@@ -31,7 +31,6 @@ Prepare an image for your personal profile that is 255 pixels square, and saved 
    ![Personal Profile - Name]({{ site.baseurl }}/marketplace/sellers/images/account-personal-profile-name.png){: .zoom}
    _Personal Profile - Name_
 
-
 ## Step 3: Enter your contact information
 
 1. Enter the URL of your **Personal Website**.
