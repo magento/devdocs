@@ -46,7 +46,6 @@ The following diagram shows the workflow for placing an order when Payflow Pro V
 
 When you set the payment method to Payflow Pro Vault in the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation, the `payment_method` object must contain a `payflowpro_cc_vault` object, which contains the customer's public hash.
 
-
 ### payflowpro_cc_vault attributes {#payflowpro_cc_vault}
 
 The `payflowpro_cc_vault` object must contain the following attribute:
