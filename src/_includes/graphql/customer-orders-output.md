@@ -368,6 +368,14 @@ Attribute | Data type | Description
 `number` | String | The tracking number of the order shipment
 `title` | String! | The shipment tracking title
 
+#### ShippingDiscount attributes {#ShippingDiscount}
+
+The ShippingDiscount object defines an individual discount that can be applied to shipping.
+
+Attribute | Data type | Description
+--- | --- | ---
+`amount` | Money! | The amount of the discount
+
 #### ShippingHandling attributes {#ShippingHandling}
 
 The `ShippingHandling` object provides details about shipping and handling charges.
@@ -376,7 +384,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `amount_excluding_tax` | Money | The shipping amount, excluding tax
 `amount_including_tax` | Money | The shipping amount, including tax
-`discounts` | [Discount] | The applied discounts to the shipping
+`discounts` | [ShippingDiscount] | The applied discounts to the shipping
 `taxes` | [[TaxItem](#TaxItem)] | Contains details about taxes applied for shipping
 `total_amount`| Money! | The total amount for shipping
 
