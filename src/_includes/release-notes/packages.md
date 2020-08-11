@@ -1,7 +1,6 @@
 The Magento application uses Composer to manage PHP packages.
 The `composer.json` file declares the list of packages, whereas the `composer.lock` file stores a complete list of the packages (a full version of each package and its dependencies) used to build a release version of the Magento application. The following tables list packages from the `composer.lock` file for {{ edition }} {{page.guide_version}}.
 
-
 {% assign packages_by_type = packages | group_by:"type" | sort: "name" | reverse %}
 
 {% for group in packages_by_type %}
