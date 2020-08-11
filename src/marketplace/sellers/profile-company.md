@@ -98,7 +98,7 @@ _Social Networks_
 |Company Bio|A description of your company’s background, products, and services. You might begin with a couple of sentences to give a brief overview, and finish it later with a more detailed description. If you use a word processor to compose and spell check your bio, make sure to save it as plain text before pasting it into your profile. Make sure to convert all URLs to working hyperlinks. Maximum characters: 1500, including spaces.|
 |Update Image|Your company profile image represents your brand in Magento Marketplace, and appears on your developer profile and product pages. The image must have a professional presentation, and must not be derived from, or include the Magento logo. To learn more, see the Magento Extension Distribution and Service Agreement. <br/>Size: 255 x 255 pixels <br/>Supported file types: JPG / GIF / PNG|
 
-#### Contact information
+### Contact information
 
 |Field|Description|
 |--- |--- |
@@ -107,7 +107,7 @@ _Social Networks_
 |Company Support Email|The email address that customers can use to contact your company for technical support.|
 |Vendor Name|A unique identifier that identifies your Marketplace account. The vendor name can be based on your company name, and must be lowercase alphanumeric characters, and can include dashes. <br/><br/>**_Important:_** For all Magento 2.x packages submitted to Marketplace, the Vendor Name must match the name field in the Vendor section of the composer.json file.|
 
-#### Company address
+### Company address
 
 |Field|Description|
 |--- |--- |
@@ -119,7 +119,7 @@ _Social Networks_
 |State/Province|The state or province where your company is located.|
 |Phone Number|The primary phone number used by your company. The area code and phone number are automatically formatted as: (999) 999-9999|
 
-#### Social networks
+### Social networks
 
 |Field|Description|
 |--- |--- |
