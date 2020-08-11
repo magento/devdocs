@@ -144,6 +144,14 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of the discount
 `label` | String! | A description of the discount
 
+#### DownloadableCreditMemoItem attributes {#DownloadableCreditMemoItem}
+
+The `DownloadableCreditMemoItem` object implements the `CreditMemoItemInterface`. It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were refunded from the downloadable product
+
 #### DownloadableItemsLinks attributes {#DownloadableItemsLinks}
 
 The `DownloadableProductLinks` object defines characteristics of a downloadable product.
@@ -154,31 +162,65 @@ Attribute | Data type | Description
 `title`| String | The display name of the link
 `uid` | ID! | A string that encodes option details
 
+#### DownloadableInvoiceItem attributes {#DownloadableInvoiceItem}
+
+The `DownloadableInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were invoiced from the downloadable product
+
 #### DownloadableOrderItem attributes {#DownloadableOrderItem}
 
 The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
-`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that are ordered from the downloadable product
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were ordered from the downloadable product
 
 #### GiftCardItem attributes {#GiftCardItem}
 
-The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item.
+The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item. Physical and virtual gift cards 
 
 Attribute | Data type | Description
 --- | --- | ---
-`message`| String | A message from the sender to the recipient
-`recipient_name` | String | The gift card recipient name
-`sender_name` | String | The gift card sender name
+`message`| String | A message provided by the sender to the recipient
+`recipient_email` | String | The email provided for the recipient of a virtual gift card
+`recipient_name` | String | The name provided for the recipient of a physical or virtual gift card
+`sender_email` | String | The sender email provided for a virtual gift card
+`sender_name` | String | The sender name provided for a physical or virtual gift card
+
+#### GiftCardCreditMemoItem attributes {#GiftCardOrderItem}
+
+The `GiftCardCreditMemoItem` object implements the `CreditMemoItemInterface`. It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a refunded item
+
+#### GiftCardInvoiceItem attributes {#GiftCardInvoiceItem}
+
+The `GiftCardInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an invoiced item
 
 #### GiftCardOrderItem attributes {#GiftCardOrderItem}
 
-The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+The `GiftCardOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
 `gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an order item
+
+#### GiftCardShipmentItem attributes {#GiftCardShipmentItem}
+
+The `GiftCardShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a shipped item
 
 #### Invoice attributes {#Invoice}
 
