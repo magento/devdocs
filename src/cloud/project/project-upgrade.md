@@ -47,7 +47,7 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 ### Update the configuration file
 
-If you are upgrading from an older version of Magento to 2.2.x or later, you must also update your [.magento.app.yaml] file or you might encounter errors. {{site.data.var.ece}} 2.2.x and later has new settings in the file.
+When you upgrade, you might need to update your [.magento.app.yaml] file to account for changes in the default configuration settings that are sometimes introduced to support changes in {{site.data.var.ece}} or the Magento application.
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -77,11 +77,22 @@ To update the `.magento.app.yaml` file:
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
+   For Magento 2.2.x - 2.3.x–
+
    ```yaml
    variables:
        env:
            CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
            CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+           CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+    ```
+
+   For Magento 2.4.x–
+
+   ```yaml
+   variables:
+       env:
+           CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
 

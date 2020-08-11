@@ -46,7 +46,7 @@ Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/ve
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
     "require": {
-        "php": "~7.1.3||~7.2.0",
+        "php": "~7.3.0||~7.4.0",
         "magento/module-store": "102.1",
         "magento/module-catalog": "102.1",
         "magento/module-catalog-inventory": "102.1",

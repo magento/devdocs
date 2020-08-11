@@ -79,6 +79,14 @@ Attribute | Data type | Description
 --- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
+#### BundleShipmentItem {#BundleShipmentItem}
+
+The `BundleShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
+
 #### CommentItem attributes {#CommentItem}
 
 The `CommentItem` object contains details about a comment applied to an order.
@@ -197,10 +205,10 @@ Attribute | Data type | Description
 Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | The unique identifier of the option
-`price` | Money! | The price of the child product
-`product_name` | String! | The name of the child product
-`product_sku` | String! | The SKU of the child product
-`quantity` | Float! | The number of selected items
+`price` | Money! | The price of the child bundle product
+`product_name` | String! | The name of the child bundle product
+`product_sku` | String! | The SKU of the child bundle product
+`quantity` | Float! | Indicates how many of this bundle product were ordered
 
 #### KeyValue attributes {#KeyValue}
 
@@ -249,7 +257,7 @@ Attribute | Data type | Description
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price of the base product, including selected options
 `product_sku` | String! | SKU of the base product
-`product_type` | String | The type of product, such as simple, configurable, or bundle
+`product_type` | String | The type of product, such as simple or configurable
 `product_url_key` | String | URL key of the base product
 `quantity_canceled` | Float | The number of canceled items
 `quantity_invoiced` | Float | The number of invoiced items
@@ -273,7 +281,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[CommentItem](#CommentItem)] | Comments added to the shipment
 `id` | ID! | The unique ID of the shipment
-`items` | [[ShipmentItem](#ShipmentItem)] | Contains items included in the shipment
+`items` | [[ShipmentItemInterface](#ShipmentItemInterface)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
 `tracking` | [[ShipmentTracking](#ShipmentTracking)] | Contains shipment tracking detail
 
@@ -380,6 +388,10 @@ Attribute | Data type | Description
 `total_pages` | Int | Total pages
 
 #### ShipmentItem attributes {#ShipmentItem}
+
+The `ShipmentItem` data type implements the [`ShipmentItemInterface`](#ShipmentItemInterface).
+
+#### ShipmentItemInterface attributes {#ShipmentItemInterface}
 
 Attribute | Data type | Description
 --- | --- | ---
