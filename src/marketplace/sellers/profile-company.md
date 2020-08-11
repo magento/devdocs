@@ -6,21 +6,21 @@ redirect_from: /marketplace/sellers/company-profile.html
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
-![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-company-profile.png){: .zoom}
+![Company profile]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-company-profile.png){: .zoom}
 _Company Profile_
 
 The following instructions walk you through the process of completing your company profile. All fields are required, unless marked “Optional”.
 
-## Before you begin
+## Step 1: Before you begin
 
 Prepare an image for your company profile that is 255 pixels square. Then, save it as one of the following file types: JPG, GIF, or PNG.
 
-### Step 1: Complete your company background
+## Step 2: Complete your company background
 
 1. Select the checkbox at the top of the form if you want to use your company profile—rather than your personal profile—as the default.
 
-    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-name.png){: .zoom}
-    _Company Profile_
+   ![Company background]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-name.png){: .zoom}
+   _Company Background_
 
 1. Enter your **Legal Company Name**.
 
@@ -28,10 +28,10 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. To upload the image that you have prepared to your company profile, do one of the following:
 
--  Drag the image to the box.
--  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
+   -  Drag the image to the box.
+   -  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
 
-### Step 2: Enter your contact information
+## Step 3: Enter your contact information
 
 1. Enter the URL of your **Company Website**.
 
@@ -39,30 +39,30 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 
 1. In the **Vendor Name** field, enter the `vendor-name` part of the `Name` field from your `composer.json` file.
 
-    `Name: <vendor-name> / <package-name>`
+   `Name: <vendor-name> / <package-name>`
 
-    <div class="bs-callout bs-callout-info" markdown="1">
-    This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your company profile.
-    </div>
+   <div class="bs-callout bs-callout-info" markdown="1">
+   This unique identifier is used to identify your Marketplace vendor account, and must exactly match the Vendor Name in your company profile.
+   </div>
 
-    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-contact-info.png){: .zoom}
-    _Contact Information_
+   ![Contact information]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-contact-info.png){: .zoom}
+      _Contact Information_
 
-### Step 3: Enter your company address
+## Step 4: Enter your company address
 
 1. Complete the following fields that make up your company address:
 
--  Country
--  Street Address, Apt/Suite
--  ZIP, City, State / Province
--  Phone Number
+   -  Country
+   -  Street Address, Apt/Suite
+   -  ZIP, City, State / Province
+   -  Phone Number
 
 1. To complete the **Phone Number**, choose the flag for your country code. Then, enter the area code and phone number.
 
-    ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-address.png){: .zoom}
-    _Company Address_
+   ![Company address]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-address.png){: .zoom}
+   _Company Address_
 
-### Step 4: Link to your social networks (optional)
+## Step 5: Link to your social networks (optional)
 
 Enter the link to each professional social network that you want to include in your company profile.
 
@@ -72,17 +72,17 @@ Enter the link to each professional social network that you want to include in y
 -  Facebook
 -  LinkedIn
 
-![]({{ site.baseurl }}/marketplace/sellers/images/account-profile-social-networks.png){: .zoom}
+![Social networks]({{ site.baseurl }}/marketplace/sellers/images/account-profile-social-networks.png){: .zoom}
 _Social Networks_
 
-### Step 5: Activate your account
+## Step 6: Activate your account
 
 1. When the required fields are complete, click <span class="btn">Save</span>.
 
 1. When prompted, enter your **PayPal Email** address.
 
-    {: .bs-callout .bs-callout-info}
-    **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
+   {: .bs-callout .bs-callout-info}
+   **Important:** This payment information is required of all developers, even those who make their extensions available at no charge. Magento sends your revenue share on a monthly basis to PayPal account.
 
 1. Watch for a confirmation email sent to the email address associated with the account.
 
@@ -90,7 +90,6 @@ _Social Networks_
 
 ## Field Descriptions
 
-{: .fields-table }
 |Field|Description|
 |---|---|
 |Use as my default profile|Mark the checkbox to use your company profile as the default.|
@@ -100,7 +99,6 @@ _Social Networks_
 
 ### Contact information
 
-{: .fields-table }
 |Field|Description|
 |--- |--- |
 |Company Website|The URL of your company website.|
@@ -110,7 +108,6 @@ _Social Networks_
 
 ### Company address
 
-{: .fields-table }
 |Field|Description|
 |--- |--- |
 |Country|The country where your company is legally registered to conduct business.|
@@ -123,7 +120,6 @@ _Social Networks_
 
 ### Social networks
 
-{: .fields-table }
 |Field|Description|
 |--- |--- |
 |GitHub|(Optional) The user name associated with your company’s GitHub account. For example: http://github.com/username|
