@@ -55,7 +55,7 @@ There is a [bug](https://bugs.php.net/bug.php?id=79174) in PHP 7.4.2 which cause
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
 
-<!--{% assign platform-req = site.data.codebase.v2_4.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.

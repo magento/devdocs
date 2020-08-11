@@ -61,7 +61,7 @@ The [PHP installation instructions][] include a step for installing these extens
 {:.bs-callout-warning}
 If you install Magento via cloning from the [github](https://github.com/magento/magento2) repository then make sure you have the [ext-sockets](https://github.com/php-amqplib/php-amqplib/blob/master/CHANGELOG.md#281---2018-11-13) installed on your instance.
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.

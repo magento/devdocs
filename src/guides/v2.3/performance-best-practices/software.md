@@ -43,7 +43,7 @@ Magento fully supports PHP 7.2.11. There are several factors to account for when
 
 We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Adding more extensions increases library load times.

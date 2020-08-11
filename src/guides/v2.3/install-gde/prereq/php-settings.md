@@ -39,7 +39,7 @@ On CentOS, [additional steps may be required][].
 
 Magento requires a set of extensions to be installed:
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 In the command line, type:
