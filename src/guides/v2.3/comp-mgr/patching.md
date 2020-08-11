@@ -100,6 +100,10 @@ Add the `magento/quality-patches` Composer package to your `composer.json` file:
 composer require magento/quality-patches
 ```
 
+```bash
+composer update
+```
+
 #### View individual patches
 
 To view the list of individual patches available for your version of Magento:
