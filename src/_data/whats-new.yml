@@ -4,8 +4,106 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Jul 13 09:15:34 2020
+updated: Mon Jul 27 11:43:37 2020
 entries:
+- description: Added a known issue about the `inventory_cleanup_reservations` cron
+    job not working properly in the [Inventory 1.2.0 release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.0
+  type: Technical
+  date: July 27, 2020
+  link: https://github.com/magento/devdocs/pull/7596
+- description: Updated the Magento Cloud CLI reference for v1.35.0.
+  versions: 2.x
+  type: Technical
+  date: July 24, 2020
+  link: https://github.com/magento/devdocs/pull/7584
+- description: Added additional troubleshooting instructions for [PrivateLink VPC
+    connections](https://devdocs.magento.com/cloud/project/privatelink-service.html).
+  versions: 2.x
+  type: Technical
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7538
+- description: Adds support for `security.txt` to help security researchers report potential
+    security issues to site administrators.
+  versions: 2.4.0
+  type: Major Update
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7556
+- description: Added MFA troubleshooting step in the [Enable SSH keys](https://devdocs.magento.com/cloud/before/before-workspace-ssh.html)
+    topic in the Cloud guide.
+  versions: 2.x
+  type: Major Update
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7579
+- description: Added [B2B Release Notes](https://devdocs.magento.com/guides/v2.4/release-notes/b2b-release-notes.html).
+  versions: 2.4.0
+  type: New Topic
+  date: July 23, 2020
+  link: https://github.com/magento/devdocs/pull/7566
+- description: Updated the [Magento Cloud CLI command reference for v1.34.4](https://devdocs.magento.com/guides/v2.4/reference/cli/magento-cloud.html).
+  versions: 2.x
+  type: Technical
+  date: July 22, 2020
+  link: https://github.com/magento/devdocs/pull/7572
+- description: Because two-factor authentication for admin accounts is required in
+    2.4.0, references to the `POST /V1/integration/admin/token` endpoint have been
+    replaced with `POST /V1/tfa/provider/google/authenticate` in the [REST tutorials](https://devdocs.magento.com/guides/v2.4/rest/tutorials/prerequisite-tasks/create-admin-token.html)
+    and other places.
+  versions: 2.4.0
+  type: Major Update
+  date: July 22, 2020
+  link: https://github.com/magento/devdocs/pull/7576
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html)
+    for MySQL, PHP, and Redis.
+  versions: 2.3.x
+  type: Technical
+  date: July 21, 2020
+  link: https://github.com/magento/devdocs/pull/7537
+- description: Deleted the "List of REST endpoints by module" and "List of service
+    names per module" topics from the _REST API Reference_.
+  versions: 2.3.x, 2.4.x
+  type: Technical
+  date: July 21, 2020
+  link: https://github.com/magento/devdocs/pull/7569
+- description: Refactored the [Order Processing with Inventory Management](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/index.html)
+    REST tutorial to be compatible with In-Store Pickup.
+  versions: 2.4.0
+  type: Major Update
+  date: July 20, 2020
+  link: https://github.com/magento/devdocs/pull/7545
+- description: Added inventory 1.2.0 [release notes](https://devdocs.magento.com/guides/v2.4/inventory/release-notes.html).
+  versions: 2.4.0
+  type: Major Update
+  date: July 20, 2020
+  link: https://github.com/magento/devdocs/pull/7554
+- description: Published [REST API reference](https://devdocs.magento.com/guides/v2.4/rest/bk-rest.html)
+    documentation.
+  versions: 2.4.0
+  type: Major Update
+  date: July 17, 2020
+  link: https://github.com/magento/devdocs/pull/7533
+- description: Updated Magento [system requirements](https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements-tech.html)
+    for MySQL, PHP, and Redis.
+  versions: 2.4.0
+  type: Technical
+  date: July 17, 2020
+  link: https://github.com/magento/devdocs/pull/7529
+- description: Updated _Cloud Guide_ with information about account and project security
+    options:<br/>- Added instructions to configure 2FA security and API tokens setting
+    to the [Manage user access](https://devdocs.magento.com/cloud/project/user-admin.html)
+    topic.<br/>- Added [Enable MFA enforcement for SSH](https://devdocs.magento.com/cloud/project/project-enable-mfa-project.html)
+    topic to describe this project-level feature to enforce 2FA requirement for SSH
+    access to Magento Cloud environments. Also added instructions for authenticating
+    on projects that have MFA enforcement enabled.
+  versions: 2.x
+  type: Major Update
+  date: July 15, 2020
+  link: https://github.com/magento/devdocs/pull/7517
+- description: Added use cases for [web API authentication methods](https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: July 14, 2020
+  link: https://github.com/magento/devdocs/pull/7498
 - description: Added 2021 release dates to the [release information page](https://devdocs.magento.com/release/).
   versions: 2.x
   type: Major Update
@@ -35,7 +133,7 @@ entries:
   type: Major Update
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/7447
-- description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/error-codes.html)
+- description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/ece-tools-error-reference.html)
     to the _Cloud Guide_ with error listing and suggested actions to resolve build and deploy issues.
   versions: 2.x
   type: Major update
@@ -153,7 +251,7 @@ entries:
   type: Technical
   date: June 17, 2020
   link: https://github.com/magento/devdocs/pull/7419
-- description: Updated [Magento-developed extension (MDE)](https://devdocs.magento.com/release/#compatibility)
+- description: Updated [Magento-developed extension (MDE)](https://devdocs.magento.com/release/availability.html#compatibility)
     and [vendor-bundled extension (VBE)](https://devdocs.magento.com/extensions/vendor/#compatibility)
     compatibility for Magento 2.4.0.
   versions: 2.4.0
@@ -531,7 +629,7 @@ entries:
   type: Major Update
   date: April 23, 2020
   link: https://github.com/magento/devdocs/pull/7082
-- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+- description: Added the 'Assigning an issue' to the [Code Contributions](https://devdocs.magento.com/contributor-guide/contributing.html)
     topic.
   versions: 2.3.x
   type: Major Update
@@ -1253,7 +1351,7 @@ entries:
   type: Major update
   date: December 12, 2019
   link: https://github.com/magento/devdocs/pull/6167
-- description: Updated the [Contributor Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+- description: Updated the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
     with guidance about accepting contributions to the 2.4 release line only.
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -2010,7 +2108,7 @@ entries:
   type: New topic
   date: August 7, 2019
   link: https://github.com/magento/devdocs/pull/5007
-- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
+- description: Updated the label descriptions for [DevDocs contributions](https://devdocs.magento.com/contributor-guide/contributing.html#devdocs), corrected links, and added a link to the [Beginner's Guide](https://github.com/magento/magento2/wiki/Getting-Started).
   versions: 2.2.x, 2.3.x
   type: Major update
   date: August 5, 2019
@@ -2034,7 +2132,7 @@ entries:
   date: August 2, 2019
   link: https://github.com/magento/devdocs/pull/5091
 - description: Added the 'Backward Compatibility' section to the [Magento Definition
-    of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html).
+    of Done](https://devdocs.magento.com/contributor-guide/contributing_dod.html).
   versions: 2.3.x
   type: Major update
   date: July 31, 2019
@@ -2145,7 +2243,7 @@ entries:
   date: July 16, 2019
   link: https://github.com/magento/devdocs/pull/3982
 - description: Added the "GraphQl backward compatibility policy" section to [Backward
-    compatible development](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/)
+    compatible development](https://devdocs.magento.com/contributor-guide/backward-compatible-development/)
   versions: 2.3.x
   type: Major update
   date: July 16, 2019
@@ -3018,7 +3116,7 @@ entries:
   type: Technical changes
   date: March 19, 2019
   link: https://github.com/magento/devdocs/pull/3961
-- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/#magento-apis).
+- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/contributor-guide/backward-compatible-development/#magento-apis).
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: March 18, 2019
@@ -3609,7 +3707,7 @@ entries:
   date: October 29 2018
 - description: Updated the [Contributing process](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
     for DevDocs with updates to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html)
-    and [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+    and [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: October 26 2018
@@ -3711,8 +3809,8 @@ entries:
   versions: 2.1.x, 2.2.x
   type: New topic
   date: October  1 2018
-- description: Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points)
-    section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added [Contribution awards and points](https://devdocs.magento.com/contributor-guide/contributing.html#points)
+    section to the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: September 27 2018
@@ -3750,9 +3848,9 @@ entries:
   type: Technical changes
   date: September 17 2018
 - description: Added announcements and supported pull requests for v2.1,
-    [v2.2](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html),
-    and [v2.3](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
-    Contributing guide. Updated the [basic template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html)
+    [v2.2](https://devdocs.magento.com/contributor-guide/contributing.html),
+    and [v2.3](https://devdocs.magento.com/contributor-guide/contributing.html)
+    Contributing guide. Updated the [basic template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html)
     for DevDocs contributions.
   versions: 2.x
   type: Major update
@@ -3878,7 +3976,7 @@ entries:
   type: Major update
   date: Aug 17 2018
 - description: Updated all GitHub labels used for community contributions and added
-    information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+    information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: Aug 16 2018
@@ -3960,7 +4058,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Technical changes
   date: Jul 31 2018
-- description: Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/contributor-guide/contributing.html)
   versions: 2.x
   type: Major update
   date: Jul 30 2018
@@ -3978,7 +4076,7 @@ entries:
   versions: 2.2.x, 2.3.x
   type: Major update
   date: Jul 25 2018
-- description: Updated [Definition of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html)
+- description: Updated [Definition of Done](https://devdocs.magento.com/contributor-guide/contributing_dod.html)
     with examples and guidelines.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
@@ -4395,7 +4493,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Mar 21 2018
-- description: Added a [descriptive video](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+- description: Added a [descriptive video](https://devdocs.magento.com/contributor-guide/contributing.html)
     showing how to keep your fork updated with the latest changes.
   versions: 2.x
   type: Updated
@@ -4453,7 +4551,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Mar 07 2018
-- description: Added a CodeTriage badge to the [Contributor Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html).
+- description: Added a CodeTriage badge to the [Contributor Guide](https://devdocs.magento.com/contributor-guide/contributing.html).
   versions: 2.x
   type: Updated
   date: Mar 01 2018
@@ -4561,7 +4659,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Jan 22 2018
-- description: We updated the [quarterly contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)
+- description: We updated the [quarterly contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)
     page for Q4 2018.
   versions: 2.x
   type: Updated
@@ -4714,7 +4812,7 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 29 2017
-- description: Updated the [Devdocs Quarterly Contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)
+- description: Updated the [Devdocs Quarterly Contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)
     page for Q3 2017
   versions: ''
   type: Updated
@@ -5535,7 +5633,7 @@ entries:
   versions: 2.1.x
   type: New
   date: Apr 1 2017
-- description: '[Update sample contribution template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html)'
+- description: '[Update sample contribution template](https://devdocs.magento.com/contributor-guide/templates/basic_template.html)'
   versions: 2.x
   type: Updated
   date: Apr 1 2017
@@ -5559,7 +5657,7 @@ entries:
   versions: 2.x
   type: New
   date: Mar 15 2017
-- description: '[Top quarterly devdocs contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html)'
+- description: '[Top quarterly devdocs contributors](https://devdocs.magento.com/contributor-guide/quarterly-contributors.html)'
   versions: 2.x
   type: Updated
   date: Mar 15 2017

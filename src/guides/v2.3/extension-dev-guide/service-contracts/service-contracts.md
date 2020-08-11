@@ -36,7 +36,7 @@ Eventually, you will be able to use different storage technologies for different
 
 ## Using the @api tag
 
-Backward compatibility can be indicated by the use of `@api`. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
+Backward compatibility can be indicated by the use of `@api`. For more information, see [Backward compatibility]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
 {:.ref-header}
 Related topics

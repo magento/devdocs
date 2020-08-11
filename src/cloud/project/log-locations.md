@@ -1,33 +1,32 @@
 ---
 group: cloud-guide
-title: Log locations
+title: View and manage logs
 functional_areas:
   - Cloud
   - Configuration
 redirect_from:
   - /cloud/trouble/environments-logs.html
 ---
-Logs are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook].
 
- {:.bs-callout-info}
-Magento-specific logs are in the `<magento-root-dir>/var/` directory. See [Magento Logging][configlog] in the _Configuration guide_.
+Logs for {{site.data.var.ece}} projects are useful for troubleshooting problems related to {{site.data.var.ece}} [build and deploy hooks][hook], cloud services, and the Magento application.
 
-{:.bs-callout-tip}
-When you configure your Cloud environment, you can [set up log-based Slack and email notifications][slacklog] for build and deploy actions.
+You can view the logs from the file system, the project web UI, and the `magento-cloud` CLI.
 
-## Viewing logs
-
-There are three ways to view logs: file system, project web UI, or the `magento-cloud` CLI.
-
--  **Log directories**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
+-  **File system**—The `/var/log` system directory contains logs for all environments. The `var/log/` Magento directory contains app-specific logs unique to a particular environment. You must use an SSH connection to access logs in a remote server environment. These directories are not shared between nodes in a cluster. In Pro Production and Staging environments, you must check the logs on each node.
 
 -  **Project web UI**—You can see build and post-deploy log information in the environment _messages_ list.
 
 -  **Magento Cloud CLI**—You can view logs using the `magento-cloud log` command.
 
+## Manage log data
+
+On Pro Production and Staging environments, use the New Relic Logs application integrated with your project to manage aggregated log data from all logs associated with your {{ site.data.var.ece }} project.
+
+The New Relic Logs application provides a centralized log management dashboard to troubleshoot and monitor {{site.data.var.ece}} Production and Staging environments. The dashboard also provides access to log data for Fastly CDN, Image Optimization, and Web application firewall (WAF) services. See [New Relic services][].
+
 ### Log command
 
-You use the `magento-cloud log` command to quickly view a specific log. If you do not specify a log name, you can choose a log from the response list.
+When you are logged into your {{ site.data.var.ece }} project, you can use the `magento-cloud log` CLI command to quickly view a specific log from the command line. If you do not specify a log name, you can choose a log from the response list.
 
 ```bash
 magento-cloud log
@@ -74,9 +73,12 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.
 ```
 
+{:.bs-callout-tip}
+When you configure your Cloud environment, you can set up [log-based Slack and email notifications][slacklog] for build and deploy actions.
+
 ### Error logs
 
-Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors.
+Error and warning messages generated during the deployment process are written to both the `var/log/cloud.log` and the `var/log/cloud.error.log` files. The Cloud error log file contains only errors and warnings from the latest deployment. An empty file indicates a successful deployment with no errors. See [Error message reference for ece-tools][Error reference].
 
 The following logs have a common location for all Cloud projects:
 
@@ -141,10 +143,10 @@ Log file            | Starter and Pro Integration | Pro Staging                 
 
 ## Service logs
 
-Because each service runs in a separate container, the service logs are not available in the Integration environment. {{site.data.var.ece}} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
+Because each service runs in a separate container, the service logs are not available in the Integration environment. {{ site.data.var.ece }} provides access to the web server container in the Integration environment only. The following service log locations are for the Pro Production and Staging environments:
 
 -  **Redis log**: `/var/log/platform/<project_id>_stg/redis-server-<project_id>_stg.log`
--  **Elasticseach log**: `/var/log/elasticsearch/elasticsearch.log`
+-  **Elasticsearch log**: `/var/log/elasticsearch/elasticsearch.log`
 -  **Mail log**: `/var/log/mail.log`
 -  **MySQL error log**: `/var/log/mysql/mysql-error.log`
 -  **MySQL slow log**: `/var/log/mysql/mysql-slow.log`
@@ -153,7 +155,11 @@ Because each service runs in a separate container, the service logs are not avai
 {:.bs-callout-tip}
 Log file locations in the scaled architecture depend on the node type. See [Log locations in the Scaled architecture][scaled] topic.
 
-[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+<!--Link definitions-->
+
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
+[Error reference]: {{site.baseurl}}/cloud/reference/ece-tools-error-reference.html
+[hook]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
+[New Relic services]: {{site.baseurl}}/cloud/project/new-relic.html
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
 [scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations

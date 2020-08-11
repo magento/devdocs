@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-Magento version 2.4.0 and later requires minimum stable MySQL 5.7.9. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.2, 10.4, and other binary compatible MySQL technologies. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported due to the removal of support for MySQL 5.6 in this release.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -33,10 +33,10 @@ If your web server and database server are on different hosts, perform the tasks
 
 ## Installing MySQL on Ubuntu {#instgde-prereq-mysql-ubuntu}
 
-Magento 2.4 requires a clean installation of MySQL 5.7.9 or 8.0. Follow the links below for instructions on installing MySQL on your machine.
+Magento 2.4 requires a clean installation of MySQL 8.0. Follow the links below for instructions on installing MySQL on your machine.
 
-*  [Ubuntu][https://ubuntu.com/server/docs/databases-mysql]
-*  [CentOS][https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html]
+*  [Ubuntu](https://ubuntu.com/server/docs/databases-mysql)
+*  [CentOS](https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html)
 
 If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="_blank"} that is larger than the default, 16MB.
 
@@ -55,21 +55,6 @@ The display width specification for integer data types (TINYINT, SMALLINT, MEDIU
 have been deprecated in MySQL 8.0.17. Statements that include data-type definitions in their output no longer show the display width for integer types, with the exception of TINYINT(1). MySQL Connectors assume that TINYINT(1) columns originated as BOOLEAN columns. This exception enables them to continue to make that assumption.
 
 #### Example:
-
-Describe admin_user at mysql 5.6
-
-| Field | Type | Null | Key | Default | Extra |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| user\_id | int\(10\) unsigned | NO | PRI | NULL | auto\_increment |
-| firstname | varchar\(32\) | YES | | NULL | |
-| lastname | varchar\(32\) | YES | | NULL | |
-| email | varchar\(128\) | YES | | NULL | |
-| username | varchar\(40\) | YES | UNI | NULL | |
-| password | varchar\(255\) | NO | | NULL | |
-| created | timestamp | NO | | CURRENT\_TIMESTAMP | |
-| modified | timestamp | NO | | CURRENT\_TIMESTAMP | on update CURRENT\_TIMESTAMP |
-| logdate | timestamp | YES | | NULL | |
-| lognum | smallint\(5\) unsigned | NO | | 0 | |
 
 Describe admin_user at mysql 8.19
 
@@ -155,19 +140,19 @@ To configure a MySQL database instance:
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
-   ```shell
+   ```sql
    create database magento;
    ```
 
-   ```shell
-   create user magento IDENTIFIED BY 'magento';
+   ```sql
+   create user 'magento'@'localhost' IDENTIFIED BY 'magento';
    ```
 
-   ```shell
-   GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+   ```sql
+   GRANT ALL ON magento.* TO 'magento'@'localhost';
    ```
 
-   ```shell
+   ```sql
    flush privileges;
    ```
 

@@ -341,12 +341,12 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 ```php
 ...
-$fieldset->addField('new_category_parent', 'text', array(
+$fieldset->addField('new_category_parent', 'text', [
     'label'    => __('Parent Category'),
     'title'    => __('Parent Category'),
     'required' => true,
     'class'    => 'parent category',
-));
+]);
 ...
 ```
 
@@ -354,12 +354,12 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 ```php
 ...
-$fieldset->addField('new_category_parent', 'text', array(
+$fieldset->addField('new_category_parent', 'text', [
     'label'    => __('Parent Category'),
     'title'    => __('Parent Category'),
     'required' => true,
     'style'    => 'border: 1px solid #ccc;',
-));
+]);
 ...
 ```
 
