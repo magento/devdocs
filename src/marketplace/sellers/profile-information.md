@@ -12,7 +12,7 @@ Your contact information includes your address, phone number, and PayPal email a
 ![]({{ site.baseurl }}/marketplace/sellers/images/account-information.png){: .zoom}
 _Contact Information_
 
-### Account Information 
+### Account Information
 
 |Field|Description|
 |--- |--- |
@@ -65,7 +65,7 @@ Your Marketplace Profile contains information you entered during account setup, 
 ![]({{ site.baseurl }}/marketplace/sellers/images/marketplace-profile.png){: .zoom}
 _Marketplace Profile_
 
-### Account Information 
+### Account Information
 
 | Field | Description |
 |----------
