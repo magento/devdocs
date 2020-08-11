@@ -205,6 +205,8 @@ We recommend reviewing tracked data:
 
 All collected data details the time spent on an action transmitting data, queries, or _Redis_ data. If queries cause issues, New Relic provides information to track and respond to those issues.
 
+For details on using this data to troubleshoot Magento performance issues, see [Troubleshoot performance using New Relic][] in the _Magento Help Center_.
+
 {:.bs-callout-info}
 You can learn more about using the New Relic APM and Infrastructure agents to collect and analyze application data from the [New Relic APM] and [New Relic Infrastructure][New Relic infrastructure] documentation.
 
@@ -364,6 +366,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [New Relic query syntax for logs]: https://docs.newrelic.com/docs/logs/new-relic-logs/ui-data/query-syntax-logs
 [New Relic reporting]: https://docs.magento.com/m2/ce/user_guide/configuration/general/new-relic-reporting.html
 [prerequisite steps]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
+[Troubleshoot performance using New Relic]: https://support.magento.com/hc/en-us/articles/360042149832#low_user_satisfaction
 [reset the New Relic password]: https://rpm.newrelic.com/forgot_password
 [Update the account owner]: https://docs.newrelic.com/docs/accounts/accounts/roles-permissions/change-account-owner
 [Update policies or conditions]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/configuring-alert-policies/update-or-disable-policies-conditions

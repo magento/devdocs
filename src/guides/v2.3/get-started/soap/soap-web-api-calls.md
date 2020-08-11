@@ -74,13 +74,13 @@ The following [PHP](https://glossary.magento.com/php) script illustrates how to 
 
 ```php
 <?php
-$opts = array(
-            'http'=>array(
+$opts = [
+            'http'=> [
                 'header' => 'Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e'
-            )
-        );
+            ]
+        ];
 $wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAndRestV1';
-$serviceArgs = array("id"=>1);
+$serviceArgs = ["id" => 1];
 
 $context = stream_context_create($opts);
 $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'stream_context' => $context]);

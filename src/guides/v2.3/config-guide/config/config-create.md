@@ -131,4 +131,4 @@ Related topics
 
 *  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
 *  [Configuration file merge]({{ page.baseurl }}/config-guide/config/config-files.html#config-files-load-merge-merge)
-*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-files.html)
