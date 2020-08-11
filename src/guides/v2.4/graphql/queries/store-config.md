@@ -252,6 +252,7 @@ Attribute |  Data Type | Description | Example
 `default_display_currency_code` | String | The code representing the currency displayed on the store | `USD`
 `id` | Integer | The ID number assigned to the store | `1`
 `locale` | String | The store's locale | `en_US`
+`payment_payflowpro_cc_vault_active` | String | Payflow Pro vault status | `0` (inactive) or `1` (active)
 `secure_base_link_url` | String | A secure fully-qualified URL that is used to create relative links to the `base_url` | `https://magentohost.example.com/`
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
