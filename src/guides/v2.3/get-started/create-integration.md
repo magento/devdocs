@@ -92,7 +92,7 @@ To develop a module, you must:
         "name": "Vendor1_Module1",
         "description": "create integration from config",
         "require": {
-           "php": "~7.1.3|~7.2.0|~7.3.0",
+           "php": "~7.2.0|~7.3.0",
            "magento/framework": "2.0.0",
            "magento/module-integration": "2.0.0"
         },
