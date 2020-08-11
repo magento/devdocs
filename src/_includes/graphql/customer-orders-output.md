@@ -180,7 +180,7 @@ Attribute | Data type | Description
 
 #### GiftCardItem attributes {#GiftCardItem}
 
-The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item. Physical and virtual gift cards 
+The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item.
 
 Attribute | Data type | Description
 --- | --- | ---
