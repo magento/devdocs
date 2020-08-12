@@ -106,6 +106,7 @@ pages:
 
         - label: giftCardAccount query
           url: /graphql/queries/giftcard-account.html
+          edition: ee-only
 
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
@@ -148,12 +149,14 @@ pages:
 
         - label: applyGiftCardToCart mutation
           url: /graphql/mutations/apply-giftcard.html
+          edition: ee-only
 
         - label: applyCouponToCart mutation
           url: /graphql/mutations/apply-coupon.html
 
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
+          edition: ee-only
 
         - label: changeCustomerPassword mutation
           url: /graphql/mutations/change-customer-password.html
@@ -196,18 +199,21 @@ pages:
 
         - label: redeemGiftCardBalanceAsStoreCredit mutation
           url: /graphql/mutations/redeem-giftcard-balance.html
+          edition: ee-only
 
         - label: removeCouponFromCart mutation
           url: /graphql/mutations/remove-coupon.html
 
         - label: removeGiftCardFromCart mutation
           url: /graphql/mutations/remove-giftcard.html
+          edition: ee-only
 
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
 
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
+          edition: ee-only
 
         - label: reorderItems mutation
           url: /graphql/mutations/reorder-items.html
