@@ -103,14 +103,9 @@ echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
 
 ## Set up email
 
-Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
+The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
 
-```yaml
-ENABLE_SENDMAIL=true
-```
-
-{:.bs-callout-warning}
-We do not recommend using Sendmail on CLI containers because the service can slow down the container creation process.
+When the MailHog service is installed, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
 
 [php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
@@ -124,3 +119,4 @@ We do not recommend using Sendmail on CLI containers because the service can slo
 [Database container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
 [Docker Hub PHP Image Tag]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
+[MailHog]: https://github.com/mailhog/MailHog
