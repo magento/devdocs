@@ -65,7 +65,7 @@ The deprecated attributes were previously defined in the `CustomerOrder` object 
 
 #### BundleCreditMemoItem attributes {#BundleCreditMemoItem}
 
-The `BundleCreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface). It also defines the following attribute:
+The `BundleCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -116,7 +116,7 @@ Attribute | Data type | Description
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
-#### CreditMemoInterface attributes {#CreditMemoInterface}
+#### CreditMemoItemInterface attributes {#CreditMemoItemInterface}
 
 The `CreditMemoItemInterface` describes a specific credit memo.
 
@@ -131,7 +131,7 @@ Attribute | Data type | Description
 
 #### CreditMemoItem attributes {#CreditMemoItem}
 
-The `CreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface).
+The `CreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface).
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
@@ -160,7 +160,7 @@ Attribute | Data type | Description
 
 #### DownloadableCreditMemoItem attributes {#DownloadableCreditMemoItem}
 
-The `DownloadableCreditMemoItem` object implements the `CreditMemoItemInterface`. It also defines the following attribute:
+The `DownloadableCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -206,7 +206,7 @@ Attribute | Data type | Description
 
 #### GiftCardCreditMemoItem attributes {#GiftCardOrderItem}
 
-The `GiftCardCreditMemoItem` object implements the `CreditMemoItemInterface`. It also defines the following attribute:
+The `GiftCardCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
