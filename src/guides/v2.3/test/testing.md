@@ -256,4 +256,4 @@ MFTF tests are kept within its respective Module folder:
 [System Administrators Guide on Running Tests]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html
 [ported over]: https://github.com/magento/magento-functional-tests-migration
 [PHPStan]: https://github.com/phpstan/phpstan
-[level 0]: https://github.com/phpstan/phpstan#rule-levels
+[level 0]: https://phpstan.org/user-guide/rule-levels
