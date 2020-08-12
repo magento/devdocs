@@ -22,6 +22,7 @@ The initialization steps are slightly different.
 ### Cloud Customers
 
 {:.procedure}
+
 1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
 
 1. You can also run next command to clone the latest template:
@@ -37,6 +38,7 @@ The initialization steps are slightly different.
 ### On-Prem Customers
 
 {:.procedure}
+
 1. Create project via [Composer]({{site.baseurl}}/guides/v2.4/install-gde/composer.html)
 
    ```bash
@@ -99,6 +101,8 @@ The initialization steps are slightly different.
 
 ### Manually
 
+{:.procedure}
+
 1. To make Cloud Docker recognizable on the local machine add the default `magento2.docker` host to hosts file:
 
    ```bash
@@ -114,6 +118,7 @@ The initialization steps are slightly different.
 ### With OOTB script
 
 {:.procedure}
+
 1. Install the template dependencies, and add the default hostname to your `/etc/hosts` file.
 
    ```bash

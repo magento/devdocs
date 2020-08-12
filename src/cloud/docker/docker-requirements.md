@@ -19,9 +19,9 @@ The {{site.data.var.ece}} Docker environment requires three, essential component
 
 Magento Cloud Docker requires some amount of resources to be allocated from Docker. This can be adjusted via `Preferences -> Resources -> Advanced`.
 
-- CPUs: 2
-- Memory: 6.00 GB
-- Swap: 1.00 GB
+-  CPUs: 2
+-  Memory: 6.00 GB
+-  Swap: 1.00 GB
 
 ## PHP and Composer
 
