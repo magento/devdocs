@@ -98,5 +98,5 @@ Destroy, re-create, and start containers | `./bin/magento-docker up`
 [Docker Docs: Multiple Compose files]: https://docs.docker.com/compose/extends/#multiple-compose-files
 [`docker-compose run`]: https://docs.docker.com/compose/reference/run/
 [File synchronization engine]: {{ site.baseurl }}/cloud/docker/docker-syncing-data.html
-[Mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
+[Mode]: {{site.baseurl}}/cloud/docker/docker-usage.html#set-the-launch-mode
 [Service versions]: {{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers

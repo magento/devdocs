@@ -158,31 +158,51 @@ pages:
           url: /cloud/howtos/sample-data.html
           versionless: true
 
-    - label: Docker development
+    - label: Cloud Docker development
       url: /cloud/docker/docker-development.html
       versionless: true
       children:
-        - label: Docker container architecture
-          url: /cloud/docker/docker-containers.html
+        - label: Requirements
+          url: /cloud/docker/docker-requirements.html
+          versionless: true
+
+        - label: Installation
+          url: /cloud/docker/docker-installation.html
           versionless: true
           children:
-            - label: Service containers
-              url: /cloud/docker/docker-containers-service.html
+            - label: Additional tools for file synronization
+              url: /cloud/docker/docker-installation-developer.html
               versionless: true
-    
-            - label: CLI containers
-              url: /cloud/docker/docker-containers-cli.html
+
+        - label: Upgrading
+          url: /cloud/docker/docker-upgrade.html
+          versionless: true
+
+        - label: Usage
+          url: /cloud/docker/docker-usage.html
+          versionless: true
+          children:
+            - label: Production mode
+              url: /cloud/docker/docker-mode-production.html
               versionless: true
-              
-            - label: Synchronizing data
-              url: /cloud/docker/docker-syncing-data.html
+
+            - label: Developer mode
+              url: /cloud/docker/docker-mode-developer.html
               versionless: true
-              
-        - label: Configure Docker
+
+        - label: Configuration
           url: /cloud/docker/docker-config.html
           versionless: true
           children:
-            - label: Xdebug for Docker
+            - label: Config sources
+              url: /cloud/docker/docker-config-sources.html
+              versionless: true
+
+            - label: Manage cron jobs
+              url: /cloud/docker/docker-manage-cron-jobs.html
+              versionless: true
+
+            - label: Configure Xdebug
               url: /cloud/docker/docker-development-debug.html
               versionless: true
 
@@ -198,10 +218,6 @@ pages:
               url: /cloud/docker/docker-split-db.html
               versionless: true
 
-            - label: Manage cron jobs
-              url: /cloud/docker/docker-manage-cron-jobs.html
-              versionless: true
-  
             - label: Extend Docker
               url: /cloud/docker/docker-extend.html
               versionless: true
@@ -210,14 +226,20 @@ pages:
               url:  /cloud/docker/docker-config-blackfire-io.html
               versionless: true
 
-        - label: Launch Docker
-          children: 
-            - label: Developer mode
-              url: /cloud/docker/docker-mode-developer.html
+        - label: Container architecture
+          url: /cloud/docker/docker-containers.html
+          versionless: true
+          children:
+            - label: Service containers
+              url: /cloud/docker/docker-containers-service.html
+              versionless: true
+    
+            - label: CLI containers
+              url: /cloud/docker/docker-containers-cli.html
               versionless: true
 
-            - label: Production mode
-              url: /cloud/docker/docker-mode-production.html
+            - label: Synchronizing data
+              url: /cloud/docker/docker-syncing-data.html
               versionless: true
 
         - label: Functional Testing
@@ -230,9 +252,12 @@ pages:
               url: /cloud/docker/docker-test-magecloud-pkg-code.html
               versionless: true
 
-        - label: Docker quick reference
+        - label: Quick reference
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
+
+        - label: Troubleshooting
+          url: /cloud/docker/docker-troubleshooting.html
           
     - label: Integrations
       url: /cloud/integrations/cloud-integrations.html

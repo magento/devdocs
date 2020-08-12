@@ -11,25 +11,6 @@ Production mode is the default configuration setting for launching the Docker en
 
 {%include cloud/note-docker-config-reference-link.md%}
 
-{:.procedure}
-To launch the Docker environment in production mode:
-
-1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
-
-1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
-
-1. Install the template dependencies and add the default hostname to your `/etc/hosts` file, use the following command to run the Docker initialization script:
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
-   ```
-
-   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
-   ```
-
 1. In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version][services].
 
    ```bash
@@ -96,7 +77,5 @@ To launch the Docker environment in production mode:
 
    -  [`https://magento2.docker`](https://magento2.docker)
 
-[cloud-repo]: https://github.com/magento/magento-cloud
-[magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [configure Xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug

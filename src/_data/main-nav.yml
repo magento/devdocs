@@ -25,15 +25,11 @@
 
     - label: Cloud development
       children:
-        - label: Local development
+        - label: Docker development
           url: /cloud/docker/docker-development.html
           versionless: true
 
-        - label: Configure and launch Docker
-          url: /cloud/docker/docker-config.html
-          versionless: true
-
-        - label: Docker quick reference
+        - label: Quick reference
           url: /cloud/docker/docker-quick-reference.html
           versionless: true
 

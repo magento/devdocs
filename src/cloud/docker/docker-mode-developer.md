@@ -19,27 +19,6 @@ Large files (>1 GB) can cause a period of inactivity. DB dumps and archive files
 {:.procedure}
 To launch the Docker environment in developer mode:
 
-1. Download a Magento application template from the [Magento Cloud repository][cloud-repo]. Be careful to select the branch that corresponds with the Magento version.
-
-1. Add your [Magento access credentials][magento-creds] to the `auth.json` file.
-
-1. Install the template dependencies, and add the default hostname to your `/etc/hosts` file.
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash
-   ```
-
-   If required, you can add options to the `init-docker.sh` initialization script to customize your Docker environment. Run the following command to see the available options:
-
-   ```bash
-   curl https://raw.githubusercontent.com/magento/magento-cloud-docker/1.1.0/bin/init-docker.sh | bash -s -- --help
-   ```
-
-1. On macOS or Windows hosts, install the selected file synchronization tool:
-
-   -  [Docker-sync Installation instructions][dsync-install]
-   -  [Mutagen.io Installation instructions][mutagen-install]
-
 1. In your local environment, generate the Docker Compose configuration file. You can use the service keys, such as `--php`, to [specify a version][services].
 
    ```bash
@@ -130,10 +109,7 @@ To launch the Docker environment in developer mode:
    -  `https://magento2.docker`
 
 [Synchronizing data in Docker]: {{site.baseurl}}/cloud/docker/docker-syncing-data.html
-[cloud-repo]: https://github.com/magento/magento-cloud
 [magento-creds]: {{site.baseurl}}/guides/v2.3/install-gde/prereq/connect-auth.html
 [services]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
 [xdebug]: {{site.baseurl}}/cloud/docker/docker-development-debug.html#configure-xdebug]
 [service key]: {{site.baseurl}}/cloud/docker/docker-containers.html#service-containers
-[dsync-install]: https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html
-[mutagen-install]: https://mutagen.io/documentation/introduction/installation/

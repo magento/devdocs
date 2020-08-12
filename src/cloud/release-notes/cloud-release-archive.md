@@ -84,7 +84,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
    -  {:.new}<!-- MAGECLOUD-3569 -->There are new commands available to improve the Docker command line experience. See the [`bin/magento-docker` section of the Docker reference]({{ site.baseurl }}/cloud/docker/docker-quick-reference.html#magento-cloud-docker-cli).
 
-   -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-config.html#prerequisites).
+   -  {:.new}<!-- MAGECLOUD-3559 -->Added the ability to use Mutagen.io to synchronize files during development between the local host and Docker. See [Docker prerequisites]({{ site.baseurl }}/cloud/docker/docker-requirements.html#prerequisites).
 
    -  {:.fix}<!-- MAGECLOUD-3582 -->Corrected the default path when using the Docker environment. Now, when you use SSH to log in to the Docker container, you are at the Magento root in the `/app` directory, as expected.
 
@@ -139,7 +139,7 @@ The `{{site.data.var.ct}}` 2002.0.22 release changes the structure of the `{{sit
 
    -  {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
-   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{ site.baseurl }}/cloud/docker/docker-config.html#set-the-launch-mode). Developer mode supports active development with full, writable filesystem permissions.
+   -  {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{ site.baseurl }}/cloud/docker/docker-usage.html#set-the-launch-mode). Developer mode supports active development with full, writable filesystem permissions.
 
    -  {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{ site.baseurl }}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
