@@ -79,6 +79,14 @@ Attribute | Data type | Description
 --- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
+#### BundleShipmentItem {#BundleShipmentItem}
+
+The `BundleShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
+
 #### CommentItem attributes {#CommentItem}
 
 The `CommentItem` object contains details about a comment applied to an order.
@@ -197,10 +205,10 @@ Attribute | Data type | Description
 Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | The unique identifier of the option
-`price` | Money! | The price of the child product
-`product_name` | String! | The name of the child product
-`product_sku` | String! | The SKU of the child product
-`quantity` | Float! | The number of selected items
+`price` | Money! | The price of the child bundle product
+`product_name` | String! | The name of the child bundle product
+`product_sku` | String! | The SKU of the child bundle product
+`quantity` | Float! | Indicates how many of this bundle product were ordered
 
 #### KeyValue attributes {#KeyValue}
 
@@ -249,7 +257,7 @@ Attribute | Data type | Description
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price of the base product, including selected options
 `product_sku` | String! | SKU of the base product
-`product_type` | String | The type of product, such as simple, configurable, or bundle
+`product_type` | String | The type of product, such as simple or configurable
 `product_url_key` | String | URL key of the base product
 `quantity_canceled` | Float | The number of canceled items
 `quantity_invoiced` | Float | The number of invoiced items
@@ -273,7 +281,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[CommentItem](#CommentItem)] | Comments added to the shipment
 `id` | ID! | The unique ID of the shipment
-`items` | [[ShipmentItem](#ShipmentItem)] | Contains items included in the shipment
+`items` | [[ShipmentItemInterface](#ShipmentItemInterface)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
 `tracking` | [[ShipmentTracking](#ShipmentTracking)] | Contains shipment tracking detail
 
@@ -302,6 +310,64 @@ Attribute | Data type | Description
 `name` | String! | The label that describes the payment method
 `type` | String! | The payment method code that indicates how the order was paid for
 
+#### RewardPoints attributes {#RewardPoints}
+
+The `RewardPoints` object provides details about the customer's reward points balance,  history, and related information.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance`| [RewardPointsAmount](#RewardPointsAmount) | The current balance of reward points
+`balance_history` | [[RewardPointsBalanceHistoryItem]](#RewardPointsBalanceHistoryItem) | The balance history of reward points. If the ability for customers to view the balance history has been disabled in the Admin, this field will be set to null
+`exchange_rates`| [RewardPointsExchangeRates](#RewardPointsExchangeRates) | The current exchange rates for reward points
+`subscription_status` | [RewardPointsSubscriptionStatus](#RewardPointsSubscriptionStatus) | The subscription status of emails related to reward points
+
+#### RewardPointsAmount attributes {#RewardPointsAmount}
+
+The `RewardPointsAmount` object lists the customer's current reward points balance.
+
+Attribute | Data type | Description
+--- | --- | ---
+`money` | Money! | The amount of reward points, expressed in the currency of the store
+`points` | Float! | The amount of reward points, expressed in points
+
+#### RewardPointsBalanceHistoryItem {#RewardPointsBalanceHistoryItem}
+
+The `RewardPointsBalanceHistoryItem` object contains details about individual events in which the customer earned or redeemed reward points.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance` | [RewardPointsAmount](#RewardPointsAmount) | Reward points balance after the completion of the transaction
+`change_reason` | String! | The reason the balance changed
+`date` | String! | Transaction date
+`points_change` | Float! | The number of points added or deducted in the transaction
+
+#### RewardPointsExchangeRates attributes {#RewardPointsExchangeRates}
+
+The `RewardPointsExchangeRates` object contains information needed to exchange reward points into the store's currency. Exchange rates depend on the customer group.
+
+Attribute | Data type | Description
+--- | --- | ---
+`earning` | [RewardPointsRate](#RewardPointsRate) | The number of points earned for the amount spent
+`redemption` | [RewardPointsRate](#RewardPointsRate) | The number points must be redeemed to get a currency discount at checkout
+
+#### RewardPointsRate attributes {#RewardPointsRate}
+
+The `RewardPointsRate` object contains details about reward points exchange rates.
+
+Attribute | Data type | Description
+--- | --- | ---
+`currency_amount` | Float! | The monetary value of the exchange rate. For earnings, this is amount spent to earn the specified points. For redemptions, this is the amount of money the number of points represents
+`points` | Float! | The number of points for the exchange rate. For earnings, this is the number of points earned. For redemptions, this is the number of points needed for to redeem points
+
+#### RewardPointsSubscriptionStatus attributes {#RewardPointsSubscriptionStatus}
+
+The `RewardPointsSubscriptionStatus` object indicates whether the customer is subscribed to newsletters that provide reward points balances and expiration notifications. The possible values of these attribtutes are `NOT SUBSCRIBED` and `SUBSCRIBED`.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance_updates` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points balance updates' emails
+`points_expiration_notifications` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points expiration notifications' emails
+
 #### SalesItemOption attributes {#SalesItemOption}
 
 The `SalesItemOption` data type contains the ID and value for the selected or entered options.
@@ -322,6 +388,10 @@ Attribute | Data type | Description
 `total_pages` | Int | Total pages
 
 #### ShipmentItem attributes {#ShipmentItem}
+
+The `ShipmentItem` data type implements the [`ShipmentItemInterface`](#ShipmentItemInterface).
+
+#### ShipmentItemInterface attributes {#ShipmentItemInterface}
 
 Attribute | Data type | Description
 --- | --- | ---

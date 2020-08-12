@@ -133,7 +133,7 @@ entries:
   type: Major Update
   date: June 25, 2020
   link: https://github.com/magento/devdocs/pull/7447
-- description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/error-codes.html)
+- description: Added an [Error message reference for ece-tools]( https://devdocs.magento.com/cloud/reference/ece-tools-error-reference.html)
     to the _Cloud Guide_ with error listing and suggested actions to resolve build and deploy issues.
   versions: 2.x
   type: Major update
