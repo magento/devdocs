@@ -310,6 +310,64 @@ Attribute | Data type | Description
 `name` | String! | The label that describes the payment method
 `type` | String! | The payment method code that indicates how the order was paid for
 
+#### RewardPoints attributes {#RewardPoints}
+
+The `RewardPoints` object provides details about the customer's reward points balance,  history, and related information.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance`| [RewardPointsAmount](#RewardPointsAmount) | The current balance of reward points
+`balance_history` | [[RewardPointsBalanceHistoryItem]](#RewardPointsBalanceHistoryItem) | The balance history of reward points. If the ability for customers to view the balance history has been disabled in the Admin, this field will be set to null
+`exchange_rates`| [RewardPointsExchangeRates](#RewardPointsExchangeRates) | The current exchange rates for reward points
+`subscription_status` | [RewardPointsSubscriptionStatus](#RewardPointsSubscriptionStatus) | The subscription status of emails related to reward points
+
+#### RewardPointsAmount attributes {#RewardPointsAmount}
+
+The `RewardPointsAmount` object lists the customer's current reward points balance.
+
+Attribute | Data type | Description
+--- | --- | ---
+`money` | Money! | The amount of reward points, expressed in the currency of the store
+`points` | Float! | The amount of reward points, expressed in points
+
+#### RewardPointsBalanceHistoryItem {#RewardPointsBalanceHistoryItem}
+
+The `RewardPointsBalanceHistoryItem` object contains details about individual events in which the customer earned or redeemed reward points.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance` | [RewardPointsAmount](#RewardPointsAmount) | Reward points balance after the completion of the transaction
+`change_reason` | String! | The reason the balance changed
+`date` | String! | Transaction date
+`points_change` | Float! | The number of points added or deducted in the transaction
+
+#### RewardPointsExchangeRates attributes {#RewardPointsExchangeRates}
+
+The `RewardPointsExchangeRates` object contains information needed to exchange reward points into the store's currency. Exchange rates depend on the customer group.
+
+Attribute | Data type | Description
+--- | --- | ---
+`earning` | [RewardPointsRate](#RewardPointsRate) | The number of points earned for the amount spent
+`redemption` | [RewardPointsRate](#RewardPointsRate) | The number points must be redeemed to get a currency discount at checkout
+
+#### RewardPointsRate attributes {#RewardPointsRate}
+
+The `RewardPointsRate` object contains details about reward points exchange rates.
+
+Attribute | Data type | Description
+--- | --- | ---
+`currency_amount` | Float! | The monetary value of the exchange rate. For earnings, this is amount spent to earn the specified points. For redemptions, this is the amount of money the number of points represents
+`points` | Float! | The number of points for the exchange rate. For earnings, this is the number of points earned. For redemptions, this is the number of points needed for to redeem points
+
+#### RewardPointsSubscriptionStatus attributes {#RewardPointsSubscriptionStatus}
+
+The `RewardPointsSubscriptionStatus` object indicates whether the customer is subscribed to newsletters that provide reward points balances and expiration notifications. The possible values of these attribtutes are `NOT SUBSCRIBED` and `SUBSCRIBED`.
+
+Attribute | Data type | Description
+--- | --- | ---
+`balance_updates` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points balance updates' emails
+`points_expiration_notifications` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points expiration notifications' emails
+
 #### SalesItemOption attributes {#SalesItemOption}
 
 The `SalesItemOption` data type contains the ID and value for the selected or entered options.
