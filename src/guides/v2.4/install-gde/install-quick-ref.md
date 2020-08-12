@@ -44,7 +44,7 @@ If not, see the [Installation overview][].
    *  [MySQL][]
    *  [Elasticsearch][]
 
-1. Just as importantly, set up the [Magento file system owner][]on the server.
+1. Just as importantly, set up the [Magento file system owner][] on the server.
 1. Switch to the [Magento file system owner][].
 
 ### Get the Magento software
