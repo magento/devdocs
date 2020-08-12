@@ -19,7 +19,7 @@ The following call creates a new customer.
 
 ```graphql
 mutation {
-  createCustomer(
+  createCustomerV2(
     input: {
       firstname: "Bob"
       lastname: "Loblaw"
