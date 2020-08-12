@@ -99,7 +99,7 @@ Example of a theme `composer.json` file:
         "sort-packages": true
     },
     "require": {
-        "php": "~7.1.3||~7.2.0",
+        "php": "~7.2.0||~7.3.0",
         "magento/framework": "*",
         "magento/theme-frontend-blank": "*"
     },
