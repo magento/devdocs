@@ -43,7 +43,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `billing_address` | [OrderAddress](#OrderAddress) | The billing address for the order
 `carrier` | String | The shipping carrier for the order delivery
-`comments` | [[CommentItem](#CommentItem)] | Comments on the order
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
@@ -54,7 +54,7 @@ Attribute | Data type | Description
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the `number` attribute instead
-`payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
+`payment_methods` | [[OrderPaymentMethod](#OrderPaymentMethod)] | Payment details for the order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order
@@ -95,22 +95,13 @@ Attribute | Data type | Description
 --- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
-#### CommentItem attributes {#CommentItem}
-
-The `CommentItem` object contains details about a comment applied to an order.
-
-Attribute | Data type | Description
---- | --- | ---
-`message` | String!| The text of the message
-`timestamp` | String! | The timestamp of the comment
-
 #### CreditMemo attributes {#CreditMemo}
 
 The `CreditMemo` object contains details about credit memos applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments on the credit memo
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
 `items` | [[CreditMemoItem](#CreditMemoItem)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
@@ -242,7 +233,7 @@ The `Invoice` object provides details about a customer invoice.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments on the invoice
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the invoice
 `id` | ID! | The internal ID of the invoice
 `items` | [[InvoiceItemInterface](#InvoiceItemInterface)]! | Contains details about invoiced products
 `number` | String! | The sequential number of the invoice
@@ -364,14 +355,24 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | String! | The name of the option
+`label` | String! | The name of the option
 `value` | String! | The value of the option
+
+#### OrderPaymentMethod attributes {#OrderPaymentMethod}
+
+The OrderPaymentMethod data type contains details about the payment method used to pay for the order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
+`name` | String! | The label that describes the payment method
+`type` | String! | The payment method code that indicates how the order was paid for
 
 #### OrderShipment attributes {#OrderShipment}
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments added to the shipment
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments added to the shipment
 `id` | ID! | The unique ID of the shipment
 `items` | [[ShipmentItemInterface](#ShipmentItemInterface)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
@@ -391,16 +392,6 @@ Attribute | Data type | Description
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_shipping` | Money! | The shipping costs for the order
 `total_tax` | Money! | The amount of tax applied to the order
-
-#### PaymentMethod attributes {#PaymentMethod}
-
-The PaymentMethod data type contains details about the payment method used to pay for the order.
-
-Attribute | Data type | Description
---- | --- | ---
-`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
-`name` | String! | The label that describes the payment method
-`type` | String! | The payment method code that indicates how the order was paid for
 
 #### RewardPoints attributes {#RewardPoints}
 
@@ -459,6 +450,15 @@ Attribute | Data type | Description
 --- | --- | ---
 `balance_updates` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points balance updates' emails
 `points_expiration_notifications` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points expiration notifications' emails
+
+#### SalesCommentItem attributes {#SalesCommentItem}
+
+The `SalesCommentItem` object contains details about a comment applied to an order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`message` | String!| The text of the message
+`timestamp` | String! | The timestamp of the comment
 
 #### SalesItemOption attributes {#SalesItemOption}
 
