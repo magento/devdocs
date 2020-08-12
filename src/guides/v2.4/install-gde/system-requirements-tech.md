@@ -10,10 +10,7 @@ functional_areas:
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on:
-
-*  Windows OS
-*  Mac OS
+Magento is not supported on Microsoft Windows and macOS.
 
 ## Memory requirement
 
