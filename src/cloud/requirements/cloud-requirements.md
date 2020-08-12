@@ -103,9 +103,6 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 
 *  Test using [Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
 
-  {:.bs-callout-info}
-  {{ site.data.var.ece }} supports Magento production and maintenance modes only.
-
 ## Development and testing {#cloud-req-devtest}
 
 For development and testing, we recommend the following:
