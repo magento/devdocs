@@ -156,6 +156,7 @@ pages:
 
         - label: applyRewardPointsToCart mutation
           url: /graphql/mutations/apply-reward-points.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: applyStoreCreditToCart mutation
@@ -217,6 +218,7 @@ pages:
 
         - label: removeRewardPointsFromCart mutation
           url: /graphql/mutations/remove-reward-points.html
+          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: removeStoreCreditFromCart mutation
