@@ -26,6 +26,7 @@ Attribute |  Data Type | Description
 `middlename` |String | The customer's middle name
 `orders(<FilterCriteria>)` | {{ customeroutput_text }} | A list of the customer's placed orders{{ crossref_text }}
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`reward_points` | RewardPoints | Details about the customer's reward points
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 `wishlist` | Wishlist! | Contains the contents of the customer's wish lists
