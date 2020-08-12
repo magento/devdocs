@@ -87,7 +87,9 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
 ## Magento configurations {#cloud-req-test}
 
-Magento Commerce Cloud supports Magento which runs only in [Production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). This mode set by default during the deployment, you should not configure it separately.
+{:.bs-callout-info}
+{{ site.data.var.ece }} deploys Magento in [Production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) by default. 
+Magento Commence Cloud does not support `Developer` mode.
 
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
