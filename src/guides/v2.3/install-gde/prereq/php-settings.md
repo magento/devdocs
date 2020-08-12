@@ -11,8 +11,7 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-<!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
-{% include install/php-versions-template.md %}
+{% include install/php-versions-2.3.md %}
 
 ## Verify PHP is installed {#centos-verify-php}
 
