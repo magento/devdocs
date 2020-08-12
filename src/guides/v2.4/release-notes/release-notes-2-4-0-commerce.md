@@ -47,7 +47,7 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
 *  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
 
-   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
+   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default. We strongly recommend against disabling the 2FA module.  This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
@@ -2204,7 +2204,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**: The **Add selections to my cart** button on the bottom of the shopping cart does not work. **Workaround**: Use the **Add selections to my cart** button on the top of the page. See [Add selections to my cart button does not work](https://support.magento.com/hc/en-us/articles/360045838312) Knowledge Base article. <!--- MC-35313-->
 
-**Issue**: Merchants cannot interact with any page elements on the Returns page after creating a shipping label for a Return Merchandise Authorization (RMA). See [Returns Edit page stops working when creating shipping label](https://support.magento.com/hc/en-us/articles/360046441312) Knowledge Base article. The **MC-35984-2.4.0-CE-composer.patch** hotfix  for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35984-->
+**Issue**: Merchants cannot interact with any page elements on the Returns page after creating a shipping label for a Return Merchandise Authorization (RMA). See [Returns Edit page stops working when creating shipping label](https://support.magento.com/hc/en-us/articles/360046441312) Knowledge Base article. The **MC-35984-2.4.0-composer.patch** hotfix for this issue is now available from [Releases](https://magento.com/tech-resources/download). <!--- MC-35984-->
 
 **Issue**: Administrators cannot add a configurable product by SKU to a quote. When an administrator clicks on the **Add to Quote** button,  the Quote Edit page remained in a loading state, and the administrator could not save their changes. **Workaround**:  There is no workaround for B2B Quote editing.  However, you can still order products by selecting the products from the products list instead of adding them by SKU. See B2B Admin cannot add a configurable product to a quote](https://support.magento.com/hc/en-us/articles/360046801971) Knowledge Base article. <!--- MC-35513-->
 
