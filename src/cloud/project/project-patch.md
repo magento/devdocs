@@ -187,7 +187,7 @@ To apply patches in a Cloud environment:
 When you deploy, `{{ site.data.var.ct }}` applies all Magento patches and any custom patches that you add to the `/m2-hotfixes` directory in the Magento project root.
 
 {:.procedure}
-To apply and test a custom patch on a cloud environment:
+To apply and test a custom patch on a Cloud environment:
 
 1. In the project root, create a directory called `m2-hotfixes` if it does not exist
 
