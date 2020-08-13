@@ -35,9 +35,9 @@ We recommend using the following best practices when developing themes:
 1. Magento has a set of [coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) for both back-end and front-end technologies. Refer to them when needed.
 1. Do not repeat work while styling. Instead, create a class or mixin and call them when needed.
 1. While styling any custom module, add the styling within the module, instead of adding it to the design theme. This way, the style will not be loaded unless the module is called. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
-1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug. 
+1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug.
 
-   For Reference check this file `app/design/frontend/Magento/blank/web/css/_styles.less`:
+   For Reference check this file `[Magento_Blank_Theme_Path]/web/css/_styles.less`:
 
    ```less
    @import 'source/lib/_lib.less'; // Global lib
@@ -45,10 +45,11 @@ We recommend using the following best practices when developing themes:
    @import 'source/_components.less'; // Components styles (modal/sliding panel)
    ```
 
-   Magento alreadystyled and have ready made component(s), For refenrece: `app/design/frontend/Magento/blank/web/css/source/_sources.less` and  `app/design/frontend/Magento/blank/web/css/source/_components.less`
+   Magento already styled and having many ready made component(s),
+   To find already component in blank theme: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`.
+   If need to add any custom component or extend any existing component then copy  `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/code/Company/Module/view/frontend/web/css/source/_components.less` and then import `Custom style for components`.
    
-   If need to add any custom component or extend any existing component then copy  `app/design/frontend/Magento/blank/web/css/source/_components.less` into custom theme, For example `app/code/Company/Module/view/frontend/web/css/source/_components.less` and then import `Custom style for components`
-
+   *Note:* Blank Theme path  [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank`.
    ```less
    //
    //  Components
@@ -76,12 +77,10 @@ We recommend using the following best practices when developing themes:
    @import 'components/_[CUSTOM_COMPONENT_2]_extend.less';
 
    ```
-   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. New Component Name can be set any value without any restiction but for best practice to set proper and genuine name so future that can easy to reuse. 
-   
+   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. New Component Name can be set any value without any restiction but for best practice to set proper and genuine name so future that can easy to reuse.
    Now add styles for respective component (New or extend) in a separate file.
    For example,
       For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
-      and To extend/override buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`
-       
-
-**Important:** After Updating/Upgrading Magento Instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with latest code.
+      and To extend/override buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
+      
+      **Important:** After Updating/Upgrading Magento Instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with latest code.
