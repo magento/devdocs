@@ -148,7 +148,7 @@ Warning errors indicate a problem with the Magento Commerce Cloud project config
 | 2024 | install-update:split-db | The SPLIT_DB variable is missing the configuration for split connection types. |  |
 | 2025 | install-update:split-db | Slave connection not set. |  |
 | 2026 | pre-deploy:restore-writable-dirs | Failed to restore some data generated during the build phase to the mounted directories | Check the `cloud.log` for more information. |
-| 2027 | validate-config:mage-mode-variable | Environment variable MAGE_MODE has value with not supported mode  | Remove MAGE_MODE environment variable or change its value to "production". Magento Cloud supports only "production" mode. |
+| 2027 | validate-config:mage-mode-variable | The mode value specified in the MAGE_MODE environment variable is not supported. | Remove MAGE_MODE environment variable or change its value to "production". Magento Cloud supports "production" mode only. |
 
 ### Post-deploy stage
 
