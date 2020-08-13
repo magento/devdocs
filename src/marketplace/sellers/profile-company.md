@@ -6,16 +6,16 @@ redirect_from: /marketplace/sellers/company-profile.html
 
 Your company profile provides the information about your business and brand that appears in your Magento Marketplace listing. During the initial interview, the Company Profile page appears after you choose the “Business” type of account. In your account, the Company Profile is located on the Developer Portal tab under My Information.
 
-![]({{ site.baseurl }}/marketplace/sellers/images/magento-account-marketplace.png){: .zoom}
-_Profile Settings_
+![]({{ site.baseurl }}/marketplace/sellers/images/developer-portal-callout.png){: .zoom}
+_Developer Portal_
 
 The following instructions walk you through the process of completing your company profile. All fields are required, unless marked “Optional”.
 
-## Before you begin
+## Step 1: Before you begin
 
 Prepare an image for your company profile that is 255 pixels square. Then, save it as one of the following file types: JPG, GIF, or PNG.
 
-### Step 1: Complete your company background
+## Step 2: Complete your company background
 
 1. Select the checkbox at the top of the form if you want to use your company profile—rather than your personal profile—as the default.
 
@@ -31,7 +31,7 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
 -  Drag the image to the box.
 -  Click <span class="btn">Update Image</span>. Then, navigate to the image in your file system and upload it to your profile.
 
-### Step 2: Enter your contact information
+## Step 3: Enter your contact information
 
 1. Enter the URL of your **Company Website**.
 
@@ -48,7 +48,7 @@ Prepare an image for your company profile that is 255 pixels square. Then, save 
     ![]({{ site.baseurl }}/marketplace/sellers/images/account-company-profile-contact-info.png){: .zoom}
     _Contact Information_
 
-### Step 3: Enter your company address
+## Step 4: Enter your company address
 
 1. Complete the following fields that make up your company address:
 
@@ -75,7 +75,7 @@ Enter the link to each professional social network that you want to include in y
 ![]({{ site.baseurl }}/marketplace/sellers/images/account-profile-social-networks.png){: .zoom}
 _Social Networks_
 
-### Step 5: Activate your account
+## Step 5: Activate your account
 
 1. When the required fields are complete, click <span class="btn">Save</span>.
 
