@@ -30,7 +30,7 @@ The following diagram shows the workflow for placing an order when Payflow Pro V
 
 1. The client renders the token information, and the customer selects a payment method.
 
-   When the customer clicks **Place Order**, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `payflowpro_cc_vault`. The vaulted public hash is passed in the [`payflowpro_cc_vault`](#payflowpro_cc_vault) object.
+   When the customer selects a stored payment method, the PWA uses the [`setPaymentMethodOnCart`]({{page.baseurl}}/graphql/mutations/set-payment-method.html) mutation to set the payment method to `payflowpro_cc_vault`. The vaulted public hash is passed in the [`payflowpro_cc_vault`](#payflowpro_cc_vault) object.
 
 1. Magento returns a `Cart` object.
 
