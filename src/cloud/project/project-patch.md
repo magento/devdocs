@@ -8,8 +8,8 @@ functional_areas:
 
 [{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches)  and [Magento Quality Patches](https://github.com/magento/quality-patches) deliver patches to your installed Magento application.
 
-- {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
-- Magento Quality Patches delivers optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
+-  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
+-  Magento Quality Patches delivers optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
 
 Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
@@ -24,7 +24,6 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 
 {:.bs-callout-info}
 When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `apply patches` CLI command and redeploying your Cloud environment . You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
-
 
 {:.bs-callout-info}
 All patch file names must end with the `.patch` extension.
