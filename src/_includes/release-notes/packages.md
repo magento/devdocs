@@ -1,39 +1,54 @@
 The Magento application uses Composer to manage PHP packages.
-The `composer.json` file declares the list of packages, whereas the `composer.lock` file stores a complete list of the packages (a full version of each package and its dependencies) used to build a release version of the Magento application. The following tables list packages from the `composer.lock` file for {{ edition }} {{page.guide_version}}.
 
-{% assign packages_by_type = packages | group_by:"type" | sort: "name" | reverse %}
+The `composer.json` file declares the list of packages, whereas the `composer.lock` file stores a complete list of the packages (a full version of each package and its dependencies) used to build an installation of the Magento application.
 
-{% for group in packages_by_type %}
-## {{ group.name }}
+{% assign product = packages | where_exp: "package", "package.name contains 'magento/product-'" | first %}
+
+The following reference documentation is generated from the `composer.lock` file, and it covers required packages included in {{ edition }} {{ product.version }}.
+
+## Dependencies
+
+`{{ product.name }} {{ product.version }}` has the following dependencies:
+
+```config
+{%- for dependency in product.require %}
+{{ dependency[0] }}: {{ dependency[1] }}
+{%- endfor %}
+```
+
+{% assign packages_by_license = packages | group_by:"license" | sort: 'name' %}
+
+## Third-party licenses
+
+{% for group in packages_by_license %}
+{% unless group.name == "" %}
+### {{ group.name | remove: '[' | remove: '"' | remove: ']'}}
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-    {% if group.name == 'metapackage' %}
-      <th>Version</th>
-    {% endif %}
-      <th>License</th>
+      <th>Type</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
-{% for package in group.items %}
+  {% for package in group.items %}
+    {% unless package.name contains 'magento/' %}
   <tr>
     <td>
-  {% if package.source.url contains '://'%}
-    <a href="{{ package.source.url }}">{{ package.name }}</a>
-  {% else %}
-    {{ package.name }}
-  {% endif %}
-    </td>
-    {% if group.name == 'metapackage' %}
-    <td>{{ package.version }}</td>
+    {% if package.source.url contains '://'%}
+      <a href="{{ package.source.url }}">{{ package.name }}</a>
+    {% else %}
+      {{ package.name }}
     {% endif %}
-    <td>{{ package.license }}</td>
+    </td>
+    <td>{{ package.type }}</td>
     <td>{{ package.description }}</td>
   </tr>
-{% endfor %}
+    {%endunless%}
+  {% endfor %}
   </tbody>
 </table>
+{% endunless %}
 {% endfor %}
