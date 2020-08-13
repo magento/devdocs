@@ -155,7 +155,7 @@ The status table contains the following types of information:
 
 -  **Type**:
 
-   -  Optional—All individual patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
+   -  `Optional`—All individual patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
    -  Deprecated—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
 
 -  **Status**:
@@ -181,7 +181,7 @@ To apply a single patch, run the following command where `MAGETWO-XXXX` is the p
 ./vendor/bin/magento-patches apply MAGETWO-XXXX
 ```
 
-You can also apply several patches at the same time by separating multiple patch IDs with spaces:
+Also, you can apply several patches at the same time by separating each additional patch ID with a space:
 
 ```bash
 ./vendor/bin/magento-patches apply MAGETWO-XXXX MAGETWO-YYYY
@@ -204,7 +204,7 @@ To revert a single patch, run the following command where `MAGETWO-XXXX` is the 
 ./vendor/bin/magento-patches revert MAGETWO-XXXX
 ```
 
-You can also revert several patches at the same time by separating multiple patch IDs with spaces:
+Also, you can revert several patches at the same time by separating each additional patch ID with a space:
 
 ```bash
 ./vendor/bin/magento-patches revert MAGETWO-XXXX MAGETWO-YYYY
