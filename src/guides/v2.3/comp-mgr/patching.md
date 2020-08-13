@@ -79,7 +79,7 @@ index c8a6fef58d31..7d01c195791e 100644
 
 ## Applying patches
 
-There are three ways to apply patches:
+You can apply patches using any of the following methods:
 
 -  Using the Magento Quality Patch (MQP) package
 -  Using the command line
