@@ -88,6 +88,8 @@ The following platform upgrades help enhance website security and performance. S
 
 *  The **core Braintree module has been removed from the code base**. The Braintree Payments module now provides the same feature set. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
 
+*  The Internet Explorer 11.x browser is no longer supported.
+
 ### Infrastructure improvements
 
 This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, Cart and Checkout, and B2B.
@@ -1201,6 +1203,9 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 *  Products that are saved in stores where the  `onthefly` indexer and flat tables are enabled now respect website assignments. Previously, if you removed all website assignments from a product and then saved it,  all flat tables included the product, despite the specified website assignments.  _Fix submitted by Abel Truong in pull request [27365](https://github.com/magento/magento2/pull/27365)_. [GitHub-16315](https://github.com/magento/magento2/issues/16315)
 
 ### Infrastructure
+
+*  The Internet Explorer 11.x browser is no longer supported.
+
 <!--- MC-32223-->
 
 *  The validation logic that is associated with the **Date of Birth** field of the Customer Registration form no longer triggers a JavaScript error.
