@@ -27,7 +27,7 @@ We recommend using the following best practices when developing themes:
 1. Use [the CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) to render the page much faster.
 1. Always keep the text translatable. To ensure text used within your Magento templates can be translated, wrap it within the translate function:
    Example:
-   ```xml
+   ```php
    <a href="#"><?= __('Click to download'); ?></a>
    ```
 
@@ -35,58 +35,53 @@ We recommend using the following best practices when developing themes:
 1. Magento has a set of [coding standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) for both back-end and front-end technologies. Refer to them when needed.
 1. Do not repeat work while styling. Instead, create a class or mixin and call them when needed.
 1. While styling any custom module, add the styling within the module, instead of adding it to the design theme. This way, the style will not be loaded unless the module is called. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
-1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug. For example, here is a `app/design/frontend/Company/ThemeCustom/web/css/style-l.less` with styles for desktop.
+1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug. 
 
-   In `style-l.less`, define:
-
-   ```less
-   // Define default styles from parent
-   ...
-   // Extra styles
-   @import 'source/_custom-styles.less';
-   ```
-
-   and then in ` _custom-styles.less`:
+   For Reference check this file `app/design/frontend/Magento/blank/web/css/_styles.less`:
 
    ```less
-   //
-   //  Variables, global config, colors
-   //  _____________________________________________
-
-   @import '_variables.less';
-
-   //
-   //  Tools, mixins, reused elements
-   //  _____________________________________________
-
-   @import 'theme/mixins/_mixins.less';
-
-   //  _____________________________________________
-   //
-   //  Custom style for components
-   //  _____________________________________________
-
-   @import 'theme/components/_general.less';
-   @import 'theme/components/_search.less';
-   @import 'theme/components/_slider.less';
-   @import 'theme/components/_popup.less';
-   @import 'theme/components/_menu.less';
-   @import 'theme/components/_form.less';
-
-   //
-   //  Custom style for pages
-   //  _____________________________________________
-
-   @import 'theme/pages/_homepage.less';
-   @import 'theme/pages/_login.less';
-   @import 'theme/pages/_product-details.less';
-   @import 'theme/pages/_account.less';
-   @import 'theme/pages/_contact.less';
-   @import 'theme/pages/_category.less';
-   @import 'theme/pages/_cart.less';
-   @import 'theme/pages/_checkout.less';
+   @import 'source/lib/_lib.less'; // Global lib
+   @import 'source/_sources.less'; // Theme styles
+   @import 'source/_components.less'; // Components styles (modal/sliding panel)
    ```
 
-   Styles for every component, as well as for every page, are declared in a separate file. For example: to add or modify minor changes to the homepage, go to `app/design/frontend/Company/ThemeCustom/web/css/source/theme/pages/_homepage.less`.
+   Magento alreadystyled and have ready made component(s), For refenrece: `app/design/frontend/Magento/blank/web/css/source/_sources.less` and  `app/design/frontend/Magento/blank/web/css/source/_components.less`
+   
+   If need to add any custom component or extend any existing component then copy  `app/design/frontend/Magento/blank/web/css/source/_components.less` into custom theme, For example `app/code/Company/Module/view/frontend/web/css/source/_components.less` and then import `Custom style for components`
 
-After updating or upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, copy those changes to your respective templates, layouts, and styles.
+   ```less
+   //
+   //  Components
+   //  _____________________________________________
+
+   @import 'components/_modals.less'; // From lib
+   @import 'components/_modals_extend.less'; // Local
+
+
+   //  _____________________________________________
+   //
+   //  Custom style for New Components
+   //  _____________________________________________
+
+   @import 'components/_[CUSTOM_COMPONENT_1].less';
+   @import 'components/_[CUSTOM_COMPONENT_2].less';
+
+
+   //  _____________________________________________
+   //
+   //  Custom style for Existing Components
+   //  _____________________________________________
+
+   @import 'components/_[CUSTOM_COMPONENT_1]_extend.less';
+   @import 'components/_[CUSTOM_COMPONENT_2]_extend.less';
+
+   ```
+   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. New Component Name can be set any value without any restiction but for best practice to set proper and genuine name so future that can easy to reuse. 
+   
+   Now add styles for respective component (New or extend) in a separate file.
+   For example,
+      For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
+      and To extend/override buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`
+       
+
+**Important:** After Updating/Upgrading Magento Instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with latest code.
