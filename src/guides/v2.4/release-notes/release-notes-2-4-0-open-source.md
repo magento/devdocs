@@ -5,7 +5,7 @@ title: Magento Open Source 2.4.0 Release Notes
 
 Magento Open Source 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
-**With this release, the Authorize.Net and Braintree payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**.
+**With this release, the Authorize.Net and Braintree payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace.**.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -15,7 +15,7 @@ Minor releases bring substantial code enhancements. Before upgrading to Magento 
 
 {:.bs-callout-info}
 
-Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4.0 contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
+Quarterly releases may contain backward-incompatible changes (BIC). Magento 2.4. contains minor backward-incompatible changes. To review minor backward-incompatible changes, see [BIC reference]({{page.baseurl}}/release-notes/backward-incompatible-changes/reference.html). (Major backward-incompatible issues are described in [BIC highlights]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html). Not all releases introduce major BICs.)
 
 {:.bs-callout-info}
 
@@ -39,27 +39,11 @@ Look for the following highlights in this release:
 
 This release includes over 30 security fixes and platform security improvements.
 
-#### Over 30 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
+#### Over  security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
 No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-47.html) for a discussion of these fixed issues. for a discussion of these fixed issues.
 
 #### Additional security enhancements
-
-*  **Implementation of 2FA for Admin accounts, Magento.com user accounts, and Cloud SSH access**
-
-   *  **Securing your Magento Admin account**. Two-factor authentication (2FA) is now required for the Magento Admin. Admin users must first configure their 2FA before logging into the Admin through either the UI or a web API. 2FA is enabled by default and cannot be disabled. This extra step of authentication makes it harder for malicious users to log in to the Admin without authorization. See [Two-factor Authentication (2FA)]({{page.baseurl}}/security/two-factor-authentication.html). <!--- MC-22631-->
-
-   *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
-
-*  **Securing Cloud SSH access**. Magento Commerce Cloud provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. Multi-factor authentication for 2FA is not enabled by default on a project.  Magento highly recommends enabling this feature. Contact Support for assistance. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
-
-*  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
-
-*  **Data rendering for UI data providers is now disabled by default**. This removes an opportunity for malicious users to execute arbitrary JavaScript. <!--- MC-17356-->
-
-*  **New `\Magento\Framework\Escaper` class**. This class is provided for `.phtml` templates and the PHP classes that are responsible for generating HTML. This class contains HTML sanitization methods relevant to multiple contexts. The `$escaper` local variable is available inside `.phtml` templates and should be used instead of the deprecated `$block->escape{method}`. Use `$escaper` rather than `$block` as the use of `$block->escape{method}` has been deprecated.
-
-*  **Support for new security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
 {:.bs-callout-info}
 Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
@@ -67,26 +51,6 @@ Starting with the release of Magento Commerce 2.3.2, Magento will assign and pub
 ### Platform upgrades
 
 The following platform upgrades help enhance website security and performance. Supported versions of PHP and PHPUnit, Elasticsearch, MySQL, and other dependencies are listed in [Magento 2.4 technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
-
-*  **PHP 7.4 support introduced and PHP 7.1 and 7.2 deprecated**. Magento 2.4.0 introduces support for PHP 7.4.
-
-*  **Support for PHPUnit 9.x and deprecation of PHPUnit 6.5**. PHP 7.4 requires the use of the latest PHPUnit testing framework, which is PHPUnit 9.x. Magento Marketplace extension vendors must confirm that all new extension versions are compatible with PHP 7.4 and that all  unit and integration tests have been configured to be run with PHPUnit 9.
-
-*  **Elasticsearch 7.6.x support**. Elasticsearch 7.6.x is now the default catalog search engine for Magento Commerce and Open Source. You cannot install or upgrade to Magento 2.4.0 without also installing Elasticsearch 7.6.x. Elasticsearch version 2.x code has been removed. Elasticsearch versions 5.x and 6.x have been deprecated and are no longer supported. See [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html).
-
-*  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
-
-*  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0. See [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html).
-
-*  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
-
-*  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) DevBlog post.
-
-*  **Decomposition of Magento Controllers** allows extension developers to implement ActionInterface directly without "layer supertype" classes. See the [Decomposition of Magento Controllers](https://community.magento.com/t5/Magento-DevBlog/Decomposition-of-Magento-Controllers/ba-p/430883) DevBlog post. _Enhancement started by Vinai Kopp in pull request [16268](https://github.com/magento/magento2/pull/16268) and finalized by Lukasz Bajsarowicz in pull request [26778](https://github.com/magento/magento2/pull/26778)_. [GitHub-9582](https://github.com/magento/magento2/issues/9582)
-
-*  **Removal of the core integration of the Signifyd fraud protection code**. This core feature is no longer supported. Merchants should migrate to the [Signifyd Fraud & Chargeback Protection extension](https://marketplace.magento.com/signifyd-module-connect.html) that is available on the Magento Marketplace.
-
-*  The **core Braintree module has been removed from the code base**. The Braintree Payments module now provides the same feature set. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
 
 ### Infrastructure improvements
 

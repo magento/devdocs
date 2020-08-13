@@ -6,6 +6,9 @@ redirect_from: magento-release-information.html
 
 ## Magento 2.4.x release notes
 
+*  [{{site.data.var.ce}} 2.4.1 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-1-open-source.html)
+*  [{{site.data.var.ee}} 2.4.1 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-1-commerce.html)
+
 *  [{{site.data.var.ce}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-open-source.html)
 *  [{{site.data.var.ee}} 2.4.0 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-4-0-commerce.html)
 
