@@ -20,11 +20,6 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 {:.bs-callout-info}
 When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
 
-You can also apply patches manually.
-
-{:.bs-callout-info}
-All patch file names must end with the `.patch` extension.
-
 ## Prerequisites
 
 {% include cloud/note-upgrade.md %}
@@ -185,6 +180,9 @@ To apply patches in a Cloud environment:
 ## Apply a custom patch
 
 When you deploy, `{{ site.data.var.ct }}` applies all Magento patches and any custom patches that you add to the `/m2-hotfixes` directory in the Magento project root.
+
+{:.bs-callout-info}
+All patch file names must end with the `.patch` extension.
 
 {:.procedure}
 To apply and test a custom patch on a Cloud environment:
