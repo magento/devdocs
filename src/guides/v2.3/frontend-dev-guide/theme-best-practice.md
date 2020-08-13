@@ -46,10 +46,10 @@ We recommend using the following best practices when developing themes:
    ```
 
    Magento already styled and having many ready made component(s),
-   To find already component in blank theme: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`.
+   To find already existing component(s) in blank theme: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`.
    If need to add any custom component or extend any existing component then copy  `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/code/Company/Module/view/frontend/web/css/source/_components.less` and then import `Custom style for components`.
    
-   *Note:* Blank Theme path  [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank`.
+   *Note:* Blank Theme path  [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` as per our developement that might vary.
    ```less
    //
    //  Components
