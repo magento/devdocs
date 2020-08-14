@@ -77,7 +77,7 @@ We recommend using the following best practices when developing themes:
    @import 'components/_[CUSTOM_COMPONENT_2]_extend.less';
 
    ```
-   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. New Component Name can be set any value without any restiction but for best practice to set proper and genuine name so future that can easy to reuse.
+   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
    Now add styles for respective component (New or extend) in a separate file.
    For example,
       For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
