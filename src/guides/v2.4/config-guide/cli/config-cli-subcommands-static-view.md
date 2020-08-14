@@ -328,8 +328,8 @@ You might want to run the deployment process in a separate, non-production, envi
 
 To do this, take the following steps:
 
-1. Run [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
-1. Copy the exported files to the non-production code base.
+1. Run [`bin/magento app:config:dump scopes themes`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
+1. Copy the exported files to the non-production code base (`app/etc/env.php` must not exist, copy only `app/etc/config.php`)
 1. Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
 ## Troubleshooting the static view files deployment tool {#view-file-trouble}
