@@ -61,7 +61,7 @@ We recommend using the following best practices when developing themes:
 
    //  _____________________________________________
    //
-   //  Custom style for New Components
+   //  Custom style for new components
    //  _____________________________________________
 
    @import 'components/_[CUSTOM_COMPONENT_1].less';
