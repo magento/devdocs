@@ -81,9 +81,9 @@ index c8a6fef58d31..7d01c195791e 100644
 
 You can apply patches using any of the following methods:
 
--  Using the Magento Quality Patch (MQP) package
--  Using the command line
--  Using Composer
+-  Magento Quality Patch (MQP) package
+-  Command line
+-  Composer
 
 {:.bs-callout-info}
 To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].

@@ -6,25 +6,37 @@ functional_areas:
   - Upgrade
 ---
 
-The [Magento Quality Patches](https://github.com/magento/quality-patches) and [{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) packages deliver Magento [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
+[{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches)  and [Magento Quality Patches](https://github.com/magento/quality-patches) deliver patches to your installed Magento application.
+
+-  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
+-  Magento Quality Patches delivers optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
+
+Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
 {:.bs-callout-tip}
 You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `magento/quality-patches` and {{ site.data.var.mcp-package }} to check for pending patches and applies them automatically in the following order:
 
-1. Apply required patches from Magento included in the {{ site.data.var.mcp-package }} package.
+1. Apply required patches from Magento included in the {{ site.data.var.mcp-prod }} package.
 1. Apply selected Magento quality patches included in the Magento Quality Patches package.
 1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 {:.bs-callout-info}
+<<<<<<< HEAD
 When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
+=======
+When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `apply patches` CLI command and redeploying your Cloud environment . You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
+
+{:.bs-callout-info}
+All patch file names must end with the `.patch` extension.
+>>>>>>> d4e5b6102e81497fb049eb78e5fec4c00757ccc9
 
 ## Prerequisites
 
 {% include cloud/note-upgrade.md %}
 
-The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp }} and {{site.data.var.ct}} packages. To apply the latest patches, you must have [the latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html) installed.
+The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp-prod }} and {{site.data.var.ct}} packages. To apply the latest patches, you must have [the latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html) installed.
 
 {:.procedure}
 To install the Magento Quality Patches package:
@@ -41,7 +53,7 @@ To install the Magento Quality Patches package:
    composer update
    ```
 
-## View individual patches
+## View available patches and status
 
 You can list all available patches for your version of Magento using `{{ site.data.var.ct }}`.
 
