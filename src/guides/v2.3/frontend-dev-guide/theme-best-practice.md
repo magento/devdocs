@@ -45,11 +45,12 @@ We recommend using the following best practices when developing themes:
    @import 'source/_components.less'; // Components styles (modal/sliding panel)
    ```
 
-   Magento already styled and having many ready made component(s),
-   To find already existing component(s) in blank theme: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`.
-   If need to add any custom component or extend any existing component then copy  `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/code/Company/Module/view/frontend/web/css/source/_components.less` and then import `Custom style for components`.
+   **Magento already styled and having many ready made component(s)**, To check the list of existing component(s) you can find those in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, in these 2 files magento added their ready made component via `@import`.
    
-   *Note:* Blank theme path [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` as per our developement that might vary.
+   If you want to add any custom component or extend any existing component then copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/design/frontend/Company/Theme/web/css/source/_components.less` and then add/import `Custom style for new/existing components`.
+   
+   {:.bs-callout-info}
+   Blank theme path [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` as per our developement that might vary.
    ```less
    //
    //  Components
@@ -77,10 +78,12 @@ We recommend using the following best practices when developing themes:
    @import 'components/_[CUSTOM_COMPONENT_2]_extend.less';
 
    ```
-   *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
+   {:.bs-callout-info}
+   `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
    Now add styles for respective component (new or extended) in a separate file.
-   For example,
-      For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
-      To extend/override existing buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
-      
-      **Important:** After updating/upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with the latest changes in code.
+   
+   For example, For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
+   To extend/override existing buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
+   
+   {:.bs-callout-info}
+   After updating/upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with the latest changes in code.
