@@ -70,7 +70,7 @@ We recommend using the following best practices when developing themes:
 
    //  _____________________________________________
    //
-   //  Custom style for Existing Components
+   //  Custom style for existing components
    //  _____________________________________________
 
    @import 'components/_[CUSTOM_COMPONENT_1]_extend.less';
