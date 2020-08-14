@@ -237,17 +237,25 @@ The following query returns enumeration values that indicate the store's fixed p
 
 ## Output attributes
 
+The `StoreConfig` object can contain the following attributes.
+
 Attribute | Data Type | Description | Default or example value
 --- | --- | --- | ---
 `absolute_footer` | String | Contains scripts that must be included in the HTML before the closing `<body>` tag | null
+`allow_gift_wrapping_on_order` | String | Indicates whether a gift wrapping can be added for the entire order. Possible values: 1 (Yes) and 0 (No) | 1
+`allow_gift_wrapping_on_order_items` | String | Indicates whether a gift wrapping can be added for individual order items. Possible values: 1 (Yes) and 0 (No) | 1
+`allow_gift_receipt` | String | Indicates whether the gift sender has the option to send a gift receipt. Possible values: 1 (Yes) and 0 (No) | 1
 `allow_items` | String | Allows gift messages for order items. Possible values: 1 (Yes) and 0 (No). <br/>Configuration path: sales/gift_options/allow_items | 0
 `allow_order` | String | Allows gift messages at the order level. Possible values: 1 (Yes) and 0 (No). <br/>Configuration path: sales/gift_options/allow_order | 0
+`allow_printed_card` | String | Indicates whether a printed card can accompany an order. Possible values: 1 (Yes) and 0 (No) | 1
 `autocomplete_on_storefront` | Boolean | Enable autocomplete on login and forgot password forms. <br/>Configuration path: customer/password/autocomplete_on_storefront | true
 `base_currency_code` | String | The code representing the currency in which Magento processes all payment transactions | `USD`
 `base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url` | `http://magentohost.example.com/`
 `base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
 `base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
 `base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
+`cart_gift_wrapping` | String | Indicates whether gift wrapping prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
+`cart_printed_card` | String | Indicates whether printed card prices are displayed on the Shopping Cart page. Possible values: 1 (Yes) and 0 (No) | 1
 `catalog_default_sort_by` | String | The default sort order of the search results list | `position`
 `category_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Product Lists** field. It indicates how Fixed Product Tax information is displayed on category pages | FPT_DISABLED
 `category_url_suffix` | String | The suffix applied to category pages, such as `.htm` or `.html` | `.html`
@@ -291,11 +299,14 @@ Attribute | Data Type | Description | Default or example value
 `minimum_password_length` | String | The minimum number of characters required for a valid password. <br/>Configuration path: customer/password/minimum_password_length | 6
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs | `cms/noroute/index`
 `payment_payflowpro_cc_vault_active` | String | Payflow Pro vault status | `0` (inactive) or `1` (active)
+`printed_card_price` | String | The default price of a printed card that accompanies an order | 10
 `product_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices On Product View Page** field. It indicates how Fixed Product Taxes information is displayed on product pages | FPT_DISABLED
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). <br/>Configuration path: customer/password/required_character_classes_number | 2
 `root_category_id` | Int | The ID of the root category | 2
 `sales_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices In Sales Modules** field. It indicates how Fixed Product Taxes information is displayed on cart, checkout, and order pages | FPT_DISABLED
+`sales_gift_wrapping` | String | Indicates whether gift wrapping prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1
+`sales_printed_card` | String | Indicates whether printed card prices are displayed on the Orders page. Possible values: 1 (Yes) and 0 (No) | 1
 `secure_base_link_url` | String | A secure fully-qualified URL that is used to create relative links to the `base_url` | `https://magentohost.example.com/`
 `secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
 `secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
