@@ -58,8 +58,7 @@ We recommend using the following best practices when developing themes:
 
    @import 'components/_modals.less'; // From lib
    @import 'components/_modals_extend.less'; // Local
-
-
+   
    //  _____________________________________________
    //
    //  Custom style for new components
@@ -67,8 +66,7 @@ We recommend using the following best practices when developing themes:
 
    @import 'components/_[CUSTOM_COMPONENT_1].less';
    @import 'components/_[CUSTOM_COMPONENT_2].less';
-
-
+   
    //  _____________________________________________
    //
    //  Custom style for existing components
