@@ -83,4 +83,4 @@ We recommend using the following best practices when developing themes:
       For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
       To extend/override existing buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
       
-      **Important:** After Updating/Upgrading Magento Instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with latest code.
+      **Important:** After updating/upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with the latest changes in code.
