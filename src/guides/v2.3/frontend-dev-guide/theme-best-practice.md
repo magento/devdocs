@@ -78,7 +78,7 @@ We recommend using the following best practices when developing themes:
 
    ```
    *Note:*  `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
-   Now add styles for respective component (New or extend) in a separate file.
+   Now add styles for respective component (new or extended) in a separate file.
    For example,
       For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`  
       and To extend/override buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
