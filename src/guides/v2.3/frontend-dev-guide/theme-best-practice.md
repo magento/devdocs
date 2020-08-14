@@ -27,6 +27,7 @@ We recommend using the following best practices when developing themes:
 1. Use [the CSS critical path]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-critical-path.html) to render the page much faster.
 1. Always keep the text translatable. To ensure text used within your Magento templates can be translated, wrap it within the translate function:
    Example:
+
    ```php
    <a href="#"><?= __('Click to download'); ?></a>
    ```
@@ -46,11 +47,12 @@ We recommend using the following best practices when developing themes:
    ```
 
    **Magento already styled and having many ready made component(s)**, To check the list of existing component(s) you can find those in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, in these 2 files magento added their ready made component via `@import`.
-   
-   If you want to add any custom component or extend any existing component then copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/design/frontend/Company/Theme/web/css/source/_components.less` and then add/import `Custom style for new/existing components`.
-   
-   {:.bs-callout-info}
+
+    If you want to add any custom component or extend any existing component then copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/design/frontend/Company/Theme/web/css/source/_components.less` and then add/import `Custom style for new/existing components`.
+
+    {:.bs-callout-info}
    Blank theme path [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` as per our developement that might vary.
+
    ```less
    //
    //  Components
@@ -58,7 +60,7 @@ We recommend using the following best practices when developing themes:
 
    @import 'components/_modals.less'; // From lib
    @import 'components/_modals_extend.less'; // Local
-   
+
    //  _____________________________________________
    //
    //  Custom style for new components
@@ -66,7 +68,7 @@ We recommend using the following best practices when developing themes:
 
    @import 'components/_[CUSTOM_COMPONENT_1].less';
    @import 'components/_[CUSTOM_COMPONENT_2].less';
-   
+
    //  _____________________________________________
    //
    //  Custom style for existing components
@@ -76,12 +78,13 @@ We recommend using the following best practices when developing themes:
    @import 'components/_[CUSTOM_COMPONENT_2]_extend.less';
 
    ```
+
    {:.bs-callout-info}
    `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
    Now add styles for respective component (new or extended) in a separate file.
-   
-   For example, For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
+
+    For example, For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
    To extend/override existing buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
-   
-   {:.bs-callout-info}
+
+    {:.bs-callout-info}
    After updating/upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with the latest changes in code.
