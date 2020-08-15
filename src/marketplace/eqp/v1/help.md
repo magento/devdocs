@@ -7,7 +7,7 @@ Use these resources if you need additional help.
 
 **Slack:**
 
--  workspace: Magento Community Engineering
+-  workspace: [Magento Community Engineering](https://opensource.magento.com/slack)
 -  channel: **# marketplace-eqp-api**
 
 **Email:**
