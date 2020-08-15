@@ -721,6 +721,7 @@ Attribute |  Data Type | Description
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
 `discount` | CartDiscount | Deprecated. Use `discounts` instead
 `discounts` | [Discount] | An array containing all discounts applied to the cart
+`gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -757,6 +758,20 @@ Attribute |  Data Type | Description
 `from` | String! | Identifies the sender
 `message` | String! | The gift message text
 `to` | String! | Identifies the recipient
+
+### GiftOptionsPrices object {#GiftOptionsPrices}
+
+The `GiftOptionsPrices` object can contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`gift_wrapping_for_items` | Money | The price of the gift wrapping for all individual order items
+`gift_wrapping_for_order` | Money | The price of the gift wrapping for the whole order
+`printed_card` | Money | The price of the printed card
+
+### GiftWrapping object {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
 
 ### RewardPointsAmount {#RewardPointsAmount}
 
