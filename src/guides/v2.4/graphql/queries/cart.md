@@ -682,6 +682,15 @@ Attribute |  Data Type | Description
 
 ### CartItemInterface {#CartItemInterface}
 
+The `CartItemInterface` has the following implementations:
+
+*  BundleCartItem
+*  ConfigurableCartItem
+*  DownloadableCartItem
+*  GiftCardCartItem
+*  SimpleCartItem
+*  VirtualCartItem
+
 The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
@@ -751,13 +760,7 @@ Attribute |  Data Type | Description
 
 ### GiftMessage object {#GiftMessage}
 
-The `GiftMessage` object must contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`from` | String! | Identifies the sender
-`message` | String! | The gift message text
-`to` | String! | Identifies the recipient
+{% include graphql/gift-message.md %}
 
 ### GiftOptionsPrices object {#GiftOptionsPrices}
 

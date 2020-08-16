@@ -11,6 +11,7 @@ Attribute |  Data Type | Description
 `email` | String | The customer's email address
 `gift_message` | [GiftMessage][GiftMessage] | A gift message added to the cart
 `gift_receipt_included` | Boolean! | Whether the customer requested a gift receipt for the cart
+`gift_wrapping` | GiftWrapping | The selected gift wrapping for the cart
 `id` | ID! | The ID of the cart
 `is_virtual` | Boolean! | Indicates whether the cart contains only virtual products
 `items` | [[CartItemInterface]][CartItemInterface] | Contains the items in the customer's cart
@@ -19,7 +20,6 @@ Attribute |  Data Type | Description
 `selected_payment_method` | [SelectedPaymentMethod][SelectedPaymentMethod] | Selected payment method
 `shipping_addresses` | [[ShippingCartAddress]][ShippingCartAddress]! | Contains one or more shipping addresses
 `total_quantity` | Float! | Total Quantity of products in the cart
-`gift_wrapping` | GiftWrapping | The selected gift wrapping for the cart
 
 [AppliedCoupon]: {{page.baseurl}}/graphql/queries/cart.html#AppliedCoupon
 [AppliedGiftCard]: {{page.baseurl}}/graphql/queries/cart.html#AppliedGiftCard

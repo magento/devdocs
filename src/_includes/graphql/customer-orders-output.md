@@ -46,8 +46,9 @@ Attribute | Data type | Description
 `comments` | [[CommentItem](#CommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
-`gift_receipt_included` | Boolean! | Indicates whether the customer requested a gift receipt for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
+`gift_message` | [GiftMessage](#GiftMessage) | The entered gift message for the order
+`gift_receipt_included` | Boolean! | Indicates whether the customer requested a gift receipt for the order
 `gift_wrapping` | [GiftWrapping](#GiftWrapping) | The selected gift wrapping for the order
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
@@ -161,7 +162,11 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of the discount
 `label` | String! | A description of the discount
 
-### GiftWrapping object {#GiftWrapping}
+### GiftMessage attributes {#GiftMessage}
+
+{% include graphql/gift-message.md %}
+
+### GiftWrapping attributes {#GiftWrapping}
 
 {% include graphql/gift-wrapping.md %}
 
