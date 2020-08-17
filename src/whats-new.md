@@ -31,15 +31,7 @@ title: What's new on DevDocs
   <tbody>
   {% for item in group.items %}
     <tr>
-      <td><p>
-          {{ item.description | markdownify }}
-          </p>
-          {%- if item.contributor -%}
-          <p>
-          Contributed by <a href="{{ item.profile }}">{{ item.contributor }}</a>.
-          </p>
-          {% endif %}
-      </td>
+      <td>{{ item.description | markdownify }}</td>
       <td>{{ item.versions }}</td>
       <td>{{ item.type }}</td>
       <td>
