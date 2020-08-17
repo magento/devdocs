@@ -3,7 +3,7 @@ group: cloud-guide
 title: Docker development quick reference
 functional_areas:
   - Cloud
-  - Docker
+  - Configuration
 ---
 
 {%include cloud/note-docker-config-reference-link.md%}

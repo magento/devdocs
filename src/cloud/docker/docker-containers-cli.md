@@ -3,7 +3,6 @@ group: cloud-guide
 title: Docker CLI Containers
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
 ---
 

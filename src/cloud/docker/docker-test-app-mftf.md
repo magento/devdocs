@@ -3,6 +3,7 @@ title: Magento application testing
 group: cloud-guide
 functional_areas:
   - Cloud
+  - Testing
 redirect_from:
   - /cloud/docker/docker-mftf.html
 ---

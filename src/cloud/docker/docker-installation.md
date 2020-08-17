@@ -3,7 +3,6 @@ group: cloud-guide
 title: Installation
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
 ---
 

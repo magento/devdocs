@@ -3,7 +3,6 @@ group: cloud-guide
 title: Docker services containers
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
 ---
 

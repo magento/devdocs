@@ -3,9 +3,7 @@ group: cloud-guide
 title: Usage
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
-  - Usage
 ---
 
 ## Overview

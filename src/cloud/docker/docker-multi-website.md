@@ -5,7 +5,6 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
-  - Website
 ---
 
 Magento Cloud Docker supports multiple websites or stores by adding subdomains to your Magento configuration. See [Understanding websites, stores, and store views][].

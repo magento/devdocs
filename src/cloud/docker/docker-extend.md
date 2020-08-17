@@ -3,7 +3,6 @@ group: cloud-guide
 title: Extend the Docker configuration
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
 ---
 

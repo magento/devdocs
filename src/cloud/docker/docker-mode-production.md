@@ -4,7 +4,6 @@ title: Production mode
 functional_areas:
   - Cloud
   - Setup
-  - Docker
 ---
 
 Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.

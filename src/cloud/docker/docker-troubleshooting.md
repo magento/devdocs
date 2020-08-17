@@ -3,7 +3,6 @@ group: cloud-guide
 title: Troubleshooting
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
 ---
 

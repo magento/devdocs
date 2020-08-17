@@ -3,8 +3,8 @@ group: cloud-guide
 title: Magento Cloud code testing
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
+  - Testing
 redirect from:
   - /cloud/docker/docker-development-testing.html
 ---

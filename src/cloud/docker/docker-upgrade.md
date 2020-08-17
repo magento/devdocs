@@ -3,8 +3,8 @@ group: cloud-guide
 title: Upgrading
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
+  - Upgrade
 ---
 
 1. Application update
