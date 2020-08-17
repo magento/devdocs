@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-[{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches)  and [Magento Quality Patches](https://github.com/magento/quality-patches) deliver patches to your installed Magento application.
+[{{ site.data.var.mcp-prod }}](https://github.com/magento/magento-cloud-patches) and [Magento Quality Patches](https://github.com/magento/quality-patches) deliver patches to your installed Magento application.
 
 -  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
 -  Magento Quality Patches delivers optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
@@ -23,14 +23,7 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 {:.bs-callout-info}
-<<<<<<< HEAD
 When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
-=======
-When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `apply patches` CLI command and redeploying your Cloud environment . You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
-
-{:.bs-callout-info}
-All patch file names must end with the `.patch` extension.
->>>>>>> d4e5b6102e81497fb049eb78e5fec4c00757ccc9
 
 ## Prerequisites
 
@@ -129,7 +122,7 @@ The status table contains the following types of information:
 You can apply patches manually in a local environment and test them before you deploy.
 
 {:.procedure}
-To apply patches in a local development environment:
+To apply individual patches in a local development environment:
 
 1. Add the 'QUALITY_PATCHES' variable to the `.magento.env.yaml` file and list the required patches underneath.
 
