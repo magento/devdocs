@@ -36,7 +36,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
 
    -  Error code 102–Added additional checks for issues that occur when the `env.php` file is not writable <!--MCLOUD-6221-->
 
--  {:.new}Added the **QUALITY_PATCHES** environment variable to specify one or more patches to apply during the deployment process. Currently, this variable is for Magento internal use only.<!--MCLOUD-6375-->
+-  {:.new}Added the **QUALITY_PATCHES** environment variable to specify one or more quality patches to apply during the deployment process. See [Build variables]({{ site.baseurl }}/cloud/env/variables-build.html#quality-patches).<!--MCLOUD-6375-->
 
 ## v2002.1.1
 *Release date: June 25, 2020*<br/>
