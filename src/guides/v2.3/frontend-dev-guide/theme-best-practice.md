@@ -79,12 +79,10 @@ We recommend using the following best practices when developing themes:
 
    ```
 
-   {:.bs-callout-info}
-   `[CUSTOM_COMPONENT_1,2,3...]` need to replace with valid component name example `sliders, grids` etc. The new component name can be set as any value without any restriction. But for best practice, it's recommended to set proper and genuine name that can be reusable in the future.
-   Now add styles for respective component (new or extended) in a separate file.
+ {:.bs-callout-info}
+ `[CUSTOM_COMPONENT_1,2,3...]` needs to be replaced with valid a component name: `sliders, grids` etc. The new component name can be set as any value. For best practices, it is recommended to set a clear name that can be reused in the future.
+   
+   Next, add styles for respective component (new or extended) in a separate file.
 
-    For example, For new sliders component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
-   To extend/override existing buttons style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
-
-    {:.bs-callout-info}
-   After updating/upgrading Magento instances, check for changes in any files that are overridden by your theme. If there were changes to default templates, layouts, or styles, If possible copy those changes to your respective templates, layouts, and styles to make it sync with the latest changes in code.
+    For example, for a new slider component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
+   To extend or override an existing button style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
