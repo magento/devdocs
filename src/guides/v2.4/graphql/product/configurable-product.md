@@ -37,6 +37,7 @@ Field | Type | Description
 --- | --- | ---
 `code` | String | The ID assigned to the attribute
 `label` | String | A string that describes the configurable attribute option
+`uid` | ID! | A string that encodes option details
 `value_index` | Int | A unique index number assigned to the configurable product option
 
 ### ConfigurableProductOptions {#configProdOptions}
