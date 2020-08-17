@@ -38,7 +38,7 @@ We recommend using the following best practices when developing themes:
 1. While styling any custom module, add the styling within the module, instead of adding it to the design theme. This way, the style will not be loaded unless the module is called. For example `app/code/Company/Module/view/frontend/web/css/source/_module.less`.
 1. While styling a custom theme, add styles to seperate less files, instead of appending to a single file. This way, styles are easier to track down and debug.
 
-   For Reference check this file `[Magento_Blank_Theme_Path]/web/css/_styles.less`:
+   As a reference, check `[Magento_Blank_Theme_Path]/web/css/_styles.less`:
 
    ```less
    @import 'source/lib/_lib.less'; // Global lib
@@ -46,12 +46,12 @@ We recommend using the following best practices when developing themes:
    @import 'source/_components.less'; // Components styles (modal/sliding panel)
    ```
 
-   **Magento already styled and having many ready made component(s)**, To check the list of existing component(s) you can find those in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, in these 2 files magento added their ready made component via `@import`.
+   **Magento-styled or ready-made component(s)**: To check the list of existing component(s) found in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, iMagento adds their ready-made components via `@import`.
 
-    If you want to add any custom component or extend any existing component then copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into custom theme, For example `app/design/frontend/Company/Theme/web/css/source/_components.less` and then add/import `Custom style for new/existing components`.
+    If you want to add custom components or extend an existing component, copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into your custom theme. For example, use `app/design/frontend/Company/Theme/web/css/source/_components.less` and add/import your `Custom style for new/existing components`.
 
     {:.bs-callout-info}
-   Blank theme path [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` as per our developement that might vary.
+   The blank theme path [Magento_Blank_Theme_Path] = `vendor/magento/theme-frontend-blank` or `app/design/frontend/Magento/blank` may vary.
 
    ```less
    //
