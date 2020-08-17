@@ -1,7 +1,6 @@
 ---
 group: graphql
 title: setGiftOptionsOnCart mutation
-ee_only: true
 ---
 
 The `setGiftOptionsOnCart` mutation allows the buyer to set the following gift options on the cart level:
@@ -10,6 +9,11 @@ The `setGiftOptionsOnCart` mutation allows the buyer to set the following gift o
 *  Gift wrapping
 *  A gift receipt to accompany the order
 *  A printed card to accompany the order
+
+{:.bs-callout-info}
+Gift messages are a feature of {{site.data.var.ce}}. All other gift options require {{site.data.var.ee}}.
+
+To remove a gift message, set the `gift_message` object to null. To remove gift wrapping, set the `gift_wrapping_id` attribute to null.
 
 Use the [updateCartItems mutation]({{page.baseurl}}/graphql/mutations/update-cart-items.html) to set gift messages and gift wrapping on individual items.
 

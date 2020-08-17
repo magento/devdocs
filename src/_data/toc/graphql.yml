@@ -238,7 +238,6 @@ pages:
 
         - label: setGiftOptionsOnCart mutation
           url: /graphql/mutations/set-gift-options.html
-          edition: ee-only
           exclude_versions: ["2.3"]
 
         - label: setGuestEmailOnCart mutation
