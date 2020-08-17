@@ -401,7 +401,7 @@ stage:
 ```
 
 {:.bs-callout-info}
-If you set `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as Redis backend model then ece-tools automatically generates the cache config like this [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html)
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
