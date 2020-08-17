@@ -11,7 +11,7 @@ functional_areas:
 -  {{ site.data.var.mcp-prod }} delivers required patches with critical fixes
 -  Magento Quality Patches delivers optional, low-impact quality fixes as [individual patches]({{ site.baseurl }}/release/policy/#individual-patch), which do not contain backward incompatible changes.
 
-Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and supports quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
+Both packages improve the integration of all {{site.data.var.ee}} versions with Cloud environments and support quick delivery of critical, optional, and custom fixes. You can use these packages to apply, revert, and view general information about all individual patches that are available for Magento.
 
 {:.bs-callout-tip}
 You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
@@ -51,7 +51,7 @@ To install the Magento Quality Patches package:
 
 ## View available patches and status
 
-You can list all available patches for your version of Magento using `{{ site.data.var.ct }}`.
+You can list available patches for your version of Magento using `{{ site.data.var.ct }}`.
 
 To view the list of available individual patches:
 
@@ -103,8 +103,8 @@ The status table contains the following types of information:
 
 -  **Type**:
 
-   -  `Optional`—All individual patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
-   -  `Required`—All individual patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
+   -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations. For {{ site.data.var.ece }}, all MQP patches are optional.
+   -  `Required`—All patches from the {{ site.data.var.mcp-prod }} package are required for Cloud customers.
    -  `Deprecated`—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
    -  `Custom`—All patches from the 'm2-hotfixes' directory.
 
@@ -253,9 +253,8 @@ To use Magento Cloud Patches as a stand-alone package:
 
 ## Revert a patch to a local environment
 
-You can revert all applied patches on a local development environment and restore the codebase to a clean state.
-
-To revert {{site.data.var.ece}} patches:
+You can revert all optional and custom patches on a local development environment using the {{ site.data.var.ct }} CLI.  For required patches, you must revert each patch individually using the `git apply` command.
+To revert individual and custom patches:
 
 ```bash
 php ./vendor/bin/ece-patches revert
@@ -269,4 +268,4 @@ This command reverts all patches in the following order:
 
 ## Logging
 
-The Magento Quality Patch package logs all operations in the `<Magento_root>/var/log/patch.log` file.
+The Magento Quality Patches package logs all operations to the `<Magento_root>/var/log/patch.log` file.

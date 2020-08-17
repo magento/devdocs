@@ -20,15 +20,15 @@ When the [patch][] program is run, this file is read in and the specified change
 
 There are three types of patches:
 
--  **Hot fixes**—Patches that Magento publishes on the [Magento Security Center][].
+-  **Hotfixes**—Patches that Magento publishes on the [Magento Security Center][].
 -  **Individual patches**—Patches that Magento Support creates and distributes on an individual basis.
 -  **Custom patches**—Unofficial patches that you can create from a git commit.
 
-### Hot fixes
+### Hotfixes
 
-Hot fixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
+Hotfixes are patches that contain high-impact security or quality fixes that affect a large number of Magento merchants. These fixes are applied to the next patch release for the applicable Magento minor version. Magento releases hot fixes as needed.
 
-You can find hot fixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type. Use the [command line](#command-line) or [Composer](#composer) to apply hot fix patches.
+You can find hotfixes in the [Magento Security Center][]. Follow the instructions on the page to download the patch file, depending on your Magento version and installation type. Use the [command line](#command-line) or [Composer](#composer) to apply hot fix patches.
 
 {:.bs-callout-info}
 Hot fixes can contain backward incompatible changes.
@@ -37,7 +37,7 @@ Hot fixes can contain backward incompatible changes.
 
 Individual patches contain low-impact quality fixes for a specific issue. These fixes are applied to the most recently supported minor version of Magento (for example, 2.4.x), but could be missing from the previous supported minor version of Magento (for example, 2.3.x). Magento releases individual patches as needed.
 
-Use the [Magento Quality Patch (MQP) package](#mqp) to apply individual patches.
+Use the [Magento Quality Patches (MQP) package](#mqp) to apply individual patches.
 
 {:.bs-callout-info}
 Individual patches do not contain backward incompatible changes.
@@ -155,8 +155,8 @@ The status table contains the following types of information:
 
 -  **Type**:
 
-   -  `Optional`—All individual patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
-   -  `Deprecate`d—The individual patch is marked as deprecated by Magento and we recommend reverting it if you have applied it. After you revert a deprecated patch, it will no longer be displayed in the status table.
+   -  `Optional`—All patches from the MQP package and the [Magento Cloud Patches]({{ site.baseurl }}/cloud/project/project-patch.html) package are optional for {{ site.data.var.ee }} and {{ site.data.var.ce }} installations.
+   -  `Deprecated`—Magento has deprecated the individual patch. If you have applied the patch, we recommend that you revert it. The revert operation also removes the patch from the status table.
 
 -  **Status**:
 
