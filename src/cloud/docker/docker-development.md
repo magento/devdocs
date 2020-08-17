@@ -3,10 +3,7 @@ group: cloud-guide
 title: Cloud Docker development
 functional_areas:
   - Cloud
-  - Docker
   - Configuration
-  - Introduction
-  - Overview
 ---
 
 {{site.data.var.mcd-prod}} provides an option to deploy {{site.data.var.ee}} to a Docker environment for development, test, and automation tasks.
@@ -14,13 +11,13 @@ functional_areas:
 ## Features
 
 -  **Cross-platform support**—Supports Linux, macOS and Windows with WSL2
--  **Magento Cloud emulation**-Provides a Cloud-like deployment pipeline and FS permission to test the code locally before pushing to the Magento Cloud
--  **Multiple sync options**-Provides 3 synchronization options(native, mutagen and docker-sync) for best performance
--  **Extensibility**-Easy extendable with standard Docker configuration files
+-  **Magento Cloud emulation**-Provides a Cloud-like deployment pipeline and filesystem to test code locally before deploying your {{ site.data.var.ece }} project to Staging or Production servers
+-  **Multiple sync options**-Provides three file synchronization options (native, mutagen and docker-sync) for best performance in the Docker environment
+-  **Extensibility**-Use standard Docker configuration file to extend and customize your development environment
 
 ## Host Operating Systems
 
-The Cloud Docker environment supports Linux, macOS, and Windows operating systems. The containers should run on any Docker host, but some of the set up scripts require you to install PHP and Composer.
+The {{ site.data.var.mcd-prod }} environment supports Linux, macOS, and Windows operating systems. The containers can run on any Docker host, but some setup scripts require you to install PHP and Composer.
 
 TBD
 
