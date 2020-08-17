@@ -20,6 +20,7 @@ Supported online payment methods include:
 -  [PayPal Express Checkout]({{page.baseurl}}/graphql/payment-methods/paypal-express-checkout.html)
 -  [PayPal Payflow Link]({{page.baseurl}}/graphql/payment-methods/payflow-link.html)
 -  [PayPal Payflow Pro]({{page.baseurl}}/graphql/payment-methods/payflow-pro.html)
+-  [PayPal Payflow Pro Vault]({{page.baseurl}}/graphql/payment-methods/payflow-pro-vault.html)
 -  [PayPal Payments Advanced]({{page.baseurl}}/graphql/payment-methods/payments-advanced.html)
 -  [PayPal Website Payments Pro Hosted Solution]({{page.baseurl}}/graphql/payment-methods/hosted-pro.html)
 -  [Express Checkout for other PayPal solutions]({{page.baseurl}}/graphql/payment-methods/payflow-express.html)
