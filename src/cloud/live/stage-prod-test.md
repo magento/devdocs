@@ -228,24 +228,25 @@ You can use the Magento Functional Testing Framework (MFTF) to complete function
 
 We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool][].
 
-<!--Link definitions>
+<!--Link definitions-->
 
 [Migrate data and static files]: {{ site.baseurl }}/cloud/live/stage-prod-migrate.html
 [Starter]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
 [Pro]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls
 [View logs]: {{ site.baseurl }}/cloud/project/log-locations
 [Configuring Fastly]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html
-[Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains
+[Testing before changing DNS]: https://docs.fastly.com/en/guides/testing-setup-before-changing-domains
 [Access info]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
 [`Cache-Control: max-age`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9
 [`Pragma`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32
 [Set up Fastly]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html
 [Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
-[Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit)
+[Magento Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
 [Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deployhtml#ttfb_tested_pages
-[Siege](https://www.joedog.org/siege-home/
-[Jmeter]: http://jmeter.apache.org/
+[Siege]: https://www.joedog.org/siege-home/
+[Jmeter]: https://jmeter.apache.org/
 [WebPageTest]: https://www.webpagetest.org/
 [Pingdom]: https://www.pingdom.com/
 [Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
 [Magento Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan
+
