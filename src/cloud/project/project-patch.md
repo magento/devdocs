@@ -34,21 +34,6 @@ All patch file names must end with the `.patch` extension.
 
 The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp-prod }} and {{site.data.var.ct}} packages. To apply the latest patches, you must have [the latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html) installed.
 
-{:.procedure}
-To install the Magento Quality Patches package:
-
-1. Add the `magento/quality-patches` Composer package to your `composer.json` file.
-
-   ```bash
-   composer require magento/quality-patches
-   ```
-
-1. Update your project dependencies.
-
-   ```bash
-   composer update
-   ```
-
 ## View available patches and status
 
 You can list available patches for your version of Magento using `{{ site.data.var.ct }}`.
@@ -219,37 +204,7 @@ To apply and test a custom patch on a Cloud environment:
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-You can use {{ site.data.var.mcp-prod }} as a stand-alone package to apply Magento patches and hotfixes to a Magento project that is not deployed on the Cloud platform.
-
-{:.bs-callout-tip}
-You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ce }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
-
-{:.procedure}
-To use Magento Cloud Patches as a stand-alone package:
-
-1. Add the magento-cloud-patches package to your `composer.json` file.
-
-   ```bash
-   composer require magento/magento-cloud-patches
-   ```
-
-1. From the project root, apply the patches.
-
-   ```bash
-   php ./vendor/bin/ece-tools patch
-   ```
-
-   This command applies Magento patches and any custom patches found in the `/m2-hotfixes` directory.
-
-1. Clear the Magento cache.
-
-   ```bash
-   php ./bin/magento cache:clean
-   ```
-
-   You can clean the cache using the Magento Admin Cache Management.
-
-1. Test the patches, and make any necessary changes to custom patches.
+Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ce }} projects.
 
 ## Revert a patch to a local environment
 
