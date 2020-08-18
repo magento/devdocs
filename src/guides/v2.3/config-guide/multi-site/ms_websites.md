@@ -24,7 +24,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 {% collapsible To create a root category: %}
 
 1. Log in to the Magento Admin as a user authorized to create categories.
-1. Click **Products** > **Categories**.
+1. Click **Catalog** > **Categories**.
 1. Click **Add Root Category**.
 1. In the **Category Name** field, enter a unique name to identify this category.
 1. Make sure **Enable Category** is set to **Yes**.
