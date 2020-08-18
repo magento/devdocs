@@ -99,7 +99,12 @@ pages:
 
     - label: Apply patches
       url: /comp-mgr/patching.html
-    
+      children:
+
+       - label: MQP release notes
+         url: /quality-patches/release-notes.html
+         versionless: true
+
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
       include_versions: ["2.3"]
