@@ -58,7 +58,7 @@ stage:
       - MC-456345
 ```
 
-See [Apply patches]({{ site.baseurl }}/project/project-patch.html).
+See [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html).
 
 ### `SCD_COMPRESSION_LEVEL`
 
