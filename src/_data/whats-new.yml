@@ -61,8 +61,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/7653
   contributor: dshevtsov
   profile: https://github.com/dshevtsov
-- description: 'Updated the list of MSI modules that must be disabled to use Connector
-    and OMS together in the [Install Inventory Management topic](https://devdocs.magento.com/extensions/inventory-management/).
+- description: Updated the list of MSI modules that must be disabled to use Connector and OMS together in the [Install Inventory Management topic](https://devdocs.magento.com/extensions/inventory-management/).
   versions: 2.4.x
   type: Major Update
   date: July 30, 2020
