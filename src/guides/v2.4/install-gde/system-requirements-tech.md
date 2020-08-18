@@ -10,10 +10,7 @@ functional_areas:
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on:
-
-*  Windows OS
-*  Mac OS
+Magento is not supported on Microsoft Windows and macOS.
 
 ## Memory requirement
 
@@ -43,19 +40,14 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 
 ## PHP
 
-*  ~7.4.0
-
-Magento 2.4.0 can be installed with 7.3, but it is not tested or recommended. It is intended for upgrading from Magento 2.3.x to Magento 2.4.0.
-
-{:.bs-callout-warning}
-There is a [bug](https://bugs.php.net/bug.php?id=79174) in PHP 7.4.2 which causes some messages to not render properly. Magento recommends using other versions of 7.4.
+{% include install/php-versions-2.4.md %}
 
 ### Required PHP extensions
 
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
 
-<!--{% assign platform-req = site.data.codebase.v2_4.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.

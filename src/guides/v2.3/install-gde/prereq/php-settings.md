@@ -11,8 +11,7 @@ redirect_from:
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
-<!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
-{% include install/php-versions-template.md %}
+{% include install/php-versions-2.3.md %}
 
 ## Verify PHP is installed {#centos-verify-php}
 
@@ -39,7 +38,7 @@ On CentOS, [additional steps may be required][].
 
 Magento requires a set of extensions to be installed:
 
-<!--{% assign platform-req = site.data.codebase.v2_3.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 In the command line, type:
