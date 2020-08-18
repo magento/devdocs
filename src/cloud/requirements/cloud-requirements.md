@@ -87,6 +87,10 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
 ## Magento configurations {#cloud-req-test}
 
+{:.bs-callout-info}
+{{ site.data.var.ece }} deploys Magento in [Production mode]({{ site.baseurl }}/guides/v2.4/config-guide/bootstrap/magento-modes.html#production-mode) by default.
+Magento Commence Cloud does not support `Developer` mode.
+
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *  For Pro, set the database [`auto_increment_increment` to 3]({{ site.baseurl }}/cloud/docker/docker-containers.html#service-containers) when you generate the Docker configuration file
@@ -100,9 +104,6 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 *  Test with [Redis enabled for page cache and session cache]({{ site.baseurl }}/guides/v2.3/config-guide/redis/config-redis.html)
 
 *  Test using [Varnish]({{ site.baseurl }}/guides/v2.3/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
-
-  {:.bs-callout-info}
-  {{ site.data.var.ece }} supports Magento production and maintenance modes only.
 
 ## Development and testing {#cloud-req-devtest}
 
