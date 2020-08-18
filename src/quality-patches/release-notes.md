@@ -7,7 +7,7 @@ functional_areas:
   - Upgrade
 ---
 
-The [Magento Quality Patches][https://github.com/magento/quality-patches] package delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}. 
+The [Magento Quality Patches](https://github.com/magento/quality-patches) package delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
 
 <!-- The release notes include:
 
@@ -35,7 +35,6 @@ See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instr
 -  MDVA-30131: Issue fixed: "No" values are not included in layered nav aggregation options when using ElasticSearch as the search engine. This affected storefront and GraphQl scenarios in the same way.
 -  :
 -  Root cause: There were issues due to the way PHP handles false values.":
-
 
 ## v1.0.2 example 2
 
