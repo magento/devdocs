@@ -9,6 +9,7 @@ contributor_link: https://www.goivvy.com
 
 Price Adjustments will adjust product price as it's displayed on category or product pages.  
 
+**In this article, as an example, we will add `1.79` to each product price.**
 
 To introduce new price adjustment one should add the following code to module's `etc/di.xml`:
 
@@ -35,15 +36,22 @@ To introduce new price adjustment one should add the following code to module's 
 Then `VENDOR/MODULE/Pricing/Adjustment.php` file should look like this:
 
 ```php
-namespace Goivvy\Review\Pricing;
+namespace VENDOR\MODULE\Pricing;
 
 use Magento\Framework\Pricing\Adjustment\AdjustmentInterface;
 use Magento\Framework\Pricing\SaleableInterface;
 
 class Adjustment implements AdjustmentInterface
 {
-    const ADJUSTMENT_CODE = 'devadj';
 
+    const ADJUSTMENT_CODE = 'devadj';
+    const ADJUSTMENT_VALUE = 1.79;
+
+    /**
+     * Get adjustment code
+     *
+     * @return string
+     */
     public function getAdjustmentCode()
     {
         return self::ADJUSTMENT_CODE;
@@ -65,22 +73,44 @@ class Adjustment implements AdjustmentInterface
      * @return bool
      */
     public function isIncludedInDisplayPrice()
-    {   
+    {
         return true;
     }
 
+    /**
+     * Extract adjustment amount from the given amount value
+     *
+     * @param float $amount
+     * @param SaleableInterface $saleableItem
+     * @param null|array $context
+     * @return float
+     */
     public function extractAdjustment($amount, SaleableInterface $saleableItem, $context = [])
-    {   
-        $return = $amount - 1.79;
+    {
+        $return = $amount - self::ADJUSTMENT_VALUE;
         return $return;
     }
 
+    /**
+     * Apply adjustment amount and return result value
+     *
+     * @param float $amount
+     * @param SaleableInterface $saleableItem
+     * @param null|array $context
+     * @return float
+     */
     public function applyAdjustment($amount, SaleableInterface $saleableItem, $context = [])
-    {   
-        $return = $amount + 1.79;
+    {
+        $return = $amount + self::ADJUSTMENT_VALUE;
         return $return;
     }
 
+    /**
+     * Check if adjustment should be excluded from calculations along with the given adjustment
+     *
+     * @param string $adjustmentCode
+     * @return bool
+     */
     public function isExcludedWith($adjustmentCode)
     {
         return $this->getAdjustmentCode() === $adjustmentCode;
@@ -110,4 +140,272 @@ Price Adjustments **will not** affect quote item prices so when a product is add
 
 ## Correct Way To Do Price Adjustments for Quote Items
 
+The correct way to do price adjustments for quote items is to add a custom quote total.
 
+Add the following to `VENDOR/MODULE/etc/sales.xml`:
+
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/sales.xsd">
+    <section name="quote">
+        <group name="totals">
+            <item name="custom-surcharge" instance="VENDOR\MODULE\Model\Quote\Surcharge" sort_order="1000"/>
+        </group>
+    </section>
+</config>
+```
+
+Then `VENDOR/MODULE/Model/Quote/Surcharge.php`:
+
+```php
+namespace VENDOR\MODULE\Model\Quote;
+
+class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
+{
+
+   const COLLECTOR_TYPE_CODE = 'custom-surcharge';
+
+   /**
+    * Custom constructor.
+    */
+   public function __construct()
+   {
+       $this->setCode(self::COLLECTOR_TYPE_CODE);
+
+   }
+
+   /**
+    * Collect address discount amount
+    *
+    * @param \Magento\Quote\Model\Quote $quote
+    * @param \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment
+    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    * @return $this
+    */
+   public function collect(
+        \Magento\Quote\Model\Quote $quote,
+        \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment,
+        \Magento\Quote\Model\Quote\Address\Total $total
+   ) {
+        parent::collect($quote, $shippingAssignment, $total);
+
+        $items = $shippingAssignment->getItems();
+        if (!count($items)) {
+            return $this;
+        }
+
+        $amount = 0;
+        foreach($quote->getItemsCollection() as $_i){
+            $amount += $_i->getQty() * \Goivvy\Review\Pricing\Adjustment::ADJUSTMENT_VALUE;
+        }
+
+        $total->setTotalAmount('custom-surcharge', $amount);
+        $total->setBaseTotalAmount('custom-surcharge', $amount);
+        $total->setCustomAmount($amount);
+        $total->setBaseCustomAmount($amount);
+        $total->setGrandTotal($total->getGrandTotal() + $amount);
+        $total->setBaseGrandTotal($total->getBaseGrandTotal() + $amount);
+        return $this;
+   }
+
+  /**
+    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    */
+   protected function clearValues(\Magento\Quote\Model\Quote\Address\Total $total)
+   {
+       $total->setTotalAmount('subtotal', 0);
+       $total->setBaseTotalAmount('subtotal', 0);
+       $total->setTotalAmount('custom-surcharge', 0);
+       $total->setBaseTotalAmount('custom-surcharge', 0);
+       $total->setSubtotalInclTax(0);
+       $total->setBaseSubtotalInclTax(0);
+   }
+
+   /**
+    * @param \Magento\Quote\Model\Quote $quote
+    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    * @return array
+    */
+   public function fetch(
+       \Magento\Quote\Model\Quote $quote,
+        \Magento\Quote\Model\Quote\Address\Total $total
+   ) {
+
+       $amount = 0;
+
+       foreach($quote->getItemsCollection() as $_i){
+            $amount += $_i->getQty() * \Goivvy\Review\Pricing\Adjustment::ADJUSTMENT_VALUE;
+       }
+
+       return [
+           'code' =>$this->getCode(),
+           'title' => 'Custom Total',
+           'value' => $amount
+       ];
+   }
+
+   /**
+    * @return \Magento\Framework\Phrase
+    */
+   public function getLabel()
+   {
+       return __('Custom Surchange');
+   }
+}
+```
+
+### To Display Price Adjustments Total on Cart Page
+
+In order to display price adjustments total on cart page we need to create a few files.
+
+First, add new total:
+
+`VENDOR/MODULE/view/frontend/layout/checkout_cart_index.xml`:
+
+```xml
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.cart.totals">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-totals" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="custom-surcharge" xsi:type="array">
+                                    <item name="component" xsi:type="string">VENDOR_MODULE/js/view/cart/totals/surcharge</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="title" xsi:type="string" translate="true">Custom Surcharge</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
+```
+
+Then we need to define a new component `VENDOR_MODULE/js/view/cart/totals/surcharge`:
+
+`VENDOR/MODULE/view/frontend/web/js/view/cart/totals/surcharge.js`:
+
+```javascript
+define([
+    'Magento_Checkout/js/view/summary/abstract-total',
+    'Magento_Checkout/js/model/quote'
+], function (Component, quote) {
+    'use strict';
+       
+    return Component.extend({
+        defaults: {
+            template: 'Goivvy_Review/summary/surcharge'
+        },
+        totals: quote.getTotals(),
+   
+        /**
+         * @return {*|Boolean}
+         */
+        isDisplayed: function () {
+            return this.isFullMode() && this.getPureValue() != 0;
+        },
+   
+        /**
+         * Get surcharge title
+         *
+         * @returns {null|String}
+         */
+        getTitle: function () {
+            if (!this.totals()) { 
+                return null;
+            }
+
+            return 'Custom Surcharge';
+        }, 
+           
+        /**
+         * @return {Number}
+         */
+        getPureValue: function () {
+            var price = 0;
+            for(var i=0; i < window.checkoutConfig.quoteItemData.length; i++){
+              price += window.checkoutConfig.quoteItemData[i].qty * 1.79;
+            }
+   
+            return price;
+        },
+
+        /**
+         * @return {*|String}
+         */
+        getValue: function () {
+            return this.getFormattedPrice(this.getPureValue());
+        }
+    });
+});
+```
+
+Then a template `VENDOR_MODULE/summary/surcharge`:
+
+`VENDOR/MODULE/view/frontend/web/template/summary/surcharge.html`:
+
+```html
+<!-- ko if: isDisplayed() -->
+<tr class="totals surcharge">
+    <th class="mark" scope="row">
+        <span class="title" data-bind="text: getTitle()"></span>
+    </th>   
+    <td class="amount">
+        <span class="price" data-bind="text: getValue(), attr: {'data-th': name}"></span>
+    </td>
+</tr>   
+<!-- /ko -->
+```
+
+### To Display Price Adjustments Total on Checkout Page
+
+To display the custom price adjustments total on a checkout page we need to add it to `totals` component.
+
+`VENDOR/MODULE/view/frontend/layout/checkout_index_index.xml`:
+
+```xml
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="sidebar" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="summary" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="totals" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="discount" xsi:type="array">
+                                                            <item name="component" xsi:type="string">VENDOR_MODULE/js/view/cart/totals/surcharge</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="title" xsi:type="string" translate="true">Custom Surcharge</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>  
+</page>
+```
+
+`VENDOR_MODULE/js/view/cart/totals/surcharge` component was defined earlier in the article.
