@@ -7,17 +7,40 @@ functional_areas:
   - Configuration
 ---
 
-The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes.
+The [Magento Cloud Patches](https://github.com/magento/magento-cloud-patches) package provides a set of required patches which improve the integration of all Magento versions with Cloud environments and supports quick delivery of critical fixes.
 
-The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package to apply patches to a {{ site.data.var.ee }} project that is not on the Cloud platform. These release notes describe the latest improvements to this package.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed and updated when you install or update the {{ site.data.var.ct }} package. You can also use and manage {{ site.data.var.mcp-prod }} as a stand-alone package to apply patches to a {{ site.data.var.ee }} project that is not on the Cloud platform. These release notes describe the latest improvements to this package.
 
 The `{{site.data.var.mcp-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
+{:.bs-callout-tip}
+To ensure that your project has all required patches, update to the [latest version of {{ site.data.var.ct }}]({{site.baseurl}}/cloud/project/ece-tools-update.html).
+
 {:.bs-callout-info}
-See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) to learn how to apply Magento patches and hot fixes to your {{site.data.var.ece}} project.
+See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instructions on applying patches to your Magento projects.
+
+## v1.0.6
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+<!--Add release notes below-->
+
+-  **Redis patches for Magento 2.3.0 - 2.3.4**–Optimize communication and improve performance
+   -  Reduce size of network transfers between Redis and Magento
+   -  Fix race conditions on Redis load and write operations
+   -  Rewrite base cache adapter to handle errors on save
+   -  Decrease Redis CPU consumption<!--MCLOUD-6139-->
+
+-  **Redis patches for Magento 2.3.0 - 2.3.5**–Improve performance and fix errors
+   -  Fix the Cache lock implementation to prevent infinite locks
+   -  Improve the current locking mechanism
+   -  Implement signed locks to prevent unlock from parallel requests
+   -  Fix the following error that occurs on Redis write operation: `OOM command not allowed when used memory > maxmemory`
+   -  Fix processing for clean cache by `cat_p` tag that runs during product updates<!--MCLOUD-6110-->
+
+-  {:.fix}Fixed an issue that caused an error when applying the required `amzn/amazon-pay-module` patch to {{ site.data.var.ece }} projects with Magento v2.2.6 or 2.3.5, which do not include this module. Now, the patching process skips the `amzn/amazon-pay-module` patch if the module is not installed.<!--MCLOUD-6588-->
 
 ## v1.0.5
-*Release date: {{ site.data.var.ece-release-date }}*<br/>
+*Release date: June 26, 2020*<br/>
 
 -  **Redis performance improvements**–Adds Redis optimization features to Magento versions 2.3.3 and 2.3.4. These fixes were included in the Magento version 2.3.5 release. See [Performance boosts]({{site.baseurl}}/guides/v2.3/release-notes/release-notes-2-3-5-commerce.html#performance-boosts) in the _Magento Commerce 2.3.5 Release Notes_.<!--MCLOUD-5771-->
 

@@ -7,39 +7,49 @@ pages:
       children:
 
         - label: REST Endpoints (ReDoc)
-          url: /redoc/2.3/
-          versionless: true
+          url: https://devdocs.magento.com/redoc/2.3/
+          include_versions: ["2.3"]
           children:
 
             - label: Admin REST endpoints
               url: https://magento.redoc.ly/2.3.5-admin/
-              versionless: true
+              include_versions: ["2.3"]
 
             - label: Customer REST endpoints
               url: https://magento.redoc.ly/2.3.5-customer/
-              versionless: true
+              include_versions: ["2.3"]
 
             - label: Guest REST endpoints
               url: https://magento.redoc.ly/2.3.5-guest/
-              versionless: true
+              include_versions: ["2.3"]
 
             - label: Asynchronous Admin REST endpoints
-              url: /redoc/2.3/async-admin-rest-api.html
-              versionless: true
+              url: https://devdocs.magento.com/redoc/2.3/async-admin-rest-api.html
+              include_versions: ["2.3"]
 
             - label: Asynchronous Customer REST endpoints
-              url: /redoc/2.3/async-customer-rest-api.html
-              versionless: true
+              url: https://devdocs.magento.com/redoc/2.3/async-customer-rest-api.html
+              include_versions: ["2.3"]
 
             - label: Asynchronous Guest REST endpoints
-              url: /redoc/2.3/async-guest-rest-api.html
-              versionless: true
+              url: https://devdocs.magento.com/redoc/2.3/async-guest-rest-api.html
+              include_versions: ["2.3"]
 
-        - label: List of REST endpoints by module
-          url: /rest/list.html
+        - label: REST Endpoints (ReDoc)
+          include_versions: ["2.4"]
+          children:
 
-        - label: List of service names per module
-          url: /rest/rest_endpoints.html
+            - label: Admin REST endpoints
+              url: https://magento.redoc.ly/2.4-admin/
+              include_versions: ["2.4"]
+
+            - label: Customer REST endpoints
+              url: https://magento.redoc.ly/2.4-customer/
+              include_versions: ["2.4"]
+
+            - label: Guest REST endpoints
+              url: https://magento.redoc.ly/2.4-guest/
+              include_versions: ["2.4"]
 
         - label: Generate a local API reference
           url: /rest/generate-local.html

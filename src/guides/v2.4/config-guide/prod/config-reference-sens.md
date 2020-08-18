@@ -199,9 +199,9 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 |--------------|--------------|--------------|--------------|--------------|--------------|
 | Container Id | `google/analytics/container_id` | ![EE-only]({{ site.baseurl }}/common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
-### Shipping methods sensitive and system-specific paths
+### Delivery methods sensitive and system-specific paths
 
-These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Delivery Methods**.
 
 | Name | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|--------------|

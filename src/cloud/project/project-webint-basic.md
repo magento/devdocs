@@ -13,10 +13,7 @@ functional_areas:
 The {{site.data.var.ece}} [Project Web Interface](https://account.magento.com/customer/account/login/) enables you to do the following for all Starter and Pro environments:
 
 -  [Access projects](#project-access)
--  Create and manage projects
--  Access active environments and branches using SSH, CLI, and URLs
--  Configure environment settings, environment variables, and routes
--  [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html)
+-  [Add users and manage access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  [Manage Git branches]({{ site.baseurl }}/cloud/project/project-webint-branch.html)
 
 As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.
@@ -85,7 +82,7 @@ You can set project wide and environment specific variables through the Project 
 
 For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add _environment variables_ for sensitive data like payment method information. _Project variables_ are set across all branches and environments.
 
-To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ site.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ site.baseurl }}/cloud/project/user-admin.html) privileges.
 
 {% include cloud/wings-variables.md %}
 
@@ -155,7 +152,7 @@ An environment's history includes:
 -  Syncs and merges
 -  Code pushes
 
-To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html).
+To view the history for an environment, log in to your project and select the environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. See [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 
 The following figure shows a sample history.
 

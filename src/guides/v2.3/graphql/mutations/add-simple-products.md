@@ -87,18 +87,20 @@ If a product has a customizable option, you can specify the option's value in th
 mutation {
   addSimpleProductsToCart (input: {
     cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
-    cart_items: {
-      data: {
-        sku: "simple"
-        quantity: 1
-      },
-      customizable_options: [
-        {
-          id: 121
-          value_string: "field value"
-        }
-      ]
-    }
+    cart_items: [
+      {
+        data: {
+          sku: "simple"
+          quantity: 1
+        },
+        customizable_options: [
+          {
+            id: 121
+            value_string: "field value"
+          }
+        ]
+      }
+    ]
   }) {
     cart {
       items {

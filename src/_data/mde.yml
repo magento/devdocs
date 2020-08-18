@@ -11,6 +11,17 @@ extensions:
     name: Amazon Sales Channel
     versions:
       -
+        name: 4.2.0
+        support:
+          2.3.0: compatible
+          2.3.1: compatible
+          2.3.2: compatible
+          2.3.3: compatible
+          2.3.4: compatible
+          2.3.5-p1: compatible
+          2.4.0: supported
+
+      -
         name: 4.1.0
         support:
           2.3.0: supported
@@ -64,7 +75,7 @@ extensions:
     name: Magento Inventory
     versions:
       -
-        name: 1.1.6
+        name: 1.2.0
         support:
           2.3.0: compatible
           2.3.1: compatible
@@ -200,7 +211,7 @@ extensions:
     name: Product Recommendations
     versions:
       -
-        name: 3.0.0
+        name: 3.0.4+
         support:
           2.3.0: supported
           2.3.1: supported
@@ -210,6 +221,16 @@ extensions:
           2.3.5-p1: supported
           2.4.0: supported
       -
+        name: 3.0.0
+        support:
+          2.3.0: supported
+          2.3.1: supported
+          2.3.2: supported
+          2.3.3: supported
+          2.3.4: supported
+          2.3.5-p1: supported
+          2.4.0: not supported
+      -
         name: 2.0.0
         support:
           2.3.0: supported
@@ -218,4 +239,14 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
-          2.4.0: supported
+          2.4.0: not supported
+      -
+        name: 1.x.x
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
+          2.4.0: not supported

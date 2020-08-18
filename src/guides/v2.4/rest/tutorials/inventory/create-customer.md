@@ -13,82 +13,19 @@ functional_areas:
   - Integration
 ---
 
-In this step, we will create a customer account that is tied to the `us` web view that we created in [Step 1. Configure your environment]({{ page.baseurl }}/rest/tutorials/inventory/configure-environment.html). Before we can do this, we need to know the website and store view IDs.
-
-## Get the website and store view IDs
-
-The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, along with the corresponding website and store group IDs. When you create a customer, change the `id` parameter to the `store_id` parameter
-
-**Endpoint:**
-
-`GET <host>/rest/all/V1/store/storeViews`
-
-**Scope:**
-
-`all` store view
-
-**Headers:**
-
-`Content-Type`: `application/json`
-
-`Authorization`: `Bearer <admin_token>`
-
-**Payload:**
-
-Not applicable
-
-**Response:**
-
-The value of the `id` and `website_id` parameters for the US Store View is `2`.
-
-```json
-[
-    {
-        "id": 1,
-        "code": "default",
-        "name": "Default Store View",
-        "website_id": 1,
-        "store_group_id": 1,
-        "is_active": 1
-    },
-    {
-        "id": 0,
-        "code": "admin",
-        "name": "Admin",
-        "website_id": 0,
-        "store_group_id": 0,
-        "is_active": 1
-    },
-    {
-        "id": 2,
-        "code": "us",
-        "name": "US Store View",
-        "website_id": 2,
-        "store_group_id": 2,
-        "is_active": 1
-    },
-    {
-        "id": 3,
-        "code": "de",
-        "name": "Germany Store View",
-        "website_id": 3,
-        "store_group_id": 3,
-        "is_active": 1
-    }
-]
-```
+This step creates a customer that lives close to several stores that serve as in-store pickup locations. Although this tutorial ships the order using a traditional shipping method, the GraphQL tutorial shows how in-store pickup can be implemented.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload.
+If you prefer to use a customer that is already defined on your installation, scroll down to [Generate the customer's access token](#get-token)
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/customers`
+`POST <host>/rest/default/V1/customers`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 
@@ -104,8 +41,6 @@ We can use the same customer definition presented in [Step 3. Create a customer]
       "lastname" : "Doe",
       "firstname" : "Jane",
       "email" : "jdoe@example.com",
-      "store_id": 2,
-      "website_id": 2,
       "addresses" : [
          {
             "defaultBilling" : true,
@@ -118,12 +53,12 @@ We can use the same customer definition presented in [Step 3. Create a customer]
                "region" : "New York"
             },
             "countryId" : "US",
-            "postcode" : "10755",
-            "city" : "Purchase",
+            "postcode" : "11501",
+            "city" : "Mineola",
             "street" : [
-               "123 Oak Ave"
+               "160 1st St."
             ],
-            "telephone" : "512-555-1111"
+            "telephone" : "516-555-1111"
          }
       ]
    },
@@ -133,26 +68,26 @@ We can use the same customer definition presented in [Step 3. Create a customer]
 
 **Response:**
 
-The customer `id` is `3`.
+The customer `id` is `2`.
 
 ```json
 {
-    "id": 3,
+    "id": 2,
     "group_id": 1,
-    "default_billing": "3",
-    "default_shipping": "3",
-    "created_at": "2019-01-28 20:53:45",
-    "updated_at": "2019-01-28 20:53:46",
-    "created_in": "US Store View",
+    "default_billing": "2",
+    "default_shipping": "2",
+    "created_at": "2020-07-22 23:12:47",
+    "updated_at": "2020-07-22 23:13:15",
+    "created_in": "Default Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
     "lastname": "Doe",
-    "store_id": 2,
-    "website_id": 2,
+    "store_id": 1,
+    "website_id": 1,
     "addresses": [
         {
-            "id": 3,
-            "customer_id": 3,
+            "id": 2,
+            "customer_id": 2,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
@@ -161,11 +96,11 @@ The customer `id` is `3`.
             "region_id": 43,
             "country_id": "US",
             "street": [
-                "123 Oak Ave"
+                "160 1st St."
             ],
-            "telephone": "512-555-1111",
-            "postcode": "10755",
-            "city": "Purchase",
+            "telephone": "516-555-1111",
+            "postcode": "11501",
+            "city": "Mineola",
             "firstname": "Jane",
             "lastname": "Doe",
             "default_shipping": true,
@@ -187,11 +122,11 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 
 **Endpoint:**
 
-`POST <host>/rest/us/V1/integration/customer/token`
+`POST <host>/rest/default/V1/integration/customer/token`
 
 **Scope:**
 
-`us` store view
+`default` store view
 
 **Headers:**
 

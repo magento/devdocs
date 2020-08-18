@@ -18,3 +18,7 @@
   font-size: var(--spectrum-heading-3-text-size, var(--spectrum-alias-heading3-text-size));
   margin: 2em 0 .7em 0;
 }
+
+.container > .feature > ul > li > img.img-icon {
+  margin-top: -4px;
+}
