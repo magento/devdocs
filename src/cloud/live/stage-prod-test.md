@@ -242,11 +242,10 @@ We provide a free Security Scan Tool for your sites. To add your sites and run t
 [Set up Fastly]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html
 [Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
 [Magento Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
-[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deployhtml#ttfb_tested_pages
+[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages
 [Siege]: https://www.joedog.org/siege-home/
 [Jmeter]: https://jmeter.apache.org/
 [WebPageTest]: https://www.webpagetest.org/
 [Pingdom]: https://www.pingdom.com/
 [Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html
 [Magento Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan
-
