@@ -170,6 +170,9 @@ The status table contains the following types of information:
    -  `Required patches`—The list of patches that must be applied for an indicated patch to work properly (dependencies).
    -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
+{:.bs-callout-info}
+After upgrading to a new version of Magento, you must re-install patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
+
 #### Apply individual patches
 
 {:.bs-callout-warning}
@@ -192,6 +195,9 @@ You must clean the cache after applying patches to see changes in the Magento ap
 ```bash
 ./bin/magento cache:clean
 ```
+
+{:.bs-callout-info}
+Consider keeping a list of applied patches in a separate location. You might need to re-apply some of them after upgrading to a new version of Magento. See [Re-apply patches after an upgrade](#upgrade).
 
 #### Revert individual patches
 
@@ -216,6 +222,12 @@ To revert all applied patches:
 ./vendor/bin/magento-patches revert --all
 ```
 
+You must clean the cache after reverting patches to see changes in the Magento application:
+
+```bash
+./bin/magento cache:clean
+```
+
 #### Get updates
 
 Magento periodically releases new individual patches. You must update the MQP package to get new individual patches:
@@ -232,6 +244,38 @@ New add patches display at the bottom of the table.
 ```bash
 ./vendor/bin/magento-patches status
 ```
+
+#### Re-apply patches after an upgrade {#upgrade}
+
+When you upgrade to a new version of Magento, you must re-apply patches if the patches are not included in the new version.
+
+{:procedure}
+To re-apply patches:
+
+1. Update the MQP package:
+
+   ```bash
+   composer update magento/quality-patches.
+   ```
+
+1. Open the list of previously applied patches, which was recommended in [Apply individual patches](#apply-individual-patches).
+
+1. Apply the patches:
+
+   ```bash
+   ./vendor/bin/magento-patches apply MAGETWO-XXXX
+   ```
+
+   The best practice is to apply patches one at a time.
+
+1. Clean the cache:
+
+   ```bash
+   ./bin/magento cache:clean
+   ```
+
+   {:.bs-callout-info}
+   When you run the `status` command, the patches that where included in the new version are no longer displayed in the table of available patches.
 
 #### Logging
 
