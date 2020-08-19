@@ -370,16 +370,6 @@ Attribute | Data type | Description
 `label` | String! | The name of the option
 `value` | String! | The value of the option
 
-#### OrderPaymentMethod attributes {#OrderPaymentMethod}
-
-The OrderPaymentMethod data type contains details about the payment method used to pay for the order.
-
-Attribute | Data type | Description
---- | --- | ---
-`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
-`name` | String! | The label that describes the payment method
-`type` | String! | The payment method code that indicates how the order was paid for
-
 #### OrderShipment attributes {#OrderShipment}
 
 Attribute | Data type | Description
@@ -404,6 +394,16 @@ Attribute | Data type | Description
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_shipping` | Money! | The shipping costs for the order
 `total_tax` | Money! | The amount of tax applied to the order
+
+#### PaymentMethod attributes {#PaymentMethod}
+
+The PaymentMethod data type contains details about the payment method used to pay for the order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
+`name` | String! | The label that describes the payment method
+`type` | String! | The payment method code that indicates how the order was paid for
 
 #### RewardPoints attributes {#RewardPoints}
 
