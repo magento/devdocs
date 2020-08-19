@@ -91,41 +91,30 @@ mutation {
 
 The `UpdateCartItemsInput` object is listed first. All child objects are listed in alphabetical order.
 
-### UpdateCartItemsInput attributes {#UpdateCartItemsInput}
+### UpdateCartItemsInput object {#UpdateCartItemsInput}
 
-The `UpdateCartItemsInput` object must contain the following attributes.
+The `UpdateCartItemsInput` object must contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `cart_items` | [CartItemUpdateInput!](#CartItemUpdateInput) | Contains the cart item IDs and quantity of each item
 
-### CartItemUpdateInput attributes {#CartItemUpdateInput}
+### CartItemUpdateInput object {#CartItemUpdateInput}
 
-The `CartItemUpdateInput` object must contain the following attributes.
+The `CartItemUpdateInput` object must contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
 `customizable_options` | [CustomizableOptionInput!] | An array that defines customizable options for the product
-`gift_message` | [GiftMessageInput](#GiftMessageInput) | Gift message details for the cart item
 `quantity` | Float | The new quantity of the item. A value of `0` removes the item from the cart
 
-### CustomizableOptionInput attributes {#CustomizableOptionInputSimple}
+### CustomizableOptionInput object {#CustomizableOptionInputSimple}
 
-The `CustomizableOptionInput` object must contain the following attributes.
+The `CustomizableOptionInput` object must contain the following attributes:
 
 {% include graphql/customizable-option-input.md %}
-
-### GiftMessageInput attributes {#GiftMessageInput}
-
-The `GiftMessageInput` object must contain the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`from` | String! | The name of the gift sender
-`message` | String! | The text of the gift message
-`to` | String! | The name of the gift recipient
 
 ## Output attributes
 
