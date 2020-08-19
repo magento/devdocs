@@ -7,6 +7,9 @@ functional_areas:
   - Setup
 ---
 
+{:.bs-calloout-info}
+If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions).
+
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
