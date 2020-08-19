@@ -140,7 +140,7 @@ Price Adjustments **will not** affect quote item prices so when a product is add
 
 ## Add Price Adjustments for Quote Items
 
-The correct way to do price adjustments for quote items is to add a custom quote total.
+For add price adjustments for quote items, a custom quote total have to be added
 
 Add the following to `VENDOR/MODULE/etc/sales.xml`:
 
