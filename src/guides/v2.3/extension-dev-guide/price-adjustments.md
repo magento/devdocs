@@ -233,7 +233,7 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 
        $amount = 0;
 
-       foreach($quote->getItemsCollection() as $_i){
+       foreach ($quote->getItemsCollection() as $_i) {
             $amount += $_i->getQty() * \Goivvy\Review\Pricing\Adjustment::ADJUSTMENT_VALUE;
        }
 
