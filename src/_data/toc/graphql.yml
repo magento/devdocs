@@ -172,6 +172,10 @@ pages:
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
 
+        - label: createCustomerV2 mutation
+          url: /graphql/mutations/create-customer-v2.html
+          exclude_versions: ["2.3"]
+
         - label: createCustomerAddress mutation
           url: /graphql/mutations/create-customer-address.html
 
@@ -274,6 +278,14 @@ pages:
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
+
+        - label: updateCustomerEmail mutation
+          url: /graphql/mutations/update-customer-email.html
+          exclude_versions: ["2.3"]
+
+        - label: updateCustomerV2 mutation
+          url: /graphql/mutations/update-customer-v2.html
+          exclude_versions: ["2.3"]
 
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
