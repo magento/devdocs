@@ -59,7 +59,7 @@ Attribute | Type | Description
 
 ### CustomizableCheckboxValue object
 
-`CustomizableCheckboxValue`  defines the attributes of a product whose page contains a customized set of checkbox values.
+`CustomizableCheckboxValue` defines the attributes of a product whose page contains a customized set of checkbox values.
 
 Attribute | Type | Description
 --- | --- | ---
@@ -69,6 +69,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableDateOption object
 
@@ -88,6 +89,7 @@ Attribute | Type | Description
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableDropDownOption object
 
@@ -109,6 +111,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableFieldOption object
 
@@ -129,6 +132,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the custom value
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableFileOption object
 
@@ -151,6 +155,7 @@ Attribute | Type | Description
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableMultipleOption object
 
@@ -172,6 +177,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+`uid` | ID! | A string that encodes option details
 
 ## CustomizableRadioOption object
 
@@ -193,6 +199,7 @@ Attribute | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option## CustomizableRadioOption object
+`uid` | ID! | A string that encodes option details
 
 `CustomizableRadioOption` contains information about a set of radio buttons that are defined as part of a customizable option.
 
