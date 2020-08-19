@@ -7,7 +7,7 @@ contributor_link: https://www.goivvy.com
 
 ## Price Adjustments
 
-Price Adjustments will adjust product price as it's displayed on category or product pages.  
+Price Adjustments will adjust product price as it's displayed on category or product pages.
 
 **The following example will add `1.79` to each product price.**
 
@@ -132,13 +132,11 @@ class Adjustment implements AdjustmentInterface
 
 Adjustment logic is defined in `extractAdjustment` and `applyAdjustment` functions.
 
-
 ## What Areas Price Adjustments Affect
 
-Price Adjustments affect storefront product prices. 
+Price Adjustments affect storefront product prices.
 
 Price Adjustments **will not** affect quote item prices so when a product is added to the cart any price adjustments defined the way described above are discarded.
-
 
 ## Add Price Adjustments for Quote Items
 
@@ -305,33 +303,33 @@ define([
     'Magento_Checkout/js/model/quote'
 ], function (Component, quote) {
     'use strict';
-       
+
     return Component.extend({
         defaults: {
             template: 'VENDOR_MODULE/summary/surcharge'
         },
         totals: quote.getTotals(),
-   
+
         /**
          * @return {*|Boolean}
          */
         isDisplayed: function () {
             return this.isFullMode() && this.getPureValue() != 0;
         },
-   
+
         /**
          * Get surcharge title
          *
          * @returns {null|String}
          */
         getTitle: function () {
-            if (!this.totals()) { 
+            if (!this.totals()) {
                 return null;
             }
 
             return 'Custom Surcharge';
-        }, 
-           
+        },
+
         /**
          * @return {Number}
          */
@@ -340,7 +338,7 @@ define([
             for (var i=0; i < window.checkoutConfig.quoteItemData.length; i++) {
               price += window.checkoutConfig.quoteItemData[i].qty * 1.79;
             }
-   
+
             return price;
         },
 
@@ -363,11 +361,11 @@ Then a template `VENDOR_MODULE/summary/surcharge`:
 <tr class="totals surcharge">
     <th class="mark" scope="row">
         <span class="title" data-bind="text: getTitle()"></span>
-    </th>   
+    </th>
     <td class="amount">
         <span class="price" data-bind="text: getValue(), attr: {'data-th': name}"></span>
     </td>
-</tr>   
+</tr>
 <!-- /ko -->
 ```
 
@@ -411,7 +409,7 @@ To display the custom price adjustments total on a checkout page we need to add 
                 </argument>
             </arguments>
         </referenceBlock>
-    </body>  
+    </body>
 </page>
 ```
 
