@@ -46,7 +46,7 @@ We recommend using the following best practices when developing themes:
    @import 'source/_components.less'; // Components styles (modal/sliding panel)
    ```
 
-   **Magento-styled or ready-made component(s)**: To check the list of existing component(s) found in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, iMagento adds their ready-made components via `@import`.
+   **Magento-styled or ready-made component(s)**: To check the list of existing component(s) found in **blank theme**: `[Magento_Blank_Theme_Path]/web/css/source/_sources.less` and  `[Magento_Blank_Theme_Path]/web/css/source/_components.less`, Magento adds their ready-made components via `@import`.
 
     If you want to add custom components or extend an existing component, copy `[Magento_Blank_Theme_Path]/web/css/source/_components.less` into your custom theme. For example, use `app/design/frontend/Company/Theme/web/css/source/_components.less` and add/import your `Custom style for new/existing components`.
 
