@@ -138,7 +138,7 @@ Price Adjustments affect storefront product prices.
 Price Adjustments **will not** affect quote item prices so when a product is added to the cart any price adjustments defined the way described above are discarded.
 
 
-## Correct Way To Do Price Adjustments for Quote Items
+## Add Price Adjustments for Quote Items
 
 The correct way to do price adjustments for quote items is to add a custom quote total.
 
