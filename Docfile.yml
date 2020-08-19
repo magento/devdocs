@@ -8,7 +8,7 @@ content_map:
 -
   directory: src/mftf
   repository: magento/magento2-functional-testing-framework
-  branch: 3.1.0-RC
+  branch: master
   filter: true
 -
   directory: src/mftf/v2
