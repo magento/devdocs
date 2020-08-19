@@ -5,7 +5,7 @@ contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
 ---
 
-## How Price Adjustments Work
+## Price Adjustments
 
 Price Adjustments will adjust product price as it's displayed on category or product pages.  
 
