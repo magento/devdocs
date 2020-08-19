@@ -2,8 +2,6 @@
 group: graphql
 title: Gift card product data types
 ee_only: True
-redirect_from:
-  - /guides/v2.3/graphql/reference/gift-card-product.html
 ---
 
 The `GiftCardProduct` data type defines properties of a gift card, including the minimum and maximum values and an array that contains the current and past values on the specific gift card
@@ -23,6 +21,7 @@ Attribute | Type | Description
 `allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card
 `allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card
 `giftcard_amounts` | [`GiftCardAmounts`] | An array that contains information about the values and ID of a gift card
+`gift_card_options` | [CustomizableOptionInterface!]! | An array of gift card options
 `giftcard_type` | `GiftCardTypeEnum` | Either VIRTUAL, PHYSICAL, or COMBINED
 `is_redeemable` | Boolean | Indicates whether the customer can redeem the value on the card for cash
 `lifetime` | Int | The number of days after purchase until the gift card expires. A null value means there is no limit
@@ -37,7 +36,7 @@ The `GiftCardAmounts` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `attribute_id` | Int | An internal attribute ID
-`uid` | String | A string that encodes option details.
+`uid` | String | A string that encodes option details
 `value_id` | Int | An ID that is  assigned to each unique gift card amount
 `value` | Float | The value of the gift card
 `website_value` | Float |The value of the gift card
