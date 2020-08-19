@@ -84,4 +84,4 @@ We recommend using the following best practices when developing themes:
 
 Next, add styles for respective component (new or extended) in a separate file.
 For example, for a new slider component - `app/code/Company/Module/view/frontend/web/css/source/components/_sliders.less`
-To extend or override an existing button style - `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`
+To extend or override an existing button style: `app/code/Company/Module/view/frontend/web/css/source/components/_buttons_extend.less`.
