@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 {:.bs-calloout-info}
-If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions).
+If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) in the _Cloud Guide_.
 
 ## Operating systems (Linux x86-64)
 
