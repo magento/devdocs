@@ -163,7 +163,7 @@ To import a database dump into the Docker environment:
 
 1. Place the resulting SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
-   The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+   The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command. It is required the `docker-compose.yml` file be built with the `--with-entrypoint` option when running the `ece-docker build:compose` command in order for the SQL file to be recorgnized correctly: `./vendor/bin/ece-docker build:compose --with-entrypoint`. 
 
 {:.bs-callout-tip}
 Although it is a more complex approach, you can use GZIP to import the database by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and import it inside the Docker container.
