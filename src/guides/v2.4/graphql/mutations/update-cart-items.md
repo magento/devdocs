@@ -106,6 +106,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
 `customizable_options` | [CustomizableOptionInput!] | An array that defines customizable options for the product
+`gift_wrapping_id` | ID | The unique identifier of the gift wrapping to be used for the cart item
 `quantity` | Float | The new quantity of the item. A value of `0` removes the item from the cart
 
 ### CustomizableOptionInput object {#CustomizableOptionInputSimple}
