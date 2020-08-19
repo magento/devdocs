@@ -210,7 +210,7 @@ pages:
             - label: Configure message Queues
               url: /extension-dev-guide/message-queues/config-mq.html
 
-            - label: Topics in Asynchronous API
+            - label: Using an Asynchronous API
               url: /extension-dev-guide/message-queues/async-topics.html
 
             - label: Handling outdated in-memory object states
