@@ -330,7 +330,7 @@ define([
          */
         getPureValue: function () {
             var price = 0;
-            for(var i=0; i < window.checkoutConfig.quoteItemData.length; i++){
+            for (var i=0; i < window.checkoutConfig.quoteItemData.length; i++) {
               price += window.checkoutConfig.quoteItemData[i].qty * 1.79;
             }
    
