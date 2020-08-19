@@ -9,7 +9,7 @@ contributor_link: https://www.goivvy.com
 
 Price Adjustments will adjust product price as it's displayed on category or product pages.  
 
-**In this article, as an example, we will add `1.79` to each product price.**
+**The following example will add `1.79` to each product price.**
 
 To introduce new price adjustment one should add the following code to module's `etc/di.xml`:
 
