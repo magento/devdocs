@@ -11,7 +11,7 @@ Price Adjustments will adjust product price as it's displayed on category or pro
 
 **The following example will add `1.79` to each product price.**
 
-To introduce new price adjustment one should add the following code to module's `etc/di.xml`:
+To introduce new price adjustment one should add the following code to module's `VENDOR/MODULE/etc/di.xml`:
 
 ```xml
 <type name="Magento\Framework\Pricing\Adjustment\Collection">
@@ -128,6 +128,8 @@ class Adjustment implements AdjustmentInterface
 }
 ```
 
+`ADJUSTMENT_CODE` constant is a unique code for our adjustment by which it gets added to `Magento\Framework\Pricing\Adjustment\Collection` collection.
+
 Adjustment logic is defined in `extractAdjustment` and `applyAdjustment` functions.
 
 
@@ -160,6 +162,10 @@ Then `VENDOR/MODULE/Model/Quote/Surcharge.php`:
 ```php
 namespace VENDOR\MODULE\Model\Quote;
 
+use Magento\Quote\Api\Data\ShippingAssignmentInterface;
+use Magento\Quote\Model\Quote\Address\Total;
+use Magento\Quote\Model\Quote;
+
 class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 {
 
@@ -171,7 +177,6 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
    public function __construct()
    {
        $this->setCode(self::COLLECTOR_TYPE_CODE);
-
    }
 
    /**
@@ -183,9 +188,9 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
     * @return $this
     */
    public function collect(
-        \Magento\Quote\Model\Quote $quote,
-        \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment,
-        \Magento\Quote\Model\Quote\Address\Total $total
+        Quote $quote,
+        ShippingAssignmentInterface $shippingAssignment,
+        Total $total
    ) {
         parent::collect($quote, $shippingAssignment, $total);
 
@@ -196,11 +201,11 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 
         $amount = 0;
         foreach($quote->getItemsCollection() as $_i){
-            $amount += $_i->getQty() * \Goivvy\Review\Pricing\Adjustment::ADJUSTMENT_VALUE;
+            $amount += $_i->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
         }
 
-        $total->setTotalAmount('custom-surcharge', $amount);
-        $total->setBaseTotalAmount('custom-surcharge', $amount);
+        $total->setTotalAmount(self::COLLECTOR_TYPE_CODE, $amount);
+        $total->setBaseTotalAmount(self::COLLECTOR_TYPE_CODE, $amount);
         $total->setCustomAmount($amount);
         $total->setBaseCustomAmount($amount);
         $total->setGrandTotal($total->getGrandTotal() + $amount);
@@ -211,12 +216,12 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
   /**
     * @param \Magento\Quote\Model\Quote\Address\Total $total
     */
-   protected function clearValues(\Magento\Quote\Model\Quote\Address\Total $total)
+   protected function clearValues(Total $total)
    {
        $total->setTotalAmount('subtotal', 0);
        $total->setBaseTotalAmount('subtotal', 0);
-       $total->setTotalAmount('custom-surcharge', 0);
-       $total->setBaseTotalAmount('custom-surcharge', 0);
+       $total->setTotalAmount(self::COLLECTOR_TYPE_CODE, 0);
+       $total->setBaseTotalAmount(self::COLLECTOR_TYPE_CODE, 0);
        $total->setSubtotalInclTax(0);
        $total->setBaseSubtotalInclTax(0);
    }
@@ -227,19 +232,19 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
     * @return array
     */
    public function fetch(
-       \Magento\Quote\Model\Quote $quote,
-        \Magento\Quote\Model\Quote\Address\Total $total
+       Quote $quote,
+       Total $total
    ) {
 
        $amount = 0;
 
        foreach ($quote->getItemsCollection() as $_i) {
-            $amount += $_i->getQty() * \Goivvy\Review\Pricing\Adjustment::ADJUSTMENT_VALUE;
+            $amount += $_i->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
        }
 
        return [
-           'code' =>$this->getCode(),
-           'title' => 'Custom Total',
+           'code' => $this->getCode(),
+           'title' => __('Custom Total'),
            'value' => $amount
        ];
    }
@@ -253,6 +258,8 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
    }
 }
 ```
+
+`COLLECTOR_TYPE_CODE` constant is a unique name of our custom total by which it could be accessed with `Magento\Quote\Model\Quote\Address\Total::getTotalAmount`, set with `Magento\Quote\Model\Quote\Address\Total::setTotalAmount'.
 
 ### To Display Price Adjustments Total on Cart Page
 
@@ -301,7 +308,7 @@ define([
        
     return Component.extend({
         defaults: {
-            template: 'Goivvy_Review/summary/surcharge'
+            template: 'VENDOR_MODULE/summary/surcharge'
         },
         totals: quote.getTotals(),
    
