@@ -180,9 +180,9 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
    /**
     * Collect address discount amount
     *
-    * @param \Magento\Quote\Model\Quote $quote
-    * @param \Magento\Quote\Api\Data\ShippingAssignmentInterface $shippingAssignment
-    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    * @param Quote $quote
+    * @param ShippingAssignmentInterface $shippingAssignment
+    * @param Total $total
     * @return $this
     */
    public function collect(
@@ -198,8 +198,8 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
         }
 
         $amount = 0;
-        foreach($quote->getItemsCollection() as $_i){
-            $amount += $_i->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
+        foreach($quote->getItemsCollection() as $_quoteItem){
+            $amount += $_quoteItem->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
         }
 
         $total->setTotalAmount(self::COLLECTOR_TYPE_CODE, $amount);
@@ -212,7 +212,7 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
    }
 
   /**
-    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    * @param Total $total
     */
    protected function clearValues(Total $total)
    {
@@ -225,8 +225,8 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
    }
 
    /**
-    * @param \Magento\Quote\Model\Quote $quote
-    * @param \Magento\Quote\Model\Quote\Address\Total $total
+    * @param Quote $quote
+    * @param Total $total
     * @return array
     */
    public function fetch(
@@ -236,8 +236,8 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 
        $amount = 0;
 
-       foreach ($quote->getItemsCollection() as $_i) {
-            $amount += $_i->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
+       foreach ($quote->getItemsCollection() as $_quoteItem) {
+            $amount += $_quoteItem->getQty() * \VENDOR\MODULE\Pricing\Adjustment::ADJUSTMENT_VALUE;
        }
 
        return [
