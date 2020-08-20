@@ -7,6 +7,9 @@ functional_areas:
   - Setup
 ---
 
+{:.bs-calloout-info}
+If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) in the _Cloud Guide_.
+
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
@@ -66,7 +69,7 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento supports Elasticsearch 7.6.x.
+As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento is tested with Elasticsearch 7.6.x. You can use other versions at your discretion, but we recommend using the tested version of Elasticsearch.
 
 {:.bs-callout-warning}
 Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].
