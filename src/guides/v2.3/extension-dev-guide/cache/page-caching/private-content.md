@@ -15,7 +15,7 @@ The section source class is responsible for retrieving data for the section. As 
 
 The public method `getSectionData` must return an array with data for a private block.
 
-[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L45-L54){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L61-L70){:target="_blank"}
 
 Add the following to your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration (`di.xml`):
 
@@ -56,7 +56,7 @@ The UI component renders block data on the Magento [storefront](https://glossary
 
 All properties are available in the template.
 
-[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L32){:target="_blank"}
+[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L35){:target="_blank"}
 
 ## Invalidate private content
 
