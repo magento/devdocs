@@ -255,7 +255,7 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 }
 ```
 
-The `COLLECTOR_TYPE_CODE` constant is a unique name of the custom total. It can be accessed with `Magento\Quote\Model\Quote\Address\Total::getTotalAmount`, and set with `Magento\Quote\Model\Quote\Address\Total::setTotalAmount'.
+The `COLLECTOR_TYPE_CODE` constant is a unique name of the custom total. It can be accessed with `Magento\Quote\Model\Quote\Address\Total::getTotalAmount`, and set with `Magento\Quote\Model\Quote\Address\Total::setTotalAmount`.
 
 ### Display price-adjusted totals on the cart page
 
@@ -412,4 +412,3 @@ To display the price-adjusted total on the checkout page, add it to the `totals`
 The `VENDOR_MODULE/js/view/cart/totals/surcharge` component was defined earlier in the article.
 
 If all has gone smoothly, when run, you should see the adjusted price reflected in the shopping cart.
-
