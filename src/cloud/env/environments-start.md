@@ -114,6 +114,8 @@ The following table lists incoming and outgoing IP addresses used by {{site.data
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
+### AWS regions
+
 <table>
 <tr>
 <th colspan="7"><b>Incoming IP addresses</b></th>
@@ -214,6 +216,40 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 <p>52.65.143.178</p>
 <p>13.54.80.197</p>
 <p>52.62.224.4</p>
+</td>
+</tr>
+</table>
+
+### Azure region
+
+<table>
+<tr>
+<th colspan="7"><b>Incoming IP addresses</b></th>
+</tr>
+<tr>
+<td>US Region (us-a1)</td>
+</tr>
+<tr>
+<td>
+<p>40.79.241.76</p>
+<p>52.147.176.136</p>
+<p>20.49.0.170</p>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th colspan="7"><b>Outgoing IP addresses</b></th>
+</tr>
+<tr>
+<td>US Region (us-a1)</td>
+</tr>
+<tr>
+<td>
+<p>40.79.241.76</p>
+<p>52.147.176.136</p>
+<p>20.49.0.170</p>
 </td>
 </tr>
 </table>
