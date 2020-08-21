@@ -682,6 +682,15 @@ Attribute |  Data Type | Description
 
 ### CartItemInterface {#CartItemInterface}
 
+The `CartItemInterface` has the following implementations:
+
+*  BundleCartItem
+*  ConfigurableCartItem
+*  DownloadableCartItem
+*  GiftCardCartItem
+*  SimpleCartItem
+*  VirtualCartItem
+
 The `CartItemInterface` can contain the following attributes.
 
 Attribute |  Data Type | Description
@@ -721,6 +730,7 @@ Attribute |  Data Type | Description
 `applied_taxes` | [[CartTaxItem]](#CartTaxItem) | An array containing the names and amounts of taxes applied to the item
 `discount` | CartDiscount | Deprecated. Use `discounts` instead
 `discounts` | [Discount] | An array containing all discounts applied to the cart
+`gift_options` | [GiftOptionsPrices](#GiftOptionsPrices) | The list of prices for the selected gift options
 `grand_total` | Money | The total, including discounts, taxes, shipping, and other fees
 `subtotal_excluding_tax` | Money | Subtotal without taxes
 `subtotal_including_tax` | Money | Subtotal with taxes
@@ -750,13 +760,21 @@ Attribute |  Data Type | Description
 
 ### GiftMessage object {#GiftMessage}
 
-The `GiftMessage` object must contain the following attributes.
+{% include graphql/gift-message.md %}
+
+### GiftOptionsPrices object {#GiftOptionsPrices}
+
+The `GiftOptionsPrices` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`from` | String! | Identifies the sender
-`message` | String! | The gift message text
-`to` | String! | Identifies the recipient
+`gift_wrapping_for_items` | Money | The price of the gift wrapping for all individual order items
+`gift_wrapping_for_order` | Money | The price of the gift wrapping for the whole order
+`printed_card` | Money | The price of the printed card
+
+### GiftWrapping object {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
 
 ### RewardPointsAmount {#RewardPointsAmount}
 

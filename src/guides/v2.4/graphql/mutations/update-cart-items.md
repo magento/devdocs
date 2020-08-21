@@ -1,11 +1,9 @@
 ---
 group: graphql
 title: updateCartItems mutation
-redirect from:
-  - /guides/v2.3/graphql/reference/quote-update-cart-items.html
 ---
 
-The `updateCartItems` mutation allows you to replace the current quantity of one or more cart items with the specified quantities. It does not perform calculations to determine the quantity of cart items.
+The `updateCartItems` mutation allows you to modify items in the specified cart. You can also replace the current quantity of one or more cart items with the specified quantities. The mutation does not perform calculations to determine the quantity of cart items.
 
 {:.bs-callout-info}
 Setting the quantity to `0` removes an item from the cart.
@@ -91,30 +89,42 @@ mutation {
 
 The `UpdateCartItemsInput` object is listed first. All child objects are listed in alphabetical order.
 
-### UpdateCartItemsInput object {#UpdateCartItemsInput}
+### UpdateCartItemsInput attributes {#UpdateCartItemsInput}
 
-The `UpdateCartItemsInput` object must contain the following attributes:
+The `UpdateCartItemsInput` object must contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `cart_items` | [CartItemUpdateInput!](#CartItemUpdateInput) | Contains the cart item IDs and quantity of each item
 
-### CartItemUpdateInput object {#CartItemUpdateInput}
+### CartItemUpdateInput attributes {#CartItemUpdateInput}
 
-The `CartItemUpdateInput` object may contain the following attributes:
+The `CartItemUpdateInput` object can contain the following attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
 `customizable_options` | [CustomizableOptionInput!] | An array that defines customizable options for the product
+`gift_message` | [GiftMessageInput](#GiftMessageInput) | Gift message details for the cart item
+`gift_wrapping_id` | ID | The unique identifier of the gift wrapping to be used for the cart item
 `quantity` | Float | The new quantity of the item. A value of `0` removes the item from the cart
 
-### CustomizableOptionInput object {#CustomizableOptionInputSimple}
+### CustomizableOptionInput attributes {#CustomizableOptionInputSimple}
 
-The `CustomizableOptionInput` object must contain the following attributes:
+The `CustomizableOptionInput` object must contain the following attributes.
 
 {% include graphql/customizable-option-input.md %}
+
+### GiftMessageInput attributes {#GiftMessageInput}
+
+The `GiftMessageInput` object must contain the following attributes.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`from` | String! | The name of the gift sender
+`message` | String! | The text of the gift message
+`to` | String! | The name of the gift recipient
 
 ## Output attributes
 
