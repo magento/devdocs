@@ -182,7 +182,7 @@ The `addProductsToWishlist` mutation requires the following input.
 Attribute |  Data Type | Description
 --- | --- | ---
 `wishlistId` | ID! | The ID of the customer's wish list
-`wishlistItems`| [WishlistItemInput!]! | An array containing each product to be added to the wish list
+`wishlistItems`| [[WishlistItemInput(#WishlistItemInput)]!]! | An array containing each product to be added to the wish list
 
 ### WishlistItemInput attributes {#WishlistItemInput}
 
@@ -192,9 +192,13 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `entered_options`| [EnteredOptionInput!] | An array of options that the customer entered
 `parent_sku` | String | For complex product types, the SKU of the parent product
-`quantity` | Float | The amount or number of items to add
-`selected_options` | [String!] | An array of strings corresponding to options the customer selected
-`sku` | String | The SKU of the product to add. For complex product types, specify the child product SKU
+`quantity` | Float! | The amount or number of items to add
+`selected_options` | [ID] | An array of strings corresponding to options the customer selected
+`sku` | String! | The SKU of the product to add. For complex product types, specify the child product SKU
+
+### EnteredOptionInput attributes {#EnteredOptionInput}
+
+{% include graphql/entered-option-input.md %}
 
 ## Output attributes
 
@@ -202,8 +206,8 @@ The `AddProductsToWishlistOutput` object contains the customer's wish list and e
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`user_errors` | [WishListUserInputError]! | An array of errors encountered while adding products to a wish list
-`wishlist` | Wishlist! | Contains the wish list with all items that were successfully added
+`user_errors` | [[WishListUserInputError!](#WishListUserInputError)] | An array of errors encountered while adding products to a wish list
+`wishlist` | [Wishlist!](#Wishlist) | Contains the wish list with all items that were successfully added
 
 ### Wishlist attributes {#Wishlist}
 

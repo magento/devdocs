@@ -9,6 +9,8 @@ The `updateProductsInWishlist` mutation changes the quantity, description and op
 {:.bs-callout-info}
 Use the `removeProductsFromWishlist` mutation to remove an item from the wish list. Do not set the quantity of an item to 0.
 
+This mutation requires a valid customer authentication token.
+
 ## Syntax
 
 `mutation: updateProductsInWishlist(wishlistId: ID! wishlistItems: [WishlistItemUpdateInput!]!): UpdateProductsInWishlistOutput`
@@ -171,7 +173,7 @@ The `updateProductsInWishlist` mutation requires the following input.
 Attribute |  Data Type | Description
 --- | --- | ---
 `wishlistId` | ID! | The ID of the customer's wish list
-`wishlistItems`| [WishlistItemUpdateInput!]! | An array containing products to be updated
+`wishlistItems`| [[WishlistItemUpdateInput!](#WishlistItemUpdateInput)]! | An array containing products to be updated
 
 ### WishlistItemUpdateInput attributes {#WishlistItemUpdateInput}
 
@@ -180,10 +182,14 @@ The `WishlistItemUpdateInput` object defines each item to add to the wish list.
 Attribute |  Data Type | Description
 --- | --- | ---
 `description` | String | Customer-entered comments about the item
-`entered_options`| [EnteredOptionInput!] | An array of options that the customer entered
+`entered_options`| [EnteredOptionInput] | An array of options that the customer entered
 `quantity` | Float | The amount or number of items to add
-`selected_options` | [String!] | An array of strings corresponding to options the customer selected
+`selected_options` | [ID] | An array of strings corresponding to options the customer selected
 `wishlist_item_id` | ID! | The ID of the wishlist item to update
+
+### EnteredOptionInput attributes {#EnteredOptionInput}
+
+{% include graphql/entered-option-input.md %}
 
 ## Output attributes
 
