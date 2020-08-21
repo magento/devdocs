@@ -5,9 +5,12 @@ title: addProductsToWishlist mutation
 
 The `addProductsToWishlist` mutation adds one or more products to the specified wish list. This mutation supports all product types.
 
-This mutation requires a valid customer authentication token.
+This mutation requires a valid [customer authentication token]({{page.baseurl}}/graphql/mutations/generate-customer-token.html).
 
 In {{site.data.var.ce}}, customers can have only one wish list. In {{site.data.var.ee}}, customers can have multiple wish lists.
+
+{:.bs-callout-tip}
+To determine whether wish lists are enabled, specify the `magento_wishlist_general_is_enabled` attribute in the [`storeConfig` query]({{page.baseurl}}/graphql/queries/store-config.html).
 
 ## Syntax
 
@@ -16,6 +19,8 @@ In {{site.data.var.ce}}, customers can have only one wish list. In {{site.data.v
 ## Example usage
 
 The following example adds a simple product (`24-MB01`), a configurable product (`WJ01-M-Red`), and a bundle product (`24-WG080`) to the customer's wish list. The SKU `WG-09` is invalid, and error information is returned in the `user_errors` object.
+
+To determine the value of the `wishlistId` attribute, run the `customer` query and check the value of `wishlist.id` in the response.
 
 **Request:**
 
