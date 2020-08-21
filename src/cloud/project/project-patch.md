@@ -157,6 +157,9 @@ To apply patches in a Cloud environment:
                - MCTEST-1003
    ```
 
+   {:.bs-callout-info}
+   After upgrading to a new version of Magento, you must re-apply patches if the patches are not included in the new version. We recommend saving a copy of the `.magento.env.yaml` in a separate location before an upgrade so that you can quickly re-apply patches if necessary.
+
 1. Commit and push the updated `.magento.env.yaml` file.
 
    ```bash

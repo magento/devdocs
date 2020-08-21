@@ -171,7 +171,7 @@ The status table contains the following types of information:
    -  `Recommended replacement`—The patch that is a recommended replacement for a deprecated patch.
 
 {:.bs-callout-info}
-After upgrading to a new version of Magento, you must re-install patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
+After upgrading to a new version of Magento, you must re-apply patches if the patches are not included in the new version. See [Re-apply patches after an upgrade](#upgrade).
 
 #### Apply individual patches
 
