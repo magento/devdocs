@@ -43,10 +43,13 @@ Attribute | Data type | Description
 --- | --- | ---
 `billing_address` | [OrderAddress](#OrderAddress) | The billing address for the order
 `carrier` | String | The shipping carrier for the order delivery
-`comments` | [[CommentItem](#CommentItem)] | Comments on the order
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the order
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
+`gift_message` | [GiftMessage](#GiftMessage) | The entered gift message for the order
+`gift_receipt_included` | Boolean! | Indicates if the customer requested a gift receipt for the order
+`gift_wrapping` | [GiftWrapping](#GiftWrapping) | The selected gift wrapping for the order
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `invoices` | [[Invoice](#Invoice)]! | Contains a list of invoices for the order
@@ -55,6 +58,7 @@ Attribute | Data type | Description
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the `number` attribute instead
 `payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
+`printed_card_included` | Boolean! | Indicates if the customer requested a printed card for the order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order
@@ -65,7 +69,7 @@ The deprecated attributes were previously defined in the `CustomerOrder` object 
 
 #### BundleCreditMemoItem attributes {#BundleCreditMemoItem}
 
-The `BundleCreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface). It also defines the following attribute:
+The `BundleCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
 
 Attribute | Data type | Description
 --- | --- | ---
@@ -95,28 +99,19 @@ Attribute | Data type | Description
 --- | --- | ---
 `bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
 
-#### CommentItem attributes {#CommentItem}
-
-The `CommentItem` object contains details about a comment applied to an order.
-
-Attribute | Data type | Description
---- | --- | ---
-`message` | String!| The text of the message
-`timestamp` | String! | The timestamp of the comment
-
 #### CreditMemo attributes {#CreditMemo}
 
 The `CreditMemo` object contains details about credit memos applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments on the credit memo
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
 `items` | [[CreditMemoItem](#CreditMemoItem)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
-#### CreditMemoInterface attributes {#CreditMemoInterface}
+#### CreditMemoItemInterface attributes {#CreditMemoItemInterface}
 
 The `CreditMemoItemInterface` describes a specific credit memo.
 
@@ -131,7 +126,7 @@ Attribute | Data type | Description
 
 #### CreditMemoItem attributes {#CreditMemoItem}
 
-The `CreditMemoItem` object implements the [`CreditMemoInterface`](#CreditMemoInterface).
+The `CreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface).
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
@@ -158,13 +153,99 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of the discount
 `label` | String! | A description of the discount
 
+#### DownloadableCreditMemoItem attributes {#DownloadableCreditMemoItem}
+
+The `DownloadableCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were refunded from the downloadable product
+
+#### DownloadableItemsLinks attributes {#DownloadableItemsLinks}
+
+The `DownloadableProductLinks` object defines characteristics of a downloadable product.
+
+Attribute | Data type | Description
+--- | --- | ---
+`sort_order` | Int | A number indicating the sort order
+`title`| String | The display name of the link
+`uid` | ID! | A string that encodes option details
+
+#### DownloadableInvoiceItem attributes {#DownloadableInvoiceItem}
+
+The `DownloadableInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were invoiced from the downloadable product
+
+#### DownloadableOrderItem attributes {#DownloadableOrderItem}
+
+The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were ordered from the downloadable product
+
+#### GiftCardItem attributes {#GiftCardItem}
+
+The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item.
+
+Attribute | Data type | Description
+--- | --- | ---
+`message`| String | A message provided by the sender to the recipient
+`recipient_email` | String | The email provided for the recipient of a virtual gift card
+`recipient_name` | String | The name provided for the recipient of a physical or virtual gift card
+`sender_email` | String | The sender email provided for a virtual gift card
+`sender_name` | String | The sender name provided for a physical or virtual gift card
+
+#### GiftCardCreditMemoItem attributes {#GiftCardOrderItem}
+
+The `GiftCardCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a refunded item
+
+#### GiftCardInvoiceItem attributes {#GiftCardInvoiceItem}
+
+The `GiftCardInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an invoiced item
+
+#### GiftCardOrderItem attributes {#GiftCardOrderItem}
+
+The `GiftCardOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an order item
+
+#### GiftCardShipmentItem attributes {#GiftCardShipmentItem}
+
+The `GiftCardShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
+
+Attribute | Data type | Description
+--- | --- | ---
+`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a shipped item
+
+### GiftMessage attributes {#GiftMessage}
+
+{% include graphql/gift-message.md %}
+
+### GiftWrapping attributes {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
+
 #### Invoice attributes {#Invoice}
 
 The `Invoice` object provides details about a customer invoice.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments on the invoice
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the invoice
 `id` | ID! | The internal ID of the invoice
 `items` | [[InvoiceItemInterface](#InvoiceItemInterface)]! | Contains details about invoiced products
 `number` | String! | The sequential number of the invoice
@@ -286,14 +367,14 @@ Attribute | Data type | Description
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | String! | The name of the option
+`label` | String! | The name of the option
 `value` | String! | The value of the option
 
 #### OrderShipment attributes {#OrderShipment}
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[CommentItem](#CommentItem)] | Comments added to the shipment
+`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments added to the shipment
 `id` | ID! | The unique ID of the shipment
 `items` | [[ShipmentItemInterface](#ShipmentItemInterface)] | Contains items included in the shipment
 `number` | String! | The sequential credit shipment number
@@ -381,6 +462,15 @@ Attribute | Data type | Description
 --- | --- | ---
 `balance_updates` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points balance updates' emails
 `points_expiration_notifications` | RewardPointsSubscriptionStatusesEnum! | Customer subscription status to 'Reward points expiration notifications' emails
+
+#### SalesCommentItem attributes {#SalesCommentItem}
+
+The `SalesCommentItem` object contains details about a comment applied to an order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`message` | String!| The text of the message
+`timestamp` | String! | The timestamp of the comment
 
 #### SalesItemOption attributes {#SalesItemOption}
 

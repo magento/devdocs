@@ -147,12 +147,17 @@ pages:
         - label: addVirtualProductsToCart mutation
           url: /graphql/mutations/add-virtual-products.html
 
+        - label: applyCouponToCart mutation
+          url: /graphql/mutations/apply-coupon.html
+
         - label: applyGiftCardToCart mutation
           url: /graphql/mutations/apply-giftcard.html
           edition: ee-only
 
-        - label: applyCouponToCart mutation
-          url: /graphql/mutations/apply-coupon.html
+        - label: applyRewardPointsToCart mutation
+          url: /graphql/mutations/apply-reward-points.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
 
         - label: applyStoreCreditToCart mutation
           url: /graphql/mutations/apply-store-credit.html
@@ -166,6 +171,10 @@ pages:
 
         - label: createCustomer mutation
           url: /graphql/mutations/create-customer.html
+
+        - label: createCustomerV2 mutation
+          url: /graphql/mutations/create-customer-v2.html
+          exclude_versions: ["2.3"]
 
         - label: createCustomerAddress mutation
           url: /graphql/mutations/create-customer-address.html
@@ -211,6 +220,11 @@ pages:
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
 
+        - label: removeRewardPointsFromCart mutation
+          url: /graphql/mutations/remove-reward-points.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: removeStoreCreditFromCart mutation
           url: /graphql/mutations/remove-store-credit.html
           edition: ee-only
@@ -233,12 +247,12 @@ pages:
         - label: sendEmailToFriend mutation
           url: /graphql/mutations/send-email-to-friend.html
 
-        - label: subscribeEmailToNewsletter mutation
-          url: /graphql/mutations/subscribe-email-to-newsletter.html
-          exclude_versions: ["2.3"]
-
         - label: setBillingAddressesOnCart mutation
           url: /graphql/mutations/set-billing-address.html
+
+        - label: setGiftOptionsOnCart mutation
+          url: /graphql/mutations/set-gift-options.html
+          exclude_versions: ["2.3"]
 
         - label: setGuestEmailOnCart mutation
           url: /graphql/mutations/set-guest-email.html
@@ -255,11 +269,23 @@ pages:
         - label: setShippingMethodsOnCart mutation
           url: /graphql/mutations/set-shipping-method.html
 
+        - label: subscribeEmailToNewsletter mutation
+          url: /graphql/mutations/subscribe-email-to-newsletter.html
+          exclude_versions: ["2.3"]
+
         - label: updateCartItems mutation
           url: /graphql/mutations/update-cart-items.html
 
         - label: updateCustomer mutation
           url: /graphql/mutations/update-customer.html
+
+        - label: updateCustomerEmail mutation
+          url: /graphql/mutations/update-customer-email.html
+          exclude_versions: ["2.3"]
+
+        - label: updateCustomerV2 mutation
+          url: /graphql/mutations/update-customer-v2.html
+          exclude_versions: ["2.3"]
 
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
@@ -317,6 +343,10 @@ pages:
           
         - label: PayPal Payflow Pro
           url: /graphql/payment-methods/payflow-pro.html
+
+        - label: PayPal Payflow Pro Vault
+          url: /graphql/payment-methods/payflow-pro-vault.html
+          exclude_versions: ["2.3"]
 
         - label: PayPal Payments Advanced
           url: /graphql/payment-methods/payments-advanced.html

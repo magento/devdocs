@@ -35,7 +35,7 @@ Here is the example of composer.json file.
       "AFL-3.0"
     ],
     "require": {
-      "php": "~7.1.3||~7.2.0||~7.3.0"
+      "php": "~7.2.0||~7.3.0"
     },
     "autoload": {
       "files": [ "registration.php" ],
