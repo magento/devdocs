@@ -5,8 +5,6 @@ contributor_name: Goivvy LLC
 contributor_link: https://www.goivvy.com
 ---
 
-## Price Adjustments
-
 Price Adjustments adjust the product price as it is displayed on category or product pages.
 
 In this example, we will add `1.79` to each product price.
