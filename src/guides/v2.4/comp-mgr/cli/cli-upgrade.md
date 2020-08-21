@@ -36,6 +36,7 @@ Complete the following prerequisites to prepare your environment before starting
 
      {:.bs-callout-info}
     Optionally, you can create a [custom maintenance mode page].
+-  **Check the status of the active running cron jobs**—To prevent various unexpected problems during the upgrade, wait for all active running Magento cron jobs to finish their work or stop them.
 -  **Install the Composer update plugin**—The [`magento/composer-root-update-plugin`][custom Composer plugin] Composer plugin resolves changes that need to be made to the root project `composer.json` file before updating to a new Magento product requirement.
 
    The plugin partially automates the manual upgrade by identifying and helping you resolve dependency conflicts instead of requiring you to identify and fix them them manually.
