@@ -7,11 +7,11 @@ contributor_link: https://www.goivvy.com
 
 ## Price Adjustments
 
-Price Adjustments will adjust product price as it's displayed on category or product pages.
+Price Adjustments adjust the product price as it is displayed on category or product pages.
 
-**The following example will add `1.79` to each product price.**
+In this example, we will add `1.79` to each product price.
 
-To introduce new price adjustment one should add the following code to module's `VENDOR/MODULE/etc/di.xml`:
+To create a price adjustment, add the following code to the module's `VENDOR/MODULE/etc/di.xml`:
 
 ```xml
 <type name="Magento\Framework\Pricing\Adjustment\Collection">
@@ -33,7 +33,7 @@ To introduce new price adjustment one should add the following code to module's 
 </type>
 ```
 
-Then `VENDOR/MODULE/Pricing/Adjustment.php` file should look like this:
+The `VENDOR/MODULE/Pricing/Adjustment.php` file should look like:
 
 ```php
 namespace VENDOR\MODULE\Pricing;
@@ -128,19 +128,17 @@ class Adjustment implements AdjustmentInterface
 }
 ```
 
-`ADJUSTMENT_CODE` constant is a unique code for our adjustment by which it gets added to `Magento\Framework\Pricing\Adjustment\Collection` collection.
+The `ADJUSTMENT_CODE` constant is a unique code for the adjustment which it gets added to the `Magento\Framework\Pricing\Adjustment\Collection` collection.
 
-Adjustment logic is defined in `extractAdjustment` and `applyAdjustment` functions.
+The adjustment logic is defined in `extractAdjustment` and `applyAdjustment` functions.
 
-## What Areas Price Adjustments Affect
+Price adjustments affect storefront product prices.
 
-Price Adjustments affect storefront product prices.
+Price adjustments **will not** affect quote item prices, so when a product is added to the cart, any price adjustments defined above are discarded.
 
-Price Adjustments **will not** affect quote item prices so when a product is added to the cart any price adjustments defined the way described above are discarded.
+## Add price adjustments for quote items
 
-## Add Price Adjustments for Quote Items
-
-For add price adjustments for quote items, a custom quote total have to be added
+To adjustments prices for quote items, a custom quote total is added:
 
 Add the following to `VENDOR/MODULE/etc/sales.xml`:
 
@@ -155,7 +153,7 @@ Add the following to `VENDOR/MODULE/etc/sales.xml`:
 </config>
 ```
 
-Then `VENDOR/MODULE/Model/Quote/Surcharge.php`:
+Then in `VENDOR/MODULE/Model/Quote/Surcharge.php`:
 
 ```php
 namespace VENDOR\MODULE\Model\Quote;
@@ -257,13 +255,13 @@ class Surcharge extends \Magento\Quote\Model\Quote\Address\Total\AbstractTotal
 }
 ```
 
-`COLLECTOR_TYPE_CODE` constant is a unique name of our custom total by which it could be accessed with `Magento\Quote\Model\Quote\Address\Total::getTotalAmount`, set with `Magento\Quote\Model\Quote\Address\Total::setTotalAmount'.
+The `COLLECTOR_TYPE_CODE` constant is a unique name of the custom total. It can be accessed with `Magento\Quote\Model\Quote\Address\Total::getTotalAmount`, and set with `Magento\Quote\Model\Quote\Address\Total::setTotalAmount'.
 
-### To Display Price Adjustments Total on Cart Page
+### Display price-adjusted totals on the cart page
 
-In order to display price adjustments total on cart page we need to create a few files.
+To display the price-adjusted total on the cart page, we need to create a few files.
 
-First, add new total:
+First, add the new total:
 
 `VENDOR/MODULE/view/frontend/layout/checkout_cart_index.xml`:
 
@@ -293,7 +291,7 @@ First, add new total:
 </page>
 ```
 
-Then we need to define a new component `VENDOR_MODULE/js/view/cart/totals/surcharge`:
+Then, define a new component: `VENDOR_MODULE/js/view/cart/totals/surcharge`:
 
 `VENDOR/MODULE/view/frontend/web/js/view/cart/totals/surcharge.js`:
 
@@ -352,9 +350,7 @@ define([
 });
 ```
 
-Then a template `VENDOR_MODULE/summary/surcharge`:
-
-`VENDOR/MODULE/view/frontend/web/template/summary/surcharge.html`:
+Then create the template `VENDOR_MODULE/summary/surcharge`:
 
 ```html
 <!-- ko if: isDisplayed() -->
@@ -369,9 +365,9 @@ Then a template `VENDOR_MODULE/summary/surcharge`:
 <!-- /ko -->
 ```
 
-### To Display Price Adjustments Total on Checkout Page
+### Display price-adjusted total on the checkout page
 
-To display the custom price adjustments total on a checkout page we need to add it to `totals` component.
+To display the price-adjusted total on the checkout page, add it to the `totals` component.
 
 `VENDOR/MODULE/view/frontend/layout/checkout_index_index.xml`:
 
@@ -413,4 +409,7 @@ To display the custom price adjustments total on a checkout page we need to add 
 </page>
 ```
 
-`VENDOR_MODULE/js/view/cart/totals/surcharge` component was defined earlier in the article.
+The `VENDOR_MODULE/js/view/cart/totals/surcharge` component was defined earlier in the article.
+
+If all has gone smoothly, when run, you should see the adjusted price reflected in the shopping cart.
+
