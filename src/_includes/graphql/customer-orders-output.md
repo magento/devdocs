@@ -47,6 +47,9 @@ Attribute | Data type | Description
 `created_at` | String | Deprecated. Use the `order_date` attribute instead
 `credit_memos` | [[CreditMemo](#CreditMemo)] | Contains a list of credit memos for the order
 `grand_total` | Float  | Deprecated. Use the `totals.grand_total` attribute instead
+`gift_message` | [GiftMessage](#GiftMessage) | The entered gift message for the order
+`gift_receipt_included` | Boolean! | Indicates if the customer requested a gift receipt for the order
+`gift_wrapping` | [GiftWrapping](#GiftWrapping) | The selected gift wrapping for the order
 `id` | ID! | Unique identifier for the order
 `increment_id` | String | Deprecated. Use the `id` attribute instead
 `invoices` | [[Invoice](#Invoice)]! | Contains a list of invoices for the order
@@ -54,7 +57,8 @@ Attribute | Data type | Description
 `number` | String! | The order number
 `order_date` | String! | The date the order was placed
 `order_number` | String! | Deprecated. Use the `number` attribute instead
-`payment_methods` | [[OrderPaymentMethod](#OrderPaymentMethod)] | Payment details for the order
+`payment_methods` | [[PaymentMethod](#PaymentMethod)] | Payment details for the order
+`printed_card_included` | Boolean! | Indicates if the customer requested a printed card for the order
 `shipments` | [[OrderShipment](#OrderShipment)] | Shipment list for the order
 `shipping_address` | [OrderAddress](#OrderAddress) | Shipping address for the order
 `shipping_method` | String | Shipping method for the order
@@ -227,6 +231,14 @@ Attribute | Data type | Description
 --- | --- | ---
 `gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a shipped item
 
+### GiftMessage attributes {#GiftMessage}
+
+{% include graphql/gift-message.md %}
+
+### GiftWrapping attributes {#GiftWrapping}
+
+{% include graphql/gift-wrapping.md %}
+
 #### Invoice attributes {#Invoice}
 
 The `Invoice` object provides details about a customer invoice.
@@ -358,16 +370,6 @@ Attribute | Data type | Description
 `label` | String! | The name of the option
 `value` | String! | The value of the option
 
-#### OrderPaymentMethod attributes {#OrderPaymentMethod}
-
-The OrderPaymentMethod data type contains details about the payment method used to pay for the order.
-
-Attribute | Data type | Description
---- | --- | ---
-`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
-`name` | String! | The label that describes the payment method
-`type` | String! | The payment method code that indicates how the order was paid for
-
 #### OrderShipment attributes {#OrderShipment}
 
 Attribute | Data type | Description
@@ -392,6 +394,16 @@ Attribute | Data type | Description
 `taxes` | [[TaxItem](#TaxItem)]! | An array containing information about taxes on individual orders
 `total_shipping` | Money! | The shipping costs for the order
 `total_tax` | Money! | The amount of tax applied to the order
+
+#### PaymentMethod attributes {#PaymentMethod}
+
+The PaymentMethod data type contains details about the payment method used to pay for the order.
+
+Attribute | Data type | Description
+--- | --- | ---
+`additional_data` | [[KeyValue](#KeyValue)] | Additional data per payment method type
+`name` | String! | The label that describes the payment method
+`type` | String! | The payment method code that indicates how the order was paid for
 
 #### RewardPoints attributes {#RewardPoints}
 
