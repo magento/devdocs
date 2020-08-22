@@ -184,7 +184,7 @@ Attribute |  Data Type | Description
 `description` | String | Customer-entered comments about the item
 `entered_options`| [EnteredOptionInput] | An array of options that the customer entered
 `quantity` | Float | The amount or number of items to add
-`selected_options` | [ID] | An array of strings corresponding to options the customer selected
+`selected_options` | [ID!] | An array of strings corresponding to options the customer selected
 `wishlist_item_id` | ID! | The ID of the wishlist item to update
 
 ### EnteredOptionInput attributes {#EnteredOptionInput}
@@ -197,7 +197,7 @@ The `UpdateProductsInWishlistOutput` object contains the customer's wish list an
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`user_errors` | [WishListUserInputError]! | An array of errors encountered while adding products to a wish list
+`user_errors` | [WishListUserInputError!]! | An array of errors encountered while adding products to a wish list
 `wishlist` | Wishlist! | Contains the wish list with all items that were successfully added
 
 ### Wishlist attributes {#Wishlist}
