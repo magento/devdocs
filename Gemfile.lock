@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 13b0d9620c175368e9fcf4cb6bfa66afa569a54d
+  revision: c96131acc7a0ed03629ab3401c8a64d819e7e610
   specs:
-    devdocs (10)
+    devdocs (12)
       jekyll (>= 4.0)
 
 GEM
@@ -96,7 +96,7 @@ GEM
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.3.0)
-    kramdown (2.2.1)
+    kramdown (2.3.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -153,7 +153,7 @@ GEM
     unicode-display_width (1.7.0)
     verbal_expressions (0.1.5)
     wdm (0.1.1)
-    whatsup_github (0.3.0)
+    whatsup_github (0.3.1)
       netrc (~> 0.10)
       octokit (~> 4.14)
       thor (~> 0.20)

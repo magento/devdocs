@@ -279,6 +279,12 @@ pages:
         - label: Update the page URL type
           url: /ui_comp_guide/howto/update-url-type.html
 
+        - label: Render prices on the frontend
+          url: /ui_comp_guide/howto/price_rendering.html
+
+        - label: Declare a custom UI component
+          url: /ui_comp_guide/howto/new_component_declaration.html
+
     - label: Troubleshoot
       children:
 

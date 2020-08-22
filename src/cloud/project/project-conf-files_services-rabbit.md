@@ -36,14 +36,22 @@ To enable RabbitMQ:
 1. Add, commit, and push your code changes.
 
    ```bash
-   git add -A && git commit -m "Enable RabbitMQ service" && git push origin <branch-name>
+   git add -A
+   ```
+
+   ```bash
+   git commit -m "Enable RabbitMQ service"
+   ```
+
+   ```bash
+   git push origin <branch-name>
    ```
 
 1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
 
 For information on how these changes affect your environments, see [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
 
-[Supported service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions)
+{% include cloud/tip-change-installed-service-version.md %}
 
 ## Connect to RabbitMQ for debugging {#connect}
 

@@ -2345,7 +2345,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-87524 -->
 
-*  The [Contribution Guide]({{ page.baseurl }}/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+*  The [Contribution Guide]({{ site.baseurl }}/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 <!---MAGETWO-87056 -->
 
