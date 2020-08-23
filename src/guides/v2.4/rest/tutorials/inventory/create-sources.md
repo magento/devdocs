@@ -58,9 +58,10 @@ The `source_code` values will be used in subsequent steps.
       "street": "645 Newark Ave.",
       "city" : "Jersey City",
       "region_id": 41,
+      "region": "New Jersey",
       "latitude": 40.733790,
       "longitude": -74.058720
-      }
+   }
 }
 ```
 
@@ -90,9 +91,10 @@ Use the following payload to create the Leipzig warehouse:
       "street": "7554 Pacific Ave",
       "city" : "Stockton",
       "region_id": 12,
+      "region": "California",
       "latitude": 38.018180,
       "longitude": -121.319930
-      }
+   }
 }
 ```
 
@@ -112,6 +114,7 @@ Use the following payload to create the Brooklyn store.
       "street": "263 S 4th St",
       "city" : "Brooklyn",
       "region_id": 43,
+      "region": "New York",
       "latitude": 40.710070,
       "longitude": -73.957160,
       "phone": "555 737-8088",
@@ -139,6 +142,7 @@ Use the following payload to create the Long Island store:
       "street": "55 Gerard St,",
       "city" : "Huntington",
       "region_id": 43,
+      "region": "New York",
       "latitude": 40.872510,
       "longitude": -73.429352,
       "phone": "555 939-4444",
@@ -167,6 +171,7 @@ Use the following payload to create the Manhattan store:
       "street": "70 W. 10th St",
       "city" : "New York",
       "region_id": 43,
+      "region": "New York",
       "latitude": 40.734600,
       "longitude": -73.998490,
       "phone": "555 838-4500",
@@ -194,6 +199,7 @@ Use the following payload to create the Berkeley store:
       "street": "2705 Webster St",
       "city" : "Berkeley",
       "region_id": 12,
+      "region": "California",
       "latitude": 37.855850,
       "longitude": -122.252460,
       "phone": "510 555-2020",
@@ -222,6 +228,7 @@ Use the following payload to create the Frankfurt store:
       "street": "150 Harbor Dr.",
       "city" : "Sausalito",
       "region_id": 12,
+      "region": "California",
       "latitude": 37.867168,
       "longitude": -122.499367,
       "phone": "415-555-6666",
@@ -250,6 +257,7 @@ The `hq` source will fulfill virtual and downloadable products.
       "street": "909 3rd Ave",
       "city" : "New York",
       "region_id": 43,
+      "region": "New York",
       "latitude": 40.7571,
       "longitude": -73.9657
    }

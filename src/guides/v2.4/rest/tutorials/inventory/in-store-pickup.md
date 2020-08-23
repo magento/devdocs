@@ -1,10 +1,10 @@
 ---
 layout: tutorial
 group: rest-api
-title: Step 14.: Create an order for in-store pickup (optional)
+title: Step 14. Create an order for in-store pickup (optional)
 subtitle: Order processing with Inventory Management
 menu_title: Step 14. Bulk transfer products
-menu_order: 130
+menu_order: 140
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
@@ -46,11 +46,11 @@ None
 
 **Response:**
 
-The response is the `quoteId`: 4
+The response is the `quoteId`: 6
 
 ## Add products to the new cart
 
-This time, we will add two Driven Packbacks (`24-WB03`).
+This time, we will add two Voyage Yoga Bags (`24-WB01`).
 
 **Endpoint:**
 
@@ -71,34 +71,32 @@ This time, we will add two Driven Packbacks (`24-WB03`).
 ```json
 {
   "cartItem": {
-    "sku": "24-WB03",
+    "sku": "24-WB01",
     "qty": 2,
-    "quote_id": "4"
+    "quote_id": "6"
   }
 }
 ```
 
 **Response:**
 
-Note the `item_id` for use in subsequent steps.
-
 ```json
 {
-    "item_id": 10,
-    "sku": "24-WB03",
-    "qty": 3,
-    "name": "Driven Backpack",
-    "price": 36,
+    "item_id": 11,
+    "sku": "24-WB01",
+    "qty": 2,
+    "name": "Voyage Yoga Bag",
+    "price": 32,
     "product_type": "simple",
-    "quote_id": "4"
+    "quote_id": "6"
 }
 ```
 
 ## Search for pickup locations
 
-The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for locations, given a city name or postal code and a radius, in kilometers. You must also specify the sales channel code to search in the `scopeCode` parameter. The endpoint is described in detail in the [In-Store Pickup]({{page.baseur.}}/rest/modules/inventory/in-store-pickup.html) reference topic.
+The `GET /V1/inventory/in-store-pickup/pickup-locations` endpoint searches for locations, given a city name or postal code and a radius, in kilometers. You must also specify the sales channel code to search in the `scopeCode` parameter. The endpoint is described in detail in the [In-Store Pickup]({{page.baseurl}}/rest/modules/inventory/in-store-pickup.html) reference topic.
 
-In this example, we will search for locations within 50 km of New York, New York that are pickup locations for product `24-WB03`.
+In this example, we will search for locations within 50 km of New York, New York that are pickup locations for product `24-WB01`.
 
 **Endpoint:**
 
@@ -106,7 +104,7 @@ In this example, we will search for locations within 50 km of New York, New York
 searchRequest[area][radius]=50&
 searchRequest[area][searchTerm]=New%20York&
 searchRequest[scopeCode]=base&
-searchRequest[extensionAttributes][productsInfo][0][sku]=24-WB03`
+searchRequest[extensionAttributes][productsInfo][0][sku]=24-WB01`
 
 **Scope:**
 
@@ -122,20 +120,23 @@ Not applicable
 
 **Response:**
 
-The endpoint returns the Manhattan, Brooklyn, and Long Island stores. Although the Northeast warehouse is within the specified radius, it is not listed, because it is not a pickup location.
+The endpoint returns the Manhattan, Brooklyn, and Long Island stores. The Northeast warehouse is within the specified radius, but it is not listed, because it is not a pickup location.
+
+In the previous step, we transferred the entire stock of Voyage Yoga Bags from the Long Island (`huntington`) store to the Northeast warehouse. Although the store is out of stock locally, it can still be used as a pick-up location.
 
 ```json
 {
     "items": [
         {
             "pickup_location_code": "manhattan",
-            "name": "Manhattan (Greenwich Village) Store",
+            "name": "Manhattan Store",
             "contact_name": "Kiara Smith",
             "description": "Greenwich Village, Manhattan",
             "latitude": 40.7346,
             "longitude": -73.99849,
             "country_id": "US",
             "region_id": 43,
+            "region": "New York",
             "city": "New York",
             "street": "70 W. 10th St",
             "postcode": "10011",
@@ -143,13 +144,14 @@ The endpoint returns the Manhattan, Brooklyn, and Long Island stores. Although t
         },
         {
             "pickup_location_code": "brooklyn",
-            "name": "Brooklyn (Williamsburg) Store",
+            "name": "Brooklyn Store",
             "contact_name": "Tai Hozie",
             "description": "Williamsburg, Brooklyn",
             "latitude": 40.71007,
             "longitude": -73.95716,
             "country_id": "US",
             "region_id": 43,
+            "region": "New York",
             "city": "Brooklyn",
             "street": "263 S 4th St",
             "postcode": "11211",
@@ -157,13 +159,14 @@ The endpoint returns the Manhattan, Brooklyn, and Long Island stores. Although t
         },
         {
             "pickup_location_code": "huntington",
-            "name": "Long Island (Huntington) Store",
+            "name": "Long Island Store",
             "contact_name": "Leslie Arzy",
             "description": "Huntington, Long Island",
             "latitude": 40.87251,
             "longitude": -73.429352,
             "country_id": "US",
             "region_id": 43,
+            "region": "New York",
             "city": "Huntington",
             "street": "55 Gerard St,",
             "postcode": "11743",
@@ -181,7 +184,7 @@ The endpoint returns the Manhattan, Brooklyn, and Long Island stores. Although t
         "extension_attributes": {
             "products_info": [
                 {
-                    "sku": "24-WB03"
+                    "sku": "24-WB01"
                 }
             ]
         }
@@ -258,14 +261,14 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
         }
     ],
     "totals": {
-        "grand_total": 72,
-        "base_grand_total": 72,
-        "subtotal": 72,
-        "base_subtotal": 72,
+        "grand_total": 64,
+        "base_grand_total": 64,
+        "subtotal": 64,
+        "base_subtotal": 64,
         "discount_amount": 0,
         "base_discount_amount": 0,
-        "subtotal_with_discount": 72,
-        "base_subtotal_with_discount": 72,
+        "subtotal_with_discount": 64,
+        "base_subtotal_with_discount": 64,
         "shipping_amount": 0,
         "base_shipping_amount": 0,
         "shipping_discount_amount": 0,
@@ -275,7 +278,7 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
         "weee_tax_applied_amount": null,
         "shipping_tax_amount": 0,
         "base_shipping_tax_amount": 0,
-        "subtotal_incl_tax": 72,
+        "subtotal_incl_tax": 64,
         "shipping_incl_tax": 0,
         "base_shipping_incl_tax": 0,
         "base_currency_code": "USD",
@@ -283,12 +286,12 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
         "items_qty": 2,
         "items": [
             {
-                "item_id": 10,
-                "price": 36,
-                "base_price": 36,
+                "item_id": 11,
+                "price": 32,
+                "base_price": 32,
                 "qty": 2,
-                "row_total": 72,
-                "base_row_total": 72,
+                "row_total": 64,
+                "base_row_total": 64,
                 "row_total_with_discount": 0,
                 "tax_amount": 0,
                 "base_tax_amount": 0,
@@ -296,21 +299,21 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
                 "discount_amount": 0,
                 "base_discount_amount": 0,
                 "discount_percent": 0,
-                "price_incl_tax": 36,
-                "base_price_incl_tax": 36,
-                "row_total_incl_tax": 72,
-                "base_row_total_incl_tax": 72,
+                "price_incl_tax": 32,
+                "base_price_incl_tax": 32,
+                "row_total_incl_tax": 64,
+                "base_row_total_incl_tax": 64,
                 "options": "[]",
                 "weee_tax_applied_amount": null,
                 "weee_tax_applied": null,
-                "name": "Driven Backpack"
+                "name": "Voyage Yoga Bag"
             }
         ],
         "total_segments": [
             {
                 "code": "subtotal",
                 "title": "Subtotal",
-                "value": 72
+                "value": 64
             },
             {
                 "code": "giftwrapping",
@@ -342,7 +345,7 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
             {
                 "code": "grand_total",
                 "title": "Grand Total",
-                "value": 72,
+                "value": 64,
                 "area": "footer"
             },
             {
@@ -408,4 +411,45 @@ Send the payment information to create an order.
 
 **Response:**
 
-An `orderID`, such as `3`
+An `orderID`, such as `6`
+
+## Mark order as ready for pick-up
+
+When the order is ready to be picked up, send a notification email to the customer.The payload contains an array of order IDs.
+
+This call creates a shipment.
+
+**Endpoint:**
+
+`POST <host>/rest/default/V1/order/notify-orders-are-ready-for-pickup`
+
+**Scope:**
+
+`default` store view
+
+**Headers:**
+
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <admin token>`
+
+**Payload:**
+
+```json
+{
+  "orderIds": [
+    6
+  ]
+}
+```
+
+**Response:**
+
+The response includes the success status as well as an array of error messages for each failed order.
+
+```json
+{
+  "successful": true,
+  "failed": []
+}
+```

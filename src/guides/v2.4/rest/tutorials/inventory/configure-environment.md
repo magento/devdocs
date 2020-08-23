@@ -27,6 +27,18 @@ For this tutorial, we'll assume that payment and delivery methods are configured
 
 {% include webapi/tutorials/configure-shipping-methods-24.md %}
 
+### Configure distance calculations {#instore-pickup}
+
+This tutorial uses an offline method to calculate distances for shipping and in-store pickup.
+
+1. Set the **Stores** > Settings > **Catalog** > **Inventory** > **Distance Provider for Distance Based SSA** > **Provider** field to **Offline calculation**.
+
+1. Run the following command to import US geocodes:
+
+   `bin/magento inventory-geonames:import us`
+
+   [Inventory CLI reference]({{page.baseurl}}/inventory/inventory-cli-reference.html#import-geocodes) provides additional information about this command.
+
 ## Deactivate a cart price rule
 
 By default, the Luma store includes a promotion where shipping is free if you spend at least $50. Since this tutorial shows shipping calculations, we need to deactivate this promotion. The promotion is defined in a cart price rule, which is also known as a sales rule. When you deactivate the cart price rule, shipping is charged at a flat rate of $5 per item.
