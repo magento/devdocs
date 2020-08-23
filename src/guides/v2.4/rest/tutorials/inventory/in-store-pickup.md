@@ -413,9 +413,9 @@ Send the payment information to create an order.
 
 An `orderID`, such as `6`
 
-## Mark order as ready for pick-up
+## Mark the order as ready for pick-up
 
-When the order is ready to be picked up, send a notification email to the customer.The payload contains an array of order IDs.
+When the order is ready to be picked up, send a notification email to the customer. The payload contains an array of order IDs.
 
 This call creates a shipment.
 
