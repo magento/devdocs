@@ -35,6 +35,7 @@ Complete the following prerequisites to prepare your environment before starting
 
      {:.bs-callout-info}
     Optionally, you can create a [custom maintenance mode page].
+-  **Check the status of cron jobs**—To prevent various unexpected problems during the upgrade, wait for all active running Magento cron jobs to finish or stop them.
 
 Using the more manual process of upgrading via the command line allows you to track and control exactly what is being changed in the upgrade.
 

@@ -63,21 +63,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 
 ### PHP
 
-Magento 2.4 supports PHP 7.3, but we recommend using PHP 7.4.
-
-```bash
-php -v
-```
-
-{% include install/php-versions-template.md %}
-
-You must run [PHP](https://glossary.magento.com/php) version 7.3 or 7.4:
-
-```terminal
-PHP 7.3.0 (cli) (built: Aug 14 2019 16:42:46) ( NTS )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2018, by Zend Technologies
-```
+{% include install/php-versions-2.4.md %}
 
 See [PHP][] for info on PHP requirements.
 
