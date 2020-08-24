@@ -92,6 +92,9 @@ To apply a patch to a {{site.data.var.ece}} project, see [Apply patches][].
 
 The [MQP package][] delivers individual patches developed by Magento and allows you to apply, revert, and view general information about all individual patches that are available for the installed version of {{ site.data.var.ee }} or {{ site.data.var.ce }}.
 
+{:.bs-callout-warning}
+We do not recommend using the MQP package to apply large numbers of patches because it increases the complexity of your code, which makes upgrading to a new version of Magento more difficult.
+
 #### Install the MQP package
 
 Add the `magento/quality-patches` Composer package to your `composer.json` file:
