@@ -9,7 +9,7 @@ functional_areas:
 
 The Magento Queuing system uses 'topic exchange' for managing messages. More information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html){:target="_blank"}.
 
-In Magento, topics are usually defined in a `communication.xml` configuration file. See [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml)
+In Magento, topics are usually defined in a `communication.xml` configuration file. See [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html#communicationxml)
 
 ### Generating of communication.xml
 
