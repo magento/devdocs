@@ -18,9 +18,9 @@ You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mg
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `magento/quality-patches` and {{ site.data.var.mcp-package }} to check for pending patches and applies them automatically in the following order:
 
-1. Apply required patches from Magento included in the {{ site.data.var.mcp-prod }} package.
-1. Apply selected Magento quality patches included in the Magento Quality Patches package.
-1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
+1. Apply all required Magento patches included in the {{ site.data.var.mcp-prod }} package.
+1. Apply selected optional Magento patches included in the Magento Quality Patches package.
+1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 {:.bs-callout-info}
 When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `apply patches` CLI command and redeploying your Cloud environment . You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
@@ -212,7 +212,7 @@ Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patchi
 ## Revert a patch to a local environment
 
 You can revert all optional and custom patches on a local development environment using the {{ site.data.var.ct }} CLI.  For required patches, you must revert each patch individually using the `git apply` command.
-To revert individual and custom patches:
+To revert all applied patches:
 
 ```bash
 php ./vendor/bin/ece-patches revert
@@ -221,8 +221,8 @@ php ./vendor/bin/ece-patches revert
 This command reverts all patches in the following order:
 
 -  Reverts all applied custom patches from the /m2-hotfixes directory.
--  Reverts all applied Magento Quality patches.
--  Reverts all applied Magento Cloud patches.
+-  Reverts all applied optional individual patches.
+-  Reverts all applied required patches.
 
 ## Logging
 
