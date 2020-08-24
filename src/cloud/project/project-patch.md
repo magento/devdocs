@@ -120,7 +120,7 @@ To apply individual patches in a local development environment:
 1. From the project root, apply the patches.
 
    ```bash
-   php ./vendor/bin/ece-tools patch
+   php ./vendor/bin/ece-patches apply
    ```
 
    The `{{ site.data.var.ct }} patch` command applies patches in the following order:
