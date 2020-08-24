@@ -33,8 +33,6 @@ The Magento Quality Patches package is a dependency for the {{ site.data.var.mcp
 
 ## View available patches and status
 
-You can list available patches for your version of Magento using `{{ site.data.var.ct }}`.
-
 To view the list of available individual patches:
 
 ```bash
@@ -209,9 +207,10 @@ To apply and test a custom patch on a Cloud environment:
 
 Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ce }} projects.
 
-## Revert a patch to a local environment
+## Revert a patch in a local environment
 
-You can revert all optional and custom patches on a local development environment using the {{ site.data.var.ct }} CLI.  For required patches, you must revert each patch individually using the `git apply` command.
+You can revert all optional and custom patches in a local development environment using the {{ site.data.var.ct }} CLI.  For required patches, you must revert each patch individually using the `git apply` command.
+
 To revert all applied patches:
 
 ```bash
