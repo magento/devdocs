@@ -20,7 +20,7 @@ See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html) for i
 
 ## v1.0.2
 
--  **MDVA-25602** _(for Magento `>=2.3.0 <2.3.2`, `>=2.3.0 <2.3.5`, `>=2.3.2 <2.3.3`, `>=2.3.3 <2.3.5`)_—Fixes issue with PayPal Payflow Pro payment method and treating cookies as SameSite=Lax by default in the Chrome 80 browser and API response redirect to customer login page.
+-  **MDVA-25602** _(for Magento `2.3.0 - 2.3.4`)_—Fixes issue with PayPal Payflow Pro payment method and treating cookies as SameSite=Lax by default in the Chrome 80 browser and API response redirect to customer login page.
 -  **MDVA-26694** _(for Magento `>=2.3.0 <=2.3.5-p2 || 2.4.0`)_—Fixes the issue with product and catalog caches expiring daily, though being scheduled to expire differently.
 -  **MDVA-27825** _(for Magento `>=2.3.0 <=2.3.5-p2 || 2.4.0`)_—Fixes an issue where exporting of big amounts of data failed because of memory leak.
 -  **MDVA-29085** _(for Magento `>=2.3.0 <=2.3.5-p1`)_—Fixes a B2B issue where no required new company emails are sent out if a company is created by API.
