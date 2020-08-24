@@ -209,7 +209,7 @@ Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patchi
 
 ## Revert a patch in a local environment
 
-You can revert all optional and custom patches in a local development environment using the {{ site.data.var.ct }} CLI.  For required patches, you must revert each patch individually using the `git apply` command.
+You can revert all previously applied patches in a local development environment using the `ece-patches` CLI.
 
 To revert all applied patches:
 
