@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: productReviewRatingsMeta query
+title: productReviewRatingsMetadata query
 ---
 
 The `productReviewRatingsMetadata` query returns the active ratings attributes and the values each rating can have. In Luma, these values are one star through five stars.
