@@ -10,6 +10,8 @@ Deploying Product Recommendations to your storefront requires that you install, 
 
 ## Install Product Recommendations {#install}
 
+Because the Product Recommendations module is a stand-alone metapackage, updates are released more frequently than Magento Commerce. To make sure you are up-to-date with the latest bug fixes and features, refer to the [release notes]({{ page.baseurl }}/recommendations/release-notes.html).
+
 Install the `magento/product-recommendations` module with Composer:
 
    ```bash
@@ -43,22 +45,22 @@ Like all of Magento, Product Recommendations uses Composer for installation and 
 composer update magento/product-recommendations --with-dependencies
 ```
 
-If you need to update to a major version, such as from 1.0 to 2.0, you need to edit your project's root `composer.json` file. For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
-
-```json
-"require": {
-    ...
-    "magento/product-recommendations": "^1.0",
-    ...
-}
-```
-
-Let's bump the major version from `1.0` to `2.0`:
+If you need to update to a major version, such as from 2.0 to 3.0, you need to edit your project's root `composer.json` file. For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
 
 ```json
 "require": {
     ...
     "magento/product-recommendations": "^2.0",
+    ...
+}
+```
+
+Let's bump the major version from `2.0` to `3.0`:
+
+```json
+"require": {
+    ...
+    "magento/product-recommendations": "^3.0",
     ...
 }
 ```

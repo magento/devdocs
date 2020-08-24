@@ -56,7 +56,7 @@ curl -X GET \
 ]
 ```
 
-*  The `status` field indicates the overall result of the review, which can be `pass`, `fail`, `error`, or `needs_review`.
+The `status` field indicates the overall result of the review, which can be `pass`, `fail`, `error`, or `needs_review`.
 
 Additional details for each review can be found using the status API with the tool name and the tool run ID.
 
@@ -185,9 +185,9 @@ curl -X GET \
 }
 ```
 
-### Copy/Paste Detector (PHPCPD)
+### Copy/Paste Detector (PHPCPD) {#cpd}
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 CPD reports cannot be directly requested. Only the summary data is available through the API.
 
 ### Varnish
@@ -247,7 +247,7 @@ curl -X GET \
 }
 ```
 
-*  The last command/output step in the details section is the command that failed to execute successfully.
+The last command/output step in the details section is the command that failed to execute successfully.
 
 ### Marketing and Manual QA
 

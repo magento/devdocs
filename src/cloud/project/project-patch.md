@@ -6,14 +6,25 @@ functional_areas:
   - Upgrade
 ---
 The [{{site.data.var.mcp-prod}}](https://github.com/magento/magento-cloud-patches) package
-delivers Magento patches and hot fixes, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical fixes. The package can also deliver custom patches that you add to your project root directory.
+delivers Magento patches, which improve the integration of all `{{site.data.var.ee}}` versions with Cloud environments and supports quick delivery of critical and custom fixes.
 
-The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
+The {{ site.data.var.mcp }} package is a dependency for the {{site.data.var.ct}} package and is installed or updated when you install or update the {{ site.data.var.ct }} package version. You can also use and manage the {{ site.data.var.mcp-prod }} as a stand-alone package for an existing {{ site.data.var.ee }} project.
+
+The {{ site.data.var.mcp-prod }} package can deliver the following patch types:
+
+-  Required patches included in the {{ site.data.var.mcp-prod }} package
+
+-  Optional Magento patches included in the `/m2-hotfixes` directory
+
+-  Custom patches included in the `/m2-hotfixes` directory
 
 When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `{{site.data.var.mcp-package}}` to check for pending patches and applies them automatically in the following order:
 
-1. Apply Magento-provided patches included in the `{{site.data.var.mcp-package}}` package.
-1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
+1. Apply required patches from Magento included in the `{{site.data.var.mcp-package}}` package.
+1. Apply optional and custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
+
+{:.bs-callout-info}
+When you update `{{site.data.var.ct}}` or the `{{site.data.var.mcp-prod}}` package, the latest required patches are applied automatically the next time you deploy your project. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
 
 You can also apply patches manually.
 
@@ -83,7 +94,7 @@ To apply and test a custom patch:
 
 ## Apply patches to a Magento enterprise or open source project
 
-You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magento patches and hot fixes to a Magento project that is not deployed on the Cloud platform.
+You can use `{{site.data.var.mcp-prod}}` as a stand-alone package to apply Magento patches and hotfixes to a Magento project that is not deployed on the Cloud platform.
 
 {:.procedure}
 To use magento-cloud-patches as a stand-alone package:

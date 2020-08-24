@@ -3,13 +3,13 @@ group: marketplace-api
 title: Files
 ---
 
-Use `files` resources to manage all code artifacts and assets associated with an extension or a theme:
+Use the `files` resource to manage all artifacts that you upload:
 
--  Magento 1 tarball (.tgz)
 -  Magento 2 ZIP files (.zip)
--  Image files for logos and galleries
--  Product Icons
--  PDF documents for User Guides, Installation Guides, and Reference Guides
+-  PDF documents for user guides, installation guides, and reference manuals
+-  Product icons
+-  Image files for galleries
+-  Image files for your personal and company profile
 
 Each file upload receives a unique ID. You must associate these IDs with your submission later using the [packages API](packages.html).
 
@@ -210,4 +210,4 @@ Each record in the list has the following fields:
 |size|integer|The size of the file in bytes.|
 |file_upload_id|string|A unique identifier for the file.|
 
-The `file_upload_id` must be tracked for subsequent package submission APIs.
+The `file_upload_id` must be tracked for subsequent package submission API endpoints.
