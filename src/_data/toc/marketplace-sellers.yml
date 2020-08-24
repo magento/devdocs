@@ -19,7 +19,7 @@ pages:
   versionless: true
   children:
 
-    - label: Your Seller Account
+    - label: Set Up Developer Account
       url: /marketplace/sellers/account-setup.html
       versionless: true
 
