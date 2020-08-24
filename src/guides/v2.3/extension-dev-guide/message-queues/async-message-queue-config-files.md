@@ -25,7 +25,7 @@ and provides the `queue_topology.xml` and `queue_consumer.xml` file within the `
 
 ### communication.xml
 
-Information about the auto-generation of `communication.xml` can be found in [Topics in Asynchronous API]({{ page.baseurl }}/extension-dev-guide/message-queues/async-topics.md)
+Information about the auto-generation of `communication.xml` can be found in [Topics in Asynchronous API]({{ page.baseurl }}/extension-dev-guide/message-queues/async-topics.html)
 
 ### queue_publisher.xml
 
