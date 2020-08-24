@@ -13,7 +13,7 @@ functional_areas:
   - Integration
 ---
 
-The in-store pickup feature allows shoppers to select a physical location wear they can pick up an entire order. As a result, any orders that are fulfilled with this method bypass the shipping steps in the standard workflow.
+The in-store pickup feature allows shoppers to select a physical location where they can pick up an entire order. As a result, any orders that are fulfilled with this method bypass the shipping steps in the standard workflow.
 
 An order must meet the following requirements to be eligible for in-store pickup:
 
@@ -199,7 +199,7 @@ The customer has chosen to pick up the order at the Brooklyn store. Once again, 
 
 *  The shipping address is that of the Brooklyn store but includes the customer's first and last name to help the store personnel identify who placed the order. The shipping address also includes the `pickup_location_code` extension attribute.
 
-*  The billing address includes ID of the customer's billing address. In [Step 6. Create a customer and generate a customer token]({{page.baseurl}}/rest/tutorials/inventory/create-customer.html), the `POST /V1/customers` endpoint returned an address ID of `2`.
+*  The billing address includes the customer's billing address ID. In [Step 6. Create a customer and generate a customer token]({{page.baseurl}}/rest/tutorials/inventory/create-customer.html), the `POST /V1/customers` endpoint returned an address ID of `2`.
 
 *  The `shipping_method_code` and `shipping_carrier_code` attributes are set to `pickup` and `instore`, respectively.
 
