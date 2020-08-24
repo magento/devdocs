@@ -5,13 +5,15 @@ title: productReviewRatingsMeta query
 
 The `productReviewRatingsMetadata` query returns the active ratings attributes and the values each rating can have. In Luma, these values are one star through five stars.
 
+Use the [`createProductReview` mutation]({{page.baseurl}}/graphql/mutations/create-product-review.html) to add a product review.
+
 ## Syntax
 
 `productReviewRatingsMetadata: ProductReviewRatingsMetadata!`
 
 ## Example usage
 
-The following query returns the metadata for all active ratings attributes.
+The following query returns the metadata for all active ratings attributes. In this example, the default `Rating` attribute has been renamed to `Overall`, and the `Quality` and `Value` attributes have been enabled.
 
 **Request:**
 
@@ -38,34 +40,8 @@ query {
     "productReviewRatingsMetadata": {
       "items": [
         {
-          "id": "MQ==",
-          "name": "Quality",
-          "values": [
-            {
-              "value_id": "MQ==",
-              "value": "1"
-            },
-            {
-              "value_id": "Mg==",
-              "value": "2"
-            },
-            {
-              "value_id": "Mw==",
-              "value": "3"
-            },
-            {
-              "value_id": "NA==",
-              "value": "4"
-            },
-            {
-              "value_id": "NQ==",
-              "value": "5"
-            }
-          ]
-        },
-        {
           "id": "NA==",
-          "name": "Rating",
+          "name": "Overall",
           "values": [
             {
               "value_id": "MTY=",
@@ -90,27 +66,27 @@ query {
           ]
         },
         {
-          "id": "Mw==",
-          "name": "Price",
+          "id": "MQ==",
+          "name": "Quality",
           "values": [
             {
-              "value_id": "MTE=",
+              "value_id": "MQ==",
               "value": "1"
             },
             {
-              "value_id": "MTI=",
+              "value_id": "Mg==",
               "value": "2"
             },
             {
-              "value_id": "MTM=",
+              "value_id": "Mw==",
               "value": "3"
             },
             {
-              "value_id": "MTQ=",
+              "value_id": "NA==",
               "value": "4"
             },
             {
-              "value_id": "MTU=",
+              "value_id": "NQ==",
               "value": "5"
             }
           ]
