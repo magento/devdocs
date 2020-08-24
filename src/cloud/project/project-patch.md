@@ -23,7 +23,7 @@ When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `
 1. Apply custom patches in the `/m2-hotfixes` directory in alphabetical order by patch name.
 
 {:.bs-callout-info}
-When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `apply patches` CLI command and redeploying your Cloud environment . You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
+When you update `{{ site.data.var.ct }}` or the {{ site.data.var.mcp-prod }} package, the latest required patches are applied the next time you deploy your project, or you can deploy them immediately using the `ece-patches apply` CLI command and redeploying your Cloud environment. You cannot skip [required patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) during the deployment process.
 
 ## Prerequisites
 
