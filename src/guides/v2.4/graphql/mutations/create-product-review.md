@@ -50,6 +50,8 @@ The `CreateProductReviewOutput` output object contains the following attribute:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-review | ProductReview! | Contains the completed product review
+`review` | ProductReview! | Contains the completed product review
 
-### ProductReview object {#ProductReview}
+### ProductReview attributes {#ProductReview}
+
+{% include graphql/product-review.md %}

@@ -501,6 +501,19 @@ Attribute |  Data Type | Description
 
 {% include graphql/customer-orders-output.md %}
 
+#### ProductReviews object {#ProductReviews}
+
+`ProductReviews` contains an array of reviews written about the product.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [ProductReview]! | An array of product reviews
+`page_info` | [SearchResultPageInfo]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
+
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
+
 ### Wishlist attributes {#Wishlist}
 
 Attribute | Data type | Description
