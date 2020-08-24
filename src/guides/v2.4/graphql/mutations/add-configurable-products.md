@@ -3,6 +3,9 @@ group: graphql
 title: addConfigurableProductsToCart mutation
 ---
 
+{:.bs-callout-warning}
+Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+
 Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
 
 ## Syntax
