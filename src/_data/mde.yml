@@ -211,7 +211,7 @@ extensions:
     name: Product Recommendations
     versions:
       -
-        name: 3.0.4
+        name: 3.0.4+
         support:
           2.3.0: supported
           2.3.1: supported
@@ -239,4 +239,14 @@ extensions:
           2.3.3: supported
           2.3.4: supported
           2.3.5-p1: supported
+          2.4.0: not supported
+      -
+        name: 1.x.x
+        support:
+          2.3.0: not supported
+          2.3.1: not supported
+          2.3.2: not supported
+          2.3.3: not supported
+          2.3.4: not supported
+          2.3.5-p1: not supported
           2.4.0: not supported

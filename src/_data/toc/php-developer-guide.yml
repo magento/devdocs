@@ -231,6 +231,9 @@ pages:
         - label: Adding an admin grid
           url: /extension-dev-guide/admin-grid.html
 
+        - label: Price adjustments
+          url: /extension-dev-guide/price-adjustments.html
+
         - label: Searching with repositories
           url: /extension-dev-guide/searching-with-repositories.html
 

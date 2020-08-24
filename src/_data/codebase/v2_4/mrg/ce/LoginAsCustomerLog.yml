@@ -4,4 +4,7 @@ source_repo: magento2ce
 release: 2.4.0
 github_path: app/code/Magento/LoginAsCustomerLog/README.md
 last_modified_at: '2020-05-04 17:44:22 +0300'
-content: ''
+content: 'The Magento_LoginAsCustomerLog module provides log for Login as Customer
+  functionality
+
+  '

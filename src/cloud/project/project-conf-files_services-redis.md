@@ -17,17 +17,17 @@ To enable Redis:
 
 1. Add the required name and type to the `.magento/services.yaml` file.
 
-  ```yaml
-  myredis:
-      type: redis:<version>
-  ```
+   ```yaml
+   myredis:
+       type: redis:<version>
+   ```
 
-  To provide your own Redis configuration, add a `core_config` key in your `.magento/services.yaml` file:
+   To provide your own Redis configuration, add a `core_config` key in your `.magento/services.yaml` file:
 
-  ```yaml
-  cache:
-      type: redis:<version>
-  ```
+   ```yaml
+   cache:
+       type: redis:<version>
+   ```
 
 1. Configure the relationships in the `.magento.app.yaml` file.
 
@@ -47,6 +47,8 @@ To enable Redis:
    ```
 
 1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+
+{%include cloud/tip-change-installed-service-version.md%}
 
 ## Using the Redis CLI
 
