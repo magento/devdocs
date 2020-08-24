@@ -123,7 +123,7 @@ To apply individual patches in a local development environment:
    php ./vendor/bin/ece-patches apply
    ```
 
-   The `{{ site.data.var.ct }} patch` command applies patches in the following order:
+   The `ece-patches apply` command applies patches in the following order:
 
    -  Required patches
    -  Optional individual patches
