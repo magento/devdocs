@@ -16,34 +16,16 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 -  {:.bug}Known issues -->
 
 {:.bs-callout-info}
-See [Apply patches]({{site.baseurl}}/cloud/project/project-patch.html) for instructions on applying patches to your Magento projects.
+See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html) for instructions on applying patches to your Magento projects.
 
-## v1.0.2 example 1
+## v1.0.2
 
-{:.bs-callout-warning}
-**Editorial note:** The following release notes sample (complete) is raw, unmodified output from our markdown conversion tool.
-
--  MDVA-26694: Product and catalog caches will expire as scheduled. Previously, caches expire daily, as cron runs the `catalogrule_apply_all` task once a day which re-indexes all the catalog rules and its dependent indexers and clears the cache for all products and categories.
--  MDVA-27825: Memory leak prevented by adding clearing of Customer objects in \Magento\Framework\Model\ResourceModel\Db\VersionControl\Snapshot class
--  MDVA-29085: After the company has been created through the API, the intended plugin will check if the company is created and dispatch the two emails accordingly.
--  MDVA-29344:
--  MDVA-29835: Issue fixed: Two gift card codes can be seen for the order.
--  Root Cause: cron jobs called \Magento\GiftCard\Observer\GenerateGiftCardAccountsInvoice::execute() and this method did not check if giftcard codes already were generated during invoice creation":
--  MDVA-29883: Code was not storing false values for custom attributes in Elastic Search, so filter was possible using "No" for boolean attributes using layered navigation. To address that, some boolean checks have been replaces for null checks, and an array_filter call has been erased completely as no callback function was provided in it, thus always returning false as "all entries of array equal to FALSE (see converting to boolean) will be removed".
--  MDVA-30052: Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom *etc/frontend/sections.xml* with action invalidations). See https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html#invalidate-private-content
--  :
--  MDVA-30131: Issue fixed: "No" values are not included in layered nav aggregation options when using ElasticSearch as the search engine. This affected storefront and GraphQl scenarios in the same way.
--  :
--  Root cause: There were issues due to the way PHP handles false values.":
-
-## v1.0.2 example 2
-
-{:.bs-callout-warning}
-**Editorial note:** The following release notes sample (incomplete) manually structured and entered from the 1.0.2 [`patches.json`](https://github.com/magento/quality-patches/pull/28/files#diff-2946f7f291517d21cc254a82219fdb51) file in the package repo.
-
--  **Patches for Magento 2.3.0 - 2.4.0**
-   -  **MDVA-26694**—Product and catalog caches will expire as scheduled. Previously, caches expire daily, as сron runs the `catalogrule_apply_all` task once a day which re-indexes all the catalog rules and its dependent indexers and clears the cache for all products and categories.
-   -  **MDVA-27825**—Big data customer export issue. Memory leak prevented by adding clearing of Customer objects in `\\Magento\\Framework\\Model\\ResourceModel\\Db\\VersionControl\\Snapshot` class.
-
--  **Patches for Magento 2.3.2-p2 - 2.3.5**
-   -  **MDVA-30052**—Customer data section invalidation logic has been improved. This release introduces a new way of invalidating all customer sections data that avoids a known issue with local storage when custom `sections.xml` invalidations are active. (Previously, private content (local storage) was not correctly populated when you had a custom `etc/frontend/sections.xml` with action invalidations).
+-  **MDVA-25602** _(For Magento `>=2.3.0 <2.3.2`, `>=2.3.0 <2.3.5`, `>=2.3.2 <2.3.3`, `>=2.3.3 <2.3.5`)_—Fixes issue with PayPal Payflow Pro payment method and treating cookies as SameSite=Lax by default in the Chrome 80 browser and API response redirect to customer login page.
+-  **MDVA-26694** _(For Magento `>=2.3.0 <=2.3.5-p2 || 2.4.0`)_—Fixes the issue with product and catalog caches expiring daily, though being scheduled to expire differently.
+-  **MDVA-27825** _(For Magento `>=2.3.0 <=2.3.5-p2 || 2.4.0`)_—Fixes an issue where exporting of big amounts of data failed because of memory leak.
+-  **MDVA-29085** _(For Magento `>=2.3.0 <=2.3.5-p1`)_—Fixes a B2B issue where no required new company emails are sent out if a company is created by API.
+-  **MDVA-29344** _(For Magento `>=2.3.5 <=2.3.5-p2 || 2.4.0`)_—Fixes an issue where Page Builder gets stuck after copying text from a header element to a text element.
+-  **MDVA-29835** _(For Magento `>2.3.1 <=2.3.5-p2 || 2.4.0`)_—Fixes an issue where gift card orders contained two codes instead one.
+-  **MDVA-30052** _(For Magento `>=2.3.2-p2 <2.3.5`)_—Fixes the issue with private content (local storage) not being populated correctly, which resulted in performance problems.
+-  **MDVA-30131** _(For Magento `>=2.3.4 <=2.3.5-p2 || 2.4.0`)_—Fixes the issue with layered navigation, where the `No` value for boolean type product attributes was not included in layered navigation if Elasticsearch was used as a search engine.
+-  **MDVA-35514** _(For Magento `2.4.0`)_—Fixes an issue with creating a shipping label and adding ordered products to a package in the Create Packages modal window.
