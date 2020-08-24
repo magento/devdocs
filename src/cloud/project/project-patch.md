@@ -16,7 +16,7 @@ Both packages improve the integration of all {{site.data.var.ee}} versions with 
 {:.bs-callout-tip}
 You can use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) and [{{ site.data.var.mcp-prod }}](#standalone) packages as stand-alone packages for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects. We recommend using the Magento Quality Patches package for non-Cloud projects.
 
-When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses `magento/quality-patches` and {{ site.data.var.mcp-package }} to check for pending patches and applies them automatically in the following order:
+When you deploy changes to the remote environment, `{{site.data.var.ct}}` uses {{ site.data.var.mcp-package }} and `magento/quality-patches` to check for pending patches and applies them automatically in the following order:
 
 1. Apply all required Magento patches included in the {{ site.data.var.mcp-prod }} package.
 1. Apply selected optional Magento patches included in the Magento Quality Patches package.
@@ -201,11 +201,11 @@ To apply and test a custom patch on a Cloud environment:
    ```
 
    {:.bs-callout-info}
-   Make sure to test all patches in a pre-production environment. For Magento Cloud, new branches can be created with the `magento-cloud environment:branch <branch-name>` CLI command.
+   Make sure to test all patches in a pre-production environment. For Magento Cloud, you can create new branches with the `magento-cloud environment:branch <branch-name>` CLI command.
 
 ## Apply patches to a non-Cloud project {#standalone}
 
-Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ce }} projects.
+Use the [Magento Quality Patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html#mqp) package for {{ site.data.var.ce }} and {{ site.data.var.ee }} projects.
 
 ## Revert a patch in a local environment
 
