@@ -7,13 +7,13 @@ functional_areas:
   - Services
 ---
 
-Magento Queuing system is using topics exchange for managing messages. More detailed information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html){:target="_blank"}.
+The Magento Queuing system uses 'topic exchange' for managing messages. More information about topics can be found [here](https://www.rabbitmq.com/tutorials/tutorial-five-python.html){:target="_blank"}.
 
-In Magento, topics are usually defined in `communication.xml` configuration files. See [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml)
+In Magento, topics are usually defined in a `communication.xml` configuration file. See [Configure message queues]({{ page.baseurl }}/guides/v2.4/extension-dev-guide/message-queues/config-mq.html#communicationxml)
 
 ### Generating of communication.xml
 
-`communication.xml` for asynchronous API, is pre-generated automatically by `WebapiAsync` module. This module also automatically generating topic names for asynchronous processes. File generation processed by `\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Communication` class, which implements `\Magento\Framework\Config\ReaderInterface` and injected into `\Magento\Framework\Communication\Config\CompositeReader` constructor argument of main `di.xml` file.
+A `communication.xml` is pre-generated automatically by the `WebapiAsync` module. This module also generates topic names for asynchronous processes. Generated files are processed by the `\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Communication` class, which implements `\Magento\Framework\Config\ReaderInterface` and is injected into `\Magento\Framework\Communication\Config\CompositeReader` as a constructor argument of the main `di.xml` file.
 
 ```xml
 <type name="Magento\Framework\Communication\Config\CompositeReader">
@@ -30,19 +30,19 @@ In Magento, topics are usually defined in `communication.xml` configuration file
 </type>
 ```
 
-Sort order is set to 0 and this allows developers to change some aspects of generated configuration in the config readers such as `communication.xml`, `env.php`.
+Sort order is set to 0 by default. This allows developers to change some aspects of the generated configuration in configuration readers, such as `communication.xml`, `env.php`.
 
-`\Magento\Framework\Communication\Config\CompositeReader::read()` collects configuration records from defined readers and merges these records into one config.
+`\Magento\Framework\Communication\Config\CompositeReader::read()` collects configuration records from defined readers and merges these records into a single configurataion.
 
-Because the generation of topics config is based on schema type, generated `<topic>` XML, by default will be returned with `"sync"=true` and `response` based on service response definition. So `WebapiAsync` module will change those settings to `"sync"=false` and `response` set to null. These changes will allow to execute topics in asynchronous mode.
+Because the generation of thge topics configuration is based on schema type, the generated `<topic>` XML is returned with `"sync"=true`. The `response` attribut is based on the service response definition. So the `WebapiAsync` module changes those settings to `"sync"=false` and `response` is set to null. These changes will allow Magento to execute topics asynchronously.
 
 ### Topics generation
 
-Asynchronous and Bulk APIs were built on top of standard Rest API. Topics for messages processing of the Asynchronous and Bulk APIs are generated automatically, together with `communication.xml` schema. This is done by `\Magento\WebapiAsync\Model\Config::getServices()`. Current method is responsible for retrieving all service contracts defined in `webapi.xml` files and generate topic names for corresponding asynchronous requests.
+Asynchronous and Bulk APIs are built on top of the standard Rest API. Topics for message processing fo asynchronous and bulk APIs are generated automatically, together with the `communication.xml` schema. This is done by `\Magento\WebapiAsync\Model\Config::getServices()`. The current method is responsible for retrieving all service contracts defined in `webapi.xml` files and generates topic names for the corresponding asynchronous requests.
 
-`generateTopicNameFromService($serviceInterface, $serviceMethod, $httpMethod)` is responsible for generating topic name based on Service Contract interface, Service Contract method and HTTP method.
+`generateTopicNameFromService($serviceInterface, $serviceMethod, $httpMethod)` is responsible for generating a topic name based on the service contract interface, the service contract method, and the HTTP method.
 
-As example, from route defined in `webapi.xml`:
+As example, the route defined in `webapi.xml`:
 
 ```xml
 <route url="/V1/products" method="POST">
@@ -53,7 +53,7 @@ As example, from route defined in `webapi.xml`:
 </route>
 ```
 
-will be generated the following topic name:
+will generate the following topic name:
 
 `async.magento.catalog.api.productrepositoryinterface.save.post`.
 
@@ -64,4 +64,4 @@ It consists of following parts:
 *  lower cased service method
 *  lover cased http method
 
-Unfortunately there are no easy way to receive list of all generated topic names, but knowing this pattern developers can easily find required topic name and use it for executing of service contracts in asynchronous manner.
+Unfortunately, there are no easy way to get a list of all generated topic names, but knowing this pattern, developers can find the required topic name and use it for executing service contracts in asynchronously.
