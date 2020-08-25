@@ -575,6 +575,10 @@ Attribute |  Data Type | Description
 `balance_change` | Money | The amount added to or subtracted from the store credit as a result of this action
 `date_time_changed` | String | Date and time when the store credit change was made
 
+### Wishlist attributes {#Wishlist}
+
+{% include graphql/wishlist.md %}
+
 ## Related topics
 
 *  [isEmailAvailable query]({{page.baseurl}}/graphql/queries/is-email-available.html)

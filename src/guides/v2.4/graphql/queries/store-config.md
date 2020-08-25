@@ -297,6 +297,7 @@ Attribute | Data Type | Description | Default or example value
 `magento_reward_points_register` | String | The number of points a customer gets for registering | null
 `magento_reward_points_review_limit` | String | The maximum number of reviews that qualify for  rewards. A null value indicates no limit | null
 `magento_reward_points_review` | String | The number of points for writing a review | null
+`magento_wishlist_general_is_enabled` | String | Indicates whether wish lists are enabled (1) or disabled (0)
 `minimum_password_length` | String | The minimum number of characters required for a valid password. <br/>Configuration path: customer/password/minimum_password_length | 6
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs | `cms/noroute/index`
 `payment_payflowpro_cc_vault_active` | String | Payflow Pro vault status | `0` (inactive) or `1` (active)
