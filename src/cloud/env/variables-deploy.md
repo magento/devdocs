@@ -382,18 +382,26 @@ stage:
 ### `REDIS_BACKEND`
 
 -  **Default**—`Cm_Cache_Backend_Redis`
--  **Version**—Magento 2.3.5 and later
+-  **Version**—Magento 2.3.0 and later
 
 Specifies the backend model configuration for the Redis cache.
 
-Magento version 2.3.5 and later includes the following backend models:
+Magento version 2.3.0 and later includes the following backend models:
 
 -  `Cm_Cache_Backend_Redis`
 -  `\Magento\Framework\Cache\Backend\Redis`
 -  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
+The example how to set `REDIS_BACKEND`
+
+```yaml
+stage:
+  deploy:
+    REDIS_BACKEND: '\Magento\Framework\Cache\Backend\RemoteSynchronizedCache'
+```
+
 {:.bs-callout-info}
-See [L2 caching in the Magento application]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) for details on selecting the backend model for Redis caching.
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 

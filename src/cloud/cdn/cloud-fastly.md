@@ -93,7 +93,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
--  The Fastly service protects against Layer 7 attacks by applying custom rules (using VCLs) that can inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify attack traffic.
+-  Fastly also provides protection against Layer 7 attacks.  If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a Magento support ticket. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify the attack traffic. See [Checking for DDoS attacks](https://support.magento.com/hc/en-us/articles/360030941932) in the *Magento Help Center*.
 
 ## Fastly and 503 timeouts {#timeouts}
 
