@@ -141,6 +141,10 @@ pages:
         - label: addDownloadableProductsToCart mutation
           url: /graphql/mutations/add-downloadable-products.html
 
+        - label: addProductsToWishlist mutation
+          url: /graphql/mutations/add-products-to-wishlist.html
+          exclude_versions: ["2.3"]
+
         - label: addSimpleProductsToCart mutation
           url: /graphql/mutations/add-simple-products.html
 
@@ -220,6 +224,10 @@ pages:
         - label: removeItemFromCart mutation
           url: /graphql/mutations/remove-item.html
 
+        - label: removeProductsFromWishlist mutation
+          url: /graphql/mutations/remove-products-from-wishlist.html
+          exclude_versions: ["2.3"]
+
         - label: removeRewardPointsFromCart mutation
           url: /graphql/mutations/remove-reward-points.html
           edition: ee-only
@@ -289,6 +297,10 @@ pages:
 
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
+
+        - label: updateProductsInWishlist mutation
+          url: /graphql/mutations/update-products-in-wishlist.html
+          exclude_versions: ["2.3"]
 
     - label: Catalog data types and interfaces
       children:
