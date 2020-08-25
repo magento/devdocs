@@ -4,6 +4,8 @@ title: Web Application Firewall (WAF)
 functional_areas:
   - Cloud
   - Install
+  - Security
+  - Compliance
 ---
 
 Powered by Fastly, the web application firewall (WAF) service for {{ site.data.var.ece }} detects, logs, and blocks malicious request traffic before it can damage your sites or network. The WAF service is available on production environments only.

@@ -26,7 +26,7 @@ If you encounter errors on deployment or other issues when testing, check the lo
 
 The deployment log is located in `/var/log/platform/<prodject ID>/deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
 
-When accessing logs in Production or Staging environments, you must use SSH to log in to each of the three nodes to locate the logs. See [Log locations]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
+When accessing logs in Production or Staging environments, you can use SSH to log in to each of the three nodes to locate the logs. Or, you can use the New Relic Logs service to view and query aggregated log data from all nodes. See [View logs]({{ site.baseurl }}/cloud/project/log-locations.html#application-logs).
 
 {%include cloud/note-error-message-reference-ece-tools.md%}
 
@@ -228,23 +228,23 @@ You can use the Magento Functional Testing Framework (MFTF) to complete function
 
 We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool][].
 
-<!--Link definitions>
+<!--Link definitions-->
 
 [Migrate data and static files]: {{ site.baseurl }}/cloud/live/stage-prod-migrate.html
 [Starter]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
 [Pro]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls
-[Log locations]: {{ site.baseurl }}/cloud/project/log-locations
+[View logs]: {{ site.baseurl }}/cloud/project/log-locations
 [Configuring Fastly]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html
-[Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains
+[Testing before changing DNS]: https://docs.fastly.com/en/guides/testing-setup-before-changing-domains
 [Access info]: {{ site.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls
 [`Cache-Control: max-age`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9
 [`Pragma`]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32
 [Set up Fastly]: {{ site.baseurl }}/cloud/cdn/cloud-fastly.html
 [Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
-[Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit)
-[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deployhtml#ttfb_tested_pages
-[Siege](https://www.joedog.org/siege-home/
-[Jmeter]: http://jmeter.apache.org/
+[Magento Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
+[Magento application performance test]: {{ site.baseurl }}/cloud/env/variables-post-deploy.html#ttfb_tested_pages
+[Siege]: https://www.joedog.org/siege-home/
+[Jmeter]: https://jmeter.apache.org/
 [WebPageTest]: https://www.webpagetest.org/
 [Pingdom]: https://www.pingdom.com/
 [Magento application testing]: {{site.baseurl}}/cloud/docker/docker-test-app-mftf.html

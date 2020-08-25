@@ -82,15 +82,11 @@ pages:
           url: /cloud/project/project-start.html
           versionless: true
 
-        - label: Log locations
-          url: /cloud/project/log-locations.html
-          versionless: true
-
         - label: Manage user access
           url: /cloud/project/user-admin.html
           versionless: true
 
-        - label: Enable MFA enforcement for SSH
+        - label: Enable MFA for SSH
           url: /cloud/project/project-enable-mfa-enforcement.html
           versionless: true
 
@@ -108,6 +104,10 @@ pages:
 
         - label: Monitor performance
           url: /cloud/project/monitor-performance.html
+          versionless: true
+
+        - label: View logs
+          url: /cloud/project/log-locations.html
           versionless: true
 
         - label: Snapshots and backup management
@@ -184,6 +184,10 @@ pages:
           children:
             - label: Xdebug for Docker
               url: /cloud/docker/docker-development-debug.html
+              versionless: true
+
+            - label: Set up multiple websites or stores
+              url: /cloud/docker/docker-multi-website.html
               versionless: true
 
             - label: Manage the database
@@ -507,8 +511,8 @@ pages:
           url: /cloud/live/stage-prod-test.html
           versionless: true
 
-        - label: Error log message reference
-          url: /cloud/reference/error-codes.html
+        - label: Error message reference for ece-tools
+          url: /cloud/reference/ece-tools-error-reference.html
           versionless: true
 
     - label: Site launch
