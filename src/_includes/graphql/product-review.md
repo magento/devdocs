@@ -3,7 +3,7 @@ The `ProductReview` object contains details about a product review. It contains 
 Attribute |  Data Type | Description
 --- | --- | ---
 `average_rating` | Float! | The average rating for product review
-`created_at` | String! | Date indicating when the review was created.")
+`created_at` | String! | Date indicating when the review was created
 `nickname` | String! | The customer's nickname. Defaults to the customer name, if logged in
 `product` | ProductInterface! | Contains details about the reviewed product
 `ratings_breakdown` | [ProductReviewRating!]! | An array of ratings by rating category, such as quality, price, and value
