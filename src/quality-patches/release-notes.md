@@ -18,7 +18,7 @@ The [Magento Quality Patches](https://github.com/magento/quality-patches) packag
 {:.bs-callout-info}
 See [Apply patches]({{ site.baseurl }}/guides/v2.4/comp-mgr/patching.html) for instructions on applying patches to your Magento projects.
 
-## v1.0.2
+## v1.0.3
 
 -  **MDVA-25602** _(for Magento `2.3.0 - 2.3.4`)_—Fixes issue with PayPal Payflow Pro payment method and treating cookies as SameSite=Lax by default in the Chrome 80 browser and API response redirect to customer login page.
 -  **MDVA-26694** _(for Magento `>=2.3.0 <=2.3.5-p2 || 2.4.0`)_—Fixes the issue with product and catalog caches expiring daily, though being scheduled to expire differently.
