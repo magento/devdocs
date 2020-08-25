@@ -98,7 +98,7 @@ We do not recommend using the MQP package to apply large numbers of patches be
 #### Install the MQP package
 
 {:.bs-callout-info}
-You must install [Git](https://github.com/git-guides/install-git) before installing the MQP package.
+If it is not already installed, you must install [Git](https://github.com/git-guides/install-git) before installing the MQP package.
 
 Add the `magento/quality-patches` Composer package to your `composer.json` file:
 
