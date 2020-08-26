@@ -62,6 +62,8 @@ To enable Elasticsearch:
    bin/magento cache:clean
    ```
 
+{%include cloud/tip-change-installed-service-version.md%}
+
 ## Elasticsearch software compatibility
 
 When you install or upgrade your {{ site.data.var.ece }} project, always check for compatibility between the Elasticsearch service version and the [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php) client for {{ site.data.var.ee }}.
