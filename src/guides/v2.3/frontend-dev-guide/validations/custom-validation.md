@@ -54,7 +54,7 @@ define(['jquery'], function($) {
 ## Modify an existing validation message
 
 It is possible to adjust the existing error message for form fields.
-This is implemented in the core codebase in scope of the [`Magento_CatlogSearch` module]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CatalogSearch/view/frontend/templates/advanced/form.phtml).
+This is implemented in the core codebase in scope of the [`Magento_CatalogSearch` module]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/CatalogSearch/view/frontend/templates/advanced/form.phtml).
 
 ```html
 <script>
