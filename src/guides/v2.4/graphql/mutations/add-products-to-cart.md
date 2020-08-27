@@ -3,30 +3,45 @@ group: graphql
 title: addProductsToCart mutation
 ---
 
-Magento 2.4.1 introduced the `addProductsToCart` mutation that streamlines the process of adding the products to the shopping cart. It allows you to add a number of products to the cart at one time regardless of product types.
+The `addProductsToCart` mutation adds any type of product to the shopping cart. It streamlines the process of adding products by allowing you to specify multiple product types in a single call. Magento recommends using this mutation to add products to the cart instead of the single-purpose mutations, such as `addSimpleProductsToCart` and `addConfigurableProductsToCart`.
 
-You must specify the Cart ID along with the list of SKU and Quantity pairs as parameters to add the products to the shopping cart.
+You must specify the Cart ID along with the list of SKU and quantity pairs as parameters to add the products to the shopping cart.
+
+The `CartItemInput` object now contains the `selected_options` and `enter_options` attributes. A selected option is predefined, and the shopper chooses from a set of possible values. Entered options generally contain text the shopper types, but other possibilities exist.
+
+Selected options can be used in the following product types:
+
+*  Customizable options such those presented in drop-down menu, radio buttons, and checkboxes
+
+*  Bundle products
+
+*  Configurable products
+
+*  Downloadable products
+
+*  Gift cards (amount)
+
+*  Grouped products
+
+Entered options can be used in the following product types:
+
+*  Customizable options such as those presented in a text field, text area, or file
+
+*  Gift cards (custom amounts, sender and recipient fields, messages)
+
+Use the `uid` attribute to reference selected or entered options. For entered options, the `uid` represents an option value, while for entered options, the `uid` represents an option. Each `uid` is unique across different options in a set.
 
 ## Syntax
 
-```graphql
-mutation {
-  addProductsToCart(
-    cartId: String
-    cartItems: [CartItemInput]
-  ) {
-    AddProductsToCartOutput
-  }
-}
-```
+`mutation {addProductsToCart(cartId: String! cartItems: [CartItemInput!]!): AddProductsToCartOutput}`
 
 ## Example usage
 
-These examples show the minimal payload and a payload that includes customizable options.
+These examples show the minimal payload for adding products, including those with customizable options.
 
 ### Add a product to a cart
 
-The following example adds a product to a cart. The response contains the minimal payload contents of the customer's cart.
+The following example adds a simple product to a cart.
 
 **Request:**
 
@@ -78,13 +93,9 @@ mutation {
 }
 ```
 
-### Options
+### Add a configurable product with selected options
 
-Each product may have options. An option can be of 2 types.
-
-`selected_options` - predefined and selected by customer option. E.g. it can be customizable option: color: green, size: 28 or bundle option: Memory: 24M, Warranty: 1y, etc.
-
-Add a product with selected options to a cart.
+The following example adds a configurable product (`WSH12`, a pair of shorts) to the cart. The mutation specifies the size and color as selected options.
 
 **Request:**
 
@@ -159,9 +170,9 @@ mutation {
 }
 ```
 
-`entered_options` - option entered by a customer like: text field, image, etc.
+### Add a product with entered options
 
-Add a product with entered options to a cart.
+The following example adds a simple product with a customizable option to the cart. The customizable option allows the shopper to specify a message for engraving.
 
 **Request:**
 
@@ -175,7 +186,7 @@ mutation {
         sku: "24-WG03"
         entered_options: [{
           uid: "Y3VzdG9tLW9wdGlvbi81Mg=="
-          value: "Test Engraving"
+          value: "Congrats, Julie!"
         }]
       }
     ]
@@ -221,11 +232,11 @@ mutation {
             "customizable_options": [
               {
                 "id": 52,
-                "label": "Engraving",
+                "label": "Congrats, Julie!",
                 "values": [
                   {
                     "id": 1184,
-                    "value": "Test Engraving"
+                    "value": ""
                   }
                 ]
               }
@@ -238,36 +249,6 @@ mutation {
   }
 }
 ```
-
-We can consider `selected_option` and `entered_option` as a unique identifier. They meet the criteria:
-
--  `selected_option` represents option value, while `entered_option` represents an option
-
--  Uid is unique across different options
-
--  Uid must be returned from the server
-
--  Used by the client as is (opaque)
-
-Selected options can be used for:
-
--  Customizable options such a dropdown, radiobutton, checkbox, etc.
-
--  Configurable product
-
--  Bundle Product
-
--  Downloadable product
-
--  Grouped product
-
--  Gift Card (amount)
-
-Entered options:
-
--  Customizable options such as text field, file, etc.
-
--  Gift Card (custom amount, sender fields, recipient fields, message)
 
 ## Input attributes
 
@@ -285,8 +266,6 @@ The `CartItemInput` object must contain the following attributes:
 {% include graphql/cart-item-input.md %}
 
 ### EnteredOptionInput object {#EnteredOptionInput}
-
-The `EnteredOptionInput` object must contain the following attributes:
 
 {% include graphql/entered-option-input.md %}
 
