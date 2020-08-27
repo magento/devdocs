@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.4.1 Release Notes
 ---
 
-Magento Open Source 2.4.1 introduces support for 
+Magento Open Source 2.4.1 introduces support for
 
 This release includes all the improvements to core quality that were included in Magento 2.4.0, over new fixes to core code, and  security enhancements. It includes the resolution of  GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
