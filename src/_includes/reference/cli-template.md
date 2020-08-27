@@ -53,7 +53,8 @@ This reference is generated from the Magento codebase. To change the content, yo
 
 ##### `{{ item.name }}`
 
--  Description: {{ item.description }}
+{{ item.description }}
+
    {% unless item.default == nil %}
    {% if item.default == false or (item.default == empty and item.default != '') %}
 -  Default: `{{ item.default | inspect }}`
@@ -68,8 +69,9 @@ This reference is generated from the Magento codebase. To change the content, yo
 -  Array
    {% endif %}
    {% endif %}
-   {% endfor %}
-   {% endfor %}
+
+  {% endfor %} <!-- argument -->
+{% endfor %} <!-- arguments -->
 
 {% endunless %} <!-- arguments.size -->
 
@@ -80,20 +82,23 @@ This reference is generated from the Magento codebase. To change the content, yo
  {% for option in options %}
  {% assign opt = option[1] %}
 
-##### `{{ option[0] }}`
+{% if opt.shortcut contains '-' %}
 
--  Option: `{{ opt.name }}`
-   {% if opt.shortcut contains '-' %}
--  Shortcut: `{{ opt.shortcut }}`
-   {% endif %} <!-- opt.shortcut -->
--  Description: {{ opt.description | replace: '|', '\|'}}
+##### `{{ opt.name }}`, `{{ opt.shortcut }}`
+{% else %}
+##### `{{ opt.name }}`
+
+{% endif %}
+
+{{ opt.description | replace: '|', '\|'}}
+
    {% unless opt.default == nil %}
    {% if opt.default == false or opt.default == empty and opt.default != '' %}
 -  Default: `{{ opt.default | inspect }}`
    {% else %}
 -  Default: `{{ opt.default }}`
-   {% endif %} <!-- opt.default -->
-   {% endunless %} <!-- opt.default -->
+   {% endif %}
+   {% endunless %}
    {% if opt.is_value_required %}
 -  Requires a value
    {% elsif opt.accept_value and opt.is_multiple %}
@@ -102,8 +107,9 @@ This reference is generated from the Magento codebase. To change the content, yo
 -  Accepts a value
    {% else %}
 -  Does not accept a value
-   {% endif %} <!-- opt.is_value_required -->
-   {% endfor %} <!-- options -->
+   {% endif %}
+
+{% endfor %} <!-- options -->
 
 {% endunless %} <!-- options.size -->
 {% endfor %} <!-- commands -->
