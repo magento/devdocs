@@ -7,7 +7,7 @@
 {% if app.version %}
 **Version**: {{ app.version }}
 {:style="color:gray; font-size: 120%"}
-{% endif %}
+{% endif %} <!-- app.version -->
 
 This reference contains {{ commands | size }} commands available through the `{{ tool }}` command-line tool.
 The initial list is auto generated using the `{{ tool }} list` command at the {{ edition }} edition.
@@ -40,8 +40,8 @@ This reference is generated from the Magento codebase. To change the content, yo
 {{ tool }} {{ usage }}
 ```
 
-{% endif %}
-{% endfor %}
+{% endif %} <!-- app.name -->
+{% endfor %} <!-- command.usage -->
 
 {% unless arguments.size == 0 %}
 
@@ -50,8 +50,6 @@ This reference is generated from the Magento codebase. To change the content, yo
 {% for argument in arguments %}
   {% for item in argument %}
     {% if item.name %}
-      {% if item.default == empty %}
-      {% endif %}
 
 ##### `{{ item.name }}`
 
@@ -73,6 +71,10 @@ This reference is generated from the Magento codebase. To change the content, yo
    {% endfor %}
    {% endfor %}
 
+{% endunless %} <!-- arguments.size -->
+
+{% unless options.size == 0 %}
+
 #### Options
 
  {% for option in options %}
@@ -83,15 +85,15 @@ This reference is generated from the Magento codebase. To change the content, yo
 -  Option: `{{ opt.name }}`
    {% if opt.shortcut contains '-' %}
 -  Shortcut: `{{ opt.shortcut }}`
-   {% endif %}
+   {% endif %} <!-- opt.shortcut -->
 -  Description: {{ opt.description | replace: '|', '\|'}}
    {% unless opt.default == nil %}
-   {% if opt.default == false or (opt.default == empty and opt.default != '') %}
+   {% if opt.default == false or opt.default == empty and opt.default != '' %}
 -  Default: `{{ opt.default | inspect }}`
    {% else %}
 -  Default: `{{ opt.default }}`
-   {% endif %}
-   {% endunless %}
+   {% endif %} <!-- opt.default -->
+   {% endunless %} <!-- opt.default -->
    {% if opt.is_value_required %}
 -  Requires a value
    {% elsif opt.accept_value and opt.is_multiple %}
@@ -100,14 +102,14 @@ This reference is generated from the Magento codebase. To change the content, yo
 -  Accepts a value
    {% else %}
 -  Does not accept a value
-   {% endif %}
-   {% endfor %}
+   {% endif %} <!-- opt.is_value_required -->
+   {% endfor %} <!-- options -->
 
-{% endunless %}
-{% endfor %}
+{% endunless %} <!-- options.size -->
+{% endfor %} <!-- commands -->
 
-{% else %}
+{% else %} <!-- file -->
 
 There is no data available for this reference at the moment.
 
-{% endif %}
+{% endif %} <!-- file -->
