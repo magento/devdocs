@@ -46,7 +46,10 @@ Attribute | Data type | Description
 `price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
 `price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
+`rating_summary` | Float! | The average of all the ratings given to the product
 `related_products` | [ProductInterface] | An array of related products
+`review_count` | Int! | The total count of all the reviews given to the product
+`reviews(pageSize: Int = 20 currentPage: Int = 1)` | [ProductReviews!](#ProductReviews) | The list of reviews of the product
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
@@ -152,6 +155,19 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
+
+#### ProductReviews object {#ProductReviews}
+
+`ProductReviews` contains an array of reviews written about the product.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [ProductReview]! | An array of product reviews
+`page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
+
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
 
 #### ProductLinks object {#ProductLinks}
 

@@ -111,6 +111,10 @@ pages:
         - label: isEmailAvailable query
           url: /graphql/queries/is-email-available.html
 
+        - label: productReviewRatingsMetadata query
+          url: /graphql/queries/product-review-ratings-metadata.html
+          exclude_versions: ["2.3"]
+
         - label: products query
           url: /graphql/queries/products.html
 
@@ -191,6 +195,10 @@ pages:
 
         - label: createPayPalExpressToken mutation
           url: /graphql/mutations/create-paypal-express-token.html
+
+        - label: createProductReview mutation
+          url: /graphql/mutations/create-product-review.html
+          exclude_versions: ["2.3"]
 
         - label: deleteCustomerAddress mutation
           url: /graphql/mutations/delete-customer-address.html
