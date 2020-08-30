@@ -93,7 +93,7 @@ let settings = <?= $myJson ?>
 
 You can pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
 
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 
