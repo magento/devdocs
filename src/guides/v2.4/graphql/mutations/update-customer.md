@@ -4,7 +4,7 @@ title: updateCustomer mutation
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [updateCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/update-customer-V2.html) to update a customer.
+Magento recommends using the [updateCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) to update a customer.
 
 The `updateCustomer` mutation updates the customer's personal information.
 

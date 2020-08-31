@@ -4,7 +4,7 @@ title: createCustomer mutation
 ---
 
 {:.bs-callout-warning}
-Magento recommends using the [createCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/create-customer-V2.html) to create a customer.
+Magento recommends using the [createCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/create-customer-v2.html) to create a customer.
 
 The `createCustomer` mutation creates a new customer.
 
