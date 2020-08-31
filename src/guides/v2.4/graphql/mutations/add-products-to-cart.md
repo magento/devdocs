@@ -33,7 +33,16 @@ Use the `uid` attribute to reference selected or entered options. For entered op
 
 ## Syntax
 
-`mutation {addProductsToCart(cartId: String! cartItems: [CartItemInput!]!): AddProductsToCartOutput}`
+```graphql
+mutation {
+  addProductsToCart(
+    cartId: String
+    cartItems: [CartItemInput]
+  ) {
+    AddProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -48,7 +57,7 @@ The following example adds a simple product to a cart.
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "HbpLADRmSo5h2dCdF85O5wCaVnrworKL"
+    cartId: "8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz"
     cartItems: [
       {
         quantity: 1
@@ -93,9 +102,76 @@ mutation {
 }
 ```
 
-### Add a configurable product with selected options
+### Add a configurable product to a cart
 
-The following example adds a configurable product (`WSH12`, a pair of shorts) to the cart. The mutation specifies the size and color as selected options.
+The following examples show two ways to add the same configurable product (`WSH12`, a pair of shorts) to the cart.
+
+#### Specify a parent and a child SKU
+
+In this example, the configurable product SKU is the `parent_sku` attribute, while the simple product variant is the `sku` attribute.
+
+**Request:**
+
+```graphql
+mutation {
+  addProductsToCart(
+    cartId: "8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz"
+    cartItems: [
+      {
+        quantity: 1
+        parent_sku: "WSH12"
+        sku: "WSH12-28-Green"
+      }
+    ]
+  ) {
+    cart {
+      items {
+        id
+        product {
+          name
+          sku
+        }
+        quantity
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "addProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "id": "24",
+            "product": {
+              "name": "Erika Running Short",
+              "sku": "WSH12"
+            },
+            "quantity": 1
+          },
+          {
+            "id": "26",
+            "product": {
+              "name": "Erika Running Short-28-Green",
+              "sku": "WSH12-28-Green"
+            },
+            "quantity": 1
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+#### Specify the SKU with selected options
+
+In this example, the mutation specifies the size and color as selected options. The first option specifies the color, while the second option specifies the size.
 
 **Request:**
 
@@ -107,7 +183,7 @@ mutation {
       {
         quantity: 1
         sku: "WSH12"
-        selected_options: ["Y29uZmlndXJhYmxlLzkzLzExNA==","Y29uZmlndXJhYmxlLzE5OS8yMzI="]
+        selected_options: ["Y29uZmlndXJhYmxlLzkzLzUz","Y29uZmlndXJhYmxlLzE0NC8xNzE="]
       }
     ]
   ) {
@@ -142,7 +218,7 @@ mutation {
       "cart": {
         "items": [
           {
-            "id": "348",
+            "id": "24",
             "product": {
               "name": "Erika Running Short",
               "sku": "WSH12"
@@ -151,17 +227,17 @@ mutation {
               {
                 "id": 93,
                 "option_label": "Color",
-                "value_id": 114,
+                "value_id": 53,
                 "value_label": "Green"
               },
               {
-                "id": 199,
+                "id": 144,
                 "option_label": "Size",
-                "value_id": 232,
+                "value_id": 171,
                 "value_label": "28"
               }
             ],
-            "quantity": 1
+            "quantity": 2
           }
         ]
       }
@@ -179,7 +255,7 @@ The following example adds a simple product with a customizable option to the ca
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: "HbpLADRmSo5h2dCdF85O5wCaVnrworKL"
+    cartId: "8k0Q4MpH2IGahWrTRtqM61YV2MtLPApz"
     cartItems: [
       {
         quantity: 1
