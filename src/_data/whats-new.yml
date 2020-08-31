@@ -6,7 +6,7 @@ link: /whats-new.html
 thread: /whatsnew-feed.xml
 updated: Mon Aug 31 15:26:14 2020
 entries:
-- description: Updated the Elastiicsearch version compatibility and software version
+- description: Updated the Elasticsearch version compatibility and software version
     compatibility matrices to show Elasticsearch 7.7.x as the supported and recommended
     version for Magento Commerce on the Cloud platform.
   versions: 2.x
