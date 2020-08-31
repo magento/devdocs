@@ -20,6 +20,9 @@ To determine whether wish lists are enabled, specify the `magento_wishlist_gener
 
 The following example adds a simple product (`24-MB01`), a configurable product (`WJ01-M-Red`), and a bundle product (`24-WG080`) to the customer's wish list. The SKU `WG-09` is invalid, and error information is returned in the `user_errors` object.
 
+{:.bs-callout-info}
+In Magento 2.4.1, the `addProductsToWishlist` mutation does not return `selected_options` or `entered_options` objects. Support for these objects will be provided in a future release.
+
 To determine the value of the `wishlistId` attribute, run the `customer` query and check the value of `wishlist.id` in the response.
 
 **Request:**

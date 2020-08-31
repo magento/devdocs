@@ -5,7 +5,7 @@ title: createCustomerV2 mutation
 
 The `createCustomerV2` mutation creates a customer account. Use the [`createCustomerAddress` mutation]({{page.baseurl}}/graphql/mutations/create-customer-address.html) to complete the customer profile and define billing and shipping addresses.
 
-The `createCustomerV2` mutation replaces the `createCustomer` mutation as the means to create a customer account. The input objects differ between these two mutations. The `createCustomer` mutation required the `CustomerInput` object, as did the `updateCustomer` mutation. The attributes required for creating a customer are different than those for updating a customer, but you could not determine this by looking at the schema. The `createCustomerV2` mutation requires the `CustomerCreateInput` object, which it does not share with the [`updateCustomerV2` mutation]({{page.baseurl}}/graphql/mutations/update-customer-v2.html).
+The `createCustomerV2` mutation supersedes the `createCustomer` mutation as the means to create a customer account. The input objects differ between these two mutations. The `createCustomer` mutation required the `CustomerInput` object, as did the `updateCustomer` mutation. The attributes required for creating a customer are different than those for updating a customer, but you could not determine this by looking at the schema. The `createCustomerV2` mutation requires the `CustomerCreateInput` object, which it does not share with the [`updateCustomerV2` mutation]({{page.baseurl}}/graphql/mutations/update-customer-v2.html).
 
 ## Syntax
 
