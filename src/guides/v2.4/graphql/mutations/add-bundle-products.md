@@ -5,6 +5,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
+{:.bs-callout-warning}
+Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+
 Use the `addBundleProductsToCart` mutation to add bundle products to a specific cart.
 
 ## Syntax
