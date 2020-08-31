@@ -36,8 +36,8 @@ Use the `uid` attribute to reference selected or entered options. For entered op
 ```graphql
 mutation {
   addProductsToCart(
-    cartId: String
-    cartItems: [CartItemInput]
+    cartId: String!
+    cartItems: [CartItemInput!]!
   ) {
     AddProductsToCartOutput
   }
