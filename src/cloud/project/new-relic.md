@@ -250,7 +250,7 @@ For further information and examples, see [Introduction to New Relic Logs][New R
 
 ### Monitor performance with alert policies
 
-Adobe provides the Managed alerts for {{ site.data.var.ee }} policy on Cloud Pro and Starter Production environments to track the following metrics:
+Adobe provides the Managed alerts for {{ site.data.var.ee }} alert policy on Cloud Pro and Starter Production environments to track the following metrics:
 
 -  [Apdex score]
 -  error rate
@@ -342,7 +342,7 @@ To configure a notification channel:
 
       ![New Relic create notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-add-alerts-to-notification-channel.png){:width="650px"}
 
-   -  Select the alert policies to associate with the notification channel.
+   -  Select the **Managed alerts for {{ site.data.var.ee }}** alert policy.
 
    -  Click **Save changes**.
 
