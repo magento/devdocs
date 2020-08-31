@@ -124,7 +124,7 @@ The UI component `dev_grid_category_listing` must be defined separately in a fil
    </argument>
   </dataSource>
   <listingToolbar name="listing_top">
-    <bookmarks name="bookmarks" class="Dev\Grid\Ui\Component\Category\Listing\Bookmark"/>
+    <bookmark name="bookmarks"/>
     <columnsControls name="columns_controls"/>
     <massaction name="listing_massaction">
       <argument name="data" xsi:type="array">

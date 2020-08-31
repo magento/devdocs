@@ -54,7 +54,7 @@ contributor_link: http://comwrap.com/
     "request_items": [
         {
             "id": 0,
-            "data_hash": null,
+            "data_hash": "17c5e6b0d6fdf98ea83f600c8cc7e9f5a437e7f51e21a9c40070bb6208e1334c",
             "status": "accepted"
         }
     ],
@@ -101,17 +101,17 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
     "request_items": [
         {
             "id": 0,
-            "data_hash": null,
+            "data_hash": "b4cfe401d84fbfadc94dd86782f18104dcaa162649f032fe105420037a44f795",
             "status": "accepted"
         },
         {
             "id": 1,
-            "data_hash": null,
+            "data_hash": "b4cfe401d84fbfadc94dd86782f18104dcaa162649f032fe105420037a44f795",
             "status": "accepted"
         },
         {
             "id": 2,
-            "data_hash": null,
+            "data_hash": "b4cfe401d84fbfadc94dd86782f18104dcaa162649f032fe105420037a44f795",
             "status": "accepted"
         }
     ],
