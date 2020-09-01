@@ -37,6 +37,17 @@ composer require magento/module-page-builder-product-recommendations
 
 By enabling Product Recommendations in Page Builder, you can [add an existing, active recommendation unit](https://docs.magento.com/user-guide/marketing/page-builder-add-product-recs.html) to any content created in Page Builder, such as pages, blocks, and dynamic blocks.
 
+### Add Visual similarity recommendation type {#vissimsupport}
+
+   {:.bs-callout-info}
+   This feature is in beta.
+
+The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html) to your product detail page that displays products that are visually similar to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
+
+```bash
+composer require magento/module-visual-product-recommendations
+```
+
 ### Update your Product Recommendations installation
 
 Like all of Magento, Product Recommendations uses Composer for installation and updates. To update the `magento/product-recommendations` module, run the following:
