@@ -343,7 +343,7 @@ pages:
               url: /cloud/cdn/fastly-vcl-blocking.html
               versionless: true
 
-            - label: Bypass Fastly
+            - label: Bypass Fastly cache
               url: /cloud/cdn/fastly-vcl-bypass-to-origin.html
               versionless: true
 
