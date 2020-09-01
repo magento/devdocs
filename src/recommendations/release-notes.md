@@ -21,7 +21,7 @@ The release notes include:
 
 ## 1.0.0 of magento/module-visual-product-recommendations for Magento Commerce 2.4.0
 
--  {:.new}**(Beta)** [Visual similarity](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html). With the _Visual similarity_ recommendation type, you can deploy a recommendation unit to your product detail page that displays visually similar looking products to the product being viewed.
+-  {:.new}**(Beta)** [Visual similarity](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html). With the _Visual similarity_ recommendation type, you can deploy a recommendation unit to your product detail page that displays products that are visually similar to the product being viewed.
 
 ## 3.0.5 of magento/product-recommendations for Magento Commerce 2.4.0
 
