@@ -4,8 +4,88 @@ description:
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Aug 18 11:56:55 2020
+updated: Mon Aug 31 15:26:14 2020
 entries:
+- description: Updated the Elasticsearch version compatibility and software version
+    compatibility matrices to show Elasticsearch 7.7.x as the supported and recommended
+    version for Magento Commerce on the Cloud platform.
+  versions: 2.x
+  type: Technical
+  date: August 31, 2020
+  link: https://github.com/magento/devdocs/pull/7788
+  contributor: meker12
+  profile: https://github.com/meker12
+- description: Added missing documentation to _Options_ at the [CLI tools reference](https://devdocs.magento.com/guides/v2.4/reference/cli/magento.html).
+  versions: 2.x
+  type: Technical
+  date: August 28, 2020
+  link: https://github.com/magento/devdocs/pull/7785
+  contributor: dshevtsov
+  profile: https://github.com/dshevtsov
+- description: Added information about the Magento Quality Patches package in the
+    [Software Upgrade Guide](https://devdocs.magento.com/guides/v2.4/comp-mgr/patching.html)
+    and [Cloud Guide](https://devdocs.magento.com/cloud/project/project-patch.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 26, 2020
+  link: https://github.com/magento/devdocs/pull/7734
+  contributor: jeff-matthews
+  profile: https://github.com/jeff-matthews
+- description: Expanded the [Order processing with Inventory Management](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/index.html)
+    REST tutorial to include a new step that demonstrates the [in-store pickup](https://devdocs.magento.com/guides/v2.4/rest/tutorials/inventory/in-store-pickup.html)
+    feature.
+  versions: 2.4.0
+  type: New Topic
+  date: August 26, 2020
+  link: https://github.com/magento/devdocs/pull/7772
+  contributor: keharper
+  profile: https://github.com/keharper
+- description: The new [Topics in Asynchronous API](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/message-queues/async-topics.html)
+    describes how Magento generates `communication.xml` data for asynchronous and
+    bulk APIs.
+  versions: 2.3.x
+  type: New Topic
+  date: August 24, 2020
+  link: https://github.com/magento/devdocs/pull/7639
+  contributor: nuzil
+  profile: https://github.com/nuzil
+- description: Added information about [how asynchronous APIs use the Magento Message Queue Framework](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/message-queues/async-message-queue-config-files.html).
+  versions: 2.3.x
+  type: New Topic
+  date: August 24, 2020
+  link: https://github.com/magento/devdocs/pull/7654
+  contributor: nuzil
+  profile: https://github.com/nuzil
+- description: Added another step to help users avoid problems during [upgrades](https://devdocs.magento.com/guides/v2.4/comp-mgr/cli/cli-upgrade.html).
+  versions: 2.3.x, 2.4.x
+  type: Major Update
+  date: August 21, 2020
+  link: https://github.com/magento/devdocs/pull/7771
+  contributor: fascinosum
+  profile: https://github.com/fascinosum
+- description: Added the new [Price Adjustments](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/price-adjustments.html)
+    topic to the Extension Developer Guide.
+  versions: 2.3.x, 2.4.x
+  type: New Topic
+  date: August 21, 2020
+  link: https://github.com/magento/devdocs/pull/7756
+  contributor: goivvy
+  profile: https://github.com/goivvy
+- description: Updated [best practices](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
+    for theme development.
+  versions: 2.3.x, 2.4.x
+  type: Major Update, Technical
+  date: August 19, 2020
+  link: https://github.com/magento/devdocs/pull/7738
+  contributor: kanhaiya5590
+  profile: https://github.com/kanhaiya5590
+- description: Added a new topic to the MFTF guide about [Interactive Pause](https://devdocs.magento.com/mftf/docs/interactive-pause.html).
+  versions: 2.x
+  type: New Topic
+  date: August 19, 2020
+  link: https://github.com/magento/devdocs/pull/7762
+  contributor: dobooth
+  profile: https://github.com/dobooth
 - description: Changed data sources and content structure for [Packages](https://devdocs.magento.com/guides/v2.4/release-notes/packages-open-source.html).
   versions: 2.3.x, 2.4.x
   type: Major Update
