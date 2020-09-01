@@ -245,4 +245,4 @@ Error | Description
 
 ## Related topics
 
--  [Bundle product data types]({{page.baseurl}}/graphql/product/bundle-product.html)
+-  [Bundle product data types]({{page.baseurl}}/graphql/interfaces/bundle-product.html)

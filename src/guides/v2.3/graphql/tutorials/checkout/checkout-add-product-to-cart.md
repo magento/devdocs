@@ -22,7 +22,7 @@ GraphQL supports all product types, but this tutorial only demonstrates how to a
 -  [Simple and grouped products]({{ page.baseurl }}/graphql/mutations/add-simple-products.html)
 -  [Virtual products]({{ page.baseurl }}/graphql/mutations/add-virtual-products.html)
 
-[Product interface implementations]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) also describes how to create queries that access product interfaces.
+[Product interface implementations]({{ page.baseurl }}/graphql/interfaces/product-interface-implementations.html) also describes how to create queries that access product interfaces.
 
 Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 

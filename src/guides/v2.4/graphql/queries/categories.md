@@ -188,7 +188,7 @@ Attribute | Data type | Description
 
 ### CategoryTree attributes
 
-The `items` attribute contains a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
+The `items` attribute contains a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
