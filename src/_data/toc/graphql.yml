@@ -246,7 +246,7 @@ pages:
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
 
-    - label: Catalog data types and interfaces
+    - label: Interfaces
       children:
         - label: Product interface implementations
           url: /graphql/interfaces/product-interface-implementations.html
