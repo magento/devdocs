@@ -42,7 +42,7 @@ By enabling Product Recommendations in Page Builder, you can [add an existing, a
    {:.bs-callout-info}
    This feature is in beta.
 
-The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html) to your product detail page that displays visually similar looking products to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
+The _Visual similarity_ recommendation type allows you to [deploy a recommendation unit](https://docs-beta.magento.com/user-guide/marketing/prex-type-visualsim.html) to your product detail page that displays products that are visually similar to the product being viewed. This recommendation type is most useful where images and visual aspects of the products are important parts of the shopping experience. Install the _Visual similarity_ recommendation type by running the following command:
 
 ```bash
 composer require magento/module-visual-product-recommendations
