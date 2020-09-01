@@ -3,6 +3,7 @@ group: graphql
 title: Grouped product data types
 redirect_from:
   - /guides/v2.3/graphql/reference/grouped-product.html
+  - /guides/v2.3/graphql/product/grouped-product.html
 ---
 
 The `GroupedProduct` data type implements `ProductInterface` and `PhysicalProductInterface`. As a result, attributes that are specific to grouped products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.

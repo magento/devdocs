@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: ProductInterface attributes
+redirect_from:
+  - /guides/v2.4/graphql/product/product-interface.html
 ---
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.

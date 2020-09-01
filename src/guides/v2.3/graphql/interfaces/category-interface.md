@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: CategoryInterface attributes
+redirect_from:
+  - /guides/v2.3/graphql/product/category-interface.html
 ---
 
 `CategoryInterface` defines attributes that can be returned in the [`category` query]({{page.baseurl}}/graphql/queries/category.html) and the [`products` query]({{page.baseurl}}/graphql/queries/products.html).
