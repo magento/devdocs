@@ -22,14 +22,6 @@ Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL ve
 *  [`optimizer_switch='rowid_filter=off'`](https://mariadb.com/kb/en/optimizer-switch/)
 *  [`optimizer_use_condition_selectivity = 1`](https://mariadb.com/products/skysql/docs/reference/es/system-variables/optimizer_use_condition_selectivity/)
 
-<!--  Add to docs in 2.3.1 - MAGEDOC-3020
-We recommend that you use index parallelization and that you set threads count for the index process based on:
-
-- Threads count >= max dimension count (across all indexers)
-- Threads count <= cores count
-
-See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex-parallel) of [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html) for more information.  -->
-
 ## Caches
 
 When you launch your store in production, activate all the caches from the **System** > Tools > **Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.

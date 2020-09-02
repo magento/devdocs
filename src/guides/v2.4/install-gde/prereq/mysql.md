@@ -174,7 +174,7 @@ To configure a MySQL database instance:
 
    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 
-   *  Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. See [Configuration best practices]({{ page.baseurl }}/performance-best-practices/configuration.html#indexers).
+   *  {% include install/maria-db.md %}
 
 1. In order for MySQL `TIMESTAMP` fields to follow the preferences and composition expected by Magento's declarative schema architecture, the system variable `explicit_defaults_for_timestamp` must be set to `on`.
 

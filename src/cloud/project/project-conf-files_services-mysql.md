@@ -8,7 +8,7 @@ functional_areas:
 
 The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
 
-Reindexing on MariaDB 10.4 takes more time compared to other MariaDB or MySQL versions. See [Configuration best practices]({{ site.baseurl }}/guides/v2.4/performance-best-practices/configuration.html#indexers).
+{% include install/maria-db.md %}
 
 {:.bs-callout-warning}
 Be careful when upgrading MariaDB from version 10.1 to 10.2.
