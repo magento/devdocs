@@ -22,7 +22,7 @@ functional_areas:
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
--  **Adobe-generated alert policies**–Monitor application and infrastructure performance using alert policies that monitor key performance indicators like apdex score, disk space, and error rate based on industry best practices. See [Monitor performance using alerts](#monitor-performance-with-alert-policies).
+-  **Managed Alerts for Magento Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Magento alert policy](#monitor-performance-with-managed-alerts).
 
 Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
@@ -248,15 +248,21 @@ The following example shows a New Relic Insights dashboard created from queries 
 
 For further information and examples, see [Introduction to New Relic Logs][New Relic Logs] and [Introduction to New Relic Insights][New Relic Insights].
 
-### Monitor performance with alert policies
+### Monitor performance with Managed Alerts
 
-Adobe provides a set of New Relic alert policies for {{ site.data.var.ece }} Pro and Starter Production environments to track the following key performance metrics:
+Adobe provides the Managed Alerts for {{ site.data.var.ee }} alert policy on Cloud Pro Production environments to track the following metrics:
 
 -  [Apdex score]
 -  error rate
 -  disk space (available on Pro Production environments only)
+-  CPU usage
+-  memory usage
 
-Based on industry best practices, these policies set thresholds for warning and critical conditions that affect performance. When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue. To use these policies, you must configure notification channels to receive the alert messages.
+Based on industry best practices, this policy is a collection of alerts that set thresholds for warning and critical conditions that affect performance.
+
+When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce][] in the _Magento Help Center_ for details about each alert type and troubleshooting steps to resolve the issues that triggered the alert.
+
+To use this policy, you must configure at least one notification channel to receive the alert messages.
 
 {:.bs-callout-info}
 For Pro Staging and Integration environments and Starter environments, use [Health notifications] to monitor disk space.
@@ -268,55 +274,71 @@ Prerequisites
 -  Verify that your Cloud environment is [connected to New Relic](#connect-to-new-relic)
 
 {:.procedure}
-To review Adobe-generated alert policies:
+To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
-1. Use your Project Owner New Relic credentials to [log in to your New Relic account][New Relic login].
+1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. From the navigation menu, select  **Alerts**  > **Alert Policies**.
+1. Locate the _Managed Alerts for Magento Commerce_ policy:
 
-1. In the Search Policies field, search for _Adobe Generated Policy_.
+   -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
-1. You should see a set of policies like the ones below:
+   -  In the left navigation, click **Policies**.
 
-   ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-alert-policies.png){:width="650px"}
+   -  At the top of the page, select the account and project from the drop-down menu if needed.
 
-   {:.bs-callout-info}
-   If you do not see these alert policies, submit a Magento support ticket. Include your project ID in the ticket. These policies are available on Pro and Starter Production environments only.
+      ![Select account and project]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-select-account.png){:width="650px"}
 
-1. Click an alert policy name to review the threshold conditions that trigger alerts.
+   -  In the _Policy_ list, you should see the **Managed Alerts for Magento Commerce** policy.
+
+      ![Generated alert policies]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-managed-alerts-for-magento.png){:width="650px"}
+
+      {:.bs-callout-info}
+      If the policy is missing, submit a Magento support ticket. Include your project ID in the ticket. The policy is available on Pro and Starter Production environments only.
+
+1. Click **Managed Alerts for Magento Commerce** to review the alert conditions defined in the policy.
+
+   ![Managed alerts list]({{ site.baseurl }}/common/images/cloud/cloud-newrelic-magento-alert-conditions.png){:width="650px"}
 
 ### Configure notification channels
 
-To use the Adobe-generated alert policies to monitor your Production sites, you must configure notification channels and map them to alert policies. Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
+To use the Managed Alerts for Magento Commerce policy to monitor your Production sites, you must configure at least one notification channel and map it to the alert policy.
+
+Notifications about performance issues go to all channels associated with an alert policy when conditions on the application or infrastructure trigger an alert. You also receive notifications when an issue is acknowledged and closed.
 
 New Relic provides templates for configuring different types of notification channels including email, Slack, PagerDuty, webhooks, and more. See the [Instructions for specific notification channels] in the New Relic documentation to review the prerequisites for using each type.
-
-The following instructions describe the high level steps to configure a notification channel to receive alert messages triggered by an alert policy.
 
 {:.procedure}
 To configure a notification channel:
 
 1. Choose a notification channel type, and complete any [prerequisite steps] required to connect the channel with the New Relic service.
 
-1. [Log in to your New Relic account][New Relic login].
+1. Use your New Relic credentials to [log in to your New Relic account][New Relic login].
 
-1. Navigate to the _New Relic APM_ page.
+1. Create a new notification channel.
 
-1. On the _New Relic APM Applications_ page, open the application for your Cloud environment.
+   -  In the top navigation menu, click **Alerts & AI** to open the _Applied Intelligence_ page.
 
-1. On the _Alerts_ page, click **New notification channel**.
+   -  In the left navigation, click **Notification channels**.
 
-   ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-notification-channels.png){:width="650px"}
+   -  On the *Notification channels* page, click the **New notification channel**.
 
-1. On the _Create a new notification channel_ page, choose the channel type from the **Select a channel type** dropdown menu.
+      ![New Relic notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-add-notification-channel.png){:width="650px"}
 
-1. Configure the settings for the channel, and then click **Create channel**.
+   -  On the *Create notification channel* page, select the channel type and complete the steps to configure, create, save, and send a test notification to verify that the channel works.
 
-1. On the _Channel details_ page, click **Send a test notification** to verify that the channel works.
+      ![New Relic create notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-create-notification-channel.png){:width="650px"}
 
-1. To specify the alerts to send to the channel, click the **Alert policies** tab.
+1. Specify the alerts to send to the channel.
 
-1. On the _Alert policies_ page, click **Add alert** to select and add an alert policy.
+   -  On the *Notification channels* page, click **Alert policies**.
+
+   -  On the *Alert policies* tab, click **Add alert policies**.
+
+      ![New Relic create notification channel]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-add-alerts-to-notification-channel.png){:width="650px"}
+
+   -  Select the **Managed Alerts for {{ site.data.var.ee }}** alert policy.
+
+   -  Click **Save changes**.
 
 See the following New Relic documentation topics for additional information:
 
@@ -325,13 +347,13 @@ See the following New Relic documentation topics for additional information:
 -  [Configure notification channels using the New Relic API]
 
 {:.bs-callout-warning}
-The Adobe-generated policies have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
+The alerts in the Managed Alerts for Magento Commerce policy have default notification channels configured to notify Magento teams that support {{ site.data.var.ece }} customers.  Do not modify the configuration for these default channels, and do not remove any alert policies assigned to them.
 
 ### Create Alert Policies
 
-Do not modify the Adobe-generated alert policies. We will automatically regenerate and improve them over time, which will overwrite any customizations you make.
+Do not modify any alerts included in the Managed Alerts for Magento Commerce policy. We update and improve the alert conditions in this policy over time, which overwrites any customizations you add to the policy.
 
-If you want to modify the thresholds of an alert condition, create a new alert policy. Then, copy the alert condition to the new policy. See [Update policies or conditions] in the New Relic documentation.
+Instead of modifying an existing alert, you can create a new alert policy. Then, copy the alert conditions to the new policy. See [Update policies or conditions] in the New Relic documentation.
 
 {:.bs-callout-tip}
 See [Alerts concepts and workflow] in the New Relic documentation for more detailed information about Alerts, alert policies, and notification channels.
@@ -353,6 +375,7 @@ See [Alerts concepts and workflow] in the New Relic documentation for more detai
 [Instructions for specific notification channels]: https://docs.newrelic.com/docs/alerts/new-relic-alerts/managing-notification-channels/notification-channels-control-where-send-alerts#channel-types
 [Magento Admin credentials]: https://docs.magento.com/m2/ce/user_guide/system/permissions.html
 [Magento Partnership Owner Account]: https://account.newrelic.com/accounts/1311131/users
+[Managed Alerts for Magento Commerce]: https://support.magento.com/hc/en-us/articles/360045806832
 [New Relic account]: #manage-your-new-relic-account
 [New Relic APM]: https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm
 [New Relic APM Overview]: https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page-view-transaction-apdex-usage-data
