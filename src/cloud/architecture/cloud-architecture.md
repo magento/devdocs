@@ -53,7 +53,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances. The Web Application Firewall (WAF) service is available on Production environments only.</li>
           <li>
-            <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. The <a href="{{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-alert-policies">Managed alerts for {{ site.data.var.ee }} policy</a> implements monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
+            <a href="{{ site.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production. The <a href="{{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-the-managed-alerts-for-magento-alert-policy">Managed alerts for {{ site.data.var.ee }} policy</a> implements monitoring best practices to proactively notify you about application and infrastructure issues affecting site performance.
           </li>
           <li>Platform-as-a-service (PaaS) based Integration development environments (8 total active environments) optimized for {{site.data.var.ee}}</li>
           <li>Infrastructure-as-a-Service (IaaS)—dedicated virtual infrastructure for Production environments and for Staging environments</li>

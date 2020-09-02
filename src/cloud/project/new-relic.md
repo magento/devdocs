@@ -22,7 +22,7 @@ functional_areas:
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event. See [Apdex score].
--  **Managed Alerts for Magento Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Magento alert policy](#monitor-performance-with-the-managed-alerts-for-magento alert policy).
+-  **Managed Alerts for Magento Commerce**–Use this New Relic alert policy to monitor application and infrastructure performance based on industry best practices. See [Monitor performance with the Magento alert policy](#monitor-performance-with-the-managed-alerts-for-magento-alert-policy).
 
 Your {{site.data.var.ece}} project includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
