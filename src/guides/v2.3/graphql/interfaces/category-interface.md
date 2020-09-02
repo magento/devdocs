@@ -56,7 +56,7 @@ The `CategoryProducts` object contains the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) for more information
+`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) for more information
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | Int | The number of products returned
 

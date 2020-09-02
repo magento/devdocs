@@ -7,12 +7,12 @@ Any type that implements `ProductInterface` contains all the base attributes nec
 The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the `CatalogGraphQl` module:
 
 -  Custom and extension attributes defined in any attribute set
--  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)
+-  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html)
 -  Product types that define their own implementation of `ProductInterface` including:
-   -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
-   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
-   -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
-   -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
+   -  [BundleProduct]({{ page.baseurl }}/graphql/interfaces/bundle-product.html)
+   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
+   -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
+   -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
 
 ## ProductInterface attributes
 
@@ -22,7 +22,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
 `canonical_url` | String  | The relative canonical URL. This value is returned only if the system setting **Use Canonical Link Meta Tag For Products** is enabled
-`categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/product/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/product/category-interface.html) for more information
+`categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/interfaces/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/interfaces/category-interface.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `crosssell_products` | [ProductInterface] | An array of cross-sell products
