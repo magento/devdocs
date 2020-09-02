@@ -26,7 +26,7 @@ If you use Microsoft Windows, take the following steps before continuing:
    vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen" --with-xdebug
    ```
    
-   For Linux system also need to be added option `--set-docker-host` for automatically adding `host.docker.internal` into `/etc/hosts` of `fpm_xdebug` container.
+   For Linux systems, the option `--set-docker-host` also needs to be added for automatically adding `host.docker.internal` into the `/etc/hosts` for the `fpm_xdebug` container.
    
       ```bash
       vendor/bin/ece-docker build:compose --mode="developer" --with-xdebug --set-docker-host
