@@ -943,6 +943,13 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
    *  Network cache size has decreased by 10 - 15%
    *  Execution time for many scenarios has been improved by 3%.
 
+<!--- MC-35884-->
+
+*  Message queue consumer configuration has been extended with new parameters that help control consumers and save server resources and that potentially decrease consumer queue CPU consumption by 20%:
+   *  `maxIdleTime` defines the maximum waiting time in seconds for a new message from the queue.
+   *  `sleep` specifies time in seconds to sleep before checking if a new message is available in the queue.
+   *  `onlySpawnWhenMessageAvailable` identifies whether a consumer should be spawned only when an available message exists in the related queue. This setting is enabled globally by default for all consumers but can be configured per consumer.
+
 <!--- ENGCOM-7290-->
 
 <!--- MC-31617-->
