@@ -23,8 +23,14 @@ If you use Microsoft Windows, take the following steps before continuing:
 1. To enable Xdebug for your Docker environment, generate the Docker Compose configuration file in developer mode with the `--with-xdebug` option and any other required options, for example.
 
    ```bash
-   vendor/bin/ece-docker build:compose --mode --sync-engine="mutagen" developer --with-xdebug
+   vendor/bin/ece-docker build:compose --mode="developer" --sync-engine="mutagen" --with-xdebug
    ```
+   
+   For Linux system also need to be added option `--set-docker-host` for automatically adding `host.docker.internal` into `/etc/hosts` of `fpm_xdebug` container.
+   
+      ```bash
+      vendor/bin/ece-docker build:compose --mode="developer" --with-xdebug --set-docker-host
+      ```
 
    This command adds the Xdebug configuration to your `docker-compose.yml` file.
 
