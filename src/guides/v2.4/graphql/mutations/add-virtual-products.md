@@ -5,6 +5,9 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-add-virtual-products.html
 ---
 
+{:.bs-callout-warning}
+Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+
 A virtual product represents a saleable item that is not physical, such as a membership, service, warranty, or subscription. Virtual products do not need to be shipped or downloaded, nor do they require stock management.
 
 The `addVirtualProductsToCart` mutation allows you to add multiple virtual products to the cart at the same time, but you cannot add other product types with this mutation. To add a virtual product to a cart, you must provide the cart ID, the SKU, and the quantity. You can also optionally provide customizable options.

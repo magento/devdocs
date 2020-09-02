@@ -2,7 +2,7 @@
 group: graphql
 title: Configurable product data types
 redirect_from:
-  - /guides/v2.3/graphql/reference/configurable-product.html
+  - /guides/v2.4/graphql/product/configurable-product.html
 ---
 
 The `ConfigurableProduct` data type implements the following interfaces:
@@ -39,6 +39,7 @@ Field | Type | Description
 --- | --- | ---
 `code` | String | The ID assigned to the attribute
 `label` | String | A string that describes the configurable attribute option
+`uid` | ID! | A string that encodes option details
 `value_index` | Int | A unique index number assigned to the configurable product option
 
 ### ConfigurableProductOptions {#configProdOptions}
@@ -48,7 +49,8 @@ The `ConfigurableProductOptions` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `attribute_code` | String | A string that identifies the attribute
-`attribute_id` | String | The ID assigned to the attribute
+`attribute_id` | String | Deprecated. Use `attribute_id_v2` instead
+`attribute_id_v2` | Int | The ID assigned to the attribute
 `id` | Int | The configurable option ID number assigned by the system
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
@@ -125,7 +127,7 @@ The following `products` query returns `ConfigurableProduct` information about t
       ... on ConfigurableProduct {
         configurable_options {
           id
-          attribute_id
+          attribute_id_v2
           label
           position
           use_default
@@ -155,6 +157,7 @@ The following `products` query returns `ConfigurableProduct` information about t
             }
           }
           attributes {
+            uid
             label
             code
             value_index
@@ -180,7 +183,7 @@ The following `products` query returns `ConfigurableProduct` information about t
           "attribute_set_id": 9,
           "name": "Mona Pullover Hoodlie",
           "sku": "WH01",
-          "__typename": "configurable",
+          "__typename": "ConfigurableProduct",
           "price_range": {
             "minimum_price": {
               "regular_price": {
@@ -191,10 +194,10 @@ The following `products` query returns `ConfigurableProduct` information about t
           },
           "categories": [
             {
-              "id": 2
+              "id": 8
             },
             {
-              "id": 8
+              "id": 21
             },
             {
               "id": 24
@@ -206,7 +209,7 @@ The following `products` query returns `ConfigurableProduct` information about t
           "configurable_options": [
             {
               "id": 147,
-              "attribute_id": "93",
+              "attribute_id_v2": 93,
               "label": "Color",
               "position": 1,
               "use_default": false,
@@ -229,30 +232,30 @@ The following `products` query returns `ConfigurableProduct` information about t
             },
             {
               "id": 146,
-              "attribute_id": "160",
+              "attribute_id_v2": 144,
               "label": "Size",
               "position": 0,
               "use_default": false,
               "attribute_code": "size",
               "values": [
                 {
-                  "value_index": 176,
+                  "value_index": 166,
                   "label": "XS"
                 },
                 {
-                  "value_index": 177,
+                  "value_index": 167,
                   "label": "S"
                 },
                 {
-                  "value_index": 178,
+                  "value_index": 168,
                   "label": "M"
                 },
                 {
-                  "value_index": 179,
+                  "value_index": 169,
                   "label": "L"
                 },
                 {
-                  "value_index": 180,
+                  "value_index": 170,
                   "label": "XL"
                 }
               ],
@@ -278,14 +281,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green",
                   "code": "color",
                   "value_index": 53
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 176
+                  "value_index": 166
                 }
               ]
             },
@@ -307,14 +312,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange",
                   "code": "color",
                   "value_index": 56
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 176
+                  "value_index": 166
                 }
               ]
             },
@@ -336,14 +343,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple",
                   "code": "color",
                   "value_index": 57
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjY=",
                   "label": "XS",
                   "code": "size",
-                  "value_index": 176
+                  "value_index": 166
                 }
               ]
             },
@@ -365,14 +374,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green",
                   "code": "color",
                   "value_index": 53
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 177
+                  "value_index": 167
                 }
               ]
             },
@@ -394,14 +405,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange",
                   "code": "color",
                   "value_index": 56
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 177
+                  "value_index": 167
                 }
               ]
             },
@@ -423,14 +436,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple",
                   "code": "color",
                   "value_index": 57
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjc=",
                   "label": "S",
                   "code": "size",
-                  "value_index": 177
+                  "value_index": 167
                 }
               ]
             },
@@ -452,14 +467,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green",
                   "code": "color",
                   "value_index": 53
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 178
+                  "value_index": 168
                 }
               ]
             },
@@ -481,14 +498,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange",
                   "code": "color",
                   "value_index": 56
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 178
+                  "value_index": 168
                 }
               ]
             },
@@ -510,14 +529,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple",
                   "code": "color",
                   "value_index": 57
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjg=",
                   "label": "M",
                   "code": "size",
-                  "value_index": 178
+                  "value_index": 168
                 }
               ]
             },
@@ -539,14 +560,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green",
                   "code": "color",
                   "value_index": 53
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 179
+                  "value_index": 169
                 }
               ]
             },
@@ -568,14 +591,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange",
                   "code": "color",
                   "value_index": 56
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 179
+                  "value_index": 169
                 }
               ]
             },
@@ -597,14 +622,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple",
                   "code": "color",
                   "value_index": 57
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNjk=",
                   "label": "L",
                   "code": "size",
-                  "value_index": 179
+                  "value_index": 169
                 }
               ]
             },
@@ -626,14 +653,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzUz",
                   "label": "Green",
                   "code": "color",
                   "value_index": 53
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 180
+                  "value_index": 170
                 }
               ]
             },
@@ -655,14 +684,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU2",
                   "label": "Orange",
                   "code": "color",
                   "value_index": 56
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 180
+                  "value_index": 170
                 }
               ]
             },
@@ -684,14 +715,16 @@ The following `products` query returns `ConfigurableProduct` information about t
               },
               "attributes": [
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzkzLzU3",
                   "label": "Purple",
                   "code": "color",
                   "value_index": 57
                 },
                 {
+                  "uid": "Y29uZmlndXJhYmxlLzE0NC8xNzA=",
                   "label": "XL",
                   "code": "size",
-                  "value_index": 180
+                  "value_index": 170
                 }
               ]
             }

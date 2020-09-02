@@ -14,7 +14,7 @@ This release information details the latest improvements to the {{site.data.var.
 | Release notes | Version | Description | Package source |
 | --- | --- | --- | --- |
 | [`{{site.data.var.ct}}` release notes] | {{site.data.var.ct-release}}<br/>2002.0.23| A set of scripts and tools designed to manage and deploy Cloud projects | [{{site.data.var.ct}}][ece package] |
-| [`{{site.data.var.mcp-prod}}` release notes] | {{site.data.var.mcp-release}} | A set of patches which improve the integration of all Magento versions with Cloud environments. This package includes Magento patches and available hot fixes that are applied when you use `{{site.data.var.ct}}` to deploy | [{{site.data.var.mcp}}][Patches package] |
+| [`{{site.data.var.mcp-prod}}` release notes] | {{site.data.var.mcp-release}} | A set of patches which improve the integration of all Magento versions with Cloud environments. This package includes Magento patches and available hotfixes that are applied when you use `{{site.data.var.ct}}` to deploy | [{{site.data.var.mcp}}][Patches package] |
 | [`{{site.data.var.mcd-prod}}` release notes] | {{site.data.var.mcd-release}} | Functionality and configuration files for Docker images to deploy Magento Commerce to a local Cloud environment | [{{site.data.var.mcd}}][Docker package] |
 | [`{{site.data.var.mcc-prod}}` release notes] | {{site.data.var.mcc-release}} | Extended Magento Commerce core functionality for sites deployed on the Cloud platform | [{{site.data.var.mcc}}][Components package] |
 

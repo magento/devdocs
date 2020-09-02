@@ -242,9 +242,10 @@ The `StoreConfig` object can contain the following attributes.
 Attribute | Data Type | Description | Default or example value
 --- | --- | --- | ---
 `absolute_footer` | String | Contains scripts that must be included in the HTML before the closing `<body>` tag | null
-`allow_gift_wrapping_on_order` | String | Indicates if a gift wrapping can be added for the entire order. Possible values: 1 (Yes) and 0 (No) | 1
-`allow_gift_wrapping_on_order_items` | String | Indicates if a gift wrapping can be added for individual order items. Possible values: 1 (Yes) and 0 (No) | 1
+`allow_gift_wrapping_on_order` | String | Indicates whether gift wrapping can be added for the entire order. Possible values: 1 (Yes) and 0 (No) | 1
+`allow_gift_wrapping_on_order_items` | String | Indicates whether gift wrapping can be added for individual order items. Possible values: 1 (Yes) and 0 (No) | 1
 `allow_gift_receipt` | String | Indicates if the gift sender has the option to send a gift receipt. Possible values: 1 (Yes) and 0 (No) | 1
+`allow_guests_to_write_product_reviews` | String | Indicates whether guest users can write product reviews. Possible values: 1 (Yes) and 0 (No) | 1
 `allow_items` | String | Allows gift messages for order items. Possible values: 1 (Yes) and 0 (No). <br/>Configuration path: sales/gift_options/allow_items | 0
 `allow_order` | String | Allows gift messages at the order level. Possible values: 1 (Yes) and 0 (No). <br/>Configuration path: sales/gift_options/allow_order | 0
 `allow_printed_card` | String | Indicates if a printed card can accompany an order. Possible values: 1 (Yes) and 0 (No) | 1
@@ -302,6 +303,7 @@ Attribute | Data Type | Description | Default or example value
 `payment_payflowpro_cc_vault_active` | String | Payflow Pro vault status | `0` (inactive) or `1` (active)
 `printed_card_price` | String | The default price of a printed card that accompanies an order | 10
 `product_fixed_product_tax_display_setting` | [FixedProductTaxDisplaySettings](#FixedProductTaxDisplaySettings) | Corresponds to the **Display Prices On Product View Page** field. It indicates how Fixed Product Taxes information is displayed on product pages | FPT_DISABLED
+`product_reviews_enabled` | String | Indicates whether product reviews are enabled. Possible values: 1 (Yes) and 0 (No) | 1
 `product_url_suffix` | String | The suffix applied to product pages, such as `.htm` or `.html` | `.html`
 `required_character_classes_number` | String | The number of different character classes required in a password (lowercase, uppercase, digits, special characters). <br/>Configuration path: customer/password/required_character_classes_number | 2
 `root_category_id` | Int | The ID of the root category | 2

@@ -5,6 +5,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
+{:.bs-callout-warning}
+Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+
 A downloadable product can be anything that you can deliver as a file, such as an eBook, music, video, software application, or an update. To add a downloadable product to a cart, you must provide the cart ID, the SKU, and the quantity. In some cases, you must include the IDs for downloadable product links. You can also optionally specify customizable options.
 
 ## Syntax

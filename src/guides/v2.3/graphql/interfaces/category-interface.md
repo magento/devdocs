@@ -1,9 +1,11 @@
 ---
 group: graphql
 title: CategoryInterface attributes
+redirect_from:
+  - /guides/v2.3/graphql/product/category-interface.html
 ---
 
-`CategoryInterface` defines attributes that can be returned in the [`categoryList` query]({{page.baseurl}}/graphql/queries/category-list.html), [`categories` query]({{page.baseurl}}/graphql/queries/categories.html), and the [`products` query]({{page.baseurl}}/graphql/queries/products.html).
+`CategoryInterface` defines attributes that can be returned in the [`category` query]({{page.baseurl}}/graphql/queries/category.html) and the [`products` query]({{page.baseurl}}/graphql/queries/products.html).
 
 ## CategoryInterface attributes
 
@@ -23,7 +25,7 @@ Attribute | Type | Description
 `path_in_store` | String | Category path in the store
 `path` | String | The path to the category, as a string of category IDs, separated by slashes (/). For example, 1/2/20
 `position` | Int | The position of the category relative to other categories at the same level in tree
-`product_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
+`product_count` | Int | The number of products in the category
 `products(<attributes>)` | CategoryProducts | The list of products assigned to the category
 `updated_at` | String | Timestamp indicating when the category was updated
 `url_key` | String | The URL key assigned to the category
@@ -40,6 +42,7 @@ Attribute | Data type | Description
 `category_level` | Int | Indicates the depth of the category within the tree
 `category_name` | String |  The display name of the category
 `category_url_key` | String | The url key assigned to the category
+`category_url_path` | String | The url path assigned to the category
 
 ### CategoryProducts object
 
@@ -49,15 +52,15 @@ Attribute | Data type | Description
 --- | --- | ---
 `currentPage` | Int |  Specifies which page of results to return. The default value is 1
 `pageSize` | Int | Specifies the maximum number of results to return at once. This attribute is optional. The default value is 20
-`sort` | `ProductSortInput` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/queries/index.html) describes sort orders
+`sort` | `ProductAttributeSortInput` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/queries/index.html) describes sort orders
 
 The `CategoryProducts` object contains the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) for more information
+`items` | [ProductInterface] | An array of products that are assigned to the category. See [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) for more information
 `page_info` | `SearchResultPageInfo` | An object that includes the `page_info` and `currentPage` values specified in the query
-`total_count` | Int | The number of products in the category that are marked as visible. By default, in complex products, parent products are visible, but their child products are not
+`total_count` | Int | The number of products returned
 
 ### CmsBlock attributes
 

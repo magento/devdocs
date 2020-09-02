@@ -1,18 +1,20 @@
 ---
 group: graphql
 title: ProductInterface attributes
+redirect_from:
+  - /guides/v2.4/graphql/product/product-interface.html
 ---
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.
 The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the `CatalogGraphQl` module:
 
 -  Custom and extension attributes defined in any attribute set
--  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/product/customizable-option-interface.html)
+-  The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/interfaces/customizable-option-interface.html)
 -  Product types that define their own implementation of `ProductInterface` including:
-   -  [BundleProduct]({{ page.baseurl }}/graphql/product/bundle-product.html)
-   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/product/configurable-product.html)
-   -  [DownloadableProduct]({{ page.baseurl }}/graphql/product/downloadable-product.html)
-   -  [GroupedProduct]({{ page.baseurl }}/graphql/product/grouped-product.html)
+   -  [BundleProduct]({{ page.baseurl }}/graphql/interfaces/bundle-product.html)
+   -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
+   -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
+   -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
 
 ## ProductInterface attributes
 
@@ -22,7 +24,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
 `canonical_url` | String  | The relative canonical URL. This value is returned only if the system setting **Use Canonical Link Meta Tag For Products** is enabled
-`categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/product/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/product/category-interface.html) for more information
+`categories` | [[CategoryInterface]]({{ page.baseurl }}/graphql/interfaces/category-interface.html) | The categories assigned to the product. See [CategoryInterface attributes]({{ page.baseurl }}/graphql/interfaces/category-interface.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `crosssell_products` | [ProductInterface] | An array of cross-sell products
@@ -46,7 +48,10 @@ Attribute | Data type | Description
 `price_range` | [PriceRange!](#PriceRange) |  A `PriceRange` object, indicating the range of prices for the product
 `price_tiers` | [TierPrice] | An array of `TierPrice` objects
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
+`rating_summary` | Float! | The average of all the ratings given to the product
 `related_products` | [ProductInterface] | An array of related products
+`review_count` | Int! | The total count of all the reviews given to the product
+`reviews(pageSize: Int = 20 currentPage: Int = 1)` | [ProductReviews!](#ProductReviews) | The list of reviews of the product
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
@@ -152,6 +157,19 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
+
+#### ProductReviews object {#ProductReviews}
+
+`ProductReviews` contains an array of reviews written about the product.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [ProductReview]! | An array of product reviews
+`page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
+
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
 
 #### ProductLinks object {#ProductLinks}
 

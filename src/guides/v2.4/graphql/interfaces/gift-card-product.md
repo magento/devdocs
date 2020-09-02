@@ -2,6 +2,8 @@
 group: graphql
 title: Gift card product data types
 ee_only: True
+redirect_from:
+  - /guides/v2.4/graphql/product/gift-card-product.html
 ---
 
 The `GiftCardProduct` data type defines properties of a gift card, including the minimum and maximum values and an array that contains the current and past values on the specific gift card
