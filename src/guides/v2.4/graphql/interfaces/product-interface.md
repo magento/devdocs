@@ -15,6 +15,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
    -  [ConfigurableProduct]({{ page.baseurl }}/graphql/interfaces/configurable-product.html)
    -  [DownloadableProduct]({{ page.baseurl }}/graphql/interfaces/downloadable-product.html)
    -  [GroupedProduct]({{ page.baseurl }}/graphql/interfaces/grouped-product.html)
+   -  [VirtualProduct]({{ page.baseurl }}/graphql/interfaces/virtual-product.html)
 
 ## ProductInterface attributes
 
