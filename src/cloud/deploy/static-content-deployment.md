@@ -44,7 +44,7 @@ To configure your project to generate SCD on build:
    -  [SKIP_SCD]({{ site.baseurl }}/cloud/env/variables-build.html#skip_scd) on build stage is `false`
    -  [SCD_STRATEGY]({{site.baseurl}}/cloud/env/variables-build.html#scd_strategy) is `compact`
 
-1. Verify configuration of the [Post-deploy hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` file.
+1. Verify configuration of the [Post-deploy hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html#hooks) in the `.magento.app.yaml` file.
 
 1. Verify your settings by running the [Smart wizard for the ideal state]({{ site.baseurl }}/cloud/deploy/smart-wizards.html).
 

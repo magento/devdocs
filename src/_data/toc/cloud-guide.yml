@@ -359,6 +359,26 @@ pages:
           url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
           children:
+            - label: Properties
+              url: /cloud/project/project-conf-files_magento-app_properties.html
+              versionless: true
+
+            - label: Variables
+              url: /cloud/project/project-conf-files_magento-app_variables.html
+              versionless: true
+
+            - label: PHP Application
+              url: /cloud/project/project-conf-files_magento-app_php-application.html
+              versionless: true
+
+            - label: Customize PHP.INI
+              url: /cloud/project/project-conf-files_magento-app_php-ini.html
+              versionless: true
+
+            - label: Workers
+              url: /cloud/project/project-conf-files_magento-app_workers.html
+              versionless: true
+
             - label: Set cache for static files
               url: /cloud/project/set-cache.html
               versionless: true

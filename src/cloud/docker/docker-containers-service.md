@@ -264,7 +264,7 @@ To mount the custom index.php file using volumes:
 [nginx config]: https://github.com/magento-dockerhub/magento-cloud-docker/blob/master/images/nginx/1.9/etc/vhost.conf
 [nginx configs]: https://github.com/magento/magento-cloud-docker/tree/develop/images/nginx/1.9/etc
 [nginx]: https://hub.docker.com/r/magento/magento-cloud-docker-nginx
-[PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#php-extensions
+[PHP extensions]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app_php-application.html#php-extensions
 [php-cloud]: https://hub.docker.com/r/magento/magento-cloud-docker-php
 [rabbitmq]: https://hub.docker.com/_/rabbitmq
 [redis]: https://hub.docker.com/_/redis

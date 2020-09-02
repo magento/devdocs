@@ -8,7 +8,7 @@ functional_areas:
 
 The `services.yaml` file defines the services supported and used by {{site.data.var.ece}}, such as MySQL, Redis, and ElasticSearch. You do not need to subscribe to external service providers. This file is in the `.magento` directory of your project.
 
-The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
+The deploy script uses the configuration files in the `.magento` directory to provision the environment with the configured services. A service becomes available to your application if it is included in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html#relationships) property of the `.magento.app.yaml` file. The `services.yaml` file contains the _type_ and _disk_ values. Service type defines the service _name_ and _version_. Changing a service configuration causes a deployment to provision the environment with the updated services.
 
 This affects the following environments:
 
@@ -58,7 +58,7 @@ Use the following format:
 
 The `service-id` value identifies the service in the project. You can only use lower case alphanumeric characters: `a` to `z` and `0` to `9`, such as `redis`.
 
-This _service-id_ value is used in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) property of the `.magento.app.yaml` configuration file:
+This _service-id_ value is used in the [`relationships`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html#relationships) property of the `.magento.app.yaml` configuration file:
 
 ```yaml
 relationships:
@@ -105,7 +105,7 @@ The current default storage amount per project is 5GB, or 5120MB. You can distri
 
 ## Service relationships
 
-In {{ site.data.var.ece }} projects, service [*relationships*]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
+In {{ site.data.var.ece }} projects, service [*relationships*]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html#relationships) configured in the `.magento.app.yaml` file determine which services are available to your application.
 
 You can retrieve the configuration data for all service relationships from the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.baseurl }}/cloud/env/variables-cloud.html) environment variable. The configuration data includes service name, type, and version along with any required connection details such as port number and login credentials.
 
