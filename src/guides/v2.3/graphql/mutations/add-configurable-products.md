@@ -145,4 +145,4 @@ Error | Description
 
 ## Related topics
 
--  [Configurable product data types]({{page.baseurl}}/graphql/product/configurable-product.html)
+-  [Configurable product data types]({{page.baseurl}}/graphql/interfaces/configurable-product.html)

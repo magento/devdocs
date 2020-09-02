@@ -3,6 +3,7 @@ group: graphql
 title: Grouped product data types
 redirect_from:
   - /guides/v2.3/graphql/reference/grouped-product.html
+  - /guides/v2.3/graphql/product/grouped-product.html
 ---
 
 The `GroupedProduct` data type implements `ProductInterface` and `PhysicalProductInterface`. As a result, attributes that are specific to grouped products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
@@ -22,7 +23,7 @@ The `GroupedProductItem` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `position` | Int | The relative position of this item compared to the other group items
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this grouped product item
 
 ## Sample Query

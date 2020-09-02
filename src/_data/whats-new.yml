@@ -748,7 +748,7 @@ entries:
   type: Major Update
   date: April 27, 2020
   link: https://github.com/magento/devdocs/pull/6967
-- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html) in the _GraphQL Developer Guide_.
+- description: Added an example of returning swatch information in a products query to [Configurable product data types](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/configurable-product.html) in the _GraphQL Developer Guide_.
   versions: 2.3.5
   type: Major Update
   date: April 27, 2020
@@ -1361,7 +1361,7 @@ entries:
   type: Technical changes
   date: January 28, 2020
   link: https://github.com/magento/devdocs/pull/5448
-- description: Updated the [ProductInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/product-interface.html)
+- description: Updated the [ProductInterface](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/product-interface.html)
     documentation in the _GraphQL Developer Guide_ to include new data types and attributes
     that support tier pricing and price ranges in composite products.
   versions: 2.3.4
@@ -1722,7 +1722,7 @@ entries:
   type: Major update
   date: October 18, 2019
   link: https://github.com/magento/devdocs/pull/5800
-- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/product/category-interface.html)
+- description: Moved the `CategoryInterface` attributes to a separate [topic](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/category-interface.html)
     in the _GraphQL Developer Guide_.
   versions: 2.3.x
   type: New topic
@@ -3182,8 +3182,8 @@ entries:
   type: Technical changes
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3882
-- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/product/configurable-product.html)
-    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/product/downloadable-product.html)
+- description: Added query and mutation to the [configurable]( https://devdocs.magento.com/guides/v2.3/graphql/interfaces/configurable-product.html)
+    and [downloadable product](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/downloadable-product.html)
     endpoints
   versions: 2.3.1
   type: Major update
@@ -3211,7 +3211,7 @@ entries:
   type: New topic
   date: March 26, 2019
   link: https://github.com/magento/devdocs/pull/3855
-- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/product/customizable-option-interface.html)
+- description: Added an example to [CustomizableOptionInterface](https://devdocs.magento.com/guides/v2.3/graphql/interfaces/customizable-option-interface.html)
   versions: 2.3.1
   type: Major update
   date: March 26, 2019
