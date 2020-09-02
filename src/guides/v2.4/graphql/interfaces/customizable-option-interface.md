@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: CustomizableOptionInterface
+redirect_from:
+  - /guides/v2.4/graphql/product/customizable-option-interface.html
 ---
 
 Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizable options.

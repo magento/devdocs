@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: Downloadable product data types
+redirect_from:
+  - /guides/v2.4/graphql/product/downloadable-product.html
 ---
 
 The `DownloadableProduct` data type implements `ProductInterface` and `CustomizableProductInterface`. As a result, attributes that are specific to downloadable products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
