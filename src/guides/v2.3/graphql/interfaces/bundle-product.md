@@ -3,6 +3,7 @@ group: graphql
 title: Bundle product data types
 redirect_from:
   - /guides/v2.3/graphql/reference/bundle-product.html
+  - /guides/v2.3/graphql/product/bundle-product.html
 ---
 
 The `BundleProduct` data type implements the following interfaces:
