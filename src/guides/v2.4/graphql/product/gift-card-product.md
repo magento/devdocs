@@ -1,1 +1,0 @@
-../../../v2.3/graphql/product/gift-card-product.md

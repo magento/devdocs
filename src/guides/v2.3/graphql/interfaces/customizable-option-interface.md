@@ -3,6 +3,7 @@ group: graphql
 title: CustomizableOptionInterface
 redirect_from:
   - /guides/v2.3/graphql/reference/customizable-option-interface.html
+  - /guides/v2.3/graphql/product/customizable-option-interface.html
 ---
 
 Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizable options.
@@ -18,7 +19,7 @@ Customizable options for a product provide a way to offer customers a selection 
 *  Multiple select box
 *  Radio buttons
 
- {:.bs-callout-info}
+{:.bs-callout-info}
 Magento has not implemented all possible customizable product options for GraphQL.
 
 `CustomizableOptionInterface` can contain the following attributes:

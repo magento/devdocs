@@ -205,7 +205,7 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
-The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
+The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute, as we as all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---
