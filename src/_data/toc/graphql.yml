@@ -246,34 +246,34 @@ pages:
         - label: updateCustomerAddress mutation
           url: /graphql/mutations/update-customer-address.html
 
-    - label: Catalog data types and interfaces
+    - label: Interfaces
       children:
         - label: Product interface implementations
-          url: /graphql/product/product-interface-implementations.html
+          url: /graphql/interfaces/product-interface-implementations.html
 
         - label: ProductInterface attributes
-          url: /graphql/product/product-interface.html
+          url: /graphql/interfaces/product-interface.html
 
         - label: CategoryInterface attributes
-          url: /graphql/product/category-interface.html
+          url: /graphql/interfaces/category-interface.html
 
         - label: CustomizableOptionInterface
-          url: /graphql/product/customizable-option-interface.html
+          url: /graphql/interfaces/customizable-option-interface.html
 
         - label: Bundle product data types
-          url: /graphql/product/bundle-product.html
+          url: /graphql/interfaces/bundle-product.html
 
         - label: Configurable product data types
-          url: /graphql/product/configurable-product.html
+          url: /graphql/interfaces/configurable-product.html
 
         - label: Downloadable product data types
-          url: /graphql/product/downloadable-product.html
+          url: /graphql/interfaces/downloadable-product.html
 
         - label: GiftCardProduct data types
-          url: /graphql/product/gift-card-product.html
+          url: /graphql/interfaces/gift-card-product.html
 
         - label: GroupedProduct data types
-          url: /graphql/product/grouped-product.html
+          url: /graphql/interfaces/grouped-product.html
 
     - label: Payment methods
       children:

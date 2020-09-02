@@ -2,7 +2,7 @@
 group: graphql
 title: Bundle product data types
 redirect_from:
-  - /guides/v2.3/graphql/reference/bundle-product.html
+  - /guides/v2.4/graphql/product/bundle-product.html
 ---
 
 The `BundleProduct` data type implements the following interfaces:
@@ -53,7 +53,7 @@ Attribute | Type | Description
 `position` | Int | When a bundle item contains multiple options, the relative position of this option compared to the other options
 `price_type` | PriceTypeEnum | One of FIXED, PERCENT, or DYNAMIC
 `price` | Float | The price of the selected option
-`product` | [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) | Contains details about this product option
+`product` | [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) | Contains details about this product option
 `qty` | Float | Deprecated. Use `quantity` instead
 `quantity` | Float | Indicates the quantity of this specific bundle item
 
