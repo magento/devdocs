@@ -13,7 +13,7 @@ functional_areas:
 -  **All-clear**—available disk space returns above 20%, after a low-disk event
 
 {:.bs-callout-info}
-On Pro Production environments, you can use the Managed alerts for {{ site.data.var.ee }} alert policy for New Relic to monitor disk space. See [Monitor performance with alert policies]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
+On Pro Production environments, you can use the Managed alerts for {{ site.data.var.ee }} alert policy for New Relic to monitor disk space. See [Monitor performance with Managed Alerts]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
 
 ## Email notifications
 

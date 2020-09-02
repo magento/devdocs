@@ -158,7 +158,7 @@ To increase disk space for a service:
 
 ## Monitor disk space
 
-On Pro Production environments, you can monitor disk space and other performance indicators using the Managed alerts for {{ site.data.var.ee }} alert policy for New Relic. For details, see [Monitor performance with alert policies]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
+On Pro Production environments, you can monitor disk space and other performance indicators using the Managed alerts for {{ site.data.var.ee }} alert policy for New Relic. For details, see [Monitor performance with Managed Alerts]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
 
 ## No space left
 

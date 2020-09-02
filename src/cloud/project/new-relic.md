@@ -284,7 +284,7 @@ To review the Managed Alerts for {{ site.data.var.ee }} policy:
 
    -  In the left navigation, click **Policies**.
 
-   -  At the top of the page, select the account and project from the dropdown menu if needed.
+   -  At the top of the page, select the account and project from the drop-down menu if needed.
 
       ![Select account and project]({{ site.baseurl }}/common/images/cloud/cloud-new-relic-select-account.png){:width="650px"}
 
