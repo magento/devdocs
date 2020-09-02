@@ -1592,7 +1592,7 @@ entries:
   link: https://github.com/magento/devdocs/pull/6130
 - description: Added the following sections to the _Cloud Guide_ with information
     about using Adobe-generated alert policies:<br/>- [New Relic > Monitor performance
-    with New Relic alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-alert-policies)<br/>-
+    with New Relic alert policies](https://devdocs.magento.com/cloud/project/new-relic.html#monitor-performance-with-managed-alerts)<br/>-
     [Monitor performance](https://devdocs.magento.com/cloud/project/monitor-performance.html)
   versions: 2.x
   type: Major update
