@@ -104,12 +104,6 @@ pages:
       - label: MFTF CLI
         url: /mftf/docs/commands/mftf.html
         versionless: true
-        
-      - label: Magento action groups
-        url: /reference/mftf/action-groups.html
-      
-      - label: Magento tests
-        url: /reference/mftf/functional-tests.html
 
   - label: Reporting
     url: /mftf/docs/reporting.html
