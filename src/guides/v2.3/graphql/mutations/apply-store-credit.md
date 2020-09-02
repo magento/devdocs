@@ -15,7 +15,15 @@ If the amount of available store credit equals or exceeds the grand total of the
 
 ## Syntax
 
-`mutation: {applyStoreCreditToCart(input: ApplyStoreCreditToCartInput): {ApplyStoreCreditToCartOutput}}`
+```graphql
+mutation {
+  applyStoreCreditToCart(
+    input: ApplyStoreCreditToCartInput
+  ) {
+    ApplyStoreCreditToCartOutput
+  }
+}
+```
 
 ## Example usage
 
