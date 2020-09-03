@@ -19,4 +19,3 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 ### [Customize `php.ini` settings]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_php-ini.html)
 
 ### [Workers]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_workers.html)
-
