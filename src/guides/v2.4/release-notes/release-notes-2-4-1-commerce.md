@@ -3,9 +3,9 @@ group: release-notes
 title: Magento Commerce 2.4.1 Release Notes
 ---
 
-Magento Commerce 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the SameSite attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. Merchants can improve storefront performance by using new configuration settings for message queue consumer configuration. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
+Magento Commerce 2.4.1 introduces enhancements to performance and security plus significant additions to the B2B feature set. Security enhancements include support for the `SameSite` attribute for cookies and the addition of CAPTCHA protection for payment-related and order-related API endpoints and the Place Order storefront page. Merchants can improve storefront performance by using new configuration settings for message queue consumer configuration. B2B improvements focus on the order approval process, B2B shipping methods, expanded logging of Admin actions, and enhanced security on storefront.
 
-This release includes all the improvements to core quality that were included in Magento 2.4.0, over 150 new fixes to core code, and over 15 security enhancements. It includes the resolution of GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
+This release includes all improvements to core quality that were included in Magento 2.4.0, over 150 new fixes to core code, and over 15 security enhancements. It includes the resolution of almost 300 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
 All known issues identified in Magento 2.4.0 have been fixed in this release.
 
@@ -42,7 +42,7 @@ Security improvements for this release include:
 *  **CAPTCHA** protection has been added to the following product areas:
 
    *  Place Order storefront page and REST and GraphQL endpoints <!--- MC-36067-->
-   *  Payment-related REST and GraphQL endpoints<!--- MC-36064-->
+   *  Payment-related REST and GraphQL endpoints.<!--- MC-36064-->
 
 *  **Support for the SameSite attribute for cookies**. Magento classes that handle cookies have been updated to support the `SameSite` cookie attribute. This attribute is set to `Lax` by default but can be explicitly overridden. <!--- MC-35389-->
 
@@ -76,9 +76,21 @@ This release contains enhancements to core quality, which improve the quality of
 
 This release includes Adobe Stock Integration v2.1.0.
 
+### New Media Gallery
+
+The New Media Gallery is now enabled by default in the Admin. Merchants can now perform these actions on images in the Media Gallery:
+
+*  Delete images in bulk
+*  Optimize media storage by identifying duplicate images and images that are not used on the storefront
+*  Filter images by the storefront area they are used in, including product and category content and CMS blocks
+*  Work with image metadata
+   *  View meta data from the images uploaded into Media Gallery
+   *  Edit image meta data (title, description, and keywords)
+   *  Search for images by their meta data
+
 ### Page Builder
 
-Page Builder now supports full screen mode, which supports easier editing of content. <!--- PB-543-->
+Page Builder now supports full screen mode, which supports easier editing of content and provides a consistent experience editing content across the Admin. <!--- PB-543-->
 
 ### Inventory Management
 
@@ -99,6 +111,16 @@ This release adds GraphQL coverage for the following features:
 See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this and other enhancements.
 
 ### PWA Studio
+
+PWA Studio v8.0.0 introduces new features and enhancements:
+
+*  updates to the Venia style guide that apply to design tokens, typography, colors, core components, and page layouts. <!--- PWA-519 419-->
+
+*  improvements to the Venia mini-cart experience <!--- PWA-236-->
+
+*  support for multiple locales and localized content on the Venia storefront <!--- PWA-295-->
+
+*  numerous improvements to the MyAccount experience of the Venia storefront <!--- PWA-247-->
 
 See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
@@ -1340,22 +1362,6 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- ENGCOM-7559-->
 
-## Known issues -- general
-
-### B2B
-
-## Known issues -- VBE
-
-### Amazon Pay
-
-### Braintree
-
-### dotdigital
-
-### Klarna
-
-### Vertex
-
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
@@ -1382,7 +1388,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.0 using Composer.
+You can install Magento Commerce 2.4.1 using Composer.
 
 ## Migration tool kits
 
