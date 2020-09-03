@@ -9,7 +9,16 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {changeCustomerPassword(currentPassword: String! newPassword: String!) {Customer}}`
+```graphql
+mutation {
+  changeCustomerPassword(
+    currentPassword: String!
+    newPassword: String!
+  ) {
+    Customer
+  }
+}
+```
 
 ## Example usage
 

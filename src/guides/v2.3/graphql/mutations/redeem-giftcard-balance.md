@@ -11,7 +11,15 @@ Run this mutation on behalf of logged-in customers only. [Authorization tokens](
 
 ## Syntax
 
- `mutation: redeemGiftCardBalanceAsStoreCredit(input: GiftCardAccountInput): GiftCardAccount`
+```graphql
+mutation {
+  redeemGiftCardBalanceAsStoreCredit(
+    input: GiftCardAccountInput
+  ) {
+    GiftCardAccount
+  }
+}
+```
 
 ## Example usage
 
@@ -22,7 +30,9 @@ The following example redeems the gift card with code `“056MHP57TJ5C”`.
 ```graphql
 mutation {
   redeemGiftCardBalanceAsStoreCredit(
-    input : { gift_card_code: “056MHP57TJ5C”}
+    input: {
+      gift_card_code: "056MHP57TJ5C"
+    }
   ) {
     balance {
       currency

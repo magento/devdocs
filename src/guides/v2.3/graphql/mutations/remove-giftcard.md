@@ -8,7 +8,15 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
 ## Syntax
 
- `mutation: removeGiftCardFromCart(input: RemoveGiftCardFromCartInput): RemoveGiftCardFromCartOutput`
+```graphql
+mutation {
+  removeGiftCardFromCart(
+    input: RemoveGiftCardFromCartInput
+  ) {
+    RemoveGiftCardFromCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -16,7 +24,7 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
 **Request:**
 
- ``` text
+```graphql
 mutation {
   removeGiftCardFromCart(
     input: {
@@ -35,7 +43,7 @@ mutation {
 
 **Response:**
 
- ```json
+```json
 {
   "data": {
     "removeGiftCardFromCart": {
