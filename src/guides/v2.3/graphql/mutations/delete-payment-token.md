@@ -10,7 +10,15 @@ You must specify the customer's authorization token in the header of the call.
 
 ## Syntax
 
-`mutation: {deletePaymentToken(public_hash) {DeletePaymentTokenOutput}}`
+```graphql
+mutation {
+  deletePaymentToken(
+    public_hash: String!
+  ) {
+    DeletePaymentTokenOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -34,7 +42,6 @@ mutation {
     }
   }
 }
-
 ```
 
 **Response:**
