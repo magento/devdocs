@@ -114,6 +114,10 @@ pages:
           url: /cloud/project/project-webint-snap.html
           versionless: true
 
+        - label: Restore an environment
+          url: /cloud/env/restore-environment.html
+          versionless: true
+
         - label: Profile database queries
           url: /cloud/project/profile-database-queries.html
           versionless: true
@@ -355,7 +359,7 @@ pages:
       url: /cloud/env/environments.html
       versionless: true
       children:
-        - label: Application
+        - label: Application (.magento.app.yaml)
           url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
           children:
@@ -367,12 +371,8 @@ pages:
               url: /cloud/project/project-conf-files_magento-app_variables.html
               versionless: true
 
-            - label: PHP Application
+            - label: PHP application
               url: /cloud/project/project-conf-files_magento-app_php-application.html
-              versionless: true
-
-            - label: Customize PHP.INI
-              url: /cloud/project/project-conf-files_magento-app_php-ini.html
               versionless: true
 
             - label: Workers
@@ -383,7 +383,7 @@ pages:
               url: /cloud/project/set-cache.html
               versionless: true
 
-        - label: Build and deploy
+        - label: Build & deploy (.magento.env.yaml)
           url: /cloud/project/magento-env-yaml.html
           versionless: true
 
@@ -396,39 +396,7 @@ pages:
               url: /cloud/env/log-handlers.html
               versionless: true
 
-        - label: Environment variables
-          url: /cloud/env/variables-intro.html
-          versionless: true
-          children:
-            - label: ADMIN variables
-              url: /cloud/env/environment-vars_magento.html
-              versionless: true
-
-            - label: Global variables
-              url: /cloud/env/variables-global.html
-              versionless: true
-    
-            - label: Build variables
-              url: /cloud/env/variables-build.html
-              versionless: true
-    
-            - label: Cloud variables
-              url: /cloud/env/variables-cloud.html
-              versionless: true
-
-            - label: Deploy variables
-              url: /cloud/env/variables-deploy.html
-              versionless: true
-
-            - label: Post-deploy variables
-              url: /cloud/env/variables-post-deploy.html
-              versionless: true
-    
-            - label: Working with variables
-              url: /cloud/env/working-with-variables.html
-              versionless: true
-    
-        - label: Routes
+        - label: Routes (routes.yaml)
           url: /cloud/project/project-conf-files_routes.html
           versionless: true
           children:
@@ -444,7 +412,7 @@ pages:
               url: /cloud/project/project-routes-more-ssi.html
               versionless: true
 
-        - label: Services
+        - label: Services (services.yaml)
           url: /cloud/project/project-conf-files_services.html
           versionless: true
           children:
@@ -464,9 +432,42 @@ pages:
               url: /cloud/project/project-conf-files_services-rabbit.html
               versionless: true
 
-        - label: Restore an environment
-          url: /cloud/env/restore-environment.html
+        - label: PHP (php.ini)
+          url: /cloud/project/project-conf-files_magento-app_php-ini.html
           versionless: true
+
+        - label: Environment variables
+          url: /cloud/env/variables-intro.html
+          versionless: true
+          children:
+            - label: ADMIN variables
+              url: /cloud/env/environment-vars_magento.html
+              versionless: true
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              versionless: true
+
+            - label: Build variables
+              url: /cloud/env/variables-build.html
+              versionless: true
+
+            - label: Cloud variables
+              url: /cloud/env/variables-cloud.html
+              versionless: true
+
+            - label: Deploy variables
+              url: /cloud/env/variables-deploy.html
+              versionless: true
+
+            - label: Post-deploy variables
+              url: /cloud/env/variables-post-deploy.html
+              versionless: true
+
+            - label: Working with variables
+              url: /cloud/env/working-with-variables.html
+              versionless: true
+
 
     - label: Configuration management for store settings
       url: /cloud/live/sens-data-over.html
