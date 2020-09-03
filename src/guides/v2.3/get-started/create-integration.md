@@ -42,7 +42,7 @@ To develop a module, you must:
    ```
 
    ```bash
-   mkdir -p app/code/<vendor_name>/module-<module_name>/Setup
+   mkdir -p app/code/<vendor_name>/<module_name>/Setup
    ```
 
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
