@@ -9,7 +9,16 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {generateCustomerToken(email: String!password: String!) {CustomerToken}}`
+```graphql
+mutation {
+  generateCustomerToken(
+    email: String!
+    password: String!
+  ) {
+    CustomerToken
+  }
+}
+```
 
 ## Example usage
 
