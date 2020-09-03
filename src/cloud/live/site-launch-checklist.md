@@ -92,7 +92,7 @@ You can also test using the following 3rd party options:
 
 ## Performance monitoring
 
-You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide Adobe-generated alert policies to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
+You can use New Relic services for performance monitoring on Pro and Starter environments. On Pro plan accounts, we provide the Managed alerts for {{ site.data.var.ee }} alert policy to monitor application and infrastructure performance using New Relic APM and Infrastructure agents. For details on using these services, see [Monitor performance with Managed Alerts]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
 
 {:.ref-header}
 Next step
