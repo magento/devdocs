@@ -11,5 +11,5 @@ Zero Subtotal Checkout | `free` | Yes
 In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method:
 
 1. Log in to [Admin](https://glossary.magento.com/admin) and select **Stores** > **Settings** > **Configuration** > **Sales** > **Payment Methods**.
-1. Enable the [payment method](https://glossary.magento.com/payment-method.
+1. Enable the [payment method](https://glossary.magento.com/payment-method).
 1. Click **Save Config**.

@@ -7,13 +7,13 @@ functional_areas:
   - Setup
 ---
 
+{:.bs-calloout-info}
+If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) in the _Cloud Guide_.
+
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
-Magento is not supported on:
-
-*  Windows OS
-*  Mac OS
+Magento is not supported on Microsoft Windows and macOS.
 
 ## Memory requirement
 
@@ -39,23 +39,18 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 Magento is also compatible, but has not been tested and is not recommended, with MySQL 5.7.9, MariaDB 10.2, and Percona 5.7.
 
 {:.bs-callout-info}
-Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
+Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however; so be sure to research compatibility issues before using a feature in your Magento module. {% include install/maria-db.md %}
 
 ## PHP
 
-*  ~7.4.0
-
-Magento 2.4.0 can be installed with 7.3, but it is not tested or recommended. It is intended for upgrading from Magento 2.3.x to Magento 2.4.0.
-
-{:.bs-callout-warning}
-There is a [bug](https://bugs.php.net/bug.php?id=79174) in PHP 7.4.2 which causes some messages to not render properly. Magento recommends using other versions of 7.4.
+{% include install/php-versions-2.4.md %}
 
 ### Required PHP extensions
 
 {:.bs-callout-info}
 The [PHP installation instructions][] include a step for installing these extensions.
 
-<!--{% assign platform-req = site.data.codebase.v2_4.open-source.composer_lock.platform %}-->
+<!--{% assign packages = site.data.codebase.v2_4.open-source.composer_lock.packages %}-->
 {% include install/php-extensions-template.md %}
 
 Refer to [official PHP documentation][] for installation details.
@@ -74,7 +69,7 @@ For more information, see [Required PHP settings][].
 
 ## Elasticsearch
 
-As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento supports Elasticsearch 7.6.x.
+As of Magento 2.4.0, MySQL is no longer used for search. You must use [Elasticsearch]({{page.baseurl}}/install-gde/prereq/elasticsearch.html). Magento is tested with Elasticsearch 7.6.x. You can use other versions at your discretion, but we recommend using the tested version of Elasticsearch.
 
 {:.bs-callout-warning}
 Magento no longer supports Elasticsearch [2.x, 5.x, and 6.x][].

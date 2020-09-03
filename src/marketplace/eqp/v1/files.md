@@ -149,6 +149,18 @@ Content-Type: application/pdf
 |filename|string|Should be the original name of the file.|
 |Content-Type|string|Should be the correct mime-type for the file.|
 
+Recognized Content-Types
+
+|File Type|Recognized Content-Type|Usage|
+|-----|--------|-----------|
+|png|image/png|avatar, gallery|
+|jpg / jpeg|image/jpeg|avatar, gallery|
+|gif|image/gif|avatar|
+|pdf|application/pdf|document|
+|zip|application/zip|package|
+|zip|application/x-zip-compressed|package|
+|zip|application/octet-stream|package|
+
 **Request:**
 
 If the request body given above was saved into a temporary file at `/tmp/files-payload`,
