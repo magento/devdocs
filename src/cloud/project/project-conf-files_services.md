@@ -282,12 +282,12 @@ To downgrade a service version by renaming an existing service:
        database: "mysql:mysql"
    ```
 
-  > Updated `.magento.app.yaml` configuration
+   > Updated `.magento.app.yaml` configuration
 
-  ```yaml
-  relationships:
-      database: "mysql2:mysql"
-  ```
+   ```yaml
+   relationships:
+       database: "mysql2:mysql"
+   ```
 
 1. Add, commit, and push your code changes.
 
