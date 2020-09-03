@@ -31,7 +31,7 @@ To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration, like any other of your custom modules, should be placed under `<magento_base_dir>/app/code/app/code/<vendor_name>/<module_name>`. E.g. `<magento_base_dir>/app/code/Vendor1/Module1`
 
-   Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
+   Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `<magento_base_dir>/app/code/<vendor_name>/<module_name>`, as shown in the following example:
 
    ```bash
    cd <magento_base_dir>
