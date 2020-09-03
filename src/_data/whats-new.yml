@@ -132,15 +132,6 @@ entries:
   link: https://github.com/magento/devdocs/pull/7669
   contributor: meker12
   profile: https://github.com/meker12
-- description: Extended MFTF reference documentation for [functional tests](https://devdocs.magento.com/guides/v2.4/reference/mftf/functional-tests.html)
-    and [action groups](https://devdocs.magento.com/guides/v2.4/reference/mftf/action-groups.html)
-    with data from Commerce specific and B2B specific modules.
-  versions: 2.4.0
-  type: Major Update
-  date: August 4, 2020
-  link: https://github.com/magento/devdocs/pull/7653
-  contributor: dshevtsov
-  profile: https://github.com/dshevtsov
 - description: Updated the list of MSI modules that must be disabled to use Connector and OMS together in the [Install Inventory Management topic](https://devdocs.magento.com/extensions/inventory-management/).
   versions: 2.4.x
   type: Major Update
@@ -148,14 +139,6 @@ entries:
   link: https://github.com/magento/devdocs/pull/7611
   contributor: shrielenee
   profile: https://github.com/shrielenee
-- description: Added data for reference documentation covering [functional tests](https://devdocs.magento.com/guides/v2.4/reference/mftf/functional-tests.html)
-    and [action groups](https://devdocs.magento.com/guides/v2.4/reference/mftf/action-groups.html).
-  versions: 2.4.0
-  type: Major Update
-  date: July 30, 2020
-  link: https://github.com/magento/devdocs/pull/7637
-  contributor: dshevtsov
-  profile: https://github.com/dshevtsov
 - description: Updated [reference documentation](https://devdocs.magento.com/guides/v2.4/release-notes/backward-incompatible-changes/reference.html)
     covering backward incompatible changes for 2.3.0-2.4.0 versions delta.
   versions: ''
@@ -765,12 +748,6 @@ entries:
   type: Major Update
   date: April 29, 2020
   link: https://github.com/magento/devdocs/pull/7119
-- description: Updated [MFTF functional test reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/functional-tests.html)
-    and [MFTF action group reference](https://devdocs.magento.com/guides/v2.3/reference/mftf/action-groups.html).
-  versions: 2.3.5
-  type: Major Update
-  date: April 29, 2020
-  link: https://github.com/magento/devdocs/pull/7118
 - description: Published the release notes for [Magento Cloud Patches 1.0.3](https://devdocs.magento.com/cloud/release-notes/mcp-release-notes.html).
   versions: 2.x
   type: Technical
