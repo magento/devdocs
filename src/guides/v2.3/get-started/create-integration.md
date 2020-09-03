@@ -38,7 +38,7 @@ To develop a module, you must:
    ```
 
    ```bash
-   mkdir -p app/code/<vendor_name>/module-<module_name>/etc/integration
+   mkdir -p app/code/<vendor_name>/<module_name>/etc/integration
    ```
 
    ```bash
