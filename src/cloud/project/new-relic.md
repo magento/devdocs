@@ -262,7 +262,8 @@ Based on industry best practices, this policy is a collection of alerts that set
 
 When your site experiences an infrastructure or application issue that triggers an alert threshold, New Relic sends alert notifications so that you can proactively address the issue.  See [Managed Alerts for Magento Commerce][] in the _Magento Help Center_ for details about each alert type and troubleshooting steps to resolve the issues that triggered the alert.
 
-To use this policy, you must configure at least one notification channel to receive the alert messages.
+{:.bs-callout-warning}
+To use this policy and get notified when an issue on your site triggers an alert condition, you must configure at least one notification channel to receive the alert notifications.
 
 {:.bs-callout-info}
 For Pro Staging and Integration environments and Starter environments, use [Health notifications] to monitor disk space.
