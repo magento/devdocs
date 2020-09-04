@@ -1,15 +1,13 @@
 ---
 group: cloud-guide
-title: PHP Application
+title: PHP application
 functional_areas:
   - Cloud
   - Setup
   - Application  
 ---
 
-### Configure PHP options
-
-You can choose which version of PHP to run in your `.magento.app.yaml` file:
+You can choose which [version of PHP]({{ site.baseurl}}/cloud/project/services.html#service-versions) to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: mymagento

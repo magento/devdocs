@@ -6,7 +6,9 @@ functional_areas:
   - Setup
   - Application
 ---
-The following environment variables are included in `.magento.app.yaml`. These are required for Magento 2.2.x - 2.3.x.
+The following environment variables are included in the `.magento.app.yaml` file.
+
+Required for Magento 2.2.x to 2.3.x:
 
 ```yaml
 variables:
