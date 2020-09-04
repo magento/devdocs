@@ -24,7 +24,7 @@ http://{default}/:
 
 ## Partial-route redirects {#cloud-route-partial}
 
-In the [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
+In the [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file, you can also add partial redirect rules to existing routes based on pattern matching:
 
 ```yaml
 http://{default}/:

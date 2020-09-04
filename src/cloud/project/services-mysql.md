@@ -4,6 +4,8 @@ title: Set up MySQL service
 functional_areas:
   - Cloud
   - Setup
+redirect_from:
+  - /cloud/project/project-conf-files_services-mysql.html  
 ---
 
 The `mysql` service provides persistent data storage based on [MariaDB](https://mariadb.com/) versions 10.0-10.1, supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage engine and reimplemented features from MySQL 5.6 and 5.7.
@@ -27,7 +29,7 @@ MariaDB 10.1 is the last version that support XtraDB as the storage engine. Vers
    ```
 
    {:.bs-callout-tip}
-   MySQL errors, such as `PDO Exception: MySQL server has gone away`, can occur as a result of insufficient disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk) file.
+   MySQL errors, such as `PDO Exception: MySQL server has gone away`, can occur as a result of insufficient disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#disk) file.
 
 1. Configure the relationships in the `.magento.app.yaml` file.
 
@@ -42,7 +44,7 @@ MariaDB 10.1 is the last version that support XtraDB as the storage engine. Vers
    git add -A && git commit -m "Enable mysql service" && git push   origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
 
    {%include cloud/tip-change-installed-service-version.md%}
 
@@ -109,7 +111,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 1. Log in to the remote server using SSH.
 
-1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) variable.
+1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) variable.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
