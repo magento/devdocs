@@ -359,7 +359,7 @@ pages:
       url: /cloud/env/environments.html
       versionless: true
       children:
-        - label: Application (.magento.app.yaml)
+        - label: Application
           url: /cloud/project/project-conf-files_magento-app.html
           versionless: true
           children:
@@ -383,7 +383,7 @@ pages:
               url: /cloud/project/set-cache.html
               versionless: true
 
-        - label: Build & deploy (.magento.env.yaml)
+        - label: Build and deploy
           url: /cloud/project/magento-env-yaml.html
           versionless: true
 
@@ -396,7 +396,7 @@ pages:
               url: /cloud/env/log-handlers.html
               versionless: true
 
-        - label: Routes (routes.yaml)
+        - label: Routes
           url: /cloud/project/project-conf-files_routes.html
           versionless: true
           children:
@@ -412,7 +412,7 @@ pages:
               url: /cloud/project/project-routes-more-ssi.html
               versionless: true
 
-        - label: Services (services.yaml)
+        - label: Services
           url: /cloud/project/project-conf-files_services.html
           versionless: true
           children:
