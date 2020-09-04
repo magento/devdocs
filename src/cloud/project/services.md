@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Services
+title: Configure services
 functional_areas:
   - Cloud
   - Setup
