@@ -139,7 +139,7 @@ To check the response headers:
    If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
 
    ```bash
-   curl -svo /dev/null --resolve '<your_hostname>:443:<ip address of cache node>' <https URL>
+   curl -svo /dev/null --resolve '<your_hostname>:443:<IP-address-of-cache-node>' <https-URL>
    ```
 
    {:.bs-callout-info}

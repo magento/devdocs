@@ -67,14 +67,14 @@ To check Fastly caching behavior:
 
 1. Check for headers using the `dig` command-line utility to get information about the site configuration.
 
-   The following examples use Pro URLs. You can use any URL with the `dig` command.
+   You can use any URL with the `dig` command. The following examples use Pro URLs:
 
    -  Staging: `dig https://mcstaging.<your-domain>.com`
    -  Production: `dig https://mcprod.<your-domain>.com`
 
    For additional `dig` tests, see Fastly's [Testing before changing DNS][].
 
-1. Use `cURL` to verify the response header information:
+1. Use `cURL` to verify the response header information.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
@@ -82,10 +82,10 @@ To check Fastly caching behavior:
 
    See [Check response headers][] for details about verifying the headers.
 
-1. After you are live, use the following command to check your live site:
+1. After you are live,  use `cURL` to check your live site.
 
    ```bash
-   curl https://<your domain> -k -vo /dev/null -H Fastly-Debug:1
+   curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
    ```
 
 ## Complete UAT testing {#uat-testing}
