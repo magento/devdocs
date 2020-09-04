@@ -269,9 +269,15 @@ Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, Magento completes the domain validation using the ACME HTTP challenge. During the Fastly setup process, you update your DNS configuration to add the ACME challenge CNAME records to allow for automated certificate validation. As long as the domain being validated points to Fastly through a CNAME. The CNAME is automatically provisioned through Fastly VCL.
 
-For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
+To use the SSL/TLS certificate, Magento must validate domain ownership for each domain in your Cloud environments using one of the following methods:
+
+-  If the DNS configuration for the domain already points to Fastly, use the [ACME HTTP challenge](https://letsencrypt.org/docs/challenge-types/).
+
+-  If the DNS configuration has ACME challenge CNAME records for a domain and no CNAME records pointing to the Fastly service, Magento uses those records to complete domain validation and provision the SSL/TLS certificates.
+
+As soon as the domains are validated, Magento provisions the Let's Encrypt TLS/SSL certificates for each environment automatically within several hours.
 
 ## Upgrade the Fastly module {#upgrade}
 
