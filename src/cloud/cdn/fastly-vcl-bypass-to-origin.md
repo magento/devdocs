@@ -13,13 +13,14 @@ You can create a custom VCL snippet to bypass Fastly caching and submit requests
 {:.bs-callout-info}
 We recommend testing custom VCL configurations in a Staging environment before merging them into a Production environment.
 
-{:.procedure}
-Prerequisites
+**Prerequisites:**
+
+Your environment must be configured to use the Fastly CDN. See [Set up Fastly]({{ site.baseurl }}/cloud/cdn/configure-fastly.html)
 
 {%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
 
 {:.procedure}
-To bypass Fastly and submit requests to the origin server:
+To bypass Fastly cache based on IP address or URL:
 
 {% include cloud/admin-ui-login-step.md %}
 
@@ -64,6 +65,15 @@ To bypass Fastly and submit requests to the origin server:
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
    Fastly validates the updated VCL version during the upload process. If the validation fails, edit your custom VCL snippet to fix any issues. Then, upload the VCL again.
+
+After you add the VCL snippet, you can use cURL commands to submit requests to the origin server from the specified IP address or URL as shown in the following example:
+
+```bash
+curl -svo /dev/null www.example.com/index.html
+```
+{:.no-copy}
+
+Then, inspect the response to troubleshoot issues with the uncached content.
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
