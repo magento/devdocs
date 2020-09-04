@@ -11,7 +11,15 @@ A logged-in customer specifies an email address when they create an account. The
 
 ## Syntax
 
-`mutation: {setGuestEmailOnCart(input: SetGuestEmailOnCartInput): {SetGuestEmailOnCartOutput}}`
+```graphql
+mutation {
+  setGuestEmailOnCart(
+    input: SetGuestEmailOnCartInput
+  ) {
+    SetGuestEmailOnCartOutput
+  }
+}
+```
 
 ## Example usage
 
