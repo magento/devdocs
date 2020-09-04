@@ -11,7 +11,7 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 
 Use the `.magento.app.yaml` file to define the following configuration values:
 
--[Properties]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html)—Define property values for application instance.
+-  [Properties]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html)—Define property values for application instance.
 -[Variables]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_variables.html)—Review environment variables required for the application instance.
 -[PHP Application]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_php-application.html)—Configure runtime PHP options.
 -[Workers]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_workers.html)—Create a worker instance and understand background tasks.
