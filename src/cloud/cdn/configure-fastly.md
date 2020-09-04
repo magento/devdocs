@@ -269,15 +269,17 @@ Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, Magento completes the domain validation using the ACME HTTP challenge. During the Fastly setup process, you update your DNS configuration to add the ACME challenge CNAME records to allow for automated certificate validation. As long as the domain being validated points to Fastly through a CNAME. The CNAME is automatically provisioned through Fastly VCL.
+To enable the Fastly service to serve secure traffic over HTTPS, your environment must have a Domain-Validated SSL/TLS certificate, Magento provides an automated process to validate domain ownership, provision a Let's Encyrpt SSL/TLS certificate, and apply it to your Cloud environment. This automation requires you to supply information to enable domain validation using **one** of the following methods:
 
-To use the SSL/TLS certificate, Magento must validate domain ownership for each domain in your Cloud environments using one of the following methods:
+-  **DNS validation**–Update your DNS configuration with CNAME records that point to the Fastly service
+-  **ACME challenge CNAME records**–Add the ACME challenge CNAME records to your DNS configuration for each domain
 
--  If the DNS configuration for the domain already points to Fastly, use the [ACME HTTP challenge](https://letsencrypt.org/docs/challenge-types/).
+As soon as the domains are validated for an environment, Magento provisions the Let's Encrypt TLS/SSL certificate, and applies it to your Cloud environment. The process can take several hours. We recommend that you complete the DNS configuration updates several days in advance to prevent delays in site development and site launch.
 
--  If the DNS configuration has ACME challenge CNAME records for a domain and no CNAME records pointing to the Fastly service, Magento uses those records to complete domain validation and provision the SSL/TLS certificates.
+{:.tip}
+If you have a Production domain that is not active yet, you can create an ACME challenge CNAME record for domain validation. This record allows Magento to provision the SSL/TLS certificate with the correct domains before site launch.
 
-As soon as the domains are validated, Magento provisions the Let's Encrypt TLS/SSL certificates for each environment automatically within several hours.
+<!-- Coming soon:  Instructions and examples for DNS config updates-->
 
 ## Upgrade the Fastly module {#upgrade}
 

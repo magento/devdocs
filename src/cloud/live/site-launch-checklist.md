@@ -52,7 +52,10 @@ Another option for apex domain is to add A records, which maps a domain name to 
 
 Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
-To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and provision the certificate. Each environment has a unique certificate that covers the domains configured for the Magento Commerce sites deployed on the the Cloud.
+To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the Magento Commerce sites deployed in that environment.
+
+<!--Note:  The Configure DNS for Fastly service integration topic is coming in later PR-->
+
 See [Configure DNS for Fastly service integration]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Verify Production configurations
