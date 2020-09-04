@@ -40,7 +40,7 @@ Check the Magento configuration settings through the Admin panel including the B
 
 ## Check Fastly caching {#fastly}
 
-[Configuring Fastly][] requires careful attention to detail–using the correct Fastly Service ID and Fastly API token credentials, uploading the Fastly VCL code, updating the DNS configuration, and applying the SSL/TLS certificates to your environments. If you have completed these tasks, you are ready to verify Fastly caching on Staging and Production environments.
+[Configuring Fastly][] requires careful attention to detail–using the correct Fastly Service ID and Fastly API token credentials, uploading the Fastly VCL code, updating the DNS configuration, and applying the SSL/TLS certificates to your environments. After completing these setup tasks, you can verify Fastly caching on Staging and Production environments.
 
 {:.procedure}
 To verify the Fastly service configuration:
@@ -51,7 +51,13 @@ To verify the Fastly service configuration:
 
 1. Ensure that the **Caching application** value is set to _Fastly CDN_ .
 
-1. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
+1. Test the Fastly credentials.
+
+   -  Click **Fastly Configuration**.
+
+   -  Verify that the values for the Fastly Service ID and Fastly API token credentials. See [Get Fastly credentials][].
+
+   -  Click **Test credentials**.
 
    {:.bs-callout-warning}
    Make sure that you entered the correct Fastly Service ID and API token in your Staging and Production environments. Fastly credentials are created and mapped per service environment. If you enter Staging credentials in your Production environment, you cannot upload your VCL snippets, caching does not work correctly, and your caching configuration points to the wrong server and stores.
@@ -63,8 +69,8 @@ To check Fastly caching behavior:
 
    The following examples use Pro URLs. You can use any URL with the `dig` command.
 
-   -  Staging: `dig http[s]://mcstaging.<your-domain>.com`
-   -  Production: `dig http[s]://mcprod.<your-domain>.com`
+   -  Staging: `dig https://mcstaging.<your-domain>.com`
+   -  Production: `dig https://mcprod.<your-domain>.com`
 
    For additional `dig` tests, see Fastly's [Testing before changing DNS][].
 
@@ -78,7 +84,7 @@ To check Fastly caching behavior:
 
 1. After you are live, use the following command to check your live site:
 
-   ```curl
+   ```bash
    curl https://<your domain> -k -vo /dev/null -H Fastly-Debug:1
    ```
 
@@ -228,6 +234,7 @@ We provide a free Security Scan Tool for your sites. To add your sites and run t
 [Check response headers]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html#response-headers
 [Configuring Fastly]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html
 [Fastly troubleshooting]: {{ site.baseurl }}/cloud/cdn/trouble-fastly.html
+[Get Fastly credentials]: {{ site.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds
 [Jmeter]: https://jmeter.apache.org/
 [Magento Performance Toolkit]: {{ site.mage2bloburl }}/{{ site.version }}/setup/performance-toolkit
 [Magento Security Scan Tool]: {{ site.baseurl }}/cloud/live/live.html#security-scan
