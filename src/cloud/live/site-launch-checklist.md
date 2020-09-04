@@ -50,8 +50,9 @@ Another option for apex domain is to add A records, which maps a domain name to 
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, Magento completes the domain validation using the ACME HTTP challenge. During the Fastly setup process, you update your DNS configuration to add the ACME challenge CNAME records to allow for automated certificate validation. As long as the domain being validated points to Fastly through a CNAME. The CNAME is automatically provisioned through Fastly VCL.
+Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
+To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and provision the certificate. Each environment has a unique certificate that covers the domains configured for the Magento Commerce sites deployed on the the Cloud.
 See [Configure DNS for Fastly service integration]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Verify Production configurations
