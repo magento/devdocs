@@ -130,7 +130,7 @@ The `{{site.data.var.ct}}` package includes a dependency for the [magento/magent
 
 <!-- link definitions -->
 [mode]: {{site.baseurl}}/cloud/docker/docker-config.html#set-the-launch-mode
-[hooks]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app_properties.html#hooks
+[hooks]: {{site.baseurl}}/cloud/project/magento-app_properties.html#hooks
 [cloudvar]: {{site.baseurl}}/cloud/env/variables-cloud.html
 [wizard]: {{site.baseurl}}/cloud/deploy/smart-wizards.html
 [Docker development]: {{site.baseurl}}/cloud/docker/docker-development.html

@@ -12,7 +12,7 @@ Use the following properties to build your application configuration file. The `
 
 ### `name`
 
-The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
+The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
 
 {:.bs-callout-warning}
 Do not change the name of the application after it has been deployed. Doing so will result in data loss.
@@ -69,7 +69,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 ```
 
-See [Services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 
@@ -287,6 +287,6 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_workers.html) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
+For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/cloud/project/magento-app_workers.html) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).

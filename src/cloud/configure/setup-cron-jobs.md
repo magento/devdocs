@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-Magento uses cron jobs for numerous features to schedule activities. This topic provides information for configuring crons for `{{site.data.var.ece}}` projects using the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) file.
+Magento uses cron jobs for numerous features to schedule activities. This topic provides information for configuring crons for `{{site.data.var.ece}}` projects using the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) file.
 
 The `.magento.app.yaml` file specifies the configuration for the default Magento cron jobs as well as any custom crons that you add to the following environments.
 
@@ -32,7 +32,7 @@ To verify cron configuration on Starter projects:
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-1. Review the cron configuration in the `crons` section of the [.magento.app.yaml]({{ site.baseurl}}/cloud/project/project-conf-files_magento-app_properties.html#crons) configuration file.
+1. Review the cron configuration in the `crons` section of the [.magento.app.yaml]({{ site.baseurl}}/cloud/project/magento-app_properties.html#crons) configuration file.
 
 ## Verify cron configuration on Pro projects
 
@@ -113,7 +113,7 @@ In this example, `<path-to-php-binary>` is `/usr/bin/php`. The install directory
 
 ## Add custom cron jobs to your project {#add-cron}
 
-On the {{site.data.var.ece}} platform, you configure custom cron jobs by adding them to the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
+On the {{site.data.var.ece}} platform, you configure custom cron jobs by adding them to the [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) file in the `crons` section.
 
 {:.bs-callout-info}
 The default cron interval for all environments provisioned in the US-3, EU-3, and AP-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.

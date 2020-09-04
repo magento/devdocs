@@ -22,7 +22,7 @@ Use the following steps to reduce the amount of time it takes your store to depl
 1. [Configure static content deployment]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html)
    If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. When a failure occurs during the build phase, the process avoids downtime because it never begins the deploy phase. [Generating static content during the build phase with minified HTML]({{ site.baseurl }}/cloud/deploy/static-content-deployment.html#setting-the-scd-on-build), also known as the ideal state, is the optimal configuration for zero-downtime deployments and _prevents_ downtime if a failure occurs.
 
-1. [Configure the post-deploy hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app_properties.html#hooks)
+1. [Configure the post-deploy hook]({{ site.baseurl }}/cloud/project/magento-app_properties.html#hooks)
    You must configure the post-deploy hook to clean and warm the cache. By default, cache clean occurs during the deploy phase when the site is down. Moving the cache clean to the post-deploy phase means that your cache remains live until the deploy phase is complete, and then you can safely clean the cache.
 
    Customize the list of pages used to preload the cache with the [WARM_UP_PAGES environment variable]({{ site.baseurl }}/cloud/env/variables-post-deploy.html#warm_up_pages).

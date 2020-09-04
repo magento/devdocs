@@ -360,23 +360,23 @@ pages:
       versionless: true
       children:
         - label: Application
-          url: /cloud/project/project-conf-files_magento-app.html
+          url: /cloud/project/magento-app.html
           versionless: true
           children:
             - label: Properties
-              url: /cloud/project/project-conf-files_magento-app_properties.html
+              url: /cloud/project/magento-app_properties.html
               versionless: true
 
             - label: Variables
-              url: /cloud/project/project-conf-files_magento-app_variables.html
+              url: /cloud/project/magento-app_variables.html
               versionless: true
 
             - label: PHP application
-              url: /cloud/project/project-conf-files_magento-app_php-application.html
+              url: /cloud/project/magento-app_php-application.html
               versionless: true
 
             - label: Workers
-              url: /cloud/project/project-conf-files_magento-app_workers.html
+              url: /cloud/project/magento-app_workers.html
               versionless: true
 
             - label: Set cache for static files
@@ -397,7 +397,7 @@ pages:
               versionless: true
 
         - label: Routes
-          url: /cloud/project/project-conf-files_routes.html
+          url: /cloud/project/routes.html
           versionless: true
           children:
             - label: Caching
@@ -413,27 +413,27 @@ pages:
               versionless: true
 
         - label: Services
-          url: /cloud/project/project-conf-files_services.html
+          url: /cloud/project/services.html
           versionless: true
           children:
             - label: Set up MySQL service
-              url: /cloud/project/project-conf-files_services-mysql.html
+              url: /cloud/project/services-mysql.html
               versionless: true
 
             - label: Set up Redis service
-              url: /cloud/project/project-conf-files_services-redis.html
+              url: /cloud/project/services-redis.html
               versionless: true
 
             - label: Set up Elasticsearch service
-              url: /cloud/project/project-conf-files_services-elastic.html
+              url: /cloud/project/services-elastic.html
               versionless: true
     
             - label: Set up RabbitMQ service
-              url: /cloud/project/project-conf-files_services-rabbit.html
+              url: /cloud/project/services-rabbit.html
               versionless: true
 
         - label: PHP (php.ini)
-          url: /cloud/project/project-conf-files_magento-app_php-ini.html
+          url: /cloud/project/magento-app_php-ini.html
           versionless: true
 
         - label: Environment variables
