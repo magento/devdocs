@@ -16,7 +16,7 @@ Previous step
 
 [Migrate data and static files][]
 
-When your code, files, and data are successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter][] and [Pro][] access information.
+After a successful migration of your code, files, and data to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter][] and [Pro][] access information.
 
 The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more.
 
