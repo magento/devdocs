@@ -84,9 +84,9 @@ The following figure shows the logic for partial reindexing.
 
 Depending on whether an index data is up to date, an indexer status value is one of the following:
 
-*  valid - data is synchronized, no reindex required
-*  invalid - the original data was changed, the index should be updated
-*  working - indexing is in progress
+*  Ready - data is synchronized, no reindex required
+*  Reindex Required - the original data was changed, the index should be updated
+*  Processing - indexing is in progress
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
