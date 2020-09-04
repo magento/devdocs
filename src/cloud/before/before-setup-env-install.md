@@ -181,11 +181,11 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 ## Additional software and services
 
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [ElasticSearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
