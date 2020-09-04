@@ -29,7 +29,7 @@ MariaDB 10.1 is the last version that support XtraDB as the storage engine. Vers
    ```
 
    {:.bs-callout-tip}
-   MySQL errors, such as `PDO Exception: MySQL server has gone away`, can occur as a result of insufficient disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/magento-app_properties.html#disk) file.
+   MySQL errors, such as `PDO Exception: MySQL server has gone away`, can occur as a result of insufficient disk space. Verify that you have allocated sufficient disk space to the service in the [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#disk) file.
 
 1. Configure the relationships in the `.magento.app.yaml` file.
 
@@ -111,7 +111,7 @@ Accessing the MariaDB database directly requires you to use a SSH to log in to t
 
 1. Log in to the remote server using SSH.
 
-1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/magento-app_properties.html#relationships) variable.
+1. Retrieve the MySQL login credentials from the `database` and `type` properties in the [$MAGENTO_CLOUD_RELATIONSHIPS]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) variable.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp

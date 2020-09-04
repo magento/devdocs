@@ -38,4 +38,4 @@ workers:
 
 This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
 
-For {{site.data.var.ece}} 2.1.x, you can use only workers and [cron jobs]({{ site.baseurl }}/cloud/project/magento-app_properties.html#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
+For {{site.data.var.ece}} 2.1.x, you can use only workers and [cron jobs]({{ site.baseurl }}/cloud/project/magento-app-properties.html#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.

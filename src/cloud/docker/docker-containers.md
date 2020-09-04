@@ -160,7 +160,7 @@ Now you can see all requests that are passing through the TLS container and chec
 [tls-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#tls-container
 [varnish-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#varnish-container
 [web-container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#web-container
-[mount-configuration]: {{site.baseurl}}/cloud/project/magento-app_properties.html#mounts
+[mount-configuration]: {{site.baseurl}}/cloud/project/magento-app-properties.html#mounts
 
 <!--Custom css-->
 

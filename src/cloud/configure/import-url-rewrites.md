@@ -98,7 +98,7 @@ To import URL Rewrites:
 ## Troubleshooting the import
 
 {:.bs-callout-info}
-Large uploads are limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/magento-app_php-ini.html) to increase it.
+Large uploads are limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/magento-app-php-ini.html) to increase it.
 
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 

@@ -32,7 +32,7 @@ To verify cron configuration on Starter projects:
 
 1. Log in to the {{site.data.var.ece}} project environment using [SSH]({{ site.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-1. Review the cron configuration in the `crons` section of the [.magento.app.yaml]({{ site.baseurl}}/cloud/project/magento-app_properties.html#crons) configuration file.
+1. Review the cron configuration in the `crons` section of the [.magento.app.yaml]({{ site.baseurl}}/cloud/project/magento-app-properties.html#crons) configuration file.
 
 ## Verify cron configuration on Pro projects
 

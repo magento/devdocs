@@ -170,4 +170,4 @@ magento-cloud project:clear-build-cache
 
 <!-- link definitions -->
 
-[disk-key]: {{ site.baseurl }}/cloud/project/magento-app_properties.html#disk
+[disk-key]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#disk

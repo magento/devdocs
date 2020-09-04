@@ -13,7 +13,7 @@ The new architecture should not affect your install or update processes.  Howeve
 
 ### Service version requirement changes
 
-We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/magento-app_php-application.html) in the `.magento.app.yaml` file.
+We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/magento-app-php-application.html) in the `.magento.app.yaml` file.
 
 {:.bs-callout-warning}
 Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running Magento 2.1.15 or later. If your project uses an earlier release, you must [upgrade the Magento version]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.

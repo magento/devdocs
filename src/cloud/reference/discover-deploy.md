@@ -239,7 +239,7 @@ While the deployment is running, we freeze the incoming traffic at the entry poi
 
 Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the `app/etc/env.php` and the `app/etc/config.php` configuration files.
 
-If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/magento-app_properties.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
+If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
 
 To review build and deploy logs, see [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 

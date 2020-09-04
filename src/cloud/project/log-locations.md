@@ -159,7 +159,7 @@ Log file locations in the scaled architecture depend on the node type. See [Log 
 
 [configlog]: {{site.baseurl}}/guides/v2.3/config-guide/cli/logging.html
 [Error reference]: {{site.baseurl}}/cloud/reference/ece-tools-error-reference.html
-[hook]: {{site.baseurl}}/cloud/project/magento-app_properties.html#hooks
+[hook]: {{site.baseurl}}/cloud/project/magento-app-properties.html#hooks
 [New Relic services]: {{site.baseurl}}/cloud/project/new-relic.html
 [slacklog]: {{site.baseurl}}/cloud/env/setup-notifications.html
 [scaled]: {{site.baseurl}}/cloud/architecture/scaled-architecture.html#log-locations

@@ -270,4 +270,4 @@ To learn more about dependency injection, see [Symfony Dependency Injection](htt
 [default steps]: https://github.com/magento/ece-tools/tree/2002.1/src/Step
 [default deploy scenario]: https://github.com/magento/ece-tools/blob/develop/scenario/deploy.xml
 [EnableMaintenanceMode PHP script]: https://github.com/magento/ece-tools/blob/develop/src/Step/EnableMaintenanceMode.php
-[hooks configuration]: {{site.baseurl}}/cloud/project/magento-app_properties.html#hooks
+[hooks configuration]: {{site.baseurl}}/cloud/project/magento-app-properties.html#hooks
