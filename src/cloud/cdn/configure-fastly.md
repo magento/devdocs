@@ -269,9 +269,17 @@ Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+To enable the Fastly service to serve secure traffic over HTTPS, your environment must have a Domain-Validated SSL/TLS certificate. Magento provides an automated process to validate domain ownership, provision a Let's Encyrpt SSL/TLS certificate, and apply it to your Cloud environment. This automation requires you to supply information to enable domain validation using **one** of the following methods:
 
-For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
+-  **DNS validation**–Update your DNS configuration with CNAME records that point to the Fastly service
+-  **ACME challenge CNAME records**–Add the ACME challenge CNAME records to your DNS configuration for each domain
+
+As soon as the domains are validated, Magento provisions the Let's Encrypt TLS/SSL certificate, and applies it to the Staging or Production environment. Each environment has one certificate for all domains and subdomains in that environment. The process can take several hours. We recommend that you complete the DNS configuration updates several days in advance to prevent delays in site development and site launch.
+
+{:.tip}
+If you have a Production domain that is not active yet, you can create an ACME challenge CNAME record for domain validation. This record allows Magento to provision the SSL/TLS certificate with the correct domains before site launch.
+
+<!-- Coming soon:  Instructions and examples for DNS config updates-->
 
 ## Upgrade the Fastly module {#upgrade}
 
