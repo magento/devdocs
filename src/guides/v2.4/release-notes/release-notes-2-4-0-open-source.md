@@ -5,7 +5,11 @@ title: Magento Open Source 2.4.0 Release Notes
 
 Magento Open Source 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
-**With this release, the Authorize.Net and Braintree payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**.
+**With this release, the Authorize.Net method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace**.
+
+{:.bs-callout-info}
+
+**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Magento Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 

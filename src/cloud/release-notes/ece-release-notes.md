@@ -147,7 +147,7 @@ See [Upgrades and patches]({{ site.baseurl }}/cloud/project/project-upgrade-pare
    -  {:.fix}Fixed an Elasticsearch configuration issue to ensure that the correct Elasticsearch settings are configured in all environments.<!--MAGECLOUD-4474-->
 
    {:.bs-callout-info}
-   See [Service versions]({{site.baseurl}}/cloud/project/project-conf-files_services.html) for a list of services used in {{site.data.var.ece}} and their version compatibility with the Magento Cloud template.
+   See [Service versions]({{site.baseurl}}/cloud/project/services.html) for a list of services used in {{site.data.var.ece}} and their version compatibility with the Magento Cloud template.
 
 -  {:.new}**Environment variable updates**–
 
