@@ -123,7 +123,7 @@ To set project variables in the Project Web Interface:
 
 ## Configure routes {#project-conf-env-route}
 
-Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html). These routes (or URLs) are used to access your Magento storefront.
+Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html). These routes (or URLs) are used to access your Magento storefront.
 
 1. [Access your project](#project-access) and select a specific environment.
 1. Select the Routes tab.
