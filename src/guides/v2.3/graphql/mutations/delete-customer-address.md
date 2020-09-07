@@ -9,7 +9,15 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {deleteCustomerAddress(id: Int!) {Boolean}}`
+```graphql
+mutation {
+  deleteCustomerAddress(
+    id: Int!
+  ) {
+    Boolean
+  }
+}
+```
 
 ## Example usage
 

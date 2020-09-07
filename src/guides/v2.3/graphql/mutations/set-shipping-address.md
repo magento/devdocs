@@ -12,7 +12,15 @@ The `setShippingAddressesOnCart` mutation sets one or more shipping addresses on
 
 ## Syntax
 
-`mutation: {setShippingAddressesOnCart(input: SetShippingAddressesOnCartInput) {SetShippingAddressesOnCartOutput}}`
+```graphql
+mutation {
+  setShippingAddressesOnCart(
+    input: SetShippingAddressesOnCartInput
+  ) {
+    SetShippingAddressesOnCartOutput
+  }
+}
+```
 
 ## Example usage
 
