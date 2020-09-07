@@ -97,7 +97,7 @@ The number of 'Yes' answers should help you to determine the severity.
 
 ### Pull request risk assessment:
 
-The risk label highlights the risk that the suggested changes may bring to the platform, it helps us to process pull requests, to decide on which version the pull requests should be delivered, it highlights pull requests that may need to be reviewed by other people, and it helps to decide whether a pull request should be approved or not depending on its risk.
+The risk label highlights the risk that the suggested changes may bring to the platform. It helps the maintainers to decide on which version the pull requests should be delivered, which may need to be reviewed by other people and whether a request should be approved or not depending on its risk.
 
 | Risk | Description |
 | ------------- | ------------- |
