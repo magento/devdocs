@@ -174,7 +174,7 @@ check this and if not added automatically, create it manually.
 
 1. Click **Settings** > **Workflow** > **Webhooks**.
 
-1. Check to see if a webhook has been added for Cloud to the repository. If this has been added **STOP**.
+1. Check to see if a webhook has been added for Cloud to the repository. If this has been added you should skip the following steps.
 
 1. Click **Add webhook**.
 
