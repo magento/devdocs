@@ -164,13 +164,17 @@ To create an OAuth consumer in Bitbucket:
 
 ### Add a webhook in BitBucket
 
-In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your BitBucket repository.
+In order to communicate events—such as a push—with your Cloud Git server, is it necessary to have a webhook for your BitBucket repository. The current
+method of setting up a Bitbucket intergration detailed on this page, when followed correctly, should automatically create a webhook. But it is advisable to
+check this and if not added automatically, create it manually.
 
 1. Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
 1. Click **Repositories** and select your project.
 
 1. Click **Settings** > **Workflow** > **Webhooks**.
+
+1. Check to see if a webhook has been added for Cloud to the repository. If this has been added **STOP**.
 
 1. Click **Add webhook**.
 
