@@ -101,9 +101,9 @@ The risk label highlights the risk that the suggested changes may bring to the p
 
 | Risk | Description |
 | ------------- | ------------- |
-| High | A pull request that makes changes on the framework or changes that will affect other areas. |
-| Medium | A pull request that makes changes that may affect other areas or it makes considerable changes on specific area. |
-| Low | A pull request that it's changes likely won't affect other areas. |
+| High | A pull request that makes changes on the framework or changes that will affect multiple areas. |
+| Medium | A pull request that makes changes which may affect multiple areas or makes considerable changes on a specific area. |
+| Low | A pull request that will probably not affect other areas. |
 
 ## GitHub and Two-Factor authentication {#two-factor}
 
