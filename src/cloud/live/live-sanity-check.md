@@ -29,9 +29,9 @@ Your Git branch must have the following files for building and deploying to your
 
 *  `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 *  `config.php` if you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) to manage Magento configuration settings
-*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
-*  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
-*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) is updated and saved in the root directory
+*  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html) is updated and saved in `magento/`
+*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
 
