@@ -11,7 +11,7 @@ gem 'wdm', platform: :mswin
 
 group :test do
   gem 'html-proofer'
-  gem 'mdl', '= 0.7.0'
+  gem 'mdl'
   gem 'launchy'
 end
 
