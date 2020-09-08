@@ -1199,7 +1199,7 @@ entries:
   type: New topic
   date: February 13, 2020
   link: https://github.com/magento/devdocs/pull/6626
-- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/project-conf-files_magento-app.html#hooks)
+- description: Updated the [scenario-based deployment examples in the hooks](https://devdocs.magento.com/cloud/project/magento-app-properties.html#hooks)
     configuration for the Cloud guide.
   versions: 2.x
   type: Technical changes
