@@ -31,9 +31,9 @@ The following options, tools, and features can be set up and configured in your 
 
 After fully configuring your store, you should configure your deployment. This includes specific files to manage builds, deployments, services, and routes:
 
-*  [.magento.app.yaml]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
-*  [routes.yaml]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment
-*  [services.yaml]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
+*  [.magento.app.yaml]({{ site.baseurl }}/cloud/project/magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
+*  [routes.yaml]({{ site.baseurl }}/cloud/project/routes.html) configures how Magento processes an incoming URL for your Integration environment
+*  [services.yaml]({{ site.baseurl }}/cloud/project/services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
 
 ## Configure integrations {#integrations}
 

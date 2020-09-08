@@ -54,11 +54,11 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 
 You cannot upgrade the software, but you can configure the following services:
 
-*  [PHP]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-*  [MySQL]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
-*  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
-*  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
-*  [Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+*  [PHP]({{ site.baseurl }}/cloud/project/magento-app.html)
+*  [MySQL]({{ site.baseurl }}/cloud/project/services-mysql.html)
+*  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+*  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
+*  [Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
 
  {:.bs-callout-info}
 See the [{{site.data.var.ece}} service versions][version compatibility matrix] information for the latest software version requirements.
@@ -67,9 +67,9 @@ For Staging and Production environments, you use the Fastly CDN module for Magen
 
 For information about configuring the software versions to use in your implementation, see the following {{ site.data.var.ece }} configuration files:
 
-*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)
-*  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)
+*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)
+*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)
+*  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html)
 
 ## Requirements to get started {#requirements}
 
@@ -140,4 +140,4 @@ Your {{site.data.var.ee}} account must *authenticate* using any of the following
 *  Create your own Cloud account
 
 <!--link definitions-->
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions

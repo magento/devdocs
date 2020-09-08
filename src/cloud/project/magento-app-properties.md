@@ -1,24 +1,18 @@
 ---
 group: cloud-guide
-title: Application
+title: Properties
 functional_areas:
   - Cloud
   - Setup
+  - Application
 ---
-
-The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
-
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
-
-## Properties
-
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 {% include cloud/note-pro-mount-disk-config-yaml-support.md %}
 
 ### `name`
 
-The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
+The `name` property provides the application name used in the [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) file to define the HTTP upstream (by default, `mymagento:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field.
 
 {:.bs-callout-warning}
 Do not change the name of the application after it has been deployed. Doing so will result in data loss.
@@ -75,7 +69,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 ```
 
-See [Services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{ site.baseurl }}/cloud/project/services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 
@@ -293,219 +287,6 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
+For {{site.data.var.ece}} 2.1.x, you can use only [workers]({{ site.baseurl }}/cloud/project/magento-app-workers.html) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
 If your project requires custom cron jobs, you can add them to the default cron configuration. See [Set up cron jobs]({{ site.baseurl }}/cloud/configure/setup-cron-jobs.html).
-
-## Variables
-
-The following environment variables are included in `.magento.app.yaml`. These are required for Magento 2.2.x - 2.3.x.
-
-```yaml
-variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-```
-
-For Magento 2.4.x, set the following variables:
-
-```yaml
-variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
-```
-
-## Configure PHP options
-
-You can choose which version of PHP to run in your `.magento.app.yaml` file:
-
-```yaml
-name: mymagento
-type: php:<version>
-```
-
-### PHP extensions
-
-You can enable additional PHP extensions in the `runtime:extension` section. Also, the extensions specified become available in the Docker PHP containers.
-
-> .magento.app.yaml
-
-```yaml
-runtime:
-    extensions:
-        - sockets
-        - sodium
-        - ssh2
-    disabled_extensions:
-        - bcmath
-        - bz2
-        - calendar
-        - exif
-```
-
-Use SSH to log in to an environment and list the PHP extensions.
-
-```bash
-php -m
-```
-
-For details about a specific PHP extension, see the [PHP Extension List](https://www.php.net/manual/en/extensions.alphabetical.php).
-
-{{site.data.var.ece}} supports the following extensions:
-
--  Default extensions:
-   -  `bcmath`
-   -  `bz2`
-   -  `calendar`
-   -  `exif`
-   -  `gd`
-   -  `gettext`
-   -  `intl`
-   -  `mysqli`
-   -  `pcntl`
-   -  `pdo_mysql`
-   -  `soap`
-   -  `sockets`
-   -  `sysvmsg`
-   -  `sysvsem`
-   -  `sysvshm`
-   -  `opcache`
-   -  `zip`
-
--  Extensions that are installed and cannot be uninstalled:
-   -  `ctype`
-   -  `curl`
-   -  `date`
-   -  `dom`
-   -  `fileinfo`
-   -  `filter`
-   -  `ftp`
-   -  `hash`
-   -  `iconv`
-   -  `json`
-   -  `mbstring`
-   -  `mysqlnd`
-   -  `openssl`
-   -  `pcre`
-   -  `pdo`
-   -  `pdo_sqlite`
-   -  `phar`
-   -  `posix`
-   -  `readline`
-   -  `session`
-   -  `sqlite3`
-   -  `tokenizer`
-   -  `xml`
-   -  `xmlreader`
-   -  `xmlwriter`
-
--  Extensions that can be installed and uninstalled as needed:
-   -  `bcmath`
-   -  `bz2`
-   -  `calendar`
-   -  `exif`
-   -  `gd`
-   -  `geoip`
-   -  `gettext`
-   -  `gmp`
-   -  `igbinary`
-   -  `imagick`
-   -  `imap`
-   -  `intl`
-   -  `ioncube`
-   -  `ldap`
-   -  `mailparse`
-   -  `mcrypt`
-   -  `msgpack`
-   -  `mysqli`
-   -  `oauth`
-   -  `opcache`
-   -  `pdo_mysql`
-   -  `propro`
-   -  `pspell`
-   -  `raphf`
-   -  `recode`
-   -  `redis`
-   -  `shmop`
-   -  `soap`
-   -  `sockets`
-   -  `sodium`
-   -  `ssh2`
-   -  `sysvmsg`
-   -  `sysvsem`
-   -  `sysvshm`
-   -  `tidy`
-   -  `xdebug`
-   -  `xmlrpc`
-   -  `xsl`
-   -  `yaml`
-   -  `zip`
-   -  `pcntl`
-
-{:.bs-callout-warning}
-PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
-
-### Customize `php.ini` settings
-
-You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
-
-In your repository, the `php.ini` file should be added to the root of the application (the repository root).
-
-{:.bs-callout-info}
-Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
-
-For example, if you need to increase the PHP memory limit:
-
-```bash
-memory_limit = 756M
-```
-
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html).
-
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ site.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
-
-```bash
-cat /etc/php5/fpm/php.ini
-```
-
-{:.bs-callout-info}
-If you use {{site.data.var.mcd-prod}} for local development, see [Docker service containers]{{site.baseurl}}//cloud/docker/docker-containers-service.html#fpm-container) for information about using a custom `php.ini` file in a Docker environment.
-
-## Workers
-
-You can define zero or multiple work instances for each application. A worker
-instance runs as a container, independent from the web instance and without
-a running Nginx instance. Additionally, you do not need to set up a web server on
-the worker instance (using Node.js or Go) because the router cannot direct public
-requests to the worker.
-
-A worker instance has the exact same code and compilation output as a web instance.
-The container image is built once and deployed multiple times if needed using the
-same `build` hook and `dependencies`. You can customize the container and
-allocated resources.
-
-Use worker instances for background tasks including:
-
--  Tasks like queue workers or updating indexes.
--  Tasks to run periodic reporting that are too long for a cron job.
--  Tasks should happen "now", but not block a web request.
--  Tasks are large enough that they risk blocking a deploy, even if they are subdivided.
--  The task in question is a continually running process rather than a stream of discrete units of work.
-
-A basic, common worker configuration could look like this:
-
-```yaml
-workers:
-    queue:
-        size: S
-        commands:
-            start: |
-                php worker.php
-```
-
-This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
-
-For {{site.data.var.ece}} 2.1.x, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.x, cron jobs launch consumers to process batches of messages, and does not require additional configuration.
