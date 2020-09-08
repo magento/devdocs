@@ -25,8 +25,8 @@ XSS vulnerabilities can be prevented by validating and sanitizing user input as 
 Any request data can be manipulated by attackers and can contain malicious values such as:
 
 -  form fields filled with control characters ("&lt;", ">" etc)
--  headers containg false IDs
--  URIs contaings fake parts/query parameters
+-  headers containing false IDs
+-  URIs containing fake parts/query parameters
 -  tampered cookies
 
 To combat this developers, must validate any value coming in from requests.
@@ -93,7 +93,7 @@ let settings = <?= $myJson ?>
 
 You can pass in an optional array of allowed tags that will not be escaped.
 
-If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `target`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
+If a tag is allowed, the following attributes will not be escaped: `id`, `class`, `href`, `style` and `title`. Any other attribute for that allowed tag will be escaped.
 
 `embed`, `iframe`, `video`, `source`, `object`, `audio`, `script` and `img` tags are not allowed, regardless of the content of this array.
 

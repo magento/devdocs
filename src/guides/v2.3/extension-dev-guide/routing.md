@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: Routing
-version: 2.3
 ---
 
 In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.
@@ -235,6 +234,7 @@ namespace OrangeCompany\RoutingExample\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
@@ -243,7 +243,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  */
-class Index extends Action
+class Index extends Action implements HttpGetActionInterface
 {
     /**
      * @var PageFactory

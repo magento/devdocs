@@ -184,6 +184,10 @@ pages:
         - label: Sizes component
           url: /ui_comp_guide/components/ui-sizes.html
 
+        - label: SortBy component
+          url: /ui_comp_guide/components/ui-sortby.html
+          exclude_versions: ["2.3"]
+
         - label: Tab component
           url: /ui_comp_guide/components/ui-tab.html
 
@@ -195,6 +199,9 @@ pages:
 
         - label: ThumbnailColumn component
           url: /ui_comp_guide/components/ui-thumbnailcolumn.html
+
+        - label: TimelineColumns component
+          url: /ui_comp_guide/components/ui-timeline-columns.html
 
         - label: ListingToolbar component
           url: /ui_comp_guide/components/ui-toolbar.html
@@ -271,6 +278,12 @@ pages:
 
         - label: Update the page URL type
           url: /ui_comp_guide/howto/update-url-type.html
+
+        - label: Render prices on the frontend
+          url: /ui_comp_guide/howto/price_rendering.html
+
+        - label: Declare a custom UI component
+          url: /ui_comp_guide/howto/new_component_declaration.html
 
     - label: Troubleshoot
       children:

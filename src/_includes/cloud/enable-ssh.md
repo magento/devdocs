@@ -1,15 +1,17 @@
-You must create an SSH key pair on every machine and workspace you and your team expect to work with and access {{site.data.var.ece}} and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
+You must create an SSH key pair on every machine and workspace that requires access to {{site.data.var.ece}} project source code and environments. The SSH keys allow you to connect to GitHub to manage source code and to connect to cloud servers without having to constantly supply your username and password.
+
+You can add multiple SSH keys for each system or workspace that you use.
 
 The SSH keys require the following:
 
-*  Set up SSH keys as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-*  Create the keys using the email address used for the GitHub account.
+-  Set up SSH keys as the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+-  Create the keys using the GitHub account email address.
 
 For more information on SSH keys, see the following:
 
-*  [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
-*  [Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows)
-*  [ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen)
+-  [Connecting to GitHub with SSH](https://help.github.com/articles/connecting-to-github-with-ssh/)
+-  [Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows)
+-  [ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen)
 
 ## Locate an existing SSH key pair {#existing}
 
@@ -33,8 +35,8 @@ If you do not have SSH keys, you need to generate the keys for adding to your Ma
 
 If you already have SSH keys, continue to:
 
-*  [Add a public SSH key to your Magento account](#ssh-add-to-account) section
-*  [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+-  [Add a public SSH key to your Magento account](#ssh-add-to-account) section
+-  [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 ## Create a new SSH key pair {#ssh-create-new-key-pair}
 
@@ -71,6 +73,9 @@ To create an SSH key pair:
        UseKeychain yes
        IdentityFile ~/.ssh/id_rsa
    ```
+
+   {:.bs-callout-info}
+   You can specify multiple SSH keys by adding multiple `IdentityFile` entries to your configuration.
 
    For Windows:
 
@@ -112,14 +117,15 @@ After adding the SSH keys, test the SSH connection to GitHub:
 
 You can add SSH keys to your account in any of the following ways:
 
-*  Using the [{{site.data.var.ece}} CLI](#add-key-cli)
-*  Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
+-  Using the [{{site.data.var.ece}} CLI](#add-key-cli)
+-  Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
 
 ### Add a key using the CLI {#add-key-cli}
 
+{:.procedure}
 To add an SSH key using the CLI:
 
-1. Open a terminal application on your local.
+1. Open a terminal application on your local workstation.
 1. If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ site.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
 1. Log in to your project:
@@ -134,13 +140,14 @@ To add an SSH key using the CLI:
    magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
    ```
 
-#### Add a key using the Project Web Interface {#add-key-web}
+### Add a key using the Project Web Interface {#add-key-web}
 
 You will select and add your SSH public key to each environment in your account.
 
-*  Starter: Add to Master (Production) and any environments you create by branching from Master
-*  Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.
+-  Starter: Add to Master (Production) and any environments you create by branching from Master
+-  Pro: Add the key to Staging, Production, and Integration environments
 
+{:.procedure}
 To add an SSH key using the Project Web Interface:
 
 1. Copy your SSH public key to the clipboard.
@@ -150,11 +157,11 @@ To add an SSH key using the Project Web Interface:
 1. Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 1. In your selected branch, an icon displays if you do not have an SSH key added.
 
-   ![No SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-install.png)
+   ![No SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-install.png)
 
 1. Copy and paste the content of your public SSH key in the screen.
 
-   ![Add SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-add.png)
+   ![Add SSH key]({{ site.baseurl }}/common/images/cloud/cloud_ssh-key-add.png)
 
 1. Follow the prompts on your screen to complete the task.
 
@@ -173,3 +180,7 @@ git config --global user.email <your e-mail address>
 ```
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time)
+
+## SSH access with MFA
+
+{{ site.data.var.ece }} projects that have multi-factor authentication (MFA) enabled require all {{ site.data.var.ece }} accounts with SSH access to have two-factor authentication and to complete additional steps when using SSH to connect to GitHub or to project environments. See [Enable MFA for SSH access]({{ site.baseurl}}/cloud/project/project-enable-mfa-enforcement.html).

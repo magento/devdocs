@@ -20,7 +20,7 @@ bin/magento sampledata:remove
 
 The complete list of sample data modules follows:
 
-{% include install/sampledata/sample-data_list-of-modules.md %} -->
+{% include install/sampledata/sample-data_list-of-modules.md %}
 
 ## Prepare to update sample data   {#inst-sample-reset}
 

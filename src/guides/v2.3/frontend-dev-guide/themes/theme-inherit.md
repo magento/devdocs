@@ -46,7 +46,7 @@ A parent and a child theme can belong to different vendors. For example, your cu
 
 *  Any theme can be chosen to display, whether or not it specifies a parent theme in `theme.xml`.
 
-## Override view.xml file
+## Extend view.xml file
 
 If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<theme_dir>/etc/view.xml` file in your theme, it extends the parent file.
 

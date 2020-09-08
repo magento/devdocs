@@ -9,47 +9,24 @@ redirect_from:
   - /cloud/reference/docker-config.html
 ---
 
-The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `ece-docker build:compose` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+`{{site.data.var.mcd-prod}}` deploys Magento to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You have the option to deploy a Docker environment in developer mode, which provides an active development environment with full, writable filesystem permissions.
+
+You use the `ece-docker build:compose` command to generate the Docker Compose configuration to deploy {{site.data.var.ece}} to a local Docker environment.
 
 {: .bs-callout-warning }
 The `ece-docker build:compose` command overwrites the existing `docker-compose.yml` configuration file. You can save your customizations for the Docker Compose configuration in a `docker-compose.override.yml` file. See a detailed example in the [Docker quick reference][docker-reference].
 
 ## Prerequisites
 
-1. You must have the following software installed on your local workstation:
-   -  [PHP version 7.1 or later][php]
-   -  [Composer]
-   -  [Docker]
-   -  On MacOS and Windows, file synchronization is required for developer mode—use one of the following:
-      -  [docker-sync]
-      -  [mutagen]
+To get started with local development you must have [Docker] installed on your workstation. In addition, macOS and Windows systems require either [docker-sync] or [Mutagen] for file synchronization between the host and Docker environments.
 
-1. Update the hosts file.
+### Optional Steps
 
-   Before you begin, you must add the following hostname to your `/etc/hosts` file:
+Magento Cloud Docker binds to port `80` on your host environment. If you have enabled the bundled web server on your workstation you must stop the service before launching the Docker environment.
 
-   ```conf
-   127.0.0.1 magento2.docker
-   ```
-
-   Alternatively, you can run the following command to add it to the file:
-
-   ```bash
-   echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
-   ```
-
-   {:.bs-callout-tip}
-   To change the `magento2.docker` hostname for your project, you must update the host in three files: `.docker/config.php`, `docker-compose.yml`, and `/etc/hosts`
-
-1. Stop the default Apache instance on macOS.
-
-   Because macOS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
-
-   ```bash
-   sudo apachectl stop
-   ```
-
-1. Optionally, [enable Xdebug].
+```bash
+sudo apachectl stop
+```
 
 ## Set the launch mode
 
@@ -97,21 +74,38 @@ You can run composer using the `docker` command before you create the container 
 When you run composer with Docker commands, you must use the [Docker Hub PHP Image Tag] that matches the Magento application version. The following example uses PHP 7.3. You run this command from the project root directory.
 
 ```bash
-docker run -it  -v $(pwd):/app/ -v ~/.composer/:/root/.composer/ magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
+docker run -it  -v $(pwd):/app/:delegated -v ~/.composer/:/root/.composer/:delegated magento/magento-cloud-docker-php:7.3-cli-1.1 bash -c "composer install&&chown www. /app/"
 ```
 
 This command passes in the current working directory as `/app/`, includes composer from `~/.composer/`, and runs the `composer install` command in the container. After this set up, the command  fixes the permissions on the files that have been added or changed.
 
-## Set up email
+## Running Docker on a custom host and port
 
-Send emails from your Docker environment by adding the following configuration to the `docker-compose.yml` configuration file:
+Sometimes you might want to run Docker on a different host and port, for example if you need more than one Docker instance.
 
-```yaml
-ENABLE_SENDMAIL=true
+To configure the custom host and port, add the `host` and `port` options to the `build:compose` command.
+
+```bash
+./vendor/bin/ece-docker build:compose --host=magento2.test --port=8080
 ```
 
-{:.bs-callout-warning}
-We do not recommend using Sendmail on CLI containers because the service can slow down the container creation process.
+You must also add or update the custom host name in your `/etc/hosts` file.
+
+```conf
+127.0.0.1 magento2.test
+```
+
+Alternatively, you can run the following command to add it to the file:
+
+```bash
+echo "127.0.0.1 magento2.test" | sudo tee -a /etc/hosts
+```
+
+## Set up email
+
+The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] service as a replacement for the Sendmail service. Sendmail can cause performance issues in the local Docker environment.
+
+When the MailHog service is installed, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
 
 [php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
@@ -125,3 +119,4 @@ We do not recommend using Sendmail on CLI containers because the service can slo
 [Database container]: {{site.baseurl}}/cloud/docker/docker-containers-service.html#database-container
 [refresh]: {{site.baseurl}}/cloud/docker/docker-containers.html#rebuild-a-clean-environment
 [Docker Hub PHP Image Tag]: https://hub.docker.com/r/magento/magento-cloud-docker-php/tags
+[MailHog]: https://github.com/mailhog/MailHog

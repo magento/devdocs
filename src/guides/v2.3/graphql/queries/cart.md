@@ -564,7 +564,7 @@ query {
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
+`cart_id` | String! | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/mutations/create-empty-cart.html)
 
 ## Output attributes {#cart-output}
 
@@ -622,7 +622,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money! | The cost of shipping using this shipping method
 `available` | Boolean! | Indicates whether this shipping method can be applied to the cart
-`base_amount` | Money | The base shipping cost, not including taxes or other cost adjustment. Could be null if method is not available
+`base_amount` | Money | Deprecated. This attribute is not applicable for GraphQL
 `carrier_code` | String! | A string that identifies a commercial carrier or an offline shipping method
 `carrier_title` | String! | The label for the carrier code
 `error_message` | String | Describes an error condition
@@ -687,7 +687,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `id` | String | ID of the item
 `prices` | [CartItemPrices](#CartItemPrices) | Includes the price of an item, any applied discounts, and calculated totals
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | Contains attributes that are common to all types of products
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | Contains attributes that are common to all types of products
 `quantity` | Float | The number of items in the cart
 
 ### CartItemPrices object {#CartItemPrices}

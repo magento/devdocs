@@ -51,11 +51,21 @@ The following file is a sample of a file you must add:
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <head>
-    <!-- Add local resources -->
-    <css src="css/my-styles.css"/>
+    <!-- Add local styles resources -->
+    <css src="css/my-styles.css" />
+    <css src="<Namespace>_<Module>::css/custom-styles.css" />
+
     <!-- The following two ways to add local JavaScript files are equal -->
-    <script src="Magento_Catalog::js/sample1.js"/>
-    <link src="js/sample.js"/>
+    <script src="Magento_Catalog::js/sample1.js" />
+    <script src="Magento_Catalog/js/sample1.js" />
+
+    <!-- Magento support async or defer attribute in script tag -->
+    <script async="" src="Magento_Catalog::js/sample1.js" />
+    <script defer="" src="Magento_Catalog::js/sample1.js" />
+
+    <link src="js/sample.js" />
+    <link src="sample.js" />
+
     <!-- Add external resources -->
     <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
@@ -66,7 +76,7 @@ The following file is a sample of a file you must add:
 
 When adding external resources, specifying the `src_type="url"` argument value is a must.
 
-You can use either the `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
+You can use either the `<link src="js/sample.js"/>` or the `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme. This way, the path to the javascript file will be `<theme_dir>/web/js/sample.js`. If we use `<link src="sample.js"/>`, Magento will get the javascript file at `<theme_dir>/web/sample.js`
 
 The path to assets is specified relatively to one the following locations:
 
@@ -99,24 +109,31 @@ In this example, `orange` is a custom theme created by the OrangeCo vendor.
 
 ## Remove static resources (JavaScript, CSS, fonts) {#layout_markup_css_remove}
 
-To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
+To remove the static resources linked in a page `<head>`, make a change similar to the following in a theme extending `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <head>
-    <!-- Remove local resources -->
+    <!-- Remove local styles resources -->
     <remove src="css/styles-m.css" />
-    <remove src="my-js.js"/>
-    <remove src="Magento_Catalog::js/compare.js" />
+    <remove src="<Namespace>_<ModuleName>::css/styles.css" />
+
+    <!-- Remove js resources -->
+    <remove src="my-js.js" />
+    <remove src="Magento_Catalog::js/sample1.js" />
+
     <!-- Remove external resources -->
-    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
-    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+    <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" />
     <remove src="http://fonts.googleapis.com/css?family=Montserrat" />
    </head>
 </page>
 ```
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
+
+{:.bs-callout-warning}
+If js files are called via the RequireJS approach: by declaring in the require/define sections, we cannot remove it from the layout.
 
 ## Add meta tags to the head block {#layout_markup_meta}
 
@@ -229,12 +246,12 @@ To set attributes for the HTML `body` tag use the `<attribute>` instruction.
 **Example:** Add a new class to the `body` tag.
 
 ```xml
-<page>
     <body>
         <attribute name="class" value="my-new-body-class"/>
     </body>
-</page>
 ```
+
+![Block Class]({{ site.baseurl }}/common/images/body-class-result.png)
 
 **Example:** Add a custom attribute to the `body` tag.
 
@@ -323,6 +340,16 @@ Any block can be configured to show or not based on a [Magento/Config/Model/Conf
     ...
 </block>
 ```
+
+The visibility can also be adjusted using the [ACL Resource]({{ page.baseurl }}/ext-best-practices/tutorials/create-access-control-list-rule.html). Although it is used mostly in the admin area, the same approach works for the storefront as well.
+
+```xml
+<block class="Namespace\Module\Block\Type" name="block.example" aclResource="Vendor_ModuleName::acl_name">
+    <!-- ... -->
+</block>
+```
+
+In the admin area, this is implemented for [global search]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Backend/view/adminhtml/layout/default.xml) and for [admin notification list]({{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/AdminNotification/view/adminhtml/layout/default.xml).
 
 ## Set the template used by a block {#set_template}
 
@@ -429,7 +456,7 @@ Extending layout:
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
 -  [`<move>` instruction]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv): allows changing elements' order and parent.
--  [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): allows changing elements' order within one parent.
+-  [`before` and `after` attributes of `<block>`]({{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after): sets the order of elements within a parent.
 
 **Example of `<move>` usage:**
 put the stock availability and SKU blocks next to the product price on a product page.
@@ -480,12 +507,29 @@ namespace Vendor\CustomModule\ViewModel;
 
 class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
 {
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
+
+    public function canShowAdditionalData()
+    {
+        return true;
+    }
 }
 ```
+
+Then, in the `cart/item/default.phtml` file, use the viewModel:
+
+```php
+/** @var \Vendor\CustomModule\ViewModel\Class $viewModel */
+$viewModel = $block->getData('viewModel');
+
+$viewModel->canShowAdditionalData();
+```
+
+{:.bs-callout-info}
+The name provided to the `$block->getData()` function should match the name of the view model provided in the `xml` file.
 
 ## Modify layout with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
@@ -659,9 +703,9 @@ For CMS Pages:
 
 where:
 
--  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_"
--  _Layout Update Name_ is what is shown as the option for __Custom layout update__ field of __Design__
-  section on _CMS Page Edit_ page
+-  _CMS Page Identifier_ is the desired page's _URL Key_ with "/" symbols replaced with "_".
+-  _Layout Update Name_ is what is shown as the option for the  __Custom layout update__ field of the __Design__
+  section on the _CMS Page Edit_ page. For example, a layout update for an "About Us" page will be "cms_page_view_selectable_about-us_AboutUs.xml".
 
 These files must be placed in the appropriate folders for layout XML files. They will be available as __Custom Layout Update__ options for Merchants after flushing the cache.
 

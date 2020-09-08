@@ -9,7 +9,16 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {updateCustomerAddress(id: Int!input: CustomerAddressInput) {CustomerAddress}}`
+```graphql
+mutation {
+  updateCustomerAddress(
+    id: Int!
+    input: CustomerAddressInput
+  ) {
+    CustomerAddress
+  }
+}
+```
 
 ## Example usage
 
@@ -19,10 +28,13 @@ The following call updates the customer's city and postcode.
 
 ```graphql
 mutation {
-  updateCustomerAddress(id:3, input: {
-    city: "New City"
-    postcode: "55555"
-  }) {
+  updateCustomerAddress(
+    id:3
+    input: {
+      city: "New City"
+      postcode: "55555"
+    }
+  ) {
     id
     city
     postcode

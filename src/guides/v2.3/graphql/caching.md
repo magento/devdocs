@@ -5,9 +5,12 @@ title: GraphQL caching
 
 Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
-## Cached queries
+## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.
+
+{:.bs-callout-info}
+GraphQL allows you to make multiple queries in a single call. If you specify any query that Magento does not cache, Magento bypasses the cache for all queries in the call.
 
 Magento caches the following queries:
 
@@ -79,6 +82,19 @@ sub process_graphql_headers {
 }
 ```
 
+Query results should not be cached for logged in customers, because it cannot be guaranteed that these results are applicable to all customers. For example, you can create multiple customer groups and set up different product prices for each group. Caching results like these might cause customers to see the prices of another customer group.
+
+To prevent customers from seeing the incorrect data from cached results, add the following to your `.vcl` file in the `vcl_recv` subroutine before the return (hash):
+
+```text
+# Authenticated GraphQL requests should not be cached by default
+if (req.url ~ "/graphql" && req.http.Authorization ~ "^Bearer") {
+    return (pass);
+}
+```
+
+This statement prevents any query with an authorization token from being cached.
+
 [Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) further describes how to configure the `default.vcl` file.
 
 ## Caching with Fastly
@@ -103,7 +119,7 @@ In developer mode, Magento returns several headers that could be useful for debu
 
 Header | Description
 --- |---
-`X-Magento=Cache-Debug` | HIT (the page was loaded from cache) or MISS (the page was not loaded from cache.
+`X-Magento-Cache-Debug` | HIT (the page was loaded from cache) or MISS (the page was not loaded from cache.
 `X-Magento-Tags` | A list of cache tags that correspond to the catalog, category, or CMS items returned in the query. Magento caches these items.
 
 ## Cache invalidation

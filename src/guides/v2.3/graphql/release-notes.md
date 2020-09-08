@@ -15,6 +15,15 @@ These release notes can include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.5
+
+-  {:.new} **The `products` and `categoryList` queries can now be used to retrieve information about products and categories that have been added to a staged campaign.** These queries require an admin authorization token. See [Using queries](https://devdocs.magento.com/guides/v2.3/graphql/queries/index.html#staging) for details.
+-  {:.fix} Custom attributes used in layered navigation no longer require the **Use in Search**, **Visible in Advanced Search**, and **Use in Search Results Layered Navigation** fields be set to Yes.
+-  {:.fix} Added the `position` and `disabled` attributes to the `MediaGalleryInterface`.
+-  {:.fix} When you apply a gift card to a cart, an exception is no longer thrown when the last product is removed from the cart.
+-  {:.fix} In a category search, the `image` attribute returns the full path to an image, rather than a truncated path.
+-  {:.fix} Flat rate shipping amounts are calculated correctly when you add a configurable product to a cart.
+
 ## {{site.data.var.ee}} and {{site.data.var.ce}} 2.3.4
 
 -  {:.new} **Guest carts can now be merged with customer carts.** The [`mergeCarts`]({{page.baseurl}}/graphql/mutations/merge-carts.html) mutation transfers the contents of a guest cart into the cart of a logged-in customer.
@@ -22,7 +31,7 @@ These release notes can include:
 -  {:.new} **Layered navigation can use custom filters.** The `filter` attribute of the [`products`]({{page.baseurl}}/graphql/queries/products.html) query now requires the `ProductAttributeFilterInput` object. You can specify a pre-defined filter in this object, or [define a custom filter]({{page.baseurl}}/graphql/custom-filters.html). As a result, layered navigation on your website filters on the attributes you need.
 -  {:.new} **You can search categories by ID, name, and/or URL key.** The [`categoryList`]({{page.baseurl}}/graphql/queries/category-list.html) query replaces the deprecated `category` query.
 -  {:.new} **A customer can add bundle and downloadable products to the cart with the [`addBundleProductsToCart`]({{page.baseurl}}/graphql/mutations/add-bundle-products.html) and [`addDownloadableProductsToCart`]({{page.baseurl}}/graphql/mutations/add-downloadable-products.html) mutations.**
--  {:.new} **The [`ProductInterface`]({{page.baseurl}}/graphql/product/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether the store supports these taxes.
+-  {:.new} **The [`ProductInterface`]({{page.baseurl}}/graphql/interfaces/product-interface.html) supports fixed product taxes (such as WEEE).** Use the [`storeConfig`]({{page.baseurl}}/graphql/queries/store-config.html) query to determine whether the store supports these taxes.
 -  {:.new} **The [`cart`]({{page.baseurl}}/graphql/queries/cart.html) object has been enhanced to include information about promotions and applied discounts at the line and cart levels.**
 -  {:.new} **Added test coverage in multiple GraphQL modules.**
 
@@ -103,7 +112,7 @@ Deprecated entity | Use this instead
    -  Manage newsletter subscriptions
    -  View [wish lists]({{page.baseurl}}/graphql/queries/wishlist.html)
    -  View [order history]({{page.baseurl}}/graphql/queries/customer-orders.html)
-   -  View [downloadable products]({{page.baseurl}}/graphql/product/downloadable-product.html)
+   -  View [downloadable products]({{page.baseurl}}/graphql/interfaces/downloadable-product.html)
 
 -  {:.new} **Added functionality to support complex Catalog features.** This version supports:
    -  Specifying absolute image paths for [products]({{page.baseurl}}/graphql/queries/products.html) and including extended image information

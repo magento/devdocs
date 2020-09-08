@@ -6,7 +6,7 @@ functional_areas:
   - Testing
 ---
 
-Before pushing your code to your [Starter]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
+Before pushing your code to your [Starter]({{ site.baseurl }}/cloud/architecture/starter-architecture.html) or [Pro]({{ site.baseurl }}/cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
 
 These tasks walk through:
 
@@ -29,9 +29,9 @@ Your Git branch must have the following files for building and deploying to your
 
 *  `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 *  `config.php` if you use [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) to manage Magento configuration settings
-*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
-*  [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
-*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+*  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html) is updated and saved in the root directory
+*  [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html) is updated and saved in `magento/`
+*  [`routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
 

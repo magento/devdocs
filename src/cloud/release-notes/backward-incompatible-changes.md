@@ -13,7 +13,7 @@ The new architecture should not affect your install or update processes.  Howeve
 
 ### Service version requirement changes
 
-We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#configure-php-options) in the `.magento.app.yaml` file.
+We changed the minimum PHP version requirement from 7.0.x to 7.1.x for Cloud projects that use `{{ site.data.var.ct }}` v2002.1.0 and later. If your environment configuration specifies PHP 7.0, update the [php configuration]({{ site.baseurl }}/cloud/project/magento-app-php-application.html) in the `.magento.app.yaml` file.
 
 {:.bs-callout-warning}
 Because of the PHP version requirement change, `{{site.data.var.ct}}` 2002.1.0 supports only {{site.data.var.ece}} projects running Magento 2.1.15 or later. If your project uses an earlier release, you must [upgrade the Magento version]({{site.baseurl}}/cloud/project/project-upgrade.html) before you update to `{{site.data.var.ct}}` 2002.1.0.
@@ -47,7 +47,7 @@ In earlier {{ site.data.var.ct }} releases, you could use the `m2-ece-build` and
 
 ## Magento Cloud Patches changes
 
--  **Remove downloaded patches**–The `{{site.data.var.mcp}}` package bundles all patches available from the [Magento Technical resources](https://magento.com/tech-resources/download) page and applies them automatically when you deploy to the Cloud.  To prevent patch conflicts after upgrading to {{site.data.var.ct}} 2002.1.0 or later, remove any Magento-supplied patches that you downloaded and added to your project manually.
+-  **Remove downloaded patches**–The `{{site.data.var.mcp-package}}` package bundles all patches available from the [Magento Technical resources](https://magento.com/tech-resources/download) page and applies them automatically when you deploy to the Cloud.  To prevent patch conflicts after upgrading to {{site.data.var.ct}} 2002.1.0 or later, remove any Magento-supplied patches that you downloaded and added to your project manually.
 
 -  **Updating the apply patches command**–We moved the command for applying patches to Magento Cloud from the `vendor/bin/ece-tools` directory to the `vendor/bin/ece-patches` directory. If you use this command to apply patches manually, use the new path.
 

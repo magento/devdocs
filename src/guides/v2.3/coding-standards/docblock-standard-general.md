@@ -622,7 +622,7 @@ class LimitedMutableClass implements MutableInterface
 
 ### @api tag {#api}
 
-The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ site.baseurl }}/contributor-guide/backward-compatible-development/).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
 If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/api).
@@ -797,8 +797,8 @@ For example, padding for visual alignment can be done in two ways:
 /**
  * ...
  *
- * @param string   $parentId
- * @param string   $childId
+ * @param string $parentId
+ * @param string $childId
  * @param int|null $position
  * @return int
  * @see _insertChild() for position explanation

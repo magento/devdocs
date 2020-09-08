@@ -39,7 +39,7 @@ The setting for the `MIN_LOGGING_LEVEL` variable does not change the log level c
 
 Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.
 
-Pre-loading the cache using the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Pre-loading the cache using the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -72,6 +72,26 @@ stage:
   global:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
+
+{% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
+### `SCD_USE_BALER`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+[Baler](https://github.com/magento/baler) is a Magento module that scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+
+Set to `true` to run Baler after performing static content deployment.
+
+```yaml
+stage:
+  build:
+    SCD_USE_BALER: true
+```
+
+{:.bs-callout-info}
+You must install and configure the Baler module before using this feature. Because Baler is currently in alpha release, enable this option only on Staging environments.
 
 ### `SKIP_HTML_MINIFICATION`
 

@@ -17,7 +17,7 @@ If you are new to all this and need some help getting started, we suggest the fo
 ## General guidelines {#instgde-prereq-mysql-intro}
 
 {:.bs-callout-info}
-The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x. Magento is also compatible with MySQL NDB Cluster 7.4.x, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
+See [Magento technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html#database) for supported versions of MySQL.
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
 
@@ -404,6 +404,15 @@ To configure a MySQL database instance:
    *  Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
 
    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
+
+1. In order for MySQL `TIMESTAMP` fields to follow the preferences and composition expected by Magento's declarative schema architecture, the system variable `explicit_defaults_for_timestamp` must be set to `on`.
+
+   References;
+
+   *  [MySQL 5.7](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+   *  [MariaDB](https://mariadb.com/kb/en/server-system-variables/#explicit_defaults_for_timestamp)
+
+   If this setting is not enabled, `setup:db:status` will always report that `Declarative Schema is not up to date`.
 
 {:.ref-header}
 Related topics

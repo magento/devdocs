@@ -26,7 +26,7 @@ To create a snapshot using the Magento Web Interface:
 
 1. Log in to your project.
 1. In the left pane, click the name of the environment to back up.
-1. In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+1. In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud/cloud_snapshots.png){:width="30px"} (snapshots).
 1. Click **Create**.
 
 {:.procedure}
@@ -116,7 +116,15 @@ To restore a snapshot using the Magento CLI:
 
 ## Dump your database {#db-dump}
 
-You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools).
+You can create a copy of your database using the [`magento/ece-tools`]({{ site.baseurl }}/cloud/reference/cloud-composer.html#ece-tools) `db-dump` command.
+
+By default, this command creates backups for all database connections that are specified in the environment configuration. For example, if you configured your project to use split databases, the `db-dump` operation creates backups for each of the configured databases.
+You can also backup only selected databases by appending the database names to the command, for example:
+
+```bash
+php vendor/bin/ece-tools -- main sales
+
+For help, use the command: ```php vendor/bin/ece-tools db-dump --help ```
 
 {:.procedure}
 To create a database dump:
@@ -133,9 +141,25 @@ To create a database dump:
 
 1. Enter the following command:
 
-   ```bash
-   vendor/bin/ece-tools db-dump
-   ```
+    ```bash
+    php vendor/bin/ece-tools db-dump
+    ```
+
+    ```terminal
+    php vendor/bin/ece-tools db-dump
+    The db-dump operation switches the site to maintenance mode, stops all active cron jobs and consumer queue processes, and     disables cron jobs before starting the the dump process.
+    Your site will not receive any traffic until the operation completes.
+    Do you wish to proceed with this process? (y/N)? y
+    2020-01-28 16:38:08] INFO: Starting backup.
+    [2020-01-28 16:38:08] NOTICE: Enabling Maintenance mode
+    [2020-01-28 16:38:10] INFO: Trying to kill running cron jobs and consumers processes
+    [2020-01-28 16:38:10] INFO: Running Magento cron and consumers processes were not found.
+    [2020-01-28 16:38:10] INFO: Waiting for lock on db dump.
+    [2020-01-28 16:38:10] INFO: Start creation DB dump for main database...
+    [2020-01-28 16:38:10] INFO: Finished DB dump for main database, it can be found here: /tmp/qxmtlseakof6y/dump-main-1580229490.sql.gz
+    [2020-01-28 16:38:10] INFO: Backup completed.
+    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
+    ```
 
  {:.bs-callout-info}
 

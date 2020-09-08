@@ -7,7 +7,15 @@ Use the `addConfigurableProductsToCart` mutation to add configurable products to
 
 ## Syntax
 
-`mutation: {addConfigurableProductsToCart(input: AddConfigurableProductsToCartInput) {AddConfigurableProductsToCartOutput}}`
+```graphql
+mutation {
+  addConfigurableProductsToCart(
+    input: AddConfigurableProductsToCartInput
+  ) {
+    AddConfigurableProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -89,7 +97,7 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cart_id` | String | The unique ID that identifies the customer's cart
+`cart_id` | String! | The unique ID that identifies the customer's cart
 `cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 
 ### ConfigurableProductCartItemInput object {#configProdCartItemInput}
@@ -145,4 +153,4 @@ Error | Description
 
 ## Related topics
 
--  [Configurable product data types]({{page.baseurl}}/graphql/product/configurable-product.html)
+-  [Configurable product data types]({{page.baseurl}}/graphql/interfaces/configurable-product.html)

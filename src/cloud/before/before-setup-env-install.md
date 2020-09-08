@@ -58,7 +58,7 @@ To create authentication keys through the Magento Marketplace:
 
 1. Click **Access Keys** under _My Products_ in the _Marketplace_ tab.
 
-   ![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
+   ![Click Access Keys]({{ site.baseurl }}/common/images/cloud/cloud_access-key.png)
 
 1. Click **Create A New Access Key**.
 
@@ -107,6 +107,8 @@ Be ready to install Magento using one of the following options:
 
 -  [Install the Magento software using the command line]({{ site.baseurl }}/guides/v2.3/install-gde/install/cli/install-cli.html)
 -  [Install the Magento software using the Web Setup Wizard]({{ site.baseurl }}/guides/v2.3/install-gde/install/web/install-web.html)
+
+   {% include install/web/deprecated.md %}
 
 {:.procedure}
 To install Magento using the command line:
@@ -179,11 +181,11 @@ Optionally, if you used Vagrant with the _hostmanager_ plugin, update the hosts 
 
 ## Additional software and services
 
-For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using [`services.yaml`]({{ site.baseurl }}/cloud/project/services.html).
 
--  [Redis]({{ site.baseurl }}/cloud/project/project-conf-files_services-redis.html)
--  [ElasticSearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
--  [RabbitMQ]({{ site.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+-  [Redis]({{ site.baseurl }}/cloud/project/services-redis.html)
+-  [ElasticSearch]({{ site.baseurl }}/cloud/project/services-elastic.html)
+-  [RabbitMQ]({{ site.baseurl }}/cloud/project/services-rabbit.html)
 -  [Additional software]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/optional.html) for Magento
 
 ## Verify your local workspace
@@ -201,7 +203,7 @@ php bin/magento info:adminuri
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 
-![Click Access for list of URLs]({{ site.baseurl }}/common/images/cloud-project-master-access.png){:width="297px"}
+![Click Access for list of URLs]({{ site.baseurl }}/common/images/cloud/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
 

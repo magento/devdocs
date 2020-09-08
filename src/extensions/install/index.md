@@ -2,9 +2,18 @@
 group: extensions
 title: General CLI installation
 redirect_from:
- - guides/v2.2/comp-mgr/install-extensions.html
- - guides/v2.3/comp-mgr/install-extensions.html
-
+ - guides/v2.3/comp-mgr/extens-man/extensman-backup.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-checklist.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-main-pg.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-new-purchase.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-fail.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-multi.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness-success.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-readiness.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-data.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-uninst-final.html
+ - guides/v2.3/comp-mgr/extens-man/extensman-update.html
+ - guides/v2.3/comp-mgr/extens-man/step3-parent.html
 ---
 
 Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
@@ -92,18 +101,22 @@ Add the extension's name and version to your `composer.json` file:
 To verify that the extension installed properly, run the following command:
 
 ```bash
-bin/magento module:status
+bin/magento module:status J2t_Payplug
 ```
 
 By default, the extension is probably disabled:
 
 ```terminal
-List of disabled modules:
-J2t_Payplug
+Module is disabled
 ```
 
-{:.bs-callout-info}
-The extension name is in the format `<VendorName>_<ComponentName>`; it's not the same format as the Composer name. Use this format to enable the extension.
+The extension name is in the format `<VendorName>_<ComponentName>`; this is a different format from the Composer name. Use this format to enable the extension. If you are unsure of the extension name, run:
+
+```bash
+bin/magento module:status
+```
+
+and look for the extension under "List of disabled modules".
 
 ## Enable the extension
 
@@ -142,17 +155,13 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 1. Verify that the extension is enabled:
 
    ```bash
-   bin/magento module:status
+   bin/magento module:status J2t_Payplug
    ```
 
    You should see output verifying that the extension is no longer disabled:
 
    ```terminal
-   List of enabled modules:
-   J2t_Payplug
-
-   List of disabled modules:
-   None
+   Module is enabled
    ```
 
 1. Clean the cache:
@@ -170,30 +179,4 @@ If you encounter errors when loading the storefront in a browser, use the follow
 
 ## Upgrade an extension
 
-To update or upgrade an extension:
-
-1. Download the updated extension file from Marketplace or another extension developer. Take note of the module-name and version.
-
-1. Export the contents to your Magento root.
-
-1. If a composer package exists for the extension, run one of the following.
-
-   Update per module name:
-
-   ```bash
-   composer update vendor/module-name
-   ```
-
-   Updater per version:
-
-   ```bash
-   composer require vendor/module-name ^x.x.x
-   ```
-
-1. Run the following commands to upgrade, deploy, and clean the cache.
-
-   ```bash
-   php bin/magento setup:upgrade --keep-generated
-   php bin/magento setup:static-content:deploy
-   php bin/magento cache:clean
-   ```
+{% include upgrade/module.md %}

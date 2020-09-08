@@ -4,7 +4,7 @@ title: Verify Event Collection
 ee_only: True
 ---
 
-After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/configure.html) the product recommendations module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
+After you [install]({{ page.baseurl }}/recommendations/product-recs.html) and [configure]({{ page.baseurl }}/recommendations/install-configure.html) the `magento/product-recommendations` module, you can verify that the behavioral data is being sent to Magento. Magento uses the `DataServices.js` file to collect and send behavioral data. You can use developer tools available in Chrome, or you can install the Snowplow Chrome extension.
 
 ## Verify using developer tools in Chrome
 
@@ -44,14 +44,17 @@ Install the [Snowplow Analytics Debugger extension for Chrome](https://chrome.go
 
 1. Scroll down until you see **Context Data _n_**. Look for the storefront instance in the **Schema**.
 
-1. Verify that the [SaaS Environment ID]({{ page.baseurl }}/recommendations/configure.html#installcatalogsaas), [Instance ID]({{ page.baseurl }}/recommendations/configure.html#envid), and [Environment value]({{ page.baseurl }}/recommendations/configure.html#configureenv) are set correctly.
+1. Verify that the [SaaS Environment ID](https://docs.magento.com/m2/ce/user_guide/configuration/services/saas.html) is set correctly.
 
     ![Snowplow filter]({{ page.baseurl }}/recommendations/images/snowplow-filter.png)
 
-If you run into any problems verifying that the events are collected and sent to Magento, <a href="mailto:magento-product-recs-feedback@adobe.com">E-mail us</a>.
+If you run into any problems verifying that the events are collected and sent to Magento, [contact support](https://support.magento.com/hc/en-us).
 
 ## Verify events are firing correctly
 
 To verify that the events used for metrics are firing correctly, look for the `impression-render`, `view`, and `rec-click` events in the Snowplow Analytics Debugger.
 
 ![Events for metrics]({{ page.baseurl }}/recommendations/images/event-metric.png)
+
+{:.bs-callout-info}
+If [Cookie Restriction Mode](https://docs.magento.com/m2/ce/user_guide/stores/compliance-cookie-restriction-mode.html) is enabled, Magento does not collect behavioral data until the shopper consents. If Cookie Restriction Mode is disabled, Magento collects behavioral data by default.

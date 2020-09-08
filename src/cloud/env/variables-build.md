@@ -34,6 +34,32 @@ stage:
     ERROR_REPORT_DIR_NESTING_LEVEL: 2
 ```
 
+### `QUALITY_PATCHES`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Specify a list of Magento quality patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES: [ ]
+```
+
+The following example specifies three patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES:
+      - MC-31387
+      - MDVA-4567
+      - MC-456345
+```
+
+See [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html).
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
@@ -104,6 +130,8 @@ stage:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
 
+{% include cloud/note-increase-scd-max-execution-time-variable.md%}
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
@@ -138,6 +166,24 @@ stage:
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
+### `SCD_USE_BALER`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.3.0 and later
+
+[Baler](https://github.com/magento/baler) scans your generated JavaScript code and creates an optimized JavaScript bundle. Deploying the optimized bundle to your site can reduce the number of network requests when loading your site and improve page load times.
+
+Set to `true` to run Baler after performing static content deployment.
+
+```yaml
+stage:
+  build:
+    SCD_USE_BALER: true
+```
+
+{:.bs-callout-info}
+Because Baler is currently in alpha release, we do not recommend using it in Production environments.
+
 ### `SKIP_SCD`
 
 -  **Default**— _Not set_
@@ -147,12 +193,12 @@ Set to `true` to skip static content deployment during the build phase.
 
 If you already deploy static content during the build phase with [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
-We do not recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
+On the build phase, we recommend setting `SKIP_SCD: false` so that the static content build occurs during the build phase where the process will not impact site deployment or cause unnecessary site downtime. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:
   build:
-    SKIP_SCD: true
+    SKIP_SCD: false
 ```
 
 ### `VERBOSE_COMMANDS`
@@ -160,7 +206,12 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
+
+{:.bs-callout}
+To use VERBOSE_COMMANDS to control the detail in command output for both successful and failed `bin/magento` CLI commands, you must set [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) `debug`.
+
+Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

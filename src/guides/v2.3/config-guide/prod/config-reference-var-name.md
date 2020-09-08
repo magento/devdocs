@@ -115,7 +115,7 @@ For example, to find a website or store view scope value in the Admin:
 
    The right pane is displayed similar to the following.
 
-   ![Find a website code]({{ site.baseurl }}/common/images/cloud_vars_website-code.png){:width="300px"}
+   ![Find a website code]({{ site.baseurl }}/common/images/cloud/cloud_vars_website-code.png){:width="300px"}
 
 1. The scope name is displayed in the **Code** field.
 1. Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
@@ -188,7 +188,7 @@ The following table shows a few sample variables.
 |--------------|--------------|----------------------|
 | Elasticsearch server hostname  | Catalog > **Catalog**, **Elasticsearch Server Hostname**   |  `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME` |
 | Elasticsearch server port |  Catalog > **Catalog**, **Elasticsearch Server Port** | `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT`  |
-| Shipping country origin  | Sales > **Shipping Settings** |  `<SCOPE>SHIPPING__ORIGIN__COUNTRY_ID` |
+| Shipping country origin  | Sales > **Shipping Settings** |  `<SCOPE>__SHIPPING__ORIGIN__COUNTRY_ID` |
 | Custom Admin URL | Advanced > **Admin**  | `<SCOPE>__ADMIN__URL__CUSTOM`  |
 | Custom Admin Path  | Advanced > **Admin** | `<SCOPE>__ADMIN__URL__CUSTOM_PATH` |
 
@@ -244,7 +244,7 @@ content='
 
 *  For Magento Commerce Cloud, if you are attempting to override Magento configuration settings using the [Project Web Interface]((https://devdocs.magento.com/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
 
-![Environment variable example](https://devdocs.magento.com/common/images/cloud_env_var_example.png)'
+![Environment variable example](https://devdocs.magento.com/common/images/cloud/cloud_env_var_example.png)'
 
 %}
 

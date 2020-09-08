@@ -81,7 +81,7 @@ To copy the SSH command:
 1. Select an environment or branch to access.
 1. Click **Access Site**.
 
-   ![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
+   ![Find the SSH URL using the Web Interface]({{ site.baseurl }}/common/images/cloud/cloud_project-access-starter.png)
 
 1. Click the clipboard button to copy the full SSH command to the clipboard.
 1. Enter the command in a terminal window to SSH.
@@ -135,6 +135,6 @@ To add your SSH public key information to your client:
 
 Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.
 
-For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{ site.baseurl }}/cloud/project/project-start.html). This mount point will only work in those environments.
+For **Starter environments and Pro Integration environments**, you may also want to consider [adding a `mount`]({{ site.baseurl }}/cloud/project/magento-app-properties.html#mounts) for access to a specific directory. You would add the mount to your `.magento.app.yaml` file. For a list of writable directories, see [Project structure]({{ site.baseurl }}/cloud/project/project-start.html). This mount point will only work in those environments.
 
 For **Pro Staging and Production environments**, you need to enter a [Support ticket]({{ site.baseurl }}/cloud/trouble/trouble.html) to request sFTP access in those environments. We can then create a mount point and provide access to the specific `pub/media` folder.

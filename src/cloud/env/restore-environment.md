@@ -75,7 +75,7 @@ To reset your branch:
 
 1. Clone the project to your local development environment. You can find the command in your Project Web Interface:
 
-   ![Click to copy the git clone command]({{ site.baseurl }}/common/images/copy-git-clone.png)
+   ![Click to copy the git clone command]({{ site.baseurl }}/common/images/cloud/cloud-copy-git-clone.png)
 
 1. Review the git history. Use `--reverse` to display history in reverse chronological order:
 
@@ -143,4 +143,4 @@ If executing the `setup:uninstall` command fails and cannot be completed, you mi
    -  `env.php`
    -  `env.php.bak`
 
-After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).
+After resetting the database, [push your changes to trigger a redeploy]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#git-commands) and install Magento using the new database. Or [run the redeploy command]({{ site.baseurl }}/cloud/reference/cli-ref-topic.html#environment-commands).

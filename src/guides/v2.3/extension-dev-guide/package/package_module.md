@@ -49,7 +49,7 @@ The following example is a `composer.json` for a metapackage:
     "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "php": "~7.1.3|~7.2.0",
+        "php": "~7.2.0||~7.3.0",
         "zendframework/zend-stdlib": "~2.4.6",
         "zendframework/zend-code": "~2.4.6",
         "zendframework/zend-server": "~2.4.6",
@@ -99,7 +99,7 @@ The following example is a `composer.json` file for a module:
     "AFL-3.0"
   ],
   "require": {
-    "php": "~7.1.3|~7.2.0",
+    "php": "~7.2.0||~7.3.0",
     "magento/framework": "~100.0.4"
   },
   "autoload": {
@@ -148,7 +148,7 @@ If you use the Setup Wizard, you must use the Magento Marketplace repository. A 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 1. Create the package in a way similar to the described above.
 1. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
-1. To use the private packaging repository in a project, add the following to your `composer.json`file:
+1. To use the private packaging repository in a project, add the following to your `composer.json` file:
 
    ```json
    {

@@ -10,7 +10,15 @@ The **Stores** > **Configuration** > **Catalog** > **Email to a friend** > **Ena
 
 ## Syntax
 
-`mutation: {sendEmailToFriend(input: SendEmailToFriendInput): {SendEmailToFriendOutput}}`
+```graphql
+mutation {
+  sendEmailToFriend(
+    input: SendEmailToFriendInput
+  ) {
+    SendEmailToFriendOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -127,3 +135,19 @@ Attribute |  Data Type | Description
 `email` | String | The email address of the sender
 `message` | String | The text of the message
 `name` | String | The name of the sender
+
+## Errors
+
+Some errors occur because the **Email a friend** feature is not properly configured. Go to **Stores** > **Configuration** > **Catalog** > **Email to a friend** in the Admin to adjust the settings.
+
+Error | Description
+--- | ---
+`"Email to a Friend" is not enabled.` | "Email to a Friend" is disabled.  To activate it, use the Admin to set the **Enabled** field to **Yes**.
+`Please provide Name of sender.` | The value specified in the `input`.`sender`.`name` argument is empty.
+`Please provide Email of sender.` | The value specified in the `input`.`sender`.`email` argument is empty.
+`Please provide Message.` | The value specified in the `input`.`sender`.`message` argument is empty.
+`Please provide Name for all of recipients.` | The value specified in the `input`.`recipients`[].`name` argument is empty.
+`Please provide Email for all of recipients.` | The value specified in the `input`.`recipients`[].`email` argument is empty.
+`The current customer isn't authorized.` | "Email to a Friend" is available for registered users only. To make it available for guests, use the Admin to set the  **Allow for Guests** option to **Yes**.
+`The product that was requested doesn't exist. Verify the product and try again.` | The product specified in the `product_id` argument is not visible in the current website.
+`You can't send messages more than XXX times an hour.` | The user cannot send more messages in an hour than specified in the  **Max Products Sent in 1 Hour** option in the Admin.

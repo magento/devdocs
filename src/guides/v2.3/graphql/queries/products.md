@@ -203,13 +203,6 @@ null
 to
 ```
 
--  Comparable on Storefront
--  Use in Layered Navigation
--  Use in Search Results Layered Navigation
--  Visible on Catalog Pages on Storefront
--  Used in Product Listing
--  Used for Sorting in Product Listing"
-
 {:.bs-callout-info}
 Wildcards are no longer supported in `products` queries.
 
@@ -266,6 +259,9 @@ Attribute | Data type | Description
 
 Each aggregation within the `aggregations` object is a separate bucket that contains the attribute code and label for each filterable option (such as price, category ID, and custom attributes). It also includes the number of products within the filterable option that match the specified search criteria.
 
+{:.bs-callout-info}
+To enable a custom attribute to return layered navigation and aggregation data from the Admin, set the **Stores** > Attributes > **Product** > <attribute name> > **Storefront Properties** > **Use in Layered Navigation** field to **Filterable (with results)** or **Filterable (no results)**.
+
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_code` | String! | Attribute code of the filter item
@@ -285,7 +281,7 @@ Attribute | Data type | Description
 
 ### ProductInterface attributes {#ProductInterface}
 
-The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/product/product-interface.html) describes the possible contents of this object.
+The `items` object contains information about each product that match the search criteria. [ProductInterface]({{page.baseurl}}/graphql/interfaces/product-interface.html) describes the possible contents of this object.
 
 ### SearchResultPageInfo attributes {#SearchResultPageInfo}
 

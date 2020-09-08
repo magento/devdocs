@@ -9,7 +9,13 @@ To return or modify information about a customer, Magento recommends you use cus
 
 ## Syntax
 
-`mutation: {revokeCustomerToken: RevokeCustomerTokenOutput}`
+```graphql
+mutation {
+  revokeCustomerToken {
+    RevokeCustomerTokenOutput
+  }
+}
+```
 
 ## Example usage
 

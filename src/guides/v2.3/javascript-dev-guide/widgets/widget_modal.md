@@ -40,9 +40,9 @@ The modal widget has the following options:
 -  [appendTo](#modal_appendTo)
 -  [autoOpen](#modal_autoopen)
 -  [buttons](#modal_buttons)
+-  [clickableOverlay](#modal_clickableOverlay)
 -  [closeText](#modal_closeText)
 -  [customTpl](#modal_customTpl)
--  [clickableOverlay](#modal_clickableOverlay)
 -  [focus](#modal_focus)
 -  [innerScroll](#modal_innerScroll)
 -  [modalAction](#modal_modalAction)
@@ -53,6 +53,7 @@ The modal widget has the following options:
 -  [modalSubTitle](#modal_modalSubTitle)
 -  [modalTitle](#modal_modalTitle)
 -  [modalVisibleClass](#modal_modalVisibleClass)
+-  [outerClickHandler](#modal_outerClickHandler)
 -  [parentModalClass](#modal_parentModalClass)
 -  [popupTpl](#modal_popupTpl)
 -  [responsive](#modal_responsive)
@@ -218,6 +219,14 @@ The class that is assigned to parent when the modal is opened.
 
 **Default value**: `_has-modal`
 
+### `outerClickHandler` {#modal_outerClickHandler}
+
+The function that handles a click outside the modal window. If the `outerClickHandler` option is not specified, the [closeModal()](#modal_close) method is used for handling a click outside the modal window.
+
+**Type**: Function
+
+**Default value**: `undefined`
+
 ### `popupTpl` {#modal_popupTpl}
 
 The template file that is used as content for the `popup` modal type.
@@ -288,9 +297,17 @@ The modal widget has the following methods:
 
 Open the modal window.
 
+```javascript
+$('#css-selector').modal('openModal');
+```
+
 ### `closeModal()` {#modal_close}
 
 Close the modal window.
+
+```javascript
+$('#css-selector').modal('closeModal');
+```
 
 ### `keyEventSwitcher()` {#modal_keyEventSwitcher}
 

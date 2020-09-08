@@ -8,7 +8,7 @@ redirect_from:
 {:.bs-callout-warning}
 The `wishlist` query has been deprecated. Wish list information is now provided by the [customer]({{page.baseurl}}/graphql/queries/customer.html) query.
 
-Use the `wishlist` query to retrieve information about a customer's wish list. [Get customer authorization token]({{page.baseurl}}/graphql/get-customer-authorization-token.html) describes how to supply an authorization token for a specific customer.
+Use the `wishlist` query to retrieve information about a customer's wish list. [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes how to supply an authorization token for a specific customer.
 
 ## Syntax
 
@@ -95,5 +95,5 @@ Attribute | Data type | Description
 `added_at` | String | The time when the customer added the item to the wish list
 `description` | String | The customer's comment about this item
 `id` | Int | The wish list item ID
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item

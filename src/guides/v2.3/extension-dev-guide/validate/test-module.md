@@ -52,13 +52,12 @@ See these resources for testing in [PHP](https://glossary.magento.com/php) and v
 *  [01 The Module Skeleton Kata] (video) by [Mage2Katas]
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
-[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
 [Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
 [Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
-[Install your component]: {{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html
+[Install your component]: {{ site.baseurl }}/extensions/install/
 [Install using Composer]: {{ page.baseurl }}/install-gde/install/sample-data-after-composer.html
 [Magento Coding Standard]: https://github.com/magento/magento-coding-standard
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer

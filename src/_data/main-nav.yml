@@ -38,7 +38,7 @@
           versionless: true
 
         - label: Configure Application
-          url: /cloud/project/project-conf-files_magento-app.html
+          url: /cloud/project/magento-app.html
           versionless: true
 
         - label: Configure Environments
@@ -51,8 +51,8 @@
           url: /cloud/docker/docker-mftf.html
           versionless: true
 
-        - label: ECE-Tools testing
-          url: /cloud/docker/docker-development-testing.html
+        - label: Magento Cloud code testing
+          url: /cloud/docker/docker-test-magecloud-pkg-code.html
           versionless: true
 
 - label: Setup
@@ -106,6 +106,7 @@
 
         - label: Contributor Guide
           url: /contributor-guide/contributing.html
+          versionless: true
 
     - label: Frontend
       children:
@@ -166,9 +167,6 @@
       url: /mftf/docs/introduction.html
       versionless: true
 
-    - label: Functional Testing
-      url: /mtf/mtf_introduction.html
-
     - label: Integration Testing
       url: /test/integration/integration_test_execution.html
 
@@ -195,11 +193,7 @@
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
 
-    - label: Compliance
-      url: /compliance/industry-compliance.html
-      versionless: true
-
-    - label: Extensions Marketplace
+    - label: Magento Marketplace
       url: /marketplace/sellers/getting-started.html
       versionless: true
 
@@ -218,6 +212,10 @@
 
     - label: Product Recommendations
       url: /recommendations/product-recs.html
+      versionless: true
+
+    - label: Security and Compliance
+      url: /security/security-and-compliance.html
       versionless: true
 
     - label: Staging

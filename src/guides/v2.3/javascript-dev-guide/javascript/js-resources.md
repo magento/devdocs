@@ -21,7 +21,7 @@ In Magento, you can find Javascript components on the following levels:
 *  [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place within Magento.
 *  Module level (`<module_dir>/view/<areaname>/web`). If the [module](https://glossary.magento.com/module) is enabled, resources added here are available in other modules and themes.
 *  Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
-*  Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.
+*  Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 
 {:.bs-callout-info}
 The library level can only contain core Magento resources. Do not put custom JS files in the \`lib/web\` directory.
@@ -48,11 +48,11 @@ JS resources are accessed using relative paths.
 **Example 2:**
 
 *  File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
-*  File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
+*  File published to `pub/static`: `pub/static/frontend/Magento/blank/<locale>/Magento_Theme/js/theme.js`
 *  Called in script:
 
    ```javascript
-   require(["js/theme"], function(){
+   require(["Magento_Theme/js/theme"], function(){
    });
    ```
 
@@ -71,7 +71,7 @@ Relative paths are also used in for [mapping and setting `paths` in requirejs-co
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
-To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
+To build a dependency on the third-party plugin, specify a [shim](http://requirejs.org/docs/api.html#config-shim) in the following configuration files:
 
 *  `requirejs-config.js`
 

@@ -92,26 +92,26 @@ magento-cloud variables
 
 ```terminal
 Variables on the project Project-Name (<project-id>), environment <environment-name>:
-+----------------------------+-------------+-------------------------------------+
-| Name                       | Level       | Value                               |
-+----------------------------+-------------+-------------------------------------+
-| php:blackfire.agent_socket | project     | tcp://blackfire.magento.cloud:8307  |
-| env:COMPOSER_AUTH          | project     | {                                   |
-|                            |             |    "http-basic": {                  |
-|                            |             |       "repo.magento.com": {         |
-|                            |             |       "username":                   |
-|                            |             | "<public-key>",                     |
-|                            |             |       "password":                   |
-|                            |             | "<private-key>"                     |
-|                            |             |     }                               |
-|                            |             |   }                                 |
-|                            |             | }                                   |
-| ADMIN_EMAIL                | project     | admin@123.com                       |
-| ADMIN_EMAIL                | environment | admin@123.com                       |
-| ADMIN_PASSWORD             | environment | password                            |
-| ADMIN_URL                  | environment | admin123                            |
-| ADMIN_USERNAME             | environment | admin                               |
-+----------------------------+-------------+-------------------------------------+
++----------------------------+-------------+-------------------------------------------+
+| Name                       | Level       | Value                                     |
++----------------------------+-------------+-------------------------------------------+
+| env:COMPOSER_AUTH          | project     | {                                         |
+|                            |             |    "http-basic": {                        |
+|                            |             |       "repo.magento.com": {               |
+|                            |             |       "username":                         |
+|                            |             | "<public-key>",                           |
+|                            |             |       "password":                         |
+|                            |             | "<private-key>"                           |
+|                            |             |     }                                     |
+|                            |             |   }                                       |
+|                            |             | }                                         |
+| ADMIN_EMAIL                | project     | admin@123.com                             |
+| ADMIN_EMAIL                | environment | admin@123.com                             |
+| ADMIN_PASSWORD             | environment | password                                  |
+| ADMIN_URL                  | environment | admin123                                  |
+| ADMIN_USERNAME             | environment | admin                                     |
+| php:newrelic.license       | environment | xxxx71fb030366182117f955a22e4baf8exxxxxx  |
++----------------------------+-------------+-------------------------------------------+
 ```
 {:.no-copy}
 
@@ -129,9 +129,9 @@ To add variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 
-1. Click the **Configure environment** gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name.
+1. Click the **Configure environment** gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) next to the Project name.
 
-   ![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
+   ![Project without code]({{ site.baseurl }}/common/images/cloud/cloud_project_empty.png)
 
 1. Select the **Variables** tab.
 
@@ -139,7 +139,7 @@ To add variables using the Project Web Interface:
 
 1. Enter the **Name** and **Value** for the variable. For example, enter `ADMIN_EMAIL` and your License Owner email address or another accessible email for resetting the password for the default admin account.
 
-   ![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
+   ![Project variable]({{ site.baseurl }}/common/images/cloud/cloud_project_variable.png)
 
 1. Click **Add variable**. After you add the variable, wait until deployment completes.
 
@@ -147,7 +147,7 @@ To add variables using the Project Web Interface:
 
 After cloning your project and updating the Magento administrator account configuration, you can branch for development. As stated earlier, you must create an environment using the `magento-cloud environment:branch <branch-name>` command or the Project Web Interface for the environment to become _active_.
 
--  For [Starter]({{ site.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, then create a development branch based on the `staging` branch.
+-  For [Starter]({{ site.baseurl }}/cloud/architecture/starter-develop-deploy-workflow.html#clone-branch), consider creating a branch for `staging`, then create a development branch based on the `staging` branch.
 -  For [Pro]({{ site.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), create development branches based on the Integration environment.
 
 {:.procedure}

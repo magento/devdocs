@@ -29,7 +29,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *  ratings
 *  sections - tabs and accordions
 *  tables
-*  tooltips
+*  [tooltips](#tooltip-element)
 *  typography
 *  list of theme variables
 
@@ -144,11 +144,19 @@ Use the accordion style for mobile and tab style for desktop.
 To set tabs and accordions using breakpoints, see the following example:
 
 ```css
+//
+//  Mobile + Desktop
+//  _____________________________________________
+
 & when (@media-common = true) {
     .product.data.items {
         .lib-data-accordion();
     }
 }
+
+//
+//  Desktop
+//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .product.data.items {
@@ -180,6 +188,35 @@ To set navigation using breakpoints, see the following example:
 }
 ```
 
+## Tooltip element
+
+To create a tooltip element, use the `.lib-tooltip()` mixin.
+
+| Option | Default |
+| --- | --- |
+| `position` | `top` |
+| `selector-toggle` | `.tooltip-toggle` |
+| `selector-content` | `.tooltip-content` |
+
+```html
+<span class="my-tooltip">
+    <a href="#" class="tooltip-toggle">Hover me</a>
+    <span class="tooltip-content">Details here</span>
+</span>
+```
+
+```css
+.my-tooltip {
+    .lib-tooltip(right);
+}
+```
+
+### Result
+
+As result, the tooltip placed on the right side.
+
+![Tooltip element]({{ site.baseurl }}/common/images/fdg/tooltip-element-result.png)
+
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
@@ -188,7 +225,7 @@ The detailed information about the Magento UI library is embedded in the code re
 *  [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
-The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
+The generated Magento UI library documentation is provided in a convenient [HTML](https://glossary.magento.com/html) view. It is available in the following location in your Magento installation: `<your_Magento_instance>/pub/static/frontend/Magento/blank/en_US/css/docs/index.html` (view in a browser).
 
 <!-- Link definitions -->
 

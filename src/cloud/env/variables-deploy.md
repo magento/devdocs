@@ -54,6 +54,39 @@ stage:
             database: 11
 ```
 
+If the _REDIS_BACKEND_ variable specifies  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`for the backend model, you must use the following configuration structure:
+
+```php
+'cache' => [
+    'frontend' => [
+        'default' => [
+             'backend' => '\\Magento\\Framework\\Cache\\Backend\\RemoteSynchronizedCache',
+             'backend_options' => [
+                 'remote_backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+                 'remote_backend_options' => [
+                     'persistent' => 0,
+                     'server' => 'localhost',
+                     'database' => '0',
+                     'port' => '6370',
+                     'password' => '',
+                     'compress_data' => '1',
+                 ],
+                 'local_backend' => 'Cm_Cache_Backend_File',
+                 'local_backend_options' => [
+                     'cache_dir' => '/dev/shm/'
+                 ]
+             ],
+             'frontend_options' => [
+                 'write_control' => false,
+             ],
+         ]
+    ],
+    'type' => [
+        'default' => ['frontend' => 'default'],
+    ],
+]
+```
+
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
@@ -140,7 +173,7 @@ When you move the database from one environment to another without an installati
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/cloud/project/magento-app-properties.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -346,6 +379,30 @@ stage:
         port: 1234
 ```
 
+### `REDIS_BACKEND`
+
+-  **Default**—`Cm_Cache_Backend_Redis`
+-  **Version**—Magento 2.3.0 and later
+
+Specifies the backend model configuration for the Redis cache.
+
+Magento version 2.3.0 and later includes the following backend models:
+
+-  `Cm_Cache_Backend_Redis`
+-  `\Magento\Framework\Cache\Backend\Redis`
+-  `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
+
+The example how to set `REDIS_BACKEND`
+
+```yaml
+stage:
+  deploy:
+    REDIS_BACKEND: '\Magento\Framework\Cache\Backend\RemoteSynchronizedCache'
+```
+
+{:.bs-callout-info}
+If you specify `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` as the Redis backend model, then {{ site.data.var.ct }} generates the cache configuration automatically. See an example [configuration file]({{site.baseurl}}/guides/v2.3/config-guide/cache/two-level-cache.html) in the _Magento Configuration Guide_.
+
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
@@ -454,6 +511,8 @@ stage:
   deploy:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
+
+{% include cloud/note-increase-scd-max-execution-time-variable.md%}
 
 ### `SCD_STRATEGY`
 
@@ -564,7 +623,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
+On the deploy phase, we recommend setting `SKIP_SCD: true` so that the static content build does not happen during the deploy phase. This setting minimizes deployment time and prevents site downtime that can occur if the static content build fails during the deployment. See [Static content deployment]({{site.baseurl}}/cloud/deploy/static-content-deployment.html).
 
 ```yaml
 stage:
@@ -592,7 +651,12 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
+
+{:.bs-callout}
+To use the VERBOSE_COMMANDS setting to control the detail in command output for both successful and failed `bin/magento` CLI commands, you must set [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) `debug`.
+
+Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

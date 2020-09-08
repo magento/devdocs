@@ -11,7 +11,15 @@ The `addVirtualProductsToCart` mutation allows you to add multiple virtual produ
 
 ## Syntax
 
-`mutation: {addVirtualProductsToCart(input: AddVirtualProductsToCartInput): {AddVirtualProductsToCartOutput}}`
+```graphql
+mutation {
+  addVirtualProductsToCart(
+    input: AddVirtualProductsToCartInput
+  ) {
+    AddVirtualProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -19,8 +27,7 @@ The Luma sample data does not include any virtual products. The following exampl
 
 **Request:**
 
-```text
-
+```graphql
 mutation {
   addVirtualProductsToCart(
     input: {

@@ -4,6 +4,7 @@ title: Fastly
 functional_areas:
   - Cloud
   - Setup
+  - Security
 ---
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
@@ -29,7 +30,10 @@ Fastly provides the following services to optimize and secure content delivery o
    -  **[Web Application Firewall]({{ site.baseurl }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. The WAF service is available on Pro and Starter Production environments only.
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ site.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment.
+-  **Fastly CDN and WAF logs**–For {{ site.data.var.ece }} Pro projects, you can use the New Relic Logs service to review and analyze Fastly CDN and WAF log data. See [New Relic]({{site.baseurl}}/cloud/project/new-relic.html).
+
+{:.bs-callout-warning}
+To maintain PCI compliance for Magento sites deployed on the Cloud platform, you must set up Fastly on your Starter master, Pro Production, and Pro Staging environments. If you are using {{site.data.var.ee}} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly]({{site.baseurl}}/guides/v2.3/graphql/caching.html#caching-with-fastly) in the *GraphQL Developer Guide*.
 
 ## Fastly CDN module for Magento 2
 
@@ -89,7 +93,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
--  The Fastly service protects against Layer 7 attacks by applying custom rules (using VCLs) that can inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify attack traffic.
+-  Fastly also provides protection against Layer 7 attacks.  If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a Magento support ticket. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks](https://support.magento.com/hc/en-us/articles/360030941932) in the *Magento Help Center*.
 
 ## Fastly and 503 timeouts {#timeouts}
 

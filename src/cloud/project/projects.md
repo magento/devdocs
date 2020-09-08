@@ -13,7 +13,7 @@ To manage your project, environment, and branches, see:
 
 -  [Configure your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html)
 -  [Project structure]({{ site.baseurl }}/cloud/project/project-start.html)
--  [Create and manage users]({{ site.baseurl }}/cloud/project/user-admin.html)
+-  [Manage user access]({{ site.baseurl }}/cloud/project/user-admin.html)
 -  Manage branches with the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ site.baseurl }}/cloud/env/environments-start.html)
 -  [Snapshots and backup management]({{ site.baseurl }}/cloud/project/project-webint-snap.html)
 
@@ -38,15 +38,13 @@ To upgrade and patch Magento, see:
 
 With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud).
 
-![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
+![Log in to a project]({{ site.baseurl }}/common/images/cloud/cloud_project-login.png){:width="450px"}
 
-## Fastly, New Relic, and Blackfire credentials {#integrations}
+## Fastly and New Relic credentials {#integrations}
 
-Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ site.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the License Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Fastly]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html) and [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html). The project details display information for your project plan and important licenses and tokens for these integrations. Only the License Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 -  [Fastly](https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
-
--  [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
 -  [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
@@ -57,69 +55,76 @@ To review your integration tokens, IDs, and more:
 
 1. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
-   ![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
+   ![Go to account settings]({{ site.baseurl }}/common/images/cloud/cloud_acct-settings-option.png){:width="650px"}
 
 1. On your account page, click **View Details** for your project to open general settings and plan details.
 
-   ![View your project details]({{ site.baseurl }}/common/images/cloud_blackfire-edit-details.png)
+   ![View your project details]({{ site.baseurl }}/common/images/cloud/cloud-project-edit-details.png){:width="650px"}
 
-1. On your project details page, scroll to and expand **Blackfire** and **New Relic** to review your credentials.
+1. On your project details page, scroll to and expand the **New Relic** and **Fastly** sections to review service credentials.
 
-   ![Your Blackfire credentials]({{ site.baseurl }}/common/images/cloud_blackfire-account-info.png)
+   ![Your New Relic credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-details-new-relic.png)
 
 ## Access the project and environments {#project}
 
-When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
+When you first login, a list of projects you have access to displays. As an Account Owner, you can only see your company's project. A Magento Solution Partner may see multiple projects for all of the clients they support.
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html).
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ site.baseurl }}/cloud/architecture/starter-architecture.html).
 
-![Starter branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-starter.png)
+![Starter branch hierarchy]({{ site.baseurl }}/common/images/cloud/cloud_project-starter.png)
 
-For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}/common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}/common/images/cloud/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{ site.baseurl }}/cloud/architecture/pro-architecture.html).
 
-![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud/cloud_project-pro.png)
 
 The following table details the branches for Pro:
 
 | Branch | Environment | Description |
 |----------
 | (no branch) | Global Master | This "branch" captures global project changes including adding user accounts and variables. **Important:** Do not create branches from or merge to Global Master. |
-| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to go live with updated configurations and code. |
+| `production` | Production | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to launch your site with updated configurations and code. |
 | `staging` | Staging | This is a child branch from `master` with a deployment target. You cannot branch from this branch. You merge code from `master` to this branch to test in a pre-production environment. |
 | `master` | Integration master | The master branch of the single repository. In the Project Web Interface, this is called Integration. You branch from `master` for your development on your local, generating an environment when you push code. When this code is complete, you merge to `staging` and `production`. |
 
 To access an environment store and admin, select a branch and click **Access Site**. A list of store URLs and SSH command display. Select the URL to view the store in that environment.
 
-![Access your project]({{ site.baseurl }}/common/images/cloud_project-access.png)
+![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-access.png)
 
-The Pro plan Production environment includes three nodes that you can access using the following links:
+The Pro plan Production and Staging environments include three nodes that you can access using the following links:
 
--  Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
--  Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+-  Load balancer URLs:
+
+   -  `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
+   -  `http[s]://<your staging domain name>.c.<project ID>.ent.magento.cloud`
+
+-  Direct access to one of the three redundant servers:
+
+   -  `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
+   -  `http[s]://<your staging domain name>.{1|2|3}.<project ID>.ent.magento.cloud`
 
    The production URL is used by the content delivery network (CDN).
 
 If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.
 
-![Show or hide inactive branches]({{ site.baseurl }}/common/images/cloud_show-inactive.png)
+![Show or hide inactive branches]({{ site.baseurl }}/common/images/cloud/cloud_show-inactive.png)
 
 ## Configure environments {#configure}
 
 You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{ site.baseurl }}/cloud/env/environments.html), each of which corresponds to a Git branch.
 
-![Access your project]({{ site.baseurl }}/common/images/cloud_project-env.png)
+![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="650px"}
 
-This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html), [routes]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/magento-app.html), [routes]({{ site.baseurl }}/cloud/project/routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
 
-![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
+![configure environments]({{ site.baseurl }}/common/images/cloud/cloud_project-conf-env.png){:width="650px"}
 
 ### Environment configuration variables
 
 On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API token and service ID credentials as shown in the following example:
 
-![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
+![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png){:width="650px"}
 
 You can also [list and review]({{ site.baseurl }}/cloud/before/before-setup-env-2_clone.html) environment variables using the following Magento Cloud CLI command.
 
@@ -129,6 +134,6 @@ magento-cloud variable:get -e <environment ID>
 
 ## Configure the project
 
-Click ![edit project]({{ site.baseurl }}/common/images/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).
+Click ![edit project]({{ site.baseurl }}/common/images/cloud/cloud_edit-project.png) (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch). See [Manage user access]({{site.baseurl}}/cloud/project/user-admin.html).
 
-![configure project]({{ site.baseurl }}/common/images/cloud_project-config.png)
+![configure project]({{ site.baseurl }}/common/images/cloud/cloud_project-config.png){:width="650px"}

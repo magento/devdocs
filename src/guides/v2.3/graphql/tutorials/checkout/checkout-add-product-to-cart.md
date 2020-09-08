@@ -22,12 +22,12 @@ GraphQL supports all product types, but this tutorial only demonstrates how to a
 -  [Simple and grouped products]({{ page.baseurl }}/graphql/mutations/add-simple-products.html)
 -  [Virtual products]({{ page.baseurl }}/graphql/mutations/add-virtual-products.html)
 
-[Product interface implementations]({{ page.baseurl }}/graphql/product/product-interface-implementations.html) also describes how to create queries that access product interfaces.
+[Product interface implementations]({{ page.baseurl }}/graphql/interfaces/product-interface-implementations.html) also describes how to create queries that access product interfaces.
 
 Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 
-{:.bs-callout-info}
-If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
+{:.bs-callout .bs-callout-info}
+If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) for more details.
 
 ## Add a simple product into the shopping cart
 

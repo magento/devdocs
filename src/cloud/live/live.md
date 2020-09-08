@@ -1,17 +1,17 @@
 ---
 group: cloud-guide
-title: Go live and launch
+title: Site launch
 functional_areas:
   - Cloud
 ---
 
-When you have completed deployment and testing in Integration and Staging environments, you can start going live. First, you should complete all development and testing prior to touching Production. Feel ready to launch? Review our checklists, best practices, and final steps to go live.
+When you have completed deployment and testing in Integration and Staging environments, you can start going live. First, you should complete all development and testing prior to touching Production. Feel ready to launch? Review our checklists, best practices, and final steps to launch your site.
 
 If you checked this information prior to deploying and testing in Staging, consider reviewing the benefits of testing in Staging first in the next section. Staging is a near-production environment running on similar hardware, configurations, architecture, and services. It can reduce your downtime and make your extension, service, custom configurations, and merchant User Acceptance Testing vital components to releasing your sites and stores.
 
-## Info you need to go live {#goliveinfo}
+## Info you need to launch your site {#goliveinfo}
 
-You need the following information to go live:
+**Prerequisites for site launch:**
 
 *  CNAME record information for configuring the DNS
 *  List of all storefront domains to add to the certificate
@@ -27,7 +27,7 @@ We strongly recommend testing in these environments due to the complexity of you
 *  Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
 *  Extensions typically are heavily tested in [Developer mode]({{ site.baseurl }}/guides/v2.3/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
 *  Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local does not confirm it works perfectly in production.
-*  Integration environments do not have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
+*  Integration environments do not support some services that are available in Staging and Production, like Fastly and New Relic.
 *  [Fully test]({{ site.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets
 *  Integration environments may only have databases populated with test data, not matching a production-like environment
 
@@ -89,9 +89,9 @@ Scan results include a label that describes scan pass or fail status with detail
 
 The scan results also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user. Only users designated in the site registration process receive scan completion notifications.
 
-## Ready to go live {#ready}
+## Ready to launch your site {#ready}
 
-When you are ready to begin the go-live process, see the following:
+When you are ready to begin the site launch process, see the following:
 
-*  [Go live checklist]({{ site.baseurl }}/cloud/live/go-live-checklist.html)
+*  [Launch checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html)
 *  [Launch steps]({{ site.baseurl }}/cloud/live/launch-steps.html)

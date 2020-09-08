@@ -9,6 +9,9 @@ redirect_from:
 {:.bs-callout-warning}
 The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
+{:.bs-callout-info}
+For {{site.data.var.ece}} projects, see [Set up Magento B2B module]({{ site.baseurl }}/cloud/configure/setup-b2b.html) in the _Cloud Guide_.
+
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
    ```bash
@@ -23,7 +26,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
    Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).
 
-   If not already denfined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
+   If not already defined globally in your [COMPOSER_HOME](https://getcomposer.org/doc/03-cli.md#composer-home), you will need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your `public_key` and `private_key` for `username` and `password`:
 
    ```json
    {

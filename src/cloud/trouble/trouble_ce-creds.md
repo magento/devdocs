@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Incorrect credentials
-menu_title: Incorrect credentials
-menu_order: 7
-menu_node:
 functional_areas:
   - Cloud
   - Configuration
@@ -27,7 +23,7 @@ To see the error log:
 1. [Log in to your project]({{ site.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 1. Click **Failure** to view the log as the following figure shows.
 
-   ![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud_deploy-failure-creds.png){:width="600px"}
+   ![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
 

@@ -6,12 +6,20 @@ ee_only: True
 
 The `redeemGiftCardBalanceAsStoreCredit` mutation converts the entire balance of a gift card to store credit. The gift card must be redeemable and cannot have a balance of 0 at the time you run the mutation. After successfully running the mutation, the value of the gift card changes to 0.
 
-{:.bs-callout-info}
-Run this mutation on behalf of logged-in customers only. [Get customer authorization token]({{page.baseurl}}/graphql/get-customer-authorization-token.html) describes how to send a request as a customer.
+{:.bs-callout .bs-callout-info}
+Run this mutation on behalf of logged-in customers only. [Authorization tokens]({{page.baseurl}}/graphql/authorization-tokens.html) describes how to send a request as a customer.
 
 ## Syntax
 
- `mutation: redeemGiftCardBalanceAsStoreCredit(input: GiftCardAccountInput): GiftCardAccount`
+```graphql
+mutation {
+  redeemGiftCardBalanceAsStoreCredit(
+    input: GiftCardAccountInput
+  ) {
+    GiftCardAccount
+  }
+}
+```
 
 ## Example usage
 
@@ -22,7 +30,9 @@ The following example redeems the gift card with code `“056MHP57TJ5C”`.
 ```graphql
 mutation {
   redeemGiftCardBalanceAsStoreCredit(
-    input : { gift_card_code: “056MHP57TJ5C”}
+    input: {
+      gift_card_code: "056MHP57TJ5C"
+    }
   ) {
     balance {
       currency

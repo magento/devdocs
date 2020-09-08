@@ -35,6 +35,7 @@ Complete the following prerequisites to prepare your environment before starting
 
      {:.bs-callout-info}
     Optionally, you can create a [custom maintenance mode page].
+-  **Check the status of cron jobs**—To prevent various unexpected problems during the upgrade, wait for all active running Magento cron jobs to finish or stop them.
 
 Using the more manual process of upgrading via the command line allows you to track and control exactly what is being changed in the upgrade.
 
@@ -240,11 +241,11 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 There are alternatives methods that automate parts of the upgrade process:
 
-1. [Upgrade using the script][] (semi-automated process)
-   Upgrading using the script process is a bit easier and less intensive if you have not made updates to values that the script affects.
+1. [Upgrade using the script][] (semi-automated process).
+   We recommend using the script to upgrade if you have not made updates to the values that the script affects.
    If you previously made updates, do not upgrade using the script. The script will override your updates.
-1. EXPERIMENTAL: [Upgrade using the custom Composer plugin][]
-   We are developing a [custom Composer plugin][] that enhances the semi-automated upgrade process.
+1. [Upgrade using the custom Composer plugin][].
+   We created a [custom Composer plugin][] to enhance the semi-automated upgrade process.
 
 The upgrading scenario is the same for each of these options. Both use Composer and a command line interface.
 

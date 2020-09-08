@@ -43,7 +43,7 @@ For Starter, deploy the development branch you created to Staging and Production
 1. Select the Staging branch.
 1. Select the **Merge** option to deploy to Production.
 
-![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
+![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud/cloud_project-merge.png)
 
 ### Deploy code with SSH and CLI {#ssh}
 
@@ -255,7 +255,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 To solve this problem, you can generate a new database dump changing or removing the `DEFINER` clause as shown in the following example:
 
 ```bash
-mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
+mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name>  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
 ```
 
 Use the database dump file to [migrate the database](#cloud-live-migrate-db).

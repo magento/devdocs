@@ -12,6 +12,9 @@ functional_areas:
 
 Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local environment. You can use the IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
+{:.bs-callout-info}
+You can configure Xdebug to run in the {{site.data.var.mcd-prod}} environment for local debugging without changing your {{site.data.var.ece}} project configuration. See [Configure Xdebug for Docker]{{site.baseurl}}/cloud/docker/docker-development-debug.html).
+
 To set up Xdebug, you need to [configure](#configure-xdebug) a file in your Git repository, configure your IDE, and set up port forwarding. You can configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
 Once configured, you can debug [CLI commands](#debugcli), [web requests](#webrequests), and [code](#code). Remember, all {{site.data.var.ece}} environments are read-only. You need to pull code to your local development environment to perform debugging. For Pro Staging and Production environments, we include [additional instructions](#pro-debug) for Xdebug.
@@ -56,7 +59,6 @@ To enable Xdebug:
            - redis
            - xsl
            - json
-           - blackfire
            - newrelic
            - sodium
            - xdebug
@@ -113,7 +115,7 @@ To configure PhpStorm to work with Xdebug:
       -  Production: `/app/<project_code>/`
       -  Staging:  `/app/<project_code>_stg/`
 
-1. Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
+1. Change the Xdebug port to 9000 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 
 1. Click **Apply**.
 
@@ -317,13 +319,22 @@ To debug CLI commands:
    export PHP_IDE_CONFIG="serverName=<name of the server that is configured in PHPSTORM>"
    ```
 
-These variables are removed when the SSH session ends. When adding the variables, you can add runtime options:
+   These variables are removed when the SSH session ends.
 
-```bash
-php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
-```
+1. Begin debugging
 
-If you expect to use SSH and debug multiple times, you can put the export commands into a bash script in the `/tmp` directory to run them each time.
+   On Starter environments and Pro Integration environments, run the CLI command to debug.
+   You may add runtime options, for example:
+
+   ```bash
+   php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 bin/magento cache:clean
+   ```
+
+   On Pro Staging and Production environments, you must specify the path to the Xdebug php configuration file when debugging CLI commands, for example:
+
+   ```bash
+   php -c /etc/platform/USERNAME/php.xdebug.ini bin/magento cache:clean
+   ```
 
 ## For debugging web requests {#webrequests}
 

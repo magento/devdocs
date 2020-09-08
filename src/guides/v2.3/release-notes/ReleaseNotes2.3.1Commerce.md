@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
 
-*Release notes published on March 26, 2019 and last edited on March 24, 2020.*
+*Release notes published on March 26, 2019 and last edited on June 3, 2020.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements.
 
@@ -31,17 +31,12 @@ A critical SQL injection vulnerability has been identified in 2.3.x Magento code
 
 Follow these steps to download and apply this patch:
 
-*  Access [My Account](https://account.magento.com/customer/account/login).
-
-*  Navigate to the **Downloads** tab. Select the Magento edition and version you need.
-
-*  Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
-
-*  Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
-
-*  From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
-
-*  Refresh the cache from the Admin (**System** > **Cache Management**).
+1. Access [My Account](https://account.magento.com/customer/account/login).
+1. Navigate to the **Downloads** tab. Select the Magento edition and version you need.
+1. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+1. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+1. From your project root, apply the patch. `git apply ./m2-hotfixes/<patch-file-name>`.
+1. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## PayPal Payflow Pro active carding activity update
 
@@ -111,9 +106,9 @@ This release includes over 30 security enhancements that help close cross-site s
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features.
 
-*  This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento, which is discussed in [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512).
+*  This release includes a **new Authorizenet extension** to replace the Authorizenet Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento, which is discussed in [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512).
 
-*  Accept.js library is now used for Authorize.Net payments.
+*  `Accept.js` library is now used for Authorize.Net payments.
 
 *  Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  Romain Ruaud in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
@@ -209,7 +204,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3280 -->
 
-*  Administrators  that have been assigned a backup module role resource can now access the backup controller as expected. s*Fix submitted by Mahesh Singh in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
+*  Administrators  that have been assigned a backup module role resource can now access the backup controller as expected. *Fix submitted by Mahesh Singh in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
 
 <!--- ENGCOM-3160 -->
 
@@ -261,7 +256,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-95536 -->
 
-*  You can now successfully save a role from the Admin. Previously, when you saved a role from the Admin, Magento removed all  users from the role (no matter which checkbox was checked), and displayed this message, `This user has no tokens`.
+*  You can now successfully save a role from the Admin. Previously, when you saved a role from the Admin, Magento removed all  users from the role (no matter which checkbox was checked), and displayed this message: `This user has no tokens`.
 
 ### Backend
 
@@ -293,7 +288,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-58212 -->
 
-*  You can now successfully change the attribute set for a bundle product. Previously, the edit bundle page hung, and Magento threw this error, `Uncaught TypeError: Cannot read property 'length' of undefined`. [GitHub-5999](https://github.com/magento/magento2/issues/5999)
+*  You can now successfully change the attribute set for a bundle product. Previously, the edit bundle page hung, and Magento threw this error: `Uncaught TypeError: Cannot read property 'length' of undefined`. [GitHub-5999](https://github.com/magento/magento2/issues/5999)
 
 <!--- MAGETWO-91628 -->
 
@@ -313,7 +308,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-97617 -->
 
-*  You can now add a bundle product to a requisition list from the category page. Previously, Magento threw this error, `PHP Fatal error: Uncaught Error: Call to a member function getParentProductId() on string in app/code/Magento/RequisitionList/Model/RequisitionListItem/Options/Builder.php:118`.
+*  You can now add a bundle product to a requisition list from the category page. Previously, Magento threw this error: `PHP Fatal error: Uncaught Error: Call to a member function getParentProductId() on string in app/code/Magento/RequisitionList/Model/RequisitionListItem/Options/Builder.php:118`.
 
 ### B2B
 
@@ -339,7 +334,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-96598 -->
 
-*  Merchants can now add a product to the default public catalog,  and the product can be accessed by the product URL on the storefront. Previously, Magento did not add the product to the shared catalog and instead displayed this error, `Requested categories don't exist`.
+*  Merchants can now add a product to the default public catalog,  and the product can be accessed by the product URL on the storefront. Previously, Magento did not add the product to the shared catalog and instead displayed this error: `Requested categories don't exist`.
 
 <!--- MAGETWO-97314 -->
 
@@ -479,7 +474,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3153  -->
 
-*  Magento no longer displays a console error when a customer selects one-step checkout. Previously, Magento displayed this JavaScript error, `Cannot read property 'code' of undefined`. *Fix submitted by Ihor Sviziev in pull request [18494](https://github.com/magento/magento2/pull/18494)*. [GitHub-18164](https://github.com/magento/magento2/issues/18164)
+*  Magento no longer displays a console error when a customer selects one-step checkout. Previously, Magento displayed this JavaScript error: `Cannot read property 'code' of undefined`. *Fix submitted by Ihor Sviziev in pull request [18494](https://github.com/magento/magento2/pull/18494)*. [GitHub-18164](https://github.com/magento/magento2/issues/18164)
 
 <!--- MAGETWO-95939  -->
 
@@ -523,7 +518,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3184 -->
 
-*  You can now create a new product with a special price. Previously, when you saved the newly created product, Magento threw this error, `Special price date from" Failed to parse time string`. *Fix submitted by Hiren Pandya in pull request [18578](https://github.com/magento/magento2/pull/18578)*. [GitHub-18158](https://github.com/magento/magento2/issues/18158)
+*  You can now create a new product with a special price. Previously, when you saved the newly created product, Magento threw this error: `Special price date from" Failed to parse time string`. *Fix submitted by Hiren Pandya in pull request [18578](https://github.com/magento/magento2/pull/18578)*. [GitHub-18158](https://github.com/magento/magento2/issues/18158)
 
 <!--- ENGCOM-3242 -->
 
@@ -773,7 +768,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91495 -->
 
-*  You can now save and duplicate a linked product. Previously, Magento did not duplicate the product, and displayed this error, `Invalid data provided for linked products`.
+*  You can now save and duplicate a linked product. Previously, Magento did not duplicate the product, and displayed this error: `Invalid data provided for linked products`.
 
 <!--- ENGCOM-4050 -->
 
@@ -1303,7 +1298,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3483 -->
 
-*  The `fileUploader` form element in the  `ui_component` form now works as expected. Previously, during file upload, the countable interface was not implemented, and Magento threw this error, `Error Message : Warning: count(): Parameter must be an array or an object that implements Countable`.  *Fix submitted by [gmachure](https://github.com/gmachure) in pull request [19249](https://github.com/magento/magento2/pull/19249)*. [GitHub-19247](https://github.com/magento/magento2/issues/19247)
+*  The `fileUploader` form element in the  `ui_component` form now works as expected. Previously, during file upload, the countable interface was not implemented, and Magento threw this error: `Error Message : Warning: count(): Parameter must be an array or an object that implements Countable`.  *Fix submitted by [gmachure](https://github.com/gmachure) in pull request [19249](https://github.com/magento/magento2/pull/19249)*. [GitHub-19247](https://github.com/magento/magento2/issues/19247)
 
 <!--- ENGCOM-3243 -->
 
@@ -1839,7 +1834,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3837 -->
 
-*  You can now add a product review from the Admin.  Previously, when you clicked **New Review**, Magento displayed this error, `Error message showing : A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`. *Fix submitted by Suneet K. in pull request [20146](https://github.com/magento/magento2/pull/20146)*. [GitHub-20122](https://github.com/magento/magento2/issues/20122)
+*  You can now add a product review from the Admin.  Previously, when you clicked **New Review**, Magento displayed this error: `Error message showing : A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`. *Fix submitted by Suneet K. in pull request [20146](https://github.com/magento/magento2/pull/20146)*. [GitHub-20122](https://github.com/magento/magento2/issues/20122)
 
 <!--- ENGCOM-4096 -->
 
@@ -1875,7 +1870,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-97259 -->
 
-*  Administrators can now process returns when a request includes a required image attribute. Previously, the Return Items tab displayed a validation error even though the image had  been uploaded, and if you clicked on **Details**, Magento displayed this message, `Please select a file`.
+*  Administrators can now process returns when a request includes a required image attribute. Previously, the Return Items tab displayed a validation error even though the image had  been uploaded, and if you clicked on **Details**, Magento displayed this message: `Please select a file`.
 
 <!--- MAGETWO-97132 -->
 
@@ -1893,7 +1888,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3048 -->
 
-*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error, `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by Pratik Oza in pull request [18272](https://github.com/magento/magento2/pull/18272)*. [GitHub-10530](https://github.com/magento/magento2/issues/10530)
+*  You can now print order information from the customer dashboard. Previously, when you tried to print  order information from the customer dashboard, Magento displayed this error: `Fatal error: Call to a member function getRealOrderId() on null in /vendor/magento/module-sales/Block/Order/PrintShipment.php`. *Fix submitted by Pratik Oza in pull request [18272](https://github.com/magento/magento2/pull/18272)*. [GitHub-10530](https://github.com/magento/magento2/issues/10530)
 
 <!--- ENGCOM-3074 -->
 
@@ -1941,7 +1936,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3828 -->
 
-*  Magento now displays a success message when you create an order through the Admin and the **create shipment** and **Email copy of invoice** checkboxes are checked. *Fix submitted by Surabhi Srivastava](https://github.com/Surabhi-Cedcoss) in pull request [20142](https://github.com/magento/magento2/pull/20142)*. [GitHub-19942](https://github.com/magento/magento2/issues/19942)
+*  Magento now displays a success message when you create an order through the Admin and the **create shipment** and **Email copy of invoice** checkboxes are checked. *Fix submitted by Surabhi Srivastava in pull request [20142](https://github.com/magento/magento2/pull/20142)*. [GitHub-19942](https://github.com/magento/magento2/issues/19942)
 
 <!--- ENGCOM-3887 -->
 
@@ -1993,7 +1988,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91522 -->
 
-*  The sales rule indexer now runs without error. Previously, the sales rule indexer  returned an error during reindexing because of the Magento_AdvancedSalesRule module.
+*  The sales rule indexer now runs without error. Previously, the sales rule indexer  returned an error during reindexing because of the `Magento_AdvancedSalesRule` module.
 
 <!--- ENGCOM-3773 -->
 
@@ -2277,7 +2272,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 <!--- ENGCOM-3371 -->
 
-*  Usage of unsupported includes has been removed. Previously, when you chose a user to edit on the customers grid, Magento installations running on Internet Explorer 11.x did not load the expected page, but instead displayed this message, `object does not support method includes`.  *Fix submitted by Oleksandr Miroshnichenko in pull request [19010](https://github.com/magento/magento2/pull/19010)*. [GitHub-18562](https://github.com/magento/magento2/issues/18562)
+*  Usage of unsupported includes has been removed. Previously, when you chose a user to edit on the customers grid, Magento installations running on Internet Explorer 11.x did not load the expected page, but instead displayed this message: `object does not support method includes`.  *Fix submitted by Oleksandr Miroshnichenko in pull request [19010](https://github.com/magento/magento2/pull/19010)*. [GitHub-18562](https://github.com/magento/magento2/issues/18562)
 
 ### URL rewrites
 
@@ -2371,6 +2366,8 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
 *  Tap **Save Config**.
 
 **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. This issue has been resolved with the Scope parameter for Async/Bulk API patch, which is now available. See [Patch for Magento Framework Message Queue and Store Scopes](https://community.magento.com/t5/Magento-DevBlog/Patch-for-Magento-Framework-Message-Queue-and-Store-Scopes/ba-p/135209) for a full discussion of this scope-related issue and patch contents.
+
+**Issue:** You cannot use the Magento Extension Manager to install extensions purchased from the Magento Marketplace. **Workaround**: Install extensions from the command line as described in [General CLI installation]({{ site.baseurl }}/extensions/install/). See [Extension Manager shows no extensions in Magento Commerce 2.3.x](https://support.magento.com/hc/en-us/articles/360043980352).
 
 ## Community contributions
 

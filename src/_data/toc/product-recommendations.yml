@@ -1,11 +1,11 @@
 label: Product Recommendations
 pages:
-- label: Product Recommendations
+- label: Overview
   url: /recommendations/product-recs.html
   versionless: true
 
-- label: Configure Recommendations
-  url: /recommendations/configure.html
+- label: Install and Configure Recommendations
+  url: /recommendations/install-configure.html
   versionless: true
 
 - label: Recommendation Events
@@ -20,10 +20,6 @@ pages:
   url: /recommendations/test.html
   versionless: true
 
-- label: Troubleshoot Recommendations
-  url: /recommendations/troubleshooting.html
-  versionless: true
-
 - label: Customize Recommendations
   url: /recommendations/customize.html
   versionless: true
@@ -32,6 +28,6 @@ pages:
   url: /recommendations/recs-api.html
   versionless: true
 
-- label: Get Support
-  url: /recommendations/support.html
+- label: Release Notes
+  url: /recommendations/release-notes.html
   versionless: true

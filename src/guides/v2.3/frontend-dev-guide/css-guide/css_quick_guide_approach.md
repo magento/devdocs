@@ -20,7 +20,7 @@ To extend the parent theme's styles in your theme:
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_extend.less
+   │  │   │       ├──_extend.less
    ...
    ```
 
@@ -43,7 +43,7 @@ To override parent styles (that is, override default Magento UI [library](https:
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_theme.less
+   │  │   │       ├──_theme.less
    ...
    ```
 
@@ -68,8 +68,8 @@ To make your changes easier to read and support, structure them by adding a sepa
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_buttons_extend.less
-   │  │   │      ├──_extend.less
+   │  │   │       ├──_buttons_extend.less
+   │  │   │       ├──_extend.less
    ...
    ```
 
@@ -88,7 +88,7 @@ To override the parent theme's styles for buttons in your theme:
    │  ├── web/
    │  │   ├── css/
    │  │   │   ├── source/
-   │  │   │      ├──_buttons.less
+   │  │   │       ├──_buttons.less
    ...
    ```
 
@@ -109,7 +109,7 @@ To extend a Module's styles in your theme:
    │   ├── web/
    │   │   ├── css/
    │   │   │   ├── source/
-               ├──_extend.less
+                   ├──_extend.less
    ...
    ```
 
@@ -130,7 +130,7 @@ To override module styles in your theme:
    │   ├── web/
    │   │   ├── css/
    │   │   │   ├── source/
-               ├──_module.less
+   |   |   |       ├──_module.less
    ...
    ```
 

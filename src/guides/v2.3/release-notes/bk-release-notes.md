@@ -1,12 +1,12 @@
 ---
 group: release-notes
-subgroup: 2.3.x_Release_Information
-title: 2.3.x Release Information
-redirect_from:
-- /magento-release-information.html
+title: 2.3 Release Information
 ---
 
 ## Magento 2.3.x Release Notes
+
+*  [{{site.data.var.ce}} 2.3.5 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-3-5-open-source.html)
+*  [{{site.data.var.ee}} 2.3.5 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-3-5-commerce.html)
 
 *  [{{site.data.var.ce}} 2.3.4 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-3-4-open-source.html)
 *  [{{site.data.var.ee}} 2.3.4 Release Notes]({{page.baseurl}}/release-notes/release-notes-2-3-4-commerce.html)

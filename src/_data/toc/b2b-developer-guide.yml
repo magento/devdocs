@@ -3,6 +3,7 @@ pages:
 
     - label: Introduction
       url: /b2b/bk-b2b.html
+      edition: ee-only
 
     - label: Integrate with B2B using REST
       url: /b2b/integrations.html
@@ -70,3 +71,5 @@ pages:
 
     - label: Develop B2B extensions
       url: /b2b/extensions.html
+    - label: B2B Release Notes
+      url: /release-notes/b2b-release-notes.html

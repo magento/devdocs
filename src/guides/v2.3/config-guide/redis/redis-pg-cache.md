@@ -7,9 +7,9 @@ functional_areas:
   - Setup
 ---
 
-Magento provides command line options to configure Redis page and default caching. Although you can also configure caching by editing the `<Magento install dir>app/etc/env.php` file, the command line is the recommended method, especially for initial configuration. The command line provides validation, thereby ensuring the configuration is syntactically correct.
+Magento provides command line options to configure Redis page and default caching. Although you can configure caching by editing the `<Magento install dir>app/etc/env.php` file, using the command line is the recommended method, especially for initial configurations. The command line provides validation, ensuring the configuration is syntactically correct.
 
-You must  [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
+You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 ## Configure Redis default caching {#config-redis-config}
 
@@ -21,15 +21,15 @@ bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-<parame
 
 where
 
-`--cache-backend=redis` enables Redis default caching. If this feature has already been enabled, omit this parameter.
+`--cache-backend=redis` enables the Redis default caching. If this feature has already been enabled, omit this parameter.
 
-`--cache-backend-redis-<parameter_name>=<parameter_value>` is a list of parameter/value pairs that configure default caching:
+`--cache-backend-redis-<parameter_name>=<parameter_value>` is a list of key/value pairs that configure the default caching:
 
 |Command line parameter|Parameter|Meaning|Default value|
 |--- |--- |--- |--- |
 |cache-backend-redis-server|server|Fully qualified hostname, IP address, or an absolute path to a UNIX socket. The default value of 127.0.0.1 indicates Redis is installed on the Magento server.|127.0.0.1|
 |cache-backend-redis-port|port|Redis server listen port|6379|
-|cache-backend-redis-db|database|Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.<br/><br/>Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
+|cache-backend-redis-db|database|Required if you use Redis for both the default and full-page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.<br/><br/>Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
 |cache-backend-redis-password|password|Configuring a Redis password enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The password is configured directly in Redis's configuration file, /etc/redis/redis.conf, which you should still have open from the previous step.||
 
 ### Example command
@@ -94,6 +94,69 @@ As a result of the two example commands, Magento adds lines similar to the follo
             ]
         ]
     ]
+],
+```
+## New Redis cache implementation
+
+As of Magento 2.3.5, it is recommended to use the extended Redis cache implementation: `\Magento\Framework\Cache\Backend\Redis`.
+
+```php
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+            'backend_options' => [
+                'server' => '127.0.0.1',
+                'database' => '0',
+                'port' => '6379'
+            ],
+        ],
+],
+```
+
+## Redis preload feature
+
+Since Magento stores a lot of configuration data in the Redis cache, we can preload data that is reused between pages.
+Redis uses the `pipeline` in order to composite load requests.
+Note that this feature works only with `\Magento\Framework\Cache\Backend\Redis` as the cache adapter.
+Please note that keys such as `SYSTEM_DEFAULT`, `DB_IS_UP_TO_DATE`, `GLOBAL_PLUGIN_LIST`,and `EAV_ENTITY_TYPES` should include the database prefix.
+
+```php
+'cache' => [
+    'frontend' => [
+        'default' => [
+            'id_prefix' => '061_',
+            'backend' => '\\Magento\\Framework\\Cache\\Backend\\Redis',
+            'backend_options' => [
+                'server' => 'redis',
+                'database' => '0',
+                'port' => '6379',
+                'password' => '',
+                'compress_data' => '1',
+                'compression_lib' => '',
+                'preload_keys' => [
+                    '061_EAV_ENTITY_TYPES',
+                    '061_GLOBAL_PLUGIN_LIST',
+                    '061_DB_IS_UP_TO_DATE',
+                    '061_SYSTEM_DEFAULT',
+                ],
+            ]
+        ],
+        'page_cache' => [
+            'id_prefix' => '061_'
+        ]
+    ]
+]
+```
+
+When using the preload feature with the L2 cache, add the ':hash' suffix to your keys:
+
+```php
+'preload_keys' => [
+    '061_EAV_ENTITY_TYPES:hash',
+    '061_GLOBAL_PLUGIN_LIST:hash',
+    '061_DB_IS_UP_TO_DATE:hash',
+    '061_SYSTEM_DEFAULT:hash',
 ],
 ```
 

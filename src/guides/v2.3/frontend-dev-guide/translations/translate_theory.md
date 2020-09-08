@@ -18,13 +18,13 @@ To ensure that your new string is added to the dictionary and translated, use th
 For example:
 
 ```php
-<?php echo __('Create Backup') ?>
+<?= __('Create Backup') ?>
 ```
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 ```php
-<?php echo __('Hello %1', $yourVariable) ?>
+<?= __('Hello %1', $yourVariable) ?>
 ```
 
 In this example, the _'Hello %1'_ string is added to the dictionary when the i18n tool is run.
@@ -99,6 +99,24 @@ Translated strings that originate from `.xml` files will not render unless they 
 ```php
 __($this->config->getData('label'))
 ```
+
+## Strings added in Underscore templates {#add_strings_underscore_html}
+
+To ensure that the text you add in `.html` Underscore templates is collected by the `i18n` tool, use the `_.i18n('')` Underscore function.
+
+-  When a string is added to the template:
+
+   ```html
+   <%= _.i18n('Hello') %>
+   ```
+
+-  If the string contains a variable, use the variable placeholder:
+
+   ```html
+   <%= _.i18n('Hello %1').replace('%1', yourVariable) %>
+   ```
+
+   In this example, the _'Hello %1'_ string is added to the dictionary when the i18n tool is run.
 
 ## Strings added in .js files {#add_strings_js}
 

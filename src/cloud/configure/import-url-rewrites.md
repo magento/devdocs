@@ -10,7 +10,7 @@ functional_areas:
 You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic. Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
 {:.bs-callout-info}
-This module supports ~7.0.13|~7.1.0 PHP versions and is available for Magento version 2.2.x only.
+This module supports PHP versions 7.0.13 and later patch releases and all 7.1.x and 7.2.x patch releases. The module is available for Magento version 2.2.x and 2.3.x only.
 
 {:.procedure}
 To install the URL rewrite module:
@@ -89,17 +89,20 @@ To import URL Rewrites:
 
    The import task begins with the following message:
 
-   ![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-task.png)
+   ![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-task.png)
 
    A successful import returns the following message:
 
-   ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
+   ![Successful URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-success.png)
 
 ## Troubleshooting the import
 
+{:.bs-callout-info}
+Large uploads are limited by the `upload_max_filesize` directive in `php.ini`. If your URL file is bigger than the existing limit, see [Customize php.ini settings]({{ site.baseurl }}/cloud/project/magento-app-php-ini.html) to increase it.
+
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 
-![Failed URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-failed.png)
+![Failed URL rewrite]({{site.baseurl}}/common/images/cloud/cloud-urlrewrite-failed.png)
 
 {:.procedure}
 To research the URL rewrite error:
@@ -110,7 +113,7 @@ To research the URL rewrite error:
 
 1. In the _Bulk Actions Log_ view, search for your task, and click **Details** in the _Action_ column.
 
-   ![Bulk actions log]({{ site.baseurl }}/common/images/cloud-urlrewrite-bulk-actions-log.png)
+   ![Bulk actions log]({{ site.baseurl }}/common/images/cloud/cloud-urlrewrite-bulk-actions-log.png)
 
 1. In the _Action Details_ view, click the error number in the **ID** column to download a report about the failed operation.
 

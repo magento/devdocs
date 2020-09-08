@@ -14,9 +14,9 @@ You can use the Fastly CDN module for Magento 2 to create an Edge ACL with a lis
 
 **Prerequisites:**
 
+{%include cloud/cloud-fastly-prereqs-custom-vcl.md%}
+
 -  List of client IP addresses to block
--  Admin credentials to access the Magento Admin UI for your {{ site.data.var.ece }} environment
--  Fastly API credentials for Staging and Production environments
 
 ## Create Edge ACL for blocking client IPs {#edge-acl}
 

@@ -1,8 +1,8 @@
 ---
 title: Magento_InventoryDistanceBasedSourceSelection
 source_repo: inventory
-release: ''
-github_path: app/code/Magento/InventoryDistanceBasedSourceSelection/README.md
+release: 1.1.5
+github_path: InventoryDistanceBasedSourceSelection/README.md
 last_modified_at: '2018-12-28 10:54:19 +0100'
 content: "The `InventoryDistanceBasedSourceSelection` module implements logic for
   distance based source selection\n\nThis module is part of the new inventory infrastructure.

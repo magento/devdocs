@@ -293,6 +293,7 @@ Attribute | Data type | Description
 `ids` | FilterEqualTypeInput | Filters by the specified category IDs
 `name` | FilterMatchTypeInput | Filters by the display name of the category
 `url_key` | FilterEqualTypeInput | Filters by the part of the URL that identifies the category
+`url_path` | FilterEqualTypeInput | Filters by the URL path for the category
 
 ### FilterEqualTypeInput object
 
@@ -313,7 +314,7 @@ Attribute | Data type | Description
 
 ## Output attributes {#Categories}
 
-The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/product/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
+The query returns a `CategoryTree` object, which implements [`CategoryInterface`]({{page.baseurl}}/graphql/interfaces/category-interface.html). The `CategoryTree` object can contain the following attribute and all attributes defined in `CategoryInterface`:
 
 Attribute | Data type | Description
 --- | --- | ---

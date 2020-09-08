@@ -40,16 +40,22 @@ You must clone your {{site.data.var.ece}} project from an existing environment a
    magento-cloud project:get <project-ID>
    ```
 
+1. List the tracked repositories.
+
+   ```bash
+   git remote -v
+   ```
+
+1. Delete the default `origin` remote.
+
+   ```bash
+   git remote remove origin
+   ```
+
 1. Add your Bitbucket repository as a remote.
 
    ```bash
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
-   ```
-
-1. Delete the default `magento` remote.
-
-   ```bash
-   git remote remove magento
    ```
 
 1. Verify that you added the Bitbucket remote correctly.
@@ -89,7 +95,7 @@ To create an OAuth consumer in Bitbucket:
 
 1. Click **Add consumer** and configure it as follows:
 
-   ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png){:width="700px"}
+   ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud/cloud_oauth_consumer_config.png){:width="700px"}
 
    {:.bs-callout-warning}
    A valid **Callback URL** is not required, but you must enter a value in this field to successfully complete the integration.
@@ -194,7 +200,7 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
 1. Log in to the [Project Web Interface]({{ site.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
 
-   ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
+   ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud/cloud_test_bitbucket_integration.png)
 
 ## Create a new Cloud branch
 

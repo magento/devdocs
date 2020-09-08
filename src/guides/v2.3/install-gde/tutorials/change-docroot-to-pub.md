@@ -19,6 +19,8 @@ This topic describes how to change the Apache [docroot]({{ page.baseurl }}/insta
 {:.bs-callout-warning}
 If you're accustomed to using the Web Setup Wizard during development, be aware that you will not be able to access it when serving files from the `pub/` directory.
 
+{% include install/web/deprecated.md %}
+
 ## A note about nginx
 
 If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
@@ -113,7 +115,20 @@ Replace `192.168.33.10` with your server's hostname.
    UPDATE core_config_data SET value='http://192.168.33.10' WHERE path='web/unsecure/base_url';
    ```
 
-## 3. Switch modes
+## 3. Update the env.php file
+
+The following node needs to be appended to the `env.php` file.
+
+```conf
+'directories' => [
+    'document_root_is_pub' => true
+]
+```
+
+Refer to the [env.php reference]({{ page.baseurl }}/config-guide/prod/config-reference-envphp.html) for more information.
+
+## 4. Switch modes
+
 [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), which include `production` and `developer`, are designed to improve security and make development easier. As the names suggest, you should switch to `developer` mode when extending or customizing Magento and switch to `production` mode when running Magento in a live environment.
 
 Switching between modes is an important step in verifying that your server configuration is working properly. You can switch between modes using the Magento CLI tool:
@@ -142,7 +157,7 @@ Switching between modes is an important step in verifying that your server confi
 
 1. Refresh your browser and verify that the storefront displays properly.
 
-## 4. Verify the storefront
+## 5. Verify the storefront
 
 Go to the [storefront](https://glossary.magento.com/storefront) in a web browser to verify that everything is working.
 

@@ -24,16 +24,16 @@
 
   {%- assign item_url = item.url | prepend: base -%}
   {%- assign compare_url = page.url | prepend: site.baseurl -%}
-<li class="{%- if compare_url == item_url -%}active{%- endif -%} {{ item.class }}" role="menuitem">
+<li class="{% if compare_url == item_url %}is-selected{% endif %} {{ item.class }} {{ include.itemClass }}" role="menuitem">
   {%- if item.url -%}
-  <a href="{{ item_url }}">{{ item.label }}</a>
+  <a href="{{ item_url }}" class="{{ include.labelClass }} {{item.edition}}">{{ item.label }}</a>
   {%- else -%}
-  <span>{{ item.label }}</span>
+  <span class="{{ include.labelClass }} {{item.edition}}">{{ item.label }}</span>
   {%- endif -%}
   {%- if children -%}
-  <ul>
+  <ul class="{{ include.menuClass }}">
     {%- for child in children -%}
-      {%- include layout/nav-item.html section=child -%}
+      {%- include layout/nav-item.html section=child itemClass=include.itemClass labelClass=include.labelClass -%}
     {%- endfor -%}
   </ul>
   {%- endif -%}
