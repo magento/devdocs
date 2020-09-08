@@ -11,7 +11,16 @@ Use the [`customerCart` query]({{page.baseurl}}/graphql/queries/customer-cart.ht
 
 ## Syntax
 
-`mergeCarts(source_cart_id: String!, destination_cart_id: String!): Cart!`
+```graphql
+mutation {
+  mergeCarts(
+    source_cart_id: String!
+    destination_cart_id: String!
+  ) {
+    Cart!
+  }
+}
+```
 
 ## Example usage
 

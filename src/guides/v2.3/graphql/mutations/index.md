@@ -19,11 +19,13 @@ A mutation contains the following elements:
 
 The following example shows the structure of the `createCustomer` mutation:
 
-```text
-mutation myCreateCustomer{
-    createCustomer(
-        input: CustomerInput!): CustomerOutput
-    }
+```graphql
+mutation myCreateCustomer {
+  createCustomer(
+    input: CustomerInput!
+  ) {
+    CustomerOutput
+  }
 }
 ```
 
@@ -31,21 +33,20 @@ In this example, `myCreateCustomer` identifies your implementation.  `CustomerIn
 
 Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `email`.
 
-```text
-mutation myCreateCustomerNoVariables{
-    createCustomer(
-        input: {
-            firstname: "Melanie"
-            lastname: "Shaw"
-            email: "mshaw@example.com"
-            password: "Password1"
-        }
-    )
-    {
-        customer {
-            email
-        }
+```graphql
+mutation myCreateCustomerNoVariables {
+  createCustomer(
+    input: {
+      firstname: "Melanie"
+      lastname: "Shaw"
+      email: "mshaw@example.com"
+      password: "Password1"
     }
+  ) {
+    customer {
+      email
+    }
+  }
 }
 ```
 
@@ -54,12 +55,12 @@ The mutation returns the customer email:
 ```json
 {
   "data": {
-      "createCustomer": {
-          "customer": {
-              "email" : "mshaw@example.com"
-            }
-        }
+    "createCustomer": {
+      "customer": {
+        "email" : "mshaw@example.com"
+      }
     }
+  }
 }
 ```
 
@@ -67,15 +68,14 @@ The mutation returns the customer email:
 
 A mutation can require either an object as input (as shown above) or one or more scalar values. When specifying an object, you must include the `input: {}` keyword. When the mutation requires scalar values, specify the field name and value, as shown below:
 
-```text
-mutation myGenerateCustomerToken{
-    generateCustomerToken(
-        email: "mshaw@example.com"
-        password: "Password1"
-    )
-    {
-        token
-    }
+```graphql
+mutation myGenerateCustomerToken {
+  generateCustomerToken(
+    email: "mshaw@example.com"
+    password: "Password1"
+  ) {
+    token
+  }
 }
 ```
 
@@ -89,16 +89,15 @@ Specifying variables in a mutation can help increase code re-use. Consider the f
 
 The following example declares the `$CustomerInput` variable. It is referenced in the `input` statement.
 
-```text
-mutation myCreateCustomerWithVariables($CustomerInput: CustomerInput!){
-    createCustomer(
-        input: $CustomerInput
-    )
-    {
-        customer {
-            email
-        }
+```graphql
+mutation myCreateCustomerWithVariables($CustomerInput: CustomerInput!) {
+  createCustomer(
+    input: $CustomerInput
+  ) {
+    customer {
+      email
     }
+  }
 }
 ```
 
@@ -106,30 +105,29 @@ The `$CustomerInput` variable is defined as a JSON object:
 
 ```json
 {
-"CustomerInput": {
+  "CustomerInput": {
     "firstname": "Melanie",
     "lastname": "Shaw",
     "email": "mshaw@example.com",
     "password": "Password1"
-   }
+  }
 }
 ```
 
 This example updates the customer's email using two scalar variables (`$email`, `$password`).
 
-```text
-mutation myUpdateCustomer($email: String!, $password: String!){
-    updateCustomer(
-        input: {
-            email: $email
-            password: $password
-        }
-    )
-    {
-        customer {
-            email
-        }
+```graphql
+mutation myUpdateCustomer($email: String!, $password: String!) {
+  updateCustomer(
+    input: {
+      email: $email
+      password: $password
     }
+  ) {
+    customer {
+      email
+    }
+  }
 }
 ```
 
@@ -137,7 +135,7 @@ The variables are defined separately.
 
 ```json
 {
-    "email": "melanie.shaw@example.com",
-    "password": "Password1"
+  "email": "melanie.shaw@example.com",
+  "password": "Password1"
 }
 ```

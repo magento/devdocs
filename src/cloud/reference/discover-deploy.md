@@ -31,10 +31,10 @@ A set of YAML configuration files located in the project root directory define y
 
 For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files.
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—defines how to build and deploy Magento, including services, hooks, cron jobs, and more.
 -  [`.magento.env.yaml`]({{ site.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
--  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—defines how Magento processes an incoming URL.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
+-  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—defines how Magento processes an incoming URL.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/cloud/live/sens-data-over.html#configuration-data) Magento uses to configure your store. Magento generates this file if it does not detect it during the build phase. See [Configuration Management]({{ site.baseurl }}/cloud/live/sens-data-over.html) for information on how to use this file to manage and synchronize the Magento application configuration across your Cloud environments.
 
 ## Required files for your Git branch {#requiredfiles}
@@ -43,9 +43,9 @@ Your Git branch must have the following files for building and deploying in your
 
 -  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshooting deployment]({{ site.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 -  [`app/etc/config.php`]({{ site.baseurl }}/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—updates and saves to the `magento/` directory.
--  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—updates and saves to the `magento/` directory.
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—updates and saves to the root directory.
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—updates and saves to the `magento/` directory.
+-  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—updates and saves to the `magento/` directory.
 
 ## Best practices for builds and deployment {#best-practices}
 
@@ -63,7 +63,7 @@ We highly recommend the following best practices and considerations for your dep
 
 -  **Add new extensions, integrations, and code in iterated branches**–Make and test changes locally, push to Integration, then to Staging and Production. Test and resolve issues in each environment before merging the updates to the next environment. Some extensions and integrations must be enabled and configured in a specific order due to dependencies. Adding these in groups can make your build and deploy process much easier and help determine where issues occur.
 
--  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) and [Service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+-  **Verify service versions and relationships and the ability to connect**–Verify the services that are available to your application and ensure you are using the most current, compatible version. See [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) and [Service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
 
 -  **Test locally and in the Integration environment before deploying to Staging and Production**–Identify and fix issues in your local and Integration environments to prevent extended downtime when you deploy to Staging and Production environments.
 
@@ -97,17 +97,17 @@ Follow best practices for builds and deployment, and use the [Upgrades and patch
 
    -  Review the {{ site.data.var.ee }} release notes and extension documentation to ensure that you have implemented any workarounds or configuration changes required to address known functional issues and bugs related to the upgraded Magento version and extensions.
 
-   -  Ensure that the installed service versions are compatible with the new {{ site.data.var.ee }} version, and upgrade services as needed. See [Services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+   -  Ensure that the installed service versions are compatible with the new {{ site.data.var.ee }} version, and upgrade services as needed. See [Services]({{ site.baseurl }}/cloud/project/services.html).
 
    -  Test your database to address any issues introduced by the updates to the Magento version and extensions.
 
    -  Make any required updates to environment-specific settings before deploying to the remote environment.
 
-   -  Ensure that the Elasticsearch service version is compatible with the Elasticsearch PHP client version. See [Set up Elasticsearch]({{ site.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
+   -  Ensure that the Elasticsearch service version is compatible with the Elasticsearch PHP client version. See [Set up Elasticsearch]({{ site.baseurl }}/cloud/project/services-elastic.html).
 
 -  **Check database connectivity and available storage in remote environments**–
 
-   -  Use SSH to log in to the remote server and verify the connection to the MySQL database. See [Connect to the database]({{ site.baseurl }}/cloud/project/project-conf-files_services-mysql.html#connect-to-the-database).
+   -  Use SSH to log in to the remote server and verify the connection to the MySQL database. See [Connect to the database]({{ site.baseurl }}/cloud/project/services-mysql.html#connect-to-the-database).
 
    -  Verify available storage in the remote environment–Use the `disk free` command to view and manage available disk space on your Cloud environments. See [Manage disk space]({{ site.baseurl }}/cloud/project/manage-disk-space.html).
 
@@ -239,7 +239,7 @@ While the deployment is running, we freeze the incoming traffic at the entry poi
 
 Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the `app/etc/env.php` and the `app/etc/config.php` configuration files.
 
-If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
+If you enabled static content generation using the `SCD_ON_DEMAND` variable and you configured the [`post_deploy` hook]({{ site.baseurl }}/cloud/project/magento-app-properties.html#hooks), this clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections and _during_ normal, incoming traffic.
 
 To review build and deploy logs, see [View logs]({{ site.baseurl }}/cloud/project/log-locations.html).
 

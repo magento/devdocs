@@ -136,7 +136,7 @@ To increase disk space for a service:
 
 1. In your local development environment, open the `.magento/service.yaml` configuration file.
 
-1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/project-conf-files_services.html).
+1. Add or find a service in the file. See [more about configuring services]({{ site.baseurl }}/cloud/project/services.html).
 
 1. Set a new value for the disk property (in MB).
 
@@ -158,7 +158,7 @@ To increase disk space for a service:
 
 ## Monitor disk space
 
-On Pro Production environments, you can monitor disk space and other performance indicators using Adobe-generated alert policies for New Relic. For details, see [New Relic]({{ site.baseurl }}/cloud/project/new-relic.html).
+On Pro Production environments, you can monitor disk space and other performance indicators using the Managed alerts for {{ site.data.var.ee }} alert policy for New Relic. For details, see [Monitor performance with Managed Alerts]({{ site.baseurl }}/cloud/project/new-relic.html#monitor-performance-with-managed-alerts).
 
 ## No space left
 
@@ -170,4 +170,4 @@ magento-cloud project:clear-build-cache
 
 <!-- link definitions -->
 
-[disk-key]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk
+[disk-key]: {{ site.baseurl }}/cloud/project/magento-app-properties.html#disk
