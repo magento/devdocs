@@ -12,7 +12,7 @@ The [Magento Cloud Components](https://github.com/magento/magento-cloud-componen
 The `{{site.data.var.mcc-package}}` package uses the following version sequence: `<major>.<minor>.<patch>`.
 
 ## v1.0.7
-*Release date: September 8, 2020*<br/>
+*Release date: September 9, 2020*<br/>
 
 -  {:.new}**Logging improvements**–Reduce the size of the `cache.log` file to improve performance.<!--MCLOUD-6859-->
 
