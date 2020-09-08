@@ -172,9 +172,10 @@ check this and if not added automatically, create it manually.
 
 1. Click **Repositories** and select your project.
 
-1. Click **Settings** > **Workflow** > **Webhooks**.
+1. Click **Repository Settings** > **Workflow** > **Webhooks**.
 
-1. Check to see if a webhook has been added for Cloud to the repository. If this has been added you should skip the following steps.
+1. Verify the webhook integration in this section. If the webhook is active, skip the remaining steps. The hook title have a name along the lines of "Magento Cloud <project_id".
+Also the hook url should have a format of `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
 
 1. Click **Add webhook**.
 
