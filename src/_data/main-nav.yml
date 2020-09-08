@@ -38,7 +38,7 @@
           versionless: true
 
         - label: Configure Application
-          url: /cloud/project/project-conf-files_magento-app.html
+          url: /cloud/project/magento-app.html
           versionless: true
 
         - label: Configure Environments
