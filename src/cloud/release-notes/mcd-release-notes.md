@@ -16,6 +16,11 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.1.2
+*Release date: {{ site.data.var.ece-release-date }}*<br/>
+
+-  {:.new}Added support for Elasticsearch 7.7<!--MCLOUD-6219-->
+
 ## v1.1.1
 *Release date: {{ site.data.var.ece-release-date }}*<br/>
 
