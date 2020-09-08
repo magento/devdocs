@@ -4,7 +4,7 @@ title: Authorization tokens
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 redirect_from:
-  - /guides/v2.3/graphql/get-customer-authorization-token.html
+  - /guides/v2.4/graphql/get-customer-authorization-token.html
 ---
 
 Magento provides separate token services for customers and administrators. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.

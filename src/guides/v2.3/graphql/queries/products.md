@@ -2,7 +2,7 @@
 group: graphql
 title: products query
 redirect_from:
-  - /guides/v2.3/graphql/reference/products.html
+  - graphql/reference/products.html
 ---
 
 The `products` query allows you to search for catalog items.
