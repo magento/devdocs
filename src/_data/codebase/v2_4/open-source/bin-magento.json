@@ -364,6 +364,175 @@
       "hidden": false
     },
     {
+      "name": "admin:user:assign-role",
+      "usage": [
+        "bin/magento admin:user:assign-role --username=<USER_NAME> --role-id=<SAVED_ROLE_ID>"
+      ],
+      "description": "Assigns user to role",
+      "help": "This command assigns admin user account to admin user role",
+      "definition": {
+        "arguments": {
+          "username": {
+            "name": "username",
+            "is_required": true,
+            "is_array": false,
+            "description": "The admin username to assign",
+            "default": null
+          },
+          "role-id": {
+            "name": "role-id",
+            "is_required": true,
+            "is_array": false,
+            "description": "The admin role to assign",
+            "default": null
+          }
+        },
+        "options": {
+          "help": {
+            "name": "--help",
+            "shortcut": "-h",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this help message",
+            "default": false
+          },
+          "quiet": {
+            "name": "--quiet",
+            "shortcut": "-q",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not output any message",
+            "default": false
+          },
+          "verbose": {
+            "name": "--verbose",
+            "shortcut": "-v|-vv|-vvv",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
+            "default": false
+          },
+          "version": {
+            "name": "--version",
+            "shortcut": "-V",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this application version",
+            "default": false
+          },
+          "ansi": {
+            "name": "--ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Force ANSI output",
+            "default": false
+          },
+          "no-ansi": {
+            "name": "--no-ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Disable ANSI output",
+            "default": false
+          },
+          "no-interaction": {
+            "name": "--no-interaction",
+            "shortcut": "-n",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not ask any interactive question",
+            "default": false
+          }
+        }
+      },
+      "hidden": false
+    },
+    {
+      "name": "admin:role:list",
+      "usage": [
+        "bin/magento admin:role:list"
+      ],
+      "description": "List All User Roles",
+      "help": "Shows all existing admin role ids and names",
+      "definition": {
+        "arguments": [],
+        "options": {
+          "help": {
+            "name": "--help",
+            "shortcut": "-h",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this help message",
+            "default": false
+          },
+          "quiet": {
+            "name": "--quiet",
+            "shortcut": "-q",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not output any message",
+            "default": false
+          },
+          "verbose": {
+            "name": "--verbose",
+            "shortcut": "-v|-vv|-vvv",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug",
+            "default": false
+          },
+          "version": {
+            "name": "--version",
+            "shortcut": "-V",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Display this application version",
+            "default": false
+          },
+          "ansi": {
+            "name": "--ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Force ANSI output",
+            "default": false
+          },
+          "no-ansi": {
+            "name": "--no-ansi",
+            "shortcut": "",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Disable ANSI output",
+            "default": false
+          },
+          "no-interaction": {
+            "name": "--no-interaction",
+            "shortcut": "-n",
+            "accept_value": false,
+            "is_value_required": false,
+            "is_multiple": false,
+            "description": "Do not ask any interactive question",
+            "default": false
+          }
+        }
+      },
+      "hidden": false
+    },
+    {
       "name": "app:config:dump",
       "usage": [
         "app:config:dump [<config-types>...]"
