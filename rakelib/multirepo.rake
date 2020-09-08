@@ -7,8 +7,7 @@ namespace :multirepo do
   desc 'Create a file tree for devdocs website and get all required content'
   task :init do
     protocol = ENV['token'] ? "https://#{ENV['token']}@github.com/" : 'git@github.com:'
-    content_map = DocConfig.new.content_map
-    content_map.each do |subrepo|
+    @content_map.each do |subrepo|
       repo_url = protocol + subrepo['repository'] + '.git'
       add_subrepo(subrepo['directory'], repo_url , subrepo['branch'], subrepo['filter'])
     end
@@ -16,8 +15,7 @@ namespace :multirepo do
 
   desc 'Reinitialize subrepositories. CAUTION: This will remove directories and associated git repositories listed in Docfile'
   task reinit: %w[clean] do
-    content_map = DocConfig.new.content_map
-    content_map.each do |subrepo|
+    @content_map.each do |subrepo|
       if subrepo['directory']
         puts "Removing #{subrepo['directory']}".yellow
         sh 'rm', '-rf', subrepo['directory']
