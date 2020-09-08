@@ -27,7 +27,7 @@ Not everyone remembers [Git](https://git-scm.com/docs) commands with ease. If yo
 In addition to Git's requirements for [valid branch names](https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html), {{site.data.var.ece}} adds two additional requirements:
 
 *  The `/` character isn't allowed in a branch name.
-*  Branch names must be case-insensitively unique. In other words, the names must be entirely unique regardless of the case you use. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`.
+*  Branch names are not case-sensitive. Each name must be unique regardless of the case used for each letter. For example, if you have a branch named `Sprint`, you cannot create another branch named `sprint`.
 
 ## Git branching {#branching}
 
