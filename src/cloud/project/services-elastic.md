@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Search
+redirect_from:
+  - /cloud/project/project-conf-files_services-elastic.html
 ---
 
 [Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
@@ -46,9 +48,9 @@ To enable Elasticsearch:
    git add -A && git commit -m "Enable Elasticsearch" && git push origin <branch-name>
    ```
 
-   For information on how these changes affect your environments, see [Services]({{   site.baseurl }}/cloud/project/project-conf-files_services.html).
+   For information on how these changes affect your environments, see [Services]({{   site.baseurl }}/cloud/project/services.html).
 
-1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships) and configure Elasticsearch in the Admin UI.
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships) and configure Elasticsearch in the Admin UI.
 
 1. Reindex the Catalog Search index.
 
