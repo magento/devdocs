@@ -8,10 +8,10 @@ pages:
       children:
 
         - label: Magento Open Source 2.4.1 Release Notes
-          url: /release-notes/release-notes-2-4-1-open-source.html
+          url: /release-notes/open-source-2-4-1.html
 
         - label: Magento Commerce 2.4.1 Release Notes
-          url: /release-notes/release-notes-2-4-1-commerce.html
+          url: /release-notes/commerce-2-4-1.html
 
         - label: Magento Open Source 2.4.0 Release Notes
           url: /release-notes/release-notes-2-4-0-open-source.html
