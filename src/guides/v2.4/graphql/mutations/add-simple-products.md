@@ -5,6 +5,9 @@ redirect from:
   - /guides/v2.3/graphql/reference/quote-add-simple-products.html
 ---
 
+{:.bs-callout-warning}
+Magento recommends using the [addProductsToCart mutation]({{page.baseurl}}/graphql/mutations/add-products-to-cart.html) to add any type of product to the cart.
+
 The `addSimpleProductsToCart` mutation allows you to add any number of simple and group products to the cart at the same time.
 
 Simple products are physical products that do not have variations, such as color, size, or price. Group products are a set of simple standalone products that are assigned a unique SKU and are presented as a group. Each product in the group is purchased as a separate item.

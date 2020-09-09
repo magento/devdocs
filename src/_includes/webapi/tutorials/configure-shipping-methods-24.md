@@ -7,10 +7,10 @@ Shipping type | Configuration name | Enabled by default?
 Flat rate | `flatrate` | Yes
 Table rate | `tablerate` | Yes
 Free shipping | `freeshipping` | No
-In-store pickup | Not applicable | No
+In-store pickup | `pickup`| No
 
 To change which offline delivery methods are available:
 
 1. Select **Stores** > **Settings** > **Configuration** > **Sales** > **Delivery Methods** in Admin.
-1. Enable or disable the delivery methods as desired.
+1. Enable the In-store pickup delivery method and adjust the status of any other delivery method, as desired.
 1. Click **Save Config**.

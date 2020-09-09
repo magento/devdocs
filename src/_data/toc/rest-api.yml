@@ -176,6 +176,10 @@ pages:
           - label: Step 13. Bulk transfer products
             url: /rest/tutorials/inventory/bulk-transfer-products.html
 
+          - label: Step 14. Create an order for in-store pickup (optional)
+            url: /rest/tutorials/inventory/in-store-pickup.html
+            exclude_versions: ["2.3"]
+
       - label: Create configurable products
         class: tutorial
         children:

@@ -501,6 +501,19 @@ Attribute |  Data Type | Description
 
 {% include graphql/customer-orders-output.md %}
 
+#### ProductReviews object {#ProductReviews}
+
+`ProductReviews` contains an array of reviews written about the product.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`items` | [ProductReview]! | An array of product reviews
+`page_info` | [SearchResultPageInfo!]({{page.baseurl}}/graphql/queries/products.html#SearchResultPageInfo) | Metadata for pagination rendering
+
+#### ProductReview object {#ProductReview}
+
+{% include graphql/product-review.md %}
+
 ### Wishlist attributes {#Wishlist}
 
 Attribute | Data type | Description
@@ -518,7 +531,7 @@ Attribute | Data type | Description
 `added_at` | String | The time when the customer added the item to the wish list
 `description` | String | The customer's comment about this item
 `id` | Int | The wish list item ID
-`product` | [ProductInterface]({{ page.baseurl }}/graphql/product/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | [ProductInterface]({{ page.baseurl }}/graphql/interfaces/product-interface.html) | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item
 
 ### Store credit attributes
@@ -561,6 +574,10 @@ Attribute |  Data Type | Description
 `actual_balance` | Money | The store credit available to the customer as a result of this action
 `balance_change` | Money | The amount added to or subtracted from the store credit as a result of this action
 `date_time_changed` | String | Date and time when the store credit change was made
+
+### Wishlist attributes {#Wishlist}
+
+{% include graphql/wishlist.md %}
 
 ## Related topics
 

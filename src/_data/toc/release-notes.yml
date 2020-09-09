@@ -7,6 +7,12 @@ pages:
       include_versions: ["2.4"]
       children:
 
+        - label: Magento Open Source 2.4.1 Release Notes
+          url: /release-notes/open-source-2-4-1.html
+
+        - label: Magento Commerce 2.4.1 Release Notes
+          url: /release-notes/commerce-2-4-1.html
+
         - label: Magento Open Source 2.4.0 Release Notes
           url: /release-notes/release-notes-2-4-0-open-source.html
 
@@ -69,9 +75,6 @@ pages:
         - label: Reference
           url: /release-notes/backward-incompatible-changes/reference.html
 
-    - label: B2B
-      url: /release-notes/b2b-release-notes.html
-
     - label: Packages
       children:
 
@@ -83,6 +86,9 @@ pages:
 
         - label: Magento Commerce Cloud packages
           url: /release-notes/packages-cloud.html
+
+    - label: B2B
+      url: /release-notes/b2b-release-notes.html
 
     - label: GraphQL
       url: /graphql/release-notes.html

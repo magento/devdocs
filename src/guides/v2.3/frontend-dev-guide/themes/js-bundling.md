@@ -43,6 +43,12 @@ JavaScript bundling does not work unless Magento is in [production mode][product
    bin/magento config:set dev/js/merge_files 0
    ```
 
+1. Modifying the settings above when Magento is in production mode will require [static view files deployment][static-content]:
+
+   ```bash
+   bin/magento setup:static-content:deploy
+   ```
+
 1. Finally, clear the cache:
 
    ```bash
@@ -151,5 +157,6 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 1. Use the results of that comparison to build your exclude list.
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
+[static-content]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
 [Advanced-JavaScript-Bundling]:{{ page.baseurl }}/performance-best-practices/advanced-js-bundling.html
 [luma-view-xml]:{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/etc/view.xml#L270

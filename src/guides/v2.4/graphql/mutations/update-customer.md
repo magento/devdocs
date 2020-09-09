@@ -3,7 +3,10 @@ group: graphql
 title: updateCustomer mutation
 ---
 
-Use the `updateCustomer` mutation to update the customer's personal information.
+{:.bs-callout-warning}
+Magento recommends using the [updateCustomerV2 mutation]({{page.baseurl}}/graphql/mutations/update-customer-v2.html) to update a customer.
+
+The `updateCustomer` mutation updates the customer's personal information.
 
 To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
