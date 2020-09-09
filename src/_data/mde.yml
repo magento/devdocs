@@ -7,6 +7,7 @@ versions:
   - 2.3.5-p1
   - 2.3.6
   - 2.4.0
+  - 2.4.1
 extensions:
   -
     name: Amazon Sales Channel
