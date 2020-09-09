@@ -83,7 +83,7 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.6 or later as the following result indicates:
+You must run MySQL 5.7 for on-premise installations. Magento is also compatible with, but has not been tested and is not recommended, with MySQL 5.6, MariaDB 10.1, and Percona 5.7. The following result indicates which version you are running:
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
