@@ -308,11 +308,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33899-->
 
-*  Magento now displays an add-to-cart success message when customer adds an out-of-stock product to their cart. Previously, the product was added, but Magento did not display a success message.
+*  Magento now displays an add-to-cart success message when a customer adds an out-of-stock product to their cart. Previously, the product was added, but Magento did not display a success message.
 
 <!--- MC-35989-->
 
-*  Custom address attributes are now included as expected in the the form displayed for Payment step of checkout workflow.
+*  Custom address attributes are now included as expected in the the form that displays for the payment step in the checkout workflow.
 
 <!--- MC-36060-->
 
@@ -372,11 +372,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34314-->
 
-*  Magento now uses the default option (**Configuration** > **Web** > **Default Layouts** > **Default Product Layout**) that you’ve selected for the `page_layout` attribute when creating a new product . Previously, your selected default value wasn’t applied.
+*  Magento now uses the default option (**Configuration** > **Web** > **Default Layouts** > **Default Product Layout**) that you have selected for the `page_layout` attribute when creating a new product. Previously, your selected default value was not applied.
 
 <!--- MC-34258-->
 
-*  You can now successfully perform mass actions on Inventory product stock. Previously, when you tried to perform a mass action inventory product stock, Magento displayed a blank page. If you performed this action with Magento in developer mode, Magento threw this error: `Notice: Undefined offset: 32000 in /Users/kodithuw/sites/m23inventory/inventory/InventoryCatalogAdminUi/view/adminhtml/templates/catalog/product/edit/action/inventory.phtml on line 24`
+*  You can now successfully perform mass actions on Inventory product stock. Previously, when you tried to perform a mass action on inventory product stock, Magento displayed a blank page. If you performed this action with Magento in developer mode, Magento threw this error: `Notice: Undefined offset: 32000 in /Users/kodithuw/sites/m23inventory/inventory/InventoryCatalogAdminUi/view/adminhtml/templates/catalog/product/edit/action/inventory.phtml on line 24`
 
 <!--- MC-32552-->
 
@@ -410,11 +410,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33745-->
 
-*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculated shipping discounts.
+*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculating shipping discounts.
 
 <!--- MC-33765-->
 
-*  Admin users accounts created from an admin account with a restricted scope can now create a configurable product with attributes as expected. Previously, Magento threw this error: `Notice: Undefined index: value_index in 23develop/app/code/Magento/ConfigurableProduct/Helper/Product/Options/Factory.php on line 101`.
+*  Admin user accounts created from an admin account with a restricted scope can now create a configurable product with attributes as expected. Previously, Magento threw this error: `Notice: Undefined index: value_index in 23develop/app/code/Magento/ConfigurableProduct/Helper/Product/Options/Factory.php on line 101`.
 
 ### Custom customer attributes
 
@@ -448,7 +448,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 <!--- MC-33150-->
 <!--- MC-35655-->
 
-*  Magento no longer displays the **Delete customer** button on the **Customers** page when the logged-in administrator does not have rights to delete customers in deployments where B2B is installed.
+*  Magento no longer displays the **Delete customer** button on the **Customers** page when the logged-in administrator does not have permission to delete customers in deployments where B2B is installed.
 
 ### Customer segment
 
@@ -473,7 +473,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34262-->
 
-*  Clicking on a downloadable’s product **Sample** button from the Admin product page now downloads a sample as expected. Previously, when you clicked **Sample**, Magento displayed this error: `The product that was requested doesn't exist. Verify the product and try again`.
+*  Clicking on a downloadable product's **Sample** button from the Admin product page now downloads a sample as expected. Previously, when you clicked **Sample**, Magento displayed this error: `The product that was requested doesn't exist. Verify the product and try again`.
 
 <!--- ENGCOM-7757-->
 
@@ -483,7 +483,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33266-->
 
-*  Table title now matches the data table.as expected when you create a dynamic block and add a related catalog price rule.
+*  Table title now matches the data table (as expected) when you create a dynamic block and add a related catalog price rule.
 
 <!--- MC-33286-->
 
@@ -491,7 +491,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-32789-->
 
-*  Magento now sends email notifications about order changes to the correct customer email if the customer email has been changed after the order was created.
+*  Magento now sends email notifications about order changes to the correct customer email if the customer email was changed after the order was created.
 
 <!--- MC-36015-->
 
@@ -503,7 +503,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33905-->
 
-*  Custom email templates now load the same elements as native default email templates. Previously, some elements, including  variable values, were missing.
+*  Custom email templates now load the same elements as native default email templates. Previously, some elements, including variable values, were missing.
 
 <!--- MC-33700-->
 
@@ -525,7 +525,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34153-->
 
-*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
+*  Shoppers can now change the number of orders that are displayed per page when the Orders list spans multiple pages. Previously, Magento displayed this message when you navigated to the last page of orders and attempted to change the number of orders displayed per page: `You have placed no orders`. This was a known issue for Magento 2.4.0.
 
 <!--- MC-35020-->
 
@@ -533,7 +533,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-29755-->
 
-*  `X-Magento-Tags` headers no longer exceed the size permitted by the HTTP specification. Previously, category pages that contain  many products return an `X-Magento-Tag` header that resulted in a 503 error.
+*  `X-Magento-Tags` headers no longer exceed the size permitted by the HTTP specification. Previously, category pages that contain many products returned an `X-Magento-Tag` header that resulted in a 503 error.
 
 <!--- MC-34257-->
 
@@ -559,7 +559,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35998-->
 
-*  The `var/log/system.log` now displays a more accurate message when a user tries to access non-existing resource file under the static directory when SCD OnDemand and production mode are enabled. Previously, Magento logged the same message that is logged when the error occurs in developer mode. Magenta now logs a 404 error.
+*  The `var/log/system.log` now displays a more accurate message when a user tries to access non-existing resource files under the static directory when SCD OnDemand and production mode are enabled. Previously, Magento logged the same message that is logged when the error occurs in developer mode. Magento now logs a 404 error.
 
 <!--- ENGCOM-7286-->
 
@@ -629,7 +629,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35230-->
 
-*  Password lifetime as set in **Stores** > **Configuration** > **Advanced** > **Admin** is now honored. Previously, If you clicked **Forgot password?** when prompted to reset your password, you could bypass the password reset.
+*  Password lifetime as set in **Stores** > **Configuration** > **Advanced** > **Admin** is now honored. Previously, if you clicked **Forgot password?** when prompted to reset your password, you could bypass the password reset.
 
 <!--- MC-34369-->
 
@@ -649,7 +649,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34469-->
 
-*  Gift cards are now displayed as expected on the mini cart. Previously, Magento rendered HTML objects as text.
+*  Gift cards are now displayed as expected in the mini cart. Previously, Magento rendered HTML objects as text.
 
 <!--- MC-33851-->
 
@@ -665,7 +665,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35479-->
 
-*  The `error_report.csv` file now downloads with content and is available inside the `var/import_history/` directory as expected. Previously, this file wasn’t generated after import.
+*  The `error_report.csv` file now downloads with content and is available inside the `var/import_history/` directory as expected. Previously, this file was not generated after import.
 
 <!--- ENGCOM-7616-->
 
@@ -675,7 +675,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33730-->
 
-*  Magento now successfully imports customer addresses that contains a region for a country that does not have defined regions. Previously, Magento threw this error: `Please enter a valid region`.
+*  Magento now successfully imports customer addresses that contain a region for a country that does not have defined regions. Previously, Magento threw this error: `Please enter a valid region`.
 
 <!--- MC-33277-->
 
@@ -683,7 +683,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-32956-->
 
-*  The position of products in the `catalog_category_product` table now updates as expected when an administrator creates a product in the Admin and assigns it to a category. Previously, the position of new products were always assigned a 0 value.
+*  The position of products in the `catalog_category_product` table now update as expected when an administrator creates a product in the Admin and assigns it to a category. Previously, the position of new products was always assigned a 0 value.
 
 <!--- MC-34939-->
 
@@ -691,7 +691,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34657-->
 
-*  Imported `.cvs` files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the .cvs file was imported.
+*  Imported `.cvs` files now capture related product information as expected. Previously, related product information was not consistently uploaded the first time the `.cvs` file was imported.
 
 ### Index
 
@@ -729,7 +729,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34363-->
 
-*  Magento now displays a message that prompts you to enter mandatory credit card data when you click **Submit** for an Admin order without entering valid payment information. Previously, the Braintree card validator did not throw an error when payment input fields were invalid, and the page became inactive.
+*  Magento now displays a message that prompts you to enter mandatory credit card data when you click **Submit** for an Admin order without entering valid payment information. Previously, the Braintree card validator did not throw an error when payment input fields were invalid and the page became inactive.
 
 <!--- MC-33494-->
 
@@ -743,7 +743,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34152-->
 
-*  Merchants can now successfully cancel orders that were authorized using Merchant is unable to cancel an older order that was authorized using PayPal. Previously, Magento did not cancel the order and displayed this error:  `Declined: 10601-Authorization has expired`.
+*  Merchants can now successfully cancel orders that were authorized using PayPal. Previously, Magento did not cancel the order and displayed this error:  `Declined: 10601-Authorization has expired`.
 
 <!--- MC-33330-->
 
@@ -768,7 +768,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35984-->
 
-*  The Returns page now works as expected after you create a shipping label for a Return Merchandise Authorization (RMA). Previously, merchants couldn’t interact with any page elements on the Returns page after creating a shipping label for a Return Merchandise Authorization (RMA). This was a known issue for 2.4.0, and MC-35984-2.4.0-CE-composer.patch addressed this issue for Magento 2.4.0.
+*  The Returns page now works as expected after you create a shipping label for a Return Merchandise Authorization (RMA). Previously, merchants could not interact with any page elements on the Returns page after creating a shipping label for an RMA. This was a known issue for 2.4.0, and MC-35984-2.4.0-CE-composer.patch addressed this issue for Magento 2.4.0.
 
 <!--- MC-35826-->
 
@@ -782,7 +782,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35888-->
 
-*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
+*  The New Shipment email generated by the REST API now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
 
 <!--- MC-35837-->
 
@@ -810,7 +810,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-32518-->
 
-*  Magento now displays configurable product on the category page as expected after you add a product attribute.
+*  Magento now displays configurable products on the category page as expected after you add a product attribute.
 
 <!--- MC-33952-->
 
@@ -836,7 +836,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33267-->
 
-*  Multi-page .pdfs of shipping labels for orders shipped by UPS now display the correct count.
+*  Multi-page PDFs of shipping labels for orders shipped by UPS now display the correct count.
 
 <!--- MC-35514-->
 
@@ -848,7 +848,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34617-->
 
-*  Encoded values are now correctly escaped in sitemap.xml. Previously, when you included encoded characters in a product name or image title, the generated sitemap was invalid.
+*  Encoded values are now correctly escaped in the `sitemap.xml` file. Previously, when you included encoded characters in a product name or image title, the generated sitemap was invalid.
 
 ### Staging
 
@@ -900,7 +900,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36260-->
 
-*  Fixed misalignment of the cursor in the Invoice Comments text area of the invoice associated with an order you’ve selected from Admin **Sales** > **Orders**.
+*  Fixed misalignment of the cursor in the Invoice Comments text area of the invoice associated with an order you have selected from Admin **Sales** > **Orders**.
 
 <!--- MC-36044-->
 
@@ -928,7 +928,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35296-->
 
-*  The **Refresh** button of the **Recently Viewed Products** section of the Customer's Activities page now works as expected. Previously, when you clicked **Refresh** , the product list wasn’t refreshed, and the page scrolled.
+*  The **Refresh** button of the **Recently Viewed Products** section of the Customer's Activities page now works as expected. Previously, when you clicked **Refresh**, the product list was not refreshed, and the page scrolled.
 
 <!--- MC-35412-->
 
@@ -940,7 +940,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34602-->
 
-*  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget wasn’t rendered, and Magento did not display the **Load a list of SKUs** link.
+*  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget was not rendered, and Magento did not display the **Load a list of SKUs** link.
 
 <!--- ENGCOM-7264-->
 
@@ -1030,11 +1030,11 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36084-->
 
-*  Invoices created using REST now include gift card information similar to how as invoices created in the Admin do. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
+*  Invoices created using the REST API now include gift card information similar to invoices that were created using the Admin. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-35838-->
 
-*  Merchants with multiple websites can now use REST to create and update products while preserving  image and image-role inheritance. Previously, when a merchant used REST to create and update products, and a product was updated for store view, the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
+*  Merchants with multiple websites can now use the REST API to create and update products while preserving  image and image-role inheritance. Previously, when a merchant used the REST API to create and update products, and a product was updated for store view, the default image roles were loaded and saved for that store view. As a result, the store-view image roles stopped inheriting from the default scope after update.
 
 <!--- MC-36419-->
 
