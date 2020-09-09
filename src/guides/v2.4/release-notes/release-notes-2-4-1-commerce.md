@@ -64,7 +64,7 @@ This release contains enhancements to core quality, which improve the quality of
 *  **Reduction in the size of network transfers between Redis and Magento**. Plugin list configuration is now generated during the execution of the `di:compile` command. This configuration information is written to generated metadata folders based on scope. Previously, this information was stored in cache. Resulting performance improvements include:
 
    *  Network cache size has decreased by 10 - 15%
-   *  Execution time for many scenarios has been improved by 3%.<!--- MC-31617-->
+   *  Execution time for many scenarios has been improved by 3%<!--- MC-31617-->
 
 *  **Improved execution time** for `bin/magento` commands.
 
@@ -80,9 +80,9 @@ The New Media Gallery is now enabled by default in the Admin. Merchants can now
 *  Optimize media storage by identifying duplicate images and images that are not used on the storefront
 *  Filter images by the storefront area they are used in, including product and category content and CMS blocks
 *  Work with image metadata
-   *  View meta data from the images uploaded into Media Gallery
-   *  Edit image meta data (title, description, and keywords)
-   *  Search for images by their meta data
+   *  View metadata from the images uploaded into Media Gallery
+   *  Edit image metadata (title, description, and keywords)
+   *  Search for images by their metadata
 
 ### Page Builder
 
@@ -94,13 +94,13 @@ This release adds GraphQL coverage for the following features:
 
 *  **Product reviews**. Customers and guests can write product reviews. Customers can retrieve their product review histories.<!--- MC-32349-->
 
-*  **Gift options**. All customers and guests add a gift message to their order. On EE installations, they can also add gift wrapping, gift receipts, and printed cards to the order.<!--- MC-32345-->
+*  **Gift options**. All customers and guests can add a gift message to their order. On {{site.data.var.ee}}  installations, they can also add gift wrapping, gift receipts, and printed cards to the order.<!--- MC-32345-->
 
-*  **Reward points**. On EE installations, customers can apply or remove reward points to their carts. They can also view their reward point history.<!--- MC-23366-->
+*  **Reward points**. On {{site.data.var.ee}} installations, customers can apply or remove reward points to their carts. They can also view their reward point history.<!--- MC-23366-->
 
 *  **Order history**. All customers can view details about their order histories, including invoices, shipping, and refunds.<!--- MC-20635-->
 
-*  **Add to cart**. Customer can add the following product types to their cart:  Simple, Configurable, Bundled, Grouped, Virtual, Gift Card, and Downloadable. <!--- MC-21513-->
+*  **Add to cart**. Customers can add the following product types to their cart:  Simple, Configurable, Bundled, Grouped, Virtual, Gift Card, and Downloadable. <!--- MC-21513-->
 
 *  **Stored payment methods**. Logged-in customers can now store payment details (including Braintree credit card and Braintree with PayPal) in MyAccount. <!--- MC-32348 35945 35946-->
 
@@ -110,13 +110,13 @@ See the [GraphQL Developer Guide]({{page.baseurl}}/graphql/) for details on this
 
 PWA Studio v8.0.0 introduces new features and enhancements:
 
-*  updates to the Venia style guide that apply to design tokens, typography, colors, core components, and page layouts. <!--- PWA-519 419-->
+*  Updates to the Venia style guide that apply to design tokens, typography, colors, core components, and page layouts. <!--- PWA-519 419-->
 
-*  improvements to the Venia mini-cart experience <!--- PWA-236-->
+*  Improvements to the Venia mini-cart experience <!--- PWA-236-->
 
-*  initial support for multiple locales and localized content on the Venia storefront <!--- PWA-295-->
+*  Initial support for multiple locales and localized content on the Venia storefront <!--- PWA-295-->
 
-*  numerous improvements to the MyAccount experience of the Venia storefront <!--- PWA-247-->
+*  Numerous improvements to the MyAccount experience of the Venia storefront <!--- PWA-247-->
 
 See [Magento compatibility](https://magento.github.io/pwa-studio/technologies/magento-compatibility/) for a list of PWA Studio versions and their compatible Magento core versions. For information about enhancements and bug fixes, see [PWA Studio releases](https://github.com/magento/pwa-studio/releases).
 
@@ -129,13 +129,13 @@ Magento 2.4.1 introduces B2B v1.3.0. This release includes improvements to order
 B2B order approvals have been enhanced to improve usability and to allow for bulk actions on purchase orders.
 Improvements to order approval and rejection include the following:
 
-*  **New View Rule page for users without edit privilege**. B2B buyers can now view rules that apply to their company on the new View Rule page when they don’t have permission to edit them. <!--- BUNDLE-104 -->
+*  **New View Rule page for users without edit privileges**. B2B buyers can now view rules that apply to their company on the new View Rule page when they do not have permission to edit them. <!--- BUNDLE-104 -->
 
 *  **Count alert icon on the Requires My Approval tab**. The Requires My Approval tab in the My Purchase Orders view now displays a counter that indicates the number of pending approval actions. <!--- BUNDLE-102 -->
 
 *  **Bulk order approvals and rejections**. B2B managers and Company Administrators can now perform bulk rejection and approval of purchase orders. These changes allow approvers to approve or reject multiple purchase orders in a single action. <!--- BUNDLE-140 128 111 153 -->
 
-*  Merchants can now search the **Applies to** and **Requires approval from** fields and can select multiple user roles during rule creation. <!--- BUNDLE-105 106-->
+*  Merchants can now search the **Applies to** and **Requires approval from** fields of the My Purchase Orders view and can select multiple user roles during rule creation. <!--- BUNDLE-105 106-->
 
 *  Examples of how to configure Order Approval rules <!--- BUNDLE-103 -->
 
@@ -143,9 +143,9 @@ Improvements to order approval and rejection include the following:
 
 B2B merchants can now control shipping methods that are offered to each Company. Merchants can configure the following from the Admin:<!--- BUNDLE-160 161 162 -->
 
-*  a specific set of shipping methods for B2B Company accounts
-*  the use of All or B2B-specific shipping methods for each Company account
-*  a specific list of B2B shipping methods for each Company account
+*  A specific set of shipping methods for B2B Company accounts
+*  The use of All or B2B-specific shipping methods for each Company account
+*  A specific list of B2B shipping methods for each Company account
 
 #### Shopping cart improvements
 
@@ -164,7 +164,7 @@ B2B merchants can now control shipping methods that are offered to each Company.
 
 #### Enhanced security on storefront
 
-To reduce creation of fraudulent or spam accounts, merchant can now enable Google reCAPTCHA on the New Company Request form on the storefront. <!--- BUNDLE-154 -->
+To reduce creation of fraudulent or spam accounts, merchants can now enable Google reCAPTCHA on the New Company Request form on the storefront. <!--- BUNDLE-154 -->
 
 #### Expanded logging of Admin actions
 
@@ -184,7 +184,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36113-->
 
-*  Installation of Magento with third-party extensions that have dependencies on APIs for the Store module in CLI commands no longer fails. Previously, Magento displayed this error message during: The default website isn't defined. Set the website and try again. This was a known issue in Magento 2.4.0.
+*  Installation of Magento with third-party extensions that have dependencies on APIs for the Store module in CLI commands no longer fails. Previously, Magento displayed this error message: `The default website isn't defined. Set the website and try again`. This was a known issue in Magento 2.4.0.
 
 <!--- MC-33273-->
 
@@ -196,7 +196,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36231-->
 
-*  Magento now displays an informative error message when some themes aren’t deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento didn’t display an error. When `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed then the specified maximum execution time, this command can finish successfully although themes are not deployed.
+*  Magento now displays an informative error message when some themes are not deployed after running `setup:static-content:deploy`. Previously, when deployment completed successfully but not all packages were deployed, Magento did not display an error. When the `setup:static-content:deploy` command is executed with enabled parallel processing and each theme requires more time to be deployed than the specified maximum execution time, this command can finish successfully although themes are not deployed.
 
 <!--- MC-35001-->
 
@@ -238,7 +238,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36164-->
 
-*  Magento no longer displays the **Add Attribute** button (**Stores** > **Attributes** ) or **Add Attribute Set** button (**Stores** > **Attributes** > **Customer** ) buttons when the logged-in administrator lacks the appropriate permissions to create these entities. Previously, Magento threw a 404 error when a website administrator who did not have the appropriate permissions tried to create an **Attribute Set** or **Customer** attribute.
+*  Magento no longer displays the **Add Attribute** button (**Stores** > **Attributes** ) or **Add Attribute Set** button (**Stores** > **Attributes** > **Customer** ) when the logged-in administrator lacks the appropriate permissions to create these entities. Previously, Magento threw a 404 error when a website administrator who did not have the appropriate permissions tried to create an **Attribute Set** or **Customer** attribute.
 
 <!--- MC-36330-->
 
@@ -252,7 +252,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34352-->
 
-*  Magento successfully generates advance reporting data files and sends them as expected to Inventory on deployments with split databases. Previously, Magento didn’t generate or send the `quotes.csv` file to Inventory, and as a result, Inventory did not generate the expected reports.
+*  Magento successfully generates advance reporting data files and sends them as expected to Inventory on deployments with split databases. Previously, Magento did not generate or send the `quotes.csv` file to Inventory, and as a result, Inventory did not generate the expected reports.
 
 ### Bundle products
 
@@ -298,7 +298,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-25042-->
 
-*  A customer’s shipping address is now selected by default at checkout when the address is located in the country identified on the Allow Countries list and that list includes only that country. Previously, Magento didn’t select the address as default and displayed this error message: `Please specify a regionId in shipping address`.
+*  A customer’s shipping address is now selected by default at checkout when the address is located in the country identified on the Allow Countries list and that list includes only that country. Previously, Magento did not select the address as default and displayed this error message: `Please specify a regionId in shipping address`.
 
 <!--- MC-24043-->
 
@@ -308,7 +308,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33899-->
 
-*  Magento now displays an add-to-cart success message when customer adds an out-of-stock product to their cart. Previously, the product was added, but Magento didn’t display a success message.
+*  Magento now displays an add-to-cart success message when customer adds an out-of-stock product to their cart. Previously, the product was added, but Magento did not display a success message.
 
 <!--- MC-35989-->
 
@@ -410,7 +410,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33745-->
 
-*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule didn’t correctly round amounts when calculated shipping discounts.
+*  Order summary now displays the correct discount amount when a cart price rule has been applied. Previously, the rule did not correctly round amounts when calculated shipping discounts.
 
 <!--- MC-33765-->
 
@@ -733,7 +733,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33494-->
 
-*  You can now change the shipping method for an order you create from the Admin for a customer whose account has a stored credit card (Braintree). Previously, when you selected a different shipping method, the stored card was not selected, and Magento didn’t place the order.
+*  You can now change the shipping method for an order you create from the Admin for a customer whose account has a stored credit card (Braintree). Previously, when you selected a different shipping method, the stored card was not selected, and Magento did not place the order.
 
 #### PayPal
 
@@ -743,7 +743,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34152-->
 
-*  Merchants can now successfully cancel orders that were authorized using Merchant is unable to cancel an older order that was authorized using PayPal. Previously, Magento didn’t cancel the order and displayed this error:  `Declined: 10601-Authorization has expired`.
+*  Merchants can now successfully cancel orders that were authorized using Merchant is unable to cancel an older order that was authorized using PayPal. Previously, Magento did not cancel the order and displayed this error:  `Declined: 10601-Authorization has expired`.
 
 <!--- MC-33330-->
 
@@ -782,7 +782,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-35888-->
 
-*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email didn’t contain the customer name, tracking information, products ordered, and other order information.
+*  The New Shipment email generated by REST now contains the same shipping and customer information as shipments that are created manually from the Admin. Previously, this email did not contain the customer name, tracking information, products ordered, and other order information.
 
 <!--- MC-35837-->
 
@@ -814,7 +814,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-33952-->
 
-*  Elasticsearch results now include the correct values for each storeview’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default storeview, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch didn’t index that value or return the product with that value in the results.
+*  Elasticsearch results now include the correct values for each storeview’s attribute options. If a Dropdown or Multiple Select attribute has a different option value in the non-default store view than in the default storeview, Elasticsearch now indexes that value or returns the product with that value in the results. Previously, Elasticsearch did not index that value or return the product with that value in the results.
 
 <!--- MC-35013-->
 
@@ -940,7 +940,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-34602-->
 
-*  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget wasn’t rendered, and Magento didn’t display the **Load a list of SKUs** link.
+*  Magento now correctly displays the Order by SKU widget on the storefront Category page. Previously, the HTML code for this widget wasn’t rendered, and Magento did not display the **Load a list of SKUs** link.
 
 <!--- ENGCOM-7264-->
 
@@ -1030,7 +1030,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36084-->
 
-*  Invoices created using REST now include gift card information similar to how as invoices created in the Admin do. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order didn’t display the gift card code or gift card amount applied.
+*  Invoices created using REST now include gift card information similar to how as invoices created in the Admin do. Previously, using POST `\{host}/rest/default/V1/order/3/invoice` to invoice the order did not display the gift card code or gift card amount applied.
 
 <!--- MC-35838-->
 
@@ -1038,7 +1038,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36419-->
 
-*  An unscoped integration user  account can now access a resource through REST when resource permissions allow access.
+*  An unscoped integration user account can now access a resource through the REST API when resource permissions allow access.
 
 <!--- MC-35975-->
 
@@ -1052,19 +1052,19 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 *  Magento now loads the product home page as expected when website restrictions are enabled.
 
-### Wishlist
+### Wish list
 
 <!--- MC-35810-->
 
-*  You can now use the wishlist search feature to find a product in a public wish list in deployments where support for multiple wishlists is enabled. Previously, after a customer used the wishlist search to find a product, selecting it, and clicking **Add to cart**, Magento didn’t add the product to the cart and displayed this error: `Invalid Form Key. Please refresh the page`.
+*  You can now use the wish list search feature to find a product in a public wish list in deployments where support for multiple wish lists is enabled. Previously, after a customer used the wish list search to find a product, selecting it, and clicking **Add to cart**, Magento did not add the product to the cart and displayed this error: `Invalid Form Key. Please refresh the page`.
 
 <!--- MC-35622-->
 
-*  Customers can now change the quantity of a product in a wishlist from the wishlist itself. Previously, Magento did not update the product quantity and didn’t display a message.
+*  Customers can now change the quantity of a product in a wish list from the wish list itself. Previously, Magento did not update the product quantity and did not display a message.
 
 <!--- MC-35618-->
 
-*  Customers can now change the quantity of a grouped product in a wishlist from the wishlist itself. Previously, Magento didn’t update the product quantity or display a message.
+*  Customers can now change the quantity of a grouped product in a wish list from the wish list itself. Previously, Magento did not update the product quantity or display a message.
 
 <!--- MC-34408-->
 
@@ -1086,7 +1086,7 @@ We have fixed hundreds of issues in the Magento 2.4.1 core code.
 
 <!--- MC-36250-->
 
-*  Administrators can now configure a configurable product that has been added by a customer to a wishlist from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
+*  Administrators can now configure a configurable product that has been added by a customer to a wish list from a non-default store. Previously, when the customer had also added the configurable product from a non-default store, Magento threw an error.
 
 ## Community contributions
 

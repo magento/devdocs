@@ -5,7 +5,11 @@ title: Magento Open Source 2.4.0 Release Notes
 
 Magento Open Source 2.4.0 introduces support for PHP 7.4, Elasticsearch 7.6.x, and MySQL 8.0. Substantial security changes include the enablement of two-factor authentication in the Admin by default.
 
-**With this release, the Authorize.Net and  Braintree  payment method integrations have been removed from core code. Merchants should migrate to the official extensions that are available on the Magento Marketplace**.
+**With this release, the Authorize.Net method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace**.
+
+{:.bs-callout-info}
+
+**Braintree payment integration**: Prior to Magento 2.4.0, it was recommended that merchants install and configure the official Braintree payment integration extension from the Magento Marketplace to replace the core integration. With this release (Magento 2.4.0), the extension is now included in the Magento release. Merchants must follow additional steps to ensure that Braintree works properly in a Magento 2.4.0 deployment. See [Braintree](https://docs.magento.com/user-guide/payment/braintree.html) for more information on how to migrate to Magento 2.4.0.
 
 This release includes all the improvements to core quality that were included in Magento 2.3.5-p1, over 100 new fixes to core code, and 30 security enhancements. It includes the resolution of 226 GitHub issues by our community members. These community contributions range from minor clean-up of core code to significant enhancements in Inventory Management and GraphQL.
 
@@ -41,7 +45,7 @@ This release includes over 30 security fixes and platform security improvements.
 
 #### Over 30 security enhancements that help close remote code execution (RCE) and cross-site scripting (XSS) vulnerabilities
 
-No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-47.html) for a discussion of these fixed issues.
+No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. Most of these issues require that an attacker first obtains access to the Admin. As a result, we remind you to take all necessary steps to protect your Admin, including but not limited to these efforts: IP allowlisting, [two-factor authentication]({{page.baseurl}}/security/two-factor-authentication.html), use of a VPN, the use of a unique location rather than `/admin`, and good password hygiene. See [Security Updates Available for Magento](https://helpx.adobe.com/security/products/magento/apsb20-47.html) for a discussion of these fixed issues. for a discussion of these fixed issues.
 
 #### Additional security enhancements
 
@@ -51,16 +55,18 @@ No confirmed attacks related to these issues have occurred to date. However, cer
 
    *  **Securing your Magento account**. Two-factor Authentication (2FA) provides an added, optional  layer of security to better protect your Magento.com account from unauthorized users who might want to use your account in ways you do not want. See [Securing Your Account](https://docs.magento.com/user-guide/magento/magento-account-secure.html).
 
+*  **Securing Cloud SSH access**. Magento Commerce Cloud provides multi-factor authentication (MFA) enforcement to manage authentication requirements for SSH access to Cloud environments. Multi-factor authentication for 2FA is not enabled by default on a project.  Magento highly recommends enabling this feature. Contact Support for assistance. See [Enable multi-factor authentication for SSH access](https://devdocs.magento.com/cloud/project/project-enable-mfa-enforcement.html).
+
 *  **Template filter strict mode is now enabled by default**. Magento components (including CMS pages and blocks) that use the template filter in legacy mode can be vulnerable to remote code execution (RCE). Enabling strict mode by default ensures that RCE attacks cannot be deliberately enabled. <!--- MC-22982-->
 
 *  **Data rendering for UI data providers is now disabled by default**. This removes an opportunity for malicious users to execute arbitrary JavaScript. <!--- MC-17356-->
 
 *  **New `\Magento\Framework\Escaper` class**. This class is provided for `.phtml` templates and the PHP classes that are responsible for generating HTML. This class contains HTML sanitization methods relevant to multiple contexts. The `$escaper` local variable is available inside `.phtml` templates and should be used instead of the deprecated `$block->escape{method}`. Use `$escaper` rather than `$block` as the use of `$block->escape{method}` has been deprecated.
 
-*  **Support for security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
+*  **Support for new security.txt file**. This file is an industry-standard file on the server that helps security researchers report potential security issues to site administrators.
 
 {:.bs-callout-info}
-Starting with the release of Magento Commerce and Magento Open Source 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce and Magento Open Source to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
+Starting with the release of Magento Commerce 2.3.2, Magento will assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment. You can learn more about CVE identifiers at [CVE](https://cve.mitre.org/).
 
 ### Platform upgrades
 
@@ -74,9 +80,9 @@ The following platform upgrades help enhance website security and performance. S
 
 *  **MySQL 8.0 support**. Magento 2.4.x supports MySQL 8.x. (Magento 2.4.0 was tested with MySQL 8.0.20.) Merchants are encouraged to migrate their deployments to MySQL 8.x to take advantage of its improved performance, security, and reliability. Although MySQL 5.7 is still supported for Magento 2.4.x, MySQL 5.6 is no longer supported. You cannot host Magento 2.4.x with a MySQL 5.6 database. See [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
-*  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
-
 *  **Removal of the MySQL catalog search engine**. The MySQL search engine has been removed from Magento 2.4.0 and replaced as the default search engine with Elasticsearch. Elasticsearch provides superior search capabilities as well as catalog performance optimizations.  All merchants must have Elasticsearch to install and deploy Magento 2.4.0. See [Check the catalog search engine]({{page.baseurl}}/comp-mgr/prereq/prereq-elasticsearch.html).
+
+*  **MariaDB 10.4 support**. Support for MySQL 8.0 provides the opportunity for merchants to deploy MariaDB 10.4 with Magento. Although merchants can still use MariaDB 10.2 with Magento 2.4.0, we recommend upgrading to MariaDB 10.4 for improved performance and reliability. MariaDB 10.0 and 10.1 are no longer supported (as a result of removing support for MySQL 5.6 in this release).
 
 *  **Migration of dependencies on Zend Framework to the [Laminas project](https://getlaminas.org/about/foundation)** to reflect the transitioning of Zend Framework to the Linux Foundation’s Laminas Project. Zend Framework has been deprecated. See the [Migration of Zend Framework to the Laminas Project](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) DevBlog post.
 
@@ -90,7 +96,7 @@ The following platform upgrades help enhance website security and performance. S
 
 ### Infrastructure improvements
 
-This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, and Cart and Checkout.
+This release contains enhancements to core quality, which improve the quality of the Framework and these modules: Customer Account, Catalog, CMS, Import, Cart and Checkout, and B2B.
 
 *  **Removal of core integration of third-party payment methods**. With this release, the Authorize.Net payment method integration has been removed from core code. Merchants should migrate to the official extension that is available on the Magento Marketplace. See the [Deprecation of Magento core payment integrations](https://community.magento.com/t5/Magento-DevBlog/Deprecation-of-Magento-core-payment-integrations/ba-p/426445) devblog post. <!--- MC-29029-->
 
@@ -187,7 +193,7 @@ This release includes:
 
 #### Braintree Payments
 
-This bundled extension replaces our core Braintree integration, which has been removed in this release. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
+This extension replaces our core Braintree integration. It provides the same features as the Braintree core integration. See [Braintree Payments](https://marketplace.magento.com/paypal-module-braintree.html).
 
 #### Klarna
 
@@ -444,10 +450,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The Recently Viewed Products feature now works as expected in multi-store deployments.
 
-<!--- MC-31837-->
-
-*  Administrators with restricted permissions to Catalog can now create a downloadable product. Previously, administrators could not create a downloadable product, and Magento threw an error.
-
 <!--- MC-31838-->
 
 *  The **Product in Websites** checkbox of the new product page is now enabled by default for restricted administrators in multi-site deployments. Previously, the checkbox for the non-default website was not preselected, and if the administrator left the checkbox unselected, Magento displayed an error message.
@@ -530,32 +532,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  The Recently Viewed Products widget now works correctly when **Stores** > **Configuration** > **Catalog** > **Catalog** > **Recently Viewed/Compared** > **Synchronize widget products with backend storage** is set to **Yes**.
 
-### CMS content
-
-<!--- MC-29619-->
-
-*  You can now save and duplicate all CMS pages. Previously, Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
-
-<!--- MC-30963-->
-
-*  Magento now lets you create CMS blocks with identical names if the blocks are assigned to different store views.
-
-<!--- MC-30103-->
-
-*  Select from Gallery image thumbnails are now cached as expected. Previously, these images were resized on the fly.
-
-<!--- MC-32275-->
-
-*  Magento no longer throws an error when you save a CMS page that has been assigned to multiple stores. Previously, when you created or edited a CMS page, Magento saved the page but also threw this error: `Item (Magento\VersionsCms\Model\Hierarchy\Node) with the same ID "PAGE_ID" already exists`.
-
-<!--- MC-32452-->
-
-*  New CMS pages are now added as expected to a website’s store page hierarchy.
-
-<!--- ENGCOM-7033-->
-
-*  The CMS  page custom layout update logic  has been improved. Magento now applies specific layout changes from `cms_page_view_selectable_home_somechanges.xml`. _Fix submitted by Sergiy Vasiutynskyi in pull request [27131](https://github.com/magento/magento2/pull/27131)_. [GitHub-26758](https://github.com/magento/magento2/issues/26758)
-
 ### Cleanup
 
 <!--- ENGCOM-6573-->
@@ -617,6 +593,32 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-6458-->
 
 *  The integration success message displayed on  **Admin**  > **System** > **Extensions** > **Integrations** is now displayed correctly. _Fix submitted by divyajyothi5321 in pull request [26011](https://github.com/magento/magento2/pull/26011)_. [GitHub-25930](https://github.com/magento/magento2/issues/25930)
+
+### CMS content
+
+<!--- MC-29619-->
+
+*  You can now save and duplicate all CMS pages. Previously, Magento threw this exception when you tried to duplicate certain pages: `Unique constraint violation found`.
+
+<!--- MC-30963-->
+
+*  Magento now lets you create CMS blocks with identical names if the blocks are assigned to different store views.
+
+<!--- MC-30103-->
+
+*  Select from Gallery image thumbnails are now cached as expected. Previously, these images were resized on the fly.
+
+<!--- MC-32275-->
+
+*  Magento no longer throws an error when you save a CMS page that has been assigned to multiple stores. Previously, when you created or edited a CMS page, Magento saved the page but also threw this error: `Item (Magento\VersionsCms\Model\Hierarchy\Node) with the same ID "PAGE_ID" already exists`.
+
+<!--- MC-32452-->
+
+*  New CMS pages are now added as expected to a website’s store page hierarchy.
+
+<!--- ENGCOM-7033-->
+
+*  The CMS  page custom layout update logic  has been improved. Magento now applies specific layout changes from `cms_page_view_selectable_home_somechanges.xml`. _Fix submitted by Sergiy Vasiutynskyi in pull request [27131](https://github.com/magento/magento2/pull/27131)_. [GitHub-26758](https://github.com/magento/magento2/issues/26758)
 
 ### Configurable products
 
@@ -706,6 +708,66 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Customer creation from the Admin now honors the default customer group setting as expected.
 
+<!--- MC-31425-->
+
+*  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.
+
+<!--- MC-32152-->
+
+*  The Admin view of a customer cart now displays all the products that were added to the cart from multiple websites in a multi-website deployment. Previously, when a customer added a product to their cart from a non-default website, the product was not displayed in the Admin even when **Share customer account** is set to **Global**.
+
+<!--- ENGCOM-6667-->
+
+*  Magento now displays only the products that the customer has placed in their cart when the cart is viewed from the Admin. Previously, a customer’s shopping cart displayed all the products in the catalog when viewed from the Admin. _Fix submitted by Ravinder in pull request [26489](https://github.com/magento/magento2/pull/26489)_. [GitHub-26437](https://github.com/magento/magento2/issues/26437)
+
+<!--- ENGCOM-7036-->
+
+*  Validation now works as expected for the **Date of birth** field when editing a customer from the Admin. Previously, Magento did not factor in the user locale, and for some birthdates displayed this error: `The Date of Birth should not be greater than today`.   _Fix submitted by Sergiy Vasiutynskyi in pull request [27149](https://github.com/magento/magento2/pull/27149)_. [GitHub-27027](https://github.com/magento/magento2/issues/27027)
+
+<!--- ENGCOM-6208-->
+
+*  The email field is no longer required when placing an order from the Admin.  _Fix submitted by solwininfotech in pull request [24479](https://github.com/magento/magento2/pull/24479)_. [GitHub-22251](https://github.com/magento/magento2/issues/22251)
+
+<!--- ENGCOM-6423-->
+
+*  The My Account dashboard now displays email address values correctly in mobile view. _Fix submitted by Eden Duong in pull request [25942](https://github.com/magento/magento2/pull/25942)_. [GitHub-25935](https://github.com/magento/magento2/issues/25935)
+
+<!--- ENGCOM-7034-->
+
+*  Clicking the **Create an Account** button on the customer registration form multiple times no longer submits the registration request more than once. _Fix submitted by princeCB in pull request [26642](https://github.com/magento/magento2/pull/26642)_. [GitHub-26590](https://github.com/magento/magento2/issues/26590)
+
+<!--- MC-29102-->
+
+*  Customers who are subscribed to newsletters as a guest are no longer unsubscribed after registering for a new account.
+
+<!--- MC-29841-->
+
+*  Magento now uses a new `PHPSession` for each change of password.
+
+<!--- MC-30650-->
+
+*  You can now successfully create a customer and associate it with a particular website using the Associate to Website dropdown menu on **Customers** > **All Customers** > **Add new Customer**. Previously, when you tried to associate a new customer with the non-default website in a multi-site deployment, Magento displayed this error: `The store view is not in the associated website`.
+
+<!--- MC-29946-->
+
+*  Magento now saves the information a customer enters in the default billing and shipping fields during checkout when the transaction is initially declined due to an invalid credit card but later completed successfully. Previously, although Magento created the order when the customer entered valid payment information, it did not update the default billing or shipping addresses in the My Account section of the checkout workflow.
+
+<!--- MC-32325-->
+
+*  Magento now honors customer group settings when you create a new customer from the Admin in a multi-site deployment.
+
+<!--- MC-31481-->
+
+*  Magento now successfully imports customer data using the **Customer and Addresses (single file)** option when `cron` is enabled and the Customer Grid indexer is set to **Update By Schedule**. After `cron` executes, the imported customer information is available in the Admin as expected. Previously, Magento imported the customer data, but did not update the customer grid with the newly imported customer records.
+
+<!--- MC-31117-->
+
+*  You can now create a new customer from the storefront when the date of birth is required. Previously, you could not create a new customer when this field was required, even when you entered valid DOB values. [GitHub-26700](https://github.com/magento/magento2/issues/26700)
+
+<!--- MC-31945-->
+
+*  Customer creation from the Admin now honors the default customer group setting as expected.
+
 <!--- MC-31435-->
 
 *  The `PHPSessionId` is now changed as expected after a customer logs out and then logs back in.
@@ -733,24 +795,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-7034-->
 
 *  Clicking the **Create an Account** button on the customer registration form multiple times no longer submits the registration request more than once. _Fix submitted by princeCB in pull request [26642](https://github.com/magento/magento2/pull/26642)_. [GitHub-26590](https://github.com/magento/magento2/issues/26590)
-
-### Customer segment
-
-<!--- MC-29471-->
-
-*  Magento no longer removes your customer account from a customer segment when you log in as a user that is assigned to the customer segment when the segment includes a condition for past orders. Previously, you had to click **Refresh Segment Data** after logging in before Magento displayed your account in the Matched Customers list.
-
-<!--- MC-30466-->
-
-*  Customer segments now work as expected when segment conditions include the total number of orders.
-
-<!--- MC-32409-->
-
-*  Customer segment rules are now applied as expected when customer accounts are set up to be shared globally.
-
-<!--- MC-33081-->
-
-*  We’ve improved the performance of editing and saving customer segments that contain large numbers of customers (more than three million). Previously, when you created or edited a customer segment that contained many customers, Magento threw a 500 error.
 
 ### Directory
 
@@ -985,30 +1029,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-7071-->
 
 *  We’ve added the `@api`  PHP annotation to `AbstractExtensibleModel`, the `@deprecated` PHP annotation to `AbstractExtensibleObject`, and `@see` to `AbstractExtensibleModel`.  _Fix submitted by Alexander Taranovsky in pull request [22011](https://github.com/magento/magento2/pull/22011)_. [GitHub-22010](https://github.com/magento/magento2/issues/22010)
-
-### Gift cards
-
-<!--- MC-31041-->
-
-*  The GET `V1/orders/:orderId` call returns gift card codes as expected.
-
-### Gift wrapping
-
-<!--- MC-29893-->
-
-*  Gift wrapping can now be added to the cart when it is enabled on the product level. Previously, you could add gift wrapping to a product on the storefront, but Magento would not include gift wrapping in the order summary.
-
-<!--- MC-30543-->
-
-*  An expired gift card becomes active as expected when you change its expiration date to a future date. Previously, the gift card remained expired.
-
-<!--- MC-32551-->
-
-*  The Admin Create Order page now loads correctly when the **Allow Gift Messages on Order Level** setting and template minification are enabled. Previously, when you tried to open this page when these settings were enabled, Magento threw this error: `Warning: require(content.phtml): failed to open stream: No such file or directory`.
-
-<!--- MC-31427-->
-
-*  Magento now correctly calculates the cost of gift wrapping based on the number of products for which you’ve ordered gift wrap. Previously, Magento included the cost of gift wrap for one product only in the order.
 
 ### GraphQL
 
@@ -1252,12 +1272,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  `var/resource_config.json` is no longer regenerated whenever an image is requested by `get.php`. Previously, this file was rewritten on each call to `get.php`.
 
-### New Relic
-
-<!-- ENGCOM-6461-->
-
-*  Magento `cron`job names are now included as expected within Transaction Traces in the NewRelic APM Monitoring - Transactions. This includes `cron` jobs that are executed from the command line as well as jobs executed by the standard scheduler.  _Fix submitted by Lukasz Bajsarowicz in pull request [25957](https://github.com/magento/magento2/pull/25957)_. [GitHub-22047](https://github.com/magento/magento2/issues/22047)
-
 ### Newsletter
 
 <!--- MC-31768-->
@@ -1282,7 +1296,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 <!--- MC--->
 
-*  The integration of third-party payment methods Authorize.Net and Braintree into the core Magento code have been removed. Merchants should migrate to the official extensions that are available on the Magento Marketplace.
+*  The integration of third-party payment methods Authorize.Net, eWay, CyberSource, Braintree, and Worldpay into the core Magento code have been removed. Merchants should migrate to the official extensions that are available on the Magento Marketplace.
 
 <!--- MC--->
 
@@ -1390,9 +1404,17 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  Both fixed and discount save percentage are now correctly applied on an order’s final price. Previously,  Magento displayed an incorrect tier price (both fixed & discount) save percentage on the product detail page. _Fix submitted by Sathish Subramanian in pull request [26584](https://github.com/magento/magento2/pull/26584)_. [GitHub-26583](https://github.com/magento/magento2/issues/26583)
 
+<!--- MC-30255-->
+
 *  The stock alert email sent to customers about the re-stocking of a configurable product now contains the correct product price. Previously, this email contained a product price of 0.
 
-*  Product stock alert unsubscribe now works when a user’s session has expired. Previously, when you clicked on the **Click here to stop alerts** for this product link, Magento displayed a 404 error.
+<!--- MC-32873-->
+
+*  Product stock alert unsubscribe now works when a user’s session has expired. Previously, when you clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
+
+<!--- MC-31979-->
+
+*  Unsubscribe actions for product alerts now work as expected. Previously, when a customer clicked on the **Click here to stop alerts for this product** link, Magento displayed a 404 error.
 
 ### Product video
 
@@ -1431,12 +1453,6 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 <!--- ENGCOM-6938-->
 
 *  The Pending Reviews menu item is now activated as expected on **Admin** >  **Marketing** > **User Content** > **Pending Reviews**.  _Fix submitted by Ravinder in pull request [26230](https://github.com/magento/magento2/pull/26230)_. [GitHub-26229](https://github.com/magento/magento2/issues/26229)
-
-### Rewards
-
-<!--- MC-31459-->
-
-*  Magento now refunds reward points as expected when an order is returned to a store running in a multi-store environment where different reward point rates are set for each store. Previously, Magento did not refund points as expected for a returned order that was purchased using reward points.
 
 ### Sales
 
@@ -1656,7 +1672,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 {:.bs-callout-info}
 
-**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator**. See [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
+**MFTF now uses Google Authenticator to execute tests with 2FA enabled. MFTF will not work with Magento 2.4.0 without additional configuration steps to enable Google Authenticator**. See  [Configuring MFTF for Two-Factor Authentication (2FA)](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html#magento-functional-testing-framework).
 
 <!-- ENGCOM-6585-->
 
@@ -2010,7 +2026,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 *  TinyMCE4 on the Chrome browser now handles double-byte characters as expected. Previously, TinyMCE4 could not properly handle double-byte characters (such as used in Chinese) on Chrome. _Fix submitted by Hirokazu Nishi in pull request [25454](https://github.com/magento/magento2/pull/25454)_. [GitHub-24637](https://github.com/magento/magento2/issues/24637)
 
-## Known issues -- general
+## Known issues -- General
 
 **Issue**: Anomalies in storefront error messages occur in deployments where PHP 7.4.2 is installed. When Magento 2.4.0 is deployed with PHP 7.4.2, the space symbols in storefront error messages are replaced with plus (+) characters.  This bug is native to PHP 7.4.2 and cannot be corrected by Magento. **Workaround**: Magento recommends using other versions of PHP 7.4.x. See [Raw message data display on storefront](https://support.magento.com/hc/en-us/articles/360045804332)  Knowledge Base article. <!--- MC-34170-->
 
@@ -2028,7 +2044,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 **Issue**:  Customers cannot change the number of orders displayed per page when the Orders list spans multiple pages. Currently, Magento displays this message when you navigate to the last page of orders and try to change the number of orders displayed per page: `You have placed no orders`. See [Orders display error](https://support.magento.com/hc/en-us/articles/360046802271) Knowledge Base article.  **Workaround**: Re-opening the My Orders page will result in the display of the Orders list. <!--- MC-34153-->
 
-**Issue**: Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page ( **Stores** > **Tax Rules**)  does not download the `tax_rates.csv` file as expected. **Workaround**: Click the edge of the  **Export Tax Rates** button.  See [Export Tax Rates does not work](https://support.magento.com/hc/en-us/articles/360045850032)  Knowledge Base article. <!--- MC-35345-->
+**Issue**: Directly clicking on the **Export Tax Rates** button of the Add New Tax Rule page (**Stores** > **Tax Rules**)  does not download the `tax_rates.csv` file as expected. **Workaround**: Click the edge of the  **Export Tax Rates** button.  See [Export Tax Rates does not work](https://support.magento.com/hc/en-us/articles/360045850032)  Knowledge Base article. <!--- MC-35345-->
 
 **Issue**: The **Refresh** buttons on the Last Ordered Items,  Products in Comparison List, and Recently Compared Products sections of the Admin Customer Activities page do not work as expected. Currently, Magento scrolls the page  every time the **Refresh** button is clicked and does not display the product name. See [Refresh on Customer's Activities does not work](https://magento.zendesk.com/hc/en-us/articles/360046091332) Knowledge Base article. <!--- MC-35296-->
 
@@ -2036,7 +2052,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 ### Amazon Pay
 
-*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay.  **Workaround**: Refresh the checkout page to display the missing methods.  <!--- BUNDLE-2661-->
+*  **Issue**: Payment methods are missing from the checkout workflow when a customer clicks **Return to standard checkout** during checkout with Amazon Pay. **Workaround**: Refresh the checkout page to display the missing methods.  <!--- BUNDLE-2661-->
 
 *  **Issue**: Magento displays two identical Amazon Pay methods in the Payment Method drop-down list that is available when creating a new cart price rule.  <!--- BUNDLE-2685-->
 
@@ -2064,7 +2080,7 @@ We have fixed hundreds of issues in the Magento 2.4.0 core code.
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the following ways you can learn about the community contributions to our current releases:
 
-*  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member*".
+*  If a community member has provided a fix for this release, we identify the fix in the Fixed Issue section of these notes with the phrase, "*Fix provided by community member @member_name*".
 
 *  The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
@@ -2086,9 +2102,9 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.4.0 using Composer.
+You can install Magento Open Source 2.4.0 using Composer.
 
-## Migration tool kits
+## Migration toolkits
 
 The Data Migration Tool helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{page.baseurl}}/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
