@@ -73,7 +73,7 @@ The `CreditMemo` object contains details about credit memos applied to an order.
 
 Attribute | Data type | Description
 --- | --- | ---
-`comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the credit memo
+`comments` | [[CommentItem](#SalesCommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
 `items` | [[CreditMemoItemInterface](#CreditMemoItemInterface)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
