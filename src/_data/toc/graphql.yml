@@ -49,6 +49,10 @@ pages:
         - label: Using queries
           url: /graphql/queries/index.html
 
+        - label: availableStores query
+          url: /graphql/queries/available-stores.html
+          exclude_versions: ["2.3"]
+
         - label: cart query
           url: /graphql/queries/cart.html
 
