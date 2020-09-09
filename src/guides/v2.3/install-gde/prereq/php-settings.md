@@ -6,7 +6,8 @@ functional_areas:
   - System
   - Setup
 redirect_from: 
-  - install-gde/prereq/php-settings-ubuntu.html
+  - /guides/v2.3/install-gde/prereq/php-settings-ubuntu.html
+
 ---
 
 This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
