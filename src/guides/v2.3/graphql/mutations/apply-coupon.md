@@ -9,7 +9,15 @@ The `applyCouponToCart` mutation applies a pre-defined coupon code to the specif
 
 ## Syntax
 
-`mutation: {applyCouponToCart(input: ApplyCouponToCartInput) {ApplyCouponToCartOutput}}`
+```graphql
+mutation {
+  applyCouponToCart(
+    input: ApplyCouponToCartInput
+  ) {
+    ApplyCouponToCartOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -17,7 +25,7 @@ The following example applies the coupon code `H2O` to the cart. For this coupon
 
 **Request:**
 
-``` text
+```graphql
 mutation {
   applyCouponToCart(
     input: {

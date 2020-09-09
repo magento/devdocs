@@ -47,7 +47,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
    }
    ```
 
-   `@font-format` is optional. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "oet", "otf", and "svg"
+   `@font-format` is optional. If you need to specify a format, enclose it in single quotes. For example, `@font-format: 'ttf'` for TrueType Fonts. The available types are: "woff", "woff2", "ttf", "eot", "otf", and "svg"
 
    ```less
    .lib-font-face(

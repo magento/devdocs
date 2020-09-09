@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 {:.bs-calloout-info}
-If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-versions) in the _Cloud Guide_.
+If you are working on a {{site.data.var.ece}} project, see [Service versions]({{ site.baseurl }}/cloud/project/services.html#service-versions) in the _Cloud Guide_.
 
 ## Operating systems (Linux x86-64)
 
@@ -39,7 +39,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 Magento is also compatible, but has not been tested and is not recommended, with MySQL 5.7.9, MariaDB 10.2, and Percona 5.7.
 
 {:.bs-callout-info}
-Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
+Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however; so be sure to research compatibility issues before using a feature in your Magento module. {% include install/maria-db.md %}
 
 ## PHP
 
