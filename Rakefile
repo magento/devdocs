@@ -17,6 +17,9 @@ require 'colorator'
 # Require helper methods from the 'lib' directory
 Dir.glob('lib/**/*.rb') { |file| require_relative(file) }
 
+# Instantiate Docfile data for usage in tasks
+@content_map = DocConfig.new.content_map
+
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
 

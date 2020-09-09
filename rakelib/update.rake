@@ -49,14 +49,21 @@ namespace :update do
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[mbi pb pbm mftf]
+  task :subrepos do
+    @content_map.each do |subrepo|
+      update_dir subrepo['directory']
+    end
+  end
 end
 
 def update_dir(dir)
   abort "Cannot find the #{dir} directory. You can run 'rake init' to create it and rerun 'rake update:all' again.".red unless Dir.exist? dir
   Dir.chdir dir do
+    puts "Updating #{dir}:".magenta
+
+    next warn "No branch to update" if `git status -sb`.include? 'no branch'
     sh 'git remote -v'
-    sh 'git pull'
+    sh 'git pull --no-recurse-submodules'
     sh 'git status -sb'
   end
 end
