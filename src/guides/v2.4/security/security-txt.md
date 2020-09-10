@@ -15,9 +15,6 @@ Magento merchants can enter their contact information for [security issue report
 -  Contains a router to match application action class for requests to the `well-known/security.txt` and `.well-known/security.txt.sig` files.
 -  Serves the content of the `.well-known/security.txt` and `.well-known/security.txt.sig` files.
 
-{:.bs-callout-info}
-**Magento Community Contribution** - Magento thanks [Kalpesh Mehta](http://ka.lpe.sh/) of [Corra](https://partners.magento.com/portal/details/partner/id/70/) for contributing this feature as part of the Magento Community Engineering program.
-
 A valid `security.txt` file might look like the following:
 
  ```bash
