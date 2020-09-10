@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: MySQL
-redirect_from:
-  - guides/v2.4/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you are just starting out {#mysql-help-beginner}
