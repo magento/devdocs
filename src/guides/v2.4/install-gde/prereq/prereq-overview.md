@@ -79,7 +79,7 @@ For example:
 mysql -u magento -p
 ```
 
-You must run MySQL version 5.7.9 or later as the following result indicates:
+Check you have the correct version of mySQL for the version of Magento you are installing, [Check Here For Supported Versions](https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#database). The following result indicates the version you are running.
 
 ```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
