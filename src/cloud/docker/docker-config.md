@@ -113,7 +113,7 @@ You can change HTTP and SMTP exposed ports using `--mailhog-http-port`<br>`--mai
 ./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
 ```
 
-After that you can use `http://magento2.docker:8026` to see outgoing emails and exposed SMTP port will be 1026 (by default this port is 1025).
+After updating the configuration and restarting the Docker environment, you can connect to the MailHog service from `http://magento2.docker:8026`, and use port 1026 for SMTP communication.
 
 If you do not need the [MailHog] service, use the `--no-mailhog` option to generate the Docker compose configuration: 
 
