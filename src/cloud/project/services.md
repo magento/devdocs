@@ -163,10 +163,9 @@ To verify relationships in remote environments:
 
 ## Service versions
 
-The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud). 
+{%include cloud/note-cloud-services-compatibility.md%}
 
-{:.bs-callout-info}
-Version support and compatibility for Magento Commerce on Cloud is determined by service versions deployed on the Cloud infrastructure. In some cases, the supported or recommended versions differ from the versions supported by Magento Commerce deployed on-premises.
+The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud).
 
 {:.error-table}
 Service   |  Magento 2.4  |Magento 2.3  | Magento 2.2
@@ -190,7 +189,7 @@ During the deployment process, {{site.data.var.ct}} checks installed service ver
 -  If a service version is within three months of the EOL date, a notification displays in the deploy log.
 -  If the EOL date is in the past, a warning notification displays.
 
-To maintain Magento store security, update installed software versions before they reach EOL.
+To maintain Magento store security, update installed software versions before they reach EOL. You can review the EOL dates in the [{{ site.data.var.ct }} `eol.yaml` file](https://github.com/magento/ece-tools/blob/develop/config/eol.yaml).
 
 ## Change service version
 
@@ -199,12 +198,6 @@ You can upgrade the installed service version for compatibility with the Magento
 You cannot downgrade the service version for an installed service directly. However, you can create a new service with the required version. See [Downgrade service version](#downgrade-version).
 
 Use the [Service versions](#service-versions) table to check service version compatibility by Magento version. Note that some service versions supported by {{ site.data.var.ee }} are not supported on {{ site.data.var.ece }}.
-
-{:.bs-callout-warning}
-You must submit a support ticket to change the service configuration on Pro Production and Staging environments.
-
-{:.bs-callout-info}
-If you change the Elasticsearch service version, check the Elasticsearch composer package for compatibility with the new version. See [Elasticsearch software compatibility]({{ site.baseurl}}/cloud/project/services-elastic.html#elasticsearch-software-compatibility).
 
 ### Upgrade installed service version
 
