@@ -10,15 +10,11 @@ The `VirtualProduct` data type implements the following interfaces:
 -  `ProductInterface`
 -  `CustomizableProductInterface`
 
-Attributes that are specific to the virtual products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
-
-## VirtualProduct object
-
-The `VirtualProduct` object contains attributes only from implemented interfaces:
+All `VirtualProduct` attributes are defined in the implemented interfaces.
 
 ## Sample Query
 
-The following query returns information about virtual product.
+The following [`products`]({{page.baseurl}}/graphql/queries/products.html) query returns information about a virtual product.
 
 ```graphql
 {
