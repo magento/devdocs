@@ -117,7 +117,7 @@ For example:
 
 After that you can use `http://magento2.docker:8026` to see outgoing emails and exposed SMTP port will be 1026 (by default this port is 1025).
 
-If you do not need the [MailHog] service you can use option `--no-mailhog` during configuration generating:
+If you do not need the [MailHog] service, use the `--no-mailhog` option to generate the Docker compose configuration: 
 
 ```bash
 ./vendor/bin/ece-docker build:compose --no-mailhog
