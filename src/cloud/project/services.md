@@ -166,7 +166,7 @@ To verify relationships in remote environments:
 The following table lists the services used in {{site.data.var.ece}} and their version compatibility with the [Magento Cloud template](https://github.com/magento/magento-cloud). 
 
 {:.bs-callout-info}
-Version support and compatibility for Magento Commerce on Cloud is determined by service versions deployed on the Cloud infrastructure. In some cases, the supported or recommended versions differ from the versions supported by Magento Commerce depoloyed on-premises.
+Version support and compatibility for Magento Commerce on Cloud is determined by service versions deployed on the Cloud infrastructure. In some cases, the supported or recommended versions differ from the versions supported by Magento Commerce deployed on-premises.
 
 {:.error-table}
 Service   |  Magento 2.4  |Magento 2.3  | Magento 2.2
