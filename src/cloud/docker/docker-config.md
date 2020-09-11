@@ -107,6 +107,22 @@ The default {{ site.data.var.mcd-prod }} configuration includes the [MailHog] se
 
 When the MailHog service is installed, go to the following URL to open the service and view outgoing emails: `http://magento2.docker:8025`
 
+You can change HTTP and SMTP exposed ports using `--mailhog-http-port`<br>`--mailhog-smtp-port` options.
+
+For example:
+
+```bash
+./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
+```
+
+After that you can use `http://magento2.docker:8026` to see outgoing emails and exposed SMTP port will be 1026 (by default this port is 1025).
+
+If you do not need the [MailHog] service you can use option `--no-mailhog` during configuration generating:
+
+```bash
+./vendor/bin/ece-docker build:compose --no-mailhog
+```
+
 [php]: https://www.php.net/manual/en/install.php
 [Composer]: https://getcomposer.org
 [Docker]: https://www.docker.com/get-started
