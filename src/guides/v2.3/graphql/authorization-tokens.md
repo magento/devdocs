@@ -37,6 +37,12 @@ mutation {
  }
 ```
 
+You can now use this token in the Authorization request header field for any queries and mutations.
+
+![GraphiQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
+
+If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/mutations/revoke-customer-token.html
+
 ## Admin tokens
 
 In Magento GraphQL, you specify an admin token only if you need to query products, categories, price rules, or other entities that are scheduled to be in a campaign (staged content). Staging is supported in {{site.data.var.ee}} only. See [Staging queries]({{page.baseurl}}/graphql/queries/index.html#staging) for more information.
