@@ -432,6 +432,16 @@ Introspection queries allow you to return information about the schema. For exam
 
 A Magento introspection query returns the same result whether or not you assign it an operation name, such as `IntrospectionQuery`.
 
+### Disable introspection querying
+
+Introspection querying is enabled by default. To disable it in production mode to improve security, add the following to your `env.php` file.
+
+```php
+'graphql' => [
+    'disable_introspection' => true,
+]
+```
+
 ### Example introspection queries
 
 #### Return a list of Magento queries
@@ -564,14 +574,4 @@ query IntrospectionQuery {
     }
   }
 }
-```
-
-### Disabling introspection querying
-
-Introspection querying is enabled by default. If you wish to disable it in production mode to improve security, please add the following to env.php.
-
-```php
-'graphql' => [
-    'disable_introspection' => true,
-],
 ```
