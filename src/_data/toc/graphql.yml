@@ -278,6 +278,9 @@ pages:
         - label: Simple product data types
           url: /graphql/interfaces/simple-product.html
 
+        - label: Virtual product data types
+          url: /graphql/interfaces/virtual-product.html
+
     - label: Payment methods
       children:
 

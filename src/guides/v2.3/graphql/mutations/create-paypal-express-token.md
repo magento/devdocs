@@ -13,7 +13,15 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ## Syntax
 
-`mutation: {createPaypalExpressToken(input: PaypalExpressTokenInput!): {PaypalExpressTokenOutput}}`
+```graphql
+mutation {
+  createPaypalExpressToken(
+    input: PaypalExpressTokenInput!
+  ) {
+    PaypalExpressTokenOutput
+  }
+}
+```
 
 ## Example usage
 
@@ -21,24 +29,23 @@ The input includes the cart ID, the payment method code, and a set of URLs that 
 
 ```graphql
 mutation {
-    createPaypalExpressToken(
-        input: {
-            cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
-            code: "paypal_express"
-            express_button: true
-            urls: {
-                return_url: "paypal/action/return.html"
-                cancel_url: "paypal/action/cancel.html"
-            }
-        }
-    )
-    {
-        token
-        paypal_urls{
-            start
-            edit
-        }
+  createPaypalExpressToken(
+    input: {
+      cart_id: "rMQdWEecBZr4SVWZwj2AF6y0dNCKQ8uH"
+      code: "paypal_express"
+      express_button: true
+      urls: {
+        return_url: "paypal/action/return.html"
+        cancel_url: "paypal/action/cancel.html"
+      }
     }
+  ) {
+    token
+    paypal_urls {
+      start
+      edit
+    }
+  }
 }
 ```
 
@@ -48,9 +55,9 @@ mutation {
 {
   "data": {
     "createPaypalExpressToken": {
-      "token": "<PayPal_Token>"
+      "token": "<PayPal_Token>",
       "paypal_urls": {
-        "start": "https://www.sandbox.paypal.com/checkoutnow?token=<PayPal_Token>"
+        "start": "https://www.sandbox.paypal.com/checkoutnow?token=<PayPal_Token>",
         "edit": "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&useraction=continue&token=<PayPal_Token>"
       }
     }
