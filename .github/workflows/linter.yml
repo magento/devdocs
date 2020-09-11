@@ -16,7 +16,9 @@ name: Lint Code Base
 #############################
 on:
   pull_request:
-    branches: [master]
+    branches:
+      - master
+      - 2.*-develop
 
 ###############
 # Set the Job #
@@ -47,3 +49,4 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
+          VALIDATE_HTML: false
