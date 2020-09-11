@@ -570,7 +570,7 @@ query IntrospectionQuery {
 
 Introspection querying is enabled by default. If you wish to disable it in production mode to improve security, please add the following to env.php.
 
-```
+```php
 'graphql' => [
     'disable_introspection' => true,
 ],
