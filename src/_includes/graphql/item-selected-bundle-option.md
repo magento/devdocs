@@ -6,7 +6,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `id` | ID! | The unique identifier of the option
 `label` | String! | The label of the option
-`values` | [[ItemSelectedBundleOptionValue!](#ItemSelectedBundleOptionValue)]! | A list of products that represent the values of the parent option
+`values` | [[ItemSelectedBundleOptionValue](#ItemSelectedBundleOptionValue)] | A list of products that represent the values of the parent option
 
 #### ItemSelectedBundleOptionValue attributes {#ItemSelectedBundleOptionValue}
 

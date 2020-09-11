@@ -1,6 +1,6 @@
 #### DownloadableItemsLinks attributes {#DownloadableItemsLinks}
 
-The `DownloadableProductLinks` object defines characteristics of a downloadable product.
+The `DownloadableItemsLinks` object defines characteristics of a downloadable product.
 
 Attribute | Data type | Description
 --- | --- | ---

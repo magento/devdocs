@@ -6,5 +6,4 @@ Attribute | Data type | Description
 `product_name` | String | The name of the base product
 `product_sale_price` | Money! | The sale price for the base product including selected options
 `product_sku` | String! | The SKU of the base product
-`product_type` | String | The type of product, such as simple, configurable, or bundle
 `quantity_invoiced` | Float |The number of invoiced items
