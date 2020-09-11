@@ -11,15 +11,11 @@ The `SimpleProduct` data type implements the following interfaces:
 -  `PhysicalProductInterface`
 -  `CustomizableProductInterface`
 
-Attributes that are specific to the simple products can be used when performing a [`products`]({{page.baseurl}}/graphql/queries/products.html) query.
-
-## SimpleProduct object
-
-The `SimpleProduct` object contains attributes only from implemented interfaces:
+All `SimpleProduct` attributes are defined in the implemented interfaces.
 
 ## Sample Query
 
-The following query returns information about simple product `24-MB01`, which is defined in the sample data.
+The following [`products`]({{page.baseurl}}/graphql/queries/products.html) query returns information about simple product `24-MB01`, which is defined in the sample data.
 
 ```graphql
 {
