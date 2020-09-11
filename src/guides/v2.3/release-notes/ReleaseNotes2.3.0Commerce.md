@@ -3268,7 +3268,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-87935-->
 
-*  We've replaced `.size()` with `.length` to be compatible with jQuery 3.*. *Fix submitted by Kirill Morozov in pull request [13686](https://github.com/magento/magento2/pull/13686)*.
+*  We've replaced `.size()` with `.length` to be compatible with jQuery 3. *Fix submitted by Kirill Morozov in pull request [13686](https://github.com/magento/magento2/pull/13686)*.
 
 <!--- ENGCOM-1128 -->
 

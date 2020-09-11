@@ -3119,7 +3119,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-87935 -->
 
-*  We've replaced `.size()` with `.length` to be compatible with jQuery 3.*. *Fix submitted by Kirill Morozov in pull request [13686](https://github.com/magento/magento2/pull/13686)*.
+*  We've replaced `.size()` with `.length` to be compatible with jQuery 3. *Fix submitted by Kirill Morozov in pull request [13686](https://github.com/magento/magento2/pull/13686)*.
 
 <!--- ENGCOM-1128  -->
 
