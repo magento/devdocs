@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: MySQL
-redirect_from:
-  - guides/v2.3/install-gde/trouble/tshoot_mysql_table-open-cache.html
 ---
 
 ## Help if you are just starting out {#mysql-help-beginner}
@@ -112,7 +110,6 @@ To properly update MySQL from version 5.7 to version 8, you must follow these st
 
 1. Update MySQL to version 8.
 1. Import the backed-up data into MySQL.
-1. In the Magento admin, set the database engine to MySQL 8.
 1. Clean the cache:
 
    ```bash
@@ -173,6 +170,8 @@ To configure a MySQL database instance:
    *  Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
 
    *  For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
+
+   *  {% include install/maria-db.md %}
 
 1. In order for MySQL `TIMESTAMP` fields to follow the preferences and composition expected by Magento's declarative schema architecture, the system variable `explicit_defaults_for_timestamp` must be set to `on`.
 

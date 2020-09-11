@@ -34,6 +34,32 @@ stage:
     ERROR_REPORT_DIR_NESTING_LEVEL: 2
 ```
 
+### `QUALITY_PATCHES`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Specify a list of Magento quality patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES: [ ]
+```
+
+The following example specifies three patches to apply during deployment.
+
+```yaml
+stage:
+  build:
+    QUALITY_PATCHES:
+      - MC-31387
+      - MDVA-4567
+      - MC-456345
+```
+
+See [Apply patches]({{ site.baseurl }}/cloud/project/project-patch.html).
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6`
@@ -103,6 +129,8 @@ stage:
   build:
     SCD_MAX_EXECUTION_TIME: 3600
 ```
+
+{% include cloud/note-increase-scd-max-execution-time-variable.md%}
 
 ### `SCD_STRATEGY`
 
@@ -178,7 +206,12 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+Enable or disable the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for `bin/magento` CLI commands performed during the deployment phase.
+
+{:.bs-callout}
+To use VERBOSE_COMMANDS to control the detail in command output for both successful and failed `bin/magento` CLI commands, you must set [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) `debug`.
+
+Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

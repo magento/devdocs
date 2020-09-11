@@ -8,8 +8,6 @@ landing-page: JavaScript Developer Guide
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
-You can follow the same approach when customizing Magento JavaScript, or [disable all the default scripts and their load by RequireJS].
-
 For information about how JS resources are located and configured, see the [JavaScript resources] topic in the Configuration Guide.
 
 ## What's in this guide {#js_contents}
@@ -40,7 +38,6 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 [jQuery Widget]: https://jqueryui.com/widget/
 
 [RequireJS file and module loader]: http://requirejs.org/
-[disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js
 [JavaScript resources]: {{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html
 
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

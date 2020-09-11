@@ -1,62 +1,44 @@
 ---
 group: marketplace-api
-title: Introduction
+title: Marketplace EQP API
 ---
 
- {:.bs-callout-info}
-These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <magento-marketplace-eqp-apis@adobe.com>.
+The **Magento Marketplace Extension Quality Program ([EQP]({{ site.baseurl }}/marketplace/sellers/extension-quality-program.html)) REST API** provides access to the [Marketplace Developer Portal][1].
 
-The Magento Extension Quality Program (EQP) REST APIs provide access to the [Magento Developer Portal](https://developer.magento.com).
+The **Marketplace Developer Portal** provides you the capability to do the following:
 
-Use these APIs to submit Magento 1 and Magento 2 extensions and themes to the Magento EQP for publication on the [Magento Marketplace](https://marketplace.magento.com). You can also manage extensions that you have uploaded to the [Developer Portal](https://developer.magento.com).
-The Magento EQP REST APIs are completely separate from those provided with Magento 1 and Magento 2. There are no corresponding SOAP APIs.
+-  Publish your product's marketing information on the [Magento Marketplace][3]. As a result, your customers can find and purchase each of your products.
+-  Publish your individual or company profile on the **Magento Marketplace**, making it easy for your customers to learn more about you and your company.
+-  Upload your code for your Magento 2 extensions, themes, and shared packages to the **Magento Product Repository**. After your customers purchase your product,  your customers can download your code.
+-  Access your sales reports. Get aggregated metrics on overall page views, category-specific page views, EQP process-related metrics and more.
 
-## EQP API requests
+## Where to use this API
 
-The APIs only accept encrypted communications using HTTPS at the following base URLs:
+There are two separate **Marketplace Developer Portal** environments where the Marketplace EQP API can be used:
 
-```http
-https://developer-api.magento.com - Production
-https://developer-stg-api.magento.com - Sandbox
-```
+-  Production - [https://developer.magento.com][1]
+-  Sandbox - [https://developer-stg.magento.com][2]
 
-EQP APIs are based on REST concepts and use standard HTTP verbs:
+Use your same login information for the production **Marketplace Developer Portal** to also log into the **Sandbox Marketplace Developer Portal**. Learn more about the [sandbox](sandbox.html) environment.
 
--  GET
--  POST
--  PUT
--  DELETE
+## API eligibility {#eligible}
 
-All endpoints start with **/rest/v1**, which supports API versioning. The initial release is version 1 (v1).
-All request and response content is formatted using JSON, including error information.
+All developers are eligible to use the **production** Marketplace EQP API.
+However, only specific partners are eligible to use the **sandbox**:
 
-## Error handling
+| Adobe partner | Legacy Magento partner |
+| ------------- | ---------------------- |
+| Innovate      | General Technology Partner <br/> Select Extensions Partner <br/> Premier Extensions Partner |
+| Accelerate    | Select Technology Partner     |
+| Premier       | Premier Technology Partner    |
+| Bronze        | Community Insider Partner <br/> Business Solution Partner |
+| Silver        | Professional Solution Partner |
+| Gold          | Enterprise Solution Partner   |
+| Platinum      | Global Elite Solution Partner |
 
-All HTTP 4xx errors contain a JSON payload with the following structure:
+See more information about [becoming a partner][4].
 
-```json
-{
-  "code" : 1208,
-  "message" : "Insufficient information for Technical Submission"
-}
-```
-
-Batch responses return a HTTP 200 response code, but each item in the batch array contains the `code` and `message` pair indicating an error. A `code` of 200 indicates success.
-
-```json
-[
-    {
-      "code" : 1208,
-      "message" : "Insufficient information for Technical Submission"
-    },
-    {
-      "code" : 1210,
-      "message" : "Invalid SKU given. SKU must be of the form 'vendor_name/package_name'"
-    },
-    {
-      "code" : 200,
-      "message" : "Success",
-      // ... etc. Successful batch submissions also have all the fields from a successful result.
-    }
-]
-```
+[1]: https://developer.magento.com
+[2]: https://developer-stg.magento.com
+[3]: https://marketplace.magento.com
+[4]: https://magento.com/partners/become

@@ -116,7 +116,7 @@ You can manage variables and settings for Production, Staging, and Integration e
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud/cloud_project-env.png){:width="650px"}
 
-This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html), [routes]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ site.baseurl }}/cloud/project/magento-app.html), [routes]({{ site.baseurl }}/cloud/project/routes.html), and [users]({{ site.baseurl }}/cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}/common/images/cloud/cloud_project-conf-env.png){:width="650px"}
 

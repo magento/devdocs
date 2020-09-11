@@ -26,7 +26,7 @@ To update the `{{site.data.var.ct}}` package:
 1. On your local workstation, perform an update using Composer.
 
    ```bash
-   composer update magento/ece-tools
+   composer update magento/ece-tools --with-dependencies
    ```
 
    {:.bs-callout-info}
