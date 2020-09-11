@@ -1,8 +1,6 @@
 ---
 group: cloud-guide
 title: Custom VCL to bypass Fastly cache
-redirect_from:
-   - /cloud/configure/fastly-vcl-badreferer.html
 functional_areas:
   - Cloud
   - Setup
