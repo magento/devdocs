@@ -10,12 +10,12 @@ A downloadable product can be anything that you can deliver as a file, such as a
 ## Syntax
 
 ```graphql
-mutation: {
-    addDownloadableProductsToCart(
-        input: AddDownloadableProductsToCartInput
-    ): {
-        AddDownloadableProductsToCartOutput
-    }
+mutation {
+  addDownloadableProductsToCart(
+    input: AddDownloadableProductsToCartInput
+  ) {
+    AddDownloadableProductsToCartOutput
+  }
 }
 ```
 
@@ -74,7 +74,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addDownloadableProductsToCart": {
@@ -160,7 +160,7 @@ mutation {
 
 **Response:**
 
-```text
+```json
 {
   "data": {
     "addDownloadableProductsToCart": {

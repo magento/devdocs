@@ -16,8 +16,13 @@ The release notes include:
 -  {:.new}New features
 -  {:.fix}Fixes and improvements
 
+## v1.1.2
+*Release date: September 9, 2020*<br/>
+
+-  {:.new}Added support for Elasticsearch 7.7<!--MCLOUD-6219-->
+
 ## v1.1.1
-*Release date: {{ site.data.var.ece-release-date }}*<br/>
+*Release date: August 5, 2020*<br/>
 
 -  {:.fix}**Updated email configuration**–Updated the default {{ site.var.ece.mcd-product }} configuration to support the MailHog service instead of using SendMail. See [Set up email]({{ site.baseurl }}/cloud/docker/docker-config.html#set-up-email).<!--MCLOUD-5624-->
 
