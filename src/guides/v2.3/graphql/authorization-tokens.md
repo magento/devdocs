@@ -39,7 +39,7 @@ mutation {
 
 You can now use this token in the Authorization request header field for any queries and mutations.
 
-![GraphiQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
+![GraphQL Authorization Bearer]({{site.baseurl}}/common/images/graphql/graphql-authorization.png)
 
 If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/mutations/revoke-customer-token.html
 
