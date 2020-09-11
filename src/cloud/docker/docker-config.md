@@ -109,8 +109,6 @@ When the MailHog service is installed, go to the following URL to open the servi
 
 You can change HTTP and SMTP exposed ports using `--mailhog-http-port`<br>`--mailhog-smtp-port` options.
 
-For example:
-
 ```bash
 ./vendor/bin/ece-docker build:compose --mailhog-smtp-port=1026 --mailhog-http-port=8026
 ```
