@@ -275,6 +275,9 @@ pages:
         - label: GroupedProduct data types
           url: /graphql/interfaces/grouped-product.html
 
+        - label: Virtual product data types
+          url: /graphql/interfaces/virtual-product.html
+
     - label: Payment methods
       children:
 
