@@ -33,7 +33,7 @@ You can use the same VCL for Production and Staging environments. See [How to co
 
 Use the following list to identify and troubleshoot issues related to the Fastly service configuration for your {{site.data.var.ece}} environment.
 
--  **Store menu does not display or work**—You might be using a link or temp link directly to the origin server instead of using the live site URL, or you used `-H "host:URL"` in a [cURL command](#curl). If you bypass Fastly to the origin server, the main menu does not work and incorrect headers display that allow caching on the browser side.
+-  **Store menu does not display or work**—You might be using a link or temp link directly to the origin server instead of using the live site URL, or you used `-H "host:URL"` in a [cURL command](#curl-live). If you bypass Fastly to the origin server, the main menu does not work and incorrect headers display that allow caching on the browser side.
 
 -  **Top level navigation does not work**—The top level navigation relies on Edge Side Includes (ESI) processing which is enabled when you upload the default Magento Fastly VCL snippets. If the navigation is not working, [upload the Fastly VCL]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) and recheck the site.
 
@@ -139,8 +139,11 @@ To check the response headers:
    If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
 
    ```bash
-   curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
+   curl -svo /dev/null --resolve '<your_hostname>:443:<IP-address-of-cache-node>' <https-URL>
    ```
+
+   {:.bs-callout-info}
+   To use this command with the `--resolve` option, you must have TLS enabled with Fastly via a SSL/TLS certificate and find the IP address of the cache node.
 
 1. In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
 
@@ -155,50 +158,11 @@ If the headers do not have the correct values, see the following information:
 
 -  [X-Cache contains only MISS, no HIT](#xcache-miss)
 
-### Bypass Fastly to check Staging and Production sites {#cloud-test-stage}
+### Bypass Fastly cache to check Staging and Production sites {#cloud-test-stage}
 
-If the Fastly service returns incorrect headers, you can create a VCL snippet that allows you to submit a Fastly API request directly to the origin server from a specified IP address, bypassing the Fastly CDN service. See [Bypass Fastly]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html).
+If the Fastly service returns incorrect headers, you can create a VCL snippet that allows you to submit requests that bypass the Fastly cache. See [Bypass Fastly cache]({{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html).
 
-After you add the VCL snippet, you can use cURL commands to submit requests to the origin from the specified IP address.
-
-{:.procedure}
-To check the response headers:
-
-1. To get the response data, submit an API request to the origin server:
-
-   -  **Staging**
-
-      ```bash
-      curl http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-      ```
-
-   -  **Production**
-
-      Submit the following request to test the load balancer:
-
-      ```bash
-      curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-      ```
-
-      Submit the following request to test a direct Origin node:
-
-      ```bash
-      curl http[s]:<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-      ```
-
-      For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
-
-      ```bash
-      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
-      ```
-
-      If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:
-
-      ```bash
-      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
-      ```
-
-1. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).
+After you add the VCL snippet, use cURL commands to submit requests to the origin server from the specified IP address. Then, check the responses for errors.
 
 ### Check cache HIT and MISS response headers {#response-headers}
 
@@ -290,7 +254,7 @@ If the `X-Cache` header contains `HIT` (`HIT, HIT` or `HIT, MISS`), it indicates
 
 If the `X-Cache` header is `MISS, MISS` and does not contain `HIT`, run the `curl` command again to make sure the page was not recently purged from the cache.
 
-If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
+If you get the same result, use the [`curl` commands](#curl-live) and verify the [response headers](#response-headers):
 
 -  `Pragma` is `cache`
 -  `X-Magento-Tags` exists
@@ -314,7 +278,7 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
    -  Enable one extension at a time, save the configuration, and flush the Magento cache.
 
-   -  Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
+   -  Run the [`curl` commands](#curl-live) to verify the [response headers](#response-headers).
 
    Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
