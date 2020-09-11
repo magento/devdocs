@@ -19,13 +19,21 @@ Perform the following actions before using the `placeOrder` mutation:
 
 ## Syntax
 
-`mutation: {placeOrder(input: PlaceOrderInput): {PlaceOrderOutput}}`
+```graphql
+mutation {
+  placeOrder(
+    input: PlaceOrderInput
+  ) {
+    PlaceOrderOutput
+  }
+}
+```
 
 ## Example usage
 
 **Request:**
 
-``` text
+```graphql
 mutation {
   placeOrder(
     input: {

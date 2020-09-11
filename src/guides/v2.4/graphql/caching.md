@@ -5,9 +5,12 @@ title: GraphQL caching
 
 Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
-## Cached queries
+## Cached and uncached queries
 
 The definitions for some queries include cache tags. Full page caching uses these tags to keep track of cached content. They also allow public content to be invalidated. Private content invalidation is handled on the client side.
+
+{:.bs-callout-info}
+GraphQL allows you to make multiple queries in a single call. If you specify any query that Magento does not cache, Magento bypasses the cache for all queries in the call.
 
 Magento caches the following queries:
 
@@ -38,7 +41,7 @@ Magento explicitly disallows caching the following queries.
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
-As of Magento 2.3.2, Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
+Magento supports GraphQL caching with Varnish. If you have upgraded from a previous version, you can enable GraphQL caching by generating a new template file, or by editing the `default.vcl` file on your system to match the current default template for your version of Varnish.
 
 If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
 

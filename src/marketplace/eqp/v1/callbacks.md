@@ -65,7 +65,7 @@ Authorization: Basic a2V5OnNlY3JldA==
 Each event has a unique code provided in the `callback_event` field.
 The `update_info` object has a different structure, depending on the event code.
 Resource IDs are provided in the `update_info` structure so that additional
-information can be requested using the REST APIs for those resources.
+information can be requested using the API endpoints for those resources.
 
 ### File upload callbacks
 

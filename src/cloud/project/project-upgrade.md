@@ -47,7 +47,7 @@ After upgrading, you can remove the `config.php` file and generate a new, comple
 
 ### Update the configuration file
 
-If you are upgrading from an older version of Magento to 2.2.x or later, you must also update your [.magento.app.yaml] file or you might encounter errors. {{site.data.var.ece}} 2.2.x and later has new settings in the file.
+When you upgrade, you might need to update your [.magento.app.yaml] file to account for changes in the default configuration settings that are sometimes introduced to support changes in {{site.data.var.ece}} or the Magento application.
 
 {:.procedure}
 To update the `.magento.app.yaml` file:
@@ -77,11 +77,22 @@ To update the `.magento.app.yaml` file:
 
 1. Add the following environment variables to the end of the `magento.app.yaml` file.
 
+   For Magento 2.2.x - 2.3.x–
+
    ```yaml
    variables:
        env:
            CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
            CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+           CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+    ```
+
+   For Magento 2.4.x–
+
+   ```yaml
+   variables:
+       env:
+           CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
     ```
 
@@ -289,12 +300,12 @@ To resolve the error:
    ```
 
 <!--Link definitions-->
-[.magento.app.yaml]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html
+[.magento.app.yaml]: {{site.baseurl}}/cloud/project/magento-app.html
 [Configuration Management]: {{site.baseurl}}/cloud/live/sens-data-over.html
 [Examine the logs]: {{site.baseurl}}/cloud/project/log-locations.html
-[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options
+[extensions section of the .magento.app.yaml file]: {{site.baseurl}}/cloud/project/magento-app.html#configure-php-options
 [Fastly CDN module for Magento 2]: {{site.baseurl}}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2
 [Migration of Zend Framework to the Laminas Project]: https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251
 [Upgrades and patches]: {{site.baseurl}}/cloud/project/project-upgrade-parent.html
-[version compatibility matrix]: {{site.baseurl}}/cloud/project/project-conf-files_services.html#service-versions
+[version compatibility matrix]: {{site.baseurl}}/cloud/project/services.html#service-versions
 [version constraint syntax]: {{site.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage
