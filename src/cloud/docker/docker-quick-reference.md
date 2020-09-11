@@ -51,6 +51,7 @@ docker-compose -f docker-compose.yml -f docker-compose-custom.yml [-f more-custo
 | [Mode][]         | `--mode`, `-m`   | production, developer
 | [File synchronization engine][] | `--sync-engine` | native (default), docker-sync, mutagen
 | Specify a custom URL for Magento | `--host`<br>`--port`
+| Specify custom HTTP and SMTP ports for MailHog | `--mailhog-http-port`<br>`--mailhog-smtp-port`
 
 {:.bs-callout-info}
 See [Service versions] for a list of service configuration options you can add to the `ece-docker build:compose` command to customize the Cloud Docker environment configuration.
