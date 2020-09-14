@@ -8,13 +8,13 @@ functional_areas:
 ---
 
 {:.bs-callout-warning}
-To maintain PCI compliance for Magento sites deployed on the Cloud platform, you must [set up Fastly] on your Starter master, Pro Production, and Pro Staging environments. If you are using {{site.data.var.ee}} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly] in the *GraphQL Developer Guide*.
+To maintain PCI compliance for Magento sites deployed on the Cloud platform, you must [set up Fastly] on your Starter master, Pro Production, and Pro Staging environments. If you are using {{ site.data.var.ee }} in a headless deployment, we highly recommend that you use Fastly to cache GraphQL responses. See [Caching with Fastly] in the *GraphQL Developer Guide*.
 
 Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
 
 -  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features:
 
-   -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
+   -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwidth load and costs
 
    -  Use [Fastly custom VCL snippets] (Varnish 2.1 compliant) to modify how caching responds to requests
 
@@ -64,7 +64,7 @@ To change the Fastly API token credential:
 
    Include your {{ site.data.var.ece }} project ID and the environments that require a new credential.
 
-1. After you receive the new API token, update the API token value in the [Fastly credentials configuration in the Magento Admin UI] or from the [Project Web UI environment configuration variables].
+1. After you receive the new API token, update the API token value in the [Fastly credentials configuration] in the Magento Admin UI or from the [Project Web UI environment configuration variables].
 
 1. [Test the new credential].
 
@@ -104,20 +104,18 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 -  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
--  Fastly also provides protection against Layer 7 attacks. If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a Magento support ticket. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks] and [How to block malicious traffic] in the *Magento Help Center*.
+-  Fastly also provides protection against Layer 7 attacks. If your Magento store is experiencing performance issues and you suspect a Layer 7 DDoS attack, submit a Magento support ticket. Magento can create and apply custom rules to the Fastly service to inspect for and filter out malicious requests based on header, payload, or a combination of attributes that identify the attack traffic. See [Checking for DDoS attacks][] and [How to block malicious traffic] in the *Magento Help Center*.
 
-<!-- Link definitions -->
-
+<!--Link definitions-->
 [bypass the Fastly cache]: {{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html
 [Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
-[Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
 [Checking for DDoS attacks]: https://support.magento.com/hc/en-us/articles/360030941932
-[Customize Fastly timeout]:
-{{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout
+[custom error response pages]: {{site.baseurl}}/cloud/cdn/cloud-fastly-custom-response.html
+[Customize Fastly timeout]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout
 [Fastly CDN module for Magento 2]: https://github.com/fastly/fastly-magento2
-[Fastly credentials configuration in the Magento Admin UI]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
+[Fastly credentials configuration]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [Fastly custom VCL snippets]: {{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html
-[Fastly image optimization]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
+[Fastly image]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
 [Fastly support ticket]: https://docs.fastly.com/products/support-description-and-sla#support-requests
 [Force unencrypted requests over to TLS]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#force-tls
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
@@ -126,14 +124,13 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Magento support ticket]: https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket
 [New Relic]: {{site.baseurl}}/cloud/project/new-relic.html
 [Project Web UI environment configuration variables]: {{site.baseurl}}/cloud/project/projects.html#environment-configuration-variables
-[Set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
+[purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
+[set up Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html
 [Submit a support ticket]: https://support.magento.com/hc/en-us/articles/360019088251-Submit-a-support-ticket
 [Test the new credential]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
-[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#fastly-tls
+[TLS and Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#tls-and-fastly
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
 [Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
-[custom error response pages]: {{site.baseurl}}/cloud/cdn/cloud-fastly-custom-response.html
-[purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [test the Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials

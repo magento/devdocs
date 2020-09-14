@@ -145,7 +145,7 @@ CNAME records cannot be set for apex domains, also referred to as a naked or bas
 
 Refer to [Go live checklist]({{ site.baseurl }}/cloud/live/site-launch-checklist.html) for more information.
 
-### TLS and Fastly {#fastly-tls}
+### TLS and Fastly
 
 To enable the Fastly service to serve secure traffic over HTTPS, your environment must have a Domain-Validated SSL/TLS certificate. Magento provides an automated process to validate domain ownership, provision a Let's Encyrpt SSL/TLS certificate, and apply it to your Cloud environment. This automation requires you to supply information to enable domain validation using **one** of the following methods:
 

@@ -48,7 +48,7 @@ Another option for apex domain is to add A records, which maps a domain name to 
 -  `151.101.129.124`
 -  `151.101.193.124`
 
-### TLS and Fastly {#fastly-tls}
+### TLS and Fastly
 
 Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
