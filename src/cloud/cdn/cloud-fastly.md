@@ -112,7 +112,8 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
 [Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
 [Checking for DDoS attacks]: https://support.magento.com/hc/en-us/articles/360030941932
-[Customize Fastly timeout]: {{site.baseurl}}/cloud/cdn//configure-fastly-customize-cache.html#extend-fastly-timeout
+[Customize Fastly timeout]:
+{{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout
 [Fastly CDN module for Magento 2]: https://github.com/fastly/fastly-magento2
 [Fastly credentials configuration in the Magento Admin UI]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [Fastly custom VCL snippets]: {{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html

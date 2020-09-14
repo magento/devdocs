@@ -18,7 +18,7 @@ Fastly provides the _Force TLS_ option to redirect unencrypted requests (HTTP) t
 {:.bs-callout-info}
 Enabling this option is a recommended best practice for Magento Commerce stores.
 
-## Extend Fastly timeout for Magento Admin
+## Extend Fastly timeout
 
 The default Fastly service configuration specifies a 180 second-timeout period for HTTPS requests to the Magento Admin. Any request processing that exceeds the timeout period, returns a 503 error.
 As a result, you might get 503 errors when attempting operations that require
