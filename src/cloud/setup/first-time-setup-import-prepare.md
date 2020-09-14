@@ -23,9 +23,9 @@ The import preparation steps include the following:
 
 To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you must add the following files to your existing code:
 
--  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html)—manages applications, service relationships, mounts for writable directories, and cron jobs
--  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_services.html)—for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
--  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/project-conf-files_routes.html)—for handling routes including redirections, caching, and server-side includes
+-  [`.magento.app.yaml`]({{ site.baseurl }}/cloud/project/magento-app.html)—manages applications, service relationships, mounts for writable directories, and cron jobs
+-  [`.magento/services.yaml`]({{ site.baseurl }}/cloud/project/services.html)—for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
+-  [`.magento/routes.yaml`]({{ site.baseurl }}/cloud/project/routes.html)—for handling routes including redirections, caching, and server-side includes
 -  [`magento-vars.php`]({{ site.baseurl }}/cloud/project/project-multi-sites.html)—for multiple websites and stores
 
 Add these files to your {{site.data.var.ee}} code:

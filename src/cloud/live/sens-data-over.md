@@ -167,7 +167,7 @@ This process **overwrites** the store configuration; only do the following if th
 
 [admin]: {{ site.baseurl }}/cloud/project/user-admin.html
 [auth]: {{ site.baseurl }}/cloud/setup/first-time-setup-import-prepare.html#auth-json
-[app-yaml]: {{ site.baseurl }}/cloud/project/project-conf-files_magento-app.html
+[app-yaml]: {{ site.baseurl }}/cloud/project/magento-app.html
 [commerce-dump]: {{ site.baseurl }}/guides/v2.3/reference/cli/magento-commerce.html#appconfigdump
 [env-yaml]: {{ site.baseurl }}/cloud/project/magento-env-yaml.html
 [export]: {{ site.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html

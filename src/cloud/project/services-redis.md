@@ -4,6 +4,8 @@ title: Set up Redis service
 functional_areas:
   - Cloud
   - Setup
+redirect_from:
+  - /cloud/project/project-conf-files_services-redis.html 
 ---
 
 [Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which is used in Magento 2 by default.
@@ -46,7 +48,7 @@ To enable Redis:
    git add -A && git commit -m "Enable redis service" && git push origin <branch-name>
    ```
 
-1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/project-conf-files_services.html#service-relationships).
+1. [Verify the service relationships]({{ site.baseurl }}/cloud/project/services.html#service-relationships).
 
 {%include cloud/tip-change-installed-service-version.md%}
 

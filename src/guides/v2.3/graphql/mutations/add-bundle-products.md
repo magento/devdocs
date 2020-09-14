@@ -9,7 +9,15 @@ Use the `addBundleProductsToCart` mutation to add bundle products to a specific 
 
 ## Syntax
 
-`mutation: {addBundleProductsToCart(input: AddBundleProductsToCartInput): {AddBundleProductsToCartOutput}}`
+```graphql
+mutation {
+  addBundleProductsToCart(
+    input: AddBundleProductsToCartInput
+  ) {
+    AddBundleProductsToCartOutput
+  }
+}
+```
 
 ## Example usage
 
