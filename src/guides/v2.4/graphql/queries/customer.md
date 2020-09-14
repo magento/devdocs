@@ -74,10 +74,114 @@ The following call returns information about the logged-in customer. Provide the
   }
 }
 ```
+### Retrieve a summary of the customer's order history
 
-### Retrieve detailed information about a previous order
+The following example returns a summary of the logged-in customer's previous orders.
 
-The following example returns an order the logged-in user previously made.
+**Request:**
+
+```graphql
+query {
+  customer {
+    orders(
+      pageSize: 20
+    ) {
+      items {
+        id
+        order_date
+        total {
+          grand_total {
+            value
+            currency
+          }
+        }
+        status
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "customer": {
+      "orders": {
+        "items": [
+          {
+            "id": "MQ==",
+            "order_date": "2020-03-18 17:25:20",
+            "total": {
+              "grand_total": {
+                "value": 36.39,
+                "currency": "USD"
+              }
+            },
+            "status": "Complete"
+          },
+          {
+            "id": "Mg==",
+            "order_date": "2020-03-18 17:25:20",
+            "total": {
+              "grand_total": {
+                "value": 39.64,
+                "currency": "USD"
+              }
+            },
+            "status": "Closed"
+          },
+          {
+            "id": "Mw==",
+            "order_date": "2020-03-21 22:41:38",
+            "total": {
+              "grand_total": {
+                "value": 205.68,
+                "currency": "USD"
+              }
+            },
+            "status": "Pending"
+          },
+          {
+            "id": "NA==",
+            "order_date": "2020-08-03 02:35:35",
+            "total": {
+              "grand_total": {
+                "value": 159.13,
+                "currency": "USD"
+              }
+            },
+            "status": "Complete"
+          },
+          {
+            "id": "NQ==",
+            "order_date": "2020-09-08 03:57:11",
+            "total": {
+              "grand_total": {
+                "value": 132.57,
+                "currency": "USD"
+              }
+            },
+            "status": "Complete"
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Retrieve detailed information about a specific order
+
+The following example returns details about one of the customer's previous orders.
+
+These topics contain examples with fragments and provide even more details:
+
+*  [CreditMemoItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/credit-memo-item-interface.html)
+*  [InvoiceItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/invoice-item-interface.html)
+*  [OrderItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/order-item-interface.html)
+*  [ShipmentItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/shipment-item-interface.html)
 
 **Request:**
 
@@ -88,7 +192,6 @@ The following example returns an order the logged-in user previously made.
       total_count
       items {
         id
-        carrier
         number
         order_date
         status
@@ -107,6 +210,7 @@ The following example returns an order the logged-in user previously made.
           quantity_invoiced
           quantity_shipped
         }
+        carrier
         shipments {
           id
           number
@@ -185,10 +289,10 @@ The following example returns an order the logged-in user previously made.
         "items": [
           {
             "id": "MQ==",
-            "carrier": null,
+            "carrier": "Flat Rate",
             "number": "000000001",
             "order_date": "2020-03-18 17:25:20",
-            "status": "Processing",
+            "status": "Complete",
             "items": [
               {
                 "product_name": "Iris Workout Top",
@@ -203,7 +307,18 @@ The following example returns an order the logged-in user previously made.
                 "quantity_shipped": 1
               }
             ],
-            "shipments": null,
+            "shipments": [
+              {
+                "id": "MDAwMDAwMDAx",
+                "number": "000000001",
+                "items": [
+                  {
+                    "product_name": "Iris Workout Top",
+                    "quantity_shipped": 1
+                  }
+                ]
+              }
+            ],
             "total": {
               "base_grand_total": {
                 "value": 36.39,
