@@ -121,6 +121,7 @@ To check and update Zend Framework dependencies:
          "Magento\\Framework\\": "lib/internal/Magento/Framework/",
          "Magento\\Setup\\": "setup/src/Magento/Setup/",
          "Magento\\": "app/code/Magento/",
+         "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/",
    +     "Laminas\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
       },
    ```
