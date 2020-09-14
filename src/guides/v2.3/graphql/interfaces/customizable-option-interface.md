@@ -134,25 +134,13 @@ Attribute | Type | Description
 
 ## CustomizableFileOption object
 
-`CustomizableFileOption` contains information about a file picker that is defined as part of a customizable option.
-
-Attribute | Type | Description
---- | --- | ---
-`product_sku` | String | The Stock Keeping Unit of the base product
-`value` | `CustomizableFileValue` | An object that defines a file name
+{:.bs-callout-info}
+The `CustomizableFileOption` object is not supported.
 
 ### CustomizableFileValue object
 
-`CustomizableFileValue` defines the attributes of a product whose page contains a customized file picker.
-
-Attribute | Type | Description
---- | --- | ---
-`file_extension` | String | The file extension to accept
-`image_size_x` | Int | The maximum width of an image
-`image_size_y` | Int | The maximum height of an image
-`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
-`price` | Float | The price assigned to this option
-`sku` | String | The Stock Keeping Unit for this option
+{:.bs-callout-info}
+The `CustomizableFileValue` object is not supported.
 
 ## CustomizableMultipleOption object
 
