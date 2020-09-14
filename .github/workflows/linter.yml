@@ -50,3 +50,4 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           VALIDATE_HTML: false
+          VALIDATE_MD: false
