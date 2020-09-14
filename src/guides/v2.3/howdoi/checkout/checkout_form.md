@@ -123,12 +123,15 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="custom-form" xsi:type="array">
+                                                                <item name="custom-checkout-form-container" xsi:type="array">
                                                                     <!-- Add this item to configure your js file  -->
                                                                     <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- And this to add your html template  -->
                                                                         <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
+                                                                    </item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <!-- Here we will add the form fields  -->
                                                                     </item>
                                                                 </item>
                                                             </item>
@@ -162,17 +165,12 @@ The term static refers to the forms where all the fields are already known/prede
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
-The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
+The following code sample shows configuration of the `custom-checkout-form-container` form that was defined in the previous step, that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
 ```xml
-<item name="custom-checkout-form-container" xsi:type="array">
-    <!-- Your JS file previously created -->
-    <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
-    <item name="provider" xsi:type="string">checkoutProvider</item>
-    <item name="config" xsi:type="array">
-        <!-- Your HTML file previously created -->
-        <item name="template" xsi:type="string">%your_module_dir%/custom-checkout-form</item>
-    </item>
+...
+    <item name="custom-checkout-form-container" xsi:type="array">
+    ...
     <item name="children" xsi:type="array">
         <item name="custom-checkout-form-fieldset" xsi:type="array">
             <!-- uiComponent is used as a wrapper for form fields (its template will render all children as a list) -->
@@ -257,6 +255,7 @@ The following code sample shows configuration of the form that contains four fie
         </item>
     </item>
 </item>
+...
 ```
 
 ### Dynamically defined forms {#dynamic_form}
