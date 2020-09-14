@@ -434,7 +434,7 @@ A Magento introspection query returns the same result whether or not you assign 
 
 ### Disable introspection querying
 
-Introspection querying is enabled by default. To disable it in production mode to improve security, add the following to your `env.php` file.
+Introspection querying is enabled by default. To disable it in production mode to improve security, add the following to your `app/etc/env.php` file.
 
 ```php
 'graphql' => [
