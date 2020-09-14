@@ -58,7 +58,7 @@ This [metapackage](https://glossary.magento.com/metapackage) requires Magento ap
 This module manages the Fastly CDN & services for the Pro Staging and Production and Starter Production environments. See [Fastly Documentation]({{ site.baseurl }}/cloud/cdn/cloud-fastly.html).
 
 ## vendor/magento/module-paypal-on-boarding
-This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html). 
+This module provides PayPal payment gateway checkout by connecting to your PayPal merchant account. See [PayPal On-Boarding tool]({{ site.baseurl }}/cloud/live/paypal-onboarding.html).
 
 ## Base packages and file marshalling
 
