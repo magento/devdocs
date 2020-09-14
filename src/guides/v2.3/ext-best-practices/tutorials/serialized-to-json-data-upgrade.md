@@ -55,6 +55,7 @@ Inside the file, create the class `UpgradeData` which implements `\Magento\Frame
 Example upgrade script content:
 
 {% collapsible Show upgrade script content%}
+
 ```php
 namespace Magento\CustomModule\Setup;
 
@@ -117,6 +118,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
     }
 }
 ```
+
 {% endcollapsible %}
 
 ## Step 2: Check that the module exists {#step-2}
@@ -274,6 +276,7 @@ This field contains nested serialized data that needs conversion.
 Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.
 
 {% collapsible Show code %}
+
 ```php
 namespace Magento\CustomModule\Setup;
 
@@ -356,6 +359,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
     }
 }
 ```
+
 {% endcollapsible %}
 
 After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter:
