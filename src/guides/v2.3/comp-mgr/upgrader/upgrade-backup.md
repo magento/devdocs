@@ -15,4 +15,3 @@ functional_areas:
 Related topics
 
 After your backup is complete, continue with [Step 4. Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade.html).
-
