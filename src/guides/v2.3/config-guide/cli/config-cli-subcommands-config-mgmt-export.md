@@ -13,7 +13,7 @@ In Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}/config-g
 bin/magento app:config:dump {config-types}
 ```
 
-_config_types_ is a space-separated list of config types to dump. Available types include `scopes`, `system` `themes` and `i18n`. If no config types are specified, the command dumps all system configuration information.
+_config_types_ is a space-separated list of config types to dump. Available types include `scopes`, `system`, `themes`, and `i18n`. If no config types are specified, the command dumps all system configuration information.
 
 The following example dumps scopes and themes only:
 
