@@ -9,7 +9,7 @@ namespace :multirepo do
     protocol = ENV['token'] ? "https://#{ENV['token']}@github.com/" : 'git@github.com:'
     @content_map.each do |subrepo|
       repo_url = protocol + subrepo['repository'] + '.git'
-      add_subrepo(subrepo['directory'], repo_url , subrepo['branch'], subrepo['filter'])
+      add_subrepo(subrepo['directory'], repo_url, subrepo['branch'], subrepo['filter'])
     end
   end
 
@@ -33,7 +33,9 @@ namespace :multirepo do
 
     abort 'Provide a directory name for the multirepo docs. Example: dir=src/mftf' unless dir
     abort "'#{dir}' directory already exists" if Dir.exist? dir
-    abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git' unless repo
+    unless repo
+      abort 'Provide a repository cloning URL (SSH).Example: repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git'
+    end
     abort 'Provide a branch name for the multirepo docs. Example: branch=master' unless branch
 
     add_subrepo(dir, repo, branch, filter)
@@ -43,9 +45,7 @@ end
 def add_subrepo(dir, repo, branch, filter)
   filter_text = filter ? 'some' : 'all'
   puts "Checking out #{filter_text} files from #{repo} (#{branch} branch) to the #{dir} directory ...".magenta
-  sh('./scripts/docs-from-code.sh', dir, repo, branch, filter.to_s) do |ok,res|
-    if !ok
-      abort "Couldn't checkout files for the #{repo} project".red
-    end
+  sh('./scripts/docs-from-code.sh', dir, repo, branch, filter.to_s) do |ok, _res|
+    abort "Couldn't checkout files for the #{repo} project".red unless ok
   end
 end

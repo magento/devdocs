@@ -19,7 +19,7 @@ Separate each field or object with a comma.
 
 On POST and PUT requests, Magento ignores the `fields` parameter as input, but the response includes only the requested fields and objects.
 
-# Examples
+## Examples
 {:.no_toc}
 
 All examples use {{site.data.var.ce}} sample data.
