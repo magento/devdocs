@@ -56,7 +56,7 @@ Like all of Magento, Product Recommendations uses Composer for installation and 
 composer update magento/product-recommendations --with-dependencies
 ```
 
-If you need to update to a major version, such as from 2.0 to 3.0, you need to edit your project's root `composer.json` file. (See the [release notes]({{ page.baseurl }}/recommendations/release-notes.html) for information about the latest version.) For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
+To update to a major version, such as from 2.0 to 3.0, you must edit your project's root `composer.json` file. (See the [release notes]({{ page.baseurl }}/recommendations/release-notes.html) for information about the latest version.) For example, let's open the main `composer.json` file and search for the `magento/product-recommendations` module:
 
 ```json
 "require": {
