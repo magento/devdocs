@@ -165,7 +165,7 @@ The term static refers to the forms where all the fields are already known/prede
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
-The following code sample shows configuration of the `custom-checkout-form-container` form that was defined in the previous step, that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
+The following code sample shows the configuration of the `custom-checkout-form-container` form, defined in the previous step. It contains four fields: a text input, a select, a checkbox, and a date field. This form uses the checkout data provider (`checkoutProvider`) that was introduced in the `Magento_Checkout` module:
 
 ```xml
 ...
