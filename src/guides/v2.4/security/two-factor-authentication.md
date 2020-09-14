@@ -13,9 +13,6 @@ Two-Factor Authentication gives you the ability to:
 -  Manage and configure authenticator settings globally or per user account.
 -  Reset authenticators for users.
 
-{:.bs-callout-info}
-**Magento Community Contribution** - Magento thanks [Riccardo Tempesta](https://twitter.com/rictempesta) of [MageSpecialist](https://partners.magento.com/portal/details/partner/index/id/129/) for contributing these features as part of the Magento Community Engineering program.
-
 ## Magento Admin Workflows
 
 Magento has new workflows for _Admin_ users, including:

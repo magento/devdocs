@@ -50,9 +50,13 @@ Another option for apex domain is to add A records, which maps a domain name to 
 
 ### TLS and Fastly {#fastly-tls}
 
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GlobalSign. When entering your [Support ticket](#dns) for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+Magento provides a Let's Encrypt SSL/TLS certificate for each environment. This certificate is required for Fastly to serve secure traffic over HTTPS.
 
-For details on this TXT record, see Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification).
+To use this certificate, you must update your DNS configuration so that Magento can complete domain validation and apply the certificate to your environment. Each environment has a unique certificate that covers the domains for the Magento Commerce sites deployed in that environment.
+
+<!--Note:  The Configure DNS for Fastly service integration topic is coming in later PR-->
+
+See [Configure DNS for Fastly service integration]({{ site.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Verify Production configurations
 
