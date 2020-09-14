@@ -342,7 +342,7 @@ pages:
 
         - label: GroupedProduct data types
           url: /graphql/interfaces/grouped-product.html
-          
+
         - label: Simple product data types
           url: /graphql/interfaces/simple-product.html
 
