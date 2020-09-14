@@ -22,15 +22,4 @@ Staging system
 : _Optional_. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doesn't process orders from customers, it's identical to production.
 
 Production system
-: Your live store. You should make minimal configuration changes here and no changes to:
-
-   -  websites
-   -  stores
-   -  store views
-   -  products
-   -  product view settings
-   -  catalog
-   -  categories
-   -  category view settings.
-
- You should make all those types of changes in your development system.
+: Your live store. You should make minimal direct configuration changes here and certainly nothing that has not been tested on a Staging instance. If possible configuration changes should be made using [Data Patches](https://devdocs.magento.com/guides/v2.4/extension-dev-guide/declarative-schema/data-patches.html) that have been tested on a Staging/Development instance.
