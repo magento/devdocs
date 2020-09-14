@@ -225,7 +225,7 @@ entries:
   contributor: jfrontain
   profile: https://github.com/jfrontain
 - description: Added documentation for aggregated logs and the New Relic Logs service
-    for Pro Production and Staging environments.  See [New Relic services](https://devdocs.magento.comcloud/project/new-relic.html).
+    for Pro Production and Staging environments.  See [New Relic services](https://devdocs.magento.com/cloud/project/new-relic.html).
   versions: 2.x
   type: Major Update
   date: July 28, 2020
