@@ -416,7 +416,7 @@ The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patc
    -  <!-- MAGECLOUD-2047 --> Added the [DATABASE_CONFIGURATION]({{ site.baseurl }}/cloud/env/variables-deploy.html#database_configuration) environment variable to customize your database connections for deployment.
    -  <!-- MAGECLOUD-2129 -->The new [MIN_LOGGING_LEVEL]({{ site.baseurl }}/cloud/env/variables-global.html#min_logging_level) variable overrides the minimum logging level for all output streams without making changes to the code.
 
--  {:.fix}Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the post_deploy phase begins _immediately_ after the deploy phase ends.
+-  {:.fix}Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the post-deploy phase begins _immediately_ after the deploy phase ends.
 
 -  {:.fix}<!-- MAGECLOUD-2268 -->Fixed an issue that did not clean the successful cron jobs, those with `status = success`, from the schedule.
 
@@ -459,10 +459,10 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 -  {:.fix}**SCD-specific improvements**—
 
-   -  <!-- MAGECLOUD-1819 -->You can use the `VERBOSE_COMMANDS` and the `SCD_COMPRESSION_LEVEL` environment variables during both _build_ and _deploy_ phases.
+   -  <!-- MAGECLOUD-1819 -->You can use the `VERBOSE_COMMANDS` and the `SCD_COMPRESSION_LEVEL` environment variables during both *build* and *deploy* phases.
    -  <!-- MAGECLOUD-2043 -->Fixed an issue that caused deployment to fail with a random error when encountering an unexpected value for the `SCD_COMPRESSION_LEVEL` environment variable. Improved the configuration validation to provide meaningful notifications. See [`SCD_COMPRESSION_LEVEL`]({{ site.baseurl }}/cloud/env/variables-build.html#scd_compression_level) for acceptable values.
    -  <!-- MAGECLOUD-2044 -->Fixed the behavior of the `SCD_COMPRESSION_LEVEL` environment variable configuration flow so the overrides work as expected.
-   -  <!-- MAGECLOUD-2046 -->Fixed an issue that prevented the configuration of the `SCD_THREADS` environment variable in the `.magento.env.yaml` file _deploy_ stage.
+   -  <!-- MAGECLOUD-2046 -->Fixed an issue that prevented the configuration of the `SCD_THREADS` environment variable in the `.magento.env.yaml` file *deploy* stage.
 
 ## v2002.0.10
 
@@ -470,7 +470,7 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
    -  <!-- MAGECLOUD-1738 -->**New environment variable**—Added the `SCD_ON_DEMAND` global environment variable to generate static content when requested.
 
-   -  <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache _after_ the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web Interface and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+   -  <!-- MAGECLOUD-1788 -->**Post-deploy hook**—Added a `post_deploy` hook for the `.magento.app.yaml` file that clears the cache and pre-loads (warms) the cache *after* the container begins accepting connections. It is available only for Pro projects that contain Staging and Production environments in the Project Web Interface and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 -  {:.new}<!-- MAGECLOUD-1842 -->**Optimization**—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.
 

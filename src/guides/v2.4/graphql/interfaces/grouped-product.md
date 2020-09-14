@@ -30,4 +30,3 @@ Attribute | Type | Description
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
 {% include graphql/grouped-product-sample.md %}
-
