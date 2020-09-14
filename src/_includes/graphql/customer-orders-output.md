@@ -67,38 +67,6 @@ Attribute | Data type | Description
 
 The deprecated attributes were previously defined in the `CustomerOrder` object in the `customerOrders` query, but have been deprecated for the `customer` query.
 
-#### BundleCreditMemoItem attributes {#BundleCreditMemoItem}
-
-The `BundleCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
-
-#### BundleInvoiceItem attributes {#BundleInvoiceItem}
-
-The `BundleInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
-
-#### BundleOrderItem attributes {#BundleOrderItem}
-
-The `BundleOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
-
-#### BundleShipmentItem {#BundleShipmentItem}
-
-The `BundleShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`bundle_options` | [[ItemSelectedBundleOption]](#ItemSelectedBundleOption) | A list of bundle options that are assigned to the bundle product
-
 #### CreditMemo attributes {#CreditMemo}
 
 The `CreditMemo` object contains details about credit memos applied to an order.
@@ -107,26 +75,17 @@ Attribute | Data type | Description
 --- | --- | ---
 `comments` | [[SalesCommentItem](#SalesCommentItem)] | Comments on the credit memo
 `id` | ID! | The unique ID of the credit memo
-`items` | [[CreditMemoItem](#CreditMemoItem)] | An array containing details about refunded items
+`items` | [[CreditMemoItemInterface](#CreditMemoItemInterface)] | An array containing details about refunded items
 `number` | String! | The sequential credit memo number
 `total` | [CreditMemoTotal](#CreditMemoTotal) | Contains details about the total refunded amount
 
 #### CreditMemoItemInterface attributes {#CreditMemoItemInterface}
 
-The `CreditMemoItemInterface` describes a specific credit memo.
+`CreditMemoItemInterface` defines the following attributes.
 
-Attribute | Data type | Description
---- | --- | ---
-`id` | ID! | The unique ID of the credit memo item
-`order_item` | [OrderItemInterface](#OrderItemInterface) | The order item the credit memo is applied to
-`product_name` | String | The name of the base product
-`product_sale_price` | Money! | The sale price for the base product, including selected options
-`product_sku` | String! | The SKU of the base product
-`quantity_refunded` | Float | The number of refunded items
+{% include graphql/credit-memo-item-interface.md %}
 
-#### CreditMemoItem attributes {#CreditMemoItem}
-
-The `CreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface).
+[CreditMemoItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/credit-memo-item-interface.html) provides additional information about the implementations of this interface.
 
 #### CreditMemoTotal attributes {#CreditMemoTotal}
 
@@ -153,84 +112,6 @@ Attribute | Data type | Description
 `amount` | Money! | The amount of the discount
 `label` | String! | A description of the discount
 
-#### DownloadableCreditMemoItem attributes {#DownloadableCreditMemoItem}
-
-The `DownloadableCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were refunded from the downloadable product
-
-#### DownloadableItemsLinks attributes {#DownloadableItemsLinks}
-
-The `DownloadableProductLinks` object defines characteristics of a downloadable product.
-
-Attribute | Data type | Description
---- | --- | ---
-`sort_order` | Int | A number indicating the sort order
-`title`| String | The display name of the link
-`uid` | ID! | A string that encodes option details
-
-#### DownloadableInvoiceItem attributes {#DownloadableInvoiceItem}
-
-The `DownloadableInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were invoiced from the downloadable product
-
-#### DownloadableOrderItem attributes {#DownloadableOrderItem}
-
-The `DownloadableOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`downloadable_links` | [[DownloadableItemsLinks]](#DownloadableItemsLinks) | A list of downloadable links that were ordered from the downloadable product
-
-#### GiftCardItem attributes {#GiftCardItem}
-
-The `GiftCardItem` object contains selected buyer-entered gift card properties for an order item.
-
-Attribute | Data type | Description
---- | --- | ---
-`message`| String | A message provided by the sender to the recipient
-`recipient_email` | String | The email provided for the recipient of a virtual gift card
-`recipient_name` | String | The name provided for the recipient of a physical or virtual gift card
-`sender_email` | String | The sender email provided for a virtual gift card
-`sender_name` | String | The sender name provided for a physical or virtual gift card
-
-#### GiftCardCreditMemoItem attributes {#GiftCardOrderItem}
-
-The `GiftCardCreditMemoItem` object implements the [`CreditMemoItemInterface`](#CreditMemoItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a refunded item
-
-#### GiftCardInvoiceItem attributes {#GiftCardInvoiceItem}
-
-The `GiftCardInvoiceItem` object implements the [`InvoiceItemInterface`](#InvoiceItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an invoiced item
-
-#### GiftCardOrderItem attributes {#GiftCardOrderItem}
-
-The `GiftCardOrderItem` object implements the [`OrderItemInterface`](#OrderItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for an order item
-
-#### GiftCardShipmentItem attributes {#GiftCardShipmentItem}
-
-The `GiftCardShipmentItem` object implements the [`ShipmentItemInterface`](#ShipmentItemInterface). It also defines the following attribute:
-
-Attribute | Data type | Description
---- | --- | ---
-`gift_card` | [GiftCardItem](#GiftCardItem) | Selected gift card properties for a shipped item
-
 ### GiftMessage attributes {#GiftMessage}
 
 {% include graphql/gift-message.md %}
@@ -251,24 +132,15 @@ Attribute | Data type | Description
 `number` | String! | The sequential number of the invoice
 `total` | [InvoiceTotal](#InvoiceTotal)! | Invoice total amount details
 
-#### InvoiceItem attributes {#InvoiceItem}
-
-The InvoiceItem object implements the `InvoiceItemInterface`. It does not add any attributes.
-
 #### InvoiceItemInterface {#InvoiceItemInterface}
 
-`InvoiceItemInterface` is implemented by the `InvoiceItem` and `BundleInvoiceItem` data types.
+`InvoiceItemInterface` defines the following attributes.
 
-Attribute | Data type | Description
---- | --- | ---
-`discounts` | [Discount] | Contains information about the final discount amount for the base product, including discounts on options
-`id` | ID! | The unique ID of the invoice item
-`order_item` | OrderItemInterface | Contains details about an individual order item
-`product_name` | String | The name of the base product
-`product_sale_price` | Money! | The sale price for the base product including selected options
-`product_sku` | String! | The SKU of the base product
-`product_type` | String | The type of product, such as simple, configurable, or bundle
-`quantity_invoiced` | Float |The number of invoiced items
+{% include graphql/invoice-item-interface.md %}
+
+[InvoiceItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/invoice-item-interface.html) provides additional information about the implementations of this interface.
+
+`InvoiceItemInterface` is implemented by the `InvoiceItem` and `BundleInvoiceItem` data types.
 
 #### InvoiceTotal attributes {#InvoiceTotal}
 
@@ -336,32 +208,13 @@ Attribute |  Data Type | Description
 `telephone` | String! | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
-#### OrderItem attributes {#OrderItem}
-
-The `OrderItem` data type implements the [`OrderItemInterface`](#OrderItemInterface).
-
 #### OrderItemInterface {#OrderItemInterface}
 
-`OrderItemInterface` is implemented by the `OrderItem` and `BundleOrderItem` data types.
+`OrderItemInterface` defines the following attributes.
 
-Attribute | Data type | Description
---- | --- | ---
-`discounts` | [Discount] | Final discount information for the product
-`entered_options` | [[OrderItemOption](#OrderItemOption)] | The entered option for the base product, such as a logo or image
-`id` | ID! | The unique identifier for the order item
-`product_name` | String | The name of the base product
-`product_sale_price` | Money! | The sale price of the base product, including selected options
-`product_sku` | String! | SKU of the base product
-`product_type` | String | The type of product, such as simple or configurable
-`product_url_key` | String | URL key of the base product
-`quantity_canceled` | Float | The number of canceled items
-`quantity_invoiced` | Float | The number of invoiced items
-`quantity_ordered` | Float | The number of units ordered for this item
-`quantity_refunded` | Float | The number of refunded items
-`quantity_returned` | Float | The number of returned items
-`quantity_shipped` | Float | The number of shipped items
-`selected_options` | [OrderItemOption] | The selected options for the base product, such as color or size
-`status` | String | The status of the order item
+{% include graphql/order-item-interface.md %}
+
+[OrderItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/order-item-interface.html) provides additional information about the implementations of this interface.
 
 #### OrderItemOption attributes {#OrderItemOption}
 
@@ -491,20 +344,13 @@ Attribute | Data type | Description
 `page_size` | Int | Specifies the maximum number of items to return
 `total_pages` | Int | Total pages
 
-#### ShipmentItem attributes {#ShipmentItem}
-
-The `ShipmentItem` data type implements the [`ShipmentItemInterface`](#ShipmentItemInterface).
-
 #### ShipmentItemInterface attributes {#ShipmentItemInterface}
 
-Attribute | Data type | Description
---- | --- | ---
-`id` | ID! | The unique ID of the shipment item
-`order_item`| [OrderItemInterface](#OrderItemInterface) | The shipped order item
-`product_name` | String | The name of the base product
-`product_sale_price` | Money! | The sale price for the base product
-`product_sku` | String! | The SKU of the base product
-`quantity_shipped` | Float! | The number of shipped items
+`ShipmentItemInterface` defines the following attributes.
+
+{% include graphql/shipment-item-interface.md %}
+
+[ShipmentItemInterface attributes and implementations]({{page.baseurl}}/graphql/interfaces/order-item-interface.html) provides additional information about the implementations of this interface.
 
 #### ShipmentTracking attributes {#ShipmentTracking}
 
