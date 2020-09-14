@@ -108,16 +108,16 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 
 <!-- Link definitions -->
 
-[bypass the Fastly cache]: {{site.baseurl}}/cloud/cdn//fastly-vcl-bypass-to-origin.html
+[bypass the Fastly cache]: {{site.baseurl}}/cloud/cdn/fastly-vcl-bypass-to-origin.html
 [Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
 [Caching with Fastly]: {{site.baseurl}}/guides/v2.4/graphql/caching.html#caching-with-fastly
 [Checking for DDoS attacks]: https://support.magento.com/hc/en-us/articles/360030941932
-[Customize Fastly timeout]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#extend-fastly-timeout-for-magento admin)
+[Customize Fastly timeout]: {{site.baseurl}}/cloud/cdn//configure-fastly-customize-cache.html#extend-fastly-timeout
 [Fastly CDN module for Magento 2]: https://github.com/fastly/fastly-magento2
 [Fastly credentials configuration in the Magento Admin UI]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials
 [Fastly custom VCL snippets]: {{site.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html
 [Fastly image optimization]: {{site.baseurl}}/cloud/cdn/fastly-image-optimization.html
-[Fastly support ticket]: https://docs.fastly.com/guides/detailed-product-descriptions/support-description-and-sla#support-requests
+[Fastly support ticket]: https://docs.fastly.com/products/support-description-and-sla#support-requests
 [Force unencrypted requests over to TLS]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#force-tls
 [GeoIP service support]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-geoip-handling
 [Get Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#cloud-fastly-creds
@@ -132,7 +132,7 @@ DDOS protection is built-in to the Fastly CDN service. After you enable and conf
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Upgrade Fastly]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#upgrade
 [Web Application Firewall]: {{site.baseurl}}/cloud/cdn/fastly-waf-service.html
-[Working with Domains]: https://docs.fastly.com/guides/basic-configuration/working-with-domains
+[Working with Domains]: https://docs.fastly.com/en/guides/working-with-domains
 [custom error response pages]: {{site.baseurl}}/cloud/cdn/cloud-fastly-custom-response.html
 [purge options]: {{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-purge-options
 [test the Fastly credentials]: {{site.baseurl}}/cloud/cdn/configure-fastly.html#test-the-fastly-credentials

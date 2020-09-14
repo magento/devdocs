@@ -14,7 +14,7 @@ Fastly image optimization (Fastly IO) provides real-time image manipulation and 
 -  Adaptive pixel ratios
 -  Support for common image formats: PNG, JPEG, and GIF
 
-You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
+You must set up your Fastly service and configure Origin shielding before you enable and configure the Fastly IO option.
 
 Based on your configuration settings, the Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
@@ -25,7 +25,7 @@ You can enable Fastly image optimization (Fastly IO) from the Admin panel by upl
 **Prerequisites:**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
--  [Configure Fastly Origin shield and backend]({{ site.baseurl }}/cloud/cdn/configure-fastly-customize-cache.html#configure-backends-and-origin-shielding)
+-  [Configure Fastly Origin shield and backend]({{site.baseurl}}/cloud/cdn/configure-fastly-customize-cache.html#configure-backends-and-origin-shielding)
 
 {:.procedure}
 To enable Fastly IO:
