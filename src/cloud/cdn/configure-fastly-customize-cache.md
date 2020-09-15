@@ -221,6 +221,6 @@ To enable Maintenance mode with Administrative access:
 
 1. In the _Maintenance Mode_ section, click **Enable Maintenance Mode**.
 
-   After you enable maintenance mode, all traffic is blocked except requests from the IP addresses in the `maint_allowlist` ACL.
+   After you enable maintenance mode, all traffic is blocked except requests from the IP addresses in the `maint_allowlist` ACL. You can update the `maint_allowlist` to change the IP addresses in the ACL.
 
    For detailed configuration instructions, see the [Maintenance Mode guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/MAINTENANCE-MODE.md) in the Fastly CDN for Magento 2 module documentation.
